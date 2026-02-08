@@ -27,49 +27,95 @@ local function is_sokoban_map(block)
   return block.text:match("%^") and block.text:match("[┌┐└┘├┤┬┴┼│─]")
 end
 
+-- Escape special LaTeX characters in a plain text string
+local function escape_latex(s)
+  s = s:gsub("\\", "\\textbackslash{}")
+  s = s:gsub("([#$%%&_{}<>~^])", "\\%1")
+  return s
+end
+
 -- Render an ordered list as plain LaTeX text for side-by-side layout
 local function render_instructions(list_block)
   local items = {}
   for i, item in ipairs(list_block.content) do
     local text = pandoc.utils.stringify(pandoc.Pandoc(item))
-    table.insert(items, i .. ". " .. text)
+    table.insert(items, i .. ". " .. escape_latex(text))
   end
   return items
 end
 
+-- Add left padding to each line of a code block
+local function pad_code(text, spaces)
+  local pad = string.rep(" ", spaces)
+  local lines = {}
+  for line in (text .. "\n"):gmatch("(.-)\n") do
+    table.insert(lines, pad .. line)
+  end
+  return table.concat(lines, "\n")
+end
+
 -- Create side-by-side Sokoban layout: map minipage + instructions minipage
 local function sokoban_side_by_side(code_block, list_block)
-  -- Calculate map width to determine minipage proportions
+  -- Calculate max line width and line count of the map
   local max_line = 0
+  local map_lines = 0
   for line in code_block.text:gmatch("[^\n]+") do
     if #line > max_line then max_line = #line end
+    map_lines = map_lines + 1
   end
 
-  -- Map width as fraction of linewidth (estimate ~55 chars = full width)
-  local map_frac = math.min(0.52, math.max(0.32, max_line / 55))
+  -- Wider maps get 40% of page, narrow maps get 33%
+  local map_frac = max_line > 25 and 0.40 or 0.33
   local instr_frac = 0.96 - map_frac
 
   local instructions = render_instructions(list_block)
-  local instr_text = table.concat(instructions, "\\par\\smallskip\n")
-  -- Escape special LaTeX characters in instructions
-  instr_text = instr_text:gsub("\\", "\\textbackslash{}")
-  instr_text = instr_text:gsub("([#$%%&_{}<>~^])", "\\%1")
-  -- Undo double-escaping of \textbackslash
-  instr_text = instr_text:gsub("\\\\textbackslash\\{\\}", "\\textbackslash{}")
 
-  return pandoc.RawBlock("latex",
+  -- Split instructions: fit beside the map, overflow goes full-width below.
+  -- Each instruction with spacing takes ~1.5 map lines of vertical space.
+  local side_count = math.min(#instructions, math.floor(map_lines / 1.5))
+  local side_instrs = {}
+  local overflow_instrs = {}
+  for j = 1, #instructions do
+    if j <= side_count then
+      table.insert(side_instrs, instructions[j])
+    else
+      table.insert(overflow_instrs, instructions[j])
+    end
+  end
+
+  local side_text = table.concat(side_instrs, "\\par\\smallskip\n")
+
+  -- Center the ASCII block within the minipage by padding with spaces.
+  -- Estimate ~42 monospace chars per full linewidth at scriptsize.
+  local avail_chars = math.floor(42 * map_frac)
+  local pad = math.max(0, math.floor((avail_chars - max_line) / 2))
+  local padded_map = pad > 0 and pad_code(code_block.text, pad) or code_block.text
+
+  local result =
     "\\begin{minipage}[t]{" .. string.format("%.2f", map_frac) .. "\\linewidth}\n" ..
     "\\begin{Verbatim}[fontsize=\\scriptsize," ..
     "frame=single,framesep=0.3em," ..
     "rulecolor=\\color{codeframe}]\n" ..
-    code_block.text .. "\n" ..
+    padded_map .. "\n" ..
     "\\end{Verbatim}\n" ..
     "\\end{minipage}\\hfill\n" ..
     "\\begin{minipage}[t]{" .. string.format("%.2f", instr_frac) .. "\\linewidth}\n" ..
     "\\small\\raggedright\n" ..
-    instr_text .. "\n" ..
-    "\\end{minipage}\n" ..
-    "\\medskip")
+    side_text .. "\n" ..
+    "\\end{minipage}\n"
+
+  -- Add overflow instructions full-width below
+  if #overflow_instrs > 0 then
+    result = result ..
+      "\\par\\smallskip\n" ..
+      "{\\small\\raggedright " ..
+      table.concat(overflow_instrs, "\\par\\smallskip\n") ..
+      "\\par}\n"
+  end
+
+  result = result .. "\\medskip"
+
+  return pandoc.RawBlock("latex", result)
 end
 
 function Pandoc(doc)
@@ -161,6 +207,18 @@ function Pandoc(doc)
       -- Shift ### → level 2 (chapter), #### → level 3 (section), etc.
       if block.level >= 3 then
         block.level = block.level - 1
+      end
+
+      -- Break long headings before parenthetical subtitles in LaTeX
+      if text:match("Kill You") then
+        local inlines = block.content
+        for j = 1, #inlines do
+          if inlines[j].tag == "Str" and inlines[j].text:match("^%(") then
+            table.insert(inlines, j, pandoc.RawInline("latex", "\\\\"))
+            block.content = inlines
+            break
+          end
+        end
       end
     end
 

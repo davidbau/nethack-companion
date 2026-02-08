@@ -319,6 +319,11 @@ around blind is a recipe for walking into things you'd rather see
 coming. An oil lamp or magic lamp is ideal. A candle or two will do
 in a pinch.
 
+**Restraint.** New adventurers pick up everything they find. Veterans
+pick up everything they need. The difference is about forty pounds
+and the ability to outrun a gnome lord. If your status line reads
+"Burdened," you're carrying someone else's inventory too.
+
 ---
 
 ### Your First Descent
@@ -687,13 +692,18 @@ possible outcomes reads like a wish list shuffled with a hit list:
 - See invisible
 - All your gold, vanished
 
-About one time in six, something happens—but you won't know which
+About one time in three, something happens, but you won't know which
 column of the ledger it's going to hit. Sit on a throne when you're
 strong enough to survive the worst row of that table, and ideally
-when your luck is positive (for a shot at the wish). Thrones
-have a one-in-three chance of disappearing each time you sit,
-regardless of the outcome—so you might get several tries, or
-none at all.
+when your luck is positive (for a shot at the wish). Even when
+nothing happens, the throne may vanish in a puff of logic, so
+you might get several tries or none at all. (Vlad's throne in
+the Tower is special: it never vanishes without granting a wish
+first.)
+<!-- Throne mechanics: src/sit.c throne_sit_effect(), rnd(6)>4 for 1/3
+     activation, rnd(13) for effect, !rn2(3) for vanishing.
+     Vlad's throne: special_throne_effect(), cases 1-4 grant wish and
+     destroy throne, cases 5-13 are negative but throne survives. -->
 
 #### Sinks `#`
 
@@ -1549,9 +1559,14 @@ You don't see BUC status by default (Priests are the exception — they
 sense it naturally, which tells you something about clerical
 paranoia). But there are several reliable ways to check:
 
-**Altar testing.** Drop an item on an altar. An amber flash means
-blessed. A black flash means cursed. No flash means uncursed. This is
-free, fast, and unlimited. If you find an altar early, use it heavily.
+**Altar testing.** Drop an item on an altar:
+
+  - An amber flash means blessed.
+  - A black flash means cursed.
+  - No flash means uncursed.
+
+This is free, fast, and unlimited. If you find an altar early,
+use it heavily.
 
 **Pet testing.** Your pet won't step on cursed items. If you drop
 something and your dog walks around it, it's cursed. If the dog walks
@@ -1885,22 +1900,22 @@ you can't quite pin down.
           │
           ▼
      Can you reach an altar? ──yes──► Drop it. Check BUC.
-          │no
+          │ no
           ▼
      Is your pet nearby? ──yes──► Drop it. Does pet avoid it?
-          │no                         │yes: it's cursed
-          ▼                           │no: it's safe (uncursed/blessed)
+          │ no                        │ yes: it's cursed
+          ▼                           │ no: it's safe (uncursed/blessed)
      Can you reach a shop? ──yes──► Check the price. Consult tables.
-          │no
+          │ no
           ▼
      Is it a wand? ──yes──► Engrave-test it.
-          │no
+          │ no
           ▼
      Is it a ring + sink nearby? ──yes──► Drop it in the sink.
-          │no
+          │ no
           ▼
      Is it safe to use-test? ──yes──► Try it carefully.
-          │no
+          │ no
           ▼
      Save a scroll of identify for it.
 ```
@@ -2993,9 +3008,15 @@ travelers realize:
   treasure room. Rechargeable once for 1 additional charge.
   The Castle chest also contains a potion of gain level, because
   the Mazes occasionally feel generous.
-- **Vlad's throne:** Worth sitting on—it's a regular throne,
-  but one you can reach reliably. A wish is one of the possible
-  outcomes, though the throne may vanish before obliging.
+<!-- src/sit.c special_throne_effect(): cases 1-4 (of 13) = wish,
+     throne only vanishes on wish, so guaranteed eventual wish. -->
+- **Vlad's throne:** A special throne that grants a guaranteed
+  wish if you keep sitting. Four of thirteen outcomes are a wish
+  (which destroys the throne); the other nine are painful but
+  the throne survives, so persistence pays off.
+<!-- src/allmain.c: u.uhave.amulet && !u.uevent.amulet_wish -->
+- **The Amulet of Yendor:** Grants a wish when you first pick
+  it up. A reward for reaching the bottom of the dungeon.
 - **Magic lamp:** Rub a blessed lamp for an 80% chance of a wish.
   Either a magic lamp or a magic marker is guaranteed in
   Orcus-town.
@@ -4677,11 +4698,10 @@ against their work. Published under BSD-like terms.
 **Paul Waterman** wrote the WCST NetHack Spoilers (originally the
 "World's Encyclopaedia of NetHack"), a single sprawling document
 that covered the entire game in a conversational, opinionated voice.
-Where the Hugo/O'Donnell files were reference manuals, the WCST was
+Where Hugo and O'Donnell wrote reference manuals, the WCST was
 a travel guide. It told you not just what things did but what to do
 about them. It was the original inspiration for the tone and
 structure of this guide, though no text has been copied from it.
-Published under CC-BY-NC-ND.
 
 **Kate Nepveu** maintained steelypips.org, the web archive that
 preserved the Hugo/O'Donnell spoilers, the RGRN community articles,
@@ -4719,6 +4739,36 @@ Geoffrey Eadon, Roger Broadbent, Sebastian Haas, Jukka Lahtinen,
 and the countless anonymous posters on RGRN who asked "has anyone
 tried..." and then reported back.
 
+**The NetHack Wiki** (nethackwiki.com) has been an indispensable
+reference for this guide. Founded as "WikiHack" by Sgeo in 2005,
+it migrated to its own domain in 2010 and now contains over five
+thousand articles documenting every corner of the game. Its
+creators and maintainers include Pasi Kallinen, Drew Streib,
+Alex Smith, Shawn Moore, George Koehler, Tjr, ZeroOne, and
+Ray Chason. The wiki is hosted alongside nethack.alt.org, the
+longest-running public NetHack server.
+
+**The r/nethack community** on Reddit has kept NetHack discussion
+alive for a new generation of players. Its moderators over the
+years have maintained a welcoming space where veterans and newcomers
+trade advice, share ascension stories, and argue about optimal wish
+choices. The community's collective knowledge, passed along in
+thousands of threads, has informed the practical advice throughout
+this guide.
+
+Above all, this guide exists because the game itself exists.
+**NetHack** has been continuously developed since 1987 by the
+NetHack DevTeam, founded by Mike Stephenson, Izchak Miller, and
+Janet Walz. Izchak Miller passed away in 1994; the shopkeeper
+who bears his name in the Mines is a small measure of how much
+his work meant. The current team of sixteen, including Michael
+Allison, Ken Arromdee, David Cohrs, Jessie Collet, Pasi Kallinen,
+Ken Lorber, Dean Luick, Patric Mueller, Pat Rankin, Derek S. Ray,
+Alex Smith, Mike Stephenson, Janet Walz, Paul Winner, Bart House,
+and Warwick Allison, has maintained and extended the game across
+nearly four decades. Everything in these pages is downstream of
+their work.
+
 This is what a community looks like over decades. People writing
 things down so that others don't have to die the same stupid death.
 It's generous, it's nerdy, and it's one of the best things about
@@ -4731,3 +4781,6 @@ source code. Any errors are ours alone.
 
 *A Traveler's Guide to the Mazes of Menace*
 *First Edition*
+
+*This work is licensed under
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).*
