@@ -1064,6 +1064,55 @@ corridor segment is cheap insurance. The turn you spend searching
 is always cheaper than the turns you spend climbing out of a
 spiked pit.
 
+#### Finding Secret Doors
+
+The Dungeons of Doom were designed by architects who believed that
+every room should have one emergency exit that requires ten minutes
+of tapping on walls to locate. Secret doors and corridors are the
+game's passive-aggressive way of saying "you haven't explored
+*thoroughly* enough."
+
+**When to search for secrets:**
+
+- **Dead ends** that feel too convenient. If a corridor just stops,
+  and you haven't found what you came for, there's probably a door
+  in the surrounding walls
+- **Suspiciously empty rooms** with no obvious exit. The exit exists;
+  it's just been cunningly disguised as a wall
+- **After exhausting all visible options.** When you've explored
+  everything reachable and still haven't found the downstairs, it's
+  time to stop wandering and start wall-tapping
+
+**The systematic approach:**
+
+Type `20s` to search twenty times in one spot. For new characters
+with average Luck, you need 15-22 searches to reliably reveal a
+secret. Searching once and moving on is essentially announcing your
+intention to remain lost.
+
+Move three squares along the wall and repeat. This creates overlapping
+search coverage—any secret door in that wall segment gets searched
+from multiple adjacent positions, which dramatically improves your
+odds. The pattern looks tedious on paper because it *is* tedious,
+but tedium is cheaper than being trapped on Dlvl 1 forever.
+
+**Items that help:**
+
+- **Ring of searching** auto-searches every turn you move
+- **Excalibur** (if wielded) improves search chances
+- **Lenses** (any kind, if worn) boost secret detection
+- **Wand of secret door detection** instantly reveals nearby secrets
+- **Blessed scroll of magic mapping** shows every secret door on the level
+
+**The wisdom of patience:**
+
+Secret doors are NetHack's way of teaching you that brute force
+doesn't solve every problem—sometimes you need brute force applied
+methodically to every wall section in sequence. The downstairs you
+seek is behind one of these walls. Finding it is a matter of
+systematic elimination. The only mistake is giving up after three
+searches and declaring the level "impossible."
+
 #### Elbereth
 
 > *The mechanics below are drawn from Kate Nepveu's Elbereth FAQ
