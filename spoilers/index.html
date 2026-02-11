@@ -242,7 +242,7 @@
 </section>
 <section id="the-map-symbols" class="level4">
 <h4>The Map Symbols</h4>
-<p>Everything in the dungeon is represented by a symbol on the screen. Learning to read these symbols quickly is essential:</p>
+<p>Everything in the dungeon is represented by a symbol on the screen. Learning to read these symbols quickly is important:</p>
 <table>
 <thead>
 <tr class="header">
@@ -1133,7 +1133,7 @@
 </section>
 <section id="the-essential-kit" class="level4">
 <h4>The Essential Kit</h4>
-<p>The short version: you need <strong>magic resistance</strong>, <strong>reflection</strong>, <strong>poison resistance</strong>, and a <strong>lizard corpse</strong> to survive the dungeon’s worst surprises. Get these as early as you can. Everything else is luxury. These are survival.</p>
+<p>The short version: the big three are <strong>magic resistance</strong>, <strong>reflection</strong>, <strong>poison resistance</strong>, and a <strong>lizard corpse</strong> to survive the dungeon’s worst surprises. Get these as early as you can. Everything else is luxury. These are survival.</p>
 <hr />
 </section>
 </section>
@@ -2034,7 +2034,7 @@
 <section id="key-scrolls" class="level4">
 <h4>Key Scrolls</h4>
 <p><strong>Identify.</strong> The bread and butter of dungeon life. Blessed identify reveals multiple items at once (with positive luck, always at least two). You will never have enough of these.</p>
-<p><strong>Enchant weapon / enchant armor.</strong> The path to endgame power. Each scroll raises enchantment by +1 (uncursed) or potentially more (blessed). The critical rule: enchanting beyond +5 risks destroying the item entirely, but blessed scrolls can safely push to +7. Save these for your ascension kit, bless them, then savor every +1.</p>
+<p><strong>Enchant weapon / enchant armor.</strong> The path to endgame power. Each scroll raises enchantment by +1 (uncursed) or potentially more (blessed). Important: enchanting beyond +5 risks destroying the item entirely, but blessed scrolls can safely push to +7. Save these for your ascension kit, bless them, then savor every +1.</p>
 <p><strong>Remove curse.</strong> Frees you from cursed equipment. Uncursed version works on worn and wielded items only; blessed version uncurses your entire inventory. Every adventurer has a “put on a cursed ring” story. This scroll is the happy ending.</p>
 <p><strong>Charging.</strong> Recharges wands and rechargeable tools. Save these for your wand of wishing—one charge means one more wish. Blessed charging restores more charges. But don’t get greedy: each recharge increases the chance the wand explodes. The second recharge is pushing your luck; the third is usually fatal for the wand.</p>
 <p><strong>Genocide.</strong> The nuclear option. Uncursed eliminates a single species; blessed wipes an entire monster class from the game forever. Liches and mind flayers are popular targets. Read one while confused and you genocide your own race—which kills you instantly. Read carefully.</p>
@@ -2769,7 +2769,7 @@
 <p><strong>Magicbane</strong> (Neutral, athame): +d3 to hit and damage, protects against curses while carried, cancels monsters on hit. Useful as a secondary weapon. Can be obtained by sacrifice.</p>
 <p><strong>Stormbringer</strong> (Chaotic, runesword): +d5 to hit and damage, drains one level from hit targets (you gain it). Attacks peaceful monsters automatically, which can cause alignment problems.</p>
 <p><strong>The Eyes of the Overworld</strong> (Neutral, lenses): Magic resistance, astral vision. A quest artifact for Monks.</p>
-<p><strong>Quest artifacts</strong> vary wildly by role but most provide magic resistance, which makes them essential to carry even if you don’t wield them. Check your specific role’s artifact.</p>
+<p><strong>Quest artifacts</strong> vary wildly by role but most provide magic resistance, which makes them important to carry even if you don’t wield them. Check your specific role’s artifact.</p>
 <hr />
 </section>
 </section>
@@ -2830,7 +2830,7 @@
 </section>
 <section id="altars-and-alignment" class="level4">
 <h4>Altars and Alignment</h4>
-<p>You can convert an altar by sacrificing on a cross-aligned altar repeatedly. This is risky (the altar’s god will be angry) but useful if the only altar you’ve found doesn’t match your alignment. Having a co-aligned altar is essential for sacrifice, holy water production, and BUC testing.</p>
+<p>You can convert an altar by sacrificing on a cross-aligned altar repeatedly. This is risky (the altar’s god will be angry) but useful if the only altar you’ve found doesn’t match your alignment. Having a co-aligned altar is important for sacrifice, holy water production, and BUC testing.</p>
 </section>
 <section id="crowning" class="level4">
 <h4>Crowning</h4>
@@ -4440,9 +4440,17 @@
         parent.insertBefore(afterNode, firstMatch);
         parent.removeChild(firstMatch);
 
-        // Scroll the highlight into view with smooth behavior
+        // Scroll to highlight only if it's below the current viewport
+        // (don't scroll up - keep section header at top)
         setTimeout(function() {
-          highlightSpan.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          var rect = highlightSpan.getBoundingClientRect();
+          var viewportHeight = window.innerHeight;
+
+          // Only scroll if the highlight is below the visible area
+          if (rect.top > viewportHeight || rect.bottom > viewportHeight) {
+            highlightSpan.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+          // If highlight is already visible or above, don't scroll
         }, 100);
       }
     }
