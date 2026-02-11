@@ -278,17 +278,18 @@ $body$
         parent.insertBefore(afterNode, firstMatch);
         parent.removeChild(firstMatch);
 
-        // Scroll to highlight only if it's below the current viewport
+        // Scroll to highlight only if it's in the lower portion of viewport
         // (don't scroll up - keep section header at top)
         setTimeout(function() {
           var rect = highlightSpan.getBoundingClientRect();
           var viewportHeight = window.innerHeight;
+          var scrollThreshold = viewportHeight * 0.6; // 60% down the page
 
-          // Only scroll if the highlight is below the visible area
-          if (rect.top > viewportHeight || rect.bottom > viewportHeight) {
+          // Only scroll if the highlight is below the comfortable reading area
+          if (rect.top > scrollThreshold) {
             highlightSpan.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
-          // If highlight is already visible or above, don't scroll
+          // If highlight is in top 60% or above, don't scroll - it's visible
         }, 100);
       }
     }
