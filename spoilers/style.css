@@ -94,42 +94,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* --- Top Navigation ----------------------------------------- */
-
-#top-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: var(--color-bg);
-  border-bottom: 1px solid var(--color-rule);
-  padding: 0.5em 1em;
-  text-align: center;
-  z-index: 100;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.nav-links {
-  font-size: 0.85em;
-}
-
-.nav-link {
-  color: var(--color-link);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.nav-link:hover {
-  color: var(--color-link-hover);
-  text-decoration: underline;
-}
-
-/* Adjust body padding to account for fixed header */
-body {
-  padding-top: 3.5em;
-}
-
 /* --- Headings ----------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 {
@@ -541,10 +505,10 @@ section.level1 > p:nth-last-of-type(2) {
   #sidebar-toc {
     display: block;
     position: fixed;
-    top: 3em;
+    top: 0;
     left: 0;
     width: 240px;
-    height: calc(100vh - 3em);
+    height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
     padding: 1.5em 0.8em 2em 1em;
@@ -649,10 +613,10 @@ section.level1 > p:nth-last-of-type(2) {
   #sidebar-search {
     display: block;
     position: fixed;
-    top: 3em;
+    top: 0;
     right: 0;
     width: 270px;
-    height: calc(100vh - 3em);
+    height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
     padding: 1.5em 1em 2em 0.8em;
