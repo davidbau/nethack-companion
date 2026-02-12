@@ -91,12 +91,12 @@ could pray — read on. We'll do our best to keep you alive.
 
 **Appendices**
 
-- [Advanced Controls](#advanced-controls) — Command counts, prefixes, and efficiency techniques
-- [Sokoban Solutions](#sokoban-solutions) — All eight level variants, solved
-- [Voluntary Challenges](#voluntary-challenges) — Conducts and self-imposed restrictions
-- [Shopping and Shopkeeper Pricing](#shopping-and-shopkeeper-pricing) — Commerce in the dungeon
-- [What Changed Since Last Time](#what-changed-since-last-time) — What's new since 3.4.3
-- [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
+30. [Advanced Controls](#advanced-controls) — Command counts, prefixes, and efficiency techniques
+31. [Sokoban Solutions](#sokoban-solutions) — All eight level variants, solved
+32. [Voluntary Challenges](#voluntary-challenges) — Conducts and self-imposed restrictions
+33. [Shopping and Shopkeeper Pricing](#shopping-and-shopkeeper-pricing) — Commerce in the dungeon
+34. [What Changed Since Last Time](#what-changed-since-last-time) — What's new since 3.4.3
+35. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
 
 ---
 
