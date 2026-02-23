@@ -4274,6 +4274,7 @@ Do not read this guide aloud. The dungeon is listening.
     // Also gather text from inline code elements (for single-char key searches)
     var codeEls = section.querySelectorAll(':scope > p code, :scope > ul > li code, :scope > ol > li code, :scope > table td code, :scope > blockquote p code');
     var codeText = '';
+    heading.querySelectorAll('code').forEach(function(el) { codeText += el.textContent + ' '; });
     codeEls.forEach(function(el) { codeText += el.textContent + ' '; });
     searchData.push({
       id: section.id,
