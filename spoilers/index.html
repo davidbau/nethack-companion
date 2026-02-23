@@ -4271,10 +4271,15 @@ Do not read this guide aloud. The dungeon is listening.
     var textEls = section.querySelectorAll(':scope > p, :scope > ul > li, :scope > ol > li, :scope > table td, :scope > blockquote p');
     var text = '';
     textEls.forEach(function(el) { text += el.textContent + ' '; });
+    // Also gather text from inline code elements (for single-char key searches)
+    var codeEls = section.querySelectorAll(':scope > p code, :scope > ul > li code, :scope > ol > li code, :scope > table td code, :scope > blockquote p code');
+    var codeText = '';
+    codeEls.forEach(function(el) { codeText += el.textContent + ' '; });
     searchData.push({
       id: section.id,
       title: heading.textContent,
-      text: text.substring(0, 2000),
+      text: text.substring(0, 8000),
+      codeText: codeText,
       level: heading.tagName
     });
   });
@@ -4287,7 +4292,7 @@ Do not read this guide aloud. The dungeon is listening.
 
   function doSearch() {
     var query = searchInput.value.trim().toLowerCase();
-    if (query.length < 2) {
+    if (query.length < 1) {
       searchResults.innerHTML = '';
       searchResults.style.display = 'none';
       searchIndex.style.display = '';
@@ -4296,19 +4301,24 @@ Do not read this guide aloud. The dungeon is listening.
     searchIndex.style.display = 'none';
     searchResults.style.display = '';
 
+    // Single-char queries (e.g. "g", "#") only search within <code> elements
+    // to avoid matching every occurrence in prose
+    var isSingleChar = query.length === 1;
     var words = query.split(/\s+/);
     var matches = [];
     searchData.forEach(function(item) {
-      var haystack = (item.title + ' ' + item.text).toLowerCase();
+      var haystack = isSingleChar
+        ? item.codeText.toLowerCase()
+        : (item.title + ' ' + item.text).toLowerCase();
       var score = 0;
       var allMatch = true;
       words.forEach(function(w) {
         if (haystack.indexOf(w) === -1) {
           allMatch = false;
         } else {
-          // Title matches score higher
-          if (item.title.toLowerCase().indexOf(w) !== -1) score += 10;
-          // Count occurrences in text
+          // Title matches score higher (not relevant for single-char, but harmless)
+          if (!isSingleChar && item.title.toLowerCase().indexOf(w) !== -1) score += 10;
+          // Count occurrences
           var idx = 0;
           while ((idx = haystack.indexOf(w, idx)) !== -1) { score++; idx += w.length; }
         }
@@ -4329,8 +4339,8 @@ Do not read this guide aloud. The dungeon is listening.
     var shown = Math.min(matches.length, 15);
     for (var i = 0; i < shown; i++) {
       var m = matches[i].item;
-      // Find a snippet containing the query
-      var snippet = getSnippet(m.text, words[0]);
+      // For single-char searches use code-only text for snippet
+      var snippet = getSnippet(isSingleChar ? m.codeText : m.text, words[0]);
       html += '<a class="search-result" href="#' + m.id + '">';
       html += '<span class="search-result-title">' + highlightMatches(m.title, words) + '</span>';
       if (snippet) html += '<span class="search-result-snippet">' + highlightMatches(snippet, words) + '</span>';
@@ -4347,12 +4357,12 @@ Do not read this guide aloud. The dungeon is listening.
       link.addEventListener('click', function(e) {
         e.preventDefault();
         var targetId = this.getAttribute('href').substring(1);
-        highlightSearchTermInSection(targetId, words);
+        highlightSearchTermInSection(targetId, words, isSingleChar);
       });
     });
   }
 
-  function highlightSearchTermInSection(sectionId, words) {
+  function highlightSearchTermInSection(sectionId, words, codeOnly) {
     // Clear any previous highlights
     document.querySelectorAll('.search-highlight').forEach(function(el) {
       var text = el.textContent;
@@ -4380,6 +4390,8 @@ Do not read this guide aloud. The dungeon is listening.
           if (parent.closest('#sidebar-toc') || parent.closest('#sidebar-search')) {
             return NodeFilter.FILTER_REJECT;
           }
+          // For single-char searches, only highlight inside <code> elements
+          if (codeOnly && tag !== 'code') return NodeFilter.FILTER_SKIP;
           return NodeFilter.FILTER_ACCEPT;
         }
       }
