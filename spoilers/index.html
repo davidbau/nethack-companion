@@ -4302,8 +4302,10 @@ Do not read this guide aloud. The dungeon is listening.
     searchResults.style.display = '';
 
     // Single-char queries (e.g. "g", "#") only search within <code> elements
-    // to avoid matching every occurrence in prose
+    // to avoid matching every occurrence in prose.
+    // Multi-word queries are treated as exact phrases (bigram/phrase search).
     var isSingleChar = query.length === 1;
+    var isPhrase = query.indexOf(' ') !== -1;
     var words = query.split(/\s+/);
     var matches = [];
     searchData.forEach(function(item) {
@@ -4311,18 +4313,28 @@ Do not read this guide aloud. The dungeon is listening.
         ? item.codeText.toLowerCase()
         : (item.title + ' ' + item.text).toLowerCase();
       var score = 0;
-      var allMatch = true;
-      words.forEach(function(w) {
-        if (haystack.indexOf(w) === -1) {
-          allMatch = false;
-        } else {
-          // Title matches score higher (not relevant for single-char, but harmless)
-          if (!isSingleChar && item.title.toLowerCase().indexOf(w) !== -1) score += 10;
-          // Count occurrences
+      var allMatch = false;
+      if (isPhrase) {
+        // Exact phrase match
+        if (haystack.indexOf(query) !== -1) {
+          allMatch = true;
+          if (item.title.toLowerCase().indexOf(query) !== -1) score += 10;
           var idx = 0;
-          while ((idx = haystack.indexOf(w, idx)) !== -1) { score++; idx += w.length; }
+          while ((idx = haystack.indexOf(query, idx)) !== -1) { score++; idx += query.length; }
         }
-      });
+      } else {
+        // Single token (word or single char)
+        allMatch = true;
+        words.forEach(function(w) {
+          if (haystack.indexOf(w) === -1) {
+            allMatch = false;
+          } else {
+            if (!isSingleChar && item.title.toLowerCase().indexOf(w) !== -1) score += 10;
+            var idx = 0;
+            while ((idx = haystack.indexOf(w, idx)) !== -1) { score++; idx += w.length; }
+          }
+        });
+      }
       if (allMatch && score > 0) {
         matches.push({ item: item, score: score });
       }
@@ -4339,11 +4351,12 @@ Do not read this guide aloud. The dungeon is listening.
     var shown = Math.min(matches.length, 15);
     for (var i = 0; i < shown; i++) {
       var m = matches[i].item;
-      // For single-char searches use code-only text for snippet
-      var snippet = getSnippet(isSingleChar ? m.codeText : m.text, words[0]);
+      var searchTerm = isPhrase ? query : words[0];
+      var hlTerms = isPhrase ? [query] : words;
+      var snippet = getSnippet(isSingleChar ? m.codeText : m.text, searchTerm);
       html += '<a class="search-result" href="#' + m.id + '">';
-      html += '<span class="search-result-title">' + highlightMatches(m.title, words) + '</span>';
-      if (snippet) html += '<span class="search-result-snippet">' + highlightMatches(snippet, words) + '</span>';
+      html += '<span class="search-result-title">' + highlightMatches(m.title, hlTerms) + '</span>';
+      if (snippet) html += '<span class="search-result-snippet">' + highlightMatches(snippet, hlTerms) + '</span>';
       html += '</a>';
     }
     if (matches.length > shown) {
@@ -4357,7 +4370,7 @@ Do not read this guide aloud. The dungeon is listening.
       link.addEventListener('click', function(e) {
         e.preventDefault();
         var targetId = this.getAttribute('href').substring(1);
-        highlightSearchTermInSection(targetId, words, isSingleChar);
+        highlightSearchTermInSection(targetId, isPhrase ? [query] : words, isSingleChar);
       });
     });
   }
