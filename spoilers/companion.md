@@ -14,10 +14,20 @@ in existence: dozens of levels of corridors, vaults, and special
 chambers, stretching from the relatively tame upper mines all the way
 down to the molten depths of Gehennom and beyond.
 
-People have been descending into these depths for decades. Most of them
-died. The ones who made it back brought stories, and some of those
-stories eventually got written down. You're reading the latest edition
-of that accumulated lore.
+People have been descending into these depths for nearly four decades.
+Most of them died. The ones who made it back brought stories, and some
+of those stories eventually got written down. You're reading the latest
+edition of that accumulated lore.
+
+The Mazes have predecessors. Before this dungeon took its current form,
+adventurers explored simpler places — a dungeon called Hack, and before
+that the legendary Rogue, whose procedurally-generated corridors first
+established what a dungeon could mean in the age of computing. Each
+generation of explorers added to what the previous one learned, until
+the Mazes became what they are today: one of the deepest, most thoroughly
+documented, and most reliably fatal adventure destinations ever devised.
+The knowledge in this guide is the inheritance of everything those
+explorers found out, usually the hard way.
 
 **A word of caution.** This guide will change how you experience the
 Mazes forever. Once you know that a floating eye can paralyze you with
@@ -5417,6 +5427,17 @@ Discord. If you wanted to know whether a cockatrice corpse could
 be wielded as a weapon, you searched the RGRN archives and hoped
 someone had asked before you. Someone usually had.
 
+RGRN gave the community its vocabulary. A **YASD** — *Yet Another
+Stupid Death* — is the post you make after dying to something you
+should have known better than to do. The term captures something
+important: NetHack kills you in ways that feel obvious in retrospect,
+and the community's response to that is not bitterness but
+documentation. A **YAFAP** — *Yet Another First Ascension Post* —
+is the post you make when you finally win. Both traditions persist
+today, in the wiki, on Reddit, in Discord servers: the ritual
+confession of failure and the ritual celebration of survival. They
+are the two poles around which the whole community orbits.
+
 Out of those conversations came the first spoiler files: plain text
 documents that attempted to catalog every item, every monster, every
 interaction. They were written by hand, cross-referenced against the
@@ -5499,17 +5520,29 @@ thousands of threads, has informed the practical advice throughout
 this guide.
 
 Above all, this guide exists because the game itself exists.
-**NetHack** has been continuously developed since 1987 by the
-NetHack DevTeam, founded by Mike Stephenson, Izchak Miller, and
-Janet Walz. Izchak Miller passed away in 1994; the shopkeeper
-who bears his name in the Mines is a small measure of how much
-his work meant. The current team of sixteen, including Michael
-Allison, Ken Arromdee, David Cohrs, Jessie Collet, Pasi Kallinen,
-Ken Lorber, Dean Luick, Patric Mueller, Pat Rankin, Derek S. Ray,
-Alex Smith, Mike Stephenson, Janet Walz, Paul Winner, Bart House,
-and Warwick Allison, has maintained and extended the game across
-nearly four decades. Everything in these pages is downstream of
-their work.
+**NetHack** has been developed since 1987 by the NetHack DevTeam,
+founded by Mike Stephenson, Izchak Miller, and Janet Walz. Izchak
+Miller passed away in 1994; the shopkeeper who bears his name in
+the Mines is a small measure of how much his work meant.
+
+The development was not always continuous. After version 3.4.3 in
+December 2003, the DevTeam went quiet — not absent, but silent —
+for twelve years. The dungeon was frozen. New players descended into
+the same unchanging corridors that had been killing people since
+2003, writing new spoilers about a fixed game, dying in the same
+newly-documented ways. That the accumulated community wisdom from
+those twelve silent years remained useful, that the game was deep
+enough to sustain a decade of fresh analysis without adding a line
+of new code, tells you something about what kind of artifact
+NetHack is. Version 3.6.0 arrived in December 2015, and active
+development has continued since.
+
+The current team, including Michael Allison, Ken Arromdee, David
+Cohrs, Jessie Collet, Pasi Kallinen, Ken Lorber, Dean Luick,
+Patric Mueller, Pat Rankin, Derek S. Ray, Alex Smith, Mike
+Stephenson, Janet Walz, Paul Winner, Bart House, and Warwick
+Allison, has maintained and extended the game across nearly four
+decades. Everything in these pages is downstream of their work.
 
 This is what a community looks like over decades. People writing
 things down so that others don't have to die the same stupid death.
