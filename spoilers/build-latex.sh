@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Build script for "The Traveler's Companion to the Mazes of Menace"
-# LaTeX pipeline: guide.md → pandoc + lua filter → xelatex → guide-latex.pdf
+# LaTeX pipeline: spoilers.md → pandoc + lua filter → xelatex → spoilers-latex.pdf
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
@@ -18,14 +18,14 @@ if ! command -v xelatex &>/dev/null; then
 fi
 
 echo "=== Building PDF via LaTeX ==="
-pandoc guide.md \
+pandoc spoilers.md \
   --from=markdown \
   --pdf-engine=xelatex \
   --template=template.tex \
   --lua-filter=latex-filter.lua \
   --top-level-division=part \
   --toc \
-  --output=guide-latex.pdf 2>&1
+  --output=spoilers-latex.pdf 2>&1
 
-echo "    → guide-latex.pdf"
+echo "    → spoilers-latex.pdf"
 echo "=== Done ==="
