@@ -5763,45 +5763,48 @@ nothing.
 
 ##### Real-gem prices
 
-Once you know what a gem is, its base price determines whether it's
-worth carrying. All gems weigh 1, so the only cost of hoarding is
-inventory slot pressure — but real gems are tiny piles of liquid
-gold by weight. The table below lists every real gem in the game by
-base price (the price an unangry, unbiased shopkeeper would charge
-for a buy). Sell prices are typically ½ of the base for a generic
-shopkeeper, less for shops outside the gem-buying class.
+Once you know what a gem is, its type determines its base price.
+Real gems are tiny piles of liquid gold by weight — every gem weighs
+just 1, and gems of the same identified type stack into a single
+inventory slot regardless of count, so the only cost of hoarding a
+heap of identified rubies is one slot's worth of clutter.
 
-| Gem                   | Color           | Base price | Mohs | Notes                          |
-|-----------------------|-----------------|-----------:|-----:|--------------------------------|
-| Dilithium crystal     | white           |       4500 |    5 | rarest white gem               |
-| Diamond               | white           |       4000 |   10 | hardest material in the game   |
-| Ruby                  | red             |       3500 |    9 |                                |
-| Jacinth               | orange          |       3250 |    9 | one of two orange gems         |
-| Sapphire              | blue            |       3000 |    9 |                                |
-| Black opal            | black           |       2500 |    8 |                                |
-| Emerald               | green           |       2500 |    8 |                                |
-| Turquoise             | green           |       2000 |    6 |                                |
-| Citrine               | yellow          |       1500 |    6 |                                |
-| Aquamarine            | green           |       1500 |    8 |                                |
-| Amber                 | yellowish brown |       1000 |    2 | softest, can't be touchstoned  |
-| Topaz                 | yellowish brown |        900 |    8 |                                |
-| Jet                   | black           |        850 |    7 |                                |
-| Opal                  | white           |        800 |    6 |                                |
-| Chrysoberyl           | yellow          |        700 |    5 |                                |
-| Garnet                | red             |        700 |    7 |                                |
-| Amethyst              | violet          |        600 |    7 | useful in alchemy (booze→see-i)|
-| Jasper                | red             |        500 |    7 |                                |
-| Fluorite              | violet          |        400 |    4 |                                |
-| Jade                  | green           |        300 |    6 |                                |
-| Obsidian              | black           |        200 |    6 |                                |
-| Agate                 | orange          |        200 |    6 |                                |
-| (worthless glass)     | any color       |          0 |    5 | sells for 0–8 zm unidentified  |
+The table below lists every real gem in the game. The Price column
+shows what an unangry shopkeeper would charge to buy from you;
+adjust it with the Cha/Sell/Tourist/Angry toolbar to see how the
+modifiers shift things.
 
-Carrying every real gem is almost free: each gem weighs 1, and gems
-of the same identified type stack into a single inventory slot
-regardless of count. The decision is rarely "carry or drop" — it's
-"if I'm slot-pressed and have to thin the gem heap, which colors do
-I drop first."
+<div class="price-id-toolbar"></div>
+
+| Price | Gem                   | Color           | Mohs | Notes                          |
+|------:|-----------------------|-----------------|-----:|--------------------------------|
+|  4500 | Dilithium crystal     | white           |    5 | rarest white gem               |
+|  4000 | Diamond               | white           |   10 | hardest material in the game   |
+|  3500 | Ruby                  | red             |    9 |                                |
+|  3250 | Jacinth               | orange          |    9 | one of two orange gems         |
+|  3000 | Sapphire              | blue            |    9 |                                |
+|  2500 | Black opal            | black           |    8 |                                |
+|  2500 | Emerald               | green           |    8 |                                |
+|  2000 | Turquoise             | green           |    6 |                                |
+|  1500 | Citrine               | yellow          |    6 |                                |
+|  1500 | Aquamarine            | green           |    8 |                                |
+|  1000 | Amber                 | yellowish brown |    2 | softest, can't be touchstoned  |
+|   900 | Topaz                 | yellowish brown |    8 |                                |
+|   850 | Jet                   | black           |    7 |                                |
+|   800 | Opal                  | white           |    6 |                                |
+|   700 | Chrysoberyl           | yellow          |    5 |                                |
+|   700 | Garnet                | red             |    7 |                                |
+|   600 | Amethyst              | violet          |    7 | useful in alchemy (booze→see-i)|
+|   500 | Jasper                | red             |    7 |                                |
+|   400 | Fluorite              | violet          |    4 |                                |
+|   300 | Jade                  | green           |    6 |                                |
+|   200 | Obsidian              | black           |    6 |                                |
+|   200 | Agate                 | orange          |    6 |                                |
+|     0 | (worthless glass)     | any color       |    5 | sells for 0–8 zm unidentified  |
+
+The decision is rarely "carry or drop" — it's "if I'm slot-pressed
+and have to thin the heap, which colors do I drop first." Black opals,
+emeralds, and rubies are usually keepers; agate and obsidian first to go.
 
 A few rules of thumb:
 
