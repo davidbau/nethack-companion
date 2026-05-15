@@ -7307,9 +7307,13 @@ tracked since 3.6.</p>
 <p><strong>Blind (Zen).</strong> Play the entire game without sight. Set
 the <code>blind</code> option at game start. You’ll need telepathy and
 other senses to navigate. Officially tracked since 3.6.</p>
+<p>Mazes 5.0 added five more tracked conducts — Pauper, Petless,
+Permadeaf, Sokoban, and Bonesless. The first three are start-of-game
+options; the latter two are tracked automatically based on what you do
+during the run.</p>
 </section>
-<section id="pauper" class="level4">
-<h4>Pauper</h4>
+<section id="pauper-new-in-5.0" class="level4">
+<h4>Pauper (new in 5.0)</h4>
 <p>Start with absolutely nothing — no gold, no inventory, no armor. Set
 <code>OPTIONS=pauper</code> in your rcfile (or <code>pauper:true</code>
 in the in-game <code>O</code> menu). The game enforces it at character
@@ -7326,8 +7330,8 @@ more valuable. The traditional roleplaying version, “never spend gold,”
 is not tracked by the game in 5.0 — it lives on only as a self-imposed
 extension of the pauper start.</p>
 </section>
-<section id="petless" class="level4">
-<h4>Petless</h4>
+<section id="petless-new-in-5.0" class="level4">
+<h4>Petless (new in 5.0)</h4>
 <p>Never have a pet. Set <code>OPTIONS=pettype:none</code> in your
 rcfile to skip the starting companion entirely (this overrides per-role
 defaults). After that the conduct enforces itself: don’t tame anything
@@ -7338,8 +7342,8 @@ the particular satisfaction of knowing that everything that died did so
 by your hand, and that you never had to feel guilty about leading
 something loyal into a polymorph trap.</p>
 </section>
-<section id="permadeaf" class="level4">
-<h4>Permadeaf</h4>
+<section id="permadeaf-new-in-5.0" class="level4">
+<h4>Permadeaf (new in 5.0)</h4>
 <p>Never hear anything. Set <code>OPTIONS=!acoustics</code> in your
 rcfile (or <code>acoustics:false</code> in the in-game <code>O</code>
 menu) — the game then runs exactly as if you had the <code>Deaf</code>
@@ -7354,8 +7358,8 @@ requires navigating the dungeon by sight and logic alone, which turns
 out to be possible and occasionally educational about how much
 information you normally get for free.</p>
 </section>
-<section id="sokoban-1" class="level4">
-<h4>Sokoban</h4>
+<section id="sokoban-new-in-5.0" class="level4">
+<h4>Sokoban (new in 5.0)</h4>
 <p>Complete Sokoban without cheating. No digging through the puzzle
 levels, no teleportation to skip steps, no picking up boulders and
 carrying them to impossible positions. Solve it the way the puzzle
@@ -7363,6 +7367,17 @@ designers intended, by actually solving the puzzle. The game now tracks
 violations automatically. This is the conduct for players who genuinely
 enjoy Sokoban’s boulder-shoving sequences and want their playthrough to
 acknowledge a clean solve.</p>
+</section>
+<section id="bonesless-new-in-5.0" class="level4">
+<h4>Bonesless (new in 5.0)</h4>
+<p>Never inherit from another player’s grave. 5.0 records the number of
+bones files loaded during your run; if it stays at zero through the
+entire game, the bonesless conduct is preserved. You can keep it by
+playing a fresh dungeon directory (no bones files to load), by running a
+fully fresh-seed session, or simply by being lucky enough that no level
+you generate hits a stored bones state. Self-imposed practice is to
+avoid commands or downloads that would import bones, but most of the
+time the conduct just happens.</p>
 <p>Your <code>#conduct</code> screen also tracks whether you’ve used an
 amulet of life saving, which some players consider an informal conduct
 of its own.</p>

@@ -5647,7 +5647,12 @@ since 3.6.
 `blind` option at game start. You'll need telepathy and other
 senses to navigate. Officially tracked since 3.6.
 
-#### Pauper
+Mazes 5.0 added five more tracked conducts — Pauper, Petless,
+Permadeaf, Sokoban, and Bonesless. The first three are start-of-game
+options; the latter two are tracked automatically based on what you
+do during the run.
+
+#### Pauper (new in 5.0)
 
 Start with absolutely nothing — no gold, no inventory, no armor. Set
 `OPTIONS=pauper` in your rcfile (or `pauper:true` in the in-game `O`
@@ -5666,7 +5671,7 @@ proportionally more valuable. The traditional roleplaying version,
 "never spend gold," is not tracked by the game in 5.0 — it lives on
 only as a self-imposed extension of the pauper start.
 
-#### Petless
+#### Petless (new in 5.0)
 
 Never have a pet. Set `OPTIONS=pettype:none` in your rcfile to skip
 the starting companion entirely (this overrides per-role defaults).
@@ -5678,7 +5683,7 @@ you gain is the particular satisfaction of knowing that everything
 that died did so by your hand, and that you never had to feel guilty
 about leading something loyal into a polymorph trap.
 
-#### Permadeaf
+#### Permadeaf (new in 5.0)
 
 Never hear anything. Set `OPTIONS=!acoustics` in your rcfile (or
 `acoustics:false` in the in-game `O` menu) — the game then runs
@@ -5695,7 +5700,7 @@ requires navigating the dungeon by sight and logic alone, which turns
 out to be possible and occasionally educational about how much
 information you normally get for free.
 
-#### Sokoban
+#### Sokoban (new in 5.0)
 
 Complete Sokoban without cheating. No digging through the puzzle levels,
 no teleportation to skip steps, no picking up boulders and carrying them
@@ -5704,6 +5709,17 @@ by actually solving the puzzle. The game now tracks violations
 automatically. This is the conduct for players who genuinely enjoy
 Sokoban's boulder-shoving sequences and want their playthrough to
 acknowledge a clean solve.
+
+#### Bonesless (new in 5.0)
+
+Never inherit from another player's grave. 5.0 records the number of
+bones files loaded during your run; if it stays at zero through the
+entire game, the bonesless conduct is preserved. You can keep it by
+playing a fresh dungeon directory (no bones files to load), by
+running a fully fresh-seed session, or simply by being lucky enough
+that no level you generate hits a stored bones state. Self-imposed
+practice is to avoid commands or downloads that would import bones,
+but most of the time the conduct just happens.
 
 Your `#conduct` screen also tracks whether you've used an amulet
 of life saving, which some players consider an informal conduct
