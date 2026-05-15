@@ -4917,7 +4917,7 @@ The solutions still work — just mirror the directions.
 
 > *Solutions originally compiled by Boudewijn Waijers, with
 > contributions by Jukka Lahtinen and others, for the steelypips.org
-> NetHack archive maintained by Kate Nepveu. Adapted and reformatted
+> NetHack archive maintained by Kate Nepveu. Adapted for 5.0 and reformatted
 > for this guide.*
 
 #### Level 1, Version A
