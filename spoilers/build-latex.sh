@@ -18,7 +18,11 @@ if ! command -v xelatex &>/dev/null; then
 fi
 
 echo "=== Building PDF via LaTeX ==="
-pandoc companion.md \
+# Print version drops web-only asides ("or more likely scrolling
+# through" — true in a browser, false on paper). Anything that's
+# accurate-on-screen-only-and-wrong-in-print belongs in this sed.
+sed -e 's/ (or more likely scrolling through)//' companion.md > .companion-print.md
+pandoc .companion-print.md \
   --from=markdown \
   --pdf-engine=xelatex \
   --template=template.tex \
@@ -26,6 +30,7 @@ pandoc companion.md \
   --top-level-division=part \
   --toc \
   --output=companion-latex.pdf 2>&1
+rm -f .companion-print.md
 
 echo "    → companion-latex.pdf"
 echo "=== Done ==="

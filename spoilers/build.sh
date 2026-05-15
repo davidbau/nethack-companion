@@ -15,12 +15,6 @@ if ! command -v pandoc &>/dev/null; then
   exit 1
 fi
 
-if [ ! -x "$WEASYPRINT" ]; then
-  echo "Error: weasyprint not found in .venv. Set up with:" >&2
-  echo "  python3 -m venv .venv && .venv/bin/pip install weasyprint" >&2
-  exit 1
-fi
-
 echo "=== Building HTML ==="
 pandoc companion.md \
   --from=markdown \
@@ -32,8 +26,25 @@ pandoc companion.md \
 
 echo "    → index.html"
 
-echo "=== Building PDF ==="
-"$WEASYPRINT" index.html companion.pdf 2>&1 | grep -v "^$" || true
+if [ -x "$WEASYPRINT" ]; then
+  echo "=== Building PDF ==="
+  # Print version drops web-only asides ("or more likely scrolling
+  # through" — true in a browser, false on paper). Anything that's
+  # accurate-on-screen-only-and-wrong-in-print belongs in this sed.
+  sed -e 's/ (or more likely scrolling through)//' companion.md > .companion-print.md
+  pandoc .companion-print.md \
+    --from=markdown \
+    --to=html5 \
+    --template=template.html \
+    --section-divs \
+    --syntax-highlighting=none \
+    --output=.companion-print.html
+  "$WEASYPRINT" .companion-print.html companion.pdf 2>&1 | grep -v "^$" || true
+  rm -f .companion-print.md .companion-print.html
+  echo "    → companion.pdf"
+else
+  echo "(PDF skipped: weasyprint not found in .venv. To enable:"
+  echo "   python3 -m venv .venv && .venv/bin/pip install weasyprint)"
+fi
 
-echo "    → companion.pdf"
 echo "=== Done ==="
