@@ -5714,12 +5714,14 @@ acknowledge a clean solve.
 
 Never inherit from another player's grave. 5.0 records the number of
 bones files loaded during your run; if it stays at zero through the
-entire game, the bonesless conduct is preserved. You can keep it by
-playing a fresh dungeon directory (no bones files to load), by
-running a fully fresh-seed session, or simply by being lucky enough
-that no level you generate hits a stored bones state. Self-imposed
-practice is to avoid commands or downloads that would import bones,
-but most of the time the conduct just happens.
+entire game, the bonesless conduct is preserved. The cleanest way
+to lock this in is `OPTIONS=!bones` in your rcfile (or `bones:false`
+in the in-game `O` menu) — that turns off bones-file loading entirely
+for the run, so the conduct is automatic. Without that option, bones
+loading is on by default and the conduct depends on whether your
+dungeon directory happens to have eligible bones to deliver (it's
+also a per-level 1-in-3 roll when a candidate file exists, so you
+can also get bonesless by luck).
 
 Your `#conduct` screen also tracks whether you've used an amulet
 of life saving, which some players consider an informal conduct
