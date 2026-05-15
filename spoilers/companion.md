@@ -14,13 +14,13 @@ in existence: dozens of levels of corridors, vaults, and special
 chambers, stretching from the relatively tame upper mines all the way
 down to the molten depths of Gehennom and beyond.
 
-People have been descending into these depths for nearly four decades.
+People have been descending into these depths for more than four decades.
 Most of them died. The ones who made it back brought stories, and some
 of those stories eventually got written down. You're reading the latest
 edition of that accumulated lore.
 
 The Mazes have predecessors. Before this dungeon took its current form,
-adventurers explored simpler places — a dungeon called Hack, and before
+adventurers explored simpler places: a dungeon called Hack, and before
 that the legendary Rogue, whose procedurally-generated corridors first
 established what a dungeon could mean in the age of computing. Each
 generation of explorers added to what the previous one learned, until
@@ -39,14 +39,14 @@ go learn things the hard way. There is real joy in that.
 
 **Looking for the manual instead?** If you're just looking for game
 commands, item lists, and mechanics without spoilers, you want the
-[Guide to the Mazes of Menace](../guidebook/) instead. That's the reference
-manual that comes with the game. This document is a *strategic* guide —
-it assumes you already know how to play and want to know how to
-*survive*.
+**[Guide to the Mazes of Menace](../guidebook/)** instead. That's the
+reference manual that comes with the game. This document is a
+*strategic* guide. It assumes you already know how to play and want
+to know how to *survive*.
 
 But if you've died to one too many rubber-banded acid blobs, or you're
 tired of starving on dungeon level four because you didn't know you
-could pray — read on. We'll do our best to keep you alive.
+could pray, read on. We'll do our best to keep you alive.
 
 ---
 
@@ -169,7 +169,7 @@ and a +0 lance among your gear. The pony is a decent combatant early
 on and the basis of your unique trick: jousting from horseback with
 the lance is devastating when it connects, though the lance is largely
 useless on foot. As a Lawful character with a starting long sword, you
-also have the best odds in the game at Excalibur — dip your long sword
+also have the best odds in the game at Excalibur. Dip your long sword
 in a fountain at experience level 5+ and Knights get a 1-in-6 chance
 per dip, far better than the 1-in-30 every other Lawful role faces.
 Knights follow a code of conduct that imposes alignment penalties for
@@ -190,7 +190,7 @@ is enormously useful. You know immediately whether that cloak you just
 found is safe to wear. Priests are competent fighters with access to
 clerical spells and begin with a mace. There's also a gift waiting at
 the first altar. Demonbane, now a silver mace, is the guaranteed first
-sacrifice gift for Priests — the gods have apparently decided that
+sacrifice gift for Priests: the gods have apparently decided that
 someone who starts the game knowing what everything's blessed or cursed
 status is deserves a matching weapon. The silver mace type aligns with
 Priest weapon skills, which means you actually want what you'll receive.
@@ -203,7 +203,7 @@ get stealth and see invisible early. Your elven racial option gives
 you sleep resistance on top of that. If you enjoy picking off enemies
 from a distance, this is your role. *Alignment: Neutral or Chaotic.*
 
-**Rogue.** NetHack's thief class — sneaky combat, lockpicking, and
+**Rogue.** NetHack's thief class: sneaky combat, lockpicking, and
 backstabs. You start with a short sword, six daggers for throwing,
 leather armor, a lock pick, a sack, and a potion of sickness (handy
 for poisoning blades or for tossing at an enemy). The lock pick is a
@@ -235,12 +235,12 @@ beginner-friendly roles: strong combat stats, good starting equipment,
 and cold resistance covers one of the more common damage types. If
 you're Neutral, your artifact prize is **Mjollnir**, a +d5/+d24 war
 hammer that's brutal in melee against anything not shock-resistant and
-returns when thrown if you can reach Strength 25. It's not free —
+returns when thrown if you can reach Strength 25. It's not free:
 you'll need to sacrifice corpses on a co-aligned altar and hope for
-the gift, or wish for it later — but it's one of the best weapons in
+the gift, or wish for it later. But it's one of the best weapons in
 the game once acquired. Lawful Valkyries can instead pursue Excalibur
 via fountain dipping (see the Knight section for the dip mechanics,
-though Valkyries don't share the Knight's 1-in-6 odds — it's the
+though Valkyries don't share the Knight's 1-in-6 odds; it's the
 standard 1-in-30 for everyone else).
 This is the recommendation for your first serious attempt.
 *Alignment: Lawful or Neutral. Female only.*
@@ -254,7 +254,7 @@ One bookkeeping advantage that's easy to overlook: in 5.0,
 advancing a spell school skill automatically reveals the appearances of
 spellbooks in that school. Reach Expert in attack magic and you'll know
 what every attack spellbook looks like at a glance. This means training
-your spell skills has identification value on top of casting power — a
+your spell skills has identification value on top of casting power: a
 reason to specialize deliberately rather than spreading ranks around.
 The dungeon is full of books you'd love to read; now you can tell which
 ones they are without risking your sanity on the wrong one.
@@ -482,7 +482,7 @@ pet is.
 New in NetHack 5.0: somebody has been leaving care packages.
 
 Every level above the Oracle has a 2/3 chance of hosting a "supply
-chest" — usually a chest (sometimes a large box), usually locked,
+chest": usually a chest (sometimes a large box), usually locked,
 seeded with at least one survivability item. The contents pool:
 potion of healing (about a 50% chance per chest, sometimes a pair),
 or otherwise potion of extra healing / speed / gain energy, scroll
@@ -492,7 +492,7 @@ of an extra random item, biased toward low-level spellbooks. The
 Mines branch level gets a different gift: a guaranteed food ration,
 cram ration, or lembas wafer.
 
-These look like ordinary containers — no special marking — which is
+These look like ordinary containers, no special marking, which is
 the point: the Mazes are not in the habit of labeling things "useful,
 open me." On your first ten levels, check every chest and large box
 you find. A locked one will yield to a credit card, a key, a wand of
@@ -530,7 +530,7 @@ top), your **Quest** (your role's special dungeon), and optionally
 **The Castle**, which guards the entrance to Gehennom.
 
 **Gehennom** is the lower half: maze levels, demon lords, and
-the ultimate objective — the **Amulet of Yendor** at the very
+the ultimate objective: the **Amulet of Yendor** at the very
 bottom in Moloch's Sanctum. Once you have it, you climb all the
 way back up and pass through the **Elemental Planes** to reach
 the **Astral Plane**, where your god awaits your offering.
@@ -670,7 +670,7 @@ are dangerous in numbers, but royal jelly is excellent food.
 change to ordinary level generation: scattered through the
 Dungeons of Doom, you'll occasionally walk into rooms that
 aren't shops, aren't zoos, and aren't anything else from the
-list above — but are also clearly not random. They're called
+list above, but are also clearly not random. They're called
 **themed rooms**, and there are dozens of them. Some have
 unusual *shapes* (L-shaped, T-shaped, S-shaped, circular,
 cross-shaped, four-leaf-clover-shaped, with pillars, with a
@@ -683,21 +683,21 @@ a spider nest; an ice room; a cloud room; a boulder room).
 
 The interesting ones for the player:
 
-- **Light source rooms** — they reliably contain a usable lit
+- **Light source rooms.** They reliably contain a usable lit
   candle, lantern, or lamp. Free torches.
-- **Buried treasure** — the floor needs digging, but the haul
+- **Buried treasure.** The floor needs digging, but the haul
   is real. A pick-axe earns its weight here.
-- **Massacre / mausoleum** — leave a few corpses for sacrifice.
+- **Massacre / mausoleum.** Leave a few corpses for sacrifice.
   Old corpses sometimes carry surprises (a wraith corpse for the
   level boost is the famous one).
-- **Spider nest, buried zombies, teleportation hub** — these
+- **Spider nest, buried zombies, teleportation hub.** These
   are traps in everything but name. The encounter scales with
   level difficulty, so what looks innocuous on Dlvl 4 is rough
   on Dlvl 18. Recognize the pattern, retreat, prepare, return.
-- **Fake Delphi** — the "Oracle" inside is just a regular human.
+- **Fake Delphi.** The "Oracle" inside is just a regular human.
   Don't pay for advice.
 - **Light-and-frame rooms (pillars, room-in-a-room, blocked
-  center)** — tactically excellent for setting up Elbereth
+  center).** Tactically excellent for setting up Elbereth
   squares or anchoring a polearm fight.
 
 Themed rooms are mixed in with ordinary rooms; you can have
@@ -711,14 +711,14 @@ more item discovery, and the occasional educational ambush.
 
 Not everything interesting in the dungeon is trying to kill you.
 Scattered throughout the levels are fixtures that reward the
-curious—and occasionally punish them. Learning what to do (and what
+curious, and occasionally punish them. Learning what to do (and what
 *not* to do) with each of these is a rite of passage.
 
 #### Fountains `{`
 
 Ah, fountains. That gentle bubbling sound has lured more adventurers
 to their doom than any trap. Every experienced player has a fountain
-story—the time they summoned a water demon on dungeon level 3, the
+story: the time they summoned a water demon on dungeon level 3, the
 time they quaffed and got a wish, the time snakes poured out of
 the basin.
 
@@ -741,7 +741,7 @@ curiosity has a body count.
 
 **Dipping in a fountain** is a different gamble, and one that Lawful
 characters should know by heart. If you're at least experience level
-5, dipping a long sword may transform it into Excalibur—one of the
+5, dipping a long sword may transform it into Excalibur, one of the
 finest weapons in the dungeon. Knights get a generous 1/6 chance per
 dip; everyone else gets a meager 1/30. Otherwise, dipping can rust
 your gear, summon hostile water creatures, or occasionally bless
@@ -765,7 +765,7 @@ treasure it is.
 - No flash → uncursed
 
 This is free, unlimited, and works on everything. In the early game,
-your first altar becomes your testing laboratory—haul every
+your first altar becomes your testing laboratory: haul every
 suspicious piece of gear there before putting it on. Many promising
 ascensions have been saved by the simple discipline of altar-testing
 before wearing.
@@ -779,7 +779,7 @@ for the full theology.
 
 **Converting an altar** to your alignment is possible by offering a
 same-race sacrifice on an altar of a different alignment. It's a
-grisly business—but useful when the dungeon gives you an altar to
+grisly business, but useful when the dungeon gives you an altar to
 the wrong god.
 
 #### Thrones `\`
@@ -790,7 +790,7 @@ possible outcomes reads like a wish list shuffled with a hit list:
 - A wish (if your luck is positive)
 - Genocide of a monster class
 - Free identification of items in your pack
-- A stat boost—or a stat drain
+- A stat boost or a stat drain
 - An electric shock
 - Full healing
 - A crowd of hostile monsters, summoned for your amusement
@@ -822,7 +822,7 @@ in plain sight in kitchen-themed rooms.
   black pudding (terrifying!), or just stub your toe. Worth a kick
   in the early game if you can handle what comes out
 - **Dropping a ring down a sink** produces a message unique to the
-  ring type—"The water flow seems greater" for a ring of gain
+  ring type: "The water flow seems greater" for a ring of gain
   constitution, for example. This is one of the most reliable
   non-magical identification methods for rings
 - **Pouring potions down a sink** (by dipping) produces telltale
@@ -892,7 +892,7 @@ need to start the level over. The game won't warn you about this.
 
 The prize at the top is either a **bag of holding** (75% chance) or
 an **amulet of reflection** (25%), both extremely valuable. The roll
-is per-game, not per-variant — both level variants use the same
+is per-game, not per-variant. Both level variants use the same
 weighting. A cursed scroll of scare monster is placed under the prize
 as bait. A bag of holding lets you carry far more inventory at
 reduced weight. An amulet of reflection bounces ray attacks back at
@@ -1088,12 +1088,12 @@ You never see them coming. That's the whole point.
 
 Traps are invisible until you step on one, detect it with a search
 (`s` command), or reveal it by other means. Once discovered, they
-show up as `^` on your map—small consolation after you've already
+show up as `^` on your map, small consolation after you've already
 fallen in a pit. Each search of an adjacent square has an independent
 chance of revealing a trap, but the chance is well under 100%, so
 search repeatedly in suspicious areas. Your pet, being closer to the
 ground and warier by nature, will hesitate to step on traps it
-knows about—watch its movement for clues.
+knows about; watch its movement for clues.
 
 Here are the traps you'll encounter, roughly grouped by how much
 you'll regret finding them:
@@ -1124,7 +1124,7 @@ to stock up.
 | Hole             | Like a trapdoor, but you can see it                        |
 | Magic portal     | Transports to a different branch (branch entrances)        |
 
-Trapdoors and level teleporters are the most disruptive—one wrong
+Trapdoors and level teleporters are the most disruptive: one wrong
 step and you're separated from your pet, your stash, and your
 carefully explored map. But with teleport control (from an item or
 intrinsic), teleport traps become free transportation. Levitation
@@ -1151,7 +1151,7 @@ hoarding is suddenly ash. Fire resistance saves your skin but
 
 Polymorph traps are a double-edged sword. With polymorph control,
 they're a free polymorphing booth. Without it, you become something
-random—possibly a newt that can't use any of its equipment.
+random, possibly a newt that can't use any of its equipment.
 
 Sleeping gas is murder in monster-rich areas. You can't fight, you
 can't run, you can't even wake up on purpose. Monsters line up
@@ -1162,12 +1162,12 @@ Counterintuitive enough to mislead returning players. The trap
 drains spell energy as before, but in 5.0, having
 *magic resistance* now also triggers an "anti-magic implosion"
 that costs you HP. The base damage is small, but it stacks for
-each source of magic resistance you carry — wielding Magicbane
+each source of magic resistance you carry: wielding Magicbane
 adds to it, and carrying any other artifact whose protection
 covers magic missile adds to it again. Late-game ascenders walk
 into the field with three or four magic-resistance sources
 stacked and lose a frightening amount of HP at once. The defense is finding the trap first
-(search), or destroying it from range — 5.0 let you
+(search), or destroying it from range: 5.0 let you
 zap *cancellation* at magical traps to defuse them without
 setting them off.
 
@@ -1175,7 +1175,7 @@ setting them off.
 
 The best defense against traps is finding them before they find you:
 
-- **Search (`s`)** repeatedly—each search has an independent chance
+- **Search (`s`)** repeatedly. Each search has an independent chance
   to reveal each adjacent trap, and Luck improves the odds
 - **Wand of secret door detection** reveals traps in its path
 - **Crystal ball** can reveal traps across the entire level
@@ -1189,14 +1189,14 @@ spiked pit.
 
 #### Iron Bars
 
-Iron bars look like a barrier but aren't solid — light passes through,
+Iron bars look like a barrier but aren't solid: light passes through,
 you can see what's on the other side, and small creatures can squeeze
 between. What they resist is almost everything the player can throw
 at them: a pick-axe bounces off ("Clang!"), a wand of digging does
 nothing, hitting with a weapon does nothing, and kicking just hurts
 your foot. Despite long-running advice to the contrary, **throwing or
-otherwise applying a potion of acid does not dissolve iron bars** —
-the bars-corrode code only fires for acid *breath* (from a monster,
+otherwise applying a potion of acid does not dissolve iron bars**.
+The bars-corrode code only fires for acid *breath* (from a monster,
 or from you if polymorphed into a yellow dragon, acid blob, black
 naga, etc.).
 
@@ -1210,7 +1210,7 @@ occasionally retrieve loot from behind bars on its own.
 
 What's typically behind them: a scroll of teleportation (guaranteed
 if teleport isn't suppressed on the level), occasionally a random
-item or a previous adventurer's corpse. The scroll is a joke — you'd
+item or a previous adventurer's corpse. The scroll is a joke: you'd
 need one already to read it from outside the bars.
 
 #### Finding Secret Doors
@@ -1240,7 +1240,7 @@ secret. Searching once and moving on is essentially announcing your
 intention to remain lost.
 
 Move three squares along the wall and repeat. This creates overlapping
-search coverage—any secret door in that wall segment gets searched
+search coverage: any secret door in that wall segment gets searched
 from multiple adjacent positions, which dramatically improves your
 odds. The pattern looks tedious on paper because it *is* tedious,
 but tedium is cheaper than being trapped on Dlvl 1 forever.
@@ -1256,7 +1256,7 @@ but tedium is cheaper than being trapped on Dlvl 1 forever.
 **The wisdom of patience:**
 
 Secret doors are NetHack's way of teaching you that brute force
-doesn't solve every problem—sometimes you need brute force applied
+doesn't solve every problem. Sometimes you need brute force applied
 methodically to every wall section in sequence. The downstairs you
 seek is behind one of these walls. Finding it is a matter of
 systematic elimination. The only mistake is giving up after three
@@ -1285,7 +1285,7 @@ Elbereth has rules:
   standing on Elbereth, the word smudges and you lose protection.
   In 5.0 this also costs you −5 alignment as
   punishment for defiling the sacred word with violence. Elbereth
-  is defensive only — use it to buy time, not to fight from.
+  is defensive only. Use it to buy time, not to fight from.
 - **Some monsters ignore it.** Anything represented by `@` (humans,
   elves, player-like creatures), the Riders on the Astral Plane,
   Angels, minotaurs, unique/named monsters (quest nemeses, Vlad,
@@ -1299,8 +1299,8 @@ Elbereth has rules:
   an engraving, you need to overwrite it. Adding Elbereth to an
   existing message won't work.
 - **Engraving is an interruptible occupation.** In 5.0, writing with anything other than a wand takes multiple
-  turns (one per letter). If you're interrupted mid-word — by an
-  attack, a teleport trap, or anything else — you get a partial
+  turns (one per letter). If you're interrupted mid-word (by an
+  attack, a teleport trap, or anything else) you get a partial
   engraving that does nothing. This makes wands (which write the
   whole word instantly) far more valuable for emergency Elbereth.
 - **Durability varies by method.** In 5.0, the
@@ -1323,7 +1323,7 @@ one turn, produces a permanent engraving, and cannot be interrupted.
 A wand of digging is the next best option, also instant. Writing
 in dust with your finger is free and instant but erases almost
 immediately. All other methods take multiple turns and leave you
-vulnerable — use them only when you have breathing room.
+vulnerable. Use them only when you have breathing room.
 
 **Impairment and errors.** If you are blind, confused, stunned, or
 hallucinating, you have a chance of misspelling Elbereth with each
@@ -1368,7 +1368,7 @@ by how early you might encounter them:
 | `a`    | Ants      | Come in groups. Soldier ants are fast and hit hard.                                     |
 | `b`    | Blobs     | Acidic or gelatinous. Don't hit acid blobs in melee.                                    |
 | `d`    | Dogs      | Often your starting pet. Tame dogs are loyal. Wild ones are manageable.                 |
-| `e`    | Eyes      | **Floating eyes paralyze on melee hit.** Never hit an `e` in melee. Use ranged attacks. Spheres (flaming/freezing/shocking) explode in a 3×3 area in 5.0 — kill them at range; melee finishes them but you eat the blast. |
+| `e`    | Eyes      | **Floating eyes paralyze on melee hit.** Never hit an `e` in melee. Use ranged attacks. Spheres (flaming/freezing/shocking) explode in a 3×3 area in 5.0; kill them at range. Melee finishes them but you eat the blast. |
 | `f`    | Cats      | Like dogs, often starting pets. Felines can be tamed with tripe.                        |
 | `g`    | Gnomes    | Common in the Mines. Usually peaceful if you're a gnome.                                |
 | `h`    | Humanoids | Dwarves, bugbears, mind flayers. Wide range of difficulty.                              |
@@ -1386,7 +1386,7 @@ by how early you might encounter them:
 | `A`    | Angels            | Powerful, usually aligned. Don't fight your own.                                                     |
 | `C`    | Centaurs          | Fast archers who now back away when you approach to maintain range. Use corners to cut off their retreat. Mountain centaurs are the worst. |
 | `E`    | Elementals        | Hard to kill. Air elementals engulf; earth elementals phase through walls.                           |
-| `f`    | Displacer beast   | Cat-class, but vicious — three-attack heavy melee with a permanent displacement aura. Eat the corpse for temporary displacement of your own. |
+| `f`    | Displacer beast   | Cat-class, but vicious: three-attack heavy melee with a permanent displacement aura. Eat the corpse for temporary displacement of your own. |
 | `F`    | Fungi             | Yellow mold, green mold, shriekers. Shriekers summon other monsters.                                 |
 | `G`    | Gnome lords/kings | Tougher gnomes. Still fairly manageable.                                                             |
 | `H`    | Giants            | Strong melee, throw boulders. Giants carry gems.                                                     |
@@ -1419,7 +1419,7 @@ by how early you might encounter them:
 its own breath weapon, resistance, scale mail property, and degree of
 desire to kill you specifically. The summary:
 
-**Gray** dragon scale mail grants magic resistance — the most important
+**Gray** dragon scale mail grants magic resistance, the most important
 defensive property in the game, full stop. Gray dragons are the ones
 you most want to kill for their skin, and also the ones most likely to
 make you regret trying.
@@ -1427,14 +1427,14 @@ make you regret trying.
 **Silver** dragon scale mail grants reflection. The second pillar of not
 dying to wands.
 
-**Gold** dragons are new in 5.0 and breathe **fire** —
+**Gold** dragons are new in 5.0 and breathe **fire**:
 the same breath weapon as red dragons, so the same defenses apply.
 Their scale mail is what makes them interesting. Worn gold dragon
 scale mail is permanently lit: blessed glows *radiantly* (radius 4),
 uncursed *brilliantly* (radius 3), cursed merely *brightly* (radius
 2). It is the only body-slot light source in the game, and it lets
 you abandon torches, lamps, and oil for the rest of the run. The
-mail also confers **hallucination resistance** — modest in
+mail also confers **hallucination resistance**: modest in
 combat, useful against violet fungi, the rare ill-timed potion
 spill, and the late-game caster who thinks one of those is a good
 finisher. Gold dragons themselves carry fire resistance as a
@@ -1443,11 +1443,11 @@ material costs the same hunt as the rest. If your lamp budget is
 eating into your ascension kit, gold dragon scale mail is the
 solution.
 
-**Black** dragon breath disintegrates — and disintegrates everything
+**Black** dragon breath disintegrates, and disintegrates everything
 you're wearing along with you, including your magic resistance. Carry
 reflection or eat enough black dragons to grow disintegration
 resistance before going where they live. Their scale mail grants
-disintegration resistance plus drain resistance — the latter is a
+disintegration resistance plus drain resistance. The latter is a
 new 5.0 bonus and a rare extrinsic source.
 
 **Green** dragon scale mail grants sickness immunity, which is niche but
@@ -1528,7 +1528,7 @@ touch of death cast by demons or liches (the cast is gated by
 `!Antimagic`), and it also blocks the full 8d6+50 hit on Death the
 Rider's most-dangerous rolls (rolls 17-19 of 20). On Death's more
 common rolls (5-16 of 20, ~60%) you still take a permdmg life-drain
-even with magic resistance — so MR substantially mitigates Death's
+even with magic resistance, so MR substantially mitigates Death's
 touch but doesn't fully neutralize it. An amulet of life saving will
 revive you once. The wand and Finger of Death spell, like the spell
 version, are blocked by MR.
@@ -1557,7 +1557,7 @@ by ten. In 5.0, mind flayers no longer cause
 amnesia, but the Intelligence drain is still lethal if unchecked.
 
 **Defenses:** Wear a greased helmet to prevent tentacle attacks
-from connecting. Kill them at range (wands, spells). In 5.0 the unicorn horn no longer restores lost attributes —
+from connecting. Kill them at range (wands, spells). In 5.0 the unicorn horn no longer restores lost attributes;
 to recover drained Intelligence you need a *potion of restore
 ability* (uncursed restores one random ability; blessed restores
 all of them), the spell of restore ability, or prayer when you're
@@ -1578,8 +1578,8 @@ own; you have to kill enough monsters to re-earn them.
 
 **Defenses:** *Drain resistance* makes you immune. The classic
 sources are wielding Excalibur (Lawful), Stormbringer (Chaotic), or
-the Staff of Aesculapius (Healer's quest artifact), or — new in 5.0
-— wearing **black dragon scale mail**
+the Staff of Aesculapius (Healer's quest artifact), or (new in 5.0)
+wearing **black dragon scale mail**
 (disintegration resistance plus drain resistance, both in one
 slot). Eating a fresh wraith corpse restores one experience level
 and is one of the better reasons to carry a stack of them; tin
@@ -1589,8 +1589,8 @@ them if you can't eat now.
 
 **Disenchanters** (`R`, blue) are widely cursed online as the
 silent ascension-killer. Their claw drains *enchantment*: each
-hit picks a random charged or enchanted object — including your
-artifact weapon, including your dragon scale mail — and lowers
+hit picks a random charged or enchanted object (including your
+artifact weapon, including your dragon scale mail) and lowers
 its enchantment by one. The damage is invisible during the
 fight (no announcement) and permanent. Three or four hits will
 take a +7 sword to +3 and you won't notice until you check.
@@ -1599,7 +1599,7 @@ take a +7 sword to +3 and you won't notice until you check.
 soak up enchantment-drain attempts on themselves, and well-made
 items have a chance to resist on their own. There's no
 hard immunity. The reliable solution is to keep disenchanters out
-of melee — kill them with wands, spells, or thrown weapons. A
+of melee. Kill them with wands, spells, or thrown weapons. A
 ring of conflict is also helpful in disenchanter territory, since
 they'll attack each other before they reach you.
 
@@ -1611,8 +1611,8 @@ drops onto whoever passes underneath; the **trapper** (`t`,
 green, level 12) hides on the floor and engulfs whoever steps
 onto it. Both look like ordinary terrain until they trigger.
 Engulfment in 5.0 wraps and crushes rather than
-digesting — a 5.0 retcon, since the lurker doesn't actually have
-a stomach — but you still take damage
+digesting (a 5.0 retcon, since the lurker doesn't actually have
+a stomach), but you still take damage
 every turn until you cut your way out, with limited movement
 options while inside.
 
@@ -1626,13 +1626,13 @@ attack the host repeatedly; weapons still work from inside.
 **Yellow lights** and **black lights** (`y`, level 3-5) attack by
 exploding the moment you're adjacent. Yellow lights blind you;
 black lights confuse you and add hallucination. Both lights die
-in the explosion, so the encounter resolves immediately — but
+in the explosion, so the encounter resolves immediately, but
 you spend the next handful of turns blind or hallucinating, which
 is exactly the wrong state to be in if there's a follow-up fight.
 Black lights are also invisible until they hit you (unless you
 have *see invisible*).
 
-**Defenses:** Kill them at range — wands, thrown daggers, breath
+**Defenses:** Kill them at range with wands, thrown daggers, breath
 weapons, anything that doesn't bring you adjacent. Telepathy or
 warning helps you see black lights coming. If you do get blinded,
 a *unicorn horn* still cures it.
@@ -1640,7 +1640,7 @@ a *unicorn horn* still cures it.
 #### Seduction
 
 The **amorous demon** (`&`, gray) is the 5.0 unification of the
-old succubus and incubus into one species — same monster
+old succubus and incubus into one species: same monster
 internally, three names depending on gender (incubus / succubus /
 amorous demon). The seduction attack does no HP damage, but it
 drains experience levels and steals one item per encounter, and
@@ -1657,7 +1657,7 @@ chokepoints don't help as much as they normally would.
 #### The Riders
 
 On the Astral Plane, three unique `&`-class demons guard the way
-to the high altars: **Death**, **Famine**, and **Pestilence** —
+to the high altars: **Death**, **Famine**, and **Pestilence**,
 the Riders. They are level 30, regenerate while you fight, are
 permanently displaced (your swings will miss until the
 displacement breaks, like a displacer beast), see invisible, and
@@ -1668,13 +1668,13 @@ turns. Famine drives you instantly to Weak or Fainting from
 nutrition. Eating their corpses is fatal in different ways for
 each. A 5.0 mercy: if Pestilence or Famine connect
 with their first attack on a turn, the second attack downgrades
-to a stun rather than another full dose — without that, they'd
+to a stun rather than another full dose. Without that, they'd
 be near-instakill machines.
 
 **Defenses:** An **amulet of life saving** is the best insurance
 on Astral, full stop. Drain resistance handles a lot of the
 incidental damage. Magic resistance does *not* save you from
-Death's touch — only life saving will. Carry plenty of food
+Death's touch; only life saving will. Carry plenty of food
 (Famine's drain bypasses normal nutrition) and a unicorn horn
 for the hallucination/stun secondary effects. The Riders are
 slow at choosing targets in a crowd, so a ring of conflict on
@@ -1767,13 +1767,13 @@ entirely.
 
 **Strangulation.** Wearing a cursed amulet of strangulation slowly
 kills you over a few turns. **Cure:** remove the amulet (requires
-uncursing it first, since cursed amulets can't be removed — use a
+uncursing it first, since cursed amulets can't be removed: use a
 scroll of remove curse, holy water, or prayer).
 
 #### The Displacer Beast
 
 The **displacer beast** (`f`, blue) is a 5.0 addition to the
-bestiary — tiger-weight, three attacks per turn, AC −10, and
+bestiary: tiger-weight, three attacks per turn, AC −10, and
 *always* displaced: its visible image isn't where it really is,
 and the offset reshuffles every turn. Swing at the image and you
 hit empty floor. Until the displacement is broken (a successful
@@ -1786,7 +1786,7 @@ lets you locate it when you're blind. *See invisible* does not
 help; the beast isn't invisible, it's displaced.
 
 **What's worth it afterward.** Eating its corpse grants temporary
-intrinsic Displacement to *you* — the only on-demand source in
+intrinsic Displacement to *you*: the only on-demand source in
 the early-to-mid game. A late-game caster level becomes much
 friendlier with displacement up. The corpse rots like any other,
 so if you can't eat it now, tin it.
@@ -1797,7 +1797,7 @@ The **genetic engineer** (`Q`, green) shares its symbol class
 with the quantum mechanic but plays differently: where a quantum
 mechanic *teleports* its target on a hit, a genetic engineer
 *polymorphs* its target. One claw and, unless you have
-*Unchanging*, you become something else — same roll as any other
+*Unchanging*, you become something else: same roll as any other
 uncontrolled polymorph source, with the dramatic message "you
 undergo a freakish metamorphosis." Engineers also teleport on
 their own, so range alone won't save you forever.
@@ -1809,7 +1809,7 @@ between successful polymorph hits, so the encounter is survivable
 even without unchanging if you can finish quickly.
 
 **The corpse is a tool.** Eating a genetic engineer corpse is
-mechanically identical to eating a doppelganger corpse — the
+mechanically identical to eating a doppelganger corpse: the
 same uncontrolled polymorph, just with louder flavor text. The
 practical use is the same as the doppelganger's: tin it, and you
 have a portable polymorph source. Pair a tin with *polymorph
@@ -1834,7 +1834,7 @@ more than a bag of gold. Fortunately, the dungeon provides.
 
 #### Starting Pets
 
-Most roles begin with a faithful pet—a little dog or a kitten,
+Most roles begin with a faithful pet: a little dog or a kitten,
 depending on your role. This small creature is more useful than it
 looks. It follows you between levels (if adjacent when you take
 stairs), fights alongside you, picks up items, and eats food it
@@ -1849,7 +1849,7 @@ you trouble.
 
 One more thing: your pet will not step on cursed items willingly.
 This makes it one of the cheapest identification tools in the
-game—drop items on the ground and watch whether your pet avoids
+game: drop items on the ground and watch whether your pet avoids
 them. If it refuses to walk over a square, something cursed is
 sitting there.
 
@@ -1863,7 +1863,7 @@ goes feral and turns on you. Feeding is the antidote:
 - **Horses** prefer apples, carrots, and other vegetarian fare
 
 Tripe rations are ideal for dogs and cats. You'll find them
-scattered through the dungeon—always pick them up, even though
+scattered through the dungeon. Always pick them up, even though
 they're revolting food for humans. Your pet will adore you for it.
 
 #### Navigating Crowds
@@ -1877,7 +1877,7 @@ to route around peacefuls, treat them as furniture to navigate rather
 than obstacles to solve.
 
 In 5.0, this has been addressed. You can now displace
-peaceful monsters by walking into them — you and the monster swap
+peaceful monsters by walking into them: you and the monster swap
 positions, exactly as with your pet. No attack, no offense taken, no
 alignment consequence. The townsfolk of Minetown are finally navigable.
 
@@ -1885,7 +1885,7 @@ The limits are sensible: you cannot displace shopkeepers, priests,
 quest leaders, the Oracle, guards, or any monster that is sleeping or
 paralyzed. (Waking a sleeping monster by shoving it aside would be rude
 by any standard, dungeon or otherwise.) You also cannot displace a
-peaceful into a trap or hazardous terrain — the safety logic prevents
+peaceful into a trap or hazardous terrain; the safety logic prevents
 it. Within those constraints, crowded peaceful areas are no longer
 puzzles. They're just rooms with people in them.
 
@@ -1914,7 +1914,7 @@ A well-fed pet earns its keep in several ways:
 - **Combat muscle.** A strong pet clears rooms and softens up
   dangerous monsters before you engage
 - **Curse detection.** The old drop-and-watch trick, described
-  above—free, reliable, and available from turn one
+  above: free, reliable, and available from turn one
 - **Shoplifting.** If your pet picks up an item inside a shop and
   carries it out the door, the shopkeeper blames the animal, not
   you. This takes patience (the pet must wander onto the item,
@@ -1929,7 +1929,7 @@ A well-fed pet earns its keep in several ways:
 Pets die from the same things you do: traps, poison, powerful
 monsters, drowning in water. Keep an eye on your companion's
 health (`;` to farlook) and don't lead it into fights it can't
-win. A dead pet is not just a loss of utility—it's a cold feeling
+win. A dead pet is not just a loss of utility; it's a cold feeling
 in the pit of your stomach.
 
 If you change levels and your pet isn't adjacent, it won't follow.
@@ -1941,7 +1941,7 @@ Current editions have added two things that veteran pet-owners should know.
 
 First: your pet eats for a reason beyond loyalty. The same corpse
 mechanics that grant you resistances apply to pets as well. A pet that
-dines on the right monsters will gain resistances — fire resistance, cold
+dines on the right monsters will gain resistances: fire resistance, cold
 resistance, whatever the dungeon's terrible buffet was offering. A
 well-fed pet is also a better-armored one. This is not something you can
 reliably engineer, but it's a reason to let your pet eat rather than
@@ -1950,7 +1950,7 @@ scooping up every corpse yourself.
 Second, and more importantly: pets can now be revived. If your companion
 falls in battle, stand on its corpse at a co-aligned altar and pray.
 The gods, in their occasional mercy, may return it to you. This is a
-last-resort miracle, not a renewable strategy — your prayer timeout,
+last-resort miracle, not a renewable strategy: your prayer timeout,
 your alignment, and a certain amount of luck all factor in. But it means
 that the large cat you've carried since level 3, the one who has earned
 names and battle scars and the terrified respect of every dungeon denizen
@@ -1993,7 +1993,7 @@ single most powerful identification tool you have.
 
 Before you can worry about *what* an item is, you need to know
 *what condition* it's in. Every item in the Mazes is blessed, uncursed,
-or cursed — BUC for short — and the difference matters far more than
+or cursed (BUC for short), and the difference matters far more than
 you'd think. The gods have opinions about your equipment, and those
 opinions have consequences:
 
@@ -2003,7 +2003,7 @@ opinions have consequences:
 - A **cursed** piece of armor bonds to your skin like it has
   abandonment issues. You cannot remove it until you lift the curse.
 - A **cursed** potion of gain level interprets "gain a level" in the
-  most literal architectural sense — you rocket through the ceiling
+  most literal architectural sense: you rocket through the ceiling
   to the floor above, instead of gaining an experience level.
 
 The pattern is consistent: blessed items are helpful beyond their
@@ -2012,7 +2012,7 @@ creative ways to ruin your day. A blessed luckstone passively
 improves your luck; a cursed one drags it down. A cursed scroll of
 teleportation sends you somewhere terrible. You get the idea.
 
-You don't see BUC status by default (Priests are the exception — they
+You don't see BUC status by default (Priests are the exception: they
 sense it naturally, which tells you something about clerical
 paranoia). But there are several reliable ways to check:
 
@@ -2057,7 +2057,7 @@ quoted. With average Charisma (11-15) the quoted **buy** price equals
 the base price exactly, while the **sell** offer is half of base. Low
 Charisma pushes buy prices up sharply (×2 at Cha ≤ 5); high Charisma
 pulls them down (×½ at Cha ≥ 19). Sell prices are mostly unaffected
-by Charisma — they only shift when the player looks like a mark, in
+by Charisma; they only shift when the player looks like a mark, in
 which case sell drops to a third of base and buy rises to 4/3. Three
 visible cues count as "looking like a mark," and they all have the
 same effect (and don't stack): wearing a **dunce cap**, playing a
@@ -2069,17 +2069,17 @@ formulas. What matters is grouping: items quoted at similar prices
 are in the same price tier.
 
 Two further wrinkles for unidentified items. (1) About 25% of unID'd
-items carry an extra 4/3 buy surcharge — fixed per-item, so the same
+items carry an extra 4/3 buy surcharge, fixed per-item, so the same
 scroll's surcharge status is consistent across shops. (2) About 25%
 of shopkeepers are "unfamiliar" with unID'd merchandise and offer 3/4
-of normal on sell — fixed per-shopkeeper, so once you've tested one
+of normal on sell, fixed per-shopkeeper, so once you've tested one
 unID item you know the rule for all unID sales to that shop. Either
 of these can shift a quoted price into an adjacent tier, so when in
 doubt, check the surrounding tiers too.
 
 One more state worth knowing about: **Angry**. If you've previously
-done something to anger a shopkeeper — fired a wand from a doorway,
-attacked them, picked up an unpaid item while broke — and then made
+done something to anger a shopkeeper (fired a wand from a doorway,
+attacked them, picked up an unpaid item while broke) and then made
 amends (paid the bill, fled and let them calm down), the shopkeeper
 becomes peaceful again but keeps a permanent +33% buy surcharge on
 every item until you leave the level. Sell prices are unaffected.
@@ -2120,7 +2120,7 @@ most useful scrolls in the game and you just found it for free.
 
 <div class="price-id-toolbar"></div>
 
-Healing sits alone at $20 — uniquely identifiable from the price tag.
+Healing sits alone at $20, uniquely identifiable from the price tag.
 Water is always the "clear" potion, so if you see "clear potion" you
 know what it is without even checking the price. The $50 group is
 tricky because sickness and see invisible are in there together (one
@@ -2412,8 +2412,8 @@ you'll notice it when a ray bounces off you.
 you faster, a cloak of invisibility makes you invisible. But trying
 on unknown armor is **dangerous in a shop**: if the item is cursed,
 it welds itself to you, you can't drop it, and the shopkeeper still
-expects payment. Worse, the most commonly auto-cursed armor types —
-fumble boots, levitation boots, gauntlets of fumbling — are exactly
+expects payment. Worse, the most commonly auto-cursed armor types
+(fumble boots, levitation boots, gauntlets of fumbling) are exactly
 the ones that masquerade as desirable boots and gloves. **Always
 verify BUC before wearing unknown armor in a shop.** Shops don't
 have altars, so the standard altar-drop BUC check isn't available
@@ -2432,7 +2432,7 @@ four shuffled pools are:
   crested / visored helmet → one of helmet, helm of caution, helm
   of opposite alignment, helm of telepathy. (Helm of brilliance is
   always "crystal helmet"; dunce cap and cornuthaum both look like
-  "conical hat" — that pair *is* a fixed pun.)
+  "conical hat"; that pair *is* a fixed pun.)
 - 4 magical **cloaks** share 4 appearances: tattered cape / opera
   cloak / ornamental cope / piece of cloth → one of cloak of
   protection, invisibility, magic resistance, or displacement.
@@ -2451,8 +2451,8 @@ fall into informative tiers.
 | Price | Type     | Possibilities                                                    |
 | ----- | -------- | ---------------------------------------------------------------- |
 |     8 | Boots    | elven (stealth), kicking                                         |
-|    30 | Boots    | fumble, levitation — both commonly cursed!                       |
-|    50 | Boots    | speed, water walking, jumping — all desirable                    |
+|    30 | Boots    | fumble, levitation (both commonly cursed!)                       |
+|    50 | Boots    | speed, water walking, jumping (all desirable)                    |
 |     8 | Gloves   | leather gloves (only)                                            |
 |    50 | Gloves   | gauntlets of fumbling, power, or dexterity                       |
 |    50 | Cloaks   | cloak of protection or displacement                              |
@@ -2460,13 +2460,13 @@ fall into informative tiers.
 
 <div class="price-id-toolbar"></div>
 
-A $30 boot is the warning sign — both candidates are common
+A $30 boot is the warning sign: both candidates are common
 auto-curse items and putting them on without BUC-checking can ruin
 a run. A $50 boot is almost always one you want. A $60 cloak is one
 of two excellent cloaks, but you still need BUC and a free body
 before wearing. $8 boots and $50 gauntlets are the cases where you
 can't tell stealth-from-kicking or fumbling-from-power by price
-alone — try them on (BUC-checked) and watch for the messages.
+alone. Try them on (BUC-checked) and watch for the messages.
 
 #### Gray Stones: Four Stones, One Correct Answer
 
@@ -2489,7 +2489,7 @@ If it scoots away normally, it's not a loadstone. A loadstone is
 abnormally heavy and resists being kicked.
 
 **The pick-up test.** A cursed loadstone cannot be dropped once
-picked up — it magically returns to your inventory. If you pick up
+picked up: it magically returns to your inventory. If you pick up
 a gray stone and it weighs you down suspiciously, try to drop it.
 If you can't, it's a cursed loadstone. Uncurse it immediately
 (holy water, scroll of remove curse, prayer) so you can get rid
@@ -2592,9 +2592,9 @@ and you'll rarely be surprised.
 
 ### Provisions and Dining
 
-Of all the things that kill adventurers in the Mazes of Menace —
-the dragons, the liches, the cockatrices, the inexplicable decision
-to kick a sink — none is quite as embarrassing as starving to death
+Of all the things that kill adventurers in the Mazes of Menace (the
+dragons, the liches, the cockatrices, the inexplicable decision to
+kick a sink), none is quite as embarrassing as starving to death
 while carrying forty thousand gold pieces. Hunger is the dungeon's
 most persistent clock: every turn you spend costs nutrition, and
 when the tank hits empty, you faint. Faint a few times without
@@ -2703,7 +2703,7 @@ priority.
 ### The Apothecary
 
 The dungeon is full of mysterious bottles. Ruby liquids, milky
-fluids, smoky concoctions—each one a small gamble between salvation
+fluids, smoky concoctions: each one a small gamble between salvation
 and catastrophe. The colors are shuffled every game, so the "bubbly
 potion" that healed you last time might polymorph you this time.
 Identification is everything.
@@ -2726,7 +2726,7 @@ short list of candidates:
 
 <div class="price-id-toolbar"></div>
 
-Water is the oddity in the $100 group — it always appears as "clear
+Water is the oddity in the $100 group: it always appears as "clear
 potion," identifiable on sight. Don't underestimate it; water is
 the raw material for holy water, which is the foundation of
 everything.
@@ -2748,10 +2748,10 @@ rest of the game. Speed is arguably the single most important buff
 in NetHack; the difference between moving at normal speed and fast
 speed is the difference between trading blows and hitting twice
 before they swing once. In 5.0, the wand of speed
-monster no longer grants permanent speed when self-zapped—only a
+monster no longer grants permanent speed when self-zapped, only a
 temporary burst of 50–74 turns. The potion is the real prize.
 
-**Holy water.** Not a potion you find—a potion you *make*. Drop
+**Holy water.** Not a potion you find: a potion you *make*. Drop
 uncursed water on a co-aligned altar, pray, and the gods bless it
 for you. Holy water can then bless any item you dip into it. This
 is the engine that drives your entire inventory: blessed scrolls
@@ -2765,7 +2765,7 @@ better through alchemy.
 #### Alchemy
 
 Here's where potions get interesting. Dip one potion into another
-and you might create something better—or you might cause an
+and you might create something better, or you might cause an
 explosion. Most combinations are duds, but the useful recipes are
 worth memorizing:
 
@@ -2793,15 +2793,15 @@ is a way to manufacture gain-level potions rather than wait for the
 dungeon to drop them.
 
 **A note on the current state of dungeon chemistry.** The old alchemy
-trick — dilute a large stack of potions by dipping them in water, then
-convert the whole diluted stack at once — no longer works. Current
+trick (dilute a large stack of potions by dipping them in water, then
+convert the whole diluted stack at once) no longer works. Current
 editions cap diluted dips at two potions per operation. The chain from
 healing up to gain ability is still there; you just do it in small batches
 with undiluted inputs. Think of it as artisanal alchemy rather than
 industrial production.
 
 The explosion risk is real: roughly 10% on any non-water combination. An
-alchemy smock — if you find one — reduces this to about 1 in 30, which
+alchemy smock (if you find one) reduces this to about 1 in 30, which
 is the difference between "risky hobby" and "acceptable profession." Do
 your chemistry in an isolated room, away from your stash, and never use
 a cursed potion as a dipping target. Cursed targets always explode. The
@@ -2824,15 +2824,15 @@ pharmacy.
 ### The Scroll Rack
 
 Scrolls are the dungeon's single-use spells: read once, triggered,
-gone. They appear with absurd randomized labels—"ZELGO MER,"
-"DAIYEN FOOELS," "PRATYAVAYAH"—that stay consistent within a game
+gone. They appear with absurd randomized labels ("ZELGO MER,"
+"DAIYEN FOOELS," "PRATYAVAYAH") that stay consistent within a game
 but mean nothing until you identify them. The labels are part of
 the charm. You'll develop superstitious favorites.
 
 #### The Scroll Table
 
 Price-identification is especially powerful for scrolls, because the
-cheapest scroll (base 20) is always identify—the one you need most:
+cheapest scroll (base 20) is always identify, the one you need most:
 
 | Price | Scrolls                                                                                                           |
 | ----- | ----------------------------------------------------------------------------------------------------------------- |
@@ -2849,7 +2849,7 @@ cheapest scroll (base 20) is always identify—the one you need most:
 The $60 group is treasure (enchant weapon lurks there alongside
 innocent blank paper). The $80 group is equally good: enchant armor
 and remove curse, two scrolls you'll always want more of. The $100
-group is the danger zone—a grab-bag mixing magic mapping and
+group is the danger zone, a grab-bag mixing magic mapping and
 teleportation with destroy armor. And at $300, you'll find both
 genocide (one of the strongest effects in the game) and punishment
 (a ball and chain permanently attached to your ankle). Choose wisely.
@@ -2873,7 +2873,7 @@ entire inventory. Every adventurer has a "put on a cursed ring"
 story. This scroll is the happy ending.
 
 **Charging.** Recharges wands and rechargeable tools. Save these
-for your wand of wishing—one charge means one more wish. Blessed
+for your wand of wishing: one charge means one more wish. Blessed
 charging restores more charges. But don't get greedy: each recharge
 increases the chance the wand explodes. The second recharge is
 pushing your luck; the third is usually fatal for the wand.
@@ -2881,7 +2881,7 @@ pushing your luck; the third is usually fatal for the wand.
 **Genocide.** The nuclear option. Uncursed eliminates a single
 species; blessed wipes an entire monster class from the game
 forever. Liches and mind flayers are popular targets. Read one
-while confused and you genocide your own race—which kills you
+while confused and you genocide your own race, which kills you
 instantly. Read carefully.
 
 **Magic mapping.** Reveals the entire level layout; blessed also
@@ -2895,7 +2895,7 @@ and it crumbles to dust. So choose your standing spot wisely.
 
 **Teleportation.** Uncursed teleports you randomly on the level.
 Cursed or confused reading sends you to a random dungeon level.
-With teleport control, *you* choose where you land—making this
+With teleport control, *you* choose where you land, making this
 one of the most versatile escape tools in the game.
 
 #### Confused Reading
@@ -2904,13 +2904,13 @@ Here's a trick the dungeon doesn't advertise: many scrolls do
 something completely different when read while confused. Some of
 these alternate effects are *better* than the normal ones:
 
-- **Confused destroy armor** doesn't destroy anything—it
+- **Confused destroy armor** doesn't destroy anything: it
   *erodeproofs* a piece of armor. One of the best tricks in the game
 - **Confused enchant armor / enchant weapon** also erodeproof
   instead of enchanting. Useful when you need protection from rust
   more than another +1
 - **Confused remove curse** has a 25% chance of blessing *or*
-  cursing each uncursed item—risky, but it's a clever way to create
+  cursing each uncursed item. Risky, but it's a clever way to create
   holy water if you confuse-read while carrying uncursed potions of
   water
 - **Confused genocide** genocides your own role. This kills you.
@@ -2963,7 +2963,7 @@ area around you.
 wish. In 5.0, wands of wishing generate with only **1
 charge** and can be recharged once (and only once) to a maximum of
 1 additional charge. This means the Castle wand of wishing typically
-yields 2 wishes plus a possible wrested third — a significant
+yields 2 wishes plus a possible wrested third, a significant
 reduction from older versions where it could provide 5 to 7. Plan
 your wishes carefully before you find one.
 
@@ -2995,14 +2995,14 @@ creatively (polymorph a pile of junk armor hoping for dragon scale
 mail, polymorph a weak monster hoping for a useful corpse). Risky
 but powerful.
 
-**Make invisible.** Turns a target — or yourself, if you zap it
-reflexively — invisible. In older editions, self-zapping granted a
+**Make invisible.** Turns a target (or yourself, if you zap it
+reflexively) invisible. In older editions, self-zapping granted a
 permanent invisibility intrinsic, which made this a coveted find. In
 5.0, it gives you 31–45 turns of temporary invisibility.
 Still useful for slipping through a dangerous area or turning a fight
 in your favor, but not a permanent upgrade. For lasting invisibility,
 you want a ring of invisibility or a cloak. The wand is now a tactical
-tool rather than a build enabler — think of it as "invisibility on
+tool rather than a build enabler: think of it as "invisibility on
 demand for the next minute" rather than "invisibility forever from one
 lucky find."
 
@@ -3021,7 +3021,7 @@ result when used to engrave on the floor.
 One precaution before you start writing on the floor: in 5.0, a *cursed* wand used for engraving may explode. This puts
 a premium on knowing a wand's BUC status before you test it. A scroll
 of identify spent on an unknown wand you're about to engrave-test is
-not a waste — it's cheaper than the alternative, which is standing in
+not a waste; it's cheaper than the alternative, which is standing in
 a crater where your engrave station used to be. BUC-test at an altar,
 use a potion of holy water on the wand, or apply a scroll of identify
 first. Then engrave to your heart's content.
@@ -3045,7 +3045,7 @@ BEAM (immediate). This alone cuts the possibilities dramatically.
   sleep, death): Digging riddles the floor with holes. Fire, cold,
   and lightning produce obvious elemental effects. Sleep stops bugs
   from moving. Magic missile and death just write in dust. Of these
-  two, death is $500 — check the price first.
+  two, death is $500; check the price first.
 - **BEAM wands** (everything else): The engrave test doesn't
   distinguish most beam wands well. If the engraving vanishes, it's
   cancellation or make invisible. If the engraving disappears
@@ -3069,7 +3069,7 @@ after engraving, zap them at safe targets:
 **Step 3: When in doubt, check the price.** If testing hasn't
 resolved the wand, its shop price narrows the field further. A
 $150 wand is one of thirteen types. A $200 wand is one of four.
-A $500 wand is death or wishing — and you should be very careful
+A $500 wand is death or wishing, and you should be very careful
 with it either way.
 
 #### Recharging
@@ -3144,18 +3144,18 @@ auto-curse means the hard way.
 
 **Ring of aggravate monster** deserves a footnote in the "niche uses
 of terrible things" category. In 5.0, wearing it roughly
-doubles the effective dungeon level for purposes of monster generation —
+doubles the effective dungeon level for purposes of monster generation,
 so creatures well above your current depth start appearing. This is
 obviously catastrophic if you forget you're wearing it. But for a
 chaotic player who needs high-difficulty sacrifice fodder for the next
-artifact gift, deliberately wearing the ring to force harder spawns —
-then removing it — is a calculated risk with an actual payoff. The key
+artifact gift, deliberately wearing the ring to force harder spawns
+(then removing it) is a calculated risk with an actual payoff. The key
 word is "deliberately." The ring is auto-cursed 90% of the time. If it
 goes on and won't come off, the fact that you're now generating liches
 on dungeon level 8 is no longer a feature.
 
 **The rings that matter most:** Free action is arguably the single
-best ring in the game—paralysis is death in the late game, and
+best ring in the game: paralysis is death in the late game, and
 this ring makes you immune. Teleport control turns random
 teleportation from a nuisance into on-demand transportation.
 Conflict makes monsters attack each other instead of you, which
@@ -3163,7 +3163,7 @@ is devastating on crowded levels (though it also turns your pets
 hostile). Slow digestion lets you go indefinitely between meals.
 
 In 5.0, a blessed potion of polymorph grants you polymorph
-control for that specific transformation — you choose the form, no ring
+control for that specific transformation: you choose the form, no ring
 required. This makes the ring of polymorph control less of a critical
 acquisition: you no longer need to find it or wish for it just to do a
 single controlled polymorph. The ring remains useful if you want ongoing
@@ -3173,13 +3173,13 @@ wish for something else.
 
 **The hidden cost:** Every ring you wear increases your hunger rate.
 Two rings drain food noticeably faster. The veteran habit is to
-keep rings in inventory and slip them on only when needed—free
+keep rings in inventory and slip them on only when needed: free
 action before fighting mind flayers, conflict before entering a
 throne room. Economy of fingers is an art.
 
 #### Amulets
 
-Amulets are simpler in theory but harder to identify—they all cost
+Amulets are simpler in theory but harder to identify: they all cost
 $150, so price is no help. You'll need to wear-test or use a scroll
 of identify. The stakes are high, because the range runs from "saves
 your life" to "slowly strangles you to death":
@@ -3197,8 +3197,8 @@ your life" to "slowly strangles you to death":
 | Strangulation          | Slowly kills you (always cursed)            |
 | Restful sleep          | Puts you to sleep randomly (usually cursed); grants +1 HP/turn regen while asleep |
 
-**Life saving** is the crown jewel. When you die—any kind of
-death—it triggers, revives you at full HP, and crumbles to dust.
+**Life saving** is the crown jewel. When you die (any kind of
+death) it triggers, revives you at full HP, and crumbles to dust.
 Wear it whenever you're going somewhere dangerous. Take it off when
 you're safe. You only get the one miracle.
 
@@ -3212,18 +3212,18 @@ puzzle: pair it with a cloak of magic resistance (MC1) and you
 reach MC3, freeing you from needing the less versatile cloak of
 protection.
 
-**Magical breathing** prevents drowning—which sounds niche until
+**Magical breathing** prevents drowning, which sounds niche until
 you reach Medusa's level (surrounded by water) or the Plane of
 Water (entirely underwater). Then it's existential.
 
 **Restful sleep** puts you to sleep randomly and is usually cursed,
 which should tell you everything you need to know about when to put it
 on unexamined. However, in 5.0, wearing it while asleep
-grants +1 HP per turn via accelerated regeneration — stacking with your
+grants +1 HP per turn via accelerated regeneration, stacking with your
 normal healing. In a fully secured room with the door spiked shut and
 nothing actively trying to kill you, this turns a nearly useless item
-into a slow but functional field hospital. The conditions required —
-safety, time, and nothing better to do — describe a situation you rarely
+into a slow but functional field hospital. The conditions required
+(safety, time, and nothing better to do) describe a situation you rarely
 find in the Mazes. When you do, the amulet is less embarrassing to wear
 than it looks.
 
@@ -3232,7 +3232,7 @@ than it looks.
 Rings and amulets resist casual identification. The best approaches:
 drop rings down sinks (each type produces a unique message),
 wear-test in safe areas (risky with auto-cursing types), or use
-scrolls of identify. For amulets, there's no price trick—identify
+scrolls of identify. For amulets, there's no price trick: identify
 scrolls or careful wear-testing are your main options. Always
 BUC-test an amulet before putting it on; cursed amulets of
 strangulation are one of the most embarrassing ways to die.
@@ -3261,7 +3261,7 @@ in this grab-bag.
 
 The **bag of holding** deserves its own paragraph because it
 transforms how you play. A blessed bag reduces the weight of
-everything inside to roughly one quarter—meaning you can carry your
+everything inside to roughly one quarter, meaning you can carry your
 entire potion supply, your backup armor, your scroll library, and
 still have room for loot. Get one from Sokoban or wish for one
 early. It's that important.
@@ -3278,7 +3278,7 @@ adjusting to: intelligent monsters can now loot unlocked containers.
 They can remove items, carry containers away, and unlock chests with
 keys. If you've been leaving your secondary stash in an unlocked chest
 on a partially-cleared level while you scouted ahead, stop. The Castle
-chest in particular — containing the wand of wishing — can be emptied
+chest in particular (containing the wand of wishing) can be emptied
 by the level's residents if you leave them time and opportunity. Clear
 levels before abandoning valuables, and keep your most important
 containers locked. The dungeon has gotten better at wanting what you
@@ -3290,7 +3290,7 @@ The dungeon is full of locked things, and brute force is noisy and
 slow. A **skeleton key** is the gold standard (70%+ success on
 doors, 75%+ on boxes). A **lock pick** is respectable. A **credit
 card** is the worst but still better than kicking. Always carry one
-of these—the weight is negligible and the utility is constant.
+of these. The weight is negligible and the utility is constant.
 
 #### Light Sources
 
@@ -3305,19 +3305,19 @@ using a winning lottery ticket as a bookmark.
 The **Candelabrum of Invocation** is a unique candelabra found in
 Vlad's Tower. It's one of three items needed for the invocation
 ritual to enter Moloch's Sanctum. You'll need seven candles to
-fill it—so start hoarding candles when you find them.
+fill it, so start hoarding candles when you find them.
 
 #### Musical Instruments
 
 Music has power in the Mazes. A **tooled horn** or **bugle** is
 needed to play the passtune at the Castle drawbridge (you'll find
-the notes nearby—listen carefully). A **magic harp** charms monsters
+the notes nearby; listen carefully). A **magic harp** charms monsters
 into tameness. A **magic flute** puts them to sleep. A **drum of
 earthquake** creates pits around you, which is as chaotic as it
 sounds.
 
 Non-magical instruments (wooden flute, leather drum) produce noise
-but no special effects—useful only for confusing the issue.
+but no special effects, useful only for confusing the issue.
 
 #### Other Notable Tools
 
@@ -3337,7 +3337,7 @@ but no special effects—useful only for confusing the issue.
 
 The **unicorn horn** is one of the most important tools in the
 game. Apply it to cure confusion, blindness, sickness, hallucination,
-stunning, vomiting, and (new in 5.0) deafness — most of the status
+stunning, vomiting, and (new in 5.0) deafness: most of the status
 ailments that matter. Carry one at all times. If you don't have one,
 getting one should be near the top of your priority list.
 
@@ -3345,8 +3345,8 @@ Bless your horn. A blessed horn can fix up to seven ailments in a
 single application; an uncursed horn maxes out at three, with a 35%
 chance of doing nothing even when you have troubles to fix. A cursed
 horn will *inflict* a random ailment from the same list (including
-the new deafness one), so be sure of bless status before applying —
-horns don't get used up, so a non-emergency test apply is free.
+the new deafness one), so be sure of bless status before applying.
+Horns don't get used up, so a non-emergency test apply is free.
 
 A 5.0 caveat: the unicorn horn **no longer restores lost ability
 scores** the way it used to. Drained Strength, Intelligence, Wisdom,
@@ -3359,24 +3359,24 @@ separately.
 The **magic marker** is a printing press for scrolls (and, more
 expensively, spellbooks). A fresh marker has 30-99 charges; one
 blessed scroll of charging restores it to at least 50, but only
-once — the second recharge attempt always fails. Each write costs
+once. The second recharge attempt always fails. Each write costs
 roughly half to all of the target scroll's basecost: magic mapping
 4-7 charges, identify 7-13, enchant weapon / enchant armor /
 charging 8-15, teleportation 10-19, and **genocide 15-29**.
-Spellbooks cost about 10 × spell level — a level-3 book averages
+Spellbooks cost about 10 × spell level: a level-3 book averages
 ~22 charges, a level-7 ~52.
 
 To write a scroll intentionally you must have **identified** it
-first — writing by appearance gives a random scroll of that
+first. Writing by appearance gives a random scroll of that
 appearance, which is usually wasted charges. If charges run out
 mid-write, scrolls disappear entirely (paper + charges wasted); a
 spellbook's paper survives but the writing fades.
 
 The big-ticket writes for an ascension kit are scrolls of
 **genocide** (three of these wipe the worst dangerous monster
-letters — L, &, h — out of the game), **charging** (a blessed one
-restores one additional wish to an empty wand of wishing — ~16
-charges very well spent — though a second charging attempt always
+letters L, &, h out of the game), **charging** (a blessed one
+restores one additional wish to an empty wand of wishing for ~16
+charges very well spent, though a second charging attempt always
 explodes the wand), and **enchant weapon / enchant armor** for the
 +7 ascension kit. A well-used marker can produce a meaningful share
 of your ascension kit.
@@ -3410,8 +3410,8 @@ The key armor slots:
 The **helm of caution** is new in 5.0: it grants
 *warning*, the same intrinsic the ring provides, in the helmet
 slot. Warning fills the screen with colored markers indicating
-nearby threats by danger level — yellow for moderate, red for
-deadly — without you having to see the monsters yet. It is the
+nearby threats by danger level (yellow for moderate, red for
+deadly) without you having to see the monsters yet. It is the
 ideal early-game helm slot: cheap (50 zm), light, and a real
 edge against ambushes. Late game it competes with helm of
 brilliance (Wizards) and helm of telepathy (everyone), but the
@@ -3497,7 +3497,7 @@ enchantment. It also repairs any existing damage.
 
 ### Artifacts
 
-Scattered throughout the Mazes are items of legend — named weapons,
+Scattered throughout the Mazes are items of legend: named weapons,
 amulets, and tools that carry powers no ordinary gear can match. Each
 artifact exists only once per game, so when you find one, you're
 holding a genuine one-of-a-kind. Here's how they come into your
@@ -3559,8 +3559,8 @@ Not every entry is equally desirable. **Grayswandir** and **Magicbane**
 are the artifacts most players try to wish for first; **Mjollnir** is
 the Valkyrie's archetypal wish; **Excalibur** is usually fountain-dipped
 rather than wished. **Frost Brand**, **Vorpal Blade**, and **Stormbringer**
-are common second wishes. The remaining entries — the bane weapons,
-Snickersnee, Sunsword, Fire Brand, Cleaver — are usually accepted as
+are common second wishes. The remaining entries (the bane weapons,
+Snickersnee, Sunsword, Fire Brand, Cleaver) are usually accepted as
 sacrifice gifts or wields-of-opportunity rather than spent wishes on,
 though some (Sunsword for Demonbane-style undead clearing, Cleaver
 for a Barbarian who lost the quest gift) have specific niches.
@@ -3574,7 +3574,7 @@ odds; every other Lawful role faces 1-in-30.
 It's silver (extra damage to many monsters), reduces incoming physical
 damage by half, and grants hallucination resistance.
 
-**Mjollnir** is the Valkyrie's signature throw-and-return weapon — but
+**Mjollnir** is the Valkyrie's signature throw-and-return weapon, but
 only with Strength 25 (gauntlets of power or rings of gain strength
 get you there). Its +d24 shock damage is brutal against anything not
 shock-resistant.
@@ -3585,13 +3585,13 @@ it valuable to carry even as a secondary weapon. Often the first gift
 from a Neutral sacrifice.
 
 **Stormbringer** is dangerous to use because it attacks peaceful
-monsters automatically — which can cause alignment problems. But each
+monsters automatically, which can cause alignment problems. But each
 hit drains a level from the target and gives it to you, which is huge
 in the early-to-mid game.
 
 **Cleaver** is the Barbarian quest artifact. When wielded one-handed
 (not two-weaponing), every swing strikes the primary target *and* one
-square on each side of it — three monsters per attack when packed in
+square on each side of it: three monsters per attack when packed in
 a corridor mouth or against a diagonal pair. The two-weapon penalty
 suppresses the spin, so most Barbarians keep Cleaver as their primary
 and a shield in the off slot.
@@ -3599,7 +3599,7 @@ and a shield in the off slot.
 **Bane weapons** (Sunsword, Demonbane, Sting, Orcrist, Grimtooth,
 Dragonbane, Werebane, Giantslayer, Ogresmasher, Trollsbane) deal
 double base damage against their target class and are otherwise just
-their base weapon — usually disappointing as a primary weapon, but
+their base weapon, usually disappointing as a primary weapon, but
 Sting and Orcrist are notable because elves can start with elven
 daggers and broadswords. The defensive riders are sometimes the real
 reason to swap one in: Trollsbane regenerates while wielded,
@@ -3644,13 +3644,13 @@ this turns them into a ghost.
 +1 luck talisman with stealth. Critically, it counts as a luckstone
 for *all* the luckstone mechanics (mine's-end protection, gem-throw
 luck math, luck cap +13 instead of +10). It's also a projectile
-weapon — Barbarians can throw it for double damage and pick it back
+weapon: Barbarians can throw it for double damage and pick it back
 up. `#invoke` is levitation.
 
 **The Sceptre of Might** (Caveman): mace base, +d5 to-hit, double
 damage against any monster whose alignment differs from the artifact's
 (the Sceptre itself is Lawful, so it deals doubled damage against
-chaotic and unaligned monsters — i.e. most of the dungeon's hostiles
+chaotic and unaligned monsters, i.e. most of the dungeon's hostiles
 once you reach Gehennom). It also grants magic resistance while held.
 `#invoke` casts conflict (monsters fight each other) at a steep
 energy cost.
@@ -3662,13 +3662,13 @@ plus drain resistance just by carrying it. `#invoke` heals fully and
 cures nearly every bad status. Few artifacts change a role's late
 game as much as this one.
 
-**The Magic Mirror of Merlin** (Knight): doesn't fight — it's a
-mirror — but grants ESP and magic resistance, and occasionally
+**The Magic Mirror of Merlin** (Knight): doesn't fight (it's a
+mirror), but grants ESP and magic resistance, and occasionally
 *speaks*, dropping hints. Knights already have Excalibur for combat,
 so the Mirror is pure passive utility.
 
 **The Eyes of the Overworld** (Monk): lenses that, when worn, give
-astral vision — see invisible, see through walls, spot secret doors.
+astral vision: see invisible, see through walls, spot secret doors.
 Carried (not worn) they still give magic resistance. `#invoke`
 enlightens you. For a Monk who can't safely wear body armor, a
 powerful passive on a slot they actually fill.
@@ -3677,10 +3677,10 @@ powerful passive on a slot they actually fill.
 double damage vs undead while worn, plus the brilliance bonus to
 intelligence and wisdom (so spell-cast more reliably), plus fire
 resistance while carried, plus a free `-1` to AC. `#invoke` for an
-energy boost — useful for spell-heavy Priests. Note: despite what
+energy boost, useful for spell-heavy Priests. Note: despite what
 older spoilers say, it does **not** grant drain resistance.
 
-**The Longbow of Diana** (Ranger): a real artifact bow — +d5 to hit
+**The Longbow of Diana** (Ranger): a real artifact bow with +d5 to hit
 plus reflection while wielded, ESP while carried. `#invoke` conjures
 free arrows out of thin air. Combined with the Ranger's ranged
 specialization this is the role's centerpiece.
@@ -3695,7 +3695,7 @@ chests.
 **The Tsurugi of Muramasa** (Samurai): a katana-grade two-handed
 sword with +d8 damage *and* a behead chance (like Vorpal Blade) *and*
 a +1 protection bonus, and it acts as a luckstone, and it grants
-magic resistance. One of the strongest artifacts in the game —
+magic resistance. One of the strongest artifacts in the game,
 Samurai's reward for a hard quest.
 
 **The Platinum Yendorian Express Card** (Tourist): the Tourist's
@@ -3705,14 +3705,14 @@ which in the Tourist's hands is roughly "a free wish per ~1000
 turns." Pairs especially well with marker-stockpiling strategies.
 
 **The Orb of Fate** (Valkyrie): the most generous passive in the
-game — counts as a luckstone, grants warning, halves both spell *and*
-physical damage taken. `#invoke` is levitate-or-teleport (a toggle —
+game: counts as a luckstone, grants warning, halves both spell *and*
+physical damage taken. `#invoke` is levitate-or-teleport (a toggle,
 very useful in the Sanctum). Valkyries also have Mjollnir to throw,
 so the Orb sits in inventory as pure carry value.
 
 **The Eye of the Aethiopica** (Wizard): worn or carried, it grants
 magic resistance, half spell damage taken, and *extra energy
-regeneration* — a Wizard's most precious resource. `#invoke` opens a
+regeneration*, a Wizard's most precious resource. `#invoke` opens a
 portal that drops you in Vlad's Tower (one-way; useful for
 shortcutting the Castle → Vlad's traversal). For a spell-caster this
 is irreplaceable.
@@ -3828,7 +3828,7 @@ always aligned to your god and always match a weapon skill you can
 use.
 
 There is a minimum. In 5.0, not every corpse you drop on
-the altar moves you toward the next artifact gift — the gods have
+the altar moves you toward the next artifact gift. The gods have
 opinions about what constitutes a worthy offering, and a kobold doesn't
 make the cut. Fresh corpses of appropriately challenging monsters are
 what advances your standing. If you've been feeding the altar with
@@ -3879,7 +3879,7 @@ the game can think of to make your life interesting:
 
 - Your experience level (the game's way of saying "you've seen things")
 - Your weapon's enchantment (a +7 Excalibur hits *noticeably* better)
-- Your Luck (the universe literally takes sides — up to +5 or -5)
+- Your Luck (the universe literally takes sides, up to +5 or -5)
 - Your Strength bonus (muscles still matter underground)
 - The monster's AC (the lower their AC, the harder they are to tag)
 
@@ -3906,7 +3906,7 @@ Two-handed weapons also receive a 50% bonus to the strength damage
 modifier, which is new in 5.0. This narrows the gap between
 two-handed builds and dual-wielding considerably. A Barbarian with a
 two-handed sword and respectable Strength is not just accepting the
-trade-off of foregoing a shield — they're dealing genuinely more damage
+trade-off of foregoing a shield. They're dealing genuinely more damage
 per swing than a comparable one-handed build. If you've been avoiding
 two-handed weapons because the math didn't add up, run those numbers
 again.
@@ -3925,7 +3925,7 @@ from "I die to gnomes" to "nothing can touch me" looks like this:
 
 At AC -20, almost nothing hits you with physical attacks. Feel
 free to laugh at ogres. But many late-game threats use special
-attacks — breath weapons, spells, gaze attacks — that ignore AC
+attacks (breath weapons, spells, gaze attacks) that ignore AC
 entirely. You can be wearing impenetrable armor and a disenchanter
 will still ruin your day. AC is necessary but not sufficient.
 
@@ -3965,23 +3965,23 @@ are the time-tested tactics that keep adventurers breathing:
   doorway. Nature is beautiful. Two 5.0 caveats: a
   monster has to *see* you for conflict to affect it (so blind or
   out-of-sight monsters keep their wits), and the chance scales
-  with your **Charisma** — a high Cha makes it noticeably more
+  with your **Charisma**: a high Cha makes it noticeably more
   reliable, a low Cha makes it flaky.
 - **Elbereth for emergencies.** Write it, stand on it, recover.
   The monsters will mill around you looking confused and angry,
   which is exactly how you want them.
-- **Ranged attackers retreat.** Monsters with ranged attacks —
-  archers, spellcasters, anything that can hurt you from a distance —
+- **Ranged attackers retreat.** Monsters with ranged attacks
+  (archers, spellcasters, anything that can hurt you from a distance)
   now actively back away when you close to melee range. Walking toward
   a centaur archer to neutralize its bow no longer works; it will
   simply back up and keep shooting. The tactical implications: use
   corners and narrow passages to cut off their retreat, bring ranged
   options of your own, or use a wand of teleportation to skip past the
   dance. This change also means monster spellcasters are more dangerous
-  than they used to be — they'll maintain the range they need to cast
+  than they used to be: they'll maintain the range they need to cast
   while you struggle to close.
 - **Cornered scared monsters fight.** Elbereth still works, and the
-  engrave-and-regenerate tactic still works — but only when the monster
+  engrave-and-regenerate tactic still works, but only when the monster
   has somewhere to go. A frightened monster that has nowhere to flee
   will now turn and fight rather than stand helplessly while you
   recover. If you've carved Elbereth in a corridor and then backed a
@@ -3989,7 +3989,7 @@ are the time-tested tactics that keep adventurers breathing:
   that arrangement. Keep an exit behind the monster, or expect contact.
 - **Monster spellcasters no longer get a free extra step after
   casting.** This was a 3.6.x quirk that made casters feel
-  unpredictably aggressive — they'd cast a spell and then *also* move.
+  unpredictably aggressive: they'd cast a spell and then *also* move.
   Fixed in 5.0. Combat near spellcasters is now more
   predictable, which is the dungeon's way of making you feel better
   before introducing something else that isn't.
@@ -4026,12 +4026,12 @@ travelers realize:
 - **The Amulet of Yendor:** Grants a wish when you first pick
   it up. A reward for reaching the bottom of the dungeon.
 - **Magic lamp:** Rubbing a blessed lamp summons the djinni 1-in-3
-  times; *if* it appears, it grants a wish 80% of the time — so
+  times; *if* it appears, it grants a wish 80% of the time, so
   roughly 27% wish per rub. Keep rubbing. Either a magic lamp or a
   magic marker is guaranteed in Orcus-town.
 - **Fountain:** roughly 1 in 30 quaffs summons a water demon, and
   *that* demon grants a wish only about 1-in-5 times on shallow
-  floors (less on deeper ones) — so a true wish chance closer to
+  floors (less on deeper ones), so a true wish chance closer to
   1 in 150 per quaff. Far more likely to produce snakes, nymphs,
   curses, or vomiting.
 - **Throne:** Very rare chance of a wish when sitting. Also a very
@@ -4051,13 +4051,13 @@ Generations of adventurers have argued about optimal wish order.
 Here's the conventional wisdom, battle-tested by thousands of
 ascensions:
 
-1. **Gray dragon scale mail** (magic resistance + AC — magic resistance
+1. **Gray dragon scale mail** (magic resistance + AC; magic resistance
    is the most important protection in the game, so this is highly recommended).
 2. **Silver dragon scale mail** (reflection + AC, the second pillar
    of not dying to wands).
-3. **Speed boots** (being fast gives you more actions per turn—excellent
+3. **Speed boots** (being fast gives you more actions per turn, excellent
    for both offense and escape).
-4. **Gauntlets of power** (STR 25, +AC, if your role benefits —
+4. **Gauntlets of power** (STR 25, +AC, if your role benefits;
    and most roles benefit from punching harder).
 5. **Amulet of life saving** (insurance for the endgame, when
    overconfidence kills more adventurers than monsters do).
@@ -4095,7 +4095,7 @@ your increasingly overtaxed brain.
 #### Learning Spells
 
 Read a spellbook to learn the spell it contains. Reading takes
-several turns and can fail — sometimes catastrophically. A failed
+several turns and can fail, sometimes catastrophically. A failed
 reading can paralyze you, summon hostile monsters, or just waste
 your time. Worse, each failed attempt damages the spellbook. Fail
 enough times and the book crumbles to dust, taking the spell with
@@ -4105,7 +4105,7 @@ The chance of successfully reading a spellbook depends on three
 things: the **spell level**, your **Intelligence**, and your
 **experience level**. Higher-level spells demand more of both.
 Blessed spellbooks add a bonus (equivalent to a few points of
-Intelligence). Cursed spellbooks should never be read — they
+Intelligence). Cursed spellbooks should never be read: they
 always fail and always punish you, because of course they do.
 
 Here's a rough guide to what you can safely read:
@@ -4127,7 +4127,7 @@ blessed book effectively adds 2-3 to this number.)
 
 **Wizards identify books by training.** In 5.0, advancing
 a spell school skill to each rank automatically reveals the appearances
-of spellbooks in that school — unskilled unlocks level-1 appearances,
+of spellbooks in that school: unskilled unlocks level-1 appearances,
 basic level-3, skilled level-5, expert level-7. A Wizard starts knowing
 all level-1 appearances and level-3 in attack and enchantment, which
 means they begin the game with a meaningful identification advantage in
@@ -4144,15 +4144,15 @@ Wizards are the undisputed masters of magic: they learn faster, fail
 less, and have the widest range of useful spells. A well-built Wizard
 can eventually learn *every* spell in the game, which is the closest
 the Mazes come to letting you cheat. Other roles can cast some spells
-but with less panache — a Valkyrie might manage identify (level 3)
+but with less panache. A Valkyrie might manage identify (level 3)
 but will struggle with anything above level 4. Tourists, Barbarians,
 and Cavemen should probably stick to hitting things.
 
 Each spell stays in memory for approximately 20,000 turns, then
 fades and must be relearned. You can check how close a spell is
 to expiring from your spell list (`+`). Carry important spellbooks
-with you if you plan to rely on their spells in the late game —
-you can also `a`pply a spellbook to check how many times it's been
+with you if you plan to rely on their spells in the late game.
+You can also `a`pply a spellbook to check how many times it's been
 read (each reading wears the book down, and they eventually
 crumble to dust). Nothing is worse than reaching Gehennom and
 discovering your finger of death expired ten levels ago.
@@ -4161,7 +4161,7 @@ In recent editions of the Mazes, the **spell maintenance** system
 adds an ongoing cost: known spells gradually drain a small amount
 of your maximum power while memorized. Higher-level spells cost
 more to maintain. This means you can't just learn every spell you
-find — carrying too many memorized spells shrinks your effective
+find. Carrying too many memorized spells shrinks your effective
 mana pool. Choose wisely and let unneeded spells expire.
 
 #### Key Spells
@@ -4179,7 +4179,7 @@ mana pool. Choose wisely and let unneeded spells expire.
 | Remove curse    | 3     | Uncurse worn/wielded items              |
 
 For Wizards, learning **identify** and **magic mapping** as spells
-dramatically reduces your need for scrolls — it's like having
+dramatically reduces your need for scrolls: it's like having
 infinite scrolls, except they cost mana instead of inventory space.
 **Finger of death** is the ultimate argument-ender. **Charm
 monster** turns your enemies into your friends, which is even better
@@ -4217,7 +4217,7 @@ problem.
 
 - **Born that way.** Some items generate cursed most of the time
   (rings of teleportation, rings of polymorph, amulets of
-  strangulation—anything the dungeon thinks is funny)
+  strangulation; anything the dungeon thinks is funny)
 - **Bones inheritance.** Items on a bones level have an 80% chance
   of being cursed. That tempting armor on the dead adventurer's
   corpse? Probably trapped
@@ -4229,7 +4229,7 @@ problem.
 
 #### Effects of Cursed Items
 
-- **Cursed armor and rings** bond to you and can't be removed—a
+- **Cursed armor and rings** bond to you and can't be removed: a
   cursed ring of teleportation means random teleports you can't
   stop, and a cursed pair of levitation boots means you can never
   touch the ground again
@@ -4250,7 +4250,7 @@ Prevention is better than cure. Test items *before* wearing them:
   cursed. This is free, instant, and should become instinct
 - **Pet test.** Your pet refuses to step on cursed items. Drop
   and observe
-- **Temple priest.** Will identify BUC status for a fee—convenient
+- **Temple priest.** Will identify BUC status for a fee, convenient
   in Minetown
 - **Scroll of identify.** Always reveals the full status
 
@@ -4277,8 +4277,8 @@ without them.
 
 ### Luck and Fortune
 
-The Mazes are rigged. Not unfairly — the dungeon doesn't *hate*
-you — but there is a hidden number attached to your character that
+The Mazes are rigged. Not unfairly (the dungeon doesn't *hate*
+you), but there is a hidden number attached to your character that
 quietly tilts every die roll, every prayer, every scroll, every
 combat swing. It's called Luck, and it's one of the most important
 stats you can't see.
@@ -4291,7 +4291,7 @@ generous. This is not a coincidence.
 
 Luck ranges from -13 to +13. It starts at 0, the universe's way of
 saying "prove yourself." Left alone, luck drifts back toward zero
-over time — the Mazes don't give anything for free.
+over time; the Mazes don't give anything for free.
 
 **Luck timeout.** Every 600 turns, your luck moves one point toward
 0. If you have +5 luck, it will drop to +4 after 600 turns, then
@@ -4316,7 +4316,7 @@ before carrying it, and bless it on an altar if you can.
 
 **The Heart of Ahriman, Tsurugi of Muramasa, and Orb of Fate all
 count as luckstones.** Barbarian, Samurai, and Valkyrie quest
-artifacts confer the same drift-freeze and bless-state bonus — so
+artifacts confer the same drift-freeze and bless-state bonus, so
 those three roles get a "free luckstone" from their quest reward.
 Carrying both a blessed luckstone *and* one of these artifacts
 doesn't stack the +3 bonus (the bonus is binary, not additive), but
@@ -4325,14 +4325,14 @@ end up with a cursed luckstone, partially offsetting it.
 
 **Calendar Luck.** The drift target isn't always 0:
 
-- On a **full moon** night, baseline Luck is +1 — Luck drifts toward
+- On a **full moon** night, baseline Luck is +1: Luck drifts toward
   +1 instead of 0. If you started the session on a full moon, you
   have +1 Luck for free.
 - On **Friday the 13th**, baseline Luck is −1. Avoid stair-up runs
   on this day if you can; your accumulated good Luck will sap toward
   −1 even if you've been virtuous.
 
-(NetHack uses your computer's real date for this — set your clock
+(NetHack uses your computer's real date for this; set your clock
 back if you've planned an ascension on the 13th and don't want the
 penalty, though most players just embrace the theme.)
 
@@ -4360,13 +4360,13 @@ it's embedded in the math.
 **Unicorn gem-throwing is the strongest active Luck source in the
 game.** Throw a properly-identified real gem (not glass) at a unicorn
 whose alignment matches yours and you gain +5 Luck immediately. The
-unicorn turns peaceful, accepts the gift, and teleports away — and
+unicorn turns peaceful, accepts the gift, and teleports away, and
 will accept another later if you find it again. Identify your gems
 *first* (touchstone or scroll of identify); the bonus drops from
 +5 to +1 if you don't actually know what you're throwing. Glass
 gems are harmless but yield nothing; throwing them is a safe way
 to pacify an unwanted unicorn without spending real gems. Avoid
-throwing real gems at cross-aligned unicorns — the result is a
+throwing real gems at cross-aligned unicorns: the result is a
 random Luck change between -3 and +3 and is rarely worth the
 gamble. Archeologists begin with all gems identified, which is
 why their class description mentions "unicorn negotiation" as a
@@ -4409,7 +4409,7 @@ which is saying something.
 
 The practical advice: get a luckstone early, sacrifice occasionally
 to keep luck positive, and don't kill peacefuls. Treat the universe
-well and it will return the favor — in the form of slightly better
+well and it will return the favor, in the form of slightly better
 random numbers, which in the Mazes is the closest thing to love.
 
 ---
@@ -4439,8 +4439,8 @@ The Castle contains:
   [Points of Interest](#points-of-interest)).
 - **Barracks** full of soldiers carrying decent equipment, which is
   to say *your* equipment once you've dealt with them.
-- **Four outer rooms** along the north and south walls. One — and
-  only one, randomly — contains the **wand of wishing** in a
+- **Four outer rooms** along the north and south walls. One (and
+  only one, randomly) contains the **wand of wishing** in a
   locked chest. *Search them all.* In 5.0, that chest
   also holds a **potion of gain level**, included as a small make-
   good for the wand's charge changes (see below). The chest's
@@ -4454,11 +4454,11 @@ The Castle contains:
   hard but isn't especially resistant to having a wand pointed at it.
 
 Strategy: clear the Castle carefully. A ring of conflict turns
-the guards against each other — walk in, put on the ring, and let
+the guards against each other: walk in, put on the ring, and let
 the soldiers solve your monster problem for you. Loot everything.
 Then use your wand of wishing to fill critical gaps in your
 equipment (gray dragon scale mail, silver dragon scale mail,
-gauntlets of power, speed boots — whatever you're missing).
+gauntlets of power, speed boots, whatever you're missing).
 
 **A 5.0-era warning about the chest.** Intelligent monsters in
 5.0 can pick up containers and rummage through
@@ -4472,8 +4472,8 @@ abandoning it, or carry the chest with you. There are stories.
 with a single charge in 5.0, and the standard recharge formula
 will only restore it to (1:1). The old strategy of recharging it
 to (0:7) and getting a stack of wishes off one wand is gone. You
-will need to plan a *small* wishlist — three or four items at
-most, with the gain-level potion as a free fifth — and accept
+will need to plan a *small* wishlist (three or four items at
+most, with the gain-level potion as a free fifth) and accept
 that further wishes have to come from other guaranteed sources
 (Vlad's throne, the Amulet pickup, Orcus-town's lamp/marker, fountain
 luck, or wresting a final wish from a 0:0 wand on the way down).
@@ -4502,7 +4502,7 @@ If you're missing any of these, go back up and find them.
 
 Below the Castle, the dungeon changes. The corridors give way to
 mazes. The monsters give way to demons. The comforting knowledge
-that you can pray to your god for help gives way to silence—because
+that you can pray to your god for help gives way to silence, because
 your god can't hear you in Gehennom. You are deeper than faith
 reaches.
 
@@ -4521,8 +4521,8 @@ ascenders. Everything you've prepared for has been leading here.
 - **Hot ground.** In 5.0, the ground itself is hot
   enough to shatter potions dropped on the floor. Keep everything
   in a bag at all times
-- **Demon lords.** Named demon lords—Orcus, Baalzebub, Asmodeus,
-  Juiblex, Yeenoghu, and if you're very unlucky, Demogorgon—hold
+- **Demon lords.** Named demon lords (Orcus, Baalzebub, Asmodeus,
+  Juiblex, Yeenoghu, and if you're very unlucky, Demogorgon) hold
   court on specific levels. Each is a major battle. Several can
   summon reinforcements. All of them are angry you're here
 - **Teleportation restrictions.** In 5.0, teleportation
@@ -4530,9 +4530,9 @@ ascenders. Everything you've prepared for has been leading here.
   lives. Kill or banish them and the restriction lifts. In older
   editions, most Gehennom levels permanently blocked teleportation
 - **Mazes.** Nearly every level is a maze. A wand of digging or
-  pickaxe isn't optional here—it's as essential as your weapon.
+  pickaxe isn't optional here; it's as essential as your weapon.
   Dig straight lines to the stairs and don't look back
-- **Orcus-town.** Orcus's own level is a "ghost town" — the shops
+- **Orcus-town.** Orcus's own level is a "ghost town": the shops
   and shopkeepers are gone, but the town layout remains, and the
   buildings are stocked with random objects rather than for-sale
   inventory. Two of those objects are worth the trip: somewhere on
@@ -4542,7 +4542,7 @@ ascenders. Everything you've prepared for has been leading here.
   with the residents (Orcus himself plus an honor guard of liches
   and ghouls), and lift the lamp or marker on your way out. The
   guarantee is the dungeon's compensation for the wand of wishing
-  generating with only one charge in 5.0 — call it a
+  generating with only one charge in 5.0. Call it a
   consolation prize, in the form of either one djinni wish (rub
   the lamp; the lamp becomes ordinary afterward) or however many
   high-value scrolls you can write before the marker runs dry.
@@ -4576,15 +4576,15 @@ dangerous robbery:
    of the bad effects on the way). Plan accordingly. Stand at full
    HP, don't carry potions you can't afford to grease, and have
    acid resistance or magic resistance ready before you sit. If
-   you don't want a forced wish — say, you've already used your
+   you don't want a forced wish (say, you've already used your
    Castle wish and Amulet wish and want to keep this one for your
-   ascension kit — you can sit at any time, you don't have to do
+   ascension kit), you can sit at any time, you don't have to do
    it right now. The throne stays put until something on the
    level destroys it.
 
 2. **The Wizard's Tower.** The Wizard of Yendor waits here with
    the Book of the Dead. He is the most dangerous enemy in the
-   game—not because he's the strongest fighter, but because he
+   game, not because he's the strongest fighter, but because he
    never stops. He teleports, summons monsters, steals the Amulet,
    curses your gear, and once you wake him, he *will not leave you
    alone* for the rest of the game. Kill him. Take the Book.
@@ -4592,7 +4592,7 @@ dangerous robbery:
 3. **The vibrating square.** Somewhere on the level directly above
    Moloch's Sanctum, a single square vibrates when you step on it.
    This is the ritual site. Finding it in a maze is part of the
-   challenge—scrolls of magic mapping help enormously.
+   challenge. Scrolls of magic mapping help enormously.
 
 4. **The Invocation.** At the vibrating square, light the
    Candelabrum (with 7 candles attached), ring the Bell of Opening,
@@ -4612,7 +4612,7 @@ dangerous robbery:
   than around
 - **Kill the Wizard quickly.** Every turn he lives is another
   summoned monster, another stolen item, another cursed piece of
-  gear. He'll come back—he always comes back—but the intervals
+  gear. He'll come back (he always comes back), but the intervals
   between his appearances give you breathing room
 - **The Amulet anchors you.** Level teleportation doesn't work
   while you carry it. Every step back to the surface must be
@@ -4679,7 +4679,7 @@ ball through the entire opposing team. Speed is everything.
 The Ascension Run rewards preparation and punishes hesitation. If
 you packed well at the Castle and your resistances are solid, this
 is a sprint, not a marathon. Once you reach the top of the Dungeons
-of Doom, the final staircase leads to the Elemental Planes — the
+of Doom, the final staircase leads to the Elemental Planes: the
 last obstacle between you and divinity.
 
 ---
@@ -4688,7 +4688,7 @@ last obstacle between you and divinity.
 
 Beyond the top of the Dungeons of Doom, the world dissolves into
 its raw elements. Four planes stand between you and the gods, each
-one a different flavor of hostile. There are no stairs here—only
+one a different flavor of hostile. There are no stairs here, only
 magic portals, hidden somewhere in each level, leading to the next.
 Find the portal. Survive the plane. Move on. There is no going back.
 
@@ -4699,7 +4699,7 @@ elementals that hit like the mountain itself. The portal is buried
 somewhere in the level. Dig. A wand of digging is essential; a
 scroll of magic mapping or crystal ball reveals the portal's
 location so you can dig *toward* it instead of blind. This level
-is claustrophobic, dark, and punishing—but it's the gentlest of
+is claustrophobic, dark, and punishing, but it's the gentlest of
 the four.
 
 #### Plane of Air
@@ -4707,10 +4707,10 @@ the four.
 The opposite extreme: an open void with no walls, no floor you can
 feel, just empty sky and air elementals moving faster than thought.
 They attack multiple times per turn and they cannot be genocided.
-A ring of conflict is devastating here—let them tear each other
+A ring of conflict is devastating here: let them tear each other
 apart while you search for the portal. A scroll of magic mapping
 reveals it. One strange trick: if a vortex engulfs you, it carries
-you randomly around the level—and if it happens to cross the
+you randomly around the level, and if it happens to cross the
 portal, you're pulled through. Sometimes the fastest route is to
 surrender to the wind.
 
@@ -4718,14 +4718,14 @@ surrender to the wind.
 
 Everything is on fire. The ground is fire. The air is fire. Fire
 elementals fill the level, and fire traps dot every corridor. Fire
-resistance isn't just recommended—without it, you'll be dead in
+resistance isn't just recommended: without it, you'll be dead in
 turns. Map the level, find the portal among the flames, and get
 there. Don't stop to fight anything you don't have to.
 
 #### Plane of Water
 
 The entire level is underwater. Without magical breathing (an
-amulet or intrinsic), you will drown—and drowning is instant death,
+amulet or intrinsic), you will drown, and drowning is instant death,
 no saving throw. The level is a labyrinth of water-filled chambers
 with occasional air pockets. Sea monsters prowl the corridors.
 Find the portal and push through. This is the last barrier between
@@ -4736,17 +4736,17 @@ you and the gods.
 You surface into the presence of the divine. Three altars stand in
 the great temple: Lawful, Neutral, and Chaotic. You must sacrifice
 the Amulet of Yendor on the altar matching your alignment to
-ascend. Choose wrong and the Amulet is lost—you'll need to fight
+ascend. Choose wrong and the Amulet is lost: you'll need to fight
 to retrieve it.
 
 The plane is swarming with Angels and the three Riders: Death,
-Famine, and Pestilence. The Riders cannot be permanently killed—
+Famine, and Pestilence. The Riders cannot be permanently killed;
 they revive, they pursue, they do not stop. Don't try to clear
 the level. You are not here to fight. You are here to reach one
 altar, make one sacrifice, and end this.
 
 - Conflict and teleportation wands clear a path through the crowds
-- Identify the correct altar quickly—farlook (`;`) shows alignment
+- Identify the correct altar quickly. Farlook (`;`) shows alignment
 - The Riders will follow you. Outrun them, don't outfight them
 - When you offer the Amulet on the correct altar: you ascend.
   The game is won. You've done what so few have done. Congratulations.
@@ -4782,19 +4782,19 @@ This works for any command. `20.` waits twenty turns. `5h` moves west five times
 
 Press ESC to cancel a multi-command sequence early.
 
-**Example:** Standing next to a likely secret door location, you type `10s`. The game searches once. Twice. Three times. On the fourth search: "You find a hidden door!" The sequence stops. You didn't type `s` ten times — you told the dungeon to search *up to* ten times, and it knew to stop when it found something.
+**Example:** Standing next to a likely secret door location, you type `10s`. The game searches once. Twice. Three times. On the fourth search: "You find a hidden door!" The sequence stops. You didn't type `s` ten times; you told the dungeon to search *up to* ten times, and it knew to stop when it found something.
 
 #### Repeat Last Command (Ctrl+A)
 
 **The Problem:** You searched. Nothing. You want to search again. You could type `s` again, but there must be a better way.
 
-**The Solution:** Press **Ctrl+A**. The game repeats whatever you just did — same command, same count if you used one.
+**The Solution:** Press **Ctrl+A**. The game repeats whatever you just did: same command, same count if you used one.
 
 Searched once? Ctrl+A searches again. Moved west with `h`? Ctrl+A moves west again. Searched ten times with `10s`? Ctrl+A searches ten more times.
 
 This is one of the most commonly used advanced commands. Once you learn it, you'll use it constantly. It's faster than retyping, and it works for *any* command.
 
-**What It Remembers:** The last command you executed successfully. Not attempts that failed or were canceled — the last thing that actually happened.
+**What It Remembers:** The last command you executed successfully. Not attempts that failed or were canceled: the last thing that actually happened.
 
 **When to Use It:** Whenever you want to "do that again." Searching repeatedly. Moving in the same direction. Waiting multiple times. Reading the same scroll. (Okay, maybe not that last one.)
 
@@ -4838,8 +4838,8 @@ This is an alternative to capital letters. `Gh` runs west. `H` also runs west. U
 
 For **movement**, `m` + direction means "move there without grabbing anything and without attacking":
 
-- Items on the destination square are *not* autopicked up — useful when autopickup is on but you want to step past a heap.
-- A peaceful or tame creature on the destination square gets swapped with instead of attacked — "Pardon me, Fido." A hostile creature you can see costs you a turn ("You move right into the kobold") instead of triggering an attack. This is the safe way to walk past your pet or a peaceful shopkeeper without accidentally striking them.
+- Items on the destination square are *not* autopicked up; useful when autopickup is on but you want to step past a heap.
+- A peaceful or tame creature on the destination square gets swapped with instead of attacked: "Pardon me, Fido." A hostile creature you can see costs you a turn ("You move right into the kobold") instead of triggering an attack. This is the safe way to walk past your pet or a peaceful shopkeeper without accidentally striking them.
 - A known dangerous square (pool, lava without safe walking) is refused outright; you don't step in.
 
 For **other commands**, `m` requests a menu instead of the default single-target prompt. `me` brings up an "what do you want to eat?" menu rather than auto-selecting from your inventory; `ma` brings up a menu of applyable tools; `m,` lets you pick items from the floor pile explicitly; and so on. Commands that accept this are flagged internally; most "act on one thing" commands are eligible.
@@ -4876,7 +4876,7 @@ The dungeon rewards efficiency, but it doesn't demand it on day one.
 
 Several options affect how commands and controls work. Access them with the `O` command (that's capital O, not zero).
 
-**`number_pad`**: Enables numeric keypad for movement (1-9 for directions). Off by default. If you enable this, digit prefixes for command counts work differently — you'll need to press `n` first to enter a count.
+**`number_pad`**: Enables numeric keypad for movement (1-9 for directions). Off by default. If you enable this, digit prefixes for command counts work differently: you'll need to press `n` first to enter a count.
 
 **`autopickup`**: Automatically picks up items when you walk over them, filtered by the `pickup_types` option (e.g. `pickup_types:$?!` to grab gold, scrolls, and potions). The `m` prefix on a movement command suppresses autopickup for that step.
 
@@ -4886,7 +4886,7 @@ Several options affect how commands and controls work. Access them with the `O` 
 
 **`msg_window`**: Lets you see multiple messages at once in a dedicated message window, rather than one message at a time on the status line. Extremely useful for reviewing what just happened without Ctrl+P.
 
-The options system is deep and intimidating. Don't worry about most of them when starting out. The defaults are reasonable. But if you find yourself annoyed by some aspect of the interface, check the options — there's probably a setting for it.
+The options system is deep and intimidating. Don't worry about most of them when starting out. The defaults are reasonable. But if you find yourself annoyed by some aspect of the interface, check the options; there's probably a setting for it.
 
 ---
 
@@ -4913,7 +4913,7 @@ boulders.
 
 **A note on mirroring.** In 5.0 of the game,
 Sokoban levels may be flipped horizontally and/or vertically.
-The solutions still work — just mirror the directions.
+The solutions still work; just mirror the directions.
 
 > *Solutions originally compiled by Boudewijn Waijers, with
 > contributions by Jukka Lahtinen and others, for the steelypips.org
@@ -5647,14 +5647,14 @@ since 3.6.
 `blind` option at game start. You'll need telepathy and other
 senses to navigate. Officially tracked since 3.6.
 
-Mazes 5.0 added five more tracked conducts — Pauper, Petless,
+Mazes 5.0 added five more tracked conducts: Pauper, Petless,
 Permadeaf, Sokoban, and Bonesless. The first three are start-of-game
 options; the latter two are tracked automatically based on what you
 do during the run.
 
 #### Pauper (new in 5.0)
 
-Start with absolutely nothing — no gold, no inventory, no armor. Set
+Start with absolutely nothing: no gold, no inventory, no armor. Set
 `OPTIONS=pauper` in your rcfile (or `pauper:true` in the in-game `O`
 menu). The game enforces it at character creation: your starting
 inventory is empty, your pockets are empty, and the option implicitly
@@ -5664,11 +5664,11 @@ enlightenment shows "you started out without possessions" as a
 permanent conduct, set at birth and never lost.
 
 A practical note: pauper does not forbid acquiring or spending gold
-later — the conduct is about *starting* empty, not about staying
+later. The conduct is about *starting* empty, not about staying
 penniless. But because shops are inherently a late-pauper resource
 (you have nothing to sell early), price identification becomes
 proportionally more valuable. The traditional roleplaying version,
-"never spend gold," is not tracked by the game in 5.0 — it lives on
+"never spend gold," is not tracked by the game in 5.0; it lives on
 only as a self-imposed extension of the pauper start.
 
 #### Petless (new in 5.0)
@@ -5686,12 +5686,12 @@ about leading something loyal into a polymorph trap.
 #### Permadeaf (new in 5.0)
 
 Never hear anything. Set `OPTIONS=!acoustics` in your rcfile (or
-`acoustics:false` in the in-game `O` menu) — the game then runs
+`acoustics:false` in the in-game `O` menu): the game then runs
 exactly as if you had the `Deaf` intrinsic for the entire game and
 never recovered. `You_hear()` returns silently in every code path,
 so all the "you hear water falling," "you hear someone counting
-money," "you hear a door open" messages — and the ambient
-monster-type "you hear a slurp" sounds from `dosounds()` — are
+money," "you hear a door open" messages (and the ambient
+monster-type "you hear a slurp" sounds from `dosounds()`) are
 suppressed.
 
 Many monster warnings, environmental cues (vaults, fountains, doors
@@ -5716,7 +5716,7 @@ Never inherit from another player's grave. 5.0 records the number of
 bones files loaded during your run; if it stays at zero through the
 entire game, the bonesless conduct is preserved. The cleanest way
 to lock this in is `OPTIONS=!bones` in your rcfile (or `bones:false`
-in the in-game `O` menu) — that turns off bones-file loading entirely
+in the in-game `O` menu): that turns off bones-file loading entirely
 for the run, so the conduct is automatic. Without that option, bones
 loading is on by default and the conduct depends on whether your
 dungeon directory happens to have eligible bones to deliver (it's
@@ -5738,7 +5738,7 @@ of its own.
 > strategies below draw from both sources, updated for current
 > editions.*
 
-Shops do more than sell — their pricing system is your most
+Shops do more than sell: their pricing system is your most
 powerful identification tool. The full mechanics, the interactive
 price tables for every item class, and the live buy/sell calculator
 all live in [The Price Is Right](#the-price-is-right). This section
@@ -5750,7 +5750,7 @@ combat, and a few non-obvious rules.
 Selling unidentified gems is **not** a reliable price-ID method. The
 shopkeeper's offer for any unidentified gem (real *or* glass) is
 computed by `shk.c` as roughly `(otyp_offset % shopkeeper_modulus) + 3`
-zm per gem — a small number between 3 and 8, varying by both the
+zm per gem, a small number between 3 and 8, varying by both the
 gem's true identity and the shopkeeper. So both real diamonds and
 worthless glass diamonds offer 3-8 zm; you cannot tell them apart by
 price. Selling the same gem at two different shops gives different
@@ -5766,7 +5766,7 @@ nothing.
 ##### Real-gem prices
 
 Once you know what a gem is, its type determines its base price.
-Real gems are tiny piles of liquid gold by weight — every gem weighs
+Real gems are tiny piles of liquid gold by weight: every gem weighs
 just 1, and gems of the same identified type stack into a single
 inventory slot regardless of count, so the only cost of hoarding a
 heap of identified rubies is one slot's worth of clutter.
@@ -5780,14 +5780,14 @@ The Mohs column is real-world mineral hardness on the Mohs scale
 (talc 1 ... diamond 10), and the game uses it in two specific places.
 Mohs ≥ 8 makes a gem **"hard"** (`HARDGEM` in `include/objects.h`).
 Hard gems can be used as a stylus to *engrave* Elbereth and other
-messages directly into the dungeon floor — a permanent ENGRAVE
+messages directly into the dungeon floor: a permanent ENGRAVE
 instead of the dust-only writing soft gems and fingers leave (see
 `src/engrave.c:755`, "diamonds & other hard gems should work").
 Hard gems also have a 50% chance to *survive* being thrown rather
 than shattering on impact (`src/dothrow.c:1996`, "Flint and hard
 gems don't break easily"). Below Mohs 8, the gem only writes in
 dust and breaks on impact like glass. Hardness does *not* affect
-touchstoning — every gem can be identified by a blessed touchstone
+touchstoning. Every gem can be identified by a blessed touchstone
 regardless of hardness.
 
 <div class="price-id-toolbar"></div>
@@ -5818,7 +5818,7 @@ regardless of hardness.
 |   200 | Agate                 | orange          |    6 |                                |
 |     0 | (worthless glass)     | any color       |    5 | sells for 0–8 zm unidentified  |
 
-The decision is rarely "carry or drop" — it's "if I'm slot-pressed
+The decision is rarely "carry or drop"; it's "if I'm slot-pressed
 and have to thin the heap, which colors do I drop first." Black opals,
 emeralds, and rubies are usually keepers; agate and obsidian first to go.
 
@@ -5837,7 +5837,7 @@ A few rules of thumb:
   because the touchstone work is already done.
 - **Top tier** (≥ 2500: dilithium, diamond, ruby, jacinth, sapphire,
   black opal, emerald) are worth selling individually as you find
-  shops that buy them — 3000+ zm per gem is a real bankroll. Don't
+  shops that buy them: 3000+ zm per gem is a real bankroll. Don't
   fire-sale them to a non-gem-buying shop for half price.
 - **Amethyst** is a special case at any price tier: it's an alchemy
   reagent (booze + amethyst dispels hallucination; the
@@ -5850,7 +5850,7 @@ A few rules of thumb:
 So the table above is best read as a **selling guide** rather than a
 discard guide: real gems near the top of the table are the ones worth
 making time to sell at a gem dealer, and the ones worth wishing for
-if you're flush on wishes. Lower-priced gems are not "trash" — they
+if you're flush on wishes. Lower-priced gems are not "trash": they
 still feed unicorns and still touchstone-identify other gems by
 hardness comparison.
 
@@ -5874,18 +5874,18 @@ sale:
 2. **You drop gold on a shop floor square.** Any gold you drop or
    throw inside the shop is added to your credit balance (after
    paying off any existing debt first). This is the "shop as
-   safe-deposit box" trick — credit can't be stolen by nymphs,
+   safe-deposit box" trick: credit can't be stolen by nymphs,
    can't fall into pits, and can't be lost to a polymorph trap.
 
 **How credit gets used.** When you buy something, the shopkeeper
 applies your credit against the purchase price first ("the price is
 deducted from your credit"). Any remainder comes out of your gold.
-Credit is per-shop and per-shopkeeper — you can't carry it between
+Credit is per-shop and per-shopkeeper: you can't carry it between
 shops, withdraw it back to gold, or hand it to a different
 shopkeeper.
 
 **Is paying from credit better or worse than paying in gold?** The
-price itself is identical — credit is deducted from the *post-
+price itself is identical: credit is deducted from the *post-
 Charisma, post-Tourist, post-angry* cost at a strict 1:1 ratio, with
 no markup or discount either way. The differences are about how
 *safe* and *liquid* your money is, not how far it stretches:
@@ -5895,8 +5895,8 @@ no markup or discount either way. The differences are about how
   doesn't bog you down with carry weight. A shop you'll come back
   to is a strong bank.
 - **Worse** in that credit is locked to one shopkeeper. If you
-  over-accumulate at a shop that doesn't have items you want — or
-  the shopkeeper dies, or you anger them and they go hostile —
+  over-accumulate at a shop that doesn't have items you want (or
+  the shopkeeper dies, or you anger them and they go hostile),
   the credit evaporates. You also can't tip altar donations, can't
   pay shrine fees, and can't bribe a demon out of credit.
 
@@ -5911,13 +5911,13 @@ item's price as a usage fee; future gold drops or sales pay it down
 before any new credit accumulates.
 
 **Loan** appears only in the unusual case where the shopkeeper has
-*lent* you gold — you carry their coins as part of your inventory.
+*lent* you gold: you carry their coins as part of your inventory.
 Dropping gold in the shop pays this off before adding credit.
 
 **Walk-out hazard.** Leaving the shop with unpaid items or unpaid
 debt turns the shopkeeper hostile. The Keystone Kops will pursue
 you through the dungeon, and the shopkeeper themselves is one of
-the toughest melee NPCs in the game — high HP, low AC, and
+the toughest melee NPCs in the game: high HP, low AC, and
 unfazed by Elbereth. Pay the bill at the door.
 
 #### Shopkeeper Behavior
@@ -5931,7 +5931,7 @@ know:
   shop, even when you're invisible.
 - If you break something in the shop (a potion, a wand), you pay
   for it.
-- Elbereth doesn't help — shopkeepers ignore it.
+- Elbereth doesn't help; shopkeepers ignore it.
 - Shop walls are non-diggable from inside; you can't tunnel out
   with unpaid items.
 - Artifact items are priced at **25× base** when on the shop floor.
@@ -5968,7 +5968,7 @@ possible before spending your gold on scrolls of identify.
 
 If you're an experienced traveler returning after some time away, the
 5.0 of the Mazes (NetHack 5.0.0, released May 2, 2026) includes
-several notable changes from 3.6.x — the last widely-played version before
+several notable changes from 3.6.x, the last widely-played version before
 this one. (NetHack 3.7 was a long-running development branch and never
 shipped as a numbered public release; 3.6.x is the natural comparison
 point.) The most significant:
@@ -6011,7 +6011,7 @@ point.) The most significant:
   it now deals heavy damage and drains max HP. Magic resistance
   reduces but no longer fully prevents it.
 - **Black dragon scale mail** now grants drain resistance in
-  addition to disintegration resistance — a second extrinsic that
+  addition to disintegration resistance: a second extrinsic that
   was historically hard to find outside artifacts.
 - **Green dragon scale mail** now grants sickness immunity.
 - **New wish sources**: Vlad's throne is guaranteed, and the
@@ -6086,7 +6086,7 @@ point.) The most significant:
 *The dungeon has been renovated. Some of the renovations are
 improvements. Some of them are traps disguised as improvements. This
 appendix is for travelers who know the old dungeon and need to know what
-changed — not just what changed, but what to do about it.*
+changed: not just what changed, but what to do about it.*
 
 ---
 
@@ -6100,8 +6100,8 @@ early priority. In 5.0, self-zapping gives 50–74 turns of
 *very fast* speed. Good in a fight. Gone afterward.
 
 Speed boots are now the primary path to permanent speed. Put them on
-your wish list. The wand remains excellent for a mid-combat burst — or
-for giving your pet an edge — but treat it as a resource to use, not a
+your wish list. The wand remains excellent for a mid-combat burst (or
+for giving your pet an edge), but treat it as a resource to use, not a
 property to acquire.
 
 **The wand of make invisible no longer makes you permanently invisible.**
@@ -6109,8 +6109,8 @@ property to acquire.
 Same story. Self-zapping used to grant the invisibility intrinsic. Now
 it gives 31–45 turns of temporary invisibility. For the permanent
 variety, you need a ring or cloak of invisibility. The wand is still
-useful for tactical windows — slipping past something dangerous, closing
-ground on an enemy that fights by sight — but the game no longer hands
+useful for tactical windows (slipping past something dangerous, closing
+ground on an enemy that fights by sight), but the game no longer hands
 you permanent invisibility through a single lucky wand find.
 
 **You cannot luck-grind by sacrificing weak corpses.**
@@ -6131,7 +6131,7 @@ retired.
 
 **Elbereth does not pacify a monster that has nowhere to go.**
 
-Writing Elbereth and standing on it still works — the monsters mill
+Writing Elbereth and standing on it still works: the monsters mill
 around, refuse to approach, and look frustrated. The catch in 5.0 is that a scared monster with no escape route will turn and
 fight rather than stand helplessly while you regenerate. If you've
 carved Elbereth in a tight corridor and then backed a monster against
@@ -6140,8 +6140,8 @@ exit clear, or finish the fight before it makes that decision for you.
 
 **Bulk diluted-stack alchemy is gone.**
 
-The production-line approach — dilute a large stack of healing potions,
-then convert the whole diluted stack in a single dip — hit a wall in
+The production-line approach (dilute a large stack of healing potions,
+then convert the whole diluted stack in a single dip) hit a wall in
 5.0. Only two potions alchemize per dip from a diluted
 stack now. The healing → extra healing → full healing → gain ability
 chain still works perfectly. You just do it in small batches with
@@ -6161,7 +6161,7 @@ route toward a different artifact.
 
 They start with a spear. An immediate Excalibur dip at experience level
 5 now requires finding a long sword first. And for non-Knights, the
-fountain odds for Excalibur are now 1-in-30 per dip — not guaranteed,
+fountain odds for Excalibur are now 1-in-30 per dip, not guaranteed,
 not even reliable over a handful of tries. Factor this into early
 routing; the long sword detour and potential dry spells at fountains are
 real.
@@ -6175,9 +6175,9 @@ polymorph.**
 
 No ring of polymorph control required. A blessed potion of polymorph
 grants control for that specific transformation: you pick the form,
-execute the plan, move on. This makes single-use polymorph strategies —
-grab iron golem form for extreme AC, go bat form to scout the next
-level, pick something with a good intrinsic — accessible without needing
+execute the plan, move on. This makes single-use polymorph strategies
+(grab iron golem form for extreme AC, go bat form to scout the next
+level, pick something with a good intrinsic) accessible without needing
 to find or wish for the ring first.
 
 The ring of polymorph control is less of a priority acquisition now.
@@ -6222,15 +6222,15 @@ eventually (four of thirteen outcomes; the throne survives the other
 nine so you can sit again), and picking up the Amulet of Yendor for the
 first time grants a wish. A prepared player can reliably expect five to
 seven wishes across a game now. This gives you more flexibility in what
-to spend early wishes on — a good second or third priority item is now a
+to spend early wishes on. A good second or third priority item is now a
 reasonable target.
 
 **Your pet can grow stronger and come back from the dead.**
 
 Pets gain resistances from the corpses they eat, exactly as you do.
 More importantly, a dead pet can be revived. Stand on its corpse at a
-co-aligned altar and pray. The conditions have to align — prayer
-timeout, alignment record, Luck — but when they do, the companion
+co-aligned altar and pray. The conditions have to align (prayer
+timeout, alignment record, Luck), but when they do, the companion
 that's been with you since level 3 walks out of the other side of death
 and gets back to work.
 
@@ -6252,7 +6252,7 @@ you're using right now, and even then, get it back into a container.
 Intelligent monsters can now unlock chests, remove items from open
 containers, and even carry containers away. A wand of undead turning in
 a monster's hands can animate corpses in your open inventory. The Castle
-chest — historically sitting there waiting for you — can be looted by
+chest (historically sitting there waiting for you) can be looted by
 the level's residents given time and a key. Clear levels before leaving.
 Keep critical containers locked. Don't haul a collection of interesting
 corpses through an area with caster monsters and expect them all to
@@ -6268,7 +6268,7 @@ is no longer a reliable response to a ranged threat. Corners, wands of
 teleportation, and your own ranged options become necessary more often.
 
 **Monster spellcasters stopped giving you a free turn after casting.**
-This was a 3.6.x quirk — they'd cast a spell and then also move, making
+This was a 3.6.x quirk: they'd cast a spell and then also move, making
 them jitter. Fixed now. Positioning-based tactics near casters work more
 reliably as a result, but the additional free-turn exploit is gone.
 
@@ -6337,12 +6337,12 @@ Discord. If you wanted to know whether a cockatrice corpse could
 be wielded as a weapon, you searched the RGRN archives and hoped
 someone had asked before you. Someone usually had.
 
-RGRN gave the community its vocabulary. A **YASD** — *Yet Another
-Stupid Death* — is the post you make after dying to something you
+RGRN gave the community its vocabulary. A **YASD** (*Yet Another
+Stupid Death*) is the post you make after dying to something you
 should have known better than to do. The term captures something
 important: NetHack kills you in ways that feel obvious in retrospect,
 and the community's response to that is not bitterness but
-documentation. A **YAFAP** — *Yet Another First Ascension Post* —
+documentation. A **YAFAP** (*Yet Another First Ascension Post*)
 is the post you make when you finally win. Both traditions persist
 today, in the wiki, on Reddit, in Discord servers: the ritual
 confession of failure and the ritual celebration of survival. They
@@ -6440,7 +6440,7 @@ Miller passed away in 1994; the shopkeeper who bears his name in
 the Mines is a small measure of how much his work meant.
 
 The development was not always continuous. After version 3.4.3 in
-December 2003, the DevTeam went quiet — not absent, but silent —
+December 2003, the DevTeam went quiet (not absent, but silent)
 for twelve years. The dungeon was frozen. New players descended into
 the same unchanging corridors that had been killing people since
 2003, writing new spoilers about a fixed game, dying in the same
