@@ -5774,6 +5774,20 @@ shows what an unangry shopkeeper would charge to buy from you;
 adjust it with the Cha/Sell/Tourist/Angry toolbar to see how the
 modifiers shift things.
 
+The Mohs column is real-world mineral hardness on the Mohs scale
+(talc 1 ... diamond 10), and the game uses it in two specific places.
+Mohs ≥ 8 makes a gem **"hard"** (`HARDGEM` in `include/objects.h`).
+Hard gems can be used as a stylus to *engrave* Elbereth and other
+messages directly into the dungeon floor — a permanent ENGRAVE
+instead of the dust-only writing soft gems and fingers leave (see
+`src/engrave.c:755`, "diamonds & other hard gems should work").
+Hard gems also have a 50% chance to *survive* being thrown rather
+than shattering on impact (`src/dothrow.c:1996`, "Flint and hard
+gems don't break easily"). Below Mohs 8, the gem only writes in
+dust and breaks on impact like glass. Hardness does *not* affect
+touchstoning — every gem can be identified by a blessed touchstone
+regardless of hardness.
+
 <div class="price-id-toolbar"></div>
 
 | Price | Gem                   | Color           | Mohs | Notes                          |
@@ -5788,7 +5802,7 @@ modifiers shift things.
 |  2000 | Turquoise             | green           |    6 |                                |
 |  1500 | Citrine               | yellow          |    6 |                                |
 |  1500 | Aquamarine            | green           |    8 |                                |
-|  1000 | Amber                 | yellowish brown |    2 | softest, can't be touchstoned  |
+|  1000 | Amber                 | yellowish brown |    2 | softest gem; only dust-writes  |
 |   900 | Topaz                 | yellowish brown |    8 |                                |
 |   850 | Jet                   | black           |    7 |                                |
 |   800 | Opal                  | white           |    6 |                                |

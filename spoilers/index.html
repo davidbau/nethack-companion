@@ -7427,6 +7427,19 @@ rubies is one slot’s worth of clutter.</p>
 shows what an unangry shopkeeper would charge to buy from you; adjust it
 with the Cha/Sell/Tourist/Angry toolbar to see how the modifiers shift
 things.</p>
+<p>The Mohs column is real-world mineral hardness on the Mohs scale
+(talc 1 … diamond 10), and the game uses it in two specific places. Mohs
+≥ 8 makes a gem <strong>“hard”</strong> (<code>HARDGEM</code> in
+<code>include/objects.h</code>). Hard gems can be used as a stylus to
+<em>engrave</em> Elbereth and other messages directly into the dungeon
+floor — a permanent ENGRAVE instead of the dust-only writing soft gems
+and fingers leave (see <code>src/engrave.c:755</code>, “diamonds &amp;
+other hard gems should work”). Hard gems also have a 50% chance to
+<em>survive</em> being thrown rather than shattering on impact
+(<code>src/dothrow.c:1996</code>, “Flint and hard gems don’t break
+easily”). Below Mohs 8, the gem only writes in dust and breaks on impact
+like glass. Hardness does <em>not</em> affect touchstoning — every gem
+can be identified by a blessed touchstone regardless of hardness.</p>
 <div class="price-id-toolbar">
 
 </div>
@@ -7523,7 +7536,7 @@ things.</p>
 <td>Amber</td>
 <td>yellowish brown</td>
 <td style="text-align: right;">2</td>
-<td>softest, can’t be touchstoned</td>
+<td>softest gem; only dust-writes</td>
 </tr>
 <tr>
 <td style="text-align: right;">900</td>
