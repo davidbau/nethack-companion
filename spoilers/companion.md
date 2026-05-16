@@ -211,10 +211,13 @@ leather armor, a lock pick, a sack, and a potion of sickness (handy
 for poisoning blades or for tossing at an enemy). The lock pick is a
 quiet superpower: every locked door, chest, and box is openable from
 turn one without needing a key or a kick. You get stealth from the
-beginning and your backstab ability deals extra damage when you
-attack from hiding. Rogues are excellent
-at avoiding trouble, which is often better than being good at
-surviving it. *Alignment: Chaotic.*
+beginning, and your backstab ability deals extra damage (+1 to +your
+level) when you melee a monster that's **fleeing or helpless** —
+sleeping, paralyzed, or scared off Elbereth. Stealth doesn't trigger
+the bonus directly, but it lets you walk up to sleeping enemies
+without waking them, which is the most common way to set it up.
+Rogues are excellent at avoiding trouble, which is often better than
+being good at surviving it. *Alignment: Chaotic.*
 
 **Samurai.** You start with a katana, which is one of the better
 one-handed weapons in the game, plus a wakizashi backup and a yumi
