@@ -189,9 +189,9 @@ GEH: list[TrunkRow] = [
     TrunkRow(bubble=Bubble("Asmodeus's Lair", color='geh'), pearls_below=1),
     TrunkRow(bubble=Bubble("Juiblex's Swamp", color='geh'), pearls_below=2),
     TrunkRow(bubble=Bubble("Baalzebub's Lair", color='geh'), pearls_below=3),
-    TrunkRow(  # Vlad's Tower branch RIGHT (attaches at bottom; tower goes UP)
+    TrunkRow(  # Vlad's Tower branch LEFT (attaches at bottom; tower goes UP)
         branch=Branch(
-            side='right', color='vlad',
+            side='left', color='vlad',
             bubbles=[
                 Bubble('Candelabrum', color='vlad', star=True),
                 Bubble("Vlad's Tower", color='vlad'),
@@ -203,7 +203,11 @@ GEH: list[TrunkRow] = [
         pearls_below=2,
     ),
     TrunkRow(bubble=Bubble('Orcus-Town', 'Wand of Orcus · magic lamp/marker', color='geh'), pearls_below=2),
-    TrunkRow(bubble=Bubble("The Wizard's Tower", '★ Book of the Dead', color='geh'), pearls_below=6),
+    # Wizard's Tower is 3 inline Gehennom levels (wizard1 entry -> wizard2 ->
+    # wizard3 where the Wizard and Book live). Render as two trunk bubbles
+    # with one pearl between so the depth shows on the map.
+    TrunkRow(bubble=Bubble("Wizard's Tower", color='geh'), pearls_below=1),
+    TrunkRow(bubble=Bubble('Wizard of Yendor', '★ Book of the Dead', color='geh'), pearls_below=5),
     TrunkRow(bubble=Bubble("Moloch's Sanctum", 'the Amulet of Yendor', color='sanctum', is_sanctum=True)),
 ]
 
