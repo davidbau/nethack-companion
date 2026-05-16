@@ -1897,15 +1897,13 @@ a *unicorn horn* still cures it.
 
 #### Seduction
 
-The **amorous demon** (`&`, gray) is the 5.0 unification of the
-old succubus and incubus into one species: same monster
-internally, three names depending on gender (incubus / succubus /
-amorous demon). The seduction attack does no HP damage, but it
-drains experience levels and steals one item per encounter, and
-the only way to refuse is to kill the demon outright before it
-acts. Meeting one without preparation can erase several levels of
-character growth and remove an irreplaceable artifact in the
-same turn.
+The **amorous demon** (`&`, gray) appears as a succubus, an incubus,
+or generically as an amorous demon depending on your character's
+gender. The seduction attack does no HP damage, but it drains
+experience levels and steals one item per encounter, and the only
+way to refuse is to kill the demon outright before it acts. Meeting
+one without preparation can erase several levels of character
+growth and remove an irreplaceable artifact in the same turn.
 
 **Defenses:** Drain resistance (see Level Drain above) blocks the
 level loss. Killing at range (wand, spell, ranged weapon) is
