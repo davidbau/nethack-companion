@@ -914,15 +914,26 @@ leader (who appears on the first Quest level). The leader sends you
 to retrieve your role's quest artifact from a quest nemesis.
 
 Each role has a unique Quest with unique maps, a unique nemesis, and
-a unique artifact reward. The Valkyrie hunts the Orb of Fate. The
-Wizard retrieves the Eye of the Aethiopica. The Tourist battles the
-Master of Thieves for the Platinum Yendorian Express Card. And so on.
+a unique artifact reward. The Valkyrie hunts the Orb of Fate from
+Lord Surtur. The Wizard retrieves the Eye of the Aethiopica from
+the Dark One. The Tourist battles the Master of Thieves for the
+Platinum Yendorian Express Card. The Samurai duels Ashikaga Takauji
+for the Tsurugi of Muramasa. The Monk faces Master Kaen for the
+Eyes of the Overworld. And so on.
 
 Quest artifacts are powerful. Most provide magic resistance, which
 you absolutely need. Some provide other useful properties like
 telepathy or warning. Getting your quest artifact is a milestone
 that marks the transition from "surviving" to "preparing for the
 endgame."
+
+**The nemesis drops two things, on the floor.** When you kill the
+quest nemesis, your role's quest artifact lands on the floor at
+their square, along with the **Bell of Opening** (one of the three
+invocation items you'll need for Gehennom). Pick both up. The
+artifact and the Bell are not auto-added to your pack, and they
+don't reappear; if you leave the floor without them, the Quest is
+the only place in the game you can get them.
 
 If your alignment record is too low (from attacking peacefuls, for
 instance), your quest leader will refuse to send you. Keep your
@@ -933,8 +944,9 @@ hands clean.
 Fort Ludios is optional and easy to miss entirely. It appears as a
 magic portal somewhere in the dungeon, often behind a wall that
 requires digging to reach. The portal leads to a fortified military
-compound filled with soldiers, lieutenants, captains, and a whole
-lot of gold.
+compound filled with soldiers, lieutenants, captains, and the
+fortress's owner, **Croesus** — a unique human of legendary wealth.
+Kill him, loot the place, leave.
 
 The fort is guarded heavily. Soldiers come in numbers, and they
 carry useful items: C-rations, K-rations, and sometimes decent
@@ -3829,11 +3841,26 @@ defends against poison.
 #### Quest artifacts
 
 Each role has exactly one quest artifact, awarded for completing the
-role's quest. They are intelligent (only the rightful owner can
-safely wield them; anyone else gets blasted) and cannot be wished
-for. Most of the non-weapon ones grant magic resistance just by
-sitting in your inventory, so roles whose quest artifact is a
-passive object still benefit from carrying it.
+role's quest. They are intelligent: only the rightful owner can
+safely wield them; anyone else gets blasted. Most of the non-weapon
+ones grant magic resistance just by sitting in your inventory, so
+roles whose quest artifact is a passive object still benefit from
+carrying it.
+
+**A wishing quirk to know about.** The wish system blocks *your
+own* role's quest artifact (you have to earn it the hard way), but
+it doesn't block *other roles'* quest artifacts. A neutral
+character can wish for any neutral quest artifact, a lawful one for
+any lawful quest artifact, and so on. The alignment-blast rule
+still applies if you actually wield or wear a misaligned one, but
+carry bonuses (MR, drain resistance, regeneration, half spell
+damage, energy regeneration, etc.) work for anyone. A neutral Monk
+can wish for the Healer's *Staff of Aesculapius* for the
+drain-life-on-hit and drain-resistance carry bonus, or the Wizard's
+*Eye of the Aethiopica* for MR + half-spell-damage + energy regen,
+even though those quests are closed to the Monk. Wishes for
+artifacts of all kinds also have an increasing fizzle chance as
+more artifacts already exist in the game.
 
 `#invoke` (default `^A`) activates each artifact's special power; the
 cost is some energy plus a wear-out interval before it can be used
@@ -4244,7 +4271,9 @@ travelers realize:
   the throne survives, so persistence pays off.
 <!-- src/allmain.c: u.uhave.amulet && !u.uevent.amulet_wish -->
 - **The Amulet of Yendor:** Grants a wish when you first pick
-  it up. A reward for reaching the bottom of the dungeon.
+  it up. A reward for reaching the bottom of the dungeon. You can
+  decline this wish if your kit is already complete; some
+  minimalist ascenders skip it entirely on principle.
 - **Magic lamp:** Rubbing a blessed lamp summons the djinni 1-in-3
   times; *if* it appears, it grants a wish 80% of the time, so
   roughly 27% wish per rub. Keep rubbing. Either a magic lamp or a
@@ -4260,10 +4289,15 @@ travelers realize:
   and even then only 20% wish chance (80% if blessed). But when
   it works, you feel like a genius.
 
-Most games give you 4 to 6 wishes total: the Castle wand (2-3
-with wresting), Vlad's throne (1), the Amulet pickup (1), and
-possibly a magic lamp. That's 4 to 6 chances to shape your
-destiny. Don't waste them on food.
+Wish counts vary far more in practice than this list suggests.
+Ascensions sampled from the public server range from **zero**
+(a Samurai who declined the Amulet wish and never spent a magic
+lamp) to **twelve** (a Monk who chained Castle-wand recharges with
+multiple magic lamps and a Plane of Water scroll-of-genocide wish).
+The "expected" budget if you take the Castle wand once,
+Vlad's throne once, the Amulet pickup once, and burn one magic
+lamp is about four. Anything beyond that is luck or commitment.
+Don't waste any of them on food.
 
 #### What to Wish For
 
@@ -4744,7 +4778,16 @@ ascenders. Everything you've prepared for has been leading here.
 - **Demon lords.** Named demon lords (Orcus, Baalzebub, Asmodeus,
   Juiblex, Yeenoghu, and if you're very unlucky, Demogorgon) hold
   court on specific levels. Each is a major battle. Several can
-  summon reinforcements. All of them are angry you're here
+  summon reinforcements. All of them are angry you're here.
+  However, **most demon lords can be bribed.** On first sight, if
+  you haven't already attacked them, a major demon will name a
+  price in gold for safe passage. Pay it (typical amounts are
+  300–1000 gp, scaling with the demon's level) and they leave you
+  alone. The alternative is fighting a level-30 boss, so unless
+  you specifically want the XP or sacrifice corpse, bribery is
+  often the better trade. The Riders on the Astral Plane and a
+  small handful of demons (notably Demogorgon) won't take a bribe;
+  the rest usually will
 - **Teleportation restrictions.** In 5.0, teleportation
   is blocked on a demon lord's lair level while that lord still
   lives. Kill or banish them and the restriction lifts. In older
@@ -4817,7 +4860,10 @@ dangerous robbery:
 4. **The Invocation.** At the vibrating square, light the
    Candelabrum (with 7 candles attached), ring the Bell of Opening,
    and read the Book of the Dead. The passage to Moloch's Sanctum
-   opens.
+   opens. (The Bell of Opening was dropped by your quest nemesis
+   back in your Quest, the Candelabrum is from Vlad, the Book is
+   from the Wizard. If you forgot to pick the Bell up off the
+   nemesis's corpse, you have a long walk back to the Quest.)
 
 5. **Moloch's Sanctum.** The high priest of Moloch guards the
    Amulet of Yendor. Defeat him and take it. Then turn around and
@@ -4948,8 +4994,17 @@ The entire level is underwater. Without magical breathing (an
 amulet or intrinsic), you will drown, and drowning is instant death,
 no saving throw. The level is a labyrinth of water-filled chambers
 with occasional air pockets. Sea monsters prowl the corridors.
-Find the portal and push through. This is the last barrier between
-you and the gods.
+
+**The standard tactic on arrival: genocide class `;`.** Read a
+scroll of genocide, target the entire `;` class (eels, krakens,
+sea monsters, sharks, jellyfish, piranhas), and the level instantly
+empties of anything that can drag you under. This is the right
+moment for that scroll — class `;` is almost nowhere else in the
+game (a kraken in Medusa's pool, a moccasin from a fountain are
+isolated encounters not worth burning a class-wipe on), and on the
+next plane it's irrelevant. Spend the scroll here. Then find the
+portal and push through. This is the last barrier between you and
+the gods.
 
 #### The Astral Plane
 
