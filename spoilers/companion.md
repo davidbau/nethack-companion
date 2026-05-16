@@ -530,56 +530,7 @@ bottom in Moloch's Sanctum. Once you have it, you climb all the
 way back up and pass through the **Elemental Planes** to reach
 the **Astral Plane**, where your god awaits your offering.
 
-```
-  Dungeons of Doom (levels 1-27ish)
-    │
-    ├── The Gnomish Mines (branch around level 2-4)
-    │     ├── Minetown (shops and a temple)
-    │     └── Mine's End (bottom: luckstone)
-    │
-    ├── The Oracle (Dlvl 5-10, pays for major hints)
-    │     │── Sokoban branch goes UP from here
-    │     │     └── Top: bag of holding or amulet of reflection
-    │     └── Quest portal is a few levels below the Oracle
-    │           └── Unique to your role. Get your quest artifact.
-    │
-    ├── The Big Room (Dlvl 10-12, 40% chance — one huge room)
-    │
-    ├── The Rogue Level (Dlvl 15-18, an older more primitive world)
-    │
-    ├── Fort Ludios (portal, if you find it)
-    │     └── A vault full of gold and soldiers
-    │
-    ├── Medusa's Island (level ~25)
-    │
-    └── The Castle (level ~27, wand of wishing)
-          │
-  Gehennom (levels 28-50ish)
-    │
-    ├── Valley of the Dead (Gehennom's entrance level)
-    │
-    ├── Asmodeus's lair
-    ├── Juiblex's swamp
-    ├── Baalzebub's lair
-    │
-    ├── Vlad's Tower (entry mid-Gehennom, tower goes UP — Candelabrum)
-    │
-    ├── Orcus-town (Orcus, wand of death, Eye of the Aethiopica)
-    │
-    ├── The Wizard's Tower (Wizard of Yendor, Book of the Dead)
-    │
-    └── Moloch's Sanctum (bottom: the Amulet of Yendor)
-          │
-          (climb back to Dlvl 1; with the Amulet, the
-           up-stairs transport you to the Planes)
-          │
-  The Elemental Planes
-    Earth ─► Air ─► Fire ─► Water
-      │
-      The Astral Plane (three altars, pick the right one)
-        │
-        ASCENSION
-```
+<div><figure style="margin: 1.5em 0; text-align: center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 1360" role="img" aria-label="The dungeon overview map" style="max-width: 760px; width: 100%; height: auto; font-family: 'EB Garamond', 'Garamond', 'Georgia', serif;"><title>The Dungeon Overview Map</title><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker><marker id="arrUp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5B8E3A"/></marker><style>.title{font-size:24px;font-weight:600;fill:#1f2933;text-anchor:middle}.sect{font-size:15px;font-weight:600;fill:#fff;text-anchor:middle;letter-spacing:0.08em}.lbl{font-size:15px;fill:#1f2933;text-anchor:middle}.lblb{font-size:15px;font-weight:600;fill:#1f2933;text-anchor:middle}.dt{font-size:12px;fill:#555;text-anchor:middle;font-style:italic}.edge{fill:none;stroke:#5a5a5a;stroke-width:1.5}.climb{fill:none;stroke:#5B8E3A;stroke-width:2;stroke-dasharray:6,4}.dod{fill:#FAF3E0;stroke:#B5651D;stroke-width:1.5}.mines{fill:#E8F4DC;stroke:#5B8E3A;stroke-width:1.5}.soko{fill:#FFF4CC;stroke:#B58A1A;stroke-width:1.5}.quest{fill:#E3D8F0;stroke:#6B4E96;stroke-width:1.5}.treasure{fill:#FCE8E6;stroke:#A14A3F;stroke-width:2}.geh{fill:#FAD7C0;stroke:#A14A3F;stroke-width:1.5}.vlad{fill:#DDE9F5;stroke:#3B6FA0;stroke-width:1.5}</style></defs><text class="title" x="380" y="32">The Dungeon: A Topological Map</text><rect x="40" y="50" width="680" height="26" rx="4" fill="#B5651D"/><text class="sect" x="380" y="68">DUNGEONS OF DOOM (Dlvl 1-27)</text><line x1="380" y1="84" x2="380" y2="584" stroke="#B5651D" stroke-width="2.5"/><rect class="dod" x="290" y="90" width="180" height="36" rx="6"/><text class="lblb" x="380" y="108">Dlvl 1 — Entry</text><text class="dt" x="380" y="121">corner up-stair (exit)</text><line class="edge" x1="290" y1="200" x2="220" y2="200" marker-end="url(#arr)"/><circle cx="380" cy="200" r="4" fill="#B5651D"/><rect class="mines" x="40" y="160" width="180" height="86" rx="6"/><text class="lblb" x="130" y="180">Gnomish Mines ↓</text><text class="dt" x="130" y="196">(branches at Dlvl 2-4)</text><text class="dt" x="130" y="214">Minetown — shops, temple</text><text class="dt" x="130" y="230">Mine's End — luckstone ★</text><rect class="dod" x="290" y="270" width="180" height="48" rx="6"/><text class="lblb" x="380" y="290">The Oracle</text><text class="dt" x="380" y="307">Dlvl 5-10 · paid hints</text><line class="edge" x1="470" y1="282" x2="550" y2="260" marker-end="url(#arr)"/><rect class="soko" x="550" y="232" width="170" height="60" rx="6"/><text class="lblb" x="635" y="252">Sokoban ↑</text><text class="dt" x="635" y="269">bag of holding</text><text class="dt" x="635" y="285">or amulet of reflection</text><line class="edge" x1="470" y1="306" x2="550" y2="328" marker-end="url(#arr)"/><rect class="quest" x="550" y="310" width="170" height="40" rx="6"/><text class="lblb" x="635" y="328">Quest portal</text><text class="dt" x="635" y="343">your role's artifact</text><rect class="dod" x="290" y="368" width="180" height="32" rx="6"/><text class="lbl" x="380" y="389">Big Room (Dlvl 10-12, 40%)</text><rect class="dod" x="290" y="410" width="180" height="32" rx="6"/><text class="lbl" x="380" y="431">Rogue Level (Dlvl 15-18)</text><rect class="dod" x="290" y="452" width="180" height="32" rx="6"/><text class="lbl" x="380" y="473">Fort Ludios portal (vault)</text><rect class="dod" x="290" y="494" width="180" height="32" rx="6"/><text class="lbl" x="380" y="515">Medusa's Island (Dlvl ~25)</text><rect class="treasure" x="290" y="536" width="180" height="48" rx="6"/><text class="lblb" x="380" y="556">★ THE CASTLE</text><text class="dt" x="380" y="573">Dlvl ~27 · wand of wishing</text><rect x="40" y="606" width="680" height="26" rx="4" fill="#A14A3F"/><text class="sect" x="380" y="624">GEHENNOM (Dlvl 28-50)</text><line x1="380" y1="638" x2="380" y2="1000" stroke="#A14A3F" stroke-width="2.5"/><rect class="geh" x="290" y="648" width="180" height="38" rx="6"/><text class="lblb" x="380" y="668">Valley of the Dead</text><text class="dt" x="380" y="682">Dlvl 28 · graves</text><rect class="geh" x="290" y="700" width="180" height="30" rx="6"/><text class="lbl" x="380" y="720">Asmodeus's Lair</text><rect class="geh" x="290" y="740" width="180" height="30" rx="6"/><text class="lbl" x="380" y="760">Juiblex's Swamp</text><rect class="geh" x="290" y="780" width="180" height="30" rx="6"/><text class="lbl" x="380" y="800">Baalzebub's Lair</text><line class="edge" x1="470" y1="836" x2="550" y2="836" marker-end="url(#arr)"/><circle cx="380" cy="836" r="4" fill="#A14A3F"/><rect class="vlad" x="550" y="812" width="170" height="48" rx="6"/><text class="lblb" x="635" y="832">Vlad's Tower ↑</text><text class="dt" x="635" y="848">Candelabrum</text><rect class="treasure" x="290" y="868" width="180" height="50" rx="6"/><text class="lblb" x="380" y="888">★ Orcus-Town</text><text class="dt" x="380" y="904">wand of death</text><text class="dt" x="380" y="918">Eye of the Aethiopica</text><rect class="treasure" x="290" y="934" width="180" height="48" rx="6"/><text class="lblb" x="380" y="954">★ The Wizard's Tower</text><text class="dt" x="380" y="971">Book of the Dead</text><rect x="230" y="1000" width="300" height="64" rx="8" fill="#2D2D2D" stroke="#FFC857" stroke-width="2.5"/><text x="380" y="1024" style="font-size:17px;fill:#FFC857;text-anchor:middle;font-weight:600">★ Moloch's Sanctum ★</text><text x="380" y="1048" style="font-size:14px;fill:#FFE680;text-anchor:middle;font-style:italic">the Amulet of Yendor</text><path class="climb" d="M 230 1032 C 20 1032 20 108 290 108" marker-end="url(#arrUp)"/><text x="180" y="1024" style="font-size:11px;fill:#5B8E3A;font-style:italic;text-anchor:end">↑ climb back to Dlvl 1</text><text x="240" y="155" style="font-size:11px;fill:#5B8E3A;font-style:italic;text-anchor:end">return with Amulet ↑</text><rect x="40" y="1080" width="680" height="26" rx="4" fill="#5D3C8E"/><text class="sect" x="380" y="1098">THE ELEMENTAL PLANES &amp; ASCENSION</text><rect x="40" y="1128" width="120" height="40" rx="6" fill="#E8DDC8" stroke="#8B6F47" stroke-width="1.5"/><text class="lblb" x="100" y="1153">Earth</text><line class="edge" x1="160" y1="1148" x2="200" y2="1148" marker-end="url(#arr)"/><rect x="200" y="1128" width="120" height="40" rx="6" fill="#E0F4FA" stroke="#3B9FA8" stroke-width="1.5"/><text class="lblb" x="260" y="1153">Air</text><line class="edge" x1="320" y1="1148" x2="360" y2="1148" marker-end="url(#arr)"/><rect x="360" y="1128" width="120" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text class="lblb" x="420" y="1153">Fire</text><line class="edge" x1="480" y1="1148" x2="520" y2="1148" marker-end="url(#arr)"/><rect x="520" y="1128" width="120" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text class="lblb" x="580" y="1153">Water</text><line class="edge" x1="580" y1="1168" x2="380" y2="1204" marker-end="url(#arr)"/><rect x="260" y="1208" width="240" height="42" rx="6" fill="#D8C6F0" stroke="#5D3C8E" stroke-width="1.5"/><text class="lblb" x="380" y="1228">Astral Plane</text><text class="dt" x="380" y="1244">three altars · pick yours</text><line class="edge" x1="380" y1="1250" x2="380" y2="1280" marker-end="url(#arr)"/><rect x="240" y="1280" width="280" height="50" rx="10" fill="#FFE680" stroke="#B5891A" stroke-width="2.5"/><text x="380" y="1303" style="font-size:18px;fill:#7A5A0A;text-anchor:middle;font-weight:700;letter-spacing:0.1em">★ ASCENSION ★</text><text x="380" y="1322" style="font-size:11px;fill:#7A5A0A;text-anchor:middle;font-style:italic">offer at the right altar</text></svg><figcaption style="font-style: italic; color: #5a5a5a; font-size: 0.9em; margin-top: 0.5em;">The dungeon overview map: branches, treasures, and the path to ascension.</figcaption></figure></div>
 
 The typical trip: go down through the Dungeons, detour into the
 Mines for a luckstone and Minetown's shops, clear Sokoban for a
