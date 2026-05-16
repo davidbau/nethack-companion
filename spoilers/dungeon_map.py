@@ -111,6 +111,7 @@ class Branch:
     bubbles: list[Bubble]
     pearls: list[int]                         # between-bubble pearl counts
     attach: Literal['top', 'bottom'] = 'top'  # which bubble joins the trunk
+    label: str = ''                           # tiny label above the trunk-to-branch arrow
 
 
 @dataclass
@@ -126,11 +127,11 @@ class TrunkRow:
 
 DOD: list[TrunkRow] = [
     TrunkRow(bubble=Bubble('Dlvl 1 — Entry', 'up-stair to exit'), pearls_below=2),
-    TrunkRow(  # Mines branch LEFT
+    TrunkRow(  # Mines branch LEFT (down-stairs, default; no arrow label)
         branch=Branch(
             side='left', color='mines',
             bubbles=[
-                Bubble('Gnomish Mines', '8-10 levels', color='mines'),
+                Bubble('Gnomish Mines', color='mines'),
                 Bubble('Minetown', 'shops, temple', color='mines'),
                 Bubble("Mine's End", 'luckstone', color='mines'),
             ],
@@ -139,21 +140,22 @@ DOD: list[TrunkRow] = [
         ),
         pearls_below=3,
     ),
-    TrunkRow(  # Sokoban branch RIGHT (its up-stair is one level above Oracle, not on Oracle)
+    TrunkRow(  # Sokoban branch RIGHT (up-stair from main dungeon)
         branch=Branch(
             side='right', color='soko',
             bubbles=[
                 Bubble('Sokoban prize', 'bag of holding/amulet of reflection', color='soko'),
-                Bubble('Sokoban entry ↑', color='soko'),
+                Bubble('Sokoban entry', color='soko'),
             ],
             pearls=[2],
             attach='bottom',
+            label='up',
         ),
-        pearls_below=1,
+        pearls_below=0,
     ),
     TrunkRow(bubble=Bubble('The Oracle', 'paid hints'), pearls_below=5),
-    TrunkRow(  # Quest portal + Quest RIGHT
-        bubble=Bubble('Quest portal', 'role-specific portal'),
+    TrunkRow(  # Quest portal + Quest RIGHT (portal)
+        bubble=Bubble('Quest portal'),
         branch=Branch(
             side='right', color='quest',
             bubbles=[
@@ -162,17 +164,19 @@ DOD: list[TrunkRow] = [
             ],
             pearls=[3],
             attach='top',
+            label='portal',
         ),
         pearls_below=2,
     ),
     TrunkRow(bubble=Bubble('Big Room (40%)'), pearls_below=2),
     TrunkRow(bubble=Bubble('Rogue Level'), pearls_below=1),
-    TrunkRow(  # Fort Ludios branch LEFT
+    TrunkRow(  # Fort Ludios branch LEFT (portal)
         branch=Branch(
             side='left', color='ludios',
             bubbles=[Bubble('Fort Ludios', 'vault of gold', color='ludios')],
             pearls=[],
             attach='top',
+            label='portal',
         ),
         pearls_below=3,
     ),
@@ -190,10 +194,11 @@ GEH: list[TrunkRow] = [
             side='right', color='vlad',
             bubbles=[
                 Bubble('Candelabrum', color='vlad', star=True),
-                Bubble("Vlad's Tower ↑", color='vlad'),
+                Bubble("Vlad's Tower", color='vlad'),
             ],
             pearls=[1],
             attach='bottom',
+            label='up',
         ),
         pearls_below=2,
     ),
@@ -216,6 +221,7 @@ class Placed:
     branch_arrows: list[tuple[int, int, int, int]] = field(default_factory=list)  # (x1, y1, x2, y2)
     branch_connectors: list[tuple[int, int, int, str]] = field(default_factory=list)  # (x, y1, y2, color)
     trunk_segments: list[tuple[int, int, int, str]] = field(default_factory=list)    # (x, y1, y2, color)
+    arrow_labels: list[tuple[int, int, str]] = field(default_factory=list)            # (x, y, text)
 
 
 def gap_for_pearls(n: int) -> int:
@@ -286,6 +292,9 @@ def layout_arrow_to_branch(branch: Branch, attach_y: int, trunk_has_bubble: bool
         x1 = TRUNK_X + BUBBLE_W // 2 if trunk_has_bubble else TRUNK_X
         x2 = RIGHT_X
         placed.branch_arrows.append((x1, attach_y, x2, attach_y))
+    if branch.label:
+        cx = (x1 + x2) // 2
+        placed.arrow_labels.append((cx, attach_y - 4, branch.label))
 
 
 def layout_trunk(rows: list[TrunkRow], y_start: int, trunk_color_key: str,
@@ -500,12 +509,16 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
     # === Arrows drawn AFTER boxes so arrowheads sit on top of box edges ===
 
     # Curved arrow from bar bottom-center to Earth top-center.
-    # The arrow ends with a 22px vertical straight segment so the
-    # arrowhead enters the Earth box vertically from above.
+    # The cubic forms a symmetric S (both control points at the midpoint
+    # y of the cubic segment) so its end tangent is long-vertical and
+    # smoothly continues into a vlen-px straight segment ending at the
+    # Earth bubble's top — no kink at the join.
     vlen = 22
+    cubic_end_y = row_y - vlen
+    mid_y = (bar_bottom + cubic_end_y) // 2
     parts.append(
         f'<path d="M {WIDTH//2} {bar_bottom} '
-        f'C {WIDTH//2} {row_y - vlen - 3} {earth_cx} {row_y - vlen - 3} {earth_cx} {row_y - vlen} '
+        f'C {WIDTH//2} {mid_y} {earth_cx} {mid_y} {earth_cx} {cubic_end_y} '
         f'L {earth_cx} {row_y}" '
         f'stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
     )
@@ -521,10 +534,12 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
             f'stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
         )
 
-    # Curved arrow Water bottom-center → Astral top-center (vertical entry)
+    # Curved arrow Water bottom-center → Astral top-center, same S-into-line shape.
+    cubic_end_y2 = astral_y - vlen
+    mid_y2 = (water_bottom + cubic_end_y2) // 2
     parts.append(
         f'<path d="M {water_cx} {water_bottom} '
-        f'C {water_cx} {astral_y - vlen - 3} {astral_cx} {astral_y - vlen - 3} {astral_cx} {astral_y - vlen} '
+        f'C {water_cx} {mid_y2} {astral_cx} {mid_y2} {astral_cx} {cubic_end_y2} '
         f'L {astral_cx} {astral_y}" '
         f'stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
     )
@@ -605,6 +620,11 @@ def render_svg() -> str:
     parts.extend(render_trunk_circles(placed.trunk_circles))
     # 6. Branch arrows (ON TOP of bubbles so arrowheads are visible at bubble edges)
     parts.extend(render_branch_arrows(placed.branch_arrows))
+    # 6b. Arrow labels ("up", "portal", ...) above the arrow lines
+    for x, y, label in placed.arrow_labels:
+        parts.append(text_el(x, y, label,
+                             font_size=11, font_style='italic', fill='#5a5a5a',
+                             text_anchor='middle'))
     # 7. Pearls (front layer, always visible on top of connectors and trunk lines)
     parts.extend(render_pearls(placed.pearls))
 
