@@ -531,7 +531,7 @@ way back up and pass through the **Elemental Planes** to reach
 the **Astral Plane**, where your god awaits your offering.
 
 ```
-  Dungeons of Doom (levels 1-29ish)
+  Dungeons of Doom (levels 1-27ish)
     │
     ├── The Gnomish Mines (branch around level 2-4)
     │     ├── Minetown (shops and a temple)
@@ -552,7 +552,7 @@ the **Astral Plane**, where your god awaits your offering.
     │
     ├── Medusa's Island (level ~25)
     │
-    └── The Castle (level ~27, guaranteed wand of wishing in a tower)
+    └── The Castle (level ~27, wand of wishing)
           │
   Gehennom (levels 28-50ish)
     │
