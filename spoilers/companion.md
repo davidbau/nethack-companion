@@ -1263,6 +1263,63 @@ seek is behind one of these walls. Finding it is a matter of
 systematic elimination. The only mistake is giving up after three
 searches and declaring the level "impossible."
 
+#### Engravings
+
+You can write on the dungeon floor with the engrave command (`E`).
+Engravings serve a few practical purposes: writing **Elbereth**
+(covered next), running the engrave-test on an unidentified wand
+(covered in the wand chapter), or just leaving a note for whoever
+finds your bones file. The mechanics described here apply to *any*
+engraving, not just Elbereth.
+
+**Methods, speed, and durability.** The tool you write with
+determines how quickly you can finish, how hard the engraving is
+to erase, and whether your stylus suffers wear.
+
+| Method            | Speed         | Durability     | Notes                             |
+| ----------------- | ------------- | -------------- | --------------------------------- |
+| Finger (dust)     | Instant       | Fragile        | Smudges when monsters step on it  |
+| Athame            | Several turns | Semi-permanent | Interruptible; doesn't dull       |
+| Edged weapon      | Several turns | Semi-permanent | Interruptible; dulls weapon by −1 |
+| Hard gem/diamond  | Several turns | Semi-permanent | Interruptible                     |
+| Wand of digging   | Instant       | Semi-permanent | Good middle ground                |
+| Wand of fire      | Instant       | Permanent      | Burns the word into the floor     |
+| Wand of lightning | Instant       | Permanent      | Same as fire                      |
+
+The three durability tiers correspond to how the text resists
+ordinary erosion:
+
+- **Fragile** (dust) — a monster stepping on the square smudges
+  characters out. In dust, an Elbereth lasts as long as the floor
+  stays clear.
+- **Semi-permanent** (scratched into the floor) — monster traffic
+  doesn't smudge it. Random erosion can occasionally chip a
+  character under unusual conditions, but in practice the
+  engraving lasts indefinitely.
+- **Permanent** (burned in) — the engraving doesn't erode at all
+  under normal conditions; only ice tiles or magical attacks can
+  damage it.
+
+**Engraving is an interruptible occupation.** Anything written by
+hand (athame, weapon, gem) takes multiple turns, one per letter.
+If you're interrupted mid-word — by an attack, a monster wandering
+into view, or anything else that breaks an occupation — you get a
+partial engraving that does nothing useful. Instant methods (any
+wand, or writing in dust with your finger) finish in a single
+turn and can't be interrupted.
+
+**Impairment and errors.** If you are blind, confused, stunned, or
+hallucinating, you have a chance of misspelling each letter. A
+misspelled message has no special power; this matters most for
+Elbereth. Instant methods (wand of fire, lightning, digging) bypass
+the per-letter check, so they remain reliable under duress.
+
+**Overwriting and combining.** You can't add text to an existing
+engraving in a useful way; new text combines with the old to
+produce a longer string, and the magic of named words (like
+Elbereth) requires the *exact* word and nothing else. Overwrite the
+square or pick a fresh one.
+
 #### Elbereth
 
 > *The mechanics below are drawn from Kate Nepveu's Elbereth FAQ
@@ -1270,82 +1327,86 @@ searches and declaring the level "impossible."
 > the NetHack community. Kate also maintained steelypips.org, the
 > long-running archive that preserved decades of community spoilers.*
 
-Elbereth is not a trap, but it belongs in a chapter about dungeon
-hazards because it is your best defense against many of them.
+##### Where the word comes from
 
-Writing the word "Elbereth" on the ground (using the engrave
-command, `E`) creates a protective ward. Most monsters will not
-attack you in melee while you stand on an Elbereth square. This
-applies whether you wrote it or found it already engraved.
+*Elbereth* is Sindarin for "Star-Queen" (or "Star-Kindler"), one of
+the Elvish names of **Varda Elentári**, highest of the Valar in
+J.R.R. Tolkien's *Silmarillion* — the one who set the stars in the
+sky. In *The Lord of the Rings* the Elves invoke her name for
+protection against evil. Frodo cries *"O Elbereth! Gilthoniel!"* on
+Weathertop and the Witch-king recoils. Sam invokes her in Shelob's
+lair and the Phial of Galadriel burns brighter. The hymn at
+Rivendell (*A Elbereth Gilthoniel...*) is a hymn to her. NetHack
+lifts the conceit directly: writing Varda's name on the dungeon
+floor is an appeal to a higher power for safe ground, and the
+crowning title **"Hand of Elbereth"** (for lawful ascenders) is the
+explicit nod.
 
-Elbereth has rules:
+##### The ward
+
+Writing the word **Elbereth** on the floor creates a protective
+ward. Most monsters will not melee-attack you while you stand on an
+Elbereth square; they mill around, frustrated, instead. The ward
+applies whether you wrote it or found it already engraved, and the
+underlying engraving method (dust, scratched, burned) doesn't
+affect the strength of the protection — only how long the engraving
+will survive.
+
+##### Rules of the ward
 
 - **It only works while you stand on it.** Step off and the
-  protection ends.
-- **Attacking a monster erases it.** If you fight in melee while
-  standing on Elbereth, the word smudges and you lose protection.
-  In 5.0 this also costs you −5 alignment as
-  punishment for defiling the sacred word with violence. Elbereth
-  is defensive only. Use it to buy time, not to fight from.
-- **Some monsters ignore it.** Anything represented by `@` (humans,
-  elves, player-like creatures), the Riders on the Astral Plane,
-  Angels, minotaurs, unique/named monsters (quest nemeses, Vlad,
-  etc.), and blind monsters all disregard Elbereth.
-  Shopkeepers and guards also ignore it. Cornered monsters with
-  no retreat path will fight through Elbereth rather than stand
-  still. In general, any creature intelligent enough to be
-  "human-like," any creature that is blind, and anything that has
-  nowhere to flee will walk right through.
-- **It must be the only text on the square.** If there's already
-  an engraving, you need to overwrite it. Adding Elbereth to an
-  existing message won't work.
-- **Engraving is an interruptible occupation.** In 5.0, writing with anything other than a wand takes multiple
-  turns (one per letter). If you're interrupted mid-word (by an
-  attack, a monster wandering into view, or anything else that
-  breaks an occupation) you get a partial
-  engraving that does nothing. This makes wands (which write the
-  whole word instantly) far more valuable for emergency Elbereth.
-- **Durability varies by method.** In 5.0, the
-  engraving is not gradually eroded by scaring monsters. Instead,
-  it persists until you take a hostile action (which destroys it
-  instantly) or, for dust engravings, until monsters walk over it.
+  protection ends. Stepping back on resumes it.
+- **It must be the exact word.** "Elbereth," nothing more, nothing
+  less. Misspellings (from impairment) and combined text don't
+  count.
+- **Some monsters ignore it.** Anything represented by `@`
+  (humans, elves, player-like creatures), the Riders on the Astral
+  Plane, Angels, minotaurs, unique/named monsters (quest nemeses,
+  Vlad, the Wizard), shopkeepers, guards, and any blind monster
+  will all walk right through. So will cornered monsters with no
+  retreat path: a creature with nowhere to flee will fight rather
+  than stand helplessly. As a rough principle, anything intelligent
+  enough to recognize the misuse, anything that can't perceive the
+  inscription, and anything with nothing to lose disregards the ward.
+- **Elbereth doesn't work in Gehennom, on the Elemental Planes, or
+  on the Astral Plane.** Below the Castle, you're on your own.
 
-| Method            | Speed    | Durability    | Notes                           |
-| ----------------- | -------- | ------------- | ------------------------------- |
-| Finger (dust)     | Instant  | Fragile       | Smudges when monsters step on it |
-| Athame            | Several turns | Semi-permanent | Interruptible; doesn't dull    |
-| Edged weapon      | Several turns | Semi-permanent | Interruptible; dulls weapon by −1 |
-| Hard gem/diamond  | Several turns | Semi-permanent | Interruptible                 |
-| Wand of digging   | Instant  | Semi-permanent | Good middle ground              |
-| Wand of fire      | Instant  | Permanent     | Best method; burns into floor   |
-| Wand of lightning | Instant  | Permanent     | Same as fire                    |
+##### The defile rule (important)
 
-Burning with a wand of fire or lightning is ideal: it takes only
-one turn, produces a permanent engraving, and cannot be interrupted.
-A wand of digging is the next best option, also instant. Writing
-in dust with your finger is free and instant but erases almost
-immediately. All other methods take multiple turns and leave you
-vulnerable. Use them only when you have breathing room.
+If you melee-attack a monster while standing on Elbereth (and that
+monster *would* have feared the ward, or is peaceful), the
+engraving is **deleted instantly, in full, regardless of how it was
+made.** Even a burned-permanent Elbereth disappears in one swing.
+You take a −5 alignment hit ("You feel like a hypocrite") and see
+the message *"The engraving beneath you fades."*
 
-**Impairment and errors.** If you are blind, confused, stunned, or
-hallucinating, you have a chance of misspelling Elbereth with each
-letter. A misspelled Elbereth has no power. This makes engraving
-under duress unreliable unless you use an instant method (wand of
-fire burns the whole word at once, regardless of impairment).
+This is the point that the durability table doesn't capture:
+"permanent" and "semi-permanent" describe resistance to *passive*
+wear (monster footsteps, erosion). Your own hostile action wipes
+the word regardless of tier. So Elbereth is strictly **defensive**.
+Use it to heal, drink a potion, read a scroll, swap gear — and step
+off (or kill at range) when you want to attack.
 
-**Levitation and durability.** If you are levitating, dust
-engravings beneath you won't be erased by monster movement, because
-you're floating above the square. This makes dust-Elbereth more
-durable than usual.
+##### Practical use
 
-The practical use: when things go badly and you need a moment to
-recover (quaff a healing potion, read a scroll, use an escape
-item), write Elbereth in the dust and stand on it. Most monsters
-will back off, giving you a turn to act. For a more permanent safe
-spot, burn it with a wand of fire. Permanent Elbereth squares
-are useful for stashing items, resting, or creating safe retreat
-points in dangerous areas. It works in most of the dungeon, and
-it costs nothing but a wand charge.
+In an emergency, write Elbereth in the dust with your finger: free,
+instant, and good enough to buy a turn or two. Most monsters will
+back off and let you act. Once the immediate danger passes, you can
+either step off the dust ward to keep it for next time (it survives
+until a monster steps on the square), or upgrade to something more
+durable.
+
+For a permanent safe spot — useful for stashing items, resting at a
+fixed retreat point, or anchoring a corridor fight — burn the word
+with a wand of fire or lightning. One turn, no interruption risk,
+no impairment penalty, no wear. A semi-permanent engraving (athame,
+weapon, gem, wand of digging) is the middle ground: durable, but
+the slow methods can be interrupted mid-word.
+
+**Levitation trick.** If you levitate while writing Elbereth in
+dust, you don't actually stand on the square, so monster footsteps
+can't smudge it as you walk above. The dust ward effectively becomes
+semi-permanent until you land.
 
 ---
 
@@ -1369,6 +1430,7 @@ by how early you might encounter them:
 | ------ | --------- | --------------------------------------------------------------------------------------- |
 | `a`    | Ants      | Come in groups. Soldier ants are fast and hit hard.                                     |
 | `b`    | Blobs     | Acidic or gelatinous. Don't hit acid blobs in melee.                                    |
+| `B`    | Bats      | Fast, erratic fliers. Bats themselves are nuisances; vampire bats are vampire-class and drain levels. |
 | `d`    | Dogs      | Often your starting pet. Tame dogs are loyal. Wild ones are manageable.                 |
 | `e`    | Eyes      | **Floating eyes paralyze on melee hit.** Never hit an `e` in melee. Use ranged attacks. Spheres (flaming/freezing/shocking) explode in a 3×3 area in 5.0; kill them at range. Melee finishes them but you eat the blast. |
 | `f`    | Cats      | Like dogs, often starting pets. Felines can be tamed with tripe.                        |
@@ -1377,8 +1439,10 @@ by how early you might encounter them:
 | `i`    | Imps      | Minor pests. Can steal and teleport.                                                    |
 | `j`    | Jellies   | Spotted and ochre jellies. Passive acid damage on melee.                                |
 | `k`    | Kobolds   | Weak individually but sometimes carry poisoned weapons.                                 |
+| `o`    | Orcs      | Numerous and modest in strength one-on-one; dangerous in packs. Hill orcs and Mordor orcs are the common upper-dungeon variants. |
 | `r`    | Rodents   | Rats and rock moles. Rock moles eat metal items, so protect your gear.                  |
 | `s`    | Spiders   | Cave spiders are weak. Giant spiders poison.                                            |
+| `x`    | Grid bugs | The weakest monster in the game; they can't even move diagonally. Free XP and free corpses. The `x` class also covers the much-later **xan**, a leg-wound trapper. |
 | `:`    | Lizards   | Important! Lizard corpses cure petrification. Always carry one.                         |
 
 #### Mid-Dungeon Threats
@@ -1391,17 +1455,32 @@ by how early you might encounter them:
 | `f`    | Displacer beast   | Cat-class, but vicious: three-attack heavy melee with a permanent displacement aura. Eat the corpse for temporary displacement of your own. |
 | `F`    | Fungi             | Yellow mold, green mold, shriekers. Shriekers summon other monsters.                                 |
 | `G`    | Gnome lords/kings | Tougher gnomes. Still fairly manageable.                                                             |
+| `'`    | Golems            | Built things. Iron golems hit hard and resist nearly everything; clay, stone, and wood golems are softer. Glass golems leave gems on death. |
 | `H`    | Giants            | Strong melee, throw boulders. Giants carry gems.                                                     |
+| `J`    | Jabberwock        | Rare, but if you see one you're in for a fight. Two big claw-attacks per turn, fast, and aggressive. |
+| `K`    | Keystone Kops     | The shopkeeper-summoned constabulary. They appear when you steal, refuse to pay, or anger a shopkeeper. Individually weak but they swarm, and they jeer at you. |
+| `l`    | Leprechauns       | Steal your gold and teleport away. If you'd rather not lose 100zm at a time, fight at range or skip them. |
 | `L`    | Liches            | Spellcasters. Arch-liches are among the most dangerous monsters in the game.                         |
+| `m`    | Mimics            | Disguised as items, walls, doors, fountains, altars, or boulders. See the mimics note below.         |
 | `M`    | Mummies           | Aggressive undead with physical claw attacks. Their corpses are dangerous to eat (age you). Mummy wrappings are useless. |
-| `N`    | Nymphs            | Steal items from your inventory, then teleport away. Fight from range.                               |
+| `n`    | Nymphs            | Steal items from your inventory, then teleport away. Fight from range.                               |
+| `N`    | Nagas             | Large serpent-bodied creatures. The poisonous variants spit a poison gaze at range; black nagas breathe acid. Tough and slow. |
 | `O`    | Ogres             | Strong melee fighters. Ogre lords and kings are tougher.                                             |
+| `p`    | Piercers          | Disguise as stalactites; drop from the ceiling onto whatever walks below. The fall does serious damage. Hard to spot in advance. |
 | `P`    | Puddings          | Black puddings split when hit with iron weapons. Don't use iron.                                     |
+| `q`    | Quadrupeds        | Three- and four-attack mid-game bruisers. The **rothe** is the famous one (three attacks per turn, fast); mumakil hit hard but slow.                              |
+| `R`    | Rust monster / disenchanter | Rust monsters corrode iron weapons and armor on contact; keep iron gear off when fighting them or wear an oilskin sack near them. **Disenchanters** drain enchantment on hit and have their own write-up under Dangerous Encounters. |
 | `S`    | Snakes            | Cobras and pit vipers poison. Water moccasins come from fountains.                                   |
+| `t`    | Trappers / lurkers above | Hide in plain sight on floor or ceiling and engulf you when you walk under/onto them. See the engulfment write-up under Dangerous Encounters. |
 | `T`    | Trolls            | Regenerate. They come back from the dead unless you eat or tin the corpse.                           |
+| `u`    | Horses / unicorns | Horses are usually mountable, mostly peaceful in the wild. Unicorns are powerful and color-coded by alignment — same-aligned unicorns can be pacified by throwing a real gem at them (see Luck); cross-aligned ones are a fight. |
 | `U`    | Umber hulk        | Confuses on sight. Avoid looking at them directly.                                                   |
+| `v`    | Vortices          | Engulfing wisps. Air, fire, ice, and steam vortices each apply their element to whatever they engulf. Kill at range. |
+| `w`    | Worms             | Long worms grow tail segments after each hit and can be a corridor in themselves. Purple worms swallow you whole (see Don't Want, below). |
 | `W`    | Wraiths           | Drain levels on hit. But their corpses grant a level, so eat them fresh.                             |
+| `y`    | Yellow/black lights | Explode adjacent. Yellow blinds you; black confuses and adds hallucination. Black lights are invisible without *see invisible*. Kill at range. |
 | `Y`    | Yetis             | Tough melee combatants. Corpses may grant cold resistance.                                           |
+| `z`    | Zruty             | Three-attack mid-game brute. Uncommon but a fair fight if you've geared up.                          |
 | `Z`    | Zombies           | Slow, numerous, come in many varieties. Zombie corpses are old and will rot.                         |
 
 #### Things You Don't Want to Meet
@@ -1412,10 +1491,65 @@ by how early you might encounter them:
 | `D`    | Dragons          | Each color has its own breath weapon, resistance, and scale mail property. See note below.               |
 | `h`    | Mind flayers     | Drain intelligence on hit. **If Int reaches 0, you die.** Keep distance or kill fast.                    |
 | `V`    | Vampires         | Drain levels. Vampire lords fly and are fast.                                                            |
+| `w`    | Purple worm      | The big worm: swallows you whole on a hit, then digests. Cut your way out from inside.                  |
+| `X`    | Xorn             | Phases through walls and floors. Three claws and a bite per turn; hard to ambush and hard to escape from. |
 | `;`    | Sea monsters     | Drowning is an instadeath. Don't fight in water without a plan.                                          |
 | `&`    | Demons           | Major demons (Orcus, Demogorgon, Asmodeus) are boss-level threats.                                       |
 | `@`    | Humans (hostile) | Includes the Wizard of Yendor, who is the most persistent nuisance in the game.                          |
-| `Q`    | Genetic engineer | Polymorphs you on a successful hit, like a quantum mechanic's nastier cousin. Wear *unchanging* or kill from range. |
+| `Q`    | Quantum mechanics / genetic engineer | Quantum mechanics teleport their target on a hit; genetic engineers (new in 5.0) polymorph their target. The `Q` class is small but every one of them is a surprise. |
+
+#### Special Symbols
+
+A few map glyphs aren't monsters in the conventional sense, but you'll see them and need to know what they mean.
+
+| Symbol | What it is               | Notes                                                                                                |
+| ------ | ------------------------ | ---------------------------------------------------------------------------------------------------- |
+| `I`    | Invisible monster marker | The game remembers the last spot you sensed something you couldn't see. The `I` stays there until you bump it or step on the square; the monster has usually moved. |
+| `~`    | Long worm tail segment   | Part of a long worm's body. Hitting the tail damages the worm and shortens the chain; hitting the head (the `w`) is full melee. |
+| `]`    | Strange object           | **Always a mimic.** No ordinary item ever displays as `]` (compare `[`, armor — `]` is its mirror). See the mimics note below. |
+| ` ` (space) | Ghost               | Ghosts left behind in bones files. The glyph is a literal blank, so a ghost is something you walk into rather than see; the message line will tell you. |
+
+#### A note on mimics
+
+Mimics are slow (speed 3) but their claws hit hard. Small mimics
+consistently rank in the top ten causes of player death on the
+public NetHack server: new players walk into them in shops and the
+first claw-strike does enough damage to be terrifying. They come in
+three sizes — small, large, giant — and the smaller ones grow into
+the bigger ones in place.
+
+**How they hide.** A mimic picks its disguise from its
+surroundings: in a temple it becomes an altar, in a doorway a
+closed door, in a corridor a boulder, in a shop one of the shop's
+stock items. In a maze room with nothing to imitate, it picks
+something generic — often a "strange object," which renders as
+`]`. That `]` is the most reliable visual tell: it's literally `[`
+(armor) mirrored, and no real item ever displays as `]`. The other
+context tells: an extra altar in a temple that should have one, a
+second fountain in a Delphi room, an item whose type doesn't fit
+the shop class, a single item where you'd expect a stack, a
+boulder sitting alone in a room with no rolling-trap context.
+
+**How to uncover one safely.** Search the adjacent square (`s`) —
+search reveals concealed mimics like it reveals traps. Throw a
+cheap item onto the suspected square; the mimic uncloaks and the
+item lands harmlessly. A stethoscope applied to the square also
+uncloaks. Telepathy, ESP, astral vision, and a wand of secret door
+detection see through the disguise and show the mimic as `m`. Your
+pet will refuse to step onto a mimic.
+
+**Sticking.** Large and giant mimics glue you in place on a
+successful claw hit: you can't move, you can't go down stairs, you
+can't escape down a hole. Magic cancellation (the cloak of
+protection, amulet of guarding, etc.) reduces the sticking
+probability significantly, which is one of several reasons to
+secure MC before you're walking past mid-game shops.
+
+**Eating the corpse** is its own oddity: you turn into a pile of
+gold (or, while hallucinating, an orange) and stay immobile for
+20 / 40 / 50 turns depending on which size you ate. Anything that
+tries to pick "you" up snaps the spell. Useful as a niche trick in
+shops, dangerous in open dungeon.
 
 **A note on dragons.** Dragons deserve a full briefing. Each color has
 its own breath weapon, resistance, scale mail property, and degree of
