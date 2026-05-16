@@ -340,7 +340,7 @@ No matter your role, here's what you should be looking for:
 
 **A source of nutrition.** You will get hungry. It happens faster
 than you think. But your main food source isn't going to be the
-rations in your pack — unless you're playing a vegetarian role,
+rations in your pack. Unless you're playing a vegetarian role,
 **most of your food in the early dungeon is the corpses of the
 things you kill.** Eat fresh kills as you go, and rations become
 emergency backup rather than the main course. Grab every food
