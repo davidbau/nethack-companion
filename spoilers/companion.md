@@ -844,8 +844,7 @@ Sinks are the dungeon's most underrated identification tool.
 - **Dropping a ring down a sink** produces a message unique to the
   ring type and is one of the most reliable non-magical
   identification methods for rings. **Most rings are consumed**,
-  but two come back after IDing themselves for free (searching and
-  slow digestion):
+  but two come back after IDing themselves for free:
 
 | Message                                              | Ring                  | Ring kept? |
 |------------------------------------------------------|-----------------------|------------|
