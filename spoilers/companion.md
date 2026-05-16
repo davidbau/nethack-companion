@@ -6212,10 +6212,11 @@ A few rules of thumb:
 - **Amethyst** is a special case at any price tier: it's an alchemy
   reagent (booze + amethyst dispels hallucination; the
   α-μέθυστος "anti-drunkenness" pun is the joke).
-- **Worthless glass** of a unicorn's matching color *subtracts* luck
-  on a throw, so it's slightly worse than nothing in your stockpile.
-  But a glass gem matching the wrong color is just dead weight you
-  can drop.
+- **Worthless glass never costs luck.** Glass thrown at a unicorn is
+  either rejected ("not interested in your junk") or quietly
+  accepted with no effect. The luck risk on unicorn throws comes
+  from *real* gems thrown at the **wrong-alignment** unicorn, which
+  rolls a random −3 to +3.
 
 So the table above is best read as a **selling guide** rather than a
 discard guide: real gems near the top of the table are the ones worth
@@ -6315,10 +6316,12 @@ know:
 
 A few useful tactical points:
 
-- **Drop everything at the door.** Standing on the door square,
-  drop your whole inventory. Anything that lights up in the bill
-  belongs to the shop. This is the simplest way to recall what
-  you've picked up.
+- **Drop everything at the door to see your bill.** Standing on
+  the door square, drop your whole inventory; the shopkeeper's
+  bill highlights the items you owe for. The shopkeeper isn't
+  guessing — the game tracks unpaid items precisely — but it's a
+  handy way to recall what you actually picked up when the shop
+  has a hundred lookalikes.
 - **Sell to build credit.** Credit acts as gold you can spend in
   that shop, and credit doesn't get stolen by nymphs or fall into
   pits. Selling a stack of useless daggers to a weapon shop is a
@@ -6327,10 +6330,14 @@ A few useful tactical points:
   file, all the items inside still belong to the dead adventurer's
   ghost shopkeeper; pick up anything and you owe the new
   shopkeeper full price. The shop floor is not free loot.
-- **"Closed for inventory" engraving on a door.** That door belongs
-  to an abandoned shop — no shopkeeper, no bill, the items inside
-  are yours for free. The classic example is Orcus-town, where
-  every shop is in this state.
+- **"Closed for inventory" engraving on a door.** This marks a
+  shop whose door spawned **locked**, not an abandoned one. The
+  shopkeeper is still inside, the stock is still unpaid, and
+  breaking the door down to get in just earns you a normal shop
+  visit plus an angry shopkeeper. (In Orcus-town the shopkeepers
+  are usually dead by the time you arrive — Orcus killed them —
+  so the items there often *are* ownerless, but that's because of
+  Orcus, not the engraving.)
 
 The best strategy is usually to play fair: sell what you don't need,
 buy what you do, and use the pricing system to identify as much as
