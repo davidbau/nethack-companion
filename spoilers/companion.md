@@ -822,9 +822,29 @@ in plain sight in kitchen-themed rooms.
   black pudding (terrifying!), or just stub your toe. Worth a kick
   in the early game if you can handle what comes out
 - **Dropping a ring down a sink** produces a message unique to the
-  ring type: "The water flow seems greater" for a ring of gain
-  constitution, for example. This is one of the most reliable
-  non-magical identification methods for rings
+  ring type and is one of the most reliable non-magical
+  identification methods for rings. **Most rings are consumed**,
+  but two come back after IDing themselves for free (searching and
+  slow digestion):
+
+| Message                                              | Ring                  | Ring kept? |
+|------------------------------------------------------|-----------------------|------------|
+| *"You thought your ring got lost in the sink, but there it is!"* | searching | **yes**    |
+| *"The ring is regurgitated!"*                        | slow digestion        | **yes**    |
+| *"The sink quivers upward for a moment."*            | levitation            | no         |
+| *"You smell rotten fruit."*                          | poison resistance     | no         |
+| *"Several flies buzz angrily around the sink."*     | aggravate monster     | no         |
+| *"Static electricity surrounds the sink."*           | shock resistance      | no         |
+| *"You hear loud noises coming from the drain."*      | conflict              | no         |
+| *"The water flow seems fixed."*                      | sustain ability       | no         |
+| *"The water flow seems stronger/weaker now."*        | gain strength         | no         |
+| *"The water flow seems greater/less now."*           | gain constitution     | no         |
+| *"The water flow hits/misses the drain."*            | increase accuracy     | no         |
+| *"The water's force seems greater/smaller now."*     | increase damage       | no         |
+| *"Suddenly, [items] vanish from the sink!"*          | hunger                | no — and any other items on the sink square vanish with it |
+| *"The sink momentarily vanishes."*                   | teleportation         | no — sink moves to a new spot |
+| *"The sink vanishes."*                               | polymorph             | no — sink becomes a fountain, throne, altar, or grave (random) |
+
 - **Pouring potions down a sink** (by dipping) produces telltale
   effects: a polymorph potion transforms the sink into a fountain,
   an oil potion leaves a film on the basin. A clever way to narrow
@@ -2852,148 +2872,44 @@ messages are flavor or have obvious effects (you start floating,
 you go invisible, the map fills with monsters), and they don't
 need a translation. A smaller set is genuinely cryptic — short
 lines that mean something specific, but whose meaning isn't
-spelled out anywhere in the game. Below is a translation guide
-for those.
+spelled out anywhere in the game. Below is a translation guide.
 
-Entries are grouped by *what you just did* (or what just happened
-to you). Within each group, only the messages that aren't already
-self-explanatory are listed.
-
-#### Status-onset warnings (read these first, act fast)
-
-These have a survival timer measured in turns. Memorize them.
-
-| Message                                          | What's happening               | Cure                  |
-|--------------------------------------------------|--------------------------------|-----------------------|
-| *"You are slowing down."*                        | stoning has started (cockatrice contact or corpse) | eat a lizard corpse, drink acid, or pray |
-| *"You are turning into slime."*                  | green-slime contagion          | scroll/spell/wand of fire; pray |
-| *"You feel deathly sick."*                       | terminal illness (Pestilence, Demogorgon sting) | quaff extra healing, eat eucalyptus, pray |
-| *"It constricts your throat!"*                   | cursed amulet of strangulation | remove curse or pray |
-| *"You feel feverish."* (right after eating)      | food poisoning from a rotted corpse | pray immediately |
-| *"Your weapon turns red hot."*                   | a creature is targeting your wielded weapon for destruction | swap weapons, move away |
-
-#### Quaffing a potion or reading a scroll, when there's no obvious effect
-
-Detection items in particular often print only one short message
-when the level has nothing to find. The line *is* the identification.
-
-| Message                                              | What you just used    |
-|------------------------------------------------------|-----------------------|
-| *"You feel hungry."* (right after reading, no map change) | scroll of food detection — no food on this level |
-| *"You feel materially poor."*                        | scroll of gold detection — no gold on this level |
-| *"You feel materially well-off."* (then map shows gold) | scroll of gold detection — gold present |
-| *"You sense the presence of food."*                  | scroll of food detection — food present |
-| *"You feel a strange mental acuity."* (then objects flash) | potion of object detection |
-| *"You sense the presence of monsters."*              | potion of monster detection |
-| *"Wow! This makes you feel great!"* (a drained stat returns to peak) | potion of restore ability |
-| *"Magical energies course through your body."*       | potion of gain energy |
-| *"You feel self-knowledgeable…"*                     | potion of enlightenment |
-| *"You feel feverish."* (after quaffing)              | potion of sickness — apologies, this is the dangerous one |
-
-#### Eating a corpse, when no visible effect appears
-
-The corpse-eat messages are how you find out you just gained an
-intrinsic.
-
-| Message                                          | Intrinsic gained          |
-|--------------------------------------------------|---------------------------|
-| *"You feel healthy."*                            | poison resistance         |
-| *"You feel warm!"*                               | fire resistance           |
-| *"You feel cool."*                               | cold resistance           |
-| *"You feel a mild buzz."*                        | shock resistance          |
-| *"You feel wide awake."*                         | sleep resistance          |
-| *"You feel quick!"*                              | intrinsic speed           |
-| *"You feel envious of the gods…"*                | disintegration resistance |
-| *"Your mind oozes shut."*                        | the corpse *would* have granted an intrinsic you already have — useful diagnostic |
-
-#### Putting on a ring, when it's not visibly obvious
-
-Most rings either announce themselves clearly or have a visible
-effect (floating, going invisible). The rare cryptic ones:
-
-| Message                                              | Ring             |
-|------------------------------------------------------|------------------|
-| *"You feel a strange mental acuity."*                | searching        |
-| *"You feel a strange sensation, then it passes."*    | warning          |
-| *"You feel light-footed."*                           | stealth          |
-| *"You feel in touch with the spiritual world."*      | free action      |
-| *"You feel charged with power."*                     | conflict         |
-
-#### Dropping a ring down a sink (`d` while on a `#`)
-
-A real identification method, but **most rings are consumed**.
-Two return after IDing themselves for free; the others are gone.
-
-| Message                                              | Ring                  | Ring kept? |
-|------------------------------------------------------|-----------------------|------------|
-| *"You thought your ring got lost in the sink, but there it is!"* | searching | **yes**    |
-| *"The ring is regurgitated!"*                        | slow digestion        | **yes**    |
-| *"The sink quivers upward for a moment."*            | levitation            | no         |
-| *"You smell rotten fruit."*                          | poison resistance     | no         |
-| *"Several flies buzz angrily around the sink."*     | aggravate monster     | no         |
-| *"Static electricity surrounds the sink."*           | shock resistance      | no         |
-| *"You hear loud noises coming from the drain."*      | conflict              | no         |
-| *"The water flow seems fixed."*                      | sustain ability       | no         |
-| *"The water flow seems stronger/weaker now."*        | gain strength         | no         |
-| *"The water flow seems greater/less now."*           | gain constitution     | no         |
-| *"The water flow hits/misses the drain."*            | increase accuracy     | no         |
-| *"The water's force seems greater/smaller now."*     | increase damage       | no         |
-| *"Suddenly, [items] vanish from the sink!"*          | hunger                | no (and items go too) |
-| *"The sink momentarily vanishes."*                   | teleportation         | no (sink moves) |
-| *"The sink vanishes."*                               | polymorph             | no (sink polys) |
-
-Searching and slow digestion are strict free IDs — always drop
-them in a sink if you find an unidentified one and there's a sink
-handy.
-
-#### Ambient sounds (*"You hear…"*) that mean something
-
-Most ambient sounds are flavor noise. These few are real
-information about the current level:
-
-| Sound                                                | Meaning                   |
-|------------------------------------------------------|---------------------------|
-| *"You hear someone counting money."* / *"strange wind."* | a **vault** is on this level |
-| *"You hear someone cursing shoplifters."*            | a **shop** is on this level |
-| *"You hear bubbling water."* / *"…water falling."*   | a **fountain** is on this level |
-| *"You hear a bugle playing reveille!"*               | someone tried the Castle drawbridge tune |
-| Spectral *"Hello stranger, who are you?"* with no monster visible | you've stepped onto a vault square; the guard is about to appear |
-
-The rest of the *"You hear…"* lines (snoring, slurping, mumbling,
-howling, accordions, distant zaps) are atmosphere only.
-
-#### Engravings worth noticing
-
-The vast majority of engravings the dungeon places are random
-jokes from the rumors file — read them for fun, no meaning. There
-are exactly three hardcoded breadcrumbs the level generator places
-near specific features:
-
-| Engraving                       | What's behind the nearby secret door |
-|---------------------------------|--------------------------------------|
-| *"ad aerarium"* (Latin: "to the treasury") | a **teleport trap or level-teleport trap** that leads to a vault — the famous vault-portal hint |
-| *"Vlad was here"*               | a **trap door** — step in and fall a level |
-| *"Closed for inventory"*        | an **abandoned shop** with no shopkeeper (e.g. Orcus-town); items inside are free |
-
-There are no breadcrumbs in the dungeon for Fort Ludios, the
-Quest portal, Vlad's Tower, or the Wizard's Tower — those you
-find by exploration. Sokoban places Elbereth engravings, but
-those are protective wards, not hints.
-
-#### Pet behavior cues
-
-| Cue                                              | What it means                  |
-|--------------------------------------------------|--------------------------------|
-| Pet refuses to step on a square                  | a cursed item is there         |
-| *"You have a sad feeling for a moment."*         | pet left behind on previous level (still alive, still wants you) |
-| Pet growls at you                                | tameness dropping toward feral |
-
-#### A note on prayer responses
-
-Lines like *"You feel that X is well-pleased,"* *"X seems
-angry,"* and *"X is bummed"* are the full prayer-state language;
-they're covered in [Divine Relations](#divine-relations)
-alongside the prayer-timeout system.
+| Message                                                  | What it means |
+|----------------------------------------------------------|---------------|
+| *"You feel feverish."*                                   | You've been infected with lycanthropy by a were-monster's hit. Cure: eat a sprig of wolfsbane, dip yourself in holy water, or pray. |
+| *"You feel hungry."* (right after reading a scroll)      | You read a scroll of food detection with no food on the level. |
+| *"You feel materially poor."*                            | You read a scroll of gold detection with no gold on the level. |
+| *"You feel a strange mental acuity."* (and nothing else) | You quaffed a potion of object detection with no objects on the level. |
+| *"Wow! This makes you feel great!"*                      | You quaffed a potion of restore ability; a drained stat just returned to its peak. |
+| *"You feel like someone is helping you."*                | You read a scroll of remove curse; cursed items in your worn/wielded slots have been uncursed. |
+| *"You feel healthy."*                                    | You just gained intrinsic poison resistance from a corpse. |
+| *"You feel warm!"*                                       | You just gained intrinsic fire resistance from a corpse. |
+| *"You feel cool."*                                       | You just gained intrinsic cold resistance from a corpse. |
+| *"You feel a mild buzz."*                                | You just gained intrinsic shock resistance from a corpse. |
+| *"You feel wide awake."*                                 | You just gained intrinsic sleep resistance from a corpse. |
+| *"You feel quick!"*                                      | You just gained intrinsic speed from a corpse. |
+| *"You feel envious of the gods…"*                        | You just gained intrinsic disintegration resistance from a corpse. |
+| *"Your mind oozes shut."*                                | The corpse you ate *would* have granted an intrinsic, but you already have it — useful diagnostic for figuring out which intrinsic the corpse gives. |
+| *"You feel a strange mental acuity."* (after putting on a ring) | Ring of searching. |
+| *"You feel a strange sensation, then it passes."*        | Ring of warning. |
+| *"You feel light-footed."*                               | Ring of stealth. |
+| *"You feel in touch with the spiritual world."*          | Ring of free action. |
+| *"You feel charged with power."*                         | Ring of conflict. |
+| *"ad aerarium"* (Latin: *to the treasury*)               | An engraving the level generator places near a secret closet containing a teleport or level-teleport trap that drops you in a vault — the famous vault-portal hint. |
+| *"Vlad was here"*                                        | An engraving placed near a secret closet containing a trap door — step in and fall a level. |
+| *"Closed for inventory"*                                 | An engraving on the door of an abandoned shop (e.g. Orcus-town); the items inside are free. |
+| *"You hear someone counting money."* / *"…strange wind."* | A vault is on this level — dig to find it. |
+| *"You hear someone cursing shoplifters."*                | A shop is on this level. |
+| *"You hear bubbling water."* / *"…water falling."*       | A fountain is on this level. |
+| *"You hear a bugle playing reveille!"*                   | A soldier just blew a bugle to wake up nearby soldiers — expect a fight if you're in the Castle or near military encampments. |
+| Pet refuses to step on a square                          | A cursed item is on that square. |
+| *"You have a sad feeling for a moment, then it passes."* | Your pet just died, out of your line of sight. |
+| Pet growls at you                                        | Your pet's tameness is dropping toward feral; feed it. |
+| *"You are slowing down."*                                | You are turning to stone (cockatrice contact or corpse). Immediately eat a lizard corpse, drink acid, or pray. |
+| *"You are turning into slime."*                          | Green-slime contagion. Immediately burn it off (scroll, spell, or wand of fire) or pray. |
+| *"You feel deathly sick."*                               | Terminal illness from Pestilence or Demogorgon. Quaff extra healing, eat a eucalyptus leaf, or pray. |
+| *"It constricts your throat!"*                           | You're wearing a cursed amulet of strangulation; you have a handful of turns. Remove curse, or pray. |
+| *"Your weapon turns red hot."*                           | A creature is targeting your wielded weapon for destruction. Swap weapons or move away. |
 
 ---
 
@@ -4962,11 +4878,8 @@ The morbid detail worth noticing: scattered across the level are
 **dead bodies of every player role** the dungeon has ever seen
 descend — two corpses each of Archeologists, Barbarians, Cavemen,
 Healers, Knights, Rangers, Rogues, Samurai, Tourists, Valkyries,
-and Wizards. Pointedly absent: **no Priests, no Monks**. The
-source comment is explicit about this: *"maybe Moloch has a
-*special* fate reserved for members of *those* classes."* If you
-play one of the missing two, the Valley is making a quiet promise
-about you.
+and Wizards. Pointedly absent: **no Priests, no Monks** (maybe
+Moloch has a special fate reserved for members of those classes).
 
 #### What's Different in Gehennom
 
@@ -5000,20 +4913,23 @@ about you.
 - **Mazes.** Nearly every level is a maze. A wand of digging or
   pickaxe isn't optional here; it's as essential as your weapon.
   Dig straight lines to the stairs and don't look back
-- **Orcus-town.** Orcus's own level is a "ghost town": the shops
-  and shopkeepers are gone, but the town layout remains, and the
-  buildings are stocked with random objects rather than for-sale
-  inventory. Two of those objects are worth the trip: somewhere on
-  the level, the dungeon guarantees either a **magic lamp** or a
-  **magic marker** (50/50). The level itself is studded with fire
-  traps and magic traps, so don't sprint. Walk it carefully, deal
-  with the residents (Orcus himself plus an honor guard of liches
-  and ghouls), and lift the lamp or marker on your way out. The
-  guarantee is the dungeon's compensation for the wand of wishing
-  generating with only one charge in 5.0. Call it a
-  consolation prize, in the form of either one djinni wish (rub
-  the lamp; the lamp becomes ordinary afterward) or however many
-  high-value scrolls you can write before the marker runs dry.
+
+#### Orcus-town
+
+Orcus's own level is a "ghost town": the shops and shopkeepers
+are gone, but the town layout remains, and the buildings are
+stocked with random objects rather than for-sale inventory. Two
+of those objects are worth the trip: somewhere on the level, the
+dungeon guarantees either a **magic lamp** or a **magic marker**
+(50/50). The level itself is studded with fire traps and magic
+traps, so don't sprint. Walk it carefully, deal with the
+residents (Orcus himself plus an honor guard of liches and
+ghouls), and lift the lamp or marker on your way out. The
+guarantee is the dungeon's compensation for the wand of wishing
+generating with only one charge in 5.0 — call it a consolation
+prize, in the form of either one djinni wish (rub the lamp; the
+lamp becomes ordinary afterward) or however many high-value
+scrolls you can write before the marker runs dry.
 
 #### Key Objectives in Gehennom
 

@@ -932,9 +932,104 @@ in plain sight in kitchen-themed rooms.</p>
 summon a black pudding (terrifying!), or just stub your toe. Worth a
 kick in the early game if you can handle what comes out</li>
 <li><strong>Dropping a ring down a sink</strong> produces a message
-unique to the ring type: “The water flow seems greater” for a ring of
-gain constitution, for example. This is one of the most reliable
-non-magical identification methods for rings</li>
+unique to the ring type and is one of the most reliable non-magical
+identification methods for rings. <strong>Most rings are
+consumed</strong>, but two come back after IDing themselves for free
+(searching and slow digestion):</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 60%" />
+<col style="width: 25%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr>
+<th>Message</th>
+<th>Ring</th>
+<th>Ring kept?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>“You thought your ring got lost in the sink, but there it
+is!”</em></td>
+<td>searching</td>
+<td><strong>yes</strong></td>
+</tr>
+<tr>
+<td><em>“The ring is regurgitated!”</em></td>
+<td>slow digestion</td>
+<td><strong>yes</strong></td>
+</tr>
+<tr>
+<td><em>“The sink quivers upward for a moment.”</em></td>
+<td>levitation</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“You smell rotten fruit.”</em></td>
+<td>poison resistance</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“Several flies buzz angrily around the sink.”</em></td>
+<td>aggravate monster</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“Static electricity surrounds the sink.”</em></td>
+<td>shock resistance</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“You hear loud noises coming from the drain.”</em></td>
+<td>conflict</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“The water flow seems fixed.”</em></td>
+<td>sustain ability</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“The water flow seems stronger/weaker now.”</em></td>
+<td>gain strength</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“The water flow seems greater/less now.”</em></td>
+<td>gain constitution</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“The water flow hits/misses the drain.”</em></td>
+<td>increase accuracy</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“The water’s force seems greater/smaller now.”</em></td>
+<td>increase damage</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“Suddenly, [items] vanish from the sink!”</em></td>
+<td>hunger</td>
+<td>no — and any other items on the sink square vanish with it</td>
+</tr>
+<tr>
+<td><em>“The sink momentarily vanishes.”</em></td>
+<td>teleportation</td>
+<td>no — sink moves to a new spot</td>
+</tr>
+<tr>
+<td><em>“The sink vanishes.”</em></td>
+<td>polymorph</td>
+<td>no — sink becomes a fountain, throne, altar, or grave (random)</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><strong>Pouring potions down a sink</strong> (by dipping) produces
 telltale effects: a polymorph potion transforms the sink into a
 fountain, an oil potion leaves a film on the basin. A clever way to
@@ -3768,444 +3863,178 @@ flavor or have obvious effects (you start floating, you go invisible,
 the map fills with monsters), and they don’t need a translation. A
 smaller set is genuinely cryptic — short lines that mean something
 specific, but whose meaning isn’t spelled out anywhere in the game.
-Below is a translation guide for those.</p>
-<p>Entries are grouped by <em>what you just did</em> (or what just
-happened to you). Within each group, only the messages that aren’t
-already self-explanatory are listed.</p>
-<section id="status-onset-warnings-read-these-first-act-fast"
-class="level4">
-<h4>Status-onset warnings (read these first, act fast)</h4>
-<p>These have a survival timer measured in turns. Memorize them.</p>
+Below is a translation guide.</p>
 <table>
 <colgroup>
-<col style="width: 47%" />
-<col style="width: 30%" />
-<col style="width: 21%" />
+<col style="width: 79%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr>
 <th>Message</th>
-<th>What’s happening</th>
-<th>Cure</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><em>“You are slowing down.”</em></td>
-<td>stoning has started (cockatrice contact or corpse)</td>
-<td>eat a lizard corpse, drink acid, or pray</td>
-</tr>
-<tr>
-<td><em>“You are turning into slime.”</em></td>
-<td>green-slime contagion</td>
-<td>scroll/spell/wand of fire; pray</td>
-</tr>
-<tr>
-<td><em>“You feel deathly sick.”</em></td>
-<td>terminal illness (Pestilence, Demogorgon sting)</td>
-<td>quaff extra healing, eat eucalyptus, pray</td>
-</tr>
-<tr>
-<td><em>“It constricts your throat!”</em></td>
-<td>cursed amulet of strangulation</td>
-<td>remove curse or pray</td>
-</tr>
-<tr>
-<td><em>“You feel feverish.”</em> (right after eating)</td>
-<td>food poisoning from a rotted corpse</td>
-<td>pray immediately</td>
-</tr>
-<tr>
-<td><em>“Your weapon turns red hot.”</em></td>
-<td>a creature is targeting your wielded weapon for destruction</td>
-<td>swap weapons, move away</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section
-id="quaffing-a-potion-or-reading-a-scroll-when-theres-no-obvious-effect"
-class="level4">
-<h4>Quaffing a potion or reading a scroll, when there’s no obvious
-effect</h4>
-<p>Detection items in particular often print only one short message when
-the level has nothing to find. The line <em>is</em> the
-identification.</p>
-<table>
-<colgroup>
-<col style="width: 70%" />
-<col style="width: 29%" />
-</colgroup>
-<thead>
-<tr>
-<th>Message</th>
-<th>What you just used</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><em>“You feel hungry.”</em> (right after reading, no map
-change)</td>
-<td>scroll of food detection — no food on this level</td>
-</tr>
-<tr>
-<td><em>“You feel materially poor.”</em></td>
-<td>scroll of gold detection — no gold on this level</td>
-</tr>
-<tr>
-<td><em>“You feel materially well-off.”</em> (then map shows gold)</td>
-<td>scroll of gold detection — gold present</td>
-</tr>
-<tr>
-<td><em>“You sense the presence of food.”</em></td>
-<td>scroll of food detection — food present</td>
-</tr>
-<tr>
-<td><em>“You feel a strange mental acuity.”</em> (then objects
-flash)</td>
-<td>potion of object detection</td>
-</tr>
-<tr>
-<td><em>“You sense the presence of monsters.”</em></td>
-<td>potion of monster detection</td>
-</tr>
-<tr>
-<td><em>“Wow! This makes you feel great!”</em> (a drained stat returns
-to peak)</td>
-<td>potion of restore ability</td>
-</tr>
-<tr>
-<td><em>“Magical energies course through your body.”</em></td>
-<td>potion of gain energy</td>
-</tr>
-<tr>
-<td><em>“You feel self-knowledgeable…”</em></td>
-<td>potion of enlightenment</td>
-</tr>
-<tr>
-<td><em>“You feel feverish.”</em> (after quaffing)</td>
-<td>potion of sickness — apologies, this is the dangerous one</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="eating-a-corpse-when-no-visible-effect-appears"
-class="level4">
-<h4>Eating a corpse, when no visible effect appears</h4>
-<p>The corpse-eat messages are how you find out you just gained an
-intrinsic.</p>
-<table>
-<colgroup>
-<col style="width: 64%" />
-<col style="width: 35%" />
-</colgroup>
-<thead>
-<tr>
-<th>Message</th>
-<th>Intrinsic gained</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><em>“You feel healthy.”</em></td>
-<td>poison resistance</td>
-</tr>
-<tr>
-<td><em>“You feel warm!”</em></td>
-<td>fire resistance</td>
-</tr>
-<tr>
-<td><em>“You feel cool.”</em></td>
-<td>cold resistance</td>
-</tr>
-<tr>
-<td><em>“You feel a mild buzz.”</em></td>
-<td>shock resistance</td>
-</tr>
-<tr>
-<td><em>“You feel wide awake.”</em></td>
-<td>sleep resistance</td>
-</tr>
-<tr>
-<td><em>“You feel quick!”</em></td>
-<td>intrinsic speed</td>
-</tr>
-<tr>
-<td><em>“You feel envious of the gods…”</em></td>
-<td>disintegration resistance</td>
-</tr>
-<tr>
-<td><em>“Your mind oozes shut.”</em></td>
-<td>the corpse <em>would</em> have granted an intrinsic you already have
-— useful diagnostic</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="putting-on-a-ring-when-its-not-visibly-obvious"
-class="level4">
-<h4>Putting on a ring, when it’s not visibly obvious</h4>
-<p>Most rings either announce themselves clearly or have a visible
-effect (floating, going invisible). The rare cryptic ones:</p>
-<table>
-<colgroup>
-<col style="width: 75%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr>
-<th>Message</th>
-<th>Ring</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><em>“You feel a strange mental acuity.”</em></td>
-<td>searching</td>
-</tr>
-<tr>
-<td><em>“You feel a strange sensation, then it passes.”</em></td>
-<td>warning</td>
-</tr>
-<tr>
-<td><em>“You feel light-footed.”</em></td>
-<td>stealth</td>
-</tr>
-<tr>
-<td><em>“You feel in touch with the spiritual world.”</em></td>
-<td>free action</td>
-</tr>
-<tr>
-<td><em>“You feel charged with power.”</em></td>
-<td>conflict</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="dropping-a-ring-down-a-sink-d-while-on-a" class="level4">
-<h4>Dropping a ring down a sink (<code>d</code> while on a
-<code>#</code>)</h4>
-<p>A real identification method, but <strong>most rings are
-consumed</strong>. Two return after IDing themselves for free; the
-others are gone.</p>
-<table>
-<colgroup>
-<col style="width: 60%" />
-<col style="width: 25%" />
-<col style="width: 13%" />
-</colgroup>
-<thead>
-<tr>
-<th>Message</th>
-<th>Ring</th>
-<th>Ring kept?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><em>“You thought your ring got lost in the sink, but there it
-is!”</em></td>
-<td>searching</td>
-<td><strong>yes</strong></td>
-</tr>
-<tr>
-<td><em>“The ring is regurgitated!”</em></td>
-<td>slow digestion</td>
-<td><strong>yes</strong></td>
-</tr>
-<tr>
-<td><em>“The sink quivers upward for a moment.”</em></td>
-<td>levitation</td>
-<td>no</td>
-</tr>
-<tr>
-<td><em>“You smell rotten fruit.”</em></td>
-<td>poison resistance</td>
-<td>no</td>
-</tr>
-<tr>
-<td><em>“Several flies buzz angrily around the sink.”</em></td>
-<td>aggravate monster</td>
-<td>no</td>
-</tr>
-<tr>
-<td><em>“Static electricity surrounds the sink.”</em></td>
-<td>shock resistance</td>
-<td>no</td>
-</tr>
-<tr>
-<td><em>“You hear loud noises coming from the drain.”</em></td>
-<td>conflict</td>
-<td>no</td>
-</tr>
-<tr>
-<td><em>“The water flow seems fixed.”</em></td>
-<td>sustain ability</td>
-<td>no</td>
-</tr>
-<tr>
-<td><em>“The water flow seems stronger/weaker now.”</em></td>
-<td>gain strength</td>
-<td>no</td>
-</tr>
-<tr>
-<td><em>“The water flow seems greater/less now.”</em></td>
-<td>gain constitution</td>
-<td>no</td>
-</tr>
-<tr>
-<td><em>“The water flow hits/misses the drain.”</em></td>
-<td>increase accuracy</td>
-<td>no</td>
-</tr>
-<tr>
-<td><em>“The water’s force seems greater/smaller now.”</em></td>
-<td>increase damage</td>
-<td>no</td>
-</tr>
-<tr>
-<td><em>“Suddenly, [items] vanish from the sink!”</em></td>
-<td>hunger</td>
-<td>no (and items go too)</td>
-</tr>
-<tr>
-<td><em>“The sink momentarily vanishes.”</em></td>
-<td>teleportation</td>
-<td>no (sink moves)</td>
-</tr>
-<tr>
-<td><em>“The sink vanishes.”</em></td>
-<td>polymorph</td>
-<td>no (sink polys)</td>
-</tr>
-</tbody>
-</table>
-<p>Searching and slow digestion are strict free IDs — always drop them
-in a sink if you find an unidentified one and there’s a sink handy.</p>
-</section>
-<section id="ambient-sounds-you-hear-that-mean-something"
-class="level4">
-<h4>Ambient sounds (<em>“You hear…”</em>) that mean something</h4>
-<p>Most ambient sounds are flavor noise. These few are real information
-about the current level:</p>
-<table>
-<colgroup>
-<col style="width: 66%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr>
-<th>Sound</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><em>“You hear someone counting money.”</em> / <em>“strange
-wind.”</em></td>
-<td>a <strong>vault</strong> is on this level</td>
-</tr>
-<tr>
-<td><em>“You hear someone cursing shoplifters.”</em></td>
-<td>a <strong>shop</strong> is on this level</td>
-</tr>
-<tr>
-<td><em>“You hear bubbling water.”</em> / <em>“…water
-falling.”</em></td>
-<td>a <strong>fountain</strong> is on this level</td>
-</tr>
-<tr>
-<td><em>“You hear a bugle playing reveille!”</em></td>
-<td>someone tried the Castle drawbridge tune</td>
-</tr>
-<tr>
-<td>Spectral <em>“Hello stranger, who are you?”</em> with no monster
-visible</td>
-<td>you’ve stepped onto a vault square; the guard is about to
-appear</td>
-</tr>
-</tbody>
-</table>
-<p>The rest of the <em>“You hear…”</em> lines (snoring, slurping,
-mumbling, howling, accordions, distant zaps) are atmosphere only.</p>
-</section>
-<section id="engravings-worth-noticing" class="level4">
-<h4>Engravings worth noticing</h4>
-<p>The vast majority of engravings the dungeon places are random jokes
-from the rumors file — read them for fun, no meaning. There are exactly
-three hardcoded breadcrumbs the level generator places near specific
-features:</p>
-<table>
-<colgroup>
-<col style="width: 46%" />
-<col style="width: 53%" />
-</colgroup>
-<thead>
-<tr>
-<th>Engraving</th>
-<th>What’s behind the nearby secret door</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><em>“ad aerarium”</em> (Latin: “to the treasury”)</td>
-<td>a <strong>teleport trap or level-teleport trap</strong> that leads
-to a vault — the famous vault-portal hint</td>
-</tr>
-<tr>
-<td><em>“Vlad was here”</em></td>
-<td>a <strong>trap door</strong> — step in and fall a level</td>
-</tr>
-<tr>
-<td><em>“Closed for inventory”</em></td>
-<td>an <strong>abandoned shop</strong> with no shopkeeper
-(e.g. Orcus-town); items inside are free</td>
-</tr>
-</tbody>
-</table>
-<p>There are no breadcrumbs in the dungeon for Fort Ludios, the Quest
-portal, Vlad’s Tower, or the Wizard’s Tower — those you find by
-exploration. Sokoban places Elbereth engravings, but those are
-protective wards, not hints.</p>
-</section>
-<section id="pet-behavior-cues" class="level4">
-<h4>Pet behavior cues</h4>
-<table>
-<colgroup>
-<col style="width: 60%" />
-<col style="width: 39%" />
-</colgroup>
-<thead>
-<tr>
-<th>Cue</th>
 <th>What it means</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Pet refuses to step on a square</td>
-<td>a cursed item is there</td>
+<td><em>“You feel feverish.”</em></td>
+<td>You’ve been infected with lycanthropy by a were-monster’s hit. Cure:
+eat a sprig of wolfsbane, dip yourself in holy water, or pray.</td>
 </tr>
 <tr>
-<td><em>“You have a sad feeling for a moment.”</em></td>
-<td>pet left behind on previous level (still alive, still wants
-you)</td>
+<td><em>“You feel hungry.”</em> (right after reading a scroll)</td>
+<td>You read a scroll of food detection with no food on the level.</td>
+</tr>
+<tr>
+<td><em>“You feel materially poor.”</em></td>
+<td>You read a scroll of gold detection with no gold on the level.</td>
+</tr>
+<tr>
+<td><em>“You feel a strange mental acuity.”</em> (and nothing else)</td>
+<td>You quaffed a potion of object detection with no objects on the
+level.</td>
+</tr>
+<tr>
+<td><em>“Wow! This makes you feel great!”</em></td>
+<td>You quaffed a potion of restore ability; a drained stat just
+returned to its peak.</td>
+</tr>
+<tr>
+<td><em>“You feel like someone is helping you.”</em></td>
+<td>You read a scroll of remove curse; cursed items in your worn/wielded
+slots have been uncursed.</td>
+</tr>
+<tr>
+<td><em>“You feel healthy.”</em></td>
+<td>You just gained intrinsic poison resistance from a corpse.</td>
+</tr>
+<tr>
+<td><em>“You feel warm!”</em></td>
+<td>You just gained intrinsic fire resistance from a corpse.</td>
+</tr>
+<tr>
+<td><em>“You feel cool.”</em></td>
+<td>You just gained intrinsic cold resistance from a corpse.</td>
+</tr>
+<tr>
+<td><em>“You feel a mild buzz.”</em></td>
+<td>You just gained intrinsic shock resistance from a corpse.</td>
+</tr>
+<tr>
+<td><em>“You feel wide awake.”</em></td>
+<td>You just gained intrinsic sleep resistance from a corpse.</td>
+</tr>
+<tr>
+<td><em>“You feel quick!”</em></td>
+<td>You just gained intrinsic speed from a corpse.</td>
+</tr>
+<tr>
+<td><em>“You feel envious of the gods…”</em></td>
+<td>You just gained intrinsic disintegration resistance from a
+corpse.</td>
+</tr>
+<tr>
+<td><em>“Your mind oozes shut.”</em></td>
+<td>The corpse you ate <em>would</em> have granted an intrinsic, but you
+already have it — useful diagnostic for figuring out which intrinsic the
+corpse gives.</td>
+</tr>
+<tr>
+<td><em>“You feel a strange mental acuity.”</em> (after putting on a
+ring)</td>
+<td>Ring of searching.</td>
+</tr>
+<tr>
+<td><em>“You feel a strange sensation, then it passes.”</em></td>
+<td>Ring of warning.</td>
+</tr>
+<tr>
+<td><em>“You feel light-footed.”</em></td>
+<td>Ring of stealth.</td>
+</tr>
+<tr>
+<td><em>“You feel in touch with the spiritual world.”</em></td>
+<td>Ring of free action.</td>
+</tr>
+<tr>
+<td><em>“You feel charged with power.”</em></td>
+<td>Ring of conflict.</td>
+</tr>
+<tr>
+<td><em>“ad aerarium”</em> (Latin: <em>to the treasury</em>)</td>
+<td>An engraving the level generator places near a secret closet
+containing a teleport or level-teleport trap that drops you in a vault —
+the famous vault-portal hint.</td>
+</tr>
+<tr>
+<td><em>“Vlad was here”</em></td>
+<td>An engraving placed near a secret closet containing a trap door —
+step in and fall a level.</td>
+</tr>
+<tr>
+<td><em>“Closed for inventory”</em></td>
+<td>An engraving on the door of an abandoned shop (e.g. Orcus-town); the
+items inside are free.</td>
+</tr>
+<tr>
+<td><em>“You hear someone counting money.”</em> / <em>“…strange
+wind.”</em></td>
+<td>A vault is on this level — dig to find it.</td>
+</tr>
+<tr>
+<td><em>“You hear someone cursing shoplifters.”</em></td>
+<td>A shop is on this level.</td>
+</tr>
+<tr>
+<td><em>“You hear bubbling water.”</em> / <em>“…water
+falling.”</em></td>
+<td>A fountain is on this level.</td>
+</tr>
+<tr>
+<td><em>“You hear a bugle playing reveille!”</em></td>
+<td>A soldier just blew a bugle to wake up nearby soldiers — expect a
+fight if you’re in the Castle or near military encampments.</td>
+</tr>
+<tr>
+<td>Pet refuses to step on a square</td>
+<td>A cursed item is on that square.</td>
+</tr>
+<tr>
+<td><em>“You have a sad feeling for a moment, then it passes.”</em></td>
+<td>Your pet just died, out of your line of sight.</td>
 </tr>
 <tr>
 <td>Pet growls at you</td>
-<td>tameness dropping toward feral</td>
+<td>Your pet’s tameness is dropping toward feral; feed it.</td>
+</tr>
+<tr>
+<td><em>“You are slowing down.”</em></td>
+<td>You are turning to stone (cockatrice contact or corpse). Immediately
+eat a lizard corpse, drink acid, or pray.</td>
+</tr>
+<tr>
+<td><em>“You are turning into slime.”</em></td>
+<td>Green-slime contagion. Immediately burn it off (scroll, spell, or
+wand of fire) or pray.</td>
+</tr>
+<tr>
+<td><em>“You feel deathly sick.”</em></td>
+<td>Terminal illness from Pestilence or Demogorgon. Quaff extra healing,
+eat a eucalyptus leaf, or pray.</td>
+</tr>
+<tr>
+<td><em>“It constricts your throat!”</em></td>
+<td>You’re wearing a cursed amulet of strangulation; you have a handful
+of turns. Remove curse, or pray.</td>
+</tr>
+<tr>
+<td><em>“Your weapon turns red hot.”</em></td>
+<td>A creature is targeting your wielded weapon for destruction. Swap
+weapons or move away.</td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="a-note-on-prayer-responses" class="level4">
-<h4>A note on prayer responses</h4>
-<p>Lines like <em>“You feel that X is well-pleased,”</em> <em>“X seems
-angry,”</em> and <em>“X is bummed”</em> are the full prayer-state
-language; they’re covered in <a href="#divine-relations">Divine
-Relations</a> alongside the prayer-timeout system.</p>
 <hr />
-</section>
 </section>
 <section id="provisions-and-dining" class="level3">
 <h3>Provisions and Dining</h3>
@@ -7126,11 +6955,8 @@ mapping won’t reveal it and teleportation doesn’t work.</p>
 <strong>dead bodies of every player role</strong> the dungeon has ever
 seen descend — two corpses each of Archeologists, Barbarians, Cavemen,
 Healers, Knights, Rangers, Rogues, Samurai, Tourists, Valkyries, and
-Wizards. Pointedly absent: <strong>no Priests, no Monks</strong>. The
-source comment is explicit about this: <em>“maybe Moloch has a
-<em>special</em> fate reserved for members of <em>those</em>
-classes.”</em> If you play one of the missing two, the Valley is making
-a quiet promise about you.</p>
+Wizards. Pointedly absent: <strong>no Priests, no Monks</strong> (maybe
+Moloch has a special fate reserved for members of those classes).</p>
 </section>
 <section id="whats-different-in-gehennom" class="level4">
 <h4>What’s Different in Gehennom</h4>
@@ -7164,21 +6990,23 @@ Gehennom levels permanently blocked teleportation</li>
 <li><strong>Mazes.</strong> Nearly every level is a maze. A wand of
 digging or pickaxe isn’t optional here; it’s as essential as your
 weapon. Dig straight lines to the stairs and don’t look back</li>
-<li><strong>Orcus-town.</strong> Orcus’s own level is a “ghost town”:
-the shops and shopkeepers are gone, but the town layout remains, and the
-buildings are stocked with random objects rather than for-sale
-inventory. Two of those objects are worth the trip: somewhere on the
-level, the dungeon guarantees either a <strong>magic lamp</strong> or a
-<strong>magic marker</strong> (50/50). The level itself is studded with
-fire traps and magic traps, so don’t sprint. Walk it carefully, deal
-with the residents (Orcus himself plus an honor guard of liches and
-ghouls), and lift the lamp or marker on your way out. The guarantee is
-the dungeon’s compensation for the wand of wishing generating with only
-one charge in 5.0. Call it a consolation prize, in the form of either
-one djinni wish (rub the lamp; the lamp becomes ordinary afterward) or
-however many high-value scrolls you can write before the marker runs
-dry.</li>
 </ul>
+</section>
+<section id="orcus-town" class="level4">
+<h4>Orcus-town</h4>
+<p>Orcus’s own level is a “ghost town”: the shops and shopkeepers are
+gone, but the town layout remains, and the buildings are stocked with
+random objects rather than for-sale inventory. Two of those objects are
+worth the trip: somewhere on the level, the dungeon guarantees either a
+<strong>magic lamp</strong> or a <strong>magic marker</strong> (50/50).
+The level itself is studded with fire traps and magic traps, so don’t
+sprint. Walk it carefully, deal with the residents (Orcus himself plus
+an honor guard of liches and ghouls), and lift the lamp or marker on
+your way out. The guarantee is the dungeon’s compensation for the wand
+of wishing generating with only one charge in 5.0 — call it a
+consolation prize, in the form of either one djinni wish (rub the lamp;
+the lamp becomes ordinary afterward) or however many high-value scrolls
+you can write before the marker runs dry.</p>
 </section>
 <section id="key-objectives-in-gehennom" class="level4">
 <h4>Key Objectives in Gehennom</h4>
