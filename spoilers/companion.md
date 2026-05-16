@@ -595,7 +595,7 @@ Learning to read these symbols quickly is important:
 | `{`      | Fountain                      |
 | `_`      | Altar                         |
 | `\`      | Throne                        |
-| `#`      | Sink (in a kitchen)           |
+| `#`      | Sink                          |
 | `^`      | Trap (once revealed)          |
 | `@`      | You (or a human-type monster) |
 
@@ -815,8 +815,7 @@ first.)
 
 #### Sinks `#`
 
-Sinks are the dungeon's most underrated identification tool, hiding
-in plain sight in kitchen-themed rooms.
+Sinks are the dungeon's most underrated identification tool.
 
 - **Kicking a sink** can shake loose a ring (useful!), summon a
   black pudding (terrifying!), or just stub your toe. Worth a kick
@@ -2628,7 +2627,7 @@ It just uses a charge. So if you suspect you have a wand of wishing
 
 #### The Sink Test (Rings)
 
-If you find a sink (usually in a kitchen), you can drop a ring down
+If you find a sink, you can drop a ring down
 it. Each ring type produces a characteristic message:
 
 | Message you hear or see                  | Ring type                      |
