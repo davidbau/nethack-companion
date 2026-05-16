@@ -401,16 +401,16 @@ full of monsters, step back into the corridor and force them to come
 to you in single file.
 
 ```
-  Bad: fighting in the open        Good: corridor chokepoint
+  Bad: fighting in the open       Good: corridor chokepoint
 
-  ┌─────·──────┐                   ┌─────·──────┐
-  │·Z··Z·······│                   │·Z···Z······│
-  │··Z·@·Z·Z···│                   │··Z··Z······│
-  │····Z·······│                   │·Z··········+##@
-  │··Z·········│                   │··Z·········│
-  └────────────┘                   └────────────┘
+  ┌─────·──────┐                  ┌─────·──────┐
+  │·Z··Z·······│                  │·Z···Z······│
+  │··Z·@·Z·Z···│                  │··Z··Z······│
+  │····Z·······│                  │·Z··········+##@
+  │··Z·········│                  │··Z·········│
+  └────────────┘                  └────────────┘
 
-  You're surrounded.               They come to you one at a time.
+  You're surrounded.              They come to you one at a time.
 ```
 
 **Rule 2: Don't eat things you don't understand.** Monster corpses
