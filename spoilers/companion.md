@@ -3385,14 +3385,14 @@ increases the risk of the wand exploding. The formula is
 - Seventh: 100%.
 
 Use blessed charging for the best results — except on a wand of
-wishing, which follows its own rules. A fresh wand of wishing has
-a small random number of charges (often 0-3). A scroll of charging
-adds exactly **one** wish whether blessed or uncursed; blessing
+wishing, which follows its own rules. A fresh wand of wishing is
+always generated with **exactly one** charge. A scroll of charging
+adds **one more** wish whether blessed or uncursed; blessing
 doesn't help here, and a cursed scroll strips the wand to zero
 like any other. You can recharge once safely; a second attempt is
-a **guaranteed explosion**. The effective lifetime cap on a single
-wand of wishing is about three wishes (initial charges + one
-recharge + one wrested at the end).
+a **guaranteed explosion**. So the lifetime cap on a single wand
+of wishing is two wishes reliably, or three if you successfully
+wrest the final charge at the end.
 
 #### Wresting
 
