@@ -1443,7 +1443,7 @@ by how early you might encounter them:
 | `r`    | Rodents   | Rats and rock moles. Rock moles eat metal items, so protect your gear.                  |
 | `s`    | Spiders   | Cave spiders are weak. Giant spiders poison.                                            |
 | `x`    | Grid bugs | The weakest monster in the game; they can't even move diagonally. Free XP and free corpses. The `x` class also covers the much-later **xan**, a leg-wound trapper. |
-| `:`    | Lizards   | Important! Lizard corpses cure petrification. Always carry one.                         |
+| `:`    | Lizards   | Live newts, geckos, and iguanas are weak individually but rank surprisingly high in death stats because heroes underestimate them mid-fight. **Lizard corpses cure petrification** — always carry one for cockatrice/Medusa insurance. Newt corpses may also restore 1-3 mana to spellcasters. |
 
 #### Mid-Dungeon Threats
 
@@ -1628,9 +1628,10 @@ finding altars, and getting BUC information.
   Underrated because they look like nuisances.
 - **Rothes and mumakil** (`q`, ranks 11 and 38). Three- and
   four-attack pack hunters that catch unprepared mid-game heroes.
-- **Newts** (`r`, rank 24). Yes, *newts*. They rank ahead of half
-  the Dungeons of Doom because new players ignore them and they
-  add up.
+- **Newts and small lizards** (`:`, ranks 24, 51, 57). Yes,
+  *newts*. The lizard class — newts, geckos, iguanas — collectively
+  ranks ahead of half the Dungeons of Doom because new players
+  ignore them and they add up.
 - **Rotted corpse** (#17) and **poisonous corpse** (#66) and
   **choking** (#63). Combined, eating mistakes are a major cause
   of death. Don't eat old corpses. Don't eat while satiated. Pray
