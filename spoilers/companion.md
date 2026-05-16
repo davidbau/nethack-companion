@@ -2720,11 +2720,10 @@ refuses to walk over cursed items, so lure it past the suspect
 square), Priest intrinsic BUC sense, or a scroll of identify from
 your own inventory.
 
-A common misconception: armor appearances are **not** a fixed
-mapping. Each type of special armor has several randomized
-appearances, so the same "snow boots" that were safe levitation in
-your last game might be jumping or fumble boots this time. The
-four shuffled pools are:
+Each type of special armor has a **randomized appearance**, so
+the same "snow boots" that were safe levitation in your last game
+might be jumping or fumble boots this time. The four shuffled
+pools are:
 
 - 4 magical **helms** share 4 appearances: plumed / etched /
   crested / visored helmet → one of helmet, helm of caution, helm
