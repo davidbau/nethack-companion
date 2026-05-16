@@ -1714,10 +1714,14 @@ underestimate the threat.**
   you shouldn't have.
 - **Water demons.** Quaffing a fountain summons one ~1 in 30
   times, and they hit hard before they think about granting a
-  wish. Don't quaff fountains casually below depth 5.
+  wish. Wish odds also drop with depth, so casual quaffing pays
+  worse the deeper you go.
 - **Mount slips and riding accidents.** More heroes die slipping
-  off saddled ponies than die to mind flayers. Mount carefully,
-  and don't ride in tight corridors.
+  off saddled ponies than die to mind flayers. Getting on a steed
+  rolls against your XP level plus the steed's tameness; if you
+  fail, you take 10–14 HP. Don't mount while Confused, Fumbling,
+  or Glib, don't mount with a cursed or greased saddle, and don't
+  mount a barely-tame pony at experience level 2.
 - **Boiling potion (Gehennom).** Hot ground shatters potions
   dropped on the floor. The shrapnel is deadly. Keep potions in a
   bag once you're below the Castle.
