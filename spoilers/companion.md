@@ -4834,6 +4834,8 @@ source comment is explicit about this: *"maybe Moloch has a
 play one of the missing two, the Valley is making a quiet promise
 about you.
 
+#### What's Different in Gehennom
+
 - **No prayer.** Your god is deaf to you in Gehennom (unless you're
   a Moloch worshipper, and you're not). No emergency healing. No
   food rescue. No curse removal via divine intervention. Pack
