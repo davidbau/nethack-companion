@@ -2627,40 +2627,12 @@ It just uses a charge. So if you suspect you have a wand of wishing
 
 #### The Sink Test (Rings)
 
-If you find a sink, you can drop a ring down
-it. Each ring type produces a characteristic message:
-
-| Message you hear or see                  | Ring type                      |
-| ---------------------------------------- | ------------------------------ |
-| "The water flow seems fixed"             | sustain ability                |
-| "The water flow seems stronger/weaker"   | gain constitution / gain strength |
-| "The sink quivers upward"                | levitation                     |
-| "You smell rotten &lt;fruit&gt;"         | poison resistance              |
-| "Several flies buzz angrily"             | protection from shape changers |
-| "Static electricity surrounds the sink"  | shock resistance               |
-| "The water flow seems lesser/greater"    | increase damage / increase accuracy |
-| "The cold water faucet flashes brightly" | fire resistance                |
-| "The hot water faucet flashes brightly"  | cold resistance                |
-| "The sink seems to blend into the floor" | stealth                        |
-| "You don't see anything happen"          | invisibility                   |
-| "You thought your ring got lost..."      | searching                      |
-| "You hear a loud grinding sound"         | aggravate monster               |
-| "The sink glows silver"                  | free action                    |
-| "The water flow hits the bottom"         | hunger                         |
-| "You see the ring slide right down"      | slow digestion (never lost)    |
-| "The sink looks as good as new"          | regeneration                   |
-| "You see a ring shining in its center"   | adornment                      |
-| "The faucets flash from the water"       | warning                        |
-| "The sink momentarily vanishes"          | teleportation                  |
-| "The sink looks nothing like a deck"     | polymorph                      |
-| "The sink starts running like crazy"     | conflict                       |
-| "You hear a strange wind"               | teleport control               |
-| "The sink seemingly makes no change"     | polymorph control              |
-| "The ring is regurgitated"               | protection                     |
-
-You have about a 95% chance of losing the ring each time, so only
-test rings you're willing to sacrifice. The two exceptions: searching
-and slow digestion rings are never lost.
+If you find a sink, you can drop a ring down it. Each ring type
+produces a characteristic message, identifying the ring. See
+[Sinks](#sinks) under Points of Interest for the full
+message-to-ring table; the short version is that searching and
+slow digestion come back to you (free identification), and every
+other ring is consumed.
 
 #### Use-Testing (The Careful Way)
 
