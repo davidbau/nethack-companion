@@ -2876,9 +2876,9 @@ spelled out anywhere in the game. Below is a translation guide.
 
 | Message                                                  | What it means |
 |----------------------------------------------------------|---------------|
-| *"You feel hungry."* (after reading a scroll)            | Scroll of food detection, no food on level. |
+| *"You feel hungry."*                                     | Scroll of food detection, no food on level. |
 | *"You feel materially poor."*                            | Scroll of gold detection, no gold on level. |
-| *"You feel a strange mental acuity."* (and nothing else) | Potion of object detection, no objects on level. |
+| *"You feel a strange mental acuity."*                    | Potion of object detection with no objects on level, or ring of searching just put on. |
 | *"Wow! This makes you feel great!"*                      | Potion of restore ability; a drained stat returned to peak. |
 | *"You feel like someone is helping you."*                | Scroll of remove curse; worn/wielded cursed items uncursed. |
 | *"You feel healthy."*                                    | Intrinsic poison resistance gained from a corpse. |
@@ -2889,7 +2889,6 @@ spelled out anywhere in the game. Below is a translation guide.
 | *"You feel quick!"*                                      | Intrinsic speed gained from a corpse. |
 | *"You feel envious of the gods…"*                        | Intrinsic disintegration resistance gained from a corpse. |
 | *"Your mind oozes shut."*                                | The corpse would have granted an intrinsic you already have — useful diagnostic. |
-| *"You feel a strange mental acuity."* (after a ring)     | Ring of searching. |
 | *"You feel a strange sensation, then it passes."*        | Ring of warning. |
 | *"You feel light-footed."*                               | Ring of stealth. |
 | *"You feel in touch with the spiritual world."*          | Ring of free action. |
