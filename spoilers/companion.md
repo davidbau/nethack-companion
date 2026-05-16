@@ -1601,77 +1601,80 @@ eye, always carry a lizard corpse, and respect anything with `D` or
 #### What actually kills adventurers
 
 There is community data on this. The public NetHack server tracks
-every game played on it; as of December 2025 the published top-100
-death causes provide a useful reality check on what you should
-worry about. A few things jump out, because the most-feared bosses
-are mostly not on the list.
+every game played on it, and the published top-100 death causes
+provide a useful reality check on what you should worry about. A
+few things jump out, because the most-feared bosses are mostly not
+on the list.
 
-**The headline number.** *Ascended* sits at rank 15, with 0.394% of
-all games ending in success. The other 99.6% are deaths. NetHack
-ends in death by default; survival is the exception.
+**The headline number.** Only about **0.4% of games end in
+ascension.** The other 99.6% are deaths, and "ascended" doesn't
+even crack the top ten causes of game-over — it's below half a
+dozen kinds of common mooks. NetHack ends in death by default;
+survival is the exception.
 
-**The early dungeon is where you die.** Eight of the top ten
-killers are upper-dungeon monsters: jackals (#1), dwarves (#2),
-soldier ants (#3), gnome lords (#4), sewer rats (#5), giant bats
-(#6), small mimics (#7), gnomes (#8), foxes (#9), water moccasins
-(#10). None of them are intrinsically dangerous to a prepared
-character. They get you because you haven't built HP, AC, or
-resistances yet and they outnumber you. The strategic takeaway:
-the early game has been the deadliest stretch of NetHack since
-1987. Don't push to descend; spend the turns clearing levels,
-finding altars, and getting BUC information.
+**The early dungeon is where you die.** The top ten killers are,
+in order: jackals, dwarves, soldier ants, gnome lords, sewer rats,
+giant bats, small mimics, gnomes, foxes, water moccasins. Every
+one of them lives on the upper dungeon levels. None are
+intrinsically dangerous to a prepared character. They get you
+because you haven't built HP, AC, or resistances yet and they
+outnumber you. The strategic takeaway: the early game has been the
+deadliest stretch of NetHack since 1987. Don't push to descend;
+spend the turns clearing levels, finding altars, and getting BUC
+information.
 
-**The most underrated threats.**
+**Specific tips beyond the top ten, where players consistently
+underestimate the threat.**
 
-- **Bats and giant bats** (`B`, ranks 6 and 28). Bats are erratic
-  and bite for confusion. Giant bats hit hard for their depth.
-  Underrated because they look like nuisances.
-- **Rothes and mumakil** (`q`, ranks 11 and 38). Three- and
-  four-attack pack hunters that catch unprepared mid-game heroes.
-- **Newts and small lizards** (`:`, ranks 24, 51, 57). Yes,
-  *newts*. The lizard class — newts, geckos, iguanas — collectively
-  ranks ahead of half the Dungeons of Doom because new players
-  ignore them and they add up.
-- **Rotted corpse** (#17) and **poisonous corpse** (#66) and
-  **choking** (#63). Combined, eating mistakes are a major cause
-  of death. Don't eat old corpses. Don't eat while satiated. Pray
-  immediately if you do.
-- **Water demon** (#18). Quaffing a fountain summons one
-  ~1 in 30 times, and they hit hard before they think about
-  granting a wish. Don't quaff fountains casually below depth 5.
-- **Slipped while mounting / riding accident** (ranks 13 and 81).
-  More heroes die falling off saddled ponies than die to mind
-  flayers. If you ride, mount carefully, and don't ride in tight
-  corridors.
-- **Boiling potion** (#75). Hot ground in Gehennom shatters
-  potions you drop. The shrapnel is deadly. Keep potions in a bag.
-- **Pet kills** (kitten #23, little dog #27, housecat #94, pony
-  #32). These come from conflict rings turning your own pet
-  against you. Take off the ring before your bag of holding
-  dispenses XP back to your former friend.
-- **Rope golem** (#67) and **gold golem** (#87). Golems are
-  underrated; the rope golem in particular wraps you, and there
-  are a lot of them in the Quest dungeons.
+- **Bats** (`B`). Bats and giant bats are erratic and bite for
+  confusion. Underrated because they look like nuisances.
+- **Quadrupeds** (`q`). Rothes and mumakil are three- and
+  four-attack pack hunters; they catch unprepared mid-game heroes
+  who think they've outgrown the Mines.
+- **Newts and small lizards** (`:`). Yes, *newts*. New players
+  ignore them and the cumulative deaths add up to one of the
+  larger lines in the chart.
+- **Eating mistakes.** Rotted corpse, poisonous corpse, and
+  choking each show up high on the list. Don't eat old corpses.
+  Don't eat while satiated. Pray immediately if you ate something
+  you shouldn't have.
+- **Water demons.** Quaffing a fountain summons one ~1 in 30
+  times, and they hit hard before they think about granting a
+  wish. Don't quaff fountains casually below depth 5.
+- **Mount slips and riding accidents.** More heroes die slipping
+  off saddled ponies than die to mind flayers. Mount carefully,
+  and don't ride in tight corridors.
+- **Boiling potion (Gehennom).** Hot ground shatters potions
+  dropped on the floor. The shrapnel is deadly. Keep potions in a
+  bag once you're below the Castle.
+- **Pet kills.** Kittens, little dogs, housecats, and ponies all
+  appear on the list — almost always because the player put on a
+  ring of conflict and forgot to take it off. Remove the ring
+  before walking back to your pet.
+- **Golems.** The rope golem in particular grapples you, and
+  several Quest dungeons have them in numbers. Gold golems are
+  another quiet killer.
 
 **The colorful deaths.**
 
-- **Killed by your own wand** (#12). Self-zapped attack wands,
-  rebounding rays in narrow corridors. Identify wands before you
-  point them at yourself.
-- **Killed by a grid bug** (#54). The *weakest monster in the
-  game* kills more than 11,000 adventurers per year. They get the
-  last hit on someone already at 1 HP. Don't read a scroll on the
-  same turn a grid bug is adjacent.
-- **Killed by kicking** (#62). Kicking sinks, doors, trapped
-  things. The reaction can break a toe, summon a black pudding, or
-  electrocute you (`electric shock`, #93). Stop kicking things.
-- **Wrath of a god** (#77). You prayed when your god wasn't
-  willing. See the Divine Relations chapter.
-- **Scroll of genocide** (#89). Confused-read your own race;
-  instant kill. Don't read a scroll while confused unless you're
-  sure what it is.
-- **Scroll of earth** (#96). Buried under a pile of boulders you
-  summoned on yourself.
+- **Killed by your own wand.** Self-zapped attack wands, rays
+  ricocheting off the wall in a narrow corridor and back into your
+  face. Identify wands before pointing them at yourself.
+- **Killed by a grid bug.** The *weakest monster in the game*
+  kills more than 11,000 adventurers per year. They get the last
+  hit on someone who walked away from a real fight at 2 HP. Don't
+  read a scroll on the turn a grid bug is adjacent.
+- **Killed by kicking.** Kicking sinks, doors, locked chests. The
+  reaction can break a toe, summon a black pudding, or electrocute
+  you. (Electric shock is a top-100 cause of death in its own
+  right.) Stop kicking things.
+- **Wrath of a god.** You prayed when your god wasn't willing.
+  See the Divine Relations chapter.
+- **Scroll of genocide.** Read while confused → genocides your
+  own race → instant kill. Don't read scrolls under confusion
+  unless you know what they are.
+- **Scroll of earth.** Buried under a pile of boulders you summoned
+  on yourself.
 
 The pattern across the whole list: routine mistakes kill far more
 adventurers than exotic instadeaths. Floating eyes, cockatrices,
