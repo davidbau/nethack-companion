@@ -1351,6 +1351,16 @@ produce a longer string, and the magic of named words (like
 Elbereth) requires the *exact* word and nothing else. Overwrite the
 square or pick a fresh one.
 
+**Two engravings worth recognizing.** Most engravings you find are
+random flavor (graffiti, "elbereth" left by someone else, etc.),
+but two specific messages are *trap markers* placed by the
+dungeon: *"ad aerarium"* (Latin: *to the treasury*) is engraved
+near a secret closet that contains a **teleport trap to a vault**;
+*"Vlad was here"* marks a secret closet containing a **trap door**.
+Both are easy to miss in the message log, and worth investigating
+when you see them — but in both cases be ready for what's on the
+other side (a chase by the vault guard, or a long fall).
+
 #### Elbereth
 
 > *The mechanics below are drawn from Kate Nepveu's Elbereth FAQ
@@ -2803,12 +2813,11 @@ and you'll rarely be surprised.
 
 ---
 
-### Mysterious Feelings and Cryptic Messages
+### Feelings and Sounds
 
-Many of NetHack's most important game events are announced only by
-a single innocuous-sounding line in the message window — and if you
-don't know what those lines mean, you'll miss the announcement
-entirely. Here are the ones worth memorizing:
+Much of the most important information in NetHack comes to you as
+cryptic feelings and sounds. If you don't know what they mean,
+you'll miss the cues entirely. They are worth memorizing:
 
 | Message                                          | What it means                                                            |
 |--------------------------------------------------|--------------------------------------------------------------------------|
@@ -2834,8 +2843,6 @@ entirely. Here are the ones worth memorizing:
 | *"You hear someone cursing shoplifters."* | Shop on this level.                                                                 |
 | *"You hear bubbling water."*<br>*"You hear water falling on coins."* | Fountain on this level.                                          |
 | *"You hear a bugle playing reveille!"* | A soldier just woke nearby soldiers; expect a fight.                                   |
-| *"ad aerarium"* (Latin: *to the treasury*) | Engraving near a secret closet with a teleport trap to a vault.                    |
-| *"Vlad was here"*                      | Engraving near a secret closet with a trap door.                                       |
 | *"You feel feverish."*                 | Lycanthropy infection from a were-monster. Eat wolfsbane, dip in holy water, or pray.  |
 | *"You are slowing down."*              | You're turning to stone. Immediately eat a lizard corpse, drink acid, or pray.         |
 | *"You are turning into slime."*        | Green-slime contagion. Burn it off (fire scroll/spell/wand) or pray.                   |
