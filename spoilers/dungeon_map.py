@@ -197,7 +197,7 @@ GEH: list[TrunkRow] = [
         ),
         pearls_below=2,
     ),
-    TrunkRow(bubble=Bubble('Orcus-Town', 'wand of death · Eye of the Aethiopica', color='geh'), pearls_below=2),
+    TrunkRow(bubble=Bubble('Orcus-Town', 'Wand of Orcus · magic lamp/marker', color='geh'), pearls_below=2),
     TrunkRow(bubble=Bubble("The Wizard's Tower", '★ Book of the Dead', color='geh'), pearls_below=6),
     TrunkRow(bubble=Bubble("Moloch's Sanctum", 'the Amulet of Yendor', color='sanctum', is_sanctum=True)),
 ]
