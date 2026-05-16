@@ -830,8 +830,9 @@ Sinks are the dungeon's most underrated identification tool.
   occasional risk: ~5% chance to gain an experience level outright,
   ~5% chance to find a ring at your feet (once per sink), and ~5%
   chance to drink a random unidentified potion. Worth a quaff or
-  two from any sink you encounter, with HP and an escape plan in
-  reserve in case it summons a water elemental or polymorphs you
+  two from any sink you encounter, but keep HP and an escape plan
+  in reserve: it could summon a water elemental, or it could
+  polymorph you
 - **Dropping a ring down a sink** produces a message unique to the
   ring type and is one of the most reliable non-magical
   identification methods for rings. **Most rings are consumed**,
@@ -889,7 +890,7 @@ the entrances. There's still an unaligned altar, but you won't get
 any shopping done. If you were counting on Minetown for early commerce,
 this is a rude surprise.
 
-Watch out for the Minetown watch (when it exists). The guards are
+Watch out for the Minetown watch. The guards are
 peaceful unless you steal from a shop or attack a peaceful creature.
 If you anger them, they'll call for reinforcements.
 
