@@ -6687,9 +6687,8 @@ current table before planning around spells that used to be free.
 *The dungeon has been thoughtfully redesigned by people who wanted it
 to be better and more dangerous simultaneously, which is exactly the
 kind of thing that experienced NetHack players think is wonderful and
-newcomers find bracing. You know what the old dungeon held. The new one
-keeps most of it and adds surprises. Treat every floor you think you
-know with the respect you'd give one you've never seen before.*
+newcomers find bracing. Treat every floor you think you know with the
+respect you'd give one you've never seen before.*
 
 ---
 
