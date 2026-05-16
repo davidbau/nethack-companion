@@ -542,11 +542,15 @@ the **Astral Plane**, where your god awaits your offering.
     │     ├── Minetown (shops and a temple)
     │     └── Mine's End (bottom: luckstone)
     │
-    ├── Sokoban (branch around level 6-10, goes UP)
-    │     └── Top: bag of holding (75%) or amulet of reflection (25%)
+    ├── The Oracle (Dlvl 5-10, pays for major hints)
+    │     │── Sokoban branch goes UP from here
+    │     │     └── Top: bag of holding (75%) or amulet of reflection (25%)
+    │     └── Quest portal is a few levels below the Oracle
+    │           └── Unique to your role. Get your quest artifact.
     │
-    ├── Your Quest (portal around level 11-15)
-    │     └── Unique to your role. Get your quest artifact.
+    ├── The Big Room (Dlvl 10-12, 40% chance — one huge room)
+    │
+    ├── The Rogue Level (Dlvl 15-18, an older more primitive world)
     │
     ├── Fort Ludios (portal, if you find it)
     │     └── A vault full of gold and soldiers
@@ -557,7 +561,13 @@ the **Astral Plane**, where your god awaits your offering.
           │
   Gehennom (levels 28-50ish)
     │
+    ├── Valley of the Dead (Gehennom's entrance level)
+    │
+    ├── Demon-prince lairs (random depths: Asmodeus, Juiblex, Baalzebub)
+    │
     ├── Vlad's Tower (contains the Candelabrum)
+    │
+    ├── Orcus-town (Orcus, wand of death, Eye of the Aethiopica)
     │
     ├── The Wizard's Tower (Wizard of Yendor, Book of the Dead)
     │
@@ -565,12 +575,12 @@ the **Astral Plane**, where your god awaits your offering.
           │
           (now go ALL the way back up)
           │
-          The Elemental Planes
-            Earth ─► Air ─► Fire ─► Water
-              │
-              The Astral Plane (three altars, pick the right one)
-                │
-                ASCENSION
+  The Elemental Planes
+    Earth ─► Air ─► Fire ─► Water
+      │
+      The Astral Plane (three altars, pick the right one)
+        │
+        ASCENSION
 ```
 
 The typical trip: go down through the Dungeons, detour into the
