@@ -1301,7 +1301,8 @@ Elbereth has rules:
   existing message won't work.
 - **Engraving is an interruptible occupation.** In 5.0, writing with anything other than a wand takes multiple
   turns (one per letter). If you're interrupted mid-word (by an
-  attack, a teleport trap, or anything else) you get a partial
+  attack, a monster wandering into view, or anything else that
+  breaks an occupation) you get a partial
   engraving that does nothing. This makes wands (which write the
   whole word instantly) far more valuable for emergency Elbereth.
 - **Durability varies by method.** In 5.0, the
