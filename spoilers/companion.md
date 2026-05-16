@@ -2859,7 +2859,7 @@ you can't quite pin down.
 The whole system is about reducing uncertainty with the cheapest,
 safest method first. Altars and shops are free. Engrave-testing costs
 one charge. Use-testing costs more and carries risk. Scrolls of
-identify are the expensive last resort. Work through the list in order
+identify are the precious last resort. Work through the list in order
 and you'll rarely be surprised.
 
 ---
@@ -2872,8 +2872,6 @@ translations:
 
 | Message                                | What it means                                                                          |
 |----------------------------------------|----------------------------------------------------------------------------------------|
-| *"\<your pet\> steps reluctantly onto \<thing\>."* | A cursed item is on that square; your pet stepped on it anyway, exposing the curse. |
-| *"\<your pet\> growls!"* / *"…snarls."* | Pet's tameness is dropping; feed it before it goes feral. |
 | *"You have a sad feeling for a moment, then it passes."* | Your pet just died offscreen.                                        |
 | *"You feel healthy."*                  | Intrinsic poison resistance gained from a corpse.                                      |
 | *"You feel warm!"*                     | Intrinsic fire resistance gained from a corpse.                                        |
