@@ -1628,24 +1628,16 @@ All other colors follow the same logic: kill them for their scales,
 respect their breath weapon, and don't let them breathe on your
 spellbooks.
 
-We'll cover specific monsters in much more detail in the individual
-sections. For now, remember the essentials: **never melee a floating
-eye, always carry a lizard corpse, and respect anything with `D` or
-`&` on your screen.**
+The essentials: **never melee a floating eye, always carry a
+lizard corpse, and respect anything with `D` or `&` on your
+screen.**
 
 #### What actually kills adventurers
 
-There is community data on this. The public NetHack server tracks
-every game played on it, and the published top-100 death causes
-provide a useful reality check on what you should worry about. A
-few things jump out, because the most-feared bosses are mostly not
-on the list.
-
-**The headline number.** Only about **0.4% of games end in
-ascension.** The other 99.6% are deaths, and "ascended" doesn't
-even crack the top ten causes of game-over — it's below half a
-dozen kinds of common mooks. NetHack ends in death by default;
-survival is the exception.
+Only about **0.4% of games end in ascension.** The other 99.6%
+are deaths, and "ascended" doesn't even crack the top ten causes
+of game-over — it's below half a dozen kinds of common mooks.
+NetHack ends in death by default; survival is the exception.
 
 **The early dungeon is where you die.** The top ten killers are,
 in order: jackals, dwarves, soldier ants, gnome lords, sewer rats,
@@ -6093,14 +6085,13 @@ combat, and a few non-obvious rules.
 
 #### Gem Identification Through Selling
 
-Selling unidentified gems is **not** a reliable price-ID method. The
-shopkeeper's offer for any unidentified gem (real *or* glass) is
-computed by `shk.c` as roughly `(otyp_offset % shopkeeper_modulus) + 3`
-zm per gem, a small number between 3 and 8, varying by both the
-gem's true identity and the shopkeeper. So both real diamonds and
-worthless glass diamonds offer 3-8 zm; you cannot tell them apart by
-price. Selling the same gem at two different shops gives different
-prices for *any* unidentified gem, not just glass.
+Selling unidentified gems is **not** a reliable price-ID method.
+Shopkeepers offer 3 to 8 zm for any unidentified gem, real or
+glass alike, and the exact amount varies by both the gem's true
+identity and the shopkeeper. Real diamonds and worthless glass
+diamonds both quote in the same 3-8 zm range; you cannot tell
+them apart by price. Selling the same gem at two different shops
+gives different prices for *any* unidentified gem, not just glass.
 
 The practical method is a **touchstone** (gray stone, base price 45,
 guaranteed at Mine's End and sometimes found elsewhere). Rubbing an
@@ -6123,18 +6114,16 @@ adjust it with the Cha/Sell/Tourist/Angry toolbar to see how the
 modifiers shift things.
 
 The Mohs column is real-world mineral hardness on the Mohs scale
-(talc 1 ... diamond 10), and the game uses it in two specific places.
-Mohs ≥ 8 makes a gem **"hard"** (`HARDGEM` in `include/objects.h`).
-Hard gems can be used as a stylus to *engrave* Elbereth and other
-messages directly into the dungeon floor: a permanent ENGRAVE
-instead of the dust-only writing soft gems and fingers leave (see
-`src/engrave.c:755`, "diamonds & other hard gems should work").
-Hard gems also have a 50% chance to *survive* being thrown rather
-than shattering on impact (`src/dothrow.c:1996`, "Flint and hard
-gems don't break easily"). Below Mohs 8, the gem only writes in
-dust and breaks on impact like glass. Hardness does *not* affect
-touchstoning. Every gem can be identified by a blessed touchstone
-regardless of hardness.
+(talc 1, diamond 10), and the game uses it in two places. Gems of
+Mohs 8 or higher count as **"hard"**, and hard gems do two things
+softer gems and glass can't: they can be used as a stylus to
+*engrave* Elbereth and other messages permanently into the dungeon
+floor (instead of the temporary dust scratch a finger or soft gem
+leaves), and they have about a 50% chance to *survive* being
+thrown rather than shattering on impact. Below Mohs 8, the gem
+only writes in dust and breaks on impact like glass. Hardness
+doesn't affect touchstoning — every gem can be identified by a
+blessed touchstone regardless.
 
 <div class="price-id-toolbar"></div>
 
