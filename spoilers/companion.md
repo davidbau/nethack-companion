@@ -371,7 +371,7 @@ in a pinch.
 **Restraint.** New adventurers pick up everything they find. Veterans
 pick up everything they need. The difference is about forty pounds
 and the ability to outrun a gnome lord. If your status line reads
-"Burdened," you're carrying someone else's inventory too.
+"Burdened," you're carrying more than you can use.
 
 ---
 
