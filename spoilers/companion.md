@@ -1089,6 +1089,30 @@ The Oracle is peaceful and never attacks. Her room is a safe place
 to rest for a moment, though the fountain is subject to the usual
 fountain risks.
 
+#### The Rogue Level
+
+Somewhere in the middle dungeon you'll cross a one-level
+historical district. You'll know it when the welcoming line reads,
+*"You enter what seems to be an older, more primitive world."*
+The neighborhood is preserved as it was when **Rogue** was the
+only dungeon-crawl anyone had heard of, and a few details give
+the era away:
+
+- **All the wildlife is in capital letters** — lowercase species
+  hadn't been invented yet.
+- **Armor displays as `]`, food as `:`, amulets as `,`, and gold
+  shares a symbol with gems** (in Rogue they were the same thing).
+- **Doors don't close.** Hinges came later.
+- **The color palette drops to about four colors** and tile mode
+  switches off in favor of plain characters.
+- **No fountains, sinks, altars, shopkeepers, or priests** — and
+  no spellbooks, tools, or amulets in the natural item pool, all
+  post-Rogue inventions.
+
+Modern mechanics still work; you can engrave Elbereth here even
+though that was a Hack-era addition. A small and forgivable
+anachronism.
+
 ---
 
 ### Traps and Hazards
