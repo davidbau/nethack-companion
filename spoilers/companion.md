@@ -872,13 +872,15 @@ Each level has exactly one correct solution. If you push a boulder
 into a corner where it blocks your progress, you're stuck and will
 need to start the level over. The game won't warn you about this.
 
-The prize at the top is either a **bag of holding** (75% chance) or
-an **amulet of reflection** (25%), both extremely valuable. The roll
-is per-game, not per-variant. Both level variants use the same
-weighting. A cursed scroll of scare monster is placed under the prize
-as bait. A bag of holding lets you carry far more inventory at
-reduced weight. An amulet of reflection bounces ray attacks back at
-their casters. Either one is worth the detour.
+The prize at the top is either a **bag of holding** or an **amulet
+of reflection**, both extremely valuable. The two top-floor variants
+weight the prize opposite ways — one favors the bag of holding 75/25,
+the other favors the amulet 75/25 — and the game picks one variant
+per game, so across the player population the odds come out roughly
+even. A cursed scroll of scare monster is placed under the prize as
+bait. A bag of holding lets you carry far more inventory at reduced
+weight. An amulet of reflection bounces ray attacks back at their
+casters. Either one is worth the detour.
 
 One important rule: the Sokoban levels penalize you for "cheating."
 Breaking or polymorphing boulders, reading scrolls of earth, or
