@@ -301,10 +301,17 @@ def layout_trunk(rows: list[TrunkRow], y_start: int, trunk_color_key: str,
             attach_y = cur_y + b.h // 2
             row_h = b.h
         else:
-            # Pure branch point — circle marker on trunk
-            attach_y = cur_y + BUBBLE_H // 2  # treat as a normal row height advance
+            # Pure branch point — trunk circle marker. Match row height to
+            # the attaching branch bubble's height so the trunk pearls below
+            # this row line up exactly with the branch's internal pearls.
+            if row.branch:
+                attach_bubble = (row.branch.bubbles[0] if row.branch.attach == 'top'
+                                 else row.branch.bubbles[-1])
+                row_h = attach_bubble.h
+            else:
+                row_h = BUBBLE_H
+            attach_y = cur_y + row_h // 2
             placed.trunk_circles.append((TRUNK_X, attach_y, COLORS[trunk_color_key][1]))
-            row_h = BUBBLE_H
 
         if row.branch:
             layout_branch(row.branch, attach_y, placed)
