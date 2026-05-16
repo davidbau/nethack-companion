@@ -1338,18 +1338,17 @@ square or pick a fresh one.
 
 ##### Where the word comes from
 
-*Elbereth* is Sindarin for "Star-Queen" (or "Star-Kindler"), one of
-the Elvish names of **Varda Elentári**, highest of the Valar in
-J.R.R. Tolkien's *Silmarillion* — the one who set the stars in the
-sky. In *The Lord of the Rings* the Elves invoke her name for
-protection against evil. Frodo cries *"O Elbereth! Gilthoniel!"* on
-Weathertop and the Witch-king recoils. Sam invokes her in Shelob's
-lair and the Phial of Galadriel burns brighter. The hymn at
-Rivendell (*A Elbereth Gilthoniel...*) is a hymn to her. NetHack
-lifts the conceit directly: writing Varda's name on the dungeon
-floor is an appeal to a higher power for safe ground, and the
-crowning title **"Hand of Elbereth"** (for lawful ascenders) is the
-explicit nod.
+*Elbereth* is Sindarin for "Star-Queen," one of the Elvish names
+of **Varda Elentári**, highest of the Valar in J.R.R. Tolkien's
+*Silmarillion* — the one who set the stars in the sky. In *The
+Lord of the Rings* the Elves invoke her name for protection
+against evil: Frodo cries *"O Elbereth! Gilthoniel!"* on
+Weathertop and the Witch-king recoils, and Sam invokes her in
+Shelob's lair to make the Phial of Galadriel burn brighter.
+NetHack lifts the conceit directly: writing Varda's name on the
+dungeon floor is an appeal to a higher power for safe ground, and
+the crowning title **"Hand of Elbereth"** (for lawful ascenders)
+is the explicit nod.
 
 ##### The ward
 
@@ -1561,9 +1560,11 @@ reason to secure MC before browsing mid-game shops.
 hallucinating, an orange) for 20 / 40 / 50 turns depending on
 size. Anything that tries to pick "you" up snaps the spell.
 
-**A note on dragons.** Dragons deserve a full briefing. Each color has
-its own breath weapon, resistance, scale mail property, and degree of
-desire to kill you specifically. The summary:
+#### A note on dragons
+
+Dragons deserve a full briefing. Each color has its own breath
+weapon, resistance, scale mail property, and degree of desire to
+kill you specifically. The summary:
 
 **Gray** dragon scale mail grants magic resistance, the most important
 defensive property in the game, full stop. Gray dragons are the ones
@@ -6736,6 +6737,17 @@ Above all, this guide exists because the game itself exists.
 founded by Mike Stephenson, Izchak Miller, and Janet Walz. Izchak
 Miller passed away in 1994; the shopkeeper who bears his name in
 the Mines is a small measure of how much his work meant.
+
+The game itself descends from earlier roguelikes. **Hack** was
+written by Jay Fenlason in 1982 as a class project at Lincoln-Sudbury
+Regional High School, drawing on Toy and Wichman's *Rogue* (1980),
+and extended by Andries Brouwer through the mid-1980s. NetHack
+forked from Brouwer's Hack in 1987. Many of the most distinctive
+NetHack monsters — including the **grid bug**, the orthogonal-only
+critter whose name puns on both "insect" and "software bug" living
+on a character-cell grid (with a likely nod to the bugs in the 1982
+film *Tron*) — were already in Hack before NetHack inherited them.
+The dungeon is older than the game.
 
 The development was not always continuous. After version 3.4.3 in
 December 2003, the DevTeam went quiet (not absent, but silent)
