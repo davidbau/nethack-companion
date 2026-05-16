@@ -44,8 +44,8 @@ PEARL_PADDING = 4                     # pad before first/after last pearl in a g
 
 GAP_NO_PEARL = 6                      # gap between bubbles when no pearls between
 
-TITLE_Y = 36
-SECT_BAR_H = 26
+SECT_BAR_H = 39                       # 50% taller than before
+SECT_BAR_FONT = 22                    # 50% bigger than before
 SECT_BAR_MARGIN = 40
 TRUNK_PADDING = 14                    # padding at section bar transitions
 
@@ -439,10 +439,7 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
     parts = []
     bar_y = y_start
     bar_bottom = bar_y + SECT_BAR_H
-    parts.append(f'<rect x="40" y="{bar_y}" width="680" height="{SECT_BAR_H}" rx="4" fill="{TRUNK_PLANES}"/>')
-    parts.append(text_el(WIDTH // 2, bar_y + 18, 'THE ELEMENTAL PLANES',
-                         font_size=15, font_weight=600, fill='#fff',
-                         text_anchor='middle', letter_spacing='0.08em'))
+    parts.extend(render_section_bar(bar_y, 'THE ELEMENTAL PLANES', TRUNK_PLANES))
 
     # Planes row: Earth, Air, Fire, Water (4 boxes, centered)
     plane_w = 120
@@ -558,121 +555,167 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
 # ============================================================================
 
 def render_section_bar(y: int, label: str, color: str) -> list[str]:
+    text_y = y + SECT_BAR_H // 2 + SECT_BAR_FONT // 3   # baseline ~ visual center
     parts = [
         f'<rect x="{SECT_BAR_MARGIN}" y="{y}" width="{WIDTH - 2 * SECT_BAR_MARGIN}" '
         f'height="{SECT_BAR_H}" rx="4" fill="{color}"/>',
-        text_el(WIDTH // 2, y + 18, label,
-                font_size=15, font_weight=600, fill='#fff',
+        text_el(WIDTH // 2, text_y, label,
+                font_size=SECT_BAR_FONT, font_weight=600, fill='#fff',
                 text_anchor='middle', letter_spacing='0.08em'),
     ]
     return parts
 
 
+def _wrap_svg(parts: list[str], height: int, aria_label: str) -> str:
+    """Wrap a list of SVG parts in an <svg> element that stacks block-flush
+    against its siblings (display:block, no vertical margin)."""
+    svg_open = (
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {height}" '
+        f'role="img" aria-label="{aria_label}" '
+        f'style="display:block;margin:0 auto;max-width:{WIDTH}px;width:100%;'
+        f"height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;\">"
+    )
+    defs = (
+        '<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" '
+        'markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+        '<path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs>'
+    )
+    return svg_open + defs + ''.join(parts) + '</svg>'
+
+
+def _section_parts(placed: Placed, y_min: int, y_max: int, y_offset: int,
+                   bar_label: str, bar_color: str,
+                   extra_after: Optional[list[str]] = None) -> list[str]:
+    """Build the SVG body for one section: trunk + bar + boxes + pearls,
+    with all coordinates translated to local (subtract y_offset)."""
+    parts: list[str] = []
+
+    # Layer 1: trunk segments (clipped to [y_min, y_max])
+    for x, sy1, sy2, color in placed.trunk_segments:
+        cy1 = max(sy1, y_min)
+        cy2 = min(sy2, y_max)
+        if cy1 < cy2:
+            parts.append(
+                f'<line x1="{x}" y1="{cy1 - y_offset}" x2="{x}" y2="{cy2 - y_offset}" '
+                f'stroke="{color}" stroke-width="{TRUNK_W}" fill="none"/>'
+            )
+
+    # Layer 2: section bar at local y=0
+    parts.extend(render_section_bar(0, bar_label, bar_color))
+
+    # Layer 3: branch connectors (BEHIND bubbles)
+    for x, sy1, sy2, color in placed.branch_connectors:
+        cy1 = max(sy1, y_min)
+        cy2 = min(sy2, y_max)
+        if cy1 < cy2:
+            parts.append(
+                f'<line x1="{x}" y1="{cy1 - y_offset}" x2="{x}" y2="{cy2 - y_offset}" '
+                f'stroke="{color}" stroke-width="2" fill="none"/>'
+            )
+
+    # Layer 4: bubbles (filter by center y)
+    for b, x, y in placed.bubbles:
+        if y_min <= y + b.h // 2 < y_max:
+            parts.extend(render_bubble(b, x, y - y_offset))
+
+    # Layer 5: trunk circles
+    for x, y, color in placed.trunk_circles:
+        if y_min <= y < y_max:
+            parts.append(f'<circle cx="{x}" cy="{y - y_offset}" r="5" fill="{color}"/>')
+
+    # Layer 6: branch arrows (ON TOP of bubbles)
+    for x1, y1, x2, y2 in placed.branch_arrows:
+        if y_min <= y1 < y_max:
+            parts.append(
+                f'<line x1="{x1}" y1="{y1 - y_offset}" x2="{x2}" y2="{y2 - y_offset}" '
+                f'stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>'
+            )
+
+    # Layer 7: arrow labels
+    for x, y, label in placed.arrow_labels:
+        if y_min <= y < y_max:
+            parts.append(text_el(x, y - y_offset, label,
+                                 font_size=11, font_style='italic',
+                                 fill='#5a5a5a', text_anchor='middle'))
+
+    # Layer 8: pearls (top)
+    for x, y, color in placed.pearls:
+        if y_min <= y < y_max:
+            parts.append(f'<circle cx="{x}" cy="{y - y_offset}" r="{PEARL_R}" fill="{color}"/>')
+
+    # Optional extras (e.g. climb-back line + label, drawn in local coords)
+    if extra_after:
+        parts.extend(extra_after)
+
+    return parts
+
+
 def render_svg() -> str:
-    # Lay out DoD
+    """Build the three-section dungeon map. Each section is its own SVG;
+    CSS stacks them flush so they read as one continuous diagram."""
+    # === Layout (absolute Y coordinates) ===
     placed = Placed()
 
-    dod_start_y = 92
-    dod_bar_y = dod_start_y - 16 - SECT_BAR_H
-    # DoD bar above trunk
-    bar_parts = render_section_bar(dod_bar_y, 'DUNGEONS OF DOOM', TRUNK_DOD)
-
+    dod_bar_y = 0
+    dod_start_y = dod_bar_y + SECT_BAR_H + 16
     dod_end_y = layout_trunk(DOD, dod_start_y, 'dod', placed)
 
-    # Geh bar
     geh_bar_y = dod_end_y + TRUNK_PADDING
     geh_bar_bottom = geh_bar_y + SECT_BAR_H
     geh_start_y = geh_bar_bottom + TRUNK_PADDING
     geh_end_y = layout_trunk(GEH, geh_start_y, 'geh', placed)
 
-    # Climb-back dashed line
     climb_y_start = geh_end_y + 6
     climb_y_end = climb_y_start + 50
     planes_bar_y = climb_y_end
 
-    # Extend trunk segments to touch the bars (so the bars cover the transition)
-    # DoD trunk should extend down into the bar
-    # Geh trunk should extend down past Sanctum to climb-back start
-    # We'll handle this by overwriting the placed trunk_segments
-    placed.trunk_segments = []
-    placed.trunk_segments.append((TRUNK_X, dod_start_y, geh_bar_bottom, COLORS['dod'][1]))
-    placed.trunk_segments.append((TRUNK_X, geh_bar_y, geh_end_y, COLORS['geh'][1]))
+    placed.trunk_segments = [
+        (TRUNK_X, dod_start_y, geh_bar_bottom, COLORS['dod'][1]),
+        (TRUNK_X, geh_bar_y, geh_end_y, COLORS['geh'][1]),
+    ]
 
-    # Assemble SVG
-    parts = []
-
-    # Title
-    parts.append(text_el(WIDTH // 2, TITLE_Y, 'The Dungeon',
-                         font_size=24, font_weight=600, fill='#1f2933', text_anchor='middle'))
-
-    # Rendering layers (back to front):
-    # 1. Trunk segments
-    parts.extend(render_trunk_segments(placed.trunk_segments))
-    # 2. Section bars
-    parts.extend(bar_parts)
-    parts.extend(render_section_bar(geh_bar_y, 'GEHENNOM', TRUNK_GEH))
-    # 3. Branch connectors (BEHIND bubbles so the green line is hidden behind Minetown etc.)
-    parts.extend(render_branch_connectors(placed.branch_connectors))
-    # 4. Bubbles
-    for b, x, y in placed.bubbles:
-        parts.extend(render_bubble(b, x, y))
-    # 5. Trunk circles (small dots on trunk)
-    parts.extend(render_trunk_circles(placed.trunk_circles))
-    # 6. Branch arrows (ON TOP of bubbles so arrowheads are visible at bubble edges)
-    parts.extend(render_branch_arrows(placed.branch_arrows))
-    # 6b. Arrow labels ("up", "portal", ...) above the arrow lines
-    for x, y, label in placed.arrow_labels:
-        parts.append(text_el(x, y, label,
-                             font_size=11, font_style='italic', fill='#5a5a5a',
-                             text_anchor='middle'))
-    # 7. Pearls (front layer, always visible on top of connectors and trunk lines)
-    parts.extend(render_pearls(placed.pearls))
-
-    # Climb-back dashed line
-    parts.append(
-        f'<line x1="{TRUNK_X}" y1="{climb_y_start}" x2="{TRUNK_X}" y2="{climb_y_end}" '
-        f'stroke="#5B8E3A" stroke-width="2.5" stroke-dasharray="7,5" fill="none"/>'
+    # === Section 1: DoD ===
+    # Spans y=0 to the top of the Geh bar.
+    sec_dod_top = 0
+    sec_dod_bottom = geh_bar_y
+    dod_parts = _section_parts(
+        placed, y_min=sec_dod_top, y_max=sec_dod_bottom, y_offset=sec_dod_top,
+        bar_label='DUNGEONS OF DOOM', bar_color=TRUNK_DOD,
     )
-    parts.append(text_el(TRUNK_X + 20, climb_y_start + (climb_y_end - climb_y_start) // 2 + 5,
-                         '',
-                         font_size=15, font_weight=600,
-                         font_style='italic', fill='#5B8E3A',
-                         text_anchor='start'))
-    # Replace above empty content with proper tspan for "ALL" emphasis
-    parts[-1] = (f'<text x="{TRUNK_X + 20}" '
-                 f'y="{climb_y_start + (climb_y_end - climb_y_start) // 2 + 5}" '
-                 f'font-size="15" font-weight="600" font-style="italic" '
-                 f'fill="#5B8E3A">'
-                 f'now go <tspan style="font-weight:800;font-size:17px">ALL</tspan> '
-                 f'the way back up...</text>')
+    dod_svg = _wrap_svg(dod_parts, sec_dod_bottom - sec_dod_top,
+                        aria_label='Dungeons of Doom map')
 
-    # Planes section
-    plane_parts, total_y = render_planes_section(planes_bar_y)
-    parts.extend(plane_parts)
-
-    # Wrap in SVG container
-    view_h = total_y + 20
-    svg_open = (
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {view_h}" '
-        f'role="img" aria-label="The dungeon overview map" '
-        f'style="max-width: {WIDTH}px; width: 100%; height: auto; '
-        f"font-family: 'EB Garamond', 'Garamond', 'Georgia', serif;\">"
+    # === Section 2: Gehennom (includes climb-back at the bottom) ===
+    sec_geh_top = geh_bar_y
+    sec_geh_bottom = planes_bar_y
+    climb_local_start = climb_y_start - sec_geh_top
+    climb_local_end = climb_y_end - sec_geh_top
+    climb_label_y = (climb_local_start + climb_local_end) // 2 + 5
+    climb_extras = [
+        f'<line x1="{TRUNK_X}" y1="{climb_local_start}" x2="{TRUNK_X}" y2="{climb_local_end}" '
+        f'stroke="#5B8E3A" stroke-width="2.5" stroke-dasharray="7,5" fill="none"/>',
+        f'<text x="{TRUNK_X + 20}" y="{climb_label_y}" '
+        f'font-size="15" font-weight="600" font-style="italic" fill="#5B8E3A">'
+        f'now go <tspan style="font-weight:800;font-size:17px">ALL</tspan> '
+        f'the way back up...</text>',
+    ]
+    geh_parts = _section_parts(
+        placed, y_min=sec_geh_top, y_max=sec_geh_bottom, y_offset=sec_geh_top,
+        bar_label='GEHENNOM', bar_color=TRUNK_GEH,
+        extra_after=climb_extras,
     )
-    defs = (
-        '<defs>'
-        '<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" '
-        'markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
-        '<path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/>'
-        '</marker>'
-        '</defs>'
-    )
-    title_el = '<title>The Dungeon Overview Map</title>'
-    body = ''.join(parts)
-    svg = svg_open + title_el + defs + body + '</svg>'
+    geh_svg = _wrap_svg(geh_parts, sec_geh_bottom - sec_geh_top,
+                        aria_label='Gehennom map')
 
+    # === Section 3: Planes (rendered in its own coord system, bar at y=0) ===
+    plane_parts, planes_local_end = render_planes_section(0)
+    planes_svg = _wrap_svg(plane_parts, planes_local_end + 10,
+                           aria_label='Elemental Planes and Ascension')
+
+    # === Assemble the figure ===
     figure = (
         '<div><figure style="margin: 1.5em 0; text-align: center;">'
-        + svg
+        + dod_svg + geh_svg + planes_svg
         + '<figcaption style="font-style: italic; color: #5a5a5a; '
           'font-size: 0.9em; margin-top: 0.5em;">'
           'Branches extend left and right of the main trunk. '
