@@ -3855,8 +3855,8 @@ rarely be surprised.</p>
 <hr />
 </section>
 </section>
-<section id="reading-the-dungeons-messages" class="level3">
-<h3>Reading the Dungeon’s Messages</h3>
+<section id="mysterious-feelings-and-cryptic-messages" class="level3">
+<h3>Mysterious Feelings and Cryptic Messages</h3>
 <p>A few of the dungeon’s one-line messages hide specific information
 behind plain-looking text. The ones worth memorizing, with
 translations:</p>
@@ -3873,25 +3873,18 @@ translations:</p>
 </thead>
 <tbody>
 <tr>
-<td><em>“You feel hungry.”</em></td>
-<td>Scroll of food detection, no food on level.</td>
+<td><em>“&lt;your pet&gt; steps reluctantly onto
+&lt;thing&gt;.”</em></td>
+<td>A cursed item is on that square; your pet stepped on it anyway,
+exposing the curse.</td>
 </tr>
 <tr>
-<td><em>“You feel materially poor.”</em></td>
-<td>Scroll of gold detection, no gold on level.</td>
+<td><em>“&lt;your pet&gt; growls!”</em> / <em>“…snarls.”</em></td>
+<td>Pet’s tameness is dropping; feed it before it goes feral.</td>
 </tr>
 <tr>
-<td><em>“You feel a strange mental acuity.”</em></td>
-<td>Ring of searching, or potion of object detection with no objects on
-level.</td>
-</tr>
-<tr>
-<td><em>“Wow! This makes you feel great!”</em></td>
-<td>Potion of restore ability; a drained stat returned to peak.</td>
-</tr>
-<tr>
-<td><em>“You feel like someone is helping you.”</em></td>
-<td>Scroll of remove curse; worn/wielded cursed items uncursed.</td>
+<td><em>“You have a sad feeling for a moment, then it passes.”</em></td>
+<td>Your pet just died offscreen.</td>
 </tr>
 <tr>
 <td><em>“You feel healthy.”</em></td>
@@ -3923,8 +3916,19 @@ level.</td>
 </tr>
 <tr>
 <td><em>“Your mind oozes shut.”</em></td>
-<td>The corpse would have granted an intrinsic you already have — useful
-diagnostic.</td>
+<td>The corpse would have granted an intrinsic you already have.</td>
+</tr>
+<tr>
+<td><em>“You feel hungry.”</em></td>
+<td>Scroll of food detection, no food on level.</td>
+</tr>
+<tr>
+<td><em>“You feel materially poor.”</em></td>
+<td>Scroll of gold detection, no gold on level.</td>
+</tr>
+<tr>
+<td><em>“You feel like someone is helping you.”</em></td>
+<td>Scroll of remove curse; worn/wielded cursed items uncursed.</td>
 </tr>
 <tr>
 <td><em>“You feel a strange sensation, then it passes.”</em></td>
@@ -3943,21 +3947,17 @@ diagnostic.</td>
 <td>Ring of conflict.</td>
 </tr>
 <tr>
-<td><em>“ad aerarium”</em> (Latin: <em>to the treasury</em>)</td>
-<td>Engraving near a secret closet with a teleport trap to a vault.</td>
+<td><em>“You feel a strange mental acuity.”</em></td>
+<td>Ring of searching, or potion of object detection with no objects on
+level.</td>
 </tr>
 <tr>
-<td><em>“Vlad was here”</em></td>
-<td>Engraving near a secret closet with a trap door.</td>
+<td><em>“Wow! This makes you feel great!”</em></td>
+<td>Potion of restore ability; a drained stat returned to peak.</td>
 </tr>
 <tr>
-<td><em>“Closed for inventory”</em></td>
-<td>Engraving on the door of an abandoned shop; items inside are
-free.</td>
-</tr>
-<tr>
-<td><em>“You hear someone counting money.”</em><br><em>“…strange
-wind.”</em></td>
+<td><em>“You hear someone counting money.”</em><br><em>“You hear a
+strange wind.”</em></td>
 <td>Vault on this level.</td>
 </tr>
 <tr>
@@ -3965,8 +3965,8 @@ wind.”</em></td>
 <td>Shop on this level.</td>
 </tr>
 <tr>
-<td><em>“You hear bubbling water.”</em><br><em>“…water
-falling.”</em></td>
+<td><em>“You hear bubbling water.”</em><br><em>“You hear water falling
+on coins.”</em></td>
 <td>Fountain on this level.</td>
 </tr>
 <tr>
@@ -3974,16 +3974,12 @@ falling.”</em></td>
 <td>A soldier just woke nearby soldiers; expect a fight.</td>
 </tr>
 <tr>
-<td>Pet refuses to step on a square</td>
-<td>Cursed item on that square.</td>
+<td><em>“ad aerarium”</em> (Latin: <em>to the treasury</em>)</td>
+<td>Engraving near a secret closet with a teleport trap to a vault.</td>
 </tr>
 <tr>
-<td><em>“You have a sad feeling for a moment, then it passes.”</em></td>
-<td>Your pet just died offscreen.</td>
-</tr>
-<tr>
-<td>Pet growls at you</td>
-<td>Pet’s tameness is dropping; feed it.</td>
+<td><em>“Vlad was here”</em></td>
+<td>Engraving near a secret closet with a trap door.</td>
 </tr>
 <tr>
 <td><em>“You feel feverish.”</em></td>
@@ -4004,15 +4000,6 @@ pray.</td>
 <td><em>“You feel deathly sick.”</em></td>
 <td>Terminal illness (Pestilence, Demogorgon). Quaff extra healing, eat
 eucalyptus, or pray.</td>
-</tr>
-<tr>
-<td><em>“It constricts your throat!”</em></td>
-<td>Cursed amulet of strangulation; turns to live. Remove curse or
-pray.</td>
-</tr>
-<tr>
-<td><em>“Your weapon turns red hot.”</em></td>
-<td>A creature is targeting your weapon. Swap weapons or move away.</td>
 </tr>
 </tbody>
 </table>
@@ -8551,6 +8538,10 @@ pits. Selling a stack of useless daggers to a weapon shop is a way to
 someone’s bones file, all the items inside still belong to the dead
 adventurer’s ghost shopkeeper; pick up anything and you owe the new
 shopkeeper full price. The shop floor is not free loot.</li>
+<li><strong>“Closed for inventory” engraving on a door.</strong> That
+door belongs to an abandoned shop — no shopkeeper, no bill, the items
+inside are yours for free. The classic example is Orcus-town, where
+every shop is in this state.</li>
 </ul>
 <p>The best strategy is usually to play fair: sell what you don’t need,
 buy what you do, and use the pricing system to identify as much as

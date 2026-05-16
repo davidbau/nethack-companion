@@ -2864,7 +2864,7 @@ and you'll rarely be surprised.
 
 ---
 
-### Reading the Dungeon's Messages
+### Mysterious Feelings and Cryptic Messages
 
 A few of the dungeon's one-line messages hide specific information
 behind plain-looking text. The ones worth memorizing, with
@@ -2872,11 +2872,9 @@ translations:
 
 | Message                                | What it means                                                                          |
 |----------------------------------------|----------------------------------------------------------------------------------------|
-| *"You feel hungry."*                   | Scroll of food detection, no food on level.                                            |
-| *"You feel materially poor."*          | Scroll of gold detection, no gold on level.                                            |
-| *"You feel a strange mental acuity."*  | Ring of searching, or potion of object detection with no objects on level. |
-| *"Wow! This makes you feel great!"*    | Potion of restore ability; a drained stat returned to peak.                            |
-| *"You feel like someone is helping you."* | Scroll of remove curse; worn/wielded cursed items uncursed.                         |
+| *"\<your pet\> steps reluctantly onto \<thing\>."* | A cursed item is on that square; your pet stepped on it anyway, exposing the curse. |
+| *"\<your pet\> growls!"* / *"…snarls."* | Pet's tameness is dropping; feed it before it goes feral. |
+| *"You have a sad feeling for a moment, then it passes."* | Your pet just died offscreen.                                        |
 | *"You feel healthy."*                  | Intrinsic poison resistance gained from a corpse.                                      |
 | *"You feel warm!"*                     | Intrinsic fire resistance gained from a corpse.                                        |
 | *"You feel cool."*                     | Intrinsic cold resistance gained from a corpse.                                        |
@@ -2884,27 +2882,26 @@ translations:
 | *"You feel wide awake."*               | Intrinsic sleep resistance gained from a corpse.                                       |
 | *"You feel quick!"*                    | Intrinsic speed gained from a corpse.                                                  |
 | *"You feel envious of the gods…"*      | Intrinsic disintegration resistance gained from a corpse.                              |
-| *"Your mind oozes shut."*              | The corpse would have granted an intrinsic you already have — useful diagnostic.       |
+| *"Your mind oozes shut."*              | The corpse would have granted an intrinsic you already have.                           |
+| *"You feel hungry."*                   | Scroll of food detection, no food on level.                                            |
+| *"You feel materially poor."*          | Scroll of gold detection, no gold on level.                                            |
+| *"You feel like someone is helping you."* | Scroll of remove curse; worn/wielded cursed items uncursed.                         |
 | *"You feel a strange sensation, then it passes."* | Ring of warning.                                                            |
 | *"You feel light-footed."*             | Ring of stealth.                                                                       |
 | *"You feel in touch with the spiritual world."* | Ring of free action.                                                          |
 | *"You feel charged with power."*       | Ring of conflict.                                                                      |
+| *"You feel a strange mental acuity."*  | Ring of searching, or potion of object detection with no objects on level. |
+| *"Wow! This makes you feel great!"*    | Potion of restore ability; a drained stat returned to peak.                            |
+| *"You hear someone counting money."*<br>*"You hear a strange wind."* | Vault on this level.                                            |
+| *"You hear someone cursing shoplifters."* | Shop on this level.                                                                 |
+| *"You hear bubbling water."*<br>*"You hear water falling on coins."* | Fountain on this level.                                          |
+| *"You hear a bugle playing reveille!"* | A soldier just woke nearby soldiers; expect a fight.                                   |
 | *"ad aerarium"* (Latin: *to the treasury*) | Engraving near a secret closet with a teleport trap to a vault.                    |
 | *"Vlad was here"*                      | Engraving near a secret closet with a trap door.                                       |
-| *"Closed for inventory"*               | Engraving on the door of an abandoned shop; items inside are free.                     |
-| *"You hear someone counting money."*<br>*"…strange wind."* | Vault on this level.                                              |
-| *"You hear someone cursing shoplifters."* | Shop on this level.                                                                 |
-| *"You hear bubbling water."*<br>*"…water falling."* | Fountain on this level.                                                  |
-| *"You hear a bugle playing reveille!"* | A soldier just woke nearby soldiers; expect a fight.                                   |
-| Pet refuses to step on a square        | Cursed item on that square.                                                            |
-| *"You have a sad feeling for a moment, then it passes."* | Your pet just died offscreen.                                        |
-| Pet growls at you                      | Pet's tameness is dropping; feed it.                                                   |
 | *"You feel feverish."*                 | Lycanthropy infection from a were-monster. Eat wolfsbane, dip in holy water, or pray.  |
 | *"You are slowing down."*              | You're turning to stone. Immediately eat a lizard corpse, drink acid, or pray.         |
 | *"You are turning into slime."*        | Green-slime contagion. Burn it off (fire scroll/spell/wand) or pray.                   |
 | *"You feel deathly sick."*             | Terminal illness (Pestilence, Demogorgon). Quaff extra healing, eat eucalyptus, or pray. |
-| *"It constricts your throat!"*         | Cursed amulet of strangulation; turns to live. Remove curse or pray.                   |
-| *"Your weapon turns red hot."*         | A creature is targeting your weapon. Swap weapons or move away.                        |
 
 ---
 
@@ -6345,6 +6342,10 @@ A few useful tactical points:
   file, all the items inside still belong to the dead adventurer's
   ghost shopkeeper; pick up anything and you owe the new
   shopkeeper full price. The shop floor is not free loot.
+- **"Closed for inventory" engraving on a door.** That door belongs
+  to an abandoned shop — no shopkeeper, no bill, the items inside
+  are yours for free. The classic example is Orcus-town, where
+  every shop is in this state.
 
 The best strategy is usually to play fair: sell what you don't need,
 buy what you do, and use the pricing system to identify as much as
