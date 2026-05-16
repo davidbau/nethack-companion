@@ -4811,7 +4811,28 @@ reaches.
 This is the part of the game that separates tourists from
 ascenders. Everything you've prepared for has been leading here.
 
-#### What's Different
+#### The Valley of the Dead
+
+The very first level of Gehennom, immediately below the Castle, is
+a named special level called the **Valley of the Dead**. You'll
+see the arrival message — *"You arrive at the Valley of the
+Dead..."* — and the dungeon overview will mark it for you. It's
+a wide hand-designed map with three irregular graveyards scattered
+across it and a permanent **shrine to Moloch** in the upper-left
+corner (an unaligned high altar; do not pray here). Walls are
+non-diggable everywhere, so you can't shortcut through them, and
+the level is flagged `noteleport` and `nommap` — magic mapping
+won't reveal it and teleportation doesn't work.
+
+The morbid detail worth noticing: scattered across the level are
+**dead bodies of every player role** the dungeon has ever seen
+descend — two corpses each of Archeologists, Barbarians, Cavemen,
+Healers, Knights, Rangers, Rogues, Samurai, Tourists, Valkyries,
+and Wizards. Pointedly absent: **no Priests, no Monks**. The
+source comment is explicit about this: *"maybe Moloch has a
+*special* fate reserved for members of *those* classes."* If you
+play one of the missing two, the Valley is making a quiet promise
+about you.
 
 - **No prayer.** Your god is deaf to you in Gehennom (unless you're
   a Moloch worshipper, and you're not). No emergency healing. No
