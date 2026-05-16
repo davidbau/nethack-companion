@@ -361,12 +361,7 @@ provide armor class benefits and can protect against specific attacks.
 
 **A ranged attack.** Daggers, darts, or a bow with arrows. Fighting
 from range is almost always safer than melee, and some monsters (like
-floating eyes) should never be fought in melee at all.
-
-**A light source.** Many areas of the dungeon are dark, and bumbling
-around blind is a recipe for walking into things you'd rather see
-coming. An oil lamp or magic lamp is ideal. A candle or two will do
-in a pinch.
+floating eyes) should never be fought in melee.
 
 **Restraint.** New adventurers pick up everything they find. Veterans
 pick up everything they need. The difference is about forty pounds
