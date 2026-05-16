@@ -232,17 +232,14 @@ people who have ascended before and want a challenge.
 **Valkyrie.** You start with a spear, a small shield, and cold
 resistance. Valkyries are widely considered one of the most
 beginner-friendly roles: strong combat stats, good starting equipment,
-and cold resistance covers one of the more common damage types. If
-you're Neutral, your artifact prize is **Mjollnir**, a +d5/+d24 war
-hammer that's brutal in melee against anything not shock-resistant and
-returns when thrown if you can reach Strength 25. It's not free:
-you'll need to sacrifice corpses on a co-aligned altar and hope for
-the gift, or wish for it later. But it's one of the best weapons in
-the game once acquired. Lawful Valkyries can instead pursue Excalibur
-via fountain dipping (see the Knight section for the dip mechanics,
-though Valkyries don't share the Knight's 1-in-6 odds; it's the
-standard 1-in-30 for everyone else).
-This is the recommendation for your first serious attempt.
+and cold resistance covers one of the more common damage types.
+
+**Neutral** Valkyries get **Mjollnir** as a sacrifice gift — a
++d5/+d24 war hammer that doubles as a ranged weapon (it returns
+when thrown at Strength 25). **Lawful** Valkyries can dip for
+Excalibur instead. Mjollnir hits harder; Excalibur is easier to
+acquire. Both are excellent. This is the recommendation for your
+first serious attempt.
 *Alignment: Lawful or Neutral. Female only.*
 
 **Wizard.** You start with a quarterstaff and a spellbook or two. Your
@@ -1440,14 +1437,14 @@ by how early you might encounter them:
 
 | Symbol | Class     | Notes                                                                                   |
 | ------ | --------- | --------------------------------------------------------------------------------------- |
-| `a`    | Ants      | Come in groups. Soldier ants are fast and hit hard.                                     |
+| `a`    | Ants      | **Soldier ants are the famous early killer**: speed 18, two attacks per turn (bite + strength-draining sting), and they travel in packs. A wandering soldier-ant group on Dlvl 4 can end a careless run. Killer bees, giant ants, fire ants are all the same shape of problem. |
 | `b`    | Blobs     | Acidic or gelatinous. Don't hit acid blobs in melee.                                    |
-| `B`    | Bats      | Fast, erratic fliers. Bats themselves are nuisances; vampire bats are vampire-class and drain levels. |
-| `d`    | Dogs      | Often your starting pet. Tame dogs are loyal. Wild ones are manageable.                 |
+| `B`    | Bats      | The `B` class is **deceptively dangerous because of speed**. Bats and giant bats clock in at speed 22 — nearly twice the player's base 12, so they get roughly two bites per one of your swings. Giant bats bite for 1d6 each; the math catches up fast. Vampire bats are vampire-class and drain levels on top of being fast. |
+| `d`    | Dogs and other canines | The `d` class covers your starting pet (little dog, kitten via cat-class) **and** the most numerous early-game predators. **Jackals** are the single most common cause of death on the public server — they only bite for 1d2, but they spawn in packs and there are a *lot* of them on the upper levels. **Foxes** bite for 1d3 and are faster (speed 15) but spawn alone. Coyotes, dingos, wolves get progressively worse. Tame `d` (your pet, larger dogs you've fed up) help fight everything else. |
 | `e`    | Eyes      | **Floating eyes paralyze on melee hit.** Never hit an `e` in melee. Use ranged attacks. Spheres (flaming/freezing/shocking) explode in a 3×3 area in 5.0; kill them at range. Melee finishes them but you eat the blast. |
 | `f`    | Cats      | Like dogs, often starting pets. Felines can be tamed with tripe.                        |
-| `g`    | Gnomes    | Common in the Mines. Usually peaceful if you're a gnome.                                |
-| `h`    | Humanoids | Dwarves, bugbears, mind flayers. Wide range of difficulty.                              |
+| `g`    | Gnomes    | The standard inhabitants of the Gnomish Mines. Individually weak, but the Mines have a lot of them — and **plain gnomes, gnome lords, and (later) gnome rulers are all in the top fifteen causes of death** on the public server, because mid-game players treat the Mines as a milk run and walk into a four-on-one with full-strength enemies. If you're a gnome yourself, most of them are peaceful. |
+| `h`    | Humanoids | Dwarves, bugbears, mind flayers. Wide range of difficulty. **Dwarves in particular are dangerously underrated**: they hit harder than they look, they're armored, and they're the second most common cause of death on the public server because of how many you meet in the Mines. Don't trade blows with one in melee until your AC is solid. |
 | `i`    | Imps      | Minor pests. Can steal and teleport.                                                    |
 | `j`    | Jellies   | Spotted and ochre jellies. Passive acid damage on melee.                                |
 | `k`    | Kobolds   | Weak individually but sometimes carry poisoned weapons.                                 |
@@ -1455,7 +1452,7 @@ by how early you might encounter them:
 | `r`    | Rodents   | Rats and rock moles. Rock moles eat metal items, so protect your gear.                  |
 | `s`    | Spiders   | Cave spiders are weak. Giant spiders poison.                                            |
 | `x`    | Grid bugs | The weakest monster in the game; they can't even move diagonally. Free XP and free corpses. The `x` class also covers the much-later **xan**, a leg-wound trapper. |
-| `:`    | Lizards   | Live newts, geckos, and iguanas are weak individually but rank surprisingly high in death stats because heroes underestimate them mid-fight. **Lizard corpses cure petrification** — always carry one for cockatrice/Medusa insurance. Newt corpses may also restore 1-3 mana to spellcasters. |
+| `:`    | Lizards   | Newts, geckos, and iguanas are individually weak — usually not too dangerous if you're paying attention. The class matters mostly for the corpses: **lizard corpses cure petrification** (always carry one for cockatrice/Medusa insurance), and newt corpses may restore 1–3 mana to spellcasters. |
 
 #### Mid-Dungeon Threats
 
@@ -1523,45 +1520,46 @@ A few map glyphs aren't monsters in the conventional sense, but you'll see them 
 
 #### A note on mimics
 
-Mimics are slow (speed 3) but their claws hit hard. Small mimics
-consistently rank in the top ten causes of player death on the
-public NetHack server: new players walk into them in shops and the
-first claw-strike does enough damage to be terrifying. They come in
-three sizes — small, large, giant — and the smaller ones grow into
-the bigger ones in place.
+In 5.0 you will almost always meet mimics in **shops**. Random
+mimic generation in the open dungeon is technically possible
+(small mimics start spawning around Dlvl 7) but extremely rare;
+shops actively place them. The rule (from `shknam.c`): for each
+square of shop stock, there's an `rn2(100) < depth` chance the
+square is a hidden mimic instead of an item. At Dlvl 8 that's an
+8% mimic-per-tile chance, so an average shop has one or two mimics
+sitting in the aisles. They're slow (speed 3) but their claws hit
+hard, and walking up to "an item" in a shop is the canonical way
+to discover one. Small mimics rank in the top ten causes of death
+on the public server almost entirely from this.
 
-**How they hide.** A mimic picks its disguise from its
-surroundings: in a temple it becomes an altar, in a doorway a
-closed door, in a corridor a boulder, in a shop one of the shop's
-stock items. In a maze room with nothing to imitate, it picks
-something generic — often a "strange object," which renders as
-`]`. That `]` is the most reliable visual tell: it's literally `[`
-(armor) mirrored, and no real item ever displays as `]`. The other
-context tells: an extra altar in a temple that should have one, a
-second fountain in a Delphi room, an item whose type doesn't fit
-the shop class, a single item where you'd expect a stack, a
-boulder sitting alone in a room with no rolling-trap context.
+**The visual tell.** A mimic appearing as a generic "strange
+object" renders on the map as `]` — a mirror of `[`, the armor
+class. No real item ever displays as `]`. A `]` on a shop floor
+or anywhere else is always a mimic.
 
-**How to uncover one safely.** Search the adjacent square (`s`) —
-search reveals concealed mimics like it reveals traps. Throw a
-cheap item onto the suspected square; the mimic uncloaks and the
-item lands harmlessly. A stethoscope applied to the square also
-uncloaks. Telepathy, ESP, astral vision, and a wand of secret door
-detection see through the disguise and show the mimic as `m`. Your
-pet will refuse to step onto a mimic.
+**Other contextual disguises** (rare in practice but worth
+knowing): a mimic in a temple may appear as an extra altar, in a
+Delphi room as a second fountain, in a maze as a lone boulder. So
+"a single piece of furniture that shouldn't be there" is
+suspicious.
+
+**How to uncover one safely.** Search the adjacent square (`s`)
+reveals concealed mimics like it reveals traps. Throw a cheap item
+at the suspected square; the mimic uncloaks and the item lands
+harmlessly. A stethoscope applied to the square also uncloaks.
+Telepathy, ESP, astral vision, and a wand of secret door detection
+see through the disguise and show the mimic as `m`. Your pet won't
+step onto a mimic.
 
 **Sticking.** Large and giant mimics glue you in place on a
 successful claw hit: you can't move, you can't go down stairs, you
-can't escape down a hole. Magic cancellation (the cloak of
-protection, amulet of guarding, etc.) reduces the sticking
-probability significantly, which is one of several reasons to
-secure MC before you're walking past mid-game shops.
+can't escape down a hole. Magic cancellation (cloak of protection,
+amulet of guarding, etc.) reduces the sticking chance — one more
+reason to secure MC before browsing mid-game shops.
 
-**Eating the corpse** is its own oddity: you turn into a pile of
-gold (or, while hallucinating, an orange) and stay immobile for
-20 / 40 / 50 turns depending on which size you ate. Anything that
-tries to pick "you" up snaps the spell. Useful as a niche trick in
-shops, dangerous in open dungeon.
+**Eating the corpse** turns you into a pile of gold (or, while
+hallucinating, an orange) for 20 / 40 / 50 turns depending on
+size. Anything that tries to pick "you" up snaps the spell.
 
 **A note on dragons.** Dragons deserve a full briefing. Each color has
 its own breath weapon, resistance, scale mail property, and degree of
@@ -1663,14 +1661,18 @@ the level and come back when you are.
 **Specific tips beyond the top ten, where players consistently
 underestimate the threat.**
 
-- **Bats** (`B`). Bats and giant bats are erratic and bite for
-  confusion. Underrated because they look like nuisances.
+- **Mines residents** (`g`, `h`). Plain dwarves, gnomes, and gnome
+  lords are all top-fifteen killers because the Gnomish Mines
+  funnel a lot of armed humanoids into a confined space. Dwarves
+  in particular hit harder than they look. Don't try to clear the
+  Mines as a routine errand — treat each room of dwarves like
+  several real fights stacked on top of each other.
+- **Bats** (`B`). Giant bats and ordinary bats are fast (speed 22
+  vs your 12), so they double-attack every turn. A 1d6 bite at
+  double rate eats through low-level HP pools quickly.
 - **Quadrupeds** (`q`). Rothes and mumakil are three- and
   four-attack pack hunters; they catch unprepared mid-game heroes
   who think they've outgrown the Mines.
-- **Newts and small lizards** (`:`). Yes, *newts*. New players
-  ignore them and the cumulative deaths add up to one of the
-  larger lines in the chart.
 - **Eating mistakes.** Rotted corpse, poisonous corpse, and
   choking each show up high on the list. Don't eat old corpses.
   Don't eat while satiated. Pray immediately if you ate something
