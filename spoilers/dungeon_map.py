@@ -39,10 +39,10 @@ RIGHT_X = 540                         # right-side branch column
 RIGHT_EDGE = RIGHT_X + BUBBLE_W       # 720
 
 PEARL_R = 4
-PEARL_SPACING = 12                    # vertical advance per pearl
-PEARL_PADDING = 6                     # pad before first/after last pearl in a gap
+PEARL_SPACING = 10                    # vertical advance per pearl
+PEARL_PADDING = 4                     # pad before first/after last pearl in a gap
 
-GAP_NO_PEARL = 10                     # gap between bubbles when no pearls between
+GAP_NO_PEARL = 6                      # gap between bubbles when no pearls between
 
 TITLE_Y = 36
 SECT_BAR_H = 26
@@ -137,10 +137,9 @@ DOD: list[TrunkRow] = [
             pearls=[2, 3],
             attach='top',
         ),
-        pearls_below=5,
+        pearls_below=3,
     ),
-    TrunkRow(  # Oracle + Sokoban RIGHT
-        bubble=Bubble('The Oracle', 'paid hints'),
+    TrunkRow(  # Sokoban branch RIGHT (its up-stair is one level above Oracle, not on Oracle)
         branch=Branch(
             side='right', color='soko',
             bubbles=[
@@ -150,8 +149,9 @@ DOD: list[TrunkRow] = [
             pearls=[2],
             attach='bottom',
         ),
-        pearls_below=2,
+        pearls_below=1,
     ),
+    TrunkRow(bubble=Bubble('The Oracle', 'paid hints'), pearls_below=5),
     TrunkRow(  # Quest portal + Quest RIGHT
         bubble=Bubble('Quest portal', 'role-specific portal'),
         branch=Branch(
@@ -181,10 +181,10 @@ DOD: list[TrunkRow] = [
 ]
 
 GEH: list[TrunkRow] = [
-    TrunkRow(bubble=Bubble('Valley of the Dead', "Gehennom's entrance", color='geh'), pearls_below=1),
+    TrunkRow(bubble=Bubble('Valley of the Dead', "Gehennom's entrance", color='geh'), pearls_below=4),
     TrunkRow(bubble=Bubble("Asmodeus's Lair", color='geh'), pearls_below=1),
-    TrunkRow(bubble=Bubble("Juiblex's Swamp", color='geh'), pearls_below=1),
-    TrunkRow(bubble=Bubble("Baalzebub's Lair", color='geh'), pearls_below=1),
+    TrunkRow(bubble=Bubble("Juiblex's Swamp", color='geh'), pearls_below=2),
+    TrunkRow(bubble=Bubble("Baalzebub's Lair", color='geh'), pearls_below=3),
     TrunkRow(  # Vlad's Tower branch RIGHT (attaches at bottom; tower goes UP)
         branch=Branch(
             side='right', color='vlad',
@@ -195,10 +195,10 @@ GEH: list[TrunkRow] = [
             pearls=[1],
             attach='bottom',
         ),
-        pearls_below=1,
+        pearls_below=2,
     ),
     TrunkRow(bubble=Bubble('Orcus-Town', 'wand of death · Eye of the Aethiopica', color='geh'), pearls_below=2),
-    TrunkRow(bubble=Bubble("The Wizard's Tower", '★ Book of the Dead', color='geh'), pearls_below=3),
+    TrunkRow(bubble=Bubble("The Wizard's Tower", '★ Book of the Dead', color='geh'), pearls_below=6),
     TrunkRow(bubble=Bubble("Moloch's Sanctum", 'the Amulet of Yendor', color='sanctum', is_sanctum=True)),
 ]
 
@@ -441,16 +441,9 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
     row_x_start = (WIDTH - row_total) // 2       # 80
     row_y = bar_bottom + 50                      # leave space for curved arrow
 
-    # Curved arrow from bar bottom-center to Earth top-center
     earth_cx = row_x_start + plane_w // 2
-    parts.append(
-        f'<path d="M {WIDTH//2} {bar_bottom} '
-        f'C {WIDTH//2} {row_y - 6} {earth_cx} {row_y - 6} {earth_cx} {row_y - 2} '
-        f'L {earth_cx} {row_y}" '
-        f'stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
-    )
 
-    # Each plane box
+    # Plane boxes (drawn before curved arrows so arrowheads are on top of box edges)
     plane_data = [
         ('Earth', 'earth'),
         ('Air',   'air'),
@@ -466,33 +459,17 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
         parts.append(text_el(x + plane_w // 2, row_y + plane_h // 2 + 6, name,
                              font_size=15, font_weight=600, fill='#1f2933', text_anchor='middle'))
         plane_cx.append(x + plane_w // 2)
-        if i < len(plane_data) - 1:
-            x1 = x + plane_w
-            x2 = row_x_start + (i + 1) * (plane_w + gap_x)
-            arr_y = row_y + plane_h // 2
-            parts.append(
-                f'<line x1="{x1}" y1="{arr_y}" x2="{x2}" y2="{arr_y}" '
-                f'stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
-            )
 
     water_bottom = row_y + plane_h
     water_cx = plane_cx[-1]
 
-    # Curved arrow from Water bottom-center to Astral top-center
+    # Astral
     astral_y = water_bottom + 50
     astral_h = 42
     astral_w = 240
     astral_x = (WIDTH - astral_w) // 2
     astral_cx = WIDTH // 2
 
-    parts.append(
-        f'<path d="M {water_cx} {water_bottom} '
-        f'C {water_cx} {astral_y - 6} {astral_cx} {astral_y - 6} {astral_cx} {astral_y - 2} '
-        f'L {astral_cx} {astral_y}" '
-        f'stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
-    )
-
-    # Astral
     fill, stroke = COLORS['astral']
     parts.append(f'<rect x="{astral_x}" y="{astral_y}" width="{astral_w}" height="{astral_h}" rx="6" '
                  f'fill="{fill}" stroke="{stroke}" stroke-width="1.5"/>')
@@ -501,13 +478,8 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
     parts.append(text_el(astral_cx, astral_y + 34, 'three altars · pick yours',
                          font_size=12, font_style='italic', fill='#555', text_anchor='middle'))
 
-    # Arrow Astral → Ascension
     astral_bottom = astral_y + astral_h
     asc_y = astral_bottom + 18
-    parts.append(
-        f'<line x1="{astral_cx}" y1="{astral_bottom}" x2="{astral_cx}" y2="{asc_y}" '
-        f'stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
-    )
 
     # Ascension (width matches Castle and Sanctum)
     asc_w = BIG_BUBBLE_W
@@ -521,6 +493,44 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
                          text_anchor='middle', letter_spacing='0.1em'))
     parts.append(text_el(astral_cx, asc_y + 42, 'offer the Amulet at your altar',
                          font_size=11, font_style='italic', fill='#7A5A0A', text_anchor='middle'))
+
+    # === Arrows drawn AFTER boxes so arrowheads sit on top of box edges ===
+
+    # Curved arrow from bar bottom-center to Earth top-center.
+    # The arrow ends with a 22px vertical straight segment so the
+    # arrowhead enters the Earth box vertically from above.
+    vlen = 22
+    parts.append(
+        f'<path d="M {WIDTH//2} {bar_bottom} '
+        f'C {WIDTH//2} {row_y - vlen - 3} {earth_cx} {row_y - vlen - 3} {earth_cx} {row_y - vlen} '
+        f'L {earth_cx} {row_y}" '
+        f'stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
+    )
+
+    # Horizontal arrows between adjacent planes
+    for i in range(len(plane_data) - 1):
+        x = row_x_start + i * (plane_w + gap_x)
+        x1 = x + plane_w
+        x2 = row_x_start + (i + 1) * (plane_w + gap_x)
+        arr_y = row_y + plane_h // 2
+        parts.append(
+            f'<line x1="{x1}" y1="{arr_y}" x2="{x2}" y2="{arr_y}" '
+            f'stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
+        )
+
+    # Curved arrow Water bottom-center → Astral top-center (vertical entry)
+    parts.append(
+        f'<path d="M {water_cx} {water_bottom} '
+        f'C {water_cx} {astral_y - vlen - 3} {astral_cx} {astral_y - vlen - 3} {astral_cx} {astral_y - vlen} '
+        f'L {astral_cx} {astral_y}" '
+        f'stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
+    )
+
+    # Astral → Ascension
+    parts.append(
+        f'<line x1="{astral_cx}" y1="{astral_bottom}" x2="{astral_cx}" y2="{asc_y}" '
+        f'stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
+    )
 
     return parts, asc_y + asc_h
 
@@ -577,29 +587,22 @@ def render_svg() -> str:
     parts.append(text_el(WIDTH // 2, TITLE_Y, 'The Dungeon',
                          font_size=24, font_weight=600, fill='#1f2933', text_anchor='middle'))
 
-    # Trunk segments (drawn first so bubbles render on top)
+    # Rendering layers (back to front):
+    # 1. Trunk segments
     parts.extend(render_trunk_segments(placed.trunk_segments))
-
-    # DoD bar
+    # 2. Section bars
     parts.extend(bar_parts)
-
-    # Bubbles
+    parts.extend(render_section_bar(geh_bar_y, 'GEHENNOM', TRUNK_GEH))
+    # 3. Branch connectors (BEHIND bubbles so the green line is hidden behind Minetown etc.)
+    parts.extend(render_branch_connectors(placed.branch_connectors))
+    # 4. Bubbles
     for b, x, y in placed.bubbles:
         parts.extend(render_bubble(b, x, y))
-
-    # Trunk circles
+    # 5. Trunk circles (small dots on trunk)
     parts.extend(render_trunk_circles(placed.trunk_circles))
-
-    # Geh bar (drawn after bubbles? actually it should cover trunk between DoD/Geh)
-    parts.extend(render_section_bar(geh_bar_y, 'GEHENNOM', TRUNK_GEH))
-
-    # Branch connectors
-    parts.extend(render_branch_connectors(placed.branch_connectors))
-
-    # Branch arrows
+    # 6. Branch arrows (ON TOP of bubbles so arrowheads are visible at bubble edges)
     parts.extend(render_branch_arrows(placed.branch_arrows))
-
-    # Pearls (rendered last so they're on top)
+    # 7. Pearls (front layer, always visible on top of connectors and trunk lines)
     parts.extend(render_pearls(placed.pearls))
 
     # Climb-back dashed line
