@@ -820,6 +820,18 @@ Sinks are the dungeon's most underrated identification tool.
 - **Kicking a sink** can shake loose a ring (useful!), summon a
   black pudding (terrifying!), or just stub your toe. Worth a kick
   in the early game if you can handle what comes out
+- **Pouring potions down a sink** (by dipping) produces telltale
+  effects: a polymorph potion transforms the sink into a fountain,
+  an oil potion leaves a film on the basin. A clever way to narrow
+  down potion identities without risking a sip
+- **Quaffing from a sink** rolls one of 20 random effects.
+  Mostly nothing useful (mild flavor messages, summoned sewer rat,
+  vomit, scalding water), but three outcomes are worth the
+  occasional risk: ~5% chance to gain an experience level outright,
+  ~5% chance to find a ring at your feet (once per sink), and ~5%
+  chance to drink a random unidentified potion. Worth a quaff or
+  two from any sink you encounter, with HP and an escape plan in
+  reserve in case it summons a water elemental or polymorphs you
 - **Dropping a ring down a sink** produces a message unique to the
   ring type and is one of the most reliable non-magical
   identification methods for rings. **Most rings are consumed**,
@@ -843,19 +855,6 @@ Sinks are the dungeon's most underrated identification tool.
 | *"Suddenly, [items] vanish from the sink!"*<br>any other items on the sink square vanish too | hunger                | no |
 | *"The sink momentarily vanishes."*<br>sink moves to a new spot         | teleportation         | no |
 | *"The sink vanishes."*<br>sink becomes a fountain, throne, altar, or grave | polymorph             | no |
-
-- **Pouring potions down a sink** (by dipping) produces telltale
-  effects: a polymorph potion transforms the sink into a fountain,
-  an oil potion leaves a film on the basin. A clever way to narrow
-  down potion identities without risking a sip
-- **Quaffing from a sink** rolls one of 20 random effects.
-  Mostly nothing useful (mild flavor messages, summoned sewer rat,
-  vomit, scalding water), but three outcomes are worth the
-  occasional risk: ~5% chance to gain an experience level outright,
-  ~5% chance to find a ring at your feet (once per sink), and ~5%
-  chance to drink a random unidentified potion. Worth a quaff or
-  two from any sink you encounter, with HP and an escape plan in
-  reserve in case it summons a water elemental or polymorphs you
 
 ---
 
