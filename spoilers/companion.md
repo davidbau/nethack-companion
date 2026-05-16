@@ -338,11 +338,14 @@ weaknesses.
 
 No matter your role, here's what you should be looking for:
 
-**A source of nutrition.** You will get hungry. It happens faster than
-you think. Food rations are the gold standard: 800 nutrition each,
-they never spoil. Grab every food ration you see. If you're a role
-that starts with tripe rations, those are fine for your pet but
-genuinely unpleasant for you. Eat them only if you must.
+**A source of nutrition.** You will get hungry. It happens faster
+than you think. But your main food source isn't going to be the
+rations in your pack — unless you're playing a vegetarian role,
+**most of your food in the early dungeon is the corpses of the
+things you kill.** Eat fresh kills as you go, and rations become
+emergency backup rather than the main course. Grab every food
+ration you see, sure, but two or three is plenty to carry; you
+don't need to hoard. Tripe rations are for your pet, not for you.
 
 **A way to identify things.** In the early game, your primary
 identification tools are altars (drop items to see if they flash
@@ -2904,33 +2907,44 @@ if your god is willing to help.
 
 #### What to Eat
 
-**Food rations** provide 800 nutrition and are the staple food. They
-weigh 20 and are common in shops. Stockpile these when you can.
-
-**Lembas wafers** are better: 800 nutrition at only 5 weight, the
-best ratio in the game. Elven characters find these more often.
-
-**Corpses** are the primary food source in the early game. Most
-fresh corpses provide nutrition proportional to the monster's size.
-A few rules:
+**Eat the things you kill.** The single most important food fact
+for new players: unless you're playing a vegetarian role (Monk,
+or any role pursuing a vegan/vegetarian conduct), the bulk of
+your nutrition comes from **monster corpses you leave on the
+floor**. Every fresh kill is a meal. Don't burn food rations
+while there's a freshly dead rat at your feet. A few rules:
 
 - Eat corpses within a few turns of the kill, or they rot and cause
   food poisoning (lethal without treatment).
 - Never eat old corpses. If in doubt, don't eat it.
 - Some corpses grant intrinsic resistances (poison resistance from
   killer bees, fire resistance from fire giants, etc.). Eat these
-  deliberately.
+  deliberately, even when you're not hungry — see the table below.
 - Some corpses are harmful (floating eyes paralyze you, green slimes
   turn you into slime, cockatrice corpses kill you). Know which
   corpses are safe before eating.
 
+**Food rations** are the emergency backup. 800 nutrition, weight
+20, common in shops. Carry two or three for the times you don't
+have a fresh kill in front of you. You don't need to hoard them.
+
+**Lembas wafers** are the gold standard: 800 nutrition at only 5
+weight, the best ratio in the game. Elven characters find these
+more often.
+
 **Tripe rations** are terrible for you (your character retches) but
 pets love them. Save tripe for your pet.
 
-**Tins** are preserved food that never spoil. They take several
+**Tins** are preserved food that never spoils. They take several
 turns to open (one turn with a tin opener, three with a dagger,
 more with bare hands). Blessed tins open instantly. A tin of
 spinach increases your strength.
+
+**Vegetarian and vegan characters** have to live on rations,
+lembas, fruits, and the small set of non-meat corpses (fungi,
+molds, lichens, jellies, eggs). Plan ahead — the corpse-pile
+strategy doesn't work for you, so rations and fruit are the
+budget items to hoard.
 
 #### Dangerous Foods
 
