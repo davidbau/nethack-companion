@@ -172,7 +172,7 @@ hr::after {
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--color-rule);
-  font-size: 0.8em;
+  font-size: 1.2em;
   line-height: 1;
   background: var(--color-bg);
   padding: 0 0.3em;
