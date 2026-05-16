@@ -570,7 +570,8 @@ the **Astral Plane**, where your god awaits your offering.
     │
     └── Moloch's Sanctum (bottom: the Amulet of Yendor)
           │
-          (now go ALL the way back up)
+          (climb back to Dlvl 1; with the Amulet, the
+           up-stairs transport you to the Planes)
           │
   The Elemental Planes
     Earth ─► Air ─► Fire ─► Water
