@@ -2866,13 +2866,9 @@ and you'll rarely be surprised.
 
 ### Reading the Dungeon's Messages
 
-A lot of useful information comes through the message line at the
-top of the screen instead of through the map. Most of these
-messages are flavor or have obvious effects (you start floating,
-you go invisible, the map fills with monsters), and they don't
-need a translation. A smaller set is genuinely cryptic — short
-lines that mean something specific, but whose meaning isn't
-spelled out anywhere in the game. Below is a translation guide.
+A few of the dungeon's one-line messages hide specific information
+behind plain-looking text. The ones worth memorizing, with
+translations:
 
 | Message                                | What it means                                                                          |
 |----------------------------------------|----------------------------------------------------------------------------------------|
