@@ -840,9 +840,9 @@ Sinks are the dungeon's most underrated identification tool.
 | *"The water flow seems greater/less now."*           | gain constitution     | no         |
 | *"The water flow hits/misses the drain."*            | increase accuracy     | no         |
 | *"The water's force seems greater/smaller now."*     | increase damage       | no         |
-| *"Suddenly, [items] vanish from the sink!"*          | hunger                | no — and any other items on the sink square vanish with it |
-| *"The sink momentarily vanishes."*                   | teleportation         | no — sink moves to a new spot |
-| *"The sink vanishes."*                               | polymorph             | no — sink becomes a fountain, throne, altar, or grave (random) |
+| *"Suddenly, [items] vanish from the sink!"*<br>any other items on the sink square vanish too | hunger                | no |
+| *"The sink momentarily vanishes."*<br>sink moves to a new spot         | teleportation         | no |
+| *"The sink vanishes."*<br>sink becomes a fountain, throne, altar, or grave (random) | polymorph             | no |
 
 - **Pouring potions down a sink** (by dipping) produces telltale
   effects: a polymorph potion transforms the sink into a fountain,
