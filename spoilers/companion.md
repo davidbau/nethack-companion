@@ -1183,9 +1183,10 @@ The best defense against traps is finding them before they find you:
 - **Flying and levitation** make you immune to most floor traps
 
 A good time to search is when the dungeon has already hinted that
-something is wrong: a corpse in an empty corridor, scattered arrows
-or darts, a square your pet refuses to cross, a known trap nearby
-(traps cluster), or a themed room whose gimmick is hidden hazards.
+something is wrong: a stray corpse in the middle of an otherwise
+empty room, a scatter of arrows or darts on the floor, a square
+your pet refuses to cross, or a themed room whose gimmick is
+hidden hazards.
 
 #### Iron Bars
 
