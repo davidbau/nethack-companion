@@ -3737,6 +3737,614 @@ rarely be surprised.</p>
 <hr />
 </section>
 </section>
+<section id="reading-the-dungeons-messages" class="level3">
+<h3>Reading the Dungeon’s Messages</h3>
+<p>A lot of NetHack happens not on the map but in the message line at
+the top of the screen. Items you use sometimes produce only a sentence
+of flavor text. Things off-screen produce ambient sounds. Your pet drops
+cryptic hints about the floor. Your own body throws status warnings that
+you have a handful of turns to interpret. New players read these lines
+and shrug them off; experienced players read them as identification,
+navigation, and survival information.</p>
+<p>This section is the lookup table for the dungeon’s most useful
+non-obvious messages. Keep it open in a second tab while you play.</p>
+<section id="potion-quaff-messages" class="level4">
+<h4>Potion-quaff messages</h4>
+<p>Most potions have visible effects (you go invisible, you heal, you
+fly), but several produce only a sip-message:</p>
+<table>
+<colgroup>
+<col style="width: 78%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr>
+<th>Message</th>
+<th>Potion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>“You feel sluggish.”</em></td>
+<td>slowness (rare; mostly diluted)</td>
+</tr>
+<tr>
+<td><em>“You feel feverish.”</em> (or <em>“You feel ill.”</em>)</td>
+<td>sickness</td>
+</tr>
+<tr>
+<td><em>“You can see clearly now.”</em> / <em>“You see right through
+things.”</em></td>
+<td>see invisible</td>
+</tr>
+<tr>
+<td><em>“You feel a strange mental acuity.”</em> / map fills with
+objects</td>
+<td>object detection</td>
+</tr>
+<tr>
+<td><em>“You sense the presence of monsters.”</em> / monsters
+appear</td>
+<td>monster detection</td>
+</tr>
+<tr>
+<td><em>“Wow! This makes you feel great!”</em> (raises stat back to
+peak)</td>
+<td>restore ability</td>
+</tr>
+<tr>
+<td><em>“You feel more confident in your abilities.”</em> / a stat goes
+up</td>
+<td>gain ability</td>
+</tr>
+<tr>
+<td><em>“Magical energies course through your body.”</em></td>
+<td>gain energy</td>
+</tr>
+<tr>
+<td><em>“You feel more experienced.”</em></td>
+<td>gain level</td>
+</tr>
+<tr>
+<td><em>“You rise up through the ceiling!”</em></td>
+<td>gain level, cursed (drops you a floor)</td>
+</tr>
+<tr>
+<td><em>“You feel self-knowledgeable…”</em> (enlightenment screen)</td>
+<td>enlightenment</td>
+</tr>
+<tr>
+<td><em>“You feel quick!”</em></td>
+<td>speed</td>
+</tr>
+<tr>
+<td><em>“You feel cured.”</em> / all status effects clear</td>
+<td>full healing (or extra healing in mild cases)</td>
+</tr>
+</tbody>
+</table>
+<p>A potion with no in-line message at all and no observable change on
+the map is most likely a useless one (water, fruit juice) or one whose
+effect needs context to spot.</p>
+</section>
+<section id="scroll-read-messages" class="level4">
+<h4>Scroll-read messages</h4>
+<p>Scrolls with silent or near-silent effects:</p>
+<table>
+<colgroup>
+<col style="width: 77%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr>
+<th>Message</th>
+<th>Scroll</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>“This is an empty scroll.”</em></td>
+<td>blank paper</td>
+</tr>
+<tr>
+<td><em>“This scroll is marked with a strange rune.”</em> (then
+nothing)</td>
+<td>identify (when nothing in inventory matches)</td>
+</tr>
+<tr>
+<td><em>“You feel hungry.”</em> (and then nothing on map)</td>
+<td>food detection — nothing nearby</td>
+</tr>
+<tr>
+<td><em>“You sense the presence of food.”</em> (food shows on map)</td>
+<td>food detection</td>
+</tr>
+<tr>
+<td><em>“You feel materially poor.”</em> / <em>“You feel a strange
+mental acuity.”</em> (no map change)</td>
+<td>gold detection — nothing nearby</td>
+</tr>
+<tr>
+<td><em>“You feel materially well-off.”</em> (gold shows on map)</td>
+<td>gold detection</td>
+</tr>
+<tr>
+<td><em>“A map coalesces in your mind!”</em></td>
+<td>magic mapping</td>
+</tr>
+<tr>
+<td><em>“Your name appears on a wall.”</em> / nothing</td>
+<td>scare monster — already standing on one</td>
+</tr>
+<tr>
+<td><em>“You hear a voice call your name.”</em></td>
+<td>scare monster (cursed reading)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ring-put-on-messages" class="level4">
+<h4>Ring put-on messages</h4>
+<p>Some rings reveal themselves the moment you put them on:</p>
+<table>
+<colgroup>
+<col style="width: 65%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr>
+<th>Message</th>
+<th>Ring</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>“You feel a strange mental acuity.”</em></td>
+<td>searching (auto-searches each turn)</td>
+</tr>
+<tr>
+<td><em>“You feel a strange sensation, then it passes.”</em></td>
+<td>warning (you’ll see colored threats from now on)</td>
+</tr>
+<tr>
+<td><em>“You float up, off the floor.”</em></td>
+<td>levitation</td>
+</tr>
+<tr>
+<td><em>“You feel light-footed.”</em></td>
+<td>stealth</td>
+</tr>
+<tr>
+<td><em>“You suddenly cannot see yourself.”</em></td>
+<td>invisibility</td>
+</tr>
+<tr>
+<td><em>“You can see clearly now.”</em> (and weren’t blind)</td>
+<td>see invisible</td>
+</tr>
+<tr>
+<td><em>“You feel in touch with the spiritual world.”</em></td>
+<td>free action</td>
+</tr>
+<tr>
+<td><em>“You feel like someone is helping you.”</em></td>
+<td>protection (visible AC change)</td>
+</tr>
+<tr>
+<td><em>“You feel charged with power.”</em></td>
+<td>conflict</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ring-dropped-down-a-sink-d-while-standing-on"
+class="level4">
+<h4>Ring dropped down a sink (<code>d</code> while standing on
+<code>#</code>)</h4>
+<p>This is a real ring-identification method — the sink interaction
+produces a per-type message. <strong>Most rings are consumed</strong>,
+but two return after IDing themselves for free:</p>
+<table>
+<colgroup>
+<col style="width: 61%" />
+<col style="width: 26%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr>
+<th>Message</th>
+<th>Ring</th>
+<th>Returned?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>“You thought your ring got lost in the sink, but there it
+is!”</em></td>
+<td>searching</td>
+<td><strong>yes</strong></td>
+</tr>
+<tr>
+<td><em>“The ring is regurgitated!”</em></td>
+<td>slow digestion</td>
+<td><strong>yes</strong></td>
+</tr>
+<tr>
+<td><em>“The sink quivers upward for a moment.”</em></td>
+<td>levitation</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“You smell rotten fruit.”</em></td>
+<td>poison resistance</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“Several flies buzz angrily around the sink.”</em></td>
+<td>aggravate monster</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“Static electricity surrounds the sink.”</em></td>
+<td>shock resistance</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“You hear loud noises coming from the drain.”</em></td>
+<td>conflict</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“The water flow seems fixed.”</em></td>
+<td>sustain ability</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“The water flow seems stronger/weaker now.”</em></td>
+<td>gain strength</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“The water flow seems greater/less now.”</em></td>
+<td>gain constitution</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“The water flow hits/misses the drain.”</em></td>
+<td>increase accuracy</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“The water’s force seems greater/smaller now.”</em></td>
+<td>increase damage</td>
+<td>no</td>
+</tr>
+<tr>
+<td><em>“Suddenly, [items] vanish from the sink!”</em></td>
+<td>hunger</td>
+<td>no (items destroyed)</td>
+</tr>
+<tr>
+<td><em>“The sink momentarily vanishes.”</em></td>
+<td>teleportation</td>
+<td>no (sink moves)</td>
+</tr>
+<tr>
+<td><em>“The sink vanishes.”</em></td>
+<td>polymorph</td>
+<td>no (sink polys away)</td>
+</tr>
+</tbody>
+</table>
+<p>For the rings not in the list, the message uses sight (“The faucet
+flashes,” etc.) and only fires if you’re not blind. Searching and slow
+digestion are <em>strictly better</em> IDed this way — drop, get the ID
+and the ring back.</p>
+</section>
+<section id="corpse-eat-intrinsic-messages" class="level4">
+<h4>Corpse-eat intrinsic messages</h4>
+<p>Eating a corpse that grants an intrinsic produces a recognizable
+line, even when nothing else changes:</p>
+<table>
+<colgroup>
+<col style="width: 65%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr>
+<th>Message</th>
+<th>Intrinsic gained</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>“You feel healthy.”</em></td>
+<td>poison resistance</td>
+</tr>
+<tr>
+<td><em>“You feel warm!”</em></td>
+<td>fire resistance</td>
+</tr>
+<tr>
+<td><em>“You feel cool.”</em></td>
+<td>cold resistance</td>
+</tr>
+<tr>
+<td><em>“You feel a mild buzz.”</em></td>
+<td>shock resistance</td>
+</tr>
+<tr>
+<td><em>“You feel less attracted.”</em> / <em>“You feel wide
+awake.”</em></td>
+<td>sleep resistance</td>
+</tr>
+<tr>
+<td><em>“You feel quick!”</em></td>
+<td>speed (intrinsic)</td>
+</tr>
+<tr>
+<td><em>“You feel envious of the gods…”</em></td>
+<td>disintegration resistance</td>
+</tr>
+<tr>
+<td><em>“You feel feverish.”</em> (after eating)</td>
+<td>a sickness corpse — <em>bad</em>, this is illness, not an
+intrinsic</td>
+</tr>
+<tr>
+<td><em>“You feel stuffed.”</em></td>
+<td>(no effect, satiated)</td>
+</tr>
+<tr>
+<td><em>“Your mind oozes shut.”</em></td>
+<td>corpse would grant an intrinsic you already have</td>
+</tr>
+</tbody>
+</table>
+<p>The last one is the most useful in practice — it tells you <em>“that
+species would give me X, but I’m already X.”</em> Cross-reference the
+corpse you just ate with the intrinsic list to learn what X is.</p>
+</section>
+<section id="you-hear-ambient-sounds-and-what-they-mean" class="level4">
+<h4>“You hear” — ambient sounds and what they mean</h4>
+<p>The dungeon talks to you through random ambient lines. Most are
+flavor, but several are real clues:</p>
+<table>
+<colgroup>
+<col style="width: 69%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>Message</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>“You hear someone counting money.”</em></td>
+<td>a vault is on this level</td>
+</tr>
+<tr>
+<td><em>“You hear someone cursing shoplifters.”</em></td>
+<td>a shop is on this level</td>
+</tr>
+<tr>
+<td><em>“You hear bubbling water.”</em> / <em>“You hear water
+falling.”</em></td>
+<td>a fountain on this level</td>
+</tr>
+<tr>
+<td><em>“You hear a sliding tile.”</em></td>
+<td>a teleport trap on the level</td>
+</tr>
+<tr>
+<td><em>“You hear someone playing an accordion.”</em></td>
+<td>flavor only</td>
+</tr>
+<tr>
+<td><em>“You hear a bugle playing reveille!”</em></td>
+<td>drawbridge is closing nearby (Castle)</td>
+</tr>
+<tr>
+<td><em>“You hear the chime of a cash register.”</em></td>
+<td>a shopkeeper sale closed nearby</td>
+</tr>
+<tr>
+<td><em>“You hear the footsteps of a guard on patrol.”</em></td>
+<td>Minetown watch or Castle guards active</td>
+</tr>
+<tr>
+<td><em>“You hear a door open.”</em> / <em>“You hear a door
+slam.”</em></td>
+<td>monster opened/closed a door off-screen</td>
+</tr>
+<tr>
+<td><em>“You hear a slurping sound.”</em></td>
+<td>a pudding-class monster on the level</td>
+</tr>
+<tr>
+<td><em>“You hear someone snoring.”</em></td>
+<td>sleeping monster nearby</td>
+</tr>
+<tr>
+<td><em>“You hear a low buzzing.”</em></td>
+<td>flies or bee class nearby</td>
+</tr>
+<tr>
+<td><em>“You hear a mumbled curse.”</em></td>
+<td>a spellcaster failed a spell nearby</td>
+</tr>
+</tbody>
+</table>
+<p>The vault and shop sounds are the most actionable: they tell you to
+start digging or searching.</p>
+</section>
+<section id="pet-behavior-cues" class="level4">
+<h4>Pet behavior cues</h4>
+<p>Your pet is a free oracle for several things:</p>
+<table>
+<colgroup>
+<col style="width: 60%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr>
+<th>Cue</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pet refuses to step on a square</td>
+<td>cursed item there</td>
+</tr>
+<tr>
+<td>Pet eats from a square and stops</td>
+<td>corpse safe to eat (pet won’t eat poisonous corpses if it can
+avoid)</td>
+</tr>
+<tr>
+<td><em>“You have a sad feeling for a moment.”</em></td>
+<td>pet left behind on previous level</td>
+</tr>
+<tr>
+<td>Pet <em>growls</em> at you</td>
+<td>tameness dropping toward feral</td>
+</tr>
+<tr>
+<td>Pet appears smaller / no longer follows</td>
+<td>starved or attacked; tameness gone</td>
+</tr>
+<tr>
+<td>Pet won’t move when adjacent (after taming)</td>
+<td>sometimes “guarding” newly tamed; usually fine</td>
+</tr>
+<tr>
+<td>Pet stands next to you but won’t fight an enemy</td>
+<td>hostile to you (conflict on, or untamed)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="status-onset-warnings-urgent" class="level4">
+<h4>Status-onset warnings (urgent)</h4>
+<p>These need action <em>this turn</em> or in the next few. Memorize
+them:</p>
+<table>
+<colgroup>
+<col style="width: 53%" />
+<col style="width: 34%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr>
+<th>Message</th>
+<th>What’s happening</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>“You are slowing down.”</em></td>
+<td>stoning has started (cockatrice contact or corpse)</td>
+<td>eat a lizard corpse, drink acid, or pray — you have only a few
+turns</td>
+</tr>
+<tr>
+<td><em>“You feel very sick.”</em> / <em>“You feel deathly
+sick.”</em></td>
+<td>terminal illness from contact (Pestilence, Demogorgon)</td>
+<td>quaff extra healing, eat eucalyptus, pray</td>
+</tr>
+<tr>
+<td><em>“You are turning into slime.”</em></td>
+<td>green-slime contagion</td>
+<td>burn with fire (scroll/spell/wand of fire) or pray — fire stops
+it</td>
+</tr>
+<tr>
+<td><em>“It constricts your throat!”</em></td>
+<td>cursed amulet of strangulation</td>
+<td>remove curse or pray — minutes to live</td>
+</tr>
+<tr>
+<td><em>“The acid burns!”</em> / <em>“You take damage from
+acid.”</em></td>
+<td>acid blob splashed you in melee</td>
+<td>step away, no action needed unless HP critical</td>
+</tr>
+<tr>
+<td><em>“You feel feverish.”</em> (after eating, not after
+corpse-intrinsic)</td>
+<td>food poisoning from old corpse</td>
+<td>pray immediately</td>
+</tr>
+<tr>
+<td><em>“Your eyes have a strange feeling.”</em></td>
+<td>imminent blindness</td>
+<td>unicorn horn, potion of healing</td>
+</tr>
+<tr>
+<td><em>“Your weapon turns red hot.”</em></td>
+<td>a fire-using monster is targeting your weapon</td>
+<td>swap weapons, move away</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="engravings-you-find" class="level4">
+<h4>Engravings you find</h4>
+<p>Engraving messages tell you what’s on the floor before you read
+it:</p>
+<table>
+<colgroup>
+<col style="width: 68%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr>
+<th>Message</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>“Something is written here in the dust.”</em></td>
+<td>another adventurer (often bones), or your own past write</td>
+</tr>
+<tr>
+<td><em>“Some text has been burned into the floor here.”</em></td>
+<td>a wand of fire/lightning engraving (often Elbereth left
+intentionally)</td>
+</tr>
+<tr>
+<td><em>“Some text has been engraved here on the floor.”</em></td>
+<td>hard-gem or athame engraving</td>
+</tr>
+<tr>
+<td><em>“You see a message scrawled in blood here.”</em></td>
+<td>bones-file dying message, almost always cursed surrounding loot</td>
+</tr>
+<tr>
+<td><em>“There’s some graffiti on the floor here.”</em></td>
+<td>random dungeon flavor — read it for the joke, no mechanical
+meaning</td>
+</tr>
+<tr>
+<td>Headstone</td>
+<td>a grave; you can <code>#loot</code> it to dig (zombies, items,
+randomness)</td>
+</tr>
+</tbody>
+</table>
+<p>A note on prayer-response messages — <em>“You feel that X is
+well-pleased,”</em> <em>“X seems angry,”</em> etc. — is in <a
+href="#divine-relations">Divine Relations</a> where the whole prayer
+system is covered.</p>
+<hr />
+</section>
+</section>
 <section id="provisions-and-dining" class="level3">
 <h3>Provisions and Dining</h3>
 <p>Of all the things that kill adventurers in the Mazes of Menace (the
