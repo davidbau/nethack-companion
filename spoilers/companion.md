@@ -1655,9 +1655,8 @@ screen.**
 #### What actually kills adventurers
 
 Only about **0.4% of games end in ascension.** The other 99.6%
-are deaths, and "ascended" doesn't even crack the top ten causes
-of game-over — it's below half a dozen kinds of common mooks.
-NetHack ends in death by default; survival is the exception.
+are deaths. NetHack ends in death by default; survival is the
+exception.
 
 **The early dungeon is where you die.** The top ten killers are,
 in order: jackals, dwarves, soldier ants, gnome lords, sewer rats,
@@ -1677,8 +1676,7 @@ how you meet things you can't outrun and can't outfight. The
 dungeon doesn't wait — every step deeper raises the monster
 difficulty roll, and a fragile character with 30 HP isn't going
 to soak even a single bad encounter. There's no prize for getting
-to Sokoban quickly; there's just the funeral. Clear, identify,
-level up, then descend.
+to Sokoban quickly. Clear, identify, level up, then descend.
 
 **On bones.** "Bones" levels are levels saved from another
 adventurer's death and replayed in your game. The game flags them
