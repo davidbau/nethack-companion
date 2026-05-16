@@ -539,7 +539,7 @@ the **Astral Plane**, where your god awaits your offering.
     │
     ├── The Oracle (Dlvl 5-10, pays for major hints)
     │     │── Sokoban branch goes UP from here
-    │     │     └── Top: bag of holding (75%) or amulet of reflection (25%)
+    │     │     └── Top: bag of holding or amulet of reflection
     │     └── Quest portal is a few levels below the Oracle
     │           └── Unique to your role. Get your quest artifact.
     │
@@ -552,15 +552,17 @@ the **Astral Plane**, where your god awaits your offering.
     │
     ├── Medusa's Island (level ~25)
     │
-    └── The Castle (level ~27, bottom of Dungeons of Doom)
+    └── The Castle (level ~27, guaranteed wand of wishing in a tower)
           │
   Gehennom (levels 28-50ish)
     │
     ├── Valley of the Dead (Gehennom's entrance level)
     │
-    ├── Demon-prince lairs (random depths: Asmodeus, Juiblex, Baalzebub)
+    ├── Asmodeus's lair
+    ├── Juiblex's swamp
+    ├── Baalzebub's lair
     │
-    ├── Vlad's Tower (contains the Candelabrum)
+    ├── Vlad's Tower (entry mid-Gehennom, tower goes UP — Candelabrum)
     │
     ├── Orcus-town (Orcus, wand of death, Eye of the Aethiopica)
     │
