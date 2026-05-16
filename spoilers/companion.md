@@ -4289,15 +4289,11 @@ travelers realize:
   and even then only 20% wish chance (80% if blessed). But when
   it works, you feel like a genius.
 
-Wish counts vary far more in practice than this list suggests.
-Ascensions sampled from the public server range from **zero**
-(a Samurai who declined the Amulet wish and never spent a magic
-lamp) to **twelve** (a Monk who chained Castle-wand recharges with
-multiple magic lamps and a Plane of Water scroll-of-genocide wish).
-The "expected" budget if you take the Castle wand once,
-Vlad's throne once, the Amulet pickup once, and burn one magic
-lamp is about four. Anything beyond that is luck or commitment.
-Don't waste any of them on food.
+In practice, the number of wishes a run produces varies widely. A
+sensible budget if you take each guaranteed source once is about
+four (Castle wand, Vlad's throne, Amulet pickup, one magic lamp).
+Anything beyond that is luck (extra lamps, fountain demons,
+recharge chains) or commitment. Don't waste any of them on food.
 
 #### What to Wish For
 
