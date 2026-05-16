@@ -3531,16 +3531,6 @@ into a slow but functional field hospital. The conditions required
 find in the Mazes. When you do, the amulet is less embarrassing to wear
 than it looks.
 
-#### Identification
-
-Rings and amulets resist casual identification. The best approaches:
-drop rings down sinks (each type produces a unique message),
-wear-test in safe areas (risky with auto-cursing types), or use
-scrolls of identify. For amulets, there's no price trick: identify
-scrolls or careful wear-testing are your main options. Always
-BUC-test an amulet before putting it on; cursed amulets of
-strangulation are one of the most embarrassing ways to die.
-
 ---
 
 ### Tools of the Trade
