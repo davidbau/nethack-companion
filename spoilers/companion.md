@@ -1182,10 +1182,10 @@ The best defense against traps is finding them before they find you:
 - **Pets** avoid known traps, so watch their pathfinding for clues
 - **Flying and levitation** make you immune to most floor traps
 
-Below dungeon level 5, a quick search before stepping into a new
-corridor segment is cheap insurance. The turn you spend searching
-is always cheaper than the turns you spend climbing out of a
-spiked pit.
+A good time to search is when the dungeon has already hinted that
+something is wrong: a corpse in an empty corridor, scattered arrows
+or darts, a square your pet refuses to cross, a known trap nearby
+(traps cluster), or a themed room whose gimmick is hidden hazards.
 
 #### Iron Bars
 
