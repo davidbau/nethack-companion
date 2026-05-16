@@ -234,13 +234,12 @@ people who have ascended before and want a challenge.
 resistance. Valkyries are widely considered one of the most
 beginner-friendly roles: strong combat stats, good starting equipment,
 and cold resistance covers one of the more common damage types.
-
 **Neutral** Valkyries get **Mjollnir** as a sacrifice gift — a
-+d5/+d24 war hammer that doubles as a ranged weapon (it returns
-when thrown at Strength 25). **Lawful** Valkyries can dip for
-Excalibur instead. Mjollnir hits harder; Excalibur is easier to
-acquire. Both are excellent. This is the recommendation for your
-first serious attempt.
++d5/+d24 war hammer that doubles as a ranged weapon (it returns when
+thrown at Strength 25). **Lawful** Valkyries can dip for Excalibur
+instead. Mjollnir hits harder; Excalibur is easier to acquire. Both
+are excellent. This is the recommendation for your first serious
+attempt.
 *Alignment: Lawful or Neutral. Female only.*
 
 **Wizard.** You start with a quarterstaff and a spellbook or two. Your
