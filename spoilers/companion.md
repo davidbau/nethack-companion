@@ -1570,17 +1570,10 @@ A few map glyphs aren't monsters in the conventional sense, but you'll see them 
 
 #### A note on mimics
 
-In 5.0 you will almost always meet mimics in **shops**. Random
-mimic generation in the open dungeon is technically possible
-(small mimics start spawning around Dlvl 7) but extremely rare;
-shops actively place them. The rule (from `shknam.c`): for each
-square of shop stock, there's an `rn2(100) < depth` chance the
-square is a hidden mimic instead of an item. At Dlvl 8 that's an
-8% mimic-per-tile chance, so an average shop has one or two mimics
-sitting in the aisles. They're slow (speed 3) but their claws hit
-hard, and walking up to "an item" in a shop is the canonical way
-to discover one. Small mimics rank in the top ten causes of death
-on the public server almost entirely from this.
+You will frequently meet mimics in **shops**, with more as you get
+deeper. An average shop has one or two mimics sitting in the
+aisles, masquerading as items. They're slow (speed 3) but their
+claws hit hard. Small mimics rank in the top ten causes of death.
 
 **The visual tell.** A mimic appearing as a generic "strange
 object" renders on the map as `]` — a mirror of `[`, the armor
