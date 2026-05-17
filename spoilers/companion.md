@@ -499,7 +499,10 @@ the point: the Mazes are not in the habit of labeling things "useful,
 open me." On your first ten levels, check every chest and large box
 you find. A locked one will yield to a credit card, a key, a wand of
 opening, or patience with a pickaxe (a Rogue's starting lock pick is
-a quiet superpower here). The contents aren't guaranteed to change
+a quiet superpower here). Failing all of those, **#force** the lock
+with a dagger: an orcish dagger off the first orc you kill (pet-test
+it on the floor first, since orcs sometimes carry cursed gear) is a
+perfect tool for the job. The contents aren't guaranteed to change
 your run, but finding a stack of healing potions on level 4 before
 you've learned the hard way how much you need them is the dungeon's
 frequent act of goodwill. Accept it graciously and move on.
@@ -754,10 +757,15 @@ Sacrifice enough and your deity may reward you with an artifact
 weapon aligned to your cause. See [Divine Relations](#divine-relations)
 for the full theology.
 
-**Converting an altar** to your alignment is possible by offering a
-same-race sacrifice on an altar of a different alignment. It's a
-grisly business, but useful when the dungeon gives you an altar to
-the wrong god.
+**Converting an altar** to your alignment is possible by sacrificing
+ordinary monster corpses on a cross-aligned altar. Each attempt has
+a chance of flipping the altar to your god, a chance of doing
+nothing, and a chance of backfiring (the wrong god notices and
+punishes you, or worse, *you* get converted). It's a real gamble,
+but worth it when the dungeon gives you an altar to the wrong god
+and you need a co-aligned one for sacrifice and holy water. See
+[Altars and Alignment](#altars-and-alignment) for the gotchas
+(same-race sacrifice, unicorns).
 
 #### Thrones `\`
 
@@ -4272,11 +4280,24 @@ to donate anything at all also costs you alignment with your god.
 
 #### Altars and Alignment
 
-You can convert an altar by sacrificing on a cross-aligned altar
-repeatedly. This is risky (the altar's god will be angry) but
-useful if the only altar you've found doesn't match your alignment.
-Having a co-aligned altar is important for sacrifice, holy water
-production, and BUC testing.
+You can convert a cross-aligned altar to your alignment by
+sacrificing ordinary fresh corpses on it. Each attempt is a
+gamble: the altar may flip to your god (success), nothing may
+happen, the altar's original god may notice and punish you, or
+in the worst case *you* convert to the altar's alignment instead.
+The wrong-god conversion is rare but catastrophic, so don't try
+this when your alignment record is weak. It's worth the risk when
+the only altar you've found is the wrong colour and you need a
+co-aligned one for sacrifice gifts, holy water, and BUC testing.
+
+A few things **never** to sacrifice on any altar:
+
+- **A same-race corpse.** Always punished, regardless of altar
+  alignment. For most roles this means no humans (and no elves
+  if you're elven).
+- **A co-aligned unicorn.** Wipes out a chunk of Luck. The
+  cross-aligned ones are fine — sacrificing one of those is
+  good for your standing — but not yours.
 
 #### Crowning
 
