@@ -3894,8 +3894,8 @@ damage rolled *on top of* the base weapon's own damage. A weapon
 listed as "×2 vs X" rolls its base damage *twice* against any member
 of that monster class.
 
-| Artifact          | Align    | Weapon            | Hit    | Extra damage                | Notable                                                |
-|-------------------|----------|-------------------|--------|-----------------------------|--------------------------------------------------------|
+| Artifact               | Align    | Weapon            | Hit    | Extra damage           | Notable                                                |
+|------------------------|----------|-------------------|--------|------------------------|--------------------------------------------------------|
 | Excalibur         | Lawful   | long sword        | +d5    | +d10 physical               | drain resistance, automatic searching                  |
 | Grayswandir       | Lawful   | silver saber      | +d5    | (base only)                 | half physical damage received, hallucination res.      |
 | Mjollnir          | Neutral  | war hammer        | +d5    | +d24 shock                  | returns when thrown if STR 25                          |
