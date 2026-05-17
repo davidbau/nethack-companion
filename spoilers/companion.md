@@ -4228,20 +4228,17 @@ the two reward tiers.
   donation pushes the bonus up by 1 (rarely more), capped at 20.
   The bonus persists for life, unlike clairvoyance.
 
-**The cost (new in 5.0):** the old fixed `400 × XL` formula is
-gone. The priest now rolls a fresh baseline between **150 and 250**
-(uniform) every visit, multiplies by your **peak experience level**,
-and that's the clairvoyance threshold. Protection costs *twice*
-that. Worst-case ceilings, which guarantee the effect regardless of
-the roll:
+**The cost.** Pay enough and the benefit is yours. The amounts
+that guarantee each tier scale with your experience level:
 
-- **Guaranteed clairvoyance:** `250 × XL` zorkmids
-- **Guaranteed protection:** `500 × XL` zorkmids
+- **Clairvoyance:** 250 zorkmids per experience level
+- **Protection:** 500 zorkmids per experience level
 
-If you carry far more gold than the baseline requires, the priest
-notices and scales the demand up (roughly to one-third of your
-carried gold for clairvoyance, two-thirds for protection). Carrying
-less makes you cheaper, but only down to the baseline floor.
+The priest can also tell whether your generosity is real. If you
+walk in carrying far more gold than that, they scale the ask up to
+match — roughly a third of your purse for clairvoyance, two-thirds
+for protection. A rich hero who hands over only a few hundred
+zorkmids will be politely thanked but not blessed.
 
 **The cheapskate penalty.** If you offer less than the suggested
 amount *and* you have more than twice your offer on you, the priest
