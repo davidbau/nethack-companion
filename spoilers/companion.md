@@ -2945,23 +2945,43 @@ gives the aggravate monster intrinsic. Cavemen and orcs are exempt.
 
 #### Useful Corpse Effects
 
-| Corpse               | Effect                             |
-| -------------------- | ---------------------------------- |
-| Floating eye         | Telepathy (but paralyzes you too)  |
-| Killer bee           | Poison resistance                  |
-| Fire giant/ant       | Fire resistance                    |
-| Winter wolf          | Cold resistance                    |
-| Wraith               | Gain an experience level           |
-| Giant                | Increase strength                  |
-| Lizard               | Cures stoning in progress          |
-| Newt                 | May restore 1 to 3 mana            |
-| Stalker              | Invisibility (and see invisible)   |
-| Tengu                | Teleportitis / teleport control    |
-| Disenchanter         | Intrinsic protection               |
+| Corpse                  | Effect                                                                 |
+| ----------------------- | ---------------------------------------------------------------------- |
+| Floating eye            | Telepathy (but paralyzes you too)                                      |
+| Killer bee              | Poison resistance                                                      |
+| Fire giant / fire ant   | Fire resistance                                                        |
+| Red mold                | Fire resistance                                                        |
+| Winter wolf             | Cold resistance                                                        |
+| Blue jelly              | Cold resistance (also poison)                                          |
+| Brown mold              | Cold resistance                                                        |
+| Yeti                    | Cold resistance                                                        |
+| Quivering blob          | Sleep resistance (also poison)                                         |
+| Acid blob               | Sleep, poison, acid, & stoning resistance                              |
+| **Gelatinous cube**     | **Fire, cold, shock, sleep, poison, acid, & stoning resistance** (chance for each per eat — the single best intrinsic-grab in the game) |
+| **Brown pudding glob**  | **Shock resistance** (also cold, poison) — puddings drop globs, not corpses |
+| **Black pudding glob**  | Shock resistance (also cold, poison)                                   |
+| Gray ooze glob          | Fire, cold, poison resistance                                          |
+| Wraith                  | Gain an experience level                                               |
+| Giant                   | Increase strength                                                      |
+| Lizard                  | Cures stoning in progress                                              |
+| Newt                    | May restore 1 to 3 mana                                                |
+| Stalker                 | Invisibility (and see invisible)                                       |
+| Tengu                   | Teleportitis / teleport control                                        |
+| Disenchanter            | Intrinsic protection                                                   |
 
 Eating for intrinsics is one of the most important things you can
 do in the early and mid game. Poison resistance should be a top
-priority.
+priority, and a gelatinous cube is the highest-density source of
+ascension-kit intrinsics in the game. Each resistance is a *chance*
+per eat (not a guarantee), so eat *every* one of these you find,
+not just the first.
+
+**Globs vs corpses.** Puddings (gray ooze, brown pudding, black
+pudding) and acid blobs in 5.0 leave **globs** instead of corpses.
+Globs sit on the floor and shrink over time (about 25 turns to
+vanish), so eat them sooner than you would a corpse — and globs
+of the same color stack, so saving up a pile of brown pudding
+globs lets you re-roll shock resistance until you get it.
 
 #### Food Strategy
 
