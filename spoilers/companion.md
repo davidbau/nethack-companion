@@ -5255,7 +5255,7 @@ altar, make one sacrifice, and end this.
 The basic keys get you through every situation in NetHack. The
 commands below get you through them faster. Once you've spent a
 few thousand turns hammering `s` and walking corridors one square
-at a time, they become reflex.
+at a time, you may find they become reflexive.
 
 #### Command counts
 
