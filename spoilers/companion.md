@@ -1305,11 +1305,11 @@ with average Luck, you need 15-22 searches to reliably reveal a
 secret. Searching once and moving on is essentially announcing your
 intention to remain lost.
 
-Move three squares along the wall and repeat. This creates overlapping
-search coverage: any secret door in that wall segment gets searched
-from multiple adjacent positions, which dramatically improves your
-odds. The pattern looks tedious on paper because it *is* tedious,
-but tedium is cheaper than being trapped on Dlvl 1 forever.
+Move three squares along the wall and repeat. Each search reaches
+one square in every direction, so a stride of three gives complete
+wall coverage with no gaps and no wasted re-searching. The pattern
+looks tedious on paper because it *is* tedious, but tedium is
+cheaper than being trapped on Dlvl 1 forever.
 
 **Items that help:**
 
