@@ -2386,6 +2386,12 @@ that depends on what it actually is. When you pick up an item in a
 shop, the shopkeeper quotes you a price derived from that base price,
 modified by your Charisma and the shopkeeper's markup.
 
+> *Shopkeeper pricing was first documented in detail by Gregory
+> Bond's Shopping Spoiler, HTML-formatted by Kate Nepveu and
+> hosted on steelypips.org. David Damerell's Object Identification
+> Spoiler expanded the price-based identification techniques. The
+> mechanics below draw from both.*
+
 The key insight: items in the same category that share a base price
 are in the same **price group**. If you know the price, you can
 narrow down the possibilities enormously, sometimes to just two or
@@ -6338,125 +6344,11 @@ of its own.
 
 ### Shopping and Shopkeeper Pricing
 
-> *Shopkeeper pricing was first documented in detail by Gregory Bond
-> in his Shopping Spoiler, HTML-formatted by Kate Nepveu and hosted
-> on steelypips.org. David Damerell's Object Identification Spoiler
-> expanded the price-based identification techniques. The tables and
-> strategies below draw from both sources, updated for current
-> editions.*
-
 Shops do more than sell: their pricing system is your most
-powerful identification tool — full mechanics, interactive price
-tables, and the live buy/sell calculator live in
-[The Price Is Right](#the-price-is-right). What follows is the
-rest: credit, debt, combat, and the non-obvious rules.
-
-#### Gem Identification Through Selling
-
-Selling unidentified gems is **not** a reliable price-ID method.
-Shopkeepers offer 3 to 8 zm for any unidentified gem, real or
-glass alike, and the exact amount varies by both the gem's true
-identity and the shopkeeper. Real diamonds and worthless glass
-diamonds both quote in the same 3-8 zm range; you cannot tell
-them apart by price. Selling the same gem at two different shops
-gives different prices for *any* unidentified gem, not just glass.
-
-The practical method is a **touchstone** (gray stone, base price 45,
-guaranteed at Mine's End and sometimes found elsewhere). Rubbing an
-unidentified hard gem against a non-cursed touchstone produces a
-streak that names the gem. Once identified, real gems sell for their
-real value (often hundreds of zm each) while glass sells for almost
-nothing.
-
-##### Real-gem prices
-
-Once you know what a gem is, its type determines its base price.
-Real gems are tiny piles of liquid gold by weight: every gem weighs
-just 1, and gems of the same identified type stack into a single
-inventory slot regardless of count, so the only cost of hoarding a
-heap of identified rubies is one slot's worth of clutter.
-
-Every real gem, with the unangry-shopkeeper buy price. Use the
-Cha/Sell/Tourist/Angry toolbar to see how the modifiers shift
-things.
-
-The Mohs column is real-world mineral hardness on the Mohs scale
-(talc 1, diamond 10), and the game uses it in two places. Gems of
-Mohs 8 or higher count as **"hard"**, and hard gems do two things
-softer gems and glass can't: they can be used as a stylus to
-*engrave* Elbereth and other messages permanently into the dungeon
-floor (instead of the temporary dust scratch a finger or soft gem
-leaves), and they have about a 50% chance to *survive* being
-thrown rather than shattering on impact. Below Mohs 8, the gem
-only writes in dust and breaks on impact like glass. Hardness
-doesn't affect touchstoning — every gem can be identified by a
-blessed touchstone regardless.
-
-<div class="price-id-toolbar"></div>
-
-| Price | Gem                   | Color           | Mohs | Notes                          |
-|------:|-----------------------|-----------------|-----:|--------------------------------|
-|  4500 | Dilithium crystal     | white           |    5 | rarest white gem               |
-|  4000 | Diamond               | white           |   10 | hardest material in the game   |
-|  3500 | Ruby                  | red             |    9 |                                |
-|  3250 | Jacinth               | orange          |    9 | one of two orange gems         |
-|  3000 | Sapphire              | blue            |    9 |                                |
-|  2500 | Black opal            | black           |    8 |                                |
-|  2500 | Emerald               | green           |    8 |                                |
-|  2000 | Turquoise             | green           |    6 |                                |
-|  1500 | Citrine               | yellow          |    6 |                                |
-|  1500 | Aquamarine            | green           |    8 |                                |
-|  1000 | Amber                 | yellowish brown |    2 | softest gem; only dust-writes  |
-|   900 | Topaz                 | yellowish brown |    8 |                                |
-|   850 | Jet                   | black           |    7 |                                |
-|   800 | Opal                  | white           |    6 |                                |
-|   700 | Chrysoberyl           | yellow          |    5 |                                |
-|   700 | Garnet                | red             |    7 |                                |
-|   600 | Amethyst              | violet          |    7 | useful in alchemy (booze→see-i)|
-|   500 | Jasper                | red             |    7 |                                |
-|   400 | Fluorite              | violet          |    4 |                                |
-|   300 | Jade                  | green           |    6 |                                |
-|   200 | Obsidian              | black           |    6 |                                |
-|   200 | Agate                 | orange          |    6 |                                |
-|     0 | (worthless glass)     | any color       |    5 | sells for 0–8 zm unidentified  |
-
-<div class="price-id-toolbar"></div>
-
-The decision is rarely "carry or drop"; it's "if I'm slot-pressed
-and have to thin the heap, which colors do I drop first." Black opals,
-emeralds, and rubies are usually keepers; agate and obsidian first to go.
-
-A few rules of thumb:
-
-- **Every real gem is equally good for unicorn luck.** A 200 zm agate
-  throws at an orange unicorn for the same +5 luck as a 3250 zm
-  jacinth. Don't sell off your "junk" gems before you've found an
-  alignment-matching unicorn to feed them to.
-- **The price column matters only when selling or wishing.** If
-  you're not in a shop and not weight-pressed, the price ranking is
-  irrelevant.
-- **If you must drop some gems** (you're in a Mine's End slot-crunch,
-  or you're consolidating before a stash), drop *duplicates of the
-  cheap colors first*. Keep at least one of every identified type,
-  because the touchstone work is already done.
-- **Top tier** (≥ 2500: dilithium, diamond, ruby, jacinth, sapphire,
-  black opal, emerald) are worth selling individually as you find
-  shops that buy them: 3000+ zm per gem is a real bankroll. Don't
-  fire-sale them to a non-gem-buying shop for half price.
-- **Amethyst** is a special case at any price tier: it's an alchemy
-  reagent (booze + amethyst dispels hallucination; the
-  α-μέθυστος "anti-drunkenness" pun is the joke).
-- **Worthless glass never costs luck.** Glass thrown at a unicorn is
-  either rejected ("not interested in your junk") or quietly
-  accepted with no effect. The luck risk on unicorn throws comes
-  from *real* gems thrown at the **wrong-alignment** unicorn, which
-  rolls a random −3 to +3.
-
-Read the table as a **selling guide**, not a discard guide: real
-gems near the top are worth making time to sell at a gem dealer
-and worth wishing for if you're flush on wishes. Lower-priced gems
-aren't trash — they still feed unicorns and still touchstone-identify
-other gems by hardness comparison.
+powerful identification tool. You can find full mechanics and
+interactive price tables in Part Four,
+[The Price Is Right](#the-price-is-right). What follows here is
+the rest: credit, debt, combat, and non-obvious rules.
 
 #### Credit and Debt
 
@@ -6577,6 +6469,114 @@ Beyond the rules, a few tactical habits pay off:
 The best strategy is usually to play fair: sell what you don't need,
 buy what you do, and use the pricing system to identify as much as
 possible before spending your gold on scrolls of identify.
+
+#### Gem Identification Through Selling
+
+Selling unidentified gems is **not** a reliable price-ID method.
+Shopkeepers offer 3 to 8 zm for any unidentified gem, real or
+glass alike, and the exact amount varies by both the gem's true
+identity and the shopkeeper. Real diamonds and worthless glass
+diamonds both quote in the same 3-8 zm range; you cannot tell
+them apart by price. Selling the same gem at two different shops
+gives different prices for *any* unidentified gem, not just glass.
+
+The practical method is a **touchstone** (gray stone, base price 45,
+guaranteed at Mine's End and sometimes found elsewhere). Rubbing an
+unidentified hard gem against a non-cursed touchstone produces a
+streak that names the gem. Once identified, real gems sell for their
+real value (often hundreds of zm each) while glass sells for almost
+nothing.
+
+##### Real-gem prices
+
+Once you know what a gem is, its type determines its base price.
+Real gems are tiny piles of liquid gold by weight: every gem weighs
+just 1, and gems of the same identified type stack into a single
+inventory slot regardless of count, so the only cost of hoarding a
+heap of identified rubies is one slot's worth of clutter.
+
+Every real gem, with the unangry-shopkeeper buy price. Use the
+Cha/Sell/Tourist/Angry toolbar to see how the modifiers shift
+things.
+
+The Mohs column is real-world mineral hardness on the Mohs scale
+(talc 1, diamond 10), and the game uses it in two places. Gems of
+Mohs 8 or higher count as **"hard"**, and hard gems do two things
+softer gems and glass can't: they can be used as a stylus to
+*engrave* Elbereth and other messages permanently into the dungeon
+floor (instead of the temporary dust scratch a finger or soft gem
+leaves), and they have about a 50% chance to *survive* being
+thrown rather than shattering on impact. Below Mohs 8, the gem
+only writes in dust and breaks on impact like glass. Hardness
+doesn't affect touchstoning — every gem can be identified by a
+blessed touchstone regardless.
+
+<div class="price-id-toolbar"></div>
+
+| Price | Gem                   | Color           | Mohs | Notes                          |
+|------:|-----------------------|-----------------|-----:|--------------------------------|
+|  4500 | Dilithium crystal     | white           |    5 | rarest white gem               |
+|  4000 | Diamond               | white           |   10 | hardest material in the game   |
+|  3500 | Ruby                  | red             |    9 |                                |
+|  3250 | Jacinth               | orange          |    9 | one of two orange gems         |
+|  3000 | Sapphire              | blue            |    9 |                                |
+|  2500 | Black opal            | black           |    8 |                                |
+|  2500 | Emerald               | green           |    8 |                                |
+|  2000 | Turquoise             | green           |    6 |                                |
+|  1500 | Citrine               | yellow          |    6 |                                |
+|  1500 | Aquamarine            | green           |    8 |                                |
+|  1000 | Amber                 | yellowish brown |    2 | softest gem; only dust-writes  |
+|   900 | Topaz                 | yellowish brown |    8 |                                |
+|   850 | Jet                   | black           |    7 |                                |
+|   800 | Opal                  | white           |    6 |                                |
+|   700 | Chrysoberyl           | yellow          |    5 |                                |
+|   700 | Garnet                | red             |    7 |                                |
+|   600 | Amethyst              | violet          |    7 | useful in alchemy (booze→see-i)|
+|   500 | Jasper                | red             |    7 |                                |
+|   400 | Fluorite              | violet          |    4 |                                |
+|   300 | Jade                  | green           |    6 |                                |
+|   200 | Obsidian              | black           |    6 |                                |
+|   200 | Agate                 | orange          |    6 |                                |
+|     0 | (worthless glass)     | any color       |    5 | sells for 0–8 zm unidentified  |
+
+<div class="price-id-toolbar"></div>
+
+The decision is rarely "carry or drop"; it's "if I'm slot-pressed
+and have to thin the heap, which colors do I drop first." Black opals,
+emeralds, and rubies are usually keepers; agate and obsidian first to go.
+
+A few rules of thumb:
+
+- **Every real gem is equally good for unicorn luck.** A 200 zm agate
+  throws at an orange unicorn for the same +5 luck as a 3250 zm
+  jacinth. Don't sell off your "junk" gems before you've found an
+  alignment-matching unicorn to feed them to.
+- **The price column matters only when selling or wishing.** If
+  you're not in a shop and not weight-pressed, the price ranking is
+  irrelevant.
+- **If you must drop some gems** (you're in a Mine's End slot-crunch,
+  or you're consolidating before a stash), drop *duplicates of the
+  cheap colors first*. Keep at least one of every identified type,
+  because the touchstone work is already done.
+- **Top tier** (≥ 2500: dilithium, diamond, ruby, jacinth, sapphire,
+  black opal, emerald) are worth selling individually as you find
+  shops that buy them: 3000+ zm per gem is a real bankroll. Don't
+  fire-sale them to a non-gem-buying shop for half price.
+- **Amethyst** is a special case at any price tier: it's an alchemy
+  reagent (booze + amethyst dispels hallucination; the
+  α-μέθυστος "anti-drunkenness" pun is the joke).
+- **Worthless glass never costs luck.** Glass thrown at a unicorn is
+  either rejected ("not interested in your junk") or quietly
+  accepted with no effect. The luck risk on unicorn throws comes
+  from *real* gems thrown at the **wrong-alignment** unicorn, which
+  rolls a random −3 to +3.
+
+Read the table as a **selling guide**, not a discard guide: real
+gems near the top are worth making time to sell at a gem dealer
+and worth wishing for if you're flush on wishes. Lower-priced gems
+aren't trash — they still feed unicorns and still touchstone-identify
+other gems by hardness comparison.
+
 
 ---
 

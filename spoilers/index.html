@@ -3219,6 +3219,13 @@ identification tool. Every unidentified item has a fixed base price that
 depends on what it actually is. When you pick up an item in a shop, the
 shopkeeper quotes you a price derived from that base price, modified by
 your Charisma and the shopkeeper’s markup.</p>
+<blockquote>
+<p><em>Shopkeeper pricing was first documented in detail by Gregory
+Bond’s Shopping Spoiler, HTML-formatted by Kate Nepveu and hosted on
+steelypips.org. David Damerell’s Object Identification Spoiler expanded
+the price-based identification techniques. The mechanics below draw from
+both.</em></p>
+</blockquote>
 <p>The key insight: items in the same category that share a base price
 are in the same <strong>price group</strong>. If you know the price, you
 can narrow down the possibilities enormously, sometimes to just two or
@@ -8579,18 +8586,126 @@ of its own.</p>
 </section>
 <section id="shopping-and-shopkeeper-pricing" class="level3">
 <h3>Shopping and Shopkeeper Pricing</h3>
-<blockquote>
-<p><em>Shopkeeper pricing was first documented in detail by Gregory Bond
-in his Shopping Spoiler, HTML-formatted by Kate Nepveu and hosted on
-steelypips.org. David Damerell’s Object Identification Spoiler expanded
-the price-based identification techniques. The tables and strategies
-below draw from both sources, updated for current editions.</em></p>
-</blockquote>
 <p>Shops do more than sell: their pricing system is your most powerful
-identification tool — full mechanics, interactive price tables, and the
-live buy/sell calculator live in <a href="#the-price-is-right">The Price
-Is Right</a>. What follows is the rest: credit, debt, combat, and the
+identification tool. You can find full mechanics and interactive price
+tables in Part Four, <a href="#the-price-is-right">The Price Is
+Right</a>. What follows here is the rest: credit, debt, combat, and
 non-obvious rules.</p>
+<section id="credit-and-debt" class="level4">
+<h4>Credit and Debt</h4>
+<p>Each shopkeeper keeps a per-customer ledger with three numbers:
+credit, debit, and loan. The most common confusion is around credit, so
+spell out exactly when it appears.</p>
+<p><strong>How you get credit.</strong> Two ways, neither automatic for
+a successful sale:</p>
+<ol type="1">
+<li><strong>Shopkeeper runs short of gold while paying you.</strong>
+When you sell an item, the shopkeeper pays in gold by default. If they
+don’t have enough gold to cover the offer, the game prompts: “Shopkeeper
+cannot pay you at present. Will you accept <em>N</em> zorkmids in credit
+for that?” Answering yes converts the shortfall (or the whole price, if
+they have zero gold) into credit. A <em>normal</em> sale where the
+shopkeeper has enough gold just pays you in cash, no credit
+involved.</li>
+<li><strong>You drop gold on a shop floor square.</strong> Any gold you
+drop or throw inside the shop is added to your credit balance (after
+paying off any existing debt first). This is the “shop as safe-deposit
+box” trick: credit can’t be stolen by nymphs, can’t fall into pits, and
+can’t be lost to a polymorph trap.</li>
+</ol>
+<p><strong>How credit gets used.</strong> When you buy something, the
+shopkeeper applies your credit against the purchase price first (“the
+price is deducted from your credit”). Any remainder comes out of your
+gold. Credit is per-shop and per-shopkeeper: you can’t carry it between
+shops, withdraw it back to gold, or hand it to a different
+shopkeeper.</p>
+<p><strong>Is paying from credit better or worse than paying in
+gold?</strong> The price itself is identical: credit is deducted from
+the <em>post- Charisma, post-Tourist, post-angry</em> cost at a strict
+1:1 ratio, with no markup or discount either way. The differences are
+about how <em>safe</em> and <em>liquid</em> your money is, not how far
+it stretches:</p>
+<ul>
+<li><strong>Better</strong> in that credit can’t be stolen by nymphs,
+can’t fall into a pit when you die, can’t be lost to a polymorph trap,
+and doesn’t bog you down with carry weight. A shop you’ll come back to
+is a strong bank.</li>
+<li><strong>Worse</strong> in that credit is locked to one shopkeeper.
+If you over-accumulate at a shop that doesn’t have items you want (or
+the shopkeeper dies, or you anger them and they go hostile), the credit
+evaporates. You also can’t tip altar donations, can’t pay shrine fees,
+and can’t bribe a demon out of credit.</li>
+</ul>
+<p>Practical balance: park spare gold as credit at a shop you intend to
+keep visiting (the Gnomish Mines general store is a popular choice), but
+don’t deposit more than you expect to spend there.</p>
+<p><strong>Debit</strong> is the inverse: it accrues when you
+<em>use</em> an unpaid item inside the shop (read a scroll, quaff a
+potion, zap a wand) and you haven’t completed the purchase. You’re
+charged a fraction of the item’s price as a usage fee; future gold drops
+or sales pay it down before any new credit accumulates.</p>
+<p><strong>Loan</strong> appears only in the unusual case where the
+shopkeeper has <em>lent</em> you gold: you carry their coins as part of
+your inventory. Dropping gold in the shop pays this off before adding
+credit.</p>
+<p><strong>Walk-out hazard.</strong> Leaving the shop with unpaid items
+or unpaid debt turns the shopkeeper hostile. The Keystone Kops will
+pursue you through the dungeon, and the shopkeeper themselves is one of
+the toughest melee NPCs in the game: high HP, low AC, and unfazed by
+Elbereth. Pay the bill at the door.</p>
+</section>
+<section id="shopkeeper-behavior" class="level4">
+<h4>Shopkeeper Behavior</h4>
+<p>A shopkeeper is one of the toughest NPCs in the game: high HP, good
+AC, hits hard, and unfazed by Elbereth or by the kind of clever escape
+that works on other monsters. They also see everything — they track
+every item you pick up and every item that enters the shop, even when
+you’re invisible. The practical consequences for the player:</p>
+<ul>
+<li>Shopkeepers block the door whenever you have unpaid items.</li>
+<li>If you break something in the shop (a potion, a wand), you pay for
+it.</li>
+<li>Shop walls are non-diggable from inside, so tunneling out with
+unpaid items is not on the menu.</li>
+<li>Artifact items are priced at <strong>4× the artifact’s already-large
+base cost</strong> (a hidden inflation that doesn’t affect score). For
+most named weapons that lands in the 10,000–30,000 zm range. An
+unidentified long sword priced at 16,000 zm is not something to glance
+over — that price tag is the give-away.</li>
+<li>A shopkeeper <em>can</em> be killed for the entire stock and the
+till, but the penalties (Keystone Kops, alignment loss, forfeiture of
+future service from that shop) and the shopkeeper’s own combat stats put
+this well out of reach early on. Even late-game ascenders usually leave
+them alone.</li>
+</ul>
+<p>Beyond the rules, a few tactical habits pay off:</p>
+<ul>
+<li><strong>Drop everything at the door to see your bill.</strong>
+Standing on the door square, drop your whole inventory; the shopkeeper’s
+bill highlights the items you owe for. The shopkeeper isn’t guessing —
+the game tracks unpaid items precisely — but it’s a handy way to recall
+what you actually picked up when the shop has a hundred lookalikes.</li>
+<li><strong>Sell to build credit.</strong> Credit acts as gold you can
+spend in that shop, and credit doesn’t get stolen by nymphs or fall into
+pits. Selling a stack of useless daggers to a weapon shop is a way to
+“bank” gold safely while you’re shopping in town.</li>
+<li><strong>Bones-shop gotcha.</strong> When you find a shop in
+someone’s bones file, all the items inside still belong to the dead
+adventurer’s ghost shopkeeper; pick up anything and you owe the new
+shopkeeper full price. The shop floor is not free loot.</li>
+<li><strong>“Closed for inventory” engraving on a door.</strong> This
+marks a shop whose door spawned <strong>locked</strong>, not an
+abandoned one. The shopkeeper is still inside, the stock is still
+unpaid, and breaking the door down to get in just earns you a normal
+shop visit plus an angry shopkeeper. (In Orcus Town the shopkeepers are
+usually dead by the time you arrive — Orcus killed them — so the items
+there often <em>are</em> ownerless, but that’s because of Orcus, not the
+engraving.)</li>
+</ul>
+<p>The best strategy is usually to play fair: sell what you don’t need,
+buy what you do, and use the pricing system to identify as much as
+possible before spending your gold on scrolls of identify.</p>
+</section>
 <section id="gem-identification-through-selling" class="level4">
 <h4>Gem Identification Through Selling</h4>
 <p>Selling unidentified gems is <strong>not</strong> a reliable price-ID
@@ -8849,123 +8964,8 @@ guide: real gems near the top are worth making time to sell at a gem
 dealer and worth wishing for if you’re flush on wishes. Lower-priced
 gems aren’t trash — they still feed unicorns and still
 touchstone-identify other gems by hardness comparison.</p>
-</section>
-</section>
-<section id="credit-and-debt" class="level4">
-<h4>Credit and Debt</h4>
-<p>Each shopkeeper keeps a per-customer ledger with three numbers:
-credit, debit, and loan. The most common confusion is around credit, so
-spell out exactly when it appears.</p>
-<p><strong>How you get credit.</strong> Two ways, neither automatic for
-a successful sale:</p>
-<ol type="1">
-<li><strong>Shopkeeper runs short of gold while paying you.</strong>
-When you sell an item, the shopkeeper pays in gold by default. If they
-don’t have enough gold to cover the offer, the game prompts: “Shopkeeper
-cannot pay you at present. Will you accept <em>N</em> zorkmids in credit
-for that?” Answering yes converts the shortfall (or the whole price, if
-they have zero gold) into credit. A <em>normal</em> sale where the
-shopkeeper has enough gold just pays you in cash, no credit
-involved.</li>
-<li><strong>You drop gold on a shop floor square.</strong> Any gold you
-drop or throw inside the shop is added to your credit balance (after
-paying off any existing debt first). This is the “shop as safe-deposit
-box” trick: credit can’t be stolen by nymphs, can’t fall into pits, and
-can’t be lost to a polymorph trap.</li>
-</ol>
-<p><strong>How credit gets used.</strong> When you buy something, the
-shopkeeper applies your credit against the purchase price first (“the
-price is deducted from your credit”). Any remainder comes out of your
-gold. Credit is per-shop and per-shopkeeper: you can’t carry it between
-shops, withdraw it back to gold, or hand it to a different
-shopkeeper.</p>
-<p><strong>Is paying from credit better or worse than paying in
-gold?</strong> The price itself is identical: credit is deducted from
-the <em>post- Charisma, post-Tourist, post-angry</em> cost at a strict
-1:1 ratio, with no markup or discount either way. The differences are
-about how <em>safe</em> and <em>liquid</em> your money is, not how far
-it stretches:</p>
-<ul>
-<li><strong>Better</strong> in that credit can’t be stolen by nymphs,
-can’t fall into a pit when you die, can’t be lost to a polymorph trap,
-and doesn’t bog you down with carry weight. A shop you’ll come back to
-is a strong bank.</li>
-<li><strong>Worse</strong> in that credit is locked to one shopkeeper.
-If you over-accumulate at a shop that doesn’t have items you want (or
-the shopkeeper dies, or you anger them and they go hostile), the credit
-evaporates. You also can’t tip altar donations, can’t pay shrine fees,
-and can’t bribe a demon out of credit.</li>
-</ul>
-<p>Practical balance: park spare gold as credit at a shop you intend to
-keep visiting (the Gnomish Mines general store is a popular choice), but
-don’t deposit more than you expect to spend there.</p>
-<p><strong>Debit</strong> is the inverse: it accrues when you
-<em>use</em> an unpaid item inside the shop (read a scroll, quaff a
-potion, zap a wand) and you haven’t completed the purchase. You’re
-charged a fraction of the item’s price as a usage fee; future gold drops
-or sales pay it down before any new credit accumulates.</p>
-<p><strong>Loan</strong> appears only in the unusual case where the
-shopkeeper has <em>lent</em> you gold: you carry their coins as part of
-your inventory. Dropping gold in the shop pays this off before adding
-credit.</p>
-<p><strong>Walk-out hazard.</strong> Leaving the shop with unpaid items
-or unpaid debt turns the shopkeeper hostile. The Keystone Kops will
-pursue you through the dungeon, and the shopkeeper themselves is one of
-the toughest melee NPCs in the game: high HP, low AC, and unfazed by
-Elbereth. Pay the bill at the door.</p>
-</section>
-<section id="shopkeeper-behavior" class="level4">
-<h4>Shopkeeper Behavior</h4>
-<p>A shopkeeper is one of the toughest NPCs in the game: high HP, good
-AC, hits hard, and unfazed by Elbereth or by the kind of clever escape
-that works on other monsters. They also see everything — they track
-every item you pick up and every item that enters the shop, even when
-you’re invisible. The practical consequences for the player:</p>
-<ul>
-<li>Shopkeepers block the door whenever you have unpaid items.</li>
-<li>If you break something in the shop (a potion, a wand), you pay for
-it.</li>
-<li>Shop walls are non-diggable from inside, so tunneling out with
-unpaid items is not on the menu.</li>
-<li>Artifact items are priced at <strong>4× the artifact’s already-large
-base cost</strong> (a hidden inflation that doesn’t affect score). For
-most named weapons that lands in the 10,000–30,000 zm range. An
-unidentified long sword priced at 16,000 zm is not something to glance
-over — that price tag is the give-away.</li>
-<li>A shopkeeper <em>can</em> be killed for the entire stock and the
-till, but the penalties (Keystone Kops, alignment loss, forfeiture of
-future service from that shop) and the shopkeeper’s own combat stats put
-this well out of reach early on. Even late-game ascenders usually leave
-them alone.</li>
-</ul>
-<p>Beyond the rules, a few tactical habits pay off:</p>
-<ul>
-<li><strong>Drop everything at the door to see your bill.</strong>
-Standing on the door square, drop your whole inventory; the shopkeeper’s
-bill highlights the items you owe for. The shopkeeper isn’t guessing —
-the game tracks unpaid items precisely — but it’s a handy way to recall
-what you actually picked up when the shop has a hundred lookalikes.</li>
-<li><strong>Sell to build credit.</strong> Credit acts as gold you can
-spend in that shop, and credit doesn’t get stolen by nymphs or fall into
-pits. Selling a stack of useless daggers to a weapon shop is a way to
-“bank” gold safely while you’re shopping in town.</li>
-<li><strong>Bones-shop gotcha.</strong> When you find a shop in
-someone’s bones file, all the items inside still belong to the dead
-adventurer’s ghost shopkeeper; pick up anything and you owe the new
-shopkeeper full price. The shop floor is not free loot.</li>
-<li><strong>“Closed for inventory” engraving on a door.</strong> This
-marks a shop whose door spawned <strong>locked</strong>, not an
-abandoned one. The shopkeeper is still inside, the stock is still
-unpaid, and breaking the door down to get in just earns you a normal
-shop visit plus an angry shopkeeper. (In Orcus Town the shopkeepers are
-usually dead by the time you arrive — Orcus killed them — so the items
-there often <em>are</em> ownerless, but that’s because of Orcus, not the
-engraving.)</li>
-</ul>
-<p>The best strategy is usually to play fair: sell what you don’t need,
-buy what you do, and use the pricing system to identify as much as
-possible before spending your gold on scrolls of identify.</p>
 <hr />
+</section>
 </section>
 </section>
 <section id="weapons-tables" class="level3">
