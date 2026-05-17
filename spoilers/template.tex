@@ -152,13 +152,13 @@
 % Suppress phantom longtable headers. longtable's pagination
 % sometimes emits a fresh \endhead at the top of the page after the
 % table actually ended, leaving a ghost column header floating
-% before the next section. The fix below loads xltabular's
-% longtable-replacement environment via the ltablex package and
-% redefines pandoc's longtable opener so each table uses the
-% phantom-free pagination logic.
+% before the next section. Loading ltablex with \keepXColumns
+% patches the longtable environment, and the negative \vspace
+% pulls back the trailing baseline that the package's "table is
+% complete" marker would otherwise leave as a visible empty row.
 \usepackage{ltablex}
 \keepXColumns
-\AtEndEnvironment{longtable}{\null}
+\AtEndEnvironment{longtable}{\null\vspace*{-\baselineskip}}
 
 % --- Code blocks ---
 \usepackage{fancyvrb}
