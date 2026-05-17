@@ -1231,7 +1231,7 @@ defense is finding the trap first (search), or destroying it from
 range by zapping *cancellation* at it to defuse it without
 setting it off.
 
-Iron shoes (and kicking boots, which are also iron) absorb a
+Iron footwear (iron shoes or kicking boots) absorbs a
 surprising amount of trap punishment in 5.0: no leg damage from a
 bear trap, no spikes from a spiked pit, no polymorph from a
 polymorph trap (your shoes shift instead), and a positively-
@@ -1261,9 +1261,8 @@ hidden hazards.
 Iron bars look like a barrier but aren't solid: light passes through,
 you can see what's on the other side, and small creatures can squeeze
 between. What they resist is almost everything the player can throw
-at them: a pick-axe bounces off ("Clang!"), a wand of digging does
-nothing, hitting with a weapon does nothing, and kicking just hurts
-your foot. Despite long-running advice to the contrary, **throwing or
+at them: pick-axes bounce off ("Clang!"), wands of digging fizzle,
+weapons swing through harmlessly, and kicking just hurts your foot. Despite long-running advice to the contrary, **throwing or
 otherwise applying a potion of acid does not dissolve iron bars**.
 The bars-corrode code only fires for acid *breath* (from a monster,
 or from you if polymorphed into a yellow dragon, acid blob, black
@@ -1344,15 +1343,14 @@ engraving, not just Elbereth.
 determines how quickly you can finish, how hard the engraving is
 to erase, and whether your stylus suffers wear.
 
-| Method            | Speed         | Durability     | Notes                             |
-| ----------------- | ------------- | -------------- | --------------------------------- |
-| Finger (dust)     | Instant       | Fragile        | Smudges when monsters step on it  |
-| Athame            | Several turns | Semi-permanent | Interruptible; doesn't dull       |
-| Edged weapon      | Several turns | Semi-permanent | Interruptible; dulls weapon by −1 |
-| Hard gem/diamond  | Several turns | Semi-permanent | Interruptible                     |
-| Wand of digging   | Instant       | Semi-permanent | Good middle ground                |
-| Wand of fire      | Instant       | Permanent      | Burns the word into the floor     |
-| Wand of lightning | Instant       | Permanent      | Same as fire                      |
+| Method                    | Speed         | Durability     | Notes                             |
+| ------------------------- | ------------- | -------------- | --------------------------------- |
+| Finger (dust)             | Instant       | Fragile        | Smudges when monsters step on it  |
+| Athame                    | Several turns | Semi-permanent | Interruptible; doesn't dull       |
+| Edged weapon              | Several turns | Semi-permanent | Interruptible; dulls weapon by −1 |
+| Hard gem or diamond       | Several turns | Semi-permanent | Interruptible                     |
+| Wand of digging           | Instant       | Semi-permanent | Good middle ground                |
+| Wand of fire or lightning | Instant       | Permanent      | Burns the word into the floor     |
 
 The three durability tiers correspond to how the text resists
 ordinary erosion:
@@ -1540,8 +1538,8 @@ AC / attack details on every monster, see the
 
 #### Common Early Encounters
 
-| Symbol | Class     | Notes                                                                                   |
-| ------ | --------- | --------------------------------------------------------------------------------------- |
+| Symbol | Class                  | Notes                                                                      |
+| ------ | ---------------------- | -------------------------------------------------------------------------- |
 | `a`    | Ants      | **Soldier ants are the famous early killer**: speed 18, two attacks per turn (bite + strength-draining sting), and they travel in packs. A wandering soldier-ant group on Dlvl 4 can end a careless run. Killer bees, giant ants, fire ants are all the same shape of problem. |
 | `b`    | Blobs     | Acidic or gelatinous. Acid blobs have no active attack — they only splash 1d8 acid back when *you* hit *them*, and the splash can corrode your weapon. Kill at range, or walk past. |
 | `B`    | Bats      | The `B` class is **deceptively dangerous because of speed**. Bats and giant bats clock in at speed 22 — nearly twice the player's base 12, so they get roughly two bites per one of your swings. Giant bats bite for 1d6 each; the math catches up fast. Vampire bats are vampire-class and drain levels on top of being fast. |
