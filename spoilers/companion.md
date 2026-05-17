@@ -1,4 +1,4 @@
-# The Traveler's Companion to the <span class="nobr">Mazes of Menace</span>
+# A Traveler's Companion to the <span class="nobr">Mazes of Menace</span>
 
 <p style="text-align: center; font-style: italic; margin: 1.5em 0;">Do not read this guide aloud. The dungeon is listening.</p>
 
@@ -6775,7 +6775,7 @@ source code. Any errors are ours alone.
 
 ---
 
-*The Traveler's Companion to the Mazes of Menace 5.0 Launch Edition,*<br>
+*A Traveler's Companion to the Mazes of Menace 5.0 Launch Edition,*<br>
 *compiled by David Bau.*
 
 *This work is licensed under

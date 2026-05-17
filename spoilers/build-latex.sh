@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build script for "The Traveler's Companion to the Mazes of Menace"
+# Build script for "A Traveler's Companion to the Mazes of Menace"
 # LaTeX pipeline: companion.md → pandoc + lua filter → xelatex → companion-latex.pdf
 set -euo pipefail
 
