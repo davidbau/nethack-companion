@@ -300,7 +300,12 @@ def layout_arrow_to_branch(branch: Branch, attach_y: int, trunk_has_bubble: bool
         x2 = RIGHT_X
         placed.branch_arrows.append((x1, attach_y, x2, attach_y))
     if branch.label:
-        cx = (x1 + x2) // 2
+        # Bias the label toward the branch bubble (75% along the arrow
+        # from trunk → bubble) instead of dead-center. At 50% the
+        # Sokoban "up" label slid into The Oracle bubble; pushing all
+        # labels closer to their branch bubble also reads as "this label
+        # describes the branch" more clearly.
+        cx = x1 + (3 * (x2 - x1)) // 4
         placed.arrow_labels.append((cx, attach_y - 4, branch.label))
 
 
