@@ -906,8 +906,17 @@ the floors.
 
 The puzzles are fixed (two variants per level, randomly chosen).
 Each level has exactly one correct solution. If you push a boulder
-into a corner where it blocks your progress, you're stuck and will
-need to start the level over. The game won't warn you about this.
+into a corner where it blocks your progress there is no way to
+start over — NetHack saves continuously. You're left with the
+unfair options: **squeeze past** the boulder (`m` + direction),
+**break it** with a wand of striking or by force-fighting it, or
+**levitate over** the offending pit. Squeezing and breaking each
+cost you a point of Luck and break the Sokoban conduct;
+levitation is free of penalty but leaves you unable to pick
+anything up while airborne. **Teleport doesn't work here** — the
+level forbids it. If none of these are available, accept the
+loss: leave the prize, take the upstair, and continue. The game
+won't warn you when a push goes wrong.
 
 The prize at the top is either a **bag of holding** or an **amulet
 of reflection**, both extremely valuable; the
