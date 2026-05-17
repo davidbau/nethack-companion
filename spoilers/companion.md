@@ -1914,11 +1914,10 @@ next drain kills you — "brainlessness." A regular mind flayer has
 three tentacle attacks per turn; the **master mind flayer** has
 *five*, plus a heavier weapon strike, and is widely called the
 most lethal non-boss monster in the dungeon. A single unprepared
-turn next to a master mind flayer can drop your Int by ten. The
-classic 5.0 nerf was wand-of-amnesia-style level-forgetting:
-mind flayers no longer wipe your map. They *do* still wipe
-memorized spells one hit in five (`losespells`), so spell-reliant
-characters should expect to re-study from spellbooks after a fight.
+turn next to a master mind flayer can drop your Int by ten. Each
+hit also has a 1-in-5 chance to wipe one of your memorized spells,
+so spell-reliant characters will lose preparation in a long fight
+and need to re-study from their spellbooks afterward.
 
 **Defenses:** Wear a greased helmet to prevent tentacle attacks
 from connecting. Kill them at range (wands, spells). In 5.0 the unicorn horn no longer restores lost attributes;
