@@ -895,6 +895,24 @@ each level honestly if you can.
 For complete solutions to all eight level variants, see
 [Sokoban Solutions](#sokoban-solutions) in the appendices.
 
+#### The Oracle
+
+Somewhere in the mid-levels of the Dungeons of Doom (around levels
+5 through 9), you'll find a special room containing the Oracle of
+Delphi, flanked by centaur statues and a fountain.
+
+The Oracle offers two services:
+
+- **Minor consultations** are cheap and produce fortune-cookie-style
+  messages, occasionally useful but mostly atmospheric.
+- **Major consultations** are expensive but provide genuinely
+  helpful gameplay information: hints about monsters, items, and
+  game mechanics.
+
+The Oracle is peaceful and never attacks. Her room is a safe place
+to rest for a moment, though the fountain is subject to the usual
+fountain risks.
+
 #### The Quest
 
 Around dungeon levels 11 through 16, you'll find a magic portal to
@@ -928,6 +946,30 @@ the only place in the game you can get them.
 If your alignment record is too low (from attacking peacefuls, for
 instance), your quest leader will refuse to send you. Keep your
 hands clean.
+
+#### The Rogue Level
+
+Somewhere in the middle dungeon you'll cross a one-level
+historical district. You'll know it when the welcoming line reads,
+*"You enter what seems to be an older, more primitive world."*
+The neighborhood is preserved as it was when **Rogue** was the
+only dungeon-crawl anyone had heard of, and a few details give
+the era away:
+
+- All the wildlife is in capital letters — lowercase species
+  hadn't been invented yet.
+- Armor displays as `]`, food as `:`, amulets as `,`, and gold
+  shares a symbol with gems (in Rogue they were the same thing).
+- Doors don't close. Hinges came later.
+- The color palette drops to about four colors and tile mode
+  switches off in favor of plain characters.
+- No fountains, sinks, altars, shopkeepers, or priests — and
+  no spellbooks, tools, or amulets in the natural item pool, all
+  post-Rogue inventions.
+
+Modern mechanics still work; you can engrave Elbereth here even
+though that was a Hack-era addition. A small and forgivable
+anachronism.
 
 #### Fort Ludios
 
@@ -1071,48 +1113,6 @@ important items in the game. Use your wishes wisely (see
 Below the Castle lies Gehennom. There is no going back to the
 upper dungeon once you descend without climbing back up through
 everything. Make sure you're prepared before you go down.
-
-#### The Oracle
-
-Somewhere in the mid-levels of the Dungeons of Doom (around levels
-5 through 9), you'll find a special room containing the Oracle of
-Delphi, flanked by centaur statues and a fountain.
-
-The Oracle offers two services:
-
-- **Minor consultations** are cheap and produce fortune-cookie-style
-  messages, occasionally useful but mostly atmospheric.
-- **Major consultations** are expensive but provide genuinely
-  helpful gameplay information: hints about monsters, items, and
-  game mechanics.
-
-The Oracle is peaceful and never attacks. Her room is a safe place
-to rest for a moment, though the fountain is subject to the usual
-fountain risks.
-
-#### The Rogue Level
-
-Somewhere in the middle dungeon you'll cross a one-level
-historical district. You'll know it when the welcoming line reads,
-*"You enter what seems to be an older, more primitive world."*
-The neighborhood is preserved as it was when **Rogue** was the
-only dungeon-crawl anyone had heard of, and a few details give
-the era away:
-
-- All the wildlife is in capital letters — lowercase species
-  hadn't been invented yet.
-- Armor displays as `]`, food as `:`, amulets as `,`, and gold
-  shares a symbol with gems (in Rogue they were the same thing).
-- Doors don't close. Hinges came later.
-- The color palette drops to about four colors and tile mode
-  switches off in favor of plain characters.
-- No fountains, sinks, altars, shopkeepers, or priests — and
-  no spellbooks, tools, or amulets in the natural item pool, all
-  post-Rogue inventions.
-
-Modern mechanics still work; you can engrave Elbereth here even
-though that was a Hack-era addition. A small and forgivable
-anachronism.
 
 ---
 
@@ -4983,11 +4983,13 @@ climb = the climax of the game. The choreography:
 2. **Attach all seven candles to the Candelabrum.** The
    Candelabrum needs seven candles attached and lit before the
    ritual will work. Attach a candle by applying it (`a`) and
-   selecting the Candelabrum. Candles drip in slowly: every
-   temple has a small stock the priest will sell you, and there's
-   a guaranteed haul at Mine's End. Without all seven attached,
-   the ritual fails — pick up a candle every time you pass a
-   temple from level 1 onward.
+   selecting the Candelabrum. The reliable source is **Izchak's
+   candle shop in Minetown** (in one Minetown layout the shop is
+   absent but seven candles are scattered around the level
+   instead — either way the seven you need are guaranteed there).
+   Every other temple along the way sells a candle or two as
+   backup. Pick them up as you pass and you'll never have to
+   backtrack.
 
 3. **Find the vibrating square.** On the Gehennom level directly
    above Moloch's Sanctum, a single square vibrates when you step
