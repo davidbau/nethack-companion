@@ -481,10 +481,9 @@ cram ration, or lembas wafer.
 These look like ordinary containers, no special marking. On your
 first ten levels, check every chest and large box you find. A
 locked one will yield to a credit card, a key, a wand of opening,
-or patience with a pickaxe. Failing all of those, **#force** the
-lock with a dagger: an orcish dagger off the first orc you kill
-(pet-test it on the floor first, since orcs sometimes carry cursed
-gear) is a perfect tool for the job. The contents aren't guaranteed
+or — failing those — you can `#force` the issue with a weapon you
+don't mind breaking. An orcish dagger off the first orc you kill is
+a perfect tool (pet-test it first: could be cursed). The contents aren't guaranteed
 to change your run, but finding a stack of healing potions on level
 4 before you've learned the hard way how much you need them is the
 dungeon's frequent act of goodwill.
@@ -1135,8 +1134,6 @@ everything. Make sure you're prepared before you go down.
 ---
 
 ### Traps and Hazards
-
-You never see them coming. That's the whole point.
 
 Traps are invisible until you step on one, detect it with a search
 (`s` command), or reveal it by other means. Once discovered, they
@@ -2226,9 +2223,8 @@ methods of taming exist:
 - **Spell of charm monster** tames a single adjacent creature
 - **Magic trap effects** occasionally produce taming
 
-The beautiful thing is that taming isn't limited to small animals.
-With a scroll of taming or the charm monster spell, you can recruit
-almost anything: a purple worm to swallow your enemies whole, a
+Taming isn't limited to small animals: with a scroll of taming or
+the charm monster spell, you can recruit almost anything: a purple worm to swallow your enemies whole, a
 dragon to breathe fire at them, a titan to crush them underfoot.
 Only unique monsters (Medusa, the Wizard) and a few special
 creatures resist your charms entirely.
@@ -4418,12 +4414,11 @@ are the time-tested tactics that keep adventurers breathing:
   of life saving).
 - **Use conflict.** A ring of conflict makes monsters fight each
   other. Walk into a room full of enemies, put on the ring, and
-  watch them destroy each other while you enjoy the show from the
-  doorway. Nature is beautiful. Two 5.0 caveats: a
-  monster has to *see* you for conflict to affect it (so blind or
-  out-of-sight monsters keep their wits), and the chance scales
-  with your **Charisma**: a high Cha makes it noticeably more
-  reliable, a low Cha makes it flaky.
+  watch from the doorway as they destroy each other. Two 5.0
+  caveats: a monster has to *see* you for conflict to affect it
+  (so blind or out-of-sight monsters keep their wits), and the
+  chance scales with your **Charisma**: high Cha makes it
+  noticeably more reliable, low Cha makes it flaky.
 - **Elbereth for emergencies.** Write it, stand on it, recover.
   The monsters will mill around you looking confused and angry,
   which is exactly how you want them.
