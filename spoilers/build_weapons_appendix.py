@@ -204,7 +204,7 @@ def get_note(name):
 
 # Generate markdown
 out = []
-out.append('### Weapons')
+out.append('### Weapons Tables')
 out.append('')
 out.append("Damage is shown as **vs small / vs large**, the dice rolled before "
            "enchantment and excluding silver/material bonuses. **Wt** is unit weight; "

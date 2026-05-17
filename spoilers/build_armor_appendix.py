@@ -177,7 +177,7 @@ NOTES = {
 }
 
 out = []
-out.append('### Armor')
+out.append('### Armor Tables')
 out.append('')
 out.append("**AC** is the armor-class bonus the piece provides (higher number = "
            "more protection; this is the amount subtracted from your displayed AC). "

@@ -6531,7 +6531,7 @@ possible before spending your gold on scrolls of identify.
 
 ---
 
-### Weapons
+### Weapons Tables
 
 Damage is shown as **vs small / vs large**, the dice rolled before enchantment and excluding silver/material bonuses. **Wt** is unit weight; **Cost** is the unenchanted shop base price in zorkmids. **Hit** is the to-hit bonus baked into the weapon itself (most are 0). Two-handed weapons that prevent shield use and two-weapon combat are flagged in the notes. Weapons are grouped by their skill class so you can see your options within each skill tree at a glance.
 
@@ -6844,7 +6844,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 
 ---
 
-### Armor
+### Armor Tables
 
 **AC** is the armor-class bonus the piece provides (higher number = more protection; this is the amount subtracted from your displayed AC). **MC** is the magic-cancellation level (1-3) — higher MC reduces the chance of magic attacks landing. **Wt** is weight; **Cost** is shop base price. The **Notes** column folds in the intrinsic property granted while the piece is worn, alongside any tactical caveats. Armor is grouped by slot. Dragon scale mail is listed separately because of its sheer importance to the endgame.
 
@@ -7006,7 +7006,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 
 ---
 
-### Bestiary
+### Bestiary Tables
 
 Every monster you might meet. Grouped by ASCII symbol so you can flip to the right page mid-game. **Lvl** is the base monster level. **Spd** is movement rate (12 is normal player speed). **AC** is armor class (lower is better). **MR%** is the percentage chance the monster resists your spells and magic attacks. **Attacks** lists each attack's mode, damage dice, and side effect; multiple attacks separated by `·` are made per turn. **Notes** folds in the most tactically-relevant trait flags (flies, sees-invis, regenerates, poisonous-corpse, etc.) alongside specific heads-ups for monsters that deserve one.
 

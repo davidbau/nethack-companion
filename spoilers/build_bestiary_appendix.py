@@ -384,7 +384,7 @@ for m in MON_RE.finditer(TEXT):
 
 # Compose markdown
 out = []
-out.append('### Bestiary')
+out.append('### Bestiary Tables')
 out.append('')
 out.append("Every monster you might meet. Grouped by ASCII symbol so you can flip "
            "to the right page mid-game. **Lvl** is the base monster level. **Spd** "
