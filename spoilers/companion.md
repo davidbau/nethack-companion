@@ -1262,9 +1262,10 @@ between. What they resist is almost everything the player can throw
 at them: pick-axes bounce off ("Clang!"), wands of digging fizzle,
 weapons swing through harmlessly, and kicking just hurts your foot. Despite long-running advice to the contrary, **throwing or
 otherwise applying a potion of acid does not dissolve iron bars**.
-The bars-corrode code only fires for acid *breath* (from a monster,
-or from you if polymorphed into a yellow dragon, acid blob, black
-naga, etc.).
+The bars-corrode code only fires for an acid ray — acid breath or
+spit (from a monster, or from you polymorphed into a yellow dragon
+or black naga). An acid blob's splash is passive-only and doesn't
+count.
 
 The practical early-game answer is to **dig around** them. Iron bars
 sit in a single tile of wall with ordinary stone on the flanks, so a
