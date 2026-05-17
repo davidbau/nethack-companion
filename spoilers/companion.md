@@ -914,7 +914,7 @@ it, or **levitate over** the pit. Squeezing and breaking each
 cost a point of Luck and break the Sokoban conduct; levitation
 is free of penalty but you can't pick anything up while airborne.
 **Teleport doesn't work here:** the level forbids it. If nothing
-works, take the downstair back to the Oracle level and continue
+works, take the downstair back to the dungeon and continue
 without the prize.
 
 The prize at the top is either a **bag of holding** or an **amulet
