@@ -1,11 +1,17 @@
 # A Traveler's Companion to the <span class="nobr">Mazes of Menace</span>
 
+```{=html}
+<p style="text-align: center; font-style: italic; margin: 1.5em 0;">Do not read this guide aloud. The dungeon is listening.</p>
+```
+
+```{=latex}
 For more than forty years the NetHack community has grown Jay
-Fenlason's "first-semester programming project" into the most
+Fenlason's ``first-semester programming project'' into the most
 unforgivingly intricate and emblematic roguelike, and a thriving
 culture of fun and community beyond the game itself. We hope this
 companion helps bring the joy of NetHack to a new generation of
 players.
+```
 
 ---
 
