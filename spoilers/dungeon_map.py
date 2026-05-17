@@ -194,7 +194,7 @@ GEH: list[TrunkRow] = [
         branch=Branch(
             side='left', color='vlad',
             bubbles=[
-                Bubble('Candelabrum', color='vlad', star=True),
+                Bubble('Vlad the Impaler', '★ Candelabrum', color='vlad'),
                 Bubble("Vlad's Tower", color='vlad'),
             ],
             pearls=[1],
