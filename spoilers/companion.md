@@ -1473,6 +1473,10 @@ memorizing:
 | Message                                          | What it means                                                            |
 |--------------------------------------------------|--------------------------------------------------------------------------|
 | *"You have a sad feeling for a moment, then it passes."* | Your pet just died offscreen.                                        |
+| *"You hear someone counting money."*<br>*"You hear a strange wind."* | Vault on this level.                                            |
+| *"You hear someone cursing shoplifters."* | Shop on this level.                                                                 |
+| *"You hear bubbling water."*<br>*"You hear water falling on coins."* | Fountain on this level.                                          |
+| *"You hear a bugle playing reveille!"* | A soldier just woke nearby soldiers; expect a fight.                                   |
 | *"You feel healthy."*                  | Intrinsic poison resistance gained from a corpse.                                      |
 | *"You feel warm!"*                     | Intrinsic fire resistance gained from a corpse.                                        |
 | *"You feel cool."*                     | Intrinsic cold resistance gained from a corpse.                                        |
@@ -1490,10 +1494,6 @@ memorizing:
 | *"You feel charged with power."*       | Ring of conflict.                                                                      |
 | *"You feel a strange mental acuity."*  | Ring of searching, or potion of object detection with no objects on level. |
 | *"Wow! This makes you feel great!"*    | Potion of restore ability; a drained stat returned to peak.                            |
-| *"You hear someone counting money."*<br>*"You hear a strange wind."* | Vault on this level.                                            |
-| *"You hear someone cursing shoplifters."* | Shop on this level.                                                                 |
-| *"You hear bubbling water."*<br>*"You hear water falling on coins."* | Fountain on this level.                                          |
-| *"You hear a bugle playing reveille!"* | A soldier just woke nearby soldiers; expect a fight.                                   |
 | *"You feel feverish."*                 | Lycanthropy infection from a were-monster. Eat wolfsbane, dip in holy water, or pray.  |
 | *"You are slowing down."*              | You're turning to stone. Immediately eat a lizard corpse, drink acid, or pray.         |
 | *"You are turning into slime."*        | Green-slime contagion. Burn it off (fire scroll/spell/wand) or pray.                   |
