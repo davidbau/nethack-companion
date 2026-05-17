@@ -5465,13 +5465,12 @@ Castle's tune it's listed here too. Use it as a navigation map
 when you're returning to a stash or trying to remember which
 level had the altar you can't dip into.
 
-`v` (or `#chronicle`) opens the **chronicle** — a journal of the
-major events of *this game*: first kills, conduct breaks,
+`v` (or `#chronicle`) opens the **chronicle** — a chronological
+journal of major events from this run: first kills, conduct breaks,
 artifact gifts and crownings, prayer outcomes, level milestones,
 and entries into major branches. It's most useful at the end of
-a run to recount the story; mid-run it's a quick way to check
-which conducts you've broken without having to dig through
-`#conduct`.
+a run to recount the story; for the current state of your conducts
+specifically, `#conduct` is the direct view.
 
 #### Options worth knowing about
 
