@@ -2074,7 +2074,7 @@ range. Melee finishes them but you eat the blast.</td>
 tripe.</td>
 </tr>
 <tr>
-<td><code>g</code></td>
+<td><code>G</code></td>
 <td>Gnomes</td>
 <td>The standard inhabitants of the Gnomish Mines. Individually weak,
 but the Mines have a lot of them — and <strong>plain gnomes, gnome
@@ -2096,7 +2096,8 @@ solid.</td>
 <tr>
 <td><code>i</code></td>
 <td>Imps</td>
-<td>Minor pests. Can steal and teleport.</td>
+<td>Minor pests. Weak claw, regeneration, and a stream of insults —
+annoying but not dangerous.</td>
 </tr>
 <tr>
 <td><code>j</code></td>
@@ -2129,8 +2130,8 @@ gear.</td>
 <td><code>x</code></td>
 <td>Grid bugs</td>
 <td>The weakest monster in the game; they can’t even move diagonally.
-Free XP and free corpses. The <code>x</code> class also covers the
-much-later <strong>xan</strong>, a leg-wound trapper.</td>
+Free XP — they don’t leave corpses. The <code>x</code> class also covers
+the much-later <strong>xan</strong>, a leg-wound trapper.</td>
 </tr>
 <tr>
 <td><code>:</code></td>
@@ -2243,7 +2244,9 @@ See the mimics note below.</td>
 <td><code>M</code></td>
 <td>Mummies</td>
 <td>Aggressive undead with physical claw attacks. Their corpses are
-dangerous to eat (age you). Mummy wrappings are useless.</td>
+dangerous to eat (age you). Mummy wrappings worn as a cloak block
+invisibility — usually a downside, but useful if you’ve gone invisible
+and need a shopkeeper to interact with you.</td>
 </tr>
 <tr>
 <td><code>n</code></td>
@@ -2254,8 +2257,8 @@ range.</td>
 <tr>
 <td><code>N</code></td>
 <td>Nagas</td>
-<td>Large serpent-bodied creatures. The poisonous variants spit a poison
-gaze at range; black nagas breathe acid. Tough and slow.</td>
+<td>Large serpent-bodied creatures. Poisonous nagas spit poison; black
+nagas spit acid. Tough and slow.</td>
 </tr>
 <tr>
 <td><code>O</code></td>
@@ -2685,10 +2688,11 @@ standard reference ever since.</em></p>
 <section id="petrification-stoning" class="level4">
 <h4>Petrification (Stoning)</h4>
 <p>Touching a cockatrice without gloves, eating a cockatrice corpse,
-catching Medusa’s gaze, or stepping on a cockatrice corpse while
-barefoot will turn you to stone. The process is sometimes immediate;
-otherwise it announces itself with <em>“You are slowing down,”</em> then
-<em>“Your limbs are stiffening,”</em> then death, a few turns apart.</p>
+catching Medusa’s gaze, or <strong>kicking</strong> a cockatrice corpse
+barefoot will turn you to stone. <em>Stepping</em> on the corpse is safe
+(don’t pick it up). The process is sometimes immediate; otherwise it
+announces itself with <em>“You are slowing down,”</em> then <em>“Your
+limbs are stiffening,”</em> then death, a few turns apart.</p>
 <p><strong>Defenses ahead of time:</strong> wear gloves around
 cockatrice corpses, use reflection against Medusa, and gain stoning
 resistance from acid blob corpses (which makes you immune outright).</p>
@@ -2753,13 +2757,16 @@ management slide.</p>
 <section id="brainlessness" class="level4">
 <h4>Brainlessness</h4>
 <p>Mind flayers drain Intelligence with their tentacle attacks. If your
-Intelligence reaches zero, you die instantly. A regular mind flayer has
-three tentacle attacks per turn; the <strong>master mind flayer</strong>
-has <em>five</em>, plus a heavier weapon strike, and is widely called
-the most lethal non-boss monster in the dungeon. A single unprepared
-turn next to a master mind flayer can drop your Int by ten. In 5.0, mind
-flayers no longer cause amnesia, but the Intelligence drain is still
-lethal if unchecked.</p>
+Intelligence drops to your racial minimum (3 for humans), the next drain
+kills you — “brainlessness.” A regular mind flayer has three tentacle
+attacks per turn; the <strong>master mind flayer</strong> has
+<em>five</em>, plus a heavier weapon strike, and is widely called the
+most lethal non-boss monster in the dungeon. A single unprepared turn
+next to a master mind flayer can drop your Int by ten. The classic 5.0
+nerf was wand-of-amnesia-style level-forgetting: mind flayers no longer
+wipe your map. They <em>do</em> still wipe memorized spells one hit in
+five (<code>losespells</code>), so spell-reliant characters should
+expect to re-study from spellbooks after a fight.</p>
 <p><strong>Defenses:</strong> Wear a greased helmet to prevent tentacle
 attacks from connecting. Kill them at range (wands, spells). In 5.0 the
 unicorn horn no longer restores lost attributes; to recover drained
@@ -2785,8 +2792,9 @@ Stormbringer (Chaotic), or the Staff of Aesculapius (Healer’s quest
 artifact), or (new in 5.0) wearing <strong>black dragon scale
 mail</strong> (disintegration resistance plus drain resistance, both in
 one slot). Eating a fresh wraith corpse restores one experience level
-and is one of the better reasons to carry a stack of them; tin them if
-you can’t eat now.</p>
+and is one of the better reasons to keep one fresh; wraith corpses weigh
+nothing and can’t be tinned (zero nutritional weight), so eat them as
+soon as the fight ends.</p>
 </section>
 <section id="enchantment-drain" class="level4">
 <h4>Enchantment Drain</h4>
@@ -2825,12 +2833,14 @@ inside.</p>
 <h4>Light Bursts</h4>
 <p><strong>Yellow lights</strong> and <strong>black lights</strong>
 (<code>y</code>, level 3-5) attack by exploding the moment you’re
-adjacent. Yellow lights blind you; black lights hallucinate you. Both
-lights die in the explosion, so the encounter resolves immediately, but
-you spend the next handful of turns blind or hallucinating, which is
-exactly the wrong state to be in if there’s a follow-up fight. Black
-lights are also invisible until they hit you (unless you have <em>see
-invisible</em>).</p>
+adjacent. Yellow lights blind you for <strong>10d20 turns</strong> (up
+to 200 — recover by drinking a potion of healing or applying a unicorn
+horn); black lights hallucinate you for <strong>10d12 turns</strong> (a
+unicorn horn cures it, or wait it out). Both lights die in the
+explosion, so the encounter resolves immediately, but the after-effect
+is long enough to be the real threat — exactly the wrong state to be in
+if there’s a follow-up fight. Black lights are also invisible until they
+hit you (unless you have <em>see invisible</em>).</p>
 <p><strong>Defenses:</strong> Kill them at range with wands, thrown
 daggers, breath weapons, anything that doesn’t bring you adjacent.
 Telepathy or warning helps you see black lights coming. If you do get
@@ -2871,9 +2881,9 @@ is the best insurance on Astral, full stop. Drain resistance handles a
 lot of the incidental damage. Magic resistance does <em>not</em> save
 you from Death’s touch; only life saving will. Carry plenty of food
 (Famine’s drain bypasses normal nutrition) and a unicorn horn for the
-hallucination/stun secondary effects. The Riders are slow at choosing
-targets in a crowd, so a ring of conflict on the Astral Plane can
-sometimes redirect them while you reach an altar.</p>
+hallucination/stun secondary effects. In a crowd, a ring of conflict can
+keep the Riders tangled fighting nearby monsters instead of chasing you,
+sometimes long enough to reach the altar.</p>
 </section>
 <section id="choking" class="level4">
 <h4>Choking</h4>

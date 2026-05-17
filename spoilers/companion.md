@@ -1547,15 +1547,15 @@ AC / attack details on every monster, see the
 | `d`    | Dogs and other canines | The `d` class covers your starting pet (little dog, kitten via cat-class) **and** the most numerous early-game predators. **Jackals** are the single most common cause of death on the public server — they only bite for 1d2, but they spawn in packs and there are a *lot* of them on the upper levels. **Foxes** bite for 1d3 and are faster (speed 15) but spawn alone. Coyotes, dingos, wolves get progressively worse. Tame `d` (your pet, larger dogs you've fed up) help fight everything else. |
 | `e`    | Eyes      | **Floating eyes paralyze on melee hit.** Never hit an `e` in melee. Use ranged attacks. Spheres (flaming/freezing/shocking) explode in a 3×3 area in 5.0; kill them at range. Melee finishes them but you eat the blast. |
 | `f`    | Cats      | Like dogs, often starting pets. Felines can be tamed with tripe.                        |
-| `g`    | Gnomes    | The standard inhabitants of the Gnomish Mines. Individually weak, but the Mines have a lot of them — and **plain gnomes, gnome lords, and (later) gnome rulers are all in the top fifteen causes of death** on the public server, because mid-game players treat the Mines as a milk run and walk into a four-on-one with full-strength enemies. If you're a gnome yourself, most of them are peaceful. |
+| `G`    | Gnomes    | The standard inhabitants of the Gnomish Mines. Individually weak, but the Mines have a lot of them — and **plain gnomes, gnome lords, and (later) gnome rulers are all in the top fifteen causes of death** on the public server, because mid-game players treat the Mines as a milk run and walk into a four-on-one with full-strength enemies. If you're a gnome yourself, most of them are peaceful. |
 | `h`    | Humanoids | Dwarves, bugbears, mind flayers. Wide range of difficulty. **Dwarves in particular are dangerously underrated**: they hit harder than they look, they're armored, and they're the second most common cause of death on the public server because of how many you meet in the Mines. Don't trade blows with one in melee until your AC is solid. |
-| `i`    | Imps      | Minor pests. Can steal and teleport.                                                    |
+| `i`    | Imps      | Minor pests. Weak claw, regeneration, and a stream of insults — annoying but not dangerous. |
 | `j`    | Jellies   | Spotted and ochre jellies. Passive acid damage on melee.                                |
 | `k`    | Kobolds   | Weak individually but sometimes carry poisoned weapons.                                 |
 | `o`    | Orcs      | Numerous and modest in strength one-on-one; dangerous in packs. Hill orcs and Mordor orcs are the common upper-dungeon variants. |
 | `r`    | Rodents   | Rats and rock moles. Rock moles eat metal items, so protect your gear.                  |
 | `s`    | Spiders   | Cave spiders are weak. Giant spiders poison.                                            |
-| `x`    | Grid bugs | The weakest monster in the game; they can't even move diagonally. Free XP and free corpses. The `x` class also covers the much-later **xan**, a leg-wound trapper. |
+| `x`    | Grid bugs | The weakest monster in the game; they can't even move diagonally. Free XP — they don't leave corpses. The `x` class also covers the much-later **xan**, a leg-wound trapper. |
 | `:`    | Lizards   | Newts, geckos, and iguanas are individually weak — usually not too dangerous if you're paying attention. The class matters mostly for the corpses: **lizard corpses cure petrification** (always carry one for cockatrice/Medusa insurance), and newt corpses may restore 1–3 mana to spellcasters. |
 
 #### Mid-Dungeon Threats
@@ -1575,9 +1575,9 @@ AC / attack details on every monster, see the
 | `l`    | Leprechauns       | Steal your gold and teleport away. If you'd rather not lose 100zm at a time, fight at range or skip them. |
 | `L`    | Liches            | Spellcasters. Arch-liches are among the most dangerous monsters in the game.                         |
 | `m`    | Mimics            | Disguised as items, walls, doors, fountains, altars, or boulders. See the mimics note below.         |
-| `M`    | Mummies           | Aggressive undead with physical claw attacks. Their corpses are dangerous to eat (age you). Mummy wrappings are useless. |
+| `M`    | Mummies           | Aggressive undead with physical claw attacks. Their corpses are dangerous to eat (age you). Mummy wrappings worn as a cloak block invisibility — usually a downside, but useful if you've gone invisible and need a shopkeeper to interact with you. |
 | `n`    | Nymphs            | Steal items from your inventory, then teleport away. Fight from range.                               |
-| `N`    | Nagas             | Large serpent-bodied creatures. The poisonous variants spit a poison gaze at range; black nagas breathe acid. Tough and slow. |
+| `N`    | Nagas             | Large serpent-bodied creatures. Poisonous nagas spit poison; black nagas spit acid. Tough and slow. |
 | `O`    | Ogres             | Strong melee fighters. Ogre lords and kings are tougher.                                             |
 | `p`    | Piercers          | Disguise as stalactites; drop from the ceiling onto whatever walks below. The fall does serious damage. Hard to spot in advance. |
 | `P`    | Puddings          | Black puddings split when hit with iron weapons. Don't use iron.                                     |
@@ -1833,11 +1833,11 @@ epitaph.
 #### Petrification (Stoning)
 
 Touching a cockatrice without gloves, eating a cockatrice corpse,
-catching Medusa's gaze, or stepping on a cockatrice corpse while
-barefoot will turn you to stone. The process is sometimes
-immediate; otherwise it announces itself with *"You are slowing
-down,"* then *"Your limbs are stiffening,"* then death, a few
-turns apart.
+catching Medusa's gaze, or **kicking** a cockatrice corpse barefoot
+will turn you to stone. *Stepping* on the corpse is safe (don't
+pick it up). The process is sometimes immediate; otherwise it
+announces itself with *"You are slowing down,"* then *"Your limbs
+are stiffening,"* then death, a few turns apart.
 
 **Defenses ahead of time:** wear gloves around cockatrice corpses,
 use reflection against Medusa, and gain stoning resistance from
@@ -1909,13 +1909,16 @@ management slide.
 #### Brainlessness
 
 Mind flayers drain Intelligence with their tentacle attacks. If
-your Intelligence reaches zero, you die instantly. A regular mind
-flayer has three tentacle attacks per turn; the **master mind
-flayer** has *five*, plus a heavier weapon strike, and is widely
-called the most lethal non-boss monster in the dungeon. A single
-unprepared turn next to a master mind flayer can drop your Int
-by ten. In 5.0, mind flayers no longer cause
-amnesia, but the Intelligence drain is still lethal if unchecked.
+your Intelligence drops to your racial minimum (3 for humans), the
+next drain kills you — "brainlessness." A regular mind flayer has
+three tentacle attacks per turn; the **master mind flayer** has
+*five*, plus a heavier weapon strike, and is widely called the
+most lethal non-boss monster in the dungeon. A single unprepared
+turn next to a master mind flayer can drop your Int by ten. The
+classic 5.0 nerf was wand-of-amnesia-style level-forgetting:
+mind flayers no longer wipe your map. They *do* still wipe
+memorized spells one hit in five (`losespells`), so spell-reliant
+characters should expect to re-study from spellbooks after a fight.
 
 **Defenses:** Wear a greased helmet to prevent tentacle attacks
 from connecting. Kill them at range (wands, spells). In 5.0 the unicorn horn no longer restores lost attributes;
@@ -1943,8 +1946,9 @@ the Staff of Aesculapius (Healer's quest artifact), or (new in 5.0)
 wearing **black dragon scale mail**
 (disintegration resistance plus drain resistance, both in one
 slot). Eating a fresh wraith corpse restores one experience level
-and is one of the better reasons to carry a stack of them; tin
-them if you can't eat now.
+and is one of the better reasons to keep one fresh; wraith corpses
+weigh nothing and can't be tinned (zero nutritional weight), so
+eat them as soon as the fight ends.
 
 #### Enchantment Drain
 
@@ -1984,13 +1988,15 @@ attack the host repeatedly; weapons still work from inside.
 #### Light Bursts
 
 **Yellow lights** and **black lights** (`y`, level 3-5) attack by
-exploding the moment you're adjacent. Yellow lights blind you;
-black lights hallucinate you. Both lights die
-in the explosion, so the encounter resolves immediately, but
-you spend the next handful of turns blind or hallucinating, which
-is exactly the wrong state to be in if there's a follow-up fight.
-Black lights are also invisible until they hit you (unless you
-have *see invisible*).
+exploding the moment you're adjacent. Yellow lights blind you for
+**10d20 turns** (up to 200 — recover by drinking a potion of
+healing or applying a unicorn horn); black lights hallucinate you
+for **10d12 turns** (a unicorn horn cures it, or wait it out).
+Both lights die in the explosion, so the encounter resolves
+immediately, but the after-effect is long enough to be the real
+threat — exactly the wrong state to be in if there's a follow-up
+fight. Black lights are also invisible until they hit you (unless
+you have *see invisible*).
 
 **Defenses:** Kill them at range with wands, thrown daggers, breath
 weapons, anything that doesn't bring you adjacent. Telepathy or
@@ -2034,10 +2040,9 @@ on Astral, full stop. Drain resistance handles a lot of the
 incidental damage. Magic resistance does *not* save you from
 Death's touch; only life saving will. Carry plenty of food
 (Famine's drain bypasses normal nutrition) and a unicorn horn
-for the hallucination/stun secondary effects. The Riders are
-slow at choosing targets in a crowd, so a ring of conflict on
-the Astral Plane can sometimes redirect them while you reach an
-altar.
+for the hallucination/stun secondary effects. In a crowd, a ring
+of conflict can keep the Riders tangled fighting nearby monsters
+instead of chasing you, sometimes long enough to reach the altar.
 
 #### Choking
 
