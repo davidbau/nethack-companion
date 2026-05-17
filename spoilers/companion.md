@@ -1200,7 +1200,7 @@ above them.
 | Sleeping gas trap | Puts you to sleep (helpless for several turns)       |
 | Fire trap         | Burns you, destroys scrolls and potions in inventory |
 | Magic trap        | Random magical effects (some good, some very bad)    |
-| Anti-magic field  | Drains magical energy; hits harder if you carry magic resistance (see below) |
+| Anti-magic field  | Drains magical energy; hits harder if you carry magic resistance |
 | Polymorph trap    | Polymorphs you into a random creature                |
 | Rolling boulder   | Triggers a boulder rolling along a fixed track; takes you out if your square is in its path |
 
