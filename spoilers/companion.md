@@ -4112,13 +4112,12 @@ smites you.
 
 #### Prayer
 
-> *Matthew Lahut's Praying Spoiler, originally posted to RGRN and
-> archived on steelypips.org, remains the definitive reference for
-> the prayer system. The mechanics below draw from his work.*
-
 Praying (`#pray`) calls on your god for help. When conditions are
 right, prayer is the single most powerful emergency tool in the
 game. When conditions are wrong, it can kill you.
+
+> *The mechanics below are inspired by Matthew Lahut's Praying
+> Spoiler, the long-running RGRN reference for the prayer system.*
 
 **What prayer fixes (in priority order).** Your god addresses your
 problems in a specific order, fixing the most urgent first:
