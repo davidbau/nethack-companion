@@ -6952,15 +6952,16 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | leather armor | +2 | 1 | 150 | 5 | leather |  |
 | leather jacket | +1 | — | 30 | 10 | leather |  |
 | gray dragon scale mail | +9 | — | 40 | 1200 | dragonhide | Magic resistance. Endgame body-armor goal. |
-| gold dragon scale mail | +9 | — | 40 | 900 | dragonhide | Emits light. |
 | silver dragon scale mail | +9 | — | 40 | 1200 | dragonhide | Reflection. |
-| red dragon scale mail | +9 | — | 40 | 900 | dragonhide | Fire resistance. |
-| white dragon scale mail | +9 | — | 40 | 900 | dragonhide | Cold resistance. |
-| orange dragon scale mail | +9 | — | 40 | 900 | dragonhide | Sleep resistance. |
-| black dragon scale mail | +9 | — | 40 | 1200 | dragonhide | Disintegration resistance. |
+| shimmering dragon scale mail | +9 | — | 40 | 1200 | dragonhide | Displacement. |
+| black dragon scale mail | +9 | — | 40 | 1200 | dragonhide | Disintegration resistance + drain resistance. |
+| yellow dragon scale mail | +9 | — | 40 | 900 | dragonhide | Acid resistance + stoning resistance. Rare. |
+| orange dragon scale mail | +9 | — | 40 | 900 | dragonhide | Sleep resistance + free action. |
+| white dragon scale mail | +9 | — | 40 | 900 | dragonhide | Cold resistance + slow digestion. |
+| red dragon scale mail | +9 | — | 40 | 900 | dragonhide | Fire resistance + infravision. |
+| green dragon scale mail | +9 | — | 40 | 900 | dragonhide | Poison resistance + sickness resistance. |
 | blue dragon scale mail | +9 | — | 40 | 900 | dragonhide | Shock resistance. |
-| green dragon scale mail | +9 | — | 40 | 900 | dragonhide | Poison resistance. |
-| yellow dragon scale mail | +9 | — | 40 | 900 | dragonhide | Acid resistance. Rare. |
+| gold dragon scale mail | +9 | — | 40 | 900 | dragonhide | Hallucination resistance + permanent light (only body-slot light source). |
 
 :::
 
@@ -6971,15 +6972,16 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
 | gray dragon scales | +3 | — | 40 | 700 | dragonhide | Magic resistance. Make-into upgrade to scale mail. |
-| gold dragon scales | +3 | — | 40 | 500 | dragonhide |  |
 | silver dragon scales | +3 | — | 40 | 700 | dragonhide | Reflection. |
-| red dragon scales | +3 | — | 40 | 500 | dragonhide | Fire resistance. |
-| white dragon scales | +3 | — | 40 | 500 | dragonhide | Cold resistance. |
-| orange dragon scales | +3 | — | 40 | 500 | dragonhide | Sleep resistance. |
-| black dragon scales | +3 | — | 40 | 700 | dragonhide | Disintegration resistance. |
+| shimmering dragon scales | +3 | — | 40 | 700 | dragonhide | Displacement. |
+| black dragon scales | +3 | — | 40 | 700 | dragonhide | Disintegration resistance + drain resistance. |
+| yellow dragon scales | +3 | — | 40 | 500 | dragonhide | Acid resistance + stoning resistance. |
+| orange dragon scales | +3 | — | 40 | 500 | dragonhide | Sleep resistance + free action. |
+| white dragon scales | +3 | — | 40 | 500 | dragonhide | Cold resistance + slow digestion. |
+| red dragon scales | +3 | — | 40 | 500 | dragonhide | Fire resistance + infravision. |
+| green dragon scales | +3 | — | 40 | 500 | dragonhide | Poison resistance + sickness resistance. |
 | blue dragon scales | +3 | — | 40 | 500 | dragonhide | Shock resistance. |
-| green dragon scales | +3 | — | 40 | 500 | dragonhide | Poison resistance. |
-| yellow dragon scales | +3 | — | 40 | 500 | dragonhide | Acid resistance. |
+| gold dragon scales | +3 | — | 40 | 500 | dragonhide | Hallucination resistance + permanent light. |
 
 :::
 
