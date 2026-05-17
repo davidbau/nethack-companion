@@ -456,8 +456,30 @@ def class_intro(label_word, items):
     sentences = []
     if universal:
         ordered_u = sorted(universal, key=order_key)
-        prose = [PROSE_FORM.get(lbl, lbl) for lbl in ordered_u]
-        sentences.append(f'All {label_word} {join_with_and(prose)}.')
+        # Group consecutive "are X" predicates into a single "are X, Y, Z"
+        # clause so we don't get "are mindless, are sleep-resistant, are
+        # poison-resistant" with three are's.
+        prose_parts = []
+        i = 0
+        while i < len(ordered_u):
+            lbl = ordered_u[i]
+            form = PROSE_FORM.get(lbl, lbl)
+            if form.startswith('are '):
+                # Collect a run of "are X" predicates and merge.
+                adjectives = [form[len('are '):]]
+                j = i + 1
+                while j < len(ordered_u):
+                    next_form = PROSE_FORM.get(ordered_u[j], ordered_u[j])
+                    if not next_form.startswith('are '):
+                        break
+                    adjectives.append(next_form[len('are '):])
+                    j += 1
+                prose_parts.append('are ' + join_with_and(adjectives))
+                i = j
+            else:
+                prose_parts.append(form)
+                i += 1
+        sentences.append(f'All {label_word} {join_with_and(prose_parts)}.')
     for label, exception in sorted(almost, key=order_key):
         verb = PROSE_FORM.get(label, label)
         sentences.append(f'All except *{exception}* also {verb}.')
@@ -471,6 +493,283 @@ def fmt_flags_excluding(mon, exclude_labels):
                             else 100 + list(MR_FLAGS.values()).index(l)
                             if l in MR_FLAGS.values() else 999))
 
+# One-sentence (occasionally two-sentence) strategic prose per class.
+# Should answer "what should I know about fighting this letter that the
+# row data doesn't tell me?" — keep links and concrete tactical advice;
+# skip flavor descriptions of what the monster looks like.
+CLASS_PROSE = {
+    'S_ANT': (
+        "Insects, often in groups. The soldier ant is the early game's "
+        "infamous killer: its poison sting can two-shot a low-level "
+        "hero. Killer bees swarm; the queen bee in a beehive room is "
+        "tough on her own."
+    ),
+    'S_BLOB': (
+        "Slow, mindless, immune to a lot. Don't melee an acid blob "
+        "with bare hands or a metal weapon you care about: the passive "
+        "acid corrodes both. Gelatinous cubes paralyse on touch."
+    ),
+    'S_COCKATRICE': (
+        "Medieval bestiary creature: a chicken with a serpent's tail "
+        "whose touch turns flesh to stone. Carry a lizard corpse, "
+        "fight gloved, and never wield a cockatrice corpse as a "
+        "weapon unless your role explicitly resists stoning. See "
+        "[Petrification](#petrification-stoning)."
+    ),
+    'S_DOG': (
+        "Wild canines hunt in packs. Domestic ones can be tamed by "
+        "feeding (see [Making Friends](#making-friends)). Werejackals "
+        "and werewolves can give lycanthropy."
+    ),
+    'S_EYE': (
+        "The floating eye's passive paralysis gaze is the single most "
+        "famous newbie killer in the game: never melee one without "
+        "free action, blindness, or a ranged attack."
+    ),
+    'S_FELINE': (
+        "Cats. Several are starting pets. Tigers are durable melee "
+        "and good early companions if tamed."
+    ),
+    'S_GREMLIN': (
+        "Touch in water (or just at night) can steal an intrinsic. Kill "
+        "them on dry land, ideally during daylight."
+    ),
+    'S_HUMANOID': (
+        "Dwarves and similar. Dwarves carry better-than-average loot "
+        "(weapons, armor, pick-axes) and can wreck low-level heroes "
+        "with that loot."
+    ),
+    'S_IMP': (
+        "Annoying minor demons. Imps steal items and teleport away; "
+        "quasits drain Dexterity. None individually scary."
+    ),
+    'S_JELLY': (
+        "Stationary or near-stationary. The blue jelly's passive cold "
+        "and the spotted jelly's passive acid bite even when you hit them."
+    ),
+    'S_KOBOLD': (
+        "Weak early-game fodder. Most are poisonous to eat — leave the "
+        "corpses unless you have poison resistance."
+    ),
+    'S_LEPRECHAUN': (
+        "Steals gold and teleports away. The fix is to carry no gold "
+        "near them, or to kill from range. The corpse drops the gold back."
+    ),
+    'S_MIMIC': (
+        "Disguised as items, walls, or fountains. Common in shops and "
+        "zoos. The giveaway is the wrong object on the wrong square."
+    ),
+    'S_NYMPH': (
+        "Steals one item and teleports away. The cure is to engage from "
+        "range, block her path with pets, or wear an amulet of life "
+        "saving and steal the item back from her corpse later."
+    ),
+    'S_ORC': (
+        "Pack hunters with mediocre loot but real numbers. The Mines "
+        "are full of them; bring a chokepoint."
+    ),
+    'S_PIERCER': (
+        "Clings to the ceiling and drops on you when you walk under. "
+        "Hits hard for its level; you can't avoid the drop without "
+        "flying or a clear ceiling."
+    ),
+    'S_QUADRUPED': (
+        "Mixed bag. Rothes are early-game wreckers (three attacks per "
+        "turn). Mumakil are slow but extremely sturdy."
+    ),
+    'S_RODENT': (
+        "Mostly nuisance fodder. Giant rats are common in the early "
+        "dungeon; their corpses are safe food."
+    ),
+    'S_SPIDER': (
+        "Includes scorpions and centipedes. Many have poison stings. "
+        "Spider-class monsters are common as the source of poisonous-"
+        "corpse food poisoning."
+    ),
+    'S_TRAPPER': (
+        "Stationary engulfers that look like a piece of dungeon. "
+        "Stepping into one starts a swallow attack you can't easily "
+        "escape. Identify with `;` (farlook) before walking into "
+        "obvious-trap squares."
+    ),
+    'S_UNICORN': (
+        "White, gray, and black — Lawful, Neutral, Chaotic. Killing "
+        "a cross-aligned one with a thrown unicorn horn or melee gives "
+        "Luck. Killing a co-aligned one is a major Luck penalty."
+    ),
+    'S_VORTEX': (
+        "Stationary elemental clouds. They wait for you to step in. "
+        "Different colors deal different damage types (fire / cold / "
+        "lightning / poison). Energy vortex drains Pw."
+    ),
+    'S_WORM': (
+        "Long worms become a maze of tail segments as they grow. "
+        "Purple worms swallow you whole and digest. Don't get cornered."
+    ),
+    'S_XAN': (
+        "Grid bugs are trivial; xans, the bigger relatives, sting your "
+        "legs and slow you down."
+    ),
+    'S_LIGHT': (
+        "Yellow light bursts on death and blinds you (10d20 damage if "
+        "unresistant). Black light hallucinates. See "
+        "[Light Bursts](#light-bursts)."
+    ),
+    'S_ZRUTY': (
+        "Slavic folklore — a hairy wild man of the woods. One species, "
+        "one role here: a nasty mid-game brute. Good XP if you can "
+        "handle the three-attack flurry."
+    ),
+    'S_ANGEL': (
+        "Powerful late-game spellcasters with weapons. Astral-Plane "
+        "Angels guard each High Priest — see "
+        "[The Ascension Run](#the-ascension-run)."
+    ),
+    'S_BAT': (
+        "Erratic flyers, mostly nuisance. Vampire bats can give "
+        "lycanthropy."
+    ),
+    'S_CENTAUR': (
+        "Mounted archers with strong physical attacks. They wield "
+        "bows and shoot at range."
+    ),
+    'S_DRAGON': (
+        "Each color breathes its element type. Reflection bounces the "
+        "ranged breath back. Adults are sources of dragon scale mail; "
+        "babies are weaker but breathe the same. See "
+        "[Dragon Scale Mail](#armor-tables)."
+    ),
+    'S_ELEMENTAL': (
+        "Air engulfs and suffocates, fire deals fire damage, water "
+        "drowns if you're adjacent in water, earth is slow but tough."
+    ),
+    'S_FUNGUS': (
+        "Stationary. Lichen corpses never rot — keep one in your "
+        "pack as iron rations. Violet and yellow molds bite back on "
+        "melee with elemental passive damage."
+    ),
+    'S_GNOME': (
+        "Mines residents. Gnomish PCs find most of them peaceful. The "
+        "gnome lord and gnomish wizard are real threats; the gnome king "
+        "is rare but dangerous."
+    ),
+    'S_GIANT': (
+        "Boulder throwers. Storm / fire / frost giants match the "
+        "dragon elements; titans cast spells. Eating a giant's corpse "
+        "raises Strength."
+    ),
+    'S_invisible': (
+        "Single species — the invisible stalker. Permanent invis "
+        "plus see-invis itself. Get see-invisible or telepathy."
+    ),
+    'S_JABBERWOCK': (
+        "The monster from Lewis Carroll's *Jabberwocky* (\"O frabjous "
+        "day! Callooh! Callay!\"). Slow, tough, hits hard. Free XP if "
+        "you're set up for the fight; lethal if you walk into one "
+        "early. Vorpal Blade was made for beheading it."
+    ),
+    'S_KOP': (
+        "Police force triggered by stealing from shops or hurting "
+        "shopkeepers. Mostly weak individually but they swarm."
+    ),
+    'S_LICH': (
+        "Skeletal spellcasters. Higher tiers cast double-trouble and "
+        "Death; master and arch-liches require magic resistance to "
+        "survive their spell barrages."
+    ),
+    'S_MUMMY': (
+        "Touch curses your worn items. Bring uncursing on hand "
+        "(holy water, remove curse)."
+    ),
+    'S_NAGA': (
+        "Long serpentine bodies, varied breath weapons (acid / fire / "
+        "poison). Healers find the guardian naga peaceful; everyone "
+        "else does not."
+    ),
+    'S_OGRE': (
+        "Big melee brutes. Ogre kings throw boulders. Drop decent "
+        "weapons and armor."
+    ),
+    'S_PUDDING': (
+        "Splits when you hit them. Brown puddings corrode armor on "
+        "touch; black puddings corrode both armor and weapons. Fire-"
+        "kill them so they don't split, or pick a chokepoint."
+    ),
+    'S_QUANTMECH': (
+        "Touch teleports you randomly. The annoyance is the lost "
+        "position more than the damage — but in dangerous neighbourhoods "
+        "a random teleport CAN kill."
+    ),
+    'S_RUSTMONST': (
+        "Rust monsters rust iron equipment on touch; disenchanters "
+        "remove the enchantment off your +5 long sword. Strip iron "
+        "armor / switch to silver or non-iron weapons before engaging."
+    ),
+    'S_SNAKE': (
+        "Mostly poisonous. The pit viper and pit fiend are the "
+        "dangerous ones; garter snakes are fodder."
+    ),
+    'S_TROLL': (
+        "Regenerates from corpses. Eat the corpse, burn it with fire, "
+        "or zap it with magic to keep it dead. A troll left behind on "
+        "an old level will be alive when you come back."
+    ),
+    'S_UMBER': (
+        "Confusion gaze. Don't melee without blindness or free action; "
+        "the confusion stacks and makes spellcasting impossible."
+    ),
+    'S_VAMPIRE': (
+        "Drains XL on bite. Shapeshifts to bat or cloud. Vlad the "
+        "Impaler is the vampire boss in his Tower."
+    ),
+    'S_WRAITH': (
+        "Drains XL on touch. The wraith corpse, however, **gives** a "
+        "level when eaten: one of the best food items in the game. "
+        "Always eat a wraith corpse if you can."
+    ),
+    'S_XORN': (
+        "D&D's three-armed, three-eyed creatures from the Elemental "
+        "Plane of Earth. In the dungeon they tunnel through rock and "
+        "eat metal: your weapons and armor are at risk on touch. "
+        "Hits hard for its level; magic resistance helps."
+    ),
+    'S_YETI': (
+        "Apes and great apes mostly; sasquatches are fast. Carnivore "
+        "corpses are safe food."
+    ),
+    'S_ZOMBIE': (
+        "Slow undead. Easy to kite. Corpses are usually unsafe to eat. "
+        "Big zombie populations live in morgues."
+    ),
+    'S_HUMAN': (
+        "The catch-all `@` class: shopkeepers, priests, watchmen, "
+        "Kops, role nemeses, quest leaders, valkyries, ninja, and "
+        "the player. Most start peaceful; the ones that don't are "
+        "very dangerous."
+    ),
+    'S_DEMON': (
+        "Major demons. Most can gate in reinforcements (a single "
+        "barbed devil in your face can become five). Silver weapons "
+        "and Demonbane do extra damage. Demon lords can be bribed "
+        "with gold to leave."
+    ),
+    'S_GOLEM': (
+        "Mindless constructs. Wood and leather golems are early-game "
+        "fodder; iron, stone, and clay golems are dangerous. The "
+        "rare gold golem is a walking treasure pile."
+    ),
+    'S_EEL': (
+        "Lives in water. Wraps around you and drags you under to "
+        "drown. Don't fight one from a water square without magical "
+        "breathing or escape."
+    ),
+    'S_LIZARD': (
+        "Mostly harmless. **Lizard corpses cure petrification and "
+        "never rot.** Carry one at all times — this is the standard "
+        "answer to cockatrices and Medusa."
+    ),
+}
+
 for sym in SYM_ORDER:
     items = groups.get(sym)
     if not items:
@@ -478,6 +777,12 @@ for sym in SYM_ORDER:
     ch, label = SYM_TO_CHAR[sym]
     out.append(f'#### {label} `{ch}`')
     out.append('')
+    # Strategic prose intro: one or two sentences about what to know
+    # tactically and (where relevant) a snippet of trivia about the
+    # class's origin. Curated, not generated.
+    if sym in CLASS_PROSE:
+        out.append(CLASS_PROSE[sym])
+        out.append('')
     # Per-class hoisting: pull out flags/resistances shared by every (or
     # all-but-one) member, mention them in a one-line intro, and strip
     # them from the per-row flag column. The hoisted traits become

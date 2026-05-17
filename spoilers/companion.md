@@ -44,7 +44,7 @@ reference manual that comes with the game. This document is a
 *strategic* guide. It assumes you already know how to play and want
 to know how to *survive*.
 
-But if you've died to one too many soldier ants you swung at without
+But if you've died to one too many floating eyes you punched without
 thinking, or you're tired of starving on dungeon level four because
 you didn't know you could pray, read on. We'll do our best to keep
 you alive.
@@ -6785,7 +6785,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | rubber hose | 1d4 / 1d3 | 20 | 3 | — | plastic | Joke weapon (1d4 / 1d3). Damages even Shades, who are immune to most. |
-| bullwhip | 1d2 / 1 | 20 | 4 | — | leather | The Archeologist's starter; can disarm a monster. |
+| bullwhip | 1d2 / 1 | 20 | 4 | — | leather | Archeologist's starter. Apply to disarm an adjacent monster, or to yank yourself out of a pit (anchors on a nearby boulder, furniture, or big monster). |
 
 </div>
 
@@ -7028,6 +7028,8 @@ Every monster you might meet. Grouped by ASCII symbol so you can flip to the rig
 
 #### Ants and insects `a`
 
+Insects, often in groups. The soldier ant is the early game's infamous killer: its poison sting can two-shot a low-level hero. Killer bees swarm; the queen bee in a beehive room is tough on her own.
+
 <div class="dense-table">
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
@@ -7043,7 +7045,9 @@ Every monster you might meet. Grouped by ASCII symbol so you can flip to the rig
 
 #### Blobs `b`
 
-All blobs are mindless, are sleep-resistant, and are poison-resistant.
+Slow, mindless, immune to a lot. Don't melee an acid blob with bare hands or a metal weapon you care about: the passive acid corrodes both. Gelatinous cubes paralyse on touch.
+
+All blobs are mindless, sleep-resistant, and poison-resistant.
 
 <div class="dense-table">
 
@@ -7056,6 +7060,8 @@ All blobs are mindless, are sleep-resistant, and are poison-resistant.
 </div>
 
 #### Cockatrices `c`
+
+Medieval bestiary creature: a chicken with a serpent's tail whose touch turns flesh to stone. Carry a lizard corpse, fight gloved, and never wield a cockatrice corpse as a weapon unless your role explicitly resists stoning. See [Petrification](#petrification-stoning).
 
 All cockatrices are poison-resistant.
 
@@ -7070,6 +7076,8 @@ All cockatrices are poison-resistant.
 </div>
 
 #### Dogs and canines `d`
+
+Wild canines hunt in packs. Domestic ones can be tamed by feeding (see [Making Friends](#making-friends)). Werejackals and werewolves can give lycanthropy.
 
 <div class="dense-table">
 
@@ -7096,6 +7104,8 @@ All cockatrices are poison-resistant.
 
 #### Eyes and spheres `e`
 
+The floating eye's passive paralysis gaze is the single most famous newbie killer in the game: never melee one without free action, blindness, or a ranged attack.
+
 All eyes and spheres fly. All except *floating eye* also are mindless.
 
 <div class="dense-table">
@@ -7111,6 +7121,8 @@ All eyes and spheres fly. All except *floating eye* also are mindless.
 </div>
 
 #### Felines `f`
+
+Cats. Several are starting pets. Tigers are durable melee and good early companions if tamed.
 
 <div class="dense-table">
 
@@ -7129,6 +7141,8 @@ All eyes and spheres fly. All except *floating eye* also are mindless.
 
 #### Gremlins `g`
 
+Touch in water (or just at night) can steal an intrinsic. Kill them on dry land, ideally during daylight.
+
 <div class="dense-table">
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
@@ -7140,6 +7154,8 @@ All eyes and spheres fly. All except *floating eye* also are mindless.
 </div>
 
 #### Humanoids `h`
+
+Dwarves and similar. Dwarves carry better-than-average loot (weapons, armor, pick-axes) and can wreck low-level heroes with that loot.
 
 <div class="dense-table">
 
@@ -7156,6 +7172,8 @@ All eyes and spheres fly. All except *floating eye* also are mindless.
 </div>
 
 #### Imps and minor demons `i`
+
+Annoying minor demons. Imps steal items and teleport away; quasits drain Dexterity. None individually scary.
 
 All imps and minor demons follow you up and down stairs. All except *imp* also are poison-resistant.
 
@@ -7174,7 +7192,9 @@ All imps and minor demons follow you up and down stairs. All except *imp* also a
 
 #### Jellies `j`
 
-All jellies are amorphous and are mindless.
+Stationary or near-stationary. The blue jelly's passive cold and the spotted jelly's passive acid bite even when you hit them.
+
+All jellies are amorphous and mindless.
 
 <div class="dense-table">
 
@@ -7187,6 +7207,8 @@ All jellies are amorphous and are mindless.
 </div>
 
 #### Kobolds `k`
+
+Weak early-game fodder. Most are poisonous to eat — leave the corpses unless you have poison resistance.
 
 All kobolds have poisonous corpses and are poison-resistant.
 
@@ -7203,6 +7225,8 @@ All kobolds have poisonous corpses and are poison-resistant.
 
 #### Leprechauns `l`
 
+Steals gold and teleports away. The fix is to carry no gold near them, or to kill from range. The corpse drops the gold back.
+
 <div class="dense-table">
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
@@ -7212,6 +7236,8 @@ All kobolds have poisonous corpses and are poison-resistant.
 </div>
 
 #### Mimics `m`
+
+Disguised as items, walls, or fountains. Common in shops and zoos. The giveaway is the wrong object on the wrong square.
 
 All mimics are amorphous, hide, and are acid-resistant.
 
@@ -7227,6 +7253,8 @@ All mimics are amorphous, hide, and are acid-resistant.
 
 #### Nymphs `n`
 
+Steals one item and teleports away. The cure is to engage from range, block her path with pets, or wear an amulet of life saving and steal the item back from her corpse later.
+
 All nymphs teleport.
 
 <div class="dense-table">
@@ -7240,6 +7268,8 @@ All nymphs teleport.
 </div>
 
 #### Orcs `o`
+
+Pack hunters with mediocre loot but real numbers. The Mines are full of them; bring a chokepoint.
 
 <div class="dense-table">
 
@@ -7258,6 +7288,8 @@ All nymphs teleport.
 
 #### Piercers `p`
 
+Clings to the ceiling and drops on you when you walk under. Hits hard for its level; you can't avoid the drop without flying or a clear ceiling.
+
 All piercers hide.
 
 <div class="dense-table">
@@ -7271,6 +7303,8 @@ All piercers hide.
 </div>
 
 #### Quadrupeds `q`
+
+Mixed bag. Rothes are early-game wreckers (three attacks per turn). Mumakil are slow but extremely sturdy.
 
 <div class="dense-table">
 
@@ -7288,6 +7322,8 @@ All piercers hide.
 
 #### Rodents `r`
 
+Mostly nuisance fodder. Giant rats are common in the early dungeon; their corpses are safe food.
+
 <div class="dense-table">
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
@@ -7302,6 +7338,8 @@ All piercers hide.
 </div>
 
 #### Arachnids and centipedes `s`
+
+Includes scorpions and centipedes. Many have poison stings. Spider-class monsters are common as the source of poisonous-corpse food poisoning.
 
 All arachnids and centipedes are poison-resistant.
 
@@ -7319,6 +7357,8 @@ All arachnids and centipedes are poison-resistant.
 
 #### Trappers and lurkers `t`
 
+Stationary engulfers that look like a piece of dungeon. Stepping into one starts a swallow attack you can't easily escape. Identify with `;` (farlook) before walking into obvious-trap squares.
+
 All trappers and lurkers hide and follow you up and down stairs.
 
 <div class="dense-table">
@@ -7331,6 +7371,8 @@ All trappers and lurkers hide and follow you up and down stairs.
 </div>
 
 #### Unicorns and horses `u`
+
+White, gray, and black — Lawful, Neutral, Chaotic. Killing a cross-aligned one with a thrown unicorn horn or melee gives Luck. Killing a co-aligned one is a major Luck penalty.
 
 <div class="dense-table">
 
@@ -7346,6 +7388,8 @@ All trappers and lurkers hide and follow you up and down stairs.
 </div>
 
 #### Vortices `v`
+
+Stationary elemental clouds. They wait for you to step in. Different colors deal different damage types (fire / cold / lightning / poison). Energy vortex drains Pw.
 
 All vortices fly and are mindless.
 
@@ -7364,6 +7408,8 @@ All vortices fly and are mindless.
 
 #### Worms `w`
 
+Long worms become a maze of tail segments as they grow. Purple worms swallow you whole and digest. Don't get cornered.
+
 <div class="dense-table">
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
@@ -7376,6 +7422,8 @@ All vortices fly and are mindless.
 </div>
 
 #### Xans and fantastic insects `x`
+
+Grid bugs are trivial; xans, the bigger relatives, sting your legs and slow you down.
 
 All xans and fantastic insects are poison-resistant.
 
@@ -7390,7 +7438,9 @@ All xans and fantastic insects are poison-resistant.
 
 #### Lights `y`
 
-All lights fly, are amorphous, and are mindless.
+Yellow light bursts on death and blinds you (10d20 damage if unresistant). Black light hallucinates. See [Light Bursts](#light-bursts).
+
+All lights fly and are amorphous and mindless.
 
 <div class="dense-table">
 
@@ -7403,6 +7453,8 @@ All lights fly, are amorphous, and are mindless.
 
 #### Zruties `z`
 
+Slavic folklore — a hairy wild man of the woods. One species, one role here: a nasty mid-game brute. Good XP if you can handle the three-attack flurry.
+
 <div class="dense-table">
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
@@ -7412,6 +7464,8 @@ All lights fly, are amorphous, and are mindless.
 </div>
 
 #### Angelic beings `A`
+
+Powerful late-game spellcasters with weapons. Astral-Plane Angels guard each High Priest — see [The Ascension Run](#the-ascension-run).
 
 All angelic beings follow you up and down stairs. All except *Aleax* also fly. All except *couatl* also see invisible.
 
@@ -7429,6 +7483,8 @@ All angelic beings follow you up and down stairs. All except *Aleax* also fly. A
 
 #### Bats and birds `B`
 
+Erratic flyers, mostly nuisance. Vampire bats can give lycanthropy.
+
 All bats and birds fly.
 
 <div class="dense-table">
@@ -7444,6 +7500,8 @@ All bats and birds fly.
 
 #### Centaurs `C`
 
+Mounted archers with strong physical attacks. They wield bows and shoot at range.
+
 <div class="dense-table">
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
@@ -7455,6 +7513,8 @@ All bats and birds fly.
 </div>
 
 #### Dragons `D`
+
+Each color breathes its element type. Reflection bounces the ranged breath back. Adults are sources of dragon scale mail; babies are weaker but breathe the same. See [Dragon Scale Mail](#armor-tables).
 
 All except *Chromatic Dragon* also fly.
 
@@ -7489,6 +7549,8 @@ All except *Chromatic Dragon* also fly.
 
 #### Elementals `E`
 
+Air engulfs and suffocates, fire deals fire damage, water drowns if you're adjacent in water, earth is slow but tough.
+
 All except *stalker* also are mindless.
 
 <div class="dense-table">
@@ -7504,6 +7566,8 @@ All except *stalker* also are mindless.
 </div>
 
 #### Fungi and molds `F`
+
+Stationary. Lichen corpses never rot — keep one in your pack as iron rations. Violet and yellow molds bite back on melee with elemental passive damage.
 
 All fungi and molds are mindless.
 
@@ -7523,6 +7587,8 @@ All fungi and molds are mindless.
 
 #### Gnomes `G`
 
+Mines residents. Gnomish PCs find most of them peaceful. The gnome lord and gnomish wizard are real threats; the gnome king is rare but dangerous.
+
 <div class="dense-table">
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
@@ -7535,6 +7601,8 @@ All fungi and molds are mindless.
 </div>
 
 #### Giant humanoids `H`
+
+Boulder throwers. Storm / fire / frost giants match the dragon elements; titans cast spells. Eating a giant's corpse raises Strength.
 
 <div class="dense-table">
 
@@ -7556,6 +7624,8 @@ All fungi and molds are mindless.
 
 #### Jabberwocks `J`
 
+The monster from Lewis Carroll's *Jabberwocky* ("O frabjous day! Callooh! Callay!"). Slow, tough, hits hard. Free XP if you're set up for the fight; lethal if you walk into one early. Vorpal Blade was made for beheading it.
+
 <div class="dense-table">
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
@@ -7565,6 +7635,8 @@ All fungi and molds are mindless.
 </div>
 
 #### Keystone Kops `K`
+
+Police force triggered by stealing from shops or hurting shopkeepers. Mostly weak individually but they swarm.
 
 <div class="dense-table">
 
@@ -7579,7 +7651,9 @@ All fungi and molds are mindless.
 
 #### Liches `L`
 
-All liches regenerate, have poisonous corpses, are undead, are cold-resistant, are sleep-resistant, and are poison-resistant.
+Skeletal spellcasters. Higher tiers cast double-trouble and Death; master and arch-liches require magic resistance to survive their spell barrages.
+
+All liches regenerate, have poisonous corpses, and are undead, cold-resistant, sleep-resistant, and poison-resistant.
 
 <div class="dense-table">
 
@@ -7594,7 +7668,9 @@ All liches regenerate, have poisonous corpses, are undead, are cold-resistant, a
 
 #### Mummies `M`
 
-All mummies have poisonous corpses, are mindless, and are undead.
+Touch curses your worn items. Bring uncursing on hand (holy water, remove curse).
+
+All mummies have poisonous corpses and are mindless and undead.
 
 <div class="dense-table">
 
@@ -7612,6 +7688,8 @@ All mummies have poisonous corpses, are mindless, and are undead.
 </div>
 
 #### Nagas `N`
+
+Long serpentine bodies, varied breath weapons (acid / fire / poison). Healers find the guardian naga peaceful; everyone else does not.
 
 All nagas are poison-resistant.
 
@@ -7632,6 +7710,8 @@ All nagas are poison-resistant.
 
 #### Ogres `O`
 
+Big melee brutes. Ogre kings throw boulders. Drop decent weapons and armor.
+
 <div class="dense-table">
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
@@ -7644,7 +7724,9 @@ All nagas are poison-resistant.
 
 #### Puddings and oozes `P`
 
-All puddings and oozes are amorphous, are mindless, are cold-resistant, are poison-resistant, are acid-resistant, and are petrification-resistant. All except *gray ooze* also are shock-resistant.
+Splits when you hit them. Brown puddings corrode armor on touch; black puddings corrode both armor and weapons. Fire-kill them so they don't split, or pick a chokepoint.
+
+All puddings and oozes are amorphous, mindless, cold-resistant, poison-resistant, acid-resistant, and petrification-resistant. All except *gray ooze* also are shock-resistant.
 
 <div class="dense-table">
 
@@ -7659,6 +7741,8 @@ All puddings and oozes are amorphous, are mindless, are cold-resistant, are pois
 
 #### Quantum mechanics `Q`
 
+Touch teleports you randomly. The annoyance is the lost position more than the damage — but in dangerous neighbourhoods a random teleport CAN kill.
+
 All quantum mechanics teleport and have poisonous corpses.
 
 <div class="dense-table">
@@ -7672,6 +7756,8 @@ All quantum mechanics teleport and have poisonous corpses.
 
 #### Rust monsters and disenchanters `R`
 
+Rust monsters rust iron equipment on touch; disenchanters remove the enchantment off your +5 long sword. Strip iron armor / switch to silver or non-iron weapons before engaging.
+
 <div class="dense-table">
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
@@ -7682,6 +7768,8 @@ All quantum mechanics teleport and have poisonous corpses.
 </div>
 
 #### Snakes `S`
+
+Mostly poisonous. The pit viper and pit fiend are the dangerous ones; garter snakes are fodder.
 
 All snakes swim. All except *python* also hide.
 
@@ -7700,6 +7788,8 @@ All snakes swim. All except *python* also hide.
 
 #### Trolls `T`
 
+Regenerates from corpses. Eat the corpse, burn it with fire, or zap it with magic to keep it dead. A troll left behind on an old level will be alive when you come back.
+
 All trolls regenerate and follow you up and down stairs.
 
 <div class="dense-table">
@@ -7716,6 +7806,8 @@ All trolls regenerate and follow you up and down stairs.
 
 #### Umber hulks `U`
 
+Confusion gaze. Don't melee without blindness or free action; the confusion stacks and makes spellcasting impossible.
+
 <div class="dense-table">
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
@@ -7725,6 +7817,8 @@ All trolls regenerate and follow you up and down stairs.
 </div>
 
 #### Vampires `V`
+
+Drains XL on bite. Shapeshifts to bat or cloud. Vlad the Impaler is the vampire boss in his Tower.
 
 All vampires fly, regenerate, have poisonous corpses, are undead, follow you up and down stairs, and shapeshift.
 
@@ -7740,6 +7834,8 @@ All vampires fly, regenerate, have poisonous corpses, are undead, follow you up 
 
 #### Wraiths `W`
 
+Drains XL on touch. The wraith corpse, however, **gives** a level when eaten: one of the best food items in the game. Always eat a wraith corpse if you can.
+
 All wraiths are undead and follow you up and down stairs.
 
 <div class="dense-table">
@@ -7754,6 +7850,8 @@ All wraiths are undead and follow you up and down stairs.
 
 #### Xorns `X`
 
+D&D's three-armed, three-eyed creatures from the Elemental Plane of Earth. In the dungeon they tunnel through rock and eat metal: your weapons and armor are at risk on touch. Hits hard for its level; magic resistance helps.
+
 <div class="dense-table">
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
@@ -7763,6 +7861,8 @@ All wraiths are undead and follow you up and down stairs.
 </div>
 
 #### Apelike creatures `Y`
+
+Apes and great apes mostly; sasquatches are fast. Carnivore corpses are safe food.
 
 <div class="dense-table">
 
@@ -7779,7 +7879,9 @@ All wraiths are undead and follow you up and down stairs.
 
 #### Zombies `Z`
 
-All zombies are mindless and are undead.
+Slow undead. Easy to kite. Corpses are usually unsafe to eat. Big zombie populations live in morgues.
+
+All zombies are mindless and undead.
 
 <div class="dense-table">
 
@@ -7799,6 +7901,8 @@ All zombies are mindless and are undead.
 </div>
 
 #### Humans and elves `@`
+
+The catch-all `@` class: shopkeepers, priests, watchmen, Kops, role nemeses, quest leaders, valkyries, ninja, and the player. Most start peaceful; the ones that don't are very dangerous.
 
 <div class="dense-table">
 
@@ -7881,6 +7985,8 @@ All zombies are mindless and are undead.
 
 #### Major demons `&`
 
+Major demons. Most can gate in reinforcements (a single barbed devil in your face can become five). Silver weapons and Demonbane do extra damage. Demon lords can be bribed with gold to leave.
+
 All except *erinys* also follow you up and down stairs.
 
 <div class="dense-table">
@@ -7921,7 +8027,9 @@ All except *erinys* also follow you up and down stairs.
 
 #### Golems `'`
 
-All golems are mindless, are sleep-resistant, and are poison-resistant.
+Mindless constructs. Wood and leather golems are early-game fodder; iron, stone, and clay golems are dangerous. The rare gold golem is a walking treasure pile.
+
+All golems are mindless, sleep-resistant, and poison-resistant.
 
 <div class="dense-table">
 
@@ -7943,6 +8051,8 @@ All golems are mindless, are sleep-resistant, and are poison-resistant.
 
 #### Sea monsters `;`
 
+Lives in water. Wraps around you and drags you under to drown. Don't fight one from a water square without magical breathing or escape.
+
 All sea monsters swim and are amphibious.
 
 <div class="dense-table">
@@ -7959,6 +8069,8 @@ All sea monsters swim and are amphibious.
 </div>
 
 #### Lizards `:`
+
+Mostly harmless. **Lizard corpses cure petrification and never rot.** Carry one at all times — this is the standard answer to cockatrices and Medusa.
 
 <div class="dense-table">
 

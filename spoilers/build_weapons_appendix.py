@@ -169,7 +169,7 @@ NOTES = {
     'quarterstaff': "Two-handed but light; the Wizard's starting weapon.",
     'aklys': "Returns when thrown if Strength is high enough.",
     'boomerang': "Returns when thrown. Always.",
-    'bullwhip': "The Archeologist's starter; can disarm a monster.",
+    'bullwhip': "Archeologist's starter. Apply to disarm an adjacent monster, or to yank yourself out of a pit (anchors on a nearby boulder, furniture, or big monster).",
     'crysknife': "Polymorphs back to a worm tooth when dropped; keep it equipped or buried.",
     'athame': "Used for engraving wards — Elbereth on the floor lasts longer engraved with an athame.",
     'sling': "Trains sling skill from any rock you pick up.",
