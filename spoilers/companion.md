@@ -4877,6 +4877,38 @@ death works on all three), but bribery is much cheaper, and the
 prince's corpse isn't useful for sacrifice the way a fresh weak
 monster's would be.
 
+#### Vlad's Tower
+
+A three-level tower branching **upward** off Gehennom (one of the
+only side-branches in the lower dungeon). **Vlad the Impaler** —
+a unique vampire lord — guards the **Candelabrum of Invocation**
+at the top. Climb the tower, kill Vlad, take the Candelabrum.
+
+The tower also contains a **special throne**, and 5.0 has made it
+both more rewarding and more painful. The good news: it never
+disintegrates from sheer use the way ordinary thrones do, so you
+can sit on it again and again. The bad news: you will, because
+the prize is rare. Each sit rolls one of thirteen effects. Four
+of them grant a wish (the throne *does* disintegrate after the
+wish, having spent its power). The other nine are bad: permanent
+level drain, an inventory-coating layer of grease (your weapon
+will slip, your shield will fall off), a stripped intrinsic, a
+forced level teleport to the vibrating-square level (sometimes
+useful, often not), three summoned demons, a confused-blessed
+remove curse on your gear, forced polymorph, acid damage in
+eighty-HP gulps if you don't have acid resistance, or a randomized
+stat shuffle that will probably make several of your scores worse.
+
+The arithmetic: 4/13 chance per sit of the wish ending it, so on
+average you sit ~3 times before the wish (and absorb two of the
+bad effects on the way). Plan accordingly. Stand at full HP,
+don't carry potions you can't afford to grease, and have acid
+resistance or magic resistance ready before you sit. If you don't
+want a forced wish (say, you've already used your Castle wish and
+Amulet wish and want to keep this one for the ascension kit), you
+can sit at any time; you don't have to do it right now. The
+throne stays put until something on the level destroys it.
+
 #### Orcus-town
 
 **Orcus** is a god of the underworld in Roman mythology — a
@@ -4904,66 +4936,81 @@ it a consolation prize, in the form of either one djinni wish (rub
 the lamp; the lamp becomes ordinary afterward) or however many
 high-value scrolls you can write before the marker runs dry.
 
-#### Key Objectives in Gehennom
+#### The Wizard's Tower
 
-You're here for three artifacts, one ritual, and one extremely
-dangerous robbery:
+Three sequential Gehennom levels (wizard1 → wizard2 → wizard3,
+each reached by the normal down-stair from the level above) leading
+to the **Wizard of Yendor** himself and the **Book of the Dead**.
+He is the most dangerous enemy in the game — not because he's the
+strongest fighter, but because he **never stops**. He teleports to
+your location, summons monsters, steals back his Amulet whenever
+you grab it, curses your gear, and once you wake him he *will not
+leave you alone* for the rest of the game.
 
-1. **Vlad's Tower.** A three-level tower where Vlad the Impaler
-   (a vampire lord) guards the Candelabrum of Invocation at the
-   top. Kill Vlad. Take the Candelabrum. Don't linger.
+Kill him cleanly the first time, grab the Book, and move on.
+Subsequent kills don't yield new loot (he respawns), so don't
+engage him voluntarily again. The "Run, don't fight" advice for
+the Ascension Run is mostly about him.
 
-   The tower also contains a **special throne**, and 5.0 have made it both more rewarding and more painful.
-   The good news: it never disintegrates from sheer use the way
-   ordinary thrones do. You can sit on it again and again. The
-   bad news: you will, because the prize is rare. Each sit rolls
-   one of thirteen effects. Four of them grant a wish (the throne
-   does disintegrate after the wish, having spent its power). The
-   other nine are bad: permanent level drain, an inventory-coating
-   layer of grease (your weapon will slip, your shield will fall
-   off), a stripped intrinsic, a forced level teleport to the
-   vibrating-square level (sometimes useful, often not), three
-   summoned demons, a confused-blessed remove curse on your gear,
-   forced polymorph, acid damage in eighty-hp gulps if you don't
-   have acid resistance, or a randomized stat shuffle that will
-   probably make several of your scores worse.
+#### Moloch's Sanctum
 
-   The arithmetic: 4/13 chance per sit of the wish ending it, so
-   on average you sit ~3 times before the wish (and absorb two
-   of the bad effects on the way). Plan accordingly. Stand at full
-   HP, don't carry potions you can't afford to grease, and have
-   acid resistance or magic resistance ready before you sit. If
-   you don't want a forced wish (say, you've already used your
-   Castle wish and Amulet wish and want to keep this one for your
-   ascension kit), you can sit at any time, you don't have to do
-   it right now. The throne stays put until something on the
-   level destroys it.
+The bottom level of Gehennom. It is **sealed**: until the
+Invocation ritual is performed (see "The Heist" below), the
+down-stair to the Sanctum doesn't exist, and the level above is
+just one more maze. Once the seal breaks, descend to find the
+**High Priest of Moloch** standing on the **high altar** with the
+**Amulet of Yendor**. The High Priest is a unique non-bribable
+boss who casts spells, summons minions, and aggrieves anyone in
+melee range — the standard answer is a wand of death or finger of
+death from a safe distance.
 
-2. **The Wizard's Tower.** The Wizard of Yendor waits here with
-   the Book of the Dead. He is the most dangerous enemy in the
-   game, not because he's the strongest fighter, but because he
-   never stops. He teleports, summons monsters, steals back his
-   Amulet, curses your gear, and once you wake him, he *will not
-   leave you alone* for the rest of the game. Kill him. Take the
-   Book.
+You cannot leave the Sanctum without the Amulet: the up-stair
+refuses to lift you out empty-handed.
 
-3. **The vibrating square.** Somewhere on the level directly above
-   Moloch's Sanctum, a single square vibrates when you step on it.
-   This is the ritual site. Finding it in a maze is part of the
-   challenge. Scrolls of magic mapping help enormously.
+#### The Heist
 
-4. **The Invocation.** At the vibrating square, light the
-   Candelabrum (with 7 candles attached), ring the Bell of Opening,
-   and read the Book of the Dead. The passage to Moloch's Sanctum
-   opens. (The Bell of Opening was dropped by your quest nemesis
-   back in your Quest, the Candelabrum is from Vlad, the Book is
-   from the Wizard. If you forgot to pick the Bell up off the
-   nemesis's corpse, you have a long walk back to the Quest.)
+Three Invocation items + one square + one boss + one frantic
+climb = the climax of the game. The choreography:
 
-5. **Moloch's Sanctum.** The high priest of Moloch guards the
-   Amulet of Yendor. Defeat him and take it. Then turn around and
-   realize you must carry it all the way back up through the entire
-   dungeon you just descended.
+1. **Collect the trio.** You need the **Bell of Opening** (the
+   Quest goal, dropped by your quest nemesis), the **Candelabrum
+   of Invocation** (the top of Vlad's Tower), and the **Book of
+   the Dead** (the bottom of the Wizard's Tower). Missing any one
+   means walking all the way back to fetch it; the Bell in
+   particular is easy to leave behind on the nemesis's corpse
+   the first time through the Quest.
+
+2. **Attach all seven candles to the Candelabrum.** The
+   Candelabrum needs seven candles attached and lit before the
+   ritual will work. Attach a candle by applying it (`a`) and
+   selecting the Candelabrum. Candles drip in slowly: every
+   temple has a small stock the priest will sell you, and there's
+   a guaranteed haul at Mine's End. Without all seven attached,
+   the ritual fails — pick up a candle every time you pass a
+   temple from level 1 onward.
+
+3. **Find the vibrating square.** On the Gehennom level directly
+   above Moloch's Sanctum, a single square vibrates when you step
+   on it: *"You feel an unsettling vibration under your feet."*
+   The square's position is random within the maze, so you have
+   to search by walking — scrolls of magic mapping help enormously.
+
+4. **Perform the Invocation.** Standing on the vibrating square,
+   with the Candelabrum lit and the Book in your pack, **`#invoke`
+   the Bell of Opening**. The floor opens; a down-stair to the
+   Sanctum appears under your feet.
+
+5. **Swipe the Amulet from Moloch.** Descend, take down the
+   **High Priest** (wand of death is the clean answer), walk onto
+   the high altar, and pick up the **Amulet of Yendor**.
+
+6. **Begin the getaway.** The up-stair from the Sanctum now lifts
+   you out (it wouldn't before you had the Amulet). You're now on
+   the **Ascension Run** — every covetous monster in the game has
+   noticed, the Wizard of Yendor will keep teleporting to you to
+   take his Amulet back, and the Mysterious Force will keep
+   yanking you back down. Climb fast (see the Ascension Run
+   section below).
 
 #### Survival Tips
 
