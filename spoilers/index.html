@@ -2855,17 +2855,59 @@ blinded, a <em>unicorn horn</em> still cures it.</p>
 <section id="seduction" class="level4">
 <h4>Seduction</h4>
 <p>The <strong>amorous demon</strong> (<code>&amp;</code>, gray) appears
-as a <strong>succubus</strong> to male characters and as an
-<strong>incubus</strong> to female characters. The seduction attack does
-no HP damage, but it drains experience levels and steals one item per
-encounter, and the only way to refuse is to kill the demon outright
-before it acts. Meeting one without preparation can erase several levels
-of character growth and remove an irreplaceable artifact in the same
-turn.</p>
-<p><strong>Defenses:</strong> Drain resistance (see Level Drain above)
-blocks the level loss. Killing at range (wand, spell, ranged weapon) is
-the cleanest answer; the amorous demon flies, so corridors and
-chokepoints don’t help as much as they normally would.</p>
+as a <strong>succubus</strong> to male characters and an
+<strong>incubus</strong> to female. The encounter is a Cha+Int gamble:
+five bad outcomes vs. five good ones, plus a payment phase. Handled
+badly it can drain a level, an attribute, and 6–15 HP; handled well it
+grants a level, an attribute, full HP, and extra max Pw.</p>
+<p><strong>Mechanics.</strong> The demon must be adjacent and not on
+cooldown. It strips off your worn armor one piece at a time (cloak,
+suit, boots, gloves, shield, helm, shirt) — dropped on the floor at your
+feet, not stolen. High Cha (<code>rn2(20) &lt; ACURR(A_CHA)</code>)
+earns a confirmation prompt per piece. <strong>If you’re still wearing a
+body armor or cloak afterwards, the encounter ends right there</strong>
+— the demon walks away. A hard-to-remove suit is the simplest
+defense.</p>
+<p>If you do get to the act, the outcome rolls on
+<code>rn2(35) &gt; min(Cha+Int, 32)</code>. At Cha+Int ≥ 32 the
+bad-outcome chance is ~5.7%; lower stats raise it sharply.</p>
+<table>
+<thead>
+<tr>
+<th>Bad outcome (low Cha+Int)</th>
+<th>Good outcome (high Cha+Int)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Energy drained (Pw → 0, −1d10 max)</td>
+<td>+1d5 max Pw, refilled</td>
+</tr>
+<tr>
+<td>−1 Constitution</td>
+<td>+1 Constitution</td>
+</tr>
+<tr>
+<td>−1 Wisdom</td>
+<td>+1 Wisdom</td>
+</tr>
+<tr>
+<td>Lose 1 XP level (drain res blocks)</td>
+<td>Gain 1 XP level</td>
+</tr>
+<tr>
+<td>6–15 HP damage</td>
+<td>HP restored to max</td>
+</tr>
+</tbody>
+</table>
+<p>The demon then charges 500+ zorkmids (high Cha can refuse; peaceful
+demons charge ⅕). Being asleep or otherwise unresponsive defers the
+attempt entirely.</p>
+<p><strong>Strategic note.</strong> At high Cha+Int the encounter is
+net-positive, and the armor-removal step strips <em>cursed</em> worn
+pieces too — an amorous demon can be the cheapest curse-removal in the
+dungeon. Some players keep one alive to farm XP and attributes.</p>
 </section>
 <section id="the-riders" class="level4">
 <h4>The Riders</h4>
