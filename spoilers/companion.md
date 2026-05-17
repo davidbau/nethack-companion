@@ -862,6 +862,15 @@ the cheapest source of intrinsic AC bonuses in the game — donating
 500 zorkmids at low XL stacks each visit (see
 [Donating to Priests](#donating-to-priests)).
 
+If you find **Izchak's lighting store** in Minetown, buy seven
+candles before you leave. Far down in Gehennom you'll need them
+attached to the Candelabrum of Invocation to perform the ritual
+that opens the way to Moloch's Sanctum. Wax candles burn longer
+than tallow but either works for the ritual; pick whichever your
+budget allows. Forgetting to stock up here means a long round trip
+later, since the Mines lighting shop is the only reliable source
+in the early dungeon.
+
 One in seven times, however, Minetown generates as **Orcish Town**:
 an overrun settlement with no shops, no priest, and iron bars blocking
 the entrances. There's still an unaligned altar, but you won't get
@@ -5186,7 +5195,7 @@ winners carry. Here is the canonical kit, slot by slot:
 | **Ring (L)** | Free action | Anti-paralysis is non-negotiable on the Astral Plane. |
 | **Ring (R)** | Slow digestion, conflict, or regeneration | Conflict is the standard Astral-Plane crowd-control choice. |
 | **Weapon** | Your role's quest artifact + a silver saber | Silver saber appears in most builds as the off-hand because silver bypasses demon resistances. |
-| **Pack** | Bag of holding, magic lamp, unicorn horn, luckstone, wand of death, multiple wands of teleport | The "bag-of-holding bundle." |
+| **Pack** | Bag of holding, magic lamp, unicorn horn, luckstone, wand of death, multiple wands of teleport, seven candles | The "bag-of-holding bundle." The candles are for the Candelabrum — buy them from Izchak in Minetown early; they don't show up reliably anywhere else. |
 | **Required loot** | Bell of Opening, Candelabrum of Invocation, Book of the Dead, Amulet of Yendor | The Invocation chain plus the prize. |
 
 A typical ascension AC sits in the **−25 to −40** range, but AC
