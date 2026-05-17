@@ -44,7 +44,7 @@ reference manual that comes with the game. This document is a
 *strategic* guide. It assumes you already know how to play and want
 to know how to *survive*.
 
-But if you've died to one too many acid blobs you swung at without
+But if you've died to one too many soldier ants you swung at without
 thinking, or you're tired of starving on dungeon level four because
 you didn't know you could pray, read on. We'll do our best to keep
 you alive.
