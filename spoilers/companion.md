@@ -6797,7 +6797,7 @@ current table before planning around spells that used to be free.
 
 ---
 
-#### What to Change in Your Habits Right Now
+#### What to Change in Your Gameplay Habits in 5.0
 
 1. Stop planning permanent speed or invisibility around self-zap wands.
 2. Stop luck-grinding with low-difficulty sacrifice fodder once luck is
@@ -6810,8 +6810,6 @@ current table before planning around spells that used to be free.
 6. Stop dropping potions on the floor in Gehennom.
 7. Start checking every container in the first ten levels for supply
    caches.
-8. Start treating a blessed polymorph potion as a planned power spike,
-   not a lucky accident.
 
 ---
 
