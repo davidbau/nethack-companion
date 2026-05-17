@@ -1777,41 +1777,54 @@ kill you specifically. The summary:
 
 **Gray** dragon scale mail grants magic resistance, the most important
 defensive property in the game, full stop. Gray dragons are the ones
-you most want to kill for their skin, and also the ones most likely to
-make you regret trying.
+you most want to kill for their skin, and also the ones most likely
+to make you regret trying.
 
-**Silver** dragon scale mail grants reflection. The second pillar of not
-dying to wands.
+**Silver** dragon scale mail grants reflection. The second pillar of
+not dying to wands.
 
-**Gold** dragons are new in 5.0 and breathe **fire**:
-the same breath weapon as red dragons, so the same defenses apply.
-Their scale mail is what makes them interesting. Worn gold dragon
-scale mail is permanently lit: blessed glows *radiantly* (radius 4),
-uncursed *brilliantly* (radius 3), cursed merely *brightly* (radius
-2). It is the only body-slot light source in the game, and it lets
-you abandon torches, lamps, and oil for the rest of the run. The
-mail also confers **hallucination resistance**: modest in
-combat, useful against violet fungi, the rare ill-timed potion
-spill, and the late-game caster who thinks one of those is a good
-finisher. Gold dragons themselves carry fire resistance as a
-breath defense and drop scales just like any other color, so the
-material costs the same hunt as the rest. If your lamp budget is
-eating into your ascension kit, gold dragon scale mail is the
-solution.
+**Shimmering** dragon scale mail grants permanent displacement — the
+only extrinsic source besides the cloak of displacement. Shimmering
+dragons breathe magic missile.
 
-**Black** dragon breath disintegrates, and disintegrates everything
-you're wearing along with you, including your magic resistance. Carry
-reflection or eat enough black dragons to grow disintegration
-resistance before going where they live. Their scale mail grants
-disintegration resistance plus drain resistance. The latter is a
-new 5.0 bonus and a rare extrinsic source.
+**Black** dragons disintegrate everything you're wearing along with
+you, including your magic resistance. Carry reflection or eat enough
+black dragons to grow disintegration resistance before going where
+they live. Their scale mail grants disintegration resistance plus
+drain resistance, a rare extrinsic source of the latter.
 
-**Green** dragon scale mail grants sickness immunity, which is niche but
-occasionally the niche that saves you.
+**Yellow** dragon scale mail is the sleeper pick. Listed power is
+acid resistance, but it also grants **stoning resistance** — the
+same outright immunity acid blob corpses give. If you find a yellow
+dragon and don't already have stone-res, killing it is worth the
+trip. Yellow dragons are rare, though.
 
-All other colors follow the same logic: kill them for their scales,
-respect their breath weapon, and don't let them breathe on your
-spellbooks.
+**Orange** dragon scale mail grants sleep resistance *and* free
+action (the ring's effect), bundled into one slot.
+
+**White** dragon scale mail grants cold resistance *and* slow
+digestion — a useful nutritional save on long descents.
+
+**Red** dragon scale mail grants fire resistance *and* infravision,
+the same effect as a ring of infravision or being elven.
+
+**Green** dragon scale mail grants poison resistance *and* sickness
+resistance — a pair of niche defenses in one slot.
+
+**Blue** dragon scale mail grants shock resistance, one of the four
+common breath defenses you want before the late game.
+
+**Gold** dragons are new in 5.0 and breathe fire. Their scale mail
+has no resistance power but is permanently lit (radius 4 blessed, 3
+uncursed, 2 cursed) — the only body-slot light source in the game,
+and it lets you abandon torches and oil. It also confers
+hallucination resistance.
+
+All scale mails are dragonhide, body-slot, AC 1 worn, and resist
+disenchantment naturally. The choice of which color to chase is
+usually whichever dragon's territory you can reach safely; killing
+a dragon yields scales you can wear immediately or convert to
+scale mail.
 
 ---
 
