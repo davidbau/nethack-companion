@@ -186,10 +186,10 @@ meat if you want to maintain your spiritual discipline. One of the
 more unusual roles, rewarding for experienced players.
 *Alignment: Any.*
 
-**Priest.** You start with a mace, holy (or unholy) water, and the
-ability to intuitively sense whether items are blessed, cursed, or
-uncursed, so you know on sight whether that cloak you just found is
-safe to wear. Competent fighters with access to clerical spells.
+**Priest.** You start with a mace, four potions of holy water, and
+the ability to intuitively sense whether items are blessed, cursed,
+or uncursed, so you know on sight whether that cloak you just found
+is safe to wear. Competent fighters with access to clerical spells.
 Your first sacrifice gift is guaranteed: Demonbane (now a silver
 mace), which aligns with your weapon skill — sacrifice early and
 often. *Alignment: Any (matches your god).*
@@ -203,7 +203,8 @@ from a distance, this is your role. *Alignment: Neutral or Chaotic.*
 **Rogue.** NetHack's thief class: lockpicking and stealthy
 assassinations. You start with a short sword, six daggers for
 throwing, leather armor, a lock pick, a sack, and a potion of
-sickness (handy for poisoning blades or for tossing at an enemy).
+sickness (toss it at an enemy, or save it to coat any darts,
+shuriken, or arrows you find — only missiles can be poisoned).
 Your lock pick makes every locked door, chest, and box openable from
 turn one. You get stealth from the beginning, which lets you walk up
 to sleeping enemies without waking them, and your backstab ability
