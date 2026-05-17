@@ -989,8 +989,7 @@ the era away:
 - Armor displays as `]`, food as `:`, amulets as `,`, and gold
   shares a symbol with gems (in Rogue they were the same thing).
 - Doors don't close. Hinges came later.
-- The color palette drops to about four colors and tile mode
-  switches off in favor of plain characters.
+- Tile mode switches off in favor of plain ASCII characters.
 - No fountains, sinks, altars, shopkeepers, or priests — and
   no spellbooks, tools, or amulets in the natural item pool, all
   post-Rogue inventions.
