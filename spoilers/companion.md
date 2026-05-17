@@ -5236,7 +5236,7 @@ winners carry. Here is the canonical kit, slot by slot:
 | **Ring (L)** | Free action | Anti-paralysis is non-negotiable on the Astral Plane. |
 | **Ring (R)** | Slow digestion, conflict, or regeneration | Conflict is the standard Astral-Plane crowd-control choice. |
 | **Weapon** | Your role's quest artifact + a silver saber | Silver saber appears in most builds as the off-hand because silver bypasses demon resistances. |
-| **Pack** | Bag of holding, magic lamp, unicorn horn, luckstone, wand of death, multiple wands of teleport, seven candles | The "bag-of-holding bundle." Candles are for the Candelabrum — Izchak's Minetown lighting shop is the easy source. |
+| **Pack** | Bag of holding, magic lamp, unicorn horn, luckstone, wand of death, multiple wands of teleport, seven candles | The "bag-of-holding bundle." Candles are for the Candelabrum — Izchak's Minetown lighting shop is an easy source. |
 | **Required loot** | Bell of Opening, Candelabrum of Invocation, Book of the Dead, Amulet of Yendor | The Invocation chain plus the prize. |
 
 A typical ascension AC sits in the **−25 to −40** range, but AC
