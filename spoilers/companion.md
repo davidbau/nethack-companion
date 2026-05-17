@@ -1537,7 +1537,9 @@ or less dangerous; uppercase letters are larger or more threatening.
 Color further distinguishes individual species within a class.
 
 Here is a quick field guide to what each letter means, roughly ordered
-by how early you might encounter them:
+by how early you might encounter them. For the full level / speed /
+AC / attack details on every monster, see the
+[Bestiary Tables](#bestiary-tables) appendix.
 
 #### Common Early Encounters
 
@@ -3736,7 +3738,10 @@ of your ascension kit.
 
 Weapons and armor are the bread and butter of combat. Your choice
 of equipment determines how hard you hit, how well you dodge, and
-what special resistances you carry.
+what special resistances you carry. This section covers the
+strategy of choosing equipment; the
+[Weapons Tables](#weapons-tables) and [Armor Tables](#armor-tables)
+appendices give the full stats for every item.
 
 #### Armor and AC
 
@@ -3793,6 +3798,10 @@ from 98% in older editions). A ring of protection now contributes
 +1 MC, and the new amulet of guarding provides +2 MC, giving you
 more ways to assemble full magic cancellation coverage.
 
+For the AC, MC, weight, cost, and granted-power numbers on every
+piece of armor in the game, see the
+[Armor Tables](#armor-tables) appendix.
+
 #### Weapons
 
 Weapon choice depends heavily on your role and skill caps.
@@ -3821,6 +3830,9 @@ best late-game weapons.
 **Your quest artifact** is often your primary weapon or at least
 worth carrying for its properties. Check what your role's artifact
 does.
+
+For the full damage/weight/cost numbers on every weapon in the
+game, see the [Weapons Tables](#weapons-tables) appendix.
 
 #### Enchantment
 
