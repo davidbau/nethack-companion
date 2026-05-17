@@ -109,9 +109,8 @@ you alive.
 34. [Sokoban Solutions](#sokoban-solutions) — All eight level variants, solved
 35. [Voluntary Challenges](#voluntary-challenges) — Conducts and self-imposed restrictions
 36. [Shopping and Shopkeeper Pricing](#shopping-and-shopkeeper-pricing) — Commerce in the dungeon
-37. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x
-38. [If You've Been Here Before](#if-youve-been-here-before) — For travelers returning from 3.6.x
-39. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
+37. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x, and what to do about it
+38. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
 
 ---
 
@@ -679,6 +678,13 @@ several on a single level. They make the early dungeon less
 predictable in a friendly way: more terrain types to fight in,
 more item discovery, and the occasional educational ambush.
 
+A practical consequence: **a room full of one kind of monster is
+almost certainly a themed room, not a coincidence.** Themed rooms
+have above-average monster density concentrated around a single
+type, so any room that looks curated deserves more respect than a
+random room of equivalent apparent difficulty. Retreat, assess,
+and enter with a plan rather than a direction.
+
 ---
 
 ### Points of Interest
@@ -888,14 +894,12 @@ into a corner where it blocks your progress, you're stuck and will
 need to start the level over. The game won't warn you about this.
 
 The prize at the top is either a **bag of holding** or an **amulet
-of reflection**, both extremely valuable. The two top-floor variants
-weight the prize opposite ways — one favors the bag of holding 75/25,
-the other favors the amulet 75/25 — and the game picks one variant
-per game, so across the player population the odds come out roughly
-even. A cursed scroll of scare monster is placed under the prize as
-bait. A bag of holding lets you carry far more inventory at reduced
-weight. An amulet of reflection bounces ray attacks back at their
-casters. Either one is worth the detour.
+of reflection**, both extremely valuable; the
+[Sokoban Solutions appendix](#sokoban-solutions) documents the
+per-variant 75/25 weighting. A cursed scroll of scare monster is
+placed under the prize as bait. A bag of holding lets you carry far
+more inventory at reduced weight. An amulet of reflection bounces
+ray attacks back at their casters. Either one is worth the detour.
 
 One important rule: the Sokoban levels penalize you for "cheating."
 Breaking or polymorphing boulders, reading scrolls of earth, or
@@ -1115,10 +1119,9 @@ To enter the Castle, you need to open the drawbridge. Options:
 
 Inside the Castle, you'll find a throne room, barracks, and several
 treasure chambers. One of those chambers contains a **wand of
-wishing**, with a single charge in 5.0 (down from three in 3.6.x).
-This is one of the most
-important items in the game. Use your wishes wisely (see
-[Wishes and Wishing](#wishes-and-wishing)).
+wishing** — one of the most important items in the game. See
+[Wishes and Wishing](#wishes-and-wishing) for the full mechanics
+and how many wishes a 5.0 Castle wand actually yields.
 
 Below the Castle lies Gehennom. There is no going back to the
 upper dungeon once you descend without climbing back up through
@@ -1813,13 +1816,20 @@ epitaph.
 Anything involving cockatrices or Medusa. Touching a cockatrice
 without gloves, eating a cockatrice corpse, being hit by Medusa's
 gaze, or even stepping on a cockatrice corpse while barefoot will
-turn you to stone. The process can be immediate or delayed (you'll
-see the message "You are slowing down" with a few turns to act).
+turn you to stone. The process can be immediate or delayed; the
+delayed form announces itself with a message progression of
+*"You are slowing down,"* then *"Your limbs are stiffening,"*
+then death, with a few turns between each warning to act.
 
-**Defenses:** Wear gloves when handling cockatrice corpses. Carry
-a lizard corpse at all times (eating it cures stoning in progress).
-Use reflection against Medusa. Stoning resistance (from eating an
-acid blob or certain other sources) makes you immune.
+**Defenses while it's happening:** eat a lizard corpse (this is why
+you carry one at all times), eat an acidic corpse, pray if your
+god is willing, cast stone to flesh on yourself, or use a wand of
+polymorph or amulet of unchanging to interrupt the process.
+
+**Defenses ahead of time:** wear gloves when handling cockatrice
+corpses, use reflection against Medusa, and gain stoning resistance
+from eating an acid blob or certain other sources (which makes you
+immune outright).
 
 **The other side of the coin:** a wielded cockatrice corpse (with
 gloves on) is one of the most devastating weapons in the game.
@@ -2044,14 +2054,6 @@ race. Don't do this.
 Not every fatal threat kills instantly. Several give you a few
 turns to react. Knowing the warning signs and the cures can save
 a run.
-
-**Stoning (slow).** If a cockatrice hits you (or you handle one
-without gloves), you may begin turning to stone over several turns.
-The messages progress: "You are slowing down," then "Your limbs are
-stiffening," then death. **Cures:** eat a lizard corpse (this is
-why you carry one at all times), eat an acidic corpse, pray if your
-god is willing, cast stone to flesh on yourself, or use a wand of
-polymorph or amulet of unchanging to interrupt the process.
 
 **Sliming.** Being hit by a green slime starts a transformation
 that ends in you becoming a green slime (dead). The process takes
@@ -3309,13 +3311,9 @@ result when used to engrave on the floor.
 > narrowing down wand identity through controlled experiments. The
 > approach below is adapted from his checklist.*
 
-One precaution before you start writing on the floor: in 5.0, a *cursed* wand used for engraving may explode. This puts
-a premium on knowing a wand's BUC status before you test it. A scroll
-of identify spent on an unknown wand you're about to engrave-test is
-not a waste; it's cheaper than the alternative, which is standing in
-a crater where your engrave station used to be. BUC-test at an altar,
-use a potion of holy water on the wand, or apply a scroll of identify
-first. Then engrave to your heart's content.
+Before you start writing on the floor: in 5.0, a *cursed* wand used
+to engrave may explode, so BUC-test before you test (see [The Engrave
+Test (Wands)](#the-engrave-test-wands) for the full safety procedure).
 
 #### Beyond Engraving: Systematic Wand Testing
 
@@ -4317,10 +4315,10 @@ who ascends and one who dies memorably on the Plane of Fire.
 The Mazes are stingy, but there are more wish sources than most
 travelers realize:
 
-- **Wand of wishing:** 1 charge, found in the Castle
-  treasure room. Rechargeable once for 1 additional charge.
-  The Castle chest also contains a potion of gain level, because
-  the Mazes occasionally feel generous.
+- **Wand of wishing:** found in the Castle treasure room
+  (see Wands → Key Wands for the 5.0 charge mechanics). The
+  Castle chest also contains a potion of gain level, because the
+  Mazes occasionally feel generous.
 <!-- src/sit.c special_throne_effect(): cases 1-4 (of 13) = wish,
      throne only vanishes on wish, so guaranteed eventual wish. -->
 - **Vlad's throne:** A special throne that grants a guaranteed
@@ -4775,16 +4773,13 @@ take time off the level to recover or fetch a wish, and come back,
 do not assume the chest is still there. Clear the room before
 abandoning it, or carry the chest with you. There are stories.
 
-**About the wand itself.** The Castle's wand of wishing arrives
-with a single charge in 5.0, and the standard recharge formula
-will only restore it to (1:1). The old strategy of recharging it
-to (0:7) and getting a stack of wishes off one wand is gone. You
-will need to plan a *small* wishlist (three or four items at
-most, with the gain-level potion as a free fifth) and accept
-that further wishes have to come from other guaranteed sources
-(Vlad's throne, the Amulet pickup, Orcus-town's lamp/marker, fountain
-luck, or wresting a final wish from a 0:0 wand on the way down).
-The era of the bottomless wishing wand is over.
+**About the wand itself.** The Castle wand in 5.0 yields only two
+wishes reliably (one charge + one recharge), so plan a *small*
+wishlist and accept that any further wishes will need to come from
+other guaranteed sources — Vlad's throne, the Amulet pickup,
+Orcus-town's lamp/marker, fountain luck, or wresting. The era of
+the bottomless wishing wand is over (see Wands → Key Wands for
+the full mechanics).
 
 Once you're fully equipped, the staircase down leads to Gehennom.
 Take a moment before descending. Sit down. Have a snack. Check your
@@ -6550,238 +6545,90 @@ point.) The most significant:
 
 ---
 
-### If You've Been Here Before
+#### What to Lean Into
 
-*The dungeon has been renovated. Some of the renovations are
-improvements. Some of them are traps disguised as improvements. This
-appendix is for travelers who know the old dungeon and need to know what
-changed: not just what changed, but what to do about it.*
-
----
-
-#### Things That No Longer Work
-
-**The wand of speed monster is a tactical tool, not a build step.**
-
-In 3.6.x, zapping yourself with a wand of speed monster granted a
-permanent speed intrinsic. It was efficient, elegant, and a reliable
-early priority. In 5.0, self-zapping gives 50–74 turns of
-*very fast* speed. Good in a fight. Gone afterward.
-
-Speed boots are now the primary path to permanent speed. Put them on
-your wish list. The wand remains excellent for a mid-combat burst (or
-for giving your pet an edge), but treat it as a resource to use, not a
-property to acquire.
-
-**The wand of make invisible no longer makes you permanently invisible.**
-
-Same story. Self-zapping used to grant the invisibility intrinsic. Now
-it gives 31–45 turns of temporary invisibility. For the permanent
-variety, you need a ring or cloak of invisibility. The wand is still
-useful for tactical windows (slipping past something dangerous, closing
-ground on an enemy that fights by sight), but the game no longer hands
-you permanent invisibility through a single lucky wand find.
-
-**You cannot luck-grind by sacrificing weak corpses.**
-
-The altar has gotten selective. In 3.6.x, a stack of kobold corpses and
-a co-aligned altar could push your luck to maximum through sheer volume
-of sacrifice. In 5.0, if your current luck score already
-exceeds the difficulty rating of the monster you're sacrificing, you
-gain zero luck. The gods will accept your kobold, bless the corpse, and
-give you nothing, because your luck is already better than a kobold
-deserves to affect.
-
-To raise luck further once you're past the low positives, you need fresh
-corpses of monsters whose difficulty actually exceeds your luck value. In
-practice: a luckstone handles the maintenance; sacrifice mid-tier
-monsters when you want to push higher. The kobold pile strategy is
-retired.
-
-**Elbereth does not pacify a monster that has nowhere to go.**
-
-Writing Elbereth and standing on it still works: the monsters mill
-around, refuse to approach, and look frustrated. The catch in 5.0 is that a scared monster with no escape route will turn and
-fight rather than stand helplessly while you regenerate. If you've
-carved Elbereth in a tight corridor and then backed a monster against
-the dead end of it, expect it to make a decision. Keep the monster's
-exit clear, or finish the fight before it makes that decision for you.
-
-**Bulk diluted-stack alchemy is gone.**
-
-The production-line approach (dilute a large stack of healing potions,
-then convert the whole diluted stack in a single dip) hit a wall in
-5.0. Only two potions alchemize per dip from a diluted
-stack now. The healing → extra healing → full healing → gain ability
-chain still works perfectly. You just do it in small batches with
-undiluted inputs. Think of it as quality craft work rather than factory
-output. The math still favors alchemy; the throughput is lower.
-
-**Demonbane is a silver mace.**
-
-For Priests, this is a gift. For anyone who played a non-Priest and
-expected to pick up Demonbane and swing it comfortably with their long
-sword skill: the weapon changed types. It now demands mace skill. If
-your build didn't route through maces, this artifact that used to be a
-welcome find is now a skill-penalty situation. Plan accordingly, or
-route toward a different artifact.
-
-**Valkyries no longer start with a long sword.**
-
-They start with a spear. An immediate Excalibur dip at experience level
-5 now requires finding a long sword first. And for non-Knights, the
-fountain odds for Excalibur are now 1-in-30 per dip, not guaranteed,
-not even reliable over a handful of tries. Factor this into early
-routing; the long sword detour and potential dry spells at fountains are
-real.
-
----
-
-#### New Strategies Worth Building Around
+The bullet list is comprehensive but flat. A few of the 5.0 changes
+have tactical implications that aren't obvious from the bullet
+alone — they reshape how a returning veteran plans a run:
 
 **A blessed potion of polymorph is now a self-contained controlled
-polymorph.**
+polymorph.** No ring of polymorph control required: blessing the
+potion grants control for that one transformation. Single-use
+polymorph strategies (iron golem form for extreme AC, bat form to
+scout, pick something with a good intrinsic) are now accessible
+without needing to find or wish for the ring first. The ring is
+still useful for ongoing polymorphing, but for a single planned
+transformation, one blessed potion does the same job.
 
-No ring of polymorph control required. A blessed potion of polymorph
-grants control for that specific transformation: you pick the form,
-execute the plan, move on. This makes single-use polymorph strategies
-(grab iron golem form for extreme AC, go bat form to scout the next
-level, pick something with a good intrinsic) accessible without needing
-to find or wish for the ring first.
-
-The ring of polymorph control is less of a priority acquisition now.
-It's still useful for ongoing or repeated polymorphing. But for a single
-planned transformation, one blessed potion does everything the ring
-would have done.
-
-**Vampire polymorph now supports genuine form cycling.**
-
-A hero polymorphed into a vampire can use `#monster` to switch between
-vampire, bat, and fog cloud forms. This used to be a one-way door:
-enter bat form and stay there until the polymorph expired. In 5.0 it's a loop.
-
-Fog cloud form passes through doors and certain barriers, making
-navigation through heavily-gated areas practical. Bat form offers
-flight and mobility. Vampire form is where you do the actual fighting.
-A polyed vampire can now plan routes through an area the way a veteran
-player plans routes through Gehennom: by form rather than by direction.
-Fog through the chokepoint, fight in the open room, reposition as bat,
+**Vampire polymorph supports genuine form cycling.** A polymorphed
+vampire can `#monster` to switch between vampire, bat, and fog
+cloud forms. This used to be a one-way door; in 5.0 it's a loop.
+Fog cloud passes through doors and certain barriers, bat form
+offers flight and mobility, vampire form does the fighting. A
+polyed vampire plans routes by form rather than by direction: fog
+through the chokepoint, fight in the open room, reposition as bat,
 repeat.
 
-**Gold dragon scale mail eliminates your light source slot.**
-
-Gold dragon scale mail provides a 2-square light radius as an innate
-property, in addition to two resistances. In the late game, when
-inventory is a puzzle and every slot counts, wearing gold dragon scale
-mail means you can retire the lamp and use that slot for something that
-actually matters. It's no longer the dragon scale mail without a
-compelling niche. It has one.
-
-**The amulet of guarding completes your magic cancellation elegantly.**
-
-The amulet provides +2 AC and +2 magic cancellation. Add a cloak of
-magic resistance (MC1) and you reach MC3 without needing the cloak of
-protection (the only single-item MC3 source, which takes your cloak
-slot entirely). This frees your neck slot for the amulet, your cloak
-slot for magic resistance, and keeps you at MC3. It's a clean solution
-to what used to be a slot-allocation headache.
+**Gold dragon scale mail eliminates your light source slot.** The
+mail provides a 2-square innate light radius in addition to its
+two resistances. In the late game, when inventory is a puzzle and
+every slot counts, wearing it lets you retire the lamp and use
+that slot for something that actually matters.
 
 **Plan for more wishes.** Vlad's throne now guarantees a wish
-eventually (four of thirteen outcomes; the throne survives the other
-nine so you can sit again), and picking up the Amulet of Yendor for the
-first time grants a wish. A prepared player can reliably expect five to
-seven wishes across a game now. This gives you more flexibility in what
-to spend early wishes on. A good second or third priority item is now a
-reasonable target.
+eventually (four of thirteen outcomes; the throne survives the
+other nine so you can sit again), and picking up the Amulet of
+Yendor for the first time grants a wish. A prepared player can
+reliably expect five to seven wishes across a game now. Spend
+early wishes more freely; a good second or third priority item is
+now a reasonable target.
 
-**Your pet can grow stronger and come back from the dead.**
+**Your pet can grow stronger and come back from the dead.** Pets
+gain resistances from corpses just as you do. More importantly, a
+dead pet can be revived: stand on its corpse at a co-aligned altar
+and pray. The conditions have to align (prayer timeout, alignment
+record, Luck), but when they do, the companion that's been with
+you since level 3 walks out of the other side of death and gets
+back to work.
 
-Pets gain resistances from the corpses they eat, exactly as you do.
-More importantly, a dead pet can be revived. Stand on its corpse at a
-co-aligned altar and pray. The conditions have to align (prayer
-timeout, alignment record, Luck), but when they do, the companion
-that's been with you since level 3 walks out of the other side of death
-and gets back to work.
+#### What to Watch Out For
 
----
-
-#### Quiet Changes That Will Get You Killed
-
-**Potions don't survive Gehennom's floor.**
-
-Dropping a potion on the floor in Gehennom has roughly a 50–70% chance
-of shattering it, modified by BUC status and Luck. The floor is hot.
-Potions are glass. This is the predictable result. Keep potions in
-containers in Gehennom; don't casually drop while swapping inventory;
-don't stash them for later on the floor. The exception is holy water
-you're using right now, and even then, get it back into a container.
-
-**Monsters will take your things.**
-
-Intelligent monsters can now unlock chests, remove items from open
-containers, and even carry containers away. A wand of undead turning in
-a monster's hands can animate corpses in your open inventory. The Castle
-chest (historically sitting there waiting for you) can be looted by
-the level's residents given time and a key. Clear levels before leaving.
-Keep critical containers locked. Don't haul a collection of interesting
-corpses through an area with caster monsters and expect them all to
-still be inert on the other side.
-
-**Ranged monsters run from you now.**
-
-Anything with a ranged attack actively backs away to maintain distance
-when you approach. The centaur archer that used to stand still while you
-walked toward it now retreats. The monster spellcaster that used to
-close to cast now stays where it can cast comfortably. Closing to melee
-is no longer a reliable response to a ranged threat. Corners, wands of
-teleportation, and your own ranged options become necessary more often.
-
-**Monster spellcasters stopped giving you a free turn after casting.**
-This was a 3.6.x quirk: they'd cast a spell and then also move, making
-them jitter. Fixed now. Positioning-based tactics near casters work more
-reliably as a result, but the additional free-turn exploit is gone.
-
-**Themed rooms mean that uniform rooms are above-curve.**
-
-A room full of giants is almost certainly a themed room, not a
-coincidence. Themed rooms have above-average monster density
-concentrated around a single type. Any room that looks like it was
-curated deserves more respect than a random room of equivalent apparent
-difficulty. Retreat, assess, and enter with a plan rather than a
-direction.
-
-**Spell levels shifted.**
-
-Charm monster is now level 5 (was 3). If your tactical framework relied
-on charm monster as a cheap mid-game taming tool, recalibrate. Sleep is
-now level 3 (was 1), less accessible to non-specialists. Confuse
-monster dropped to level 1 (was 2), much more accessible. The balance
-of what spells are practical for non-Wizards has shifted; check the
-current table before planning around spells that used to be free.
+**Luck-grinding by sacrificing weak corpses no longer works.** In
+3.6.x, a stack of kobold corpses on a co-aligned altar could push
+your luck to maximum through sheer volume. In 5.0, if your current
+luck score already exceeds the difficulty rating of the monster
+being sacrificed, you gain zero luck. The gods accept your kobold,
+bless the corpse, and give you nothing. To push luck higher once
+you're past the low positives, you need fresh corpses of monsters
+whose difficulty actually exceeds your luck value. In practice: a
+luckstone handles maintenance; sacrifice mid-tier monsters when
+you want to push higher.
 
 ---
 
 #### What to Change in Your Gameplay Habits in 5.0
 
-1. Stop planning permanent speed or invisibility around self-zap wands.
-2. Stop luck-grinding with low-difficulty sacrifice fodder once luck is
-   positive.
-3. Stop leaving containers unattended in cleared-but-not-cleaned areas.
-4. Stop carrying speculative corpse collections through caster-heavy
-   floors.
-5. Stop walking toward ranged threats expecting to neutralize them in
-   melee.
+1. Stop planning permanent speed or invisibility around self-zap
+   wands.
+2. Stop luck-grinding with low-difficulty sacrifice fodder once
+   luck is positive.
+3. Stop leaving containers unattended in cleared-but-not-cleaned
+   areas.
+4. Stop carrying speculative corpse collections through
+   caster-heavy floors.
+5. Stop walking toward ranged threats expecting to neutralize them
+   in melee.
 6. Stop dropping potions on the floor in Gehennom.
-7. Start checking every container in the first ten levels for supply
-   caches.
+7. Start checking every container in the first ten levels for
+   supply caches.
 
 ---
 
-*The dungeon has been thoughtfully redesigned by people who wanted it
-to be better and more dangerous simultaneously, which is exactly the
-kind of thing that experienced NetHack players think is wonderful and
-newcomers find bracing. Treat every floor you think you know with the
-respect you'd give one you've never seen before.*
+*The dungeon has been thoughtfully redesigned by people who wanted
+it to be better and more dangerous simultaneously, which is exactly
+the kind of thing that experienced NetHack players think is
+wonderful and newcomers find bracing. Treat every floor you think
+you know with the respect you'd give one you've never seen before.*
 
 ---
 
