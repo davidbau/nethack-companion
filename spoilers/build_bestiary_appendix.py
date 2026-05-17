@@ -795,7 +795,7 @@ for sym in SYM_ORDER:
     # strings drop the hoisted labels.
     universal, almost = class_trait_summary(items)
     hoisted = universal | {label for label, _ in almost}
-    out.append('<div class="dense-table">')
+    out.append('::: dense-table')
     out.append('')
     out.append('| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |')
     out.append('|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|')
@@ -820,7 +820,7 @@ for sym in SYM_ORDER:
         out.append(f'| {name} | {clr} | {mon["lvl"]} | {mon["mov"]} | {mon["ac"]} | '
                    f'{mon["mr_pct"]} | {atks} | {note} |')
     out.append('')
-    out.append('</div>')
+    out.append(':::')
     out.append('')
 
 print('\n'.join(out))

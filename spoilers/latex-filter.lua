@@ -21,6 +21,28 @@ function BlockQuote(bq)
   })
 end
 
+-- Dense-table fenced divs (`::: dense-table`) wrap appendix reference
+-- tables that have many narrow columns + one long Notes column. The
+-- HTML version uses CSS .dense-table { font-size: 0.68em }; the LaTeX
+-- equivalent is \footnotesize (≈80% of body) plus tighter column
+-- separation. \footnotesize is a touch larger than the HTML's 0.68em
+-- ratio, but \scriptsize at 0.70 reads as tiny in print.
+function Div(div)
+  for _, class in ipairs(div.classes) do
+    if class == "dense-table" then
+      local result = {
+        pandoc.RawBlock("latex",
+          "\\begingroup\\footnotesize\\setlength{\\tabcolsep}{3pt}")
+      }
+      for _, b in ipairs(div.content) do
+        table.insert(result, b)
+      end
+      table.insert(result, pandoc.RawBlock("latex", "\\endgroup"))
+      return result
+    end
+  end
+end
+
 -- Check if a code block looks like a Sokoban map
 local function is_sokoban_map(block)
   if block.tag ~= "CodeBlock" then return false end

@@ -4015,6 +4015,8 @@ more artifacts already exist in the game.
 cost is some energy plus a wear-out interval before it can be used
 again.
 
+::: dense-table
+
 | Role       | Artifact                                     | Form         | Wear/wield                  | Carry                  | `#invoke`        |
 |-----------|-------------------------------------------------------------|--------------|--------------------------|------------------------|-----------------|
 | Archeologist| The Orb of Detection                | crystal ball | —                              | MR, ESP, ½ spell dmg   | invisibility      |
@@ -4030,6 +4032,8 @@ again.
 | Tourist     | Platinum Yendorian Express Card     | credit card  | —                              | MR, ESP, ½ spell dmg   | charge an item    |
 | Valkyrie    | The Orb of Fate                     | crystal ball | —                              | +luck, warn, ½ all dmg | levitate/teleport |
 | Wizard      | The Eye of the Aethiopica           | amulet       | —                              | MR, ½ spell, +energy   | create portal     |
+
+:::
 
 **The Orb of Detection** (Archeologist): a crystal ball that grants
 ESP and magic resistance just by being carried. `#invoke` toggles
@@ -6596,7 +6600,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 
 #### Dagger
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
@@ -6606,11 +6610,11 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 | silver dagger | 1d4 / 1d3 | 12 | 40 | +2 | silver | Silver damage to demons. Common Rogue/Ranger off-hand. |
 | athame | 1d4 / 1d3 | 10 | 4 | +2 | iron | Used for engraving wards — Elbereth on the floor lasts longer engraved with an athame. |
 
-</div>
+:::
 
 #### Knife
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
@@ -6620,11 +6624,11 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 | worm tooth | 1d2 / 1d2 | 20 | 2 | — | bone |  |
 | crysknife | 1d10 / 1d10 | 20 | 100 | +3 | bone | Polymorphs back to a worm tooth when dropped; keep it equipped or buried. |
 
-</div>
+:::
 
 #### Short sword
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
@@ -6633,22 +6637,22 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 | orcish short sword | 1d5 / 1d8 | 30 | 10 | — | iron |  |
 | dwarvish short sword | 1d7 / 1d8 | 30 | 10 | — | iron |  |
 
-</div>
+:::
 
 #### Saber
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | scimitar | 1d8 / 1d8 | 40 | 15 | — | iron |  |
 | silver saber | 1d8 / 1d8 | 40 | 75 | — | silver | Werebane is the artifact form — silver damage to weres and demons. |
 
-</div>
+:::
 
 #### Broadsword
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
@@ -6656,118 +6660,118 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 | elven broadsword | 1d6+1d4 / 1d6+1 | 70 | 10 | — | wood |  |
 | runesword | 1d4+1d4 / 1d6+1 | 40 | 300 | — | iron |  |
 
-</div>
+:::
 
 #### Long sword
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | long sword | 1d8 / 1d12 | 40 | 15 | — | iron | Dip in a fountain at XL5+ for Excalibur (1-in-30; 1-in-6 for Lawful Knights). |
 | katana | 1d10 / 1d12 | 40 | 80 | +1 | iron | +1 to-hit baked in. Snickersnee is the artifact form. |
 
-</div>
+:::
 
 #### Two-handed sword
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | two-handed sword | 1d12 / 1d6+2d6 | 150 | 50 | — | iron | Two-handed (no shield). Vorpal Blade is the artifact form. |
 | tsurugi | 1d16 / 1d8+2d6 | 60 | 500 | +2 | metal | Two-handed. The Tsurugi of Muramasa is the artifact form. |
 
-</div>
+:::
 
 #### Axe
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | axe | 1d6 / 1d4 | 60 | 8 | — | iron |  |
 | battle-axe | 1d8+1d4 / 1d6+2d4 | 120 | 40 | — | iron | Two-handed; +1d4 small, +2d4 large. |
 
-</div>
+:::
 
 #### Pick-axe
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | dwarvish mattock | 1d12 / 1d8+2d6 | 120 | 50 | — | iron | Two-handed. Digs through walls; cannot two-weapon. |
 
-</div>
+:::
 
 #### Club
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | club | 1d6 / 1d3 | 30 | 3 | — | wood | What a Caveman starts with — basic but free of curses early. |
 | aklys | 1d6 / 1d3 | 15 | 4 | — | iron | Returns when thrown if Strength is high enough. |
 
-</div>
+:::
 
 #### Mace
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | mace | 1d6+1 / 1d6 | 30 | 5 | — | iron | The Priest's first sacrifice gift, Demonbane, is a +d4/+0 silver mace. |
 | silver mace | 1d6+1 / 1d6 | 36 | 60 | — | silver | Bonus damage to demons, undead, and shape-changers. |
 
-</div>
+:::
 
 #### Morning star
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | morning star | 1d4+1d4 / 1d6+1 | 120 | 10 | — | iron | +1d4 small, +1 large — punches above its weight for a one-hander. |
 
-</div>
+:::
 
 #### Flail
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | flail | 1d6+1 / 1d4+1d4 | 15 | 4 | — | iron | +1d4 large; one-handed. |
 
-</div>
+:::
 
 #### Hammer
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | war hammer | 1d4+1 / 1d4 | 50 | 5 | — | iron | Mjollnir is the artifact form (Neutral Valkyrie sacrifice gift). |
 
-</div>
+:::
 
 #### Quarterstaff
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | quarterstaff | 1d6 / 1d6 | 40 | 5 | — | wood | Two-handed but light; the Wizard's starting weapon. |
 
-</div>
+:::
 
 #### Polearms
 
 All polearms are two-handed and have a reach of two squares (`#apply` the weapon to strike a target one tile away from you, with one empty intervening square). They can't be used in melee against an adjacent monster — the haft gets in the way — which means you switch weapons or use the polearm's reach attack, not both. Notes below describe each entry's extra damage; the reach mechanic is identical across the class.
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
@@ -6784,11 +6788,11 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | lucern hammer | 1d4+1d4 / 1d6 | 150 | 7 | — | iron | +1d4 small. |
 | bec de corbin | 1d8 / 1d6 | 100 | 8 | — | iron | Reach. |
 
-</div>
+:::
 
 #### Spear
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
@@ -6799,42 +6803,42 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | silver spear | 1d6 / 1d8 | 36 | 40 | — | silver | Silver damage to demons and weres. |
 | javelin | 1d6 / 1d6 | 20 | 3 | — | iron |  |
 
-</div>
+:::
 
 #### Trident
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | trident | 1d6+1 / 1d4+2d4 | 25 | 5 | — | iron | +1 small, +2d4 large — the giant-killer; one-handed. |
 
-</div>
+:::
 
 #### Lance
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | lance | 1d6 / 1d8 | 180 | 10 | — | iron | Devastating from horseback (jousting bonus); useless on foot. |
 
-</div>
+:::
 
 #### Whip
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | rubber hose | 1d4 / 1d3 | 20 | 3 | — | plastic | Joke weapon (1d4 / 1d3). Damages even Shades, who are immune to most. |
 | bullwhip | 1d2 / 1 | 20 | 4 | — | leather | Archeologist's starter. Apply to disarm an adjacent monster, or to yank yourself out of a pit (anchors on a nearby boulder, furniture, or big monster). |
 
-</div>
+:::
 
 #### Bow
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
@@ -6848,58 +6852,58 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | orcish bow | — | 30 | 60 | — | wood |  |
 | yumi | — | 30 | 60 | — | wood | The Samurai's bow. |
 
-</div>
+:::
 
 #### Crossbow
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | crossbow bolt | 1d4+1 / 1d6+1 | 1 | 2 | — | iron |  |
 | crossbow | — | 50 | 40 | — | wood | Bolts pierce — and crossbows fire one shot per turn at most. |
 
-</div>
+:::
 
 #### Sling
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | sling | — | 3 | 20 | — | leather | Trains sling skill from any rock you pick up. |
 
-</div>
+:::
 
 #### Dart
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | dart | 1d3 / 1d2 | 1 | 2 | — | iron |  |
 
-</div>
+:::
 
 #### Shuriken
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | shuriken | 1d8 / 1d6 | 1 | 5 | +2 | iron |  |
 
-</div>
+:::
 
 #### Boomerang
 
-<div class="dense-table">
+::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | boomerang | 1d9 / 1d9 | 5 | 20 | — | wood | Returns when thrown. Always. |
 
-</div>
+:::
 
 ---
 
@@ -6909,7 +6913,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 
 #### Body armor (suits)
 
-<div class="dense-table">
+::: dense-table
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
@@ -6939,11 +6943,11 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | green dragon scale mail | +9 | — | 40 | 900 | dragonhide | Poison resistance. |
 | yellow dragon scale mail | +9 | — | 40 | 900 | dragonhide | Acid resistance. Rare. |
 
-</div>
+:::
 
 #### Dragon scales
 
-<div class="dense-table">
+::: dense-table
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
@@ -6958,22 +6962,22 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | green dragon scales | +3 | — | 40 | 500 | dragonhide | Poison resistance. |
 | yellow dragon scales | +3 | — | 40 | 500 | dragonhide | Acid resistance. |
 
-</div>
+:::
 
 #### Shirts
 
-<div class="dense-table">
+::: dense-table
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
 | Hawaiian shirt | +0 | — | 5 | 3 | cloth | Tourist starter. Worn under body armor. |
 | T-shirt | +0 | — | 5 | 2 | cloth | Worn under body armor. |
 
-</div>
+:::
 
 #### Cloaks
 
-<div class="dense-table">
+::: dense-table
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
@@ -6990,11 +6994,11 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | cloak of magic resistance | +1 | 1 | 10 | 60 | cloth | Magic resistance. Lightest source of magic resistance. |
 | cloak of displacement | +1 | 1 | 10 | 50 | cloth | Displacement. |
 
-</div>
+:::
 
 #### Helmets
 
-<div class="dense-table">
+::: dense-table
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
@@ -7011,11 +7015,11 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | helm of opposite alignment | +1 | — | 50 | 50 | iron | Flips alignment. Catastrophic if cursed. |
 | helm of telepathy | +1 | — | 50 | 50 | iron | Telepathy. Telepathy while blind. |
 
-</div>
+:::
 
 #### Gloves
 
-<div class="dense-table">
+::: dense-table
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
@@ -7024,11 +7028,11 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | gauntlets of power | +1 | — | 30 | 50 | iron | Sets Strength to 25. |
 | gauntlets of dexterity | +1 | — | 10 | 50 | leather | +d3 Dex per enchantment. |
 
-</div>
+:::
 
 #### Boots
 
-<div class="dense-table">
+::: dense-table
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
@@ -7043,11 +7047,11 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | fumble boots | +1 | — | 20 | 30 | leather | Causes frequent fumbling. Avoid. |
 | levitation boots | +1 | — | 15 | 30 | leather | Levitation (cannot be removed while in the air). Can't remove while levitating. Trap item. |
 
-</div>
+:::
 
 #### Shields
 
-<div class="dense-table">
+::: dense-table
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
@@ -7061,7 +7065,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | dwarvish roundshield | +2 | — | 100 | 10 | iron |  |
 | shield of reflection | +2 | — | 50 | 50 | silver | Reflection. Saves the body-armor slot. |
 
-</div>
+:::
 
 ---
 
@@ -7073,7 +7077,7 @@ Every monster you might meet. Grouped by ASCII symbol so you can flip to the rig
 
 Insects, often in groups. The soldier ant is the early game's infamous killer: its poison sting can two-shot a low-level hero. Killer bees swarm; the queen bee in a beehive room is tough on her own.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7084,7 +7088,7 @@ Insects, often in groups. The soldier ant is the early game's infamous killer: i
 | giant beetle | black | 5 | 6 | 4 | 0 | bite 3d6 | poisonous-corpse, pois-res. |
 | queen bee | magenta | 9 | 24 | -4 | 0 | sting 1d8 poison | flies, poisonous-corpse, pois-res. |
 
-</div>
+:::
 
 #### Blobs `b`
 
@@ -7092,7 +7096,7 @@ Slow, mindless, immune to a lot. Don't melee an acid blob with bare hands or a m
 
 All blobs are mindless, sleep-resistant, and poison-resistant.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7100,7 +7104,7 @@ All blobs are mindless, sleep-resistant, and poison-resistant.
 | quivering blob | white | 5 | 1 | 8 | 0 | touch 1d8 |  |
 | gelatinous cube | cyan | 6 | 6 | 8 | 0 | touch 2d4 paralyse · passive 1d4 paralyse | fire-res, cold-res, shock-res, acid-res, ston-res. Slow but paralyses on touch. Don't melee without free-action. |
 
-</div>
+:::
 
 #### Cockatrices `c`
 
@@ -7108,7 +7112,7 @@ Medieval bestiary creature: a chicken with a serpent's tail whose touch turns fl
 
 All cockatrices are poison-resistant.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7116,13 +7120,13 @@ All cockatrices are poison-resistant.
 | cockatrice | yellow | 5 | 6 | 6 | 30 | bite 1d3 · touch petrify · passive petrify | ston-res. Touch petrifies. Always carry a lizard corpse. |
 | pyrolisk | red | 6 | 6 | 6 | 30 | gaze 2d6 fire · bite 1d6 | fire-res. |
 
-</div>
+:::
 
 #### Dogs and canines `d`
 
 Wild canines hunt in packs. Domestic ones can be tamed by feeding (see [Making Friends](#making-friends)). Werejackals and werewolves can give lycanthropy.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7143,7 +7147,7 @@ Wild canines hunt in packs. Domestic ones can be tamed by feeding (see [Making F
 | hell hound | red | 12 | 14 | 2 | 20 | bite 3d6 · breath 3d6 fire | fire-res. |
 | Cerberus | red | 12 | 10 | 2 | 20 | bite 3d6 · bite 3d6 · bite 3d6 | fire-res. Three-headed hellhound. Reflection + fire resistance only. |
 
-</div>
+:::
 
 #### Eyes and spheres `e`
 
@@ -7151,7 +7155,7 @@ The floating eye's passive paralysis gaze is the single most famous newbie kille
 
 All eyes and spheres fly. All except *floating eye* also are mindless.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7161,13 +7165,13 @@ All eyes and spheres fly. All except *floating eye* also are mindless.
 | flaming sphere | red | 6 | 13 | 4 | 0 | explode 4d6 fire | fire-res. |
 | shocking sphere | bright-blue | 6 | 13 | 4 | 0 | explode 4d6 shock | shock-res. |
 
-</div>
+:::
 
 #### Felines `f`
 
 Cats. Several are starting pets. Tigers are durable melee and good early companions if tamed.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7180,13 +7184,13 @@ Cats. Several are starting pets. Tigers are durable melee and good early compani
 | tiger | yellow | 6 | 12 | 6 | 0 | claw 2d4 · claw 2d4 · bite 1d10 |  |
 | displacer beast | blue | 12 | 12 | -10 | 0 | claw 4d4 · claw 4d4 · bite 2d10 |  |
 
-</div>
+:::
 
 #### Gremlins `g`
 
 Touch in water (or just at night) can steal an intrinsic. Kill them on dry land, ideally during daylight.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7194,13 +7198,13 @@ Touch in water (or just at night) can steal an intrinsic. Kill them on dry land,
 | gargoyle | brown | 6 | 10 | -4 | 0 | claw 2d6 · claw 2d6 · bite 2d4 | ston-res. |
 | winged gargoyle | magenta | 9 | 15 | -2 | 0 | claw 3d6 · claw 3d6 · bite 3d4 | flies, ston-res. |
 
-</div>
+:::
 
 #### Humanoids `h`
 
 Dwarves and similar. Dwarves carry better-than-average loot (weapons, armor, pick-axes) and can wreck low-level heroes with that loot.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7212,7 +7216,7 @@ Dwarves and similar. Dwarves carry better-than-average loot (weapons, armor, pic
 | mind flayer | bright-magenta | 9 | 12 | 5 | 90 | weapon 1d4 · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int | flies, sees-invis. Tentacle attacks drain Int; if Int hits 3 you die. Wear an alignment-matching helmet or kill from range. |
 | master mind flayer | bright-magenta | 13 | 12 | 0 | 90 | weapon 1d8 · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int | flies, sees-invis. Five tentacles per turn. Catastrophic without telepathy + free action. |
 
-</div>
+:::
 
 #### Imps and minor demons `i`
 
@@ -7220,7 +7224,7 @@ Annoying minor demons. Imps steal items and teleport away; quasits drain Dexteri
 
 All imps and minor demons follow you up and down stairs. All except *imp* also are poison-resistant.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7231,7 +7235,7 @@ All imps and minor demons follow you up and down stairs. All except *imp* also a
 | quasit | blue | 3 | 15 | 2 | 20 | claw 1d2 drain-Dx · claw 1d2 drain-Dx · bite 1d4 | regenerates. |
 | tengu | cyan | 6 | 13 | 5 | 30 | bite 1d7 | teleports, teleport-control. |
 
-</div>
+:::
 
 #### Jellies `j`
 
@@ -7239,7 +7243,7 @@ Stationary or near-stationary. The blue jelly's passive cold and the spotted jel
 
 All jellies are amorphous and mindless.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7247,7 +7251,7 @@ All jellies are amorphous and mindless.
 | spotted jelly | green | 5 | 0 | 8 | 10 | passive 0d6 acid |  |
 | ochre jelly | brown | 6 | 3 | 8 | 20 | engulf 3d6 acid · passive 3d6 acid |  |
 
-</div>
+:::
 
 #### Kobolds `k`
 
@@ -7255,7 +7259,7 @@ Weak early-game fodder. Most are poisonous to eat — leave the corpses unless y
 
 All kobolds have poisonous corpses and are poison-resistant.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7264,19 +7268,19 @@ All kobolds have poisonous corpses and are poison-resistant.
 | kobold lord | magenta | 2 | 6 | 10 | 0 | weapon 2d4 |  |
 | kobold shaman | bright-blue | 2 | 6 | 6 | 10 | spell spell |  |
 
-</div>
+:::
 
 #### Leprechauns `l`
 
 Steals gold and teleports away. The fix is to carry no gold near them, or to kill from range. The corpse drops the gold back.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | leprechaun | green | 5 | 15 | 8 | 20 | claw 1d2 steal-gold | teleports. Steals gold and teleports away. Carry no gold near them. |
 
-</div>
+:::
 
 #### Mimics `m`
 
@@ -7284,7 +7288,7 @@ Disguised as items, walls, or fountains. Common in shops and zoos. The giveaway 
 
 All mimics are amorphous, hide, and are acid-resistant.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7292,7 +7296,7 @@ All mimics are amorphous, hide, and are acid-resistant.
 | large mimic | red | 8 | 3 | 7 | 10 | claw 3d4 sticky |  |
 | giant mimic | magenta | 9 | 3 | 7 | 20 | claw 3d6 sticky · claw 3d6 sticky |  |
 
-</div>
+:::
 
 #### Nymphs `n`
 
@@ -7300,7 +7304,7 @@ Steals one item and teleports away. The cure is to engage from range, block her 
 
 All nymphs teleport.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7308,13 +7312,13 @@ All nymphs teleport.
 | water nymph | blue | 3 | 12 | 9 | 20 | claw steal-item · claw seduce | swims. |
 | mountain nymph | brown | 3 | 12 | 9 | 20 | claw steal-item · claw seduce |  |
 
-</div>
+:::
 
 #### Orcs `o`
 
 Pack hunters with mediocre loot but real numbers. The Mines are full of them; bring a chokepoint.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7327,7 +7331,7 @@ Pack hunters with mediocre loot but real numbers. The Mines are full of them; br
 | orc shaman | bright-blue | 3 | 9 | 5 | 10 | spell spell | pois-res. |
 | orc-captain | magenta | 5 | 5 | 10 | 0 | weapon 2d4 · weapon 2d4 | pois-res. Hits hard. Drops decent loot. |
 
-</div>
+:::
 
 #### Piercers `p`
 
@@ -7335,7 +7339,7 @@ Clings to the ceiling and drops on you when you walk under. Hits hard for its le
 
 All piercers hide.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7343,13 +7347,13 @@ All piercers hide.
 | iron piercer | cyan | 5 | 1 | 0 | 0 | bite 3d6 |  |
 | glass piercer | white | 7 | 1 | 0 | 0 | bite 4d6 | acid-res. |
 
-</div>
+:::
 
 #### Quadrupeds `q`
 
 Mixed bag. Rothes are early-game wreckers (three attacks per turn). Mumakil are slow but extremely sturdy.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7361,13 +7365,13 @@ Mixed bag. Rothes are early-game wreckers (three attacks per turn). Mumakil are 
 | baluchitherium | gray | 14 | 12 | 5 | 0 | claw 5d4 · claw 5d4 |  |
 | mastodon | black | 20 | 12 | 5 | 0 | butt 4d8 · butt 4d8 |  |
 
-</div>
+:::
 
 #### Rodents `r`
 
 Mostly nuisance fodder. Giant rats are common in the early dungeon; their corpses are safe food.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7378,7 +7382,7 @@ Mostly nuisance fodder. Giant rats are common in the early dungeon; their corpse
 | rock mole | gray | 3 | 3 | 0 | 20 | bite 1d6 | tunnels. |
 | woodchuck | — | 3 | 3 | 0 | 20 | bite 1d6 | swims, tunnels. |
 
-</div>
+:::
 
 #### Arachnids and centipedes `s`
 
@@ -7386,7 +7390,7 @@ Includes scorpions and centipedes. Many have poison stings. Spider-class monster
 
 All arachnids and centipedes are poison-resistant.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7396,7 +7400,7 @@ All arachnids and centipedes are poison-resistant.
 | scorpion | red | 5 | 15 | 3 | 0 | claw 1d2 · claw 1d2 · sting 1d4 poison | hides, poisonous-corpse. |
 | Scorpius | magenta | 15 | 12 | 10 | 0 | claw 2d6 · claw 2d6 steal-amulet · sting 1d4 disease | poisonous-corpse, follows stairs, ston-res. |
 
-</div>
+:::
 
 #### Trappers and lurkers `t`
 
@@ -7404,20 +7408,20 @@ Stationary engulfers that look like a piece of dungeon. Stepping into one starts
 
 All trappers and lurkers hide and follow you up and down stairs.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | lurker above | gray | 10 | 3 | 3 | 0 | engulf 1d6 wrap · engulf 2d6 | flies. |
 | trapper | green | 12 | 3 | 3 | 0 | engulf 1d8 wrap · engulf 2d8 |  |
 
-</div>
+:::
 
 #### Unicorns and horses `u`
 
 White, gray, and black — Lawful, Neutral, Chaotic. Killing a cross-aligned one with a thrown unicorn horn or melee gives Luck. Killing a co-aligned one is a major Luck penalty.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7428,7 +7432,7 @@ White, gray, and black — Lawful, Neutral, Chaotic. Killing a cross-aligned one
 | horse | brown | 5 | 20 | 5 | 0 | kick 1d8 · bite 1d3 | tameable. |
 | warhorse | brown | 7 | 24 | 4 | 0 | kick 1d10 · bite 1d4 | tameable. |
 
-</div>
+:::
 
 #### Vortices `v`
 
@@ -7436,7 +7440,7 @@ Stationary elemental clouds. They wait for you to step in. Different colors deal
 
 All vortices fly and are mindless.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7447,13 +7451,13 @@ All vortices fly and are mindless.
 | steam vortex | blue | 7 | 22 | 2 | 30 | engulf 1d8 fire |  |
 | fire vortex | yellow | 8 | 22 | 2 | 30 | engulf 1d10 fire · passive 0d4 fire |  |
 
-</div>
+:::
 
 #### Worms `w`
 
 Long worms become a maze of tail segments as they grow. Purple worms swallow you whole and digest. Don't get cornered.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7462,7 +7466,7 @@ Long worms become a maze of tail segments as they grow. Purple worms swallow you
 | long worm | brown | 9 | 3 | 5 | 10 | bite 2d4 |  |
 | purple worm | magenta | 15 | 9 | 6 | 20 | bite 2d8 · engulf 1d10 digest |  |
 
-</div>
+:::
 
 #### Xans and fantastic insects `x`
 
@@ -7470,14 +7474,14 @@ Grid bugs are trivial; xans, the bigger relatives, sting your legs and slow you 
 
 All xans and fantastic insects are poison-resistant.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | grid bug | magenta | 0 | 12 | 9 | 0 | bite 1d1 shock | shock-res. |
 | xan | red | 7 | 18 | -4 | 0 | sting 1d4 leg-wound | flies, poisonous-corpse. |
 
-</div>
+:::
 
 #### Lights `y`
 
@@ -7485,26 +7489,26 @@ Yellow light bursts on death and blinds you (10d20 damage if unresistant). Black
 
 All lights fly and are amorphous and mindless.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | yellow light | yellow | 3 | 15 | 0 | 0 | explode 10d20 blind |  |
 | black light | black | 5 | 15 | 0 | 0 | explode 10d12 hallu | sees-invis. |
 
-</div>
+:::
 
 #### Zruties `z`
 
 Slavic folklore — a hairy wild man of the woods. One species, one role here: a nasty mid-game brute. Good XP if you can handle the three-attack flurry.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | zruty | brown | 9 | 8 | 3 | 0 | claw 3d4 · claw 3d4 · bite 3d6 |  |
 
-</div>
+:::
 
 #### Angelic beings `A`
 
@@ -7512,7 +7516,7 @@ Powerful late-game spellcasters with weapons. Astral-Plane Angels guard each Hig
 
 All angelic beings follow you up and down stairs. All except *Aleax* also fly. All except *couatl* also see invisible.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7522,7 +7526,7 @@ All angelic beings follow you up and down stairs. All except *Aleax* also fly. A
 | ki-rin | yellow | 16 | 18 | -5 | 90 | kick 2d4 · kick 2d4 · butt 3d6 · spell 2d6 spell |  |
 | Archon | magenta | 19 | 16 | -6 | 80 | weapon 2d4 · weapon 2d4 · gaze 2d6 blind · claw 1d8 · spell 4d6 spell | regenerates. |
 
-</div>
+:::
 
 #### Bats and birds `B`
 
@@ -7530,7 +7534,7 @@ Erratic flyers, mostly nuisance. Vampire bats can give lycanthropy.
 
 All bats and birds fly.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7539,13 +7543,13 @@ All bats and birds fly.
 | raven | black | 4 | 20 | 6 | 0 | bite 1d6 · claw 1d6 blind |  |
 | vampire bat | black | 5 | 20 | 6 | 0 | bite 1d6 · bite poison | regenerates, poisonous-corpse, sleep-res, pois-res. |
 
-</div>
+:::
 
 #### Centaurs `C`
 
 Mounted archers with strong physical attacks. They wield bows and shoot at range.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7553,7 +7557,7 @@ Mounted archers with strong physical attacks. They wield bows and shoot at range
 | forest centaur | green | 5 | 18 | 3 | 10 | weapon 1d8 · kick 1d6 |  |
 | mountain centaur | cyan | 6 | 20 | 2 | 10 | weapon 1d10 · kick 1d6 · kick 1d6 |  |
 
-</div>
+:::
 
 #### Dragons `D`
 
@@ -7561,7 +7565,7 @@ Each color breathes its element type. Reflection bounces the ranged breath back.
 
 All except *Chromatic Dragon* also fly.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7588,7 +7592,7 @@ All except *Chromatic Dragon* also fly.
 | Chromatic Dragon | magenta | 16 | 12 | 0 | 30 | breath 6d6 rnd-breath · spell spell · claw 2d8 steal-amulet · bite 4d8 · bite 4d8 · sting 1d6 | sees-invis, poisonous-corpse, follows stairs. (no flies) |
 | Ixoth | red | 15 | 12 | -1 | 20 | breath 8d6 fire · bite 4d8 · spell spell · claw 2d4 · claw 2d4 steal-amulet | sees-invis, follows stairs. |
 
-</div>
+:::
 
 #### Elementals `E`
 
@@ -7596,7 +7600,7 @@ Air engulfs and suffocates, fire deals fire damage, water drowns if you're adjac
 
 All except *stalker* also are mindless.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7606,7 +7610,7 @@ All except *stalker* also are mindless.
 | earth elemental | brown | 8 | 6 | 2 | 30 | claw 4d6 | fire-res, cold-res, pois-res, ston-res. |
 | water elemental | blue | 8 | 5 | 2 | 30 | claw 5d6 | swims, amphibious, pois-res, ston-res. |
 
-</div>
+:::
 
 #### Fungi and molds `F`
 
@@ -7614,7 +7618,7 @@ Stationary. Lichen corpses never rot — keep one in your pack as iron rations. 
 
 All fungi and molds are mindless.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7626,13 +7630,13 @@ All fungi and molds are mindless.
 | shrieker | magenta | 3 | 1 | 7 | 0 | — | pois-res. |
 | violet fungus | magenta | 3 | 1 | 7 | 0 | touch 1d4 · touch sticky | pois-res. |
 
-</div>
+:::
 
 #### Gnomes `G`
 
 Mines residents. Gnomish PCs find most of them peaceful. The gnome lord and gnomish wizard are real threats; the gnome king is rare but dangerous.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7641,13 +7645,13 @@ Mines residents. Gnomish PCs find most of them peaceful. The gnome lord and gnom
 | gnomish wizard | bright-blue | 3 | 10 | 4 | 10 | spell spell |  |
 | gnome king | magenta | 5 | 10 | 10 | 20 | weapon 2d6 |  |
 
-</div>
+:::
 
 #### Giant humanoids `H`
 
 Boulder throwers. Storm / fire / frost giants match the dragon elements; titans cast spells. Eating a giant's corpse raises Strength.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7663,25 +7667,25 @@ Boulder throwers. Storm / fire / frost giants match the dragon elements; titans 
 | Cyclops | gray | 18 | 12 | 0 | 0 | weapon 4d8 · weapon 4d8 · claw 2d6 steal-amulet | follows stairs, ston-res. Caveman quest nemesis. Throws boulders. |
 | Lord Surtur | magenta | 15 | 12 | 2 | 50 | weapon 2d10 · weapon 2d10 · claw 2d6 steal-amulet | follows stairs, fire-res, ston-res. Valkyrie quest nemesis. Has Mjollnir if you don't. |
 
-</div>
+:::
 
 #### Jabberwocks `J`
 
 The monster from Lewis Carroll's *Jabberwocky* ("O frabjous day! Callooh! Callay!"). Slow, tough, hits hard. Free XP if you're set up for the fight; lethal if you walk into one early. Vorpal Blade was made for beheading it.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | jabberwock | orange | 15 | 12 | -2 | 50 | bite 2d10 · bite 2d10 · claw 2d10 · claw 2d10 | flies. Powerful but slow. Free XP if you're set up. |
 
-</div>
+:::
 
 #### Keystone Kops `K`
 
 Police force triggered by stealing from shops or hurting shopkeepers. Mostly weak individually but they swarm.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7690,7 +7694,7 @@ Police force triggered by stealing from shops or hurting shopkeepers. Mostly wea
 | Kop Lieutenant | cyan | 3 | 10 | 10 | 20 | weapon 1d8 |  |
 | Kop Kaptain | magenta | 4 | 12 | 10 | 20 | weapon 2d6 |  |
 
-</div>
+:::
 
 #### Liches `L`
 
@@ -7698,7 +7702,7 @@ Skeletal spellcasters. Higher tiers cast double-trouble and Death; master and ar
 
 All liches regenerate, have poisonous corpses, and are undead, cold-resistant, sleep-resistant, and poison-resistant.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7707,7 +7711,7 @@ All liches regenerate, have poisonous corpses, and are undead, cold-resistant, s
 | master lich | magenta | 17 | 9 | -4 | 90 | touch 3d6 cold · spell spell | fire-res. Casts double-trouble. Disperse or kill from afar. |
 | arch-lich | magenta | 25 | 9 | -6 | 90 | touch 5d6 cold · spell spell | fire-res, shock-res. End-game tier. Casts death rays. Magic resistance mandatory. |
 
-</div>
+:::
 
 #### Mummies `M`
 
@@ -7715,7 +7719,7 @@ Touch curses your worn items. Bring uncursing on hand (holy water, remove curse)
 
 All mummies have poisonous corpses and are mindless and undead.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7728,7 +7732,7 @@ All mummies have poisonous corpses and are mindless and undead.
 | ettin mummy | blue | 7 | 12 | 4 | 30 | claw 2d6 · claw 2d6 | cold-res, sleep-res, pois-res. |
 | giant mummy | cyan | 8 | 14 | 3 | 30 | claw 3d4 · claw 3d4 | cold-res, sleep-res, pois-res. |
 
-</div>
+:::
 
 #### Nagas `N`
 
@@ -7736,7 +7740,7 @@ Long serpentine bodies, varied breath weapons (acid / fire / poison). Healers fi
 
 All nagas are poison-resistant.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7749,13 +7753,13 @@ All nagas are poison-resistant.
 | golden naga | yellow | 10 | 14 | 2 | 70 | bite 2d6 · spell 4d6 spell |  |
 | guardian naga | green | 12 | 16 | 0 | 50 | spit 1d6 poison · bite 1d6 paralyse · touch · hug 2d4 wrap | poisonous-corpse. Friendly to the Healer. Hostile otherwise. |
 
-</div>
+:::
 
 #### Ogres `O`
 
 Big melee brutes. Ogre kings throw boulders. Drop decent weapons and armor.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7763,7 +7767,7 @@ Big melee brutes. Ogre kings throw boulders. Drop decent weapons and armor.
 | ogre lord | red | 7 | 12 | 3 | 30 | weapon 2d6 |  |
 | ogre king | magenta | 9 | 14 | 4 | 60 | weapon 3d5 |  |
 
-</div>
+:::
 
 #### Puddings and oozes `P`
 
@@ -7771,7 +7775,7 @@ Splits when you hit them. Brown puddings corrode armor on touch; black puddings 
 
 All puddings and oozes are amorphous, mindless, cold-resistant, poison-resistant, acid-resistant, and petrification-resistant. All except *gray ooze* also are shock-resistant.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7780,7 +7784,7 @@ All puddings and oozes are amorphous, mindless, cold-resistant, poison-resistant
 | green slime | green | 6 | 6 | 6 | 0 | touch 1d4 slime · passive slime | poisonous-corpse. |
 | black pudding | black | 10 | 6 | 6 | 0 | bite 3d8 corrode · passive corrode |  |
 
-</div>
+:::
 
 #### Quantum mechanics `Q`
 
@@ -7788,27 +7792,27 @@ Touch teleports you randomly. The annoyance is the lost position more than the d
 
 All quantum mechanics teleport and have poisonous corpses.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | quantum mechanic | cyan | 7 | 12 | 3 | 10 | claw 1d4 teleport |  |
 | genetic engineer | green | 12 | 12 | 3 | 10 | claw 1d4 polymorph |  |
 
-</div>
+:::
 
 #### Rust monsters and disenchanters `R`
 
 Rust monsters rust iron equipment on touch; disenchanters remove the enchantment off your +5 long sword. Strip iron armor / switch to silver or non-iron weapons before engaging.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | rust monster | brown | 5 | 18 | 2 | 0 | touch rust · touch rust · passive rust | swims. Touch rusts iron. Strip armor before engaging or use silver. |
 | disenchanter | blue | 12 | 12 | -10 | 0 | claw 4d4 disenchant · passive disenchant | Touch removes enchantment. Devastating to your +5 long sword. |
 
-</div>
+:::
 
 #### Snakes `S`
 
@@ -7816,7 +7820,7 @@ Mostly poisonous. The pit viper and pit fiend are the dangerous ones; garter sna
 
 All snakes swim. All except *python* also hide.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7827,7 +7831,7 @@ All snakes swim. All except *python* also hide.
 | pit viper | blue | 6 | 15 | 2 | 0 | bite 1d4 poison · bite 1d4 poison | poisonous-corpse, pois-res. |
 | cobra | blue | 6 | 18 | 2 | 0 | bite 2d4 poison · spit blind | poisonous-corpse, pois-res. |
 
-</div>
+:::
 
 #### Trolls `T`
 
@@ -7835,7 +7839,7 @@ Regenerates from corpses. Eat the corpse, burn it with fire, or zap it with magi
 
 All trolls regenerate and follow you up and down stairs.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7845,19 +7849,19 @@ All trolls regenerate and follow you up and down stairs.
 | water troll | blue | 11 | 14 | 4 | 40 | weapon 2d8 · claw 2d8 · bite 2d6 | swims. |
 | Olog-hai | magenta | 13 | 12 | -4 | 0 | weapon 3d6 · claw 2d8 · bite 2d6 |  |
 
-</div>
+:::
 
 #### Umber hulks `U`
 
 Confusion gaze. Don't melee without blindness or free action; the confusion stacks and makes spellcasting impossible.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | umber hulk | brown | 9 | 6 | 2 | 25 | claw 3d4 · claw 3d4 · bite 2d5 · gaze confuse | tunnels. Confusion gaze. Hard to navigate around. Hits hard too. |
 
-</div>
+:::
 
 #### Vampires `V`
 
@@ -7865,7 +7869,7 @@ Drains XL on bite. Shapeshifts to bat or cloud. Vlad the Impaler is the vampire 
 
 All vampires fly, regenerate, have poisonous corpses, are undead, follow you up and down stairs, and shapeshift.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7873,7 +7877,7 @@ All vampires fly, regenerate, have poisonous corpses, are undead, follow you up 
 | vampire lord | blue | 12 | 14 | 0 | 50 | claw 1d8 · bite 1d8 drain-XL |  |
 | Vlad the Impaler | magenta | 28 | 26 | -6 | 80 | weapon 2d10 · bite 1d12 drain-XL | Vampire boss in Vlad's Tower. Has the Candelabrum. |
 
-</div>
+:::
 
 #### Wraiths `W`
 
@@ -7881,7 +7885,7 @@ Drains XL on touch. The wraith corpse, however, **gives** a level when eaten: on
 
 All wraiths are undead and follow you up and down stairs.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7889,25 +7893,25 @@ All wraiths are undead and follow you up and down stairs.
 | wraith | black | 6 | 12 | 4 | 15 | touch 1d6 drain-XL | flies. |
 | Nazgul | magenta | 13 | 12 | 0 | 25 | weapon 1d4 drain-XL · breath 2d25 sleep | sees-invis. |
 
-</div>
+:::
 
 #### Xorns `X`
 
 D&D's three-armed, three-eyed creatures from the Elemental Plane of Earth. In the dungeon they tunnel through rock and eat metal: your weapons and armor are at risk on touch. Hits hard for its level; magic resistance helps.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | xorn | brown | 8 | 9 | -2 | 20 | claw 1d3 · claw 1d3 · claw 1d3 · bite 4d6 | fire-res, cold-res, ston-res. |
 
-</div>
+:::
 
 #### Apelike creatures `Y`
 
 Apes and great apes mostly; sasquatches are fast. Carnivore corpses are safe food.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7918,7 +7922,7 @@ Apes and great apes mostly; sasquatches are fast. Carnivore corpses are safe foo
 | carnivorous ape | black | 6 | 12 | 6 | 0 | claw 1d4 · claw 1d4 · hug 1d8 |  |
 | sasquatch | gray | 7 | 15 | 6 | 0 | claw 1d6 · claw 1d6 · kick 1d8 | sees-invis. |
 
-</div>
+:::
 
 #### Zombies `Z`
 
@@ -7926,7 +7930,7 @@ Slow undead. Easy to kite. Corpses are usually unsafe to eat. Big zombie populat
 
 All zombies are mindless and undead.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -7941,13 +7945,13 @@ All zombies are mindless and undead.
 | giant zombie | cyan | 8 | 8 | 6 | 0 | claw 2d8 · claw 2d8 | follows stairs, cold-res, sleep-res, pois-res. |
 | skeleton | white | 12 | 8 | 4 | 0 | weapon 2d6 · touch 1d6 slow | cold-res, sleep-res, pois-res, ston-res. |
 
-</div>
+:::
 
 #### Humans and elves `@`
 
 The catch-all `@` class: shopkeepers, priests, watchmen, Kops, role nemeses, quest leaders, valkyries, ninja, and the player. Most start peaceful; the ones that don't are very dangerous.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -8024,7 +8028,7 @@ The catch-all `@` class: shopkeepers, priests, watchmen, Kops, role nemeses, que
 | warrior | white | 5 | 12 | 10 | 10 | weapon 1d8 · weapon 1d8 | starts peaceful. |
 | apprentice | white | 5 | 12 | 10 | 30 | weapon 1d6 · spell spell | starts peaceful. |
 
-</div>
+:::
 
 #### Major demons `&`
 
@@ -8032,7 +8036,7 @@ Major demons. Most can gate in reinforcements (a single barbed devil in your fac
 
 All except *erinys* also follow you up and down stairs.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -8066,7 +8070,7 @@ All except *erinys* also follow you up and down stairs.
 | Minion of Huhetotl | orange | 16 | 12 | -2 | 75 | weapon 8d4 · weapon 4d6 · spell spell · claw 2d6 steal-amulet | flies, sees-invis, poisonous-corpse, demonic. |
 | Nalzok | orange | 16 | 12 | -2 | 85 | weapon 8d4 · weapon 4d6 · spell spell · claw 2d6 steal-amulet | flies, sees-invis, poisonous-corpse, demonic. |
 
-</div>
+:::
 
 #### Golems `'`
 
@@ -8074,7 +8078,7 @@ Mindless constructs. Wood and leather golems are early-game fodder; iron, stone,
 
 All golems are mindless, sleep-resistant, and poison-resistant.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -8090,7 +8094,7 @@ All golems are mindless, sleep-resistant, and poison-resistant.
 | glass golem | cyan | 16 | 6 | 1 | 50 | claw 2d8 · claw 2d8 | acid-res. |
 | iron golem | cyan | 18 | 6 | 3 | 60 | weapon 4d10 · breath 4d6 poison | poisonous-corpse, fire-res, cold-res, shock-res. |
 
-</div>
+:::
 
 #### Sea monsters `;`
 
@@ -8098,7 +8102,7 @@ Lives in water. Wraps around you and drags you under to drown. Don't fight one f
 
 All sea monsters swim and are amphibious.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -8109,13 +8113,13 @@ All sea monsters swim and are amphibious.
 | electric eel | bright-blue | 7 | 10 | -3 | 0 | bite 4d6 shock · touch wrap | shock-res. |
 | kraken | red | 20 | 3 | 6 | 0 | claw 2d4 · claw 2d4 · hug 2d6 wrap · bite 5d4 |  |
 
-</div>
+:::
 
 #### Lizards `:`
 
 Mostly harmless. **Lizard corpses cure petrification and never rot.** Carry one at all times — this is the standard answer to cockatrices and Medusa.
 
-<div class="dense-table">
+::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
@@ -8128,7 +8132,7 @@ Mostly harmless. **Lizard corpses cure petrification and never rot.** Carry one 
 | crocodile | brown | 6 | 9 | 5 | 0 | bite 4d2 · claw 1d12 | swims, amphibious. |
 | salamander | orange | 8 | 12 | -1 | 0 | weapon 2d8 · touch 1d6 fire · hug 2d6 · hug 3d6 fire | poisonous-corpse, follows stairs, fire-res, sleep-res. |
 
-</div>
+:::
 
 ---
 
@@ -8319,11 +8323,12 @@ you want to push higher.
 
 ---
 
-*The dungeon has been thoughtfully redesigned by people who wanted
-it to be better and more dangerous simultaneously, which is exactly
-the kind of thing that experienced NetHack players think is
-wonderful and newcomers find bracing. Treat every floor you think
-you know with the respect you'd give one you've never seen before.*
+*For more than forty years, NetHack has challenged and surprised
+generations of players, and for 5.0 the dungeon has been
+thoughtfully redesigned by people who wanted it to be better and
+more dangerous simultaneously. Welcome, adventurer.*
+
+*You descend the stairs...*
 
 ---
 

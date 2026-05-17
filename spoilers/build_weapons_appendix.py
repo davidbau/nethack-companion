@@ -259,7 +259,7 @@ for skill in SKILL_ORDER:
     if skill in SECTION_PROSE:
         out.append(SECTION_PROSE[skill])
         out.append('')
-    out.append('<div class="dense-table">')
+    out.append('::: dense-table')
     out.append('')
     # Lopsided dash widths in the separator tell pandoc to give the
     # Notes column a much wider rendered column than the numeric ones.
@@ -276,7 +276,7 @@ for skill in SKILL_ORDER:
         note = get_note(name)
         out.append(f'| {name} | {dmg} | {wt} | {cost} | {hit_str} | {mat} | {note} |')
     out.append('')
-    out.append('</div>')
+    out.append(':::')
     out.append('')
 
 print('\n'.join(out))
