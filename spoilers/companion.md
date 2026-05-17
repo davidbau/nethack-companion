@@ -5455,6 +5455,24 @@ messages roll off silently.
 `Ctrl+R` redraws the screen — a useful reflex when the terminal
 gets garbled or when something doesn't look right.
 
+#### Dungeon overview and event journal
+
+`Ctrl+O` (or `#overview`) opens a summary of every level you've
+visited so far: branch entrances, stairs, the locations of shops,
+altars, fountains, temples, vaults, and named landmarks like the
+Oracle, the Castle, and Vlad's Tower. Once you've discovered the
+Castle's tune it's listed here too. Use it as a navigation map
+when you're returning to a stash or trying to remember which
+level had the altar you can't dip into.
+
+`v` (or `#chronicle`) opens the **chronicle** — a journal of the
+major events of *this game*: first kills, conduct breaks,
+artifact gifts and crownings, prayer outcomes, level milestones,
+and entries into major branches. It's most useful at the end of
+a run to recount the story; mid-run it's a quick way to check
+which conducts you've broken without having to dig through
+`#conduct`.
+
 #### Options worth knowing about
 
 Open the options screen with `O` (capital O, not zero). The
