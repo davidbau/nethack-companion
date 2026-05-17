@@ -4240,13 +4240,13 @@ match — roughly a third of your purse for clairvoyance, two-thirds
 for protection. A rich hero who hands over only a few hundred
 zorkmids will be politely thanked but not blessed.
 
-**The cheapskate penalty.** If you offer less than the suggested
-amount *and* you have more than twice your offer on you, the priest
-calls you a **Cheapskate** and permanently adds **40 zm per
-offense** to *that priest's* baseline. Penalties are stored on the
-individual priest, not on you — a different temple is unaffected.
-If you offered nothing (`0`), your co-aligned god takes a small
-alignment hit on top.
+**The cheapskate penalty.** If you offer noticeably less than
+what's expected while clearly able to afford more, the priest
+calls you a Cheapskate and will hold a grudge: the next time you
+chat with that same priest, the cost will be higher. The
+penalty stacks if you keep doing it, and it sticks for the rest of
+the game. Other priests in other temples aren't affected. Refusing
+to donate anything at all also costs you alignment with your god.
 
 **Practical guidance:**
 
@@ -4334,12 +4334,12 @@ apparently dungeon physics care about monster volume.) Added to base:
 - Weapon skill bonus (depends on skill level)
 - Special bonuses (silver damage, artifact bonuses, etc.)
 - In 5.0, **two-handed weapons** get a 50% bonus to the strength
-  damage component — a deliberate payoff for giving up your shield
+  damage component, a deliberate payoff for giving up your shield
 
 This narrows the gap between two-handed builds and dual-wielding
 considerably. A Barbarian with a two-handed sword and respectable
 Strength is not just accepting the trade-off of foregoing a
-shield — they're dealing measurably more damage per swing than a
+shield: they're dealing measurably more damage per swing than a
 comparable one-handed build. If you've been avoiding
 two-handed weapons because the math didn't add up, run those numbers
 again.
