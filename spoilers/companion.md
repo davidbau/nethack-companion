@@ -3926,7 +3926,7 @@ cost is some energy plus a wear-out interval before it can be used
 again.
 
 | Role       | Artifact                                     | Form         | Wear/wield                  | Carry bonus            | `#invoke`        |
-|------------|----------------------------------------------|--------------|-----------------------------|------------------------|------------------|
+|-----------|-------------------------------------------------------|--------------|--------------------------|------------------------|-----------------|
 | Archeologist| The Orb of Detection                | crystal ball | —                              | MR, ESP, ½ spell dmg   | invisibility      |
 | Barbarian   | The Heart of Ahriman                | luckstone    | ×2 dmg as a projectile         | stealth, +luck         | levitation        |
 | Caveman     | The Sceptre of Might                | mace         | +d5 hit; ×2 vs non-lawful      | magic resistance       | conflict          |
