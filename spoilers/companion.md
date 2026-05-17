@@ -908,21 +908,14 @@ The puzzles are fixed (two variants per level, randomly chosen).
 Each level has exactly one correct solution. If you push a boulder
 into a corner where it blocks your progress there is no way to
 start over. You're left with a few ways to cheat, which might or
-might not help: **squeeze past** the boulder (drop most of your
-pack first — squeezing only works when you're carrying very little
-— then walk into the boulder's square and the game will ask if
-you want to squeeze), **break it** with a wand of striking or by
-force-fighting it, or **levitate over** the offending pit.
-Squeezing and breaking each cost you a point of Luck and break
-the Sokoban conduct; levitation is free of penalty but leaves
-you unable to pick anything up while airborne. **Teleport
-doesn't work here:** the level forbids it. Squeezing past a
-boulder can sometimes save the puzzle if there's open floor on
-the far side — once across, you can push the boulder back the
-way it came. If nothing works, accept the loss: leave the prize,
-take the downstair back to the Oracle level, and continue
-without the bag of holding or amulet of reflection. The game
-won't warn you when a push goes wrong.
+might not help: **squeeze past** the boulder (drop your stuff to
+fit), **break it** with a wand of striking or by force-fighting
+it, or **levitate over** the pit. Squeezing and breaking each
+cost a point of Luck and break the Sokoban conduct; levitation
+is free of penalty but you can't pick anything up while airborne.
+**Teleport doesn't work here:** the level forbids it. If nothing
+works, take the downstair back to the Oracle level and continue
+without the prize.
 
 The prize at the top is either a **bag of holding** or an **amulet
 of reflection**, both extremely valuable; the
