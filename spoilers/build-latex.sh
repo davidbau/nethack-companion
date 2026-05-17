@@ -18,10 +18,45 @@ if ! command -v xelatex &>/dev/null; then
 fi
 
 echo "=== Building PDF via LaTeX ==="
+
+# Make sure the dungeon-map PDFs are present and current.
+if [ ! -f images/dmap-dod.pdf ] || [ companion.md -nt images/dmap-dod.pdf ]; then
+  python3 dungeon_map.py --pdfs
+fi
+
 # Print version drops web-only asides ("or more likely scrolling
 # through" — true in a browser, false on paper). Anything that's
 # accurate-on-screen-only-and-wrong-in-print belongs in this sed.
 sed -e 's/ (or more likely scrolling through)//' companion.md > .companion-print.md
+
+# Replace the inline-SVG dungeon map block with markdown image
+# references to the PDFs that dungeon_map.py wrote. Pandoc turns
+# these into \begin{figure}\includegraphics... blocks that LaTeX
+# pages correctly.
+python3 - <<'PY'
+import re
+from pathlib import Path
+md = Path('.companion-print.md').read_text()
+caption = (
+    'Dungeons of Doom, Gehennom, and the Elemental Planes. '
+    'Branches extend left and right of the main trunk. Pearls '
+    '(small colored dots) indicate the approximate number of '
+    'intervening dungeon levels. ★ marks the three Invocation '
+    'items (Bell of Opening, Candelabrum, Book of the Dead) '
+    "needed to enter Moloch's Sanctum and claim the Amulet."
+)
+replacement = (
+    '\n\n![](images/dmap-dod.pdf)\n\n'
+    '![](images/dmap-geh.pdf)\n\n'
+    f'![{caption}](images/dmap-planes.pdf)\n\n'
+)
+md = re.sub(
+    r'<!-- DMAP-BEGIN -->.*?<!-- DMAP-END -->',
+    replacement, md, flags=re.DOTALL,
+)
+Path('.companion-print.md').write_text(md)
+PY
+
 pandoc .companion-print.md \
   --from=markdown \
   --pdf-engine=xelatex \

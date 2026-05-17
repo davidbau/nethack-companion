@@ -149,6 +149,17 @@
 % Reduce table font size to fit 5-inch pages
 \AtBeginEnvironment{longtable}{\footnotesize}
 
+% Suppress phantom longtable headers. longtable's pagination
+% sometimes emits a fresh \endhead at the top of the page after the
+% table actually ended, leaving a ghost column header floating
+% before the next section. The fix below loads xltabular's
+% longtable-replacement environment via the ltablex package and
+% redefines pandoc's longtable opener so each table uses the
+% phantom-free pagination logic.
+\usepackage{ltablex}
+\keepXColumns
+\AtEndEnvironment{longtable}{\null}
+
 % --- Code blocks ---
 \usepackage{fancyvrb}
 \usepackage{fvextra}
@@ -205,6 +216,21 @@ $endif$
 % --- Graphics ---
 \usepackage{graphicx}
 \usepackage{grffile}
+
+% Pandoc 3.5+ wraps every \includegraphics in \pandocbounded, which
+% scales the image down to fit within \linewidth x \textheight. We
+% accept that behaviour but define it as a passthrough so older
+% pandocs (or our own definition) keep working.
+\providecommand{\pandocbounded}[1]{%
+  \begingroup
+    \setbox0=\hbox{#1}%
+    \ifdim\wd0>\linewidth
+      \resizebox{\linewidth}{!}{\box0}%
+    \else
+      \box0%
+    \fi
+  \endgroup
+}
 
 % --- Widows and orphans ---
 \widowpenalty=10000

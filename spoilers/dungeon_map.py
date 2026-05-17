@@ -10,6 +10,8 @@ Usage:
 from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Optional, Literal
+import shutil
+import subprocess
 import sys
 import re
 from pathlib import Path
@@ -666,9 +668,18 @@ def _section_parts(placed: Placed, y_min: int, y_max: int, y_offset: int,
     return parts
 
 
+def render_sections() -> dict[str, str]:
+    """Render the three map sections. Returns {'dod', 'geh', 'planes'}
+    mapped to their standalone SVG strings."""
+    return _render(return_sections=True)
+
+
 def render_svg() -> str:
-    """Build the three-section dungeon map. Each section is its own SVG;
-    CSS stacks them flush so they read as one continuous diagram."""
+    """Build the assembled three-section figure as one markdown string."""
+    return _render(return_sections=False)
+
+
+def _render(*, return_sections: bool):
     # === Layout (absolute Y coordinates) ===
     placed = Placed()
 
@@ -728,6 +739,9 @@ def render_svg() -> str:
     planes_svg = _wrap_svg(plane_parts, planes_local_end + 10,
                            aria_label='Elemental Planes and Ascension')
 
+    if return_sections:
+        return {'dod': dod_svg, 'geh': geh_svg, 'planes': planes_svg}
+
     # === Assemble the figure ===
     figure = (
         '<div><figure style="margin: 1.5em 0; text-align: center;">'
@@ -763,10 +777,32 @@ def replace_inplace(target_md: Path) -> None:
     print(f'Updated {target_md}', file=sys.stderr)
 
 
+def write_pdfs(images_dir: Path) -> None:
+    """Write each map section as a standalone SVG plus PDF (via rsvg-convert)
+    into images_dir/. The PDFs are what the LaTeX print pipeline includes;
+    the SVGs are kept alongside for diffability."""
+    if shutil.which('rsvg-convert') is None:
+        sys.exit('rsvg-convert not found. Install with: brew install librsvg')
+    images_dir.mkdir(parents=True, exist_ok=True)
+    sections = render_sections()
+    for name, svg in sections.items():
+        svg_path = images_dir / f'dmap-{name}.svg'
+        pdf_path = images_dir / f'dmap-{name}.pdf'
+        svg_path.write_text(svg)
+        subprocess.run(
+            ['rsvg-convert', '-f', 'pdf', '-o', str(pdf_path), str(svg_path)],
+            check=True,
+        )
+        print(f'Wrote {pdf_path}', file=sys.stderr)
+
+
 def main() -> None:
     if len(sys.argv) > 1 and sys.argv[1] == '--inplace':
-        target = Path(__file__).parent / 'companion.md'
-        replace_inplace(target)
+        here = Path(__file__).parent
+        replace_inplace(here / 'companion.md')
+        write_pdfs(here / 'images')
+    elif len(sys.argv) > 1 and sys.argv[1] == '--pdfs':
+        write_pdfs(Path(__file__).parent / 'images')
     else:
         print(render_svg())
 

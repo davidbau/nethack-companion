@@ -2398,20 +2398,20 @@ quoted price under different conditions, find the row that matches
 your situation and read across; or, given a base price you suspect,
 read the price you'd be quoted.
 
-| Modifier            |   Mult |  50 |  60 |  80 | 100 | 150 | 200 |
-|---------------------|-------:|----:|----:|----:|----:|----:|----:|
-| Cha 6–7             |  ×1.5  |  75 |  90 | 120 | 150 | 225 | 300 |
-| Cha 8–10            |  ×1.33 |  67 |  80 | 107 | 133 | 200 | 267 |
-| Cha 11–15           |  ×1.00 |  50 |  60 |  80 | 100 | 150 | 200 |
-| Cha 16–17           |  ×0.75 |  38 |  45 |  60 |  75 | 113 | 150 |
-| Cha 18              |  ×0.67 |  33 |  40 |  53 |  67 | 100 | 133 |
-| Cha 19+             |  ×0.5  |  25 |  30 |  40 |  50 |  75 | 100 |
-| Tourist Cha 6–7     |  ×2.0  | 100 | 120 | 160 | 200 | 300 | 400 |
-| Tourist Cha 8–10    |  ×1.78 |  89 | 107 | 142 | 178 | 267 | 356 |
-| Tourist Cha 11–15   |  ×1.33 |  67 |  80 | 107 | 133 | 200 | 267 |
-| Tourist Cha 16–17   |  ×1.00 |  50 |  60 |  80 | 100 | 150 | 200 |
-| Tourist Cha 18      |  ×0.89 |  44 |  53 |  71 |  89 | 133 | 178 |
-| Tourist Cha 19+     |  ×0.67 |  33 |  40 |  53 |  67 | 100 | 133 |
+| Modifier            |   Mult |  20 |  50 |  60 |  80 | 100 | 150 | 200 | 300 | 400 |
+|---------------------|-------:|----:|----:|----:|----:|----:|----:|----:|----:|----:|
+| Cha 6–7             |  ×1.5  |  30 |  75 |  90 | 120 | 150 | 225 | 300 | 450 | 600 |
+| Cha 8–10            |  ×1.33 |  27 |  67 |  80 | 107 | 133 | 200 | 267 | 400 | 533 |
+| Cha 11–15           |  ×1.00 |  20 |  50 |  60 |  80 | 100 | 150 | 200 | 300 | 400 |
+| Cha 16–17           |  ×0.75 |  15 |  38 |  45 |  60 |  75 | 113 | 150 | 225 | 300 |
+| Cha 18              |  ×0.67 |  13 |  33 |  40 |  53 |  67 | 100 | 133 | 200 | 267 |
+| Cha 19+             |  ×0.5  |  10 |  25 |  30 |  40 |  50 |  75 | 100 | 150 | 200 |
+| Tourist Cha 6–7     |  ×2.0  |  40 | 100 | 120 | 160 | 200 | 300 | 400 | 600 | 800 |
+| Tourist Cha 8–10    |  ×1.78 |  36 |  89 | 107 | 142 | 178 | 267 | 356 | 533 | 711 |
+| Tourist Cha 11–15   |  ×1.33 |  27 |  67 |  80 | 107 | 133 | 200 | 267 | 400 | 533 |
+| Tourist Cha 16–17   |  ×1.00 |  20 |  50 |  60 |  80 | 100 | 150 | 200 | 300 | 400 |
+| Tourist Cha 18      |  ×0.89 |  18 |  44 |  53 |  71 |  89 | 133 | 178 | 267 | 356 |
+| Tourist Cha 19+     |  ×0.67 |  13 |  33 |  40 |  53 |  67 | 100 | 133 | 200 | 267 |
 
 Numbers are NetHack's integer-rounded prices, not the round-number
 multiplier reapplied. Sell offers are unaffected by Charisma, so
@@ -2968,15 +2968,14 @@ gives the aggravate monster intrinsic. Cavemen and orcs are exempt.
 | Fire giant / fire ant   | Fire resistance                                                        |
 | Red mold                | Fire resistance                                                        |
 | Winter wolf             | Cold resistance                                                        |
-| Blue jelly              | Cold resistance (also poison)                                          |
+| Blue jelly              | Cold and poison resistance                                             |
 | Brown mold              | Cold resistance                                                        |
 | Yeti                    | Cold resistance                                                        |
-| Quivering blob          | Sleep resistance (also poison)                                         |
-| Acid blob               | Sleep, poison, acid, & stoning resistance                              |
-| **Gelatinous cube**     | **Fire, cold, shock, sleep, poison, acid, & stoning resistance** (chance for each per eat — the single best intrinsic-grab in the game) |
-| **Brown pudding glob**  | **Shock resistance** (also cold, poison) — puddings drop globs, not corpses |
-| **Black pudding glob**  | Shock resistance (also cold, poison)                                   |
-| Gray ooze glob          | Fire, cold, poison resistance                                          |
+| Quivering blob          | Poison resistance                                                      |
+| Acid blob               | Acid and stoning resistance                                            |
+| Gelatinous cube         | Fire, cold, shock, sleep, poison, acid, and stoning resistance (chance for each per eat) |
+| Brown or black pudding  | Cold, shock, and poison resistance                                     |
+| Gray ooze               | Fire, cold, and poison resistance                                      |
 | Wraith                  | Gain an experience level                                               |
 | Giant                   | Increase strength                                                      |
 | Lizard                  | Cures stoning in progress                                              |
@@ -5063,7 +5062,7 @@ recent ascensions from the public NetHack server shows what most
 winners carry. Here is the canonical kit, slot by slot:
 
 | Slot | Canonical pick | Notes |
-|--------|-----------|-----------------------------------------------------|
+|--------|------------------------|---------------------------------------|
 | **Body** | Dragon scale mail | Gray (magic resistance) or silver (reflection) are the popular picks; blue (shock) also works. |
 | **Cloak** | Cloak of magic resistance | Or a robe for casters. Magic resistance is non-negotiable in Gehennom. |
 | **Helm** | Helm of brilliance, telepathy, or holiness | Brilliance for casters; telepathy when you might be blind. |
