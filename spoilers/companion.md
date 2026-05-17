@@ -1150,7 +1150,6 @@ you'll regret finding them:
 | Dart trap       | Fires a dart, may be poisoned                       |
 | Squeaky board   | Makes noise, wakes nearby monsters                  |
 | Rust trap       | Splashes water, rusting exposed metal equipment     |
-| Rolling boulder | A boulder rolls at you (dodge or take heavy damage) |
 
 Annoying but rarely lethal. The silver lining: arrow and dart traps
 produce free ammunition. Veterans sometimes trigger them deliberately
@@ -1184,8 +1183,9 @@ above them.
 | Sleeping gas trap | Puts you to sleep (helpless for several turns)       |
 | Fire trap         | Burns you, destroys scrolls and potions in inventory |
 | Magic trap        | Random magical effects (some good, some very bad)    |
-| Anti-magic field  | Drains magical energy; **much more dangerous in 5.0** if you have magic resistance (see below) |
+| Anti-magic field  | Drains magical energy; hits harder if you carry magic resistance (see below) |
 | Polymorph trap    | Polymorphs you into a random creature                |
+| Rolling boulder   | Triggers a boulder rolling along a fixed track; takes you out if your square is in its path |
 
 Fire traps are the sleeper threat. The fire itself hurts, but
 the real catastrophe is your inventory: scrolls burn, potions
@@ -1466,10 +1466,8 @@ semi-permanent until you land.
 
 Much of the most important information in NetHack comes to you as
 cryptic feelings and sounds. They sound like atmosphere, but most
-of them are specific signals — a corpse intrinsic just landed, a
-vault is on this level, your pet died offscreen. If you don't know
-what they mean, you'll miss the cues entirely. They are worth
-memorizing:
+of them are specific signals. If you don't know what they mean,
+you'll miss the cues entirely. They are worth memorizing:
 
 | Message                                          | What it means                                                            |
 |--------------------------------------------------|--------------------------------------------------------------------------|
@@ -2381,14 +2379,15 @@ the one most players will encounter. You don't need to memorize exact
 formulas. What matters is grouping: items quoted at similar prices
 are in the same price tier.
 
-Two further wrinkles for unidentified items. (1) About 25% of unID'd
-items carry an extra 4/3 buy surcharge, fixed per-item, so the same
-scroll's surcharge status is consistent across shops. (2) About 25%
-of shopkeepers are "unfamiliar" with unID'd merchandise and offer 3/4
-of normal on sell, fixed per-shopkeeper, so once you've tested one
-unID item you know the rule for all unID sales to that shop. Either
-of these can shift a quoted price into an adjacent tier, so when in
-doubt, check the surrounding tiers too.
+Two further wrinkles affect unidentified items. About a quarter of
+unID'd items carry an extra 4/3 buy surcharge, fixed per item, so a
+given scroll's surcharge status is consistent across shops. And
+about a quarter of shopkeepers are "unfamiliar" with unID'd
+merchandise and offer only 3/4 of normal on sell, fixed per
+shopkeeper, so once you've tested one unID item you know the rule
+for all unID sales at that shop. Either wrinkle can shift a quoted
+price into an adjacent tier, so when in doubt check the surrounding
+tiers too.
 
 One more state worth knowing about: **Angry**. If you've previously
 done something to anger a shopkeeper (fired a wand from a doorway,
@@ -4987,8 +4986,9 @@ refuses to lift you out empty-handed.
 
 #### The Heist
 
-Three Invocation items + one square + one boss + one frantic
-climb = the climax of the game. The choreography:
+The climax of the game is a choreographed sequence: three
+Invocation items, one vibrating square, one final boss, and one
+frantic climb back to the surface. The steps:
 
 1. **Collect the trio.** You need the **Bell of Opening** (the
    Quest goal, dropped by your quest nemesis), the **Candelabrum
@@ -5252,134 +5252,91 @@ altar, make one sacrifice, and end this.
 
 ### Advanced Controls
 
-Or: *How to Stop Typing the Same Thing Over and Over*
+The basic keys get you through every situation in NetHack. The
+commands below get you through them faster. Once you've spent a
+few thousand turns hammering `s` and walking corridors one square
+at a time, they become reflex.
 
-The basic commands get you through most situations: `h` moves west, `s` searches, `.` waits. But there's a layer of control built on top of these basics that experienced players use constantly. These are the commands that let you say "do that ten more times" or "fight even though you don't see anything" or "yes, I know I just typed that, do it again."
+#### Command counts
 
-If you're new to NetHack, skip this section. Learn to walk before you learn to run. But if you've been playing for a while and you're tired of mashing the same key twenty times in a row, read on.
+Type a number before any command and the game repeats it that
+many times: `10s` searches ten times, `20.` waits twenty turns,
+`5h` walks west five times. The sequence interrupts automatically
+as soon as anything interesting happens — a monster appears
+adjacent, your HP changes, a `--More--` prompt fires, the search
+turns up something. Press ESC to cancel early.
 
-#### Command Counts (Multi-Digit Prefixes)
+Counts up to 32,767 are accepted (five digits), but the practical
+limit is "however long you'll watch the screen update without
+losing patience." `99s` is plenty for any real searching job.
 
-**The Problem:** You want to search the same spot ten times. You type `s` ten times. Your finger hurts. There must be a better way.
+#### Repeat last command (Ctrl+A)
 
-**The Solution:** Type `10s`. The dungeon will search ten times in a row, stopping early if something interesting happens (like finding a secret door, or a monster appearing, or your HP changing).
+`Ctrl+A` runs whatever you just ran, with the same count if you
+used one. After your first `10s` of searching, every subsequent
+search is one keystroke. This is the most-used advanced command in
+the game and you'll reach for it dozens of times per session. It
+remembers the *last command that actually executed*, not attempts
+that were canceled or bumped against a wall.
 
-This works for any command. `20.` waits twenty turns. `5h` moves west five times. `99s` searches ninety-nine times (though you'll probably find the secret door before then, or conclude it doesn't exist).
+#### Movement prefixes
 
-**The Limits:** You can type up to five digits, for a maximum count of 32,767. If you type more, the count caps at 32,767. If you need to repeat something more than 32,767 times, you have bigger problems than this guide can solve.
+A handful of prefix keys modify the next command and then clear.
+They are essential for moving safely through populated areas.
 
-**When It Stops:** Multi-command sequences are interrupted automatically when:
-- A hostile monster appears adjacent to you
-- Your HP changes (you take damage or heal)
-- A `--More--` prompt appears
+- **`F`** then a direction — **force attack** into that square,
+  even if no monster is visible there. Use it on suspected
+  invisible monsters, on a displaced creature whose image is one
+  square off from its real position, or to break your own
+  Elbereth. Double-tap `F` to cancel without acting.
+- **`G`** then a direction — **run** that direction until
+  something interesting appears: a monster, an unknown item, a
+  trap, a corridor branch, a closed door. Capital-letter
+  directions (`H`, `J`, `K`, `L`, and the diagonals `Y`, `U`,
+  `B`, `N`) are the same thing in one keystroke and are what
+  most players actually use. `g` is a less-cautious variant of
+  `G`, but in practice the difference is negligible.
+- **`m`** then a direction — **move without attacking and without
+  picking up**. Walk past your pet without striking it ("Pardon
+  me, Fido"), step past an autopickup heap, refuse to walk into a
+  known pool or lava square. With non-movement commands, `m`
+  requests a menu instead of the default single-target prompt:
+  `me` is "what would you like to eat?", `ma` is "which tool?",
+  `m,` lets you pick from a floor pile.
 
-Press ESC to cancel a multi-command sequence early.
+#### Message history and redraw
 
-**Example:** Standing next to a likely secret door location, you type `10s`. The game searches once. Twice. Three times. On the fourth search: "You find a hidden door!" The sequence stops. You didn't type `s` ten times; you told the dungeon to search *up to* ten times, and it knew to stop when it found something.
+`Ctrl+P` walks backward through the message history one message
+at a time. A monster's special-attack warning, a shopkeeper's
+price quote, or a status onset is preserved long enough to read it
+twice. The buffer holds the last several dozen lines; older
+messages roll off silently.
 
-#### Repeat Last Command (Ctrl+A)
+`Ctrl+R` redraws the screen — a useful reflex when the terminal
+gets garbled or when something doesn't look right.
 
-**The Problem:** You searched. Nothing. You want to search again. You could type `s` again, but there must be a better way.
+#### Options worth knowing about
 
-**The Solution:** Press **Ctrl+A**. The game repeats whatever you just did: same command, same count if you used one.
+Open the options screen with `O` (capital O, not zero). The
+defaults are reasonable, but a few settings change how the
+commands above feel:
 
-Searched once? Ctrl+A searches again. Moved west with `h`? Ctrl+A moves west again. Searched ten times with `10s`? Ctrl+A searches ten more times.
+- **`number_pad`** turns the numeric keypad into movement keys
+  (1–9 for directions). Off by default; enabling it changes
+  digit-prefix behavior so you press `n` first to enter a count.
+- **`autopickup`** picks items up as you walk over them, filtered
+  by `pickup_types` (e.g. `pickup_types:$?!` for gold, scrolls,
+  and potions). The `m` prefix on movement suppresses autopickup
+  for one step.
+- **`verbose`** makes interrupted multi-commands tell you *why*
+  they stopped instead of just halting.
+- **`msg_window`** displays several recent messages at once in a
+  dedicated window instead of one line at a time. Spares you a
+  lot of `Ctrl+P`.
 
-This is one of the most commonly used advanced commands. Once you learn it, you'll use it constantly. It's faster than retyping, and it works for *any* command.
-
-**What It Remembers:** The last command you executed successfully. Not attempts that failed or were canceled: the last thing that actually happened.
-
-**When to Use It:** Whenever you want to "do that again." Searching repeatedly. Moving in the same direction. Waiting multiple times. Reading the same scroll. (Okay, maybe not that last one.)
-
-#### Prefix Commands (Command Modifiers)
-
-Sometimes you want to modify how the next command behaves. NetHack has a system for this: type a prefix command, then type the command you want to modify. The prefix applies to the next command only, then clears.
-
-##### Fight Prefix (`F`)
-
-**What It Does:** Forces your next movement to attack, even if you don't see a monster there.
-
-**When to Use It:**
-- You suspect an invisible monster is adjacent
-- A monster is displaced (you see it as being somewhere it isn't)
-- You want to attack your own pet (please don't)
-
-**Example:** You hear something breathing nearby, but you don't see anything. You type `Fh` (F, then h). Your character swings west. If there's an invisible monster there, you attack it. If not, you just move west normally.
-
-**The Double-Press Cancel:** Type `F` twice in a row and it cancels. This applies to all prefix commands.
-
-##### Run and Rush Prefixes (`G` and `g`)
-
-**What They Do:**
-- `G` (run): Next direction key runs until something interesting appears
-- `g` (rush): Like run, but... honestly, in practice they work the same
-
-This is an alternative to capital letters. `Gh` runs west. `H` also runs west. Use whichever you prefer.
-
-**When to Use Them:** When you want to move quickly across explored territory. The run stops when you encounter:
-- A monster
-- An item you haven't seen before
-- A trap
-- A branch in the corridor
-- A closed door
-
-**Example:** You're in a long explored corridor. Type `Gh`. Your character runs west until the corridor ends or something interesting appears.
-
-##### Modify Prefix (`m`)
-
-**What It Does:** Modifies the next command.
-
-For **movement**, `m` + direction means "move there without grabbing anything and without attacking":
-
-- Items on the destination square are *not* autopicked up; useful when autopickup is on but you want to step past a heap.
-- A peaceful or tame creature on the destination square gets swapped with instead of attacked: "Pardon me, Fido." A hostile creature you can see costs you a turn ("You move right into the kobold") instead of triggering an attack. This is the safe way to walk past your pet or a peaceful shopkeeper without accidentally striking them.
-- A known dangerous square (pool, lava without safe walking) is refused outright; you don't step in.
-
-For **other commands**, `m` requests a menu instead of the default single-target prompt. `me` brings up an "what do you want to eat?" menu rather than auto-selecting from your inventory; `ma` brings up a menu of applyable tools; `m,` lets you pick items from the floor pile explicitly; and so on. Commands that accept this are flagged internally; most "act on one thing" commands are eligible.
-
-#### Navigation Tips
-
-**Capital Letters = Run:** `H` runs west. `J` runs south. `K` runs north. `L` runs east. The diagonals work too: `Y` runs northwest, `U` runs northeast, `B` runs southwest, `N` runs southeast.
-
-**The Run Rule:** Running stops when something interesting appears. A monster. An item. A branch. A door. Anything that might require a decision. The dungeon is trying to help you not run into trouble.
-
-**Arrow Keys:** Work like you'd expect. Arrow key movement also runs if you hold Shift, but capital letters are usually faster for experienced players.
-
-#### Message History (Ctrl+P)
-
-Press **Ctrl+P** to see the last message. Press it again to see the one before that. Keep pressing to scroll back through message history.
-
-**When to Use It:** You saw something important flash by. A warning about poison. A monster's special ability. A shopkeeper's price quote. Ctrl+P lets you review it.
-
-**The Limit:** Message history stores the last several dozen messages. Beyond that, they're gone. Write down the important ones.
-
-#### Redraw Screen (Ctrl+R)
-
-Press **Ctrl+R** to redraw the screen. Useful if your terminal gets garbled or if you suspect a display bug.
-
-#### The Learning Curve
-
-You don't need to memorize all of these at once. Start with command counts (`10s`) and repeat last command (Ctrl+A). Those two alone will save you thousands of keystrokes over the course of a game.
-
-The prefix commands can wait until you need them. The first time you suspect an invisible monster, you'll remember `F` exists and look it up. The first time you're running across a long corridor, you'll remember `G` or capital letters exist. Let the game teach you when the tools are useful.
-
-The dungeon rewards efficiency, but it doesn't demand it on day one.
-
-#### Related Options
-
-Several options affect how commands and controls work. Access them with the `O` command (that's capital O, not zero).
-
-**`number_pad`**: Enables numeric keypad for movement (1-9 for directions). Off by default. If you enable this, digit prefixes for command counts work differently: you'll need to press `n` first to enter a count.
-
-**`autopickup`**: Automatically picks up items when you walk over them, filtered by the `pickup_types` option (e.g. `pickup_types:$?!` to grab gold, scrolls, and potions). The `m` prefix on a movement command suppresses autopickup for that step.
-
-**`DECgraphics`**: Changes how walls and corridors are drawn. Doesn't affect controls, but might affect how quickly you can read the map.
-
-**`verbose`**: Controls whether the game gives you detailed messages. When on, interruptions to multi-command sequences explain *why* they stopped.
-
-**`msg_window`**: Lets you see multiple messages at once in a dedicated message window, rather than one message at a time on the status line. Extremely useful for reviewing what just happened without Ctrl+P.
-
-The options system is deep and intimidating. Don't worry about most of them when starting out. The defaults are reasonable. But if you find yourself annoyed by some aspect of the interface, check the options; there's probably a setting for it.
+The full options list is deep, but the rest is taste and
+convenience. If something about the interface annoys you, there is
+almost certainly a setting for it.
 
 ---
 
@@ -6415,30 +6372,30 @@ unfazed by Elbereth. Pay the bill at the door.
 
 #### Shopkeeper Behavior
 
-Shopkeepers are among the toughest NPCs in the game. They have high
-hit points, good armor class, and they hit hard. A few things to
-know:
+A shopkeeper is one of the toughest NPCs in the game: high HP,
+good AC, hits hard, and unfazed by Elbereth or by the kind of
+clever escape that works on other monsters. They also see
+everything — they track every item you pick up and every item
+that enters the shop, even when you're invisible. The practical
+consequences for the player:
 
-- Shopkeepers block the door when you have unpaid items.
-- They track everything you pick up and everything that enters their
-  shop, even when you're invisible.
+- Shopkeepers block the door whenever you have unpaid items.
 - If you break something in the shop (a potion, a wand), you pay
   for it.
-- Elbereth doesn't help; shopkeepers ignore it.
-- Shop walls are non-diggable from inside; you can't tunnel out
-  with unpaid items.
+- Shop walls are non-diggable from inside, so tunneling out with
+  unpaid items is not on the menu.
 - Artifact items are priced at **4× the artifact's already-large
   base cost** (a hidden inflation that doesn't affect score). For
   most named weapons that lands in the 10,000–30,000 zm range. An
-  unidentified long sword for 16,000 zm is not something to glance
-  over; that price tag is the give-away.
-- Shopkeepers can be killed for their entire stock and gold
-  inventory, but this carries significant penalties (Keystone Kops,
-  alignment loss) and forfeits all future service from that shop.
-  Their AC and HP are typically out of reach early game; even
-  late-game players usually leave them alone.
+  unidentified long sword priced at 16,000 zm is not something to
+  glance over — that price tag is the give-away.
+- A shopkeeper *can* be killed for the entire stock and the till,
+  but the penalties (Keystone Kops, alignment loss, forfeiture of
+  future service from that shop) and the shopkeeper's own combat
+  stats put this well out of reach early on. Even late-game
+  ascenders usually leave them alone.
 
-A few useful tactical points:
+Beyond the rules, a few tactical habits pay off:
 
 - **Drop everything at the door to see your bill.** Standing on
   the door square, drop your whole inventory; the shopkeeper's
