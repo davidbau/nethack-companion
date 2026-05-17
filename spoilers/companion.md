@@ -875,8 +875,8 @@ game.
 
 #### Sokoban
 
-The entrance appears somewhere around dungeon levels 6 through 10
-(one level above the Oracle), and it goes up. Sokoban is a set of
+The entrance staircase appears somewhere around dungeon levels 6
+through 10 (one level below the Oracle), and it goes up. Sokoban is a set of
 four puzzle levels where you push boulders onto holes or into place
 to open a path. No teleport works here, and you can't dig through
 the floors.
