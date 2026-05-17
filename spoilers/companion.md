@@ -2126,8 +2126,9 @@ lets you locate it when you're blind. *See invisible* does not
 help; the beast isn't invisible, it's displaced.
 
 **What's worth it afterward.** Eating its corpse grants temporary
-intrinsic Displacement to *you*: the only on-demand source in
-the early-to-mid game. A late-game caster level becomes much
+intrinsic Displacement to *you*: the only intrinsic source in the
+game, and unlike a cloak of displacement or shimmering scale mail
+it costs no equipment slot. A late-game caster level becomes much
 friendlier with displacement up. The corpse rots like any other,
 so if you can't eat it now, tin it.
 
