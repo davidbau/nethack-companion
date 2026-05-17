@@ -5330,13 +5330,20 @@ commands above feel:
   for one step.
 - **`verbose`** makes interrupted multi-commands tell you *why*
   they stopped instead of just halting.
-- **`msg_window`** displays several recent messages at once in a
-  dedicated window instead of one line at a time. Spares you a
-  lot of `Ctrl+P`.
 
 The full options list is deep, but the rest is taste and
 convenience. If something about the interface annoys you, there is
 almost certainly a setting for it.
+
+A bigger interface shift requires a different binary: NetHack
+built with the **curses** windowtype (`nethack-curses` on most
+distributions, or a recompile with `WANT_WIN_CURSES`) draws a
+properly paneled UI inside the terminal. Set `windowtype:curses`,
+`align_message:right`, `align_status:bottom`, `perm_invent`, and
+`windowborders` in your rc, open a 120×40 terminal, and you get a
+permanent inventory column, a multi-line message panel, and
+bordered status and map regions. Plain tty NetHack pins the
+message line at row 0 no matter what you set.
 
 ---
 

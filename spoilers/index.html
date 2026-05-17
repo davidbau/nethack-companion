@@ -7478,13 +7478,20 @@ step.</li>
 <li><strong><code>verbose</code></strong> makes interrupted
 multi-commands tell you <em>why</em> they stopped instead of just
 halting.</li>
-<li><strong><code>msg_window</code></strong> displays several recent
-messages at once in a dedicated window instead of one line at a time.
-Spares you a lot of <code>Ctrl+P</code>.</li>
 </ul>
 <p>The full options list is deep, but the rest is taste and convenience.
 If something about the interface annoys you, there is almost certainly a
 setting for it.</p>
+<p>A bigger interface shift requires a different binary: NetHack built
+with the <strong>curses</strong> windowtype (<code>nethack-curses</code>
+on most distributions, or a recompile with <code>WANT_WIN_CURSES</code>)
+draws a properly paneled UI inside the terminal. Set
+<code>windowtype:curses</code>, <code>align_message:right</code>,
+<code>align_status:bottom</code>, <code>perm_invent</code>, and
+<code>windowborders</code> in your rc, open a 120×40 terminal, and you
+get a permanent inventory column, a multi-line message panel, and
+bordered status and map regions. Plain tty NetHack pins the message line
+at row 0 no matter what you set.</p>
 <hr />
 </section>
 </section>
