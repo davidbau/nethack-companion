@@ -241,6 +241,23 @@ tbody tr:nth-child(even) {
   background: var(--color-table-stripe);
 }
 
+/* Dense reference tables in the appendices (Weapons, Armor, Bestiary).
+   Many narrow numeric columns + one long Notes column read better at
+   a smaller type size with tighter padding, so the rows don't break
+   on every adjective. The wrapping div is emitted by the build_*.py
+   parsers; the rule cascades through inherited padding too. */
+.dense-table table {
+  font-size: 0.68em;
+  line-height: 1.3;
+}
+.dense-table th,
+.dense-table td {
+  padding: 0.25em 0.45em;
+}
+.dense-table th {
+  white-space: normal;
+}
+
 /* --- Lists -------------------------------------------------- */
 
 ul, ol {

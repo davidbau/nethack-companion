@@ -195,6 +195,8 @@ for slot in SLOT_ORDER:
     items = groups[slot]
     out.append(f'#### {SLOTS[slot]}')
     out.append('')
+    out.append('<div class="dense-table">')
+    out.append('')
     out.append('| Armor | AC | MC | Wt | Cost | Material | Notes |')
     out.append('|--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|')
     for name, desc, f in items:
@@ -210,6 +212,8 @@ for slot in SLOT_ORDER:
         # Fold Power text into Notes, joining with a single space.
         note = ' '.join(s for s in (power_str, extra_note) if s)
         out.append(f'| {name} | +{ac} | {mc_str} | {wt} | {cost} | {mat} | {note} |')
+    out.append('')
+    out.append('</div>')
     out.append('')
 
 print('\n'.join(out))

@@ -130,7 +130,10 @@ MR_FLAGS = {
     'MR_STONE': 'ston-res',
 }
 
-# Key flags from M1/M2/M3 we'll surface in a notes column
+# Key flags from M1/M2/M3 we'll surface. Discipline: only flags that
+# change the player's combat or movement strategy. Flags that just
+# affect XP bookkeeping (M2_NASTY), flavor sizing (M2_STRONG), or
+# visibility-in-dark detection (M3_INFRAVISION) are omitted.
 KEY_FLAGS = {
     'M1_FLY': 'flies',
     'M1_SWIM': 'swims',
@@ -139,18 +142,49 @@ KEY_FLAGS = {
     'M1_TUNNEL': 'tunnels',
     'M1_CONCEAL': 'hides',
     'M1_HIDE': 'hides',
-    'M1_REGEN': 'regen',
+    'M1_REGEN': 'regenerates',
     'M1_SEE_INVIS': 'sees-invis',
     'M1_TPORT': 'teleports',
-    'M1_TPORT_CNTRL': 'tport-cntrl',
+    'M1_TPORT_CNTRL': 'teleport-control',
     'M1_POIS': 'poisonous-corpse',
-    'M2_STALK': 'stalks',
-    'M2_NASTY': 'nasty',
-    'M2_STRONG': 'strong',
-    'M2_PEACEFUL': 'peaceful',
-    'M2_DOMESTIC': 'domestic',
-    'M2_SHAPESHIFTER': 'shifter',
-    'M3_INFRAVISION': 'infravis',
+    'M1_MINDLESS': 'mindless',
+    'M2_UNDEAD': 'undead',
+    'M2_DEMON': 'demonic',
+    'M2_STALK': 'follows stairs',
+    'M2_PEACEFUL': 'starts peaceful',
+    'M2_DOMESTIC': 'tameable',
+    'M2_SHAPESHIFTER': 'shapeshifter',
+}
+
+# Verb/predicate form for class-intro prose. Indexed by the short
+# label used in KEY_FLAGS / MR_FLAGS values.
+PROSE_FORM = {
+    'flies': 'fly',
+    'swims': 'swim',
+    'amphibious': 'are amphibious',
+    'amorphous': 'are amorphous',
+    'tunnels': 'tunnel through walls',
+    'hides': 'hide',
+    'regenerates': 'regenerate',
+    'sees-invis': 'see invisible',
+    'teleports': 'teleport',
+    'teleport-control': 'control where they teleport',
+    'poisonous-corpse': 'have poisonous corpses',
+    'mindless': 'are mindless',
+    'undead': 'are undead',
+    'demonic': 'are demons',
+    'follows stairs': 'follow you up and down stairs',
+    'starts peaceful': 'start peaceful',
+    'tameable': 'are tameable by feeding',
+    'shapeshifter': 'shapeshift',
+    'fire-res': 'are fire-resistant',
+    'cold-res': 'are cold-resistant',
+    'sleep-res': 'are sleep-resistant',
+    'disint-res': 'are disintegration-resistant',
+    'shock-res': 'are shock-resistant',
+    'pois-res': 'are poison-resistant',
+    'acid-res': 'are acid-resistant',
+    'ston-res': 'are petrification-resistant',
 }
 
 CLR_TO_NAME = {
@@ -363,6 +397,80 @@ out.append("Every monster you might meet. Grouped by ASCII symbol so you can fli
            "alongside specific heads-ups for monsters that deserve one.")
 out.append('')
 
+def mon_labels(mon):
+    """Return the set of short labels (KEY_FLAGS + MR_FLAGS) that
+    apply to this monster."""
+    labels = set()
+    for flag, label in KEY_FLAGS.items():
+        if flag in mon['m1'] or flag in mon['m2'] or flag in mon['m3']:
+            labels.add(label)
+    for token, label in MR_FLAGS.items():
+        if token in mon['mr1']:
+            labels.add(label)
+    return labels
+
+def class_trait_summary(items):
+    """Compute which traits are (a) universal across the class and
+    (b) shared by all-but-one member. Returns:
+      universal: set of labels
+      almost:    list of (label, exception_name) for traits that ALL
+                 except one member possess (only meaningful for classes
+                 with >= 4 members; we don't want 'all except a' for a
+                 2-member class)
+    """
+    if len(items) < 2:
+        return set(), []
+    label_members = {}
+    all_names = {n for n, _ in items}
+    for name, mon in items:
+        for label in mon_labels(mon):
+            label_members.setdefault(label, set()).add(name)
+    universal = set()
+    almost = []
+    for label, members in label_members.items():
+        missing = all_names - members
+        if not missing:
+            universal.add(label)
+        elif len(missing) == 1 and len(items) >= 4:
+            almost.append((label, next(iter(missing))))
+    return universal, almost
+
+def join_with_and(strs):
+    if not strs:
+        return ''
+    if len(strs) == 1:
+        return strs[0]
+    if len(strs) == 2:
+        return f'{strs[0]} and {strs[1]}'
+    return ', '.join(strs[:-1]) + f', and {strs[-1]}'
+
+def class_intro(label_word, items):
+    universal, almost = class_trait_summary(items)
+    if not universal and not almost:
+        return ''
+    # Deterministic ordering — flag dict insertion order, then MR dict.
+    order = list(KEY_FLAGS.values()) + list(MR_FLAGS.values())
+    def order_key(label_or_pair):
+        lbl = label_or_pair[0] if isinstance(label_or_pair, tuple) else label_or_pair
+        return order.index(lbl) if lbl in order else 999
+    sentences = []
+    if universal:
+        ordered_u = sorted(universal, key=order_key)
+        prose = [PROSE_FORM.get(lbl, lbl) for lbl in ordered_u]
+        sentences.append(f'All {label_word} {join_with_and(prose)}.')
+    for label, exception in sorted(almost, key=order_key):
+        verb = PROSE_FORM.get(label, label)
+        sentences.append(f'All except *{exception}* also {verb}.')
+    return ' '.join(sentences)
+
+def fmt_flags_excluding(mon, exclude_labels):
+    """Per-row flag string, with hoisted labels removed."""
+    return ', '.join(sorted(mon_labels(mon) - exclude_labels,
+                            key=lambda l: list(KEY_FLAGS.values()).index(l)
+                            if l in KEY_FLAGS.values()
+                            else 100 + list(MR_FLAGS.values()).index(l)
+                            if l in MR_FLAGS.values() else 999))
+
 for sym in SYM_ORDER:
     items = groups.get(sym)
     if not items:
@@ -370,24 +478,44 @@ for sym in SYM_ORDER:
     ch, label = SYM_TO_CHAR[sym]
     out.append(f'#### {label} `{ch}`')
     out.append('')
+    # Per-class hoisting: pull out flags/resistances shared by every (or
+    # all-but-one) member, mention them in a one-line intro, and strip
+    # them from the per-row flag column. The hoisted traits become
+    # narrative; the row column carries only what's distinctive.
+    intro = class_intro(label.lower(), items)
+    if intro:
+        out.append(intro)
+        out.append('')
+    # Compute the SAME exclusion set the intro used, so per-row flag
+    # strings drop the hoisted labels.
+    universal, almost = class_trait_summary(items)
+    hoisted = universal | {label for label, _ in almost}
+    out.append('<div class="dense-table">')
+    out.append('')
     out.append('| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |')
-    out.append('|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|')
+    out.append('|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|')
     for name, mon in items:
         clr = color_str(mon['color'])
         atks = fmt_attacks(mon['atks'])
-        flags = fmt_flags(mon)
+        # If this monster is an exception to an almost-universal trait,
+        # call that out explicitly in its note.
+        exception_notes = [f'no {label}'
+                           for label, exc in almost if exc == name]
+        flag_excl = hoisted
+        flags = fmt_flags_excluding(mon, flag_excl)
         extra = NOTES.get(name, '')
-        # Fold flag string and heads-up note into a single Notes cell.
-        # Flag string ends without punctuation; add a period and space
-        # before the prose note when both are present.
-        if flags and extra:
-            note = f'{flags}. {extra}'
-        elif flags:
-            note = f'{flags}.'
-        else:
-            note = extra
+        parts = []
+        if flags:
+            parts.append(flags + '.')
+        if exception_notes:
+            parts.append('(' + '; '.join(exception_notes) + ')')
+        if extra:
+            parts.append(extra)
+        note = ' '.join(parts)
         out.append(f'| {name} | {clr} | {mon["lvl"]} | {mon["mov"]} | {mon["ac"]} | '
                    f'{mon["mr_pct"]} | {atks} | {note} |')
+    out.append('')
+    out.append('</div>')
     out.append('')
 
 print('\n'.join(out))

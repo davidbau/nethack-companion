@@ -6537,6 +6537,8 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 
 #### Dagger
 
+<div class="dense-table">
+
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | dagger | 1d4 / 1d3 | 10 | 4 | +2 | iron | Stackable; Rogues multishot up to three in a single throw. |
@@ -6545,7 +6547,11 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 | silver dagger | 1d4 / 1d3 | 12 | 40 | +2 | silver | Silver damage to demons. Common Rogue/Ranger off-hand. |
 | athame | 1d4 / 1d3 | 10 | 4 | +2 | iron | Used for engraving wards — Elbereth on the floor lasts longer engraved with an athame. |
 
+</div>
+
 #### Knife
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
@@ -6555,7 +6561,11 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 | worm tooth | 1d2 / 1d2 | 20 | 2 | — | bone |  |
 | crysknife | 1d10 / 1d10 | 20 | 100 | +3 | bone | Polymorphs back to a worm tooth when dropped; keep it equipped or buried. |
 
+</div>
+
 #### Short sword
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
@@ -6564,14 +6574,22 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 | orcish short sword | 1d5 / 1d8 | 30 | 10 | — | iron |  |
 | dwarvish short sword | 1d7 / 1d8 | 30 | 10 | — | iron |  |
 
+</div>
+
 #### Saber
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | scimitar | 1d8 / 1d8 | 40 | 15 | — | iron |  |
 | silver saber | 1d8 / 1d8 | 40 | 75 | — | silver | Werebane is the artifact form — silver damage to weres and demons. |
 
+</div>
+
 #### Broadsword
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
@@ -6579,74 +6597,118 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 | elven broadsword | 1d6+1d4 / 1d6+1 | 70 | 10 | — | wood |  |
 | runesword | 1d4+1d4 / 1d6+1 | 40 | 300 | — | iron |  |
 
+</div>
+
 #### Long sword
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | long sword | 1d8 / 1d12 | 40 | 15 | — | iron | Dip in a fountain at XL5+ for Excalibur (1-in-30; 1-in-6 for Lawful Knights). |
 | katana | 1d10 / 1d12 | 40 | 80 | +1 | iron | +1 to-hit baked in. Snickersnee is the artifact form. |
 
+</div>
+
 #### Two-handed sword
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | two-handed sword | 1d12 / 1d6+2d6 | 150 | 50 | — | iron | Two-handed (no shield). Vorpal Blade is the artifact form. |
 | tsurugi | 1d16 / 1d8+2d6 | 60 | 500 | +2 | metal | Two-handed. The Tsurugi of Muramasa is the artifact form. |
 
+</div>
+
 #### Axe
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | axe | 1d6 / 1d4 | 60 | 8 | — | iron |  |
 | battle-axe | 1d8+1d4 / 1d6+2d4 | 120 | 40 | — | iron | Two-handed; +1d4 small, +2d4 large. |
 
+</div>
+
 #### Pick-axe
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | dwarvish mattock | 1d12 / 1d8+2d6 | 120 | 50 | — | iron | Two-handed. Digs through walls; cannot two-weapon. |
 
+</div>
+
 #### Club
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | club | 1d6 / 1d3 | 30 | 3 | — | wood | What a Caveman starts with — basic but free of curses early. |
 | aklys | 1d6 / 1d3 | 15 | 4 | — | iron | Returns when thrown if Strength is high enough. |
 
+</div>
+
 #### Mace
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | mace | 1d6+1 / 1d6 | 30 | 5 | — | iron | The Priest's first sacrifice gift, Demonbane, is a +d4/+0 silver mace. |
 | silver mace | 1d6+1 / 1d6 | 36 | 60 | — | silver | Bonus damage to demons, undead, and shape-changers. |
 
+</div>
+
 #### Morning star
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | morning star | 1d4+1d4 / 1d6+1 | 120 | 10 | — | iron | +1d4 small, +1 large — punches above its weight for a one-hander. |
 
+</div>
+
 #### Flail
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | flail | 1d6+1 / 1d4+1d4 | 15 | 4 | — | iron | +1d4 large; one-handed. |
 
+</div>
+
 #### Hammer
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | war hammer | 1d4+1 / 1d4 | 50 | 5 | — | iron | Mjollnir is the artifact form (Neutral Valkyrie sacrifice gift). |
 
+</div>
+
 #### Quarterstaff
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | quarterstaff | 1d6 / 1d6 | 40 | 5 | — | wood | Two-handed but light; the Wizard's starting weapon. |
 
+</div>
+
 #### Polearms
 
 All polearms are two-handed and have a reach of two squares (`#apply` the weapon to strike a target one tile away from you, with one empty intervening square). They can't be used in melee against an adjacent monster — the haft gets in the way — which means you switch weapons or use the polearm's reach attack, not both. Notes below describe each entry's extra damage; the reach mechanic is identical across the class.
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
@@ -6663,7 +6725,11 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | lucern hammer | 1d4+1d4 / 1d6 | 150 | 7 | — | iron | +1d4 small. |
 | bec de corbin | 1d8 / 1d6 | 100 | 8 | — | iron | Reach. |
 
+</div>
+
 #### Spear
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
@@ -6674,26 +6740,42 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | silver spear | 1d6 / 1d8 | 36 | 40 | — | silver | Silver damage to demons and weres. |
 | javelin | 1d6 / 1d6 | 20 | 3 | — | iron |  |
 
+</div>
+
 #### Trident
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | trident | 1d6+1 / 1d4+2d4 | 25 | 5 | — | iron | +1 small, +2d4 large — the giant-killer; one-handed. |
 
+</div>
+
 #### Lance
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | lance | 1d6 / 1d8 | 180 | 10 | — | iron | Devastating from horseback (jousting bonus); useless on foot. |
 
+</div>
+
 #### Whip
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | rubber hose | 1d4 / 1d3 | 20 | 3 | — | plastic | Joke weapon (1d4 / 1d3). Damages even Shades, who are immune to most. |
 | bullwhip | 1d2 / 1 | 20 | 4 | — | leather | The Archeologist's starter; can disarm a monster. |
 
+</div>
+
 #### Bow
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
@@ -6707,36 +6789,58 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | orcish bow | — | 30 | 60 | — | wood |  |
 | yumi | — | 30 | 60 | — | wood | The Samurai's bow. |
 
+</div>
+
 #### Crossbow
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | crossbow bolt | 1d4+1 / 1d6+1 | 1 | 2 | — | iron |  |
 | crossbow | — | 50 | 40 | — | wood | Bolts pierce — and crossbows fire one shot per turn at most. |
 
+</div>
+
 #### Sling
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | sling | — | 3 | 20 | — | leather | Trains sling skill from any rock you pick up. |
 
+</div>
+
 #### Dart
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | dart | 1d3 / 1d2 | 1 | 2 | — | iron |  |
 
+</div>
+
 #### Shuriken
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | shuriken | 1d8 / 1d6 | 1 | 5 | +2 | iron |  |
 
+</div>
+
 #### Boomerang
+
+<div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | boomerang | 1d9 / 1d9 | 5 | 20 | — | wood | Returns when thrown. Always. |
+
+</div>
 
 ---
 
@@ -6745,6 +6849,8 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 **AC** is the armor-class bonus the piece provides (higher number = more protection; this is the amount subtracted from your displayed AC). **MC** is the magic-cancellation level (1-3) — higher MC reduces the chance of magic attacks landing. **Wt** is weight; **Cost** is shop base price. The **Notes** column folds in the intrinsic property granted while the piece is worn, alongside any tactical caveats. Armor is grouped by slot. Dragon scale mail is listed separately because of its sheer importance to the endgame.
 
 #### Body armor (suits)
+
+<div class="dense-table">
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
@@ -6774,7 +6880,11 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | green dragon scale mail | +9 | — | 40 | 900 | dragonhide | Poison resistance. |
 | yellow dragon scale mail | +9 | — | 40 | 900 | dragonhide | Acid resistance. Rare. |
 
+</div>
+
 #### Dragon scales
+
+<div class="dense-table">
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
@@ -6789,14 +6899,22 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | green dragon scales | +3 | — | 40 | 500 | dragonhide | Poison resistance. |
 | yellow dragon scales | +3 | — | 40 | 500 | dragonhide | Acid resistance. |
 
+</div>
+
 #### Shirts
+
+<div class="dense-table">
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
 | Hawaiian shirt | +0 | — | 5 | 3 | cloth | Tourist starter. Worn under body armor. |
 | T-shirt | +0 | — | 5 | 2 | cloth | Worn under body armor. |
 
+</div>
+
 #### Cloaks
+
+<div class="dense-table">
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
@@ -6813,7 +6931,11 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | cloak of magic resistance | +1 | 1 | 10 | 60 | cloth | Magic resistance. Lightest source of magic resistance. |
 | cloak of displacement | +1 | 1 | 10 | 50 | cloth | Displacement. |
 
+</div>
+
 #### Helmets
+
+<div class="dense-table">
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
@@ -6830,7 +6952,11 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | helm of opposite alignment | +1 | — | 50 | 50 | iron | Flips alignment. Catastrophic if cursed. |
 | helm of telepathy | +1 | — | 50 | 50 | iron | Telepathy. Telepathy while blind. |
 
+</div>
+
 #### Gloves
+
+<div class="dense-table">
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
@@ -6839,7 +6965,11 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | gauntlets of power | +1 | — | 30 | 50 | iron | Sets Strength to 25. |
 | gauntlets of dexterity | +1 | — | 10 | 50 | leather | +d3 Dex per enchantment. |
 
+</div>
+
 #### Boots
+
+<div class="dense-table">
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
@@ -6854,7 +6984,11 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | fumble boots | +1 | — | 20 | 30 | leather | Causes frequent fumbling. Avoid. |
 | levitation boots | +1 | — | 15 | 30 | leather | Levitation (cannot be removed while in the air). Can't remove while levitating. Trap item. |
 
+</div>
+
 #### Shields
+
+<div class="dense-table">
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
@@ -6868,6 +7002,8 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | dwarvish roundshield | +2 | — | 100 | 10 | iron |  |
 | shield of reflection | +2 | — | 50 | 50 | silver | Reflection. Saves the body-armor slot. |
 
+</div>
+
 ---
 
 ### Bestiary
@@ -6876,8 +7012,10 @@ Every monster you might meet. Grouped by ASCII symbol so you can flip to the rig
 
 #### Ants and insects `a`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | giant ant | brown | 2 | 18 | 3 | 0 | bite 1d4 |  |
 | killer bee | yellow | 1 | 18 | -1 | 0 | sting 1d3 poison | flies, poisonous-corpse, pois-res. Stings carry poison; a pack can wipe out an unprepared early hero. |
 | soldier ant | blue | 3 | 18 | 3 | 0 | bite 2d4 · sting 3d4 poison | poisonous-corpse, pois-res. Poison sting. The most lethal `a` you'll meet in the early dungeon. |
@@ -6885,316 +7023,478 @@ Every monster you might meet. Grouped by ASCII symbol so you can flip to the rig
 | giant beetle | black | 5 | 6 | 4 | 0 | bite 3d6 | poisonous-corpse, pois-res. |
 | queen bee | magenta | 9 | 24 | -4 | 0 | sting 1d8 poison | flies, poisonous-corpse, pois-res. |
 
+</div>
+
 #### Blobs `b`
 
+All blobs are mindless, are sleep-resistant, and are poison-resistant.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| acid blob | green | 1 | 3 | 8 | 0 | passive 1d8 acid | amorphous, sleep-res, pois-res, acid-res, ston-res. Passive acid damage — punching one corrodes your gloves. |
-| quivering blob | white | 5 | 1 | 8 | 0 | touch 1d8 | sleep-res, pois-res. |
-| gelatinous cube | cyan | 6 | 6 | 8 | 0 | touch 2d4 paralyse · passive 1d4 paralyse | fire-res, cold-res, sleep-res, shock-res, pois-res, acid-res, ston-res. Slow but paralyses on touch. Don't melee without free-action. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| acid blob | green | 1 | 3 | 8 | 0 | passive 1d8 acid | amorphous, acid-res, ston-res. Passive acid damage — punching one corrodes your gloves. |
+| quivering blob | white | 5 | 1 | 8 | 0 | touch 1d8 |  |
+| gelatinous cube | cyan | 6 | 6 | 8 | 0 | touch 2d4 paralyse · passive 1d4 paralyse | fire-res, cold-res, shock-res, acid-res, ston-res. Slow but paralyses on touch. Don't melee without free-action. |
+
+</div>
 
 #### Cockatrices `c`
 
+All cockatrices are poison-resistant.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| chickatrice | brown | 4 | 4 | 8 | 30 | bite 1d2 · touch petrify · passive petrify | pois-res, ston-res. A small cockatrice. Same petrify rules apply. |
-| cockatrice | yellow | 5 | 6 | 6 | 30 | bite 1d3 · touch petrify · passive petrify | pois-res, ston-res. Touch petrifies. Always carry a lizard corpse. |
-| pyrolisk | red | 6 | 6 | 6 | 30 | gaze 2d6 fire · bite 1d6 | fire-res, pois-res. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| chickatrice | brown | 4 | 4 | 8 | 30 | bite 1d2 · touch petrify · passive petrify | ston-res. A small cockatrice. Same petrify rules apply. |
+| cockatrice | yellow | 5 | 6 | 6 | 30 | bite 1d3 · touch petrify · passive petrify | ston-res. Touch petrifies. Always carry a lizard corpse. |
+| pyrolisk | red | 6 | 6 | 6 | 30 | gaze 2d6 fire · bite 1d6 | fire-res. |
+
+</div>
 
 #### Dogs and canines `d`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | jackal | brown | 0 | 12 | 7 | 0 | bite 1d2 | The first thing that ever killed you. |
 | fox | red | 0 | 15 | 7 | 0 | bite 1d3 |  |
 | coyote | brown | 1 | 12 | 7 | 0 | bite 1d4 |  |
-| werejackal | brown | 2 | 12 | 7 | 10 | bite 1d4 lyc | regen, poisonous-corpse, pois-res. |
-| little dog | white | 2 | 18 | 6 | 0 | bite 1d6 | domestic. Common Archeologist/Caveman/Samurai starting pet. |
+| werejackal | brown | 2 | 12 | 7 | 10 | bite 1d4 lyc | regenerates, poisonous-corpse, pois-res. |
+| little dog | white | 2 | 18 | 6 | 0 | bite 1d6 | tameable. Common Archeologist/Caveman/Samurai starting pet. |
 | dingo | yellow | 4 | 16 | 5 | 0 | bite 1d6 |  |
-| dog | white | 4 | 16 | 5 | 0 | bite 1d6 | domestic. |
-| large dog | white | 6 | 15 | 4 | 0 | bite 2d4 | strong, domestic. |
+| dog | white | 4 | 16 | 5 | 0 | bite 1d6 | tameable. |
+| large dog | white | 6 | 15 | 4 | 0 | bite 2d4 | tameable. |
 | wolf | gray | 5 | 12 | 4 | 0 | bite 2d4 |  |
-| werewolf | gray | 5 | 12 | 4 | 20 | bite 2d6 lyc | regen, poisonous-corpse, pois-res. |
+| werewolf | gray | 5 | 12 | 4 | 20 | bite 2d6 lyc | regenerates, poisonous-corpse, pois-res. |
 | winter wolf cub | cyan | 5 | 12 | 4 | 0 | bite 1d8 · breath 1d6 cold | cold-res. |
 | warg | black | 7 | 12 | 4 | 0 | bite 2d6 |  |
-| winter wolf | cyan | 7 | 12 | 4 | 20 | bite 2d6 · breath 2d6 cold | strong, cold-res. |
+| winter wolf | cyan | 7 | 12 | 4 | 20 | bite 2d6 · breath 2d6 cold | cold-res. |
 | hell hound pup | red | 7 | 12 | 4 | 20 | bite 2d6 · breath 2d6 fire | fire-res. |
-| hell hound | red | 12 | 14 | 2 | 20 | bite 3d6 · breath 3d6 fire | strong, fire-res. |
-| Cerberus | red | 12 | 10 | 2 | 20 | bite 3d6 · bite 3d6 · bite 3d6 | strong, fire-res. Three-headed hellhound. Reflection + fire resistance only. |
+| hell hound | red | 12 | 14 | 2 | 20 | bite 3d6 · breath 3d6 fire | fire-res. |
+| Cerberus | red | 12 | 10 | 2 | 20 | bite 3d6 · bite 3d6 · bite 3d6 | fire-res. Three-headed hellhound. Reflection + fire resistance only. |
+
+</div>
 
 #### Eyes and spheres `e`
 
+All eyes and spheres fly. All except *floating eye* also are mindless.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| gas spore | gray | 1 | 3 | 10 | 0 | death-burst 4d6 | flies. |
-| floating eye | blue | 2 | 1 | 9 | 10 | passive 0d70 paralyse | flies, amphibious. Passive gaze paralyses if you melee in daylight. Use ranged or close eyes first. |
-| freezing sphere | white | 6 | 13 | 4 | 0 | explode 4d6 cold | flies, cold-res. |
-| flaming sphere | red | 6 | 13 | 4 | 0 | explode 4d6 fire | flies, fire-res. |
-| shocking sphere | bright-blue | 6 | 13 | 4 | 0 | explode 4d6 shock | flies, shock-res. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| gas spore | gray | 1 | 3 | 10 | 0 | death-burst 4d6 |  |
+| floating eye | blue | 2 | 1 | 9 | 10 | passive 0d70 paralyse | amphibious. (no mindless) Passive gaze paralyses if you melee in daylight. Use ranged or close eyes first. |
+| freezing sphere | white | 6 | 13 | 4 | 0 | explode 4d6 cold | cold-res. |
+| flaming sphere | red | 6 | 13 | 4 | 0 | explode 4d6 fire | fire-res. |
+| shocking sphere | bright-blue | 6 | 13 | 4 | 0 | explode 4d6 shock | shock-res. |
+
+</div>
 
 #### Felines `f`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| kitten | white | 2 | 18 | 6 | 0 | bite 1d6 | domestic, infravis. Common Valkyrie/Wizard/Tourist starting pet. |
-| housecat | white | 4 | 16 | 5 | 0 | bite 1d6 | domestic, infravis. |
-| jaguar | brown | 4 | 15 | 6 | 0 | claw 1d4 · claw 1d4 · bite 1d8 | infravis. |
-| lynx | cyan | 5 | 15 | 6 | 0 | claw 1d4 · claw 1d4 · bite 1d10 | infravis. |
-| panther | black | 5 | 15 | 6 | 0 | claw 1d6 · claw 1d6 · bite 1d10 | infravis. |
-| large cat | white | 6 | 15 | 4 | 0 | bite 2d4 | strong, domestic, infravis. |
-| tiger | yellow | 6 | 12 | 6 | 0 | claw 2d4 · claw 2d4 · bite 1d10 | infravis. |
-| displacer beast | blue | 12 | 12 | -10 | 0 | claw 4d4 · claw 4d4 · bite 2d10 | nasty, infravis. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| kitten | white | 2 | 18 | 6 | 0 | bite 1d6 | tameable. Common Valkyrie/Wizard/Tourist starting pet. |
+| housecat | white | 4 | 16 | 5 | 0 | bite 1d6 | tameable. |
+| jaguar | brown | 4 | 15 | 6 | 0 | claw 1d4 · claw 1d4 · bite 1d8 |  |
+| lynx | cyan | 5 | 15 | 6 | 0 | claw 1d4 · claw 1d4 · bite 1d10 |  |
+| panther | black | 5 | 15 | 6 | 0 | claw 1d6 · claw 1d6 · bite 1d10 |  |
+| large cat | white | 6 | 15 | 4 | 0 | bite 2d4 | tameable. |
+| tiger | yellow | 6 | 12 | 6 | 0 | claw 2d4 · claw 2d4 · bite 1d10 |  |
+| displacer beast | blue | 12 | 12 | -10 | 0 | claw 4d4 · claw 4d4 · bite 2d10 |  |
+
+</div>
 
 #### Gremlins `g`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| gremlin | green | 5 | 12 | 2 | 25 | claw 1d6 · claw 1d6 · bite 1d4 · claw curse | swims, poisonous-corpse, stalks, pois-res. |
-| gargoyle | brown | 6 | 10 | -4 | 0 | claw 2d6 · claw 2d6 · bite 2d4 | strong, ston-res. |
-| winged gargoyle | magenta | 9 | 15 | -2 | 0 | claw 3d6 · claw 3d6 · bite 3d4 | flies, strong, ston-res. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| gremlin | green | 5 | 12 | 2 | 25 | claw 1d6 · claw 1d6 · bite 1d4 · claw curse | swims, poisonous-corpse, follows stairs, pois-res. |
+| gargoyle | brown | 6 | 10 | -4 | 0 | claw 2d6 · claw 2d6 · bite 2d4 | ston-res. |
+| winged gargoyle | magenta | 9 | 15 | -2 | 0 | claw 3d6 · claw 3d6 · bite 3d4 | flies, ston-res. |
+
+</div>
 
 #### Humanoids `h`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| hobbit | green | 1 | 9 | 10 | 0 | weapon 1d6 | infravis. |
-| dwarf | red | 2 | 6 | 10 | 10 | weapon 1d8 | tunnels, strong, infravis. |
-| bugbear | brown | 3 | 9 | 5 | 0 | weapon 2d4 | strong, infravis. |
-| dwarf lord | blue | 4 | 6 | 10 | 10 | weapon 2d4 · weapon 2d4 | tunnels, strong, infravis. |
-| dwarf king | magenta | 6 | 6 | 10 | 20 | weapon 2d6 · weapon 2d6 | tunnels, strong, infravis. |
-| mind flayer | bright-magenta | 9 | 12 | 5 | 90 | weapon 1d4 · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int | flies, sees-invis, nasty, infravis. Tentacle attacks drain Int; if Int hits 3 you die. Wear an alignment-matching helmet or kill from range. |
-| master mind flayer | bright-magenta | 13 | 12 | 0 | 90 | weapon 1d8 · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int | flies, sees-invis, nasty, infravis. Five tentacles per turn. Catastrophic without telepathy + free action. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| hobbit | green | 1 | 9 | 10 | 0 | weapon 1d6 |  |
+| dwarf | red | 2 | 6 | 10 | 10 | weapon 1d8 | tunnels. |
+| bugbear | brown | 3 | 9 | 5 | 0 | weapon 2d4 |  |
+| dwarf lord | blue | 4 | 6 | 10 | 10 | weapon 2d4 · weapon 2d4 | tunnels. |
+| dwarf king | magenta | 6 | 6 | 10 | 20 | weapon 2d6 · weapon 2d6 | tunnels. |
+| mind flayer | bright-magenta | 9 | 12 | 5 | 90 | weapon 1d4 · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int | flies, sees-invis. Tentacle attacks drain Int; if Int hits 3 you die. Wear an alignment-matching helmet or kill from range. |
+| master mind flayer | bright-magenta | 13 | 12 | 0 | 90 | weapon 1d8 · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int | flies, sees-invis. Five tentacles per turn. Catastrophic without telepathy + free action. |
+
+</div>
 
 #### Imps and minor demons `i`
 
+All imps and minor demons follow you up and down stairs. All except *imp* also are poison-resistant.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| manes | red | 1 | 3 | 7 | 0 | claw 1d3 · claw 1d3 · bite 1d4 | poisonous-corpse, stalks, infravis, sleep-res, pois-res. |
-| homunculus | green | 2 | 12 | 6 | 10 | bite 1d3 sleep | flies, poisonous-corpse, stalks, infravis, sleep-res, pois-res. |
-| imp | red | 3 | 12 | 2 | 20 | claw 1d4 | regen, stalks, infravis. |
-| lemure | brown | 3 | 3 | 7 | 0 | claw 1d3 | regen, poisonous-corpse, stalks, infravis, sleep-res, pois-res. |
-| quasit | blue | 3 | 15 | 2 | 20 | claw 1d2 drain-Dx · claw 1d2 drain-Dx · bite 1d4 | regen, stalks, infravis, pois-res. |
-| tengu | cyan | 6 | 13 | 5 | 30 | bite 1d7 | teleports, tport-cntrl, stalks, infravis, pois-res. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| manes | red | 1 | 3 | 7 | 0 | claw 1d3 · claw 1d3 · bite 1d4 | poisonous-corpse, sleep-res. |
+| homunculus | green | 2 | 12 | 6 | 10 | bite 1d3 sleep | flies, poisonous-corpse, sleep-res. |
+| imp | red | 3 | 12 | 2 | 20 | claw 1d4 | regenerates. (no pois-res) |
+| lemure | brown | 3 | 3 | 7 | 0 | claw 1d3 | regenerates, poisonous-corpse, sleep-res. |
+| quasit | blue | 3 | 15 | 2 | 20 | claw 1d2 drain-Dx · claw 1d2 drain-Dx · bite 1d4 | regenerates. |
+| tengu | cyan | 6 | 13 | 5 | 30 | bite 1d7 | teleports, teleport-control. |
+
+</div>
 
 #### Jellies `j`
 
+All jellies are amorphous and are mindless.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| blue jelly | blue | 4 | 0 | 8 | 10 | passive 0d6 cold | amorphous. |
-| spotted jelly | green | 5 | 0 | 8 | 10 | passive 0d6 acid | amorphous. |
-| ochre jelly | brown | 6 | 3 | 8 | 20 | engulf 3d6 acid · passive 3d6 acid | amorphous. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| blue jelly | blue | 4 | 0 | 8 | 10 | passive 0d6 cold |  |
+| spotted jelly | green | 5 | 0 | 8 | 10 | passive 0d6 acid |  |
+| ochre jelly | brown | 6 | 3 | 8 | 20 | engulf 3d6 acid · passive 3d6 acid |  |
+
+</div>
 
 #### Kobolds `k`
 
+All kobolds have poisonous corpses and are poison-resistant.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| kobold | brown | 0 | 6 | 10 | 0 | weapon 1d4 | poisonous-corpse, infravis, pois-res. |
-| large kobold | red | 1 | 6 | 10 | 0 | weapon 1d6 | poisonous-corpse, infravis, pois-res. |
-| kobold lord | magenta | 2 | 6 | 10 | 0 | weapon 2d4 | poisonous-corpse, infravis, pois-res. |
-| kobold shaman | bright-blue | 2 | 6 | 6 | 10 | spell spell | poisonous-corpse, infravis, pois-res. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| kobold | brown | 0 | 6 | 10 | 0 | weapon 1d4 |  |
+| large kobold | red | 1 | 6 | 10 | 0 | weapon 1d6 |  |
+| kobold lord | magenta | 2 | 6 | 10 | 0 | weapon 2d4 |  |
+| kobold shaman | bright-blue | 2 | 6 | 6 | 10 | spell spell |  |
+
+</div>
 
 #### Leprechauns `l`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | leprechaun | green | 5 | 15 | 8 | 20 | claw 1d2 steal-gold | teleports. Steals gold and teleports away. Carry no gold near them. |
+
+</div>
 
 #### Mimics `m`
 
+All mimics are amorphous, hide, and are acid-resistant.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| small mimic | brown | 7 | 3 | 7 | 0 | claw 3d4 | amorphous, hides, acid-res. |
-| large mimic | red | 8 | 3 | 7 | 10 | claw 3d4 sticky | amorphous, hides, strong, acid-res. |
-| giant mimic | magenta | 9 | 3 | 7 | 20 | claw 3d6 sticky · claw 3d6 sticky | amorphous, hides, strong, acid-res. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| small mimic | brown | 7 | 3 | 7 | 0 | claw 3d4 |  |
+| large mimic | red | 8 | 3 | 7 | 10 | claw 3d4 sticky |  |
+| giant mimic | magenta | 9 | 3 | 7 | 20 | claw 3d6 sticky · claw 3d6 sticky |  |
+
+</div>
 
 #### Nymphs `n`
 
+All nymphs teleport.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| wood nymph | green | 3 | 12 | 9 | 20 | claw steal-item · claw seduce | teleports. |
-| water nymph | blue | 3 | 12 | 9 | 20 | claw steal-item · claw seduce | swims, teleports. |
-| mountain nymph | brown | 3 | 12 | 9 | 20 | claw steal-item · claw seduce | teleports. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| wood nymph | green | 3 | 12 | 9 | 20 | claw steal-item · claw seduce |  |
+| water nymph | blue | 3 | 12 | 9 | 20 | claw steal-item · claw seduce | swims. |
+| mountain nymph | brown | 3 | 12 | 9 | 20 | claw steal-item · claw seduce |  |
+
+</div>
 
 #### Orcs `o`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| goblin | gray | 0 | 6 | 10 | 0 | weapon 1d4 | infravis. |
-| hobgoblin | brown | 1 | 9 | 10 | 0 | weapon 1d6 | strong, infravis. |
-| orc | red | 1 | 9 | 10 | 0 | weapon 1d8 | strong, infravis, pois-res. |
-| hill orc | yellow | 2 | 9 | 10 | 0 | weapon 1d6 | strong, infravis, pois-res. |
-| Mordor orc | blue | 3 | 5 | 10 | 0 | weapon 1d6 | strong, infravis, pois-res. |
-| Uruk-hai | black | 3 | 7 | 10 | 0 | weapon 1d8 | strong, infravis, pois-res. |
-| orc shaman | bright-blue | 3 | 9 | 5 | 10 | spell spell | infravis, pois-res. |
-| orc-captain | magenta | 5 | 5 | 10 | 0 | weapon 2d4 · weapon 2d4 | strong, infravis, pois-res. Hits hard. Drops decent loot. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| goblin | gray | 0 | 6 | 10 | 0 | weapon 1d4 |  |
+| hobgoblin | brown | 1 | 9 | 10 | 0 | weapon 1d6 |  |
+| orc | red | 1 | 9 | 10 | 0 | weapon 1d8 | pois-res. |
+| hill orc | yellow | 2 | 9 | 10 | 0 | weapon 1d6 | pois-res. |
+| Mordor orc | blue | 3 | 5 | 10 | 0 | weapon 1d6 | pois-res. |
+| Uruk-hai | black | 3 | 7 | 10 | 0 | weapon 1d8 | pois-res. |
+| orc shaman | bright-blue | 3 | 9 | 5 | 10 | spell spell | pois-res. |
+| orc-captain | magenta | 5 | 5 | 10 | 0 | weapon 2d4 · weapon 2d4 | pois-res. Hits hard. Drops decent loot. |
+
+</div>
 
 #### Piercers `p`
 
+All piercers hide.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| rock piercer | gray | 3 | 1 | 3 | 0 | bite 2d6 | hides. |
-| iron piercer | cyan | 5 | 1 | 0 | 0 | bite 3d6 | hides. |
-| glass piercer | white | 7 | 1 | 0 | 0 | bite 4d6 | hides, acid-res. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| rock piercer | gray | 3 | 1 | 3 | 0 | bite 2d6 |  |
+| iron piercer | cyan | 5 | 1 | 0 | 0 | bite 3d6 |  |
+| glass piercer | white | 7 | 1 | 0 | 0 | bite 4d6 | acid-res. |
+
+</div>
 
 #### Quadrupeds `q`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | rothe | brown | 2 | 9 | 7 | 0 | claw 1d3 · bite 1d3 · bite 1d8 |  |
-| mumak | gray | 5 | 9 | 0 | 0 | butt 4d12 · bite 2d6 | strong. |
-| leocrotta | red | 6 | 18 | 4 | 10 | claw 2d6 · bite 2d6 · claw 2d6 | strong. |
-| wumpus | cyan | 8 | 3 | 2 | 10 | bite 3d6 | strong. |
-| titanothere | gray | 12 | 12 | 6 | 0 | claw 2d8 | strong. |
-| baluchitherium | gray | 14 | 12 | 5 | 0 | claw 5d4 · claw 5d4 | strong. |
-| mastodon | black | 20 | 12 | 5 | 0 | butt 4d8 · butt 4d8 | strong. |
+| mumak | gray | 5 | 9 | 0 | 0 | butt 4d12 · bite 2d6 |  |
+| leocrotta | red | 6 | 18 | 4 | 10 | claw 2d6 · bite 2d6 · claw 2d6 |  |
+| wumpus | cyan | 8 | 3 | 2 | 10 | bite 3d6 |  |
+| titanothere | gray | 12 | 12 | 6 | 0 | claw 2d8 |  |
+| baluchitherium | gray | 14 | 12 | 5 | 0 | claw 5d4 · claw 5d4 |  |
+| mastodon | black | 20 | 12 | 5 | 0 | butt 4d8 · butt 4d8 |  |
+
+</div>
 
 #### Rodents `r`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | sewer rat | brown | 0 | 12 | 7 | 0 | bite 1d3 |  |
 | giant rat | brown | 1 | 10 | 7 | 0 | bite 1d3 |  |
 | rabid rat | brown | 2 | 12 | 6 | 0 | bite 2d4 drain-Co | poisonous-corpse, pois-res. |
-| wererat | brown | 2 | 12 | 6 | 10 | bite 1d4 lyc | regen, poisonous-corpse, pois-res. |
+| wererat | brown | 2 | 12 | 6 | 10 | bite 1d4 lyc | regenerates, poisonous-corpse, pois-res. |
 | rock mole | gray | 3 | 3 | 0 | 20 | bite 1d6 | tunnels. |
 | woodchuck | — | 3 | 3 | 0 | 20 | bite 1d6 | swims, tunnels. |
 
+</div>
+
 #### Arachnids and centipedes `s`
 
+All arachnids and centipedes are poison-resistant.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| cave spider | gray | 1 | 12 | 3 | 0 | bite 1d2 | hides, pois-res. |
-| centipede | yellow | 2 | 4 | 3 | 0 | bite 1d3 poison | hides, pois-res. |
-| giant spider | magenta | 5 | 15 | 4 | 0 | bite 2d4 poison | poisonous-corpse, strong, pois-res. |
-| scorpion | red | 5 | 15 | 3 | 0 | claw 1d2 · claw 1d2 · sting 1d4 poison | hides, poisonous-corpse, pois-res. |
-| Scorpius | magenta | 15 | 12 | 10 | 0 | claw 2d6 · claw 2d6 steal-amulet · sting 1d4 disease | poisonous-corpse, stalks, nasty, strong, pois-res, ston-res. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| cave spider | gray | 1 | 12 | 3 | 0 | bite 1d2 | hides. |
+| centipede | yellow | 2 | 4 | 3 | 0 | bite 1d3 poison | hides. |
+| giant spider | magenta | 5 | 15 | 4 | 0 | bite 2d4 poison | poisonous-corpse. |
+| scorpion | red | 5 | 15 | 3 | 0 | claw 1d2 · claw 1d2 · sting 1d4 poison | hides, poisonous-corpse. |
+| Scorpius | magenta | 15 | 12 | 10 | 0 | claw 2d6 · claw 2d6 steal-amulet · sting 1d4 disease | poisonous-corpse, follows stairs, ston-res. |
+
+</div>
 
 #### Trappers and lurkers `t`
 
+All trappers and lurkers hide and follow you up and down stairs.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| lurker above | gray | 10 | 3 | 3 | 0 | engulf 1d6 wrap · engulf 2d6 | flies, hides, stalks, strong. |
-| trapper | green | 12 | 3 | 3 | 0 | engulf 1d8 wrap · engulf 2d8 | hides, stalks, strong. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| lurker above | gray | 10 | 3 | 3 | 0 | engulf 1d6 wrap · engulf 2d6 | flies. |
+| trapper | green | 12 | 3 | 3 | 0 | engulf 1d8 wrap · engulf 2d8 |  |
+
+</div>
 
 #### Unicorns and horses `u`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| pony | brown | 3 | 16 | 6 | 0 | kick 1d6 · bite 1d2 | strong, domestic. Knight's starting steed. |
-| white unicorn | white | 4 | 24 | 2 | 70 | butt 1d12 · kick 1d6 | strong, pois-res. |
-| gray unicorn | gray | 4 | 24 | 2 | 70 | butt 1d12 · kick 1d6 | strong, pois-res. |
-| black unicorn | black | 4 | 24 | 2 | 70 | butt 1d12 · kick 1d6 | strong, pois-res. |
-| horse | brown | 5 | 20 | 5 | 0 | kick 1d8 · bite 1d3 | strong, domestic. |
-| warhorse | brown | 7 | 24 | 4 | 0 | kick 1d10 · bite 1d4 | strong, domestic. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| pony | brown | 3 | 16 | 6 | 0 | kick 1d6 · bite 1d2 | tameable. Knight's starting steed. |
+| white unicorn | white | 4 | 24 | 2 | 70 | butt 1d12 · kick 1d6 | pois-res. |
+| gray unicorn | gray | 4 | 24 | 2 | 70 | butt 1d12 · kick 1d6 | pois-res. |
+| black unicorn | black | 4 | 24 | 2 | 70 | butt 1d12 · kick 1d6 | pois-res. |
+| horse | brown | 5 | 20 | 5 | 0 | kick 1d8 · bite 1d3 | tameable. |
+| warhorse | brown | 7 | 24 | 4 | 0 | kick 1d10 · bite 1d4 | tameable. |
+
+</div>
 
 #### Vortices `v`
 
+All vortices fly and are mindless.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| fog cloud | gray | 3 | 1 | 0 | 0 | engulf 1d6 | flies, amorphous. |
-| dust vortex | brown | 4 | 20 | 2 | 30 | engulf 2d8 blind | flies. |
-| ice vortex | cyan | 5 | 20 | 2 | 30 | engulf 1d6 cold | flies. |
-| energy vortex | bright-blue | 6 | 20 | 2 | 30 | engulf 1d6 shock · engulf 2d6 drain-Pw · passive 0d4 shock | flies. |
-| steam vortex | blue | 7 | 22 | 2 | 30 | engulf 1d8 fire | flies. |
-| fire vortex | yellow | 8 | 22 | 2 | 30 | engulf 1d10 fire · passive 0d4 fire | flies. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| fog cloud | gray | 3 | 1 | 0 | 0 | engulf 1d6 | amorphous. |
+| dust vortex | brown | 4 | 20 | 2 | 30 | engulf 2d8 blind |  |
+| ice vortex | cyan | 5 | 20 | 2 | 30 | engulf 1d6 cold |  |
+| energy vortex | bright-blue | 6 | 20 | 2 | 30 | engulf 1d6 shock · engulf 2d6 drain-Pw · passive 0d4 shock |  |
+| steam vortex | blue | 7 | 22 | 2 | 30 | engulf 1d8 fire |  |
+| fire vortex | yellow | 8 | 22 | 2 | 30 | engulf 1d10 fire · passive 0d4 fire |  |
+
+</div>
 
 #### Worms `w`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | baby long worm | brown | 5 | 3 | 5 | 0 | bite 1d4 |  |
 | baby purple worm | magenta | 8 | 3 | 5 | 0 | bite 1d6 |  |
-| long worm | brown | 9 | 3 | 5 | 10 | bite 2d4 | nasty, strong. |
-| purple worm | magenta | 15 | 9 | 6 | 20 | bite 2d8 · engulf 1d10 digest | nasty, strong. |
+| long worm | brown | 9 | 3 | 5 | 10 | bite 2d4 |  |
+| purple worm | magenta | 15 | 9 | 6 | 20 | bite 2d8 · engulf 1d10 digest |  |
+
+</div>
 
 #### Xans and fantastic insects `x`
 
+All xans and fantastic insects are poison-resistant.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| grid bug | magenta | 0 | 12 | 9 | 0 | bite 1d1 shock | shock-res, pois-res. |
-| xan | red | 7 | 18 | -4 | 0 | sting 1d4 leg-wound | flies, poisonous-corpse, pois-res. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| grid bug | magenta | 0 | 12 | 9 | 0 | bite 1d1 shock | shock-res. |
+| xan | red | 7 | 18 | -4 | 0 | sting 1d4 leg-wound | flies, poisonous-corpse. |
+
+</div>
 
 #### Lights `y`
 
+All lights fly, are amorphous, and are mindless.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| yellow light | yellow | 3 | 15 | 0 | 0 | explode 10d20 blind | flies, amorphous. |
-| black light | black | 5 | 15 | 0 | 0 | explode 10d12 hallu | flies, amorphous, sees-invis. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| yellow light | yellow | 3 | 15 | 0 | 0 | explode 10d20 blind |  |
+| black light | black | 5 | 15 | 0 | 0 | explode 10d12 hallu | sees-invis. |
+
+</div>
 
 #### Zruties `z`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| zruty | brown | 9 | 8 | 3 | 0 | claw 3d4 · claw 3d4 · bite 3d6 | strong. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| zruty | brown | 9 | 8 | 3 | 0 | claw 3d4 · claw 3d4 · bite 3d6 |  |
+
+</div>
 
 #### Angelic beings `A`
 
+All angelic beings follow you up and down stairs. All except *Aleax* also fly. All except *couatl* also see invisible.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| couatl | green | 8 | 10 | 5 | 30 | bite 2d4 poison · bite 1d3 · hug 2d4 wrap | flies, poisonous-corpse, stalks, nasty, strong, infravis, pois-res. |
-| Aleax | yellow | 10 | 8 | 0 | 30 | weapon 1d6 · weapon 1d6 · kick 1d4 | sees-invis, stalks, nasty, infravis. |
-| Angel | white | 14 | 10 | -4 | 55 | weapon 1d6 · weapon 1d6 · claw 1d4 · spell 2d6 magic | flies, sees-invis, stalks, nasty, strong, infravis. |
-| ki-rin | yellow | 16 | 18 | -5 | 90 | kick 2d4 · kick 2d4 · butt 3d6 · spell 2d6 spell | flies, sees-invis, stalks, nasty, strong, infravis. |
-| Archon | magenta | 19 | 16 | -6 | 80 | weapon 2d4 · weapon 2d4 · gaze 2d6 blind · claw 1d8 · spell 4d6 spell | flies, regen, sees-invis, stalks, nasty, strong, infravis. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| couatl | green | 8 | 10 | 5 | 30 | bite 2d4 poison · bite 1d3 · hug 2d4 wrap | poisonous-corpse, pois-res. (no sees-invis) |
+| Aleax | yellow | 10 | 8 | 0 | 30 | weapon 1d6 · weapon 1d6 · kick 1d4 | (no flies) |
+| Angel | white | 14 | 10 | -4 | 55 | weapon 1d6 · weapon 1d6 · claw 1d4 · spell 2d6 magic |  |
+| ki-rin | yellow | 16 | 18 | -5 | 90 | kick 2d4 · kick 2d4 · butt 3d6 · spell 2d6 spell |  |
+| Archon | magenta | 19 | 16 | -6 | 80 | weapon 2d4 · weapon 2d4 · gaze 2d6 blind · claw 1d8 · spell 4d6 spell | regenerates. |
+
+</div>
 
 #### Bats and birds `B`
 
+All bats and birds fly.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| bat | brown | 0 | 22 | 8 | 0 | bite 1d4 | flies. |
-| giant bat | red | 2 | 22 | 7 | 0 | bite 1d6 | flies. |
-| raven | black | 4 | 20 | 6 | 0 | bite 1d6 · claw 1d6 blind | flies. |
-| vampire bat | black | 5 | 20 | 6 | 0 | bite 1d6 · bite poison | flies, regen, poisonous-corpse, sleep-res, pois-res. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| bat | brown | 0 | 22 | 8 | 0 | bite 1d4 |  |
+| giant bat | red | 2 | 22 | 7 | 0 | bite 1d6 |  |
+| raven | black | 4 | 20 | 6 | 0 | bite 1d6 · claw 1d6 blind |  |
+| vampire bat | black | 5 | 20 | 6 | 0 | bite 1d6 · bite poison | regenerates, poisonous-corpse, sleep-res, pois-res. |
+
+</div>
 
 #### Centaurs `C`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| plains centaur | brown | 4 | 18 | 4 | 0 | weapon 1d6 · kick 1d6 | strong. |
-| forest centaur | green | 5 | 18 | 3 | 10 | weapon 1d8 · kick 1d6 | strong. |
-| mountain centaur | cyan | 6 | 20 | 2 | 10 | weapon 1d10 · kick 1d6 · kick 1d6 | strong. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| plains centaur | brown | 4 | 18 | 4 | 0 | weapon 1d6 · kick 1d6 |  |
+| forest centaur | green | 5 | 18 | 3 | 10 | weapon 1d8 · kick 1d6 |  |
+| mountain centaur | cyan | 6 | 20 | 2 | 10 | weapon 1d10 · kick 1d6 · kick 1d6 |  |
+
+</div>
 
 #### Dragons `D`
 
+All except *Chromatic Dragon* also fly.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| baby gray dragon | gray | 12 | 9 | 2 | 10 | bite 2d6 | flies, strong. |
-| baby gold dragon | yellow | 12 | 9 | 2 | 10 | bite 2d6 | flies, strong. |
-| baby silver dragon | gray | 12 | 9 | 2 | 10 | bite 2d6 | flies, strong. |
-| baby red dragon | red | 12 | 9 | 2 | 10 | bite 2d6 | flies, strong. Same breath type as the adult; less HP. Still bad without fire res. |
-| baby white dragon | white | 12 | 9 | 2 | 10 | bite 2d6 | flies, strong. |
-| baby orange dragon | orange | 12 | 9 | 2 | 10 | bite 2d6 | flies, strong. |
-| baby black dragon | black | 12 | 9 | 2 | 10 | bite 2d6 | flies, strong. |
-| baby blue dragon | blue | 12 | 9 | 2 | 10 | bite 2d6 | flies, strong. Lightning breath, ditto. |
-| baby green dragon | green | 12 | 9 | 2 | 10 | bite 2d6 | flies, poisonous-corpse, strong. |
-| baby yellow dragon | yellow | 12 | 9 | 2 | 10 | bite 2d6 | flies, strong. |
-| gray dragon | gray | 15 | 9 | -1 | 20 | breath 4d6 magic · bite 3d8 · claw 1d4 · claw 1d4 | flies, sees-invis, nasty, strong. Anti-magic breath. Magic resistance helps; reflection doesn't. |
-| gold dragon | yellow | 15 | 9 | -1 | 20 | breath 4d6 fire · bite 3d8 · claw 1d4 · claw 1d4 | flies, sees-invis, nasty, strong. Fire breath. Drops gold-colored scales (light source). |
-| silver dragon | gray | 15 | 9 | -1 | 20 | breath 4d6 cold · bite 3d8 · claw 1d4 · claw 1d4 | flies, sees-invis, nasty, strong. Cold breath plus reflection scales — your reflection target. |
-| red dragon | red | 15 | 9 | -1 | 20 | breath 6d6 fire · bite 3d8 · claw 1d4 · claw 1d4 | flies, sees-invis, nasty, strong, infravis. Cone of fire. Get fire resistance before you meet one. |
-| white dragon | white | 15 | 9 | -1 | 20 | breath 4d6 cold · bite 3d8 · claw 1d4 · claw 1d4 | flies, sees-invis, nasty, strong. Cone of cold. Cold resistance. |
-| orange dragon | orange | 15 | 9 | -1 | 20 | breath 4d25 sleep · bite 3d8 · claw 1d4 · claw 1d4 | flies, sees-invis, nasty, strong. Sleep ray. Sleep resistance trivialises. |
-| black dragon | black | 15 | 9 | -1 | 20 | breath 1d255 disint · bite 3d8 · claw 1d4 · claw 1d4 | flies, sees-invis, nasty, strong. Disintegration breath. Disint resistance OR reflection. |
-| blue dragon | blue | 15 | 9 | -1 | 20 | breath 4d6 shock · bite 3d8 · claw 1d4 · claw 1d4 | flies, sees-invis, nasty, strong. Cone of lightning. Shock resistance. |
-| green dragon | green | 15 | 9 | -1 | 20 | breath 4d6 poison · bite 3d8 · claw 1d4 · claw 1d4 | flies, sees-invis, poisonous-corpse, nasty, strong. Poison breath; poison resistance is enough. |
-| yellow dragon | yellow | 15 | 9 | -1 | 20 | breath 4d6 acid · bite 3d8 · claw 1d4 · claw 1d4 | flies, sees-invis, nasty, strong. Acid breath; rare. |
-| Chromatic Dragon | magenta | 16 | 12 | 0 | 30 | breath 6d6 rnd-breath · spell spell · claw 2d8 steal-amulet · bite 4d8 · bite 4d8 · sting 1d6 | sees-invis, poisonous-corpse, stalks, nasty, strong, infravis. |
-| Ixoth | red | 15 | 12 | -1 | 20 | breath 8d6 fire · bite 4d8 · spell spell · claw 2d4 · claw 2d4 steal-amulet | flies, sees-invis, stalks, nasty, strong. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| baby gray dragon | gray | 12 | 9 | 2 | 10 | bite 2d6 |  |
+| baby gold dragon | yellow | 12 | 9 | 2 | 10 | bite 2d6 |  |
+| baby silver dragon | gray | 12 | 9 | 2 | 10 | bite 2d6 |  |
+| baby red dragon | red | 12 | 9 | 2 | 10 | bite 2d6 | Same breath type as the adult; less HP. Still bad without fire res. |
+| baby white dragon | white | 12 | 9 | 2 | 10 | bite 2d6 |  |
+| baby orange dragon | orange | 12 | 9 | 2 | 10 | bite 2d6 |  |
+| baby black dragon | black | 12 | 9 | 2 | 10 | bite 2d6 |  |
+| baby blue dragon | blue | 12 | 9 | 2 | 10 | bite 2d6 | Lightning breath, ditto. |
+| baby green dragon | green | 12 | 9 | 2 | 10 | bite 2d6 | poisonous-corpse. |
+| baby yellow dragon | yellow | 12 | 9 | 2 | 10 | bite 2d6 |  |
+| gray dragon | gray | 15 | 9 | -1 | 20 | breath 4d6 magic · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis. Anti-magic breath. Magic resistance helps; reflection doesn't. |
+| gold dragon | yellow | 15 | 9 | -1 | 20 | breath 4d6 fire · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis. Fire breath. Drops gold-colored scales (light source). |
+| silver dragon | gray | 15 | 9 | -1 | 20 | breath 4d6 cold · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis. Cold breath plus reflection scales — your reflection target. |
+| red dragon | red | 15 | 9 | -1 | 20 | breath 6d6 fire · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis. Cone of fire. Get fire resistance before you meet one. |
+| white dragon | white | 15 | 9 | -1 | 20 | breath 4d6 cold · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis. Cone of cold. Cold resistance. |
+| orange dragon | orange | 15 | 9 | -1 | 20 | breath 4d25 sleep · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis. Sleep ray. Sleep resistance trivialises. |
+| black dragon | black | 15 | 9 | -1 | 20 | breath 1d255 disint · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis. Disintegration breath. Disint resistance OR reflection. |
+| blue dragon | blue | 15 | 9 | -1 | 20 | breath 4d6 shock · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis. Cone of lightning. Shock resistance. |
+| green dragon | green | 15 | 9 | -1 | 20 | breath 4d6 poison · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis, poisonous-corpse. Poison breath; poison resistance is enough. |
+| yellow dragon | yellow | 15 | 9 | -1 | 20 | breath 4d6 acid · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis. Acid breath; rare. |
+| Chromatic Dragon | magenta | 16 | 12 | 0 | 30 | breath 6d6 rnd-breath · spell spell · claw 2d8 steal-amulet · bite 4d8 · bite 4d8 · sting 1d6 | sees-invis, poisonous-corpse, follows stairs. (no flies) |
+| Ixoth | red | 15 | 12 | -1 | 20 | breath 8d6 fire · bite 4d8 · spell spell · claw 2d4 · claw 2d4 steal-amulet | sees-invis, follows stairs. |
+
+</div>
 
 #### Elementals `E`
 
+All except *stalker* also are mindless.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| stalker | white | 8 | 12 | 3 | 0 | claw 4d4 | flies, sees-invis, stalks, strong, infravis. |
-| air elemental | cyan | 8 | 36 | 2 | 30 | engulf 1d10 | flies, strong. |
-| fire elemental | yellow | 8 | 12 | 2 | 30 | claw 3d6 fire · passive 0d4 fire | flies, strong. |
-| earth elemental | brown | 8 | 6 | 2 | 30 | claw 4d6 | strong, fire-res, cold-res, pois-res, ston-res. |
-| water elemental | blue | 8 | 5 | 2 | 30 | claw 5d6 | swims, amphibious, strong, pois-res, ston-res. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| stalker | white | 8 | 12 | 3 | 0 | claw 4d4 | flies, sees-invis, follows stairs. (no mindless) |
+| air elemental | cyan | 8 | 36 | 2 | 30 | engulf 1d10 | flies. |
+| fire elemental | yellow | 8 | 12 | 2 | 30 | claw 3d6 fire · passive 0d4 fire | flies. |
+| earth elemental | brown | 8 | 6 | 2 | 30 | claw 4d6 | fire-res, cold-res, pois-res, ston-res. |
+| water elemental | blue | 8 | 5 | 2 | 30 | claw 5d6 | swims, amphibious, pois-res, ston-res. |
+
+</div>
 
 #### Fungi and molds `F`
 
+All fungi and molds are mindless.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | lichen | bright-green | 0 | 1 | 9 | 0 | touch sticky |  |
 | brown mold | brown | 1 | 0 | 9 | 0 | passive 0d6 cold | cold-res, pois-res. |
 | yellow mold | yellow | 1 | 0 | 9 | 0 | passive 0d4 stun | poisonous-corpse, pois-res. |
@@ -7203,337 +7503,461 @@ Every monster you might meet. Grouped by ASCII symbol so you can flip to the rig
 | shrieker | magenta | 3 | 1 | 7 | 0 | — | pois-res. |
 | violet fungus | magenta | 3 | 1 | 7 | 0 | touch 1d4 · touch sticky | pois-res. |
 
+</div>
+
 #### Gnomes `G`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| gnome | brown | 1 | 6 | 10 | 4 | weapon 1d6 | infravis. |
-| gnome lord | blue | 3 | 8 | 10 | 4 | weapon 1d8 | infravis. |
-| gnomish wizard | bright-blue | 3 | 10 | 4 | 10 | spell spell | infravis. |
-| gnome king | magenta | 5 | 10 | 10 | 20 | weapon 2d6 | infravis. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| gnome | brown | 1 | 6 | 10 | 4 | weapon 1d6 |  |
+| gnome lord | blue | 3 | 8 | 10 | 4 | weapon 1d8 |  |
+| gnomish wizard | bright-blue | 3 | 10 | 4 | 10 | spell spell |  |
+| gnome king | magenta | 5 | 10 | 10 | 20 | weapon 2d6 |  |
+
+</div>
 
 #### Giant humanoids `H`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| giant | red | 6 | 6 | 0 | 0 | weapon 2d10 | nasty, strong, infravis. |
-| stone giant | gray | 6 | 6 | 0 | 0 | weapon 2d10 | nasty, strong, infravis. |
-| hill giant | cyan | 8 | 10 | 6 | 0 | weapon 2d8 | nasty, strong, infravis. |
-| fire giant | yellow | 9 | 12 | 4 | 5 | weapon 2d10 | nasty, strong, infravis, fire-res. Throws boulders. Surprisingly poor offensively if you have fire res. |
-| frost giant | white | 10 | 12 | 3 | 10 | weapon 2d12 | nasty, strong, infravis, cold-res. Throws boulders. Has cold attacks. |
-| ettin | brown | 10 | 12 | 3 | 0 | weapon 2d8 · weapon 3d6 | nasty, strong, infravis. |
-| storm giant | blue | 16 | 12 | 3 | 10 | weapon 2d12 | nasty, strong, infravis, shock-res. Throws boulders for big damage. Carries shock attacks. |
-| titan | magenta | 16 | 18 | -3 | 70 | weapon 2d8 · spell spell | flies, nasty, strong, infravis. Tough humanoid with magic missiles. Casts spells. |
-| minotaur | brown | 15 | 15 | 6 | 0 | claw 3d10 · claw 3d10 · butt 2d8 | nasty, strong, infravis. Two claws plus a butt. Heavy hitter; usually guards a vault. |
-| Cyclops | gray | 18 | 12 | 0 | 0 | weapon 4d8 · weapon 4d8 · claw 2d6 steal-amulet | stalks, nasty, strong, infravis, ston-res. Caveman quest nemesis. Throws boulders. |
-| Lord Surtur | magenta | 15 | 12 | 2 | 50 | weapon 2d10 · weapon 2d10 · claw 2d6 steal-amulet | stalks, nasty, strong, infravis, fire-res, ston-res. Valkyrie quest nemesis. Has Mjollnir if you don't. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| giant | red | 6 | 6 | 0 | 0 | weapon 2d10 |  |
+| stone giant | gray | 6 | 6 | 0 | 0 | weapon 2d10 |  |
+| hill giant | cyan | 8 | 10 | 6 | 0 | weapon 2d8 |  |
+| fire giant | yellow | 9 | 12 | 4 | 5 | weapon 2d10 | fire-res. Throws boulders. Surprisingly poor offensively if you have fire res. |
+| frost giant | white | 10 | 12 | 3 | 10 | weapon 2d12 | cold-res. Throws boulders. Has cold attacks. |
+| ettin | brown | 10 | 12 | 3 | 0 | weapon 2d8 · weapon 3d6 |  |
+| storm giant | blue | 16 | 12 | 3 | 10 | weapon 2d12 | shock-res. Throws boulders for big damage. Carries shock attacks. |
+| titan | magenta | 16 | 18 | -3 | 70 | weapon 2d8 · spell spell | flies. Tough humanoid with magic missiles. Casts spells. |
+| minotaur | brown | 15 | 15 | 6 | 0 | claw 3d10 · claw 3d10 · butt 2d8 | Two claws plus a butt. Heavy hitter; usually guards a vault. |
+| Cyclops | gray | 18 | 12 | 0 | 0 | weapon 4d8 · weapon 4d8 · claw 2d6 steal-amulet | follows stairs, ston-res. Caveman quest nemesis. Throws boulders. |
+| Lord Surtur | magenta | 15 | 12 | 2 | 50 | weapon 2d10 · weapon 2d10 · claw 2d6 steal-amulet | follows stairs, fire-res, ston-res. Valkyrie quest nemesis. Has Mjollnir if you don't. |
+
+</div>
 
 #### Jabberwocks `J`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| jabberwock | orange | 15 | 12 | -2 | 50 | bite 2d10 · bite 2d10 · claw 2d10 · claw 2d10 | flies, nasty, strong. Powerful but slow. Free XP if you're set up. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| jabberwock | orange | 15 | 12 | -2 | 50 | bite 2d10 · bite 2d10 · claw 2d10 · claw 2d10 | flies. Powerful but slow. Free XP if you're set up. |
+
+</div>
 
 #### Keystone Kops `K`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | Keystone Kop | blue | 1 | 6 | 10 | 10 | weapon 1d4 |  |
-| Kop Sergeant | blue | 2 | 8 | 10 | 10 | weapon 1d6 | strong. |
-| Kop Lieutenant | cyan | 3 | 10 | 10 | 20 | weapon 1d8 | strong. |
-| Kop Kaptain | magenta | 4 | 12 | 10 | 20 | weapon 2d6 | strong. |
+| Kop Sergeant | blue | 2 | 8 | 10 | 10 | weapon 1d6 |  |
+| Kop Lieutenant | cyan | 3 | 10 | 10 | 20 | weapon 1d8 |  |
+| Kop Kaptain | magenta | 4 | 12 | 10 | 20 | weapon 2d6 |  |
+
+</div>
 
 #### Liches `L`
 
+All liches regenerate, have poisonous corpses, are undead, are cold-resistant, are sleep-resistant, and are poison-resistant.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| lich | brown | 11 | 6 | 0 | 30 | touch 1d10 cold · spell spell | regen, poisonous-corpse, infravis, cold-res, sleep-res, pois-res. |
-| demilich | red | 14 | 9 | -2 | 60 | touch 3d4 cold · spell spell | regen, poisonous-corpse, infravis, cold-res, sleep-res, pois-res. |
-| master lich | magenta | 17 | 9 | -4 | 90 | touch 3d6 cold · spell spell | regen, poisonous-corpse, infravis, fire-res, cold-res, sleep-res, pois-res. Casts double-trouble. Disperse or kill from afar. |
-| arch-lich | magenta | 25 | 9 | -6 | 90 | touch 5d6 cold · spell spell | regen, poisonous-corpse, infravis, fire-res, cold-res, sleep-res, shock-res, pois-res. End-game tier. Casts death rays. Magic resistance mandatory. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| lich | brown | 11 | 6 | 0 | 30 | touch 1d10 cold · spell spell |  |
+| demilich | red | 14 | 9 | -2 | 60 | touch 3d4 cold · spell spell |  |
+| master lich | magenta | 17 | 9 | -4 | 90 | touch 3d6 cold · spell spell | fire-res. Casts double-trouble. Disperse or kill from afar. |
+| arch-lich | magenta | 25 | 9 | -6 | 90 | touch 5d6 cold · spell spell | fire-res, shock-res. End-game tier. Casts death rays. Magic resistance mandatory. |
+
+</div>
 
 #### Mummies `M`
 
+All mummies have poisonous corpses, are mindless, and are undead.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| kobold mummy | brown | 3 | 8 | 6 | 20 | claw 1d4 | poisonous-corpse, infravis, cold-res, sleep-res, pois-res. |
-| gnome mummy | red | 4 | 10 | 6 | 20 | claw 1d6 | poisonous-corpse, infravis, cold-res, sleep-res, pois-res. |
-| orc mummy | gray | 5 | 10 | 5 | 20 | claw 1d6 | poisonous-corpse, strong, infravis, cold-res, sleep-res, pois-res. |
-| dwarf mummy | red | 5 | 10 | 5 | 20 | claw 1d6 | poisonous-corpse, infravis, cold-res, sleep-res, pois-res. |
-| elf mummy | green | 6 | 12 | 4 | 30 | claw 2d4 | poisonous-corpse, infravis. |
-| human mummy | gray | 6 | 12 | 4 | 30 | claw 2d4 · claw 2d4 | poisonous-corpse, infravis. |
-| ettin mummy | blue | 7 | 12 | 4 | 30 | claw 2d6 · claw 2d6 | poisonous-corpse, strong, infravis, cold-res, sleep-res, pois-res. |
-| giant mummy | cyan | 8 | 14 | 3 | 30 | claw 3d4 · claw 3d4 | poisonous-corpse, strong, infravis, cold-res, sleep-res, pois-res. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| kobold mummy | brown | 3 | 8 | 6 | 20 | claw 1d4 | cold-res, sleep-res, pois-res. |
+| gnome mummy | red | 4 | 10 | 6 | 20 | claw 1d6 | cold-res, sleep-res, pois-res. |
+| orc mummy | gray | 5 | 10 | 5 | 20 | claw 1d6 | cold-res, sleep-res, pois-res. |
+| dwarf mummy | red | 5 | 10 | 5 | 20 | claw 1d6 | cold-res, sleep-res, pois-res. |
+| elf mummy | green | 6 | 12 | 4 | 30 | claw 2d4 |  |
+| human mummy | gray | 6 | 12 | 4 | 30 | claw 2d4 · claw 2d4 |  |
+| ettin mummy | blue | 7 | 12 | 4 | 30 | claw 2d6 · claw 2d6 | cold-res, sleep-res, pois-res. |
+| giant mummy | cyan | 8 | 14 | 3 | 30 | claw 3d4 · claw 3d4 | cold-res, sleep-res, pois-res. |
+
+</div>
 
 #### Nagas `N`
 
+All nagas are poison-resistant.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| red naga hatchling | red | 3 | 10 | 6 | 0 | bite 1d4 | strong, fire-res, pois-res. |
-| black naga hatchling | black | 3 | 10 | 6 | 0 | bite 1d4 | strong, pois-res, acid-res, ston-res. |
-| golden naga hatchling | yellow | 3 | 10 | 6 | 0 | bite 1d4 | strong, pois-res. |
-| guardian naga hatchling | green | 3 | 10 | 6 | 0 | bite 1d4 | strong, pois-res. |
-| red naga | red | 6 | 12 | 4 | 0 | bite 2d4 · breath 2d6 fire | strong, fire-res, pois-res. |
-| black naga | black | 8 | 14 | 2 | 10 | bite 2d6 · spit acid | strong, pois-res, acid-res, ston-res. |
-| golden naga | yellow | 10 | 14 | 2 | 70 | bite 2d6 · spell 4d6 spell | strong, pois-res. |
-| guardian naga | green | 12 | 16 | 0 | 50 | spit 1d6 poison · bite 1d6 paralyse · touch · hug 2d4 wrap | poisonous-corpse, strong, pois-res. Friendly to the Healer. Hostile otherwise. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| red naga hatchling | red | 3 | 10 | 6 | 0 | bite 1d4 | fire-res. |
+| black naga hatchling | black | 3 | 10 | 6 | 0 | bite 1d4 | acid-res, ston-res. |
+| golden naga hatchling | yellow | 3 | 10 | 6 | 0 | bite 1d4 |  |
+| guardian naga hatchling | green | 3 | 10 | 6 | 0 | bite 1d4 |  |
+| red naga | red | 6 | 12 | 4 | 0 | bite 2d4 · breath 2d6 fire | fire-res. |
+| black naga | black | 8 | 14 | 2 | 10 | bite 2d6 · spit acid | acid-res, ston-res. |
+| golden naga | yellow | 10 | 14 | 2 | 70 | bite 2d6 · spell 4d6 spell |  |
+| guardian naga | green | 12 | 16 | 0 | 50 | spit 1d6 poison · bite 1d6 paralyse · touch · hug 2d4 wrap | poisonous-corpse. Friendly to the Healer. Hostile otherwise. |
+
+</div>
 
 #### Ogres `O`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| ogre | brown | 5 | 10 | 5 | 0 | weapon 2d5 | strong, infravis. |
-| ogre lord | red | 7 | 12 | 3 | 30 | weapon 2d6 | strong, infravis. |
-| ogre king | magenta | 9 | 14 | 4 | 60 | weapon 3d5 | strong, infravis. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| ogre | brown | 5 | 10 | 5 | 0 | weapon 2d5 |  |
+| ogre lord | red | 7 | 12 | 3 | 30 | weapon 2d6 |  |
+| ogre king | magenta | 9 | 14 | 4 | 60 | weapon 3d5 |  |
+
+</div>
 
 #### Puddings and oozes `P`
 
+All puddings and oozes are amorphous, are mindless, are cold-resistant, are poison-resistant, are acid-resistant, and are petrification-resistant. All except *gray ooze* also are shock-resistant.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| gray ooze | gray | 3 | 1 | 8 | 0 | bite 2d8 rust | amorphous, fire-res, cold-res, pois-res, acid-res, ston-res. |
-| brown pudding | brown | 5 | 3 | 8 | 0 | bite decay | amorphous, cold-res, shock-res, pois-res, acid-res, ston-res. |
-| green slime | green | 6 | 6 | 6 | 0 | touch 1d4 slime · passive slime | amorphous, poisonous-corpse, cold-res, shock-res, pois-res, acid-res, ston-res. |
-| black pudding | black | 10 | 6 | 6 | 0 | bite 3d8 corrode · passive corrode | amorphous, cold-res, shock-res, pois-res, acid-res, ston-res. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| gray ooze | gray | 3 | 1 | 8 | 0 | bite 2d8 rust | fire-res. (no shock-res) |
+| brown pudding | brown | 5 | 3 | 8 | 0 | bite decay |  |
+| green slime | green | 6 | 6 | 6 | 0 | touch 1d4 slime · passive slime | poisonous-corpse. |
+| black pudding | black | 10 | 6 | 6 | 0 | bite 3d8 corrode · passive corrode |  |
+
+</div>
 
 #### Quantum mechanics `Q`
 
+All quantum mechanics teleport and have poisonous corpses.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| quantum mechanic | cyan | 7 | 12 | 3 | 10 | claw 1d4 teleport | teleports, poisonous-corpse. |
-| genetic engineer | green | 12 | 12 | 3 | 10 | claw 1d4 polymorph | teleports, poisonous-corpse, nasty. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| quantum mechanic | cyan | 7 | 12 | 3 | 10 | claw 1d4 teleport |  |
+| genetic engineer | green | 12 | 12 | 3 | 10 | claw 1d4 polymorph |  |
+
+</div>
 
 #### Rust monsters and disenchanters `R`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | rust monster | brown | 5 | 18 | 2 | 0 | touch rust · touch rust · passive rust | swims. Touch rusts iron. Strip armor before engaging or use silver. |
 | disenchanter | blue | 12 | 12 | -10 | 0 | claw 4d4 disenchant · passive disenchant | Touch removes enchantment. Devastating to your +5 long sword. |
 
+</div>
+
 #### Snakes `S`
 
+All snakes swim. All except *python* also hide.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| garter snake | green | 1 | 8 | 8 | 0 | bite 1d2 | swims, hides. |
-| snake | brown | 4 | 15 | 3 | 0 | bite 1d6 poison | swims, hides, poisonous-corpse, pois-res. |
-| water moccasin | red | 4 | 15 | 3 | 0 | bite 1d6 poison | swims, hides, poisonous-corpse, pois-res. |
-| python | magenta | 6 | 3 | 5 | 0 | bite 1d4 · touch · hug 1d4 wrap · hug 2d4 | swims, strong, infravis. |
-| pit viper | blue | 6 | 15 | 2 | 0 | bite 1d4 poison · bite 1d4 poison | swims, hides, poisonous-corpse, infravis, pois-res. |
-| cobra | blue | 6 | 18 | 2 | 0 | bite 2d4 poison · spit blind | swims, hides, poisonous-corpse, pois-res. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| garter snake | green | 1 | 8 | 8 | 0 | bite 1d2 |  |
+| snake | brown | 4 | 15 | 3 | 0 | bite 1d6 poison | poisonous-corpse, pois-res. |
+| water moccasin | red | 4 | 15 | 3 | 0 | bite 1d6 poison | poisonous-corpse, pois-res. |
+| python | magenta | 6 | 3 | 5 | 0 | bite 1d4 · touch · hug 1d4 wrap · hug 2d4 | (no hides) |
+| pit viper | blue | 6 | 15 | 2 | 0 | bite 1d4 poison · bite 1d4 poison | poisonous-corpse, pois-res. |
+| cobra | blue | 6 | 18 | 2 | 0 | bite 2d4 poison · spit blind | poisonous-corpse, pois-res. |
+
+</div>
 
 #### Trolls `T`
 
+All trolls regenerate and follow you up and down stairs.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| troll | brown | 7 | 12 | 4 | 0 | weapon 4d2 · claw 4d2 · bite 2d6 | regen, stalks, strong, infravis. |
-| ice troll | white | 9 | 10 | 2 | 20 | weapon 2d6 · claw 2d6 cold · bite 2d6 | regen, stalks, strong, infravis, cold-res. |
-| rock troll | cyan | 9 | 12 | 0 | 0 | weapon 3d6 · claw 2d8 · bite 2d6 | regen, stalks, strong, infravis. |
-| water troll | blue | 11 | 14 | 4 | 40 | weapon 2d8 · claw 2d8 · bite 2d6 | swims, regen, stalks, strong, infravis. |
-| Olog-hai | magenta | 13 | 12 | -4 | 0 | weapon 3d6 · claw 2d8 · bite 2d6 | regen, stalks, strong, infravis. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| troll | brown | 7 | 12 | 4 | 0 | weapon 4d2 · claw 4d2 · bite 2d6 |  |
+| ice troll | white | 9 | 10 | 2 | 20 | weapon 2d6 · claw 2d6 cold · bite 2d6 | cold-res. |
+| rock troll | cyan | 9 | 12 | 0 | 0 | weapon 3d6 · claw 2d8 · bite 2d6 |  |
+| water troll | blue | 11 | 14 | 4 | 40 | weapon 2d8 · claw 2d8 · bite 2d6 | swims. |
+| Olog-hai | magenta | 13 | 12 | -4 | 0 | weapon 3d6 · claw 2d8 · bite 2d6 |  |
+
+</div>
 
 #### Umber hulks `U`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| umber hulk | brown | 9 | 6 | 2 | 25 | claw 3d4 · claw 3d4 · bite 2d5 · gaze confuse | tunnels, strong. Confusion gaze. Hard to navigate around. Hits hard too. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| umber hulk | brown | 9 | 6 | 2 | 25 | claw 3d4 · claw 3d4 · bite 2d5 · gaze confuse | tunnels. Confusion gaze. Hard to navigate around. Hits hard too. |
+
+</div>
 
 #### Vampires `V`
 
+All vampires fly, regenerate, have poisonous corpses, are undead, follow you up and down stairs, and shapeshift.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| vampire | red | 10 | 12 | 1 | 25 | claw 1d6 · bite 1d6 drain-XL | flies, regen, poisonous-corpse, stalks, nasty, strong, shifter. |
-| vampire lord | blue | 12 | 14 | 0 | 50 | claw 1d8 · bite 1d8 drain-XL | flies, regen, poisonous-corpse, stalks, nasty, strong, shifter. |
-| Vlad the Impaler | magenta | 28 | 26 | -6 | 80 | weapon 2d10 · bite 1d12 drain-XL | flies, regen, poisonous-corpse, stalks, nasty, strong, shifter. Vampire boss in Vlad's Tower. Has the Candelabrum. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| vampire | red | 10 | 12 | 1 | 25 | claw 1d6 · bite 1d6 drain-XL |  |
+| vampire lord | blue | 12 | 14 | 0 | 50 | claw 1d8 · bite 1d8 drain-XL |  |
+| Vlad the Impaler | magenta | 28 | 26 | -6 | 80 | weapon 2d10 · bite 1d12 drain-XL | Vampire boss in Vlad's Tower. Has the Candelabrum. |
+
+</div>
 
 #### Wraiths `W`
 
+All wraiths are undead and follow you up and down stairs.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| barrow wight | gray | 3 | 12 | 5 | 5 | weapon drain-XL · spell spell · claw 1d4 · touch 1d4 cold | stalks, cold-res, sleep-res, pois-res. |
-| wraith | black | 6 | 12 | 4 | 15 | touch 1d6 drain-XL | flies, stalks. |
-| Nazgul | magenta | 13 | 12 | 0 | 25 | weapon 1d4 drain-XL · breath 2d25 sleep | sees-invis, stalks, strong. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| barrow wight | gray | 3 | 12 | 5 | 5 | weapon drain-XL · spell spell · claw 1d4 · touch 1d4 cold | cold-res, sleep-res, pois-res. |
+| wraith | black | 6 | 12 | 4 | 15 | touch 1d6 drain-XL | flies. |
+| Nazgul | magenta | 13 | 12 | 0 | 25 | weapon 1d4 drain-XL · breath 2d25 sleep | sees-invis. |
+
+</div>
 
 #### Xorns `X`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| xorn | brown | 8 | 9 | -2 | 20 | claw 1d3 · claw 1d3 · claw 1d3 · bite 4d6 | strong, fire-res, cold-res, ston-res. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| xorn | brown | 8 | 9 | -2 | 20 | claw 1d3 · claw 1d3 · claw 1d3 · bite 4d6 | fire-res, cold-res, ston-res. |
+
+</div>
 
 #### Apelike creatures `Y`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | monkey | gray | 2 | 12 | 6 | 0 | claw steal-item · bite 1d3 |  |
-| ape | brown | 4 | 12 | 6 | 0 | claw 1d3 · claw 1d3 · bite 1d6 | strong. |
-| owlbear | brown | 5 | 12 | 5 | 0 | claw 1d6 · claw 1d6 · hug 2d8 | nasty, strong. |
-| yeti | white | 5 | 15 | 6 | 0 | claw 1d6 · claw 1d6 · bite 1d4 | strong, cold-res. |
-| carnivorous ape | black | 6 | 12 | 6 | 0 | claw 1d4 · claw 1d4 · hug 1d8 | strong. |
-| sasquatch | gray | 7 | 15 | 6 | 0 | claw 1d6 · claw 1d6 · kick 1d8 | sees-invis, strong. |
+| ape | brown | 4 | 12 | 6 | 0 | claw 1d3 · claw 1d3 · bite 1d6 |  |
+| owlbear | brown | 5 | 12 | 5 | 0 | claw 1d6 · claw 1d6 · hug 2d8 |  |
+| yeti | white | 5 | 15 | 6 | 0 | claw 1d6 · claw 1d6 · bite 1d4 | cold-res. |
+| carnivorous ape | black | 6 | 12 | 6 | 0 | claw 1d4 · claw 1d4 · hug 1d8 |  |
+| sasquatch | gray | 7 | 15 | 6 | 0 | claw 1d6 · claw 1d6 · kick 1d8 | sees-invis. |
+
+</div>
 
 #### Zombies `Z`
 
+All zombies are mindless and are undead.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| kobold zombie | brown | 0 | 6 | 10 | 0 | claw 1d4 | poisonous-corpse, stalks, infravis, cold-res, sleep-res, pois-res. |
-| gnome zombie | brown | 1 | 6 | 10 | 0 | claw 1d5 | poisonous-corpse, stalks, infravis, cold-res, sleep-res, pois-res. |
-| orc zombie | gray | 2 | 6 | 9 | 0 | claw 1d6 | poisonous-corpse, stalks, infravis, cold-res, sleep-res, pois-res. |
-| dwarf zombie | red | 2 | 6 | 9 | 0 | claw 1d6 | poisonous-corpse, stalks, infravis, cold-res, sleep-res, pois-res. |
-| elf zombie | green | 3 | 6 | 9 | 0 | claw 1d7 | stalks, infravis. |
-| human zombie | white | 4 | 6 | 8 | 0 | claw 1d8 | stalks, infravis. |
-| ettin zombie | blue | 6 | 8 | 6 | 0 | claw 1d10 · claw 1d10 | stalks, strong, infravis, cold-res, sleep-res, pois-res. |
-| ghoul | black | 3 | 6 | 10 | 0 | claw 1d2 paralyse · claw 1d3 | poisonous-corpse, infravis, cold-res, sleep-res, pois-res. |
-| giant zombie | cyan | 8 | 8 | 6 | 0 | claw 2d8 · claw 2d8 | stalks, strong, infravis, cold-res, sleep-res, pois-res. |
-| skeleton | white | 12 | 8 | 4 | 0 | weapon 2d6 · touch 1d6 slow | nasty, strong, infravis, cold-res, sleep-res, pois-res, ston-res. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| kobold zombie | brown | 0 | 6 | 10 | 0 | claw 1d4 | poisonous-corpse, follows stairs, cold-res, sleep-res, pois-res. |
+| gnome zombie | brown | 1 | 6 | 10 | 0 | claw 1d5 | poisonous-corpse, follows stairs, cold-res, sleep-res, pois-res. |
+| orc zombie | gray | 2 | 6 | 9 | 0 | claw 1d6 | poisonous-corpse, follows stairs, cold-res, sleep-res, pois-res. |
+| dwarf zombie | red | 2 | 6 | 9 | 0 | claw 1d6 | poisonous-corpse, follows stairs, cold-res, sleep-res, pois-res. |
+| elf zombie | green | 3 | 6 | 9 | 0 | claw 1d7 | follows stairs. |
+| human zombie | white | 4 | 6 | 8 | 0 | claw 1d8 | follows stairs. |
+| ettin zombie | blue | 6 | 8 | 6 | 0 | claw 1d10 · claw 1d10 | follows stairs, cold-res, sleep-res, pois-res. |
+| ghoul | black | 3 | 6 | 10 | 0 | claw 1d2 paralyse · claw 1d3 | poisonous-corpse, cold-res, sleep-res, pois-res. |
+| giant zombie | cyan | 8 | 8 | 6 | 0 | claw 2d8 · claw 2d8 | follows stairs, cold-res, sleep-res, pois-res. |
+| skeleton | white | 12 | 8 | 4 | 0 | weapon 2d6 · touch 1d6 slow | cold-res, sleep-res, pois-res, ston-res. |
+
+</div>
 
 #### Humans and elves `@`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| human | white | 0 | 12 | 10 | 0 | weapon 1d6 | strong. |
-| wererat | brown | 2 | 12 | 10 | 10 | weapon 2d4 | regen, poisonous-corpse. |
-| werejackal | red | 2 | 12 | 10 | 10 | weapon 2d4 | regen, poisonous-corpse. |
-| werewolf | orange | 5 | 12 | 10 | 20 | weapon 2d4 | regen, poisonous-corpse. |
-| elf | white | 0 | 12 | 10 | 2 | weapon 1d8 | sees-invis, infravis. |
-| Woodland-elf | green | 4 | 12 | 10 | 10 | weapon 2d4 | sees-invis, infravis. |
-| Green-elf | bright-green | 5 | 12 | 10 | 10 | weapon 2d4 | sees-invis, infravis. |
-| Grey-elf | gray | 6 | 12 | 10 | 10 | weapon 2d4 | sees-invis, infravis. |
-| elf-lord | bright-blue | 8 | 12 | 10 | 20 | weapon 2d4 · weapon 2d4 | sees-invis, strong, infravis. |
-| Elvenking | magenta | 9 | 12 | 10 | 25 | weapon 2d4 · weapon 2d4 | sees-invis, strong, infravis. |
-| doppelganger | white | 9 | 12 | 5 | 20 | weapon 1d12 | strong, shifter. |
-| shopkeeper | white | 12 | 16 | 0 | 50 | weapon 4d4 · weapon 4d4 | strong, peaceful. Don't anger one. They're stronger than they look and have eternal grudges. |
-| guard | blue | 12 | 12 | 10 | 40 | weapon 4d10 | strong, peaceful. |
-| prisoner | white | 12 | 12 | 10 | 0 | weapon 1d6 | strong, peaceful. |
-| Oracle | bright-blue | 12 | 0 | 0 | 50 | passive 0d4 magic | peaceful. |
-| priest | white | 12 | 12 | 10 | 50 | weapon 4d10 · kick 1d4 · spell cleric | peaceful. Temple defenders. Convert their altars or sacrifice on them. |
-| high priest | white | 25 | 15 | 7 | 70 | weapon 4d10 · kick 2d8 · spell 2d8 cleric · spell 2d8 cleric | sees-invis, nasty. Endgame altar guardian. Don't fight one head-on. |
-| soldier | gray | 6 | 10 | 10 | 0 | weapon 1d8 | stalks, strong. |
-| sergeant | red | 8 | 10 | 10 | 5 | weapon 2d6 | stalks, strong. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| human | white | 0 | 12 | 10 | 0 | weapon 1d6 |  |
+| wererat | brown | 2 | 12 | 10 | 10 | weapon 2d4 | regenerates, poisonous-corpse. |
+| werejackal | red | 2 | 12 | 10 | 10 | weapon 2d4 | regenerates, poisonous-corpse. |
+| werewolf | orange | 5 | 12 | 10 | 20 | weapon 2d4 | regenerates, poisonous-corpse. |
+| elf | white | 0 | 12 | 10 | 2 | weapon 1d8 | sees-invis. |
+| Woodland-elf | green | 4 | 12 | 10 | 10 | weapon 2d4 | sees-invis. |
+| Green-elf | bright-green | 5 | 12 | 10 | 10 | weapon 2d4 | sees-invis. |
+| Grey-elf | gray | 6 | 12 | 10 | 10 | weapon 2d4 | sees-invis. |
+| elf-lord | bright-blue | 8 | 12 | 10 | 20 | weapon 2d4 · weapon 2d4 | sees-invis. |
+| Elvenking | magenta | 9 | 12 | 10 | 25 | weapon 2d4 · weapon 2d4 | sees-invis. |
+| doppelganger | white | 9 | 12 | 5 | 20 | weapon 1d12 | shapeshifter. |
+| shopkeeper | white | 12 | 16 | 0 | 50 | weapon 4d4 · weapon 4d4 | starts peaceful. Don't anger one. They're stronger than they look and have eternal grudges. |
+| guard | blue | 12 | 12 | 10 | 40 | weapon 4d10 | starts peaceful. |
+| prisoner | white | 12 | 12 | 10 | 0 | weapon 1d6 | starts peaceful. |
+| Oracle | bright-blue | 12 | 0 | 0 | 50 | passive 0d4 magic | starts peaceful. |
+| priest | white | 12 | 12 | 10 | 50 | weapon 4d10 · kick 1d4 · spell cleric | starts peaceful. Temple defenders. Convert their altars or sacrifice on them. |
+| high priest | white | 25 | 15 | 7 | 70 | weapon 4d10 · kick 2d8 · spell 2d8 cleric · spell 2d8 cleric | sees-invis. Endgame altar guardian. Don't fight one head-on. |
+| soldier | gray | 6 | 10 | 10 | 0 | weapon 1d8 | follows stairs. |
+| sergeant | red | 8 | 10 | 10 | 5 | weapon 2d6 | follows stairs. |
 | nurse | white | 11 | 6 | 0 | 0 | claw 2d6 heal |  |
-| lieutenant | green | 10 | 10 | 10 | 15 | weapon 3d4 · weapon 3d4 | stalks, strong. |
-| captain | blue | 12 | 10 | 10 | 15 | weapon 4d4 · weapon 4d4 | stalks, strong. |
-| watchman | gray | 6 | 10 | 10 | 0 | weapon 1d8 | stalks, strong, peaceful. |
-| watch captain | green | 10 | 10 | 10 | 15 | weapon 3d4 · weapon 3d4 | stalks, strong, peaceful. |
-| Medusa | bright-green | 20 | 12 | 2 | 50 | weapon 2d4 · claw 1d8 · gaze petrify · bite 1d6 poison | flies, swims, amphibious, poisonous-corpse, strong. |
-| Croesus | magenta | 20 | 15 | 0 | 40 | weapon 4d10 | sees-invis, stalks, nasty, strong. Vault guardian on Fort Ludios. Drops a wand of wishing wish-share. |
-| Charon | white | 76 | 18 | -5 | 120 | weapon 1d8 · touch 1d8 paralyse | sees-invis, peaceful. |
-| archeologist | white | 10 | 12 | 10 | 1 | weapon 1d6 · weapon 1d6 | tunnels, strong. |
-| barbarian | white | 10 | 12 | 10 | 1 | weapon 1d6 · weapon 1d6 | strong. |
-| caveman | white | 10 | 12 | 10 | 0 | weapon 2d4 | strong. |
-| healer | white | 10 | 12 | 10 | 1 | weapon 1d6 | strong. |
-| knight | white | 10 | 12 | 10 | 1 | weapon 1d6 · weapon 1d6 | strong. |
-| monk | white | 10 | 12 | 10 | 2 | claw 1d8 · kick 1d8 | strong. |
-| priest | white | 10 | 12 | 10 | 2 | weapon 1d6 · spell cleric | strong. Temple defenders. Convert their altars or sacrifice on them. |
-| ranger | white | 10 | 12 | 10 | 2 | weapon 1d4 | strong. |
-| rogue | white | 10 | 12 | 10 | 1 | weapon 1d6 · weapon 1d6 | strong. |
-| samurai | white | 10 | 12 | 10 | 1 | weapon 1d8 · weapon 1d8 | strong. |
-| tourist | white | 10 | 12 | 10 | 1 | weapon 1d6 · weapon 1d6 | strong. |
-| valkyrie | white | 10 | 12 | 10 | 1 | weapon 1d8 · weapon 1d8 | strong. |
-| wizard | white | 10 | 12 | 10 | 3 | weapon 1d6 · spell spell | strong. |
-| Lord Carnarvon | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · spell 4d8 spell | tunnels, strong, peaceful. Archeologist quest leader. |
-| Pelias | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · weapon 4d10 | strong, peaceful. |
-| Shaman Karnov | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · spell 2d8 cleric | strong, peaceful. |
-| Hippocrates | magenta | 20 | 15 | 0 | 90 | weapon 1d6 · spell 3d8 cleric · spell 3d8 cleric | strong, peaceful. Healer quest leader. |
-| King Arthur | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · weapon 4d10 | strong, peaceful. Knight quest leader. Holds Excalibur if you didn't get it. |
-| Grand Master | black | 25 | 15 | 0 | 90 | claw 4d10 · kick 2d8 · spell 2d8 cleric · spell 2d8 cleric | sees-invis, nasty, strong, peaceful. Monk quest leader. |
-| Arch Priest | white | 25 | 15 | 7 | 90 | weapon 4d10 · kick 2d8 · spell 2d8 cleric · spell 2d8 cleric | sees-invis, strong, peaceful. Priest quest leader. |
-| Orion | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · spell 4d8 spell | swims, amphibious, sees-invis, strong, peaceful, infravis. Ranger quest leader. Bow user. |
-| Master of Thieves | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · weapon 2d6 · claw 2d4 steal-amulet | strong, peaceful. Rogue quest nemesis. |
-| Lord Sato | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · weapon 4d10 | strong, peaceful. |
-| Twoflower | white | 20 | 15 | 10 | 90 | weapon 4d10 | strong, peaceful. Tourist quest leader. |
-| Norn | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · weapon 4d10 | strong, peaceful, cold-res. Valkyrie quest leader. |
-| Neferet the Green | green | 20 | 15 | 0 | 90 | weapon 4d10 · spell 2d8 spell · spell 2d8 spell | strong, peaceful. Wizard quest leader. |
-| Thoth Amon | magenta | 16 | 12 | 0 | 10 | weapon 1d6 · spell spell · spell spell · claw 1d4 steal-amulet | stalks, nasty, strong. |
-| Master Kaen | magenta | 25 | 12 | -10 | 10 | claw 16d2 · claw 16d2 · spell cleric · claw 1d4 steal-amulet | sees-invis, stalks, nasty, strong. |
-| Master Assassin | magenta | 15 | 12 | 0 | 30 | weapon 2d6 poison · weapon 2d8 · claw 2d6 steal-amulet | stalks, nasty, strong. Rogue quest nemesis backup. |
-| Ashikaga Takauji | magenta | 15 | 12 | 0 | 40 | weapon 2d6 · weapon 2d6 · claw 2d6 steal-amulet | stalks, nasty, strong. Samurai quest nemesis. |
-| Dark One | black | 15 | 12 | 0 | 80 | weapon 1d6 · weapon 1d6 · claw 1d4 steal-amulet · spell spell | stalks, nasty, strong. |
-| student | white | 5 | 12 | 10 | 10 | weapon 1d6 | tunnels, strong, peaceful. |
-| chieftain | white | 5 | 12 | 10 | 10 | weapon 1d6 | strong, peaceful. |
-| neanderthal | white | 5 | 12 | 10 | 10 | weapon 2d4 | strong, peaceful. |
-| attendant | white | 5 | 12 | 10 | 10 | weapon 1d6 | strong, peaceful. |
-| page | white | 5 | 12 | 10 | 10 | weapon 1d6 · weapon 1d6 | strong, peaceful. |
-| abbot | white | 5 | 12 | 10 | 20 | claw 8d2 · kick 3d2 stun · spell cleric | strong, peaceful. |
-| acolyte | white | 5 | 12 | 10 | 20 | weapon 1d6 · spell cleric | strong, peaceful. |
-| hunter | white | 5 | 12 | 10 | 10 | weapon 1d4 | sees-invis, strong, peaceful, infravis. |
-| thug | white | 5 | 12 | 10 | 10 | weapon 1d6 · weapon 1d6 | strong, peaceful. |
-| ninja | white | 5 | 12 | 10 | 10 | weapon 1d8 · weapon 1d8 | strong. |
-| roshi | white | 5 | 12 | 10 | 10 | weapon 1d8 · weapon 1d8 | strong, peaceful. |
-| guide | white | 5 | 12 | 10 | 20 | weapon 1d6 · spell spell | strong, peaceful. |
-| warrior | white | 5 | 12 | 10 | 10 | weapon 1d8 · weapon 1d8 | strong, peaceful. |
-| apprentice | white | 5 | 12 | 10 | 30 | weapon 1d6 · spell spell | strong, peaceful. |
+| lieutenant | green | 10 | 10 | 10 | 15 | weapon 3d4 · weapon 3d4 | follows stairs. |
+| captain | blue | 12 | 10 | 10 | 15 | weapon 4d4 · weapon 4d4 | follows stairs. |
+| watchman | gray | 6 | 10 | 10 | 0 | weapon 1d8 | follows stairs, starts peaceful. |
+| watch captain | green | 10 | 10 | 10 | 15 | weapon 3d4 · weapon 3d4 | follows stairs, starts peaceful. |
+| Medusa | bright-green | 20 | 12 | 2 | 50 | weapon 2d4 · claw 1d8 · gaze petrify · bite 1d6 poison | flies, swims, amphibious, poisonous-corpse. |
+| Croesus | magenta | 20 | 15 | 0 | 40 | weapon 4d10 | sees-invis, follows stairs. Vault guardian on Fort Ludios. Drops a wand of wishing wish-share. |
+| Charon | white | 76 | 18 | -5 | 120 | weapon 1d8 · touch 1d8 paralyse | sees-invis, starts peaceful. |
+| archeologist | white | 10 | 12 | 10 | 1 | weapon 1d6 · weapon 1d6 | tunnels. |
+| barbarian | white | 10 | 12 | 10 | 1 | weapon 1d6 · weapon 1d6 |  |
+| caveman | white | 10 | 12 | 10 | 0 | weapon 2d4 |  |
+| healer | white | 10 | 12 | 10 | 1 | weapon 1d6 |  |
+| knight | white | 10 | 12 | 10 | 1 | weapon 1d6 · weapon 1d6 |  |
+| monk | white | 10 | 12 | 10 | 2 | claw 1d8 · kick 1d8 |  |
+| priest | white | 10 | 12 | 10 | 2 | weapon 1d6 · spell cleric | Temple defenders. Convert their altars or sacrifice on them. |
+| ranger | white | 10 | 12 | 10 | 2 | weapon 1d4 |  |
+| rogue | white | 10 | 12 | 10 | 1 | weapon 1d6 · weapon 1d6 |  |
+| samurai | white | 10 | 12 | 10 | 1 | weapon 1d8 · weapon 1d8 |  |
+| tourist | white | 10 | 12 | 10 | 1 | weapon 1d6 · weapon 1d6 |  |
+| valkyrie | white | 10 | 12 | 10 | 1 | weapon 1d8 · weapon 1d8 |  |
+| wizard | white | 10 | 12 | 10 | 3 | weapon 1d6 · spell spell |  |
+| Lord Carnarvon | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · spell 4d8 spell | tunnels, starts peaceful. Archeologist quest leader. |
+| Pelias | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · weapon 4d10 | starts peaceful. |
+| Shaman Karnov | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · spell 2d8 cleric | starts peaceful. |
+| Hippocrates | magenta | 20 | 15 | 0 | 90 | weapon 1d6 · spell 3d8 cleric · spell 3d8 cleric | starts peaceful. Healer quest leader. |
+| King Arthur | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · weapon 4d10 | starts peaceful. Knight quest leader. Holds Excalibur if you didn't get it. |
+| Grand Master | black | 25 | 15 | 0 | 90 | claw 4d10 · kick 2d8 · spell 2d8 cleric · spell 2d8 cleric | sees-invis, starts peaceful. Monk quest leader. |
+| Arch Priest | white | 25 | 15 | 7 | 90 | weapon 4d10 · kick 2d8 · spell 2d8 cleric · spell 2d8 cleric | sees-invis, starts peaceful. Priest quest leader. |
+| Orion | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · spell 4d8 spell | swims, amphibious, sees-invis, starts peaceful. Ranger quest leader. Bow user. |
+| Master of Thieves | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · weapon 2d6 · claw 2d4 steal-amulet | starts peaceful. Rogue quest nemesis. |
+| Lord Sato | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · weapon 4d10 | starts peaceful. |
+| Twoflower | white | 20 | 15 | 10 | 90 | weapon 4d10 | starts peaceful. Tourist quest leader. |
+| Norn | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · weapon 4d10 | starts peaceful, cold-res. Valkyrie quest leader. |
+| Neferet the Green | green | 20 | 15 | 0 | 90 | weapon 4d10 · spell 2d8 spell · spell 2d8 spell | starts peaceful. Wizard quest leader. |
+| Thoth Amon | magenta | 16 | 12 | 0 | 10 | weapon 1d6 · spell spell · spell spell · claw 1d4 steal-amulet | follows stairs. |
+| Master Kaen | magenta | 25 | 12 | -10 | 10 | claw 16d2 · claw 16d2 · spell cleric · claw 1d4 steal-amulet | sees-invis, follows stairs. |
+| Master Assassin | magenta | 15 | 12 | 0 | 30 | weapon 2d6 poison · weapon 2d8 · claw 2d6 steal-amulet | follows stairs. Rogue quest nemesis backup. |
+| Ashikaga Takauji | magenta | 15 | 12 | 0 | 40 | weapon 2d6 · weapon 2d6 · claw 2d6 steal-amulet | follows stairs. Samurai quest nemesis. |
+| Dark One | black | 15 | 12 | 0 | 80 | weapon 1d6 · weapon 1d6 · claw 1d4 steal-amulet · spell spell | follows stairs. |
+| student | white | 5 | 12 | 10 | 10 | weapon 1d6 | tunnels, starts peaceful. |
+| chieftain | white | 5 | 12 | 10 | 10 | weapon 1d6 | starts peaceful. |
+| neanderthal | white | 5 | 12 | 10 | 10 | weapon 2d4 | starts peaceful. |
+| attendant | white | 5 | 12 | 10 | 10 | weapon 1d6 | starts peaceful. |
+| page | white | 5 | 12 | 10 | 10 | weapon 1d6 · weapon 1d6 | starts peaceful. |
+| abbot | white | 5 | 12 | 10 | 20 | claw 8d2 · kick 3d2 stun · spell cleric | starts peaceful. |
+| acolyte | white | 5 | 12 | 10 | 20 | weapon 1d6 · spell cleric | starts peaceful. |
+| hunter | white | 5 | 12 | 10 | 10 | weapon 1d4 | sees-invis, starts peaceful. |
+| thug | white | 5 | 12 | 10 | 10 | weapon 1d6 · weapon 1d6 | starts peaceful. |
+| ninja | white | 5 | 12 | 10 | 10 | weapon 1d8 · weapon 1d8 |  |
+| roshi | white | 5 | 12 | 10 | 10 | weapon 1d8 · weapon 1d8 | starts peaceful. |
+| guide | white | 5 | 12 | 10 | 20 | weapon 1d6 · spell spell | starts peaceful. |
+| warrior | white | 5 | 12 | 10 | 10 | weapon 1d8 · weapon 1d8 | starts peaceful. |
+| apprentice | white | 5 | 12 | 10 | 30 | weapon 1d6 · spell spell | starts peaceful. |
+
+</div>
 
 #### Major demons `&`
 
+All except *erinys* also follow you up and down stairs.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| water demon | blue | 8 | 12 | -4 | 30 | weapon 1d3 · claw 1d3 · bite 1d3 | swims, poisonous-corpse, stalks, nasty, infravis. |
-| incubus | gray | 6 | 12 | 0 | 70 | — | flies, poisonous-corpse, stalks, nasty, infravis. |
-| horned devil | brown | 6 | 9 | -5 | 50 | weapon 1d4 · claw 1d4 · bite 2d3 · sting 1d3 | poisonous-corpse, stalks, nasty, infravis. |
-| erinys | — | 7 | 12 | 2 | 30 | — |  |
-| barbed devil | red | 8 | 12 | 0 | 35 | claw 2d4 · claw 2d4 sticky · sting 3d4 | poisonous-corpse, stalks, nasty, infravis. |
-| marilith | red | 7 | 12 | -6 | 80 | weapon 2d4 · weapon 2d4 · claw 2d4 · claw 2d4 · claw 2d4 · claw 2d4 | sees-invis, poisonous-corpse, stalks, nasty, infravis. |
-| vrock | green | 8 | 12 | 0 | 50 | claw 1d4 · claw 1d4 · claw 1d8 · claw 1d8 · bite 1d6 | poisonous-corpse, stalks, nasty, infravis. |
-| hezrou | green | 9 | 6 | -2 | 55 | claw 1d3 · claw 1d3 · bite 4d4 | poisonous-corpse, stalks, nasty, infravis. |
-| bone devil | gray | 9 | 15 | -1 | 40 | weapon 3d4 · sting 2d4 poison | poisonous-corpse, stalks, nasty, infravis. |
-| ice devil | white | 11 | 6 | -4 | 55 | claw 1d4 · claw 1d4 · bite 2d4 · sting 3d4 cold · touch 1d1 slow | sees-invis, poisonous-corpse, stalks, nasty, infravis. |
-| nalfeshnee | red | 11 | 9 | -1 | 65 | claw 1d4 · claw 1d4 · bite 2d4 · spell spell | poisonous-corpse, stalks, nasty, infravis. |
-| pit fiend | red | 13 | 6 | -3 | 65 | weapon 4d2 · weapon 4d2 · hug 2d4 | sees-invis, poisonous-corpse, stalks, nasty, infravis. |
-| sandestin | gray | 13 | 12 | 4 | 60 | weapon 2d6 · weapon 2d6 | stalks, strong, shifter, infravis, ston-res. |
-| balrog | red | 16 | 5 | -2 | 75 | weapon 8d4 · weapon 4d6 | flies, sees-invis, poisonous-corpse, stalks, nasty, strong, infravis. |
-| Juiblex | bright-green | 50 | 3 | -7 | 65 | engulf 4d10 disease · spit 3d6 acid | flies, amphibious, amorphous, sees-invis, poisonous-corpse, stalks, nasty, infravis, fire-res, pois-res, acid-res, ston-res. |
-| Yeenoghu | magenta | 56 | 18 | -5 | 80 | weapon 3d6 · weapon 2d8 confuse · claw 1d6 paralyse · spell 2d6 magic | flies, sees-invis, poisonous-corpse, stalks, nasty, infravis, fire-res, pois-res. |
-| Orcus | magenta | 66 | 9 | -6 | 85 | weapon 3d6 · claw 3d4 · claw 3d4 · spell 8d6 spell · sting 2d4 poison | flies, sees-invis, poisonous-corpse, stalks, nasty, infravis, fire-res, pois-res. |
-| Geryon | magenta | 72 | 3 | -3 | 75 | claw 3d6 · claw 3d6 · sting 2d4 poison | flies, sees-invis, poisonous-corpse, stalks, nasty, infravis, fire-res, pois-res. |
-| Dispater | magenta | 78 | 15 | -2 | 80 | weapon 4d6 · spell 6d6 spell | flies, sees-invis, poisonous-corpse, stalks, nasty, infravis, fire-res, pois-res. |
-| Baalzebub | magenta | 89 | 9 | -5 | 85 | bite 2d6 poison · gaze 2d6 stun | flies, sees-invis, poisonous-corpse, stalks, nasty, infravis, fire-res, pois-res. |
-| Asmodeus | magenta | 105 | 12 | -7 | 90 | claw 4d4 · spell 6d6 cold | flies, sees-invis, poisonous-corpse, stalks, nasty, strong, infravis, fire-res, cold-res, pois-res. |
-| Demogorgon | magenta | 106 | 15 | -8 | 95 | spell 8d6 spell · sting 1d4 drain-XL · claw 1d6 disease · claw 1d6 disease | flies, sees-invis, poisonous-corpse, stalks, nasty, infravis, fire-res, pois-res. |
-| Death | hi_overlord | 30 | 12 | -5 | 100 | touch 8d8 death · touch 8d8 death | flies, regen, sees-invis, tport-cntrl, stalks, nasty, strong, infravis. Rider of the Apocalypse. Vanquish three to ascend. |
-| Pestilence | hi_overlord | 30 | 12 | -5 | 100 | touch 8d8 pestilence · touch 8d8 pestilence | flies, regen, sees-invis, tport-cntrl, stalks, nasty, strong, infravis. Rider; spreads disease. |
-| Famine | hi_overlord | 30 | 12 | -5 | 100 | touch 8d8 famine · touch 8d8 famine | flies, regen, sees-invis, tport-cntrl, stalks, nasty, strong, infravis. Rider; drains nutrition to starvation. |
-| mail daemon | bright-blue | 56 | 24 | 10 | 127 | — | flies, swims, sees-invis, poisonous-corpse, stalks, peaceful, infravis, fire-res, cold-res, sleep-res, shock-res, pois-res, ston-res. Delivers in-game mail. Don't attack one — they don't fight back. |
-| djinni | yellow | 7 | 12 | 4 | 30 | weapon 2d8 | flies, poisonous-corpse, stalks, pois-res, ston-res. |
-| Minion of Huhetotl | orange | 16 | 12 | -2 | 75 | weapon 8d4 · weapon 4d6 · spell spell · claw 2d6 steal-amulet | flies, sees-invis, poisonous-corpse, stalks, nasty, strong, infravis. |
-| Nalzok | orange | 16 | 12 | -2 | 85 | weapon 8d4 · weapon 4d6 · spell spell · claw 2d6 steal-amulet | flies, sees-invis, poisonous-corpse, stalks, nasty, strong, infravis. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| water demon | blue | 8 | 12 | -4 | 30 | weapon 1d3 · claw 1d3 · bite 1d3 | swims, poisonous-corpse, demonic. |
+| incubus | gray | 6 | 12 | 0 | 70 | — | flies, poisonous-corpse, demonic. |
+| horned devil | brown | 6 | 9 | -5 | 50 | weapon 1d4 · claw 1d4 · bite 2d3 · sting 1d3 | poisonous-corpse, demonic. |
+| erinys | — | 7 | 12 | 2 | 30 | — | (no follows stairs) |
+| barbed devil | red | 8 | 12 | 0 | 35 | claw 2d4 · claw 2d4 sticky · sting 3d4 | poisonous-corpse, demonic. |
+| marilith | red | 7 | 12 | -6 | 80 | weapon 2d4 · weapon 2d4 · claw 2d4 · claw 2d4 · claw 2d4 · claw 2d4 | sees-invis, poisonous-corpse, demonic. |
+| vrock | green | 8 | 12 | 0 | 50 | claw 1d4 · claw 1d4 · claw 1d8 · claw 1d8 · bite 1d6 | poisonous-corpse, demonic. |
+| hezrou | green | 9 | 6 | -2 | 55 | claw 1d3 · claw 1d3 · bite 4d4 | poisonous-corpse, demonic. |
+| bone devil | gray | 9 | 15 | -1 | 40 | weapon 3d4 · sting 2d4 poison | poisonous-corpse, demonic. |
+| ice devil | white | 11 | 6 | -4 | 55 | claw 1d4 · claw 1d4 · bite 2d4 · sting 3d4 cold · touch 1d1 slow | sees-invis, poisonous-corpse, demonic. |
+| nalfeshnee | red | 11 | 9 | -1 | 65 | claw 1d4 · claw 1d4 · bite 2d4 · spell spell | poisonous-corpse, demonic. |
+| pit fiend | red | 13 | 6 | -3 | 65 | weapon 4d2 · weapon 4d2 · hug 2d4 | sees-invis, poisonous-corpse, demonic. |
+| sandestin | gray | 13 | 12 | 4 | 60 | weapon 2d6 · weapon 2d6 | shapeshifter, ston-res. |
+| balrog | red | 16 | 5 | -2 | 75 | weapon 8d4 · weapon 4d6 | flies, sees-invis, poisonous-corpse, demonic. |
+| Juiblex | bright-green | 50 | 3 | -7 | 65 | engulf 4d10 disease · spit 3d6 acid | flies, amphibious, amorphous, sees-invis, poisonous-corpse, demonic, fire-res, pois-res, acid-res, ston-res. |
+| Yeenoghu | magenta | 56 | 18 | -5 | 80 | weapon 3d6 · weapon 2d8 confuse · claw 1d6 paralyse · spell 2d6 magic | flies, sees-invis, poisonous-corpse, demonic, fire-res, pois-res. |
+| Orcus | magenta | 66 | 9 | -6 | 85 | weapon 3d6 · claw 3d4 · claw 3d4 · spell 8d6 spell · sting 2d4 poison | flies, sees-invis, poisonous-corpse, demonic, fire-res, pois-res. |
+| Geryon | magenta | 72 | 3 | -3 | 75 | claw 3d6 · claw 3d6 · sting 2d4 poison | flies, sees-invis, poisonous-corpse, demonic, fire-res, pois-res. |
+| Dispater | magenta | 78 | 15 | -2 | 80 | weapon 4d6 · spell 6d6 spell | flies, sees-invis, poisonous-corpse, demonic, fire-res, pois-res. |
+| Baalzebub | magenta | 89 | 9 | -5 | 85 | bite 2d6 poison · gaze 2d6 stun | flies, sees-invis, poisonous-corpse, demonic, fire-res, pois-res. |
+| Asmodeus | magenta | 105 | 12 | -7 | 90 | claw 4d4 · spell 6d6 cold | flies, sees-invis, poisonous-corpse, demonic, fire-res, cold-res, pois-res. |
+| Demogorgon | magenta | 106 | 15 | -8 | 95 | spell 8d6 spell · sting 1d4 drain-XL · claw 1d6 disease · claw 1d6 disease | flies, sees-invis, poisonous-corpse, demonic, fire-res, pois-res. |
+| Death | hi_overlord | 30 | 12 | -5 | 100 | touch 8d8 death · touch 8d8 death | flies, regenerates, sees-invis, teleport-control. Rider of the Apocalypse. Vanquish three to ascend. |
+| Pestilence | hi_overlord | 30 | 12 | -5 | 100 | touch 8d8 pestilence · touch 8d8 pestilence | flies, regenerates, sees-invis, teleport-control. Rider; spreads disease. |
+| Famine | hi_overlord | 30 | 12 | -5 | 100 | touch 8d8 famine · touch 8d8 famine | flies, regenerates, sees-invis, teleport-control. Rider; drains nutrition to starvation. |
+| mail daemon | bright-blue | 56 | 24 | 10 | 127 | — | flies, swims, sees-invis, poisonous-corpse, starts peaceful, fire-res, cold-res, sleep-res, shock-res, pois-res, ston-res. Delivers in-game mail. Don't attack one — they don't fight back. |
+| djinni | yellow | 7 | 12 | 4 | 30 | weapon 2d8 | flies, poisonous-corpse, pois-res, ston-res. |
+| Minion of Huhetotl | orange | 16 | 12 | -2 | 75 | weapon 8d4 · weapon 4d6 · spell spell · claw 2d6 steal-amulet | flies, sees-invis, poisonous-corpse, demonic. |
+| Nalzok | orange | 16 | 12 | -2 | 85 | weapon 8d4 · weapon 4d6 · spell spell · claw 2d6 steal-amulet | flies, sees-invis, poisonous-corpse, demonic. |
+
+</div>
 
 #### Golems `'`
 
+All golems are mindless, are sleep-resistant, and are poison-resistant.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| straw golem | yellow | 3 | 12 | 10 | 0 | claw 1d2 · claw 1d2 | cold-res, sleep-res, pois-res. |
-| paper golem | white | 3 | 12 | 10 | 0 | claw 1d3 | cold-res, sleep-res, pois-res. |
-| rope golem | brown | 4 | 9 | 8 | 0 | claw 1d4 · claw 1d4 · hug 6d1 | sleep-res, pois-res. |
-| gold golem | yellow | 5 | 9 | 6 | 0 | claw 2d3 · claw 2d3 | sleep-res, pois-res, acid-res. |
-| leather golem | brown | 6 | 6 | 6 | 0 | claw 1d6 · claw 1d6 | sleep-res, pois-res. |
-| wood golem | brown | 7 | 3 | 4 | 0 | claw 3d4 | cold-res, sleep-res, pois-res. |
-| flesh golem | red | 9 | 8 | 9 | 30 | claw 2d8 · claw 2d8 | strong, fire-res, cold-res, sleep-res, shock-res, pois-res. |
-| clay golem | brown | 11 | 7 | 7 | 40 | claw 3d10 | strong, sleep-res, pois-res. |
-| stone golem | gray | 14 | 6 | 5 | 50 | claw 3d8 | strong, sleep-res, pois-res, ston-res. |
-| glass golem | cyan | 16 | 6 | 1 | 50 | claw 2d8 · claw 2d8 | strong, sleep-res, pois-res, acid-res. |
-| iron golem | cyan | 18 | 6 | 3 | 60 | weapon 4d10 · breath 4d6 poison | poisonous-corpse, strong, fire-res, cold-res, sleep-res, shock-res, pois-res. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| straw golem | yellow | 3 | 12 | 10 | 0 | claw 1d2 · claw 1d2 | cold-res. |
+| paper golem | white | 3 | 12 | 10 | 0 | claw 1d3 | cold-res. |
+| rope golem | brown | 4 | 9 | 8 | 0 | claw 1d4 · claw 1d4 · hug 6d1 |  |
+| gold golem | yellow | 5 | 9 | 6 | 0 | claw 2d3 · claw 2d3 | acid-res. |
+| leather golem | brown | 6 | 6 | 6 | 0 | claw 1d6 · claw 1d6 |  |
+| wood golem | brown | 7 | 3 | 4 | 0 | claw 3d4 | cold-res. |
+| flesh golem | red | 9 | 8 | 9 | 30 | claw 2d8 · claw 2d8 | fire-res, cold-res, shock-res. |
+| clay golem | brown | 11 | 7 | 7 | 40 | claw 3d10 |  |
+| stone golem | gray | 14 | 6 | 5 | 50 | claw 3d8 | ston-res. |
+| glass golem | cyan | 16 | 6 | 1 | 50 | claw 2d8 · claw 2d8 | acid-res. |
+| iron golem | cyan | 18 | 6 | 3 | 60 | weapon 4d10 · breath 4d6 poison | poisonous-corpse, fire-res, cold-res, shock-res. |
+
+</div>
 
 #### Sea monsters `;`
 
+All sea monsters swim and are amphibious.
+
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
-| jellyfish | blue | 3 | 3 | 6 | 0 | sting 3d3 poison | swims, amphibious, poisonous-corpse, pois-res. |
-| piranha | red | 5 | 18 | 4 | 0 | bite 2d6 · bite 2d6 | swims, amphibious. |
-| shark | gray | 7 | 12 | 2 | 0 | bite 5d6 | swims, amphibious. |
-| giant eel | cyan | 5 | 9 | -1 | 0 | bite 3d6 · touch wrap | swims, amphibious. |
-| electric eel | bright-blue | 7 | 10 | -3 | 0 | bite 4d6 shock · touch wrap | swims, amphibious, shock-res. |
-| kraken | red | 20 | 3 | 6 | 0 | claw 2d4 · claw 2d4 · hug 2d6 wrap · bite 5d4 | swims, amphibious, strong. |
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
+| jellyfish | blue | 3 | 3 | 6 | 0 | sting 3d3 poison | poisonous-corpse, pois-res. |
+| piranha | red | 5 | 18 | 4 | 0 | bite 2d6 · bite 2d6 |  |
+| shark | gray | 7 | 12 | 2 | 0 | bite 5d6 |  |
+| giant eel | cyan | 5 | 9 | -1 | 0 | bite 3d6 · touch wrap |  |
+| electric eel | bright-blue | 7 | 10 | -3 | 0 | bite 4d6 shock · touch wrap | shock-res. |
+| kraken | red | 20 | 3 | 6 | 0 | claw 2d4 · claw 2d4 · hug 2d6 wrap · bite 5d4 |  |
+
+</div>
 
 #### Lizards `:`
 
+<div class="dense-table">
+
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
-|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|
+|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | newt | yellow | 0 | 6 | 8 | 0 | bite 1d2 | swims, amphibious. |
 | gecko | green | 1 | 6 | 8 | 0 | bite 1d3 |  |
 | iguana | brown | 2 | 6 | 7 | 0 | bite 1d4 |  |
 | baby crocodile | brown | 3 | 6 | 7 | 0 | bite 1d4 | swims, amphibious. |
 | lizard | green | 5 | 6 | 6 | 10 | bite 1d6 | ston-res. |
-| chameleon | brown | 6 | 5 | 6 | 10 | bite 4d2 | shifter. |
-| crocodile | brown | 6 | 9 | 5 | 0 | bite 4d2 · claw 1d12 | swims, amphibious, strong. |
-| salamander | orange | 8 | 12 | -1 | 0 | weapon 2d8 · touch 1d6 fire · hug 2d6 · hug 3d6 fire | poisonous-corpse, stalks, fire-res, sleep-res. |
+| chameleon | brown | 6 | 5 | 6 | 10 | bite 4d2 | shapeshifter. |
+| crocodile | brown | 6 | 9 | 5 | 0 | bite 4d2 · claw 1d12 | swims, amphibious. |
+| salamander | orange | 8 | 12 | -1 | 0 | weapon 2d8 · touch 1d6 fire · hug 2d6 · hug 3d6 fire | poisonous-corpse, follows stairs, fire-res, sleep-res. |
+
+</div>
 
 ---
 
