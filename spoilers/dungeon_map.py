@@ -127,7 +127,7 @@ class TrunkRow:
 
 DOD: list[TrunkRow] = [
     TrunkRow(bubble=Bubble('Dlvl 1 — Entry', 'up-stair to exit'), pearls_below=2),
-    TrunkRow(  # Mines branch LEFT (down-stairs, default; no arrow label)
+    TrunkRow(  # Mines branch LEFT (down-stairs)
         branch=Branch(
             side='left', color='mines',
             bubbles=[
@@ -137,6 +137,7 @@ DOD: list[TrunkRow] = [
             ],
             pearls=[2, 3],
             attach='top',
+            label='down',
         ),
         pearls_below=3,
     ),
@@ -406,7 +407,7 @@ def render_pearls(pearls: list[tuple[int, int, str]]) -> list[str]:
 
 def render_trunk_circles(circles: list[tuple[int, int, str]]) -> list[str]:
     return [
-        f'<circle cx="{x}" cy="{y}" r="5" fill="{color}"/>'
+        f'<circle cx="{x}" cy="{y}" r="{PEARL_R}" fill="{color}"/>'
         for x, y, color in circles
     ]
 
@@ -625,7 +626,7 @@ def _section_parts(placed: Placed, y_min: int, y_max: int, y_offset: int,
     # Layer 5: trunk circles
     for x, y, color in placed.trunk_circles:
         if y_min <= y < y_max:
-            parts.append(f'<circle cx="{x}" cy="{y - y_offset}" r="5" fill="{color}"/>')
+            parts.append(f'<circle cx="{x}" cy="{y - y_offset}" r="{PEARL_R}" fill="{color}"/>')
 
     # Layer 6: branch arrows (ON TOP of bubbles)
     for x1, y1, x2, y2 in placed.branch_arrows:
