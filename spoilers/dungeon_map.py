@@ -141,7 +141,8 @@ DOD: list[TrunkRow] = [
         ),
         pearls_below=3,
     ),
-    TrunkRow(  # Sokoban branch RIGHT (up-stair from main dungeon)
+    TrunkRow(bubble=Bubble('The Oracle', 'paid hints'), pearls_below=1),
+    TrunkRow(  # Sokoban branch RIGHT (up-stair from main dungeon), 1 DLvl below Oracle
         branch=Branch(
             side='right', color='soko',
             bubbles=[
@@ -152,9 +153,8 @@ DOD: list[TrunkRow] = [
             attach='bottom',
             label='up',
         ),
-        pearls_below=0,
+        pearls_below=4,
     ),
-    TrunkRow(bubble=Bubble('The Oracle', 'paid hints'), pearls_below=5),
     TrunkRow(  # Quest portal + Quest RIGHT (portal)
         bubble=Bubble('Quest portal'),
         branch=Branch(
