@@ -792,10 +792,27 @@ body { position: relative; }
    PRINT / PDF STYLES — 5″ × 8″ handbook
    ============================================================ */
 
+/* Print-only blocks: hidden on screen, shown in print. */
+.print-only {
+  display: none;
+}
+
 @media print {
 
   /* Hide the "New! Updated for 5.0" page-fold badge in print. */
   .page-fold {
+    display: none !important;
+  }
+
+  /* Show print-only conversion tables and notes. */
+  .print-only {
+    display: block;
+  }
+
+  /* Hide the interactive Cha/Sell/Tourist/Angry toolbars; the
+     print-only conversion table above the price tables stands
+     in for them. */
+  .price-id-toolbar {
     display: none !important;
   }
 

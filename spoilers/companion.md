@@ -2366,11 +2366,11 @@ which case sell drops to a third of base and buy rises to 4/3. Three
 visible cues count as "looking like a mark," and they all have the
 same effect (and don't stack): wearing a **dunce cap**, playing a
 **Tourist** below experience level 15, or wearing a **Hawaiian shirt
-visibly** (no body armor or cloak over it). The widget below collapses
-these three triggers into one button, labeled *Tourist* because that's
-the one most players will encounter. You don't need to memorize exact
-formulas. What matters is grouping: items quoted at similar prices
-are in the same price tier.
+visibly** (no body armor or cloak over it). All three trigger the same
++33% buy markup; the rest of this guide refers to them collectively
+as *Tourist*. You don't need to memorize the exact formulas — what
+matters is grouping: items quoted at similar prices are in the same
+price tier.
 
 Two further wrinkles affect unidentified items. About a quarter of
 unID'd items carry an extra 4/3 buy surcharge, fixed per item, so a
@@ -2390,6 +2390,38 @@ you pay your bill in full. Sell prices are unaffected.
 
 The price tables for each item class follow. These are your
 field reference for shopping trips.
+
+::: print-only
+
+##### Quoted-price conversion
+
+The per-class tables below show **buy prices at Cha 11–15 with no
+Tourist markup** (the baseline). To recover the base price from a
+quoted price under different conditions, find the row that matches
+your situation and read across; or, given a base price you suspect,
+read the price you'd be quoted.
+
+| Modifier            |   Mult |  50 |  60 |  80 | 100 | 150 | 200 |
+|---------------------|-------:|----:|----:|----:|----:|----:|----:|
+| Cha 6–7             |  ×1.5  |  75 |  90 | 120 | 150 | 225 | 300 |
+| Cha 8–10            |  ×1.33 |  67 |  80 | 107 | 133 | 200 | 267 |
+| Cha 11–15           |  ×1.00 |  50 |  60 |  80 | 100 | 150 | 200 |
+| Cha 16–17           |  ×0.75 |  38 |  45 |  60 |  75 | 113 | 150 |
+| Cha 18              |  ×0.67 |  33 |  40 |  53 |  67 | 100 | 133 |
+| Cha 19+             |  ×0.5  |  25 |  30 |  40 |  50 |  75 | 100 |
+| Tourist Cha 6–7     |  ×2.0  | 100 | 120 | 160 | 200 | 300 | 400 |
+| Tourist Cha 8–10    |  ×1.78 |  89 | 107 | 142 | 178 | 267 | 356 |
+| Tourist Cha 11–15   |  ×1.33 |  67 |  80 | 107 | 133 | 200 | 267 |
+| Tourist Cha 16–17   |  ×1.00 |  50 |  60 |  80 | 100 | 150 | 200 |
+| Tourist Cha 18      |  ×0.89 |  44 |  53 |  71 |  89 | 133 | 178 |
+| Tourist Cha 19+     |  ×0.67 |  33 |  40 |  53 |  67 | 100 | 133 |
+
+Numbers are NetHack's integer-rounded prices, not the round-number
+multiplier reapplied. Sell offers are unaffected by Charisma, so
+they aren't shown; an unangry shopkeeper offers ¼ of base on a sell
+(³⁄₁₆ on unidentified items from an unfamiliar shop).
+
+:::
 
 ##### Scroll Prices
 
