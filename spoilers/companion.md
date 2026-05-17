@@ -178,9 +178,9 @@ Knights follow a code of conduct that imposes alignment penalties for
 attacking fleeing or peaceful monsters, so pick your fights carefully.
 *Alignment: Lawful.*
 
-**Monk.** You fight best with bare hands and start with no weapon at
-all, which is the point. Monks gain martial arts abilities as they
-level, eventually becoming formidable unarmed combatants. You start
+**Monk.** You fight best with bare hands and start with no weapon
+at all. Monks gain martial arts abilities as they level, eventually
+becoming formidable unarmed combatants. You start
 with sleep resistance and see invisible, and you should avoid eating
 meat if you want to maintain your spiritual discipline. One of the
 more unusual roles, rewarding for experienced players.
@@ -216,14 +216,12 @@ bow with arrows. Samurai get speed early and have a strong martial
 kit overall. The katana's damage output carries you through the
 early game with ease. *Alignment: Lawful.*
 
-**Tourist.** You start with a Hawaiian shirt, a credit card, a camera,
-and a truly absurd number of darts. Tourists are deliberately designed
-to be the hardest role in the game. Your starting equipment is mostly
-a joke, your combat abilities are poor, and the dungeon seems to know
-it. That said, the darts are actually useful for training ranged
-skills, and the camera can blind monsters in a pinch. A role for
-people who have ascended before and want a challenge.
-*Alignment: Neutral.*
+**Tourist.** You start with a Hawaiian shirt, a credit card, a
+camera, and a truly absurd number of darts. Tourists have weak combat
+and a fragile early game: this is the hardest of the standard roles.
+The darts do train ranged skills fast, though, and the camera can
+blind monsters in a pinch. A good role for players who have ascended
+before and want a real challenge. *Alignment: Neutral.*
 
 **Valkyrie.** You start with a spear, a small shield, and cold
 resistance. Valkyries are the standard recommendation for newer
@@ -237,17 +235,12 @@ are excellent. This is the recommendation for your first serious
 attempt.
 *Alignment: Lawful or Neutral. Female only.*
 
-**Wizard.** You start with a quarterstaff and a spellbook or two. Your
-physical combat is terrible, but you have access to the deepest magic
-in the game. Wizards are extremely powerful in the late game but very
-fragile early on. You'll lean heavily on your spells and need to find
-ways to avoid melee combat until you're strong enough to dominate it.
-One quiet advantage: advancing a spell school skill in 5.0 also
-identifies spellbooks of that school by appearance, so the Wizard
-gets free book-ID alongside casting power (see
-[Spellcasting](#spellcasting) for the full mechanic). If you
-enjoy resource management and creative problem-solving, the
-Wizard is deeply satisfying. *Alignment: Neutral or Chaotic.*
+**Wizard.** You start with a quarterstaff and a spellbook or two.
+Physical combat is terrible, so spells are the answer: fragile
+early, overwhelming late. Advancing a spell-school skill (new in
+5.0) also identifies spellbooks of that school by appearance, so
+you get free book-ID just by casting (see
+[Spellcasting](#spellcasting)). *Alignment: Neutral or Chaotic.*
 
 #### The Races
 
@@ -485,10 +478,8 @@ of an extra random item, biased toward low-level spellbooks. The
 Mines branch level gets a different gift: a guaranteed food ration,
 cram ration, or lembas wafer.
 
-These look like ordinary containers, no special marking, which is
-the point: the Mazes are not in the habit of labeling things "useful,
-open me." On your first ten levels, check every chest and large box
-you find. A locked one will yield to a credit card, a key, a wand of
+These look like ordinary containers, no special marking. On your
+first ten levels, check every chest and large box you find. A locked one will yield to a credit card, a key, a wand of
 opening, or patience with a pickaxe (a Rogue's starting lock pick is
 a quiet superpower here). Failing all of those, **#force** the lock
 with a dagger: an orcish dagger off the first orc you kill (pet-test
@@ -1410,9 +1401,7 @@ against evil: Frodo cries *"O Elbereth! Gilthoniel!"* on
 Weathertop and the Witch-king recoils, and Sam invokes her in
 Shelob's lair to make the Phial of Galadriel burn brighter.
 NetHack lifts the conceit directly: writing Varda's name on the
-dungeon floor is an appeal to a higher power for safe ground, and
-the crowning title **"Hand of Elbereth"** (for lawful ascenders)
-is the explicit nod.
+dungeon floor is an appeal to a higher power for safe ground.
 
 > *The mechanics below are inspired by Kate Nepveu's Elbereth FAQ.
 > Kate also maintained steelypips.org, the long-running archive
@@ -1456,10 +1445,10 @@ made.** Even a burned-permanent Elbereth disappears in one swing.
 You take a −5 alignment hit ("You feel like a hypocrite") and see
 the message *"The engraving beneath you fades."*
 
-This is the point that the durability table doesn't capture:
-"permanent" and "semi-permanent" describe resistance to *passive*
-wear (monster footsteps, erosion). Your own hostile action wipes
-the word regardless of tier. So Elbereth is strictly **defensive**.
+The durability table doesn't show this: "permanent" and
+"semi-permanent" describe resistance to *passive* wear (monster
+footsteps, erosion). Your own hostile action wipes the word
+regardless of tier. So Elbereth is strictly **defensive**.
 Use it to heal, drink a potion, read a scroll, swap gear — and step
 off (or kill at range) when you want to attack.
 
@@ -4234,7 +4223,7 @@ opinions about what constitutes a worthy offering, and a kobold doesn't
 make the cut. Fresh corpses of appropriately challenging monsters are
 what advances your standing. If you've been feeding the altar with
 early-dungeon sweepings and wondering why the gifts aren't arriving,
-this is why. Sacrifice up; sacrifice well.
+this is why.
 
 #### Donating to Priests
 
@@ -6562,8 +6551,7 @@ A few rules of thumb:
   shops that buy them: 3000+ zm per gem is a real bankroll. Don't
   fire-sale them to a non-gem-buying shop for half price.
 - **Amethyst** is a special case at any price tier: it's an alchemy
-  reagent (booze + amethyst dispels hallucination; the
-  α-μέθυστος "anti-drunkenness" pun is the joke).
+  reagent (booze + amethyst dispels hallucination).
 - **Worthless glass never costs luck.** Glass thrown at a unicorn is
   either rejected ("not interested in your junk") or quietly
   accepted with no effect. The luck risk on unicorn throws comes
