@@ -1061,7 +1061,8 @@ in. The other statues on the level are intentionally empty.
 > **Arien Malec's Medusa Checklist**
 >
 > *Arien Malec collected crossing strategies from RGRN posters
-> back in the early 2000s. This is a condensed version of his guide.*
+> back in the early 2000s, with input from Pat Rankin, Geoduck,
+> Topi Linkala, and others. This is a condensed version of his guide.*
 
 **Surviving Medusa's gaze.** You need one of the following before
 entering her level:
