@@ -161,7 +161,7 @@ DOD: list[TrunkRow] = [
             side='right', color='quest',
             bubbles=[
                 Bubble('Quest entry', "your role's dungeon", color='quest'),
-                Bubble('Quest goal', 'Bell of Opening, role artifact', color='quest', star=True),
+                Bubble('Quest goal', '★ Bell of Opening, role artifact', color='quest'),
             ],
             pearls=[3],
             attach='top',
