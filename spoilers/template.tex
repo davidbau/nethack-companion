@@ -153,11 +153,20 @@
 % sometimes emits a fresh \endhead at the top of the page after the
 % table actually ended, leaving a ghost column header floating
 % before the next section. Loading ltablex with \keepXColumns
-% patches the longtable environment, and the negative \vspace
-% pulls back the trailing baseline that the package's "table is
-% complete" marker would otherwise leave as a visible empty row.
+% patches the longtable environment, the \null acts as a marker
+% that the table is genuinely complete, and the trailing
+% \vspace*{-\baselineskip} pulls back the visible empty row that
+% the \null would otherwise leave.
+%
+% Separately, \LTpre and \LTpost (the glue before/after each
+% longtable) default to \bigskipamount = 12pt, which combined with
+% the surrounding paragraph skip leaves a chunk of empty space
+% above and below every table. Tighten them so tables sit closer
+% to the surrounding prose.
 \usepackage{ltablex}
 \keepXColumns
+\setlength\LTpre{\smallskipamount}
+\setlength\LTpost{\smallskipamount}
 \AtEndEnvironment{longtable}{\null\vspace*{-\baselineskip}}
 
 % --- Code blocks ---
