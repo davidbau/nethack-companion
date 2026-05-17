@@ -794,6 +794,11 @@ body { position: relative; }
 
 @media print {
 
+  /* Hide the "New! Updated for 5.0" page-fold badge in print. */
+  .page-fold {
+    display: none !important;
+  }
+
   /* --- Page setup ------------------------------------------- */
 
   @page {
