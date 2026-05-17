@@ -616,7 +616,9 @@ extremely powerful in combat, so don't steal unless you have a plan.
 **Temples.** A room with an altar and a priest or priestess tending
 it. The altar's alignment matters: if it matches yours, you can
 sacrifice here for good effects. If it doesn't, the resident priest
-won't be friendly about your attempts.
+won't be friendly about your attempts. The priest will also accept
+gold donations in exchange for clairvoyance or a permanent AC bonus
+— see [Donating to Priests](#donating-to-priests).
 
 **Throne rooms.** A room with a throne (`\`) and usually surrounded
 by monsters. Sitting on the throne has random effects, sometimes
@@ -855,7 +857,10 @@ settlement with shops and a temple, and it's worth visiting early.
 The shops let you sell unwanted items for gold and buy useful gear.
 The temple has an altar (check the alignment) and a resident priest.
 If the altar matches your alignment, you've found a safe place to
-identify items by dropping them on it.
+identify items by dropping them on it. The Minetown priest is also
+the cheapest source of intrinsic AC bonuses in the game — donating
+500 zorkmids at low XL stacks each visit (see
+[Donating to Priests](#donating-to-priests)).
 
 One in seven times, however, Minetown generates as **Orcish Town**:
 an overrun settlement with no shops, no priest, and iron bars blocking
@@ -4154,6 +4159,68 @@ make the cut. Fresh corpses of appropriately challenging monsters are
 what advances your standing. If you've been feeding the altar with
 early-dungeon sweepings and wondering why the gifts aren't arriving,
 this is why. Sacrifice up; sacrifice well.
+
+#### Donating to Priests
+
+A peaceful priest in their own temple accepts donations. `#chat` to
+them and a prompt appears: *How much will you offer (suggested: X or
+Y)?* The two numbers are the priest's suggested thresholds for
+the two reward tiers.
+
+**What you get:**
+
+- **Clairvoyance** — a few hundred turns of automatic short-range
+  map awareness (you "see" the immediate area around you every few
+  turns without moving). Granted if you offer in the lower tier.
+- **Protection** — an intrinsic AC bonus that *stacks* across
+  visits. Granted if you offer in the upper tier. Each successful
+  donation pushes the bonus up by 1 (rarely more), capped at 20.
+  The bonus persists for life, unlike clairvoyance.
+
+**The cost (new in 5.0):** the old fixed `400 × XL` formula is
+gone. The priest now rolls a fresh baseline between **150 and 250**
+(uniform) every visit, multiplies by your **peak experience level**,
+and that's the clairvoyance threshold. Protection costs *twice*
+that. Worst-case ceilings, which guarantee the effect regardless of
+the roll:
+
+- **Guaranteed clairvoyance:** `250 × XL` zorkmids
+- **Guaranteed protection:** `500 × XL` zorkmids
+
+If you carry far more gold than the baseline requires, the priest
+notices and scales the demand up (roughly to one-third of your
+carried gold for clairvoyance, two-thirds for protection). Carrying
+less makes you cheaper, but only down to the baseline floor.
+
+**The cheapskate penalty.** If you offer less than the suggested
+amount *and* you have more than twice your offer on you, the priest
+calls you a **Cheapskate** and permanently adds **40 zm per
+offense** to *that priest's* baseline. Penalties are stored on the
+individual priest, not on you — a different temple is unaffected.
+If you offered nothing (`0`), your co-aligned god takes a small
+alignment hit on top.
+
+**Practical guidance:**
+
+- **Donate early, donate often.** Protection stacks, so 500 zm at
+  XL 1 buys the same AC reduction as 15000 zm at XL 30. Visiting
+  the Minetown temple every time you climb back up from the Mines
+  is a classic stacking ritual.
+- **Count gold before chatting.** The priest's roll is sensitive to
+  what's in your inventory; drop excess gold on the floor outside
+  the temple before asking, then pick it back up.
+- **Cross-aligned priests still accept donations** and still grant
+  the AC and clairvoyance. You miss the alignment bonus and you
+  can't sacrifice on their altar, but the AC ramp still works.
+- **Walk away rather than lowball.** Once the cheapskate flag is
+  set on a priest, it doesn't come off. If the suggested amount is
+  more than you want to part with, decline the prompt entirely
+  rather than offering a token sum.
+
+<!-- Donation mechanics: src/priest.c priest_talk(), 5.0 line 638:
+     rn1(101, 150 + cheapskate * 40) × u.ulevelpeak. Tier thresholds
+     at suggested × quan, 2 × suggested × quan, 3 × suggested × quan,
+     where quan = max(1, money / (3 × suggested × XL)). -->
 
 #### Altars and Alignment
 
@@ -7474,6 +7541,12 @@ point.) The most significant:
   movement), giving them a niche use if you can keep one uncursed.
 - **Sacrifice** for artifact generation now requires a minimum
   sacrifice value.
+- **Priest donations** are now randomized. The old fixed
+  `400 × XL` formula is gone. The priest rolls a baseline between
+  150 and 250 (×XL), and offering the worst-case ceiling of
+  `500 × XL` guarantees protection. Offering too little when you
+  could afford more sets a "Cheapskate" flag on that priest that
+  permanently inflates future baselines.
 - **Gehennom** levels are more varied and interesting.
 - **Medusa's Island** now has four possible layouts.
 - **Special levels** can now generate mirrored (flipped), so don't
