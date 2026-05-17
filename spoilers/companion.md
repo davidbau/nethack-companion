@@ -700,7 +700,7 @@ the basin.
 
 | Outcome         | Effect                                                |
 | --------------- | ----------------------------------------------------- |
-| Wish granted    | A water demon appears and grants a wish (rare, ~1/30) |
+| Wish granted    | A water demon appears and grants a wish (rare, ~1/30, and falling off with depth — practically zero past DLvl 20) |
 | Water demon     | A hostile water demon appears                         |
 | Healing         | You regain hit points                                 |
 | Attribute boost | A random attribute increases                          |
@@ -763,7 +763,7 @@ possible outcomes reads like a wish list shuffled with a hit list:
 
 - A wish (if your luck is positive)
 - Genocide of a monster class
-- Free identification of items in your pack
+- Free identification of up to five items in your pack
 - A stat boost or a stat drain
 - An electric shock
 - Full healing
@@ -1115,7 +1115,8 @@ To enter the Castle, you need to open the drawbridge. Options:
 
 Inside the Castle, you'll find a throne room, barracks, and several
 treasure chambers. One of those chambers contains a **wand of
-wishing**, typically with three charges. This is one of the most
+wishing**, with a single charge in 5.0 (down from three in 3.6.x).
+This is one of the most
 important items in the game. Use your wishes wisely (see
 [Wishes and Wishing](#wishes-and-wishing)).
 
@@ -1202,17 +1203,16 @@ to hit you like it's a buffet.
 
 **Anti-magic fields hit harder if you're magic-resistant.**
 Counterintuitive enough to mislead returning players. The trap
-drains spell energy as before, but in 5.0, having
-*magic resistance* now also triggers an "anti-magic implosion"
-that costs you HP. The base damage is small, but it stacks for
-each source of magic resistance you carry: wielding Magicbane
-adds to it, and carrying any other artifact whose protection
-covers magic missile adds to it again. Late-game ascenders walk
-into the field with three or four magic-resistance sources
-stacked and lose a frightening amount of HP at once. The defense is finding the trap first
-(search), or destroying it from range: 5.0 let you
-zap *cancellation* at magical traps to defuse them without
-setting them off.
+drains spell energy, and having *magic resistance* also triggers
+an "anti-magic implosion" that costs you HP. The base damage is
+small, but it stacks for each source of magic resistance you carry:
+wielding Magicbane adds to it, and carrying any other artifact
+whose protection covers magic missile adds to it again. Late-game
+ascenders walk into the field with three or four magic-resistance
+sources stacked and lose a frightening amount of HP at once. The
+defense is finding the trap first (search), or destroying it from
+range by zapping *cancellation* at it to defuse it without
+setting it off.
 
 #### Searching and Detection
 
@@ -1570,7 +1570,7 @@ by how early you might encounter them:
 | `v`    | Vortices          | Engulfing wisps. Air, fire, ice, and steam vortices each apply their element to whatever they engulf. Kill at range. |
 | `w`    | Worms             | Long worms grow tail segments after each hit and can be a corridor in themselves. Purple worms swallow you whole (see Don't Want, below). |
 | `W`    | Wraiths           | Drain levels on hit. But their corpses grant a level, so eat them fresh.                             |
-| `y`    | Yellow/black lights | Explode adjacent. Yellow blinds you; black confuses and adds hallucination. Black lights are invisible without *see invisible*. Kill at range. |
+| `y`    | Yellow/black lights | Explode adjacent. Yellow blinds you; black hallucinates you. Black lights are invisible without *see invisible*. Kill at range. |
 | `Y`    | Yetis             | Tough melee combatants. Corpses may grant cold resistance.                                           |
 | `z`    | Zruty             | Three-attack mid-game brute. Uncommon but a fair fight if you've geared up.                          |
 | `Z`    | Zombies           | Slow, numerous, come in many varieties. Zombie corpses are old and will rot.                         |
@@ -1654,8 +1654,9 @@ underestimate the threat.**
   Mines as a routine errand — treat each room of dwarves like
   several real fights stacked on top of each other.
 - **Bats** (`B`). Giant bats and ordinary bats are fast (speed 22
-  vs your 12), so they double-attack every turn. A 1d6 bite at
-  double rate eats through low-level HP pools quickly.
+  vs your 12), so they double-attack every turn. A 1d4 bite (1d6
+  for giant bats) at double rate eats through low-level HP pools
+  quickly.
 - **Quadrupeds** (`q`). Rothes and mumakil are three- and
   four-attack pack hunters; they catch unprepared mid-game heroes
   who think they've outgrown the Mines.
@@ -1670,7 +1671,7 @@ underestimate the threat.**
 - **Mount slips and riding accidents.** More heroes die slipping
   off saddled ponies than die to mind flayers. Getting on a steed
   rolls against your XP level plus the steed's tameness; if you
-  fail, you take 10–14 HP. Don't mount while Confused, Fumbling,
+  fail, you take 11–15 HP. Don't mount while Confused, Fumbling,
   or Glib, don't mount with a cursed or greased saddle, and don't
   mount a barely-tame pony at experience level 2.
 - **Boiling potion (Gehennom).** Hot ground shatters potions
@@ -1700,8 +1701,8 @@ underestimate the threat.**
 - **Wrath of a god.** You prayed when your god wasn't willing.
   See the Divine Relations chapter.
 - **Scroll of genocide.** Read while confused → genocides your
-  own race → instant kill. Don't read scrolls under confusion
-  unless you know what they are.
+  own role's species (Valkyrie, Wizard, etc.) → instant kill.
+  Don't read scrolls under confusion unless you know what they are.
 - **Scroll of earth.** Buried under a pile of boulders you summoned
   on yourself.
 
@@ -1954,7 +1955,7 @@ attack the host repeatedly; weapons still work from inside.
 
 **Yellow lights** and **black lights** (`y`, level 3-5) attack by
 exploding the moment you're adjacent. Yellow lights blind you;
-black lights confuse you and add hallucination. Both lights die
+black lights hallucinate you. Both lights die
 in the explosion, so the encounter resolves immediately, but
 you spend the next handful of turns blind or hallucinating, which
 is exactly the wrong state to be in if there's a follow-up fight.
@@ -2394,7 +2395,8 @@ done something to anger a shopkeeper (fired a wand from a doorway,
 attacked them, picked up an unpaid item while broke) and then made
 amends (paid the bill, fled and let them calm down), the shopkeeper
 becomes peaceful again but keeps a permanent +33% buy surcharge on
-every item until you leave the level. Sell prices are unaffected.
+every item until you pay your bill in full. Sell prices are
+unaffected.
 
 The price tables for each item class follow. These are your
 field reference for shopping trips.
@@ -3170,8 +3172,9 @@ pushing your luck; the third is usually fatal for the wand.
 **Genocide.** The nuclear option. Uncursed eliminates a single
 species; blessed wipes an entire monster class from the game
 forever. Liches and mind flayers are popular targets. Read one
-while confused and you genocide your own race, which kills you
-instantly. Read carefully.
+while confused and you genocide your own role's species
+(Valkyrie, Wizard, etc.), which kills you instantly. Read
+carefully.
 
 **Magic mapping.** Reveals the entire level layout; blessed also
 shows secret doors. Invaluable in Gehennom's maddening mazes,
@@ -3746,7 +3749,7 @@ Weapon choice depends heavily on your role and skill caps.
 | Rubber hose    | d4 / d3        | No, seriously, don't use this      |
 
 **Excalibur** (long sword dipped in a fountain while Lawful) is one
-of the best weapons: +d5 to hit and damage, level drain resistance,
+of the best weapons: +d5 to hit and +d10 damage, level drain resistance,
 automatic searching. For Lawful characters, getting Excalibur early
 is a priority.
 
@@ -4055,7 +4058,7 @@ problems in a specific order, fixing the most urgent first:
 4. Sinking in lava
 5. Illness (food poisoning, sickness)
 6. Severe hunger (Weak or Fainting)
-7. Critically low HP (less than 5, or less than 1/7 of max)
+7. Critically low HP (≤5, or below a fraction of maxHP that scales with your experience level: 1/5 at XL 1–5, 1/6 at 6–13, 1/7 at 14–21, 1/8 at 22–29, 1/9 at XL 30+)
 8. Lycanthropy
 9. Blindness, confusion, stunning, hallucination
 10. Punishment (iron ball and chain)
@@ -6424,9 +6427,11 @@ know:
 - Elbereth doesn't help; shopkeepers ignore it.
 - Shop walls are non-diggable from inside; you can't tunnel out
   with unpaid items.
-- Artifact items are priced at **25× base** when on the shop floor.
-  An unidentified artifact long sword for 100,000 zm is not
-  something to glance over; that price tag is the give-away.
+- Artifact items are priced at **4× the artifact's already-large
+  base cost** (a hidden inflation that doesn't affect score). For
+  most named weapons that lands in the 10,000–30,000 zm range. An
+  unidentified long sword for 16,000 zm is not something to glance
+  over; that price tag is the give-away.
 - Shopkeepers can be killed for their entire stock and gold
   inventory, but this carries significant penalties (Keystone Kops,
   alignment loss) and forfeits all future service from that shop.
