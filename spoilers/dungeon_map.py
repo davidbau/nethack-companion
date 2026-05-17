@@ -525,7 +525,10 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
         f'stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
     )
 
-    # Horizontal arrows between adjacent planes
+    # Horizontal arrows between adjacent planes. The first arrow is
+    # labeled "portals" since the planes are connected by randomly-
+    # placed magic portals on each level (not stairs); the label
+    # applies to all of them.
     for i in range(len(plane_data) - 1):
         x = row_x_start + i * (plane_w + gap_x)
         x1 = x + plane_w
@@ -535,6 +538,10 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
             f'<line x1="{x1}" y1="{arr_y}" x2="{x2}" y2="{arr_y}" '
             f'stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
         )
+        if i == 0:
+            parts.append(text_el((x1 + x2) // 2, arr_y - 4, 'portals',
+                                 font_size=11, font_style='italic',
+                                 fill='#5a5a5a', text_anchor='middle'))
 
     # Curved arrow Water bottom-center → Astral top-center, same S-into-line shape.
     cubic_end_y2 = astral_y - vlen
