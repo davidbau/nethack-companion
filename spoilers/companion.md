@@ -621,9 +621,10 @@ by monsters. Sitting on the throne has random effects, sometimes
 wonderful, sometimes terrible. See
 [Points of Interest](#points-of-interest).
 
-**Zoos.** A room packed with sleeping monsters and gold. If you open
-the door, they all wake up. Fight from the doorway and pick them off
-one at a time.
+**Zoos.** A room packed with sleeping monsters and gold. They wake
+not from opening the door (which is silent) but from the noise of
+you fighting the first few. Fight from the doorway so they wake and
+approach one or two at a time, not all at once.
 
 **Barracks.** A room full of soldiers. They're organized and armed,
 but they're also carrying good equipment. Worth clearing if you can
@@ -1491,18 +1492,20 @@ you'll miss the cues entirely. They are worth memorizing:
 | Message                                          | What it means                                                            |
 |--------------------------------------------------|--------------------------------------------------------------------------|
 | *"You have a sad feeling for a moment, then it passes."* | Your pet just died offscreen.                                        |
-| *"You hear someone counting money."*<br>*"You hear a strange wind."* | Vault on this level.                                            |
+| *"You hear someone counting gold coins."*<br>*"You hear the footsteps of a guard on patrol."* | Vault on this level.                          |
+| *"You hear a strange wind."*           | Oracle on this level.                                                                  |
 | *"You hear someone cursing shoplifters."* | Shop on this level.                                                                 |
 | *"You hear bubbling water."*<br>*"You hear water falling on coins."* | Fountain on this level.                                          |
 | *"You hear a bugle playing reveille!"* | A soldier just woke nearby soldiers; expect a fight.                                   |
-| *"You feel healthy."*                  | Intrinsic poison resistance gained from a corpse.                                      |
-| *"You feel warm!"*                     | Intrinsic fire resistance gained from a corpse.                                        |
-| *"You feel cool."*                     | Intrinsic cold resistance gained from a corpse.                                        |
-| *"You feel a mild buzz."*              | Intrinsic shock resistance gained from a corpse.                                       |
-| *"You feel wide awake."*               | Intrinsic sleep resistance gained from a corpse.                                       |
-| *"You feel quick!"*                    | Intrinsic speed gained from a corpse.                                                  |
-| *"You feel envious of the gods…"*      | Intrinsic disintegration resistance gained from a corpse.                              |
-| *"Your mind oozes shut."*              | The corpse would have granted an intrinsic you already have.                           |
+| *"You feel healthy."*                  | Intrinsic poison resistance from a corpse.                                             |
+| *"You feel a momentary chill."*        | Intrinsic fire resistance from a corpse.                                               |
+| *"You feel full of hot air."*          | Intrinsic cold resistance from a corpse.                                               |
+| *"Your health currently feels amplified!"* | Intrinsic shock resistance from a corpse.                                          |
+| *"You feel wide awake."*               | Intrinsic sleep resistance from a corpse.                                              |
+| *"You feel very firm."*                | Intrinsic disintegration resistance from a corpse.                                     |
+| *"You feel a strange mental acuity."*  | Intrinsic telepathy from a corpse.                                                     |
+| *"You seem faster."*                   | Intrinsic speed (quantum mechanic corpse).                                             |
+| *"You feel a mild buzz."*              | Eye of newt corpse restored 1–3 mana.                                                  |
 | *"You feel hungry."*                   | Scroll of food detection, no food on level.                                            |
 | *"You feel materially poor."*          | Scroll of gold detection, no gold on level.                                            |
 | *"You feel like someone is helping you."* | Scroll of remove curse; worn/wielded cursed items uncursed.                         |
@@ -1510,7 +1513,6 @@ you'll miss the cues entirely. They are worth memorizing:
 | *"You feel light-footed."*             | Ring of stealth.                                                                       |
 | *"You feel in touch with the spiritual world."* | Ring of free action.                                                          |
 | *"You feel charged with power."*       | Ring of conflict.                                                                      |
-| *"You feel a strange mental acuity."*  | Ring of searching, or potion of object detection with no objects on level. |
 | *"Wow! This makes you feel great!"*    | Potion of restore ability; a drained stat returned to peak.                            |
 | *"You feel feverish."*                 | Lycanthropy infection from a were-monster. Eat wolfsbane, dip in holy water, or pray.  |
 | *"You are slowing down."*              | You're turning to stone. Immediately eat a lizard corpse, drink acid, or pray.         |
