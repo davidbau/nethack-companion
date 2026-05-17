@@ -1215,6 +1215,22 @@ defense is finding the trap first (search), or destroying it from
 range by zapping *cancellation* at it to defuse it without
 setting it off.
 
+**Iron footwear is the unsung early-game trap defense.** Iron
+shoes (and kicking boots — they count as iron too) absorb damage
+from several traps that would otherwise sting hard. Step into a
+*bear trap* and they keep your leg intact: no wounded-legs penalty,
+no bite. Fall into a *spiked pit* and the spikes can't reach you:
+the pit still holds you in place, but you skip the spike damage
+and the poison-spike roll. Hit an *anti-magic field* and the trap
+drains a point of enchantment from your shoes instead of draining
+your power and HP (only works while your shoes are positively
+enchanted — once the spe runs out, the protection runs out too).
+Trigger a *polymorph trap* and your shoes polymorph between iron
+shoes and kicking boots instead of you polymorphing into something
+random. Cheap, heavy, and well worth carrying through the early
+dungeon — the trade against speed boots is a real one, especially
+in the Mines.
+
 #### Searching and Detection
 
 The best defense against traps is finding them before they find you:
