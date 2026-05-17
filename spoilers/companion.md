@@ -186,18 +186,13 @@ meat if you want to maintain your spiritual discipline. One of the
 more unusual roles, rewarding for experienced players.
 *Alignment: Any.*
 
-**Priest.** You start with holy (or unholy) water and the ability to
-intuitively sense whether items are blessed, cursed, or uncursed. This
-is enormously useful. You know immediately whether that cloak you just
-found is safe to wear. Priests are competent fighters with access to
-clerical spells and begin with a mace. There's also a gift waiting at
-the first altar. Demonbane, now a silver mace, is the guaranteed first
-sacrifice gift for Priests: the gods have apparently decided that
-someone who starts the game knowing what everything's blessed or cursed
-status is deserves a matching weapon. The silver mace type aligns with
-Priest weapon skills, which means you actually want what you'll receive.
-Sacrifice early, sacrifice often. The altar is your friend, and it has
-presents. *Alignment: Any (matches your god).*
+**Priest.** You start with a mace, holy (or unholy) water, and the
+ability to intuitively sense whether items are blessed, cursed, or
+uncursed, so you know on sight whether that cloak you just found is
+safe to wear. Competent fighters with access to clerical spells.
+Your first sacrifice gift is guaranteed: Demonbane (now a silver
+mace), which aligns with your weapon skill — sacrifice early and
+often. *Alignment: Any (matches your god).*
 
 **Ranger.** You start with a bow and a generous supply of arrows,
 unmatched as an early-game ranged threat. Rangers
@@ -205,19 +200,15 @@ get stealth and see invisible early. Your elven racial option gives
 you sleep resistance on top of that. If you enjoy picking off enemies
 from a distance, this is your role. *Alignment: Neutral or Chaotic.*
 
-**Rogue.** NetHack's thief class: sneaky combat, lockpicking, and
-backstabs. You start with a short sword, six daggers for throwing,
-leather armor, a lock pick, a sack, and a potion of sickness (handy
-for poisoning blades or for tossing at an enemy). The lock pick is a
-quiet superpower: every locked door, chest, and box is openable from
-turn one without needing a key or a kick. You get stealth from the
-beginning, and your backstab ability deals extra damage (+1 to +your
-level) when you melee a monster that's **fleeing or helpless** —
-sleeping, paralyzed, or scared off Elbereth. Stealth doesn't trigger
-the bonus directly, but it lets you walk up to sleeping enemies
-without waking them, which is the most common way to set it up.
-Rogues are excellent at avoiding trouble, which is often better than
-being good at surviving it. *Alignment: Chaotic.*
+**Rogue.** NetHack's thief class: lockpicking and stealthy
+assassinations. You start with a short sword, six daggers for
+throwing, leather armor, a lock pick, a sack, and a potion of
+sickness (handy for poisoning blades or for tossing at an enemy).
+Your lock pick makes every locked door, chest, and box openable from
+turn one. You get stealth from the beginning, which lets you walk up
+to sleeping enemies without waking them, and your backstab ability
+deals extra damage (+1 to +your level) when you hit a monster that's
+fleeing or helpless. *Alignment: Chaotic.*
 
 **Samurai.** You start with a katana, which is one of the better
 one-handed weapons in the game, plus a wakizashi backup and a yumi
