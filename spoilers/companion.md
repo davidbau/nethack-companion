@@ -4113,8 +4113,8 @@ actions per level, it takes longer to feel.
 
 #### Sacrifice
 
-Offering fresh monster corpses at an altar builds favor with your
-god. The rules:
+Offering fresh monster corpses at an altar (`#offer`) builds favor
+with your god. The rules:
 
 - The corpse must be fresh — killed within the last **50 turns**.
   A corpse older than that has zero sacrifice value (the gods
