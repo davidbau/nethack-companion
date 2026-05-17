@@ -114,6 +114,7 @@ class Branch:
     pearls: list[int]                         # between-bubble pearl counts
     attach: Literal['top', 'bottom'] = 'top'  # which bubble joins the trunk
     label: str = ''                           # tiny label above the trunk-to-branch arrow
+    label_pos: float = 0.75                   # 0.0=at trunk, 1.0=at bubble; default biases toward the branch
 
 
 @dataclass
@@ -168,6 +169,7 @@ DOD: list[TrunkRow] = [
             pearls=[3],
             attach='top',
             label='portal',
+            label_pos=0.5,  # short arrow; midpoint reads better than the default 75%
         ),
         pearls_below=2,
     ),
@@ -300,12 +302,12 @@ def layout_arrow_to_branch(branch: Branch, attach_y: int, trunk_has_bubble: bool
         x2 = RIGHT_X
         placed.branch_arrows.append((x1, attach_y, x2, attach_y))
     if branch.label:
-        # Bias the label toward the branch bubble (75% along the arrow
-        # from trunk → bubble) instead of dead-center. At 50% the
-        # Sokoban "up" label slid into The Oracle bubble; pushing all
-        # labels closer to their branch bubble also reads as "this label
-        # describes the branch" more clearly.
-        cx = x1 + (3 * (x2 - x1)) // 4
+        # Default bias is 75% along the trunk→bubble arrow, which keeps
+        # the label clear of neighbouring trunk bubbles (the Sokoban "up"
+        # label would otherwise overlap The Oracle). Branches with a
+        # short arrow or a roomy neighbourhood can override via
+        # `label_pos` to sit nearer the midpoint.
+        cx = x1 + int(round((x2 - x1) * branch.label_pos))
         placed.arrow_labels.append((cx, attach_y - 4, branch.label))
 
 
