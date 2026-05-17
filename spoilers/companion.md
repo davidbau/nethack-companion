@@ -6533,208 +6533,210 @@ possible before spending your gold on scrolls of identify.
 
 ### Weapons
 
-Damage is shown as **vs small / vs large**, the dice rolled before enchantment and excluding silver/material bonuses. **Wt** is unit weight; **Cost** is the unenchanted shop base price in zorkmids. **Hit** is the to-hit bonus baked into the weapon itself (most are 0). **2H** marks two-handed weapons that prevent shield use and two-weapon combat. Weapons are grouped by their skill class so you can see your options within each skill tree at a glance.
+Damage is shown as **vs small / vs large**, the dice rolled before enchantment and excluding silver/material bonuses. **Wt** is unit weight; **Cost** is the unenchanted shop base price in zorkmids. **Hit** is the to-hit bonus baked into the weapon itself (most are 0). Two-handed weapons that prevent shield use and two-weapon combat are flagged in the notes. Weapons are grouped by their skill class so you can see your options within each skill tree at a glance.
 
 #### Dagger
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| dagger | 1d4 / 1d3 | 10 | 4 | +2 |  | iron | Stackable; Rogues multishot up to three in a single throw. |
-| elven dagger | 1d5 / 1d3 | 10 | 4 | +2 |  | wood | Stackable. Sting is the artifact form. |
-| orcish dagger | 1d3 / 1d3 | 10 | 4 | +2 |  | iron | Stackable. |
-| silver dagger | 1d4 / 1d3 | 12 | 40 | +2 |  | silver | Silver damage to demons. Common Rogue/Ranger off-hand. |
-| athame | 1d4 / 1d3 | 10 | 4 | +2 |  | iron | Used for engraving wards — Elbereth on the floor lasts longer engraved with an athame. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| dagger | 1d4 / 1d3 | 10 | 4 | +2 | iron | Stackable; Rogues multishot up to three in a single throw. |
+| elven dagger | 1d5 / 1d3 | 10 | 4 | +2 | wood | Stackable. Sting is the artifact form. |
+| orcish dagger | 1d3 / 1d3 | 10 | 4 | +2 | iron | Stackable. |
+| silver dagger | 1d4 / 1d3 | 12 | 40 | +2 | silver | Silver damage to demons. Common Rogue/Ranger off-hand. |
+| athame | 1d4 / 1d3 | 10 | 4 | +2 | iron | Used for engraving wards — Elbereth on the floor lasts longer engraved with an athame. |
 
 #### Knife
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| scalpel | 1d3 / 1d3 | 5 | 6 | +2 |  | metal |  |
-| knife | 1d3 / 1d2 | 5 | 4 | — |  | iron |  |
-| stiletto | 1d3 / 1d2 | 5 | 4 | — |  | iron |  |
-| worm tooth | 1d2 / 1d2 | 20 | 2 | — |  | bone |  |
-| crysknife | 1d10 / 1d10 | 20 | 100 | +3 |  | bone | Polymorphs back to a worm tooth when dropped; keep it equipped or buried. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| scalpel | 1d3 / 1d3 | 5 | 6 | +2 | metal |  |
+| knife | 1d3 / 1d2 | 5 | 4 | — | iron |  |
+| stiletto | 1d3 / 1d2 | 5 | 4 | — | iron |  |
+| worm tooth | 1d2 / 1d2 | 20 | 2 | — | bone |  |
+| crysknife | 1d10 / 1d10 | 20 | 100 | +3 | bone | Polymorphs back to a worm tooth when dropped; keep it equipped or buried. |
 
 #### Short sword
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| short sword | 1d6 / 1d8 | 30 | 10 | — |  | iron | The Rogue's starter. |
-| elven short sword | 1d8 / 1d8 | 30 | 10 | — |  | wood |  |
-| orcish short sword | 1d5 / 1d8 | 30 | 10 | — |  | iron |  |
-| dwarvish short sword | 1d7 / 1d8 | 30 | 10 | — |  | iron |  |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| short sword | 1d6 / 1d8 | 30 | 10 | — | iron | The Rogue's starter. |
+| elven short sword | 1d8 / 1d8 | 30 | 10 | — | wood |  |
+| orcish short sword | 1d5 / 1d8 | 30 | 10 | — | iron |  |
+| dwarvish short sword | 1d7 / 1d8 | 30 | 10 | — | iron |  |
 
 #### Saber
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| scimitar | 1d8 / 1d8 | 40 | 15 | — |  | iron |  |
-| silver saber | 1d8 / 1d8 | 40 | 75 | — |  | silver | Werebane is the artifact form — silver damage to weres and demons. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| scimitar | 1d8 / 1d8 | 40 | 15 | — | iron |  |
+| silver saber | 1d8 / 1d8 | 40 | 75 | — | silver | Werebane is the artifact form — silver damage to weres and demons. |
 
 #### Broadsword
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| broadsword | 1d4+1d4 / 1d6+1 | 70 | 10 | — |  | iron | +d4 small, +1 large. Stormbringer is the chaotic-aligned artifact form. |
-| elven broadsword | 1d6+1d4 / 1d6+1 | 70 | 10 | — |  | wood |  |
-| runesword | 1d4+1d4 / 1d6+1 | 40 | 300 | — |  | iron |  |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| broadsword | 1d4+1d4 / 1d6+1 | 70 | 10 | — | iron | +d4 small, +1 large. Stormbringer is the chaotic-aligned artifact form. |
+| elven broadsword | 1d6+1d4 / 1d6+1 | 70 | 10 | — | wood |  |
+| runesword | 1d4+1d4 / 1d6+1 | 40 | 300 | — | iron |  |
 
 #### Long sword
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| long sword | 1d8 / 1d12 | 40 | 15 | — |  | iron | Dip in a fountain at XL5+ for Excalibur (1-in-30; 1-in-6 for Lawful Knights). |
-| katana | 1d10 / 1d12 | 40 | 80 | +1 |  | iron | +1 to-hit baked in. Snickersnee is the artifact form. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| long sword | 1d8 / 1d12 | 40 | 15 | — | iron | Dip in a fountain at XL5+ for Excalibur (1-in-30; 1-in-6 for Lawful Knights). |
+| katana | 1d10 / 1d12 | 40 | 80 | +1 | iron | +1 to-hit baked in. Snickersnee is the artifact form. |
 
 #### Two-handed sword
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| two-handed sword | 1d12 / 1d6+2d6 | 150 | 50 | — | yes | iron | Two-handed (no shield). Vorpal Blade is the artifact form. |
-| tsurugi | 1d16 / 1d8+2d6 | 60 | 500 | +2 | yes | metal | Two-handed. The Tsurugi of Muramasa is the artifact form. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| two-handed sword | 1d12 / 1d6+2d6 | 150 | 50 | — | iron | Two-handed (no shield). Vorpal Blade is the artifact form. |
+| tsurugi | 1d16 / 1d8+2d6 | 60 | 500 | +2 | metal | Two-handed. The Tsurugi of Muramasa is the artifact form. |
 
 #### Axe
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| axe | 1d6 / 1d4 | 60 | 8 | — |  | iron |  |
-| battle-axe | 1d8+1d4 / 1d6+2d4 | 120 | 40 | — | yes | iron |  |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| axe | 1d6 / 1d4 | 60 | 8 | — | iron |  |
+| battle-axe | 1d8+1d4 / 1d6+2d4 | 120 | 40 | — | iron | Two-handed; +1d4 small, +2d4 large. |
 
 #### Pick-axe
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| dwarvish mattock | 1d12 / 1d8+2d6 | 120 | 50 | — | yes | iron | Two-handed. Digs through walls; cannot two-weapon. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| dwarvish mattock | 1d12 / 1d8+2d6 | 120 | 50 | — | iron | Two-handed. Digs through walls; cannot two-weapon. |
 
 #### Club
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| club | 1d6 / 1d3 | 30 | 3 | — |  | wood | What a Caveman starts with — basic but free of curses early. |
-| aklys | 1d6 / 1d3 | 15 | 4 | — |  | iron | Returns when thrown if Strength is high enough. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| club | 1d6 / 1d3 | 30 | 3 | — | wood | What a Caveman starts with — basic but free of curses early. |
+| aklys | 1d6 / 1d3 | 15 | 4 | — | iron | Returns when thrown if Strength is high enough. |
 
 #### Mace
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| mace | 1d6+1 / 1d6 | 30 | 5 | — |  | iron | The Priest's first sacrifice gift, Demonbane, is a +d4/+0 silver mace. |
-| silver mace | 1d6+1 / 1d6 | 36 | 60 | — |  | silver | Bonus damage to demons, undead, and shape-changers. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| mace | 1d6+1 / 1d6 | 30 | 5 | — | iron | The Priest's first sacrifice gift, Demonbane, is a +d4/+0 silver mace. |
+| silver mace | 1d6+1 / 1d6 | 36 | 60 | — | silver | Bonus damage to demons, undead, and shape-changers. |
 
 #### Morning star
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| morning star | 1d4+1d4 / 1d6+1 | 120 | 10 | — |  | iron | +1d4 small, +1 large — punches above its weight for a one-hander. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| morning star | 1d4+1d4 / 1d6+1 | 120 | 10 | — | iron | +1d4 small, +1 large — punches above its weight for a one-hander. |
 
 #### Flail
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| flail | 1d6+1 / 1d4+1d4 | 15 | 4 | — |  | iron | +1d4 large; one-handed. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| flail | 1d6+1 / 1d4+1d4 | 15 | 4 | — | iron | +1d4 large; one-handed. |
 
 #### Hammer
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| war hammer | 1d4+1 / 1d4 | 50 | 5 | — |  | iron | Mjollnir is the artifact form (Neutral Valkyrie sacrifice gift). |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| war hammer | 1d4+1 / 1d4 | 50 | 5 | — | iron | Mjollnir is the artifact form (Neutral Valkyrie sacrifice gift). |
 
 #### Quarterstaff
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| quarterstaff | 1d6 / 1d6 | 40 | 5 | — | yes | wood | Two-handed but light; the Wizard's starting weapon. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| quarterstaff | 1d6 / 1d6 | 40 | 5 | — | wood | Two-handed but light; the Wizard's starting weapon. |
 
 #### Polearms
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| partisan | 1d6 / 1d6+1 | 80 | 10 | — | yes | iron | Polearm; reach (attacks 2 squares away). |
-| ranseur | 1d4+1d4 / 1d4+1d4 | 50 | 6 | — | yes | iron | Polearm; +1d4 small, +1d4 large. |
-| spetum | 1d6+1 / 1d6+1d6 | 50 | 5 | — | yes | iron | Polearm; +1 small, +1d6 large. |
-| glaive | 1d6 / 1d10 | 75 | 6 | — | yes | iron | Polearm; reach. |
-| halberd | 1d10 / 1d6+1d6 | 150 | 10 | — | yes | iron | Polearm; +1d6 large. |
-| bardiche | 1d4+1d4 / 1d4+2d4 | 120 | 7 | — | yes | iron | Polearm; +1d4 small, +2d4 large. |
-| voulge | 1d4+1d4 / 1d4+1d4 | 125 | 5 | — | yes | iron | Polearm; +1d4 small, +1d4 large. |
-| fauchard | 1d6 / 1d8 | 60 | 5 | — | yes | iron | Polearm; reach. |
-| guisarme | 1d4+1d4 / 1d8 | 80 | 5 | — | yes | iron | Polearm; +1d4 small. |
-| bill-guisarme | 1d4+1d4 / 1d10 | 120 | 7 | — | yes | iron | Polearm; +1d4 small. |
-| lucern hammer | 1d4+1d4 / 1d6 | 150 | 7 | — | yes | iron | Polearm; +1d4 small. |
-| bec de corbin | 1d8 / 1d6 | 100 | 8 | — | yes | iron | Polearm; reach. |
+All polearms are two-handed and have a reach of two squares (`#apply` the weapon to strike a target one tile away from you, with one empty intervening square). They can't be used in melee against an adjacent monster — the haft gets in the way — which means you switch weapons or use the polearm's reach attack, not both. Notes below describe each entry's extra damage; the reach mechanic is identical across the class.
+
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| partisan | 1d6 / 1d6+1 | 80 | 10 | — | iron | Reach. |
+| ranseur | 1d4+1d4 / 1d4+1d4 | 50 | 6 | — | iron | +1d4 small, +1d4 large. |
+| spetum | 1d6+1 / 1d6+1d6 | 50 | 5 | — | iron | +1 small, +1d6 large. |
+| glaive | 1d6 / 1d10 | 75 | 6 | — | iron | Reach. |
+| halberd | 1d10 / 1d6+1d6 | 150 | 10 | — | iron | +1d6 large. |
+| bardiche | 1d4+1d4 / 1d4+2d4 | 120 | 7 | — | iron | +1d4 small, +2d4 large. |
+| voulge | 1d4+1d4 / 1d4+1d4 | 125 | 5 | — | iron | +1d4 small, +1d4 large. |
+| fauchard | 1d6 / 1d8 | 60 | 5 | — | iron | Reach. |
+| guisarme | 1d4+1d4 / 1d8 | 80 | 5 | — | iron | +1d4 small. |
+| bill-guisarme | 1d4+1d4 / 1d10 | 120 | 7 | — | iron | +1d4 small. |
+| lucern hammer | 1d4+1d4 / 1d6 | 150 | 7 | — | iron | +1d4 small. |
+| bec de corbin | 1d8 / 1d6 | 100 | 8 | — | iron | Reach. |
 
 #### Spear
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| spear | 1d6 / 1d8 | 30 | 3 | — |  | iron |  |
-| elven spear | 1d7 / 1d8 | 30 | 3 | — |  | wood |  |
-| orcish spear | 1d5 / 1d8 | 30 | 3 | — |  | iron |  |
-| dwarvish spear | 1d8 / 1d8 | 35 | 3 | — |  | iron |  |
-| silver spear | 1d6 / 1d8 | 36 | 40 | — |  | silver | Silver damage to demons and weres. |
-| javelin | 1d6 / 1d6 | 20 | 3 | — |  | iron |  |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| spear | 1d6 / 1d8 | 30 | 3 | — | iron |  |
+| elven spear | 1d7 / 1d8 | 30 | 3 | — | wood |  |
+| orcish spear | 1d5 / 1d8 | 30 | 3 | — | iron |  |
+| dwarvish spear | 1d8 / 1d8 | 35 | 3 | — | iron |  |
+| silver spear | 1d6 / 1d8 | 36 | 40 | — | silver | Silver damage to demons and weres. |
+| javelin | 1d6 / 1d6 | 20 | 3 | — | iron |  |
 
 #### Trident
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| trident | 1d6+1 / 1d4+2d4 | 25 | 5 | — |  | iron | +1 small, +2d4 large — the giant-killer; one-handed. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| trident | 1d6+1 / 1d4+2d4 | 25 | 5 | — | iron | +1 small, +2d4 large — the giant-killer; one-handed. |
 
 #### Lance
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| lance | 1d6 / 1d8 | 180 | 10 | — |  | iron | Devastating from horseback (jousting bonus); useless on foot. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| lance | 1d6 / 1d8 | 180 | 10 | — | iron | Devastating from horseback (jousting bonus); useless on foot. |
 
 #### Whip
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| rubber hose | 1d4 / 1d3 | 20 | 3 | — |  | plastic | Joke weapon (1d4 / 1d3). Damages even Shades, who are immune to most. |
-| bullwhip | 1d2 / 1 | 20 | 4 | — |  | leather | The Archeologist's starter; can disarm a monster. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| rubber hose | 1d4 / 1d3 | 20 | 3 | — | plastic | Joke weapon (1d4 / 1d3). Damages even Shades, who are immune to most. |
+| bullwhip | 1d2 / 1 | 20 | 4 | — | leather | The Archeologist's starter; can disarm a monster. |
 
 #### Bow
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| arrow | 1d6 / 1d6 | 1 | 2 | — |  | iron |  |
-| elven arrow | 1d7 / 1d6 | 1 | 2 | — |  | wood |  |
-| orcish arrow | 1d5 / 1d6 | 1 | 2 | — |  | iron |  |
-| silver arrow | 1d6 / 1d6 | 1 | 5 | — |  | silver | Silver damage to demons and weres. |
-| ya | 1d7 / 1d7 | 1 | 4 | +1 |  | metal |  |
-| bow | — | 30 | 60 | — |  | wood |  |
-| elven bow | — | 30 | 60 | — |  | wood |  |
-| orcish bow | — | 30 | 60 | — |  | wood |  |
-| yumi | — | 30 | 60 | — |  | wood | The Samurai's bow. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| arrow | 1d6 / 1d6 | 1 | 2 | — | iron |  |
+| elven arrow | 1d7 / 1d6 | 1 | 2 | — | wood |  |
+| orcish arrow | 1d5 / 1d6 | 1 | 2 | — | iron |  |
+| silver arrow | 1d6 / 1d6 | 1 | 5 | — | silver | Silver damage to demons and weres. |
+| ya | 1d7 / 1d7 | 1 | 4 | +1 | metal |  |
+| bow | — | 30 | 60 | — | wood |  |
+| elven bow | — | 30 | 60 | — | wood |  |
+| orcish bow | — | 30 | 60 | — | wood |  |
+| yumi | — | 30 | 60 | — | wood | The Samurai's bow. |
 
 #### Crossbow
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| crossbow bolt | 1d4+1 / 1d6+1 | 1 | 2 | — |  | iron |  |
-| crossbow | — | 50 | 40 | — |  | wood | Bolts pierce — and crossbows fire one shot per turn at most. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| crossbow bolt | 1d4+1 / 1d6+1 | 1 | 2 | — | iron |  |
+| crossbow | — | 50 | 40 | — | wood | Bolts pierce — and crossbows fire one shot per turn at most. |
 
 #### Sling
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| sling | — | 3 | 20 | — |  | leather | Trains sling skill from any rock you pick up. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| sling | — | 3 | 20 | — | leather | Trains sling skill from any rock you pick up. |
 
 #### Dart
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| dart | 1d3 / 1d2 | 1 | 2 | — |  | iron |  |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| dart | 1d3 / 1d2 | 1 | 2 | — | iron |  |
 
 #### Shuriken
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| shuriken | 1d8 / 1d6 | 1 | 5 | +2 |  | iron |  |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| shuriken | 1d8 / 1d6 | 1 | 5 | +2 | iron |  |
 
 #### Boomerang
 
-| Weapon | Damage (S/L) | Wt | Cost | Hit | 2H | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| boomerang | 1d9 / 1d9 | 5 | 20 | — |  | wood | Returns when thrown. Always. |
+| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
+|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| boomerang | 1d9 / 1d9 | 5 | 20 | — | wood | Returns when thrown. Always. |
 
 ---
 
@@ -6745,41 +6747,41 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 #### Body armor (suits)
 
 | Armor | AC | MC | Power | Wt | Cost | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| plate mail | +7 | 2 | — | 450 | 600 | iron | The classic heavy suit. Spellcasters take a major casting penalty. |
-| crystal plate mail | +7 | 2 | — | 415 | 820 | glass | Like plate mail but glass — never rusts. No casting penalty improvement. |
-| bronze plate mail | +6 | 1 | — | 450 | 400 | copper | Slightly weaker than plate; copper, so doesn't rust but does corrode. |
+|-------|----|----|-------|----|------|----------|--------------------------------------------------------------------|
+| plate mail | +7 | 2 | — | 450 | 600 | iron | Spellcasting penalty. |
+| crystal plate mail | +7 | 2 | — | 415 | 820 | glass | Never rusts. Spellcasting penalty. |
+| bronze plate mail | +6 | 1 | — | 450 | 400 | copper |  |
 | splint mail | +6 | 1 | — | 400 | 80 | iron |  |
 | banded mail | +6 | 1 | — | 350 | 90 | iron |  |
-| dwarvish mithril-coat | +6 | 2 | — | 150 | 240 | mithril | Light enough for spellcasting. The mid-game goal for Wizards. |
-| elven mithril-coat | +5 | 2 | — | 150 | 240 | mithril | As dwarvish but lighter on the wearer and crafted by elves. |
-| chain mail | +5 | 1 | — | 300 | 75 | iron | Dwarves drop these. The dwarvish-starter pile. |
+| dwarvish mithril-coat | +6 | 2 | — | 150 | 240 | mithril | Light enough for spellcasting. Wizard mid-game goal. |
+| elven mithril-coat | +5 | 2 | — | 150 | 240 | mithril | Light, expensive, no casting penalty. |
+| chain mail | +5 | 1 | — | 300 | 75 | iron | Dwarves drop these. |
 | orcish chain mail | +4 | 1 | — | 300 | 75 | iron |  |
 | scale mail | +4 | 1 | — | 250 | 45 | iron |  |
-| studded leather armor | +3 | 1 | — | 200 | 15 | leather | Better than leather; no spellcasting penalty. |
+| studded leather armor | +3 | 1 | — | 200 | 15 | leather | No spellcasting penalty. |
 | ring mail | +3 | 1 | — | 250 | 100 | iron |  |
 | orcish ring mail | +2 | 1 | — | 250 | 80 | iron |  |
-| leather armor | +2 | 1 | — | 150 | 5 | leather | The default starter body armor. |
-| leather jacket | +1 | — | — | 30 | 10 | leather | Worst body armor; only really useful before you find anything else. |
-| gray dragon scale mail | +9 | — | magic resistance | 40 | 1200 | dragonhide | Grants magic resistance. The endgame body armor. |
-| gold dragon scale mail | +9 | — | — | 40 | 900 | dragonhide | Acts as a light source. |
-| silver dragon scale mail | +9 | — | reflection | 40 | 1200 | dragonhide | Grants reflection — survives a wand of death pointed at you. |
-| red dragon scale mail | +9 | — | fire resistance | 40 | 900 | dragonhide | Fire resistance. |
-| white dragon scale mail | +9 | — | cold resistance | 40 | 900 | dragonhide | Cold resistance. |
-| orange dragon scale mail | +9 | — | sleep resistance | 40 | 900 | dragonhide | Sleep resistance. |
-| black dragon scale mail | +9 | — | disintegration resistance | 40 | 1200 | dragonhide | Disintegration resistance — survives a black-dragon breath weapon. |
-| blue dragon scale mail | +9 | — | shock resistance | 40 | 900 | dragonhide | Shock resistance. |
-| green dragon scale mail | +9 | — | poison resistance | 40 | 900 | dragonhide | Poison resistance. |
-| yellow dragon scale mail | +9 | — | acid resistance | 40 | 900 | dragonhide | Acid resistance. |
+| leather armor | +2 | 1 | — | 150 | 5 | leather |  |
+| leather jacket | +1 | — | — | 30 | 10 | leather |  |
+| gray dragon scale mail | +9 | — | magic resistance | 40 | 1200 | dragonhide | Endgame body-armor goal. |
+| gold dragon scale mail | +9 | — | — | 40 | 900 | dragonhide | Emits light. |
+| silver dragon scale mail | +9 | — | reflection | 40 | 1200 | dragonhide | Survives a wand of death. |
+| red dragon scale mail | +9 | — | fire resistance | 40 | 900 | dragonhide |  |
+| white dragon scale mail | +9 | — | cold resistance | 40 | 900 | dragonhide |  |
+| orange dragon scale mail | +9 | — | sleep resistance | 40 | 900 | dragonhide |  |
+| black dragon scale mail | +9 | — | disintegration resistance | 40 | 1200 | dragonhide |  |
+| blue dragon scale mail | +9 | — | shock resistance | 40 | 900 | dragonhide |  |
+| green dragon scale mail | +9 | — | poison resistance | 40 | 900 | dragonhide |  |
+| yellow dragon scale mail | +9 | — | acid resistance | 40 | 900 | dragonhide | Rare. |
 
 #### Dragon scales
 
 | Armor | AC | MC | Power | Wt | Cost | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| gray dragon scales | +3 | — | magic resistance | 40 | 700 | dragonhide | Wear them as a cloak for magic resistance; or make-into to upgrade to scale mail (recommended). |
+|-------|----|----|-------|----|------|----------|--------------------------------------------------------------------|
+| gray dragon scales | +3 | — | magic resistance | 40 | 700 | dragonhide | Make-into upgrade to scale mail. |
 | gold dragon scales | +3 | — | — | 40 | 500 | dragonhide |  |
-| silver dragon scales | +3 | — | reflection | 40 | 700 | dragonhide | Reflection; same upgrade path as gray. |
-| red dragon scales | +3 | — | fire resistance | 40 | 500 | dragonhide | Fire resistance; upgrade to mail when possible. |
+| silver dragon scales | +3 | — | reflection | 40 | 700 | dragonhide |  |
+| red dragon scales | +3 | — | fire resistance | 40 | 500 | dragonhide |  |
 | white dragon scales | +3 | — | cold resistance | 40 | 500 | dragonhide |  |
 | orange dragon scales | +3 | — | sleep resistance | 40 | 500 | dragonhide |  |
 | black dragon scales | +3 | — | disintegration resistance | 40 | 700 | dragonhide |  |
@@ -6790,81 +6792,81 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 #### Shirts
 
 | Armor | AC | MC | Power | Wt | Cost | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| Hawaiian shirt | +0 | — | — | 5 | 3 | cloth | The Tourist starts in one. Worn under body armor for a small extra AC. |
-| T-shirt | +0 | — | — | 5 | 2 | cloth | Sometimes engraved with a maker's slogan. Worn under body armor. |
+|-------|----|----|-------|----|------|----------|--------------------------------------------------------------------|
+| Hawaiian shirt | +0 | — | — | 5 | 3 | cloth | Tourist starter. Worn under body armor. |
+| T-shirt | +0 | — | — | 5 | 2 | cloth | Worn under body armor. |
 
 #### Cloaks
 
 | Armor | AC | MC | Power | Wt | Cost | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| mummy wrapping | +0 | 1 | — | 3 | 2 | cloth | Blocks invisibility while worn (you become visible). Tactical use only. |
-| elven cloak | +1 | 1 | stealth | 10 | 60 | cloth | Stealth. Often a Ranger's first pick. |
+|-------|----|----|-------|----|------|----------|--------------------------------------------------------------------|
+| mummy wrapping | +0 | 1 | — | 3 | 2 | cloth | Blocks invisibility while worn. |
+| elven cloak | +1 | 1 | stealth | 10 | 60 | cloth |  |
 | orcish cloak | +0 | 1 | — | 10 | 40 | cloth |  |
 | dwarvish cloak | +0 | 1 | — | 10 | 50 | cloth |  |
-| oilskin cloak | +1 | 2 | — | 10 | 50 | cloth | Better against grabby attacks (less likely to drop items). |
-| robe | +2 | 2 | — | 15 | 50 | cloth | +1 spellcasting effectiveness for any caster. |
-| alchemy smock | +1 | 1 | poison resistance | 10 | 50 | cloth | Poison resistance — fantastic early-game safety. |
+| oilskin cloak | +1 | 2 | — | 10 | 50 | cloth | Resists grab attacks. |
+| robe | +2 | 2 | — | 15 | 50 | cloth | +1 spellcasting effectiveness. |
+| alchemy smock | +1 | 1 | poison resistance | 10 | 50 | cloth | Fantastic early-game safety. |
 | leather cloak | +1 | 1 | — | 15 | 40 | leather |  |
-| cloak of protection | +3 | 3 | protection | 10 | 50 | cloth | +3 MC. The single best non-magical defensive cloak. |
-| cloak of invisibility | +1 | 1 | invisibility | 10 | 60 | cloth | Permanent invisibility while worn. |
-| cloak of magic resistance | +1 | 1 | magic resistance | 10 | 60 | cloth | Magic resistance from a much lighter, more available source than dragon scale mail. |
-| cloak of displacement | +1 | 1 | displacement | 10 | 50 | cloth | Monsters attack the wrong square fairly often. |
+| cloak of protection | +3 | 3 | protection | 10 | 50 | cloth | Best non-magical defensive cloak. |
+| cloak of invisibility | +1 | 1 | invisibility | 10 | 60 | cloth |  |
+| cloak of magic resistance | +1 | 1 | magic resistance | 10 | 60 | cloth | Lightest source of magic resistance. |
+| cloak of displacement | +1 | 1 | displacement | 10 | 50 | cloth |  |
 
 #### Helmets
 
 | Armor | AC | MC | Power | Wt | Cost | Material | Notes |
-|---|---|---|---|---|---|---|---|
+|-------|----|----|-------|----|------|----------|--------------------------------------------------------------------|
 | elven leather helm | +1 | — | — | 3 | 8 | leather |  |
 | orcish helm | +1 | — | — | 30 | 10 | iron |  |
 | dwarvish iron helm | +2 | — | — | 40 | 20 | iron |  |
-| fedora | +0 | — | — | 3 | 1 | cloth | Tourist starter. The Eye of the Aethiopica artifact form has this base. |
-| cornuthaum | +0 | 1 | clairvoyance | 4 | 80 | cloth | Wizards: clairvoyance. Non-Wizards: BLOCKS clairvoyance from other sources. |
-| dunce cap | +0 | — | — | 4 | 1 | cloth | Sets Int and Wis to 6 while worn. Cursed when generated. The classic newcomer's trap. |
+| fedora | +0 | — | — | 3 | 1 | cloth | Tourist starter; Eye of the Aethiopica base. |
+| cornuthaum | +0 | 1 | clairvoyance | 4 | 80 | cloth | Wizards only; blocks other clairvoyance for non-Wizards. |
+| dunce cap | +0 | — | — | 4 | 1 | cloth | Int/Wis → 6. Always cursed on generation. |
 | dented pot | +1 | — | — | 10 | 8 | iron |  |
-| helm of brilliance | +1 | — | — | 40 | 50 | glass | Glass; +d4 Int and Wis when blessed and enchanted. |
+| helm of brilliance | +1 | — | — | 40 | 50 | glass | +d4 Int/Wis when blessed and enchanted. |
 | helmet | +1 | — | — | 30 | 10 | iron |  |
-| helm of caution | +1 | — | warning | 50 | 50 | iron | Warning. See dangerous monsters before you bump into them. |
-| helm of opposite alignment | +1 | — | — | 50 | 50 | iron | Flips your alignment. Cursed → cursed for life. Avoid. |
-| helm of telepathy | +1 | — | telepathy | 50 | 50 | iron | Telepathy while blind. The reason to wear an unidentified eye-of-the-Aethiopica. |
+| helm of caution | +1 | — | warning | 50 | 50 | iron |  |
+| helm of opposite alignment | +1 | — | — | 50 | 50 | iron | Flips alignment. Catastrophic if cursed. |
+| helm of telepathy | +1 | — | telepathy | 50 | 50 | iron | Telepathy while blind. |
 
 #### Gloves
 
 | Armor | AC | MC | Power | Wt | Cost | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| leather gloves | +1 | — | — | 10 | 8 | leather | Generic hand armor. |
-| gauntlets of fumbling | +1 | — | fumbling (BAD) | 10 | 50 | leather | Frequent fumble checks — drops weapon, miss attacks. Avoid. |
-| gauntlets of power | +1 | — | — | 30 | 50 | iron | Sets Strength to 25 while worn. Endgame must-have. |
-| gauntlets of dexterity | +1 | — | — | 10 | 50 | leather | +d3 Dex per enchantment level. |
+|-------|----|----|-------|----|------|----------|--------------------------------------------------------------------|
+| leather gloves | +1 | — | — | 10 | 8 | leather |  |
+| gauntlets of fumbling | +1 | — | fumbling (BAD) | 10 | 50 | leather | Avoid. |
+| gauntlets of power | +1 | — | — | 30 | 50 | iron | Sets Strength to 25. |
+| gauntlets of dexterity | +1 | — | — | 10 | 50 | leather | +d3 Dex per enchantment. |
 
 #### Boots
 
 | Armor | AC | MC | Power | Wt | Cost | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| low boots | +1 | — | — | 10 | 8 | leather | Basic foot armor. |
-| iron shoes | +2 | — | — | 50 | 16 | iron | More AC than low boots but heavier. |
-| high boots | +2 | — | — | 20 | 12 | leather | Strong foot armor. |
-| speed boots | +1 | — | speed | 20 | 50 | leather | Permanent +1 speed. |
-| water walking boots | +1 | — | water walking | 15 | 50 | leather | Walk over moats, fountains, water. Critical for Castle drawbridge. |
-| jumping boots | +1 | — | jumping | 20 | 50 | leather | Apply to leap up to several squares. Tactical relocation. |
-| elven boots | +1 | — | stealth | 15 | 8 | leather | Stealth from your feet. |
-| kicking boots | +1 | — | — | 50 | 8 | iron | Better kicks but no other utility. |
-| fumble boots | +1 | — | fumbling (BAD) | 20 | 30 | leather | Like gauntlets of fumbling but on your feet. Avoid. |
-| levitation boots | +1 | — | levitation (BAD) | 15 | 30 | leather | Float. Cannot pick things up. Cannot remove while levitating except by transformation. Trap item. |
+|-------|----|----|-------|----|------|----------|--------------------------------------------------------------------|
+| low boots | +1 | — | — | 10 | 8 | leather |  |
+| iron shoes | +2 | — | — | 50 | 16 | iron |  |
+| high boots | +2 | — | — | 20 | 12 | leather |  |
+| speed boots | +1 | — | speed | 20 | 50 | leather |  |
+| water walking boots | +1 | — | water walking | 15 | 50 | leather | Critical for the Castle drawbridge. |
+| jumping boots | +1 | — | jumping | 20 | 50 | leather | `#apply` to leap. |
+| elven boots | +1 | — | stealth | 15 | 8 | leather |  |
+| kicking boots | +1 | — | — | 50 | 8 | iron |  |
+| fumble boots | +1 | — | fumbling (BAD) | 20 | 30 | leather | Avoid. |
+| levitation boots | +1 | — | levitation (BAD) | 15 | 30 | leather | Can't remove while levitating. Trap item. |
 
 #### Shields
 
 | Armor | AC | MC | Power | Wt | Cost | Material | Notes |
-|---|---|---|---|---|---|---|---|
-| small shield | +1 | — | — | 30 | 3 | wood | Basic shield. Frees you from large-shield arm penalty. |
-| shield of drain resistance | +1 | — | drain resistance | 30 | 50 | wood | Drain resistance from a shield slot. |
-| shield of shock resistance | +1 | — | shock resistance | 30 | 50 | wood | Shock resistance from a shield slot. |
-| elven shield | +2 | — | — | 40 | 7 | wood | Light and elegant. |
-| Uruk-hai shield | +1 | — | — | 50 | 7 | iron | The orcish lordly version. |
-| orcish shield | +1 | — | — | 50 | 7 | iron | Like the elven version but uglier. |
-| large shield | +2 | — | — | 100 | 10 | iron | Best non-magical AC but blocks two-handed weapons. |
-| dwarvish roundshield | +2 | — | — | 100 | 10 | iron | Dwarves drop these. |
-| shield of reflection | +2 | — | reflection | 50 | 50 | silver | Reflection without taking a body-armor slot. The standard answer to wand of death. |
+|-------|----|----|-------|----|------|----------|--------------------------------------------------------------------|
+| small shield | +1 | — | — | 30 | 3 | wood |  |
+| shield of drain resistance | +1 | — | drain resistance | 30 | 50 | wood |  |
+| shield of shock resistance | +1 | — | shock resistance | 30 | 50 | wood |  |
+| elven shield | +2 | — | — | 40 | 7 | wood |  |
+| Uruk-hai shield | +1 | — | — | 50 | 7 | iron |  |
+| orcish shield | +1 | — | — | 50 | 7 | iron |  |
+| large shield | +2 | — | — | 100 | 10 | iron | Blocks two-handed weapons. |
+| dwarvish roundshield | +2 | — | — | 100 | 10 | iron |  |
+| shield of reflection | +2 | — | reflection | 50 | 50 | silver | Standard wand-of-death answer; saves body slot. |
 
 ---
 
