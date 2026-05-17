@@ -1842,6 +1842,14 @@ and in the endgame.
 breathing lets you survive underwater. Levitation keeps you above
 the water entirely. Kill sea monsters at range whenever possible.
 
+#### Attack Wands and the Warning Shot
+
+The first time any given monster zaps an offensive wand at you,
+the shot misses. If you can see the monster, the wand identifies
+itself in the same moment, so now you know what was just aimed at
+you and you have a turn to do something about it before the next
+zap connects.
+
 #### The Touch of Death
 
 Some monsters, most notably Death (one of the Riders on the Astral
