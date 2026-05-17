@@ -598,7 +598,7 @@ and monsters scattered about. But some rooms are special:
    │···@···│               │$Z···$Z·│             │·Z·\··Z·│
    │!··)·/·│               │·Z$Z··Z$│             │··Z·Z···│
    └──+────┘               └───+────┘             └───+────┘
-       #                       #                      #
+      #                        #                      #
    @ = shopkeeper          Z = sleeping           \ = throne
    Items for sale.         $ = gold piles         Monsters guard.
 ```
