@@ -65,51 +65,52 @@ you alive.
 5. [Points of Interest](#points-of-interest) — Fountains, altars, thrones, and sinks
 6. [Branches and Landmarks](#branches-and-landmarks) — The Mines, Sokoban, and beyond
 7. [Traps and Hazards](#traps-and-hazards) — What the dungeon has in store for you
+8. [Feelings and Sounds](#feelings-and-sounds) — Cryptic messages the dungeon uses to tell you what just happened
 
 **Part Three: The Locals**
 
-8. [A Field Guide to Dungeon Fauna](#a-field-guide-to-dungeon-fauna) — Monster classes at a glance
-9. [Dangerous Encounters](#dangerous-encounters) — Special abilities, instadeaths, and what to fear
-10. [Making Friends](#making-friends) — Pets, taming, and peaceful coexistence
+9. [A Field Guide to Dungeon Fauna](#a-field-guide-to-dungeon-fauna) — Monster classes at a glance
+10. [Dangerous Encounters](#dangerous-encounters) — Special abilities, instadeaths, and what to fear
+11. [Making Friends](#making-friends) — Pets, taming, and peaceful coexistence
 
 **Part Four: Gear and Provisions**
 
-11. [A Practical Identification Strategy](#a-practical-identification-strategy) — Figuring out what you've found
-12. [Provisions and Dining](#provisions-and-dining) — Food, nutrition, and dining
-13. [The Apothecary](#the-apothecary) — Potions and their many uses
-14. [The Scroll Rack](#the-scroll-rack) — Scrolls, their effects, and confused reading
-15. [Wands and Staves](#wands-and-staves) — Magical implements
-16. [Rings and Amulets](#rings-and-amulets) — Jewelry, for better or worse
-17. [Tools of the Trade](#tools-of-the-trade) — From pickaxes to magic lamps
-18. [The Armory](#the-armory) — Weapons, armor, and hitting things
-19. [Artifacts](#artifacts) — Legendary equipment and how to obtain it
+12. [A Practical Identification Strategy](#a-practical-identification-strategy) — Figuring out what you've found
+13. [Provisions and Dining](#provisions-and-dining) — Food, nutrition, and dining
+14. [The Apothecary](#the-apothecary) — Potions and their many uses
+15. [The Scroll Rack](#the-scroll-rack) — Scrolls, their effects, and confused reading
+16. [Wands and Staves](#wands-and-staves) — Magical implements
+17. [Rings and Amulets](#rings-and-amulets) — Jewelry, for better or worse
+18. [Tools of the Trade](#tools-of-the-trade) — From pickaxes to magic lamps
+19. [The Armory](#the-armory) — Weapons, armor, and hitting things
+20. [Artifacts](#artifacts) — Legendary equipment and how to obtain it
 
 **Part Five: The Craft of Adventuring**
 
-20. [Divine Relations](#divine-relations) — Prayer, sacrifice, and altars
-21. [The Art of Combat](#the-art-of-combat) — Hit probability, damage, and tactics
-22. [Wishes and Wishing](#wishes-and-wishing) — Getting what you want
-23. [Spellcasting](#spellcasting) — Magic for the studious adventurer
-24. [Curses and How to Break Them](#curses-and-how-to-break-them)
-25. [Luck and Fortune](#luck-and-fortune) — The hidden numbers that shape your fate
+21. [Divine Relations](#divine-relations) — Prayer, sacrifice, and altars
+22. [The Art of Combat](#the-art-of-combat) — Hit probability, damage, and tactics
+23. [Wishes and Wishing](#wishes-and-wishing) — Getting what you want
+24. [Spellcasting](#spellcasting) — Magic for the studious adventurer
+25. [Curses and How to Break Them](#curses-and-how-to-break-them)
+26. [Luck and Fortune](#luck-and-fortune) — The hidden numbers that shape your fate
 
 **Part Six: The Deep Dungeon**
 
-26. [The Castle](#the-castle) — The gateway to Gehennom
-27. [Gehennom](#gehennom) — A travel advisory
-28. [The Ascension Kit](#the-ascension-kit) — What the winners actually carry
-29. [The Ascension Run](#the-ascension-run) — Getting back out alive
-30. [The Elemental Planes](#the-elemental-planes) — The final gauntlet
+27. [The Castle](#the-castle) — The gateway to Gehennom
+28. [Gehennom](#gehennom) — A travel advisory
+29. [The Ascension Kit](#the-ascension-kit) — What the winners actually carry
+30. [The Ascension Run](#the-ascension-run) — Getting back out alive
+31. [The Elemental Planes](#the-elemental-planes) — The final gauntlet
 
 **Appendices**
 
-31. [Advanced Controls](#advanced-controls) — Command counts, prefixes, and efficiency techniques
-32. [Sokoban Solutions](#sokoban-solutions) — All eight level variants, solved
-33. [Voluntary Challenges](#voluntary-challenges) — Conducts and self-imposed restrictions
-34. [Shopping and Shopkeeper Pricing](#shopping-and-shopkeeper-pricing) — Commerce in the dungeon
-35. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x
-36. [If You've Been Here Before](#if-youve-been-here-before) — For travelers returning from 3.6.x
-37. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
+32. [Advanced Controls](#advanced-controls) — Command counts, prefixes, and efficiency techniques
+33. [Sokoban Solutions](#sokoban-solutions) — All eight level variants, solved
+34. [Voluntary Challenges](#voluntary-challenges) — Conducts and self-imposed restrictions
+35. [Shopping and Shopkeeper Pricing](#shopping-and-shopkeeper-pricing) — Commerce in the dungeon
+36. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x
+37. [If You've Been Here Before](#if-youve-been-here-before) — For travelers returning from 3.6.x
+38. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
 
 ---
 
@@ -443,6 +444,13 @@ of turns, you'll starve. But rushing past rooms means missing
 items you need. The sweet spot is to explore each level fairly
 completely (check rooms, open doors, look for hidden passages) but
 don't grind. When you've found what the level has to offer, move on.
+
+**Rule 6: Chase the big three.** The short list of acquisitions that
+keep you alive through the whole run is **magic resistance**,
+**reflection**, and **poison resistance**, plus a **lizard corpse**
+in your pack for petrification emergencies. Everything else is
+luxury. Get these as early as you can — they decide which late-game
+fights are survivable.
 
 #### Things That Kill You (And How Not to Let Them)
 
@@ -1453,6 +1461,46 @@ semi-permanent until you land.
 
 ---
 
+### Feelings and Sounds
+
+Much of the most important information in NetHack comes to you as
+cryptic feelings and sounds. They sound like atmosphere, but most
+of them are specific signals — a corpse intrinsic just landed, a
+vault is on this level, your pet died offscreen. If you don't know
+what they mean, you'll miss the cues entirely. They are worth
+memorizing:
+
+| Message                                          | What it means                                                            |
+|--------------------------------------------------|--------------------------------------------------------------------------|
+| *"You have a sad feeling for a moment, then it passes."* | Your pet just died offscreen.                                        |
+| *"You feel healthy."*                  | Intrinsic poison resistance gained from a corpse.                                      |
+| *"You feel warm!"*                     | Intrinsic fire resistance gained from a corpse.                                        |
+| *"You feel cool."*                     | Intrinsic cold resistance gained from a corpse.                                        |
+| *"You feel a mild buzz."*              | Intrinsic shock resistance gained from a corpse.                                       |
+| *"You feel wide awake."*               | Intrinsic sleep resistance gained from a corpse.                                       |
+| *"You feel quick!"*                    | Intrinsic speed gained from a corpse.                                                  |
+| *"You feel envious of the gods…"*      | Intrinsic disintegration resistance gained from a corpse.                              |
+| *"Your mind oozes shut."*              | The corpse would have granted an intrinsic you already have.                           |
+| *"You feel hungry."*                   | Scroll of food detection, no food on level.                                            |
+| *"You feel materially poor."*          | Scroll of gold detection, no gold on level.                                            |
+| *"You feel like someone is helping you."* | Scroll of remove curse; worn/wielded cursed items uncursed.                         |
+| *"You feel a strange sensation, then it passes."* | Ring of warning.                                                            |
+| *"You feel light-footed."*             | Ring of stealth.                                                                       |
+| *"You feel in touch with the spiritual world."* | Ring of free action.                                                          |
+| *"You feel charged with power."*       | Ring of conflict.                                                                      |
+| *"You feel a strange mental acuity."*  | Ring of searching, or potion of object detection with no objects on level. |
+| *"Wow! This makes you feel great!"*    | Potion of restore ability; a drained stat returned to peak.                            |
+| *"You hear someone counting money."*<br>*"You hear a strange wind."* | Vault on this level.                                            |
+| *"You hear someone cursing shoplifters."* | Shop on this level.                                                                 |
+| *"You hear bubbling water."*<br>*"You hear water falling on coins."* | Fountain on this level.                                          |
+| *"You hear a bugle playing reveille!"* | A soldier just woke nearby soldiers; expect a fight.                                   |
+| *"You feel feverish."*                 | Lycanthropy infection from a were-monster. Eat wolfsbane, dip in holy water, or pray.  |
+| *"You are slowing down."*              | You're turning to stone. Immediately eat a lizard corpse, drink acid, or pray.         |
+| *"You are turning into slime."*        | Green-slime contagion. Burn it off (fire scroll/spell/wand) or pray.                   |
+| *"You feel deathly sick."*             | Terminal illness (Pestilence, Demogorgon). Quaff extra healing, eat eucalyptus, or pray. |
+
+---
+
 ## Part Three: The Locals
 
 ---
@@ -1534,12 +1582,12 @@ by how early you might encounter them:
 | `D`    | Dragons          | Each color has its own breath weapon, resistance, and scale mail property. See note below.               |
 | `h`    | Mind flayers     | Drain intelligence on hit. **If Int reaches 0, you die.** Keep distance or kill fast.                    |
 | `V`    | Vampires         | Drain levels. Vampire lords fly and are fast.                                                            |
-| `w`    | Purple worm      | The big worm: swallows you whole on a hit, then digests. Cut your way out from inside.                  |
+| `w`    | Purple worms     | The big worm: swallows you whole on a hit, then digests. Cut your way out from inside.                  |
 | `X`    | Xorn             | Phases through walls and floors. Three claws and a bite per turn; hard to ambush and hard to escape from. |
 | `;`    | Sea monsters     | Drowning is an instadeath. Don't fight in water without a plan.                                          |
 | `&`    | Demons           | Major demons (Orcus, Demogorgon, Asmodeus) are boss-level threats.                                       |
 | `@`    | Humans (hostile) | Includes the Wizard of Yendor, who is the most persistent nuisance in the game.                          |
-| `Q`    | Quantum mechanics / genetic engineer | Quantum mechanics teleport their target on a hit; genetic engineers (new in 5.0) polymorph their target. The `Q` class is small but every one of them is a surprise. |
+| `Q`    | Quantum mechanics / genetic engineers | Quantum mechanics teleport their target on a hit; genetic engineers (new in 5.0) polymorph their target. The `Q` class is small but every one of them is a surprise. |
 
 #### Special Symbols
 
@@ -1993,14 +2041,6 @@ beam back. Magic resistance does NOT protect against disintegration.
 Reading a scroll of genocide while confused can genocide your own
 race. Don't do this.
 
-#### The Amulet of Life Saving
-
-This deserves special mention. An amulet of life saving, when worn,
-revives you once from any death (including instadeaths). The amulet
-is consumed in the process. If you find one, save it for the
-endgame or for situations where instadeath risk is high. It's your
-insurance policy.
-
 #### Delayed Deaths
 
 Not every fatal threat kills instantly. Several give you a few
@@ -2096,13 +2136,6 @@ have a portable polymorph source. Pair a tin with *polymorph
 control* and you have a controlled polymorph that survives
 Gehennom's hot ground. The first engineer that kills you is a
 loss; the second one in your bag is a kit.
-
-#### The Essential Kit
-
-The short version: the big three are **magic resistance**, **reflection**,
-**poison resistance**, and a **lizard corpse** to survive the
-dungeon's worst surprises. Get these as early as you can. Everything
-else is luxury. These are survival.
 
 ---
 
@@ -2813,43 +2846,6 @@ safest method first. Altars and shops are free. Engrave-testing costs
 one charge. Use-testing costs more and carries risk. Scrolls of
 identify are the precious last resort. Work through the list in order
 and you'll rarely be surprised.
-
----
-
-### Feelings and Sounds
-
-Much of the most important information in NetHack comes to you as
-cryptic feelings and sounds. If you don't know what they mean,
-you'll miss the cues entirely. They are worth memorizing:
-
-| Message                                          | What it means                                                            |
-|--------------------------------------------------|--------------------------------------------------------------------------|
-| *"You have a sad feeling for a moment, then it passes."* | Your pet just died offscreen.                                        |
-| *"You feel healthy."*                  | Intrinsic poison resistance gained from a corpse.                                      |
-| *"You feel warm!"*                     | Intrinsic fire resistance gained from a corpse.                                        |
-| *"You feel cool."*                     | Intrinsic cold resistance gained from a corpse.                                        |
-| *"You feel a mild buzz."*              | Intrinsic shock resistance gained from a corpse.                                       |
-| *"You feel wide awake."*               | Intrinsic sleep resistance gained from a corpse.                                       |
-| *"You feel quick!"*                    | Intrinsic speed gained from a corpse.                                                  |
-| *"You feel envious of the gods…"*      | Intrinsic disintegration resistance gained from a corpse.                              |
-| *"Your mind oozes shut."*              | The corpse would have granted an intrinsic you already have.                           |
-| *"You feel hungry."*                   | Scroll of food detection, no food on level.                                            |
-| *"You feel materially poor."*          | Scroll of gold detection, no gold on level.                                            |
-| *"You feel like someone is helping you."* | Scroll of remove curse; worn/wielded cursed items uncursed.                         |
-| *"You feel a strange sensation, then it passes."* | Ring of warning.                                                            |
-| *"You feel light-footed."*             | Ring of stealth.                                                                       |
-| *"You feel in touch with the spiritual world."* | Ring of free action.                                                          |
-| *"You feel charged with power."*       | Ring of conflict.                                                                      |
-| *"You feel a strange mental acuity."*  | Ring of searching, or potion of object detection with no objects on level. |
-| *"Wow! This makes you feel great!"*    | Potion of restore ability; a drained stat returned to peak.                            |
-| *"You hear someone counting money."*<br>*"You hear a strange wind."* | Vault on this level.                                            |
-| *"You hear someone cursing shoplifters."* | Shop on this level.                                                                 |
-| *"You hear bubbling water."*<br>*"You hear water falling on coins."* | Fountain on this level.                                          |
-| *"You hear a bugle playing reveille!"* | A soldier just woke nearby soldiers; expect a fight.                                   |
-| *"You feel feverish."*                 | Lycanthropy infection from a were-monster. Eat wolfsbane, dip in holy water, or pray.  |
-| *"You are slowing down."*              | You're turning to stone. Immediately eat a lizard corpse, drink acid, or pray.         |
-| *"You are turning into slime."*        | Green-slime contagion. Burn it off (fire scroll/spell/wand) or pray.                   |
-| *"You feel deathly sick."*             | Terminal illness (Pestilence, Demogorgon). Quaff extra healing, eat eucalyptus, or pray. |
 
 ---
 
