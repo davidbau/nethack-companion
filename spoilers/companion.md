@@ -1813,28 +1813,25 @@ epitaph.
 
 #### Petrification (Stoning)
 
-Anything involving cockatrices or Medusa. Touching a cockatrice
-without gloves, eating a cockatrice corpse, being hit by Medusa's
-gaze, or even stepping on a cockatrice corpse while barefoot will
-turn you to stone. The process can be immediate or delayed; the
-delayed form announces itself with a message progression of
-*"You are slowing down,"* then *"Your limbs are stiffening,"*
-then death, with a few turns between each warning to act.
+Touching a cockatrice without gloves, eating a cockatrice corpse,
+catching Medusa's gaze, or stepping on a cockatrice corpse while
+barefoot will turn you to stone. The process is sometimes
+immediate; otherwise it announces itself with *"You are slowing
+down,"* then *"Your limbs are stiffening,"* then death, a few
+turns apart.
 
-**Defenses while it's happening:** eat a lizard corpse (this is why
-you carry one at all times), eat an acidic corpse, pray if your
-god is willing, cast stone to flesh on yourself, or use a wand of
-polymorph or amulet of unchanging to interrupt the process.
+**Defenses ahead of time:** wear gloves around cockatrice corpses,
+use reflection against Medusa, and gain stoning resistance from
+acid blob corpses (which makes you immune outright).
 
-**Defenses ahead of time:** wear gloves when handling cockatrice
-corpses, use reflection against Medusa, and gain stoning resistance
-from eating an acid blob or certain other sources (which makes you
-immune outright).
+**Defenses while it's happening:** eat a lizard corpse (this is
+why you carry one), eat an acidic corpse, pray, cast stone to
+flesh on yourself, or use a wand of polymorph or amulet of
+unchanging to interrupt the process.
 
 **The other side of the coin:** a wielded cockatrice corpse (with
-gloves on) is one of the most devastating weapons in the game.
-Anything you hit with it that lacks stoning resistance turns to
-stone.
+gloves on) is one of the game's most devastating weapons —
+anything you hit that lacks stoning resistance turns to stone.
 
 #### Drowning
 
@@ -6575,22 +6572,6 @@ two resistances. In the late game, when inventory is a puzzle and
 every slot counts, wearing it lets you retire the lamp and use
 that slot for something that actually matters.
 
-**Plan for more wishes.** Vlad's throne now guarantees a wish
-eventually (four of thirteen outcomes; the throne survives the
-other nine so you can sit again), and picking up the Amulet of
-Yendor for the first time grants a wish. A prepared player can
-reliably expect five to seven wishes across a game now. Spend
-early wishes more freely; a good second or third priority item is
-now a reasonable target.
-
-**Your pet can grow stronger and come back from the dead.** Pets
-gain resistances from corpses just as you do. More importantly, a
-dead pet can be revived: stand on its corpse at a co-aligned altar
-and pray. The conditions have to align (prayer timeout, alignment
-record, Luck), but when they do, the companion that's been with
-you since level 3 walks out of the other side of death and gets
-back to work.
-
 #### What to Watch Out For
 
 **Luck-grinding by sacrificing weak corpses no longer works.** In
@@ -6608,19 +6589,13 @@ you want to push higher.
 
 #### What to Change in Your Gameplay Habits in 5.0
 
-1. Stop planning permanent speed or invisibility around self-zap
-   wands.
-2. Stop luck-grinding with low-difficulty sacrifice fodder once
-   luck is positive.
-3. Stop leaving containers unattended in cleared-but-not-cleaned
-   areas.
-4. Stop carrying speculative corpse collections through
-   caster-heavy floors.
-5. Stop walking toward ranged threats expecting to neutralize them
-   in melee.
-6. Stop dropping potions on the floor in Gehennom.
-7. Start checking every container in the first ten levels for
-   supply caches.
+- Stop leaving containers unattended in cleared-but-not-cleaned
+  areas, and stop hauling speculative corpse collections through
+  caster-heavy floors (monsters now loot and animate).
+- Stop dropping potions on the floor in Gehennom (hot ground
+  shatters them).
+- Start checking every container in the first ten levels for
+  supply caches.
 
 ---
 
