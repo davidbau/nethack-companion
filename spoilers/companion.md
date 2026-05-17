@@ -70,47 +70,48 @@ you alive.
 **Part Three: The Locals**
 
 9. [A Field Guide to Dungeon Fauna](#a-field-guide-to-dungeon-fauna) — Monster classes at a glance
-10. [Dangerous Encounters](#dangerous-encounters) — Special abilities, instadeaths, and what to fear
-11. [Making Friends](#making-friends) — Pets, taming, and peaceful coexistence
+10. [What Actually Kills Adventurers](#what-actually-kills-adventurers) — Top-ten killers, bones-level hazards, mimics, dragons
+11. [Dangerous Encounters](#dangerous-encounters) — Special abilities, instadeaths, and what to fear
+12. [Making Friends](#making-friends) — Pets, taming, and peaceful coexistence
 
 **Part Four: Gear and Provisions**
 
-12. [A Practical Identification Strategy](#a-practical-identification-strategy) — Figuring out what you've found
-13. [Provisions and Dining](#provisions-and-dining) — Food, nutrition, and dining
-14. [The Apothecary](#the-apothecary) — Potions and their many uses
-15. [The Scroll Rack](#the-scroll-rack) — Scrolls, their effects, and confused reading
-16. [Wands and Staves](#wands-and-staves) — Magical implements
-17. [Rings and Amulets](#rings-and-amulets) — Jewelry, for better or worse
-18. [Tools of the Trade](#tools-of-the-trade) — From pickaxes to magic lamps
-19. [The Armory](#the-armory) — Weapons, armor, and hitting things
-20. [Artifacts](#artifacts) — Legendary equipment and how to obtain it
+13. [A Practical Identification Strategy](#a-practical-identification-strategy) — Figuring out what you've found
+14. [Provisions and Dining](#provisions-and-dining) — Food, nutrition, and dining
+15. [The Apothecary](#the-apothecary) — Potions and their many uses
+16. [The Scroll Rack](#the-scroll-rack) — Scrolls, their effects, and confused reading
+17. [Wands and Staves](#wands-and-staves) — Magical implements
+18. [Rings and Amulets](#rings-and-amulets) — Jewelry, for better or worse
+19. [Tools of the Trade](#tools-of-the-trade) — From pickaxes to magic lamps
+20. [The Armory](#the-armory) — Weapons, armor, and hitting things
+21. [Artifacts](#artifacts) — Legendary equipment and how to obtain it
 
 **Part Five: The Craft of Adventuring**
 
-21. [Divine Relations](#divine-relations) — Prayer, sacrifice, and altars
-22. [The Art of Combat](#the-art-of-combat) — Hit probability, damage, and tactics
-23. [Wishes and Wishing](#wishes-and-wishing) — Getting what you want
-24. [Spellcasting](#spellcasting) — Magic for the studious adventurer
-25. [Curses and How to Break Them](#curses-and-how-to-break-them)
-26. [Luck and Fortune](#luck-and-fortune) — The hidden numbers that shape your fate
+22. [Divine Relations](#divine-relations) — Prayer, sacrifice, and altars
+23. [The Art of Combat](#the-art-of-combat) — Hit probability, damage, and tactics
+24. [Wishes and Wishing](#wishes-and-wishing) — Getting what you want
+25. [Spellcasting](#spellcasting) — Magic for the studious adventurer
+26. [Curses and How to Break Them](#curses-and-how-to-break-them)
+27. [Luck and Fortune](#luck-and-fortune) — The hidden numbers that shape your fate
 
 **Part Six: The Deep Dungeon**
 
-27. [The Castle](#the-castle) — The gateway to Gehennom
-28. [Gehennom](#gehennom) — A travel advisory
-29. [The Ascension Kit](#the-ascension-kit) — What the winners actually carry
-30. [The Ascension Run](#the-ascension-run) — Getting back out alive
-31. [The Elemental Planes](#the-elemental-planes) — The final gauntlet
+28. [The Castle](#the-castle) — The gateway to Gehennom
+29. [Gehennom](#gehennom) — A travel advisory
+30. [The Ascension Kit](#the-ascension-kit) — What the winners actually carry
+31. [The Ascension Run](#the-ascension-run) — Getting back out alive
+32. [The Elemental Planes](#the-elemental-planes) — The final gauntlet
 
 **Appendices**
 
-32. [Advanced Controls](#advanced-controls) — Command counts, prefixes, and efficiency techniques
-33. [Sokoban Solutions](#sokoban-solutions) — All eight level variants, solved
-34. [Voluntary Challenges](#voluntary-challenges) — Conducts and self-imposed restrictions
-35. [Shopping and Shopkeeper Pricing](#shopping-and-shopkeeper-pricing) — Commerce in the dungeon
-36. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x
-37. [If You've Been Here Before](#if-youve-been-here-before) — For travelers returning from 3.6.x
-38. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
+33. [Advanced Controls](#advanced-controls) — Command counts, prefixes, and efficiency techniques
+34. [Sokoban Solutions](#sokoban-solutions) — All eight level variants, solved
+35. [Voluntary Challenges](#voluntary-challenges) — Conducts and self-imposed restrictions
+36. [Shopping and Shopkeeper Pricing](#shopping-and-shopkeeper-pricing) — Commerce in the dungeon
+37. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x
+38. [If You've Been Here Before](#if-youve-been-here-before) — For travelers returning from 3.6.x
+39. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
 
 ---
 
@@ -1600,91 +1601,9 @@ A few map glyphs aren't monsters in the conventional sense, but you'll see them 
 | `]`    | Strange object           | **Always a mimic.** No ordinary item ever displays as `]` (compare `[`, armor — `]` is its mirror). See the mimics note below. |
 | ` ` (space) | Ghost               | Ghosts left from bones files. The glyph is a literal space, which paints over the floor underneath: in a room, a ghost shows as a one-square *gap* in the floor where a `.` should be. Walk into the gap to identify it. |
 
-#### A note on mimics
+---
 
-You will frequently meet mimics in **shops**, with more as you get
-deeper. An average shop has one or two mimics sitting in the
-aisles, masquerading as items. They're slow (speed 3) but their
-claws hit hard. Small mimics rank in the top ten causes of death.
-
-**The visual tell.** A mimic appearing as a generic "strange
-object" renders on the map as `]` — a mirror of `[`, the armor
-class. No real item ever displays as `]`. A `]` on a shop floor
-or anywhere else is always a mimic.
-
-**Other contextual disguises** (rare in practice but worth
-knowing): a mimic in a temple may appear as an extra altar, in a
-Delphi room as a second fountain, in a maze as a lone boulder. So
-"a single piece of furniture that shouldn't be there" is
-suspicious.
-
-**How to uncover one safely.** Search the adjacent square (`s`)
-reveals concealed mimics like it reveals traps. Throw a cheap item
-at the suspected square; the mimic uncloaks and the item lands
-harmlessly. A stethoscope applied to the square also uncloaks.
-Telepathy, ESP, astral vision, and a wand of secret door detection
-see through the disguise and show the mimic as `m`. Your pet won't
-step onto a mimic.
-
-**Sticking.** Large and giant mimics glue you in place on a
-successful claw hit: you can't move, you can't go down stairs, you
-can't escape down a hole. Magic cancellation (cloak of protection,
-amulet of guarding, etc.) reduces the sticking chance — one more
-reason to secure MC before browsing mid-game shops.
-
-**Eating the corpse** turns you into a pile of gold (or, while
-hallucinating, an orange) for 20 / 40 / 50 turns depending on
-size. Anything that tries to pick "you" up snaps the spell.
-
-#### A note on dragons
-
-Dragons deserve a full briefing. Each color has its own breath
-weapon, resistance, scale mail property, and degree of desire to
-kill you specifically. The summary:
-
-**Gray** dragon scale mail grants magic resistance, the most important
-defensive property in the game, full stop. Gray dragons are the ones
-you most want to kill for their skin, and also the ones most likely to
-make you regret trying.
-
-**Silver** dragon scale mail grants reflection. The second pillar of not
-dying to wands.
-
-**Gold** dragons are new in 5.0 and breathe **fire**:
-the same breath weapon as red dragons, so the same defenses apply.
-Their scale mail is what makes them interesting. Worn gold dragon
-scale mail is permanently lit: blessed glows *radiantly* (radius 4),
-uncursed *brilliantly* (radius 3), cursed merely *brightly* (radius
-2). It is the only body-slot light source in the game, and it lets
-you abandon torches, lamps, and oil for the rest of the run. The
-mail also confers **hallucination resistance**: modest in
-combat, useful against violet fungi, the rare ill-timed potion
-spill, and the late-game caster who thinks one of those is a good
-finisher. Gold dragons themselves carry fire resistance as a
-breath defense and drop scales just like any other color, so the
-material costs the same hunt as the rest. If your lamp budget is
-eating into your ascension kit, gold dragon scale mail is the
-solution.
-
-**Black** dragon breath disintegrates, and disintegrates everything
-you're wearing along with you, including your magic resistance. Carry
-reflection or eat enough black dragons to grow disintegration
-resistance before going where they live. Their scale mail grants
-disintegration resistance plus drain resistance. The latter is a
-new 5.0 bonus and a rare extrinsic source.
-
-**Green** dragon scale mail grants sickness immunity, which is niche but
-occasionally the niche that saves you.
-
-All other colors follow the same logic: kill them for their scales,
-respect their breath weapon, and don't let them breathe on your
-spellbooks.
-
-The essentials: **never melee a floating eye, always carry a
-lizard corpse, and respect anything with `D` or `&` on your
-screen.**
-
-#### What actually kills adventurers
+### What Actually Kills Adventurers
 
 Only about **0.4% of games end in ascension.** The other 99.6%
 are deaths. NetHack ends in death by default; survival is the
@@ -1791,6 +1710,86 @@ adventurers than exotic instadeaths. Floating eyes, cockatrices,
 mind flayers, and disenchanters all matter (and they're catalogued
 under Dangerous Encounters below). But the median death is a
 preventable swarm of jackals on Dlvl 3.
+
+#### A note on mimics
+
+You will frequently meet mimics in **shops**, with more as you get
+deeper. An average shop has one or two mimics sitting in the
+aisles, masquerading as items. They're slow (speed 3) but their
+claws hit hard. Small mimics rank in the top ten causes of death.
+
+**The visual tell.** A mimic appearing as a generic "strange
+object" renders on the map as `]` — a mirror of `[`, the armor
+class. No real item ever displays as `]`. A `]` on a shop floor
+or anywhere else is always a mimic.
+
+**Other contextual disguises** (rare in practice but worth
+knowing): a mimic in a temple may appear as an extra altar, in a
+Delphi room as a second fountain, in a maze as a lone boulder. So
+"a single piece of furniture that shouldn't be there" is
+suspicious.
+
+**How to uncover one safely.** Search the adjacent square (`s`)
+reveals concealed mimics like it reveals traps. Throw a cheap item
+at the suspected square; the mimic uncloaks and the item lands
+harmlessly. A stethoscope applied to the square also uncloaks.
+Telepathy, ESP, astral vision, and a wand of secret door detection
+see through the disguise and show the mimic as `m`. Your pet won't
+step onto a mimic.
+
+**Sticking.** Large and giant mimics glue you in place on a
+successful claw hit: you can't move, you can't go down stairs, you
+can't escape down a hole. Magic cancellation (cloak of protection,
+amulet of guarding, etc.) reduces the sticking chance — one more
+reason to secure MC before browsing mid-game shops.
+
+**Eating the corpse** turns you into a pile of gold (or, while
+hallucinating, an orange) for 20 / 40 / 50 turns depending on
+size. Anything that tries to pick "you" up snaps the spell.
+
+#### A note on dragons
+
+Dragons deserve a full briefing. Each color has its own breath
+weapon, resistance, scale mail property, and degree of desire to
+kill you specifically. The summary:
+
+**Gray** dragon scale mail grants magic resistance, the most important
+defensive property in the game, full stop. Gray dragons are the ones
+you most want to kill for their skin, and also the ones most likely to
+make you regret trying.
+
+**Silver** dragon scale mail grants reflection. The second pillar of not
+dying to wands.
+
+**Gold** dragons are new in 5.0 and breathe **fire**:
+the same breath weapon as red dragons, so the same defenses apply.
+Their scale mail is what makes them interesting. Worn gold dragon
+scale mail is permanently lit: blessed glows *radiantly* (radius 4),
+uncursed *brilliantly* (radius 3), cursed merely *brightly* (radius
+2). It is the only body-slot light source in the game, and it lets
+you abandon torches, lamps, and oil for the rest of the run. The
+mail also confers **hallucination resistance**: modest in
+combat, useful against violet fungi, the rare ill-timed potion
+spill, and the late-game caster who thinks one of those is a good
+finisher. Gold dragons themselves carry fire resistance as a
+breath defense and drop scales just like any other color, so the
+material costs the same hunt as the rest. If your lamp budget is
+eating into your ascension kit, gold dragon scale mail is the
+solution.
+
+**Black** dragon breath disintegrates, and disintegrates everything
+you're wearing along with you, including your magic resistance. Carry
+reflection or eat enough black dragons to grow disintegration
+resistance before going where they live. Their scale mail grants
+disintegration resistance plus drain resistance. The latter is a
+new 5.0 bonus and a rare extrinsic source.
+
+**Green** dragon scale mail grants sickness immunity, which is niche but
+occasionally the niche that saves you.
+
+All other colors follow the same logic: kill them for their scales,
+respect their breath weapon, and don't let them breathe on your
+spellbooks.
 
 ---
 
