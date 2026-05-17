@@ -264,7 +264,7 @@ for skill in SKILL_ORDER:
     # Lopsided dash widths in the separator tell pandoc to give the
     # Notes column a much wider rendered column than the numeric ones.
     out.append('| Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |')
-    out.append('|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|')
+    out.append('|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|')
     for name, desc, f, kind in items:
         sn = f.get('sn', '').strip()
         dmg = fmt_damage(sn, f['sdam'], f['ldam'], f.get('hitbon', '0'), kind)

@@ -6556,7 +6556,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | dagger | 1d4 / 1d3 | 10 | 4 | +2 | iron | Stackable; Rogues multishot up to three in a single throw. |
 | elven dagger | 1d5 / 1d3 | 10 | 4 | +2 | wood | Stackable. Sting is the artifact form. |
 | orcish dagger | 1d3 / 1d3 | 10 | 4 | +2 | iron | Stackable. |
@@ -6570,7 +6570,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | scalpel | 1d3 / 1d3 | 5 | 6 | +2 | metal |  |
 | knife | 1d3 / 1d2 | 5 | 4 | — | iron |  |
 | stiletto | 1d3 / 1d2 | 5 | 4 | — | iron |  |
@@ -6584,7 +6584,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | short sword | 1d6 / 1d8 | 30 | 10 | — | iron | The Rogue's starter. |
 | elven short sword | 1d8 / 1d8 | 30 | 10 | — | wood |  |
 | orcish short sword | 1d5 / 1d8 | 30 | 10 | — | iron |  |
@@ -6597,7 +6597,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | scimitar | 1d8 / 1d8 | 40 | 15 | — | iron |  |
 | silver saber | 1d8 / 1d8 | 40 | 75 | — | silver | Werebane is the artifact form — silver damage to weres and demons. |
 
@@ -6608,7 +6608,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | broadsword | 1d4+1d4 / 1d6+1 | 70 | 10 | — | iron | +d4 small, +1 large. Stormbringer is the chaotic-aligned artifact form. |
 | elven broadsword | 1d6+1d4 / 1d6+1 | 70 | 10 | — | wood |  |
 | runesword | 1d4+1d4 / 1d6+1 | 40 | 300 | — | iron |  |
@@ -6620,7 +6620,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | long sword | 1d8 / 1d12 | 40 | 15 | — | iron | Dip in a fountain at XL5+ for Excalibur (1-in-30; 1-in-6 for Lawful Knights). |
 | katana | 1d10 / 1d12 | 40 | 80 | +1 | iron | +1 to-hit baked in. Snickersnee is the artifact form. |
 
@@ -6631,7 +6631,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | two-handed sword | 1d12 / 1d6+2d6 | 150 | 50 | — | iron | Two-handed (no shield). Vorpal Blade is the artifact form. |
 | tsurugi | 1d16 / 1d8+2d6 | 60 | 500 | +2 | metal | Two-handed. The Tsurugi of Muramasa is the artifact form. |
 
@@ -6642,7 +6642,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | axe | 1d6 / 1d4 | 60 | 8 | — | iron |  |
 | battle-axe | 1d8+1d4 / 1d6+2d4 | 120 | 40 | — | iron | Two-handed; +1d4 small, +2d4 large. |
 
@@ -6653,7 +6653,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | dwarvish mattock | 1d12 / 1d8+2d6 | 120 | 50 | — | iron | Two-handed. Digs through walls; cannot two-weapon. |
 
 </div>
@@ -6663,7 +6663,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | club | 1d6 / 1d3 | 30 | 3 | — | wood | What a Caveman starts with — basic but free of curses early. |
 | aklys | 1d6 / 1d3 | 15 | 4 | — | iron | Returns when thrown if Strength is high enough. |
 
@@ -6674,7 +6674,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | mace | 1d6+1 / 1d6 | 30 | 5 | — | iron | The Priest's first sacrifice gift, Demonbane, is a +d4/+0 silver mace. |
 | silver mace | 1d6+1 / 1d6 | 36 | 60 | — | silver | Bonus damage to demons, undead, and shape-changers. |
 
@@ -6685,7 +6685,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | morning star | 1d4+1d4 / 1d6+1 | 120 | 10 | — | iron | +1d4 small, +1 large — punches above its weight for a one-hander. |
 
 </div>
@@ -6695,7 +6695,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | flail | 1d6+1 / 1d4+1d4 | 15 | 4 | — | iron | +1d4 large; one-handed. |
 
 </div>
@@ -6705,7 +6705,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | war hammer | 1d4+1 / 1d4 | 50 | 5 | — | iron | Mjollnir is the artifact form (Neutral Valkyrie sacrifice gift). |
 
 </div>
@@ -6715,7 +6715,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | quarterstaff | 1d6 / 1d6 | 40 | 5 | — | wood | Two-handed but light; the Wizard's starting weapon. |
 
 </div>
@@ -6727,7 +6727,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | partisan | 1d6 / 1d6+1 | 80 | 10 | — | iron | Reach. |
 | ranseur | 1d4+1d4 / 1d4+1d4 | 50 | 6 | — | iron | +1d4 small, +1d4 large. |
 | spetum | 1d6+1 / 1d6+1d6 | 50 | 5 | — | iron | +1 small, +1d6 large. |
@@ -6748,7 +6748,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | spear | 1d6 / 1d8 | 30 | 3 | — | iron |  |
 | elven spear | 1d7 / 1d8 | 30 | 3 | — | wood |  |
 | orcish spear | 1d5 / 1d8 | 30 | 3 | — | iron |  |
@@ -6763,7 +6763,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | trident | 1d6+1 / 1d4+2d4 | 25 | 5 | — | iron | +1 small, +2d4 large — the giant-killer; one-handed. |
 
 </div>
@@ -6773,7 +6773,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | lance | 1d6 / 1d8 | 180 | 10 | — | iron | Devastating from horseback (jousting bonus); useless on foot. |
 
 </div>
@@ -6783,7 +6783,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | rubber hose | 1d4 / 1d3 | 20 | 3 | — | plastic | Joke weapon (1d4 / 1d3). Damages even Shades, who are immune to most. |
 | bullwhip | 1d2 / 1 | 20 | 4 | — | leather | The Archeologist's starter; can disarm a monster. |
 
@@ -6794,7 +6794,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | arrow | 1d6 / 1d6 | 1 | 2 | — | iron |  |
 | elven arrow | 1d7 / 1d6 | 1 | 2 | — | wood |  |
 | orcish arrow | 1d5 / 1d6 | 1 | 2 | — | iron |  |
@@ -6812,7 +6812,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | crossbow bolt | 1d4+1 / 1d6+1 | 1 | 2 | — | iron |  |
 | crossbow | — | 50 | 40 | — | wood | Bolts pierce — and crossbows fire one shot per turn at most. |
 
@@ -6823,7 +6823,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | sling | — | 3 | 20 | — | leather | Trains sling skill from any rock you pick up. |
 
 </div>
@@ -6833,7 +6833,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | dart | 1d3 / 1d2 | 1 | 2 | — | iron |  |
 
 </div>
@@ -6843,7 +6843,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | shuriken | 1d8 / 1d6 | 1 | 5 | +2 | iron |  |
 
 </div>
@@ -6853,7 +6853,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 <div class="dense-table">
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | boomerang | 1d9 / 1d9 | 5 | 20 | — | wood | Returns when thrown. Always. |
 
 </div>
