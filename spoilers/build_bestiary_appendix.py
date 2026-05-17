@@ -355,14 +355,12 @@ out.append('')
 out.append("Every monster you might meet. Grouped by ASCII symbol so you can flip "
            "to the right page mid-game. **Lvl** is the base monster level. **Spd** "
            "is movement rate (12 is normal player speed). **AC** is armor class "
-           "(lower is better — your hit chance against AC 0 is much worse than "
-           "against AC 10). **MR%** is the percentage chance the monster resists "
+           "(lower is better). **MR%** is the percentage chance the monster resists "
            "your spells and magic attacks. **Attacks** lists each attack's mode, "
            "damage dice, and side effect; multiple attacks separated by `·` are "
-           "made per turn. **Flags** abbreviates the most tactically-relevant "
-           "traits — full M1/M2/M3 flag dumps are best left to the source, but "
-           "the ones here are the ones that change how you should fight. Notes are "
-           "reserved for monsters that deserve a heads-up.")
+           "made per turn. **Notes** folds in the most tactically-relevant trait "
+           "flags (flies, sees-invis, regenerates, poisonous-corpse, etc.) "
+           "alongside specific heads-ups for monsters that deserve one.")
 out.append('')
 
 for sym in SYM_ORDER:
@@ -372,15 +370,24 @@ for sym in SYM_ORDER:
     ch, label = SYM_TO_CHAR[sym]
     out.append(f'#### {label} `{ch}`')
     out.append('')
-    out.append('| Name | Color | Lvl | Spd | AC | MR% | Attacks | Flags | Notes |')
-    out.append('|---|---|---|---|---|---|---|---|---|')
+    out.append('| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |')
+    out.append('|------|-------|-----|-----|----|-----|---------|--------------------------------------------------------------------|')
     for name, mon in items:
         clr = color_str(mon['color'])
         atks = fmt_attacks(mon['atks'])
         flags = fmt_flags(mon)
-        note = NOTES.get(name, '')
+        extra = NOTES.get(name, '')
+        # Fold flag string and heads-up note into a single Notes cell.
+        # Flag string ends without punctuation; add a period and space
+        # before the prose note when both are present.
+        if flags and extra:
+            note = f'{flags}. {extra}'
+        elif flags:
+            note = f'{flags}.'
+        else:
+            note = extra
         out.append(f'| {name} | {clr} | {mon["lvl"]} | {mon["mov"]} | {mon["ac"]} | '
-                   f'{mon["mr_pct"]} | {atks} | {flags} | {note} |')
+                   f'{mon["mr_pct"]} | {atks} | {note} |')
     out.append('')
 
 print('\n'.join(out))

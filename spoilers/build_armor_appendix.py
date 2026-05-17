@@ -8,29 +8,29 @@ OBJ = Path('/Users/davidbau/git/mazesofmenace/teleport/maud/nethack-c/upstream/i
 OBJ = re.sub(r'#if 0[\s\S]*?#endif', '', OBJ)
 
 POWER_NAMES = {
-    '0': '—',
-    'CLAIRVOYANT': 'clairvoyance',
-    'WARNING': 'warning',
-    'TELEPAT': 'telepathy',
-    'STEALTH': 'stealth',
-    'POISON_RES': 'poison resistance',
-    'PROTECTION': 'protection',
-    'INVIS': 'invisibility',
-    'ANTIMAGIC': 'magic resistance',
-    'DISPLACED': 'displacement',
-    'DRAIN_RES': 'drain resistance',
-    'SHOCK_RES': 'shock resistance',
-    'REFLECTING': 'reflection',
-    'FUMBLING': 'fumbling (BAD)',
-    'FAST': 'speed',
-    'WWALKING': 'water walking',
-    'JUMPING': 'jumping',
-    'LEVITATION': 'levitation (BAD)',
-    'FIRE_RES': 'fire resistance',
-    'COLD_RES': 'cold resistance',
-    'SLEEP_RES': 'sleep resistance',
-    'DISINT_RES': 'disintegration resistance',
-    'ACID_RES': 'acid resistance',
+    '0': '',
+    'CLAIRVOYANT': 'Clairvoyance.',
+    'WARNING': 'Warning.',
+    'TELEPAT': 'Telepathy.',
+    'STEALTH': 'Stealth.',
+    'POISON_RES': 'Poison resistance.',
+    'PROTECTION': '',  # cloak of protection — MC column already shows the 3
+    'INVIS': 'Invisibility.',
+    'ANTIMAGIC': 'Magic resistance.',
+    'DISPLACED': 'Displacement.',
+    'DRAIN_RES': 'Drain resistance.',
+    'SHOCK_RES': 'Shock resistance.',
+    'REFLECTING': 'Reflection.',
+    'FUMBLING': 'Causes frequent fumbling.',
+    'FAST': '+1 speed.',
+    'WWALKING': 'Water walking.',
+    'JUMPING': '`#apply` to leap.',
+    'LEVITATION': 'Levitation (cannot be removed while in the air).',
+    'FIRE_RES': 'Fire resistance.',
+    'COLD_RES': 'Cold resistance.',
+    'SLEEP_RES': 'Sleep resistance.',
+    'DISINT_RES': 'Disintegration resistance.',
+    'ACID_RES': 'Acid resistance.',
 }
 
 MATERIAL_NAMES = {
@@ -147,7 +147,7 @@ NOTES = {
     'chain mail': "Dwarves drop these.",
     'studded leather armor': "No spellcasting penalty.",
     'gray dragon scale mail': "Endgame body-armor goal.",
-    'silver dragon scale mail': "Survives a wand of death.",
+    'silver dragon scale mail': "",
     'gold dragon scale mail': "Emits light.",
     'yellow dragon scale mail': "Rare.",
     'gray dragon scales': "Make-into upgrade to scale mail.",
@@ -173,7 +173,7 @@ NOTES = {
     'fumble boots': "Avoid.",
     'levitation boots': "Can't remove while levitating. Trap item.",
     'large shield': "Blocks two-handed weapons.",
-    'shield of reflection': "Standard wand-of-death answer; saves body slot.",
+    'shield of reflection': "Saves the body-armor slot.",
 }
 
 out = []
@@ -183,10 +183,10 @@ out.append("**AC** is the armor-class bonus the piece provides (higher number = 
            "more protection; this is the amount subtracted from your displayed AC). "
            "**MC** is the magic-cancellation level (1-3) — higher MC reduces the "
            "chance of magic attacks landing. **Wt** is weight; **Cost** is shop "
-           "base price. The **Power** column lists the intrinsic property granted "
-           "while the piece is worn — *bad* powers are marked. Armor is grouped "
-           "by slot. Dragon scale mail is listed separately because of its sheer "
-           "importance to the endgame.")
+           "base price. The **Notes** column folds in the intrinsic property "
+           "granted while the piece is worn, alongside any tactical caveats. "
+           "Armor is grouped by slot. Dragon scale mail is listed separately "
+           "because of its sheer importance to the endgame.")
 out.append('')
 
 for slot in SLOT_ORDER:
@@ -195,19 +195,21 @@ for slot in SLOT_ORDER:
     items = groups[slot]
     out.append(f'#### {SLOTS[slot]}')
     out.append('')
-    out.append('| Armor | AC | MC | Power | Wt | Cost | Material | Notes |')
-    out.append('|-------|----|----|-------|----|------|----------|--------------------------------------------------------------------|')
+    out.append('| Armor | AC | MC | Wt | Cost | Material | Notes |')
+    out.append('|--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|')
     for name, desc, f in items:
         ac = 10 - int(f.get('ac', '10'))
         mc = int(f.get('can', '0'))
         mc_str = str(mc) if mc > 0 else '—'
         power_raw = f.get('power', '0').strip()
-        power_str = POWER_NAMES.get(power_raw, power_raw.lower().replace('_', ' '))
+        power_str = POWER_NAMES.get(power_raw, '')
         wt = f.get('wt', '?')
         cost = f.get('cost', '?')
         mat = MATERIAL_NAMES.get(f.get('metal', ''), f.get('metal', '').lower())
-        note = NOTES.get(name, '')
-        out.append(f'| {name} | +{ac} | {mc_str} | {power_str} | {wt} | {cost} | {mat} | {note} |')
+        extra_note = NOTES.get(name, '')
+        # Fold Power text into Notes, joining with a single space.
+        note = ' '.join(s for s in (power_str, extra_note) if s)
+        out.append(f'| {name} | +{ac} | {mc_str} | {wt} | {cost} | {mat} | {note} |')
     out.append('')
 
 print('\n'.join(out))
