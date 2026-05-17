@@ -167,7 +167,10 @@
 \keepXColumns
 \setlength\LTpre{\smallskipamount}
 \setlength\LTpost{\smallskipamount}
-\AtEndEnvironment{longtable}{\null\vspace*{-\baselineskip}}
+% The ghost-header marker goes AFTER \end{longtable} (via
+% \AfterEndEnvironment) so it doesn't get treated as a phantom
+% trailing row inside the table itself.
+\AfterEndEnvironment{longtable}{\null\vspace*{-\baselineskip}}
 
 % --- Code blocks ---
 \usepackage{fancyvrb}
