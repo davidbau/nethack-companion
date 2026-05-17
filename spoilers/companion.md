@@ -4280,24 +4280,21 @@ to donate anything at all also costs you alignment with your god.
 
 #### Altars and Alignment
 
-You can convert a cross-aligned altar to your alignment by
-sacrificing ordinary fresh corpses on it. Each attempt is a
-gamble: the altar may flip to your god (success), nothing may
-happen, the altar's original god may notice and punish you, or
-in the worst case *you* convert to the altar's alignment instead.
-The wrong-god conversion is rare but catastrophic, so don't try
-this when your alignment record is weak. It's worth the risk when
-the only altar you've found is the wrong colour and you need a
-co-aligned one for sacrifice gifts, holy water, and BUC testing.
+To convert a cross-aligned altar, sacrifice ordinary fresh
+corpses on it. Each attempt either flips the altar to your god
+(success), costs you Luck (failure), or — if your god is
+already angry — converts *you* to the altar's alignment instead.
+Better odds at higher experience level. Worth the risk when you
+need a co-aligned altar for sacrifice gifts, holy water, or BUC
+testing.
 
-A few things **never** to sacrifice on any altar:
+Two things to **never** sacrifice on any altar:
 
-- **A same-race corpse.** Always punished, regardless of altar
-  alignment. For most roles this means no humans (and no elves
-  if you're elven).
-- **A co-aligned unicorn.** Wipes out a chunk of Luck. The
-  cross-aligned ones are fine — sacrificing one of those is
-  good for your standing — but not yours.
+- **A same-race corpse** (humans for most roles; also elves if
+  you're elven). Punished on every altar; on a Chaotic one it
+  summons a demon.
+- **A unicorn whose alignment matches the altar.** Counts as an
+  insult to that god.
 
 #### Crowning
 
