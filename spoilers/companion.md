@@ -864,14 +864,15 @@ the cheapest source of intrinsic AC bonuses in the game — donating
 500 zorkmids at low XL stacks each visit (see
 [Donating to Priests](#donating-to-priests)).
 
-If you find **Izchak's lighting store** in Minetown, buy seven
-candles before you leave. Far down in Gehennom you'll need them
-attached to the Candelabrum of Invocation to perform the ritual
-that opens the way to Moloch's Sanctum. Wax candles burn longer
-than tallow but either works for the ritual; pick whichever your
-budget allows. Forgetting to stock up here means a long round trip
-later, since the Mines lighting shop is the only reliable source
-in the early dungeon.
+If you find **Izchak's lighting store** in Minetown, it's the
+easiest single-trip source: buy seven candles before you leave.
+They'll be needed deep in Gehennom, attached to the Candelabrum
+of Invocation for the ritual that opens Moloch's Sanctum. Wax
+candles burn longer than tallow but either works, and mixing
+types is fine. Tallow candles also drop fairly often as random
+loot, and other tool/lighting shops elsewhere can stock them, so
+you'll usually accumulate seven by ascension time even if you
+miss Izchak — but Minetown spares you a possible round trip later.
 
 One in seven times, however, Minetown generates as **Orcish Town**:
 an overrun settlement with no shops, no priest, and iron bars blocking
@@ -5175,13 +5176,14 @@ frantic climb back to the surface. The steps:
 2. **Attach all seven candles to the Candelabrum.** The
    Candelabrum needs seven candles attached and lit before the
    ritual will work. Attach a candle by applying it (`a`) and
-   selecting the Candelabrum. The reliable source is **Izchak's
-   candle shop in Minetown** (in one Minetown layout the shop is
-   absent but seven candles are scattered around the level
-   instead — either way the seven you need are guaranteed there).
-   Every other temple along the way sells a candle or two as
-   backup. Pick them up as you pass and you'll never have to
-   backtrack.
+   selecting the Candelabrum. The easiest single source is
+   **Izchak's candle shop in Minetown** (in the rare Orcish Town
+   layout the shop is absent but seven candles are scattered
+   around the level instead — either way Minetown is reliable).
+   Outside of that, candles spawn as random floor loot (tallow
+   commonly, wax rarely) and may stock in any tool or lighting
+   shop you pass. Pick them up as you go and you'll usually have
+   enough without backtracking.
 
 3. **Find the vibrating square.** On the Gehennom level directly
    above Moloch's Sanctum, a single square vibrates when you step
@@ -5242,7 +5244,7 @@ winners carry. Here is the canonical kit, slot by slot:
 | **Ring (L)** | Free action | Anti-paralysis is non-negotiable on the Astral Plane. |
 | **Ring (R)** | Slow digestion, conflict, or regeneration | Conflict is the standard Astral-Plane crowd-control choice. |
 | **Weapon** | Your role's quest artifact + a silver saber | Silver saber appears in most builds as the off-hand because silver bypasses demon resistances. |
-| **Pack** | Bag of holding, magic lamp, unicorn horn, luckstone, wand of death, multiple wands of teleport, seven candles | The "bag-of-holding bundle." The candles are for the Candelabrum — buy them from Izchak in Minetown early; they don't show up reliably anywhere else. |
+| **Pack** | Bag of holding, magic lamp, unicorn horn, luckstone, wand of death, multiple wands of teleport, seven candles | The "bag-of-holding bundle." The candles are for the Candelabrum — easiest from Izchak in Minetown, but tallow candles drop in random loot and other tool/lighting shops, so pick up any you pass as backup. |
 | **Required loot** | Bell of Opening, Candelabrum of Invocation, Book of the Dead, Amulet of Yendor | The Invocation chain plus the prize. |
 
 A typical ascension AC sits in the **−25 to −40** range, but AC
