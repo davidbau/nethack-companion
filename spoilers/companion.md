@@ -3534,6 +3534,16 @@ protection.
 you reach Medusa's level (surrounded by water) or the Plane of
 Water (entirely underwater). Then it's existential.
 
+**Flying** is the late-addition cousin of levitation: you stay in
+the air the same way, but you can still pick things up and you
+can choose to drop down on your turn. The under-appreciated bonus
+is that **your steed flies with you**. A flying warhorse skips
+over moats, fountains, pools, and the Castle's drawbridge entirely
+— a fast Knight can cross Medusa's island and the Castle from edge
+to edge without worrying about the water at all. Stack with boots
+of speed and a wand of speed monster on the mount and you have a
+genuinely terrifying cavalry unit.
+
 **Restful sleep** puts you to sleep randomly and is usually cursed,
 which should tell you everything you need to know about when to put it
 on unexamined. However, in 5.0, wearing it while asleep
@@ -3850,8 +3860,8 @@ of that monster class.
 | Vorpal Blade      | any      | long sword        | +d5    | +d1 physical                | chance to behead on hit                                |
 | Frost Brand       | any      | long sword        | +d5    | (base only) cold            | fire resistance + cold defense                         |
 | Fire Brand        | any      | long sword        | +d5    | (base only) fire            | cold resistance + fire defense                         |
-| Sunsword          | Lawful   | long sword        | +d5    | (base only); ×2 vs undead   | blinding ray vs undead; lights area when wielded       |
-| Snickersnee       | Lawful   | katana            | —      | +d8 physical                | Samurai-specific bonus damage                          |
+| Sunsword          | Lawful   | long sword        | +d5    | (base only); ×2 vs undead   | wielded light; `#invoke` fires a blinding ray any direction (camera-style; works on any monster) |
+| Snickersnee       | Lawful   | katana            | —      | +d8 physical                | acts as a polearm without a steed; one free reach-attack per turn (the "Shkinng!" hit) |
 | Cleaver           | Neutral  | battle-axe        | +d3    | +d6 physical                | one-handed wield → strikes target *and* both flanks    |
 | Demonbane         | Lawful   | silver mace       | +d5    | (base only); ×2 vs demons   | banishes demons; Priest's first sacrifice gift         |
 | Sting             | Chaotic  | elven dagger      | +d5    | (base only); ×2 vs orcs     | warns of orcs (the dagger glows blue)                  |
@@ -3867,11 +3877,12 @@ Not every entry is equally desirable. **Grayswandir** and **Magicbane**
 are the artifacts most players try to wish for first; **Mjollnir** is
 the Valkyrie's archetypal wish; **Excalibur** is usually fountain-dipped
 rather than wished. **Frost Brand**, **Vorpal Blade**, and **Stormbringer**
-are common second wishes. The remaining entries (the bane weapons,
-Snickersnee, Sunsword, Fire Brand, Cleaver) are usually accepted as
-sacrifice gifts or wields-of-opportunity rather than spent wishes on,
-though some (Sunsword for Demonbane-style undead clearing, Cleaver
-for a Barbarian who lost the quest gift) have specific niches.
+are common second wishes. **Snickersnee** and **Sunsword** were
+historically considered flavour pieces, but their 5.0 effects (free
+reach attack per turn; on-demand camera-style blind) have moved them
+into the "worth wishing for, role permitting" tier. The remaining
+entries (the bane weapons, Fire Brand, Cleaver) are usually accepted
+as sacrifice gifts rather than spent wishes on.
 
 **Excalibur** is the go-to weapon for Lawful characters; the drain
 resistance alone is worth carrying it, even after you have a stronger
@@ -3904,15 +3915,33 @@ a corridor mouth or against a diagonal pair. The two-weapon penalty
 suppresses the spin, so most Barbarians keep Cleaver as their primary
 and a shield in the off slot.
 
+**Snickersnee** got a major buff in 5.0: it now counts as a polearm
+even when you're on foot (regular pole weapons require a steed). Once
+per turn you can `#apply` it for a free reach attack at a target up
+to two squares away — a real free action that *doesn't* end your
+turn, leaving you a normal melee swing on top. The free hit is
+announced by a distinctive "Shkinng!" The combined output (one
+ranged + one melee per turn) makes Snickersnee a contender for
+best Samurai weapon in the game, not just a flavor piece.
+
+**Sunsword** is the Lawful long sword that wants to be a tool. Wielded,
+it lights its current radius (handy in caves and the Mines without
+costing an oil lamp). `#invoke` it for a directed *blinding ray* —
+mechanically a Camera flash in any direction, *not* limited to
+undead. It costs 5×spell-level Pw to invoke, so save it for the
+fights that demand it (Riders, mind flayers, the Wizard of Yendor),
+but a blind monster is a monster that misses you. Invoking up or
+down lights the room; invoking at yourself self-blinds (don't).
+
 **Bane weapons** (Sunsword, Demonbane, Sting, Orcrist, Grimtooth,
 Dragonbane, Werebane, Giantslayer, Ogresmasher, Trollsbane) deal
-double base damage against their target class and are otherwise just
-their base weapon, usually disappointing as a primary weapon, but
+double base damage against their target class. Most are disappointing
+as a primary weapon, but the defensive riders are often the real
+reason to swap one in: Trollsbane regenerates while wielded (genuinely
+useful for an early character holding the line), Dragonbane reflects,
+Werebane neutralizes lycanthropy, Grimtooth defends against poison.
 Sting and Orcrist are notable because elves can start with elven
-daggers and broadswords. The defensive riders are sometimes the real
-reason to swap one in: Trollsbane regenerates while wielded,
-Dragonbane reflects, Werebane neutralizes lycanthropy, Grimtooth
-defends against poison.
+daggers and broadswords as their base weapons.
 
 #### Quest artifacts
 
@@ -7547,6 +7576,15 @@ point.) The most significant:
   `500 × XL` guarantees protection. Offering too little when you
   could afford more sets a "Cheapskate" flag on that priest that
   permanently inflates future baselines.
+- **Artifact effects** have been broadened. Several previously
+  flavour-only artifacts now have real tactical edges. The most
+  notable: **Snickersnee** now grants one free polearm-style reach
+  attack per turn ("Shkinng!") even on foot. **Sunsword** gains a
+  `#invoke` blinding ray that works on any monster, not just undead
+  — a 5-Pw on-demand Camera flash. **Trollsbane** regenerates while
+  wielded, a real lifeline for an early character. **Amulet of
+  flying** confers flight on your steed as well as you, turning
+  warhorses into water-crossing cavalry.
 - **Gehennom** levels are more varied and interesting.
 - **Medusa's Island** now has four possible layouts.
 - **Special levels** can now generate mirrored (flipped), so don't
