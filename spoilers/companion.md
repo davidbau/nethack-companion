@@ -6983,8 +6983,8 @@ source code. Any errors are ours alone.
 
 ---
 
-*The Traveler's Companion to the Mazes of Menace 5.0 Launch Edition,
-compiled by David Bau.*
+*The Traveler's Companion to the Mazes of Menace 5.0 Launch Edition,*<br>
+*compiled by David Bau.*
 
 *This work is licensed under
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).*
