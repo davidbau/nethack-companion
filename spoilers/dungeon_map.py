@@ -141,7 +141,7 @@ DOD: list[TrunkRow] = [
         ),
         pearls_below=3,
     ),
-    TrunkRow(bubble=Bubble('The Oracle', 'paid hints'), pearls_below=1),
+    TrunkRow(bubble=Bubble('The Oracle', 'paid hints'), pearls_below=0),
     TrunkRow(  # Sokoban branch RIGHT (up-stair from main dungeon), 1 DLvl below Oracle
         branch=Branch(
             side='right', color='soko',
@@ -153,7 +153,7 @@ DOD: list[TrunkRow] = [
             attach='bottom',
             label='up',
         ),
-        pearls_below=4,
+        pearls_below=5,
     ),
     TrunkRow(  # Quest portal + Quest RIGHT (portal)
         bubble=Bubble('Quest portal'),
@@ -203,7 +203,7 @@ GEH: list[TrunkRow] = [
         ),
         pearls_below=2,
     ),
-    TrunkRow(bubble=Bubble('Orcus-Town', 'Wand of Orcus · magic lamp/marker', color='geh'), pearls_below=2),
+    TrunkRow(bubble=Bubble('Orcus Town', 'Wand of Orcus · magic lamp/marker', color='geh'), pearls_below=2),
     # Wizard's Tower is 3 inline Gehennom levels (wizard1 entry -> wizard2 ->
     # wizard3 where the Wizard and Book live). Render as two trunk bubbles
     # with one pearl between so the depth shows on the map.
@@ -315,11 +315,13 @@ def layout_trunk(rows: list[TrunkRow], y_start: int, trunk_color_key: str,
             attach_y = cur_y + b.h // 2
             row_h = b.h
         else:
-            # Pure branch point — trunk circle marker. The trunk row only
-            # advances by one bead's worth of space; the branch bubble is
-            # off to the side and is free to extend above or below this
-            # row's tight vertical strip.
-            row_h = PEARL_SPACING
+            # Pure branch point — trunk circle marker. The trunk pearl is
+            # placed at the same rhythm as the surrounding pearls (one
+            # PEARL_SPACING away from neighbours), not padded out by
+            # PEARL_PADDING the way a full pearl batch is. The branch
+            # bubble is off to the side and is free to extend above or
+            # below this row's tight vertical strip.
+            row_h = PEARL_SPACING - 2 * PEARL_PADDING  # = 2
             attach_y = cur_y + row_h // 2
             placed.trunk_circles.append((TRUNK_X, attach_y, COLORS[trunk_color_key][1]))
 
@@ -449,10 +451,10 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
     # Planes row: Earth, Air, Fire, Water (4 boxes, centered)
     plane_w = 120
     plane_h = 40
-    gap_x = 40
+    gap_x = 48                                   # 20% wider than the original 40
     n = 4
-    row_total = n * plane_w + (n - 1) * gap_x   # 4*120 + 3*40 = 600
-    row_x_start = (WIDTH - row_total) // 2       # 80
+    row_total = n * plane_w + (n - 1) * gap_x   # 4*120 + 3*48 = 624
+    row_x_start = (WIDTH - row_total) // 2       # 68
     row_y = bar_bottom + 50                      # leave space for curved arrow
 
     earth_cx = row_x_start + plane_w // 2
@@ -630,12 +632,8 @@ def _section_parts(placed: Placed, y_min: int, y_max: int, y_offset: int,
         if y_min <= y + b.h // 2 < y_max:
             parts.extend(render_bubble(b, x, y - y_offset))
 
-    # Layer 5: trunk circles
-    for x, y, color in placed.trunk_circles:
-        if y_min <= y < y_max:
-            parts.append(f'<circle cx="{x}" cy="{y - y_offset}" r="{PEARL_R}" fill="{color}"/>')
-
-    # Layer 6: branch arrows (ON TOP of bubbles)
+    # Layer 5: branch arrows (ON TOP of bubbles, BEHIND pearls so arrows
+    # appear to emerge from the trunk pearl rather than lay across it)
     for x1, y1, x2, y2 in placed.branch_arrows:
         if y_min <= y1 < y_max:
             parts.append(
@@ -643,12 +641,18 @@ def _section_parts(placed: Placed, y_min: int, y_max: int, y_offset: int,
                 f'stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>'
             )
 
-    # Layer 7: arrow labels
+    # Layer 6: arrow labels
     for x, y, label in placed.arrow_labels:
         if y_min <= y < y_max:
             parts.append(text_el(x, y - y_offset, label,
                                  font_size=11, font_style='italic',
                                  fill='#5a5a5a', text_anchor='middle'))
+
+    # Layer 7: trunk circles (on top of branch arrows so the arrow
+    # appears to emerge from the pearl)
+    for x, y, color in placed.trunk_circles:
+        if y_min <= y < y_max:
+            parts.append(f'<circle cx="{x}" cy="{y - y_offset}" r="{PEARL_R}" fill="{color}"/>')
 
     # Layer 8: pearls (top)
     for x, y, color in placed.pearls:

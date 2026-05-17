@@ -252,15 +252,11 @@ physical combat is terrible, but you have access to the deepest magic
 in the game. Wizards are extremely powerful in the late game but very
 fragile early on. You'll lean heavily on your spells and need to find
 ways to avoid melee combat until you're strong enough to dominate it.
-One bookkeeping advantage that's easy to overlook: in 5.0,
-advancing a spell school skill automatically reveals the appearances of
-spellbooks in that school. Reach Expert in attack magic and you'll know
-what every attack spellbook looks like at a glance. This means training
-your spell skills has identification value on top of casting power: a
-reason to specialize deliberately rather than spreading ranks around.
-The dungeon is full of books you'd love to read; now you can tell which
-ones they are without risking your sanity on the wrong one.
-If you enjoy resource management and creative problem-solving, the
+One quiet advantage: advancing a spell school skill in 5.0 also
+identifies spellbooks of that school by appearance, so the Wizard
+gets free book-ID alongside casting power (see
+[Spellcasting](#spellcasting) for the full mechanic). If you
+enjoy resource management and creative problem-solving, the
 Wizard is deeply satisfying. *Alignment: Neutral or Chaotic.*
 
 #### The Races
@@ -435,8 +431,8 @@ alignment, prayer will almost certainly save you. But you can only
 pray about once every 300-500 turns, and praying at the wrong time
 (when your god is angry, when you're in Gehennom, or when you've
 prayed too recently) can make things much worse. Think of prayer as an
-emergency button with a cooldown. Don't waste it on minor problems.
-We'll cover the details in [Divine Relations](#divine-relations).
+emergency button with a cooldown. Don't waste it on minor problems
+(see [Divine Relations](#divine-relations) for the full mechanics).
 
 **Rule 5: Explore thoroughly but move purposefully.** Every turn you
 spend in the dungeon costs nutrition. If you stand around for hundreds
@@ -543,7 +539,7 @@ way back up and pass through the **Elemental Planes** to reach
 the **Astral Plane**, where your god awaits your offering.
 
 <!-- DMAP-BEGIN -->
-<div><figure style="margin: 1.5em 0; text-align: center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 637" role="img" aria-label="Dungeons of Doom map" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><line x1="380" y1="55" x2="380" y2="637" stroke="#B5651D" stroke-width="2.5" fill="none"/><rect x="40" y="0" width="680" height="39" rx="4" fill="#B5651D"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">DUNGEONS OF DOOM</text><line x1="150" y1="144" x2="150" y2="250" stroke="#5B8E3A" stroke-width="2" fill="none"/><line x1="630" y1="190" x2="630" y2="218" stroke="#B58A1A" stroke-width="2" fill="none"/><line x1="630" y1="323" x2="630" y2="361" stroke="#3B6FA0" stroke-width="2" fill="none"/><rect x="290" y="55" width="180" height="40" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="72" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Dlvl 1 — Entry</text><text x="380" y="89" font-size="12" font-style="italic" fill="#555" text-anchor="middle">up-stair to exit</text><rect x="60" y="112" width="180" height="32" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="133" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Gnomish Mines</text><rect x="60" y="172" width="180" height="40" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="189" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Minetown</text><text x="150" y="206" font-size="12" font-style="italic" fill="#555" text-anchor="middle">shops, temple</text><rect x="60" y="250" width="180" height="40" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="267" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Mine's End</text><text x="150" y="284" font-size="12" font-style="italic" fill="#555" text-anchor="middle">luckstone</text><rect x="290" y="171" width="180" height="40" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="188" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">The Oracle</text><text x="380" y="205" font-size="12" font-style="italic" fill="#555" text-anchor="middle">paid hints</text><rect x="540" y="150" width="180" height="40" rx="6" fill="#FFF4CC" stroke="#B58A1A" stroke-width="1.5"/><text x="630" y="167" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Sokoban prize</text><text x="630" y="184" font-size="12" font-style="italic" fill="#555" text-anchor="middle">bag of holding/amulet of reflection</text><rect x="540" y="218" width="180" height="32" rx="6" fill="#FFF4CC" stroke="#B58A1A" stroke-width="1.5"/><text x="630" y="239" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Sokoban entry</text><rect x="290" y="287" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="308" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Quest portal</text><rect x="540" y="283" width="180" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="630" y="300" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Quest entry</text><text x="630" y="317" font-size="12" font-style="italic" fill="#555" text-anchor="middle">your role's dungeon</text><rect x="540" y="361" width="180" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="630" y="378" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Quest goal</text><text x="630" y="395" font-size="12" font-style="italic" fill="#555" text-anchor="middle">★ Bell of Opening, role artifact</text><rect x="290" y="347" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="368" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Big Room (40%)</text><rect x="290" y="407" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="428" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Rogue Level</text><rect x="60" y="442" width="180" height="40" rx="6" fill="#FFD966" stroke="#B5891A" stroke-width="1.5"/><text x="150" y="459" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Fort Ludios</text><text x="150" y="476" font-size="12" font-style="italic" fill="#555" text-anchor="middle">vault of gold</text><rect x="290" y="505" width="180" height="32" rx="6" fill="#B8D4F0" stroke="#2E5C8E" stroke-width="1.5"/><text x="380" y="526" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Medusa's Island</text><rect x="230" y="565" width="300" height="58" rx="8" fill="#FFFFFF" stroke="#B5891A" stroke-width="2.5"/><text x="380" y="591" font-size="17" font-weight="600" fill="#1f2933" text-anchor="middle">THE CASTLE</text><text x="380" y="608" font-size="14" font-style="italic" fill="#7A5A0A" text-anchor="middle">wand of wishing</text><circle cx="380" cy="128" r="4" fill="#B5651D"/><circle cx="380" cy="234" r="4" fill="#B5651D"/><circle cx="380" cy="462" r="4" fill="#B5651D"/><line x1="380" y1="128" x2="240" y2="128" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="380" y1="234" x2="540" y2="234" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="470" y1="303" x2="540" y2="303" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="380" y1="462" x2="240" y2="462" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><text x="310" y="124" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">down</text><text x="460" y="230" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">up</text><text x="505" y="299" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portal</text><text x="310" y="458" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portal</text><circle cx="380" cy="104.0" r="4" fill="#B5651D"/><circle cx="380" cy="114.0" r="4" fill="#B5651D"/><circle cx="150" cy="153.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="163.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="221.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="231.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="241.0" r="4" fill="#5B8E3A"/><circle cx="380" cy="142.0" r="4" fill="#B5651D"/><circle cx="380" cy="152.0" r="4" fill="#B5651D"/><circle cx="380" cy="162.0" r="4" fill="#B5651D"/><circle cx="380" cy="220.0" r="4" fill="#B5651D"/><circle cx="630" cy="199.0" r="4" fill="#B58A1A"/><circle cx="630" cy="209.0" r="4" fill="#B58A1A"/><circle cx="380" cy="248.0" r="4" fill="#B5651D"/><circle cx="380" cy="258.0" r="4" fill="#B5651D"/><circle cx="380" cy="268.0" r="4" fill="#B5651D"/><circle cx="380" cy="278.0" r="4" fill="#B5651D"/><circle cx="630" cy="332.0" r="4" fill="#3B6FA0"/><circle cx="630" cy="342.0" r="4" fill="#3B6FA0"/><circle cx="630" cy="352.0" r="4" fill="#3B6FA0"/><circle cx="380" cy="328.0" r="4" fill="#B5651D"/><circle cx="380" cy="338.0" r="4" fill="#B5651D"/><circle cx="380" cy="388.0" r="4" fill="#B5651D"/><circle cx="380" cy="398.0" r="4" fill="#B5651D"/><circle cx="380" cy="448.0" r="4" fill="#B5651D"/><circle cx="380" cy="476.0" r="4" fill="#B5651D"/><circle cx="380" cy="486.0" r="4" fill="#B5651D"/><circle cx="380" cy="496.0" r="4" fill="#B5651D"/><circle cx="380" cy="546.0" r="4" fill="#B5651D"/><circle cx="380" cy="556.0" r="4" fill="#B5651D"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 689" role="img" aria-label="Gehennom map" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><line x1="380" y1="0" x2="380" y2="39" stroke="#B5651D" stroke-width="2.5" fill="none"/><line x1="380" y1="0" x2="380" y2="633" stroke="#A14A3F" stroke-width="2.5" fill="none"/><rect x="40" y="0" width="680" height="39" rx="4" fill="#A14A3F"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">GEHENNOM</text><line x1="150" y1="292" x2="150" y2="310" stroke="#6B4E96" stroke-width="2" fill="none"/><rect x="290" y="53" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="70" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Valley of the Dead</text><text x="380" y="87" font-size="12" font-style="italic" fill="#555" text-anchor="middle">Gehennom's entrance</text><rect x="290" y="141" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="162" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Asmodeus's Lair</text><rect x="290" y="191" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="212" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Juiblex's Swamp</text><rect x="290" y="251" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="272" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Baalzebub's Lair</text><rect x="60" y="252" width="180" height="40" rx="6" fill="#E3D8F0" stroke="#6B4E96" stroke-width="1.5"/><text x="150" y="269" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Vlad the Impaler</text><text x="150" y="286" font-size="12" font-style="italic" fill="#555" text-anchor="middle">★ Candelabrum</text><rect x="60" y="310" width="180" height="32" rx="6" fill="#E3D8F0" stroke="#6B4E96" stroke-width="1.5"/><text x="150" y="331" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Vlad's Tower</text><rect x="290" y="359" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="376" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Orcus-Town</text><text x="380" y="393" font-size="12" font-style="italic" fill="#555" text-anchor="middle">Wand of Orcus · magic lamp/marker</text><rect x="290" y="427" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="448" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Wizard's Tower</text><rect x="290" y="477" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="494" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Wizard of Yendor</text><text x="380" y="511" font-size="12" font-style="italic" fill="#555" text-anchor="middle">★ Book of the Dead</text><rect x="230" y="575" width="300" height="58" rx="8" fill="#2D2D2D" stroke="#FFC857" stroke-width="2.5"/><text x="380" y="601" font-size="17" font-weight="600" fill="#FFC857" text-anchor="middle">Moloch's Sanctum</text><text x="380" y="618" font-size="14" font-style="italic" fill="#FFE680" text-anchor="middle">the Amulet of Yendor</text><circle cx="380" cy="326" r="4" fill="#A14A3F"/><line x1="380" y1="326" x2="240" y2="326" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><text x="310" y="322" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">up</text><circle cx="380" cy="102.0" r="4" fill="#A14A3F"/><circle cx="380" cy="112.0" r="4" fill="#A14A3F"/><circle cx="380" cy="122.0" r="4" fill="#A14A3F"/><circle cx="380" cy="132.0" r="4" fill="#A14A3F"/><circle cx="380" cy="182.0" r="4" fill="#A14A3F"/><circle cx="380" cy="232.0" r="4" fill="#A14A3F"/><circle cx="380" cy="242.0" r="4" fill="#A14A3F"/><circle cx="380" cy="292.0" r="4" fill="#A14A3F"/><circle cx="380" cy="302.0" r="4" fill="#A14A3F"/><circle cx="380" cy="312.0" r="4" fill="#A14A3F"/><circle cx="150" cy="301.0" r="4" fill="#6B4E96"/><circle cx="380" cy="340.0" r="4" fill="#A14A3F"/><circle cx="380" cy="350.0" r="4" fill="#A14A3F"/><circle cx="380" cy="408.0" r="4" fill="#A14A3F"/><circle cx="380" cy="418.0" r="4" fill="#A14A3F"/><circle cx="380" cy="468.0" r="4" fill="#A14A3F"/><circle cx="380" cy="526.0" r="4" fill="#A14A3F"/><circle cx="380" cy="536.0" r="4" fill="#A14A3F"/><circle cx="380" cy="546.0" r="4" fill="#A14A3F"/><circle cx="380" cy="556.0" r="4" fill="#A14A3F"/><circle cx="380" cy="566.0" r="4" fill="#A14A3F"/><line x1="380" y1="639" x2="380" y2="689" stroke="#5B8E3A" stroke-width="2.5" stroke-dasharray="7,5" fill="none"/><text x="400" y="669" font-size="15" font-weight="600" font-style="italic" fill="#5B8E3A">now go <tspan style="font-weight:800;font-size:17px">ALL</tspan> the way back up...</text></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 299" role="img" aria-label="Elemental Planes and Ascension" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><rect x="40" y="0" width="680" height="39" rx="4" fill="#5D3C8E"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">THE ELEMENTAL PLANES</text><rect x="80" y="89" width="120" height="40" rx="6" fill="#E8DDC8" stroke="#8B6F47" stroke-width="1.5"/><text x="140" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Earth</text><rect x="240" y="89" width="120" height="40" rx="6" fill="#E0F4FA" stroke="#3B9FA8" stroke-width="1.5"/><text x="300" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Air</text><rect x="400" y="89" width="120" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="460" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Fire</text><rect x="560" y="89" width="120" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="620" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Water</text><rect x="260" y="179" width="240" height="42" rx="6" fill="#D8C6F0" stroke="#5D3C8E" stroke-width="1.5"/><text x="380" y="197" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Astral Plane</text><text x="380" y="213" font-size="12" font-style="italic" fill="#555" text-anchor="middle">three altars · pick yours</text><rect x="230" y="239" width="300" height="50" rx="10" fill="#FFE680" stroke="#B5891A" stroke-width="2.5"/><text x="380" y="262" font-size="18" font-weight="700" fill="#7A5A0A" text-anchor="middle" letter-spacing="0.1em">ASCENSION</text><text x="380" y="281" font-size="11" font-style="italic" fill="#7A5A0A" text-anchor="middle">offer the Amulet at your altar</text><path d="M 380 39 C 380 53 140 53 140 67 L 140 89" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="200" y1="109" x2="240" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><text x="220" y="105" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portals</text><line x1="360" y1="109" x2="400" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="520" y1="109" x2="560" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><path d="M 620 129 C 620 143 380 143 380 157 L 380 179" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="380" y1="221" x2="380" y2="239" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/></svg><figcaption style="font-style: italic; color: #5a5a5a; font-size: 0.9em; margin-top: 0.5em;">Branches extend left and right of the main trunk. Pearls (small colored dots) indicate the approximate number of intervening dungeon levels. ★ marks the three Invocation items (Bell of Opening, Candelabrum, Book of the Dead) needed to enter Moloch's Sanctum and claim the Amulet.</figcaption></figure></div>
+<div><figure style="margin: 1.5em 0; text-align: center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 611" role="img" aria-label="Dungeons of Doom map" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><line x1="380" y1="55" x2="380" y2="611" stroke="#B5651D" stroke-width="2.5" fill="none"/><rect x="40" y="0" width="680" height="39" rx="4" fill="#B5651D"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">DUNGEONS OF DOOM</text><line x1="150" y1="140" x2="150" y2="246" stroke="#5B8E3A" stroke-width="2" fill="none"/><line x1="630" y1="166" x2="630" y2="194" stroke="#B58A1A" stroke-width="2" fill="none"/><line x1="630" y1="305" x2="630" y2="343" stroke="#3B6FA0" stroke-width="2" fill="none"/><rect x="290" y="55" width="180" height="40" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="72" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Dlvl 1 — Entry</text><text x="380" y="89" font-size="12" font-style="italic" fill="#555" text-anchor="middle">up-stair to exit</text><rect x="60" y="108" width="180" height="32" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="129" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Gnomish Mines</text><rect x="60" y="168" width="180" height="40" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="185" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Minetown</text><text x="150" y="202" font-size="12" font-style="italic" fill="#555" text-anchor="middle">shops, temple</text><rect x="60" y="246" width="180" height="40" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="263" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Mine's End</text><text x="150" y="280" font-size="12" font-style="italic" fill="#555" text-anchor="middle">luckstone</text><rect x="290" y="163" width="180" height="40" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="180" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">The Oracle</text><text x="380" y="197" font-size="12" font-style="italic" fill="#555" text-anchor="middle">paid hints</text><rect x="540" y="126" width="180" height="40" rx="6" fill="#FFF4CC" stroke="#B58A1A" stroke-width="1.5"/><text x="630" y="143" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Sokoban prize</text><text x="630" y="160" font-size="12" font-style="italic" fill="#555" text-anchor="middle">bag of holding/amulet of reflection</text><rect x="540" y="194" width="180" height="32" rx="6" fill="#FFF4CC" stroke="#B58A1A" stroke-width="1.5"/><text x="630" y="215" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Sokoban entry</text><rect x="290" y="269" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="290" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Quest portal</text><rect x="540" y="265" width="180" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="630" y="282" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Quest entry</text><text x="630" y="299" font-size="12" font-style="italic" fill="#555" text-anchor="middle">your role's dungeon</text><rect x="540" y="343" width="180" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="630" y="360" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Quest goal</text><text x="630" y="377" font-size="12" font-style="italic" fill="#555" text-anchor="middle">★ Bell of Opening, role artifact</text><rect x="290" y="329" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="350" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Big Room (40%)</text><rect x="290" y="389" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="410" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Rogue Level</text><rect x="60" y="420" width="180" height="40" rx="6" fill="#FFD966" stroke="#B5891A" stroke-width="1.5"/><text x="150" y="437" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Fort Ludios</text><text x="150" y="454" font-size="12" font-style="italic" fill="#555" text-anchor="middle">vault of gold</text><rect x="290" y="479" width="180" height="32" rx="6" fill="#B8D4F0" stroke="#2E5C8E" stroke-width="1.5"/><text x="380" y="500" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Medusa's Island</text><rect x="230" y="539" width="300" height="58" rx="8" fill="#FFFFFF" stroke="#B5891A" stroke-width="2.5"/><text x="380" y="565" font-size="17" font-weight="600" fill="#1f2933" text-anchor="middle">THE CASTLE</text><text x="380" y="582" font-size="14" font-style="italic" fill="#7A5A0A" text-anchor="middle">wand of wishing</text><line x1="380" y1="124" x2="240" y2="124" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="380" y1="210" x2="540" y2="210" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="470" y1="285" x2="540" y2="285" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="380" y1="440" x2="240" y2="440" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><text x="310" y="120" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">down</text><text x="460" y="206" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">up</text><text x="505" y="281" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portal</text><text x="310" y="436" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portal</text><circle cx="380" cy="124" r="4" fill="#B5651D"/><circle cx="380" cy="210" r="4" fill="#B5651D"/><circle cx="380" cy="440" r="4" fill="#B5651D"/><circle cx="380" cy="104.0" r="4" fill="#B5651D"/><circle cx="380" cy="114.0" r="4" fill="#B5651D"/><circle cx="150" cy="149.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="159.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="217.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="227.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="237.0" r="4" fill="#5B8E3A"/><circle cx="380" cy="134.0" r="4" fill="#B5651D"/><circle cx="380" cy="144.0" r="4" fill="#B5651D"/><circle cx="380" cy="154.0" r="4" fill="#B5651D"/><circle cx="630" cy="175.0" r="4" fill="#B58A1A"/><circle cx="630" cy="185.0" r="4" fill="#B58A1A"/><circle cx="380" cy="220.0" r="4" fill="#B5651D"/><circle cx="380" cy="230.0" r="4" fill="#B5651D"/><circle cx="380" cy="240.0" r="4" fill="#B5651D"/><circle cx="380" cy="250.0" r="4" fill="#B5651D"/><circle cx="380" cy="260.0" r="4" fill="#B5651D"/><circle cx="630" cy="314.0" r="4" fill="#3B6FA0"/><circle cx="630" cy="324.0" r="4" fill="#3B6FA0"/><circle cx="630" cy="334.0" r="4" fill="#3B6FA0"/><circle cx="380" cy="310.0" r="4" fill="#B5651D"/><circle cx="380" cy="320.0" r="4" fill="#B5651D"/><circle cx="380" cy="370.0" r="4" fill="#B5651D"/><circle cx="380" cy="380.0" r="4" fill="#B5651D"/><circle cx="380" cy="430.0" r="4" fill="#B5651D"/><circle cx="380" cy="450.0" r="4" fill="#B5651D"/><circle cx="380" cy="460.0" r="4" fill="#B5651D"/><circle cx="380" cy="470.0" r="4" fill="#B5651D"/><circle cx="380" cy="520.0" r="4" fill="#B5651D"/><circle cx="380" cy="530.0" r="4" fill="#B5651D"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 681" role="img" aria-label="Gehennom map" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><line x1="380" y1="0" x2="380" y2="39" stroke="#B5651D" stroke-width="2.5" fill="none"/><line x1="380" y1="0" x2="380" y2="625" stroke="#A14A3F" stroke-width="2.5" fill="none"/><rect x="40" y="0" width="680" height="39" rx="4" fill="#A14A3F"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">GEHENNOM</text><line x1="150" y1="288" x2="150" y2="306" stroke="#6B4E96" stroke-width="2" fill="none"/><rect x="290" y="53" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="70" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Valley of the Dead</text><text x="380" y="87" font-size="12" font-style="italic" fill="#555" text-anchor="middle">Gehennom's entrance</text><rect x="290" y="141" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="162" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Asmodeus's Lair</text><rect x="290" y="191" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="212" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Juiblex's Swamp</text><rect x="290" y="251" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="272" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Baalzebub's Lair</text><rect x="60" y="248" width="180" height="40" rx="6" fill="#E3D8F0" stroke="#6B4E96" stroke-width="1.5"/><text x="150" y="265" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Vlad the Impaler</text><text x="150" y="282" font-size="12" font-style="italic" fill="#555" text-anchor="middle">★ Candelabrum</text><rect x="60" y="306" width="180" height="32" rx="6" fill="#E3D8F0" stroke="#6B4E96" stroke-width="1.5"/><text x="150" y="327" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Vlad's Tower</text><rect x="290" y="351" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="368" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Orcus Town</text><text x="380" y="385" font-size="12" font-style="italic" fill="#555" text-anchor="middle">Wand of Orcus · magic lamp/marker</text><rect x="290" y="419" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="440" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Wizard's Tower</text><rect x="290" y="469" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="486" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Wizard of Yendor</text><text x="380" y="503" font-size="12" font-style="italic" fill="#555" text-anchor="middle">★ Book of the Dead</text><rect x="230" y="567" width="300" height="58" rx="8" fill="#2D2D2D" stroke="#FFC857" stroke-width="2.5"/><text x="380" y="593" font-size="17" font-weight="600" fill="#FFC857" text-anchor="middle">Moloch's Sanctum</text><text x="380" y="610" font-size="14" font-style="italic" fill="#FFE680" text-anchor="middle">the Amulet of Yendor</text><line x1="380" y1="322" x2="240" y2="322" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><text x="310" y="318" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">up</text><circle cx="380" cy="322" r="4" fill="#A14A3F"/><circle cx="380" cy="102.0" r="4" fill="#A14A3F"/><circle cx="380" cy="112.0" r="4" fill="#A14A3F"/><circle cx="380" cy="122.0" r="4" fill="#A14A3F"/><circle cx="380" cy="132.0" r="4" fill="#A14A3F"/><circle cx="380" cy="182.0" r="4" fill="#A14A3F"/><circle cx="380" cy="232.0" r="4" fill="#A14A3F"/><circle cx="380" cy="242.0" r="4" fill="#A14A3F"/><circle cx="380" cy="292.0" r="4" fill="#A14A3F"/><circle cx="380" cy="302.0" r="4" fill="#A14A3F"/><circle cx="380" cy="312.0" r="4" fill="#A14A3F"/><circle cx="150" cy="297.0" r="4" fill="#6B4E96"/><circle cx="380" cy="332.0" r="4" fill="#A14A3F"/><circle cx="380" cy="342.0" r="4" fill="#A14A3F"/><circle cx="380" cy="400.0" r="4" fill="#A14A3F"/><circle cx="380" cy="410.0" r="4" fill="#A14A3F"/><circle cx="380" cy="460.0" r="4" fill="#A14A3F"/><circle cx="380" cy="518.0" r="4" fill="#A14A3F"/><circle cx="380" cy="528.0" r="4" fill="#A14A3F"/><circle cx="380" cy="538.0" r="4" fill="#A14A3F"/><circle cx="380" cy="548.0" r="4" fill="#A14A3F"/><circle cx="380" cy="558.0" r="4" fill="#A14A3F"/><line x1="380" y1="631" x2="380" y2="681" stroke="#5B8E3A" stroke-width="2.5" stroke-dasharray="7,5" fill="none"/><text x="400" y="661" font-size="15" font-weight="600" font-style="italic" fill="#5B8E3A">now go <tspan style="font-weight:800;font-size:17px">ALL</tspan> the way back up...</text></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 299" role="img" aria-label="Elemental Planes and Ascension" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><rect x="40" y="0" width="680" height="39" rx="4" fill="#5D3C8E"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">THE ELEMENTAL PLANES</text><rect x="68" y="89" width="120" height="40" rx="6" fill="#E8DDC8" stroke="#8B6F47" stroke-width="1.5"/><text x="128" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Earth</text><rect x="236" y="89" width="120" height="40" rx="6" fill="#E0F4FA" stroke="#3B9FA8" stroke-width="1.5"/><text x="296" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Air</text><rect x="404" y="89" width="120" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="464" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Fire</text><rect x="572" y="89" width="120" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="632" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Water</text><rect x="260" y="179" width="240" height="42" rx="6" fill="#D8C6F0" stroke="#5D3C8E" stroke-width="1.5"/><text x="380" y="197" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Astral Plane</text><text x="380" y="213" font-size="12" font-style="italic" fill="#555" text-anchor="middle">three altars · pick yours</text><rect x="230" y="239" width="300" height="50" rx="10" fill="#FFE680" stroke="#B5891A" stroke-width="2.5"/><text x="380" y="262" font-size="18" font-weight="700" fill="#7A5A0A" text-anchor="middle" letter-spacing="0.1em">ASCENSION</text><text x="380" y="281" font-size="11" font-style="italic" fill="#7A5A0A" text-anchor="middle">offer the Amulet at your altar</text><path d="M 380 39 C 380 53 128 53 128 67 L 128 89" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="188" y1="109" x2="236" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><text x="212" y="105" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portals</text><line x1="356" y1="109" x2="404" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="524" y1="109" x2="572" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><path d="M 632 129 C 632 143 380 143 380 157 L 380 179" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="380" y1="221" x2="380" y2="239" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/></svg><figcaption style="font-style: italic; color: #5a5a5a; font-size: 0.9em; margin-top: 0.5em;">Branches extend left and right of the main trunk. Pearls (small colored dots) indicate the approximate number of intervening dungeon levels. ★ marks the three Invocation items (Bell of Opening, Candelabrum, Book of the Dead) needed to enter Moloch's Sanctum and claim the Amulet.</figcaption></figure></div>
 <!-- DMAP-END -->
 
 The typical trip: go down through the Dungeons, detour into the
@@ -574,8 +570,8 @@ Learning to read these symbols quickly is important:
 
 Letters represent monsters: `d` for dogs, `D` for dragons, `Z` for
 zombies. Colors help distinguish within a class: a red `D` is a red
-dragon, while a gray `D` is a gray dragon. We'll cover this in detail
-in [A Field Guide to Dungeon Fauna](#a-field-guide-to-dungeon-fauna).
+dragon, while a gray `D` is a gray dragon (see
+[A Field Guide to Dungeon Fauna](#a-field-guide-to-dungeon-fauna)).
 
 Item symbols are punctuation marks:
 
@@ -678,12 +674,12 @@ several on a single level. They make the early dungeon less
 predictable in a friendly way: more terrain types to fight in,
 more item discovery, and the occasional educational ambush.
 
-A practical consequence: **a room full of one kind of monster is
-almost certainly a themed room, not a coincidence.** Themed rooms
-have above-average monster density concentrated around a single
-type, so any room that looks curated deserves more respect than a
-random room of equivalent apparent difficulty. Retreat, assess,
-and enter with a plan rather than a direction.
+**A room full of one kind of monster is almost certainly a themed
+room, not a coincidence.** Themed rooms have above-average monster
+density concentrated around a single type, so any room that looks
+curated deserves more respect than a random room of equivalent
+apparent difficulty. Retreat, assess, and enter with a plan
+rather than a direction.
 
 ---
 
@@ -1850,10 +1846,9 @@ Some monsters, most notably Death (one of the Riders on the Astral
 Plane), can kill you with a single touch. The Finger of Death spell
 and the wand of death work similarly.
 
-In 5.0, the touch of death has been reworked. It now
-deals heavy damage (8d6 + 50) and permanently drains your maximum
-HP by half the damage dealt, rather than being a simple binary
-kill. You only die outright if the drain would reduce your max HP
+The touch of death deals heavy damage (8d6 + 50) and permanently
+drains your maximum HP by half the damage dealt, rather than being
+a simple binary kill. You only die outright if the drain would reduce your max HP
 to zero. This means a high-level character with many hit points
 can survive a touch that would have been instantly fatal in older
 editions.
@@ -1945,10 +1940,9 @@ Two monsters hide in plain sight until you walk into them. The
 drops onto whoever passes underneath; the **trapper** (`t`,
 green, level 12) hides on the floor and engulfs whoever steps
 onto it. Both look like ordinary terrain until they trigger.
-Engulfment in 5.0 wraps and crushes rather than
-digesting (a 5.0 retcon, since the lurker doesn't actually have
-a stomach), but you still take damage
-every turn until you cut your way out, with limited movement
+Engulfment wraps and crushes rather than digesting, but you still
+take damage every turn until you cut your way out, with limited
+movement
 options while inside.
 
 **Defenses:** Searching reveals hidden monsters. *Telepathy*
@@ -2186,10 +2180,10 @@ gods quietly rearranging your prayer odds. Experienced players learned
 to route around peacefuls, treat them as furniture to navigate rather
 than obstacles to solve.
 
-In 5.0, this has been addressed. You can now displace
-peaceful monsters by walking into them: you and the monster swap
-positions, exactly as with your pet. No attack, no offense taken, no
-alignment consequence. The townsfolk of Minetown are finally navigable.
+In 5.0 you can displace peaceful monsters by walking into them:
+you and the monster swap positions, exactly as with your pet. No
+attack, no offense taken, no alignment consequence. The townsfolk
+of Minetown are finally navigable.
 
 The limits are sensible: you cannot displace shopkeepers, priests,
 quest leaders, the Oracle, guards, or any monster that is sleeping or
@@ -2388,13 +2382,11 @@ for all unID sales at that shop. Either wrinkle can shift a quoted
 price into an adjacent tier, so when in doubt check the surrounding
 tiers too.
 
-One more state worth knowing about: **Angry**. If you've previously
-done something to anger a shopkeeper (fired a wand from a doorway,
+**Angry.** A shopkeeper you've previously angered (fired a wand from a doorway,
 attacked them, picked up an unpaid item while broke) and then made
-amends (paid the bill, fled and let them calm down), the shopkeeper
-becomes peaceful again but keeps a permanent +33% buy surcharge on
-every item until you pay your bill in full. Sell prices are
-unaffected.
+amends (paid the bill, fled and let them calm down) becomes peaceful
+again but keeps a permanent +33% buy surcharge on every item until
+you pay your bill in full. Sell prices are unaffected.
 
 The price tables for each item class follow. These are your
 field reference for shopping trips.
@@ -2879,10 +2871,10 @@ When nutrition drops below certain thresholds, you get warnings:
 | 0-49      | Weak      | Movement slowed. Pray if possible.        |
 | Below 0   | Fainting  | Collapse randomly. Eat NOW or die.        |
 
-The practical takeaway: eat when you get the "Hungry" message. Don't
-wait for "Weak." If you hit Fainting and have no food, pray to your
-god (see [Divine Relations](#divine-relations)). Prayer cures hunger
-if your god is willing to help.
+Eat when you get the "Hungry" message; don't wait for "Weak." If
+you hit Fainting and have no food, pray to your god (see
+[Divine Relations](#divine-relations)). Prayer cures hunger if
+your god is willing to help.
 
 #### What to Eat
 
@@ -4202,9 +4194,8 @@ apparently dungeon physics care about monster volume.) Added to base:
   the strength damage component, which is the Mazes' way of
   rewarding you for giving up your shield
 
-Two-handed weapons also receive a 50% bonus to the strength damage
-modifier, which is new in 5.0. This narrows the gap between
-two-handed builds and dual-wielding considerably. A Barbarian with a
+This narrows the gap between two-handed builds and dual-wielding
+considerably. A Barbarian with a
 two-handed sword and respectable Strength is not just accepting the
 trade-off of foregoing a shield. They're dealing genuinely more damage
 per swing than a comparable one-handed build. If you've been avoiding
@@ -4330,7 +4321,7 @@ travelers realize:
 - **Magic lamp:** Rubbing a blessed lamp summons the djinni 1-in-3
   times; *if* it appears, it grants a wish 80% of the time, so
   roughly 27% wish per rub. Keep rubbing. Either a magic lamp or a
-  magic marker is guaranteed in Orcus-town.
+  magic marker is guaranteed in Orcus Town.
 - **Fountain:** roughly 1 in 30 quaffs summons a water demon, and
   *that* demon grants a wish only about 1-in-5 times on shallow
   floors (less on deeper ones), so a true wish chance closer to
@@ -4436,12 +4427,11 @@ all level-1 appearances and level-3 in attack and enchantment, which
 means they begin the game with a meaningful identification advantage in
 their core schools.
 
-The practical consequence: training your spell school skills has an
-identification payoff beyond casting improvement. The book you've been
-carrying since level 5 without knowing what it is? Train up the right
-school and suddenly you know. Prioritize the schools containing your
-most-needed unidentified books, not just the schools that let you cast
-your current spells better.
+So training your spell schools pays off twice: better casting *and*
+free book-ID. The unknown book you've been carrying since level 5?
+Train up the right school and suddenly you know what it is.
+Prioritize the schools containing your most-wanted unidentified
+books, not just the ones that improve your current casting.
 
 Wizards are the undisputed masters of magic: they learn faster, fail
 less, and have the widest range of useful spells. A well-built Wizard
@@ -4725,13 +4715,12 @@ random numbers, which in the Mazes is the closest thing to love.
 If you've reached the Castle, congratulations: you've survived the
 easy part. Everything below is worse.
 
-The Castle sits at the bottom of the Dungeons of Doom, guarded by a
-drawbridge and whatever the dungeon decided to stuff inside this
-time. (In 5.0, you're at least spared the welcoming
-committee of arch-liches that used to greet you. Small mercies.) We
-covered how to find and enter it in
-[Branches and Landmarks](#branches-and-landmarks). Here's what
-to do once the drawbridge is down and you're standing in the foyer
+The Castle sits at the bottom of the Dungeons of Doom, guarded by
+a drawbridge and whatever the dungeon decided to stuff inside this
+time. (5.0 at least no longer pre-loads the place with arch-liches
+to greet you on arrival.) We covered how to find and enter it in
+[Branches and Landmarks](#branches-and-landmarks). Here's what to
+do once the drawbridge is down and you're standing in the foyer
 wondering what you've gotten yourself into.
 
 The Castle contains:
@@ -4762,21 +4751,20 @@ Then use your wand of wishing to fill critical gaps in your
 equipment (gray dragon scale mail, silver dragon scale mail,
 gauntlets of power, speed boots, whatever you're missing).
 
-**A 5.0-era warning about the chest.** Intelligent monsters in
-5.0 can pick up containers and rummage through
-unlocked ones, and monsters carrying keys can unlock locked ones.
-The Castle chest is an inviting target. If you breach the Castle,
-take time off the level to recover or fetch a wish, and come back,
-do not assume the chest is still there. Clear the room before
-abandoning it, or carry the chest with you. There are stories.
+**Warning:** intelligent monsters in 5.0 can pick up containers,
+rummage through unlocked ones, and unlock locked ones if they
+carry keys. The Castle chest is an inviting target. If you breach
+the Castle, take time off the level to recover or fetch a wish,
+and come back, do not assume the chest is still there. Clear the
+room before abandoning it, or carry the chest with you. There are
+stories.
 
-**About the wand itself.** The Castle wand in 5.0 yields only two
-wishes reliably (one charge + one recharge), so plan a *small*
-wishlist and accept that any further wishes will need to come from
-other guaranteed sources — Vlad's throne, the Amulet pickup,
-Orcus-town's lamp/marker, fountain luck, or wresting. The era of
-the bottomless wishing wand is over (see Wands → Key Wands for
-the full mechanics).
+The Castle wand yields only two wishes reliably (one charge + one
+recharge), so plan a *small* wishlist and accept that further
+wishes will need to come from other guaranteed sources — Vlad's
+throne, the Amulet pickup, Orcus Town's lamp/marker, fountain
+luck, or wresting. The era of the bottomless wishing wand is over
+(see Wands → Key Wands for the full mechanics).
 
 Once you're fully equipped, the staircase down leads to Gehennom.
 Take a moment before descending. Sit down. Have a snack. Check your
@@ -4918,7 +4906,7 @@ Amulet wish and want to keep this one for the ascension kit), you
 can sit at any time; you don't have to do it right now. The
 throne stays put until something on the level destroys it.
 
-#### Orcus-town
+#### Orcus Town
 
 **Orcus** is a god of the underworld in Roman mythology — a
 chthonic figure who punishes broken oaths and devours the dead. In
@@ -4939,11 +4927,10 @@ for-sale inventory; somewhere on the level the dungeon guarantees
 either a **magic lamp** or a **magic marker** (50/50). The level
 is studded with fire traps and magic traps, so don't sprint. Walk
 it carefully, deal with the residents, and lift the lamp or marker
-on your way out. The guarantee is the dungeon's compensation for
-the wand of wishing generating with only one charge in 5.0 — call
-it a consolation prize, in the form of either one djinni wish (rub
-the lamp; the lamp becomes ordinary afterward) or however many
-high-value scrolls you can write before the marker runs dry.
+on your way out. Either is a meaningful supplement to the Castle
+wand's single charge: a djinni wish (rub the lamp; the lamp
+becomes ordinary afterward) or however many high-value scrolls
+you can write before the marker runs dry.
 
 #### The Wizard's Tower
 
@@ -6188,11 +6175,10 @@ of its own.
 > editions.*
 
 Shops do more than sell: their pricing system is your most
-powerful identification tool. The full mechanics, the interactive
-price tables for every item class, and the live buy/sell calculator
-all live in [The Price Is Right](#the-price-is-right). This section
-covers the rest of the shopkeeper interaction: credit, debt,
-combat, and a few non-obvious rules.
+powerful identification tool — full mechanics, interactive price
+tables, and the live buy/sell calculator live in
+[The Price Is Right](#the-price-is-right). What follows is the
+rest: credit, debt, combat, and the non-obvious rules.
 
 #### Gem Identification Through Selling
 
@@ -6219,10 +6205,9 @@ just 1, and gems of the same identified type stack into a single
 inventory slot regardless of count, so the only cost of hoarding a
 heap of identified rubies is one slot's worth of clutter.
 
-The table below lists every real gem in the game. The Price column
-shows what an unangry shopkeeper would charge to buy from you;
-adjust it with the Cha/Sell/Tourist/Angry toolbar to see how the
-modifiers shift things.
+Every real gem, with the unangry-shopkeeper buy price. Use the
+Cha/Sell/Tourist/Angry toolbar to see how the modifiers shift
+things.
 
 The Mohs column is real-world mineral hardness on the Mohs scale
 (talc 1, diamond 10), and the game uses it in two places. Gems of
@@ -6296,12 +6281,11 @@ A few rules of thumb:
   from *real* gems thrown at the **wrong-alignment** unicorn, which
   rolls a random −3 to +3.
 
-So the table above is best read as a **selling guide** rather than a
-discard guide: real gems near the top of the table are the ones worth
-making time to sell at a gem dealer, and the ones worth wishing for
-if you're flush on wishes. Lower-priced gems are not "trash": they
-still feed unicorns and still touchstone-identify other gems by
-hardness comparison.
+Read the table as a **selling guide**, not a discard guide: real
+gems near the top are worth making time to sell at a gem dealer
+and worth wishing for if you're flush on wishes. Lower-priced gems
+aren't trash — they still feed unicorns and still touchstone-identify
+other gems by hardness comparison.
 
 #### Credit and Debt
 
@@ -6414,7 +6398,7 @@ Beyond the rules, a few tactical habits pay off:
   shop whose door spawned **locked**, not an abandoned one. The
   shopkeeper is still inside, the stock is still unpaid, and
   breaking the door down to get in just earns you a normal shop
-  visit plus an angry shopkeeper. (In Orcus-town the shopkeepers
+  visit plus an angry shopkeeper. (In Orcus Town the shopkeepers
   are usually dead by the time you arrive — Orcus killed them —
   so the items there often *are* ownerless, but that's because of
   Orcus, not the engraving.)
@@ -6477,7 +6461,7 @@ point.) The most significant:
 - **Green dragon scale mail** now grants sickness immunity.
 - **New wish sources**: Vlad's throne is guaranteed, and the
   Amulet of Yendor grants a wish on pickup. Either a magic lamp
-  or magic marker is guaranteed in Orcus-town.
+  or magic marker is guaranteed in Orcus Town.
 - **Charm monster** is now level 5 (was 3). **Sleep** is now
   level 3 (was 1). **Confuse monster** is now level 1 (was 2).
 - **Cursed wands** may explode when used to engrave.
@@ -6544,9 +6528,7 @@ point.) The most significant:
 
 #### What to Lean Into
 
-The bullet list is comprehensive but flat. A few of the 5.0 changes
-have tactical implications that aren't obvious from the bullet
-alone — they reshape how a returning veteran plans a run:
+A few 5.0 changes have tactical implications worth pulling out:
 
 **A blessed potion of polymorph is now a self-contained controlled
 polymorph.** No ring of polymorph control required: blessing the
