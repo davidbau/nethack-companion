@@ -138,9 +138,8 @@ various experience levels, and a different quest to complete in the
 mid-game.
 
 **Archeologist.** You start with a bullwhip, a pickaxe, and a tinning
-kit. The pickaxe is quietly one of the best starting items in the
-game: it lets you dig through walls and create your own escape routes from
-the very first level. The tinning kit lets you preserve corpses for
+kit. The pickaxe is the kit's quiet workhorse: it lets you dig through
+walls and create your own escape routes from the very first level. The tinning kit lets you preserve corpses for
 later. Archeologists are capable and flexible, though a bit fragile in
 early combat. You begin knowing what all gems are, which is a nice
 parlor trick and occasionally useful for unicorn negotiation.
@@ -201,7 +200,7 @@ Sacrifice early, sacrifice often. The altar is your friend, and it has
 presents. *Alignment: Any (matches your god).*
 
 **Ranger.** You start with a bow and a generous supply of arrows,
-making you one of the strongest ranged combatants early on. Rangers
+unmatched as an early-game ranged threat. Rangers
 get stealth and see invisible early. Your elven racial option gives
 you sleep resistance on top of that. If you enjoy picking off enemies
 from a distance, this is your role. *Alignment: Neutral or Chaotic.*
@@ -236,9 +235,9 @@ people who have ascended before and want a challenge.
 *Alignment: Neutral.*
 
 **Valkyrie.** You start with a spear, a small shield, and cold
-resistance. Valkyries are widely considered one of the most
-beginner-friendly roles: strong combat stats, good starting equipment,
-and cold resistance covers one of the more common damage types.
+resistance. Valkyries are the standard recommendation for newer
+players: strong combat stats, good starting equipment, and cold
+resistance covers one of the dungeon's more common damage types.
 **Neutral** Valkyries get **Mjollnir** as a sacrifice gift — a
 +d5/+d24 war hammer that doubles as a ranged weapon (it returns when
 thrown at Strength 25). **Lawful** Valkyries can dip for Excalibur
@@ -302,8 +301,8 @@ whether prayer will save you or smite you.
 
 **Lawful** characters should avoid attacking peaceful creatures and
 should never murder. Sacrifice frequently at co-aligned altars.
-Lawful has the advantage of access to Excalibur, one of the best
-weapons in the game, obtainable as early as experience level 5.
+Lawful has the advantage of access to Excalibur, a top-tier melee
+weapon obtainable as early as experience level 5.
 
 **Neutral** characters have the most flexibility. You can get away
 with more than a Lawful character, but your god still frowns on
@@ -810,8 +809,7 @@ Sinks are the dungeon's most underrated identification tool.
   in reserve: it could summon a water elemental, or it could
   polymorph you
 - **Dropping a ring down a sink** produces a message unique to the
-  ring type and is one of the most reliable non-magical
-  identification methods for rings. **Most rings are consumed**,
+  ring type — the most reliable non-magical way to identify rings. **Most rings are consumed**,
   but two come back after IDing themselves for free:
 
 | Message                                              | Ring                  | Ring kept? |
@@ -914,9 +912,8 @@ The Oracle offers two services:
 
 - **Minor consultations** are cheap and produce fortune-cookie-style
   messages, occasionally useful but mostly atmospheric.
-- **Major consultations** are expensive but provide genuinely
-  helpful gameplay information: hints about monsters, items, and
-  game mechanics.
+- **Major consultations** are expensive but pay back the gold in
+  useful intel: hints about monsters, items, and game mechanics.
 
 The Oracle is peaceful and never attacks. Her room is a safe place
 to rest for a moment, though the fountain is subject to the usual
@@ -939,7 +936,7 @@ for the Tsurugi of Muramasa. The Monk faces Master Kaen for the
 Eyes of the Overworld. And so on.
 
 Quest artifacts are powerful. Most provide magic resistance, which
-you absolutely need. Some provide other useful properties like
+you need. Some provide other useful properties like
 telepathy or warning. Getting your quest artifact is a milestone
 that marks the transition from "surviving" to "preparing for the
 endgame."
@@ -2151,11 +2148,10 @@ a large cat. A grown large dog or large cat is a genuine combat
 asset, capable of taking on mid-dungeon threats that would give
 you trouble.
 
-One more thing: your pet will not step on cursed items willingly.
-This makes it one of the cheapest identification tools in the
-game: drop items on the ground and watch whether your pet avoids
-them. If it refuses to walk over a square, something cursed is
-sitting there.
+One more thing: your pet will not step on cursed items willingly,
+which makes it a free curse-detector. Drop items on the ground and
+watch whether your pet avoids them. If it refuses to walk over a
+square, something cursed is sitting there.
 
 #### Feeding and Loyalty
 
@@ -2340,8 +2336,9 @@ it. Holy water is precious in the early game, so save it for items
 you've already identified.
 
 **Scroll of identify.** A blessed scroll of identify will identify
-everything in your pack at once. This is the gold standard, but you
-need to identify the scroll first (irony noted) and bless it.
+everything in your pack at once. The gold standard, with one
+catch: you need to identify the scroll first (irony noted) and
+bless it.
 
 #### The Price Is Right
 
@@ -2630,8 +2627,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 #### The Engrave Test (Wands)
 
-This is the single most useful trick for wand identification and
-costs you nothing. Apply a wand by engraving on the floor with it
+The single most useful wand-identification trick costs you nothing.
+Apply a wand by engraving on the floor with it
 (command: `E`, then select the wand). What happens tells you what
 the wand is:
 
@@ -2691,7 +2688,7 @@ a unicorn horn into a potion of confusion, hallucination, or sickness
 will turn it into water.
 
 **Scrolls.** Reading is risky. Some scrolls (destroy armor, amnesia,
-punishment) are genuinely harmful. The safest approach is to price-ID
+punishment) are outright harmful. The safest approach is to price-ID
 first, then read scrolls from safe price groups. If you must test
 blind: take off your armor before reading a scroll that might be
 destroy armor. Read from a position where teleportation won't be
@@ -2988,8 +2985,8 @@ gives the aggravate monster intrinsic. Cavemen and orcs are exempt.
 | Tengu                   | Teleportitis / teleport control                                        |
 | Disenchanter            | Intrinsic protection                                                   |
 
-Eating for intrinsics is one of the most important things you can
-do in the early and mid game. Poison resistance should be a top
+Eating for intrinsics is the highest-leverage habit in the early
+and mid game. Poison resistance should be a top
 priority, and a gelatinous cube is the highest-density source of
 ascension-kit intrinsics in the game. Each resistance is a *chance*
 per eat (not a guarantee), so eat *every* one of these you find,
@@ -3164,7 +3161,7 @@ innocent blank paper). The $80 group is equally good: enchant armor
 and remove curse, two scrolls you'll always want more of. The $100
 group is the danger zone, a grab-bag mixing magic mapping and
 teleportation with destroy armor. And at $300, you'll find both
-genocide (one of the strongest effects in the game) and punishment
+genocide (the game's nuclear option) and punishment
 (a ball and chain permanently attached to your ankle). Choose wisely.
 
 #### Key Scrolls
@@ -3209,8 +3206,8 @@ and it crumbles to dust. So choose your standing spot wisely.
 
 **Teleportation.** Uncursed teleports you randomly on the level.
 Cursed or confused reading sends you to a random dungeon level.
-With teleport control, *you* choose where you land, making this
-one of the most versatile escape tools in the game.
+With teleport control, *you* choose where you land — the game's
+most flexible escape hatch.
 
 #### Confused Reading
 
@@ -3642,8 +3639,8 @@ but no special effects, useful only for confusing the issue.
 | Bell of Opening    | Invocation item (found in Vlad's Tower area)  |
 | Leash              | Tie a pet to you so it follows through stairs |
 
-The **unicorn horn** is one of the most important tools in the
-game. Apply it to cure confusion, blindness, sickness, hallucination,
+The **unicorn horn** is the dungeon's all-purpose first-aid kit.
+Apply it to cure confusion, blindness, sickness, hallucination,
 stunning, vomiting, and (new in 5.0) deafness: most of the status
 ailments that matter. Carry one at all times. If you don't have one,
 getting one should be near the top of your priority list.
@@ -3737,9 +3734,9 @@ drops, then either read a blessed scroll of enchant armor while
 wearing the scales (they transform into scale mail), or wish for
 the mail directly.
 
-**Speed boots** are one of the most powerful items in the game.
-Being faster than your enemies means you get more turns, which
-means more chances to attack, cast spells, or run away.
+**Speed boots** are worth wishing for. Being faster than your
+enemies means you get more turns — more chances to attack, cast
+spells, or run away.
 
 **Cloak of magic resistance** provides magic resistance in the cloak
 slot and frees up other slots for different resistances. However,
@@ -3877,9 +3874,9 @@ resistance alone is worth carrying it, even after you have a stronger
 weapon. Knights start aligned to it and have unique 1-in-6 fountain-dip
 odds; every other Lawful role faces 1-in-30.
 
-**Grayswandir** is one of the best weapons in the game and is wishable.
-It's silver (extra damage to many monsters), reduces incoming physical
-damage by half, and grants hallucination resistance.
+**Grayswandir** is wishable and arguably the game's best melee
+weapon. It's silver (extra damage to many monsters), halves
+incoming physical damage, and grants hallucination resistance.
 
 **Mjollnir** is the Valkyrie's signature throw-and-return weapon, but
 only with Strength 25 (gauntlets of power or rings of gain strength
@@ -4222,15 +4219,14 @@ apparently dungeon physics care about monster volume.) Added to base:
 - Strength bonus (up to +6 for STR 18/xx, or more)
 - Weapon skill bonus (depends on skill level)
 - Special bonuses (silver damage, artifact bonuses, etc.)
-- In 5.0, **two-handed weapons** get a 50% bonus to
-  the strength damage component, which is the Mazes' way of
-  rewarding you for giving up your shield
+- In 5.0, **two-handed weapons** get a 50% bonus to the strength
+  damage component — a deliberate payoff for giving up your shield
 
 This narrows the gap between two-handed builds and dual-wielding
-considerably. A Barbarian with a
-two-handed sword and respectable Strength is not just accepting the
-trade-off of foregoing a shield. They're dealing genuinely more damage
-per swing than a comparable one-handed build. If you've been avoiding
+considerably. A Barbarian with a two-handed sword and respectable
+Strength is not just accepting the trade-off of foregoing a
+shield — they're dealing measurably more damage per swing than a
+comparable one-handed build. If you've been avoiding
 two-handed weapons because the math didn't add up, run those numbers
 again.
 
@@ -4268,10 +4264,10 @@ The dungeon rewards cowardice, cunning, and property damage. Here
 are the time-tested tactics that keep adventurers breathing:
 
 - **Use corridors.** Monsters can only approach one at a time in a
-  corridor. This is the single most important tactical principle in
-  the Mazes. Never fight a mob in an open room if you can retreat
-  to a chokepoint and fight them in single file. This turns a
-  suicide mission into a turkey shoot.
+  corridor — the single most important tactical principle in the
+  Mazes. Never fight a mob in an open room if you can retreat to a
+  chokepoint and fight them in single file. It turns a suicide
+  mission into a turkey shoot.
 - **Fight at range.** Wands, thrown weapons, and spells let you
   soften up monsters before they reach you. This is especially
   important against monsters with dangerous melee attacks. A fire
@@ -4313,9 +4309,9 @@ are the time-tested tactics that keep adventurers breathing:
 - **Monster spellcasters no longer get a free extra step after
   casting.** This was a 3.6.x quirk that made casters feel
   unpredictably aggressive: they'd cast a spell and then *also* move.
-  Fixed in 5.0. Combat near spellcasters is now more
-  predictable, which is the dungeon's way of making you feel better
-  before introducing something else that isn't.
+  Fixed in 5.0. Combat near spellcasters is now more predictable
+  — enjoy it briefly before the dungeon introduces something else
+  that isn't.
 
 ---
 
@@ -4535,8 +4531,8 @@ Sooner or later, you will put on something cursed. Maybe it's a
 ring you didn't test. Maybe it's boots from a bones level. Maybe
 a monster touched your inventory and you didn't notice. However it
 happens, you're now wearing an item that refuses to come off, and
-it's probably doing something terrible. Welcome to the curse
-problem.
+it's probably doing something terrible. The curse problem is one
+of the dungeon's quieter ways to kill you.
 
 #### How Items Get Cursed
 
@@ -4584,8 +4580,8 @@ Prevention is better than cure. Test items *before* wearing them:
 When prevention fails, you have three remedies:
 
 - **Scroll of remove curse.** Uncursed removes curses from worn
-  and wielded items. Blessed uncurses your entire inventory. The
-  blessed version is one of the most relieving moments in NetHack
+  and wielded items. Blessed uncurses your entire inventory — a
+  real relief when the curse problem has gotten out of hand
 - **Holy water.** Dip a cursed item in holy water and it becomes
   uncursed. Simple, reliable, and reason enough to stockpile holy
   water
@@ -5124,12 +5120,11 @@ you were done with, all the way back to the surface, and then
 through the Elemental Planes to the Astral Plane where your god
 awaits. Easy, right?
 
-This is the Ascension Run: the victory lap that keeps killing even
-the strongest adventurers. You have the most powerful artifact in
-the dungeon in your pack, every covetous monster in the Mazes
-knows it, and the dungeon itself is fighting to keep you from
-leaving. It's the most exhilarating and terrifying part of the
-game.
+The Ascension Run is the victory lap that keeps killing even the
+strongest adventurers. You have the most powerful artifact in the
+dungeon in your pack, every covetous monster in the Mazes knows
+it, and the dungeon itself is fighting to keep you from leaving.
+The most exhilarating and terrifying stretch of the game.
 
 #### The Problems
 
@@ -5984,7 +5979,7 @@ leather armor unless you can avoid eating it while polymorphed.
 Vegan monsters are a subset of the vegetarian list, excluding
 puddings and a few others.
 
-**Foodless.** Don't eat anything at all. This is one of the hardest
+**Foodless.** Don't eat anything at all. Among the hardest
 conducts in the game. Your only nutrition sources are prayer (which
 cures hunger when you're Weak or Fainting), the spell of stone to
 flesh on rocks in your inventory (which creates meatballs, but
@@ -6025,10 +6020,10 @@ output of late-game artifact weapons.
 #### Pacifist
 
 Don't kill any monsters. Not directly, not with pets, not through
-any means that the game attributes to you. This is one of the most
-demanding conducts. You'll rely on pets to do your fighting, on
-conflict to make monsters attack each other, on Elbereth to keep
-them at bay, and on creative use of the dungeon environment.
+any means that the game attributes to you. The pacifist runs on
+pets doing the fighting, on conflict to make monsters attack each
+other, on Elbereth to keep them at bay, and on creative use of
+the dungeon environment.
 
 Pacifist ascensions are possible but require deep knowledge of the
 game's mechanics. Most pacifist players use a large, well-trained
@@ -6173,10 +6168,10 @@ information you normally get for free.
 Complete Sokoban without cheating. No digging through the puzzle levels,
 no teleportation to skip steps, no picking up boulders and carrying them
 to impossible positions. Solve it the way the puzzle designers intended,
-by actually solving the puzzle. The game now tracks violations
-automatically. This is the conduct for players who genuinely enjoy
-Sokoban's boulder-shoving sequences and want their playthrough to
-acknowledge a clean solve.
+by actually solving the puzzle. The game tracks violations
+automatically. The conduct is for players who enjoy Sokoban's
+boulder-shoving and want their playthrough to acknowledge a
+clean solve.
 
 #### Bonesless (new in 5.0)
 
