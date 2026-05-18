@@ -1568,7 +1568,7 @@ AC / attack details on every monster, see the
 | `H`    | Giants            | Strong melee, throw boulders. Giants carry gems.                                                     |
 | `J`    | Jabberwock        | Rare, but if you see one you're in for a fight. Four 2d10 attacks per turn (two bites and two claws) at normal speed. |
 | `K`    | Keystone Kops     | The shopkeeper-summoned constabulary. They appear when you steal, refuse to pay, or anger a shopkeeper. Individually weak but they swarm, and they jeer at you. |
-| `l`    | Leprechauns       | Steal your gold and teleport away. A single bite can drain from a small floor up to *all* of your purse. Hide gold in a sack, drop it elsewhere, or fight at range. |
+| `l`    | Leprechauns       | Steal your gold and teleport away. A single bite can drain up to *all* of your purse. Hide gold in a sack, drop it elsewhere, or fight at range. |
 | `L`    | Liches            | Spellcasters. Arch-liches are among the most dangerous monsters in the game.                         |
 | `m`    | Mimics            | Disguised as items, walls, doors, fountains, altars, or boulders. See the mimics note below.         |
 | `M`    | Mummies           | Aggressive undead with physical claw attacks. Their corpses are dangerous to eat (age you). Mummy wrappings worn as a cloak block invisibility — usually a downside, but useful if you've gone invisible and need a shopkeeper to interact with you. |
