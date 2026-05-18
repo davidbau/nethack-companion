@@ -6627,13 +6627,19 @@ consequences for the player:
   weapons that lands in the 10,000–30,000 zm range. An unidentified
   long sword priced at 16,000 zm is not something to glance over:
   that exorbitant price is a give-away.
-- A shopkeeper *can* be killed for the entire stock and the till,
-  but they're a tough fight (high HP, low AC, hits hard with their
-  weapon), and killing them summons a wave of Keystone Kops to
-  pursue you, costs you a chunk of alignment, and leaves the shop
-  permanently empty: no more buying, no more selling, no more
-  price-ID from that shopkeeper. Strong late-game players sometimes
-  do clear shops anyway, but it's not a casual mid-game move.
+- A shopkeeper *can* be killed for the entire stock plus the till
+  (1,000–4,000 zm and a skeleton key on death), but they're a tough
+  fight (high HP, low AC, hits hard with their weapon), and killing
+  them summons a wave of Keystone Kops to pursue you, costs you a
+  chunk of alignment, and leaves the shop permanently empty: no more
+  buying, no more selling, no more price-ID from that shopkeeper.
+  Two community notes worth knowing: **polymorphing the shopkeeper
+  first** (via wand or trap) means killing them no longer counts as
+  murder, which is the preferred approach for Lawful and Neutral
+  characters. And **chaotic humans** can sacrifice the shopkeeper's
+  corpse on an unaligned altar to convert it, which is a niche but
+  real motive. Strong late-game players sometimes do clear shops
+  anyway, but it's not a casual mid-game move.
 
 Beyond the rules, a few tactical habits pay off:
 
@@ -8495,6 +8501,9 @@ point.) The most significant:
   them with a weapon or dig through them; the practical way past is
   to dig around the side through the adjacent wall, or polymorph into
   something with acid breath. (Potions of acid don't work on bars.)
+- **Shopkeepers** can now remove pits and webs around them, nerfing
+  the classic pit-pinning kill setup. Walking into a peaceful
+  shopkeeper now auto-pays any debts before the inventory prompt.
 
 ---
 
