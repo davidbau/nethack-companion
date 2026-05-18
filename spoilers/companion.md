@@ -7566,7 +7566,7 @@ All trappers and lurkers hide and follow you up and down stairs.
 
 #### Unicorns and horses `u`
 
-White, gray, and black — Lawful, Neutral, Chaotic. Killing a co-aligned unicorn is a −5 Luck penalty (the game tells you "You feel guilty..."). Killing a cross-aligned one has no Luck consequence either way; the gem-throwing trick (see the Luck chapter) is how you actually convert a unicorn into Luck. A naturally-killed unicorn always drops its horn; a revived one drops it only half the time.
+White, gray, and black — Lawful, Neutral, Chaotic. Killing a co-aligned unicorn is a −5 Luck penalty (the game tells you "You feel guilty..."). Killing a cross-aligned one has no Luck consequence either way. Throw gems at unicorns to increase your Luck (see the Luck chapter). A naturally-killed unicorn always drops its horn; a revived one drops it only half the time.
 
 ::: dense-table
 
