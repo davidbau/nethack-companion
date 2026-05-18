@@ -6632,8 +6632,9 @@ consequences for the player:
   weapon), and killing them summons a wave of Keystone Kops to
   pursue you, costs you a chunk of alignment, and leaves the shop
   permanently empty: no more buying, no more selling, no more
-  price-ID from that shopkeeper. Even late-game ascenders usually
-  leave them alone.
+  price-ID from that shopkeeper. Strong late-game players sometimes
+  do clean out specific shops anyway (most famously Izchak's for the
+  candles), but it's not a casual mid-game move.
 
 Beyond the rules, a few tactical habits pay off:
 
