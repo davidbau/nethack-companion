@@ -309,7 +309,7 @@ avoid pious behavior that doesn't match their dark patron's
 expectations. Chaotic is often paired with Rogue for thematic
 consistency.
 
-For your first game: **Lawful Valkyrie, Human or Dwarf.** Strong
+For your first game: **Valkyrie, Human or Dwarf.** Strong
 combat, cold resistance, and Mjollnir waiting at the first altar
 you can sacrifice on. It's the closest thing to an easy mode the
 Mazes offer, which is to say it's still very hard.
