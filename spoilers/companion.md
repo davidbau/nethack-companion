@@ -4361,6 +4361,8 @@ is irreplaceable.
 ---
 
 ### Divine Relations
+<!-- audit 2026-05-18 #121: 3 corrections. (1) Trouble list had Punishment as #10 major trouble — wrong; TROUBLE_PUNISHED = -1 in pray.c:91, i.e. MINOR trouble, handled in the "additional blessings" tier. Demoted Punishment to that tier and added the genuine missing major troubles (stinking cloud TROUBLE_REGION, collapsing under load, stuck in wall, cursed levitation boots, unusable hands, cursed blindfold per pray.c:218-243). (2) "Crowning raises the prayer timeout to at least 1000 turns" — wrong; pray.c:1356-1361 adds rnz(1000) * kick on top of the ordinary rnz(350), so the post-crowning total averages much higher but can be lower than 1000. Reworded to "adds a large random penalty on top of the ordinary post-prayer wait, on the order of ~1000 turns on average." (3) "Crowning locks your alignment (you can never change it)" — wrong; gcrownu at pray.c:805-996 sets no alignment lock. The actual one-way conversion gate is the u.ualignbase[A_CURRENT] == u.ualignbase[A_ORIGINAL] check at pray.c:1638, independent of crowning. Dropped the claim. -->
+
 
 Your relationship with your god is one of the most important
 mechanics in the game. A happy god answers prayers, forgives
@@ -4385,14 +4387,17 @@ problems in a specific order, fixing the most urgent first:
 4. Sinking in lava
 5. Illness (food poisoning, sickness)
 6. Severe hunger (Weak or Fainting)
-7. Critically low HP (≤5, or below a fraction of maxHP that scales with your experience level: 1/5 at XL 1–5, 1/6 at 6–13, 1/7 at 14–21, 1/8 at 22–29, 1/9 at XL 30+)
-8. Lycanthropy
-9. Blindness, confusion, stunning, hallucination
-10. Punishment (iron ball and chain)
+7. Standing in a stinking cloud
+8. Critically low HP (≤5, or below a fraction of maxHP that scales with your experience level: 1/5 at XL 1–5, 1/6 at 6–13, 1/7 at 14–21, 1/8 at 22–29, 1/9 at XL 30+)
+9. Lycanthropy
+10. Blindness, confusion, stunning, hallucination
+11. Stuck in a wall, collapsing under load, cursed levitation boots, unusable hands (cursed glove + cursed wielded weapon), cursed blindfold
 
 After resolving your problems, your god may grant additional
-blessings: fixing minor afflictions, improving your alignment,
-or even gifting intrinsics like telepathy or speed.
+blessings: fixing minor afflictions (plain hunger, ordinary
+punishment with iron ball and chain, low-priority annoyances),
+improving your alignment, or even gifting intrinsics like
+telepathy or speed.
 
 **The requirements for a safe prayer.** All of the following must
 be true:
@@ -4561,14 +4566,15 @@ behavior), your god may crown you. Crowning grants:
 - A class-specific bonus: Wizards get the *finger of death* spell;
   Monks get *restore ability*.
 
-However, crowning also **locks your alignment** (you can never
-change it) and raises the prayer timeout to at least 1000 turns.
-Many experienced players avoid being crowned because the increased
-timeout removes prayer as a reliable emergency tool during the most
-dangerous part of the game. If you need to sacrifice a lot to get
-an artifact gift, be aware that you might accidentally trigger a
-crowning instead. Some players deliberately keep their alignment
-record modest until they've secured the items they need.
+The catch is that crowning **adds a large random penalty to your
+prayer timeout** — on the order of an extra ~1000 turns on
+average, on top of the ordinary post-prayer wait. Many experienced
+players avoid being crowned because that hike turns prayer into an
+unreliable emergency tool during the most dangerous part of the
+game. If you're sacrificing a lot to fish for an artifact gift,
+know that you might accidentally trigger a crowning instead. Some
+players deliberately keep their alignment record modest until
+they've secured the items they need.
 
 ---
 
@@ -7093,16 +7099,18 @@ other gems by hardness comparison.
 Damage is shown as **vs small / vs large**, the dice rolled before enchantment and excluding silver/material bonuses. **Wt** is unit weight; **Cost** is the unenchanted shop base price in zorkmids. **Hit** is the to-hit bonus baked into the weapon itself (most are 0). Two-handed weapons that prevent shield use and two-weapon combat are flagged in the notes. Weapons are grouped by their skill class so you can see your options within each skill tree at a glance.
 
 #### Dagger
+<!-- audit 2026-05-18 #119: 3 corrections. (1) "Rogues multishot up to three" — wrong; Expert Rogue gets 1 base + 1 Expert + 1 Skilled-fallthrough + 1 class bonus = max 4, then rnd(4) yields 1-4. dothrow.c:177-190, 63-67. (2) Athame Elbereth "lasts longer" — wrong mechanism; the athame's real property is that it doesn't dull when engraving (engrave.c:1306-1307, comment at :1361), so you can write Elbereth without consuming enchantment. Duration is unchanged. (3) Silver dagger "Silver damage to demons" — scope too narrow; silver hurts anything where mon_hates_silver() returns true: demons, undead, lycanthropes, shades (uhitm.c:896, 1035, 1376). Also flagged stackable consistency for silver dagger and athame (both have mg=1). -->
+
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| dagger | 1d4 / 1d3 | 10 | 4 | +2 | iron | Stackable; Rogues multishot up to three in a single throw. |
+| dagger | 1d4 / 1d3 | 10 | 4 | +2 | iron | Stackable; Expert-skill Rogues can multishot up to four in a single throw. |
 | elven dagger | 1d5 / 1d3 | 10 | 4 | +2 | wood | Stackable. Sting is the artifact form. |
 | orcish dagger | 1d3 / 1d3 | 10 | 4 | +2 | iron | Stackable. |
-| silver dagger | 1d4 / 1d3 | 12 | 40 | +2 | silver | Silver damage to demons. Common Rogue/Ranger off-hand. |
-| athame | 1d4 / 1d3 | 10 | 4 | +2 | iron | Used for engraving wards — Elbereth on the floor lasts longer engraved with an athame. |
+| silver dagger | 1d4 / 1d3 | 12 | 40 | +2 | silver | Stackable. Silver damage to demons, undead, lycanthropes, and shades. Common Rogue/Ranger off-hand. |
+| athame | 1d4 / 1d3 | 10 | 4 | +2 | iron | Stackable. Engraving with an athame **doesn't dull the blade** — you can write Elbereth in dust without spending an enchantment, the way other weapons must. |
 
 :::
 
@@ -7221,7 +7229,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| mace | 1d6+1 / 1d6 | 30 | 5 | — | iron | The Priest's first sacrifice gift, Demonbane, is a +d4/+0 silver mace. |
+| mace | 1d6+1 / 1d6 | 30 | 5 | — | iron | The Priest's first sacrifice gift, Demonbane, is a +d5/+0 silver mace. |
 | silver mace | 1d6+1 / 1d6 | 36 | 60 | — | silver | Bonus damage to demons, undead, and shape-changers. |
 
 :::
@@ -7370,13 +7378,15 @@ kebab bonus.
 :::
 
 #### Crossbow
+<!-- audit 2026-05-18 #118: 2 corrections. (1) Crossbow bolt damage was "1d4+1 / 1d6+1" — wrong; per objects.h:155-156 PROJECTILE macro sdam=4, ldam=6 = 1d4 / 1d6, no +1 bonus. (2) "Crossbows fire one shot per turn at most" — wrong; dothrow.c:225-231 enables multishot at ACURRSTR >= 18 (>= 16 for gnomes), and PM_GNOME gets a baseline +1 multishot bonus per dothrow.c:205-209. Added role/race context (Rogue/Ranger Expert per u_init.c). -->
+
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| crossbow bolt | 1d4+1 / 1d6+1 | 1 | 2 | — | iron |  |
-| crossbow | — | 50 | 40 | — | wood | Bolts pierce — and crossbows fire one shot per turn at most. |
+| crossbow bolt | 1d4 / 1d6 | 1 | 2 | — | iron | Stackable. |
+| crossbow | — | 50 | 40 | — | wood | Bolts pierce. Multishot kicks in at **Str 18** (Str 16 for gnomes, who also get a baseline +1 multishot); below that, one bolt per turn. Rogues and Rangers reach Expert, Valkyries Skilled. |
 
 :::
 

@@ -4455,3 +4455,142 @@ Source: `spoilers/companion.md` line 1946. 1 substantive correction
   means most low-HD demons fizzle even without MR. Not folded in.
 
 ---
+
+## 2026-05-18 — Chapter audit #118: Crossbow
+
+Source: `spoilers/companion.md` line 7372. 2 corrections.
+
+### Verified
+- Crossbow: weight 50, cost 40, hit 0, wood (objects.h:405).
+- Crossbow bolt: weight 1, cost 2, hit 0, iron, pierce
+  (objects.h:155-157).
+
+### Corrected
+1. **Bolt damage "1d4+1 / 1d6+1"** — wrong. PROJECTILE macro
+   sdam=4, ldam=6 → 1d4 / 1d6 (no +1 bonus). Same encoding as
+   arrow.
+2. **"Crossbows fire one shot per turn at most"** — wrong.
+   dothrow.c:225-231 enables multishot at ACURRSTR >= 18 (>= 16
+   for gnomes). PM_GNOME gets baseline +1 multishot bonus at
+   dothrow.c:205-209.
+
+### Added
+- Role/race tactical context: Rogue + Ranger Expert
+  (u_init.c:429, 455), Valkyrie Skilled (u_init.c:366). Gnomes
+  start with crossbow + bolts (u_init.c:252-253).
+
+---
+
+## 2026-05-18 — Chapter audit #119: Dagger
+
+Source: `spoilers/companion.md` line 7095. 3 corrections.
+
+### Verified
+- All five damage/weight/cost/hit/material values match
+  objects.h:201-214.
+- Artifact attributions: Sting → ELVEN_DAGGER, Magicbane →
+  ATHAME (artilist.h:138, 145).
+
+### Corrected
+1. **"Rogues multishot up to three"** — wrong. Expert Rogue:
+   1 base + 1 Expert + 1 Skilled-fallthrough + 1 Rogue class
+   bonus = max 4, then rnd(4) yields 1–4 (dothrow.c:177-190,
+   63-67).
+2. **Athame "Elbereth on the floor lasts longer engraved with
+   an athame"** — wrong mechanism. The athame's distinction is
+   that it doesn't dull when engraving (engrave.c:1306-1307,
+   comment at :1361), so you can write Elbereth without
+   consuming enchantment. On-floor duration is unchanged.
+3. **Silver dagger "Silver damage to demons"** — scope too narrow.
+   Silver hurts anything where mon_hates_silver() returns true:
+   demons, undead, lycanthropes, shades (uhitm.c:896, 1035, 1376).
+
+### Notes
+- Silver dagger (mg=1 at objects.h:210) and athame (mg=1 at
+  objects.h:213) are stackable; Notes column was inconsistent.
+  Added "Stackable" to both.
+
+---
+
+## 2026-05-18 — Chapter audit #120: Mace
+
+Source: `spoilers/companion.md` line 7220. 1 correction.
+
+### Verified
+- mace: 1d6+1/1d6 wt 30 cost 5 iron P_MACE (objects.h:355-357,
+  weapon.c:269-275 small-bonus).
+- silver mace: 1d6+1/1d6 wt 36 cost 60 silver P_MACE
+  (objects.h:359-361).
+- Demonbane = silver mace (artilist.h:162-164).
+- Priest starts with blessed +1 mace (u_init.c:115).
+
+### Corrected
+1. **Demonbane "+d4/+0"** — wrong. PHYS(5, 0) at artilist.h:163
+   = +d5/+0.
+
+---
+
+## 2026-05-18 — Chapter audit #121: Divine Relations
+
+Source: `spoilers/companion.md` line 4170. 3 corrections + missing
+trouble entries added.
+
+### Verified
+**Prayer trouble enumeration:**
+- HP fractions 1/5..1/9 by XL bands match critically_low_hp()
+  (pray.c:114-156).
+- Order Stoned > Slimed > Strangled > Lava > Sick > Starving >
+  HP > Lycanthropy matches in_trouble() (pray.c:206-223).
+
+**Sacrifice:**
+- 50-turn freshness window (pray.c:1844).
+- Value = mons[].difficulty + 1 (pray.c:1845).
+- Same-race chaotic-altar demon summon (pray.c:1729-1762).
+- Same-alignment unicorn insult (pray.c:1923-1930).
+- Altar conversion roll rn2(8 + u.ulevel) > 5 (pray.c:1661).
+- Angry-god altar drop converts hero (pray.c:1637-1647).
+
+**Crowning:**
+- Resistances: see invisible, fire, cold, shock, sleep, poison
+  (pray.c:813-818).
+- Class gifts: Wizard SPE_FINGER_OF_DEATH, Monk
+  SPE_RESTORE_ABILITY (pray.c:824-832).
+- "Hand of Elbereth" title for Lawful (pray.c:841).
+
+**Donation:**
+- Ask formula (ulevelpeak ?: 1) * rn1(101, 150 + cheapskate*40)
+  (priest.c:637-638).
+- Tier thresholds at clairvoyance and 2x-clairvoyance
+  (priest.c:660, 671, 681).
+- Protection cap at u.ublessed < 20 (priest.c:696).
+
+### Corrected
+1. **Crowning "locks your alignment (you can never change it)"**
+   — wrong. gcrownu() (pray.c:805-996) sets no alignment lock.
+   The one-way conversion gate is the u.ualignbase[A_CURRENT]
+   == u.ualignbase[A_ORIGINAL] check at pray.c:1638 — independent
+   of crowning. Dropped the claim entirely.
+2. **"Raises the prayer timeout to at least 1000 turns"** —
+   wrong. pray.c:1356-1361: u.ublesscnt = rnz(350); if crowned
+   (uhand_of_elbereth) += kick * rnz(1000). Average post-crowning
+   is much higher but rnz can yield less than 1000 in either
+   term. Reworded to "adds a large random penalty (~1000 turns
+   on average) on top of the ordinary post-prayer wait."
+3. **Punishment listed as #10 major trouble** — wrong.
+   TROUBLE_PUNISHED = -1 in pray.c:91, a MINOR trouble handled
+   in the "additional blessings" tier. Demoted to that tier.
+   Also added previously-missing major troubles: TROUBLE_REGION
+   (stinking cloud), TROUBLE_COLLAPSING (encumbrance), TROUBLE_
+   STUCK_IN_WALL, TROUBLE_CURSED_LEVITATION, TROUBLE_UNUSEABLE_
+   HANDS, TROUBLE_CURSED_BLINDFOLD (pray.c:218-243).
+
+### Notes
+- Artifact gift gating: requires u.ulevel > 2 and u.uluck >= 0
+  (pray.c:1784-1792); spoiler omits this prerequisite.
+- After-gift cooldown rnz(300 + 50 * nartifacts) is distinct
+  from ordinary post-prayer cooldown (pray.c:1819).
+- Cross-aligned altar conversion of own alignment also
+  change_luck(-3) and u.ublesscnt += 300 (pray.c:1646-1647) —
+  spoiler doesn't note the luck cost.
+
+---
