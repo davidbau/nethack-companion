@@ -3254,16 +3254,17 @@ reveals multiple items at once (with positive luck, always at least
 two). You will never have enough of these.
 
 **Enchant weapon / enchant armor.** The path to endgame power.
-Uncursed enchant *weapon* raises by +1; blessed raises by `rnd(3 -
-spe/3)` (more random improvement at low enchantment). Enchanting a
-weapon at +9 or higher only succeeds 1-in-spe of the time and never
-destroys the weapon. Enchant *armor* raises by `rnd(s)` where `s`
-depends on current enchantment, plus +1 for special armor (elven /
-Cornuthaum), +1 for non-magic armor, +1 if blessed. Once worn armor
-exceeds **+3** (or **+5** for elven/Cornuthaum), each further enchant
-attempt can destroy the armor — the scroll "evaporates" your gear.
-Blessed scrolls don't bypass this cap. Save scrolls for your
-ascension kit and stop enchanting armor at +3 (or +5 elven).
+Uncursed enchant *weapon* raises by +1. Blessed raises by up to 3,
+less the more the weapon is already enchanted (no more than +1 once
+the weapon is +6 or higher). Past +9 the scroll usually does nothing
+but never destroys the weapon. Enchant *armor* raises by a small
+random amount that's larger when armor is unenchanted, larger again
+for elven or non-magic armor, and +1 extra when blessed. Once worn
+armor exceeds **+3** (or **+5** for elven / Wizard's Cornuthaum),
+each further enchant attempt can destroy the armor — the scroll
+"evaporates" your gear. Blessed scrolls don't bypass this cap. Save
+scrolls for your ascension kit and stop enchanting armor at +3 (or
++5 elven).
 
 **Remove curse.** Frees you from cursed equipment. Uncursed version
 works on worn and wielded items only; blessed version uncurses your
