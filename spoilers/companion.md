@@ -72,7 +72,7 @@ you alive.
 
 **Part Two: Reading the Terrain**
 
-4. [The Lay of the Land](#the-lay-of-the-land) — Rooms, corridors, and dungeon features
+4. [The Lay of the Land](#the-lay-of-the-land) <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#5a5a5a" stroke-width="1.1" style="vertical-align:-2px" aria-label="includes a map figure"><path d="M1 3 L5 2 L9 3.5 L13 2 L13 11 L9 12.5 L5 11 L1 12 Z"/><line x1="5" y1="2" x2="5" y2="11"/><line x1="9" y1="3.5" x2="9" y2="12.5"/></svg> — Rooms, corridors, and dungeon features (with map)
 5. [Points of Interest](#points-of-interest) — Fountains, altars, thrones, and sinks
 6. [Branches and Landmarks](#branches-and-landmarks) — The Mines, Sokoban, and beyond
 7. [Traps and Hazards](#traps-and-hazards) — What the dungeon has in store for you
@@ -87,7 +87,7 @@ you alive.
 
 **Part Four: Gear and Provisions**
 
-13. [A Practical Identification Strategy](#a-practical-identification-strategy) — Figuring out what you've found
+13. [A Practical Identification Strategy](#a-practical-identification-strategy) <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#5a5a5a" stroke-width="1.1" style="vertical-align:-2px" aria-label="includes a flowchart figure"><rect x="2" y="1" width="10" height="3"/><rect x="2" y="6" width="10" height="3"/><rect x="2" y="11" width="10" height="3"/><line x1="7" y1="4" x2="7" y2="6"/><line x1="7" y1="9" x2="7" y2="11"/></svg> — Figuring out what you've found (with flowchart)
 14. [Provisions and Dining](#provisions-and-dining) — Food, nutrition, and dining
 15. [The Apothecary](#the-apothecary) — Potions and their many uses
 16. [The Scroll Rack](#the-scroll-rack) — Scrolls, their effects, and confused reading
