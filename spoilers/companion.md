@@ -2224,9 +2224,14 @@ MR, so sleep, paralysis, and taming all work. A neat trick: lure it
 adjacent to a moat or lava and let it swap itself in. Speed 12, so
 a speed-boosted hero outpaces it.
 
-Eat the corpse for temporary intrinsic Displacement (6 to 36 turns):
-the only intrinsic source in the game, no equipment slot required.
-Rots like any other; tin it if you can't eat now.
+The corpse, on the other hand, *does* give you cloak-style
+displacement: monsters target a phantom image one square off from
+where you really are and miss accordingly. It's exactly the cloak
+of displacement effect, only timed instead of slot-based. Duration
+is short (6 to 36 turns per bite), and it's the only intrinsic
+source in the game, so tin the corpse and pop a tin just before a
+hard fight. The irony: the beast itself doesn't have this
+protection; eating it grants you the displacement its name promised.
 
 #### The Genetic Engineer
 <!-- audit 2026-05-17 #12: 14 claims verified, 1 corrected (hit message wording was the corpse string); added magic resistance to defenses. See companion-audit.md. -->
