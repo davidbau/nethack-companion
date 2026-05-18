@@ -1127,9 +1127,9 @@ side contains a minotaur.
 
 To enter the Castle, you need to open the drawbridge. Options:
 
-- **Play the passtune.** A five-note musical sequence played on a
-  tonal instrument (a tooled horn, bugle, or magic harp) opens
-  the drawbridge. The notes are randomized per game. You can learn
+- **Play the passtune.** A five-note musical sequence played on
+  any tonal instrument (wooden flute, magic flute, tooled horn,
+  frost or fire horn, bugle, harp) opens the drawbridge. The notes are randomized per game. You can learn
   them by trying different sequences: the game tells you how many
   notes are correct after each attempt, like a game of Mastermind.
 - **Wand of opening** pointed at the drawbridge.
@@ -3666,6 +3666,7 @@ than it looks.
 ---
 
 ### Tools of the Trade
+<!-- audit 2026-05-17 #28: ~40 claims verified, 5 corrected (container locked counts, unicorn horn cure list, crystal ball one-class-per-gaze, Bell of Opening is Quest reward not Vlad, passtune any tonal instrument). See companion-audit.md. -->
 
 The `(` symbol covers the dungeon's most eclectic category: pickaxes,
 magic lamps, unicorn horns, musical instruments, crystal balls, and
@@ -3681,8 +3682,8 @@ in this grab-bag.
 | Oilskin sack   | 15     | Protects contents from water             |
 | Bag of holding | 15     | Reduces weight of contents dramatically  |
 | Bag of tricks  | 15     | Creates monsters when opened (not a bag) |
-| Large box      | 350    | Holds 0 to 3 items, often locked         |
-| Chest          | 600    | Holds 0 to 5 items, often locked         |
+| Large box      | 350    | Holds 0 to 3 items (0 to 5 if locked)    |
+| Chest          | 600    | Holds 0 to 5 items (0 to 7 if locked)    |
 | Ice box        | 900    | Preserves corpses from rotting           |
 
 The **bag of holding** deserves its own paragraph because it
@@ -3735,10 +3736,11 @@ fill it, so start hoarding candles when you find them.
 
 #### Musical Instruments
 
-Music has power in the Mazes. A **tooled horn** or **bugle** is
-needed to play the passtune at the Castle drawbridge (you'll find
-the notes nearby; listen carefully). A **magic harp** charms monsters
-into tameness. A **magic flute** puts them to sleep. A **drum of
+Music has power in the Mazes. Any tonal instrument (wooden flute,
+magic flute, tooled horn, frost or fire horn, bugle, or harp) can
+play the passtune at the Castle drawbridge — you'll find the notes
+nearby, so listen carefully. A **magic harp** charms monsters into
+tameness. A **magic flute** puts them to sleep. A **drum of
 earthquake** creates pits around you, which is as chaotic as it
 sounds.
 
@@ -3750,15 +3752,15 @@ but no special effects, useful only for confusing the issue.
 | Tool               | Use                                           |
 | ------------------ | --------------------------------------------- |
 | Pickaxe / mattock  | Dig through walls and floors                  |
-| Unicorn horn       | Cure poison, confusion, blindness, nausea     |
+| Unicorn horn       | Cure confusion, blindness, sickness, hallucination, stunning, vomiting, deafness |
 | Stethoscope        | Check HP and status of a monster              |
 | Tin opener         | Open tins in one turn                         |
 | Tinning kit        | Preserve corpses as tins                      |
 | Blindfold          | Voluntarily go blind (useful for telepathy)   |
 | Towel              | Wipe cream pie from face, use as blindfold    |
 | Magic marker       | Write scrolls and spellbooks on blank paper   |
-| Crystal ball       | Detect objects, traps, and portals on a level |
-| Bell of Opening    | Invocation item (found in Vlad's Tower area)  |
+| Crystal ball       | Pick a glyph class per gaze (objects, traps, monsters, etc.); each gaze answers one question |
+| Bell of Opening    | Invocation item (granted by your quest leader on Quest completion) |
 | Leash              | Tie a pet to you so it follows through stairs |
 
 The **unicorn horn** is the dungeon's all-purpose first-aid kit.

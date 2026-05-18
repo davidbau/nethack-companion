@@ -32,7 +32,7 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 25**  L 7428  (  18 lines)   ↳ Bestiary Tables → Arachnids and centipedes `s`
 - [x] **# 26**  L 1147  (  27 lines)   ↳ Traps and Hazards → Nuisance Traps
 - [x] **# 27**  L 7244  (  18 lines)   ↳ Bestiary Tables → Humanoids `h`
-- [ ] **# 28**  L 3633  ( 144 lines) 📖 Tools of the Trade
+- [x] **# 28**  L 3633  ( 144 lines) 📖 Tools of the Trade
 - [ ] **# 29**  L 1623  ( 204 lines) 📖 What Actually Kills Adventurers
 - [ ] **# 30**  L 5560  (  82 lines)   ↳ Sokoban Solutions → Level 1, Version A
 - [ ] **# 31**  L 6005  ( 137 lines)   ↳ Sokoban Solutions → Level 4, Version B (prize: usually amulet of reflection, 25% bag of holding)

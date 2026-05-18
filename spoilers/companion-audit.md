@@ -1457,3 +1457,45 @@ Verified 50+ cells across 7 rows; 2 corrected in Notes column.
 ### Notes
 - "If Int hits 3 you die" wording is accurate enough for spoiler prose.
 - "Five tentacles per turn" technically right but `gs.skipdrin` short-circuits after helmet-blocked hit, so the expected damage per turn is less than 5× implies.
+
+---
+
+## 2026-05-17 — Chapter audit #28: Tools of the Trade
+
+Source: `spoilers/companion.md` lines 3668-3812 (144 lines)
+Verified ~40 claims; 5 corrected; 4 close calls.
+
+### Verified
+- Container weights match `objects.h:899-912` (sack/oilskin/bag of holding/bag of tricks=15; large box=350; chest=600; ice box=900).
+- Magic lamp wish odds: 1/3 djinni emerges (apply.c:1817), 80% wish from blessed (potion.c:2833) → ~27% total. ✓
+- Magic marker initial charges 30-99 (mkobj.c:1026 `rn1(70,30)`).
+- Marker recharge: blessed scroll of charging restores to ≥50, second attempt fails (read.c:854-879).
+- Marker write costs match basecost/2 to basecost-1 (write.c:265) for all items listed.
+- Unicorn horn ailment cap of 7 (blessed), 3 (uncursed) with 35% no-effect (apply.c:2336-2341 comment).
+- Cursed horn inflicts random ailment from {sick, blind, confused, stunned, vomiting, hallucinated, deaf} (apply.c:2297-2301).
+- Unicorn horn does NOT restore drained ability scores in 5.0; no fix_attrib path (apply.c).
+- Skeleton key on doors 70% + Dex (lock.c:640); on boxes 75% + Dex (lock.c:528).
+- Magic harp/flute/drum effects match music.c (charm, sleep, earthquake).
+- Candelabrum held by Vlad (M3_WANTSCAND); 7 candles required.
+- Towel: wipes cream pie + serves as blindfold (apply.c).
+
+### Corrected
+1. **Chest/large box capacities** omitted locked variants. mkobj.c:315-320: `box->olocked ? 7 : 5` for chests, `? 5 : 3` for large boxes. Fix: added "(0 to 7 if locked)" / "(0 to 5 if locked)".
+
+2. **Unicorn horn cure list "poison, confusion, blindness, nausea"** was wrong:
+   - No "poison" cure exists (SICK in apply.c is food poisoning/illness, not the resistance line).
+   - Missing stun, hallucination, deafness (all in apply.c:2312-2327).
+   - "Nausea" should be "vomiting".
+   - Fix: full list "confusion, blindness, sickness, hallucination, stunning, vomiting, deafness".
+
+3. **Crystal ball "Detect objects, traps, and portals on a level"** — misleading. detect.c:1300 prompts for one symbol class per gaze; one gaze = one question. Fix: "Pick a glyph class per gaze; each gaze answers one question."
+
+4. **Bell of Opening "found in Vlad's Tower area"** — WRONG. Vlad holds the Candelabrum (M3_WANTSCAND). The Bell is the Quest reward, granted by the role's quest leader on Quest completion. Fix: "Invocation item (granted by your quest leader on Quest completion)".
+
+5. **Passtune "tooled horn or bugle"** — WRONG. music.c:769-772 lists wooden flute, magic flute, tooled horn, frost horn, fire horn, bugle as blowable; harps can play too. Only earthquake/leather drums are excluded. Fix in both the Castle section (line 1130) and the Musical Instruments paragraph (line 3738): "any tonal instrument".
+
+### Close calls
+- "rub it while blessed and there's a 1-in-3 chance the djinni emerges" — the 1/3 emergence test doesn't depend on bless status; only the wish does. The 27% figure is correct only for blessed lamps.
+- BoH "in older editions destroyed everything" — overstated even historically. Current is `is_boh_item_gone = !rn2(13)` (~7.7% per item).
+- "Tin opener: open tins in one turn" — true for blessed wielded; otherwise 50/50 between 0 and 1 turn. Reasonable simplification.
+- "Bag of tricks (not a bag)" — IS a container code-side (Is_container/Is_mbag). Parenthetical is usage hint, not code-level fact.

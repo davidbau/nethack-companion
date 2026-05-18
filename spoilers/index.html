@@ -1379,10 +1379,11 @@ minotaur.</p>
 <p>To enter the Castle, you need to open the drawbridge. Options:</p>
 <ul>
 <li><strong>Play the passtune.</strong> A five-note musical sequence
-played on a tonal instrument (a tooled horn, bugle, or magic harp) opens
-the drawbridge. The notes are randomized per game. You can learn them by
-trying different sequences: the game tells you how many notes are
-correct after each attempt, like a game of Mastermind.</li>
+played on any tonal instrument (wooden flute, magic flute, tooled horn,
+frost or fire horn, bugle, harp) opens the drawbridge. The notes are
+randomized per game. You can learn them by trying different sequences:
+the game tells you how many notes are correct after each attempt, like a
+game of Mastermind.</li>
 <li><strong>Wand of opening</strong> pointed at the drawbridge.</li>
 <li><strong>Spell of knock</strong> cast at the drawbridge.</li>
 <li><strong>Wand of striking</strong> on the portcullis.</li>
@@ -5400,6 +5401,7 @@ than it looks.</p>
 </section>
 <section id="tools-of-the-trade" class="level3">
 <h3>Tools of the Trade</h3>
+<!-- audit 2026-05-17 #28: ~40 claims verified, 5 corrected (container locked counts, unicorn horn cure list, crystal ball one-class-per-gaze, Bell of Opening is Quest reward not Vlad, passtune any tonal instrument). See companion-audit.md. -->
 <p>The <code>(</code> symbol covers the dungeon’s most eclectic
 category: pickaxes, magic lamps, unicorn horns, musical instruments,
 crystal balls, and bags that eat other bags. If it doesn’t fit neatly
@@ -5439,12 +5441,12 @@ the game hide in this grab-bag.</p>
 <tr>
 <td>Large box</td>
 <td>350</td>
-<td>Holds 0 to 3 items, often locked</td>
+<td>Holds 0 to 3 items (0 to 5 if locked)</td>
 </tr>
 <tr>
 <td>Chest</td>
 <td>600</td>
-<td>Holds 0 to 5 items, often locked</td>
+<td>Holds 0 to 5 items (0 to 7 if locked)</td>
 </tr>
 <tr>
 <td>Ice box</td>
@@ -5500,19 +5502,23 @@ so start hoarding candles when you find them.</p>
 </section>
 <section id="musical-instruments" class="level4">
 <h4>Musical Instruments</h4>
-<p>Music has power in the Mazes. A <strong>tooled horn</strong> or
-<strong>bugle</strong> is needed to play the passtune at the Castle
-drawbridge (you’ll find the notes nearby; listen carefully). A
-<strong>magic harp</strong> charms monsters into tameness. A
-<strong>magic flute</strong> puts them to sleep. A <strong>drum of
-earthquake</strong> creates pits around you, which is as chaotic as it
-sounds.</p>
+<p>Music has power in the Mazes. Any tonal instrument (wooden flute,
+magic flute, tooled horn, frost or fire horn, bugle, or harp) can play
+the passtune at the Castle drawbridge — you’ll find the notes nearby, so
+listen carefully. A <strong>magic harp</strong> charms monsters into
+tameness. A <strong>magic flute</strong> puts them to sleep. A
+<strong>drum of earthquake</strong> creates pits around you, which is as
+chaotic as it sounds.</p>
 <p>Non-magical instruments (wooden flute, leather drum) produce noise
 but no special effects, useful only for confusing the issue.</p>
 </section>
 <section id="other-notable-tools" class="level4">
 <h4>Other Notable Tools</h4>
 <table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 71%" />
+</colgroup>
 <thead>
 <tr>
 <th>Tool</th>
@@ -5526,7 +5532,8 @@ but no special effects, useful only for confusing the issue.</p>
 </tr>
 <tr>
 <td>Unicorn horn</td>
-<td>Cure poison, confusion, blindness, nausea</td>
+<td>Cure confusion, blindness, sickness, hallucination, stunning,
+vomiting, deafness</td>
 </tr>
 <tr>
 <td>Stethoscope</td>
@@ -5554,11 +5561,13 @@ but no special effects, useful only for confusing the issue.</p>
 </tr>
 <tr>
 <td>Crystal ball</td>
-<td>Detect objects, traps, and portals on a level</td>
+<td>Pick a glyph class per gaze (objects, traps, monsters, etc.); each
+gaze answers one question</td>
 </tr>
 <tr>
 <td>Bell of Opening</td>
-<td>Invocation item (found in Vlad’s Tower area)</td>
+<td>Invocation item (granted by your quest leader on Quest
+completion)</td>
 </tr>
 <tr>
 <td>Leash</td>
