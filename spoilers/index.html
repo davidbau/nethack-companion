@@ -2739,10 +2739,16 @@ requires adjacency.</p>
 </section>
 <section id="attack-wands-and-the-warning-shot" class="level4">
 <h4>Attack Wands and the Warning Shot</h4>
-<p>The first time any given monster zaps an offensive wand at you, the
-shot misses. If you can see the monster, the wand identifies itself in
-the same moment, so now you know what was just aimed at you and you have
-a turn to do something about it before the next zap connects.</p>
+<!-- audit 2026-05-17 #21: 6 claims verified, 0 corrected; added the late-game carve-out (Stronghold/Knox/Quest/Gehennom/endgame monsters start mwandexp=TRUE per makemon.c:1290). See companion-audit.md. -->
+<p>The first time any given monster zaps a beam wand (death, sleep,
+fire, cold, lightning, magic missile) at you, the shot misses. If you
+can see the monster, the wand identifies itself in the same moment, so
+now you know what was just aimed at you and you have a turn to do
+something about it before the next zap connects. <strong>Late-game
+exception:</strong> monsters generated in the Stronghold, Knox, the
+Quest, Gehennom, Vlad’s Tower, or the endgame planes start with their
+“experience” flag already set, so their first zap can connect. The
+freebie is an early-to-mid-game courtesy.</p>
 </section>
 <section id="the-touch-of-death" class="level4">
 <h4>The Touch of Death</h4>
@@ -7493,12 +7499,10 @@ down. Climb fast (see the Ascension Run section below).</p></li>
 <section id="survival-tips" class="level4">
 <h4>Survival Tips</h4>
 <ul>
-<li><strong>Bring extra food.</strong> Prayer <em>can</em> cure Hungry,
-but it’s a high-cost favor to spend on something a food ration
-solves</li>
-<li><strong>Bring scrolls of remove curse.</strong> Prayer can uncurse a
-cursed worn item too, but only one at a time and only as a “trouble” the
-god will fix</li>
+<li><strong>Bring extra food</strong> — you’ll be moving fast and
+praying is not a reliable refill</li>
+<li><strong>Bring scrolls of remove curse</strong> — fast inventory
+cleanup when something goes wrong</li>
 <li><strong>Dig, don’t navigate.</strong> Maze walls are faster to go
 through than around</li>
 <li><strong>Kill the Wizard quickly.</strong> Every turn he lives is

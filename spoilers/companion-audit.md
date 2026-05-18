@@ -1366,3 +1366,34 @@ Verified 22 cells; 0 corrected.
 - cockatrice: CLR_YELLOW, LVL 5/6/6/30, bite 1d3 + touch petrify + passive petrify, ston-res. Matches monsters.h:178-186.
 - pyrolisk: CLR_RED, LVL 6/6/6/30, gaze 2d6 fire + bite 1d6, fire-res. Correctly NO petrify attacks, NO ston-res. Matches monsters.h:187-195.
 - All three poison-resistant (MR_POISON) — verified.
+
+---
+
+## 2026-05-17 — Chapter audit #21: Dangerous Encounters → Attack Wands and the Warning Shot
+
+Source: `spoilers/companion.md` lines 1888-1894
+Verified 6 claims; 0 corrected; 1 substantive omission added.
+
+### Verified
+- First shot always misses for inexperienced monsters — `muse.c:1830-1834`, comment literally says "the first shot always misses".
+- `buzz_force_miss()` at muse.c:1815-1818 calls `dobuzz(forcemiss=TRUE)`; `zap.c:4962` skips zap_hit when forcemiss.
+- Per-monster flag mwandexp (monst.h:166), set TRUE after the first zap.
+- Wand identifies itself if monster visible — `use_offensive` at muse.c:1849-1850 `if (oseen) makeknown(otmp->otyp)`.
+- Player gets a turn before next zap connects.
+
+### Added (was omitted in original)
+- **Late-game carve-out**: monsters generated in Stronghold, Knox, Quest, Gehennom, Vlad's Tower, or endgame planes start with `mwandexp = TRUE` (`makemon.c:1290-1293`). They do NOT give the warning shot.
+
+### Close call
+- "Any offensive wand" was slightly broad: force-miss applies to beam wands (death, sleep, fire, cold, lightning, magic missile) and fire/frost horns, but not WAN_TELEPORTATION / WAN_UNDEAD_TURNING / WAN_STRIKING (which use mbhit, not buzzfn). Tightened to "beam wand" with the specific list.
+
+---
+
+## 2026-05-17 — Methodology follow-up
+
+Tightened the survival-tips bullets in The Ascension Run section.
+The prior fix correctly noted prayer CAN cure hunger and uncurse
+items, but the resulting bullet wording was wordy. The actual
+strategy advice (bring food, bring scrolls) is sound on its own;
+dropped the prayer caveat entirely. The reader doesn't need to
+know WHY to bring food — just that they should.

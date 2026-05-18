@@ -1886,12 +1886,17 @@ you from an eel's grab** once it lands. Kill sea monsters at range
 whenever possible — their grab attack requires adjacency.
 
 #### Attack Wands and the Warning Shot
+<!-- audit 2026-05-17 #21: 6 claims verified, 0 corrected; added the late-game carve-out (Stronghold/Knox/Quest/Gehennom/endgame monsters start mwandexp=TRUE per makemon.c:1290). See companion-audit.md. -->
 
-The first time any given monster zaps an offensive wand at you,
-the shot misses. If you can see the monster, the wand identifies
-itself in the same moment, so now you know what was just aimed at
-you and you have a turn to do something about it before the next
-zap connects.
+The first time any given monster zaps a beam wand (death, sleep,
+fire, cold, lightning, magic missile) at you, the shot misses. If
+you can see the monster, the wand identifies itself in the same
+moment, so now you know what was just aimed at you and you have a
+turn to do something about it before the next zap connects.
+**Late-game exception:** monsters generated in the Stronghold,
+Knox, the Quest, Gehennom, Vlad's Tower, or the endgame planes
+start with their "experience" flag already set, so their first
+zap can connect. The freebie is an early-to-mid-game courtesy.
 
 #### The Touch of Death
 
@@ -5257,8 +5262,8 @@ frantic climb back to the surface. The steps:
 
 #### Survival Tips
 
-- **Bring extra food.** Prayer *can* cure Hungry, but it's a high-cost favor to spend on something a food ration solves
-- **Bring scrolls of remove curse.** Prayer can uncurse a cursed worn item too, but only one at a time and only as a "trouble" the god will fix
+- **Bring extra food** — you'll be moving fast and praying is not a reliable refill
+- **Bring scrolls of remove curse** — fast inventory cleanup when something goes wrong
 - **Dig, don't navigate.** Maze walls are faster to go through
   than around
 - **Kill the Wizard quickly.** Every turn he lives is another

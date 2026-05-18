@@ -25,7 +25,7 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 18**  L 8376  ( 165 lines) 📖 Acknowledgements
 - [x] **# 19**  L 6799  (  10 lines)   ↳ Weapons Tables → Quarterstaff
 - [x] **# 20**  L 7150  (  16 lines)   ↳ Bestiary Tables → Cockatrices `c`
-- [ ] **# 21**  L 1875  (   8 lines)   ↳ Dangerous Encounters → Attack Wands and the Warning Shot
+- [x] **# 21**  L 1875  (   8 lines)   ↳ Dangerous Encounters → Attack Wands and the Warning Shot
 - [ ] **# 22**  L 7676  (  15 lines)   ↳ Bestiary Tables → Gnomes `G`
 - [ ] **# 23**  L 6927  (  10 lines)   ↳ Weapons Tables → Shuriken
 - [ ] **# 24**  L 8116  (  24 lines)   ↳ Bestiary Tables → Golems `'`
