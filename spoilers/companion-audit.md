@@ -2087,3 +2087,133 @@ correction in adjacent Bonesless section.
    as "you have been killed N times" — a different display. Removed the
    paragraph entirely.
 
+
+---
+
+## 2026-05-17 — Chapter audit #53: Pacifist
+
+Source: `spoilers/companion.md` line 6301
+All claims verified against C source. 0 corrections.
+
+### Verified
+- "Don't kill any monsters — not directly, not with pets" — correct.
+  u.uconduct.killer is incremented only by xkilled() (mon.c:3500) and the
+  explicit "pet killed by trap you pushed it into" case (hack.c:2201).
+  Pet kills via mhitm.c route through monkilled()/mondied() which do NOT
+  increment killer. Conflict-induced fights also don't count.
+- Conflict, Elbereth, pet combat all real and work as described.
+- SPE_CHARM_MONSTER spell confirmed (objects.h:1352, spell.c:1522).
+- Pacifist conduct displayed in show_conduct (insight.c:2144).
+
+### Notes
+- The section is unusually short (13 lines) and makes only verifiable,
+  hedged claims. The audit prompt's red-herring questions (wand-of-digging
+  collapse, sink dipping demons, foodless+pacifist viability, recommended
+  classes, score impact) are not claimed in the text. Good restraint.
+
+---
+
+## 2026-05-17 — Chapter audit #54: Dragons `D`
+
+Source: `spoilers/companion.md` line 7691
+20 dragon rows + Chromatic + Ixoth verified against monsters.h.
+1 corrected (applied to 2 rows).
+
+### Verified
+- All 10 baby variants (gray/gold/silver/red/white/orange/black/blue/green/
+  yellow) at monsters.h:1341-1431. Shimmering correctly omitted as
+  `#if 0 DEFERRED`.
+- All 10 adult variants present with identical roster.
+- Baby stats: Lvl 12, Spd 9, AC 2, MR 10, bite 2d6 — all rows match.
+- Adult stats: Lvl 15, Spd 9, AC -1, MR 20 — all rows match.
+- Adult attack lines (bite 3d8, claw 1d4 ×2) verified.
+- All breath types/damage verified per color: gray 4d6 magic (AD_MAGM),
+  gold 4d6 fire, silver 4d6 cold, red 6d6 fire, white 4d6 cold,
+  orange 4d25 sleep, black 1d255 disint, blue 4d6 shock,
+  green 4d6 poison (AD_DRST), yellow 4d6 acid.
+- Chromatic Dragon: Lvl 16, Spd 12, AC 0, MR 30, AD_RBRE 6d6 + AD_SPEL
+  + AD_SAMU claw 2d8 + bite 4d8 ×2 + sting 1d6, sees-invis, M2_STALK,
+  no M1_FLY. monsters.h:3642-3656.
+- Ixoth: Lvl 15, Spd 12, AC -1, MR 20, breath 8d6 fire, bite 4d8,
+  spell, claw 2d4 ×2 (steal-amulet AD_SAMU).
+- Green/Chromatic poisonous-corpse (M1_POIS) — correct in spoiler.
+- "All except Chromatic fly" — verified (Chromatic lacks M1_FLY).
+- Gold dragon "yellow" color — HI_GOLD = CLR_YELLOW (color.h:46).
+- No "shimmering dragon" claims (correctly omitted).
+
+### Corrected
+1. **Silver dragon color "gray"** (both baby and adult rows). Wrong.
+   DRAGON_SILVER = CLR_BRIGHT_CYAN per color.h:54. The map character
+   actually displays as bright cyan. Fixed both rows to "bright-cyan".
+
+### Close calls (not changed)
+- Yellow dragon Notes "rare" — generation flag (G_GENO | 1) is same as
+  every other adult dragon; "rare" is mild editorializing. Left.
+- Yellow dragon also gives stoning resistance (MR_ACID | MR_STONE) —
+  not noted, but the table doesn't surface MR flags either. Left.
+- "Reflection bounces the ranged breath back" lead-in vs gray dragon's
+  carve-out "Magic resistance helps; reflection doesn't" — there's a
+  slight tension but the per-row note disambiguates. Acceptable.
+
+### Notes
+- Per-color DSM intrinsic effects (Blue=Fast, Black=Drain_resistance new
+  in 5.0, etc.) are NOT claimed in this section — it links to Armor
+  Tables for the details. Verified that do_wear.c:796-884 implements:
+  black=EDrain_resistance, blue=EFast (with speed-change message),
+  green=ESick_resistance, red=Infravision, gold=clear hallucination,
+  orange=EFree_action, yellow=EStone_resistance (on top of base ACID_RES),
+  white=ESlow_digestion. Audit those when the Armor Tables unit comes up.
+
+---
+
+## 2026-05-17 — Chapter audit #55: Jabberwocks `J`
+
+Source: `spoilers/companion.md` line 7804
+1 row verified clean. 1 correction (applied twice — prose + table notes).
+
+### Verified
+- jabberwock is the only Jabberwock-class monster (vorpal jabberwock at
+  monsters.h:1815 is `#if 0 DEFERRED` and correctly omitted).
+- Level 15, Speed 12, AC -2, MR 50, alignment 0, color orange.
+- Attacks: 2× bite 2d10 + 2× claw 2d10.
+- Flies (M1_FLY).
+- Rare generation (G_GENO | 1).
+- Vorpal Blade auto-behead vs PM_JABBERWOCK: artifact.c:1595-1623
+  short-circuits the dieroll==1 check (mdef->data == &mons[PM_JABBERWOCK]
+  forces beheading on every successful hit; damage = 2*mhp + FATAL_DAMAGE_MODIFIER).
+
+### Corrected
+1. **"Slow, tough, hits hard"** in prose + **"Powerful but slow"** in
+   notes — wrong. Speed 12 is the player's baseline. Most level-15
+   monsters (purple worm, all dragons) are speed 9, actually slower
+   than the jabberwock. Reworded to "moves at player baseline speed:
+   you can't simply walk away" / "Powerful; baseline speed."
+
+---
+
+## 2026-05-17 — Chapter audit #56: Vortices `v`
+
+Source: `spoilers/companion.md` line 7563
+6 rows × 8 cells verified clean against monsters.h:1053-1110.
+2 prose corrections.
+
+### Verified
+- All 6 stats clean: fog cloud (3,1,0,0), dust (4,20,2,30), ice (5,20,2,30),
+  energy (6,20,2,30), steam (7,22,2,30), fire (8,22,2,30).
+- Colors correct (HI_ZAP→bright-blue for energy, etc.).
+- All attack types/damage match: AD_PHYS / AD_BLND / AD_COLD /
+  AD_ELEC+AD_DREN / AD_FIRE (×2).
+- "fog cloud ... amorphous" — M1_AMORPHOUS only on fog cloud.
+- "All vortices fly and are mindless" — all have M1_FLY | M1_MINDLESS.
+- Implicit "no corpse" — every entry has G_NOCORPSE.
+
+### Corrected
+1. **Intro: "fire / cold / lightning / poison"** — false. No vortex
+   deals poison. Actual types: physical (fog), blinding sand (dust),
+   cold (ice), shock + Pw drain (energy), fire (steam, fire). Rewrote
+   the damage-type list.
+
+2. **"Stationary elemental clouds. They wait for you to step in."**
+   — only fog cloud is slow (Spd 1). The other five move at speed
+   20-22 and close on the player. Reworded.
+

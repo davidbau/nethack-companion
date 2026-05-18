@@ -8565,6 +8565,7 @@ artifact weapons.</p>
 </section>
 <section id="pacifist" class="level4">
 <h4>Pacifist</h4>
+<!-- audit 2026-05-17 #53: all claims verified. u.uconduct.killer incremented only by xkilled (mon.c:3500) and the explicit "pet killed by trap you pushed it into" case (hack.c:2201); pet/conflict kills don't count. Charm-monster spell + Elbereth + pet tactics all verified. 0 corrections. See companion-audit.md. -->
 <p>Don’t kill any monsters. Not directly, not with pets, not through any
 means that the game attributes to you. The pacifist runs on pets doing
 the fighting, on conflict to make monsters attack each other, on
@@ -13375,10 +13376,12 @@ Killing a co-aligned one is a major Luck penalty.</p>
 </section>
 <section id="vortices-v" class="level4">
 <h4>Vortices <code>v</code></h4>
-<p>Stationary elemental clouds. They wait for you to step in. Different
-colors deal different damage types (fire / cold / lightning / poison).
-Energy vortex drains Pw.</p>
-<p>All vortices fly and are mindless.</p>
+<!-- audit 2026-05-17 #56: 6 rows × 8 cells verified against monsters.h:1053-1110. Corrected intro damage-type list (no vortex deals poison; types are physical/blinding/cold/shock+drain/fire). Corrected "stationary" framing (only fog cloud is slow; others are speed 20-22). See companion-audit.md. -->
+<p>Engulfing elemental clouds. Different colors deal different damage
+types: blinding sand, cold, shock (which also drains Pw), and fire. Only
+the fog cloud is slow; the rest move at speed 20-22 and will close on
+you.</p>
+<p>All vortices fly, are mindless, and leave no corpse.</p>
 <div class="dense-table">
 <table>
 <colgroup>
@@ -13923,6 +13926,7 @@ shoot at range.</p>
 </section>
 <section id="dragons-d" class="level4">
 <h4>Dragons <code>D</code></h4>
+<!-- audit 2026-05-17 #54: 10 baby + 10 adult + Chromatic + Ixoth all verified against monsters.h:1325-1562 + 3642-3690 (shimmering correctly omitted, #if 0 DEFERRED). All breath types/damage and adult attack lines clean. Corrected silver dragon color (was "gray", actually CLR_BRIGHT_CYAN per color.h:54; fixed both baby and adult rows). See companion-audit.md. -->
 <p>Each color breathes its element type. Reflection bounces the ranged
 breath back. Adults are sources of dragon scale mail; babies are weaker
 but breathe the same. See <a href="#armor-tables">Dragon Scale
@@ -13975,7 +13979,7 @@ Mail</a>.</p>
 </tr>
 <tr>
 <td>baby silver dragon</td>
-<td>gray</td>
+<td>bright-cyan</td>
 <td>12</td>
 <td>9</td>
 <td>2</td>
@@ -14078,13 +14082,13 @@ source).</td>
 </tr>
 <tr>
 <td>silver dragon</td>
-<td>gray</td>
+<td>bright-cyan</td>
 <td>15</td>
 <td>9</td>
 <td>-1</td>
 <td>20</td>
 <td>breath 4d6 cold · bite 3d8 · claw 1d4 · claw 1d4</td>
-<td>sees-invis. Cold breath plus reflection scales — your reflection
+<td>sees-invis. Cold breath plus reflection scales: your reflection
 target.</td>
 </tr>
 <tr>
@@ -14603,10 +14607,12 @@ Mjollnir if you don’t.</td>
 </section>
 <section id="jabberwocks-j" class="level4">
 <h4>Jabberwocks <code>J</code></h4>
+<!-- audit 2026-05-17 #55: single jabberwock entry verified against monsters.h LVL(15,12,-2,50,0) + 4× 2d10 attacks + M1_FLY + G_GENO|1. Vorpal Blade auto-behead vs PM_JABBERWOCK confirmed at artifact.c:1595-1623 (short-circuits the dieroll==1 check). Corrected "slow" framing (twice): speed 12 is player baseline; most dragons are speed 9 which is actually slower. See companion-audit.md. -->
 <p>The monster from Lewis Carroll’s <em>Jabberwocky</em> (“O frabjous
-day! Callooh! Callay!”). Slow, tough, hits hard. Free XP if you’re set
-up for the fight; lethal if you walk into one early. Vorpal Blade was
-made for beheading it.</p>
+day! Callooh! Callay!”). Tough, hits hard, and moves at player baseline
+speed: you can’t simply walk away. Free XP if you’re set up for the
+fight; lethal if you walk into one early. Vorpal Blade was made for
+beheading it.</p>
 <div class="dense-table">
 <table>
 <colgroup>
@@ -14640,7 +14646,7 @@ made for beheading it.</p>
 <td>-2</td>
 <td>50</td>
 <td>bite 2d10 · bite 2d10 · claw 2d10 · claw 2d10</td>
-<td>flies. Powerful but slow. Free XP if you’re set up.</td>
+<td>flies. Powerful; baseline speed. Free XP if you’re set up.</td>
 </tr>
 </tbody>
 </table>

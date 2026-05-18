@@ -57,10 +57,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 50**  L 6341  (  12 lines)   ↳ Voluntary Challenges → Petless (new in 5.0)
 - [x] **# 51**  L 7858  (  19 lines)   ↳ Bestiary Tables → Snakes `S`
 - [x] **# 52**  L 6295  (  27 lines)   ↳ Voluntary Challenges → Combining Conducts
-- [ ] **# 53**  L 6224  (  13 lines)   ↳ Voluntary Challenges → Pacifist
-- [ ] **# 54**  L 7603  (  35 lines)   ↳ Bestiary Tables → Dragons `D`
-- [ ] **# 55**  L 7713  (  12 lines)   ↳ Bestiary Tables → Jabberwocks `J`
-- [ ] **# 56**  L 7478  (  19 lines)   ↳ Bestiary Tables → Vortices `v`
+- [x] **# 53**  L 6224  (  13 lines)   ↳ Voluntary Challenges → Pacifist
+- [x] **# 54**  L 7603  (  35 lines)   ↳ Bestiary Tables → Dragons `D`
+- [x] **# 55**  L 7713  (  12 lines)   ↳ Bestiary Tables → Jabberwocks `J`
+- [x] **# 56**  L 7478  (  19 lines)   ↳ Bestiary Tables → Vortices `v`
 - [ ] **# 57**  L 7193  (  18 lines)   ↳ Bestiary Tables → Eyes and spheres `e`
 - [ ] **# 58**  L 7393  (  18 lines)   ↳ Bestiary Tables → Quadrupeds `q`
 - [ ] **# 59**  L 4598  ( 121 lines) 📖 Spellcasting

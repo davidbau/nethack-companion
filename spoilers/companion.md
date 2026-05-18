@@ -6299,6 +6299,7 @@ wands, and thrown daggers. A wielded cockatrice corpse still works
 output of late-game artifact weapons.
 
 #### Pacifist
+<!-- audit 2026-05-17 #53: all claims verified. u.uconduct.killer incremented only by xkilled (mon.c:3500) and the explicit "pet killed by trap you pushed it into" case (hack.c:2201); pet/conflict kills don't count. Charm-monster spell + Elbereth + pet tactics all verified. 0 corrections. See companion-audit.md. -->
 
 Don't kill any monsters. Not directly, not with pets, not through
 any means that the game attributes to you. The pacifist runs on
@@ -7561,10 +7562,11 @@ White, gray, and black — Lawful, Neutral, Chaotic. Killing a cross-aligned one
 :::
 
 #### Vortices `v`
+<!-- audit 2026-05-17 #56: 6 rows × 8 cells verified against monsters.h:1053-1110. Corrected intro damage-type list (no vortex deals poison; types are physical/blinding/cold/shock+drain/fire). Corrected "stationary" framing (only fog cloud is slow; others are speed 20-22). See companion-audit.md. -->
 
-Stationary elemental clouds. They wait for you to step in. Different colors deal different damage types (fire / cold / lightning / poison). Energy vortex drains Pw.
+Engulfing elemental clouds. Different colors deal different damage types: blinding sand, cold, shock (which also drains Pw), and fire. Only the fog cloud is slow; the rest move at speed 20-22 and will close on you.
 
-All vortices fly and are mindless.
+All vortices fly, are mindless, and leave no corpse.
 
 ::: dense-table
 
@@ -7688,6 +7690,8 @@ Mounted archers with strong physical attacks. They wield bows and shoot at range
 :::
 
 #### Dragons `D`
+<!-- audit 2026-05-17 #54: 10 baby + 10 adult + Chromatic + Ixoth all verified against monsters.h:1325-1562 + 3642-3690 (shimmering correctly omitted, #if 0 DEFERRED). All breath types/damage and adult attack lines clean. Corrected silver dragon color (was "gray", actually CLR_BRIGHT_CYAN per color.h:54; fixed both baby and adult rows). See companion-audit.md. -->
+
 
 Each color breathes its element type. Reflection bounces the ranged breath back. Adults are sources of dragon scale mail; babies are weaker but breathe the same. See [Dragon Scale Mail](#armor-tables).
 
@@ -7699,7 +7703,7 @@ All except *Chromatic Dragon* also fly.
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | baby gray dragon | gray | 12 | 9 | 2 | 10 | bite 2d6 |  |
 | baby gold dragon | yellow | 12 | 9 | 2 | 10 | bite 2d6 |  |
-| baby silver dragon | gray | 12 | 9 | 2 | 10 | bite 2d6 |  |
+| baby silver dragon | bright-cyan | 12 | 9 | 2 | 10 | bite 2d6 |  |
 | baby red dragon | red | 12 | 9 | 2 | 10 | bite 2d6 | Same breath type as the adult; less HP. Still bad without fire res. |
 | baby white dragon | white | 12 | 9 | 2 | 10 | bite 2d6 |  |
 | baby orange dragon | orange | 12 | 9 | 2 | 10 | bite 2d6 |  |
@@ -7709,7 +7713,7 @@ All except *Chromatic Dragon* also fly.
 | baby yellow dragon | yellow | 12 | 9 | 2 | 10 | bite 2d6 |  |
 | gray dragon | gray | 15 | 9 | -1 | 20 | breath 4d6 magic · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis. Anti-magic breath. Magic resistance helps; reflection doesn't. |
 | gold dragon | yellow | 15 | 9 | -1 | 20 | breath 4d6 fire · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis. Fire breath. Drops gold-colored scales (light source). |
-| silver dragon | gray | 15 | 9 | -1 | 20 | breath 4d6 cold · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis. Cold breath plus reflection scales — your reflection target. |
+| silver dragon | bright-cyan | 15 | 9 | -1 | 20 | breath 4d6 cold · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis. Cold breath plus reflection scales: your reflection target. |
 | red dragon | red | 15 | 9 | -1 | 20 | breath 6d6 fire · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis. Cone of fire. Get fire resistance before you meet one. |
 | white dragon | white | 15 | 9 | -1 | 20 | breath 4d6 cold · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis. Cone of cold. Cold resistance. |
 | orange dragon | orange | 15 | 9 | -1 | 20 | breath 4d25 sleep · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis. Sleep ray. Sleep resistance trivialises. |
@@ -7801,14 +7805,15 @@ Boulder throwers. Storm / fire / frost giants match the dragon elements; titans 
 :::
 
 #### Jabberwocks `J`
+<!-- audit 2026-05-17 #55: single jabberwock entry verified against monsters.h LVL(15,12,-2,50,0) + 4× 2d10 attacks + M1_FLY + G_GENO|1. Vorpal Blade auto-behead vs PM_JABBERWOCK confirmed at artifact.c:1595-1623 (short-circuits the dieroll==1 check). Corrected "slow" framing (twice): speed 12 is player baseline; most dragons are speed 9 which is actually slower. See companion-audit.md. -->
 
-The monster from Lewis Carroll's *Jabberwocky* ("O frabjous day! Callooh! Callay!"). Slow, tough, hits hard. Free XP if you're set up for the fight; lethal if you walk into one early. Vorpal Blade was made for beheading it.
+The monster from Lewis Carroll's *Jabberwocky* ("O frabjous day! Callooh! Callay!"). Tough, hits hard, and moves at player baseline speed: you can't simply walk away. Free XP if you're set up for the fight; lethal if you walk into one early. Vorpal Blade was made for beheading it.
 
 ::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
-| jabberwock | orange | 15 | 12 | -2 | 50 | bite 2d10 · bite 2d10 · claw 2d10 · claw 2d10 | flies. Powerful but slow. Free XP if you're set up. |
+| jabberwock | orange | 15 | 12 | -2 | 50 | bite 2d10 · bite 2d10 · claw 2d10 · claw 2d10 | flies. Powerful; baseline speed. Free XP if you're set up. |
 
 :::
 
