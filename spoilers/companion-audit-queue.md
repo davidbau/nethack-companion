@@ -158,7 +158,7 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#151**  L 2911  (  39 lines)   ↳ A Practical Identification Strategy → A Practical Strategy
 - [x] **#152**  L 7230  (  14 lines)   ↳ Bestiary Tables → Gremlins `g`
 - [x] **#153**  L 5642  (  58 lines)   ↳ Sokoban Solutions → Level 1, Version B
-- [ ] **#154**  L 5700  (  31 lines)   ↳ Sokoban Solutions → Level 2, Version A
+- [x] **#154**  L 5700  (  31 lines)   ↳ Sokoban Solutions → Level 2, Version A
 - [x] **#155**  L 7542  (  12 lines)   ↳ Bestiary Tables → Zruties `z`
 - [x] **#156**  L 7572  (  17 lines)   ↳ Bestiary Tables → Bats and birds `B`
 - [x] **#157**  L 6878  (  18 lines)   ↳ Weapons Tables → Bow

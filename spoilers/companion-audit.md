@@ -5573,3 +5573,36 @@ Source: `spoilers/companion.md` line 7477. No corrections.
   this audit pass.
 
 ---
+
+## 2026-05-18 — Chapter audit #154: Sokoban Level 2, Version A
+
+Source: `spoilers/companion.md` line 6212. No corrections.
+
+### Verified
+- Map walls/floors match `soko3-1.lua:9-22` exactly under spoiler→lua
+  offset (subtract 1 from each coord).
+- Down stair at spoiler (12,3) = lua (11,2) matches
+  `des.stair("down", 11, 02)` (soko3-1.lua:23).
+- Up stair `<` at spoiler (24,5) = lua (23,4) matches
+  `des.stair("up", 23, 04)` (soko3-1.lua:24).
+- Locked door `+` at spoiler (28,10) = lua (27,9) matches
+  `des.door("locked", 27, 09)` (soko3-1.lua:25).
+- All 20 spoiler boulders A-T map exactly onto the 20
+  `des.object("boulder",...)` calls at soko3-1.lua:31-53.
+- Rolling-boulder trap → at spoiler (12,11) = lua (11,10) matches
+  soko3-1.lua:58.
+- 15 hole traps ^ at spoiler cols 13-27 row 11 = lua cols 12-26
+  row 10 match soko3-1.lua:59-73.
+- Sample solution steps 1-3 verified: destinations are floor, approach
+  squares reachable, all cardinal pushes (no diagonals, no pulls).
+- "5 boulders remain (B, C, D, I, Q)" tally consistent: 20 placed −
+  15 finish-push targets (15 holes) = 5 surplus.
+
+### Close calls
+- Step 4 prose lists completion order "T, S, M, R, K, J, and L."
+  Reading this as a strict push order is infeasible (L at lua (8,8)
+  blocks J pushing straight down column 8); feasible only if the
+  solver reroutes J right first. The order should be read as "which
+  boulders to finish next," not a literal sequence.
+
+---

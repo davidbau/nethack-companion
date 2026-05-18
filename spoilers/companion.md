@@ -6209,6 +6209,7 @@ The map now looks like this:
 Two boulders (D and E) remain. The two scrolls at (2,10) and
 (3,10) are always scrolls of earth.
 
+<!-- audit 2026-05-18 #154: map walls/floors, all 20 boulders A-T, both stairs, locked door (27,9), rolling-boulder trap (11,10), and 15 hole traps verified clean vs soko3-1.lua:9-73. Steps 1-3 destinations are floor, approach squares reachable, cardinal-only pushes. 0 corrections. See companion-audit.md. -->
 #### Level 2, Version A
 
 ```
