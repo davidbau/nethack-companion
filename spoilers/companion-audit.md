@@ -2946,3 +2946,123 @@ section's active-vs-passive framing was inverted.
   message distinction; C is explicit (active = "less effective"
   message, passive = silent).
 
+
+---
+
+## 2026-05-18 — Chapter audit #74: Finding Secret Doors
+
+Source: `spoilers/companion.md` line 1312. Mostly accurate; 2 prose fixes.
+
+### Verified
+- Search radius 1 (all 8 adjacent squares; detect.c:2033).
+- Stride-3 gives full coverage with no overlap (geometric).
+- 15-22 searches for "reliable" at Luck 0 with p=1/7 per try.
+- Lenses +2 to fund (detect.c:2029, must be worn and not blind).
+- Wand of secret door detection is a radius reveal (zap.c:2552 → findit).
+- Blessed magic mapping reveals every secret door on level (read.c:2121).
+
+### Corrected
+1. **Excalibur (if wielded) improves search chances** — underspecified.
+   Real mechanic: uwep->spe adds to the search bonus, capped at +5.
+   A freshly-dipped +0 Excalibur adds nothing. Same for any artifact
+   with the searching aura. Reworded.
+2. **"Lenses (any kind, if worn)"** — there's only one kind of LENSES.
+   Removed "any kind".
+
+### Close calls (not changed)
+- "Ring of searching auto-searches every turn you move" — actually
+  every moveloop turn while multi >= 0, including waiting. Loose
+  enough that "every turn while worn" works.
+
+---
+
+## 2026-05-18 — Chapter audit #75: Xorns `X`
+
+Source: `spoilers/companion.md` line 8090. Stats clean; prose had 2 errors.
+
+### Verified
+- Single row "xorn" present in S_XORN (monsters.h:2357-2366).
+- LVL(8, 9, -2, 20, 0), color brown.
+- Attacks: claw 1d3 ×3 + bite 4d6.
+- MR_FIRE | MR_COLD | MR_STONE resistances.
+- M1_METALLIVORE eats metal floor items (monmove.c:1664).
+
+### Corrected
+1. **"Tunnel through rock"** — false. Xorns have M1_WALLWALK (phase
+   through walls without rubble), NOT M1_TUNNEL. Reworded.
+2. **"Your weapons and armor are at risk on touch"** — false. Xorn
+   attacks are AD_PHYS only. Metallivore behavior only eats metal off
+   the floor, never worn/wielded gear. Removed the false warning.
+
+### Added
+- Corpse grants temporary stoning resistance (only intrinsic in mconveys
+  for xorn).
+
+---
+
+## 2026-05-18 — Chapter audit #76: Mimics `m`
+
+Source: `spoilers/companion.md` line 7447. Verified clean.
+
+### Verified
+- 3 rows (small/large/giant) all match monsters.h:670-698.
+- M1_AMORPHOUS | M1_HIDE | MR_ACID on all three.
+- AD_STCK on large + giant; M2_STRONG on large + giant.
+- set_mimic_sym disguise mechanics: STRANGE_OBJECT in shops at sufficient
+  depth (makemon.c:2469), shop items in shops, gold in zoos, fountains
+  in Delphi, items/walls/statues/boulders broadly.
+
+### 0 corrections.
+
+---
+
+## 2026-05-18 — Chapter audit #77: Provisions and Dining
+
+Source: `spoilers/companion.md` line 3028. Substantial corrections.
+
+### Verified (sample)
+- Hunger states + thresholds named correctly (hack.h:565-571, eat.c:3369).
+- Food nutritions: ration 800, cram 600, lembas 800, tripe 200, apple 50.
+- Cannibalism penalty: change_luck(-rn1(4,2)) + HAggravate; CAVEMAN/ORC exempt.
+- Lizard corpse cures stoning (eat.c:3941).
+- Newt corpse may restore 1-3 mana (eat.c:1103).
+- Wraith corpse → +1 XP level (pluslvl).
+- Stalker → invis + see-invis.
+- Slow digestion mechanic (eat.c:3174).
+- Tin opener vs dagger vs bare-hand timing.
+
+### Corrected
+1. **Gelatinous cube resistances** — granted only fire/cold/shock/sleep
+   (mconveys = MR_FIRE|MR_COLD|MR_ELEC|MR_SLEEP). Was claiming also
+   poison/acid/stoning. Fixed.
+
+2. **Disenchanter "Intrinsic protection"** — opposite of truth. Eating
+   disenchanter calls attrcurse() to STRIP a random intrinsic
+   (eat.c:1270). Fixed with explicit "never eat" warning.
+
+3. **Hunger threshold table off-by-one.** C uses strict `>` at 1000,
+   150, 50, 0 (eat.c:3369-3372). Was: 150-999 Normal, 50-149 Hungry,
+   0-49 Weak, "Below 0" Fainting. Corrected to 151-1000 Normal,
+   51-150 Hungry, 1-50 Weak, "0 or below" Fainting.
+
+4. **Encumbrance threshold.** Was "burdened or worse"; real C check
+   is `near_capacity() > SLT_ENCUMBER` (eat.c:3197), i.e., stressed
+   or worse. Burdened alone is free. Fixed.
+
+5. **Fire giant / fire ant** were conflated in one row. Fire giants
+   additionally grant Strength on eat (is_giant). Split the row.
+
+6. **Red mold / Brown mold** also grant poison resistance (MR_POISON
+   in mconveys for both). Added.
+
+7. **Eggs as vegan-safe** — wrong. Eggs are FLESH material
+   (eat.c:2998); vegans can't eat them. Split the paragraph to
+   distinguish vegetarian (eggs OK) from vegan (rations/lembas/fruits/
+   plant corpses only).
+
+### Close calls (not changed)
+- "Blessed tins open instantly" — actually 50/50 (rn2(2)). Acceptable
+  shorthand.
+- "Tengu corpse → teleportitis/teleport control" — also can grant
+  poison resistance. Not noted.
+

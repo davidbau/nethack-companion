@@ -78,10 +78,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 71**  L 2106  (   5 lines)   ↳ Dangerous Encounters → Genocide
 - [x] **# 72**  L 6322  (  19 lines)   ↳ Voluntary Challenges → Pauper (new in 5.0)
 - [x] **# 73**  L 1963  (  18 lines)   ↳ Dangerous Encounters → Enchantment Drain
-- [ ] **# 74**  L 1283  (  49 lines)   ↳ Traps and Hazards → Finding Secret Doors
-- [ ] **# 75**  L 7939  (  12 lines)   ↳ Bestiary Tables → Xorns `X`
-- [ ] **# 76**  L 7326  (  16 lines)   ↳ Bestiary Tables → Mimics `m`
-- [ ] **# 77**  L 2950  ( 140 lines) 📖 Provisions and Dining
+- [x] **# 74**  L 1283  (  49 lines)   ↳ Traps and Hazards → Finding Secret Doors
+- [x] **# 75**  L 7939  (  12 lines)   ↳ Bestiary Tables → Xorns `X`
+- [x] **# 76**  L 7326  (  16 lines)   ↳ Bestiary Tables → Mimics `m`
+- [x] **# 77**  L 2950  ( 140 lines) 📖 Provisions and Dining
 - [ ] **# 78**  L 6704  (  11 lines)   ↳ Weapons Tables → Long sword
 - [ ] **# 79**  L 2750  ( 103 lines)   ↳ A Practical Identification Strategy → Use-Testing (The Careful Way)
 - [ ] **# 80**  L 7527  (  15 lines)   ↳ Bestiary Tables → Lights `y`

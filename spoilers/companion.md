@@ -1343,11 +1343,11 @@ cheaper than being trapped on Dlvl 1 forever.
 
 **Items that help:**
 
-- **Ring of searching** auto-searches every turn you move
-- **Excalibur** (if wielded) improves search chances
-- **Lenses** (any kind, if worn) boost secret detection
-- **Wand of secret door detection** instantly reveals nearby secrets
-- **Blessed scroll of magic mapping** shows every secret door on the level
+- **Ring of searching** auto-searches every turn while it's worn
+- **Excalibur** (or any artifact with the searching aura), wielded, adds its enchantment to your search bonus (capped at +5; a freshly-dipped +0 Excalibur adds nothing)
+- **Lenses** worn (and you not blind) add +2 to the search bonus
+- **Wand of secret door detection** instantly reveals nearby secrets in a radius
+- **Blessed scroll of magic mapping** shows every secret door on the level (only the blessed version)
 
 **The wisdom of patience:**
 
@@ -3026,6 +3026,7 @@ and you'll rarely be surprised.
 ---
 
 ### Provisions and Dining
+<!-- audit 2026-05-18 #77: many claims verified clean (food nutritions, cannibalism penalty, prayer tiers, slow digestion, tin opening, lizard cures stoning, newt-zap, wraith corpse level, stalker corpse invis+see-invis). Corrected 6: gelatinous cube grants only fire/cold/shock/sleep (not poison/acid/stoning); disenchanter corpse STRIPS an intrinsic (not "intrinsic protection"); hunger threshold table off-by-one (now uses strict bounds); encumbrance kicks in at Stressed not Burdened (eat.c:3197 near_capacity > SLT_ENCUMBER); split fire-giant from fire-ant row (giants give Str on eat); red/brown mold also grant poison resistance; clarified vegetarian-vs-vegan eggs distinction. See companion-audit.md. -->
 
 Of all the things that kill adventurers in the Mazes of Menace (the
 dragons, the liches, the cockatrices, the inexplicable decision to
@@ -3043,18 +3044,18 @@ depends on what you're doing:
 
 - **Base consumption** costs 1 point per turn (less while sleeping).
 - **Regeneration** (from a ring or intrinsic) costs extra on odd turns.
-- **Encumbrance** costs extra on odd turns if you're burdened or worse.
+- **Encumbrance** costs extra on odd turns if you're **stressed** or worse (burdened alone is free).
 - **Rings** cause additional hunger while worn. Two rings drain faster.
 
 When nutrition drops below certain thresholds, you get warnings:
 
-| Nutrition | Status    | Effect                                    |
-| --------- | --------- | ----------------------------------------- |
-| 1000+     | Satiated  | Overfull. Eating more risks choking.      |
-| 150-999   | Normal    | Fine.                                     |
-| 50-149    | Hungry    | Warning message. Time to eat.             |
-| 0-49      | Weak      | Movement slowed. Pray if possible.        |
-| Below 0   | Fainting  | Collapse randomly. Eat NOW or die.        |
+| Nutrition  | Status    | Effect                                    |
+| ---------- | --------- | ----------------------------------------- |
+| above 1000 | Satiated  | Overfull. Eating more risks choking.      |
+| 151–1000   | Normal    | Fine.                                     |
+| 51–150     | Hungry    | Warning message. Time to eat.             |
+| 1–50       | Weak      | Movement slowed. Pray if possible.        |
+| 0 or below | Fainting  | Collapse randomly. Eat NOW or die.        |
 
 Eat when you get the "Hungry" message; don't wait for "Weak." If
 you hit Fainting and have no food, pray to your god (see
@@ -3096,10 +3097,11 @@ turns to open (one turn with a tin opener, three with a dagger,
 more with bare hands). Blessed tins open instantly. A tin of
 spinach increases your strength.
 
-**Vegetarian and vegan characters** have to live on rations,
-lembas, fruits, and the small set of non-meat corpses (fungi,
-molds, lichens, jellies, eggs). Plan ahead — the corpse-pile
-strategy doesn't work for you, so rations and fruit are the
+**Vegetarian characters** have to live on rations, lembas, fruits,
+and the small set of non-meat corpses (fungi, molds, lichens,
+jellies, plus eggs). **Vegans** lose the eggs, so they're stricter still: rations,
+lembas, fruits, and plant corpses only. Plan ahead — the corpse-pile
+strategy doesn't work for either, so rations and fruit are the
 budget items to hoard.
 
 #### Dangerous Foods
@@ -3121,15 +3123,16 @@ gives the aggravate monster intrinsic. Cavemen and orcs are exempt.
 | ----------------------- | ---------------------------------------------------------------------- |
 | Floating eye            | Telepathy (but paralyzes you too)                                      |
 | Killer bee              | Poison resistance                                                      |
-| Fire giant / fire ant   | Fire resistance                                                        |
-| Red mold                | Fire resistance                                                        |
+| Fire giant              | Fire resistance (and Strength, like any giant)                         |
+| Fire ant                | Fire resistance                                                        |
+| Red mold                | Fire resistance + poison resistance                                    |
 | Winter wolf             | Cold resistance                                                        |
 | Blue jelly              | Cold and poison resistance                                             |
-| Brown mold              | Cold resistance                                                        |
+| Brown mold              | Cold resistance + poison resistance                                    |
 | Yeti                    | Cold resistance                                                        |
 | Quivering blob          | Poison resistance                                                      |
 | Acid blob               | Acid and stoning resistance                                            |
-| Gelatinous cube         | Fire, cold, shock, sleep, poison, acid, and stoning resistance (chance for each per eat) |
+| Gelatinous cube         | Fire, cold, shock, and sleep resistance (chance for each per eat)      |
 | Brown or black pudding  | Cold, shock, and poison resistance                                     |
 | Gray ooze               | Fire, cold, and poison resistance                                      |
 | Wraith                  | Gain an experience level                                               |
@@ -3138,7 +3141,7 @@ gives the aggravate monster intrinsic. Cavemen and orcs are exempt.
 | Newt                    | May restore 1 to 3 mana                                                |
 | Stalker                 | Invisibility (and see invisible)                                       |
 | Tengu                   | Teleportitis / teleport control                                        |
-| Disenchanter            | Intrinsic protection                                                   |
+| Disenchanter            | **STRIPS** a random intrinsic. Never eat.                              |
 
 Eating for intrinsics is the highest-leverage habit in the early
 and mid game. Poison resistance should be a top
@@ -7445,6 +7448,7 @@ Steals gold and teleports away. The fix is to carry no gold near them, or to kil
 :::
 
 #### Mimics `m`
+<!-- audit 2026-05-18 #76: 3 rows (small/large/giant) verified clean against monsters.h:670-698. All stats, M1_AMORPHOUS|M1_HIDE|MR_ACID flags, AD_STCK on large/giant, M2_STRONG on large+giant verified. set_mimic_sym disguise mechanics (makemon.c:2393-2472) including STRANGE_OBJECT in shops at sufficient depth. 0 corrections. See companion-audit.md. -->
 
 Disguised as items, walls, or fountains. Common in shops and zoos. The giveaway is the wrong object on the wrong square.
 
@@ -8087,8 +8091,9 @@ All wraiths are undead and follow you up and down stairs.
 :::
 
 #### Xorns `X`
+<!-- audit 2026-05-18 #75: stats clean against monsters.h:2357-2366. Corrected two prose errors: (1) xorns DON'T tunnel — M1_WALLWALK phases through walls without leaving rubble, NOT M1_TUNNEL. (2) Player's worn weapons/armor are NOT at risk: xorn attacks are AD_PHYS only; metallivore behavior in monmove.c:1664 only eats metal off the floor. Eating xorn corpse grants temporary stone resistance. See companion-audit.md. -->
 
-D&D's three-armed, three-eyed creatures from the Elemental Plane of Earth. In the dungeon they tunnel through rock and eat metal: your weapons and armor are at risk on touch. Hits hard for its level; magic resistance helps.
+D&D's three-armed, three-eyed creatures from the Elemental Plane of Earth. They **phase through walls** (no rubble, no dig) and **eat metal items off the floor** — including the orcish dagger you were about to pick up. Their claws and bite are physical only, so worn armor and wielded weapons aren't directly at risk, but they hit hard for their level. The corpse grants temporary stoning resistance.
 
 ::: dense-table
 

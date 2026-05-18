@@ -1705,15 +1705,17 @@ tedious on paper because it <em>is</em> tedious, but tedium is cheaper
 than being trapped on Dlvl 1 forever.</p>
 <p><strong>Items that help:</strong></p>
 <ul>
-<li><strong>Ring of searching</strong> auto-searches every turn you
-move</li>
-<li><strong>Excalibur</strong> (if wielded) improves search chances</li>
-<li><strong>Lenses</strong> (any kind, if worn) boost secret
-detection</li>
+<li><strong>Ring of searching</strong> auto-searches every turn while
+it’s worn</li>
+<li><strong>Excalibur</strong> (or any artifact with the searching
+aura), wielded, adds its enchantment to your search bonus (capped at +5;
+a freshly-dipped +0 Excalibur adds nothing)</li>
+<li><strong>Lenses</strong> worn (and you not blind) add +2 to the
+search bonus</li>
 <li><strong>Wand of secret door detection</strong> instantly reveals
-nearby secrets</li>
+nearby secrets in a radius</li>
 <li><strong>Blessed scroll of magic mapping</strong> shows every secret
-door on the level</li>
+door on the level (only the blessed version)</li>
 </ul>
 <p><strong>The wisdom of patience:</strong></p>
 <p>Secret doors are NetHack’s way of teaching you that brute force
@@ -4318,6 +4320,7 @@ rarely be surprised.</p>
 </section>
 <section id="provisions-and-dining" class="level3">
 <h3>Provisions and Dining</h3>
+<!-- audit 2026-05-18 #77: many claims verified clean (food nutritions, cannibalism penalty, prayer tiers, slow digestion, tin opening, lizard cures stoning, newt-zap, wraith corpse level, stalker corpse invis+see-invis). Corrected 6: gelatinous cube grants only fire/cold/shock/sleep (not poison/acid/stoning); disenchanter corpse STRIPS an intrinsic (not "intrinsic protection"); hunger threshold table off-by-one (now uses strict bounds); encumbrance kicks in at Stressed not Burdened (eat.c:3197 near_capacity > SLT_ENCUMBER); split fire-giant from fire-ant row (giants give Str on eat); red/brown mold also grant poison resistance; clarified vegetarian-vs-vegan eggs distinction. See companion-audit.md. -->
 <p>Of all the things that kill adventurers in the Mazes of Menace (the
 dragons, the liches, the cockatrices, the inexplicable decision to kick
 a sink), none is quite as embarrassing as starving to death while
@@ -4336,7 +4339,7 @@ sleeping).</li>
 <li><strong>Regeneration</strong> (from a ring or intrinsic) costs extra
 on odd turns.</li>
 <li><strong>Encumbrance</strong> costs extra on odd turns if you’re
-burdened or worse.</li>
+<strong>stressed</strong> or worse (burdened alone is free).</li>
 <li><strong>Rings</strong> cause additional hunger while worn. Two rings
 drain faster.</li>
 </ul>
@@ -4351,27 +4354,27 @@ drain faster.</li>
 </thead>
 <tbody>
 <tr>
-<td>1000+</td>
+<td>above 1000</td>
 <td>Satiated</td>
 <td>Overfull. Eating more risks choking.</td>
 </tr>
 <tr>
-<td>150-999</td>
+<td>151–1000</td>
 <td>Normal</td>
 <td>Fine.</td>
 </tr>
 <tr>
-<td>50-149</td>
+<td>51–150</td>
 <td>Hungry</td>
 <td>Warning message. Time to eat.</td>
 </tr>
 <tr>
-<td>0-49</td>
+<td>1–50</td>
 <td>Weak</td>
 <td>Movement slowed. Pray if possible.</td>
 </tr>
 <tr>
-<td>Below 0</td>
+<td>0 or below</td>
 <td>Fainting</td>
 <td>Collapse randomly. Eat NOW or die.</td>
 </tr>
@@ -4414,11 +4417,12 @@ retches) but pets love them. Save tripe for your pet.</p>
 several turns to open (one turn with a tin opener, three with a dagger,
 more with bare hands). Blessed tins open instantly. A tin of spinach
 increases your strength.</p>
-<p><strong>Vegetarian and vegan characters</strong> have to live on
-rations, lembas, fruits, and the small set of non-meat corpses (fungi,
-molds, lichens, jellies, eggs). Plan ahead — the corpse-pile strategy
-doesn’t work for you, so rations and fruit are the budget items to
-hoard.</p>
+<p><strong>Vegetarian characters</strong> have to live on rations,
+lembas, fruits, and the small set of non-meat corpses (fungi, molds,
+lichens, jellies, plus eggs). <strong>Vegans</strong> lose the eggs, so
+they’re stricter still: rations, lembas, fruits, and plant corpses only.
+Plan ahead — the corpse-pile strategy doesn’t work for either, so
+rations and fruit are the budget items to hoard.</p>
 </section>
 <section id="dangerous-foods" class="level4">
 <h4>Dangerous Foods</h4>
@@ -4457,12 +4461,16 @@ exempt.</p>
 <td>Poison resistance</td>
 </tr>
 <tr>
-<td>Fire giant / fire ant</td>
+<td>Fire giant</td>
+<td>Fire resistance (and Strength, like any giant)</td>
+</tr>
+<tr>
+<td>Fire ant</td>
 <td>Fire resistance</td>
 </tr>
 <tr>
 <td>Red mold</td>
-<td>Fire resistance</td>
+<td>Fire resistance + poison resistance</td>
 </tr>
 <tr>
 <td>Winter wolf</td>
@@ -4474,7 +4482,7 @@ exempt.</p>
 </tr>
 <tr>
 <td>Brown mold</td>
-<td>Cold resistance</td>
+<td>Cold resistance + poison resistance</td>
 </tr>
 <tr>
 <td>Yeti</td>
@@ -4490,8 +4498,8 @@ exempt.</p>
 </tr>
 <tr>
 <td>Gelatinous cube</td>
-<td>Fire, cold, shock, sleep, poison, acid, and stoning resistance
-(chance for each per eat)</td>
+<td>Fire, cold, shock, and sleep resistance (chance for each per
+eat)</td>
 </tr>
 <tr>
 <td>Brown or black pudding</td>
@@ -4527,7 +4535,7 @@ exempt.</p>
 </tr>
 <tr>
 <td>Disenchanter</td>
-<td>Intrinsic protection</td>
+<td><strong>STRIPS</strong> a random intrinsic. Never eat.</td>
 </tr>
 </tbody>
 </table>
@@ -12719,6 +12727,7 @@ them.</td>
 </section>
 <section id="mimics-m" class="level4">
 <h4>Mimics <code>m</code></h4>
+<!-- audit 2026-05-18 #76: 3 rows (small/large/giant) verified clean against monsters.h:670-698. All stats, M1_AMORPHOUS|M1_HIDE|MR_ACID flags, AD_STCK on large/giant, M2_STRONG on large+giant verified. set_mimic_sym disguise mechanics (makemon.c:2393-2472) including STRANGE_OBJECT in shops at sufficient depth. 0 corrections. See companion-audit.md. -->
 <p>Disguised as items, walls, or fountains. Common in shops and zoos.
 The giveaway is the wrong object on the wrong square.</p>
 <p>All mimics are amorphous, hide, and are acid-resistant.</p>
@@ -15746,10 +15755,14 @@ the game. Always eat a wraith corpse if you can.</p>
 </section>
 <section id="xorns-x" class="level4">
 <h4>Xorns <code>X</code></h4>
+<!-- audit 2026-05-18 #75: stats clean against monsters.h:2357-2366. Corrected two prose errors: (1) xorns DON'T tunnel — M1_WALLWALK phases through walls without leaving rubble, NOT M1_TUNNEL. (2) Player's worn weapons/armor are NOT at risk: xorn attacks are AD_PHYS only; metallivore behavior in monmove.c:1664 only eats metal off the floor. Eating xorn corpse grants temporary stone resistance. See companion-audit.md. -->
 <p>D&amp;D’s three-armed, three-eyed creatures from the Elemental Plane
-of Earth. In the dungeon they tunnel through rock and eat metal: your
-weapons and armor are at risk on touch. Hits hard for its level; magic
-resistance helps.</p>
+of Earth. They <strong>phase through walls</strong> (no rubble, no dig)
+and <strong>eat metal items off the floor</strong> — including the
+orcish dagger you were about to pick up. Their claws and bite are
+physical only, so worn armor and wielded weapons aren’t directly at
+risk, but they hit hard for their level. The corpse grants temporary
+stoning resistance.</p>
 <div class="dense-table">
 <table>
 <colgroup>
