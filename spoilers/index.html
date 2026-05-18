@@ -4632,6 +4632,7 @@ invisible. Nothing is wasted in a well-run dungeon pharmacy.</p>
 </section>
 <section id="the-scroll-rack" class="level3">
 <h3>The Scroll Rack</h3>
+<!-- audit 2026-05-17 #1: 26 claims verified, 2 corrected (enchant +5/+7 destruction wrong; charging "second/third recharge" overstated). See companion-audit.md. -->
 <p>Scrolls are the dungeon’s single-use spells: read once, triggered,
 gone. They appear with absurd randomized labels (“ZELGO MER,” “DAIYEN
 FOOELS,” “PRATYAVAYAH”) that stay consistent within a game but mean
@@ -4701,19 +4702,29 @@ your ankle). Choose wisely.</p>
 Blessed identify reveals multiple items at once (with positive luck,
 always at least two). You will never have enough of these.</p>
 <p><strong>Enchant weapon / enchant armor.</strong> The path to endgame
-power. Each scroll raises enchantment by +1 (uncursed) or potentially
-more (blessed). Important: enchanting beyond +5 risks destroying the
-item entirely, but blessed scrolls can safely push to +7. Save these for
-your ascension kit, bless them, then savor every +1.</p>
+power. Uncursed enchant <em>weapon</em> raises by +1; blessed raises by
+<code>rnd(3 - spe/3)</code> (more random improvement at low
+enchantment). Enchanting a weapon at +9 or higher only succeeds 1-in-spe
+of the time and never destroys the weapon. Enchant <em>armor</em> raises
+by <code>rnd(s)</code> where <code>s</code> depends on current
+enchantment, plus +1 for special armor (elven / Cornuthaum), +1 for
+non-magic armor, +1 if blessed. Once worn armor exceeds
+<strong>+3</strong> (or <strong>+5</strong> for elven/Cornuthaum), each
+further enchant attempt can destroy the armor — the scroll “evaporates”
+your gear. Blessed scrolls don’t bypass this cap. Save scrolls for your
+ascension kit and stop enchanting armor at +3 (or +5 elven).</p>
 <p><strong>Remove curse.</strong> Frees you from cursed equipment.
 Uncursed version works on worn and wielded items only; blessed version
 uncurses your entire inventory. Every adventurer has a “put on a cursed
 ring” story. This scroll is the happy ending.</p>
 <p><strong>Charging.</strong> Recharges wands and rechargeable tools.
 Save these for your wand of wishing: one charge means one more wish.
-Blessed charging restores more charges. But don’t get greedy: each
-recharge increases the chance the wand explodes. The second recharge is
-pushing your luck; the third is usually fatal for the wand.</p>
+Blessed charging restores more charges. Each recharge has an
+<code>n³/7³</code> chance of the wand exploding (where <code>n</code> is
+the count of previous recharges): 0% on first, 0.3% on second, 2% on
+third, 8% on fourth, 19% on fifth, 36% on sixth — and on the seventh,
+always. Wand of wishing is the exception: it explodes 100% of the time
+on the second recharge, so recharge it exactly once and no more.</p>
 <p><strong>Genocide.</strong> The nuclear option. Uncursed eliminates a
 single species; blessed wipes an entire monster class from the game
 forever. Liches and mind flayers are popular targets. Read one while

@@ -891,3 +891,39 @@ artifact discussion. The 6 bane weapons and Cleaver's spin attack
 were entirely new content; the quest artifacts were upgraded from
 prose-list to first-class table + per-role notes. Numbers and
 passives traced through `artilist.h`, `artifact.c`, and `uhitm.c`.
+
+---
+
+## 2026-05-17 — Chapter audit #1: The Scroll Rack
+
+Source: `spoilers/companion.md` lines 3211-3308 (98 lines)
+Verified 26 claims; 2 corrected; 0 flagged for human review.
+
+### Verified correct
+- All scroll prices in the price table (21 entries) match `objects.h` SCROLL macros.
+- Identify scroll: blessed gives `rn2(5)` items (0=all, 1-4 fixed), with `if cval==1 && sblessed && Luck>0` bumping to 2 — minimum is "all" or 2 — `read.c:2085` seffect_identify.
+- Identify scroll multi-item count for blessed+Luck — `read.c:2087-2089`.
+- Remove curse: uncursed → worn/wielded only; blessed → entire inventory — `read.c:1488-1555` seffect_remove_curse (`if (sblessed || wornmask || ...)` gate).
+- Magic mapping: blessed reveals secret doors — `read.c:1750+` `if (sblessed) { coordxy x, y;` (then reveals SDOORs).
+- Scare monster: drop-and-stand creates a scare zone — `monmove.c:onscary` `if (sobj_at(SCR_SCARE_MONSTER, x, y)) return TRUE`.
+- Scare monster: pickup degradation — `pickup.c:1832-1862`. Blessed → unbless (preserved). Uncursed+spe=0 → spe bumps to 1 (preserved). Cursed OR spe≠0 → "scroll turns to dust as you pick it up", `useupf`. So fresh-uncursed survives one drop-pickup cycle; blessed survives two; cursed crumbles immediately.
+- Teleportation: cursed or confused → level teleport; uncursed → on-level scrolltele — `read.c:1297-1320` seffect_teleportation.
+- Genocide: blessed → whole class; uncursed → species; confused → own species (suicide) — `read.c:1731+` seffect_genocide.
+- Confused destroy armor: cursed scroll → erodeproof; uncursed → strip erodeproofing — `read.c:1330-1350`. Spoiler glosses this as "erodeproofs" which is the cursed-only outcome but the more memorable one.
+- Confused enchant armor / weapon: uncursed → erodeproof; cursed → strip — `read.c:1135+` (armor) and `read.c:1639+` (weapon).
+- Confused remove curse: 25% bless, 25% curse, 50% unchanged per uncursed item — `read.c:1555` `blessorcurse(obj, 2)` + `mkobj.c blessorcurse` (1/2 chance of any change, then 1/2 bless vs curse).
+
+### Corrected
+1. **Enchant weapon/armor "+5 destruction, blessed safe to +7"** — WRONG.
+   - Spoiler claim: "enchanting beyond +5 risks destroying the item entirely, but blessed scrolls can safely push to +7"
+   - C source: `read.c:1180-1190` armor destruction fires when `spe > (special_armor ? 5 : 3) && rn2(s)`. Normal armor threshold is +3, not +5. Special (elven/Cornuthaum) is +5. Blessed does NOT bypass the destruction check. Weapons: `read.c:1668-1672` doesn't destroy at all — it just stops responding past +9 (1-in-spe chance of +1, otherwise no effect).
+   - Fix: Reworded to give actual mechanic; specify +3/+5 destruction thresholds for armor, explain weapon "stops responding" behavior, drop "blessed safely to +7" false claim.
+
+2. **Charging "second recharge pushes luck, third usually fatal"** — WRONG.
+   - Spoiler claim: "The second recharge is pushing your luck; the third is usually fatal."
+   - C source: `read.c:recharge` documents the n³/7³ chance: n=1 → 0.29%, n=2 → 2.33%, n=3 → 7.87%, n=4 → 18.66%, n=5 → 36.44%, n=6 → 62.97%, n=7 → 100%. So second recharge is 2.3%, not "pushing your luck"; third is 7.87%, not "usually fatal". Wand of wishing IS special: `obj->otyp == WAN_WISHING` short-circuits to always-explode on any recharge after the first.
+   - Fix: Quoted the n³/7³ table directly, noted wand of wishing's special case (explodes 100% on second recharge, so do it exactly once).
+
+### Notes
+- "Always at least two with positive Luck" wording for blessed identify is technically true (minimum is 2 when cval rolls to 1 and gets bumped; 0=all is also possible). Could be tightened to "blessed identify with positive luck always reveals at least 2 items, sometimes more, sometimes everything" but the current wording is close enough.
+- Scare monster "Pick it up after it's been dropped and it crumbles to dust": true with caveats — depends on BUC and prior pickup history. Cursed crumbles first time; uncursed survives one pickup; blessed survives two. The takeaway (don't pick it up casually) is right; the precise timing is glossed.

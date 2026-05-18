@@ -3209,6 +3209,7 @@ pharmacy.
 ---
 
 ### The Scroll Rack
+<!-- audit 2026-05-17 #1: 26 claims verified, 2 corrected (enchant +5/+7 destruction wrong; charging "second/third recharge" overstated). See companion-audit.md. -->
 
 Scrolls are the dungeon's single-use spells: read once, triggered,
 gone. They appear with absurd randomized labels ("ZELGO MER,"
@@ -3248,11 +3249,16 @@ reveals multiple items at once (with positive luck, always at least
 two). You will never have enough of these.
 
 **Enchant weapon / enchant armor.** The path to endgame power.
-Each scroll raises enchantment by +1 (uncursed) or potentially
-more (blessed). Important: enchanting beyond +5 risks
-destroying the item entirely, but blessed scrolls can safely push
-to +7. Save these for your ascension kit, bless them, then savor
-every +1.
+Uncursed enchant *weapon* raises by +1; blessed raises by `rnd(3 -
+spe/3)` (more random improvement at low enchantment). Enchanting a
+weapon at +9 or higher only succeeds 1-in-spe of the time and never
+destroys the weapon. Enchant *armor* raises by `rnd(s)` where `s`
+depends on current enchantment, plus +1 for special armor (elven /
+Cornuthaum), +1 for non-magic armor, +1 if blessed. Once worn armor
+exceeds **+3** (or **+5** for elven/Cornuthaum), each further enchant
+attempt can destroy the armor — the scroll "evaporates" your gear.
+Blessed scrolls don't bypass this cap. Save scrolls for your
+ascension kit and stop enchanting armor at +3 (or +5 elven).
 
 **Remove curse.** Frees you from cursed equipment. Uncursed version
 works on worn and wielded items only; blessed version uncurses your
@@ -3261,9 +3267,12 @@ story. This scroll is the happy ending.
 
 **Charging.** Recharges wands and rechargeable tools. Save these
 for your wand of wishing: one charge means one more wish. Blessed
-charging restores more charges. But don't get greedy: each recharge
-increases the chance the wand explodes. The second recharge is
-pushing your luck; the third is usually fatal for the wand.
+charging restores more charges. Each recharge has an `n³/7³` chance
+of the wand exploding (where `n` is the count of previous recharges):
+0% on first, 0.3% on second, 2% on third, 8% on fourth, 19% on fifth,
+36% on sixth — and on the seventh, always. Wand of wishing is the
+exception: it explodes 100% of the time on the second recharge, so
+recharge it exactly once and no more.
 
 **Genocide.** The nuclear option. Uncursed eliminates a single
 species; blessed wipes an entire monster class from the game

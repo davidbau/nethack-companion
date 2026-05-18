@@ -5,7 +5,7 @@ Total units: 180 (33 chapters + 147 subsections)
 
 Process in numbered order. Mark each `[x]` as it's audited.
 
-- [ ] **#  1**  L 3211  (  98 lines) 📖 The Scroll Rack
+- [x] **#  1**  L 3211  (  98 lines) 📖 The Scroll Rack
 - [ ] **#  2**  L 2898  (  13 lines)   ↳ A Practical Identification Strategy → Naming What You've Learned
 - [ ] **#  3**  L 7877  (  18 lines)   ↳ Bestiary Tables → Trolls `T`
 - [ ] **#  4**  L 7740  (  17 lines)   ↳ Bestiary Tables → Liches `L`
