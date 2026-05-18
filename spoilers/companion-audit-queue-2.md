@@ -29,11 +29,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 18**  L 7759  (  74 lines)     ↳ Appendices → Spell Tables
 - [x] **# 19**  L 9046  (  19 lines)     ↳ Bestiary Tables → Sea monsters `;`
 - [x] **# 20**  L 6836  (  20 lines)     ↳ Voluntary Challenges → Polymorph Restrictions
-- [ ] **# 21**  L 2920  (  35 lines)     ↳ A Practical Identification Strategy → The Engrave Test (Wands)
-- [ ] **# 22**  L 8099  (  19 lines)     ↳ Bestiary Tables → Imps and minor demons `i`
-- [ ] **# 23**  L 7387  (  12 lines)     ↳ Weapons Tables → Morning star
-- [ ] **# 24**  L  926  (  39 lines)     ↳ Branches and Landmarks → Sokoban
-- [ ] **# 25**  L 8651  (  21 lines)     ↳ Bestiary Tables → Nagas `N`
+- [x] **# 21**  L 2920  (  35 lines)     ↳ A Practical Identification Strategy → The Engrave Test (Wands)
+- [x] **# 22**  L 8099  (  19 lines)     ↳ Bestiary Tables → Imps and minor demons `i`
+- [x] **# 23**  L 7387  (  12 lines)     ↳ Weapons Tables → Morning star
+- [x] **# 24**  L  926  (  39 lines)     ↳ Branches and Landmarks → Sokoban
+- [x] **# 25**  L 8651  (  21 lines)     ↳ Bestiary Tables → Nagas `N`
 - [ ] **# 26**  L 2100  (  31 lines)     ↳ Dangerous Encounters → Enchantment Drain
 - [ ] **# 27**  L 8581  (  13 lines)     ↳ Bestiary Tables → Jabberwocks `J`
 - [ ] **# 28**  L 1973  (  20 lines)     ↳ Dangerous Encounters → Drowning

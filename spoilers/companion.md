@@ -928,11 +928,11 @@ pick up before relying on it.)
 The entrance staircase appears somewhere around dungeon levels 6
 through 10 (one level below the Oracle), and it goes up. Sokoban is a set of
 four puzzle levels where you push boulders onto holes or into place
-to open a path. No teleport works here, and you can't dig through
-the floors.
+to open a path. No teleport works here, and you can't dig down off
+the entrance level (its floor is reinforced).
 
 The puzzles are fixed (two variants per level, randomly chosen).
-<!-- audit 2026-05-18 #111: "break it ... by force-fighting it" is wrong. Force-fighting a bare boulder is harmless per hack.c:2287, 2318-2321 ("you harmlessly attack the boulder"). The cheat path is digging with a wielded pick-axe/mattock (hack.c:2269-2275). Reworded to fracture-via-striking/earth-scroll/polymorph and added the pick-axe caveat. Confirmed all other Sokoban claims: Oracle base 5-9 + Sokoban one above = entrance dlvl 6-10 (dungeon.lua:21-24, 60-66); 4 levels × 2 variants each; noteleport flag; sokoban_guilt() calls at hack.c:307 (squeeze), zap.c:5555 (fracture by striking), zap.c:1710 (polymorph), read.c:1951 (earth scroll); each triggers change_luck(-1) + u.uconduct.sokocheat (trap.c:7039-7054); conduct reported only when branch entered (insight.c:2215-2228). Levitation/flying free of penalty (hack.c:415-425). -->
+<!-- audit 2026-05-18 #111: "break it ... by force-fighting it" is wrong. Force-fighting a bare boulder is harmless per hack.c:2287, 2318-2321 ("you harmlessly attack the boulder"). The cheat path is digging with a wielded pick-axe/mattock (hack.c:2269-2275). Reworded to fracture-via-striking/earth-scroll/polymorph and added the pick-axe caveat. Confirmed all other Sokoban claims: Oracle base 5-9 + Sokoban one above = entrance dlvl 6-10 (dungeon.lua:21-24, 60-66); 4 levels × 2 variants each; noteleport flag; sokoban_guilt() calls at hack.c:307 (squeeze), zap.c:5555 (fracture by striking), zap.c:1710 (polymorph), read.c:1951 (earth scroll); each triggers change_luck(-1) + u.uconduct.sokocheat (trap.c:7039-7054); conduct reported only when branch entered (insight.c:2215-2228). Levitation/flying free of penalty (hack.c:415-425). v2 audit 2026-05-18 #24: two fixes. (a) "Can't dig through the floors" was too broad — hardfloor is set only on the entrance level (soko4-{1,2}.lua:38,7); interior soko levels would let you dig down, but only onto another soko level (Sokoban is a single-direction up-branch). Narrowed to "can't dig down off the entrance level." (b) "Levitation or flying over unfinished pits is free of penalty" was misleading because hack.c:415-425 rejects boulder pushes while levitating ("you don't have enough leverage"), so levitation prevents Sokoban progress entirely. Split: flying is the useful tactic; levitation is no penalty but also no progress. See companion-audit.md. -->
 
 Each level has exactly one correct solution. If you push a boulder
 into a corner where it blocks your progress there is no way to
@@ -942,9 +942,10 @@ fit), **dig the boulder out** (dig the wall or dig the boulder
 with a wielded pick-axe or mattock), or **fracture it** with a
 wand of striking or a scroll of earth (or polymorph the boulder
 into something else). Each of these costs a point of Luck and
-breaks the Sokoban conduct. Levitation or flying over unfinished
-pits is free of penalty. **Teleport doesn't work here:** the
-level forbids it.
+breaks the Sokoban conduct. Flying lets you skip unfinished pits
+without penalty. Levitation avoids pits too, but it also prevents
+you from pushing boulders at all, so it's useless for solving.
+**Teleport doesn't work here:** the level forbids it.
 
 The prize at the top is either a **bag of holding** or an **amulet
 of reflection**, both extremely valuable; the
@@ -2976,7 +2977,7 @@ slow digestion come back to you (free identification), and every
 other ring is consumed.
 
 #### Use-Testing (The Careful Way)
-<!-- audit 2026-05-18 #79: substantial engrave-test table rewrite. Verified against engrave.c + zap.c: real messages are "Flames fly from the wand" (fire), "A few ice cubes drop" (cold), "Lightning arcs from the wand" (lightning), "Gravel flies up" (digging), "riddled by bullet holes" (magic missile not digging), polymorph randomizes existing engraving (not "vanishes"), cancellation/make-invisible/teleportation all share the same "vanishes" message. Wand-of-wishing engrave DOES grant the wish (zap.c:2575-2585) — reverse of previous warning. Also corrected unicorn-horn neutralization (sickness → fruit juice, not water; blindness/confusion/hallucination → water). Confused remove curse randomizes BUC of uncursed items (blessorcurse, 50/50), doesn't strictly curse. See companion-audit.md. -->
+<!-- audit 2026-05-18 #79 (re-audit 2026-05-18 v2 #21): substantial engrave-test table rewrite. Verified against engrave.c + zap.c: real messages are "Flames fly from the wand" (fire), "A few ice cubes drop" (cold), "Lightning arcs from the wand" (lightning), "Gravel flies up" (digging), "riddled by bullet holes" (magic missile not digging), polymorph randomizes existing engraving (not "vanishes"), cancellation/make-invisible/teleportation all share the same "vanishes" message. Wand-of-wishing engrave DOES grant the wish (zap.c:2575-2585) — reverse of previous warning. Also corrected unicorn-horn neutralization (sickness → fruit juice, not water; blindness/confusion/hallucination → water). Confused remove curse randomizes BUC of uncursed items (blessorcurse, 50/50), doesn't strictly curse. v2 re-audit confirmed every wand message against engrave.c:604-728 (striking unique "fights your attempt to write", sleep+death both "bugs stop moving", slow/speed/poly distinctive, dust-class wands silent), zapnodir light at zap.c:2549, wishing at zap.c:2575-2585, cursed-wand explosion at engrave.c:794 (1% per cursed engrave per hack.h:1410). 0 corrections. See companion-audit.md. -->
 
 When you don't have access to a shop or a sink, you can sometimes
 figure out what an item is by using it carefully. Here's the approach
@@ -6851,34 +6852,25 @@ genociding anything simply because they never find the scroll and
 never sit Vlad's throne. But deliberately maintaining it against
 late-game threats takes discipline.
 
-<!-- audit 2026-05-18 #161: dropped "cursed scroll of polymorph" (no SCR_POLYMORPH exists in 5.0). Added missing conduct-breaking sources: genetic engineer claw (AD_POLY → polyself); eating chameleon/doppelganger/sandestin corpses (eat.c:1244-1263) and mimic corpses (eat.c:1199); green slime auto-poly (timeout.c:493); stone-golem auto-poly via poly_when_stoned (trap.c:3848 etc.). Added Unchanging-blocks-all and system-shock-doesn't-break notes per polyself.c:483-495. v2 audit 2026-05-18 #20: five factual corrections. (a) "The Amulet of Unchanging blocks every path" was misleading — Antimagic also blocks the potion (potion.c:1691), trap (trap.c:2486), and genetic engineer claw (mhitm.c:1128), while NOT blocking self-zapped wand, ring tick, fountain toxic-waste, or shapeshifter-corpse polyself. Reworded with both clauses. (b) Lycanthropy was omitted — were-attacks infect via you_were() → polymon() (were.c:209, mhitm.c:1138). Added. (c) "Surviving a stoning attack (auto-transforms to stone golem)" misread poly_when_stoned (mondata.c:80-86) — that only fires if you're already polymorphed into a non-stone golem; a normal character just dies. Dropped. (d) "Ring of polymorph" was listed alongside the potion implying instant effect; it's actually 1/100-per-turn while worn (allmain.c:325-334). Clarified. (e) Sandestin was listed in the corpse list but sandestins are G_NOCORPSE (eat.c:1246 comment). Dropped. Wisdom: added the polyselfless-is-easy / polypileless-is-harder reality check the section was missing. See companion-audit.md. -->
+<!-- audit 2026-05-18 #161: dropped "cursed scroll of polymorph" (no SCR_POLYMORPH exists in 5.0). Added missing conduct-breaking sources: genetic engineer claw (AD_POLY → polyself); eating chameleon/doppelganger/sandestin corpses (eat.c:1244-1263) and mimic corpses (eat.c:1199); green slime auto-poly (timeout.c:493); stone-golem auto-poly via poly_when_stoned (trap.c:3848 etc.). Added Unchanging-blocks-all and system-shock-doesn't-break notes per polyself.c:483-495. v2 audit 2026-05-18 #20: two narrow factual fixes (everything else proposed by the sub-agent was reverted as scope-creep — the section is about the conduct, not an encyclopedia of polymorph mechanics). Dropped "sandestin" from the corpse list since sandestins are G_NOCORPSE (eat.c:1246 comment, unreachable). Dropped "surviving a stoning attack (auto-transforms to stone golem)" because poly_when_stoned (mondata.c:80-86) only fires if you're already polymorphed into a non-stone golem; a normal character just dies. See companion-audit.md. -->
 #### Polymorph Restrictions
 
 Two related conducts track polymorphing:
 
-**No polymorph.** Never let your form change. Obvious sources:
-the potion of polymorph, a self-zapped wand or spell of polymorph,
-and polymorph traps. A worn ring of polymorph triggers random
-shifts (about 1 in 100 turns), so wearing one breaks the conduct
-quickly. Less obvious: a genetic engineer's claw; eating a
-chameleon, doppelganger, or mimic corpse; lycanthropy (a were-bite
-infects you and shifts you on its own); and failing to cure
-slimedness (turns you into a green slime). The Amulet of
-Unchanging shuts every door. Magic resistance blocks the potion,
-the polymorph trap, and the genetic engineer's claw, but it does
-*not* block a self-zapped wand, a ring tick, a shapeshifter
-corpse, or a toxic fountain. A failed system shock does *not*
-break the conduct.
-
-Polyselfless turns out to be one of the easier conducts; many
-ascensions clear it incidentally. The bigger sacrifice is
-polypileless below.
+**No polymorph.** Never let your form change. Obvious sources: potion
+or ring of polymorph, wand or spell of polymorph (zapped at you), and
+polymorph traps. Less obvious: a genetic engineer's claw; eating a
+chameleon, doppelganger, or mimic corpse; and failing to cure
+slimedness (turns you into a green slime). The Amulet of Unchanging
+blocks every path. A failed system shock does *not* break the
+conduct. Keeping this conduct forgoes the advantages of powerful
+monster forms (master mind flayer, xorn, various dragons).
 
 **No polymorph objects.** Never polymorph items. Don't zap items
 with a wand of polymorph, don't dip items in potions of polymorph,
-and avoid other means of transforming objects. This forgoes
-polypiling — the main source of specific high-value items, and the
-reason this is the harder of the two polymorph conducts.
+and avoid other means of transforming objects. This eliminates a
+powerful item-generation strategy (polypiling) that many players use
+to obtain specific high-value items.
 
 #### Wishing Restrictions
 <!-- audit 2026-05-18 #83: u.uconduct.wishes and u.uconduct.wisharti are two separate counters with two separate xlogfile achievements (you.h:157-158, topten.c:596-597). Wishing for the literal string "nothing" doesn't increment the counter (zap.c:6369). Amulet-of-Yendor first-pickup wish (allmain.c:445) must be declined for wishless conduct. See companion-audit.md. -->
@@ -7413,7 +7405,7 @@ other bimanual weapon.
 :::
 
 #### Morning star
-<!-- audit 2026-05-18 #148: clean. Damage 1d4+1d4 / 1d6+1, weight 120, cost 10, hit 0, iron — all match objects.h:364 with bonus dice from weapon.c:225-289. P_MORNING_STAR is its own skill class (skills.h:35, id 12), distinct from P_MACE (id 11). No artifact morning star exists. -->
+<!-- audit 2026-05-18 #148 (re-audit 2026-05-18 v2 #23): clean. Damage 1d4+1d4 / 1d6+1, weight 120, cost 10, hit 0, iron — all match objects.h:363-365 with bonus dice from weapon.c:225-289. P_MORNING_STAR is its own skill class (skills.h:35, id 12), distinct from P_MACE (id 11). v2 corrected the pass-1 claim "No artifact morning star exists" — Trollsbane is a MORNING_STAR artifact at artilist.h:182-184 (regenerates while wielded, +d5 vs trolls). Documented in the Artifacts chapter; the row prose is correct as-is. 0 user-facing corrections. See companion-audit.md. -->
 
 
 ::: dense-table
@@ -8121,7 +8113,7 @@ Dwarves and similar. Dwarves carry better-than-average loot (weapons, armor, pic
 
 :::
 
-<!-- audit 2026-05-18 #171: all 6 rows verified clean vs monsters.h:544-587. Corrected imp prose: imps only carry AT_CLAW/AD_PHYS 1d4 (monsters.h:561-562) — no AD_SITM, no AD_TLPT. Steal-and-teleport belongs to nymphs (AD_SITM) and leprechauns (AD_SGLD). Imps actually MS_CUSS (verbal abuse, monmove.c:983-985 / sounds.c:1148-1150). Note: the `i` class is not actually M2_DEMON-tagged (is_demon() returns false). All 6 carry M2_STALK. See companion-audit.md. -->
+<!-- audit 2026-05-18 #171: all 6 rows verified clean vs monsters.h:544-587. Corrected imp prose: imps only carry AT_CLAW/AD_PHYS 1d4 (monsters.h:561-562) — no AD_SITM, no AD_TLPT. Steal-and-teleport belongs to nymphs (AD_SITM) and leprechauns (AD_SGLD). Imps actually MS_CUSS (verbal abuse, monmove.c:983-985 / sounds.c:1148-1150). Note: the `i` class is not actually M2_DEMON-tagged (is_demon() returns false). All 6 carry M2_STALK. v2 audit 2026-05-18 #22: two factual fixes. (a) manes and lemure both carry G_NOCORPSE (monsters.h:545,567), so their "poisonous-corpse" tags were dormant — replaced with "No corpse." (b) lemure carries G_HELL (monsters.h:567), so it only generates in Gehennom; added "Gehennom-only" tag matching the spoiler's disenchanter-row convention. See companion-audit.md. -->
 #### Imps and minor demons `i`
 
 Annoying small fry. Imps mostly insult you and miss; quasits drain Dexterity. None individually scary.
@@ -8132,10 +8124,10 @@ All imps and minor demons follow you up and down stairs. All except *imp* are po
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
-| manes | red | 1 | 3 | 7 | 0 | claw 1d3 · claw 1d3 · bite 1d4 | poisonous-corpse, sleep-res. |
+| manes | red | 1 | 3 | 7 | 0 | claw 1d3 · claw 1d3 · bite 1d4 | sleep-res. No corpse. |
 | homunculus | green | 2 | 12 | 6 | 10 | bite 1d3 sleep | flies, poisonous-corpse, sleep-res. |
 | imp | red | 3 | 12 | 2 | 20 | claw 1d4 | regenerates. (no pois-res) |
-| lemure | brown | 3 | 3 | 7 | 0 | claw 1d3 | regenerates, poisonous-corpse, sleep-res. |
+| lemure | brown | 3 | 3 | 7 | 0 | claw 1d3 | Gehennom-only, regenerates, sleep-res. No corpse. |
 | quasit | blue | 3 | 15 | 2 | 20 | claw 1d2 drain-Dx · claw 1d2 drain-Dx · bite 1d4 | regenerates. |
 | tengu | cyan | 6 | 13 | 5 | 30 | bite 1d7 | teleports, teleport-control. |
 
@@ -8673,12 +8665,10 @@ All mummies have poisonous corpses and are mindless and undead.
 
 :::
 
-<!-- audit 2026-05-18 #173: all 8 rows verified clean vs monsters.h:1972-2048. All carry MR_POISON. Removed false claim "Healers find the guardian naga peaceful" — guardian naga is MS_MUMBLE (not MS_GUARDIAN), no M2_PEACEFUL, and PM_GUARDIAN_NAGA's appearance in the Rogue's role.c:338 entry is as a Rogue-quest creature slot, not a Healer/Rogue peace mechanism. peace_minded (makemon.c:2270-2285) finds no path that auto-peaces it. Black naga corpse confers poison + acid + stoning resistance — worth eating but companion doesn't currently surface this. See companion-audit.md. -->
+<!-- audit 2026-05-18 #173: all 8 rows verified clean vs monsters.h:1972-2048. All carry MR_POISON. Removed false claim "Healers find the guardian naga peaceful" — guardian naga is MS_MUMBLE (not MS_GUARDIAN), no M2_PEACEFUL, and PM_GUARDIAN_NAGA's appearance in the Rogue's role.c:338 entry is as a Rogue-quest creature slot, not a Healer/Rogue peace mechanism. peace_minded (makemon.c:2270-2285) finds no path that auto-peaces it. Black naga corpse confers poison + acid + stoning resistance — worth eating but companion doesn't currently surface this. v2 audit 2026-05-18 #25: pass-1 thought it had removed the wrong Healer-peaceful note, but the table still carried "Friendly to the Healer. Hostile otherwise." in the guardian-naga row. Replaced with "Lawful PCs may find them peaceful" — guardian naga maligntyp = +7 (lawful) per monsters.h:2040, so peace_minded matches via sgn(mal)==sgn(ual) for lawful heroes. Other fixes: dropped the wrong "breath weapons (acid / fire / poison)" enumeration in the intro — only red naga actually breathes (AT_BREA fire); black/guardian spit (AT_SPIT); golden casts spells (AT_MAGC AD_SPEL) — narrowed to "with ranged attacks." Fixed "spell 4d6 spell" duplication to "cast spell 4d6" matching AT_MAGC notation elsewhere. Dropped duplicate "All nagas are poison-resistant" sentence-paragraph. See companion-audit.md. -->
 #### Nagas `N`
 
-Long serpentine bodies, varied breath weapons (acid / fire / poison). All nagas are poison-resistant. Black naga corpses confer poison, acid, *and* stoning resistance — easily the best of the four eats.
-
-All nagas are poison-resistant.
+Long serpentine bodies with ranged attacks. All nagas are poison-resistant. Black naga corpses confer poison, acid, *and* stoning resistance — easily the best of the four eats.
 
 ::: dense-table
 
@@ -8690,8 +8680,8 @@ All nagas are poison-resistant.
 | guardian naga hatchling | green | 3 | 10 | 6 | 0 | bite 1d4 |  |
 | red naga | red | 6 | 12 | 4 | 0 | bite 2d4 · breath 2d6 fire | fire-res. |
 | black naga | black | 8 | 14 | 2 | 10 | bite 2d6 · spit acid | acid-res, ston-res. |
-| golden naga | yellow | 10 | 14 | 2 | 70 | bite 2d6 · spell 4d6 spell |  |
-| guardian naga | green | 12 | 16 | 0 | 50 | spit 1d6 poison · bite 1d6 paralyse · touch · hug 2d4 wrap | poisonous-corpse. Friendly to the Healer. Hostile otherwise. |
+| golden naga | yellow | 10 | 14 | 2 | 70 | bite 2d6 · cast spell 4d6 |  |
+| guardian naga | green | 12 | 16 | 0 | 50 | spit 1d6 poison · bite 1d6 paralyse · touch · hug 2d4 wrap | poisonous-corpse. Lawful PCs may find them peaceful. |
 
 :::
 

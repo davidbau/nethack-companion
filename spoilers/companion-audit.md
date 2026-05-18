@@ -7108,14 +7108,18 @@ Source: `spoilers/companion.md` line 9064. 2 factual corrections.
 
 ## 2026-05-18 — v2 audit #20: Voluntary Challenges — Polymorph Restrictions
 
-Source: `spoilers/companion.md` line 6855. 5 factual corrections, 1 wisdom adjustment.
+Source: `spoilers/companion.md` line 6855. 2 narrow factual fixes. Other proposed edits reverted as scope-creep.
 
 ### Wrong → fixed
-- **"The Amulet of Unchanging blocks every path"**: misleading. Antimagic also blocks the potion (`potion.c:1691`), the polymorph trap (`trap.c:2486`), and the genetic engineer's claw (`mhitm.c:1128`). Antimagic does NOT block self-zapped wand/spell, a worn ring of polymorph's per-turn tick, fountain toxic-waste polyself, or shapeshifter-corpse polyself. Reworded with both clauses.
-- **Lycanthropy was omitted**: a were-attack infects you, then `you_were()` → `polymon()` ticks `polyselfs` (`were.c:209`, `mhitm.c:1138`). Added to the list of less-obvious sources.
-- **"surviving a stoning attack (auto-transforms to stone golem)"**: misreads `poly_when_stoned()` at `mondata.c:80-86`, which returns true only for non-stone golems. A normal character petrifies and dies; only a player already polymorphed into a flesh/clay/etc. golem reverts to stone golem. Dropped from the list.
-- **"potion or ring of polymorph"**: ring of polymorph doesn't poly on wear; it grants a 1/100-per-turn random shift while worn (`allmain.c:325-334`). Listed alongside the potion implied instant effect. Clarified.
-- **"sandestin … corpse"**: sandestins are G_NOCORPSE (`eat.c:1246` comment). Unreachable in play. Dropped.
+- **"surviving a stoning attack (auto-transforms to stone golem)"**: misreads `poly_when_stoned()` at `mondata.c:80-86`, which returns true only for non-stone golems. A normal character petrifies and dies; only a player already polymorphed into a flesh/clay/etc. golem reverts to stone golem. Dropped from the less-obvious list.
+- **"sandestin … corpse"**: sandestins are G_NOCORPSE (`eat.c:1246` comment), so eating one is unreachable. Dropped from the corpse list.
+
+### Reverted (do not re-apply)
+- "The Amulet of Unchanging blocks every path" → reworded into a longer Antimagic-vs-Unchanging blocking chart. **Reverted.** The section is about the conduct, not an encyclopedia of polymorph mechanics. The original sentence is technically loose about Antimagic but is the right level of detail for a beginner deciding whether to attempt the conduct.
+- Lycanthropy added as a less-obvious source. **Reverted.** Real but trivia at this section's level; were-attacks are covered elsewhere.
+- Ring of polymorph clarified as "1/100 per turn random shifts". **Reverted.** The practical advice ("don't wear one") is the same regardless of mechanism.
+- Reality-check sentence ("polyselfless is easy, polypileless is harder"). **Reverted.** Meta-commentary that adds length without changing play.
+- User reaction to the original v2 edit: *"the point of covering the no-polymorph conduct is to talk about that conduct, not to give an exhaustive ways of doing polymorph."*
 
 ### Verified
 - `polyselfs++` lives only in `polymon()` at `polyself.c:751` and the eat-a-mimic path at `eat.c:1199`.
@@ -7127,11 +7131,97 @@ Source: `spoilers/companion.md` line 6855. 5 factual corrections, 1 wisdom adjus
 - Fountain "toxic wastes" calls `polyself()`, blocked only by `Unchanging` (`fountain.c:680-685`).
 - System shock returns early in `polyself()` at `polyself.c:488-495`, so a failed shock does NOT tick the conduct.
 
-### Wisdom adjustment
-- Added: polyselfless is one of the easier conducts (often achieved incidentally); the bigger commitment is polypileless, which forgoes a major item-generation engine. The section's framing under polyself overstated its cost.
+---
+
+## 2026-05-18 — v2 audit #21: A Practical Identification Strategy — The Engrave Test (Wands)
+
+Source: `spoilers/companion.md` line 2934. No corrections (re-audit clean).
+
+### Verified
+- "A lit field surrounds you" (light) at `src/zap.c:2549`.
+- "The floor is riddled by bullet holes" (magic missile) at `src/engrave.c:646`.
+- "Gravel flies up from the floor" (digging) at `src/engrave.c:704`.
+- "A few ice cubes drop from the wand" (cold) at `src/engrave.c:660-661`.
+- "Flames fly from the wand" (fire) at `src/engrave.c:716`.
+- "Lightning arcs from the wand" + blind branch (lightning) at `src/engrave.c:727-728`, blind gated at `engrave.c:1248`.
+- "The bugs on the floor stop moving!" — both sleep and death share this message at `src/engrave.c:651-656`.
+- "The wand unsuccessfully fights your attempt to write!" — unique to striking at `src/engrave.c:604`.
+- "The bugs on the floor slow down/speed up!" at `src/engrave.c:608-615`.
+- Polymorph randomizes prior engraving at `src/engrave.c:618-633`.
+- Cancellation / make-invisible / teleportation share "engraving … vanishes" at `src/engrave.c:666-682`.
+- Wand of wishing engrave grants the wish at `src/zap.c:2575-2585`.
+- DUST-class wands (nothing, undead turning, opening, locking, probing) produce no special message at `src/engrave.c:635-640`.
+- Cursed wands explode at 1% per engrave per `WAND_BACKFIRE_CHANCE = 100` (`include/hack.h:1410`, `src/engrave.c:794`).
 
 ### Notes
-- Vampire `#monster` shift ticks polyselfs per `polyself.c:1881-1888` → `polymon()`. Not currently mentioned; could be added if a vampire-polyform section ever references this conduct.
-- Section silent on which roles handle polypileless easily (Valkyrie/Samurai have strong native kits); Wizards struggle. Not added in this pass; voice ladder calls for adding such notes only when they replace something weaker.
+- Auditor flagged "Apply a wand by engraving" (use of "Apply" vs. the `a` command) as a mild voice ambiguity. Left as-is per preserve-voice; section reads fluently and the surrounding "command: `E`" makes the intent clear.
+
+---
+
+## 2026-05-18 — v2 audit #22: Bestiary Tables — Imps and minor demons `i`
+
+Source: `spoilers/companion.md` line 8116. 2 factual fixes.
+
+### Wrong → fixed
+- **manes "poisonous-corpse"** and **lemure "poisonous-corpse"** tags: both monsters carry `G_NOCORPSE` (`include/monsters.h:545` and `:567`), so M1_POIS is dormant and no corpse ever drops. Replaced "poisonous-corpse" with "No corpse" in both rows.
+- **lemure missing Gehennom-only tag**: lemure has `G_HELL` (`monsters.h:567`), generating only in Gehennom — same shape as the disenchanter row's "Gehennom-only" tag. Added.
+
+### Verified
+- All six rows match `include/monsters.h:544-587` exactly (manes / homunculus / imp / lemure / quasit / tengu).
+- "All except imp are poison-resistant" — confirmed (all carry MR_POISON except imp).
+- "Follow you up and down stairs" — all six carry M2_STALK.
+
+### Notes
+- Tengu corpse confers teleport / teleport-control intrinsic. Worth flagging if/when the bestiary's corpse-intrinsic notation gets a consistency pass. Not added in this pass.
+
+---
+
+## 2026-05-18 — v2 audit #23: Weapons Tables — Morning star
+
+Source: `spoilers/companion.md` line 7406. 0 user-facing corrections. 1 badge correction.
+
+### Verified
+- Damage 1d4+1d4 / 1d6+1, weight 120, cost 10, hit 0, iron, one-handed at `include/objects.h:363-365` plus bonus dice from `src/weapon.c:225-289`.
+- P_MORNING_STAR is a distinct skill class (id 12) at `include/skills.h:35`.
+- Role caps (not shown in section but consistent): Bar/Pri Skilled; Cav Expert; Val/Wiz/Sam/Mon Basic.
+
+### Badge correction
+- The pass-1 badge stated "No artifact morning star exists." That's wrong: **Trollsbane** is a MORNING_STAR artifact at `include/artilist.h:182-184` (regenerates while wielded, +d5 vs S_TROLL, cost 200). Documented in the Artifacts chapter; the user-facing row prose is fine as-is, so no prose change applied — just badge updated.
+
+---
+
+## 2026-05-18 — v2 audit #24: Branches and Landmarks — Sokoban
+
+Source: `spoilers/companion.md` line 926. 2 factual fixes.
+
+### Wrong → fixed
+- **"you can't dig through the floors"**: too broad. The `hardfloor` flag is set only on the entrance level (soko4-{1,2}.lua:38,7); interior soko levels don't carry it. `Can_dig_down` checks the flag (`src/dungeon.c:1648-1654`). In practice digging on interior levels would just drop you onto another soko level (Sokoban is an upward-only branch), so escape is futile either way, but the rule as stated is inaccurate. Narrowed to "you can't dig down off the entrance level (its floor is reinforced)."
+- **"Levitation or flying over unfinished pits is free of penalty"**: technically true (no `sokoban_guilt()` for floating past pits), but misleading. While levitating you cannot push boulders at all — `src/hack.c:415-425` rejects pushes with "you don't have enough leverage." Flying (not levitating) still allows pushing. Split into: "Flying lets you skip unfinished pits without penalty. Levitation avoids pits too, but it also prevents you from pushing boulders at all, so it's useless for solving."
+
+### Verified
+- Entrance DL 6-10, one above Oracle (Oracle DL 5-9 + Sokoban base=1 chainlevel=oracle, direction=up at `dat/dungeon.lua:21-25`, `60-66`).
+- Four puzzle levels, two variants each at `dat/soko*.lua`; branch `nlevels = 2` per layer at `dat/dungeon.lua:225-244`.
+- `noteleport` on every soko file (`dat/soko*.lua:7,38`); teleport blocked via `In_sokoban` at `src/teleport.c:1185-1189`.
+- Prize on soko1 (top): 75% bag of holding / 25% amulet of reflection in soko1-1; 25/75 reversed in soko1-2.
+- Cursed scroll of scare monster under the prize.
+- Conduct triggers: squeeze, polymorph boulder, fracture by striking, scroll of earth — all call `sokoban_guilt()` which does `u.uconduct.sokocheat++; change_luck(-1)` (`src/trap.c:7039-7054`).
+
+---
+
+## 2026-05-18 — v2 audit #25: Bestiary Tables — Nagas `N`
+
+Source: `spoilers/companion.md` line 8669. 4 fixes (3 factual + 1 voice de-duplication).
+
+### Wrong → fixed
+- **guardian naga row Notes: "Friendly to the Healer. Hostile otherwise."**: wrong. The pass-1 badge claimed this line was removed, but it was not. Guardian naga is MS_MUMBLE with maligntyp = +7 (lawful) per `monsters.h:2040`. `peace_minded()` has no special-case path for Healer/Rogue; only `sgn(mal)==sgn(ual)` applies, which means *lawful* PCs may find them peaceful (Knight, Samurai, lawful Valkyrie/Priest/Monk/Archeologist/Caveman). Replaced with "Lawful PCs may find them peaceful."
+- **Intro "varied breath weapons (acid / fire / poison)"**: wrong. Only the red naga has `AT_BREA` (fire) at `monsters.h:2008`. Black naga and guardian naga use `AT_SPIT` (acid and venom respectively). Golden naga has no breath/spit — its second attack is `AT_MAGC AD_SPEL` (`monsters.h:2027`). Narrowed to "with ranged attacks" without enumerating per-color details, per the no-trivia rule.
+- **golden naga row "spell 4d6 spell"**: duplicated word. The attack is `ATTK(AT_MAGC, AD_SPEL, 4, 6)`. Changed to "cast spell 4d6" matching the spoiler's notation elsewhere for AT_MAGC.
+
+### Voice (de-duplication)
+- Intro had "All nagas are poison-resistant" both at the end of the first sentence and again as a standalone one-line paragraph. Dropped the standalone duplicate.
+
+### Verified
+- All 8 rows match `include/monsters.h:1972-2048` exactly. All carry MR_POISON.
+- Black naga corpse confers poison + acid + stoning resistance per `monsters.h:2020` MR_POISON|MR_ACID|MR_STONE — section correctly surfaces this.
 
 ---
