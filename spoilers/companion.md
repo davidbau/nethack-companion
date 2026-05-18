@@ -2216,8 +2216,8 @@ scroll of remove curse, holy water, or prayer).
 The **displacer beast** (`f`, blue, 5.0 addition) is a tiger-sized
 feline with AC −10 and three attacks per turn (4d4 / 4d4 / 2d10).
 The misleading name: it isn't displaced in the cloak-of-displacement
-sense. Its trick is the opposite — when you melee it, half the
-time it swaps places with you instead of taking the hit, which can
+sense. Its trick is the opposite, when you melee it, half the time
+it **swaps places with you** instead of taking the hit, which can
 pull you off Elbereth, out of a doorway, or onto a trap. Ranged
 attacks (wand, spell, thrown) bypass the swap entirely. It has no
 MR, so sleep, paralysis, and taming all work. A neat trick: lure it
