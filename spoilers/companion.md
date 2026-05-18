@@ -1041,20 +1041,27 @@ though that was a Hack-era addition. A small and forgivable
 anachronism.
 
 #### Fort Ludios
+<!-- audit 2026-05-18 #138: 2 corrections + omitted features. (1) "Captains" overstated — knox.lua fixes only 17 soldiers + 1 lieutenant; captains can appear via barracks zoo squadmon but aren't a guaranteed garrison. (2) "Legendary wealth" — Croesus is the vault guardian/warden (MS_GUARD, monsters.h:2863), not a merchant; the gold belongs to the vault, not him. The companion's own bestiary row labels him "Vault guardian." Added the noteleport flag, four dragons, four giant eels in the moat, stone giant, and corner-tower gem caches (knox.lua:9, 144-167). -->
 
 Fort Ludios is optional and easy to miss entirely. It appears as a
-magic portal somewhere in the dungeon, often behind a wall that
-requires digging to reach. The portal leads to a fortified military
-compound filled with soldiers, lieutenants, captains, and the
-fortress's owner, **Croesus** — a unique human of legendary wealth.
-Kill him, loot the place, leave.
+magic portal somewhere around Dlvl 18-22, often inside a small
+vault that requires digging to reach. The portal leads to a
+fortified military compound: roughly twenty soldiers and a
+lieutenant, four guard dragons, a stone giant, four giant eels
+patrolling the moat, and **Croesus** — the unique fortress warden
+and vault guardian. The level is `noteleport`, so once you're
+inside the only way out is back through the portal or through the
+walls. Kill Croesus, loot the place, leave.
 
-The fort is guarded heavily. Soldiers come in numbers, and they
-carry useful items: C-rations, K-rations, and sometimes decent
-weapons. The real prize is the gold (thousands of pieces) and the
-occasional chest. This is a good place to visit if you need money
-for protection rackets or shop purchases, but it's not essential
-for victory.
+The real prize is the gold (a 15×4 treasury holds 36k–54k pieces,
+though most of the tiles are spiked-pit or land-mine trapped),
+gem caches in each corner tower (diamonds, emeralds, rubies,
+amethysts), and the occasional chest in the barracks. Soldiers
+also carry C-rations, K-rations, and decent weapons. The military
+alarm only quiets once Croesus is dead, so plan to engage him
+rather than tip-toe around. This is a good place to visit if you
+need money for protection rackets or shop purchases, but it's not
+essential for victory.
 
 If you can't find the portal, don't worry about it. Fort Ludios is
 a bonus, not a requirement.
@@ -1554,16 +1561,23 @@ athame.
 ---
 
 ### Feelings and Sounds
+<!-- audit 2026-05-18 #140: 5 corrections. (1) "Counting gold coins" message specifically means a vault WITH gold; an empty vault gives "someone searching" (sounds.c:253-262). (2) "Wow! This makes you feel great!" is the blessed-tier restore ability OR blessed magic fountain; the spoiler attributed it generically to restore-ability (potion.c:658-661, fountain.c:257). (3) "Move very quietly" doesn't include elven boots — boots produce "walk very quietly" (do_wear.c:123-129). (4) Lycanthropy cure is QUAFFING holy water, not dipping (potion.c:728-737 set_ulycn in the blessed-water branch). (5) "Seem faster" from quantum mechanic corpse only fires if you don't already have intrinsic speed; otherwise you "seem slower" instead (eat.c:1227-1235). Also added the global suppressor: Deaf/!flags.acoustics/u.uswallow/Underwater silences all dosounds() messages (sounds.c:208-209). -->
 
 Much of the most important information in NetHack comes to you as
 cryptic feelings and sounds. They sound like atmosphere, but most
 of them are specific signals. If you don't know what they mean,
-you'll miss the cues entirely. They are worth memorizing:
+you'll miss the cues entirely. They are worth memorizing.
+
+(Caveat: being **Deaf**, **swallowed**, or **underwater** silences
+the ambient-sound channel completely — Permadeaf conducts in
+particular lose every level-flavor cue. The feeling-from-corpse
+messages still come through.)
 
 | Message                                          | What it means                                                            |
 |--------------------------------------------------|--------------------------------------------------------------------------|
 | *"You have a sad feeling for a moment, then it passes."* | Your pet just died offscreen.                                        |
-| *"You hear someone counting gold coins."*<br>*"You hear the footsteps of a guard on patrol."* | Vault on this level.                          |
+| *"You hear someone counting gold coins."* | Vault on this level, with gold still in it.                                                       |
+| *"You hear the footsteps of a guard on patrol."*<br>*"You hear someone searching."* | Vault on this level (the "searching" message means the vault is already empty).    |
 | *"You hear a strange wind."*           | Oracle on this level.                                                                  |
 | *"You hear someone cursing shoplifters."* | Shop on this level.                                                                 |
 | *"You hear bubbling water."*<br>*"You hear water falling on coins."* | Fountain on this level.                                          |
@@ -1575,14 +1589,14 @@ you'll miss the cues entirely. They are worth memorizing:
 | *"You feel wide awake."*               | Intrinsic sleep resistance from a corpse.                                              |
 | *"You feel very firm."*                | Intrinsic disintegration resistance from a corpse.                                     |
 | *"You feel a strange mental acuity."*  | Intrinsic telepathy from a corpse.                                                     |
-| *"You seem faster."*                   | Intrinsic speed (quantum mechanic corpse).                                             |
+| *"You seem faster."*                   | Intrinsic speed from a quantum mechanic corpse. (If you already had speed, you instead "seem slower" — quantum corpses toggle.) |
 | *"You feel a mild buzz."*              | Eye of newt corpse restored 1–3 mana.                                                  |
 | *"You sense a lack of food nearby."*   | Scroll of food detection, no food on level.                                            |
 | *"You feel materially poor."*          | Scroll of gold detection, no gold on level.                                            |
 | *"You feel like someone is helping you."* | Scroll of remove curse; worn/wielded cursed items uncursed.                         |
-| *"You move very quietly."*             | Ring of stealth (or elven cloak / elven boots).                                        |
-| *"Wow! This makes you feel great!"*    | Potion of restore ability; a drained stat returned to peak.                            |
-| *"You feel feverish."*                 | Lycanthropy infection from a were-monster. Eat wolfsbane, dip in holy water, or pray.  |
+| *"You move very quietly."*             | Ring of stealth or elven cloak. (Elven boots give *"You walk very quietly"* instead.)  |
+| *"Wow! This makes you feel great!"*    | Blessed potion of restore ability with no remaining troubles — *or* a blessed magic fountain hit. |
+| *"You feel feverish."*                 | Lycanthropy infection from a were-monster. **Quaff** holy water, eat wolfsbane, or pray. (Dipping doesn't cure it; only drinking does.) |
 | *"You are slowing down."*              | You're turning to stone. Immediately eat a lizard corpse, drink acid, or pray.         |
 | *"You are turning into slime."*        | Green-slime contagion. Burn it off (fire scroll/spell/wand) or pray.                   |
 | *"You feel deathly sick."*             | Terminal illness (Pestilence, Demogorgon). Quaff extra healing, eat eucalyptus, or pray. |
@@ -3699,6 +3713,8 @@ wishing too.
 ---
 
 ### Rings and Amulets
+<!-- audit 2026-05-18 #139: ~144 lines, no substantive corrections. All ring prices match objects.h:741-827; auto-curse list (TELEPORTATION/POLYMORPH/AGGRAVATE_MONSTER/HUNGER at 90% per mkobj.c:1143-1146) is correct; aggravate-monster effective-depth doubling capped at 50 (dungeon.c:2080-2082); free-action paralysis immunity via Free_action checks (apply.c:1044, mcastu.c:506); per-ring hunger cost at turns 4 and 12 (eat.c:3237-3267); amulet of guarding +2 AC +2 MC (do_wear.c:2496, mhitu.c:1121-1126); restful-sleep regen +1 HP while sleeping (allmain.c:663-664). Minor close calls: (a) restful sleep is *always* cursed per mkobj.c:1065, not "usually"; (b) blessed polymorph potion grants control only from base form (potion.c:1318-1329, POLY_LOW_CTRL restricts forms); (c) protection-from-shape-changers covers chameleons/doppelgangers/sandestins too, not just werebeasts (makemon.c:1355-1358). Not corrected inline — section is illustrative. -->
+
 
 Two ring fingers. One neck. These are the most constrained equipment
 slots in the game, which makes choosing what to wear a genuine
@@ -8758,8 +8774,15 @@ Apes and great apes mostly; sasquatches are fast. Carnivore corpses are safe foo
 :::
 
 #### Zombies `Z`
+<!-- audit 2026-05-18 #141: stats and attacks all match monsters.h:2421-2504. All Z-class entries carry G_NOCORPSE — zombies NEVER leave corpses on death, so the "corpses are unsafe to eat" framing was misleading (there's nothing to eat). M1_POIS varies (kobold/gnome/orc/dwarf/ghoul have it; elf/human/ettin/giant zombies don't), but again moot for eating. Skeleton has G_NOGEN — never randomly generated, only from skeleton-trap or special-level placement. Reworded intro. -->
 
-Slow undead. Easy to kite. Corpses are usually unsafe to eat. Big zombie populations live in morgues.
+Slow undead. Easy to kite. **Zombies never leave corpses on
+death**, so eating is a non-issue, but undead-turning effects
+(scroll, spell of turn undead, wand of undead turning) deal heavy
+damage to the whole class. The **skeleton** doesn't generate
+randomly: it only appears from a skeleton trap or a fixed
+placement (e.g., Vlad's Tower). Big zombie populations live in
+morgues.
 
 All zombies are mindless and undead.
 

@@ -142,10 +142,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#135**  L 6380  (  19 lines)   ↳ Voluntary Challenges → Bonesless (new in 5.0)
 - [x] **#136**  L 6726  (  11 lines)   ↳ Weapons Tables → Axe
 - [x] **#137**  L 2097  (   9 lines)   ↳ Dangerous Encounters → Disintegration
-- [ ] **#138**  L 1004  (  19 lines)   ↳ Branches and Landmarks → Fort Ludios
-- [ ] **#139**  L 3489  ( 144 lines) 📖 Rings and Amulets
-- [ ] **#140**  L 1484  (  40 lines) 📖 Feelings and Sounds
-- [ ] **#141**  L 7968  (  23 lines)   ↳ Bestiary Tables → Zombies `Z`
+- [x] **#138**  L 1004  (  19 lines)   ↳ Branches and Landmarks → Fort Ludios
+- [x] **#139**  L 3489  ( 144 lines) 📖 Rings and Amulets
+- [x] **#140**  L 1484  (  40 lines) 📖 Feelings and Sounds
+- [x] **#141**  L 7968  (  23 lines)   ↳ Bestiary Tables → Zombies `Z`
 - [ ] **#142**  L 6142  (  54 lines)   ↳ Voluntary Challenges → The Food Conducts
 - [ ] **#143**  L 7297  (  17 lines)   ↳ Bestiary Tables → Kobolds `k`
 - [ ] **#144**  L 4790  ( 142 lines) 📖 Luck and Fortune

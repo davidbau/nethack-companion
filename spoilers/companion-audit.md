@@ -5039,3 +5039,149 @@ mechanism clarifications.
   bones."
 
 ---
+
+## 2026-05-18 — Chapter audit #138: Fort Ludios
+
+Source: `spoilers/companion.md` line 1004. 2 corrections + 5
+additions.
+
+### Verified
+- Branch is "floating" — only inserted when a vault is generated
+  at depth 11+ (mklev.c:2647-2651), 2/3 deferral per attempt.
+- Magic-portal entry, placed inside a vault (mklev.c:1331).
+- 17 soldiers + 1 lieutenant fixed (knox.lua:126-142).
+- Croesus PM_CROESUS placed on throne, G_UNIQ + G_NOGEN.
+- C/K-ration drops on soldiers (makemon.c:695-698).
+- Treasury 15x4 = 60 tiles, 600-900 gold per tile ≈ 36k-54k
+  (knox.lua:58, 68-70).
+- Barracks fill drops chests 1-in-20 (mkroom.c:397-401).
+
+### Corrected
+1. **"Soldiers, lieutenants, captains"** — captains are NOT a
+   fixed garrison, only a 1% rare from barracks zoo squadmon
+   (mkroom.c:810-813). Dropped from the section text.
+2. **"Croesus ... a unique human of legendary wealth"** —
+   Croesus is the vault GUARDIAN (MS_GUARD, monsters.h:2863),
+   not a merchant; the gold belongs to the vault, not him.
+   Reworded.
+
+### Added
+- noteleport flag (knox.lua:9) — can't teleport in or out.
+- Four dragons (knox.lua:144-148), four giant eels in the moat,
+  stone giant (knox.lua:151-155).
+- Corner-tower gem caches: diamond/emerald/ruby/amethyst x3
+  each (knox.lua:156-167).
+- Trap density on treasury tiles: 1/3 chance of spiked pit or
+  land mine per tile (knox.lua:59-65).
+- Military alarm quiets only when Croesus is dead
+  (do.c:1894-1898).
+
+---
+
+## 2026-05-18 — Chapter audit #139: Rings and Amulets
+
+Source: `spoilers/companion.md` line 3489. ~144 lines, no
+substantive corrections.
+
+### Verified
+- All ring prices match objects.h:741-827.
+- Auto-curse list (TELEPORTATION, POLYMORPH, AGGRAVATE_MONSTER,
+  HUNGER) at 90% per mkobj.c:1143-1146 — spoiler's "90%" is
+  exact.
+- Aggravate-monster effective-depth doubling, capped at 50
+  (dungeon.c:2080-2082).
+- Free_action paralysis immunity (apply.c:1044, mcastu.c:506).
+- Ring hunger cost: -1 nutrition on turns 4 and 12 per ring
+  (eat.c:3237-3267).
+- Amulet of guarding +2 AC and +2 MC (do_wear.c:2496-2497,
+  mhitu.c:1121-1126); pairs with cloak of MR to MC 3.
+- Restful sleep +1 HP regen while asleep (allmain.c:663-664).
+
+### Close calls (not corrected inline; section is illustrative)
+- Restful sleep is **always** cursed per mkobj.c:1065, not
+  "usually."
+- Blessed polymorph potion grants control only from base form
+  (potion.c:1318-1329) and uses POLY_LOW_CTRL restricted form
+  list.
+- Protection from shape-changers covers chameleons, doppelgangers,
+  sandestins, and genocidable shapechangers (makemon.c:1355-1358),
+  not only werebeasts.
+
+---
+
+## 2026-05-18 — Chapter audit #140: Feelings and Sounds
+
+Source: `spoilers/companion.md` line 1484. 5 corrections + 1
+caveat added.
+
+### Verified
+- "Sad feeling" = pet died offscreen (mon.c:3100-3101).
+- "Footsteps of a guard" = vault on level (sounds.c:269-270).
+- "Strange wind" = Oracle (sounds.c:190).
+- "Cursing shoplifters" = shop (sounds.c:321-325).
+- "Bubbling water" / "water falling on coins" = fountain
+  (sounds.c:214-218).
+- "Bugle playing reveille" = soldier wake-up
+  (muse.c:838-847).
+- All corpse-feeling messages: poison/fire/cold/shock/sleep/
+  disint res, telepathy, eye-of-newt mana (eat.c:1011-1075,
+  1102-1122).
+- "Like someone is helping you" = remove curse (read.c:1499-1500).
+- "Feel feverish" = lycanthropy (uhitm.c:4282).
+- "Slowing down" / "turning into slime" / "deathly sick" =
+  stoning / slime / terminal illness (timeout.c:128-129,
+  insight.c:1016, potion.c:154).
+
+### Corrected
+1. **"Counting gold coins" message** specifically means a vault
+   with gold IN it; an empty vault gives "someone searching"
+   instead (sounds.c:253-262). Split the row.
+2. **"Wow! This makes you feel great!" = potion of restore
+   ability** is incomplete. Per potion.c:658-661, the "great"
+   phrasing is the **blessed** restore-ability variant with no
+   remaining troubles, AND the same phrasing appears for a
+   blessed magic fountain hit (fountain.c:257). Reworded.
+3. **"Move very quietly" includes elven boots** — wrong.
+   do_wear.c:123-129: boots produce "walk very quietly"
+   instead. Fixed.
+4. **Lycanthropy cure "dip in holy water"** — wrong action.
+   potion.c:728-737: set_ulycn(NON_PM) fires when the blessed
+   water is QUAFFED. Reworded to "quaff."
+5. **"Seem faster" = quantum mechanic corpse** is incomplete.
+   eat.c:1227-1235: only fires the speed branch if you don't
+   already have intrinsic speed; otherwise you "seem slower."
+   Added the toggle note.
+
+### Added
+- Global suppressor: Deaf/!flags.acoustics/u.uswallow/Underwater
+  silences all dosounds() messages (sounds.c:208-209). Worth
+  one line for Permadeaf players.
+
+---
+
+## 2026-05-18 — Chapter audit #141: Zombies `Z`
+
+Source: `spoilers/companion.md` line 7968. No stat corrections;
+intro reworded.
+
+### Verified
+- All 10 entries' stats match monsters.h:2421-2504.
+- M1_POIS varies (kobold/gnome/orc/dwarf/ghoul have it;
+  elf/human/ettin/giant zombies don't).
+- Skeleton has MR_STONE and M2_WANDER (no follows-stairs).
+- All zombies have M2_UNDEAD and M1_MINDLESS.
+
+### Corrected
+1. **"Corpses are usually unsafe to eat"** intro is misleading.
+   All Z-class entries carry G_NOCORPSE — zombies NEVER leave
+   corpses on death. M1_POIS still matters (for poison damage
+   on were-strikes etc.) but is moot for eating. Reworded to
+   "zombies never leave corpses on death" and added the
+   tactical undead-turning hint.
+
+### Added
+- Skeleton has G_NOGEN — never randomly generated, only from
+  skeleton trap or fixed placement (e.g., Vlad's Tower). Added
+  to the intro.
+
+---
