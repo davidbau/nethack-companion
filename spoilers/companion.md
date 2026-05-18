@@ -2224,7 +2224,7 @@ MR, so sleep, paralysis, and taming all work. A neat trick: lure it
 adjacent to a moat or lava and let it swap itself in. Speed 12, so
 a speed-boosted hero outpaces it.
 
-The corpse gives you cloak-style displacement for a few turns:
+Eating the corpse gives you cloak-style displacement for a few turns:
 monsters target a phantom image one square off from where you
 really are and miss accordingly. Note that this is a different
 mechanic from the beast's own place-swap, despite the shared
