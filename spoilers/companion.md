@@ -924,14 +924,19 @@ to open a path. No teleport works here, and you can't dig through
 the floors.
 
 The puzzles are fixed (two variants per level, randomly chosen).
+<!-- audit 2026-05-18 #111: "break it ... by force-fighting it" is wrong. Force-fighting a bare boulder is harmless per hack.c:2287, 2318-2321 ("you harmlessly attack the boulder"). The cheat path is digging with a wielded pick-axe/mattock (hack.c:2269-2275). Reworded to fracture-via-striking/earth-scroll/polymorph and added the pick-axe caveat. Confirmed all other Sokoban claims: Oracle base 5-9 + Sokoban one above = entrance dlvl 6-10 (dungeon.lua:21-24, 60-66); 4 levels × 2 variants each; noteleport flag; sokoban_guilt() calls at hack.c:307 (squeeze), zap.c:5555 (fracture by striking), zap.c:1710 (polymorph), read.c:1951 (earth scroll); each triggers change_luck(-1) + u.uconduct.sokocheat (trap.c:7039-7054); conduct reported only when branch entered (insight.c:2215-2228). Levitation/flying free of penalty (hack.c:415-425). -->
+
 Each level has exactly one correct solution. If you push a boulder
 into a corner where it blocks your progress there is no way to
 start over. You're left with a few ways to cheat, which might or
 might not help: **squeeze past** the boulder (drop your stuff to
-fit), **break it** with a wand of striking or by force-fighting
-it, or **levitate over** the pit. Squeezing and breaking each
-cost a point of Luck and break the Sokoban conduct; levitation
-is free of penalty but you can't pick anything up while airborne.
+fit), **fracture it** with a wand of striking or a scroll of earth
+(or polymorph the boulder into something else), or **levitate
+over** the pit. Each of these costs a point of Luck and breaks
+the Sokoban conduct; levitation and flying are free of penalty
+but you can't pick anything up while airborne. (Force-fighting
+a bare boulder does nothing — you need a wielded pick-axe or
+mattock to dig it out, which itself counts as a Sokoban cheat.)
 **Teleport doesn't work here:** the level forbids it. If nothing
 works, take the downstair back to the dungeon and continue
 without the prize.
@@ -4059,6 +4064,8 @@ enchantment. It also repairs any existing damage.
 ---
 
 ### Artifacts
+<!-- audit 2026-05-18 #113: 4 substantive corrections + 3 useful additions. (1) Magicbane "curse protection while carried" wrong — Magicbane has SPFX_RESTR|SPFX_ATTK|SPFX_DEFN, STUN(3,4), DFNS(AD_MAGM), NO_CARY (artilist.h:145-147); all four code paths at wield.c:1036, trap.c:2360, mplayer.c:273, sit.c:576 require wielding. Reworded table and prose. (2) Master Key non-rogue: spoiler said "non-blessed Key carried by anyone else" — opposite of C. artifact.c:2778-2784: Rogue needs !cursed, non-rogues need blessed. (3) Eyes of the Overworld "carried gives magic resistance" wrong — DFNS(AD_MAGM), NO_CARY (artilist.h:262); MR only when worn (per artifact.c:731 wp_mask check). Both table row and prose fixed. (4) Tsurugi "grants magic resistance" wrong — cspfx=SPFX_LUCK|SPFX_PROTECT only, no MR via spfx/defn/cary (artilist.h:285-289). Added: Sceptre of Might double-damage hits chaotic/NEUTRAL/unaligned (SPFX_DALIGN at artifact.c:1031-1034 triggers for any sgn(maligntyp)!=weap.alignment, and the Sceptre is Lawful); Mjollnir return is Valkyrie-only-reliable per artilist.h:97-108; Frost/Fire Brand have SNOWSTORM/FIRESTORM invokes (artilist.h:150, 154); Stormbringer is SPFX_INTEL so cross-alignment touch deals 4d10 not 4d4. -->
+
 
 Scattered throughout the Mazes are items of legend: named weapons,
 amulets, and tools that carry powers no ordinary gear can match. Each
@@ -4100,7 +4107,7 @@ of that monster class.
 | Excalibur         | Lawful   | long sword        | +d5    | +d10 physical               | drain resistance, automatic searching                  |
 | Grayswandir       | Lawful   | silver saber      | +d5    | (base only)                 | half physical damage received, hallucination res.      |
 | Mjollnir          | Neutral  | war hammer        | +d5    | +d24 shock                  | returns when thrown if STR 25                          |
-| Magicbane         | Neutral  | athame            | +d3    | +d4 magic (stun)            | curse protection while carried, MR vs magic            |
+| Magicbane         | Neutral  | athame            | +d3    | +d4 magic (stun)            | magic resistance and curse protection while *wielded*  |
 | Stormbringer      | Chaotic  | runesword         | +d5    | +d2 drain life              | drains a level (you gain it); attacks peacefuls        |
 | Vorpal Blade      | any      | long sword        | +d5    | +d1 physical                | chance to behead on hit                                |
 | Frost Brand       | any      | long sword        | +d5    | (base only) cold            | fire resistance + cold defense                         |
@@ -4143,15 +4150,19 @@ only with Strength 25 (gauntlets of power or rings of gain strength
 get you there). Its +d24 shock damage is brutal against anything not
 shock-resistant.
 
-**Magicbane** is the Wizard's go-to athame. The combined effect of its
-stun damage, curse protection while held, and magic resistance makes
-it valuable to carry even as a secondary weapon. Often the first gift
-from a Neutral sacrifice.
+**Magicbane** is the Wizard's go-to athame. The combined effect of
+its stun damage, curse protection, and magic resistance — all of
+which require it to be **wielded**, not just carried — makes it
+Wizard's preferred melee weapon. Often the first gift from a
+Neutral sacrifice.
 
 **Stormbringer** is dangerous to use because it attacks peaceful
-monsters automatically, which can cause alignment problems. But each
-hit drains a level from the target and gives it to you, which is huge
-in the early-to-mid game.
+monsters automatically, which can cause alignment problems. But
+each hit drains a level from the target and gives it to you, which
+is huge in the early-to-mid game. Stormbringer is also
+*intelligent*: a Lawful or Neutral wielder who touches it without
+permission takes the heavier 4d10 magical-blast damage rather than
+the 4d4 dealt by ordinary cross-alignment artifacts.
 
 **Cleaver** is the Barbarian quest artifact. When wielded one-handed
 (not two-weaponing), every swing strikes the primary target *and* one
@@ -4159,6 +4170,14 @@ square on each side of it: three monsters per attack when packed in
 a corridor mouth or against a diagonal pair. The two-weapon penalty
 suppresses the spin, so most Barbarians keep Cleaver as their primary
 and a shield in the off slot.
+
+**Frost Brand** and **Fire Brand** each have an `#invoke` power
+the wishable table doesn't capture: Frost Brand summons a
+snowstorm around you (cold damage to nearby squares), Fire Brand
+summons a firestorm. Either one clears the room around you when
+you're cornered. Mjollnir, by contrast, only reliably returns
+when **thrown by a Valkyrie**; other roles can throw it but
+won't get the 99% catch-back.
 
 **Snickersnee** got a major buff in 5.0: it now counts as a polearm
 even when you're on foot (regular pole weapons require a steed). Once
@@ -4225,7 +4244,7 @@ again.
 | Caveman     | The Sceptre of Might                | mace         | +d5 hit; ×2 vs non-lawful      | magic resistance       | conflict          |
 | Healer      | The Staff of Aesculapius            | quarterstaff | drain-life on hit              | drain res., regen      | full heal + cure  |
 | Knight      | The Magic Mirror of Merlin          | mirror       | (speaks to you)                | MR, ESP                | —                 |
-| Monk        | The Eyes of the Overworld           | lenses       | astral vision (when worn)      | magic resistance       | enlightenment     |
+| Monk        | The Eyes of the Overworld           | lenses       | astral vision, magic res. (when worn) | —              | enlightenment     |
 | Priest      | The Mitre of Holiness               | helm         | ×2 vs undead, +1 prot.         | fire res.              | energy boost      |
 | Ranger      | The Longbow of Diana                | bow          | +d5 hit; reflection            | ESP                    | conjure arrows    |
 | Rogue       | The Master Key of Thievery          | skeleton key | —                              | warn, t-ctrl, ½ phys   | guaranteed untrap |
@@ -4249,12 +4268,12 @@ weapon: Barbarians can throw it for double damage and pick it back
 up. `#invoke` is levitation.
 
 **The Sceptre of Might** (Caveman): mace base, +d5 to-hit, double
-damage against any monster whose alignment differs from the artifact's
-(the Sceptre itself is Lawful, so it deals doubled damage against
-chaotic and unaligned monsters, i.e. most of the dungeon's hostiles
-once you reach Gehennom). It also grants magic resistance while held.
-`#invoke` casts conflict (monsters fight each other) at a steep
-energy cost.
+damage against any monster whose alignment differs from the
+artifact's (the Sceptre itself is Lawful, so it deals doubled
+damage against chaotic, neutral, *and* unaligned monsters — most
+of the dungeon's hostiles once you reach Gehennom). It also grants
+magic resistance while *wielded*. `#invoke` casts conflict
+(monsters fight each other) at a steep energy cost.
 
 **The Staff of Aesculapius** (Healer): the Healer's salvation. Each
 hit drains life (one of only three drain-life weapons; the others
@@ -4269,10 +4288,11 @@ mirror), but grants ESP and magic resistance, and occasionally
 so the Mirror is pure passive utility.
 
 **The Eyes of the Overworld** (Monk): lenses that, when worn, give
-astral vision: see invisible, see through walls, spot secret doors.
-Carried (not worn) they still give magic resistance. `#invoke`
-enlightens you. For a Monk who can't safely wear body armor, a
-powerful passive on a slot they actually fill.
+astral vision (see invisible, see through walls, spot secret doors)
+**and** magic resistance. Both effects require them to be worn —
+carrying them in inventory does nothing. `#invoke` enlightens you.
+For a Monk who can't safely wear body armor, a powerful passive on
+a slot they can use.
 
 **The Mitre of Holiness** (Priest): a helm of brilliance that grants
 double damage vs undead while worn, plus the brilliance bonus to
@@ -4288,16 +4308,18 @@ specialization this is the role's centerpiece.
 
 **The Master Key of Thievery** (Rogue): doesn't fight, but the carry
 package is enormous: warning, teleport control, half physical damage
-taken, and `#invoke` instantly untraps a nearby trap. For a non-
-cursed Key carried by a Rogue (or non-blessed Key carried by anyone
-else), `#untrap` also gains a perfect-detection bonus on doors and
+taken, and `#invoke` instantly untraps a nearby trap. The unlocking
+bonus depends on alignment: a Rogue gets it from any non-cursed
+Key; everyone else needs a **blessed** Key. With those preconditions
+met, `#untrap` also gains a perfect-detection bonus on doors and
 chests.
 
 **The Tsurugi of Muramasa** (Samurai): a katana-grade two-handed
-sword with +d8 damage *and* a behead chance (like Vorpal Blade) *and*
-a +1 protection bonus, and it acts as a luckstone, and it grants
-magic resistance. One of the strongest artifacts in the game,
-Samurai's reward for a hard quest.
+sword with +d8 damage *and* a behead chance (like Vorpal Blade)
+*and* a +1 protection bonus, and it acts as a luckstone. Note
+that Tsurugi does **not** grant magic resistance, despite the
+weapon's reputation. One of the strongest artifacts in the game,
+the Samurai's reward for a hard quest.
 
 **The Platinum Yendorian Express Card** (Tourist): the Tourist's
 get-out-of-jail card. Carry grants ESP, magic resistance, and half
@@ -6245,6 +6267,7 @@ Four boulders (A, D, G, and H) remain.
 Three boulders (F, G, and H) remain.
 
 #### Level 3, Version B
+<!-- audit 2026-05-18 #112: upstair < was placed at spoiler (16,8) in both the initial and intermediate maps; soko2-2.lua:25 puts it at (15,6) which translates to spoiler (16,7). Moved up one row in both maps. Otherwise clean: 16 boulders match, 15 solution steps verified against soko2-2.lua. -->
 
 ```
             1111111111222
@@ -6255,8 +6278,8 @@ Three boulders (F, G, and H) remain.
  4 │·─·BC─DE│·│·······│  
  5 │·FG─······│·······│  
  6 │·─··H·│···│·······│  
- 7 │····─I└─J─┤·······│  
- 8 │··KL··M···│···<···│  
+ 7 │····─I└─J─┤···<···│  
+ 8 │··KL··M···│·······│  
  9 │·──···│···│·······├─┐
 10 │····─N├───┤·······+·│
 11 └─┐··O·└───┴───────┤·│
@@ -6283,8 +6306,8 @@ The map now looks like this:
  4 │·─·BC─DE│·│·······│  
  5 │·FG─······│·······│  
  6 │·─··H·│···│·······│  
- 7 │····─I└─J─┤·······│  
- 8 │······M···│···<···│  
+ 7 │····─I└─J─┤···<···│  
+ 8 │······M···│·······│  
  9 │·──···│···│·······├─┐
 10 │····─·├───┤·······+·│
 11 └─┐····└───┴───────┤·│
@@ -8355,8 +8378,9 @@ The monster from Lewis Carroll's *Jabberwocky* ("O frabjous day! Callooh! Callay
 :::
 
 #### Keystone Kops `K`
+<!-- audit 2026-05-18 #114: stats all match monsters.h:1829-1860; shopkeeper-anger trigger confirmed at shk.c:623, 680 + makekops at shk.c:5113. Added the respawn note: dead Kops respawn per mon.c:3147-3164 (rnd(5): 1-in-5 returns near up-stairs, 2-in-5 returns at random location, 2-in-5 stays dead). All four are G_GENO so genocide does work to clear them permanently. -->
 
-Police force triggered by stealing from shops or hurting shopkeepers. Mostly weak individually but they swarm.
+Police force triggered by stealing from shops or hurting shopkeepers. Mostly weak individually but they swarm — and dead Kops respawn: each fallen Kop has a 1-in-5 chance to come back near the up-stairs and a 2-in-5 chance to come back at a random location, so killing them isn't a stable solution. Get away or genocide them instead.
 
 ::: dense-table
 

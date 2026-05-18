@@ -1215,18 +1215,21 @@ through 10 (one level below the Oracle), and it goes up. Sokoban is a
 set of four puzzle levels where you push boulders onto holes or into
 place to open a path. No teleport works here, and you can’t dig through
 the floors.</p>
-<p>The puzzles are fixed (two variants per level, randomly chosen). Each
-level has exactly one correct solution. If you push a boulder into a
-corner where it blocks your progress there is no way to start over.
-You’re left with a few ways to cheat, which might or might not help:
-<strong>squeeze past</strong> the boulder (drop your stuff to fit),
-<strong>break it</strong> with a wand of striking or by force-fighting
-it, or <strong>levitate over</strong> the pit. Squeezing and breaking
-each cost a point of Luck and break the Sokoban conduct; levitation is
-free of penalty but you can’t pick anything up while airborne.
-<strong>Teleport doesn’t work here:</strong> the level forbids it. If
-nothing works, take the downstair back to the dungeon and continue
-without the prize.</p>
+<p>The puzzles are fixed (two variants per level, randomly chosen).
+<!-- audit 2026-05-18 #111: "break it ... by force-fighting it" is wrong. Force-fighting a bare boulder is harmless per hack.c:2287, 2318-2321 ("you harmlessly attack the boulder"). The cheat path is digging with a wielded pick-axe/mattock (hack.c:2269-2275). Reworded to fracture-via-striking/earth-scroll/polymorph and added the pick-axe caveat. Confirmed all other Sokoban claims: Oracle base 5-9 + Sokoban one above = entrance dlvl 6-10 (dungeon.lua:21-24, 60-66); 4 levels × 2 variants each; noteleport flag; sokoban_guilt() calls at hack.c:307 (squeeze), zap.c:5555 (fracture by striking), zap.c:1710 (polymorph), read.c:1951 (earth scroll); each triggers change_luck(-1) + u.uconduct.sokocheat (trap.c:7039-7054); conduct reported only when branch entered (insight.c:2215-2228). Levitation/flying free of penalty (hack.c:415-425). --></p>
+<p>Each level has exactly one correct solution. If you push a boulder
+into a corner where it blocks your progress there is no way to start
+over. You’re left with a few ways to cheat, which might or might not
+help: <strong>squeeze past</strong> the boulder (drop your stuff to
+fit), <strong>fracture it</strong> with a wand of striking or a scroll
+of earth (or polymorph the boulder into something else), or
+<strong>levitate over</strong> the pit. Each of these costs a point of
+Luck and breaks the Sokoban conduct; levitation and flying are free of
+penalty but you can’t pick anything up while airborne. (Force-fighting a
+bare boulder does nothing — you need a wielded pick-axe or mattock to
+dig it out, which itself counts as a Sokoban cheat.) <strong>Teleport
+doesn’t work here:</strong> the level forbids it. If nothing works, take
+the downstair back to the dungeon and continue without the prize.</p>
 <p>The prize at the top is either a <strong>bag of holding</strong> or
 an <strong>amulet of reflection</strong>, both extremely valuable; the
 <a href="#sokoban-solutions">Sokoban Solutions appendix</a> documents
@@ -5974,6 +5977,7 @@ enchantment. It also repairs any existing damage.</p>
 </section>
 <section id="artifacts" class="level3">
 <h3>Artifacts</h3>
+<!-- audit 2026-05-18 #113: 4 substantive corrections + 3 useful additions. (1) Magicbane "curse protection while carried" wrong — Magicbane has SPFX_RESTR|SPFX_ATTK|SPFX_DEFN, STUN(3,4), DFNS(AD_MAGM), NO_CARY (artilist.h:145-147); all four code paths at wield.c:1036, trap.c:2360, mplayer.c:273, sit.c:576 require wielding. Reworded table and prose. (2) Master Key non-rogue: spoiler said "non-blessed Key carried by anyone else" — opposite of C. artifact.c:2778-2784: Rogue needs !cursed, non-rogues need blessed. (3) Eyes of the Overworld "carried gives magic resistance" wrong — DFNS(AD_MAGM), NO_CARY (artilist.h:262); MR only when worn (per artifact.c:731 wp_mask check). Both table row and prose fixed. (4) Tsurugi "grants magic resistance" wrong — cspfx=SPFX_LUCK|SPFX_PROTECT only, no MR via spfx/defn/cary (artilist.h:285-289). Added: Sceptre of Might double-damage hits chaotic/NEUTRAL/unaligned (SPFX_DALIGN at artifact.c:1031-1034 triggers for any sgn(maligntyp)!=weap.alignment, and the Sceptre is Lawful); Mjollnir return is Valkyrie-only-reliable per artilist.h:97-108; Frost/Fire Brand have SNOWSTORM/FIRESTORM invokes (artilist.h:150, 154); Stormbringer is SPFX_INTEL so cross-alignment touch deals 4d10 not 4d4. -->
 <p>Scattered throughout the Mazes are items of legend: named weapons,
 amulets, and tools that carry powers no ordinary gear can match. Each
 artifact exists only once per game, so when you find one, you’re holding
@@ -6061,7 +6065,7 @@ any member of that monster class.</p>
 <td>athame</td>
 <td>+d3</td>
 <td>+d4 magic (stun)</td>
-<td>curse protection while carried, MR vs magic</td>
+<td>magic resistance and curse protection while <em>wielded</em></td>
 </tr>
 <tr>
 <td>Stormbringer</td>
@@ -6219,19 +6223,30 @@ throw-and-return weapon, but only with Strength 25 (gauntlets of power
 or rings of gain strength get you there). Its +d24 shock damage is
 brutal against anything not shock-resistant.</p>
 <p><strong>Magicbane</strong> is the Wizard’s go-to athame. The combined
-effect of its stun damage, curse protection while held, and magic
-resistance makes it valuable to carry even as a secondary weapon. Often
-the first gift from a Neutral sacrifice.</p>
+effect of its stun damage, curse protection, and magic resistance — all
+of which require it to be <strong>wielded</strong>, not just carried —
+makes it Wizard’s preferred melee weapon. Often the first gift from a
+Neutral sacrifice.</p>
 <p><strong>Stormbringer</strong> is dangerous to use because it attacks
 peaceful monsters automatically, which can cause alignment problems. But
 each hit drains a level from the target and gives it to you, which is
-huge in the early-to-mid game.</p>
+huge in the early-to-mid game. Stormbringer is also
+<em>intelligent</em>: a Lawful or Neutral wielder who touches it without
+permission takes the heavier 4d10 magical-blast damage rather than the
+4d4 dealt by ordinary cross-alignment artifacts.</p>
 <p><strong>Cleaver</strong> is the Barbarian quest artifact. When
 wielded one-handed (not two-weaponing), every swing strikes the primary
 target <em>and</em> one square on each side of it: three monsters per
 attack when packed in a corridor mouth or against a diagonal pair. The
 two-weapon penalty suppresses the spin, so most Barbarians keep Cleaver
 as their primary and a shield in the off slot.</p>
+<p><strong>Frost Brand</strong> and <strong>Fire Brand</strong> each
+have an <code>#invoke</code> power the wishable table doesn’t capture:
+Frost Brand summons a snowstorm around you (cold damage to nearby
+squares), Fire Brand summons a firestorm. Either one clears the room
+around you when you’re cornered. Mjollnir, by contrast, only reliably
+returns when <strong>thrown by a Valkyrie</strong>; other roles can
+throw it but won’t get the 99% catch-back.</p>
 <p><strong>Snickersnee</strong> got a major buff in 5.0: it now counts
 as a polearm even when you’re on foot (regular pole weapons require a
 steed). Once per turn you can <code>#apply</code> it for a free reach
@@ -6348,8 +6363,8 @@ interval before it can be used again.</p>
 <td>Monk</td>
 <td>The Eyes of the Overworld</td>
 <td>lenses</td>
-<td>astral vision (when worn)</td>
-<td>magic resistance</td>
+<td>astral vision, magic res. (when worn)</td>
+<td>—</td>
 <td>enlightenment</td>
 </tr>
 <tr>
@@ -6424,10 +6439,10 @@ it back up. <code>#invoke</code> is levitation.</p>
 <p><strong>The Sceptre of Might</strong> (Caveman): mace base, +d5
 to-hit, double damage against any monster whose alignment differs from
 the artifact’s (the Sceptre itself is Lawful, so it deals doubled damage
-against chaotic and unaligned monsters, i.e. most of the dungeon’s
-hostiles once you reach Gehennom). It also grants magic resistance while
-held. <code>#invoke</code> casts conflict (monsters fight each other) at
-a steep energy cost.</p>
+against chaotic, neutral, <em>and</em> unaligned monsters — most of the
+dungeon’s hostiles once you reach Gehennom). It also grants magic
+resistance while <em>wielded</em>. <code>#invoke</code> casts conflict
+(monsters fight each other) at a steep energy cost.</p>
 <p><strong>The Staff of Aesculapius</strong> (Healer): the Healer’s
 salvation. Each hit drains life (one of only three drain-life weapons;
 the others are Stormbringer and the rider Death) and gives you
@@ -6439,10 +6454,11 @@ artifacts change a role’s late game as much as this one.</p>
 <em>speaks</em>, dropping hints. Knights already have Excalibur for
 combat, so the Mirror is pure passive utility.</p>
 <p><strong>The Eyes of the Overworld</strong> (Monk): lenses that, when
-worn, give astral vision: see invisible, see through walls, spot secret
-doors. Carried (not worn) they still give magic resistance.
+worn, give astral vision (see invisible, see through walls, spot secret
+doors) <strong>and</strong> magic resistance. Both effects require them
+to be worn — carrying them in inventory does nothing.
 <code>#invoke</code> enlightens you. For a Monk who can’t safely wear
-body armor, a powerful passive on a slot they actually fill.</p>
+body armor, a powerful passive on a slot they can use.</p>
 <p><strong>The Mitre of Holiness</strong> (Priest): a helm of brilliance
 that grants double damage vs undead while worn, plus the brilliance
 bonus to intelligence and wisdom (so spell-cast more reliably), plus
@@ -6457,14 +6473,16 @@ the Ranger’s ranged specialization this is the role’s centerpiece.</p>
 <p><strong>The Master Key of Thievery</strong> (Rogue): doesn’t fight,
 but the carry package is enormous: warning, teleport control, half
 physical damage taken, and <code>#invoke</code> instantly untraps a
-nearby trap. For a non- cursed Key carried by a Rogue (or non-blessed
-Key carried by anyone else), <code>#untrap</code> also gains a
+nearby trap. The unlocking bonus depends on alignment: a Rogue gets it
+from any non-cursed Key; everyone else needs a <strong>blessed</strong>
+Key. With those preconditions met, <code>#untrap</code> also gains a
 perfect-detection bonus on doors and chests.</p>
 <p><strong>The Tsurugi of Muramasa</strong> (Samurai): a katana-grade
 two-handed sword with +d8 damage <em>and</em> a behead chance (like
 Vorpal Blade) <em>and</em> a +1 protection bonus, and it acts as a
-luckstone, and it grants magic resistance. One of the strongest
-artifacts in the game, Samurai’s reward for a hard quest.</p>
+luckstone. Note that Tsurugi does <strong>not</strong> grant magic
+resistance, despite the weapon’s reputation. One of the strongest
+artifacts in the game, the Samurai’s reward for a hard quest.</p>
 <p><strong>The Platinum Yendorian Express Card</strong> (Tourist): the
 Tourist’s get-out-of-jail card. Carry grants ESP, magic resistance, and
 half spell damage; <code>#invoke</code> charges an item (a wand, ring,
@@ -8731,6 +8749,7 @@ like E.</li>
 </section>
 <section id="level-3-version-b" class="level4">
 <h4>Level 3, Version B</h4>
+<!-- audit 2026-05-18 #112: upstair < was placed at spoiler (16,8) in both the initial and intermediate maps; soko2-2.lua:25 puts it at (15,6) which translates to spoiler (16,7). Moved up one row in both maps. Otherwise clean: 16 boulders match, 15 solution steps verified against soko2-2.lua. -->
 <pre><code>            1111111111222
    1234567890123456789012
  1   ┌─┬────┐  
@@ -8739,8 +8758,8 @@ like E.</li>
  4 │·─·BC─DE│·│·······│  
  5 │·FG─······│·······│  
  6 │·─··H·│···│·······│  
- 7 │····─I└─J─┤·······│  
- 8 │··KL··M···│···&lt;···│  
+ 7 │····─I└─J─┤···&lt;···│  
+ 8 │··KL··M···│·······│  
  9 │·──···│···│·······├─┐
 10 │····─N├───┤·······+·│
 11 └─┐··O·└───┴───────┤·│
@@ -8764,8 +8783,8 @@ like E.</li>
  4 │·─·BC─DE│·│·······│  
  5 │·FG─······│·······│  
  6 │·─··H·│···│·······│  
- 7 │····─I└─J─┤·······│  
- 8 │······M···│···&lt;···│  
+ 7 │····─I└─J─┤···&lt;···│  
+ 8 │······M···│·······│  
  9 │·──···│···│·······├─┐
 10 │····─·├───┤·······+·│
 11 └─┐····└───┴───────┤·│
@@ -16397,8 +16416,12 @@ beheading it.</p>
 </section>
 <section id="keystone-kops-k" class="level4">
 <h4>Keystone Kops <code>K</code></h4>
+<!-- audit 2026-05-18 #114: stats all match monsters.h:1829-1860; shopkeeper-anger trigger confirmed at shk.c:623, 680 + makekops at shk.c:5113. Added the respawn note: dead Kops respawn per mon.c:3147-3164 (rnd(5): 1-in-5 returns near up-stairs, 2-in-5 returns at random location, 2-in-5 stays dead). All four are G_GENO so genocide does work to clear them permanently. -->
 <p>Police force triggered by stealing from shops or hurting shopkeepers.
-Mostly weak individually but they swarm.</p>
+Mostly weak individually but they swarm — and dead Kops respawn: each
+fallen Kop has a 1-in-5 chance to come back near the up-stairs and a
+2-in-5 chance to come back at a random location, so killing them isn’t a
+stable solution. Get away or genocide them instead.</p>
 <div class="dense-table">
 <table>
 <colgroup>

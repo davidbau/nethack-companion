@@ -114,10 +114,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#107**  L 6949  ( 164 lines) 📖 Armor Tables
 - [x] **#108**  L 6250  (  13 lines)   ↳ Voluntary Challenges → No Genocide
 - [x] **#109**  L 4932  (  75 lines) 📖 The Castle
-- [ ] **#110**  L  894  (  36 lines)   ↳ Branches and Landmarks → Sokoban
-- [ ] **#111**  L 3899  ( 271 lines) 📖 Artifacts
-- [ ] **#112**  L 5866  (  61 lines)   ↳ Sokoban Solutions → Level 3, Version B
-- [ ] **#113**  L 7725  (  15 lines)   ↳ Bestiary Tables → Keystone Kops `K`
+- [x] **#110**  L  894  (  36 lines)   ↳ Branches and Landmarks → Sokoban
+- [x] **#111**  L 3899  ( 271 lines) 📖 Artifacts
+- [x] **#112**  L 5866  (  61 lines)   ↳ Sokoban Solutions → Level 3, Version B
+- [x] **#113**  L 7725  (  15 lines)   ↳ Bestiary Tables → Keystone Kops `K`
 - [ ] **#114**  L 6832  (  15 lines)   ↳ Weapons Tables → Spear
 - [ ] **#115**  L 4719  (  71 lines) 📖 Curses and How to Break Them
 - [ ] **#116**  L 2853  (  45 lines)   ↳ A Practical Identification Strategy → Gray Stones: Four Stones, One Correct Answer

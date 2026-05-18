@@ -4155,3 +4155,166 @@ features that the spoiler had omitted.
   is broadly consistent but not directly visible in castle.lua.
 
 ---
+
+## 2026-05-18 — Chapter audit #110: Sokoban (branch overview)
+
+Source: `spoilers/companion.md` line 894. 1 correction.
+
+### Verified
+- Entrance dlvl 6-10 (one above Oracle), `dungeon.lua:21-24, 60-66`.
+- Branch goes up (`dungeon.lua:24`).
+- Four puzzle levels, two variants each (`dungeon.lua:225-244`).
+- noteleport on each level.
+- Prize on top: 75/25 BoH/AoR per variant (`soko1-{1,2}.lua`).
+- Cursed scroll of scare monster on the prize square.
+- Cheating: squeeze → `change_luck(-1)` + sokocheat conduct
+  (`hack.c:307`, `trap.c:7039-7054`).
+- Fracture (wand of striking) → guilt (`zap.c:5555`).
+- Polymorph boulders → guilt (`zap.c:1710`).
+- Scrolls of earth → guilt (`read.c:1951`).
+- Sokoban conduct reported only when branch entered
+  (`insight.c:2215-2228`).
+- Levitation/flying free of penalty (`hack.c:415-425`).
+- Boulders can't be picked up in Sokoban (`pickup.c:1713-1717`).
+
+### Corrected
+1. **"break it ... by force-fighting it"** — wrong. Force-fighting
+   a bare boulder is harmless (`hack.c:2287, 2318-2321`, message
+   "you harmlessly attack the boulder"). The actual cheat path
+   is digging with a wielded pick-axe or mattock
+   (`hack.c:2269-2275` requires `dig_typ(uwep,...)`). Reworded to
+   fracture-via-striking/earth-scroll/polymorph, plus a caveat
+   that pick-axe digging is also a cheat but force-fighting is
+   not.
+
+### Notes
+- "Can't dig through the floors" is true (`hardfloor` on
+  soko4-1.lua) but walls CAN be dug (with sokoban_guilt).
+- Diagonal-push prohibition (`hack.c:441-447`) goes through
+  `cannot_push()` and the squeeze/guilt path.
+
+---
+
+## 2026-05-18 — Chapter audit #111: Artifacts
+
+Source: `spoilers/companion.md` line 3899. ~271 lines. 4 substantive
+corrections + 3 useful additions.
+
+### Verified
+- Alignment-blasting: 4d10/2d10 for intelligent, 4d4/2d4 for
+  others; first touch + 1/4 chance on subsequent
+  (`artifact.c:944-953`).
+- All wishable artifact rows match `artilist.h:85-212` for alignment,
+  base item, hit/extra-dmg bonuses, and special intrinsic types.
+- Stormbringer is correctly on the runesword row (fixed in earlier
+  audit #103).
+- Excalibur fountain-dip odds 1-in-6 Knight / 1-in-30 other Lawful
+  (`fountain.c:405`).
+- Cleaver "spin" requires !u.twoweap (`uhitm.c:769-771`).
+- Snickersnee polearm-on-foot + Shkinng! pline + free reach attack
+  (`apply.c:3512-3518`, `wield.c:131`).
+- All quest-artifact alignment/owner/form rows match
+  `artilist.h:219-307`.
+- Quest artifacts all have SPFX_INTEL.
+- Wish-denial probabilistic formula (`objnam.c:5374`).
+- Mitre fire-res via CARY(AD_FIRE), no SPFX_DRLI — spoiler
+  correctly notes "does NOT grant drain resistance."
+
+### Corrected
+1. **Magicbane "curse protection while carried"** — wrong.
+   `artilist.h:145-147` shows Magicbane has SPFX_RESTR|SPFX_ATTK|
+   SPFX_DEFN, STUN(3,4), DFNS(AD_MAGM), NO_CARY. All four
+   Magicbane code paths (`wield.c:1036`, `trap.c:2360`,
+   `mplayer.c:273`, `sit.c:576`) require wielding. Fixed table
+   row and prose to say "while wielded."
+2. **Master Key non-rogue carrier**: spoiler said "non-cursed
+   Key carried by a Rogue (or **non-blessed** Key carried by
+   anyone else)" — opposite for non-rogues. `artifact.c:2778-2784`:
+   Rogue needs !cursed, non-rogues need **blessed**. Reworded.
+3. **Eyes of the Overworld "carried gives magic resistance"** —
+   wrong. DFNS(AD_MAGM), NO_CARY (`artilist.h:262`); MR activates
+   only when worn per `artifact.c:731` wp_mask gating. Fixed
+   prose; fixed the Carry column of the quest-artifact table.
+4. **Tsurugi "grants magic resistance"** — wrong. cspfx =
+   SPFX_LUCK|SPFX_PROTECT only; no MR via spfx, defn, or cary
+   (`artilist.h:285-289`). The quest-artifact table row was
+   already correct (no MR); fixed only the prose.
+
+### Added
+- **Sceptre of Might** double-damage hits **chaotic, neutral, AND
+  unaligned** monsters (SPFX_DALIGN at `artifact.c:1031-1034`
+  triggers for any `sgn(maligntyp) != weap->alignment` or
+  `maligntyp == A_NONE`); Sceptre is Lawful. Spoiler omitted
+  neutrals. Also clarified "while held" → "while wielded" since
+  DFNS is wielded-only.
+- **Mjollnir return**: only Valkyries get the reliable 99%
+  catch-back (per `artilist.h:97-108`). Other roles can throw it
+  but won't reliably catch it.
+- **Frost Brand / Fire Brand invokes**: snowstorm/firestorm
+  area effects (`artilist.h:150, 154`). Spoiler's wishable table
+  omits the invoke column; added a short prose note.
+- **Stormbringer** has SPFX_INTEL — Lawful/Neutral wielders take
+  4d10 cross-alignment damage instead of 4d4.
+
+### Notes
+- Sceptre prose "magic resistance while held" was tightened to
+  "while wielded" (DFNS only fires when wielded).
+- Snickersnee SPFX is just SPFX_RESTR; the polearm-on-foot
+  behavior is implemented as special-cases in wield.c/apply.c,
+  not via an SPFX bit.
+
+---
+
+## 2026-05-18 — Chapter audit #112: Sokoban Level 3, Version B
+
+Source: `spoilers/companion.md` line 6267. 1 correction.
+
+### Verified
+- All 16 boulders A-P match `soko2-2.lua:33-48`.
+- Stair down at lua (6,11) → spoiler (7,12).
+- Doors at lua (19,9) and (19,11) → spoiler (20,10) and (20,12).
+- Rolling-boulder trap at lua (7,11) → spoiler (8,12).
+- 11 hole traps at lua (8-18, 11) → spoiler cols 9-19, row 12.
+- All wall/floor characters match.
+- All 15 solution steps verified: push destinations on lua floor,
+  player approach squares reachable, no diagonal-squeeze
+  violations.
+- "Five boulders (A, B, D, E, J) remain" is correct.
+
+### Corrected
+1. **Upstair `<` position off by one row**. `soko2-2.lua:25`
+   places `des.stair("up", 15, 6)` → spoiler (16,7). Both the
+   initial and intermediate maps had it at (16,8). Moved up one
+   row in both maps.
+
+---
+
+## 2026-05-18 — Chapter audit #113: Keystone Kops `K`
+
+Source: `spoilers/companion.md` line 8376. No corrections.
+
+### Verified
+- Symbol K matches S_KOP (`monsters.h:1829-1860`).
+- Lvl/Spd/AC/Attacks/Colors for all four Kops match
+  `monsters.h:1830, 1838, 1846, 1854`.
+- MR% values (10/10/20/20) correct.
+- Shopkeeper-anger trigger (`shk.c:623, 680` via `call_kops()`;
+  `makekops()` at `shk.c:5113`).
+- Spoiler correctly does NOT attribute Kops to vault gold theft
+  (that's PM_GUARD's job; vault.c has zero Kop references).
+- All four are G_GENO (genocideable).
+- G_NOGEN: Kops never random-generate, only via `makekops()`.
+
+### Added
+- **Respawn note**: dead Kops respawn per `mon.c:3147-3164`:
+  `rnd(5)` gives a 1-in-5 chance to return near the up-stairs and
+  a 2-in-5 chance to return at a random location; 2-in-5 stay
+  dead. Killing them isn't a stable solution; getting away or
+  genociding the class works.
+
+### Notes
+- MS_ARREST is the only Kop-specific behavior tag (governs speech
+  "Keep your hands where I can see them!" rather than movement).
+- No "pratfall" code in mon.c for S_KOP.
+
+---
