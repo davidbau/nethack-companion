@@ -2089,10 +2089,14 @@ if you confirm, you're dead.
 **Defense:** Don't eat when satiated. Just don't.
 
 #### Deadly Poison
+<!-- audit 2026-05-17 #7: 7 claims verified, 1 corrected (Famine corpse missing from instakill list). See companion-audit.md. -->
 
-A handful of monsters (pit vipers, some spiders) have instantly
-lethal poison attacks. The chance is low but nonzero. Eating
-certain corpses (Death, Pestilence) is also instantly fatal poison.
+A handful of monsters (pit vipers, killer bees, cobras, some
+spiders, and other AD_DRST attackers) have instantly lethal
+poison attacks. The chance is low — about 1 in 240 per hit at
+healthy HP — but rises sharply when you're already wounded.
+Eating any Rider corpse (Death, Pestilence, *or* Famine) is
+also instantly fatal poison.
 
 **Defenses:** Poison resistance makes you immune. Most characters
 can get this early by eating enough appropriate corpses. It's one
@@ -2176,21 +2180,24 @@ friendlier with displacement up. The corpse rots like any other,
 so if you can't eat it now, tin it.
 
 #### The Genetic Engineer
+<!-- audit 2026-05-17 #12: 14 claims verified, 1 corrected (hit message wording was the corpse string); added magic resistance to defenses. See companion-audit.md. -->
 
 The **genetic engineer** (`Q`, green) shares its symbol class
 with the quantum mechanic but plays differently: where a quantum
 mechanic *teleports* its target on a hit, a genetic engineer
 *polymorphs* its target. One claw and, unless you have
-*Unchanging*, you become something else: same roll as any other
-uncontrolled polymorph source, with the dramatic message "you
-undergo a freakish metamorphosis." Engineers also teleport on
-their own, so range alone won't save you forever.
+*Unchanging* or magic resistance, you become something else: same
+roll as any other uncontrolled polymorph source, with the dramatic
+message "you are subjected to a freakish metamorphosis."
+Engineers also teleport on their own, so range alone won't save
+you forever.
 
-**Defenses:** an *amulet of unchanging* (immune), kill it before
-it closes, or accept the next several turns of the dungeon
-playing as something else. The engineer has a short cooldown
-between successful polymorph hits, so the encounter is survivable
-even without unchanging if you can finish quickly.
+**Defenses:** *Unchanging* (immune), magic resistance (also fully
+blocks the polymorph), kill it before it closes, or accept the
+next several turns of the dungeon playing as something else. The
+engineer has a short cooldown between successful polymorph hits,
+so the encounter is survivable even without unchanging if you can
+finish quickly.
 
 **The corpse is a tool.** Eating a genetic engineer corpse is
 mechanically identical to eating a doppelganger corpse: the
@@ -3262,9 +3269,7 @@ random amount that's larger when armor is unenchanted, larger again
 for elven or non-magic armor, and +1 extra when blessed. Once worn
 armor exceeds **+3** (or **+5** for elven / Wizard's Cornuthaum),
 each further enchant attempt can destroy the armor — the scroll
-"evaporates" your gear. Blessed scrolls don't bypass this cap. Save
-scrolls for your ascension kit and stop enchanting armor at +3 (or
-+5 elven).
+"evaporates" your gear. Blessed scrolls don't bypass this cap.
 
 **Remove curse.** Frees you from cursed equipment. Uncursed version
 works on worn and wielded items only; blessed version uncurses your
@@ -6760,13 +6765,14 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 :::
 
 #### Club
+<!-- audit 2026-05-17 #6: 11 cells verified, 1 corrected (aklys "Strength" → tethered when wielded). See companion-audit.md. -->
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | club | 1d6 / 1d3 | 30 | 3 | — | wood | What a Caveman starts with — basic but free of curses early. |
-| aklys | 1d6 / 1d3 | 15 | 4 | — | iron | Returns when thrown if Strength is high enough. |
+| aklys | 1d6 / 1d3 | 15 | 4 | — | iron | Returns when thrown if wielded as your primary weapon (it's tethered); occasional misfire. |
 
 :::
 
@@ -7147,6 +7153,7 @@ Insects, often in groups. The soldier ant is the early game's infamous killer: i
 :::
 
 #### Blobs `b`
+<!-- audit 2026-05-17 #8: 24 cells across 3 rows verified, 0 corrected. All stats match monsters.h:137-166. See companion-audit.md. -->
 
 Slow, mindless, immune to a lot. Don't melee an acid blob with bare hands or a metal weapon you care about: the passive acid corrodes both. Gelatinous cubes paralyse on touch.
 
@@ -7922,6 +7929,7 @@ Confusion gaze. Don't melee without blindness or free action; the confusion stac
 :::
 
 #### Vampires `V`
+<!-- audit 2026-05-17 #9: 25 cells/claims verified, 0 corrected. All stats match monsters.h; vampire mage is #if 0 DEFERRED in 5.0, correctly omitted. Close call: vampire lord/Vlad can also shapeshift to wolf, not just bat/fog. See companion-audit.md. -->
 
 Drains XL on bite. Shapeshifts to bat or cloud. Vlad the Impaler is the vampire boss in his Tower.
 
@@ -7938,6 +7946,7 @@ All vampires fly, regenerate, have poisonous corpses, are undead, follow you up 
 :::
 
 #### Wraiths `W`
+<!-- audit 2026-05-17 #13: 24 claims/cells verified, 0 corrected. All stats match monsters.h. Close call: wraith row could enrich Notes with stone-res + unsolid. See companion-audit.md. -->
 
 Drains XL on touch. The wraith corpse, however, **gives** a level when eaten: one of the best food items in the game. Always eat a wraith corpse if you can.
 

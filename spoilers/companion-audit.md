@@ -1050,3 +1050,128 @@ Verified 40+ claims; 5 corrected; 4 flagged for human review.
 
 ### Notes
 - The sink ring-drop table is exact game output and players use it as a lookup; verbatim accuracy matters here.
+
+---
+
+## 2026-05-17 — Chapter audit #6: Weapons Tables → Club
+
+Source: `spoilers/companion.md` lines 6762-6768
+Verified 11 cells; 1 corrected; 0 flagged.
+
+### Verified
+- club row: damage 1d6/1d3, wt 30, cost 3, hit 0, wood — `objects.h:355-373`.
+- aklys row: damage 1d6/1d3, wt 15, cost 4, hit 0, iron — `objects.h:381-383`.
+- Note "What a Caveman starts with" — `u_init.c:68-75` Caveman starting inventory.
+
+### Corrected
+1. **aklys "Returns when thrown if Strength is high enough"** — WRONG. The Str gate is for **Mjollnir**, not aklys. The aklys return mechanic at `dothrow.c:1577-1587, 1709-1721` keys on `tethered_weapon` / `iflags.returning_missile` with an `rn2(100)` miss chance — it returns when wielded as primary weapon (tethered), no Str check.
+   - Fix: "Returns when thrown if wielded as your primary weapon (it's tethered); occasional misfire."
+
+---
+
+## 2026-05-17 — Chapter audit #7: Dangerous Encounters → Deadly Poison
+
+Source: `spoilers/companion.md` lines 2091-2100
+Verified 7 claims; 1 corrected; 2 flagged.
+
+### Verified
+- Eating Death/Pestilence/Famine corpses instantly fatal — `eat.c:831-849`.
+- "Instantly lethal poison attacks" mechanism — `attrib.c:317-408` poisoned() function; instakill branch when `i == 0` and `typ != A_CHA`.
+- Pit viper has AD_DRST — `monsters.h:2204-2212`; mhitm_ad_drst → poisoned().
+- Poison resistance fully blocks — `attrib.c:338-343`.
+- POISON_RES gainable from corpses — `eat.c:924`, `eat.c:967`, `eat.c:1049` (M1_POIS monsters).
+
+### Corrected
+1. **"Death, Pestilence" omits Famine** — eat.c:831-833 handles PM_DEATH, PM_PESTILENCE, AND PM_FAMINE identically with "Eating that is instantly fatal." + done(DIED). All three Riders' corpses are instakill.
+   - Fix: "Eating any Rider corpse (Death, Pestilence, *or* Famine)".
+
+### Close calls
+- Example list "pit vipers, some spiders" is technically true but very narrow. Killer bees, centipedes, scorpions, soldier ants, snakes, water moccasins, cobras, quasits — all AD_DRST attackers route through the same poisoned()/instakill path. Broadened the example list and added quantitative odds (~1 in 240 per hit at full HP) to convey scale better.
+
+### Notes
+- "Instantly lethal" is shorthand: the kill is HP-gated (only fires when current HP ≤ 6+d(4,6), i.e. 10-30). Above that HP the bad branch survives with damage. Acceptable shorthand.
+
+---
+
+## 2026-05-17 — Chapter audit #8: Bestiary Tables → Blobs `b`
+
+Source: `spoilers/companion.md` lines 7147-7163
+Verified 24 cells/claims; 0 corrected.
+
+### Verified
+- All three blob rows match `monsters.h:137-166` exactly: acid blob (CLR_GREEN, lvl 1, spd 3, AC 8, passive 1d8 acid), quivering blob (CLR_WHITE, lvl 5, spd 1, AC 8, touch 1d8), gelatinous cube (CLR_CYAN, lvl 6, spd 6, AC 8, touch 2d4 paralyse + passive 1d4 paralyse).
+- All three carry M1_MINDLESS and MR_SLEEP | MR_POISON.
+- Acid blob also has MR_ACID | MR_STONE (per spoiler notes).
+- Cube has MR_FIRE | MR_COLD | MR_ELEC + others (per notes).
+
+---
+
+## 2026-05-17 — Chapter audit #9: Bestiary Tables → Vampires `V`
+
+Source: `spoilers/companion.md` lines 7924-7938
+Verified 25 cells/claims; 0 corrected; 1 flagged.
+
+### Verified
+- All three rows match `monsters.h`: vampire (CLR_RED, LVL 10/12/1/25), vampire lord (CLR_BLUE, LVL 12/14/0/50), Vlad (HI_LORD = CLR_MAGENTA, LVL 28/26/-6/80, weapon 2d10 + bite 1d12 drain-XL, boss/M3_WANTSCAND).
+- All three vampires: M1_FLY, M1_REGEN, M1_POIS, M2_UNDEAD, M2_STALK, M2_SHAPESHIFTER.
+- vampire mage is `#if 0 DEFERRED` in monsters.h:2301-2312 — correctly omitted.
+
+### Close calls
+- "Shapeshifts to bat or cloud" undersells: per `mon.c:4956` vampire lord and Vlad can also become a wolf. "Bat or cloud" is correct for basic vampire; incomplete for higher tiers.
+
+---
+
+## 2026-05-17 — Chapter audit #10: A Practical Identification Strategy → The Sink Test (Rings)
+
+Source: `spoilers/companion.md` lines 2745-2749 (the rest of the 2741-2749 range is the tail of the prior subsection)
+Verified 3 claims; 0 corrected; 1 close call.
+
+### Verified
+- Drop ring into sink → invokes `dosinkring()` at `do.c:753-756` (IS_SINK + RING_CLASS gate).
+- Each ring produces a characteristic message (when sighted) — `do.c:dosinkring`.
+- Cross-reference to Sinks section at line 799 (Points of Interest) — exists.
+
+### Close calls
+- "Each ring type produces a characteristic message" — true when sighted. When `Blind`, several types fall through to the generic "ring bouncing down the drainpipe" message and don't ID. The summary glosses this.
+
+### Notes
+- This is a pointer/summary section — no factual redundancy with Unit #5's detailed table.
+
+---
+
+## 2026-05-17 — Chapter audit #12: Dangerous Encounters → The Genetic Engineer
+
+Source: `spoilers/companion.md` lines 2182-2208
+Verified 14 claims; 1 corrected; 0 flagged.
+
+### Verified
+- Symbol Q green — `monsters.h:2143`.
+- Shares S_QUANTMECH with quantum mechanic — both `S_QUANTMECH`.
+- One AT_CLAW AD_POLY 1d4 attack — `monsters.h:2138`.
+- Unchanging grants immunity — `mhitm.c:1130`.
+- Polymorph is same uncontrolled roll — calls `polyself(POLY_NOFLAGS)`.
+- M1_TPORT (engineers self-teleport) — `monsters.h:2141`.
+- Cooldown via mspec_used between successful poly hits — `mhitu.c:368-392`.
+- Corpse mechanically identical to doppelganger — `eat.c:1244-1263` (same case block).
+- Tin works for portable polymorph — `eat.c:1253`.
+
+### Corrected
+1. **Hit message wording: "you undergo a freakish metamorphosis"** — that's actually the CORPSE-eating message (`eat.c:1260`). The melee-hit message is "**You are subjected to a freakish metamorphosis.**" (`mhitm.c:1135`). The spoiler had the two messages swapped.
+   - Fix: changed in-text quote to the correct melee-hit string.
+2. **Defenses list omitted magic resistance** — `mhitm.c:1128` `if (Antimagic) { shieldeff(...); }` blocks both poly and damage. Added "magic resistance (also fully blocks the polymorph)" to defenses.
+
+---
+
+## 2026-05-17 — Chapter audit #13: Bestiary Tables → Wraiths `W`
+
+Source: `spoilers/companion.md` lines 7940-7954
+Verified 24 cells/claims; 0 corrected; 1 close call.
+
+### Verified
+- barrow wight: CLR_GRAY, LVL 3/12/5/5, with weapon DRLI + spell + claw 1d4 + touch 1d4 cold + cold/sleep/poison-res.
+- wraith: CLR_BLACK, LVL 6/12/4/15, touch 1d6 drain-XL, M1_FLY.
+- Nazgul: HI_LORD = CLR_MAGENTA (bright magenta), LVL 13/12/0/25, weapon 1d4 drain-XL + breath 2d25 sleep, M1_SEE_INVIS.
+- Prose: drains XL, fresh corpse grants level (eat.c:1141 `pluslvl(FALSE)`), all undead and follow stairs (M2_UNDEAD + M2_STALK).
+
+### Close calls
+- Wraith row omits MR_STONE and M1_UNSOLID from Notes — wraith is uniquely stoning-resistant and incorporeal among W-class. Optional enrichment.

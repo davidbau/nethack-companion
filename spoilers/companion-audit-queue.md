@@ -10,14 +10,14 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#  3**  L 7877  (  18 lines)   ↳ Bestiary Tables → Trolls `T`
 - [x] **#  4**  L 7740  (  17 lines)   ↳ Bestiary Tables → Liches `L`
 - [x] **#  5**  L  687  ( 155 lines) 📖 Points of Interest
-- [ ] **#  6**  L 6747  (  11 lines)   ↳ Weapons Tables → Club
-- [ ] **#  7**  L 2087  (  10 lines)   ↳ Dangerous Encounters → Deadly Poison
-- [ ] **#  8**  L 7134  (  16 lines)   ↳ Bestiary Tables → Blobs `b`
-- [ ] **#  9**  L 7907  (  16 lines)   ↳ Bestiary Tables → Vampires `V`
-- [ ] **# 10**  L 2741  (   9 lines)   ↳ A Practical Identification Strategy → The Sink Test (Rings)
+- [x] **#  6**  L 6747  (  11 lines)   ↳ Weapons Tables → Club
+- [x] **#  7**  L 2087  (  10 lines)   ↳ Dangerous Encounters → Deadly Poison
+- [x] **#  8**  L 7134  (  16 lines)   ↳ Bestiary Tables → Blobs `b`
+- [x] **#  9**  L 7907  (  16 lines)   ↳ Bestiary Tables → Vampires `V`
+- [x] **# 10**  L 2741  (   9 lines)   ↳ A Practical Identification Strategy → The Sink Test (Rings)
 - [ ] **# 11**  L 1864  (  11 lines)   ↳ Dangerous Encounters → Drowning
-- [ ] **# 12**  L 2174  (  28 lines)   ↳ Dangerous Encounters → The Genetic Engineer
-- [ ] **# 13**  L 7923  (  16 lines)   ↳ Bestiary Tables → Wraiths `W`
+- [x] **# 12**  L 2174  (  28 lines)   ↳ Dangerous Encounters → The Genetic Engineer
+- [x] **# 13**  L 7923  (  16 lines)   ↳ Bestiary Tables → Wraiths `W`
 - [ ] **# 14**  L 7638  (  18 lines)   ↳ Bestiary Tables → Elementals `E`
 - [ ] **# 15**  L 5245  (  55 lines) 📖 The Ascension Kit
 - [ ] **# 16**  L 7512  (  15 lines)   ↳ Bestiary Tables → Xans and fantastic insects `x`
