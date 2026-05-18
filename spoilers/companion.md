@@ -7274,8 +7274,9 @@ Wild canines hunt in packs. Domestic ones can be tamed by feeding (see [Making F
 :::
 
 #### Eyes and spheres `e`
+<!-- audit 2026-05-17 #57: roster matches monsters.h:325-366 (beholder correctly omitted, #if 0). All stats clean. Corrected floating-eye paralysis trigger: was "in daylight", really requires mutual sight (canseemon + mon->mcansee per uhitm.c:6022-6053). Added the corpse-grants-telepathy note (eat.c:1071 TELEPAT case). See companion-audit.md. -->
 
-The floating eye's passive paralysis gaze is the single most famous newbie killer in the game: never melee one without free action, blindness, or a ranged attack.
+The floating eye's passive paralysis gaze is the single most famous newbie killer in the game: never melee one without free action, blindness, or a ranged attack. Once it's dead, eat the corpse: it grants intrinsic telepathy.
 
 All eyes and spheres fly. All except *floating eye* also are mindless.
 
@@ -7284,7 +7285,7 @@ All eyes and spheres fly. All except *floating eye* also are mindless.
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | gas spore | gray | 1 | 3 | 10 | 0 | death-burst 4d6 |  |
-| floating eye | blue | 2 | 1 | 9 | 10 | passive 0d70 paralyse | amphibious. (no mindless) Passive gaze paralyses if you melee in daylight. Use ranged or close eyes first. |
+| floating eye | blue | 2 | 1 | 9 | 10 | passive 0d70 paralyse | amphibious. (no mindless) Passive gaze paralyses on melee if you and the eye can both see each other. Use ranged, blind yourself, or close eyes first. Corpse grants telepathy. |
 | freezing sphere | white | 6 | 13 | 4 | 0 | explode 4d6 cold | cold-res. |
 | flaming sphere | red | 6 | 13 | 4 | 0 | explode 4d6 fire | fire-res. |
 | shocking sphere | bright-blue | 6 | 13 | 4 | 0 | explode 4d6 shock | shock-res. |
@@ -7475,6 +7476,8 @@ All piercers hide.
 :::
 
 #### Quadrupeds `q`
+<!-- audit 2026-05-17 #58: 7 rows × 8 cells verified against monsters.h:831-885. All stats clean. Added "clings" note to wumpus (M1_CLING). See companion-audit.md. -->
+
 
 Mixed bag. Rothes are early-game wreckers (three attacks per turn). Mumakil are slow but extremely sturdy.
 
@@ -7485,7 +7488,7 @@ Mixed bag. Rothes are early-game wreckers (three attacks per turn). Mumakil are 
 | rothe | brown | 2 | 9 | 7 | 0 | claw 1d3 · bite 1d3 · bite 1d8 |  |
 | mumak | gray | 5 | 9 | 0 | 0 | butt 4d12 · bite 2d6 |  |
 | leocrotta | red | 6 | 18 | 4 | 10 | claw 2d6 · bite 2d6 · claw 2d6 |  |
-| wumpus | cyan | 8 | 3 | 2 | 10 | bite 3d6 |  |
+| wumpus | cyan | 8 | 3 | 2 | 10 | bite 3d6 | clings. |
 | titanothere | gray | 12 | 12 | 6 | 0 | claw 2d8 |  |
 | baluchitherium | gray | 14 | 12 | 5 | 0 | claw 5d4 · claw 5d4 |  |
 | mastodon | black | 20 | 12 | 5 | 0 | butt 4d8 · butt 4d8 |  |
@@ -7939,15 +7942,16 @@ All quantum mechanics teleport and have poisonous corpses.
 :::
 
 #### Rust monsters and disenchanters `R`
+<!-- audit 2026-05-17 #60: 2 rows verified against monsters.h:2147-2161. Rust active erodes worn iron armor (uhitm.c:2311 erode_armor), passive on weapon when you hit it; greased weapons consume a charge instead. Silver/mithril/wood weapons immune (is_rustprone). Disenchanter active claw drains armor first (uhitm.c:3611-3644 some_armor + 5-way rn2(5) for rings/amulet/blindfold); weapon drain is passive-only. Corrected "long sword" prose to match (active threat is armor, not weapon). See companion-audit.md. -->
 
-Rust monsters rust iron equipment on touch; disenchanters remove the enchantment off your +5 long sword. Strip iron armor / switch to silver or non-iron weapons before engaging.
+Rust monsters rust iron equipment on touch. Disenchanters drain enchantment from your armor when they hit you, and drain enchantment from your weapon when you hit them (passive counterattack). Either way, strip irreplaceable kit before engaging, and switch to silver or non-iron weapons against the rust monster.
 
 ::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | rust monster | brown | 5 | 18 | 2 | 0 | touch rust · touch rust · passive rust | swims. Touch rusts iron. Strip armor before engaging or use silver. |
-| disenchanter | blue | 12 | 12 | -10 | 0 | claw 4d4 disenchant · passive disenchant | Touch removes enchantment. Devastating to your +5 long sword. |
+| disenchanter | blue | 12 | 12 | -10 | 0 | claw 4d4 disenchant · passive disenchant | Gehennom-only. Active drains armor; passive drains weapon when you melee it. |
 
 :::
 
@@ -8049,6 +8053,8 @@ D&D's three-armed, three-eyed creatures from the Elemental Plane of Earth. In th
 :::
 
 #### Apelike creatures `Y`
+<!-- audit 2026-05-17 #61: 6 rows × 8 cells verified against monsters.h:2372-2417. All stats, attacks, AD_SITM monkey steal, MR_COLD yeti corpse, M1_SEE_INVIS sasquatch clean. 0 corrections. See companion-audit.md. -->
+
 
 Apes and great apes mostly; sasquatches are fast. Carnivore corpses are safe food.
 

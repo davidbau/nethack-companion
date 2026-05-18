@@ -2217,3 +2217,111 @@ Source: `spoilers/companion.md` line 7563
    — only fog cloud is slow (Spd 1). The other five move at speed
    20-22 and close on the player. Reworded.
 
+
+---
+
+## 2026-05-17 — Chapter audit #57: Eyes and spheres `e`
+
+Source: `spoilers/companion.md` line 7276
+Roster matches monsters.h:325-366 (beholder correctly omitted, #if 0).
+All stats clean. 1 correction + 1 useful omission added.
+
+### Verified
+- 5 entries (gas spore, floating eye, freezing/flaming/shocking sphere)
+  all match monsters.h. Colors, levels, speeds, AC, MR, attacks all clean.
+- "All fly" — M1_FLY on every entry.
+- "All except floating eye are mindless" — verified.
+- Floating eye amphibious (M1_AMPHIBIOUS).
+- Sphere resistances (MR_COLD / MR_FIRE / MR_ELEC) verified.
+- Gas spore death-burst (AT_BOOM, mon.c:3199 "Gas spores always explode upon death").
+
+### Corrected
+1. **"Passive gaze paralyses if you melee in daylight"** — wrong. uhitm.c:6022-6053
+   requires canseemon(mon) AND mon->mcansee — mutual sight, not light.
+   Light conditions are irrelevant; what matters is that you can see it and
+   it can see you. Reworded.
+
+### Added (useful omission)
+- Floating-eye corpse grants intrinsic telepathy (eat.c:1071 TELEPAT case).
+  This is the most famous benefit of the monster and standard spoiler
+  content. Added to both prose and table notes.
+
+### Close calls (not changed)
+- "0d70 paralyse" — when damn=0, the C code substitutes m_lev+1 (uhitm.c:5887),
+  so actual roll is d(3, 70). Standard spoiler convention is to show the
+  literal MON field. Left as is.
+
+---
+
+## 2026-05-17 — Chapter audit #58: Quadrupeds `q`
+
+Source: `spoilers/companion.md` line 7477
+7 rows × 8 cells verified against monsters.h:831-885. All stats clean.
+
+### Verified
+- All 7 rows (rothe, mumak, leocrotta, wumpus, titanothere, baluchitherium,
+  mastodon) match LVL() macros exactly.
+- Mumak attacks: butt 4d12 + bite 2d6 (NOT gore — uses AT_BUTT).
+- Baluchitherium: M2_HOSTILE | M2_STRONG, not peaceful (rumor was a
+  red herring; the spoiler makes no peaceful claim).
+- Rothe 3-attack claim (claw + bite + bite) matches.
+
+### Added
+- "clings." note on wumpus row (M1_CLING — clings to ceiling, distinctive
+  trait worth surfacing).
+
+---
+
+## 2026-05-17 — Chapter audit #60: Rust monsters and disenchanters `R`
+
+Source: `spoilers/companion.md` line 7944
+2 rows verified clean. Prose framing corrected.
+
+### Verified
+- rust monster: brown, lvl 5, spd 18, AC 2, MR 0, attacks
+  touch/rust + touch/rust + passive/rust, M1_SWIM — all match monsters.h:2147.
+- disenchanter: blue, lvl 12, spd 12, AC -10, MR 0, attacks
+  claw 4d4 disenchant + passive disenchant — all match monsters.h:2154.
+- Rust active erodes hero worn iron armor (mhitm_ad_rust → erode_armor,
+  uhitm.c:2311). "Strip armor before engaging" correct.
+- Rust passive on hero weapon when hero melees rust monster (uhitm.c:5958-5968).
+  Greased weapons consume a grease charge instead of rusting.
+- Silver/mithril/wood weapons immune (is_rustprone, trap.c:212).
+- Disenchanter passive on hero weapon when hero hits (mhitu.c:2508-2515
+  drain_item).
+
+### Corrected
+1. **"Disenchanters remove the enchantment off your +5 long sword"** —
+   misframed. uhitm.c:3611-3644 mhitm_ad_ench active attack drains hero's
+   **armor** first (some_armor + 5-way rn2(5) to ring/amulet/blindfold);
+   never targets weapon directly. Weapon drain only happens passively
+   (when you hit them). Reworded to be honest about which slot the
+   active vs passive attacks target. Same correction in the table notes.
+
+### Added
+- "Gehennom-only" note on disenchanter (G_HELL | G_GENO | 2 — generation
+  is restricted to Gehennom).
+
+---
+
+## 2026-05-17 — Chapter audit #61: Apelike creatures `Y`
+
+Source: `spoilers/companion.md` line 8053
+48 cells (6 rows × 8 columns) verified against monsters.h:2372-2417 + monattk.h.
+0 corrections.
+
+### Verified
+- All 6 rows ordered by level (2/4/5/5/6/7).
+- monkey: claw AD_SITM (steals item, monattk.h:63) + bite 1d3 — verified.
+- ape, owlbear (hug AT_HUGS AD_PHYS 2d8), yeti, carnivorous ape, sasquatch
+  all stat-clean.
+- Yeti cold-res: MR_COLD on both resists+conveys; eat.c:912-913 confirms
+  corpse grants COLD_RES.
+- Sasquatch sees-invis: M1_SEE_INVIS (monsters.h:2415).
+- Intro "Carnivore corpses are safe food" — owlbear/yeti/carnivorous ape
+  are M1_CARNIVORE with no M1_POIS, no MR_POISON.
+
+### Notes
+- The prompt's "snow ape" hint was a red herring; no such monster in C.
+  Spoiler correctly uses "carnivorous ape".
+

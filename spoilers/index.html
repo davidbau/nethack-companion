@@ -11988,9 +11988,11 @@ only.</td>
 </section>
 <section id="eyes-and-spheres-e" class="level4">
 <h4>Eyes and spheres <code>e</code></h4>
+<!-- audit 2026-05-17 #57: roster matches monsters.h:325-366 (beholder correctly omitted, #if 0). All stats clean. Corrected floating-eye paralysis trigger: was "in daylight", really requires mutual sight (canseemon + mon->mcansee per uhitm.c:6022-6053). Added the corpse-grants-telepathy note (eat.c:1071 TELEPAT case). See companion-audit.md. -->
 <p>The floating eye’s passive paralysis gaze is the single most famous
 newbie killer in the game: never melee one without free action,
-blindness, or a ranged attack.</p>
+blindness, or a ranged attack. Once it’s dead, eat the corpse: it grants
+intrinsic telepathy.</p>
 <p>All eyes and spheres fly. All except <em>floating eye</em> also are
 mindless.</p>
 <div class="dense-table">
@@ -12036,8 +12038,9 @@ mindless.</p>
 <td>9</td>
 <td>10</td>
 <td>passive 0d70 paralyse</td>
-<td>amphibious. (no mindless) Passive gaze paralyses if you melee in
-daylight. Use ranged or close eyes first.</td>
+<td>amphibious. (no mindless) Passive gaze paralyses on melee if you and
+the eye can both see each other. Use ranged, blind yourself, or close
+eyes first. Corpse grants telepathy.</td>
 </tr>
 <tr>
 <td>freezing sphere</td>
@@ -12944,6 +12947,7 @@ ceiling.</p>
 </section>
 <section id="quadrupeds-q" class="level4">
 <h4>Quadrupeds <code>q</code></h4>
+<!-- audit 2026-05-17 #58: 7 rows × 8 cells verified against monsters.h:831-885. All stats clean. Added "clings" note to wumpus (M1_CLING). See companion-audit.md. -->
 <p>Mixed bag. Rothes are early-game wreckers (three attacks per turn).
 Mumakil are slow but extremely sturdy.</p>
 <div class="dense-table">
@@ -13009,7 +13013,7 @@ Mumakil are slow but extremely sturdy.</p>
 <td>2</td>
 <td>10</td>
 <td>bite 3d6</td>
-<td></td>
+<td>clings.</td>
 </tr>
 <tr>
 <td>titanothere</td>
@@ -15229,9 +15233,12 @@ kill.</p>
 </section>
 <section id="rust-monsters-and-disenchanters-r" class="level4">
 <h4>Rust monsters and disenchanters <code>R</code></h4>
-<p>Rust monsters rust iron equipment on touch; disenchanters remove the
-enchantment off your +5 long sword. Strip iron armor / switch to silver
-or non-iron weapons before engaging.</p>
+<!-- audit 2026-05-17 #60: 2 rows verified against monsters.h:2147-2161. Rust active erodes worn iron armor (uhitm.c:2311 erode_armor), passive on weapon when you hit it; greased weapons consume a charge instead. Silver/mithril/wood weapons immune (is_rustprone). Disenchanter active claw drains armor first (uhitm.c:3611-3644 some_armor + 5-way rn2(5) for rings/amulet/blindfold); weapon drain is passive-only. Corrected "long sword" prose to match (active threat is armor, not weapon). See companion-audit.md. -->
+<p>Rust monsters rust iron equipment on touch. Disenchanters drain
+enchantment from your armor when they hit you, and drain enchantment
+from your weapon when you hit them (passive counterattack). Either way,
+strip irreplaceable kit before engaging, and switch to silver or
+non-iron weapons against the rust monster.</p>
 <div class="dense-table">
 <table>
 <colgroup>
@@ -15276,7 +15283,8 @@ silver.</td>
 <td>-10</td>
 <td>0</td>
 <td>claw 4d4 disenchant · passive disenchant</td>
-<td>Touch removes enchantment. Devastating to your +5 long sword.</td>
+<td>Gehennom-only. Active drains armor; passive drains weapon when you
+melee it.</td>
 </tr>
 </tbody>
 </table>
@@ -15689,6 +15697,7 @@ resistance helps.</p>
 </section>
 <section id="apelike-creatures-y" class="level4">
 <h4>Apelike creatures <code>Y</code></h4>
+<!-- audit 2026-05-17 #61: 6 rows × 8 cells verified against monsters.h:2372-2417. All stats, attacks, AD_SITM monkey steal, MR_COLD yeti corpse, M1_SEE_INVIS sasquatch clean. 0 corrections. See companion-audit.md. -->
 <p>Apes and great apes mostly; sasquatches are fast. Carnivore corpses
 are safe food.</p>
 <div class="dense-table">

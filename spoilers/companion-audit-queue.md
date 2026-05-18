@@ -61,11 +61,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 54**  L 7603  (  35 lines)   ↳ Bestiary Tables → Dragons `D`
 - [x] **# 55**  L 7713  (  12 lines)   ↳ Bestiary Tables → Jabberwocks `J`
 - [x] **# 56**  L 7478  (  19 lines)   ↳ Bestiary Tables → Vortices `v`
-- [ ] **# 57**  L 7193  (  18 lines)   ↳ Bestiary Tables → Eyes and spheres `e`
-- [ ] **# 58**  L 7393  (  18 lines)   ↳ Bestiary Tables → Quadrupeds `q`
+- [x] **# 57**  L 7193  (  18 lines)   ↳ Bestiary Tables → Eyes and spheres `e`
+- [x] **# 58**  L 7393  (  18 lines)   ↳ Bestiary Tables → Quadrupeds `q`
 - [ ] **# 59**  L 4598  ( 121 lines) 📖 Spellcasting
-- [ ] **# 60**  L 7845  (  13 lines)   ↳ Bestiary Tables → Rust monsters and disenchanters `R`
-- [ ] **# 61**  L 7951  (  17 lines)   ↳ Bestiary Tables → Apelike creatures `Y`
+- [x] **# 60**  L 7845  (  13 lines)   ↳ Bestiary Tables → Rust monsters and disenchanters `R`
+- [x] **# 61**  L 7951  (  17 lines)   ↳ Bestiary Tables → Apelike creatures `Y`
 - [ ] **# 62**  L 6353  (  17 lines)   ↳ Voluntary Challenges → Permadeaf (new in 5.0)
 - [ ] **# 63**  L 1918  (  24 lines)   ↳ Dangerous Encounters → Brainlessness
 - [ ] **# 64**  L 6196  (  14 lines)   ↳ Voluntary Challenges → Atheist
