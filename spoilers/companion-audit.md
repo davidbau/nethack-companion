@@ -6760,3 +6760,104 @@ tightenings.
   softening is consistent.
 
 ---
+
+## 2026-05-18 — v2 audit #6: Sokoban Solutions — Level 2, Version A
+
+Source: `spoilers/companion.md` line 6248. No corrections (re-audit).
+
+### Verified
+- Map walls and floor match `dat/soko3-1.lua:10-21` exactly (lua col,row → spoiler col+1,row+1).
+- All 20 boulders A-T mapped to lua placements at `soko3-1.lua:31-53`.
+- Upstair `<` at (24,5), locked door `+` at (28,10), player arrival `@` at (12,3), rolling-boulder trap at (12,11), 15 holes at (13,11)-(27,11): all match `soko3-1.lua:23-25, 58-73`.
+- Steps 1-3 confirmed by the pass-1 audit. v2 extended through steps 4-9.
+- "Push F up to (3,4)" in step 8 is not gratuitous: F at (3,7) seals the only N-S corridor through (3,6), so the only way to access the upper chamber for finishing F and A is to push F upward through the opening, simultaneously moving the player up.
+- Final tally "Five boulders (B, C, D, I, and Q) remain" exact: 20 boulders minus 15 holes filled.
+
+### Notes
+- The pass-1 audit explicitly stated it had only walked steps 1-3. v2 re-audit fills the gap with no corrections found.
+
+---
+
+## 2026-05-18 — v2 audit #7: Weapons Tables — Broadsword
+
+Source: `spoilers/companion.md` line 7302. 2 artifact additions, 1 voice replacement.
+
+### Wrong → fixed
+- **Broadsword row Notes**: previously "+d4 small, +1 large" — formula notation that duplicated the Damage column. No mention of **Dragonbane** (BROADSWORD artifact at `artilist.h:157-160`, SPFX_REFLECT, +d5 vs S_DRAGON). Replaced with "Dragonbane is the artifact form. +d5 vs dragons, grants reflection."
+- **Elven broadsword row Notes**: previously empty. No mention of **Orcrist** (ELVEN_BROADSWORD artifact at `artilist.h:134-136`, A_CHAOTIC, warns of orcs, +d5 damage). Added "Orcrist is the chaotic artifact form. Warns of orcs, +d5 damage."
+- **Runesword row Notes**: previously "Stormbringer is the chaotic-aligned artifact form." Expanded slightly: "Stormbringer is the chaotic artifact form. Drains life on hit." Parallel to peer rows that list the artifact's effect.
+
+### Verified
+- Broadsword stats 1d4+1d4 / 1d6+1, wt 70, cost 10, iron, P_BROAD_SWORD at `include/objects.h:262-265`; +d4/+1 bonus applied at `src/weapon.c:235,285`.
+- Elven broadsword stats 1d6+1d4 / 1d6+1, wt 70, cost 10, wood, prob 4 at `include/objects.h:266-269`.
+- Runesword stats 1d4+1d4 / 1d6+1, wt 40, cost 300, iron, color CLR_BLACK, prob 0 (not randomly generated) at `include/objects.h:287-290`. Stormbringer A_CHAOTIC at `artilist.h:93-96`.
+
+### Notes
+- Strike type for all three (slash via `S` flag at `objects.h:137`) was verified — spoiler doesn't claim a strike type, no issue.
+
+---
+
+## 2026-05-18 — v2 audit #8: Bestiary Tables — Vampires `V`
+
+Source: `spoilers/companion.md` line 8804. 2 factual corrections, 1 voice tightening.
+
+### Wrong → fixed
+- **"All vampires fly, regenerate, have poisonous corpses, are undead..."**: all three V-class monsters carry `G_NOCORPSE` (`include/monsters.h:2282, 2292, 2314`; `include/monflag.h:201`), so they never leave any corpse. "Poisonous corpses" is nonsense. Dropped.
+- **"Shapeshifts to bat or cloud."**: incomplete. Base `PM_VAMPIRE` shifts to fog cloud or vampire bat per `src/mon.c:4956-4967`; `PM_VAMPIRE_LEADER` and Vlad (`PM_VLAD_THE_IMPALER`) can additionally become a wolf. Reworded: "Shapeshifts to bat or fog cloud. Lords and Vlad can also become wolves."
+
+### Verified
+- vampire row Lvl 10, Spd 12, AC 1, MR 25, claw 1d6 + bite 1d6 drain-XL at `include/monsters.h:2281-2290`.
+- vampire lord row Lvl 12, Spd 14, AC 0, MR 50, claw 1d8 + bite 1d8 drain-XL at `include/monsters.h:2291-2300`.
+- Vlad the Impaler Lvl 28, Spd 26, AC -6, MR 80, weapon 2d10 + bite 1d12 drain-XL at `include/monsters.h:2313-2322`. G_UNIQ; `M3_WANTSCAND` → CANDELABRUM_OF_INVOCATION at `src/wizard.c:149-150`.
+- Vampire mage correctly omitted (`#if 0 DEFERRED` at `monsters.h:2301-2312`).
+- Vlad's Tower location verified at `dat/dungeon.lua:98, 262` and `dat/tower1.lua:6, 29`.
+
+### Voice
+- Lead-in "Vlad the Impaler is the vampire boss in his Tower." reworded to "Vlad the Impaler is the boss of Vlad's Tower." — uses the proper noun, avoids the "vampire" repetition from the prior sentence.
+
+---
+
+## 2026-05-18 — v2 audit #9: Spellcasting
+
+Source: `spoilers/companion.md` line 5077. 3 factual corrections, 1 wisdom softening, 2 voice tightenings.
+
+### Wrong → fixed
+- **"Each **successful** read counts toward a fixed total (about five)"**: `MAX_SPELL_STUDY = 3` with the `> MAX_SPELL_STUDY` check at `spell.c:401` caps at **4** successful reads, not "about five." The comment at `spell.c:400` explicitly says "a normal book can be read and re-read a total of 4 times." Reworded to "a fixed total of four."
+- **Charm monster row "Tame nearby creatures (3×3, 5×5 confused)"**: two issues. (1) Confused casting fails outright at `spell.c:1372`, so a "confused area" is unreachable. (2) The scroll-of-taming confused area is 11×11 (`bd = confused ? 5 : 1`, `-bd..bd` inclusive at `read.c:1689,1695`), not 5×5. Reworded to "Tame nearby creatures in a 3×3 area; Skilled+ acts like a blessed scroll."
+- **"Power regenerates over time (faster with higher Wisdom and with a regeneration source)"**: incomplete. Regen amount is `(Wis + Int)/15 + 1` at `allmain.c:607` — Intelligence matters too — and Wizards tick on factor 3 vs the standard 4 at `allmain.c:605`. Reworded.
+
+### Wisdom
+- **"A Valkyrie might manage identify (level 3) but will struggle with anything above level 4."**: Valkyries have *divination restricted* (no entry in `Skill_V` at `u_init.c:525-546`), so even identify is occasional-at-best for them. Softened to "A Valkyrie can occasionally read identify (level 3) if her Intelligence is boosted by gain-ability potions, but non-spellcasters are usually better off with scrolls."
+
+### Voice
+- Full-paragraph parenthetical "(The 'Minimum Int + XL' column means...)" promoted to plain prose.
+- "Each failure also has a 1-in-3 chance of destroying the book on the spot." was duplicated (once in the Learning Spells paragraph, once in the spellbook-fade paragraph). Consolidated to the fade paragraph.
+
+### Close calls / notes
+- Read-success table "Min Int + XL" is approximate. Int 18 + XL 14 = 32 gives a level-6 read score of ~17, an 85% chance — not "always." Acceptable rule-of-thumb but the word "reliably" is loose; not changed.
+- "1-in-3 destruction on failed read" wording could be tightened further but the current phrasing is clear enough.
+
+---
+
+## 2026-05-18 — v2 audit #10: Weapons Tables — Long sword
+
+Source: `spoilers/companion.md` line 7315. 1 factual completion, 1 voice tightening.
+
+### Wrong → fixed
+- **"Artifact forms: Excalibur, Vorpal Blade, Frost Brand, Fire Brand."**: incomplete. `include/artilist.h` defines six LONG_SWORD artifacts: Excalibur (l.85), Frost Brand (l.149), Fire Brand (l.153), Giantslayer (l.174), Vorpal Blade (l.191), Sunsword (l.209). Added Giantslayer and Sunsword.
+
+### Verified
+- long sword stats 1d8/1d12, wt 40, cost 15, iron, P_LONG_SWORD at `include/objects.h:270-272`.
+- katana stats 1d10/1d12, wt 40, cost 80, +1 to-hit, iron, P_LONG_SWORD at `include/objects.h:278-280`.
+- Excalibur dipping: `obj->otyp == LONG_SWORD`, `u.ulevel >= 5`, single non-artifact sword, Excalibur not already extant; rolls `!rn2(Role_if(PM_KNIGHT) ? 6 : 30)`; Lawful gets blessed Excalibur, non-Lawful gets curse plus rustproof strip at `src/fountain.c:404-440`.
+- Snickersnee is a KATANA artifact at `include/artilist.h:203-205`, A_LAWFUL, Samurai-only.
+- Demonbane is now SILVER_MACE (not a long sword) at `include/artilist.h:162-164`. Correctly absent from the list.
+
+### Voice
+- Excalibur dipping line reworked from a semicolon-and-parenthetical chain ("rolls 1-in-30 (1-in-6 for Knights); Lawfuls who roll get Excalibur, others get the sword cursed") into four periods per the punctuation ladder.
+
+### Notes
+- Non-Lawfuls on a successful roll also lose rustproofing and possibly an enchantment point, not just a curse. "Cursed" is shorthand. Not expanded — keeping the table cell concise.
+- The pass-1 audit badge text says "ANY alignment rolls 1-in-30 at XL 5+" — slightly sloppy since Knights are 1-in-6 regardless. Cosmetic only; left.
+
+---

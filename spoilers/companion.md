@@ -5075,7 +5075,7 @@ not the time for ambiguity:
 ---
 
 ### Spellcasting
-<!-- audit 2026-05-17 #59: corrected 6 substantive claims. (1) Force bolt damage is 2d12, not "d6 to 4d6 by skill"; spell-school skill doesn't scale damage. (2) Chain lightning is level 4, not 7, NODIR not "bouncing ray." (3) Failed reading does NOT paralyze or summon monsters; cursed_book enumerates teleport/aggravate/blindness/take-gold/confusion/contact poison/exploding rune/rndcurse (spell.c:130). (4) Spellbook decay is by SUCCESS count (MAX_SPELL_STUDY successful reads, spell.c:401-418), not failure wear; failures use a single 1/3 random destruction (spell.c:612). (5) "Spell maintenance" system is fabricated — no Pw drain from memorized spells anywhere in spell.c. (6) "Energy vortex + amulet of reflection = +max Pw" is fabricated; drain_en only ever decreases Pw. Also: blessed books bypass the read-ability check entirely (auto-success), not "equivalent to a few points of Int." Pw cost per spell is 5 × level. See companion-audit.md. -->
+<!-- audit 2026-05-17 #59: corrected 6 substantive claims. (1) Force bolt damage is 2d12, not "d6 to 4d6 by skill"; spell-school skill doesn't scale damage. (2) Chain lightning is level 4, not 7, NODIR not "bouncing ray." (3) Failed reading does NOT paralyze or summon monsters; cursed_book enumerates teleport/aggravate/blindness/take-gold/confusion/contact poison/exploding rune/rndcurse (spell.c:130). (4) Spellbook decay is by SUCCESS count (MAX_SPELL_STUDY successful reads, spell.c:401-418), not failure wear; failures use a single 1/3 random destruction (spell.c:612). (5) "Spell maintenance" system is fabricated — no Pw drain from memorized spells anywhere in spell.c. (6) "Energy vortex + amulet of reflection = +max Pw" is fabricated; drain_en only ever decreases Pw. Also: blessed books bypass the read-ability check entirely (auto-success), not "equivalent to a few points of Int." Pw cost per spell is 5 × level. v2 audit 2026-05-18 #9: three factual fixes. (a) Spellbook fade ceiling is "four" not "about five" — MAX_SPELL_STUDY = 3 with `> MAX_SPELL_STUDY` check at spell.c:401 caps at 4 successful reads; the comment at spell.c:400 explicitly says "a normal book can be read and re-read a total of 4 times." (b) Charm monster "5×5 confused" implied confused casting works; spell.c:1372 fails confused casts outright. Reworded the row to drop the unreachable area and mention the Skilled+ blessed-scroll behavior. (c) Power-regen prose missed Intelligence and the Wizard-rate factor: allmain.c:605-607 uses `(Wis + Int)/15 + 1` with Wizards ticking on a factor of 3 instead of 4. Voice: full-paragraph parenthetical (Min Int+XL explainer) promoted to plain prose; the "1-in-3 destruction on failed read" caveat consolidated to the spellbook-fade paragraph (was duplicated earlier in the Learning Spells paragraph). Wisdom: softened the Valkyrie-identify line — Valkyries are restricted in divination per Skill_V (u_init.c:525-546), so reading identify is occasional-at-best. See companion-audit.md. -->
 
 Magic in the Mazes is less "wave a wand and sparkles happen" and
 more "laboriously study a crumbling book, hope it doesn't go off in
@@ -5090,9 +5090,8 @@ your increasingly overtaxed brain.
 Read a spellbook to learn the spell it contains. Reading takes
 several turns and can fail. A failed reading can teleport you, take
 your gold, blind, confuse, or poison you, blow up in your face for
-HP damage, or randomly curse one of your items. Each failure also
-has a 1-in-3 chance of destroying the book on the spot. A book that
-survives failures can be retried.
+HP damage, or randomly curse one of your items. A book that survives
+failures can be retried.
 
 The chance of successfully reading a spellbook depends on the
 **spell level**, your **Intelligence**, and your **experience
@@ -5116,10 +5115,10 @@ Here's a rough guide to what you can safely read:
 | 6           | ~30                     | Wizards with serious investment |
 | 7           | ~34                     | Only well-built Wizards      |
 
-(The "Minimum Int + XL" column means the sum of your Intelligence
-and experience level. If you have 18 Intelligence and are level 14,
-your sum is 32, and you can reliably read up to level 6 spells. A
-blessed book effectively adds 2-3 to this number.)
+The "Minimum Int + XL" column means the sum of your Intelligence
+and experience level. With 18 Intelligence at level 14, your sum is
+32, so you can reliably read up to level 6 spells. A blessed book
+effectively adds 2-3 to this number.
 
 **Wizards identify books by training.** In 5.0, advancing
 a spell school skill to each rank automatically reveals the appearances
@@ -5139,18 +5138,19 @@ Wizards are the undisputed masters of magic: they learn faster, fail
 less, and have the widest range of useful spells. A well-built Wizard
 can eventually learn *every* spell in the game, which is the closest
 the Mazes come to letting you cheat. Other roles can cast some spells
-but with less panache. A Valkyrie might manage identify (level 3)
-but will struggle with anything above level 4. Tourists, Barbarians,
-and Cavemen should probably stick to hitting things.
+but with less panache. A Valkyrie can occasionally read identify
+(level 3) if her Intelligence is boosted by gain-ability potions, but
+non-spellcasters are usually better off with scrolls. Tourists,
+Barbarians, and Cavemen should probably stick to hitting things.
 
 Each spell stays in memory for about 20,000 turns, then fades and
 must be relearned. The spell list (`+`) shows time-remaining. You
 can also `a`pply a spellbook to check how worn it is: each
-**successful** read counts toward a fixed total (about five) before
-the book fades to blank paper. Failed reads don't add to that
-counter, but each failure has its own 1-in-3 chance to destroy the
-book outright. Carry important spellbooks with you if you plan to
-rely on their spells in the late game.
+**successful** read counts toward a fixed total of four before the
+book fades to blank paper. Failed reads don't add to that counter,
+but each failure has its own 1-in-3 chance to destroy the book
+outright. Carry important spellbooks with you if you plan to rely
+on their spells in the late game.
 
 #### Key Spells
 
@@ -5163,7 +5163,7 @@ rely on their spells in the late game.
 | Remove curse    | 3     | Uncurse worn/wielded items              |
 | Chain lightning | 2     | Shock that spreads from the caster in all directions, chaining to nearby monsters |
 | Magic mapping   | 5     | Reveal the level (saves scrolls)        |
-| Charm monster   | 5     | Tame nearby creatures (3×3, 5×5 confused) |
+| Charm monster   | 5     | Tame nearby creatures in a 3×3 area; Skilled+ acts like a blessed scroll |
 | Finger of death | 7     | Kill in a beam; MR resists              |
 
 The other 34 spells, along with their schools, types, and
@@ -5183,7 +5183,8 @@ Your power (Pw) pool determines how many spells you can cast before
 you need to sit in a corner and regenerate like a phone battery.
 Casting a spell costs **5 Pw per spell level** (so finger of death
 is 35 Pw). A failed cast still spends half. Power regenerates over
-time (faster with higher Wisdom and with a regeneration source).
+time, faster with higher Wisdom and Intelligence, faster still for
+Wizards or with a regeneration source.
 
 High-level spells cost serious power. You can't spam finger of
 death unless you have a colossal power pool, and even then you'll
@@ -6244,7 +6245,7 @@ The map now looks like this:
 Two boulders (D and E) remain. The two scrolls at (2,10) and
 (3,10) are always scrolls of earth.
 
-<!-- audit 2026-05-18 #154: map walls/floors, all 20 boulders A-T, both stairs, locked door (27,9), rolling-boulder trap (11,10), and 15 hole traps verified clean vs soko3-1.lua:9-73. Steps 1-3 destinations are floor, approach squares reachable, cardinal-only pushes. 0 corrections. See companion-audit.md. -->
+<!-- audit 2026-05-18 #154 (re-audit 2026-05-18 v2 #6): map walls/floors, all 20 boulders A-T, both stairs, locked door (27,9), rolling-boulder trap (11,10), and 15 hole traps verified clean vs soko3-1.lua:9-73. Steps 1-3 destinations are floor, approach squares reachable, cardinal-only pushes. v2 re-audit extended geometric verification through steps 4-9 and the final tally: the "Push F up to (3,4)" maneuver in step 8 is required, not gratuitous (after step 6 places F at (3,7), F seals the only N-S corridor through (3,6), so the only way to access the upper chamber for finishing F and A is to push F upward through the opening). All 15 finished boulders match the bowling-alley hole count; the "five remain" tally (B, C, D, I, Q) is exact. 0 corrections. See companion-audit.md. -->
 #### Level 2, Version A
 
 ```
@@ -7300,27 +7301,27 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 :::
 
 #### Broadsword
-<!-- audit 2026-05-18 #103: Stormbringer's base item is RUNESWORD per artilist.h:93, not broadsword. Moved the attribution and added the drain-life detail. Both share the same skill class (P_BROAD_SWORD) and the same 1d4+1d4/1d6+1 dice, which is what makes the confusion easy. See companion-audit.md. -->
+<!-- audit 2026-05-18 #103: Stormbringer's base item is RUNESWORD per artilist.h:93, not broadsword. Moved the attribution and added the drain-life detail. Both share the same skill class (P_BROAD_SWORD) and the same 1d4+1d4/1d6+1 dice, which is what makes the confusion easy. v2 audit 2026-05-18 #7: added missing artifact forms — Dragonbane (BROADSWORD, +d5 vs dragons, reflection per artilist.h:157-160) and Orcrist (ELVEN_BROADSWORD, chaotic, warns of orcs, +d5 per artilist.h:134-136). Replaced redundant formula note ("+d4 small, +1 large" — already in the Damage column) with the artifact note. Expanded Stormbringer note to mention drain-life. See companion-audit.md. -->
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| broadsword | 1d4+1d4 / 1d6+1 | 70 | 10 | — | iron | +d4 small, +1 large. |
-| elven broadsword | 1d6+1d4 / 1d6+1 | 70 | 10 | — | wood |  |
-| runesword | 1d4+1d4 / 1d6+1 | 40 | 300 | — | iron | Stormbringer is the chaotic-aligned artifact form. |
+| broadsword | 1d4+1d4 / 1d6+1 | 70 | 10 | — | iron | Dragonbane is the artifact form. +d5 vs dragons, grants reflection. |
+| elven broadsword | 1d6+1d4 / 1d6+1 | 70 | 10 | — | wood | Orcrist is the chaotic artifact form. Warns of orcs, +d5 damage. |
+| runesword | 1d4+1d4 / 1d6+1 | 40 | 300 | — | iron | Stormbringer is the chaotic artifact form. Drains life on hit. |
 
 :::
 
 #### Long sword
-<!-- audit 2026-05-18 #78: stats verified vs objects.h:270-280. Excalibur dipping note rephrased to clarify ANY alignment rolls 1-in-30 at XL 5+, but only Lawfuls succeed (non-Lawfuls get the sword cursed). Listed all four artifact forms (Excalibur, Vorpal Blade, Frost Brand, Fire Brand). Also corrected adjacent two-handed-sword row: "Vorpal Blade is the artifact form" was wrong (Vorpal Blade is a LONG_SWORD artifact per artilist.h:191); two-handed sword has no dedicated artifact. See companion-audit.md. -->
+<!-- audit 2026-05-18 #78: stats verified vs objects.h:270-280. Excalibur dipping note rephrased to clarify ANY alignment rolls 1-in-30 at XL 5+, but only Lawfuls succeed (non-Lawfuls get the sword cursed). Listed all four artifact forms (Excalibur, Vorpal Blade, Frost Brand, Fire Brand). Also corrected adjacent two-handed-sword row: "Vorpal Blade is the artifact form" was wrong (Vorpal Blade is a LONG_SWORD artifact per artilist.h:191); two-handed sword has no dedicated artifact. v2 audit 2026-05-18 #10: artifact list was incomplete — added Giantslayer (artilist.h:174) and Sunsword (artilist.h:209), bringing the LONG_SWORD artifact count to six. Voice: Excalibur dipping line reworked from a semicolon-and-parenthetical chain into four periods per the punctuation ladder. See companion-audit.md. -->
 
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| long sword | 1d8 / 1d12 | 40 | 15 | — | iron | At XL 5+ each dip in a fountain rolls 1-in-30 (1-in-6 for Knights); Lawfuls who roll get **Excalibur**, others get the sword cursed. Artifact forms: Excalibur, Vorpal Blade, Frost Brand, Fire Brand. |
+| long sword | 1d8 / 1d12 | 40 | 15 | — | iron | At XL 5+, dipping in a fountain rolls 1-in-30. Knights get 1-in-6. On a hit, Lawfuls get **Excalibur**. Others get the sword cursed. Artifact forms: Excalibur, Vorpal Blade, Frost Brand, Fire Brand, Giantslayer, Sunsword. |
 | katana | 1d10 / 1d12 | 40 | 80 | +1 | iron | +1 to-hit baked in. Snickersnee is the artifact form. |
 
 :::
@@ -8802,11 +8803,11 @@ Confusion gaze. Don't melee without some way to dodge the gaze — blindness def
 :::
 
 #### Vampires `V`
-<!-- audit 2026-05-17 #9: 25 cells/claims verified, 0 corrected. All stats match monsters.h; vampire mage is #if 0 DEFERRED in 5.0, correctly omitted. Close call: vampire lord/Vlad can also shapeshift to wolf, not just bat/fog. See companion-audit.md. -->
+<!-- audit 2026-05-17 #9: 25 cells/claims verified, 0 corrected. All stats match monsters.h; vampire mage is #if 0 DEFERRED in 5.0, correctly omitted. Close call: vampire lord/Vlad can also shapeshift to wolf, not just bat/fog. v2 audit 2026-05-18 #8: two factual fixes. (1) "Have poisonous corpses" was wrong: all three rows carry G_NOCORPSE (monsters.h:2282,2292,2314 + monflag.h:201), so vampires leave no corpse at all. Dropped. (2) "Shapeshifts to bat or cloud" was incomplete: PM_VAMPIRE_LEADER and Vlad (PM_VLAD_THE_IMPALER) additionally shift to wolf per mon.c:4956-4967. Added. Voice: Vlad lead-in reworded to use the proper "Vlad's Tower" rather than "his Tower". See companion-audit.md. -->
 
-Drains XL on bite. Shapeshifts to bat or cloud. Vlad the Impaler is the vampire boss in his Tower.
+Drains XL on bite. Shapeshifts to bat or fog cloud. Lords and Vlad can also become wolves. Vlad the Impaler is the boss of Vlad's Tower.
 
-All vampires fly, regenerate, have poisonous corpses, are undead, follow you up and down stairs, and shapeshift.
+All vampires fly, regenerate, are undead, follow you up and down stairs, and shapeshift.
 
 ::: dense-table
 

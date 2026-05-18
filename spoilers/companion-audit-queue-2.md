@@ -14,11 +14,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#  3**  L 8240  (  20 lines)     ↳ Bestiary Tables → Quadrupeds `q`
 - [x] **#  4**  L 7596  ( 163 lines)   📖 Armor Tables
 - [x] **#  5**  L  984  (  38 lines)     ↳ Branches and Landmarks → The Quest
-- [ ] **#  6**  L 6242  (  31 lines)     ↳ Sokoban Solutions → Level 2, Version A
-- [ ] **#  7**  L 7295  (  13 lines)     ↳ Weapons Tables → Broadsword
-- [ ] **#  8**  L 8797  (  17 lines)     ↳ Bestiary Tables → Vampires `V`
-- [ ] **#  9**  L 5071  ( 120 lines)   📖 Spellcasting
-- [ ] **# 10**  L 7308  (  13 lines)     ↳ Weapons Tables → Long sword
+- [x] **#  6**  L 6242  (  31 lines)     ↳ Sokoban Solutions → Level 2, Version A
+- [x] **#  7**  L 7295  (  13 lines)     ↳ Weapons Tables → Broadsword
+- [x] **#  8**  L 8797  (  17 lines)     ↳ Bestiary Tables → Vampires `V`
+- [x] **#  9**  L 5071  ( 120 lines)   📖 Spellcasting
+- [x] **# 10**  L 7308  (  13 lines)     ↳ Weapons Tables → Long sword
 - [ ] **# 11**  L  876  (  50 lines)     ↳ Branches and Landmarks → The Gnomish Mines
 - [ ] **# 12**  L 7376  (  11 lines)     ↳ Weapons Tables → Mace
 - [ ] **# 13**  L 4802  ( 169 lines)   📖 Enhancing Skills
