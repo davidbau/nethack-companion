@@ -55,9 +55,9 @@ reference manual that comes with the game. This document is a
 *strategic* guide. It assumes you already know how to play and want
 to know how to *survive*.
 
-But if you've died to one too many floating eyes you punched without
-thinking, or you're tired of starving on dungeon level four because
-you didn't know you could pray, read on. We'll do our best to keep
+But if you've died to one too many floating eyes you hit without
+thinking, or you're tired of starving on dungeon level four thinking
+the gods had abandoned you, read on. We'll do our best to keep
 you alive.
 
 ---
@@ -265,22 +265,25 @@ open to you, and nobody in the dungeon singles you out for being one.
 Perfectly serviceable.
 
 **Dwarf.** Dwarves are sturdy and strong, with infravision (they can
-see warm-blooded creatures in the dark). They're good fighters and
-have an affinity for mining. Available for: Archeologist, Cave Dweller,
-Valkyrie.
+see warm-blooded creatures in the dark). They're good fighters with
+high Strength, Dex, and Con caps. Available for: Archeologist, Cave
+Dweller, Valkyrie.
 
-**Elf.** Elves get sleep resistance, infravision, and a natural
-affinity for bows. They're a bit more fragile than humans but have
-excellent dexterity. Available for: Ranger, Wizard.
+**Elf.** Elves get sleep resistance, infravision, and see invisible
+from the start. They're a bit more fragile than humans but have the
+highest Int and Wis caps (20). Elf Priests and Wizards even get a
+free musical instrument. Available for: Priest, Ranger, Wizard.
 
-**Gnome.** Gnomes get infravision and are comfortable underground.
+**Gnome.** Gnomes get infravision and a slightly higher Int cap (19).
 They're small but resourceful. Available for: Archeologist, Cave
 Dweller, Healer, Ranger, Wizard.
 
-**Orc.** Orcs get infravision and poison resistance, which is genuinely
-useful. They tend to have high strength but low charisma. The trade-off
-is that some shopkeepers are less friendly. Available for: Barbarian,
-Ranger, Rogue, Wizard.
+**Orc.** Orcs get infravision and poison resistance, which is
+genuinely useful. Stat caps run lower than human (Str 18/50, Cha 16,
+Wis 16). Humans, elves, and dwarves are race-hostile to orcs
+(including shopkeepers, priests, and watchmen); other orcs aren't
+automatically peaceful either. Available for: Barbarian, Ranger,
+Rogue, Wizard.
 
 #### Alignment
 
