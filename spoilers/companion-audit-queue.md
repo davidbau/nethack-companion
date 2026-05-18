@@ -45,11 +45,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 38**  L 6681  (  11 lines)   ↳ Weapons Tables → Saber
 - [x] **# 39**  L  947  (  34 lines)   ↳ Branches and Landmarks → The Quest
 - [x] **# 40**  L 7113  (  21 lines)   ↳ Bestiary Tables → Ants and insects `a`
-- [ ] **# 41**  L 6809  (  23 lines)   ↳ Weapons Tables → Polearms
+- [x] **# 41**  L 6809  (  23 lines)   ↳ Weapons Tables → Polearms
 - [x] **# 42**  L 2152  (  22 lines)   ↳ Dangerous Encounters → The Displacer Beast
-- [ ] **# 43**  L 1942  (  21 lines)   ↳ Dangerous Encounters → Level Drain
-- [ ] **# 44**  L 7411  (  17 lines)   ↳ Bestiary Tables → Rodents `r`
-- [ ] **# 45**  L 6789  (  10 lines)   ↳ Weapons Tables → Hammer
+- [x] **# 43**  L 1942  (  21 lines)   ↳ Dangerous Encounters → Level Drain
+- [x] **# 44**  L 7411  (  17 lines)   ↳ Bestiary Tables → Rodents `r`
+- [x] **# 45**  L 6789  (  10 lines)   ↳ Weapons Tables → Hammer
 - [ ] **# 46**  L 8180  ( 196 lines) 📖 What Changed Since Last Time
 - [ ] **# 47**  L 6399  ( 237 lines) 📖 Shopping and Shopkeeper Pricing
 - [ ] **# 48**  L 5446  ( 114 lines) 📖 Advanced Controls

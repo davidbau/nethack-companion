@@ -1848,3 +1848,131 @@ Major rewrite. The original premise was wrong from start to finish.
   the swap: it can pull you off Elbereth, out of a doorway, onto a
   trap, or into worse adjacency.
 
+
+---
+
+## 2026-05-17 — Chapter audit #41: Polearms
+
+Source: `spoilers/companion.md` line 6882
+12 rows / 84 cells verified clean against objects.h + weapon.c dmgval bonuses.
+3 prose corrections.
+
+### Verified
+- All 12 polearm rows: names, S/L damage dice, weights, costs, materials,
+  +small/+large bonus notes match objects.h and weapon.c:215-309 (dmgval).
+- All polearms two-handed (bi=1 in objects.h).
+- All use P_POLEARMS skill class.
+- Apply (`#apply` / `a`) is the reach attack: doapply → use_pole (apply.c).
+
+### Corrected
+1. **"Reach of two squares"** — overstated as class invariant. apply.c:3355-3382
+   shows reach is skill-dependent: Basic = orthogonal at distu==4; Skilled adds
+   knight-jump (distu 4-5); Expert adds diagonals out to distu==8. Reworded
+   to mention the two-square Basic reach and that Skilled opens up more.
+
+2. **"With one empty intervening square"** — fabricated. use_pole has no
+   check requiring the intervening square to be empty. Removed.
+
+3. **"They can't be used in melee against an adjacent monster — the haft
+   gets in the way"** — wrong. uhitm.c:1075-1091 routes adjacent polearm
+   attacks through the bashing path: the attack works, just without
+   strength bonus or weapon-skill bonus. uhitm.c:1467-1484 comment
+   explicitly says "hero is simply bashing with one of those." Reworded
+   to be accurate.
+
+---
+
+## 2026-05-17 — Chapter audit #43: Level Drain
+
+Source: `spoilers/companion.md` line 1972
+~20 mechanic claims verified; 1 corrected; 1 added.
+
+### Verified
+- Drain-attack monster list (vampire family, wraith, barrow wight, Nazgul,
+  hostile incubus/succubus): all AD_DRLI in monsters.h, plus AD_SSEX
+  fallback to AD_DRLI at mhitu.c:333 for hostile demons.
+- Stormbringer in enemy hand drains (artilist DRLI + SPFX_ATTK via mhitm_ad_drli).
+- Drain resistance carriers: Excalibur (Lawful), Stormbringer (Chaotic),
+  Staff of Aesculapius (Healer quest) — all DRLI defense in artilist.h.
+- Black dragon scales/scale mail grant drain resistance (do_wear.c:809-815
+  EDrain_resistance |= W_ARM); also disintegration resistance.
+- Wraith corpse: eat.c:1141 pluslvl(FALSE) grants exactly one experience
+  level; exper.c:349. Weightless (SIZ WT_ETHEREAL=0). Not tinnable
+  (apply.c:2167 tinnable() requires cnutrit > 0; wraith cnutrit = 0).
+- Drained-level HP/power math (exper.c:251-273): losexp subtracts
+  u.uhpinc[u.ulevel] and u.ueninc[u.ulevel] — the exact amounts the
+  player gained at that level.
+- Drained levels do not auto-regenerate (no restoration outside pluslvl).
+
+### Corrected
+1. **"Vampire bats" listed as level drainers** — false. monsters.h:1291-1297
+   gives vampire bat ATTK(AT_BITE, AD_PHYS) and ATTK(AT_BITE, AD_DRST):
+   second bite drains *Strength*, not level. Removed from list and added
+   a brief parenthetical to flag the bat / vampire distinction.
+
+### Added (not error but a 5.0 omission)
+- **Shield of drain resistance** (new in 5.0, objects.h SHIELD_OF_DRAIN_RESISTANCE,
+  do_wear.c). Strange omission given the section explicitly flags black
+  dragon scale mail as new in 5.0. Added it.
+
+### Close calls (not changed)
+- "Drain resistance makes you immune" — true (mhitu.c:2482 short-circuits
+  on Drain_resistance), but the section doesn't mention the 1-in-3 hostile
+  drain chance or magic-cancellation interaction. Reasonable omission for
+  a short section.
+- Other drain-resistance sources not mentioned: lycanthropy (attrib.c:885
+  DRAIN_RES if u.ulycn set) and polyself into resists_drli monster
+  (polyself.c:77 PROPSET). Edge cases.
+
+---
+
+## 2026-05-17 — Chapter audit #44: Rodents `r`
+
+Source: `spoilers/companion.md` line 7487
+48 cells / 6 rows verified against monsters.h:889-936. 1 corrected.
+
+### Verified
+- All 6 rodent rows (sewer rat, giant rat, rabid rat, wererat, rock mole,
+  woodchuck) — complete coverage of S_RODENT in C.
+- All stats (Lvl/Spd/AC/MR/attacks/flags) match. AD_DRCO=drain Con,
+  AD_WERE=lycanthropy, M1_REGEN, M1_TUNNEL, M1_SWIM, MR_POISON all
+  verified per row.
+
+### Corrected
+1. **Woodchuck color shown as `—`** — should be `brown`. monsters.h:936
+   explicitly assigns CLR_BROWN.
+
+### Close calls (not changed)
+- Rock mole notes omit M1_METALLIVORE / M2_JEWELS / M2_GREEDY / M2_COLLECT
+  (eats metal, picks up gems). Borderline omission. Not added; would
+  bloat the table.
+
+---
+
+## 2026-05-17 — Chapter audit #45: Hammer
+
+Source: `spoilers/companion.md` line 6861
+War hammer stats verified clean; 1 corrected; same correction applied
+cross-section.
+
+### Verified
+- War hammer: 1d4+1 / 1d4 (oc_wsdam=4 + tmp++ in weapon.c:271 for small),
+  weight 50, cost 5, iron, one-handed. Matches objects.h:367-369.
+- P_HAMMER skill contains only war hammer (verified by grep). Aklys is
+  P_CLUB, lucern hammer is P_POLEARMS — correctly elsewhere.
+- Mjollnir is the artifact form of war hammer (artilist.h:109).
+
+### Corrected
+1. **"Neutral Valkyrie sacrifice gift"** — wrong implication. artifact.c:92-95
+   hack_artifacts() overwrites the artifact's alignment to match the
+   player's initalign for any Valkyrie. So Mjollnir is a sacrifice gift
+   to *any* Valkyrie (Lawful or Neutral). Reworded.
+
+### Also corrected (cross-section: chargen at line ~242)
+- "**Neutral** Valkyries get **Mjollnir** as a sacrifice gift ... **Lawful**
+  Valkyries can dip for Excalibur instead" — same alignment misconception.
+  Both alignments get Mjollnir; only Lawful can dip for Excalibur
+  (fountain.c:411 requires A_LAWFUL). Reworded to: "Valkyries get
+  Mjollnir as a sacrifice gift regardless of alignment ... Lawful
+  Valkyries can also dip a long sword in a fountain for Excalibur."
+

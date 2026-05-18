@@ -277,13 +277,13 @@ before and want a real challenge. <em>Alignment: Neutral.</em></p>
 and cold resistance. Valkyries are the standard recommendation for newer
 players: strong combat stats, good starting equipment, and cold
 resistance covers one of the dungeon’s more common damage types.
-<strong>Neutral</strong> Valkyries get <strong>Mjollnir</strong> as a
-sacrifice gift — a +d5/+d24 war hammer that doubles as a ranged weapon
-(it returns when thrown at Strength 25). <strong>Lawful</strong>
-Valkyries can dip for Excalibur instead. Mjollnir hits harder; Excalibur
-is easier to acquire. Both are excellent. This is the recommendation for
-your first serious attempt. <em>Alignment: Lawful or Neutral. Female
-only.</em></p>
+Valkyries get <strong>Mjollnir</strong> as a sacrifice gift regardless
+of alignment — a +d5/+d24 war hammer that doubles as a ranged weapon (it
+returns when thrown at Strength 25). <strong>Lawful</strong> Valkyries
+can also dip a long sword in a fountain for Excalibur. Mjollnir hits
+harder; Excalibur is easier to acquire. Both are excellent. This is the
+recommendation for your first serious attempt. <em>Alignment: Lawful or
+Neutral. Female only.</em></p>
 <p><strong>Wizard.</strong> You start with a quarterstaff and a
 spellbook or two. Physical combat is terrible, so spells are the answer:
 fragile early, overwhelming late. Advancing a spell-school skill (new in
@@ -2821,23 +2821,29 @@ one restore ability before pushing into mind flayer territory.</p>
 </section>
 <section id="level-drain" class="level4">
 <h4>Level Drain</h4>
+<!-- audit 2026-05-17 #43: corrected "vampire bats" from drain-life list (their second bite is AD_DRST, drain Strength, not AD_DRLI). Added shield of drain resistance (new in 5.0). Verified wraith corpse mechanic (eat.c:1141 pluslvl), drained-level HP/power math (exper.c:251-273 u.uhpinc/u.ueninc), drain-resistance carriers (artilist + do_wear.c). Fixed awkward "zero nutritional weight" framing (real reason is cnutrit==0). See companion-audit.md. -->
 <p>A recurring theme in the bestiary: certain monsters reduce your
 experience level on a hit, taking the HP and power gains that came with
-each lost level. Wraiths, barrow wights, Nazgul, vampires, vampire bats,
-vampire leaders, and Vlad himself all carry level-drain attacks.
-Stormbringer in an enemy’s hand does the same. So does the bite of a
-hostile incubus or succubus (see Seduction below). Drained levels do not
-come back on their own; you have to kill enough monsters to re-earn
-them.</p>
+each lost level. Wraiths, barrow wights, Nazgul, vampires, vampire
+leaders, and Vlad himself all carry level-drain attacks. Stormbringer in
+an enemy’s hand does the same. So does the bite of a hostile incubus or
+succubus (see Seduction below). Drained levels do not come back on their
+own; you have to kill enough monsters to re-earn them.</p>
+<p>(Don’t confuse drain-life with <em>Strength</em> drain: a vampire
+bat’s second bite drains Str, not levels. Stat drain is a separate
+problem and the section on <em>Enchantment Drain</em> covers its
+cousin.)</p>
 <p><strong>Defenses:</strong> <em>Drain resistance</em> makes you
 immune. The classic sources are wielding Excalibur (Lawful),
 Stormbringer (Chaotic), or the Staff of Aesculapius (Healer’s quest
-artifact), or (new in 5.0) wearing <strong>black dragon scale
-mail</strong> (disintegration resistance plus drain resistance, both in
-one slot). Eating a fresh wraith corpse restores one experience level
-and is one of the better reasons to keep one fresh; wraith corpses weigh
-nothing and can’t be tinned (zero nutritional weight), so eat them as
-soon as the fight ends.</p>
+artifact). New in 5.0: wearing <strong>black dragon scale mail</strong>
+(disintegration resistance plus drain resistance, both in one slot) or a
+<strong>shield of drain resistance</strong> (random shop find, no other
+property).</p>
+<p>Eating a fresh wraith corpse restores one experience level and is one
+of the better reasons to keep one fresh; wraith corpses are weightless
+and can’t be tinned (no nutrition), so eat them as soon as the fight
+ends.</p>
 </section>
 <section id="enchantment-drain" class="level4">
 <h4>Enchantment Drain</h4>
@@ -9791,6 +9797,7 @@ one-hander.</td>
 </section>
 <section id="hammer" class="level4">
 <h4>Hammer</h4>
+<!-- audit 2026-05-17 #45: war hammer stats verified vs objects.h:367-369 + weapon.c. Mjollnir note corrected: "Neutral Valkyrie sacrifice gift" wrongly implied alignment restriction. hack_artifacts at artifact.c:92-95 fixes the artifact's alignment to match player's initalign, so any Valkyrie can receive Mjollnir. Same wording fix applied at line ~242. See companion-audit.md. -->
 <div class="dense-table">
 <table>
 <colgroup>
@@ -9821,8 +9828,8 @@ one-hander.</td>
 <td>5</td>
 <td>—</td>
 <td>iron</td>
-<td>Mjollnir is the artifact form (Neutral Valkyrie sacrifice
-gift).</td>
+<td>Mjollnir is the artifact form (Valkyrie sacrifice gift; alignment
+fixed up to match the player).</td>
 </tr>
 </tbody>
 </table>
@@ -9869,13 +9876,15 @@ gift).</td>
 </section>
 <section id="polearms" class="level4">
 <h4>Polearms</h4>
-<p>All polearms are two-handed and have a reach of two squares
-(<code>#apply</code> the weapon to strike a target one tile away from
-you, with one empty intervening square). They can’t be used in melee
-against an adjacent monster — the haft gets in the way — which means you
-switch weapons or use the polearm’s reach attack, not both. Notes below
-describe each entry’s extra damage; the reach mechanic is identical
-across the class.</p>
+<!-- audit 2026-05-17 #41: 12 rows / stats verified against objects.h + weapon.c dmgval. Corrected: "reach of two squares" was a class invariant claim (actually skill-dependent in apply.c:3355-3382); "with one empty intervening square" was fabricated (no such check in use_pole); "can't be used in melee against an adjacent monster" was wrong (adjacent attack works as bashing per uhitm.c:1467-1484, just without strength/skill bonus). See companion-audit.md. -->
+<p>All polearms are two-handed. To strike at range, <code>#apply</code>
+the weapon (not wield-and-attack): you can hit at distance 2
+orthogonally at Basic skill, with extra positions opening up at Skilled.
+You can still hit an adjacent monster the normal way with a polearm in
+hand, but the attack is treated as bashing (no strength bonus, no
+weapon-skill bonus), so reach is what makes them worth carrying. Notes
+below describe each entry’s extra damage; the reach mechanic is
+identical across the class.</p>
 <div class="dense-table">
 <table>
 <colgroup>
@@ -13038,6 +13047,7 @@ Mumakil are slow but extremely sturdy.</p>
 </section>
 <section id="rodents-r" class="level4">
 <h4>Rodents <code>r</code></h4>
+<!-- audit 2026-05-17 #44: 48 cells / 6 rows verified against monsters.h:889-936. 1 corrected (woodchuck color was —, should be brown per CLR_BROWN at L936). See companion-audit.md. -->
 <p>Mostly nuisance fodder. Giant rats are common in the early dungeon;
 their corpses are safe food.</p>
 <div class="dense-table">
@@ -13117,7 +13127,7 @@ their corpses are safe food.</p>
 </tr>
 <tr>
 <td>woodchuck</td>
-<td>—</td>
+<td>brown</td>
 <td>3</td>
 <td>3</td>
 <td>0</td>
