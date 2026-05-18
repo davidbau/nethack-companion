@@ -7228,17 +7228,18 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 
 :::
 
+<!-- audit 2026-05-18 #169: all 5 rows verified clean vs objects.h:215-233 (P_KNIFE skill; scalpel METAL, knife/stiletto IRON, worm tooth/crysknife BONE). Added Healer's-starter note for scalpel (u_init.c:77). Rewrote crysknife note: "polymorphs" → "reverts" (type-id swap path at do.c:903-918, not poly machinery); a fixed (erodeproof) crysknife only reverts on ~10% of drops (do.c:911). See companion-audit.md. -->
 #### Knife
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| scalpel | 1d3 / 1d3 | 5 | 6 | +2 | metal |  |
+| scalpel | 1d3 / 1d3 | 5 | 6 | +2 | metal | The Healer's starter. |
 | knife | 1d3 / 1d2 | 5 | 4 | — | iron |  |
 | stiletto | 1d3 / 1d2 | 5 | 4 | — | iron |  |
 | worm tooth | 1d2 / 1d2 | 20 | 2 | — | bone |  |
-| crysknife | 1d10 / 1d10 | 20 | 100 | +3 | bone | Polymorphs back to a worm tooth when dropped; keep it equipped or buried. |
+| crysknife | 1d10 / 1d10 | 20 | 100 | +3 | bone | Reverts to a worm tooth when dropped. Keep it wielded; a fixed (erodeproof) crysknife reverts on only ~10% of drops. |
 
 :::
 
@@ -8195,6 +8196,7 @@ Pack hunters with mediocre loot but real numbers. The Mines are full of them; br
 
 :::
 
+<!-- audit 2026-05-18 #168: 3 rows (rock/iron/glass) verified clean vs monsters.h:800-826. All carry M1_HIDE | M1_CLING so qualify as ceiling-hiders (mondata.h:43-45); hiding gated by has_ceiling (mon.c:4672). Drop-on-walk-under is d(4,6) for ALL species regardless of bite die (hack.c:3436). Glass piercer has MR_ACID. 0 corrections. See companion-audit.md. -->
 #### Piercers `p`
 
 Clings to the ceiling and drops on you when you walk under. Hits hard for its level; you can't avoid the drop without flying or a clear ceiling.
@@ -8753,9 +8755,10 @@ All trolls regenerate and follow you up and down stairs.
 
 :::
 
+<!-- audit 2026-05-18 #166: row stats and M1_TUNNEL verified vs monsters.h:2267-2277. Removed wrong "free action" defense — Free_action is checked only against paralysis, holding, and sleep (mhitu.c grep); AD_CONF at mhitu.c:1759-1777 makes no Free_action check. Blindness still works (gaze gated by mcanseeu at mhitu.c:1681-1682). See companion-audit.md. -->
 #### Umber hulks `U`
 
-Confusion gaze. Don't melee without blindness or free action; the confusion stacks and makes spellcasting impossible.
+Confusion gaze. Don't melee without some way to dodge the gaze — blindness defeats it (the gaze requires mutual sight); free action does *not* (it covers paralysis, holding, and sleep, never confusion). The confusion stacks and makes spellcasting impossible.
 
 ::: dense-table
 
@@ -8945,20 +8948,21 @@ The catch-all `@` class: shopkeepers, priests, watchmen, role nemeses, quest lea
 
 :::
 
+<!-- audit 2026-05-18 #167: stats/colors/attacks for the full roster verified vs monsters.h:2911-3194. Two corrections: erinys does follow stairs (M2_STALK at monsters.h:2958 — every row in this table carries M2_STALK), so the "except erinys" qualifier is bogus. Amorous demon's displayed form depends on the demon's own randomly-assigned gender (doseduce at mhitu.c:1988-1989 reads Mgender(mon)), not the player's. balrog and amorous demon don't summon (mhitu.c:967). See companion-audit.md. -->
 #### Major demons `&`
 
 Major demons. Most can gate in reinforcements (a single barbed devil in your face can become five). Silver weapons and Demonbane do extra damage. Demon lords can be bribed with gold to leave.
 
-All except *erinys* also follow you up and down stairs.
+They all follow you up and down stairs.
 
 ::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | water demon | blue | 8 | 12 | -4 | 30 | weapon 1d3 · claw 1d3 · bite 1d3 | swims, poisonous-corpse, demonic. |
-| [amorous demon](#seduction) | gray | 6 | 12 | 0 | 70 | seduction (see Seduction) | flies, poisonous-corpse, demonic. Displays as succubus (to male PCs) or incubus (to female PCs). |
+| [amorous demon](#seduction) | gray | 6 | 12 | 0 | 70 | seduction (see Seduction) | flies, poisonous-corpse, demonic. Displays as succubus or incubus by the demon's own randomly-assigned gender. |
 | horned devil | brown | 6 | 9 | -5 | 50 | weapon 1d4 · claw 1d4 · bite 2d3 · sting 1d3 | poisonous-corpse, demonic. |
-| erinys | — | 7 | 12 | 2 | 30 | — | (no follows stairs) |
+| erinys | red | 7 | 12 | 2 | 30 | weapon 2d4 Str-drain | fire-res, pois-res. Variable attacks; can be amplified by alignment abuse. |
 | barbed devil | red | 8 | 12 | 0 | 35 | claw 2d4 · claw 2d4 sticky · sting 3d4 | poisonous-corpse, demonic. |
 | marilith | red | 7 | 12 | -6 | 80 | weapon 2d4 · weapon 2d4 · claw 2d4 · claw 2d4 · claw 2d4 · claw 2d4 | sees-invis, poisonous-corpse, demonic. |
 | vrock | green | 8 | 12 | 0 | 50 | claw 1d4 · claw 1d4 · claw 1d8 · claw 1d8 · bite 1d6 | poisonous-corpse, demonic. |

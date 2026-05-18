@@ -9880,6 +9880,7 @@ enchantment, the way other weapons must.</td>
 </tbody>
 </table>
 </div>
+<!-- audit 2026-05-18 #169: all 5 rows verified clean vs objects.h:215-233 (P_KNIFE skill; scalpel METAL, knife/stiletto IRON, worm tooth/crysknife BONE). Added Healer's-starter note for scalpel (u_init.c:77). Rewrote crysknife note: "polymorphs" → "reverts" (type-id swap path at do.c:903-918, not poly machinery); a fixed (erodeproof) crysknife only reverts on ~10% of drops (do.c:911). See companion-audit.md. -->
 </section>
 <section id="knife" class="level4">
 <h4>Knife</h4>
@@ -9913,7 +9914,7 @@ enchantment, the way other weapons must.</td>
 <td>6</td>
 <td>+2</td>
 <td>metal</td>
-<td></td>
+<td>The Healer’s starter.</td>
 </tr>
 <tr>
 <td>knife</td>
@@ -9949,8 +9950,8 @@ enchantment, the way other weapons must.</td>
 <td>100</td>
 <td>+3</td>
 <td>bone</td>
-<td>Polymorphs back to a worm tooth when dropped; keep it equipped or
-buried.</td>
+<td>Reverts to a worm tooth when dropped. Keep it wielded; a fixed
+(erodeproof) crysknife reverts on only ~10% of drops.</td>
 </tr>
 </tbody>
 </table>
@@ -14817,6 +14818,7 @@ of them; bring a chokepoint.</p>
 </tbody>
 </table>
 </div>
+<!-- audit 2026-05-18 #168: 3 rows (rock/iron/glass) verified clean vs monsters.h:800-826. All carry M1_HIDE | M1_CLING so qualify as ceiling-hiders (mondata.h:43-45); hiding gated by has_ceiling (mon.c:4672). Drop-on-walk-under is d(4,6) for ALL species regardless of bite die (hack.c:3436). Glass piercer has MR_ACID. 0 corrections. See companion-audit.md. -->
 </section>
 <section id="piercers-p" class="level4">
 <h4>Piercers <code>p</code></h4>
@@ -17448,11 +17450,14 @@ when you come back.</p>
 </tbody>
 </table>
 </div>
+<!-- audit 2026-05-18 #166: row stats and M1_TUNNEL verified vs monsters.h:2267-2277. Removed wrong "free action" defense — Free_action is checked only against paralysis, holding, and sleep (mhitu.c grep); AD_CONF at mhitu.c:1759-1777 makes no Free_action check. Blindness still works (gaze gated by mcanseeu at mhitu.c:1681-1682). See companion-audit.md. -->
 </section>
 <section id="umber-hulks-u" class="level4">
 <h4>Umber hulks <code>U</code></h4>
-<p>Confusion gaze. Don’t melee without blindness or free action; the
-confusion stacks and makes spellcasting impossible.</p>
+<p>Confusion gaze. Don’t melee without some way to dodge the gaze —
+blindness defeats it (the gaze requires mutual sight); free action does
+<em>not</em> (it covers paralysis, holding, and sleep, never confusion).
+The confusion stacks and makes spellcasting impossible.</p>
 <div class="dense-table">
 <table>
 <colgroup>
@@ -18672,13 +18677,14 @@ Bow user.</td>
 </tbody>
 </table>
 </div>
+<!-- audit 2026-05-18 #167: stats/colors/attacks for the full roster verified vs monsters.h:2911-3194. Two corrections: erinys does follow stairs (M2_STALK at monsters.h:2958 — every row in this table carries M2_STALK), so the "except erinys" qualifier is bogus. Amorous demon's displayed form depends on the demon's own randomly-assigned gender (doseduce at mhitu.c:1988-1989 reads Mgender(mon)), not the player's. balrog and amorous demon don't summon (mhitu.c:967). See companion-audit.md. -->
 </section>
 <section id="major-demons" class="level4">
 <h4>Major demons <code>&amp;</code></h4>
 <p>Major demons. Most can gate in reinforcements (a single barbed devil
 in your face can become five). Silver weapons and Demonbane do extra
 damage. Demon lords can be bribed with gold to leave.</p>
-<p>All except <em>erinys</em> also follow you up and down stairs.</p>
+<p>They all follow you up and down stairs.</p>
 <div class="dense-table">
 <table>
 <colgroup>
@@ -18722,8 +18728,8 @@ damage. Demon lords can be bribed with gold to leave.</p>
 <td>0</td>
 <td>70</td>
 <td>seduction (see Seduction)</td>
-<td>flies, poisonous-corpse, demonic. Displays as succubus (to male PCs)
-or incubus (to female PCs).</td>
+<td>flies, poisonous-corpse, demonic. Displays as succubus or incubus by
+the demon’s own randomly-assigned gender.</td>
 </tr>
 <tr>
 <td>horned devil</td>
@@ -18737,13 +18743,14 @@ or incubus (to female PCs).</td>
 </tr>
 <tr>
 <td>erinys</td>
-<td>—</td>
+<td>red</td>
 <td>7</td>
 <td>12</td>
 <td>2</td>
 <td>30</td>
-<td>—</td>
-<td>(no follows stairs)</td>
+<td>weapon 2d4 Str-drain</td>
+<td>fire-res, pois-res. Variable attacks; can be amplified by alignment
+abuse.</td>
 </tr>
 <tr>
 <td>barbed devil</td>
@@ -19734,8 +19741,8 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
 (function() {
   // --- Icons for sections that include a figure ---
   var sectionIcons = {
-    'the-lay-of-the-land': '<svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true" style="flex:none;margin-right:0.4em;vertical-align:-1px;"><path d="M1 3 L5 2 L9 3.5 L13 2 L13 11 L9 12.5 L5 11 L1 12 Z"/><line x1="5" y1="2" x2="5" y2="11"/><line x1="9" y1="3.5" x2="9" y2="12.5"/></svg>',
-    'a-practical-identification-strategy': '<svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true" style="flex:none;margin-right:0.4em;vertical-align:-1px;"><rect x="2" y="1" width="10" height="3"/><rect x="2" y="5" width="10" height="3"/><rect x="2" y="9" width="10" height="3"/><line x1="7" y1="4" x2="7" y2="5"/><line x1="7" y1="8" x2="7" y2="9"/></svg>'
+    'the-lay-of-the-land': '<svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true" style="flex:none;margin-left:0.4em;vertical-align:-1px;"><path d="M1 3 L5 2 L9 3.5 L13 2 L13 11 L9 12.5 L5 11 L1 12 Z"/><line x1="5" y1="2" x2="5" y2="11"/><line x1="9" y1="3.5" x2="9" y2="12.5"/></svg>',
+    'a-practical-identification-strategy': '<svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true" style="flex:none;margin-left:0.4em;vertical-align:-1px;"><rect x="2" y="1" width="10" height="3"/><rect x="2" y="5" width="10" height="3"/><rect x="2" y="9" width="10" height="3"/><line x1="7" y1="4" x2="7" y2="5"/><line x1="7" y1="8" x2="7" y2="9"/></svg>'
   };
 
   // --- Build TOC from headings ---

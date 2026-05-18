@@ -5893,3 +5893,115 @@ Source: `spoilers/companion.md` line 966. 2 corrections.
   players. Left out to keep the section terse.
 
 ---
+
+## 2026-05-18 — Chapter audit #166: Umber hulks `U`
+
+Source: `spoilers/companion.md` line 8756. 1 correction.
+
+### Wrong → fixed
+- **"Don't melee without blindness or free action"**: Free Action does
+  NOT block AD_CONF. A grep across `src/*.c` shows `Free_action` is
+  only checked against paralysis, holding, and sleep; AD_CONF in
+  `mhitu.c:1759-1777` makes no Free_action check. Blindness still
+  works because the gaze is gated by `mcanseeu` (mhitu.c:1681-1682)
+  which requires mutual sight. Reworded to spell out that free
+  action doesn't help.
+
+### Verified
+- Row stats match monsters.h:2267-2277: L9, Spd 6, AC 2, MR 25,
+  brown, claw 3d4 · claw 3d4 · bite 2d5 · gaze confuse (AT_GAZE,
+  AD_CONF, 0, 0).
+- M1_TUNNEL set (monsters.h:2275); mon.c:2073 grants ALLOW_DIG
+  (mon.c:2096-2097), so they can dig through walls.
+- Confusion stacks: make_confused(HConfusion + conf, FALSE) at
+  mhitu.c:1768-1773 with `conf = d(3, 4)`.
+
+---
+
+## 2026-05-18 — Chapter audit #167: Major demons `&`
+
+Source: `spoilers/companion.md` line 8949. 2 corrections.
+
+### Wrong → fixed
+- **"All except erinys also follow you up and down stairs"**: erinys
+  carries M2_STALK (monsters.h:2958) and does follow. In fact every
+  row in this section carries M2_STALK, so the qualifier is unsup-
+  ported. Rewrote to "They all follow you up and down stairs." The
+  erinys row's "(no follows stairs)" note was also dropped; the row
+  also had "—" for color and attacks where the C source clearly says
+  CLR_RED with AT_WEAP/AD_DRST 2d4 — fixed both.
+- **Amorous demon "Displays as succubus (to male PCs) or incubus
+  (to female PCs)"**: form is determined by the demon's own randomly-
+  assigned gender (Mgender(mon) at mhitu.c:1988-1989), not by the
+  player's gender. Reworded to match the Seduction section (audit
+  #33's earlier finding).
+
+### Verified
+- Roster stats verified against monsters.h:2911-3194 for every row.
+- M2_PRINCE princes (Orcus 3086, Geryon 3097, Dispater 3107,
+  Baalzebub 3117, Asmodeus 3127, Demogorgon 3138). Yeenoghu/Juiblex
+  are M2_LORD (3064, 3075).
+- Riders excluded from M2_DEMON (lines 3151/3161/3171) so Demonbane
+  bonus + bribery don't apply — table correctly lists them with the
+  "Rider" note elsewhere.
+- Lord Surtur is S_GIANT (monsters.h:3749), correctly excluded from
+  `&`.
+- Bribery prose accuracy: minion.c:267-276 (Demonbane disable),
+  cross-alignment halves demand, money_cnt skips containers.
+
+### Close calls
+- balrog and amorous demon don't summon (mhitu.c:967). Not surfaced
+  in the table — could be added.
+
+---
+
+## 2026-05-18 — Chapter audit #168: Piercers `p`
+
+Source: `spoilers/companion.md` line 8199. No corrections.
+
+### Verified
+- 3 rows match monsters.h:800-826: rock (L3/Spd1/AC3/bite 2d6, gray),
+  iron (L5/Spd1/AC0/bite 3d6, cyan), glass (L7/Spd1/AC0/bite 4d6,
+  white, MR_ACID).
+- All three carry `M1_HIDE | M1_CLING`, qualifying as ceiling-hiders
+  (mondata.h:43-45).
+- Hiding gated by `has_ceiling(&u.uz)` at mon.c:4672 — they can't
+  hide on ceiling-less levels like Plane of Air.
+- Drop-on-walk-under at hack.c:3417-3441; the drop damage is `d(4,6)`
+  for ALL species regardless of the AT_BITE die (rock's drop is 4d6,
+  not 2d6).
+
+### Notes
+- Re-hiding: piercers can `restrap()` when unwatched (mon.c:1286-1294,
+  4662-4689), gated by `rn2(3)` plus the ceiling check. Not currently
+  in the row notes; could be added.
+
+---
+
+## 2026-05-18 — Chapter audit #169: Knife
+
+Source: `spoilers/companion.md` line 7231. 0 numeric corrections; 2
+content additions.
+
+### Added
+- Scalpel Notes: "The Healer's starter." (u_init.c:77).
+- Crysknife note rewritten: "polymorphs" → "reverts" (in-game
+  message at do.c:905 is the type-id swap path, not poly). Added
+  that an erodeproof crysknife only reverts on ~10% of drops
+  (do.c:911) — the canonical preservation play.
+
+### Verified
+- All 5 rows match objects.h:215-233 (P_KNIFE skill):
+  - scalpel: prob=0, wt=5, cost=6, 1d3/1d3, +2 hit, METAL.
+  - knife: prob=20, wt=5, cost=4, 1d3/1d2, hit=0, IRON.
+  - stiletto: prob=5, wt=5, cost=4, 1d3/1d2, hit=0, IRON.
+  - worm tooth: prob=0, wt=20, cost=2, 1d2/1d2, hit=0, BONE.
+  - crysknife: prob=0, wt=20, cost=100, 1d10/1d10, +3, BONE.
+- Crysknife→worm tooth swap on drop: `obj_no_longer_held` at
+  do.c:903-918 switches `otyp` (not poly machinery). Wielded ones
+  don't trigger this. Worm-tooth → crysknife fusion on enchant at
+  wield.c:951-956.
+- Athame is correctly NOT in this section — it's P_DAGGER skill
+  (objects.h:213) and lives in the Dagger table.
+
+---

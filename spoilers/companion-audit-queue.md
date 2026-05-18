@@ -170,10 +170,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#163**  L 6668  (  13 lines)   ↳ Weapons Tables → Short sword
 - [x] **#164**  L  930  (  17 lines)   ↳ Branches and Landmarks → The Oracle
 - [x] **#165**  L 6857  (  10 lines)   ↳ Weapons Tables → Lance
-- [ ] **#166**  L 7895  (  12 lines)   ↳ Bestiary Tables → Umber hulks `U`
-- [ ] **#167**  L 8074  (  42 lines)   ↳ Bestiary Tables → Major demons `&`
-- [ ] **#168**  L 7377  (  16 lines)   ↳ Bestiary Tables → Piercers `p`
-- [ ] **#169**  L 6654  (  14 lines)   ↳ Weapons Tables → Knife
+- [x] **#166**  L 7895  (  12 lines)   ↳ Bestiary Tables → Umber hulks `U`
+- [x] **#167**  L 8074  (  42 lines)   ↳ Bestiary Tables → Major demons `&`
+- [x] **#168**  L 7377  (  16 lines)   ↳ Bestiary Tables → Piercers `p`
+- [x] **#169**  L 6654  (  14 lines)   ↳ Weapons Tables → Knife
 - [ ] **#170**  L  323  (  49 lines) 📖 What to Pack
 - [ ] **#171**  L 7262  (  19 lines)   ↳ Bestiary Tables → Imps and minor demons `i`
 - [ ] **#172**  L 1827  (  37 lines)   ↳ Dangerous Encounters → Petrification (Stoning)
