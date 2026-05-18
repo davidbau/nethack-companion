@@ -1540,7 +1540,7 @@ AC / attack details on every monster, see the
 | ------ | ---------------------- | -------------------------------------------------------------------------- |
 | `a`    | Ants      | **Soldier ants are the famous early killer**: speed 18, two attacks per turn (bite + strength-draining sting), and they travel in packs. A wandering soldier-ant group on Dlvl 4 can end a careless run. Killer bees, giant ants, fire ants are all the same shape of problem. |
 | `b`    | Blobs     | Acidic or gelatinous. Acid blobs have no active attack — they only splash 1d8 acid back when *you* hit *them*, and the splash can corrode your weapon. Kill at range, or walk past. |
-| `B`    | Bats      | The `B` class is **deceptively dangerous because of speed**. Bats and giant bats clock in at speed 22 — nearly twice the player's base 12, so they get roughly two bites per one of your swings. Giant bats bite for 1d6 each; the math catches up fast. Vampire bats are vampire-class and drain levels on top of being fast. |
+| `B`    | Bats      | The `B` class is **deceptively dangerous because of speed**. Bats and giant bats clock in at speed 22 — nearly twice the player's base 12, so they get roughly two bites per one of your swings. Giant bats bite for 1d6 each; the math catches up fast. Vampire bats are still in the bat class but their second bite drains Strength (not levels). |
 | `d`    | Dogs and other canines | The `d` class covers your starting pet (little dog, kitten via cat-class) **and** the most numerous early-game predators. **Jackals** are the single most common cause of death on the public server — they only bite for 1d2, but they spawn in packs and there are a *lot* of them on the upper levels. **Foxes** bite for 1d3 and are faster (speed 15) but spawn alone. Coyotes, dingos, wolves get progressively worse. Tame `d` (your pet, larger dogs you've fed up) help fight everything else. |
 | `e`    | Eyes      | **Floating eyes paralyze on melee hit.** Never hit an `e` in melee. Use ranged attacks. Spheres (flaming/freezing/shocking) explode in a 3×3 area in 5.0; kill them at range. Melee finishes them but you eat the blast. |
 | `f`    | Cats      | Like dogs, often starting pets. Felines can be tamed with tripe.                        |
@@ -1560,25 +1560,25 @@ AC / attack details on every monster, see the
 | Symbol | Class             | Notes                                                                                                |
 | ------ | ----------------- | ---------------------------------------------------------------------------------------------------- |
 | `A`    | Angels            | Powerful, usually aligned. Don't fight your own.                                                     |
-| `C`    | Centaurs          | Fast archers who now back away when you approach to maintain range. Use corners to cut off their retreat. Mountain centaurs are the worst. |
+| `C`    | Centaurs          | Fast (speed 18-20) and half of them spawn with a bow or crossbow. They have no kiting AI, so they close into melee for weapon + kick attacks. Mountain centaurs hit hardest: 1d10 weapon plus *two* 1d6 kicks per turn. |
 | `E`    | Elementals        | Hard to kill. Air elementals engulf; earth elementals phase through walls.                           |
 | `f`    | Displacer beast   | Cat-class, but vicious: three-attack heavy melee with a permanent displacement aura. Eat the corpse for temporary displacement of your own. |
 | `F`    | Fungi             | Yellow mold, green mold, shriekers. Shriekers summon other monsters.                                 |
 | `G`    | Gnome lords/kings | Tougher gnomes. Still fairly manageable.                                                             |
 | `'`    | Golems            | Built things. Iron golems hit hard and resist nearly everything; clay, stone, and wood golems are softer. Glass golems leave gems on death. |
 | `H`    | Giants            | Strong melee, throw boulders. Giants carry gems.                                                     |
-| `J`    | Jabberwock        | Rare, but if you see one you're in for a fight. Two big claw-attacks per turn, fast, and aggressive. |
+| `J`    | Jabberwock        | Rare, but if you see one you're in for a fight. Four 2d10 attacks per turn (two bites and two claws) at normal speed. |
 | `K`    | Keystone Kops     | The shopkeeper-summoned constabulary. They appear when you steal, refuse to pay, or anger a shopkeeper. Individually weak but they swarm, and they jeer at you. |
 | `l`    | Leprechauns       | Steal your gold and teleport away. If you'd rather not lose 100zm at a time, fight at range or skip them. |
 | `L`    | Liches            | Spellcasters. Arch-liches are among the most dangerous monsters in the game.                         |
 | `m`    | Mimics            | Disguised as items, walls, doors, fountains, altars, or boulders. See the mimics note below.         |
 | `M`    | Mummies           | Aggressive undead with physical claw attacks. Their corpses are dangerous to eat (age you). Mummy wrappings worn as a cloak block invisibility — usually a downside, but useful if you've gone invisible and need a shopkeeper to interact with you. |
 | `n`    | Nymphs            | Steal items from your inventory, then teleport away. Fight from range.                               |
-| `N`    | Nagas             | Large serpent-bodied creatures. Poisonous nagas spit poison; black nagas spit acid. Tough and slow. |
+| `N`    | Nagas             | Large serpent-bodied creatures. Red nagas breathe fire, black nagas spit acid, golden nagas cast spells, guardian nagas spit Str-drain poison and have a paralyzing bite. Tough; speeds 12–16. |
 | `O`    | Ogres             | Strong melee fighters. Ogre lords and kings are tougher.                                             |
 | `p`    | Piercers          | Disguise as stalactites; drop from the ceiling onto whatever walks below. The fall does serious damage. Hard to spot in advance. |
 | `P`    | Puddings          | Black puddings split when hit with iron weapons. Don't use iron.                                     |
-| `q`    | Quadrupeds        | Three- and four-attack mid-game bruisers. The **rothe** is the famous one (three attacks per turn, fast); mumakil hit hard but slow.                              |
+| `q`    | Quadrupeds        | Three- and four-attack mid-game bruisers. The **rothe** is the famous one (three attacks per turn at sluggish speed 9, dangerous in packs); mumakil hit hard but slow.                              |
 | `R`    | Rust monster / disenchanter | Rust monsters corrode iron weapons and armor on contact; keep iron gear off when fighting them or wear an oilskin sack near them. **Disenchanters** drain enchantment on hit and have their own write-up under Dangerous Encounters. |
 | `S`    | Snakes            | Cobras and pit vipers poison. Water moccasins come from fountains.                                   |
 | `t`    | Trappers / lurkers above | Hide in plain sight on floor or ceiling and engulf you when you walk under/onto them. See the engulfment write-up under Dangerous Encounters. |
@@ -1599,7 +1599,7 @@ AC / attack details on every monster, see the
 | ------ | ---------------- | -------------------------------------------------------------------------------------------------------- |
 | `c`    | Cockatrices      | **Touch = instant petrification.** Never hit one barehanded. Wield their corpse with gloves as a weapon. |
 | `D`    | Dragons          | Each color has its own breath weapon, resistance, and scale mail property. See note below.               |
-| `h`    | Mind flayers     | Drain intelligence on hit. **If Int reaches 0, you die.** Keep distance or kill fast.                    |
+| `h`    | Mind flayers     | Drain intelligence on hit. **If Int hits your racial minimum (3 for humans), you die.** Keep distance or kill fast.                    |
 | `V`    | Vampires         | Drain levels. Vampire lords fly and are fast.                                                            |
 | `w`    | Purple worms     | The big worm: swallows you whole on a hit, then digests. Cut your way out from inside.                  |
 | `X`    | Xorn             | Phases through walls and floors. Three claws and a bite per turn; hard to ambush and hard to escape from. |
