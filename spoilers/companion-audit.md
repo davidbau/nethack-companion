@@ -1736,3 +1736,115 @@ Verified ~25 claims; 4 corrected; close calls addressed.
 5. **"Spell of charm monster tames a single adjacent creature"** — WRONG. read.c:2236 routes SCR_TAMING AND SPE_CHARM_MONSTER through identical seffect_taming(). Same 3×3 radius (5×5 confused). Reworded to mention both routing to the same multi-target handler.
 
 6. **"Only unique monsters (Medusa, the Wizard) and a few special creatures resist your charms entirely"** — misleading. tamedog() at dog.c:1240 has a large exclusion list: all humans (priests, watchmen, soldiers, kings, shopkeepers), quest leaders, the Wizard (covetous), all covetous monsters, demons, shopkeepers, vault guards, priests, minions. Expanded the list.
+
+---
+
+## 2026-05-17 — Chapter audit #38: Saber
+
+Source: `spoilers/companion.md` line 6751
+Verified 10 table cells; 1 corrected.
+
+### Verified
+- Saber base damage 1d8/1d8, weight 40, cost 75, slash damage.
+- Silver bonus damage vs demons/weres/vampires/imps (artifact.c silver test).
+
+### Corrected
+1. **Silver saber notes** — listed only Werebane as the silver-saber artifact.
+   Grayswandir is the more famous one (Lawful, +5 to-hit, hallucination
+   resistance). Added Grayswandir to the notes column.
+
+---
+
+## 2026-05-17 — Chapter audit #39: The Quest
+
+Source: `spoilers/companion.md` line 951
+Verified 8 role/artifact/nemesis pairs + entry mechanics; 1 corrected.
+
+### Verified
+- Quest portal dlvl 11-16 (dungeon.lua chainlevel="oracle" base=6 range=2; Oracle base=5 range=5).
+- XP-level 14 entry requirement (include/quest.h MIN_QUEST_LEVEL; quest.c not_capable).
+- Leader on first Quest level (qstart_level / Is_qstart).
+- Val/Wiz/Tou/Sam/Mon role-artifact-nemesis triples (role.c + artilist.h confirmed).
+- Bell of Opening drops from every MS_NEMESIS via makemon.c:1378 mitem + mon.c:2779 relobj on death.
+- Alignment-record gate (quest.c is_pure/chat_with_leader: u.ualign.record < MIN_QUEST_ALIGN (20) → badalign + expulsion(FALSE); converted alignment → banished).
+
+### Corrected
+1. **"Most provide magic resistance, which you need"** — wrong. Of the 12
+   living quest artifacts in artilist.h, only the Tourist's Platinum
+   Yendorian Express Card grants carried MR. A few others (Sceptre of
+   Might, Eye of the Aethiopica) block magic only when wielded/worn.
+   Most quest artifacts give other intrinsics: luck, stealth, ESP,
+   warning, reflection, protection. Rewrote the paragraph to be honest
+   about the variety.
+
+### Close calls (not corrected; phrasing reasonable as-is)
+- "Quest artifact lands on the floor at their square" — really it was
+  pre-placed by level gen at the same square; the Bell is genuinely
+  dropped. End-state is what the spoiler describes.
+- "If you leave the floor without them, the Quest is the only place
+  in the game you can get them" — true on respawn, but you can re-enter
+  the Quest later: expulsion(FALSE) doesn't seal the portal. Covetous
+  monsters can pick up the Bell. Wording reads slightly more terminal
+  than the actual mechanic. Left as-is for now.
+
+---
+
+## 2026-05-17 — Chapter audit #40: Ants and insects `a`
+
+Source: `spoilers/companion.md` line 7189
+Verified 48 cells across 6 rows. No corrections.
+
+All entries match monsters.h:89-133 exactly: stats, attacks, AC,
+resistances, special notes for fire ant (FF), giant beetle, killer
+bee (sleep poison), soldier ant (poison + AC -4), queen bee
+(MM_FEMALE only).
+
+---
+
+## 2026-05-17 — Chapter audit #42: The Displacer Beast
+
+Source: `spoilers/companion.md` line 2185
+Major rewrite. The original premise was wrong from start to finish.
+
+### Verified
+- `f` class (S_FELINE), CLR_BLUE, AC -10, three attacks (4d4 / 4d4 / 2d10)
+  — monsters.h:437-444.
+- 5.0 addition (not in 3.7 monst.c).
+- Eating corpse grants temporary intrinsic Displacement via
+  `incr_itimeout(&HDisplaced, d(6, 6))` — eat.c:1265-1268. Only
+  intrinsic Displacement source in the game (HDisplaced set nowhere else).
+- Displacer beasts SEE THROUGH the player's Displaced intrinsic
+  (monmove.c:2218 `notthere = Displaced && data != PM_DISPLACER_BEAST`).
+  They are *anti*-displacement.
+
+### Corrected — major
+1. **Entire "image-offset / swing at empty floor" premise was wrong.**
+   The prior version described the displacer beast as having
+   cloak-of-displacement style permanent image displacement. It does
+   not. Its flag is `M3_DISPLACES` ("moves monsters out of its way"
+   — monflag.h:175), a barge-through ability. The actual mechanic
+   when the player melees it is hack.c:1972: 50% chance the beast
+   **swaps places with you** instead of taking the hit (no attack
+   happens, you've been yanked one square). There is no image-offset,
+   no per-turn reshuffle, no "misses against an image."
+
+2. **"See invisible does not help; the beast isn't invisible, it's
+   displaced."** False premise — not displaced in that sense.
+
+3. **"Until the displacement is broken (a successful melee hit, or a
+   sense that ignores sight), expect misses that look correct."**
+   No such mechanic exists. Displacer-beast melee misses aren't a thing.
+
+4. **"What works" list (area-effect spells, scrolls of fire, etc.)**
+   was framed as workarounds for the non-existent image. Rewritten to
+   focus on the actual issue: ranged attacks bypass the swap entirely.
+
+5. **Bestiary table row at line 1580** had the same false "permanent
+   displacement aura" claim. Rewrote to describe the 50% place-swap.
+
+### Notes
+- The genuinely useful spoiler content (corpse grants intrinsic
+  Displacement) survives the rewrite. Added tactical implication of
+  the swap: it can pull you off Elbereth, out of a doorway, onto a
+  trap, or into worse adjacency.
+

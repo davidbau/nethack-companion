@@ -1209,6 +1209,7 @@ risks.</p>
 </section>
 <section id="the-quest" class="level4">
 <h4>The Quest</h4>
+<!-- audit 2026-05-17 #39: 8 role/artifact/nemesis pairs and entry mechanics verified against role.c + artilist.h. Corrected: "Most provide magic resistance" was wrong (only Platinum Yendorian Express Card grants carried MR; others vary). See companion-audit.md. -->
 <p>Around dungeon levels 11 through 16, you’ll find a magic portal to
 your Quest. But you can’t enter it immediately. You need to be at least
 experience level 14, and you need to have spoken to your quest leader
@@ -1221,9 +1222,12 @@ One. The Tourist battles the Master of Thieves for the Platinum
 Yendorian Express Card. The Samurai duels Ashikaga Takauji for the
 Tsurugi of Muramasa. The Monk faces Master Kaen for the Eyes of the
 Overworld. And so on.</p>
-<p>Quest artifacts are powerful. Most provide magic resistance, which
-you need. Some provide other useful properties like telepathy or
-warning. Getting your quest artifact is a milestone that marks the
+<p>Quest artifacts are powerful. Each grants a unique mix of carried or
+worn intrinsics: protection, luck, ESP, warning, reflection, or stealth
+depending on role. Only the Tourist’s Platinum Yendorian Express Card
+gives magic resistance just by being carried; a few others (Sceptre of
+Might, Eye of the Aethiopica) block magic attacks only when wielded or
+worn. Getting your quest artifact is a milestone that marks the
 transition from “surviving” to “preparing for the endgame.”</p>
 <p><strong>The nemesis drops two things, on the floor.</strong> When you
 kill the quest nemesis, your role’s quest artifact lands on the floor at
@@ -2189,9 +2193,9 @@ walls.</td>
 <tr>
 <td><code>f</code></td>
 <td>Displacer beast</td>
-<td>Cat-class, but vicious: three-attack heavy melee with a permanent
-displacement aura. Eat the corpse for temporary displacement of your
-own.</td>
+<td>Cat-class, but vicious: AC −10, three-attack melee, and a 50% chance
+on each player melee to swap places with you instead. Eat the corpse for
+temporary intrinsic Displacement.</td>
 </tr>
 <tr>
 <td><code>F</code></td>
@@ -3040,23 +3044,26 @@ prayer).</p>
 </section>
 <section id="the-displacer-beast" class="level4">
 <h4>The Displacer Beast</h4>
+<!-- audit 2026-05-17 #42: rewrote section. Prior version described it as having cloak-of-displacement style image-offset; this is wrong. The "displacer" mechanic is M3_DISPLACES (barge-through): 50% chance on player melee that it swaps places with you instead of being attacked (hack.c:1972). Corpse intrinsic Displacement claim verified (eat.c:1265). See companion-audit.md. -->
 <p>The <strong>displacer beast</strong> (<code>f</code>, blue) is a 5.0
-addition to the bestiary: tiger-weight, three attacks per turn, AC −10,
-and <em>always</em> displaced: its visible image isn’t where it really
-is, and the offset reshuffles every turn. Swing at the image and you hit
-empty floor. Until the displacement is broken (a successful melee hit,
-or a sense that ignores sight), expect misses that look correct.</p>
-<p><strong>What works.</strong> Area-effect spells, scrolls of fire or
-stinking cloud, wands of digging that go through the floor.
-<em>Telepathy</em> lets you locate it when you’re blind. <em>See
-invisible</em> does not help; the beast isn’t invisible, it’s
-displaced.</p>
-<p><strong>What’s worth it afterward.</strong> Eating its corpse grants
-temporary intrinsic Displacement to <em>you</em>: the only intrinsic
-source in the game, and unlike a cloak of displacement it costs no
-equipment slot. A late-game caster level becomes much friendlier with
-displacement up. The corpse rots like any other, so if you can’t eat it
-now, tin it.</p>
+addition: AC −10, three attacks per turn (4d4 / 4d4 / 2d10), and a
+misleading name. It is <em>not</em> displaced in the
+cloak-of-displacement sense. Its trick is the opposite: when you melee
+it, there’s a 50% chance it <strong>swaps places with you</strong>
+instead of taking the hit. The blow doesn’t land, you’ve been yanked one
+square, and now you’re standing where the beast was a moment ago.</p>
+<p>That swap can pull you off Elbereth, out of a doorway, onto a trap,
+or into a worse adjacency. Plan the encounter assuming you’ll end up in
+its square next turn.</p>
+<p><strong>What works.</strong> Ranged attacks (wand, spell, thrown)
+bypass the swap entirely: it only fires on melee. If you must melee, do
+it from a position where the beast’s square is no worse than yours: no
+traps under it, no extra monsters adjacent to it.</p>
+<p><strong>What’s worth it afterward.</strong> Eating the corpse grants
+temporary intrinsic Displacement (<code>d(6, 6)</code> turns): the only
+intrinsic source in the game, and unlike a cloak of displacement it
+costs no equipment slot. The corpse rots like any other, so if you can’t
+eat it now, tin it.</p>
 </section>
 <section id="the-genetic-engineer" class="level4">
 <h4>The Genetic Engineer</h4>
@@ -9322,6 +9329,7 @@ buried.</td>
 </section>
 <section id="saber" class="level4">
 <h4>Saber</h4>
+<!-- audit 2026-05-17 #38: 10 cells verified, 1 corrected (silver saber notes mentioned only Werebane; Grayswandir is the better-known silver saber artifact). See companion-audit.md. -->
 <div class="dense-table">
 <table>
 <colgroup>
@@ -9361,8 +9369,10 @@ buried.</td>
 <td>75</td>
 <td>—</td>
 <td>silver</td>
-<td>Werebane is the artifact form — silver damage to weres and
-demons.</td>
+<td>Silver does bonus damage to demons/weres/vampires/imps. Artifact
+forms: <strong>Grayswandir</strong> (Lawful, +5 hit, hallucination
+resistance) and <strong>Werebane</strong> (extra damage vs
+lycanthropes).</td>
 </tr>
 </tbody>
 </table>
@@ -11541,6 +11551,7 @@ poisonous-corpse, etc.) alongside specific heads-ups for monsters that
 deserve one.</p>
 <section id="ants-and-insects-a" class="level4">
 <h4>Ants and insects <code>a</code></h4>
+<!-- audit 2026-05-17 #40: 48 cells / 6 rows verified, 0 corrected. All entries match monsters.h:89-133. See companion-audit.md. -->
 <p>Insects, often in groups. The soldier ant is the early game’s
 infamous killer: its poison sting can two-shot a low-level hero. Killer
 bees swarm; the queen bee in a beehive room is tough on her own.</p>

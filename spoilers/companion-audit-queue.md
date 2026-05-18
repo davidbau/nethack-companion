@@ -42,11 +42,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 35**  L 7656  (  20 lines)   ↳ Bestiary Tables → Fungi and molds `F`
 - [x] **# 36**  L 2202  ( 142 lines) 📖 Making Friends
 - [x] **# 37**  L 1117  (  30 lines)   ↳ Branches and Landmarks → The Castle
-- [ ] **# 38**  L 6681  (  11 lines)   ↳ Weapons Tables → Saber
-- [ ] **# 39**  L  947  (  34 lines)   ↳ Branches and Landmarks → The Quest
-- [ ] **# 40**  L 7113  (  21 lines)   ↳ Bestiary Tables → Ants and insects `a`
+- [x] **# 38**  L 6681  (  11 lines)   ↳ Weapons Tables → Saber
+- [x] **# 39**  L  947  (  34 lines)   ↳ Branches and Landmarks → The Quest
+- [x] **# 40**  L 7113  (  21 lines)   ↳ Bestiary Tables → Ants and insects `a`
 - [ ] **# 41**  L 6809  (  23 lines)   ↳ Weapons Tables → Polearms
-- [ ] **# 42**  L 2152  (  22 lines)   ↳ Dangerous Encounters → The Displacer Beast
+- [x] **# 42**  L 2152  (  22 lines)   ↳ Dangerous Encounters → The Displacer Beast
 - [ ] **# 43**  L 1942  (  21 lines)   ↳ Dangerous Encounters → Level Drain
 - [ ] **# 44**  L 7411  (  17 lines)   ↳ Bestiary Tables → Rodents `r`
 - [ ] **# 45**  L 6789  (  10 lines)   ↳ Weapons Tables → Hammer

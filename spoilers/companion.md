@@ -949,6 +949,7 @@ to rest for a moment, though the fountain is subject to the usual
 fountain risks.
 
 #### The Quest
+<!-- audit 2026-05-17 #39: 8 role/artifact/nemesis pairs and entry mechanics verified against role.c + artilist.h. Corrected: "Most provide magic resistance" was wrong (only Platinum Yendorian Express Card grants carried MR; others vary). See companion-audit.md. -->
 
 Around dungeon levels 11 through 16, you'll find a magic portal to
 your Quest. But you can't enter it immediately. You need to be at
@@ -964,11 +965,14 @@ Platinum Yendorian Express Card. The Samurai duels Ashikaga Takauji
 for the Tsurugi of Muramasa. The Monk faces Master Kaen for the
 Eyes of the Overworld. And so on.
 
-Quest artifacts are powerful. Most provide magic resistance, which
-you need. Some provide other useful properties like
-telepathy or warning. Getting your quest artifact is a milestone
-that marks the transition from "surviving" to "preparing for the
-endgame."
+Quest artifacts are powerful. Each grants a unique mix of carried
+or worn intrinsics: protection, luck, ESP, warning, reflection, or
+stealth depending on role. Only the Tourist's Platinum Yendorian
+Express Card gives magic resistance just by being carried; a few
+others (Sceptre of Might, Eye of the Aethiopica) block magic
+attacks only when wielded or worn. Getting your quest artifact is
+a milestone that marks the transition from "surviving" to
+"preparing for the endgame."
 
 **The nemesis drops two things, on the floor.** When you kill the
 quest nemesis, your role's quest artifact lands on the floor at
@@ -1573,7 +1577,7 @@ AC / attack details on every monster, see the
 | `A`    | Angels            | Powerful, usually aligned. Don't fight your own.                                                     |
 | `C`    | Centaurs          | Fast (speed 18-20). Half spawn with a bow or crossbow, but they'll still close into melee for weapon and kick attacks. Mountain centaurs hit hardest: 1d10 weapon plus *two* 1d6 kicks per turn. |
 | `E`    | Elementals        | Hard to kill. Air elementals engulf; earth elementals phase through walls.                           |
-| `f`    | Displacer beast   | Cat-class, but vicious: three-attack heavy melee with a permanent displacement aura. Eat the corpse for temporary displacement of your own. |
+| `f`    | Displacer beast   | Cat-class, but vicious: AC −10, three-attack melee, and a 50% chance on each player melee to swap places with you instead. Eat the corpse for temporary intrinsic Displacement. |
 | `F`    | Fungi             | Yellow mold, green mold, shriekers. Shriekers summon other monsters.                                 |
 | `G`    | Gnome lords/kings | Tougher gnomes. Still fairly manageable.                                                             |
 | `'`    | Golems            | Built things. Iron golems hit hard and resist nearly everything; clay, stone, and wood golems are softer. Glass golems leave gems on death. |
@@ -2183,25 +2187,30 @@ uncursing it first, since cursed amulets can't be removed: use a
 scroll of remove curse, holy water, or prayer).
 
 #### The Displacer Beast
+<!-- audit 2026-05-17 #42: rewrote section. Prior version described it as having cloak-of-displacement style image-offset; this is wrong. The "displacer" mechanic is M3_DISPLACES (barge-through): 50% chance on player melee that it swaps places with you instead of being attacked (hack.c:1972). Corpse intrinsic Displacement claim verified (eat.c:1265). See companion-audit.md. -->
 
-The **displacer beast** (`f`, blue) is a 5.0 addition to the
-bestiary: tiger-weight, three attacks per turn, AC −10, and
-*always* displaced: its visible image isn't where it really is,
-and the offset reshuffles every turn. Swing at the image and you
-hit empty floor. Until the displacement is broken (a successful
-melee hit, or a sense that ignores sight), expect misses that
-look correct.
+The **displacer beast** (`f`, blue) is a 5.0 addition: AC −10,
+three attacks per turn (4d4 / 4d4 / 2d10), and a misleading name.
+It is *not* displaced in the cloak-of-displacement sense. Its
+trick is the opposite: when you melee it, there's a 50% chance
+it **swaps places with you** instead of taking the hit. The blow
+doesn't land, you've been yanked one square, and now you're
+standing where the beast was a moment ago.
 
-**What works.** Area-effect spells, scrolls of fire or stinking
-cloud, wands of digging that go through the floor. *Telepathy*
-lets you locate it when you're blind. *See invisible* does not
-help; the beast isn't invisible, it's displaced.
+That swap can pull you off Elbereth, out of a doorway, onto a
+trap, or into a worse adjacency. Plan the encounter assuming
+you'll end up in its square next turn.
 
-**What's worth it afterward.** Eating its corpse grants temporary
-intrinsic Displacement to *you*: the only intrinsic source in the
-game, and unlike a cloak of displacement it costs no equipment slot. A late-game caster level becomes much
-friendlier with displacement up. The corpse rots like any other,
-so if you can't eat it now, tin it.
+**What works.** Ranged attacks (wand, spell, thrown) bypass the
+swap entirely: it only fires on melee. If you must melee, do it
+from a position where the beast's square is no worse than yours:
+no traps under it, no extra monsters adjacent to it.
+
+**What's worth it afterward.** Eating the corpse grants temporary
+intrinsic Displacement (`d(6, 6)` turns): the only intrinsic
+source in the game, and unlike a cloak of displacement it costs
+no equipment slot. The corpse rots like any other, so if you
+can't eat it now, tin it.
 
 #### The Genetic Engineer
 <!-- audit 2026-05-17 #12: 14 claims verified, 1 corrected (hit message wording was the corpse string); added magic resistance to defenses. See companion-audit.md. -->
@@ -6740,13 +6749,14 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 :::
 
 #### Saber
+<!-- audit 2026-05-17 #38: 10 cells verified, 1 corrected (silver saber notes mentioned only Werebane; Grayswandir is the better-known silver saber artifact). See companion-audit.md. -->
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | scimitar | 1d8 / 1d8 | 40 | 15 | — | iron |  |
-| silver saber | 1d8 / 1d8 | 40 | 75 | — | silver | Werebane is the artifact form — silver damage to weres and demons. |
+| silver saber | 1d8 / 1d8 | 40 | 75 | — | silver | Silver does bonus damage to demons/weres/vampires/imps. Artifact forms: **Grayswandir** (Lawful, +5 hit, hallucination resistance) and **Werebane** (extra damage vs lycanthropes). |
 
 :::
 
@@ -7177,6 +7187,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 Every monster you might meet. Grouped by ASCII symbol so you can flip to the right page mid-game. **Lvl** is the base monster level. **Spd** is movement rate (12 is normal player speed). **AC** is armor class (lower is better). **MR%** is the percentage chance the monster resists your spells and magic attacks. **Attacks** lists each attack's mode, damage dice, and side effect; multiple attacks separated by `·` are made per turn. **Notes** folds in the most tactically-relevant trait flags (flies, sees-invis, regenerates, poisonous-corpse, etc.) alongside specific heads-ups for monsters that deserve one.
 
 #### Ants and insects `a`
+<!-- audit 2026-05-17 #40: 48 cells / 6 rows verified, 0 corrected. All entries match monsters.h:89-133. See companion-audit.md. -->
 
 Insects, often in groups. The soldier ant is the early game's infamous killer: its poison sting can two-shot a low-level hero. Killer bees swarm; the queen bee in a beehive room is tough on her own.
 
