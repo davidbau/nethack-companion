@@ -8225,6 +8225,7 @@ are always scrolls of earth.</p>
 </section>
 <section id="level-2-version-b" class="level4">
 <h4>Level 2, Version B</h4>
+<!-- audit 2026-05-18 #94: 16-boulder layout + all 22 solution steps verified geometrically by simulation (player connectivity + clear-path checks). Intermediate diagrams at steps 9 and 16 match the simulated boulder positions. Both end-of-solution boulder lists correct. Close call: step 21's "G right 1, D up 1" is gratuitous (those boulders aren't going to a hole) but harmless. Map is a stylized rendering of soko2-2.lua, topologically equivalent. See companion-audit.md. -->
 <pre><code>            11111111112222222
    12345678901234567890123456
  1  ┌──┐          ┌─────────┐
@@ -10577,6 +10578,7 @@ big monster).</td>
 </section>
 <section id="dart" class="level4">
 <h4>Dart</h4>
+<!-- audit 2026-05-18 #95: dart stats clean vs objects.h:161. Added "Poisonable; Tourist starts with a stack" note (verified via is_poisonable + u_init.c:151). See companion-audit.md. -->
 <div class="dense-table">
 <table>
 <colgroup>
@@ -10607,7 +10609,7 @@ big monster).</td>
 <td>2</td>
 <td>—</td>
 <td>iron</td>
-<td></td>
+<td>Poisonable. Tourist starts with a stack of ~25–60 at +2.</td>
 </tr>
 </tbody>
 </table>
@@ -10654,6 +10656,7 @@ big monster).</td>
 </section>
 <section id="boomerang" class="level4">
 <h4>Boomerang</h4>
+<!-- audit 2026-05-18 #96: stats clean vs objects.h:166-168. Corrected "Returns when thrown. Always." — false. Per zap.c:boomhit, the boomerang flies a 10-step curved path, stops on monster/wall/door/sink hits, and catching on return requires a DEX check (auto-fails if Fumbling); failed catch hits the thrower. Enchanted boomerangs get multi-hit (spe+1). Useless underwater. See companion-audit.md. -->
 <div class="dense-table">
 <table>
 <colgroup>
@@ -13869,6 +13872,7 @@ three-attack flurry.</p>
 </section>
 <section id="angelic-beings-a" class="level4">
 <h4>Angelic beings <code>A</code></h4>
+<!-- audit 2026-05-18 #97: 5 rows (couatl/Aleax/Angel/ki-rin/Archon) verified clean vs monsters.h:1206-1265. All stats, colors, attacks, M1_FLY/M1_SEE_INVIS/M2_STALK flags match. Corrected couatl "poisonous-corpse" — all Angels have G_NOCORPSE; the couatl leaves no corpse at all (MR_POISON still matters for combat interactions). See companion-audit.md. -->
 <p>Powerful late-game spellcasters with weapons. Astral-Plane Angels
 guard each High Priest — see <a href="#the-ascension-run">The Ascension
 Run</a>.</p>
@@ -13908,7 +13912,7 @@ invisible.</p>
 <td>5</td>
 <td>30</td>
 <td>bite 2d4 poison · bite 1d3 · hug 2d4 wrap</td>
-<td>poisonous-corpse, pois-res. (no sees-invis)</td>
+<td>pois-res. (no sees-invis, no corpse)</td>
 </tr>
 <tr>
 <td>Aleax</td>
@@ -15269,15 +15273,12 @@ armor.</p>
 <p>Splits when you hit them. Brown puddings corrode armor on touch;
 black puddings corrode both armor and weapons. Fire-kill them so they
 don’t split, or pick a chokepoint.</p>
-<p><strong>Green slime</strong> is a Gehennom-only exception: it doesn’t
-split, leaves a glob instead of a corpse, and its touch starts a 9-turn
-countdown to becoming a green slime yourself. Treat it as a
-delayed-death encounter. Fight it at range, burn it (and yourself, if
-necessary) with fire, or have an <strong>amulet of unchanging</strong>
-ready (blocks the sliming and aborts a transformation already underway).
-Prayer would cure sliming — but it doesn’t work in Gehennom, so don’t
-rely on it. Cancellation negates the touch attack. Don’t eat the glob;
-don’t engulf or digest one as a polyform.</p>
+<p><strong>Green slime</strong> is a Gehennom-only exception: doesn’t
+split, leaves a glob, and one touch starts a 9-turn countdown to
+becoming one yourself. Fight at range, burn yourself with fire to clear
+it, or wear an <strong>amulet of unchanging</strong> (blocks and aborts
+the transformation). Prayer doesn’t work in Gehennom, so don’t rely on
+it. See <em>Delayed Deaths</em> for the full cure list.</p>
 <p>All puddings and oozes are amorphous, mindless, cold-resistant,
 poison-resistant, acid-resistant, and petrification-resistant. All
 except <em>gray ooze</em> also are shock-resistant.</p>

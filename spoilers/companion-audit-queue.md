@@ -98,10 +98,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 91**  L 7281  (  16 lines)   ↳ Bestiary Tables → Jellies `j`
 - [x] **# 92**  L 1240  (  17 lines)   ↳ Traps and Hazards → Searching and Detection
 - [x] **# 93**  L 2111  (  41 lines)   ↳ Dangerous Encounters → Delayed Deaths
-- [ ] **# 94**  L 5731  (  99 lines)   ↳ Sokoban Solutions → Level 2, Version B
-- [ ] **# 95**  L 6917  (  10 lines)   ↳ Weapons Tables → Dart
-- [ ] **# 96**  L 6937  (  12 lines)   ↳ Weapons Tables → Boomerang
-- [ ] **# 97**  L 7554  (  18 lines)   ↳ Bestiary Tables → Angelic beings `A`
+- [x] **# 94**  L 5731  (  99 lines)   ↳ Sokoban Solutions → Level 2, Version B
+- [x] **# 95**  L 6917  (  10 lines)   ↳ Weapons Tables → Dart
+- [x] **# 96**  L 6937  (  12 lines)   ↳ Weapons Tables → Boomerang
+- [x] **# 97**  L 7554  (  18 lines)   ↳ Bestiary Tables → Angelic beings `A`
 - [ ] **# 98**  L 7691  (  22 lines)   ↳ Bestiary Tables → Giant humanoids `H`
 - [ ] **# 99**  L 4509  (  89 lines) 📖 Wishes and Wishing
 - [ ] **#100**  L 5830  (  36 lines)   ↳ Sokoban Solutions → Level 3, Version A

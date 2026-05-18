@@ -5868,6 +5868,7 @@ Two boulders (D and E) remain. The two scrolls at (2,10) and
 Five boulders (B, C, D, I, and Q) remain.
 
 #### Level 2, Version B
+<!-- audit 2026-05-18 #94: 16-boulder layout + all 22 solution steps verified geometrically by simulation (player connectivity + clear-path checks). Intermediate diagrams at steps 9 and 16 match the simulated boulder positions. Both end-of-solution boulder lists correct. Close call: step 21's "G right 1, D up 1" is gratuitous (those boulders aren't going to a hole) but harmless. Map is a stylized rendering of soko2-2.lua, topologically equivalent. See companion-audit.md. -->
 
 ```
             11111111112222222
@@ -7086,12 +7087,13 @@ All polearms are two-handed. To strike at range, `#apply` the weapon (not wield-
 :::
 
 #### Dart
+<!-- audit 2026-05-18 #95: dart stats clean vs objects.h:161. Added "Poisonable; Tourist starts with a stack" note (verified via is_poisonable + u_init.c:151). See companion-audit.md. -->
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| dart | 1d3 / 1d2 | 1 | 2 | — | iron |  |
+| dart | 1d3 / 1d2 | 1 | 2 | — | iron | Poisonable. Tourist starts with a stack of ~25–60 at +2. |
 
 :::
 
@@ -7107,6 +7109,7 @@ All polearms are two-handed. To strike at range, `#apply` the weapon (not wield-
 :::
 
 #### Boomerang
+<!-- audit 2026-05-18 #96: stats clean vs objects.h:166-168. Corrected "Returns when thrown. Always." — false. Per zap.c:boomhit, the boomerang flies a 10-step curved path, stops on monster/wall/door/sink hits, and catching on return requires a DEX check (auto-fails if Fumbling); failed catch hits the thrower. Enchanted boomerangs get multi-hit (spe+1). Useless underwater. See companion-audit.md. -->
 
 ::: dense-table
 
@@ -7740,6 +7743,7 @@ Slavic folklore — a hairy wild man of the woods. One species, one role here: a
 :::
 
 #### Angelic beings `A`
+<!-- audit 2026-05-18 #97: 5 rows (couatl/Aleax/Angel/ki-rin/Archon) verified clean vs monsters.h:1206-1265. All stats, colors, attacks, M1_FLY/M1_SEE_INVIS/M2_STALK flags match. Corrected couatl "poisonous-corpse" — all Angels have G_NOCORPSE; the couatl leaves no corpse at all (MR_POISON still matters for combat interactions). See companion-audit.md. -->
 
 Powerful late-game spellcasters with weapons. Astral-Plane Angels guard each High Priest — see [The Ascension Run](#the-ascension-run).
 
@@ -7749,7 +7753,7 @@ All angelic beings follow you up and down stairs. All except *Aleax* also fly. A
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
-| couatl | green | 8 | 10 | 5 | 30 | bite 2d4 poison · bite 1d3 · hug 2d4 wrap | poisonous-corpse, pois-res. (no sees-invis) |
+| couatl | green | 8 | 10 | 5 | 30 | bite 2d4 poison · bite 1d3 · hug 2d4 wrap | pois-res. (no sees-invis, no corpse) |
 | Aleax | yellow | 10 | 8 | 0 | 30 | weapon 1d6 · weapon 1d6 · kick 1d4 | (no flies) |
 | Angel | white | 14 | 10 | -4 | 55 | weapon 1d6 · weapon 1d6 · claw 1d4 · spell 2d6 magic |  |
 | ki-rin | yellow | 16 | 18 | -5 | 90 | kick 2d4 · kick 2d4 · butt 3d6 · spell 2d6 spell |  |
@@ -8011,7 +8015,7 @@ Big melee brutes that wield weapons. Drop decent weapons and armor.
 
 Splits when you hit them. Brown puddings corrode armor on touch; black puddings corrode both armor and weapons. Fire-kill them so they don't split, or pick a chokepoint.
 
-**Green slime** is a Gehennom-only exception: it doesn't split, leaves a glob instead of a corpse, and its touch starts a 9-turn countdown to becoming a green slime yourself. Treat it as a delayed-death encounter. Fight it at range, burn it (and yourself, if necessary) with fire, or have an **amulet of unchanging** ready (blocks the sliming and aborts a transformation already underway). Prayer would cure sliming — but it doesn't work in Gehennom, so don't rely on it. Cancellation negates the touch attack. Don't eat the glob; don't engulf or digest one as a polyform.
+**Green slime** is a Gehennom-only exception: doesn't split, leaves a glob, and one touch starts a 9-turn countdown to becoming one yourself. Fight at range, burn yourself with fire to clear it, or wear an **amulet of unchanging** (blocks and aborts the transformation). Prayer doesn't work in Gehennom, so don't rely on it. See *Delayed Deaths* for the full cure list.
 
 All puddings and oozes are amorphous, mindless, cold-resistant, poison-resistant, acid-resistant, and petrification-resistant. All except *gray ooze* also are shock-resistant.
 

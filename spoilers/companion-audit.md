@@ -3493,3 +3493,73 @@ Source: `spoilers/companion.md` line 2212. Substantial corrections.
   leaves glob not corpse, 9-turn touch transformation, defense
   list incl. amulet of unchanging, why prayer is unreliable here).
 
+
+---
+
+## 2026-05-18 — Chapter audit #94: Sokoban Level 2, Version B
+
+Source: `spoilers/companion.md` line 5870.
+All 22 numbered solution steps verified by mental simulation. 0 corrections.
+
+### Verified
+- 16-boulder layout (A-P), 12-hole grid, rolling-boulder trap, upstair,
+  door, walls all internally consistent.
+- Each push verifies: player has a reachable approach square, boulder
+  destination is clear, no collisions.
+- Both intermediate diagrams (after step 9, after step 16) match
+  simulated boulder positions.
+- Final "remaining: A, D, G, H" list correct.
+- Funnel finish-shorthand ("like M", "like N", etc.) internally
+  consistent.
+
+### Close calls (not changed)
+- Step 21 ("Push G right 1. Push D up 1.") repositions two boulders
+  that won't be finished — gratuitous but harmless. Spoiler still works.
+- Diagram is a stylized 26-col render vs the 22-col raw soko2-2.lua;
+  topologically equivalent.
+
+---
+
+## 2026-05-18 — Chapter audit #95: Dart
+
+Source: `spoilers/companion.md` line 7088. Stats clean. Added missing
+Notes (Poisonable; Tourist starts with a stack at +2, per is_poisonable
++ u_init.c:151).
+
+---
+
+## 2026-05-18 — Chapter audit #96: Boomerang
+
+Source: `spoilers/companion.md` line 7109. Stats clean. 1 correction.
+
+### Verified
+- 1d9/1d9, wt 5, cost 20, wood, hitbon 0 (objects.h:166).
+
+### Corrected
+1. **"Returns when thrown. Always."** — false. Per zap.c:boomhit
+   (4148-4233): flies a 10-step curved path, stops on
+   monster/wall/door/sink, only catches on return if you pass a DEX
+   check (auto-fail if Fumbling — failed catch hits you for damage).
+   Enchanted boomerangs multi-hit (spe+1 hits per throw). Useless
+   underwater. Reworded.
+
+---
+
+## 2026-05-18 — Chapter audit #97: Angelic beings `A`
+
+Source: `spoilers/companion.md` line 7744. 5 rows verified clean vs
+monsters.h:1206-1265. 1 correction.
+
+### Verified
+- All stats, colors, attack dice (incl. Archon gaze-blind, ki-rin
+  butt + spell, couatl wrap).
+- "All except Aleax fly" (M1_FLY pattern).
+- "All except couatl see invisible" (M1_SEE_INVIS pattern).
+- "Follow stairs" (M2_STALK on all).
+- Archon regenerates (M1_REGEN).
+
+### Corrected
+1. **couatl "poisonous-corpse"** — wrong. All S_ANGEL entries have
+   G_NOCORPSE; couatl leaves no corpse at all. Replaced with "no
+   corpse." MR_POISON still matters for damage interactions.
+
