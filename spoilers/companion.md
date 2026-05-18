@@ -4552,7 +4552,7 @@ Unskilled through Expert), and you can't use a shield. Only
 cap at Skilled; everyone else lower or none. Rangers don't have
 the skill at all. If you're not sure, just use one really good
 weapon. In 5.0, two-handed weapons got a buff (3/2 strength damage
-bonus) that makes them a compelling alternative to dual-wielding.
+bonus) that makes them a good alternative.
 
 #### Fighting Smart
 
