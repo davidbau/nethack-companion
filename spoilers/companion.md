@@ -2263,6 +2263,8 @@ scroll of remove curse, holy water, or prayer).
 
 #### The Displacer Beast
 <!-- audit 2026-05-17 #42: rewrote section. Prior version described it as having cloak-of-displacement style image-offset; this is wrong. The "displacer" mechanic is M3_DISPLACES (barge-through): 50% chance on player melee that it swaps places with you instead of being attacked (hack.c:1972). Corpse intrinsic Displacement claim verified (eat.c:1265). See companion-audit.md. -->
+<!-- audit 2026-05-18 #106: dropped the "lure it adjacent to a moat or lava and let it swap itself in" tactic — wrong. hack.c:1972 ends with goodpos(u.ux0, u.uy0, mtmp, GP_ALLOW_U); teleport.c:134-162 goodpos refuses to place a non-swimmer/non-flier in water and a non-fire-resistant non-flier in lava. Displacer beasts have none of those. Even if the hero were standing IN the hazard via water-walking/levitation, the beast still can't swap there. -->
+
 
 The **displacer beast** (`f`, blue, 5.0 addition) is a tiger-sized
 feline with AC −10 and three attacks per turn (4d4 / 4d4 / 2d10).
@@ -2271,9 +2273,10 @@ sense. Its trick is the opposite, when you melee it, half the time
 it **swaps places with you** instead of taking the hit, which can
 pull you off Elbereth, out of a doorway, or onto a trap. Ranged
 attacks (wand, spell, thrown) bypass the swap entirely. It has no
-MR, so sleep, paralysis, and taming all work. A neat trick: lure it
-adjacent to a moat or lava and let it swap itself in. Speed 12, so
-a speed-boosted hero outpaces it.
+MR, so sleep, paralysis, and taming all work. Speed 12, so a
+speed-boosted hero outpaces it. (Don't bother trying to swap it
+into a moat or lava — the swap only fires if the destination
+square is survivable for the beast, and water/lava aren't.)
 
 Eating the corpse gives you cloak-style displacement for a few turns:
 monsters target a phantom image one square off from where you

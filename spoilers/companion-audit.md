@@ -3882,3 +3882,28 @@ Source: `spoilers/companion.md` line 5927. No corrections.
   no claims made about them.
 
 ---
+
+## 2026-05-18 — Followup #106: Displacer beast lure-to-hazard tactic
+
+Source: `spoilers/companion.md` line 2267 (Displacer Beast section).
+1 correction.
+
+### Corrected
+- **"A neat trick: lure it adjacent to a moat or lava and let it
+  swap itself in"** — wrong. The M3_DISPLACES swap at
+  `hack.c:1972` ends with `goodpos(u.ux0, u.uy0, mtmp, GP_ALLOW_U)`,
+  meaning the swap only fires if the hero's previous square is a
+  valid placement for the displacer beast. `teleport.c:134-162`
+  refuses water for a non-swimmer/non-flier and lava for a
+  non-fire-resistant non-flier. Displacer beast has neither, so
+  the swap is rejected and the beast just attacks normally. Even
+  if the hero were standing IN the hazard via water-walking or
+  levitation, the swap still wouldn't fire because the beast
+  itself can't survive there. Replaced the tactic with a brief
+  caveat that explicitly says it doesn't work.
+
+### Notes
+- Caught by reader after the #42 rewrite landed; the false tactic
+  was held over from the pre-#42 version.
+
+---
