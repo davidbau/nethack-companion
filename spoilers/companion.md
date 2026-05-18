@@ -4873,8 +4873,8 @@ ascensions:
    of not dying to wands).
 3. **Speed boots** (being fast gives you more actions per turn, excellent
    for both offense and escape).
-4. **Gauntlets of power** (STR 25, +AC, if your role benefits;
-   and most roles benefit from punching harder).
+4. **Gauntlets of power** (STR 25 if your role benefits;
+   most roles benefit from punching harder).
 5. **Amulet of life saving** (insurance for the endgame, when
    overconfidence kills more adventurers than monsters do).
 6. **A specific artifact** (Grayswandir is a common target for the
@@ -4886,15 +4886,26 @@ a wish. A wish is for things that change the fundamental equation
 of your survival.
 
 #### Wish Syntax
+<!-- audit 2026-05-18 #102: corrected three claims in the wish-syntax bullets. (1) Bare "gray dragon scale mail" does NOT force uncursed +0; objnam.c:5094-5096 retains the random mksobj spe, and objnam.c:5258-5268 only sets BUC when a buc adjective is given — blessorcurse(otmp,10) leaves ~10% blessed, ~10% cursed, ~80% uncursed. (2) "Cannot wish for artifacts already generated" is wrong: objnam.c:5374 makes denial probabilistic (oartifact && rn2(nartifact_exist())>1), scaled by TOTAL artifacts in existence (including bones-file ones), and u.uconduct.wisharti increments either way. Only quest artifacts are absolutely blocked. (3) "Cannot wish for the Amulet of Yendor" is misleading — objnam.c:5003-5006 silently substitutes a FAKE_AMULET_OF_YENDOR. Same trapdoor for Bell of Opening, Book of the Dead, Candelabrum, and (particularly relevant here) magic lamp -> oil lamp. Also dropped "+AC" from gauntlets of power notes — all gloves give +1 AC, the gauntlets just give +6 to-hit/dmg via STR 25. See companion-audit.md. -->
 
 When the game asks "For what do you wish?", be specific. This is
 not the time for ambiguity:
 
 - "blessed +3 gray dragon scale mail" gets you exactly that.
-- Just "gray dragon scale mail" gives you an uncursed +0 version.
-  You had *one* wish. Why would you not specify?
-- You cannot wish for artifacts that are already generated.
-- You cannot wish for the Amulet of Yendor (nice try).
+- "gray dragon scale mail" alone lets the dice pick blessed/
+  cursed and enchantment — a bare wish can roll cursed. You
+  had *one* wish; spell out the BUC and the plus.
+- Artifact wishes get *harder* as artifacts accumulate. The
+  denial roll scales with the total artifacts in the world
+  (yours, generated, even bones-file ones), and your
+  artifact-wish counter ticks whether or not the artifact
+  actually appears. Quest artifacts are absolutely blocked.
+- A few targets are silently nerfed into mundane substitutes:
+  the **Amulet of Yendor** becomes a fake amulet, the **Bell
+  of Opening** a plain bell, the **Book of the Dead** blank
+  paper, the **Candelabrum** a tallow candle, and — relevant
+  after all that lamp-rubbing — a wish for a **magic lamp**
+  hands you an ordinary oil lamp.
 
 ---
 
@@ -7025,14 +7036,15 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 :::
 
 #### Broadsword
+<!-- audit 2026-05-18 #103: Stormbringer's base item is RUNESWORD per artilist.h:93, not broadsword. Moved the attribution and added the drain-life detail. Both share the same skill class (P_BROAD_SWORD) and the same 1d4+1d4/1d6+1 dice, which is what makes the confusion easy. See companion-audit.md. -->
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| broadsword | 1d4+1d4 / 1d6+1 | 70 | 10 | — | iron | +d4 small, +1 large. Stormbringer is the chaotic-aligned artifact form. |
+| broadsword | 1d4+1d4 / 1d6+1 | 70 | 10 | — | iron | +d4 small, +1 large. |
 | elven broadsword | 1d6+1d4 / 1d6+1 | 70 | 10 | — | wood |  |
-| runesword | 1d4+1d4 / 1d6+1 | 40 | 300 | — | iron |  |
+| runesword | 1d4+1d4 / 1d6+1 | 40 | 300 | — | iron | **Stormbringer** is the chaotic-aligned runesword artifact: drains a level from victims (you gain it), and attacks peaceful monsters whether you wanted that or not. |
 
 :::
 
@@ -8226,8 +8238,9 @@ Mines residents. Gnomish PCs find most of them peaceful. The gnome lord and gnom
 :::
 
 #### Giant humanoids `H`
+<!-- audit 2026-05-18 #101: section intro and minotaur note corrected. (1) Eating-a-giant-raises-Strength is gated on is_giant(ptr) (M2_GIANT) at eat.c:1345; ettin (no M2_GIANT) and minotaur (no M2_GIANT) corpses do NOT confer Strength. The C even comments at eat.c:1758: "ettin is a two-headed giant but its corpse doesn't confer strength." (2) Minotaur "usually guards a vault" is wrong; minotaurs are placed in Gehennom mazes by mkmaze.c:1102-1113 populate_maze(). Vaults are guarded by PM_GUARD, not minotaurs. All stat values match monsters.h 1714-1793. See companion-audit.md. -->
 
-Boulder throwers. Storm / fire / frost giants match the dragon elements; titans cast spells. Eating a giant's corpse raises Strength.
+Boulder throwers. Storm / fire / frost giants match the dragon elements; titans cast spells. Eating a true giant's corpse raises Strength; the ettin and minotaur don't count as giants for this purpose.
 
 ::: dense-table
 
@@ -8241,7 +8254,7 @@ Boulder throwers. Storm / fire / frost giants match the dragon elements; titans 
 | ettin | brown | 10 | 12 | 3 | 0 | weapon 2d8 · weapon 3d6 |  |
 | storm giant | blue | 16 | 12 | 3 | 10 | weapon 2d12 | shock-res. Throws boulders for big damage. Carries shock attacks. |
 | titan | magenta | 16 | 18 | -3 | 70 | weapon 2d8 · spell spell | flies. Tough humanoid with magic missiles. Casts spells. |
-| minotaur | brown | 15 | 15 | 6 | 0 | claw 3d10 · claw 3d10 · butt 2d8 | Two claws plus a butt. Heavy hitter; usually guards a vault. |
+| minotaur | brown | 15 | 15 | 6 | 0 | claw 3d10 · claw 3d10 · butt 2d8 | Two claws plus a butt. Heavy hitter; roams the Gehennom mazes. |
 | Cyclops | gray | 18 | 12 | 0 | 0 | weapon 4d8 · weapon 4d8 · claw 2d6 steal-amulet | follows stairs, ston-res. Caveman quest nemesis. Throws boulders. |
 | Lord Surtur | magenta | 15 | 12 | 2 | 50 | weapon 2d10 · weapon 2d10 · claw 2d6 steal-amulet | follows stairs, fire-res, ston-res. Valkyrie quest nemesis. Has Mjollnir if you don't. |
 

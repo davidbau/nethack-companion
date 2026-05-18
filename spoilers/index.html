@@ -7199,8 +7199,8 @@ is highly recommended).</li>
 second pillar of not dying to wands).</li>
 <li><strong>Speed boots</strong> (being fast gives you more actions per
 turn, excellent for both offense and escape).</li>
-<li><strong>Gauntlets of power</strong> (STR 25, +AC, if your role
-benefits; and most roles benefit from punching harder).</li>
+<li><strong>Gauntlets of power</strong> (STR 25 if your role benefits;
+most roles benefit from punching harder).</li>
 <li><strong>Amulet of life saving</strong> (insurance for the endgame,
 when overconfidence kills more adventurers than monsters do).</li>
 <li><strong>A specific artifact</strong> (Grayswandir is a common target
@@ -7213,14 +7213,25 @@ survival.</p>
 </section>
 <section id="wish-syntax" class="level4">
 <h4>Wish Syntax</h4>
+<!-- audit 2026-05-18 #102: corrected three claims in the wish-syntax bullets. (1) Bare "gray dragon scale mail" does NOT force uncursed +0; objnam.c:5094-5096 retains the random mksobj spe, and objnam.c:5258-5268 only sets BUC when a buc adjective is given — blessorcurse(otmp,10) leaves ~10% blessed, ~10% cursed, ~80% uncursed. (2) "Cannot wish for artifacts already generated" is wrong: objnam.c:5374 makes denial probabilistic (oartifact && rn2(nartifact_exist())>1), scaled by TOTAL artifacts in existence (including bones-file ones), and u.uconduct.wisharti increments either way. Only quest artifacts are absolutely blocked. (3) "Cannot wish for the Amulet of Yendor" is misleading — objnam.c:5003-5006 silently substitutes a FAKE_AMULET_OF_YENDOR. Same trapdoor for Bell of Opening, Book of the Dead, Candelabrum, and (particularly relevant here) magic lamp -> oil lamp. Also dropped "+AC" from gauntlets of power notes — all gloves give +1 AC, the gauntlets just give +6 to-hit/dmg via STR 25. See companion-audit.md. -->
 <p>When the game asks “For what do you wish?”, be specific. This is not
 the time for ambiguity:</p>
 <ul>
 <li>“blessed +3 gray dragon scale mail” gets you exactly that.</li>
-<li>Just “gray dragon scale mail” gives you an uncursed +0 version. You
-had <em>one</em> wish. Why would you not specify?</li>
-<li>You cannot wish for artifacts that are already generated.</li>
-<li>You cannot wish for the Amulet of Yendor (nice try).</li>
+<li>“gray dragon scale mail” alone lets the dice pick blessed/ cursed
+and enchantment — a bare wish can roll cursed. You had <em>one</em>
+wish; spell out the BUC and the plus.</li>
+<li>Artifact wishes get <em>harder</em> as artifacts accumulate. The
+denial roll scales with the total artifacts in the world (yours,
+generated, even bones-file ones), and your artifact-wish counter ticks
+whether or not the artifact actually appears. Quest artifacts are
+absolutely blocked.</li>
+<li>A few targets are silently nerfed into mundane substitutes: the
+<strong>Amulet of Yendor</strong> becomes a fake amulet, the
+<strong>Bell of Opening</strong> a plain bell, the <strong>Book of the
+Dead</strong> blank paper, the <strong>Candelabrum</strong> a tallow
+candle, and — relevant after all that lamp-rubbing — a wish for a
+<strong>magic lamp</strong> hands you an ordinary oil lamp.</li>
 </ul>
 <hr />
 </section>
@@ -9835,6 +9846,7 @@ lycanthropes).</td>
 </section>
 <section id="broadsword" class="level4">
 <h4>Broadsword</h4>
+<!-- audit 2026-05-18 #103: Stormbringer's base item is RUNESWORD per artilist.h:93, not broadsword. Moved the attribution and added the drain-life detail. Both share the same skill class (P_BROAD_SWORD) and the same 1d4+1d4/1d6+1 dice, which is what makes the confusion easy. See companion-audit.md. -->
 <div class="dense-table">
 <table>
 <colgroup>
@@ -9865,8 +9877,7 @@ lycanthropes).</td>
 <td>10</td>
 <td>—</td>
 <td>iron</td>
-<td>+d4 small, +1 large. Stormbringer is the chaotic-aligned artifact
-form.</td>
+<td>+d4 small, +1 large.</td>
 </tr>
 <tr>
 <td>elven broadsword</td>
@@ -9884,7 +9895,9 @@ form.</td>
 <td>300</td>
 <td>—</td>
 <td>iron</td>
-<td></td>
+<td><strong>Stormbringer</strong> is the chaotic-aligned runesword
+artifact: drains a level from victims (you gain it), and attacks
+peaceful monsters whether you wanted that or not.</td>
 </tr>
 </tbody>
 </table>
@@ -16097,9 +16110,11 @@ dangerous.</p>
 </section>
 <section id="giant-humanoids-h" class="level4">
 <h4>Giant humanoids <code>H</code></h4>
+<!-- audit 2026-05-18 #101: section intro and minotaur note corrected. (1) Eating-a-giant-raises-Strength is gated on is_giant(ptr) (M2_GIANT) at eat.c:1345; ettin (no M2_GIANT) and minotaur (no M2_GIANT) corpses do NOT confer Strength. The C even comments at eat.c:1758: "ettin is a two-headed giant but its corpse doesn't confer strength." (2) Minotaur "usually guards a vault" is wrong; minotaurs are placed in Gehennom mazes by mkmaze.c:1102-1113 populate_maze(). Vaults are guarded by PM_GUARD, not minotaurs. All stat values match monsters.h 1714-1793. See companion-audit.md. -->
 <p>Boulder throwers. Storm / fire / frost giants match the dragon
-elements; titans cast spells. Eating a giant’s corpse raises
-Strength.</p>
+elements; titans cast spells. Eating a true giant’s corpse raises
+Strength; the ettin and minotaur don’t count as giants for this
+purpose.</p>
 <div class="dense-table">
 <table>
 <colgroup>
@@ -16215,7 +16230,7 @@ attacks.</td>
 <td>6</td>
 <td>0</td>
 <td>claw 3d10 · claw 3d10 · butt 2d8</td>
-<td>Two claws plus a butt. Heavy hitter; usually guards a vault.</td>
+<td>Two claws plus a butt. Heavy hitter; roams the Gehennom mazes.</td>
 </tr>
 <tr>
 <td>Cyclops</td>

@@ -102,10 +102,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 95**  L 6917  (  10 lines)   ↳ Weapons Tables → Dart
 - [x] **# 96**  L 6937  (  12 lines)   ↳ Weapons Tables → Boomerang
 - [x] **# 97**  L 7554  (  18 lines)   ↳ Bestiary Tables → Angelic beings `A`
-- [ ] **# 98**  L 7691  (  22 lines)   ↳ Bestiary Tables → Giant humanoids `H`
-- [ ] **# 99**  L 4509  (  89 lines) 📖 Wishes and Wishing
-- [ ] **#100**  L 5830  (  36 lines)   ↳ Sokoban Solutions → Level 3, Version A
-- [ ] **#101**  L 6692  (  12 lines)   ↳ Weapons Tables → Broadsword
+- [x] **# 98**  L 7691  (  22 lines)   ↳ Bestiary Tables → Giant humanoids `H`
+- [x] **# 99**  L 4509  (  89 lines) 📖 Wishes and Wishing
+- [x] **#100**  L 5830  (  36 lines)   ↳ Sokoban Solutions → Level 3, Version A
+- [x] **#101**  L 6692  (  12 lines)   ↳ Weapons Tables → Broadsword
 - [ ] **#102**  L 3309  ( 180 lines) 📖 Wands and Staves
 - [ ] **#103**  L 7446  (  15 lines)   ↳ Bestiary Tables → Trappers and lurkers `t`
 - [ ] **#104**  L 5927  (  78 lines)   ↳ Sokoban Solutions → Level 4, Version A (prize: usually bag of holding, 25% amulet of reflection)
