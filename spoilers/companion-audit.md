@@ -6475,3 +6475,281 @@ Every entry, including every "—" (restricted = not in role's
   re-audit confirms no drift.
 
 ---
+
+## 2026-05-18 — v2 pilot batch — kickoff
+
+Pass 2 of the chapter-by-chapter audit started today, with three
+criteria instead of the prior pass's single criterion:
+
+1. **Accuracy** against NetHack 5.0 C source (same as pass 1, focused
+   on what was missed).
+2. **Wisdom of advice**, cross-checked against community lore (wiki /
+   alt.org / data.base) when the claim goes beyond pure mechanics.
+3. **Voice**: friendly and humorous when fluent, but tighter on
+   punctuation. New rule: prefer periods > commas > colons > semicolons
+   > parentheticals > em-dashes when there is a fluent option. The
+   prior AUDIT.md rule "em-dashes for parentheticals" is superseded.
+
+Pass 2 queue: `companion-audit-queue-2.md` (seed
+`companion-audit-2026-05-18-pass2`, 183 reshuffled units).
+
+The pilot batch (#1-#5 in the new queue) is below.
+
+---
+
+## 2026-05-18 — v2 audit #1: Sokoban Solutions — Level 3, Version A
+
+Source: `spoilers/companion.md` line 6373. No corrections (badge
+backfill only).
+
+### Verified
+- 13-boulder layout and all 13 solution steps verified geometrically
+  against `dat/soko2-1.lua:9-62` (spoiler coords = lua + 1).
+- Boulder positions A-M, rolling-boulder trap (8,10), 10 hole traps
+  row 10 cols 9-18, upstair (17,5), downstair (7,11), locked door
+  (19,9) all match.
+- Final "three boulders remain" tally checks.
+
+### Notes
+- This section had no pass-1 audit badge while its neighbors (Levels
+  2A, 2B, 3B) did. Added a fresh pass-2 badge to close the gap.
+- Step 1 ("Push M left one square") looks counterintuitive but is
+  the only way to reach the west side of M via the row 11 detour.
+  Spoiler doesn't explain this, which is consistent with the rest
+  of the section's terse style. Left as-is.
+
+---
+
+## 2026-05-18 — v2 audit #2: Voluntary Challenges — The Food Conducts
+
+Source: `spoilers/companion.md` line 6707. 3 factual corrections,
+3 wisdom additions, 4 voice tightenings.
+
+### Wrong → fixed
+- **"Permissible corpses (... gray ooze / brown pudding / green
+  slime — all puddings except black — and most others)"**: puddings
+  are G_NOCORPSE per `monsters.h:2081-2113`. They drop **globs**, not
+  corpses. Green slime corpse doesn't exist either; eating its glob
+  slimes you. Reworded to "permissible corpses and globs" with the
+  pudding rows treated as globs, and added a note about green slime.
+- **"They share an internal 'egg-derived' material flag in the C
+  source."**: fabricated. The vegan-violating comestibles are a
+  hardcoded otyp list at `eat.c:3016-3018`, no such flag exists.
+  Replaced with the in-world reason: "They contain eggs."
+- **"And all ghosts."** in the vegan corpse list: S_GHOST is
+  G_NOCORPSE per `monsters.h:2888,2897`. Dead weight. Dropped.
+
+### Verified
+- Vegan / vegetarian macros at `mondata.h:232-241` unchanged: vegan
+  is `S_BLOB|S_JELLY|S_FUNGUS|S_VORTEX|S_LIGHT|S_ELEMENTAL` (except
+  stalker) `|S_GOLEM` (except flesh/leather) and noncorporeal;
+  vegetarian adds `S_PUDDING` (except black pudding).
+- Vegan-violating comestibles list (PANCAKE, FORTUNE_COOKIE,
+  CREAM_PIE, CANDY_BAR, LUMP_OF_ROYAL_JELLY) at `eat.c:3016-3018`.
+- Prayer cures hunger from HUNGRY threshold at `pray.c:275`
+  (TROUBLE_HUNGRY). `init_uhunger()` at `eat.c:126` touches no
+  conduct.
+- Wall/door/boulder chewing breaks foodless at `hack.c:722`.
+- Polymorph itself does not increment `u.uconduct.food` (no such
+  increment in polyself.c).
+
+### Wisdom additions
+- Vegetarian-safe ≠ safe: added warning that yellow mold corpses
+  poison, violet fungus paralyzes, and acid blobs sting going down.
+- Added Monk note: Monks already pay an alignment penalty for meat,
+  so the vegetarian conduct is mostly free for them.
+- Foodless route: added "wishing for the ring is the usual plan if
+  a wand of wishing or magic lamp turns up."
+
+### Voice tightenings
+- Dropped `S_PUDDING` C-identifier from prose.
+- Dropped filler sentence "Among the hardest conducts in the game."
+- Trimmed slow-digestion ring parenthetical from a wordy "the ring
+  itself still costs a tiny amount, but it's effectively a free pass"
+  to "slows hunger almost to a halt."
+- Dropped the orphan "Polymorphing breaks the polyself conduct, not
+  foodless" clarification — no source of confusion in the surrounding
+  text.
+
+### Close calls
+- Verified V2.1 "dairy" hypothesis against `mondata.h` (no comment),
+  `dat/data.base:570-576` (describes puddings as amoeboid slimes,
+  no dairy reference), and `doc/fixes5-0-0.txt` (no relevant entry).
+  The "in-world reason" for puddings breaking vegan is **not** lore-
+  supported, so the spoiler now states the rule without a fabricated
+  reason: "Vegan also excludes puddings."
+
+---
+
+## 2026-05-18 — v2 audit #3: Bestiary Tables — Quadrupeds `q`
+
+Source: `spoilers/companion.md` line 8241. No factual corrections,
+one voice tightening.
+
+### Verified
+All 56 cells across 7 rows verified against `include/monsters.h:831-885`:
+rothe, mumak, leocrotta, wumpus, titanothere, baluchitherium,
+mastodon. Every Lvl, Spd, AC, MR%, color, and attack mode/dice/side-
+effect matches. All attacks are AD_PHYS; no side-effect notes needed.
+
+### Voice tightenings
+- Mumakil lead-in tightened from "slow but extremely sturdy" to
+  "slow but hit for 4d12 and shrug off blows." Cross-references the
+  damage figure already given at L1779 ("solo two-attack bruisers").
+
+### Notes
+- M1_THICK_HIDE on mumak/titanothere/baluchitherium/mastodon is not
+  tagged in the Notes column. Consistent with the spoiler's pattern
+  of not surfacing "thick-hide" anywhere else.
+- Rothe G_SGROUP (pack) is mentioned in the prose lead-ins at L1679
+  and L1777-1778 rather than in the table. Consistent.
+
+---
+
+## 2026-05-18 — v2 audit #4: Armor Tables (appendix)
+
+Source: `spoilers/companion.md` line 7597. 3 factual corrections,
+2 wisdom adjustments, 4 voice tightenings.
+
+### Wrong → fixed
+- **Levitation boots note** ("can't be removed while floating, so
+  you're stuck above pickup..."): `Boots_off()` at `do_wear.c:300-310`
+  handles in-air removal and calls `float_down()`. The actual trap
+  is the 9/10 curse, not floating itself. Reworded to "Levitation.
+  Generated cursed 9 times in 10. Cursed boots can't be taken off,
+  so this is a trap item."
+- **Blue dragon scale mail / scales** "intrinsic speed (Fast)":
+  blue dragon armor grants extrinsic Fast via `EFast`
+  (`do_wear.c:817-828`), putting you in `Very_fast` — the same
+  speed-boots tier, not the slower intrinsic-Fast tier. Reworded
+  to "Shock resistance + speed, same tier as speed boots."
+- **Speed boots** "+1 speed": opaque shorthand that wrongly suggests
+  parity with intrinsic Fast. Replaced with the actual mechanic:
+  "Very fast. Free extra action on 2/3 of turns."
+
+### Verified
+- 100% spot-check of every AC/MC/Wt/Cost/Material cell against
+  `include/objects.h:445-727` (HELM / CLOAK / SHIELD / GLOVES /
+  BOOTS / ARMOR / DRGN_ARMR macros). All numbers match.
+- 9/10-cursed-on-generation armors at `mkobj.c:1086-1090` are
+  FUMBLE_BOOTS, LEVITATION_BOOTS, HELM_OF_OPPOSITE_ALIGNMENT,
+  GAUNTLETS_OF_FUMBLING — flagged correctly in each row.
+- Dunce cap auto-curses on wear at `do_wear.c:475-491`.
+- Helm of brilliance / gauntlets of dexterity linear-in-spe via
+  `adj_abon` (`do_wear.c:3319-3336`).
+- Cornuthaum CHA effect and CLAIRVOYANT block for non-Wizards at
+  `do_wear.c:454-461`, `worn.c:40-44`.
+- Mummy wrapping blocks INVIS while worn at `worn.c:38-39`.
+- Mithril is metallic (`objclass.h:194-196`), so spell casting
+  penalty applies (`spell.c:2191-2193`).
+- All ten dragon-scale-mail dual-property effects match
+  `do_wear.c:806-883`.
+- 5.0 additions (helm of caution, shield of drain resistance, shield
+  of shock resistance) present and correct per
+  `doc/fixes5-0-0.txt:2694, 2927`.
+- Shimmering DSM/scales correctly absent (deferred in C via `#if 0`).
+
+### Wisdom adjustments
+- Chain mail note "Dwarves drop these" dropped — all iron mails are
+  Mines dwarf drops, so singling out chain mail misleads.
+- Robe note "+1 spellcasting effectiveness" replaced with the actual
+  mechanic: "Casting bonus. Cancels most of the metal-armor penalty."
+  The `spell.c:2192-2195` subtraction of `spelarmr` is a much larger
+  shift than "+1."
+
+### Voice tightenings
+- Intro "alongside any tactical caveats" → "and tactical caveats"
+  (meta-language about document structure).
+- Cloak of magic resistance: "Magic resistance. Lightest source of
+  magic resistance." de-duplicated to "Magic resistance. The lightest
+  source."
+- Dunce cap note trimmed: "Auto-curses itself when worn (regardless
+  of starting BUC), so you can't un-wear it without remove curse." →
+  "Auto-curses on wear. Needs remove curse to take off."
+- Helm of opposite alignment trimmed: "Generated cursed 9 times in
+  10 — and cursed means you can't take it off." → "Generated cursed
+  9 times in 10. Trap item."
+
+### Notes / follow-ups
+- `spoilers/build_armor_appendix.py` appears to be out of sync with
+  the committed table (hand-edits added the second hidden property
+  to every dragon scale mail row). Consider syncing the generator's
+  NOTES dict or marking it manually maintained.
+- "yellow dragon scale mail | Rare." annotation may not reflect 5.0
+  generation rules. Not chased in this audit.
+
+---
+
+## 2026-05-18 — v2 audit #5: Branches and Landmarks — The Quest
+
+Source: `spoilers/companion.md` line 984. 4 factual corrections,
+3 wisdom additions, 4 voice tightenings.
+
+### Wrong → fixed
+- **"Around dungeon levels 11 through 16"**: portal range is 11
+  through **17**, not 11 through 16. `dat/dungeon.lua:27-31` defines
+  the Quest portal as `chainlevel="oracle", base=6, range=2`; the
+  Oracle is `base=5, range=5` (DL 5-9). With `level_range()`
+  (`src/dungeon.c:380-410`), the portal lives at Oracle-level + 6
+  through Oracle-level + 8 — minimum DL 11, maximum DL 17.
+- **"Only the Tourist's Platinum Yendorian Express Card gives magic
+  resistance just by being carried"**: three carried-MR quest
+  artifacts exist. Orb of Detection at `artilist.h:221` has
+  `CARY(AD_MAGM)`; Magic Mirror of Merlin at `artilist.h:257` has
+  `CARY(AD_MAGM)`; PYEC at `artilist.h:293` has `CARY(AD_MAGM)`.
+  Reworded.
+- **"A few others (Sceptre of Might, Eye of the Aethiopica) block
+  magic attacks only when wielded or worn"**: three not two —
+  `DFNS(AD_MAGM)` at `artilist.h:233` (Sceptre of Might),
+  `artilist.h:261` (Eyes of the Overworld — Monk), and
+  `artilist.h:304` (Eye of the Aethiopica). Reworded.
+- **"The nemesis drops two things, on the floor."**: misleading.
+  Only the Bell of Opening drops from the nemesis's inventory on
+  kill (placed at spawn via `src/makemon.c:1378-1379` —
+  `MS_NEMESIS` gets BELL_OF_OPENING). The quest artifact is placed
+  on the floor under the nemesis at level generation (e.g.
+  `dat/Val-goal.lua:49,76` puts both the Orb of Fate and Lord
+  Surtur at (17,8); `dat/Wiz-goal.lua:73,96` same for Eye and Dark
+  One). Reworded.
+
+### Verified
+- Prerequisite XL 14 (fixed for all roles) at `include/quest.h:45`
+  (`MIN_QUEST_LEVEL 14`).
+- Minimum alignment record 20 to start at `include/quest.h:43`
+  (`MIN_QUEST_ALIGN 20`); enforcement at `src/quest.c:164-176`.
+- Magic-portal trap delivers you to qstart at `src/quest.c:91-103,
+  188-216`.
+- Leader appears on the first Quest level (qstart). E.g., Valkyrie's
+  Norn at `dat/Val-strt.lua:63`.
+- Role/artifact/nemesis pairings confirmed in
+  `include/artilist.h:225-307` and `src/role.c:252,334,431,471,
+  511,551`.
+
+### Wisdom additions
+- Most quest nemeses carry an amulet of life saving; added "expect
+  to kill them twice."
+- Added note that the portal back is on the first Quest level only,
+  so descending underprepared can mean a long climb home.
+
+### Voice tightenings
+- Three short sentences on portal entry trimmed to two; "But you
+  can't enter it immediately" filler dropped.
+- "Milestone that marks the transition from 'surviving' to
+  'preparing for the endgame'" replaced with "major power spike.
+  The late game starts here."
+- "The nemesis drops two things, on the floor." bold sentence
+  rewritten as "Two prizes wait on the nemesis's square."
+- Em-dash parenthetical "(from attacking peacefuls, for instance)"
+  replaced with periods per the punctuation-ladder rule.
+
+### Close calls
+- Wiki cite was not loaded (WebFetch was blocked for the sub-agent).
+  The "transition from surviving to preparing" softening relied on
+  community knowledge rather than a fresh wiki quote. Worth
+  re-verifying when WebFetch is wired up in the autonomous phase.
+- Some roles quest much earlier than the XL-14 minimum suggests
+  (Valkyrie, Samurai), while others quest much later (Healer,
+  Tourist). Section makes no per-role timing claim, so the
+  softening is consistent.
+
+---

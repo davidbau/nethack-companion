@@ -982,13 +982,13 @@ to rest for a moment, though the fountains are subject to the usual
 fountain risks.
 
 #### The Quest
-<!-- audit 2026-05-17 #39: 8 role/artifact/nemesis pairs and entry mechanics verified against role.c + artilist.h. Corrected: "Most provide magic resistance" was wrong (only Platinum Yendorian Express Card grants carried MR; others vary). See companion-audit.md. -->
+<!-- audit 2026-05-17 #39: 8 role/artifact/nemesis pairs and entry mechanics verified against role.c + artilist.h. Corrected: "Most provide magic resistance" was wrong (only Platinum Yendorian Express Card grants carried MR; others vary). v2 audit 2026-05-18 #5: four factual corrections. (a) Portal range "11 through 16" → "11 through 17" per Oracle base+range math (dungeon.lua:27-31 + src/dungeon.c:380-410: Oracle DL 5-9, Quest = Oracle + 6 range +2). (b) Carried-MR quest artifacts: three not one — Orb of Detection (Archeologist), Magic Mirror of Merlin (Knight), and PYEC (Tourist), all CARY(AD_MAGM) at artilist.h:221,257,293. (c) Wielded/worn-MR artifacts: three not two — added Eyes of the Overworld (Monk), all DFNS(AD_MAGM) at artilist.h:233,261,304. (d) "Nemesis drops two things on the floor" misleads: only the Bell drops from inventory on kill; the quest artifact is placed under the nemesis at level generation (e.g. dat/Val-goal.lua:49,76 same square for both). Reworded. Wisdom additions: nemesis lifesaving (most carry an amulet of life saving — expect to kill twice); portal-back warning (the return portal is only on the first Quest level). Voice: "milestone that marks the transition from surviving to preparing for the endgame" softened to "major power spike"; trimmed three short sentences into two; em-dashes around "from attacking peacefuls, for instance" replaced with periods per the punctuation-ladder rule. See companion-audit.md. -->
 
-Around dungeon levels 11 through 16, you'll find a magic portal to
-your Quest. But you can't enter it immediately. You need to be at
-least experience level 14, and you need to have spoken to your quest
-leader (who appears on the first Quest level). The leader sends you
-to retrieve your role's quest artifact from a quest nemesis.
+Around dungeon levels 11 through 17, a magic portal drops you onto
+your Quest. You'll need experience level 14 and a friendly word with
+your quest leader on the first floor before they'll let you descend.
+The leader sends you to retrieve your role's quest artifact from a
+quest nemesis.
 
 Each role has a unique Quest with unique maps, a unique nemesis, and
 a unique artifact reward. The Valkyrie hunts the Orb of Fate from
@@ -1000,24 +1000,30 @@ Eyes of the Overworld. And so on.
 
 Quest artifacts are powerful. Each grants a unique mix of carried
 or worn intrinsics: protection, luck, ESP, warning, reflection, or
-stealth depending on role. Only the Tourist's Platinum Yendorian
-Express Card gives magic resistance just by being carried; a few
-others (Sceptre of Might, Eye of the Aethiopica) block magic
-attacks only when wielded or worn. Getting your quest artifact is
-a milestone that marks the transition from "surviving" to
-"preparing for the endgame."
+stealth depending on role. Three give magic resistance just by being
+carried: the Archeologist's Orb of Detection, the Knight's Magic
+Mirror of Merlin, and the Tourist's Platinum Yendorian Express Card.
+Three more block magic attacks only when wielded or worn: the
+Caveman's Sceptre of Might, the Monk's Eyes of the Overworld, and
+the Wizard's Eye of the Aethiopica. Getting your quest artifact is a
+major power spike. The late game starts here.
 
-**The nemesis drops two things, on the floor.** When you kill the
-quest nemesis, your role's quest artifact lands on the floor at
-their square, along with the **Bell of Opening** (one of the three
-invocation items you'll need for Gehennom). Pick both up. The
-artifact and the Bell are not auto-added to your pack, and they
-don't reappear; if you leave the floor without them, the Quest is
-the only place in the game you can get them.
+**Two prizes wait on the nemesis's square.** The **Bell of Opening**
+rides in the nemesis's pack and falls when you kill them (one of the
+three invocation items you'll need for Gehennom). Your role's quest
+artifact has been sitting under their feet the whole time, placed
+when the level was generated. Pick both up. They don't auto-add to
+your pack and they don't reappear, so if you leave the floor without
+them you're walking back. The Quest is the only place in the game
+you can get them.
 
-If your alignment record is too low (from attacking peacefuls, for
-instance), your quest leader will refuse to send you. Keep your
-hands clean.
+Most nemeses carry an amulet of life saving, so expect to kill them
+twice. The portal back is on the first Quest level only. If you
+descend underprepared you may have a long climb home.
+
+If your alignment record is too low, your quest leader will refuse
+to send you. Attacking peacefuls is the usual cause. Keep your hands
+clean.
 
 #### The Rogue Level
 <!-- audit 2026-05-18 #125: clean audit, no corrections needed. All claims verified: welcome line (do.c:1913), uppercase-only monsters (makemon.c:1672), symbol swaps for armor `]`/amulet `,`/food `:`/gold-same-as-gems (drawing.c:73-79), no closed doors (mklev.c:647-648), no fountains/sinks/altars/shops (mklev.c:988-989 skip_nonrogue branch), no spellbooks/tools/amulets in natural item pool (mkobj.c:58-64 rogueprobs). Dungeon level range is Dlvl 15-18 per dungeon.lua base=15, range=4. -->
@@ -6370,6 +6376,7 @@ The map now looks like this:
 
 Four boulders (A, D, G, and H) remain.
 
+<!-- audit 2026-05-18 v2 #1: 13-boulder layout and all 13 solution steps verified geometrically against dat/soko2-1.lua:9-62. Upstair (17,5), downstair (7,11), locked door (19,9), 10 hole traps row 10 cols 9-18, rolling-boulder trap (8,10) all match. Final "three boulders remain" tally checks. Backfill: this section had no pass-1 badge while neighbors (Levels 2A, 2B, 3B) did. See companion-audit.md. -->
 #### Level 3, Version A
 
 ```
@@ -6704,7 +6711,7 @@ eat a corpse on turn 1, you've broken foodless, vegan, and
 vegetarian for the rest of the run. There's no going back.
 
 #### The Food Conducts
-<!-- audit 2026-05-18 #142: 5 corrections. (1) "Brown and yellow puddings" — there is no yellow pudding; S_PUDDING per monsters.h:2081-2113 is gray ooze / brown pudding / green slime / black pudding, and per mondata.h:241 the vegetarian-safe ones are all but black pudding (so gray ooze, brown pudding, green slime). (2) Shriekers are S_FUNGUS — already covered by "all F (fungi and molds)," so the separate mention is misleading. (3) "Avoid eating eggs, pancakes, lumps of royal jelly, cream pies, and candy bars" — incomplete: fortune cookies ALSO break vegan (eat.c:3016 lists FORTUNE_COOKIE as VEGGY-but-vegan-violating), so the spoiler's "vegetarian-friendly fortune cookie" advice contradicts itself. (4) Foodless: "polymorphing breaks foodless" — wrong. polyself.c has no u.uconduct.food increment; polymorph only breaks the polyself conduct. (5) "Prayer cures hunger when you're Weak or Fainting" — wrong threshold; pray.c:275 TROUBLE_HUNGRY fires at uhs >= HUNGRY (Hungry / Weak / Fainting all qualify). -->
+<!-- audit 2026-05-18 #142: 5 corrections. (1) "Brown and yellow puddings" — there is no yellow pudding; S_PUDDING per monsters.h:2081-2113 is gray ooze / brown pudding / green slime / black pudding, and per mondata.h:241 the vegetarian-safe ones are all but black pudding (so gray ooze, brown pudding, green slime). (2) Shriekers are S_FUNGUS — already covered by "all F (fungi and molds)," so the separate mention is misleading. (3) "Avoid eating eggs, pancakes, lumps of royal jelly, cream pies, and candy bars" — incomplete: fortune cookies ALSO break vegan (eat.c:3016 lists FORTUNE_COOKIE as VEGGY-but-vegan-violating), so the spoiler's "vegetarian-friendly fortune cookie" advice contradicts itself. (4) Foodless: "polymorphing breaks foodless" — wrong. polyself.c has no u.uconduct.food increment; polymorph only breaks the polyself conduct. (5) "Prayer cures hunger when you're Weak or Fainting" — wrong threshold; pray.c:275 TROUBLE_HUNGRY fires at uhs >= HUNGRY (Hungry / Weak / Fainting all qualify). v2 audit 2026-05-18 #2: corrected pudding "corpses" to globs (puddings are G_NOCORPSE per monsters.h:2081-2113); replaced fabricated "internal egg-derived material flag" claim with the in-world reason that fortune cookies contain eggs (the eat.c:3016-3018 list is hardcoded otyp, no such flag); dropped "all ghosts" from the vegan corpse list (S_GHOST is G_NOCORPSE per monsters.h:2888,2897); removed S_PUDDING C-identifier from prose; added vegetarian-not-safe warning (yellow mold, violet fungus, acid blob); added Monk vegetarian-is-mostly-free note; added wish-for-slow-digestion route to foodless; trimmed two filler sentences and the orphan polyself clarification; checked data.base:570-576 — the "dairy" reason for vegan-excluding puddings is not lore-supported (puddings are described as amoeboid slimes), so the rule is stated without a fabricated reason. See companion-audit.md. -->
 
 These form a hierarchy: foodless is stricter than vegan, which is
 stricter than vegetarian.
@@ -6712,37 +6719,37 @@ stricter than vegetarian.
 **Vegetarian.** Don't eat meat. Specifically, don't eat the corpses
 of non-vegetarian monsters, and avoid items made from animal
 products (meat sticks, eggs from carnivorous creatures). In
-practice, this means living on permissible corpses (lichens, most
-blobs, gray ooze / brown pudding / green slime — all puddings
-except black — and most others), fortune cookies, lembas wafers,
-and whatever vegetable food you find on the ground. The
-vegetarian monster list is broader than you might expect: all `b`
-(blobs), all `j` (jellies), all `F` (fungi and molds), all `v`
-(vortices), all `y` (lights), all `E` (elementals) except stalkers,
-all `'` (golems) except flesh golems and leather golems, and all
-ghosts.
+practice, this means living on permissible corpses and globs.
+Lichens, jellies, fungi and molds, and gray ooze or brown pudding
+globs are all safe. Fortune cookies, lembas wafers, and whatever
+vegetable food you find on the ground also work. Green slime is
+technically vegan, but eating its glob slimes you. The vegetarian
+monster list is broader than you might expect: all `b` (blobs),
+all `j` (jellies), all `F` (fungi and molds), all `v` (vortices),
+all `y` (lights), all `E` (elementals) except stalkers, and all
+`'` (golems) except flesh golems and leather golems. Vegetarian-safe
+is not the same as safe. Yellow mold corpses poison, violet fungus
+paralyzes, and acid blobs sting going down. Monks already pay an
+alignment penalty for meat, so vegetarian is mostly free for them.
 
 **Vegan.** Follow all vegetarian restrictions, plus avoid eating
 eggs, pancakes, lumps of royal jelly, cream pies, candy bars, *and*
 fortune cookies. (Yes, fortune cookies are vegetarian-safe but not
-vegan-safe — they share an internal "egg-derived" material flag in
-the C source.) The conduct fires only on *eating*: carrying or
-using animal-derived items is fine, so vegans can still light the
-Candelabrum with wax or tallow candles, wear leather armor, and
-apply bone horns. Vegan monsters are the vegetarian list minus the
-puddings (which means no S_PUDDING corpses for vegans).
+vegan-safe. They contain eggs.) The conduct fires only on *eating*:
+carrying or using animal-derived items is fine, so vegans can still
+light the Candelabrum with wax or tallow candles, wear leather
+armor, and apply bone horns. Vegan also excludes puddings.
 
-**Foodless.** Don't eat anything at all. Among the hardest
-conducts in the game. Your only nutrition sources are prayer (which
-cures hunger from Hungry status onward, not just Weak/Fainting),
-the spell of stone to flesh on rocks in your inventory (which
-creates meatballs, but eating them breaks the conduct), and a ring
-of slow digestion (which suppresses the main hunger tick — the ring
-itself still costs a tiny amount, but it's effectively a free pass).
-Most foodless runs rely on finding a ring of slow digestion early
-or praying through hunger until one appears. Chewing through walls
-also breaks this conduct (it counts as eating rock). Polymorphing
-breaks the *polyself* conduct, not foodless.
+**Foodless.** Don't eat anything at all. Your only nutrition
+sources are prayer (which cures hunger from Hungry status onward,
+not just Weak/Fainting), the spell of stone to flesh on rocks in
+your inventory (which creates meatballs, but eating them breaks
+the conduct), and a ring of slow digestion (which slows hunger
+almost to a halt). Most foodless runs rely on finding a ring of
+slow digestion early or praying through hunger until one appears.
+Wishing for the ring is the usual plan if a wand of wishing or
+magic lamp turns up. Chewing through walls also breaks this
+conduct (it counts as eating rock).
 
 #### Atheist
 <!-- audit 2026-05-17 #64: u.uconduct.gnostic verified (insight.c:2134, topten.c:590). #pray (pray.c:2221), #offer corpse (pray.c:1977), #turn (pray.c:2426), and #chat with priest (priest.c:572) all confirmed as breaking the conduct. Corrected false claim about altar BUC: do.c:370 increments gnostic on any non-coin drop, so the BUC flash is a religious interaction. Added: the final Amulet offering for ascension is exempt (pray.c:1529-1588 has no gnostic increment). See companion-audit.md. -->
@@ -7594,9 +7601,9 @@ kebab bonus.
 ---
 
 ### Armor Tables
-<!-- audit 2026-05-18 #110: seven corrections to the armor tables. (1) "+d4 Int/Wis when blessed and enchanted" for helm of brilliance is wrong; do_wear.c:3328-3334 adj_abon adds the literal enchantment (uarmh->spe) to both Int and Wis — no dice. (2) Same shape for gauntlets of dexterity ("+d3 Dex per enchantment" -> adds spe to Dex). (3) "dunce cap always cursed on generation" is wrong; dunce cap follows the standard mkobj distribution. The cap auto-curses when worn (do_wear.c:475-491). The items actually 9/10-cursed-on-generation are FUMBLE_BOOTS, LEVITATION_BOOTS, HELM_OF_OPPOSITE_ALIGNMENT, GAUNTLETS_OF_FUMBLING (mkobj.c:1086-1090) — flagged in those rows. (4) "mithril coats: no casting penalty" is wrong; MITHRIL is in the is_metallic range (objclass.h:194-196 IRON=11..MITHRIL=17), so spelarmr at spell.c:2191-2193 applies — they're lighter than plate, not penalty-free. (5)-(7) Three duplicated-clause typos: jumping boots ("#apply to leap. #apply to leap."), levitation boots ("cannot be removed while in the air. Can't remove while levitating."), helm of telepathy ("Telepathy. Telepathy while blind."). See companion-audit.md. -->
+<!-- audit 2026-05-18 #110: seven corrections to the armor tables. (1) "+d4 Int/Wis when blessed and enchanted" for helm of brilliance is wrong; do_wear.c:3328-3334 adj_abon adds the literal enchantment (uarmh->spe) to both Int and Wis — no dice. (2) Same shape for gauntlets of dexterity ("+d3 Dex per enchantment" -> adds spe to Dex). (3) "dunce cap always cursed on generation" is wrong; dunce cap follows the standard mkobj distribution. The cap auto-curses when worn (do_wear.c:475-491). The items actually 9/10-cursed-on-generation are FUMBLE_BOOTS, LEVITATION_BOOTS, HELM_OF_OPPOSITE_ALIGNMENT, GAUNTLETS_OF_FUMBLING (mkobj.c:1086-1090) — flagged in those rows. (4) "mithril coats: no casting penalty" is wrong; MITHRIL is in the is_metallic range (objclass.h:194-196 IRON=11..MITHRIL=17), so spelarmr at spell.c:2191-2193 applies — they're lighter than plate, not penalty-free. (5)-(7) Three duplicated-clause typos: jumping boots ("#apply to leap. #apply to leap."), levitation boots ("cannot be removed while in the air. Can't remove while levitating."), helm of telepathy ("Telepathy. Telepathy while blind."). v2 audit 2026-05-18 #4: 100% spot-check of every AC/MC/Wt/Cost/Material cell against objects.h:445-727; all numbers clean. Three factual fixes: levitation-boots note corrected (Boots_off at do_wear.c:300-310 handles in-air removal — the trap is the 9/10 curse, not the air); blue dragon scale mail and scales corrected from "intrinsic speed (Fast)" to extrinsic Very_fast tier matching speed boots (do_wear.c:817-828 EFast); speed boots "+1 speed" replaced with the actual mechanic (free action on 2/3 of turns). Two wisdom adjustments: dropped misleading "Dwarves drop these" note on chain mail (all iron mails are Mines drops); robe casting bonus reworded from "+1" (which is a magnitude that doesn't exist) to "cancels most of the metal-armor penalty" reflecting spell.c:2192-2195 spelarmr subtraction. Four voice tightenings: intro "alongside any tactical caveats" → "and tactical caveats"; cloak of MR de-duplicated; dunce cap and helm-of-opposite-alignment notes trimmed of meta-language and em-dashes. Follow-ups for later: build_armor_appendix.py may be out of sync with hand-edits; "yellow dragon scale mail | Rare." not verified against 5.0 generation rules. See companion-audit.md. -->
 
-**AC** is the armor-class bonus the piece provides (higher number = more protection; this is the amount subtracted from your displayed AC). **MC** is the magic-cancellation level (1-3) — higher MC reduces the chance of magic attacks landing. **Wt** is weight; **Cost** is shop base price. The **Notes** column folds in the intrinsic property granted while the piece is worn, alongside any tactical caveats. Armor is grouped by slot. Dragon scale mail is listed separately because of its sheer importance to the endgame.
+**AC** is the armor-class bonus the piece provides (higher number = more protection; this is the amount subtracted from your displayed AC). **MC** is the magic-cancellation level (1-3) — higher MC reduces the chance of magic attacks landing. **Wt** is weight; **Cost** is shop base price. The **Notes** column folds in the intrinsic property granted while the piece is worn, and tactical caveats. Armor is grouped by slot. Dragon scale mail is listed separately because of its sheer importance to the endgame.
 
 #### Body armor (suits)
 
@@ -7611,7 +7618,7 @@ kebab bonus.
 | banded mail | +6 | 1 | 350 | 90 | iron |  |
 | dwarvish mithril-coat | +6 | 2 | 150 | 240 | mithril | Light, but mithril is metallic so the spellcasting penalty still applies (smaller than plate, larger than zero). Wizard mid-game goal. |
 | elven mithril-coat | +5 | 2 | 150 | 240 | mithril | Light, expensive. Mithril is metallic, so a casting penalty still applies — smaller than plate but not zero. |
-| chain mail | +5 | 1 | 300 | 75 | iron | Dwarves drop these. |
+| chain mail | +5 | 1 | 300 | 75 | iron |  |
 | orcish chain mail | +4 | 1 | 300 | 75 | iron |  |
 | scale mail | +4 | 1 | 250 | 45 | iron |  |
 | studded leather armor | +3 | 1 | 200 | 15 | leather | No spellcasting penalty. |
@@ -7627,7 +7634,7 @@ kebab bonus.
 | white dragon scale mail | +9 | — | 40 | 900 | dragonhide | Cold resistance + slow digestion. |
 | red dragon scale mail | +9 | — | 40 | 900 | dragonhide | Fire resistance + infravision. |
 | green dragon scale mail | +9 | — | 40 | 900 | dragonhide | Poison resistance + sickness resistance. |
-| blue dragon scale mail | +9 | — | 40 | 900 | dragonhide | Shock resistance + intrinsic speed (Fast). |
+| blue dragon scale mail | +9 | — | 40 | 900 | dragonhide | Shock resistance + speed, same tier as speed boots. |
 | gold dragon scale mail | +9 | — | 40 | 900 | dragonhide | Hallucination resistance + permanent light (only body-slot light source). |
 
 :::
@@ -7646,7 +7653,7 @@ kebab bonus.
 | white dragon scales | +3 | — | 40 | 500 | dragonhide | Cold resistance + slow digestion. |
 | red dragon scales | +3 | — | 40 | 500 | dragonhide | Fire resistance + infravision. |
 | green dragon scales | +3 | — | 40 | 500 | dragonhide | Poison resistance + sickness resistance. |
-| blue dragon scales | +3 | — | 40 | 500 | dragonhide | Shock resistance + intrinsic speed. |
+| blue dragon scales | +3 | — | 40 | 500 | dragonhide | Shock resistance + speed, same tier as speed boots. |
 | gold dragon scales | +3 | — | 40 | 500 | dragonhide | Hallucination resistance + permanent light. |
 
 :::
@@ -7673,12 +7680,12 @@ kebab bonus.
 | orcish cloak | +0 | 1 | 10 | 40 | cloth |  |
 | dwarvish cloak | +0 | 1 | 10 | 50 | cloth |  |
 | oilskin cloak | +1 | 2 | 10 | 50 | cloth | Resists grab attacks. |
-| robe | +2 | 2 | 15 | 50 | cloth | +1 spellcasting effectiveness. |
+| robe | +2 | 2 | 15 | 50 | cloth | Casting bonus. Cancels most of the metal-armor penalty. |
 | alchemy smock | +1 | 1 | 10 | 50 | cloth | Poison resistance. Fantastic early-game safety. |
 | leather cloak | +1 | 1 | 15 | 40 | leather |  |
 | cloak of protection | +3 | 3 | 10 | 50 | cloth | Best non-magical defensive cloak. |
 | cloak of invisibility | +1 | 1 | 10 | 60 | cloth | Invisibility. |
-| cloak of magic resistance | +1 | 1 | 10 | 60 | cloth | Magic resistance. Lightest source of magic resistance. |
+| cloak of magic resistance | +1 | 1 | 10 | 60 | cloth | Magic resistance. The lightest source. |
 | cloak of displacement | +1 | 1 | 10 | 50 | cloth | Displacement. |
 
 :::
@@ -7694,12 +7701,12 @@ kebab bonus.
 | dwarvish iron helm | +2 | — | 40 | 20 | iron |  |
 | fedora | +0 | — | 3 | 1 | cloth | Tourist starter; Eye of the Aethiopica base. |
 | cornuthaum | +0 | 1 | 4 | 80 | cloth | Clairvoyance. Wizards only; blocks other clairvoyance for non-Wizards. |
-| dunce cap | +0 | — | 4 | 1 | cloth | Int/Wis → 6. Auto-curses itself when worn (regardless of starting BUC), so you can't un-wear it without remove curse. |
+| dunce cap | +0 | — | 4 | 1 | cloth | Int/Wis → 6. Auto-curses on wear. Needs remove curse to take off. |
 | dented pot | +1 | — | 10 | 8 | iron |  |
 | helm of brilliance | +1 | — | 40 | 50 | glass | Adds enchantment value to both Int and Wis while worn (a +3 helm gives +3 Int and +3 Wis). |
 | helmet | +1 | — | 30 | 10 | iron |  |
 | helm of caution | +1 | — | 50 | 50 | iron | Warning. |
-| helm of opposite alignment | +1 | — | 50 | 50 | iron | Flips alignment while worn. Generated cursed 9 times in 10 — and cursed means you can't take it off. |
+| helm of opposite alignment | +1 | — | 50 | 50 | iron | Flips alignment while worn. Generated cursed 9 times in 10. Trap item. |
 | helm of telepathy | +1 | — | 50 | 50 | iron | Telepathy while blind. |
 
 :::
@@ -7726,13 +7733,13 @@ kebab bonus.
 | low boots | +1 | — | 10 | 8 | leather |  |
 | iron shoes | +2 | — | 50 | 16 | iron |  |
 | high boots | +2 | — | 20 | 12 | leather |  |
-| speed boots | +1 | — | 20 | 50 | leather | +1 speed. |
+| speed boots | +1 | — | 20 | 50 | leather | Very fast. Free extra action on 2/3 of turns. |
 | water walking boots | +1 | — | 15 | 50 | leather | Water walking. Critical for the Castle drawbridge. |
 | jumping boots | +1 | — | 20 | 50 | leather | `#apply` to leap to a chosen nearby square. |
 | elven boots | +1 | — | 15 | 8 | leather | Stealth. |
 | kicking boots | +1 | — | 50 | 8 | iron |  |
 | fumble boots | +1 | — | 20 | 30 | leather | Causes frequent fumbling. Generated cursed 9 times in 10. Avoid. |
-| levitation boots | +1 | — | 15 | 30 | leather | Levitation. Can't be removed while floating, so you're stuck above pickup until something else cancels the levitation. Generated cursed 9 times in 10 — trap item. |
+| levitation boots | +1 | — | 15 | 30 | leather | Levitation. Generated cursed 9 times in 10. Cursed boots can't be taken off, so this is a trap item. |
 
 :::
 
@@ -8238,10 +8245,10 @@ All piercers hide.
 :::
 
 #### Quadrupeds `q`
-<!-- audit 2026-05-17 #58: 7 rows × 8 cells verified against monsters.h:831-885. All stats clean. Added "clings" note to wumpus (M1_CLING). See companion-audit.md. -->
+<!-- audit 2026-05-17 #58: 7 rows × 8 cells verified against monsters.h:831-885. All stats clean. Added "clings" note to wumpus (M1_CLING). v2 audit 2026-05-18 #3: re-verified all 56 cells against monsters.h:831-885 (rothe through mastodon); 0 factual corrections. Tightened the Mumakil line to mention damage and thick hide explicitly. See companion-audit.md. -->
 
 
-Mixed bag. Rothes are early-game wreckers (three attacks per turn). Mumakil are slow but extremely sturdy.
+Mixed bag. Rothes are early-game wreckers (three attacks per turn). Mumakil are slow but hit for 4d12 and shrug off blows.
 
 ::: dense-table
 
