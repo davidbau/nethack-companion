@@ -1107,9 +1107,10 @@ entering her level:
 **Crossing the water.** The island is surrounded by deep water.
 Your options, from safest to most desperate:
 
-- **Levitation** (ring, boots, potion, or spell). Cleanest method.
-  You float over the water without touching it, immune to eel
-  grabs from below.
+- **Levitation** (ring, boots, potion, or spell). The easiest way
+  to cross, but **does not protect you from eel grabs** in adjacent
+  water (see *Drowning* in Dangerous Encounters). Use it to traverse
+  fast, not as a defense.
 - **Water walking boots.** You walk on the surface. Eels can still
   grab you in adjacent water.
 - **Wand of cold.** Zap the water to freeze a path of ice. Ice
@@ -1613,7 +1614,7 @@ AC / attack details on every monster, see the
 | `S`    | Snakes            | Cobras and pit vipers poison. Water moccasins come from fountains.                                   |
 | `t`    | Trappers / lurkers above | Hide in plain sight on floor or ceiling and engulf you when you walk under/onto them. See the engulfment write-up under Dangerous Encounters. |
 | `T`    | Trolls            | Regenerate. They come back from the dead unless you eat or tin the corpse.                           |
-| `u`    | Horses / unicorns | Horses are usually mountable, mostly peaceful in the wild. Unicorns are powerful and color-coded by alignment — same-aligned unicorns can be pacified by throwing a real gem at them (see Luck); cross-aligned ones are a fight. |
+| `u`    | Horses / unicorns | Horses are usually mountable, mostly peaceful in the wild. Unicorns are powerful and color-coded by alignment. **Same-aligned unicorns spawn peaceful**; throwing them an identified real gem grants +5 Luck (see Luck). **Cross-aligned unicorns are hostile**; you can pacify them by throwing any gem (real or glass), at which point an identified real gem still pays out, though only +1 to +3. |
 | `U`    | Umber hulk        | Confuses on sight. Avoid looking at them directly.                                                   |
 | `v`    | Vortices          | Engulfing wisps. Air, fire, ice, and steam vortices each apply their element to whatever they engulf. Kill at range. |
 | `w`    | Worms             | Long worms grow tail segments after each hit and can be a corridor in themselves. Purple worms swallow you whole (see Don't Want, below). |
@@ -2159,11 +2160,12 @@ amulets.
 <!-- audit 2026-05-17 #7: 7 claims verified, 1 corrected (Famine corpse missing from instakill list). See companion-audit.md. -->
 
 A handful of monsters (pit vipers, killer bees, cobras, some
-spiders, and other AD_DRST attackers) have instantly lethal
-poison attacks. The chance is low, about 1 in 240 per hit at
-healthy HP, but rises sharply when you're already wounded.
-Eating any Rider corpse (Death, Pestilence, *or* Famine) is
-also instantly fatal poison.
+spiders) have a poison-damage branch that can deliver 10 to 34
+extra HP of damage on top of the normal hit. At full HP you
+usually survive; at low HP or while burdened, it can outright
+kill you. The "extra-damage" roll fires about 1 in 240 per
+qualifying hit. Eating any Rider corpse (Death, Pestilence, *or*
+Famine) is genuinely instantly fatal regardless of HP.
 
 **Defenses:** Poison resistance makes you immune. Most characters
 can get this early by eating enough appropriate corpses. It's one

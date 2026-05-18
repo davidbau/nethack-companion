@@ -56,6 +56,7 @@ first.</p>
 <details open><summary><strong>Contents</strong></summary>
 <div class=toc>
 
+<a href="#c-8811cacc4">8811cacc4</a> &nbsp; spoilers: Croesus drops fix + LaTeX bestiary column widths + shopkeeper trim<br>
 <a href="#c-50ad1cb82">50ad1cb82</a> &nbsp; spoilers: move identification flowchart to top of chapter; update sink node for ring+potion<br>
 <a href="#c-c6c417c6a">c6c417c6a</a> &nbsp; spoilers: sink-dip table — drop &quot;Save those for the quaff&quot; tail<br>
 <a href="#c-b8b879e67">b8b879e67</a> &nbsp; spoilers: add sink-dipping potion identification table<br>
@@ -98,6 +99,29 @@ first.</p>
 <a href="#c-70554f999">70554f999</a> &nbsp; spoilers: audit #1 (The Scroll Rack) — 2 corrections<br>
 </div></details>
 
+<h2 id="c-8811cacc4">8811cacc4 — spoilers: Croesus drops fix + LaTeX bestiary column widths + shopkeeper trim</h2>
+<div class=diff><div class="line filehdr">diff --git a/spoilers/companion.md b/spoilers/companion.md</div>
+<div class="line ctx">index 4ca808423..ad38b3213 100644</div>
+<div class="line filehdr">--- a/spoilers/companion.md</div>
+<div class="line filehdr">+++ b/spoilers/companion.md</div>
+<div class="line hunk">@@ -8141,7 +8141,7 @@ The catch-all `@` class: shopkeepers, priests, watchmen, role nemeses, quest lea</div>
+<div class="line ctx"> | elf-lord | bright-blue | 8 | 12 | 10 | 20 | weapon 2d4 · weapon 2d4 | sees-invis. |</div>
+<div class="line ctx"> | Elvenking | magenta | 9 | 12 | 10 | 25 | weapon 2d4 · weapon 2d4 | sees-invis. |</div>
+<div class="line ctx"> | doppelganger | white | 9 | 12 | 5 | 20 | weapon 1d12 | shapeshifter. |</div>
+<div class="line del">-| shopkeeper | white | 12 | 16 | 0 | 50 | weapon 4d4 · weapon 4d4 | starts peaceful. Don&#x27;t anger one. They&#x27;re stronger than they look and have eternal grudges. |</div>
+<div class="line add">+| shopkeeper | white | 12 | 16 | 0 | 50 | weapon 4d4 · weapon 4d4 | starts peaceful. Don&#x27;t anger one. |</div>
+<div class="line ctx"> | guard | blue | 12 | 12 | 10 | 40 | weapon 4d10 | starts peaceful. |</div>
+<div class="line ctx"> | prisoner | white | 12 | 12 | 10 | 0 | weapon 1d6 | starts peaceful. |</div>
+<div class="line ctx"> | Oracle | bright-blue | 12 | 0 | 0 | 50 | passive 0d4 magic | starts peaceful. |</div>
+<div class="line hunk">@@ -8155,7 +8155,7 @@ The catch-all `@` class: shopkeepers, priests, watchmen, role nemeses, quest lea</div>
+<div class="line ctx"> | watchman | gray | 6 | 10 | 10 | 0 | weapon 1d8 | follows stairs, starts peaceful. |</div>
+<div class="line ctx"> | watch captain | green | 10 | 10 | 10 | 15 | weapon 3d4 · weapon 3d4 | follows stairs, starts peaceful. |</div>
+<div class="line ctx"> | Medusa | bright-green | 20 | 12 | 2 | 50 | weapon 2d4 · claw 1d8 · gaze petrify · bite 1d6 poison | flies, swims, amphibious, poisonous-corpse. |</div>
+<div class="line del">-| Croesus | magenta | 20 | 15 | 0 | 40 | weapon 4d10 | sees-invis, follows stairs. Vault guardian on Fort Ludios. Drops a wand of wishing wish-share. |</div>
+<div class="line add">+| Croesus | magenta | 20 | 15 | 0 | 40 | weapon 4d10 | sees-invis, follows stairs. Vault guardian on Fort Ludios. Wields a two-handed sword and hoards gold, gems, and magic items off the floor. |</div>
+<div class="line ctx"> | Charon | white | 76 | 18 | -5 | 120 | weapon 1d8 · touch 1d8 paralyse | sees-invis, starts peaceful. |</div>
+<div class="line ctx"> | archeologist | white | 10 | 12 | 10 | 1 | weapon 1d6 · weapon 1d6 | tunnels. |</div>
+<div class="line ctx"> | barbarian | white | 10 | 12 | 10 | 1 | weapon 1d6 · weapon 1d6 |  |</div></div>
 <h2 id="c-50ad1cb82">50ad1cb82 — spoilers: move identification flowchart to top of chapter; update sink node for ring+potion</h2>
 <div class=diff><div class="line filehdr">diff --git a/spoilers/companion.md b/spoilers/companion.md</div>
 <div class="line ctx">index a9f4ff62a..4ca808423 100644</div>
