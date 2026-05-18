@@ -7225,3 +7225,28 @@ Source: `spoilers/companion.md` line 8669. 4 fixes (3 factual + 1 voice de-dupli
 - Black naga corpse confers poison + acid + stoning resistance per `monsters.h:2020` MR_POISON|MR_ACID|MR_STONE — section correctly surfaces this.
 
 ---
+
+## 2026-05-18 — v2 rollback: trivia additions from batches 1-4
+
+User feedback during batch 5: *"so instead of making the book more brief and to the point, we are filling it with more rare trivia that isn't actually helpful."*
+
+Six trivia additions from batches 1-4 reverted. Each was technically correct but added completeness rather than saving a beginner's life or changing a strategic decision.
+
+### Reverted
+
+- **v2 audit #5 (The Quest)**: named-artifact lists for carried-MR and wielded/worn-MR collapsed back to "a few grant... a few others block..." with a pointer to the Artifacts chapter. The pass-1 framing was wrong ("only the Tourist's PYEC"); the v2 expansion to three named artifacts on each side was the wrong correction — a generic statement plus a chapter pointer is the right level.
+- **v2 audit #7 (Broadsword)**: dropped the Dragonbane and Orcrist row notes added in v2. Restored Stormbringer to the original short form ("the chaotic artifact form"). The broadsword row's redundant "+d4 small, +1 large" formula note (already encoded in the Damage column) is now empty rather than replaced with an artifact mention.
+- **v2 audit #8 (Vampires)**: dropped "Lords and Vlad can also become wolves" from the intro. The "bat or cloud" gloss is sufficient at the bestiary-row level. (The G_NOCORPSE fix on the "poisonous corpses" claim is kept.)
+- **v2 audit #10 (Long sword)**: artifact list rolled back from 6 names to 4 (Excalibur, Vorpal Blade, Frost Brand, Fire Brand — the pass-1 state). Giantslayer and Sunsword are documented in the Artifacts chapter.
+- **v2 audit #12 (Mace)**: dropped the "Sceptre of Might is the other MACE artifact" addition. Demonbane is the famous one and is already named. (The PHYS(5,0) interpretation fix and the silver-mace `hates_silver` fix are kept.)
+- **v2 audit #17 (Seduction)**: dropped the ring-of-adornment paragraph (succubus pockets / incubus puts on). The XL-1 safety note for the farm strategy is kept — that's a real lifesaver for a beginner attempting the strategy and not trivia.
+
+### Voice fix
+
+- Sea monsters intro em-dash → colon ("drag you under to drown — instadeath" → "drag you under to drown: instadeath") per the punctuation ladder.
+
+### Lesson
+
+Audit additions need a "would a beginner make a different decision with this fact?" test. The Artifacts chapter is the canonical home for artifact details; bestiary and weapon rows should not duplicate it. Saved as a memory rule [feedback-no-trivia] for the autonomous run going forward.
+
+---

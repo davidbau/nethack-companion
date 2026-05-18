@@ -983,7 +983,7 @@ to rest for a moment, though the fountains are subject to the usual
 fountain risks.
 
 #### The Quest
-<!-- audit 2026-05-17 #39: 8 role/artifact/nemesis pairs and entry mechanics verified against role.c + artilist.h. Corrected: "Most provide magic resistance" was wrong (only Platinum Yendorian Express Card grants carried MR; others vary). v2 audit 2026-05-18 #5: four factual corrections. (a) Portal range left at 11 through 16 (a transient v2 mis-edit to "11 through 17" was reverted after closer reading of dungeon.c:380-411 and a wiki cross-check; level_range() returns a count, so range=2 means base..base+1, giving max = 9 + 6 + 1 = 16, not 17). (b) Carried-MR quest artifacts: three not one — Orb of Detection (Archeologist), Magic Mirror of Merlin (Knight), and PYEC (Tourist), all CARY(AD_MAGM) at artilist.h:221,257,293. (c) Wielded/worn-MR artifacts: three not two — added Eyes of the Overworld (Monk), all DFNS(AD_MAGM) at artilist.h:233,261,304. (d) "Nemesis drops two things on the floor" misleads: only the Bell drops from inventory on kill; the quest artifact is placed under the nemesis at level generation (e.g. dat/Val-goal.lua:49,76 same square for both). Reworded. Wisdom additions: nemesis lifesaving (most carry an amulet of life saving — expect to kill twice); portal-back warning (the return portal is only on the first Quest level). Voice: "milestone that marks the transition from surviving to preparing for the endgame" softened to "major power spike"; trimmed three short sentences into two; em-dashes around "from attacking peacefuls, for instance" replaced with periods per the punctuation-ladder rule. See companion-audit.md. -->
+<!-- audit 2026-05-17 #39: 8 role/artifact/nemesis pairs and entry mechanics verified against role.c + artilist.h. Corrected: "Most provide magic resistance" was wrong (only Platinum Yendorian Express Card grants carried MR; others vary). v2 audit 2026-05-18 #5: four factual corrections. (a) Portal range left at 11 through 16 (a transient v2 mis-edit to "11 through 17" was reverted after closer reading of dungeon.c:380-411 and a wiki cross-check; level_range() returns a count, so range=2 means base..base+1, giving max = 9 + 6 + 1 = 16, not 17). (b) "Only the Tourist's PYEC" was wrong on the carried-MR claim — Orb of Detection (Archeologist) and Magic Mirror of Merlin (Knight) also carry MR (CARY(AD_MAGM) at artilist.h:221,257,293). Reworded to "a few" without naming, since the Artifacts chapter has the per-role list. Same shape for the wielded/worn-MR clause — three artifacts have DFNS(AD_MAGM) at artilist.h:233,261,304 (Sceptre of Might / Eyes of the Overworld / Eye of the Aethiopica); kept the generic "a few others." (d) "Nemesis drops two things on the floor" misleads: only the Bell drops from inventory on kill; the quest artifact is placed under the nemesis at level generation (e.g. dat/Val-goal.lua:49,76 same square for both). Reworded. Wisdom additions: nemesis lifesaving (most carry an amulet of life saving — expect to kill twice); portal-back warning (the return portal is only on the first Quest level). Voice: "milestone that marks the transition from surviving to preparing for the endgame" softened to "major power spike"; trimmed three short sentences into two; em-dashes around "from attacking peacefuls, for instance" replaced with periods per the punctuation-ladder rule. See companion-audit.md. -->
 
 Around dungeon levels 11 through 16, a magic portal drops you onto
 your Quest. You'll need experience level 14 and a friendly word with
@@ -1001,13 +1001,10 @@ Eyes of the Overworld. And so on.
 
 Quest artifacts are powerful. Each grants a unique mix of carried
 or worn intrinsics: protection, luck, ESP, warning, reflection, or
-stealth depending on role. Three give magic resistance just by being
-carried: the Archeologist's Orb of Detection, the Knight's Magic
-Mirror of Merlin, and the Tourist's Platinum Yendorian Express Card.
-Three more block magic attacks only when wielded or worn: the
-Caveman's Sceptre of Might, the Monk's Eyes of the Overworld, and
-the Wizard's Eye of the Aethiopica. Getting your quest artifact is a
-major power spike. The late game starts here.
+stealth depending on role. A few grant magic resistance just by
+being carried; a few others block magic attacks only when wielded
+or worn. The Artifacts chapter has the per-role list. Getting your
+quest artifact is a major power spike. The late game starts here.
 
 **Two prizes wait on the nemesis's square.** The **Bell of Opening**
 rides in the nemesis's pack and falls when you kill them (one of the
@@ -2174,7 +2171,7 @@ detects them through invisibility, but *telepathy* does not (they're
 mindless). If you do get blinded, a unicorn horn cures it.
 
 #### Seduction
-<!-- audit 2026-05-17 #33: self-audit caught 2 errors in my prior rewrite — items aren't dropped on floor (just unequipped to inventory); demon's succubus/incubus form is random, not based on player gender. v2 audit 2026-05-18 #17: two factual fixes and two wisdom additions. (1) "Depending on its randomly assigned gender" was incomplete: could_seduce at mhitu.c:1980 requires opposite-sex genagr/gendef, so a same-sex foocubus never seduces and just claws. Reworded. (2) The ring-of-adornment interactions at mhitu.c:2019-2110 were entirely absent from the section; added a brief note. Wisdom: added the XL-1 caveat (level-drain is fatal). See companion-audit.md. -->
+<!-- audit 2026-05-17 #33: self-audit caught 2 errors in my prior rewrite — items aren't dropped on floor (just unequipped to inventory); demon's succubus/incubus form is random, not based on player gender. v2 audit 2026-05-18 #17: one factual fix plus one safety note. (1) "Depending on its randomly assigned gender" was incomplete: could_seduce at mhitu.c:1980 requires opposite-sex genagr/gendef, so a same-sex foocubus never seduces and just claws. Reworded. (2) Added XL-1 caveat to the "keep one alive to farm" note (the level-drain outcome is fatal at XL 1). The ring-of-adornment interactions (mhitu.c:2019-2110) were added in an initial v2 edit and then reverted as trivia — the section is about the encounter, not a complete catalogue. See companion-audit.md. -->
 
 The **amorous demon** (`&`, gray) appears as a **succubus** to
 male heroes and an **incubus** to female ones. A same-sex foocubus
@@ -2218,9 +2215,6 @@ amorous demon can be the cheapest curse-removal in the dungeon.
 Some players keep one alive to farm XP and attributes. Don't try
 this at experience level 1, though: the level-drain outcome is
 fatal.
-
-A succubus will also pocket a worn ring of adornment, and an
-incubus will slip one from your pack onto your finger.
 
 #### The Riders
 <!-- audit 2026-05-18 #150: 4 corrections. (1) "permanently displaced" misreads M3_DISPLACES (monflag.h:175) — that flag means "moves monsters out of its way," not the cloak-of-displacement evasion. (2) "Ignore magic resistance for their signature attacks" — wrong for Death. uhitm.c:3858-3883 shows Antimagic DOES block the 3/20 touch-of-death instakill case. (3) "Eating their corpses is fatal in different ways for each" — wrong; all three trigger the same done(DIED) with killer text "unwisely ate the body of <name>" (eat.c:831-849). (4) "Famine drives you instantly to Weak or Fainting" — overstated; uhitm.c:3791-3795 adds 40-79 hunger units, which doesn't reach Weak from Satiated. -->
@@ -7312,27 +7306,27 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 :::
 
 #### Broadsword
-<!-- audit 2026-05-18 #103: Stormbringer's base item is RUNESWORD per artilist.h:93, not broadsword. Moved the attribution and added the drain-life detail. Both share the same skill class (P_BROAD_SWORD) and the same 1d4+1d4/1d6+1 dice, which is what makes the confusion easy. v2 audit 2026-05-18 #7: added missing artifact forms — Dragonbane (BROADSWORD, +d5 vs dragons, reflection per artilist.h:157-160) and Orcrist (ELVEN_BROADSWORD, chaotic, warns of orcs, +d5 per artilist.h:134-136). Replaced redundant formula note ("+d4 small, +1 large" — already in the Damage column) with the artifact note. Expanded Stormbringer note to mention drain-life. See companion-audit.md. -->
+<!-- audit 2026-05-18 #103: Stormbringer's base item is RUNESWORD per artilist.h:93, not broadsword. Moved the attribution and added the drain-life detail. Both share the same skill class (P_BROAD_SWORD) and the same 1d4+1d4/1d6+1 dice, which is what makes the confusion easy. v2 audit 2026-05-18 #7: dropped the redundant "+d4 small, +1 large" Notes-cell formula on the broadsword row (already encoded in the Damage column). An initial v2 edit named Dragonbane (BROADSWORD, artilist.h:157-160) and Orcrist (ELVEN_BROADSWORD, artilist.h:134-136) with their effects, plus expanded the Stormbringer note; reverted as trivia — the Artifacts chapter is the canonical home for artifact details. See companion-audit.md. -->
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| broadsword | 1d4+1d4 / 1d6+1 | 70 | 10 | — | iron | Dragonbane is the artifact form. +d5 vs dragons, grants reflection. |
-| elven broadsword | 1d6+1d4 / 1d6+1 | 70 | 10 | — | wood | Orcrist is the chaotic artifact form. Warns of orcs, +d5 damage. |
-| runesword | 1d4+1d4 / 1d6+1 | 40 | 300 | — | iron | Stormbringer is the chaotic artifact form. Drains life on hit. |
+| broadsword | 1d4+1d4 / 1d6+1 | 70 | 10 | — | iron |  |
+| elven broadsword | 1d6+1d4 / 1d6+1 | 70 | 10 | — | wood |  |
+| runesword | 1d4+1d4 / 1d6+1 | 40 | 300 | — | iron | Stormbringer is the chaotic artifact form. |
 
 :::
 
 #### Long sword
-<!-- audit 2026-05-18 #78: stats verified vs objects.h:270-280. Excalibur dipping note rephrased to clarify ANY alignment rolls 1-in-30 at XL 5+, but only Lawfuls succeed (non-Lawfuls get the sword cursed). Listed all four artifact forms (Excalibur, Vorpal Blade, Frost Brand, Fire Brand). Also corrected adjacent two-handed-sword row: "Vorpal Blade is the artifact form" was wrong (Vorpal Blade is a LONG_SWORD artifact per artilist.h:191); two-handed sword has no dedicated artifact. v2 audit 2026-05-18 #10: artifact list was incomplete — added Giantslayer (artilist.h:174) and Sunsword (artilist.h:209), bringing the LONG_SWORD artifact count to six. Voice: Excalibur dipping line reworked from a semicolon-and-parenthetical chain into four periods per the punctuation ladder. See companion-audit.md. -->
+<!-- audit 2026-05-18 #78: stats verified vs objects.h:270-280. Excalibur dipping note rephrased to clarify ANY alignment rolls 1-in-30 at XL 5+, but only Lawfuls succeed (non-Lawfuls get the sword cursed). Listed all four artifact forms (Excalibur, Vorpal Blade, Frost Brand, Fire Brand). Also corrected adjacent two-handed-sword row: "Vorpal Blade is the artifact form" was wrong (Vorpal Blade is a LONG_SWORD artifact per artilist.h:191); two-handed sword has no dedicated artifact. v2 audit 2026-05-18 #10: an initial v2 edit added Giantslayer (artilist.h:174) and Sunsword (artilist.h:209) to bring the LONG_SWORD artifact list to six; reverted as trivia, restored to the original four (Excalibur, Vorpal Blade, Frost Brand, Fire Brand). Voice: Excalibur dipping line reworked from a semicolon-and-parenthetical chain into four periods per the punctuation ladder. See companion-audit.md. -->
 
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| long sword | 1d8 / 1d12 | 40 | 15 | — | iron | At XL 5+, dipping in a fountain rolls 1-in-30. Knights get 1-in-6. On a hit, Lawfuls get **Excalibur**. Others get the sword cursed. Artifact forms: Excalibur, Vorpal Blade, Frost Brand, Fire Brand, Giantslayer, Sunsword. |
+| long sword | 1d8 / 1d12 | 40 | 15 | — | iron | At XL 5+, dipping in a fountain rolls 1-in-30. Knights get 1-in-6. On a hit, Lawfuls get **Excalibur**. Others get the sword cursed. Artifact forms: Excalibur, Vorpal Blade, Frost Brand, Fire Brand. |
 | katana | 1d10 / 1d12 | 40 | 80 | +1 | iron | +1 to-hit baked in. Snickersnee is the artifact form. |
 
 :::
@@ -7393,13 +7387,13 @@ other bimanual weapon.
 :::
 
 #### Mace
-<!-- audit 2026-05-18 v2 #12: stats verified vs include/objects.h:355-361. Two factual fixes. (1) Demonbane row corrected: PHYS(5,0) means +1d5 to-hit and double damage versus demons (artifact.c:1083-1085 spec_abon, 1106-1107 spec_dbon), not "+d5/+0". Demonbane also has a banish invoke. (2) Silver mace row: the silver bonus is +1d20 versus hates_silver targets per uhitm.c:1376-1377 — demons, weres, vampires, shades, and most imps (mondata.c:524-528). "Undead" and "shape-changers" generally are too broad (mummies/zombies/ghosts and chameleons don't qualify). Also notes: Sceptre of Might is a MACE artifact at artilist.h:232-235; Mjollnir is a war hammer, correctly excluded. See companion-audit.md. -->
+<!-- audit 2026-05-18 v2 #12: stats verified vs include/objects.h:355-361. Two factual fixes. (1) Demonbane row corrected: PHYS(5,0) means +1d5 to-hit and double damage versus demons (artifact.c:1083-1085 spec_abon, 1106-1107 spec_dbon), not "+d5/+0". Demonbane also has a banish invoke. (2) Silver mace row: the silver bonus is +1d20 versus hates_silver targets per uhitm.c:1376-1377 — demons, weres, vampires, shades, and most imps (mondata.c:524-528). "Undead" and "shape-changers" generally are too broad (mummies/zombies/ghosts and chameleons don't qualify). Also notes: Sceptre of Might is a MACE artifact at artilist.h:232-235 (mentioned in the row in an initial v2 edit, reverted as trivia); Mjollnir is a war hammer, correctly excluded. See companion-audit.md. -->
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| mace | 1d6+1 / 1d6 | 30 | 5 | — | iron | The Priest's guaranteed first sacrifice gift, Demonbane: a silver mace with +1d5 to-hit and double damage versus demons, plus a banish invoke. Sceptre of Might is the other MACE artifact. |
+| mace | 1d6+1 / 1d6 | 30 | 5 | — | iron | The Priest's guaranteed first sacrifice gift, Demonbane: a silver mace with +1d5 to-hit and double damage versus demons, plus a banish invoke. |
 | silver mace | 1d6+1 / 1d6 | 36 | 60 | — | silver | +1d20 versus demons, weres, vampires, shades, and most imps. |
 
 :::
@@ -8811,9 +8805,9 @@ Confusion gaze. Don't melee without some way to dodge the gaze — blindness def
 :::
 
 #### Vampires `V`
-<!-- audit 2026-05-17 #9: 25 cells/claims verified, 0 corrected. All stats match monsters.h; vampire mage is #if 0 DEFERRED in 5.0, correctly omitted. Close call: vampire lord/Vlad can also shapeshift to wolf, not just bat/fog. v2 audit 2026-05-18 #8: two factual fixes. (1) "Have poisonous corpses" was wrong: all three rows carry G_NOCORPSE (monsters.h:2282,2292,2314 + monflag.h:201), so vampires leave no corpse at all. Dropped. (2) "Shapeshifts to bat or cloud" was incomplete: PM_VAMPIRE_LEADER and Vlad (PM_VLAD_THE_IMPALER) additionally shift to wolf per mon.c:4956-4967. Added. Voice: Vlad lead-in reworded to use the proper "Vlad's Tower" rather than "his Tower". See companion-audit.md. -->
+<!-- audit 2026-05-17 #9: 25 cells/claims verified, 0 corrected. All stats match monsters.h; vampire mage is #if 0 DEFERRED in 5.0, correctly omitted. Close call: vampire lord/Vlad can also shapeshift to wolf, not just bat/fog. v2 audit 2026-05-18 #8: one factual fix. "Have poisonous corpses" was wrong: all three rows carry G_NOCORPSE (monsters.h:2282,2292,2314 + monflag.h:201), so vampires leave no corpse at all. Dropped. The wolf-form addition (PM_VAMPIRE_LEADER and Vlad shift to wolf per mon.c:4956-4967) was added in an initial v2 edit and reverted as trivia — the bat/cloud gloss is sufficient at this section's level. Voice: Vlad lead-in reworded to use the proper "Vlad's Tower" rather than "his Tower". See companion-audit.md. -->
 
-Drains XL on bite. Shapeshifts to bat or fog cloud. Lords and Vlad can also become wolves. Vlad the Impaler is the boss of Vlad's Tower.
+Drains XL on bite. Shapeshifts to bat or cloud. Vlad the Impaler is the boss of Vlad's Tower.
 
 All vampires fly, regenerate, are undead, follow you up and down stairs, and shapeshift.
 
@@ -9061,7 +9055,7 @@ All golems are mindless, sleep-resistant, and poison-resistant.
 <!-- audit 2026-05-18 #158: all 6 entries (jellyfish/piranha/shark/giant eel/electric eel/kraken) verified clean vs monsters.h:3205-3256. All carry M1_SWIM | M1_AMPHIBIOUS. AD_WRAP grab-and-drown mechanic confirmed at uhitm.c:3378-3401. 0 corrections. v2 audit 2026-05-18 #19: two factual fixes. (a) The wrap-and-drown intro applied to all 6 rows, but only giant eel, electric eel, and kraken have AT_TUCH/AT_HUGS+AD_WRAP per monsters.h:3230-3256. Jellyfish/piranha/shark just bite or sting. Reworded. (b) Jellyfish "sting 3d3 poison" loses the AD_DRST detail — the sting is a poisonous strength-drain (uhitm.c:3149,3157). Changed to "sting 3d3 drain-Str" matching the spoiler's own drain-stat notation elsewhere. See companion-audit.md. -->
 #### Sea monsters `;`
 
-Live in water. Eels and the kraken wrap you and drag you under to drown — instadeath without magical breathing. Stay off the water-adjacent square unless you have it.
+Live in water. Eels and the kraken wrap you and drag you under to drown: instadeath without magical breathing. Stay off the water-adjacent square unless you have it.
 
 All sea monsters swim and are amphibious.
 
