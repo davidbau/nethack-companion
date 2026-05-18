@@ -368,8 +368,8 @@ and the ability to outrun a gnome lord. If your status line reads
 ### Your First Descent
 
 You step down the stairs. The air is cool and damp. A corridor
-stretches before you, branching into darkness. Your pet (a little dog
-or kitten, depending on your inclinations) trots along behind you.
+stretches before you, branching into darkness. Your starting pet
+trots along behind you.
 
 Welcome to the dungeon.
 
@@ -461,8 +461,9 @@ Eat corpses fresh — within about 50 turns of the kill for a guaranteed-safe me
 If you do get food poisoning, pray immediately.
 
 **Falling down stairs while overburdened.** If you're carrying too
-much, taking the stairs can cause you to tumble and take significant
-damage. Drop items before descending, or manage your inventory.
+much, taking the stairs can make you tumble for 1–3 HP. Annoying
+rather than dangerous, but a habit worth avoiding — drop items
+before descending or manage your inventory.
 
 **Killer bees.** They come in swarms, they're fast, and in the early
 game, a group of them can overwhelm you. If you see one bee, expect
@@ -2013,22 +2014,34 @@ weightless and can't be tinned (no nutrition), so eat them as soon
 as the fight ends.
 
 #### Enchantment Drain
+<!-- audit 2026-05-17 #73: corrected substantial errors. Active claw uses some_armor (do_wear.c:2629) — armor only (cloak > body armor > shirt > 1/4 chance for helm/gloves/boots/shield), or if naked a 5-way rn2(5) for ring/amulet/blindfold. NEVER targets weapon. Weapon drain is passive-only (mhitm_ad_ench when YOU melee them, mhitu.c:2509-2514). Active attack DOES print "Your X seems less effective." (uhitm.c:3641). Added Gehennom-only generation, MC defense, corpse warning (eats an intrinsic). See companion-audit.md. -->
 
-**Disenchanters** (`R`, blue) are widely cursed online as the
-silent ascension-killer. Their claw drains *enchantment*: each
-hit picks a random charged or enchanted object (including your
-artifact weapon, including your dragon scale mail) and lowers
-its enchantment by one. The damage is invisible during the
-fight (no announcement) and permanent. Three or four hits will
-take a +7 sword to +3 and you won't notice until you check.
+**Disenchanters** (`R`, blue) appear only in Gehennom. Their
+claw is the silent ascension-killer it's reputed to be, but the
+mechanic is more constrained than common lore suggests.
 
-**Defenses:** Artifacts that protect against level drain also
-soak up enchantment-drain attempts on themselves, and well-made
-items have a chance to resist on their own. There's no
-hard immunity. The reliable solution is to keep disenchanters out
-of melee. Kill them with wands, spells, or thrown weapons. A
-ring of conflict is also helpful in disenchanter territory, since
-they'll attack each other before they reach you.
+Their **active** claw picks one of your worn armor pieces (cloak
+first, then suit, shirt, helm/gloves/boots/shield by weighted
+chance) and shaves 1 off its enchantment. If you have no armor at
+all, it can instead chew a ring, amulet, or blindfold. **It can't
+reach your wielded weapon** with the active attack. The game does
+print "Your *thing* seems less effective" each time, so you'll
+know when it lands.
+
+Your weapon only takes enchantment damage as a **passive** counter
+when you hit them in melee. Three or four melee strikes will take
+a +7 sword to +3; that passive drain is silent. Range-killing
+sidesteps both attacks at once.
+
+**Defenses.** Every artifact has a 90% chance to resist each
+enchantment-drain attempt on itself; ordinary items resist 10% of
+the time. The Invocation items (Amulet, Bell, Candelabrum, Book
+of the Dead) and Rider corpses always resist. **Magic-cancellation
+armor** is the strongest non-artifact armor defense for the active
+claw: at MC3 the claw will mostly fail to land. (MC doesn't help
+against the passive counter, so still don't melee them.) Range-kill
+is the cleanest plan; rings of conflict and pets reliably redirect
+them. **Don't eat the corpse** — it strips a random intrinsic.
 
 #### Engulfment from Hiding
 
@@ -5149,21 +5162,24 @@ Moloch has a special fate reserved for members of those classes).
 #### The demon-prince lairs
 
 Three of Gehennom's special levels are the personal thrones of
-**Asmodeus** (level 53, the deepest of the three by base depth —
-cold and poison resistant, casts spells, carries a wand of cold),
-**Juiblex** (level 50, the Faceless Lord — a slime that engulfs
-in melee and splashes acid), and **Baalzebub** (level 56, Lord of
-the Flies — surrounded by a poisonous cloud, summons swarms of
-flies). All three sit alone in their lairs and **won't pursue**
-you, so you can avoid them entirely by skipping their level. They
-are all bribable on the same terms as above: the demand is a
-random fraction of the gold in your main inventory, so **stash
-gold in a bag of holding before walking up to the throne** and a
-few hundred zm will buy off a prince who would otherwise have
-demanded thousands. Fighting them is viable late game (wand of
-death works on all three), but bribery is much cheaper, and the
-prince's corpse isn't useful for sacrifice the way a fresh weak
-monster's would be.
+**Asmodeus** (cold- and poison-resistant, casts spells, carries a
+wand of cold), **Baalzebub** (Lord of the Flies, surrounded by
+a poison-gas cloud, summons swarms of flies), and **Juiblex**
+(the Faceless Lord, a slime that engulfs in melee and splashes
+acid). All three sit alone in their lairs and **won't pursue**
+you, so you can avoid them entirely by skipping their level.
+
+**Asmodeus and Baalzebub are bribable**: the demand is a random
+fraction of the gold in your main inventory, so **stash gold in a
+bag of holding before walking up to the throne** and a few hundred
+zm will buy off a prince who would otherwise have demanded
+thousands. **Juiblex is not bribable** — only the Arch-Devil
+demons with the bribe disposition (Geryon, Dispater, Baalzebub,
+Asmodeus) accept gold; Juiblex, Yeenoghu, Orcus, and Demogorgon
+attack on sight regardless. Fighting Juiblex is viable late game
+(wand of death works on all four), but expect a real fight.
+None of their corpses is useful for sacrifice the way a fresh
+weak monster's would be.
 
 #### Vlad's Tower
 
@@ -5251,8 +5267,9 @@ boss who casts spells, summons minions, and aggrieves anyone in
 melee range — the standard answer is a wand of death or finger of
 death from a safe distance.
 
-You cannot leave the Sanctum without the Amulet: the up-stair
-refuses to lift you out empty-handed.
+The Sanctum's up-stair lets you leave whenever you like, but the
+**Astral plane portal at the top of the Endgame ladder won't open
+without the Amulet** in your inventory.
 
 #### The Heist
 
@@ -6872,12 +6889,14 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 :::
 
 #### Flail
+<!-- audit 2026-05-17 #70: flail stats verified vs objects.h:384-386 + weapon.c. Tightened notes to show both +1 small and +1d4 large bonuses. Added grappling hook (P_FLAIL skill, but a WEPTOOL); #apply pulls a target toward you. See companion-audit.md. -->
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| flail | 1d6+1 / 1d4+1d4 | 15 | 4 | — | iron | +1d4 large; one-handed. |
+| flail | 1d6+1 / 1d4+1d4 | 15 | 4 | — | iron | +1 small, +1d4 large; one-handed. |
+| grappling hook | 1d2 / 1d6 | 30 | 50 | — | iron | Tool, not a primary weapon, but trains P_FLAIL. `#apply` to hook and pull a target toward you. |
 
 :::
 

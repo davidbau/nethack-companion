@@ -2798,3 +2798,151 @@ corrections, two fabrications removed.
   exploding-rune case is prevented by Antimagic (spell.c:170), and
   rndcurse can no-op if you have nothing curseable. Left as-is.
 
+
+---
+
+## 2026-05-18 — Chapter audit #65: Your First Descent
+
+Source: `spoilers/companion.md` line 372. Mostly clean. 2 corrected.
+
+### Verified (sample)
+- Floating eye paralysis, lichen/lizard corpses never rot, lizard cures
+  stoning, pets avoid cursed items, killer bee swarms + poison sting,
+  prayer rejected in Gehennom, supply chests above Oracle 2/3 chance,
+  hunger states ordering, prayer trouble triggers.
+
+### Corrected
+1. "Little dog or kitten" framing — Knight starts with pony; trimmed to
+   generic "starting pet" per voice rules.
+2. "Tumble and take significant damage" on overburdened stair fall —
+   actually rnd(3) = 1-3 HP. Reworded to "annoying rather than dangerous."
+
+### Close calls (not changed)
+- Corpse age limits (50 / 150 turns) — actual guarantee at age 175 for
+  uncursed (145 cursed). Acceptable for prose.
+
+---
+
+## 2026-05-18 — Chapter audit #67: Gehennom
+
+Source: `spoilers/companion.md` line 5007. Largely well-grounded. 3 corrected.
+
+### Verified (extensive)
+- Valley of the Dead layout/contents (valley.lua).
+- Prayer-in-Gehennom failure (pray.c:2307).
+- Hot ground potion shatter (do.c:318 + mklev.c:898 temperature=1).
+- Demon-lord-suppressed teleport (teleport.c:30).
+- Bribery formula (minion.c:310 demand = cash * (rn(80)+20*Athome) /
+  (100*(1+matching_align))).
+- bag-of-holding gold-hiding trick (money_cnt only counts top-level coins).
+- Vlad's Tower structure, special throne 13 effects with 4/13 wish.
+- Orcus Town ghost-town design + 50/50 magic lamp/marker.
+- Wizard of Yendor harassment (resurrect, intervene, summon nasties).
+- Quest nemesis carries Bell of Opening (makemon.c:1378).
+- 7 candles for Candelabrum.
+- Astral entry gated by Amulet (do.c:1505).
+
+### Corrected
+1. **Asmodeus / Baalzebub level numbers** — chapter mixed mexp (XP
+   reward) with mlevel (monster level), giving wrong numbers (53/56
+   for Asmodeus/Baalzebub when those are mexp not mlevel; Baalzebub's
+   mlevel is 89). Dropped the parenthetical numbers entirely — they
+   add noise and the resistances/abilities matter more.
+2. **"Asmodeus is the deepest of the three by base depth"** — wrong.
+   Baalzebub has base offset 6 (vs Asmodeus 2) per dungeon.lua,
+   making Baalzebub deeper on average. Reworded to drop the depth
+   ranking.
+3. **"All three [Asmodeus/Juiblex/Baalzebub] bribable on the same
+   terms"** — wrong. Per monst.c, only Geryon/Dispater/Baalzebub/
+   Asmodeus have MS_BRIBE. Juiblex has MS_GURGLE and is NOT bribable
+   (nor are Yeenoghu, Orcus, Demogorgon). Reworded to spell out who
+   accepts gold and who doesn't.
+4. **"You cannot leave the Sanctum without the Amulet: the up-stair
+   refuses to lift you out empty-handed"** — false. Sanctum's
+   up-stair is a normal staircase (sanctum.lua:130 des.stair("up",...));
+   the Amulet gate is on entering the Endgame Planes (do.c:1505).
+   Reworded.
+
+### Close calls (not changed)
+- "Wizard's Tower is three sequential Gehennom levels reached by
+  normal down-stair" — wizard1 is via Gehennom down-stair; wizard2/3
+  are chainlevels with portals. Simplification, but acceptable.
+- "Acid damage in eighty-HP gulps" — actually rnd(80) so 1-80 (or
+  rnd(16) with acid res). Loose but fine.
+
+---
+
+## 2026-05-18 — Chapter audit #70: Flail
+
+Source: `spoilers/companion.md` line 6874. Flail stats clean.
+
+### Verified
+- flail damage 1d6+1 / 1d4+1d4 (oc_wsdam=6 + tmp++ small; oc_wldam=4
+  + rnd(4) large per weapon.c:239,272). Weight 15, cost 4, iron,
+  one-handed, hitbon=0. All match objects.h:384-386.
+
+### Added (per audit)
+- Grappling hook row (P_FLAIL skill, but a WEPTOOL — appears in tools
+  not weapon class). Sdam 1d2 / Ldam 1d6, wt 30, cost 50, iron.
+  `#apply` mechanic pulls a target toward you. Important to include
+  in the Flail skill subsection so readers training the skill see
+  all weapons that train it.
+
+### Improved
+- Notes column: was "+1d4 large; one-handed". Now "+1 small, +1d4
+  large; one-handed" for consistency with adjacent class entries
+  (morning star, hammer) that show both bonuses.
+
+---
+
+## 2026-05-18 — Chapter audit #73: Enchantment Drain
+
+Source: `spoilers/companion.md` line 2017. Substantial rewrite. The
+section's active-vs-passive framing was inverted.
+
+### Verified
+- Disenchanter is `R` blue (monsters.h:2161).
+- Active claw drains 1 enchantment per hit (drain_item, zap.c:1382-1405).
+- 9/10 artifact resist + 1/10 ordinary resist via obj_resists(obj, 10, 90).
+- Invocation items + Rider corpses always resist (zap.c:1387-1391).
+- Magic cancellation defends against active attack only
+  (mhitm_mgc_atk_negated, uhitm.c:3613).
+- Eating disenchanter corpse calls attrcurse() to strip a random
+  intrinsic (eat.c:1270-1275).
+- Gehennom-only generation: G_HELL flag (monflag.h:0x0400) means
+  "generated only in hell"; makemon's else branch in is_not_in_hell
+  blocks G_HELL monsters from main dungeon. (Wiki cross-check
+  mentions deep-dungeon spawns; that's stale 3.6 info — 5.0 C is
+  strict Gehennom-only for random gen.)
+
+### Corrected (major)
+1. **"Each hit picks a random charged or enchanted object (including
+   artifact weapon, dragon scale mail)"** — wrong. mhitm_ad_ench
+   active path (uhitm.c:3608-3645) uses some_armor() — returns ARMOR
+   only (cloak > suit > shirt; helm/gloves/boots/shield by 1/4 chance).
+   If no armor at all, falls back to 5-way rn2(5) for ring/amulet/
+   blindfold or nothing. The active claw NEVER targets your wielded
+   weapon.
+2. **"Damage is invisible during the fight (no announcement)"** —
+   wrong for active. mhitm_ad_ench prints "Your <thing> seems less
+   effective" (uhitm.c:3641). The "no message" comment in C is on
+   the PASSIVE counter (mhitm_ad_ench mhitm/uhitm branches).
+3. **"Three or four hits will take a +7 sword to +3"** — only via
+   passive when YOU melee them (mhitm.c:1351-1354, mhitu.c:2509-2514).
+   The active attack alone never touches the sword.
+
+### Added
+- Gehennom-only generation note.
+- Magic-cancellation defense for active claw.
+- Corpse-eating warning (strips intrinsic).
+- Conflict-and-pet redirect strategy.
+
+### Wiki cross-check note
+- Wiki at nethackwiki.com/wiki/Disenchanter says "deeper levels of
+  the dungeons and in Gehennom" — that's 3.6 behavior, not 5.0.
+  G_HELL is strict in 5.0 source.
+- Wiki agrees on passive-weapon, MC defense, corpse intrinsic strip,
+  active-armor-targeting. Wiki was vague on the active vs passive
+  message distinction; C is explicit (active = "less effective"
+  message, passive = silent).
+

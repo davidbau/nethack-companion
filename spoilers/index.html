@@ -389,8 +389,8 @@ reads “Burdened,” you’re carrying more than you can use.</p>
 <section id="your-first-descent" class="level3">
 <h3>Your First Descent</h3>
 <p>You step down the stairs. The air is cool and damp. A corridor
-stretches before you, branching into darkness. Your pet (a little dog or
-kitten, depending on your inclinations) trots along behind you.</p>
+stretches before you, branching into darkness. Your starting pet trots
+along behind you.</p>
 <p>Welcome to the dungeon.</p>
 <p>The first few levels of the Mazes are designed to ease you in, which
 is a relative term. Monsters are weaker, but you are too. Your gear is
@@ -474,9 +474,9 @@ guaranteed-safe meal. Past that, the rot roll turns random; past ~150
 turns an uncursed corpse is certainly tainted. If you do get food
 poisoning, pray immediately.</p>
 <p><strong>Falling down stairs while overburdened.</strong> If you’re
-carrying too much, taking the stairs can cause you to tumble and take
-significant damage. Drop items before descending, or manage your
-inventory.</p>
+carrying too much, taking the stairs can make you tumble for 1–3 HP.
+Annoying rather than dangerous, but a habit worth avoiding — drop items
+before descending or manage your inventory.</p>
 <p><strong>Killer bees.</strong> They come in swarms, they’re fast, and
 in the early game, a group of them can overwhelm you. If you see one
 bee, expect more. Use a corridor to fight them one at a time.</p>
@@ -2890,20 +2890,31 @@ ends.</p>
 </section>
 <section id="enchantment-drain" class="level4">
 <h4>Enchantment Drain</h4>
-<p><strong>Disenchanters</strong> (<code>R</code>, blue) are widely
-cursed online as the silent ascension-killer. Their claw drains
-<em>enchantment</em>: each hit picks a random charged or enchanted
-object (including your artifact weapon, including your dragon scale
-mail) and lowers its enchantment by one. The damage is invisible during
-the fight (no announcement) and permanent. Three or four hits will take
-a +7 sword to +3 and you won’t notice until you check.</p>
-<p><strong>Defenses:</strong> Artifacts that protect against level drain
-also soak up enchantment-drain attempts on themselves, and well-made
-items have a chance to resist on their own. There’s no hard immunity.
-The reliable solution is to keep disenchanters out of melee. Kill them
-with wands, spells, or thrown weapons. A ring of conflict is also
-helpful in disenchanter territory, since they’ll attack each other
-before they reach you.</p>
+<!-- audit 2026-05-17 #73: corrected substantial errors. Active claw uses some_armor (do_wear.c:2629) — armor only (cloak > body armor > shirt > 1/4 chance for helm/gloves/boots/shield), or if naked a 5-way rn2(5) for ring/amulet/blindfold. NEVER targets weapon. Weapon drain is passive-only (mhitm_ad_ench when YOU melee them, mhitu.c:2509-2514). Active attack DOES print "Your X seems less effective." (uhitm.c:3641). Added Gehennom-only generation, MC defense, corpse warning (eats an intrinsic). See companion-audit.md. -->
+<p><strong>Disenchanters</strong> (<code>R</code>, blue) appear only in
+Gehennom. Their claw is the silent ascension-killer it’s reputed to be,
+but the mechanic is more constrained than common lore suggests.</p>
+<p>Their <strong>active</strong> claw picks one of your worn armor
+pieces (cloak first, then suit, shirt, helm/gloves/boots/shield by
+weighted chance) and shaves 1 off its enchantment. If you have no armor
+at all, it can instead chew a ring, amulet, or blindfold. <strong>It
+can’t reach your wielded weapon</strong> with the active attack. The
+game does print “Your <em>thing</em> seems less effective” each time, so
+you’ll know when it lands.</p>
+<p>Your weapon only takes enchantment damage as a
+<strong>passive</strong> counter when you hit them in melee. Three or
+four melee strikes will take a +7 sword to +3; that passive drain is
+silent. Range-killing sidesteps both attacks at once.</p>
+<p><strong>Defenses.</strong> Every artifact has a 90% chance to resist
+each enchantment-drain attempt on itself; ordinary items resist 10% of
+the time. The Invocation items (Amulet, Bell, Candelabrum, Book of the
+Dead) and Rider corpses always resist. <strong>Magic-cancellation
+armor</strong> is the strongest non-artifact armor defense for the
+active claw: at MC3 the claw will mostly fail to land. (MC doesn’t help
+against the passive counter, so still don’t melee them.) Range-kill is
+the cleanest plan; rings of conflict and pets reliably redirect them.
+<strong>Don’t eat the corpse</strong> — it strips a random
+intrinsic.</p>
 </section>
 <section id="engulfment-from-hiding" class="level4">
 <h4>Engulfment from Hiding</h4>
@@ -7439,20 +7450,24 @@ weapon. Dig straight lines to the stairs and don’t look back</li>
 <section id="the-demon-prince-lairs" class="level4">
 <h4>The demon-prince lairs</h4>
 <p>Three of Gehennom’s special levels are the personal thrones of
-<strong>Asmodeus</strong> (level 53, the deepest of the three by base
-depth — cold and poison resistant, casts spells, carries a wand of
-cold), <strong>Juiblex</strong> (level 50, the Faceless Lord — a slime
-that engulfs in melee and splashes acid), and <strong>Baalzebub</strong>
-(level 56, Lord of the Flies — surrounded by a poisonous cloud, summons
-swarms of flies). All three sit alone in their lairs and <strong>won’t
-pursue</strong> you, so you can avoid them entirely by skipping their
-level. They are all bribable on the same terms as above: the demand is a
+<strong>Asmodeus</strong> (cold- and poison-resistant, casts spells,
+carries a wand of cold), <strong>Baalzebub</strong> (Lord of the Flies,
+surrounded by a poison-gas cloud, summons swarms of flies), and
+<strong>Juiblex</strong> (the Faceless Lord, a slime that engulfs in
+melee and splashes acid). All three sit alone in their lairs and
+<strong>won’t pursue</strong> you, so you can avoid them entirely by
+skipping their level.</p>
+<p><strong>Asmodeus and Baalzebub are bribable</strong>: the demand is a
 random fraction of the gold in your main inventory, so <strong>stash
 gold in a bag of holding before walking up to the throne</strong> and a
 few hundred zm will buy off a prince who would otherwise have demanded
-thousands. Fighting them is viable late game (wand of death works on all
-three), but bribery is much cheaper, and the prince’s corpse isn’t
-useful for sacrifice the way a fresh weak monster’s would be.</p>
+thousands. <strong>Juiblex is not bribable</strong> — only the
+Arch-Devil demons with the bribe disposition (Geryon, Dispater,
+Baalzebub, Asmodeus) accept gold; Juiblex, Yeenoghu, Orcus, and
+Demogorgon attack on sight regardless. Fighting Juiblex is viable late
+game (wand of death works on all four), but expect a real fight. None of
+their corpses is useful for sacrifice the way a fresh weak monster’s
+would be.</p>
 </section>
 <section id="vlads-tower" class="level4">
 <h4>Vlad’s Tower</h4>
@@ -7535,8 +7550,9 @@ of Moloch</strong> standing on the <strong>high altar</strong> with the
 non-bribable boss who casts spells, summons minions, and aggrieves
 anyone in melee range — the standard answer is a wand of death or finger
 of death from a safe distance.</p>
-<p>You cannot leave the Sanctum without the Amulet: the up-stair refuses
-to lift you out empty-handed.</p>
+<p>The Sanctum’s up-stair lets you leave whenever you like, but the
+<strong>Astral plane portal at the top of the Endgame ladder won’t open
+without the Amulet</strong> in your inventory.</p>
 </section>
 <section id="the-heist" class="level4">
 <h4>The Heist</h4>
@@ -9812,6 +9828,7 @@ one-hander.</td>
 </section>
 <section id="flail" class="level4">
 <h4>Flail</h4>
+<!-- audit 2026-05-17 #70: flail stats verified vs objects.h:384-386 + weapon.c. Tightened notes to show both +1 small and +1d4 large bonuses. Added grappling hook (P_FLAIL skill, but a WEPTOOL); #apply pulls a target toward you. See companion-audit.md. -->
 <div class="dense-table">
 <table>
 <colgroup>
@@ -9842,7 +9859,17 @@ one-hander.</td>
 <td>4</td>
 <td>—</td>
 <td>iron</td>
-<td>+1d4 large; one-handed.</td>
+<td>+1 small, +1d4 large; one-handed.</td>
+</tr>
+<tr>
+<td>grappling hook</td>
+<td>1d2 / 1d6</td>
+<td>30</td>
+<td>50</td>
+<td>—</td>
+<td>iron</td>
+<td>Tool, not a primary weapon, but trains P_FLAIL. <code>#apply</code>
+to hook and pull a target toward you.</td>
 </tr>
 </tbody>
 </table>

@@ -69,15 +69,15 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 62**  L 6353  (  17 lines)   ↳ Voluntary Challenges → Permadeaf (new in 5.0)
 - [x] **# 63**  L 1918  (  24 lines)   ↳ Dangerous Encounters → Brainlessness
 - [x] **# 64**  L 6196  (  14 lines)   ↳ Voluntary Challenges → Atheist
-- [ ] **# 65**  L  372  ( 140 lines) 📖 Your First Descent
+- [x] **# 65**  L  372  ( 140 lines) 📖 Your First Descent
 - [x] **# 66**  L 1998  (  18 lines)   ↳ Dangerous Encounters → Light Bursts
-- [ ] **# 67**  L 5007  ( 238 lines) 📖 Gehennom
+- [x] **# 67**  L 5007  ( 238 lines) 📖 Gehennom
 - [x] **# 68**  L 2079  (   8 lines)   ↳ Dangerous Encounters → Choking
 - [x] **# 69**  L 7830  (  15 lines)   ↳ Bestiary Tables → Quantum mechanics `Q`
-- [ ] **# 70**  L 6779  (  10 lines)   ↳ Weapons Tables → Flail
+- [x] **# 70**  L 6779  (  10 lines)   ↳ Weapons Tables → Flail
 - [x] **# 71**  L 2106  (   5 lines)   ↳ Dangerous Encounters → Genocide
 - [x] **# 72**  L 6322  (  19 lines)   ↳ Voluntary Challenges → Pauper (new in 5.0)
-- [ ] **# 73**  L 1963  (  18 lines)   ↳ Dangerous Encounters → Enchantment Drain
+- [x] **# 73**  L 1963  (  18 lines)   ↳ Dangerous Encounters → Enchantment Drain
 - [ ] **# 74**  L 1283  (  49 lines)   ↳ Traps and Hazards → Finding Secret Doors
 - [ ] **# 75**  L 7939  (  12 lines)   ↳ Bestiary Tables → Xorns `X`
 - [ ] **# 76**  L 7326  (  16 lines)   ↳ Bestiary Tables → Mimics `m`
