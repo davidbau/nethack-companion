@@ -3937,3 +3937,221 @@ Source: `spoilers/companion.md` line 2267-2291. Added content.
   magical/demonic/dragon-class carry it.
 
 ---
+
+## 2026-05-18 — Chapter audit #106: Medusa's Island
+
+Source: `spoilers/companion.md` line 1023. 2 corrections + identification-flowchart label fix.
+
+### Verified
+- PM_MEDUSA flags G_NOGEN | G_UNIQ, AT_GAZE/AD_STON gaze mechanic
+  (`monsters.h:2836-2846`).
+- Reflection bounces the gaze back and stones her
+  (`mhitu.c:1721-1745`).
+- Blindness defeats the gaze (`mcanseeu` gating at
+  `mhitu.c:1681-1682, 1747-1748`).
+- Applied mirror stones Medusa at melee range
+  (`apply.c:1132-1138`).
+- Perseus statue contents probabilities (75% cursed shield of
+  reflection, 25% levitation boots, 50% blessed +2 scimitar, 50%
+  sack) match `medusa-1.lua:60-76`.
+- Four layout variants exist (`dat/medusa-{1..4}.lua`).
+- Cold-wand freezing the moat is a real crossing tactic
+  (`zap.c:5238-5264`).
+- Levitation/Flying/Wwalking all permit pool crossing
+  (`hack.c:1196-1197`).
+
+### Corrected
+1. **"Giant eels can grab and drown you if you're burdened"** —
+   wrong precondition. Eel grab is a standard hit roll with no
+   Burdened term (`mhitu.c:847-848`). Burden affects monster
+   hit-rate generally but is not what enables the grab. Reworded
+   to "on a successful hit."
+2. **"water contains giant eels (and sometimes a kraken)"** —
+   only `medusa-4.lua:122` places a kraken; medusa-1/2/3 have
+   none. Reworded to "(and on one of the four layout variants,
+   a kraken)."
+3. **Identification-flowchart decision cell** "Ring or potion
+   willing to lose in a sink?" was rendered at 16px while every
+   other decision cell is 18px. Reworded to "Spare ring or
+   potion with a sink?" (33 chars, fits at 18px). This is in
+   the SVG inside companion.md line 2479.
+
+### Notes
+- Medusa has M3_WAITFORU — she starts asleep, so you choose the
+  moment of engagement. Worth a brief mention.
+- Level has noteleport (`medusa-1.lua:12`); you can't wand-teleport
+  across the water.
+- medusa-3 has a fountain (`medusa-3.lua:47`) — minor flavor.
+
+---
+
+## 2026-05-18 — Chapter audit #107: Armor Tables
+
+Source: `spoilers/companion.md` line 7378. 7 corrections.
+
+### Verified
+- Body-armor stats for all 15 suits match `objects.h:556-600`.
+- All dragon scale mail / scales AC, weights, costs, materials, and
+  secondary intrinsics (drain res, FAST, sick res, infravision,
+  free action, stone res, slow digestion, hallucination res)
+  match `do_wear.c:806-883`.
+- Gold DSM is a light source (`light.c:907, 920`).
+- Cloak AC/weight/cost/MC/materials match `objects.h:611-650`;
+  cloak of protection is the unique MC=3 piece (`objects.h:640`).
+- Oilskin cloak grab/wrap resistance (`mhitu.c:1065`).
+- Cornuthaum confers CLAIRVOYANT and blocks it for non-Wizards
+  (`worn.c:40-44`).
+- Helm of brilliance is GLASS in 3.7 to avoid metallic casting
+  penalty (`objects.h:472`).
+- Gauntlets of power set Str to STR19(25)=125
+  (`attrib.c:1214, 1278`).
+- Mummy wrapping blocks Invisibility while worn (`worn.c:39`).
+- Shield of reflection is silver (`objects.h:678`).
+
+### Corrected
+1. **Helm of brilliance "+d4 Int/Wis when blessed and enchanted"**
+   — wrong. `do_wear.c:3328-3334` adj_abon adds the literal
+   enchantment (`uarmh->spe`) to both Int and Wis. No dice. A +3
+   helm gives +3 Int and +3 Wis. Reworded.
+2. **Gauntlets of dexterity "+d3 Dex per enchantment"** — same
+   shape. `do_wear.c:3321-3326`: adds `uarmg->spe` to Dex. No
+   dice. Reworded.
+3. **Dunce cap "Always cursed on generation"** — wrong. Dunce cap
+   follows the standard `mkobj.c:1085-1092` distribution
+   (~1/11 cursed). The auto-curse happens when WORN
+   (`do_wear.c:475-491`). Reworded to call out the auto-curse-
+   on-wear mechanism.
+4. **Mithril coats "no casting penalty"** — wrong. MITHRIL is in
+   the is_metallic range (`objclass.h:194-196`, IRON..MITHRIL),
+   so `spell.c:2191-2193` spelarmr penalty applies. Mithril coats
+   are lighter than plate, not penalty-free. Both elven and
+   dwarvish rows fixed.
+5. **Jumping boots "`#apply` to leap. `#apply` to leap."** —
+   duplicated clause typo. Trimmed.
+6. **Levitation boots "(cannot be removed while in the air).
+   Can't remove while levitating."** — duplicated clause typo.
+   Rewrote into a single coherent sentence.
+7. **Helm of telepathy "Telepathy. Telepathy while blind."** —
+   duplicated phrase. Trimmed (telepathy is only useful while
+   blind, so the second clause is the real description).
+
+### Added
+- The four items that ARE 9/10-cursed-on-generation per
+  `mkobj.c:1086-1090` — fumble boots, levitation boots, helm of
+  opposite alignment, gauntlets of fumbling — now have explicit
+  "Generated cursed 9 times in 10" callouts in their Notes
+  columns. The dunce-cap text had been wrongly carrying this
+  flag.
+
+### Notes
+- Kicking boots note column is blank; they boost kick damage
+  (`dokick.c:41, 1328`).
+- Cornuthaum's CHA effect (−1 non-Wizard, +1 Wizard) not
+  mentioned (`do_wear.c:458, 538`).
+- Bronze plate mail is metallic (COPPER=13) so it also incurs
+  the spelarmr penalty; spoiler doesn't flag this in its row.
+- Robe's spell-cast bonus is conditional on metallic body armor;
+  spoiler's "+1" is loose flavor.
+
+---
+
+## 2026-05-18 — Chapter audit #108: No Genocide
+
+Source: `spoilers/companion.md` line 6627. 3 corrections.
+
+### Verified
+- Conduct is self-imposed: no `u_conduct` counter, tracked at
+  end-of-game by counting `G_GENOD` species in `svm.mvitals[]`
+  (`insight.c:2951-2966` num_genocides), reported as "You have
+  never genocided any monsters" / "You genocided N type(s)…"
+  (`insight.c:2158-2165`).
+- Typing "none" at the prompt preserves the conduct
+  (`read.c:2873-2880`, comment: "choosing 'none' preserves
+  genocideless conduct").
+
+### Corrected
+1. **"Astral Plane's final wish" as a genocide source** —
+   fabricated. There is no wish-grants-genocide path in 5.0;
+   no SPE_GENOCIDE either. Genocide is offered only by scroll
+   of genocide (`read.c:2240` do_genocide/do_class_genocide)
+   and Vlad's throne (`sit.c:131` do_genocide(5)).
+2. **"Answer 'none' or leave it blank"** — leave-it-blank is
+   misleading for a cursed scroll: empty input re-prompts
+   (`read.c:2865-2871`) and after 5 tries / on cursed scrolls
+   the `rndmonst()` path (`read.c:2848-2849`) creates random
+   monsters rather than letting you escape. Type "none"
+   explicitly.
+3. **Missing: throne path** at `sit.c:131` (sitting on Vlad's
+   throne can prompt class genocide) and the blessed-scroll
+   class-wipe distinction. Added both to the section text.
+
+### Added
+- Caveat about the Plane of Water: the standard genocide-class-`;`
+  trick is off-limits under No Genocide, so the player has to
+  cross with magical breathing and careful navigation.
+
+---
+
+## 2026-05-18 — Chapter audit #109: The Castle
+
+Source: `spoilers/companion.md` line 5278. 3 corrections + 4 added
+features that the spoiler had omitted.
+
+### Verified
+- Drawbridge mechanism, passtune for entry, levitation/Wwalking
+  back-entry (`dat/castle.lua:8-12, 81`; `music.c:786-829`).
+- Locked chest in one of four corner-tower alcoves contains the
+  wand of wishing AND potion of gain level
+  (`dat/castle.lua:142-149`).
+- Throne, two barracks, soldiers + lieutenant in entry hall
+  (`dat/castle.lua:170, 248-249`).
+- Wand of wishing initial spe=1, one safe recharge, guaranteed
+  explode on next recharge (`mkobj.c:1116-1117`,
+  `read.c:738-740, 761-765, 781-787`).
+- noteleport flag on the level (`dat/castle.lua:22`).
+
+### Corrected
+1. **"Maze section with a minotaur guarding it"** — fabricated.
+   `dat/castle.lua` has no minotaur and no internal maze room.
+   The `style="mazegrid"` is fill outside the fortress for entry
+   corridors (`dat/castle.lua:223-224`), not a maze room.
+   Minotaurs are placed in earth/fire/hellfill, not the Castle.
+   Dropped the bullet.
+2. **"Elbereth keeps shopkeeper-class wanderers from stealing"**
+   — wrong target. The lua author's comment at
+   `dat/castle.lua:150` says the Elbereth + cursed-scare-monster
+   wards are there to "Prevent monsters from eating it.
+   (@'s never eat objects)" — i.e., they repel **non-@**
+   monsters that gnaw containers. Shopkeepers aren't repelled by
+   Elbereth and aren't the threat. Reworded.
+3. **"Intelligent monsters can unlock locked chests if they
+   carry keys"** — wrong for chests. `muse.c:2273` mloot_container
+   returns immediately if container->olocked. Monsters can
+   unlock doors (`monmove.c:1554-1572`) but never chests. The
+   Castle wand chest is created locked at `dat/castle.lua:144`,
+   so it is safe from looting. Dropped the warning entirely;
+   added an affirmative note that locked chests are
+   monster-proof.
+
+### Added (previously omitted Castle features)
+- **Throne-room treasure chest** at (37,8) — separate from the
+  wand chest, holds random loot (`dat/castle.lua:154`).
+- **Four storerooms** along N/S walls, each guarded by a D-class
+  dragon (`dat/castle.lua:82-141, 181-184`). Easy to confuse
+  with the corner alcoves; players who search the wrong rooms
+  will fight dragons for nothing.
+- **Five trap doors** at evenly-spaced squares in the central
+  hallway (`dat/castle.lua:156-160`) — drops you to a random
+  Gehennom level.
+- **Fountain** at (10,8) (`dat/castle.lua:60`).
+- **Moat sea monsters** (giant eels, sharks) (`dat/castle.lua:186-193`).
+
+### Notes
+- Drawbridge responds to the passtune on any musical instrument
+  (no specific "horn of warning"); also opens to wand of opening
+  / spell of knock.
+- The Castle's L-class court monsters include random lich species;
+  the spoiler's "5.0 no longer pre-loads with arch-liches" claim
+  is broadly consistent but not directly visible in castle.lua.
+
+---

@@ -110,10 +110,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#103**  L 7446  (  15 lines)   ↳ Bestiary Tables → Trappers and lurkers `t`
 - [x] **#104**  L 5927  (  78 lines)   ↳ Sokoban Solutions → Level 4, Version A (prize: usually bag of holding, 25% amulet of reflection)
 - [x] **#105**  L 5364  (  82 lines) 📖 The Elemental Planes
-- [ ] **#106**  L 1023  (  94 lines)   ↳ Branches and Landmarks → Medusa's Island
-- [ ] **#107**  L 6949  ( 164 lines) 📖 Armor Tables
-- [ ] **#108**  L 6250  (  13 lines)   ↳ Voluntary Challenges → No Genocide
-- [ ] **#109**  L 4932  (  75 lines) 📖 The Castle
+- [x] **#106**  L 1023  (  94 lines)   ↳ Branches and Landmarks → Medusa's Island
+- [x] **#107**  L 6949  ( 164 lines) 📖 Armor Tables
+- [x] **#108**  L 6250  (  13 lines)   ↳ Voluntary Challenges → No Genocide
+- [x] **#109**  L 4932  (  75 lines) 📖 The Castle
 - [ ] **#110**  L  894  (  36 lines)   ↳ Branches and Landmarks → Sokoban
 - [ ] **#111**  L 3899  ( 271 lines) 📖 Artifacts
 - [ ] **#112**  L 5866  (  61 lines)   ↳ Sokoban Solutions → Level 3, Version B

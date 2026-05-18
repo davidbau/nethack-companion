@@ -1063,7 +1063,7 @@ The level has three challenges stacked together:
    without preparation, because:
 
 2. **Giant eels.** The water is home to giant eels that can grab
-   and drown you if you're burdened. Stay unburdened while crossing,
+   and drown you on a successful hit. Stay unburdened while crossing,
    or avoid the water entirely.
 
 3. **Medusa herself.** Her gaze turns you to stone. You need
@@ -1128,8 +1128,9 @@ Your options, from safest to most desperate:
 - **Jumping boots or the knight's jump.** Can leap across narrow
   water gaps, but requires careful positioning.
 
-**Surviving the eels.** The water contains giant eels (and
-sometimes a kraken) that can grab and drown you. Critical rules:
+**Surviving the eels.** The water contains giant eels (and on
+one of the four layout variants, a kraken) that can grab and drown
+you. Critical rules:
 
 - An **oilskin cloak** or **greased armor** makes the eel slip off
   on the grab attempt. Greasing wears off, so it's not fully
@@ -2476,7 +2477,7 @@ games are the item classes themselves (a `!` is always a potion, a
 `?` is always a scroll) and the prices, which turn out to be the
 single most powerful identification tool you have.
 
-<div><figure style="margin: 1.5em 0; text-align: center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 736" role="img" aria-label="The identification flowchart" style="max-width: 760px; width: 100%; height: auto; font-family: 'EB Garamond', 'Garamond', 'Georgia', serif;"><title>The Identification Flowchart</title><defs><marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker><style>.start{fill:#E8F4FD;stroke:#3B6FA0;stroke-width:2}.decision{fill:#FFF4E6;stroke:#B5651D;stroke-width:2}.action{fill:#F0F9E8;stroke:#5B8E3A;stroke-width:2}.final{fill:#FCE8E6;stroke:#A14A3F;stroke-width:2}.label{font-size:18px;fill:#1f2933;text-anchor:middle}.startlbl{font-size:19px;font-weight:600;fill:#1f2933;text-anchor:middle}.branch{font-size:16px;font-style:italic;fill:#5a5a5a}.edge{fill:none;stroke:#5a5a5a;stroke-width:1.5}</style></defs><rect class="start" x="40" y="20" width="320" height="50" rx="25" ry="25"/><text class="startlbl" x="200" y="51">Found an item</text><path class="edge" d="M 200 70 L 200 100" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="100" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="133">Can you reach an altar?</text><path class="edge" d="M 360 128 L 430 128" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="121" text-anchor="middle">yes</text><rect class="action" x="430" y="100" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="133">Drop it. Check BUC.</text><text class="branch" x="210" y="172">no</text><path class="edge" d="M 200 156 L 200 190" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="190" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="223">Is your pet nearby?</text><path class="edge" d="M 360 218 L 430 218" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="211" text-anchor="middle">yes</text><rect class="action" x="430" y="184" width="290" height="62" rx="8" ry="8"/><text class="label" x="575" y="210">Drop it. Pet avoids it?</text><text class="label" x="575" y="232" style="font-size: 16px;"><tspan style="font-style: italic; fill:#5a5a5a;">yes</tspan>: it's cursed; <tspan style="font-style: italic; fill:#5a5a5a;">no</tspan>: it's safe</text><text class="branch" x="210" y="262">no</text><path class="edge" d="M 200 246 L 200 290" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="290" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="323">Can you reach a shop?</text><path class="edge" d="M 360 318 L 430 318" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="311" text-anchor="middle">yes</text><rect class="action" x="430" y="290" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="323">Check price.</text><text class="branch" x="210" y="362">no</text><path class="edge" d="M 200 346 L 200 380" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="380" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="413">Is it a wand?</text><path class="edge" d="M 360 408 L 430 408" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="401" text-anchor="middle">yes</text><rect class="action" x="430" y="380" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="413">Engrave-test it.</text><text class="branch" x="210" y="452">no</text><path class="edge" d="M 200 436 L 200 470" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="470" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="503" style="font-size: 16px;">Ring or potion willing to lose in a sink?</text><path class="edge" d="M 360 498 L 430 498" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="491" text-anchor="middle">yes</text><rect class="action" x="430" y="470" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="503">Drop ring or dip potion.</text><text class="branch" x="210" y="542">no</text><path class="edge" d="M 200 526 L 200 560" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="560" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="593">Is it safe to use-test?</text><path class="edge" d="M 360 588 L 430 588" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="581" text-anchor="middle">yes</text><rect class="action" x="430" y="560" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="593">Try it carefully.</text><text class="branch" x="210" y="632">no</text><path class="edge" d="M 200 616 L 200 660" marker-end="url(#arrowhead)"/><rect class="final" x="40" y="660" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="693">Read a scroll of identify.</text></svg><figcaption style="font-style: italic; color: #5a5a5a; font-size: 0.9em; margin-top: 0.5em;">The identification flowchart: cheapest method first, scroll of identify last.</figcaption></figure></div>
+<div><figure style="margin: 1.5em 0; text-align: center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 736" role="img" aria-label="The identification flowchart" style="max-width: 760px; width: 100%; height: auto; font-family: 'EB Garamond', 'Garamond', 'Georgia', serif;"><title>The Identification Flowchart</title><defs><marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker><style>.start{fill:#E8F4FD;stroke:#3B6FA0;stroke-width:2}.decision{fill:#FFF4E6;stroke:#B5651D;stroke-width:2}.action{fill:#F0F9E8;stroke:#5B8E3A;stroke-width:2}.final{fill:#FCE8E6;stroke:#A14A3F;stroke-width:2}.label{font-size:18px;fill:#1f2933;text-anchor:middle}.startlbl{font-size:19px;font-weight:600;fill:#1f2933;text-anchor:middle}.branch{font-size:16px;font-style:italic;fill:#5a5a5a}.edge{fill:none;stroke:#5a5a5a;stroke-width:1.5}</style></defs><rect class="start" x="40" y="20" width="320" height="50" rx="25" ry="25"/><text class="startlbl" x="200" y="51">Found an item</text><path class="edge" d="M 200 70 L 200 100" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="100" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="133">Can you reach an altar?</text><path class="edge" d="M 360 128 L 430 128" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="121" text-anchor="middle">yes</text><rect class="action" x="430" y="100" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="133">Drop it. Check BUC.</text><text class="branch" x="210" y="172">no</text><path class="edge" d="M 200 156 L 200 190" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="190" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="223">Is your pet nearby?</text><path class="edge" d="M 360 218 L 430 218" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="211" text-anchor="middle">yes</text><rect class="action" x="430" y="184" width="290" height="62" rx="8" ry="8"/><text class="label" x="575" y="210">Drop it. Pet avoids it?</text><text class="label" x="575" y="232" style="font-size: 16px;"><tspan style="font-style: italic; fill:#5a5a5a;">yes</tspan>: it's cursed; <tspan style="font-style: italic; fill:#5a5a5a;">no</tspan>: it's safe</text><text class="branch" x="210" y="262">no</text><path class="edge" d="M 200 246 L 200 290" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="290" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="323">Can you reach a shop?</text><path class="edge" d="M 360 318 L 430 318" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="311" text-anchor="middle">yes</text><rect class="action" x="430" y="290" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="323">Check price.</text><text class="branch" x="210" y="362">no</text><path class="edge" d="M 200 346 L 200 380" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="380" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="413">Is it a wand?</text><path class="edge" d="M 360 408 L 430 408" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="401" text-anchor="middle">yes</text><rect class="action" x="430" y="380" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="413">Engrave-test it.</text><text class="branch" x="210" y="452">no</text><path class="edge" d="M 200 436 L 200 470" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="470" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="503">Spare ring or potion with a sink?</text><path class="edge" d="M 360 498 L 430 498" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="491" text-anchor="middle">yes</text><rect class="action" x="430" y="470" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="503">Drop ring or dip potion.</text><text class="branch" x="210" y="542">no</text><path class="edge" d="M 200 526 L 200 560" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="560" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="593">Is it safe to use-test?</text><path class="edge" d="M 360 588 L 430 588" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="581" text-anchor="middle">yes</text><rect class="action" x="430" y="560" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="593">Try it carefully.</text><text class="branch" x="210" y="632">no</text><path class="edge" d="M 200 616 L 200 660" marker-end="url(#arrowhead)"/><rect class="final" x="40" y="660" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="693">Read a scroll of identify.</text></svg><figcaption style="font-style: italic; color: #5a5a5a; font-size: 0.9em; margin-top: 0.5em;">The identification flowchart: cheapest method first, scroll of identify last.</figcaption></figure></div>
 
 #### Blessed, Uncursed, Cursed
 <!-- audit 2026-05-18 #88: altar/pet test mechanics, Priest BUC sense, cursed armor sticks, cursed gain-level rises, luckstone +luck, holy/unholy water dipping all verified vs do.c/dogmove.c/objnam.c/attrib.c/potion.c. Corrected: blessed scroll of identify gives at least 2 items + 1-in-5 chance whole pack (was "every item"); cursed scroll IDs only itself on first cursed read (read.c:2074-2081), not "single item." Cursed teleport scroll is a *level* teleport (not "somewhere terrible"). Added how to make holy water (pray on co-aligned altar with potions of water). See companion-audit.md. -->
@@ -5275,6 +5276,7 @@ random numbers, which in the Mazes is the closest thing to love.
 ---
 
 ### The Castle
+<!-- audit 2026-05-18 #109: 3 corrections to the Castle section. (1) "Maze section with a minotaur guarding it" is fabricated — castle.lua has no minotaur and no internal maze room (only mazewalk fill outside the fortress for entry corridors); minotaurs are placed in earth/fire/hellfill, not the Castle. Dropped the bullet. (2) "Elbereth keeps shopkeeper-class wanderers from stealing the treasure" — wrong target. The lua author's comment at castle.lua:150 says the engraving + cursed scroll are there to "Prevent monsters from eating it. (@'s never eat objects)" — i.e., they repel non-@ monsters that gnaw containers. Shopkeepers aren't repelled by Elbereth. Reworded. (3) "Intelligent monsters can unlock locked chests if they carry keys" — wrong for chests. muse.c:2273 mloot_container bails on olocked; monsters can unlock doors (monmove.c:1554) but never chests. The Castle wand chest is created locked at castle.lua:144, so it's safe from monster looting. Dropped the warning. Also added the storerooms (4 D-class dragons), central trap-door row (5 trap doors), fountain, and moat sea-monsters that the spoiler had omitted. -->
 
 If you've reached the Castle, congratulations: you've survived the
 easy part. Everything below is worse.
@@ -5291,22 +5293,32 @@ The Castle contains:
 
 - A **throne room** with a throne and guards. Sitting on the throne
   is tempting but risky (see
-  [Points of Interest](#points-of-interest)).
+  [Points of Interest](#points-of-interest)). The throne room also
+  holds a separate **treasure chest** with random loot — not the
+  wand chest, just a side prize.
 - **Barracks** full of soldiers carrying decent equipment, which is
   to say *your* equipment once you've dealt with them.
-- **Four outer rooms** along the north and south walls. One (and
-  only one, randomly) contains the **wand of wishing** in a
-  locked chest. *Search them all.* In 5.0, that chest
-  also holds a **potion of gain level**, included as a small make-
-  good for the wand's charge changes (see below). The chest's
-  square is protected by a burned-in *Elbereth* engraving and
-  sealed with a cursed scroll of scare monster on top of it. The
-  Elbereth keeps shopkeeper-class wanderers from stealing the
-  treasure; the cursed scroll is a known gotcha (don't try to read
-  it casually). The locked chest itself can be opened by force, by
-  a key, or by a wand of opening.
-- A **maze section** with a minotaur guarding it. The minotaur hits
-  hard but isn't especially resistant to having a wand pointed at it.
+- **Four corner-tower alcoves**. One (and only one, randomly)
+  contains the **wand of wishing** in a locked chest. *Search them
+  all.* In 5.0, that chest also holds a **potion of gain level**,
+  included as a small make-good for the wand's charge changes (see
+  below). The chest's square is protected by a burned-in *Elbereth*
+  engraving and sealed with a cursed scroll of scare monster. Those
+  wards exist to keep wandering monsters from *eating* the chest
+  itself (some species, like leprechauns and rats, gnaw containers);
+  the cursed scroll is also a known gotcha — don't try to read it
+  casually. The locked chest opens by force, by a key, or by a wand
+  of opening.
+- Four **storerooms** along the north and south walls, each guarded
+  by a dragon (`D`-class). Don't confuse them with the corner
+  alcoves; the storerooms hold random fodder.
+- A **central hallway with five trap doors** at evenly-spaced
+  squares. Stepping on one drops you to a random Gehennom level,
+  which is rarely what you want at this stage. Watch the floor.
+- A **fountain** in the moat-side corridor — usable in emergencies
+  but not worth risking the wand of wishing for.
+- A **moat** surrounding the fortress, occupied by giant eels and
+  the occasional shark.
 
 Strategy: clear the Castle carefully. A ring of conflict turns
 the guards against each other: walk in, put on the ring, and let
@@ -5315,13 +5327,12 @@ Then use your wand of wishing to fill critical gaps in your
 equipment (gray dragon scale mail, silver dragon scale mail,
 gauntlets of power, speed boots, whatever you're missing).
 
-**Warning:** intelligent monsters in 5.0 can pick up containers,
-rummage through unlocked ones, and unlock locked ones if they
-carry keys. The Castle chest is an inviting target. If you breach
-the Castle, take time off the level to recover or fetch a wish,
-and come back, do not assume the chest is still there. Clear the
-room before abandoning it, or carry the chest with you. There are
-stories.
+The locked Castle wand chest is **safe to leave temporarily**:
+monsters in 5.0 can pick up and rummage through *unlocked*
+containers, and they can unlock doors with keys, but they cannot
+unlock chests. A chest that started life locked stays locked
+until you or a wand of opening intervene. Unlocked containers are
+fair game.
 
 The Castle wand yields only two wishes reliably (one charge + one
 recharge), so plan a *small* wishlist and accept that further
@@ -6624,17 +6635,29 @@ forms. Without spellbooks, you have no spells. This forces extreme
 reliance on wands, potions, and creative workarounds.
 
 #### No Genocide
+<!-- audit 2026-05-18 #108: three corrections to the No Genocide conduct text. (1) "Astral Plane's final wish" path is fabricated — wishes never offer genocide. Genocide is only prompted by reading a scroll of genocide (uncursed = single species; blessed = whole class via do_class_genocide at read.c:2638) and by sitting on Vlad's throne (sit.c:131 do_genocide(5)). (2) "Leave it blank" is misleading for cursed scrolls — empty input re-prompts (read.c:2865-2871) and on a cursed scroll the random rndmonst() path (read.c:2848-2849) creates monsters rather than letting you escape; type "none" instead. (3) End-of-game tracking is by counting G_GENOD species in mvitals[] (insight.c:2951-2966 num_genocides), not a u_conduct counter — but the conduct is preserved as long as no species ever gets G_GENOD'd. The conduct survives even on a cursed scroll's monster-creation path because no species is flagged. See companion-audit.md. -->
 
-Never genocide any monster. When offered genocide (through a scroll
-or the Astral Plane's final wish), answer "none" or leave it blank.
+Never genocide any monster. Genocide is prompted by reading a
+**scroll of genocide** (uncursed picks one species; blessed wipes
+the whole class) and by **sitting on Vlad's throne**, which has
+one outcome that prompts you to genocide a class. To preserve the
+conduct, type **"none"** at the prompt — don't just press Enter,
+because empty input re-prompts and on a *cursed* scroll the game
+will eventually conjure random monsters instead of letting you
+escape.
+
 This means you'll face the full bestiary throughout the game,
 including master and arch-liches, mind flayers, cockatrices, and
 everything else that experienced players routinely eliminate.
+You'll also have to cross the **Plane of Water** the hard way: the
+standard tactic of genociding class `;` to clear out the eels and
+krakens is off-limits, so bring magical breathing and pay attention
+to where the sea monsters can reach you.
 
-This is one of the milder conducts, since many players ascend
-without genociding anything simply because they never find the
-scroll. But deliberately maintaining it against late-game threats
-takes discipline.
+This is one of the milder conducts: many players ascend without
+genociding anything simply because they never find the scroll and
+never sit Vlad's throne. But deliberately maintaining it against
+late-game threats takes discipline.
 
 #### Polymorph Restrictions
 
@@ -7353,6 +7376,7 @@ All polearms are two-handed. To strike at range, `#apply` the weapon (not wield-
 ---
 
 ### Armor Tables
+<!-- audit 2026-05-18 #110: seven corrections to the armor tables. (1) "+d4 Int/Wis when blessed and enchanted" for helm of brilliance is wrong; do_wear.c:3328-3334 adj_abon adds the literal enchantment (uarmh->spe) to both Int and Wis — no dice. (2) Same shape for gauntlets of dexterity ("+d3 Dex per enchantment" -> adds spe to Dex). (3) "dunce cap always cursed on generation" is wrong; dunce cap follows the standard mkobj distribution. The cap auto-curses when worn (do_wear.c:475-491). The items actually 9/10-cursed-on-generation are FUMBLE_BOOTS, LEVITATION_BOOTS, HELM_OF_OPPOSITE_ALIGNMENT, GAUNTLETS_OF_FUMBLING (mkobj.c:1086-1090) — flagged in those rows. (4) "mithril coats: no casting penalty" is wrong; MITHRIL is in the is_metallic range (objclass.h:194-196 IRON=11..MITHRIL=17), so spelarmr at spell.c:2191-2193 applies — they're lighter than plate, not penalty-free. (5)-(7) Three duplicated-clause typos: jumping boots ("#apply to leap. #apply to leap."), levitation boots ("cannot be removed while in the air. Can't remove while levitating."), helm of telepathy ("Telepathy. Telepathy while blind."). See companion-audit.md. -->
 
 **AC** is the armor-class bonus the piece provides (higher number = more protection; this is the amount subtracted from your displayed AC). **MC** is the magic-cancellation level (1-3) — higher MC reduces the chance of magic attacks landing. **Wt** is weight; **Cost** is shop base price. The **Notes** column folds in the intrinsic property granted while the piece is worn, alongside any tactical caveats. Armor is grouped by slot. Dragon scale mail is listed separately because of its sheer importance to the endgame.
 
@@ -7367,8 +7391,8 @@ All polearms are two-handed. To strike at range, `#apply` the weapon (not wield-
 | bronze plate mail | +6 | 1 | 450 | 400 | copper |  |
 | splint mail | +6 | 1 | 400 | 80 | iron |  |
 | banded mail | +6 | 1 | 350 | 90 | iron |  |
-| dwarvish mithril-coat | +6 | 2 | 150 | 240 | mithril | Light enough for spellcasting. Wizard mid-game goal. |
-| elven mithril-coat | +5 | 2 | 150 | 240 | mithril | Light, expensive, no casting penalty. |
+| dwarvish mithril-coat | +6 | 2 | 150 | 240 | mithril | Light, but mithril is metallic so the spellcasting penalty still applies (smaller than plate, larger than zero). Wizard mid-game goal. |
+| elven mithril-coat | +5 | 2 | 150 | 240 | mithril | Light, expensive. Mithril is metallic, so a casting penalty still applies — smaller than plate but not zero. |
 | chain mail | +5 | 1 | 300 | 75 | iron | Dwarves drop these. |
 | orcish chain mail | +4 | 1 | 300 | 75 | iron |  |
 | scale mail | +4 | 1 | 250 | 45 | iron |  |
@@ -7452,13 +7476,13 @@ All polearms are two-handed. To strike at range, `#apply` the weapon (not wield-
 | dwarvish iron helm | +2 | — | 40 | 20 | iron |  |
 | fedora | +0 | — | 3 | 1 | cloth | Tourist starter; Eye of the Aethiopica base. |
 | cornuthaum | +0 | 1 | 4 | 80 | cloth | Clairvoyance. Wizards only; blocks other clairvoyance for non-Wizards. |
-| dunce cap | +0 | — | 4 | 1 | cloth | Int/Wis → 6. Always cursed on generation. |
+| dunce cap | +0 | — | 4 | 1 | cloth | Int/Wis → 6. Auto-curses itself when worn (regardless of starting BUC), so you can't un-wear it without remove curse. |
 | dented pot | +1 | — | 10 | 8 | iron |  |
-| helm of brilliance | +1 | — | 40 | 50 | glass | +d4 Int/Wis when blessed and enchanted. |
+| helm of brilliance | +1 | — | 40 | 50 | glass | Adds enchantment value to both Int and Wis while worn (a +3 helm gives +3 Int and +3 Wis). |
 | helmet | +1 | — | 30 | 10 | iron |  |
 | helm of caution | +1 | — | 50 | 50 | iron | Warning. |
-| helm of opposite alignment | +1 | — | 50 | 50 | iron | Flips alignment. Catastrophic if cursed. |
-| helm of telepathy | +1 | — | 50 | 50 | iron | Telepathy. Telepathy while blind. |
+| helm of opposite alignment | +1 | — | 50 | 50 | iron | Flips alignment while worn. Generated cursed 9 times in 10 — and cursed means you can't take it off. |
+| helm of telepathy | +1 | — | 50 | 50 | iron | Telepathy while blind. |
 
 :::
 
@@ -7469,9 +7493,9 @@ All polearms are two-handed. To strike at range, `#apply` the weapon (not wield-
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
 | leather gloves | +1 | — | 10 | 8 | leather |  |
-| gauntlets of fumbling | +1 | — | 10 | 50 | leather | Causes frequent fumbling. Avoid. |
+| gauntlets of fumbling | +1 | — | 10 | 50 | leather | Causes frequent fumbling. Generated cursed 9 times in 10. Avoid. |
 | gauntlets of power | +1 | — | 30 | 50 | iron | Sets Strength to 25. |
-| gauntlets of dexterity | +1 | — | 10 | 50 | leather | +d3 Dex per enchantment. |
+| gauntlets of dexterity | +1 | — | 10 | 50 | leather | Adds enchantment value to Dex while worn (a +3 pair gives +3 Dex). |
 
 :::
 
@@ -7486,11 +7510,11 @@ All polearms are two-handed. To strike at range, `#apply` the weapon (not wield-
 | high boots | +2 | — | 20 | 12 | leather |  |
 | speed boots | +1 | — | 20 | 50 | leather | +1 speed. |
 | water walking boots | +1 | — | 15 | 50 | leather | Water walking. Critical for the Castle drawbridge. |
-| jumping boots | +1 | — | 20 | 50 | leather | `#apply` to leap. `#apply` to leap. |
+| jumping boots | +1 | — | 20 | 50 | leather | `#apply` to leap to a chosen nearby square. |
 | elven boots | +1 | — | 15 | 8 | leather | Stealth. |
 | kicking boots | +1 | — | 50 | 8 | iron |  |
-| fumble boots | +1 | — | 20 | 30 | leather | Causes frequent fumbling. Avoid. |
-| levitation boots | +1 | — | 15 | 30 | leather | Levitation (cannot be removed while in the air). Can't remove while levitating. Trap item. |
+| fumble boots | +1 | — | 20 | 30 | leather | Causes frequent fumbling. Generated cursed 9 times in 10. Avoid. |
+| levitation boots | +1 | — | 15 | 30 | leather | Levitation. Can't be removed while floating, so you're stuck above pickup until something else cancels the levitation. Generated cursed 9 times in 10 — trap item. |
 
 :::
 
