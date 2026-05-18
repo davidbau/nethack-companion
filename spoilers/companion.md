@@ -6655,12 +6655,16 @@ The final Amulet offering for ascension is exempt, so a clean
 atheist ascension is mechanically possible.
 
 #### Weaponless
+<!-- audit 2026-05-18 #128: clean conduct logic per uhitm.c:616-617 (weaphit++ requires weapon non-NULL AND (WEAPON_CLASS || is_weptool)). Added the missing weapon-tool list (pick-axe, unicorn horn, aklys, iron chain etc. all break conduct via the is_weptool branch), and the one ranged exception that DOES break weaponless: wielded polearm at range via #apply, the HMON_APPLIED path at dothrow.c:2199-2203. Confirmed thrown weapons / fired ammo / wands / spells / barehand / martial arts / cockatrice-corpse-wield all do NOT break the conduct. -->
 
-Never hit a monster with a wielded weapon. You can throw weapons,
-fire them from bows and crossbows, and use wands and spells. You
-can also fight bare-handed or with martial arts (Monks excel here).
-What you cannot do is swing a sword, axe, mace, or any other weapon
-in melee while it's in your `w`ielded slot.
+Never hit a monster with a wielded weapon or weapon-tool. You can
+throw weapons, fire them from bows and crossbows, and use wands
+and spells. You can also fight bare-handed or with martial arts
+(Monks excel here). What you cannot do is swing a sword, axe,
+mace, pick-axe, unicorn horn, aklys, iron chain, or any other
+weapon-class or weapon-tool item in melee while it's in your
+`w`ielded slot. The one ranged exception that *does* break the
+conduct: using a wielded polearm at range via `#apply`.
 
 This is less restrictive than it sounds. Monks start with strong
 martial arts and get better. Other classes can rely on spells,
@@ -7196,12 +7200,21 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 :::
 
 #### Two-handed sword
+<!-- audit 2026-05-18 #127: clean stats vs objects.h:273-285. Added the 5.0 3/2 Str damage bonus for bimanual weapons (uhitm.c:1467-1468, gated on bimanual(uwep) + HMON_MELEE) which the section had previously omitted; bonus also applies to battle-axe, dwarvish mattock, bardiche. Confirmed Tsurugi is the artifact form (artilist.h:285-289), not Vorpal Blade (which was a corrected misattribution in earlier audit #78). -->
+
+Two-handed weapons get a **3/2 Strength damage bonus** in 5.0 —
+your STR damage contribution is multiplied by 1.5 when wielding a
+bimanual weapon. Combined with the high base dice below, that's a
+big chunk of why two-handed swords compete with one-hand-plus-
+shield even though you forfeit the shield slot. The same bonus
+applies to the battle-axe, dwarvish mattock, bardiche, and any
+other bimanual weapon.
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| two-handed sword | 1d12 / 1d6+2d6 | 150 | 50 | — | iron | Two-handed (no shield). No dedicated artifact form. |
+| two-handed sword | 1d12 / 1d6+2d6 | 150 | 50 | — | iron | Two-handed (no shield, no off-hand weapon). No dedicated artifact form. |
 | tsurugi | 1d16 / 1d8+2d6 | 60 | 500 | +2 | metal | Two-handed. The Tsurugi of Muramasa is the artifact form. |
 
 :::
@@ -7345,12 +7358,14 @@ kebab bonus.
 :::
 
 #### Trident
+<!-- audit 2026-05-18 #129: stats verified vs objects.h:195. The Note "giant-killer" was misleading — the +1/+2d4 bonus dice are the universal land-creature bonus shared by two-handed sword, battle-axe, bardiche etc. (weapon.c:251-276), not trident-specific. The trident's actual signature is the swimmer-only bonus at weapon.c:170-176: +4 vs is_swimmer(ptr) when in a pool, +2 vs S_EEL or S_SNAKE. Reworded the Notes column accordingly. -->
+
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| trident | 1d6+1 / 1d4+2d4 | 25 | 5 | — | iron | +1 small, +2d4 large — the giant-killer; one-handed. |
+| trident | 1d6+1 / 1d4+2d4 | 25 | 5 | — | iron | One-handed. **+4 damage vs swimmers in water, +2 vs eels and snakes** — the trident's signature bonus. Outside water it's an ordinary side-arm. |
 
 :::
 
@@ -8523,10 +8538,12 @@ Big melee brutes that wield weapons. Drop decent weapons and armor.
 :::
 
 #### Puddings and oozes `P`
+<!-- audit 2026-05-18 #126: 2 corrections. (1) Green slime "9-turn countdown" — wrong; make_slimed(10L,...) sets 10 turns at uhitm.c:3199, uhitm.c:3570, polyself.c:456, eat.c:854. The only 5-turn case is engulf+digest at uhitm.c:5099. (2) "Brown puddings corrode armor on touch" — wrong; AD_DCAY is ROT (ERODE_ROT for wood/leather/cloth/bone) per uhitm.c:2389 mhitm_ad_dcay. CORRODE (metal) is the black pudding effect (AD_CORR, uhitm.c:2338-2356). Also added the omitted gray-ooze rust effect (AD_RUST), and clarified that the split trigger requires iron/metal melee weapons (hmon_hitmon_splitmon, uhitm.c:1609-1621). -->
 
-Splits when you hit them. Brown puddings corrode armor on touch; black puddings corrode both armor and weapons. Fire-kill them so they don't split, or pick a chokepoint.
 
-**Green slime** is a Gehennom-only exception: doesn't split, leaves a glob, and one touch starts a 9-turn countdown to becoming one yourself. Fight at range, burn yourself with fire to clear it, or wear an **amulet of unchanging** (blocks and aborts the transformation). Prayer doesn't work in Gehennom, so don't rely on it. See *Delayed Deaths* for the full cure list.
+Splits when you hit them with an iron or metal melee weapon. Brown puddings **rot** your wood/leather/cloth/bone armor on bite; black puddings **corrode** your metal armor on bite *and* corrode your wielded metal weapon on the passive return-hit. Gray ooze **rusts** metal armor. Fire-kill them so they don't split, or pick a chokepoint.
+
+**Green slime** is a Gehennom-only exception: doesn't split, leaves a glob, and one touch starts a 10-turn countdown to becoming one yourself. Fight at range, burn yourself with fire to clear it, or wear an **amulet of unchanging** (blocks and aborts the transformation). Prayer doesn't work in Gehennom, so don't rely on it. See *Delayed Deaths* for the full cure list.
 
 All puddings and oozes are amorphous, mindless, cold-resistant, poison-resistant, acid-resistant, and petrification-resistant. All except *gray ooze* also are shock-resistant.
 

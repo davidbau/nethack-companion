@@ -4711,3 +4711,107 @@ Source: `spoilers/companion.md` line 1014. No corrections.
   range=4).
 
 ---
+
+## 2026-05-18 — Chapter audit #126: Puddings and oozes `P`
+
+Source: `spoilers/companion.md` line 7813. 2 corrections.
+
+### Verified
+- All four pudding stat lines match monsters.h:2081-2123.
+- Splitting restricted to black/brown puddings via iron/metal melee
+  weapon (uhitm.c:1609-1621 hmon_hitmon_splitmon).
+- Black pudding passive (AD_CORR) corrodes wielded weapon
+  (uhitm.c:5969-5978).
+- Green slime Gehennom-only (G_HELL), poisonous corpse, passive
+  AT_NONE/AD_SLIM.
+- Amulet of unchanging blocks the slime transformation.
+
+### Corrected
+1. **Green slime "9-turn countdown"** — wrong. make_slimed(10L,...)
+   sets 10 turns (uhitm.c:3199, 3570; polyself.c:456; eat.c:854).
+   Only 5-turn case is engulf+digest (uhitm.c:5099).
+2. **"Brown puddings corrode armor on touch"** — wrong mechanism.
+   AD_DCAY is ROT (ERODE_ROT for wood/leather/cloth/bone) per
+   uhitm.c:2389 mhitm_ad_dcay. CORRODE (metal) is the black pudding
+   effect via AD_CORR at uhitm.c:2338-2356. Reworded to
+   "rot/corrode/rust" per actual erosion class.
+
+### Added
+- Gray ooze rust mechanic (AD_RUST → ERODE_RUST) was unmentioned
+  in the prose. Added.
+- Clarified that the split trigger requires iron/metal melee
+  weapons specifically.
+
+---
+
+## 2026-05-18 — Chapter audit #127: Two-handed sword
+
+Source: `spoilers/companion.md` line 6715. Clean stats; one
+important addition.
+
+### Verified
+- two-handed sword: 1d12/1d6+2d6 bonus, wt 150, cost 50, iron,
+  bimanual (objects.h:273-276, weapon.c:259-261).
+- tsurugi: 1d16/1d8+2d6 bonus, wt 60, cost 500, hit +2, metal,
+  bimanual (objects.h:282-285).
+- Bimanual blocks shield and two-weapon (wield.c:186, 724,
+  786-787; uhitm.c:5497, 5510).
+- Tsurugi is correctly The Tsurugi of Muramasa (artilist.h:285).
+  No dedicated artifact for plain two-handed sword.
+
+### Added
+- **3/2 Strength damage bonus for bimanual weapons** (5.0 change)
+  at uhitm.c:1467-1468, gated on bimanual(uwep) + HMON_MELEE.
+  Section had omitted this — it's the headline 5.0 buff for
+  two-handers and applies to battle-axe, dwarvish mattock,
+  bardiche as well.
+
+---
+
+## 2026-05-18 — Chapter audit #128: Weaponless
+
+Source: `spoilers/companion.md` line 6210. Clean conduct logic;
+two omissions added.
+
+### Verified
+- Conduct breaks only via uhitm.c:616-617 weaphit++ — requires
+  weapon non-NULL AND (WEAPON_CLASS || is_weptool).
+- Thrown weapons / fired ammo / wands / spells / bare-hand /
+  martial arts / cockatrice-corpse-wield do NOT break the conduct
+  (zap.c has zero weaphit refs; dothrow.c thrown path doesn't
+  increment).
+- Miss / 0-damage exemption: uhitm.c:636-639 rolls back weaphit if
+  mon->mhp == oldhp.
+
+### Added
+- **Weapon-tools also break conduct**: pick-axe, unicorn horn,
+  aklys, iron chain, grappling hook etc. — anything is_weptool
+  with non-P_NONE skill (obj.h:249-250). The "swing a sword, axe,
+  mace" list was understated.
+- **One ranged exception**: a wielded polearm used at range via
+  `#apply` (HMON_APPLIED path at dothrow.c:2199-2203) DOES break
+  the conduct.
+
+---
+
+## 2026-05-18 — Chapter audit #129: Trident
+
+Source: `spoilers/companion.md` line 6847. 1 correction.
+
+### Verified
+- Damage S/L base 1d6/1d4 (objects.h:195 sdam=6, ldam=4).
+- Bonus dice: +1 small, +2d4 large (weapon.c:251-255, 272-276).
+- Weight 25, cost 5, hit 0, iron, one-handed (objects.h:195
+  bi=0).
+- Separate P_TRIDENT skill class.
+
+### Corrected
+1. **"+1 small, +2d4 large — the giant-killer"** — misleading.
+   The +1/+2d4 bonus dice are the universal land-creature bonus
+   shared by two-handed sword, battle-axe, bardiche, etc.
+   (weapon.c:251-276). NOT trident-specific. The trident's
+   actual signature bonus is missing: vs `is_swimmer(ptr)`
+   monsters, +4 when target is in a pool, +2 when target is
+   S_EEL or S_SNAKE (weapon.c:170-176). Reworded the Notes column.
+
+---

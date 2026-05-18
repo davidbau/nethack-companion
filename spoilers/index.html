@@ -9110,11 +9110,15 @@ ascension is mechanically possible.</p>
 </section>
 <section id="weaponless" class="level4">
 <h4>Weaponless</h4>
-<p>Never hit a monster with a wielded weapon. You can throw weapons,
-fire them from bows and crossbows, and use wands and spells. You can
-also fight bare-handed or with martial arts (Monks excel here). What you
-cannot do is swing a sword, axe, mace, or any other weapon in melee
-while it’s in your <code>w</code>ielded slot.</p>
+<!-- audit 2026-05-18 #128: clean conduct logic per uhitm.c:616-617 (weaphit++ requires weapon non-NULL AND (WEAPON_CLASS || is_weptool)). Added the missing weapon-tool list (pick-axe, unicorn horn, aklys, iron chain etc. all break conduct via the is_weptool branch), and the one ranged exception that DOES break weaponless: wielded polearm at range via #apply, the HMON_APPLIED path at dothrow.c:2199-2203. Confirmed thrown weapons / fired ammo / wands / spells / barehand / martial arts / cockatrice-corpse-wield all do NOT break the conduct. -->
+<p>Never hit a monster with a wielded weapon or weapon-tool. You can
+throw weapons, fire them from bows and crossbows, and use wands and
+spells. You can also fight bare-handed or with martial arts (Monks excel
+here). What you cannot do is swing a sword, axe, mace, pick-axe, unicorn
+horn, aklys, iron chain, or any other weapon-class or weapon-tool item
+in melee while it’s in your <code>w</code>ielded slot. The one ranged
+exception that <em>does</em> break the conduct: using a wielded polearm
+at range via <code>#apply</code>.</p>
 <p>This is less restrictive than it sounds. Monks start with strong
 martial arts and get better. Other classes can rely on spells, wands,
 and thrown daggers. A wielded cockatrice corpse still works (it’s not a
@@ -10083,6 +10087,14 @@ Brand.</td>
 </section>
 <section id="two-handed-sword" class="level4">
 <h4>Two-handed sword</h4>
+<!-- audit 2026-05-18 #127: clean stats vs objects.h:273-285. Added the 5.0 3/2 Str damage bonus for bimanual weapons (uhitm.c:1467-1468, gated on bimanual(uwep) + HMON_MELEE) which the section had previously omitted; bonus also applies to battle-axe, dwarvish mattock, bardiche. Confirmed Tsurugi is the artifact form (artilist.h:285-289), not Vorpal Blade (which was a corrected misattribution in earlier audit #78). -->
+<p>Two-handed weapons get a <strong>3/2 Strength damage bonus</strong>
+in 5.0 — your STR damage contribution is multiplied by 1.5 when wielding
+a bimanual weapon. Combined with the high base dice below, that’s a big
+chunk of why two-handed swords compete with one-hand-plus- shield even
+though you forfeit the shield slot. The same bonus applies to the
+battle-axe, dwarvish mattock, bardiche, and any other bimanual
+weapon.</p>
 <div class="dense-table">
 <table>
 <colgroup>
@@ -10113,7 +10125,8 @@ Brand.</td>
 <td>50</td>
 <td>—</td>
 <td>iron</td>
-<td>Two-handed (no shield). No dedicated artifact form.</td>
+<td>Two-handed (no shield, no off-hand weapon). No dedicated artifact
+form.</td>
 </tr>
 <tr>
 <td>tsurugi</td>
@@ -10717,6 +10730,7 @@ kebab bonus.</p>
 </section>
 <section id="trident" class="level4">
 <h4>Trident</h4>
+<!-- audit 2026-05-18 #129: stats verified vs objects.h:195. The Note "giant-killer" was misleading — the +1/+2d4 bonus dice are the universal land-creature bonus shared by two-handed sword, battle-axe, bardiche etc. (weapon.c:251-276), not trident-specific. The trident's actual signature is the swimmer-only bonus at weapon.c:170-176: +4 vs is_swimmer(ptr) when in a pool, +2 vs S_EEL or S_SNAKE. Reworded the Notes column accordingly. -->
 <div class="dense-table">
 <table>
 <colgroup>
@@ -10747,7 +10761,9 @@ kebab bonus.</p>
 <td>5</td>
 <td>—</td>
 <td>iron</td>
-<td>+1 small, +2d4 large — the giant-killer; one-handed.</td>
+<td>One-handed. <strong>+4 damage vs swimmers in water, +2 vs eels and
+snakes</strong> — the trident’s signature bonus. Outside water it’s an
+ordinary side-arm.</td>
 </tr>
 </tbody>
 </table>
@@ -16913,11 +16929,15 @@ armor.</p>
 </section>
 <section id="puddings-and-oozes-p" class="level4">
 <h4>Puddings and oozes <code>P</code></h4>
-<p>Splits when you hit them. Brown puddings corrode armor on touch;
-black puddings corrode both armor and weapons. Fire-kill them so they
-don’t split, or pick a chokepoint.</p>
+<!-- audit 2026-05-18 #126: 2 corrections. (1) Green slime "9-turn countdown" — wrong; make_slimed(10L,...) sets 10 turns at uhitm.c:3199, uhitm.c:3570, polyself.c:456, eat.c:854. The only 5-turn case is engulf+digest at uhitm.c:5099. (2) "Brown puddings corrode armor on touch" — wrong; AD_DCAY is ROT (ERODE_ROT for wood/leather/cloth/bone) per uhitm.c:2389 mhitm_ad_dcay. CORRODE (metal) is the black pudding effect (AD_CORR, uhitm.c:2338-2356). Also added the omitted gray-ooze rust effect (AD_RUST), and clarified that the split trigger requires iron/metal melee weapons (hmon_hitmon_splitmon, uhitm.c:1609-1621). -->
+<p>Splits when you hit them with an iron or metal melee weapon. Brown
+puddings <strong>rot</strong> your wood/leather/cloth/bone armor on
+bite; black puddings <strong>corrode</strong> your metal armor on bite
+<em>and</em> corrode your wielded metal weapon on the passive
+return-hit. Gray ooze <strong>rusts</strong> metal armor. Fire-kill them
+so they don’t split, or pick a chokepoint.</p>
 <p><strong>Green slime</strong> is a Gehennom-only exception: doesn’t
-split, leaves a glob, and one touch starts a 9-turn countdown to
+split, leaves a glob, and one touch starts a 10-turn countdown to
 becoming one yourself. Fight at range, burn yourself with fire to clear
 it, or wear an <strong>amulet of unchanging</strong> (blocks and aborts
 the transformation). Prayer doesn’t work in Gehennom, so don’t rely on
