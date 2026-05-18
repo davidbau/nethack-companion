@@ -8141,7 +8141,7 @@ The catch-all `@` class: shopkeepers, priests, watchmen, role nemeses, quest lea
 | elf-lord | bright-blue | 8 | 12 | 10 | 20 | weapon 2d4 · weapon 2d4 | sees-invis. |
 | Elvenking | magenta | 9 | 12 | 10 | 25 | weapon 2d4 · weapon 2d4 | sees-invis. |
 | doppelganger | white | 9 | 12 | 5 | 20 | weapon 1d12 | shapeshifter. |
-| shopkeeper | white | 12 | 16 | 0 | 50 | weapon 4d4 · weapon 4d4 | starts peaceful. Don't anger one. They're stronger than they look and have eternal grudges. |
+| shopkeeper | white | 12 | 16 | 0 | 50 | weapon 4d4 · weapon 4d4 | starts peaceful. Don't anger one. |
 | guard | blue | 12 | 12 | 10 | 40 | weapon 4d10 | starts peaceful. |
 | prisoner | white | 12 | 12 | 10 | 0 | weapon 1d6 | starts peaceful. |
 | Oracle | bright-blue | 12 | 0 | 0 | 50 | passive 0d4 magic | starts peaceful. |
@@ -8155,7 +8155,7 @@ The catch-all `@` class: shopkeepers, priests, watchmen, role nemeses, quest lea
 | watchman | gray | 6 | 10 | 10 | 0 | weapon 1d8 | follows stairs, starts peaceful. |
 | watch captain | green | 10 | 10 | 10 | 15 | weapon 3d4 · weapon 3d4 | follows stairs, starts peaceful. |
 | Medusa | bright-green | 20 | 12 | 2 | 50 | weapon 2d4 · claw 1d8 · gaze petrify · bite 1d6 poison | flies, swims, amphibious, poisonous-corpse. |
-| Croesus | magenta | 20 | 15 | 0 | 40 | weapon 4d10 | sees-invis, follows stairs. Vault guardian on Fort Ludios. Drops a wand of wishing wish-share. |
+| Croesus | magenta | 20 | 15 | 0 | 40 | weapon 4d10 | sees-invis, follows stairs. Vault guardian on Fort Ludios. Wields a two-handed sword and hoards gold, gems, and magic items off the floor. |
 | Charon | white | 76 | 18 | -5 | 120 | weapon 1d8 · touch 1d8 paralyse | sees-invis, starts peaceful. |
 | archeologist | white | 10 | 12 | 10 | 1 | weapon 1d6 · weapon 1d6 | tunnels. |
 | barbarian | white | 10 | 12 | 10 | 1 | weapon 1d6 · weapon 1d6 |  |

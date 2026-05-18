@@ -27,9 +27,37 @@ end
 -- equivalent is \footnotesize (≈80% of body) plus tighter column
 -- separation. \footnotesize is a touch larger than the HTML's 0.68em
 -- ratio, but \scriptsize at 0.70 reads as tiny in print.
+--
+-- For bestiary tables (header: Name | Color | Lvl | Spd | AC | MR% |
+-- Attacks | Notes), default pandoc auto-sizing makes Name and Color
+-- too cramped and the long Attacks/Notes columns too wide. We detect
+-- the bestiary header shape and assign explicit fractional widths.
+local function maybe_set_bestiary_widths(blk)
+  if blk.tag ~= "Table" then return end
+  if #blk.colspecs ~= 8 then return end
+  -- Pull the header cells' text to detect the bestiary shape.
+  local headers = {}
+  if blk.head and blk.head.rows and blk.head.rows[1] then
+    for _, cell in ipairs(blk.head.rows[1].cells) do
+      table.insert(headers, pandoc.utils.stringify(cell))
+    end
+  end
+  if headers[1] == "Name" and headers[2] == "Color"
+      and headers[3] == "Lvl" and headers[7] == "Attacks"
+      and headers[8] == "Notes" then
+    local widths = {0.18, 0.10, 0.04, 0.04, 0.04, 0.05, 0.25, 0.30}
+    for i = 1, 8 do
+      blk.colspecs[i][2] = widths[i]
+    end
+  end
+end
+
 function Div(div)
   for _, class in ipairs(div.classes) do
     if class == "dense-table" then
+      for _, b in ipairs(div.content) do
+        maybe_set_bestiary_widths(b)
+      end
       local result = {
         pandoc.RawBlock("latex",
           "\\begingroup\\footnotesize\\setlength{\\tabcolsep}{3pt}")
