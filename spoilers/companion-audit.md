@@ -6151,3 +6151,125 @@ corrections + 2 clarifications.
   focused.
 
 ---
+
+## 2026-05-18 — Chapter audit #175: The Armory
+
+Source: `spoilers/companion.md` line 3777 (heading), ~120 lines. 2
+corrections + 1 close call addressed.
+
+### Wrong → fixed
+- **Enchantment "absolute safe limit is +5 for weapons and +3 for
+  armor"**: weapons have NO destruction risk at all — above +9 the
+  scroll just becomes probabilistic (read.c:1669-1671). Armor
+  destruction begins above +3 (above +5 for special armor like
+  elven items or the Wizard's cornuthaum, read.c:1179); cursing
+  doesn't change the threshold. Reworded the section to spell this
+  out.
+- **DSM transformation "read a blessed scroll of enchant armor"**:
+  the transformation triggers at `s >= 0` (read.c:1225), so any
+  non-cursed scroll works. Reworded to "(non-cursed)".
+
+### Close calls → fixed
+- **"each color provides two extrinsic resistances"**: gray and
+  silver DSM provide only the named one (do_wear.c:806-807 explicit
+  "no extra effect" comments). Reworded to "most colors provide
+  two extrinsic resistances; gray and silver provide only the
+  named one."
+
+### Verified
+- Helm of caution: WARNING intrinsic, 50 zm, weight 50
+  (objects.h:479-481).
+- Gray DSM ANTIMAGIC, Silver DSM REFLECTING, Black DSM
+  DISINT_RES + drain resistance, Green DSM POISON_RES + sickness
+  immunity (objects.h:502-523; do_wear.c:807-883).
+- Cloak of protection MC3 (single-item, objects.h:637-640);
+  cloak of magic resistance MC1 (objects.h:643-645).
+- Ring of protection +1 MC; amulet of guarding +2 MC; MC3 blocks
+  90% of monster special attacks (uhitm.c:87 formula).
+- Speed boots → FAST (objects.h:702); shield/amulet of reflection
+  → REFLECTING (objects.h:676-678, 850-851).
+- No body-armor speed penalty mechanic exists in C — section
+  correctly does not claim one.
+
+---
+
+## 2026-05-18 — Chapter audit #176: Engravings
+
+Source: `spoilers/companion.md` line 1408. 3 corrections + 1
+clarification.
+
+### Wrong → fixed
+- **Athame "Several turns"**: uncursed athame is not in dulling_wep
+  (engrave.c:1306), and as a WEAPON_CLASS it doesn't trigger the
+  rate=1 branch (engrave.c:1321-1325). Rate stays at 10, so an
+  8-char Elbereth finishes in a single occupation action — INSTANT.
+  Cursed athame would dull and trigger rate=1. Split the table row
+  into "uncursed athame (instant)" and "other edged weapon (several
+  turns)".
+- **Edged weapon "dulls weapon by −1"**: actually 1 enchantment per
+  2 characters engraved (engrave.c:1357-1382, with comment table at
+  1360-1361: -2 → 3 chars, -1 → 5, 0 → 7, +1 → 9, +2 → 11). An
+  8-char Elbereth costs roughly -4 enchantment. Reworded.
+- **Impairment "Instant methods (wand of fire, lightning, digging)
+  bypass the per-letter check"**: only the DUST/BLOOD surface-
+  garble (engrave.c:1223) is bypassed. The Blind 1/11, Confused
+  1/7, Stunned 1/4, and Hallucinating 1/2 per-character scrambles
+  at engrave.c:1224-1225 apply to ALL engraving types including
+  wand-of-fire BURN. A hallucinating player using a wand of fire
+  still scrambles roughly half the letters. Reworded.
+
+### Clarified
+- **"ad aerarium"** can mark either a same-level vault TELEP_TRAP
+  (makevtele at mklev.c:820-824) OR a LEVEL_TELEP niche
+  (mklev.c:809-811). Surfaced both outcomes — vault drops you into
+  Croesus's 2×2 gold vault; level-teleporter sends you to a random
+  dungeon level (teleport.c:1165-1234).
+
+### Verified
+- Engrave command `E` (engrave.c:956); finger writes DUST
+  (engrave.c:558 default).
+- Edged weapon engraves at ENGRAVE durability when not welded and
+  spe > -3 (engrave.c:819-833).
+- Wand of digging → ENGRAVE; wand of fire/lightning → BURN
+  (engrave.c:684-734).
+- DUST eroded by step (1 char per monster turn, monmove.c:734);
+  BURN survives unless ice or magical (engrave.c:278).
+- "Vlad was here" → TRAPDOOR (mklev.c:733 index 14).
+
+---
+
+## 2026-05-18 — Chapter audit #177: Iron Bars
+
+Source: `spoilers/companion.md` line 1333. 1 substantive correction
+plus material additions.
+
+### Wrong → fixed
+- **"small creatures can squeeze between"**: actually only TINY
+  passes. `passes_bars` uses `verysmall(ptr)` = msize < MZ_SMALL
+  (mondata.c:552-563 + mondata.h:11). Kittens and little dogs are
+  MZ_SMALL (monsters.h:381-388) and do NOT pass through. Reworded
+  to "tiny creatures (grid bugs, bats, rats)" and clarified that
+  starting pets are too big. Pet-fetch path needs the pet to be
+  polymorphed into a tiny form first.
+
+### Added
+- Wand/spell of **striking** and **force bolt** have no IRONBARS
+  handler and pass through the bars without effect (zap.c:3676-3679,
+  3122). Worth knowing because players sometimes try them.
+- Wand of **lightning** melts bars too: ZT_LIGHTNING shares the
+  ZT_ACID branch at zap.c:5344-5369 with a ~90% per-tile dissolve
+  chance.
+- **Rock mole** eats bars (metallivorous, hack.c:769-784) — viable
+  polymorph form for clearing them.
+
+### Verified
+- Pick-axes bounce: "Clang!" at dig.c:1221-1223.
+- Wand of digging fizzles horizontally: dig.c:1799-1802.
+- Kicking just hurts: dokick.c:1131-1133.
+- Thrown items stopped: hits_bars() at zap.c:3900-3913.
+- Acid blob splash is passive-only (no IRONBARS path).
+- Niche placement: mklev.c:782-794 (with rn2(3) corpse / rn2(3)
+  random item; scroll of teleportation guaranteed if level allows
+  teleport).
+
+---

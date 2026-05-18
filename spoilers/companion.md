@@ -938,16 +938,13 @@ Each level has exactly one correct solution. If you push a boulder
 into a corner where it blocks your progress there is no way to
 start over. You're left with a few ways to cheat, which might or
 might not help: **squeeze past** the boulder (drop your stuff to
-fit), **fracture it** with a wand of striking or a scroll of earth
-(or polymorph the boulder into something else), or **levitate
-over** the pit. Each of these costs a point of Luck and breaks
-the Sokoban conduct; levitation and flying are free of penalty
-but you can't pick anything up while airborne. (Force-fighting
-a bare boulder does nothing — you need a wielded pick-axe or
-mattock to dig it out, which itself counts as a Sokoban cheat.)
-**Teleport doesn't work here:** the level forbids it. If nothing
-works, take the downstair back to the dungeon and continue
-without the prize.
+fit), **dig the boulder out** (dig the wall or dig the boulder
+with a wielded pick-axe or mattock), or **fracture it** with a
+wand of striking or a scroll of earth (or polymorph the boulder
+into something else). Each of these costs a point of Luck and
+breaks the Sokoban conduct. Levitation or flying over unfinished
+pits is free of penalty. **Teleport doesn't work here:** the
+level forbids it.
 
 The prize at the top is either a **bag of holding** or an **amulet
 of reflection**, both extremely valuable; the
@@ -1333,26 +1330,32 @@ empty room, a scatter of arrows or darts on the floor, a square
 your pet refuses to cross, or a themed room whose gimmick is
 hidden hazards.
 
+<!-- audit 2026-05-18 #177: passes_bars (mondata.c:552-563) uses verysmall() = msize<MZ_SMALL = TINY only; kittens and little dogs are MZ_SMALL and do NOT pass through. Lightning shares the ZT_ACID branch at zap.c:5344-5369 (90% per tile melts bars). Wand/spell of striking and force bolt have no IRONBARS handler so they pass through harmlessly. Rock moles eat bars (metallivorous, hack.c:769-784). See companion-audit.md. -->
 #### Iron Bars
 
 Iron bars look like a barrier but aren't solid: light passes through,
-you can see what's on the other side, and small creatures can squeeze
-between. What they resist is almost everything the player can throw
-at them: pick-axes bounce off ("Clang!"), wands of digging fizzle,
-weapons swing through harmlessly, and kicking just hurts your foot. Despite long-running advice to the contrary, **throwing or
-otherwise applying a potion of acid does not dissolve iron bars**.
-The bars-corrode code only fires for an acid ray — acid breath or
-spit (from a monster, or from you polymorphed into a yellow dragon
-or black naga). An acid blob's splash is passive-only and doesn't
-count.
+you can see what's on the other side, and **tiny** creatures (grid
+bugs, bats, rats) can squeeze between — kittens and little dogs are
+already too big. What they resist is almost everything the player
+can throw at them: pick-axes bounce off ("Clang!"), wands of digging
+fizzle, weapons swing through harmlessly, and kicking just hurts
+your foot. Wands and spells of *striking* and *force bolt* pass
+through the bars without effect. Despite long-running advice to the
+contrary, **throwing or otherwise applying a potion of acid does
+not dissolve iron bars**. The bars-corrode code only fires for an
+acid *ray* — acid breath or spit (from a monster, or from you
+polymorphed into a yellow dragon or black naga). The same branch
+also handles lightning rays, so a **wand of lightning** will melt
+bars too (about 90% per tile). An acid blob's splash is passive-only
+and doesn't count.
 
 The practical early-game answer is to **dig around** them. Iron bars
 sit in a single tile of wall with ordinary stone on the flanks, so a
 pick-axe through the adjacent wall tunnels into the niche from the
 side and the bars stay standing as decoration. Mid-game, polymorph
-into something that breathes acid, passes walls (xorn, earth
-elemental), or is small enough to slip between. A small pet can
-occasionally retrieve loot from behind bars on its own.
+into something that breathes acid or lightning, passes walls (xorn,
+earth elemental), is **tiny** enough to slip between, or eats metal
+(rock mole). Starting pets won't fit, but a polymorphed pet can.
 
 What's typically behind them: a scroll of teleportation (guaranteed
 if teleport isn't suppressed on the level), occasionally a random
@@ -1408,6 +1411,7 @@ seek is behind one of these walls. Finding it is a matter of
 systematic elimination. The only mistake is giving up after three
 searches and declaring the level "impossible."
 
+<!-- audit 2026-05-18 #176: Three corrections. (1) Athame is INSTANT for Elbereth-length engravings: uncursed athame is not in dulling_wep (engrave.c:1306), and as a WEAPON_CLASS it doesn't trigger the rate=1 branch (engrave.c:1321-1325) — rate stays at 10, finishing 8 chars in one occupation action. Cursed athame does dull and would use rate=1. (2) Edged weapon dulls by ~1 enchantment per 2 chars engraved (engrave.c:1357-1382, comment at 1360-1361: "-2=>3, -1=>5, 0=>7, +1=>9, +2=>11 chars"); Elbereth costs ~-4 enchantment, not -1. (3) Impairment garble: only the DUST/BLOOD surface-garble (engrave.c:1223, 1/25) is bypassed by BURN/ENGRAVE; the Blind 1/11, Confused 1/7, Stunned 1/4, and Hallucinating 1/2 per-character scrambles at engrave.c:1224-1225 apply to ALL types including wand-of-fire BURN. "ad aerarium" also marks LEVEL_TELEP niches (mklev.c:809-811), not only vault niches (mklev.c:820-824). See companion-audit.md. -->
 #### Engravings
 
 You can write on the dungeon floor with the engrave command (`E`).
@@ -1424,8 +1428,8 @@ to erase, and whether your stylus suffers wear.
 | Method                    | Speed         | Durability     | Notes                             |
 | ------------------------- | ------------- | -------------- | --------------------------------- |
 | Finger (dust)             | Instant       | Fragile        | Smudges when monsters step on it  |
-| Athame                    | Several turns | Semi-permanent | Interruptible; doesn't dull       |
-| Edged weapon              | Several turns | Semi-permanent | Interruptible; dulls weapon by −1 |
+| Uncursed athame           | Instant       | Semi-permanent | Doesn't dull (cursed athame does) |
+| Other edged weapon        | Several turns | Semi-permanent | Interruptible; dulls (~1 enchantment per 2 chars — "Elbereth" costs ~−4) |
 | Hard gem or diamond       | Several turns | Semi-permanent | Interruptible                     |
 | Wand of digging           | Instant       | Semi-permanent | Good middle ground                |
 | Wand of fire or lightning | Instant       | Permanent      | Burns the word into the floor     |
@@ -1434,7 +1438,7 @@ The three durability tiers correspond to how the text resists
 ordinary erosion:
 
 - **Fragile** (dust) — a monster stepping on the square smudges
-  characters out. In dust, an Elbereth lasts as long as the floor
+  one character. In dust, an Elbereth lasts as long as the floor
   stays clear.
 - **Semi-permanent** (scratched into the floor) — monster traffic
   doesn't smudge it. Random erosion can occasionally chip a
@@ -1445,34 +1449,39 @@ ordinary erosion:
   damage it.
 
 **Engraving is an interruptible occupation.** Anything written by
-hand (athame, weapon, gem) takes multiple turns, one per letter.
-If you're interrupted mid-word — by an attack, a monster wandering
-into view, or anything else that breaks an occupation — you get a
-partial engraving that does nothing useful. Instant methods (any
-wand, or writing in dust with your finger) finish in a single
-turn and can't be interrupted.
+hand at multi-turn speed (non-athame edged weapon, gem) takes one
+turn per letter. If you're interrupted mid-word — by an attack, a
+monster wandering into view, or anything else that breaks an
+occupation — you get a partial engraving that does nothing useful.
+Instant methods (any wand, finger-in-dust, or an uncursed athame)
+finish in a single occupation action.
 
 **Impairment and errors.** If you are blind, confused, stunned, or
-hallucinating, you have a chance of misspelling each letter. A
-misspelled message has no special power; this matters most for
-Elbereth. Instant methods (wand of fire, lightning, digging) bypass
-the per-letter check, so they remain reliable under duress.
+hallucinating, you have a chance of misspelling each letter, and
+this scrambling applies to *every* engraving method, including
+burns from a wand of fire. (Only the dust/blood surface-garble
+roll is skipped for harder methods.) A misspelled message has no
+special power; this matters most for Elbereth.
 
-**Overwriting and combining.** You can't add text to an existing
-engraving in a useful way; new text combines with the old to
-produce a longer string, and the magic of named words (like
-Elbereth) requires the *exact* word and nothing else. Overwrite the
-square or pick a fresh one.
+**Overwriting and combining.** Appending to an existing engraving
+is possible, but for named-word magic like Elbereth the engraving
+must read *exactly* that word and nothing else, so the appended
+text usually destroys the ward. To refresh, overwrite the square
+or pick a fresh one.
 
 **Two engravings worth recognizing.** Most engravings you find are
 random flavor (graffiti, "elbereth" left by someone else, etc.),
 but two specific messages are *trap markers* placed by the
 dungeon: *"ad aerarium"* (Latin: *to the treasury*) is engraved
-near a secret closet that contains a **teleport trap to a vault**;
-*"Vlad was here"* marks a secret closet containing a **trap door**.
-Both are easy to miss in the message log, and worth investigating
-when you see them — but in both cases be ready for what's on the
-other side (a chase by the vault guard, or a long fall).
+near a secret closet containing either a **vault teleporter** (a
+one-shot TELEP_TRAP that drops you into Croesus's 2×2 gold vault
+on the same level — pick up the gold, then escape ahead of the
+vault guard) or a **level teleporter** (a LEVEL_TELEP that sends
+you to a random dungeon level, often unwelcome without Teleport
+control); *"Vlad was here"* marks a secret closet containing a
+**trap door**. Both are easy to miss in the message log, and
+worth investigating when you see them — but be ready for what's
+on the other side.
 
 #### Elbereth
 <!-- audit 2026-05-18 #122: 2 corrections. (1) "Levitation trick" (engrave Elbereth in dust while floating) is non-functional in 5.0: engrave.c:198 requires can_reach_floor() which returns FALSE under Levitation; finger-engrave is refused outright at engrave.c:1003-1006, and wand zaps only "gesture toward the floor below you" per engrave.c:1008-1010 — no actual writing happens. Replaced with the 5.0 reality. (2) "−5 alignment hit" stated as flat; mon.c:4280 is adjalign((u.ualign.record > 5) ? -5 : -rnd(5)), so it's flat −5 only with healthy alignment, otherwise rnd(5) (avg −3). Reworded. -->
@@ -2025,6 +2034,7 @@ protects against incoming death rays.
 An amulet of life saving will revive you once if the touch or zap
 kills you outright.
 
+<!-- audit 2026-05-18 #174: hunger thresholds at eat.c:3369-3372 (Satiated >1000, Not Hungry >150, Hungry >50, Weak >0, Fainting ≤0). Faint path at eat.c:3410-3432; STARVED death at u.uhunger < -(100 + 10*Con), eat.c:3437-3447. Initial u.uhunger = 900 (eat.c:129). TROUBLE_STARVING covers Weak through STARVED (pray.c:216-217). Section makes no factual errors. 0 corrections. See companion-audit.md. -->
 #### Starvation
 
 This isn't technically instant, but it feels like it. If your
@@ -4065,17 +4075,17 @@ brilliance (Wizards) and helm of telepathy (everyone), but the
 warning bonus stays useful all the way down.
 
 **Dragon scale mail** is the endgame body armor of choice. In
-5.0, each color provides two extrinsic resistances.
-Gray dragon scale mail provides magic resistance and is the most
-popular wish target. Silver provides reflection. Black provides
-disintegration resistance and drain resistance (the only
-non-artifact source). Green provides poison resistance and
-sickness immunity.
+5.0, most colors provide two extrinsic resistances (gray and
+silver provide only the named one). Gray dragon scale mail
+provides magic resistance and is the most popular wish target.
+Silver provides reflection. Black provides disintegration
+resistance and drain resistance (the only non-artifact source).
+Green provides poison resistance and sickness immunity.
 
 To get dragon scale mail: kill a dragon, pick up the scales it
-drops, then either read a blessed scroll of enchant armor while
-wearing the scales (they transform into scale mail), or wish for
-the mail directly.
+drops, then read a (non-cursed) scroll of enchant armor while
+wearing them (they transform into scale mail); or wish for the
+mail directly.
 
 **Speed boots** are worth wishing for. Being faster than your
 enemies means you get more turns — more chances to attack, cast
@@ -4127,14 +4137,19 @@ does.
 For the full damage/weight/cost numbers on every weapon in the
 game, see the [Weapons Tables](#weapons-tables) appendix.
 
+<!-- audit 2026-05-18 #175: Weapon enchantment has no destruction risk at all — read.c:1669-1671 just becomes probabilistic above +9 (uncursed always adds +1). Armor destruction risk begins above +3 (above +5 for "special" armor like elven items or the Wizard's cornuthaum) per read.c:1179; cursing/uncursing doesn't change the threshold, only the success rate. Reworded. -->
 #### Enchantment
 
 Weapons and armor can be enchanted using scrolls of enchant weapon
 and enchant armor. Each scroll adds +1 (uncursed) or potentially
-more (blessed). Enchanting beyond +5 risks destroying the item,
-though blessed scrolls reduce this risk. The absolute safe limit
-for enchanting is +5 for weapons and +3 for armor (with uncursed
-scrolls). Blessed scrolls can push higher safely.
+more (blessed). For **weapons** there's no destruction limit at
+all: above +9 the scroll just becomes less likely to add a point,
+but the weapon is never lost. **Armor** is different — above +3
+each new scroll has a chance to destroy the item (above +5 for
+"special" armor like elven pieces, or the Wizard's cornuthaum).
+Blessed scrolls give more points per read but don't change the
+destruction threshold; cursed scrolls can subtract enchantment
+and shouldn't be used for enchanting at all.
 
 #### Erosion and Proofing
 

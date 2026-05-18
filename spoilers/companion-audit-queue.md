@@ -178,10 +178,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#171**  L 7262  (  19 lines)   ↳ Bestiary Tables → Imps and minor demons `i`
 - [x] **#172**  L 1827  (  37 lines)   ↳ Dangerous Encounters → Petrification (Stoning)
 - [x] **#173**  L 7778  (  21 lines)   ↳ Bestiary Tables → Nagas `N`
-- [ ] **#174**  L 1906  (  12 lines)   ↳ Dangerous Encounters → Starvation
-- [ ] **#175**  L 3777  ( 122 lines) 📖 The Armory
-- [ ] **#176**  L 1332  (  66 lines)   ↳ Traps and Hazards → Engravings
-- [ ] **#177**  L 1257  (  26 lines)   ↳ Traps and Hazards → Iron Bars
+- [x] **#174**  L 1906  (  12 lines)   ↳ Dangerous Encounters → Starvation
+- [x] **#175**  L 3777  ( 122 lines) 📖 The Armory
+- [x] **#176**  L 1332  (  66 lines)   ↳ Traps and Hazards → Engravings
+- [x] **#177**  L 1257  (  26 lines)   ↳ Traps and Hazards → Iron Bars
 - [ ] **#178**  L 7461  (  17 lines)   ↳ Bestiary Tables → Unicorns and horses `u`
 - [ ] **#179**  L 1981  (  17 lines)   ↳ Dangerous Encounters → Engulfment from Hiding
 - [ ] **#180**  L 2706  (  35 lines)   ↳ A Practical Identification Strategy → The Engrave Test (Wands)
