@@ -18,10 +18,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 11**  L 1864  (  11 lines)   ↳ Dangerous Encounters → Drowning
 - [x] **# 12**  L 2174  (  28 lines)   ↳ Dangerous Encounters → The Genetic Engineer
 - [x] **# 13**  L 7923  (  16 lines)   ↳ Bestiary Tables → Wraiths `W`
-- [ ] **# 14**  L 7638  (  18 lines)   ↳ Bestiary Tables → Elementals `E`
-- [ ] **# 15**  L 5245  (  55 lines) 📖 The Ascension Kit
-- [ ] **# 16**  L 7512  (  15 lines)   ↳ Bestiary Tables → Xans and fantastic insects `x`
-- [ ] **# 17**  L 7991  (  83 lines)   ↳ Bestiary Tables → Humans and elves `@`
+- [x] **# 14**  L 7638  (  18 lines)   ↳ Bestiary Tables → Elementals `E`
+- [x] **# 15**  L 5245  (  55 lines) 📖 The Ascension Kit
+- [x] **# 16**  L 7512  (  15 lines)   ↳ Bestiary Tables → Xans and fantastic insects `x`
+- [x] **# 17**  L 7991  (  83 lines)   ↳ Bestiary Tables → Humans and elves `@`
 - [ ] **# 18**  L 8376  ( 165 lines) 📖 Acknowledgements
 - [ ] **# 19**  L 6799  (  10 lines)   ↳ Weapons Tables → Quarterstaff
 - [ ] **# 20**  L 7150  (  16 lines)   ↳ Bestiary Tables → Cockatrices `c`

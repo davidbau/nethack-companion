@@ -2721,17 +2721,21 @@ anything you hit that lacks stoning resistance turns to stone.</p>
 <h4>Drowning</h4>
 <!-- audit 2026-05-17 #11: 5 claims verified, 2 corrected (encumbrance doesn't gate grab-drown; "stay unburdened" doesn't defend against the grab path). See companion-audit.md. -->
 <p>Giant eels, electric eels, and krakens can grab you with their wrap
-attack. Once grabbed in water, each of the monster’s turns you can drown
-unless you have <em>swimming</em>, <em>magical breathing</em>, or
-levitation — regardless of how much you’re carrying. The encumbrance
-mechanic only matters if you <em>fall</em> into water and need to crawl
-out (stressed or worse forces emergency disrobe). You’ll meet eels and
-krakens at Medusa’s level, in moats around the Castle, in swamp rooms,
-and on the Water Plane.</p>
-<p><strong>Defenses:</strong> An amulet of magical breathing (or the
-spell) lets you survive underwater indefinitely. Levitation keeps you
-above the water entirely. Kill sea monsters at range whenever possible —
-their grab attack requires adjacency.</p>
+attack. Once they have you, each of the monster’s turns you can drown —
+the check uses the <em>monster’s</em> tile (always water for an eel or
+kraken), not yours, so you can drown even while standing on adjacent dry
+land. Only <em>Swimming</em>, <em>magical breathing</em>, or
+<em>amphibious form</em> prevent the drown; encumbrance doesn’t matter
+here. (Encumbrance only matters if you <em>fall</em> into water and need
+to crawl out — stressed or worse forces emergency disrobe.) You’ll meet
+eels and krakens at Medusa’s level, in moats around the Castle, in swamp
+rooms, and on the Water Plane.</p>
+<p><strong>Defenses:</strong> An amulet (or spell) of <em>magical
+breathing</em> gives you Breathless and ends the grab-drown threat.
+Levitation keeps you above pools so you can’t walk into them, but
+<strong>does not save you from an eel’s grab</strong> once it lands.
+Kill sea monsters at range whenever possible — their grab attack
+requires adjacency.</p>
 </section>
 <section id="attack-wands-and-the-warning-shot" class="level4">
 <h4>Attack Wands and the Warning Shot</h4>
@@ -7489,9 +7493,12 @@ down. Climb fast (see the Ascension Run section below).</p></li>
 <section id="survival-tips" class="level4">
 <h4>Survival Tips</h4>
 <ul>
-<li><strong>Bring extra food.</strong> You can’t pray for it</li>
-<li><strong>Bring scrolls of remove curse.</strong> You can’t pray
-curses away</li>
+<li><strong>Bring extra food.</strong> Prayer <em>can</em> cure Hungry,
+but it’s a high-cost favor to spend on something a food ration
+solves</li>
+<li><strong>Bring scrolls of remove curse.</strong> Prayer can uncurse a
+cursed worn item too, but only one at a time and only as a “trouble” the
+god will fix</li>
 <li><strong>Dig, don’t navigate.</strong> Maze walls are faster to go
 through than around</li>
 <li><strong>Kill the Wizard quickly.</strong> Every turn he lives is
@@ -7507,6 +7514,7 @@ by foot</li>
 </section>
 <section id="the-ascension-kit" class="level3">
 <h3>The Ascension Kit</h3>
+<!-- audit 2026-05-17 #15: ~30 claims verified, 3 corrected (helm of holiness doesn't exist; prayer CAN cure hunger and uncurse worn items per pray.c). See companion-audit.md. -->
 <p>By the time you’re ready to invoke Moloch’s Sanctum, the loadout that
 experienced players actually wear has converged. A survey of recent
 ascensions from the public NetHack server shows what most winners carry.
@@ -7539,8 +7547,10 @@ Gehennom.</td>
 </tr>
 <tr>
 <td><strong>Helm</strong></td>
-<td>Helm of brilliance, telepathy, or holiness</td>
-<td>Brilliance for casters; telepathy when you might be blind.</td>
+<td>Helm of brilliance or helm of telepathy</td>
+<td>Brilliance for casters; telepathy when you might be blind. (Priest
+can wear the Mitre of Holiness for fire resistance + see
+invisible.)</td>
 </tr>
 <tr>
 <td><strong>Gloves</strong></td>
@@ -13490,6 +13500,7 @@ swallow you whole and digest. Don’t get cornered.</p>
 </section>
 <section id="xans-and-fantastic-insects-x" class="level4">
 <h4>Xans and fantastic insects <code>x</code></h4>
+<!-- audit 2026-05-17 #16: 9 cells/claims verified, 0 corrected. All grid bug and xan stats match monsters.h. See companion-audit.md. -->
 <p>Grid bugs are trivial; xans, the bigger relatives, sting your legs
 and slow you down.</p>
 <p>All xans and fantastic insects are poison-resistant.</p>
@@ -14133,6 +14144,7 @@ steal-amulet</td>
 </section>
 <section id="elementals-e" class="level4">
 <h4>Elementals <code>E</code></h4>
+<!-- audit 2026-05-17 #14: 32 cells/claims verified, 0 corrected. All stats match monsters.h. Close call: fire/air rows could enrich Notes with their resistances (MR_FIRE etc.) like earth/water rows do. See companion-audit.md. -->
 <p>Air engulfs and suffocates, fire deals fire damage, water drowns if
 you’re adjacent in water, earth is slow but tough.</p>
 <p>All except <em>stalker</em> also are mindless.</p>
@@ -15313,12 +15325,13 @@ garter snakes are fodder.</p>
 </section>
 <section id="trolls-t" class="level4">
 <h4>Trolls <code>T</code></h4>
-<!-- audit 2026-05-17 #3: 17 claims verified, 0 corrected (all stats match monsters.h exactly; lightly tightened "zap it with magic" to mention what actually destroys corpses). See companion-audit.md. -->
-<p>Regenerates from corpses. To keep a troll dead, destroy the corpse:
-eat it, burn it (fire wand/spell, lava), drop it into water, or use
-force-bolt/striking on it. Stoning the troll leaves a statue, not a
-corpse, so it never revives. A troll left behind on an old level will be
-alive when you come back.</p>
+<!-- audit 2026-05-17 #3: 17 stat claims verified. Self-audit caught the rewrite's "fire/water/force-bolt destroy corpses" claim was wrong (burn_floor_objects only burns scrolls/spellbooks/slime; no general corpse-destruction by these means). Trimmed to verified options only. See companion-audit.md. -->
+<p>Regenerates from corpses on a timer. Three reliable ways to keep a
+troll dead: <strong>eat the corpse</strong> before it revives;
+<strong>kill it with Trollsbane wielded</strong> (the artifact disables
+the revive timer); or <strong>stone it</strong> so it leaves a statue
+instead of a corpse. A troll left behind on an old level will be alive
+when you come back.</p>
 <p>All trolls regenerate and follow you up and down stairs.</p>
 <div class="dense-table">
 <table>
@@ -15853,9 +15866,12 @@ pois-res.</td>
 </section>
 <section id="humans-and-elves" class="level4">
 <h4>Humans and elves <code>@</code></h4>
+<!-- audit 2026-05-17 #17: 43 rows / 200+ cells verified, 1 corrected (Kops are class K not @). All numeric stats match monsters.h exactly. Close calls: intro promises ninja/Wizard of Yendor/quest nemeses coverage that the table doesn't include. See companion-audit.md. -->
 <p>The catch-all <code>@</code> class: shopkeepers, priests, watchmen,
-Kops, role nemeses, quest leaders, valkyries, ninja, and the player.
-Most start peaceful; the ones that don’t are very dangerous.</p>
+role nemeses, quest leaders, soldiers, ninja, doppelgangers, weres,
+Medusa, Croesus, the Wizard of Yendor, and the player. Most start
+peaceful; the ones that don’t are very dangerous. (Kops are <em>not</em>
+in this class — they’re <code>K</code>.)</p>
 <div class="dense-table">
 <table>
 <colgroup>

@@ -1197,3 +1197,121 @@ Verified 5 claims; 2 corrected; 0 flagged.
 
 ### Notes
 - Added electric eels to the grab-list (the spoiler had only giant eels and krakens). Added swamps and moats to the encounter locations.
+
+---
+
+## 2026-05-17 — Methodology note
+
+User correctly flagged that fixes themselves are unverified claims.
+The Drowning rewrite (audit #11) introduced "levitation" as a defense
+without grep-verifying it; one grep of `Levitation` against the
+AD_WRAP handler in uhitm.c:3389 would have caught that `Levitation`
+is NOT in the drown-check (only Swimming/Amphibious/Breathless).
+
+New discipline: after applying any factual correction, grep the C
+source for each new specific claim in the rewrite. Especially for
+"X defends against Y" wording — these need explicit verification
+before commit.
+
+Self-audit pass found two more rewrites with the same issue:
+
+1. **Troll corpse destruction methods** (audit #3 rewrite): I'd
+   listed "fire wand/spell, lava, water, force-bolt/striking" as
+   ways to destroy a troll corpse. burn_floor_objects in zap.c
+   only burns SCROLL_CLASS, SPBOOK_CLASS, and GLOB_OF_GREEN_SLIME
+   — NOT corpses. force-bolt code in zap.c targets monsters, not
+   floor objects. The verified ways to prevent troll revival are:
+   eat the corpse, kill it with Trollsbane wielded (uhitm.c
+   comment "troll killed by Trollsbane won't auto-revive"), or
+   stone it (monstone() drops a statue instead of make_corpse).
+   Re-trimmed to verified options.
+
+2. **Drowning defenses**: Already re-fixed to remove the false
+   "levitation prevents grab-drown" claim. Levitation only
+   prevents walking into water; the eel grab-drown check uses
+   monster's tile + only Swimming/Amphibious/Breathless.
+
+---
+
+## 2026-05-17 — Chapter audit #14: Bestiary Tables → Elementals `E`
+
+Source: `spoilers/companion.md` lines 7670-7686 (after the rewrite shift; originally 7638)
+Verified 32 cells/claims; 0 corrected; 5 close calls.
+
+### Verified
+- All 5 rows (stalker, air, fire, earth, water) match `monsters.h` exactly.
+- "All except stalker are mindless" — M1_MINDLESS on all four elementals, not stalker.
+- Resistance notes on earth/water rows complete.
+
+### Close calls
+- Fire elemental notes omit MR_FIRE / MR_POISON / MR_STONE; air elemental notes omit MR_POISON / MR_STONE. Asymmetric vs earth/water rows. Optional enrichment.
+
+---
+
+## 2026-05-17 — Chapter audit #15: The Ascension Kit
+
+Source: `spoilers/companion.md` lines 5274-5298
+Verified ~30 claims; 3 corrected; 2 close calls.
+
+### Verified
+- All DSM mappings (gray=ANTIMAGIC, silver=REFLECTING, blue=SHOCK_RES) — `objects.h:502-522`.
+- Cloak of magic resistance exists — `objects.h:644`.
+- Helm of brilliance, helm of telepathy exist — `objects.h:470, 485`.
+- Gauntlets of power → STR boost — `attrib.c:1214`.
+- Speed boots → FAST — `objects.h:707`.
+- Hawaiian/T-shirt in ARM_SHIRT slot — `objects.h:604-608`.
+- Amulet of life saving / LIFESAVED — `objects.h:838`.
+- Eye of the Aethiopica is Wizard quest artifact — `artilist.h:303`.
+- Ring of free action blocks paralysis — `mcastu.c:506`.
+- Level teleport blocked while carrying Amulet — `teleport.c:1185`.
+- Candelabrum needs 7 candles — `apply.c:1351-1420`.
+- Mysterious Force still active in 5.0 — `do.c:1541-1573`.
+- Wizard respawns — `wizard.c:713`.
+- Silver does bonus damage to demons — `mondata.c:524` `hates_silver()`.
+
+### Corrected
+1. **"Helm of holiness"** — doesn't exist. The Mitre of Holiness is the Priest quest artifact (`artilist.h:265`), based on a helm of brilliance. The spoiler conflated the artifact's name with a regular item type.
+   - Fix: "Helm of brilliance or helm of telepathy" with a note that Priests can use the Mitre.
+2. **"You can't pray for [food]"** — WRONG. `TROUBLE_HUNGRY` is a real god-trouble (`pray.c:98, 275-276, 408`). Reworded to clarify prayer *can* but it's high-cost.
+3. **"You can't pray curses away"** — WRONG. `TROUBLE_CURSED_ITEMS` is a real trouble category (`pray.c:93, 253`); `worst_cursed_item()` at `pray.c:288` picks the cursed item the god will uncurse. Reworded to "prayer can uncurse a cursed worn item but only one at a time".
+
+### Close calls
+- "Silver bypasses demon resistances" — actually triggers bonus-damage via `hates_silver()`, not resistance bypass. Practical effect right, mechanism described wrong.
+- "Up-stair from the Sanctum lifts you out" — the Sanctum's exit is actually the ritual portal, not regular stairs. Loose framing.
+
+---
+
+## 2026-05-17 — Chapter audit #16: Bestiary Tables → Xans and fantastic insects `x`
+
+Source: `spoilers/companion.md` lines 7540-7553
+Verified 9 cells; 0 corrected; 2 close calls.
+
+### Verified
+- grid bug: CLR_MAGENTA, LVL 0/12/9/0, AT_BITE/AD_ELEC 1d1, MR_ELEC + MR_POISON.
+- xan: CLR_RED, LVL 7/18/-4/0, AT_STNG/AD_LEGS 1d4, M1_FLY + M1_POIS.
+- Preamble "poison-resistant" verified for both.
+
+### Close calls
+- Grid bug `G_NOCORPSE` flag not flagged in this Notes column (mentioned in another section).
+- Preamble omits grid bugs can't move diagonally (mentioned elsewhere).
+
+---
+
+## 2026-05-17 — Chapter audit #17: Bestiary Tables → Humans and elves `@`
+
+Source: `spoilers/companion.md` lines 8027+ (43 rows of human/elf monsters)
+Verified 200+ cells; 1 corrected; multiple close calls.
+
+### Verified
+- All 43 rows match `monsters.h` exactly: human, were-X, elf-X, elf-lord, Elvenking, doppelganger, shopkeeper, guard, prisoner, Oracle, priest, high priest, soldier, sergeant, nurse, lieutenant, captain, watchman, watch captain, Medusa, Croesus, Charon, all 13 player roles, all 3 Archeologist-line quest leaders.
+- HI_DOMESTIC=white, HI_LORD=magenta, HI_ZAP=bright-blue color mappings — `color.h:37-55`.
+- M2_STALK = "follows stairs" attribution correct row-by-row.
+
+### Corrected
+1. **Intro "shopkeepers, priests, watchmen, Kops, role nemeses..."** — Kops are `S_KOP` (`K` glyph, `defsym.h:338`), not `S_HUMAN`. Removed from the `@` class intro and added an explicit note "(Kops are *not* in this class — they're K)".
+
+### Close calls
+- Intro mentions ninja but ninja (S_HUMAN at monsters.h:3867) isn't in the table — omission.
+- Intro implies quest-leader coverage but only the Archeologist line is in the table (the other 11 quest leaders + Wizard of Yendor + Norn + nemeses are S_HUMAN but absent).
+- Barbarian/Healer have MR_POISON, Valkyrie has MR_COLD — none called out in Notes column even though these are well-known traits.
+- Charon row assumes `#ifdef CHARON` build option (compiled out by default in 5.0).

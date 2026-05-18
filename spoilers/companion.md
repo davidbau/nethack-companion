@@ -1869,18 +1869,21 @@ anything you hit that lacks stoning resistance turns to stone.
 <!-- audit 2026-05-17 #11: 5 claims verified, 2 corrected (encumbrance doesn't gate grab-drown; "stay unburdened" doesn't defend against the grab path). See companion-audit.md. -->
 
 Giant eels, electric eels, and krakens can grab you with their
-wrap attack. Once grabbed in water, each of the monster's turns
-you can drown unless you have *swimming*, *magical breathing*, or
-levitation — regardless of how much you're carrying. The
-encumbrance mechanic only matters if you *fall* into water and
-need to crawl out (stressed or worse forces emergency disrobe).
-You'll meet eels and krakens at Medusa's level, in moats around
-the Castle, in swamp rooms, and on the Water Plane.
+wrap attack. Once they have you, each of the monster's turns you
+can drown — the check uses the *monster's* tile (always water for
+an eel or kraken), not yours, so you can drown even while standing
+on adjacent dry land. Only *Swimming*, *magical breathing*, or
+*amphibious form* prevent the drown; encumbrance doesn't matter
+here. (Encumbrance only matters if you *fall* into water and need
+to crawl out — stressed or worse forces emergency disrobe.) You'll
+meet eels and krakens at Medusa's level, in moats around the
+Castle, in swamp rooms, and on the Water Plane.
 
-**Defenses:** An amulet of magical breathing (or the spell) lets
-you survive underwater indefinitely. Levitation keeps you above
-the water entirely. Kill sea monsters at range whenever possible
-— their grab attack requires adjacency.
+**Defenses:** An amulet (or spell) of *magical breathing* gives
+you Breathless and ends the grab-drown threat. Levitation keeps
+you above pools so you can't walk into them, but **does not save
+you from an eel's grab** once it lands. Kill sea monsters at range
+whenever possible — their grab attack requires adjacency.
 
 #### Attack Wands and the Warning Shot
 
@@ -5254,8 +5257,8 @@ frantic climb back to the surface. The steps:
 
 #### Survival Tips
 
-- **Bring extra food.** You can't pray for it
-- **Bring scrolls of remove curse.** You can't pray curses away
+- **Bring extra food.** Prayer *can* cure Hungry, but it's a high-cost favor to spend on something a food ration solves
+- **Bring scrolls of remove curse.** Prayer can uncurse a cursed worn item too, but only one at a time and only as a "trouble" the god will fix
 - **Dig, don't navigate.** Maze walls are faster to go through
   than around
 - **Kill the Wizard quickly.** Every turn he lives is another
@@ -5269,6 +5272,7 @@ frantic climb back to the surface. The steps:
 ---
 
 ### The Ascension Kit
+<!-- audit 2026-05-17 #15: ~30 claims verified, 3 corrected (helm of holiness doesn't exist; prayer CAN cure hunger and uncurse worn items per pray.c). See companion-audit.md. -->
 
 By the time you're ready to invoke Moloch's Sanctum, the loadout
 that experienced players actually wear has converged. A survey of
@@ -5279,7 +5283,7 @@ winners carry. Here is the canonical kit, slot by slot:
 |--------|------------------------|---------------------------------------|
 | **Body** | Dragon scale mail | Gray (magic resistance) or silver (reflection) are the popular picks; blue (shock) also works. |
 | **Cloak** | Cloak of magic resistance | Or a robe for casters. Magic resistance is non-negotiable in Gehennom. |
-| **Helm** | Helm of brilliance, telepathy, or holiness | Brilliance for casters; telepathy when you might be blind. |
+| **Helm** | Helm of brilliance or helm of telepathy | Brilliance for casters; telepathy when you might be blind. (Priest can wear the Mitre of Holiness for fire resistance + see invisible.) |
 | **Gloves** | Gauntlets of power | Skip them only if you have a different STR strategy (e.g. a Knight with a +STR ring). |
 | **Boots** | Speed boots | **Universal.** |
 | **Shirt** | Hawaiian shirt or T-shirt | A free body slot under everything else — winners enchant it heavily (typically blessed +4 or +5) for several extra AC at no cost. |
@@ -7538,6 +7542,7 @@ Long worms become a maze of tail segments as they grow. Purple worms swallow you
 :::
 
 #### Xans and fantastic insects `x`
+<!-- audit 2026-05-17 #16: 9 cells/claims verified, 0 corrected. All grid bug and xan stats match monsters.h. See companion-audit.md. -->
 
 Grid bugs are trivial; xans, the bigger relatives, sting your legs and slow you down.
 
@@ -7664,6 +7669,7 @@ All except *Chromatic Dragon* also fly.
 :::
 
 #### Elementals `E`
+<!-- audit 2026-05-17 #14: 32 cells/claims verified, 0 corrected. All stats match monsters.h. Close call: fire/air rows could enrich Notes with their resistances (MR_FIRE etc.) like earth/water rows do. See companion-audit.md. -->
 
 Air engulfs and suffocates, fire deals fire damage, water drowns if you're adjacent in water, earth is slow but tough.
 
@@ -7904,9 +7910,9 @@ All snakes swim. All except *python* also hide.
 :::
 
 #### Trolls `T`
-<!-- audit 2026-05-17 #3: 17 claims verified, 0 corrected (all stats match monsters.h exactly; lightly tightened "zap it with magic" to mention what actually destroys corpses). See companion-audit.md. -->
+<!-- audit 2026-05-17 #3: 17 stat claims verified. Self-audit caught the rewrite's "fire/water/force-bolt destroy corpses" claim was wrong (burn_floor_objects only burns scrolls/spellbooks/slime; no general corpse-destruction by these means). Trimmed to verified options only. See companion-audit.md. -->
 
-Regenerates from corpses. To keep a troll dead, destroy the corpse: eat it, burn it (fire wand/spell, lava), drop it into water, or use force-bolt/striking on it. Stoning the troll leaves a statue, not a corpse, so it never revives. A troll left behind on an old level will be alive when you come back.
+Regenerates from corpses on a timer. Three reliable ways to keep a troll dead: **eat the corpse** before it revives; **kill it with Trollsbane wielded** (the artifact disables the revive timer); or **stone it** so it leaves a statue instead of a corpse. A troll left behind on an old level will be alive when you come back.
 
 All trolls regenerate and follow you up and down stairs.
 
@@ -8021,8 +8027,9 @@ All zombies are mindless and undead.
 :::
 
 #### Humans and elves `@`
+<!-- audit 2026-05-17 #17: 43 rows / 200+ cells verified, 1 corrected (Kops are class K not @). All numeric stats match monsters.h exactly. Close calls: intro promises ninja/Wizard of Yendor/quest nemeses coverage that the table doesn't include. See companion-audit.md. -->
 
-The catch-all `@` class: shopkeepers, priests, watchmen, Kops, role nemeses, quest leaders, valkyries, ninja, and the player. Most start peaceful; the ones that don't are very dangerous.
+The catch-all `@` class: shopkeepers, priests, watchmen, role nemeses, quest leaders, soldiers, ninja, doppelgangers, weres, Medusa, Croesus, the Wizard of Yendor, and the player. Most start peaceful; the ones that don't are very dangerous. (Kops are *not* in this class — they're `K`.)
 
 ::: dense-table
 
