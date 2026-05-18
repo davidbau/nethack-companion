@@ -849,6 +849,7 @@ a direction.</p>
 </section>
 <section id="points-of-interest" class="level3">
 <h3>Points of Interest</h3>
+<!-- audit 2026-05-17 #5: 40+ claims verified, 5 corrected (throne identify "up to 5" → 1-4 or all; sink polymorph message; rotten "fruit" → slime molds; "less" → "lesser"; sink-kick missing amorous demon outcome). See companion-audit.md. -->
 <p>Not everything interesting in the dungeon is trying to kill you.
 Scattered throughout the levels are fixtures that reward the curious,
 and occasionally punish them. Learning what to do (and what <em>not</em>
@@ -960,7 +961,8 @@ possible outcomes reads like a wish list shuffled with a hit list:</p>
 <ul>
 <li>A wish (if your luck is positive)</li>
 <li>Genocide of a monster class</li>
-<li>Free identification of up to five items in your pack</li>
+<li>Free identification of one to four items in your pack — or, one time
+in five, your entire inventory</li>
 <li>A stat boost or a stat drain</li>
 <li>An electric shock</li>
 <li>Full healing</li>
@@ -988,8 +990,11 @@ never vanishes without granting a wish first.)
 <p>Sinks are the dungeon’s most underrated identification tool.</p>
 <ul>
 <li><strong>Kicking a sink</strong> can shake loose a ring (useful!),
-summon a black pudding (terrifying!), or just stub your toe. Worth a
-kick in the early game if you can handle what comes out</li>
+summon a black pudding (terrifying!), summon an <em>amorous demon</em>
+posing as “the dish washer” (the same incubus/succubus as a seduction
+encounter — careful!), or just stub your toe. Each non-stub outcome
+fires at most once per sink. Worth a kick in the early game if you can
+handle what comes out</li>
 <li><strong>Pouring potions down a sink</strong> (by dipping) produces
 telltale effects: a polymorph potion transforms the sink into a
 fountain, an oil potion leaves a film on the basin. A clever way to
@@ -1038,7 +1043,7 @@ is!”</em></td>
 <td>no</td>
 </tr>
 <tr>
-<td><em>“You smell rotten fruit.”</em></td>
+<td><em>“You smell rotten slime molds.”</em> (or your custom fruit)</td>
 <td>poison resistance</td>
 <td>no</td>
 </tr>
@@ -1068,7 +1073,7 @@ is!”</em></td>
 <td>no</td>
 </tr>
 <tr>
-<td><em>“The water flow seems greater/less now.”</em></td>
+<td><em>“The water flow seems greater/lesser now.”</em></td>
 <td>gain constitution</td>
 <td>no</td>
 </tr>
@@ -1095,8 +1100,9 @@ spot</td>
 <td>no</td>
 </tr>
 <tr>
-<td><em>“The sink vanishes.”</em><br>sink becomes a fountain, throne,
-altar, or grave</td>
+<td><em>“The sink transforms into a
+fountain/throne/altar/grave!”</em><br>(or rarely <em>“The sink
+vanishes.”</em> if grave generation fails)</td>
 <td>polymorph</td>
 <td>no</td>
 </tr>
@@ -4126,8 +4132,7 @@ first. Check BUC second. Then pick it up.</p>
 <section id="naming-what-youve-learned" class="level4">
 <h4>Naming What You’ve Learned</h4>
 <!-- audit 2026-05-17 #2: 5 claims verified, 1 corrected (N keystroke only works in number_pad mode; default vi-keys binds N to run-north — the cross-layout shortcut is C for #call). See companion-audit.md. -->
-<p>As you gather clues, use the <code>#name</code> command (or
-<code>C</code> for the equivalent <code>#call</code> menu) to track what
+<p>As you gather clues, use the <code>#name</code> command to track what
 you know. You can <strong>call</strong> an entire item class by a name
 you choose. For example, if you’ve determined that “fizzy potions” are
 in the $200 price group, call them “fizzy=$200” so you don’t forget. If

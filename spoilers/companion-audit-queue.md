@@ -9,7 +9,7 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#  2**  L 2898  (  13 lines)   ↳ A Practical Identification Strategy → Naming What You've Learned
 - [x] **#  3**  L 7877  (  18 lines)   ↳ Bestiary Tables → Trolls `T`
 - [x] **#  4**  L 7740  (  17 lines)   ↳ Bestiary Tables → Liches `L`
-- [ ] **#  5**  L  687  ( 155 lines) 📖 Points of Interest
+- [x] **#  5**  L  687  ( 155 lines) 📖 Points of Interest
 - [ ] **#  6**  L 6747  (  11 lines)   ↳ Weapons Tables → Club
 - [ ] **#  7**  L 2087  (  10 lines)   ↳ Dangerous Encounters → Deadly Poison
 - [ ] **#  8**  L 7134  (  16 lines)   ↳ Bestiary Tables → Blobs `b`

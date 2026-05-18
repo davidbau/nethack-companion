@@ -685,6 +685,7 @@ rather than a direction.
 ---
 
 ### Points of Interest
+<!-- audit 2026-05-17 #5: 40+ claims verified, 5 corrected (throne identify "up to 5" → 1-4 or all; sink polymorph message; rotten "fruit" → slime molds; "less" → "lesser"; sink-kick missing amorous demon outcome). See companion-audit.md. -->
 
 Not everything interesting in the dungeon is trying to kill you.
 Scattered throughout the levels are fixtures that reward the
@@ -771,7 +772,7 @@ possible outcomes reads like a wish list shuffled with a hit list:
 
 - A wish (if your luck is positive)
 - Genocide of a monster class
-- Free identification of up to five items in your pack
+- Free identification of one to four items in your pack — or, one time in five, your entire inventory
 - A stat boost or a stat drain
 - An electric shock
 - Full healing
@@ -800,8 +801,11 @@ first.)
 Sinks are the dungeon's most underrated identification tool.
 
 - **Kicking a sink** can shake loose a ring (useful!), summon a
-  black pudding (terrifying!), or just stub your toe. Worth a kick
-  in the early game if you can handle what comes out
+  black pudding (terrifying!), summon an *amorous demon* posing as
+  "the dish washer" (the same incubus/succubus as a seduction
+  encounter — careful!), or just stub your toe. Each non-stub
+  outcome fires at most once per sink. Worth a kick in the early
+  game if you can handle what comes out
 - **Pouring potions down a sink** (by dipping) produces telltale
   effects: a polymorph potion transforms the sink into a fountain,
   an oil potion leaves a film on the basin. A clever way to narrow
@@ -824,18 +828,18 @@ Sinks are the dungeon's most underrated identification tool.
 | *"You thought your ring got lost in the sink, but there it is!"* | searching | **yes**    |
 | *"The ring is regurgitated!"*                        | slow digestion        | **yes**    |
 | *"The sink quivers upward for a moment."*            | levitation            | no         |
-| *"You smell rotten fruit."*                          | poison resistance     | no         |
+| *"You smell rotten slime molds."* (or your custom fruit)              | poison resistance     | no         |
 | *"Several flies buzz angrily around the sink."*     | aggravate monster     | no         |
 | *"Static electricity surrounds the sink."*           | shock resistance      | no         |
 | *"You hear loud noises coming from the drain."*      | conflict              | no         |
 | *"The water flow seems fixed."*                      | sustain ability       | no         |
 | *"The water flow seems stronger/weaker now."*        | gain strength         | no         |
-| *"The water flow seems greater/less now."*           | gain constitution     | no         |
+| *"The water flow seems greater/lesser now."*         | gain constitution     | no         |
 | *"The water flow hits/misses the drain."*            | increase accuracy     | no         |
 | *"The water's force seems greater/smaller now."*     | increase damage       | no         |
 | *"Suddenly, [items] vanish from the sink!"*<br>any other items on the sink square vanish too | hunger                | no |
 | *"The sink momentarily vanishes."*<br>sink moves to a new spot         | teleportation         | no |
-| *"The sink vanishes."*<br>sink becomes a fountain, throne, altar, or grave | polymorph             | no |
+| *"The sink transforms into a fountain/throne/altar/grave!"*<br>(or rarely *"The sink vanishes."* if grave generation fails) | polymorph             | no |
 
 ---
 
@@ -2898,8 +2902,8 @@ uncurse. Kick it first. Check BUC second. Then pick it up.
 #### Naming What You've Learned
 <!-- audit 2026-05-17 #2: 5 claims verified, 1 corrected (N keystroke only works in number_pad mode; default vi-keys binds N to run-north — the cross-layout shortcut is C for #call). See companion-audit.md. -->
 
-As you gather clues, use the `#name` command (or `C` for the
-equivalent `#call` menu) to track what you know. You can **call** an entire item class by a name you choose.
+As you gather clues, use the `#name` command to track what you
+know. You can **call** an entire item class by a name you choose.
 For example, if you've determined that "fizzy potions" are in the $200
 price group, call them "fizzy=$200" so you don't forget. If you later
 throw one at a monster and it speeds up, you can rename the class to

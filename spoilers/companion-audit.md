@@ -996,3 +996,57 @@ Verified 12 claims; 3 corrected; 0 flagged.
 ### Notes
 - "spell spell" attack notation matches the project's bestiary convention (AT_MAGC AD_SPEL 0d0).
 - "Skeletal" is conventional flavor; liches are flagged M1_HUMANOID + M2_UNDEAD + M2_MAGIC (no S_SKELETON involvement).
+
+---
+
+## 2026-05-17 — Audit #2 follow-up correction
+
+Reader feedback (mrkelee/user): `#call` is not equivalent to `#name`.
+Although both invoke `docallcmd` in 5.0 src, the conventional usage
+differs and the spoiler shouldn't equate them. Reverted the parenthetical
+to just "use the `#name` command".
+
+---
+
+## 2026-05-17 — Chapter audit #5: Points of Interest
+
+Source: `spoilers/companion.md` lines 687-841 (155 lines)
+Verified 40+ claims; 5 corrected; 4 flagged for human review.
+
+### Verified
+- Fountain quaff outcomes match `fountain.c:drinkfountain`: water demon, healing, attribute change, snakes, see-invisible, "cool draught" nothing-message.
+- Wish source is water demon path — `fountain.c:69-85` "Grateful for %s release, %s grants you a wish!"
+- Excalibur conditions: Lawful, XL ≥ 5, Knight 1/6 vs others 1/30 — `fountain.c:404-447`.
+- Altar drop-flash: amber = blessed, black = cursed, no flash = uncursed — `do.c:379-389` (`hcolor(obj->blessed ? NH_AMBER : NH_BLACK)`).
+- Throne 1/3 activation — `sit.c:45` `rnd(6) > 4`.
+- Throne ~1/3 destruction "puff of logic" — `sit.c:224-233`.
+- Vlad's throne never vanishes without a wish — `sit.c:241-353` (cases 1-4 grant wish + destroy; cases 5-13 negative but throne survives).
+- Sink-quaff outcomes match `fountain.c:604-711` (gain level case 8, find ring case 5, random potion case 4, water elemental case 7, polymorph case 10, scalding water, sewer rat, vomit).
+- Sink-drop ring messages match `do.c:dosinkring`: searching, slow digestion, levitation, aggravate, shock, conflict, sustain ability, gain strength, increase accuracy, increase damage, hunger, teleportation.
+- Pouring polymorph potion into sink → fountain/throne/altar/grave — `do.c polymorph_sink`.
+- Pouring oil leaves film on basin — `fountain.c:dipsink` case POT_OIL.
+
+### Corrected
+1. **Throne "Free identification of up to five items"** — `sit.c:198` calls `identify_pack(rn2(5), FALSE)`. `rn2(5)` returns 0-4. When `id_limit == 0`, `identify_pack` identifies EVERYTHING (`invent.c:2711-2745`). So it's 1-4 items, OR 1-in-5 chance the throne ids your entire inventory.
+   - Fix: "Free identification of one to four items in your pack — or, one time in five, your entire inventory."
+
+2. **Sink polymorph "The sink vanishes"** — `do.c:450-453` actual message: `"The sink transforms into %s!"` with the new feature name. The "vanishes" string only fires in the sub-case where polymorph picked "grave" but `make_grave` failed.
+   - Fix: rewrote table row to show transforms message with vanish fallback noted.
+
+3. **Sink-drop ring of poison resistance "smell rotten fruit"** — `do.c:521` `"You smell rotten %s."` with `makeplural(fruitname(FALSE))`. Default fruit is "slime mold", so default message is "You smell rotten slime molds." With a custom `fruit:` option it changes.
+   - Fix: "You smell rotten slime molds." with note about custom fruit.
+
+4. **Sink-drop ring of gain constitution "greater/less"** — `do.c:542-545` `"The %s flow seems %ser now."` produces "greater" and "lesser" (not "less").
+   - Fix: "greater/lesser".
+
+5. **Sink kick outcomes missing the amorous demon** — `dokick.c:1224-1234` `"The dish washer returns!"` calls `makemon(PM_AMOROUS_DEMON ...)`. Once-per-sink, similar gate to black pudding branch.
+   - Fix: added "summon an amorous demon posing as the dish washer" with link to seduction context. Noted once-per-sink behaviour.
+
+### Close calls (human review)
+- Fountain wish probability rate "~1/30, falling off with depth": the math is more like `(1/30) * max(0, 20-LD)/100` — at most ~0.6% on DL1, essentially 0 by DL20. The "~1/30" headline is the water-demon-appearance rate, not the wish rate. Question for human: spell this out, or leave as approximate?
+- Throne wish luck threshold "if your luck is positive": C check is `u.uluck + rn2(5) < 0`, so with Luck=0 there's 4/5 chance of wish. "Non-negative luck almost always gives a wish" — current "positive" undersells. Tighten?
+- Throne case 11 not listed in the spoiler at all: aggravate monsters (Luck<0) or teleport (Luck≥0). Add?
+- Excalibur dip: requires `obj->quan == 1L` (single sword, not stack). Worth mentioning?
+
+### Notes
+- The sink ring-drop table is exact game output and players use it as a lookup; verbatim accuracy matters here.
