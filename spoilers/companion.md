@@ -1220,15 +1220,14 @@ to hit you like it's a buffet.
 **Anti-magic fields hit harder if you're magic-resistant.**
 Counterintuitive enough to mislead returning players. The trap
 drains spell energy, and having *magic resistance* also triggers
-an "anti-magic implosion" that costs you HP. The base damage is
-small, but it stacks for each source of magic resistance you carry:
-wielding Magicbane adds to it, and carrying any other artifact
-whose protection covers magic missile adds to it again. Late-game
-ascenders walk into the field with three or four magic-resistance
-sources stacked and lose a frightening amount of HP at once. The
-defense is finding the trap first (search), or destroying it from
-range by zapping *cancellation* at it to defuse it without
-setting it off.
+an "anti-magic implosion" that costs you HP. The damage is
+`rnd(4)` base, plus another `rnd(4)` if you have half-physical or
+half-spell damage, plus `rnd(4)` for wielding Magicbane, plus
+`rnd(4)` for carrying any one magic-resistance artifact (only one
+counts — the check breaks on first match). At worst that's 4d4
+damage, halved to 1d4 if you can pass through walls. The defense
+is finding the trap first (search), or destroying it from range by
+zapping *cancellation* at it to defuse it without setting it off.
 
 Iron footwear (iron shoes or kicking boots) absorbs a
 surprising amount of trap punishment in 5.0: no leg damage from a
@@ -1542,7 +1541,7 @@ AC / attack details on every monster, see the
 | `b`    | Blobs     | Acidic or gelatinous. Acid blobs have no active attack — they only splash 1d8 acid back when *you* hit *them*, and the splash can corrode your weapon. Kill at range, or walk past. |
 | `B`    | Bats      | The `B` class is **deceptively dangerous because of speed**. Bats and giant bats clock in at speed 22 — nearly twice the player's base 12, so they get roughly two bites per one of your swings. Giant bats bite for 1d6 each; the math catches up fast. Vampire bats are still in the bat class but their second bite drains Strength (not levels). |
 | `d`    | Dogs and other canines | The `d` class covers your starting pet (little dog, kitten via cat-class) **and** the most numerous early-game predators. **Jackals** are the single most common cause of death on the public server — they only bite for 1d2, but they spawn in packs and there are a *lot* of them on the upper levels. **Foxes** bite for 1d3 and are faster (speed 15) but spawn alone. Coyotes, dingos, wolves get progressively worse. Tame `d` (your pet, larger dogs you've fed up) help fight everything else. |
-| `e`    | Eyes      | **Floating eyes paralyze on melee hit.** Never hit an `e` in melee. Use ranged attacks. Spheres (flaming/freezing/shocking) explode in a 3×3 area in 5.0; kill them at range. Melee finishes them but you eat the blast. |
+| `e`    | Eyes      | **Floating eyes paralyze on melee hit.** Never hit an `e` in melee. Use ranged attacks. Spheres (flaming/freezing/shocking) explode in a 3×3 area; kill them at range. Melee finishes them but you eat the blast. |
 | `f`    | Cats      | Like dogs, often starting pets. Felines can be tamed with tripe.                        |
 | `G`    | Gnomes    | The standard inhabitants of the Gnomish Mines. Individually weak, but the Mines have a lot of them — and **plain gnomes, gnome lords, and (later) gnome rulers are all in the top fifteen causes of death** on the public server, because mid-game players treat the Mines as a milk run and walk into a four-on-one with full-strength enemies. If you're a gnome yourself, most of them are peaceful. |
 | `h`    | Humanoids | Dwarves, bugbears, mind flayers. Wide range of difficulty. **Dwarves in particular are dangerously underrated**: they hit harder than they look, they're armored, and they're the second most common cause of death on the public server because of how many you meet in the Mines. Don't trade blows with one in melee until your AC is solid. |
@@ -1569,7 +1568,7 @@ AC / attack details on every monster, see the
 | `H`    | Giants            | Strong melee, throw boulders. Giants carry gems.                                                     |
 | `J`    | Jabberwock        | Rare, but if you see one you're in for a fight. Four 2d10 attacks per turn (two bites and two claws) at normal speed. |
 | `K`    | Keystone Kops     | The shopkeeper-summoned constabulary. They appear when you steal, refuse to pay, or anger a shopkeeper. Individually weak but they swarm, and they jeer at you. |
-| `l`    | Leprechauns       | Steal your gold and teleport away. If you'd rather not lose 100zm at a time, fight at range or skip them. |
+| `l`    | Leprechauns       | Steal your gold and teleport away. The amount stolen scales with how much you're carrying (50+zm if you have hundreds; 500+ if you're carrying thousands). Fight at range or skip them. |
 | `L`    | Liches            | Spellcasters. Arch-liches are among the most dangerous monsters in the game.                         |
 | `m`    | Mimics            | Disguised as items, walls, doors, fountains, altars, or boulders. See the mimics note below.         |
 | `M`    | Mummies           | Aggressive undead with physical claw attacks. Their corpses are dangerous to eat (age you). Mummy wrappings worn as a cloak block invisibility — usually a downside, but useful if you've gone invisible and need a shopkeeper to interact with you. |
@@ -1577,9 +1576,9 @@ AC / attack details on every monster, see the
 | `N`    | Nagas             | Large serpent-bodied creatures. Red nagas breathe fire, black nagas spit acid, golden nagas cast spells, guardian nagas spit Str-drain poison and have a paralyzing bite. Tough; speeds 12–16. |
 | `O`    | Ogres             | Strong melee fighters. Ogre lords and kings are tougher.                                             |
 | `p`    | Piercers          | Disguise as stalactites; drop from the ceiling onto whatever walks below. The fall does serious damage. Hard to spot in advance. |
-| `P`    | Puddings          | Black puddings split when hit with iron weapons. Don't use iron.                                     |
+| `P`    | Puddings          | Black AND brown puddings split when hit in melee with an iron or metal weapon (scalpel and tsurugi count). Use silver, dragonhide, or spells.                                     |
 | `q`    | Quadrupeds        | Three- and four-attack mid-game bruisers. The **rothe** is the famous one (three attacks per turn at sluggish speed 9, dangerous in packs); mumakil hit hard but slow.                              |
-| `R`    | Rust monster / disenchanter | Rust monsters corrode iron weapons and armor on contact; keep iron gear off when fighting them or wear an oilskin sack near them. **Disenchanters** drain enchantment on hit and have their own write-up under Dangerous Encounters. |
+| `R`    | Rust monster / disenchanter | Rust monsters corrode worn iron armor when they hit you, and your wielded iron weapon when you hit them. Use non-iron alternatives (mithril, silver, dragonhide) or take iron gear off before the fight; iron items kept in your inventory aren't touched. **Disenchanters** drain enchantment on hit and have their own write-up under Dangerous Encounters. |
 | `S`    | Snakes            | Cobras and pit vipers poison. Water moccasins come from fountains.                                   |
 | `t`    | Trappers / lurkers above | Hide in plain sight on floor or ceiling and engulf you when you walk under/onto them. See the engulfment write-up under Dangerous Encounters. |
 | `T`    | Trolls            | Regenerate. They come back from the dead unless you eat or tin the corpse.                           |
@@ -4293,17 +4292,20 @@ the two reward tiers.
   donation pushes the bonus up by 1 (rarely more), capped at 20.
   The bonus persists for life, unlike clairvoyance.
 
-**The cost.** Pay enough and the benefit is yours. The amounts
-that guarantee each tier scale with your experience level:
+**The cost.** Pay enough and the benefit is yours. The priest's
+prompt always shows you the exact ask, which scales with your
+experience level and how much gold you're carrying:
 
-- **Clairvoyance:** 250 zorkmids per experience level
-- **Protection:** 500 zorkmids per experience level
+- **Clairvoyance:** a randomized 150–250 zorkmids × experience
+  level as the base ask
+- **Protection:** twice that — 300–500 zorkmids × experience level
 
-The priest can also tell whether your generosity is real. If you
-walk in carrying far more gold than that, they scale the ask up to
-match — roughly a third of your purse for clairvoyance, two-thirds
-for protection. A rich hero who hands over only a few hundred
-zorkmids will be politely thanked but not blessed.
+If you walk in carrying far more gold than the baseline, the
+priest scales the ask up to match — roughly a third of your purse
+for clairvoyance, two-thirds for protection. A rich hero who hands
+over only the baseline amount will be politely thanked but not
+blessed. The prompt always tells you the exact figure, so trust
+it over any rule of thumb.
 
 **The cheapskate penalty.** If you offer noticeably less than
 what's expected while clearly able to afford more, the priest

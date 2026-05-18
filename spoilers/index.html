@@ -1552,14 +1552,14 @@ you like it’s a buffet.</p>
 magic-resistant.</strong> Counterintuitive enough to mislead returning
 players. The trap drains spell energy, and having <em>magic
 resistance</em> also triggers an “anti-magic implosion” that costs you
-HP. The base damage is small, but it stacks for each source of magic
-resistance you carry: wielding Magicbane adds to it, and carrying any
-other artifact whose protection covers magic missile adds to it again.
-Late-game ascenders walk into the field with three or four
-magic-resistance sources stacked and lose a frightening amount of HP at
-once. The defense is finding the trap first (search), or destroying it
-from range by zapping <em>cancellation</em> at it to defuse it without
-setting it off.</p>
+HP. The damage is <code>rnd(4)</code> base, plus another
+<code>rnd(4)</code> if you have half-physical or half-spell damage, plus
+<code>rnd(4)</code> for wielding Magicbane, plus <code>rnd(4)</code> for
+carrying any one magic-resistance artifact (only one counts — the check
+breaks on first match). At worst that’s 4d4 damage, halved to 1d4 if you
+can pass through walls. The defense is finding the trap first (search),
+or destroying it from range by zapping <em>cancellation</em> at it to
+defuse it without setting it off.</p>
 <p>Iron footwear (iron shoes or kicking boots) absorbs a surprising
 amount of trap punishment in 5.0: no leg damage from a bear trap, no
 spikes from a spiked pit, no polymorph from a polymorph trap (your shoes
@@ -2053,8 +2053,8 @@ everything else.</td>
 <td>Eyes</td>
 <td><strong>Floating eyes paralyze on melee hit.</strong> Never hit an
 <code>e</code> in melee. Use ranged attacks. Spheres
-(flaming/freezing/shocking) explode in a 3×3 area in 5.0; kill them at
-range. Melee finishes them but you eat the blast.</td>
+(flaming/freezing/shocking) explode in a 3×3 area; kill them at range.
+Melee finishes them but you eat the blast.</td>
 </tr>
 <tr>
 <td><code>f</code></td>
@@ -2214,8 +2214,9 @@ and they jeer at you.</td>
 <tr>
 <td><code>l</code></td>
 <td>Leprechauns</td>
-<td>Steal your gold and teleport away. If you’d rather not lose 100zm at
-a time, fight at range or skip them.</td>
+<td>Steal your gold and teleport away. The amount stolen scales with how
+much you’re carrying (50+zm if you have hundreds; 500+ if you’re
+carrying thousands). Fight at range or skip them.</td>
 </tr>
 <tr>
 <td><code>L</code></td>
@@ -2264,8 +2265,9 @@ below. The fall does serious damage. Hard to spot in advance.</td>
 <tr>
 <td><code>P</code></td>
 <td>Puddings</td>
-<td>Black puddings split when hit with iron weapons. Don’t use
-iron.</td>
+<td>Black AND brown puddings split when hit in melee with an iron or
+metal weapon (scalpel and tsurugi count). Use silver, dragonhide, or
+spells.</td>
 </tr>
 <tr>
 <td><code>q</code></td>
@@ -2277,8 +2279,10 @@ in packs); mumakil hit hard but slow.</td>
 <tr>
 <td><code>R</code></td>
 <td>Rust monster / disenchanter</td>
-<td>Rust monsters corrode iron weapons and armor on contact; keep iron
-gear off when fighting them or wear an oilskin sack near them.
+<td>Rust monsters corrode worn iron armor when they hit you, and your
+wielded iron weapon when you hit them. Use non-iron alternatives
+(mithril, silver, dragonhide) or take iron gear off before the fight;
+iron items kept in your inventory aren’t touched.
 <strong>Disenchanters</strong> drain enchantment on hit and have their
 own write-up under Dangerous Encounters.</td>
 </tr>
@@ -6393,17 +6397,20 @@ Each successful donation pushes the bonus up by 1 (rarely more), capped
 at 20. The bonus persists for life, unlike clairvoyance.</li>
 </ul>
 <p><strong>The cost.</strong> Pay enough and the benefit is yours. The
-amounts that guarantee each tier scale with your experience level:</p>
+priest’s prompt always shows you the exact ask, which scales with your
+experience level and how much gold you’re carrying:</p>
 <ul>
-<li><strong>Clairvoyance:</strong> 250 zorkmids per experience
-level</li>
-<li><strong>Protection:</strong> 500 zorkmids per experience level</li>
+<li><strong>Clairvoyance:</strong> a randomized 150–250 zorkmids ×
+experience level as the base ask</li>
+<li><strong>Protection:</strong> twice that — 300–500 zorkmids ×
+experience level</li>
 </ul>
-<p>The priest can also tell whether your generosity is real. If you walk
-in carrying far more gold than that, they scale the ask up to match —
-roughly a third of your purse for clairvoyance, two-thirds for
-protection. A rich hero who hands over only a few hundred zorkmids will
-be politely thanked but not blessed.</p>
+<p>If you walk in carrying far more gold than the baseline, the priest
+scales the ask up to match — roughly a third of your purse for
+clairvoyance, two-thirds for protection. A rich hero who hands over only
+the baseline amount will be politely thanked but not blessed. The prompt
+always tells you the exact figure, so trust it over any rule of
+thumb.</p>
 <p><strong>The cheapskate penalty.</strong> If you offer noticeably less
 than what’s expected while clearly able to afford more, the priest calls
 you a Cheapskate and will hold a grudge: the next time you chat with
