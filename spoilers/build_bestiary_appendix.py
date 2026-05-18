@@ -3,7 +3,12 @@
 import re
 from pathlib import Path
 
-TEXT = Path('/Users/davidbau/git/mazesofmenace/teleport/maud/nethack-c/upstream/include/monsters.h').read_text()
+UPSTREAM = Path(__file__).resolve().parent.parent / 'nethack-c' / 'upstream'
+if not (UPSTREAM / 'include' / 'monsters.h').exists():
+    raise SystemExit(
+        f"NetHack source not found at {UPSTREAM}. Run ./setup.sh "
+        "to initialize the submodule.")
+TEXT = (UPSTREAM / 'include' / 'monsters.h').read_text()
 # Strip preprocessor noise
 TEXT = re.sub(r'#if 0[\s\S]*?#endif', '', TEXT)
 

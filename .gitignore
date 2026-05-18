@@ -1,0 +1,32 @@
+# Built outputs (regenerable from sources)
+spoilers/companion-latex.pdf
+spoilers/audit-diff.html
+
+# Cover build artifacts (intermediates from build-cover.py)
+spoilers/cover/build/
+spoilers/cover/test-*
+spoilers/cover/check-*
+spoilers/cover/left-*.png
+spoilers/cover/right-*.png
+spoilers/cover/template-preview-*
+spoilers/cover/cover-preview-*
+spoilers/cover/cover-200-*
+spoilers/cover/cover-300-*
+spoilers/cover/cover-hi-*
+spoilers/cover/dmap0-check-*
+spoilers/cover/dmap2-check-*
+
+# External assets — not redistributable, fetch separately
+spoilers/cover/template.pdf
+spoilers/cover/template-qdf.pdf
+
+# Editor / OS
+.DS_Store
+*.swp
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+
+# Local Python venv for the LaTeX build
+.venv/

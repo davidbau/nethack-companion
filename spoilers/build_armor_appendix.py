@@ -3,7 +3,12 @@
 import re
 from pathlib import Path
 
-OBJ = Path('/Users/davidbau/git/mazesofmenace/teleport/maud/nethack-c/upstream/include/objects.h').read_text()
+UPSTREAM = Path(__file__).resolve().parent.parent / 'nethack-c' / 'upstream'
+if not (UPSTREAM / 'include' / 'objects.h').exists():
+    raise SystemExit(
+        f"NetHack source not found at {UPSTREAM}. Run ./setup.sh "
+        "to initialize the submodule.")
+OBJ = (UPSTREAM / 'include' / 'objects.h').read_text()
 # Strip deferred / disabled entries (#if 0 ... #endif blocks)
 OBJ = re.sub(r'#if 0[\s\S]*?#endif', '', OBJ)
 

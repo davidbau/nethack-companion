@@ -1,0 +1,60 @@
+Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+A Traveler's Companion to the Mazes of Menace — 5.0 Launch Edition
+Compiled by David Bau, with content drawing on decades of community
+spoiler tradition. See companion.md for full attribution.
+
+You are free to:
+
+  Share — copy and redistribute the material in any medium or format.
+  Adapt — remix, transform, and build upon the material for any
+          purpose, even commercially.
+
+Under the following terms:
+
+  Attribution — You must give appropriate credit, provide a link to
+                the license, and indicate if changes were made.
+  ShareAlike   — If you remix, transform, or build upon the material,
+                you must distribute your contributions under the same
+                license as the original.
+
+No additional restrictions — You may not apply legal terms or
+technological measures that legally restrict others from doing
+anything the license permits.
+
+Full license text:
+https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+Human-readable summary:
+https://creativecommons.org/licenses/by-sa/4.0/
+
+================================================================
+
+This license applies to all text and figures in `companion.md` and
+its built outputs (HTML, PDF), and to the original cover art under
+`cover/`.
+
+Build scripts (`build*.sh`, `*.py`, `*.lua`, `template.*`,
+`style.css`) are provided under the same CC BY-SA 4.0 license for
+convenience, but you may also treat them as released under the MIT
+license at your option:
+
+    Permission is hereby granted, free of charge, to any person
+    obtaining a copy of this software and associated documentation
+    files (the "Software"), to deal in the Software without
+    restriction, including without limitation the rights to use,
+    copy, modify, merge, publish, distribute, sublicense, and/or
+    sell copies of the Software, and to permit persons to whom the
+    Software is furnished to do so, subject to the following
+    condition:
+
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+
+NetHack itself is the work of the NetHack DevTeam and is licensed
+under the NetHack General Public License (NGPL). This guide quotes
+small excerpts of NetHack source comments and message strings for
+the purpose of accurate documentation; those quotations remain
+under their original NGPL terms.

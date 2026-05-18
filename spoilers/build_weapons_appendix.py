@@ -3,8 +3,13 @@
 import re
 from pathlib import Path
 
-OBJ = Path('/Users/davidbau/git/mazesofmenace/teleport/maud/nethack-c/upstream/include/objects.h').read_text()
-WEAP = Path('/Users/davidbau/git/mazesofmenace/teleport/maud/nethack-c/upstream/src/weapon.c').read_text()
+UPSTREAM = Path(__file__).resolve().parent.parent / 'nethack-c' / 'upstream'
+if not (UPSTREAM / 'include' / 'objects.h').exists():
+    raise SystemExit(
+        f"NetHack source not found at {UPSTREAM}. Run ./setup.sh "
+        "to initialize the submodule.")
+OBJ = (UPSTREAM / 'include' / 'objects.h').read_text()
+WEAP = (UPSTREAM / 'src' / 'weapon.c').read_text()
 
 # Extra damage from dmgval in weapon.c
 SDAM_PLUS = {  # vs small target
