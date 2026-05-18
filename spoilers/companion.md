@@ -2033,21 +2033,24 @@ warning helps you see black lights coming. If you do get blinded,
 a *unicorn horn* still cures it.
 
 #### Seduction
+<!-- audit 2026-05-17 #33: self-audit caught 2 errors in my prior rewrite — items aren't dropped on floor (just unequipped to inventory); demon's succubus/incubus form is random, not based on player gender. See companion-audit.md. -->
 
-The **amorous demon** (`&`, gray) appears as a **succubus** to male
-characters and an **incubus** to female. The encounter is a
-Cha+Int gamble: five bad outcomes vs. five good ones, plus a
-payment phase. Handled badly it can drain a level, an attribute,
-and 6–15 HP; handled well it grants a level, an attribute, full
-HP, and extra max Pw.
+The **amorous demon** (`&`, gray) appears as a **succubus** or an
+**incubus** depending on its randomly assigned gender. The
+encounter is a Cha+Int gamble: five bad outcomes vs. five good
+ones, plus a payment phase. Handled badly it can drain a level, an
+attribute, and 6–15 HP; handled well it grants a level, an
+attribute, full HP, and extra max Pw.
 
 **Mechanics.** The demon must be adjacent and not on cooldown. It
 strips off your worn armor one piece at a time (cloak, suit,
-boots, gloves, shield, helm, shirt) — dropped on the floor at
-your feet, not stolen. High Cha (`rn2(20) < ACURR(A_CHA)`) earns
-a confirmation prompt per piece. **If you're still wearing a body
-armor or cloak afterwards, the encounter ends right there** — the
-demon walks away. A hard-to-remove suit is the simplest defense.
+boots, gloves, shield, helm, shirt). The items are unequipped to
+your inventory, not taken or dropped on the floor; the only thing
+the strip costs you is the slot for the rest of the encounter.
+High Cha (`rn2(20) < ACURR(A_CHA)`) earns a confirmation prompt
+per piece. **If you're still wearing a body armor or cloak
+afterwards, the encounter ends right there** and the demon walks
+away. A hard-to-remove suit is the simplest defense.
 
 If you do get to the act, the outcome rolls on
 `rn2(35) > min(Cha+Int, 32)`. At Cha+Int ≥ 32 the bad-outcome

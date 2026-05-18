@@ -1599,3 +1599,38 @@ Verified ~50 price/multiplier claims across all item classes; 1 corrected; 1 clo
 
 ### Close call
 - "Angry shopkeeper +33% surcharge until you pay your bill in full" — the `ESHK->surcharge` flag is only cleared by `pacify_shk(..., TRUE)`, which is called on the new-customer transition (shk.c:302, 793), not on bill payment per se. The surcharge is stickier than the spoiler implies. Acceptable spirit though.
+
+---
+
+## 2026-05-17 — Chapter audit #33: Dangerous Encounters → Seduction (skeptical self-audit)
+
+Source: `spoilers/companion.md` lines 2035-2071 (my prior rewrite from earlier today)
+Verified all quantitative claims; 2 factual errors in my own rewrite caught + fixed.
+
+### Verified (every number/formula in the rewrite)
+- PM_AMOROUS_DEMON identity `&` gray MS_SEDUCE — monsters.h:2931.
+- Demon adjacent + cooldown precondition `mcan || mspec_used` — mhitu.c:1994.
+- Armor strip order (cloak, suit-if-no-cloak, boots, gloves, shield, helm, shirt-if-naked) — mhitu.c:2119-2128.
+- `rn2(20) < ACURR(A_CHA)` Cha confirmation prompt — steal.c:2325.
+- Body armor/cloak still on → encounter ends — mhitu.c:2139.
+- Outcome formula `rn2(35) > min(Cha+Int, 32)` — mhitu.c:2177-2178.
+- 5.7% bad-outcome rate at Cha+Int=32 — 2/35, source comment confirms.
+- All 5 bad outcomes (Pw drain, -1 Con, -1 Wis, lose XP w/ DRLI block, 6-15 HP).
+- All 5 good outcomes (+Pw, +1 Con, +1 Wis, gain XP, full HP).
+- 500+ zm charge with `rnd(umoney+10)+500` — mhitu.c:2278.
+- Peaceful demon charge /5 — mhitu.c:2280.
+- High Cha refuse payment — mhitu.c:2265.
+- Cursed worn items stripped (no curse check in remove_worn_item) — steal.c:213.
+
+### Corrected (self-audit catches)
+1. **"Dropped on the floor at your feet, not stolen"** — WRONG. `mayberem` calls `remove_worn_item(obj, TRUE)` at mhitu.c:2351, which only unequips (Cloak_off, Armor_off, etc.). The item stays in your inventory. Not dropped, not stolen. Fix: "unequipped to your inventory, not taken or dropped on the floor".
+
+2. **"Appears as a succubus to male characters and an incubus to female"** — WRONG. The demon's gender is set by `makemon` (makemon.c:1262-1279); with no MM_MALE/MM_FEMALE flag from the caller (the random spawn path) it falls through to `mtmp->female = femaleok ? rn2(2) : 0` — 50/50 random, INDEPENDENT of player gender. The only place where player gender determines demon gender is sink-kicked "dishwasher" spawns (dokick.c:1228-1230), and there the relationship is opposite-sex (male hero → succubus; female hero → incubus). Fix: "appears as a succubus or an incubus depending on its randomly assigned gender".
+
+### Close calls
+- Bad outcomes don't set mspec_used cooldown (mhitu.c:2179 comment "didn't get tired"), so back-to-back bad attempts possible. Spoiler doesn't mention.
+- "-1d10 max Pw" — with Half_physical_damage becomes -1d5 (line 2186). Minor omission.
+- "Sleep defers" — technically the attempt is wasted, demon walks away. Acceptable looseness.
+
+### Methodology note
+This is exactly the kind of error the user flagged earlier (drowning section's "levitation" claim). Self-rewrites need their own claims grep-verified. In this case the "dropped on the floor" and gender claims were both inherited from my mental model rather than from C source. The skeptical audit caught both.
