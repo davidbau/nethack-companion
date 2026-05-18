@@ -1,7 +1,7 @@
 # Companion-audit work queue
 
 Seed: `companion-audit-2026-05-17-hybrid`
-Total units: 180 (33 chapters + 147 subsections)
+Total units: 183 (34 chapters + 149 subsections)
 
 Process in numbered order. Mark each `[x]` as it's audited.
 
@@ -185,3 +185,6 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [ ] **#178**  L 7461  (  17 lines)   ↳ Bestiary Tables → Unicorns and horses `u`
 - [ ] **#179**  L 1981  (  17 lines)   ↳ Dangerous Encounters → Engulfment from Hiding
 - [ ] **#180**  L 2706  (  35 lines)   ↳ A Practical Identification Strategy → The Engrave Test (Wands)
+- [ ] **#181**  L 4644  ( 168 lines) 📖 Enhancing Skills
+- [ ] **#182**  L 7458  (  74 lines)   ↳ Appendices → Spell Tables
+- [ ] **#183**  L 7532  (  93 lines)   ↳ Appendices → Skill Caps
