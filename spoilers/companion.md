@@ -7566,7 +7566,7 @@ All trappers and lurkers hide and follow you up and down stairs.
 
 #### Unicorns and horses `u`
 
-Two unrelated `u`-class creatures share this section. **Horses** (pony, horse, warhorse) are usually peaceful in the wild and can be saddled and ridden; the Knight starts on a saddled pony.
+There are two equine `u`-class creatures. **Horses** (pony, horse, warhorse) are usually peaceful in the wild and can be saddled and ridden; the Knight starts on a saddled pony.
 
 **Unicorns** (white, gray, black for Lawful, Neutral, Chaotic) are powerful kickers, peaceful when your alignment matches theirs and hostile otherwise. Killing a co-aligned unicorn is a −5 Luck penalty (the game tells you "You feel guilty..."). Killing a cross-aligned one has no Luck consequence either way. Throw gems at unicorns to increase your Luck (see the Luck chapter). A killed unicorn drops its horn.
 
