@@ -1175,3 +1175,25 @@ Verified 24 cells/claims; 0 corrected; 1 close call.
 
 ### Close calls
 - Wraith row omits MR_STONE and M1_UNSOLID from Notes — wraith is uniquely stoning-resistant and incorporeal among W-class. Optional enrichment.
+
+---
+
+## 2026-05-17 — Chapter audit #11: Dangerous Encounters → Drowning
+
+Source: `spoilers/companion.md` lines 1868-1877
+Verified 5 claims; 2 corrected; 0 flagged.
+
+### Verified
+- Magical breathing (amulet / spell) allows underwater survival — `trap.c:5106-5126` `drown()` returns FALSE if Amphibious || Breathless || Swimming. `youprop.h:270-277` Magical_breathing → Amphibious || Breathless.
+- Range attacks bypass the AD_WRAP grab (requires adjacency).
+- Eels and krakens carry the grab attack — giant eel and electric eel have AT_TUCH AD_WRAP (`monsters.h:3230-3256`); kraken has AT_HUGS AD_WRAP.
+
+### Corrected
+1. **"If you're burdened or worse when grabbed, you can drown before you get a turn"** — WRONG. Two separate mechanics conflated:
+   - Grab-then-drown by eel/kraken (`uhitm.c:3389-3401` `mhitm_ad_wrap`): triggers on the monster's turn when `u.ustuck == magr` and tile is a pool, no Swimming/Amphibious/Breathless. Encumbrance not checked.
+   - Fall-into-water crawl-out (`trap.c:5157` → `emergency_disrobe` at 4901): threshold is `near_capacity() > SLT_ENCUMBER` = stressed (not burdened); only matters when you fall in, not when grabbed.
+   - Fix: rewrote to clarify the grab-drown is not encumbrance-gated; encumbrance only affects the unrelated fall/crawl-out scenario.
+2. **"Stay unburdened near water"** defense — WRONG, doesn't defend against the eel grab. Removed. Defenses now correctly listed: magical breathing, levitation, kill at range.
+
+### Notes
+- Added electric eels to the grab-list (the spoiler had only giant eels and krakens). Added swamps and moats to the encounter locations.

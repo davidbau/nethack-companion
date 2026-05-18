@@ -1866,15 +1866,21 @@ gloves on) is one of the game's most devastating weapons —
 anything you hit that lacks stoning resistance turns to stone.
 
 #### Drowning
+<!-- audit 2026-05-17 #11: 5 claims verified, 2 corrected (encumbrance doesn't gate grab-drown; "stay unburdened" doesn't defend against the grab path). See companion-audit.md. -->
 
-Giant eels and krakens can grab you and pull you underwater. If
-you're burdened or worse when grabbed, you can drown before you
-get a turn to respond. This happens most often at Medusa's level
-and in the endgame.
+Giant eels, electric eels, and krakens can grab you with their
+wrap attack. Once grabbed in water, each of the monster's turns
+you can drown unless you have *swimming*, *magical breathing*, or
+levitation — regardless of how much you're carrying. The
+encumbrance mechanic only matters if you *fall* into water and
+need to crawl out (stressed or worse forces emergency disrobe).
+You'll meet eels and krakens at Medusa's level, in moats around
+the Castle, in swamp rooms, and on the Water Plane.
 
-**Defenses:** Stay unburdened near water. An amulet of magical
-breathing lets you survive underwater. Levitation keeps you above
-the water entirely. Kill sea monsters at range whenever possible.
+**Defenses:** An amulet of magical breathing (or the spell) lets
+you survive underwater indefinitely. Levitation keeps you above
+the water entirely. Kill sea monsters at range whenever possible
+— their grab attack requires adjacency.
 
 #### Attack Wands and the Warning Shot
 

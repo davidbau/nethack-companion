@@ -15,7 +15,7 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#  8**  L 7134  (  16 lines)   ↳ Bestiary Tables → Blobs `b`
 - [x] **#  9**  L 7907  (  16 lines)   ↳ Bestiary Tables → Vampires `V`
 - [x] **# 10**  L 2741  (   9 lines)   ↳ A Practical Identification Strategy → The Sink Test (Rings)
-- [ ] **# 11**  L 1864  (  11 lines)   ↳ Dangerous Encounters → Drowning
+- [x] **# 11**  L 1864  (  11 lines)   ↳ Dangerous Encounters → Drowning
 - [x] **# 12**  L 2174  (  28 lines)   ↳ Dangerous Encounters → The Genetic Engineer
 - [x] **# 13**  L 7923  (  16 lines)   ↳ Bestiary Tables → Wraiths `W`
 - [ ] **# 14**  L 7638  (  18 lines)   ↳ Bestiary Tables → Elementals `E`
