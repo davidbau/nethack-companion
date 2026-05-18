@@ -182,9 +182,9 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#175**  L 3777  ( 122 lines) 📖 The Armory
 - [x] **#176**  L 1332  (  66 lines)   ↳ Traps and Hazards → Engravings
 - [x] **#177**  L 1257  (  26 lines)   ↳ Traps and Hazards → Iron Bars
-- [ ] **#178**  L 7461  (  17 lines)   ↳ Bestiary Tables → Unicorns and horses `u`
-- [ ] **#179**  L 1981  (  17 lines)   ↳ Dangerous Encounters → Engulfment from Hiding
-- [ ] **#180**  L 2706  (  35 lines)   ↳ A Practical Identification Strategy → The Engrave Test (Wands)
-- [ ] **#181**  L 4644  ( 168 lines) 📖 Enhancing Skills
+- [x] **#178**  L 7461  (  17 lines)   ↳ Bestiary Tables → Unicorns and horses `u`
+- [x] **#179**  L 1981  (  17 lines)   ↳ Dangerous Encounters → Engulfment from Hiding
+- [x] **#180**  L 2706  (  35 lines)   ↳ A Practical Identification Strategy → The Engrave Test (Wands)
+- [x] **#181**  L 4644  ( 168 lines) 📖 Enhancing Skills
 - [ ] **#182**  L 7458  (  74 lines)   ↳ Appendices → Spell Tables
 - [ ] **#183**  L 7532  (  93 lines)   ↳ Appendices → Skill Caps

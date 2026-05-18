@@ -2127,6 +2127,7 @@ against the passive counter, so still don't melee them.) Range-kill
 is the cleanest plan; rings of conflict and pets reliably redirect
 them. **Don't eat the corpse**: it strips a random intrinsic.
 
+<!-- audit 2026-05-18 #179: lurker above (ceiling-hider, M1_HIDE+M1_FLY) and trapper (floor-hider, M1_HIDE) verified vs monsters.h:973-998. Both use AT_ENGL with AD_WRAP+AD_PHYS — NOT AD_DGST (header comment at monsters.h:973-980 explicitly notes the 5.0 retcon away from digestion). Damage handler at mhitu.c:1437-1453. Search/telepathy/warning all valid defenses (detect.c:2016-2092 for search; both have no M1_MINDLESS; warnreveal at detect.c:2107-2120 triggers on mlev/4 ≥ warning level). 0 corrections. See companion-audit.md. -->
 #### Engulfment from Hiding
 
 Two monsters hide in plain sight until you walk into them. The
@@ -2926,19 +2927,21 @@ the wand is:
 | What you see when you engrave              | Wand type                       |
 | ------------------------------------------ | ------------------------------- |
 | *"A lit field surrounds you"*              | light                           |
-| *"The %s is riddled by bullet holes"*      | magic missile                   |
+| *"The floor is riddled by bullet holes"*   | magic missile                   |
 | *"Gravel flies up from the floor"*         | digging                         |
 | *"A few ice cubes drop from the wand"*     | cold                            |
 | *"Flames fly from the wand"*               | fire                            |
 | *"Lightning arcs from the wand"* (may blind) | lightning                     |
-| *"The bugs on the floor stop moving"*      | sleep or death                  |
+| *"The bugs on the floor stop moving!"*     | sleep or death                  |
 | You feel self-knowledgeable                | enlightenment                   |
 | Floor reveals secret features              | secret door detection           |
 | Monsters appear next to you                | create monster                  |
 | Pre-existing engraving randomizes          | polymorph                       |
 | Pre-existing engraving "vanishes"          | cancellation, make invisible, or teleportation (test against floor with no prior writing to disambiguate) |
-| "*Wand* unsuccessfully fights you"         | striking (and others that can't engrave) |
-| You write in the dust                      | wand has no engrave special-case (most beams); zap-test to ID |
+| "*The wand unsuccessfully fights your attempt to write!*" | striking (this exact phrasing is striking-only) |
+| "*The bugs on the floor slow down!*"       | slow monster                    |
+| "*The bugs on the floor speed up!*"        | speed monster                   |
+| You write in the dust with no special-case message | nothing, undead turning, opening, locking, probing, or stasis — zap-test to disambiguate |
 | Wish prompt appears                        | **wand of wishing** (yes, engrave gives you the wish — don't be afraid to engrave the suspected $500 wand) |
 
 The engrave test costs one charge per wand but preserves the rest.
@@ -4798,7 +4801,7 @@ are the time-tested tactics that keep adventurers breathing:
 ---
 
 ### Enhancing Skills
-<!-- audit 2026-05-18 #98: ranks (P_UNSKILLED..P_GRAND_MASTER) and the level²×20 practice formula (20/80/180/320/500 cumulative) verified against skills.h:92-106. Slot costs (weapon 1/2/3, non-weapon 1/1/2/2/3) and crowning bonus from u_init.c skill tables and weapon.c:can_advance. Bare-hand 50% / martial-arts 75% damage-bonus check from weapon.c:weapon_hit_bonus. Riding 101-square threshold and action-gating (pickup/loot/dip/trap/engrave require Basic) from u_init.c + do.c. Wizard restricted from long sword per u_init.c skill table; artifact-gift unrestrict in artifact.c:artifact_hit. Spell-school precredit of 20 uses at starting Basic per u_init.c. Skilled cone-of-cold / fireball / identify rank gating per spell.c spelleffects. "You feel more confident in your skills" / "You feel you could be more dangerous" message strings in weapon.c. -->
+<!-- audit 2026-05-18 #98 (revised 2026-05-18 #181): ranks (P_UNSKILLED..P_GRAND_MASTER) and the level²×20 practice formula (20/80/180/320/500 cumulative) verified against skills.h:92-106. Slot costs (weapon 1/2/3, non-weapon 1/1/2/2/3) and crowning bonus from u_init.c skill tables and weapon.c:can_advance. Bare-hand 50% / martial-arts 75% damage-bonus check from weapon.c:weapon_hit_bonus. Riding 100-square threshold (steed.c:393-396, ++u.urideturns >= 100) and action-gating (pickup/loot/dip/trap/engrave require Basic) from u_init.c + do.c. Slot ceiling is 32 for an XL-30 crowned hero (2 starting + 29 level-ups + 1 crowning) per u_init.c:884 and pray.c:992-993. Ranger divination caps Expert (u_init.c:461). Wizard restricted from long sword per u_init.c skill table; artifact-gift unrestrict in artifact.c:artifact_hit. Spell-school precredit of 20 uses at starting Basic per u_init.c. Skilled cone-of-cold / fireball / identify rank gating per spell.c spelleffects. "You feel more confident in your skills" / "You feel you could be more dangerous" message strings in weapon.c. -->
 
 Most adventurers discover the skill system the first time they
 press `#enhance` and realize the broadsword they've been swinging
@@ -4824,11 +4827,11 @@ level).
 
 Non-weapon skills — spell schools, two-weapon, riding, bare hands,
 martial arts — cost roughly half as many slots as melee weapons,
-the dungeon's quiet subsidy for magic. You earn one slot per
-experience level plus one for being crowned, so the absolute
-ceiling is **30 slots** for an XL-30 crowned hero. Lose an
-experience level and you lose a slot, which can demote your most
-recent advancement.
+the dungeon's quiet subsidy for magic. You start with 2 slots, gain
+one per experience level (29 more by XL 30), and one more if you
+are crowned, so the absolute ceiling is **32 slots** for an XL-30
+crowned hero. Lose an experience level and you lose a slot, which
+can demote your most recent advancement.
 
 Each role has a per-skill **cap** beyond which no amount of
 training will help. A Wizard caps at Basic with a mace and is
@@ -4849,7 +4852,7 @@ Practice accumulates through use:
 - **Bare hands** counts **50%** of your hits; **martial arts**
   counts **75%**. The rank still applies on every hit — this just
   slows the climb.
-- **Riding** earns one tick every **101 squares** ridden.
+- **Riding** earns one tick every **100 squares** ridden.
 - **Spell schools** earn **N practice per successful cast of a
   level-N spell**. Every school has a level-1 option to grind —
   see the schools table below.
@@ -4915,9 +4918,9 @@ Role caps vary sharply across schools:
 - **Healers** cap at Expert in healing — and are *restricted*
   from every other school. Specialization by decree.
 - **Knights** train attack, healing, and cleric to Skilled.
-- **Rogues, Rangers, Tourists, Samurai** each get two or three
-  schools at Skilled or lower, usually built around divination
-  or escape.
+- **Rangers** push divination to Expert — their one specialty school.
+- **Rogues, Tourists, Samurai** each get two or three schools at
+  Skilled or lower, usually built around divination or escape.
 - **Cavemen** reach Skilled in matter and Basic in attack — two
   schools only.
 - **Barbarians and Valkyries** cap at Basic in their two schools
@@ -8307,6 +8310,7 @@ All trappers and lurkers hide and follow you up and down stairs.
 
 :::
 
+<!-- audit 2026-05-18 #178: all 6 rows (pony/white/gray/black unicorn/horse/warhorse) verified clean vs monsters.h:1002-1049. Unicorn alignments lawful/+7, neutral/0, chaotic/-7 (monsters.h:1011,1019,1027). Same-aligned spawn peaceful (makemon.c:1339-1342); killing co-aligned = -5 Luck (mon.c:3666-3669). Gem-throw at unicorn: dothrow.c:2082-2098, 2309-2382 (worthless glass placates without Luck change). Knight's pony arrives saddled (dog.c:263-267). 0 corrections. See companion-audit.md. -->
 #### Unicorns and horses `u`
 
 There are two equine `u`-class creatures. **Horses** (pony, horse, warhorse) are usually peaceful in the wild and can be saddled and ridden; the Knight starts on a saddled pony.

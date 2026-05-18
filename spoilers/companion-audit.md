@@ -6273,3 +6273,131 @@ plus material additions.
   teleport).
 
 ---
+
+## 2026-05-18 — Chapter audit #178: Unicorns and horses `u`
+
+Source: `spoilers/companion.md` line 8310. No corrections.
+
+### Verified
+- All 6 rows (pony / white/gray/black unicorn / horse / warhorse)
+  match monsters.h:1002-1049.
+- Unicorn alignments: white = lawful (maligntyp +7), gray = neutral
+  (0), black = chaotic (-7) per monsters.h:1011, 1019, 1027.
+- Same-aligned unicorns spawn peaceful (makemon.c:1339-1342);
+  killing a co-aligned unicorn = -5 Luck + "you feel guilty"
+  (mon.c:3666-3669).
+- Throwing a gem to a unicorn: dothrow.c:2082-2098, 2309-2382 path
+  pacifies + drops Luck change for real gems; worthless glass
+  placates without Luck change but the gem is consumed.
+- Knight's pony arrives saddled (dog.c:263-267).
+- Unicorn-horn apply cures status troubles (apply.c:2259+).
+
+---
+
+## 2026-05-18 — Chapter audit #179: Engulfment from Hiding
+
+Source: `spoilers/companion.md` line 2130. No corrections.
+
+### Verified
+- Lurker above: M1_HIDE | M1_FLY (ceiling-hider via mondata.h:43-45),
+  monsters.h:981-989.
+- Trapper: M1_HIDE on the floor (no fly), monsters.h:990-998.
+- Both use AT_ENGL with AD_WRAP + AD_PHYS — NOT AD_DGST. The
+  header comment at monsters.h:973-980 explicitly notes the 5.0
+  retcon: "prior to 5.0, these were defined to do AD_DGST damage,
+  but they don't swallow ... they enfold and crush or suffocate."
+- Damage handler at mhitu.c:1437-1453.
+- While engulfed, attacking in any direction targets `u.ustuck`
+  (hack.c:2733-2737).
+- Search reveals adjacent hidden monsters (detect.c:2016-2092);
+  neither lurker nor trapper has M1_MINDLESS so telepathy works.
+- Warning (ring / helm of caution) reveals via `warnreveal()` at
+  detect.c:2107-2120: lurker mlev/4=2, trapper mlev/4=3 both
+  pass the warning threshold.
+
+---
+
+## 2026-05-18 — Chapter audit #180: The Engrave Test (Wands)
+
+Source: `spoilers/companion.md` line 2919. 1 correction + 2
+additions.
+
+### Wrong → fixed
+- **"Wand unsuccessfully fights you (striking and others that
+  can't engrave)"**: the unsuccessfully-fights string is striking-
+  ONLY (engrave.c:602-605). Two other "immediate" wands have
+  distinct diagnostic messages:
+  - WAN_SLOW_MONSTER → "The bugs on the floor slow down!"
+    (engrave.c:608-609)
+  - WAN_SPEED_MONSTER → "The bugs on the floor speed up!"
+    (engrave.c:614-615)
+  Split the row to show these explicitly. Substituted the literal
+  "floor" for the C `%s` (it's `surface(u.ux, u.uy)`, which is
+  "floor" on a normal tile).
+- **"You write in the dust ... wand has no engrave special-case
+  (most beams)"**: misleading. The silent-dust outcome covers
+  exactly five wands: WAN_NOTHING, WAN_UNDEAD_TURNING, WAN_OPENING,
+  WAN_LOCKING, WAN_PROBING (engrave.c:635-640 empty cases). Plus
+  WAN_STASIS (zapnodir with no message, zap.c:2562-2563). Reworded
+  to enumerate them.
+
+### Verified
+- All other table entries match engrave.c per-wand cases at lines
+  583-738 and the zapnodir handlers in zap.c:2538-2602.
+- Wand-of-wishing engrave-test DOES grant a wish (engrave.c:594 →
+  zap.c:2575-2585 calls makewish, gated on Luck+rn2(5)).
+- Cursed wands may explode on engrave (engrave.c:794-797,
+  WAND_BACKFIRE_CHANCE).
+
+---
+
+## 2026-05-18 — Chapter audit #181: Enhancing Skills
+
+Source: `spoilers/companion.md` line 4790 (chapter, ~168 lines). 3
+numeric corrections.
+
+### Wrong → fixed
+- **"Riding earns one tick every 101 squares ridden"**: actually
+  100 (steed.c:393-396, `if (++u.urideturns >= 100)` resets to 0).
+  The chapter header's audit comment also cited 101 — both fixed.
+- **"absolute ceiling is 30 slots for an XL-30 crowned hero"**:
+  actually 32 — start with 2 (u_init.c:884), gain one per XL
+  (29 more by XL 30, pray.c:992-993), plus 1 for crowning.
+  P_SKILL_LIMIT itself is 60 (skills.h:120) — the cap on
+  advancements, not slots. Reworded to spell out the arithmetic.
+- **"Rogues, Rangers, Tourists, Samurai each get two or three
+  schools at Skilled or lower"**: Ranger divination caps at Expert
+  (u_init.c:461). Split the line to call out Rangers separately.
+
+### Verified
+- Rank ladder Unskilled/Basic/Skilled/Expert/Master/Grand Master
+  (skills.h:90-104).
+- Practice thresholds 20/80/180/320/500 from `level² * 20`
+  (skills.h:106; P_ADVANCE is not reset on rank-up so cumulative
+  practice equals the threshold).
+- Weapon to-hit/damage bonuses: -4/-2 (Unskilled), 0/0 (Basic),
+  +2/+1 (Skilled), +3/+2 (Expert) at weapon.c:1559-1577, 1656-1675.
+- Two-weapon penalty -9/-3, -7/-1, -5/0, -3/+1 (weapon.c:1582-1600,
+  1680-1695); applied per swing.
+- Practice trains only on `dmg > 1` hits (uhitm.c:849, 946, 1059,
+  1494-1498).
+- Spell practice = spell level per successful cast (spell.c:1597-1599).
+- Starting at Basic = 20 practice pre-credit (weapon.c:1801).
+- Crowning bonus slot (pray.c:992-994); one slot per XL gain
+  (attrib.c:1068-1070).
+- Restricted skills can never leave Unskilled except via artifact
+  gift (weapon.c:1410-1421, `unrestrict_weapon_skill`).
+- Wizard caps: long sword restricted, mace Basic, quarterstaff
+  Expert (u_init.c:548-572).
+- Wizard spell schools: Expert in attack/divination/escape/matter;
+  Skilled in healing/enchantment/cleric.
+
+### Close calls
+- "You feel more confident in your skills" has four variants
+  depending on which skill becomes advanceable (weapon.c:78-82):
+  "...in your skills" / "weapon skills" / "spell casting skills" /
+  "fighting skills". The bare form is the P_NONE/new-slot variant;
+  for a melee weapon advance, the player actually sees "weapon
+  skills." Left as-is to keep the prose compact.
+
+---
