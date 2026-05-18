@@ -1944,27 +1944,30 @@ start with their "experience" flag already set, so their first
 zap can connect. The freebie is an early-to-mid-game courtesy.
 
 #### The Touch of Death
+<!-- audit 2026-05-18 #116: corrected MR-blocks-everything claim. Self-zap of WAN_DEATH / SPE_FINGER_OF_DEATH at zap.c:2885-2902 does NOT check Antimagic — only the ray-bolt path at zap.c:4497-4502 checks it. Magic resistance protects you from being hit by a death ray, but not from misfiring your own wand into yourself. The only escape for self-zap is being nonliving (poly into vampire/skeleton/etc.) or is_demon. Also clarified the 8d6+50 damage applies only on Rider Death's rolls 17-19; the more common 5-16 rolls deliver a smaller permdrain that MR doesn't reduce (uhitm.c:3858-3882 + mcastu.c:326-337). -->
 
 Some monsters, most notably Death (one of the Riders on the Astral
 Plane), can kill you with a single touch. The Finger of Death spell
 and the wand of death work similarly.
 
-The touch of death deals heavy damage (8d6 + 50) and permanently
-drains your maximum HP by half the damage dealt, rather than being
-a simple binary kill. You only die outright if the drain would reduce your max HP
-to zero. This means a high-level character with many hit points
-can survive a touch that would have been instantly fatal in older
-editions.
+**Death the Rider's touch** rolls 1d20 each hit. Rolls 17-19 trigger
+the full **8d6 + 50** instakill attempt and permadrain half the
+damage from your max HP — magic resistance fully blocks this
+high-damage branch. Rolls 5-16 (the most common 60%) deliver a
+smaller life-drain that MR does **not** block. Rolls 0-4 miss
+entirely. A high-level character with many hit points can survive
+the high-damage hit; the permadrain still hurts.
 
-**Defenses:** Magic resistance fully blocks the *spell* version of
-touch of death cast by demons or liches (the cast is gated by
-`!Antimagic`), and it also blocks the full 8d6+50 hit on Death the
-Rider's most-dangerous rolls (rolls 17-19 of 20). On Death's more
-common rolls (5-16 of 20, ~60%) you still take a permdmg life-drain
-even with magic resistance, so MR substantially mitigates Death's
-touch but doesn't fully neutralize it. An amulet of life saving will
-revive you once. The wand and Finger of Death spell, like the spell
-version, are blocked by MR.
+**The wand of death and Finger of Death spell** are gated by magic
+resistance only when the death ray *hits you from outside*. If you
+misfire and self-zap, MR doesn't save you — only being **nonliving**
+(polymorphed into a vampire, lich, skeleton, etc.) or a demon will.
+This is one of the rare cases where being polymorphed into something
+dead is the safer state. The same nonliving/demon immunity also
+protects against incoming death rays.
+
+An amulet of life saving will revive you once if the touch or zap
+kills you outright.
 
 #### Starvation
 
@@ -3007,20 +3010,26 @@ Here's how to tell them apart:
 If it scoots away normally, it's not a loadstone. A loadstone is
 abnormally heavy and resists being kicked.
 
-**The pick-up test.** A cursed loadstone cannot be dropped once
-picked up: it magically returns to your inventory. If you pick up
-a gray stone and it weighs you down suspiciously, try to drop it.
-If you can't, it's a cursed loadstone. Uncurse it immediately
-(holy water, scroll of remove curse, prayer) so you can get rid
-of it.
+**The pick-up test.** A loadstone auto-curses itself the moment
+you pick it up, and a cursed loadstone refuses to be dropped at
+all — the game prints "For some reason, you cannot drop the
+stone!" and the stone stays in your pack. If you pick up a gray
+stone and it weighs you down suspiciously, try to drop it. If
+you can't, you're stuck with a cursed loadstone until you can
+uncurse it (holy water, scroll of remove curse, prayer) — then
+drop it.
 
 **The price test.** If you can reach a shop: a $60 gray stone is a
 luckstone. A $45 gray stone is a touchstone. A $1 gray stone is
 flint or a loadstone.
 
-**The rub test.** Apply (`a`) a gray stone. If it's a touchstone,
-rubbing a valuable gem against it will produce a "streak" message
-identifying the gem. If nothing happens, it's not a touchstone.
+**The rub test.** Apply (`a`) a gray stone to a gem in your pack.
+A touchstone produces a colored-streak message — and if the
+touchstone is **blessed** (or you're an Archeologist or Gnome
+holding an uncursed one), the streak also identifies the gem.
+Other gray stones produce similar streak messages, so a streak
+alone doesn't prove touchstone; an *identification* result does.
+A cursed touchstone can shatter the gem.
 
 **Location clue.** The luckstone at Mine's End is guaranteed. If
 you find a gray stone at the bottom of the Mines, it's almost
@@ -5085,6 +5094,8 @@ holding a stick.
 ---
 
 ### Curses and How to Break Them
+<!-- audit 2026-05-18 #117: dropped the "Temple priest will identify BUC status for a fee" claim — fabricated. priest.c:629-718 shows temple donation grants HClairvoyant + u.ublessed (Protection); nothing in temple-donation code sets bknown on inventory. The "priest auto-bknown" code at invent.c:2763, 3545 and objnam.c:1964 refers to the PLAYER being a Priest class character (Priests see BUC for free), not to NPC temple priests. Common spoiler myth. Replaced with a brief myth-bust + added the formal price-ID-via-shop angle. -->
+
 
 Sooner or later, you will put on something cursed. Maybe it's a
 ring you didn't test. Maybe it's boots from a bones level. Maybe
@@ -5130,9 +5141,15 @@ Prevention is better than cure. Test items *before* wearing them:
   cursed. This is free, instant, and should become instinct
 - **Pet test.** Your pet refuses to step on cursed items. Drop
   and observe
-- **Temple priest.** Will identify BUC status for a fee, convenient
-  in Minetown
 - **Scroll of identify.** Always reveals the full status
+- **Formal price-ID via shop appraisal.** Shopkeepers don't reveal
+  BUC directly, but the sell-back offer they make narrows the
+  item to a few possibilities; combined with the altar test you
+  can often pin it down
+
+(Temple donation does *not* reveal BUC — that's a common spoiler
+myth. Donating to a priest grants temporary clairvoyance and a
+Protection bonus, but inventory BUC stays hidden.)
 
 #### Removing Curses
 
@@ -7278,17 +7295,28 @@ All polearms are two-handed. To strike at range, `#apply` the weapon (not wield-
 :::
 
 #### Spear
+<!-- audit 2026-05-18 #115: stats verified vs objects.h:174-191. Added context the table omitted: Valkyrie starts with a plain spear at Expert (u_init.c:160-161, 537); Valkyries get +1 multishot for any thrown P_SPEAR item per dothrow.c:50-51 multishot_class_bonus (applies to silver spear and javelin too, not just plain spear); kebab bonus is +2 to-hit vs the big monsters (xorns, dragons, jabberwocks, nagas, giants) per weapon.c:71-73, 167-168 is_spear() check. Trident is correctly in its own section since it uses P_TRIDENT, a separate skill class. -->
+
+All spears share the `P_SPEAR` skill (trident is a different
+class — see below). The Valkyrie is the spear specialist: starts
+with one, can train to Expert, and **gets +1 multishot on any
+thrown spear** (regular, silver, javelin alike) — so a stack of
+javelins becomes a real ranged option for her.
+
+Spears get a **+2 to-hit bonus** when used against the big
+monsters — xorns, dragons, jabberwocks, nagas, and giants — the
+kebab bonus.
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| spear | 1d6 / 1d8 | 30 | 3 | — | iron |  |
+| spear | 1d6 / 1d8 | 30 | 3 | — | iron | Throwable. Valkyrie's starting weapon. |
 | elven spear | 1d7 / 1d8 | 30 | 3 | — | wood |  |
 | orcish spear | 1d5 / 1d8 | 30 | 3 | — | iron |  |
 | dwarvish spear | 1d8 / 1d8 | 35 | 3 | — | iron |  |
 | silver spear | 1d6 / 1d8 | 36 | 40 | — | silver | Silver damage to demons and weres. |
-| javelin | 1d6 / 1d6 | 20 | 3 | — | iron |  |
+| javelin | 1d6 / 1d6 | 20 | 3 | — | iron | Stackable thrown weapon; Valkyries can ranged-spam them. |
 
 :::
 

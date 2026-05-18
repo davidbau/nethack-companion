@@ -118,10 +118,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#111**  L 3899  ( 271 lines) 📖 Artifacts
 - [x] **#112**  L 5866  (  61 lines)   ↳ Sokoban Solutions → Level 3, Version B
 - [x] **#113**  L 7725  (  15 lines)   ↳ Bestiary Tables → Keystone Kops `K`
-- [ ] **#114**  L 6832  (  15 lines)   ↳ Weapons Tables → Spear
-- [ ] **#115**  L 4719  (  71 lines) 📖 Curses and How to Break Them
-- [ ] **#116**  L 2853  (  45 lines)   ↳ A Practical Identification Strategy → Gray Stones: Four Stones, One Correct Answer
-- [ ] **#117**  L 1883  (  23 lines)   ↳ Dangerous Encounters → The Touch of Death
+- [x] **#114**  L 6832  (  15 lines)   ↳ Weapons Tables → Spear
+- [x] **#115**  L 4719  (  71 lines) 📖 Curses and How to Break Them
+- [x] **#116**  L 2853  (  45 lines)   ↳ A Practical Identification Strategy → Gray Stones: Four Stones, One Correct Answer
+- [x] **#117**  L 1883  (  23 lines)   ↳ Dangerous Encounters → The Touch of Death
 - [ ] **#118**  L 6896  (  11 lines)   ↳ Weapons Tables → Crossbow
 - [ ] **#119**  L 6636  (  18 lines)   ↳ Weapons Tables → Dagger
 - [ ] **#120**  L 6758  (  11 lines)   ↳ Weapons Tables → Mace

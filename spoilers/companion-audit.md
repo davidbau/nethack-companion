@@ -4318,3 +4318,140 @@ Source: `spoilers/companion.md` line 8376. No corrections.
 - No "pratfall" code in mon.c for S_KOP.
 
 ---
+
+## 2026-05-18 — Chapter audit #114: Spear
+
+Source: `spoilers/companion.md` line 7280. No corrections; useful
+additions.
+
+### Verified
+- All six spear stats (damage, weight, cost, hit bonus, material)
+  match `objects.h:174-191`.
+- Trident is correctly in its own section (uses P_TRIDENT, separate
+  skill class from P_SPEAR).
+
+### Added
+- **Valkyrie multishot bonus**: `dothrow.c:50-51 multishot_class_bonus`
+  gives Valkyrie +1 multishot on any thrown P_SPEAR item (not just
+  javelin; silver spear and regular spear too).
+- **Valkyrie starts with a spear** (`u_init.c:160-161`) and reaches
+  Expert in P_SPEAR (`u_init.c:537`).
+- **Kebab bonus**: `weapon.c:71-73, 167-168` is_spear() gives +2
+  to-hit vs the big monsters — xorns, dragons, jabberwocks, nagas,
+  giants. Applies to all P_SPEAR items, not trident.
+
+---
+
+## 2026-05-18 — Chapter audit #115: Curses and How to Break Them
+
+Source: `spoilers/companion.md` line 4719. 1 correction.
+
+### Verified
+- Bones items 80% cursed (`bones.c:290`).
+- Born-cursed items: amulet of strangulation/change/restful sleep
+  (`mkobj.c:1063-1065`); rings of teleportation/polymorph/aggravate/
+  hunger (`mkobj.c:1143-1148`); fumble/levitation boots, gauntlets
+  of fumbling, helm of opposite alignment (`mkobj.c:1086-1091`).
+- Cursed weapon weld (`wield.c:67-69, 382, 472, 571, 703`).
+- Cursed bag of holding doubles weight (`mkobj.c:1950-1953`).
+- Altar BUC flash (`do.c:379-384`).
+- Pet avoids cursed items (`dogmove.c:145-150, 535`).
+- Scroll of identify reveals BUC (`read.c:2055-2092`).
+- Uncursed remove-curse hits worn only; blessed hits whole pack
+  (`read.c:1524, 1549`).
+- Confused remove-curse can curse items (`read.c:1556-1557`).
+- Holy water uncurses on dip (`potion.c:1514-1518`).
+- Prayer uncurses worn items (`pray.c:253, 533, 597`).
+- Monsters can curse inventory via rndcurse (`mcastu.c:831-833`,
+  `sit.c:143`, `wizard.c:798`, `fountain.c:324`).
+
+### Corrected
+1. **"Temple priest. Will identify BUC status for a fee, convenient
+   in Minetown"** — fabricated. `priest.c:629-718` shows temple
+   donation grants temporary clairvoyance (HClairvoyant) and
+   Protection (u.ublessed); nothing sets bknown on inventory. The
+   "priest auto-bknown" code at `invent.c:2763, 3545` and
+   `objnam.c:1964` refers to the PLAYER being a Priest class
+   character (Priests see BUC for free), not to NPC temple priests.
+   Common spoiler myth. Dropped the bullet; added a brief
+   myth-bust caveat and a formal price-ID-via-shop angle.
+
+### Notes
+- "Monster touched your inventory" intro line is loose flavor; the
+  actual mechanic is via rndcurse from spellcasters/thrones/
+  fountains/Wizard. Acceptable simplification.
+
+---
+
+## 2026-05-18 — Chapter audit #116: Gray Stones
+
+Source: `spoilers/companion.md` line 2853. 2 corrections.
+
+### Verified
+- Four gray stones (luckstone, loadstone, touchstone, flint) per
+  `objects.h:1598-1605`.
+- Weights (loadstone 500, others 10) and base costs (60/45/1/1).
+- Loadstone auto-curses on pickup (`invent.c:1386-1387`); cursed
+  loadstone can't be dropped (`do.c:685-698`,
+  `pickup.c:2577-2580`).
+- Mine's End guaranteed not-cursed luckstone in all three variants
+  (`dat/minend-{1,2,3}.lua`).
+- Luck cap +13 with carried luckstone (`include/you.h:465-467`).
+
+### Corrected
+1. **"Cursed loadstone magically returns to your inventory"** —
+   wrong. The drop command is **refused outright** with "For some
+   reason, you cannot drop the stone!" The loadstone never leaves
+   inventory. Reworded.
+2. **"Rubbing a valuable gem against it will produce a streak
+   message identifying the gem. If nothing happens, it's not a
+   touchstone"** — partially wrong on both halves. Per
+   `apply.c:2742-2760, 2800-2808`: a touchstone only **identifies**
+   a gem when it's **blessed**, OR when an Archeologist/Gnome is
+   holding an uncursed one. For other roles with an unblessed
+   touchstone, the streak appears but the gem isn't identified.
+   Other gray stones also produce streak messages, so a streak
+   alone doesn't prove touchstone — only an *identification*
+   result does. Cursed touchstones can shatter gems. Reworded.
+
+---
+
+## 2026-05-18 — Chapter audit #117: The Touch of Death
+
+Source: `spoilers/companion.md` line 1946. 1 substantive correction
++ damage-path clarification.
+
+### Verified
+- Death the Rider's AT_TUCH / AD_DETH attack (`uhitm.c:3837`
+  mhitm_ad_deth; `mhitu.c:58`).
+- 8d6+50 damage with permdrain = dmg/2 (`mcastu.c:326-327`).
+- Roll 17-19 = high-damage path gated by Antimagic
+  (`uhitm.c:3858-3882`).
+- Rolls 5-16 = default permdrain unblocked by MR
+  (`uhitm.c:3869-3872`).
+- MR blocks demon/lich Finger of Death spell (`mcastu.c:402`,
+  gated at `:394`).
+- Amulet of life saving rescues from done(DIED)
+  (`mcastu.c:340`, `zap.c:2901`).
+
+### Corrected
+1. **"The wand and Finger of Death spell, like the spell version,
+   are blocked by MR"** — wrong for self-zap. `zap.c:2885-2902`
+   self-zap path has NO Antimagic check. Only the ray-bolt path
+   (`zap.c:4497-4502`) checks Antimagic. So MR protects you from
+   incoming death rays, but if you misfire your own wand into
+   yourself, the only escape is **nonliving** (polyform: vampire,
+   lich, skeleton, etc.) or **is_demon**
+   (`zap.c:2887`, `:4493`). Reworded the Defenses paragraph to
+   distinguish ray-bolt (MR-blocked) from self-zap (nonliving/demon
+   only) and to add the nonliving/demon protection as a useful
+   tactical option.
+
+### Notes
+- Polymorphed into undead also takes only half damage from Rider
+  Death's touch (`uhitm.c:3852-3857`, message "Was that the touch
+  of death?"). Added to the spoiler.
+- Low-HD caster gate (`mcastu.c:394` `rn2(mtmp->m_lev) > 12`)
+  means most low-HD demons fizzle even without MR. Not folded in.
+
+---
