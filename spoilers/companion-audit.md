@@ -1397,3 +1397,25 @@ items, but the resulting bullet wording was wordy. The actual
 strategy advice (bring food, bring scrolls) is sound on its own;
 dropped the prayer caveat entirely. The reader doesn't need to
 know WHY to bring food — just that they should.
+
+---
+
+## 2026-05-17 — Chapter audits #22 #23 #24 #25: all clean
+
+### #22 Bestiary Tables → Gnomes `G`
+22 cells verified, 0 corrected. All 4 S_GNOME entries (gnome, gnome lord, gnomish wizard, gnome king) match `monsters.h`. No "deep gnome" exists in 5.0 (correctly omitted).
+
+### #23 Weapons Tables → Shuriken
+5 cells verified, 0 corrected. Matches `objects.h:163` shuriken WEAPON entry (1d8/1d6, wt 1, cost 5, hit +2, iron).
+
+### #24 Bestiary Tables → Golems `'`
+60+ cells across 11 rows verified, 0 corrected. All entries match `monsters.h:2509-2594`. Includes straw, paper, rope, gold, leather, wood, flesh, clay, stone, glass, iron — each with correct dmg/AC/MR/resistances. Optional enrichment: flesh golem is the only one without G_NOCORPSE (uniquely useful corpse with conferred resistances).
+
+### #25 Bestiary Tables → Arachnids and centipedes `s`
+30+ cells verified, 0 corrected. All 5 entries (cave spider, centipede, giant spider, scorpion, Scorpius) match `monsters.h:940-972, 3713-3722`. Scorpius's AD_SAMU steal-amulet attack and AD_DISE disease sting correctly labeled.
+
+### Close calls (none requiring action)
+- Gnomes: gnome king's M2_PRINCE not flagged in Notes (minor consistency gap vs other tables).
+- Shuriken: empty Notes column (could flag highest to-hit among basic thrown missiles).
+- Golems: flesh golem corpse uniqueness not surfaced (could be pedagogical).
+- Arachnids: "common as source of poisonous-corpse food poisoning" is loose (only 2 of 4 regulars are M1_POIS).

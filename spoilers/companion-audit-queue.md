@@ -26,10 +26,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 19**  L 6799  (  10 lines)   ↳ Weapons Tables → Quarterstaff
 - [x] **# 20**  L 7150  (  16 lines)   ↳ Bestiary Tables → Cockatrices `c`
 - [x] **# 21**  L 1875  (   8 lines)   ↳ Dangerous Encounters → Attack Wands and the Warning Shot
-- [ ] **# 22**  L 7676  (  15 lines)   ↳ Bestiary Tables → Gnomes `G`
-- [ ] **# 23**  L 6927  (  10 lines)   ↳ Weapons Tables → Shuriken
-- [ ] **# 24**  L 8116  (  24 lines)   ↳ Bestiary Tables → Golems `'`
-- [ ] **# 25**  L 7428  (  18 lines)   ↳ Bestiary Tables → Arachnids and centipedes `s`
+- [x] **# 22**  L 7676  (  15 lines)   ↳ Bestiary Tables → Gnomes `G`
+- [x] **# 23**  L 6927  (  10 lines)   ↳ Weapons Tables → Shuriken
+- [x] **# 24**  L 8116  (  24 lines)   ↳ Bestiary Tables → Golems `'`
+- [x] **# 25**  L 7428  (  18 lines)   ↳ Bestiary Tables → Arachnids and centipedes `s`
 - [ ] **# 26**  L 1147  (  27 lines)   ↳ Traps and Hazards → Nuisance Traps
 - [ ] **# 27**  L 7244  (  18 lines)   ↳ Bestiary Tables → Humanoids `h`
 - [ ] **# 28**  L 3633  ( 144 lines) 📖 Tools of the Trade

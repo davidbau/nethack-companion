@@ -6962,6 +6962,7 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 :::
 
 #### Shuriken
+<!-- audit 2026-05-17 #23: 5 cells verified, 0 corrected. Matches objects.h:163. See companion-audit.md. -->
 
 ::: dense-table
 
@@ -7465,6 +7466,7 @@ Mostly nuisance fodder. Giant rats are common in the early dungeon; their corpse
 :::
 
 #### Arachnids and centipedes `s`
+<!-- audit 2026-05-17 #25: 30+ cells verified, 0 corrected. All 5 entries (cave spider, centipede, giant spider, scorpion, Scorpius) match monsters.h. See companion-audit.md. -->
 
 Includes scorpions and centipedes. Many have poison stings. Spider-class monsters are common as the source of poisonous-corpse food poisoning.
 
@@ -7715,6 +7717,7 @@ All fungi and molds are mindless.
 :::
 
 #### Gnomes `G`
+<!-- audit 2026-05-17 #22: 22 cells verified, 0 corrected. All four S_GNOME entries match monsters.h. No "deep gnome" exists in 5.0 (correctly omitted). See companion-audit.md. -->
 
 Mines residents. Gnomish PCs find most of them peaceful. The gnome lord and gnomish wizard are real threats; the gnome king is rare but dangerous.
 
@@ -8160,6 +8163,7 @@ All except *erinys* also follow you up and down stairs.
 :::
 
 #### Golems `'`
+<!-- audit 2026-05-17 #24: 60+ cells across 11 rows verified, 0 corrected. All entries match monsters.h:2509-2594 exactly. See companion-audit.md. -->
 
 Mindless constructs. Wood and leather golems are early-game fodder; iron, stone, and clay golems are dangerous. The rare gold golem is a walking treasure pile.
 
