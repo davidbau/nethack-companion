@@ -1340,14 +1340,9 @@ already too big. What they resist is almost everything the player
 can throw at them: pick-axes bounce off ("Clang!"), wands of digging
 fizzle, weapons swing through harmlessly, and kicking just hurts
 your foot. Wands and spells of *striking* and *force bolt* pass
-through the bars without effect. Despite long-running advice to the
-contrary, **throwing or otherwise applying a potion of acid does
-not dissolve iron bars**. The bars-corrode code only fires for an
-acid *ray* — acid breath or spit (from a monster, or from you
-polymorphed into a yellow dragon or black naga). The same branch
-also handles lightning rays, so a **wand of lightning** will melt
-bars too (about 90% per tile). An acid blob's splash is passive-only
-and doesn't count.
+through the bars without effect. The bars corrode for an acid ray,
+acid breath or spit (if you are polymorphed into a yellow dragon or
+black naga), and a **wand of lightning** will melt bars too.
 
 The practical early-game answer is to **dig around** them. Iron bars
 sit in a single tile of wall with ordinary stone on the flanks, so a
