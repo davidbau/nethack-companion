@@ -2799,25 +2799,29 @@ management slide.</p>
 </section>
 <section id="brainlessness" class="level4">
 <h4>Brainlessness</h4>
+<!-- audit 2026-05-17 #63: mind flayer / master mind flayer tentacle counts (3/5) + AD_DRIN + AT_WEAP 1d8 verified against monsters.h:523-535. INT loss rnd(2) per hit, max 10 per master turn (uhitm.c:3263). Brainlessness death + lifesaving-still-dies in eat.c:698-715. 1-in-5 losespells per uhitm.c:3264. Polymorph-into-mindflayer brain-eating recovers INT (eat.c:679-688). Corrected: any helmet blocks 7/8 attacks (uhitm.c:3235 `uarmh && rn2(8)`); greasing is only an extra slip-roll on top. Removed false claim that blessed full-healing restores attributes (potion.c:1144-1162 restores HP and one lost level only, not stats). See companion-audit.md. -->
 <p>Mind flayers drain Intelligence with their tentacle attacks. If your
 Intelligence drops to your racial minimum (3 for humans), the next drain
-kills you — “brainlessness.” A regular mind flayer has three tentacle
+kills you: “brainlessness.” A regular mind flayer has three tentacle
 attacks per turn; the <strong>master mind flayer</strong> has
 <em>five</em>, plus a heavier weapon strike, and is widely called the
 most lethal non-boss monster in the dungeon. A single unprepared turn
-next to a master mind flayer can drop your Int by ten. Each hit also has
-a 1-in-5 chance to trigger <strong>spell amnesia</strong> — a random
-number of your memorized spells (zero to all of them) drop to zero
-retention; re-study from spellbooks to restore. (Before 5.0 amnesia used
-to wipe maps and identification also, but no longer.)</p>
-<p><strong>Defenses:</strong> Wear a greased helmet to prevent tentacle
-attacks from connecting. Kill them at range (wands, spells). In 5.0 the
-unicorn horn no longer restores lost attributes; to recover drained
-Intelligence you need a <em>potion of restore ability</em> (uncursed
-restores one random ability; blessed restores all of them), the spell of
-restore ability, or prayer when you’re in good standing. A blessed
-potion of full healing also restores ability scores. Stockpile at least
-one restore ability before pushing into mind flayer territory.</p>
+next to a master mind flayer can drop your Int by up to ten. Each hit
+also has a 1-in-5 chance to trigger <strong>spell amnesia</strong>: a
+random number of your memorized spells (zero to all of them) drop to
+zero retention; re-study from spellbooks to restore. (Before 5.0 amnesia
+used to wipe maps and identification also, but no longer.)</p>
+<p><strong>Defenses:</strong> <strong>Wear any helmet.</strong> Even a
+plain orcish helm blocks 7 of 8 tentacle drains
+(<code>uarmh &amp;&amp; rn2(8)</code> in the C). Greasing the helmet
+stacks an additional slip-off roll on top, so a greased helmet is the
+gold standard. Kill them at range (wands, spells) so the question
+doesn’t arise. To recover drained Intelligence you need a <em>potion of
+restore ability</em> (uncursed restores one stat; blessed restores all),
+the spell of restore ability, or prayer when you’re in good standing. In
+5.0 the unicorn horn no longer restores lost attributes, so don’t rely
+on it. Stockpile at least one restore ability before pushing into mind
+flayer territory.</p>
 </section>
 <section id="level-drain" class="level4">
 <h4>Level Drain</h4>
@@ -2880,20 +2884,24 @@ inside.</p>
 </section>
 <section id="light-bursts" class="level4">
 <h4>Light Bursts</h4>
-<p><strong>Yellow lights</strong> and <strong>black lights</strong>
-(<code>y</code>, level 3-5) attack by exploding the moment you’re
-adjacent. Yellow lights blind you for <strong>10d20 turns</strong> (up
-to 200 — recover by drinking a potion of healing or applying a unicorn
-horn); black lights hallucinate you for <strong>10d12 turns</strong> (a
-unicorn horn cures it, or wait it out). Both lights die in the
-explosion, so the encounter resolves immediately, but the after-effect
-is long enough to be the real threat — exactly the wrong state to be in
-if there’s a follow-up fight. Black lights are also invisible until they
-hit you (unless you have <em>see invisible</em>).</p>
+<!-- audit 2026-05-17 #66: AT_EXPL/AD_BLND yellow light + AT_EXPL/AD_HALU black light verified against monsters.h:1169-1191 and mhitu.c:1623-1650. Both die in their own explosion. Black light is perminvis (makemon.c:1317-1320). Corrected: yellow light is monster level 3, black light is level 5 (not "level 3-5" — that read as a range per monster). Telepathy does NOT help vs black lights (M1_MINDLESS in monsters.h:1188-1189); only warning does. Plain potion of healing only cures blindness when blessed (potion.c:1994-2004); extra/full healing always cures. See companion-audit.md. -->
+<p><strong>Yellow lights</strong> (<code>y</code>, level 3) and
+<strong>black lights</strong> (<code>y</code>, level 5) attack by
+exploding the moment you’re adjacent. Yellow lights blind you for
+<strong>10d20 turns</strong> (up to 200 — a <em>blessed</em> potion of
+healing or any extra/full healing cures, or apply a unicorn horn); black
+lights hallucinate you for <strong>10d12 turns</strong> (a unicorn horn
+cures it, or wait it out). Both lights die in the explosion, so the
+encounter resolves immediately, but the after-effect is long enough to
+be the real threat: exactly the wrong state to be in if there’s a
+follow-up fight. Black lights are invisible; <em>see invisible</em>
+reveals them, but because they die in the same turn they attack, you’ll
+only “see” them just before they vanish.</p>
 <p><strong>Defenses:</strong> Kill them at range with wands, thrown
-daggers, breath weapons, anything that doesn’t bring you adjacent.
-Telepathy or warning helps you see black lights coming. If you do get
-blinded, a <em>unicorn horn</em> still cures it.</p>
+daggers, breath weapons — anything that doesn’t bring you adjacent.
+<em>Warning</em> detects them through invisibility, but
+<em>telepathy</em> does not (they’re mindless). If you do get blinded, a
+unicorn horn cures it.</p>
 </section>
 <section id="seduction" class="level4">
 <h4>Seduction</h4>
@@ -8538,17 +8546,21 @@ Polymorphing and chewing through walls also breaks this conduct.</p>
 </section>
 <section id="atheist" class="level4">
 <h4>Atheist</h4>
+<!-- audit 2026-05-17 #64: u.uconduct.gnostic verified (insight.c:2134, topten.c:590). #pray (pray.c:2221), #offer corpse (pray.c:1977), #turn (pray.c:2426), and #chat with priest (priest.c:572) all confirmed as breaking the conduct. Corrected false claim about altar BUC: do.c:370 increments gnostic on any non-coin drop, so the BUC flash is a religious interaction. Added: the final Amulet offering for ascension is exempt (pray.c:1529-1588 has no gnostic increment). See companion-audit.md. -->
 <p>Don’t interact with the divine. Specifically: don’t
 <code>#pray</code>, don’t <code>#offer</code> corpses at altars, don’t
 <code>#turn</code> undead, and don’t <code>#chat</code> with priests.
-This removes your safety net for starvation, stoning, illness, and
-cursed items. You’ll need to solve every problem through items and
-knowledge alone.</p>
+The altar BUC flash also counts: any non-coin item you drop on an altar
+increments the conduct counter, so the original identification trick is
+off-limits too. This removes your safety net for starvation, stoning,
+illness, and cursed items. You’ll need to solve every problem through
+items and knowledge alone.</p>
 <p>Atheist runs require careful resource management. Without prayer to
-cure hunger, you need reliable food sources. Without sacrifice, you get
-no artifact gifts. Without BUC testing on altars (you can still use them
-passively by dropping items on an altar), identification is harder. The
-reward is a particularly satisfying ascension.</p>
+cure hunger, you need reliable food sources. Without sacrifice or altar
+BUC, identification is harder and you’ll get no artifact gifts. The
+final Amulet offering for ascension is exempt (it’s coded as a special
+case that doesn’t touch the conduct), so a clean atheist ascension is
+mechanically possible.</p>
 </section>
 <section id="weaponless" class="level4">
 <h4>Weaponless</h4>
@@ -8656,13 +8668,15 @@ during the run.</p>
 <section id="pauper-new-in-5.0" class="level4">
 <h4>Pauper (new in 5.0)</h4>
 <p>Start with absolutely nothing: no gold, no inventory, no armor. Set
-<code>OPTIONS=pauper</code> in your rcfile (or <code>pauper:true</code>
-in the in-game <code>O</code> menu). The game enforces it at character
-creation: your starting inventory is empty, your pockets are empty, and
-the option implicitly sets <code>nudist:true</code> so you also begin
-without armor. From there you build up your kit by what the dungeon
-hands you. End-of-game enlightenment shows “you started out without
-possessions” as a permanent conduct, set at birth and never lost.</p>
+<code>OPTIONS=pauper</code> in your rcfile (this is a
+<code>set_in_config</code> option, so it’s rcfile or command-line only —
+the in-game <code>O</code> menu cannot toggle it). The game enforces it
+at character creation: your starting inventory is empty, your pockets
+are empty, and the option implicitly sets <code>nudist:true</code> so
+you also begin without armor. From there you build up your kit by what
+the dungeon hands you. End-of-game enlightenment shows “you started out
+without possessions” as a permanent conduct, set at birth and never
+lost.</p>
 <p>A practical note: pauper does not forbid acquiring or spending gold
 later. The conduct is about <em>starting</em> empty, not about staying
 penniless. But because shops are inherently a late-pauper resource (you
@@ -8686,9 +8700,15 @@ something loyal into a polymorph trap.</p>
 </section>
 <section id="permadeaf-new-in-5.0" class="level4">
 <h4>Permadeaf (new in 5.0)</h4>
-<p>Never hear anything. Set <code>OPTIONS=!acoustics</code> in your
-rcfile (or <code>acoustics:false</code> in the in-game <code>O</code>
-menu): the game then runs exactly as if you had the <code>Deaf</code>
+<!-- audit 2026-05-17 #62: confirmed permadeaf is u.uroleplay.deaf (optlist.h:267-269), recorded in xlogfile (topten.c:602) and shown in show_conduct (insight.c:2113). Deaf macro at youprop.h:125. Corrected the rcfile option name: was `!acoustics` (a different per-session flavor flag — flags.acoustics — that doesn't earn the conduct), should be `permadeaf` (or `deaf`). Also removed the in-game O-menu instruction: this option is `set_in_config` (options.c:5207), rcfile/command-line only. See companion-audit.md. -->
+<p>Never hear anything. Set <code>OPTIONS=permadeaf</code> (or
+<code>OPTIONS=deaf</code>) in your rcfile, or pass
+<code>-Dpermadeaf</code> on the command line. This is
+<strong>rcfile/command-line only</strong> — the conduct option is marked
+<code>set_in_config</code> and cannot be toggled from the in-game
+<code>O</code> menu. (Don’t confuse <code>permadeaf</code> with the
+unrelated <code>acoustics</code> flavor toggle, which doesn’t earn the
+conduct.) The game then runs exactly as if you had the <code>Deaf</code>
 intrinsic for the entire game and never recovered.
 <code>You_hear()</code> returns silently in every code path, so all the
 “you hear water falling,” “you hear someone counting money,” “you hear a
@@ -8715,13 +8735,14 @@ solve.</p>
 <!-- audit 2026-05-17 (sweep from #52): the xlogfile bonesless achievement is set only if !flags.bones (topten.c:605), i.e. you turned bones loading off. Just *not encountering* bones is a separate Miscellaneous enlightenment line ("never encountered any bones levels", insight.c:439) and is NOT the bonesless conduct. Earlier text wrongly said you could "get bonesless by luck." Also removed false "amulet of life saving" tracking claim (show_conduct never lists lifesaving uses). See companion-audit.md. -->
 <p>Never inherit from another player’s grave. To get the bonesless
 conduct, you have to turn bones loading off for the run: set
-<code>OPTIONS=!bones</code> in your rcfile (or <code>bones:false</code>
-in the in-game <code>O</code> menu). The xlogfile <code>bonesless</code>
-achievement is recorded only when bones loading was disabled, not when
-you happened not to encounter any. (Going a whole game without bones
-because the dungeon directory has nothing eligible is a separate
-enlightenment line — “never encountered any bones levels” — and doesn’t
-earn the conduct.)</p>
+<code>OPTIONS=!bones</code> in your rcfile (this is a
+<code>set_in_config</code> option: rcfile or command-line only, not
+toggleable from the in-game <code>O</code> menu). The xlogfile
+<code>bonesless</code> achievement is recorded only when bones loading
+was disabled, not when you happened not to encounter any. (Going a whole
+game without bones because the dungeon directory has nothing eligible is
+a separate enlightenment line — “never encountered any bones levels” —
+and doesn’t earn the conduct.)</p>
 <hr />
 </section>
 </section>

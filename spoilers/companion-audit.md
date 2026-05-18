@@ -2325,3 +2325,161 @@ Source: `spoilers/companion.md` line 8053
 - The prompt's "snow ape" hint was a red herring; no such monster in C.
   Spoiler correctly uses "carnivorous ape".
 
+
+---
+
+## 2026-05-17 — Chapter audit #62: Permadeaf (new in 5.0)
+
+Source: `spoilers/companion.md` line 6437
+2 intertwined corrections + cross-section sweep.
+
+### Verified
+- Conduct option `deaf` with alias `permadeaf` (optlist.h:267-269).
+- "New in 5.0" supported by fixes5-0-0.txt:2842.
+- Deaf macro = (HDeaf || EDeaf || u.uroleplay.deaf) (youprop.h:125).
+- You_hear() early-returns when Deaf && !Unaware (pline.c:441).
+- dosounds() early-returns under Deaf || !flags.acoustics (sounds.c:208).
+- Conduct recorded in xlogfile (topten.c:602) and end-screen (insight.c:2113).
+
+### Corrected
+1. **"Set `OPTIONS=!acoustics` in your rcfile"** — wrong option. `acoustics`
+   (flags.acoustics) is a separate world-acoustics flavor toggle; it does
+   NOT set u.uroleplay.deaf and does NOT earn the permadeaf conduct
+   (topten.c:602 only checks u.uroleplay.deaf). Changed to `OPTIONS=permadeaf`.
+
+2. **"or `acoustics:false` in the in-game O menu"** — wrong on two counts:
+   wrong option name AND not settable in-game. The deaf option is marked
+   `set_in_config` (options.c:5207), so it cannot be toggled from the in-game
+   O menu. Replaced with explicit note that this is rcfile/command-line only.
+
+### Cross-section sweep — same set_in_config bug fixed in:
+- **Pauper** section: "(or `pauper:true` in the in-game `O` menu)" — pauper
+  is also set_in_config, not in-game settable. Removed.
+- **Bonesless** section: "(or `bones:false` in the in-game `O` menu)" — bones
+  is also set_in_config (optlist.h). Removed.
+
+### Notes
+- Nudist and Blind (Zen) sections at lines 6391-6398 use the vaguer "Set the
+  X option at game start" phrasing, which is technically not wrong (it just
+  doesn't mention in-game O menu in the first place). Left as is.
+
+---
+
+## 2026-05-17 — Chapter audit #63: Brainlessness
+
+Source: `spoilers/companion.md` line 1948
+2 substantive corrections.
+
+### Verified
+- Mind flayer 3 tentacles, master 5 + AT_WEAP 1d8 (monsters.h:523-535).
+- AT_TENT/AD_DRIN; INT loss rnd(2) per hit; 5 hits = up to 10 (uhitm.c:3263).
+- Brainlessness death at racial ATTRMIN(A_INT) = 3 for all 5 races (role.c).
+- Amulet of life saving fires but second done(DIED) finishes you with
+  "Unfortunately your brain is still gone" (eat.c:701-715).
+- 1-in-5 losespells per hit (uhitm.c:3264); spell.c:1763-1800 sets
+  retention to 0; restudy from spellbook to recover.
+- 5.0 amnesia no longer wipes maps/IDs (forget() in read.c:1020 doesn't
+  call docrt/forget_objects).
+- Polymorph into mind flayer brain-eats for INT recovery up to AMAX
+  (eat.c:679-688).
+
+### Corrected
+1. **"Wear a greased helmet to prevent tentacle attacks from connecting"**
+   — misleading by omission. ANY helmet blocks 7/8 (87.5%) of brain
+   attacks via `uarmh && rn2(8)` (uhitm.c:3235). Greasing is a separate
+   slip-off roll on top. A reader following the original spec would think
+   only greased helmets help, when an unenchanted orcish helm already
+   blocks most. Rewrote to lead with "any helmet" then mention greasing
+   as an additive bonus.
+
+2. **"A blessed potion of full healing also restores ability scores"**
+   — false. peffect_full_healing (potion.c:1144-1162) restores HP and
+   one lost LEVEL if blessed; does NOT touch attributes. This was
+   confusion with potion of restore ability. Removed the claim.
+
+### Close calls (not changed)
+- "Uncursed potion of restore ability restores one random ability" —
+  it's "first damaged from random start index" (potion.c:662-676), not
+  pure random. Functionally close; left as "one stat".
+- 1-in-5 drain_weapon_skill also fires (uhitm.c:3268-3271) — not mentioned
+  in spoiler; minor omission, left out for brevity.
+- Dunce cap special case (uhitm.c:3247 skips eat_brains but INT drain
+  happens anyway) — niche; left out.
+
+---
+
+## 2026-05-17 — Chapter audit #64: Atheist
+
+Source: `spoilers/companion.md` line 6273
+1 correction + 1 useful addition.
+
+### Verified
+- u.uconduct.gnostic tracks atheist conduct (insight.c:2134 "have been
+  an atheist"; topten.c:590 atheist achievement).
+- #pray breaks it (pray.c:2221 in dopray).
+- #offer corpse at altar breaks it (pray.c:1977 in offer_corpse).
+- #turn undead breaks it (pray.c:2426 in doturn).
+- #chat with priest breaks it (priest.c:572 in priest_talk).
+- Prayer's safety net: stoning, starvation, sickness/illness, curse
+  trouble all in pray.c:206-224.
+
+### Corrected
+1. **"You can still use [altars] passively by dropping items on an altar"**
+   — false. do.c:370 increments u.uconduct.gnostic when YOU drop any
+   non-coin item on an altar (gating on !svc.context.mon_moving). The
+   BUC flash IS a religious interaction by the conduct's reckoning. Only
+   coins are exempt. Reworded to be explicit that altar BUC also breaks
+   atheist.
+
+### Added
+- Final Amulet offering for ascension is **exempt**: offer_real_amulet
+  (pray.c:1529-1588) bypasses the corpse path and does NOT increment
+  gnostic. So a clean atheist ascension is mechanically possible. Added
+  this since it's a non-obvious gameplay-relevant fact and likely the
+  first question an atheist player asks.
+
+### Close calls (not changed)
+- Quest leader/nemesis interactions — no gnostic touches in any quest C
+  code; accepting quest artifact doesn't break atheist. Spoiler doesn't
+  claim otherwise. Left silent.
+- Water-prayer (#dip on altar) — water_prayer() only called from inside
+  prayer_done, so #pray already covers it. No separate concern.
+
+---
+
+## 2026-05-17 — Chapter audit #66: Light Bursts
+
+Source: `spoilers/companion.md` line 2038
+3 corrections.
+
+### Verified
+- Yellow light: AT_EXPL/AD_BLND, 10d20 turn blindness (monsters.h:1169-79;
+  mhitu.c:1623-34).
+- Black light: AT_EXPL/AD_HALU, 10d12 turn hallucination (monsters.h:1181-91;
+  mhitu.c:1636-50).
+- Black light perminvis (makemon.c:1317-20 sets perminvis/minvis on
+  PM_BLACK_LIGHT); see invisible reveals.
+- Both die in the explosion.
+- Single-target only — no area effect.
+- Unicorn horn cures both (probabilistically).
+- Status wears off naturally (timeout.c:743-83 BLINDED/HALLUC).
+
+### Corrected
+1. **"(`y`, level 3-5)"** — read as a range per monster. Actually yellow
+   light is level 3, black light is level 5. Split the two with their
+   own level callout.
+
+2. **"recover by drinking a potion of healing"** — too loose. Plain
+   potion of healing cures blindness ONLY when blessed (potion.c:1994-2004);
+   uncursed plain healing doesn't. Extra healing cures unless cursed;
+   full healing always cures. Clarified.
+
+3. **"Telepathy or warning helps you see black lights coming"** — wrong
+   half. Black lights have M1_MINDLESS (monsters.h:1188-89), so telepathy
+   does NOT sense them. Warning does. Split into "warning detects them
+   through invisibility, but telepathy does not (they're mindless)".
+
+### Close calls (not changed)
+- "Invisible until they hit you" — they die in the same turn they attack,
+  so seeing them via see-invisible is brief. Reworded for clarity.
+

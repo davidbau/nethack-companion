@@ -66,11 +66,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [ ] **# 59**  L 4598  ( 121 lines) 📖 Spellcasting
 - [x] **# 60**  L 7845  (  13 lines)   ↳ Bestiary Tables → Rust monsters and disenchanters `R`
 - [x] **# 61**  L 7951  (  17 lines)   ↳ Bestiary Tables → Apelike creatures `Y`
-- [ ] **# 62**  L 6353  (  17 lines)   ↳ Voluntary Challenges → Permadeaf (new in 5.0)
-- [ ] **# 63**  L 1918  (  24 lines)   ↳ Dangerous Encounters → Brainlessness
-- [ ] **# 64**  L 6196  (  14 lines)   ↳ Voluntary Challenges → Atheist
+- [x] **# 62**  L 6353  (  17 lines)   ↳ Voluntary Challenges → Permadeaf (new in 5.0)
+- [x] **# 63**  L 1918  (  24 lines)   ↳ Dangerous Encounters → Brainlessness
+- [x] **# 64**  L 6196  (  14 lines)   ↳ Voluntary Challenges → Atheist
 - [ ] **# 65**  L  372  ( 140 lines) 📖 Your First Descent
-- [ ] **# 66**  L 1998  (  18 lines)   ↳ Dangerous Encounters → Light Bursts
+- [x] **# 66**  L 1998  (  18 lines)   ↳ Dangerous Encounters → Light Bursts
 - [ ] **# 67**  L 5007  ( 238 lines) 📖 Gehennom
 - [ ] **# 68**  L 2079  (   8 lines)   ↳ Dangerous Encounters → Choking
 - [ ] **# 69**  L 7830  (  15 lines)   ↳ Bestiary Tables → Quantum mechanics `Q`
