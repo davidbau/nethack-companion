@@ -3123,7 +3123,7 @@ gives the aggravate monster intrinsic. Cavemen and orcs are exempt.
 | ----------------------- | ---------------------------------------------------------------------- |
 | Floating eye            | Telepathy (but paralyzes you too)                                      |
 | Killer bee              | Poison resistance                                                      |
-| Fire giant              | Fire resistance (and Strength, like any giant)                         |
+| Fire giant              | Fire resistance + Strength                                             |
 | Fire ant                | Fire resistance                                                        |
 | Red mold                | Fire resistance + poison resistance                                    |
 | Winter wolf             | Cold resistance                                                        |
