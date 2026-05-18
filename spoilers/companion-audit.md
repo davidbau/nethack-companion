@@ -7006,3 +7006,132 @@ Source: `spoilers/companion.md` line 3331. 1 factual fix; voice changes mostly r
 - Section makes no mention of sink-dip ID, bag-of-holding scatter on explosion, or Gehennom hot-ground potion shatter — those 5.0 changes are absent here. Not wrong, but the chapter could be enriched in a future pass.
 
 ---
+
+## 2026-05-18 — v2 audit #16: Weapons Tables — Short sword
+
+Source: `spoilers/companion.md` line 7283. No corrections (re-audit clean).
+
+### Verified
+- short sword 1d6/1d8, wt 30, cost 10, iron at `include/objects.h:244-246`.
+- elven short sword 1d8/1d8, wt 30, cost 10, wood at `include/objects.h:247-249`.
+- orcish short sword 1d5/1d8 (verified the unusual 1d5 die), wt 30, cost 10, iron at `include/objects.h:250-252`.
+- dwarvish short sword 1d7/1d8, wt 30, cost 10, iron at `include/objects.h:253-255`.
+- All four share P_SHORT_SWORD.
+- Rogue starter at `src/u_init.c:134`. Samurai wakizashi alias at `src/u_init.c:144` + `src/objnam.c:106`.
+- No SHORT_SWORD-base artifact exists.
+
+### Notes
+- Auditor flagged "The Rogue's starter" as slightly misleading (the dagger stack is the Rogue's defining weapon), but the short sword is in the starting inventory and the framing is fine. Per preserve-voice, left as-is.
+
+---
+
+## 2026-05-18 — v2 audit #17: Dangerous Encounters — Seduction
+
+Source: `spoilers/companion.md` line 2175. 2 factual fixes, 2 wisdom additions.
+
+### Wrong → fixed
+- **"Depending on its randomly assigned gender"**: incomplete. `could_seduce` at `mhitu.c:1980` requires opposite-sex `genagr`/`gendef`. A same-sex foocubus never seduces and just claws. Reworded.
+- **"Items aren't dropped on floor (just unequipped to inventory)"** was correct from pass 1. v2 verified.
+
+### Verified
+- Random gender assignment at `makemon.c:1279`.
+- Strip order (cloak/suit/boots/gloves/shield/helm/shirt) at `mhitu.c:2119-2128`.
+- Items unequipped to inventory only at `mhitu.c:2351` via `remove_worn_item(obj, TRUE)` at `steal.c:213`.
+- Encounter aborts if cloak or suit still worn at `mhitu.c:2139`.
+- Cha/20 prompt at `mhitu.c:2325`.
+- Cap-32 attribute roll at `mhitu.c:2177-2178` (`rn2(35) > min(attr_tot, 32)`).
+- 6-15 HP damage as `rn1(10,6)` at `mhitu.c:2219`.
+- XL drain blocked by drain resistance at `mhitu.c:2204`.
+- Peaceful demons charge 1/5 at `mhitu.c:2280`. 500+ zm cost at `mhitu.c:2276-2278`.
+- Defense via hard-to-remove suit/cloak; free action is irrelevant (not a paralysis attack).
+
+### Wisdom additions
+- XL 1 farming warning: at experience level 1, the level-drain outcome is fatal. Added.
+- Ring of adornment interactions at `mhitu.c:2019-2110`: succubus pockets a worn ring; incubus slips one from your pack onto your finger. Added a brief note.
+
+### Notes
+- "Defers" wording on the asleep/unresponsive case is slightly loose (the demon abandons the attempt without setting `mspec_used`, so it may retry next turn). Left as-is; the practical effect is similar.
+- The "5 bad vs 5 good outcomes" framing reads like a 10-way die when it's actually a Cha+Int roll for *side* then `rn2(5)` for *which*. Acceptable simplification.
+
+---
+
+## 2026-05-18 — v2 audit #18: Appendices — Spell Tables
+
+Source: `spoilers/companion.md` line 7779. 4 factual corrections.
+
+### Wrong → fixed
+- **flame sphere and freeze sphere rows**: both spells are inside `#if 0 /* DEFERRED */` at `include/objects.h:1413-1422` with no implementation anywhere in 5.0 `src/`. They are SLASH'EM leftovers. Dropped both rows. 41 spells, not 43.
+- **charm monster row (triple error)**:
+  - Type "aimed" → "untargeted": `seffect_taming` at `read.c:1679-1708` is an area centered on the caster, no direction prompt.
+  - Effect "Tames one target" → "Tames monsters in a 3×3 area (11×11 if confused)": the area is `(2·bd+1)²` with `bd = confused ? 5 : 1`, so 3×3 normal and 11×11 confused, not "5×5 confused" — and *all* monsters in the area are tamed, not just one.
+  - Upgrade "3×3 normal, 5×5 confused" → "Blessed-scroll behavior": the P_SKILLED upgrade is more reliable taming, not a radius bump.
+- **cause fear row**: "Blessed: wider radius" was wrong. `seffect_scare_monster` at `read.c:1454-1486` ignores `sobj->blessed` entirely; blessed and uncursed are identical. The loop also hits *every visible monster* on the level, not just "nearby." Dropped the blessed-upgrade, reworded Effect to "Visible monsters flee."
+- **remove curse row**: "Blessed: all worn/wielded" was wrong. `read.c:1514-1577` uncurses every (non-coin) carried item when blessed. Reworded to "all carried items."
+
+### Verified
+- Pw cost = 5 × spell level at `include/spell.h:36`.
+- Fireball / cone of cold P_SKILLED aimed-explosion at `src/spell.c:1419-1452`.
+- Protection P_EXPERT doubles uspmtime at `src/spell.c:1169`.
+- Jumping range scales with `role_skill` at `src/spell.c:1584-1586`.
+- Clairvoyance P_SKILLED extra monster-detect at `src/spell.c:1572-1576`.
+- Restore ability / detect monsters / detect food / detect treasure / haste self / levitation: blessed-potion behavior at P_SKILLED at `src/spell.c:1533-1545`.
+- Confuse monster / identify: blessed-scroll at P_SKILLED at `src/spell.c:1517-1525`.
+
+### Notes
+- Healing's P_SKILLED upgrade (also cures blindness per `src/spell.c:1480-1485` + `src/zap.c:447-448`) is not flagged in the table; minor inconsistency with how other small upgrades are tagged. Left for follow-up.
+- Cross-references: chain lightning's level is correctly 2 in this appendix and in the Spellcasting "Key Spells" table (audited in #9). The audit-1 badge's note about a body-text mismatch is stale.
+
+---
+
+## 2026-05-18 — v2 audit #19: Bestiary Tables — Sea monsters `;`
+
+Source: `spoilers/companion.md` line 9064. 2 factual corrections.
+
+### Wrong → fixed
+- **"Lives in water. Wraps around you and drags you under to drown."**: the intro applied wrap-and-drown to all 6 rows, but only giant eel, electric eel, and kraken have `AT_TUCH`/`AT_HUGS` + `AD_WRAP` per `monsters.h:3230-3256`. Jellyfish, piranha, and shark just bite/sting. The drown mechanic is gated on `AD_WRAP` at `src/uhitm.c:3389-3401`. Reworded.
+- **"sting 3d3 poison"** (jellyfish row): `AD_DRST` drains strength rather than dealing generic poison damage (`src/uhitm.c:3149, 3157`). Changed to "sting 3d3 drain-Str", matching the spoiler's own drain-stat notation.
+
+### Verified
+- jellyfish Lvl 3, Spd 3, AC 6, MR 0, AD_DRST 3d3 + MR_POISON at `monsters.h:3205-3212`.
+- piranha Lvl 5, Spd 18, AC 4, MR 0, bite 2d6 × 2, G_SGROUP at `monsters.h:3213-3220`.
+- shark Lvl 7, Spd 12, AC 2, MR 0, bite 5d6 at `monsters.h:3221-3229`.
+- giant eel Lvl 5, Spd 9, AC -1, MR 0, bite 3d6 + AT_TUCH AD_WRAP at `monsters.h:3230-3238`.
+- electric eel Lvl 7, Spd 10, AC -3, MR 0, bite AD_ELEC 4d6 + AT_TUCH AD_WRAP + MR_ELEC at `monsters.h:3239-3247`.
+- kraken Lvl 20, Spd 3, AC 6, MR 0, claw 2d4 × 2 + AT_HUGS AD_WRAP 2d6 + bite 5d4 at `monsters.h:3248-3256`.
+- All six carry M1_SWIM | M1_AMPHIBIOUS.
+
+### Notes
+- Wand of cold and wand of fire freeze/cook water tiles and strand sea monsters — a standard tactic absent from the section. Could add in a follow-up.
+- Greased outer armor or oilskin cloak blocks the grab. Also absent.
+
+---
+
+## 2026-05-18 — v2 audit #20: Voluntary Challenges — Polymorph Restrictions
+
+Source: `spoilers/companion.md` line 6855. 5 factual corrections, 1 wisdom adjustment.
+
+### Wrong → fixed
+- **"The Amulet of Unchanging blocks every path"**: misleading. Antimagic also blocks the potion (`potion.c:1691`), the polymorph trap (`trap.c:2486`), and the genetic engineer's claw (`mhitm.c:1128`). Antimagic does NOT block self-zapped wand/spell, a worn ring of polymorph's per-turn tick, fountain toxic-waste polyself, or shapeshifter-corpse polyself. Reworded with both clauses.
+- **Lycanthropy was omitted**: a were-attack infects you, then `you_were()` → `polymon()` ticks `polyselfs` (`were.c:209`, `mhitm.c:1138`). Added to the list of less-obvious sources.
+- **"surviving a stoning attack (auto-transforms to stone golem)"**: misreads `poly_when_stoned()` at `mondata.c:80-86`, which returns true only for non-stone golems. A normal character petrifies and dies; only a player already polymorphed into a flesh/clay/etc. golem reverts to stone golem. Dropped from the list.
+- **"potion or ring of polymorph"**: ring of polymorph doesn't poly on wear; it grants a 1/100-per-turn random shift while worn (`allmain.c:325-334`). Listed alongside the potion implied instant effect. Clarified.
+- **"sandestin … corpse"**: sandestins are G_NOCORPSE (`eat.c:1246` comment). Unreachable in play. Dropped.
+
+### Verified
+- `polyselfs++` lives only in `polymon()` at `polyself.c:751` and the eat-a-mimic path at `eat.c:1199`.
+- `polypiles++` ticks at `zap.c:2198` (wand/spell of polymorph) and `potion.c:2476` (dipping into potion of polymorph). Only those two paths.
+- Polymorph trap: blocked by `Antimagic || Unchanging` at `trap.c:2486-2495`.
+- Genetic engineer AD_POLY: blocked by `Antimagic` OR `Unchanging` at `mhitm.c:1127-1144`.
+- Chameleon/doppelganger/genetic engineer corpse eat: only `Unchanging` blocks (`eat.c:1244-1263`).
+- Self-zap of WAN_POLYMORPH/SPE_POLYMORPH: blocked only by `Unchanging` (`zap.c:2804-2809`).
+- Fountain "toxic wastes" calls `polyself()`, blocked only by `Unchanging` (`fountain.c:680-685`).
+- System shock returns early in `polyself()` at `polyself.c:488-495`, so a failed shock does NOT tick the conduct.
+
+### Wisdom adjustment
+- Added: polyselfless is one of the easier conducts (often achieved incidentally); the bigger commitment is polypileless, which forgoes a major item-generation engine. The section's framing under polyself overstated its cost.
+
+### Notes
+- Vampire `#monster` shift ticks polyselfs per `polyself.c:1881-1888` → `polymon()`. Not currently mentioned; could be added if a vampire-polyform section ever references this conduct.
+- Section silent on which roles handle polypileless easily (Valkyrie/Samurai have strong native kits); Wizards struggle. Not added in this pass; voice ladder calls for adding such notes only when they replace something weaker.
+
+---

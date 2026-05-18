@@ -2173,14 +2173,15 @@ detects them through invisibility, but *telepathy* does not (they're
 mindless). If you do get blinded, a unicorn horn cures it.
 
 #### Seduction
-<!-- audit 2026-05-17 #33: self-audit caught 2 errors in my prior rewrite — items aren't dropped on floor (just unequipped to inventory); demon's succubus/incubus form is random, not based on player gender. See companion-audit.md. -->
+<!-- audit 2026-05-17 #33: self-audit caught 2 errors in my prior rewrite — items aren't dropped on floor (just unequipped to inventory); demon's succubus/incubus form is random, not based on player gender. v2 audit 2026-05-18 #17: two factual fixes and two wisdom additions. (1) "Depending on its randomly assigned gender" was incomplete: could_seduce at mhitu.c:1980 requires opposite-sex genagr/gendef, so a same-sex foocubus never seduces and just claws. Reworded. (2) The ring-of-adornment interactions at mhitu.c:2019-2110 were entirely absent from the section; added a brief note. Wisdom: added the XL-1 caveat (level-drain is fatal). See companion-audit.md. -->
 
-The **amorous demon** (`&`, gray) appears as a **succubus** or an
-**incubus** depending on its randomly assigned gender. The
-encounter is a Cha+Int gamble: five bad outcomes vs. five good
-ones, plus a payment phase. Handled badly it can drain a level, an
-attribute, and 6–15 HP; handled well it grants a level, an
-attribute, full HP, and extra max Pw.
+The **amorous demon** (`&`, gray) appears as a **succubus** to
+male heroes and an **incubus** to female ones. A same-sex foocubus
+just claws at you and never starts the seduction. The encounter is
+a Cha+Int gamble: five bad outcomes vs. five good ones, plus a
+payment phase. Handled badly it can drain a level, an attribute,
+and 6–15 HP; handled well it grants a level, an attribute, full
+HP, and extra max Pw.
 
 **Mechanics.** The demon must be adjacent and not on cooldown. It
 strips off your worn armor one piece at a time (cloak, suit,
@@ -2213,7 +2214,12 @@ the attempt entirely.
 **Strategic note.** At high Cha+Int the encounter is net-positive,
 and the armor-removal step strips *cursed* worn pieces too — an
 amorous demon can be the cheapest curse-removal in the dungeon.
-Some players keep one alive to farm XP and attributes.
+Some players keep one alive to farm XP and attributes. Don't try
+this at experience level 1, though: the level-drain outcome is
+fatal.
+
+A succubus will also pocket a worn ring of adornment, and an
+incubus will slip one from your pack onto your finger.
 
 #### The Riders
 <!-- audit 2026-05-18 #150: 4 corrections. (1) "permanently displaced" misreads M3_DISPLACES (monflag.h:175) — that flag means "moves monsters out of its way," not the cloak-of-displacement evasion. (2) "Ignore magic resistance for their signature attacks" — wrong for Death. uhitm.c:3858-3883 shows Antimagic DOES block the 3/20 touch-of-death instakill case. (3) "Eating their corpses is fatal in different ways for each" — wrong; all three trigger the same done(DIED) with killer text "unwisely ate the body of <name>" (eat.c:831-849). (4) "Famine drives you instantly to Weak or Fainting" — overstated; uhitm.c:3791-3795 adds 40-79 hunger units, which doesn't reach Weak from Satiated. -->
@@ -6845,26 +6851,34 @@ genociding anything simply because they never find the scroll and
 never sit Vlad's throne. But deliberately maintaining it against
 late-game threats takes discipline.
 
-<!-- audit 2026-05-18 #161: dropped "cursed scroll of polymorph" (no SCR_POLYMORPH exists in 5.0). Added missing conduct-breaking sources: genetic engineer claw (AD_POLY → polyself); eating chameleon/doppelganger/sandestin corpses (eat.c:1244-1263) and mimic corpses (eat.c:1199); green slime auto-poly (timeout.c:493); stone-golem auto-poly via poly_when_stoned (trap.c:3848 etc.). Added Unchanging-blocks-all and system-shock-doesn't-break notes per polyself.c:483-495. See companion-audit.md. -->
+<!-- audit 2026-05-18 #161: dropped "cursed scroll of polymorph" (no SCR_POLYMORPH exists in 5.0). Added missing conduct-breaking sources: genetic engineer claw (AD_POLY → polyself); eating chameleon/doppelganger/sandestin corpses (eat.c:1244-1263) and mimic corpses (eat.c:1199); green slime auto-poly (timeout.c:493); stone-golem auto-poly via poly_when_stoned (trap.c:3848 etc.). Added Unchanging-blocks-all and system-shock-doesn't-break notes per polyself.c:483-495. v2 audit 2026-05-18 #20: five factual corrections. (a) "The Amulet of Unchanging blocks every path" was misleading — Antimagic also blocks the potion (potion.c:1691), trap (trap.c:2486), and genetic engineer claw (mhitm.c:1128), while NOT blocking self-zapped wand, ring tick, fountain toxic-waste, or shapeshifter-corpse polyself. Reworded with both clauses. (b) Lycanthropy was omitted — were-attacks infect via you_were() → polymon() (were.c:209, mhitm.c:1138). Added. (c) "Surviving a stoning attack (auto-transforms to stone golem)" misread poly_when_stoned (mondata.c:80-86) — that only fires if you're already polymorphed into a non-stone golem; a normal character just dies. Dropped. (d) "Ring of polymorph" was listed alongside the potion implying instant effect; it's actually 1/100-per-turn while worn (allmain.c:325-334). Clarified. (e) Sandestin was listed in the corpse list but sandestins are G_NOCORPSE (eat.c:1246 comment). Dropped. Wisdom: added the polyselfless-is-easy / polypileless-is-harder reality check the section was missing. See companion-audit.md. -->
 #### Polymorph Restrictions
 
 Two related conducts track polymorphing:
 
-**No polymorph.** Never let your form change. Obvious sources: potion
-or ring of polymorph, wand or spell of polymorph (zapped at you), and
-polymorph traps. Less obvious: a genetic engineer's claw; eating a
-chameleon, doppelganger, sandestin, or mimic corpse; surviving a
-stoning attack (auto-transforms to stone golem); and failing to cure
-slimedness (turns you into a green slime). The Amulet of Unchanging
-blocks every path. A failed system shock does *not* break the
-conduct. Keeping this conduct forgoes the advantages of powerful
-monster forms (master mind flayer, xorn, various dragons).
+**No polymorph.** Never let your form change. Obvious sources:
+the potion of polymorph, a self-zapped wand or spell of polymorph,
+and polymorph traps. A worn ring of polymorph triggers random
+shifts (about 1 in 100 turns), so wearing one breaks the conduct
+quickly. Less obvious: a genetic engineer's claw; eating a
+chameleon, doppelganger, or mimic corpse; lycanthropy (a were-bite
+infects you and shifts you on its own); and failing to cure
+slimedness (turns you into a green slime). The Amulet of
+Unchanging shuts every door. Magic resistance blocks the potion,
+the polymorph trap, and the genetic engineer's claw, but it does
+*not* block a self-zapped wand, a ring tick, a shapeshifter
+corpse, or a toxic fountain. A failed system shock does *not*
+break the conduct.
+
+Polyselfless turns out to be one of the easier conducts; many
+ascensions clear it incidentally. The bigger sacrifice is
+polypileless below.
 
 **No polymorph objects.** Never polymorph items. Don't zap items
 with a wand of polymorph, don't dip items in potions of polymorph,
-and avoid other means of transforming objects. This eliminates a
-powerful item-generation strategy (polypiling) that many players use
-to obtain specific high-value items.
+and avoid other means of transforming objects. This forgoes
+polypiling — the main source of specific high-value items, and the
+reason this is the harder of the two polymorph conducts.
 
 #### Wishing Restrictions
 <!-- audit 2026-05-18 #83: u.uconduct.wishes and u.uconduct.wisharti are two separate counters with two separate xlogfile achievements (you.h:157-158, topten.c:596-597). Wishing for the literal string "nothing" doesn't increment the counter (zap.c:6369). Amulet-of-Yendor first-pickup wish (allmain.c:445) must be declined for wishless conduct. See companion-audit.md. -->
@@ -7279,7 +7293,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 
 :::
 
-<!-- audit 2026-05-18 #163: all 4 rows verified clean vs objects.h:245-254. All share P_SHORT_SWORD (scimitar is P_SABER, correctly excluded). No artifact uses SHORT_SWORD base type. Samurai's "wakizashi" is a SHORT_SWORD aliased in objnam.c:106; added to plain short sword's Notes. 0 numeric corrections. See companion-audit.md. -->
+<!-- audit 2026-05-18 #163 (re-audit 2026-05-18 v2 #16): all 4 rows verified clean vs objects.h:245-254. All share P_SHORT_SWORD (scimitar is P_SABER, correctly excluded). No artifact uses SHORT_SWORD base type. Samurai's "wakizashi" is a SHORT_SWORD aliased in objnam.c:106; added to plain short sword's Notes. 0 numeric corrections. v2 re-audit confirmed: all four rows match objects.h:244-255 exactly (short sword 1d6/1d8, elven 1d8/1d8, orcish 1d5/1d8, dwarvish 1d7/1d8). Rogue starter at u_init.c:134; Samurai wakizashi alias at u_init.c:144 + objnam.c:106. No SHORT_SWORD-base artifact exists. See companion-audit.md. -->
 #### Short sword
 
 ::: dense-table
@@ -7771,7 +7785,7 @@ kebab bonus.
 ---
 
 ### Spell Tables
-<!-- audit 2026-05-18 #99 (re-audit 2026-05-18 #182): 43 spells extracted from objects.h SPELL() macros (P_ATTACK..P_MATTER). SPELL macro signature in objects.h:1078 confirms field order (name, desc, sub, prob, delay, level, mgc, dir, color, sn) and oc_level=oc_oc2. Chain lightning level=2 per macro; spoiler body still says L4 in Spellcasting Key Spells table at line 4986 and What's New at line 8585 — flag for follow-up fix. Rank-gated effects from spell.c spelleffects: SPE_FIREBALL/CONE_OF_COLD become aimed explosions at P_SKILLED; SPE_REMOVE_CURSE/CONFUSE_MONSTER/DETECT_FOOD/CAUSE_FEAR/IDENTIFY/CHARM_MONSTER get blessed-scroll behavior at P_SKILLED; SPE_HASTE_SELF/DETECT_TREASURE/DETECT_MONSTERS/LEVITATION/RESTORE_ABILITY get blessed-potion behavior at P_SKILLED; SPE_PROTECTION doubles uspmtime at P_EXPERT (spell.c:1169); SPE_JUMPING distance scales directly from role_skill. Re-audit 2026-05-18 #182 fixed two errors: magic missile is Antimagic-blocked (zap.c:4410-4419, "missiles bounce off!"), not "no resistance"; clairvoyance has a P_SKILLED upgrade at spell.c:1572-1576 (also detects nearby monsters during each pulse). Finger of death note clarified: monster MR resists but the player gets no Antimagic check on the death-ray instakill (zap.c:2885-2902). -->
+<!-- audit 2026-05-18 #99 (re-audit 2026-05-18 #182): 43 spells extracted from objects.h SPELL() macros (P_ATTACK..P_MATTER). SPELL macro signature in objects.h:1078 confirms field order (name, desc, sub, prob, delay, level, mgc, dir, color, sn) and oc_level=oc_oc2. Chain lightning level=2 per macro; spoiler body still says L4 in Spellcasting Key Spells table at line 4986 and What's New at line 8585 — flag for follow-up fix. Rank-gated effects from spell.c spelleffects: SPE_FIREBALL/CONE_OF_COLD become aimed explosions at P_SKILLED; SPE_REMOVE_CURSE/CONFUSE_MONSTER/DETECT_FOOD/CAUSE_FEAR/IDENTIFY/CHARM_MONSTER get blessed-scroll behavior at P_SKILLED; SPE_HASTE_SELF/DETECT_TREASURE/DETECT_MONSTERS/LEVITATION/RESTORE_ABILITY get blessed-potion behavior at P_SKILLED; SPE_PROTECTION doubles uspmtime at P_EXPERT (spell.c:1169); SPE_JUMPING distance scales directly from role_skill. Re-audit 2026-05-18 #182 fixed two errors: magic missile is Antimagic-blocked (zap.c:4410-4419, "missiles bounce off!"), not "no resistance"; clairvoyance has a P_SKILLED upgrade at spell.c:1572-1576 (also detects nearby monsters during each pulse). Finger of death note clarified: monster MR resists but the player gets no Antimagic check on the death-ray instakill (zap.c:2885-2902). v2 audit 2026-05-18 #18: four corrections. (a) Dropped flame sphere and freeze sphere rows — both are `#if 0 DEFERRED` in objects.h:1413-1422 with no implementation anywhere in 5.0 src/, so 41 spells, not 43. (b) Charm monster row: Type "untargeted" not "aimed" (read.c:1679-1708 seffect_taming is area-centered-on-caster, no direction prompt); area is 3×3 normal and **11×11** confused (`bd = confused ? 5 : 1`, -bd..bd inclusive), not 5×5; the Skilled+ upgrade is blessed-scroll behavior (more reliable taming), not a radius bump. (c) Cause fear: blessed and uncursed are identical at read.c:1454-1486 — no radius difference — and the loop hits every visible monster on the level, not just "nearby." Dropped "Blessed: wider radius" and reworded Effect. (d) Remove curse blessed branch uncurses every non-coin item in inventory (read.c:1514-1577), not just worn/wielded. See companion-audit.md. -->
 
 The complete spellbook catalog, sorted by school then level. **Lvl**
 is the spell level; **Pw cost** is always 5×level. **Type**
@@ -7814,12 +7828,12 @@ and jumping, which scales continuously).
 | magic mapping   | Divination  | 5   | untargeted | Reveals the entire level            | —                             |
 | confuse monster | Enchantment | 1   | aimed      | Next melee hit confuses target      | Blessed: multiple hits        |
 | slow monster    | Enchantment | 2   | aimed      | Slows target's speed                | —                             |
-| cause fear      | Enchantment | 3   | untargeted | Nearby monsters flee                | Blessed: wider radius         |
+| cause fear      | Enchantment | 3   | untargeted | Visible monsters flee               | —                             |
 | sleep           | Enchantment | 3   | ray        | Puts targets in line to sleep       | —                             |
-| charm monster   | Enchantment | 5   | aimed      | Tames one target                    | 3×3 normal, 5×5 confused      |
+| charm monster   | Enchantment | 5   | untargeted | Tames monsters in a 3×3 area (11×11 if confused) | Blessed-scroll behavior |
 | protection      | Cleric      | 1   | untargeted | Temporary AC bonus paid from Pw     | **Expert**: 2× duration       |
 | create monster  | Cleric      | 2   | untargeted | Summons a random monster nearby     | —                             |
-| remove curse    | Cleric      | 3   | untargeted | Uncurses worn/wielded items         | Blessed: all worn/wielded     |
+| remove curse    | Cleric      | 3   | untargeted | Uncurses worn/wielded items         | Blessed: all carried items    |
 | create familiar | Cleric      | 6   | untargeted | Creates a tame companion            | —                             |
 | turn undead     | Cleric      | 6   | aimed      | Damages/turns undead and demons     | —                             |
 | jumping         | Escape      | 1   | untargeted | Jump to a chosen nearby square      | Range scales with rank        |
@@ -7827,8 +7841,6 @@ and jumping, which scales continuously).
 | invisibility    | Escape      | 4   | untargeted | Become invisible                    | —                             |
 | levitation      | Escape      | 4   | untargeted | Float over pits and water           | Blessed: longer duration      |
 | teleport away   | Escape      | 6   | aimed      | Teleports target away               | —                             |
-| flame sphere    | Matter      | 1   | untargeted | Summons a flame sphere              | —                             |
-| freeze sphere   | Matter      | 1   | untargeted | Summons a freeze sphere             | —                             |
 | knock           | Matter      | 1   | aimed      | Opens doors, picks locks            | —                             |
 | wizard lock     | Matter      | 2   | aimed      | Closes and locks a door             | —                             |
 | dig             | Matter      | 5   | ray        | Digs through walls, rock, floor     | —                             |
@@ -9056,10 +9068,10 @@ All golems are mindless, sleep-resistant, and poison-resistant.
 
 :::
 
-<!-- audit 2026-05-18 #158: all 6 entries (jellyfish/piranha/shark/giant eel/electric eel/kraken) verified clean vs monsters.h:3205-3256. All carry M1_SWIM | M1_AMPHIBIOUS. AD_WRAP grab-and-drown mechanic confirmed at uhitm.c:3378-3401. 0 corrections. See companion-audit.md. -->
+<!-- audit 2026-05-18 #158: all 6 entries (jellyfish/piranha/shark/giant eel/electric eel/kraken) verified clean vs monsters.h:3205-3256. All carry M1_SWIM | M1_AMPHIBIOUS. AD_WRAP grab-and-drown mechanic confirmed at uhitm.c:3378-3401. 0 corrections. v2 audit 2026-05-18 #19: two factual fixes. (a) The wrap-and-drown intro applied to all 6 rows, but only giant eel, electric eel, and kraken have AT_TUCH/AT_HUGS+AD_WRAP per monsters.h:3230-3256. Jellyfish/piranha/shark just bite or sting. Reworded. (b) Jellyfish "sting 3d3 poison" loses the AD_DRST detail — the sting is a poisonous strength-drain (uhitm.c:3149,3157). Changed to "sting 3d3 drain-Str" matching the spoiler's own drain-stat notation elsewhere. See companion-audit.md. -->
 #### Sea monsters `;`
 
-Lives in water. Wraps around you and drags you under to drown. Don't fight one from a water square without magical breathing or escape.
+Live in water. Eels and the kraken wrap you and drag you under to drown — instadeath without magical breathing. Stay off the water-adjacent square unless you have it.
 
 All sea monsters swim and are amphibious.
 
@@ -9067,7 +9079,7 @@ All sea monsters swim and are amphibious.
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
-| jellyfish | blue | 3 | 3 | 6 | 0 | sting 3d3 poison | poisonous-corpse, pois-res. |
+| jellyfish | blue | 3 | 3 | 6 | 0 | sting 3d3 drain-Str | poisonous-corpse, pois-res. |
 | piranha | red | 5 | 18 | 4 | 0 | bite 2d6 · bite 2d6 |  |
 | shark | gray | 7 | 12 | 2 | 0 | bite 5d6 |  |
 | giant eel | cyan | 5 | 9 | -1 | 0 | bite 3d6 · touch wrap |  |

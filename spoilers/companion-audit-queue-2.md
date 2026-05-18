@@ -24,11 +24,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 13**  L 4802  ( 169 lines)   📖 Enhancing Skills
 - [x] **# 14**  L 1047  (  26 lines)     ↳ Branches and Landmarks → Fort Ludios
 - [x] **# 15**  L 3321  ( 123 lines)   📖 The Apothecary
-- [ ] **# 16**  L 7270  (  13 lines)     ↳ Weapons Tables → Short sword
-- [ ] **# 17**  L 2167  (  43 lines)     ↳ Dangerous Encounters → Seduction
-- [ ] **# 18**  L 7759  (  74 lines)     ↳ Appendices → Spell Tables
-- [ ] **# 19**  L 9046  (  19 lines)     ↳ Bestiary Tables → Sea monsters `;`
-- [ ] **# 20**  L 6836  (  20 lines)     ↳ Voluntary Challenges → Polymorph Restrictions
+- [x] **# 16**  L 7270  (  13 lines)     ↳ Weapons Tables → Short sword
+- [x] **# 17**  L 2167  (  43 lines)     ↳ Dangerous Encounters → Seduction
+- [x] **# 18**  L 7759  (  74 lines)     ↳ Appendices → Spell Tables
+- [x] **# 19**  L 9046  (  19 lines)     ↳ Bestiary Tables → Sea monsters `;`
+- [x] **# 20**  L 6836  (  20 lines)     ↳ Voluntary Challenges → Polymorph Restrictions
 - [ ] **# 21**  L 2920  (  35 lines)     ↳ A Practical Identification Strategy → The Engrave Test (Wands)
 - [ ] **# 22**  L 8099  (  19 lines)     ↳ Bestiary Tables → Imps and minor demons `i`
 - [ ] **# 23**  L 7387  (  12 lines)     ↳ Weapons Tables → Morning star
