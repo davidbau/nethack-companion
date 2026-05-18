@@ -1275,15 +1275,21 @@ enchantment instead. Useful protection to have on if you haven't
 found anything better yet.
 
 #### Searching and Detection
+<!-- audit 2026-05-18 #92: dosearch0 mechanics verified (detect.c:2016-2093); rnl Luck bias confirmed (rnd.c:112). Corrected: wand of secret door detection is NODIR (square radius around player, not "in its path"); also reveals SDOOR/SCORR/traps/trapped chests/hidden mimics, not just traps. Levitation/Flying immune to most but not all floor traps (magic, teleport, anti-magic still hit). Search artifact/lenses bonus only helps door/corridor discovery (rnl(7-fund)); trap roll uses rnl(8) with no fund. See companion-audit.md. -->
 
 The best defense against traps is finding them before they find you:
 
 - **Search (`s`)** repeatedly. Each search has an independent chance
-  to reveal each adjacent trap, and Luck improves the odds
-- **Wand of secret door detection** reveals traps in its path
+  to reveal each adjacent trap, and Luck improves the odds. (The
+  artifact/lenses search bonus only speeds up secret-door and
+  secret-corridor discovery, not trap finding.)
+- **Wand of secret door detection** reveals everything hidden in a
+  square radius around you: secret doors, secret corridors, traps,
+  trapped chests, and concealed monsters. It's not directional.
 - **Crystal ball** can reveal traps across the entire level
 - **Pets** avoid known traps, so watch their pathfinding for clues
 - **Flying and levitation** make you immune to most floor traps
+  (you'll still trigger magic, teleport, and anti-magic traps)
 
 A good time to search is when the dungeon has already hinted that
 something is wrong: a stray corpse in the middle of an otherwise
@@ -2204,26 +2210,36 @@ Reading an uncursed scroll of genocide while confused can genocide
 your own race. Don't do this.
 
 #### Delayed Deaths
+<!-- audit 2026-05-18 #93: timer + cure mechanics verified vs timeout.c/pray.c/eat.c/potion.c/trap.c. Corrected: sliming polymorph cure requires a flame-bodied or slime-proof form (polyself.c:842), not any polymorph; "burdened may not get even one turn" + "stay unburdened near water" duplicated the drowning error already fixed elsewhere; vomiting only cures SICK_VOMITABLE (food poisoning), not Pestilence's SICK_NONVOMITABLE. Withering correctly absent (doesn't exist in 5.0). Added 10-turn slime timer, food-poisoning 10-19 turn range, and Pestilence-specific paragraph. See companion-audit.md. -->
 
 Not every fatal threat kills instantly. Several give you a few
 turns to react. Knowing the warning signs and the cures can save
 a run.
 
-**Sliming.** Being hit by a green slime starts a transformation
-that ends in you becoming a green slime (dead). The process takes
-several turns with messages about your body changing. **Cures:**
-burn the slime off with fire (a wand of fire zapped at yourself,
-a scroll of fire, walking into a fire trap, a red dragon's breath),
-pray, or change form via polymorph. Fire is the most reliable cure.
+**Sliming.** Being hit by a green slime (or eating its glob, or
+being digested by one as a polyform) starts a ~9-turn transformation
+into a green slime yourself — dead. **Cures:** burn the slime off
+with fire (a wand of fire zapped at yourself, a scroll of fire read
+at self, a fire trap, a red dragon's breath); polymorph into a
+flame-bodied or slime-immune form; cancellation negates the touch
+attack; the spell of *cure sickness* clears the timer. An **amulet
+of unchanging** blocks the contagion entirely and even aborts a
+transformation already underway. Prayer would cure it, but green
+slime lives in Gehennom where prayer fails, so don't plan on it.
+Fire is the most reliable cure.
 
-**Illness (food poisoning).** Eating a rotten corpse or being
-struck by certain attacks (Pestilence, for example) gives you food
-poisoning, which kills in a fixed number of turns. You'll see
-"You feel deathly sick." **Cures:** a unicorn horn (apply it), pray,
-eat a eucalyptus leaf, or vomit (by being satiated and eating
-more). Vomiting from other causes also cures illness. Poison
-resistance does NOT protect against food poisoning (it only
-protects against strength-draining and instant-kill poison).
+**Illness (food poisoning).** Eating a rotten corpse or certain
+attacks (giant ant, etc.) gives you food poisoning, which kills in
+10–19 turns ("You feel deathly sick."). **Cures:** a unicorn horn
+(apply it), pray, eat a eucalyptus leaf, or vomit (by being
+satiated and eating more). Vomiting from other causes also cures
+food poisoning. Poison resistance does NOT protect against food
+poisoning — that's *sickness resistance*, a separate intrinsic.
+
+**Pestilence's terminal illness** is the harder cousin: it's
+`SICK_NONVOMITABLE`, so vomiting won't clear it, and the timer is
+Constitution-dependent (~20+Con turns). The cures that *do* work:
+unicorn horn, prayer, eucalyptus leaf.
 
 **Sinking in lava.** Falling into lava without levitation or fire
 resistance gives you a few turns to escape before you sink and die.
@@ -2232,12 +2248,13 @@ Your inventory is also at risk. **Cures:** prayer, levitation
 you can. Fire resistance prevents the damage but doesn't prevent
 sinking. Lava immersion also destroys most of your inventory.
 
-**Drowning (being held).** When grabbed by an eel or kraken while
-in water, you have a few turns to escape before drowning. If
-you're burdened, you may not get even one turn. **Cures:** magical
-breathing (amulet or spell), kill or teleport the eel before it
-pulls you under, stay unburdened near water, or avoid the water
-entirely.
+**Drowning (being held).** When grabbed by an eel or kraken in
+water, you have a few turns to escape before drowning. The drown
+check uses the eel's tile, so levitation, water walking, and
+encumbrance status are irrelevant once the grab lands. **Cures:**
+magical breathing (amulet or spell), kill or teleport the eel
+before it pulls you under, or avoid water entirely. See
+*Drowning* in Dangerous Encounters for the full picture.
 
 **Strangulation.** Wearing a cursed amulet of strangulation slowly
 kills you over a few turns. **Cure:** remove the amulet (requires
@@ -7058,6 +7075,7 @@ All polearms are two-handed. To strike at range, `#apply` the weapon (not wield-
 :::
 
 #### Sling
+<!-- audit 2026-05-18 #90: sling stats verified vs objects.h:403. Corrected "Trains sling skill from any rock you pick up" — wrong. Per weapon.c:1750, ammo alone doesn't train skill (comment explicitly notes touchstone-Archeologist exclusion); training comes from hits while wielding a sling. Caveman starts with one sling. Sling launches rocks, gems, and flint stones. See companion-audit.md. -->
 
 ::: dense-table
 
@@ -7436,6 +7454,7 @@ All imps and minor demons follow you up and down stairs. All except *imp* also a
 :::
 
 #### Jellies `j`
+<!-- audit 2026-05-18 #91: 3 rows verified clean vs monsters.h:591-620. Added corpse-intrinsic notes per eat.c mconveys: blue jelly = cold + poison resistance, spotted/ochre = temporary acid + stone resistance. 0d6 passive still inflicts the AD_COLD/AD_ACID side effect (item damage on acid), but damage on the dice is literal. See companion-audit.md. -->
 
 Stationary or near-stationary. The blue jelly's passive cold and the spotted jelly's passive acid bite even when you hit them.
 
@@ -7445,9 +7464,9 @@ All jellies are amorphous and mindless.
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
-| blue jelly | blue | 4 | 0 | 8 | 10 | passive 0d6 cold |  |
-| spotted jelly | green | 5 | 0 | 8 | 10 | passive 0d6 acid |  |
-| ochre jelly | brown | 6 | 3 | 8 | 20 | engulf 3d6 acid · passive 3d6 acid |  |
+| blue jelly | blue | 4 | 0 | 8 | 10 | passive 0d6 cold | corpse: cold + poison resistance. |
+| spotted jelly | green | 5 | 0 | 8 | 10 | passive 0d6 acid | corpse: temp acid + stone resistance. |
+| ochre jelly | brown | 6 | 3 | 8 | 20 | engulf 3d6 acid · passive 3d6 acid | corpse: temp acid + stone resistance. |
 
 :::
 
@@ -7991,6 +8010,8 @@ Big melee brutes that wield weapons. Drop decent weapons and armor.
 #### Puddings and oozes `P`
 
 Splits when you hit them. Brown puddings corrode armor on touch; black puddings corrode both armor and weapons. Fire-kill them so they don't split, or pick a chokepoint.
+
+**Green slime** is a Gehennom-only exception: it doesn't split, leaves a glob instead of a corpse, and its touch starts a 9-turn countdown to becoming a green slime yourself. Treat it as a delayed-death encounter. Fight it at range, burn it (and yourself, if necessary) with fire, or have an **amulet of unchanging** ready (blocks the sliming and aborts a transformation already underway). Prayer would cure sliming — but it doesn't work in Gehennom, so don't rely on it. Cancellation negates the touch attack. Don't eat the glob; don't engulf or digest one as a polyform.
 
 All puddings and oozes are amorphous, mindless, cold-resistant, poison-resistant, acid-resistant, and petrification-resistant. All except *gray ooze* also are shock-resistant.
 

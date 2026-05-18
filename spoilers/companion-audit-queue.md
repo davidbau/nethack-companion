@@ -94,10 +94,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 87**  L 6237  (  13 lines)   ↳ Voluntary Challenges → Illiterate
 - [x] **# 88**  L 2344  (  70 lines)   ↳ A Practical Identification Strategy → Blessed, Uncursed, Cursed
 - [x] **# 89**  L 7358  (  19 lines)   ↳ Bestiary Tables → Orcs `o`
-- [ ] **# 90**  L 6907  (  10 lines)   ↳ Weapons Tables → Sling
-- [ ] **# 91**  L 7281  (  16 lines)   ↳ Bestiary Tables → Jellies `j`
-- [ ] **# 92**  L 1240  (  17 lines)   ↳ Traps and Hazards → Searching and Detection
-- [ ] **# 93**  L 2111  (  41 lines)   ↳ Dangerous Encounters → Delayed Deaths
+- [x] **# 90**  L 6907  (  10 lines)   ↳ Weapons Tables → Sling
+- [x] **# 91**  L 7281  (  16 lines)   ↳ Bestiary Tables → Jellies `j`
+- [x] **# 92**  L 1240  (  17 lines)   ↳ Traps and Hazards → Searching and Detection
+- [x] **# 93**  L 2111  (  41 lines)   ↳ Dangerous Encounters → Delayed Deaths
 - [ ] **# 94**  L 5731  (  99 lines)   ↳ Sokoban Solutions → Level 2, Version B
 - [ ] **# 95**  L 6917  (  10 lines)   ↳ Weapons Tables → Dart
 - [ ] **# 96**  L 6937  (  12 lines)   ↳ Weapons Tables → Boomerang

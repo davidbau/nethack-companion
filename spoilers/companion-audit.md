@@ -3395,3 +3395,101 @@ against monsters.h:727-796 (full S_ORC coverage). 1 corrected.
    only one ATTK(AT_MAGC, AD_SPEL); the other 5 slots are NO_ATTK.
    Changed to a single "spell".
 
+
+---
+
+## 2026-05-18 — Chapter audit #90: Sling
+
+Source: `spoilers/companion.md` line 7060. Stats clean. 1 correction.
+
+### Verified
+- sling wt 3, cost 20, leather, hitbon 0 — objects.h:403.
+- BOW macro hardcoded 1d2 melee (consistent with bow/crossbow "—" notation).
+- Caveman starts with one sling (u_init.c:70).
+
+### Corrected
+1. **"Trains sling skill from any rock you pick up"** — false. Per
+   weapon.c:1750 comment, ammo alone doesn't train skill (explicitly
+   prevents touchstone-Archeologist from giving sling skill).
+   Training requires hits while wielding the sling.
+
+---
+
+## 2026-05-18 — Chapter audit #91: Jellies `j`
+
+Source: `spoilers/companion.md` line 7439. 3 rows verified clean
+vs monsters.h:591-620.
+
+### Added
+- Corpse-intrinsic notes: blue jelly = cold + poison res; spotted/ochre
+  = temporary acid + stone res (per eat.c mconveys).
+
+---
+
+## 2026-05-18 — Chapter audit #92: Searching and Detection
+
+Source: `spoilers/companion.md` line 1277. 1 correction + clarification.
+
+### Verified
+- `s` searches for hidden monsters, traps, secret doors, secret corridors
+  (detect.c:2016-2093).
+- Luck improves search via rnl bias (rnd.c:112).
+- Pets avoid known traps with 39/40 chance (monmove.c:2287).
+- Flying/levitation skip most floor traps.
+
+### Corrected
+1. **"Wand of secret door detection reveals traps in its path"** — wrong
+   directional framing. WAN_SECRET_DOOR_DETECTION is NODIR (objects.h:1451);
+   findit() reveals everything hidden in a square radius (BOLT_LIM) around
+   the player: SDOOR, SCORR, traps, trapped chests, hidden mimics.
+2. Clarified: artifact/lenses search bonus (the rnl(7-fund) path) only
+   speeds up secret-door / secret-corridor discovery, not trap finding
+   (which uses rnl(8) without fund).
+3. Added: Flying/levitation immune to *most* floor traps but not magic,
+   teleport, or anti-magic traps.
+
+---
+
+## 2026-05-18 — Chapter audit #93: Delayed Deaths
+
+Source: `spoilers/companion.md` line 2212. Substantial corrections.
+
+### Verified
+- Sliming cure paths (timeout.c:448 burn_away_slime; pray.c:385).
+- Food poisoning message (potion.c:154 "You feel deathly sick.").
+- Eucalyptus cures both food poisoning and vomiting (eat.c:2576).
+- Unicorn horn + prayer cure sickness/strangulation/lava.
+- Strangulation timer 6 turns (do_wear.c:1036).
+- Fire-resistant hero takes 1 HP/turn in lava but doesn't boil-away
+  (trap.c:6965).
+- Withering correctly absent (doesn't exist in 5.0 C source).
+
+### Corrected
+1. **"Change form via polymorph" cures sliming** — partially wrong.
+   Per polyself.c:842, polymorph only cures sliming if you become a
+   flaming form OR a green slime; a casual polymorph into a giant rat
+   doesn't. Clarified.
+2. **"Burdened, you may not get even one turn" + "stay unburdened
+   near water"** for drowning — duplicates the error already fixed in
+   the main Drowning section. Drown check uses the eel's tile, not
+   yours; encumbrance is irrelevant once the grab lands. Reworded.
+3. **"Vomiting from other causes also cures illness"** — only
+   SICK_VOMITABLE (food poisoning). Pestilence's SICK_NONVOMITABLE
+   cannot be vomited away. Split into separate paragraphs.
+4. **Prayer as a slime cure** — would work outside Gehennom, but
+   green slime is Gehennom-only and prayer fails there. Caveat added.
+
+### Added
+- 9-turn slime timer (eat.c:854, uhitm.c:3199, polyself.c:456).
+- Food poisoning timer range 10-19 turns (eat.c:1909).
+- Pestilence-specific paragraph (Con-based timer, non-vomitable).
+- Amulet of unchanging blocks sliming entirely.
+- Cancellation negates the slime touch attack.
+- Cure-sickness spell cures sliming.
+
+### Related — Puddings and oozes section update
+- Added a paragraph in the bestiary "Puddings and oozes" intro
+  explaining green slime is a Gehennom-only exception (no split,
+  leaves glob not corpse, 9-turn touch transformation, defense
+  list incl. amulet of unchanging, why prayer is unreliable here).
+
