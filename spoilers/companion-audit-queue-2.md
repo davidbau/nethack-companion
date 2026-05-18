@@ -44,11 +44,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 33**  L 7283  (  12 lines)     ↳ Weapons Tables → Saber
 - [x] **# 34**  L 2955  (   9 lines)     ↳ A Practical Identification Strategy → The Sink Test (Rings)
 - [x] **# 35**  L 7399  (  12 lines)     ↳ Weapons Tables → Flail
-- [ ] **# 36**  L  327  (  49 lines)   📖 What to Pack
-- [ ] **# 37**  L 8433  (  17 lines)     ↳ Bestiary Tables → Bats and birds `B`
-- [ ] **# 38**  L 3178  ( 143 lines)   📖 Provisions and Dining
-- [ ] **# 39**  L 8135  (  19 lines)     ↳ Bestiary Tables → Kobolds `k`
-- [ ] **# 40**  L 8039  (  25 lines)     ↳ Bestiary Tables → Felines `f`
+- [x] **# 36**  L  327  (  49 lines)   📖 What to Pack
+- [x] **# 37**  L 8433  (  17 lines)     ↳ Bestiary Tables → Bats and birds `B`
+- [x] **# 38**  L 3178  ( 143 lines)   📖 Provisions and Dining
+- [x] **# 39**  L 8135  (  19 lines)     ↳ Bestiary Tables → Kobolds `k`
+- [x] **# 40**  L 8039  (  25 lines)     ↳ Bestiary Tables → Felines `f`
 - [ ] **# 41**  L 8628  (  23 lines)     ↳ Bestiary Tables → Mummies `M`
 - [ ] **# 42**  L 1256  (  54 lines)     ↳ Traps and Hazards → Dangerous Traps
 - [ ] **# 43**  L 4670  ( 132 lines)   📖 The Art of Combat

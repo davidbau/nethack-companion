@@ -7410,3 +7410,92 @@ Source: `spoilers/companion.md` line 7415. No corrections (re-audit clean).
 - No FLAIL or GRAPPLING_HOOK artifact in `include/artilist.h`.
 
 ---
+
+## 2026-05-18 — v2 audit #36: What to Pack
+
+Source: `spoilers/companion.md` line 327. No corrections (re-audit clean).
+
+### Verified
+- Per-role inventory from `src/u_init.c`.
+- Pet step-around at `src/dogmove.c:145` + 991-1077.
+- Floating-eye paralysis at `src/uhitm.c:6022`.
+- Touchstone gem-ID at `src/apply.c:2742-2750`.
+- Burdened status label at `src/botl.c:12`.
+- Food ration 800 nut / wt 20 at `include/objects.h:1110`.
+
+---
+
+## 2026-05-18 — v2 audit #37: Bestiary Tables — Bats and birds `B`
+
+Source: `spoilers/companion.md` line 8449. 1 voice/factual tightening.
+
+### Wrong → fixed
+- **"Vampire bats drain Strength on the second bite"**: misleading framing. The AD_DRST is the second *attack slot* (not a sequential second bite); both slots roll independently each turn (`!rn2(8)` at `src/uhitm.c:3154`). Reworded to "Vampire bats drain Strength with a poisoned bite (poison resistance blocks it)."
+
+### Verified
+- All four rows (bat / giant bat / raven / vampire bat) match `include/monsters.h:1269-1297` exactly.
+- All carry M1_FLY.
+- Erratic-fly behavior from S_BAT class branch at `src/monmove.c:1870-1871` (1/3 chance to wander).
+- Poison resistance blocks the drain via `poisoned()` at `src/attrib.c:338-343`.
+
+### Notes
+- The auditor flagged that `poisoned()` can also instakill or do HP damage in rare branches; per no-trivia, not added — the practical advice ("get poison resistance") is unchanged.
+
+---
+
+## 2026-05-18 — v2 audit #38: Provisions and Dining
+
+Source: `spoilers/companion.md` line 3190. 3 factual corrections + 1 wisdom adjustment.
+
+### Wrong → fixed
+- **"1–50 | Weak | Movement slowed."**: wrong effect. Weak imposes a -1 Strength penalty via ATEMP (`attrib.c:471` via `eat.c:3455`), not movement slowing. Reworded.
+- **"Blessed tins open instantly."**: incomplete. Only a *blessed tin opener* guarantees instant; with an ordinary tin opener a blessed tin still rolls `rn2(2)` (50/50 between instant and one turn) at `eat.c:1740-1745`. Reworded.
+- **"about 25 turns to vanish"** (globs): misread. 25 turns is the shrink *interval* per `mkobj.c:1487-1490`; a fresh weight-20 glob lasts ~500 turns total (the source comment says "twice as long as the average corpse"). Reworded.
+
+### Wisdom adjustment
+- **"Eat corpses within a few turns of the kill"**: understates the safe window. The rotted check at `eat.c:1887-1895, 1939` uses `(moves - age) / (10 + rn2(20)) > 5` — corpses are safe roughly 50 turns before tainting becomes a real risk. "A few turns" makes beginners discard usable food. Expanded to "30 to 50 turns."
+
+### Verified
+- Hunger thresholds (Satiated >1000, Hungry 51-150, Weak 1-50, Fainting ≤0) at `eat.c:3369-3372`.
+- Base hunger -1/turn, sleep cuts to ~10% at `eat.c:3174-3179`.
+- Encumbrance hunger fires only past Stressed at `eat.c:3197`.
+- Food ration 800/20, lembas 800/5 at `objects.h:1106-1111`.
+- Elven starting inventory swaps cram for lembas at `u_init.c:234`.
+- Cannibalism `-rn1(4,2)` luck + aggravate, Caveman/Orc exempt at `eat.c:51, 770-786`.
+- Prayer cures starvation at Weak or below at `pray.c:216`.
+- Corpse intrinsic table verified against `include/monsters.h` mconveys masks.
+- Vegan/vegetarian macros at `include/mondata.h:232-241`.
+
+### Notes
+- "Never eat cockatrice corpse" is strictly true for unprepared characters; the auditor flagged that stone-resistant + gloved players can sometimes eat cockatrice tins, but per no-trivia this edge case is omitted.
+
+---
+
+## 2026-05-18 — v2 audit #39: Bestiary Tables — Kobolds `k`
+
+Source: `spoilers/companion.md` line 8151. 1 voice/factual fix plus a drive-by on Gnomes.
+
+### Wrong → fixed
+- **kobold shaman row "spell spell"**: implies two attacks. The C source has only one AT_MAGC/AD_SPEL attack at `include/monsters.h:651`. Changed to "cast spell" matching the AT_MAGC convention used elsewhere (Naga golden, etc.).
+- **gnomish wizard row "spell spell"** (line 8569, in the Gnomes section): same bug — single AT_MAGC/AD_SPEL at `monsters.h:1697`. Changed to "cast spell" in a drive-by fix; Gnomes badge updated to note this.
+
+### Verified
+- All four kobold rows match `include/monsters.h:624-656`.
+- All carry M1_POIS|MR_POISON.
+
+---
+
+## 2026-05-18 — v2 audit #40: Bestiary Tables — Felines `f`
+
+Source: `spoilers/companion.md` line 8055. No corrections (re-audit clean).
+
+### Verified
+- All 8 rows match `include/monsters.h:381-444`: kitten, housecat, jaguar, lynx, panther, large cat, tiger, displacer beast.
+- M2_DOMESTIC on kitten/housecat/large cat (tameable); M2_HOSTILE on the wild rows.
+- Displacer beast carries M3_DISPLACES.
+- Wizard always gets kitten via `urole.petnum=PM_KITTEN` (`role.c:548`).
+
+### Notes
+- Intro lists Valkyrie and Tourist as 50/50 kitten/dog, but Archeologist, Healer, Priest, Monk, Rogue, and Ranger also default to 50/50 when `urole.petnum` is `NON_PM` (`dog.c:93-100`). Only Wizard is guaranteed. Phrasing isn't wrong, just slightly partial; left as-is per preserve-voice.
+
+---

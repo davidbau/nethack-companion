@@ -323,7 +323,7 @@ Mazes offer, which is to say it's still very hard.
 
 ---
 
-<!-- audit 2026-05-18 #170: qualitative section, no numeric claims to refute. Spot-checked: tripe rations are "dog food" for typical PCs (eat.c:2138-2145) but orcs and carnivores enjoy them (eat.c:2132-2136); altar blessed/cursed flash at do.c:363-389 (amber/black) sets bknown; pets avoid cursed items per dogmove.c:535-536, 1065-1067; touchstone gem-ID at apply.c:2658-2696; floating-eye paralysis at uhitm.c:5853, 6022. 0 corrections. See companion-audit.md. -->
+<!-- audit 2026-05-18 #170 (re-audit 2026-05-18 v2 #36): qualitative section, no numeric claims to refute. Spot-checked: tripe rations are "dog food" for typical PCs (eat.c:2138-2145) but orcs and carnivores enjoy them (eat.c:2132-2136); altar blessed/cursed flash at do.c:363-389 (amber/black) sets bknown; pets avoid cursed items per dogmove.c:535-536, 1065-1067; touchstone gem-ID at apply.c:2658-2696; floating-eye paralysis at uhitm.c:5853, 6022. v2 also confirmed Burdened status label at botl.c:12, food ration weight/nutrition at objects.h:1110, role inventory tables at u_init.c. 0 corrections. See companion-audit.md. -->
 ### What to Pack
 
 Any good travel guide will tell you what to bring. Ours has the
@@ -3188,7 +3188,7 @@ and you'll rarely be surprised.
 ---
 
 ### Provisions and Dining
-<!-- audit 2026-05-18 #77: many claims verified clean (food nutritions, cannibalism penalty, prayer tiers, slow digestion, tin opening, lizard cures stoning, newt-zap, wraith corpse level, stalker corpse invis+see-invis). Corrected 6: gelatinous cube grants only fire/cold/shock/sleep (not poison/acid/stoning); disenchanter corpse STRIPS an intrinsic (not "intrinsic protection"); hunger threshold table off-by-one (now uses strict bounds); encumbrance kicks in at Stressed not Burdened (eat.c:3197 near_capacity > SLT_ENCUMBER); split fire-giant from fire-ant row (giants give Str on eat); red/brown mold also grant poison resistance; clarified vegetarian-vs-vegan eggs distinction. See companion-audit.md. -->
+<!-- audit 2026-05-18 #77: many claims verified clean (food nutritions, cannibalism penalty, prayer tiers, slow digestion, tin opening, lizard cures stoning, newt-zap, wraith corpse level, stalker corpse invis+see-invis). Corrected 6: gelatinous cube grants only fire/cold/shock/sleep (not poison/acid/stoning); disenchanter corpse STRIPS an intrinsic (not "intrinsic protection"); hunger threshold table off-by-one (now uses strict bounds); encumbrance kicks in at Stressed not Burdened (eat.c:3197 near_capacity > SLT_ENCUMBER); split fire-giant from fire-ant row (giants give Str on eat); red/brown mold also grant poison resistance; clarified vegetarian-vs-vegan eggs distinction. v2 audit 2026-05-18 #38: three factual fixes. (a) Weak status effect was "movement slowed" — actually a -1 Str ATEMP penalty (attrib.c:471 via eat.c:3455), not a speed change. (b) "Blessed tins open instantly" was incomplete — that's only with a blessed tin opener (eat.c:1740-1745); with an ordinary tin opener a blessed tin still rolls rn2(2), so 50/50 between instant and one turn. (c) Glob lifetime "about 25 turns to vanish" misread the shrink interval — globs lose 1 weight unit per ~25 turns (mkobj.c:1487-1490 comment "twice as long as the average corpse"), so a fresh weight-20 glob lasts ~500 turns. Also corpse-eat window expanded from "a few turns" to 30-50 turns (rotted threshold at eat.c:1887-1939 makes corpses safe for ~50 turns). See companion-audit.md. -->
 
 Of all the things that kill adventurers in the Mazes of Menace (the
 dragons, the liches, the cockatrices, the inexplicable decision to
@@ -3216,7 +3216,7 @@ When nutrition drops below certain thresholds, you get warnings:
 | above 1000 | Satiated  | Overfull. Eating more risks choking.      |
 | 151–1000   | Normal    | Fine.                                     |
 | 51–150     | Hungry    | Warning message. Time to eat.             |
-| 1–50       | Weak      | Movement slowed. Pray if possible.        |
+| 1–50       | Weak      | Strength penalty (-1 Str). Pray if possible. |
 | 0 or below | Fainting  | Collapse randomly. Eat NOW or die.        |
 
 Eat when you get the "Hungry" message; don't wait for "Weak." If
@@ -3233,8 +3233,8 @@ your nutrition comes from **monster corpses you leave on the
 floor**. Every fresh kill is a meal. Don't burn food rations
 while there's a freshly dead rat at your feet. A few rules:
 
-- Eat corpses within a few turns of the kill, or they rot and cause
-  food poisoning (lethal without treatment).
+- Eat corpses within 30 to 50 turns of the kill. Past that they risk
+  being tainted, which means food poisoning (lethal without treatment).
 - Never eat old corpses. If in doubt, don't eat it.
 - Some corpses grant intrinsic resistances (poison resistance from
   killer bees, fire resistance from fire giants, etc.). Eat these
@@ -3256,8 +3256,9 @@ pets love them. Save tripe for your pet.
 
 **Tins** are preserved food that never spoils. They take several
 turns to open (one turn with a tin opener, three with a dagger,
-more with bare hands). Blessed tins open instantly. A tin of
-spinach increases your strength.
+more with bare hands). Blessed tins open quickly — instantly with
+a blessed tin opener, otherwise a coin-flip between instant and
+one turn. A tin of spinach increases your strength.
 
 **Vegetarian characters** have to live on rations, lembas, fruits,
 and the small set of non-meat corpses (fungi, molds, lichens,
@@ -3314,10 +3315,11 @@ not just the first.
 
 **Globs vs corpses.** Puddings (gray ooze, brown pudding, black
 pudding) and acid blobs in 5.0 leave **globs** instead of corpses.
-Globs sit on the floor and shrink over time (about 25 turns to
-vanish), so eat them sooner than you would a corpse — and globs
-of the same color stack, so saving up a pile of brown pudding
-globs lets you re-roll shock resistance until you get it.
+Globs sit on the floor and shrink slowly (about one weight unit
+every 25 turns, so a fresh glob lasts about 500 turns — twice as
+long as a corpse) — and globs of the same color stack, so saving
+up a pile of brown pudding globs lets you re-roll shock resistance
+until you get it.
 
 #### Food Strategy
 
@@ -8053,7 +8055,7 @@ All eyes and spheres fly. All except *floating eye* also are mindless.
 :::
 
 #### Felines `f`
-<!-- audit 2026-05-18 #147: all stats clean against monsters.h:381-444. Two minor reframings: (1) "Tigers are good early companions if tamed" — tigers are M2_HOSTILE (not M2_DOMESTIC) and difficulty 8, so they're tameable only with charm-monster/scroll-of-taming/magic-flute, not via tripe-feeding, and not really "early." (2) Kittens — only Wizard guarantees a kitten via urole.petnum=PM_KITTEN (role.c:548); Valkyrie/Tourist roll 50/50 kitten-or-dog via dog.c:90-101. Reworded the intro. -->
+<!-- audit 2026-05-18 #147 (re-audit 2026-05-18 v2 #40): all stats clean against monsters.h:381-444. Two minor reframings: (1) "Tigers are good early companions if tamed" — tigers are M2_HOSTILE (not M2_DOMESTIC) and difficulty 8, so they're tameable only with charm-monster/scroll-of-taming/magic-flute, not via tripe-feeding, and not really "early." (2) Kittens — only Wizard guarantees a kitten via urole.petnum=PM_KITTEN (role.c:548); Valkyrie/Tourist roll 50/50 kitten-or-dog via dog.c:90-101. Reworded the intro. v2 re-verified all 8 rows against monsters.h:381-444. 0 corrections. See companion-audit.md. -->
 
 Cats. Kittens are common starting pets (Wizards always start with
 one; Valkyries and Tourists roll 50/50 between kitten and little
@@ -8149,7 +8151,7 @@ All jellies are amorphous and mindless.
 :::
 
 #### Kobolds `k`
-<!-- audit 2026-05-18 #143: clean. All four stat rows match monsters.h:624-656. Kobold/large-kobold/kobold-lord/kobold-shaman all carry M1_POIS (poisonous corpse) and MR_POISON (poison resistance). Shaman uses AT_MAGC/AD_SPEL via mcastu.c. -->
+<!-- audit 2026-05-18 #143 (re-audit 2026-05-18 v2 #39): clean. All four stat rows match monsters.h:624-656. Kobold/large-kobold/kobold-lord/kobold-shaman all carry M1_POIS (poisonous corpse) and MR_POISON (poison resistance). Shaman uses AT_MAGC/AD_SPEL via mcastu.c. v2 fixed the shaman attack notation: kobold shaman has only one AT_MAGC/AD_SPEL attack (monsters.h:651), so "spell spell" implied two attacks; changed to "cast spell" matching the AT_MAGC convention used elsewhere (already in golden naga row after v2 #25). Same notation bug also fixed in the gnomish wizard row at line 8569. See companion-audit.md. -->
 
 
 Weak early-game fodder. Most are poisonous to eat — leave the corpses unless you have poison resistance.
@@ -8163,7 +8165,7 @@ All kobolds have poisonous corpses and are poison-resistant.
 | kobold | brown | 0 | 6 | 10 | 0 | weapon 1d4 |  |
 | large kobold | red | 1 | 6 | 10 | 0 | weapon 1d6 |  |
 | kobold lord | magenta | 2 | 6 | 10 | 0 | weapon 2d4 |  |
-| kobold shaman | bright-blue | 2 | 6 | 6 | 10 | spell spell |  |
+| kobold shaman | bright-blue | 2 | 6 | 6 | 10 | cast spell |  |
 
 :::
 
@@ -8445,10 +8447,10 @@ All angelic beings follow you up and down stairs. All except *Aleax* also fly. A
 
 :::
 
-<!-- audit 2026-05-18 #156: vampire bat — "lycanthropy" claim was wrong (AD_WERE is were-creatures, not bats); the 2nd bite is AD_DRST (Str-drain, poison-flavored). Roster + flags otherwise match monsters.h:1269-1297. See companion-audit.md. -->
+<!-- audit 2026-05-18 #156 (re-audit 2026-05-18 v2 #37): vampire bat — "lycanthropy" claim was wrong (AD_WERE is were-creatures, not bats); the 2nd bite is AD_DRST (Str-drain, poison-flavored). Roster + flags otherwise match monsters.h:1269-1297. v2: replaced "on the second bite" framing — both AT_BITE slots roll independently each turn (uhitm.c:3149-3157, !rn2(8)), not sequentially. Also confirmed all four rows match monsters.h:1269-1297. Erratic-fly behavior from S_BAT class branch at monmove.c:1870-1871. 0 other corrections. See companion-audit.md. -->
 #### Bats and birds `B`
 
-Erratic flyers, mostly nuisance. Vampire bats drain Strength on the second bite (poison-flavored; poison resistance blocks it).
+Erratic flyers, mostly nuisance. Vampire bats drain Strength with a poisoned bite (poison resistance blocks it).
 
 All bats and birds fly.
 
@@ -8556,7 +8558,7 @@ All fungi and molds are mindless.
 :::
 
 #### Gnomes `G`
-<!-- audit 2026-05-17 #22: 22 cells verified, 0 corrected. All four S_GNOME entries match monsters.h. No "deep gnome" exists in 5.0 (correctly omitted). See companion-audit.md. -->
+<!-- audit 2026-05-17 #22: 22 cells verified, 0 corrected. All four S_GNOME entries match monsters.h. No "deep gnome" exists in 5.0 (correctly omitted). v2 audit 2026-05-18 #39 (drive-by): gnomish wizard row had the same "spell spell" two-attacks-implied bug as kobold shaman — gnomish wizard has only one AT_MAGC/AD_SPEL at monsters.h:1697. Changed to "cast spell". -->
 
 Mines residents. Gnomish PCs find most of them peaceful. The gnome lord and gnomish wizard are real threats; the gnome king is rare but dangerous.
 
@@ -8566,7 +8568,7 @@ Mines residents. Gnomish PCs find most of them peaceful. The gnome lord and gnom
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | gnome | brown | 1 | 6 | 10 | 4 | weapon 1d6 |  |
 | gnome lord | blue | 3 | 8 | 10 | 4 | weapon 1d8 |  |
-| gnomish wizard | bright-blue | 3 | 10 | 4 | 10 | spell spell |  |
+| gnomish wizard | bright-blue | 3 | 10 | 4 | 10 | cast spell |  |
 | gnome king | magenta | 5 | 10 | 10 | 20 | weapon 2d6 |  |
 
 :::
