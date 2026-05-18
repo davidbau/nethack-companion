@@ -4145,10 +4145,12 @@ odds; every other Lawful role faces 1-in-30.
 weapon. It's silver (extra damage to many monsters), halves
 incoming physical damage, and grants hallucination resistance.
 
-**Mjollnir** is the Valkyrie's signature throw-and-return weapon, but
-only with Strength 25 (gauntlets of power or rings of gain strength
-get you there). Its +d24 shock damage is brutal against anything not
-shock-resistant.
+**Mjollnir** is the Valkyrie's signature throw-and-return weapon —
+and only Valkyries get the reliable 99% catch-back. Other roles can
+wield it for melee but won't reliably catch it on the return throw.
+It needs Strength 25 to wield in either case (gauntlets of power
+or rings of gain strength get you there). Its +d24 shock damage
+is brutal against anything not shock-resistant.
 
 **Magicbane** is the Wizard's go-to athame. The combined effect of
 its stun damage, curse protection, and magic resistance — all of
@@ -4175,9 +4177,7 @@ and a shield in the off slot.
 the wishable table doesn't capture: Frost Brand summons a
 snowstorm around you (cold damage to nearby squares), Fire Brand
 summons a firestorm. Either one clears the room around you when
-you're cornered. Mjollnir, by contrast, only reliably returns
-when **thrown by a Valkyrie**; other roles can throw it but
-won't get the 99% catch-back.
+you're cornered.
 
 **Snickersnee** got a major buff in 5.0: it now counts as a polearm
 even when you're on foot (regular pole weapons require a steed). Once
