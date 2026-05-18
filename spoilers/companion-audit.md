@@ -6861,3 +6861,154 @@ Source: `spoilers/companion.md` line 7315. 1 factual completion, 1 voice tighten
 - The pass-1 audit badge text says "ANY alignment rolls 1-in-30 at XL 5+" — slightly sloppy since Knights are 1-in-6 regardless. Cosmetic only; left.
 
 ---
+
+## 2026-05-18 — v2 audit #11: Branches and Landmarks — The Gnomish Mines
+
+Source: `spoilers/companion.md` line 876. 1 factual correction, 2 wisdom adjustments, 6 voice tightenings.
+
+### Wrong → fixed
+- **"populated primarily by gnomes, dwarves, and the occasional dwarf lord"**: `dat/minefill.lua:36-44` places 6-8 gnomes plus exactly **one guaranteed gnome lord**, two dwarves, two random gnome-class slots, and a 50/50 humanoid slot. The "occasional dwarf lord" framing misses the guaranteed gnome lord and the fact that the random-humanoid slot can roll a **mind flayer** — the classic "minesflayer" disaster. Reworded.
+
+### Verified
+- Mines branch DL 2-4 at `dat/dungeon.lua:14-19`.
+- Seven Minetown variants at `dat/dungeon.lua:178-185`, including the Orcish Town variant at `dat/minetn-1.lua` with no shops, no priest, iron bars, unaligned shrine.
+- All three Mine's End variants seed a not-cursed achievement-flagged luckstone at `dat/minend-{1,2,3}.lua`.
+- Fake-luckstone mimic placement at `dat/minend-1.lua:59` (plus mimics for loadstone, flint, touchstone, and a real loadstone).
+- Race-peaceful gnomes/dwarves for gnomish PCs via `src/role.c:654` lovemask.
+
+### Wisdom adjustments
+- "Relatively comfortable detour" softened to "easier passage up top", with explicit note that the bottom levels remain hazardous (the deeper Mines still spawn the hostile non-gnome filler).
+- Added the minesflayer warning to the monster-mix paragraph.
+
+### Voice tightenings
+- "Everyone else will need to fight through a modest but steady stream of hostile gnomes." → "Everyone else fights through hostile gnomes."
+- "Usually it's a small settlement with shops and a temple, and it's worth visiting early." → "It's a small settlement with shops and a temple. Visit early."
+- "If the altar matches your alignment, you've found a safe place to identify items by dropping them on it." → "A coaligned altar BUC-tests anything you drop on it."
+- "Izchak's lighting store ... is the clean answer: buy seven there." → "Buy seven from Izchak's lighting store."
+- "you'll get one wherever you arrive" → "Every layout seeds a not-cursed luckstone."
+- Nested parenthetical on the fake-luckstone mimic promoted to plain prose.
+
+### Close calls / notes
+- Mine's End depth (DL ~10-13) is not stated in the section; not required, but could be added in one clause later.
+
+---
+
+## 2026-05-18 — v2 audit #12: Weapons Tables — Mace
+
+Source: `spoilers/companion.md` line 7386. 2 factual corrections.
+
+### Wrong → fixed
+- **Demonbane row "+d5/+0 silver mace"**: `PHYS(5, 0)` doesn't mean "+5 to-hit, +0 damage." `damn=5` provides `rnd(5)` to-hit via `spec_abon` (`src/artifact.c:1083-1085`), and `damd=0` returns `max(tmp, 1)` in `spec_dbon` (`src/artifact.c:1106-1107`) — which doubles base damage versus demons. Demonbane also has a banish invoke. Reworded to "+1d5 to-hit and double damage versus demons, plus a banish invoke."
+- **Silver mace row "Bonus damage to demons, undead, and shape-changers"**: the silver +1d20 bonus at `src/uhitm.c:1376-1377` fires only on `hates_silver` targets — demons, weres, vampires, shades, and most imps (`src/mondata.c:524-528`). "Undead" is too broad (mummies, zombies, ghosts, liches don't qualify); "shape-changers" is too broad (chameleons don't). Magnitude (+1d20) was unstated. Reworded.
+
+### Verified
+- mace stats 1d6+1 / 1d6, wt 30, cost 5, iron at `include/objects.h:355-358`.
+- silver mace stats 1d6+1 / 1d6, wt 36, cost 60, silver at `include/objects.h:359-361`.
+- Demonbane SILVER_MACE, A_LAWFUL, `role=PM_PRIEST`, banish invoke at `include/artilist.h:162-164`.
+- Sceptre of Might is also a MACE artifact at `include/artilist.h:232-235`. Added to the row notes.
+- Mjollnir is a WAR_HAMMER (correctly excluded from this section).
+- Role caps for P_MACE: Caveman / Priest Expert; Archeologist / Knight / Samurai Skilled; Healer / Tourist / Valkyrie Basic; Wizard not listed.
+
+### Notes
+- The section was missing an audit badge before this pass. Added one.
+
+---
+
+## 2026-05-18 — v2 audit #13: Enhancing Skills
+
+Source: `spoilers/companion.md` line 4810. 3 factual corrections, 2 wisdom adjustments, 5 voice tightenings.
+
+### Wrong → fixed
+- **"Non-weapon skills — spell schools, two-weapon, riding, bare hands, martial arts — cost roughly half as many slots as melee weapons"**: two-weapon is treated as a weapon for slot cost per `src/weapon.c:1141` (`if (skill <= P_LAST_WEAPON || skill == P_TWO_WEAPON_COMBAT)`). The spoiler was repeating pre-3.7 lore. Reworded to drop two-weapon from the non-weapon list, with a parenthetical noting "two-weapon uses the weapon column despite the name."
+- **"A Valkyrie aiming for Expert long sword, Expert two-weapon, and Skilled riding is eleven slots deep"**: with correct two-weapon costs that's 6 + 6 + 2 = **fourteen**, not eleven. The 11 figure assumed two-weapon at non-weapon cost (4) and Basic riding (1). Reworded.
+- **"Bare hands and martial arts bonuses still only apply to 50% and 75% of hits respectively"**: conflates *training rate* with *bonus application*. The bonuses apply on **every** hit per `src/weapon.c:1611-1613`; the 50%/75% is the chance a hit *also trains the skill counter*. The earlier paragraph already says this correctly ("The rank still applies on every hit"); this later contradiction was dropped.
+
+### Verified
+- Skill tiers and the `level²×20` cumulative practice (20/80/180/320/500) match `include/skills.h:90-106`.
+- Weapon slot costs 1/2/3 and unarmed/martial 1/1/2/2/3 at `src/weapon.c:1130-1152`.
+- 2 starting slots, +1 per XL, +1 from crowning, ceiling 32 at `src/u_init.c:884`, `src/attrib.c:1068-1073`, `src/pray.c:992-994`.
+- Skill-bonus tables for weapon (−4/−2 … +3/+2) and two-weapon (−9/−3 … −3/+1) match `src/weapon.c:1559-1600`.
+- Riding -2/-1/0/0 to-hit and +1/+2 damage at Skilled/Expert at `src/weapon.c:1617-1633, 1712-1725`.
+- Practice award gate `train_weapon_skill = (hmd->dmg > 1)` at `src/uhitm.c:849, 946`.
+- Riding-skill training every 100 successful moves at `src/steed.c:393`.
+- Pre-credit of 20 practice at starting Basic at `src/weapon.c:1801`.
+
+### Wisdom adjustments
+- "Knights should advance it on the first opportunity even though Basic still leaves a −1 to-hit penalty in the saddle" was based on a wrong premise (Knights start at Basic riding per `src/weapon.c:1787-1789`; first opportunity is to push to Skilled). Reworded.
+- "Cone of cold and fireball stop being beams and become room-clearing **explosions**" oversells the footprint — at Skilled the cast becomes a cluster of 2-9 sequential 3×3 explosions clustered near a target square. Reworded to "a cluster of 3×3 explosions you can place at range" in both mentions.
+
+### Voice tightenings
+- Dropped invented in-world reason "the dungeon's quiet subsidy for magic" (violates the don't-invent-reasons rule).
+- "restricted from long swords entirely. Restricted skills don't appear on the `#enhance` menu and can never leave Unskilled" → "restricted from long swords. Restricted skills don't appear on `#enhance` and stay Unskilled."
+- Replaced colorful "the difference between landing the killing blow and watching the monster shrug" with the bare numbers.
+- Dropped "Specialization by decree." meta.
+- "shouldn't expect anything past level 3" clarified as spell-level 3.
+
+---
+
+## 2026-05-18 — v2 audit #14: Branches and Landmarks — Fort Ludios
+
+Source: `spoilers/companion.md` line 1055. 4 factual corrections, 2 wisdom adjustments, 3 voice tightenings.
+
+### Wrong → fixed
+- **"roughly twenty soldiers and a lieutenant"**: `dat/knox.lua:126-142` hard-codes exactly sixteen soldiers and one lieutenant. Reinforcements migrate in via the barracks zoo, so "roughly twenty" is defensible for the live count after a few turns, but the static garrison is sixteen plus one. Reworded.
+- **"a magic portal somewhere around Dlvl 18-22"**: off in two ways. (a) `dat/dungeon.lua:34-38` defines base 18 range 4, so the dungeon.lua hint is DL 18-21 not 18-22. (b) The actual placement code at `src/mklev.c:2647-2651` only requires depth > 10 and above Medusa, so the portal can land as shallow as DL 11. Wiki confirms. Reworded.
+- **"often inside a small vault that requires digging to reach"**: the portal is *always* inside a vault per `src/mklev.c:1331, 2624-2658`. Reworded.
+- **"the only way out is back through the portal or through the walls"**: the level is flagged non-diggable at `dat/knox.lua:35`, so wall-escape doesn't work. `noteleport` only blocks intra-level teleport, so level-teleport (scroll, wand, trap) still works. Reworded.
+
+### Verified
+- Treasury gold: 60 squares at 600-900 zorkmids each, 36000-54000 total at `dat/knox.lua:57-70`.
+- Trap ratio: roughly one in three tiles trapped, mix of land mines and spiked pits at `dat/knox.lua:59-65`.
+- Corner gem caches (diamonds, emeralds, rubies, amethysts) at `dat/knox.lua:155-167`.
+- Four giant eels in the moat, four dragons, stone giant, one lieutenant at `dat/knox.lua:142-154`.
+- Alarm quiets once Croesus dies at `src/do.c:1894-1903`.
+- Croesus G_UNIQ | G_NOGEN, MS_GUARD, hostile, level 20 at `include/monsters.h:2859-2869`.
+
+### Wisdom adjustments
+- "plan to engage him rather than tip-toe around" inverted by community advice: Croesus is covetous and dangerous in melee. Reworded to "shoot or zap him from across the moat."
+- "money for protection rackets or shop purchases" softened — at DL 11-21, protection has gotten very expensive, so Ludios gold is more often spent on identification scrolls or shop stock.
+
+### Voice tightenings
+- "the unique fortress warden and vault guardian" → "Croesus on the throne, the vault guardian himself" (dropped meta "unique").
+- "(a 15×4 treasury holds 36k-54k pieces, though most of the tiles are spiked-pit or land-mine trapped)" promoted to plain prose, with the trapped fraction corrected from "most" to "roughly a third."
+- "decent weapons" → "serviceable weapons."
+
+---
+
+## 2026-05-18 — v2 audit #15: The Apothecary
+
+Source: `spoilers/companion.md` line 3331. 1 factual fix, 3 wisdom adjustments, 4 voice tightenings.
+
+### Wrong → fixed
+- **"One blessed quaff and you're permanently faster for the rest of the game"**: the intrinsic-Fast grant requires only `!otmp->cursed` per `src/potion.c:1066` — an **uncursed** potion of speed also grants permanent intrinsic speed. Blessing only extends the temporary timer that overlays the intrinsic grant. Reworded.
+
+### Verified
+- Price table at L3346-3354 matches every entry in `include/objects.h:1125-1177` (healing 20; booze/fruit juice/see invisible/sickness 50; etc.).
+- Water has fixed "clear" appearance per `include/objects.h:1175-1177`.
+- Holy water altar-prayer mechanic at `src/pray.c:1386-1412`.
+- Gain ability blessed-raises-all vs uncursed-raises-one at `src/potion.c:1029-1048`.
+- Extra healing always cures blindness (`cureblind=TRUE`) and non-cursed cures sickness at `src/potion.c:1131-1133`.
+- Maxhp boost on non-cursed extra (2/5) and full healing (4/8) at `src/potion.c:1132, 1147`.
+- Wand of speed monster self-zap grants 50-74 turns of timed speed only at `src/zap.c:2845-2848` (`speed_up(rn1(25, 50))`).
+- All alchemy recipes match `mixtype()` at `src/potion.c:2122-2208`.
+- Explosion rate 1/10 base, 1/30 with alchemy smock at `src/potion.c:2421`.
+- Cursed dipping target always explodes at `src/potion.c:2419`.
+- Diluted-stack cap of 2 per operation at `src/potion.c:2521-2522`.
+- Unicorn horn purification mappings at `src/potion.c:2151-2159`.
+
+### Wisdom adjustments
+- "never use a cursed potion as a dipping target" reworded to "never let the receiving potion (the one you're dipping into) be cursed" — target/source language can confuse readers.
+- "Drop uncursed water on a co-aligned altar" left as the standard play pattern, but the mechanism also blesses cursed water on the altar (water_prayer at `src/pray.c:1395-1402`). Not changed; the standard pattern is what readers should do.
+- "Treat every gain energy potion like the catalyst it is" left as written. Note: gain level is just as good a catalyst and slightly more common per `include/objects.h` (prob 20 vs 40), but this is a soft point.
+
+### Voice tightenings
+- Lead-in colon ("Ruby liquids, milky fluids, smoky concoctions:") replaced with a period.
+- "Water is the oddity in the $100 group: it always appears as 'clear potion'" replaced with a period.
+- Speed paragraph: semicolon-and-comma chain ("Speed is arguably the single most important buff in NetHack; the difference between moving at normal speed and fast speed is the difference between trading blows and hitting twice before they swing once") split into shorter sentences.
+- "Think of it as artisanal alchemy rather than industrial production." trimmed to "Small batches now, not industrial runs."
+
+### Notes
+- Extra healing also cures hallucination per `src/potion.c:1134`. Not claimed, not wrong, just an omission.
+- Section makes no mention of sink-dip ID, bag-of-holding scatter on explosion, or Gehennom hot-ground potion shatter — those 5.0 changes are absent here. Not wrong, but the chapter could be enriched.
+
+---

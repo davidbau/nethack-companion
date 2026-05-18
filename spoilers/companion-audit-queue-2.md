@@ -19,11 +19,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#  8**  L 8797  (  17 lines)     ↳ Bestiary Tables → Vampires `V`
 - [x] **#  9**  L 5071  ( 120 lines)   📖 Spellcasting
 - [x] **# 10**  L 7308  (  13 lines)     ↳ Weapons Tables → Long sword
-- [ ] **# 11**  L  876  (  50 lines)     ↳ Branches and Landmarks → The Gnomish Mines
-- [ ] **# 12**  L 7376  (  11 lines)     ↳ Weapons Tables → Mace
-- [ ] **# 13**  L 4802  ( 169 lines)   📖 Enhancing Skills
-- [ ] **# 14**  L 1047  (  26 lines)     ↳ Branches and Landmarks → Fort Ludios
-- [ ] **# 15**  L 3321  ( 123 lines)   📖 The Apothecary
+- [x] **# 11**  L  876  (  50 lines)     ↳ Branches and Landmarks → The Gnomish Mines
+- [x] **# 12**  L 7376  (  11 lines)     ↳ Weapons Tables → Mace
+- [x] **# 13**  L 4802  ( 169 lines)   📖 Enhancing Skills
+- [x] **# 14**  L 1047  (  26 lines)     ↳ Branches and Landmarks → Fort Ludios
+- [x] **# 15**  L 3321  ( 123 lines)   📖 The Apothecary
 - [ ] **# 16**  L 7270  (  13 lines)     ↳ Weapons Tables → Short sword
 - [ ] **# 17**  L 2167  (  43 lines)     ↳ Dangerous Encounters → Seduction
 - [ ] **# 18**  L 7759  (  74 lines)     ↳ Appendices → Spell Tables

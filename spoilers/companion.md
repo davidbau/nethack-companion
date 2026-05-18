@@ -874,35 +874,38 @@ but it doesn't tell you what to actually do when you arrive. Here's
 a more practical tour, in roughly the order you'll visit these places.
 
 #### The Gnomish Mines
-<!-- audit 2026-05-18 #124: clean audit, no substantive corrections. Mines branch DL 2-4 (dungeon.lua:14-19), 7 Minetown variants with 1-in-7 being Orcish Town (minetn-1.lua), all three Mine's End layouts guarantee a not-cursed luckstone (minend-{1,2,3}.lua). Race-peaceful gnomes/dwarves for gnomish PCs via role.c:654 lovemask. Added note: minend-1.lua:59 also places a fake-luckstone mimic (appear_as="obj:luckstone") near the real one — players should BUC-test before grabbing. -->
+<!-- audit 2026-05-18 #124: clean audit, no substantive corrections. Mines branch DL 2-4 (dungeon.lua:14-19), 7 Minetown variants with 1-in-7 being Orcish Town (minetn-1.lua), all three Mine's End layouts guarantee a not-cursed luckstone (minend-{1,2,3}.lua). Race-peaceful gnomes/dwarves for gnomish PCs via role.c:654 lovemask. Added note: minend-1.lua:59 also places a fake-luckstone mimic (appear_as="obj:luckstone") near the real one — players should BUC-test before grabbing. v2 audit 2026-05-18 #11: corrected the monster mix (minefill.lua:36-44 places one gnome lord per level guaranteed; the random-humanoid slot can roll a mind flayer — the famous "minesflayer"). Softened "comfortable detour" to "easier passage up top" with a note that the bottom remains hazardous, since the deeper Mines still spawn hostile non-gnome filler. Voice: trimmed several filler phrases ("modest but steady stream", "Usually it's a small settlement", "the clean answer"), promoted nested parenthetical on the fake-luckstone mimic to plain prose. See companion-audit.md. -->
 
 
 The entrance appears somewhere around dungeon levels 2 through 4, as
 a downward staircase. You'll know you're in the Mines because the
 walls become rough stone and the corridors get irregular.
 
-The Mines are populated primarily by gnomes, dwarves, and the
-occasional dwarf lord. If you're playing a gnomish character, most
-of them will be peaceful, which makes the Mines a relatively
-comfortable detour. Everyone else will need to fight through a
-modest but steady stream of hostile gnomes.
+The Mines are populated by gnomes and dwarves, with a gnome lord
+guaranteed on every level and the occasional gnomish wizard, gnome
+king, or dwarf lord. One slot on each level rolls a random humanoid
+that can rarely turn up as a mind flayer. A "minesflayer" is the
+classic early-game disaster, so don't push deep without poison
+resistance and a plan. If you're playing a gnomish character, the
+gnomes and dwarves are peaceful, which makes the upper Mines an
+easier passage. The bottom levels are still hazardous. Everyone else
+fights through hostile gnomes.
 
-**Minetown** appears a few levels into the Mines. Usually it's a small
-settlement with shops and a temple, and it's worth visiting early.
-The shops let you sell unwanted items for gold and buy useful gear.
-The temple has an altar (check the alignment) and a resident priest.
-If the altar matches your alignment, you've found a safe place to
-identify items by dropping them on it. The Minetown priest is also
-the cheapest source of intrinsic AC bonuses in the game — donating
-500 zorkmids at low XL stacks each visit (see
+**Minetown** appears a few levels into the Mines. It's a small
+settlement with shops and a temple. Visit early. The shops let you
+sell unwanted items for gold and buy useful gear. The temple has
+an altar (check the alignment) and a resident priest. A coaligned
+altar BUC-tests anything you drop on it. The Minetown priest is
+also the cheapest source of intrinsic AC bonuses in the game.
+Donating 500 zorkmids at low XL stacks each visit (see
 [Donating to Priests](#donating-to-priests)).
 
 Candles spawn often enough that you'll usually have enough by
 endgame, but you do need to source seven for the Candelabrum of
-Invocation later. **Izchak's lighting store** in Minetown is the
-clean answer: buy seven there. If the shop is absent (Orcish Town
-layout), seven are scattered on that level instead. Wax candles
-burn longer than tallow but either works, and mixing types is fine.
+Invocation later. Buy seven from **Izchak's lighting store** in
+Minetown. If the shop is absent (Orcish Town layout), seven are
+scattered on that level instead. Wax candles burn longer than
+tallow but either works, and mixing types is fine.
 
 One in seven times, however, Minetown generates as **Orcish Town**:
 an overrun settlement with no shops, no priest, and iron bars blocking
@@ -914,14 +917,13 @@ Watch out for the Minetown watch. The guards are
 peaceful unless you steal from a shop or attack a peaceful creature.
 If you anger them, they'll call for reinforcements.
 
-**Mine's End** is the bottom of the Mines. All three Mine's End
-variants contain a guaranteed (not-cursed) luckstone, so you'll
-get one wherever you arrive. A luckstone in your open inventory
-prevents your luck from timing out toward zero, which affects
-everything from combat to fountain wishes. Grab it and carry it
-for the rest of the game. (One layout variant also seeds a **fake
-luckstone mimic** disguised as a luckstone — BUC-test what you
-pick up before relying on it.)
+**Mine's End** is the bottom of the Mines. Every layout seeds a
+not-cursed luckstone. A luckstone in your open inventory prevents
+your luck from timing out toward zero, which affects everything
+from combat to fountain wishes. Grab it and carry it for the rest
+of the game. One layout also seeds a **fake luckstone mimic**
+disguised as a luckstone. BUC-test what you pick up before relying
+on it.
 
 #### Sokoban
 
@@ -1051,27 +1053,29 @@ though that was a Hack-era addition. A small and forgivable
 anachronism.
 
 #### Fort Ludios
-<!-- audit 2026-05-18 #138: 2 corrections + omitted features. (1) "Captains" overstated — knox.lua fixes only 17 soldiers + 1 lieutenant; captains can appear via barracks zoo squadmon but aren't a guaranteed garrison. (2) "Legendary wealth" — Croesus is the vault guardian/warden (MS_GUARD, monsters.h:2863), not a merchant; the gold belongs to the vault, not him. The companion's own bestiary row labels him "Vault guardian." Added the noteleport flag, four dragons, four giant eels in the moat, stone giant, and corner-tower gem caches (knox.lua:9, 144-167). -->
+<!-- audit 2026-05-18 #138: 2 corrections + omitted features. (1) "Captains" overstated — knox.lua fixes only 17 soldiers + 1 lieutenant; captains can appear via barracks zoo squadmon but aren't a guaranteed garrison. (2) "Legendary wealth" — Croesus is the vault guardian/warden (MS_GUARD, monsters.h:2863), not a merchant; the gold belongs to the vault, not him. The companion's own bestiary row labels him "Vault guardian." Added the noteleport flag, four dragons, four giant eels in the moat, stone giant, and corner-tower gem caches (knox.lua:9, 144-167). v2 audit 2026-05-18 #14: four factual corrections. (a) Garrison is sixteen soldiers + one lieutenant from knox.lua:126-142, not "seventeen" or "roughly twenty"; the barracks zoo can spawn more once aggro. (b) Portal range is Dlvl 11 down to just above Medusa, not Dlvl 18-22 — the dungeon.lua hint is base 18 range 4 (so 18-21) but mklev.c:2647-2651 only requires depth >10 and above Medusa, and the wiki agrees. (c) The portal is always inside a vault per mklev.c:1331,2624-2658, not "often inside a small vault." (d) The level is non-diggable (knox.lua:35), so "through the walls" doesn't work; level teleport via scroll/wand still does (noteleport blocks only intra-level teleport). Wisdom: Croesus is covetous and dangerous in melee — community advice is to range-attack across the moat, not "engage him" in melee. Voice: dropped "the unique fortress warden" meta; replaced "(15x4 treasury, most tiles trapped)" parenthetical with plain prose noting the 1/3-trapped rate; trimmed "decent weapons" to "serviceable weapons" and dropped the "protection rackets" reference (Ludios gold is more often spent on ID/shop stock at that depth). See companion-audit.md. -->
 
 Fort Ludios is optional and easy to miss entirely. It appears as a
-magic portal somewhere around Dlvl 18-22, often inside a small
-vault that requires digging to reach. The portal leads to a
-fortified military compound: roughly twenty soldiers and a
-lieutenant, four guard dragons, a stone giant, four giant eels
-patrolling the moat, and **Croesus** — the unique fortress warden
-and vault guardian. The level is `noteleport`, so once you're
-inside the only way out is back through the portal or through the
-walls. Kill Croesus, loot the place, leave.
+magic portal anywhere from Dlvl 11 down to just above Medusa,
+always inside a sealed vault, so you'll need to dig in. The portal
+leads to a fortified military compound: sixteen soldiers and a
+lieutenant, with more drifting out of the barracks once the alarm
+trips. Four guard dragons. A stone giant. Four giant eels
+patrolling the moat. And **Croesus** on the throne, the vault
+guardian himself. The level is non-diggable as well as `noteleport`,
+so once you're inside the only way out is back through the portal
+or a scroll of teleportation. Kill Croesus, loot the place, leave.
+Croesus is covetous and hits hard in melee, so shoot or zap him
+from across the moat rather than walking up.
 
-The real prize is the gold (a 15×4 treasury holds 36k–54k pieces,
-though most of the tiles are spiked-pit or land-mine trapped),
-gem caches in each corner tower (diamonds, emeralds, rubies,
-amethysts), and the occasional chest in the barracks. Soldiers
-also carry C-rations, K-rations, and decent weapons. The military
-alarm only quiets once Croesus is dead, so plan to engage him
-rather than tip-toe around. This is a good place to visit if you
-need money for protection rackets or shop purchases, but it's not
-essential for victory.
+The real prize is the gold. A 60-square treasury holds 36k to 54k
+gold, with land mines and spiked pits on roughly a third of the
+tiles. Gem caches in each corner tower (diamonds, emeralds, rubies,
+amethysts), plus the occasional chest in the barracks. Soldiers
+carry rations and serviceable weapons. The alarm only quiets once
+Croesus is dead. Fort Ludios is a good place to visit for gold,
+identification scrolls, or shop stock, but it's not essential for
+victory.
 
 If you can't find the portal, don't worry about it. Fort Ludios is
 a bonus, not a requirement.
@@ -3325,13 +3329,13 @@ globs lets you re-roll shock resistance until you get it.
 ---
 
 ### The Apothecary
-<!-- audit 2026-05-17 #34: 50+ price/effect/alchemy claims verified, 1 corrected (uncursed extra/full healing also raise maxHP, not blessed-only). See companion-audit.md. -->
+<!-- audit 2026-05-17 #34: 50+ price/effect/alchemy claims verified, 1 corrected (uncursed extra/full healing also raise maxHP, not blessed-only). v2 audit 2026-05-18 #15: one factual fix — potion of speed grants permanent intrinsic Fast whenever `!cursed` (potion.c:1066), not just when blessed; blessing only extends the temporary timer that overlays it. Voice: replaced colon-stitched sentences with periods in the lead-in, the Water clarification, and the Speed line per the punctuation ladder. Trimmed the "artisanal alchemy vs industrial production" closer to its essential clause. Clarified the cursed-dip-target phrasing ("never use a cursed potion as a dipping target" → "never let the receiving potion be cursed"), since target/source language can confuse readers. See companion-audit.md. -->
 
 The dungeon is full of mysterious bottles. Ruby liquids, milky
-fluids, smoky concoctions: each one a small gamble between salvation
-and catastrophe. The colors are shuffled every game, so the "bubbly
-potion" that healed you last time might polymorph you this time.
-Identification is everything.
+fluids, smoky concoctions. Each one a small gamble between
+salvation and catastrophe. The colors are shuffled every game, so
+the "bubbly potion" that healed you last time might polymorph you
+this time. Identification is everything.
 
 #### The Potion Table
 
@@ -3351,10 +3355,10 @@ short list of candidates:
 
 <div class="price-id-toolbar"></div>
 
-Water is the oddity in the $100 group: it always appears as "clear
-potion," identifiable on sight. Don't underestimate it; water is
-the raw material for holy water, which is the foundation of
-everything.
+Water is the oddity in the $100 group. It always appears as
+"clear potion," identifiable on sight. Don't underestimate it.
+Water is the raw material for holy water, which is the foundation
+of everything.
 
 #### Key Potions
 
@@ -3369,13 +3373,13 @@ give the biggest boost. You can never have too many of these.
 Uncursed raises a random stat. This is liquid gold: save every
 one until you can bless it.
 
-**Speed.** One blessed quaff and you're permanently faster for the
-rest of the game. Speed is arguably the single most important buff
-in NetHack; the difference between moving at normal speed and fast
-speed is the difference between trading blows and hitting twice
-before they swing once. In 5.0, the wand of speed
-monster no longer grants permanent speed when self-zapped, only a
-temporary burst of 50–74 turns. The potion is the real prize.
+**Speed.** One non-cursed quaff and you're permanently faster for
+the rest of the game. Blessing only stretches the temporary timer
+that overlays it. Speed is arguably the single most important buff
+in NetHack. Normal speed trades blows. Fast speed hits twice
+before they swing once. In 5.0, the wand of speed monster no
+longer grants permanent speed when self-zapped, only a temporary
+burst of 50–74 turns. The potion is the real prize.
 
 **Holy water.** Not a potion you find: a potion you *make*. Drop
 uncursed water on a co-aligned altar, pray, and the gods bless it
@@ -3422,16 +3426,16 @@ dungeon to drop them.
 trick (dilute a large stack of potions by dipping them in water, then
 convert the whole diluted stack at once) no longer works. Current
 editions cap diluted dips at two potions per operation. The chain from
-healing up to gain ability is still there; you just do it in small batches
-with undiluted inputs. Think of it as artisanal alchemy rather than
-industrial production.
+healing up to gain ability is still there. Small batches now, not
+industrial runs.
 
 The explosion risk is real: roughly 10% on any non-water combination. An
 alchemy smock (if you find one) reduces this to about 1 in 30, which
 is the difference between "risky hobby" and "acceptable profession." Do
-your chemistry in an isolated room, away from your stash, and never use
-a cursed potion as a dipping target. Cursed targets always explode. The
-dungeon is consistent about this if nothing else.
+your chemistry in an isolated room, away from your stash, and never let
+the receiving potion (the one you're dipping into) be cursed. Cursed
+targets always explode. The dungeon is consistent about this if nothing
+else.
 
 #### Unicorn Horn Interactions
 
@@ -4806,7 +4810,7 @@ are the time-tested tactics that keep adventurers breathing:
 ---
 
 ### Enhancing Skills
-<!-- audit 2026-05-18 #98 (revised 2026-05-18 #181): ranks (P_UNSKILLED..P_GRAND_MASTER) and the level²×20 practice formula (20/80/180/320/500 cumulative) verified against skills.h:92-106. Slot costs (weapon 1/2/3, non-weapon 1/1/2/2/3) and crowning bonus from u_init.c skill tables and weapon.c:can_advance. Bare-hand 50% / martial-arts 75% damage-bonus check from weapon.c:weapon_hit_bonus. Riding 100-square threshold (steed.c:393-396, ++u.urideturns >= 100) and action-gating (pickup/loot/dip/trap/engrave require Basic) from u_init.c + do.c. Slot ceiling is 32 for an XL-30 crowned hero (2 starting + 29 level-ups + 1 crowning) per u_init.c:884 and pray.c:992-993. Ranger divination caps Expert (u_init.c:461). Wizard restricted from long sword per u_init.c skill table; artifact-gift unrestrict in artifact.c:artifact_hit. Spell-school precredit of 20 uses at starting Basic per u_init.c. Skilled cone-of-cold / fireball / identify rank gating per spell.c spelleffects. "You feel more confident in your skills" / "You feel you could be more dangerous" message strings in weapon.c. -->
+<!-- audit 2026-05-18 #98 (revised 2026-05-18 #181): ranks (P_UNSKILLED..P_GRAND_MASTER) and the level²×20 practice formula (20/80/180/320/500 cumulative) verified against skills.h:92-106. Slot costs (weapon 1/2/3, non-weapon 1/1/2/2/3) and crowning bonus from u_init.c skill tables and weapon.c:can_advance. Bare-hand 50% / martial-arts 75% damage-bonus check from weapon.c:weapon_hit_bonus. Riding 100-square threshold (steed.c:393-396, ++u.urideturns >= 100) and action-gating (pickup/loot/dip/trap/engrave require Basic) from u_init.c + do.c. Slot ceiling is 32 for an XL-30 crowned hero (2 starting + 29 level-ups + 1 crowning) per u_init.c:884 and pray.c:992-993. Ranger divination caps Expert (u_init.c:461). Wizard restricted from long sword per u_init.c skill table; artifact-gift unrestrict in artifact.c:artifact_hit. Spell-school precredit of 20 uses at starting Basic per u_init.c. Skilled cone-of-cold / fireball / identify rank gating per spell.c spelleffects. "You feel more confident in your skills" / "You feel you could be more dangerous" message strings in weapon.c. v2 audit 2026-05-18 #13: three factual fixes. (a) Two-weapon uses the WEAPON slot column (1/2/3), not the non-weapon column — per weapon.c:1141 `if (skill <= P_LAST_WEAPON || skill == P_TWO_WEAPON_COMBAT)`. Pre-3.7 lore had it on the non-weapon side. (b) Valkyrie example math was 11 with the old assumption; with correct costs it is 6+6+2 = 14. Fixed. (c) "Bare-hand and martial-arts bonuses still only apply to 50%/75% of hits" conflates practice-training rate with bonus application; the bonuses apply on every hit per weapon.c:1611-1613. Wisdom: cone-of-cold and fireball Skilled upgrade is a cluster of 3×3 explosions (spell.c:1419-1452), not "room-clearing" — corrected both mentions; Knights start at Basic riding (weapon.c:1787-1789), so the advancement target is Skilled, not Basic. Voice: dropped invented in-world reason "the dungeon's quiet subsidy for magic"; trimmed "restricted from long swords entirely. Restricted skills..."; replaced colorful "killing blow vs monster shrug" line with the bare numbers; cut "Specialization by decree." meta; clarified "past level 3" as spell-level. See companion-audit.md. -->
 
 Most adventurers discover the skill system the first time they
 press `#enhance` and realize the broadsword they've been swinging
@@ -4830,21 +4834,20 @@ level).
 | Master       | 320                   | —            | 2                |
 | Grand Master | 500                   | —            | 3                |
 
-Non-weapon skills — spell schools, two-weapon, riding, bare hands,
-martial arts — cost roughly half as many slots as melee weapons,
-the dungeon's quiet subsidy for magic. You start with 2 slots, gain
-one per experience level (29 more by XL 30), and one more if you
-are crowned, so the absolute ceiling is **32 slots** for an XL-30
-crowned hero. Lose an experience level and you lose a slot, which
-can demote your most recent advancement.
+Non-weapon skills — spell schools, riding, bare hands, martial
+arts — cost roughly half as many slots as melee weapons. (Two-weapon
+uses the weapon column despite the name.) You start with 2 slots,
+gain one per experience level (29 more by XL 30), and one more if
+you are crowned, so the absolute ceiling is **32 slots** for an
+XL-30 crowned hero. Lose an experience level and you lose a slot,
+which can demote your most recent advancement.
 
 Each role has a per-skill **cap** beyond which no amount of
 training will help. A Wizard caps at Basic with a mace and is
-**restricted** from long swords entirely. Restricted skills don't
-appear on the `#enhance` menu and can never leave Unskilled, with
-one exception: if your god grants you an artifact weapon, you're
-auto-unrestricted in its skill up to Basic. The full role caps
-live in the appendix.
+restricted from long swords. Restricted skills don't appear on
+`#enhance` and stay Unskilled, with one exception: if your god
+grants you an artifact weapon, you're auto-unrestricted in its
+skill up to Basic. The full role caps live in the appendix.
 
 #### Training a Skill
 
@@ -4887,21 +4890,20 @@ not stack):
 | Grand Master | —       | —          | —      | +3 / +3    | +7 / +9      |
 
 (Each cell is **to-hit / damage**.) Two-weapon penalties apply to
-**each** of the two strikes — a Basic two-weaponer hits twice but
+**each** of the two strikes. A Basic two-weaponer hits twice but
 at −7 each, which is much worse than one solid swing. Bare hands
-and martial arts bonuses still only apply to 50% and 75% of hits
-respectively (as noted above). The Expert weapon line (+3 / +2)
-is why dedicating to a single weapon matters: that's the
-difference between landing the killing blow and watching the
-monster shrug.
+and martial arts bonuses apply on every hit; only the practice
+counter is gated by the dmg>1 roll. The Expert weapon line is
++3 to hit, +2 damage. That's why dedicating to a single weapon
+matters.
 
 #### The Seven Spell Schools
 
 Every spellbook belongs to one of seven schools, and your rank in
 that school determines how reliably you can cast spells from it.
-Higher rank also unlocks some spell upgrades — cone of cold
-becomes a room-clearing explosion at Skilled, identify IDs the
-whole stack, haste self lasts longer, and so on.
+Higher rank also unlocks some spell upgrades. Cone of cold becomes
+a cluster of 3×3 explosions at Skilled, identify IDs the whole
+stack, haste self lasts longer, and so on.
 
 | School      | Focus                                  | L1 grind        |
 | ----------- | -------------------------------------- | --------------- |
@@ -4920,8 +4922,8 @@ Role caps vary sharply across schools:
 - **Monks** also have access to all seven, but cap at Expert only
   in healing — Skilled in cleric and escape, Basic elsewhere.
 - **Priests** reach Expert in healing, divination, and cleric.
-- **Healers** cap at Expert in healing — and are *restricted*
-  from every other school. Specialization by decree.
+- **Healers** cap at Expert in healing and are *restricted*
+  from every other school.
 - **Knights** train attack, healing, and cleric to Skilled.
 - **Rangers** push divination to Expert — their one specialty school.
 - **Rogues, Tourists, Samurai** each get two or three schools at
@@ -4929,7 +4931,8 @@ Role caps vary sharply across schools:
 - **Cavemen** reach Skilled in matter and Basic in attack — two
   schools only.
 - **Barbarians and Valkyries** cap at Basic in their two schools
-  (attack and escape) and shouldn't expect anything past level 3.
+  (attack and escape) and can't reliably cast spells past
+  spell-level 3.
 
 Full role caps for every weapon, fighting style, and spell school
 are in the [Skill Caps](#skill-caps) appendix; the full list of
@@ -4940,7 +4943,7 @@ are in the [Skill Caps](#skill-caps) appendix; the full list of
 Thirty slots sounds like plenty until you start counting. Expert
 in a single weapon costs **6 slots** (1+2+3) by itself. A
 Valkyrie aiming for Expert long sword, Expert two-weapon, and
-Skilled riding is eleven slots deep before any spell school.
+Skilled riding is fourteen slots deep before any spell school.
 
 A few principles:
 
@@ -4957,20 +4960,21 @@ A few principles:
   books deserve priority.
 - **Riding's silent gate.** Without **Basic riding** you can't
   pick up items, loot, dip, set or disarm traps, or engrave on
-  the floor while mounted. Knights should advance it on the first
-  opportunity even though Basic still leaves a −1 to-hit penalty
-  in the saddle.
+  the floor while mounted. Knights start at Basic. Pushing to
+  Skilled erases the −1 to-hit penalty in the saddle and adds
+  +1 damage.
 - **Bare hands and martial arts are a Monk story.** Grand Master
   needs **9 cumulative non-weapon slots**, which Monks reach
   naturally. Anyone else dabbling in unarmed combat should plan
   to stop at Basic.
 
 A few spells also get sharper at Skilled, not just more reliable.
-Cone of cold and fireball stop being beams and become
-room-clearing **explosions**. Identify, remove curse, haste self,
-detect monsters, and several others gain the blessed-scroll
-effect (multi-item ID, full uncurse, longer duration). If you cast
-those spells regularly, the extra slots earn themselves back.
+Cone of cold and fireball stop being beams and become a cluster
+of 3×3 **explosions** you can place at range. Identify, remove
+curse, haste self, detect monsters, and several others gain the
+blessed-scroll effect (multi-item ID, full uncurse, longer
+duration). If you cast those spells regularly, the extra slots
+earn themselves back.
 
 ---
 
@@ -7382,13 +7386,14 @@ other bimanual weapon.
 :::
 
 #### Mace
+<!-- audit 2026-05-18 v2 #12: stats verified vs include/objects.h:355-361. Two factual fixes. (1) Demonbane row corrected: PHYS(5,0) means +1d5 to-hit and double damage versus demons (artifact.c:1083-1085 spec_abon, 1106-1107 spec_dbon), not "+d5/+0". Demonbane also has a banish invoke. (2) Silver mace row: the silver bonus is +1d20 versus hates_silver targets per uhitm.c:1376-1377 — demons, weres, vampires, shades, and most imps (mondata.c:524-528). "Undead" and "shape-changers" generally are too broad (mummies/zombies/ghosts and chameleons don't qualify). Also notes: Sceptre of Might is a MACE artifact at artilist.h:232-235; Mjollnir is a war hammer, correctly excluded. See companion-audit.md. -->
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| mace | 1d6+1 / 1d6 | 30 | 5 | — | iron | The Priest's first sacrifice gift, Demonbane, is a +d5/+0 silver mace. |
-| silver mace | 1d6+1 / 1d6 | 36 | 60 | — | silver | Bonus damage to demons, undead, and shape-changers. |
+| mace | 1d6+1 / 1d6 | 30 | 5 | — | iron | The Priest's guaranteed first sacrifice gift, Demonbane: a silver mace with +1d5 to-hit and double damage versus demons, plus a banish invoke. Sceptre of Might is the other MACE artifact. |
+| silver mace | 1d6+1 / 1d6 | 36 | 60 | — | silver | +1d20 versus demons, weres, vampires, shades, and most imps. |
 
 :::
 
