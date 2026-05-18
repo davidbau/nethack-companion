@@ -12349,7 +12349,7 @@ times in 10 — trap item.</td>
 </section>
 <section id="spell-tables" class="level3">
 <h3>Spell Tables</h3>
-<!-- audit 2026-05-18 #99: 43 spells extracted from objects.h SPELL() macros (P_ATTACK..P_MATTER). SPELL macro signature in objects.h:1078 confirms field order (name, desc, sub, prob, delay, level, mgc, dir, color, sn) and oc_level=oc_oc2. Chain lightning level=2 per macro (objects.h SPE_CHAIN_LIGHTNING line); spoiler body still says L4 in Spellcasting Key Spells table at line 4986 and What's New at line 8585 — flag for follow-up fix. Rank-gated effects from spell.c spelleffects: SPE_FIREBALL/CONE_OF_COLD become aimed explosions at P_SKILLED (cast.c:throwspell); SPE_REMOVE_CURSE/CONFUSE_MONSTER/DETECT_FOOD/CAUSE_FEAR/IDENTIFY/CHARM_MONSTER get blessed-scroll behavior at P_SKILLED; SPE_HASTE_SELF/DETECT_TREASURE/DETECT_MONSTERS/LEVITATION/RESTORE_ABILITY get blessed-potion behavior at P_SKILLED; SPE_PROTECTION doubles uspmtime at P_EXPERT (spell.c:1169); SPE_JUMPING distance scales directly from role_skill (spell.c via jump(max(role_skill,1))). -->
+<!-- audit 2026-05-18 #99 (re-audit 2026-05-18 #182): 43 spells extracted from objects.h SPELL() macros (P_ATTACK..P_MATTER). SPELL macro signature in objects.h:1078 confirms field order (name, desc, sub, prob, delay, level, mgc, dir, color, sn) and oc_level=oc_oc2. Chain lightning level=2 per macro; spoiler body still says L4 in Spellcasting Key Spells table at line 4986 and What's New at line 8585 — flag for follow-up fix. Rank-gated effects from spell.c spelleffects: SPE_FIREBALL/CONE_OF_COLD become aimed explosions at P_SKILLED; SPE_REMOVE_CURSE/CONFUSE_MONSTER/DETECT_FOOD/CAUSE_FEAR/IDENTIFY/CHARM_MONSTER get blessed-scroll behavior at P_SKILLED; SPE_HASTE_SELF/DETECT_TREASURE/DETECT_MONSTERS/LEVITATION/RESTORE_ABILITY get blessed-potion behavior at P_SKILLED; SPE_PROTECTION doubles uspmtime at P_EXPERT (spell.c:1169); SPE_JUMPING distance scales directly from role_skill. Re-audit 2026-05-18 #182 fixed two errors: magic missile is Antimagic-blocked (zap.c:4410-4419, "missiles bounce off!"), not "no resistance"; clairvoyance has a P_SKILLED upgrade at spell.c:1572-1576 (also detects nearby monsters during each pulse). Finger of death note clarified: monster MR resists but the player gets no Antimagic check on the death-ray instakill (zap.c:2885-2902). -->
 <p>The complete spellbook catalog, sorted by school then level.
 <strong>Lvl</strong> is the spell level; <strong>Pw cost</strong> is
 always 5×level. <strong>Type</strong> distinguishes how the spell
@@ -12416,7 +12416,7 @@ continuously).</p>
 <td>Attack</td>
 <td>2</td>
 <td>ray</td>
-<td>2d6 force ray, no resistance</td>
+<td>2d6 force ray; Antimagic blocks it</td>
 <td>—</td>
 </tr>
 <tr>
@@ -12440,7 +12440,9 @@ continuously).</p>
 <td>Attack</td>
 <td>7</td>
 <td>ray</td>
-<td>Death-magic beam; MR resists</td>
+<td>Death-magic beam; monsters with magic resistance resist. (Against
+the player it’s an instakill with no Antimagic check — only nonliving or
+demon forms are immune.)</td>
 <td>—</td>
 </tr>
 <tr>
@@ -12521,7 +12523,7 @@ continuously).</p>
 <td>3</td>
 <td>untargeted</td>
 <td>Periodic glimpses of nearby map</td>
-<td>—</td>
+<td>Skilled: also detects nearby monsters during each pulse</td>
 </tr>
 <tr>
 <td>detect unseen</td>
@@ -12741,7 +12743,7 @@ with rank, even when the spell’s behavior doesn’t otherwise change.</p>
 </section>
 <section id="skill-caps" class="level3">
 <h3>Skill Caps</h3>
-<!-- audit 2026-05-18 #100: all 13 role skill tables extracted from u_init.c (Skill_A through Skill_W) and grouped by skill category. Skills not listed in a role's def_skill array are restricted (P_UNSKILLED, locked). Scimitar omitted because no role has it in 5.0 (merged into saber, per skills.h header note and audit #82). Note "Monks/Samurai only roles with martial arts" verified: P_MARTIAL_ARTS appears only in Skill_Mon (P_GRAND_MASTER) and Skill_S (P_MASTER). Monks have P_BARE_HANDED_COMBAT restricted (—) — they get martial arts instead. -->
+<!-- audit 2026-05-18 #100 (re-verified 2026-05-18 #183): all 13 role skill tables extracted from u_init.c (Skill_A through Skill_W) and grouped by skill category. Skills not listed in a role's def_skill array are restricted (P_UNSKILLED, locked). Scimitar omitted because no role has it in 5.0 (merged into saber, per skills.h header note and audit #82). Note "Monks/Samurai only roles with martial arts" verified: P_MARTIAL_ARTS appears only in Skill_Mon (P_GRAND_MASTER) and Skill_S (P_MASTER). Monks have P_BARE_HANDED_COMBAT restricted (—) — they get martial arts instead. Re-audit 2026-05-18 #183: every cell of all three sub-tables (27 weapon rows, 4 fighting-style rows, 7 spell-school rows) × 13 role columns confirmed exact-match against u_init.c:257-572. 0 corrections. -->
 <p>Every role has fixed maximum ranks for each weapon, fighting style,
 and spell school. Skills not listed for a role are
 <strong>restricted</strong> (the rank is locked at Unskilled) — except

@@ -6401,3 +6401,77 @@ numeric corrections.
   skills." Left as-is to keep the prose compact.
 
 ---
+
+## 2026-05-18 — Chapter audit #182: Spell Tables (appendix)
+
+Source: `spoilers/companion.md` line 7760, 43 spells × 6 columns.
+2 corrections + 1 clarification.
+
+### Wrong → fixed
+- **magic missile "no resistance"**: actually Antimagic fully blocks
+  it. `zap.c:4410-4419` (`case ZT_MAGIC_MISSILE: if (Antimagic) ...
+  "The missiles bounce off!"`). Reworded the row to "2d6 force ray;
+  Antimagic blocks it."
+- **clairvoyance upgrade shown as "—"**: it actually has a Skilled
+  upgrade. `spell.c:1572-1576` sets `pseudo->blessed = 1` when
+  `role_skill >= P_SKILLED`, which adds nearby-monster detection to
+  each vicinity-map pulse. Added "Skilled: also detects nearby
+  monsters during each pulse."
+
+### Clarified
+- **finger of death "MR resists"**: applies only to monsters
+  (`resist_death_ray`). Against the player it's an instakill with
+  no Antimagic check (`zap.c:2885-2902`) — only nonliving or demon
+  forms are immune. Added the player-side caveat to the row.
+
+### Verified
+- All 43 spells map exactly to objects.h SPELL() macros at
+  objects.h:1293-1421. School counts: 7 attack, 6 healing, 8
+  divination, 5 enchantment, 5 cleric, 5 escape, 7 matter.
+- Pw cost = 5 × spell level (SPELL_LEV_PW at spell.h:36).
+- Rank-gated upgrades all match spell.c:1419-1587:
+  - fireball / cone of cold aimed-explosion at Skilled.
+  - remove curse / confuse monster / detect food / cause fear /
+    identify / charm monster all behave as blessed-scroll at
+    Skilled.
+  - haste self / detect treasure / detect monsters / levitation /
+    restore ability all behave as blessed-potion at Skilled.
+  - protection doubles `uspmtime` at Expert (spell.c:1169).
+  - jumping range scales with `role_skill` (spell.c:1585).
+
+### Close calls
+- Chain lightning is L2 in the table here, and the body uses are
+  correct (Key Spells table at 5159 shows L2; What's New at 9107
+  says "new level 2 attack spell"). The historical mismatch noted
+  in audit #99 is resolved.
+- jumping is dir=IMMEDIATE in objects.h but uses cursor-pick rather
+  than a direction key. Table labels it "untargeted" — a UX
+  classification, not the C oc_dir field. Left as-is.
+
+---
+
+## 2026-05-18 — Chapter audit #183: Skill Caps (appendix) — re-audit
+
+Source: `spoilers/companion.md` line 7834. No corrections.
+
+### Verified
+Re-checked every cell of all three sub-tables against
+`u_init.c:257-572` (Skill_A through Skill_W):
+- 27 weapon-skill rows × 13 role columns.
+- 4 fighting-style rows × 13 role columns.
+- 7 spell-school rows × 13 role columns.
+Every entry, including every "—" (restricted = not in role's
+`Skill_*[]` array), is correct.
+
+### Notes
+- The audit prompt's spec was off on two points; the companion
+  is right:
+  - Samurai short sword is `P_EXPERT` (u_init.c:470), not Basic.
+  - Valkyrie two-weapon and riding are both `P_SKILLED`
+    (u_init.c:543-544), not Expert.
+- Scimitar correctly excluded from every role's array — merged
+  into saber in 5.0 (no `P_SCIMITAR` in any `Skill_*[]`).
+- The original audit #100 already verified everything; this
+  re-audit confirms no drift.
+
+---

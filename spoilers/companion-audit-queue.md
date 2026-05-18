@@ -186,5 +186,5 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#179**  L 1981  (  17 lines)   ↳ Dangerous Encounters → Engulfment from Hiding
 - [x] **#180**  L 2706  (  35 lines)   ↳ A Practical Identification Strategy → The Engrave Test (Wands)
 - [x] **#181**  L 4644  ( 168 lines) 📖 Enhancing Skills
-- [ ] **#182**  L 7458  (  74 lines)   ↳ Appendices → Spell Tables
-- [ ] **#183**  L 7532  (  93 lines)   ↳ Appendices → Skill Caps
+- [x] **#182**  L 7458  (  74 lines)   ↳ Appendices → Spell Tables
+- [x] **#183**  L 7532  (  93 lines)   ↳ Appendices → Skill Caps

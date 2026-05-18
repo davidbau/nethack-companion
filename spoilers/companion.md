@@ -7758,7 +7758,7 @@ kebab bonus.
 ---
 
 ### Spell Tables
-<!-- audit 2026-05-18 #99: 43 spells extracted from objects.h SPELL() macros (P_ATTACK..P_MATTER). SPELL macro signature in objects.h:1078 confirms field order (name, desc, sub, prob, delay, level, mgc, dir, color, sn) and oc_level=oc_oc2. Chain lightning level=2 per macro (objects.h SPE_CHAIN_LIGHTNING line); spoiler body still says L4 in Spellcasting Key Spells table at line 4986 and What's New at line 8585 — flag for follow-up fix. Rank-gated effects from spell.c spelleffects: SPE_FIREBALL/CONE_OF_COLD become aimed explosions at P_SKILLED (cast.c:throwspell); SPE_REMOVE_CURSE/CONFUSE_MONSTER/DETECT_FOOD/CAUSE_FEAR/IDENTIFY/CHARM_MONSTER get blessed-scroll behavior at P_SKILLED; SPE_HASTE_SELF/DETECT_TREASURE/DETECT_MONSTERS/LEVITATION/RESTORE_ABILITY get blessed-potion behavior at P_SKILLED; SPE_PROTECTION doubles uspmtime at P_EXPERT (spell.c:1169); SPE_JUMPING distance scales directly from role_skill (spell.c via jump(max(role_skill,1))). -->
+<!-- audit 2026-05-18 #99 (re-audit 2026-05-18 #182): 43 spells extracted from objects.h SPELL() macros (P_ATTACK..P_MATTER). SPELL macro signature in objects.h:1078 confirms field order (name, desc, sub, prob, delay, level, mgc, dir, color, sn) and oc_level=oc_oc2. Chain lightning level=2 per macro; spoiler body still says L4 in Spellcasting Key Spells table at line 4986 and What's New at line 8585 — flag for follow-up fix. Rank-gated effects from spell.c spelleffects: SPE_FIREBALL/CONE_OF_COLD become aimed explosions at P_SKILLED; SPE_REMOVE_CURSE/CONFUSE_MONSTER/DETECT_FOOD/CAUSE_FEAR/IDENTIFY/CHARM_MONSTER get blessed-scroll behavior at P_SKILLED; SPE_HASTE_SELF/DETECT_TREASURE/DETECT_MONSTERS/LEVITATION/RESTORE_ABILITY get blessed-potion behavior at P_SKILLED; SPE_PROTECTION doubles uspmtime at P_EXPERT (spell.c:1169); SPE_JUMPING distance scales directly from role_skill. Re-audit 2026-05-18 #182 fixed two errors: magic missile is Antimagic-blocked (zap.c:4410-4419, "missiles bounce off!"), not "no resistance"; clairvoyance has a P_SKILLED upgrade at spell.c:1572-1576 (also detects nearby monsters during each pulse). Finger of death note clarified: monster MR resists but the player gets no Antimagic check on the death-ray instakill (zap.c:2885-2902). -->
 
 The complete spellbook catalog, sorted by school then level. **Lvl**
 is the spell level; **Pw cost** is always 5×level. **Type**
@@ -7781,10 +7781,10 @@ and jumping, which scales continuously).
 | force bolt      | Attack      | 1   | aimed      | 2d12 magical hit                    | —                             |
 | chain lightning | Attack      | 2   | untargeted | Shock damage to nearby monsters     | —                             |
 | drain life      | Attack      | 2   | aimed      | Drains an XP level from target      | —                             |
-| magic missile   | Attack      | 2   | ray        | 2d6 force ray, no resistance        | —                             |
+| magic missile   | Attack      | 2   | ray        | 2d6 force ray; Antimagic blocks it  | —                             |
 | cone of cold    | Attack      | 4   | ray        | 4d6 cold ray                        | Aimed explosion               |
 | fireball        | Attack      | 4   | ray        | 4d6 fire ray                        | Aimed explosion               |
-| finger of death | Attack      | 7   | ray        | Death-magic beam; MR resists        | —                             |
+| finger of death | Attack      | 7   | ray        | Death-magic beam; monsters with magic resistance resist. (Against the player it's an instakill with no Antimagic check — only nonliving or demon forms are immune.) | —                             |
 | healing         | Healing     | 1   | aimed      | Restore hit points                  | —                             |
 | cure blindness  | Healing     | 2   | aimed      | Removes blindness                   | —                             |
 | cure sickness   | Healing     | 3   | untargeted | Cures food poisoning and illness    | —                             |
@@ -7794,7 +7794,7 @@ and jumping, which scales continuously).
 | detect monsters | Divination  | 1   | untargeted | Reveals monsters on level           | Blessed: longer duration      |
 | light           | Divination  | 1   | untargeted | Lights the current room             | —                             |
 | detect food     | Divination  | 2   | untargeted | Reveals food on level               | Blessed: identifies the food  |
-| clairvoyance    | Divination  | 3   | untargeted | Periodic glimpses of nearby map     | —                             |
+| clairvoyance    | Divination  | 3   | untargeted | Periodic glimpses of nearby map     | Skilled: also detects nearby monsters during each pulse |
 | detect unseen   | Divination  | 3   | untargeted | Reveals invisible monsters and traps | —                            |
 | identify        | Divination  | 3   | untargeted | Identifies one inventory item       | Blessed: multiple items       |
 | detect treasure | Divination  | 4   | untargeted | Reveals gold and gems               | Blessed: more detail          |
@@ -7832,7 +7832,7 @@ change.
 ---
 
 ### Skill Caps
-<!-- audit 2026-05-18 #100: all 13 role skill tables extracted from u_init.c (Skill_A through Skill_W) and grouped by skill category. Skills not listed in a role's def_skill array are restricted (P_UNSKILLED, locked). Scimitar omitted because no role has it in 5.0 (merged into saber, per skills.h header note and audit #82). Note "Monks/Samurai only roles with martial arts" verified: P_MARTIAL_ARTS appears only in Skill_Mon (P_GRAND_MASTER) and Skill_S (P_MASTER). Monks have P_BARE_HANDED_COMBAT restricted (—) — they get martial arts instead. -->
+<!-- audit 2026-05-18 #100 (re-verified 2026-05-18 #183): all 13 role skill tables extracted from u_init.c (Skill_A through Skill_W) and grouped by skill category. Skills not listed in a role's def_skill array are restricted (P_UNSKILLED, locked). Scimitar omitted because no role has it in 5.0 (merged into saber, per skills.h header note and audit #82). Note "Monks/Samurai only roles with martial arts" verified: P_MARTIAL_ARTS appears only in Skill_Mon (P_GRAND_MASTER) and Skill_S (P_MASTER). Monks have P_BARE_HANDED_COMBAT restricted (—) — they get martial arts instead. Re-audit 2026-05-18 #183: every cell of all three sub-tables (27 weapon rows, 4 fighting-style rows, 7 spell-school rows) × 13 role columns confirmed exact-match against u_init.c:257-572. 0 corrections. -->
 
 Every role has fixed maximum ranks for each weapon, fighting style,
 and spell school. Skills not listed for a role are **restricted**
