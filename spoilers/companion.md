@@ -1092,7 +1092,7 @@ Your options, from safest to most desperate:
   You float over the water without touching it, immune to eel
   grabs from below.
 - **Water walking boots.** You walk on the surface. Eels can still
-  grab you, so stay unburdened.
+  grab you in adjacent water.
 - **Wand of cold.** Zap the water to freeze a path of ice. Ice
   is safe to walk on. This is reliable and only costs a few
   charges.
@@ -1106,39 +1106,46 @@ Your options, from safest to most desperate:
 **Surviving the eels.** The water contains giant eels (and
 sometimes a kraken) that can grab and drown you. Critical rules:
 
-- Stay **unburdened** while near or in water. A burdened character
-  grabbed by an eel is almost certainly dead.
-- An **oilskin cloak** or **greased armor** makes you harder to
-  grab. Greasing wears off, so it's not fully reliable.
-- **Magical breathing** (amulet or polymorph) means you survive
-  being pulled under, buying time to escape.
+- An **oilskin cloak** or **greased armor** makes the eel slip off
+  on the grab attempt (`u_slip_free` in mhitu.c). Greasing wears
+  off, so it's not fully reliable; oilskin doesn't.
+- **Magical breathing** (amulet or polymorph) prevents the drown
+  even after being grabbed.
 - **Kill eels at range** whenever possible. Wands, spells, and
   thrown weapons all work. Don't melee eels in the water.
 - Levitation and water walking do NOT protect against being grabbed
-  and pulled under. Only magical breathing, staying unburdened, and
-  killing eels first are reliable defenses.
+  by an eel in adjacent water. The drown check uses the *eel's*
+  tile, not yours, so even standing on dry land or hovering above
+  water doesn't help once the grab lands. Only oilskin/grease,
+  magical breathing, or killing the eel first are reliable.
 
 #### The Castle
+<!-- audit 2026-05-17 #37: castle.lua/dungeon.lua-verified. 2 corrected: wand of striking destroys the drawbridge (not opens), and the wand of wishing is in a corner tower (not a treasure chamber). See companion-audit.md. -->
 
 The Castle is the last level of the Dungeons of Doom proper, around
 level 27. It's a large fortified structure surrounded by a moat,
-with a drawbridge as the main entrance. A maze section to the
-side contains a minotaur.
+with a drawbridge as the main entrance. A maze section to each
+side may contain minotaurs.
 
 To enter the Castle, you need to open the drawbridge. Options:
 
 - **Play the passtune.** A five-note musical sequence played on
   any tonal instrument (wooden flute, magic flute, tooled horn,
-  frost or fire horn, bugle, harp) opens the drawbridge. The notes are randomized per game. You can learn
-  them by trying different sequences: the game tells you how many
-  notes are correct after each attempt, like a game of Mastermind.
+  frost or fire horn, bugle, harp) opens the drawbridge. The notes
+  are randomized per game. You can learn them by trying different
+  sequences: the game tells you how many notes are correct after
+  each attempt, like a game of Mastermind.
 - **Wand of opening** pointed at the drawbridge.
 - **Spell of knock** cast at the drawbridge.
-- **Wand of striking** on the portcullis.
+- **Wand of striking** *destroys* the drawbridge entirely. The
+  moat squares become walkable, but the bridge is gone and the
+  tune is useless afterward. Use this as a one-way option.
 
-Inside the Castle, you'll find a throne room, barracks, and several
-treasure chambers. One of those chambers contains a **wand of
-wishing** — one of the most important items in the game. See
+Inside the Castle: a throne room, two barracks, and several
+storerooms. The **wand of wishing** — one of the most important
+items in the game — is in a chest in one of the four corner
+towers (guarded by Elbereth and a cursed scroll of scare monster
+to deter the court monsters from displacing it). See
 [Wishes and Wishing](#wishes-and-wishing) for the full mechanics
 and how many wishes a 5.0 Castle wand actually yields.
 
@@ -3118,6 +3125,7 @@ globs lets you re-roll shock resistance until you get it.
 ---
 
 ### The Apothecary
+<!-- audit 2026-05-17 #34: 50+ price/effect/alchemy claims verified, 1 corrected (uncursed extra/full healing also raise maxHP, not blessed-only). See companion-audit.md. -->
 
 The dungeon is full of mysterious bottles. Ruby liquids, milky
 fluids, smoky concoctions: each one a small gamble between salvation
@@ -3151,10 +3159,11 @@ everything.
 #### Key Potions
 
 **Healing, extra healing, full healing.** The healing chain, and
-your lifeline in combat. Extra healing is the workhorse: it cures
-blindness and sickness in addition to restoring HP. Blessed extra
-healing and full healing also raise your maximum HP permanently.
-You can never have too many of these.
+your lifeline in combat. Extra healing is the workhorse: it always
+cures blindness and (non-cursed) also cures sickness in addition
+to restoring HP. Non-cursed extra and full healing raise your
+maximum HP if the heal would otherwise overflow; blessed versions
+give the biggest boost. You can never have too many of these.
 
 **Gain ability.** When blessed, raises *all* your stats by 1.
 Uncursed raises a random stat. This is liquid gold: save every
@@ -7704,8 +7713,9 @@ All except *stalker* also are mindless.
 :::
 
 #### Fungi and molds `F`
+<!-- audit 2026-05-17 #35: 49 cells / 7 rows verified, 0 corrected. Lead-in reworded (violet/yellow molds → brown/green/red elemental molds). See companion-audit.md. -->
 
-Stationary. Lichen corpses never rot — keep one in your pack as iron rations. Violet and yellow molds bite back on melee with elemental passive damage.
+Stationary. Lichen corpses never rot — keep one in your pack as iron rations. Brown, green, and red molds bite back on melee with elemental passive damage (cold, acid, fire). Yellow mold stuns on passive contact; violet fungus has an active touch attack with sticking.
 
 All fungi and molds are mindless.
 

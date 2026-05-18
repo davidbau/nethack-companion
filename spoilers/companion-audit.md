@@ -1634,3 +1634,73 @@ Verified all quantitative claims; 2 factual errors in my own rewrite caught + fi
 
 ### Methodology note
 This is exactly the kind of error the user flagged earlier (drowning section's "levitation" claim). Self-rewrites need their own claims grep-verified. In this case the "dropped on the floor" and gender claims were both inherited from my mental model rather than from C source. The skeptical audit caught both.
+
+---
+
+## 2026-05-17 — Chapter audit #35: Bestiary Tables → Fungi and molds `F`
+
+Source: `spoilers/companion.md` lines 7706-7724
+Verified 49 cells / 7 rows; 0 wrong; 1 close call addressed.
+
+### Verified
+- All 7 entries (lichen, brown mold, yellow mold, green mold, red mold, shrieker, violet fungus) match monsters.h:1614-1676 exactly.
+- Stats, colors, attacks, resistances all correct.
+
+### Corrected (lead-in wording)
+- "Violet and yellow molds bite back on melee with elemental passive damage" — mis-paired. Yellow mold's passive is stun (AD_STUN); violet fungus's attacks are active touch (AT_TUCH), not passive. The actual elemental-passive molds are brown (cold), green (acid), red (fire). Reworded the lead-in to call out the three elemental molds separately from yellow mold (stun) and violet fungus (active+sticking).
+
+---
+
+## 2026-05-17 — Chapter audit #34: The Apothecary
+
+Source: `spoilers/companion.md` lines 3121-3239
+Verified 50+ price/effect/alchemy claims; 1 corrected; 4 close calls.
+
+### Verified
+- All 24 potion prices + the water special case match objects.h.
+- Speed potion non-cursed grants intrinsic Fast (potion.c:1066).
+- Wand of speed monster: only grants timed Fast 50-74 turns, no longer intrinsic (zap.c:2845).
+- Gain ability: blessed=all stats, uncursed=random stat (potion.c:1030).
+- Alchemy recipes match `mixtype()` exactly (potion.c:2143-2199).
+- Smock cuts explosion rate to 1/30 (potion.c:2421).
+- Cursed dip target always explodes (potion.c:2419).
+- Unicorn horn dip: sickness→fruit juice; halu/blind/conf→water (potion.c:2151).
+
+### Corrected
+1. **"Blessed extra healing and full healing also raise your maximum HP permanently"** — too restrictive. Per healup() (potion.c:1428): uncursed extra healing raises maxHP by up to 2, uncursed full healing raises maxHP by 4 (when heal would overflow). Both blessed AND uncursed raise maxHP; blessed gives the biggest boost. Cursed doesn't. Fix wording.
+
+### Close calls
+- Extra healing cures blindness ALWAYS (cureblind=TRUE unconditionally) but cures sickness only when non-cursed. Spoiler implies both gated by blessing. Tightened.
+- "Drop uncursed water" for holy water — `water_prayer()` operates on all POT_WATER regardless of bcstatus; the "uncursed" qualifier is practical advice but not a mechanical requirement.
+- 10% explosion baseline is right for ordinary combos; acid-as-target and lit-oil-as-target both = 100%.
+- Speed potion: both blessed AND uncursed grant intrinsic Fast (only cursed doesn't). Spoiler's "one blessed quaff" is conservative.
+
+---
+
+## 2026-05-17 — Chapter audit #37: Branches and Landmarks → The Castle
+
+Source: `spoilers/companion.md` lines 1121+
+Verified castle.lua + dungeon.lua + music.c claims; 2 corrected.
+
+### Verified
+- "Last level of Dungeons of Doom" — dungeon.lua chain.
+- "Surrounded by moat, drawbridge as main entrance" — castle.lua perimeter, drawbridge at (5,8).
+- Passtune is 5 notes A-G, randomized — dungeon.c:1115 `init_castle_tune`.
+- Mastermind-style feedback — music.c:850-887.
+- Tonal instruments (flutes, horns, bugle, harp) — music.c:769-771.
+- Wand of opening / spell of knock open drawbridge — zap.c:3263.
+- Throne room + 2 barracks — castle.lua:234, 248-249.
+- Wand of wishing in chest — castle.lua:142-149.
+- Gehennom below — dungeon.lua:39.
+
+### Corrected
+1. **"Wand of striking on the portcullis"** — listed as opening method, but zap.c:3290 WAN_STRIKING calls `destroy_drawbridge`. The drawbridge is permanently destroyed and tune becomes useless (dbridge.c:1018 sets uheard_tune=3). It's a destruction option, not opening. Fix: separate it as a one-way destroy option with consequences spelled out.
+
+2. **"Wand of wishing in one of the treasure chambers"** — actually in a corner tower, not a treasure chamber. castle.lua makes a structural distinction: four storerooms hold weapon/armor/gem/food stacks; the wand-of-wishing chest is placed in one of four corner towers (04,02 / 58,02 / 04,14 / 58,14), guarded by Elbereth and a cursed scroll of scare monster. Fix: clarify.
+
+### Also corrected (cross-section bug)
+- The "Surviving the eels" bullet list at lines 1109-1119 (Medusa section) had the same "stay unburdened" error that the Drowning section had. Same fix applied: removed encumbrance claim; clarified that levitation/water-walking don't help with grab-drown (eel's tile is what matters); oilskin/grease verified to work via u_slip_free (mhitu.c).
+
+### Close call
+- "Around level 27" — Castle dlvl is RNG-determined within dungeon bounds. 27 is the common range. Reasonable.
+- "Maze section contains a minotaur" — castle.lua has 2 mazewalk calls, each may have 0-1 minotaurs. Changed to "may contain minotaurs".

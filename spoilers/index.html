@@ -1340,7 +1340,7 @@ water. Your options, from safest to most desperate:</p>
 Cleanest method. You float over the water without touching it, immune to
 eel grabs from below.</li>
 <li><strong>Water walking boots.</strong> You walk on the surface. Eels
-can still grab you, so stay unburdened.</li>
+can still grab you in adjacent water.</li>
 <li><strong>Wand of cold.</strong> Zap the water to freeze a path of
 ice. Ice is safe to walk on. This is reliable and only costs a few
 charges.</li>
@@ -1356,26 +1356,28 @@ narrow water gaps, but requires careful positioning.</li>
 (and sometimes a kraken) that can grab and drown you. Critical
 rules:</p>
 <ul>
-<li>Stay <strong>unburdened</strong> while near or in water. A burdened
-character grabbed by an eel is almost certainly dead.</li>
 <li>An <strong>oilskin cloak</strong> or <strong>greased armor</strong>
-makes you harder to grab. Greasing wears off, so it’s not fully
-reliable.</li>
-<li><strong>Magical breathing</strong> (amulet or polymorph) means you
-survive being pulled under, buying time to escape.</li>
+makes the eel slip off on the grab attempt (<code>u_slip_free</code> in
+mhitu.c). Greasing wears off, so it’s not fully reliable; oilskin
+doesn’t.</li>
+<li><strong>Magical breathing</strong> (amulet or polymorph) prevents
+the drown even after being grabbed.</li>
 <li><strong>Kill eels at range</strong> whenever possible. Wands,
 spells, and thrown weapons all work. Don’t melee eels in the water.</li>
-<li>Levitation and water walking do NOT protect against being grabbed
-and pulled under. Only magical breathing, staying unburdened, and
-killing eels first are reliable defenses.</li>
+<li>Levitation and water walking do NOT protect against being grabbed by
+an eel in adjacent water. The drown check uses the <em>eel’s</em> tile,
+not yours, so even standing on dry land or hovering above water doesn’t
+help once the grab lands. Only oilskin/grease, magical breathing, or
+killing the eel first are reliable.</li>
 </ul>
 </section>
 <section id="the-castle" class="level4">
 <h4>The Castle</h4>
+<!-- audit 2026-05-17 #37: castle.lua/dungeon.lua-verified. 2 corrected: wand of striking destroys the drawbridge (not opens), and the wand of wishing is in a corner tower (not a treasure chamber). See companion-audit.md. -->
 <p>The Castle is the last level of the Dungeons of Doom proper, around
 level 27. It’s a large fortified structure surrounded by a moat, with a
-drawbridge as the main entrance. A maze section to the side contains a
-minotaur.</p>
+drawbridge as the main entrance. A maze section to each side may contain
+minotaurs.</p>
 <p>To enter the Castle, you need to open the drawbridge. Options:</p>
 <ul>
 <li><strong>Play the passtune.</strong> A five-note musical sequence
@@ -1386,11 +1388,15 @@ the game tells you how many notes are correct after each attempt, like a
 game of Mastermind.</li>
 <li><strong>Wand of opening</strong> pointed at the drawbridge.</li>
 <li><strong>Spell of knock</strong> cast at the drawbridge.</li>
-<li><strong>Wand of striking</strong> on the portcullis.</li>
+<li><strong>Wand of striking</strong> <em>destroys</em> the drawbridge
+entirely. The moat squares become walkable, but the bridge is gone and
+the tune is useless afterward. Use this as a one-way option.</li>
 </ul>
-<p>Inside the Castle, you’ll find a throne room, barracks, and several
-treasure chambers. One of those chambers contains a <strong>wand of
-wishing</strong> — one of the most important items in the game. See <a
+<p>Inside the Castle: a throne room, two barracks, and several
+storerooms. The <strong>wand of wishing</strong> — one of the most
+important items in the game — is in a chest in one of the four corner
+towers (guarded by Elbereth and a cursed scroll of scare monster to
+deter the court monsters from displacing it). See <a
 href="#wishes-and-wishing">Wishes and Wishing</a> for the full mechanics
 and how many wishes a 5.0 Castle wand actually yields.</p>
 <p>Below the Castle lies Gehennom. There is no going back to the upper
@@ -4487,6 +4493,7 @@ hungry).</li>
 </section>
 <section id="the-apothecary" class="level3">
 <h3>The Apothecary</h3>
+<!-- audit 2026-05-17 #34: 50+ price/effect/alchemy claims verified, 1 corrected (uncursed extra/full healing also raise maxHP, not blessed-only). See companion-audit.md. -->
 <p>The dungeon is full of mysterious bottles. Ruby liquids, milky
 fluids, smoky concoctions: each one a small gamble between salvation and
 catastrophe. The colors are shuffled every game, so the “bubbly potion”
@@ -4552,9 +4559,10 @@ material for holy water, which is the foundation of everything.</p>
 <h4>Key Potions</h4>
 <p><strong>Healing, extra healing, full healing.</strong> The healing
 chain, and your lifeline in combat. Extra healing is the workhorse: it
-cures blindness and sickness in addition to restoring HP. Blessed extra
-healing and full healing also raise your maximum HP permanently. You can
-never have too many of these.</p>
+always cures blindness and (non-cursed) also cures sickness in addition
+to restoring HP. Non-cursed extra and full healing raise your maximum HP
+if the heal would otherwise overflow; blessed versions give the biggest
+boost. You can never have too many of these.</p>
 <p><strong>Gain ability.</strong> When blessed, raises <em>all</em> your
 stats by 1. Uncursed raises a random stat. This is liquid gold: save
 every one until you can bless it.</p>
@@ -14238,9 +14246,11 @@ you’re adjacent in water, earth is slow but tough.</p>
 </section>
 <section id="fungi-and-molds-f" class="level4">
 <h4>Fungi and molds <code>F</code></h4>
+<!-- audit 2026-05-17 #35: 49 cells / 7 rows verified, 0 corrected. Lead-in reworded (violet/yellow molds → brown/green/red elemental molds). See companion-audit.md. -->
 <p>Stationary. Lichen corpses never rot — keep one in your pack as iron
-rations. Violet and yellow molds bite back on melee with elemental
-passive damage.</p>
+rations. Brown, green, and red molds bite back on melee with elemental
+passive damage (cold, acid, fire). Yellow mold stuns on passive contact;
+violet fungus has an active touch attack with sticking.</p>
 <p>All fungi and molds are mindless.</p>
 <div class="dense-table">
 <table>

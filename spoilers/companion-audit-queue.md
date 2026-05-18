@@ -38,10 +38,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 31**  L 6005  ( 137 lines)   ↳ Sokoban Solutions → Level 4, Version B (prize: usually amulet of reflection, 25% bag of holding)
 - [x] **# 32**  L 2414  ( 292 lines)   ↳ A Practical Identification Strategy → The Price Is Right
 - [x] **# 33**  L 2016  (  38 lines)   ↳ Dangerous Encounters → Seduction
-- [ ] **# 34**  L 3090  ( 121 lines) 📖 The Apothecary
-- [ ] **# 35**  L 7656  (  20 lines)   ↳ Bestiary Tables → Fungi and molds `F`
+- [x] **# 34**  L 3090  ( 121 lines) 📖 The Apothecary
+- [x] **# 35**  L 7656  (  20 lines)   ↳ Bestiary Tables → Fungi and molds `F`
 - [ ] **# 36**  L 2202  ( 142 lines) 📖 Making Friends
-- [ ] **# 37**  L 1117  (  30 lines)   ↳ Branches and Landmarks → The Castle
+- [x] **# 37**  L 1117  (  30 lines)   ↳ Branches and Landmarks → The Castle
 - [ ] **# 38**  L 6681  (  11 lines)   ↳ Weapons Tables → Saber
 - [ ] **# 39**  L  947  (  34 lines)   ↳ Branches and Landmarks → The Quest
 - [ ] **# 40**  L 7113  (  21 lines)   ↳ Bestiary Tables → Ants and insects `a`
