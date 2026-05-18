@@ -4681,10 +4681,15 @@ survives failures can be retried.
 
 The chance of successfully reading a spellbook depends on the
 **spell level**, your **Intelligence**, and your **experience
-level**: roughly, you need Int + XL/2 to comfortably exceed twice
-the spell level. A **blessed** spellbook bypasses the check
-entirely and always succeeds. A **cursed** spellbook fails
-automatically and applies one of the failure effects above.
+level**. The exact formula is `Int + 4 + XL/2 − 2·level` versus a
+roll of 1d20, so read 20 or more always succeeds, 10 is a coin
+flip, and anything below that is dicey. Reading a level-7 spell at
+Int 16, XL 0 gives a read score of 6: only a 30% chance of
+success. Plan to be much better-equipped than that before reading
+the high-level books. Lenses add +2. A **blessed** spellbook
+bypasses the check entirely and always succeeds. A **cursed**
+spellbook fails automatically and applies one of the failure
+effects above.
 
 Here's a rough guide to what you can safely read:
 
