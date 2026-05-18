@@ -1,0 +1,13 @@
+# LaTeX-build artifacts: dungeon_map.py --pdfs regenerates these
+# when companion.md is newer or images/dmap-dod.pdf is missing.
+images/dmap-dod.pdf
+images/dmap-geh.pdf
+images/dmap-planes.pdf
+
+# Pandoc LaTeX intermediate output and the printable book
+companion.tex
+companion.pdf
+companion.aux
+companion.log
+companion.toc
+companion.out
