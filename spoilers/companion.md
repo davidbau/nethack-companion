@@ -235,20 +235,19 @@ The darts do train ranged skills fast, though, and the camera can
 blind monsters in a pinch. A good role for players who have ascended
 before and want a real challenge. *Alignment: Neutral.*
 
-**Valkyrie (Lawful).** The standard recommendation for a first
-serious attempt. You start with a spear, a small shield, and cold
+**Valkyrie.** The standard recommendation for a first serious
+attempt. You start with a spear, a small shield, and cold
 resistance; strong combat stats and good starting equipment do
-the rest. The real reason to pick Lawful, though, is that you
-get two shots at endgame-tier weapons: **Mjollnir** (+d5/+d24 war
-hammer that returns when thrown at Strength 25) drops as your
-role's sacrifice gift to any Valkyrie, *and* a long sword dipped
-in a fountain has a chance to become **Excalibur** (drain
-resistance, automatic searching, +d5 to-hit), which only Lawful
-characters can earn. The two mechanics don't compete: depending
-on what the dungeon gives you, you can finish the game with
-either, or with both, and Valkyries can `#twoweapon`.
-*Alignment: Lawful or Neutral. Female only. Neutral Valkyries
-still get Mjollnir but can't dip for Excalibur.*
+the rest. **Mjollnir** (+d5/+d24 war hammer that returns when
+thrown at Strength 25) drops as your role's sacrifice gift
+regardless of alignment. If you pick **Lawful**, you also get a
+shot at **Excalibur** by dipping a long sword in a fountain
+(drain resistance, automatic searching, +d5 to-hit), so a
+fortunate Lawful Valkyrie can finish the game wielding both:
+Mjollnir thrown, Excalibur in hand, and `#twoweapon` for the
+ascension run. Neutral Valkyries get Mjollnir alone, which is
+still plenty.
+*Alignment: Lawful or Neutral. Female only.*
 
 **Wizard.** You start with a quarterstaff and a spellbook or two.
 Physical combat is terrible, so spells are the answer: fragile
