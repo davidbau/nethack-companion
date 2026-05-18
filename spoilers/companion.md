@@ -870,6 +870,8 @@ but it doesn't tell you what to actually do when you arrive. Here's
 a more practical tour, in roughly the order you'll visit these places.
 
 #### The Gnomish Mines
+<!-- audit 2026-05-18 #124: clean audit, no substantive corrections. Mines branch DL 2-4 (dungeon.lua:14-19), 7 Minetown variants with 1-in-7 being Orcish Town (minetn-1.lua), all three Mine's End layouts guarantee a not-cursed luckstone (minend-{1,2,3}.lua). Race-peaceful gnomes/dwarves for gnomish PCs via role.c:654 lovemask. Added note: minend-1.lua:59 also places a fake-luckstone mimic (appear_as="obj:luckstone") near the real one — players should BUC-test before grabbing. -->
+
 
 The entrance appears somewhere around dungeon levels 2 through 4, as
 a downward staircase. You'll know you're in the Mines because the
@@ -909,11 +911,13 @@ peaceful unless you steal from a shop or attack a peaceful creature.
 If you anger them, they'll call for reinforcements.
 
 **Mine's End** is the bottom of the Mines. All three Mine's End
-variants contain a guaranteed (not-cursed) luckstone, so you'll get
-one wherever you arrive. A luckstone in your open inventory prevents
-your luck from timing out toward zero, which affects everything from
-combat to fountain wishes. Grab it and carry it for the rest of the
-game.
+variants contain a guaranteed (not-cursed) luckstone, so you'll
+get one wherever you arrive. A luckstone in your open inventory
+prevents your luck from timing out toward zero, which affects
+everything from combat to fountain wishes. Grab it and carry it
+for the rest of the game. (One layout variant also seeds a **fake
+luckstone mimic** disguised as a luckstone — BUC-test what you
+pick up before relying on it.)
 
 #### Sokoban
 
@@ -1012,6 +1016,8 @@ instance), your quest leader will refuse to send you. Keep your
 hands clean.
 
 #### The Rogue Level
+<!-- audit 2026-05-18 #125: clean audit, no corrections needed. All claims verified: welcome line (do.c:1913), uppercase-only monsters (makemon.c:1672), symbol swaps for armor `]`/amulet `,`/food `:`/gold-same-as-gems (drawing.c:73-79), no closed doors (mklev.c:647-648), no fountains/sinks/altars/shops (mklev.c:988-989 skip_nonrogue branch), no spellbooks/tools/amulets in natural item pool (mkobj.c:58-64 rogueprobs). Dungeon level range is Dlvl 15-18 per dungeon.lua base=15, range=4. -->
+
 
 Somewhere in the middle dungeon you'll cross a one-level
 historical district. You'll know it when the welcoming line reads,
@@ -1215,12 +1221,14 @@ produce free ammunition. Veterans sometimes trigger them deliberately
 to stock up.
 
 #### Movement Traps
+<!-- audit 2026-05-18 #123: trapdoor description "drops you to the next level down" understates the mechanic. hole_destination at trap.c:442-453 rolls each level: while dst->dlevel < bottom, increment; if rn2(4) break — 25% chance per level to keep falling. So a trapdoor can drop you several levels. Same for holes. Also clarified that Flying (not just Levitation) skips pits/holes/trapdoor (trap.c:635, 1850), with the !Sokoban guard that disables the skip on Sokoban puzzle levels. -->
+
 
 | Trap             | Effect                                                     |
 | ---------------- | ---------------------------------------------------------- |
 | Pit              | You fall in, take minor damage, can climb out              |
 | Spiked pit       | Like a pit, but with spikes (more damage, possible poison) |
-| Trapdoor         | Drops you to the next level down                           |
+| Trapdoor         | Drops you down a dungeon shaft — usually one level, but with a 25%-per-level chance to keep falling, so you can land several deeper |
 | Teleport trap    | Teleports you randomly on the level                        |
 | Level teleporter | Teleports you to a random dungeon level                    |
 | Hole             | Like a trapdoor, but you can see it                        |
@@ -1229,9 +1237,10 @@ to stock up.
 Trapdoors and level teleporters are the most disruptive: one wrong
 step and you're separated from your pet, your stash, and your
 carefully explored map. But with teleport control (from an item or
-intrinsic), teleport traps become free transportation. Levitation
-makes you immune to pits and holes entirely, floating serenely
-above them.
+intrinsic), teleport traps become free transportation. **Levitation
+or flying** both make you immune to pits, holes, and trapdoors
+entirely — except in Sokoban, where the puzzle levels disable the
+skip and you fall in regardless.
 
 #### Dangerous Traps
 
@@ -1445,6 +1454,8 @@ when you see them — but in both cases be ready for what's on the
 other side (a chase by the vault guard, or a long fall).
 
 #### Elbereth
+<!-- audit 2026-05-18 #122: 2 corrections. (1) "Levitation trick" (engrave Elbereth in dust while floating) is non-functional in 5.0: engrave.c:198 requires can_reach_floor() which returns FALSE under Levitation; finger-engrave is refused outright at engrave.c:1003-1006, and wand zaps only "gesture toward the floor below you" per engrave.c:1008-1010 — no actual writing happens. Replaced with the 5.0 reality. (2) "−5 alignment hit" stated as flat; mon.c:4280 is adjalign((u.ualign.record > 5) ? -5 : -rnd(5)), so it's flat −5 only with healthy alignment, otherwise rnd(5) (avg −3). Reworded. -->
+
 
 ##### Where the word comes from
 
@@ -1497,8 +1508,10 @@ If you melee-attack a monster while standing on Elbereth (and that
 monster *would* have feared the ward, or is peaceful), the
 engraving is **deleted instantly, in full, regardless of how it was
 made.** Even a burned-permanent Elbereth disappears in one swing.
-You take a −5 alignment hit ("You feel like a hypocrite") and see
-the message *"The engraving beneath you fades."*
+You take an **alignment hit** ("You feel like a hypocrite") and see
+the message *"The engraving beneath you fades."* The hit is a flat
+−5 if your alignment record is comfortably positive (above +5);
+otherwise it's a random −1 to −5.
 
 The durability table doesn't show this: "permanent" and
 "semi-permanent" describe resistance to *passive* wear (monster
@@ -1523,10 +1536,13 @@ no impairment penalty, no wear. A semi-permanent engraving (athame,
 weapon, gem, wand of digging) is the middle ground: durable, but
 the slow methods can be interrupted mid-word.
 
-**Levitation trick.** If you levitate while writing Elbereth in
-dust, you don't actually stand on the square, so monster footsteps
-can't smudge it as you walk above. The dust ward effectively becomes
-semi-permanent until you land.
+In 5.0, engraving requires you to be **able to reach the floor**.
+Levitation makes that impossible — finger-engrave is refused
+outright, and a wand zap only "gestures toward the floor below
+you" rather than writing anything. The old levitation-locks-dust
+trick from earlier editions no longer works; if you want a
+durable spot you have to land first and use fire/lightning/
+athame.
 
 ---
 

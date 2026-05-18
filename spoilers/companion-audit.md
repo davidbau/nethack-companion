@@ -4594,3 +4594,120 @@ trouble entries added.
   spoiler doesn't note the luck cost.
 
 ---
+
+## 2026-05-18 — Chapter audit #122: Elbereth
+
+Source: `spoilers/companion.md` line 1447. 2 corrections.
+
+### Verified
+- Exact-word match (case-insensitive via strcmpi) at engrave.c:251-260.
+- Ward applies only while hero is on the square (monmove.c:295-298).
+- Ignored by S_HUMAN, uniques, Riders, Angels, Wizard of Yendor,
+  lawful minions, minotaurs, shopkeepers, vault guards, peaceful,
+  blind (monmove.c:251-302, mon.c:251-261).
+- Doesn't work in Gehennom/Elemental Planes/Astral
+  (`Inhell || In_endgame` at monmove.c:302).
+- Cornered scared monster fights via panicattk (monmove.c:918-920).
+- Defile rule deletes engraving in full and prints "engraving
+  beneath you fades" (mon.c:4267-4284).
+- Athame doesn't dull (engrave.c:1306-1307).
+- Burn engraving erodes only on ice or with magical && !rn2(2)
+  (engrave.c:278); dust/blood wipes every step.
+
+### Corrected
+1. **"Levitation trick" (engraving Elbereth in dust while
+   floating)** — non-functional in 5.0. `engrave.c:198` requires
+   can_reach_floor(), which Levitation makes false. Finger-engrave
+   is refused outright (engrave.c:1003-1006); a wand only
+   "gestures toward the floor below you" without writing
+   (engrave.c:1008-1010). Replaced the trick with the 5.0 reality.
+2. **"−5 alignment hit"** stated as flat. Actual: mon.c:4280
+   `adjalign((u.ualign.record > 5) ? -5 : -rnd(5))` — flat -5 only
+   with healthy alignment record (>5); otherwise random -1 to -5
+   (avg -3). Reworded.
+
+### Notes
+- Lawful minions (`is_lminion`) are scare-immune too — relevant
+  for Aligned Priest minions.
+- The exclusion list is concrete monster types, not a generic
+  "intelligence" check; dragons, liches, mind flayers all still
+  fear Elbereth.
+
+---
+
+## 2026-05-18 — Chapter audit #123: Movement Traps
+
+Source: `spoilers/companion.md` line 1174. 1 correction.
+
+### Verified
+- Pit/spiked pit immobilize via u.utrap (trap.c:1825-1892).
+- Trapdoor/hole share same fall path (trap.c:519-520).
+- Teleport trap → tele_trap → safe_teleds, Tcontrol respected
+  at teleport.c:872.
+- Magic portal → domagicportal at teleport.c:1444.
+- Pit/trapdoor/hole skip on Levitation/Flying (trap.c:635, 1850).
+
+### Corrected
+1. **Trapdoor "Drops you to the next level down"** —
+   understates the mechanic. hole_destination
+   (trap.c:442-453) loops: while dst->dlevel < bottom, increment
+   and break with rn2(4) — 25% chance per level to keep falling.
+   So a trapdoor can drop multiple levels. Same applies to hole.
+   Reworded. Also: spoiler attributed pit/hole immunity to
+   "Levitation" only; Flying also skips them, except in Sokoban
+   where the `!Sokoban` guard disables the skip entirely.
+
+### Notes
+- Magic portals lead to fixed destinations (Quest entry, Fort
+  Ludios, Vlad's tower, endgame transitions) — not all branch
+  entrances. Mines/Sokoban use stairs.
+
+---
+
+## 2026-05-18 — Chapter audit #124: The Gnomish Mines
+
+Source: `spoilers/companion.md` line 842. No corrections; one
+useful addition.
+
+### Verified
+- Mines branch DL 2-4 (dungeon.lua:14-19), mazelike + minefill.
+- 7 Minetown variants (dungeon.lua:178-185), 1-in-7 Orcish Town
+  (minetn-1.lua:9-10).
+- Orcish Town has noaligned altar, dead shopkeepers/watchmen, no
+  shops, 7 wax candles (minetn-1.lua:52, 79-88, 99).
+- All three Mine's End layouts contain a not-cursed luckstone
+  (minend-{1,2,3}.lua).
+- Mines population (gnomes, dwarves, occasional dwarf lord)
+  matches minefill.lua:36-44.
+- Race-peaceful for gnomish PCs: lovemask = MH_DWARF | MH_GNOME
+  (role.c:654), peace_minded() via race_peaceful() in
+  makemon.c:2283.
+
+### Added
+- **Fake-luckstone mimic** in minend-1.lua:59 (`appear_as="obj:
+  luckstone"`) sits near the real luckstone — players should
+  BUC-test what they pick up.
+
+---
+
+## 2026-05-18 — Chapter audit #125: The Rogue Level
+
+Source: `spoilers/companion.md` line 1014. No corrections.
+
+### Verified
+- Welcome line "You enter what seems to be an older, more
+  primitive world." (do.c:1913).
+- Uppercase-only monsters (makemon.c:1672, mon.c:4866, 4946).
+- Symbol swaps for armor `]`, amulet `,`, food `:`, gold sharing
+  gem symbol (drawing.c:73-79).
+- No-close doors (mklev.c:647-648 forces D_NODOOR).
+- No fountains/sinks/altars (mklev.c:988-989 skip_nonrogue).
+- No shopkeepers / no shops (roguelike flag in dungeon.lua:54-58).
+- No spellbooks/tools/amulets in natural item pool
+  (mkobj.c:58-64 rogueprobs: WEAPON, ARMOR, FOOD, POTION, SCROLL,
+  WAND, RING only).
+- Plain ASCII via ROGUESET symset (do.c:1666-1667).
+- Dungeon level range Dlvl 15-18 (dungeon.lua:54-58 base=15,
+  range=4).
+
+---
