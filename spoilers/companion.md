@@ -7044,7 +7044,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | broadsword | 1d4+1d4 / 1d6+1 | 70 | 10 | — | iron | +d4 small, +1 large. |
 | elven broadsword | 1d6+1d4 / 1d6+1 | 70 | 10 | — | wood |  |
-| runesword | 1d4+1d4 / 1d6+1 | 40 | 300 | — | iron | **Stormbringer** is the chaotic-aligned runesword artifact: drains a level from victims (you gain it), and attacks peaceful monsters whether you wanted that or not. |
+| runesword | 1d4+1d4 / 1d6+1 | 40 | 300 | — | iron | Stormbringer is the chaotic-aligned artifact form. |
 
 :::
 
