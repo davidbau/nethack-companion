@@ -2600,3 +2600,201 @@ badges (which are invisible to the reader but greppable for tracking).
 
 Updated feedback_spoiler_voice.md memory with a stronger rule
 explicitly listing examples of what NOT to leak into prose.
+
+---
+
+## 2026-05-17 — Chapter audit #46: What Changed Since Last Time
+
+Source: `spoilers/companion.md` line 8297. Verified ~30 changes against
+fixes5-0-0.txt + source. 4 corrected, several clarified.
+
+### Verified (sample)
+- Themed rooms, 4 new monsters, helm of caution, "crystal helmet"
+  appearance for helm of brilliance, charm/sleep/confuse level shifts,
+  unicorn horn no longer restores attributes, BoH scatter-not-destroy,
+  Valkyrie starts with spear, Excalibur 1/30 (1/6 Knight), wand of
+  speed monster now temporary, Demonbane silver-mace + guaranteed
+  Priest gift, HP regen `(XL + Con) > rn2(100)` plus +1/turn from
+  Regen intrinsic, 3/2 strength damage bonus on two-handed, covetous
+  monsters warp to either staircase, Castle no master/arch-lich,
+  hot-ground potion destruction in Gehennom, alchemy smock 1/30 blast,
+  crystal armor staged cracking, candle sqrt radius, 4 new conducts.
+
+### Corrected
+1. **"Chain lightning is a new level 7 attack spell"** — wrong. Spell
+   level 4 (objects.h:1410). Single shock bolt with line-up multi-hit,
+   not "bouncing." Same bug also fixed in #59 Spellcasting table.
+
+2. **"Mummies now cause withering instead of draining experience"** —
+   fabricated. "Withering" doesn't exist anywhere in 5.0 C source.
+   Mummies in 5.0 deal AD_PHYS (claw damage). Wraiths/vampires are
+   the XP drainers, not mummies. Entire bullet removed.
+
+3. **"Elbereth now incurs a −5 alignment penalty when you attack a
+   monster while standing on it"** — the alignment penalty (mon.c:4280)
+   is real but is NOT a 5.0 change; not listed in fixes5-0-0. The
+   AIS-style comment in source suggests it predates 5.0. Removed as
+   misattributed.
+
+4. **"Supply containers ... on early dungeon levels"** — wrong scope.
+   Real name is "supply chests" (mklev.c:1044). They appear only on
+   levels ABOVE the Oracle (i.e., DLs 1 through ~5 typically), not
+   on "the first ten levels." Reworded.
+
+### Clarified (oversimplified, not wrong)
+- "Mind flayers no longer cause amnesia" — the *map/identifications*
+  amnesia is gone, but the per-hit chance of forgetting memorized
+  spells and weapon-skill experience persists. Reworded.
+- "Sink dipping" — applies only to potions (fixes line 2869), not
+  "items or potions."
+- "Loadstones confer steadfastness (resistance to forced movement)" —
+  overstated. Only blocks knockback from combat attacks, not
+  teleport/displacement/levitation. Reworded.
+
+### Notes
+- "Spell maintenance drains maximum power while memorized" — fabricated
+  per #59 audit; removed earlier in this batch (the maintenance
+  mechanic doesn't exist in 5.0 C source).
+
+---
+
+## 2026-05-17 — Chapter audit #47: Shopping and Shopkeeper Pricing
+
+Source: `spoilers/companion.md` line 6478. 22-row gem table verified
+clean; ~15 other claims verified; 1 corrected.
+
+### Verified (highlights)
+- All 22 gem prices, Mohs ratings, colors match objects.h:1526-1570.
+- Hard-gem threshold (Mohs >= 8) per objects.h:19.
+- Unidentified gem 3-8 zm sell range, formula `(tmp+3)*quan` per
+  shk.c:3169 — varies by shopkeeper m_id.
+- Shopkeeper anti-Elbereth in own shop (monmove.c:266) + see-invisible
+  (shk.c:5302).
+- Keystone Kops trigger on debt walkout (shk.c:510-562).
+- "Closed for inventory" engraving only marks D_LOCKED doors (shknam.c:750).
+- Orcus-level shopkeeper killed by Orcus, items ownerless (shknam.c:794).
+- Pay for broken shop items (shk.c:5174).
+- Unicorn luck: co-aligned identified real gem → change_luck(5);
+  cross-aligned identified gem → rn2(7)-3 (i.e. -3..+3); glass never
+  changes luck (dothrow.c:2309).
+- Excalibur 16000 zm price example matches 4 × arti_cost(4000).
+- Tourist/dunce-cap/visible-shirt buy ×4/3 and sell /3 vs /2
+  (shk.c:2947, 3154).
+- Credit/debit/loan ordering on drop-gold-in-shop (shk.c:3884).
+
+### Corrected
+1. **"Amethyst + booze dispels hallucination"** — wrong. potion.c:2161
+   shows amethyst + booze → fruit juice (the "a-methyst" / "not
+   intoxicated" pun). Doesn't touch hallucination. Per user feedback,
+   dropped the alchemy bullet entirely (it's trivia, not gameplay-
+   actionable) and cleared the table cell.
+
+### Close calls (not changed)
+- "Artifact items priced at 4x the artifact's already-large base cost"
+  — easy to misread as "4× oc_cost" when it's "4× arti_cost"
+  (arti_cost itself = 100× oc_cost or artilist override). Wording
+  works as written.
+- Glass-gem unidentified footnote: "0-8 zm" — the floor is actually 3
+  for unidentified pricing (formula adds +3 baseline). Minor.
+
+---
+
+## 2026-05-17 — Chapter audit #48: Advanced Controls
+
+Source: `spoilers/companion.md` line 5511. Most claims verified clean.
+1 corrected.
+
+### Verified
+- Count prefix (LARGEST_INT cap, ESC cancels), example commands `10s`,
+  `20.`, `5h` all work.
+- Ctrl+A `do_repeat` last-executed-command behavior (cmd.c:1822).
+- `F` force-fight prefix, `G` run, `g` rush, capital-letter run/rush
+  shortcuts via MOVEMENTCMD + CMD_M_PREFIX (cmd.c:2043-2057).
+- `m` prefix → menu_requested; commands with CMD_M_PREFIX honor it
+  (`a`, `e`, `,`, `O`).
+- Ctrl+P prevmsg, Ctrl+R redraw, Ctrl+O overview (#overview),
+  #annotate (M-A or Ctrl+N), #chronicle (`v`).
+- `O` opens doset_simple; `m O` opens full doset.
+- number_pad is in-game settable (set_in_game); when on, `n` becomes
+  count prefix.
+- autopickup + pickup_types in-game settable.
+- windowtype is set_gameview (config/startup only); align_message /
+  align_status are curses-only.
+- Travel `_`, look `;`, what-is `/` all confirmed.
+
+### Corrected
+1. **"`verbose` makes interrupted multi-commands tell you *why* they
+   stopped"** — false characterization. flags.verbose controls extra
+   descriptive messages (wielding/digging/sounds/pets), not multi-
+   command interrupt messaging. Reworded.
+
+### Close calls (not changed)
+- "Counts up to 32,767 (five digits)" — true number; "five digits" is
+  cosmetic. Cap is LARGEST_INT, not a digit count.
+- "Ctrl+A remembers the last command that actually executed" — half
+  right; doesn't filter "bumped against a wall" exactly. Acceptable.
+
+---
+
+## 2026-05-17 — Chapter audit #59: Spellcasting
+
+Source: `spoilers/companion.md` line 4662. Substantial rewrite. Six
+corrections, two fabrications removed.
+
+### Verified
+- Spell level lookups in objects.h: force bolt 1, healing 1, identify 3,
+  magic mapping 5, finger of death 7, charm monster 5, detect monsters 1,
+  remove curse 3.
+- Spell retention KEEN = 20000 turns (spell.c:17).
+- Wizard-only skill-based spellbook ID (spell.c:864) reveals appearances
+  at unskilled/basic/skilled/expert per level-1/3/5/7.
+- Wizards start P_BASIC in P_ATTACK_SPELL and P_ENCHANTMENT_SPELL
+  (weapon.c:1768) → know level-3 appearances in those two schools.
+- Reading formula: `Int + 4 + XL/2 − 2·level` vs rnd(20) (spell.c:582).
+  Blessed books skip the check entirely (auto-success).
+- Cursed books always fail (too_hard = TRUE at spell.c:578).
+- Spellbook fades after MAX_SPELL_STUDY successful reads (spell.c:401).
+- `a`pply shows ink fadeness in 5 stages (apply.c:4509).
+- Pw cost = 5 × spell level (SPELL_LEV_PW macro, spell.h:36).
+- Failed cast costs half energy (spell.c:1374).
+
+### Corrected
+1. **Force bolt "d6 to 4d6 by skill"** — false. Hard-coded d(2,12) =
+   2-24, plus −3 to +3 Int/XL bonus via spell_damage_bonus (zap.c:205).
+   Spell-school skill does NOT scale damage at all. Fixed in table.
+
+2. **Chain lightning level 7** — wrong. Level 4 (objects.h:1410). Also
+   "bouncing ray" is wrong; it's a single bolt that can hit multiple
+   targets if they line up. Fixed in table.
+
+3. **"Failed reading can paralyze you, summon hostile monsters"** —
+   wrong on both. cursed_book enumerates teleport, take-gold, blindness,
+   confusion, contact poison, exploding rune, rndcurse (spell.c:130).
+   No paralysis, no summons. Reworded.
+
+4. **"Each failed attempt damages the spellbook. Fail enough times and
+   the book crumbles"** — backwards. spestudied increments on
+   **successful** reads (spell.c:411); book fades after MAX_SPELL_STUDY
+   successes. Failures use a single 1-in-3 destruction roll
+   (spell.c:612), no per-failure wear counter.
+
+5. **"Spell maintenance system: known spells drain max Pw while
+   memorized"** — fully fabricated. No such mechanic in spell.c.
+   Each spell decays its own sp_know one per turn but does NOT touch
+   uen or uenmax. Paragraph removed.
+
+6. **"Energy Vortex trick: let one hit you while carrying an amulet
+   of reflection, increases max power"** — fully fabricated.
+   drain_en (trap.c:5202) only ever DECREASES uen/uenmax; no
+   reflection branch. Paragraph removed.
+
+7. **"Blessed spellbooks add a bonus (equivalent to a few points of
+   Intelligence)"** — overhedged. Blessed books bypass the entire
+   read-ability check (spell.c:577) — auto-success, not a soft bonus.
+   Reworded.
+
+### Notes
+- "Cursed books always punish you" — close to right but the
+  exploding-rune case is prevented by Antimagic (spell.c:170), and
+  rndcurse can no-op if you have nothing curseable. Left as-is.
+

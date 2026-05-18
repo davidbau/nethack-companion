@@ -50,9 +50,9 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 43**  L 1942  (  21 lines)   ↳ Dangerous Encounters → Level Drain
 - [x] **# 44**  L 7411  (  17 lines)   ↳ Bestiary Tables → Rodents `r`
 - [x] **# 45**  L 6789  (  10 lines)   ↳ Weapons Tables → Hammer
-- [ ] **# 46**  L 8180  ( 196 lines) 📖 What Changed Since Last Time
-- [ ] **# 47**  L 6399  ( 237 lines) 📖 Shopping and Shopkeeper Pricing
-- [ ] **# 48**  L 5446  ( 114 lines) 📖 Advanced Controls
+- [x] **# 46**  L 8180  ( 196 lines) 📖 What Changed Since Last Time
+- [x] **# 47**  L 6399  ( 237 lines) 📖 Shopping and Shopkeeper Pricing
+- [x] **# 48**  L 5446  ( 114 lines) 📖 Advanced Controls
 - [x] **# 49**  L 7589  (  14 lines)   ↳ Bestiary Tables → Centaurs `C`
 - [x] **# 50**  L 6341  (  12 lines)   ↳ Voluntary Challenges → Petless (new in 5.0)
 - [x] **# 51**  L 7858  (  19 lines)   ↳ Bestiary Tables → Snakes `S`
@@ -63,7 +63,7 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 56**  L 7478  (  19 lines)   ↳ Bestiary Tables → Vortices `v`
 - [x] **# 57**  L 7193  (  18 lines)   ↳ Bestiary Tables → Eyes and spheres `e`
 - [x] **# 58**  L 7393  (  18 lines)   ↳ Bestiary Tables → Quadrupeds `q`
-- [ ] **# 59**  L 4598  ( 121 lines) 📖 Spellcasting
+- [x] **# 59**  L 4598  ( 121 lines) 📖 Spellcasting
 - [x] **# 60**  L 7845  (  13 lines)   ↳ Bestiary Tables → Rust monsters and disenchanters `R`
 - [x] **# 61**  L 7951  (  17 lines)   ↳ Bestiary Tables → Apelike creatures `Y`
 - [x] **# 62**  L 6353  (  17 lines)   ↳ Voluntary Challenges → Permadeaf (new in 5.0)

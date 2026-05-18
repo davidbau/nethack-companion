@@ -4660,10 +4660,11 @@ not the time for ambiguity:
 ---
 
 ### Spellcasting
+<!-- audit 2026-05-17 #59: corrected 6 substantive claims. (1) Force bolt damage is 2d12, not "d6 to 4d6 by skill"; spell-school skill doesn't scale damage. (2) Chain lightning is level 4, not 7, NODIR not "bouncing ray." (3) Failed reading does NOT paralyze or summon monsters; cursed_book enumerates teleport/aggravate/blindness/take-gold/confusion/contact poison/exploding rune/rndcurse (spell.c:130). (4) Spellbook decay is by SUCCESS count (MAX_SPELL_STUDY successful reads, spell.c:401-418), not failure wear; failures use a single 1/3 random destruction (spell.c:612). (5) "Spell maintenance" system is fabricated — no Pw drain from memorized spells anywhere in spell.c. (6) "Energy vortex + amulet of reflection = +max Pw" is fabricated; drain_en only ever decreases Pw. Also: blessed books bypass the read-ability check entirely (auto-success), not "equivalent to a few points of Int." Pw cost per spell is 5 × level. See companion-audit.md. -->
 
 Magic in the Mazes is less "wave a wand and sparkles happen" and
-more "laboriously study a crumbling book, hope you don't get
-paralyzed, and then set things on fire with your mind." Spells are
+more "laboriously study a crumbling book, hope it doesn't go off in
+your face, and then set things on fire with your mind." Spells are
 reusable abilities learned from spellbooks. Unlike scrolls (consumed
 on use) or wands (limited charges), spells can be cast repeatedly as
 long as you have mana (Pw, power) and the spell hasn't expired from
@@ -4672,18 +4673,18 @@ your increasingly overtaxed brain.
 #### Learning Spells
 
 Read a spellbook to learn the spell it contains. Reading takes
-several turns and can fail, sometimes catastrophically. A failed
-reading can paralyze you, summon hostile monsters, or just waste
-your time. Worse, each failed attempt damages the spellbook. Fail
-enough times and the book crumbles to dust, taking the spell with
-it. It's like the book is *judging* you.
+several turns and can fail. A failed reading can teleport you, take
+your gold, blind, confuse, or poison you, blow up in your face for
+HP damage, or randomly curse one of your items. Each failure also
+has a 1-in-3 chance of destroying the book on the spot. A book that
+survives failures can be retried.
 
-The chance of successfully reading a spellbook depends on three
-things: the **spell level**, your **Intelligence**, and your
-**experience level**. Higher-level spells demand more of both.
-Blessed spellbooks add a bonus (equivalent to a few points of
-Intelligence). Cursed spellbooks should never be read: they
-always fail and always punish you, because of course they do.
+The chance of successfully reading a spellbook depends on the
+**spell level**, your **Intelligence**, and your **experience
+level**: roughly, you need Int + XL/2 to comfortably exceed twice
+the spell level. A **blessed** spellbook bypasses the check
+entirely and always succeeds. A **cursed** spellbook fails
+automatically and applies one of the failure effects above.
 
 Here's a rough guide to what you can safely read:
 
@@ -4724,35 +4725,28 @@ but with less panache. A Valkyrie might manage identify (level 3)
 but will struggle with anything above level 4. Tourists, Barbarians,
 and Cavemen should probably stick to hitting things.
 
-Each spell stays in memory for approximately 20,000 turns, then
-fades and must be relearned. You can check how close a spell is
-to expiring from your spell list (`+`). Carry important spellbooks
-with you if you plan to rely on their spells in the late game.
-You can also `a`pply a spellbook to check how many times it's been
-read (each reading wears the book down, and they eventually
-crumble to dust). Nothing is worse than reaching Gehennom and
-discovering your finger of death expired ten levels ago.
-
-In recent editions of the Mazes, the **spell maintenance** system
-adds an ongoing cost: known spells gradually drain a small amount
-of your maximum power while memorized. Higher-level spells cost
-more to maintain. This means you can't just learn every spell you
-find. Carrying too many memorized spells shrinks your effective
-mana pool. Choose wisely and let unneeded spells expire.
+Each spell stays in memory for about 20,000 turns, then fades and
+must be relearned. The spell list (`+`) shows time-remaining. You
+can also `a`pply a spellbook to check how worn it is: each
+**successful** read counts toward a fixed total (about five) before
+the book fades to blank paper. Failed reads don't add to that
+counter, but each failure has its own 1-in-3 chance to destroy the
+book outright. Carry important spellbooks with you if you plan to
+rely on their spells in the late game.
 
 #### Key Spells
 
 | Spell           | Level | Effect                                  |
 | --------------- | ----- | --------------------------------------- |
-| Force bolt      | 1     | Ranged attack (d6 to 4d6 by skill)      |
+| Force bolt      | 1     | 2d12 ranged hit; an Int/XL bonus adjusts by −3 to +3 |
 | Healing         | 1     | Restore hit points                      |
-| Identify        | 3     | Identify items (saves scrolls)          |
-| Magic mapping   | 5     | Reveal the level (saves scrolls)        |
-| Finger of death | 7     | Kill one monster (resisted by MR)       |
-| Chain lightning | 7     | Bouncing lightning that hits everything  |
-| Charm monster   | 5     | Tame an adjacent creature               |
 | Detect monsters | 1     | Sense nearby monsters                   |
+| Identify        | 3     | Identify items (saves scrolls)          |
 | Remove curse    | 3     | Uncurse worn/wielded items              |
+| Chain lightning | 4     | Single shock bolt, multiple targets if it lines up |
+| Magic mapping   | 5     | Reveal the level (saves scrolls)        |
+| Charm monster   | 5     | Tame nearby creatures (3×3, 5×5 confused) |
+| Finger of death | 7     | Kill in a beam; MR resists              |
 
 For Wizards, learning **identify** and **magic mapping** as spells
 dramatically reduces your need for scrolls: it's like having
@@ -4765,11 +4759,9 @@ than killing them because friends carry things and absorb hits.
 
 Your power (Pw) pool determines how many spells you can cast before
 you need to sit in a corner and regenerate like a phone battery.
-Power regenerates over time (faster with higher Wisdom and with a
-regeneration source). The Energy Vortex trick: let an energy vortex
-hit you while carrying an amulet of reflection, and it will increase
-your maximum power. Yes, getting hit by a vortex makes you *more*
-magical. The Mazes have their own logic.
+Casting a spell costs **5 Pw per spell level** (so finger of death
+is 35 Pw). A failed cast still spends half. Power regenerates over
+time (faster with higher Wisdom and with a regeneration source).
 
 High-level spells cost serious power. You can't spam finger of
 death unless you have a colossal power pool, and even then you'll
@@ -5509,6 +5501,7 @@ altar, make one sacrifice, and end this.
 ---
 
 ### Advanced Controls
+<!-- audit 2026-05-17 #48: keystrokes (F, G, g, m, O, v, _, ;, /, Ctrl+A/P/R/O, #overview, #chronicle, #annotate, #conduct) all verified in cmd.c:1662-2065. number_pad/autopickup/pickup_types option semantics verified vs optlist.h. Corrected `verbose` claim: it controls extra descriptive messages (wielding/digging/sounds/pets), not "why multi-commands stopped." See companion-audit.md. -->
 
 The basic keys get you through every situation in NetHack. The
 commands below get you through them faster. Once you've spent a
@@ -5603,8 +5596,10 @@ commands above feel:
   by `pickup_types` (e.g. `pickup_types:$?!` for gold, scrolls,
   and potions). The `m` prefix on movement suppresses autopickup
   for one step.
-- **`verbose`** makes interrupted multi-commands tell you *why*
-  they stopped instead of just halting.
+- **`verbose`** turns on a layer of extra descriptive messages
+  (more detailed feedback when wielding, digging, hearing monsters,
+  watching your pet, and so on). Turn it off if the message log
+  feels noisy.
 
 The full options list is deep, but the rest is taste and
 convenience. If something about the interface annoys you, there is
@@ -6480,6 +6475,7 @@ the conduct.)
 ---
 
 ### Shopping and Shopkeeper Pricing
+<!-- audit 2026-05-17 #47: 22 gem prices, Mohs hardness, hard-gem threshold (>= 8), unidentified-gem 3-8 zm formula, Tourist/dunce-cap surcharge, unicorn luck mechanics, Excalibur 16000 example, shopkeeper anti-Elbereth + see-invisible behavior, Keystone Kops trigger, "Closed for inventory" engraving, Orcus-level shopkeeper death, credit/debit/loan ordering all verified against shk.c + objects.h + shknam.c. Corrected one Wrong: amethyst+booze produces fruit juice (potion.c:2161), NOT cure for hallucination — fixed in both the gem table and the Amethyst special-case paragraph. See companion-audit.md. -->
 
 Shops do more than sell: their pricing system is your most
 powerful identification tool. You can find full mechanics and
@@ -6668,7 +6664,7 @@ blessed touchstone regardless.
 |   800 | Opal                  | white           |    6 |                                |
 |   700 | Chrysoberyl           | yellow          |    5 |                                |
 |   700 | Garnet                | red             |    7 |                                |
-|   600 | Amethyst              | violet          |    7 | useful in alchemy (booze→see-i)|
+|   600 | Amethyst              | violet          |    7 |                                  |
 |   500 | Jasper                | red             |    7 |                                |
 |   400 | Fluorite              | violet          |    4 |                                |
 |   300 | Jade                  | green           |    6 |                                |
@@ -6699,8 +6695,6 @@ A few rules of thumb:
   black opal, emerald) are worth selling individually as you find
   shops that buy them: 3000+ zm per gem is a real bankroll. Don't
   fire-sale them to a non-gem-buying shop for half price.
-- **Amethyst** is a special case at any price tier: it's an alchemy
-  reagent (booze + amethyst dispels hallucination).
 - **Worthless glass never costs luck.** Glass thrown at a unicorn is
   either rejected ("not interested in your junk") or quietly
   accepted with no effect. The luck risk on unicorn throws comes
@@ -8301,6 +8295,7 @@ Mostly harmless. **Lizard corpses cure petrification and never rot.** Carry one 
 ---
 
 ### What Changed Since Last Time
+<!-- audit 2026-05-17 #46: ~30 5.0 changes verified against fixes5-0-0 + source (themed rooms, 4 new monsters, helm of caution, helm of brilliance rename, spell-level rebalance, unicorn horn no-attribute-restore, BoH scatter-not-destroy, Valkyrie starts with spear, Excalibur 1/30 dip, demonbane = silver mace, HP regen formula, 3/2 two-handed Str bonus, covetous-monster either-staircase warp, Castle no master/arch-lich, hot-ground potion destruction, alchemy smock 1/30, crystal armor cracks, candle sqrt formula, MC overhaul attribution to 3.6, all 4 new conducts, intelligent-monster containers). Corrected 4: chain lightning is level 4 not 7; "mummy withering" was fabricated (no such mechanic; mummies do AD_PHYS); Elbereth -5 alignment penalty is not a 5.0 change; supply chests appear above the Oracle, not "the first ten levels." Also clarified: mind flayer change is map/ID amnesia is gone, spell/skill loss persists; sink dipping for potions only. See companion-audit.md. -->
 
 If you're an experienced traveler returning after some time away, the
 5.0 of the Mazes (NetHack 5.0.0, released May 2, 2026) includes
@@ -8317,12 +8312,13 @@ point.) The most significant:
 - **The helm of caution** is a new piece of armor that grants
   warning. The helm of brilliance now always appears as a
   "crystal helmet" rather than a randomized appearance.
-- **Chain lightning** is a new level 7 attack spell.
-- **Spell maintenance** drains maximum power while spells are
-  memorized, making it costly to hoard too many spells.
+- **Chain lightning** is a new level 4 attack spell (single shock
+  bolt that can hit multiple targets if they line up).
 - **Spellbooks** can be `a`pplied to check how worn they are.
-- **Mind flayers** no longer cause amnesia (they still drain
-  Intelligence, which can still kill you).
+- **Mind flayers** no longer wipe your map or identifications (the
+  old "amnesia" effect on tentacle hit). They still drain
+  Intelligence and have a separate chance to forget memorized
+  spells and weapon-skill experience.
 - **Unicorn horns** no longer restore lost attributes. This is a
   major change. In previous editions, the unicorn horn was a
   cure-all; now you'll need other solutions.
@@ -8331,8 +8327,8 @@ point.) The most significant:
 - **Bags of holding** no longer destroy their contents on explosion.
   Items are scattered on the floor instead, which is bad but not
   catastrophic.
-- **Loadstones** now confer steadfastness (resistance to forced
-  movement), giving them a niche use if you can keep one uncursed.
+- **Loadstones** now resist knockback from combat attacks (the new
+  knockback mechanic). A niche use if you can keep one uncursed.
 - **Sacrifice** for artifact generation now requires a minimum
   sacrifice value.
 - **Priest donations** are now randomized. The old fixed
@@ -8354,8 +8350,6 @@ point.) The most significant:
 - **Medusa's Island** now has four possible layouts.
 - **Special levels** can now generate mirrored (flipped), so don't
   rely on fixed maps.
-- **Elbereth** now incurs a −5 alignment penalty when you attack
-  a monster while standing on it.
 - **New conducts** are tracked: pauper, petless, permadeaf, and
   Sokoban (no cheating).
 - **Touch of death** has been reworked: instead of binary kill,
@@ -8391,13 +8385,14 @@ point.) The most significant:
   not permanently.
 - **Wand of speed monster** no longer grants permanent speed when
   self-zapped; use potions of speed instead.
-- **Supply containers** now appear on early dungeon levels,
-  containing useful items like healing potions and enchant scrolls.
+- **Supply chests** now appear on the dungeon levels above the
+  Oracle (about a 2-in-3 chance per fillable room), containing
+  useful early-game items like healing potions and enchant scrolls.
 - **Pets** can gain resistances from eating corpses, and dead pets
   can be revived by praying at a co-aligned altar while standing
   on their corpse.
-- **Sink dipping** is new: you can dip items or pour potions down
-  a sink to identify them by their effects.
+- **Sink dipping (potions)** is new: pour potions down a sink and
+  the message identifies the potion type without consuming a scroll.
 - **Demonbane** is now a silver mace (was a long sword) and is the
   guaranteed first sacrifice gift for Priests.
 - **Two-handed weapons** get a 50% increase to the strength damage
@@ -8427,8 +8422,6 @@ point.) The most significant:
   them with a weapon or dig through them; the practical way past is
   to dig around the side through the adjacent wall, or polymorph into
   something with acid breath. (Potions of acid don't work on bars.)
-- **Mummies** now cause withering instead of draining experience.
-  Withering can be cured by prayer.
 
 ---
 
