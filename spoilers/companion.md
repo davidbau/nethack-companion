@@ -1560,7 +1560,7 @@ AC / attack details on every monster, see the
 | Symbol | Class             | Notes                                                                                                |
 | ------ | ----------------- | ---------------------------------------------------------------------------------------------------- |
 | `A`    | Angels            | Powerful, usually aligned. Don't fight your own.                                                     |
-| `C`    | Centaurs          | Fast (speed 18-20) and half of them spawn with a bow or crossbow. They have no kiting AI, so they close into melee for weapon + kick attacks. Mountain centaurs hit hardest: 1d10 weapon plus *two* 1d6 kicks per turn. |
+| `C`    | Centaurs          | Fast (speed 18-20). Half spawn with a bow or crossbow, but they'll still close into melee for weapon and kick attacks. Mountain centaurs hit hardest: 1d10 weapon plus *two* 1d6 kicks per turn. |
 | `E`    | Elementals        | Hard to kill. Air elementals engulf; earth elementals phase through walls.                           |
 | `f`    | Displacer beast   | Cat-class, but vicious: three-attack heavy melee with a permanent displacement aura. Eat the corpse for temporary displacement of your own. |
 | `F`    | Fungi             | Yellow mold, green mold, shriekers. Shriekers summon other monsters.                                 |
@@ -4361,9 +4361,10 @@ behavior), your god may crown you. Crowning grants:
 - A special title (e.g., "Hand of Elbereth" for lawful characters).
 - An artifact weapon appropriate to your alignment, if one is
   available that you can use.
-- Intrinsic fire resistance, cold resistance, poison resistance,
-  and shock resistance.
-- Full healing.
+- Intrinsic fire resistance, cold resistance, shock resistance,
+  sleep resistance, poison resistance, and see invisible.
+- A class-specific bonus: Wizards get the *finger of death* spell;
+  Monks get *restore ability*.
 
 However, crowning also **locks your alignment** (you can never
 change it) and raises the prayer timeout to at least 1000 turns.
