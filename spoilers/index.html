@@ -118,7 +118,7 @@ peaceful coexistence</li>
 <ol start="13" type="1">
 <li><a href="#a-practical-identification-strategy">A Practical
 Identification Strategy</a>
-<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#5a5a5a" stroke-width="1.1" style="vertical-align:-2px" aria-label="includes a flowchart figure"><rect x="2" y="1" width="10" height="3"/><rect x="2" y="6" width="10" height="3"/><rect x="2" y="11" width="10" height="3"/><line x1="7" y1="4" x2="7" y2="6"/><line x1="7" y1="9" x2="7" y2="11"/></svg>
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#5a5a5a" stroke-width="1.1" style="vertical-align:-2px" aria-label="includes a flowchart figure"><rect x="2" y="1" width="10" height="3"/><rect x="2" y="5" width="10" height="3"/><rect x="2" y="9" width="10" height="3"/><line x1="7" y1="4" x2="7" y2="5"/><line x1="7" y1="8" x2="7" y2="9"/></svg>
 — Figuring out what you’ve found (with flowchart)</li>
 <li><a href="#provisions-and-dining">Provisions and Dining</a> — Food,
 nutrition, and dining</li>
@@ -996,16 +996,15 @@ never vanishes without granting a wish first.)
 <section id="sinks" class="level4">
 <h4>Sinks <code>#</code></h4>
 <p>Sinks are the dungeon’s most underrated identification tool.</p>
-<ul>
-<li><p><strong>Kicking a sink</strong> can shake loose a ring (useful!),
+<p><strong>Kicking a sink</strong> can shake loose a ring (useful!),
 summon a black pudding (terrifying!), summon an <em>amorous demon</em>
-posing as “the dish washer” (the same incubus/succubus as a seduction
-encounter — careful!), or just stub your toe. Each non-stub outcome
-fires at most once per sink. Worth a kick in the early game if you can
-handle what comes out</p></li>
-<li><p><strong>Pouring potions down a sink</strong> (by dipping)
-produces telltale effects. A clever way to narrow down potion identities
-without risking a sip. Five potions print unique sink-only messages:</p>
+posing as “the dish washer” (the same incubus/succubus as <a
+href="#seduction">a seduction encounter</a> — careful!), or just stub
+your toe. Each non-stub outcome fires at most once per sink. Worth a
+kick in the early game if you can handle what comes out.</p>
+<p><strong>Pouring potions down a sink</strong> (by dipping) produces
+telltale effects — a clever way to narrow down potion identities without
+risking a sip. Five potions print unique sink-only messages:</p>
 <table>
 <colgroup>
 <col style="width: 76%" />
@@ -1050,20 +1049,19 @@ broken potion: the side effect normally identifies the potion (sleeping
 makes you yawn, hallucination starts hallucinating, blindness blinds
 briefly, healing nudges HP, and so on). Wasted on water, fruit juice,
 gain level, gain energy, and monster detection: those all just print
-<em>“nothing seems to happen.”</em></p></li>
-<li><p><strong>Quaffing from a sink</strong> rolls one of 20 random
-effects. Mostly nothing useful (mild flavor messages, summoned sewer
-rat, vomit, scalding water), but three outcomes are worth the occasional
-risk: ~5% chance to gain an experience level outright, ~5% chance to
-find a ring at your feet (once per sink), and ~5% chance to drink a
-random unidentified potion. Worth a quaff or two from any sink you
-encounter, but keep HP and an escape plan in reserve: it could summon a
-water elemental, or it could polymorph you</p></li>
-<li><p><strong>Dropping a ring down a sink</strong> produces a message
+<em>“nothing seems to happen.”</em></p>
+<p><strong>Quaffing from a sink</strong> rolls one of 20 random effects.
+Mostly nothing useful (mild flavor messages, summoned sewer rat, vomit,
+scalding water), but three outcomes are worth the occasional risk: ~5%
+chance to gain an experience level outright, ~5% chance to find a ring
+at your feet (once per sink), and ~5% chance to drink a random
+unidentified potion. Worth a quaff or two from any sink you encounter,
+but keep HP and an escape plan in reserve: it could summon a water
+elemental, or it could polymorph you.</p>
+<p><strong>Dropping a ring down a sink</strong> produces a message
 unique to the ring type — the most reliable non-magical way to identify
 rings. <strong>Most rings are consumed</strong>, but two come back after
-IDing themselves for free:</p></li>
-</ul>
+IDing themselves for free:</p>
 <table>
 <colgroup>
 <col style="width: 60%" />
@@ -1246,24 +1244,25 @@ squeezing past boulders costs you a point of luck each time. Solve each
 level honestly if you can. For complete solutions to all eight level
 variants, see <a href="#sokoban-solutions">Sokoban Solutions</a> in the
 appendices.</p>
+<!-- audit 2026-05-18 #164: level range DL 5-9 verified vs dungeon.lua:60-66 + dungeon.c:405-409. Corrected fountain count (4, not 1) per oracle.lua:19-22. Corrected minor-consultation framing: rumors.c:147-156 always passes truth=1 to getrumor, so minor consultations always pull from rumors.tru (true tips), not the false-rumor pool. Major consultation cost: 500 + 50*ulevel (rumors.c:699). See companion-audit.md. -->
 </section>
 <section id="the-oracle" class="level4">
 <h4>The Oracle</h4>
 <p>Somewhere in the mid-levels of the Dungeons of Doom (around levels 5
 through 9), you’ll find a special room containing the Oracle of Delphi,
-flanked by centaur statues and a fountain.</p>
+flanked by centaur statues and four fountains.</p>
 <p>The Oracle offers two services:</p>
 <ul>
-<li><strong>Minor consultations</strong> are cheap and produce
-fortune-cookie-style messages, occasionally useful but mostly
-atmospheric.</li>
-<li><strong>Major consultations</strong> are expensive but pay back the
-gold in useful intel: hints about monsters, items, and game
-mechanics.</li>
+<li><strong>Minor consultations</strong> are cheap (50 zorkmids) and
+produce fortune-cookie-style messages — drawn from the same true-rumor
+pool, mostly atmospheric, occasionally useful.</li>
+<li><strong>Major consultations</strong> are expensive (500 + 50 ×
+experience level) but pay back the gold in useful intel: hints about
+monsters, items, and game mechanics.</li>
 </ul>
 <p>The Oracle is peaceful and never attacks. Her room is a safe place to
-rest for a moment, though the fountain is subject to the usual fountain
-risks.</p>
+rest for a moment, though the fountains are subject to the usual
+fountain risks.</p>
 </section>
 <section id="the-quest" class="level4">
 <h4>The Quest</h4>
@@ -9956,6 +9955,7 @@ buried.</td>
 </tbody>
 </table>
 </div>
+<!-- audit 2026-05-18 #163: all 4 rows verified clean vs objects.h:245-254. All share P_SHORT_SWORD (scimitar is P_SABER, correctly excluded). No artifact uses SHORT_SWORD base type. Samurai's "wakizashi" is a SHORT_SWORD aliased in objnam.c:106; added to plain short sword's Notes. 0 numeric corrections. See companion-audit.md. -->
 </section>
 <section id="short-sword" class="level4">
 <h4>Short sword</h4>
@@ -9989,7 +9989,8 @@ buried.</td>
 <td>10</td>
 <td>—</td>
 <td>iron</td>
-<td>The Rogue’s starter.</td>
+<td>The Rogue’s starter; Samurai’s <em>wakizashi</em> is just a short
+sword by another name.</td>
 </tr>
 <tr>
 <td>elven short sword</td>
@@ -10880,6 +10881,7 @@ ordinary side-arm.</td>
 </tbody>
 </table>
 </div>
+<!-- audit 2026-05-18 #165: stats clean vs objects.h:349 (P_LANCE skill, one-handed, IRON). "Useless on foot" overstated — without a steed it's a regular 1d6/1d8 piercer with no joust bonus, but it still hits and damages normally. Reworded to "no bonus on foot." See companion-audit.md. -->
 </section>
 <section id="lance" class="level4">
 <h4>Lance</h4>
@@ -10913,11 +10915,14 @@ ordinary side-arm.</td>
 <td>10</td>
 <td>—</td>
 <td>iron</td>
-<td>Devastating from horseback (jousting bonus); useless on foot.</td>
+<td>One-handed, P_LANCE skill. Mounted only: chance to joust for +2d10
+primary (+2d2 off-hand) extra damage; a critical can shatter the lance.
+No bonus on foot.</td>
 </tr>
 </tbody>
 </table>
 </div>
+<!-- audit 2026-05-18 #162: stats clean vs objects.h:374-376 (rubber hose) and 390-392 (bullwhip), P_WHIP at skills.h:49. Bullwhip apply-to-disarm at apply.c:3127-3174 and apply-to-yank-from-pit at apply.c:3069-3125 verified. Removed the "Damages even Shades" claim on rubber hose — false; rubber hose is PLASTIC and shade_glare only returns TRUE for SILVER (artifact.c:555-562, weapon.c:307-308). See companion-audit.md. -->
 </section>
 <section id="whip" class="level4">
 <h4>Whip</h4>
@@ -10951,8 +10956,7 @@ ordinary side-arm.</td>
 <td>3</td>
 <td>—</td>
 <td>plastic</td>
-<td>Joke weapon (1d4 / 1d3). Damages even Shades, who are immune to
-most.</td>
+<td>Joke weapon; never spawns randomly.</td>
 </tr>
 <tr>
 <td>bullwhip</td>
@@ -10961,9 +10965,9 @@ most.</td>
 <td>4</td>
 <td>—</td>
 <td>leather</td>
-<td>Archeologist’s starter. Apply to disarm an adjacent monster, or to
-yank yourself out of a pit (anchors on a nearby boulder, furniture, or
-big monster).</td>
+<td>Archeologist’s starter. Apply to disarm an adjacent monster (only
+when the target is wielding a weapon), or to yank yourself out of a pit
+(anchors on a nearby boulder, furniture, or big monster).</td>
 </tr>
 </tbody>
 </table>
@@ -19728,6 +19732,12 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
 </main>
 <script>
 (function() {
+  // --- Icons for sections that include a figure ---
+  var sectionIcons = {
+    'the-lay-of-the-land': '<svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true" style="flex:none;margin-right:0.4em;vertical-align:-1px;"><path d="M1 3 L5 2 L9 3.5 L13 2 L13 11 L9 12.5 L5 11 L1 12 Z"/><line x1="5" y1="2" x2="5" y2="11"/><line x1="9" y1="3.5" x2="9" y2="12.5"/></svg>',
+    'a-practical-identification-strategy': '<svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true" style="flex:none;margin-right:0.4em;vertical-align:-1px;"><rect x="2" y="1" width="10" height="3"/><rect x="2" y="5" width="10" height="3"/><rect x="2" y="9" width="10" height="3"/><line x1="7" y1="4" x2="7" y2="5"/><line x1="7" y1="8" x2="7" y2="9"/></svg>'
+  };
+
   // --- Build TOC from headings ---
   var tocList = document.getElementById('sidebar-toc-list');
   var headings = document.querySelectorAll('main h2, main h3');
@@ -19742,7 +19752,12 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
     li.className = h.tagName === 'H2' ? 'toc-part' : 'toc-chapter';
     var a = document.createElement('a');
     a.href = '#' + id;
-    a.textContent = h.textContent;
+    var icon = sectionIcons[id];
+    if (icon) {
+      a.innerHTML = icon + '<span>' + h.textContent.replace(/[<>&"]/g, function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];}) + '</span>';
+    } else {
+      a.textContent = h.textContent;
+    }
     a.setAttribute('data-target', id);
     li.appendChild(a);
     tocList.appendChild(li);

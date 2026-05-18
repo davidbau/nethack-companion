@@ -166,10 +166,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#159**  L 7166  (  27 lines)   ↳ Bestiary Tables → Dogs and canines `d`
 - [x] **#160**  L 6737  (  10 lines)   ↳ Weapons Tables → Pick-axe
 - [x] **#161**  L 6263  (  16 lines)   ↳ Voluntary Challenges → Polymorph Restrictions
-- [ ] **#162**  L 6867  (  11 lines)   ↳ Weapons Tables → Whip
-- [ ] **#163**  L 6668  (  13 lines)   ↳ Weapons Tables → Short sword
-- [ ] **#164**  L  930  (  17 lines)   ↳ Branches and Landmarks → The Oracle
-- [ ] **#165**  L 6857  (  10 lines)   ↳ Weapons Tables → Lance
+- [x] **#162**  L 6867  (  11 lines)   ↳ Weapons Tables → Whip
+- [x] **#163**  L 6668  (  13 lines)   ↳ Weapons Tables → Short sword
+- [x] **#164**  L  930  (  17 lines)   ↳ Branches and Landmarks → The Oracle
+- [x] **#165**  L 6857  (  10 lines)   ↳ Weapons Tables → Lance
 - [ ] **#166**  L 7895  (  12 lines)   ↳ Bestiary Tables → Umber hulks `U`
 - [ ] **#167**  L 8074  (  42 lines)   ↳ Bestiary Tables → Major demons `&`
 - [ ] **#168**  L 7377  (  16 lines)   ↳ Bestiary Tables → Piercers `p`

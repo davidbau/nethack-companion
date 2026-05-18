@@ -5769,3 +5769,127 @@ Source: `spoilers/companion.md` line 6806. Substantive rewrite.
   enough.
 
 ---
+
+## 2026-05-18 — Chapter audit #162: Whip
+
+Source: `spoilers/companion.md` line 7479. 1 correction.
+
+### Wrong → fixed
+- **Rubber hose "Damages even Shades"**: false. Rubber hose is PLASTIC
+  (objects.h:375); `shade_glare()` returns TRUE only for SILVER
+  material (or undead-bonus artifacts) per artifact.c:555-562 and
+  weapon.c:307-308. Rubber hose hits Shades for 0 like any other
+  non-silver mundane weapon. Removed the claim; reworded the joke-
+  weapon note to "never spawns randomly" (prob=0 in C, so it only
+  appears via wishing/polypile).
+
+### Verified
+- Bullwhip stats: wt=20, cost=4, 1d2/1, hitbon=0, LEATHER —
+  objects.h:390-392.
+- Rubber hose stats: wt=20, cost=3, 1d4/1d3, hitbon=0, PLASTIC —
+  objects.h:374-376.
+- P_WHIP = skill 26 (skills.h:49); both weapons share it.
+- Archeologist starter: BULLWHIP in u_init.c:42-44; gets P_WHIP at
+  Expert (u_init.c:268). Ranger and Tourist train it at Basic
+  (u_init.c:459, 515) without any damage/hit bonus.
+- Apply-to-disarm at apply.c:3127-3174 — adjacent direction
+  (`rx = u.ux + u.dx`), gated on `MON_WEP(mtmp)` non-NULL and
+  `proficient && (!Fumbling || !rn2(10))`.
+- Apply-to-yank at apply.c:3069-3125 — anchors on boulder
+  (`sobj_at(BOULDER, rx, ry)`), furniture (`IS_FURNITURE`), or big
+  monster (`bigmonst(mtmp->data) && canspotmon(mtmp)`).
+
+### Close calls
+- Added "(only when the target is wielding a weapon)" to the disarm
+  note. Against an unarmed visible monster, the whip falls through
+  to a regular melee attack — worth being precise about.
+
+---
+
+## 2026-05-18 — Chapter audit #163: Short sword
+
+Source: `spoilers/companion.md` line 7242. 0 numeric corrections;
+1 small content addition.
+
+### Added
+- Plain short sword's Note expanded to mention that Samurai's
+  *wakizashi* is just a short sword aliased in objnam.c:106.
+
+### Verified
+- All 4 rows match objects.h:245-254 exactly:
+  - short sword: 30/10, 1d6/1d8, hit 0, iron.
+  - elven short sword: 30/10, 1d8/1d8, hit 0, wood.
+  - orcish short sword: 30/10, 1d5/1d8, hit 0, iron.
+  - dwarvish short sword: 30/10, 1d7/1d8, hit 0, iron.
+- All four share P_SHORT_SWORD; scimitar is P_SABER (objects.h:257)
+  and correctly excluded.
+- Rogue's starter: SHORT_SWORD at u_init.c:133-134.
+- Barbarian carries SHORT_SWORD as secondary (u_init.c:63) — not
+  surfaced in the table, consistent with sibling rows.
+- No artifact uses SHORT_SWORD base (artilist.h grep confirms).
+
+---
+
+## 2026-05-18 — Chapter audit #165: Lance
+
+Source: `spoilers/companion.md` line 7467. 1 correction.
+
+### Wrong → fixed
+- **"Useless on foot"**: overstated. Without a steed, the lance is a
+  regular one-handed piercing weapon (1d6/1d8, P_LANCE skill, hit
+  bonus 0); it hits and damages normally, just without the joust
+  bonus. Reworded to "No bonus on foot" and quantified the joust
+  bonus.
+
+### Verified
+- Stats match objects.h:349: wt=180, cost=10, 1d6/1d8, hitbon=0, IRON.
+- P_LANCE is its own skill (not P_POLEARMS) per the comment at
+  objects.h:343-344.
+- Knight starter: LANCE at u_init.c:92.
+- Joust mechanic: gated on `u.usteed` at uhitm.c:1041-1043;
+  skill-based hit chance (expert 80%, skilled 60%, basic 40%,
+  unskilled 20%) at uhitm.c:2121-2122; +2d10 primary damage (+2d2
+  off-hand) at uhitm.c:1546; rare crit can shatter the lance
+  (uhitm.c:2123-2125, "shatters on impact!" at uhitm.c:1559).
+- One-handed: per the comment at objects.h:344 "lance isn't even
+  two-handed."
+
+---
+
+## 2026-05-18 — Chapter audit #164: The Oracle
+
+Source: `spoilers/companion.md` line 966. 2 corrections.
+
+### Wrong → fixed
+- **"a fountain" (singular)**: actually four fountains. `oracle.lua:19-22`
+  places fountains at (0,1), (1,0), (1,2), (2,1) around the Oracle
+  in the inner Delphi sub-room. Rewrote to "four fountains."
+- **"Minor consultations ... occasionally useful but mostly
+  atmospheric"**: misleading. `doconsult()` calls
+  `outrumor(1, BY_ORACLE)` at rumors.c:747; `getrumor()` with
+  `truth=1` always returns TRUE rumors (rumors.c:147-156). Minor
+  consultations always pull from `dat/rumors.tru` — real, reliable
+  game hints (same source fortune cookies use). Rewrote to clarify
+  the tone (fortune-cookie-style) without implying the content is
+  random. Also surfaced both numeric prices: 50 zorkmids minor,
+  500 + 50 × ulevel major (rumors.c:699).
+
+### Verified
+- Level range DL 5-9: dungeon.lua:60-66 (`base = 5, range = 5`) +
+  dungeon.c:405-409 interprets as `base..base+range-1`.
+- "Flanked by centaur statues" matches oracle.lua:9-16 (eight S_CENTAUR
+  statues around the inner room).
+- Peaceful behavior: PM_ORACLE has `AT_NONE`, `M2_PEACEFUL`, and
+  `G_NOGEN | G_UNIQ` (monsters.h:2738-2745). She has a passive 0d4
+  AD_MAGM but doesn't initiate combat.
+- No role-specific cost branch in doconsult() (rumors.c:696-767).
+
+### Close calls
+- Refusal behavior is asymmetric: minor refuses outright if you have
+  fewer than 50 gold (rumors.c:724-727); major takes ALL your gold as
+  a "cheapskate" consultation that delivers a random non-special
+  oracle (rumors.c:738, 753-760). Not currently in prose, but worth
+  knowing — the major-but-broke path is a trap for short-on-gold
+  players. Left out to keep the section terse.
+
+---

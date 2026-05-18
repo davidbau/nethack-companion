@@ -87,7 +87,7 @@ you alive.
 
 **Part Four: Gear and Provisions**
 
-13. [A Practical Identification Strategy](#a-practical-identification-strategy) <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#5a5a5a" stroke-width="1.1" style="vertical-align:-2px" aria-label="includes a flowchart figure"><rect x="2" y="1" width="10" height="3"/><rect x="2" y="6" width="10" height="3"/><rect x="2" y="11" width="10" height="3"/><line x1="7" y1="4" x2="7" y2="6"/><line x1="7" y1="9" x2="7" y2="11"/></svg> — Figuring out what you've found (with flowchart)
+13. [A Practical Identification Strategy](#a-practical-identification-strategy) <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#5a5a5a" stroke-width="1.1" style="vertical-align:-2px" aria-label="includes a flowchart figure"><rect x="2" y="1" width="10" height="3"/><rect x="2" y="5" width="10" height="3"/><rect x="2" y="9" width="10" height="3"/><line x1="7" y1="4" x2="7" y2="5"/><line x1="7" y1="8" x2="7" y2="9"/></svg> — Figuring out what you've found (with flowchart)
 14. [Provisions and Dining](#provisions-and-dining) — Food, nutrition, and dining
 15. [The Apothecary](#the-apothecary) — Potions and their many uses
 16. [The Scroll Rack](#the-scroll-rack) — Scrolls, their effects, and confused reading
@@ -805,43 +805,46 @@ first.)
 
 Sinks are the dungeon's most underrated identification tool.
 
-- **Kicking a sink** can shake loose a ring (useful!), summon a
-  black pudding (terrifying!), summon an *amorous demon* posing as
-  "the dish washer" (the same incubus/succubus as a seduction
-  encounter — careful!), or just stub your toe. Each non-stub
-  outcome fires at most once per sink. Worth a kick in the early
-  game if you can handle what comes out
-- **Pouring potions down a sink** (by dipping) produces telltale
-  effects. A clever way to narrow down potion identities without
-  risking a sip. Five potions print unique sink-only messages:
+**Kicking a sink** can shake loose a ring (useful!), summon a black
+pudding (terrifying!), summon an *amorous demon* posing as "the dish
+washer" (the same incubus/succubus as [a seduction
+encounter](#seduction) — careful!), or just stub your toe. Each non-stub outcome fires at most
+once per sink. Worth a kick in the early game if you can handle what
+comes out.
 
-  | Sink message                                                 | Potion             |
-  | ------------------------------------------------------------ | ------------------ |
-  | *"The sink transforms into a fountain/throne/altar!"* (or *"The sink vanishes."*) | polymorph (destroys the sink) |
-  | *"Muddy waste pops up from the drain..."* (first time per sink also drops a ring) | levitation |
-  | *"It leaves an oily film on the basin."*                     | oil                |
-  | *"The drain seems less clogged."* (blind: *"a sucking sound"*)| acid               |
-  | *"You sense a ring lost down the drain."* (once per sink)    | object detection   |
+**Pouring potions down a sink** (by dipping) produces telltale
+effects — a clever way to narrow down potion identities without
+risking a sip. Five potions print unique sink-only messages:
 
-  For most other potions, the sink instead prints *"A wisp of vapor
-  rises up..."* and then applies the same vapor effect as breathing
-  a broken potion: the side effect normally identifies the potion
-  (sleeping makes you yawn, hallucination starts hallucinating,
-  blindness blinds briefly, healing nudges HP, and so on). Wasted
-  on water, fruit juice, gain level, gain energy, and monster
-  detection: those all just print *"nothing seems to happen."*
-- **Quaffing from a sink** rolls one of 20 random effects.
-  Mostly nothing useful (mild flavor messages, summoned sewer rat,
-  vomit, scalding water), but three outcomes are worth the
-  occasional risk: ~5% chance to gain an experience level outright,
-  ~5% chance to find a ring at your feet (once per sink), and ~5%
-  chance to drink a random unidentified potion. Worth a quaff or
-  two from any sink you encounter, but keep HP and an escape plan
-  in reserve: it could summon a water elemental, or it could
-  polymorph you
-- **Dropping a ring down a sink** produces a message unique to the
-  ring type — the most reliable non-magical way to identify rings. **Most rings are consumed**,
-  but two come back after IDing themselves for free:
+| Sink message                                                 | Potion             |
+| ------------------------------------------------------------ | ------------------ |
+| *"The sink transforms into a fountain/throne/altar!"* (or *"The sink vanishes."*) | polymorph (destroys the sink) |
+| *"Muddy waste pops up from the drain..."* (first time per sink also drops a ring) | levitation |
+| *"It leaves an oily film on the basin."*                     | oil                |
+| *"The drain seems less clogged."* (blind: *"a sucking sound"*)| acid               |
+| *"You sense a ring lost down the drain."* (once per sink)    | object detection   |
+
+For most other potions, the sink instead prints *"A wisp of vapor
+rises up..."* and then applies the same vapor effect as breathing a
+broken potion: the side effect normally identifies the potion
+(sleeping makes you yawn, hallucination starts hallucinating,
+blindness blinds briefly, healing nudges HP, and so on). Wasted on
+water, fruit juice, gain level, gain energy, and monster detection:
+those all just print *"nothing seems to happen."*
+
+**Quaffing from a sink** rolls one of 20 random effects. Mostly
+nothing useful (mild flavor messages, summoned sewer rat, vomit,
+scalding water), but three outcomes are worth the occasional risk:
+~5% chance to gain an experience level outright, ~5% chance to find a
+ring at your feet (once per sink), and ~5% chance to drink a random
+unidentified potion. Worth a quaff or two from any sink you
+encounter, but keep HP and an escape plan in reserve: it could summon
+a water elemental, or it could polymorph you.
+
+**Dropping a ring down a sink** produces a message unique to the ring
+type — the most reliable non-magical way to identify rings. **Most
+rings are consumed**, but two come back after IDing themselves for
+free:
 
 | Message                                              | Ring                  | Ring kept? |
 |------------------------------------------------------|-----------------------|------------|
@@ -960,21 +963,24 @@ each level honestly if you can.
 For complete solutions to all eight level variants, see
 [Sokoban Solutions](#sokoban-solutions) in the appendices.
 
+<!-- audit 2026-05-18 #164: level range DL 5-9 verified vs dungeon.lua:60-66 + dungeon.c:405-409. Corrected fountain count (4, not 1) per oracle.lua:19-22. Corrected minor-consultation framing: rumors.c:147-156 always passes truth=1 to getrumor, so minor consultations always pull from rumors.tru (true tips), not the false-rumor pool. Major consultation cost: 500 + 50*ulevel (rumors.c:699). See companion-audit.md. -->
 #### The Oracle
 
 Somewhere in the mid-levels of the Dungeons of Doom (around levels
 5 through 9), you'll find a special room containing the Oracle of
-Delphi, flanked by centaur statues and a fountain.
+Delphi, flanked by centaur statues and four fountains.
 
 The Oracle offers two services:
 
-- **Minor consultations** are cheap and produce fortune-cookie-style
-  messages, occasionally useful but mostly atmospheric.
-- **Major consultations** are expensive but pay back the gold in
-  useful intel: hints about monsters, items, and game mechanics.
+- **Minor consultations** are cheap (50 zorkmids) and produce
+  fortune-cookie-style messages — drawn from the same true-rumor
+  pool, mostly atmospheric, occasionally useful.
+- **Major consultations** are expensive (500 + 50 × experience
+  level) but pay back the gold in useful intel: hints about
+  monsters, items, and game mechanics.
 
 The Oracle is peaceful and never attacks. Her room is a safe place
-to rest for a moment, though the fountain is subject to the usual
+to rest for a moment, though the fountains are subject to the usual
 fountain risks.
 
 #### The Quest
@@ -7236,13 +7242,14 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 
 :::
 
+<!-- audit 2026-05-18 #163: all 4 rows verified clean vs objects.h:245-254. All share P_SHORT_SWORD (scimitar is P_SABER, correctly excluded). No artifact uses SHORT_SWORD base type. Samurai's "wakizashi" is a SHORT_SWORD aliased in objnam.c:106; added to plain short sword's Notes. 0 numeric corrections. See companion-audit.md. -->
 #### Short sword
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| short sword | 1d6 / 1d8 | 30 | 10 | — | iron | The Rogue's starter. |
+| short sword | 1d6 / 1d8 | 30 | 10 | — | iron | The Rogue's starter; Samurai's *wakizashi* is just a short sword by another name. |
 | elven short sword | 1d8 / 1d8 | 30 | 10 | — | wood |  |
 | orcish short sword | 1d5 / 1d8 | 30 | 10 | — | iron |  |
 | dwarvish short sword | 1d7 / 1d8 | 30 | 10 | — | iron |  |
@@ -7461,24 +7468,26 @@ kebab bonus.
 
 :::
 
+<!-- audit 2026-05-18 #165: stats clean vs objects.h:349 (P_LANCE skill, one-handed, IRON). "Useless on foot" overstated — without a steed it's a regular 1d6/1d8 piercer with no joust bonus, but it still hits and damages normally. Reworded to "no bonus on foot." See companion-audit.md. -->
 #### Lance
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| lance | 1d6 / 1d8 | 180 | 10 | — | iron | Devastating from horseback (jousting bonus); useless on foot. |
+| lance | 1d6 / 1d8 | 180 | 10 | — | iron | One-handed, P_LANCE skill. Mounted only: chance to joust for +2d10 primary (+2d2 off-hand) extra damage; a critical can shatter the lance. No bonus on foot. |
 
 :::
 
+<!-- audit 2026-05-18 #162: stats clean vs objects.h:374-376 (rubber hose) and 390-392 (bullwhip), P_WHIP at skills.h:49. Bullwhip apply-to-disarm at apply.c:3127-3174 and apply-to-yank-from-pit at apply.c:3069-3125 verified. Removed the "Damages even Shades" claim on rubber hose — false; rubber hose is PLASTIC and shade_glare only returns TRUE for SILVER (artifact.c:555-562, weapon.c:307-308). See companion-audit.md. -->
 #### Whip
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| rubber hose | 1d4 / 1d3 | 20 | 3 | — | plastic | Joke weapon (1d4 / 1d3). Damages even Shades, who are immune to most. |
-| bullwhip | 1d2 / 1 | 20 | 4 | — | leather | Archeologist's starter. Apply to disarm an adjacent monster, or to yank yourself out of a pit (anchors on a nearby boulder, furniture, or big monster). |
+| rubber hose | 1d4 / 1d3 | 20 | 3 | — | plastic | Joke weapon; never spawns randomly. |
+| bullwhip | 1d2 / 1 | 20 | 4 | — | leather | Archeologist's starter. Apply to disarm an adjacent monster (only when the target is wielding a weapon), or to yank yourself out of a pit (anchors on a nearby boulder, furniture, or big monster). |
 
 :::
 
