@@ -1315,3 +1315,54 @@ Verified 200+ cells; 1 corrected; multiple close calls.
 - Intro implies quest-leader coverage but only the Archeologist line is in the table (the other 11 quest leaders + Wizard of Yendor + Norn + nemeses are S_HUMAN but absent).
 - Barbarian/Healer have MR_POISON, Valkyrie has MR_COLD — none called out in Notes column even though these are well-known traits.
 - Charon row assumes `#ifdef CHARON` build option (compiled out by default in 5.0).
+
+---
+
+## 2026-05-17 — Chapter audit #18: Acknowledgements
+
+Source: `spoilers/companion.md` lines 8416-8540
+Verified ~15 historical claims; 0 corrected; ~5 unverifiable.
+
+### Verified
+- NetHack since 1987 — Wikipedia + dat/history (NetHack 1.3d July 1987).
+- DevTeam founders Mike Stephenson, Izchak Miller, Janet Walz — Wikipedia.
+- Izchak Miller died 1994 — Wikipedia (April 1, 1994).
+- Hack by Jay Fenlason 1982 at Lincoln-Sudbury HS — Wikipedia + history file.
+- Rogue 1980 (Toy and Wichman) — Wikipedia.
+- Hack extended by Andries Brouwer mid-1980s — Wikipedia + history file (Hack 1.0 Dec 1984 through 1.0.3 July 1985 at Stichting Mathematisch Centrum).
+- NetHack forked from Brouwer's Hack 1987 — consistent with history file.
+- rec.games.roguelike.nethack — verified.
+- Fenlason → Brouwer → Stephenson lineage — exactly as the chapter describes.
+
+### Could not verify (close calls)
+- WikiHack founding by Sgeo 2005, migration 2010, "over 5000 articles" — nethackwiki.com 403; community-knowledge plausible.
+- Hugo/O'Donnell spoilers "38 files" — consistent with steelypips.org archive citations but unverified.
+- Various individual spoiler-author attributions (Damerell, Dunbar, Powell, Malec, Waijers, Bond, Nicolaas, Goldfarb) — match standard community lore; couldn't positively verify each.
+- WCST expansion "World's Encyclopaedia of NetHack" — less standard than "Waterman's Comprehensive Spoiler Treatise"; worth checking.
+
+---
+
+## 2026-05-17 — Chapter audit #19: Weapons Tables → Quarterstaff
+
+Source: `spoilers/companion.md` lines 6830-6838
+Verified 7 cells; 0 corrected.
+
+### Verified
+- quarterstaff: 1d6/1d6, wt 40, cost 5, hit 0, wood, two-handed — `objects.h:377` WEAPON entry.
+- Wizard starts with quarterstaff — matches role intro.
+
+### Close calls
+- "Light" descriptor for wt 40 is subjective (light for two-hander, moderate by general standard).
+
+---
+
+## 2026-05-17 — Chapter audit #20: Bestiary Tables → Cockatrices `c`
+
+Source: `spoilers/companion.md` lines 7183-7198
+Verified 22 cells; 0 corrected.
+
+### Verified
+- chickatrice: CLR_BROWN, LVL 4/4/8/30, bite 1d2 + touch petrify + passive petrify, ston-res. Matches monsters.h:170-177.
+- cockatrice: CLR_YELLOW, LVL 5/6/6/30, bite 1d3 + touch petrify + passive petrify, ston-res. Matches monsters.h:178-186.
+- pyrolisk: CLR_RED, LVL 6/6/6/30, gaze 2d6 fire + bite 1d6, fire-res. Correctly NO petrify attacks, NO ston-res. Matches monsters.h:187-195.
+- All three poison-resistant (MR_POISON) — verified.

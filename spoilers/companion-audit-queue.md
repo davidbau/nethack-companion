@@ -22,9 +22,9 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 15**  L 5245  (  55 lines) 📖 The Ascension Kit
 - [x] **# 16**  L 7512  (  15 lines)   ↳ Bestiary Tables → Xans and fantastic insects `x`
 - [x] **# 17**  L 7991  (  83 lines)   ↳ Bestiary Tables → Humans and elves `@`
-- [ ] **# 18**  L 8376  ( 165 lines) 📖 Acknowledgements
-- [ ] **# 19**  L 6799  (  10 lines)   ↳ Weapons Tables → Quarterstaff
-- [ ] **# 20**  L 7150  (  16 lines)   ↳ Bestiary Tables → Cockatrices `c`
+- [x] **# 18**  L 8376  ( 165 lines) 📖 Acknowledgements
+- [x] **# 19**  L 6799  (  10 lines)   ↳ Weapons Tables → Quarterstaff
+- [x] **# 20**  L 7150  (  16 lines)   ↳ Bestiary Tables → Cockatrices `c`
 - [ ] **# 21**  L 1875  (   8 lines)   ↳ Dangerous Encounters → Attack Wands and the Warning Shot
 - [ ] **# 22**  L 7676  (  15 lines)   ↳ Bestiary Tables → Gnomes `G`
 - [ ] **# 23**  L 6927  (  10 lines)   ↳ Weapons Tables → Shuriken

@@ -6828,6 +6828,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 :::
 
 #### Quarterstaff
+<!-- audit 2026-05-17 #19: 7 cells verified, 0 corrected. Matches objects.h:377. See companion-audit.md. -->
 
 ::: dense-table
 
@@ -7180,6 +7181,7 @@ All blobs are mindless, sleep-resistant, and poison-resistant.
 :::
 
 #### Cockatrices `c`
+<!-- audit 2026-05-17 #20: 22 cells verified, 0 corrected. All three rows (chickatrice/cockatrice/pyrolisk) match monsters.h:167-195. See companion-audit.md. -->
 
 Medieval bestiary creature: a chicken with a serpent's tail whose touch turns flesh to stone. Carry a lizard corpse, fight gloved, and never wield a cockatrice corpse as a weapon unless your role explicitly resists stoning. See [Petrification](#petrification-stoning).
 
@@ -8413,6 +8415,7 @@ more dangerous simultaneously. Welcome, adventurer.*
 ---
 
 ### Acknowledgements
+<!-- audit 2026-05-17 #18: historical claims spot-checked against Wikipedia + bundled dat/history. NetHack 1987, Fenlason→Brouwer→Stephenson lineage, DevTeam founders, Izchak Miller 1994 death, Hack 1982 origin all verified. WikiHack founding year, article counts, and some spoiler-author attributions could not be independently verified (nethackwiki.com 403). See companion-audit.md. -->
 
 NetHack has been played, cursed at, loved, and documented since
 1987. The game itself is the work of the NetHack DevTeam, a
