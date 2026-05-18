@@ -2041,7 +2041,7 @@ armor** is the strongest non-artifact armor defense for the active
 claw: at MC3 the claw will mostly fail to land. (MC doesn't help
 against the passive counter, so still don't melee them.) Range-kill
 is the cleanest plan; rings of conflict and pets reliably redirect
-them. **Don't eat the corpse** — it strips a random intrinsic.
+them. **Don't eat the corpse**: it strips a random intrinsic.
 
 #### Engulfment from Hiding
 
