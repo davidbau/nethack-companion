@@ -1111,8 +1111,8 @@ Your options, from safest to most desperate:
 sometimes a kraken) that can grab and drown you. Critical rules:
 
 - An **oilskin cloak** or **greased armor** makes the eel slip off
-  on the grab attempt (`u_slip_free` in mhitu.c). Greasing wears
-  off, so it's not fully reliable; oilskin doesn't.
+  on the grab attempt. Greasing wears off, so it's not fully
+  reliable; oilskin doesn't.
 - **Magical breathing** (amulet or polymorph) prevents the drown
   even after being grabbed.
 - **Kill eels at range** whenever possible. Wands, spells, and
@@ -1962,11 +1962,11 @@ to zero retention; re-study from spellbooks to restore. (Before
 longer.)
 
 **Defenses:** **Wear any helmet.** Even a plain orcish helm blocks
-7 of 8 tentacle drains (`uarmh && rn2(8)` in the C). Greasing the
-helmet stacks an additional slip-off roll on top, so a greased
-helmet is the gold standard. Kill them at range (wands, spells) so
-the question doesn't arise. To recover drained Intelligence you need
-a *potion of restore ability* (uncursed restores one stat; blessed
+seven of every eight tentacle drains. Greasing the helmet stacks an
+additional slip-off roll on top, so a greased helmet is the gold
+standard. Better yet, kill them at range (wands, spells) so the
+question doesn't arise. To recover drained Intelligence you need a
+*potion of restore ability* (uncursed restores one stat; blessed
 restores all), the spell of restore ability, or prayer when you're
 in good standing. In 5.0 the unicorn horn no longer restores lost
 attributes, so don't rely on it. Stockpile at least one restore
@@ -2122,12 +2122,22 @@ of conflict can keep the Riders tangled fighting nearby monsters
 instead of chasing you, sometimes long enough to reach the altar.
 
 #### Choking
+<!-- audit 2026-05-17 #68: eat-while-satiated death (eat.c:248, 286 done(CHOKING)) and warning string (eat.c:3314) verified. Corrected "if you confirm, you're dead" — the prompt only appears with paranoid_confirmation:eating enabled (default off); death only fires at uhunger >= 2000 with a 1/20 escape, AND Breathless creatures never choke (eat.c:258-266). Added the amulet of strangulation path (timeout.c) which is the other major choking death. See companion-audit.md. -->
 
-If you eat while already satiated, you can choke and die. The game
-warns you ("You're having a hard time getting all of it down"), but
-if you confirm, you're dead.
+If you push past Satiated and keep eating, you can choke and die.
+The game prints "You're having a hard time getting all of it down"
+as a warning; if you have eating-confirmations turned on it'll also
+prompt you. Past a hard nutrition threshold the choke check fires
+and, unless you're Breathless or pass a 1-in-20 escape, kills you
+instantly.
 
-**Defense:** Don't eat when satiated. Just don't.
+**The other path to choking is the amulet of strangulation.** Worn,
+it puts a short countdown on your throat and kills you when it runs
+out. Take it off. Magic resistance doesn't help (it's a physical
+attack); polymorphing into a Breathless form does.
+
+**Defense:** Don't eat above Satiated. Be paranoid about unidentified
+amulets — strangulation is the worst non-cursed-Trap-of-Magic outcome.
 
 #### Deadly Poison
 <!-- audit 2026-05-17 #7: 7 claims verified, 1 corrected (Famine corpse missing from instakill list). See companion-audit.md. -->
@@ -2153,9 +2163,10 @@ corpse or wearing black dragon scale mail). Reflection bounces the
 beam back. Magic resistance does NOT protect against disintegration.
 
 #### Genocide
+<!-- audit 2026-05-17 #71: confused-uncursed-scroll self-genocide verified at read.c:1737 + do_genocide PLAYER+REALLY branch at lines 2838-2972 (killer = "genocidal confusion"). Section is 2 sentences with a single correct factual claim. 0 corrections. See companion-audit.md. -->
 
-Reading a scroll of genocide while confused can genocide your own
-race. Don't do this.
+Reading an uncursed scroll of genocide while confused can genocide
+your own race. Don't do this.
 
 #### Delayed Deaths
 
@@ -2299,28 +2310,6 @@ hostile. Feeding is the antidote:
 Tripe rations are ideal for dogs and cats. You'll find them
 scattered through the dungeon. Always pick them up, even though
 they're revolting food for humans. Your pet will adore you for it.
-
-#### Navigating Crowds
-
-Minetown is full of people going about their business, most of them
-peaceful, none of them interested in moving out of the doorway you need
-to pass through. In older editions, walking into a peaceful monster
-meant attacking it, which meant alignment penalties, which meant the
-gods quietly rearranging your prayer odds. Experienced players learned
-to route around peacefuls, treat them as furniture to navigate rather
-than obstacles to solve.
-
-In 5.0 you can displace peaceful monsters by walking into them:
-you and the monster swap positions, exactly as with your pet. No
-attack, no offense taken, no alignment consequence. The townsfolk
-of Minetown are finally navigable.
-
-The limits are sensible: you cannot displace shopkeepers, priests,
-quest leaders, the Oracle, vault guards, or any peaceful standing on
-a trap. You also cannot displace a peaceful into hazardous terrain;
-the safety logic prevents it. Within those constraints, crowded
-peaceful areas are no longer puzzles. They're just rooms with
-people in them.
 
 #### Taming New Creatures
 
@@ -6408,16 +6397,26 @@ options; the latter two are tracked automatically based on what you
 do during the run.
 
 #### Pauper (new in 5.0)
+<!-- audit 2026-05-17 #72: ini_inv early-return at u_init.c:1308-1309 confirmed (no starting items at all, not just no armor/gold). nudist cascade at options.c:5290-5293. End-of-game string at insight.c:2117-2119. xlogfile at topten.c:604. Corrected "permanent conduct, set at birth and never lost" — pauper flag itself is permanent, but the cascading nudist flag IS cleared the moment you wear armor (worn.c:135-136). Added the pauper compensations from u_init.c:870+ (weapon-skill slots, known spell/item per role, supply chests). See companion-audit.md. -->
 
-Start with absolutely nothing: no gold, no inventory, no armor. Set
-`OPTIONS=pauper` in your rcfile (this is a `set_in_config` option, so
-it's rcfile or command-line only — the in-game `O` menu cannot toggle
-it). The game enforces it at character creation: your starting
-inventory is empty, your pockets are empty, and the option implicitly
-sets `nudist:true` so you also begin without armor. From there you
-build up your kit by what the dungeon hands you. End-of-game
-enlightenment shows "you started out without possessions" as a
-permanent conduct, set at birth and never lost.
+Start with absolutely nothing: no gold, no inventory, no armor, no
+starting weapon. Set `OPTIONS=pauper` in your rcfile (rcfile or
+command line only; the in-game `O` menu cannot toggle it). Pauper
+implicitly sets nudist as well, so you also begin without armor.
+
+To keep the start from being impossible, the game compensates:
+you get two unspent weapon-skill slots, your role knows one
+signature spell or item (Wizard knows force bolt, Healer knows
+healing, Archeologist knows touchstone, Rogue and Tourist know
+sack, Cleric knows water, Samurai knows gunyoki rations), and a
+few **supply chests** seed early dungeon levels.
+
+End-of-game enlightenment shows "you started out without
+possessions" as a permanent line: pauper itself is set at birth and
+never cleared. The cascading nudist half is fragile though: the
+moment you wear armor, the nudist flag clears and the separate
+"faithfully nudist" end-screen line stops printing. Pauper is
+permanent; pauper-plus-nudist is yours to lose.
 
 A practical note: pauper does not forbid acquiring or spending gold
 later. The conduct is about *starting* empty, not about staying
@@ -6443,17 +6442,16 @@ about leading something loyal into a polymorph trap.
 #### Permadeaf (new in 5.0)
 <!-- audit 2026-05-17 #62: confirmed permadeaf is u.uroleplay.deaf (optlist.h:267-269), recorded in xlogfile (topten.c:602) and shown in show_conduct (insight.c:2113). Deaf macro at youprop.h:125. Corrected the rcfile option name: was `!acoustics` (a different per-session flavor flag — flags.acoustics — that doesn't earn the conduct), should be `permadeaf` (or `deaf`). Also removed the in-game O-menu instruction: this option is `set_in_config` (options.c:5207), rcfile/command-line only. See companion-audit.md. -->
 
-Never hear anything. Set `OPTIONS=permadeaf` (or `OPTIONS=deaf`) in
-your rcfile, or pass `-Dpermadeaf` on the command line. This is
-**rcfile/command-line only** — the conduct option is marked
-`set_in_config` and cannot be toggled from the in-game `O` menu.
-(Don't confuse `permadeaf` with the unrelated `acoustics` flavor
-toggle, which doesn't earn the conduct.) The game then runs exactly
-as if you had the `Deaf` intrinsic for the entire game and never
-recovered. `You_hear()` returns silently in every code path, so all
-the "you hear water falling," "you hear someone counting money,"
-"you hear a door open" messages (and the ambient monster-type "you
-hear a slurp" sounds from `dosounds()`) are suppressed.
+Never hear anything. Set `OPTIONS=permadeaf` (or `OPTIONS=deaf`)
+in your rcfile, or pass `-Dpermadeaf` on the command line. This
+one is rcfile or command line only; the in-game `O` menu cannot
+toggle it. (Don't confuse `permadeaf` with the unrelated
+`acoustics` flavor toggle, which doesn't earn the conduct.) The
+game then runs as if you had the Deaf intrinsic from turn one and
+never recovered: all the "you hear water falling", "you hear
+someone counting money", "you hear a door open" messages and the
+ambient monster sounds ("you hear a slurp" and friends) are
+suppressed.
 
 Many monster warnings, environmental cues (vaults, fountains, doors
 opening off-screen), and status messages arrive as sounds. Permadeaf
@@ -6476,9 +6474,10 @@ clean solve.
 
 Never inherit from another player's grave. To get the bonesless
 conduct, you have to turn bones loading off for the run: set
-`OPTIONS=!bones` in your rcfile (this is a `set_in_config` option:
-rcfile or command-line only, not toggleable from the in-game `O` menu). The xlogfile `bonesless` achievement is recorded only
-when bones loading was disabled, not when you happened not to
+`OPTIONS=!bones` in your rcfile (rcfile or command line only;
+the in-game `O` menu cannot toggle it). The bonesless achievement
+is recorded only when bones loading was disabled, not when you
+happened not to
 encounter any. (Going a whole game without bones because the
 dungeon directory has nothing eligible is a separate enlightenment
 line — "never encountered any bones levels" — and doesn't earn
@@ -7941,17 +7940,25 @@ All puddings and oozes are amorphous, mindless, cold-resistant, poison-resistant
 :::
 
 #### Quantum mechanics `Q`
+<!-- audit 2026-05-17 #69: stats verified vs monsters.h:2127, 2136. Quantum mechanic = AD_TLPT (teleports you), genetic engineer = AD_POLY (polymorphs you, new in 5.0 per fixes5-0-0.txt:2696). Corrected "All quantum mechanics teleport" — only the quantum mechanic does; genetic engineer polymorphs. Both have poisonous corpses (M1_POIS). Both self-teleport (M1_TPORT). Added corpse-effect notes (quantum corpse toggles Fast per eat.c:1227; genetic engineer corpse triggers polyself per eat.c:1247). See companion-audit.md. -->
 
-Touch teleports you randomly. The annoyance is the lost position more than the damage — but in dangerous neighbourhoods a random teleport CAN kill.
+The `Q` class is two creatures, both with random claw effects. The
+**quantum mechanic** teleports you on a hit: the annoyance is the
+lost position more than the damage, but in dangerous neighbourhoods
+a random teleport CAN kill. The **genetic engineer** polymorphs
+you: unless you have *Unchanging* or magic resistance, one claw and
+you become something else. See **Dangerous Encounters → The Genetic
+Engineer** for the full treatment.
 
-All quantum mechanics teleport and have poisonous corpses.
+Both species also teleport themselves at random, and both leave
+poisonous corpses.
 
 ::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
-| quantum mechanic | cyan | 7 | 12 | 3 | 10 | claw 1d4 teleport |  |
-| genetic engineer | green | 12 | 12 | 3 | 10 | claw 1d4 polymorph |  |
+| quantum mechanic | cyan | 7 | 12 | 3 | 10 | claw 1d4 teleport | Self-teleports. Corpse toggles intrinsic Fast. |
+| genetic engineer | green | 12 | 12 | 3 | 10 | claw 1d4 polymorph | Self-teleports. Corpse triggers polyself. |
 
 :::
 

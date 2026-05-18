@@ -2483,3 +2483,120 @@ Source: `spoilers/companion.md` line 2038
 - "Invisible until they hit you" — they die in the same turn they attack,
   so seeing them via see-invisible is brief. Reworded for clarity.
 
+
+---
+
+## 2026-05-17 — Chapter audit #68: Choking
+
+Source: `spoilers/companion.md` line 2124
+Section was bare-minimum (5 lines). Rewrote for accuracy + AoS coverage.
+
+### Verified
+- Eating-while-satiated death (eat.c:248, 286 done(CHOKING)).
+- Exact warning string "You're having a hard time getting all of it down" (eat.c:3314).
+
+### Corrected
+1. **"if you confirm, you're dead"** — overstated and conflates two
+   things. The warning at uhunger >= 1500 fires automatically with NO
+   prompt by default; a "Continue eating?" prompt only appears with
+   `paranoid_confirmation:eating` enabled. Even past uhunger 2000,
+   death isn't certain: Breathless creatures and Hungry players never
+   choke from over-eating, and others have a 1/20 escape on first
+   occurrence (eat.c:258-266).
+
+### Added
+- Amulet of strangulation path (timeout.c + can_be_strangled in mondata.c)
+  — the OTHER common choking death and one the section bizarrely
+  didn't mention. Take it off; magic resistance doesn't help; Breathless
+  polymorph form escapes both eating-choke and AoS strangle.
+
+---
+
+## 2026-05-17 — Chapter audit #69: Quantum mechanics `Q`
+
+Source: `spoilers/companion.md` line 7953
+2 rows verified clean against monsters.h:2127, 2136. 1 corrected.
+
+### Verified
+- quantum mechanic: cyan, lvl 7, spd 12, AC 3, MR 10, claw 1d4 teleport (AD_TLPT).
+- genetic engineer: green, lvl 12, spd 12, AC 3, MR 10, claw 1d4 polymorph (AD_POLY).
+  New in 5.0 per fixes5-0-0.txt:2696. From slash'em per monsters.h comment.
+- Both poisonous corpses (M1_POIS).
+- Both self-teleport (M1_TPORT) — the "random movement" behavior.
+
+### Corrected
+1. **"All quantum mechanics teleport"** — overgeneralization. Only the
+   quantum mechanic itself does (AD_TLPT). The genetic engineer in the
+   same class polymorphs (AD_POLY) without teleporting on hit. Reworded
+   to handle both species separately.
+
+### Added (useful corpse effects)
+- Quantum mechanic corpse toggles intrinsic Fast (eat.c:1227-1236).
+- Genetic engineer corpse triggers polyself (eat.c:1247-1264).
+
+---
+
+## 2026-05-17 — Chapter audit #71: Genocide
+
+Source: `spoilers/companion.md` line 2165
+2 sentences, 1 factual claim, verified correct. 1 minor tightening.
+
+### Verified
+- "Confused scroll of genocide can genocide your own race" — confirmed at
+  read.c:1737: for an uncursed scroll, do_genocide produces how=3
+  (REALLY | PLAYER), do_genocide PLAYER branch at lines 2838-2842 sets
+  mndx=u.umonster, killplayer++; the REALLY block at lines 2955-2989
+  calls done(GENOCIDED) with killer="genocidal confusion".
+
+### Tightened
+- Added "uncursed" before "scroll of genocide while confused" — the
+  self-genocide path only fires for **uncursed** confused scrolls
+  (blessed routes to do_class_genocide, cursed has how=2 which skips
+  the REALLY block).
+
+---
+
+## 2026-05-17 — Chapter audit #72: Pauper (new in 5.0)
+
+Source: `spoilers/companion.md` line 6421
+1 correction + useful pauper-compensation details added.
+
+### Verified
+- "No gold, no inventory, no armor, no starting weapon" — ini_inv
+  short-circuits at u_init.c:1308-1309 for pauper; no items at all
+  are generated.
+- "Implicitly sets nudist" — options.c:5290-5293 cascades the option.
+- End-of-game line "you started out without possessions" — insight.c:2117-2119.
+- xlogfile achievement — topten.c:604.
+- No gold-spending conduct counter (struct u_conduct has no such field).
+
+### Corrected
+1. **"Permanent conduct, set at birth and never lost"** — misleading.
+   The pauper flag itself is permanent, but the cascading nudist flag
+   IS cleared the moment you wear armor (worn.c:135-136). The
+   end-screen "faithfully nudist" line will then stop printing.
+   Reworded to distinguish: pauper is permanent; pauper-plus-nudist
+   is yours to lose.
+
+### Added
+- Pauper compensations from pauper_reinit (u_init.c:870+): unspent
+  weapon-skill slots = 2; one role-specific known spell/item (Wizard:
+  force bolt; Healer: healing; Archeologist: touchstone; Rogue/Tourist:
+  sack; Cleric: water; Samurai: gunyoki); supply chests on early
+  dungeon levels. Without these the start would be unplayable; the
+  spoiler omitted them entirely.
+
+---
+
+## 2026-05-17 — Voice cleanup pass
+
+User flagged "too much reference to the code" in recent edits.
+Stripped C-source jargon (function names, struct names, file:line refs,
+flag macros like `AD_TLPT`, `M1_TPORT`, `set_in_config`) from visible
+prose across: #62 Permadeaf, #63 Brainlessness, #68 Choking, #69
+Quantum mechanics, #72 Pauper, plus the pre-existing #11 Drowning
+oilskin bullet. All such references remain in the HTML-comment audit
+badges (which are invisible to the reader but greppable for tracking).
+
+Updated feedback_spoiler_voice.md memory with a stronger rule
+explicitly listing examples of what NOT to leak into prose.

@@ -72,11 +72,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [ ] **# 65**  L  372  ( 140 lines) 📖 Your First Descent
 - [x] **# 66**  L 1998  (  18 lines)   ↳ Dangerous Encounters → Light Bursts
 - [ ] **# 67**  L 5007  ( 238 lines) 📖 Gehennom
-- [ ] **# 68**  L 2079  (   8 lines)   ↳ Dangerous Encounters → Choking
-- [ ] **# 69**  L 7830  (  15 lines)   ↳ Bestiary Tables → Quantum mechanics `Q`
+- [x] **# 68**  L 2079  (   8 lines)   ↳ Dangerous Encounters → Choking
+- [x] **# 69**  L 7830  (  15 lines)   ↳ Bestiary Tables → Quantum mechanics `Q`
 - [ ] **# 70**  L 6779  (  10 lines)   ↳ Weapons Tables → Flail
-- [ ] **# 71**  L 2106  (   5 lines)   ↳ Dangerous Encounters → Genocide
-- [ ] **# 72**  L 6322  (  19 lines)   ↳ Voluntary Challenges → Pauper (new in 5.0)
+- [x] **# 71**  L 2106  (   5 lines)   ↳ Dangerous Encounters → Genocide
+- [x] **# 72**  L 6322  (  19 lines)   ↳ Voluntary Challenges → Pauper (new in 5.0)
 - [ ] **# 73**  L 1963  (  18 lines)   ↳ Dangerous Encounters → Enchantment Drain
 - [ ] **# 74**  L 1283  (  49 lines)   ↳ Traps and Hazards → Finding Secret Doors
 - [ ] **# 75**  L 7939  (  12 lines)   ↳ Bestiary Tables → Xorns `X`
