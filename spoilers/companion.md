@@ -239,12 +239,8 @@ before and want a real challenge. *Alignment: Neutral.*
 attempt. You start with a spear, a small shield, and cold
 resistance; strong combat stats and good starting equipment do
 the rest. **Mjollnir** (+d5/+d24 war hammer that returns when
-thrown at Strength 25) drops as your role's sacrifice gift
-regardless of alignment. If you pick **Lawful**, you also get a
-shot at **Excalibur** by dipping a long sword in a fountain
-(drain resistance, automatic searching, +d5 to-hit), so a
-fortunate Lawful Valkyrie can finish the game wielding both.
-Neutral Valkyries get Mjollnir alone, which is still plenty.
+thrown at Strength 25) drops as your sacrifice gift regardless
+of alignment, and is what you'll wield by the late game.
 *Alignment: Lawful or Neutral. Female only.*
 
 **Wizard.** You start with a quarterstaff and a spellbook or two.
@@ -314,9 +310,9 @@ expectations. Chaotic is often paired with Rogue for thematic
 consistency.
 
 For your first game: **Lawful Valkyrie, Human or Dwarf.** Strong
-combat, cold resistance, and a path to Excalibur once you find a
-long sword. It's the closest thing to an easy mode the Mazes offer,
-which is to say it's still very hard.
+combat, cold resistance, and Mjollnir waiting at the first altar
+you can sacrifice on. It's the closest thing to an easy mode the
+Mazes offer, which is to say it's still very hard.
 
 ---
 

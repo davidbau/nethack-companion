@@ -56,6 +56,7 @@ first.</p>
 <details open><summary><strong>Contents</strong></summary>
 <div class=toc>
 
+<a href="#c-f5f672460">f5f672460</a> &nbsp; spoilers: mrkelee feedback round 2 — unicorns, levitation+eels, deadly poison<br>
 <a href="#c-8811cacc4">8811cacc4</a> &nbsp; spoilers: Croesus drops fix + LaTeX bestiary column widths + shopkeeper trim<br>
 <a href="#c-50ad1cb82">50ad1cb82</a> &nbsp; spoilers: move identification flowchart to top of chapter; update sink node for ring+potion<br>
 <a href="#c-c6c417c6a">c6c417c6a</a> &nbsp; spoilers: sink-dip table — drop &quot;Save those for the quaff&quot; tail<br>
@@ -99,6 +100,52 @@ first.</p>
 <a href="#c-70554f999">70554f999</a> &nbsp; spoilers: audit #1 (The Scroll Rack) — 2 corrections<br>
 </div></details>
 
+<h2 id="c-f5f672460">f5f672460 — spoilers: mrkelee feedback round 2 — unicorns, levitation+eels, deadly poison</h2>
+<div class=diff><div class="line filehdr">diff --git a/spoilers/companion.md b/spoilers/companion.md</div>
+<div class="line ctx">index ad38b3213..69b4c3f64 100644</div>
+<div class="line filehdr">--- a/spoilers/companion.md</div>
+<div class="line filehdr">+++ b/spoilers/companion.md</div>
+<div class="line hunk">@@ -1107,9 +1107,10 @@ entering her level:</div>
+<div class="line ctx"> **Crossing the water.** The island is surrounded by deep water.</div>
+<div class="line ctx"> Your options, from safest to most desperate:</div>
+<div class="line ctx"> </div>
+<div class="line del">-- **Levitation** (ring, boots, potion, or spell). Cleanest method.</div>
+<div class="line del">-  You float over the water without touching it, immune to eel</div>
+<div class="line del">-  grabs from below.</div>
+<div class="line add">+- **Levitation** (ring, boots, potion, or spell). The easiest way</div>
+<div class="line add">+  to cross, but **does not protect you from eel grabs** in adjacent</div>
+<div class="line add">+  water (see *Drowning* in Dangerous Encounters). Use it to traverse</div>
+<div class="line add">+  fast, not as a defense.</div>
+<div class="line ctx"> - **Water walking boots.** You walk on the surface. Eels can still</div>
+<div class="line ctx">   grab you in adjacent water.</div>
+<div class="line ctx"> - **Wand of cold.** Zap the water to freeze a path of ice. Ice</div>
+<div class="line hunk">@@ -1613,7 +1614,7 @@ AC / attack details on every monster, see the</div>
+<div class="line ctx"> | `S`    | Snakes            | Cobras and pit vipers poison. Water moccasins come from fountains.                                   |</div>
+<div class="line ctx"> | `t`    | Trappers / lurkers above | Hide in plain sight on floor or ceiling and engulf you when you walk under/onto them. See the engulfment write-up under Dangerous Encounters. |</div>
+<div class="line ctx"> | `T`    | Trolls            | Regenerate. They come back from the dead unless you eat or tin the corpse.                           |</div>
+<div class="line del">-| `u`    | Horses / unicorns | Horses are usually mountable, mostly peaceful in the wild. Unicorns are powerful and color-coded by alignment — same-aligned unicorns can be pacified by throwing a real gem at them (see Luck); cross-aligned ones are a fight. |</div>
+<div class="line add">+| `u`    | Horses / unicorns | Horses are usually mountable, mostly peaceful in the wild. Unicorns are powerful and color-coded by alignment. **Same-aligned unicorns spawn peaceful**; throwing them an identified real gem grants +5 Luck (see Luck). **Cross-aligned unicorns are hostile**; you can pacify them by throwing any gem (real or glass), at which point an identified real gem still pays out, though only +1 to +3. |</div>
+<div class="line ctx"> | `U`    | Umber hulk        | Confuses on sight. Avoid looking at them directly.                                                   |</div>
+<div class="line ctx"> | `v`    | Vortices          | Engulfing wisps. Air, fire, ice, and steam vortices each apply their element to whatever they engulf. Kill at range. |</div>
+<div class="line ctx"> | `w`    | Worms             | Long worms grow tail segments after each hit and can be a corridor in themselves. Purple worms swallow you whole (see Don&#x27;t Want, below). |</div>
+<div class="line hunk">@@ -2159,11 +2160,12 @@ amulets.</div>
+<div class="line ctx"> &lt;!-- audit 2026-05-17 #7: 7 claims verified, 1 corrected (Famine corpse missing from instakill list). See companion-audit.md. --&gt;</div>
+<div class="line ctx"> </div>
+<div class="line ctx"> A handful of monsters (pit vipers, killer bees, cobras, some</div>
+<div class="line del">-spiders, and other AD_DRST attackers) have instantly lethal</div>
+<div class="line del">-poison attacks. The chance is low, about 1 in 240 per hit at</div>
+<div class="line del">-healthy HP, but rises sharply when you&#x27;re already wounded.</div>
+<div class="line del">-Eating any Rider corpse (Death, Pestilence, *or* Famine) is</div>
+<div class="line del">-also instantly fatal poison.</div>
+<div class="line add">+spiders) have a poison-damage branch that can deliver 10 to 34</div>
+<div class="line add">+extra HP of damage on top of the normal hit. At full HP you</div>
+<div class="line add">+usually survive; at low HP or while burdened, it can outright</div>
+<div class="line add">+kill you. The &quot;extra-damage&quot; roll fires about 1 in 240 per</div>
+<div class="line add">+qualifying hit. Eating any Rider corpse (Death, Pestilence, *or*</div>
+<div class="line add">+Famine) is genuinely instantly fatal regardless of HP.</div>
+<div class="line ctx"> </div>
+<div class="line ctx"> **Defenses:** Poison resistance makes you immune. Most characters</div>
+<div class="line ctx"> can get this early by eating enough appropriate corpses. It&#x27;s one</div></div>
 <h2 id="c-8811cacc4">8811cacc4 — spoilers: Croesus drops fix + LaTeX bestiary column widths + shopkeeper trim</h2>
 <div class=diff><div class="line filehdr">diff --git a/spoilers/companion.md b/spoilers/companion.md</div>
 <div class="line ctx">index 4ca808423..ad38b3213 100644</div>
