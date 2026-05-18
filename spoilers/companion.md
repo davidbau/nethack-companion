@@ -130,6 +130,7 @@ you alive.
 ---
 
 ### Choosing Your Expedition
+<!-- audit 2026-05-18 #86: most role/race/alignment combos and starting gear claims verified vs u_init.c + role.c + attrib.c. Corrected: Elf "see invisible from the start" (no race grants it; sleep res is at XL 4 not 1); Knight code says fleeing-or-helpless not fleeing-or-peaceful (peaceful penalty is Samurai's giri); Cave Dweller starts with sling + flint, not "rocks for throwing"; Ranger also starts with +2 cloak of displacement; Wizard starts with cloak of magic resistance + wand + rings + scrolls + marker; Healer is immune to sickness (not "can see whether potions are safe"); added Knight intrinsic jumping; Ranger Stealth XL 7 / See Invis XL 15 (not "early"). See companion-audit.md. -->
 
 The first decision you'll make, before you even set foot on the
 stairs, is who you are. In the Mazes, this means three things: your
@@ -164,8 +165,8 @@ poison resistance from the start, which saves you from several common
 early deaths. A straightforward role for players who like straightforward
 solutions. *Alignment: Neutral or Chaotic.*
 
-**Cave Dweller.** You start primitive but tough, with a club and
-some rocks for throwing. You gain speed early and your hit dice are
+**Cave Dweller.** You start primitive but tough, with a club, a
+sling, and a pile of flint stones for it. You gain speed early and your hit dice are
 generous. The Cave Dweller's simplicity is a virtue: fewer tools
 means fewer things to manage. *Alignment: Lawful or Neutral.*
 
@@ -173,9 +174,9 @@ means fewer things to manage. *Alignment: Lawful or Neutral.*
 resistance. The stethoscope is remarkable: it lets you check a
 monster's hit points and your own internal state. Healers are fragile
 fighters, but their medical knowledge keeps them alive through
-situations that would kill other roles. You can also see whether
-potions of sickness are safe, which streamlines identification
-considerably. *Alignment: Neutral.*
+situations that would kill other roles. You're also **immune to
+sickness**, so unknown potions of sickness become a free quaff-test
+(and you can convert them to fruit juice with an amethyst). *Alignment: Neutral.*
 
 **Knight.** You start mounted on a saddled pony, with a +1 long sword
 and a +0 lance among your gear. The pony is a decent combatant early
@@ -185,9 +186,10 @@ useless on foot. As a Lawful character with a starting long sword, you
 also have the best odds in the game at Excalibur. Dip your long sword
 in a fountain at experience level 5+ and Knights get a 1-in-6 chance
 per dip, far better than the 1-in-30 every other Lawful role faces.
-Knights follow a code of conduct that imposes alignment penalties for
-attacking fleeing or peaceful monsters, so pick your fights carefully.
-*Alignment: Lawful.*
+Knights follow a code of conduct that imposes alignment penalties
+for attacking fleeing or helpless monsters, so pick your fights
+carefully. Knights also have intrinsic jumping, which lets you
+reposition without spending an attack. *Alignment: Lawful.*
 
 **Monk.** You fight best with bare hands and start with no weapon
 at all. Monks gain martial arts abilities as they level, eventually
@@ -205,11 +207,13 @@ Your first sacrifice gift is guaranteed: Demonbane (now a silver
 mace), which aligns with your weapon skill — sacrifice early and
 often. *Alignment: Any (matches your god).*
 
-**Ranger.** You start with a bow and a generous supply of arrows,
-unmatched as an early-game ranged threat. Rangers
-get stealth and see invisible early. Your elven racial option gives
-you sleep resistance on top of that. If you enjoy picking off enemies
-from a distance, this is your role. *Alignment: Neutral or Chaotic.*
+**Ranger.** You start with a bow, a generous supply of arrows, a
+dagger, and a **+2 cloak of displacement** — one of the strongest
+defensive starts in the game. You're unmatched as an early-game
+ranged threat. Rangers gain Searching at XL 1, Stealth at XL 7,
+and See Invisible at XL 15. Your elven racial option grants sleep
+resistance at XL 4. If you enjoy picking off enemies from a
+distance, this is your role. *Alignment: Neutral or Chaotic.*
 
 **Rogue.** NetHack's thief class: lockpicking and stealthy
 assassinations. You start with a short sword, six daggers for
@@ -243,11 +247,14 @@ thrown at Strength 25) drops as your sacrifice gift regardless
 of alignment, and is what you'll wield by the late game.
 *Alignment: Lawful or Neutral. Female only.*
 
-**Wizard.** You start with a quarterstaff and a spellbook or two.
-Physical combat is terrible, so spells are the answer: fragile
-early, overwhelming late. Advancing a spell-school skill (new in
-5.0) also identifies spellbooks of that school by appearance, so
-you get free book-ID just by casting (see
+**Wizard.** You start with a quarterstaff, a **cloak of magic
+resistance** (an endgame-quality item from turn one), a wand, two
+rings, three potions, three scrolls, the force-bolt spell plus a
+random spellbook, and a high-enchantment magic marker. Physical
+combat is terrible, so spells are the answer: fragile early,
+overwhelming late. Advancing a spell-school skill (new in 5.0)
+also identifies spellbooks of that school by appearance, so you
+get free book-ID just by casting (see
 [Spellcasting](#spellcasting)). *Alignment: Neutral or Chaotic.*
 
 #### The Races
@@ -265,10 +272,10 @@ see warm-blooded creatures in the dark). They're good fighters with
 high Strength, Dex, and Con caps. Available for: Archeologist, Cave
 Dweller, Valkyrie.
 
-**Elf.** Elves get sleep resistance, infravision, and see invisible
-from the start. They're a bit more fragile than humans but have the
-highest Int and Wis caps (20). Elf Priests and Wizards even get a
-free musical instrument. Available for: Priest, Ranger, Wizard.
+**Elf.** Elves start with infravision and gain sleep resistance at
+XL 4. They're a bit more fragile than humans but have the highest
+Int and Wis caps (20). Elf Priests and Wizards even get a free
+musical instrument. Available for: Priest, Ranger, Wizard.
 
 **Gnome.** Gnomes get infravision and a slightly higher Int cap (19).
 They're small but resourceful. Available for: Archeologist, Cave
@@ -2440,6 +2447,7 @@ single most powerful identification tool you have.
 <div><figure style="margin: 1.5em 0; text-align: center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 736" role="img" aria-label="The identification flowchart" style="max-width: 760px; width: 100%; height: auto; font-family: 'EB Garamond', 'Garamond', 'Georgia', serif;"><title>The Identification Flowchart</title><defs><marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker><style>.start{fill:#E8F4FD;stroke:#3B6FA0;stroke-width:2}.decision{fill:#FFF4E6;stroke:#B5651D;stroke-width:2}.action{fill:#F0F9E8;stroke:#5B8E3A;stroke-width:2}.final{fill:#FCE8E6;stroke:#A14A3F;stroke-width:2}.label{font-size:18px;fill:#1f2933;text-anchor:middle}.startlbl{font-size:19px;font-weight:600;fill:#1f2933;text-anchor:middle}.branch{font-size:16px;font-style:italic;fill:#5a5a5a}.edge{fill:none;stroke:#5a5a5a;stroke-width:1.5}</style></defs><rect class="start" x="40" y="20" width="320" height="50" rx="25" ry="25"/><text class="startlbl" x="200" y="51">Found an item</text><path class="edge" d="M 200 70 L 200 100" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="100" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="133">Can you reach an altar?</text><path class="edge" d="M 360 128 L 430 128" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="121" text-anchor="middle">yes</text><rect class="action" x="430" y="100" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="133">Drop it. Check BUC.</text><text class="branch" x="210" y="172">no</text><path class="edge" d="M 200 156 L 200 190" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="190" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="223">Is your pet nearby?</text><path class="edge" d="M 360 218 L 430 218" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="211" text-anchor="middle">yes</text><rect class="action" x="430" y="184" width="290" height="62" rx="8" ry="8"/><text class="label" x="575" y="210">Drop it. Pet avoids it?</text><text class="label" x="575" y="232" style="font-size: 16px;"><tspan style="font-style: italic; fill:#5a5a5a;">yes</tspan>: it's cursed; <tspan style="font-style: italic; fill:#5a5a5a;">no</tspan>: it's safe</text><text class="branch" x="210" y="262">no</text><path class="edge" d="M 200 246 L 200 290" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="290" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="323">Can you reach a shop?</text><path class="edge" d="M 360 318 L 430 318" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="311" text-anchor="middle">yes</text><rect class="action" x="430" y="290" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="323">Check price.</text><text class="branch" x="210" y="362">no</text><path class="edge" d="M 200 346 L 200 380" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="380" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="413">Is it a wand?</text><path class="edge" d="M 360 408 L 430 408" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="401" text-anchor="middle">yes</text><rect class="action" x="430" y="380" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="413">Engrave-test it.</text><text class="branch" x="210" y="452">no</text><path class="edge" d="M 200 436 L 200 470" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="470" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="503" style="font-size: 16px;">Ring or potion willing to lose in a sink?</text><path class="edge" d="M 360 498 L 430 498" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="491" text-anchor="middle">yes</text><rect class="action" x="430" y="470" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="503">Drop ring or dip potion.</text><text class="branch" x="210" y="542">no</text><path class="edge" d="M 200 526 L 200 560" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="560" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="593">Is it safe to use-test?</text><path class="edge" d="M 360 588 L 430 588" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="581" text-anchor="middle">yes</text><rect class="action" x="430" y="560" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="593">Try it carefully.</text><text class="branch" x="210" y="632">no</text><path class="edge" d="M 200 616 L 200 660" marker-end="url(#arrowhead)"/><rect class="final" x="40" y="660" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="693">Read a scroll of identify.</text></svg><figcaption style="font-style: italic; color: #5a5a5a; font-size: 0.9em; margin-top: 0.5em;">The identification flowchart: cheapest method first, scroll of identify last.</figcaption></figure></div>
 
 #### Blessed, Uncursed, Cursed
+<!-- audit 2026-05-18 #88: altar/pet test mechanics, Priest BUC sense, cursed armor sticks, cursed gain-level rises, luckstone +luck, holy/unholy water dipping all verified vs do.c/dogmove.c/objnam.c/attrib.c/potion.c. Corrected: blessed scroll of identify gives at least 2 items + 1-in-5 chance whole pack (was "every item"); cursed scroll IDs only itself on first cursed read (read.c:2074-2081), not "single item." Cursed teleport scroll is a *level* teleport (not "somewhere terrible"). Added how to make holy water (pray on co-aligned altar with potions of water). See companion-audit.md. -->
 
 Before you can worry about *what* an item is, you need to know
 *what condition* it's in. Every item in the Mazes is blessed, uncursed,
@@ -2447,9 +2455,11 @@ or cursed (BUC for short), and the difference matters far more than
 you'd think. The gods have opinions about your equipment, and those
 opinions have consequences:
 
-- A **blessed** scroll of identify generously reveals every item in
-  your pack. A cursed one grudgingly identifies a single item, as
-  if doing you a favor.
+- A **blessed** scroll of identify reveals at least 2 items in your
+  pack (more with positive Luck), and one time in five reveals the
+  whole pack. An *uncursed* scroll IDs one or two items; a *cursed*
+  scroll IDs only the scroll itself the first time you read one of
+  that type, and one item per subsequent cursed read.
 - A **cursed** piece of armor bonds to your skin like it has
   abandonment issues. You cannot remove it until you lift the curse.
 - A **cursed** potion of gain level interprets "gain a level" in the
@@ -2460,7 +2470,8 @@ The pattern is consistent: blessed items are helpful beyond their
 description, uncursed items work as advertised, and cursed items find
 creative ways to ruin your day. A blessed luckstone passively
 improves your luck; a cursed one drags it down. A cursed scroll of
-teleportation sends you somewhere terrible. You get the idea.
+teleportation sends you to a random *level* instead of teleporting
+within the current one. You get the idea.
 
 You don't see BUC status by default (Priests are the exception: they
 sense it naturally, which tells you something about clerical
@@ -2481,14 +2492,17 @@ over it (or picks it up), it's safe. Not as precise as an altar, but
 works anywhere.
 
 **Holy water.** Dipping an item in blessed water (holy water) will
-uncurse or bless it. Dipping in cursed water (unholy water) will curse
-it. Holy water is precious in the early game, so save it for items
-you've already identified.
+uncurse a cursed item or bless an uncursed one. Dipping in cursed
+water (unholy water) curses an uncursed item or unblesses a
+blessed one. You make holy water by praying on a co-aligned altar
+while carrying potions of water; it's precious in the early game,
+so save it for items you've already identified.
 
-**Scroll of identify.** A blessed scroll of identify will identify
-everything in your pack at once. The gold standard, with one
-catch: you need to identify the scroll first (irony noted) and
-bless it.
+**Scroll of identify.** A blessed scroll identifies at least 2
+items in your pack, more with positive Luck, with a 1-in-5 chance
+to ID the whole pack outright. An uncursed scroll IDs one or two
+items per read. A cursed scroll IDs only itself the first time you
+read one of that type, then one item per cursed read after.
 
 #### The Price Is Right
 <!-- audit 2026-05-17 #32: 50+ price/multiplier claims verified across all item classes, 1 corrected (sell-offer blurb ¼ → ½ and ³⁄₁₆ → ³⁄₈). Live JS computeBuy/computeSell match shk.c exactly. Close call: angry-shop surcharge is sticky beyond bill payment (only cleared on new-customer transition). See companion-audit.md. -->
@@ -6284,13 +6298,13 @@ molds), all `v` (vortices), all `y` (lights), all `E` (elementals)
 except stalkers, all `'` (golems) except flesh golems and leather
 golems, and all ghosts. Most puddings are also vegetarian.
 
-**Vegan.** Follow all vegetarian restrictions, plus avoid eggs,
-pancakes, lumps of royal jelly, cream pies, candy bars, and anything
-involving wax, leather, or bone. This eliminates many useful items:
-no wax candles for Vlad's Tower (use tallow or find oil lamps), no
-leather armor unless you can avoid eating it while polymorphed.
-Vegan monsters are a subset of the vegetarian list, excluding
-puddings and a few others.
+**Vegan.** Follow all vegetarian restrictions, plus avoid eating
+eggs, pancakes, lumps of royal jelly, cream pies, and candy bars.
+The conduct fires only on *eating*: carrying or using animal-derived
+items is fine, so vegans can still light the Candelabrum with wax or
+tallow candles, wear leather armor, and apply bone horns. Vegan
+monsters are a subset of the vegetarian list, excluding puddings
+and a few others.
 
 **Foodless.** Don't eat anything at all. Among the hardest
 conducts in the game. Your only nutrition sources are prayer (which
@@ -6348,12 +6362,13 @@ pet (often polymorphed into a purple worm or similar), the spell
 of charm monster, and extremely patient tactics.
 
 #### Illiterate
+<!-- audit 2026-05-18 #87: corrected "engraving is fine" — only an "x" or "X" signature engrave is exempt (engrave.c:1213); anything else breaks the conduct. Confirmed: scrolls, spellbooks, fortune cookies, T-shirts, magic-marker writing all count (read.c:602, eat.c:2525, read.c:397, write.c:245). Blank paper, novel-if-unread, Book of the Dead, Hawaiian shirts, and reading floor engravings (Elbereth) do NOT count. Pet-on-scroll workaround verified. See companion-audit.md. -->
 
 Don't read anything. No scrolls, no spellbooks, no fortune cookies,
-no T-shirts, no gravestones. You can still write (engraving is
-fine), and you can use scrolls by other means (such as having a
-pet step on a scroll of teleportation). Blank scrolls and
-spellbooks don't count against you.
+no T-shirts. You also can't engrave anything more than a single
+"x" or "X" (the traditional illiterate's signature). You don't lose the conduct if you read blank scrolls or
+spellbooks, or Hawaiian shirts, the Book of the Dead, or messages
+already engraved on the floor.
 
 Without scrolls, you lose access to identify, enchant weapon/armor,
 teleportation, remove curse, and genocide in their most common
@@ -6608,11 +6623,10 @@ consequences for the player:
   for it.
 - Shop walls are non-diggable from inside, so tunneling out with
   unpaid items is not on the menu.
-- Artifact items are priced at **4× the artifact's already-large
-  base cost** (a hidden inflation that doesn't affect score). For
-  most named weapons that lands in the 10,000–30,000 zm range. An
-  unidentified long sword priced at 16,000 zm is not something to
-  glance over — that price tag is the give-away.
+- Artifact items are priced at special high prices. For most named
+  weapons that lands in the 10,000–30,000 zm range. An unidentified
+  long sword priced at 16,000 zm is not something to glance over:
+  that exorbitant price is a give-away.
 - A shopkeeper *can* be killed for the entire stock and the till,
   but the penalties (Keystone Kops, alignment loss, forfeiture of
   future service from that shop) and the shopkeeper's own combat
@@ -7492,6 +7506,7 @@ All nymphs teleport.
 :::
 
 #### Orcs `o`
+<!-- audit 2026-05-18 #89: 8 rows verified clean against monsters.h:727-796 (covers all of S_ORC). Stats, colors (incl. HI_LORD/HI_ZAP), attacks, MR_POISON flags all match. Corrected: orc shaman row was "spell spell" (2 attacks) but C gives only one ATTK(AT_MAGC,AD_SPEL); now "spell". Goblin is correctly placed in S_ORC. See companion-audit.md. -->
 
 Pack hunters with mediocre loot but real numbers. The Mines are full of them; bring a chokepoint.
 
@@ -7505,7 +7520,7 @@ Pack hunters with mediocre loot but real numbers. The Mines are full of them; br
 | hill orc | yellow | 2 | 9 | 10 | 0 | weapon 1d6 | pois-res. |
 | Mordor orc | blue | 3 | 5 | 10 | 0 | weapon 1d6 | pois-res. |
 | Uruk-hai | black | 3 | 7 | 10 | 0 | weapon 1d8 | pois-res. |
-| orc shaman | bright-blue | 3 | 9 | 5 | 10 | spell spell | pois-res. |
+| orc shaman | bright-blue | 3 | 9 | 5 | 10 | spell | pois-res. |
 | orc-captain | magenta | 5 | 5 | 10 | 0 | weapon 2d4 · weapon 2d4 | pois-res. Hits hard. Drops decent loot. |
 
 :::

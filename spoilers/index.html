@@ -185,6 +185,7 @@ shoulders of giants</li>
 <hr />
 <section id="choosing-your-expedition" class="level3">
 <h3>Choosing Your Expedition</h3>
+<!-- audit 2026-05-18 #86: most role/race/alignment combos and starting gear claims verified vs u_init.c + role.c + attrib.c. Corrected: Elf "see invisible from the start" (no race grants it; sleep res is at XL 4 not 1); Knight code says fleeing-or-helpless not fleeing-or-peaceful (peaceful penalty is Samurai's giri); Cave Dweller starts with sling + flint, not "rocks for throwing"; Ranger also starts with +2 cloak of displacement; Wizard starts with cloak of magic resistance + wand + rings + scrolls + marker; Healer is immune to sickness (not "can see whether potions are safe"); added Knight intrinsic jumping; Ranger Stealth XL 7 / See Invis XL 15 (not "early"). See companion-audit.md. -->
 <p>The first decision you’ll make, before you even set foot on the
 stairs, is who you are. In the Mazes, this means three things: your
 <strong>role</strong>, your <strong>race</strong>, and your
@@ -216,16 +217,18 @@ do get poison resistance from the start, which saves you from several
 common early deaths. A straightforward role for players who like
 straightforward solutions. <em>Alignment: Neutral or Chaotic.</em></p>
 <p><strong>Cave Dweller.</strong> You start primitive but tough, with a
-club and some rocks for throwing. You gain speed early and your hit dice
-are generous. The Cave Dweller’s simplicity is a virtue: fewer tools
-means fewer things to manage. <em>Alignment: Lawful or Neutral.</em></p>
+club, a sling, and a pile of flint stones for it. You gain speed early
+and your hit dice are generous. The Cave Dweller’s simplicity is a
+virtue: fewer tools means fewer things to manage. <em>Alignment: Lawful
+or Neutral.</em></p>
 <p><strong>Healer.</strong> You begin with a stethoscope, healing
 potions, and poison resistance. The stethoscope is remarkable: it lets
 you check a monster’s hit points and your own internal state. Healers
 are fragile fighters, but their medical knowledge keeps them alive
-through situations that would kill other roles. You can also see whether
-potions of sickness are safe, which streamlines identification
-considerably. <em>Alignment: Neutral.</em></p>
+through situations that would kill other roles. You’re also
+<strong>immune to sickness</strong>, so unknown potions of sickness
+become a free quaff-test (and you can convert them to fruit juice with
+an amethyst). <em>Alignment: Neutral.</em></p>
 <p><strong>Knight.</strong> You start mounted on a saddled pony, with a
 +1 long sword and a +0 lance among your gear. The pony is a decent
 combatant early on and the basis of your unique trick: jousting from
@@ -235,8 +238,9 @@ long sword, you also have the best odds in the game at Excalibur. Dip
 your long sword in a fountain at experience level 5+ and Knights get a
 1-in-6 chance per dip, far better than the 1-in-30 every other Lawful
 role faces. Knights follow a code of conduct that imposes alignment
-penalties for attacking fleeing or peaceful monsters, so pick your
-fights carefully. <em>Alignment: Lawful.</em></p>
+penalties for attacking fleeing or helpless monsters, so pick your
+fights carefully. Knights also have intrinsic jumping, which lets you
+reposition without spending an attack. <em>Alignment: Lawful.</em></p>
 <p><strong>Monk.</strong> You fight best with bare hands and start with
 no weapon at all. Monks gain martial arts abilities as they level,
 eventually becoming formidable unarmed combatants. You start with sleep
@@ -250,11 +254,13 @@ found is safe to wear. Competent fighters with access to clerical
 spells. Your first sacrifice gift is guaranteed: Demonbane (now a silver
 mace), which aligns with your weapon skill — sacrifice early and often.
 <em>Alignment: Any (matches your god).</em></p>
-<p><strong>Ranger.</strong> You start with a bow and a generous supply
-of arrows, unmatched as an early-game ranged threat. Rangers get stealth
-and see invisible early. Your elven racial option gives you sleep
-resistance on top of that. If you enjoy picking off enemies from a
-distance, this is your role. <em>Alignment: Neutral or Chaotic.</em></p>
+<p><strong>Ranger.</strong> You start with a bow, a generous supply of
+arrows, a dagger, and a <strong>+2 cloak of displacement</strong> — one
+of the strongest defensive starts in the game. You’re unmatched as an
+early-game ranged threat. Rangers gain Searching at XL 1, Stealth at XL
+7, and See Invisible at XL 15. Your elven racial option grants sleep
+resistance at XL 4. If you enjoy picking off enemies from a distance,
+this is your role. <em>Alignment: Neutral or Chaotic.</em></p>
 <p><strong>Rogue.</strong> NetHack’s thief class: lockpicking and
 stealthy assassinations. You start with a short sword, six daggers for
 throwing, leather armor, a lock pick, a sack, and a potion of sickness
@@ -283,13 +289,15 @@ resistance; strong combat stats and good starting equipment do the rest.
 at Strength 25) drops as your sacrifice gift regardless of alignment,
 and is what you’ll wield by the late game. <em>Alignment: Lawful or
 Neutral. Female only.</em></p>
-<p><strong>Wizard.</strong> You start with a quarterstaff and a
-spellbook or two. Physical combat is terrible, so spells are the answer:
-fragile early, overwhelming late. Advancing a spell-school skill (new in
-5.0) also identifies spellbooks of that school by appearance, so you get
-free book-ID just by casting (see <a
-href="#spellcasting">Spellcasting</a>). <em>Alignment: Neutral or
-Chaotic.</em></p>
+<p><strong>Wizard.</strong> You start with a quarterstaff, a
+<strong>cloak of magic resistance</strong> (an endgame-quality item from
+turn one), a wand, two rings, three potions, three scrolls, the
+force-bolt spell plus a random spellbook, and a high-enchantment magic
+marker. Physical combat is terrible, so spells are the answer: fragile
+early, overwhelming late. Advancing a spell-school skill (new in 5.0)
+also identifies spellbooks of that school by appearance, so you get free
+book-ID just by casting (see <a href="#spellcasting">Spellcasting</a>).
+<em>Alignment: Neutral or Chaotic.</em></p>
 </section>
 <section id="the-races" class="level4">
 <h4>The Races</h4>
@@ -303,10 +311,10 @@ Perfectly serviceable.</p>
 infravision (they can see warm-blooded creatures in the dark). They’re
 good fighters with high Strength, Dex, and Con caps. Available for:
 Archeologist, Cave Dweller, Valkyrie.</p>
-<p><strong>Elf.</strong> Elves get sleep resistance, infravision, and
-see invisible from the start. They’re a bit more fragile than humans but
-have the highest Int and Wis caps (20). Elf Priests and Wizards even get
-a free musical instrument. Available for: Priest, Ranger, Wizard.</p>
+<p><strong>Elf.</strong> Elves start with infravision and gain sleep
+resistance at XL 4. They’re a bit more fragile than humans but have the
+highest Int and Wis caps (20). Elf Priests and Wizards even get a free
+musical instrument. Available for: Priest, Ranger, Wizard.</p>
 <p><strong>Gnome.</strong> Gnomes get infravision and a slightly higher
 Int cap (19). They’re small but resourceful. Available for:
 Archeologist, Cave Dweller, Healer, Ranger, Wizard.</p>
@@ -3358,15 +3366,19 @@ last.
 </div>
 <section id="blessed-uncursed-cursed" class="level4">
 <h4>Blessed, Uncursed, Cursed</h4>
+<!-- audit 2026-05-18 #88: altar/pet test mechanics, Priest BUC sense, cursed armor sticks, cursed gain-level rises, luckstone +luck, holy/unholy water dipping all verified vs do.c/dogmove.c/objnam.c/attrib.c/potion.c. Corrected: blessed scroll of identify gives at least 2 items + 1-in-5 chance whole pack (was "every item"); cursed scroll IDs only itself on first cursed read (read.c:2074-2081), not "single item." Cursed teleport scroll is a *level* teleport (not "somewhere terrible"). Added how to make holy water (pray on co-aligned altar with potions of water). See companion-audit.md. -->
 <p>Before you can worry about <em>what</em> an item is, you need to know
 <em>what condition</em> it’s in. Every item in the Mazes is blessed,
 uncursed, or cursed (BUC for short), and the difference matters far more
 than you’d think. The gods have opinions about your equipment, and those
 opinions have consequences:</p>
 <ul>
-<li>A <strong>blessed</strong> scroll of identify generously reveals
-every item in your pack. A cursed one grudgingly identifies a single
-item, as if doing you a favor.</li>
+<li>A <strong>blessed</strong> scroll of identify reveals at least 2
+items in your pack (more with positive Luck), and one time in five
+reveals the whole pack. An <em>uncursed</em> scroll IDs one or two
+items; a <em>cursed</em> scroll IDs only the scroll itself the first
+time you read one of that type, and one item per subsequent cursed
+read.</li>
 <li>A <strong>cursed</strong> piece of armor bonds to your skin like it
 has abandonment issues. You cannot remove it until you lift the
 curse.</li>
@@ -3378,7 +3390,8 @@ ceiling to the floor above, instead of gaining an experience level.</li>
 description, uncursed items work as advertised, and cursed items find
 creative ways to ruin your day. A blessed luckstone passively improves
 your luck; a cursed one drags it down. A cursed scroll of teleportation
-sends you somewhere terrible. You get the idea.</p>
+sends you to a random <em>level</em> instead of teleporting within the
+current one. You get the idea.</p>
 <p>You don’t see BUC status by default (Priests are the exception: they
 sense it naturally, which tells you something about clerical paranoia).
 But there are several reliable ways to check:</p>
@@ -3395,13 +3408,16 @@ you drop something and your dog walks around it, it’s cursed. If the dog
 walks over it (or picks it up), it’s safe. Not as precise as an altar,
 but works anywhere.</p>
 <p><strong>Holy water.</strong> Dipping an item in blessed water (holy
-water) will uncurse or bless it. Dipping in cursed water (unholy water)
-will curse it. Holy water is precious in the early game, so save it for
-items you’ve already identified.</p>
-<p><strong>Scroll of identify.</strong> A blessed scroll of identify
-will identify everything in your pack at once. The gold standard, with
-one catch: you need to identify the scroll first (irony noted) and bless
-it.</p>
+water) will uncurse a cursed item or bless an uncursed one. Dipping in
+cursed water (unholy water) curses an uncursed item or unblesses a
+blessed one. You make holy water by praying on a co-aligned altar while
+carrying potions of water; it’s precious in the early game, so save it
+for items you’ve already identified.</p>
+<p><strong>Scroll of identify.</strong> A blessed scroll identifies at
+least 2 items in your pack, more with positive Luck, with a 1-in-5
+chance to ID the whole pack outright. An uncursed scroll IDs one or two
+items per read. A cursed scroll IDs only itself the first time you read
+one of that type, then one item per cursed read after.</p>
 </section>
 <section id="the-price-is-right" class="level4">
 <h4>The Price Is Right</h4>
@@ -8609,12 +8625,12 @@ list is broader than you might expect: all <code>b</code> (blobs), all
 except flesh golems and leather golems, and all ghosts. Most puddings
 are also vegetarian.</p>
 <p><strong>Vegan.</strong> Follow all vegetarian restrictions, plus
-avoid eggs, pancakes, lumps of royal jelly, cream pies, candy bars, and
-anything involving wax, leather, or bone. This eliminates many useful
-items: no wax candles for Vlad’s Tower (use tallow or find oil lamps),
-no leather armor unless you can avoid eating it while polymorphed. Vegan
-monsters are a subset of the vegetarian list, excluding puddings and a
-few others.</p>
+avoid eating eggs, pancakes, lumps of royal jelly, cream pies, and candy
+bars. The conduct fires only on <em>eating</em>: carrying or using
+animal-derived items is fine, so vegans can still light the Candelabrum
+with wax or tallow candles, wear leather armor, and apply bone horns.
+Vegan monsters are a subset of the vegetarian list, excluding puddings
+and a few others.</p>
 <p><strong>Foodless.</strong> Don’t eat anything at all. Among the
 hardest conducts in the game. Your only nutrition sources are prayer
 (which cures hunger when you’re Weak or Fainting), the spell of stone to
@@ -8669,11 +8685,12 @@ monster, and extremely patient tactics.</p>
 </section>
 <section id="illiterate" class="level4">
 <h4>Illiterate</h4>
+<!-- audit 2026-05-18 #87: corrected "engraving is fine" — only an "x" or "X" signature engrave is exempt (engrave.c:1213); anything else breaks the conduct. Confirmed: scrolls, spellbooks, fortune cookies, T-shirts, magic-marker writing all count (read.c:602, eat.c:2525, read.c:397, write.c:245). Blank paper, novel-if-unread, Book of the Dead, Hawaiian shirts, and reading floor engravings (Elbereth) do NOT count. Pet-on-scroll workaround verified. See companion-audit.md. -->
 <p>Don’t read anything. No scrolls, no spellbooks, no fortune cookies,
-no T-shirts, no gravestones. You can still write (engraving is fine),
-and you can use scrolls by other means (such as having a pet step on a
-scroll of teleportation). Blank scrolls and spellbooks don’t count
-against you.</p>
+no T-shirts. You also can’t engrave anything more than a single “x” or
+“X” (the traditional illiterate’s signature). You don’t lose the conduct
+if you read blank scrolls or spellbooks, or Hawaiian shirts, the Book of
+the Dead, or messages already engraved on the floor.</p>
 <p>Without scrolls, you lose access to identify, enchant weapon/armor,
 teleportation, remove curse, and genocide in their most common forms.
 Without spellbooks, you have no spells. This forces extreme reliance on
@@ -8909,11 +8926,10 @@ you’re invisible. The practical consequences for the player:</p>
 it.</li>
 <li>Shop walls are non-diggable from inside, so tunneling out with
 unpaid items is not on the menu.</li>
-<li>Artifact items are priced at <strong>4× the artifact’s already-large
-base cost</strong> (a hidden inflation that doesn’t affect score). For
-most named weapons that lands in the 10,000–30,000 zm range. An
-unidentified long sword priced at 16,000 zm is not something to glance
-over — that price tag is the give-away.</li>
+<li>Artifact items are priced at special high prices. For most named
+weapons that lands in the 10,000–30,000 zm range. An unidentified long
+sword priced at 16,000 zm is not something to glance over: that
+exorbitant price is a give-away.</li>
 <li>A shopkeeper <em>can</em> be killed for the entire stock and the
 till, but the penalties (Keystone Kops, alignment loss, forfeiture of
 future service from that shop) and the shopkeeper’s own combat stats put
@@ -12883,6 +12899,7 @@ item back from her corpse later.</p>
 </section>
 <section id="orcs-o" class="level4">
 <h4>Orcs <code>o</code></h4>
+<!-- audit 2026-05-18 #89: 8 rows verified clean against monsters.h:727-796 (covers all of S_ORC). Stats, colors (incl. HI_LORD/HI_ZAP), attacks, MR_POISON flags all match. Corrected: orc shaman row was "spell spell" (2 attacks) but C gives only one ATTK(AT_MAGC,AD_SPEL); now "spell". Goblin is correctly placed in S_ORC. See companion-audit.md. -->
 <p>Pack hunters with mediocre loot but real numbers. The Mines are full
 of them; bring a chokepoint.</p>
 <div class="dense-table">
@@ -12977,7 +12994,7 @@ of them; bring a chokepoint.</p>
 <td>9</td>
 <td>5</td>
 <td>10</td>
-<td>spell spell</td>
+<td>spell</td>
 <td>pois-res.</td>
 </tr>
 <tr>

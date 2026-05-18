@@ -90,10 +90,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 83**  L 6279  (  16 lines)   ↳ Voluntary Challenges → Wishing Restrictions
 - [x] **# 84**  L 7497  (  15 lines)   ↳ Bestiary Tables → Worms `w`
 - [x] **# 85**  L 7799  (  14 lines)   ↳ Bestiary Tables → Ogres `O`
-- [ ] **# 86**  L  132  ( 191 lines) 📖 Choosing Your Expedition
-- [ ] **# 87**  L 6237  (  13 lines)   ↳ Voluntary Challenges → Illiterate
-- [ ] **# 88**  L 2344  (  70 lines)   ↳ A Practical Identification Strategy → Blessed, Uncursed, Cursed
-- [ ] **# 89**  L 7358  (  19 lines)   ↳ Bestiary Tables → Orcs `o`
+- [x] **# 86**  L  132  ( 191 lines) 📖 Choosing Your Expedition
+- [x] **# 87**  L 6237  (  13 lines)   ↳ Voluntary Challenges → Illiterate
+- [x] **# 88**  L 2344  (  70 lines)   ↳ A Practical Identification Strategy → Blessed, Uncursed, Cursed
+- [x] **# 89**  L 7358  (  19 lines)   ↳ Bestiary Tables → Orcs `o`
 - [ ] **# 90**  L 6907  (  10 lines)   ↳ Weapons Tables → Sling
 - [ ] **# 91**  L 7281  (  16 lines)   ↳ Bestiary Tables → Jellies `j`
 - [ ] **# 92**  L 1240  (  17 lines)   ↳ Traps and Hazards → Searching and Detection

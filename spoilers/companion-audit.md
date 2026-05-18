@@ -3270,3 +3270,128 @@ verified clean against monsters.h:2052-2075.
 1. **"Ogre kings throw boulders"** — false. Ogres lack M2_ROCKTHROW;
    that's giants/Cyclops/ettins/titans. Ogres wield weapons. Removed.
 
+
+---
+
+## 2026-05-18 — Chapter audit #86: Choosing Your Expedition
+
+Source: `spoilers/companion.md` line 132. Many role/race/alignment
+claims correct; 6 substantive corrections.
+
+### Verified (sample)
+- All role × race × alignment combos vs role.c roles[] allow masks.
+- Race stat caps, female-only restrictions, infravision/sleep res for races.
+- Mjollnir/Cleaver/Demonbane/Excalibur/Magicbane/Snickersnee role tags.
+- Demonbane is silver mace in 5.0 (artilist.h:162).
+- Excalibur dip 1/6 Knight vs 1/30 others (fountain.c:405).
+- Stethoscope monster HP / self status (apply.c:380).
+- Tourist surcharge under MAXULEV/2 (shk.c:2949).
+
+### Corrected
+1. **Elf "see invisible from the start"** — wrong. No race grants
+   see-invisible. attrib.c shows only HInfravision at level 1;
+   HSleep_resistance comes at level 4. Reworded.
+2. **Knight "alignment penalty for attacking fleeing or peaceful"** —
+   wrong. uhitm.c:336 penalizes attacking *helpless* or *fleeing*
+   (check_caitiff); attacking peacefuls is the Samurai's giri penalty.
+   Fixed. Also added Knight intrinsic jumping (u_init.c:691).
+3. **Healer "can see whether potions of sickness are safe"** — wrong.
+   Healers are *immune* to sickness (potion.c:977); they can safely
+   quaff-test unknown potions of sickness. Reworded.
+4. **Wizard starting inventory** — was "quarterstaff and a spellbook
+   or two." Per u_init.c:167 they also start with **cloak of magic
+   resistance** (endgame-quality), wand, 2 rings, 3 potions, 3 scrolls,
+   force-bolt spell + random spellbook, high-enchantment magic marker.
+   Added.
+5. **Ranger starting inventory** — was "bow and a generous supply of
+   arrows." Per u_init.c:124 they also start with a dagger and a
+   **+2 cloak of displacement**. Added. Also corrected "stealth and
+   see invisible early" — Stealth at XL 7, See Invisible at XL 15.
+6. **Cave Dweller "club and some rocks for throwing"** — misleading.
+   Per u_init.c:68 starting kit is club + **sling** + flint stones +
+   rocks + leather armor. Fixed.
+
+---
+
+## 2026-05-18 — Chapter audit #87: Illiterate
+
+Source: `spoilers/companion.md` line 6362. 1 correction + reorg.
+
+### Verified
+- u.uconduct.literate counter (you.h).
+- Scroll reading triggers (read.c:602) with SCR_BLANK_PAPER, SCR_MAIL,
+  SPE_BOOK_OF_THE_DEAD exempt.
+- Spellbook reading triggers (same line, oclass == SPBOOK_CLASS).
+- Fortune cookies + T-shirts trigger (eat.c:2525, read.c:397).
+- Hawaiian shirts and floor engravings do NOT trigger.
+- Pet-on-scroll workaround for the conduct (pet stepping doesn't
+  increment literate — but stepping doesn't trigger the scroll
+  either, so it's not a generally useful workaround).
+
+### Corrected
+1. **"You can still write (engraving is fine)"** — false. Per
+   engrave.c:1213, engraving anything more than a single "x" or
+   "X" (the traditional illiterate's signature) breaks the conduct.
+   Reworded.
+
+### Removed
+- A bogus "pet stepping on a scroll of teleportation triggers it"
+  workaround. Pets stepping on scrolls doesn't trigger the scroll's
+  effect; monster scroll use goes through muse.c (pickup + active
+  use), not the step itself.
+
+---
+
+## 2026-05-18 — Chapter audit #88: Blessed, Uncursed, Cursed
+
+Source: `spoilers/companion.md` line 2449. 3 substantive corrections.
+
+### Verified
+- Altar BUC test mechanism (do.c:doaltarobj amber/black/no-flash).
+- Priest BUC sense (objnam.c:629).
+- Cursed armor sticks (do_wear.c).
+- Cursed gain-level rises through ceiling (potion.c:1083).
+- Blessed luckstone +luck; cursed -luck (attrib.c:423).
+- Holy/unholy water dipping (potion.c:1498).
+- Pet BUC test (dogmove.c probabilistic avoidance).
+
+### Corrected
+1. **"A blessed scroll of identify generously reveals every item in
+   your pack"** — overpromising. Per read.c:2086, blessed scroll IDs
+   at least 2 items (more with positive Luck), with only a 1-in-5
+   chance to ID the whole pack. Corrected here and in the later
+   detail paragraph.
+
+2. **"A cursed one grudgingly identifies a single item"** — wrong in
+   the common case. Per read.c:2074, a cursed scroll IDs only itself
+   the first time you read one of that type, then one item per
+   subsequent cursed read. Corrected.
+
+3. **"A cursed scroll of teleportation sends you somewhere terrible"**
+   — loose. Per read.c:2021, cursed teleport scroll triggers a
+   **level** teleport (random dungeon level), not "somewhere terrible
+   on the current level." Reworded.
+
+### Added
+- How to make holy water (pray on a co-aligned altar with potions of
+  water in inventory). The section noted it was "precious" but never
+  explained the creation path.
+
+---
+
+## 2026-05-18 — Chapter audit #89: Orcs `o`
+
+Source: `spoilers/companion.md` line 7507. 8 rows verified clean
+against monsters.h:727-796 (full S_ORC coverage). 1 corrected.
+
+### Verified
+- goblin (S_ORC, not S_GNOME), hobgoblin, orc, hill orc, Mordor orc,
+  Uruk-hai, orc-captain, orc shaman — all stats, colors, MR_POISON.
+- HI_LORD (CLR_MAGENTA) for orc-captain; HI_ZAP (CLR_BRIGHT_BLUE)
+  for orc shaman.
+
+### Corrected
+1. **orc shaman "spell spell" (2 attacks)** — wrong. Per monsters.h:779,
+   only one ATTK(AT_MAGC, AD_SPEL); the other 5 slots are NO_ATTK.
+   Changed to a single "spell".
+
