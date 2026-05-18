@@ -323,6 +323,7 @@ Mazes offer, which is to say it's still very hard.
 
 ---
 
+<!-- audit 2026-05-18 #170: qualitative section, no numeric claims to refute. Spot-checked: tripe rations are "dog food" for typical PCs (eat.c:2138-2145) but orcs and carnivores enjoy them (eat.c:2132-2136); altar blessed/cursed flash at do.c:363-389 (amber/black) sets bknown; pets avoid cursed items per dogmove.c:535-536, 1065-1067; touchstone gem-ID at apply.c:2658-2696; floating-eye paralysis at uhitm.c:5853, 6022. 0 corrections. See companion-audit.md. -->
 ### What to Pack
 
 Any good travel guide will tell you what to bring. Ours has the
@@ -1933,23 +1934,33 @@ epitaph.
 > not involve the player's hit points dropping to zero," and that
 > taxonomy has been the standard reference ever since.*
 
+<!-- audit 2026-05-18 #172: stoning timer starts at 5 (uhitm.c:3937) and ticks 5→1 with five distinct messages (timeout.c:128-148). At tick 3 "Your limbs have turned to stone" the hero is paralyzed via nomul(-3) (timeout.c:163-165), closing the action window. Corrected: acid-blob corpse confers only TIMED stoning resistance (HStone_resistance += d(3,6) at eat.c:932-934, 1089-1094), not permanent. Removed amulet-of-unchanging "interrupt": Unchanging doesn't affect stoning (only blocks poly per polyself.c:1381-1384), and wearing it WHILE stoning is actively bad — it blocks the stone-golem auto-poly escape. Plain wand of polymorph isn't an "interrupt" either: only `poly_when_stoned` monsters (golems, mondata.c:80-85) auto-cure stoning, and the wand can't target that outcome. Stepping on a cockatrice corpse is safe ONLY without Fumbling — Fumbling can trip and instapetrify (timeout.c:1256-1261). See companion-audit.md. -->
 #### Petrification (Stoning)
 
 Touching a cockatrice without gloves, eating a cockatrice corpse,
 catching Medusa's gaze, or **kicking** a cockatrice corpse barefoot
-will turn you to stone. *Stepping* on the corpse is safe (don't
-pick it up). The process is sometimes immediate; otherwise it
-announces itself with *"You are slowing down,"* then *"Your limbs
-are stiffening,"* then death, a few turns apart.
+will turn you to stone. *Stepping* on the corpse is safe so long as
+you don't have Fumbling — Fumbling can trip you over the corpse for
+instant death. The process is sometimes immediate; otherwise a
+five-turn countdown announces itself with *"You are slowing down,"*
+*"Your limbs are stiffening,"* *"Your limbs have turned to stone"*
+(at which point you are **paralyzed** and can no longer act),
+*"You have turned to stone,"* and *"You are a statue"* (death).
 
 **Defenses ahead of time:** wear gloves around cockatrice corpses,
-use reflection against Medusa, and gain stoning resistance from
-acid blob corpses (which makes you immune outright).
+use reflection against Medusa, and pile up *timed* stoning
+resistance from acid blob corpses (each one grants d(3,6) turns of
+HStone resistance — useful, but not permanent). For something
+permanent, wear yellow dragon scale mail.
 
 **Defenses while it's happening:** eat a lizard corpse (this is
-why you carry one), eat an acidic corpse, pray, cast stone to
-flesh on yourself, or use a wand of polymorph or amulet of
-unchanging to interrupt the process.
+why you carry one), eat an acidic corpse, drink a potion of acid,
+pray, or cast stone-to-flesh on yourself. Note: act *before* the
+"Your limbs have turned to stone" message — after that you're
+paralyzed for three turns and the next message kills you. Amulet
+of Unchanging does **not** interrupt stoning; in fact wearing it
+during the countdown is harmful because it blocks the stone-golem
+auto-poly that would otherwise save you on death.
 
 **The other side of the coin:** a wielded cockatrice corpse (with
 gloves on) is one of the game's most devastating weapons —
@@ -8072,11 +8083,12 @@ Dwarves and similar. Dwarves carry better-than-average loot (weapons, armor, pic
 
 :::
 
+<!-- audit 2026-05-18 #171: all 6 rows verified clean vs monsters.h:544-587. Corrected imp prose: imps only carry AT_CLAW/AD_PHYS 1d4 (monsters.h:561-562) — no AD_SITM, no AD_TLPT. Steal-and-teleport belongs to nymphs (AD_SITM) and leprechauns (AD_SGLD). Imps actually MS_CUSS (verbal abuse, monmove.c:983-985 / sounds.c:1148-1150). Note: the `i` class is not actually M2_DEMON-tagged (is_demon() returns false). All 6 carry M2_STALK. See companion-audit.md. -->
 #### Imps and minor demons `i`
 
-Annoying minor demons. Imps steal items and teleport away; quasits drain Dexterity. None individually scary.
+Annoying small fry. Imps mostly insult you and miss; quasits drain Dexterity. None individually scary.
 
-All imps and minor demons follow you up and down stairs. All except *imp* also are poison-resistant.
+All imps and minor demons follow you up and down stairs. All except *imp* are poison-resistant.
 
 ::: dense-table
 
@@ -8622,9 +8634,10 @@ All mummies have poisonous corpses and are mindless and undead.
 
 :::
 
+<!-- audit 2026-05-18 #173: all 8 rows verified clean vs monsters.h:1972-2048. All carry MR_POISON. Removed false claim "Healers find the guardian naga peaceful" — guardian naga is MS_MUMBLE (not MS_GUARDIAN), no M2_PEACEFUL, and PM_GUARDIAN_NAGA's appearance in the Rogue's role.c:338 entry is as a Rogue-quest creature slot, not a Healer/Rogue peace mechanism. peace_minded (makemon.c:2270-2285) finds no path that auto-peaces it. Black naga corpse confers poison + acid + stoning resistance — worth eating but companion doesn't currently surface this. See companion-audit.md. -->
 #### Nagas `N`
 
-Long serpentine bodies, varied breath weapons (acid / fire / poison). Healers find the guardian naga peaceful; everyone else does not.
+Long serpentine bodies, varied breath weapons (acid / fire / poison). All nagas are poison-resistant. Black naga corpses confer poison, acid, *and* stoning resistance — easily the best of the four eats.
 
 All nagas are poison-resistant.
 

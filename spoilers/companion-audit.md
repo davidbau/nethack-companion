@@ -6005,3 +6005,149 @@ content additions.
   (objects.h:213) and lives in the Dagger table.
 
 ---
+
+## 2026-05-18 — Chapter audit #170: What to Pack
+
+Source: `spoilers/companion.md` line 326. No corrections.
+
+### Verified (qualitative)
+- Tripe-rations-as-pet-food: dog/cat happy at dog.c:1055; humans get
+  "Yak - dog food!" at eat.c:2138-2145.
+- Altar BUC flash: amber for blessed, black for cursed; sets bknown
+  (do.c:363-389).
+- Pet cursed-item avoidance: dogmove.c:535-536, 1065-1067.
+- Touchstone gem ID: apply.c:2658-2696.
+- Floating-eye paralysis: uhitm.c:5853, 6022.
+
+### Close calls
+- "Tripe rations are for your pet" technically wrong for orc PCs
+  (eat.c:2132-2136) and orc-route Caveman/Barbarian, but the
+  simplification is fine for a beginner-targeted section.
+
+---
+
+## 2026-05-18 — Chapter audit #171: Imps and minor demons `i`
+
+Source: `spoilers/companion.md` line 8075. 1 correction.
+
+### Wrong → fixed
+- **"Imps steal items and teleport away"**: imps only have AT_CLAW /
+  AD_PHYS 1d4 (monsters.h:561-562). There is no AD_SITM and no
+  AD_TLPT on any S_IMP entry — steal-and-teleport belongs to nymphs
+  (AD_SITM) and leprechauns (AD_SGLD). The imp's distinctive trait
+  is MS_CUSS (verbal abuse; handler at monmove.c:983-985 and
+  sounds.c:1148-1150). Reworded the intro.
+
+### Verified
+- All 6 rows match monsters.h:544-587 for Lvl/Spd/AC/MR%/color and
+  attack dice.
+- All 6 carry M2_STALK (follow stairs).
+- "All except imp are poison-resistant": imp has MR=0 (monsters.h:563);
+  the other five carry MR_POISON.
+- Tengu carries M1_TPORT | M1_TPORT_CNTRL (monsters.h:586) —
+  intrinsics conferred when polymorphed / corpse-eaten; not a
+  player-displacement attack.
+
+### Notes
+- M2_DEMON is NOT set on any S_IMP-class monster — they're not
+  mechanical demons (`is_demon()` returns false). The section's
+  title is class flavor. Not surfaced; left as-is.
+
+---
+
+## 2026-05-18 — Chapter audit #173: Nagas `N`
+
+Source: `spoilers/companion.md` line 8627. 1 correction + 1 addition.
+
+### Wrong → fixed
+- **"Healers find the guardian naga peaceful"**: no mechanism exists.
+  Guardian naga is `MS_MUMBLE` (monsters.h:2044), not MS_GUARDIAN or
+  MS_LEADER, so `peace_minded()` at makemon.c:2270-2285 doesn't
+  auto-peace it. No M2_PEACEFUL. PM_GUARDIAN_NAGA appears in the
+  Rogue's role.c:338 entry (the Rogue's quest creature list), not
+  the Healer's. Healer's quest creatures are S_RODENT / S_YETI /
+  PM_SNAKE per role.c:173-176. Removed the false claim from prose
+  and from the table row note.
+
+### Added
+- Black naga corpse confers poison + acid + stoning resistance
+  (eat.c corpse-confer paths via the 2nd MR field at
+  monsters.h:2020). This is genuinely useful — surfaced in the
+  section intro so players know the eat is worth the acid splash.
+
+### Verified
+- All 8 rows match monsters.h:1972-2048 for Lvl/Spd/AC/MR%/Color.
+- All 8 carry MR_POISON (intrinsic to S_NAGA, monsters.h:1976/1985/
+  1994/2002/2011/2020/2029/2044).
+- Red naga + red hatchling carry MR_FIRE (monsters.h:2010, 1979).
+- Black naga + black hatchling carry MR_ACID | MR_STONE
+  (monsters.h:1985, 2020).
+- Guardian naga attack order spit / bite / touch / hug matches
+  monsters.h:2041-2043.
+
+### Close calls
+- guardian naga's spit shown as "1d6 poison" — C is AD_DRST
+  (str-drain, poison-flavored). The index row at line 1671 says
+  "spit Str-drain poison" which is precise; the detailed table's
+  "poison" shorthand loses that detail. Left as-is for now;
+  could tighten in a future pass.
+
+---
+
+## 2026-05-18 — Chapter audit #172: Petrification (Stoning)
+
+Source: `spoilers/companion.md` line 1937. Substantive rewrite — 3
+corrections + 2 clarifications.
+
+### Wrong → fixed
+- **"acid blob corpses (which makes you immune outright)"**: acid
+  blob corpse confers only TIMED stoning resistance —
+  `HStone_resistance += d(3,6)` at eat.c:932-934 and eat.c:1089-1094
+  (with debugpline literally noting "Giving timed stoning resistance
+  temporarily"). Reworded to "pile up *timed* stoning resistance ...
+  each one grants d(3,6) turns." Added that yellow dragon scale
+  mail is the permanent alternative.
+- **"amulet of unchanging to interrupt the process"**: Unchanging
+  has no interaction with the stoning counter. It only blocks
+  polymorph paths (polyself.c:1381-1384, do_wear.c:996, 1110). Worse,
+  wearing it during stoning is harmful: it blocks the stone-golem
+  auto-poly that polyself.c:807-811 grants when `poly_when_stoned`
+  applies. Removed from defenses list and flagged in prose that
+  wearing Unchanging during the countdown is actively bad.
+- **"wand of polymorph ... to interrupt the process"**: misleading.
+  Only `poly_when_stoned` monsters (golems, mondata.c:80-85) auto-
+  cure stoning, and a plain wand-of-polymorph zap on self can't
+  target that outcome. Removed from the active-defenses list.
+
+### Added
+- The five-tick countdown messages and the fact that message 3
+  ("Your limbs have turned to stone") paralyzes the hero for three
+  turns via `nomul(-3)` (timeout.c:163-165). Acting on tick 3 or
+  later is impossible — the player must respond by tick 4 at the
+  latest.
+- Fumbling exception: stepping on a cockatrice corpse is safe only
+  if you don't have Fumbling. Fumbling can trip-over the corpse and
+  instapetrify per timeout.c:1256-1261.
+
+### Verified
+- Counter starts at 5: `make_stoned(5L, ...)` at uhitm.c:3937.
+- Touching corpse without gloves: pickup.c:283-299 calls
+  `instapetrify()`; `u_safe_from_fatal_corpse` checks `uarmg`
+  (pickup.c:272-281).
+- Kicking corpse without boots: dokick.c:542-555 checks `!uarmf`.
+- Eating cockatrice/Medusa corpses: eat.c:795-797.
+- Lizard corpse cures: eat.c:827-829.
+- Acidic corpse cures: eat.c:860-861.
+- Potion of acid cures: potion.c:1312-1313.
+- Prayer cures (TROUBLE_STONED is first major trouble): pray.c:206-207.
+- Stone-to-flesh self cures: zap.c:2974-2977.
+- Wielded cockatrice with gloves as weapon: wield.c:140-153 path
+  + `do_stone_mon()` at uhitm.c:3944+.
+
+### Notes
+- Section still doesn't cover cockatrice eggs (separate
+  petrification paths: mthrowu.c:782, dothrow.c:1308/1403). Worth
+  a follow-up pass but not corrected here to keep this audit
+  focused.
+
+---

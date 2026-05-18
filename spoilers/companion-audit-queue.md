@@ -174,10 +174,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#167**  L 8074  (  42 lines)   ↳ Bestiary Tables → Major demons `&`
 - [x] **#168**  L 7377  (  16 lines)   ↳ Bestiary Tables → Piercers `p`
 - [x] **#169**  L 6654  (  14 lines)   ↳ Weapons Tables → Knife
-- [ ] **#170**  L  323  (  49 lines) 📖 What to Pack
-- [ ] **#171**  L 7262  (  19 lines)   ↳ Bestiary Tables → Imps and minor demons `i`
-- [ ] **#172**  L 1827  (  37 lines)   ↳ Dangerous Encounters → Petrification (Stoning)
-- [ ] **#173**  L 7778  (  21 lines)   ↳ Bestiary Tables → Nagas `N`
+- [x] **#170**  L  323  (  49 lines) 📖 What to Pack
+- [x] **#171**  L 7262  (  19 lines)   ↳ Bestiary Tables → Imps and minor demons `i`
+- [x] **#172**  L 1827  (  37 lines)   ↳ Dangerous Encounters → Petrification (Stoning)
+- [x] **#173**  L 7778  (  21 lines)   ↳ Bestiary Tables → Nagas `N`
 - [ ] **#174**  L 1906  (  12 lines)   ↳ Dangerous Encounters → Starvation
 - [ ] **#175**  L 3777  ( 122 lines) 📖 The Armory
 - [ ] **#176**  L 1332  (  66 lines)   ↳ Traps and Hazards → Engravings

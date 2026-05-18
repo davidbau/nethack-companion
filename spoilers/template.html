@@ -55,7 +55,7 @@ $body$
     a.href = '#' + id;
     var icon = sectionIcons[id];
     if (icon) {
-      a.innerHTML = icon + '<span>' + h.textContent.replace(/[<>&"]/g, function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];}) + '</span>';
+      a.innerHTML = '<span>' + h.textContent.replace(/[<>&"]/g, function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];}) + '</span>' + icon;
     } else {
       a.textContent = h.textContent;
     }

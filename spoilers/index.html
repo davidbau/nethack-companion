@@ -353,6 +353,7 @@ Strong combat, cold resistance, and Mjollnir waiting at the first altar
 you can sacrifice on. It’s the closest thing to an easy mode the Mazes
 offer, which is to say it’s still very hard.</p>
 <hr />
+<!-- audit 2026-05-18 #170: qualitative section, no numeric claims to refute. Spot-checked: tripe rations are "dog food" for typical PCs (eat.c:2138-2145) but orcs and carnivores enjoy them (eat.c:2132-2136); altar blessed/cursed flash at do.c:363-389 (amber/black) sets bknown; pets avoid cursed items per dogmove.c:535-536, 1065-1067; touchstone gem-ID at apply.c:2658-2696; floating-eye paralysis at uhitm.c:5853, 6022. 0 corrections. See companion-audit.md. -->
 </section>
 </section>
 <section id="what-to-pack" class="level3">
@@ -2816,21 +2817,32 @@ defined an instadeath as “a single move death which does not involve the
 player’s hit points dropping to zero,” and that taxonomy has been the
 standard reference ever since.</em></p>
 </blockquote>
+<!-- audit 2026-05-18 #172: stoning timer starts at 5 (uhitm.c:3937) and ticks 5→1 with five distinct messages (timeout.c:128-148). At tick 3 "Your limbs have turned to stone" the hero is paralyzed via nomul(-3) (timeout.c:163-165), closing the action window. Corrected: acid-blob corpse confers only TIMED stoning resistance (HStone_resistance += d(3,6) at eat.c:932-934, 1089-1094), not permanent. Removed amulet-of-unchanging "interrupt": Unchanging doesn't affect stoning (only blocks poly per polyself.c:1381-1384), and wearing it WHILE stoning is actively bad — it blocks the stone-golem auto-poly escape. Plain wand of polymorph isn't an "interrupt" either: only `poly_when_stoned` monsters (golems, mondata.c:80-85) auto-cure stoning, and the wand can't target that outcome. Stepping on a cockatrice corpse is safe ONLY without Fumbling — Fumbling can trip and instapetrify (timeout.c:1256-1261). See companion-audit.md. -->
 <section id="petrification-stoning" class="level4">
 <h4>Petrification (Stoning)</h4>
 <p>Touching a cockatrice without gloves, eating a cockatrice corpse,
 catching Medusa’s gaze, or <strong>kicking</strong> a cockatrice corpse
 barefoot will turn you to stone. <em>Stepping</em> on the corpse is safe
-(don’t pick it up). The process is sometimes immediate; otherwise it
-announces itself with <em>“You are slowing down,”</em> then <em>“Your
-limbs are stiffening,”</em> then death, a few turns apart.</p>
+so long as you don’t have Fumbling — Fumbling can trip you over the
+corpse for instant death. The process is sometimes immediate; otherwise
+a five-turn countdown announces itself with <em>“You are slowing
+down,”</em> <em>“Your limbs are stiffening,”</em> <em>“Your limbs have
+turned to stone”</em> (at which point you are <strong>paralyzed</strong>
+and can no longer act), <em>“You have turned to stone,”</em> and
+<em>“You are a statue”</em> (death).</p>
 <p><strong>Defenses ahead of time:</strong> wear gloves around
-cockatrice corpses, use reflection against Medusa, and gain stoning
-resistance from acid blob corpses (which makes you immune outright).</p>
+cockatrice corpses, use reflection against Medusa, and pile up
+<em>timed</em> stoning resistance from acid blob corpses (each one
+grants d(3,6) turns of HStone resistance — useful, but not permanent).
+For something permanent, wear yellow dragon scale mail.</p>
 <p><strong>Defenses while it’s happening:</strong> eat a lizard corpse
-(this is why you carry one), eat an acidic corpse, pray, cast stone to
-flesh on yourself, or use a wand of polymorph or amulet of unchanging to
-interrupt the process.</p>
+(this is why you carry one), eat an acidic corpse, drink a potion of
+acid, pray, or cast stone-to-flesh on yourself. Note: act
+<em>before</em> the “Your limbs have turned to stone” message — after
+that you’re paralyzed for three turns and the next message kills you.
+Amulet of Unchanging does <strong>not</strong> interrupt stoning; in
+fact wearing it during the countdown is harmful because it blocks the
+stone-golem auto-poly that would otherwise save you on death.</p>
 <p><strong>The other side of the coin:</strong> a wielded cockatrice
 corpse (with gloves on) is one of the game’s most devastating weapons —
 anything you hit that lacks stoning resistance turns to stone.</p>
@@ -14293,13 +14305,14 @@ without a helmet. Any helmet blocks 7/8 of tentacles.</td>
 </tbody>
 </table>
 </div>
+<!-- audit 2026-05-18 #171: all 6 rows verified clean vs monsters.h:544-587. Corrected imp prose: imps only carry AT_CLAW/AD_PHYS 1d4 (monsters.h:561-562) — no AD_SITM, no AD_TLPT. Steal-and-teleport belongs to nymphs (AD_SITM) and leprechauns (AD_SGLD). Imps actually MS_CUSS (verbal abuse, monmove.c:983-985 / sounds.c:1148-1150). Note: the `i` class is not actually M2_DEMON-tagged (is_demon() returns false). All 6 carry M2_STALK. See companion-audit.md. -->
 </section>
 <section id="imps-and-minor-demons-i" class="level4">
 <h4>Imps and minor demons <code>i</code></h4>
-<p>Annoying minor demons. Imps steal items and teleport away; quasits
-drain Dexterity. None individually scary.</p>
+<p>Annoying small fry. Imps mostly insult you and miss; quasits drain
+Dexterity. None individually scary.</p>
 <p>All imps and minor demons follow you up and down stairs. All except
-<em>imp</em> also are poison-resistant.</p>
+<em>imp</em> are poison-resistant.</p>
 <div class="dense-table">
 <table>
 <colgroup>
@@ -16880,11 +16893,13 @@ resistance mandatory.</td>
 </tbody>
 </table>
 </div>
+<!-- audit 2026-05-18 #173: all 8 rows verified clean vs monsters.h:1972-2048. All carry MR_POISON. Removed false claim "Healers find the guardian naga peaceful" — guardian naga is MS_MUMBLE (not MS_GUARDIAN), no M2_PEACEFUL, and PM_GUARDIAN_NAGA's appearance in the Rogue's role.c:338 entry is as a Rogue-quest creature slot, not a Healer/Rogue peace mechanism. peace_minded (makemon.c:2270-2285) finds no path that auto-peaces it. Black naga corpse confers poison + acid + stoning resistance — worth eating but companion doesn't currently surface this. See companion-audit.md. -->
 </section>
 <section id="nagas-n" class="level4">
 <h4>Nagas <code>N</code></h4>
 <p>Long serpentine bodies, varied breath weapons (acid / fire / poison).
-Healers find the guardian naga peaceful; everyone else does not.</p>
+All nagas are poison-resistant. Black naga corpses confer poison, acid,
+<em>and</em> stoning resistance — easily the best of the four eats.</p>
 <p>All nagas are poison-resistant.</p>
 <div class="dense-table">
 <table>
@@ -19761,7 +19776,7 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
     a.href = '#' + id;
     var icon = sectionIcons[id];
     if (icon) {
-      a.innerHTML = icon + '<span>' + h.textContent.replace(/[<>&"]/g, function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];}) + '</span>';
+      a.innerHTML = '<span>' + h.textContent.replace(/[<>&"]/g, function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];}) + '</span>' + icon;
     } else {
       a.textContent = h.textContent;
     }
