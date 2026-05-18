@@ -2229,13 +2229,26 @@ can get this early by eating enough appropriate corpses. It's one
 of the first intrinsics worth acquiring.
 
 #### Disintegration
+<!-- audit 2026-05-18 #137: corrected the "wide-angle disintegration beam" claim — there's no such thing in 5.0. The only player-facing AD_DISN source is the black dragon's breath (monsters.h:1520, ZT_BREATH(ZT_DEATH) at zap.c:4464-4493). The beholder is the only other AD_DISN monster and it's #if 0-gated. Also clarified worn-armor priority destruction (shield first per zap.c:4476-4479, then suit+cloak per zap.c:4480-4486), and that amulet of life saving does rescue you (end.c:1081 catches DIED; the breath-handling at zap.c:4487-4492 explicitly destroys cloak/shirt "in case of life-saving or bones"). -->
 
-A black dragon's breath weapon disintegrates you. Touching a
-wide-angle disintegration beam also kills.
+A black dragon's breath is the only thing in the game that
+disintegrates you. There's no other monster, spell, or wand that
+deals the same damage type.
 
 **Defenses:** Disintegration resistance (from eating a black dragon
-corpse or wearing black dragon scale mail). Reflection bounces the
-beam back. Magic resistance does NOT protect against disintegration.
+corpse or wearing black dragon scale mail) gives full immunity.
+**Reflection** bounces the beam back — and since the dragon has
+no reflection of its own, the bounce often kills it outright. Magic
+resistance does **not** help.
+
+**Without disintegration resistance**, the game tries to save your
+worn armor before disintegrating you: the breath destroys your
+**shield** first if you have one, then your **body armor**; only
+if neither is worn do you die outright (with your cloak and shirt
+destroyed in the process). So a shield of reflection that *fails*
+to reflect at least eats one breath for you before being lost.
+An amulet of life saving still rescues you from the fatal case,
+though you lose any armor it took.
 
 #### Genocide
 <!-- audit 2026-05-17 #71: confused-uncursed-scroll self-genocide verified at read.c:1737 + do_genocide PLAYER+REALLY branch at lines 2838-2972 (killer = "genocidal confusion"). Section is 2 sentences with a single correct factual claim. 0 corrections. See companion-audit.md. -->
@@ -5729,6 +5742,7 @@ clear.
 ---
 
 ### The Ascension Run
+<!-- audit 2026-05-18 #134: corrected three claims and added the missing Amulet-wish note. (1) "Mysterious Force yanks you back to a random location on the level instead of going up" — wrong; do.c:1541-1573 mostly sends you DOWN one to three levels (assign_rnd_level diff = rn2(3 + ualign.type)); the same-level teleport is the fallback when assign_rnd_level returns a no-op. Distance is alignment-biased (chaotic worst). (2) "Stops once you're above Gehennom, where the dungeon's grip weakens" — misleading; it's a hard Inhell gate at do.c:1541, not a gradient. Also never fires on the bottom 4 levels per dunlev < dunlevs_in_dungeon-3. (3) "Use Elbereth when you need a turn to heal" — wrong for almost the entire run; teleport.c:68-70 onscary() returns FALSE for Inhell || In_endgame, so Elbereth is dead in all of Gehennom and on all four Elemental Planes plus Astral. Added the Amulet-pickup wish (allmain.c:446-451 fires on next moveloop iteration after pickup, if !u.uevent.amulet_wish) and the 5.0 Mysterious-Force decay (do.c:1536-1563 — frequency tapers with each trigger). -->
 
 You did it. You fought through Gehennom, defeated the High Priest,
 and snatched the Amulet of Yendor from Moloch's Sanctum. Now all
@@ -5737,6 +5751,14 @@ through every level of Gehennom, past every demon lord you thought
 you were done with, all the way back to the surface, and then
 through the Elemental Planes to the Astral Plane where your god
 awaits. Easy, right?
+
+**A free wish on pickup.** The moment you pick up the Amulet of
+Yendor, your god grants you a single wish on the next turn (it
+fires automatically — you don't need to invoke it). This is one
+of the most generous moments in the game. Have your wish list
+ready *before* you reach the Sanctum: gauntlets of power, a
++5 weapon of your choice, blessed cloak of magic resistance, or
+whatever you're missing for the climb. You only get it once.
 
 The Ascension Run is the victory lap that keeps killing even the
 strongest adventurers. You have the most powerful artifact in the
@@ -5760,10 +5782,15 @@ Everything that can go wrong will try:
   directly to your position and attack. They specifically target you
   for the Amulet, because apparently everyone wants this thing.
 - **The Mysterious Force.** While carrying the Amulet in Gehennom,
-  each time you climb stairs, there's a chance you'll be yanked back
-  to a random location on the level instead of going up. The dungeon
-  is literally holding onto you. This stops once you're above
-  Gehennom, where the dungeon's grip weakens.
+  each time you climb stairs there's a chance you'll be dropped
+  back **down** one to three levels instead of going up — the
+  dungeon is literally holding onto you. (A smaller chance just
+  teleports you elsewhere on the same level.) The pull is hardest
+  on Chaotics, softest on Lawfuls, and in 5.0 it **decays** as
+  it triggers: every yank slightly reduces the chance of the next
+  one. The force is a hard `Inhell` gate — it stops the moment
+  you climb out of Gehennom, and it also never fires on the
+  bottom four levels.
 
 #### Strategy
 
@@ -5781,8 +5808,12 @@ ball through the entire opposing team. Speed is everything.
 - **Kill the Wizard fast.** When he shows up (and he will), don't
   try to be clever. Finger of death, wand of death, or brute force.
   The faster he's down, the fewer monsters he summons.
-- **Use Elbereth** when you need a turn to heal, apply a unicorn
-  horn, or just catch your breath.
+- **Don't rely on Elbereth past the Castle.** The `Inhell` and
+  `In_endgame` checks in `onscary()` mean Elbereth is **completely
+  ignored** in all of Gehennom and on all four Elemental Planes
+  plus Astral. You can still write it for the alignment, but no
+  monster will care. Plan your heal-and-recover breaks around
+  corridors, scrolls of teleportation, and conflict instead.
 
 The Ascension Run rewards preparation and punishes hesitation. If
 you packed well at the Castle and your resistances are solid, this
@@ -6868,12 +6899,13 @@ clean solve.
 <!-- audit 2026-05-17 (sweep from #52): the xlogfile bonesless achievement is set only if !flags.bones (topten.c:605), i.e. you turned bones loading off. Just *not encountering* bones is a separate Miscellaneous enlightenment line ("never encountered any bones levels", insight.c:439) and is NOT the bonesless conduct. Earlier text wrongly said you could "get bonesless by luck." Also removed false "amulet of life saving" tracking claim (show_conduct never lists lifesaving uses). See companion-audit.md. -->
 
 Never inherit from another player's grave. To get the bonesless
-conduct, you have to turn bones loading off for the run: set
+conduct, you have to turn bones off for the run: set
 `OPTIONS=!bones` in your rcfile (rcfile or command line only;
-the in-game `O` menu cannot toggle it). The bonesless achievement
-is recorded only when bones loading was disabled, not when you
-happened not to
-encounter any. (Going a whole game without bones because the
+the in-game `O` menu cannot toggle it). The same flag also stops
+your *own* death from generating a bones file for future players,
+so `!bones` cuts both directions of the bones cycle. The bonesless
+achievement is recorded only when bones was disabled, not when
+you happened not to encounter any. (Going a whole game without bones because the
 dungeon directory has nothing eligible is a separate enlightenment
 line — "never encountered any bones levels" — and doesn't earn
 the conduct.)
@@ -7235,7 +7267,7 @@ other bimanual weapon.
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | axe | 1d6 / 1d4 | 60 | 8 | — | iron |  |
-| battle-axe | 1d8+1d4 / 1d6+2d4 | 120 | 40 | — | iron | Two-handed; +1d4 small, +2d4 large. |
+| battle-axe | 1d8+1d4 / 1d6+2d4 | 120 | 40 | — | iron | Two-handed (gets the 5.0 3/2 Str damage bonus). +1d4 small, +2d4 large. The Barbarian quest artifact **Cleaver** is a battle-axe. |
 
 :::
 
@@ -7245,7 +7277,7 @@ other bimanual weapon.
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| dwarvish mattock | 1d12 / 1d8+2d6 | 120 | 50 | — | iron | Two-handed. Digs through walls; cannot two-weapon. |
+| dwarvish mattock | 1d12 / 1d8+2d6 | 120 | 50 | −1 | iron | Two-handed (3/2 Str damage bonus). Digs through walls like a pick-axe. Slight to-hit penalty (−1). |
 
 :::
 

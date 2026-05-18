@@ -4921,3 +4921,121 @@ Source: `spoilers/companion.md` line 7314. No corrections.
   "carry no gold" advice.
 
 ---
+
+## 2026-05-18 — Chapter audit #134: The Ascension Run
+
+Source: `spoilers/companion.md` line 5731. 3 corrections + the
+missing Amulet-wish fact added.
+
+### Verified
+- Wizard of Yendor resurrects and summons nasties via resurrect()
+  and nasty() at wizard.c:715-808.
+- Amulet blocks level teleport (teleport.c:1185-1188).
+- Amulet hampers self-teleport — 66% fail rate (teleport.c:865-871).
+- Covetous monsters warp to player via mnexto/mnearto
+  (wizard.c:236-326, 369-415).
+
+### Corrected
+1. **"Mysterious Force yanks you back to a random location on the
+   level instead of going up"** — wrong. do.c:1541-1573 mostly
+   sends you DOWN one to three levels via assign_rnd_level
+   (diff = rn2(3 + ualign.type)); the same-level teleport is
+   the fallback when assign_rnd_level returns a no-op. Distance
+   is alignment-biased (Chaotic worst, Lawful softest).
+2. **"Stops once you're above Gehennom, where the dungeon's grip
+   weakens"** — misleading. It's a hard Inhell gate at do.c:1541,
+   not a gradient. Also never fires on the bottom 4 levels
+   (dunlev < dunlevs_in_dungeon - 3).
+3. **"Use Elbereth when you need a turn to heal"** — wrong for
+   almost the entire Ascension Run. teleport.c:68-70 onscary()
+   returns FALSE for Inhell || In_endgame; Elbereth is dead in
+   all of Gehennom and on all four Elemental Planes plus Astral.
+   Reworded to flag this and direct the reader to corridors /
+   teleport scrolls / conflict instead.
+
+### Added
+- **Amulet pickup grants a free wish** (allmain.c:446-451). Fires
+  on the next moveloop iteration after pickup if
+  !u.uevent.amulet_wish. The single most important tactical fact
+  of the run; chapter omitted it. Added as a callout near the
+  top.
+- **Mysterious Force decay** (5.0 change). do.c:1536-1563
+  svc.context.mysteryforce increases per trigger, !rn2(4 + mf)
+  makes subsequent triggers rarer.
+
+---
+
+## 2026-05-18 — Chapter audit #135: Bonesless
+
+Source: `spoilers/companion.md` line 6380. No corrections; one
+useful clarification.
+
+### Verified
+- Achievement gated on !flags.bones (topten.c:605).
+- The "never encountered any bones levels" enlightenment line is
+  a separate Misc line, not the conduct (insight.c:434-441).
+- OPTIONS=!bones is opt_out with set_in_config (optlist.h:213-215)
+  — rcfile or CLI only.
+
+### Added
+- Clarified that !bones also stops the player's own death from
+  generating bones for future players (bones.c:360
+  can_make_bones), not just inheritance. Same flag gates both
+  directions of the bones cycle.
+
+---
+
+## 2026-05-18 — Chapter audit #136: Axe
+
+Source: `spoilers/companion.md` line 6726. 1 correction +
+consistency improvements.
+
+### Verified
+- axe, battle-axe, dwarvish mattock damage/weight/cost/material
+  match objects.h:236-241, 345-347.
+- battle-axe and mattock are bimanual; pick-axe and axe are
+  one-handed.
+- Cleaver is the battle-axe artifact (artilist.h:114).
+
+### Corrected
+1. **Dwarvish mattock hit bonus** shown as `—` but objects.h:346
+   has hitbon = -1. Updated.
+
+### Added
+- Battle-axe row now flags Cleaver as the artifact form (other
+  weapon sections do this; battle-axe was omitted).
+- Both bimanual axes now note the 5.0 3/2 Str damage bonus.
+
+---
+
+## 2026-05-18 — Chapter audit #137: Disintegration
+
+Source: `spoilers/companion.md` line 2097. 1 correction +
+mechanism clarifications.
+
+### Verified
+- AD_DISN attack on black dragon (monsters.h:1520).
+- Reflection bounces the breath, redirecting it back at the
+  dragon (zap.c:4966-4975 + zhitm bounce).
+- Disintegration resistance gives full immunity (zap.c:4468-4471).
+- Magic resistance does NOT block AD_DISN breath (zap.c:4464-4493
+  has no Antimagic branch).
+
+### Corrected
+1. **"Touching a wide-angle disintegration beam also kills"** —
+   fabricated. There's no such monster, sphere, or spell in 5.0.
+   The beholder (the only other AD_DISN source) is #if 0-gated
+   at monsters.h:367-377. AD_DISN comes from black dragon breath
+   only. Dropped the claim.
+
+### Added
+- Worn-armor destruction priority: shield first (zap.c:4476-4479),
+  then suit + cloak (zap.c:4480-4486); only if neither is worn
+  does the hero actually die (with cloak/shirt destroyed in the
+  process, zap.c:4487-4492). A shield of reflection that *fails*
+  to reflect still eats one breath for you.
+- Amulet of life saving does rescue (end.c:1081 DIED path); the
+  breath code destroys cloak/shirt "in case of life-saving or
+  bones."
+
+---

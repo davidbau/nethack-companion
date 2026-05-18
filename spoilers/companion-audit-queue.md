@@ -138,10 +138,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#131**  L 7342  (  16 lines)   ↳ Bestiary Tables → Nymphs `n`
 - [x] **#132**  L 1193  (  47 lines)   ↳ Traps and Hazards → Dangerous Traps
 - [x] **#133**  L 7314  (  12 lines)   ↳ Bestiary Tables → Leprechauns `l`
-- [ ] **#134**  L 5300  (  64 lines) 📖 The Ascension Run
-- [ ] **#135**  L 6380  (  19 lines)   ↳ Voluntary Challenges → Bonesless (new in 5.0)
-- [ ] **#136**  L 6726  (  11 lines)   ↳ Weapons Tables → Axe
-- [ ] **#137**  L 2097  (   9 lines)   ↳ Dangerous Encounters → Disintegration
+- [x] **#134**  L 5300  (  64 lines) 📖 The Ascension Run
+- [x] **#135**  L 6380  (  19 lines)   ↳ Voluntary Challenges → Bonesless (new in 5.0)
+- [x] **#136**  L 6726  (  11 lines)   ↳ Weapons Tables → Axe
+- [x] **#137**  L 2097  (   9 lines)   ↳ Dangerous Encounters → Disintegration
 - [ ] **#138**  L 1004  (  19 lines)   ↳ Branches and Landmarks → Fort Ludios
 - [ ] **#139**  L 3489  ( 144 lines) 📖 Rings and Amulets
 - [ ] **#140**  L 1484  (  40 lines) 📖 Feelings and Sounds
