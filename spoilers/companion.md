@@ -1610,7 +1610,7 @@ AC / attack details on every monster, see the
 | `S`    | Snakes            | Cobras and pit vipers poison. Water moccasins come from fountains.                                   |
 | `t`    | Trappers / lurkers above | Hide in plain sight on floor or ceiling and engulf you when you walk under/onto them. See the engulfment write-up under Dangerous Encounters. |
 | `T`    | Trolls            | Regenerate. They come back from the dead unless you eat or tin the corpse.                           |
-| `u`    | Horses / unicorns | Horses are usually mountable, mostly peaceful in the wild. Unicorns are powerful and color-coded by alignment. **Same-aligned unicorns spawn peaceful**; throwing them an identified real gem grants +5 Luck (see Luck). **Cross-aligned unicorns are hostile**; you can pacify them by throwing any gem (real or glass), at which point an identified real gem still pays out, though only +1 to +3. |
+| `u`    | Horses / unicorns | Horses are usually mountable, mostly peaceful in the wild. Unicorns are color-coded by alignment: same-aligned spawn peaceful, cross-aligned hostile. The gem-throwing negotiation playbook is in the Luck chapter. |
 | `U`    | Umber hulk        | Confuses on sight. Avoid looking at them directly.                                                   |
 | `v`    | Vortices          | Engulfing wisps. Air, fire, ice, and steam vortices each apply their element to whatever they engulf. Kill at range. |
 | `w`    | Worms             | Long worms grow tail segments after each hit and can be a corridor in themselves. Purple worms swallow you whole (see Don't Want, below). |
