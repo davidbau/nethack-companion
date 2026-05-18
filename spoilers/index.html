@@ -6828,6 +6828,314 @@ isn’t.</li>
 <hr />
 </section>
 </section>
+<section id="enhancing-skills" class="level3">
+<h3>Enhancing Skills</h3>
+<!-- audit 2026-05-18 #98: ranks (P_UNSKILLED..P_GRAND_MASTER) and the level²×20 practice formula (20/80/180/320/500 cumulative) verified against skills.h:92-106. Slot costs (weapon 1/2/3, non-weapon 1/1/2/2/3) and crowning bonus from u_init.c skill tables and weapon.c:can_advance. Bare-hand 50% / martial-arts 75% damage-bonus check from weapon.c:weapon_hit_bonus. Riding 101-square threshold and action-gating (pickup/loot/dip/trap/engrave require Basic) from u_init.c + do.c. Wizard restricted from long sword per u_init.c skill table; artifact-gift unrestrict in artifact.c:artifact_hit. Spell-school precredit of 20 uses at starting Basic per u_init.c. Skilled cone-of-cold / fireball / identify rank gating per spell.c spelleffects. "You feel more confident in your skills" / "You feel you could be more dangerous" message strings in weapon.c. -->
+<p>Most adventurers discover the skill system the first time they press
+<code>#enhance</code> and realize the broadsword they’ve been swinging
+for several levels is finally ready to graduate from Basic to Skilled.
+Weapons, fighting styles, and spell schools each track their own
+proficiency, and you train them one slot at a time.</p>
+<section id="the-skill-ladder" class="level4">
+<h4>The Skill Ladder</h4>
+<p>Most skills run <strong>Unskilled → Basic → Skilled →
+Expert</strong>. <strong>Bare hands</strong> and <strong>martial
+arts</strong> alone reach <strong>Master</strong> and <strong>Grand
+Master</strong>. Each rank-up costs both <strong>practice</strong> (uses
+of the skill) and <strong>skill slots</strong> (a finite budget tied to
+your experience level).</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 34%" />
+<col style="width: 19%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr>
+<th>To reach</th>
+<th>Practice (cumulative)</th>
+<th>Weapon slots</th>
+<th>Non-weapon slots</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic</td>
+<td>20</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Skilled</td>
+<td>80</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>180</td>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>320</td>
+<td>—</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Grand Master</td>
+<td>500</td>
+<td>—</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Non-weapon skills — spell schools, two-weapon, riding, bare hands,
+martial arts — cost roughly half as many slots as melee weapons, the
+dungeon’s quiet subsidy for magic. You earn one slot per experience
+level plus one for being crowned, so the absolute ceiling is <strong>30
+slots</strong> for an XL-30 crowned hero. Lose an experience level and
+you lose a slot, which can demote your most recent advancement.</p>
+<p>Each role has a per-skill <strong>cap</strong> beyond which no amount
+of training will help. A Wizard caps at Basic with a mace and is
+<strong>restricted</strong> from long swords entirely. Restricted skills
+don’t appear on the <code>#enhance</code> menu and can never leave
+Unskilled, with one exception: if your god grants you an artifact
+weapon, you’re auto-unrestricted in its skill up to Basic. The full role
+caps live in the appendix.</p>
+</section>
+<section id="training-a-skill" class="level4">
+<h4>Training a Skill</h4>
+<p>Practice accumulates through use:</p>
+<ul>
+<li><strong>Weapon skills</strong> tick on every melee or thrown hit
+that does <strong>more than 1 damage</strong>. A pillow-soft punch for 1
+point doesn’t count. Spears, javelins, knives, daggers, and aklys train
+the same skill whether you stab with them or throw them.</li>
+<li><strong>Bare hands</strong> counts <strong>50%</strong> of your
+hits; <strong>martial arts</strong> counts <strong>75%</strong>. The
+rank still applies on every hit — this just slows the climb.</li>
+<li><strong>Riding</strong> earns one tick every <strong>101
+squares</strong> ridden.</li>
+<li><strong>Spell schools</strong> earn <strong>N practice per
+successful cast of a level-N spell</strong>. Every school has a level-1
+option to grind — see the schools table below.</li>
+</ul>
+<p>Skills your role starts at Basic come <strong>pre-credited with 20
+practice uses</strong>, so you’re already a quarter of the way to
+Skilled before the first turn.</p>
+<p>When you’ve earned enough practice, the game says <strong>“You feel
+more confident in your skills.”</strong> That’s your cue to type
+<code>#enhance</code>. If more advancements remain after you pick one,
+you’ll see <strong>“You feel you could be more dangerous!”</strong> —
+keep going.</p>
+</section>
+<section id="what-a-rank-buys-you" class="level4">
+<h4>What a Rank Buys You</h4>
+<p>For weapons and fighting styles, each rank shifts your to-hit and
+damage bonuses by a flat amount (the values replace each other, not
+stack):</p>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 12%" />
+<col style="width: 17%" />
+<col style="width: 10%" />
+<col style="width: 17%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Weapon</th>
+<th>Two-weapon</th>
+<th>Riding</th>
+<th>Bare hands</th>
+<th>Martial arts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unskilled</td>
+<td>−4 / −2</td>
+<td>−9 / −3</td>
+<td>−2 / 0</td>
+<td>+1 / 0</td>
+<td>+2 / +1</td>
+</tr>
+<tr>
+<td>Basic</td>
+<td>0 / 0</td>
+<td>−7 / −1</td>
+<td>−1 / 0</td>
+<td>+1 / +1</td>
+<td>+3 / +3</td>
+</tr>
+<tr>
+<td>Skilled</td>
+<td>+2 / +1</td>
+<td>−5 / 0</td>
+<td>0 / +1</td>
+<td>+2 / +1</td>
+<td>+4 / +4</td>
+</tr>
+<tr>
+<td>Expert</td>
+<td>+3 / +2</td>
+<td>−3 / +1</td>
+<td>0 / +2</td>
+<td>+2 / +2</td>
+<td>+5 / +6</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>+3 / +2</td>
+<td>+6 / +7</td>
+</tr>
+<tr>
+<td>Grand Master</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>+3 / +3</td>
+<td>+7 / +9</td>
+</tr>
+</tbody>
+</table>
+<p>(Each cell is <strong>to-hit / damage</strong>.) Two-weapon penalties
+apply to <strong>each</strong> of the two strikes — a Basic two-weaponer
+hits twice but at −7 each, which is much worse than one solid swing.
+Bare hands and martial arts bonuses still only apply to 50% and 75% of
+hits respectively (as noted above). The Expert weapon line (+3 / +2) is
+why dedicating to a single weapon matters: that’s the difference between
+landing the killing blow and watching the monster shrug.</p>
+</section>
+<section id="the-seven-spell-schools" class="level4">
+<h4>The Seven Spell Schools</h4>
+<p>Every spellbook belongs to one of seven schools, and your rank in
+that school determines how reliably you can cast spells from it. Higher
+rank also unlocks some spell upgrades — cone of cold becomes a
+room-clearing explosion at Skilled, identify IDs the whole stack, haste
+self lasts longer, and so on.</p>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 59%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr>
+<th>School</th>
+<th>Focus</th>
+<th>L1 grind</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attack</td>
+<td>Direct damage (force bolt, fireball)</td>
+<td>Force bolt</td>
+</tr>
+<tr>
+<td>Healing</td>
+<td>HP restore and cure status</td>
+<td>Healing</td>
+</tr>
+<tr>
+<td>Divination</td>
+<td>Sensing, identifying, mapping</td>
+<td>Light</td>
+</tr>
+<tr>
+<td>Enchantment</td>
+<td>Buffs, debuffs, charm</td>
+<td>Confuse monster</td>
+</tr>
+<tr>
+<td>Cleric</td>
+<td>Divine protection and summoning</td>
+<td>Protection</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Mobility, evasion, levitation</td>
+<td>Jumping</td>
+</tr>
+<tr>
+<td>Matter</td>
+<td>Manipulation, transmutation, polymorph</td>
+<td>Knock</td>
+</tr>
+</tbody>
+</table>
+<p>Role caps vary sharply across schools:</p>
+<ul>
+<li><strong>Wizards</strong> are the only role with access to all seven,
+and cap at Expert in attack, divination, escape, and matter.</li>
+<li><strong>Priests</strong> reach Expert in healing, divination, and
+cleric.</li>
+<li><strong>Healers</strong> cap at Expert in healing — and are
+<em>restricted</em> from every other school. Specialization by
+decree.</li>
+<li><strong>Knights</strong> train attack, healing, and cleric to
+Skilled.</li>
+<li><strong>Monks</strong> dabble broadly: Expert healing, Skilled
+cleric and escape, Basic in most others.</li>
+<li><strong>Rogues, Rangers, Tourists, Samurai</strong> each get two or
+three schools at Skilled or lower, usually built around divination or
+escape.</li>
+<li><strong>Barbarians, Valkyries, Cavemen</strong> cap at Basic in
+their one or two available schools and shouldn’t expect to learn
+anything past level 3.</li>
+</ul>
+<p>Full role caps for every weapon, fighting style, and spell school are
+in the <a href="#skill-caps">Skill Caps</a> appendix; the full list of
+43 spells is in the <a href="#spell-tables">Spell Tables</a>
+appendix.</p>
+</section>
+<section id="spending-slots-wisely" class="level4">
+<h4>Spending Slots Wisely</h4>
+<p>Thirty slots sounds like plenty until you start counting. Expert in a
+single weapon costs <strong>6 slots</strong> (1+2+3) by itself. A
+Valkyrie aiming for Expert long sword, Expert two-weapon, and Skilled
+riding is eleven slots deep before any spell school.</p>
+<p>A few principles:</p>
+<ul>
+<li><strong>Don’t enhance reflexively.</strong> Slots are spent
+permanently (short of losing experience). If you’re not committed to a
+weapon, hold the slot until you are.</li>
+<li><strong>Cap-aware investment.</strong> Pushing a skill to its role
+cap is fine: the menu just stops offering further advances. Aiming
+beyond the cap costs nothing because the option never appears.</li>
+<li><strong>Wizards train spell schools twice over.</strong> Each rank
+up improves casting success <em>and</em> reveals more spellbook
+appearances in that school (the identification payoff from the
+Spellcasting chapter). Schools containing your unidentified books
+deserve priority.</li>
+<li><strong>Riding’s silent gate.</strong> Without <strong>Basic
+riding</strong> you can’t pick up items, loot, dip, set or disarm traps,
+or engrave on the floor while mounted. Knights should advance it on the
+first opportunity even though Basic still leaves a −1 to-hit penalty in
+the saddle.</li>
+<li><strong>Bare hands and martial arts are a Monk story.</strong> Grand
+Master needs <strong>9 cumulative non-weapon slots</strong>, which Monks
+reach naturally. Anyone else dabbling in unarmed combat should plan to
+stop at Basic.</li>
+</ul>
+<p>A few spells also get sharper at Skilled, not just more reliable.
+Cone of cold and fireball stop being beams and become room-clearing
+<strong>explosions</strong>. Identify, remove curse, haste self, detect
+monsters, and several others gain the blessed-scroll effect (multi-item
+ID, full uncurse, longer duration). If you cast those spells regularly,
+the extra slots earn themselves back.</p>
+<hr />
+</section>
+</section>
 <section id="wishes-and-wishing" class="level3">
 <h3>Wishes and Wishing</h3>
 <p>There is a moment in every successful game where you’re asked, “For
@@ -7072,8 +7380,9 @@ on their spells in the late game.</p>
 </tr>
 <tr>
 <td>Chain lightning</td>
-<td>4</td>
-<td>Single shock bolt, multiple targets if it lines up</td>
+<td>2</td>
+<td>Shock that spreads from the caster in all directions, chaining to
+nearby monsters</td>
 </tr>
 <tr>
 <td>Magic mapping</td>
@@ -7092,6 +7401,9 @@ on their spells in the late game.</p>
 </tr>
 </tbody>
 </table>
+<p>The other 34 spells, along with their schools, types, and rank-gated
+upgrades, are in the <a href="#spell-tables">Spell Tables</a>
+appendix.</p>
 <p>For Wizards, learning <strong>identify</strong> and <strong>magic
 mapping</strong> as spells dramatically reduces your need for scrolls:
 it’s like having infinite scrolls, except they cost mana instead of
@@ -11696,6 +12008,1160 @@ levitating. Trap item.</td>
 </tbody>
 </table>
 </div>
+<hr />
+</section>
+</section>
+<section id="spell-tables" class="level3">
+<h3>Spell Tables</h3>
+<!-- audit 2026-05-18 #99: 43 spells extracted from objects.h SPELL() macros (P_ATTACK..P_MATTER). SPELL macro signature in objects.h:1078 confirms field order (name, desc, sub, prob, delay, level, mgc, dir, color, sn) and oc_level=oc_oc2. Chain lightning level=2 per macro (objects.h SPE_CHAIN_LIGHTNING line); spoiler body still says L4 in Spellcasting Key Spells table at line 4986 and What's New at line 8585 — flag for follow-up fix. Rank-gated effects from spell.c spelleffects: SPE_FIREBALL/CONE_OF_COLD become aimed explosions at P_SKILLED (cast.c:throwspell); SPE_REMOVE_CURSE/CONFUSE_MONSTER/DETECT_FOOD/CAUSE_FEAR/IDENTIFY/CHARM_MONSTER get blessed-scroll behavior at P_SKILLED; SPE_HASTE_SELF/DETECT_TREASURE/DETECT_MONSTERS/LEVITATION/RESTORE_ABILITY get blessed-potion behavior at P_SKILLED; SPE_PROTECTION doubles uspmtime at P_EXPERT (spell.c:1169); SPE_JUMPING distance scales directly from role_skill (spell.c via jump(max(role_skill,1))). -->
+<p>The complete spellbook catalog, sorted by school then level.
+<strong>Lvl</strong> is the spell level; <strong>Pw cost</strong> is
+always 5×level. <strong>Type</strong> distinguishes how the spell
+targets:</p>
+<ul>
+<li><strong>aimed</strong> — a single-square IMMEDIATE; you pick a
+direction.</li>
+<li><strong>ray</strong> — a beam from the caster through every square
+in a line until it stops.</li>
+<li><strong>untargeted</strong> — no direction needed; the effect is on
+you, the level, or a fixed area.</li>
+</ul>
+<p><strong>Upgrade</strong> is the behavior change at
+<strong>Skilled</strong> rank or above in that school (except for
+protection, which upgrades at Expert, and jumping, which scales
+continuously).</p>
+<div class="dense-table">
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 11%" />
+<col style="width: 4%" />
+<col style="width: 10%" />
+<col style="width: 32%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr>
+<th>Spell</th>
+<th>School</th>
+<th>Lvl</th>
+<th>Type</th>
+<th>Effect</th>
+<th>Upgrade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>force bolt</td>
+<td>Attack</td>
+<td>1</td>
+<td>aimed</td>
+<td>2d12 magical hit</td>
+<td>—</td>
+</tr>
+<tr>
+<td>chain lightning</td>
+<td>Attack</td>
+<td>2</td>
+<td>untargeted</td>
+<td>Shock damage to nearby monsters</td>
+<td>—</td>
+</tr>
+<tr>
+<td>drain life</td>
+<td>Attack</td>
+<td>2</td>
+<td>aimed</td>
+<td>Drains an XP level from target</td>
+<td>—</td>
+</tr>
+<tr>
+<td>magic missile</td>
+<td>Attack</td>
+<td>2</td>
+<td>ray</td>
+<td>2d6 force ray, no resistance</td>
+<td>—</td>
+</tr>
+<tr>
+<td>cone of cold</td>
+<td>Attack</td>
+<td>4</td>
+<td>ray</td>
+<td>4d6 cold ray</td>
+<td>Aimed explosion</td>
+</tr>
+<tr>
+<td>fireball</td>
+<td>Attack</td>
+<td>4</td>
+<td>ray</td>
+<td>4d6 fire ray</td>
+<td>Aimed explosion</td>
+</tr>
+<tr>
+<td>finger of death</td>
+<td>Attack</td>
+<td>7</td>
+<td>ray</td>
+<td>Death-magic beam; MR resists</td>
+<td>—</td>
+</tr>
+<tr>
+<td>healing</td>
+<td>Healing</td>
+<td>1</td>
+<td>aimed</td>
+<td>Restore hit points</td>
+<td>—</td>
+</tr>
+<tr>
+<td>cure blindness</td>
+<td>Healing</td>
+<td>2</td>
+<td>aimed</td>
+<td>Removes blindness</td>
+<td>—</td>
+</tr>
+<tr>
+<td>cure sickness</td>
+<td>Healing</td>
+<td>3</td>
+<td>untargeted</td>
+<td>Cures food poisoning and illness</td>
+<td>—</td>
+</tr>
+<tr>
+<td>extra healing</td>
+<td>Healing</td>
+<td>3</td>
+<td>aimed</td>
+<td>Heals more HP</td>
+<td>—</td>
+</tr>
+<tr>
+<td>stone to flesh</td>
+<td>Healing</td>
+<td>3</td>
+<td>aimed</td>
+<td>Statue → corpse; cures stoning</td>
+<td>—</td>
+</tr>
+<tr>
+<td>restore ability</td>
+<td>Healing</td>
+<td>4</td>
+<td>untargeted</td>
+<td>Restores one drained stat</td>
+<td>Blessed: all stats</td>
+</tr>
+<tr>
+<td>detect monsters</td>
+<td>Divination</td>
+<td>1</td>
+<td>untargeted</td>
+<td>Reveals monsters on level</td>
+<td>Blessed: longer duration</td>
+</tr>
+<tr>
+<td>light</td>
+<td>Divination</td>
+<td>1</td>
+<td>untargeted</td>
+<td>Lights the current room</td>
+<td>—</td>
+</tr>
+<tr>
+<td>detect food</td>
+<td>Divination</td>
+<td>2</td>
+<td>untargeted</td>
+<td>Reveals food on level</td>
+<td>Blessed: identifies the food</td>
+</tr>
+<tr>
+<td>clairvoyance</td>
+<td>Divination</td>
+<td>3</td>
+<td>untargeted</td>
+<td>Periodic glimpses of nearby map</td>
+<td>—</td>
+</tr>
+<tr>
+<td>detect unseen</td>
+<td>Divination</td>
+<td>3</td>
+<td>untargeted</td>
+<td>Reveals invisible monsters and traps</td>
+<td>—</td>
+</tr>
+<tr>
+<td>identify</td>
+<td>Divination</td>
+<td>3</td>
+<td>untargeted</td>
+<td>Identifies one inventory item</td>
+<td>Blessed: multiple items</td>
+</tr>
+<tr>
+<td>detect treasure</td>
+<td>Divination</td>
+<td>4</td>
+<td>untargeted</td>
+<td>Reveals gold and gems</td>
+<td>Blessed: more detail</td>
+</tr>
+<tr>
+<td>magic mapping</td>
+<td>Divination</td>
+<td>5</td>
+<td>untargeted</td>
+<td>Reveals the entire level</td>
+<td>—</td>
+</tr>
+<tr>
+<td>confuse monster</td>
+<td>Enchantment</td>
+<td>1</td>
+<td>aimed</td>
+<td>Next melee hit confuses target</td>
+<td>Blessed: multiple hits</td>
+</tr>
+<tr>
+<td>slow monster</td>
+<td>Enchantment</td>
+<td>2</td>
+<td>aimed</td>
+<td>Slows target’s speed</td>
+<td>—</td>
+</tr>
+<tr>
+<td>cause fear</td>
+<td>Enchantment</td>
+<td>3</td>
+<td>untargeted</td>
+<td>Nearby monsters flee</td>
+<td>Blessed: wider radius</td>
+</tr>
+<tr>
+<td>sleep</td>
+<td>Enchantment</td>
+<td>3</td>
+<td>ray</td>
+<td>Puts targets in line to sleep</td>
+<td>—</td>
+</tr>
+<tr>
+<td>charm monster</td>
+<td>Enchantment</td>
+<td>5</td>
+<td>aimed</td>
+<td>Tames one target</td>
+<td>3×3 normal, 5×5 confused</td>
+</tr>
+<tr>
+<td>protection</td>
+<td>Cleric</td>
+<td>1</td>
+<td>untargeted</td>
+<td>Temporary AC bonus paid from Pw</td>
+<td><strong>Expert</strong>: 2× duration</td>
+</tr>
+<tr>
+<td>create monster</td>
+<td>Cleric</td>
+<td>2</td>
+<td>untargeted</td>
+<td>Summons a random monster nearby</td>
+<td>—</td>
+</tr>
+<tr>
+<td>remove curse</td>
+<td>Cleric</td>
+<td>3</td>
+<td>untargeted</td>
+<td>Uncurses worn/wielded items</td>
+<td>Blessed: all worn/wielded</td>
+</tr>
+<tr>
+<td>create familiar</td>
+<td>Cleric</td>
+<td>6</td>
+<td>untargeted</td>
+<td>Creates a tame companion</td>
+<td>—</td>
+</tr>
+<tr>
+<td>turn undead</td>
+<td>Cleric</td>
+<td>6</td>
+<td>aimed</td>
+<td>Damages/turns undead and demons</td>
+<td>—</td>
+</tr>
+<tr>
+<td>jumping</td>
+<td>Escape</td>
+<td>1</td>
+<td>untargeted</td>
+<td>Jump to a chosen nearby square</td>
+<td>Range scales with rank</td>
+</tr>
+<tr>
+<td>haste self</td>
+<td>Escape</td>
+<td>3</td>
+<td>untargeted</td>
+<td>Temporary fast movement</td>
+<td>Blessed: longer duration</td>
+</tr>
+<tr>
+<td>invisibility</td>
+<td>Escape</td>
+<td>4</td>
+<td>untargeted</td>
+<td>Become invisible</td>
+<td>—</td>
+</tr>
+<tr>
+<td>levitation</td>
+<td>Escape</td>
+<td>4</td>
+<td>untargeted</td>
+<td>Float over pits and water</td>
+<td>Blessed: longer duration</td>
+</tr>
+<tr>
+<td>teleport away</td>
+<td>Escape</td>
+<td>6</td>
+<td>aimed</td>
+<td>Teleports target away</td>
+<td>—</td>
+</tr>
+<tr>
+<td>flame sphere</td>
+<td>Matter</td>
+<td>1</td>
+<td>untargeted</td>
+<td>Summons a flame sphere</td>
+<td>—</td>
+</tr>
+<tr>
+<td>freeze sphere</td>
+<td>Matter</td>
+<td>1</td>
+<td>untargeted</td>
+<td>Summons a freeze sphere</td>
+<td>—</td>
+</tr>
+<tr>
+<td>knock</td>
+<td>Matter</td>
+<td>1</td>
+<td>aimed</td>
+<td>Opens doors, picks locks</td>
+<td>—</td>
+</tr>
+<tr>
+<td>wizard lock</td>
+<td>Matter</td>
+<td>2</td>
+<td>aimed</td>
+<td>Closes and locks a door</td>
+<td>—</td>
+</tr>
+<tr>
+<td>dig</td>
+<td>Matter</td>
+<td>5</td>
+<td>ray</td>
+<td>Digs through walls, rock, floor</td>
+<td>—</td>
+</tr>
+<tr>
+<td>polymorph</td>
+<td>Matter</td>
+<td>6</td>
+<td>aimed</td>
+<td>Polymorphs target</td>
+<td>—</td>
+</tr>
+<tr>
+<td>cancellation</td>
+<td>Matter</td>
+<td>7</td>
+<td>aimed</td>
+<td>Removes magical properties</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The to-hit chance of most rays (sleep, magic missile, finger of
+death, and the unskilled forms of cone of cold and fireball) also scales
+with rank, even when the spell’s behavior doesn’t otherwise change.</p>
+<hr />
+</section>
+<section id="skill-caps" class="level3">
+<h3>Skill Caps</h3>
+<!-- audit 2026-05-18 #100: all 13 role skill tables extracted from u_init.c (Skill_A through Skill_W) and grouped by skill category. Skills not listed in a role's def_skill array are restricted (P_UNSKILLED, locked). Scimitar omitted because no role has it in 5.0 (merged into saber, per skills.h header note and audit #82). Note "Monks/Samurai only roles with martial arts" verified: P_MARTIAL_ARTS appears only in Skill_Mon (P_GRAND_MASTER) and Skill_S (P_MASTER). Monks have P_BARE_HANDED_COMBAT restricted (—) — they get martial arts instead. -->
+<p>Every role has fixed maximum ranks for each weapon, fighting style,
+and spell school. Skills not listed for a role are
+<strong>restricted</strong> (locked at Unskilled) — except that a
+god-given artifact weapon unrestricts you to Basic in its skill. Key:
+<strong>B</strong>=Basic, <strong>S</strong>=Skilled,
+<strong>E</strong>=Expert, <strong>M</strong>=Master,
+<strong>GM</strong>=Grand Master, <strong>—</strong>=restricted. Roles
+are abbreviated: Arc=Archeologist, Bar=Barbarian, Cav=Caveman,
+Hea=Healer, Kni=Knight, Mon=Monk, Pri=Priest, Rog=Rogue, Ran=Ranger,
+Sam=Samurai, Tou=Tourist, Val=Valkyrie, Wiz=Wizard.</p>
+<section id="weapon-skill-caps" class="level4">
+<h4>Weapon Skill Caps</h4>
+<div class="dense-table">
+<table style="width:100%;">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr>
+<th>Weapon</th>
+<th>Arc</th>
+<th>Bar</th>
+<th>Cav</th>
+<th>Hea</th>
+<th>Kni</th>
+<th>Mon</th>
+<th>Pri</th>
+<th>Rog</th>
+<th>Ran</th>
+<th>Sam</th>
+<th>Tou</th>
+<th>Val</th>
+<th>Wiz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dagger</td>
+<td>B</td>
+<td>B</td>
+<td>B</td>
+<td>S</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>E</td>
+<td>B</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+</tr>
+<tr>
+<td>knife</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+<td>E</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>S</td>
+<td>S</td>
+<td>S</td>
+<td>—</td>
+<td>S</td>
+</tr>
+<tr>
+<td>axe</td>
+<td>—</td>
+<td>E</td>
+<td>S</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>E</td>
+<td>S</td>
+</tr>
+<tr>
+<td>pick-axe</td>
+<td>E</td>
+<td>S</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+<td>S</td>
+<td>—</td>
+</tr>
+<tr>
+<td>short sword</td>
+<td>B</td>
+<td>E</td>
+<td>—</td>
+<td>S</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>B</td>
+<td>E</td>
+<td>E</td>
+<td>S</td>
+<td>B</td>
+</tr>
+<tr>
+<td>broadsword</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>S</td>
+<td>—</td>
+</tr>
+<tr>
+<td>long sword</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>E</td>
+<td>B</td>
+<td>E</td>
+<td>—</td>
+</tr>
+<tr>
+<td>two-handed sword</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>E</td>
+<td>B</td>
+<td>E</td>
+<td>—</td>
+</tr>
+<tr>
+<td>saber</td>
+<td>E</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>S</td>
+<td>B</td>
+<td>—</td>
+</tr>
+<tr>
+<td>club</td>
+<td>S</td>
+<td>S</td>
+<td>E</td>
+<td>S</td>
+<td>B</td>
+<td>—</td>
+<td>E</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+</tr>
+<tr>
+<td>mace</td>
+<td>—</td>
+<td>S</td>
+<td>E</td>
+<td>B</td>
+<td>S</td>
+<td>—</td>
+<td>E</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+</tr>
+<tr>
+<td>morning star</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>E</td>
+<td>B</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>flail</td>
+<td>—</td>
+<td>B</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>E</td>
+<td>B</td>
+<td>S</td>
+<td>S</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>hammer</td>
+<td>—</td>
+<td>E</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>E</td>
+<td>B</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+<td>E</td>
+<td>—</td>
+</tr>
+<tr>
+<td>quarterstaff</td>
+<td>S</td>
+<td>B</td>
+<td>E</td>
+<td>E</td>
+<td>—</td>
+<td>B</td>
+<td>E</td>
+<td>—</td>
+<td>B</td>
+<td>B</td>
+<td>B</td>
+<td>B</td>
+<td>E</td>
+</tr>
+<tr>
+<td>polearms</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>S</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>S</td>
+<td>S</td>
+<td>B</td>
+<td>S</td>
+<td>S</td>
+</tr>
+<tr>
+<td>spear</td>
+<td>—</td>
+<td>S</td>
+<td>E</td>
+<td>B</td>
+<td>S</td>
+<td>B</td>
+<td>S</td>
+<td>B</td>
+<td>E</td>
+<td>S</td>
+<td>B</td>
+<td>E</td>
+<td>B</td>
+</tr>
+<tr>
+<td>trident</td>
+<td>—</td>
+<td>S</td>
+<td>S</td>
+<td>B</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+<td>B</td>
+<td>B</td>
+</tr>
+<tr>
+<td>lance</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>S</td>
+<td>—</td>
+</tr>
+<tr>
+<td>bow</td>
+<td>—</td>
+<td>B</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>E</td>
+<td>E</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>sling</td>
+<td>S</td>
+<td>—</td>
+<td>E</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>B</td>
+<td>B</td>
+<td>S</td>
+</tr>
+<tr>
+<td>crossbow</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>B</td>
+<td>E</td>
+<td>E</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>dart</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>E</td>
+<td>E</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>E</td>
+</tr>
+<tr>
+<td>shuriken</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>B</td>
+<td>S</td>
+<td>S</td>
+<td>E</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+</tr>
+<tr>
+<td>boomerang</td>
+<td>E</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>whip</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>unicorn horn</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Scimitar was merged into saber in 5.0; both refer to the same skill
+now.</p>
+</section>
+<section id="fighting-style-caps" class="level4">
+<h4>Fighting Style Caps</h4>
+<div class="dense-table">
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr>
+<th>Style</th>
+<th>Arc</th>
+<th>Bar</th>
+<th>Cav</th>
+<th>Hea</th>
+<th>Kni</th>
+<th>Mon</th>
+<th>Pri</th>
+<th>Rog</th>
+<th>Ran</th>
+<th>Sam</th>
+<th>Tou</th>
+<th>Val</th>
+<th>Wiz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bare hands</td>
+<td>E</td>
+<td>M</td>
+<td>M</td>
+<td>B</td>
+<td>E</td>
+<td>—</td>
+<td>B</td>
+<td>E</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+<td>E</td>
+<td>B</td>
+</tr>
+<tr>
+<td>two-weapon</td>
+<td>B</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>E</td>
+<td>S</td>
+<td>S</td>
+<td>—</td>
+</tr>
+<tr>
+<td>riding</td>
+<td>B</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>B</td>
+<td>S</td>
+<td>B</td>
+<td>S</td>
+<td>B</td>
+</tr>
+<tr>
+<td>martial arts</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>GM</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>M</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Only Monks and Samurai have martial arts at all, and only Monks reach
+Grand Master. Monks are restricted from bare-hand combat because martial
+arts replaces it; Samurai have access to both.</p>
+</section>
+<section id="spell-school-caps" class="level4">
+<h4>Spell School Caps</h4>
+<div class="dense-table">
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr>
+<th>School</th>
+<th>Arc</th>
+<th>Bar</th>
+<th>Cav</th>
+<th>Hea</th>
+<th>Kni</th>
+<th>Mon</th>
+<th>Pri</th>
+<th>Rog</th>
+<th>Ran</th>
+<th>Sam</th>
+<th>Tou</th>
+<th>Val</th>
+<th>Wiz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attack</td>
+<td>B</td>
+<td>B</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+<td>E</td>
+</tr>
+<tr>
+<td>Healing</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>S</td>
+<td>E</td>
+<td>E</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+</tr>
+<tr>
+<td>Divination</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>E</td>
+<td>S</td>
+<td>E</td>
+<td>B</td>
+<td>B</td>
+<td>—</td>
+<td>E</td>
+</tr>
+<tr>
+<td>Enchantment</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+</tr>
+<tr>
+<td>Cleric</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>S</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>E</td>
+</tr>
+<tr>
+<td>Matter</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Healers cap at Expert in healing but are restricted from every other
+school — the only role with this kind of single-school specialization.
+Wizards are the only role with access to all seven schools. Barbarians,
+Valkyries, and Cavemen are restricted from five of the seven and capped
+at Basic in the rest.</p>
 <hr />
 </section>
 </section>
@@ -17594,8 +19060,10 @@ Mazes.</li>
 <li><strong>The helm of caution</strong> is a new piece of armor that
 grants warning. The helm of brilliance now always appears as a “crystal
 helmet” rather than a randomized appearance.</li>
-<li><strong>Chain lightning</strong> is a new level 4 attack spell
-(single shock bolt that can hit multiple targets if they line up).</li>
+<li><strong>Chain lightning</strong> is a new level 2 attack spell.
+Shock damage spreads from the caster in all directions and chains from
+one monster to the next, so it scales with the density of the room
+rather than the caster’s aim.</li>
 <li><strong>Spellbooks</strong> can be <code>a</code>pplied to check how
 worn they are.</li>
 <li><strong>Mind flayers</strong> no longer wipe your map or

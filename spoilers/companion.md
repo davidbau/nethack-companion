@@ -4641,6 +4641,174 @@ are the time-tested tactics that keep adventurers breathing:
 
 ---
 
+### Enhancing Skills
+<!-- audit 2026-05-18 #98: ranks (P_UNSKILLED..P_GRAND_MASTER) and the level²×20 practice formula (20/80/180/320/500 cumulative) verified against skills.h:92-106. Slot costs (weapon 1/2/3, non-weapon 1/1/2/2/3) and crowning bonus from u_init.c skill tables and weapon.c:can_advance. Bare-hand 50% / martial-arts 75% damage-bonus check from weapon.c:weapon_hit_bonus. Riding 101-square threshold and action-gating (pickup/loot/dip/trap/engrave require Basic) from u_init.c + do.c. Wizard restricted from long sword per u_init.c skill table; artifact-gift unrestrict in artifact.c:artifact_hit. Spell-school precredit of 20 uses at starting Basic per u_init.c. Skilled cone-of-cold / fireball / identify rank gating per spell.c spelleffects. "You feel more confident in your skills" / "You feel you could be more dangerous" message strings in weapon.c. -->
+
+Most adventurers discover the skill system the first time they
+press `#enhance` and realize the broadsword they've been swinging
+for several levels is finally ready to graduate from Basic to
+Skilled. Weapons, fighting styles, and spell schools each track
+their own proficiency, and you train them one slot at a time.
+
+#### The Skill Ladder
+
+Most skills run **Unskilled → Basic → Skilled → Expert**. **Bare
+hands** and **martial arts** alone reach **Master** and **Grand
+Master**. Each rank-up costs both **practice** (uses of the skill)
+and **skill slots** (a finite budget tied to your experience
+level).
+
+| To reach     | Practice (cumulative) | Weapon slots | Non-weapon slots |
+| ------------ | --------------------- | ------------ | ---------------- |
+| Basic        | 20                    | 1            | 1                |
+| Skilled      | 80                    | 2            | 1                |
+| Expert       | 180                   | 3            | 2                |
+| Master       | 320                   | —            | 2                |
+| Grand Master | 500                   | —            | 3                |
+
+Non-weapon skills — spell schools, two-weapon, riding, bare hands,
+martial arts — cost roughly half as many slots as melee weapons,
+the dungeon's quiet subsidy for magic. You earn one slot per
+experience level plus one for being crowned, so the absolute
+ceiling is **30 slots** for an XL-30 crowned hero. Lose an
+experience level and you lose a slot, which can demote your most
+recent advancement.
+
+Each role has a per-skill **cap** beyond which no amount of
+training will help. A Wizard caps at Basic with a mace and is
+**restricted** from long swords entirely. Restricted skills don't
+appear on the `#enhance` menu and can never leave Unskilled, with
+one exception: if your god grants you an artifact weapon, you're
+auto-unrestricted in its skill up to Basic. The full role caps
+live in the appendix.
+
+#### Training a Skill
+
+Practice accumulates through use:
+
+- **Weapon skills** tick on every melee or thrown hit that does
+  **more than 1 damage**. A pillow-soft punch for 1 point doesn't
+  count. Spears, javelins, knives, daggers, and aklys train the
+  same skill whether you stab with them or throw them.
+- **Bare hands** counts **50%** of your hits; **martial arts**
+  counts **75%**. The rank still applies on every hit — this just
+  slows the climb.
+- **Riding** earns one tick every **101 squares** ridden.
+- **Spell schools** earn **N practice per successful cast of a
+  level-N spell**. Every school has a level-1 option to grind —
+  see the schools table below.
+
+Skills your role starts at Basic come **pre-credited with 20
+practice uses**, so you're already a quarter of the way to Skilled
+before the first turn.
+
+When you've earned enough practice, the game says **"You feel more
+confident in your skills."** That's your cue to type `#enhance`.
+If more advancements remain after you pick one, you'll see **"You
+feel you could be more dangerous!"** — keep going.
+
+#### What a Rank Buys You
+
+For weapons and fighting styles, each rank shifts your to-hit and
+damage bonuses by a flat amount (the values replace each other,
+not stack):
+
+| Rank         | Weapon  | Two-weapon | Riding | Bare hands | Martial arts |
+| ------------ | ------- | ---------- | ------ | ---------- | ------------ |
+| Unskilled    | −4 / −2 | −9 / −3    | −2 / 0 | +1 / 0     | +2 / +1      |
+| Basic        | 0 / 0   | −7 / −1    | −1 / 0 | +1 / +1    | +3 / +3      |
+| Skilled      | +2 / +1 | −5 / 0     | 0 / +1 | +2 / +1    | +4 / +4      |
+| Expert       | +3 / +2 | −3 / +1    | 0 / +2 | +2 / +2    | +5 / +6      |
+| Master       | —       | —          | —      | +3 / +2    | +6 / +7      |
+| Grand Master | —       | —          | —      | +3 / +3    | +7 / +9      |
+
+(Each cell is **to-hit / damage**.) Two-weapon penalties apply to
+**each** of the two strikes — a Basic two-weaponer hits twice but
+at −7 each, which is much worse than one solid swing. Bare hands
+and martial arts bonuses still only apply to 50% and 75% of hits
+respectively (as noted above). The Expert weapon line (+3 / +2)
+is why dedicating to a single weapon matters: that's the
+difference between landing the killing blow and watching the
+monster shrug.
+
+#### The Seven Spell Schools
+
+Every spellbook belongs to one of seven schools, and your rank in
+that school determines how reliably you can cast spells from it.
+Higher rank also unlocks some spell upgrades — cone of cold
+becomes a room-clearing explosion at Skilled, identify IDs the
+whole stack, haste self lasts longer, and so on.
+
+| School      | Focus                                  | L1 grind        |
+| ----------- | -------------------------------------- | --------------- |
+| Attack      | Direct damage (force bolt, fireball)   | Force bolt      |
+| Healing     | HP restore and cure status             | Healing         |
+| Divination  | Sensing, identifying, mapping          | Light           |
+| Enchantment | Buffs, debuffs, charm                  | Confuse monster |
+| Cleric      | Divine protection and summoning        | Protection      |
+| Escape      | Mobility, evasion, levitation          | Jumping         |
+| Matter      | Manipulation, transmutation, polymorph | Knock           |
+
+Role caps vary sharply across schools:
+
+- **Wizards** are the only role with access to all seven, and cap
+  at Expert in attack, divination, escape, and matter.
+- **Priests** reach Expert in healing, divination, and cleric.
+- **Healers** cap at Expert in healing — and are *restricted*
+  from every other school. Specialization by decree.
+- **Knights** train attack, healing, and cleric to Skilled.
+- **Monks** dabble broadly: Expert healing, Skilled cleric and
+  escape, Basic in most others.
+- **Rogues, Rangers, Tourists, Samurai** each get two or three
+  schools at Skilled or lower, usually built around divination
+  or escape.
+- **Barbarians, Valkyries, Cavemen** cap at Basic in their one
+  or two available schools and shouldn't expect to learn anything
+  past level 3.
+
+Full role caps for every weapon, fighting style, and spell school
+are in the [Skill Caps](#skill-caps) appendix; the full list of
+43 spells is in the [Spell Tables](#spell-tables) appendix.
+
+#### Spending Slots Wisely
+
+Thirty slots sounds like plenty until you start counting. Expert
+in a single weapon costs **6 slots** (1+2+3) by itself. A
+Valkyrie aiming for Expert long sword, Expert two-weapon, and
+Skilled riding is eleven slots deep before any spell school.
+
+A few principles:
+
+- **Don't enhance reflexively.** Slots are spent permanently
+  (short of losing experience). If you're not committed to a
+  weapon, hold the slot until you are.
+- **Cap-aware investment.** Pushing a skill to its role cap is
+  fine: the menu just stops offering further advances. Aiming
+  beyond the cap costs nothing because the option never appears.
+- **Wizards train spell schools twice over.** Each rank up
+  improves casting success *and* reveals more spellbook
+  appearances in that school (the identification payoff from the
+  Spellcasting chapter). Schools containing your unidentified
+  books deserve priority.
+- **Riding's silent gate.** Without **Basic riding** you can't
+  pick up items, loot, dip, set or disarm traps, or engrave on
+  the floor while mounted. Knights should advance it on the first
+  opportunity even though Basic still leaves a −1 to-hit penalty
+  in the saddle.
+- **Bare hands and martial arts are a Monk story.** Grand Master
+  needs **9 cumulative non-weapon slots**, which Monks reach
+  naturally. Anyone else dabbling in unarmed combat should plan
+  to stop at Basic.
+
+A few spells also get sharper at Skilled, not just more reliable.
+Cone of cold and fireball stop being beams and become
+room-clearing **explosions**. Identify, remove curse, haste self,
+detect monsters, and several others gain the blessed-scroll
+effect (multi-item ID, full uncurse, longer duration). If you cast
+those spells regularly, the extra slots earn themselves back.
+
+---
+
 ### Wishes and Wishing
 
 There is a moment in every successful game where you're asked,
@@ -4817,10 +4985,14 @@ rely on their spells in the late game.
 | Detect monsters | 1     | Sense nearby monsters                   |
 | Identify        | 3     | Identify items (saves scrolls)          |
 | Remove curse    | 3     | Uncurse worn/wielded items              |
-| Chain lightning | 4     | Single shock bolt, multiple targets if it lines up |
+| Chain lightning | 2     | Shock that spreads from the caster in all directions, chaining to nearby monsters |
 | Magic mapping   | 5     | Reveal the level (saves scrolls)        |
 | Charm monster   | 5     | Tame nearby creatures (3×3, 5×5 confused) |
 | Finger of death | 7     | Kill in a beam; MR resists              |
+
+The other 34 spells, along with their schools, types, and
+rank-gated upgrades, are in the [Spell Tables](#spell-tables)
+appendix.
 
 For Wizards, learning **identify** and **magic mapping** as spells
 dramatically reduces your need for scrolls: it's like having
@@ -7283,6 +7455,173 @@ All polearms are two-handed. To strike at range, `#apply` the weapon (not wield-
 
 ---
 
+### Spell Tables
+<!-- audit 2026-05-18 #99: 43 spells extracted from objects.h SPELL() macros (P_ATTACK..P_MATTER). SPELL macro signature in objects.h:1078 confirms field order (name, desc, sub, prob, delay, level, mgc, dir, color, sn) and oc_level=oc_oc2. Chain lightning level=2 per macro (objects.h SPE_CHAIN_LIGHTNING line); spoiler body still says L4 in Spellcasting Key Spells table at line 4986 and What's New at line 8585 — flag for follow-up fix. Rank-gated effects from spell.c spelleffects: SPE_FIREBALL/CONE_OF_COLD become aimed explosions at P_SKILLED (cast.c:throwspell); SPE_REMOVE_CURSE/CONFUSE_MONSTER/DETECT_FOOD/CAUSE_FEAR/IDENTIFY/CHARM_MONSTER get blessed-scroll behavior at P_SKILLED; SPE_HASTE_SELF/DETECT_TREASURE/DETECT_MONSTERS/LEVITATION/RESTORE_ABILITY get blessed-potion behavior at P_SKILLED; SPE_PROTECTION doubles uspmtime at P_EXPERT (spell.c:1169); SPE_JUMPING distance scales directly from role_skill (spell.c via jump(max(role_skill,1))). -->
+
+The complete spellbook catalog, sorted by school then level. **Lvl**
+is the spell level; **Pw cost** is always 5×level. **Type**
+distinguishes how the spell targets:
+
+- **aimed** — a single-square IMMEDIATE; you pick a direction.
+- **ray** — a beam from the caster through every square in a
+  line until it stops.
+- **untargeted** — no direction needed; the effect is on you,
+  the level, or a fixed area.
+
+**Upgrade** is the behavior change at **Skilled** rank or above
+in that school (except for protection, which upgrades at Expert,
+and jumping, which scales continuously).
+
+::: dense-table
+
+| Spell           | School      | Lvl | Type       | Effect                              | Upgrade                       |
+|-----------------|-------------|-----|------------|-------------------------------------|-------------------------------|
+| force bolt      | Attack      | 1   | aimed      | 2d12 magical hit                    | —                             |
+| chain lightning | Attack      | 2   | untargeted | Shock damage to nearby monsters     | —                             |
+| drain life      | Attack      | 2   | aimed      | Drains an XP level from target      | —                             |
+| magic missile   | Attack      | 2   | ray        | 2d6 force ray, no resistance        | —                             |
+| cone of cold    | Attack      | 4   | ray        | 4d6 cold ray                        | Aimed explosion               |
+| fireball        | Attack      | 4   | ray        | 4d6 fire ray                        | Aimed explosion               |
+| finger of death | Attack      | 7   | ray        | Death-magic beam; MR resists        | —                             |
+| healing         | Healing     | 1   | aimed      | Restore hit points                  | —                             |
+| cure blindness  | Healing     | 2   | aimed      | Removes blindness                   | —                             |
+| cure sickness   | Healing     | 3   | untargeted | Cures food poisoning and illness    | —                             |
+| extra healing   | Healing     | 3   | aimed      | Heals more HP                       | —                             |
+| stone to flesh  | Healing     | 3   | aimed      | Statue → corpse; cures stoning      | —                             |
+| restore ability | Healing     | 4   | untargeted | Restores one drained stat           | Blessed: all stats            |
+| detect monsters | Divination  | 1   | untargeted | Reveals monsters on level           | Blessed: longer duration      |
+| light           | Divination  | 1   | untargeted | Lights the current room             | —                             |
+| detect food     | Divination  | 2   | untargeted | Reveals food on level               | Blessed: identifies the food  |
+| clairvoyance    | Divination  | 3   | untargeted | Periodic glimpses of nearby map     | —                             |
+| detect unseen   | Divination  | 3   | untargeted | Reveals invisible monsters and traps | —                            |
+| identify        | Divination  | 3   | untargeted | Identifies one inventory item       | Blessed: multiple items       |
+| detect treasure | Divination  | 4   | untargeted | Reveals gold and gems               | Blessed: more detail          |
+| magic mapping   | Divination  | 5   | untargeted | Reveals the entire level            | —                             |
+| confuse monster | Enchantment | 1   | aimed      | Next melee hit confuses target      | Blessed: multiple hits        |
+| slow monster    | Enchantment | 2   | aimed      | Slows target's speed                | —                             |
+| cause fear      | Enchantment | 3   | untargeted | Nearby monsters flee                | Blessed: wider radius         |
+| sleep           | Enchantment | 3   | ray        | Puts targets in line to sleep       | —                             |
+| charm monster   | Enchantment | 5   | aimed      | Tames one target                    | 3×3 normal, 5×5 confused      |
+| protection      | Cleric      | 1   | untargeted | Temporary AC bonus paid from Pw     | **Expert**: 2× duration       |
+| create monster  | Cleric      | 2   | untargeted | Summons a random monster nearby     | —                             |
+| remove curse    | Cleric      | 3   | untargeted | Uncurses worn/wielded items         | Blessed: all worn/wielded     |
+| create familiar | Cleric      | 6   | untargeted | Creates a tame companion            | —                             |
+| turn undead     | Cleric      | 6   | aimed      | Damages/turns undead and demons     | —                             |
+| jumping         | Escape      | 1   | untargeted | Jump to a chosen nearby square      | Range scales with rank        |
+| haste self      | Escape      | 3   | untargeted | Temporary fast movement             | Blessed: longer duration      |
+| invisibility    | Escape      | 4   | untargeted | Become invisible                    | —                             |
+| levitation      | Escape      | 4   | untargeted | Float over pits and water           | Blessed: longer duration      |
+| teleport away   | Escape      | 6   | aimed      | Teleports target away               | —                             |
+| flame sphere    | Matter      | 1   | untargeted | Summons a flame sphere              | —                             |
+| freeze sphere   | Matter      | 1   | untargeted | Summons a freeze sphere             | —                             |
+| knock           | Matter      | 1   | aimed      | Opens doors, picks locks            | —                             |
+| wizard lock     | Matter      | 2   | aimed      | Closes and locks a door             | —                             |
+| dig             | Matter      | 5   | ray        | Digs through walls, rock, floor     | —                             |
+| polymorph       | Matter      | 6   | aimed      | Polymorphs target                   | —                             |
+| cancellation    | Matter      | 7   | aimed      | Removes magical properties          | —                             |
+
+:::
+
+The to-hit chance of most rays (sleep, magic missile, finger of
+death, and the unskilled forms of cone of cold and fireball) also
+scales with rank, even when the spell's behavior doesn't otherwise
+change.
+
+---
+
+### Skill Caps
+<!-- audit 2026-05-18 #100: all 13 role skill tables extracted from u_init.c (Skill_A through Skill_W) and grouped by skill category. Skills not listed in a role's def_skill array are restricted (P_UNSKILLED, locked). Scimitar omitted because no role has it in 5.0 (merged into saber, per skills.h header note and audit #82). Note "Monks/Samurai only roles with martial arts" verified: P_MARTIAL_ARTS appears only in Skill_Mon (P_GRAND_MASTER) and Skill_S (P_MASTER). Monks have P_BARE_HANDED_COMBAT restricted (—) — they get martial arts instead. -->
+
+Every role has fixed maximum ranks for each weapon, fighting style,
+and spell school. Skills not listed for a role are **restricted**
+(locked at Unskilled) — except that a god-given artifact weapon
+unrestricts you to Basic in its skill. Key: **B**=Basic,
+**S**=Skilled, **E**=Expert, **M**=Master, **GM**=Grand Master,
+**—**=restricted. Roles are abbreviated: Arc=Archeologist,
+Bar=Barbarian, Cav=Caveman, Hea=Healer, Kni=Knight, Mon=Monk,
+Pri=Priest, Rog=Rogue, Ran=Ranger, Sam=Samurai, Tou=Tourist,
+Val=Valkyrie, Wiz=Wizard.
+
+#### Weapon Skill Caps
+
+::: dense-table
+
+| Weapon           | Arc | Bar | Cav | Hea | Kni | Mon | Pri | Rog | Ran | Sam | Tou | Val | Wiz |
+|------------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| dagger           | B   | B   | B   | S   | B   | —   | —   | E   | E   | B   | E   | E   | E   |
+| knife            | B   | —   | S   | E   | B   | —   | —   | E   | S   | S   | S   | —   | S   |
+| axe              | —   | E   | S   | —   | S   | —   | —   | —   | S   | —   | B   | E   | S   |
+| pick-axe         | E   | S   | B   | —   | B   | —   | —   | —   | B   | —   | B   | S   | —   |
+| short sword      | B   | E   | —   | S   | S   | —   | —   | E   | B   | E   | E   | S   | B   |
+| broadsword       | —   | S   | —   | —   | S   | —   | —   | S   | —   | S   | B   | S   | —   |
+| long sword       | —   | S   | —   | —   | E   | —   | —   | S   | —   | E   | B   | E   | —   |
+| two-handed sword | —   | E   | —   | —   | S   | —   | —   | B   | —   | E   | B   | E   | —   |
+| saber            | E   | S   | —   | B   | S   | —   | —   | S   | —   | B   | S   | B   | —   |
+| club             | S   | S   | E   | S   | B   | —   | E   | S   | —   | —   | —   | —   | S   |
+| mace             | —   | S   | E   | B   | S   | —   | E   | S   | —   | —   | B   | —   | B   |
+| morning star     | —   | S   | B   | —   | S   | —   | E   | B   | B   | —   | B   | —   | —   |
+| flail            | —   | B   | S   | —   | B   | —   | E   | B   | S   | S   | B   | —   | —   |
+| hammer           | —   | E   | S   | —   | B   | —   | E   | B   | B   | —   | B   | E   | —   |
+| quarterstaff     | S   | B   | E   | E   | —   | B   | E   | —   | B   | B   | B   | B   | E   |
+| polearms         | —   | —   | S   | B   | S   | —   | S   | B   | S   | S   | B   | S   | S   |
+| spear            | —   | S   | E   | B   | S   | B   | S   | B   | E   | S   | B   | E   | B   |
+| trident          | —   | S   | S   | B   | B   | —   | S   | —   | B   | —   | B   | B   | B   |
+| lance            | —   | —   | —   | —   | E   | —   | B   | —   | —   | S   | B   | S   | —   |
+| bow              | —   | B   | S   | —   | B   | —   | B   | —   | E   | E   | B   | —   | —   |
+| sling            | S   | —   | E   | S   | —   | —   | B   | —   | E   | —   | B   | B   | S   |
+| crossbow         | —   | —   | —   | —   | S   | B   | B   | E   | E   | —   | B   | —   | —   |
+| dart             | B   | —   | —   | E   | —   | —   | B   | E   | E   | —   | E   | —   | E   |
+| shuriken         | —   | —   | —   | S   | —   | B   | B   | S   | S   | E   | B   | —   | B   |
+| boomerang        | E   | —   | E   | —   | —   | —   | B   | —   | E   | —   | B   | —   | —   |
+| whip             | E   | —   | —   | —   | —   | —   | —   | —   | B   | —   | B   | —   | —   |
+| unicorn horn     | S   | —   | B   | E   | —   | —   | S   | —   | —   | —   | S   | —   | —   |
+
+:::
+
+Scimitar was merged into saber in 5.0; both refer to the same skill
+now.
+
+#### Fighting Style Caps
+
+::: dense-table
+
+| Style        | Arc | Bar | Cav | Hea | Kni | Mon | Pri | Rog | Ran | Sam | Tou | Val | Wiz |
+|--------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| bare hands   | E   | M   | M   | B   | E   | —   | B   | E   | B   | —   | S   | E   | B   |
+| two-weapon   | B   | B   | —   | —   | S   | —   | —   | E   | —   | E   | S   | S   | —   |
+| riding       | B   | B   | —   | —   | E   | —   | —   | B   | B   | S   | B   | S   | B   |
+| martial arts | —   | —   | —   | —   | —   | GM  | —   | —   | —   | M   | —   | —   | —   |
+
+:::
+
+Only Monks and Samurai have martial arts at all, and only Monks
+reach Grand Master. Monks are restricted from bare-hand combat
+because martial arts replaces it; Samurai have access to both.
+
+#### Spell School Caps
+
+::: dense-table
+
+| School      | Arc | Bar | Cav | Hea | Kni | Mon | Pri | Rog | Ran | Sam | Tou | Val | Wiz |
+|-------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| Attack      | B   | B   | B   | —   | S   | B   | —   | —   | —   | B   | —   | B   | E   |
+| Healing     | B   | —   | —   | E   | S   | E   | E   | —   | B   | —   | —   | —   | S   |
+| Divination  | E   | —   | —   | —   | —   | B   | E   | S   | E   | B   | B   | —   | E   |
+| Enchantment | —   | —   | —   | —   | —   | B   | —   | —   | —   | —   | B   | —   | S   |
+| Cleric      | —   | —   | —   | —   | S   | S   | E   | —   | —   | S   | —   | —   | S   |
+| Escape      | —   | B   | —   | —   | —   | S   | —   | S   | B   | —   | S   | B   | E   |
+| Matter      | B   | —   | S   | —   | —   | B   | —   | S   | —   | —   | —   | —   | E   |
+
+:::
+
+Healers cap at Expert in healing but are restricted from every
+other school — the only role with this kind of single-school
+specialization. Wizards are the only role with access to all seven
+schools. Barbarians, Valkyries, and Cavemen are restricted from
+five of the seven and capped at Basic in the rest.
+
+---
+
 ### Bestiary Tables
 
 Every monster you might meet. Grouped by ASCII symbol so you can flip to the right page mid-game. **Lvl** is the base monster level. **Spd** is movement rate (12 is normal player speed). **AC** is armor class (lower is better). **MR%** is the percentage chance the monster resists your spells and magic attacks. **Attacks** lists each attack's mode, damage dice, and side effect; multiple attacks separated by `·` are made per turn. **Notes** folds in the most tactically-relevant trait flags (flies, sees-invis, regenerates, poisonous-corpse, etc.) alongside specific heads-ups for monsters that deserve one.
@@ -8416,8 +8755,10 @@ point.) The most significant:
 - **The helm of caution** is a new piece of armor that grants
   warning. The helm of brilliance now always appears as a
   "crystal helmet" rather than a randomized appearance.
-- **Chain lightning** is a new level 4 attack spell (single shock
-  bolt that can hit multiple targets if they line up).
+- **Chain lightning** is a new level 2 attack spell. Shock damage
+  spreads from the caster in all directions and chains from one
+  monster to the next, so it scales with the density of the room
+  rather than the caster's aim.
 - **Spellbooks** can be `a`pplied to check how worn they are.
 - **Mind flayers** no longer wipe your map or identifications (the
   old "amnesia" effect on tentacle hit). They still drain
