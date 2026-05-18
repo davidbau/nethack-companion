@@ -126,14 +126,14 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#119**  L 6636  (  18 lines)   ↳ Weapons Tables → Dagger
 - [x] **#120**  L 6758  (  11 lines)   ↳ Weapons Tables → Mace
 - [x] **#121**  L 4170  ( 212 lines) 📖 Divine Relations
-- [x] **#122**  L 1398  (  86 lines)   ↳ Traps and Hazards → Elbereth
-- [x] **#123**  L 1174  (  19 lines)   ↳ Traps and Hazards → Movement Traps
-- [x] **#124**  L  842  (  52 lines)   ↳ Branches and Landmarks → The Gnomish Mines
-- [x] **#125**  L  981  (  23 lines)   ↳ Branches and Landmarks → The Rogue Level
-- [x] **#126**  L 7813  (  17 lines)   ↳ Bestiary Tables → Puddings and oozes `P`
-- [x] **#127**  L 6715  (  11 lines)   ↳ Weapons Tables → Two-handed sword
-- [x] **#128**  L 6210  (  14 lines)   ↳ Voluntary Challenges → Weaponless
-- [x] **#129**  L 6847  (  10 lines)   ↳ Weapons Tables → Trident
+- [ ] **#122**  L 1398  (  86 lines)   ↳ Traps and Hazards → Elbereth
+- [ ] **#123**  L 1174  (  19 lines)   ↳ Traps and Hazards → Movement Traps
+- [ ] **#124**  L  842  (  52 lines)   ↳ Branches and Landmarks → The Gnomish Mines
+- [ ] **#125**  L  981  (  23 lines)   ↳ Branches and Landmarks → The Rogue Level
+- [ ] **#126**  L 7813  (  17 lines)   ↳ Bestiary Tables → Puddings and oozes `P`
+- [ ] **#127**  L 6715  (  11 lines)   ↳ Weapons Tables → Two-handed sword
+- [ ] **#128**  L 6210  (  14 lines)   ↳ Voluntary Challenges → Weaponless
+- [ ] **#129**  L 6847  (  10 lines)   ↳ Weapons Tables → Trident
 - [ ] **#130**  L 1524  (  99 lines) 📖 A Field Guide to Dungeon Fauna
 - [ ] **#131**  L 7342  (  16 lines)   ↳ Bestiary Tables → Nymphs `n`
 - [ ] **#132**  L 1193  (  47 lines)   ↳ Traps and Hazards → Dangerous Traps
