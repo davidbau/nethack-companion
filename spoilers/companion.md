@@ -2963,6 +2963,7 @@ zap them at a monster or in a safe direction.
 **Warning:** In 5.0, cursed wands may **explode** when used to
 engrave. BUC-test your wands before engraving with them.
 
+<!-- audit 2026-05-18 v2 #34: dosinkring at do.c:498-650 verified — 28 ring types each produce a distinctive message; searching and slow digestion "goto giveback" and are dropped back on the floor identified (do.c:507-516); other rings usually consumed with a 1/20 backup chance and 1/5 buried chance (do.c:649-660). Section correctly defers detail to the Sinks subsection. 0 corrections. See companion-audit.md. -->
 #### The Sink Test (Rings)
 
 If you find a sink, you can drop a ring down it. Each ring type
@@ -5432,7 +5433,7 @@ random numbers, which in the Mazes is the closest thing to love.
 ---
 
 ### The Castle
-<!-- audit 2026-05-18 #109: 3 corrections to the Castle section. (1) "Maze section with a minotaur guarding it" is fabricated — castle.lua has no minotaur and no internal maze room (only mazewalk fill outside the fortress for entry corridors); minotaurs are placed in earth/fire/hellfill, not the Castle. Dropped the bullet. (2) "Elbereth keeps shopkeeper-class wanderers from stealing the treasure" — wrong target. The lua author's comment at castle.lua:150 says the engraving + cursed scroll are there to "Prevent monsters from eating it. (@'s never eat objects)" — i.e., they repel non-@ monsters that gnaw containers. Shopkeepers aren't repelled by Elbereth. Reworded. (3) "Intelligent monsters can unlock locked chests if they carry keys" — wrong for chests. muse.c:2273 mloot_container bails on olocked; monsters can unlock doors (monmove.c:1554) but never chests. The Castle wand chest is created locked at castle.lua:144, so it's safe from monster looting. Dropped the warning. Also added the storerooms (4 D-class dragons), central trap-door row (5 trap doors), fountain, and moat sea-monsters that the spoiler had omitted. -->
+<!-- audit 2026-05-18 #109: 3 corrections to the Castle section. (1) "Maze section with a minotaur guarding it" is fabricated — castle.lua has no minotaur and no internal maze room (only mazewalk fill outside the fortress for entry corridors); minotaurs are placed in earth/fire/hellfill, not the Castle. Dropped the bullet. (2) "Elbereth keeps shopkeeper-class wanderers from stealing the treasure" — wrong target. The lua author's comment at castle.lua:150 says the engraving + cursed scroll are there to "Prevent monsters from eating it. (@'s never eat objects)" — i.e., they repel non-@ monsters that gnaw containers. Shopkeepers aren't repelled by Elbereth. Reworded. (3) "Intelligent monsters can unlock locked chests if they carry keys" — wrong for chests. muse.c:2273 mloot_container bails on olocked; monsters can unlock doors (monmove.c:1554) but never chests. The Castle wand chest is created locked at castle.lua:144, so it's safe from monster looting. Dropped the warning. Also added the storerooms (4 D-class dragons), central trap-door row (5 trap doors), fountain, and moat sea-monsters that the spoiler had omitted. v2 audit 2026-05-18 #32: three factual fixes. (a) "Throne room with a throne and guards" was wrong — castle.lua:54,195-221 fills the throne room with random L/N/E/H/M/O/R/T/X/Z court monsters, not soldiers; the soldiers/lieutenant guard the entry hall and tower corners. Reworded. (b) "Five trap doors at evenly-spaced squares" — castle.lua:156-160 places them at columns 40/44/48/52/55 (gaps 4/4/4/3), not strictly even. Dropped "evenly-spaced." (c) "Stepping on one drops you to a random Gehennom level" was wrong — trap.c:669-670 takes the Is_stronghold branch and calls find_hell (dungeon.c:1949-1953) which always sets dlevel=1, i.e. the Valley of the Dead. Reworded. See companion-audit.md. -->
 
 If you've reached the Castle, congratulations: you've survived the
 easy part. Everything below is worse.
@@ -5447,8 +5448,9 @@ wondering what you've gotten yourself into.
 
 The Castle contains:
 
-- A **throne room** with a throne and guards. Sitting on the throne
-  is tempting but risky (see
+- A **throne room** with a throne and a random court of
+  high-letter monsters (liches, nymphs, eyes, giants, and the like).
+  Sitting on the throne is tempting but risky (see
   [Points of Interest](#points-of-interest)). The throne room also
   holds a separate **treasure chest** with random loot — not the
   wand chest, just a side prize.
@@ -5468,9 +5470,9 @@ The Castle contains:
 - Four **storerooms** along the north and south walls, each guarded
   by a dragon (`D`-class). Don't confuse them with the corner
   alcoves; the storerooms hold random fodder.
-- A **central hallway with five trap doors** at evenly-spaced
-  squares. Stepping on one drops you to a random Gehennom level,
-  which is rarely what you want at this stage. Watch the floor.
+- A **central hallway lined with five trap doors**. Stepping on
+  one drops you straight to the Valley of the Dead, which is rarely
+  what you want at this stage. Watch the floor.
 - A **fountain** in the moat-side corridor — usable in emergencies
   but not worth risking the wand of wishing for.
 - A **moat** surrounding the fortress, occupied by giant eels and
@@ -7296,14 +7298,14 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 :::
 
 #### Saber
-<!-- audit 2026-05-17 #38: 10 cells verified, 1 corrected (silver saber notes mentioned only Werebane; Grayswandir is the better-known silver saber artifact). See companion-audit.md. -->
+<!-- audit 2026-05-17 #38 (re-audit 2026-05-18 v2 #33): 10 cells verified, 1 corrected (silver saber notes mentioned only Werebane; Grayswandir is the better-known silver saber artifact). v2 found the silver-saber row described Grayswandir as "+5 hit, hallucination resistance" — PHYS(5,0) at artilist.h:172 gives +1d5 to-hit AND doubles damage (artifact.c:1083-1086, 1106-1107), same shape as Demonbane (already corrected in #12). The Artifacts chapter at line 4219 has the correct phrasing. Per no-trivia rule, replaced the inline parenthetical effects with "see Artifacts" rather than duplicating the canonical chapter. See companion-audit.md. -->
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | scimitar | 1d8 / 1d8 | 40 | 15 | — | iron |  |
-| silver saber | 1d8 / 1d8 | 40 | 75 | — | silver | Silver does bonus damage to demons/weres/vampires/imps. Artifact forms: **Grayswandir** (Lawful, +5 hit, hallucination resistance) and **Werebane** (extra damage vs lycanthropes). |
+| silver saber | 1d8 / 1d8 | 40 | 75 | — | silver | Silver does bonus damage to demons/weres/vampires/imps. Artifact forms: **Grayswandir** and **Werebane** (see Artifacts). |
 
 :::
 
@@ -7413,7 +7415,7 @@ other bimanual weapon.
 :::
 
 #### Flail
-<!-- audit 2026-05-17 #70: flail stats verified vs objects.h:384-386 + weapon.c. Tightened notes to show both +1 small and +1d4 large bonuses. Added grappling hook (P_FLAIL skill, but a WEPTOOL); #apply pulls a target toward you. See companion-audit.md. -->
+<!-- audit 2026-05-17 #70 (re-audit 2026-05-18 v2 #35): flail stats verified vs objects.h:384-386 + weapon.c. Tightened notes to show both +1 small and +1d4 large bonuses. Added grappling hook (P_FLAIL skill, but a WEPTOOL); #apply pulls a target toward you. v2 re-confirmed: flail base 1d6/1d4 + small +1 (weapon.c:272-275) + large +1d4 (weapon.c:239-243); grappling hook 1d2/1d6 trains P_FLAIL despite being a WEPTOOL (objects.h:1010-1012); use_grapple range 4/4/5/8 by skill (apply.c:3686-3698). No artifact form. 0 corrections. See companion-audit.md. -->
 
 ::: dense-table
 
@@ -8344,7 +8346,7 @@ There are two equine `u`-class creatures. **Horses** (pony, horse, warhorse) are
 :::
 
 #### Vortices `v`
-<!-- audit 2026-05-17 #56: 6 rows × 8 cells verified against monsters.h:1053-1110. Corrected intro damage-type list (no vortex deals poison; types are physical/blinding/cold/shock+drain/fire). Corrected "stationary" framing (only fog cloud is slow; others are speed 20-22). See companion-audit.md. -->
+<!-- audit 2026-05-17 #56 (re-audit 2026-05-18 v2 #31): 6 rows × 8 cells verified against monsters.h:1053-1110. Corrected intro damage-type list (no vortex deals poison; types are physical/blinding/cold/shock+drain/fire). Corrected "stationary" framing (only fog cloud is slow; others are speed 20-22). v2 re-verified all six rows against monsters.h:1053-1110: fog cloud Lvl 3/Spd 1, dust/ice/energy Spd 20, steam/fire Spd 22; energy vortex's AT_NONE+AD_ELEC passive 0d4 and AD_DREN drain confirmed at monsters.h:1081-1090; fire vortex's AT_NONE+AD_FIRE passive 0d4 at monsters.h:1101-1110. All carry M1_FLY|M1_MINDLESS|G_NOCORPSE. 0 corrections. See companion-audit.md. -->
 
 Engulfing elemental clouds. Different colors deal different damage types: blinding sand, cold, shock (which also drains Pw), and fire. Only the fog cloud is slow; the rest move at speed 20-22 and will close on you.
 

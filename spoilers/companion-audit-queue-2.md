@@ -39,11 +39,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 28**  L 1973  (  20 lines)     ↳ Dangerous Encounters → Drowning
 - [x] **# 29**  L 2627  ( 293 lines)     ↳ A Practical Identification Strategy → The Price Is Right
 - [x] **# 30**  L 8224  (  16 lines)     ↳ Bestiary Tables → Piercers `p`
-- [ ] **# 31**  L 8332  (  20 lines)     ↳ Bestiary Tables → Vortices `v`
-- [ ] **# 32**  L 5419  (  85 lines)   📖 The Castle
-- [ ] **# 33**  L 7283  (  12 lines)     ↳ Weapons Tables → Saber
-- [ ] **# 34**  L 2955  (   9 lines)     ↳ A Practical Identification Strategy → The Sink Test (Rings)
-- [ ] **# 35**  L 7399  (  12 lines)     ↳ Weapons Tables → Flail
+- [x] **# 31**  L 8332  (  20 lines)     ↳ Bestiary Tables → Vortices `v`
+- [x] **# 32**  L 5419  (  85 lines)   📖 The Castle
+- [x] **# 33**  L 7283  (  12 lines)     ↳ Weapons Tables → Saber
+- [x] **# 34**  L 2955  (   9 lines)     ↳ A Practical Identification Strategy → The Sink Test (Rings)
+- [x] **# 35**  L 7399  (  12 lines)     ↳ Weapons Tables → Flail
 - [ ] **# 36**  L  327  (  49 lines)   📖 What to Pack
 - [ ] **# 37**  L 8433  (  17 lines)     ↳ Bestiary Tables → Bats and birds `B`
 - [ ] **# 38**  L 3178  ( 143 lines)   📖 Provisions and Dining

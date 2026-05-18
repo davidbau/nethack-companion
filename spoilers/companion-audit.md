@@ -7336,3 +7336,77 @@ Source: `spoilers/companion.md` line 8238. No corrections (re-audit clean).
 - All three carry M1_CLING | M1_HIDE.
 
 ---
+
+## 2026-05-18 — v2 audit #31: Bestiary Tables — Vortices `v`
+
+Source: `spoilers/companion.md` line 8346. No corrections (re-audit clean).
+
+### Verified
+- All six rows match `include/monsters.h:1053-1110`: fog cloud (gray, Lvl 3, Spd 1, AC 0, engulf 1d6 AD_PHYS); dust vortex (brown, Lvl 4, Spd 20, MR 30, engulf 2d8 AD_BLND); ice vortex (cyan, Lvl 5, Spd 20, MR 30, engulf 1d6 AD_COLD); energy vortex (HI_ZAP / bright-blue, Lvl 6, Spd 20, MR 30, engulf 1d6 AD_ELEC + 2d6 AD_DREN + AT_NONE 0d4 passive); steam vortex (blue, Lvl 7, Spd 22, MR 30, engulf 1d8 AD_FIRE); fire vortex (yellow, Lvl 8, Spd 22, MR 30, engulf 1d10 AD_FIRE + AT_NONE 0d4 passive).
+- All six carry M1_FLY|M1_MINDLESS|G_NOCORPSE.
+- Intro damage-type list (blinding/cold/shock+drain/fire) accurate; fog cloud's plain physical engulf is implicit.
+
+---
+
+## 2026-05-18 — v2 audit #32: The Castle
+
+Source: `spoilers/companion.md` line 5435. 3 factual corrections.
+
+### Wrong → fixed
+- **"A throne room with a throne and guards"**: the throne room (region 27,05-37,11) is filled with random court monsters from the L/N/E/H/M/O/R/T/X/Z classes per `dat/castle.lua:54, 195-221`. Soldiers and the lieutenant guard the entry hall and tower corners (`castle.lua:162-179`), not the throne room. Reworded to "a random court of high-letter monsters."
+- **"A central hallway with five trap doors at evenly-spaced squares"**: `castle.lua:156-160` places them at columns 40/44/48/52/55 — gaps of 4/4/4/3, not strictly even. Dropped "evenly-spaced."
+- **"Stepping on one drops you to a random Gehennom level"**: wrong. `src/trap.c:669-670` checks `Is_stronghold(&u.uz)` and calls `find_hell()`; `src/dungeon.c:1949-1953` always sets `dlevel = 1` — i.e., the **Valley of the Dead** specifically. Reworded.
+
+### Verified
+- Wand-of-wishing chest mechanics at `dat/castle.lua:142-149` — exactly one chest, locked, in one of four corner alcoves (`place:rndcoord(1)`), containing `wishing` and `potion of gain level`.
+- Elbereth + cursed scroll wards explained by the lua author's own comment at `castle.lua:150` ("Prevent monsters from eating it").
+- Castle chest now locked in 5.0 per `doc/fixes5-0-0.txt:102`.
+- 5.0 no-arch-lich (and master-lich) change at `doc/fixes5-0-0.txt:232-234`.
+- Wand of wishing yields ~2 wishes reliably: `mkobj.c:1116-1117` (spe=1 at creation) + `read.c:738-787` (cap on recharge; second always explodes).
+- Monsters cannot unlock chests in 5.0 per `muse.c:2273`.
+- Castle DL math: `dat/dungeon.lua:7-11, 82-85` — DoD base=25 range=5, Castle base=-1 → DL 25-29.
+
+---
+
+## 2026-05-18 — v2 audit #33: Weapons Tables — Saber
+
+Source: `spoilers/companion.md` line 7298. 1 factual fix.
+
+### Wrong → fixed
+- **Silver saber row "Grayswandir (Lawful, +5 hit, hallucination resistance)"**: PHYS(5, 0) at `artilist.h:172` gives +1d5 to-hit (`artifact.c:1083-1086 spec_abon`) AND doubles damage (`artifact.c:1106-1107 spec_dbon`), same shape as Demonbane (corrected in v2 #12). "+5 hit" is wrong; the full effect set is documented in the Artifacts chapter at line 4219. Per no-trivia, replaced the inline parenthetical with "(see Artifacts)" rather than duplicating the canonical entry.
+
+### Verified
+- scimitar 1d8/1d8, wt 40, cost 15, iron, P_SABER at `include/objects.h:256-258`.
+- silver saber 1d8/1d8, wt 40, cost 75, silver, P_SABER at `include/objects.h:259-261`.
+- P_SCIMITAR-into-P_SABER merge confirmed.
+- Werebane SILVER_SABER artifact at `artilist.h:166-168`.
+- Grayswandir SILVER_SABER artifact at `artilist.h:170-172`.
+
+---
+
+## 2026-05-18 — v2 audit #34: A Practical Identification Strategy — The Sink Test (Rings)
+
+Source: `spoilers/companion.md` line 2966. No corrections (badge added).
+
+### Verified
+- `dosinkring()` at `src/do.c:498-650` — 28 distinct ring-type messages, plus the searching/slow-digestion "goto giveback" branch at `src/do.c:507-516`.
+- 1/20 backup chance and 1/5 buried chance for the consumed branch at `src/do.c:649-660`.
+- Section correctly defers detail to the Sinks subsection.
+
+### Notes
+- "Every other ring is consumed" is a slight simplification (most consumed, but 1/20 back up); section's defer-to-Sinks framing handles the nuance.
+- Section had no audit badge before this pass; one was added.
+
+---
+
+## 2026-05-18 — v2 audit #35: Weapons Tables — Flail
+
+Source: `spoilers/companion.md` line 7415. No corrections (re-audit clean).
+
+### Verified
+- flail 1d6/1d4 + small +1 (`weapon.c:272-275`) + large +1d4 (`weapon.c:239-243`), wt 15, cost 4, iron, P_FLAIL at `include/objects.h:384-386`.
+- grappling hook 1d2/1d6, wt 30, cost 50, iron, P_FLAIL (WEPTOOL) at `include/objects.h:1010-1012`.
+- `use_grapple()` pull mechanic at `src/apply.c:3728-3886`; range 4/4/5/8 by skill at `apply.c:3686-3698`.
+- No FLAIL or GRAPPLING_HOOK artifact in `include/artilist.h`.
+
+---
