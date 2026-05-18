@@ -56,6 +56,7 @@ first.</p>
 <details open><summary><strong>Contents</strong></summary>
 <div class=toc>
 
+<a href="#c-57e940646">57e940646</a> &nbsp; spoilers: Pauper — trim last two paragraphs<br>
 <a href="#c-f2427f946">f2427f946</a> &nbsp; spoilers: audit units #78/#79/#80/#81 — Long sword, Use-Testing, Lights, Lay of the Land<br>
 <a href="#c-725ff9d97">725ff9d97</a> &nbsp; spoilers: fire giant row — brevity (&quot;Fire resistance + Strength&quot;)<br>
 <a href="#c-425375ca2">425375ca2</a> &nbsp; spoilers: audit units #74/#75/#76/#77 — Secret doors, Xorns, Mimics, Provisions<br>
@@ -114,6 +115,39 @@ first.</p>
 <a href="#c-70554f999">70554f999</a> &nbsp; spoilers: audit #1 (The Scroll Rack) — 2 corrections<br>
 </div></details>
 
+<h2 id="c-57e940646">57e940646 — spoilers: Pauper — trim last two paragraphs</h2>
+<div class=diff><div class="line filehdr">diff --git a/spoilers/companion.md b/spoilers/companion.md</div>
+<div class="line ctx">index 88e224920..e050ce871 100644</div>
+<div class="line filehdr">--- a/spoilers/companion.md</div>
+<div class="line filehdr">+++ b/spoilers/companion.md</div>
+<div class="line hunk">@@ -6435,6 +6435,9 @@ Start with absolutely nothing: no gold, no inventory, no armor, no</div>
+<div class="line ctx"> starting weapon. Set `OPTIONS=pauper` in your rcfile (rcfile or</div>
+<div class="line ctx"> command line only; the in-game `O` menu cannot toggle it). Pauper</div>
+<div class="line ctx"> implicitly sets nudist as well, so you also begin without armor.</div>
+<div class="line add">+Pauper is a permanent conduct you never lose: it does not forbid</div>
+<div class="line add">+acquiring or spending gold later. The conduct is about starting</div>
+<div class="line add">+empty, not about staying penniless.</div>
+<div class="line ctx"> </div>
+<div class="line ctx"> To keep the start from being impossible, the game compensates:</div>
+<div class="line ctx"> you get two unspent weapon-skill slots and your role knows one</div>
+<div class="line hunk">@@ -6445,18 +6448,6 @@ sack, Cleric knows water, Samurai knows gunyoki rations). The</div>
+<div class="line ctx"> feature in every 5.0 game, not just pauper) can provide much of</div>
+<div class="line ctx"> your first kit.</div>
+<div class="line ctx"> </div>
+<div class="line del">-Pauper is a permanent conduct you never lose, unlike the</div>
+<div class="line del">-cascading nudist conduct, which goes away as soon as you wear</div>
+<div class="line del">-armor.</div>
+<div class="line del">-</div>
+<div class="line del">-A practical note: pauper does not forbid acquiring or spending gold</div>
+<div class="line del">-later. The conduct is about *starting* empty, not about staying</div>
+<div class="line del">-penniless. But because shops are inherently a late-pauper resource</div>
+<div class="line del">-(you have nothing to sell early), price identification becomes</div>
+<div class="line del">-proportionally more valuable. The traditional roleplaying version,</div>
+<div class="line del">-&quot;never spend gold,&quot; is not tracked by the game in 5.0; it lives on</div>
+<div class="line del">-only as a self-imposed extension of the pauper start.</div>
+<div class="line del">-</div>
+<div class="line ctx"> #### Petless (new in 5.0)</div>
+<div class="line ctx"> &lt;!-- audit 2026-05-17 #50: all claims verified. pettype:none bypasses pet_type via dog.c:225-229; tamedog increments u.uconduct.pets across all taming paths; minion.c:533-539 explicitly preserves petless on the endgame angel. xlogfile achievement at topten.c (add_achieveX &quot;petless&quot;). 0 corrections. See companion-audit.md. --&gt;</div></div>
 <h2 id="c-f2427f946">f2427f946 — spoilers: audit units #78/#79/#80/#81 — Long sword, Use-Testing, Lights, Lay of the Land</h2>
 <div class=diff><div class="line filehdr">diff --git a/spoilers/companion.md b/spoilers/companion.md</div>
 <div class="line ctx">index 2746109c8..88e224920 100644</div>

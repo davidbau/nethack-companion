@@ -2857,7 +2857,7 @@ disastrous.
 Confused reading produces different effects for many scrolls and is
 sometimes useful. A confused scroll of remove curse **randomizes
 the BUC of your uncursed items** (about half end up blessed, half
-cursed) and leaves already-cursed items cursed — so it's a way to
+cursed) and leaves already-cursed items cursed, so it's a way to
 get blessings cheaply, not a curse-removal tool. Don't read it
 confused if you need to uncurse something.
 
