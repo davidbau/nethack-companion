@@ -2060,14 +2060,13 @@ Some players keep one alive to farm XP and attributes.
 On the Astral Plane, three unique `&`-class demons guard the way
 to the high altars: **Death**, **Famine**, and **Pestilence**,
 the Riders. They are level 30, regenerate while you fight, are
-permanently displaced (your swings will miss until the
-displacement breaks, like a displacer beast), see invisible, and
-ignore magic resistance for their signature attacks. Death's
+permanently displaced, see invisible, and ignore magic resistance
+for their signature attacks. Death's
 touch is a heavy hit named for what it does. Pestilence inflicts
 the disease that turns into food poisoning over the next several
 turns. Famine drives you instantly to Weak or Fainting from
 nutrition. Eating their corpses is fatal in different ways for
-each. A 5.0 mercy: if Pestilence or Famine connect
+each. A mercy in 5.0: if Pestilence or Famine connect
 with their first attack on a turn, the second attack downgrades
 to a stun rather than another full dose. Without that, they'd
 be near-instakill machines.
