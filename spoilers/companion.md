@@ -6410,10 +6410,9 @@ sack, Cleric knows water, Samurai knows gunyoki rations). The
 feature in every 5.0 game, not just pauper) carry most of your
 first kit.
 
-Pauper itself is a permanent conduct; the cascading nudist half
-is fragile — the moment you wear armor, the nudist flag clears
-and the separate "faithfully nudist" end-screen line stops
-printing.
+Pauper is a permanent conduct you never lose, unlike the
+cascading nudist conduct, which goes away as soon as you wear
+armor.
 
 A practical note: pauper does not forbid acquiring or spending gold
 later. The conduct is about *starting* empty, not about staying
