@@ -5320,3 +5320,82 @@ Source: `spoilers/companion.md` line 6370. 1 correction.
    enumerate the actual triggers with Luck cost.
 
 ---
+
+## 2026-05-18 — Chapter audit #146: Lizards `:`
+
+Source: `spoilers/companion.md` line 8159. No corrections.
+
+### Verified
+- All 8 entries (newt, gecko, iguana, baby crocodile, lizard,
+  chameleon, crocodile, salamander) match monsters.h:3260-3324
+  for stats, attacks, and flags.
+- Lizard corpse cures stoning (eat.c:827-830 fix_petrification).
+- Lizard corpses never rot (eat.c:1483, 1510).
+- Newt corpse → 1-3 Pw via eye_of_newt_buzz (eat.c:1102-1123).
+- Chameleon is M2_SHAPESHIFTER (monsters.h:3305).
+- Salamander 4-attack chain (weap 2d8 / touch 1d6 fire / hug 2d6 /
+  hug 3d6 fire) matches monsters.h:3318-3320.
+
+---
+
+## 2026-05-18 — Chapter audit #147: Felines `f`
+
+Source: `spoilers/companion.md` line 7211. 2 reframings; no
+substantive errors.
+
+### Verified
+- All 8 felines (kitten, housecat, jaguar, lynx, panther, large
+  cat, tiger, displacer beast) match monsters.h:381-444.
+- Displacer beast row consistent with prior #42/#106/#107 prose
+  (lvl 12, AC -10, 4d4/4d4/2d10, MR 0, speed 12, M3_DISPLACES).
+- Tameable (M2_DOMESTIC) entries: kitten, housecat, large cat.
+
+### Reframed
+- "Tigers are good early companions if tamed" — tigers are
+  M2_HOSTILE, difficulty 8, only tameable via magic. Not really
+  "early."
+- "Kittens are common Valkyrie/Wizard/Tourist starting pets" —
+  Wizard guarantees a kitten (role.c:548 PM_KITTEN); Valkyrie and
+  Tourist roll 50/50 via dog.c:90-101. Clarified.
+
+---
+
+## 2026-05-18 — Chapter audit #148: Morning star
+
+Source: `spoilers/companion.md` line 6769. No corrections.
+
+### Verified
+- Damage 1d4+1d4 / 1d6+1 (objects.h:364 sdam=4, ldam=6; weapon.c:
+  225-289 bonus dice).
+- Weight 120, cost 10, hit 0, iron — all match.
+- P_MORNING_STAR is its own skill (skills.h:35 id 12).
+- No artifact form (no MORNING_STAR entry in artilist.h).
+
+---
+
+## 2026-05-18 — Chapter audit #149: Mummies `M`
+
+Source: `spoilers/companion.md` line 7757. 1 correction +
+consistency fixes.
+
+### Verified
+- All 8 mummies (kobold/gnome/orc/dwarf/elf/human/ettin/giant) match
+  monsters.h:1901-1968 for stats, attacks, colors.
+- All mummy attacks are AT_CLAW AD_PHYS (no special status effect).
+- All mummies have MR_COLD | MR_SLEEP | MR_POISON, M1_POIS,
+  M1_MINDLESS, M2_UNDEAD.
+
+### Corrected
+1. **"Touch curses your worn items. Bring uncursing on hand."** —
+   wrong. AD_CURS is gremlins (monattk.h:92); mummies do plain
+   AD_PHYS. No special mummy curse logic in mhitu.c/uhitm.c/
+   mhitm.c. The line was residue from the "mummy withering" myth
+   that audit #46 was supposed to scrub. Reworded to factual
+   plain-physical + undead-turning vulnerability.
+
+### Consistency
+- elf mummy and human mummy rows were missing the "cold-res,
+  sleep-res, pois-res" notes that all other mummy rows carry.
+  Added.
+
+---

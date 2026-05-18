@@ -150,10 +150,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#143**  L 7297  (  17 lines)   ↳ Bestiary Tables → Kobolds `k`
 - [x] **#144**  L 4790  ( 142 lines) 📖 Luck and Fortune
 - [x] **#145**  L 6370  (  10 lines)   ↳ Voluntary Challenges → Sokoban (new in 5.0)
-- [ ] **#146**  L 8159  (  21 lines)   ↳ Bestiary Tables → Lizards `:`
-- [ ] **#147**  L 7211  (  19 lines)   ↳ Bestiary Tables → Felines `f`
-- [ ] **#148**  L 6769  (  10 lines)   ↳ Weapons Tables → Morning star
-- [ ] **#149**  L 7757  (  21 lines)   ↳ Bestiary Tables → Mummies `M`
+- [x] **#146**  L 8159  (  21 lines)   ↳ Bestiary Tables → Lizards `:`
+- [x] **#147**  L 7211  (  19 lines)   ↳ Bestiary Tables → Felines `f`
+- [x] **#148**  L 6769  (  10 lines)   ↳ Weapons Tables → Morning star
+- [x] **#149**  L 7757  (  21 lines)   ↳ Bestiary Tables → Mummies `M`
 - [ ] **#150**  L 2054  (  25 lines)   ↳ Dangerous Encounters → The Riders
 - [ ] **#151**  L 2911  (  39 lines)   ↳ A Practical Identification Strategy → A Practical Strategy
 - [ ] **#152**  L 7230  (  14 lines)   ↳ Bestiary Tables → Gremlins `g`

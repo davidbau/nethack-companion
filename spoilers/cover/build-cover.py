@@ -98,18 +98,20 @@ def prepare(name: str, svg: Path, renderer="rsvg") -> tuple[Path, float, float]:
     return pdf, w, h
 
 
-def crop_pdf_to_viewbox(pdf_path: Path, vb_w: float, vb_h: float, out_path: Path):
-    """Chrome adds page margins and lays the SVG at the top-left of a
-    full US-letter page (612x792 by default). Crop to the SVG content
-    (assumed at origin)."""
+def crop_pdf_to_viewbox(pdf_path: Path, vb_w: float, vb_h: float, out_path: Path,
+                        top_px=0, bottom_px=0):
+    """Chrome lays the SVG at the top-left of a US-letter page. Crop to the
+    viewBox (1 SVG px = 0.75 pt at default 96 DPI), optionally trimming
+    `top_px` SVG-pixels off the top and `bottom_px` SVG-pixels off the
+    bottom. This is used to clip the NetHack-screenshot SVGs to just the
+    map area (no top "You hear..." message line, no bottom status line)."""
     src = fitz.open(pdf_path)
     page = src[0]
-    # Chrome at default settings renders SVG at its viewBox size in pt (1px = 0.75pt),
-    # so we need to know what scale Chrome used. Default Chrome print is 96 DPI:
-    # 1 SVG px = 0.75 pt. Our viewBox is in SVG px, so cropped rect = vb_w*0.75 x vb_h*0.75.
-    crop_w = vb_w * 0.75
-    crop_h = vb_h * 0.75
-    page.set_cropbox(fitz.Rect(0, 0, crop_w, crop_h))
+    px_to_pt = 0.75
+    top_pt = top_px * px_to_pt
+    bottom_pt = (vb_h - bottom_px) * px_to_pt
+    crop_w = vb_w * px_to_pt
+    page.set_cropbox(fitz.Rect(0, top_pt, crop_w, bottom_pt))
     src.save(str(out_path))
     src.close()
 
@@ -138,14 +140,24 @@ def main():
     d1_pdf, d1_w, d1_h = prepare("dmap1", HERE / "dmap-1-gehennom-map.svg")
     d2_pdf, d2_w, d2_h = prepare("dmap2", HERE / "dmap-2-elemental-planes-and-ascension.svg")
 
-    # Chrome embeds the SVG on a US-letter page with margins. Crop to viewBox.
+    # Chrome embeds the SVG on a US-letter page with margins. Crop to viewBox
+    # AND trim the top message line ("You hear...") and bottom status line
+    # ("Rodney the Peregrinator / Dlvl:25 ..."). In the SVGs the top message
+    # is at SVG-y≈14 and the status line is at y≈432/451 — so skip the top
+    # 56 px and bottom 36 px (each line ≈ 19 px tall with leading).
     castle_pdf = TMP / "front-castle-crop.pdf"
     sanctum_pdf = TMP / "back-sanctum-crop.pdf"
-    crop_pdf_to_viewbox(castle_raw, castle_w, castle_h, castle_pdf)
-    crop_pdf_to_viewbox(sanctum_raw, sanctum_w, sanctum_h, sanctum_pdf)
+    TOP_CLIP = 56
+    BOTTOM_CLIP = 36
+    crop_pdf_to_viewbox(castle_raw, castle_w, castle_h, castle_pdf,
+                        top_px=TOP_CLIP, bottom_px=BOTTOM_CLIP)
+    crop_pdf_to_viewbox(sanctum_raw, sanctum_w, sanctum_h, sanctum_pdf,
+                        top_px=TOP_CLIP, bottom_px=BOTTOM_CLIP)
     # show_pdf_page uses the cropbox dimensions; recompute logical w/h in pt:
-    castle_w *= 0.75; castle_h *= 0.75
-    sanctum_w *= 0.75; sanctum_h *= 0.75
+    castle_w *= 0.75
+    sanctum_w *= 0.75
+    castle_h = (castle_h - TOP_CLIP - BOTTOM_CLIP) * 0.75
+    sanctum_h = (sanctum_h - TOP_CLIP - BOTTOM_CLIP) * 0.75
 
     out = fitz.open()
 

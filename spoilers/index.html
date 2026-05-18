@@ -9369,11 +9369,10 @@ counter: pushing into a wall to <strong>squeeze past</strong> a boulder
 (when you drop your stuff to fit), <strong>fracturing</strong> a boulder
 with a wand of striking or scroll of earth,
 <strong>polymorphing</strong> a boulder, or <strong>dismounting</strong>
-onto a boulder. Levitation and flying skip pits without penalty. Solve
-it the way the puzzle designers intended, by actually solving the
-puzzle. The game tracks violations automatically. The conduct is for
-players who enjoy Sokoban’s boulder-shoving and want their playthrough
-to acknowledge a clean solve.</p>
+onto a boulder. Levitation and flying skip pits without penalty. The
+game tracks violations automatically. The conduct is for players who
+enjoy Sokoban’s boulder-shoving and want their playthrough to
+acknowledge a clean solve.</p>
 </section>
 <section id="bonesless-new-in-5.0" class="level4">
 <h4>Bonesless (new in 5.0)</h4>
@@ -10412,6 +10411,7 @@ mace.</td>
 </section>
 <section id="morning-star" class="level4">
 <h4>Morning star</h4>
+<!-- audit 2026-05-18 #148: clean. Damage 1d4+1d4 / 1d6+1, weight 120, cost 10, hit 0, iron — all match objects.h:364 with bonus dice from weapon.c:225-289. P_MORNING_STAR is its own skill class (skills.h:35, id 12), distinct from P_MACE (id 11). No artifact morning star exists. -->
 <div class="dense-table">
 <table>
 <colgroup>
@@ -13972,8 +13972,13 @@ eyes first. Corpse grants telepathy.</td>
 </section>
 <section id="felines-f" class="level4">
 <h4>Felines <code>f</code></h4>
-<p>Cats. Several are starting pets. Tigers are durable melee and good
-early companions if tamed.</p>
+<!-- audit 2026-05-18 #147: all stats clean against monsters.h:381-444. Two minor reframings: (1) "Tigers are good early companions if tamed" — tigers are M2_HOSTILE (not M2_DOMESTIC) and difficulty 8, so they're tameable only with charm-monster/scroll-of-taming/magic-flute, not via tripe-feeding, and not really "early." (2) Kittens — only Wizard guarantees a kitten via urole.petnum=PM_KITTEN (role.c:548); Valkyrie/Tourist roll 50/50 kitten-or-dog via dog.c:90-101. Reworded the intro. -->
+<p>Cats. Kittens are common starting pets (Wizards always start with
+one; Valkyries and Tourists roll 50/50 between kitten and little dog).
+Wild felines (jaguar, lynx, panther, tiger, displacer beast) are hostile
+by default; you’d need a charm-monster spell, scroll of taming, or magic
+flute to flip them, and the wild rows aren’t really “early-game”
+creatures.</p>
 <div class="dense-table">
 <table>
 <colgroup>
@@ -16727,8 +16732,8 @@ resistance mandatory.</td>
 </section>
 <section id="mummies-m" class="level4">
 <h4>Mummies <code>M</code></h4>
-<p>Touch curses your worn items. Bring uncursing on hand (holy water,
-remove curse).</p>
+<!-- audit 2026-05-18 #149: corrected the "touch curses your worn items" advice — every mummy's attack in monsters.h:1901-1968 is plain AD_PHYS; only gremlins have AD_CURS (monattk.h:92). No special curse logic for S_MUMMY in mhitu.c/uhitm.c/mhitm.c. The note was residue from the prior "mummy withering" myth that audit #46 was supposed to scrub. Reworded to factual physical-only + undead-turning vulnerability. -->
+<p>Mindless undead. Wand and scroll of undead turning shred them.</p>
 <p>All mummies have poisonous corpses and are mindless and undead.</p>
 <div class="dense-table">
 <table>
@@ -16803,7 +16808,7 @@ remove curse).</p>
 <td>4</td>
 <td>30</td>
 <td>claw 2d4</td>
-<td></td>
+<td>cold-res, sleep-res, pois-res.</td>
 </tr>
 <tr>
 <td>human mummy</td>
@@ -16813,7 +16818,7 @@ remove curse).</p>
 <td>4</td>
 <td>30</td>
 <td>claw 2d4 · claw 2d4</td>
-<td></td>
+<td>cold-res, sleep-res, pois-res.</td>
 </tr>
 <tr>
 <td>ettin mummy</td>
@@ -19219,6 +19224,7 @@ fight one from a water square without magical breathing or escape.</p>
 </section>
 <section id="lizards" class="level4">
 <h4>Lizards <code>:</code></h4>
+<!-- audit 2026-05-18 #146: clean. All 8 entries (newt, gecko, iguana, baby crocodile, lizard, chameleon, crocodile, salamander) match monsters.h:3260-3324 for stats, attacks, and special flags. Lizard corpse cures stoning (eat.c:827-830, fix_petrification), never rots (eat.c:1483, 1510). Newt corpse occasionally restores 1-3 Pw via eye_of_newt_buzz (eat.c:1102-1123). Chameleon is M2_SHAPESHIFTER. Salamander has the 4-attack chain weapon 2d8 / touch 1d6 fire / hug 2d6 / hug 3d6 fire. -->
 <p>Mostly harmless. <strong>Lizard corpses cure petrification and never
 rot.</strong> Carry one at all times — this is the standard answer to
 cockatrices and Medusa.</p>
