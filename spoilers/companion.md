@@ -1582,7 +1582,7 @@ AC / attack details on every monster, see the
 | `O`    | Ogres             | Strong melee fighters. Ogre lords and kings are tougher.                                             |
 | `p`    | Piercers          | Disguise as stalactites; drop from the ceiling onto whatever walks below. The fall does serious damage. Hard to spot in advance. |
 | `P`    | Puddings          | Black AND brown puddings split when hit in melee with an iron or metal weapon (scalpel and tsurugi count). Use silver, dragonhide, or spells.                                     |
-| `q`    | Quadrupeds        | Three- and four-attack mid-game bruisers. The **rothe** is the famous one (three attacks per turn at sluggish speed 9, dangerous in packs); mumakil hit hard but slow.                              |
+| `q`    | Quadrupeds        | Multi-attack mid-game bruisers. The **rothe** is the famous one (three attacks per turn at sluggish speed 9, dangerous in packs); mumakil are solo two-attack bruisers (4d12 butt + 2d6 bite).                              |
 | `R`    | Rust monster / disenchanter | Rust monsters corrode worn iron armor when they hit you, and your wielded iron weapon when you hit them. Use non-iron alternatives (mithril, silver, dragonhide) or take iron gear off before the fight; iron items kept in your inventory aren't touched. **Disenchanters** drain enchantment on hit and have their own write-up under Dangerous Encounters. |
 | `S`    | Snakes            | Cobras and pit vipers poison. Water moccasins come from fountains.                                   |
 | `t`    | Trappers / lurkers above | Hide in plain sight on floor or ceiling and engulf you when you walk under/onto them. See the engulfment write-up under Dangerous Encounters. |
@@ -1626,6 +1626,7 @@ A few map glyphs aren't monsters in the conventional sense, but you'll see them 
 ---
 
 ### What Actually Kills Adventurers
+<!-- audit 2026-05-17 #29: ~30 claims verified, 3 corrected (mount slip 10-14 HP not 11-15; mumakil 2-attack solo not 4-attack pack; shimmering DSM removed since it's #if 0 DEFERRED in 5.0). Also caught my own audit-#15 errors: shimmering DSM and missing Blue DSM speed. See companion-audit.md. -->
 
 Only about **0.4% of games end in ascension.** The other 99.6%
 are deaths. NetHack ends in death by default; survival is the
@@ -1679,9 +1680,10 @@ underestimate the threat.**
   vs your 12), so they double-attack every turn. A 1d4 bite (1d6
   for giant bats) at double rate eats through low-level HP pools
   quickly.
-- **Quadrupeds** (`q`). Rothes and mumakil are three- and
-  four-attack pack hunters; they catch unprepared mid-game heroes
-  who think they've outgrown the Mines.
+- **Quadrupeds** (`q`). Rothes are three-attack pack hunters at
+  sluggish speed 9 — dangerous mostly in numbers. Mumakil are
+  solo two-attack bruisers (4d12 butt + 2d6 bite) that hit harder
+  than anything else in the Mines.
 - **Eating mistakes.** Rotted corpse, poisonous corpse, and
   choking each show up high on the list. Don't eat old corpses.
   Don't eat while satiated. Pray immediately if you ate something
@@ -1693,7 +1695,7 @@ underestimate the threat.**
 - **Mount slips and riding accidents.** More heroes die slipping
   off saddled ponies than die to mind flayers. Getting on a steed
   rolls against your XP level plus the steed's tameness; if you
-  fail, you take 11–15 HP. Don't mount while Confused, Fumbling,
+  fail, you take 10–14 HP. Don't mount while Confused, Fumbling,
   or Glib, don't mount with a cursed or greased saddle, and don't
   mount a barely-tame pony at experience level 2.
 - **Boiling potion (Gehennom).** Hot ground shatters potions
@@ -1784,10 +1786,6 @@ to make you regret trying.
 **Silver** dragon scale mail grants reflection. The second pillar of
 not dying to wands.
 
-**Shimmering** dragon scale mail grants permanent displacement — the
-only extrinsic source besides the cloak of displacement. Shimmering
-dragons breathe magic missile.
-
 **Black** dragons disintegrate everything you're wearing along with
 you, including your magic resistance. Carry reflection or eat enough
 black dragons to grow disintegration resistance before going where
@@ -1812,8 +1810,10 @@ the same effect as a ring of infravision or being elven.
 **Green** dragon scale mail grants poison resistance *and* sickness
 resistance — a pair of niche defenses in one slot.
 
-**Blue** dragon scale mail grants shock resistance, one of the four
-common breath defenses you want before the late game.
+**Blue** dragon scale mail grants shock resistance *and* intrinsic
+**speed** (the Fast property — same as speed boots, only stackable
+with them for **Very Fast**). One of the most powerful body slots
+in the game.
 
 **Gold** dragons are new in 5.0 and breathe fire. Their scale mail
 has no resistance power but is permanently lit (radius 4 blessed, 3
@@ -2189,8 +2189,7 @@ help; the beast isn't invisible, it's displaced.
 
 **What's worth it afterward.** Eating its corpse grants temporary
 intrinsic Displacement to *you*: the only intrinsic source in the
-game, and unlike a cloak of displacement or shimmering scale mail
-it costs no equipment slot. A late-game caster level becomes much
+game, and unlike a cloak of displacement it costs no equipment slot. A late-game caster level becomes much
 friendlier with displacement up. The corpse rots like any other,
 so if you can't eat it now, tin it.
 
@@ -7014,14 +7013,13 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 | leather jacket | +1 | — | 30 | 10 | leather |  |
 | gray dragon scale mail | +9 | — | 40 | 1200 | dragonhide | Magic resistance. Endgame body-armor goal. |
 | silver dragon scale mail | +9 | — | 40 | 1200 | dragonhide | Reflection. |
-| shimmering dragon scale mail | +9 | — | 40 | 1200 | dragonhide | Displacement. |
 | black dragon scale mail | +9 | — | 40 | 1200 | dragonhide | Disintegration resistance + drain resistance. |
 | yellow dragon scale mail | +9 | — | 40 | 900 | dragonhide | Acid resistance + stoning resistance. Rare. |
 | orange dragon scale mail | +9 | — | 40 | 900 | dragonhide | Sleep resistance + free action. |
 | white dragon scale mail | +9 | — | 40 | 900 | dragonhide | Cold resistance + slow digestion. |
 | red dragon scale mail | +9 | — | 40 | 900 | dragonhide | Fire resistance + infravision. |
 | green dragon scale mail | +9 | — | 40 | 900 | dragonhide | Poison resistance + sickness resistance. |
-| blue dragon scale mail | +9 | — | 40 | 900 | dragonhide | Shock resistance. |
+| blue dragon scale mail | +9 | — | 40 | 900 | dragonhide | Shock resistance + intrinsic speed (Fast). |
 | gold dragon scale mail | +9 | — | 40 | 900 | dragonhide | Hallucination resistance + permanent light (only body-slot light source). |
 
 :::
@@ -7034,14 +7032,13 @@ All polearms are two-handed and have a reach of two squares (`#apply` the weapon
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
 | gray dragon scales | +3 | — | 40 | 700 | dragonhide | Magic resistance. Make-into upgrade to scale mail. |
 | silver dragon scales | +3 | — | 40 | 700 | dragonhide | Reflection. |
-| shimmering dragon scales | +3 | — | 40 | 700 | dragonhide | Displacement. |
 | black dragon scales | +3 | — | 40 | 700 | dragonhide | Disintegration resistance + drain resistance. |
 | yellow dragon scales | +3 | — | 40 | 500 | dragonhide | Acid resistance + stoning resistance. |
 | orange dragon scales | +3 | — | 40 | 500 | dragonhide | Sleep resistance + free action. |
 | white dragon scales | +3 | — | 40 | 500 | dragonhide | Cold resistance + slow digestion. |
 | red dragon scales | +3 | — | 40 | 500 | dragonhide | Fire resistance + infravision. |
 | green dragon scales | +3 | — | 40 | 500 | dragonhide | Poison resistance + sickness resistance. |
-| blue dragon scales | +3 | — | 40 | 500 | dragonhide | Shock resistance. |
+| blue dragon scales | +3 | — | 40 | 500 | dragonhide | Shock resistance + intrinsic speed. |
 | gold dragon scales | +3 | — | 40 | 500 | dragonhide | Hallucination resistance + permanent light. |
 
 :::

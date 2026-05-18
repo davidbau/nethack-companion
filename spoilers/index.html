@@ -2284,9 +2284,10 @@ spells.</td>
 <tr>
 <td><code>q</code></td>
 <td>Quadrupeds</td>
-<td>Three- and four-attack mid-game bruisers. The <strong>rothe</strong>
-is the famous one (three attacks per turn at sluggish speed 9, dangerous
-in packs); mumakil hit hard but slow.</td>
+<td>Multi-attack mid-game bruisers. The <strong>rothe</strong> is the
+famous one (three attacks per turn at sluggish speed 9, dangerous in
+packs); mumakil are solo two-attack bruisers (4d12 butt + 2d6
+bite).</td>
 </tr>
 <tr>
 <td><code>R</code></td>
@@ -2507,6 +2508,7 @@ Walk into the gap to identify it.</td>
 </section>
 <section id="what-actually-kills-adventurers" class="level3">
 <h3>What Actually Kills Adventurers</h3>
+<!-- audit 2026-05-17 #29: ~30 claims verified, 3 corrected (mount slip 10-14 HP not 11-15; mumakil 2-attack solo not 4-attack pack; shimmering DSM removed since it's #if 0 DEFERRED in 5.0). Also caught my own audit-#15 errors: shimmering DSM and missing Blue DSM speed. See companion-audit.md. -->
 <p>Only about <strong>0.4% of games end in ascension.</strong> The other
 99.6% are deaths. NetHack ends in death by default; survival is the
 exception.</p>
@@ -2553,9 +2555,10 @@ like several real fights stacked on top of each other.</li>
 are fast (speed 22 vs your 12), so they double-attack every turn. A 1d4
 bite (1d6 for giant bats) at double rate eats through low-level HP pools
 quickly.</li>
-<li><strong>Quadrupeds</strong> (<code>q</code>). Rothes and mumakil are
-three- and four-attack pack hunters; they catch unprepared mid-game
-heroes who think they’ve outgrown the Mines.</li>
+<li><strong>Quadrupeds</strong> (<code>q</code>). Rothes are
+three-attack pack hunters at sluggish speed 9 — dangerous mostly in
+numbers. Mumakil are solo two-attack bruisers (4d12 butt + 2d6 bite)
+that hit harder than anything else in the Mines.</li>
 <li><strong>Eating mistakes.</strong> Rotted corpse, poisonous corpse,
 and choking each show up high on the list. Don’t eat old corpses. Don’t
 eat while satiated. Pray immediately if you ate something you shouldn’t
@@ -2567,7 +2570,7 @@ you go.</li>
 <li><strong>Mount slips and riding accidents.</strong> More heroes die
 slipping off saddled ponies than die to mind flayers. Getting on a steed
 rolls against your XP level plus the steed’s tameness; if you fail, you
-take 11–15 HP. Don’t mount while Confused, Fumbling, or Glib, don’t
+take 10–14 HP. Don’t mount while Confused, Fumbling, or Glib, don’t
 mount with a cursed or greased saddle, and don’t mount a barely-tame
 pony at experience level 2.</li>
 <li><strong>Boiling potion (Gehennom).</strong> Hot ground shatters
@@ -2649,9 +2652,6 @@ are the ones you most want to kill for their skin, and also the ones
 most likely to make you regret trying.</p>
 <p><strong>Silver</strong> dragon scale mail grants reflection. The
 second pillar of not dying to wands.</p>
-<p><strong>Shimmering</strong> dragon scale mail grants permanent
-displacement — the only extrinsic source besides the cloak of
-displacement. Shimmering dragons breathe magic missile.</p>
 <p><strong>Black</strong> dragons disintegrate everything you’re wearing
 along with you, including your magic resistance. Carry reflection or eat
 enough black dragons to grow disintegration resistance before going
@@ -2673,8 +2673,10 @@ being elven.</p>
 <p><strong>Green</strong> dragon scale mail grants poison resistance
 <em>and</em> sickness resistance — a pair of niche defenses in one
 slot.</p>
-<p><strong>Blue</strong> dragon scale mail grants shock resistance, one
-of the four common breath defenses you want before the late game.</p>
+<p><strong>Blue</strong> dragon scale mail grants shock resistance
+<em>and</em> intrinsic <strong>speed</strong> (the Fast property — same
+as speed boots, only stackable with them for <strong>Very
+Fast</strong>). One of the most powerful body slots in the game.</p>
 <p><strong>Gold</strong> dragons are new in 5.0 and breathe fire. Their
 scale mail has no resistance power but is permanently lit (radius 4
 blessed, 3 uncursed, 2 cursed) — the only body-slot light source in the
@@ -3043,10 +3045,10 @@ invisible</em> does not help; the beast isn’t invisible, it’s
 displaced.</p>
 <p><strong>What’s worth it afterward.</strong> Eating its corpse grants
 temporary intrinsic Displacement to <em>you</em>: the only intrinsic
-source in the game, and unlike a cloak of displacement or shimmering
-scale mail it costs no equipment slot. A late-game caster level becomes
-much friendlier with displacement up. The corpse rots like any other, so
-if you can’t eat it now, tin it.</p>
+source in the game, and unlike a cloak of displacement it costs no
+equipment slot. A late-game caster level becomes much friendlier with
+displacement up. The corpse rots like any other, so if you can’t eat it
+now, tin it.</p>
 </section>
 <section id="the-genetic-engineer" class="level4">
 <h4>The Genetic Engineer</h4>
@@ -10691,15 +10693,6 @@ its sheer importance to the endgame.</p>
 <td>Reflection.</td>
 </tr>
 <tr>
-<td>shimmering dragon scale mail</td>
-<td>+9</td>
-<td>—</td>
-<td>40</td>
-<td>1200</td>
-<td>dragonhide</td>
-<td>Displacement.</td>
-</tr>
-<tr>
 <td>black dragon scale mail</td>
 <td>+9</td>
 <td>—</td>
@@ -10760,7 +10753,7 @@ its sheer importance to the endgame.</p>
 <td>40</td>
 <td>900</td>
 <td>dragonhide</td>
-<td>Shock resistance.</td>
+<td>Shock resistance + intrinsic speed (Fast).</td>
 </tr>
 <tr>
 <td>gold dragon scale mail</td>
@@ -10818,15 +10811,6 @@ source).</td>
 <td>700</td>
 <td>dragonhide</td>
 <td>Reflection.</td>
-</tr>
-<tr>
-<td>shimmering dragon scales</td>
-<td>+3</td>
-<td>—</td>
-<td>40</td>
-<td>700</td>
-<td>dragonhide</td>
-<td>Displacement.</td>
 </tr>
 <tr>
 <td>black dragon scales</td>
@@ -10889,7 +10873,7 @@ source).</td>
 <td>40</td>
 <td>500</td>
 <td>dragonhide</td>
-<td>Shock resistance.</td>
+<td>Shock resistance + intrinsic speed.</td>
 </tr>
 <tr>
 <td>gold dragon scales</td>

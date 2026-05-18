@@ -1499,3 +1499,39 @@ Verified ~40 claims; 5 corrected; 4 close calls.
 - BoH "in older editions destroyed everything" — overstated even historically. Current is `is_boh_item_gone = !rn2(13)` (~7.7% per item).
 - "Tin opener: open tins in one turn" — true for blessed wielded; otherwise 50/50 between 0 and 1 turn. Reasonable simplification.
 - "Bag of tricks (not a bag)" — IS a container code-side (Is_container/Is_mbag). Parenthetical is usage hint, not code-level fact.
+
+---
+
+## 2026-05-17 — Chapter audit #29: What Actually Kills Adventurers
+
+Source: `spoilers/companion.md` lines 1623+ (204 lines)
+Verified ~30 claims; 3 corrected; also caught 2 self-audit errors in my prior DSM rewrite.
+
+### Verified
+- Bat speeds (22 vs hero 12) and damage match monsters.h.
+- Mimic mechanics: small/large/giant attacks, sticking, eating durations (20/40/50 turns).
+- Mimic appears as gold (or orange hallucinating) — eat.c:1196.
+- ILLOBJ symbol `]` vs ARMOR `[` — defsym.h:466.
+- Water demon ~1 in 30 — fountain.c:247 `rnd(30)`.
+- Wish odds drop with depth — fountain.c:78.
+- Mount fails on Confused/Fumbling/Glib/cursed-saddle — steed.c:339.
+- Bones items ~80% cursed — bones.c:290 `if (rn2(5)) curse(otmp)`.
+- Confused genocide kills you — read.c:1737.
+- Earth scroll boulders crush — read.c:1919.
+- Petrification messages — timeout.c:129-130.
+
+### Corrected
+1. **Mount slip damage "11-15 HP"** — `steed.c:354 losehp(Maybe_Half_Phys(rn1(5,10)), ...)`. `rn1(x,y) = rn2(x)+y`, so `rn1(5,10) = 10..14`. Off by one.
+2. **Mumakil "four-attack pack hunters"** — `monsters.h:840` shows 2 attacks (AT_BUTT 4d12 + AT_BITE 2d6) and `(G_GENO | 1)` no group flag. Solo, not pack. Rothes are correctly three-attack pack hunters.
+
+### Self-audit catches (from earlier DSM rewrite, audit #15 response)
+3. **Shimmering DSM doesn't exist in 5.0** — `objects.h:509-512, 536-539` shows both shimmering dragon scale mail and scales are wrapped in `#if 0 /* DEFERRED */`. Not in the game. I'd added them in the all-DSM rewrite. Removed entirely from prose, both appendix tables (scales + scale mail), and the displacer beast cross-reference.
+4. **Blue DSM also grants Fast (intrinsic speed)** — `do_wear.c:817-828` `if (puton) { ... EFast |= W_ARM; }`. I had Blue DSM as "shock resistance only". Updated both the prose section (now notes the Very Fast stack with speed boots) and the appendix tables.
+
+### Close calls
+- Rope golem AT_HUGS isn't AD_STCK; calling it "grapples" is loose but defensible.
+- "Bats double-attack every turn" — speed ratio 1.83, so 2 moves on most turns, occasionally 1.
+- "Potion shrapnel is deadly" — depends on potion; "sometimes harmful" more accurate.
+
+### Methodology note
+- The agent's self-audit prompt asked me to be skeptical of my own prior rewrites. This audit caught two such errors in the DSM rewrite, illustrating why every fix needs grep-verification at apply-time. Shimmering DSM was added based on monsters.h having a `MON("shimmering dragon")` entry, which exists, but I didn't check whether the SCALES/SCALE MAIL items exist (they're `#if 0`). Blue DSM speed was missed because I'd only grepped for the FROMOUTSIDE properties and not for EFast.
