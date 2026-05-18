@@ -1435,3 +1435,25 @@ Verified 4 trap entries; 1 broadened; 0 wrong.
 ### Broadened
 - Rust trap was described as "Splashes water, rusting exposed metal equipment" — incomplete. `trap.c:1595` `trapeffect_rust_trap` calls `water_damage()` on multiple worn slots (helm, weapons, gloves, cloak/suit/shirt) and additionally iterates inventory to splash any `lamplit` items via `splash_lit()`. Non-metal armor takes water damage too (potions in worn containers dilute, lamps go out). The "only metal" framing misleads a leather-armor reader into false security.
    - Fix: "Splashes water — rusts iron worn armor, soaks cloak/suit/shirt, douses lit lamps".
+
+---
+
+## 2026-05-17 — Chapter audit #27: Bestiary Tables → Humanoids `h`
+
+Source: `spoilers/companion.md` lines 7285+
+Verified 50+ cells across 7 rows; 2 corrected in Notes column.
+
+### Verified
+- All stats: hobbit (1/9/10/0), dwarf (2/6/10/10), bugbear (3/9/5/0), dwarf lord (4/6/10/10), dwarf king (6/6/10/20), mind flayer (9/12/5/90), master mind flayer (13/12/0/90) — `monsters.h:477-540`.
+- All colors and attack dice correct.
+- M1_TUNNEL | M1_NEEDPICK on dwarves; M1_FLY | M1_SEE_INVIS on mind flayers.
+- Int=ATTRMIN(3) brainlessness death — `eat.c:698`.
+
+### Corrected
+1. **mind flayer Notes: "Wear an alignment-matching helmet"** — WRONG. There's no alignment check on helmet protection. `uhitm.c:3235` `if (uarmh && rn2(8))` — ANY helmet blocks 7/8 of tentacle attacks. The only helmet special-case is DUNCE_CAP, which actually fully prevents brain-eating (dunce can't be dumbed further). Fix: "Wear any helmet (blocks 7/8 of tentacles) or kill from range."
+
+2. **master mind flayer Notes: "Catastrophic without telepathy + free action"** — WRONG defenses listed. Telepathy doesn't defend; it just helps see them when blind. Free action defends paralysis (floating eye, sleeping), not Int drain. The actual defense is any helmet (same 7/8 block) and not standing adjacent. Fix: "Catastrophic adjacent without a helmet. Any helmet blocks 7/8 of tentacles."
+
+### Notes
+- "If Int hits 3 you die" wording is accurate enough for spoiler prose.
+- "Five tentacles per turn" technically right but `gs.skipdrin` short-circuits after helmet-blocked hit, so the expected damage per turn is less than 5× implies.

@@ -1170,7 +1170,7 @@ you'll regret finding them:
 | Arrow trap      | Fires an arrow at you (modest damage)               |
 | Dart trap       | Fires a dart, may be poisoned                       |
 | Squeaky board   | Makes noise, wakes nearby monsters                  |
-| Rust trap       | Splashes water — rusts iron worn armor, soaks cloak/suit/shirt, douses lit lamps |
+| Rust trap       | Splashes water: rusts iron worn armor, soaks cloak/suit/shirt, douses lit lamps |
 
 Annoying but rarely lethal. The silver lining: arrow and dart traps
 produce free ammunition. Veterans sometimes trigger them deliberately
@@ -7283,6 +7283,7 @@ Touch in water (or just at night) can steal an intrinsic. Kill them on dry land,
 :::
 
 #### Humanoids `h`
+<!-- audit 2026-05-17 #27: 50+ cells verified, 2 corrected (mind flayer "alignment-matching helmet" → any helmet; "telepathy + free action" defenses → any helmet; both per uhitm.c:3235). See companion-audit.md. -->
 
 Dwarves and similar. Dwarves carry better-than-average loot (weapons, armor, pick-axes) and can wreck low-level heroes with that loot.
 
@@ -7295,8 +7296,8 @@ Dwarves and similar. Dwarves carry better-than-average loot (weapons, armor, pic
 | bugbear | brown | 3 | 9 | 5 | 0 | weapon 2d4 |  |
 | dwarf lord | blue | 4 | 6 | 10 | 10 | weapon 2d4 · weapon 2d4 | tunnels. |
 | dwarf king | magenta | 6 | 6 | 10 | 20 | weapon 2d6 · weapon 2d6 | tunnels. |
-| mind flayer | bright-magenta | 9 | 12 | 5 | 90 | weapon 1d4 · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int | flies, sees-invis. Tentacle attacks drain Int; if Int hits 3 you die. Wear an alignment-matching helmet or kill from range. |
-| master mind flayer | bright-magenta | 13 | 12 | 0 | 90 | weapon 1d8 · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int | flies, sees-invis. Five tentacles per turn. Catastrophic without telepathy + free action. |
+| mind flayer | bright-magenta | 9 | 12 | 5 | 90 | weapon 1d4 · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int | flies, sees-invis. Tentacle attacks drain Int; if Int hits 3 you die. Wear any helmet (blocks 7/8 of tentacles) or kill from range. |
+| master mind flayer | bright-magenta | 13 | 12 | 0 | 90 | weapon 1d8 · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int | flies, sees-invis. Five tentacles per turn. Catastrophic adjacent without a helmet. Any helmet blocks 7/8 of tentacles. |
 
 :::
 

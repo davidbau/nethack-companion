@@ -1439,7 +1439,7 @@ you’ll regret finding them:</p>
 </tr>
 <tr>
 <td>Rust trap</td>
-<td>Splashes water — rusts iron worn armor, soaks cloak/suit/shirt,
+<td>Splashes water: rusts iron worn armor, soaks cloak/suit/shirt,
 douses lit lamps</td>
 </tr>
 </tbody>
@@ -12219,6 +12219,7 @@ on dry land, ideally during daylight.</p>
 </section>
 <section id="humanoids-h" class="level4">
 <h4>Humanoids <code>h</code></h4>
+<!-- audit 2026-05-17 #27: 50+ cells verified, 2 corrected (mind flayer "alignment-matching helmet" → any helmet; "telepathy + free action" defenses → any helmet; both per uhitm.c:3235). See companion-audit.md. -->
 <p>Dwarves and similar. Dwarves carry better-than-average loot (weapons,
 armor, pick-axes) and can wreck low-level heroes with that loot.</p>
 <div class="dense-table">
@@ -12306,7 +12307,7 @@ armor, pick-axes) and can wreck low-level heroes with that loot.</p>
 <td>weapon 1d4 · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int ·
 tentacle 2d1 drain-Int</td>
 <td>flies, sees-invis. Tentacle attacks drain Int; if Int hits 3 you
-die. Wear an alignment-matching helmet or kill from range.</td>
+die. Wear any helmet (blocks 7/8 of tentacles) or kill from range.</td>
 </tr>
 <tr>
 <td>master mind flayer</td>
@@ -12318,8 +12319,8 @@ die. Wear an alignment-matching helmet or kill from range.</td>
 <td>weapon 1d8 · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int ·
 tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1
 drain-Int</td>
-<td>flies, sees-invis. Five tentacles per turn. Catastrophic without
-telepathy + free action.</td>
+<td>flies, sees-invis. Five tentacles per turn. Catastrophic adjacent
+without a helmet. Any helmet blocks 7/8 of tentacles.</td>
 </tr>
 </tbody>
 </table>
