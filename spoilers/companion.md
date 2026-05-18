@@ -1925,9 +1925,11 @@ three tentacle attacks per turn; the **master mind flayer** has
 *five*, plus a heavier weapon strike, and is widely called the
 most lethal non-boss monster in the dungeon. A single unprepared
 turn next to a master mind flayer can drop your Int by ten. Each
-hit also has a 1-in-5 chance to wipe one of your memorized spells,
-so spell-reliant characters will lose preparation in a long fight
-and need to re-study from their spellbooks afterward.
+hit also has a 1-in-5 chance to trigger **spell amnesia** —
+a random number of your memorized spells (zero to all of them)
+drop to zero retention; re-study from spellbooks to restore.
+(Before 5.0 amnesia used to wipe maps and identification also,
+but no longer.)
 
 **Defenses:** Wear a greased helmet to prevent tentacle attacks
 from connecting. Kill them at range (wands, spells). In 5.0 the unicorn horn no longer restores lost attributes;
