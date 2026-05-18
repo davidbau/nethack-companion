@@ -2272,11 +2272,23 @@ The misleading name: it isn't displaced in the cloak-of-displacement
 sense. Its trick is the opposite, when you melee it, half the time
 it **swaps places with you** instead of taking the hit, which can
 pull you off Elbereth, out of a doorway, or onto a trap. Ranged
-attacks (wand, spell, thrown) bypass the swap entirely. It has no
-MR, so sleep, paralysis, and taming all work. Speed 12, so a
-speed-boosted hero outpaces it. (Don't bother trying to swap it
-into a moat or lava — the swap only fires if the destination
-square is survivable for the beast, and water/lava aren't.)
+attacks (wand, spell, thrown) bypass the swap entirely. It also
+has **MR 0** — extremely unusual for a level-12 monster, where
+most peers carry 10–70% resistance — so sleep, paralysis, and
+charm/taming all land with no save. Speed 12, so a speed-boosted
+hero outpaces it. (Don't bother trying to swap it into a moat or
+lava — the swap only fires if the destination square is
+survivable for the beast, and water/lava aren't.)
+
+**Tame one and you have one of the best pets in the game.** AC
+−10, three attacks (4d4 claw / 4d4 claw / 2d10 bite), speed 12,
+and the swap mechanic still works in your favor: hostiles meleeing
+your pet displacer beast trigger the same 50% place-swap, so the
+attacker often ends up next to *you* instead of biting the pet.
+Charm monster works first try; a scroll of taming with no MR roll
+to fail is essentially guaranteed. A tame displacer beast will
+walk into late-game fights and walk out, eating tough hostiles
+while taking minimal retaliation.
 
 Eating the corpse gives you cloak-style displacement for a few turns:
 monsters target a phantom image one square off from where you

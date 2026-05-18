@@ -3907,3 +3907,33 @@ Source: `spoilers/companion.md` line 2267 (Displacer Beast section).
   was held over from the pre-#42 version.
 
 ---
+
+## 2026-05-18 — Followup #107: Displacer beast as a great pet
+
+Source: `spoilers/companion.md` line 2267-2291. Added content.
+
+### Added
+- **MR-0-at-level-12 framing**: 86% of monsters at lvl 10+ carry
+  some MR; displacer beast is in the 14% with MR=0. That makes
+  charm monster, sleep, paralysis, and scroll of taming
+  completely unresistable. Bumped the existing "no MR" line to
+  flag this as unusual.
+- **"Great pet" paragraph**: tame displacer beast has AC −10,
+  three attacks (4d4/4d4 claw + 2d10 bite), and M3_DISPLACES
+  flips in your favor — hostile melee against the pet has a 50%
+  chance to swap them next to you instead of biting the pet.
+  Charm monster works on the first cast. Among the most powerful
+  tame-able monsters in the game.
+- Index of Useful Knowledge entry retitled
+  "Displacer beast, aiming next to the" → "Displacer beast,
+  taming" to reflect the section's actual best-use angle.
+
+### Notes
+- Cohort of strong MR-0 monsters at lvl ≥ 10: kraken, mastodon,
+  Cyclops, Goblin King, Scorpius, minotaur, baluchitherium,
+  Olog-hai, disenchanter, displacer beast, prisoner, shade,
+  skeleton, titanothere, trapper, nurse, black pudding, ettin,
+  lurker above. Pattern: organic mundane creatures lack MR;
+  magical/demonic/dragon-class carry it.
+
+---
