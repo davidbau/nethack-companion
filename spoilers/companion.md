@@ -2224,14 +2224,12 @@ MR, so sleep, paralysis, and taming all work. A neat trick: lure it
 adjacent to a moat or lava and let it swap itself in. Speed 12, so
 a speed-boosted hero outpaces it.
 
-The corpse, on the other hand, *does* give you cloak-style
-displacement: monsters target a phantom image one square off from
-where you really are and miss accordingly. It's exactly the cloak
-of displacement effect, only timed instead of slot-based. Duration
-is short (6 to 36 turns per bite), and it's the only intrinsic
-source in the game, so tin the corpse and pop a tin just before a
-hard fight. The irony: the beast itself doesn't have this
-protection; eating it grants you the displacement its name promised.
+The corpse gives you cloak-style displacement for a few turns:
+monsters target a phantom image one square off from where you
+really are and miss accordingly. Note that this is a different
+mechanic from the beast's own place-swap, despite the shared
+name: you get the same effect as wearing a cloak of displacement,
+not the ability to swap places with attackers.
 
 #### The Genetic Engineer
 <!-- audit 2026-05-17 #12: 14 claims verified, 1 corrected (hit message wording was the corpse string); added magic resistance to defenses. See companion-audit.md. -->
