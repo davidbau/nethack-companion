@@ -17,7 +17,10 @@
 </nav>
 <aside id="sidebar-search" aria-label="Search">
   <div class="sidebar-title">Search</div>
-  <input type="text" id="search-input" placeholder="Search the guide...">
+  <div class="search-wrapper">
+    <input type="text" id="search-input" placeholder="Search the guide...">
+    <button type="button" id="search-clear" aria-label="Clear search" hidden>×</button>
+  </div>
   <div id="search-results"></div>
   <div id="search-index"></div>
 </aside>
@@ -17712,10 +17715,21 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
     });
   });
 
+  var searchClear = document.getElementById('search-clear');
+  function updateClearButton() {
+    searchClear.hidden = searchInput.value.length === 0;
+  }
   var searchTimeout = null;
   searchInput.addEventListener('input', function() {
+    updateClearButton();
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(doSearch, 200);
+  });
+  searchClear.addEventListener('click', function() {
+    searchInput.value = '';
+    updateClearButton();
+    searchInput.focus();
+    doSearch();
   });
 
   function doSearch() {
