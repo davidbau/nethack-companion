@@ -4445,8 +4445,7 @@ is irreplaceable.
 
 > *Part Five draws on Matthew Lahut's RGRN prayer guide, Steven
 > Bush's spellbook reading tables, and the Hugo/O'Donnell files on
-> gods, combat, gems, and luck mechanics, all updated for the
-> 5.0.*
+> gods, combat, gems, and luck mechanics, all updated for 5.0.*
 
 ---
 
