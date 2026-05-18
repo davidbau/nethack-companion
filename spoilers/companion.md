@@ -824,8 +824,7 @@ Sinks are the dungeon's most underrated identification tool.
   (sleeping makes you yawn, hallucination starts hallucinating,
   blindness blinds briefly, healing nudges HP, and so on). Wasted
   on water, fruit juice, gain level, gain energy, and monster
-  detection: those all just print *"nothing seems to happen."* Save
-  those for the quaff.
+  detection: those all just print *"nothing seems to happen."*
 - **Quaffing from a sink** rolls one of 20 random effects.
   Mostly nothing useful (mild flavor messages, summoned sewer rat,
   vomit, scalding water), but three outcomes are worth the

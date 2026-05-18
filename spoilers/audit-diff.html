@@ -56,6 +56,7 @@ first.</p>
 <details open><summary><strong>Contents</strong></summary>
 <div class=toc>
 
+<a href="#c-b8b879e67">b8b879e67</a> &nbsp; spoilers: add sink-dipping potion identification table<br>
 <a href="#c-339f62bf6">339f62bf6</a> &nbsp; spoilers: Spellcasting — fix example (XL starts at 1, drop overlong tail)<br>
 <a href="#c-9bea919ae">9bea919ae</a> &nbsp; spoilers: Spellcasting — correct read-ability formula<br>
 <a href="#c-1dc6e7459">1dc6e7459</a> &nbsp; spoilers: audit units #46/#47/#48/#59 — major Spellcasting and What-Changed fixes<br>
@@ -95,6 +96,40 @@ first.</p>
 <a href="#c-70554f999">70554f999</a> &nbsp; spoilers: audit #1 (The Scroll Rack) — 2 corrections<br>
 </div></details>
 
+<h2 id="c-b8b879e67">b8b879e67 — spoilers: add sink-dipping potion identification table</h2>
+<div class=diff><div class="line filehdr">diff --git a/spoilers/companion.md b/spoilers/companion.md</div>
+<div class="line ctx">index fa1efeeb4..a7efb7960 100644</div>
+<div class="line filehdr">--- a/spoilers/companion.md</div>
+<div class="line filehdr">+++ b/spoilers/companion.md</div>
+<div class="line hunk">@@ -807,9 +807,25 @@ Sinks are the dungeon&#x27;s most underrated identification tool.</div>
+<div class="line ctx">   outcome fires at most once per sink. Worth a kick in the early</div>
+<div class="line ctx">   game if you can handle what comes out</div>
+<div class="line ctx"> - **Pouring potions down a sink** (by dipping) produces telltale</div>
+<div class="line del">-  effects: a polymorph potion transforms the sink into a fountain,</div>
+<div class="line del">-  an oil potion leaves a film on the basin. A clever way to narrow</div>
+<div class="line del">-  down potion identities without risking a sip</div>
+<div class="line add">+  effects. A clever way to narrow down potion identities without</div>
+<div class="line add">+  risking a sip. Five potions print unique sink-only messages:</div>
+<div class="line add">+</div>
+<div class="line add">+  | Sink message                                                 | Potion             |</div>
+<div class="line add">+  | ------------------------------------------------------------ | ------------------ |</div>
+<div class="line add">+  | *&quot;The sink transforms into a fountain/throne/altar!&quot;* (or *&quot;The sink vanishes.&quot;*) | polymorph (destroys the sink) |</div>
+<div class="line add">+  | *&quot;Muddy waste pops up from the drain...&quot;* (first time per sink also drops a ring) | levitation |</div>
+<div class="line add">+  | *&quot;It leaves an oily film on the basin.&quot;*                     | oil                |</div>
+<div class="line add">+  | *&quot;The drain seems less clogged.&quot;* (blind: *&quot;a sucking sound&quot;*)| acid               |</div>
+<div class="line add">+  | *&quot;You sense a ring lost down the drain.&quot;* (once per sink)    | object detection   |</div>
+<div class="line add">+</div>
+<div class="line add">+  For most other potions, the sink instead prints *&quot;A wisp of vapor</div>
+<div class="line add">+  rises up...&quot;* and then applies the same vapor effect as breathing</div>
+<div class="line add">+  a broken potion: the side effect normally identifies the potion</div>
+<div class="line add">+  (sleeping makes you yawn, hallucination starts hallucinating,</div>
+<div class="line add">+  blindness blinds briefly, healing nudges HP, and so on). Wasted</div>
+<div class="line add">+  on water, fruit juice, gain level, gain energy, and monster</div>
+<div class="line add">+  detection: those all just print *&quot;nothing seems to happen.&quot;* Save</div>
+<div class="line add">+  those for the quaff.</div>
+<div class="line ctx"> - **Quaffing from a sink** rolls one of 20 random effects.</div>
+<div class="line ctx">   Mostly nothing useful (mild flavor messages, summoned sewer rat,</div>
+<div class="line ctx">   vomit, scalding water), but three outcomes are worth the</div></div>
 <h2 id="c-339f62bf6">339f62bf6 — spoilers: Spellcasting — fix example (XL starts at 1, drop overlong tail)</h2>
 <div class=diff><div class="line filehdr">diff --git a/spoilers/companion.md b/spoilers/companion.md</div>
 <div class="line ctx">index 6d213e832..fa1efeeb4 100644</div>
