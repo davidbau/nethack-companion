@@ -56,6 +56,7 @@ first.</p>
 <details open><summary><strong>Contents</strong></summary>
 <div class=toc>
 
+<a href="#c-339f62bf6">339f62bf6</a> &nbsp; spoilers: Spellcasting — fix example (XL starts at 1, drop overlong tail)<br>
 <a href="#c-9bea919ae">9bea919ae</a> &nbsp; spoilers: Spellcasting — correct read-ability formula<br>
 <a href="#c-1dc6e7459">1dc6e7459</a> &nbsp; spoilers: audit units #46/#47/#48/#59 — major Spellcasting and What-Changed fixes<br>
 <a href="#c-0923e6008">0923e6008</a> &nbsp; spoilers: Displacer Beast corpse — &quot;Eating the corpse gives you...&quot;<br>
@@ -94,6 +95,27 @@ first.</p>
 <a href="#c-70554f999">70554f999</a> &nbsp; spoilers: audit #1 (The Scroll Rack) — 2 corrections<br>
 </div></details>
 
+<h2 id="c-339f62bf6">339f62bf6 — spoilers: Spellcasting — fix example (XL starts at 1, drop overlong tail)</h2>
+<div class=diff><div class="line filehdr">diff --git a/spoilers/companion.md b/spoilers/companion.md</div>
+<div class="line ctx">index 6d213e832..fa1efeeb4 100644</div>
+<div class="line filehdr">--- a/spoilers/companion.md</div>
+<div class="line filehdr">+++ b/spoilers/companion.md</div>
+<div class="line hunk">@@ -4684,12 +4684,10 @@ The chance of successfully reading a spellbook depends on the</div>
+<div class="line ctx"> level**. The exact formula is `Int + 4 + XL/2 − 2·level` versus a</div>
+<div class="line ctx"> roll of 1d20, so read 20 or more always succeeds, 10 is a coin</div>
+<div class="line ctx"> flip, and anything below that is dicey. Reading a level-7 spell at</div>
+<div class="line del">-Int 16, XL 0 gives a read score of 6: only a 30% chance of</div>
+<div class="line del">-success. Plan to be much better-equipped than that before reading</div>
+<div class="line del">-the high-level books. Lenses add +2. A **blessed** spellbook</div>
+<div class="line del">-bypasses the check entirely and always succeeds. A **cursed**</div>
+<div class="line del">-spellbook fails automatically and applies one of the failure</div>
+<div class="line del">-effects above.</div>
+<div class="line add">+Int 15, XL 2 gives a read score of 6: only a 30% chance of</div>
+<div class="line add">+success. Lenses add +2. A **blessed** spellbook bypasses the check</div>
+<div class="line add">+entirely and always succeeds. A **cursed** spellbook fails</div>
+<div class="line add">+automatically and applies one of the failure effects above.</div>
+<div class="line ctx"> </div>
+<div class="line ctx"> Here&#x27;s a rough guide to what you can safely read:</div></div>
 <h2 id="c-9bea919ae">9bea919ae — spoilers: Spellcasting — correct read-ability formula</h2>
 <div class=diff><div class="line filehdr">diff --git a/spoilers/companion.md b/spoilers/companion.md</div>
 <div class="line ctx">index fbe2bdd5a..6d213e832 100644</div>

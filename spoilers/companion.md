@@ -807,9 +807,25 @@ Sinks are the dungeon's most underrated identification tool.
   outcome fires at most once per sink. Worth a kick in the early
   game if you can handle what comes out
 - **Pouring potions down a sink** (by dipping) produces telltale
-  effects: a polymorph potion transforms the sink into a fountain,
-  an oil potion leaves a film on the basin. A clever way to narrow
-  down potion identities without risking a sip
+  effects. A clever way to narrow down potion identities without
+  risking a sip. Five potions print unique sink-only messages:
+
+  | Sink message                                                 | Potion             |
+  | ------------------------------------------------------------ | ------------------ |
+  | *"The sink transforms into a fountain/throne/altar!"* (or *"The sink vanishes."*) | polymorph (destroys the sink) |
+  | *"Muddy waste pops up from the drain..."* (first time per sink also drops a ring) | levitation |
+  | *"It leaves an oily film on the basin."*                     | oil                |
+  | *"The drain seems less clogged."* (blind: *"a sucking sound"*)| acid               |
+  | *"You sense a ring lost down the drain."* (once per sink)    | object detection   |
+
+  For most other potions, the sink instead prints *"A wisp of vapor
+  rises up..."* and then applies the same vapor effect as breathing
+  a broken potion: the side effect normally identifies the potion
+  (sleeping makes you yawn, hallucination starts hallucinating,
+  blindness blinds briefly, healing nudges HP, and so on). Wasted
+  on water, fruit juice, gain level, gain energy, and monster
+  detection: those all just print *"nothing seems to happen."* Save
+  those for the quaff.
 - **Quaffing from a sink** rolls one of 20 random effects.
   Mostly nothing useful (mild flavor messages, summoned sewer rat,
   vomit, scalding water), but three outcomes are worth the
