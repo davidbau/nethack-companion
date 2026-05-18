@@ -60,15 +60,37 @@ def svg_to_pdf_rsvg(svg_path: Path, pdf_path: Path):
         check=True, capture_output=True)
 
 
-def svg_to_pdf_chrome(svg_path: Path, pdf_path: Path, width_pt=None, height_pt=None):
-    """Render an SVG to PDF using headless Chrome. Crucially, Chrome HONORS
-    @font-face declarations with embedded woff2 — which is what the NetHack
-    ASCII-art SVGs need for character-by-character x-alignment."""
+def svg_to_pdf_chrome(svg_path: Path, pdf_path: Path):
+    """Render an SVG to PDF using headless Chrome. Chrome HONORS @font-face
+    declarations with embedded woff2 — which is what the NetHack ASCII-art
+    SVGs need for character-by-character x-alignment.
+
+    We wrap the SVG in a minimal HTML page with @page { margin: 0 } and
+    a body sized to match the SVG's viewBox, so the rendered PDF has
+    NO surrounding white-space margin (Chrome's default 0.5" margin would
+    otherwise shift the content and break our downstream cropping)."""
+    # Extract viewBox to size the page
+    text = svg_path.read_text()
+    m = re.search(r'viewBox\s*=\s*"\s*[\d.eE+-]+\s+[\d.eE+-]+\s+([\d.eE+-]+)\s+([\d.eE+-]+)\s*"', text)
+    vb_w, vb_h = (float(m.group(1)), float(m.group(2))) if m else (749, 456)
+    # Chrome default print is 96 DPI: 1 SVG px = 0.75 pt = 1/96 inch.
+    page_w_in = vb_w / 96.0
+    page_h_in = vb_h / 96.0
+    html_path = pdf_path.with_suffix(".html")
+    html_path.write_text(
+        f'<!doctype html>'
+        f'<html><head><meta charset="utf-8"><style>'
+        f'@page {{ size: {page_w_in:.6f}in {page_h_in:.6f}in; margin: 0; }} '
+        f'html, body {{ margin: 0; padding: 0; background: transparent; }} '
+        f'svg {{ display: block; }}'
+        f'</style></head><body>{text}</body></html>',
+        encoding='utf-8')
     args = [
-        CHROME, "--headless", "--disable-gpu", "--no-pdf-header-footer",
+        CHROME, "--headless", "--disable-gpu",
+        "--no-pdf-header-footer",
         f"--print-to-pdf={pdf_path}",
+        f"file://{html_path.resolve()}",
     ]
-    args.append(f"file://{svg_path.resolve()}")
     subprocess.run(args, check=True, capture_output=True)
 
 
@@ -148,7 +170,10 @@ def main():
     castle_pdf = TMP / "front-castle-crop.pdf"
     sanctum_pdf = TMP / "back-sanctum-crop.pdf"
     TOP_CLIP = 56
-    BOTTOM_CLIP = 36
+    # The two status lines have baselines at y≈432 and y≈451; the last map
+    # row has baseline y≈413. Crop at SVG y=409 (BOTTOM_CLIP=47) so we keep
+    # the full last row's descenders but stay above the status ascenders.
+    BOTTOM_CLIP = 47
     crop_pdf_to_viewbox(castle_raw, castle_w, castle_h, castle_pdf,
                         top_px=TOP_CLIP, bottom_px=BOTTOM_CLIP)
     crop_pdf_to_viewbox(sanctum_raw, sanctum_w, sanctum_h, sanctum_pdf,
