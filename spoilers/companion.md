@@ -2896,9 +2896,10 @@ if it's cursed, you're stuck with it until you find a way to
 uncurse. Kick it first. Check BUC second. Then pick it up.
 
 #### Naming What You've Learned
+<!-- audit 2026-05-17 #2: 5 claims verified, 1 corrected (N keystroke only works in number_pad mode; default vi-keys binds N to run-north — the cross-layout shortcut is C for #call). See companion-audit.md. -->
 
-As you gather clues, use the `#name` command (or `N`) to track what
-you know. You can **call** an entire item class by a name you choose.
+As you gather clues, use the `#name` command (or `C` for the
+equivalent `#call` menu) to track what you know. You can **call** an entire item class by a name you choose.
 For example, if you've determined that "fizzy potions" are in the $200
 price group, call them "fizzy=$200" so you don't forget. If you later
 throw one at a monster and it speeds up, you can rename the class to
@@ -7747,10 +7748,11 @@ Police force triggered by stealing from shops or hurting shopkeepers. Mostly wea
 :::
 
 #### Liches `L`
+<!-- audit 2026-05-17 #4: 12 claims verified, 3 corrected (no corpse not poisonous; double-trouble is Wizard-of-Yendor only; arch-lich casts touch of death not rays). See companion-audit.md. -->
 
-Skeletal spellcasters. Higher tiers cast double-trouble and Death; master and arch-liches require magic resistance to survive their spell barrages.
+Skeletal spellcasters. The higher tiers can cast touch of death; master and arch-liches require magic resistance to survive their spell barrages.
 
-All liches regenerate, have poisonous corpses, and are undead, cold-resistant, sleep-resistant, and poison-resistant.
+All liches regenerate, leave no corpse, and are undead, cold-resistant, sleep-resistant, and poison-resistant.
 
 ::: dense-table
 
@@ -7758,8 +7760,8 @@ All liches regenerate, have poisonous corpses, and are undead, cold-resistant, s
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | lich | brown | 11 | 6 | 0 | 30 | touch 1d10 cold · spell spell |  |
 | demilich | red | 14 | 9 | -2 | 60 | touch 3d4 cold · spell spell |  |
-| master lich | magenta | 17 | 9 | -4 | 90 | touch 3d6 cold · spell spell | fire-res. Casts double-trouble. Disperse or kill from afar. |
-| arch-lich | magenta | 25 | 9 | -6 | 90 | touch 5d6 cold · spell spell | fire-res, shock-res. End-game tier. Casts death rays. Magic resistance mandatory. |
+| master lich | magenta | 17 | 9 | -4 | 90 | touch 3d6 cold · spell spell | fire-res. Draws from the wizard spell list. Disperse or kill from afar. |
+| arch-lich | magenta | 25 | 9 | -6 | 90 | touch 5d6 cold · spell spell | fire-res, shock-res. End-game tier. Casts touch of death; magic resistance mandatory. |
 
 :::
 
@@ -7884,8 +7886,9 @@ All snakes swim. All except *python* also hide.
 :::
 
 #### Trolls `T`
+<!-- audit 2026-05-17 #3: 17 claims verified, 0 corrected (all stats match monsters.h exactly; lightly tightened "zap it with magic" to mention what actually destroys corpses). See companion-audit.md. -->
 
-Regenerates from corpses. Eat the corpse, burn it with fire, or zap it with magic to keep it dead. A troll left behind on an old level will be alive when you come back.
+Regenerates from corpses. To keep a troll dead, destroy the corpse: eat it, burn it (fire wand/spell, lava), drop it into water, or use force-bolt/striking on it. Stoning the troll leaves a statue, not a corpse, so it never revives. A troll left behind on an old level will be alive when you come back.
 
 All trolls regenerate and follow you up and down stairs.
 

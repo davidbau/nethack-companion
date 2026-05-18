@@ -4125,12 +4125,14 @@ first. Check BUC second. Then pick it up.</p>
 </section>
 <section id="naming-what-youve-learned" class="level4">
 <h4>Naming What You’ve Learned</h4>
+<!-- audit 2026-05-17 #2: 5 claims verified, 1 corrected (N keystroke only works in number_pad mode; default vi-keys binds N to run-north — the cross-layout shortcut is C for #call). See companion-audit.md. -->
 <p>As you gather clues, use the <code>#name</code> command (or
-<code>N</code>) to track what you know. You can <strong>call</strong> an
-entire item class by a name you choose. For example, if you’ve
-determined that “fizzy potions” are in the $200 price group, call them
-“fizzy=$200” so you don’t forget. If you later throw one at a monster
-and it speeds up, you can rename the class to “speed.”</p>
+<code>C</code> for the equivalent <code>#call</code> menu) to track what
+you know. You can <strong>call</strong> an entire item class by a name
+you choose. For example, if you’ve determined that “fizzy potions” are
+in the $200 price group, call them “fizzy=$200” so you don’t forget. If
+you later throw one at a monster and it speeds up, you can rename the
+class to “speed.”</p>
 <p>This habit of annotating your discoveries is what separates
 adventurers who die on level 8 from adventurers who reach the Castle.
 The dungeon doesn’t keep notes for you. You have to do it yourself.</p>
@@ -14643,10 +14645,11 @@ Mostly weak individually but they swarm.</p>
 </section>
 <section id="liches-l" class="level4">
 <h4>Liches <code>L</code></h4>
-<p>Skeletal spellcasters. Higher tiers cast double-trouble and Death;
+<!-- audit 2026-05-17 #4: 12 claims verified, 3 corrected (no corpse not poisonous; double-trouble is Wizard-of-Yendor only; arch-lich casts touch of death not rays). See companion-audit.md. -->
+<p>Skeletal spellcasters. The higher tiers can cast touch of death;
 master and arch-liches require magic resistance to survive their spell
 barrages.</p>
-<p>All liches regenerate, have poisonous corpses, and are undead,
+<p>All liches regenerate, leave no corpse, and are undead,
 cold-resistant, sleep-resistant, and poison-resistant.</p>
 <div class="dense-table">
 <table>
@@ -14701,7 +14704,8 @@ cold-resistant, sleep-resistant, and poison-resistant.</p>
 <td>-4</td>
 <td>90</td>
 <td>touch 3d6 cold · spell spell</td>
-<td>fire-res. Casts double-trouble. Disperse or kill from afar.</td>
+<td>fire-res. Draws from the wizard spell list. Disperse or kill from
+afar.</td>
 </tr>
 <tr>
 <td>arch-lich</td>
@@ -14711,7 +14715,7 @@ cold-resistant, sleep-resistant, and poison-resistant.</p>
 <td>-6</td>
 <td>90</td>
 <td>touch 5d6 cold · spell spell</td>
-<td>fire-res, shock-res. End-game tier. Casts death rays. Magic
+<td>fire-res, shock-res. End-game tier. Casts touch of death; magic
 resistance mandatory.</td>
 </tr>
 </tbody>
@@ -15292,9 +15296,12 @@ garter snakes are fodder.</p>
 </section>
 <section id="trolls-t" class="level4">
 <h4>Trolls <code>T</code></h4>
-<p>Regenerates from corpses. Eat the corpse, burn it with fire, or zap
-it with magic to keep it dead. A troll left behind on an old level will
-be alive when you come back.</p>
+<!-- audit 2026-05-17 #3: 17 claims verified, 0 corrected (all stats match monsters.h exactly; lightly tightened "zap it with magic" to mention what actually destroys corpses). See companion-audit.md. -->
+<p>Regenerates from corpses. To keep a troll dead, destroy the corpse:
+eat it, burn it (fire wand/spell, lava), drop it into water, or use
+force-bolt/striking on it. Stoning the troll leaves a statue, not a
+corpse, so it never revives. A troll left behind on an old level will be
+alive when you come back.</p>
 <p>All trolls regenerate and follow you up and down stairs.</p>
 <div class="dense-table">
 <table>

@@ -927,3 +927,72 @@ Verified 26 claims; 2 corrected; 0 flagged for human review.
 ### Notes
 - "Always at least two with positive Luck" wording for blessed identify is technically true (minimum is 2 when cval rolls to 1 and gets bumped; 0=all is also possible). Could be tightened to "blessed identify with positive luck always reveals at least 2 items, sometimes more, sometimes everything" but the current wording is close enough.
 - Scare monster "Pick it up after it's been dropped and it crumbles to dust": true with caveats — depends on BUC and prior pickup history. Cursed crumbles first time; uncursed survives one pickup; blessed survives two. The takeaway (don't pick it up casually) is right; the precise timing is glossed.
+
+---
+
+## 2026-05-17 — Chapter audit #2: A Practical Identification Strategy → Naming What You've Learned
+
+Source: `spoilers/companion.md` lines 2898-2909 (12 lines)
+Verified 5 claims; 1 corrected; 0 flagged for human review.
+
+### Verified
+- `#name` extended command exists — `cmd.c:1773` `{ M('n'), "name", "same as call ...", docallcmd, ... }`.
+- Class-naming applies to all items of the same random appearance — `do_name.c:533-588` (`'o'` case in `docallcmd`); appearance stored in `objects[obj->otyp].oc_uname`.
+- Re-calling overwrites prior name — `do_name.c:660-672` `docall()` frees old `*uname_p` and stores new `dupstr(buf)`.
+- "fizzy" is a real randomized potion descriptor — `objects.h:1167` `POTION("sickness", "fizzy", ...)`.
+
+### Corrected
+1. **`#name` keystroke `N`** — partial. `cmd.c:2768` binds `N` to name in the default cmd table, but `reset_commands` at `cmd.c:3433-3473` immediately reassigns the uppercase forms of dir-keys (Y, K, U, L, N, J, B, H) to MV_RUN movement when not in `number_pad` mode (which is the default vi-keys layout). So `N` only invokes name when `number_pad` is enabled. The reliable shortcut across layouts is `C` (cmd.c:1687 `{ 'C', "call", ... }` — same `docallcmd` entry point).
+   - Fix: changed parenthetical to "use the `#name` command (or `C` for the equivalent `#call` menu)".
+
+### Notes
+- Example uses `=` inside the player-supplied name; `getlin()`/`mungspaces()` accept arbitrary text per `do_name.c:651-672`, so no issue.
+
+---
+
+## 2026-05-17 — Chapter audit #3: Bestiary Tables → Trolls `T`
+
+Source: `spoilers/companion.md` lines 7886-7902 (17 lines)
+Verified 17 claims; 0 corrected; 0 flagged. One wording tightening applied.
+
+### Verified
+- All five troll rows match `monsters.h:2225-2266` exactly (color, level, speed, AC, MR%, attacks):
+  - troll: CLR_BROWN, LVL(7,12,4,0,-3), AT_WEAP 4d2 + AT_CLAW 4d2 + AT_BITE 2d6
+  - ice troll: CLR_WHITE, LVL(9,10,2,20,-3), with AT_CLAW AD_COLD + MR_COLD
+  - rock troll: CLR_CYAN, LVL(9,12,0,0,-3)
+  - water troll: CLR_BLUE, LVL(11,14,4,40,-3), M1_SWIM
+  - Olog-hai: CLR_MAGENTA (HI_LORD per color.h:38), LVL(13,12,-4,0,-7)
+- All trolls regenerate — M1_REGEN on all five.
+- All trolls follow stairs — M2_STALK on all five.
+- Corpses revive on old levels — `is_reviver` switch at `mon.c:830-831`; revive timer set in `mkobj.c:1416-1421` via `TROLL_REVIVE_CHANCE`.
+
+### Wording tightened
+- "Eat the corpse, burn it with fire, or zap it with magic to keep it dead" — "zap with magic" was vague; what really keeps trolls dead is corpse destruction. Rewrote to: "destroy the corpse: eat it, burn it (fire wand/spell, lava), drop it into water, or use force-bolt/striking on it. Stoning the troll leaves a statue, not a corpse, so it never revives."
+
+---
+
+## 2026-05-17 — Chapter audit #4: Bestiary Tables → Liches `L`
+
+Source: `spoilers/companion.md` lines 7750-7763 (14 lines)
+Verified 12 claims; 3 corrected; 0 flagged.
+
+### Verified
+- All four lich rows match `monsters.h:1864-1897` exactly (color, level, speed, AC, MR%, attacks, resistances):
+  - lich: CLR_BROWN, LVL(11,6,0,30,-9)
+  - demilich: CLR_RED, LVL(14,9,-2,60,-12)
+  - master lich: CLR_MAGENTA (HI_LORD), LVL(17,9,-4,90,-15), MR_FIRE added
+  - arch-lich: CLR_MAGENTA, LVL(25,9,-6,90,-15), MR_FIRE | MR_ELEC added
+- All liches regenerate (M1_REGEN), are undead (M2_UNDEAD), cold/sleep/poison resistant (MR_COLD | MR_SLEEP | MR_POISON).
+- Magic resistance defeats arch-lich death-spell — `mcastu.c:389` `mcast_death_touch` is blocked by Antimagic.
+
+### Corrected
+1. **"have poisonous corpses"** — WRONG. All four lich `MON()` entries carry `G_NOCORPSE` flag (`monflag.h:201` = "no corpse left ever"). Liches leave no corpse at all, so the corpse can't be poisonous because it doesn't exist.
+   - Fix: "leave no corpse" instead of "have poisonous corpses".
+2. **"Higher tiers cast double-trouble"** — WRONG. `MCAST_CLONE_WIZ` is in the wizard spell list but `mcast_clone_wiz()` at `mcastu.c:411-418, 940-944` is gated on `mtmp->iswiz`. Only the Wizard of Yendor casts Double Trouble. Liches cannot.
+   - Fix: dropped from prose; master-lich note rewritten to "Draws from the wizard spell list".
+3. **Arch-lich "Casts death rays"** — IMPRECISE. The mechanic is `MCAST_DEATH_TOUCH` (touch of death), not a death ray. Per `mcastu.c:320` comment: "unlike the finger of death spell which behaves like a wand of death".
+   - Fix: "Casts touch of death; magic resistance mandatory".
+
+### Notes
+- "spell spell" attack notation matches the project's bestiary convention (AT_MAGC AD_SPEL 0d0).
+- "Skeletal" is conventional flavor; liches are flagged M1_HUMANOID + M2_UNDEAD + M2_MAGIC (no S_SKELETON involvement).

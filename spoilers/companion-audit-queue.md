@@ -6,9 +6,9 @@ Total units: 180 (33 chapters + 147 subsections)
 Process in numbered order. Mark each `[x]` as it's audited.
 
 - [x] **#  1**  L 3211  (  98 lines) 📖 The Scroll Rack
-- [ ] **#  2**  L 2898  (  13 lines)   ↳ A Practical Identification Strategy → Naming What You've Learned
-- [ ] **#  3**  L 7877  (  18 lines)   ↳ Bestiary Tables → Trolls `T`
-- [ ] **#  4**  L 7740  (  17 lines)   ↳ Bestiary Tables → Liches `L`
+- [x] **#  2**  L 2898  (  13 lines)   ↳ A Practical Identification Strategy → Naming What You've Learned
+- [x] **#  3**  L 7877  (  18 lines)   ↳ Bestiary Tables → Trolls `T`
+- [x] **#  4**  L 7740  (  17 lines)   ↳ Bestiary Tables → Liches `L`
 - [ ] **#  5**  L  687  ( 155 lines) 📖 Points of Interest
 - [ ] **#  6**  L 6747  (  11 lines)   ↳ Weapons Tables → Club
 - [ ] **#  7**  L 2087  (  10 lines)   ↳ Dangerous Encounters → Deadly Poison
