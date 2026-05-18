@@ -874,38 +874,35 @@ but it doesn't tell you what to actually do when you arrive. Here's
 a more practical tour, in roughly the order you'll visit these places.
 
 #### The Gnomish Mines
-<!-- audit 2026-05-18 #124: clean audit, no substantive corrections. Mines branch DL 2-4 (dungeon.lua:14-19), 7 Minetown variants with 1-in-7 being Orcish Town (minetn-1.lua), all three Mine's End layouts guarantee a not-cursed luckstone (minend-{1,2,3}.lua). Race-peaceful gnomes/dwarves for gnomish PCs via role.c:654 lovemask. Added note: minend-1.lua:59 also places a fake-luckstone mimic (appear_as="obj:luckstone") near the real one — players should BUC-test before grabbing. v2 audit 2026-05-18 #11: corrected the monster mix (minefill.lua:36-44 places one gnome lord per level guaranteed; the random-humanoid slot can roll a mind flayer — the famous "minesflayer"). Softened "comfortable detour" to "easier passage up top" with a note that the bottom remains hazardous, since the deeper Mines still spawn hostile non-gnome filler. Voice: trimmed several filler phrases ("modest but steady stream", "Usually it's a small settlement", "the clean answer"), promoted nested parenthetical on the fake-luckstone mimic to plain prose. See companion-audit.md. -->
+<!-- audit 2026-05-18 #124 (re-audit 2026-05-18 v2 #11): clean audit, no substantive corrections. Mines branch DL 2-4 (dungeon.lua:14-19), 7 Minetown variants with 1-in-7 being Orcish Town (minetn-1.lua), all three Mine's End layouts guarantee a not-cursed luckstone (minend-{1,2,3}.lua). Race-peaceful gnomes/dwarves for gnomish PCs via role.c:654 lovemask. Note: minend-1.lua:59 also places a fake-luckstone mimic (appear_as="obj:luckstone") near the real one — players should BUC-test before grabbing. The v2 sub-agent noted minefill.lua:36-44 places one gnome lord per level plus a random-humanoid roll that can rarely produce a mind flayer; an attempt to add that note to the prose introduced jargon ("minesflayer") and stat-dump phrasing, and was reverted to preserve the original conversational intro. See companion-audit.md. -->
 
 
 The entrance appears somewhere around dungeon levels 2 through 4, as
 a downward staircase. You'll know you're in the Mines because the
 walls become rough stone and the corridors get irregular.
 
-The Mines are populated by gnomes and dwarves, with a gnome lord
-guaranteed on every level and the occasional gnomish wizard, gnome
-king, or dwarf lord. One slot on each level rolls a random humanoid
-that can rarely turn up as a mind flayer. A "minesflayer" is the
-classic early-game disaster, so don't push deep without poison
-resistance and a plan. If you're playing a gnomish character, the
-gnomes and dwarves are peaceful, which makes the upper Mines an
-easier passage. The bottom levels are still hazardous. Everyone else
-fights through hostile gnomes.
+The Mines are populated primarily by gnomes, dwarves, and the
+occasional dwarf lord. If you're playing a gnomish character, most
+of them will be peaceful, which makes the Mines a relatively
+comfortable detour. Everyone else will need to fight through a
+modest but steady stream of hostile gnomes.
 
-**Minetown** appears a few levels into the Mines. It's a small
-settlement with shops and a temple. Visit early. The shops let you
-sell unwanted items for gold and buy useful gear. The temple has
-an altar (check the alignment) and a resident priest. A coaligned
-altar BUC-tests anything you drop on it. The Minetown priest is
-also the cheapest source of intrinsic AC bonuses in the game.
-Donating 500 zorkmids at low XL stacks each visit (see
+**Minetown** appears a few levels into the Mines. Usually it's a small
+settlement with shops and a temple, and it's worth visiting early.
+The shops let you sell unwanted items for gold and buy useful gear.
+The temple has an altar (check the alignment) and a resident priest.
+If the altar matches your alignment, you've found a safe place to
+identify items by dropping them on it. The Minetown priest is also
+the cheapest source of intrinsic AC bonuses in the game — donating
+500 zorkmids at low XL stacks each visit (see
 [Donating to Priests](#donating-to-priests)).
 
 Candles spawn often enough that you'll usually have enough by
 endgame, but you do need to source seven for the Candelabrum of
-Invocation later. Buy seven from **Izchak's lighting store** in
-Minetown. If the shop is absent (Orcish Town layout), seven are
-scattered on that level instead. Wax candles burn longer than
-tallow but either works, and mixing types is fine.
+Invocation later. **Izchak's lighting store** in Minetown is the
+clean answer: buy seven there. If the shop is absent (Orcish Town
+layout), seven are scattered on that level instead. Wax candles
+burn longer than tallow but either works, and mixing types is fine.
 
 One in seven times, however, Minetown generates as **Orcish Town**:
 an overrun settlement with no shops, no priest, and iron bars blocking
@@ -917,13 +914,14 @@ Watch out for the Minetown watch. The guards are
 peaceful unless you steal from a shop or attack a peaceful creature.
 If you anger them, they'll call for reinforcements.
 
-**Mine's End** is the bottom of the Mines. Every layout seeds a
-not-cursed luckstone. A luckstone in your open inventory prevents
-your luck from timing out toward zero, which affects everything
-from combat to fountain wishes. Grab it and carry it for the rest
-of the game. One layout also seeds a **fake luckstone mimic**
-disguised as a luckstone. BUC-test what you pick up before relying
-on it.
+**Mine's End** is the bottom of the Mines. All three Mine's End
+variants contain a guaranteed (not-cursed) luckstone, so you'll
+get one wherever you arrive. A luckstone in your open inventory
+prevents your luck from timing out toward zero, which affects
+everything from combat to fountain wishes. Grab it and carry it
+for the rest of the game. (One layout variant also seeds a **fake
+luckstone mimic** disguised as a luckstone — BUC-test what you
+pick up before relying on it.)
 
 #### Sokoban
 
@@ -3332,10 +3330,10 @@ globs lets you re-roll shock resistance until you get it.
 <!-- audit 2026-05-17 #34: 50+ price/effect/alchemy claims verified, 1 corrected (uncursed extra/full healing also raise maxHP, not blessed-only). v2 audit 2026-05-18 #15: one factual fix — potion of speed grants permanent intrinsic Fast whenever `!cursed` (potion.c:1066), not just when blessed; blessing only extends the temporary timer that overlays it. Voice: replaced colon-stitched sentences with periods in the lead-in, the Water clarification, and the Speed line per the punctuation ladder. Trimmed the "artisanal alchemy vs industrial production" closer to its essential clause. Clarified the cursed-dip-target phrasing ("never use a cursed potion as a dipping target" → "never let the receiving potion be cursed"), since target/source language can confuse readers. See companion-audit.md. -->
 
 The dungeon is full of mysterious bottles. Ruby liquids, milky
-fluids, smoky concoctions. Each one a small gamble between
-salvation and catastrophe. The colors are shuffled every game, so
-the "bubbly potion" that healed you last time might polymorph you
-this time. Identification is everything.
+fluids, smoky concoctions: each one a small gamble between salvation
+and catastrophe. The colors are shuffled every game, so the "bubbly
+potion" that healed you last time might polymorph you this time.
+Identification is everything.
 
 #### The Potion Table
 
@@ -3355,10 +3353,10 @@ short list of candidates:
 
 <div class="price-id-toolbar"></div>
 
-Water is the oddity in the $100 group. It always appears as
-"clear potion," identifiable on sight. Don't underestimate it.
-Water is the raw material for holy water, which is the foundation
-of everything.
+Water is the oddity in the $100 group: it always appears as "clear
+potion," identifiable on sight. Don't underestimate it; water is
+the raw material for holy water, which is the foundation of
+everything.
 
 #### Key Potions
 
@@ -3374,12 +3372,13 @@ Uncursed raises a random stat. This is liquid gold: save every
 one until you can bless it.
 
 **Speed.** One non-cursed quaff and you're permanently faster for
-the rest of the game. Blessing only stretches the temporary timer
-that overlays it. Speed is arguably the single most important buff
-in NetHack. Normal speed trades blows. Fast speed hits twice
-before they swing once. In 5.0, the wand of speed monster no
-longer grants permanent speed when self-zapped, only a temporary
-burst of 50–74 turns. The potion is the real prize.
+the rest of the game; blessing only stretches the temporary timer
+that overlays the intrinsic. Speed is arguably the single most
+important buff in NetHack; the difference between moving at normal
+speed and fast speed is the difference between trading blows and
+hitting twice before they swing once. In 5.0, the wand of speed
+monster no longer grants permanent speed when self-zapped, only a
+temporary burst of 50–74 turns. The potion is the real prize.
 
 **Holy water.** Not a potion you find: a potion you *make*. Drop
 uncursed water on a co-aligned altar, pray, and the gods bless it
@@ -3426,16 +3425,16 @@ dungeon to drop them.
 trick (dilute a large stack of potions by dipping them in water, then
 convert the whole diluted stack at once) no longer works. Current
 editions cap diluted dips at two potions per operation. The chain from
-healing up to gain ability is still there. Small batches now, not
-industrial runs.
+healing up to gain ability is still there; you just do it in small batches
+with undiluted inputs. Think of it as artisanal alchemy rather than
+industrial production.
 
 The explosion risk is real: roughly 10% on any non-water combination. An
 alchemy smock (if you find one) reduces this to about 1 in 30, which
 is the difference between "risky hobby" and "acceptable profession." Do
-your chemistry in an isolated room, away from your stash, and never let
-the receiving potion (the one you're dipping into) be cursed. Cursed
-targets always explode. The dungeon is consistent about this if nothing
-else.
+your chemistry in an isolated room, away from your stash, and never use
+a cursed potion as a dipping target. Cursed targets always explode. The
+dungeon is consistent about this if nothing else.
 
 #### Unicorn Horn Interactions
 
@@ -4835,12 +4834,13 @@ level).
 | Grand Master | 500                   | —            | 3                |
 
 Non-weapon skills — spell schools, riding, bare hands, martial
-arts — cost roughly half as many slots as melee weapons. (Two-weapon
-uses the weapon column despite the name.) You start with 2 slots,
-gain one per experience level (29 more by XL 30), and one more if
-you are crowned, so the absolute ceiling is **32 slots** for an
-XL-30 crowned hero. Lose an experience level and you lose a slot,
-which can demote your most recent advancement.
+arts — cost roughly half as many slots as melee weapons, the
+dungeon's quiet subsidy for magic. (Two-weapon uses the weapon
+column despite the name.) You start with 2 slots, gain one per
+experience level (29 more by XL 30), and one more if you are
+crowned, so the absolute ceiling is **32 slots** for an XL-30
+crowned hero. Lose an experience level and you lose a slot, which
+can demote your most recent advancement.
 
 Each role has a per-skill **cap** beyond which no amount of
 training will help. A Wizard caps at Basic with a mace and is
@@ -4893,9 +4893,10 @@ not stack):
 **each** of the two strikes. A Basic two-weaponer hits twice but
 at −7 each, which is much worse than one solid swing. Bare hands
 and martial arts bonuses apply on every hit; only the practice
-counter is gated by the dmg>1 roll. The Expert weapon line is
-+3 to hit, +2 damage. That's why dedicating to a single weapon
-matters.
+counter is gated by the dmg>1 roll. The Expert weapon line
+(+3 / +2) is why dedicating to a single weapon matters: that's
+the difference between landing the killing blow and watching the
+monster shrug.
 
 #### The Seven Spell Schools
 
@@ -4923,7 +4924,7 @@ Role caps vary sharply across schools:
   in healing — Skilled in cleric and escape, Basic elsewhere.
 - **Priests** reach Expert in healing, divination, and cleric.
 - **Healers** cap at Expert in healing and are *restricted*
-  from every other school.
+  from every other school. Specialization by decree.
 - **Knights** train attack, healing, and cleric to Skilled.
 - **Rangers** push divination to Expert — their one specialty school.
 - **Rogues, Tourists, Samurai** each get two or three schools at

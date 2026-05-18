@@ -6864,10 +6864,7 @@ Source: `spoilers/companion.md` line 7315. 1 factual completion, 1 voice tighten
 
 ## 2026-05-18 — v2 audit #11: Branches and Landmarks — The Gnomish Mines
 
-Source: `spoilers/companion.md` line 876. 1 factual correction, 2 wisdom adjustments, 6 voice tightenings.
-
-### Wrong → fixed
-- **"populated primarily by gnomes, dwarves, and the occasional dwarf lord"**: `dat/minefill.lua:36-44` places 6-8 gnomes plus exactly **one guaranteed gnome lord**, two dwarves, two random gnome-class slots, and a 50/50 humanoid slot. The "occasional dwarf lord" framing misses the guaranteed gnome lord and the fact that the random-humanoid slot can roll a **mind flayer** — the classic "minesflayer" disaster. Reworded.
+Source: `spoilers/companion.md` line 876. **All v2 edits reverted same session — see Reverted below.** Net effect: 0 corrections.
 
 ### Verified
 - Mines branch DL 2-4 at `dat/dungeon.lua:14-19`.
@@ -6875,21 +6872,14 @@ Source: `spoilers/companion.md` line 876. 1 factual correction, 2 wisdom adjustm
 - All three Mine's End variants seed a not-cursed achievement-flagged luckstone at `dat/minend-{1,2,3}.lua`.
 - Fake-luckstone mimic placement at `dat/minend-1.lua:59` (plus mimics for loadstone, flint, touchstone, and a real loadstone).
 - Race-peaceful gnomes/dwarves for gnomish PCs via `src/role.c:654` lovemask.
+- `dat/minefill.lua:36-44` places 6-8 gnomes plus exactly one guaranteed gnome lord, two dwarves, two random gnome-class slots, and a 50/50 humanoid slot that can rarely roll a mind flayer.
 
-### Wisdom adjustments
-- "Relatively comfortable detour" softened to "easier passage up top", with explicit note that the bottom levels remain hazardous (the deeper Mines still spawn the hostile non-gnome filler).
-- Added the minesflayer warning to the monster-mix paragraph.
-
-### Voice tightenings
-- "Everyone else will need to fight through a modest but steady stream of hostile gnomes." → "Everyone else fights through hostile gnomes."
-- "Usually it's a small settlement with shops and a temple, and it's worth visiting early." → "It's a small settlement with shops and a temple. Visit early."
-- "If the altar matches your alignment, you've found a safe place to identify items by dropping them on it." → "A coaligned altar BUC-tests anything you drop on it."
-- "Izchak's lighting store ... is the clean answer: buy seven there." → "Buy seven from Izchak's lighting store."
-- "you'll get one wherever you arrive" → "Every layout seeds a not-cursed luckstone."
-- Nested parenthetical on the fake-luckstone mimic promoted to plain prose.
+### Reverted (do not re-apply)
+- An attempt to add a mind-flayer warning to the prose used the community jargon term ("minesflayer") and turned the intro into a stat dump. User reaction: *"old introduction was much better"*, *"too much inside baseball and a madeup word 'minesflayer'"*, *"please do not make the text worse!"* The prose was restored verbatim to the pre-v2 wording. **Lesson:** voice fixes should preserve existing rhythm; never introduce community jargon. The Brainlessness section in Part Three already covers mind flayers; the Mines section doesn't need to reiterate.
+- Six "voice tightenings" that sub-agent flagged ("modest but steady stream", "Usually it's a small settlement", "the clean answer", "wherever you arrive", parenthetical-on-mimic promotion, "you've found a safe place to identify items by dropping them on it" → "BUC-tests"): all reverted. The original phrasing has rhythm and flavor that the auditor's terser proposals lack.
 
 ### Close calls / notes
-- Mine's End depth (DL ~10-13) is not stated in the section; not required, but could be added in one clause later.
+- Mine's End depth (DL ~10-13) is not stated in the section; left as-is.
 
 ---
 
@@ -6937,12 +6927,15 @@ Source: `spoilers/companion.md` line 4810. 3 factual corrections, 2 wisdom adjus
 - "Knights should advance it on the first opportunity even though Basic still leaves a −1 to-hit penalty in the saddle" was based on a wrong premise (Knights start at Basic riding per `src/weapon.c:1787-1789`; first opportunity is to push to Skilled). Reworded.
 - "Cone of cold and fireball stop being beams and become room-clearing **explosions**" oversells the footprint — at Skilled the cast becomes a cluster of 2-9 sequential 3×3 explosions clustered near a target square. Reworded to "a cluster of 3×3 explosions you can place at range" in both mentions.
 
-### Voice tightenings
-- Dropped invented in-world reason "the dungeon's quiet subsidy for magic" (violates the don't-invent-reasons rule).
-- "restricted from long swords entirely. Restricted skills don't appear on the `#enhance` menu and can never leave Unskilled" → "restricted from long swords. Restricted skills don't appear on `#enhance` and stay Unskilled."
-- Replaced colorful "the difference between landing the killing blow and watching the monster shrug" with the bare numbers.
-- Dropped "Specialization by decree." meta.
-- "shouldn't expect anything past level 3" clarified as spell-level 3.
+### Voice tightenings (kept)
+- "restricted from long swords entirely. Restricted skills don't appear on the `#enhance` menu and can never leave Unskilled" → "restricted from long swords. Restricted skills don't appear on `#enhance` and stay Unskilled." (Minor trim, no flavor lost.)
+- "shouldn't expect anything past level 3" clarified as "spell-level 3" (was ambiguous between game-level and spell-level).
+- Em-dashes in the two-weapon penalty sentence replaced with periods (punctuation ladder).
+
+### Reverted (do not re-apply)
+- "the dungeon's quiet subsidy for magic" was dropped on grounds of "invented in-world reason." Restored. It's a metaphor / editorial gloss, not a factual claim. Voice features like this should stay.
+- "the difference between landing the killing blow and watching the monster shrug" was replaced with "+3 to hit, +2 damage. That's why dedicating to a single weapon matters." Restored. The vivid framing was earning its keep, and the auditor's bare-numbers proposal lost the voice without gaining clarity.
+- "Specialization by decree." was dropped as "meta." Restored. Light editorial flourishes at the end of bullet points are part of the book's register.
 
 ---
 
@@ -6977,10 +6970,10 @@ Source: `spoilers/companion.md` line 1055. 4 factual corrections, 2 wisdom adjus
 
 ## 2026-05-18 — v2 audit #15: The Apothecary
 
-Source: `spoilers/companion.md` line 3331. 1 factual fix, 3 wisdom adjustments, 4 voice tightenings.
+Source: `spoilers/companion.md` line 3331. 1 factual fix; voice changes mostly reverted (see below).
 
 ### Wrong → fixed
-- **"One blessed quaff and you're permanently faster for the rest of the game"**: the intrinsic-Fast grant requires only `!otmp->cursed` per `src/potion.c:1066` — an **uncursed** potion of speed also grants permanent intrinsic speed. Blessing only extends the temporary timer that overlays the intrinsic grant. Reworded.
+- **"One blessed quaff and you're permanently faster for the rest of the game"**: the intrinsic-Fast grant requires only `!otmp->cursed` per `src/potion.c:1066` — an **uncursed** potion of speed also grants permanent intrinsic speed. Blessing only extends the temporary timer that overlays the intrinsic grant. Reworded inline as a semicolon clause on the same sentence.
 
 ### Verified
 - Price table at L3346-3354 matches every entry in `include/objects.h:1125-1177` (healing 20; booze/fruit juice/see invisible/sickness 50; etc.).
@@ -7001,14 +6994,15 @@ Source: `spoilers/companion.md` line 3331. 1 factual fix, 3 wisdom adjustments, 
 - "Drop uncursed water on a co-aligned altar" left as the standard play pattern, but the mechanism also blesses cursed water on the altar (water_prayer at `src/pray.c:1395-1402`). Not changed; the standard pattern is what readers should do.
 - "Treat every gain energy potion like the catalyst it is" left as written. Note: gain level is just as good a catalyst and slightly more common per `include/objects.h` (prob 20 vs 40), but this is a soft point.
 
-### Voice tightenings
-- Lead-in colon ("Ruby liquids, milky fluids, smoky concoctions:") replaced with a period.
-- "Water is the oddity in the $100 group: it always appears as 'clear potion'" replaced with a period.
-- Speed paragraph: semicolon-and-comma chain ("Speed is arguably the single most important buff in NetHack; the difference between moving at normal speed and fast speed is the difference between trading blows and hitting twice before they swing once") split into shorter sentences.
-- "Think of it as artisanal alchemy rather than industrial production." trimmed to "Small batches now, not industrial runs."
+### Reverted (do not re-apply)
+- Lead-in colon ("Ruby liquids, milky fluids, smoky concoctions: each one a small gamble..."): restored. The colon does rhythmic work that the period flattened.
+- "Water is the oddity in the $100 group: it always appears as 'clear potion'": restored. Same reason.
+- Speed paragraph short-sentence rewrite: restored to the original semicolon-joined "trading blows / hitting twice" phrasing. The factual fix on uncursed speed is now folded in as a semicolon clause on the lead sentence.
+- "Think of it as artisanal alchemy rather than industrial production." restored. The gag earns its keep.
+- "never use a cursed potion as a dipping target" was reworded to "never let the receiving potion (the one you're dipping into) be cursed" on auditor concerns about source/target language. Restored to original wording — clearer and shorter.
 
 ### Notes
-- Extra healing also cures hallucination per `src/potion.c:1134`. Not claimed, not wrong, just an omission.
-- Section makes no mention of sink-dip ID, bag-of-holding scatter on explosion, or Gehennom hot-ground potion shatter — those 5.0 changes are absent here. Not wrong, but the chapter could be enriched.
+- Extra healing also cures hallucination per `src/potion.c:1134`. Not claimed, not wrong, just an omission worth flagging if the chapter expands.
+- Section makes no mention of sink-dip ID, bag-of-holding scatter on explosion, or Gehennom hot-ground potion shatter — those 5.0 changes are absent here. Not wrong, but the chapter could be enriched in a future pass.
 
 ---
