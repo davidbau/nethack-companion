@@ -243,10 +243,8 @@ thrown at Strength 25) drops as your role's sacrifice gift
 regardless of alignment. If you pick **Lawful**, you also get a
 shot at **Excalibur** by dipping a long sword in a fountain
 (drain resistance, automatic searching, +d5 to-hit), so a
-fortunate Lawful Valkyrie can finish the game wielding both:
-Mjollnir thrown, Excalibur in hand, and `#twoweapon` for the
-ascension run. Neutral Valkyries get Mjollnir alone, which is
-still plenty.
+fortunate Lawful Valkyrie can finish the game wielding both.
+Neutral Valkyries get Mjollnir alone, which is still plenty.
 *Alignment: Lawful or Neutral. Female only.*
 
 **Wizard.** You start with a quarterstaff and a spellbook or two.
