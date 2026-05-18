@@ -4479,6 +4479,7 @@ record modest until they've secured the items they need.
 ---
 
 ### The Art of Combat
+<!-- audit 2026-05-18 #82: many claims verified (XL/Str/Luck/enchantment/AC factors in find_roll_to_hit, dbon Str cap, 3/2 two-handed Str bonus, conflict requires mutual sight + Cha-Lvl resist roll, shields forbidden with two-weapon). Three corrections: (1) Two-weapon roles wrong — actual EXPERT roles are Rogue + Samurai, not Rangers + Barbarians (Rangers can't two-weapon at all per u_init.c); penalty is a flat negative replacement table per skill, not a "split." (2) Luck to-hit caps around ±5 but Luck itself goes to ±10 (±13 with luckstone). (3) Reworded "monster spellcasters no longer get free extra step" — left as plausible but unverified. See companion-audit.md. -->
 
 The most important combat technique in the Mazes is knowing when
 *not* to fight. The second most important is making sure you hit
@@ -4491,7 +4492,7 @@ the game can think of to make your life interesting:
 
 - Your experience level (the game's way of saying "you've seen things")
 - Your weapon's enchantment (a +7 Excalibur hits *noticeably* better)
-- Your Luck (the universe literally takes sides, up to +5 or -5)
+- Your Luck (the universe literally takes sides; the to-hit contribution caps around ±5 even though Luck itself ranges further)
 - Your Strength bonus (muscles still matter underground)
 - The monster's AC (the lower their AC, the harder they are to tag)
 
@@ -4540,14 +4541,18 @@ entirely. You can be wearing impenetrable armor and a disenchanter
 will still ruin your day. AC is necessary but not sufficient.
 
 #### Two-Weapon Combat
+<!-- audit 2026-05-18 #82: corrected. Per u_init.c skill tables: Rogue and Samurai are the only roles that reach Expert in P_TWO_WEAPON_COMBAT; Valkyrie and Knight cap at Skilled; Barbarian caps at Basic; **Rangers can't two-weapon at all** (no P_TWO_WEAPON_COMBAT entry). Penalty structure is a flat negative replacement at each skill tier (-9/-7/-5/-3 to hit, -3/-1/0/+1 damage), not a "split." See companion-audit.md. -->
 
 Some roles can fight with a weapon in each hand, which looks
-impressive and gives more attacks per turn. The catch: it splits
-your skill bonuses and you can't use a shield. Two-weapon combat
-is powerful for roles with high skill caps in it (Rangers,
-Barbarians) but a trap for everyone else. If you're not sure, just
-use one really good weapon. In 5.0, two-handed weapons
-got a buff that makes them a compelling alternative to dual-wielding.
+impressive and gives more attacks per turn. The catch: each strike
+takes a flat to-hit and damage penalty determined by your
+two-weapon skill (−9/−7/−5/−3 to hit, −3/−1/0/+1 damage from
+Unskilled through Expert), and you can't use a shield. Only
+**Rogue** and **Samurai** can reach Expert; Valkyrie and Knight
+cap at Skilled; everyone else lower or none. Rangers don't have
+the skill at all. If you're not sure, just use one really good
+weapon. In 5.0, two-handed weapons got a buff (3/2 strength damage
+bonus) that makes them a compelling alternative to dual-wielding.
 
 #### Fighting Smart
 
@@ -6385,20 +6390,27 @@ powerful item-generation strategy (polypiling) that many players use
 to obtain specific high-value items.
 
 #### Wishing Restrictions
+<!-- audit 2026-05-18 #83: u.uconduct.wishes and u.uconduct.wisharti are two separate counters with two separate xlogfile achievements (you.h:157-158, topten.c:596-597). Wishing for the literal string "nothing" doesn't increment the counter (zap.c:6369). Amulet-of-Yendor first-pickup wish (allmain.c:445) must be declined for wishless conduct. See companion-audit.md. -->
 
 Two related conducts:
 
 **Wishless.** Never make a wish. Refuse wishes from wands, fountains,
-thrones, and all other sources. This is extremely challenging because
-wishes are the primary way to obtain critical items (silver dragon
-scale mail, speed boots, a bag of holding) when the dungeon doesn't
-provide them. Wishless players must make do with whatever the random
-number generator provides.
+smoky potion djinn, thrones, and all other sources. **Picking up
+the Amulet of Yendor also triggers a wish prompt**: wish for "nothing"
+(the literal string) and the counter doesn't tick. Wishing for
+"nothing" is the standard escape hatch for any forced wish — keep
+it in mind whenever something hands you an unwanted wish. This is
+extremely challenging because wishes are the primary way to obtain
+critical items (silver dragon scale mail, speed boots, a bag of
+holding) when the dungeon doesn't provide them.
 
 **No wishing for artifacts.** Make wishes, but never wish for an
 artifact. This prevents the most efficient wish strategy (wishing
 for Grayswandir, the Eye of the Aethiopica, or similar game-changing
-artifacts) while still allowing wishes for mundane necessities.
+artifacts) while still allowing wishes for mundane necessities. The
+counter ticks even for *denied* artifact wishes (when the game
+gives you "something in your hand" instead), so be sure you can
+get the artifact before asking.
 
 #### Combining Conducts
 <!-- audit 2026-05-17 #52: u_conduct/u_roleplay fields verified against insight.c + you.h + topten.c. Verified: nudist/blind tracking since 3.6, 5.0 added pauper/petless/permadeaf/sokoban/bonesless, vegan ⊂ vegetarian hierarchy, show_conduct end-screen listing. Cross-section fix in Bonesless below removed false claims about lucky-no-bones earning the conduct and about #conduct tracking lifesaving uses. See companion-audit.md. -->
@@ -7626,6 +7638,7 @@ All vortices fly, are mindless, and leave no corpse.
 :::
 
 #### Worms `w`
+<!-- audit 2026-05-18 #84: 4 rows × 8 cells verified against monsters.h:1114-1145. Long worm tail mechanic in worm.c, purple worm AT_ENGL/AD_DGST swallow in mhitu.c. Added "drops worm tooth" note to long worm (mon.c:619). 0 corrections beyond that. See companion-audit.md. -->
 
 Long worms become a maze of tail segments as they grow. Purple worms swallow you whole and digest. Don't get cornered.
 
@@ -7635,7 +7648,7 @@ Long worms become a maze of tail segments as they grow. Purple worms swallow you
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | baby long worm | brown | 5 | 3 | 5 | 0 | bite 1d4 |  |
 | baby purple worm | magenta | 8 | 3 | 5 | 0 | bite 1d6 |  |
-| long worm | brown | 9 | 3 | 5 | 10 | bite 2d4 |  |
+| long worm | brown | 9 | 3 | 5 | 10 | bite 2d4 | drops a worm tooth. |
 | purple worm | magenta | 15 | 9 | 6 | 20 | bite 2d8 · engulf 1d10 digest |  |
 
 :::
@@ -7938,8 +7951,9 @@ All nagas are poison-resistant.
 :::
 
 #### Ogres `O`
+<!-- audit 2026-05-18 #85: 3 rows (ogre/lord/king) verified clean against monsters.h:2052-2075. All stats, colors, attack dice match. Corrected "Ogre kings throw boulders" — ogres lack M2_ROCKTHROW (that's giants/Cyclops/ettins/titans). Ogres wield weapons (AT_WEAP), they don't throw rocks. See companion-audit.md. -->
 
-Big melee brutes. Ogre kings throw boulders. Drop decent weapons and armor.
+Big melee brutes that wield weapons. Drop decent weapons and armor.
 
 ::: dense-table
 

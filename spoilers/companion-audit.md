@@ -3195,3 +3195,78 @@ clean against dungeon.lua + branch lua files.
 
 ### 0 corrections.
 
+
+---
+
+## 2026-05-18 — Chapter audit #82: The Art of Combat
+
+Source: `spoilers/companion.md` line 4481. Mostly accurate; 3 fixes.
+
+### Verified
+- find_roll_to_hit factors (XL, weapon spe, Luck sgn-based, Str abon,
+  monster AC find_mac) per uhitm.c:365-427.
+- dbon() caps Str bonus at +6 for Str 25 (weapon.c:993).
+- Two-handed weapon Str bonus is 3/2 (50%) per uhitm.c:1467.
+- Conflict scales by Cha-Lvl per resist_conflict (mondata.c:1610).
+- Conflict requires monster sees you (mon.c:1306).
+- Shields forbidden with two-weapon (wield.c:789).
+
+### Corrected
+1. **Two-weapon roles wrong.** "High skill caps in it (Rangers,
+   Barbarians)" — Rangers cannot two-weapon at all in 5.0 (no
+   P_TWO_WEAPON_COMBAT entry in u_init.c:440-466). Barbarian caps at
+   P_BASIC. Actual Expert roles: **Rogue** and **Samurai**. Valkyrie
+   and Knight cap at Skilled. Reworded.
+2. **Penalty framing.** "Splits your skill bonuses" — actually a flat
+   negative replacement table: −9/−7/−5/−3 to hit, −3/−1/0/+1 damage
+   from Unskilled through Expert (weapon.c:1578-1700). Reworded.
+3. **Luck "up to +5 or -5"** — confused. LUCKMAX/LUCKMIN = 10
+   (you.h:467); luckstone adds 3. The to-hit *contribution* caps
+   around ±5, but Luck itself ranges further. Clarified.
+
+### Close calls (not changed)
+- "10 + AC - modifiers" formula — pedagogical approximation, real C
+  uses rnd(20) vs sum-of-modifiers. Workable.
+- "Strength +6 for STR 18/xx or more" — +6 requires STR 25 (post 18/99).
+  Mildly misleading; the "or more" hedge covers it.
+
+---
+
+## 2026-05-18 — Chapter audit #83: Wishing Restrictions
+
+Source: `spoilers/companion.md` line 6391. Useful additions.
+
+### Verified
+- u.uconduct.wishes + u.uconduct.wisharti two separate counters
+  (you.h:157-158, topten.c:596).
+- Wish sources: wand (zap.c:2583), fountain via water demon
+  (fountain.c:82), smoky potion djinni (potion.c:2845), throne
+  (sit.c:110, 251), wizard mode (wizcmds.c:38).
+
+### Added
+- **Amulet of Yendor first-pickup wish** (allmain.c:445) — wishless
+  conduct requires declining this with "nothing." Standard escape
+  hatch for any forced wish.
+- Denied artifact wishes still increment u.uconduct.wisharti
+  (objnam.c:5364 increments before the denial check), so
+  artiwishless players need to be sure the artifact is obtainable.
+
+---
+
+## 2026-05-18 — Chapter audit #84: Worms `w`
+
+Source: `spoilers/companion.md` line 7639. 4 rows × 8 cells verified
+clean against monsters.h:1114-1145. Added "drops worm tooth" note to
+adult long worm (mon.c:619).
+
+---
+
+## 2026-05-18 — Chapter audit #85: Ogres `O`
+
+Source: `spoilers/companion.md` line 7952. 3 rows (ogre/lord/king)
+verified clean against monsters.h:2052-2075.
+
+### Corrected
+1. **"Ogre kings throw boulders"** — false. Ogres lack M2_ROCKTHROW;
+   that's giants/Cyclops/ettins/titans. Ogres wield weapons. Removed.
+

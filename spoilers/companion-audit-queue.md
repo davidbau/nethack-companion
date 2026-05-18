@@ -86,10 +86,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 79**  L 2750  ( 103 lines)   ↳ A Practical Identification Strategy → Use-Testing (The Careful Way)
 - [x] **# 80**  L 7527  (  15 lines)   ↳ Bestiary Tables → Lights `y`
 - [x] **# 81**  L  512  ( 175 lines) 📖 The Lay of the Land
-- [ ] **# 82**  L 4382  ( 127 lines) 📖 The Art of Combat
-- [ ] **# 83**  L 6279  (  16 lines)   ↳ Voluntary Challenges → Wishing Restrictions
-- [ ] **# 84**  L 7497  (  15 lines)   ↳ Bestiary Tables → Worms `w`
-- [ ] **# 85**  L 7799  (  14 lines)   ↳ Bestiary Tables → Ogres `O`
+- [x] **# 82**  L 4382  ( 127 lines) 📖 The Art of Combat
+- [x] **# 83**  L 6279  (  16 lines)   ↳ Voluntary Challenges → Wishing Restrictions
+- [x] **# 84**  L 7497  (  15 lines)   ↳ Bestiary Tables → Worms `w`
+- [x] **# 85**  L 7799  (  14 lines)   ↳ Bestiary Tables → Ogres `O`
 - [ ] **# 86**  L  132  ( 191 lines) 📖 Choosing Your Expedition
 - [ ] **# 87**  L 6237  (  13 lines)   ↳ Voluntary Challenges → Illiterate
 - [ ] **# 88**  L 2344  (  70 lines)   ↳ A Practical Identification Strategy → Blessed, Uncursed, Cursed

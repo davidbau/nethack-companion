@@ -6638,6 +6638,7 @@ until they’ve secured the items they need.</p>
 </section>
 <section id="the-art-of-combat" class="level3">
 <h3>The Art of Combat</h3>
+<!-- audit 2026-05-18 #82: many claims verified (XL/Str/Luck/enchantment/AC factors in find_roll_to_hit, dbon Str cap, 3/2 two-handed Str bonus, conflict requires mutual sight + Cha-Lvl resist roll, shields forbidden with two-weapon). Three corrections: (1) Two-weapon roles wrong — actual EXPERT roles are Rogue + Samurai, not Rangers + Barbarians (Rangers can't two-weapon at all per u_init.c); penalty is a flat negative replacement table per skill, not a "split." (2) Luck to-hit caps around ±5 but Luck itself goes to ±10 (±13 with luckstone). (3) Reworded "monster spellcasters no longer get free extra step" — left as plausible but unverified. See companion-audit.md. -->
 <p>The most important combat technique in the Mazes is knowing when
 <em>not</em> to fight. The second most important is making sure you hit
 really, really hard when you do.</p>
@@ -6650,7 +6651,8 @@ game can think of to make your life interesting:</p>
 things”)</li>
 <li>Your weapon’s enchantment (a +7 Excalibur hits <em>noticeably</em>
 better)</li>
-<li>Your Luck (the universe literally takes sides, up to +5 or -5)</li>
+<li>Your Luck (the universe literally takes sides; the to-hit
+contribution caps around ±5 even though Luck itself ranges further)</li>
 <li>Your Strength bonus (muscles still matter underground)</li>
 <li>The monster’s AC (the lower their AC, the harder they are to
 tag)</li>
@@ -6726,13 +6728,17 @@ day. AC is necessary but not sufficient.</p>
 </section>
 <section id="two-weapon-combat" class="level4">
 <h4>Two-Weapon Combat</h4>
+<!-- audit 2026-05-18 #82: corrected. Per u_init.c skill tables: Rogue and Samurai are the only roles that reach Expert in P_TWO_WEAPON_COMBAT; Valkyrie and Knight cap at Skilled; Barbarian caps at Basic; **Rangers can't two-weapon at all** (no P_TWO_WEAPON_COMBAT entry). Penalty structure is a flat negative replacement at each skill tier (-9/-7/-5/-3 to hit, -3/-1/0/+1 damage), not a "split." See companion-audit.md. -->
 <p>Some roles can fight with a weapon in each hand, which looks
-impressive and gives more attacks per turn. The catch: it splits your
-skill bonuses and you can’t use a shield. Two-weapon combat is powerful
-for roles with high skill caps in it (Rangers, Barbarians) but a trap
-for everyone else. If you’re not sure, just use one really good weapon.
-In 5.0, two-handed weapons got a buff that makes them a compelling
-alternative to dual-wielding.</p>
+impressive and gives more attacks per turn. The catch: each strike takes
+a flat to-hit and damage penalty determined by your two-weapon skill
+(−9/−7/−5/−3 to hit, −3/−1/0/+1 damage from Unskilled through Expert),
+and you can’t use a shield. Only <strong>Rogue</strong> and
+<strong>Samurai</strong> can reach Expert; Valkyrie and Knight cap at
+Skilled; everyone else lower or none. Rangers don’t have the skill at
+all. If you’re not sure, just use one really good weapon. In 5.0,
+two-handed weapons got a buff (3/2 strength damage bonus) that makes
+them a compelling alternative to dual-wielding.</p>
 </section>
 <section id="fighting-smart" class="level4">
 <h4>Fighting Smart</h4>
@@ -8698,18 +8704,24 @@ players use to obtain specific high-value items.</p>
 </section>
 <section id="wishing-restrictions" class="level4">
 <h4>Wishing Restrictions</h4>
+<!-- audit 2026-05-18 #83: u.uconduct.wishes and u.uconduct.wisharti are two separate counters with two separate xlogfile achievements (you.h:157-158, topten.c:596-597). Wishing for the literal string "nothing" doesn't increment the counter (zap.c:6369). Amulet-of-Yendor first-pickup wish (allmain.c:445) must be declined for wishless conduct. See companion-audit.md. -->
 <p>Two related conducts:</p>
 <p><strong>Wishless.</strong> Never make a wish. Refuse wishes from
-wands, fountains, thrones, and all other sources. This is extremely
-challenging because wishes are the primary way to obtain critical items
-(silver dragon scale mail, speed boots, a bag of holding) when the
-dungeon doesn’t provide them. Wishless players must make do with
-whatever the random number generator provides.</p>
+wands, fountains, smoky potion djinn, thrones, and all other sources.
+<strong>Picking up the Amulet of Yendor also triggers a wish
+prompt</strong>: wish for “nothing” (the literal string) and the counter
+doesn’t tick. Wishing for “nothing” is the standard escape hatch for any
+forced wish — keep it in mind whenever something hands you an unwanted
+wish. This is extremely challenging because wishes are the primary way
+to obtain critical items (silver dragon scale mail, speed boots, a bag
+of holding) when the dungeon doesn’t provide them.</p>
 <p><strong>No wishing for artifacts.</strong> Make wishes, but never
 wish for an artifact. This prevents the most efficient wish strategy
 (wishing for Grayswandir, the Eye of the Aethiopica, or similar
 game-changing artifacts) while still allowing wishes for mundane
-necessities.</p>
+necessities. The counter ticks even for <em>denied</em> artifact wishes
+(when the game gives you “something in your hand” instead), so be sure
+you can get the artifact before asking.</p>
 </section>
 <section id="combining-conducts" class="level4">
 <h4>Combining Conducts</h4>
@@ -13585,6 +13597,7 @@ you.</p>
 </section>
 <section id="worms-w" class="level4">
 <h4>Worms <code>w</code></h4>
+<!-- audit 2026-05-18 #84: 4 rows × 8 cells verified against monsters.h:1114-1145. Long worm tail mechanic in worm.c, purple worm AT_ENGL/AD_DGST swallow in mhitu.c. Added "drops worm tooth" note to long worm (mon.c:619). 0 corrections beyond that. See companion-audit.md. -->
 <p>Long worms become a maze of tail segments as they grow. Purple worms
 swallow you whole and digest. Don’t get cornered.</p>
 <div class="dense-table">
@@ -13640,7 +13653,7 @@ swallow you whole and digest. Don’t get cornered.</p>
 <td>5</td>
 <td>10</td>
 <td>bite 2d4</td>
-<td></td>
+<td>drops a worm tooth.</td>
 </tr>
 <tr>
 <td>purple worm</td>
@@ -15146,7 +15159,8 @@ Healers find the guardian naga peaceful; everyone else does not.</p>
 </section>
 <section id="ogres-o" class="level4">
 <h4>Ogres <code>O</code></h4>
-<p>Big melee brutes. Ogre kings throw boulders. Drop decent weapons and
+<!-- audit 2026-05-18 #85: 3 rows (ogre/lord/king) verified clean against monsters.h:2052-2075. All stats, colors, attack dice match. Corrected "Ogre kings throw boulders" — ogres lack M2_ROCKTHROW (that's giants/Cyclops/ettins/titans). Ogres wield weapons (AT_WEAP), they don't throw rocks. See companion-audit.md. -->
+<p>Big melee brutes that wield weapons. Drop decent weapons and
 armor.</p>
 <div class="dense-table">
 <table>
