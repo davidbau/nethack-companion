@@ -6435,6 +6435,9 @@ Start with absolutely nothing: no gold, no inventory, no armor, no
 starting weapon. Set `OPTIONS=pauper` in your rcfile (rcfile or
 command line only; the in-game `O` menu cannot toggle it). Pauper
 implicitly sets nudist as well, so you also begin without armor.
+Pauper is a permanent conduct you never lose: it does not forbid
+acquiring or spending gold later. The conduct is about starting
+empty, not about staying penniless.
 
 To keep the start from being impossible, the game compensates:
 you get two unspent weapon-skill slots and your role knows one
@@ -6444,18 +6447,6 @@ sack, Cleric knows water, Samurai knows gunyoki rations). The
 **supply chests** scattered on early levels above the Oracle (a
 feature in every 5.0 game, not just pauper) can provide much of
 your first kit.
-
-Pauper is a permanent conduct you never lose, unlike the
-cascading nudist conduct, which goes away as soon as you wear
-armor.
-
-A practical note: pauper does not forbid acquiring or spending gold
-later. The conduct is about *starting* empty, not about staying
-penniless. But because shops are inherently a late-pauper resource
-(you have nothing to sell early), price identification becomes
-proportionally more valuable. The traditional roleplaying version,
-"never spend gold," is not tracked by the game in 5.0; it lives on
-only as a self-imposed extension of the pauper start.
 
 #### Petless (new in 5.0)
 <!-- audit 2026-05-17 #50: all claims verified. pettype:none bypasses pet_type via dog.c:225-229; tamedog increments u.uconduct.pets across all taming paths; minion.c:533-539 explicitly preserves petless on the endgame angel. xlogfile achievement at topten.c (add_achieveX "petless"). 0 corrections. See companion-audit.md. -->
