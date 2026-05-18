@@ -1535,3 +1535,67 @@ Verified ~30 claims; 3 corrected; also caught 2 self-audit errors in my prior DS
 
 ### Methodology note
 - The agent's self-audit prompt asked me to be skeptical of my own prior rewrites. This audit caught two such errors in the DSM rewrite, illustrating why every fix needs grep-verification at apply-time. Shimmering DSM was added based on monsters.h having a `MON("shimmering dragon")` entry, which exists, but I didn't check whether the SCALES/SCALE MAIL items exist (they're `#if 0`). Blue DSM speed was missed because I'd only grepped for the FROMOUTSIDE properties and not for EFast.
+
+---
+
+## 2026-05-17 — Chapter audit #31: Sokoban Solutions → Level 4, Version B
+
+Source: `spoilers/companion.md` lines 6042-6175 (137 lines)
+Verified prize odds + level mapping; step instructions tactical (not statically verifiable).
+
+### Verified
+- Prize odds "usually amulet of reflection, 25% bag of holding" — `soko1-2.lua:105-110` `if percent(25) then bag of holding else amulet of reflection` = 25% BoH / 75% AoR.
+- Level numbering: "Level 4" (topmost from player POV) = `soko1` C name. `dungeon.lua:218-244` Sokoban has `entry = -1` (ascending). Version A maps to `soko1-1.lua`, Version B to `soko1-2.lua` — inverse prize odds correctly distinguished.
+- Treasure-zoo structure: 3 small chambers + locked door + zoo region. `soko1-2.lua:98-102` matches.
+- Down-stair location: `soko1-2.lua:34` `des.stair("down", 06,15)` matches map.
+
+### Close calls
+- Chamber-coordinate references use spoiler's 1-indexed grid system with possible 1-row offset from lua's 0-indexed system. Internally consistent within the spoiler.
+
+### Notes
+- Step-instruction script is tactical, not falsifiable.
+- Two-boulders-remain final state can't be verified without simulating.
+
+---
+
+## 2026-05-17 — Chapter audit #30: Sokoban Solutions → Level 1, Version A
+
+Source: `spoilers/companion.md` lines 5627+
+Verified map/step consistency; 1 typo corrected.
+
+### Verified
+- Boulder positions in initial map line up with step descriptions.
+- Steps 1-2 path (reach A via row 4) reachable.
+- Step 3-4 D right-then-far-left requires loop through upper-right chamber (10,3)→(10,2)→(11,2)→(12,2)→(12,3)→(12,4) — verified passable.
+- Step 5 E push down (11,5)→(11,8) — column 11 is open through the row-6 cross-wall gap.
+- General Sokoban mechanics (boulders fill pits, rolling-boulder traps, −1 Luck cheats, ascending) all correct.
+
+### Corrected
+1. **Scroll coordinates "(3,12) and (4,12)"** — col 4 row 12 is the `┌` wall character. Only (2,12) and (3,12) are open floor. Version B note correctly cites the analogous nook as "(2,10) and (3,10)". Fix: "(2,12) and (3,12)".
+
+---
+
+## 2026-05-17 — Chapter audit #32: A Practical Identification Strategy → The Price Is Right
+
+Source: `spoilers/companion.md` lines 2439+ (292 lines)
+Verified ~50 price/multiplier claims across all item classes; 1 corrected; 1 close call.
+
+### Verified
+- All scroll base prices match `objects.h:1187-1265` SCROLL entries.
+- All potion base prices match `objects.h:1125-1177`.
+- All ring base prices match `objects.h:741-827`.
+- All wand base prices match `objects.h:1449-1499`. Wand of striking at 150 is correct.
+- Amulets all 150 zm (objects.h:834).
+- Tourist/dunce/visible-shirt 4/3 markup — single multiplier (don't stack) per `shk.c:2947-2951`.
+- Tourist threshold `<15` = `ulevel < MAXULEV/2` where MAXULEV=30.
+- Per-item 4/3 unID surcharge, 1-in-4 frequency, item-stable via `o_id` — `shk.c:2870`.
+- Unfamiliar shopkeeper 3/4 sell discount, 1-in-4 shopkeepers via `m_id` — `shk.c:3173`.
+- Angry +33% buy surcharge — `shk.c:1372` `(price+2)/3`.
+- All Cha multipliers match shk.c:2953-2964.
+- Live JS `computeBuy`/`computeSell` in the toolbar mirror C exactly including rounding.
+
+### Corrected
+1. **Sell-offer blurb at line 2521** — "an unangry shopkeeper offers ¼ of base" should be **½** (set_cost default is `divisor*=2`), and "(³⁄₁₆ on unidentified items from an unfamiliar shop)" should be **³⁄₈** (½ × ¾ = ⅜). The narrative paragraph above (line 2461) correctly says "half of base", and the JS computeSell also correctly produces ½ and ⅜. Just the blurb was off by a factor of 2 in both fractions.
+
+### Close call
+- "Angry shopkeeper +33% surcharge until you pay your bill in full" — the `ESHK->surcharge` flag is only cleared by `pacify_shk(..., TRUE)`, which is called on the new-customer transition (shk.c:302, 793), not on bill payment per se. The surcharge is stickier than the spoiler implies. Acceptable spirit though.

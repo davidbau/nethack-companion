@@ -3282,6 +3282,7 @@ it.</p>
 </section>
 <section id="the-price-is-right" class="level4">
 <h4>The Price Is Right</h4>
+<!-- audit 2026-05-17 #32: 50+ price/multiplier claims verified across all item classes, 1 corrected (sell-offer blurb ¼ → ½ and ³⁄₁₆ → ³⁄₈). Live JS computeBuy/computeSell match shk.c exactly. Close call: angry-shop surcharge is sticky beyond bill payment (only cleared on new-customer transition). See companion-audit.md. -->
 <p>Shopkeepers are, without exaggeration, your most important
 identification tool. Every unidentified item has a fixed base price that
 depends on what it actually is. When you pick up an item in a shop, the
@@ -3526,7 +3527,7 @@ same Cha bands with the Tourist surcharge stacked on.</p>
 </table>
 <p>Numbers are NetHack’s integer-rounded prices, not the round-number
 multiplier reapplied. Sell offers are unaffected by Charisma, so they
-aren’t shown; an unangry shopkeeper offers ¼ of base on a sell (³⁄₁₆ on
+aren’t shown; an unangry shopkeeper offers ½ of base on a sell (³⁄₈ on
 unidentified items from an unfamiliar shop).</p>
 </section>
 <section id="scroll-prices" class="level5">
@@ -7948,6 +7949,7 @@ reformatted for this guide.</em></p>
 </blockquote>
 <section id="level-1-version-a" class="level4">
 <h4>Level 1, Version A</h4>
+<!-- audit 2026-05-17 #30: map/step internal consistency verified, 1 corrected (scroll coordinates "(3,12) and (4,12)" → "(2,12) and (3,12)" — column 4 is the ┌ wall character). See companion-audit.md. -->
 <pre><code>            11111
    12345678901234
  1 ┌────┐  ┌───┐
@@ -7990,7 +7992,7 @@ reformatted for this guide.</em></p>
 <li>Push H left one square.</li>
 <li>Finish I, J, E, G, H, F, B, D, and C.</li>
 </ol>
-<p>One boulder (A) remains. The two scrolls at (3,12) and (4,12) are
+<p>One boulder (A) remains. The two scrolls at (2,12) and (3,12) are
 always scrolls of earth.</p>
 </section>
 <section id="level-1-version-b" class="level4">
@@ -8332,6 +8334,7 @@ id="level-4-version-b-prize-usually-amulet-of-reflection-25-bag-of-holding"
 class="level4">
 <h4>Level 4, Version B (prize: usually amulet of reflection, 25% bag of
 holding)</h4>
+<!-- audit 2026-05-17 #31: prize odds verified (25% BoH / 75% AoR per soko1-2.lua:105). Map data + step instructions are tactical, not statically verifiable. See companion-audit.md. -->
 <pre><code>            11111111112222222
    12345678901234567890123456
  1   ┌──────────────────────┐

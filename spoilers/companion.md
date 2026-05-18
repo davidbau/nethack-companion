@@ -2437,6 +2437,7 @@ catch: you need to identify the scroll first (irony noted) and
 bless it.
 
 #### The Price Is Right
+<!-- audit 2026-05-17 #32: 50+ price/multiplier claims verified across all item classes, 1 corrected (sell-offer blurb ¼ → ½ and ³⁄₁₆ → ³⁄₈). Live JS computeBuy/computeSell match shk.c exactly. Close call: angry-shop surcharge is sticky beyond bill payment (only cleared on new-customer transition). See companion-audit.md. -->
 
 Shopkeepers are, without exaggeration, your most important
 identification tool. Every unidentified item has a fixed base price
@@ -2518,8 +2519,8 @@ with the Tourist surcharge stacked on.
 
 Numbers are NetHack's integer-rounded prices, not the round-number
 multiplier reapplied. Sell offers are unaffected by Charisma, so
-they aren't shown; an unangry shopkeeper offers ¼ of base on a sell
-(³⁄₁₆ on unidentified items from an unfamiliar shop).
+they aren't shown; an unangry shopkeeper offers ½ of base on a sell
+(³⁄₈ on unidentified items from an unfamiliar shop).
 
 :::
 
@@ -5625,6 +5626,7 @@ The solutions still work; just mirror the directions.
 > for this guide.*
 
 #### Level 1, Version A
+<!-- audit 2026-05-17 #30: map/step internal consistency verified, 1 corrected (scroll coordinates "(3,12) and (4,12)" → "(2,12) and (3,12)" — column 4 is the ┌ wall character). See companion-audit.md. -->
 
 ```
             11111
@@ -5673,7 +5675,7 @@ The map now looks like this:
 6. Push H left one square.
 7. Finish I, J, E, G, H, F, B, D, and C.
 
-One boulder (A) remains. The two scrolls at (3,12) and (4,12)
+One boulder (A) remains. The two scrolls at (2,12) and (3,12)
 are always scrolls of earth.
 
 #### Level 1, Version B
@@ -6040,6 +6042,7 @@ of the small chambers ((17,12), (17,14), or (17,16)) next to the
 treasure zoo.
 
 #### Level 4, Version B (prize: usually amulet of reflection, 25% bag of holding)
+<!-- audit 2026-05-17 #31: prize odds verified (25% BoH / 75% AoR per soko1-2.lua:105). Map data + step instructions are tactical, not statically verifiable. See companion-audit.md. -->
 
 ```
             11111111112222222
