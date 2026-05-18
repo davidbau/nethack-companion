@@ -517,6 +517,7 @@ dungeon’s frequent act of goodwill.</p>
 <hr />
 <section id="the-lay-of-the-land" class="level3">
 <h3>The Lay of the Land</h3>
+<!-- audit 2026-05-18 #81: 20 numeric claims verified against dungeon.lua + medusa-*.lua + castle.lua + minetn-*.lua. DoD 25-30 levels; Gnomish Mines DL 2-4; Sokoban-up off Oracle; 4 levels × 2 variants; Oracle DL 5-9; Big Room 40% chance DL 10-12; Rogue DL 15-18; Mine's End 3 variants with luckstone; Quest portal DL 11-16 (chainlevel oracle base=6 range=2); Fort Ludios DL 18-22 portal; Medusa DL ~21-25; Castle DL ~27 bottom of DoD; 4 Medusa layouts; Perseus loot 75/50/25/50; 1-in-7 orcish Minetown. 0 corrections. See companion-audit.md. -->
 <p>The Mazes are procedurally generated. No two visits are quite the
 same. But the dungeon follows patterns, and understanding those patterns
 is the first step toward navigating them effectively.</p>
@@ -3986,8 +3987,8 @@ Apply a wand by engraving on the floor with it (command: <code>E</code>,
 then select the wand). What happens tells you what the wand is:</p>
 <table>
 <colgroup>
-<col style="width: 55%" />
-<col style="width: 44%" />
+<col style="width: 57%" />
+<col style="width: 42%" />
 </colgroup>
 <thead>
 <tr>
@@ -3997,69 +3998,76 @@ then select the wand). What happens tells you what the wand is:</p>
 </thead>
 <tbody>
 <tr>
-<td>“A lit field surrounds you”</td>
+<td><em>“A lit field surrounds you”</em></td>
 <td>light</td>
 </tr>
 <tr>
-<td>Your engraving vanishes</td>
-<td>cancellation / make invisible</td>
+<td><em>“The %s is riddled by bullet holes”</em></td>
+<td>magic missile</td>
 </tr>
 <tr>
-<td>“Bugs appear in the engraving”</td>
-<td>create monster</td>
+<td><em>“Gravel flies up from the floor”</em></td>
+<td>digging</td>
+</tr>
+<tr>
+<td><em>“A few ice cubes drop from the wand”</em></td>
+<td>cold</td>
+</tr>
+<tr>
+<td><em>“Flames fly from the wand”</em></td>
+<td>fire</td>
+</tr>
+<tr>
+<td><em>“Lightning arcs from the wand”</em> (may blind)</td>
+<td>lightning</td>
+</tr>
+<tr>
+<td><em>“The bugs on the floor stop moving”</em></td>
+<td>sleep or death</td>
 </tr>
 <tr>
 <td>You feel self-knowledgeable</td>
 <td>enlightenment</td>
 </tr>
 <tr>
-<td>“The engraving in the floor is gone”</td>
-<td>polymorph / teleportation</td>
-</tr>
-<tr>
-<td>Your engraving is smudged</td>
+<td>Floor reveals secret features</td>
 <td>secret door detection</td>
 </tr>
 <tr>
-<td>The floor is riddled by holes</td>
-<td>digging</td>
+<td>Monsters appear next to you</td>
+<td>create monster</td>
 </tr>
 <tr>
-<td>The bugs on the floor stop moving</td>
-<td>sleep</td>
+<td>Pre-existing engraving randomizes</td>
+<td>polymorph</td>
 </tr>
 <tr>
-<td>Lightning strikes the engraving</td>
-<td>lightning</td>
+<td>Pre-existing engraving “vanishes”</td>
+<td>cancellation, make invisible, or teleportation (test against floor
+with no prior writing to disambiguate)</td>
 </tr>
 <tr>
-<td>The engraving is covered in frost</td>
-<td>cold</td>
-</tr>
-<tr>
-<td>The engraving catches fire</td>
-<td>fire</td>
-</tr>
-<tr>
-<td>Nothing happens (charge is used)</td>
-<td>nothing</td>
+<td>“<em>Wand</em> unsuccessfully fights you”</td>
+<td>striking (and others that can’t engrave)</td>
 </tr>
 <tr>
 <td>You write in the dust</td>
-<td>all BEAM wands</td>
+<td>wand has no engrave special-case (most beams); zap-test to ID</td>
+</tr>
+<tr>
+<td>Wish prompt appears</td>
+<td><strong>wand of wishing</strong> (yes, engrave gives you the wish —
+don’t be afraid to engrave the suspected $500 wand)</td>
 </tr>
 </tbody>
 </table>
 <p>The engrave test costs one charge per wand but preserves the rest.
-With one zap you can sort most wands into clear categories. For BEAM
-wands (which just write in the dust like a finger), you’ll need further
-testing: try zapping them at a monster or in a safe direction.</p>
+With one zap you can sort most wands into clear categories. For wands
+that just write in the dust, you’ll need further testing: zap them at a
+monster or in a safe direction.</p>
 <p><strong>Warning:</strong> In 5.0, cursed wands may
 <strong>explode</strong> when used to engrave. BUC-test your wands
 before engraving with them.</p>
-<p>Crucially, engraving with a wand of wishing does nothing special. It
-just uses a charge. So if you suspect you have a wand of wishing ($500
-price), do NOT engrave with it. Zap it directly.</p>
 </section>
 <section id="the-sink-test-rings" class="level4">
 <h4>The Sink Test (Rings)</h4>
@@ -4072,6 +4080,7 @@ is consumed.</p>
 </section>
 <section id="use-testing-the-careful-way" class="level4">
 <h4>Use-Testing (The Careful Way)</h4>
+<!-- audit 2026-05-18 #79: substantial engrave-test table rewrite. Verified against engrave.c + zap.c: real messages are "Flames fly from the wand" (fire), "A few ice cubes drop" (cold), "Lightning arcs from the wand" (lightning), "Gravel flies up" (digging), "riddled by bullet holes" (magic missile not digging), polymorph randomizes existing engraving (not "vanishes"), cancellation/make-invisible/teleportation all share the same "vanishes" message. Wand-of-wishing engrave DOES grant the wish (zap.c:2575-2585) — reverse of previous warning. Also corrected unicorn-horn neutralization (sickness → fruit juice, not water; blindness/confusion/hallucination → water). Confused remove curse randomizes BUC of uncursed items (blessorcurse, 50/50), doesn't strictly curse. See companion-audit.md. -->
 <p>When you don’t have access to a shop or a sink, you can sometimes
 figure out what an item is by using it carefully. Here’s the approach
 for each category:</p>
@@ -4081,10 +4090,13 @@ something lethal. If a potion heals the monster, it’s some kind of
 healing potion. If the monster speeds up, it’s speed. If the monster
 becomes invisible, well, you’ve learned something (and now have an
 invisible monster to deal with).</p>
-<p>You can also dip items into potions. Dipping a weapon into a potion
-of sickness will poison it, confirming the potion’s identity. Dipping a
-unicorn horn into a potion of confusion, hallucination, or sickness will
-turn it into water.</p>
+<p>You can also dip items into potions. Dipping a poisonable weapon
+(dagger, arrow, spear) into a potion of sickness will poison it,
+confirming the potion’s identity (it won’t poison a long sword or other
+non-poisonable weapon). Dipping a unicorn horn into a potion of
+<strong>confusion</strong>, <strong>hallucination</strong>, or
+<strong>blindness</strong> turns it into water; dipping into a potion of
+<strong>sickness</strong> turns it into fruit juice.</p>
 <p><strong>Scrolls.</strong> Reading is risky. Some scrolls (destroy
 armor, amnesia, punishment) are outright harmful. The safest approach is
 to price-ID first, then read scrolls from safe price groups. If you must
@@ -4092,8 +4104,11 @@ test blind: take off your armor before reading a scroll that might be
 destroy armor. Read from a position where teleportation won’t be
 disastrous.</p>
 <p>Confused reading produces different effects for many scrolls and is
-sometimes useful. A confused scroll of remove curse, for example, will
-<em>curse</em> items instead.</p>
+sometimes useful. A confused scroll of remove curse <strong>randomizes
+the BUC of your uncursed items</strong> (about half end up blessed, half
+cursed) and leaves already-cursed items cursed — so it’s a way to get
+blessings cheaply, not a curse-removal tool. Don’t read it confused if
+you need to uncurse something.</p>
 <p><strong>Rings.</strong> First, confirm the ring is not cursed (altar
 or pet test). Then put it on. Many rings produce an immediate message or
 visible effect: you start levitating, you become invisible, you feel
@@ -8734,7 +8749,7 @@ spell or item (Wizard knows force bolt, Healer knows healing,
 Archeologist knows touchstone, Rogue and Tourist know sack, Cleric knows
 water, Samurai knows gunyoki rations). The <strong>supply
 chests</strong> scattered on early levels above the Oracle (a feature in
-every 5.0 game, not just pauper) carry most of your first kit.</p>
+every 5.0 game, not just pauper) can provide much of your first kit.</p>
 <p>Pauper is a permanent conduct you never lose, unlike the cascading
 nudist conduct, which goes away as soon as you wear armor.</p>
 <p>A practical note: pauper does not forbid acquiring or spending gold
@@ -9519,6 +9534,7 @@ form.</td>
 </section>
 <section id="long-sword" class="level4">
 <h4>Long sword</h4>
+<!-- audit 2026-05-18 #78: stats verified vs objects.h:270-280. Excalibur dipping note rephrased to clarify ANY alignment rolls 1-in-30 at XL 5+, but only Lawfuls succeed (non-Lawfuls get the sword cursed). Listed all four artifact forms (Excalibur, Vorpal Blade, Frost Brand, Fire Brand). Also corrected adjacent two-handed-sword row: "Vorpal Blade is the artifact form" was wrong (Vorpal Blade is a LONG_SWORD artifact per artilist.h:191); two-handed sword has no dedicated artifact. See companion-audit.md. -->
 <div class="dense-table">
 <table>
 <colgroup>
@@ -9549,8 +9565,10 @@ form.</td>
 <td>15</td>
 <td>—</td>
 <td>iron</td>
-<td>Dip in a fountain at XL5+ for Excalibur (1-in-30; 1-in-6 for Lawful
-Knights).</td>
+<td>At XL 5+ each dip in a fountain rolls 1-in-30 (1-in-6 for Knights);
+Lawfuls who roll get <strong>Excalibur</strong>, others get the sword
+cursed. Artifact forms: Excalibur, Vorpal Blade, Frost Brand, Fire
+Brand.</td>
 </tr>
 <tr>
 <td>katana</td>
@@ -9597,7 +9615,7 @@ Knights).</td>
 <td>50</td>
 <td>—</td>
 <td>iron</td>
-<td>Two-handed (no shield). Vorpal Blade is the artifact form.</td>
+<td>Two-handed (no shield). No dedicated artifact form.</td>
 </tr>
 <tr>
 <td>tsurugi</td>
@@ -13702,8 +13720,9 @@ and slow you down.</p>
 </section>
 <section id="lights-y" class="level4">
 <h4>Lights <code>y</code></h4>
-<p>Yellow light bursts on death and blinds you (10d20 damage if
-unresistant). Black light hallucinates. See <a
+<!-- audit 2026-05-18 #80: 2 rows (yellow light lvl 3 yellow + black light lvl 5 black) verified vs monsters.h:1168-1191. Attacks AT_EXPL/AD_BLND 10d20 and AT_EXPL/AD_HALU 10d12. M1_FLY|M1_AMORPHOUS|M1_MINDLESS on both, M1_SEE_INVIS adds for black. Corrected prose "(10d20 damage if unresistant)" — it's blindness DURATION not HP damage. See companion-audit.md. -->
+<p>Yellow light bursts on contact and blinds you for 10d20 turns. Black
+light bursts and hallucinates you for 10d12 turns. See <a
 href="#light-bursts">Light Bursts</a>.</p>
 <p>All lights fly and are amorphous and mindless.</p>
 <div class="dense-table">

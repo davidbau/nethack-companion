@@ -3066,3 +3066,132 @@ Source: `spoilers/companion.md` line 3028. Substantial corrections.
 - "Tengu corpse → teleportitis/teleport control" — also can grant
   poison resistance. Not noted.
 
+
+---
+
+## 2026-05-18 — Chapter audit #78: Long sword
+
+Source: `spoilers/companion.md` line 6823. Stats clean; 2 prose fixes
++ 1 critical adjacent bug.
+
+### Verified
+- long sword 1d8 / 1d12, wt 40, cost 15, iron — objects.h:270-272.
+- katana 1d10 / 1d12, wt 40, cost 80, hitbon +1 — objects.h:278-280.
+- Both P_LONG_SWORD skill.
+- Excalibur XL5+ + Knight 1/6 / others 1/30 (fountain.c:404-405).
+
+### Corrected
+1. **"1-in-30; 1-in-6 for Lawful Knights"** — misleading. The 1/30
+   roll fires for any alignment at XL5+; non-Lawfuls who roll
+   succeed get their sword cursed instead (fountain.c:411-424).
+   Reworded to be honest about the bad outcome for non-Lawfuls.
+2. **Artifact forms** — listed only Excalibur. Long sword has four
+   (Excalibur, Vorpal Blade, Frost Brand, Fire Brand per artilist.h).
+   Listed all.
+
+### Critical adjacent bug fixed
+- **Two-handed sword row claimed "Vorpal Blade is the artifact form"**
+  — wrong. Per artilist.h:191, Vorpal Blade is a LONG_SWORD artifact.
+  Two-handed sword has no dedicated artifact form. Fixed.
+
+---
+
+## 2026-05-18 — Chapter audit #79: Use-Testing (The Careful Way)
+
+Source: `spoilers/companion.md` line 2828. Substantial rewrite —
+the engrave-test table had multiple fabricated messages.
+
+### Verified
+- Cursed wand can explode on engrave (5.0 mechanic).
+- Pet refuses to walk over cursed items (dogmove.c:535).
+- Ring on-equip immediate effects (levitation, invisibility, gain Str).
+- Armor / cloak / glove / boot appearance pools and prices match objects.h.
+- Throwing potions at monsters identifies via effect.
+
+### Corrected — Engrave-test table (per engrave.c)
+1. WAN_FIRE — was "engraving catches fire"; actual: "Flames fly from
+   the wand."
+2. WAN_COLD — was "covered in frost"; actual: "A few ice cubes drop
+   from the wand."
+3. WAN_LIGHTNING — was "Lightning strikes the engraving"; actual:
+   "Lightning arcs from the wand." May blind.
+4. WAN_DIGGING — was "floor riddled by holes"; that's the MAGIC_MISSILE
+   message. Actual digging: "Gravel flies up from the floor."
+5. WAN_SECRET_DOOR_DETECTION — no "smudged" message; calls findit() with
+   standard detection feedback.
+6. WAN_CREATE_MONSTER — wasn't "bugs appear"; the wand summons real
+   monsters via create_critters (zap.c:2571).
+7. WAN_POLYMORPH vs WAN_TELEPORT vs cancellation/invis — was split into
+   two rows ("in the floor is gone" vs "vanishes"). Per engrave.c:670-678
+   all four produce the SAME message ("Your engraving vanishes"), and
+   polymorph actually RANDOMIZES the existing engraving (different
+   mechanic). Reworked.
+8. **WAN_WISHING engrave** — was "does nothing special, just uses a
+   charge; do NOT engrave with it." **Reversed in 5.0**. zap.c:2575-2585
+   shows engrave with wishing calls makewish() (unless Luck+rn2(5)<0
+   gives "Unfortunately, nothing happens"). Added a row that says
+   to engrave-test the suspected $500 wand.
+
+### Corrected — Other prose
+9. **Unicorn horn neutralization** — was "confusion, hallucination, or
+   sickness → water." Per potion.c:2153-2158: confusion → water,
+   hallucination → water, **blindness → water**, **sickness → fruit
+   juice**. Spoiler got sickness wrong and omitted blindness. Fixed.
+10. **Confused remove curse "will *curse* items instead"** — misleading.
+    blessorcurse(obj, 2) randomizes BUC of *uncursed* items (50/50
+    bless/curse) and leaves already-cursed items cursed. It's a 50/50
+    re-roll, not strict cursing, and it doesn't uncurse anything.
+    Reworded.
+
+### Notes
+- "BEAM wands" category label was non-canonical (C uses NODIR/IMMEDIATE/
+  RAY). Tightened the row to describe what readers will actually see.
+- Dipping poisonable-only weapon caveat (long sword can't be poisoned).
+
+---
+
+## 2026-05-18 — Chapter audit #80: Lights `y`
+
+Source: `spoilers/companion.md` line 7668. Table clean; 1 prose fix.
+
+### Verified
+- Yellow light: yellow, lvl 3, spd 15, AC 0, MR 0, AT_EXPL/AD_BLND 10d20.
+- Black light: black, lvl 5, spd 15, AC 0, MR 0, AT_EXPL/AD_HALU 10d12.
+- Both fly, amorphous, mindless. Black has M1_SEE_INVIS.
+- Black light is perminvis (makemon.c:1317).
+
+### Corrected
+1. **"Yellow light bursts on death and blinds you (10d20 damage if
+   unresistant)"** — wrong. Per mhitu.c:1623-1634, AD_BLND passes
+   d(10,20) as the **blindness duration** to make_blinded(); there is
+   no HP damage. Reworded to "blinds you for 10d20 turns / hallucinates
+   for 10d12 turns" matching the #66 Light Bursts section.
+
+---
+
+## 2026-05-18 — Chapter audit #81: The Lay of the Land
+
+Source: `spoilers/companion.md` line 509. 20 numeric claims verified
+clean against dungeon.lua + branch lua files.
+
+### Verified
+- DoD 25-30 levels (base=25, range=5).
+- Castle bottom of DoD.
+- Gnomish Mines branch DL 2-4 (base=2, range=3).
+- Sokoban goes UP from entry (direction="up").
+- Sokoban 4 levels × 2 variants (nlevels=2 each).
+- Oracle DL 5-9 (base=5, range=5).
+- Big Room 40% chance (chance=40).
+- Rogue Level DL 15-18 (base=15, range=4).
+- Mine's End 3 variants with guaranteed luckstone.
+- Quest portal DL 11-16 (chainlevel="oracle" base=6 range=2: 5+6=11 min,
+  9+(6+2-1)=16 max).
+- Fort Ludios portal DL 18-22.
+- Medusa near bottom of DoD ~DL 21-25.
+- 4 Medusa layouts.
+- Perseus statue loot: 75% cursed shield of reflection, 50% blessed +2
+  scimitar, 25% levitation boots, 50% sack.
+- 1-in-7 Orcish Town in Minetown (7 minetn-*.lua variants).
+
+### 0 corrections.
+

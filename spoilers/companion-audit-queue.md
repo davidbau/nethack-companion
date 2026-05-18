@@ -82,10 +82,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 75**  L 7939  (  12 lines)   ↳ Bestiary Tables → Xorns `X`
 - [x] **# 76**  L 7326  (  16 lines)   ↳ Bestiary Tables → Mimics `m`
 - [x] **# 77**  L 2950  ( 140 lines) 📖 Provisions and Dining
-- [ ] **# 78**  L 6704  (  11 lines)   ↳ Weapons Tables → Long sword
-- [ ] **# 79**  L 2750  ( 103 lines)   ↳ A Practical Identification Strategy → Use-Testing (The Careful Way)
-- [ ] **# 80**  L 7527  (  15 lines)   ↳ Bestiary Tables → Lights `y`
-- [ ] **# 81**  L  512  ( 175 lines) 📖 The Lay of the Land
+- [x] **# 78**  L 6704  (  11 lines)   ↳ Weapons Tables → Long sword
+- [x] **# 79**  L 2750  ( 103 lines)   ↳ A Practical Identification Strategy → Use-Testing (The Careful Way)
+- [x] **# 80**  L 7527  (  15 lines)   ↳ Bestiary Tables → Lights `y`
+- [x] **# 81**  L  512  ( 175 lines) 📖 The Lay of the Land
 - [ ] **# 82**  L 4382  ( 127 lines) 📖 The Art of Combat
 - [ ] **# 83**  L 6279  (  16 lines)   ↳ Voluntary Challenges → Wishing Restrictions
 - [ ] **# 84**  L 7497  (  15 lines)   ↳ Bestiary Tables → Worms `w`
