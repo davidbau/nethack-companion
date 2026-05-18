@@ -7250,3 +7250,89 @@ Six trivia additions from batches 1-4 reverted. Each was technically correct but
 Audit additions need a "would a beginner make a different decision with this fact?" test. The Artifacts chapter is the canonical home for artifact details; bestiary and weapon rows should not duplicate it. Saved as a memory rule [feedback-no-trivia] for the autonomous run going forward.
 
 ---
+
+## 2026-05-18 — v2 audit #26: Dangerous Encounters — Enchantment Drain
+
+Source: `spoilers/companion.md` line 2106. No corrections (re-audit clean).
+
+### Verified
+- G_HELL gates generation (`monsters.h:2156`; `makemon.c:1935,1998`).
+- Active-claw target via `some_armor()` at `do_wear.c:2629-2653` (cloak > body armor > shirt; 1/4 chance each for helm/gloves/boots/shield). Weapons never targeted by the active attack.
+- If naked, `rn2(5)` may chew ring/ring/amulet/blindfold or nothing at `uhitm.c:3621-3640`. (Note: `drain_item` actually only drains charged objects; the amulet/blindfold branches no-op. The book's wording "It can instead chew a ring, amulet, or blindfold" overstates what actually happens, but the strategic message — "if you're naked, expect to lose enchantment elsewhere" — is right. Skippable trivia.)
+- Passive weapon drain when YOU melee them at `mhitu.c:2508-2515` (silent).
+- Active-claw "less effective" message at `uhitm.c:3642`.
+- MC defense via `mhitm_mgc_atk_negated` at `uhitm.c:3613`; MC3 ~ 90% negation. MC does NOT apply to the passive counter-drain.
+- Artifact / Invocation-item / Rider-corpse resistance at `zap.c:1392-1394, 1462-1467`.
+- Corpse strips one intrinsic via `attrcurse()` at `eat.c:1270-1275`.
+
+### Close calls / notes
+- "Three or four melee strikes will take a +7 sword to +3" is slightly optimistic (90% drain probability, so ~4.4 strikes expected on average). The strategic message ("don't melee them") is right either way. Left as-is.
+
+---
+
+## 2026-05-18 — v2 audit #27: Bestiary Tables — Jabberwocks `J`
+
+Source: `spoilers/companion.md` line 8595. No corrections (re-audit clean).
+
+### Verified
+- jabberwock row LVL(15, 12, -2, 50, 0), bite 2d10 × 2 + claw 2d10 × 2, color orange, M1_FLY, G_GENO|1 — all match `include/monsters.h:1806-1814`.
+- Vorpal Blade auto-behead vs `PM_JABBERWOCK` at `src/artifact.c:1595-1596` confirmed: `dieroll == 1 || mdef->data == &mons[PM_JABBERWOCK]` short-circuits the 1/20 trigger.
+- "Vorpal jabberwock" entry at `monsters.h:1816-1824` is `#if 0 /* DEFERRED */` and correctly excluded.
+- "Player baseline speed" claim correct: `NORMAL_SPEED 12` at `permonst.h:80`.
+
+---
+
+## 2026-05-18 — v2 audit #28: Dangerous Encounters — Drowning
+
+Source: `spoilers/companion.md` line 1979. No corrections (re-audit clean).
+
+### Verified
+- Drown check uses monster's tile (`is_pool(magr->mx, magr->my)`) gated by `!Swimming && !Amphibious && !Breathless` at `src/uhitm.c:3389-3390`. No encumbrance test in the grab-drown path.
+- Three flags that prevent it: Swimming, Amphibious, Breathless (`youprop.h:264-277`). Magical breathing grants both Amphibious and Breathless.
+- Eels use AT_TUCH+AD_WRAP; kraken uses AT_HUGS+AD_WRAP (`monsters.h:3230-3256`). Both route via `mhitm_ad_wrap()`.
+- Castle moat eels at `dat/castle.lua:186-189`. Medusa-4 has eels+kraken; medusa-1/3 only eels. Water plane has both.
+- Swamp room generation: eels + piranha only, no krakens by design (`mkroom.c:557-565`).
+- Pool entry gated by `!Levitation && !Flying` at `hack.c:3272`. The drown/grab path does NOT check Levitation — "doesn't save you from an eel's grab" is right.
+- `emergency_disrobe()` gated by Stressed+ at `trap.c:4897-4941`.
+
+### Close calls / notes
+- "An amulet (or spell) of magical breathing gives you Breathless" — also gives Amphibious; either flag alone defeats the grab-drown. Harmless shorthand.
+- "Eels and krakens at moats around the Castle, in swamp rooms, and on the Water Plane" — krakens are only on Medusa-4 and the Water Plane, not in swamp rooms or castle moats. Defensible as a union ("eels [in some places] and krakens [in others]"), but a careful reader could misread. Borderline; left.
+
+---
+
+## 2026-05-18 — v2 audit #29: A Practical Identification Strategy — The Price Is Right
+
+Source: `spoilers/companion.md` line 2636. 1 factual fix.
+
+### Wrong → fixed
+- **Angry-shopkeeper paragraph "+33% buy surcharge ... until you pay your bill in full"**: backwards. `pacify_shk(shkp, FALSE)` at `shk.c:2663` (the bill-payment path) does NOT clear the `surcharge` flag. The flag is only cleared by `pacify_shk(shkp, TRUE)`, called at `shk.c:302` (bones-load) and `shk.c:793` (new-customer transition). So in a single hero's playthrough, paying the bill never lifts the surcharge — it's effectively permanent for that hero in that shop. The pass-1 close-call note had it right but the body text was never corrected. Reworded.
+
+### Verified
+- Cha multipliers exactly match `shk.c:2953-2964` (Cha ≤5 ×2, 6-7 ×3/2, 8-10 ×4/3, 11-15 ×1, 16-17 ×3/4, 18 ×2/3, ≥19 ×1/2).
+- Tourist / dunce / Hawaiian-shirt cues at `shk.c:2947-2951`: shared ×4/3 markup, mutually exclusive (`if`/`else if`), XL threshold `u.ulevel < MAXULEV/2` = below XL 15.
+- Tourist sell drops to base/3 at `shk.c:3154-3160`.
+- Unfamiliar-shop sell penalty 3/4 (`!(shkp->m_id % 4)`) at `shk.c:3173-3174`.
+- UnID buy surcharge 4/3 (`(oid % 4) == 0`) at `shk.c:2864-2873`.
+- Angry surcharge formula `tmp += (tmp+2)/3` at `shk.c:2985-2986`; JS widget matches.
+- JS `computeBuy`/`computeSell` faithfully replicate the C math including the `(*10/d + 5)/10` rounding step.
+- Sell-offer 1/2 base, 3/8 on unID from unfamiliar shop. Correct.
+- All four price tables (scrolls 22 entries, potions 26, rings 28, wands 22) match `include/objects.h` exactly. Group-size claims ($300 ring group = 4 rings; $500 wand group = 2) verified.
+- Amulets all $150 except the $0 fake Amulet of Yendor (`objects.h:865-869`).
+
+### Close calls / notes
+- "If a scroll is in the $20 group, it's identify. Period." True at base price but the unID 4/3 surcharge plus Cha multipliers can move that to $27 / $30 / etc. The print-only conversion table handles this, but the "Period." is slightly absolute.
+
+---
+
+## 2026-05-18 — v2 audit #30: Bestiary Tables — Piercers `p`
+
+Source: `spoilers/companion.md` line 8238. No corrections (re-audit clean).
+
+### Verified
+- rock piercer Lvl 3, Spd 1, AC 3, MR 0, bite 2d6 at `include/monsters.h:800-808`.
+- iron piercer Lvl 5, Spd 1, AC 0, MR 0, bite 3d6 at `include/monsters.h:809-817`.
+- glass piercer Lvl 7, Spd 1, AC 0, MR 0, bite 4d6, MR_ACID at `include/monsters.h:818-826`.
+- All three carry M1_CLING | M1_HIDE.
+
+---

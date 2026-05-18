@@ -1977,7 +1977,7 @@ gloves on) is one of the game's most devastating weapons —
 anything you hit that lacks stoning resistance turns to stone.
 
 #### Drowning
-<!-- audit 2026-05-17 #11: 5 claims verified, 2 corrected (encumbrance doesn't gate grab-drown; "stay unburdened" doesn't defend against the grab path). See companion-audit.md. -->
+<!-- audit 2026-05-17 #11 (re-audit 2026-05-18 v2 #28): 5 claims verified, 2 corrected (encumbrance doesn't gate grab-drown; "stay unburdened" doesn't defend against the grab path). v2 re-verified: drown check uses monster's tile (uhitm.c:3389-3390), Swimming/Amphibious/Breathless all defeat it (youprop.h:264-277), pool-entry check at hack.c:3272 also lets Flying skip (left unmentioned — Levitation is the canonical defense), emergency_disrobe gated by Stressed+ at trap.c:4897-4941, krakens generate only on Medusa-4 and the Water Plane (the "swamp rooms" reference is to eels not krakens per mkroom.c:557-565 comment). 0 corrections. See companion-audit.md. -->
 
 Giant eels, electric eels, and krakens can grab you with their
 wrap attack. Once they have you, each of the monster's turns you
@@ -2104,7 +2104,7 @@ weightless and can't be tinned (no nutrition), so eat them as soon
 as the fight ends.
 
 #### Enchantment Drain
-<!-- audit 2026-05-17 #73: corrected substantial errors. Active claw uses some_armor (do_wear.c:2629) — armor only (cloak > body armor > shirt > 1/4 chance for helm/gloves/boots/shield), or if naked a 5-way rn2(5) for ring/amulet/blindfold. NEVER targets weapon. Weapon drain is passive-only (mhitm_ad_ench when YOU melee them, mhitu.c:2509-2514). Active attack DOES print "Your X seems less effective." (uhitm.c:3641). Added Gehennom-only generation, MC defense, corpse warning (eats an intrinsic). See companion-audit.md. -->
+<!-- audit 2026-05-17 #73 (re-audit 2026-05-18 v2 #26): corrected substantial errors. Active claw uses some_armor (do_wear.c:2629) — armor only (cloak > body armor > shirt > 1/4 chance for helm/gloves/boots/shield), or if naked a 5-way rn2(5) for ring/amulet/blindfold. NEVER targets weapon. Weapon drain is passive-only (mhitm_ad_ench when YOU melee them, mhitu.c:2509-2514). Active attack DOES print "Your X seems less effective." (uhitm.c:3641). Added Gehennom-only generation, MC defense, corpse warning (eats an intrinsic). v2 re-verified: G_HELL gates generation (monsters.h:2156, makemon.c:1935,1998); some_armor target selection at uhitm.c:3619 (weapon never in scope); passive weapon drain at mhitu.c:2508-2515 with no message; obj_resists 10%/90% at zap.c:1392-1394; Invocation items + Rider corpses always resist at zap.c:1462-1467; MC defense via mhitm_mgc_atk_negated at uhitm.c:3613 (does not apply to passive); corpse attrcurse at eat.c:1270-1275. 0 corrections. See companion-audit.md. -->
 
 **Disenchanters** (`R`, blue) appear only in Gehennom. Their
 claw is the silent ascension-killer it's reputed to be, but the
@@ -2634,7 +2634,7 @@ items per read. A cursed scroll IDs only itself the first time you
 read one of that type, then one item per cursed read after.
 
 #### The Price Is Right
-<!-- audit 2026-05-17 #32: 50+ price/multiplier claims verified across all item classes, 1 corrected (sell-offer blurb ¼ → ½ and ³⁄₁₆ → ³⁄₈). Live JS computeBuy/computeSell match shk.c exactly. Close call: angry-shop surcharge is sticky beyond bill payment (only cleared on new-customer transition). See companion-audit.md. -->
+<!-- audit 2026-05-17 #32: 50+ price/multiplier claims verified across all item classes, 1 corrected (sell-offer blurb ¼ → ½ and ³⁄₁₆ → ³⁄₈). Live JS computeBuy/computeSell match shk.c exactly. Close call: angry-shop surcharge is sticky beyond bill payment (only cleared on new-customer transition). v2 audit 2026-05-18 #29: one factual fix. The Angry-shop paragraph said the +33% surcharge stays "until you pay your bill in full" — backwards. shk.c:2663 pacify_shk(shkp, FALSE) does NOT clear the surcharge flag; it's only cleared by pacify_shk(shkp, TRUE) at shk.c:302, 793 (bones-load and new-customer transitions). The pass-1 close-call note had it right, but the body text was never corrected. Reworded: paying the bill clears the bill but not the surcharge; the flag sticks for the rest of your visits to that shopkeeper. Verified every Cha/Tourist multiplier and shop-state edge against shk.c. JS widget computeBuy/computeSell still match get_cost/set_cost exactly. See companion-audit.md. -->
 
 Shopkeepers are, without exaggeration, your most important
 identification tool. Every unidentified item has a fixed base price
@@ -2682,8 +2682,10 @@ tiers too.
 **Angry.** A shopkeeper you've previously angered (fired a wand from a doorway,
 attacked them, picked up an unpaid item while broke) and then made
 amends (paid the bill, fled and let them calm down) becomes peaceful
-again but keeps a permanent +33% buy surcharge on every item until
-you pay your bill in full. Sell prices are unaffected.
+again but keeps a permanent +33% buy surcharge on every item. Paying
+the bill clears the bill but not the surcharge; that flag sticks for
+the rest of your visits to that shopkeeper. Sell prices are
+unaffected.
 
 The price tables for each item class follow. These are your
 field reference for shopping trips.
@@ -8232,7 +8234,7 @@ Pack hunters with mediocre loot but real numbers. The Mines are full of them; br
 
 :::
 
-<!-- audit 2026-05-18 #168: 3 rows (rock/iron/glass) verified clean vs monsters.h:800-826. All carry M1_HIDE | M1_CLING so qualify as ceiling-hiders (mondata.h:43-45); hiding gated by has_ceiling (mon.c:4672). Drop-on-walk-under is d(4,6) for ALL species regardless of bite die (hack.c:3436). Glass piercer has MR_ACID. 0 corrections. See companion-audit.md. -->
+<!-- audit 2026-05-18 #168 (re-audit 2026-05-18 v2 #30): 3 rows (rock/iron/glass) verified clean vs monsters.h:800-826. All carry M1_HIDE | M1_CLING so qualify as ceiling-hiders (mondata.h:43-45); hiding gated by has_ceiling (mon.c:4672). Drop-on-walk-under is d(4,6) for ALL species regardless of bite die (hack.c:3436). Glass piercer has MR_ACID. v2 re-confirmed every cell against monsters.h:800-826. 0 corrections. See companion-audit.md. -->
 #### Piercers `p`
 
 Clings to the ceiling and drops on you when you walk under. Hits hard for its level; you can't avoid the drop without flying or a clear ceiling.
@@ -8591,7 +8593,7 @@ Boulder throwers. Storm / fire / frost giants match the dragon elements; titans 
 :::
 
 #### Jabberwocks `J`
-<!-- audit 2026-05-17 #55: single jabberwock entry verified against monsters.h LVL(15,12,-2,50,0) + 4× 2d10 attacks + M1_FLY + G_GENO|1. Vorpal Blade auto-behead vs PM_JABBERWOCK confirmed at artifact.c:1595-1623 (short-circuits the dieroll==1 check). Corrected "slow" framing (twice): speed 12 is player baseline; most dragons are speed 9 which is actually slower. See companion-audit.md. -->
+<!-- audit 2026-05-17 #55 (re-audit 2026-05-18 v2 #27): single jabberwock entry verified against monsters.h LVL(15,12,-2,50,0) + 4× 2d10 attacks + M1_FLY + G_GENO|1. Vorpal Blade auto-behead vs PM_JABBERWOCK confirmed at artifact.c:1595-1623 (short-circuits the dieroll==1 check). Corrected "slow" framing (twice): speed 12 is player baseline; most dragons are speed 9 which is actually slower. v2 re-confirmed every cell against monsters.h:1806-1814. The deferred "vorpal jabberwock" entry at monsters.h:1816-1824 is wrapped in `#if 0 /* DEFERRED */` and correctly excluded. 0 corrections. See companion-audit.md. -->
 
 The monster from Lewis Carroll's *Jabberwocky* ("O frabjous day! Callooh! Callay!"). Tough, hits hard, and moves at player baseline speed: you can't simply walk away. Free XP if you're set up for the fight; lethal if you walk into one early. Vorpal Blade was made for beheading it.
 
