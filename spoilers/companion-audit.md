@@ -6682,16 +6682,12 @@ Source: `spoilers/companion.md` line 7597. 3 factual corrections,
 
 ## 2026-05-18 — v2 audit #5: Branches and Landmarks — The Quest
 
-Source: `spoilers/companion.md` line 984. 4 factual corrections,
-3 wisdom additions, 4 voice tightenings.
+Source: `spoilers/companion.md` line 984. 3 factual corrections
+(the auditor proposed a 4th — DL 11-17 — that was applied and then
+reverted; see Close calls below), 3 wisdom additions, 4 voice
+tightenings.
 
 ### Wrong → fixed
-- **"Around dungeon levels 11 through 16"**: portal range is 11
-  through **17**, not 11 through 16. `dat/dungeon.lua:27-31` defines
-  the Quest portal as `chainlevel="oracle", base=6, range=2`; the
-  Oracle is `base=5, range=5` (DL 5-9). With `level_range()`
-  (`src/dungeon.c:380-410`), the portal lives at Oracle-level + 6
-  through Oracle-level + 8 — minimum DL 11, maximum DL 17.
 - **"Only the Tourist's Platinum Yendorian Express Card gives magic
   resistance just by being carried"**: three carried-MR quest
   artifacts exist. Orb of Detection at `artilist.h:221` has
@@ -6743,10 +6739,21 @@ Source: `spoilers/companion.md` line 984. 4 factual corrections,
   replaced with periods per the punctuation-ladder rule.
 
 ### Close calls
-- Wiki cite was not loaded (WebFetch was blocked for the sub-agent).
-  The "transition from surviving to preparing" softening relied on
-  community knowledge rather than a fresh wiki quote. Worth
-  re-verifying when WebFetch is wired up in the autonomous phase.
+- **Reverted in-flight: "DL 11-16" → "DL 11-17" → "DL 11-16".**
+  The sub-agent's reading of `level_range()` (`src/dungeon.c:380-411`)
+  was off by one. The function returns a *count*: with `randc = 2`
+  the picked level is `base..base+1`, not `base..base+2`. For the
+  Quest portal that gives max `6 + 9 + 1 = 16`, not 17. The wiki
+  (consulted via WebSearch after the initial commit) showed 11-16
+  and prompted the closer reread. The companion text was reverted
+  to "11 through 16" within the same session; the badge notes the
+  transient mis-edit. Lesson for the autonomous phase: when C math
+  involves arithmetic on a count vs. a range, cross-check against
+  the wiki via WebSearch before committing.
+- Wiki direct fetch (WebFetch on `nethackwiki.com`) is blocked by
+  Cloudflare. WebSearch returns Google-summarized wiki content and
+  is the working workaround. alt.org game logs are accessible by
+  WebFetch directly.
 - Some roles quest much earlier than the XL-14 minimum suggests
   (Valkyrie, Samurai), while others quest much later (Healer,
   Tourist). Section makes no per-role timing claim, so the
