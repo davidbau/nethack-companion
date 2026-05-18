@@ -1509,7 +1509,7 @@ you'll miss the cues entirely. They are worth memorizing:
 | *"You sense a lack of food nearby."*   | Scroll of food detection, no food on level.                                            |
 | *"You feel materially poor."*          | Scroll of gold detection, no gold on level.                                            |
 | *"You feel like someone is helping you."* | Scroll of remove curse; worn/wielded cursed items uncursed.                         |
-| *"You move very quietly."*             | Ring of stealth (or elven cloak / elven boots) just put on — only if you didn't already have stealth. |
+| *"You move very quietly."*             | Ring of stealth (or elven cloak / elven boots).                                        |
 | *"Wow! This makes you feel great!"*    | Potion of restore ability; a drained stat returned to peak.                            |
 | *"You feel feverish."*                 | Lycanthropy infection from a were-monster. Eat wolfsbane, dip in holy water, or pray.  |
 | *"You are slowing down."*              | You're turning to stone. Immediately eat a lizard corpse, drink acid, or pray.         |
