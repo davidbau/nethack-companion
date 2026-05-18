@@ -1976,3 +1976,114 @@ cross-section.
   Mjollnir as a sacrifice gift regardless of alignment ... Lawful
   Valkyries can also dip a long sword in a fountain for Excalibur."
 
+
+---
+
+## 2026-05-17 — Chapter audit #49: Centaurs `C`
+
+Source: `spoilers/companion.md` line 7677
+All 3 rows (plains/forest/mountain) match monsters.h:1301-1323 exactly.
+Roster complete (3 of 3 S_CENTAUR entries). 0 corrections.
+
+### Verified
+- plains centaur: brown, lvl 4, spd 18, AC 4, MR 0, weapon 1d6 + kick 1d6.
+- forest centaur: green, lvl 5, spd 18, AC 3, MR 10, weapon 1d8 + kick 1d6.
+- mountain centaur: cyan, lvl 6, spd 20, AC 2, MR 10, weapon 1d10 + 2× kick 1d6.
+
+### Close calls (not changed)
+- Intro prose "mounted archers ... shoot at range" — not in attack table
+  (no AT_ARRO), but they have M2_COLLECT and AI to pick up and wield bows.
+  Gameplay-accurate description; left as is.
+
+---
+
+## 2026-05-17 — Chapter audit #50: Petless (new in 5.0)
+
+Source: `spoilers/companion.md` line 6418
+All claims verified against C source. 0 corrections.
+
+### Verified
+- u.uconduct.pets is a real conduct field (you.h:161).
+- End-of-game line "You have never had a pet" (insight.c:2155-2156).
+- xlogfile achievement at topten.c:606 `add_achieveX(buf, "petless", !u.uconduct.pets)`.
+- pettype:none mechanism: optfn_pettype (options.c:3221-3222) sets
+  gp.preferred_pet = 'n'; makedog (dog.c:225-229) short-circuits before
+  pet_type() is called, so no starting pet is created (overrides role
+  defaults).
+- All taming paths increment u.uconduct.pets (read.c, spell.c, trap.c,
+  potion.c, timeout.c, dothrow.c).
+- minion.c:533-539 explicitly does NOT tame the endgame guardian angel
+  when u.uconduct.pets == 0 — the game has a special-case to avoid
+  unexpectedly breaking petless conduct on the final level.
+
+### Close calls (not changed)
+- "New in 5.0" framing not directly verifiable from current C tree alone
+  (the conduct counter has long existed; the explicit "petless" achievement
+  bit + xlogfile encoding look like 5.0-era cleanup making it first-class).
+
+---
+
+## 2026-05-17 — Chapter audit #51: Snakes `S`
+
+Source: `spoilers/companion.md` line 7951
+6 rows × 8 columns verified against monsters.h:2167-2221. 1 corrected.
+
+### Verified
+- All 6 snake stats: garter snake, snake, water moccasin, python,
+  pit viper, cobra. Names/colors/levels/speeds/AC/MR/attacks match.
+- Python is the only non-hider (no M1_CONCEAL); all 6 swim (M1_SWIM).
+- Poisonous-corpse notes track M1_POIS correctly (snake/water moccasin/
+  pit viper/cobra have it; garter/python don't).
+- pois-res notes track MR_POISON.
+- Cobra spit-blind attack verified (AT_SPIT AD_BLND 0d0).
+- Python four-attack combo verified.
+- No "sea snake" or "mamba" in C — spoiler correctly omits them.
+
+### Corrected
+1. **"The pit viper and pit fiend are the dangerous ones"** — pit fiend
+   is `&` (major demon), not a snake. Changed "pit fiend" to "cobra".
+
+### Close calls (not changed)
+- "bite Nd_ poison" — the C attack is AD_DRST (drain Strength), not
+  pure poison HP loss. Common in-game shorthand; left as is.
+
+---
+
+## 2026-05-17 — Chapter audit #52: Combining Conducts
+
+Source: `spoilers/companion.md` line 6372
+Conduct list and listing-mechanism claims verified. Cross-section
+correction in adjacent Bonesless section.
+
+### Verified
+- u_conduct fields (insight.c:2126-2228): foodless, vegan, vegetarian,
+  atheist (gnostic), weaponless (weaphit), pacifist (killer), illiterate
+  (literate), polypileless (polypiles), polyselfless (polyselfs),
+  wishless (wishes), petless (pets), sokoban (sokocheat).
+- u_roleplay fields (you.h:169-180): permablind, nudist, permadeaf, pauper.
+- "Vegan ⊂ vegetarian" hierarchy via insight.c:2126-2132 else-if chain.
+- "End screen lists all maintained conducts" — show_conduct (insight.c:2089)
+  invoked via disclose() at game end and via #conduct command.
+- "Nudist: never wear armor/shirt/cloak/gloves/boots/helmet/shield" —
+  OPTIONS=nudist via optlist.h:530.
+- "Blind (Zen): set blind option" — optlist.h:210-211.
+- "Officially tracked since 3.6" for nudist/blind — fixes3-6-0.txt:1160.
+- "5.0 added Pauper, Petless, Permadeaf, Sokoban, Bonesless" —
+  all five appear as 5.0-tracked.
+
+### Cross-section corrections (Bonesless section)
+1. **"You can also get bonesless by luck"** — false. topten.c:605
+   `add_achieveX(buf, "bonesless", !flags.bones)` requires bones loading
+   to have been disabled (`!flags.bones`). Going a whole game without
+   encountering bones because the dungeon directory had nothing eligible
+   is reported as a separate Miscellaneous enlightenment line
+   ("never encountered any bones levels", insight.c:439), NOT as the
+   bonesless achievement. Rewrote the Bonesless paragraph.
+
+2. **"Your `#conduct` screen also tracks whether you've used an amulet
+   of life saving"** — false. show_conduct (insight.c:2089-2236) does
+   NOT list lifesaving uses. Lifesaving count lives in u.umortality
+   and is shown only by attribute enlightenment (insight.c:1977-2004)
+   as "you have been killed N times" — a different display. Removed the
+   paragraph entirely.
+

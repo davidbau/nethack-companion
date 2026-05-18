@@ -53,10 +53,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [ ] **# 46**  L 8180  ( 196 lines) 📖 What Changed Since Last Time
 - [ ] **# 47**  L 6399  ( 237 lines) 📖 Shopping and Shopkeeper Pricing
 - [ ] **# 48**  L 5446  ( 114 lines) 📖 Advanced Controls
-- [ ] **# 49**  L 7589  (  14 lines)   ↳ Bestiary Tables → Centaurs `C`
-- [ ] **# 50**  L 6341  (  12 lines)   ↳ Voluntary Challenges → Petless (new in 5.0)
-- [ ] **# 51**  L 7858  (  19 lines)   ↳ Bestiary Tables → Snakes `S`
-- [ ] **# 52**  L 6295  (  27 lines)   ↳ Voluntary Challenges → Combining Conducts
+- [x] **# 49**  L 7589  (  14 lines)   ↳ Bestiary Tables → Centaurs `C`
+- [x] **# 50**  L 6341  (  12 lines)   ↳ Voluntary Challenges → Petless (new in 5.0)
+- [x] **# 51**  L 7858  (  19 lines)   ↳ Bestiary Tables → Snakes `S`
+- [x] **# 52**  L 6295  (  27 lines)   ↳ Voluntary Challenges → Combining Conducts
 - [ ] **# 53**  L 6224  (  13 lines)   ↳ Voluntary Challenges → Pacifist
 - [ ] **# 54**  L 7603  (  35 lines)   ↳ Bestiary Tables → Dragons `D`
 - [ ] **# 55**  L 7713  (  12 lines)   ↳ Bestiary Tables → Jabberwocks `J`

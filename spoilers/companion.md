@@ -6370,6 +6370,7 @@ for Grayswandir, the Eye of the Aethiopica, or similar game-changing
 artifacts) while still allowing wishes for mundane necessities.
 
 #### Combining Conducts
+<!-- audit 2026-05-17 #52: u_conduct/u_roleplay fields verified against insight.c + you.h + topten.c. Verified: nudist/blind tracking since 3.6, 5.0 added pauper/petless/permadeaf/sokoban/bonesless, vegan ⊂ vegetarian hierarchy, show_conduct end-screen listing. Cross-section fix in Bonesless below removed false claims about lucky-no-bones earning the conduct and about #conduct tracking lifesaving uses. See companion-audit.md. -->
 
 The real prestige comes from combining multiple conducts. A
 vegetarian atheist run is substantially harder than either alone.
@@ -6416,6 +6417,7 @@ proportionally more valuable. The traditional roleplaying version,
 only as a self-imposed extension of the pauper start.
 
 #### Petless (new in 5.0)
+<!-- audit 2026-05-17 #50: all claims verified. pettype:none bypasses pet_type via dog.c:225-229; tamedog increments u.uconduct.pets across all taming paths; minion.c:533-539 explicitly preserves petless on the endgame angel. xlogfile achievement at topten.c (add_achieveX "petless"). 0 corrections. See companion-audit.md. -->
 
 Never have a pet. Set `OPTIONS=pettype:none` in your rcfile to skip
 the starting companion entirely (this overrides per-role defaults).
@@ -6455,21 +6457,17 @@ boulder-shoving and want their playthrough to acknowledge a
 clean solve.
 
 #### Bonesless (new in 5.0)
+<!-- audit 2026-05-17 (sweep from #52): the xlogfile bonesless achievement is set only if !flags.bones (topten.c:605), i.e. you turned bones loading off. Just *not encountering* bones is a separate Miscellaneous enlightenment line ("never encountered any bones levels", insight.c:439) and is NOT the bonesless conduct. Earlier text wrongly said you could "get bonesless by luck." Also removed false "amulet of life saving" tracking claim (show_conduct never lists lifesaving uses). See companion-audit.md. -->
 
-Never inherit from another player's grave. 5.0 records the number of
-bones files loaded during your run; if it stays at zero through the
-entire game, the bonesless conduct is preserved. The cleanest way
-to lock this in is `OPTIONS=!bones` in your rcfile (or `bones:false`
-in the in-game `O` menu): that turns off bones-file loading entirely
-for the run, so the conduct is automatic. Without that option, bones
-loading is on by default and the conduct depends on whether your
-dungeon directory happens to have eligible bones to deliver (it's
-also a per-level 1-in-3 roll when a candidate file exists, so you
-can also get bonesless by luck).
-
-Your `#conduct` screen also tracks whether you've used an amulet
-of life saving, which some players consider an informal conduct
-of its own.
+Never inherit from another player's grave. To get the bonesless
+conduct, you have to turn bones loading off for the run: set
+`OPTIONS=!bones` in your rcfile (or `bones:false` in the in-game
+`O` menu). The xlogfile `bonesless` achievement is recorded only
+when bones loading was disabled, not when you happened not to
+encounter any. (Going a whole game without bones because the
+dungeon directory has nothing eligible is a separate enlightenment
+line — "never encountered any bones levels" — and doesn't earn
+the conduct.)
 
 ---
 
@@ -7675,6 +7673,7 @@ All bats and birds fly.
 :::
 
 #### Centaurs `C`
+<!-- audit 2026-05-17 #49: all 3 rows (plains/forest/mountain) match monsters.h:1301-1323 exactly. Roster complete for S_CENTAUR. 0 corrections. See companion-audit.md. -->
 
 Mounted archers with strong physical attacks. They wield bows and shoot at range.
 
@@ -7948,8 +7947,9 @@ Rust monsters rust iron equipment on touch; disenchanters remove the enchantment
 :::
 
 #### Snakes `S`
+<!-- audit 2026-05-17 #51: all 6 rows verified against monsters.h:2167-2221 (garter snake, snake, water moccasin, python, pit viper, cobra). Corrected "pit fiend" typo (pit fiend is `&` demon, not a snake). AD_DRST shorthand as "poison" left as-is per common convention. See companion-audit.md. -->
 
-Mostly poisonous. The pit viper and pit fiend are the dangerous ones; garter snakes are fodder.
+Mostly poisonous. The pit viper and the cobra are the dangerous ones; garter snakes are fodder.
 
 All snakes swim. All except *python* also hide.
 
