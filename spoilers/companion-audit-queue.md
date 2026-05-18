@@ -134,10 +134,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#127**  L 6715  (  11 lines)   ↳ Weapons Tables → Two-handed sword
 - [x] **#128**  L 6210  (  14 lines)   ↳ Voluntary Challenges → Weaponless
 - [x] **#129**  L 6847  (  10 lines)   ↳ Weapons Tables → Trident
-- [ ] **#130**  L 1524  (  99 lines) 📖 A Field Guide to Dungeon Fauna
-- [ ] **#131**  L 7342  (  16 lines)   ↳ Bestiary Tables → Nymphs `n`
-- [ ] **#132**  L 1193  (  47 lines)   ↳ Traps and Hazards → Dangerous Traps
-- [ ] **#133**  L 7314  (  12 lines)   ↳ Bestiary Tables → Leprechauns `l`
+- [x] **#130**  L 1524  (  99 lines) 📖 A Field Guide to Dungeon Fauna
+- [x] **#131**  L 7342  (  16 lines)   ↳ Bestiary Tables → Nymphs `n`
+- [x] **#132**  L 1193  (  47 lines)   ↳ Traps and Hazards → Dangerous Traps
+- [x] **#133**  L 7314  (  12 lines)   ↳ Bestiary Tables → Leprechauns `l`
 - [ ] **#134**  L 5300  (  64 lines) 📖 The Ascension Run
 - [ ] **#135**  L 6380  (  19 lines)   ↳ Voluntary Challenges → Bonesless (new in 5.0)
 - [ ] **#136**  L 6726  (  11 lines)   ↳ Weapons Tables → Axe

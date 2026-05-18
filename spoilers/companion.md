@@ -1243,6 +1243,8 @@ entirely — except in Sokoban, where the puzzle levels disable the
 skip and you fall in regardless.
 
 #### Dangerous Traps
+<!-- audit 2026-05-18 #132: 3 corrections. (1) Anti-magic implosion damage "halved to 1d4 if you can pass through walls" — wrong; trap.c:2371-2372 dmgval2 = (dmgval2 + 3) / 4 — QUARTERED (rounded up), not halved. From max 4d4 the result is at most 4, not 1d4. (2) "Destroying it from range by zapping cancellation at it to defuse it without setting it off" — wrong; cancellation aimed at any magical trap (including ANTI_MAGIC per trap.h:118-122) triggers an explosion of 20 + d(3,6) damage at the trap's square (zap.c:3611-3621). It removes the trap but doesn't silent-defuse. (3) Polymorph trap "only PolyControl helps" — incomplete; Antimagic and Unchanging both block the polymorph entirely (trap.c:2486-2489). Added that to the polymorph-trap paragraph. -->
+
 
 | Trap              | Effect                                               |
 | ----------------- | ---------------------------------------------------- |
@@ -1264,6 +1266,9 @@ hoarding is suddenly ash. Fire resistance saves your skin but
 Polymorph traps are a double-edged sword. With polymorph control,
 they're a free polymorphing booth. Without it, you become something
 random, possibly a newt that can't use any of its equipment.
+**Magic resistance and the Unchanging intrinsic both block the
+polymorph entirely** — Tcontrol is the only way to *use* the trap,
+but MR or Unchanging let you walk through it untouched.
 
 Sleeping gas is murder in monster-rich areas. You can't fight, you
 can't run, you can't even wake up on purpose. Monsters line up
@@ -1277,9 +1282,11 @@ an "anti-magic implosion" that costs you HP. The damage is
 half-spell damage, plus `rnd(4)` for wielding Magicbane, plus
 `rnd(4)` for carrying any one magic-resistance artifact (only one
 counts — the check breaks on first match). At worst that's 4d4
-damage, halved to 1d4 if you can pass through walls. The defense
-is finding the trap first (search), or destroying it from range by
-zapping *cancellation* at it to defuse it without setting it off.
+damage, quartered (rounded up) if you can pass through walls. The
+defense is finding the trap first (search) and stepping around it.
+A wand of cancellation aimed at a magical trap *does* remove the
+trap, but it triggers a 20 + 3d6 damage blast at the trap's square
+in the process — not a silent defuse.
 
 Iron footwear (iron shoes or kicking boots) absorbs a
 surprising amount of trap punishment in 5.0: no leg damage from a
@@ -1587,6 +1594,8 @@ you'll miss the cues entirely. They are worth memorizing:
 ---
 
 ### A Field Guide to Dungeon Fauna
+<!-- audit 2026-05-18 #130: chapter overview verified against include/defsym.h symbols and individual monsters.h entries. 2 corrections: (1) "Xan, a leg-wound trapper" misreads — xan does AT_STNG AD_LEGS (sting cripples legs) but is NOT a trapper (S_TRAPPER is the engulfer t-class). Reworded. (2) "Leprechaun single bite drains gold" — leprechaun is AT_CLAW AD_SGLD (monsters.h:660), not bite. Reworded. All other class-symbol mappings, monster stats, and tactical claims verified clean. -->
+
 
 The Mazes are home to hundreds of monster species, organized into
 classes denoted by letters. Lowercase letters are generally smaller
@@ -1616,7 +1625,7 @@ AC / attack details on every monster, see the
 | `o`    | Orcs      | Numerous and modest in strength one-on-one; dangerous in packs. Hill orcs and Mordor orcs are the common upper-dungeon variants. |
 | `r`    | Rodents   | Rats and rock moles. Rock moles eat metal items, so protect your gear.                  |
 | `s`    | Spiders   | Cave spiders are weak. Giant spiders poison.                                            |
-| `x`    | Grid bugs | The weakest monster in the game; they can't even move diagonally. Free XP — they don't leave corpses. The `x` class also covers the much-later **xan**, a leg-wound trapper. |
+| `x`    | Grid bugs | The weakest monster in the game; they can't even move diagonally. Free XP — they don't leave corpses. The `x` class also covers the much-later **xan**, whose sting cripples your legs (slow movement until it heals). |
 | `:`    | Lizards   | Newts, geckos, and iguanas are individually weak — usually not too dangerous if you're paying attention. The class matters mostly for the corpses: **lizard corpses cure petrification** (always carry one for cockatrice/Medusa insurance), and newt corpses may restore 1–3 mana to spellcasters. |
 
 #### Mid-Dungeon Threats
@@ -1633,7 +1642,7 @@ AC / attack details on every monster, see the
 | `H`    | Giants            | Strong melee, throw boulders. Giants carry gems.                                                     |
 | `J`    | Jabberwock        | Rare, but if you see one you're in for a fight. Four 2d10 attacks per turn (two bites and two claws) at normal speed. |
 | `K`    | Keystone Kops     | The shopkeeper-summoned constabulary. They appear when you steal, refuse to pay, or anger a shopkeeper. Individually weak but they swarm, and they jeer at you. |
-| `l`    | Leprechauns       | Steal your gold and teleport away. A single bite can drain up to *all* of your purse. Hide gold in a sack, drop it elsewhere, or fight at range. |
+| `l`    | Leprechauns       | Steal your gold and teleport away. A single claw can grab up to *all* of your purse. Hide gold in a sack, drop it elsewhere, or fight at range. |
 | `L`    | Liches            | Spellcasters. Arch-liches are among the most dangerous monsters in the game.                         |
 | `m`    | Mimics            | Disguised as items, walls, doors, fountains, altars, or boulders. See the mimics note below.         |
 | `M`    | Mummies           | Aggressive undead with physical claw attacks. Their corpses are dangerous to eat (age you). Mummy wrappings worn as a cloak block invisibility — usually a downside, but useful if you've gone invisible and need a shopkeeper to interact with you. |
@@ -8015,6 +8024,8 @@ All kobolds have poisonous corpses and are poison-resistant.
 :::
 
 #### Leprechauns `l`
+<!-- audit 2026-05-18 #133: clean. Stats (Lvl 5, Spd 15, AC 8, MR 20, green, claw 1d2 AD_SGLD), M1_TPORT, AT_CLAW (not bite) all verified against monsters.h:660-666 and steal.c:58-115. Stolen gold is added to mtmp->minvent and drops on death. -->
+
 
 Steals gold and teleports away. The fix is to carry no gold near them, or to kill from range. The corpse drops the gold back.
 
@@ -8044,6 +8055,8 @@ All mimics are amorphous, hide, and are acid-resistant.
 :::
 
 #### Nymphs `n`
+<!-- audit 2026-05-18 #131: clean. All three nymph stats (wood/water/mountain — LVL 3, Spd 12, AC 9, MR 20%, AT_CLAW AD_SITM + AT_CLAW AD_SEDU, M1_TPORT) match monsters.h:702-723. Water nymph has M1_SWIM (line 714). Corpse grants intrinsic teleportitis with 10% chance per should_givit (eat.c:936-975). -->
+
 
 Steals one item and teleports away. The cure is to engage from range, block her path with pets, or wear an amulet of life saving and steal the item back from her corpse later.
 

@@ -1575,6 +1575,7 @@ and you fall in regardless.</p>
 </section>
 <section id="dangerous-traps" class="level4">
 <h4>Dangerous Traps</h4>
+<!-- audit 2026-05-18 #132: 3 corrections. (1) Anti-magic implosion damage "halved to 1d4 if you can pass through walls" — wrong; trap.c:2371-2372 dmgval2 = (dmgval2 + 3) / 4 — QUARTERED (rounded up), not halved. From max 4d4 the result is at most 4, not 1d4. (2) "Destroying it from range by zapping cancellation at it to defuse it without setting it off" — wrong; cancellation aimed at any magical trap (including ANTI_MAGIC per trap.h:118-122) triggers an explosion of 20 + d(3,6) damage at the trap's square (zap.c:3611-3621). It removes the trap but doesn't silent-defuse. (3) Polymorph trap "only PolyControl helps" — incomplete; Antimagic and Unchanging both block the polymorph entirely (trap.c:2486-2489). Added that to the polymorph-trap paragraph. -->
 <table>
 <colgroup>
 <col style="width: 24%" />
@@ -1630,7 +1631,10 @@ suddenly ash. Fire resistance saves your skin but <em>not</em> your
 belongings.</p>
 <p>Polymorph traps are a double-edged sword. With polymorph control,
 they’re a free polymorphing booth. Without it, you become something
-random, possibly a newt that can’t use any of its equipment.</p>
+random, possibly a newt that can’t use any of its equipment.
+<strong>Magic resistance and the Unchanging intrinsic both block the
+polymorph entirely</strong> — Tcontrol is the only way to <em>use</em>
+the trap, but MR or Unchanging let you walk through it untouched.</p>
 <p>Sleeping gas is murder in monster-rich areas. You can’t fight, you
 can’t run, you can’t even wake up on purpose. Monsters line up to hit
 you like it’s a buffet.</p>
@@ -1642,10 +1646,12 @@ HP. The damage is <code>rnd(4)</code> base, plus another
 <code>rnd(4)</code> if you have half-physical or half-spell damage, plus
 <code>rnd(4)</code> for wielding Magicbane, plus <code>rnd(4)</code> for
 carrying any one magic-resistance artifact (only one counts — the check
-breaks on first match). At worst that’s 4d4 damage, halved to 1d4 if you
-can pass through walls. The defense is finding the trap first (search),
-or destroying it from range by zapping <em>cancellation</em> at it to
-defuse it without setting it off.</p>
+breaks on first match). At worst that’s 4d4 damage, quartered (rounded
+up) if you can pass through walls. The defense is finding the trap first
+(search) and stepping around it. A wand of cancellation aimed at a
+magical trap <em>does</em> remove the trap, but it triggers a 20 + 3d6
+damage blast at the trap’s square in the process — not a silent
+defuse.</p>
 <p>Iron footwear (iron shoes or kicking boots) absorbs a surprising
 amount of trap punishment in 5.0: no leg damage from a bear trap, no
 spikes from a spiked pit, no polymorph from a polymorph trap (your shoes
@@ -2082,6 +2088,7 @@ eucalyptus, or pray.</td>
 <hr />
 <section id="a-field-guide-to-dungeon-fauna" class="level3">
 <h3>A Field Guide to Dungeon Fauna</h3>
+<!-- audit 2026-05-18 #130: chapter overview verified against include/defsym.h symbols and individual monsters.h entries. 2 corrections: (1) "Xan, a leg-wound trapper" misreads — xan does AT_STNG AD_LEGS (sting cripples legs) but is NOT a trapper (S_TRAPPER is the engulfer t-class). Reworded. (2) "Leprechaun single bite drains gold" — leprechaun is AT_CLAW AD_SGLD (monsters.h:660), not bite. Reworded. All other class-symbol mappings, monster stats, and tactical claims verified clean. -->
 <p>The Mazes are home to hundreds of monster species, organized into
 classes denoted by letters. Lowercase letters are generally smaller or
 less dangerous; uppercase letters are larger or more threatening. Color
@@ -2217,7 +2224,8 @@ gear.</td>
 <td>Grid bugs</td>
 <td>The weakest monster in the game; they can’t even move diagonally.
 Free XP — they don’t leave corpses. The <code>x</code> class also covers
-the much-later <strong>xan</strong>, a leg-wound trapper.</td>
+the much-later <strong>xan</strong>, whose sting cripples your legs
+(slow movement until it heals).</td>
 </tr>
 <tr>
 <td><code>:</code></td>
@@ -2311,7 +2319,7 @@ and they jeer at you.</td>
 <tr>
 <td><code>l</code></td>
 <td>Leprechauns</td>
-<td>Steal your gold and teleport away. A single bite can drain up to
+<td>Steal your gold and teleport away. A single claw can grab up to
 <em>all</em> of your purse. Hide gold in a sack, drop it elsewhere, or
 fight at range.</td>
 </tr>
@@ -14404,6 +14412,7 @@ unless you have poison resistance.</p>
 </section>
 <section id="leprechauns-l" class="level4">
 <h4>Leprechauns <code>l</code></h4>
+<!-- audit 2026-05-18 #133: clean. Stats (Lvl 5, Spd 15, AC 8, MR 20, green, claw 1d2 AD_SGLD), M1_TPORT, AT_CLAW (not bite) all verified against monsters.h:660-666 and steal.c:58-115. Stolen gold is added to mtmp->minvent and drops on death. -->
 <p>Steals gold and teleports away. The fix is to carry no gold near
 them, or to kill from range. The corpse drops the gold back.</p>
 <div class="dense-table">
@@ -14513,6 +14522,7 @@ The giveaway is the wrong object on the wrong square.</p>
 </section>
 <section id="nymphs-n" class="level4">
 <h4>Nymphs <code>n</code></h4>
+<!-- audit 2026-05-18 #131: clean. All three nymph stats (wood/water/mountain — LVL 3, Spd 12, AC 9, MR 20%, AT_CLAW AD_SITM + AT_CLAW AD_SEDU, M1_TPORT) match monsters.h:702-723. Water nymph has M1_SWIM (line 714). Corpse grants intrinsic teleportitis with 10% chance per should_givit (eat.c:936-975). -->
 <p>Steals one item and teleports away. The cure is to engage from range,
 block her path with pets, or wear an amulet of life saving and steal the
 item back from her corpse later.</p>
