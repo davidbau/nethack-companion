@@ -973,7 +973,7 @@ Delphi, flanked by centaur statues and four fountains.
 The Oracle offers two services:
 
 - **Minor consultations** are cheap (50 zorkmids) and produce
-  fortune-cookie-style messages — drawn from the same true-rumor
+  fortune-cookie-style messages, drawn from the same true-rumor
   pool, mostly atmospheric, occasionally useful.
 - **Major consultations** are expensive (500 + 50 × experience
   level) but pay back the gold in useful intel: hints about
