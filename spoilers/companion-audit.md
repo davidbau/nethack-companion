@@ -5399,3 +5399,177 @@ consistency fixes.
   Added.
 
 ---
+
+## 2026-05-18 — Chapter audit #150: The Riders
+
+Source: `spoilers/companion.md` line 2054. 4 corrections.
+
+### Verified
+- Three Riders are unique, level 30, M1_REGEN, M1_SEE_INVIS, HP
+  100, AC -5 (monsters.h:3144-3173).
+- All have AT_TUCH 8d8 ×2 attacks.
+- Pestilence/Famine second-hit stun-downgrade real (mhitu.c:337-346).
+- Famine's hit adds rn1(40,40) = 40-79 hunger (uhitm.c:3791-3795).
+- Astral placement: each in a different round room
+  (dat/astral.lua:113, 121, 129).
+- Revival: minimum 6 turns for Death, 12 for others; 1/3 chance/turn
+  (mkobj.c:1371-1382).
+
+### Corrected
+1. **"Permanently displaced"** — wrong. M3_DISPLACES at
+   monflag.h:175 means "moves monsters out of its way" (shoves
+   them aside as it walks), NOT the cloak-of-displacement evasion.
+2. **"Ignore magic resistance for their signature attacks"** —
+   wrong for Death. uhitm.c:3858-3883 shows Antimagic blocks the
+   3/20 touch-of-death instakill case; base damage still goes
+   through but the kill is blocked.
+3. **"Eating their corpses is fatal in different ways for each"**
+   — wrong. All three trigger the same `done(DIED)` with killer
+   text "unwisely ate the body of <name>" (eat.c:831-849).
+4. **"Famine drives you instantly to Weak or Fainting"** —
+   overstated. 40-79 hunger units won't drop a Satiated hero
+   below Hungry in one swing.
+
+### Added
+- **Sick resistance is the only complete defense against
+  Pestilence** (mhitu.c:1033-1043 make_sick with SICK_NONVOMITABLE).
+  Unicorn horn does not cure the resulting food poisoning once
+  contracted.
+
+---
+
+## 2026-05-18 — Chapter audit #151: A Practical Strategy
+
+Source: `spoilers/companion.md` line 2911. 1 prose fix.
+
+### Verified
+- Altar BUC reveal (do.c:379-389 doaltarobj).
+- Engrave-test costs one charge (engrave.c:792-799 + zap.c:2520).
+- Wand of digging auto-IDs from engrave message
+  (engrave.c:684-704 doknown=TRUE).
+- All 12 amulet costs are 150 (objects.h:834 AMULET() macro).
+
+### Corrected
+1. **"A wand that freezes your engraving is cold"** — actual
+   WAN_COLD engrave message is "A few ice cubes drop from the
+   wand" (engrave.c:658-661). The vanish/freeze branch only
+   triggers when overwriting an existing BURN engraving (FALLTHROUGH
+   at engrave.c:662-664). Reworded to "drops ice cubes."
+
+---
+
+## 2026-05-18 — Chapter audit #152: Gremlins `g`
+
+Source: `spoilers/companion.md` line 7230. 1 correction.
+
+### Verified
+- All three stats rows match monsters.h:448-473 for
+  Lvl/Spd/AC/MR/attacks/colors.
+- gremlin attacks claw 1d6 / claw 1d6 / bite 1d4 / claw curse
+  (AD_CURS).
+- gremlin M1_SWIM, M1_POIS, M2_STALK, MR_POISON.
+- gargoyle/winged-gargoyle M1_THICK_HIDE, MR_STONE; winged also
+  M1_FLY.
+
+### Corrected
+1. **Headnote conflated water-split with night-curse**. Per
+   mon.c:987-992, water/fountain triggers a gremlin SPLIT (2/3
+   chance per step). Per uhitm.c:3040-3057 + sit.c:644+
+   attrcurse(), the AD_CURS attack only fires at NIGHT (early-
+   returns during day) and strips a random hero intrinsic, not
+   curses items. Reworded to separate the two mechanics.
+
+---
+
+## 2026-05-18 — Chapter audit #153: Sokoban Level 1, Version B
+
+Source: `spoilers/companion.md` line 5642. No corrections.
+
+### Verified
+- Map walls/floors and all 12 boulders A-L match soko4-2.lua:9-21,
+  29-42.
+- Upstair (2,2), branch portal (4,2), 10 pits + 2 rolling-boulder
+  traps, 2 always-scrolls-of-earth at (2,10)/(3,10).
+- All 16 numbered solution steps land on lua floor with cardinal
+  approach squares; no diagonal pushes; no pulls.
+- "Two boulders (D and E) remain" tally consistent with 10 pits +
+  H-square wall-gap fill = 11 targets; 12 boulders − 11 = 1
+  surplus, plus the H-square filling makes the D/E pair the
+  remainder.
+
+---
+
+## 2026-05-18 — Chapter audit #155: Zruties
+
+Source: `spoilers/companion.md` line 8354. No corrections.
+
+### Verified
+- LVL(9, 8, 3, 0, 0) at monsters.h:1196 → table Lvl 9, Spd 8, AC 3,
+  MR% 0 all match.
+- Color brown matches CLR_BROWN (monsters.h:1202).
+- Attacks claw 3d4 · claw 3d4 · bite 3d6 match AT_CLAW/AD_PHYS x2 +
+  AT_BITE/AD_PHYS (monsters.h:1197-1198).
+- Symbol `z` matches MONSYM(26, 'z', ZRUTY, S_ZRUTY) at defsym.h:325.
+- Single species in S_ZRUTY class; table has one row, correct.
+- Slavic-folklore framing matches data.base entry ("wild and gigantic
+  beings, living in the wildernesses of the Tatra mountains").
+
+### Notes
+- Notes column left blank; M2_STRONG (can force locks/boulders) and
+  M1_CARNIVORE flags exist but are not surfaced. Not wrong — peer
+  rows in the section are equally terse.
+
+---
+
+## 2026-05-18 — Chapter audit #156: Bats and birds
+
+Source: `spoilers/companion.md` line 8385. 1 correction.
+
+### Wrong → fixed
+- Prose claimed "Vampire bats can give lycanthropy." This is wrong:
+  the vampire bat's second attack is AD_DRST (Strength drain, poison-
+  flavored), not AD_WERE (lycanthropy, value 29). Lycanthropy comes
+  only from were-creatures (`@`). Rewrote prose to:
+  "Vampire bats drain Strength on the second bite (poison-flavored;
+  poison resistance blocks it)."
+- Table cell "bite poison" for the second vampire-bat attack
+  conflated the poison resistance gate with the actual damage type.
+  Changed to "bite drain-Str" to match the convention used elsewhere
+  in companion.md for AD_DRST attacks.
+
+### Verified
+- All four roster entries present and ordered correctly: bat, giant
+  bat, raven, vampire bat (monsters.h:1269-1297).
+- bat: Lvl 0, Spd 22, AC 8, MR 0, bite 1d4, brown — matches.
+- giant bat: Lvl 2, Spd 22, AC 7, MR 0, bite 1d6, red — matches.
+- raven: Lvl 4, Spd 20, AC 6, MR 0, bite 1d6 + claw-blind 1d6 (AD_BLND),
+  black — matches.
+- vampire bat: Lvl 5, Spd 20, AC 6, MR 0, black; MR_SLEEP | MR_POISON;
+  M1_REGEN; M1_POIS (poisonous corpse) — flags match.
+- "All bats and birds fly" — all four carry M1_FLY.
+
+---
+
+## 2026-05-18 — Chapter audit #157: Bow
+
+Source: `spoilers/companion.md` line 7477. No corrections.
+
+### Verified
+- arrow: wt=1, cost=2, 1d6/1d6, hit=0, iron — objects.h:141-143.
+- elven arrow: wt=1, cost=2, 1d7/1d6, hit=0, wood — objects.h:144-146.
+- orcish arrow: wt=1, cost=2, 1d5/1d6, hit=0, iron — objects.h:147-149.
+- silver arrow: wt=1, cost=5, 1d6/1d6, hit=0, silver — objects.h:150-152.
+- ya: wt=1, cost=4, 1d7/1d7, hit=+1, metal — objects.h:153-154.
+- bow / elven bow / orcish bow / yumi: wt=30, cost=60, hit=0, wood —
+  objects.h:395-402.
+- Yumi prob=0 in C → never spawns randomly, only via Samurai start
+  inventory; "The Samurai's bow" note is accurate.
+
+### Notes
+- Section is silent on bow multishot mechanics (Ranger +1, Samurai
+  +1 on ya+yumi, race-launcher matching, Longbow of Diana, skill
+  bonuses). Not wrong — but the analogous Crossbow section explains
+  multishot. Coverage gap rather than a correction; left as-is for
+  this audit pass.
+
+---

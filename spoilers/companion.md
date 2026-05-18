@@ -2185,29 +2185,33 @@ amorous demon can be the cheapest curse-removal in the dungeon.
 Some players keep one alive to farm XP and attributes.
 
 #### The Riders
+<!-- audit 2026-05-18 #150: 4 corrections. (1) "permanently displaced" misreads M3_DISPLACES (monflag.h:175) — that flag means "moves monsters out of its way," not the cloak-of-displacement evasion. (2) "Ignore magic resistance for their signature attacks" — wrong for Death. uhitm.c:3858-3883 shows Antimagic DOES block the 3/20 touch-of-death instakill case. (3) "Eating their corpses is fatal in different ways for each" — wrong; all three trigger the same done(DIED) with killer text "unwisely ate the body of <name>" (eat.c:831-849). (4) "Famine drives you instantly to Weak or Fainting" — overstated; uhitm.c:3791-3795 adds 40-79 hunger units, which doesn't reach Weak from Satiated. -->
 
-On the Astral Plane, three unique `&`-class demons guard the way
-to the high altars: **Death**, **Famine**, and **Pestilence**,
-the Riders. They are level 30, regenerate while you fight, are
-permanently displaced, see invisible, and ignore magic resistance
-for their signature attacks. Death's
-touch is a heavy hit named for what it does. Pestilence inflicts
-the disease that turns into food poisoning over the next several
-turns. Famine drives you instantly to Weak or Fainting from
-nutrition. Eating their corpses is fatal in different ways for
-each. A mercy in 5.0: if Pestilence or Famine connect
-with their first attack on a turn, the second attack downgrades
-to a stun rather than another full dose. Without that, they'd
-be near-instakill machines.
+On the Astral Plane, three unique `&`-class beings guard the way
+to the high altars: **Death**, **Famine**, and **Pestilence**, the
+Riders. They are level 30, regenerate while you fight, see
+invisible, and shove monsters out of their path. Each hits twice
+per turn with AT_TUCH 8d8. **Death's** touch has a 3-in-20 chance
+of instant-kill on every hit — magic resistance blocks the
+instakill specifically; the regular damage still goes through.
+**Pestilence** inflicts the disease that turns into food poisoning
+over the next several turns; **Sick resistance** is the only
+complete defense (a unicorn horn won't clear the non-vomitable
+sickness once it lands). **Famine** adds 40–79 hunger units to a
+normal hit, which won't drop you below Hungry in one swing but
+will starve you fast across an encounter. Eating any Rider corpse
+is straight-up fatal (`done(DIED)`). A mercy in 5.0: if Pestilence
+or Famine land their first attack on a turn, the second downgrades
+to a stun.
 
 **Defenses:** An **amulet of life saving** is the best insurance
-on Astral, full stop. Drain resistance handles a lot of the
-incidental damage. Magic resistance does *not* save you from
-Death's touch; only life saving will. Carry plenty of food
-(Famine's drain bypasses normal nutrition) and a unicorn horn
-for the hallucination/stun secondary effects. In a crowd, a ring
-of conflict can keep the Riders tangled fighting nearby monsters
-instead of chasing you, sometimes long enough to reach the altar.
+on Astral, full stop. Magic resistance is what stops Death's
+instakill (but not its 8d8 baseline). Sick resistance handles
+Pestilence. Carry plenty of food (Famine's drain bypasses normal
+nutrition) and a unicorn horn for the stun secondary effects. In
+a crowd, a ring of conflict can keep the Riders tangled fighting
+nearby monsters instead of chasing you, sometimes long enough to
+reach the altar.
 
 #### Choking
 <!-- audit 2026-05-17 #68: eat-while-satiated death (eat.c:248, 286 done(CHOKING)) and warning string (eat.c:3314) verified. Corrected "if you confirm, you're dead" — the prompt only appears with paranoid_confirmation:eating enabled (default off); death only fires at uhunger >= 2000 with a 1/20 escape, AND Breathless creatures never choke (eat.c:258-266). Added the amulet of strangulation path (timeout.c) which is the other major choking death. See companion-audit.md. -->
@@ -3108,6 +3112,8 @@ who die on level 8 from adventurers who reach the Castle. The dungeon
 doesn't keep notes for you. You have to do it yourself.
 
 #### A Practical Strategy
+<!-- audit 2026-05-18 #151: ~39 lines, no substantive errors. Altar-flash BUC verified (do.c:379-389); engrave-test costs one charge (engrave.c:792 + zap.c:2520); wand of digging auto-IDs from engrave message (engrave.c:684-704); all 12 amulet costs are 150 (objects.h:834). One prose nit: "A wand that freezes your engraving is cold" — actual WAN_COLD engrave message is "A few ice cubes drop from the wand" (engrave.c:658-661); the vanish/freeze branch only triggers when overwriting an existing BURN engraving. Reworded to "drops ice cubes." -->
+
 
 All of these techniques combine into a workflow. Here's what a
 seasoned traveler does on a typical descent:
@@ -3124,8 +3130,8 @@ possibilities.
 
 **Engrave-test your wands** as soon as you find them. It's fast, it
 costs only one charge, and it immediately sorts wands into categories.
-A wand that digs the floor is digging. A wand that freezes your
-engraving is cold. Simple.
+A wand that digs the floor is digging. A wand that drops ice cubes
+is cold. Simple.
 
 **Experiment cautiously** with the rest. Wear non-cursed rings one at
 a time. Throw potions at monsters. Read scrolls from safe price groups
@@ -6144,6 +6150,8 @@ One boulder (A) remains. The two scrolls at (2,12) and (3,12)
 are always scrolls of earth.
 
 #### Level 1, Version B
+<!-- audit 2026-05-18 #153: clean. Map walls/floors and all 12 boulders A-L verified against soko4-2.lua:9-21, 29-42. Upstair (2,2), branch portal (4,2), 10 pits (5 cols 2 rows 3-7 plus 5 row 9 cols 2-6), 2 rolling-boulder traps, 2 always-scrolls-of-earth at (2,10)/(3,10). All 16 numbered solution steps land on lua floor with cardinal approach squares. "Two boulders (D and E) remain" tally checks out. -->
+
 
 ```
             111111
@@ -7466,6 +7474,7 @@ kebab bonus.
 
 :::
 
+<!-- audit 2026-05-18 #157: all 9 rows (arrow/elven/orcish/silver/ya + bow/elven/orcish/yumi) verified clean vs objects.h:141-154, 395-402. Yumi prob=0 (Samurai-only) — note correct. 0 corrections. See companion-audit.md. -->
 #### Bow
 
 ::: dense-table
@@ -8011,8 +8020,9 @@ really "early-game" creatures.
 :::
 
 #### Gremlins `g`
+<!-- audit 2026-05-18 #152: headnote conflated two distinct mechanics. Water/fountain triggers gremlin SPLIT (mon.c:987-992, 2/3 chance per step) — clones themselves, doesn't touch your intrinsics. Night triggers AD_CURS (uhitm.c:3040-3057, sit.c:644+ attrcurse) which strips ONE random intrinsic (1/10 chance per hit, only at night, only if not cancelled). Reworded to keep them separate. -->
 
-Touch in water (or just at night) can steal an intrinsic. Kill them on dry land, ideally during daylight.
+At night, their touch strips a random intrinsic (fire resistance, telepathy, etc.). In water or fountains they split into more gremlins. Kill them on dry land, ideally during daylight.
 
 ::: dense-table
 
@@ -8342,6 +8352,7 @@ All lights fly and are amorphous and mindless.
 
 :::
 
+<!-- audit 2026-05-18 #155: zruty row verified clean vs monsters.h:1192-1202. LVL(9,8,3,0,0), CLR_BROWN, claw 3d4 · claw 3d4 · bite 3d6 all match. 0 corrections. See companion-audit.md. -->
 #### Zruties `z`
 
 Slavic folklore — a hairy wild man of the woods. One species, one role here: a nasty mid-game brute. Good XP if you can handle the three-attack flurry.
@@ -8373,9 +8384,10 @@ All angelic beings follow you up and down stairs. All except *Aleax* also fly. A
 
 :::
 
+<!-- audit 2026-05-18 #156: vampire bat — "lycanthropy" claim was wrong (AD_WERE is were-creatures, not bats); the 2nd bite is AD_DRST (Str-drain, poison-flavored). Roster + flags otherwise match monsters.h:1269-1297. See companion-audit.md. -->
 #### Bats and birds `B`
 
-Erratic flyers, mostly nuisance. Vampire bats can give lycanthropy.
+Erratic flyers, mostly nuisance. Vampire bats drain Strength on the second bite (poison-flavored; poison resistance blocks it).
 
 All bats and birds fly.
 
@@ -8386,7 +8398,7 @@ All bats and birds fly.
 | bat | brown | 0 | 22 | 8 | 0 | bite 1d4 |  |
 | giant bat | red | 2 | 22 | 7 | 0 | bite 1d6 |  |
 | raven | black | 4 | 20 | 6 | 0 | bite 1d6 · claw 1d6 blind |  |
-| vampire bat | black | 5 | 20 | 6 | 0 | bite 1d6 · bite poison | regenerates, poisonous-corpse, sleep-res, pois-res. |
+| vampire bat | black | 5 | 20 | 6 | 0 | bite 1d6 · bite drain-Str | regenerates, poisonous-corpse, sleep-res, pois-res. |
 
 :::
 

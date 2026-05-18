@@ -154,14 +154,14 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#147**  L 7211  (  19 lines)   ↳ Bestiary Tables → Felines `f`
 - [x] **#148**  L 6769  (  10 lines)   ↳ Weapons Tables → Morning star
 - [x] **#149**  L 7757  (  21 lines)   ↳ Bestiary Tables → Mummies `M`
-- [ ] **#150**  L 2054  (  25 lines)   ↳ Dangerous Encounters → The Riders
-- [ ] **#151**  L 2911  (  39 lines)   ↳ A Practical Identification Strategy → A Practical Strategy
-- [ ] **#152**  L 7230  (  14 lines)   ↳ Bestiary Tables → Gremlins `g`
-- [ ] **#153**  L 5642  (  58 lines)   ↳ Sokoban Solutions → Level 1, Version B
+- [x] **#150**  L 2054  (  25 lines)   ↳ Dangerous Encounters → The Riders
+- [x] **#151**  L 2911  (  39 lines)   ↳ A Practical Identification Strategy → A Practical Strategy
+- [x] **#152**  L 7230  (  14 lines)   ↳ Bestiary Tables → Gremlins `g`
+- [x] **#153**  L 5642  (  58 lines)   ↳ Sokoban Solutions → Level 1, Version B
 - [ ] **#154**  L 5700  (  31 lines)   ↳ Sokoban Solutions → Level 2, Version A
-- [ ] **#155**  L 7542  (  12 lines)   ↳ Bestiary Tables → Zruties `z`
-- [ ] **#156**  L 7572  (  17 lines)   ↳ Bestiary Tables → Bats and birds `B`
-- [ ] **#157**  L 6878  (  18 lines)   ↳ Weapons Tables → Bow
+- [x] **#155**  L 7542  (  12 lines)   ↳ Bestiary Tables → Zruties `z`
+- [x] **#156**  L 7572  (  17 lines)   ↳ Bestiary Tables → Bats and birds `B`
+- [x] **#157**  L 6878  (  18 lines)   ↳ Weapons Tables → Bow
 - [ ] **#158**  L 8140  (  19 lines)   ↳ Bestiary Tables → Sea monsters `;`
 - [ ] **#159**  L 7166  (  27 lines)   ↳ Bestiary Tables → Dogs and canines `d`
 - [ ] **#160**  L 6737  (  10 lines)   ↳ Weapons Tables → Pick-axe
