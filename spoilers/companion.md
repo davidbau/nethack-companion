@@ -2235,6 +2235,7 @@ loss; the second one in your bag is a kit.
 ---
 
 ### Making Friends
+<!-- audit 2026-05-17 #36: ~25 claims verified, 4 corrected (pet-curse-avoidance overstated, tameness loss sources narrowed, displacement guards corrected, charm monster spell is multi-target not single). See companion-audit.md. -->
 
 The Mazes of Menace are dark, hostile, and full of things that want
 to eat you. Under those circumstances, a loyal companion is worth
@@ -2255,16 +2256,21 @@ a large cat. A grown large dog or large cat is a genuine combat
 asset, capable of taking on mid-dungeon threats that would give
 you trouble.
 
-One more thing: your pet will not step on cursed items willingly,
-which makes it a free curse-detector. Drop items on the ground and
-watch whether your pet avoids them. If it refuses to walk over a
-square, something cursed is sitting there.
+One more thing: your pet usually avoids cursed items when there's
+an uncursed alternative, which makes it a *probabilistic*
+curse-detector. Drop items on the ground and watch what your pet
+walks past versus what it walks around. If it has no choice, it
+will still cross the cursed square — but consistent avoidance
+across many turns is a strong tell.
 
 #### Feeding and Loyalty
 
-Pets have an invisible tameness score that decreases over time and
-when they take damage. When tameness hits zero, your loyal friend
-goes feral and turns on you. Feeding is the antidote:
+Pets have an invisible tameness score that decreases when they go
+hungry past the threshold, when you leave them behind on another
+level for too many turns, or when *you* hit them. (Combat damage
+from other monsters doesn't reduce tameness.) When tameness hits
+zero, the pet either goes untame-but-peaceful or turns fully
+hostile. Feeding is the antidote:
 
 - **Dogs and cats** love tripe rations and most meat
 - **Horses** prefer apples, carrots, and other vegetarian fare
@@ -2289,12 +2295,11 @@ attack, no offense taken, no alignment consequence. The townsfolk
 of Minetown are finally navigable.
 
 The limits are sensible: you cannot displace shopkeepers, priests,
-quest leaders, the Oracle, guards, or any monster that is sleeping or
-paralyzed. (Waking a sleeping monster by shoving it aside would be rude
-by any standard, dungeon or otherwise.) You also cannot displace a
-peaceful into a trap or hazardous terrain; the safety logic prevents
-it. Within those constraints, crowded peaceful areas are no longer
-puzzles. They're just rooms with people in them.
+quest leaders, the Oracle, vault guards, or any peaceful standing on
+a trap. You also cannot displace a peaceful into hazardous terrain;
+the safety logic prevents it. Within those constraints, crowded
+peaceful areas are no longer puzzles. They're just rooms with
+people in them.
 
 #### Taming New Creatures
 
@@ -2303,15 +2308,19 @@ methods of taming exist:
 
 - **Throwing food** at a suitable creature: meat for dogs and cats,
   produce for horses
-- **Scroll of taming** tames all creatures within a radius
-- **Spell of charm monster** tames a single adjacent creature
+- **Scroll of taming** or **spell of charm monster** both route
+  through the same handler and tame all eligible creatures within
+  a 3×3 radius (5×5 when confused)
 - **Magic trap effects** occasionally produce taming
 
 Taming isn't limited to small animals: with a scroll of taming or
-the charm monster spell, you can recruit almost anything: a purple worm to swallow your enemies whole, a
-dragon to breathe fire at them, a titan to crush them underfoot.
-Only unique monsters (Medusa, the Wizard) and a few special
-creatures resist your charms entirely.
+the charm monster spell, you can recruit a purple worm to swallow
+your enemies whole, a dragon to breathe fire at them, a titan to
+crush them underfoot. The exclusion list is substantial, though:
+all humans (priests, shopkeepers, watchmen, soldiers, kings), all
+covetous monsters (the Wizard, liches, masters), demons (unless
+you are one), vault guards, quest leaders, and minions all refuse
+to be tamed. Unique monsters (Medusa, etc.) also resist.
 
 #### What Pets Do for You
 

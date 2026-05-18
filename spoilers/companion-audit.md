@@ -1704,3 +1704,35 @@ Verified castle.lua + dungeon.lua + music.c claims; 2 corrected.
 ### Close call
 - "Around level 27" — Castle dlvl is RNG-determined within dungeon bounds. 27 is the common range. Reasonable.
 - "Maze section contains a minotaur" — castle.lua has 2 mazewalk calls, each may have 0-1 minotaurs. Changed to "may contain minotaurs".
+
+---
+
+## 2026-05-17 — Chapter audit #36: Making Friends
+
+Source: `spoilers/companion.md` lines 2237+
+Verified ~25 claims; 4 corrected; close calls addressed.
+
+### Verified
+- Starting pet growth (little dog → dog → large dog; kitten → housecat → large cat) — mondata.c:1230.
+- Pets pick up items and eat food — dogmove.c, dog_eat().
+- Separation tameness loss every 150 moves — dog.c:689.
+- Starvation untames — dog.c:702.
+- Food preferences (tripe for dogs/cats, apple/carrot for horses) — dog.c:995.
+- Throwing food tames — tamedog() in dog.c:1143.
+- Scroll of taming + spell of charm monster both use seffect_taming() — read.c:2236.
+- Magic trap can produce taming — trap.c:4423.
+- Peaceful displacement guards (priest/shopkeeper/vault guard/Oracle/quest leader) — mundisplaceable in monst.h:227.
+- Cannot displace peaceful onto trap/unsafe terrain — hack.c:2155.
+
+### Corrected
+1. **Pet "will not step on cursed items willingly"** — overstated. dogmove.c:1065 explicit comment "Normally dogs don't step on cursed items, but if they have no other choice they will". Pet aversion uses `rn2(13 * uncursedcnt)` — probabilistic, not absolute. Reworded to be honest about probabilistic nature.
+
+2. **"Tameness decreases over time and when they take damage"** — combat damage from monsters doesn't reduce tameness. Only YOU hitting them does (abuse_dog from uhitm.c, hack.c), plus the separation/hunger paths. Reworded to list the actual sources.
+
+3. **"When tameness hits zero, goes feral and turns on you"** — actually goes EITHER untame-peaceful or hostile, per dog.c:694 (random branch). Reworded to acknowledge both outcomes.
+
+4. **Displacement guards "any monster that is sleeping or paralyzed"** — not in code. hack.c:2110-2200 doesn't special-case msleeping/mcanmove. Removed that incorrect claim; kept the real list (shopkeepers/priests/etc. + trapped peacefuls).
+
+5. **"Spell of charm monster tames a single adjacent creature"** — WRONG. read.c:2236 routes SCR_TAMING AND SPE_CHARM_MONSTER through identical seffect_taming(). Same 3×3 radius (5×5 confused). Reworded to mention both routing to the same multi-target handler.
+
+6. **"Only unique monsters (Medusa, the Wizard) and a few special creatures resist your charms entirely"** — misleading. tamedog() at dog.c:1240 has a large exclusion list: all humans (priests, watchmen, soldiers, kings, shopkeepers), quest leaders, the Wizard (covetous), all covetous monsters, demons, shopkeepers, vault guards, priests, minions. Expanded the list.

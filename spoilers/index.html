@@ -3088,6 +3088,7 @@ kit.</p>
 </section>
 <section id="making-friends" class="level3">
 <h3>Making Friends</h3>
+<!-- audit 2026-05-17 #36: ~25 claims verified, 4 corrected (pet-curse-avoidance overstated, tameness loss sources narrowed, displacement guards corrected, charm monster spell is multi-target not single). See companion-audit.md. -->
 <p>The Mazes of Menace are dark, hostile, and full of things that want
 to eat you. Under those circumstances, a loyal companion is worth more
 than a bag of gold. Fortunately, the dungeon provides.</p>
@@ -3103,16 +3104,21 @@ teeth.</p>
 a dog, then a large dog. A kitten becomes a housecat, then a large cat.
 A grown large dog or large cat is a genuine combat asset, capable of
 taking on mid-dungeon threats that would give you trouble.</p>
-<p>One more thing: your pet will not step on cursed items willingly,
-which makes it a free curse-detector. Drop items on the ground and watch
-whether your pet avoids them. If it refuses to walk over a square,
-something cursed is sitting there.</p>
+<p>One more thing: your pet usually avoids cursed items when there’s an
+uncursed alternative, which makes it a <em>probabilistic</em>
+curse-detector. Drop items on the ground and watch what your pet walks
+past versus what it walks around. If it has no choice, it will still
+cross the cursed square — but consistent avoidance across many turns is
+a strong tell.</p>
 </section>
 <section id="feeding-and-loyalty" class="level4">
 <h4>Feeding and Loyalty</h4>
-<p>Pets have an invisible tameness score that decreases over time and
-when they take damage. When tameness hits zero, your loyal friend goes
-feral and turns on you. Feeding is the antidote:</p>
+<p>Pets have an invisible tameness score that decreases when they go
+hungry past the threshold, when you leave them behind on another level
+for too many turns, or when <em>you</em> hit them. (Combat damage from
+other monsters doesn’t reduce tameness.) When tameness hits zero, the
+pet either goes untame-but-peaceful or turns fully hostile. Feeding is
+the antidote:</p>
 <ul>
 <li><strong>Dogs and cats</strong> love tripe rations and most meat</li>
 <li><strong>Horses</strong> prefer apples, carrots, and other vegetarian
@@ -3136,12 +3142,10 @@ and the monster swap positions, exactly as with your pet. No attack, no
 offense taken, no alignment consequence. The townsfolk of Minetown are
 finally navigable.</p>
 <p>The limits are sensible: you cannot displace shopkeepers, priests,
-quest leaders, the Oracle, guards, or any monster that is sleeping or
-paralyzed. (Waking a sleeping monster by shoving it aside would be rude
-by any standard, dungeon or otherwise.) You also cannot displace a
-peaceful into a trap or hazardous terrain; the safety logic prevents it.
-Within those constraints, crowded peaceful areas are no longer puzzles.
-They’re just rooms with people in them.</p>
+quest leaders, the Oracle, vault guards, or any peaceful standing on a
+trap. You also cannot displace a peaceful into hazardous terrain; the
+safety logic prevents it. Within those constraints, crowded peaceful
+areas are no longer puzzles. They’re just rooms with people in them.</p>
 </section>
 <section id="taming-new-creatures" class="level4">
 <h4>Taming New Creatures</h4>
@@ -3150,17 +3154,19 @@ of taming exist:</p>
 <ul>
 <li><strong>Throwing food</strong> at a suitable creature: meat for dogs
 and cats, produce for horses</li>
-<li><strong>Scroll of taming</strong> tames all creatures within a
-radius</li>
-<li><strong>Spell of charm monster</strong> tames a single adjacent
-creature</li>
+<li><strong>Scroll of taming</strong> or <strong>spell of charm
+monster</strong> both route through the same handler and tame all
+eligible creatures within a 3×3 radius (5×5 when confused)</li>
 <li><strong>Magic trap effects</strong> occasionally produce taming</li>
 </ul>
 <p>Taming isn’t limited to small animals: with a scroll of taming or the
-charm monster spell, you can recruit almost anything: a purple worm to
-swallow your enemies whole, a dragon to breathe fire at them, a titan to
-crush them underfoot. Only unique monsters (Medusa, the Wizard) and a
-few special creatures resist your charms entirely.</p>
+charm monster spell, you can recruit a purple worm to swallow your
+enemies whole, a dragon to breathe fire at them, a titan to crush them
+underfoot. The exclusion list is substantial, though: all humans
+(priests, shopkeepers, watchmen, soldiers, kings), all covetous monsters
+(the Wizard, liches, masters), demons (unless you are one), vault
+guards, quest leaders, and minions all refuse to be tamed. Unique
+monsters (Medusa, etc.) also resist.</p>
 </section>
 <section id="what-pets-do-for-you" class="level4">
 <h4>What Pets Do for You</h4>
