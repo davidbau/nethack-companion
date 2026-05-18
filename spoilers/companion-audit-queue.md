@@ -146,10 +146,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#139**  L 3489  ( 144 lines) 📖 Rings and Amulets
 - [x] **#140**  L 1484  (  40 lines) 📖 Feelings and Sounds
 - [x] **#141**  L 7968  (  23 lines)   ↳ Bestiary Tables → Zombies `Z`
-- [ ] **#142**  L 6142  (  54 lines)   ↳ Voluntary Challenges → The Food Conducts
-- [ ] **#143**  L 7297  (  17 lines)   ↳ Bestiary Tables → Kobolds `k`
-- [ ] **#144**  L 4790  ( 142 lines) 📖 Luck and Fortune
-- [ ] **#145**  L 6370  (  10 lines)   ↳ Voluntary Challenges → Sokoban (new in 5.0)
+- [x] **#142**  L 6142  (  54 lines)   ↳ Voluntary Challenges → The Food Conducts
+- [x] **#143**  L 7297  (  17 lines)   ↳ Bestiary Tables → Kobolds `k`
+- [x] **#144**  L 4790  ( 142 lines) 📖 Luck and Fortune
+- [x] **#145**  L 6370  (  10 lines)   ↳ Voluntary Challenges → Sokoban (new in 5.0)
 - [ ] **#146**  L 8159  (  21 lines)   ↳ Bestiary Tables → Lizards `:`
 - [ ] **#147**  L 7211  (  19 lines)   ↳ Bestiary Tables → Felines `f`
 - [ ] **#148**  L 6769  (  10 lines)   ↳ Weapons Tables → Morning star

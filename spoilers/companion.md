@@ -5233,6 +5233,8 @@ without them.
 ---
 
 ### Luck and Fortune
+<!-- audit 2026-05-18 #144: 7 corrections. (1) Cursed luckstone doesn't "reverse the drift" — timeout.c:616-619 cursed-only luckstone holds negative Luck in place but positive Luck still decays normally toward baseline. (2) "Uncursed luckstone freezes drift but gives no bonus" — wrong; attrib.c:441-450 set_moreluck gives +3 to any non-cursed luckstone (uncursed counts the same as blessed for the bonus). (3) Killing peaceful is -1 with 50% probability, not "-1 to -5" — mon.c:3665. -5 is for killing co-aligned unicorns specifically (mon.c:3667). (4) "At Luck -10 or worse, prayer always fails" — wrong threshold; pray.c:2155 rejects prayer on ANY negative Luck. (5) "Going down stairs in Sokoban -1" — fabricated; no luck penalty for descending Sokoban stairs. (6) "Throw real gem to cross-aligned unicorn -3 to +3" — that's only for fully identified gems (dothrow.c:2334 rn2(7)-3); unidentified is -1 to +1 (rn2(3)-1 at dothrow.c:2349). (7) "Identifying gems for a shopkeeper +1" — no such mechanic in shk.c; fabricated. Added killed_leader (-4 to baseline, timeout.c:600), full-moon/Friday baseline shift (timeout.c:595-598), and the doubled drift rate (300 turns) when carrying the Amulet of Yendor or u.ugangr > 0 (timeout.c:607). -->
+
 
 The Mazes are rigged. Not unfairly (the dungeon doesn't *hate*
 you), but there is a hidden number attached to your character that
@@ -5262,13 +5264,15 @@ from Mine's End is one of the first things every experienced player
 does. It's a small gray stone that makes the universe remember you
 fondly.
 
-**Bless state matters.** A **blessed** luckstone not only freezes
-drift but also adds **+3 to your effective Luck on most rolls**. An
-uncursed luckstone freezes drift but gives no bonus. A **cursed
-luckstone is actively dangerous**: it subtracts 3 from your effective
-Luck *and reverses the drift*, so positive Luck slides down even
-faster than without any stone at all. Always BUC-check a luckstone
-before carrying it, and bless it on an altar if you can.
+**Bless state matters.** Any **non-cursed** luckstone (blessed
+*or* uncursed) freezes drift toward your baseline and adds **+3
+to your effective Luck on most rolls**. A **cursed** luckstone is
+dangerous: it subtracts 3 from your effective Luck and holds
+*negative* Luck in place (preventing the usual drift back toward
+zero from below). Always BUC-check a luckstone before carrying
+it, and bless it on an altar if you can. (The +3 bonus comes
+from `set_moreluck`; the curse doesn't speed positive Luck's
+decay, but it locks bad Luck in.)
 
 **The Heart of Ahriman, Tsurugi of Muramasa, and Orb of Fate all
 count as luckstones.** Barbarian, Samurai, and Valkyrie quest
@@ -5299,15 +5303,17 @@ penalty, though most players just embrace the theme.)
 | Throw identified real gem to co-aligned unicorn     | **+5**      |
 | Throw named-but-unidentified real gem to co-aligned | +2          |
 | Throw unknown real gem to co-aligned unicorn        | +1          |
-| Throw real gem to cross-aligned unicorn             | -3 to +3 (random) |
-| Sacrificing on your own altar                       | +1          |
-| Identifying gems for a shopkeeper                   | +1          |
+| Throw fully-identified real gem to cross-aligned unicorn | −3 to +3 (random) |
+| Throw unidentified real gem to cross-aligned unicorn | −1 to +1 (random)  |
+| Sacrificing on your own altar (varies by corpse value) | typically +1 |
 | Sitting on a throne (lucky outcome)                 | +1          |
-| Going down stairs in Sokoban                        | -1          |
-| Breaking Sokoban rules (scroll of earth)            | -1          |
-| Killing a peaceful creature                         | -1 to -5    |
-| Attacking your pet                                  | -1          |
-| Cannibalism                                         | -2 to -5    |
+| Breaking a Sokoban rule (squeeze, fracture, polymorph boulder, scroll of earth) | −1 each |
+| Killing a peaceful creature                         | −1 (50% chance per kill) |
+| Killing a same-alignment unicorn                    | −5          |
+| Killing your quest leader                           | −4 to baseline luck (lasting penalty) |
+| Attacking your pet                                  | −1          |
+| Cannibalism                                         | −2 to −5    |
+| Breaking a mirror or crystal                        | −2          |
 
 The pattern is consistent: be virtuous and the numbers smile on you.
 Be a monster and they frown. The Mazes have a moral compass, and
@@ -5357,11 +5363,12 @@ better:
 - Wands of wishing are more likely to work perfectly on wresting.
 - Fountain wishes become slightly more likely.
 
-At negative luck, all of these go wrong. At Luck -10 or worse,
-prayer *always* fails and many items actively betray you. You'll
-miss attacks you should have hit. Scrolls will backfire. The dungeon
-becomes a place that is trying to kill you even harder than usual,
-which is saying something.
+At negative luck, all of these go wrong. **Any** negative Luck
+causes prayer to fail with the "too naughty" rejection
+(`pray.c:2155`) — not just at the floor of −10. You'll miss
+attacks you should have hit. Scrolls will backfire. The dungeon
+becomes a place that is trying to kill you even harder than
+usual, which is saying something.
 
 The practical advice: get a luckstone early, sacrifice occasionally
 to keep luck positive, and don't kill peacefuls. Treat the universe
@@ -6659,6 +6666,7 @@ eat a corpse on turn 1, you've broken foodless, vegan, and
 vegetarian for the rest of the run. There's no going back.
 
 #### The Food Conducts
+<!-- audit 2026-05-18 #142: 5 corrections. (1) "Brown and yellow puddings" — there is no yellow pudding; S_PUDDING per monsters.h:2081-2113 is gray ooze / brown pudding / green slime / black pudding, and per mondata.h:241 the vegetarian-safe ones are all but black pudding (so gray ooze, brown pudding, green slime). (2) Shriekers are S_FUNGUS — already covered by "all F (fungi and molds)," so the separate mention is misleading. (3) "Avoid eating eggs, pancakes, lumps of royal jelly, cream pies, and candy bars" — incomplete: fortune cookies ALSO break vegan (eat.c:3016 lists FORTUNE_COOKIE as VEGGY-but-vegan-violating), so the spoiler's "vegetarian-friendly fortune cookie" advice contradicts itself. (4) Foodless: "polymorphing breaks foodless" — wrong. polyself.c has no u.uconduct.food increment; polymorph only breaks the polyself conduct. (5) "Prayer cures hunger when you're Weak or Fainting" — wrong threshold; pray.c:275 TROUBLE_HUNGRY fires at uhs >= HUNGRY (Hungry / Weak / Fainting all qualify). -->
 
 These form a hierarchy: foodless is stricter than vegan, which is
 stricter than vegetarian.
@@ -6667,31 +6675,36 @@ stricter than vegetarian.
 of non-vegetarian monsters, and avoid items made from animal
 products (meat sticks, eggs from carnivorous creatures). In
 practice, this means living on permissible corpses (lichens, most
-blobs, brown and yellow puddings, shriekers, and many others),
-fortune cookies, lembas wafers, and whatever food you find on the
-ground. The vegetarian monster list is broader than you might
-expect: all `b` (blobs), all `j` (jellies), all `F` (fungi and
-molds), all `v` (vortices), all `y` (lights), all `E` (elementals)
-except stalkers, all `'` (golems) except flesh golems and leather
-golems, and all ghosts. Most puddings are also vegetarian.
+blobs, gray ooze / brown pudding / green slime — all puddings
+except black — and most others), fortune cookies, lembas wafers,
+and whatever vegetable food you find on the ground. The
+vegetarian monster list is broader than you might expect: all `b`
+(blobs), all `j` (jellies), all `F` (fungi and molds), all `v`
+(vortices), all `y` (lights), all `E` (elementals) except stalkers,
+all `'` (golems) except flesh golems and leather golems, and all
+ghosts.
 
 **Vegan.** Follow all vegetarian restrictions, plus avoid eating
-eggs, pancakes, lumps of royal jelly, cream pies, and candy bars.
-The conduct fires only on *eating*: carrying or using animal-derived
-items is fine, so vegans can still light the Candelabrum with wax or
-tallow candles, wear leather armor, and apply bone horns. Vegan
-monsters are a subset of the vegetarian list, excluding puddings
-and a few others.
+eggs, pancakes, lumps of royal jelly, cream pies, candy bars, *and*
+fortune cookies. (Yes, fortune cookies are vegetarian-safe but not
+vegan-safe — they share an internal "egg-derived" material flag in
+the C source.) The conduct fires only on *eating*: carrying or
+using animal-derived items is fine, so vegans can still light the
+Candelabrum with wax or tallow candles, wear leather armor, and
+apply bone horns. Vegan monsters are the vegetarian list minus the
+puddings (which means no S_PUDDING corpses for vegans).
 
 **Foodless.** Don't eat anything at all. Among the hardest
 conducts in the game. Your only nutrition sources are prayer (which
-cures hunger when you're Weak or Fainting), the spell of stone to
-flesh on rocks in your inventory (which creates meatballs, but
-eating them breaks the conduct), and a ring of slow digestion (which
-stops nutrition loss entirely). Most foodless runs rely on finding a
-ring of slow digestion early or praying through hunger until one
-appears. Polymorphing and chewing through walls also breaks this
-conduct.
+cures hunger from Hungry status onward, not just Weak/Fainting),
+the spell of stone to flesh on rocks in your inventory (which
+creates meatballs, but eating them breaks the conduct), and a ring
+of slow digestion (which suppresses the main hunger tick — the ring
+itself still costs a tiny amount, but it's effectively a free pass).
+Most foodless runs rely on finding a ring of slow digestion early
+or praying through hunger until one appears. Chewing through walls
+also breaks this conduct (it counts as eating rock). Polymorphing
+breaks the *polyself* conduct, not foodless.
 
 #### Atheist
 <!-- audit 2026-05-17 #64: u.uconduct.gnostic verified (insight.c:2134, topten.c:590). #pray (pray.c:2221), #offer corpse (pray.c:1977), #turn (pray.c:2426), and #chat with priest (priest.c:572) all confirmed as breaking the conduct. Corrected false claim about altar BUC: do.c:370 increments gnostic on any non-coin drop, so the BUC flash is a religious interaction. Added: the final Amulet offering for ascension is exempt (pray.c:1529-1588 has no gnostic increment). See companion-audit.md. -->
@@ -6902,12 +6915,17 @@ out to be possible and occasionally educational about how much
 information you normally get for free.
 
 #### Sokoban (new in 5.0)
+<!-- audit 2026-05-18 #145: corrected "No digging through the puzzle levels" — digging doesn't trigger sokoban_guilt (dig.c has no such call). The conduct-violating actions are squeeze (hack.c:299, 307), boulder fracture by wand of striking (zap.c:5556), polymorph boulder (zap.c:1711), scroll of earth (read.c:1951), and dismount onto a boulder (steed.c:767). Each costs -1 Luck (trap.c:7039-7054) and increments u.uconduct.sokocheat. Achievement reported only if the branch was entered (insight.c:2215-2228). Teleportation IS blocked by the level's noteleport flag (teleport.c:1185), so "no teleportation" is a level constraint, not a conduct trigger. -->
 
-Complete Sokoban without cheating. No digging through the puzzle levels,
-no teleportation to skip steps, no picking up boulders and carrying them
-to impossible positions. Solve it the way the puzzle designers intended,
-by actually solving the puzzle. The game tracks violations
-automatically. The conduct is for players who enjoy Sokoban's
+Complete Sokoban without breaking the rules. Each cheating action
+costs **1 point of Luck** and increments the conduct counter: pushing
+into a wall to **squeeze past** a boulder (when you drop your stuff
+to fit), **fracturing** a boulder with a wand of striking or scroll
+of earth, **polymorphing** a boulder, or **dismounting** onto a
+boulder. Levitation and flying skip pits without penalty. Solve it
+the way the puzzle designers intended, by actually solving the
+puzzle. The game tracks violations automatically. The conduct is
+for players who enjoy Sokoban's
 boulder-shoving and want their playthrough to acknowledge a
 clean solve.
 
@@ -8055,6 +8073,8 @@ All jellies are amorphous and mindless.
 :::
 
 #### Kobolds `k`
+<!-- audit 2026-05-18 #143: clean. All four stat rows match monsters.h:624-656. Kobold/large-kobold/kobold-lord/kobold-shaman all carry M1_POIS (poisonous corpse) and MR_POISON (poison resistance). Shaman uses AT_MAGC/AD_SPEL via mcastu.c. -->
+
 
 Weak early-game fodder. Most are poisonous to eat — leave the corpses unless you have poison resistance.
 

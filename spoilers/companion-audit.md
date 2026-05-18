@@ -5185,3 +5185,138 @@ intro reworded.
   to the intro.
 
 ---
+
+## 2026-05-18 — Chapter audit #142: The Food Conducts
+
+Source: `spoilers/companion.md` line 6142. 5 corrections.
+
+### Verified
+- Vegan / vegetarian / foodless hierarchy.
+- vegan(ptr) = S_BLOB|S_JELLY|S_FUNGUS|S_VORTEX|S_LIGHT|
+  S_ELEMENTAL(except PM_STALKER)|S_GOLEM(except flesh/leather)|
+  noncorporeal (mondata.h:232-241).
+- Vegetarian = vegan OR S_PUDDING except black pudding.
+- Royal jelly / pancakes / cream pies / candy bars break vegan
+  only (eat.c:3016-3018).
+- Wax/leather/bone/dragon-hide non-food objects break vegan when
+  eaten (eat.c:2772-2786); wax also exempt from vegetarian.
+- Meatballs (stone-to-flesh) break vegan + vegetarian.
+- Lembas wafers VEGGY material (objects.h:1103-1107).
+- Chewing through walls/doors/boulders breaks foodless
+  (hack.c:722 u.uconduct.food++).
+
+### Corrected
+1. **"Brown and yellow puddings"** — no yellow pudding exists;
+   vegetarian-safe puddings are gray ooze, brown pudding, green
+   slime (all S_PUDDING except black). Fixed.
+2. **Shriekers listed separately** — they're S_FUNGUS, already
+   covered by "all F (fungi and molds)." Removed.
+3. **Vegan list omitted fortune cookies** — eat.c:3016 lists
+   FORTUNE_COOKIE as VEGGY-but-vegan-violating. Spoiler had
+   contradictory advice (fortune-cookies-OK in vegetarian, but
+   not vegan). Added to vegan-violating list explicitly.
+4. **"Polymorphing breaks foodless"** — wrong. polyself.c has no
+   u.uconduct.food increment; polymorph only breaks the polyself
+   conduct. Reworded to point this out.
+5. **"Prayer cures hunger when you're Weak or Fainting"** —
+   wrong threshold. pray.c:275 TROUBLE_HUNGRY fires at
+   uhs >= HUNGRY (Hungry / Weak / Fainting all qualify). Fixed.
+
+### Notes
+- Slow_digestion suppresses the main hunger tick (eat.c:3178) but
+  the ring still consumes a small amount via the moves%20 wear
+  cost. Effectively but not literally "stops entirely."
+- Sacrifice value for Luck is per-corpse `value` (mr1), not
+  monster `difficulty`.
+
+---
+
+## 2026-05-18 — Chapter audit #143: Kobolds `k`
+
+Source: `spoilers/companion.md` line 7297. No corrections.
+
+### Verified
+- All four kobolds match monsters.h:624-656 for Lvl, Spd, AC,
+  MR%, color, attacks.
+- All carry M1_POIS (poisonous corpse) and MR_POISON.
+- Shaman uses AT_MAGC/AD_SPEL via mcastu.c.
+
+---
+
+## 2026-05-18 — Chapter audit #144: Luck and Fortune
+
+Source: `spoilers/companion.md` line 4790. 7 corrections.
+
+### Verified
+- Luck range -10..+10 baseline, ±13 with luckstone
+  (you.h:465-468).
+- Timeout cadence 600 turns, target = baseluck (timeout.c:606-619).
+- Full moon +1 baseline, Friday 13 -1 (timeout.c:595-598).
+- Three luck-conferring artifacts (Heart of Ahriman, Tsurugi,
+  Orb of Fate) confirmed via SPFX_LUCK / confers_luck.
+- Mirror break -2 (uhitm.c:1133, dokick.c:445).
+- Cannibalism -5..-2 (eat.c:784).
+- Killing same-alignment unicorn -5 (mon.c:3667).
+- Throne lucky outcome +1 (sit.c:108).
+
+### Corrected
+1. **"Cursed luckstone reverses the drift, positive Luck slides
+   down even faster"** — wrong. timeout.c:616-619 cursed-only
+   luckstone holds negative Luck in place but positive Luck
+   decays at the normal 1/600 rate toward baseline.
+2. **"Uncursed luckstone freezes drift but gives no bonus"** —
+   wrong. attrib.c:441-450 set_moreluck gives +3 to any
+   non-cursed luckstone, blessed or uncursed alike.
+3. **"Killing a peaceful creature: -1 to -5"** — wrong as a
+   range. mon.c:3665 gives change_luck(-1) with 50% probability.
+   The -5 result is only for co-aligned unicorns (mon.c:3667),
+   a separate case.
+4. **"At Luck -10 or worse, prayer always fails"** — wrong
+   threshold. pray.c:2155 rejects prayer on ANY negative Luck,
+   not just at -10.
+5. **"Going down stairs in Sokoban: -1"** — fabricated. No luck
+   penalty for descending Sokoban stairs. sokoban_guilt fires
+   on boulder squeeze, fracture, polymorph, scroll of earth,
+   and dismount-onto-boulder — not stair use.
+6. **"Throw real gem to cross-aligned unicorn -3 to +3"** —
+   that's only for fully identified gems (dothrow.c:2334
+   rn2(7)-3). Unidentified is -1 to +1 (dothrow.c:2349
+   rn2(3)-1). Split into two rows.
+7. **"Identifying gems for a shopkeeper +1"** — no such mechanic
+   in shk.c. Fabricated. Dropped from the table.
+
+### Added
+- killed_leader penalty: -4 to baseline luck for the rest of the
+  game (timeout.c:600-601).
+- Doubled drift rate (300 turns) when carrying the Amulet of
+  Yendor or u.ugangr > 0 (timeout.c:607).
+- Archeologist + fedora gives +1 baseline luck (timeout.c:603-604)
+  — not added inline yet, noted for future polish.
+
+---
+
+## 2026-05-18 — Chapter audit #145: Sokoban conduct
+
+Source: `spoilers/companion.md` line 6370. 1 correction.
+
+### Verified
+- u.uconduct.sokocheat exists (you.h:160), incremented by
+  sokoban_guilt() which also calls change_luck(-1)
+  (trap.c:7039-7054).
+- Trigger sites: squeeze (hack.c:299, 307, 398, 403), polymorph
+  boulder (zap.c:1711), fracture (zap.c:5556), scroll of earth
+  (read.c:1951), dismount onto boulder (steed.c:767).
+- Teleportation blocked by level noteleport flag
+  (teleport.c:1185).
+- Achievement reported only if branch entered
+  (insight.c:2215-2228); set only if !u.uconduct.sokocheat
+  (topten.c:600).
+
+### Corrected
+1. **"No digging through the puzzle levels"** — digging doesn't
+   trigger sokoban_guilt. dig.c has no such call. The
+   pick-axe/mattock conduct path is via fracturing a boulder
+   (zap.c:5556 breakobj), not via floor digging. Reworded to
+   enumerate the actual triggers with Luck cost.
+
+---
