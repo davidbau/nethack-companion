@@ -5606,3 +5606,166 @@ Source: `spoilers/companion.md` line 6212. No corrections.
   boulders to finish next," not a literal sequence.
 
 ---
+
+## 2026-05-18 — Chapter audit #158: Sea monsters `;`
+
+Source: `spoilers/companion.md` line 8998. No corrections.
+
+### Verified
+- All 6 entries match monsters.h:3205-3256 for color, Lvl, Spd, AC,
+  MR%, and attack chains:
+  - jellyfish: blue, 3/3/6/0, sting 3d3 AD_DRST, MR_POISON.
+  - piranha: red, 5/18/4/0, bite/bite 2d6 AD_PHYS.
+  - shark: gray, 7/12/2/0, bite 5d6 AD_PHYS.
+  - giant eel: cyan, 5/9/-1/0, bite 3d6 + tuch AD_WRAP.
+  - electric eel: bright-blue, 7/10/-3/0, bite 4d6 AD_ELEC + tuch
+    AD_WRAP, MR_ELEC.
+  - kraken: red, 20/3/6/0, claw/claw 2d4 + hug 2d6 AD_WRAP + bite 5d4.
+- "All sea monsters swim and are amphibious" — every entry carries
+  `M1_SWIM | M1_AMPHIBIOUS` (monsters.h:3210, 3218, 3226, 3235, 3244,
+  3254).
+- AD_WRAP grab-and-drown is real: `mhitm_ad_wrap` sets `u.ustuck`,
+  then on a subsequent turn the hero in a pool without Swimming /
+  Amphibious / Breathing dies via `done(DROWNING)` (uhitm.c:3378-3401).
+- jellyfish poison-resistance + poisonous-corpse justified by
+  M1_POIS + MR_POISON.
+
+### Close calls
+- Prose "drags you under" is metaphorical — the C code does not move
+  the hero; it grabs them while they are already on a water tile.
+  Reasonable shorthand.
+- jellyfish sting rendered as "3d3 poison" — AD_DRST is Str-drain
+  (poison-flavored), not generic poison damage. Loose label,
+  consistent with the section's tone.
+
+---
+
+## 2026-05-18 — Chapter audit #159: Dogs and canines `d`
+
+Source: `spoilers/companion.md` line 7954. 2 corrections.
+
+### Wrong → fixed
+- **little dog starting roles**: companion claimed "Common
+  Archeologist/Caveman/Samurai starting pet." Archeologist is wrong
+  — role.c:46 sets Archeologist `petnum = NON_PM`, falling through to
+  the cat/dog coin flip in dog.c:100, so no guaranteed dog.
+  Guaranteed-little-dog roles are Caveman (role.c:128), Ranger
+  (role.c:387), and Samurai (role.c:428). Rewrote to "Guaranteed
+  Caveman/Ranger/Samurai starting pet."
+- **Cerberus "Reflection"**: companion claimed Cerberus has
+  "Reflection + fire resistance only." Cerberus carries only
+  `MR_FIRE, MR_FIRE` (monsters.h:316). No `MR_*` reflection flag
+  exists in C, and grep on `nethack-c/upstream/src/` returns no
+  special-case reflection code for Cerberus. Dropped the claim;
+  added build-flag caveat (see below).
+
+### Verified
+- Pack-hunting intro: jackal/coyote/wolf/warg/winter wolf cub/hell
+  hound pup all carry `G_SGROUP` (monsters.h:200, 214, 258, 277,
+  284, 298).
+- Werejackal/werewolf lycanthropy: both `AT_BITE, AD_WERE`
+  (monsters.h:222, 269).
+- All 15 mainline rows (jackal, fox, coyote, werejackal, little dog,
+  dingo, dog, large dog, wolf, werewolf, winter wolf cub, warg,
+  winter wolf, hell hound pup, hell hound) match monsters.h:199-310
+  exactly for color, Lvl, Spd, AC, MR, attack dice, and resistance
+  flags.
+- HI_DOMESTIC = CLR_WHITE (color.h:37), so the "white" color on
+  little dog / dog / large dog is correct.
+
+### Close calls
+- Cerberus is `#ifdef CHARON`-gated (monsters.h:311, 321) and
+  `CHARON` is not `#define`d in any default header — Cerberus does
+  not compile into the default build. Added the build-flag caveat to
+  the row note rather than removing the row outright, since players
+  building with `-DCHARON` will encounter it.
+- Werejackal/werewolf carry `G_NOCORPSE` (monsters.h:221, 268) plus
+  `M1_POIS` (monsters.h:225, 272). The "poisonous-corpse" flag is
+  technically about a corpse that cannot exist. Left as-is — peer
+  rows use the same notation for monsters with G_NOCORPSE.
+
+---
+
+## 2026-05-18 — Chapter audit #160: Pick-axe
+
+Source: `spoilers/companion.md` line 7316. 1 correction.
+
+### Wrong → fixed
+- **Pick-axe row missing entirely.** The section header was "Pick-axe"
+  but the table held only the dwarvish mattock. Added the pick-axe row
+  per objects.h:1007-1009 (WEPTOOL, wt=100, cost=50, 1d6/1d3, iron) and
+  noted that both share `P_PICK_AXE` skill and both route through
+  `use_pick_axe()` at apply.c:4290-4292.
+
+### Verified
+- Dwarvish mattock stats match objects.h:345-347: wt=120, cost=50,
+  1d12 / 1d8+2d6 (sdam=12, ldam computed via the bigmonst bonus at
+  weapon.c:257-261), hit −1, iron, bimanual.
+- Both `PICK_AXE` and `DWARVISH_MATTOCK` are `is_pick()` true
+  (obj.h:220-222), routed through `use_pick_axe()` at apply.c:4290-4292.
+- "Two-handed (3/2 Str damage bonus)" matches the bimanual strength
+  bonus path at uhitm.c:1455-1468.
+- Slight hit penalty (−1) is `oc_hitbon` direct (weapon.c:159).
+
+### Notes
+- No role/race damage or hit bonus exists for either weapon; the
+  section correctly omits any such claim.
+- Dwarves prefer mattocks as a weapon-of-choice listing
+  (weapon.c:693, 821, 833) — selection only, no numerical bonus.
+
+---
+
+## 2026-05-18 — Chapter audit #161: Polymorph Restrictions
+
+Source: `spoilers/companion.md` line 6806. Substantive rewrite.
+
+### Wrong → fixed
+- **"Don't read a cursed scroll of polymorph"**: there is no
+  `SCR_POLYMORPH` in NetHack 5.0. The polymorph item set is
+  RIN_POLYMORPH, RIN_POLYMORPH_CONTROL, POT_POLYMORPH, SPE_POLYMORPH,
+  WAN_POLYMORPH (objects.h). The cursed-scroll claim is a holdover
+  from older lore. Dropped.
+- **Missing monster-induced poly source.** Genetic engineer's claw
+  (AD_POLY) calls `polyself(POLY_NOFLAGS)` on the hero
+  (mhitm_ad_poly at uhitm.c:3729; mon_poly at mhitm.c:1122-1144),
+  which increments `polyselfs` via `polymon()`. Added.
+- **Missing corpse-eating sources.** Eating a chameleon /
+  doppelganger / sandestin corpse routes through `polyself`
+  (eat.c:1244-1263); eating any mimic corpse directly increments
+  `u.uconduct.polyselfs` at eat.c:1199 before forcing mimic form.
+  Added.
+- **Missing forced-transformation sources.** Failing to cure
+  slimedness ticks `polymon(PM_GREEN_SLIME)` at timeout.c:493 (with
+  comment at 484-485 explicitly noting `polymon` now handles the
+  conduct increment). Surviving a stoning attack via
+  `poly_when_stoned` calls `polymon(PM_STONE_GOLEM)` (trap.c:3848,
+  uhitm.c:2155 / 3928 / 5951, mhitu.c:1751, eat.c:797). Both added.
+
+### Verified
+- Two separate conducts with separate counters: `u.uconduct.polyselfs`
+  and `u.uconduct.polypiles` (you.h:155-156); achievement names
+  `polyselfless` and `polyless` (topten.c:594-595).
+- Self-poly sources that DO break the conduct: potion of polymorph
+  quaff (potion.c:1322-1323), ring of polymorph (worn), wand/spell
+  of polymorph zapped at self (zap.c:2804-2808), polymorph trap
+  (trap.c:2495).
+- Polypile sources: wand/spell zapped at object (zap.c:2191-2200),
+  dipping an item into POT_POLYMORPH or vice versa
+  (potion.c:2468-2478).
+
+### Close calls / now in prose
+- **System shock**: failed shock returns BEFORE `polymon()` runs
+  (polyself.c:488-495), so it does NOT break polyselfless. Added.
+- **Amulet of Unchanging**: short-circuits every poly path
+  (polyself.c:483-486; potion.c:1321; trap.c:2486-2488). Added as
+  the canonical safety blanket.
+- **newman()** (~1-in-5 polyself outcomes): bypasses the achievement
+  per the header comment at polyself.c:446. Left out of prose to
+  keep the section terse — the conduct counter doesn't advance, but
+  no player relies on this for the conduct.
+- **Polymorph-trap iron-shoes swap**: trap.c:2481 uses `poly_obj`
+  directly without incrementing `polypiles`. Left out — the spoiler's
+  "other means of transforming objects" already covers polypile
+  enough.
+
+---

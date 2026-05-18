@@ -162,10 +162,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#155**  L 7542  (  12 lines)   ↳ Bestiary Tables → Zruties `z`
 - [x] **#156**  L 7572  (  17 lines)   ↳ Bestiary Tables → Bats and birds `B`
 - [x] **#157**  L 6878  (  18 lines)   ↳ Weapons Tables → Bow
-- [ ] **#158**  L 8140  (  19 lines)   ↳ Bestiary Tables → Sea monsters `;`
-- [ ] **#159**  L 7166  (  27 lines)   ↳ Bestiary Tables → Dogs and canines `d`
-- [ ] **#160**  L 6737  (  10 lines)   ↳ Weapons Tables → Pick-axe
-- [ ] **#161**  L 6263  (  16 lines)   ↳ Voluntary Challenges → Polymorph Restrictions
+- [x] **#158**  L 8140  (  19 lines)   ↳ Bestiary Tables → Sea monsters `;`
+- [x] **#159**  L 7166  (  27 lines)   ↳ Bestiary Tables → Dogs and canines `d`
+- [x] **#160**  L 6737  (  10 lines)   ↳ Weapons Tables → Pick-axe
+- [x] **#161**  L 6263  (  16 lines)   ↳ Voluntary Challenges → Polymorph Restrictions
 - [ ] **#162**  L 6867  (  11 lines)   ↳ Weapons Tables → Whip
 - [ ] **#163**  L 6668  (  13 lines)   ↳ Weapons Tables → Short sword
 - [ ] **#164**  L  930  (  17 lines)   ↳ Branches and Landmarks → The Oracle

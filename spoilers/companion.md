@@ -6803,15 +6803,20 @@ genociding anything simply because they never find the scroll and
 never sit Vlad's throne. But deliberately maintaining it against
 late-game threats takes discipline.
 
+<!-- audit 2026-05-18 #161: dropped "cursed scroll of polymorph" (no SCR_POLYMORPH exists in 5.0). Added missing conduct-breaking sources: genetic engineer claw (AD_POLY → polyself); eating chameleon/doppelganger/sandestin corpses (eat.c:1244-1263) and mimic corpses (eat.c:1199); green slime auto-poly (timeout.c:493); stone-golem auto-poly via poly_when_stoned (trap.c:3848 etc.). Added Unchanging-blocks-all and system-shock-doesn't-break notes per polyself.c:483-495. See companion-audit.md. -->
 #### Polymorph Restrictions
 
 Two related conducts track polymorphing:
 
-**No polymorph.** Never polymorph yourself. Avoid polymorph traps,
-don't quaff potions of polymorph, don't wear a ring of polymorph,
-and don't read a cursed scroll of polymorph. This locks you into
-your starting form for the entire game, forgoing the advantages of
-powerful monster forms (master mind flayer, xorn, various dragons).
+**No polymorph.** Never let your form change. Obvious sources: potion
+or ring of polymorph, wand or spell of polymorph (zapped at you), and
+polymorph traps. Less obvious: a genetic engineer's claw; eating a
+chameleon, doppelganger, sandestin, or mimic corpse; surviving a
+stoning attack (auto-transforms to stone golem); and failing to cure
+slimedness (turns you into a green slime). The Amulet of Unchanging
+blocks every path. A failed system shock does *not* break the
+conduct. Keeping this conduct forgoes the advantages of powerful
+monster forms (master mind flayer, xorn, various dragons).
 
 **No polymorph objects.** Never polymorph items. Don't zap items
 with a wand of polymorph, don't dip items in potions of polymorph,
@@ -7313,12 +7318,14 @@ other bimanual weapon.
 
 :::
 
+<!-- audit 2026-05-18 #160: pick-axe row was missing entirely. Added per objects.h:1007-1009 (WEPTOOL, wt=100, cost=50, 1d6/1d3, iron). Mattock stats verified vs objects.h:345-347. Both share P_PICK_AXE skill and both route through use_pick_axe() (apply.c:4290-4292). See companion-audit.md. -->
 #### Pick-axe
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+| pick-axe | 1d6 / 1d3 | 100 | 50 | — | iron | Weapon-tool. Apply to dig through walls or down through floors (creates pit, then hole). Same `pick-axe` skill as the mattock. |
 | dwarvish mattock | 1d12 / 1d8+2d6 | 120 | 50 | −1 | iron | Two-handed (3/2 Str damage bonus). Digs through walls like a pick-axe. Slight to-hit penalty (−1). |
 
 :::
@@ -7949,6 +7956,7 @@ All cockatrices are poison-resistant.
 
 :::
 
+<!-- audit 2026-05-18 #159: 16 rows + intro verified vs monsters.h:199-320. Corrected little-dog starting roles (Archeologist isn't guaranteed; petnum=NON_PM coin-flips cat/dog. Guaranteed roles are Caveman/Ranger/Samurai per role.c:128, 387, 428). Corrected Cerberus row: "Reflection" was unsupported (only MR_FIRE in monsters.h:316); Cerberus is `#ifdef CHARON`-gated and not in the default build. See companion-audit.md. -->
 #### Dogs and canines `d`
 
 Wild canines hunt in packs. Domestic ones can be tamed by feeding (see [Making Friends](#making-friends)). Werejackals and werewolves can give lycanthropy.
@@ -7961,7 +7969,7 @@ Wild canines hunt in packs. Domestic ones can be tamed by feeding (see [Making F
 | fox | red | 0 | 15 | 7 | 0 | bite 1d3 |  |
 | coyote | brown | 1 | 12 | 7 | 0 | bite 1d4 |  |
 | werejackal | brown | 2 | 12 | 7 | 10 | bite 1d4 lyc | regenerates, poisonous-corpse, pois-res. |
-| little dog | white | 2 | 18 | 6 | 0 | bite 1d6 | tameable. Common Archeologist/Caveman/Samurai starting pet. |
+| little dog | white | 2 | 18 | 6 | 0 | bite 1d6 | tameable. Guaranteed Caveman/Ranger/Samurai starting pet. |
 | dingo | yellow | 4 | 16 | 5 | 0 | bite 1d6 |  |
 | dog | white | 4 | 16 | 5 | 0 | bite 1d6 | tameable. |
 | large dog | white | 6 | 15 | 4 | 0 | bite 2d4 | tameable. |
@@ -7972,7 +7980,7 @@ Wild canines hunt in packs. Domestic ones can be tamed by feeding (see [Making F
 | winter wolf | cyan | 7 | 12 | 4 | 20 | bite 2d6 · breath 2d6 cold | cold-res. |
 | hell hound pup | red | 7 | 12 | 4 | 20 | bite 2d6 · breath 2d6 fire | fire-res. |
 | hell hound | red | 12 | 14 | 2 | 20 | bite 3d6 · breath 3d6 fire | fire-res. |
-| Cerberus | red | 12 | 10 | 2 | 20 | bite 3d6 · bite 3d6 · bite 3d6 | fire-res. Three-headed hellhound. Reflection + fire resistance only. |
+| Cerberus | red | 12 | 10 | 2 | 20 | bite 3d6 · bite 3d6 · bite 3d6 | fire-res. Three-headed hellhound. Compiled in only with `CHARON` defined; not in the default build. |
 
 :::
 
@@ -8995,6 +9003,7 @@ All golems are mindless, sleep-resistant, and poison-resistant.
 
 :::
 
+<!-- audit 2026-05-18 #158: all 6 entries (jellyfish/piranha/shark/giant eel/electric eel/kraken) verified clean vs monsters.h:3205-3256. All carry M1_SWIM | M1_AMPHIBIOUS. AD_WRAP grab-and-drown mechanic confirmed at uhitm.c:3378-3401. 0 corrections. See companion-audit.md. -->
 #### Sea monsters `;`
 
 Lives in water. Wraps around you and drags you under to drown. Don't fight one from a water square without magical breathing or escape.
