@@ -1506,13 +1506,10 @@ you'll miss the cues entirely. They are worth memorizing:
 | *"You feel a strange mental acuity."*  | Intrinsic telepathy from a corpse.                                                     |
 | *"You seem faster."*                   | Intrinsic speed (quantum mechanic corpse).                                             |
 | *"You feel a mild buzz."*              | Eye of newt corpse restored 1–3 mana.                                                  |
-| *"You feel hungry."*                   | Scroll of food detection, no food on level.                                            |
+| *"You sense a lack of food nearby."*   | Scroll of food detection, no food on level.                                            |
 | *"You feel materially poor."*          | Scroll of gold detection, no gold on level.                                            |
 | *"You feel like someone is helping you."* | Scroll of remove curse; worn/wielded cursed items uncursed.                         |
-| *"You feel a strange sensation, then it passes."* | Ring of warning.                                                            |
-| *"You feel light-footed."*             | Ring of stealth.                                                                       |
-| *"You feel in touch with the spiritual world."* | Ring of free action.                                                          |
-| *"You feel charged with power."*       | Ring of conflict.                                                                      |
+| *"You move very quietly."*             | Ring of stealth (or elven cloak / elven boots) just put on — only if you didn't already have stealth. |
 | *"Wow! This makes you feel great!"*    | Potion of restore ability; a drained stat returned to peak.                            |
 | *"You feel feverish."*                 | Lycanthropy infection from a were-monster. Eat wolfsbane, dip in holy water, or pray.  |
 | *"You are slowing down."*              | You're turning to stone. Immediately eat a lizard corpse, drink acid, or pray.         |
