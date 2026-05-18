@@ -2565,7 +2565,7 @@ are fast (speed 22 vs your 12), so they double-attack every turn. A 1d4
 bite (1d6 for giant bats) at double rate eats through low-level HP pools
 quickly.</li>
 <li><strong>Quadrupeds</strong> (<code>q</code>). Rothes are
-three-attack pack hunters at sluggish speed 9 — dangerous mostly in
+three-attack pack hunters at sluggish speed 9: dangerous mostly in
 numbers. Mumakil are solo two-attack bruisers (4d12 butt + 2d6 bite)
 that hit harder than anything else in the Mines.</li>
 <li><strong>Eating mistakes.</strong> Rotted corpse, poisonous corpse,
@@ -2891,8 +2891,7 @@ healing or any extra/full healing cures, or apply a unicorn horn); black
 lights hallucinate you for <strong>10d12 turns</strong> (a unicorn horn
 cures it, or wait it out). Both lights die in the explosion, so the
 encounter resolves immediately, but the after-effect is long enough to
-be the real threat: exactly the wrong state to be in if there’s a
-follow-up fight. Black lights are invisible; <em>see invisible</em>
+be the real threat. Black lights are invisible; <em>see invisible</em>
 reveals them, but because they die in the same turn they attack, you’ll
 only “see” them just before they vanish.</p>
 <p><strong>Defenses:</strong> Kill them at range with wands, thrown
@@ -2914,14 +2913,16 @@ level, an attribute, full HP, and extra max Pw.</p>
 cooldown. It strips off your worn armor one piece at a time (cloak,
 suit, boots, gloves, shield, helm, shirt). The items are unequipped to
 your inventory, not taken or dropped on the floor; the only thing the
-strip costs you is the slot for the rest of the encounter. High Cha
-(<code>rn2(20) &lt; ACURR(A_CHA)</code>) earns a confirmation prompt per
-piece. <strong>If you’re still wearing a body armor or cloak afterwards,
-the encounter ends right there</strong> and the demon walks away. A
-hard-to-remove suit is the simplest defense.</p>
-<p>If you do get to the act, the outcome rolls on
-<code>rn2(35) &gt; min(Cha+Int, 32)</code>. At Cha+Int ≥ 32 the
-bad-outcome chance is ~5.7%; lower stats raise it sharply.</p>
+strip costs you is the slot for the rest of the encounter. You get a
+yes/no prompt before each piece comes off with probability Cha/20 (so
+Cha 18 prompts about 9 times in 10; Cha 10 about half the time).
+<strong>If you’re still wearing a body armor or cloak when the strip
+ends, the encounter ends right there</strong> and the demon walks away.
+A hard-to-remove suit is the simplest defense.</p>
+<p>If you do get to the act, the outcome rolls against your combined
+Cha+Int (capped at 32). At the cap the bad-outcome chance is about 6%;
+at Cha+Int = 20 it’s about 40%; at 10 it’s nearly 70%. Check your stats
+before you accept.</p>
 <table>
 <thead>
 <tr>
@@ -2997,15 +2998,14 @@ and kills you when it runs out. Take it off. Magic resistance doesn’t
 help (it’s a physical attack); polymorphing into a Breathless form
 does.</p>
 <p><strong>Defense:</strong> Don’t eat above Satiated. Be paranoid about
-unidentified amulets — strangulation is the worst
-non-cursed-Trap-of-Magic outcome.</p>
+unidentified amulets.</p>
 </section>
 <section id="deadly-poison" class="level4">
 <h4>Deadly Poison</h4>
 <!-- audit 2026-05-17 #7: 7 claims verified, 1 corrected (Famine corpse missing from instakill list). See companion-audit.md. -->
 <p>A handful of monsters (pit vipers, killer bees, cobras, some spiders,
 and other AD_DRST attackers) have instantly lethal poison attacks. The
-chance is low — about 1 in 240 per hit at healthy HP — but rises sharply
+chance is low, about 1 in 240 per hit at healthy HP, but rises sharply
 when you’re already wounded. Eating any Rider corpse (Death, Pestilence,
 <em>or</em> Famine) is also instantly fatal poison.</p>
 <p><strong>Defenses:</strong> Poison resistance makes you immune. Most
@@ -3068,25 +3068,19 @@ prayer).</p>
 <section id="the-displacer-beast" class="level4">
 <h4>The Displacer Beast</h4>
 <!-- audit 2026-05-17 #42: rewrote section. Prior version described it as having cloak-of-displacement style image-offset; this is wrong. The "displacer" mechanic is M3_DISPLACES (barge-through): 50% chance on player melee that it swaps places with you instead of being attacked (hack.c:1972). Corpse intrinsic Displacement claim verified (eat.c:1265). See companion-audit.md. -->
-<p>The <strong>displacer beast</strong> (<code>f</code>, blue) is a 5.0
-addition: AC −10, three attacks per turn (4d4 / 4d4 / 2d10), and a
-misleading name. It is <em>not</em> displaced in the
-cloak-of-displacement sense. Its trick is the opposite: when you melee
-it, there’s a 50% chance it <strong>swaps places with you</strong>
-instead of taking the hit. The blow doesn’t land, you’ve been yanked one
-square, and now you’re standing where the beast was a moment ago.</p>
-<p>That swap can pull you off Elbereth, out of a doorway, onto a trap,
-or into a worse adjacency. Plan the encounter assuming you’ll end up in
-its square next turn.</p>
-<p><strong>What works.</strong> Ranged attacks (wand, spell, thrown)
-bypass the swap entirely: it only fires on melee. If you must melee, do
-it from a position where the beast’s square is no worse than yours: no
-traps under it, no extra monsters adjacent to it.</p>
-<p><strong>What’s worth it afterward.</strong> Eating the corpse grants
-temporary intrinsic Displacement (<code>d(6, 6)</code> turns): the only
-intrinsic source in the game, and unlike a cloak of displacement it
-costs no equipment slot. The corpse rots like any other, so if you can’t
-eat it now, tin it.</p>
+<p>The <strong>displacer beast</strong> (<code>f</code>, blue, 5.0
+addition) is a tiger-sized feline with AC −10 and three attacks per turn
+(4d4 / 4d4 / 2d10). The misleading name: it isn’t displaced in the
+cloak-of-displacement sense. Its trick is the opposite — when you melee
+it, half the time it swaps places with you instead of taking the hit,
+which can pull you off Elbereth, out of a doorway, or onto a trap.
+Ranged attacks (wand, spell, thrown) bypass the swap entirely. It has no
+MR, so sleep, paralysis, and taming all work. A neat trick: lure it
+adjacent to a moat or lava and let it swap itself in. Speed 12, so a
+speed-boosted hero outpaces it.</p>
+<p>Eat the corpse for temporary intrinsic Displacement (6 to 36 turns):
+the only intrinsic source in the game, no equipment slot required. Rots
+like any other; tin it if you can’t eat now.</p>
 </section>
 <section id="the-genetic-engineer" class="level4">
 <h4>The Genetic Engineer</h4>
@@ -3138,8 +3132,8 @@ taking on mid-dungeon threats that would give you trouble.</p>
 uncursed alternative, which makes it a <em>probabilistic</em>
 curse-detector. Drop items on the ground and watch what your pet walks
 past versus what it walks around. If it has no choice, it will still
-cross the cursed square — but consistent avoidance across many turns is
-a strong tell.</p>
+cross the cursed square, but consistent avoidance across many turns is a
+strong tell.</p>
 </section>
 <section id="feeding-and-loyalty" class="level4">
 <h4>Feeding and Loyalty</h4>
@@ -3173,11 +3167,11 @@ eligible creatures within a 3×3 radius (5×5 when confused)</li>
 <p>Taming isn’t limited to small animals: with a scroll of taming or the
 charm monster spell, you can recruit a purple worm to swallow your
 enemies whole, a dragon to breathe fire at them, a titan to crush them
-underfoot. The exclusion list is substantial, though: all humans
-(priests, shopkeepers, watchmen, soldiers, kings), all covetous monsters
-(the Wizard, liches, masters), demons (unless you are one), vault
-guards, quest leaders, and minions all refuse to be tamed. Unique
-monsters (Medusa, etc.) also resist.</p>
+underfoot. The exclusion list is substantial, though: no humans
+(priests, shopkeepers, watchmen, soldiers, kings), no covetous monsters
+(the Wizard, liches, masters), no demons (unless you are one), no vault
+guards, quest leaders, nor minions can be tamed. Unique monsters
+(Medusa, etc.) also resist.</p>
 </section>
 <section id="what-pets-do-for-you" class="level4">
 <h4>What Pets Do for You</h4>
@@ -4769,9 +4763,9 @@ nothing but never destroys the weapon. Enchant <em>armor</em> raises by
 a small random amount that’s larger when armor is unenchanted, larger
 again for elven or non-magic armor, and +1 extra when blessed. Once worn
 armor exceeds <strong>+3</strong> (or <strong>+5</strong> for elven /
-Wizard’s Cornuthaum), each further enchant attempt can destroy the armor
-— the scroll “evaporates” your gear. Blessed scrolls don’t bypass this
-cap.</p>
+Wizard’s Cornuthaum), each further enchant attempt can destroy the
+armor; the scroll “evaporates” your gear. Blessed scrolls don’t bypass
+this cap.</p>
 <p><strong>Remove curse.</strong> Frees you from cursed equipment.
 Uncursed version works on worn and wielded items only; blessed version
 uncurses your entire inventory. Every adventurer has a “put on a cursed
@@ -5471,12 +5465,12 @@ the game hide in this grab-bag.</p>
 <tr>
 <td>Large box</td>
 <td>350</td>
-<td>Holds 0 to 3 items (0 to 5 if locked)</td>
+<td>Comes with 0 to 3 items (0 to 5 if locked)</td>
 </tr>
 <tr>
 <td>Chest</td>
 <td>600</td>
-<td>Holds 0 to 5 items (0 to 7 if locked)</td>
+<td>Comes with 0 to 5 items (0 to 7 if locked)</td>
 </tr>
 <tr>
 <td>Ice box</td>
@@ -8548,9 +8542,8 @@ items and knowledge alone.</p>
 <p>Atheist runs require careful resource management. Without prayer to
 cure hunger, you need reliable food sources. Without sacrifice or altar
 BUC, identification is harder and you’ll get no artifact gifts. The
-final Amulet offering for ascension is exempt (it’s coded as a special
-case that doesn’t touch the conduct), so a clean atheist ascension is
-mechanically possible.</p>
+final Amulet offering for ascension is exempt, so a clean atheist
+ascension is mechanically possible.</p>
 </section>
 <section id="weaponless" class="level4">
 <h4>Weaponless</h4>
@@ -8664,17 +8657,15 @@ or command line only; the in-game <code>O</code> menu cannot toggle it).
 Pauper implicitly sets nudist as well, so you also begin without
 armor.</p>
 <p>To keep the start from being impossible, the game compensates: you
-get two unspent weapon-skill slots, your role knows one signature spell
-or item (Wizard knows force bolt, Healer knows healing, Archeologist
-knows touchstone, Rogue and Tourist know sack, Cleric knows water,
-Samurai knows gunyoki rations), and a few <strong>supply chests</strong>
-seed early dungeon levels.</p>
-<p>End-of-game enlightenment shows “you started out without possessions”
-as a permanent line: pauper itself is set at birth and never cleared.
-The cascading nudist half is fragile though: the moment you wear armor,
-the nudist flag clears and the separate “faithfully nudist” end-screen
-line stops printing. Pauper is permanent; pauper-plus-nudist is yours to
-lose.</p>
+get two unspent weapon-skill slots and your role knows one signature
+spell or item (Wizard knows force bolt, Healer knows healing,
+Archeologist knows touchstone, Rogue and Tourist know sack, Cleric knows
+water, Samurai knows gunyoki rations). The <strong>supply
+chests</strong> scattered on early levels above the Oracle (a feature in
+every 5.0 game, not just pauper) carry most of your first kit.</p>
+<p>Pauper itself is a permanent conduct; the cascading nudist half is
+fragile — the moment you wear armor, the nudist flag clears and the
+separate “faithfully nudist” end-screen line stops printing.</p>
 <p>A practical note: pauper does not forbid acquiring or spending gold
 later. The conduct is about <em>starting</em> empty, not about staying
 penniless. But because shops are inherently a late-pauper resource (you
@@ -9843,8 +9834,8 @@ one-hander.</td>
 <td>5</td>
 <td>—</td>
 <td>iron</td>
-<td>Mjollnir is the artifact form (Valkyrie sacrifice gift; alignment
-fixed up to match the player).</td>
+<td>Mjollnir is the artifact form (Valkyrie sacrifice gift; its
+alignment will match the player’s).</td>
 </tr>
 </tbody>
 </table>
@@ -13946,10 +13937,10 @@ shoot at range.</p>
 <section id="dragons-d" class="level4">
 <h4>Dragons <code>D</code></h4>
 <!-- audit 2026-05-17 #54: 10 baby + 10 adult + Chromatic + Ixoth all verified against monsters.h:1325-1562 + 3642-3690 (shimmering correctly omitted, #if 0 DEFERRED). All breath types/damage and adult attack lines clean. Corrected silver dragon color (was "gray", actually CLR_BRIGHT_CYAN per color.h:54; fixed both baby and adult rows). See companion-audit.md. -->
-<p>Each color breathes its element type. Reflection bounces the ranged
-breath back. Adults are sources of dragon scale mail; babies are weaker
-but breathe the same. See <a href="#armor-tables">Dragon Scale
-Mail</a>.</p>
+<p>Each adult dragon breathes its element type. Reflection bounces the
+ranged breath back. <strong>Babies don’t breathe</strong> — they’re just
+biters until they grow up. Adults are the source of dragon scale mail.
+See <a href="#armor-tables">Dragon Scale Mail</a>.</p>
 <p>All except <em>Chromatic Dragon</em> also fly.</p>
 <div class="dense-table">
 <table>
@@ -14014,8 +14005,7 @@ Mail</a>.</p>
 <td>2</td>
 <td>10</td>
 <td>bite 2d6</td>
-<td>Same breath type as the adult; less HP. Still bad without fire
-res.</td>
+<td></td>
 </tr>
 <tr>
 <td>baby white dragon</td>
