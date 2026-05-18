@@ -3435,6 +3435,7 @@ these alternate effects are *better* than the normal ones:
 ---
 
 ### Wands and Staves
+<!-- audit 2026-05-18 #105: five corrections. (1) Wand of stasis was missing entirely from the table and the NODIR list; objects.h:1460 defines WAN_STASIS (NODIR, $150, prob 45), zap.c:2559-2568 freezes the level. (2) "Nothing" prose said NODIR, but it's IMMEDIATE per objects.h:1462 (the table already had BEAM, prose was inconsistent — fixed prose). (3) "Wand of undead turning raises it as a zombie" is wrong; zap.c:WAN_UNDEAD_TURNING calls unturn_dead() which revives held/floor corpses to their original species (see also montraits revival path). (4) Engrave-test outcomes for "vanishes" / "disappears" / silent group were muddled. Per engrave.c: cancellation and make-invisible erase the engraving in place; teleportation moves it elsewhere on the level; polymorph rewrites it to a different random engraving (engrave.c:618-633); nothing, undead-turning, opening, locking, probing produce no message at all (engrave.c:635-640). (5) The silent-IMMEDIATE group was unmentioned. Also dropped "raises as zombie" misreading. See companion-audit.md. -->
 
 Wands are reusable magical items that produce directed effects when
 zapped. They come in three types: **ray wands** fire a beam in a
@@ -3457,6 +3458,7 @@ area around you.
 |   150 | Secret door detection   | NODIR | 15          |
 |   150 | Slow monster            | BEAM  | 8           |
 |   150 | Speed monster           | BEAM  | 8           |
+|   150 | Stasis                  | NODIR | 15          |
 |   150 | Striking                | BEAM  | 8           |
 |   150 | Undead turning          | BEAM  | 8           |
 |   150 | Locking                 | BEAM  | 8           |
@@ -3522,6 +3524,13 @@ tool rather than a build enabler: think of it as "invisibility on
 demand for the next minute" rather than "invisibility forever from one
 lucky find."
 
+**Stasis.** A new 5.0 wand that freezes every monster on the level
+for **10–30 turns**. No ray, no aim, no message — just a hush. Use
+it when you're surrounded and need a free moment to engrave
+Elbereth, drink a potion, change weapons, or just walk past. The
+silence on engraving makes it harder to identify by the engrave
+test, but if you sit on a charge for a fight you'll know.
+
 #### Identification by Engraving
 
 The engrave test (described in
@@ -3547,30 +3556,37 @@ ambiguous results. For those, a systematic testing protocol helps:
 tells you whether the wand is NODIR (non-directional), RAY, or
 BEAM (immediate). This alone cuts the possibilities dramatically.
 
-- **NODIR wands** (light, nothing, enlightenment, create monster,
-  secret door detection, wishing): Most reveal themselves through
-  the engrave test messages. Light creates a lit field. Enlightenment
-  makes you feel self-knowledgeable. Create monster says "bugs
-  appear." If nothing visible happens but a charge was used, it's
-  the wand of nothing.
+- **NODIR wands** (light, enlightenment, create monster, secret
+  door detection, stasis, wishing): Most reveal themselves through
+  the engrave-test message. Light creates a lit field.
+  Enlightenment makes you feel self-knowledgeable. Create monster
+  says "bugs appear." Wishing prompts you for a wish. **Stasis**
+  is deliberately silent on engraving — the C code hides it among
+  the other silent wands so the engrave test can't single it out.
 - **RAY wands** (digging, magic missile, fire, cold, lightning,
   sleep, death): Digging riddles the floor with holes. Fire, cold,
   and lightning produce obvious elemental effects. Sleep stops bugs
   from moving. Magic missile and death just write in dust. Of these
   two, death is $500; check the price first.
-- **BEAM wands** (everything else): The engrave test doesn't
-  distinguish most beam wands well. If the engraving vanishes, it's
-  cancellation or make invisible. If the engraving disappears
-  entirely, it's teleportation or polymorph. For the rest, further
-  testing is needed.
+- **BEAM wands** (everything else): The engrave test only
+  distinguishes some of them. **Cancellation and make invisible**
+  erase the engraving in place. **Teleportation** moves it
+  elsewhere on the level (look around to spot it). **Polymorph**
+  rewrites your engraving as a different random one. **Striking**
+  scatters dust around. Five BEAM wands — **nothing, undead
+  turning, opening, locking, probing** — produce *no engrave
+  message at all*. Combined with the silent NODIR stasis (above),
+  a wand that engraves in silence is one of six possibilities; the
+  zap tests below will resolve them.
 
 **Step 2: Safe zapping tests.** For wands that remain unidentified
 after engraving, zap them at safe targets:
 
 - **Zap at a locked chest or door.** A wand of opening unlocks it.
   A wand of locking locks it. A wand of striking breaks it.
-- **Zap at a corpse on the floor.** A wand of undead turning raises
-  it as a zombie. A wand of polymorph transforms it.
+- **Zap at a corpse on the floor.** A wand of undead turning
+  revives the corpse to its original species (and animates any
+  carried corpses too). A wand of polymorph transforms it.
 - **Zap at a tame or weak monster.** Speed monster makes it faster.
   Slow monster makes it slower. Make invisible makes it vanish.
   Probing reveals its stats.
@@ -4751,20 +4767,21 @@ whole stack, haste self lasts longer, and so on.
 
 Role caps vary sharply across schools:
 
-- **Wizards** are the only role with access to all seven, and cap
-  at Expert in attack, divination, escape, and matter.
+- **Wizards** have access to all seven schools and cap at Expert
+  in attack, divination, escape, and matter.
+- **Monks** also have access to all seven, but cap at Expert only
+  in healing — Skilled in cleric and escape, Basic elsewhere.
 - **Priests** reach Expert in healing, divination, and cleric.
 - **Healers** cap at Expert in healing — and are *restricted*
   from every other school. Specialization by decree.
 - **Knights** train attack, healing, and cleric to Skilled.
-- **Monks** dabble broadly: Expert healing, Skilled cleric and
-  escape, Basic in most others.
 - **Rogues, Rangers, Tourists, Samurai** each get two or three
   schools at Skilled or lower, usually built around divination
   or escape.
-- **Barbarians, Valkyries, Cavemen** cap at Basic in their one
-  or two available schools and shouldn't expect to learn anything
-  past level 3.
+- **Cavemen** reach Skilled in matter and Basic in attack — two
+  schools only.
+- **Barbarians and Valkyries** cap at Basic in their two schools
+  (attack and escape) and shouldn't expect anything past level 3.
 
 Full role caps for every weapon, fighting style, and spell school
 are in the [Skill Caps](#skill-caps) appendix; the full list of
@@ -5680,6 +5697,7 @@ last obstacle between you and divinity.
 ---
 
 ### The Elemental Planes
+<!-- audit 2026-05-18 #104: four substantive corrections. (1) Plane of Air vortex/bubble conflation: vortex AT_ENGL attacks just damage you, they do not move bubbles or carry you across the level. Bubble drift is a separate system implemented by mv_bubble in mkmaze.c:1648-1685, 1951-1965 — being inside a cloud-bubble whose position shifts each turn is what drifts you toward the portal. (2) Plane of Water drowning is NOT instant death — done(DROWNING) at trap.c:5171-5193 honors amulet of life saving; Breathless intrinsic (e.g. magical breathing amulet, Amphibious) prevents drowning entirely (trap.c:5106-5126). (3) Astral wrong-altar offering does NOT lose the Amulet for retrieval; pray.c:1562-1572 ends the game immediately with done(ESCAPED) and the opposing god gains dominion. The Amulet is consumed at pray.c:1537-1540 before the alignment branch. (4) Farlook on an altar only reveals alignment when you are ADJACENT to it; otherwise pager.c:744-754 returns "aligned high altar" with no alignment word. Also flagged in notes: every plane has noteleport, so wand-of-teleport on self silently fails (still works on monsters). See companion-audit.md. -->
 
 Beyond the top of the Dungeons of Doom, the world dissolves into
 its raw elements. Four planes stand between you and the gods, each
@@ -5704,10 +5722,14 @@ feel, just empty sky and air elementals moving faster than thought.
 They attack multiple times per turn and they cannot be genocided.
 A ring of conflict is devastating here: let them tear each other
 apart while you search for the portal. A scroll of magic mapping
-reveals it. One strange trick: if a vortex engulfs you, it carries
-you randomly around the level, and if it happens to cross the
-portal, you're pulled through. Sometimes the fastest route is to
-surrender to the wind.
+reveals it. The level is divided into drifting **cloud bubbles**
+that move on their own each turn: if you're standing in a bubble
+when it shifts, you shift with it. Walking with the drift can
+carry you across the level faster than fighting against it,
+and a bubble may eventually drift you onto the portal square
+itself. (Note that teleportation is blocked on every plane, so
+wand of teleport on yourself silently fails — it still works on
+monsters for clearing space.)
 
 #### Plane of Fire
 
@@ -5720,9 +5742,12 @@ there. Don't stop to fight anything you don't have to.
 #### Plane of Water
 
 The entire level is underwater. Without magical breathing (an
-amulet or intrinsic), you will drown, and drowning is instant death,
-no saving throw. The level is a labyrinth of water-filled chambers
-with occasional air pockets. Sea monsters prowl the corridors.
+amulet, the Amphibious intrinsic, or a polyform that breathes
+water) you will drown. Drowning calls the standard death path,
+so an **amulet of life saving** will rescue you — but you'll
+drown again on your next turn unless something has changed.
+The level is a labyrinth of water-filled chambers with occasional
+air pockets. Sea monsters prowl the corridors.
 
 **The standard tactic on arrival: genocide class `;`.** Read a
 scroll of genocide, target the entire `;` class (eels, krakens,
@@ -5740,8 +5765,10 @@ the gods.
 You surface into the presence of the divine. Three altars stand in
 the great temple: Lawful, Neutral, and Chaotic. You must sacrifice
 the Amulet of Yendor on the altar matching your alignment to
-ascend. Choose wrong and the Amulet is lost: you'll need to fight
-to retrieve it.
+ascend. **Choose wrong and the game ends on the spot**: the
+opposing god gains dominion over your god, and you've handed
+victory to the other side. There is no retrieval — pick the
+right altar the first time.
 
 The plane is swarming with Angels and the three Riders: Death,
 Famine, and Pestilence. The Riders cannot be permanently killed;
@@ -5750,7 +5777,12 @@ the level. You are not here to fight. You are here to reach one
 altar, make one sacrifice, and end this.
 
 - Conflict and teleportation wands clear a path through the crowds
-- Identify the correct altar quickly. Farlook (`;`) shows alignment
+  — though note teleportation on **yourself** silently fails on
+  every elemental plane (only monster-targeted teleport works).
+- Identify the correct altar by walking adjacent to it: farlook
+  (`;`) reveals an altar's alignment only when you're standing
+  next to it. From across the room you only see "an aligned high
+  altar." Plan to visit each in turn if necessary.
 - The Riders will follow you. Outrun them, don't outfight them
 - When you offer the Amulet on the correct altar: you ascend.
   The game is won. You've done what so few have done. Congratulations.
@@ -7546,10 +7578,19 @@ change.
 
 Every role has fixed maximum ranks for each weapon, fighting style,
 and spell school. Skills not listed for a role are **restricted**
-(locked at Unskilled) — except that a god-given artifact weapon
-unrestricts you to Basic in its skill. Key: **B**=Basic,
-**S**=Skilled, **E**=Expert, **M**=Master, **GM**=Grand Master,
-**—**=restricted. Roles are abbreviated: Arc=Archeologist,
+(the rank is locked at Unskilled) — except that a god-given
+artifact weapon unrestricts you to Basic in its skill. Key:
+**B**=Basic, **S**=Skilled, **E**=Expert, **M**=Master,
+**GM**=Grand Master, **—**=restricted.
+
+A "**—**" does *not* mean the skill is unusable — it means the
+rank is locked at Unskilled forever, so you always pay the
+Unskilled penalty from the rank table (−4/−2 for a weapon, −9/−3
+per strike for two-weapon, the Unskilled cast-failure rate for a
+spell school) and no rank-gated upgrades ever unlock. A Healer
+can still read a spellbook of force bolt and try to cast it; a
+Wizard can still swing a long sword; they'll just always do it
+clumsily, with no path to improvement. Roles are abbreviated: Arc=Archeologist,
 Bar=Barbarian, Cav=Caveman, Hea=Healer, Kni=Knight, Mon=Monk,
 Pri=Priest, Rog=Rogue, Ran=Ranger, Sam=Samurai, Tou=Tourist,
 Val=Valkyrie, Wiz=Wizard.
@@ -7607,8 +7648,7 @@ now.
 :::
 
 Only Monks and Samurai have martial arts at all, and only Monks
-reach Grand Master. Monks are restricted from bare-hand combat
-because martial arts replaces it; Samurai have access to both.
+reach Grand Master.
 
 #### Spell School Caps
 
@@ -7628,9 +7668,11 @@ because martial arts replaces it; Samurai have access to both.
 
 Healers cap at Expert in healing but are restricted from every
 other school — the only role with this kind of single-school
-specialization. Wizards are the only role with access to all seven
-schools. Barbarians, Valkyries, and Cavemen are restricted from
-five of the seven and capped at Basic in the rest.
+specialization. Wizards and Monks are the only roles with access
+to all seven schools, though only Wizards can push four of them
+to Expert; Monks reach Expert only in healing. Barbarians and
+Valkyries cap at Basic in their two available schools (attack and
+escape) and are restricted from the other five.
 
 ---
 

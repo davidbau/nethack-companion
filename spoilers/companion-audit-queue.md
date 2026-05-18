@@ -106,10 +106,10 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 99**  L 4509  (  89 lines) 📖 Wishes and Wishing
 - [x] **#100**  L 5830  (  36 lines)   ↳ Sokoban Solutions → Level 3, Version A
 - [x] **#101**  L 6692  (  12 lines)   ↳ Weapons Tables → Broadsword
-- [ ] **#102**  L 3309  ( 180 lines) 📖 Wands and Staves
-- [ ] **#103**  L 7446  (  15 lines)   ↳ Bestiary Tables → Trappers and lurkers `t`
-- [ ] **#104**  L 5927  (  78 lines)   ↳ Sokoban Solutions → Level 4, Version A (prize: usually bag of holding, 25% amulet of reflection)
-- [ ] **#105**  L 5364  (  82 lines) 📖 The Elemental Planes
+- [x] **#102**  L 3309  ( 180 lines) 📖 Wands and Staves
+- [x] **#103**  L 7446  (  15 lines)   ↳ Bestiary Tables → Trappers and lurkers `t`
+- [x] **#104**  L 5927  (  78 lines)   ↳ Sokoban Solutions → Level 4, Version A (prize: usually bag of holding, 25% amulet of reflection)
+- [x] **#105**  L 5364  (  82 lines) 📖 The Elemental Planes
 - [ ] **#106**  L 1023  (  94 lines)   ↳ Branches and Landmarks → Medusa's Island
 - [ ] **#107**  L 6949  ( 164 lines) 📖 Armor Tables
 - [ ] **#108**  L 6250  (  13 lines)   ↳ Voluntary Challenges → No Genocide

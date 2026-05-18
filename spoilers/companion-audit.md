@@ -3707,3 +3707,178 @@ Source: `spoilers/companion.md` line 7027. 1 correction.
    detail and the peaceful-attack quirk.
 
 ---
+
+## 2026-05-18 — Chapter audit #102: Wands and Staves
+
+Source: `spoilers/companion.md` line 3437. ~180 lines. 5 corrections.
+
+### Verified
+- Wand prices in the table all match `objects.h:1449-1499`.
+- Max charges: NODIR=15, non-NODIR=8 (`mkobj.c:1123-1124`).
+- Wishing starts with exactly 1 charge (`mkobj.c:1116-1117`).
+- Wresting: 1/121 chance (`hack.h:1411` WAND_WREST_CHANCE=121).
+- Recharge explosion formula `n^3 / 343` (`read.c:761-762`).
+- Wand of wishing **guaranteed** explodes on second recharge.
+- Cursed wand may explode when engraved (`engrave.c:794`,
+  ~1% per use).
+- Make invisible duration 31-45 turns (`zap.c:2836`, `rn1(15,31)`).
+- Elemental side effects: fire burns floor scrolls
+  (`zap.c:burn_floor_objects`), cold freezes water
+  (`zap.c:5288`), lightning blinds (`zap.c:4355`).
+- Cancellation does NOT affect booze/fruit juice/oil.
+
+### Corrected
+1. **Wand of stasis was missing entirely** from the Wand Table and
+   the systematic-testing protocol. Added to the table at $150
+   NODIR 15-charges (`objects.h:1460`). Added a Key Wands callout
+   for what it actually does: freezes every monster on the level
+   for 10–30 turns (`zap.c:2559-2568`, `rn1(21, 10)`).
+2. **"Nothing" was classified as NODIR in the testing prose** but
+   IMMEDIATE in the table — the table was right (`objects.h:1462`).
+   Removed "nothing" from the NODIR list in Step 1.
+3. **"Wand of undead turning raises it as a zombie"** — wrong.
+   `zap.c` WAN_UNDEAD_TURNING calls `unturn_dead()` which iterates
+   the target's inventory (or the floor if zapped at a corpse) and
+   revives each corpse to its **original species**, not as a
+   zombie. Reworded.
+4. **"If the engraving disappears entirely, it's teleportation or
+   polymorph"** — wrong on both halves. Per `engrave.c:618-672`:
+   cancellation, make invisible, and teleportation all produce
+   "engraving vanishes" (`de->dengr = TRUE` or `de->teleengr`);
+   teleportation specifically moves the engraving elsewhere on
+   the level (`teleengr` at `engrave.c:680`); polymorph rewrites
+   the engraving to a different random message (`engrave.c:618-633`).
+   The old dichotomy was muddled. Reworded the BEAM bullet to
+   describe each behavior accurately.
+5. **Silent-IMMEDIATE engrave group unmentioned.** Five BEAM wands
+   produce no engrave message at all: nothing, undead-turning,
+   opening, locking, probing (`engrave.c:635-640`). Plus stasis
+   (NODIR) is also silent. Added explicit callouts in both bullets
+   so a silent engrave-test result narrows to one of six.
+
+### Notes
+- The "beam" label for IMMEDIATE wands is a non-standard
+  simplification (they target the first monster hit, not all
+  squares in a line). Tolerable. Kept as-is.
+- Wand of magic missile only fires 2 bolts vs 6 for fire/cold/
+  lightning at the same charge (`zap.c:3465`), making it
+  noticeably weaker than other elemental rays. Spoiler doesn't
+  mention this; could add later.
+- Cancellation cancels worn armor on monsters and removes magical
+  resistances — the actual mechanism behind "loses most of its
+  special attacks." Spoiler is vague but not wrong.
+
+---
+
+## 2026-05-18 — Chapter audit #103: Trappers and lurkers `t`
+
+Source: `spoilers/companion.md` line 7446. No corrections.
+
+### Verified
+- lurker above: Lvl 10, Spd 3, AC 3, MR 0, gray, M1_FLY, M1_HIDE,
+  M2_STALK — all match `monsters.h:981-989`.
+- trapper: Lvl 12, Spd 3, AC 3, MR 0, green, M1_HIDE, M2_STALK,
+  no M1_FLY — all match `monsters.h:990-998`.
+- Engulf attacks (engulf 1d6 wrap + 2d6 phys for lurker; engulf
+  1d8 wrap + 2d8 phys for trapper) match `monsters.h:983, 992`.
+- "Hide" and "follow you up and down stairs" claims match M1_HIDE
+  + M2_STALK flags and `mondata.c:1224`.
+
+### Notes
+- Both monsters' AD_WRAP can suffocate non-breathless characters,
+  which is the real danger beyond the listed dice. Not flagged in
+  spoiler; potential future addition.
+- 5.0 explicitly changed t-class away from AD_DGST (digestion) to
+  AD_WRAP (`monsters.h:974-979` comment). The spoiler's loose
+  "swallow attack" phrasing is colloquially accurate.
+
+---
+
+## 2026-05-18 — Chapter audit #104: The Elemental Planes
+
+Source: `spoilers/companion.md` line 5683. 4 corrections.
+
+### Verified
+- Earth: buried random portal, no stairs, mostly diggable rock,
+  noteleport/hardfloor/shortsighted flags
+  (`dat/earth.lua:13-53`).
+- Air: void with no walls/floor, mazelevel noteleport hardfloor
+  shortsighted stormy, hostile air elementals
+  (`dat/air.lua:7-9, 51-61`).
+- Air elementals cannot be genocided (G_NOCORPSE | 1, no G_GENO).
+- Fire: fire traps, fire elementals, lava terrain
+  (`dat/fire.lua:9, 42-81`).
+- Water: drowning is the killer; sea monsters in `;` class are
+  G_GENO so scroll of genocide on `;` works
+  (`monsters.h:3205-3256`).
+- Astral: three altars (one per alignment), shuffled per game,
+  with Riders + Angels + clerics (`dat/astral.lua:83-91`).
+- Riders are M2_NOPOLY | G_UNIQ | G_NOGEN, cannot be genocided;
+  revive from corpses (`monsters.h:3144-3173`, `mon.c:1558-1679`).
+- Offering real Amulet on a matching sanctum altar ascends
+  (`pray.c:1868-1880, 1573-1587`).
+
+### Corrected
+1. **"Choose wrong and the Amulet is lost: you'll need to fight
+   to retrieve it"** — wrong. `pray.c:1562-1572` ends the game
+   immediately on wrong-altar offering with `done(ESCAPED)`; the
+   opposing god gains dominion over your god. The Amulet is
+   consumed at `pray.c:1537-1540` *before* the alignment branch.
+   No retrieval — it's a loss state.
+2. **"Drowning is instant death, no saving throw"** — wrong.
+   Drowning calls `done(DROWNING)` (`trap.c:5171-5193`), which
+   honors amulet of life saving. Breathless intrinsic (magical
+   breathing amulet, Amphibious polyform) prevents drowning
+   entirely (`trap.c:5106-5126`).
+3. **"Farlook (`;`) shows alignment"** on Astral — only when you
+   are **adjacent** to the altar. From across the room, farlook
+   returns "an aligned high altar" with no alignment word
+   (`pager.c:744-754`). You have to walk up to each.
+4. **"If a vortex engulfs you, it carries you randomly around the
+   level"** — conflates two unrelated systems. Vortex AT_ENGL
+   attacks just damage you; they don't move bubbles or transport
+   the hero. The level's **cloud bubbles** drift each turn
+   (`mkmaze.c:1648-1685, 1951-1965`); standing in a drifting
+   bubble shifts you with it, and may eventually carry you onto
+   the portal square. Reworded.
+
+### Notes
+- Every plane has `noteleport`, so wand-of-teleport on **self**
+  silently fails. Still works for clearing crowds via monster
+  teleport. Added to spoiler.
+- Astral is `non_diggable | non_passwall` (`dat/astral.lua:103-104`)
+  — phase-door / dig escapes don't work.
+- Earth monsters include more than earth elementals: pit fiends,
+  barbed devils, rock trolls, stone giants, stone golems, pit
+  vipers, minotaurs, scorpion, rock piercer, umber hulk, dust
+  vortex. Spoiler over-narrows the threat; could expand later.
+- Fire roster includes red dragon, balrog, fire giants,
+  salamanders, pit fiends, hell hounds.
+
+---
+
+## 2026-05-18 — Chapter audit #105: Sokoban Level 4, Version A
+
+Source: `spoilers/companion.md` line 5927. No corrections.
+
+### Verified
+- Map matches `dat/soko1-1.lua:8-27` (Version A = soko1-1.lua per
+  prize odds 75% BoH at soko1-1.lua:103-105 matching header text
+  "usually bag of holding, 25% amulet of reflection").
+- Stair down, locked door (24,14), three closed doors at
+  (18,12)(18,14)(18,16), rolling-boulder trap at (9,2), hole row
+  cols 8-24 in row 2 — all match lua.
+- All 18 boulders A-R match `des.object("boulder",...)` entries
+  at `soko1-1.lua:40-60`.
+- Push destinations and player approach squares for all 19 steps
+  land on floor in the lua; no diagonal squeezes; no pulls.
+- "Three boulders (F, G, H) remain" — verified by counting.
+- Prize candidate squares (17,12)/(17,14)/(17,16) match `place:set`
+  at `soko1-1.lua:30-32`.
+
+### Notes
+- Engraving "Elbereth" and a cursed scroll of scare monster on the
+  prize square (`soko1-1.lua:110-111`) — not mentioned by spoiler,
+  no claims made about them.
+
+---
