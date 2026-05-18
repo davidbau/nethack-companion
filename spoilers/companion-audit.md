@@ -1419,3 +1419,19 @@ know WHY to bring food — just that they should.
 - Shuriken: empty Notes column (could flag highest to-hit among basic thrown missiles).
 - Golems: flesh golem corpse uniqueness not surfaced (could be pedagogical).
 - Arachnids: "common as source of poisonous-corpse food poisoning" is loose (only 2 of 4 regulars are M1_POIS).
+
+---
+
+## 2026-05-17 — Chapter audit #26: Traps and Hazards → Nuisance Traps
+
+Source: `spoilers/companion.md` lines 1165-1176
+Verified 4 trap entries; 1 broadened; 0 wrong.
+
+### Verified
+- Arrow trap "Fires an arrow at you (modest damage)" — `trap.c:1190` thitu(8, dmgval(arrow), ...). Modest single-digit damage. Missed arrows stack on the floor (verified at 1217-1221).
+- Dart trap "Fires a dart, may be poisoned" — `trap.c:1251` `if (!rn2(6)) otmp->opoisoned = 1` — 1-in-6 poison chance. AD_DRST poisoned() path.
+- Squeaky board "Makes noise, wakes nearby monsters" — `trap.c:1403` `wake_nearby(FALSE)` → `wake_nearto_core(u.ux, u.uy, u.ulevel*20, FALSE)`.
+
+### Broadened
+- Rust trap was described as "Splashes water, rusting exposed metal equipment" — incomplete. `trap.c:1595` `trapeffect_rust_trap` calls `water_damage()` on multiple worn slots (helm, weapons, gloves, cloak/suit/shirt) and additionally iterates inventory to splash any `lamplit` items via `splash_lit()`. Non-metal armor takes water damage too (potions in worn containers dilute, lamps go out). The "only metal" framing misleads a leather-armor reader into false security.
+   - Fix: "Splashes water — rusts iron worn armor, soaks cloak/suit/shirt, douses lit lamps".

@@ -30,7 +30,7 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 23**  L 6927  (  10 lines)   ↳ Weapons Tables → Shuriken
 - [x] **# 24**  L 8116  (  24 lines)   ↳ Bestiary Tables → Golems `'`
 - [x] **# 25**  L 7428  (  18 lines)   ↳ Bestiary Tables → Arachnids and centipedes `s`
-- [ ] **# 26**  L 1147  (  27 lines)   ↳ Traps and Hazards → Nuisance Traps
+- [x] **# 26**  L 1147  (  27 lines)   ↳ Traps and Hazards → Nuisance Traps
 - [ ] **# 27**  L 7244  (  18 lines)   ↳ Bestiary Tables → Humanoids `h`
 - [ ] **# 28**  L 3633  ( 144 lines) 📖 Tools of the Trade
 - [ ] **# 29**  L 1623  ( 204 lines) 📖 What Actually Kills Adventurers

@@ -1163,13 +1163,14 @@ Here are the traps you'll encounter, roughly grouped by how much
 you'll regret finding them:
 
 #### Nuisance Traps
+<!-- audit 2026-05-17 #26: 4 trap entries verified, 1 broadened (rust trap also affects non-metal armor, lit lamps, potions). See companion-audit.md. -->
 
 | Trap            | Effect                                              |
 | --------------- | --------------------------------------------------- |
 | Arrow trap      | Fires an arrow at you (modest damage)               |
 | Dart trap       | Fires a dart, may be poisoned                       |
 | Squeaky board   | Makes noise, wakes nearby monsters                  |
-| Rust trap       | Splashes water, rusting exposed metal equipment     |
+| Rust trap       | Splashes water — rusts iron worn armor, soaks cloak/suit/shirt, douses lit lamps |
 
 Annoying but rarely lethal. The silver lining: arrow and dart traps
 produce free ammunition. Veterans sometimes trigger them deliberately
