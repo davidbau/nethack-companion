@@ -3110,23 +3110,24 @@ fatal.</p>
 </section>
 <section id="the-riders" class="level4">
 <h4>The Riders</h4>
-<!-- audit 2026-05-18 #150: 4 corrections. (1) "permanently displaced" misreads M3_DISPLACES (monflag.h:175) — that flag means "moves monsters out of its way," not the cloak-of-displacement evasion. (2) "Ignore magic resistance for their signature attacks" — wrong for Death. uhitm.c:3858-3883 shows Antimagic DOES block the 3/20 touch-of-death instakill case. (3) "Eating their corpses is fatal in different ways for each" — wrong; all three trigger the same done(DIED) with killer text "unwisely ate the body of <name>" (eat.c:831-849). (4) "Famine drives you instantly to Weak or Fainting" — overstated; uhitm.c:3791-3795 adds 40-79 hunger units, which doesn't reach Weak from Satiated. -->
+<!-- audit 2026-05-18 #150 (re-audit 2026-05-19 v2 #167): 4 corrections. (1) "permanently displaced" misreads M3_DISPLACES (monflag.h:175) — that flag means "moves monsters out of its way," not the cloak-of-displacement evasion. (2) "Ignore magic resistance for their signature attacks" — wrong for Death. uhitm.c:3858-3883 shows Antimagic DOES block the 3/20 touch-of-death instakill case. (3) "Eating their corpses is fatal in different ways for each" — wrong; all three trigger the same done(DIED) with killer text "unwisely ate the body of <name>" (eat.c:831-849). (4) "Famine drives you instantly to Weak or Fainting" — overstated; uhitm.c:3791-3795 adds 40-79 hunger units, which doesn't reach Weak from Satiated. v2 voice fix: "Each hits twice per turn with AT_TUCH 8d8" used a C identifier in beginner-voice prose. Reworded to "a touch attack dealing 8d8 damage." See companion-audit.md. -->
 <p>On the Astral Plane, three unique <code>&amp;</code>-class beings
 guard the way to the high altars: <strong>Death</strong>,
 <strong>Famine</strong>, and <strong>Pestilence</strong>, the Riders.
 They are level 30, regenerate while you fight, see invisible, and shove
-monsters out of their path. Each hits twice per turn with AT_TUCH 8d8.
-<strong>Death’s</strong> touch has a 3-in-20 chance of instant-kill on
-every hit — magic resistance blocks the instakill specifically; the
-regular damage still goes through. <strong>Pestilence</strong> inflicts
-the disease that turns into food poisoning over the next several turns;
-<strong>Sick resistance</strong> is the only complete defense (a unicorn
-horn won’t clear the non-vomitable sickness once it lands).
-<strong>Famine</strong> adds 40–79 hunger units to a normal hit, which
-won’t drop you below Hungry in one swing but will starve you fast across
-an encounter. Eating any Rider corpse is straight-up fatal
-(<code>done(DIED)</code>). A mercy in 5.0: if Pestilence or Famine land
-their first attack on a turn, the second downgrades to a stun.</p>
+monsters out of their path. Each hits twice per turn with a touch attack
+dealing 8d8 damage. <strong>Death’s</strong> touch has a 3-in-20 chance
+of instant-kill on every hit — magic resistance blocks the instakill
+specifically; the regular damage still goes through.
+<strong>Pestilence</strong> inflicts the disease that turns into food
+poisoning over the next several turns; <strong>Sick resistance</strong>
+is the only complete defense (a unicorn horn won’t clear the
+non-vomitable sickness once it lands). <strong>Famine</strong> adds
+40–79 hunger units to a normal hit, which won’t drop you below Hungry in
+one swing but will starve you fast across an encounter. Eating any Rider
+corpse is straight-up fatal (<code>done(DIED)</code>). A mercy in 5.0:
+if Pestilence or Famine land their first attack on a turn, the second
+downgrades to a stun.</p>
 <p><strong>Defenses:</strong> An <strong>amulet of life saving</strong>
 is the best insurance on Astral, full stop. Magic resistance is what
 stops Death’s instakill (but not its 8d8 baseline). Sick resistance
@@ -3156,7 +3157,7 @@ unidentified amulets.</p>
 </section>
 <section id="deadly-poison" class="level4">
 <h4>Deadly Poison</h4>
-<!-- audit 2026-05-17 #7: 7 claims verified, 1 corrected (Famine corpse missing from instakill list). See companion-audit.md. -->
+<!-- audit 2026-05-17 #7 (re-audit 2026-05-19 v2 #165): 7 claims verified, 1 corrected (Famine corpse missing from instakill list). v2 re-verified: AD_DRST 1/240 frequency (rn2(8) × rn2(30) gate at uhitm.c:3154+attrib.c:362); poison resistance grants full immunity (attrib.c:338-343); Famine corpse fatal at eat.c:831-838 alongside Death/Pestilence. 0 new corrections. See companion-audit.md. -->
 <p>A handful of monsters (pit vipers, killer bees, cobras, some spiders)
 have a poison-damage branch that can deliver 10 to 34 extra HP of damage
 on top of the normal hit. At full HP you usually survive; at low HP or
@@ -8548,7 +8549,7 @@ is won. You’ve done what so few have done. Congratulations.</li>
 <hr />
 <section id="advanced-controls" class="level3">
 <h3>Advanced Controls</h3>
-<!-- audit 2026-05-17 #48: keystrokes (F, G, g, m, O, v, _, ;, /, Ctrl+A/P/R/O, #overview, #chronicle, #annotate, #conduct) all verified in cmd.c:1662-2065. number_pad/autopickup/pickup_types option semantics verified vs optlist.h. Corrected `verbose` claim: it controls extra descriptive messages (wielding/digging/sounds/pets), not "why multi-commands stopped." See companion-audit.md. -->
+<!-- audit 2026-05-17 #48 (re-audit 2026-05-19 v2 #168): keystrokes (F, G, g, m, O, v, _, ;, /, Ctrl+A/P/R/O, #overview, #chronicle, #annotate, #conduct) all verified in cmd.c:1662-2065. number_pad/autopickup/pickup_types option semantics verified vs optlist.h. Corrected `verbose` claim: it controls extra descriptive messages (wielding/digging/sounds/pets), not "why multi-commands stopped." v2 re-verified: double-tap `F` cancel (cmd.c:1622-1633), `m` prefix on `e`/`a`/`,` for menu, Ctrl+A stores executed-command only (cmd.c:3732-3736), count limit 32767 (global.h:135). 0 new corrections. See companion-audit.md. -->
 <p>The basic keys get you through every situation in NetHack. The
 commands below get you through them faster. Once you’ve spent a few
 thousand turns hammering <code>s</code> and walking corridors one square
@@ -10669,7 +10670,7 @@ alignment will match the player’s).</td>
 </section>
 <section id="quarterstaff" class="level4">
 <h4>Quarterstaff</h4>
-<!-- audit 2026-05-17 #19: 7 cells verified, 0 corrected. Matches objects.h:377. See companion-audit.md. -->
+<!-- audit 2026-05-17 #19 (re-audit 2026-05-19 v2 #164): 7 cells verified, 0 corrected. Matches objects.h:377-378 (bi=1, 1d6/1d6, wt 40, cost 5, WOOD). Wizard starter (u_init.c:168). Bimanual gets the 3/2 Str bonus at uhitm.c:1467. Skill caps: Wizard E, Priest E, Healer E, Caveman E (no Knight, no Rogue). 0 new corrections. See companion-audit.md. -->
 <div class="dense-table">
 <table>
 <colgroup>
@@ -16512,7 +16513,7 @@ dangerous.</p>
 </section>
 <section id="giant-humanoids-h" class="level4">
 <h4>Giant humanoids <code>H</code></h4>
-<!-- audit 2026-05-18 #101: section intro and minotaur note corrected. (1) Eating-a-giant-raises-Strength is gated on is_giant(ptr) (M2_GIANT) at eat.c:1345; ettin (no M2_GIANT) and minotaur (no M2_GIANT) corpses do NOT confer Strength. The C even comments at eat.c:1758: "ettin is a two-headed giant but its corpse doesn't confer strength." (2) Minotaur "usually guards a vault" is wrong; minotaurs are placed in Gehennom mazes by mkmaze.c:1102-1113 populate_maze(). Vaults are guarded by PM_GUARD, not minotaurs. All stat values match monsters.h 1714-1793. See companion-audit.md. -->
+<!-- audit 2026-05-18 #101 (re-audit 2026-05-19 v2 #166): section intro and minotaur note corrected. (1) Eating-a-giant-raises-Strength is gated on is_giant(ptr) (M2_GIANT) at eat.c:1345; ettin (no M2_GIANT) and minotaur (no M2_GIANT) corpses do NOT confer Strength. The C even comments at eat.c:1758: "ettin is a two-headed giant but its corpse doesn't confer strength." (2) Minotaur "usually guards a vault" is wrong; minotaurs are placed in Gehennom mazes by mkmaze.c:1102-1113 populate_maze(). Vaults are guarded by PM_GUARD, not minotaurs. All stat values match monsters.h 1714-1793. v2 fixes: (a) Cyclops row note "Caveman quest nemesis" — wrong. Per role.c:154-172, Cyclops is the HEALER quest nemesis; Caveman's is the Chromatic Dragon (role.c:113-131). Corrected. (b) Lord Surtur row note "Has Mjollnir if you don't" — not supported. M3_WANTSARTI targets the quest artifact (Orb of Fate for Valkyrie per role.c:516), and Mjollnir is a sacrifice gift artifact (artilist.h:109-112); no code puts Mjollnir on Surtur. Dropped the claim. (c) Fire giant note "Surprisingly poor offensively if you have fire res" — misleading; fire giant attacks are AD_PHYS (weapon damage), so fire resistance doesn't reduce its melee. Dropped. See companion-audit.md. -->
 <p>Boulder throwers. Storm / fire / frost giants match the dragon
 elements; titans cast spells. Eating a true giant’s corpse raises
 Strength; the ettin and minotaur don’t count as giants for this
@@ -16580,8 +16581,7 @@ purpose.</p>
 <td>4</td>
 <td>5</td>
 <td>weapon 2d10</td>
-<td>fire-res. Throws boulders. Surprisingly poor offensively if you have
-fire res.</td>
+<td>fire-res. Throws boulders.</td>
 </tr>
 <tr>
 <td>frost giant</td>
@@ -16642,7 +16642,7 @@ attacks.</td>
 <td>0</td>
 <td>0</td>
 <td>weapon 4d8 · weapon 4d8 · claw 2d6 steal-amulet</td>
-<td>follows stairs, ston-res. Caveman quest nemesis. Throws
+<td>follows stairs, ston-res. Healer quest nemesis. Throws
 boulders.</td>
 </tr>
 <tr>
@@ -16653,8 +16653,7 @@ boulders.</td>
 <td>2</td>
 <td>50</td>
 <td>weapon 2d10 · weapon 2d10 · claw 2d6 steal-amulet</td>
-<td>follows stairs, fire-res, ston-res. Valkyrie quest nemesis. Has
-Mjollnir if you don’t.</td>
+<td>follows stairs, fire-res, ston-res. Valkyrie quest nemesis.</td>
 </tr>
 </tbody>
 </table>

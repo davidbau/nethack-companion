@@ -172,11 +172,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#161**  L 2272  (  22 lines)     ↳ Dangerous Encounters → Disintegration
 - [x] **#162**  L 7940  (  18 lines)     ↳ Bestiary Tables → Ants and insects `a`
 - [x] **#163**  L 2148  (  19 lines)     ↳ Dangerous Encounters → Light Bursts
-- [ ] **#164**  L 7422  (  11 lines)     ↳ Weapons Tables → Quarterstaff
-- [ ] **#165**  L 2257  (  15 lines)     ↳ Dangerous Encounters → Deadly Poison
-- [ ] **#166**  L 8558  (  23 lines)     ↳ Bestiary Tables → Giant humanoids `H`
-- [ ] **#167**  L 2210  (  29 lines)     ↳ Dangerous Encounters → The Riders
-- [ ] **#168**  L 5981  ( 117 lines)   📖 Advanced Controls
+- [x] **#164**  L 7422  (  11 lines)     ↳ Weapons Tables → Quarterstaff
+- [x] **#165**  L 2257  (  15 lines)     ↳ Dangerous Encounters → Deadly Poison
+- [x] **#166**  L 8558  (  23 lines)     ↳ Bestiary Tables → Giant humanoids `H`
+- [x] **#167**  L 2210  (  29 lines)     ↳ Dangerous Encounters → The Riders
+- [x] **#168**  L 5981  ( 117 lines)   📖 Advanced Controls
 - [ ] **#169**  L 1234  (  22 lines)     ↳ Traps and Hazards → Movement Traps
 - [ ] **#170**  L 1481  (  93 lines)     ↳ Traps and Hazards → Elbereth
 - [ ] **#171**  L 8978  (  42 lines)     ↳ Bestiary Tables → Major demons `&`

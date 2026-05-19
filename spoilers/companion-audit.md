@@ -8689,3 +8689,32 @@ All claims re-verified vs `monsters.h:1169-1191` and `mhitu.c:1623-1650`. Note: 
 163/183 done.
 
 ---
+
+## 2026-05-19 — v2 audit batch 34: Quarterstaff (#164), Deadly Poison (#165), Giant humanoids (#166), Riders (#167), Advanced Controls (#168)
+
+### Giant humanoids `H` (#166) — `spoilers/companion.md:8627` — 3 fixes
+
+- **Cyclops "Caveman quest nemesis"** wrong. Per `role.c:154-172`, Cyclops is the **Healer** quest nemesis; Caveman's is the Chromatic Dragon (`role.c:113-131`).
+- **Lord Surtur "Has Mjollnir if you don't"** unsupported. `M3_WANTSARTI` targets the player's quest artifact (Orb of Fate for Valkyrie per `role.c:516`), and Mjollnir is a sacrifice gift artifact (`artilist.h:109-112`); no code in makemon/mkobj puts Mjollnir on Surtur. Dropped.
+- **Fire giant "Surprisingly poor offensively if you have fire res"** misleading. Fire giant attacks are AD_PHYS (weapon damage), so fire resistance doesn't reduce its melee. Dropped.
+
+### The Riders (#167) — `spoilers/companion.md:2230` — 1 voice fix
+
+"Each hits twice per turn with AT_TUCH 8d8" used a C identifier in beginner-voice prose. Reworded to "a touch attack dealing 8d8 damage."
+
+### Quarterstaff (#164) — `spoilers/companion.md:7490` — 0 corrections, badge updated
+
+Stats vs `objects.h:377-378`, Wizard starter at `u_init.c:168`, bimanual 3/2 Str bonus at `uhitm.c:1467`.
+
+### Deadly Poison (#165) — `spoilers/companion.md:2280` — 0 corrections, badge updated
+
+AD_DRST 1/240 frequency (`rn2(8) × rn2(30)` at `uhitm.c:3154` + `attrib.c:362`); poison resistance grants full immunity; Famine corpse fatal at `eat.c:831-838`.
+
+### Advanced Controls (#168) — `spoilers/companion.md:6034` — 0 corrections, badge updated
+
+All keystrokes, options, and the `verbose`/`autopickup`/`pickup_types` semantics re-verified.
+
+### Pass-2 queue
+168/183 done.
+
+---

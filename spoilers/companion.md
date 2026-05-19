@@ -2228,13 +2228,13 @@ this at experience level 1, though: the level-drain outcome is
 fatal.
 
 #### The Riders
-<!-- audit 2026-05-18 #150: 4 corrections. (1) "permanently displaced" misreads M3_DISPLACES (monflag.h:175) — that flag means "moves monsters out of its way," not the cloak-of-displacement evasion. (2) "Ignore magic resistance for their signature attacks" — wrong for Death. uhitm.c:3858-3883 shows Antimagic DOES block the 3/20 touch-of-death instakill case. (3) "Eating their corpses is fatal in different ways for each" — wrong; all three trigger the same done(DIED) with killer text "unwisely ate the body of <name>" (eat.c:831-849). (4) "Famine drives you instantly to Weak or Fainting" — overstated; uhitm.c:3791-3795 adds 40-79 hunger units, which doesn't reach Weak from Satiated. -->
+<!-- audit 2026-05-18 #150 (re-audit 2026-05-19 v2 #167): 4 corrections. (1) "permanently displaced" misreads M3_DISPLACES (monflag.h:175) — that flag means "moves monsters out of its way," not the cloak-of-displacement evasion. (2) "Ignore magic resistance for their signature attacks" — wrong for Death. uhitm.c:3858-3883 shows Antimagic DOES block the 3/20 touch-of-death instakill case. (3) "Eating their corpses is fatal in different ways for each" — wrong; all three trigger the same done(DIED) with killer text "unwisely ate the body of <name>" (eat.c:831-849). (4) "Famine drives you instantly to Weak or Fainting" — overstated; uhitm.c:3791-3795 adds 40-79 hunger units, which doesn't reach Weak from Satiated. v2 voice fix: "Each hits twice per turn with AT_TUCH 8d8" used a C identifier in beginner-voice prose. Reworded to "a touch attack dealing 8d8 damage." See companion-audit.md. -->
 
 On the Astral Plane, three unique `&`-class beings guard the way
 to the high altars: **Death**, **Famine**, and **Pestilence**, the
 Riders. They are level 30, regenerate while you fight, see
 invisible, and shove monsters out of their path. Each hits twice
-per turn with AT_TUCH 8d8. **Death's** touch has a 3-in-20 chance
+per turn with a touch attack dealing 8d8 damage. **Death's** touch has a 3-in-20 chance
 of instant-kill on every hit — magic resistance blocks the
 instakill specifically; the regular damage still goes through.
 **Pestilence** inflicts the disease that turns into food poisoning
@@ -2278,7 +2278,7 @@ an attack, it's a timer death. Polymorphing into a Breathless form
 amulets.
 
 #### Deadly Poison
-<!-- audit 2026-05-17 #7: 7 claims verified, 1 corrected (Famine corpse missing from instakill list). See companion-audit.md. -->
+<!-- audit 2026-05-17 #7 (re-audit 2026-05-19 v2 #165): 7 claims verified, 1 corrected (Famine corpse missing from instakill list). v2 re-verified: AD_DRST 1/240 frequency (rn2(8) × rn2(30) gate at uhitm.c:3154+attrib.c:362); poison resistance grants full immunity (attrib.c:338-343); Famine corpse fatal at eat.c:831-838 alongside Death/Pestilence. 0 new corrections. See companion-audit.md. -->
 
 A handful of monsters (pit vipers, killer bees, cobras, some
 spiders) have a poison-damage branch that can deliver 10 to 34
@@ -6032,7 +6032,7 @@ altar, make one sacrifice, and end this.
 ---
 
 ### Advanced Controls
-<!-- audit 2026-05-17 #48: keystrokes (F, G, g, m, O, v, _, ;, /, Ctrl+A/P/R/O, #overview, #chronicle, #annotate, #conduct) all verified in cmd.c:1662-2065. number_pad/autopickup/pickup_types option semantics verified vs optlist.h. Corrected `verbose` claim: it controls extra descriptive messages (wielding/digging/sounds/pets), not "why multi-commands stopped." See companion-audit.md. -->
+<!-- audit 2026-05-17 #48 (re-audit 2026-05-19 v2 #168): keystrokes (F, G, g, m, O, v, _, ;, /, Ctrl+A/P/R/O, #overview, #chronicle, #annotate, #conduct) all verified in cmd.c:1662-2065. number_pad/autopickup/pickup_types option semantics verified vs optlist.h. Corrected `verbose` claim: it controls extra descriptive messages (wielding/digging/sounds/pets), not "why multi-commands stopped." v2 re-verified: double-tap `F` cancel (cmd.c:1622-1633), `m` prefix on `e`/`a`/`,` for menu, Ctrl+A stores executed-command only (cmd.c:3732-3736), count limit 32767 (global.h:135). 0 new corrections. See companion-audit.md. -->
 
 The basic keys get you through every situation in NetHack. The
 commands below get you through them faster. Once you've spent a
@@ -7488,7 +7488,7 @@ other bimanual weapon.
 :::
 
 #### Quarterstaff
-<!-- audit 2026-05-17 #19: 7 cells verified, 0 corrected. Matches objects.h:377. See companion-audit.md. -->
+<!-- audit 2026-05-17 #19 (re-audit 2026-05-19 v2 #164): 7 cells verified, 0 corrected. Matches objects.h:377-378 (bi=1, 1d6/1d6, wt 40, cost 5, WOOD). Wizard starter (u_init.c:168). Bimanual gets the 3/2 Str bonus at uhitm.c:1467. Skill caps: Wizard E, Priest E, Healer E, Caveman E (no Knight, no Rogue). 0 new corrections. See companion-audit.md. -->
 
 ::: dense-table
 
@@ -8625,7 +8625,7 @@ Mines residents. Gnomish PCs find most of them peaceful. The gnome lord and gnom
 :::
 
 #### Giant humanoids `H`
-<!-- audit 2026-05-18 #101: section intro and minotaur note corrected. (1) Eating-a-giant-raises-Strength is gated on is_giant(ptr) (M2_GIANT) at eat.c:1345; ettin (no M2_GIANT) and minotaur (no M2_GIANT) corpses do NOT confer Strength. The C even comments at eat.c:1758: "ettin is a two-headed giant but its corpse doesn't confer strength." (2) Minotaur "usually guards a vault" is wrong; minotaurs are placed in Gehennom mazes by mkmaze.c:1102-1113 populate_maze(). Vaults are guarded by PM_GUARD, not minotaurs. All stat values match monsters.h 1714-1793. See companion-audit.md. -->
+<!-- audit 2026-05-18 #101 (re-audit 2026-05-19 v2 #166): section intro and minotaur note corrected. (1) Eating-a-giant-raises-Strength is gated on is_giant(ptr) (M2_GIANT) at eat.c:1345; ettin (no M2_GIANT) and minotaur (no M2_GIANT) corpses do NOT confer Strength. The C even comments at eat.c:1758: "ettin is a two-headed giant but its corpse doesn't confer strength." (2) Minotaur "usually guards a vault" is wrong; minotaurs are placed in Gehennom mazes by mkmaze.c:1102-1113 populate_maze(). Vaults are guarded by PM_GUARD, not minotaurs. All stat values match monsters.h 1714-1793. v2 fixes: (a) Cyclops row note "Caveman quest nemesis" — wrong. Per role.c:154-172, Cyclops is the HEALER quest nemesis; Caveman's is the Chromatic Dragon (role.c:113-131). Corrected. (b) Lord Surtur row note "Has Mjollnir if you don't" — not supported. M3_WANTSARTI targets the quest artifact (Orb of Fate for Valkyrie per role.c:516), and Mjollnir is a sacrifice gift artifact (artilist.h:109-112); no code puts Mjollnir on Surtur. Dropped the claim. (c) Fire giant note "Surprisingly poor offensively if you have fire res" — misleading; fire giant attacks are AD_PHYS (weapon damage), so fire resistance doesn't reduce its melee. Dropped. See companion-audit.md. -->
 
 Boulder throwers. Storm / fire / frost giants match the dragon elements; titans cast spells. Eating a true giant's corpse raises Strength; the ettin and minotaur don't count as giants for this purpose.
 
@@ -8636,14 +8636,14 @@ Boulder throwers. Storm / fire / frost giants match the dragon elements; titans 
 | giant | red | 6 | 6 | 0 | 0 | weapon 2d10 |  |
 | stone giant | gray | 6 | 6 | 0 | 0 | weapon 2d10 |  |
 | hill giant | cyan | 8 | 10 | 6 | 0 | weapon 2d8 |  |
-| fire giant | yellow | 9 | 12 | 4 | 5 | weapon 2d10 | fire-res. Throws boulders. Surprisingly poor offensively if you have fire res. |
+| fire giant | yellow | 9 | 12 | 4 | 5 | weapon 2d10 | fire-res. Throws boulders. |
 | frost giant | white | 10 | 12 | 3 | 10 | weapon 2d12 | cold-res. Throws boulders. Has cold attacks. |
 | ettin | brown | 10 | 12 | 3 | 0 | weapon 2d8 · weapon 3d6 |  |
 | storm giant | blue | 16 | 12 | 3 | 10 | weapon 2d12 | shock-res. Throws boulders for big damage. Carries shock attacks. |
 | titan | magenta | 16 | 18 | -3 | 70 | weapon 2d8 · spell spell | flies. Tough humanoid with magic missiles. Casts spells. |
 | minotaur | brown | 15 | 15 | 6 | 0 | claw 3d10 · claw 3d10 · butt 2d8 | Two claws plus a butt. Heavy hitter; roams the Gehennom mazes. |
-| Cyclops | gray | 18 | 12 | 0 | 0 | weapon 4d8 · weapon 4d8 · claw 2d6 steal-amulet | follows stairs, ston-res. Caveman quest nemesis. Throws boulders. |
-| Lord Surtur | magenta | 15 | 12 | 2 | 50 | weapon 2d10 · weapon 2d10 · claw 2d6 steal-amulet | follows stairs, fire-res, ston-res. Valkyrie quest nemesis. Has Mjollnir if you don't. |
+| Cyclops | gray | 18 | 12 | 0 | 0 | weapon 4d8 · weapon 4d8 · claw 2d6 steal-amulet | follows stairs, ston-res. Healer quest nemesis. Throws boulders. |
+| Lord Surtur | magenta | 15 | 12 | 2 | 50 | weapon 2d10 · weapon 2d10 · claw 2d6 steal-amulet | follows stairs, fire-res, ston-res. Valkyrie quest nemesis. |
 
 :::
 
