@@ -40,11 +40,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 28**  L 7585  (  12 lines)     ↳ Weapons Tables → Whip
 - [x] **# 29**  L 8706  (  23 lines)     ↳ Bestiary Tables → Mummies `M`
 - [x] **# 30**  L 7499  (  11 lines)     ↳ Weapons Tables → Quarterstaff
-- [ ] **# 31**  L 2953  (  36 lines)     ↳ A Practical Identification Strategy → The Engrave Test (Wands)
-- [ ] **# 32**  L 8861  (  12 lines)     ↳ Bestiary Tables → Umber hulks `U`
-- [ ] **# 33**  L 2658  ( 295 lines)     ↳ A Practical Identification Strategy → The Price Is Right
-- [ ] **# 34**  L 8636  (  23 lines)     ↳ Bestiary Tables → Giant humanoids `H`
-- [ ] **# 35**  L 8969  (  86 lines)     ↳ Bestiary Tables → Humans and elves `@`
+- [x] **# 31**  L 2953  (  36 lines)     ↳ A Practical Identification Strategy → The Engrave Test (Wands)
+- [x] **# 32**  L 8861  (  12 lines)     ↳ Bestiary Tables → Umber hulks `U`
+- [x] **# 33**  L 2658  ( 295 lines)     ↳ A Practical Identification Strategy → The Price Is Right
+- [x] **# 34**  L 8636  (  23 lines)     ↳ Bestiary Tables → Giant humanoids `H`
+- [x] **# 35**  L 8969  (  86 lines)     ↳ Bestiary Tables → Humans and elves `@`
 - [ ] **# 36**  L 2329  (  52 lines)     ↳ Dangerous Encounters → Delayed Deaths
 - [ ] **# 37**  L 7345  (  13 lines)     ↳ Weapons Tables → Short sword
 - [ ] **# 38**  L 8034  (  17 lines)     ↳ Bestiary Tables → Blobs `b`

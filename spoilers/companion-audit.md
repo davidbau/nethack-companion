@@ -8945,3 +8945,25 @@ All 8 mummies (kobold/gnome/orc/dwarf/elf/human/ettin/giant) match `monsters.h:1
 
 ### Pass-3 queue
 30/183 done.
+
+## 2026-05-19 — v3 audit batch 7: Engrave Test (#31), Umber hulks (#32), Price Is Right (#33), Giant humanoids (#34), Humans and elves (#35)
+
+Four CLEAN, one cross-section-consistency fix on Giant humanoids.
+
+### The Engrave Test (#31) — `spoilers/companion.md:2953` — 0 corrections
+All wand engrave messages verified vs `engrave.c:583-738` and `zap.c:2535-2563`. Cursed-wand explode chance verified at `engrave.c:794-795`.
+
+### Umber hulks `U` (#32) — `spoilers/companion.md:8861` — 0 corrections
+Lvl 9 Spd 6 AC 2 MR 25, 3d4 claw × 2 + 2d5 bite + AD_CONF gaze, M1_TUNNEL — all match. Free-action does NOT block confusion gaze (`mhitu.c:1759-1777`, AD_CONF not in the AD_PLYS/AD_SLEE list).
+
+### The Price Is Right (#33) — `spoilers/companion.md:2658` — 0 corrections
+295-line section. All Cha multipliers (`shk.c:2953-2964`), Tourist surcharge (`shk.c:2947-2951` × Hawaiian/dunce/Lvl<15), sell formulas (`shk.c:3148-3192`), unfamiliar-shopkeeper 1/4 odds (`m_id % 4`), angry-shop surcharge persistence (`pacify_shk` paths), and every numeric price-tier table cell verified against `objects.h`.
+
+### Giant humanoids `H` (#34) — `spoilers/companion.md:8636` — **2 corrections**
+"Has cold attacks" (frost giant) and "Carries shock attacks" (storm giant) were wrong — both have AD_PHYS-only melee per `monsters.h` LVL rows. Cold/shock resistance doesn't reduce their weapon damage. v2 had already caught the parallel claim for fire giant; v3 brings frost and storm giants in line. The "cold-res" and "shock-res" notation in the same row already conveys the thematic element without misleading the beginner.
+
+### Humans and elves `@` (#35) — `spoilers/companion.md:8969` — 0 corrections
+All 53 stat rows verified vs `monsters.h:2609-3914`. Watchman, watch captain, aligned priest, high priest, Wizard of Yendor, shopkeeper Spd 16, Nurse heal, Croesus, Charon, all 12 role classes/leaders/nemeses/guardians — all match. Master of Thieves = Rogue leader + Tourist nemesis; Master Assassin = Rogue nemesis.
+
+### Pass-3 queue
+35/183 done.

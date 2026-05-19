@@ -8634,7 +8634,7 @@ Mines residents. Gnomish PCs find most of them peaceful. The gnome lord and gnom
 :::
 
 #### Giant humanoids `H`
-<!-- audit 2026-05-18 #101 (re-audit 2026-05-19 v2 #166): section intro and minotaur note corrected. (1) Eating-a-giant-raises-Strength is gated on is_giant(ptr) (M2_GIANT) at eat.c:1345; ettin (no M2_GIANT) and minotaur (no M2_GIANT) corpses do NOT confer Strength. The C even comments at eat.c:1758: "ettin is a two-headed giant but its corpse doesn't confer strength." (2) Minotaur "usually guards a vault" is wrong; minotaurs are placed in Gehennom mazes by mkmaze.c:1102-1113 populate_maze(). Vaults are guarded by PM_GUARD, not minotaurs. All stat values match monsters.h 1714-1793. v2 fixes: (a) Cyclops row note "Caveman quest nemesis" — wrong. Per role.c:154-172, Cyclops is the HEALER quest nemesis; Caveman's is the Chromatic Dragon (role.c:113-131). Corrected. (b) Lord Surtur row note "Has Mjollnir if you don't" — not supported. M3_WANTSARTI targets the quest artifact (Orb of Fate for Valkyrie per role.c:516), and Mjollnir is a sacrifice gift artifact (artilist.h:109-112); no code puts Mjollnir on Surtur. Dropped the claim. (c) Fire giant note "Surprisingly poor offensively if you have fire res" — misleading; fire giant attacks are AD_PHYS (weapon damage), so fire resistance doesn't reduce its melee. Dropped. See companion-audit.md. -->
+<!-- audit 2026-05-18 #101 (re-audit 2026-05-19 v2 #166, v3 #34): v3 added two corrections for cross-section consistency. v3: "Has cold attacks" (frost giant) and "Carries shock attacks" (storm giant) were wrong — same beginner-misleading pattern v2 caught for fire giant. Both have AD_PHYS-only melee (monsters.h LVL frost/storm rows); cold/shock resistance doesn't reduce their weapon damage. Dropped both phrases; "cold-res" / "shock-res" labels already convey the thematic element. v2: (a) Cyclops Healer nemesis (not Caveman). (b) Surtur Mjollnir claim dropped (unsupported). (c) Fire giant "poor offensively if you have fire res" dropped (AD_PHYS only). v1: ettin/minotaur not M2_GIANT so corpses don't grant Str (eat.c:1345); minotaur roams Gehennom mazes (mkmaze.c), not vaults. See companion-audit.md. -->
 
 Boulder throwers. Storm / fire / frost giants match the dragon elements; titans cast spells. Eating a true giant's corpse raises Strength; the ettin and minotaur don't count as giants for this purpose.
 
@@ -8646,9 +8646,9 @@ Boulder throwers. Storm / fire / frost giants match the dragon elements; titans 
 | stone giant | gray | 6 | 6 | 0 | 0 | weapon 2d10 |  |
 | hill giant | cyan | 8 | 10 | 6 | 0 | weapon 2d8 |  |
 | fire giant | yellow | 9 | 12 | 4 | 5 | weapon 2d10 | fire-res. Throws boulders. |
-| frost giant | white | 10 | 12 | 3 | 10 | weapon 2d12 | cold-res. Throws boulders. Has cold attacks. |
+| frost giant | white | 10 | 12 | 3 | 10 | weapon 2d12 | cold-res. Throws boulders. |
 | ettin | brown | 10 | 12 | 3 | 0 | weapon 2d8 · weapon 3d6 |  |
-| storm giant | blue | 16 | 12 | 3 | 10 | weapon 2d12 | shock-res. Throws boulders for big damage. Carries shock attacks. |
+| storm giant | blue | 16 | 12 | 3 | 10 | weapon 2d12 | shock-res. Throws boulders for big damage. |
 | titan | magenta | 16 | 18 | -3 | 70 | weapon 2d8 · spell spell | flies. Tough humanoid with magic missiles. Casts spells. |
 | minotaur | brown | 15 | 15 | 6 | 0 | claw 3d10 · claw 3d10 · butt 2d8 | Two claws plus a butt. Heavy hitter; roams the Gehennom mazes. |
 | Cyclops | gray | 18 | 12 | 0 | 0 | weapon 4d8 · weapon 4d8 · claw 2d6 steal-amulet | follows stairs, ston-res. Healer quest nemesis. Throws boulders. |
