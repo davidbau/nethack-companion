@@ -8046,3 +8046,90 @@ Source: `spoilers/companion.md` line 7997. No corrections (re-audit clean).
 - Wield-corpse rule: bare-handed cockatrice corpse calls `instapetrify` regardless of role at `wield.c:146-152`.
 
 ---
+
+## 2026-05-18 — v2 audit #74: Bestiary Tables — Fungi and molds `F`
+
+Source: `spoilers/companion.md` line 8543. No corrections (re-audit clean).
+
+### Verified
+- All 7 rows (lichen, brown/yellow/green/red mold, shrieker, violet fungus) match `monsters.h:1614-1676`.
+- Lichen corpse never rots per `mkobj.c:1402`, `eat.c:59`.
+- Yellow mold has M1_POIS (poisonous-corpse tag correct); other molds have MR_POISON resistance but no M1_POIS (their corpses aren't poisonous).
+
+---
+
+## 2026-05-18 — v2 audit #75: Your First Descent
+
+Source: `spoilers/companion.md` line 378. 2 number fixes.
+
+### Wrong → fixed
+- **Prayer cooldown "about once every 300-500 turns"**: too low. `pray.c:780, 1356, 1819` use `rnz(300)` / `rnz(350)` scaled via `rne(4)` to ~75-2400 turns. Community wisdom is ~1000 turns. New players following 300-500 hit "too soon" rejections. Updated to "about a thousand turns or so."
+- **Corpse rot "guaranteed-safe within 50 turns ... past ~150 turns certainly tainted"**: off in both directions per the `(moves - age) / (10 + rn2(20))` formula at `eat.c:1887, 1939`. Guaranteed-safe-from-HP-loss needs age ≤ 30 (rotted ≤ 3 at all divisors); guaranteed-taint needs age > 174. Updated to 30 / 175.
+
+### Verified
+- Lizard/lichen nonrotting at `eat.c:58-61`. Lizard corpse cures petrification at `eat.c:3941-3944`.
+- Pet step-around-cursed at `dogmove.c:535`.
+- Floating-eye paralysis-on-melee at `mhitu.c:2536-2557`.
+- Stair-falling 1-3 HP at `do.c:1780-1795 losehp(rnd(3),...)`.
+- Killer bee speed 18, G_LGROUP, poisoned at `monsters.h:96-102`.
+- Supply chest mechanics (2/3 above Oracle, 2/3 chest vs 1/3 large box, 5/6 locked, 50% healing potion, Mines-branch food bias) at `mklev.c:1010-1119`.
+- `#force` with dagger at `lock.c:658-670`.
+
+---
+
+## 2026-05-18 — v2 audit #76: Dangerous Encounters — The Displacer Beast
+
+Source: `spoilers/companion.md` line 2366. 1 fabricated-mechanic removal.
+
+### Wrong → fixed
+- **"hostiles meleeing your pet displacer beast trigger the same 50% place-swap, so the attacker often ends up next to *you* instead of biting the pet"**: not supported by source. M3_DISPLACES is only consulted at `hack.c:1972` (hero attacks displacer) and `mon.c:2462` via `mfndpos` (the displacer moves through another monster's square via `ALLOW_MDISP`). There is NO `mhitm.c` path for hostile-attacks-pet-displacer triggering a swap. Fabricated. Removed; the pet is still excellent (AC -10, three attacks, 0% MR for taming) but not for a swap trick.
+
+### Verified
+- Stats AC -10, 4d4/4d4/2d10, speed 12, level 12, MR 0 at `monsters.h:437-444`.
+- 50% melee swap at `hack.c:1972` (`!rn2(2)` for PM_DISPLACER_BEAST, gated by `goodpos`).
+- Ranged bypasses swap (only fires in `domove_attackmon_at` melee path).
+- MR 0 → sleep/paralysis/charm/taming all land.
+- Corpse confers cloak-style Displacement intrinsic at `eat.c:1265-1268` (sets HDisplaced, distinct from the swap mechanic).
+
+---
+
+## 2026-05-18 — v2 audit #77: Bestiary Tables — Unicorns and horses `u`
+
+Source: `spoilers/companion.md` line 8334. 1 factual fix.
+
+### Wrong → fixed
+- **"Horses (pony, horse, warhorse) are usually peaceful in the wild"**: wrong. `makemon.c:1339-1342` sets `mpeaceful` only for `is_unicorn()`, which excludes ponies/horses/warhorses. Wild ponies/horses/warhorses spawn hostile. The 1-in-100 saddled-spawn at `makemon.c:1447-1452` isn't peaceful either. Reworded to "spawn hostile in the wild but can be tamed, saddled, and ridden."
+
+### Verified
+- All 6 rows match `monsters.h:1002-1049`.
+- Alignment-to-color mapping (white/L +7, gray/N 0, black/C -7).
+- Co-aligned unicorns peaceful at `makemon.c:1339-1342`.
+- Killing co-aligned: -5 Luck + "feel guilty" at `mon.c:3666-3669`. Cross-aligned: no Luck change.
+- Gem-throw placation at `dothrow.c:2087-2098, 2309-2382` (unconditional `mpeaceful=1` + teleport).
+- Knight's saddled pony at `dog.c:262-268`.
+- Killed unicorn drops horn at `mon.c:604-613`.
+
+---
+
+## 2026-05-18 — v2 audit #78: Branches and Landmarks — Medusa's Island
+
+Source: `spoilers/companion.md` line 1082. 2 small corrections; badge backfilled (none existed before).
+
+### Wrong → fixed
+- **"downward staircase (or ladder)"**: no medusa-*.lua uses a ladder; all four use `des.stair("down", ...)`. Dropped "(or ladder)."
+- **"Giant eels"** as the only water threat: `dat/medusa-2.lua:99-104` has electric eels (six of them), not giant eels. Same grab-and-drown threat (both carry AT_TUCH+AD_WRAP) plus AD_ELEC bite. Added a one-clause clarifier "(electric eels on one layout)."
+
+### Verified
+- Level placement DL ~20-29 (DoD base 25 range 5, Medusa base -5 range 4) at `dat/dungeon.lua:75-81`.
+- Four layouts at `dat/medusa-{1,2,3,4}.lua`.
+- Perseus loot percentages (75% shield of reflection cursed / 25% levitation boots / 50% blessed +2 scimitar / 50% sack) match all four layouts.
+- Other statues forced empty (`contents = 0`).
+- Gaze stones Medusa via reflection at `src/mhitu.c:1721-1745`.
+- Eel grab uses eel's tile for drown at `src/uhitm.c:3389-3401` — so levitation/water-walking on adjacent dry land does NOT save you. Section correctly captures this.
+- Kraken only on `dat/medusa-4.lua:122`.
+- Oilskin/grease protects against AT_TUCH+AD_WRAP grabs (only excluded for AT_ENGL).
+
+### Notes
+- Stone resistance also blocks the gaze per `mhitu.c:1747-1748` but is rarely attainable pre-Medusa. Omitted per no-trivia.
+
+---

@@ -376,6 +376,7 @@ and the ability to outrun a gnome lord. If your status line reads
 ---
 
 ### Your First Descent
+<!-- audit 2026-05-18 v2 #75: qualitative chapter, mostly verified clean. Stair-falling 1-3 HP per do.c:1780-1795 (rnd(3)); floating-eye paralysis at mhitu.c:2536-2557; pet step-around at dogmove.c:535; lizard/lichen nonrotting at eat.c:58-61; killer bee swarms speed 18 G_LGROUP poisoned. Supply chest mechanics verified vs mklev.c:1010-1119 (2/3 above Oracle, 2/3 chest vs 1/3 large box, 5/6 locked, healing potion bias). Two number fixes: prayer cooldown was "300-500 turns" (way too low — community wisdom is ~1000 turns, rnz(300)/rnz(350) scales via rne(4) to 75-2400+ at pray.c:780,1356,1819), updated to "about a thousand turns or so"; corpse-rot "guaranteed-safe within 50 turns" → 30 turns (rotted ≤ 3 needs age ≤ 30 at all divisors, eat.c:1887,1939) and "past ~150 turns certainly tainted" → ~175 turns (guaranteed taint needs age > 174). See companion-audit.md. -->
 
 You step down the stairs. The air is cool and damp. A corridor
 stretches before you, branching into darkness. Your starting pet
@@ -432,11 +433,12 @@ your best early assets.
 critically low, starving, turning to stone) you
 can pray to your god for help. In the early game, with decent
 alignment, prayer will almost certainly save you. But you can only
-pray about once every 300-500 turns, and praying at the wrong time
-(when your god is angry, when you're in Gehennom, or when you've
-prayed too recently) can make things much worse. Think of prayer as an
-emergency button with a cooldown. Don't waste it on minor problems
-(see [Divine Relations](#divine-relations) for the full mechanics).
+pray about once every thousand turns or so, and praying at the
+wrong time (when your god is angry, when you're in Gehennom, or
+when you've prayed too recently) can make things much worse. Think
+of prayer as an emergency button with a cooldown. Don't waste it
+on minor problems (see [Divine Relations](#divine-relations) for
+the full mechanics).
 
 **Rule 5: Explore thoroughly but move purposefully.** Every turn you
 spend in the dungeon costs nutrition. If you stand around for hundreds
@@ -467,7 +469,7 @@ Use ranged attacks, or just walk around them. They don't pursue you.
 
 **Rotted corpses.** If you eat a corpse that's been on the ground too
 long, you'll get food poisoning, which is lethal without treatment.
-Eat corpses fresh — within about 50 turns of the kill for a guaranteed-safe meal. Past that, the rot roll turns random; past ~150 turns an uncursed corpse is certainly tainted.
+Eat corpses fresh — within about 30 turns of the kill for a guaranteed-safe meal. Past that, the rot roll turns random; past ~175 turns an uncursed corpse is certainly tainted.
 If you do get food poisoning, pray immediately.
 
 **Falling down stairs while overburdened.** If you're carrying too
@@ -1079,6 +1081,7 @@ If you can't find the portal, don't worry about it. Fort Ludios is
 a bonus, not a requirement.
 
 #### Medusa's Island
+<!-- audit 2026-05-18 v2 #78: level placement DL ~20-29 verified (dungeon.lua:75-81 Medusa base=-5 range=4 from DoD bottom 25-30); four layouts (medusa-1..4.lua); Perseus loot 75% shield of reflection (cursed) / 25% levitation boots / 50% blessed +2 scimitar / 50% sack confirmed across all four layouts. Gaze reflection stones Medusa per mhitu.c:1721-1745. Eel grab uses eel's tile for drown (uhitm.c:3389-3401), so levitation/water-walking on adjacent dry land does NOT save you — correctly stated in the section. Kraken only on medusa-4 (medusa-4.lua:122). Two corrections: dropped "(or ladder)" — every medusa-*.lua uses des.stair("down"), no ladder; noted electric eels on one layout (medusa-2 has six electric eels instead of giant eels, monsters.h:3239-3247) — same grab-and-drown threat, plus AD_ELEC bite. Stone resistance also blocks the gaze per mhitu.c:1747-1748 but is rarely attainable pre-Medusa; omitted per no-trivia. See companion-audit.md. -->
 
 Medusa's level sits near the bottom of the Dungeons of Doom, around
 level 25. You'll know it by the large body of water and the
@@ -1092,9 +1095,9 @@ The level has three challenges stacked together:
    bridge, polymorphing into a flying creature). Don't wade in
    without preparation, because:
 
-2. **Giant eels.** The water is home to giant eels that can grab
-   and drown you on a successful hit. Stay unburdened while crossing,
-   or avoid the water entirely.
+2. **Giant eels** (electric eels on one layout). The water is home
+   to giant eels that can grab and drown you on a successful hit.
+   Stay unburdened while crossing, or avoid the water entirely.
 
 3. **Medusa herself.** Her gaze turns you to stone. You need
    either **reflection** (a shield of reflection or amulet of
@@ -1104,7 +1107,7 @@ The level has three challenges stacked together:
    cleanest solution. If you got the amulet of reflection from
    Sokoban, you're already prepared.
 
-There is a downward staircase (or ladder) on the island itself
+There is a downward staircase on the island itself
 that leads toward the Castle. The level has four possible layouts
 (two added in 3.6), so don't rely on memorizing a
 single map.
@@ -2365,7 +2368,7 @@ scroll of remove curse, holy water, or prayer).
 
 #### The Displacer Beast
 <!-- audit 2026-05-17 #42: rewrote section. Prior version described it as having cloak-of-displacement style image-offset; this is wrong. The "displacer" mechanic is M3_DISPLACES (barge-through): 50% chance on player melee that it swaps places with you instead of being attacked (hack.c:1972). Corpse intrinsic Displacement claim verified (eat.c:1265). See companion-audit.md. -->
-<!-- audit 2026-05-18 #106: dropped the "lure it adjacent to a moat or lava and let it swap itself in" tactic — wrong. hack.c:1972 ends with goodpos(u.ux0, u.uy0, mtmp, GP_ALLOW_U); teleport.c:134-162 goodpos refuses to place a non-swimmer/non-flier in water and a non-fire-resistant non-flier in lava. Displacer beasts have none of those. Even if the hero were standing IN the hazard via water-walking/levitation, the beast still can't swap there. -->
+<!-- audit 2026-05-18 #106 (re-audit 2026-05-18 v2 #76): dropped the "lure it adjacent to a moat or lava and let it swap itself in" tactic — wrong. hack.c:1972 ends with goodpos(u.ux0, u.uy0, mtmp, GP_ALLOW_U); teleport.c:134-162 goodpos refuses to place a non-swimmer/non-flier in water and a non-fire-resistant non-flier in lava. Displacer beasts have none of those. Even if the hero were standing IN the hazard via water-walking/levitation, the beast still can't swap there. v2 dropped a fabricated mechanic from the pet-tame paragraph: "hostiles meleeing your pet displacer beast trigger the same 50% place-swap" — wrong. M3_DISPLACES is only consulted at hack.c:1972 (hero attacks displacer) and mon.c:2462 via mfndpos (the displacer moves through another monster's square, ALLOW_MDISP). There is NO mhitm.c path for hostile-attacks-pet-displacer triggering a swap. Removed the claim; the pet is still excellent, just for the AC, attack count, and 0% MR (taming reliability), not for a swap trick. -->
 
 
 The **displacer beast** (`f`, blue, 5.0 addition) is a tiger-sized
@@ -2383,10 +2386,7 @@ lava — the swap only fires if the destination square is
 survivable for the beast, and water/lava aren't.)
 
 **Tame one and you have one of the best pets in the game.** AC
-−10, three attacks (4d4 claw / 4d4 claw / 2d10 bite), speed 12,
-and the swap mechanic still works in your favor: hostiles meleeing
-your pet displacer beast trigger the same 50% place-swap, so the
-attacker often ends up next to *you* instead of biting the pet.
+−10, three attacks (4d4 claw / 4d4 claw / 2d10 bite), speed 12.
 Charm monster works first try; a scroll of taming with no MR roll
 to fail is essentially guaranteed. A tame displacer beast will
 walk into late-game fights and walk out, eating tough hostiles
@@ -8333,8 +8333,9 @@ All trappers and lurkers hide and follow you up and down stairs.
 
 <!-- audit 2026-05-18 #178: all 6 rows (pony/white/gray/black unicorn/horse/warhorse) verified clean vs monsters.h:1002-1049. Unicorn alignments lawful/+7, neutral/0, chaotic/-7 (monsters.h:1011,1019,1027). Same-aligned spawn peaceful (makemon.c:1339-1342); killing co-aligned = -5 Luck (mon.c:3666-3669). Gem-throw at unicorn: dothrow.c:2082-2098, 2309-2382 (worthless glass placates without Luck change). Knight's pony arrives saddled (dog.c:263-267). 0 corrections. See companion-audit.md. -->
 #### Unicorns and horses `u`
+<!-- audit 2026-05-18 v2 #77: all six rows verified against monsters.h:1002-1049. Alignment-to-color mapping (white/L +7, gray/N 0, black/C -7) confirmed; co-aligned unicorns spawn peaceful per makemon.c:1339-1342; killing co-aligned: -5 Luck + "feel guilty" at mon.c:3666-3669; cross-aligned: no Luck. Gem-throw placation at dothrow.c:2087-2098, 2309-2382 (unconditional mpeaceful + teleport). Knight's pony starts saddled at dog.c:262-268. Killed unicorn drops horn at mon.c:604-613. One factual fix: "Horses ... are usually peaceful in the wild" was wrong — makemon.c:1339-1342 sets mpeaceful only for is_unicorn() (which excludes ponies/horses/warhorses); wild horses spawn hostile. The 1/100 saddled-spawn at makemon.c:1447-1452 isn't peaceful either. Corrected. See companion-audit.md. -->
 
-There are two equine `u`-class creatures. **Horses** (pony, horse, warhorse) are usually peaceful in the wild and can be saddled and ridden; the Knight starts on a saddled pony.
+There are two equine `u`-class creatures. **Horses** (pony, horse, warhorse) spawn hostile in the wild but can be tamed, saddled, and ridden; the Knight starts on a saddled pony.
 
 **Unicorns** (white, gray, black for Lawful, Neutral, Chaotic) are powerful kickers, peaceful when your alignment matches theirs and hostile otherwise. Killing a co-aligned unicorn is a −5 Luck penalty (the game tells you "You feel guilty..."). Killing a cross-aligned one has no Luck consequence either way. If you don't want the fight, throw any gem — even worthless glass — to pacify a hostile unicorn at no cost; throwing real gems also adjusts your Luck (see the Luck chapter). A killed unicorn drops its horn.
 
@@ -8541,7 +8542,7 @@ All except *stalker* also are mindless.
 :::
 
 #### Fungi and molds `F`
-<!-- audit 2026-05-17 #35: 49 cells / 7 rows verified, 0 corrected. Lead-in reworded (violet/yellow molds → brown/green/red elemental molds). See companion-audit.md. -->
+<!-- audit 2026-05-17 #35 (re-audit 2026-05-18 v2 #74): 49 cells / 7 rows verified, 0 corrected. Lead-in reworded (violet/yellow molds → brown/green/red elemental molds). v2 re-verified all 49 cells against monsters.h:1614-1676. Lichen corpse never rots per mkobj.c:1402, eat.c:59. Yellow mold has M1_POIS (poisonous-corpse tag correct); other molds have MR_POISON resistance but no M1_POIS, so their corpses are not poisonous — companion correctly omits the tag for them. 0 corrections. See companion-audit.md. -->
 
 Stationary. Lichen corpses never rot — keep one in your pack as iron rations. Brown, green, and red molds bite back on melee with elemental passive damage (cold, acid, fire). Yellow mold stuns on passive contact; violet fungus has an active touch attack with sticking.
 

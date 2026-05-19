@@ -82,11 +82,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 71**  L 2294  (   6 lines)     ↳ Dangerous Encounters → Genocide
 - [x] **# 72**  L 6764  (  18 lines)     ↳ Voluntary Challenges → Weaponless
 - [x] **# 73**  L 7975  (  18 lines)     ↳ Bestiary Tables → Cockatrices `c`
-- [ ] **# 74**  L 8521  (  21 lines)     ↳ Bestiary Tables → Fungi and molds `F`
-- [ ] **# 75**  L  376  ( 137 lines)   📖 Your First Descent
-- [ ] **# 76**  L 2352  (  36 lines)     ↳ Dangerous Encounters → The Displacer Beast
-- [ ] **# 77**  L 8313  (  19 lines)     ↳ Bestiary Tables → Unicorns and horses `u`
-- [ ] **# 78**  L 1073  (  97 lines)     ↳ Branches and Landmarks → Medusa's Island
+- [x] **# 74**  L 8521  (  21 lines)     ↳ Bestiary Tables → Fungi and molds `F`
+- [x] **# 75**  L  376  ( 137 lines)   📖 Your First Descent
+- [x] **# 76**  L 2352  (  36 lines)     ↳ Dangerous Encounters → The Displacer Beast
+- [x] **# 77**  L 8313  (  19 lines)     ↳ Bestiary Tables → Unicorns and horses `u`
+- [x] **# 78**  L 1073  (  97 lines)     ↳ Branches and Landmarks → Medusa's Island
 - [ ] **# 79**  L 7255  (  15 lines)     ↳ Weapons Tables → Knife
 - [ ] **# 80**  L 6782  (  14 lines)     ↳ Voluntary Challenges → Pacifist
 - [ ] **# 81**  L 6181  (  61 lines)     ↳ Sokoban Solutions → Level 1, Version B
