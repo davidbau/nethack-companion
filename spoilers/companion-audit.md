@@ -8877,3 +8877,27 @@ Giant ant, killer bee, soldier ant, fire ant, giant beetle, queen bee stats all 
 
 ### Pass-3 queue
 15/183 done.
+
+## 2026-05-19 — v3 audit batch 4: What Actually Kills (#16), No Genocide (#17), Weaponless (#18), Lance (#19), Vampires (#20)
+
+Four CLEAN, one LOW finding on Blue DSM speed wording.
+
+### What Actually Kills Adventurers (#16) — `spoilers/companion.md:1745` — **1 correction (LOW)**
+"Blue DSM same as speed boots, only stackable with them for Very Fast" was wrong. Per `youprop.h:377`, `Very_fast ((HFast & ~INTRINSIC) || EFast)` — ANY extrinsic speed bit reaches Very Fast. Blue DSM sets `EFast |= W_ARM` (`do_wear.c:822`); speed boots set `EFast |= W_ARMF`. Either alone reaches Very Fast; wearing both doesn't go faster. Reworded so a reader doesn't think pairing is required.
+
+Other 200 lines verified clean: mount slip `rn1(5,10)` = 10-14 (`steed.c:354`), water demon 1/30 from fountain (`fountain.c:247`), bones items cursed 80% (`bones.c:290`), all DSM properties (`do_wear.c:806-883`), gold DSM light radius 4/3/2 (`light.c:881-911`), confused genocide hits own role via `u.umonster` from `gu.urole.mnum` (`read.c:2839`, `u_init.c:991`).
+
+### No Genocide (#17) — `spoilers/companion.md:6875` — 0 corrections
+Conduct tracking verified. Confused genocide of own role is mentioned elsewhere; this section's "don't read it" framing covers the case adequately.
+
+### Weaponless (#18) — `spoilers/companion.md:6828` — 0 corrections
+Verified vs `wield.c` weaphit-increment logic — sword/axe/mace/aklys (WEAPON_CLASS) and pick-axe/unicorn-horn (is_weptool TOOL_CLASS) break weaponless; cockatrice corpse (FOOD_CLASS) doesn't; bare hands and martial arts pass weapon=NULL. List in prose matches.
+
+### Lance (#19) — `spoilers/companion.md:7574` — 0 corrections
+`objects.h:349` LANCE: hit 0, weight 180, cost 10, 1d6/1d8, P_LANCE, IRON. Joust +2d10 primary / +2d2 off-hand (`uhitm.c:1546`). Shatter on critical (`uhitm.c:1553-1561`, joust_dieroll==0 AND rnl(50)==49).
+
+### Vampires `V` (#20) — `spoilers/companion.md:8873` — 0 corrections
+Vampire / vampire lord / Vlad stats all match `monsters.h`. M2_SHAPESHIFTER, M2_STALK, M2_UNDEAD, M1_FLY, M1_REGEN, AD_DRLI all confirmed.
+
+### Pass-3 queue
+20/183 done.

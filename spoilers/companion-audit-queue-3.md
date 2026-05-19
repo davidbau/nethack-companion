@@ -25,11 +25,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 13**  L 8890  (  17 lines)     ↳ Bestiary Tables → Wraiths `W`
 - [x] **# 14**  L 8244  (  17 lines)     ↳ Bestiary Tables → Mimics `m`
 - [x] **# 15**  L 8016  (  18 lines)     ↳ Bestiary Tables → Ants and insects `a`
-- [ ] **# 16**  L 1745  ( 204 lines)   📖 What Actually Kills Adventurers
-- [ ] **# 17**  L 6875  (  26 lines)     ↳ Voluntary Challenges → No Genocide
-- [ ] **# 18**  L 6828  (  18 lines)     ↳ Voluntary Challenges → Weaponless
-- [ ] **# 19**  L 7574  (  11 lines)     ↳ Weapons Tables → Lance
-- [ ] **# 20**  L 8873  (  17 lines)     ↳ Bestiary Tables → Vampires `V`
+- [x] **# 16**  L 1745  ( 204 lines)   📖 What Actually Kills Adventurers
+- [x] **# 17**  L 6875  (  26 lines)     ↳ Voluntary Challenges → No Genocide
+- [x] **# 18**  L 6828  (  18 lines)     ↳ Voluntary Challenges → Weaponless
+- [x] **# 19**  L 7574  (  11 lines)     ↳ Weapons Tables → Lance
+- [x] **# 20**  L 8873  (  17 lines)     ↳ Bestiary Tables → Vampires `V`
 - [ ] **# 21**  L 3165  (  14 lines)     ↳ A Practical Identification Strategy → Naming What You've Learned
 - [ ] **# 22**  L 8939  (  30 lines)     ↳ Bestiary Tables → Zombies `Z`
 - [ ] **# 23**  L 1274  (  55 lines)     ↳ Traps and Hazards → Dangerous Traps

@@ -1743,7 +1743,7 @@ A few map glyphs aren't monsters in the conventional sense, but you'll see them 
 ---
 
 ### What Actually Kills Adventurers
-<!-- audit 2026-05-17 #29 (re-audit 2026-05-18 v2 #87): ~30 claims verified, 3 corrected (mount slip 10-14 HP not 11-15; mumakil 2-attack solo not 4-attack pack; shimmering DSM removed since it's #if 0 DEFERRED in 5.0). Also caught my own audit-#15 errors: shimmering DSM and missing Blue DSM speed. v2 fixes: (a) one fix to scale-mail AC convention. The agent also flagged the confused-genocide line but was wrong — u.umonster is set from gu.urole.mnum (u_init.c:991), so confused genocide kills your ROLE's monster (PM_VALKYRIE, PM_WIZARD, etc.), exactly as the original text said. Original kept. (b) "AC 1 worn" for scale mails used the raw objects.h field; rest of book uses the +9 AC-bonus convention (see Body Armor table at line 7650+). Reworded to "the best AC in the body slot" to avoid sign-convention confusion. Re-verified: mount slip 10-14 (steed.c:354), water demon 1/30 fountain (fountain.c:247), all 9 DSM dual-property claims against do_wear.c:810-880, MC blocking mimic stick (uhitm.c:3310,3324). See companion-audit.md. -->
+<!-- audit 2026-05-17 #29 (re-audit 2026-05-18 v2 #87, v3 #16): v3 added one correction. v3: "Blue DSM same as speed boots, only stackable with them for Very Fast" was wrong — Very_fast is set by ANY extrinsic speed bit (`youprop.h:377`: `Very_fast ((HFast & ~INTRINSIC) || EFast)`). Blue DSM sets `EFast |= W_ARM` (do_wear.c:822); speed boots set `EFast |= W_ARMF`. Either alone reaches Very Fast; wearing both doesn't go faster. Reworded so a reader doesn't think one item is mandatory to pair with the other. v2: (a) AC convention fix on scale-mail line. (b) confused-genocide line was right; original kept. v1: mount slip 10-14 HP, mumakil 2-attack solo, shimmering DSM removed (#if 0 DEFERRED). See companion-audit.md. -->
 
 Only about **0.4% of games end in ascension.** The other 99.6%
 are deaths. NetHack ends in death by default; survival is the
@@ -1928,9 +1928,9 @@ the same effect as a ring of infravision or being elven.
 resistance — a pair of niche defenses in one slot.
 
 **Blue** dragon scale mail grants shock resistance *and* intrinsic
-**speed** (the Fast property — same as speed boots, only stackable
-with them for **Very Fast**). One of the most powerful body slots
-in the game.
+**speed** — same tier as speed boots. (Wearing both at once doesn't
+make you faster; either alone reaches Very Fast.) One of the most
+powerful body slots in the game.
 
 **Gold** dragons are new in 5.0 and breathe fire. Their scale mail
 has no resistance power but is permanently lit (radius 4 blessed, 3
