@@ -13639,7 +13639,7 @@ wipe out an unprepared early hero.</td>
 </section>
 <section id="blobs-b" class="level4">
 <h4>Blobs <code>b</code></h4>
-<!-- audit 2026-05-17 #8: 24 cells across 3 rows verified, 0 corrected. All stats match monsters.h:137-166. See companion-audit.md. -->
+<!-- audit 2026-05-17 #8 (re-audit 2026-05-18 v2 #102): 24 cells across 3 rows verified, 0 corrected. All stats match monsters.h:137-166. v2: re-verified all rows; acid blob passive at uhitm.c:5906-5933 (50% splash + 1/30 corrode armor, plus passive_obj 1/6 erode on uwep/uarmg); cube paralysis at uhitm.c:6019-6064 (2/3 rate, free-action blocks). Confirmed gelatinous cube in 5.0 is AT_TUCH only (no AT_ENGL, which the older versions had). 0 new corrections. See companion-audit.md. -->
 <p>Slow, mindless, immune to a lot. Don’t melee an acid blob with bare
 hands or a metal weapon you care about: the passive acid corrodes both.
 Gelatinous cubes paralyse on touch.</p>
@@ -14765,7 +14765,7 @@ item back from her corpse later.</p>
 </section>
 <section id="orcs-o" class="level4">
 <h4>Orcs <code>o</code></h4>
-<!-- audit 2026-05-18 #89: 8 rows verified clean against monsters.h:727-796 (covers all of S_ORC). Stats, colors (incl. HI_LORD/HI_ZAP), attacks, MR_POISON flags all match. Corrected: orc shaman row was "spell spell" (2 attacks) but C gives only one ATTK(AT_MAGC,AD_SPEL); now "spell". Goblin is correctly placed in S_ORC. See companion-audit.md. -->
+<!-- audit 2026-05-18 #89 (re-audit 2026-05-18 v2 #99): 8 rows verified clean against monsters.h:727-796 (covers all of S_ORC). Stats, colors (incl. HI_LORD/HI_ZAP), attacks, MR_POISON flags all match. Corrected: orc shaman row was "spell spell" (2 attacks) but C gives only one ATTK(AT_MAGC,AD_SPEL); now "spell". Goblin is correctly placed in S_ORC. v2: re-verified all 8 rows; Mordor orc speed 5 is correct for 5.0 (nerfed from older versions). Plain "orc" has G_NOGEN | M2_NOPOLY at monsters.h:744,749 (corpse-only for zombie/mummy), but per the no-trivia rule this is a "why don't I see red `o`s" puzzle, not a beginner-saver — not noted in the row. 0 new corrections. See companion-audit.md. -->
 <p>Pack hunters with mediocre loot but real numbers. The Mines are full
 of them; bring a chokepoint.</p>
 <div class="dense-table">
@@ -15049,7 +15049,7 @@ Mumakil are slow but hit for 4d12 and shrug off blows.</p>
 </section>
 <section id="rodents-r" class="level4">
 <h4>Rodents <code>r</code></h4>
-<!-- audit 2026-05-17 #44: 48 cells / 6 rows verified against monsters.h:889-936. 1 corrected (woodchuck color was —, should be brown per CLR_BROWN at L936). See companion-audit.md. -->
+<!-- audit 2026-05-17 #44 (re-audit 2026-05-18 v2 #100): 48 cells / 6 rows verified against monsters.h:889-936. 1 corrected (woodchuck color was —, should be brown per CLR_BROWN at L936). v2 fix: added "eats metal. Will chew through your bag of gold or unattended weapons." to the rock mole row. Rock mole is M1_METALLIVORE (mondata.c:561 metallivorous, hack.c:769-784 swallow-metal-objects); the gold/weapon-eating behavior is a real beginner-relevant risk that the row previously buried under bare "tunnels." See companion-audit.md. -->
 <p>Mostly nuisance fodder. Giant rats are common in the early dungeon;
 their corpses are safe food.</p>
 <div class="dense-table">
@@ -15125,7 +15125,8 @@ their corpses are safe food.</p>
 <td>0</td>
 <td>20</td>
 <td>bite 1d6</td>
-<td>tunnels.</td>
+<td>tunnels, eats metal. Will chew through your bag of gold or
+unattended weapons.</td>
 </tr>
 <tr>
 <td>woodchuck</td>
@@ -17331,7 +17332,7 @@ melee it.</td>
 </section>
 <section id="snakes-s" class="level4">
 <h4>Snakes <code>S</code></h4>
-<!-- audit 2026-05-17 #51: all 6 rows verified against monsters.h:2167-2221 (garter snake, snake, water moccasin, python, pit viper, cobra). Corrected "pit fiend" typo (pit fiend is `&` demon, not a snake). AD_DRST shorthand as "poison" left as-is per common convention. See companion-audit.md. -->
+<!-- audit 2026-05-17 #51 (re-audit 2026-05-18 v2 #101): all 6 rows verified against monsters.h:2167-2221 (garter snake, snake, water moccasin, python, pit viper, cobra). Corrected "pit fiend" typo (pit fiend is `&` demon, not a snake). AD_DRST shorthand as "poison" left as-is per common convention. v2: re-verified all 6 rows; M1_SWIM universal, M1_CONCEAL on all except python, AT_HUGS pair on python rendered correctly. 0 new corrections. See companion-audit.md. -->
 <p>Mostly poisonous. The pit viper and the cobra are the dangerous ones;
 garter snakes are fodder.</p>
 <p>All snakes swim. All except <em>python</em> also hide.</p>
@@ -17837,7 +17838,7 @@ are safe food.</p>
 </section>
 <section id="zombies-z" class="level4">
 <h4>Zombies <code>Z</code></h4>
-<!-- audit 2026-05-18 #141: stats and attacks all match monsters.h:2421-2504. All Z-class entries carry G_NOCORPSE — zombies NEVER leave corpses on death, so the "corpses are unsafe to eat" framing was misleading (there's nothing to eat). M1_POIS varies (kobold/gnome/orc/dwarf/ghoul have it; elf/human/ettin/giant zombies don't), but again moot for eating. Skeleton has G_NOGEN — never randomly generated, only from skeleton-trap or special-level placement. Reworded intro. -->
+<!-- audit 2026-05-18 #141 (re-audit 2026-05-18 v2 #103): stats and attacks all match monsters.h:2421-2504. All Z-class entries carry G_NOCORPSE — zombies NEVER leave corpses on death, so the "corpses are unsafe to eat" framing was misleading (there's nothing to eat). M1_POIS varies (kobold/gnome/orc/dwarf/ghoul have it; elf/human/ettin/giant zombies don't), but again moot for eating. Skeleton has G_NOGEN — never randomly generated, only from skeleton-trap or special-level placement. Reworded intro. v2: re-verified all 10 rows; M2_UNDEAD (not "M3_UNDEAD") is the class flag, M2_STALK is universal. Elf/human zombie rows omit cold/sleep/poison-res in Notes while other rows include them (per the MR_COLD|MR_SLEEP|MR_POISON masks at monsters.h:2457,2466), but per the no-trivia rule this is a stat-detail inconsistency that doesn't affect a beginner's decision — slow undead won't survive long enough for resistance to matter. 0 new corrections. See companion-audit.md. -->
 <p>Slow undead. Easy to kite. <strong>Zombies never leave corpses on
 death</strong>, so eating is a non-issue, but undead-turning effects
 (scroll, spell of turn undead, wand of undead turning) deal heavy damage

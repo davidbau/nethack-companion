@@ -107,11 +107,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 96**  L 2419  ( 118 lines)   📖 Making Friends
 - [x] **# 97**  L 8672  (  15 lines)     ↳ Bestiary Tables → Ogres `O`
 - [x] **# 98**  L 8731  (  14 lines)     ↳ Bestiary Tables → Rust monsters and disenchanters `R`
-- [ ] **# 99**  L 8203  (  21 lines)     ↳ Bestiary Tables → Orcs `o`
-- [ ] **#100**  L 8260  (  18 lines)     ↳ Bestiary Tables → Rodents `r`
-- [ ] **#101**  L 8745  (  20 lines)     ↳ Bestiary Tables → Snakes `S`
-- [ ] **#102**  L 7958  (  17 lines)     ↳ Bestiary Tables → Blobs `b`
-- [ ] **#103**  L 8863  (  30 lines)     ↳ Bestiary Tables → Zombies `Z`
+- [x] **# 99**  L 8203  (  21 lines)     ↳ Bestiary Tables → Orcs `o`
+- [x] **#100**  L 8260  (  18 lines)     ↳ Bestiary Tables → Rodents `r`
+- [x] **#101**  L 8745  (  20 lines)     ↳ Bestiary Tables → Snakes `S`
+- [x] **#102**  L 7958  (  17 lines)     ↳ Bestiary Tables → Blobs `b`
+- [x] **#103**  L 8863  (  30 lines)     ↳ Bestiary Tables → Zombies `Z`
 - [ ] **#104**  L 7353  (  11 lines)     ↳ Weapons Tables → Pick-axe
 - [ ] **#105**  L 6991  ( 243 lines)   📖 Shopping and Shopkeeper Pricing
 - [ ] **#106**  L 5191  (  79 lines)   📖 Curses and How to Break Them

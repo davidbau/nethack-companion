@@ -8300,3 +8300,30 @@ Both rows verified clean against `monsters.h:2147-2161`. AD_RUST erodes iron arm
 98/183 done.
 
 ---
+
+## 2026-05-18 — v2 audit batch 21: Orcs (#99), Rodents (#100), Snakes (#101), Blobs (#102), Zombies (#103)
+
+### Rodents `r` (#100) — `spoilers/companion.md:8299` — 1 correction
+
+Rock mole row had only "tunnels." in Notes. Added "eats metal. Will chew through your bag of gold or unattended weapons." Rock mole is `M1_METALLIVORE` per `mondata.c:561`, and `hack.c:769-784` is the swallow-metal-object branch. The other places in the book that mention metallivores (Iron Bars in v2 #86, niche-cracker tactics) reference rock moles, but the bestiary row itself was the one place a beginner would look it up and learn nothing. Clears the no-trivia bar (real beginner risk to inventory).
+
+### Orcs `o` (#99) — `spoilers/companion.md:8242` — 0 corrections, badge updated
+
+All 8 rows verified clean against `monsters.h:727-796`. Mordor orc speed 5 is correct for 5.0. Agent flagged plain "orc" having `G_NOGEN | M2_NOPOLY` (corpse-only) as a "why don't I see red `o`s" puzzle, but per the no-trivia rule it doesn't change a beginner's strategic decisions — not noted.
+
+### Snakes `S` (#101) — `spoilers/companion.md:8784` — 0 corrections, badge updated
+
+All 6 rows verified against `monsters.h:2167-2221`. M1_SWIM universal; M1_CONCEAL on all except python; python's AT_HUGS pair (WRAP + PHYS) renders correctly.
+
+### Blobs `b` (#102) — `spoilers/companion.md:7997` — 0 corrections, badge updated
+
+All 3 rows verified against `monsters.h:137-166`. Acid blob passive at `uhitm.c:5906-5933` (50% splash + 1/30 corrode armor + 1/6 weapon/glove erode via `passive_obj`); gelatinous cube paralysis at `uhitm.c:6019-6064` (2/3 rate, free-action blocks). Note: 5.0 gelatinous cube is AT_TUCH only (no AT_ENGL — older versions had engulf, 5.0 doesn't).
+
+### Zombies `Z` (#103) — `spoilers/companion.md:8902` — 0 corrections, badge updated
+
+All 10 rows verified against `monsters.h:2421-2504`. All carry `G_NOCORPSE` (the prior audit's intro rewrite remains correct). Class flag is `M2_UNDEAD` (not "M3_UNDEAD"). `M2_STALK` is universal. Agent flagged that elf and human zombie rows omit cold/sleep/poison-res in Notes despite the MR masks at `monsters.h:2457, 2466` — per no-trivia this is a stat-detail inconsistency that doesn't affect beginner decisions (slow undead die fast enough that resistances rarely matter).
+
+### Pass-2 queue
+103/183 done.
+
+---
