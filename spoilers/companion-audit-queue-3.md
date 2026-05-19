@@ -55,11 +55,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 43**  L 2172  (  19 lines)     ↳ Dangerous Encounters → Light Bursts
 - [x] **# 44**  L 6770  (  41 lines)     ↳ Voluntary Challenges → The Food Conducts
 - [x] **# 45**  L 7534  (  27 lines)     ↳ Weapons Tables → Spear
-- [ ] **# 46**  L 8430  (  16 lines)     ↳ Bestiary Tables → Worms `w`
-- [ ] **# 47**  L 7661  (  13 lines)     ↳ Weapons Tables → Boomerang
-- [ ] **# 48**  L 7416  (  13 lines)     ↳ Weapons Tables → Axe
-- [ ] **# 49**  L 2057  (  12 lines)     ↳ Dangerous Encounters → Starvation
-- [ ] **# 50**  L 2096  (  28 lines)     ↳ Dangerous Encounters → Level Drain
+- [x] **# 46**  L 8430  (  16 lines)     ↳ Bestiary Tables → Worms `w`
+- [x] **# 47**  L 7661  (  13 lines)     ↳ Weapons Tables → Boomerang
+- [x] **# 48**  L 7416  (  13 lines)     ↳ Weapons Tables → Axe
+- [x] **# 49**  L 2057  (  12 lines)     ↳ Dangerous Encounters → Starvation
+- [x] **# 50**  L 2096  (  28 lines)     ↳ Dangerous Encounters → Level Drain
 - [ ] **# 51**  L 3793  ( 146 lines)   📖 Rings and Amulets
 - [ ] **# 52**  L 6472  (  62 lines)     ↳ Sokoban Solutions → Level 3, Version B
 - [ ] **# 53**  L 2030  (  27 lines)     ↳ Dangerous Encounters → The Touch of Death

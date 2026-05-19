@@ -9004,3 +9004,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 45/183 done.
+
+## 2026-05-19 — v3 audit batch 10: Worms (#46), Boomerang (#47), Axe (#48), Starvation (#49), Level Drain (#50)
+
+All five **CLEAN**.
+
+- Worms: 4 rows match `monsters.h:1114-1145`. Only PM_LONG_WORM (not baby) drops worm tooth per `mon.c:618-619`.
+- Boomerang: stats match `objects.h:166-168`. 10-step path, stops on monster/wall/door/sink, Fumbling or rn2(20) ≥ DEX fail-catch all confirmed in `zap.c:4141-4233`.
+- Axe: axe 1d6/1d4 wt 60, battle-axe 1d8+1d4/1d6+2d4 wt 120 bimanual. Cleaver = BATTLE_AXE base, Barbarian quest (`artilist.h:114-116`).
+- Starvation: prayer threshold TROUBLE_STARVING covers Weak through STARVED (`pray.c:216-217`) consistent with v2 fix; faint at u.uhunger ≤ 0; death at < -(100 + 10*Con).
+- Level Drain: drain-life carriers verified vs `monsters.h:2281-2353`; resistance sources (Excalibur/Stormbringer/Aesculapius/black DSM/shield of drain) all confirmed.
+
+### Pass-3 queue
+50/183 done.
