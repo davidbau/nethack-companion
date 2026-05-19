@@ -9366,3 +9366,32 @@ Four CLEAN, one with TWO real findings on Pauper that also touches the v3 #75 Co
 
 ### Pass-3 queue
 180/183 done.
+
+## 2026-05-19 — v3 audit batch 37 (FINAL): Choosing Your Expedition (#181), Cockatrices (#182), Nagas (#183)
+
+All three **CLEAN**.
+
+- Choosing Your Expedition: all v2 #46 + v2 #86 fixes intact. Healer unicorn-horn-for-sickness, Knight +1 lance, Cave Dweller XL 7 Fast, Elf no see-invis at start, Ranger Stealth XL 7 / See Invis XL 15. All 13 role alignments verified.
+- Cockatrices `c`: 3 rows match `monsters.h:170-195`. Chickatrice/cockatrice TUCH STON + passive STON; pyrolisk MR_FIRE + GAZE 2d6 FIRE. None have M1_FLY.
+- Nagas `N`: 8 rows match `monsters.h:1972-2048`. Red AT_BREA AD_FIRE 2d6, black AT_SPIT AD_ACID, golden AT_MAGC AD_SPEL 4d6, guardian AT_SPIT AD_DRST + AT_BITE AD_PLYS + AT_HUGS AD_WRAP. Black naga corpse gives pois+acid+stone-res. Guardian maligntyp +7 (Lawful).
+
+### Pass-3 queue
+**183/183 done — v3 pass complete.**
+
+### Pass-3 summary
+Across 37 batches the v3 audit found and corrected 17 issues:
+
+1. Riders (#10): unicorn horn DOES clear Pestilence's timed illness (apply.c:2351); also "food poisoning" → "deadly illness" (SICK_NONVOMITABLE).
+2. Scroll Rack (#12): confused destroy armor erodeproofs only when CURSED; uncursed/blessed strips it (read.c:1341). Both bullets now state BUC precondition.
+3. What Actually Kills (#16): Blue DSM + speed boots don't stack to "Very Fast" — either alone reaches it (youprop.h:377).
+4. Giant humanoids (#34): frost giant "Has cold attacks" + storm giant "Carries shock attacks" wrong; both AD_PHYS only. Same pattern v2 caught for fire giant.
+5. Delayed Deaths (#36): sliming timer is 10 (not 9); cancellation prevents new infection but does NOT clear running timer.
+6. Fort Ludios (#40): Croesus is M2_GREEDY|M2_NASTY|M2_STALK, NOT M3_COVETOUS.
+7. The Apothecary (#66): dipping source/target inversion — it's the DIPPING potion BUC that's tested for explosion (potion.c:2279/2541), not the receiver.
+8. Deadly Poison (#73): "burdened" claim spurious — poison death formula has no carrycap term.
+9. Major demons (#132): bone devil, Orcus, Geryon stings + Baalzebub bite all AD_DRST (drain-Str), not AD_POISON.
+10. Armor Tables (#152): cloak of protection is magical (mgc=1), not "non-magical." Reworded to "Highest MC of any cloak."
+11. Pauper (#178): role-knowledge list missing Cleric/Knight/Monk SPE_PROTECTION and Cave Dweller FLINT.
+12. Combining Conducts (cross-section from #178): Pauper does NOT suppress the starting pet — only OPTIONS=pettype:none does.
+
+Most of these were "v2 claimed fixed but prose drifted" or cross-section consistency cleanups. The Major-demons drain-Str finding and Pauper-pet-suppression finding are the most beginner-affecting.
