@@ -9156,3 +9156,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 100/183 done.
+
+## 2026-05-19 — v3 audit batch 21: Pacifist (#101), Morning star (#102), Gnomish Mines (#103), Lay of the Land (#104), Dragons (#105)
+
+All five **CLEAN**.
+
+- Pacifist: `u.uconduct.killer` increments at `mon.c:3500` (xkilled, gated by XKILL_NOCONDUCT) and `hack.c:2201` (pushing pet into trap). Pet kills don't break it.
+- Morning star: 1d4+1d4 / 1d6+1, wt 120, cost 10, iron, P_MORNING_STAR. One-handed despite name.
+- Gnomish Mines: Mines DL 2-4 (`dungeon.lua:15-19`); 7 Minetown variants, minetn-1 orcish; all 3 Mine's End variants guaranteed not-cursed luckstone; fake mimic in minend-1.
+- Lay of the Land: all v2 fixes still in place (sink `{`, themed rooms split, Massacre/Mausoleum split, Fake Delphi). Big Room DL 10-12 40% chance; Rogue DL 15-18.
+- Dragons `D`: 21 rows (10 baby + 10 adult + Chromatic) + Ixoth verified vs `monsters.h:1325-1562, 3642-3690`. All breath types, all babies non-breathing.
+
+### Pass-3 queue
+105/183 done.

@@ -110,11 +110,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 98**  L 2069  (  27 lines)     ↳ Dangerous Encounters → Brainlessness
 - [x] **# 99**  L 8821  (  20 lines)     ↳ Bestiary Tables → Snakes `S`
 - [x] **#100**  L 1644  ( 101 lines)   📖 A Field Guide to Dungeon Fauna
-- [ ] **#101**  L 6846  (  14 lines)     ↳ Voluntary Challenges → Pacifist
-- [ ] **#102**  L 7464  (  12 lines)     ↳ Weapons Tables → Morning star
-- [ ] **#103**  L  892  (  50 lines)     ↳ Branches and Landmarks → The Gnomish Mines
-- [ ] **#104**  L  528  ( 179 lines)   📖 The Lay of the Land
-- [ ] **#105**  L 8543  (  37 lines)     ↳ Bestiary Tables → Dragons `D`
+- [x] **#101**  L 6846  (  14 lines)     ↳ Voluntary Challenges → Pacifist
+- [x] **#102**  L 7464  (  12 lines)     ↳ Weapons Tables → Morning star
+- [x] **#103**  L  892  (  50 lines)     ↳ Branches and Landmarks → The Gnomish Mines
+- [x] **#104**  L  528  ( 179 lines)   📖 The Lay of the Land
+- [x] **#105**  L 8543  (  37 lines)     ↳ Bestiary Tables → Dragons `D`
 - [ ] **#106**  L 5122  ( 123 lines)   📖 Spellcasting
 - [ ] **#107**  L 6860  (  15 lines)     ↳ Voluntary Challenges → Illiterate
 - [ ] **#108**  L 9097  (  26 lines)     ↳ Bestiary Tables → Golems `'`
