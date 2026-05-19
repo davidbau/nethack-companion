@@ -9043,3 +9043,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 60/183 done.
+
+## 2026-05-19 — v3 audit batch 13: Engravings (#61), Centaurs (#62), Skill Caps (#63), Trolls (#64), Trappers/lurkers (#65)
+
+All five **CLEAN**.
+
+- Engravings: blade dulling at +(-1)/2chars, blocked at spe ≤ -3 (`engrave.c:1357-1364`); athame instant; dust wipes 1 char per monster step (`monmove.c:734`); burn permanent except ice/magical; impairment garble applies to all methods, surface-garble only to DUST/BLOOD (`engrave.c:1223`); trap_engravings[14/15/16] = Vlad/ad aerarium (`mklev.c:733`).
+- Centaurs: plains/forest/mountain match `monsters.h:1301-1323`. Forest gets BOW+12 arrows, plains/mountain get CROSSBOW+12 bolts at 50% spawn-armed (`makemon.c:474-484`).
+- Skill Caps: 30+ cells spot-checked across all 13 roles × 27 weapons + 4 fighting styles + 7 spell schools. Long sword, broad sword, bow, polearm, attack-spell rows all match `u_init.c:257-572`.
+- Trolls: 5 rows match `monsters.h:2225-2266`. M1_REGEN + is_reviver verified. Trollsbane no-revive at `uhitm.c:1907,4867`, `mhitm.c:1082`. Stoning → statue path at `mon.c:3285+`.
+- Trappers/lurkers: cross-section consistent with batch 12 #58. AD_WRAP/AD_PHYS verified.
+
+### Pass-3 queue
+65/183 done.

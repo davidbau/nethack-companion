@@ -70,11 +70,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 58**  L 2155  (  17 lines)     ↳ Dangerous Encounters → Engulfment from Hiding
 - [x] **# 59**  L 8748  (  15 lines)     ↳ Bestiary Tables → Ogres `O`
 - [x] **# 60**  L 7396  (  20 lines)     ↳ Weapons Tables → Two-handed sword
-- [ ] **# 61**  L 1433  (  71 lines)     ↳ Traps and Hazards → Engravings
-- [ ] **# 62**  L 8528  (  15 lines)     ↳ Bestiary Tables → Centaurs `C`
-- [ ] **# 63**  L 7909  ( 103 lines)     ↳ Appendices → Skill Caps
-- [ ] **# 64**  L 8841  (  20 lines)     ↳ Bestiary Tables → Trolls `T`
-- [ ] **# 65**  L 8373  (  17 lines)     ↳ Bestiary Tables → Trappers and lurkers `t`
+- [x] **# 61**  L 1433  (  71 lines)     ↳ Traps and Hazards → Engravings
+- [x] **# 62**  L 8528  (  15 lines)     ↳ Bestiary Tables → Centaurs `C`
+- [x] **# 63**  L 7909  ( 103 lines)     ↳ Appendices → Skill Caps
+- [x] **# 64**  L 8841  (  20 lines)     ↳ Bestiary Tables → Trolls `T`
+- [x] **# 65**  L 8373  (  17 lines)     ↳ Bestiary Tables → Trappers and lurkers `t`
 - [ ] **# 66**  L 3363  ( 124 lines)   📖 The Apothecary
 - [ ] **# 67**  L 8279  (  21 lines)     ↳ Bestiary Tables → Orcs `o`
 - [ ] **# 68**  L 6436  (  36 lines)     ↳ Sokoban Solutions → Level 3, Version A
