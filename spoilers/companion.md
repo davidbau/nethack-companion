@@ -2054,7 +2054,22 @@ A few map glyphs aren't monsters in the conventional sense, but you'll see them 
 ---
 
 ### What Actually Kills Adventurers
-<!-- audit 2026-05-17 #29 (re-audit 2026-05-18 v2 #87, v3 #16): v3 added one correction. v3: "Blue DSM same as speed boots, only stackable with them for Very Fast" was wrong — Very_fast is set by ANY extrinsic speed bit (`youprop.h:377`: `Very_fast ((HFast & ~INTRINSIC) || EFast)`). Blue DSM sets `EFast |= W_ARM` (do_wear.c:822); speed boots set `EFast |= W_ARMF`. Either alone reaches Very Fast; wearing both doesn't go faster. Reworded so a reader doesn't think one item is mandatory to pair with the other. v2: (a) AC convention fix on scale-mail line. (b) confused-genocide line was right; original kept. v1: mount slip 10-14 HP, mumakil 2-attack solo, shimmering DSM removed (#if 0 DEFERRED). See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- Very_fast = (HFast & ~INTRINSIC) || EFast (youprop.h:377)
+- Blue DSM sets EFast |= W_ARM (do_wear.c:822); speed boots set EFast |= W_ARMF
+- either alone reaches Very Fast; wearing both doesn't go faster
+2026-05-18:
+- mount slip damage 10-14 HP via rn1(5, 10) (steed.c:354)
+- water demon spawn rate is 1 in 30 quaffs at fountain.c:247, 314
+- bones items 80% cursed via rn2(5) gate (bones.c:290)
+- all 9 DSM extrinsic properties verified at do_wear.c:806-883
+- gold DSM permanent light radius 4/3/2 blessed/uncursed/cursed (light.c:881-911)
+- gold DSM is the only body-slot light source (artifact.c:2264-2275)
+- confused genocide hits your role: u.umonster ← gu.urole.mnum (read.c:2839, u_init.c:991)
+- mumakil attack solo, not in packs; 2-attack 4d12 + 2d6
+- shimmering DSM does not exist in 5.0 (#if 0 DEFERRED in objects.h)
+-->
 
 Only about **0.4% of games end in ascension.** The other 99.6%
 are deaths. NetHack ends in death by default; survival is the
@@ -2368,7 +2383,16 @@ start with their "experience" flag already set, so their first
 zap can connect. The freebie is an early-to-mid-game courtesy.
 
 #### The Touch of Death
-<!-- audit 2026-05-18 #116 (re-audit 2026-05-18 v2 #52): corrected MR-blocks-everything claim. Self-zap of WAN_DEATH / SPE_FINGER_OF_DEATH at zap.c:2885-2902 does NOT check Antimagic — only the ray-bolt path at zap.c:4497-4502 checks it. Magic resistance protects you from being hit by a death ray, but not from misfiring your own wand into yourself. The only escape for self-zap is being nonliving (poly into vampire/skeleton/etc.) or is_demon. Also clarified the 8d6+50 damage applies only on Rider Death's rolls 17-19; the more common 5-16 rolls deliver a smaller permdrain that MR doesn't reduce (uhitm.c:3858-3882 + mcastu.c:326-337). v2 re-confirmed: Death rolls rn2(20) with 19/18/17 = full touch (15%), 5-16 = permdrain=1 (60%), 0-4 = miss (25%); 17-19 with MR FALLS THROUGH to the smaller drain rather than being harmless; nonliving covers undead/manes/golems/S_VORTEX per mondata.h:219-220. 0 corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- self-zap WAN_DEATH or SPE_FINGER_OF_DEATH skips the Antimagic check (zap.c:2885-2902)
+- only the ray-bolt path checks Antimagic (zap.c:4497-4502)
+- self-zap escape requires being nonliving (undead/manes/golems/S_VORTEX) or is_demon (mondata.h:219-220)
+- Rider Death rn2(20): 17-19 = full touch (15%), 5-16 = permdrain=1 (60%), 0-4 = miss (25%) (uhitm.c:3858-3882)
+- 8d6 + 50 + half-damage permdrain only on rolls 17-19
+- MR on the 17-19 branch falls through to the smaller permdrain rather than being harmless
+- the smaller permdrain on rolls 5-16 is NOT reduced by MR (mcastu.c:326-337)
+-->
 
 Some monsters, most notably Death (one of the Riders on the Astral
 Plane), can kill you with a single touch. The Finger of Death spell
@@ -2393,7 +2417,14 @@ protects against incoming death rays.
 An amulet of life saving will revive you once if the touch or zap
 kills you outright.
 
-<!-- audit 2026-05-18 #174: hunger thresholds at eat.c:3369-3372 (Satiated >1000, Not Hungry >150, Hungry >50, Weak >0, Fainting ≤0). Faint path at eat.c:3410-3432; STARVED death at u.uhunger < -(100 + 10*Con), eat.c:3437-3447. Initial u.uhunger = 900 (eat.c:129). TROUBLE_STARVING covers Weak through STARVED (pray.c:216-217). Section makes no factual errors. 0 corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- hunger thresholds: Satiated >1000, Not Hungry >150, Hungry >50, Weak >0, Fainting ≤0 (eat.c:3369-3372)
+- faint path (eat.c:3410-3432)
+- STARVED death at u.uhunger < -(100 + 10*Con) (eat.c:3437-3447)
+- initial u.uhunger = 900 (eat.c:129)
+- TROUBLE_STARVING covers Weak through STARVED (pray.c:216-217)
+-->
 #### Starvation
 
 This isn't technically instant, but it feels like it. If your
@@ -2407,7 +2438,22 @@ rations, tripe rations, or lembas wafers. Don't let nutrition
 management slide.
 
 #### Brainlessness
-<!-- audit 2026-05-17 #63 (re-audit 2026-05-19 v2 #132): mind flayer / master mind flayer tentacle counts (3/5) + AD_DRIN + AT_WEAP 1d8 verified against monsters.h:523-535. INT loss rnd(2) per hit, max 10 per master turn (uhitm.c:3263). Brainlessness death + lifesaving-still-dies in eat.c:698-715. 1-in-5 losespells per uhitm.c:3264. Polymorph-into-mindflayer brain-eating recovers INT (eat.c:679-688). Corrected: any helmet blocks 7/8 attacks (uhitm.c:3235 `uarmh && rn2(8)`); greasing is only an extra slip-roll on top. Removed false claim that blessed full-healing restores attributes (potion.c:1144-1162 restores HP and one lost level only, not stats). v2 re-verified: 5.0 losespells() at spell.c:1759-1827 (random rn2(n+1) spells to retention 0; re-study restores), map/ID amnesia removed in 5.0 (only losespells called from AD_DRIN). Prayer restores attributes via TROUBLE_POISONED branch (pray.c:270-272, 547-552). Unicorn horn no longer restores attributes (apply.c:2306-2327). 0 new corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- mind flayer 3 tentacles, master 5 tentacles; AD_DRIN + AT_WEAP 1d8 (monsters.h:523-535)
+- INT loss rnd(2) per hit; up to 10 lost per turn from a master (uhitm.c:3263)
+- brainlessness death; lifesaving still dies (eat.c:698-715)
+- 1-in-5 chance of losespells per hit (uhitm.c:3264)
+- losespells zeroes rn2(n+1) random spells; re-study restores them (spell.c:1759-1827)
+- 5.0 AD_DRIN no longer wipes maps or item IDs — only spells
+- polymorphed into a mindflayer, brain-eating restores Int (eat.c:679-688)
+- any helmet blocks 7/8 tentacle drains via `uarmh && rn2(8)` (uhitm.c:3235)
+- greasing adds an extra slip-roll on top of the helmet check
+- blessed potion of restore ability restores all lost attributes
+- blessed potion of full healing does NOT restore stats (potion.c:1144-1162)
+- prayer fixes drained attributes via TROUBLE_POISONED (pray.c:270-272, 547-552)
+- unicorn horn no longer restores attributes in 5.0 (apply.c:2306-2327)
+-->
 
 Mind flayers drain Intelligence with their tentacle attacks. If
 your Intelligence drops to your racial minimum (3 for humans), the
@@ -2434,7 +2480,18 @@ attributes, so don't rely on it. Stockpile at least one restore
 ability before pushing into mind flayer territory.
 
 #### Level Drain
-<!-- audit 2026-05-17 #43: corrected "vampire bats" from drain-life list (their second bite is AD_DRST, drain Strength, not AD_DRLI). Added shield of drain resistance (new in 5.0). Verified wraith corpse mechanic (eat.c:1141 pluslvl), drained-level HP/power math (exper.c:251-273 u.uhpinc/u.ueninc), drain-resistance carriers (artilist + do_wear.c). Fixed awkward "zero nutritional weight" framing (real reason is cnutrit==0). v2 audit 2026-05-18 #44: two fixes. (a) Dropped "the bite of a hostile incubus or succubus (see Seduction below)" — under default sysopt.seduce=1 (sys.c:100) the demon's bite is AD_SSEX, not AD_DRLI; AD_SSEX→AD_DRLI substitution at mhitu.c:327-334 only fires when SEDUCE is disabled, so stock-options foocubi don't drain levels. (b) Added potion-of-restore-ability to the recovery options (potion.c:687-691 blessed restores all lost levels at once, uncursed/plain restores one per quaff). Also synced the vampire-bat parenthetical to match the v2 #37 reword ("poisoned bite" not "second bite"). See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- vampire bats deal AD_DRST (drain Strength), NOT AD_DRLI — pois-res blocks
+- shield of drain resistance is new in 5.0 (artilist.h, do_wear.c)
+- eating wraith corpse adds a level via pluslvl (eat.c:1141)
+- drained-level HP/Pw math uses u.uhpinc / u.ueninc (exper.c:251-273)
+- wraith corpse weightless and untinnable because cnutrit==0
+- sysopt.seduce defaults to 1 (sys.c:100)
+- foocubus bite is AD_SSEX; AD_SSEX→AD_DRLI substitution only fires when SEDUCE disabled (mhitu.c:327-334)
+- blessed potion of restore ability restores ALL lost levels (potion.c:687-691)
+- uncursed/plain restore ability returns one level per quaff
+-->
 
 A recurring theme in the bestiary: certain monsters reduce your
 experience level on a hit, taking the HP and power gains that came
@@ -2462,7 +2519,20 @@ weightless and can't be tinned (no nutrition), so eat them as soon
 as the fight ends.
 
 #### Enchantment Drain
-<!-- audit 2026-05-17 #73 (re-audit 2026-05-18 v2 #26): corrected substantial errors. Active claw uses some_armor (do_wear.c:2629) — armor only (cloak > body armor > shirt > 1/4 chance for helm/gloves/boots/shield), or if naked a 5-way rn2(5) for ring/amulet/blindfold. NEVER targets weapon. Weapon drain is passive-only (mhitm_ad_ench when YOU melee them, mhitu.c:2509-2514). Active attack DOES print "Your X seems less effective." (uhitm.c:3641). Added Gehennom-only generation, MC defense, corpse warning (eats an intrinsic). v2 re-verified: G_HELL gates generation (monsters.h:2156, makemon.c:1935,1998); some_armor target selection at uhitm.c:3619 (weapon never in scope); passive weapon drain at mhitu.c:2508-2515 with no message; obj_resists 10%/90% at zap.c:1392-1394; Invocation items + Rider corpses always resist at zap.c:1462-1467; MC defense via mhitm_mgc_atk_negated at uhitm.c:3613 (does not apply to passive); corpse attrcurse at eat.c:1270-1275. 0 corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- disenchanter generates only in Gehennom (G_HELL: monsters.h:2156, makemon.c:1935, 1998)
+- active claw targets armor via some_armor (do_wear.c:2629, uhitm.c:3619)
+- target order: cloak → body armor → shirt → 1/4 chance for helm/gloves/boots/shield
+- if naked, rn2(5) picks ring/amulet/blindfold; never targets a wielded weapon
+- active hit prints "Your X seems less effective" (uhitm.c:3641)
+- weapon drain is passive-only: fires when you melee the disenchanter (mhitu.c:2508-2515)
+- passive drain is silent
+- obj_resists: 10% chance for ordinary, 90% for artifact (zap.c:1392-1394)
+- Invocation items and Rider corpses always resist (zap.c:1462-1467)
+- MC negates the active attack (uhitm.c:3613) but NOT the passive counter
+- eating a disenchanter corpse strips a random intrinsic (eat.c:1270-1275)
+-->
 
 **Disenchanters** (`R`, blue) appear only in Gehennom. Their
 claw is the silent ascension-killer it's reputed to be, but the
