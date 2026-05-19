@@ -9195,3 +9195,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 115/183 done.
+
+## 2026-05-19 — v3 audit batch 24: Enhancing Skills (#116), Gray Stones (#117), Rogue Level (#118), Elementals (#119), Advanced Controls (#120)
+
+All five **CLEAN**.
+
+- Enhancing Skills: practice formula `level²×20` cumulative 20/80/180/320/500 (`skills.h:106`); slot costs 1/2/3 weapon, (tmp+1)/2 non-weapon; ceiling 32 = 2+29+1; melee+throw `dmg>1` train; bare-hand 50% rate, martial 75%; spellev per cast; riding 100 squares/tick; all role-spell-school caps match `u_init.c:279-572`.
+- Gray Stones: prices 60/45/1/1 and weights 10/10/500/10 match `objects.h:1598-1605`; loadstone cursed at creation `mkobj.c:978-979`; drop refusal at `do.c:685-694`.
+- Rogue Level: DL 15-18 (`dungeon.lua:54-58`); uppercase-only monsters; symbol swaps; no closed doors / fountains / sinks / altars / shops / spellbooks / tools / amulets.
+- Elementals `E`: 5 rows match `monsters.h:1566-1610`. Stalker non-mindless; M1_FLY on stalker/air/fire; earth/water elemental swimmer.
+- Advanced Controls: Ctrl+A repeats last executed; LARGEST_INT 32767 count limit; F double-tap cancel; G/g run distinction (run=3 vs run=1); m-prefix menu logic; all listed options exist in optlist.h.
+
+### Pass-3 queue
+120/183 done.

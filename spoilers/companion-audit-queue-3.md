@@ -125,11 +125,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#113**  L 8672  (  16 lines)     ↳ Bestiary Tables → Keystone Kops `K`
 - [x] **#114**  L 6920  (  23 lines)     ↳ Voluntary Challenges → Wishing Restrictions
 - [x] **#115**  L 6190  (  53 lines)     ↳ Sokoban Solutions → Level 1, Version A
-- [ ] **#116**  L 4851  ( 171 lines)   📖 Enhancing Skills
-- [ ] **#117**  L 3113  (  52 lines)     ↳ A Practical Identification Strategy → Gray Stones: Four Stones, One Correct Answer
-- [ ] **#118**  L 1039  (  25 lines)     ↳ Branches and Landmarks → The Rogue Level
-- [ ] **#119**  L 8580  (  19 lines)     ↳ Bestiary Tables → Elementals `E`
-- [ ] **#120**  L 6043  ( 117 lines)   📖 Advanced Controls
+- [x] **#116**  L 4851  ( 171 lines)   📖 Enhancing Skills
+- [x] **#117**  L 3113  (  52 lines)     ↳ A Practical Identification Strategy → Gray Stones: Four Stones, One Correct Answer
+- [x] **#118**  L 1039  (  25 lines)     ↳ Branches and Landmarks → The Rogue Level
+- [x] **#119**  L 8580  (  19 lines)     ↳ Bestiary Tables → Elementals `E`
+- [x] **#120**  L 6043  ( 117 lines)   📖 Advanced Controls
 - [ ] **#121**  L 7476  (  12 lines)     ↳ Weapons Tables → Flail
 - [ ] **#122**  L 3594  ( 199 lines)   📖 Wands and Staves
 - [ ] **#123**  L 7046  (  17 lines)     ↳ Voluntary Challenges → Bonesless (new in 5.0)
