@@ -2980,7 +2980,7 @@ slow digestion come back to you (free identification), and every
 other ring is consumed.
 
 #### Use-Testing (The Careful Way)
-<!-- audit 2026-05-18 #79 (re-audit 2026-05-18 v2 #21): substantial engrave-test table rewrite. Verified against engrave.c + zap.c: real messages are "Flames fly from the wand" (fire), "A few ice cubes drop" (cold), "Lightning arcs from the wand" (lightning), "Gravel flies up" (digging), "riddled by bullet holes" (magic missile not digging), polymorph randomizes existing engraving (not "vanishes"), cancellation/make-invisible/teleportation all share the same "vanishes" message. Wand-of-wishing engrave DOES grant the wish (zap.c:2575-2585) — reverse of previous warning. Also corrected unicorn-horn neutralization (sickness → fruit juice, not water; blindness/confusion/hallucination → water). Confused remove curse randomizes BUC of uncursed items (blessorcurse, 50/50), doesn't strictly curse. v2 re-audit confirmed every wand message against engrave.c:604-728 (striking unique "fights your attempt to write", sleep+death both "bugs stop moving", slow/speed/poly distinctive, dust-class wands silent), zapnodir light at zap.c:2549, wishing at zap.c:2575-2585, cursed-wand explosion at engrave.c:794 (1% per cursed engrave per hack.h:1410). 0 corrections. See companion-audit.md. -->
+<!-- audit 2026-05-18 #79 (re-audit 2026-05-18 v2 #21, v2 #83): substantial engrave-test table rewrite. Verified against engrave.c + zap.c: real messages are "Flames fly from the wand" (fire), "A few ice cubes drop" (cold), "Lightning arcs from the wand" (lightning), "Gravel flies up" (digging), "riddled by bullet holes" (magic missile not digging), polymorph randomizes existing engraving (not "vanishes"), cancellation/make-invisible/teleportation all share the same "vanishes" message. Wand-of-wishing engrave DOES grant the wish (zap.c:2575-2585) — reverse of previous warning. Also corrected unicorn-horn neutralization (sickness → fruit juice, not water; blindness/confusion/hallucination → water). v2 re-audit confirmed every wand message. v2 #83 (Use-Testing): four factual corrections. (a) "Dipping a poisonable weapon (dagger, arrow, spear) into a potion of sickness" was wrong about daggers and spears — is_poisonable at obj.h:264-268 requires oc_skill in [-P_SHURIKEN, -P_BOW] = [-24, -20], i.e., ranged ammunition only. Daggers (skill +1) and spears (skill +17) are NOT poisonable. Reworded to "stack of poisonable ammunition (arrows, crossbow bolts, darts, shuriken, or sling stones)." (b) Confused remove curse ratio overstated: blessorcurse(obj, 2) at mkobj.c:1841-1853 gives 1/4 blessed, 1/4 cursed, 1/2 unchanged — not "half/half." Reworded. (c) Scope omitted: non-blessed confused remove curse only touches worn/wielded items per read.c:1549-1552; only blessed touches all inventory. Added. (d) Helm of opposite alignment was missing from the auto-curse warning — same 90% branch at mkobj.c:1087-1090, appearance pool "etched/crested/visored/plumed helmet" overlaps with the plain helm and helm of caution/telepathy. Added. See companion-audit.md. -->
 
 When you don't have access to a shop or a sink, you can sometimes
 figure out what an item is by using it carefully. Here's the approach
@@ -2993,13 +2993,13 @@ potion. If the monster speeds up, it's speed. If the monster becomes
 invisible, well, you've learned something (and now have an invisible
 monster to deal with).
 
-You can also dip items into potions. Dipping a poisonable weapon
-(dagger, arrow, spear) into a potion of sickness will poison it,
-confirming the potion's identity (it won't poison a long sword or
-other non-poisonable weapon). Dipping a unicorn horn into a potion
-of **confusion**, **hallucination**, or **blindness** turns it
-into water; dipping into a potion of **sickness** turns it into
-fruit juice.
+You can also dip items into potions. Dipping a stack of poisonable
+ammunition (arrows, crossbow bolts, darts, shuriken, or sling stones)
+into a potion of sickness will poison it, confirming the potion's
+identity (it won't poison a sword or any non-missile weapon).
+Dipping a unicorn horn into a potion of **confusion**,
+**hallucination**, or **blindness** turns it into water; dipping
+into a potion of **sickness** turns it into fruit juice.
 
 **Scrolls.** Reading is risky. Some scrolls (destroy armor, amnesia,
 punishment) are outright harmful. The safest approach is to price-ID
@@ -3010,10 +3010,14 @@ disastrous.
 
 Confused reading produces different effects for many scrolls and is
 sometimes useful. A confused scroll of remove curse **randomizes
-the BUC of your uncursed items** (about half end up blessed, half
-cursed) and leaves already-cursed items cursed, so it's a way to
-get blessings cheaply, not a curse-removal tool. Don't read it
-confused if you need to uncurse something.
+the BUC of your uncursed items** (about a quarter end up blessed,
+a quarter end up cursed, and half stay uncursed) and leaves
+already-cursed items cursed. A non-blessed confused scroll only
+touches your worn and wielded gear (plus loadstones and active
+leashes); a blessed confused scroll touches your whole inventory.
+So it's a way to get a few cheap blessings on worn items, not a
+curse-removal tool. Don't read it confused if you need to uncurse
+something.
 
 **Rings.** First, confirm the ring is not cursed (altar or pet test).
 Then put it on. Many rings produce an immediate message or visible
@@ -3034,10 +3038,11 @@ you'll notice it when a ray bounces off you.
 you faster, a cloak of invisibility makes you invisible. But trying
 on unknown armor is **dangerous in a shop**: if the item is cursed,
 it welds itself to you, you can't drop it, and the shopkeeper still
-expects payment. Worse, the most commonly auto-cursed armor types
-(fumble boots, levitation boots, gauntlets of fumbling) are exactly
-the ones that masquerade as desirable boots and gloves. **Always
-verify BUC before wearing unknown armor in a shop.** Shops don't
+expects payment. Worse, the auto-cursed armor types (fumble boots,
+levitation boots, gauntlets of fumbling, and the helm of opposite
+alignment) are exactly the ones that masquerade as desirable boots,
+gloves, and helms. **Always verify BUC before wearing unknown
+armor in a shop.** Shops don't
 have altars, so the standard altar-drop BUC check isn't available
 in-store; the in-shop options are the pet-step test (your pet
 refuses to walk over cursed items, so lure it past the suspect

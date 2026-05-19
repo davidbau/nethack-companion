@@ -87,11 +87,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 76**  L 2352  (  36 lines)     ↳ Dangerous Encounters → The Displacer Beast
 - [x] **# 77**  L 8313  (  19 lines)     ↳ Bestiary Tables → Unicorns and horses `u`
 - [x] **# 78**  L 1073  (  97 lines)     ↳ Branches and Landmarks → Medusa's Island
-- [ ] **# 79**  L 7255  (  15 lines)     ↳ Weapons Tables → Knife
-- [ ] **# 80**  L 6782  (  14 lines)     ↳ Voluntary Challenges → Pacifist
-- [ ] **# 81**  L 6181  (  61 lines)     ↳ Sokoban Solutions → Level 1, Version B
-- [ ] **# 82**  L 2033  (  12 lines)     ↳ Dangerous Encounters → Starvation
-- [ ] **# 83**  L 2964  ( 110 lines)     ↳ A Practical Identification Strategy → Use-Testing (The Careful Way)
+- [x] **# 79**  L 7255  (  15 lines)     ↳ Weapons Tables → Knife
+- [x] **# 80**  L 6782  (  14 lines)     ↳ Voluntary Challenges → Pacifist
+- [x] **# 81**  L 6181  (  61 lines)     ↳ Sokoban Solutions → Level 1, Version B
+- [x] **# 82**  L 2033  (  12 lines)     ↳ Dangerous Encounters → Starvation
+- [x] **# 83**  L 2964  ( 110 lines)     ↳ A Practical Identification Strategy → Use-Testing (The Careful Way)
 - [ ] **# 84**  L 8893  (  85 lines)     ↳ Bestiary Tables → Humans and elves `@`
 - [ ] **# 85**  L 8297  (  16 lines)     ↳ Bestiary Tables → Trappers and lurkers `t`
 - [ ] **# 86**  L 1334  (  26 lines)     ↳ Traps and Hazards → Iron Bars

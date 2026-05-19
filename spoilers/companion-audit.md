@@ -8133,3 +8133,71 @@ Source: `spoilers/companion.md` line 1082. 2 small corrections; badge backfilled
 - Stone resistance also blocks the gaze per `mhitu.c:1747-1748` but is rarely attainable pre-Medusa. Omitted per no-trivia.
 
 ---
+
+## 2026-05-18 — v2 audit #79: Weapons Tables — Knife
+
+Source: `spoilers/companion.md` line 7277. No corrections (re-audit clean).
+
+### Verified
+- All 5 rows match `include/objects.h:215-233`: scalpel, knife, stiletto, worm tooth, crysknife. P_KNIFE on all.
+- Healer scalpel starter at `u_init.c:77`.
+- Crysknife revert mechanic at `do.c:903-918` (`!obj->oerodeproof || !rn2(10)`).
+- Athame correctly NOT in this table — it's P_DAGGER (`objects.h:212-214`).
+
+---
+
+## 2026-05-18 — v2 audit #80: Voluntary Challenges — Pacifist
+
+Source: `spoilers/companion.md` line 6803. No corrections (re-audit clean).
+
+### Verified
+- `u.uconduct.killer` referenced at `insight.c:2144-2145` and `topten.c:592`.
+- Counter increments only at `mon.c:3500` (xkilled) and `hack.c:2201` (pet pushed into fatal trap).
+- Monster-on-monster kills via `monkilled` (`mon.c:3377`) don't increment — conflict and pet kills are safe.
+- Charm monster spell at `spell.c:1522` exists for the strategy mention.
+
+---
+
+## 2026-05-18 — v2 audit #81: Sokoban Solutions — Level 1, Version B
+
+Source: `spoilers/companion.md` line 6201. No corrections (re-audit clean).
+
+### Verified
+- Map walls, floors, upstair (2,2), branch portal (4,2), all 12 boulders A-L geometry matches `dat/soko4-2.lua:9-21, 29-42`.
+- Pits col 2 rows 3-7 and row 9 cols 2-6, both rolling-boulder traps, both scrolls of earth at (2,10)/(3,10) per `soko4-2.lua:48-64`.
+- All 16 solution steps land on lua floor tiles with reachable cardinal approach squares.
+- Final tally "D and E remain" exact: 10 boulders finished into 10 pits.
+- Intermediate map at line 6231-6245 matches simulated post-step-7 state.
+
+---
+
+## 2026-05-18 — v2 audit #82: Dangerous Encounters — Starvation
+
+Source: `spoilers/companion.md` line 2047. No corrections (re-audit clean).
+
+### Verified
+- Faint at `u.uhunger ≤ 0` per `eat.c:3369-3372`; faint handler at `eat.c:3410-3432`.
+- STARVED death at `u.uhunger < -(100 + 10*Con)` per `eat.c:3437-3447`.
+- Prayer cures hunger via TROUBLE_HUNGRY at `pray.c:216-217` (covers Weak/Fainting).
+
+---
+
+## 2026-05-18 — v2 audit #83: Use-Testing (The Careful Way)
+
+Source: `spoilers/companion.md` line 2982. 4 factual corrections.
+
+### Wrong → fixed
+- **"Dipping a poisonable weapon (dagger, arrow, spear) into a potion of sickness"**: daggers and spears are NOT poisonable. `is_poisonable` at `include/obj.h:264-268` requires `oc_skill` in `[-P_SHURIKEN, -P_BOW]` = `[-24, -20]`, i.e., ranged ammunition only (arrows, crossbow bolts, darts, shurikens, sling stones). Daggers (skill +1) and spears (skill +17) fail. Reworded to list the actual poisonable ammunition.
+- **Confused remove-curse "about half end up blessed, half cursed"**: wrong ratio. `blessorcurse(obj, 2)` at `mkobj.c:1841-1853` gives 1/4 blessed, 1/4 cursed, 1/2 unchanged. Reworded.
+- **Confused remove-curse scope**: a *non-blessed* confused scroll only touches worn/wielded items (plus loadstones, active leashes) per `read.c:1549-1552`. The all-inventory branch only fires when the scroll is blessed. Added the distinction.
+- **Helm of opposite alignment missing from auto-curse warning**: HELM_OF_OPPOSITE_ALIGNMENT is in the same 90% auto-curse branch at `mkobj.c:1087-1090` and shares the etched/crested/visored/plumed helm appearance pool with helm of caution and helm of telepathy. Added to the list of auto-cursed shop traps.
+
+### Verified
+- Unicorn horn dip table at `potion.c:2151-2160`.
+- Throwing potions effects at `potion.c:1625-1820`.
+- Scroll of destroy armor with no armor worn produces "strange feeling" at `read.c:1324-1339`.
+- Armor shuffle pools at `o_init.c:280-287`.
+- Helm of brilliance always "crystal helmet"; dunce cap and cornuthaum both "conical hat" — fixed appearances.
+- All armor price tiers verified vs `objects.h:686-727, 637-650`.
+
+---
