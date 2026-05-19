@@ -9182,3 +9182,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 110/183 done.
+
+## 2026-05-19 — v3 audit batch 23: Your First Descent (#111), Artifacts (#112), Keystone Kops (#113), Wishing Restrictions (#114), Sokoban L1A (#115)
+
+All five **CLEAN**.
+
+- Your First Descent: stair-fall `losehp(rnd(3))` at `do.c:1792` (overburdened/Punished/Fumbling); lizard/lichen nonrotting at `eat.c:58-61`. v2 fixes intact.
+- Artifacts: 282-line reference. ~20 artifacts spot-checked vs `artilist.h`+`artifact.c`. Magicbane STUN(3,4)+DFNS(AD_MAGM); Mjollnir ELEC(5,24); Vorpal Blade SPFX_BEHEAD; Sting DFLAG2|M2_ORC; Snickersnee KATANA PHYS(0,8); Demonbane SILVER_MACE+PM_CLERIC; Frost/Fire Brand DFNS swap matches v2 fix; Trollsbane SPFX_REGEN; Eye of Aethiopica EREGEN+HSPDAM cspfx + DFNS(AD_MAGM) worn-only; Master Key UNTRAP rogue!cursed/non-rogue blessed at `artifact.c:2778-2784`; Sceptre SPFX_DALIGN; Tsurugi SPFX_BEHEAD|LUCK|PROTECT.
+- Keystone Kops: 4 rows match `monsters.h:1829-1860`. G_NOGEN | G_GENO. `call_kops` from `shk.c:623,680` (via `makekops` at `:562`). Respawn 1/5 near downstair + 1/5 random (`mon.c:3147-3164`).
+- Wishing Restrictions: two counters `u.uconduct.wishes`/`wisharti` (`you.h:157-158`); "nothing" wish escape at `zap.c:6373`; wisharti increments BEFORE deny branch at `objnam.c:5364`; Amulet first-pickup wish exempt at `allmain.c:445-450`.
+- Sokoban L1A: 10 boulders match `soko4-1.lua`; 9 pits + 1 remainder = A only; 5 explicit push steps re-simulated; scrolls of earth at (3,12)/(4,12).
+
+### Pass-3 queue
+115/183 done.

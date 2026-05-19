@@ -120,11 +120,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#108**  L 9097  (  26 lines)     ↳ Bestiary Tables → Golems `'`
 - [x] **#109**  L 7488  (  11 lines)     ↳ Weapons Tables → Hammer
 - [x] **#110**  L 6811  (  17 lines)     ↳ Voluntary Challenges → Atheist
-- [ ] **#111**  L  385  ( 139 lines)   📖 Your First Descent
-- [ ] **#112**  L 4217  ( 282 lines)   📖 Artifacts
-- [ ] **#113**  L 8672  (  16 lines)     ↳ Bestiary Tables → Keystone Kops `K`
-- [ ] **#114**  L 6920  (  23 lines)     ↳ Voluntary Challenges → Wishing Restrictions
-- [ ] **#115**  L 6190  (  53 lines)     ↳ Sokoban Solutions → Level 1, Version A
+- [x] **#111**  L  385  ( 139 lines)   📖 Your First Descent
+- [x] **#112**  L 4217  ( 282 lines)   📖 Artifacts
+- [x] **#113**  L 8672  (  16 lines)     ↳ Bestiary Tables → Keystone Kops `K`
+- [x] **#114**  L 6920  (  23 lines)     ↳ Voluntary Challenges → Wishing Restrictions
+- [x] **#115**  L 6190  (  53 lines)     ↳ Sokoban Solutions → Level 1, Version A
 - [ ] **#116**  L 4851  ( 171 lines)   📖 Enhancing Skills
 - [ ] **#117**  L 3113  (  52 lines)     ↳ A Practical Identification Strategy → Gray Stones: Four Stones, One Correct Answer
 - [ ] **#118**  L 1039  (  25 lines)     ↳ Branches and Landmarks → The Rogue Level
