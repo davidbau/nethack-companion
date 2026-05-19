@@ -8327,3 +8327,36 @@ All 10 rows verified against `monsters.h:2421-2504`. All carry `G_NOCORPSE` (the
 103/183 done.
 
 ---
+
+## 2026-05-18 — v2 audit batch 22: Pick-axe (#104), Shopping (#105), Curses (#106), Arachnids (#107), Dagger (#108)
+
+### Shopping and Shopkeeper Pricing (#105) — `spoilers/companion.md:7030` — 3 corrections
+
+- **"Shop walls are non-diggable from inside"** wrong. `dig.c:488-501` converts shop walls to doors normally; the shopkeeper bills you for `SHOP_WALL_DMG` and the chase continues (`shk.c:5061-5078 shopdig` grabs your pack). Reworded to "Digging through a shop wall or floor doesn't escape the bill."
+- **Touchstone identification** had two errors. (1) Full-name identification requires a **blessed** touchstone (or non-cursed for Archeologist/Gnome) per `apply.c:2744-2751`; an uncursed touchstone only gives a streak color (line 2759). (2) Hardness is irrelevant — touchstones work on all gems. Reworded accordingly.
+- **Glass row sells for "0–8 zm"** wrong. The unidentified-gem formula at `shk.c:3168-3172` is `(tmp + 3) * quan` with `tmp = 0..(divisor-1)`, so the minimum is 3 zm, not 0. Corrected to "3–8 zm."
+
+Re-verified: credit/debit/loan ordering (`shk.c:3884-3909`), shop door blocked iff `debit || billct || robbed` (`shk.c:5791-5815`), shopkeeper-ignores-Elbereth (`monmove.c:251-268`), shopkeeper-sees-invisible (`shk.c:5302-5303`), bones-shop reset (`bones.c:51-99`), all 22 gem prices and Mohs hardness against `objects.h:1526-1571`.
+
+### Dagger (#108) — `spoilers/companion.md:7280` — 1 correction
+
+Silver dagger row said "Silver damage to demons, undead, lycanthropes, and shades" — "undead" is too broad. `mon_hates_silver()` at `mondata.c:524-528` covers weres, `S_VAMPIRE`, demons, shades, and imps (except tengu). Other undead — liches, zombies, mummies, wraiths, ghouls, ghosts — are NOT silver-vulnerable. Reworded to "demons, vampires, lycanthropes, shades, and imps."
+
+Re-verified all 5 rows against `objects.h:200-214`. Daggers correctly NOT claimed poisonable (`oc_skill = +1`, outside `is_poisonable` range). Sting at `artilist.h:138`. Rogue Expert multishot to 4 at `dothrow.c:65-66, 178-190`. Athame no-dull engraving at `engrave.c:1306-1307`.
+
+### Pick-axe (#104) — `spoilers/companion.md:7395` — 0 corrections, badge updated
+
+Stats verified against `objects.h:1007-1009` (pick-axe) and `:345-347` (mattock). Mattock bimanual 3/2 Str damage bonus at `uhitm.c:1467-1468`. Dig-down creates pit first then deepens to hole at `dig.c:432-433, 372-374`.
+
+### Curses and How to Break Them (#106) — `spoilers/companion.md:5227` — 0 corrections, badge updated
+
+Re-verified: bones 80% cursed (`bones.c:290`), rings of teleportation/polymorph and amulet of strangulation 90% cursed (`mkobj.c:1063-1066, 1143-1147`), cursed BoH weight doubling (`mkobj.c:1950-1953`), holy water uncursing by dipping (`potion.c:1514-1518`), confused remove-curse 25/25/50 split (consistent with batch 17 v2 #83), blessed-vs-uncursed remove-curse scope (`read.c:1524, 1549`), prayer top-tier reward uncursing all inventory (`pray.c:1283-1308`).
+
+### Arachnids and centipedes `s` (#107) — `spoilers/companion.md:8320` — 0 corrections, badge updated
+
+All 5 rows verified against `monsters.h:940-972, 3713-3722`. Webmaker via `mondata.h:147-148` on cave spider + giant spider only. M1_CONCEAL on all except giant spider. Cave spider/centipede corpses safe (no M1_POIS); giant spider/scorpion poisonous. Scorpius `MR_STONE` confers ston-res.
+
+### Pass-2 queue
+108/183 done.
+
+---

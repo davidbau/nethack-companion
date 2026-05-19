@@ -112,11 +112,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#101**  L 8745  (  20 lines)     ↳ Bestiary Tables → Snakes `S`
 - [x] **#102**  L 7958  (  17 lines)     ↳ Bestiary Tables → Blobs `b`
 - [x] **#103**  L 8863  (  30 lines)     ↳ Bestiary Tables → Zombies `Z`
-- [ ] **#104**  L 7353  (  11 lines)     ↳ Weapons Tables → Pick-axe
-- [ ] **#105**  L 6991  ( 243 lines)   📖 Shopping and Shopkeeper Pricing
-- [ ] **#106**  L 5191  (  79 lines)   📖 Curses and How to Break Them
-- [ ] **#107**  L 8278  (  19 lines)     ↳ Bestiary Tables → Arachnids and centipedes `s`
-- [ ] **#108**  L 7238  (  17 lines)     ↳ Weapons Tables → Dagger
+- [x] **#104**  L 7353  (  11 lines)     ↳ Weapons Tables → Pick-axe
+- [x] **#105**  L 6991  ( 243 lines)   📖 Shopping and Shopkeeper Pricing
+- [x] **#106**  L 5191  (  79 lines)   📖 Curses and How to Break Them
+- [x] **#107**  L 8278  (  19 lines)     ↳ Bestiary Tables → Arachnids and centipedes `s`
+- [x] **#108**  L 7238  (  17 lines)     ↳ Weapons Tables → Dagger
 - [ ] **#109**  L 9020  (  26 lines)     ↳ Bestiary Tables → Golems `'`
 - [ ] **#110**  L 1993  (  13 lines)     ↳ Dangerous Encounters → Attack Wands and the Warning Shot
 - [ ] **#111**  L 6747  (  17 lines)     ↳ Voluntary Challenges → Atheist

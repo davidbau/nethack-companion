@@ -5225,7 +5225,7 @@ holding a stick.
 ---
 
 ### Curses and How to Break Them
-<!-- audit 2026-05-18 #117: dropped the "Temple priest will identify BUC status for a fee" claim — fabricated. priest.c:629-718 shows temple donation grants HClairvoyant + u.ublessed (Protection); nothing in temple-donation code sets bknown on inventory. The "priest auto-bknown" code at invent.c:2763, 3545 and objnam.c:1964 refers to the PLAYER being a Priest class character (Priests see BUC for free), not to NPC temple priests. Common spoiler myth. Replaced with a brief myth-bust + added the formal price-ID-via-shop angle. -->
+<!-- audit 2026-05-18 #117 (re-audit 2026-05-18 v2 #106): dropped the "Temple priest will identify BUC status for a fee" claim — fabricated. priest.c:629-718 shows temple donation grants HClairvoyant + u.ublessed (Protection); nothing in temple-donation code sets bknown on inventory. The "priest auto-bknown" code at invent.c:2763, 3545 and objnam.c:1964 refers to the PLAYER being a Priest class character (Priests see BUC for free), not to NPC temple priests. Common spoiler myth. Replaced with a brief myth-bust + added the formal price-ID-via-shop angle. v2: re-verified bones 80% cursed (bones.c:290), rings of teleport/poly + amulet of strangulation 90% cursed (mkobj.c:1063-1066, 1143-1147), cursed BoH doubles weight (mkobj.c:1950-1953), confused remove-curse 25/25/50 (read.c:1556-1557 + mkobj.c:1846-1852), blessed-vs-uncursed remove-curse scope (read.c:1524, 1549) — all consistent with batch 17 v2 #83. 0 new corrections. See companion-audit.md. -->
 
 
 Sooner or later, you will put on something cursed. Maybe it's a
@@ -7028,7 +7028,7 @@ the conduct.)
 ---
 
 ### Shopping and Shopkeeper Pricing
-<!-- audit 2026-05-17 #47: 22 gem prices, Mohs hardness, hard-gem threshold (>= 8), unidentified-gem 3-8 zm formula, Tourist/dunce-cap surcharge, unicorn luck mechanics, Excalibur 16000 example, shopkeeper anti-Elbereth + see-invisible behavior, Keystone Kops trigger, "Closed for inventory" engraving, Orcus-level shopkeeper death, credit/debit/loan ordering all verified against shk.c + objects.h + shknam.c. Corrected one Wrong: amethyst+booze produces fruit juice (potion.c:2161), NOT cure for hallucination — fixed in both the gem table and the Amethyst special-case paragraph. See companion-audit.md. -->
+<!-- audit 2026-05-17 #47 (re-audit 2026-05-18 v2 #105): 22 gem prices, Mohs hardness, hard-gem threshold (>= 8), unidentified-gem 3-8 zm formula, Tourist/dunce-cap surcharge, unicorn luck mechanics, Excalibur 16000 example, shopkeeper anti-Elbereth + see-invisible behavior, Keystone Kops trigger, "Closed for inventory" engraving, Orcus-level shopkeeper death, credit/debit/loan ordering all verified against shk.c + objects.h + shknam.c. Corrected one Wrong: amethyst+booze produces fruit juice (potion.c:2161), NOT cure for hallucination — fixed in both the gem table and the Amethyst special-case paragraph. v2 fixes: (a) "Shop walls are non-diggable from inside" was wrong — dig.c:488-501 happily converts shop walls to doors; the shopkeeper just bills you for SHOP_WALL_DMG and the chase continues (shk.c:5061-5078 shopdig grabs your pack). Reworded. (b) Touchstone identification claim was wrong twice: (1) per apply.c:2744-2751, full-name identification requires a BLESSED touchstone (or non-cursed for Archeologist/Gnome); an uncursed touchstone gives only a streak color. (2) Hardness is irrelevant — touchstones work on all gems. Reworded. (c) Glass row sell price was "0–8 zm" — the unidentified-gem formula at shk.c:3168-3172 gives `(tmp + 3) * quan` with tmp = 0..(divisor-1), so the minimum is 3 zm, not 0. Corrected to "3–8 zm." See companion-audit.md. -->
 
 Shops do more than sell: their pricing system is your most
 powerful identification tool. You can find full mechanics and
@@ -7114,8 +7114,9 @@ consequences for the player:
 - Shopkeepers block the door whenever you have unpaid items.
 - If you break something in the shop (a potion, a wand), you pay
   for it.
-- Shop walls are non-diggable from inside, so tunneling out with
-  unpaid items is not on the menu.
+- Digging through a shop wall or floor doesn't escape the bill.
+  The dig works, but the shopkeeper bills you for wall damage and
+  the chase happens anyway. Tunnel-out is no shortcut.
 - Artifact items are priced at special high prices. For most named
   weapons that lands in the 10,000–30,000 zm range. An unidentified
   long sword priced at 16,000 zm is not something to glance over:
@@ -7175,10 +7176,12 @@ gives different prices for *any* unidentified gem, not just glass.
 
 The practical method is a **touchstone** (gray stone, base price 45,
 guaranteed at Mine's End and sometimes found elsewhere). Rubbing an
-unidentified hard gem against a non-cursed touchstone produces a
-streak that names the gem. Once identified, real gems sell for their
-real value (often hundreds of zm each) while glass sells for almost
-nothing.
+unidentified gem against a **blessed** touchstone names the gem
+outright; with a merely uncursed touchstone you only get a streak
+color. (Archeologists and Gnomes get the full name from a non-cursed
+stone — racial perk.) Hardness doesn't matter; every gem works.
+Once identified, real gems sell for their real value (often hundreds
+of zm each) while glass sells for almost nothing.
 
 ##### Real-gem prices
 
@@ -7230,7 +7233,7 @@ blessed touchstone regardless.
 |   300 | Jade                  | green           |    6 |                                |
 |   200 | Obsidian              | black           |    6 |                                |
 |   200 | Agate                 | orange          |    6 |                                |
-|     0 | (worthless glass)     | any color       |    5 | sells for 0–8 zm unidentified  |
+|     0 | (worthless glass)     | any color       |    5 | sells for 3–8 zm unidentified  |
 
 <div class="price-id-toolbar"></div>
 
@@ -7275,7 +7278,7 @@ other gems by hardness comparison.
 Damage is shown as **vs small / vs large**, the dice rolled before enchantment and excluding silver/material bonuses. **Wt** is unit weight; **Cost** is the unenchanted shop base price in zorkmids. **Hit** is the to-hit bonus baked into the weapon itself (most are 0). Two-handed weapons that prevent shield use and two-weapon combat are flagged in the notes. Weapons are grouped by their skill class so you can see your options within each skill tree at a glance.
 
 #### Dagger
-<!-- audit 2026-05-18 #119: 3 corrections. (1) "Rogues multishot up to three" — wrong; Expert Rogue gets 1 base + 1 Expert + 1 Skilled-fallthrough + 1 class bonus = max 4, then rnd(4) yields 1-4. dothrow.c:177-190, 63-67. (2) Athame Elbereth "lasts longer" — wrong mechanism; the athame's real property is that it doesn't dull when engraving (engrave.c:1306-1307, comment at :1361), so you can write Elbereth without consuming enchantment. Duration is unchanged. (3) Silver dagger "Silver damage to demons" — scope too narrow; silver hurts anything where mon_hates_silver() returns true: demons, undead, lycanthropes, shades (uhitm.c:896, 1035, 1376). Also flagged stackable consistency for silver dagger and athame (both have mg=1). -->
+<!-- audit 2026-05-18 #119 (re-audit 2026-05-18 v2 #108): 3 corrections. (1) "Rogues multishot up to three" — wrong; Expert Rogue gets 1 base + 1 Expert + 1 Skilled-fallthrough + 1 class bonus = max 4, then rnd(4) yields 1-4. dothrow.c:177-190, 63-67. (2) Athame Elbereth "lasts longer" — wrong mechanism; the athame's real property is that it doesn't dull when engraving (engrave.c:1306-1307, comment at :1361), so you can write Elbereth without consuming enchantment. Duration is unchanged. (3) Silver dagger "Silver damage to demons" — scope too narrow; silver hurts anything where mon_hates_silver() returns true: demons, undead, lycanthropes, shades (uhitm.c:896, 1035, 1376). Also flagged stackable consistency for silver dagger and athame (both have mg=1). v2 fix: silver dagger row said "demons, undead, lycanthropes, and shades" — "undead" is too broad. mon_hates_silver() at mondata.c:524-528 covers weres, S_VAMPIRE, demons, shades, and imps (except tengu). Other undead (liches, zombies, mummies, wraiths, ghouls, ghosts) are NOT silver-vulnerable. Reworded to "demons, vampires, lycanthropes, shades, and imps." See companion-audit.md. -->
 
 
 ::: dense-table
@@ -7285,7 +7288,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 | dagger | 1d4 / 1d3 | 10 | 4 | +2 | iron | Stackable; Expert-skill Rogues can multishot up to four in a single throw. |
 | elven dagger | 1d5 / 1d3 | 10 | 4 | +2 | wood | Stackable. Sting is the artifact form. |
 | orcish dagger | 1d3 / 1d3 | 10 | 4 | +2 | iron | Stackable. |
-| silver dagger | 1d4 / 1d3 | 12 | 40 | +2 | silver | Stackable. Silver damage to demons, undead, lycanthropes, and shades. Common Rogue/Ranger off-hand. |
+| silver dagger | 1d4 / 1d3 | 12 | 40 | +2 | silver | Stackable. Silver damage to demons, vampires, lycanthropes, shades, and imps. Common Rogue/Ranger off-hand. |
 | athame | 1d4 / 1d3 | 10 | 4 | +2 | iron | Stackable. Engraving with an athame **doesn't dull the blade** — you can write Elbereth in dust without spending an enchantment, the way other weapons must. |
 
 :::
@@ -7388,7 +7391,7 @@ other bimanual weapon.
 
 :::
 
-<!-- audit 2026-05-18 #160: pick-axe row was missing entirely. Added per objects.h:1007-1009 (WEPTOOL, wt=100, cost=50, 1d6/1d3, iron). Mattock stats verified vs objects.h:345-347. Both share P_PICK_AXE skill and both route through use_pick_axe() (apply.c:4290-4292). See companion-audit.md. -->
+<!-- audit 2026-05-18 #160 (re-audit 2026-05-18 v2 #104): pick-axe row was missing entirely. Added per objects.h:1007-1009 (WEPTOOL, wt=100, cost=50, 1d6/1d3, iron). Mattock stats verified vs objects.h:345-347. Both share P_PICK_AXE skill and both route through use_pick_axe() (apply.c:4290-4292). v2: re-verified mattock bimanual 3/2 Str damage bonus at uhitm.c:1467-1468, dig-down sequence creating pit then hole (dig.c:432-433, 372-374). 0 corrections. See companion-audit.md. -->
 #### Pick-axe
 
 ::: dense-table
@@ -8315,7 +8318,7 @@ Mostly nuisance fodder. Giant rats are common in the early dungeon; their corpse
 :::
 
 #### Arachnids and centipedes `s`
-<!-- audit 2026-05-17 #25: 30+ cells verified, 0 corrected. All 5 entries (cave spider, centipede, giant spider, scorpion, Scorpius) match monsters.h. See companion-audit.md. -->
+<!-- audit 2026-05-17 #25 (re-audit 2026-05-18 v2 #107): 30+ cells verified, 0 corrected. All 5 entries (cave spider, centipede, giant spider, scorpion, Scorpius) match monsters.h. v2: re-verified all rows against monsters.h:940-972, 3713-3722. Webmaker only on cave spider + giant spider (mondata.h:147-148, M1_CONCEAL on all except giant spider). Cave spider/centipede corpses safe (no M1_POIS); giant spider/scorpion poisonous (M1_POIS). Scorpius MR_STONE confers ston-res. 0 new corrections. See companion-audit.md. -->
 
 Includes scorpions and centipedes. Many have poison stings. Spider-class monsters are common as the source of poisonous-corpse food poisoning.
 
