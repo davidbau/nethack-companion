@@ -145,11 +145,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#133**  L 1597  (  43 lines)   📖 Feelings and Sounds
 - [x] **#134**  L 7452  (  12 lines)     ↳ Weapons Tables → Mace
 - [x] **#135**  L 1092  (  97 lines)     ↳ Branches and Landmarks → Medusa's Island
-- [ ] **#136**  L 6993  (  14 lines)     ↳ Voluntary Challenges → Petless (new in 5.0)
-- [ ] **#137**  L 8462  (  17 lines)     ↳ Bestiary Tables → Lights `y`
-- [ ] **#138**  L 8784  (  23 lines)     ↳ Bestiary Tables → Quantum mechanics `Q`
-- [ ] **#139**  L 6335  ( 101 lines)     ↳ Sokoban Solutions → Level 2, Version B
-- [ ] **#140**  L 2266  (  21 lines)     ↳ Dangerous Encounters → Choking
+- [x] **#136**  L 6993  (  14 lines)     ↳ Voluntary Challenges → Petless (new in 5.0)
+- [x] **#137**  L 8462  (  17 lines)     ↳ Bestiary Tables → Lights `y`
+- [x] **#138**  L 8784  (  23 lines)     ↳ Bestiary Tables → Quantum mechanics `Q`
+- [x] **#139**  L 6335  ( 101 lines)     ↳ Sokoban Solutions → Level 2, Version B
+- [x] **#140**  L 2266  (  21 lines)     ↳ Dangerous Encounters → Choking
 - [ ] **#141**  L 8410  (  20 lines)     ↳ Bestiary Tables → Vortices `v`
 - [ ] **#142**  L 9123  (  19 lines)     ↳ Bestiary Tables → Sea monsters `;`
 - [ ] **#143**  L 1382  (  51 lines)     ↳ Traps and Hazards → Finding Secret Doors

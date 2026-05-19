@@ -9247,3 +9247,16 @@ Four CLEAN, one with FOUR real findings on Major demons.
 
 ### Pass-3 queue
 135/183 done.
+
+## 2026-05-19 — v3 audit batch 28: Petless (#136), Lights (#137), Quantum mechanics (#138), Sokoban L2B (#139), Choking (#140)
+
+All five **CLEAN**.
+
+- Petless: `pettype:none` early-return at `dog.c:225-229`; Pauper alt at `u_init.c:1308-1309`; food-throw taming gates on `is_domestic` (`mondata.h:255-261`).
+- Lights `y`: 2 rows match `monsters.h:1165-1191`. Yellow AT_EXPL/AD_BLND 10d20, black AT_EXPL/AD_HALU 10d12, M1_SEE_INVIS on black. Black light perminvis covered by Light Bursts cross-ref.
+- Quantum mechanics `Q`: 2 rows match `monsters.h:2127-2143`. AD_TLPT and AD_POLY claws; M1_TPORT self-teleport; corpse toggles HFast / triggers polyself.
+- Sokoban L2B: 16 boulders match `soko3-2.lua`; 1 rolling-boulder + 12 holes; 4 remain (A, D, G, H) after 12 finishes.
+- Choking: choke gate `u.uhs == SATIATED` (`eat.c:248`), trigger `u.uhunger >= 2000` (`:3138`); strangulation timer death `done_timeout(DIED, STRANGLED)` (`timeout.c:894`); AoS 90% cursed at gen (`mkobj.c:1063`).
+
+### Pass-3 queue
+140/183 done.
