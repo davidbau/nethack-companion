@@ -563,7 +563,30 @@ dungeon's frequent act of goodwill.
 ---
 
 ### The Lay of the Land
-<!-- audit 2026-05-18 #81 (re-audit 2026-05-18 v2 #90): 20 numeric claims verified against dungeon.lua + medusa-*.lua + castle.lua + minetn-*.lua. DoD 25-30 levels; Gnomish Mines DL 2-4; Sokoban-up off Oracle; 4 levels × 2 variants; Oracle DL 5-9; Big Room 40% chance DL 10-12; Rogue DL 15-18; Mine's End 3 variants with luckstone; Quest portal DL 11-16 (chainlevel oracle base=6 range=2); Fort Ludios DL 18-22 portal; Medusa DL ~21-25; Castle DL ~27 bottom of DoD; 4 Medusa layouts; Perseus loot 75/50/25/50; 1-in-7 orcish Minetown. v2 fixes: (a) Map-symbols table listed `# Sink` — wrong for 5.0. Per defsym.h:133 and fixes5-0-0.txt:827, the sink glyph changed from `#` to white `{`; it now shares the `{` glyph with fountain (bright blue), and getpos.c:1046-1062 matches travel/farlook on the displayed symbol, so typing `#` no longer cycles to sinks. Merged the `{` row to "Fountain (bright blue) or sink (white)" and removed the `# Sink` row. (b) Themed-rooms paragraph conflated "trap room" with "teleportation hub" — themerms.lua:102-114 places one randomly chosen trap type, while themerms.lua:265-279 places 2-4 fixed-destination teleporters. Separated. (c) "Fake Delphi" described an in-room human pretending to be the Oracle — themerms.lua:291-305 contains zero monsters; it's purely a geometric joke (empty rooms within rooms in the Oracle's shape). Rewrote. (d) Light source room "candle, lantern, or lamp" — themerms.lua:205-210 places exactly an oil lamp, lit. Narrowed. (e) Massacre/Mausoleum "wraith corpse for the level boost" was wrong — themerms.lua:173-188 (Massacre) is role corpses only (no wraith); themerms.lua:420-443 (Mausoleum) is an M/V/L/Z monster or @ corpse. Dropped the wraith claim and split Massacre and Mausoleum into separate bullets. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- DoD is 25-29 levels (rn1(5,25) = rn2(5)+25) (dungeon.lua:10-11, hack.h:1535)
+- Gnomish Mines branch DL 2-4 (dungeon.lua:15-19)
+- Oracle DL 5-9 (dungeon.lua:60-66)
+- Sokoban entry is one level above the Oracle, going up (dungeon.lua:20-25)
+- 4 Sokoban levels with 2 fixed variants each (dat/soko*.lua)
+- Big Room 40% chance, DL 10-12 (dungeon.lua:66-73)
+- Quest portal DL 11-16 (dungeon.lua:26-31; chainlevel oracle base=6 range=2)
+- Rogue Level DL 15-18 (dungeon.lua:52-58)
+- Fort Ludios portal placed at any DL 11 up to just above Medusa, 1/3 per qualifying level (mklev.c:2647-2651)
+- Medusa DL ~21-25 (dungeon.lua:74-80)
+- Castle at bottom of DoD, DL ~27 (dungeon.lua:81-83)
+- Mine's End: 3 variants, all guarantee a not-cursed luckstone
+- 7 Minetown variants; 1-in-7 is Orcish Town (minetn-1.lua, dungeon.lua:179-184)
+- 5.0 sink glyph is white `{`, shared with bright-blue fountain (defsym.h:133, fixes5-0-0.txt:827)
+- Travel/farlook matches on displayed symbol; `#` no longer cycles to sinks (getpos.c:1046-1062)
+- Trap room places 1 randomly chosen trap type from 8 (themerms.lua:101-114)
+- Teleportation hub places 2-4 fixed-destination teleporters (themerms.lua:264-279)
+- Fake Delphi is a geometric joke: empty room within an Oracle-shaped room, no monsters (themerms.lua:291-305)
+- Light source room places exactly one lit oil lamp (themerms.lua:204-210)
+- Massacre places 5-25 role corpses only — no wraith (themerms.lua:172-189)
+- Mausoleum places one waiting M/V/L/Z monster or one @ corpse (themerms.lua:419-443)
+-->
 
 The Mazes are procedurally generated. No two visits are quite the
 same. But the dungeon follows patterns, and understanding those
@@ -742,7 +765,35 @@ rather than a direction.
 ---
 
 ### Points of Interest
-<!-- audit 2026-05-17 #5 (re-audit 2026-05-19 v2 #174): 40+ claims verified, 5 corrected (throne identify "up to 5" → 1-4 or all; sink polymorph message; rotten "fruit" → slime molds; "less" → "lesser"; sink-kick missing amorous demon outcome). v2 fixes: (a) Fountain dipping "occasionally bless" wrong — fountain.c:464-475 cases 17-20 = uncurse, not bless. Reworded. (b) Quaff table separated "Wish granted" and "Water demon" as if independent — they're the same case 23. Wish odds ~1/30 overstated: the 1/30 is water-demon spawn rate (fountain.c:247), and the wish then requires rnd(100) > 80 + level_difficulty() (fountain.c:78), so actual shallow wish odds are ~1/150 and zero past DL 20. Merged the rows. (c) Potion-poly sink transform missing "grave" — do.c:416-446 case 3 generates a grave (with floor fallback). The ring-drop table at line 873 already lists it; the potion-dip row was inconsistent. Added. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- Fountain quaff: 7 case branches in rnd(30) (fountain.c:286-387)
+- Water demon spawn rate: 1 in 30 quaffs (fountain.c:247, 314)
+- Shallow wish odds: water demon × rnd(100) > 80 + level_difficulty() ≈ 1/150 (fountain.c:78, 247)
+- Wish odds drop to zero past DL 20 (fountain.c:78 level_difficulty term)
+- Excalibur dip: lawful + XL ≥ 5 + long sword + quan=1, 1/6 Knight or 1/30 other (fountain.c:404-405)
+- Non-lawful Excalibur dip curses the sword and consumes the fountain (fountain.c:411-424)
+- Fountain dip cases 17-20 UNCURSE the dipped item (NOT bless) (fountain.c:464-475)
+- Altar BUC flash: amber=blessed, black=cursed, no flash=uncursed (do.c:379-389)
+- Altar conversion via cross-race sacrifice can flip the altar (pray.c:1717-1736)
+- Throne trigger: rnd(6) > 4 = 1 in 3 chance of any effect (sit.c:45)
+- Throne effect chosen from rnd(13) outcomes (sit.c:46, 68-209)
+- Throne wish (case 6) requires u.uluck + rn2(5) ≥ 0, i.e. non-negative Luck (sit.c:106-110)
+- Throne ID: identify_pack(rn2(5)) — 4/5 chance of 1-4 items, 1/5 chance of entire pack (sit.c:198, invent.c:2721)
+- Throne can vanish "in a puff of logic" on rn2(3), even when nothing happens (sit.c:224-233)
+- Vlad's throne: cases 1-4 grant wish + destroy throne; 5-13 are negatives (sit.c:241-353)
+- Kicking sink: 4/5 klunk, else 1/3 black pudding, 1/3 amorous demon, 1/3 ring backup (dokick.c:1201-1238)
+- Each kick outcome gated by S_LPUDDING / S_LDWASHER / S_LRING (once per sink)
+- Dip potion of polymorph: sink → fountain/throne/altar/grave (do.c:404-454)
+- Grave case may fail and print "The sink vanishes." (engrave.c:1691-1693)
+- Dip POT_OBJECT_DETECTION: "You sense a ring lost down the drain" while S_LRING unset (fountain.c:771-776)
+- Dip POT_LEVITATION: drops a ring once per sink (fountain.c:767-770, 804-826)
+- Dip POT_ACID: "The drain seems less clogged" (fountain.c:755-766)
+- Drop ring in sink: searching + slow-digestion are returned to inventory; all others consumed (do.c:507-516)
+- Ring of hunger vanishes ALL items on the sink square (do.c:556-570)
+- Ring of teleportation moves the sink to a fresh ROOM tile (do.c:575-580)
+- Rotten food in fountains is slime molds, not fruit (objnam.c:414-427)
+-->
 
 Not everything interesting in the dungeon is trying to kill you.
 Scattered throughout the levels are fixtures that reward the
@@ -927,7 +978,18 @@ but it doesn't tell you what to actually do when you arrive. Here's
 a more practical tour, in roughly the order you'll visit these places.
 
 #### The Gnomish Mines
-<!-- audit 2026-05-18 #124 (re-audit 2026-05-18 v2 #11): clean audit, no substantive corrections. Mines branch DL 2-4 (dungeon.lua:14-19), 7 Minetown variants with 1-in-7 being Orcish Town (minetn-1.lua), all three Mine's End layouts guarantee a not-cursed luckstone (minend-{1,2,3}.lua). Race-peaceful gnomes/dwarves for gnomish PCs via role.c:654 lovemask. Note: minend-1.lua:59 also places a fake-luckstone mimic (appear_as="obj:luckstone") near the real one — players should BUC-test before grabbing. The v2 sub-agent noted minefill.lua:36-44 places one gnome lord per level plus a random-humanoid roll that can rarely produce a mind flayer; an attempt to add that note to the prose introduced jargon ("minesflayer") and stat-dump phrasing, and was reverted to preserve the original conversational intro. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- Mines branch DL 2-4 (dungeon.lua:15-19; base=2 range=3)
+- 7 Minetown variants (dungeon.lua:179-184); 1/7 picks Orcish Town (minetn-1.lua)
+- gnomish PC lovemask MH_DWARF|MH_GNOME → gnomes and dwarves peaceful (role.c:654)
+- Orcish Town: unaligned altar, no shops, no priest, iron-bar terrain (minetn-1.lua:18, 52, 79-88)
+- Orcish Town scatters 7+ candles since Izchak's shop is absent (minetn-1.lua:98-105)
+- candle shop present in minetn-2..7 (Izchak); absent only in minetn-1 (minetn-{2..7}.lua)
+- all 3 Mine's End layouts place a not-cursed luckstone (minend-1.lua:77, minend-2.lua:116, minend-3.lua:67)
+- minend-1 also places a mimic appear_as="obj:luckstone" — BUC-test before grabbing (minend-1.lua:59)
+- Minetown watchmen are peaceful=1 in non-orcish variants (minetn-2.lua:149)
+-->
 
 
 The entrance appears somewhere around dungeon levels 2 through 4, as
@@ -985,19 +1047,40 @@ to open a path. Teleport doesn't work here, and you can't dig down
 off the entrance level (its floor is reinforced).
 
 The puzzles are fixed (two variants per level, randomly chosen).
-<!-- audit 2026-05-18 #111: "break it ... by force-fighting it" is wrong. Force-fighting a bare boulder is harmless per hack.c:2287, 2318-2321 ("you harmlessly attack the boulder"). The cheat path is digging with a wielded pick-axe/mattock (hack.c:2269-2275). Reworded to fracture-via-striking/earth-scroll/polymorph and added the pick-axe caveat. Confirmed all other Sokoban claims: Oracle base 5-9 + Sokoban one above = entrance dlvl 6-10 (dungeon.lua:21-24, 60-66); 4 levels × 2 variants each; noteleport flag; sokoban_guilt() calls at hack.c:307 (squeeze), zap.c:5555 (fracture by striking), zap.c:1710 (polymorph), read.c:1951 (earth scroll); each triggers change_luck(-1) + u.uconduct.sokocheat (trap.c:7039-7054); conduct reported only when branch entered (insight.c:2215-2228). Levitation/flying free of penalty (hack.c:415-425). v2 audit 2026-05-18 #24: two fixes. (a) "Can't dig through the floors" was too broad — hardfloor is set only on the entrance level (soko4-{1,2}.lua:38,7); interior soko levels would let you dig down, but only onto another soko level (Sokoban is a single-direction up-branch). Narrowed to "can't dig down off the entrance level." (b) "Levitation or flying over unfinished pits is free of penalty" was misleading because hack.c:415-425 rejects boulder pushes while levitating ("you don't have enough leverage"), so levitation prevents Sokoban progress entirely. Split: flying is the useful tactic; levitation is no penalty but also no progress. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- in Sokoban, pit traps suck you in regardless of flying/levitation (trap.c:1850 gates on !Sokoban; trap.c:3014-3023 "Air currents pull you down")
+- Sokoban walls are W_NONDIGGABLE on every soko level (non_diggable in each soko*.lua); dig_check fails (dig.c:228-230)
+2026-05-18:
+- entrance DL 6-10: Oracle base 5 range 5 + Sokoban one level up (dungeon.lua:21-24, 60-66)
+- 4 levels × 2 fixed variants (dat/soko*.lua)
+- noteleport on every Sokoban level
+- hardfloor only on the entrance; blocks dig-down off entrance (soko4-1.lua:38, soko4-2.lua:7)
+- sokoban_guilt = change_luck(-1) + u.uconduct.sokocheat++ (trap.c:7039-7054)
+- guilt triggers: squeeze past boulder (hack.c:299, 307, 398, 403)
+- guilt triggers: dismount onto boulder (steed.c:767)
+- guilt triggers: polymorph boulder (zap.c:1710-1711), fracture by striking (zap.c:5555-5556)
+- guilt triggers: scroll of earth (read.c:1951)
+- bare-hand force-fight on boulder is harmless (hack.c:2287, 2318-2321)
+- pick-axe/mattock force-fight digs the boulder (hack.c:2269-2275)
+- levitation also blocks pushing boulders: "not enough leverage" (hack.c:415-425)
+- prize: 75/25 weighted bag of holding vs amulet of reflection (soko1-1.lua:103-107, soko1-2.lua:105-109)
+- cursed scroll of scare monster placed under the prize as bait
+- conduct only reported once the branch is entered (insight.c:2215-2228)
+-->
 
 Each level has exactly one correct solution. If you push a boulder
 into a corner where it blocks your progress there is no way to
 start over. You're left with a few ways to cheat, which might or
 might not help: **squeeze past** the boulder (drop your stuff to
-fit), **dig the boulder out** (dig the wall or dig the boulder
-with a wielded pick-axe or mattock), or **fracture it** with a
-wand of striking or a scroll of earth (or polymorph the boulder
-into something else). Each of these costs a point of Luck and
-breaks the Sokoban conduct. Flying or levitation lets you skip
-unfinished pits without penalty.
-**Teleport doesn't work here:** the level forbids it.
+fit), **dig the boulder** with a wielded pick-axe or mattock, or
+**fracture it** with a wand of striking or a scroll of earth (or
+polymorph the boulder into something else). Each of these costs a
+point of Luck and breaks the Sokoban conduct. The walls themselves
+are non-diggable on every Sokoban level, and pit traps are inescapable
+— even flying or levitation won't carry you over an open pit, the
+air currents pull you down anyway. **Teleport doesn't work here:**
+the level forbids it.
 
 The prize at the top is either a **bag of holding** or an **amulet
 of reflection**, both extremely valuable; the
@@ -1014,7 +1097,17 @@ each level honestly if you can.
 For complete solutions to all eight level variants, see
 [Sokoban Solutions](#sokoban-solutions) in the appendices.
 
-<!-- audit 2026-05-18 #164 (re-audit 2026-05-19 v2 #148): level range DL 5-9 verified vs dungeon.lua:60-66 + dungeon.c:405-409. Corrected fountain count (4, not 1) per oracle.lua:19-22. Corrected minor-consultation framing: rumors.c:147-156 always passes truth=1 to getrumor, so minor consultations always pull from rumors.tru (true tips), not the false-rumor pool. Major consultation cost: 500 + 50*ulevel (rumors.c:699). v2 re-verified all costs and content sources; Sokoban entrance upstairs from Oracle (dungeon.lua:20-25); 8 centaur statues flank her (oracle.lua:9-16). 0 new corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- Oracle DL 5-9 (dungeon.lua:60-66, dungeon.c:405-411)
+- 4 fountains in the delphi sub-room (oracle.lua:19-22)
+- 8 centaur statues flank the Oracle (oracle.lua:9-16)
+- minor consultation costs 50 zm (rumors.c:699)
+- major consultation costs 500 + 50 × u.ulevel (rumors.c:699)
+- minor consults ALWAYS pull from the true-rumor pool (rumors.c:747, 151-156)
+- Sokoban branch goes up from the Oracle level (dungeon.lua:20-25)
+- Oracle is M2_PEACEFUL with AT_NONE; she never attacks (monsters.h:2738-2745)
+-->
 #### The Oracle
 
 Somewhere in the mid-levels of the Dungeons of Doom (around levels
@@ -1161,11 +1254,13 @@ single map.
 
 **The Perseus statue.** One of the statues on the island is named
 **Perseus** — the mythological hero who killed Medusa with a
-mirrored shield. `#loot` him: he carries a 75% chance of a (cursed)
-shield of reflection, a 50% chance of a blessed +2 scimitar, a 25%
-chance of levitation boots, and a 50% chance of a sack to put them
-in. The shield is cursed, so plan to uncurse it before swapping it
-in. The other statues on the level are intentionally empty.
+mirrored shield. `#loot` him for a (cursed) **shield of reflection**
+(75% in three of the four layouts; 25% in the fourth), a blessed +2
+**scimitar** (50%), **levitation boots** (25% in three layouts; 75%
+in the fourth — the same layout that's stingy with the shield), and
+a **sack** to put them in (50%). The shield is cursed, so plan to
+uncurse it before swapping it in. The other statues on the level are
+intentionally empty.
 
 > *Arien Malec collected crossing strategies from RGRN posters
 > back in the early 2000s, with input from Pat Rankin, Geoduck,
@@ -7073,7 +7168,8 @@ costs **1 point of Luck** and increments the conduct counter: pushing
 into a wall to **squeeze past** a boulder (when you drop your stuff
 to fit), **fracturing** a boulder with a wand of striking or scroll
 of earth, **polymorphing** a boulder, or **dismounting** onto a
-boulder. Levitation and flying skip pits without penalty. The game
+boulder. Flying and levitation don't let you skip Sokoban's pit
+traps — the air currents pull you down regardless. The game
 tracks violations automatically. The conduct is for players who
 enjoy Sokoban's
 boulder-shoving and want their playthrough to acknowledge a
