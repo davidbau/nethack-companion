@@ -115,11 +115,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#103**  L  892  (  50 lines)     ↳ Branches and Landmarks → The Gnomish Mines
 - [x] **#104**  L  528  ( 179 lines)   📖 The Lay of the Land
 - [x] **#105**  L 8543  (  37 lines)     ↳ Bestiary Tables → Dragons `D`
-- [ ] **#106**  L 5122  ( 123 lines)   📖 Spellcasting
-- [ ] **#107**  L 6860  (  15 lines)     ↳ Voluntary Challenges → Illiterate
-- [ ] **#108**  L 9097  (  26 lines)     ↳ Bestiary Tables → Golems `'`
-- [ ] **#109**  L 7488  (  11 lines)     ↳ Weapons Tables → Hammer
-- [ ] **#110**  L 6811  (  17 lines)     ↳ Voluntary Challenges → Atheist
+- [x] **#106**  L 5122  ( 123 lines)   📖 Spellcasting
+- [x] **#107**  L 6860  (  15 lines)     ↳ Voluntary Challenges → Illiterate
+- [x] **#108**  L 9097  (  26 lines)     ↳ Bestiary Tables → Golems `'`
+- [x] **#109**  L 7488  (  11 lines)     ↳ Weapons Tables → Hammer
+- [x] **#110**  L 6811  (  17 lines)     ↳ Voluntary Challenges → Atheist
 - [ ] **#111**  L  385  ( 139 lines)   📖 Your First Descent
 - [ ] **#112**  L 4217  ( 282 lines)   📖 Artifacts
 - [ ] **#113**  L 8672  (  16 lines)     ↳ Bestiary Tables → Keystone Kops `K`

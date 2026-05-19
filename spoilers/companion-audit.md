@@ -9169,3 +9169,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 105/183 done.
+
+## 2026-05-19 — v3 audit batch 22: Spellcasting (#106), Illiterate (#107), Golems (#108), Hammer (#109), Atheist (#110)
+
+All five **CLEAN**.
+
+- Spellcasting: success formula `Int+4+XL/2−2L` vs rnd(20) at `spell.c:582-584`; blessed bypass at `spell.c:577`; Pw cost 5×level; cursed_book failure list at `spell.c:130-184`; MAX_SPELL_STUDY=3 (4 reads); KEEN=20000 turns; force bolt 2d12 + Int/XL bonus; chain lightning NODIR L2; Wizard skill-based book ID at `spell.c:864-905`.
+- Illiterate: literate triggers in scrolls/spellbooks/fortune cookies/T-shirts/markers/coins/candy bars/credit cards/mail/Orb signature/naming/spellbook-learn/marker-write/engraving-more-than-x. Hawaiian shirts, blank scrolls, Book of the Dead, floor engravings, touchstone-ID, dipping all safe.
+- Golems: 11 rows match `monsters.h:2509-2594`. M1_MINDLESS, MR_SLEEP, MR_POISON on all 11. Iron golem AD_DRST breath (poison) + G_NOCORPSE.
+- Hammer: war hammer 1d4+1 / 1d4 wt 50 cost 5 iron P_HAMMER (own skill, not mace). Mjollnir alignment override for Valkyrie via `artifact.c:87-95`.
+- Atheist: gnostic increments at `pray.c:2221,1977,2426` (#pray, #offer, #turn), `priest.c:572` (#chat priest), `do.c:370` (altar drop). Amulet ascension exemption.
+
+### Pass-3 queue
+110/183 done.
