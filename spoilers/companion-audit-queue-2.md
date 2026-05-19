@@ -117,11 +117,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#106**  L 5191  (  79 lines)   📖 Curses and How to Break Them
 - [x] **#107**  L 8278  (  19 lines)     ↳ Bestiary Tables → Arachnids and centipedes `s`
 - [x] **#108**  L 7238  (  17 lines)     ↳ Weapons Tables → Dagger
-- [ ] **#109**  L 9020  (  26 lines)     ↳ Bestiary Tables → Golems `'`
-- [ ] **#110**  L 1993  (  13 lines)     ↳ Dangerous Encounters → Attack Wands and the Warning Shot
-- [ ] **#111**  L 6747  (  17 lines)     ↳ Voluntary Challenges → Atheist
-- [ ] **#112**  L 8401  (  12 lines)     ↳ Bestiary Tables → Zruties `z`
-- [ ] **#113**  L 8413  (  20 lines)     ↳ Bestiary Tables → Angelic beings `A`
+- [x] **#109**  L 9020  (  26 lines)     ↳ Bestiary Tables → Golems `'`
+- [x] **#110**  L 1993  (  13 lines)     ↳ Dangerous Encounters → Attack Wands and the Warning Shot
+- [x] **#111**  L 6747  (  17 lines)     ↳ Voluntary Challenges → Atheist
+- [x] **#112**  L 8401  (  12 lines)     ↳ Bestiary Tables → Zruties `z`
+- [x] **#113**  L 8413  (  20 lines)     ↳ Bestiary Tables → Angelic beings `A`
 - [ ] **#114**  L 6879  (  28 lines)     ↳ Voluntary Challenges → Combining Conducts
 - [ ] **#115**  L 9288  ( 166 lines)   📖 Acknowledgements
 - [ ] **#116**  L 8064  (  15 lines)     ↳ Bestiary Tables → Gremlins `g`

@@ -8360,3 +8360,32 @@ All 5 rows verified against `monsters.h:940-972, 3713-3722`. Webmaker via `monda
 108/183 done.
 
 ---
+
+## 2026-05-18 — v2 audit batch 23: Golems (#109), Attack Wands (#110), Atheist (#111), Zruties (#112), Angelic beings (#113)
+
+### Golems `'` (#109) — `spoilers/companion.md:9063` — 1 correction
+
+Iron golem row had "poisonous-corpse" — wrong. Iron golem carries `G_NOCORPSE` at `monsters.h:2587`, so the M1_POIS flag never produces an eatable corpse. Same v2 pattern as the manes/lemure catch in earlier batches. Changed to "no corpse." Cross-section consistency check: agent flagged that `poly_when_stoned` at `mondata.c:80-85` covers ALL golems except stone (broader than the batch-17 paraphrase suggested), but the spoiler's stoning chapter (audit #172 v2 #50) and polymorph-conduct section (audit #161 v2 #20) both already describe the mechanic correctly — no cross-section fix needed.
+
+Re-verified all 11 rows against `monsters.h:2509-2594`. Clay golem dies on cancellation (`zap.c:3201-3212`); iron golem one-shotted by rust (`uhitm.c:2289, 2316 completelyrusts`). Both interesting but skipped per no-trivia rule.
+
+### Attack Wands and the Warning Shot (#110) — `spoilers/companion.md:2011` — 0 corrections, badge updated
+
+Re-verified `mwandexp` mechanic at `muse.c:1830-1860`: `buzz_force_miss` on first wand zap, flag set TRUE after. Six wands (death/sleep/fire/cold/lightning/magic missile) in the buzzfn dispatch at `muse.c:1842-1847` match the spoiler list. Late-game zone list at `makemon.c:1291-1293` (Stronghold || Knox || endgame || hell || V_tower || quest) matches exactly. The wand-identifies-on-visibility claim correct (`muse.c:1839, 1849-1850 canseemon`).
+
+### Atheist (#111) — `spoilers/companion.md:6785` — 0 corrections, badge updated
+
+All 5 conduct-breaking sites in source verified: `#pray` (`pray.c:2221`), `#offer` corpse (`pray.c:1977`), `#turn` undead (`pray.c:2426`, Knights/Priests only), `#chat` with priest (`priest.c:572`), altar-drop (`do.c:370`). Final Amulet offering exempt (`pray.c:1529-1588` `offer_real_amulet` has no gnostic write).
+
+### Zruties `z` (#112) — `spoilers/companion.md:8445` — 0 corrections, badge updated
+
+Single-row table re-verified vs `monsters.h:1192-1202`. M1_HUMANOID + M2_STRONG, no special abilities beyond raw 3-attack damage.
+
+### Angelic beings `A` (#113) — `spoilers/companion.md:8457` — 0 corrections, badge updated
+
+All 5 rows re-verified vs `monsters.h:1206-1265`. M1_FLY on all except Aleax, M1_SEE_INVIS on all except couatl (correctly reflected in prose), M2_STALK universal. AD_MAGM ("magic", Angel) vs AD_SPEL ("spell", ki-rin/Archon) labels correctly distinguished.
+
+### Pass-2 queue
+113/183 done.
+
+---

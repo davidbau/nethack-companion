@@ -2009,7 +2009,7 @@ you from an eel's grab** once it lands. Kill sea monsters at range
 whenever possible — their grab attack requires adjacency.
 
 #### Attack Wands and the Warning Shot
-<!-- audit 2026-05-17 #21: 6 claims verified, 0 corrected; added the late-game carve-out (Stronghold/Knox/Quest/Gehennom/endgame monsters start mwandexp=TRUE per makemon.c:1290). See companion-audit.md. -->
+<!-- audit 2026-05-17 #21 (re-audit 2026-05-18 v2 #110): 6 claims verified, 0 corrected; added the late-game carve-out (Stronghold/Knox/Quest/Gehennom/endgame monsters start mwandexp=TRUE per makemon.c:1290). v2: re-verified mwandexp at muse.c:1830-1860, buzz_force_miss path, six wands (death/sleep/fire/cold/lightning/magic missile) in the buzzfn dispatch at muse.c:1842-1847, late-game zone list at makemon.c:1291-1293 (Stronghold || Knox || endgame || hell || V_tower || quest). 0 new corrections. See companion-audit.md. -->
 
 The first time any given monster zaps a beam wand (death, sleep,
 fire, cold, lightning, magic missile) at you, the shot misses. If
@@ -6783,7 +6783,7 @@ magic lamp turns up. Chewing through walls also breaks this
 conduct (it counts as eating rock).
 
 #### Atheist
-<!-- audit 2026-05-17 #64: u.uconduct.gnostic verified (insight.c:2134, topten.c:590). #pray (pray.c:2221), #offer corpse (pray.c:1977), #turn (pray.c:2426), and #chat with priest (priest.c:572) all confirmed as breaking the conduct. Corrected false claim about altar BUC: do.c:370 increments gnostic on any non-coin drop, so the BUC flash is a religious interaction. Added: the final Amulet offering for ascension is exempt (pray.c:1529-1588 has no gnostic increment). See companion-audit.md. -->
+<!-- audit 2026-05-17 #64 (re-audit 2026-05-18 v2 #111): u.uconduct.gnostic verified (insight.c:2134, topten.c:590). #pray (pray.c:2221), #offer corpse (pray.c:1977), #turn (pray.c:2426), and #chat with priest (priest.c:572) all confirmed as breaking the conduct. Corrected false claim about altar BUC: do.c:370 increments gnostic on any non-coin drop, so the BUC flash is a religious interaction. Added: the final Amulet offering for ascension is exempt (pray.c:1529-1588 has no gnostic increment). v2: re-verified all 5 conduct-breaking sites; Priest role's starting holy water doesn't auto-break (u_init.c:716-722 comment). 0 new corrections. See companion-audit.md. -->
 
 Don't interact with the divine. Specifically: don't `#pray`, don't
 `#offer` corpses at altars, don't `#turn` undead, and don't `#chat`
@@ -8441,7 +8441,7 @@ All lights fly and are amorphous and mindless.
 
 :::
 
-<!-- audit 2026-05-18 #155: zruty row verified clean vs monsters.h:1192-1202. LVL(9,8,3,0,0), CLR_BROWN, claw 3d4 · claw 3d4 · bite 3d6 all match. 0 corrections. See companion-audit.md. -->
+<!-- audit 2026-05-18 #155 (re-audit 2026-05-18 v2 #112): zruty row verified clean vs monsters.h:1192-1202. LVL(9,8,3,0,0), CLR_BROWN, claw 3d4 · claw 3d4 · bite 3d6 all match. v2 re-verified row, freq G_GENO|2, M1_HUMANOID + M2_STRONG. 0 new corrections. See companion-audit.md. -->
 #### Zruties `z`
 
 Slavic folklore — a hairy wild man of the woods. One species, one role here: a nasty mid-game brute. Good XP if you can handle the three-attack flurry.
@@ -8455,7 +8455,7 @@ Slavic folklore — a hairy wild man of the woods. One species, one role here: a
 :::
 
 #### Angelic beings `A`
-<!-- audit 2026-05-18 #97: 5 rows (couatl/Aleax/Angel/ki-rin/Archon) verified clean vs monsters.h:1206-1265. All stats, colors, attacks, M1_FLY/M1_SEE_INVIS/M2_STALK flags match. Corrected couatl "poisonous-corpse" — all Angels have G_NOCORPSE; the couatl leaves no corpse at all (MR_POISON still matters for combat interactions). See companion-audit.md. -->
+<!-- audit 2026-05-18 #97 (re-audit 2026-05-18 v2 #113): 5 rows (couatl/Aleax/Angel/ki-rin/Archon) verified clean vs monsters.h:1206-1265. All stats, colors, attacks, M1_FLY/M1_SEE_INVIS/M2_STALK flags match. Corrected couatl "poisonous-corpse" — all Angels have G_NOCORPSE; the couatl leaves no corpse at all (MR_POISON still matters for combat interactions). v2 re-verified: AD_MAGM ("magic", Angel) vs AD_SPEL ("spell", ki-rin/Archon) labels correct; HI_GOLD=yellow (ki-rin), HI_LORD=magenta (Archon) at color.h:38,46. 0 new corrections. See companion-audit.md. -->
 
 Powerful late-game spellcasters with weapons. Astral-Plane Angels guard each High Priest — see [The Ascension Run](#the-ascension-run).
 
@@ -9061,7 +9061,7 @@ They all follow you up and down stairs.
 :::
 
 #### Golems `'`
-<!-- audit 2026-05-17 #24: 60+ cells across 11 rows verified, 0 corrected. All entries match monsters.h:2509-2594 exactly. See companion-audit.md. -->
+<!-- audit 2026-05-17 #24 (re-audit 2026-05-18 v2 #109): 60+ cells across 11 rows verified, 0 corrected. All entries match monsters.h:2509-2594 exactly. v2 fix: iron golem row had "poisonous-corpse" — misleading because iron golem has G_NOCORPSE (monsters.h:2587), so the M1_POIS flag never produces an eatable corpse. Same v2-pattern catch as manes/lemure (batch 18). Changed to "no corpse." Also re-verified poly_when_stoned at mondata.c:80-85 covers ALL golems except stone (broader than my batch-17 paraphrase suggested), but prior audits #172 (stoning chapter) and #161 (polymorph conduct) both already describe the mechanic correctly — no cross-section fix needed. See companion-audit.md. -->
 
 Mindless constructs. Wood and leather golems are early-game fodder; iron, stone, and clay golems are dangerous. The rare gold golem is a walking treasure pile.
 
@@ -9081,7 +9081,7 @@ All golems are mindless, sleep-resistant, and poison-resistant.
 | clay golem | brown | 11 | 7 | 7 | 40 | claw 3d10 |  |
 | stone golem | gray | 14 | 6 | 5 | 50 | claw 3d8 | ston-res. |
 | glass golem | cyan | 16 | 6 | 1 | 50 | claw 2d8 · claw 2d8 | acid-res. |
-| iron golem | cyan | 18 | 6 | 3 | 60 | weapon 4d10 · breath 4d6 poison | poisonous-corpse, fire-res, cold-res, shock-res. |
+| iron golem | cyan | 18 | 6 | 3 | 60 | weapon 4d10 · breath 4d6 poison | no corpse. fire-res, cold-res, shock-res. |
 
 :::
 
