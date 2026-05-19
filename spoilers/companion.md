@@ -1244,7 +1244,7 @@ produce free ammunition. Veterans sometimes trigger them deliberately
 to stock up.
 
 #### Movement Traps
-<!-- audit 2026-05-18 #123: trapdoor description "drops you to the next level down" understates the mechanic. hole_destination at trap.c:442-453 rolls each level: while dst->dlevel < bottom, increment; if rn2(4) break — 25% chance per level to keep falling. So a trapdoor can drop you several levels. Same for holes. Also clarified that Flying (not just Levitation) skips pits/holes/trapdoor (trap.c:635, 1850), with the !Sokoban guard that disables the skip on Sokoban puzzle levels. -->
+<!-- audit 2026-05-18 #123 (re-audit 2026-05-19 v2 #169): trapdoor description "drops you to the next level down" understates the mechanic. hole_destination at trap.c:442-453 rolls each level: while dst->dlevel < bottom, increment; if rn2(4) break — 25% chance per level to keep falling. So a trapdoor can drop you several levels. Same for holes. Also clarified that Flying (not just Levitation) skips pits/holes/trapdoor (trap.c:635, 1850), with the !Sokoban guard that disables the skip on Sokoban puzzle levels. v2 re-verified all numbers and mechanics; pit damage 1d6, spiked 1d10 + 1/6 poison. 0 new corrections. See companion-audit.md. -->
 
 
 | Trap             | Effect                                                     |
@@ -1495,7 +1495,7 @@ worth investigating when you see them — but be ready for what's
 on the other side.
 
 #### Elbereth
-<!-- audit 2026-05-18 #122: 2 corrections. (1) "Levitation trick" (engrave Elbereth in dust while floating) is non-functional in 5.0: engrave.c:198 requires can_reach_floor() which returns FALSE under Levitation; finger-engrave is refused outright at engrave.c:1003-1006, and wand zaps only "gesture toward the floor below you" per engrave.c:1008-1010 — no actual writing happens. Replaced with the 5.0 reality. (2) "−5 alignment hit" stated as flat; mon.c:4280 is adjalign((u.ualign.record > 5) ? -5 : -rnd(5)), so it's flat −5 only with healthy alignment, otherwise rnd(5) (avg −3). Reworded. -->
+<!-- audit 2026-05-18 #122 (re-audit 2026-05-19 v2 #170): 2 corrections. (1) "Levitation trick" (engrave Elbereth in dust while floating) is non-functional in 5.0: engrave.c:198 requires can_reach_floor() which returns FALSE under Levitation; finger-engrave is refused outright at engrave.c:1003-1006, and wand zaps only "gesture toward the floor below you" per engrave.c:1008-1010 — no actual writing happens. Replaced with the 5.0 reality. (2) "−5 alignment hit" stated as flat; mon.c:4280 is adjalign((u.ualign.record > 5) ? -5 : -rnd(5)), so it's flat −5 only with healthy alignment, otherwise rnd(5) (avg −3). Reworded. v2 re-verified: defile rule (mon.c:4267-4285, del_engr_at unconditional), exact-word requirement (engrave.c:256), Inhell/endgame deadness (teleport.c:68-70 onscary), S_HUMAN/elf/were/shopkeeper/quest-nemesis immunity (monmove.c:259-261), Riders/Angels/lawful-minions/Wizard immunity (monmove.c:251-253), minotaur exclusion (monmove.c:301), blind/peaceful pass-through (monmove.c:299-300), cornered ALLOW_SSM step-through (mon.c:2278-2282). 0 new corrections. See companion-audit.md. -->
 
 
 ##### Where the word comes from
@@ -2320,7 +2320,7 @@ Reading an uncursed scroll of genocide while confused can genocide
 your own species. Don't do this.
 
 #### Delayed Deaths
-<!-- audit 2026-05-18 #93: timer + cure mechanics verified vs timeout.c/pray.c/eat.c/potion.c/trap.c. Corrected: sliming polymorph cure requires a flame-bodied or slime-proof form (polyself.c:842), not any polymorph; "burdened may not get even one turn" + "stay unburdened near water" duplicated the drowning error already fixed elsewhere; vomiting only cures SICK_VOMITABLE (food poisoning), not Pestilence's SICK_NONVOMITABLE. Withering correctly absent (doesn't exist in 5.0). Added 10-turn slime timer, food-poisoning 10-19 turn range, and Pestilence-specific paragraph. See companion-audit.md. -->
+<!-- audit 2026-05-18 #93 (re-audit 2026-05-19 v2 #172): timer + cure mechanics verified vs timeout.c/pray.c/eat.c/potion.c/trap.c. Corrected: sliming polymorph cure requires a flame-bodied or slime-proof form (polyself.c:842), not any polymorph; "burdened may not get even one turn" + "stay unburdened near water" duplicated the drowning error already fixed elsewhere; vomiting only cures SICK_VOMITABLE (food poisoning), not Pestilence's SICK_NONVOMITABLE. Withering correctly absent (doesn't exist in 5.0). Added 10-turn slime timer, food-poisoning 10-19 turn range, and Pestilence-specific paragraph. v2 fixes: (a) Sliming "~9-turn transformation" was off by one — initial timer is 10 (make_slimed(10L,...) at uhitm.c:3199, eat.c:854); the 9-turn impression came from the t/2 message cadence at timeout.c:391. Cross-consistent with Puddings section (v2 #139). Corrected. (b) "polymorph into a flame-bodied or slime-immune form" was overbroad. Per polyself.c:842-849 the cure requires flaming() or PM_GREEN_SLIME. Noncorporeal forms (ghost, shade, mondata.h:75-76) prevent NEW infection but don't cure an active timer. Reworded. (c) "cancellation negates the touch attack" was listed under Cures, misleading. Cancelling at uhitm.c:3556-3560 prevents future hits but does nothing to a running timer. Moved/dropped. See companion-audit.md. -->
 
 Not every fatal threat kills instantly. Several give you a few
 turns to react. Knowing the warning signs and the cures can save
@@ -9042,7 +9042,7 @@ The catch-all `@` class: shopkeepers, priests, watchmen, role nemeses, quest lea
 
 :::
 
-<!-- audit 2026-05-18 #167: stats/colors/attacks for the full roster verified vs monsters.h:2911-3194. Two corrections: erinys does follow stairs (M2_STALK at monsters.h:2958 — every row in this table carries M2_STALK), so the "except erinys" qualifier is bogus. Amorous demon's displayed form depends on the demon's own randomly-assigned gender (doseduce at mhitu.c:1988-1989 reads Mgender(mon)), not the player's. balrog and amorous demon don't summon (mhitu.c:967). See companion-audit.md. -->
+<!-- audit 2026-05-18 #167 (re-audit 2026-05-19 v2 #171): stats/colors/attacks for the full roster verified vs monsters.h:2911-3194. Two corrections: erinys does follow stairs (M2_STALK at monsters.h:2958 — every row in this table carries M2_STALK), so the "except erinys" qualifier is bogus. Amorous demon's displayed form depends on the demon's own randomly-assigned gender (doseduce at mhitu.c:1988-1989 reads Mgender(mon)), not the player's. balrog and amorous demon don't summon (mhitu.c:967). v2 fix: 3 stings mislabeled as "poison" when the C source has AD_DRST (strength-drain, not generic poison): bone devil (monsters.h:2999), Orcus (monsters.h:3082), and Geryon (monsters.h:3093) all have `ATTK(AT_STNG, AD_DRST, 2, 4)`. Same drain-Str pattern as the jellyfish fix in batch 30. Beginner trap: a player armored against poison would not be protected — they'd watch Strength drop during combat. Changed all three to "sting 2d4 drain-Str." See companion-audit.md. -->
 #### Major demons `&`
 
 Major demons. Most can gate in reinforcements (a single barbed devil in your face can become five). Silver weapons and Demonbane do extra damage. Demon lords can be bribed with gold to leave.
@@ -9154,7 +9154,7 @@ Mostly harmless. **Lizard corpses cure petrification and never rot.** Carry one 
 ---
 
 ### What Changed Since Last Time
-<!-- audit 2026-05-17 #46: ~30 5.0 changes verified against fixes5-0-0 + source (themed rooms, 4 new monsters, helm of caution, helm of brilliance rename, spell-level rebalance, unicorn horn no-attribute-restore, BoH scatter-not-destroy, Valkyrie starts with spear, Excalibur 1/30 dip, demonbane = silver mace, HP regen formula, 3/2 two-handed Str bonus, covetous-monster either-staircase warp, Castle no master/arch-lich, hot-ground potion destruction, alchemy smock 1/30, crystal armor cracks, candle sqrt formula, MC overhaul attribution to 3.6, all 4 new conducts, intelligent-monster containers). Corrected 4: chain lightning is level 4 not 7; "mummy withering" was fabricated (no such mechanic; mummies do AD_PHYS); Elbereth -5 alignment penalty is not a 5.0 change; supply chests appear above the Oracle, not "the first ten levels." Also clarified: mind flayer change is map/ID amnesia is gone, spell/skill loss persists; sink dipping for potions only. See companion-audit.md. -->
+<!-- audit 2026-05-17 #46 (re-audit 2026-05-19 v2 #173): ~30 5.0 changes verified against fixes5-0-0 + source. Corrected 4: chain lightning is level 4 not 7; "mummy withering" was fabricated; Elbereth -5 alignment penalty is not a 5.0 change; supply chests appear above the Oracle, not "the first ten levels." Also clarified: mind flayer change is map/ID amnesia is gone, spell/skill loss persists; sink dipping for potions only. v2 fixes: (a) Touch of death "Magic resistance reduces but no longer fully prevents it" was wrong. Per mcastu.c:391-407, the spell is binary — `!Antimagic && rn2(m_lev) > 12` gates the touch_of_death() kill; Antimagic in the else branch triggers `shieldeff()` and "Lucky for you, it didn't work!" Antimagic still fully blocks the spell in 5.0; the 5.0 change is the unprotected outcome (instakill → drain+damage per fixes5-0-0.txt:538), not the MR semantics. Reworded. (b) Iron bars "(since 3.6)" — wrong date. Iron bars were added in 3.3.0 per fixes3-3-0.txt:349 ("add graves, iron bars, trees, and arboreal levels"). Corrected to "since 3.3." (c) Gold dragon scale mail "in addition to its two resistances" — wrong; gold DSM grants only hallucination resistance + innate light (do_wear.c:846-851), not two resistances. The DRGN_ARMR slot for gold is 0 (objects.h:505). Reworded. See companion-audit.md. -->
 
 If you're an experienced traveler returning after some time away, the
 5.0 of the Mazes (NetHack 5.0.0, released May 2, 2026) includes
@@ -9213,9 +9213,9 @@ point.) The most significant:
   rely on fixed maps.
 - **New conducts** are tracked: pauper, petless, permadeaf, and
   Sokoban (no cheating).
-- **Touch of death** has been reworked: instead of binary kill,
-  it now deals heavy damage and drains max HP. Magic resistance
-  reduces but no longer fully prevents it.
+- **Touch of death** has been reworked: instead of an instant
+  kill, an unresisted hit now deals heavy damage and drains max
+  HP. Magic resistance still fully blocks the spell.
 - **Black dragon scale mail** now grants drain resistance in
   addition to disintegration resistance: a second extrinsic that
   was historically hard to find outside artifacts.
@@ -9279,7 +9279,7 @@ point.) The most significant:
   and eggs possible.
 - **Monsters** no longer drop food items as death drops (except
   their own corpse), reducing food availability in the early game.
-- **Iron bars** are a dungeon feature (since 3.6). You can't break
+- **Iron bars** are a dungeon feature (since 3.3). You can't break
   them with a weapon or dig through them; the practical way past is
   to dig around the side through the adjacent wall, or polymorph into
   something with acid breath. (Potions of acid don't work on bars.)
@@ -9313,7 +9313,7 @@ repeat.
 
 **Gold dragon scale mail eliminates your light source slot.** The
 mail provides a 2-square innate light radius in addition to its
-two resistances. In the late game, when inventory is a puzzle and
+hallucination resistance. In the late game, when inventory is a puzzle and
 every slot counts, wearing it lets you retire the lamp and use
 that slot for something that actually matters.
 

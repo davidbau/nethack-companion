@@ -177,11 +177,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#166**  L 8558  (  23 lines)     ↳ Bestiary Tables → Giant humanoids `H`
 - [x] **#167**  L 2210  (  29 lines)     ↳ Dangerous Encounters → The Riders
 - [x] **#168**  L 5981  ( 117 lines)   📖 Advanced Controls
-- [ ] **#169**  L 1234  (  22 lines)     ↳ Traps and Hazards → Movement Traps
-- [ ] **#170**  L 1481  (  93 lines)     ↳ Traps and Hazards → Elbereth
-- [ ] **#171**  L 8978  (  42 lines)     ↳ Bestiary Tables → Major demons `&`
-- [ ] **#172**  L 2300  (  52 lines)     ↳ Dangerous Encounters → Delayed Deaths
-- [ ] **#173**  L 9088  ( 200 lines)   📖 What Changed Since Last Time
+- [x] **#169**  L 1234  (  22 lines)     ↳ Traps and Hazards → Movement Traps
+- [x] **#170**  L 1481  (  93 lines)     ↳ Traps and Hazards → Elbereth
+- [x] **#171**  L 8978  (  42 lines)     ↳ Bestiary Tables → Major demons `&`
+- [x] **#172**  L 2300  (  52 lines)     ↳ Dangerous Encounters → Delayed Deaths
+- [x] **#173**  L 9088  ( 200 lines)   📖 What Changed Since Last Time
 - [ ] **#174**  L  693  ( 177 lines)   📖 Points of Interest
 - [ ] **#175**  L 7341  (  12 lines)     ↳ Weapons Tables → Axe
 - [ ] **#176**  L 7433  (  24 lines)     ↳ Weapons Tables → Polearms

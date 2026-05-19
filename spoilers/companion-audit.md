@@ -8718,3 +8718,34 @@ All keystrokes, options, and the `verbose`/`autopickup`/`pickup_types` semantics
 168/183 done.
 
 ---
+
+## 2026-05-19 — v2 audit batch 35: Movement Traps (#169), Elbereth (#170), Major demons (#171), Delayed Deaths (#172), What Changed (#173)
+
+### Major demons `&` (#171) — `spoilers/companion.md:9046` — 3 corrections
+
+Three stings mislabeled as "poison" when the C source has AD_DRST (strength-drain, not generic poison): bone devil (`monsters.h:2999`), Orcus (`:3082`), and Geryon (`:3093`) all have `ATTK(AT_STNG, AD_DRST, 2, 4)`. Same drain-Str pattern as the jellyfish fix in batch 30. Beginner trap: a player armored against poison would NOT be protected against these stings — they'd watch Strength drop during combat. Changed all three to "sting 2d4 drain-Str."
+
+### Delayed Deaths (#172) — `spoilers/companion.md:2322` — 3 corrections
+
+- **Sliming "~9-turn transformation"** off by one. Initial timer is 10 (`make_slimed(10L,...)` at `uhitm.c:3199`, `eat.c:854`); the 9-turn impression came from the t/2 message cadence at `timeout.c:391`. Now consistent with the Puddings section (v2 #139).
+- **"polymorph into a flame-bodied or slime-immune form"** overbroad. Per `polyself.c:842-849` the cure requires `flaming()` or `PM_GREEN_SLIME`. Noncorporeal forms (ghost, shade) prevent new infection but don't cure an active timer.
+- **"cancellation negates the touch attack"** wrongly listed under Cures. Cancelling at `uhitm.c:3556-3560` prevents future hits but doesn't clear a running timer.
+
+### What Changed Since Last Time (#173) — `spoilers/companion.md:9156` — 3 corrections
+
+- **Touch of death "Magic resistance reduces but no longer fully prevents it"** wrong. Per `mcastu.c:391-407`, the spell is binary — `!Antimagic && rn2(m_lev) > 12` gates the kill; Antimagic in the else branch triggers `shieldeff()` and "Lucky for you, it didn't work!" Antimagic still fully blocks the spell in 5.0; the 5.0 change is the unprotected outcome (instakill → drain+damage per `fixes5-0-0.txt:538`), not the MR semantics. Reworded.
+- **Iron bars "since 3.6"** wrong date. Iron bars were added in 3.3.0 per `fixes3-3-0.txt:349`. Corrected to "since 3.3."
+- **Gold dragon scale mail "in addition to its two resistances"** wrong. Gold DSM grants only hallucination resistance + innate light (`do_wear.c:846-851`); the DRGN_ARMR slot for gold is 0 (`objects.h:505`). Reworded.
+
+### Movement Traps (#169) — `spoilers/companion.md:1246` — 0 corrections, badge updated
+
+All trapdoor/hole/pit mechanics re-verified.
+
+### Elbereth (#170) — `spoilers/companion.md:1497` — 0 corrections, badge updated
+
+Defile rule, exact-word requirement, S_HUMAN/Rider/Angel/minotaur exclusions, blind/peaceful pass-through, cornered ALLOW_SSM step-through all re-verified.
+
+### Pass-2 queue
+173/183 done.
+
+---
