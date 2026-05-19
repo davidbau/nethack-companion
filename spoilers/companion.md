@@ -9475,7 +9475,7 @@ which also hosts the major variants). Both are free to play and
 log every ascension; the cause-of-death and ascension statistics
 cited throughout this guide come from their public records.
 
-**The r/nethack community** on Reddit has kept NetHack discussion
+**The [r/nethack](https://www.reddit.com/r/nethack/) community** on Reddit has kept NetHack discussion
 alive for a new generation of players. Its moderators over the
 years have maintained a welcoming space where veterans and newcomers
 trade advice, share ascension stories, and argue about optimal wish
