@@ -77,11 +77,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 66**  L 7364  (  12 lines)     ↳ Weapons Tables → Club
 - [x] **# 67**  L 8185  (  18 lines)     ↳ Bestiary Tables → Nymphs `n`
 - [x] **# 68**  L 2569  (  58 lines)     ↳ A Practical Identification Strategy → Blessed, Uncursed, Cursed
-- [ ] **# 69**  L 3125  (  14 lines)     ↳ A Practical Identification Strategy → Naming What You've Learned
-- [ ] **# 70**  L 8154  (  14 lines)     ↳ Bestiary Tables → Leprechauns `l`
-- [ ] **# 71**  L 2294  (   6 lines)     ↳ Dangerous Encounters → Genocide
-- [ ] **# 72**  L 6764  (  18 lines)     ↳ Voluntary Challenges → Weaponless
-- [ ] **# 73**  L 7975  (  18 lines)     ↳ Bestiary Tables → Cockatrices `c`
+- [x] **# 69**  L 3125  (  14 lines)     ↳ A Practical Identification Strategy → Naming What You've Learned
+- [x] **# 70**  L 8154  (  14 lines)     ↳ Bestiary Tables → Leprechauns `l`
+- [x] **# 71**  L 2294  (   6 lines)     ↳ Dangerous Encounters → Genocide
+- [x] **# 72**  L 6764  (  18 lines)     ↳ Voluntary Challenges → Weaponless
+- [x] **# 73**  L 7975  (  18 lines)     ↳ Bestiary Tables → Cockatrices `c`
 - [ ] **# 74**  L 8521  (  21 lines)     ↳ Bestiary Tables → Fungi and molds `F`
 - [ ] **# 75**  L  376  ( 137 lines)   📖 Your First Descent
 - [ ] **# 76**  L 2352  (  36 lines)     ↳ Dangerous Encounters → The Displacer Beast

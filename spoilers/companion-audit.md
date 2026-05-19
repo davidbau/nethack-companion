@@ -7981,3 +7981,68 @@ Source: `spoilers/companion.md` line 2582. No corrections (re-audit clean).
 - "Uncursed scroll IDs one or two items" is a typical-case simplification — the C code at `read.c:2086` has a 1-in-5 chance to roll `rn2(5)`, so uncursed *can* occasionally identify more, but the modal outcome is 1. Defensible as written.
 
 ---
+
+## 2026-05-18 — v2 audit #69: A Practical Identification Strategy — Naming What You've Learned
+
+Source: `spoilers/companion.md` line 3142. No corrections (re-audit clean).
+
+### Verified
+- `#name` / `#call` aliases at `src/cmd.c:1773-1774`.
+- Class-naming via `docall` (sets `objects[otyp].oc_uname`) at `src/do_name.c:571-588`.
+- Renaming-by-overwrite at `src/do_name.c:660-672` (frees old `*uname_p`, assigns new).
+
+---
+
+## 2026-05-18 — v2 audit #70: Bestiary Tables — Leprechauns `l`
+
+Source: `spoilers/companion.md` line 8176. No corrections (re-audit clean).
+
+### Verified
+- Stats (Lvl 5, Spd 15, AC 8, MR 20, green, claw 1d2 AD_SGLD, M1_TPORT) at `monsters.h:660-666`.
+- Stealgold + teleport at `src/steal.c:58-115`.
+
+### Notes
+- Auditor flagged that unseen leprechauns can bury gold (`monmove.c:1152-1171 leppie_stash`), so the corpse doesn't always drop the stolen gold back. Common case still drops gold; per no-trivia, left.
+
+---
+
+## 2026-05-18 — v2 audit #71: Dangerous Encounters — Genocide
+
+Source: `spoilers/companion.md` line 2308. 1 word fix.
+
+### Wrong → fixed
+- **"genocide your own race"**: imprecise. The PLAYER branch at `read.c:2839` uses `mndx = u.umonster` = `gu.urole.mnum` (`u_init.c:991`), the **role's** monster (PM_VALKYRIE, PM_ARCHEOLOGIST, etc.), not the race (PM_HUMAN/PM_ELF/...). Changed "race" to "species."
+
+### Verified
+- Confused-uncursed-scroll path at `read.c:1737 do_genocide((!scursed) | (2 * !!Confusion))`; flags = 3 → killplayer at `read.c:2838-2842` + REALLY branch at `read.c:2968-2972` with killer "genocidal confusion."
+
+---
+
+## 2026-05-18 — v2 audit #72: Voluntary Challenges — Weaponless
+
+Source: `spoilers/companion.md` line 6785. 2 misclassification fixes.
+
+### Wrong → fixed
+- **"iron chain"** in the weapon-tool list: wrong. Iron chain is CHAIN_CLASS (`objects.h:101, 1631`), not TOOL_CLASS. `is_weptool` requires `oclass == TOOL_CLASS`, so swinging a wielded iron chain does NOT break the conduct. Removed from the list.
+- **"aklys"** framed as a weapon-tool: wrong. Aklys is WEAPON_CLASS via the `WEAPON()` macro at `objects.h:381-383`, not a weptool. Still breaks the conduct (via the WEAPON_CLASS branch), just kept in the list reordered to flow with the other weapons.
+
+### Verified
+- Core check at `src/uhitm.c:616-617` requires `weapon && (weapon->oclass == WEAPON_CLASS || is_weptool(weapon))`.
+- Miss revert at `uhitm.c:636-639` (Vorpal hit-converted-to-miss rolls back weaphit).
+- Polearm-via-`#apply` exception at `dothrow.c:2199-2203` is the only weaphit++ outside uhitm.c.
+- Thrown/fired ammo does NOT break (no weaphit++ in those paths).
+- Pick-axe and unicorn horn are weptools (`objects.h:1007-1016` via WEPTOOL macro).
+- Wielded cockatrice corpse (FOOD_CLASS) and wands (WAND_CLASS) don't match the check — correctly listed as safe.
+
+---
+
+## 2026-05-18 — v2 audit #73: Bestiary Tables — Cockatrices `c`
+
+Source: `spoilers/companion.md` line 7997. No corrections (re-audit clean).
+
+### Verified
+- All three rows match `monsters.h:167-195`: chickatrice Lvl 4, cockatrice Lvl 5, pyrolisk Lvl 6.
+- chickatrice/cockatrice carry MR_POISON|MR_STONE; pyrolisk carries MR_POISON|MR_FIRE (no stoning).
+- Wield-corpse rule: bare-handed cockatrice corpse calls `instapetrify` regardless of role at `wield.c:146-152`.
+
+---

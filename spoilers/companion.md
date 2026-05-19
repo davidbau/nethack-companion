@@ -2306,10 +2306,10 @@ An amulet of life saving still rescues you from the fatal case,
 though you lose any armor it took.
 
 #### Genocide
-<!-- audit 2026-05-17 #71: confused-uncursed-scroll self-genocide verified at read.c:1737 + do_genocide PLAYER+REALLY branch at lines 2838-2972 (killer = "genocidal confusion"). Section is 2 sentences with a single correct factual claim. 0 corrections. See companion-audit.md. -->
+<!-- audit 2026-05-17 #71 (re-audit 2026-05-18 v2 #71): confused-uncursed-scroll self-genocide verified at read.c:1737 + do_genocide PLAYER+REALLY branch at lines 2838-2972 (killer = "genocidal confusion"). v2 corrected "your own race" to "your own species": the PLAYER branch at read.c:2839 uses mndx = u.umonster, which is gu.urole.mnum (u_init.c:991), the **role's** monster (PM_VALKYRIE, PM_ARCHEOLOGIST, etc.), NOT the race (PM_HUMAN, PM_ELF, ...). "Species" is the accurate noun. See companion-audit.md. -->
 
 Reading an uncursed scroll of genocide while confused can genocide
-your own race. Don't do this.
+your own species. Don't do this.
 
 #### Delayed Deaths
 <!-- audit 2026-05-18 #93: timer + cure mechanics verified vs timeout.c/pray.c/eat.c/potion.c/trap.c. Corrected: sliming polymorph cure requires a flame-bodied or slime-proof form (polyself.c:842), not any polymorph; "burdened may not get even one turn" + "stay unburdened near water" duplicated the drowning error already fixed elsewhere; vomiting only cures SICK_VOMITABLE (food poisoning), not Pestilence's SICK_NONVOMITABLE. Withering correctly absent (doesn't exist in 5.0). Added 10-turn slime timer, food-poisoning 10-19 turn range, and Pestilence-specific paragraph. See companion-audit.md. -->
@@ -3140,7 +3140,7 @@ if it's cursed, you're stuck with it until you find a way to
 uncurse. Kick it first. Check BUC second. Then pick it up.
 
 #### Naming What You've Learned
-<!-- audit 2026-05-17 #2: 5 claims verified, 1 corrected (N keystroke only works in number_pad mode; default vi-keys binds N to run-north — the cross-layout shortcut is C for #call). See companion-audit.md. -->
+<!-- audit 2026-05-17 #2 (re-audit 2026-05-18 v2 #69): 5 claims verified, 1 corrected (N keystroke only works in number_pad mode; default vi-keys binds N to run-north — the cross-layout shortcut is C for #call). v2 re-confirmed: `#name`/`#call` aliases at cmd.c:1773-1774; class naming at do_name.c:571-588; rename-by-overwrite at do_name.c:660-672. 0 corrections. See companion-audit.md. -->
 
 As you gather clues, use the `#name` command to track what you
 know. You can **call** an entire item class by a name you choose.
@@ -6783,16 +6783,16 @@ The final Amulet offering for ascension is exempt, so a clean
 atheist ascension is mechanically possible.
 
 #### Weaponless
-<!-- audit 2026-05-18 #128: clean conduct logic per uhitm.c:616-617 (weaphit++ requires weapon non-NULL AND (WEAPON_CLASS || is_weptool)). Added the missing weapon-tool list (pick-axe, unicorn horn, aklys, iron chain etc. all break conduct via the is_weptool branch), and the one ranged exception that DOES break weaponless: wielded polearm at range via #apply, the HMON_APPLIED path at dothrow.c:2199-2203. Confirmed thrown weapons / fired ammo / wands / spells / barehand / martial arts / cockatrice-corpse-wield all do NOT break the conduct. -->
+<!-- audit 2026-05-18 #128 (re-audit 2026-05-18 v2 #72): clean conduct logic per uhitm.c:616-617 (weaphit++ requires weapon non-NULL AND (WEAPON_CLASS || is_weptool)). Added the missing weapon-tool list (pick-axe, unicorn horn etc. break conduct via the is_weptool branch), and the one ranged exception that DOES break weaponless: wielded polearm at range via #apply, the HMON_APPLIED path at dothrow.c:2199-2203. Confirmed thrown weapons / fired ammo / wands / spells / barehand / martial arts / cockatrice-corpse-wield all do NOT break the conduct. v2 corrected two misclassifications: (a) iron chain is CHAIN_CLASS (objects.h:101, 1631), not a weptool, so wielding+swinging an iron chain does NOT break Weaponless — removed from the list. (b) Aklys is WEAPON_CLASS (objects.h:381-383 via WEAPON() macro), not a weptool, so it does break the conduct but via the WEAPON_CLASS branch; kept in the list but reordered to flow with the other weapons. See companion-audit.md. -->
 
 Never hit a monster with a wielded weapon or weapon-tool. You can
 throw weapons, fire them from bows and crossbows, and use wands
 and spells. You can also fight bare-handed or with martial arts
 (Monks excel here). What you cannot do is swing a sword, axe,
-mace, pick-axe, unicorn horn, aklys, iron chain, or any other
-weapon-class or weapon-tool item in melee while it's in your
-`w`ielded slot. The one ranged exception that *does* break the
-conduct: using a wielded polearm at range via `#apply`.
+mace, aklys, pick-axe, unicorn horn, or any other weapon-class or
+weapon-tool item in melee while it's in your `w`ielded slot. The
+one ranged exception that *does* break the conduct: using a
+wielded polearm at range via `#apply`.
 
 This is less restrictive than it sounds. Monks start with strong
 martial arts and get better. Other classes can rely on spells,
@@ -7995,7 +7995,7 @@ All blobs are mindless, sleep-resistant, and poison-resistant.
 :::
 
 #### Cockatrices `c`
-<!-- audit 2026-05-17 #20: 22 cells verified, 0 corrected. All three rows (chickatrice/cockatrice/pyrolisk) match monsters.h:167-195. See companion-audit.md. -->
+<!-- audit 2026-05-17 #20 (re-audit 2026-05-18 v2 #73): 22 cells verified, 0 corrected. All three rows (chickatrice/cockatrice/pyrolisk) match monsters.h:167-195. v2 re-verified: chickatrice/cockatrice carry MR_POISON|MR_STONE (intro "All cockatrices are poison-resistant" matches); pyrolisk carries MR_POISON|MR_FIRE (no stoning, correctly distinguished). Wield-corpse rule at wield.c:146-152: bare-handed cockatrice corpse instapetrifies regardless of role. 0 corrections. See companion-audit.md. -->
 
 Medieval bestiary creature: a chicken with a serpent's tail whose touch turns flesh to stone. Carry a lizard corpse, fight gloved, and never wield a cockatrice corpse as a weapon unless your role explicitly resists stoning. See [Petrification](#petrification-stoning).
 
@@ -8174,7 +8174,7 @@ All kobolds have poisonous corpses and are poison-resistant.
 :::
 
 #### Leprechauns `l`
-<!-- audit 2026-05-18 #133: clean. Stats (Lvl 5, Spd 15, AC 8, MR 20, green, claw 1d2 AD_SGLD), M1_TPORT, AT_CLAW (not bite) all verified against monsters.h:660-666 and steal.c:58-115. Stolen gold is added to mtmp->minvent and drops on death. -->
+<!-- audit 2026-05-18 #133 (re-audit 2026-05-18 v2 #70): clean. Stats (Lvl 5, Spd 15, AC 8, MR 20, green, claw 1d2 AD_SGLD), M1_TPORT, AT_CLAW (not bite) all verified against monsters.h:660-666 and steal.c:58-115. Stolen gold is added to mtmp->minvent and drops on death. v2 close-call note: an unseen leprechaun in a non-shop room can bury its gold (monmove.c:1152-1171 leppie_stash, 1-in-4 per turn when conditions met), so killing it later doesn't always recover the original take. Common case still drops gold; corpse-drops-gold phrasing left as-is per no-trivia. 0 corrections. See companion-audit.md. -->
 
 
 Steals gold and teleports away. The fix is to carry no gold near them, or to kill from range. The corpse drops the gold back.
