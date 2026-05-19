@@ -54,11 +54,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 43**  L 4670  ( 132 lines)   📖 The Art of Combat
 - [x] **# 44**  L 2072  (  28 lines)     ↳ Dangerous Encounters → Level Drain
 - [x] **# 45**  L 3139  (  39 lines)     ↳ A Practical Identification Strategy → A Practical Strategy
-- [ ] **# 46**  L  132  ( 195 lines)   📖 Choosing Your Expedition
-- [ ] **# 47**  L 8118  (  17 lines)     ↳ Bestiary Tables → Jellies `j`
-- [ ] **# 48**  L 6974  (  17 lines)     ↳ Voluntary Challenges → Bonesless (new in 5.0)
-- [ ] **# 49**  L 1220  (  14 lines)     ↳ Traps and Hazards → Nuisance Traps
-- [ ] **# 50**  L 1942  (  31 lines)     ↳ Dangerous Encounters → Petrification (Stoning)
+- [x] **# 46**  L  132  ( 195 lines)   📖 Choosing Your Expedition
+- [x] **# 47**  L 8118  (  17 lines)     ↳ Bestiary Tables → Jellies `j`
+- [x] **# 48**  L 6974  (  17 lines)     ↳ Voluntary Challenges → Bonesless (new in 5.0)
+- [x] **# 49**  L 1220  (  14 lines)     ↳ Traps and Hazards → Nuisance Traps
+- [x] **# 50**  L 1942  (  31 lines)     ↳ Dangerous Encounters → Petrification (Stoning)
 - [ ] **# 51**  L 7507  (  12 lines)     ↳ Weapons Tables → Whip
 - [ ] **# 52**  L 2006  (  27 lines)     ↳ Dangerous Encounters → The Touch of Death
 - [ ] **# 53**  L 1410  (  71 lines)     ↳ Traps and Hazards → Engravings

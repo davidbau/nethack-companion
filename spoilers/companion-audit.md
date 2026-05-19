@@ -7589,3 +7589,98 @@ Source: `spoilers/companion.md` line 3152. No corrections (re-audit clean).
 - All amulets fixed 150gp at `objects.h:834`.
 
 ---
+
+## 2026-05-18 — v2 audit #46: Choosing Your Expedition
+
+Source: `spoilers/companion.md` line 132. 2 factual fixes + 2 wisdom adjustments.
+
+### Wrong → fixed
+- **Healer "convert them to fruit juice with an amethyst"**: wrong gemstone. The amethyst converts POT_BOOZE to fruit juice (`potion.c:2161-2163`), not POT_SICKNESS. Sickness → fruit juice is via unicorn horn (`potion.c:2151-2154`). Reworded.
+- **Knight "+0 lance"**: the starting lance is +1, not +0 (`u_init.c:91-92`, `{ LANCE, 1, ... }`). Fixed to "+1 lance."
+
+### Wisdom adjustments
+- **Cave Dweller "You gain speed early"**: misleading. Cave Dweller intrinsic Fast is at XL 7 (`attrib.c:37`), while Samurai and Monk both get speed at XL 1. A beginner reading the section sequentially would reasonably expect "early" to mean what it means in the Samurai paragraph. Softened to "by mid-game."
+- **"Mjollnir waiting at the first altar you can sacrifice on"** (closing recommendation): cross-aligned altars don't deliver sacrifice gifts. Clarified to "first co-aligned altar" — a real beginner gotcha when a new Valkyrie sacrifices at the first altar they find and gets nothing back.
+
+### Verified
+- All 13 role alignments and race availabilities against `src/role.c:55-558`.
+- All 5 race stat caps against `role.c:597-678`.
+- Race hostility / `lovemask` per `role.c` and `include/you.h:273`.
+- Knight code: `-1` align for fleeing-or-helpless (`uhitm.c:336-339`); Samurai's giri at `uhitm.c:342-345`.
+- Knight Excalibur 1/6, others Lawful 1/30 at XL ≥ 5 (`fountain.c:404-405`).
+- Knight intrinsic jumping at char-gen (`u_init.c:691`).
+- Intrinsic-by-XL tables in `attrib.c:27-88`.
+- Elf sleep-res XL 4 (`attrib.c:94-95`); elf Priest/Wizard random instrument (`u_init.c:799-813`).
+- Healer sickness immunity (`potion.c:977`).
+- Priest BUC sense (`invent.c:3553-3555, 3593-3595`).
+- Rogue backstab `+rnd(u.ulevel)` (`uhitm.c:920-964`).
+- Monk veg-conduct alignment penalty (`eat.c:1379-1381`).
+- Mjollnir ELEC(5,24) returns at Str 25, Valkyrie-only; role-gift alignment rewritten to match PC at char-gen (`artifact.c:92-95`), so "regardless of alignment" is correct.
+- Demonbane Priest role-gift, silver mace (`artilist.h:162-164`); Priest mace Expert (`u_init.c:392`).
+- Wizard skill-based spellbook ID is Wizard-only (`spell.c:861-867`).
+
+### Notes
+- Rogue "six daggers for throwing": actual range is 6-15 (`u_init.c:135`). Not corrected per no-trivia — "six" is the minimum and beginner doesn't need the range.
+- Knight "lance is largely useless on foot" is true for melee but the lance can be `#applied` at reach distance. Not corrected per preserve-voice; the absoluteness reads fine for a first-time-player chapter.
+
+---
+
+## 2026-05-18 — v2 audit #47: Bestiary Tables — Jellies `j`
+
+Source: `spoilers/companion.md` line 8131. No corrections (re-audit clean).
+
+### Verified
+- All three rows match `include/monsters.h:591-620`: blue jelly LVL(4,0,8,10) passive 0d6 cold; spotted LVL(5,0,8,10) passive 0d6 acid; ochre LVL(6,3,8,20) engulf 3d6 + passive 3d6 acid.
+- All carry M1_AMORPHOUS | M1_MINDLESS.
+- Blue jelly's MR_COLD|MR_POISON conveys permanently via `should_givit` at `eat.c:983-988`.
+- Spotted/ochre's MR_ACID|MR_STONE conveys TIMED via `temp_givit` at `eat.c:991-997` (chance=3 for acid, chance=6 for stone).
+
+---
+
+## 2026-05-18 — v2 audit #48: Voluntary Challenges — Bonesless
+
+Source: `spoilers/companion.md` line 6988. No corrections (re-audit clean).
+
+### Verified
+- "bonesless" xlogfile achievement set only when `!flags.bones` at `src/topten.c:605`.
+- `bones` is `set_in_config` per `include/optlist.h:213-215` — config file / command line only, not the in-game `O` menu.
+- `!flags.bones` blocks both save (`bones.c:360`) and load (`bones.c:642`).
+- The "didn't encounter any bones levels" enlightenment is distinct (`insight.c:439-441` requires `flags.bones` true + `numbones==0`).
+- 5.0 addition per `doc/fixes5-0-0.txt:2742`.
+
+---
+
+## 2026-05-18 — v2 audit #49: Traps and Hazards — Nuisance Traps
+
+Source: `spoilers/companion.md` line 1226. No corrections (re-audit clean).
+
+### Verified
+- Arrow trap at `trap.c:1190-1248`; 1/15 trap-empty chance once seen.
+- Dart trap with 1-in-6 poisoned dart at `trap.c:1273`.
+- Squeaky board at `trap.c:1402-1476`; wake_nearby/wake_nearto, skipped by Levitation OR Flying.
+- Rust trap default branch (40%) hits cloak/suit/shirt in order and douses lit lamps at `trap.c:1632-1643`.
+- Missed arrows/darts land on the floor via `place_object + stackobj`, confirming "Veterans sometimes trigger them deliberately to stock up."
+
+---
+
+## 2026-05-18 — v2 audit #50: Dangerous Encounters — Petrification (Stoning)
+
+Source: `spoilers/companion.md` line 1949. 1 timing fix + 1 wisdom softening.
+
+### Wrong → fixed
+- **"after that you're paralyzed for three turns and the next message kills you"**: off by two. The dialogue at counter 3 is "Your limbs have turned to stone" (paralysis); two MORE messages appear before death — "You have turned to stone" (counter 2) and "You are a statue" (counter 1) — and `done(STONING)` fires when the counter reaches 0 (`timeout.c:674-684`). Reworded to "the final messages kill you."
+
+### Wisdom adjustment
+- **Unchanging-during-stoning warning**: was over-strong. `poly_when_stoned` (`mondata.c:80-85`) only fires when the player is already polymorphed into a non-stone golem. For an unpolymorphed hero (the typical case), Unchanging doesn't actually block any rescue because there was no rescue to block. Reworded to scope the warning: "If you happen to be polymorphed into a non-stone golem, wearing it during the countdown is actively harmful..."
+
+### Verified
+- 5-turn countdown started by `make_stoned(5L,...)` at `uhitm.c:3937`; dialogue strings at `timeout.c:128-148`.
+- "Your limbs have turned to stone" triggers `nomul(-3)` at `timeout.c:163-165`.
+- Kicking a cockatrice corpse barefoot calls `instapetrify` at `dokick.c:542-554`.
+- Tripping over a cockatrice corpse from Fumbling at `timeout.c:1256-1261`.
+- Acid blob corpse grants `d(3,6)` turns of HStone_resistance at `eat.c:1089-1094`.
+- Yellow dragon scale mail/scales grants EStone_resistance at `do_wear.c:860-872`.
+- Wielded cockatrice corpse: hits call `munstone`/`minstapetrify` at `uhitm.c:1152-1167`; wielding without gloves is fatal at `wield.c:142-150`.
+- Cures: lizard/acidic flesh (`eat.c:3941-3944`); potion of acid (`potion.c:1312`); stone-to-flesh (`zap.c:2974`); prayer (`pray.c:382`).
+
+---

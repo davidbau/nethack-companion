@@ -130,7 +130,7 @@ you alive.
 ---
 
 ### Choosing Your Expedition
-<!-- audit 2026-05-18 #86: most role/race/alignment combos and starting gear claims verified vs u_init.c + role.c + attrib.c. Corrected: Elf "see invisible from the start" (no race grants it; sleep res is at XL 4 not 1); Knight code says fleeing-or-helpless not fleeing-or-peaceful (peaceful penalty is Samurai's giri); Cave Dweller starts with sling + flint, not "rocks for throwing"; Ranger also starts with +2 cloak of displacement; Wizard starts with cloak of magic resistance + wand + rings + scrolls + marker; Healer is immune to sickness (not "can see whether potions are safe"); added Knight intrinsic jumping; Ranger Stealth XL 7 / See Invis XL 15 (not "early"). See companion-audit.md. -->
+<!-- audit 2026-05-18 #86: most role/race/alignment combos and starting gear claims verified vs u_init.c + role.c + attrib.c. Corrected: Elf "see invisible from the start" (no race grants it; sleep res is at XL 4 not 1); Knight code says fleeing-or-helpless not fleeing-or-peaceful (peaceful penalty is Samurai's giri); Cave Dweller starts with sling + flint, not "rocks for throwing"; Ranger also starts with +2 cloak of displacement; Wizard starts with cloak of magic resistance + wand + rings + scrolls + marker; Healer is immune to sickness (not "can see whether potions are safe"); added Knight intrinsic jumping; Ranger Stealth XL 7 / See Invis XL 15 (not "early"). v2 audit 2026-05-18 #46: two factual fixes and two beginner-affecting wisdom adjustments. (a) Healer paragraph: "convert them to fruit juice with an amethyst" — wrong, the amethyst converts BOOZE to fruit juice (potion.c:2161-2163). Sickness to fruit juice goes through the unicorn horn (potion.c:2151-2154). Reworded. (b) Knight starting lance is +1 not +0 (u_init.c:91-92 `{ LANCE, 1, ... }`). Fixed. (c) Cave Dweller "gain speed early" was misleading next to Samurai/Monk's true XL-1 speed — Cave Dweller's Fast is at XL 7 (attrib.c:37). Softened to "by mid-game" so a beginner picking a role doesn't expect XL-1 speed. (d) Closing recommendation "Mjollnir waiting at the first altar you can sacrifice on" — a cross-aligned altar won't deliver Mjollnir; clarified to "first co-aligned altar." Verified all 13 role alignments/race availabilities against role.c, intrinsic-by-XL tables against attrib.c, and all sacrifice-gift assignments. 0 other corrections. See companion-audit.md. -->
 
 The first decision you'll make, before you even set foot on the
 stairs, is who you are. In the Mazes, this means three things: your
@@ -166,9 +166,10 @@ early deaths. A straightforward role for players who like straightforward
 solutions. *Alignment: Neutral or Chaotic.*
 
 **Cave Dweller.** You start primitive but tough, with a club, a
-sling, and a pile of flint stones for it. You gain speed early and your hit dice are
-generous. The Cave Dweller's simplicity is a virtue: fewer tools
-means fewer things to manage. *Alignment: Lawful or Neutral.*
+sling, and a pile of flint stones for it. You gain speed by
+mid-game and your hit dice are generous. The Cave Dweller's
+simplicity is a virtue: fewer tools means fewer things to manage.
+*Alignment: Lawful or Neutral.*
 
 **Healer.** You begin with a stethoscope, healing potions, and poison
 resistance. The stethoscope is remarkable: it lets you check a
@@ -176,10 +177,10 @@ monster's hit points and your own internal state. Healers are fragile
 fighters, but their medical knowledge keeps them alive through
 situations that would kill other roles. You're also **immune to
 sickness**, so unknown potions of sickness become a free quaff-test
-(and you can convert them to fruit juice with an amethyst). *Alignment: Neutral.*
+(and you can convert them to fruit juice by dipping a unicorn horn). *Alignment: Neutral.*
 
 **Knight.** You start mounted on a saddled pony, with a +1 long sword
-and a +0 lance among your gear. The pony is a decent combatant early
+and a +1 lance among your gear. The pony is a decent combatant early
 on and the basis of your unique trick: jousting from horseback with
 the lance is devastating when it connects, though the lance is largely
 useless on foot. As a Lawful character with a starting long sword, you
@@ -317,9 +318,10 @@ expectations. Chaotic is often paired with Rogue for thematic
 consistency.
 
 For your first game: **Valkyrie, Human or Dwarf.** Strong
-combat, cold resistance, and Mjollnir waiting at the first altar
-you can sacrifice on. It's the closest thing to an easy mode the
-Mazes offer, which is to say it's still very hard.
+combat, cold resistance, and Mjollnir waiting at the first
+co-aligned altar you can sacrifice on. It's the closest thing to
+an easy mode the Mazes offer, which is to say it's still very
+hard.
 
 ---
 
@@ -1224,7 +1226,7 @@ Here are the traps you'll encounter, roughly grouped by how much
 you'll regret finding them:
 
 #### Nuisance Traps
-<!-- audit 2026-05-17 #26: 4 trap entries verified, 1 broadened (rust trap also affects non-metal armor, lit lamps, potions). See companion-audit.md. -->
+<!-- audit 2026-05-17 #26 (re-audit 2026-05-18 v2 #49): 4 trap entries verified, 1 broadened (rust trap also affects non-metal armor, lit lamps, potions). v2 re-verified all four rows: arrow trap at trap.c:1190-1248 (1/15 trap-empty chance once known); dart trap with 1-in-6 poisoned dart at trap.c:1273; squeaky board at trap.c:1402-1476 (wake_nearby/wake_nearto, skipped by Levitation OR Flying); rust trap at trap.c:1595-1654 (40% default branch hits cloak/suit/shirt in order plus dousing lamps). Missed arrows and darts land via place_object + stackobj, supporting "Veterans sometimes trigger them deliberately to stock up." 0 corrections. See companion-audit.md. -->
 
 | Trap            | Effect                                              |
 | --------------- | --------------------------------------------------- |
@@ -1945,7 +1947,7 @@ epitaph.
 > not involve the player's hit points dropping to zero," and that
 > taxonomy has been the standard reference ever since.*
 
-<!-- audit 2026-05-18 #172: stoning timer starts at 5 (uhitm.c:3937) and ticks 5→1 with five distinct messages (timeout.c:128-148). At tick 3 "Your limbs have turned to stone" the hero is paralyzed via nomul(-3) (timeout.c:163-165), closing the action window. Corrected: acid-blob corpse confers only TIMED stoning resistance (HStone_resistance += d(3,6) at eat.c:932-934, 1089-1094), not permanent. Removed amulet-of-unchanging "interrupt": Unchanging doesn't affect stoning (only blocks poly per polyself.c:1381-1384), and wearing it WHILE stoning is actively bad — it blocks the stone-golem auto-poly escape. Plain wand of polymorph isn't an "interrupt" either: only `poly_when_stoned` monsters (golems, mondata.c:80-85) auto-cure stoning, and the wand can't target that outcome. Stepping on a cockatrice corpse is safe ONLY without Fumbling — Fumbling can trip and instapetrify (timeout.c:1256-1261). See companion-audit.md. -->
+<!-- audit 2026-05-18 #172 (re-audit 2026-05-18 v2 #50): stoning timer starts at 5 (uhitm.c:3937) and ticks 5→1 with five distinct messages (timeout.c:128-148). At tick 3 "Your limbs have turned to stone" the hero is paralyzed via nomul(-3) (timeout.c:163-165), closing the action window. Corrected: acid-blob corpse confers only TIMED stoning resistance (HStone_resistance += d(3,6) at eat.c:932-934, 1089-1094), not permanent. Removed amulet-of-unchanging "interrupt": Unchanging doesn't affect stoning (only blocks poly per polyself.c:1381-1384), and wearing it WHILE stoning is actively bad — it blocks the stone-golem auto-poly escape. Plain wand of polymorph isn't an "interrupt" either: only `poly_when_stoned` monsters (golems, mondata.c:80-85) auto-cure stoning, and the wand can't target that outcome. Stepping on a cockatrice corpse is safe ONLY without Fumbling — Fumbling can trip and instapetrify (timeout.c:1256-1261). v2 fixes: "the next message kills you" was off by two — after "Your limbs have turned to stone" (counter 3) two more messages appear ("You have turned to stone" counter 2, "You are a statue" counter 1) before done(STONING) fires at counter 0. Reworded to "the final messages kill you." Softened the Unchanging warning: poly_when_stoned at mondata.c:80-85 requires you to ALREADY be polymorphed into a non-stone golem, so the "blocks the rescue" framing was over-strong for an unpolymorphed hero who was never going to get the rescue anyway. See companion-audit.md. -->
 #### Petrification (Stoning)
 
 Touching a cockatrice without gloves, eating a cockatrice corpse,
@@ -1968,10 +1970,11 @@ permanent, wear yellow dragon scale mail.
 why you carry one), eat an acidic corpse, drink a potion of acid,
 pray, or cast stone-to-flesh on yourself. Note: act *before* the
 "Your limbs have turned to stone" message — after that you're
-paralyzed for three turns and the next message kills you. Amulet
-of Unchanging does **not** interrupt stoning; in fact wearing it
-during the countdown is harmful because it blocks the stone-golem
-auto-poly that would otherwise save you on death.
+paralyzed for three turns and the final messages kill you. Amulet
+of Unchanging does **not** interrupt stoning. If you happen to be
+polymorphed into a non-stone golem, wearing it during the countdown
+is actively harmful — it blocks the stone-golem auto-poly that
+would otherwise save you on death.
 
 **The other side of the coin:** a wielded cockatrice corpse (with
 gloves on) is one of the game's most devastating weapons —
@@ -6986,7 +6989,7 @@ boulder-shoving and want their playthrough to acknowledge a
 clean solve.
 
 #### Bonesless (new in 5.0)
-<!-- audit 2026-05-17 (sweep from #52): the xlogfile bonesless achievement is set only if !flags.bones (topten.c:605), i.e. you turned bones loading off. Just *not encountering* bones is a separate Miscellaneous enlightenment line ("never encountered any bones levels", insight.c:439) and is NOT the bonesless conduct. Earlier text wrongly said you could "get bonesless by luck." Also removed false "amulet of life saving" tracking claim (show_conduct never lists lifesaving uses). See companion-audit.md. -->
+<!-- audit 2026-05-17 (sweep from #52) (re-audit 2026-05-18 v2 #48): the xlogfile bonesless achievement is set only if !flags.bones (topten.c:605), i.e. you turned bones loading off. Just *not encountering* bones is a separate Miscellaneous enlightenment line ("never encountered any bones levels", insight.c:439) and is NOT the bonesless conduct. Earlier text wrongly said you could "get bonesless by luck." Also removed false "amulet of life saving" tracking claim (show_conduct never lists lifesaving uses). v2 re-confirmed: `bones` is set_in_config per optlist.h:213-215 (config file / command line only, not the in-game O menu); !flags.bones blocks both save (bones.c:360) and load (bones.c:642) — "cuts both directions"; the "didn't encounter any bones levels" enlightenment is distinct (insight.c:439-441 requires flags.bones true + u.uroleplay.numbones==0). 0 corrections. See companion-audit.md. -->
 
 Never inherit from another player's grave. To get the bonesless
 conduct, you have to turn bones off for the run: set
@@ -8129,7 +8132,7 @@ All imps and minor demons follow you up and down stairs. All except *imp* are po
 :::
 
 #### Jellies `j`
-<!-- audit 2026-05-18 #91: 3 rows verified clean vs monsters.h:591-620. Added corpse-intrinsic notes per eat.c mconveys: blue jelly = cold + poison resistance, spotted/ochre = temporary acid + stone resistance. 0d6 passive still inflicts the AD_COLD/AD_ACID side effect (item damage on acid), but damage on the dice is literal. See companion-audit.md. -->
+<!-- audit 2026-05-18 #91 (re-audit 2026-05-18 v2 #47): 3 rows verified clean vs monsters.h:591-620. Added corpse-intrinsic notes per eat.c mconveys: blue jelly = cold + poison resistance, spotted/ochre = temporary acid + stone resistance. 0d6 passive still inflicts the AD_COLD/AD_ACID side effect (item damage on acid), but damage on the dice is literal. v2 re-confirmed: blue jelly LVL(4,0,8,10), spotted LVL(5,0,8,10), ochre LVL(6,3,8,20); all three carry M1_AMORPHOUS|M1_MINDLESS. Blue's MR_COLD|MR_POISON conveys permanently via should_givit (eat.c:983-988); spotted/ochre's MR_ACID|MR_STONE convey TIMED via temp_givit (eat.c:991-997). 0 corrections. See companion-audit.md. -->
 
 Stationary or near-stationary. The blue jelly's passive cold and the spotted jelly's passive acid bite even when you hit them.
 
