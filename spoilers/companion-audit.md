@@ -9104,3 +9104,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 80/183 done.
+
+## 2026-05-19 — v3 audit batch 17: Sokoban L1B (#81), Elemental Planes (#82), Attack Wands (#83), Spell Tables (#84), Fungi (#85)
+
+All five **CLEAN**.
+
+- Sokoban L1B: 12 boulders mapped to `soko4-2.lua`; 10 pits + 2 rolling traps; "D and E remain" tally (12−10=2). No prize claim (correct — this is the entry level).
+- Elemental Planes: plane order Earth→Air→Fire→Water→Astral; random portal placement via `levregion`; three astral altars at x=7/37/67 with shuffled alignment; wrong-altar = `done(ESCAPED)` (`pray.c:1562-1572`); Riders + Angels + aligned clerics; `;` genocide tactic for Water.
+- Attack Wands: warning-shot via `muse.c:1830-1834` `buzz_force_miss`; 6 beam wands (death/sleep/fire/cold/lightning/magic missile) match `muse.c:1842-1847`; visible miss IDs wand via `oseen` at `:1849-1850`; late-game exception list (Stronghold/Knox/endgame/hell/V_tower/quest) at `makemon.c:1291-1293`.
+- Spell Tables: all 41 spell rows match `objects.h:1293-1411`. 5.0 levels: charm monster 5, sleep 3, confuse monster 1, chain lightning attack-school L2. Deferred sphere spells correctly excluded.
+- Fungi `F`: 7 entries match `monsters.h:1614-1676`. Lichen never rots (`mkobj.c:1402`, `eat.c:59`).
+
+### Pass-3 queue
+85/183 done.

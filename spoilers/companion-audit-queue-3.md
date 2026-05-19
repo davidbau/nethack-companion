@@ -90,11 +90,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 78**  L 5324  ( 145 lines)   📖 Luck and Fortune
 - [x] **# 79**  L 8446  (  16 lines)     ↳ Bestiary Tables → Xans and fantastic insects `x`
 - [x] **# 80**  L 5022  ( 100 lines)   📖 Wishes and Wishing
-- [ ] **# 81**  L 6243  (  61 lines)     ↳ Sokoban Solutions → Level 1, Version B
-- [ ] **# 82**  L 5945  (  94 lines)   📖 The Elemental Planes
-- [ ] **# 83**  L 2017  (  13 lines)     ↳ Dangerous Encounters → Attack Wands and the Warning Shot
-- [ ] **# 84**  L 7837  (  72 lines)     ↳ Appendices → Spell Tables
-- [ ] **# 85**  L 8599  (  21 lines)     ↳ Bestiary Tables → Fungi and molds `F`
+- [x] **# 81**  L 6243  (  61 lines)     ↳ Sokoban Solutions → Level 1, Version B
+- [x] **# 82**  L 5945  (  94 lines)   📖 The Elemental Planes
+- [x] **# 83**  L 2017  (  13 lines)     ↳ Dangerous Encounters → Attack Wands and the Warning Shot
+- [x] **# 84**  L 7837  (  72 lines)     ↳ Appendices → Spell Tables
+- [x] **# 85**  L 8599  (  21 lines)     ↳ Bestiary Tables → Fungi and molds `F`
 - [ ] **# 86**  L 2998  ( 115 lines)     ↳ A Practical Identification Strategy → Use-Testing (The Careful Way)
 - [ ] **# 87**  L 7313  (  17 lines)     ↳ Weapons Tables → Dagger
 - [ ] **# 88**  L 1329  (  25 lines)     ↳ Traps and Hazards → Searching and Detection
