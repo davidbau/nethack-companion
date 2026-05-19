@@ -8749,3 +8749,33 @@ Defile rule, exact-word requirement, S_HUMAN/Rider/Angel/minotaur exclusions, bl
 173/183 done.
 
 ---
+
+## 2026-05-19 — v2 audit batch 36: Points of Interest (#174), Axe (#175), Polearms (#176), Field Guide (#177), Xorns (#178)
+
+### Points of Interest (#174) — `spoilers/companion.md:700` — 4 corrections
+
+- **"Occasionally bless" the dipped fountain item** wrong. Per `fountain.c:464-475`, cases 17-20 = uncurse, not bless. No fountain bless outcome exists.
+- **Quaff table treated "Wish granted" and "Water demon" as independent rows** — they're the same case 23 of `rnd(30)` at `fountain.c:314`. Shallow wish odds also overstated: 1/30 is the demon-spawn rate; the wish then requires `rnd(100) > 80 + level_difficulty()` (`fountain.c:78`), so actual shallow wish odds are ~1/150 and zero past DL 20. Merged the rows.
+- **Potion-poly sink transform missing "grave"** — `do.c:416-446` case 3 generates a grave. The ring-drop table at line 873 already lists it; the potion-dip row was inconsistent. Added.
+
+### Polearms (#176) — `spoilers/companion.md:7500` — 1 correction
+
+"the attack is treated as bashing (no strength bonus, no weapon-skill bonus)" — wrong on the Strength half. Adjacent polearm at `uhitm.c:1075-1086` clamps damage to rnd(2), but the strength-bonus branch at `uhitm.c:1447-1469` runs regardless; only `use_weapon_skill` is FALSE. Reworded to: "damage clamps to 1d2 base, weapon-skill bonus doesn't apply (Strength still does)."
+
+### A Field Guide to Dungeon Fauna (#177) — `spoilers/companion.md:1636` — 2 corrections
+
+- **`w` Worms "grow tail segments after each hit"** wrong. Per `worm.c:218-237`, long worms grow on a movement-driven timer (`wgrowtime`), not per hit. Reworded to "grow tail segments as they move."
+- **`P` Puddings "Use silver, dragonhide, or spells"** misleading. No dragonhide weapons exist in 5.0 (DRAGON_HIDE is body-armor-only). Split gate at `uhitm.c:1616-1618` admits IRON|METAL only, so wooden and silver weapons are the actual non-splitters. Reworded to "Use a silver or wooden weapon, or spells."
+
+### Axe (#175) — `spoilers/companion.md:7407` — 0 corrections, badge added
+
+Stats vs `objects.h:236-241`; battle-axe bimanual 3/2 Str at `uhitm.c:1467-1468`; Cleaver = BATTLE_AXE artifact.
+
+### Xorns (#178) — `spoilers/companion.md:8897` — 0 corrections, badge updated
+
+All claims re-verified. Speed 9, M1_WALLWALK (not M1_TUNNEL), AD_PHYS attacks only (worn gear safe).
+
+### Pass-2 queue
+178/183 done.
+
+---

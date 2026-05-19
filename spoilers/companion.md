@@ -698,7 +698,7 @@ rather than a direction.
 ---
 
 ### Points of Interest
-<!-- audit 2026-05-17 #5: 40+ claims verified, 5 corrected (throne identify "up to 5" → 1-4 or all; sink polymorph message; rotten "fruit" → slime molds; "less" → "lesser"; sink-kick missing amorous demon outcome). See companion-audit.md. -->
+<!-- audit 2026-05-17 #5 (re-audit 2026-05-19 v2 #174): 40+ claims verified, 5 corrected (throne identify "up to 5" → 1-4 or all; sink polymorph message; rotten "fruit" → slime molds; "less" → "lesser"; sink-kick missing amorous demon outcome). v2 fixes: (a) Fountain dipping "occasionally bless" wrong — fountain.c:464-475 cases 17-20 = uncurse, not bless. Reworded. (b) Quaff table separated "Wish granted" and "Water demon" as if independent — they're the same case 23. Wish odds ~1/30 overstated: the 1/30 is water-demon spawn rate (fountain.c:247), and the wish then requires rnd(100) > 80 + level_difficulty() (fountain.c:78), so actual shallow wish odds are ~1/150 and zero past DL 20. Merged the rows. (c) Potion-poly sink transform missing "grave" — do.c:416-446 case 3 generates a grave (with floor fallback). The ring-drop table at line 873 already lists it; the potion-dip row was inconsistent. Added. See companion-audit.md. -->
 
 Not everything interesting in the dungeon is trying to kill you.
 Scattered throughout the levels are fixtures that reward the
@@ -717,8 +717,7 @@ the basin.
 
 | Outcome         | Effect                                                |
 | --------------- | ----------------------------------------------------- |
-| Wish granted    | A water demon appears and grants a wish (rare, ~1/30, and falling off with depth — practically zero past DLvl 20) |
-| Water demon     | A hostile water demon appears                         |
+| Water demon     | A water demon appears (~1/30). On shallow levels he may grant a wish; deeper down he's just hostile. Wish odds work out to roughly 1/150 shallow and zero past DLvl 20. |
 | Healing         | You regain hit points                                 |
 | Attribute boost | A random attribute increases                          |
 | Attribute loss  | A random attribute decreases                          |
@@ -735,8 +734,8 @@ characters should know by heart. If you're at least experience level
 5, dipping a long sword may transform it into Excalibur, one of the
 finest weapons in the dungeon. Knights get a generous 1/6 chance per
 dip; everyone else gets a meager 1/30. Otherwise, dipping can rust
-your gear, summon hostile water creatures, or occasionally bless
-the dipped item.
+your gear, summon hostile water creatures, or occasionally
+uncurse the dipped item.
 
 The conventional wisdom: if you're a lawful Knight carrying a long
 sword, dip in every fountain you see until Excalibur appears. Other
@@ -826,7 +825,7 @@ risking a sip. Five potions print unique sink-only messages:
 
 | Sink message                                                 | Potion             |
 | ------------------------------------------------------------ | ------------------ |
-| *"The sink transforms into a fountain/throne/altar!"* (or *"The sink vanishes."*) | polymorph (destroys the sink) |
+| *"The sink transforms into a fountain/throne/altar/grave!"* (or *"The sink vanishes."*) | polymorph (destroys the sink) |
 | *"Muddy waste pops up from the drain..."* (first time per sink also drops a ring) | levitation |
 | *"It leaves an oily film on the basin."*                     | oil                |
 | *"The drain seems less clogged."* (blind: *"a sucking sound"*)| acid               |
@@ -1635,7 +1634,7 @@ messages still come through.)
 ---
 
 ### A Field Guide to Dungeon Fauna
-<!-- audit 2026-05-18 #130: chapter overview verified against include/defsym.h symbols and individual monsters.h entries. 2 corrections: (1) "Xan, a leg-wound trapper" misreads — xan does AT_STNG AD_LEGS (sting cripples legs) but is NOT a trapper (S_TRAPPER is the engulfer t-class). Reworded. (2) "Leprechaun single bite drains gold" — leprechaun is AT_CLAW AD_SGLD (monsters.h:660), not bite. Reworded. All other class-symbol mappings, monster stats, and tactical claims verified clean. -->
+<!-- audit 2026-05-18 #130 (re-audit 2026-05-19 v2 #177): chapter overview verified against include/defsym.h symbols and individual monsters.h entries. 2 corrections: (1) "Xan, a leg-wound trapper" misreads — xan does AT_STNG AD_LEGS (sting cripples legs) but is NOT a trapper (S_TRAPPER is the engulfer t-class). Reworded. (2) "Leprechaun single bite drains gold" — leprechaun is AT_CLAW AD_SGLD (monsters.h:660), not bite. Reworded. All other class-symbol mappings, monster stats, and tactical claims verified clean. v2 fixes: (a) `w` Worms "grow tail segments after each hit" was wrong — per worm.c:218-237, long worms grow on a movement-driven timer (wgrowtime per worm number), not per hit. Reworded to "grow tail segments as they move." (b) `P` Puddings "Use silver, dragonhide, or spells" — "dragonhide" misleading; there are no dragonhide weapons in 5.0 (DRAGON_HIDE material is body-armor-only). The split gate at uhitm.c:1616-1618 admits IRON|METAL only, so wooden and silver weapons are the actual non-splitters. Reworded to "Use a silver or wooden weapon, or spells." See companion-audit.md. -->
 
 
 The Mazes are home to hundreds of monster species, organized into
@@ -1691,7 +1690,7 @@ AC / attack details on every monster, see the
 | `N`    | Nagas             | Large serpent-bodied creatures. Red nagas breathe fire, black nagas spit acid, golden nagas cast spells, guardian nagas spit Str-drain poison and have a paralyzing bite. Tough; speeds 12–16. |
 | `O`    | Ogres             | Strong melee fighters. Ogre lords and kings are tougher.                                             |
 | `p`    | Piercers          | Disguise as stalactites; drop from the ceiling onto whatever walks below. The fall does serious damage. Hard to spot in advance. |
-| `P`    | Puddings          | Black AND brown puddings split when hit in melee with an iron or metal weapon (scalpel and tsurugi count). Use silver, dragonhide, or spells.                                     |
+| `P`    | Puddings          | Black AND brown puddings split when hit in melee with an iron or metal weapon (scalpel and tsurugi count). Use a silver or wooden weapon, or spells.                              |
 | `q`    | Quadrupeds        | Multi-attack mid-game bruisers. The **rothe** is the famous one (three attacks per turn at sluggish speed 9, dangerous in packs); mumakil are solo two-attack bruisers (4d12 butt + 2d6 bite).                              |
 | `R`    | Rust monster / disenchanter | Rust monsters corrode worn iron armor when they hit you, and your wielded iron weapon when you hit them. Use non-iron alternatives (mithril, silver, dragonhide) or take iron gear off before the fight; iron items kept in your inventory aren't touched. **Disenchanters** drain enchantment on hit and have their own write-up under Dangerous Encounters. |
 | `S`    | Snakes            | Cobras and pit vipers poison. Water moccasins come from fountains.                                   |
@@ -1700,7 +1699,7 @@ AC / attack details on every monster, see the
 | `u`    | Horses / unicorns | Horses are usually mountable, mostly peaceful in the wild. Unicorns are color-coded by alignment: same-aligned spawn peaceful, cross-aligned hostile. The gem-throwing negotiation playbook is in the Luck chapter. |
 | `U`    | Umber hulk        | Confuses on sight. Avoid looking at them directly.                                                   |
 | `v`    | Vortices          | Engulfing wisps. Air, fire, ice, and steam vortices each apply their element to whatever they engulf. Kill at range. |
-| `w`    | Worms             | Long worms grow tail segments after each hit and can be a corridor in themselves. Purple worms swallow you whole (see Don't Want, below). |
+| `w`    | Worms             | Long worms grow tail segments as they move and can be a corridor in themselves. Purple worms swallow you whole (see Don't Want, below). |
 | `W`    | Wraiths           | Drain levels on hit. But their corpses grant a level, so eat them fresh.                             |
 | `y`    | Yellow/black lights | Explode adjacent. Yellow blinds you; black hallucinates you. Black lights are invisible without *see invisible*. Kill at range. |
 | `Y`    | Yetis             | Tough melee combatants. Corpses may grant cold resistance.                                           |
@@ -7406,6 +7405,7 @@ other bimanual weapon.
 :::
 
 #### Axe
+<!-- audit 2026-05-19 v2 #175: stats verified vs objects.h:236-241 (axe 1d6/1d4, battle-axe 1d8+1d4 small / 1d6+2d4 large with weapon.c:251-289 bonus dice). Both use P_AXE skill; battle-axe bi=1 gets the 3/2 Str bimanual bonus (uhitm.c:1467-1468). Cleaver is the BATTLE_AXE artifact (artilist.h:114-116). 0 corrections. -->
 
 ::: dense-table
 
@@ -7499,9 +7499,9 @@ other bimanual weapon.
 :::
 
 #### Polearms
-<!-- audit 2026-05-17 #41: 12 rows / stats verified against objects.h + weapon.c dmgval. Corrected: "reach of two squares" was a class invariant claim (actually skill-dependent in apply.c:3355-3382); "with one empty intervening square" was fabricated (no such check in use_pole); "can't be used in melee against an adjacent monster" was wrong (adjacent attack works as bashing per uhitm.c:1467-1484, just without strength/skill bonus). See companion-audit.md. -->
+<!-- audit 2026-05-17 #41 (re-audit 2026-05-19 v2 #176): 12 rows / stats verified against objects.h + weapon.c dmgval. Corrected: "reach of two squares" was a class invariant claim (actually skill-dependent in apply.c:3355-3382); "with one empty intervening square" was fabricated (no such check in use_pole); "can't be used in melee against an adjacent monster" was wrong (adjacent attack works as bashing per uhitm.c:1467-1484, just without strength/skill bonus). v2 fix: "no strength bonus, no weapon-skill bonus" was wrong on the Strength half. Adjacent polearm goes through the ranged-clamp at uhitm.c:1075-1086 (damage to rnd(2)), but the strength-bonus branch at uhitm.c:1447-1469 runs regardless because get_dmg_bonus stays TRUE; only use_weapon_skill is FALSE on this path. Reworded: damage clamps to 1d2 base, weapon-skill bonus doesn't apply, Strength still does. See companion-audit.md. -->
 
-All polearms are two-handed. To strike at range, `#apply` the weapon (not wield-and-attack): you can hit at distance 2 orthogonally at Basic skill, with extra positions opening up at Skilled. You can still hit an adjacent monster the normal way with a polearm in hand, but the attack is treated as bashing (no strength bonus, no weapon-skill bonus), so reach is what makes them worth carrying. Notes below describe each entry's extra damage; the reach mechanic is identical across the class.
+All polearms are two-handed. To strike at range, `#apply` the weapon (not wield-and-attack): you can hit at distance 2 orthogonally at Basic skill, with extra positions opening up at Skilled. You can still hit an adjacent monster the normal way with a polearm in hand, but the attack is treated as bashing — damage clamps to 1d2 base before bonuses and the weapon-skill bonus doesn't apply (Strength still does). Reach is what makes them worth carrying. Notes below describe each entry's extra damage; the reach mechanic is identical across the class.
 
 ::: dense-table
 
@@ -8896,7 +8896,7 @@ All wraiths are undead and follow you up and down stairs.
 :::
 
 #### Xorns `X`
-<!-- audit 2026-05-18 #75: stats clean against monsters.h:2357-2366. Corrected two prose errors: (1) xorns DON'T tunnel — M1_WALLWALK phases through walls without leaving rubble, NOT M1_TUNNEL. (2) Player's worn weapons/armor are NOT at risk: xorn attacks are AD_PHYS only; metallivore behavior in monmove.c:1664 only eats metal off the floor. Eating xorn corpse grants temporary stone resistance. See companion-audit.md. -->
+<!-- audit 2026-05-18 #75 (re-audit 2026-05-19 v2 #178): stats clean against monsters.h:2357-2366. Corrected two prose errors: (1) xorns DON'T tunnel — M1_WALLWALK phases through walls without leaving rubble, NOT M1_TUNNEL. (2) Player's worn weapons/armor are NOT at risk: xorn attacks are AD_PHYS only; metallivore behavior in monmove.c:1664 only eats metal off the floor. Eating xorn corpse grants temporary stone resistance. v2 re-verified: speed 9 (not fast); 3-claw + bite multi-attack; MR_FIRE|MR_COLD|MR_STONE; M1_WALLWALK not M1_TUNNEL. 0 new corrections. See companion-audit.md. -->
 
 D&D's three-armed, three-eyed creatures from the Elemental Plane of Earth. They **phase through walls** (no rubble, no dig) and **eat metal items off the floor** — including the orcish dagger you were about to pick up. Their claws and bite are physical only, so worn armor and wielded weapons aren't directly at risk, but they hit hard for their level. The corpse grants temporary stoning resistance.
 
@@ -9313,9 +9313,9 @@ repeat.
 
 **Gold dragon scale mail eliminates your light source slot.** The
 mail provides a 2-square innate light radius in addition to its
-hallucination resistance. In the late game, when inventory is a puzzle and
-every slot counts, wearing it lets you retire the lamp and use
-that slot for something that actually matters.
+hallucination resistance. In the late game, when inventory is a
+puzzle and every slot counts, wearing it lets you retire the lamp
+and free that slot for something else.
 
 #### What to Watch Out For
 

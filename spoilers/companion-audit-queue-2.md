@@ -182,11 +182,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#171**  L 8978  (  42 lines)     ↳ Bestiary Tables → Major demons `&`
 - [x] **#172**  L 2300  (  52 lines)     ↳ Dangerous Encounters → Delayed Deaths
 - [x] **#173**  L 9088  ( 200 lines)   📖 What Changed Since Last Time
-- [ ] **#174**  L  693  ( 177 lines)   📖 Points of Interest
-- [ ] **#175**  L 7341  (  12 lines)     ↳ Weapons Tables → Axe
-- [ ] **#176**  L 7433  (  24 lines)     ↳ Weapons Tables → Polearms
-- [ ] **#177**  L 1621  ( 101 lines)   📖 A Field Guide to Dungeon Fauna
-- [ ] **#178**  L 8831  (  13 lines)     ↳ Bestiary Tables → Xorns `X`
+- [x] **#174**  L  693  ( 177 lines)   📖 Points of Interest
+- [x] **#175**  L 7341  (  12 lines)     ↳ Weapons Tables → Axe
+- [x] **#176**  L 7433  (  24 lines)     ↳ Weapons Tables → Polearms
+- [x] **#177**  L 1621  ( 101 lines)   📖 A Field Guide to Dungeon Fauna
+- [x] **#178**  L 8831  (  13 lines)     ↳ Bestiary Tables → Xorns `X`
 - [ ] **#179**  L 7833  ( 103 lines)     ↳ Appendices → Skill Caps
 - [ ] **#180**  L 9065  (  23 lines)     ↳ Bestiary Tables → Lizards `:`
 - [ ] **#181**  L 7483  (  13 lines)     ↳ Weapons Tables → Trident

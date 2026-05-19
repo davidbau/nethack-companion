@@ -858,7 +858,7 @@ a direction.</p>
 </section>
 <section id="points-of-interest" class="level3">
 <h3>Points of Interest</h3>
-<!-- audit 2026-05-17 #5: 40+ claims verified, 5 corrected (throne identify "up to 5" → 1-4 or all; sink polymorph message; rotten "fruit" → slime molds; "less" → "lesser"; sink-kick missing amorous demon outcome). See companion-audit.md. -->
+<!-- audit 2026-05-17 #5 (re-audit 2026-05-19 v2 #174): 40+ claims verified, 5 corrected (throne identify "up to 5" → 1-4 or all; sink polymorph message; rotten "fruit" → slime molds; "less" → "lesser"; sink-kick missing amorous demon outcome). v2 fixes: (a) Fountain dipping "occasionally bless" wrong — fountain.c:464-475 cases 17-20 = uncurse, not bless. Reworded. (b) Quaff table separated "Wish granted" and "Water demon" as if independent — they're the same case 23. Wish odds ~1/30 overstated: the 1/30 is water-demon spawn rate (fountain.c:247), and the wish then requires rnd(100) > 80 + level_difficulty() (fountain.c:78), so actual shallow wish odds are ~1/150 and zero past DL 20. Merged the rows. (c) Potion-poly sink transform missing "grave" — do.c:416-446 case 3 generates a grave (with floor fallback). The ring-drop table at line 873 already lists it; the potion-dip row was inconsistent. Added. See companion-audit.md. -->
 <p>Not everything interesting in the dungeon is trying to kill you.
 Scattered throughout the levels are fixtures that reward the curious,
 and occasionally punish them. Learning what to do (and what <em>not</em>
@@ -885,13 +885,10 @@ these reels:</p>
 </thead>
 <tbody>
 <tr>
-<td>Wish granted</td>
-<td>A water demon appears and grants a wish (rare, ~1/30, and falling
-off with depth — practically zero past DLvl 20)</td>
-</tr>
-<tr>
 <td>Water demon</td>
-<td>A hostile water demon appears</td>
+<td>A water demon appears (~1/30). On shallow levels he may grant a
+wish; deeper down he’s just hostile. Wish odds work out to roughly 1/150
+shallow and zero past DLvl 20.</td>
 </tr>
 <tr>
 <td>Healing</td>
@@ -928,7 +925,7 @@ experience level 5, dipping a long sword may transform it into
 Excalibur, one of the finest weapons in the dungeon. Knights get a
 generous 1/6 chance per dip; everyone else gets a meager 1/30.
 Otherwise, dipping can rust your gear, summon hostile water creatures,
-or occasionally bless the dipped item.</p>
+or occasionally uncurse the dipped item.</p>
 <p>The conventional wisdom: if you’re a lawful Knight carrying a long
 sword, dip in every fountain you see until Excalibur appears. Other
 lawful characters should try too, but pack patience. And if you’re not
@@ -1019,8 +1016,8 @@ risking a sip. Five potions print unique sink-only messages:</p>
 </thead>
 <tbody>
 <tr>
-<td><em>“The sink transforms into a fountain/throne/altar!”</em> (or
-<em>“The sink vanishes.”</em>)</td>
+<td><em>“The sink transforms into a fountain/throne/altar/grave!”</em>
+(or <em>“The sink vanishes.”</em>)</td>
 <td>polymorph (destroys the sink)</td>
 </tr>
 <tr>
@@ -2120,7 +2117,7 @@ eucalyptus, or pray.</td>
 <hr />
 <section id="a-field-guide-to-dungeon-fauna" class="level3">
 <h3>A Field Guide to Dungeon Fauna</h3>
-<!-- audit 2026-05-18 #130: chapter overview verified against include/defsym.h symbols and individual monsters.h entries. 2 corrections: (1) "Xan, a leg-wound trapper" misreads — xan does AT_STNG AD_LEGS (sting cripples legs) but is NOT a trapper (S_TRAPPER is the engulfer t-class). Reworded. (2) "Leprechaun single bite drains gold" — leprechaun is AT_CLAW AD_SGLD (monsters.h:660), not bite. Reworded. All other class-symbol mappings, monster stats, and tactical claims verified clean. -->
+<!-- audit 2026-05-18 #130 (re-audit 2026-05-19 v2 #177): chapter overview verified against include/defsym.h symbols and individual monsters.h entries. 2 corrections: (1) "Xan, a leg-wound trapper" misreads — xan does AT_STNG AD_LEGS (sting cripples legs) but is NOT a trapper (S_TRAPPER is the engulfer t-class). Reworded. (2) "Leprechaun single bite drains gold" — leprechaun is AT_CLAW AD_SGLD (monsters.h:660), not bite. Reworded. All other class-symbol mappings, monster stats, and tactical claims verified clean. v2 fixes: (a) `w` Worms "grow tail segments after each hit" was wrong — per worm.c:218-237, long worms grow on a movement-driven timer (wgrowtime per worm number), not per hit. Reworded to "grow tail segments as they move." (b) `P` Puddings "Use silver, dragonhide, or spells" — "dragonhide" misleading; there are no dragonhide weapons in 5.0 (DRAGON_HIDE material is body-armor-only). The split gate at uhitm.c:1616-1618 admits IRON|METAL only, so wooden and silver weapons are the actual non-splitters. Reworded to "Use a silver or wooden weapon, or spells." See companion-audit.md. -->
 <p>The Mazes are home to hundreds of monster species, organized into
 classes denoted by letters. Lowercase letters are generally smaller or
 less dangerous; uppercase letters are larger or more threatening. Color
@@ -2403,8 +2400,8 @@ below. The fall does serious damage. Hard to spot in advance.</td>
 <td><code>P</code></td>
 <td>Puddings</td>
 <td>Black AND brown puddings split when hit in melee with an iron or
-metal weapon (scalpel and tsurugi count). Use silver, dragonhide, or
-spells.</td>
+metal weapon (scalpel and tsurugi count). Use a silver or wooden weapon,
+or spells.</td>
 </tr>
 <tr>
 <td><code>q</code></td>
@@ -2465,9 +2462,8 @@ element to whatever they engulf. Kill at range.</td>
 <tr>
 <td><code>w</code></td>
 <td>Worms</td>
-<td>Long worms grow tail segments after each hit and can be a corridor
-in themselves. Purple worms swallow you whole (see Don’t Want,
-below).</td>
+<td>Long worms grow tail segments as they move and can be a corridor in
+themselves. Purple worms swallow you whole (see Don’t Want, below).</td>
 </tr>
 <tr>
 <td><code>W</code></td>
@@ -10342,6 +10338,7 @@ form.</td>
 </section>
 <section id="axe" class="level4">
 <h4>Axe</h4>
+<!-- audit 2026-05-19 v2 #175: stats verified vs objects.h:236-241 (axe 1d6/1d4, battle-axe 1d8+1d4 small / 1d6+2d4 large with weapon.c:251-289 bonus dice). Both use P_AXE skill; battle-axe bi=1 gets the 3/2 Str bimanual bonus (uhitm.c:1467-1468). Cleaver is the BATTLE_AXE artifact (artilist.h:114-116). 0 corrections. -->
 <div class="dense-table">
 <table>
 <colgroup>
@@ -10709,15 +10706,16 @@ alignment will match the player’s).</td>
 </section>
 <section id="polearms" class="level4">
 <h4>Polearms</h4>
-<!-- audit 2026-05-17 #41: 12 rows / stats verified against objects.h + weapon.c dmgval. Corrected: "reach of two squares" was a class invariant claim (actually skill-dependent in apply.c:3355-3382); "with one empty intervening square" was fabricated (no such check in use_pole); "can't be used in melee against an adjacent monster" was wrong (adjacent attack works as bashing per uhitm.c:1467-1484, just without strength/skill bonus). See companion-audit.md. -->
+<!-- audit 2026-05-17 #41 (re-audit 2026-05-19 v2 #176): 12 rows / stats verified against objects.h + weapon.c dmgval. Corrected: "reach of two squares" was a class invariant claim (actually skill-dependent in apply.c:3355-3382); "with one empty intervening square" was fabricated (no such check in use_pole); "can't be used in melee against an adjacent monster" was wrong (adjacent attack works as bashing per uhitm.c:1467-1484, just without strength/skill bonus). v2 fix: "no strength bonus, no weapon-skill bonus" was wrong on the Strength half. Adjacent polearm goes through the ranged-clamp at uhitm.c:1075-1086 (damage to rnd(2)), but the strength-bonus branch at uhitm.c:1447-1469 runs regardless because get_dmg_bonus stays TRUE; only use_weapon_skill is FALSE on this path. Reworded: damage clamps to 1d2 base, weapon-skill bonus doesn't apply, Strength still does. See companion-audit.md. -->
 <p>All polearms are two-handed. To strike at range, <code>#apply</code>
 the weapon (not wield-and-attack): you can hit at distance 2
 orthogonally at Basic skill, with extra positions opening up at Skilled.
 You can still hit an adjacent monster the normal way with a polearm in
-hand, but the attack is treated as bashing (no strength bonus, no
-weapon-skill bonus), so reach is what makes them worth carrying. Notes
-below describe each entry’s extra damage; the reach mechanic is
-identical across the class.</p>
+hand, but the attack is treated as bashing — damage clamps to 1d2 base
+before bonuses and the weapon-skill bonus doesn’t apply (Strength still
+does). Reach is what makes them worth carrying. Notes below describe
+each entry’s extra damage; the reach mechanic is identical across the
+class.</p>
 <div class="dense-table">
 <table>
 <colgroup>
@@ -17730,7 +17728,7 @@ the game. Always eat a wraith corpse if you can.</p>
 </section>
 <section id="xorns-x" class="level4">
 <h4>Xorns <code>X</code></h4>
-<!-- audit 2026-05-18 #75: stats clean against monsters.h:2357-2366. Corrected two prose errors: (1) xorns DON'T tunnel — M1_WALLWALK phases through walls without leaving rubble, NOT M1_TUNNEL. (2) Player's worn weapons/armor are NOT at risk: xorn attacks are AD_PHYS only; metallivore behavior in monmove.c:1664 only eats metal off the floor. Eating xorn corpse grants temporary stone resistance. See companion-audit.md. -->
+<!-- audit 2026-05-18 #75 (re-audit 2026-05-19 v2 #178): stats clean against monsters.h:2357-2366. Corrected two prose errors: (1) xorns DON'T tunnel — M1_WALLWALK phases through walls without leaving rubble, NOT M1_TUNNEL. (2) Player's worn weapons/armor are NOT at risk: xorn attacks are AD_PHYS only; metallivore behavior in monmove.c:1664 only eats metal off the floor. Eating xorn corpse grants temporary stone resistance. v2 re-verified: speed 9 (not fast); 3-claw + bite multi-attack; MR_FIRE|MR_COLD|MR_STONE; M1_WALLWALK not M1_TUNNEL. 0 new corrections. See companion-audit.md. -->
 <p>D&amp;D’s three-armed, three-eyed creatures from the Elemental Plane
 of Earth. They <strong>phase through walls</strong> (no rubble, no dig)
 and <strong>eat metal items off the floor</strong> — including the
@@ -19665,7 +19663,7 @@ chokepoint, fight in the open room, reposition as bat, repeat.</p>
 slot.</strong> The mail provides a 2-square innate light radius in
 addition to its hallucination resistance. In the late game, when
 inventory is a puzzle and every slot counts, wearing it lets you retire
-the lamp and use that slot for something that actually matters.</p>
+the lamp and free that slot for something else.</p>
 </section>
 <section id="what-to-watch-out-for" class="level4">
 <h4>What to Watch Out For</h4>
