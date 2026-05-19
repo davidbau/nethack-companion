@@ -519,7 +519,7 @@ dungeon's frequent act of goodwill.
 ---
 
 ### The Lay of the Land
-<!-- audit 2026-05-18 #81: 20 numeric claims verified against dungeon.lua + medusa-*.lua + castle.lua + minetn-*.lua. DoD 25-30 levels; Gnomish Mines DL 2-4; Sokoban-up off Oracle; 4 levels × 2 variants; Oracle DL 5-9; Big Room 40% chance DL 10-12; Rogue DL 15-18; Mine's End 3 variants with luckstone; Quest portal DL 11-16 (chainlevel oracle base=6 range=2); Fort Ludios DL 18-22 portal; Medusa DL ~21-25; Castle DL ~27 bottom of DoD; 4 Medusa layouts; Perseus loot 75/50/25/50; 1-in-7 orcish Minetown. 0 corrections. See companion-audit.md. -->
+<!-- audit 2026-05-18 #81 (re-audit 2026-05-18 v2 #90): 20 numeric claims verified against dungeon.lua + medusa-*.lua + castle.lua + minetn-*.lua. DoD 25-30 levels; Gnomish Mines DL 2-4; Sokoban-up off Oracle; 4 levels × 2 variants; Oracle DL 5-9; Big Room 40% chance DL 10-12; Rogue DL 15-18; Mine's End 3 variants with luckstone; Quest portal DL 11-16 (chainlevel oracle base=6 range=2); Fort Ludios DL 18-22 portal; Medusa DL ~21-25; Castle DL ~27 bottom of DoD; 4 Medusa layouts; Perseus loot 75/50/25/50; 1-in-7 orcish Minetown. v2 fixes: (a) Map-symbols table listed `# Sink` — wrong for 5.0. Per defsym.h:133 and fixes5-0-0.txt:827, the sink glyph changed from `#` to white `{`; it now shares the `{` glyph with fountain (bright blue), and getpos.c:1046-1062 matches travel/farlook on the displayed symbol, so typing `#` no longer cycles to sinks. Merged the `{` row to "Fountain (bright blue) or sink (white)" and removed the `# Sink` row. (b) Themed-rooms paragraph conflated "trap room" with "teleportation hub" — themerms.lua:102-114 places one randomly chosen trap type, while themerms.lua:265-279 places 2-4 fixed-destination teleporters. Separated. (c) "Fake Delphi" described an in-room human pretending to be the Oracle — themerms.lua:291-305 contains zero monsters; it's purely a geometric joke (empty rooms within rooms in the Oracle's shape). Rewrote. (d) Light source room "candle, lantern, or lamp" — themerms.lua:205-210 places exactly an oil lamp, lit. Narrowed. (e) Massacre/Mausoleum "wraith corpse for the level boost" was wrong — themerms.lua:173-188 (Massacre) is role corpses only (no wraith); themerms.lua:420-443 (Mausoleum) is an M/V/L/Z monster or @ corpse. Dropped the wraith claim and split Massacre and Mausoleum into separate bullets. See companion-audit.md. -->
 
 The Mazes are procedurally generated. No two visits are quite the
 same. But the dungeon follows patterns, and understanding those
@@ -569,10 +569,9 @@ Learning to read these symbols quickly is important:
 | `+`      | Closed door (or spellbook)    |
 | `<`      | Stairs up                     |
 | `>`      | Stairs down                   |
-| `{`      | Fountain                      |
+| `{`      | Fountain (bright blue) or sink (white) |
 | `_`      | Altar                         |
 | `\`      | Throne                        |
-| `#`      | Sink                          |
 | `^`      | Trap (once revealed)          |
 | `@`      | You (or a human-type monster) |
 
@@ -657,25 +656,29 @@ cross-shaped, four-leaf-clover-shaped, with pillars, with a
 room-inside-a-room). Some have unusual *contents* (a buried-
 treasure cache; a buried-zombies field that wakes up when
 disturbed; a small massacre of statues and old corpses; a
-mausoleum; a teleportation hub of stacked traps; a "fake
-Delphi" room with a non-Oracle pretending to be one; a garden;
-a spider nest; an ice room; a cloud room; a boulder room).
+mausoleum; a trap room seeded with one kind of trap; a separate
+teleportation hub of fixed-destination teleporters; an empty
+room shaped like the Oracle's chamber; a garden; a spider nest;
+an ice room; a cloud room; a boulder room).
 
 The interesting ones for the player:
 
-- **Light source rooms.** They reliably contain a usable lit
-  candle, lantern, or lamp. Free torches.
+- **Light source rooms.** They reliably contain a lit oil
+  lamp. Free torch.
 - **Buried treasure.** The floor needs digging, but the haul
   is real. A pick-axe earns its weight here.
-- **Massacre / mausoleum.** Leave a few corpses for sacrifice.
-  Old corpses sometimes carry surprises (a wraith corpse for the
-  level boost is the famous one).
-- **Spider nest, buried zombies, teleportation hub.** These
-  are traps in everything but name. The encounter scales with
-  level difficulty, so what looks innocuous on Dlvl 4 is rough
-  on Dlvl 18. Recognize the pattern, retreat, prepare, return.
-- **Fake Delphi.** The "Oracle" inside is just a regular human.
-  Don't pay for advice.
+- **Massacre.** Floor strewn with adventurer-role corpses (rogue,
+  ranger, valkyrie, etc.). Useful for sacrifice and for eating
+  the safe ones for intrinsics if you know the role.
+- **Mausoleum.** A small interior chamber with one waiting
+  monster (mummy, vampire, lich, or zombie) or a human corpse.
+  Open the door carefully.
+- **Spider nest, buried zombies, trap room, teleportation hub.**
+  These are traps in everything but name. Spider nest and buried
+  zombies scale with level difficulty, so what looks innocuous
+  on Dlvl 4 is rough on Dlvl 18. Trap rooms can be anything
+  from arrow traps to anti-magic to land mines; recognize the
+  pattern, retreat, prepare, return.
 - **Light-and-frame rooms (pillars, room-in-a-room, blocked
   center).** Tactically excellent for setting up Elbereth
   squares or anchoring a polearm fight.
@@ -806,7 +809,7 @@ first.)
      Vlad's throne: special_throne_effect(), cases 1-4 grant wish and
      destroy throne, cases 5-13 are negative but throne survives. -->
 
-#### Sinks `#`
+#### Sinks `{`
 
 Sinks are the dungeon's most underrated identification tool.
 
@@ -2142,7 +2145,7 @@ against the passive counter, so still don't melee them.) Range-kill
 is the cleanest plan; rings of conflict and pets reliably redirect
 them. **Don't eat the corpse**: it strips a random intrinsic.
 
-<!-- audit 2026-05-18 #179: lurker above (ceiling-hider, M1_HIDE+M1_FLY) and trapper (floor-hider, M1_HIDE) verified vs monsters.h:973-998. Both use AT_ENGL with AD_WRAP+AD_PHYS — NOT AD_DGST (header comment at monsters.h:973-980 explicitly notes the 5.0 retcon away from digestion). Damage handler at mhitu.c:1437-1453. Search/telepathy/warning all valid defenses (detect.c:2016-2092 for search; both have no M1_MINDLESS; warnreveal at detect.c:2107-2120 triggers on mlev/4 ≥ warning level). 0 corrections. See companion-audit.md. -->
+<!-- audit 2026-05-18 #179 (re-audit 2026-05-18 v2 #93): lurker above (ceiling-hider, M1_HIDE+M1_FLY) and trapper (floor-hider, M1_HIDE) verified vs monsters.h:973-998. Both use AT_ENGL with AD_WRAP+AD_PHYS — NOT AD_DGST (header comment at monsters.h:973-980 explicitly notes the 5.0 retcon away from digestion). Damage handler at mhitu.c:1437-1453. Search/telepathy/warning all valid defenses (detect.c:2016-2092 for search; both have no M1_MINDLESS; warnreveal at detect.c:2107-2120 triggers on mlev/4 ≥ warning level). v2: re-verified consistency with the Trappers/lurkers bestiary just audited in v2 #85 — stats and attack types match. Weapons-still-work-while-swallowed verified at uhitm.c:781,805 (mhit guaranteed when u.uswallow). 0 corrections. See companion-audit.md. -->
 #### Engulfment from Hiding
 
 Two monsters hide in plain sight until you walk into them. The
@@ -6574,7 +6577,7 @@ of the small chambers ((17,12), (17,14), or (17,16)) next to the
 treasure zoo.
 
 #### Level 4, Version B (prize: usually amulet of reflection, 25% bag of holding)
-<!-- audit 2026-05-17 #31: prize odds verified (25% BoH / 75% AoR per soko1-2.lua:105). Map data + step instructions are tactical, not statically verifiable. See companion-audit.md. -->
+<!-- audit 2026-05-17 #31 (re-audit 2026-05-18 v2 #91): prize odds verified (25% BoH / 75% AoR per soko1-2.lua:105). Map data + step instructions are tactical, not statically verifiable. v2: full 28-step solution simulated against soko1-2.lua; all three intermediate map states reproduce exactly, final remainder of {O at (13,7), S at (13,8)} matches. Hardfloor + noteleport (soko1-2.lua:7) + no-diagonal-push (hack.c:441-448) verified. 0 corrections. See companion-audit.md. -->
 
 ```
             11111111112222222
@@ -7589,13 +7592,13 @@ kebab bonus.
 :::
 
 #### Dart
-<!-- audit 2026-05-18 #95: dart stats clean vs objects.h:161. Added "Poisonable; Tourist starts with a stack" note (verified via is_poisonable + u_init.c:151). See companion-audit.md. -->
+<!-- audit 2026-05-18 #95 (re-audit 2026-05-18 v2 #89): dart stats clean vs objects.h:161. Added "Poisonable; Tourist starts with a stack" note (verified via is_poisonable + u_init.c:151). v2 fix: Tourist starting stack quantity was "~25–60" — wrong. u_init.c:150-151 gives `{ DART, 2, WEAPON_CLASS, 21, 40, UNDEF_BLESS }`, so trquan() yields 21+rn2(20) = 21–40. Corrected. See companion-audit.md. -->
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| dart | 1d3 / 1d2 | 1 | 2 | — | iron | Poisonable. Tourist starts with a stack of ~25–60 at +2. |
+| dart | 1d3 / 1d2 | 1 | 2 | — | iron | Poisonable. Tourist starts with a stack of ~21–40 at +2. |
 
 :::
 
@@ -8570,7 +8573,7 @@ All fungi and molds are mindless.
 :::
 
 #### Gnomes `G`
-<!-- audit 2026-05-17 #22: 22 cells verified, 0 corrected. All four S_GNOME entries match monsters.h. No "deep gnome" exists in 5.0 (correctly omitted). v2 audit 2026-05-18 #39 (drive-by): gnomish wizard row had the same "spell spell" two-attacks-implied bug as kobold shaman — gnomish wizard has only one AT_MAGC/AD_SPEL at monsters.h:1697. Changed to "cast spell". -->
+<!-- audit 2026-05-17 #22 (re-audit 2026-05-18 v2 #92): 22 cells verified, 0 corrected. All four S_GNOME entries match monsters.h. No "deep gnome" exists in 5.0 (correctly omitted). v2 audit 2026-05-18 #39 (drive-by): gnomish wizard row had the same "spell spell" two-attacks-implied bug as kobold shaman — gnomish wizard has only one AT_MAGC/AD_SPEL at monsters.h:1697. Changed to "cast spell". v2 #92: re-verified all 22 cells against monsters.h:1681-1709; race_peaceful at makemon.c:2283 confirms gnome PCs (Archeologist default) see most S_GNOME as peaceful via MH_GNOME lovemask. 0 new corrections. -->
 
 Mines residents. Gnomish PCs find most of them peaceful. The gnome lord and gnomish wizard are real threats; the gnome king is rare but dangerous.
 

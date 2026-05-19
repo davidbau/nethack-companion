@@ -97,11 +97,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 86**  L 1334  (  26 lines)     ↳ Traps and Hazards → Iron Bars
 - [x] **# 87**  L 1722  ( 204 lines)   📖 What Actually Kills Adventurers
 - [x] **# 88**  L 7519  (  18 lines)     ↳ Weapons Tables → Bow
-- [ ] **# 89**  L 7561  (  11 lines)     ↳ Weapons Tables → Dart
-- [ ] **# 90**  L  517  ( 176 lines)   📖 The Lay of the Land
-- [ ] **# 91**  L 6549  ( 138 lines)     ↳ Sokoban Solutions → Level 4, Version B (prize: usually amulet of reflection, 25% bag of holding)
-- [ ] **# 92**  L 8542  (  16 lines)     ↳ Bestiary Tables → Gnomes `G`
-- [ ] **# 93**  L 2131  (  17 lines)     ↳ Dangerous Encounters → Engulfment from Hiding
+- [x] **# 89**  L 7561  (  11 lines)     ↳ Weapons Tables → Dart
+- [x] **# 90**  L  517  ( 176 lines)   📖 The Lay of the Land
+- [x] **# 91**  L 6549  ( 138 lines)     ↳ Sokoban Solutions → Level 4, Version B (prize: usually amulet of reflection, 25% bag of holding)
+- [x] **# 92**  L 8542  (  16 lines)     ↳ Bestiary Tables → Gnomes `G`
+- [x] **# 93**  L 2131  (  17 lines)     ↳ Dangerous Encounters → Engulfment from Hiding
 - [ ] **# 94**  L 4038  ( 127 lines)   📖 The Armory
 - [ ] **# 95**  L 8168  (  17 lines)     ↳ Bestiary Tables → Mimics `m`
 - [ ] **# 96**  L 2419  ( 118 lines)   📖 Making Friends

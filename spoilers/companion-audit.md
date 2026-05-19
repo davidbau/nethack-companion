@@ -8235,3 +8235,34 @@ All 9 rows (arrow/elven/orcish/silver/ya + bow/elven/orcish/yumi) verified clean
 88/183 done.
 
 ---
+
+## 2026-05-18 — v2 audit batch 19: Dart (#89), The Lay of the Land (#90), Sokoban L4B (#91), Gnomes (#92), Engulfment from Hiding (#93)
+
+### Dart (#89) — `spoilers/companion.md:7598` — 1 correction
+
+Tourist starting dart stack was "~25–60 at +2" — wrong. `u_init.c:150-151` reads `{ DART, 2, WEAPON_CLASS, 21, 40, UNDEF_BLESS }`, so `trquan()` at `u_init.c:1109-1114` yields `21 + rn2(20)` = 21–40. Corrected. Wiki confirms 21–40.
+
+### The Lay of the Land (#90) — `spoilers/companion.md:521` — 5 corrections
+
+- **Sink glyph change (`#` → `{`)**. NetHack 5.0 changed the default sink symbol per `defsym.h:133` and `doc/fixes5-0-0.txt:827` ("change kitchen sink glyph to a white {"). Sink and fountain now share the `{` glyph (white vs. bright blue). The travel/farlook getpos cycle at `getpos.c:1046-1062` matches on the *displayed* symbol, so typing `#` no longer reaches sinks; typing `{` cycles through sinks and fountains together. Map-symbols table at line 564 had `# Sink` row — removed, and merged the fountain row to "Fountain (bright blue) or sink (white)." Sinks section header at line 812 also updated from `#### Sinks \`#\`` to `#### Sinks \`{\``. Confirmed this is the default symset behavior — the IBMgraphics, DECgraphics, RogueLevel symsets either inherit the default `{` or use their own override. Only the legacy IBM symset shows sinks as the same character as fountains (`\xf4`).
+- **Trap room vs. teleportation hub conflation**. Companion lumped them into "a teleportation hub of stacked traps." Source has two distinct themed rooms: `themerms.lua:102-114` (Trap room) places one randomly chosen trap type (arrow / dart / falling rock / bear / land mine / sleep gas / rust / anti-magic) across ~30% of the floor; `themerms.lua:265-279` (Teleportation hub) places 2–4 fixed-destination teleporters. Separated in the prose and in the bullet list.
+- **Fake Delphi fiction**. Companion described it as a room with "a non-Oracle pretending to be one" and a "don't pay for advice" warning. `themerms.lua:291-305` contains **zero monsters** — it's purely a geometric joke: an outer ordinary room with an inner empty 3×3 room laid out like the Oracle's chamber. Rewrote.
+- **Light source room narrowed**. "Lit candle, lantern, or lamp. Free torches." Source at `themerms.lua:205-210` places exactly **a lit oil lamp**, nothing else. Reworded to "a lit oil lamp. Free torch."
+- **Wraith corpse misattribution**. The Massacre/Mausoleum bullet read "Old corpses sometimes carry surprises (a wraith corpse for the level boost is the famous one)." Neither room generates wraith corpses. `themerms.lua:173-188` (Massacre) lists only player-role corpses (apprentice, ninja, valkyrie, etc., from a 27-element role table); `themerms.lua:420-443` (Mausoleum) places an M/V/L/Z monster (mummy, vampire, lich, or zombie) or a human `@` corpse, with a 20% chance of a secret door. Dropped the wraith claim and split Massacre and Mausoleum into separate bullets with accurate contents.
+
+### Sokoban L4B (#91) — `spoilers/companion.md:6579` — 0 corrections
+
+Full 28-step solution simulated against `dat/soko1-2.lua` (note: lua "soko1" = player's Level 4; lua "soko4" = player's Level 1). All three intermediate map states reproduce exactly; final remainder of {O at (13,7), S at (13,8)} matches the closing sentence. Geometry, boulder/hole positions, prize odds (25% BoH / 75% AoR at lua:104-111), hardfloor, noteleport, and no-diagonal-push (`hack.c:441-448`) all verified.
+
+### Gnomes `G` (#92) — `spoilers/companion.md:8575` — 0 corrections
+
+All 22 cells / 4 rows verified vs `monsters.h:1681-1709`. S_GNOME has exactly four entries; no "deep gnome" in 5.0 (correctly omitted). Race peacefulness via `race_peaceful` at `makemon.c:2283` with `MH_GNOME` lovemask confirmed. Gnome lord is the most common Mines gnome (frequency 2 vs. 1 for the others). Drive-by fix from v1 audit (`spell spell` → `cast spell` for gnomish wizard) still correct.
+
+### Engulfment from Hiding (#93) — `spoilers/companion.md:2149` — 0 corrections
+
+Section consistent with the v2 #85 bestiary audit of trappers/lurkers. AD_WRAP+AD_PHYS, M1_HIDE+M1_FLY ceiling-hider lurker / floor-hider trapper, search/telepathy/warning defenses, weapons-still-work-while-swallowed (`uhitm.c:781,805` `mhit = (tmp > dieroll || u.uswallow)`) all verified. 0 corrections.
+
+### Pass-2 queue
+93/183 done.
+
+---
