@@ -6943,7 +6943,7 @@ gives you "something in your hand" instead), so be sure you can
 get the artifact before asking.
 
 #### Combining Conducts
-<!-- audit 2026-05-17 #52 (re-audit 2026-05-18 v2 #114): u_conduct/u_roleplay fields verified against insight.c + you.h + topten.c. Verified: nudist/blind tracking since 3.6, 5.0 added pauper/petless/permadeaf/sokoban/bonesless, vegan ⊂ vegetarian hierarchy, show_conduct end-screen listing. Cross-section fix in Bonesless below removed false claims about lucky-no-bones earning the conduct and about #conduct tracking lifesaving uses. v2 fix: summary line misclassified two of the five new conducts. Pauper, Permadeaf, and Bonesless are start-of-game options (optlist.h:213-215 for `bones`, 268 for `permadeaf`, 559 for `pauper`); Sokoban is tracked from in-game actions. Petless is NOT a start-of-game option — no `petless` option exists. u.uconduct.pets++ at dog.c:87 is unconditional (the comment at dog.c:77-79 says the starting pet is created before in_moveloop, but it still bumps the counter). So Petless requires never having a pet — including the starting one — which only Pauper provides (u_init.c:1308-1309 early-return). Reworded summary line to reflect: Pauper/Permadeaf/Bonesless = start options, Sokoban = in-game tracked, Petless = Pauper sub-conduct. See companion-audit.md. -->
+<!-- audit 2026-05-17 #52 (re-audit 2026-05-18 v2 #114, v3 #178): v3 corrected a false v2 claim that Pauper suppresses the starting pet. It doesn't — `makedog()` at dog.c:219-229 only returns NULL when `gp.preferred_pet == 'n'`; Pauper's u_init.c:1308-1309 only short-circuits `ini_inv` (items), not pet creation. `dog.c:262-267` shows Pauper specifically skips the pony saddle but still gets the pony. So the only way to skip the starting pet is `OPTIONS=pettype:none`. Reworded the summary accordingly. v1+v2 verified: nudist/blind tracking since 3.6, 5.0 added pauper/petless/permadeaf/sokoban/bonesless, vegan ⊂ vegetarian hierarchy, show_conduct end-screen listing. Cross-section: Bonesless removed false lucky-no-bones claim. See companion-audit.md. -->
 
 The real prestige comes from combining multiple conducts. A
 vegetarian atheist run is substantially harder than either alone.
@@ -6969,11 +6969,12 @@ Mazes 5.0 added five more tracked conducts: Pauper, Petless,
 Permadeaf, Sokoban, and Bonesless. Pauper, Permadeaf, and Bonesless
 are start-of-game options (you opt in or out before play). Sokoban
 is tracked automatically based on what you do during the run.
-Petless is also gameplay-tracked, but suppressing the starting pet
-requires either `OPTIONS=pettype:none` or playing Pauper.
+Petless is also gameplay-tracked: suppressing the starting pet
+requires `OPTIONS=pettype:none` in your rcfile. (Pauper suppresses
+your starting inventory but still gives you a pet.)
 
 #### Pauper (new in 5.0)
-<!-- audit 2026-05-17 #72 (re-audit 2026-05-19 v2 #129): ini_inv early-return at u_init.c:1308-1309 confirmed (no starting items at all, not just no armor/gold). nudist cascade at options.c:5290-5293. End-of-game string at insight.c:2117-2119. xlogfile at topten.c:604. Corrected "permanent conduct, set at birth and never lost" — pauper flag itself is permanent, but the cascading nudist flag IS cleared the moment you wear armor (worn.c:135-136). Added the pauper compensations from u_init.c:870+ (weapon-skill slots, known spell/item per role, supply chests). v2 fix: "rcfile or command line only" was wrong — pauper is `set_in_config` at optlist.h:559, which means rcfile or NETHACKOPTIONS env. Unix command-line option parsing in unixmain.c:343-426 has no generic `-pauper` handler (same pattern as the Permadeaf `-Dpermadeaf` fix in v2 #122). Reworded to "rcfile or NETHACKOPTIONS env only." Applied the same fix to the Bonesless section since the same wording appears there too. See companion-audit.md. -->
+<!-- audit 2026-05-17 #72 (re-audit 2026-05-19 v2 #129, v3 #178): v3 expanded the pauper role-knowledge list. Per pauper_reinit at u_init.c:890-922, Cleric/Knight/Monk all know SPE_PROTECTION, and Cave Dweller knows FLINT — these were missing from the v2 list. Added them; Protection book is a load-bearing early-game spell for those three roles, and recognizing it on sight in supply chests is the kind of edge a pauper actually needs. v2 fix: "rcfile or command line only" was wrong — pauper is `set_in_config` at optlist.h:559, meaning rcfile or NETHACKOPTIONS env. v1: ini_inv early-return at u_init.c:1308-1309 confirmed (suppresses items only, not pet); nudist cascade at options.c:5290-5293; end-of-game string at insight.c:2117-2119; xlogfile at topten.c:604. Note: Pauper does NOT suppress the starting pet (`makedog` at dog.c:219-229 only checks pettype:none; dog.c:262-267 just skips the saddle for Pauper). See companion-audit.md. -->
 
 Start with absolutely nothing: no gold, no inventory, no armor, no
 starting weapon. Set `OPTIONS=pauper` in your rcfile (rcfile or
@@ -6985,12 +6986,13 @@ empty, not about staying penniless.
 
 To keep the start from being impossible, the game compensates:
 you get two unspent weapon-skill slots and your role knows one
-signature spell or item (Wizard knows force bolt, Healer knows
-healing, Archeologist knows touchstone, Rogue and Tourist know
-sack, Cleric knows water, Samurai knows gunyoki rations). The
-**supply chests** scattered on early levels above the Oracle (a
-feature in every 5.0 game, not just pauper) can provide much of
-your first kit.
+signature spell or item. Wizard knows force bolt; Healer knows
+healing; Cleric, Knight, and Monk all know protection (Cleric
+also knows water); Archeologist knows touchstone; Cave Dweller
+knows flint; Rogue and Tourist know sack; Samurai knows gunyoki
+rations. The **supply chests** scattered on early levels above
+the Oracle (a feature in every 5.0 game, not just pauper) can
+provide much of your first kit.
 
 #### Petless (new in 5.0)
 <!-- audit 2026-05-17 #50: all claims verified. pettype:none bypasses pet_type via dog.c:225-229; tamedog increments u.uconduct.pets across all taming paths; minion.c:533-539 explicitly preserves petless on the endgame angel. xlogfile achievement at topten.c (add_achieveX "petless"). 0 corrections. v2 audit 2026-05-18 #59: corrected one fabricated mechanism. "Dairy products to foocubi" is not a thing — befriend_with_obj at mondata.h:255-261 gates food-throw taming on is_domestic(ptr) (plus monkey/ape + banana), and foocubi aren't domestic. The wiki-known foocubus interaction is throwing a ring of adornment (pacification, not taming), not dairy. Replaced with "food thrown at hostile dogs and cats" — the actual food-throw taming path that was missing from the list. See companion-audit.md. -->

@@ -185,11 +185,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#173**  L 3179  (  39 lines)     ↳ A Practical Identification Strategy → A Practical Strategy
 - [x] **#174**  L 7383  (  13 lines)     ↳ Weapons Tables → Long sword
 - [x] **#175**  L 8620  (  16 lines)     ↳ Bestiary Tables → Gnomes `G`
-- [ ] **#176**  L 1997  (  20 lines)     ↳ Dangerous Encounters → Drowning
-- [ ] **#177**  L 4507  ( 218 lines)   📖 Divine Relations
-- [ ] **#178**  L 6973  (  20 lines)     ↳ Voluntary Challenges → Pauper (new in 5.0)
-- [ ] **#179**  L 2989  (   9 lines)     ↳ A Practical Identification Strategy → The Sink Test (Rings)
-- [ ] **#180**  L  707  ( 179 lines)   📖 Points of Interest
+- [x] **#176**  L 1997  (  20 lines)     ↳ Dangerous Encounters → Drowning
+- [x] **#177**  L 4507  ( 218 lines)   📖 Divine Relations
+- [x] **#178**  L 6973  (  20 lines)     ↳ Voluntary Challenges → Pauper (new in 5.0)
+- [x] **#179**  L 2989  (   9 lines)     ↳ A Practical Identification Strategy → The Sink Test (Rings)
+- [x] **#180**  L  707  ( 179 lines)   📖 Points of Interest
 - [ ] **#181**  L  139  ( 197 lines)   📖 Choosing Your Expedition
 - [ ] **#182**  L 8051  (  18 lines)     ↳ Bestiary Tables → Cockatrices `c`
 - [ ] **#183**  L 8729  (  19 lines)     ↳ Bestiary Tables → Nagas `N`

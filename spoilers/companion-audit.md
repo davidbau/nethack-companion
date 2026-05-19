@@ -9351,3 +9351,18 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 175/183 done.
+
+## 2026-05-19 — v3 audit batch 36: Drowning (#176), Divine Relations (#177), Pauper (#178), Sink Test (#179), Points of Interest (#180)
+
+Four CLEAN, one with TWO real findings on Pauper that also touches the v3 #75 Combining Conducts section.
+
+- Drowning: drown check uses monster's tile via `uhitm.c:3389` (`is_pool(magr->mx, magr->my)`); Swimming/Amphibious/Breathless cancel grab; encumbrance only matters for falling-in path.
+- Divine Relations: 218-line chapter, all 10 spot-checked mechanics verified. Trouble priority list matches `pray.c:76-101`; HP threshold formula matches `critically_low_hp()`; prayer timeout `rnz(350)`; crowning intrinsics fire/cold/shock/sleep/poison/see-invis at `pray.c:813-818`; sacrifice freshness 50 turns; same-race sac sets `AM_CHAOTIC`/summons demon; altar conversion `rn2(8+u.ulevel)>5`; donation `u.ulevelpeak * rn1(101, 150+cheapskate*40)`.
+- **Pauper (#178)**: **2 corrections**.
+  (a) Role-knowledge list was incomplete. Per `pauper_reinit` at `u_init.c:890-922`, Cleric/Knight/Monk all know SPE_PROTECTION, and Cave Dweller knows FLINT — missing from v2 list. Protection book is load-bearing for early-game survival. Added all four.
+  (b) Cross-section: Combining Conducts (#75 revisit) said "Petless suppressing starting pet requires `OPTIONS=pettype:none` or playing Pauper" — wrong. Per `makedog` at `dog.c:219-229`, only `pettype == 'n'` suppresses the pet. Pauper's `ini_inv` early-return at `u_init.c:1308-1309` only suppresses items. `dog.c:262-267` confirms Pauper just skips the saddle but still gets the pony. Reworded to "requires `OPTIONS=pettype:none`. (Pauper suppresses your starting inventory but still gives you a pet.)" Also updated v2 #114 audit comment to record this correction.
+- Sink Test: drop ring `do.c:498-660`; searching/slow digestion return; other rings consumed.
+- Points of Interest: all v2 fixes intact.
+
+### Pass-3 queue
+180/183 done.
