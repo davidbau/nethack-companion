@@ -9208,3 +9208,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 120/183 done.
+
+## 2026-05-19 — v3 audit batch 25: Flail (#121), Wands and Staves (#122), Bonesless (#123), Gremlins (#124), Zruties (#125)
+
+All five **CLEAN**.
+
+- Flail: 1d6+1 / 1d4+1d4, wt 15, cost 4 (`objects.h:384-386`); grappling hook 1d2/1d6 wt 30 cost 50; Grimtooth is ORCISH_DAGGER-based (not flail) per `artilist.h:123` — section correctly omits any flail artifact.
+- Wands and Staves: 25 wands match `objects.h:1449-1500`. Wishing 1 charge fresh, 1 recharge max, 2nd recharge guaranteed explosion (`read.c:738-762`); wresting 1/121 (`hack.h:1411`); recharge percentages match `read.c:751-758`; make-invisible 31-45 turns; stasis 10-30 turns; all engrave-test messages match `engrave.c:594-682`.
+- Bonesless: `bones` is `set_in_config` (`optlist.h:213-215`), label "bonesless" at `topten.c:605` (`!flags.bones`).
+- Gremlins `g`: gremlin / gargoyle / winged gargoyle match `monsters.h:448-473`. AD_CURS night-only 1/10 (`uhitm.c:3040-3057`); water-split 2/3 (`mon.c:987`).
+- Zruties `z`: Lvl 9 Spd 8 AC 3, 3d4/3d4/3d6 attacks, brown — match `monsters.h:1195-1202`.
+
+### Pass-3 queue
+125/183 done.
