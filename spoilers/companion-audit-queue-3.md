@@ -155,11 +155,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#143**  L 1382  (  51 lines)     ↳ Traps and Hazards → Finding Secret Doors
 - [x] **#144**  L 7597  (  18 lines)     ↳ Weapons Tables → Bow
 - [x] **#145**  L 7032  (  14 lines)     ↳ Voluntary Challenges → Sokoban (new in 5.0)
-- [ ] **#146**  L 8115  (  25 lines)     ↳ Bestiary Tables → Felines `f`
-- [ ] **#147**  L 3939  ( 148 lines)   📖 Tools of the Trade
-- [ ] **#148**  L 8194  (  17 lines)     ↳ Bestiary Tables → Jellies `j`
-- [ ] **#149**  L 1504  (  93 lines)     ↳ Traps and Hazards → Elbereth
-- [ ] **#150**  L 2124  (  31 lines)     ↳ Dangerous Encounters → Enchantment Drain
+- [x] **#146**  L 8115  (  25 lines)     ↳ Bestiary Tables → Felines `f`
+- [x] **#147**  L 3939  ( 148 lines)   📖 Tools of the Trade
+- [x] **#148**  L 8194  (  17 lines)     ↳ Bestiary Tables → Jellies `j`
+- [x] **#149**  L 1504  (  93 lines)     ↳ Traps and Hazards → Elbereth
+- [x] **#150**  L 2124  (  31 lines)     ↳ Dangerous Encounters → Enchantment Drain
 - [ ] **#151**  L 6534  (  79 lines)     ↳ Sokoban Solutions → Level 4, Version A (prize: usually bag of holding, 25% amulet of reflection)
 - [ ] **#152**  L 7674  ( 163 lines)   📖 Armor Tables
 - [ ] **#153**  L 7561  (  13 lines)     ↳ Weapons Tables → Trident

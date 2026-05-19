@@ -9273,3 +9273,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 145/183 done.
+
+## 2026-05-19 — v3 audit batch 30: Felines (#146), Tools of the Trade (#147), Jellies (#148), Elbereth (#149), Enchantment Drain (#150)
+
+All five **CLEAN**.
+
+- Felines `f`: 8 rows match `monsters.h:381-444`. Headnote pet/wild distinctions confirmed.
+- Tools of the Trade: ~40 mechanics verified vs `objects.h`, `mkbox_cnts` chest 0-5/0-7 locked, magic lamp 1/3 djinni × 80% blessed wish, BoH explosion triggers, unicorn horn 7 cures with 35% no-effect uncursed, lock pick 70%+/75%+ Dex bonuses, scroll write rn1 costs, magic marker 30-99 fresh charges with second-recharge always fails.
+- Jellies `j`: 3 rows match `monsters.h:591-620`. Passive AD_COLD/AD_ACID 0d6; ochre AT_ENGL+AT_NONE both AD_ACID 3d6.
+- Elbereth: immunity list `monmove.c:241-302`; exact-word match `engrave.c:251-260`; defile `del_engr_at` + alignment penalty `mon.c:4267-4284`; dust fade on monster step `monmove.c:734`; Gehennom/Planes deadness `In_hell || In_endgame`.
+- Enchantment Drain: disenchanter G_HELL gen; active AD_ENCH `uhitm.c:3619` via `some_armor`; passive `drain_item` silent at `mhitu.c:2508-2515`; 10/90 resist via `obj_resists`; corpse strips intrinsic `attrcurse()` (`eat.c:1270-1275`).
+
+### Pass-3 queue
+150/183 done.
