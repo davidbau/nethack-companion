@@ -35,11 +35,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 23**  L 1274  (  55 lines)     ↳ Traps and Hazards → Dangerous Traps
 - [x] **# 24**  L 8300  (  16 lines)     ↳ Bestiary Tables → Piercers `p`
 - [x] **# 25**  L 7370  (  13 lines)     ↳ Weapons Tables → Broadsword
-- [ ] **# 26**  L 7440  (  12 lines)     ↳ Weapons Tables → Club
-- [ ] **# 27**  L 8491  (  20 lines)     ↳ Bestiary Tables → Angelic beings `A`
-- [ ] **# 28**  L 7585  (  12 lines)     ↳ Weapons Tables → Whip
-- [ ] **# 29**  L 8706  (  23 lines)     ↳ Bestiary Tables → Mummies `M`
-- [ ] **# 30**  L 7499  (  11 lines)     ↳ Weapons Tables → Quarterstaff
+- [x] **# 26**  L 7440  (  12 lines)     ↳ Weapons Tables → Club
+- [x] **# 27**  L 8491  (  20 lines)     ↳ Bestiary Tables → Angelic beings `A`
+- [x] **# 28**  L 7585  (  12 lines)     ↳ Weapons Tables → Whip
+- [x] **# 29**  L 8706  (  23 lines)     ↳ Bestiary Tables → Mummies `M`
+- [x] **# 30**  L 7499  (  11 lines)     ↳ Weapons Tables → Quarterstaff
 - [ ] **# 31**  L 2953  (  36 lines)     ↳ A Practical Identification Strategy → The Engrave Test (Wands)
 - [ ] **# 32**  L 8861  (  12 lines)     ↳ Bestiary Tables → Umber hulks `U`
 - [ ] **# 33**  L 2658  ( 295 lines)     ↳ A Practical Identification Strategy → The Price Is Right

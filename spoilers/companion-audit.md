@@ -8923,3 +8923,25 @@ Rock/iron/glass piercer: Lvl 3/5/7, Spd 1/1/1, AC 3/0/0, bite 2d6/3d6/4d6. Color
 
 ### Pass-3 queue
 25/183 done.
+
+## 2026-05-19 — v3 audit batch 6: Club (#26), Angelic beings (#27), Whip (#28), Mummies (#29), Quarterstaff (#30)
+
+All five **CLEAN**.
+
+### Club (#26) — `spoilers/companion.md:7440` — 0 corrections
+Club 1d6/1d3 wt 30 cost 3 wood P_CLUB. Aklys 1d6/1d3 wt 15 cost 4 iron P_CLUB. Aklys return mechanic `rn2(100)` ~1% misfire (`dothrow.c:1710-1759`) matches "occasional misfire" wording.
+
+### Angelic beings `A` (#27) — `spoilers/companion.md:8491` — 0 corrections
+Couatl, Aleax, Angel, ki-rin, Archon all verified vs `monsters.h:1206-1265`. "All except Aleax fly" and "all except couatl see invisible" match M1_FLY / M1_SEE_INVIS. Couatl bite labeled "poison" defensible — MR_POISON fully blocks AD_DRST per `attrib.c:338-343`.
+
+### Whip (#28) — `spoilers/companion.md:7585` — 0 corrections
+Bullwhip 1d2/1, wt 20, cost 4, LEATHER, P_WHIP. Disarm via `apply.c:3127-3174` requires target `MON_WEP`. Pit-yank `apply.c:3069-3125`. No whip artifacts in `artilist.h`.
+
+### Mummies `M` (#29) — `spoilers/companion.md:8706` — 0 corrections
+All 8 mummies (kobold/gnome/orc/dwarf/elf/human/ettin/giant) match `monsters.h:1901-1968`. All AD_PHYS (NOT AD_DISE — the prompt was wrong). All G_NOCORPSE; MR_COLD|MR_SLEEP|MR_POISON; M2_UNDEAD|M1_MINDLESS.
+
+### Quarterstaff (#30) — `spoilers/companion.md:7499` — 0 corrections
+1d6/1d6, wt 40, cost 5, hit 0, WOOD, P_QUARTERSTAFF, two-handed. Wizard starter (`u_init.c:168`). Caps confirmed: Caveman/Healer/Priest/Wizard = Expert; no Rogue.
+
+### Pass-3 queue
+30/183 done.
