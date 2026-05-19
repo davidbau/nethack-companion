@@ -9325,3 +9325,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 165/183 done.
+
+## 2026-05-19 — v3 audit batch 34: Castle landmark (#166), Acknowledgements (#167), Polymorph Restrictions (#168), Knife (#169), Ascension Kit (#170)
+
+All five **CLEAN**.
+
+- Castle landmark: cross-section consistent with full Castle chapter (#129); drawbridge passtune, wand of striking, corner-tower wand chest all consistent.
+- Acknowledgements: all historical claims verified (Hack 1982 / Rogue 1980 / NetHack fork 1987 / Izchak 1994 / 3.4.3 Dec 2003 / 3.6.0 Dec 2015). WCST at Wheaton College 1991 per v2 fix. All names spell correctly.
+- Polymorph Restrictions: `u.uconduct.polyselfs`/`polypiles` at `you.h:155-156`; chameleon/doppelganger/mimic/genetic-engineer corpse routes through polyself; green slime auto-poly via `timeout.c:493`; Unchanging blocks counter increments.
+- Knife: 5 rows match `objects.h:215-233`; crysknife revert ~10% on fixed per `do.c:904-915`.
+- Ascension Kit: gray/silver/blue DSM properties, helm of brilliance/telepathy, gauntlets of power, choking at SATIATED, Izchak's lighting shop all verified.
+
+### Pass-3 queue
+170/183 done.

@@ -175,11 +175,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#163**  L 8211  (  19 lines)     ↳ Bestiary Tables → Kobolds `k`
 - [x] **#164**  L 2302  (  21 lines)     ↳ Dangerous Encounters → Disintegration
 - [x] **#165**  L 8511  (  17 lines)     ↳ Bestiary Tables → Bats and birds `B`
-- [ ] **#166**  L 1189  (  35 lines)     ↳ Branches and Landmarks → The Castle
-- [ ] **#167**  L 9365  ( 166 lines)   📖 Acknowledgements
-- [ ] **#168**  L 6901  (  19 lines)     ↳ Voluntary Challenges → Polymorph Restrictions
-- [ ] **#169**  L 7330  (  15 lines)     ↳ Weapons Tables → Knife
-- [ ] **#170**  L 5805  (  56 lines)   📖 The Ascension Kit
+- [x] **#166**  L 1189  (  35 lines)     ↳ Branches and Landmarks → The Castle
+- [x] **#167**  L 9365  ( 166 lines)   📖 Acknowledgements
+- [x] **#168**  L 6901  (  19 lines)     ↳ Voluntary Challenges → Polymorph Restrictions
+- [x] **#169**  L 7330  (  15 lines)     ↳ Weapons Tables → Knife
+- [x] **#170**  L 5805  (  56 lines)   📖 The Ascension Kit
 - [ ] **#171**  L 8354  (  19 lines)     ↳ Bestiary Tables → Arachnids and centipedes `s`
 - [ ] **#172**  L 5245  (  79 lines)   📖 Curses and How to Break Them
 - [ ] **#173**  L 3179  (  39 lines)     ↳ A Practical Identification Strategy → A Practical Strategy
