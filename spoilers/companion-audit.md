@@ -8427,3 +8427,35 @@ All five guilt-triggering sites verified: squeeze (`hack.c:299, 307`), wand-of-s
 118/183 done.
 
 ---
+
+## 2026-05-19 — v2 audit batch 25: No Genocide (#119), Wishes (#120), The Castle (#121), Permadeaf (#122), Apelike (#123)
+
+### No Genocide (#119) — `spoilers/companion.md:6848` — 1 correction (real)
+
+The book said: "sitting on **Vlad's throne**, which has one outcome that prompts you to genocide a **class**." Both halves wrong:
+- Not Vlad's throne. Genocide is case 8 of `throne_sit_effect` at `sit.c:125-132`, the **regular** throne switch. Vlad's tower thrones take the early-return at `sit.c:63-66` into `special_throne_effect`, which has no genocide case.
+- Not a class. The throne calls `do_genocide(5)` (REALLY|ONTHRONE) — a single-**species** prompt. Class genocide only comes from a blessed scroll via `do_class_genocide()`.
+
+Reworded to "sitting on a throne" + "single species" + "case 8 of 13." Also updated the "ascend without genociding" line that mentioned "never sit Vlad's throne" to "never roll case 8 on a throne."
+
+### Wishes and Wishing (#120) — `spoilers/companion.md:5005, 5081` — 0 prose corrections, badge updated
+
+Re-verified all wish sources: Vlad's throne 4/13 wish rate (`sit.c:241-256`); Amulet pickup wish (`allmain.c:446-451`, `u.uhave.amulet && !u.uevent.amulet_wish`); magic lamp 1/3 emergence × 80% wish-blessed ≈ 27% (`apply.c:1817 !rn2(3)` × `potion.c:2833-2845` blessed=case 0); smoky potion `POTION_OCCUPANT_CHANCE` base 1-in-13 (`hack.h:1409`); fountain ~1/30 demon × 15/100 shallow-floor wish ≈ 1/200 (`fountain.c:78, 314`); Orcus Town magic lamp OR marker guaranteed (`dat/orcus.lua:107-111`). Bare-wish BUC random (`mkobj.c:1846-1851 blessorcurse(otmp,10)` = 1/10 × 1/2 each direction = ~5%/5%/90%); the v1 audit comment had this as ~10%/10%/80% — corrected the statistic in the comment. Artifact denial probabilistic (`objnam.c:5374`), quest artifacts absolutely blocked, `wisharti` counter increments either way. Five mundane substitutions exact (`objnam.c:5003-5018`).
+
+### The Castle (#121) — `spoilers/companion.md:1183` — 1 correction
+
+Brief Castle entry had "A maze section to each side may contain minotaurs" — fabricated. `castle.lua` has no minotaurs and no internal maze rooms; the `des.mazewalk` calls at lines 223-224 fill entry-approach corridors *outside* the walls. Same error already corrected in the full Castle section at line 5454 (v1 #109). Dropped from the brief entry too.
+
+### Permadeaf (#122) — `spoilers/companion.md:6981` — 1 correction + 1 beginner-relevant addition
+
+- **`-Dpermadeaf` command-line claim** wrong. `-D` is the debug/wizard-mode flag (`sys/unix/unixmain.c:359-365`: `wizard = TRUE, discover = FALSE`). It does not accept option names. There is no `-Dpermadeaf` syntax. Dropped the command-line clause; rcfile (`OPTIONS=permadeaf`) is the path.
+- **Added shrieker note** (per agent's "saves a beginner's life" framing under the no-trivia rule). When Deaf, only the *messages* are suppressed. A shrieker still calls `makemon` and `aggravate()` even when Deaf (`mon.c:4089-4106 m_respond_shrieker`: only the `pline` shriek-message is gated on `!Deaf`; the spawn-and-aggravate run unconditionally). A Permadeaf player who steps next to a shrieker gets the consequences without the warning. Added a paragraph naming this trap.
+
+### Apelike creatures `Y` (#123) — `spoilers/companion.md:8893` — 0 corrections, badge updated
+
+All 6 rows re-verified vs `monsters.h:2372-2417`. monkey AD_SITM, ape AT_BITE third attack (no AT_HUGS), owlbear AT_HUGS 2d8, yeti MR_COLD, carnivorous ape AT_HUGS, sasquatch AT_KICK + M1_SEE_INVIS. All match.
+
+### Pass-2 queue
+123/183 done.
+
+---

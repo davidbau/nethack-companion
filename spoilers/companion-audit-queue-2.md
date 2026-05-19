@@ -127,11 +127,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#116**  L 8064  (  15 lines)     ↳ Bestiary Tables → Gremlins `g`
 - [x] **#117**  L 5746  (  56 lines)   📖 The Ascension Kit
 - [x] **#118**  L 6960  (  14 lines)     ↳ Voluntary Challenges → Sokoban (new in 5.0)
-- [ ] **#119**  L 6810  (  26 lines)     ↳ Voluntary Challenges → No Genocide
-- [ ] **#120**  L 4971  ( 100 lines)   📖 Wishes and Wishing
-- [ ] **#121**  L 1170  (  36 lines)     ↳ Branches and Landmarks → The Castle
-- [ ] **#122**  L 6940  (  20 lines)     ↳ Voluntary Challenges → Permadeaf (new in 5.0)
-- [ ] **#123**  L 8844  (  19 lines)     ↳ Bestiary Tables → Apelike creatures `Y`
+- [x] **#119**  L 6810  (  26 lines)     ↳ Voluntary Challenges → No Genocide
+- [x] **#120**  L 4971  ( 100 lines)   📖 Wishes and Wishing
+- [x] **#121**  L 1170  (  36 lines)     ↳ Branches and Landmarks → The Castle
+- [x] **#122**  L 6940  (  20 lines)     ↳ Voluntary Challenges → Permadeaf (new in 5.0)
+- [x] **#123**  L 8844  (  19 lines)     ↳ Bestiary Tables → Apelike creatures `Y`
 - [ ] **#124**  L 8814  (  17 lines)     ↳ Bestiary Tables → Wraiths `W`
 - [ ] **#125**  L 8352  (  16 lines)     ↳ Bestiary Tables → Worms `w`
 - [ ] **#126**  L 7411  (  11 lines)     ↳ Weapons Tables → Hammer

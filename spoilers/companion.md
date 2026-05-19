@@ -1181,12 +1181,11 @@ you. Critical rules:
   magical breathing, or killing the eel first are reliable.
 
 #### The Castle
-<!-- audit 2026-05-17 #37: castle.lua/dungeon.lua-verified. 2 corrected: wand of striking destroys the drawbridge (not opens), and the wand of wishing is in a corner tower (not a treasure chamber). See companion-audit.md. -->
+<!-- audit 2026-05-17 #37 (re-audit 2026-05-19 v2 #121): castle.lua/dungeon.lua-verified. 2 corrected: wand of striking destroys the drawbridge (not opens), and the wand of wishing is in a corner tower (not a treasure chamber). v2 fix: "A maze section to each side may contain minotaurs" was fabricated — castle.lua has no minotaurs and no internal maze rooms (the des.mazewalk calls at lines 223-224 fill the entry-approach corridors outside the walls). Same error already corrected in the full Castle section (v1 #109); just needed to be removed from this brief entry too. Dropped the sentence. See companion-audit.md. -->
 
 The Castle is the last level of the Dungeons of Doom proper, around
 level 27. It's a large fortified structure surrounded by a moat,
-with a drawbridge as the main entrance. A maze section to each
-side may contain minotaurs.
+with a drawbridge as the main entrance.
 
 To enter the Castle, you need to open the drawbridge. Options:
 
@@ -5080,7 +5079,7 @@ a wish. A wish is for things that change the fundamental equation
 of your survival.
 
 #### Wish Syntax
-<!-- audit 2026-05-18 #102: corrected three claims in the wish-syntax bullets. (1) Bare "gray dragon scale mail" does NOT force uncursed +0; objnam.c:5094-5096 retains the random mksobj spe, and objnam.c:5258-5268 only sets BUC when a buc adjective is given — blessorcurse(otmp,10) leaves ~10% blessed, ~10% cursed, ~80% uncursed. (2) "Cannot wish for artifacts already generated" is wrong: objnam.c:5374 makes denial probabilistic (oartifact && rn2(nartifact_exist())>1), scaled by TOTAL artifacts in existence (including bones-file ones), and u.uconduct.wisharti increments either way. Only quest artifacts are absolutely blocked. (3) "Cannot wish for the Amulet of Yendor" is misleading — objnam.c:5003-5006 silently substitutes a FAKE_AMULET_OF_YENDOR. Same trapdoor for Bell of Opening, Book of the Dead, Candelabrum, and (particularly relevant here) magic lamp -> oil lamp. Also dropped "+AC" from gauntlets of power notes — all gloves give +1 AC, the gauntlets just give +6 to-hit/dmg via STR 25. See companion-audit.md. -->
+<!-- audit 2026-05-18 #102 (re-audit 2026-05-19 v2 #120): corrected three claims in the wish-syntax bullets. (1) Bare "gray dragon scale mail" does NOT force uncursed +0; objnam.c:5094-5096 retains the random mksobj spe, and objnam.c:5258-5268 only sets BUC when a buc adjective is given — blessorcurse(otmp,10) leaves ~5% blessed, ~5% cursed, ~90% uncursed (1/10 chance of blessorcurse firing, then 1/2 each direction). (2) "Cannot wish for artifacts already generated" is wrong: objnam.c:5374 makes denial probabilistic (oartifact && rn2(nartifact_exist())>1), scaled by TOTAL artifacts in existence (including bones-file ones), and u.uconduct.wisharti increments either way. Only quest artifacts are absolutely blocked. (3) "Cannot wish for the Amulet of Yendor" is misleading — objnam.c:5003-5006 silently substitutes a FAKE_AMULET_OF_YENDOR. Same trapdoor for Bell of Opening, Book of the Dead, Candelabrum, and (particularly relevant here) magic lamp -> oil lamp. Also dropped "+AC" from gauntlets of power notes — all gloves give +1 AC, the gauntlets just give +6 to-hit/dmg via STR 25. v2 re-verified all wish sources and arithmetic: Vlad's throne 4/13 wish rate (sit.c:241-256), magic lamp 1/3 × 4/5 ≈ 27% wish-blessed (apply.c:1817 + potion.c:2833-2845), fountain demon wish (fountain.c:78,314), Amulet pickup wish (allmain.c:446-451). 0 new prose corrections. See companion-audit.md. -->
 
 When the game asks "For what do you wish?", be specific. This is
 not the time for ambiguity:
@@ -6847,16 +6846,16 @@ old ones, so any starting spell you have will eventually fade. This
 forces extreme reliance on wands, potions, and creative workarounds.
 
 #### No Genocide
-<!-- audit 2026-05-18 #108: three corrections to the No Genocide conduct text. (1) "Astral Plane's final wish" path is fabricated — wishes never offer genocide. Genocide is only prompted by reading a scroll of genocide (uncursed = single species; blessed = whole class via do_class_genocide at read.c:2638) and by sitting on Vlad's throne (sit.c:131 do_genocide(5)). (2) "Leave it blank" is misleading for cursed scrolls — empty input re-prompts (read.c:2865-2871) and on a cursed scroll the random rndmonst() path (read.c:2848-2849) creates monsters rather than letting you escape; type "none" instead. (3) End-of-game tracking is by counting G_GENOD species in mvitals[] (insight.c:2951-2966 num_genocides), not a u_conduct counter — but the conduct is preserved as long as no species ever gets G_GENOD'd. The conduct survives even on a cursed scroll's monster-creation path because no species is flagged. See companion-audit.md. -->
+<!-- audit 2026-05-18 #108 (re-audit 2026-05-19 v2 #119): three corrections to the No Genocide conduct text. (1) "Astral Plane's final wish" path is fabricated — wishes never offer genocide. Genocide is only prompted by reading a scroll of genocide (uncursed = single species; blessed = whole class via do_class_genocide at read.c:2638) and by sitting on a throne (sit.c:125-132 case 8 of throne_sit_effect calls do_genocide(5), a single-species prompt; class genocide only comes from a blessed scroll). (2) "Leave it blank" is misleading for cursed scrolls — empty input re-prompts (read.c:2865-2871) and on a cursed scroll the random rndmonst() path (read.c:2848-2849) creates monsters rather than letting you escape; type "none" instead. (3) End-of-game tracking is by counting G_GENOD species in mvitals[] (insight.c:2951-2966 num_genocides), not a u_conduct counter — but the conduct is preserved as long as no species ever gets G_GENOD'd. The conduct survives even on a cursed scroll's monster-creation path because no species is flagged. v2 fix: original v1 framing said "Vlad's throne" prompts a "class" genocide. Both wrong — Vlad's tower thrones take a different code path (special_throne_effect at sit.c:63-66 has no genocide case). The prompt is on regular thrones, and the question is for a single species, not a class. Reworded to "sitting on a throne" + "single species" + "case 8 of 13." See companion-audit.md. -->
 
 Never genocide any monster. Genocide is prompted by reading a
 **scroll of genocide** (uncursed picks one species; blessed wipes
-the whole class) and by **sitting on Vlad's throne**, which has
-one outcome that prompts you to genocide a class. To preserve the
-conduct, type **"none"** at the prompt — don't just press Enter,
-because empty input re-prompts and on a *cursed* scroll the game
-will eventually conjure random monsters instead of letting you
-escape.
+the whole class) and by **sitting on a throne**: one outcome in
+the throne-effect table (case 8 of 13) prompts you to genocide a
+single species. To preserve the conduct, type **"none"** at the
+prompt — don't just press Enter, because empty input re-prompts
+and on a *cursed* scroll the game will eventually conjure random
+monsters instead of letting you escape.
 
 This means you'll face the full bestiary throughout the game,
 including master and arch-liches, mind flayers, cockatrices, and
@@ -6868,8 +6867,8 @@ to where the sea monsters can reach you.
 
 This is one of the milder conducts: many players ascend without
 genociding anything simply because they never find the scroll and
-never sit Vlad's throne. But deliberately maintaining it against
-late-game threats takes discipline.
+never roll case 8 on a throne. But deliberately maintaining it
+against late-game threats takes discipline.
 
 <!-- audit 2026-05-18 #161: dropped "cursed scroll of polymorph" (no SCR_POLYMORPH exists in 5.0). Added missing conduct-breaking sources: genetic engineer claw (AD_POLY → polyself); eating chameleon/doppelganger/sandestin corpses (eat.c:1244-1263) and mimic corpses (eat.c:1199); green slime auto-poly (timeout.c:493); stone-golem auto-poly via poly_when_stoned (trap.c:3848 etc.). Added Unchanging-blocks-all and system-shock-doesn't-break notes per polyself.c:483-495. v2 audit 2026-05-18 #20: two narrow factual fixes (everything else proposed by the sub-agent was reverted as scope-creep — the section is about the conduct, not an encyclopedia of polymorph mechanics). Dropped "sandestin" from the corpse list since sandestins are G_NOCORPSE (eat.c:1246 comment, unreachable). Dropped "surviving a stoning attack (auto-transforms to stone golem)" because poly_when_stoned (mondata.c:80-86) only fires if you're already polymorphed into a non-stone golem; a normal character just dies. See companion-audit.md. -->
 #### Polymorph Restrictions
@@ -6980,18 +6979,23 @@ never had to feel guilty about leading something loyal into a
 polymorph trap.
 
 #### Permadeaf (new in 5.0)
-<!-- audit 2026-05-17 #62: confirmed permadeaf is u.uroleplay.deaf (optlist.h:267-269), recorded in xlogfile (topten.c:602) and shown in show_conduct (insight.c:2113). Deaf macro at youprop.h:125. Corrected the rcfile option name: was `!acoustics` (a different per-session flavor flag — flags.acoustics — that doesn't earn the conduct), should be `permadeaf` (or `deaf`). Also removed the in-game O-menu instruction: this option is `set_in_config` (options.c:5207), rcfile/command-line only. See companion-audit.md. -->
+<!-- audit 2026-05-17 #62 (re-audit 2026-05-19 v2 #122): confirmed permadeaf is u.uroleplay.deaf (optlist.h:267-269), recorded in xlogfile (topten.c:602) and shown in show_conduct (insight.c:2113). Deaf macro at youprop.h:125. Corrected the rcfile option name: was `!acoustics` (a different per-session flavor flag — flags.acoustics — that doesn't earn the conduct), should be `permadeaf` (or `deaf`). Also removed the in-game O-menu instruction: this option is `set_in_config` (options.c:5207), rcfile only. v2 fixes: (a) dropped the "pass `-Dpermadeaf` on the command line" clause — `-D` is the debug/wizard-mode flag at unixmain.c:359-365, not an option-name passer; there is no `-Dpermadeaf` syntax. Rcfile is the path. (b) Added the shrieker note: only the *messages* are suppressed when Deaf, so a shrieker still summons monsters and aggravates (mon.c:4089-4106 m_respond_shrieker only gates the pline on !Deaf; the makemon and aggravate run unconditionally). Real beginner trap, clears the no-trivia bar. See companion-audit.md. -->
 
 Never hear anything. Set `OPTIONS=permadeaf` (or `OPTIONS=deaf`)
-in your rcfile, or pass `-Dpermadeaf` on the command line. This
-one is rcfile or command line only; the in-game `O` menu cannot
-toggle it. (Don't confuse `permadeaf` with the unrelated
-`acoustics` flavor toggle, which doesn't earn the conduct.) The
-game then runs as if you had the Deaf intrinsic from turn one and
-never recovered: all the "you hear water falling", "you hear
-someone counting money", "you hear a door open" messages and the
-ambient monster sounds ("you hear a slurp" and friends) are
-suppressed.
+in your rcfile. This option is set-in-config only; the in-game
+`O` menu cannot toggle it. (Don't confuse `permadeaf` with the
+unrelated `acoustics` flavor toggle, which doesn't earn the
+conduct.) The game then runs as if you had the Deaf intrinsic
+from turn one and never recovered: all the "you hear water
+falling", "you hear someone counting money", "you hear a door
+open" messages and the ambient monster sounds ("you hear a
+slurp" and friends) are suppressed.
+
+The catch: only the *messages* are suppressed. A shrieker still
+shrieks and still summons monsters and aggravates the level —
+you just don't get the warning that it happened. Treat empty
+silence near a `F`-class monster as the same threat as the usual
+SCREECH.
 
 Many monster warnings, environmental cues (vaults, fountains, doors
 opening off-screen), and status messages arrive as sounds. Permadeaf
@@ -8887,7 +8891,7 @@ D&D's three-armed, three-eyed creatures from the Elemental Plane of Earth. They 
 :::
 
 #### Apelike creatures `Y`
-<!-- audit 2026-05-17 #61: 6 rows × 8 cells verified against monsters.h:2372-2417. All stats, attacks, AD_SITM monkey steal, MR_COLD yeti corpse, M1_SEE_INVIS sasquatch clean. 0 corrections. See companion-audit.md. -->
+<!-- audit 2026-05-17 #61 (re-audit 2026-05-19 v2 #123): 6 rows × 8 cells verified against monsters.h:2372-2417. All stats, attacks, AD_SITM monkey steal, MR_COLD yeti corpse, M1_SEE_INVIS sasquatch clean. 0 corrections. v2 re-verified all 6 rows; sasquatch + yeti both spd 15; "carnivore corpses are safe food" framing is true but ape/monkey/sasquatch corpses are also safe (omnivores not flagged) — borderline but defensible voice. 0 new corrections. See companion-audit.md. -->
 
 
 Apes and great apes mostly; sasquatches are fast. Carnivore corpses are safe food.
