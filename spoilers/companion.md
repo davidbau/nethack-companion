@@ -2060,7 +2060,7 @@ rations, tripe rations, or lembas wafers. Don't let nutrition
 management slide.
 
 #### Brainlessness
-<!-- audit 2026-05-17 #63: mind flayer / master mind flayer tentacle counts (3/5) + AD_DRIN + AT_WEAP 1d8 verified against monsters.h:523-535. INT loss rnd(2) per hit, max 10 per master turn (uhitm.c:3263). Brainlessness death + lifesaving-still-dies in eat.c:698-715. 1-in-5 losespells per uhitm.c:3264. Polymorph-into-mindflayer brain-eating recovers INT (eat.c:679-688). Corrected: any helmet blocks 7/8 attacks (uhitm.c:3235 `uarmh && rn2(8)`); greasing is only an extra slip-roll on top. Removed false claim that blessed full-healing restores attributes (potion.c:1144-1162 restores HP and one lost level only, not stats). See companion-audit.md. -->
+<!-- audit 2026-05-17 #63 (re-audit 2026-05-19 v2 #132): mind flayer / master mind flayer tentacle counts (3/5) + AD_DRIN + AT_WEAP 1d8 verified against monsters.h:523-535. INT loss rnd(2) per hit, max 10 per master turn (uhitm.c:3263). Brainlessness death + lifesaving-still-dies in eat.c:698-715. 1-in-5 losespells per uhitm.c:3264. Polymorph-into-mindflayer brain-eating recovers INT (eat.c:679-688). Corrected: any helmet blocks 7/8 attacks (uhitm.c:3235 `uarmh && rn2(8)`); greasing is only an extra slip-roll on top. Removed false claim that blessed full-healing restores attributes (potion.c:1144-1162 restores HP and one lost level only, not stats). v2 re-verified: 5.0 losespells() at spell.c:1759-1827 (random rn2(n+1) spells to retention 0; re-study restores), map/ID amnesia removed in 5.0 (only losespells called from AD_DRIN). Prayer restores attributes via TROUBLE_POISONED branch (pray.c:270-272, 547-552). Unicorn horn no longer restores attributes (apply.c:2306-2327). 0 new corrections. See companion-audit.md. -->
 
 Mind flayers drain Intelligence with their tentacle attacks. If
 your Intelligence drops to your racial minimum (3 for humans), the
@@ -5303,7 +5303,7 @@ without them.
 ---
 
 ### Luck and Fortune
-<!-- audit 2026-05-18 #144: 7 corrections. (1) Cursed luckstone doesn't "reverse the drift" — timeout.c:616-619 cursed-only luckstone holds negative Luck in place but positive Luck still decays normally toward baseline. (2) "Uncursed luckstone freezes drift but gives no bonus" — wrong; attrib.c:441-450 set_moreluck gives +3 to any non-cursed luckstone (uncursed counts the same as blessed for the bonus). (3) Killing peaceful is -1 with 50% probability, not "-1 to -5" — mon.c:3665. -5 is for killing co-aligned unicorns specifically (mon.c:3667). (4) "At Luck -10 or worse, prayer always fails" — wrong threshold; pray.c:2155 rejects prayer on ANY negative Luck. (5) "Going down stairs in Sokoban -1" — fabricated; no luck penalty for descending Sokoban stairs. (6) "Throw real gem to cross-aligned unicorn -3 to +3" — that's only for fully identified gems (dothrow.c:2334 rn2(7)-3); unidentified is -1 to +1 (rn2(3)-1 at dothrow.c:2349). (7) "Identifying gems for a shopkeeper +1" — no such mechanic in shk.c; fabricated. Added killed_leader (-4 to baseline, timeout.c:600), full-moon/Friday baseline shift (timeout.c:595-598), and the doubled drift rate (300 turns) when carrying the Amulet of Yendor or u.ugangr > 0 (timeout.c:607). -->
+<!-- audit 2026-05-18 #144 (re-audit 2026-05-19 v2 #133): 7 corrections. (1) Cursed luckstone doesn't "reverse the drift" — timeout.c:616-619 cursed-only luckstone holds negative Luck in place but positive Luck still decays normally toward baseline. (2) "Uncursed luckstone freezes drift but gives no bonus" — wrong; attrib.c:441-450 set_moreluck gives +3 to any non-cursed luckstone (uncursed counts the same as blessed for the bonus). (3) Killing peaceful is -1 with 50% probability, not "-1 to -5" — mon.c:3665. -5 is for killing co-aligned unicorns specifically (mon.c:3667). (4) "At Luck -10 or worse, prayer always fails" — wrong threshold; pray.c:2155 rejects prayer on ANY negative Luck. (5) "Going down stairs in Sokoban -1" — fabricated; no luck penalty for descending Sokoban stairs. (6) "Throw real gem to cross-aligned unicorn -3 to +3" — that's only for fully identified gems (dothrow.c:2334 rn2(7)-3); unidentified is -1 to +1 (rn2(3)-1 at dothrow.c:2349). (7) "Identifying gems for a shopkeeper +1" — no such mechanic in shk.c; fabricated. Added killed_leader (-4 to baseline, timeout.c:600), full-moon/Friday baseline shift (timeout.c:595-598), and the doubled drift rate (300 turns) when carrying the Amulet of Yendor or u.ugangr > 0 (timeout.c:607). v2 fixes: (a) "Killing your quest leader: −4 to baseline luck" was incomplete — mon.c:3680 also applies change_luck(-20) immediately (floored at -10 via LUCKMIN), plus u.ugangr += 7. Expanded the row. (b) "Attacking your pet -1" mislabeled — mon.c:3664 fires on KILLING a tame monster, not each attack; also -15 alignment via adjalign (mon.c:3704). Changed to "Killing your pet" with both penalties. (c) "Breaking a mirror or crystal -2" — only mirror has the luck hook (uhitm.c:1133, dothrow.c:2496, dokick.c:445,1724); crystal balls and crystal armor don't trigger it. Dropped "or crystal." (d) "Archeologists begin with all gems identified ... unicorn negotiation class perk" was fabricated — u_init.c:903 only sets TOUCHSTONE knowledge; the touchstone tool (u_init.c:50) lets Archeologists VERIFY gems before throwing, but gems aren't pre-identified. The "unicorn negotiation" class-description quote doesn't exist. Reworded to the actual touchstone mechanic. See companion-audit.md. -->
 
 
 The Mazes are rigged. Not unfairly (the dungeon doesn't *hate*
@@ -5380,10 +5380,10 @@ penalty, though most players just embrace the theme.)
 | Breaking a Sokoban rule (squeeze, fracture, polymorph boulder, scroll of earth) | −1 each |
 | Killing a peaceful creature                         | −1 (50% chance per kill) |
 | Killing a same-alignment unicorn                    | −5          |
-| Killing your quest leader                           | −4 to baseline luck (lasting penalty) |
-| Attacking your pet                                  | −1          |
+| Killing your quest leader                           | −20 immediate (floor at −10), +7 god-anger, plus permanent −4 to baseline luck |
+| Killing your pet                                    | −1 plus −15 alignment |
 | Cannibalism                                         | −2 to −5    |
-| Breaking a mirror or crystal                        | −2          |
+| Breaking a mirror                                   | −2          |
 
 The pattern is consistent: be virtuous and the numbers smile on you.
 Be a monster and they frown. The Mazes have a moral compass, and
@@ -5400,9 +5400,9 @@ gems are harmless but yield nothing; throwing them is a safe way
 to pacify an unwanted unicorn without spending real gems. Avoid
 throwing real gems at cross-aligned unicorns: the result is a
 random Luck change between -3 and +3 and is rarely worth the
-gamble. Archeologists begin with all gems identified, which is
-why their class description mentions "unicorn negotiation" as a
-class perk.
+gamble. Archeologists start with a **touchstone**, which lets
+them verify whether a gem is real before throwing it at a
+unicorn.
 
 There is a ceiling on the luck you can harvest from any given corpse.
 If your current luck score already exceeds the difficulty rating of the
@@ -6947,11 +6947,11 @@ so it's effectively a Pauper sub-conduct (only Pauper suppresses
 your starting pet).
 
 #### Pauper (new in 5.0)
-<!-- audit 2026-05-17 #72: ini_inv early-return at u_init.c:1308-1309 confirmed (no starting items at all, not just no armor/gold). nudist cascade at options.c:5290-5293. End-of-game string at insight.c:2117-2119. xlogfile at topten.c:604. Corrected "permanent conduct, set at birth and never lost" — pauper flag itself is permanent, but the cascading nudist flag IS cleared the moment you wear armor (worn.c:135-136). Added the pauper compensations from u_init.c:870+ (weapon-skill slots, known spell/item per role, supply chests). See companion-audit.md. -->
+<!-- audit 2026-05-17 #72 (re-audit 2026-05-19 v2 #129): ini_inv early-return at u_init.c:1308-1309 confirmed (no starting items at all, not just no armor/gold). nudist cascade at options.c:5290-5293. End-of-game string at insight.c:2117-2119. xlogfile at topten.c:604. Corrected "permanent conduct, set at birth and never lost" — pauper flag itself is permanent, but the cascading nudist flag IS cleared the moment you wear armor (worn.c:135-136). Added the pauper compensations from u_init.c:870+ (weapon-skill slots, known spell/item per role, supply chests). v2 fix: "rcfile or command line only" was wrong — pauper is `set_in_config` at optlist.h:559, which means rcfile or NETHACKOPTIONS env. Unix command-line option parsing in unixmain.c:343-426 has no generic `-pauper` handler (same pattern as the Permadeaf `-Dpermadeaf` fix in v2 #122). Reworded to "rcfile or NETHACKOPTIONS env only." Applied the same fix to the Bonesless section since the same wording appears there too. See companion-audit.md. -->
 
 Start with absolutely nothing: no gold, no inventory, no armor, no
 starting weapon. Set `OPTIONS=pauper` in your rcfile (rcfile or
-command line only; the in-game `O` menu cannot toggle it). Pauper
+`NETHACKOPTIONS` env only; the in-game `O` menu cannot toggle it). Pauper
 implicitly sets nudist as well, so you also begin without armor.
 Pauper is a permanent conduct you never lose: it does not forbid
 acquiring or spending gold later. The conduct is about starting
@@ -7024,8 +7024,8 @@ clean solve.
 
 Never inherit from another player's grave. To get the bonesless
 conduct, you have to turn bones off for the run: set
-`OPTIONS=!bones` in your rcfile (rcfile or command line only;
-the in-game `O` menu cannot toggle it). The same flag also stops
+`OPTIONS=!bones` in your rcfile (rcfile or `NETHACKOPTIONS` env
+only; the in-game `O` menu cannot toggle it). The same flag also stops
 your *own* death from generating a bones file for future players,
 so `!bones` cuts both directions of the bones cycle. The bonesless
 achievement is recorded only when bones was disabled, not when
@@ -8040,7 +8040,7 @@ All cockatrices are poison-resistant.
 
 :::
 
-<!-- audit 2026-05-18 #159: 16 rows + intro verified vs monsters.h:199-320. Corrected little-dog starting roles (Archeologist isn't guaranteed; petnum=NON_PM coin-flips cat/dog. Guaranteed roles are Caveman/Ranger/Samurai per role.c:128, 387, 428). Corrected Cerberus row: "Reflection" was unsupported (only MR_FIRE in monsters.h:316); Cerberus is `#ifdef CHARON`-gated and not in the default build. See companion-audit.md. -->
+<!-- audit 2026-05-18 #159 (re-audit 2026-05-19 v2 #131): 16 rows + intro verified vs monsters.h:199-320. Corrected little-dog starting roles (Archeologist isn't guaranteed; petnum=NON_PM coin-flips cat/dog. Guaranteed roles are Caveman/Ranger/Samurai per role.c:128, 387, 428). Corrected Cerberus row: "Reflection" was unsupported (only MR_FIRE in monsters.h:316); Cerberus is `#ifdef CHARON`-gated and not in the default build. v2 re-verified all 16 rows; werejackal/werewolf S_DOG vs S_HUMAN are separate listings (shape-change machinery, monsters.h:264-266 comment). 0 new corrections. See companion-audit.md. -->
 #### Dogs and canines `d`
 
 Wild canines hunt in packs. Domestic ones can be tamed by feeding (see [Making Friends](#making-friends)). Werejackals and werewolves can give lycanthropy.
@@ -8832,10 +8832,10 @@ All trolls regenerate and follow you up and down stairs.
 
 :::
 
-<!-- audit 2026-05-18 #166: row stats and M1_TUNNEL verified vs monsters.h:2267-2277. Removed wrong "free action" defense — Free_action is checked only against paralysis, holding, and sleep (mhitu.c grep); AD_CONF at mhitu.c:1759-1777 makes no Free_action check. Blindness still works (gaze gated by mcanseeu at mhitu.c:1681-1682). See companion-audit.md. -->
+<!-- audit 2026-05-18 #166 (re-audit 2026-05-19 v2 #130): row stats and M1_TUNNEL verified vs monsters.h:2267-2277. Removed wrong "free action" defense — Free_action is checked only against paralysis, holding, and sleep (mhitu.c grep); AD_CONF at mhitu.c:1759-1777 makes no Free_action check. Blindness still works (gaze gated by mcanseeu at mhitu.c:1681-1682). v2 fix: "The confusion stacks and makes spellcasting impossible" was wrong — per spell.c:687-708, only Stunned blocks spell casting (`rejectcasting`), not Confused. Confusion garbles spellbook study (spell.c:368, 620) and worsens spell forgetting when zapped (spell.c:1778-1782), but you can still cast confused. Reworded to "wrecks navigation, and confused spellbook study garbles the spell." See companion-audit.md. -->
 #### Umber hulks `U`
 
-Confusion gaze. Don't melee without some way to dodge the gaze — blindness defeats it (the gaze requires mutual sight); free action does *not* (it covers paralysis, holding, and sleep, never confusion). The confusion stacks and makes spellcasting impossible.
+Confusion gaze. Don't melee without some way to dodge the gaze — blindness defeats it (the gaze requires mutual sight); free action does *not* (it covers paralysis, holding, and sleep, never confusion). The confusion stacks and wrecks navigation, and confused spellbook study garbles the spell.
 
 ::: dense-table
 

@@ -137,11 +137,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#126**  L 7411  (  11 lines)     ↳ Weapons Tables → Hammer
 - [x] **#127**  L 5802  (  82 lines)   📖 The Ascension Run
 - [x] **#128**  L 8079  (  20 lines)     ↳ Bestiary Tables → Humanoids `h`
-- [ ] **#129**  L 6907  (  20 lines)     ↳ Voluntary Challenges → Pauper (new in 5.0)
-- [ ] **#130**  L 8785  (  12 lines)     ↳ Bestiary Tables → Umber hulks `U`
-- [ ] **#131**  L 7993  (  27 lines)     ↳ Bestiary Tables → Dogs and canines `d`
-- [ ] **#132**  L 2045  (  27 lines)     ↳ Dangerous Encounters → Brainlessness
-- [ ] **#133**  L 5270  ( 145 lines)   📖 Luck and Fortune
+- [x] **#129**  L 6907  (  20 lines)     ↳ Voluntary Challenges → Pauper (new in 5.0)
+- [x] **#130**  L 8785  (  12 lines)     ↳ Bestiary Tables → Umber hulks `U`
+- [x] **#131**  L 7993  (  27 lines)     ↳ Bestiary Tables → Dogs and canines `d`
+- [x] **#132**  L 2045  (  27 lines)     ↳ Dangerous Encounters → Brainlessness
+- [x] **#133**  L 5270  ( 145 lines)   📖 Luck and Fortune
 - [ ] **#134**  L 5504  ( 242 lines)   📖 Gehennom
 - [ ] **#135**  L 7496  (  11 lines)     ↳ Weapons Tables → Lance
 - [ ] **#136**  L 3074  (  51 lines)     ↳ A Practical Identification Strategy → Gray Stones: Four Stones, One Correct Answer

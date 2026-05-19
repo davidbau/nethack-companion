@@ -8492,3 +8492,35 @@ All 7 rows re-verified vs `monsters.h:477-540`. Helmet-blocks-7/8 of mind flayer
 128/183 done.
 
 ---
+
+## 2026-05-19 — v2 audit batch 27: Pauper (#129), Umber hulks (#130), Dogs (#131), Brainlessness (#132), Luck and Fortune (#133)
+
+### Pauper (#129) — `spoilers/companion.md:6949` — 1 correction (+ Bonesless drive-by)
+
+"Rcfile or command line only" was wrong. `pauper` is `set_in_config` at `optlist.h:559`, which means rcfile or `NETHACKOPTIONS` env. Unix command-line option parsing in `unixmain.c:343-426` has no generic `-pauper` handler (same mistake the Permadeaf v2 #122 audit caught for `-Dpermadeaf`). Reworded both Pauper and Bonesless sections — same wording appeared in both.
+
+### Umber hulks `U` (#130) — `spoilers/companion.md:8836` — 1 correction
+
+"The confusion stacks and makes spellcasting impossible" was wrong. Per `spell.c:687-708` `rejectcasting()`, only **Stunned** blocks casting, not Confused. Confusion garbles spellbook study (`spell.c:368, 620`) and worsens spell forgetting when zapped (`spell.c:1778-1782`), but you can still cast confused. Reworded to "wrecks navigation, and confused spellbook study garbles the spell."
+
+### Luck and Fortune (#133) — `spoilers/companion.md:5305` — 4 corrections
+
+- **Killing your quest leader** row said "-4 to baseline luck" but missed the immediate `change_luck(-20)` (floored at LUCKMIN=-10) and `u.ugangr += 7` from `mon.c:3680`. Expanded the row.
+- **"Attacking your pet -1"** mislabeled. `mon.c:3664` fires on *killing* a tame monster, not each attack. Also -15 alignment via `adjalign` at `mon.c:3704`. Changed to "Killing your pet."
+- **"Breaking a mirror or crystal -2"** — only mirror has the luck hook (`uhitm.c:1133`, `dothrow.c:2496`, `dokick.c:445, 1724`). Crystal balls and crystal armor have no luck penalty for breaking. Dropped "or crystal."
+- **"Archeologists begin with all gems identified, which is why their class description mentions 'unicorn negotiation'"** was fabricated. `u_init.c:903` sets TOUCHSTONE knowledge only; the touchstone tool (`u_init.c:50`) lets Archeologists *verify* a gem is real before throwing, but gems themselves aren't pre-identified. The "unicorn negotiation" class-description quote doesn't exist anywhere in source or wiki. Reworded to the actual touchstone mechanic.
+
+Re-verified: Luck range ±10 base / ±13 with luckstone, 600-turn drift (300 with Amulet/u.ugangr>0), full-moon/Friday baselines, set_moreluck ±3 to non-cursed luckstones, identified-gem +5 / +2 / +1 / -3..+3 / -1..+1 unicorn matrix, Sokoban cheat -1 each, prayer fails on any negative Luck, sacrifice cap at corpse difficulty, Heart of Ahriman / Tsurugi / Orb of Fate luck conferral.
+
+### Dogs and canines `d` (#131) — `spoilers/companion.md:8044` — 0 corrections, badge updated
+
+All 16 rows + intro re-verified vs `monsters.h:199-320`. werejackal/werewolf S_DOG vs S_HUMAN are intentionally separate (shape-change machinery, per the source comment at monsters.h:264-266).
+
+### Brainlessness (#132) — `spoilers/companion.md:2062` — 0 corrections, badge updated
+
+Re-verified all mind-flayer mechanics: 3 vs 5 tentacles, 2d1 drain-Int per tentacle (max 10/turn on master), 1-in-5 `losespells()` per hit, brainlessness death at `eat.c:698-715`, restore ability/prayer recovery, unicorn horn no longer restoring stats.
+
+### Pass-2 queue
+133/183 done.
+
+---
