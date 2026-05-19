@@ -162,11 +162,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#151**  L 6128  (  53 lines)     ↳ Sokoban Solutions → Level 1, Version A
 - [x] **#152**  L 6471  (  78 lines)     ↳ Sokoban Solutions → Level 4, Version A (prize: usually bag of holding, 25% amulet of reflection)
 - [x] **#153**  L 7583  (  13 lines)     ↳ Weapons Tables → Boomerang
-- [ ] **#154**  L 1022  (  25 lines)     ↳ Branches and Landmarks → The Rogue Level
-- [ ] **#155**  L 4452  ( 218 lines)   📖 Divine Relations
-- [ ] **#156**  L 8450  (  15 lines)     ↳ Bestiary Tables → Centaurs `C`
-- [ ] **#157**  L 3550  ( 196 lines)   📖 Wands and Staves
-- [ ] **#158**  L 5884  (  93 lines)   📖 The Elemental Planes
+- [x] **#154**  L 1022  (  25 lines)     ↳ Branches and Landmarks → The Rogue Level
+- [x] **#155**  L 4452  ( 218 lines)   📖 Divine Relations
+- [x] **#156**  L 8450  (  15 lines)     ↳ Bestiary Tables → Centaurs `C`
+- [x] **#157**  L 3550  ( 196 lines)   📖 Wands and Staves
+- [x] **#158**  L 5884  (  93 lines)   📖 The Elemental Planes
 - [ ] **#159**  L 2239  (  18 lines)     ↳ Dangerous Encounters → Choking
 - [ ] **#160**  L 4165  ( 279 lines)   📖 Artifacts
 - [ ] **#161**  L 2272  (  22 lines)     ↳ Dangerous Encounters → Disintegration

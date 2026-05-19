@@ -8625,3 +8625,35 @@ All 19 push steps re-simulated geometrically against `dat/soko1-1.lua`. Intermed
 153/183 done.
 
 ---
+
+## 2026-05-19 — v2 audit batch 32: Rogue Level (#154), Divine Relations (#155), Centaurs (#156), Wands and Staves (#157), Elemental Planes (#158)
+
+### Divine Relations (#155) — `spoilers/companion.md:4495` — 2 corrections
+
+- **Trouble priority list item 10** ("Blindness, confusion, stunning, hallucination") was misclassified as a major trouble. Per `pray.c:95, 99-101`: `TROUBLE_BLIND=-5`, `STUNNED=-9`, `CONFUSED=-10`, `HALLUCINATION=-11` are all MINOR troubles, addressed by `in_trouble()` only after positive-valued troubles. Same parallel mistake as the v1-demoted Punishment, never applied to this row. Moved these afflictions to the "additional blessings" tier and renumbered the list.
+- **Same-race sacrifice "exception"** said it "can convert an altar to your alignment" — wrong. Per `pray.c:1717-1720`, same-race blood always converts a lawful or neutral altar to **chaotic**, not to co-aligned. Only chaotic heroes benefit. On a chaotic altar it summons a demon. Reworded.
+
+### Wands and Staves (#157) — `spoilers/companion.md:3585` — 4 corrections (engrave-test paragraph)
+
+- **Magic missile and death "just write in dust"** — wrong on both. Magic missile prints "The <surface> is riddled by bullet holes!" (`engrave.c:642-648`), a distinctive message. Sleep and death share the same "the bugs on the <surface> stop moving!" message (`engrave.c:651-656`). The price-distinguish hint should be for sleep vs death, not magic missile vs death.
+- **"Striking scatters dust around"** — wrong. Actual message is "The wand unsuccessfully fights your attempt to write!" (`engrave.c:602-605`).
+- **Slow monster and speed monster** were in the "needs zap testing" group — but they produce distinctive engrave messages ("the bugs on the <surface> slow down" / "speed up" at `engrave.c:606-616`). They belong in step 1.
+- Rewrote the engrave-test paragraph to reflect all three.
+
+### The Elemental Planes (#158) — `spoilers/companion.md:5931` — 1 correction
+
+"Wand of teleport on yourself silently fails" was the wrong word. Per `teleport.c:854-855`, scrolltele prints "A mysterious force prevents you from teleporting!" — audible feedback, not silent. Self-zap WAN_TELEPORTATION reaches scrolltele() at line 844 from `zap.c:2876-2878`. Reworded both occurrences to name the actual message in one place and drop "silently" in the other.
+
+### Centaurs (#156) — `spoilers/companion.md:8510` — 2 voice fixes
+
+- "Mounted archers" was wrong — centaurs are half-horse, not riders. Reworded to "Half-horse archers."
+- "They wield bows" was too narrow. Per `makemon.c:474-484`, forest centaurs get BOW+arrows but plains and mountain centaurs get CROSSBOW+bolts. Reworded.
+
+### The Rogue Level (#154) — `spoilers/companion.md:1033` — 0 corrections, badge updated
+
+All claims re-verified vs source. Tile mode off across all 4 GUI ports.
+
+### Pass-2 queue
+158/183 done.
+
+---

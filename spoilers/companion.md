@@ -1031,7 +1031,7 @@ to send you. Attacking peacefuls is the usual cause. Keep your hands
 clean.
 
 #### The Rogue Level
-<!-- audit 2026-05-18 #125: clean audit, no corrections needed. All claims verified: welcome line (do.c:1913), uppercase-only monsters (makemon.c:1672), symbol swaps for armor `]`/amulet `,`/food `:`/gold-same-as-gems (drawing.c:73-79), no closed doors (mklev.c:647-648), no fountains/sinks/altars/shops (mklev.c:988-989 skip_nonrogue branch), no spellbooks/tools/amulets in natural item pool (mkobj.c:58-64 rogueprobs). Dungeon level range is Dlvl 15-18 per dungeon.lua base=15, range=4. -->
+<!-- audit 2026-05-18 #125 (re-audit 2026-05-19 v2 #154): clean audit, no corrections needed. All claims verified: welcome line (do.c:1913), uppercase-only monsters (makemon.c:1672), symbol swaps for armor `]`/amulet `,`/food `:`/gold-same-as-gems (drawing.c:73-79), no closed doors (mklev.c:647-648), no fountains/sinks/altars/shops (mklev.c:988-989 skip_nonrogue branch), no spellbooks/tools/amulets in natural item pool (mkobj.c:58-64 rogueprobs). Dungeon level range is Dlvl 15-18 per dungeon.lua base=15, range=4. v2 re-verified all claims; tile mode off across all 4 GUI ports. 0 new corrections. See companion-audit.md. -->
 
 
 Somewhere in the middle dungeon you'll cross a one-level
@@ -3583,7 +3583,7 @@ these alternate effects are *better* than the normal ones:
 ---
 
 ### Wands and Staves
-<!-- audit 2026-05-18 #105: five corrections. (1) Wand of stasis was missing entirely from the table and the NODIR list; objects.h:1460 defines WAN_STASIS (NODIR, $150, prob 45), zap.c:2559-2568 freezes the level. (2) "Nothing" prose said NODIR, but it's IMMEDIATE per objects.h:1462 (the table already had BEAM, prose was inconsistent — fixed prose). (3) "Wand of undead turning raises it as a zombie" is wrong; zap.c:WAN_UNDEAD_TURNING calls unturn_dead() which revives held/floor corpses to their original species (see also montraits revival path). (4) Engrave-test outcomes for "vanishes" / "disappears" / silent group were muddled. Per engrave.c: cancellation and make-invisible erase the engraving in place; teleportation moves it elsewhere on the level; polymorph rewrites it to a different random engraving (engrave.c:618-633); nothing, undead-turning, opening, locking, probing produce no message at all (engrave.c:635-640). (5) The silent-IMMEDIATE group was unmentioned. Also dropped "raises as zombie" misreading. See companion-audit.md. -->
+<!-- audit 2026-05-18 #105 (re-audit 2026-05-19 v2 #157): five corrections. (1) Wand of stasis was missing entirely from the table and the NODIR list; objects.h:1460 defines WAN_STASIS (NODIR, $150, prob 45), zap.c:2559-2568 freezes the level. (2) "Nothing" prose said NODIR, but it's IMMEDIATE per objects.h:1462 (the table already had BEAM, prose was inconsistent — fixed prose). (3) "Wand of undead turning raises it as a zombie" is wrong; zap.c:WAN_UNDEAD_TURNING calls unturn_dead() which revives held/floor corpses to their original species (see also montraits revival path). (4) Engrave-test outcomes for "vanishes" / "disappears" / silent group were muddled. Per engrave.c: cancellation and make-invisible erase the engraving in place; teleportation moves it elsewhere on the level; polymorph rewrites it to a different random engraving (engrave.c:618-633); nothing, undead-turning, opening, locking, probing produce no message at all (engrave.c:635-640). (5) The silent-IMMEDIATE group was unmentioned. Also dropped "raises as zombie" misreading. v2 fixes (RAY-wand and BEAM-wand engrave-test signatures): (a) Magic missile and death were grouped as silent "just write in dust" — wrong. Magic missile prints "The <surface> is riddled by bullet holes!" (engrave.c:642-648), distinctive. Sleep and death share the same "the bugs on the <surface> stop moving!" message (engrave.c:651-656). The price-distinguish hint should be for sleep vs death, not magic missile vs death. (b) "Striking scatters dust around" was wrong — actual message is "The wand unsuccessfully fights your attempt to write!" (engrave.c:602-605). (c) Slow monster and speed monster produce distinctive engrave messages ("bugs slow down" / "speed up" at engrave.c:606-616) — they belong in step 1, not in the "needs zap test" step. Rewrote the engrave-test paragraph to fix all three. See companion-audit.md. -->
 
 Wands are reusable magical items that produce directed effects when
 zapped. They come in three types: **ray wands** fire a beam in a
@@ -3713,19 +3713,22 @@ BEAM (immediate). This alone cuts the possibilities dramatically.
   the other silent wands so the engrave test can't single it out.
 - **RAY wands** (digging, magic missile, fire, cold, lightning,
   sleep, death): Digging riddles the floor with holes. Fire, cold,
-  and lightning produce obvious elemental effects. Sleep stops bugs
-  from moving. Magic missile and death just write in dust. Of these
-  two, death is $500; check the price first.
-- **BEAM wands** (everything else): The engrave test only
-  distinguishes some of them. **Cancellation and make invisible**
+  and lightning produce obvious elemental effects. Magic missile
+  riddles the surface with **bullet holes**. **Sleep and death**
+  both produce the same "the bugs on the surface stop moving!"
+  message — price-test to tell them apart (death is $500).
+- **BEAM wands** (everything else): The engrave test
+  distinguishes most of them. **Cancellation and make invisible**
   erase the engraving in place. **Teleportation** moves it
   elsewhere on the level (look around to spot it). **Polymorph**
   rewrites your engraving as a different random one. **Striking**
-  scatters dust around. Five BEAM wands — **nothing, undead
-  turning, opening, locking, probing** — produce *no engrave
-  message at all*. Combined with the silent NODIR stasis (above),
-  a wand that engraves in silence is one of six possibilities; the
-  zap tests below will resolve them.
+  interrupts with *"The wand unsuccessfully fights your attempt to
+  write!"* **Slow monster** and **speed monster** make the bugs
+  on the surface slow down or speed up, respectively. Five BEAM
+  wands — **nothing, undead turning, opening, locking, probing**
+  — produce *no engrave message at all*. Combined with the silent
+  NODIR stasis (above), a wand that engraves in silence is one of
+  six possibilities; the zap tests below will resolve them.
 
 **Step 2: Safe zapping tests.** For wands that remain unidentified
 after engraving, zap them at safe targets:
@@ -4490,7 +4493,7 @@ is irreplaceable.
 ---
 
 ### Divine Relations
-<!-- audit 2026-05-18 #121: 3 corrections. (1) Trouble list had Punishment as #10 major trouble — wrong; TROUBLE_PUNISHED = -1 in pray.c:91, i.e. MINOR trouble, handled in the "additional blessings" tier. Demoted Punishment to that tier and added the genuine missing major troubles (stinking cloud TROUBLE_REGION, collapsing under load, stuck in wall, cursed levitation boots, unusable hands, cursed blindfold per pray.c:218-243). (2) "Crowning raises the prayer timeout to at least 1000 turns" — wrong; pray.c:1356-1361 adds rnz(1000) * kick on top of the ordinary rnz(350), so the post-crowning total averages much higher but can be lower than 1000. Reworded to "adds a large random penalty on top of the ordinary post-prayer wait, on the order of ~1000 turns on average." (3) "Crowning locks your alignment (you can never change it)" — wrong; gcrownu at pray.c:805-996 sets no alignment lock. The actual one-way conversion gate is the u.ualignbase[A_CURRENT] == u.ualignbase[A_ORIGINAL] check at pray.c:1638, independent of crowning. Dropped the claim. -->
+<!-- audit 2026-05-18 #121 (re-audit 2026-05-19 v2 #155): 3 corrections. (1) Trouble list had Punishment as #10 major trouble — wrong; TROUBLE_PUNISHED = -1 in pray.c:91, i.e. MINOR trouble, handled in the "additional blessings" tier. Demoted Punishment to that tier and added the genuine missing major troubles (stinking cloud TROUBLE_REGION, collapsing under load, stuck in wall, cursed levitation boots, unusable hands, cursed blindfold per pray.c:218-243). (2) "Crowning raises the prayer timeout to at least 1000 turns" — wrong; pray.c:1356-1361 adds rnz(1000) * kick on top of the ordinary rnz(350), so the post-crowning total averages much higher but can be lower than 1000. Reworded to "adds a large random penalty on top of the ordinary post-prayer wait, on the order of ~1000 turns on average." (3) "Crowning locks your alignment (you can never change it)" — wrong; gcrownu at pray.c:805-996 sets no alignment lock. The actual one-way conversion gate is the u.ualignbase[A_CURRENT] == u.ualignbase[A_ORIGINAL] check at pray.c:1638, independent of crowning. Dropped the claim. v2 fixes: (a) Trouble priority list item 10 ("Blindness, confusion, stunning, hallucination") was still misclassified as major — these are TROUBLE_BLIND=-5, STUNNED=-9, CONFUSED=-10, HALLUCINATION=-11 at pray.c:95,99-101, all MINOR. Same parallel mistake as the v1-demoted Punishment, never applied to this row. Moved these afflictions to the "additional blessings" tier and renumbered. (b) Same-race sacrifice "exception" said it "can convert an altar to your alignment" — wrong. Per pray.c:1717-1720, same-race blood always converts a lawful or neutral altar to CHAOTIC, not to co-aligned. Only chaotic heroes benefit. On a chaotic altar it summons a demon. Reworded. See companion-audit.md. -->
 
 
 Your relationship with your god is one of the most important
@@ -4519,14 +4522,13 @@ problems in a specific order, fixing the most urgent first:
 7. Standing in a stinking cloud
 8. Critically low HP (≤5, or below a fraction of maxHP that scales with your experience level: 1/5 at XL 1–5, 1/6 at 6–13, 1/7 at 14–21, 1/8 at 22–29, 1/9 at XL 30+)
 9. Lycanthropy
-10. Blindness, confusion, stunning, hallucination
-11. Stuck in a wall, collapsing under load, cursed levitation boots, unusable hands (cursed glove + cursed wielded weapon), cursed blindfold
+10. Stuck in a wall, collapsing under load, cursed levitation boots, unusable hands (cursed glove + cursed wielded weapon), cursed blindfold
 
-After resolving your problems, your god may grant additional
-blessings: fixing minor afflictions (plain hunger, ordinary
-punishment with iron ball and chain, low-priority annoyances),
-improving your alignment, or even gifting intrinsics like
-telepathy or speed.
+After resolving the major troubles above, your god may also grant
+additional blessings: clearing minor afflictions (plain hunger,
+blindness, confusion, stunning, hallucination, ordinary punishment
+with iron ball and chain), improving your alignment, or even
+gifting intrinsics like telepathy or speed.
 
 **The requirements for a safe prayer.** All of the following must
 be true:
@@ -4585,8 +4587,9 @@ with your god. The rules:
 - Bigger monsters are more valuable sacrifices.
 - The altar must match your alignment, or you're praying to someone
   else's god (which has its own consequences).
-- Same-race sacrifice is forbidden and severely punished (with one
-  exception: it can convert an altar to your alignment).
+- Same-race sacrifice is forbidden and severely punished. On a
+  lawful or neutral altar it turns the altar chaotic (not co-aligned —
+  only chaotic heroes benefit); on a chaotic altar it summons a demon.
 
 With enough sacrifice credit, your god may gift you an artifact
 weapon. The first gift comes after relatively modest sacrifice;
@@ -5926,7 +5929,7 @@ last obstacle between you and divinity.
 ---
 
 ### The Elemental Planes
-<!-- audit 2026-05-18 #104: four substantive corrections. (1) Plane of Air vortex/bubble conflation: vortex AT_ENGL attacks just damage you, they do not move bubbles or carry you across the level. Bubble drift is a separate system implemented by mv_bubble in mkmaze.c:1648-1685, 1951-1965 — being inside a cloud-bubble whose position shifts each turn is what drifts you toward the portal. (2) Plane of Water drowning is NOT instant death — done(DROWNING) at trap.c:5171-5193 honors amulet of life saving; Breathless intrinsic (e.g. magical breathing amulet, Amphibious) prevents drowning entirely (trap.c:5106-5126). (3) Astral wrong-altar offering does NOT lose the Amulet for retrieval; pray.c:1562-1572 ends the game immediately with done(ESCAPED) and the opposing god gains dominion. The Amulet is consumed at pray.c:1537-1540 before the alignment branch. (4) Farlook on an altar only reveals alignment when you are ADJACENT to it; otherwise pager.c:744-754 returns "aligned high altar" with no alignment word. Also flagged in notes: every plane has noteleport, so wand-of-teleport on self silently fails (still works on monsters). See companion-audit.md. -->
+<!-- audit 2026-05-18 #104 (re-audit 2026-05-19 v2 #158): four substantive corrections. (1) Plane of Air vortex/bubble conflation: vortex AT_ENGL attacks just damage you, they do not move bubbles or carry you across the level. Bubble drift is a separate system implemented by mv_bubble in mkmaze.c:1648-1685, 1951-1965 — being inside a cloud-bubble whose position shifts each turn is what drifts you toward the portal. (2) Plane of Water drowning is NOT instant death — done(DROWNING) at trap.c:5171-5193 honors amulet of life saving; Breathless intrinsic (e.g. magical breathing amulet, Amphibious) prevents drowning entirely (trap.c:5106-5126). (3) Astral wrong-altar offering does NOT lose the Amulet for retrieval; pray.c:1562-1572 ends the game immediately with done(ESCAPED) and the opposing god gains dominion. The Amulet is consumed at pray.c:1537-1540 before the alignment branch. (4) Farlook on an altar only reveals alignment when you are ADJACENT to it; otherwise pager.c:744-754 returns "aligned high altar" with no alignment word. Also flagged in notes: every plane has noteleport, so wand-of-teleport on self silently fails (still works on monsters). v2 fix: "silently fails" was the wrong word in two places. teleport.c:854-855 prints "A mysterious force prevents you from teleporting!" — audible feedback, not silent. Self-zap WAN_TELEPORTATION reaches scrolltele() at line 844 from zap.c:2876-2878. Reworded to name the actual message in one place and drop "silently" in the other. See companion-audit.md. -->
 
 Beyond the top of the Dungeons of Doom, the world dissolves into
 its raw elements. Four planes stand between you and the gods, each
@@ -5957,8 +5960,9 @@ when it shifts, you shift with it. Walking with the drift can
 carry you across the level faster than fighting against it,
 and a bubble may eventually drift you onto the portal square
 itself. (Note that teleportation is blocked on every plane, so
-wand of teleport on yourself silently fails — it still works on
-monsters for clearing space.)
+wand of teleport on yourself just prints "A mysterious force
+prevents you from teleporting!" — it still works on monsters for
+clearing space.)
 
 #### Plane of Fire
 
@@ -6006,8 +6010,8 @@ the level. You are not here to fight. You are here to reach one
 altar, make one sacrifice, and end this.
 
 - Conflict and teleportation wands clear a path through the crowds
-  — though note teleportation on **yourself** silently fails on
-  every elemental plane (only monster-targeted teleport works).
+  — though note teleportation on **yourself** fails on every
+  elemental plane (only monster-targeted teleport works).
 - Identify the correct altar by walking adjacent to it: farlook
   (`;`) reveals an altar's alignment only when you're standing
   next to it. From across the room you only see "an aligned high
@@ -8508,9 +8512,9 @@ All bats and birds fly.
 :::
 
 #### Centaurs `C`
-<!-- audit 2026-05-17 #49: all 3 rows (plains/forest/mountain) match monsters.h:1301-1323 exactly. Roster complete for S_CENTAUR. 0 corrections. See companion-audit.md. -->
+<!-- audit 2026-05-17 #49 (re-audit 2026-05-19 v2 #156): all 3 rows (plains/forest/mountain) match monsters.h:1301-1323 exactly. Roster complete for S_CENTAUR. 0 corrections. v2 voice fixes: (a) "Mounted archers" was wrong — centaurs are half-horse, not riders on a horse. Reworded to "Half-horse archers." (b) "They wield bows" was too narrow — per makemon.c:474-484, forest centaurs get BOW+arrows but plains and mountain centaurs get CROSSBOW+bolts (50% spawn-armed rate). Reworded to "Forest centaurs wield bows; plains and mountain centaurs wield crossbows." See companion-audit.md. -->
 
-Mounted archers with strong physical attacks. They wield bows and shoot at range.
+Half-horse archers with strong physical attacks. Forest centaurs wield bows; plains and mountain centaurs wield crossbows. They shoot at range.
 
 ::: dense-table
 
