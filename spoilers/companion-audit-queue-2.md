@@ -70,13 +70,13 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 59**  L 6927  (  13 lines)     ↳ Voluntary Challenges → Petless (new in 5.0)
 - [x] **# 60**  L 6409  (  62 lines)     ↳ Sokoban Solutions → Level 3, Version B
 - [x] **# 61**  L 8502  (  19 lines)     ↳ Bestiary Tables → Elementals `E`
-- [ ] **# 62**  L 3892  ( 146 lines)   📖 Tools of the Trade
-- [ ] **# 63**  L 1310  (  24 lines)     ↳ Traps and Hazards → Searching and Detection
+- [x] **# 62**  L 3892  ( 146 lines)   📖 Tools of the Trade
+- [x] **# 63**  L 1310  (  24 lines)     ↳ Traps and Hazards → Searching and Detection
 - [x] **# 64**  L 8368  (  16 lines)     ↳ Bestiary Tables → Xans and fantastic insects `x`
 - [x] **# 65**  L 8765  (  20 lines)     ↳ Bestiary Tables → Trolls `T`
-- [ ] **# 66**  L 7364  (  12 lines)     ↳ Weapons Tables → Club
-- [ ] **# 67**  L 8185  (  18 lines)     ↳ Bestiary Tables → Nymphs `n`
-- [ ] **# 68**  L 2569  (  58 lines)     ↳ A Practical Identification Strategy → Blessed, Uncursed, Cursed
+- [x] **# 66**  L 7364  (  12 lines)     ↳ Weapons Tables → Club
+- [x] **# 67**  L 8185  (  18 lines)     ↳ Bestiary Tables → Nymphs `n`
+- [x] **# 68**  L 2569  (  58 lines)     ↳ A Practical Identification Strategy → Blessed, Uncursed, Cursed
 - [ ] **# 69**  L 3125  (  14 lines)     ↳ A Practical Identification Strategy → Naming What You've Learned
 - [ ] **# 70**  L 8154  (  14 lines)     ↳ Bestiary Tables → Leprechauns `l`
 - [ ] **# 71**  L 2294  (   6 lines)     ↳ Dangerous Encounters → Genocide

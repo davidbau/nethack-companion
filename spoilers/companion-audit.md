@@ -7886,3 +7886,98 @@ Source: `spoilers/companion.md` line 8782. No corrections (re-audit clean).
 - Stoning leaves a statue (`mon.c:671 mkcorpstat(STATUE,...)`), so no corpse to revive from.
 
 ---
+
+## 2026-05-18 — v2 audit #62: Tools of the Trade
+
+Source: `spoilers/companion.md` line 3912. 4 corrections.
+
+### Wrong → fixed
+- **"Bell of Opening ... granted by your quest leader on Quest completion"**: wrong. The Bell is carried by the quest *nemesis* (`makemon.c:1378-1379` — `MS_NEMESIS` gets BELL_OF_OPENING at spawn) and looted from their corpse. The quest leader chides you if you finish without it (`quest.c:267-268 quest_complete_no_bell`) but doesn't grant it. Reworded the Other Notable Tools cell.
+- **"One blessed scroll of charging restores it to at least 50"**: misleading. Uncursed charging also reaches 50 (`read.c:880-883`); blessing pushes the floor to 75. Reworded to "non-cursed scroll of charging restores it to at least 50 (more if blessed)."
+- **Magic lamp "rub it while blessed and there's a 1-in-3 chance the djinni emerges"**: implies blessing affects emergence. The 1/3 emergence is independent of bless (`apply.c:1817`); bless only affects the wish-grant probability (80% blessed, lower otherwise). Reworded.
+- **"~16 charges very well spent"** for writing scroll of charging: that's the basecost. Actual write cost is `rn1(8,8)` = 8-15 charges. Updated to "8-15 charges."
+
+### Wisdom additions
+- Added the G_UNIQ-skip caveat to class genocide: "uniquely-named demon lords survive any class genocide" (`read.c:2998`). Real beginner protection — a player who genocides `&` thinking it'll remove Demogorgon will be unpleasantly surprised.
+
+### Verified
+- Container weights and locked-on-creation rates at `objects.h:899-912`, `mkobj.c:311-336`.
+- BoH scatter-not-destroy per `fixes5-0-0.txt:183`.
+- Intelligent monsters loot containers per `fixes5-0-0.txt:2668`.
+- Skeleton key floors `75 + Dex` boxes / `70 + Dex` doors at `lock.c:528, 640`.
+- Magic marker 30-99 charges at `mkobj.c:1026 rn1(70,30)`.
+- Write costs match per-scroll basecost / 2 to basecost at `write.c:13-57, 256-265`.
+- Mid-write failure (scroll disappears, spellbook paper survives) at `write.c:269-282`.
+- Second marker recharge always fails at `read.c:854-865`.
+- Wand of wishing 2nd charging always explodes at `read.c:761-764`.
+- Unicorn horn 7-status cure list at `apply.c:2312-2327`; no longer restores attribute drain per `fixes5-0-0.txt:190`.
+- Magic flute sleep / harp tame at `music.c:589-669`.
+- Drum of earthquake at `music.c:688-698`.
+- Crystal ball one-glyph-class-per-gaze at `detect.c:1300-1311`.
+
+---
+
+## 2026-05-18 — v2 audit #63: Traps and Hazards — Searching and Detection
+
+Source: `spoilers/companion.md` line 1319. 1 factual fix.
+
+### Wrong → fixed
+- **"Wand of secret door detection reveals everything hidden in a square radius around you"**: wrong shape. The wand uses `do_clear_area` at `vision.c:2107-2148` with `circle_data` at `vision.c:27-45` — a *circular* area of radius `BOLT_LIM = 8` (`hack.h:49`), further gated by `couldsee()` line-of-sight checks at `vision.c:2144`. Walls block detection. Reworded to "a roughly circular area around you (radius about eight, blocked by line of sight)."
+
+### Verified
+- `dosearch0` independent rolls per square at `detect.c:2033-2090`.
+- `rnl` Luck bias at `rnd.c:112-140`; trap roll `!rnl(8)` at `detect.c:2079`.
+- Excalibur is the only SPFX_SEARCH artifact at `artilist.h:85-86`; bonus only on rnl(7-fund) at `detect.c:2043, 2053`, not on trap roll.
+- Wand reveals SDOOR/SCORR/traps/trapped chests/hidden mimics via `findone` at `detect.c:1639-1726`.
+- Crystal ball trap detection scans the level-wide `gf.ftrap` list at `detect.c:1011-1075`.
+- `trap_is_unavoidable` ground-trap list at `trap.c:2810-2898`.
+
+---
+
+## 2026-05-18 — v2 audit #66: Weapons Tables — Club
+
+Source: `spoilers/companion.md` line 7383. 1 voice/factual tightening.
+
+### Wrong → fixed
+- **Club row Notes "What a Caveman starts with — basic but free of curses early"**: wrong. Starting inventory uses `blessorcurse(otmp, 10)` at `mkobj.c:876-885`, so about a 10% chance the starting club is cursed. Trimmed to "Caveman starter." matching the short-sword row's convention.
+
+### Verified
+- Club 1d6/1d3, wt 30, cost 3, wood, P_CLUB at `objects.h:371-373`.
+- Aklys 1d6/1d3, wt 15, cost 4, iron, P_CLUB at `objects.h:381-383`.
+- Caveman starts with club at `u_init.c:68-70`.
+- Aklys return mechanic requires W_WEP per `dothrow.c:30-34 AutoReturn` macro; ~1% misfire at `dothrow.c:1711`.
+- No P_CLUB artifacts in `include/artilist.h`.
+
+---
+
+## 2026-05-18 — v2 audit #67: Bestiary Tables — Nymphs `n`
+
+Source: `spoilers/companion.md` line 8204. No corrections (re-audit clean).
+
+### Verified
+- All three rows (wood / water / mountain) Lvl 3, Spd 12, AC 9, MR 20%, AT_CLAW AD_SITM + AT_CLAW AD_SEDU at `monsters.h:702-723`.
+- Water nymph M1_SWIM at `monsters.h:714`.
+- All three M1_TPORT.
+- AD_SITM steal-and-teleport handled at `uhitm.c:4724, 4798`; AD_SEDU at `uhitm.c:4642`.
+
+---
+
+## 2026-05-18 — v2 audit #68: A Practical Identification Strategy — Blessed, Uncursed, Cursed
+
+Source: `spoilers/companion.md` line 2582. No corrections (re-audit clean).
+
+### Verified
+- Altar flash colors at `do.c:379-388` (amber=blessed, black=cursed).
+- Pet step-around-cursed at `dogmove.c:535-538` (with starvation exception not surfaced in prose).
+- Cursed armor stays welded at `do_wear.c:1900, 2199`.
+- Cursed gain-level "rises through ceiling" at `potion.c:1083-1109`.
+- Cursed scroll of teleportation = level teleport at `read.c:2015-2025`.
+- Holy water making at `pray.c:1387-1411, 2336-2339`.
+- Priests sense BUC naturally at `invent.c:2763, 3545`.
+- Blessed scroll of identify "at least 2 items + 1-in-5 chance whole pack" at `read.c:2086-2092`.
+- Cursed scroll of identify only IDs itself on first cursed read at `read.c:2074-2081`.
+
+### Notes
+- "Uncursed scroll IDs one or two items" is a typical-case simplification — the C code at `read.c:2086` has a 1-in-5 chance to roll `rn2(5)`, so uncursed *can* occasionally identify more, but the modal outcome is 1. Defensible as written.
+
+---

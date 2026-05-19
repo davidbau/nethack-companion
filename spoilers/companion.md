@@ -1317,7 +1317,7 @@ enchantment instead. Useful protection to have on if you haven't
 found anything better yet.
 
 #### Searching and Detection
-<!-- audit 2026-05-18 #92: dosearch0 mechanics verified (detect.c:2016-2093); rnl Luck bias confirmed (rnd.c:112). Corrected: wand of secret door detection is NODIR (square radius around player, not "in its path"); also reveals SDOOR/SCORR/traps/trapped chests/hidden mimics, not just traps. Levitation/Flying immune to most but not all floor traps (magic, teleport, anti-magic still hit). Search artifact/lenses bonus only helps door/corridor discovery (rnl(7-fund)); trap roll uses rnl(8) with no fund. See companion-audit.md. -->
+<!-- audit 2026-05-18 #92 (re-audit 2026-05-18 v2 #63): dosearch0 mechanics verified (detect.c:2016-2093); rnl Luck bias confirmed (rnd.c:112). Corrected: wand of secret door detection is NODIR; also reveals SDOOR/SCORR/traps/trapped chests/hidden mimics, not just traps. Levitation/Flying immune to most but not all floor traps. Search artifact/lenses bonus only helps door/corridor discovery (rnl(7-fund)); trap roll uses rnl(8) with no fund. v2 corrected the wand's area shape: it's a circular area of radius BOLT_LIM=8 (vision.c:27-45 circle_data + 2107-2148 do_clear_area) blocked by line of sight via couldsee(), NOT a square. Reworded "square radius around you" to "roughly circular area around you (radius about eight, blocked by line of sight)." Excalibur is the only SPFX_SEARCH artifact (artilist.h:85-86). See companion-audit.md. -->
 
 The best defense against traps is finding them before they find you:
 
@@ -1326,8 +1326,9 @@ The best defense against traps is finding them before they find you:
   artifact/lenses search bonus only speeds up secret-door and
   secret-corridor discovery, not trap finding.)
 - **Wand of secret door detection** reveals everything hidden in a
-  square radius around you: secret doors, secret corridors, traps,
-  trapped chests, and concealed monsters. It's not directional.
+  roughly circular area around you (radius about eight, blocked by
+  line of sight): secret doors, secret corridors, traps, trapped
+  chests, and concealed monsters. It's not directional.
 - **Crystal ball** can reveal traps across the entire level
 - **Pets** avoid known traps, so watch their pathfinding for clues
 - **Flying and levitation** make you immune to most floor traps
@@ -2580,7 +2581,7 @@ single most powerful identification tool you have.
 <div><figure style="margin: 1.5em 0; text-align: center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 736" role="img" aria-label="The identification flowchart" style="max-width: 760px; width: 100%; height: auto; font-family: 'EB Garamond', 'Garamond', 'Georgia', serif;"><title>The Identification Flowchart</title><defs><marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker><style>.start{fill:#E8F4FD;stroke:#3B6FA0;stroke-width:2}.decision{fill:#FFF4E6;stroke:#B5651D;stroke-width:2}.action{fill:#F0F9E8;stroke:#5B8E3A;stroke-width:2}.final{fill:#FCE8E6;stroke:#A14A3F;stroke-width:2}.label{font-size:18px;fill:#1f2933;text-anchor:middle}.startlbl{font-size:19px;font-weight:600;fill:#1f2933;text-anchor:middle}.branch{font-size:16px;font-style:italic;fill:#5a5a5a}.edge{fill:none;stroke:#5a5a5a;stroke-width:1.5}</style></defs><rect class="start" x="40" y="20" width="320" height="50" rx="25" ry="25"/><text class="startlbl" x="200" y="51">Found an item</text><path class="edge" d="M 200 70 L 200 100" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="100" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="133">Can you reach an altar?</text><path class="edge" d="M 360 128 L 430 128" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="121" text-anchor="middle">yes</text><rect class="action" x="430" y="100" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="133">Drop it. Check BUC.</text><text class="branch" x="210" y="172">no</text><path class="edge" d="M 200 156 L 200 190" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="190" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="223">Is your pet nearby?</text><path class="edge" d="M 360 218 L 430 218" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="211" text-anchor="middle">yes</text><rect class="action" x="430" y="184" width="290" height="62" rx="8" ry="8"/><text class="label" x="575" y="210">Drop it. Pet avoids it?</text><text class="label" x="575" y="232" style="font-size: 16px;"><tspan style="font-style: italic; fill:#5a5a5a;">yes</tspan>: it's cursed; <tspan style="font-style: italic; fill:#5a5a5a;">no</tspan>: it's safe</text><text class="branch" x="210" y="262">no</text><path class="edge" d="M 200 246 L 200 290" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="290" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="323">Can you reach a shop?</text><path class="edge" d="M 360 318 L 430 318" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="311" text-anchor="middle">yes</text><rect class="action" x="430" y="290" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="323">Check price.</text><text class="branch" x="210" y="362">no</text><path class="edge" d="M 200 346 L 200 380" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="380" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="413">Is it a wand?</text><path class="edge" d="M 360 408 L 430 408" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="401" text-anchor="middle">yes</text><rect class="action" x="430" y="380" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="413">Engrave-test it.</text><text class="branch" x="210" y="452">no</text><path class="edge" d="M 200 436 L 200 470" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="470" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="503">Spare ring or potion with a sink?</text><path class="edge" d="M 360 498 L 430 498" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="491" text-anchor="middle">yes</text><rect class="action" x="430" y="470" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="503">Drop ring or dip potion.</text><text class="branch" x="210" y="542">no</text><path class="edge" d="M 200 526 L 200 560" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="560" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="593">Is it safe to use-test?</text><path class="edge" d="M 360 588 L 430 588" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="581" text-anchor="middle">yes</text><rect class="action" x="430" y="560" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="593">Try it carefully.</text><text class="branch" x="210" y="632">no</text><path class="edge" d="M 200 616 L 200 660" marker-end="url(#arrowhead)"/><rect class="final" x="40" y="660" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="693">Read a scroll of identify.</text></svg><figcaption style="font-style: italic; color: #5a5a5a; font-size: 0.9em; margin-top: 0.5em;">The identification flowchart: cheapest method first, scroll of identify last.</figcaption></figure></div>
 
 #### Blessed, Uncursed, Cursed
-<!-- audit 2026-05-18 #88: altar/pet test mechanics, Priest BUC sense, cursed armor sticks, cursed gain-level rises, luckstone +luck, holy/unholy water dipping all verified vs do.c/dogmove.c/objnam.c/attrib.c/potion.c. Corrected: blessed scroll of identify gives at least 2 items + 1-in-5 chance whole pack (was "every item"); cursed scroll IDs only itself on first cursed read (read.c:2074-2081), not "single item." Cursed teleport scroll is a *level* teleport (not "somewhere terrible"). Added how to make holy water (pray on co-aligned altar with potions of water). See companion-audit.md. -->
+<!-- audit 2026-05-18 #88 (re-audit 2026-05-18 v2 #68): altar/pet test mechanics, Priest BUC sense, cursed armor sticks, cursed gain-level rises, luckstone +luck, holy/unholy water dipping all verified vs do.c/dogmove.c/objnam.c/attrib.c/potion.c. Corrected: blessed scroll of identify gives at least 2 items + 1-in-5 chance whole pack (was "every item"); cursed scroll IDs only itself on first cursed read (read.c:2074-2081), not "single item." Cursed teleport scroll is a *level* teleport (not "somewhere terrible"). Added how to make holy water (pray on co-aligned altar with potions of water). v2 re-confirmed: altar flash do.c:379-388; pet step-around dogmove.c:535-538 (with starvation exception); cursed gain-level message at potion.c:1083-1109; level-tele on cursed/confused scroll at read.c:2015-2025; holy water making at pray.c:2336-2339; Priest natural BUC at invent.c:2763,3545; blessed scroll identify branch at read.c:2086-2092; cursed scroll only-IDs-itself first read at read.c:2074-2081. 0 corrections. See companion-audit.md. -->
 
 Before you can worry about *what* an item is, you need to know
 *what condition* it's in. Every item in the Mazes is blessed, uncursed,
@@ -3909,7 +3910,7 @@ than it looks.
 ---
 
 ### Tools of the Trade
-<!-- audit 2026-05-17 #28: ~40 claims verified, 5 corrected (container locked counts, unicorn horn cure list, crystal ball one-class-per-gaze, Bell of Opening is Quest reward not Vlad, passtune any tonal instrument). See companion-audit.md. -->
+<!-- audit 2026-05-17 #28 (re-audit 2026-05-18 v2 #62): ~40 claims verified, 5 corrected (container locked counts, unicorn horn cure list, crystal ball one-class-per-gaze, Bell of Opening is Quest reward not Vlad, passtune any tonal instrument). v2 audit found four corrections. (a) Bell of Opening "granted by your quest leader on Quest completion" was wrong — the Bell is carried by the quest *nemesis* and looted from their corpse (makemon.c:1378-1379 BELL_OF_OPENING goes to MS_NEMESIS); the quest leader chides you if you finish without it (quest.c:267-268) but doesn't grant it. (b) "One blessed scroll of charging restores it to at least 50" misleads — an uncursed scroll also reaches 50 (read.c:880-883); blessing pushes the floor to 75. Reworded to "non-cursed scroll of charging restores it to at least 50 (more if blessed)." (c) Magic lamp "rub it while blessed and there's a 1-in-3 chance" implies blessing affects emergence; bless only affects the wish-grant probability (apply.c:1817) — 1/3 emergence is independent. Reworded. (d) "~16 charges very well spent" was the basecost; actual scroll-of-charging write cost is rn1(8,8) = 8-15 charges. Updated. Also added the G_UNIQ-skip caveat to class genocide: "uniquely-named demon lords survive any class genocide" (read.c:2998). See companion-audit.md. -->
 
 The `(` symbol covers the dungeon's most eclectic category: pickaxes,
 magic lamps, unicorn horns, musical instruments, crystal balls, and
@@ -3966,11 +3967,12 @@ of these. The weight is negligible and the utility is constant.
 
 **Oil lamps** and **candles** light dark corridors, which is
 pleasant but not essential. The real prize is the **magic lamp**:
-rub it while blessed and there's a 1-in-3 chance the djinni emerges,
-and *if* it does there's an 80% chance it grants you a wish (so
-~27% wish per rub overall). Try again on the same lamp until the
-djinni shows. Never, ever use a magic lamp for light. That's like
-using a winning lottery ticket as a bookmark.
+rub it and there's a 1-in-3 chance the djinni emerges, then a
+chance it grants you a wish — 80% if the lamp is blessed (so
+~27% wish per rub overall), less if it isn't. Try again on the
+same lamp until the djinni shows. Never, ever use a magic lamp
+for light. That's like using a winning lottery ticket as a
+bookmark.
 
 The **Candelabrum of Invocation** is a unique candelabra found in
 Vlad's Tower. It's one of three items needed for the invocation
@@ -4003,7 +4005,7 @@ but no special effects, useful only for confusing the issue.
 | Towel              | Wipe cream pie from face, use as blindfold    |
 | Magic marker       | Write scrolls and spellbooks on blank paper   |
 | Crystal ball       | Pick a glyph class per gaze (objects, traps, monsters, etc.); each gaze answers one question |
-| Bell of Opening    | Invocation item (granted by your quest leader on Quest completion) |
+| Bell of Opening    | Invocation item; carried by your quest nemesis, looted from their corpse |
 | Leash              | Tie a pet to you so it follows through stairs |
 
 The **unicorn horn** is the dungeon's all-purpose first-aid kit.
@@ -4029,13 +4031,13 @@ separately.
 
 The **magic marker** is a printing press for scrolls (and, more
 expensively, spellbooks). A fresh marker has 30-99 charges; one
-blessed scroll of charging restores it to at least 50, but only
-once. The second recharge attempt always fails. Each write costs
-roughly half to all of the target scroll's basecost: magic mapping
-4-7 charges, identify 7-13, enchant weapon / enchant armor /
-charging 8-15, teleportation 10-19, and **genocide 15-29**.
-Spellbooks cost about 10 × spell level: a level-3 book averages
-~22 charges, a level-7 ~52.
+non-cursed scroll of charging restores it to at least 50 (more if
+the scroll is blessed), but only once. The second recharge attempt
+always fails. Each write costs roughly half to all of the target
+scroll's basecost: magic mapping 4-7 charges, identify 7-13,
+enchant weapon / enchant armor / charging 8-15, teleportation
+10-19, and **genocide 15-29**. Spellbooks cost about 10 × spell
+level: a level-3 book averages ~22 charges, a level-7 ~52.
 
 To write a scroll intentionally you must have **identified** it
 first. Writing by appearance gives a random scroll of that
@@ -4044,13 +4046,14 @@ mid-write, scrolls disappear entirely (paper + charges wasted); a
 spellbook's paper survives but the writing fades.
 
 The big-ticket writes for an ascension kit are scrolls of
-**genocide** (three of these wipe the worst dangerous monster
-letters L, &, h out of the game), **charging** (a blessed one
-restores one additional wish to an empty wand of wishing for ~16
-charges very well spent, though a second charging attempt always
-explodes the wand), and **enchant weapon / enchant armor** for the
-+7 ascension kit. A well-used marker can produce a meaningful share
-of your ascension kit.
+**genocide** (three of these wipe the worst monster letters — L,
+&, h — out of the game; uniquely-named demon lords survive any
+class genocide), **charging** (a blessed one restores one
+additional wish to an empty wand of wishing for 8-15 charges very
+well spent, though a second charging attempt always explodes the
+wand), and **enchant weapon / enchant armor** for the +7 ascension
+kit. A well-used marker can produce a meaningful share of your
+ascension kit.
 
 ---
 
@@ -7381,13 +7384,13 @@ other bimanual weapon.
 :::
 
 #### Club
-<!-- audit 2026-05-17 #6: 11 cells verified, 1 corrected (aklys "Strength" → tethered when wielded). See companion-audit.md. -->
+<!-- audit 2026-05-17 #6 (re-audit 2026-05-18 v2 #66): 11 cells verified, 1 corrected (aklys "Strength" → tethered when wielded). v2 fixed the club Notes cell: "basic but free of curses early" was wrong — starting inventory uses blessorcurse(otmp, 10) per mkobj.c:876-885, so about a 10% chance the starting club is cursed. Trimmed to "Caveman starter." matching the convention used in the short-sword row. Stats re-verified vs objects.h:371-373 (club) and 381-383 (aklys); aklys return mechanic at dothrow.c:30-34, 1710-1759 confirmed (W_WEP required; ~1% misfire). See companion-audit.md. -->
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| club | 1d6 / 1d3 | 30 | 3 | — | wood | What a Caveman starts with — basic but free of curses early. |
+| club | 1d6 / 1d3 | 30 | 3 | — | wood | Caveman starter. |
 | aklys | 1d6 / 1d3 | 15 | 4 | — | iron | Returns when thrown if wielded as your primary weapon (it's tethered); occasional misfire. |
 
 :::
@@ -8202,7 +8205,7 @@ All mimics are amorphous, hide, and are acid-resistant.
 :::
 
 #### Nymphs `n`
-<!-- audit 2026-05-18 #131: clean. All three nymph stats (wood/water/mountain — LVL 3, Spd 12, AC 9, MR 20%, AT_CLAW AD_SITM + AT_CLAW AD_SEDU, M1_TPORT) match monsters.h:702-723. Water nymph has M1_SWIM (line 714). Corpse grants intrinsic teleportitis with 10% chance per should_givit (eat.c:936-975). -->
+<!-- audit 2026-05-18 #131 (re-audit 2026-05-18 v2 #67): clean. All three nymph stats (wood/water/mountain — LVL 3, Spd 12, AC 9, MR 20%, AT_CLAW AD_SITM + AT_CLAW AD_SEDU, M1_TPORT) match monsters.h:702-723. Water nymph has M1_SWIM (line 714). Corpse grants intrinsic teleportitis with 10% chance per should_givit (eat.c:936-975). v2 re-verified: AD_SITM steal-and-teleport at uhitm.c:4724,4798; AD_SEDU at uhitm.c:4642; all three carry M1_TPORT|MR_POISON. 0 corrections. See companion-audit.md. -->
 
 
 Steals one item and teleports away. The cure is to engage from range, block her path with pets, or wear an amulet of life saving and steal the item back from her corpse later.
