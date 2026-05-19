@@ -60,11 +60,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 48**  L 7416  (  13 lines)     ↳ Weapons Tables → Axe
 - [x] **# 49**  L 2057  (  12 lines)     ↳ Dangerous Encounters → Starvation
 - [x] **# 50**  L 2096  (  28 lines)     ↳ Dangerous Encounters → Level Drain
-- [ ] **# 51**  L 3793  ( 146 lines)   📖 Rings and Amulets
-- [ ] **# 52**  L 6472  (  62 lines)     ↳ Sokoban Solutions → Level 3, Version B
-- [ ] **# 53**  L 2030  (  27 lines)     ↳ Dangerous Encounters → The Touch of Death
-- [ ] **# 54**  L 7429  (  11 lines)     ↳ Weapons Tables → Pick-axe
-- [ ] **# 55**  L 7007  (  25 lines)     ↳ Voluntary Challenges → Permadeaf (new in 5.0)
+- [x] **# 51**  L 3793  ( 146 lines)   📖 Rings and Amulets
+- [x] **# 52**  L 6472  (  62 lines)     ↳ Sokoban Solutions → Level 3, Version B
+- [x] **# 53**  L 2030  (  27 lines)     ↳ Dangerous Encounters → The Touch of Death
+- [x] **# 54**  L 7429  (  11 lines)     ↳ Weapons Tables → Pick-axe
+- [x] **# 55**  L 7007  (  25 lines)     ↳ Voluntary Challenges → Permadeaf (new in 5.0)
 - [ ] **# 56**  L  942  (  39 lines)     ↳ Branches and Landmarks → Sokoban
 - [ ] **# 57**  L 8659  (  13 lines)     ↳ Bestiary Tables → Jabberwocks `J`
 - [ ] **# 58**  L 2155  (  17 lines)     ↳ Dangerous Encounters → Engulfment from Hiding

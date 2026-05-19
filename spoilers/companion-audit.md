@@ -9017,3 +9017,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 50/183 done.
+
+## 2026-05-19 — v3 audit batch 11: Rings & Amulets (#51), Sokoban L3B (#52), Touch of Death (#53), Pick-axe (#54), Permadeaf (#55)
+
+All five **CLEAN**.
+
+- Rings & Amulets: 146-line chapter, all 28 ring prices vs `objects.h:741-827`, auto-curse list, conflict pet-hostility (`dogmove.c:1046-1054`), per-ring hunger turns 4/12 (`eat.c:3237-3267`), amulet of guarding +2 AC/+2 MC (`do_wear.c:2496-2497`, `mhitu.c:1121-1124`), strangulation 6 turns. Two close calls (life-saving HP cap, restful sleep +2 not +1) deemed not-beginner-impactful per no-trivia rule.
+- Sokoban L3B: 16 boulders, 11 holes, 2 locked doors, downstair/upstair positions all match `soko2-2.lua` exactly. Solution verified; final "five remaining" tally correct.
+- Touch of Death: v2 fix intact (only arch-lich casts via `mcastu.c:111` m_lev=20 threshold). Antimagic-binary semantics correct. MR-gating self-zap exception confirmed at `zap.c:2885-2902` vs `:4497-4502`.
+- Pick-axe: stats vs `objects.h:1007-1009` (pick-axe one-handed) and `:345-347` (mattock two-handed +2d6 large). Dig-pit-then-hole at `dig.c:373-374`.
+- Permadeaf: 5.0 conduct via `optlist.h:267-269` (rcfile only), `youprop.h:125` (`Deaf` macro includes `u.uroleplay.deaf`), shrieker `mon.c:4087-4105` (pline gated, makemon+aggravate unconditional).
+
+### Pass-3 queue
+55/183 done.
