@@ -50,11 +50,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 38**  L 8034  (  17 lines)     ↳ Bestiary Tables → Blobs `b`
 - [x] **# 39**  L 2323  (   6 lines)     ↳ Dangerous Encounters → Genocide
 - [x] **# 40**  L 1064  (  28 lines)     ↳ Branches and Landmarks → Fort Ludios
-- [ ] **# 41**  L 7628  (  11 lines)     ↳ Weapons Tables → Sling
-- [ ] **# 42**  L  336  (  49 lines)   📖 What to Pack
-- [ ] **# 43**  L 2172  (  19 lines)     ↳ Dangerous Encounters → Light Bursts
-- [ ] **# 44**  L 6770  (  41 lines)     ↳ Voluntary Challenges → The Food Conducts
-- [ ] **# 45**  L 7534  (  27 lines)     ↳ Weapons Tables → Spear
+- [x] **# 41**  L 7628  (  11 lines)     ↳ Weapons Tables → Sling
+- [x] **# 42**  L  336  (  49 lines)   📖 What to Pack
+- [x] **# 43**  L 2172  (  19 lines)     ↳ Dangerous Encounters → Light Bursts
+- [x] **# 44**  L 6770  (  41 lines)     ↳ Voluntary Challenges → The Food Conducts
+- [x] **# 45**  L 7534  (  27 lines)     ↳ Weapons Tables → Spear
 - [ ] **# 46**  L 8430  (  16 lines)     ↳ Bestiary Tables → Worms `w`
 - [ ] **# 47**  L 7661  (  13 lines)     ↳ Weapons Tables → Boomerang
 - [ ] **# 48**  L 7416  (  13 lines)     ↳ Weapons Tables → Axe

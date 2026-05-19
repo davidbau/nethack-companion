@@ -8991,3 +8991,16 @@ Single-sentence beginner warning. Confused-uncursed-genocide killing own species
 
 ### Pass-3 queue
 40/183 done.
+
+## 2026-05-19 — v3 audit batch 9: Sling (#41), What to Pack (#42), Light Bursts (#43), Food Conducts (#44), Spear (#45)
+
+All five **CLEAN**.
+
+- Sling: stats vs `objects.h:403` match; Caveman starter (`u_init.c:70`); training requires wielded sling not just rocks (`weapon.c:1750-1756`).
+- What to Pack: qualitative chapter; spot-checked tripe (eat.c:2138-2145), touchstone gem-ID, burdened impact. No factual errors.
+- Light Bursts: yellow light AT_EXPL AD_BLND 10d20, black light AD_HALU 10d12, blindness duration tmp turns. M1_MINDLESS (warning yes, telepathy no). Cures via blessed POT_HEALING / POT_EXTRA_HEALING (not cursed) / POT_FULL_HEALING.
+- Food Conducts: vegetarian = vegan + S_PUDDING ≠ black pudding (`mondata.h:232-241`); vegan-breaking food list matches `eat.c:3016-3018` exactly; eggs break vegan but not vegetarian (`eat.c:3006`); prayer hunger threshold u.uhs >= HUNGRY (`pray.c:275`).
+- Spear: all 6 rows vs `objects.h`. Kebab +2 hit on xorns/dragons/jabberwocks/nagas/giants (`weapon.c:71-73, 167-168`). Caveman +1 multishot (`dothrow.c:48-50`). Valkyrie starter Expert (`u_init.c:161, 537`).
+
+### Pass-3 queue
+45/183 done.
