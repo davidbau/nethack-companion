@@ -3300,7 +3300,7 @@ kit.</p>
 </section>
 <section id="making-friends" class="level3">
 <h3>Making Friends</h3>
-<!-- audit 2026-05-17 #36: ~25 claims verified, 4 corrected (pet-curse-avoidance overstated, tameness loss sources narrowed, displacement guards corrected, charm monster spell is multi-target not single). See companion-audit.md. -->
+<!-- audit 2026-05-17 #36 (re-audit 2026-05-18 v2 #96): ~25 claims verified, 4 corrected (pet-curse-avoidance overstated, tameness loss sources narrowed, displacement guards corrected, charm monster spell is multi-target not single). v2 fixes: (a) "You have a sad feeling for a moment" was attributed to the "left pet behind alive on a previous level" case — wrong. The message fires when a pet of yours dies offscreen (mon.c:952 mtmp->mtame && !canseemon, message at mon.c:3101/3495). Leaving a pet behind alive produces no message at all; loyalty just decays at 1 per 150 moves apart (dog.c:689-697). Separated the two cases in the prose. Beginner trap: a reader who saw the message thinking "still alive" would go back for a corpse. (b) Confused scroll of taming / charm monster radius was "5×5" — wrong. read.c:1689 sets bd = confused ? 5 : 1, loop spans [-bd..bd] so area = (2*bd+1)²: normal 3×3, confused 11×11. Corrected. See companion-audit.md. -->
 <p>The Mazes of Menace are dark, hostile, and full of things that want
 to eat you. Under those circumstances, a loyal companion is worth more
 than a bag of gold. Fortunately, the dungeon provides.</p>
@@ -3349,7 +3349,7 @@ of taming exist:</p>
 and cats, produce for horses</li>
 <li><strong>Scroll of taming</strong> or <strong>spell of charm
 monster</strong> both route through the same handler and tame all
-eligible creatures within a 3×3 radius (5×5 when confused)</li>
+eligible creatures within a 3×3 radius (11×11 when confused)</li>
 <li><strong>Magic trap effects</strong> occasionally produce taming</li>
 </ul>
 <p>Taming isn’t limited to small animals: with a scroll of taming or the
@@ -3387,9 +3387,13 @@ monsters, drowning in water. Keep an eye on your companion’s health
 A dead pet is not just a loss of utility; it’s a cold feeling in the pit
 of your stomach.</p>
 <p>If you change levels and your pet isn’t adjacent, it won’t follow.
-The game tells you: <em>“You have a sad feeling for a moment.”</em> Your
-pet is still alive on the previous level, but its loyalty is ticking
-down. Go back for it before it forgets you were friends.</p>
+There’s no message: the pet simply isn’t with you on the new level,
+alive on the floor where you left it. Its loyalty is ticking down. Go
+back for it before it forgets you were friends.</p>
+<p>If you see <em>“You have a sad feeling for a moment”</em> — that’s
+different. That message means a pet of yours just died offscreen on
+another level, usually one you left behind that got into a fight it
+couldn’t win.</p>
 <p>Current editions have added two things that veteran pet-owners should
 know.</p>
 <p>First: your pet eats for a reason beyond loyalty. The same corpse
@@ -5915,6 +5919,7 @@ kit.</p>
 </section>
 <section id="the-armory" class="level3">
 <h3>The Armory</h3>
+<!-- audit 2026-05-18 v2 #94: 3 corrections. (a) "drain resistance (the only non-artifact source)" — wrong; shield of drain resistance (objects.h:656-658, new in 5.0) also provides it non-artifactually. Reworded to "one of two non-artifact sources." (b) Warning glyph color description "yellow for moderate, red for deadly" — wrong; drawing.c:39-52 sets six levels white/red/red/red/magenta/bright-magenta with no yellow. Reworded to "white for the least threat, through red, with magenta for the worst." (c) Column headers "Best mundane options / Best magical options" were misleading — most "mundane" picks (cloak of protection, helm of caution, gauntlets of power, speed boots, shield of reflection) are magical (mgc=1 per objects.h), and the "magical" column's small shield is mundane. Relabeled to "Primary pick / Specialty pick" which describes the actual use intent honestly. Verified: cloak of protection MC3 / cloak of magic resistance MC1 (objects.h:637-646), MC formula at uhitm.c:87 (MC3 = 90% block), helm of caution WARNING at do_wear.c:448-450, DSM dual-property pattern at do_wear.c:806-883 (gray/silver no extras), DSM s>=0 trigger at read.c:1225, small shield as only no-penalty shield via spell.c:2269. See companion-audit.md. -->
 <p>Weapons and armor are the bread and butter of combat. Your choice of
 equipment determines how hard you hit, how well you dodge, and what
 special resistances you carry. This section covers the strategy of
@@ -5937,8 +5942,8 @@ attacks.</p>
 <thead>
 <tr>
 <th>Slot</th>
-<th>Best mundane options</th>
-<th>Best magical options</th>
+<th>Primary pick</th>
+<th>Specialty pick</th>
 </tr>
 </thead>
 <tbody>
@@ -5977,18 +5982,20 @@ attacks.</p>
 <p>The <strong>helm of caution</strong> is new in 5.0: it grants
 <em>warning</em>, the same intrinsic the ring provides, in the helmet
 slot. Warning fills the screen with colored markers indicating nearby
-threats by danger level (yellow for moderate, red for deadly) without
-you having to see the monsters yet. It is the ideal early-game helm
-slot: cheap (50 zm), light, and a real edge against ambushes. Late game
-it competes with helm of brilliance (Wizards) and helm of telepathy
-(everyone), but the warning bonus stays useful all the way down.</p>
+threats by danger level (white for the least threat, through red, with
+magenta for the worst) without you having to see the monsters yet. It is
+the ideal early-game helm slot: cheap (50 zm), light, and a real edge
+against ambushes. Late game it competes with helm of brilliance
+(Wizards) and helm of telepathy (everyone), but the warning bonus stays
+useful all the way down.</p>
 <p><strong>Dragon scale mail</strong> is the endgame body armor of
 choice. In 5.0, most colors provide two extrinsic resistances (gray and
 silver provide only the named one). Gray dragon scale mail provides
 magic resistance and is the most popular wish target. Silver provides
 reflection. Black provides disintegration resistance and drain
-resistance (the only non-artifact source). Green provides poison
-resistance and sickness immunity.</p>
+resistance (one of two non-artifact sources, alongside the shield of
+drain resistance). Green provides poison resistance and sickness
+immunity.</p>
 <p>To get dragon scale mail: kill a dragon, pick up the scales it drops,
 then read a (non-cursed) scroll of enchant armor while wearing them
 (they transform into scale mail); or wish for the mail directly.</p>
@@ -14627,7 +14634,7 @@ them.</td>
 </section>
 <section id="mimics-m" class="level4">
 <h4>Mimics <code>m</code></h4>
-<!-- audit 2026-05-18 #76: 3 rows (small/large/giant) verified clean against monsters.h:670-698. All stats, M1_AMORPHOUS|M1_HIDE|MR_ACID flags, AD_STCK on large/giant, M2_STRONG on large+giant verified. set_mimic_sym disguise mechanics (makemon.c:2393-2472) including STRANGE_OBJECT in shops at sufficient depth. 0 corrections. See companion-audit.md. -->
+<!-- audit 2026-05-18 #76 (re-audit 2026-05-18 v2 #95): 3 rows (small/large/giant) verified clean against monsters.h:670-698. All stats, M1_AMORPHOUS|M1_HIDE|MR_ACID flags, AD_STCK on large/giant, M2_STRONG on large+giant verified. set_mimic_sym disguise mechanics (makemon.c:2393-2472) including STRANGE_OBJECT in shops at sufficient depth. v2: re-verified all 3 rows; AD_STCK MC-block at uhitm.c:3310/3324 consistent with batch 18 v2 #87. 0 corrections. See companion-audit.md. -->
 <p>Disguised as items, walls, or fountains. Common in shops and zoos.
 The giveaway is the wrong object on the wrong square.</p>
 <p>All mimics are amorphous, hide, and are acid-resistant.</p>
@@ -17052,7 +17059,7 @@ stoning resistance — easily the best of the four eats.</p>
 </section>
 <section id="ogres-o" class="level4">
 <h4>Ogres <code>O</code></h4>
-<!-- audit 2026-05-18 #85: 3 rows (ogre/lord/king) verified clean against monsters.h:2052-2075. All stats, colors, attack dice match. Corrected "Ogre kings throw boulders" — ogres lack M2_ROCKTHROW (that's giants/Cyclops/ettins/titans). Ogres wield weapons (AT_WEAP), they don't throw rocks. See companion-audit.md. -->
+<!-- audit 2026-05-18 #85 (re-audit 2026-05-18 v2 #97): 3 rows (ogre/lord/king) verified clean against monsters.h:2052-2075. All stats, colors, attack dice match. Corrected "Ogre kings throw boulders" — ogres lack M2_ROCKTHROW (that's giants/Cyclops/ettins/titans). Ogres wield weapons (AT_WEAP), they don't throw rocks. v2: re-verified all three rows. 0 new corrections. See companion-audit.md. -->
 <p>Big melee brutes that wield weapons. Drop decent weapons and
 armor.</p>
 <div class="dense-table">
@@ -17265,7 +17272,7 @@ poisonous corpses.</p>
 </section>
 <section id="rust-monsters-and-disenchanters-r" class="level4">
 <h4>Rust monsters and disenchanters <code>R</code></h4>
-<!-- audit 2026-05-17 #60: 2 rows verified against monsters.h:2147-2161. Rust active erodes worn iron armor (uhitm.c:2311 erode_armor), passive on weapon when you hit it; greased weapons consume a charge instead. Silver/mithril/wood weapons immune (is_rustprone). Disenchanter active claw drains armor first (uhitm.c:3611-3644 some_armor + 5-way rn2(5) for rings/amulet/blindfold); weapon drain is passive-only. Corrected "long sword" prose to match (active threat is armor, not weapon). See companion-audit.md. -->
+<!-- audit 2026-05-17 #60 (re-audit 2026-05-18 v2 #98): 2 rows verified against monsters.h:2147-2161. Rust active erodes worn iron armor (uhitm.c:2311 erode_armor), passive on weapon when you hit it; greased weapons consume a charge instead. Silver/mithril/wood weapons immune (is_rustprone). Disenchanter active claw drains armor first (uhitm.c:3611-3644 some_armor + 5-way rn2(5) for rings/amulet/blindfold); weapon drain is passive-only. Corrected "long sword" prose to match (active threat is armor, not weapon). v2: re-verified rust/disenchanter rows and the AD_RUST/AD_ENCH branches. 0 new corrections. See companion-audit.md. -->
 <p>Rust monsters rust iron equipment on touch. Disenchanters drain
 enchantment from your armor when they hit you, and drain enchantment
 from your weapon when you hit them (passive counterattack). Either way,

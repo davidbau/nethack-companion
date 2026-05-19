@@ -8266,3 +8266,37 @@ Section consistent with the v2 #85 bestiary audit of trappers/lurkers. AD_WRAP+A
 93/183 done.
 
 ---
+
+## 2026-05-18 — v2 audit batch 20: The Armory (#94), Mimics (#95), Making Friends (#96), Ogres (#97), Rust monsters/disenchanters (#98)
+
+### The Armory (#94) — `spoilers/companion.md:4074` — 3 corrections
+
+- **Drain resistance "only non-artifact source"** wrong. The shield of drain resistance (`objects.h:656-658`, new in 5.0) is the second non-artifact source. Reworded to "one of two non-artifact sources, alongside the shield of drain resistance." The drain-life chapter already names both sources; this section was the outlier.
+- **Warning glyph colors** wrong. Companion said "yellow for moderate, red for deadly." Actual color table at `drawing.c:39-52` has six warning levels: white, red, red, red, magenta, bright-magenta. There is no yellow. Reworded to "white for the least threat, through red, with magenta for the worst."
+- **Column labels misleading**. "Best mundane options / Best magical options" — most "mundane" picks (cloak of protection, helm of caution, gauntlets of power, speed boots, shield of reflection) are actually magical (oc_magic=1 in objects.h); the "magical" column's small shield is mundane. Relabeled to "Primary pick / Specialty pick" which honestly describes the use-intent split.
+
+Re-verified: MC formula at `uhitm.c:87` (`negated = !(rn2(10) >= 3 * armpro)` → MC3 = 90% block), helm of caution warning intrinsic at `do_wear.c:448-450`, DSM dual-property pattern across `do_wear.c:806-883` (gray and silver intentionally single-property), DSM scroll transformation at `read.c:1225` (`s >= 0`), small shield as only no-penalty shield at `spell.c:2269`. Base AC 10 from `mons[PM_HUMAN].ac`.
+
+### Mimics `m` (#95) — `spoilers/companion.md:8199` — 0 corrections, badge updated
+
+All 3 rows (small/large/giant) verified clean against `monsters.h:670-698`. AD_STCK on large and giant only (correct in the table); MC-block at `uhitm.c:3310, 3324` consistent with batch 18 v2 #87. M1_AMORPHOUS | M1_HIDE | MR_ACID class trait verified.
+
+### Making Friends (#96) — `spoilers/companion.md:2437` — 2 corrections
+
+- **"You have a sad feeling for a moment" misattributed**. Companion claimed the message fires when you change levels without your pet adjacent ("Your pet is still alive on the previous level"). Actually that case produces **no message** — the pet just isn't with you on the new level, and loyalty decays at 1 per 150 moves apart (`dog.c:689-697`). The sad-feeling message at `mon.c:952` (`mtmp->mtame && !canseemon`, printed at `mon.c:3101` / `mon.c:3495`) fires when a tame pet **dies offscreen**. This was a real beginner trap — a reader hearing the message and thinking the pet was still alive would go back for a corpse. Separated the two cases in the prose. Note: the "What Actually Kills" message table at line 1606 already had this right.
+- **Confused taming radius "5×5"** wrong. `read.c:1689` sets `bd = confused ? 5 : 1`, with the loop spanning `[-bd..bd]` so the area is `(2*bd+1)²`. Normal = 3×3 (correct in the prose), confused = 11×11 (not 5×5). Corrected.
+
+Re-verified pet-curse-avoidance (`dogmove.c:535-538, 1235-1238`), tameness-loss exclusivity to player-initiated abuse, starvation-feral at `dog.c:706-708`, scroll-of-taming and charm-monster routing through the same `seffect_taming` (`read.c:2236-2238`), taming exclusion list at `dog.c:1163-1166, 1244-1247, 1250`, pet revival prayer at `pray.c:2335-2337` calling `pray_revive` at `pray.c:2176`, pet corpse intrinsic absorption at `mon.c:1763-1777`.
+
+### Ogres `O` (#97) — `spoilers/companion.md:8703` — 0 corrections, badge updated
+
+All 3 rows verified clean against `monsters.h:2052-2075`. M2_COLLECT (weapon pickup) verified on all three; MZ_LARGE confirmed. Prior v1 fix (removing "ogre kings throw boulders" — ogres lack M2_ROCKTHROW) holds.
+
+### Rust monsters and disenchanters `R` (#98) — `spoilers/companion.md:8762` — 0 corrections, badge updated
+
+Both rows verified clean against `monsters.h:2147-2161`. AD_RUST erodes iron armor via `uhitm.c:2311 erode_armor`; non-iron weapons (silver, mithril, copper, wood) immune per `is_rustprone` = `oc_material == IRON` at `objclass.h:200`. Disenchanter G_HELL (Gehennom-only generation), AC -10 hard to hit, active claw drains armor at `uhitm.c:3611-3644`, passive drains weapon at `uhitm.c:5992-6011`. Note: disenchanter uses AD_ENCH, not AD_DREN (which is level-drain on vampires etc.) — the prompt-author confused these but the spoiler correctly uses neither.
+
+### Pass-2 queue
+98/183 done.
+
+---

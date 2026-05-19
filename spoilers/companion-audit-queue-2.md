@@ -102,11 +102,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 91**  L 6549  ( 138 lines)     ↳ Sokoban Solutions → Level 4, Version B (prize: usually amulet of reflection, 25% bag of holding)
 - [x] **# 92**  L 8542  (  16 lines)     ↳ Bestiary Tables → Gnomes `G`
 - [x] **# 93**  L 2131  (  17 lines)     ↳ Dangerous Encounters → Engulfment from Hiding
-- [ ] **# 94**  L 4038  ( 127 lines)   📖 The Armory
-- [ ] **# 95**  L 8168  (  17 lines)     ↳ Bestiary Tables → Mimics `m`
-- [ ] **# 96**  L 2419  ( 118 lines)   📖 Making Friends
-- [ ] **# 97**  L 8672  (  15 lines)     ↳ Bestiary Tables → Ogres `O`
-- [ ] **# 98**  L 8731  (  14 lines)     ↳ Bestiary Tables → Rust monsters and disenchanters `R`
+- [x] **# 94**  L 4038  ( 127 lines)   📖 The Armory
+- [x] **# 95**  L 8168  (  17 lines)     ↳ Bestiary Tables → Mimics `m`
+- [x] **# 96**  L 2419  ( 118 lines)   📖 Making Friends
+- [x] **# 97**  L 8672  (  15 lines)     ↳ Bestiary Tables → Ogres `O`
+- [x] **# 98**  L 8731  (  14 lines)     ↳ Bestiary Tables → Rust monsters and disenchanters `R`
 - [ ] **# 99**  L 8203  (  21 lines)     ↳ Bestiary Tables → Orcs `o`
 - [ ] **#100**  L 8260  (  18 lines)     ↳ Bestiary Tables → Rodents `r`
 - [ ] **#101**  L 8745  (  20 lines)     ↳ Bestiary Tables → Snakes `S`
