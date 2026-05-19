@@ -100,11 +100,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 88**  L 1329  (  25 lines)     ↳ Traps and Hazards → Searching and Detection
 - [x] **# 89**  L 8069  (  27 lines)     ↳ Bestiary Tables → Dogs and canines `d`
 - [x] **# 90**  L 9142  (  23 lines)     ↳ Bestiary Tables → Lizards `:`
-- [ ] **# 91**  L 3218  ( 145 lines)   📖 Provisions and Dining
-- [ ] **# 92**  L 8261  (  18 lines)     ↳ Bestiary Tables → Nymphs `n`
-- [ ] **# 93**  L 6304  (  31 lines)     ↳ Sokoban Solutions → Level 2, Version A
-- [ ] **# 94**  L 5559  ( 246 lines)   📖 Gehennom
-- [ ] **# 95**  L 7358  (  12 lines)     ↳ Weapons Tables → Saber
+- [x] **# 91**  L 3218  ( 145 lines)   📖 Provisions and Dining
+- [x] **# 92**  L 8261  (  18 lines)     ↳ Bestiary Tables → Nymphs `n`
+- [x] **# 93**  L 6304  (  31 lines)     ↳ Sokoban Solutions → Level 2, Version A
+- [x] **# 94**  L 5559  ( 246 lines)   📖 Gehennom
+- [x] **# 95**  L 7358  (  12 lines)     ↳ Weapons Tables → Saber
 - [ ] **# 96**  L 7615  (  13 lines)     ↳ Weapons Tables → Crossbow
 - [ ] **# 97**  L 2191  (  46 lines)     ↳ Dangerous Encounters → Seduction
 - [ ] **# 98**  L 2069  (  27 lines)     ↳ Dangerous Encounters → Brainlessness

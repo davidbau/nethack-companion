@@ -9130,3 +9130,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 90/183 done.
+
+## 2026-05-19 — v3 audit batch 19: Provisions (#91), Nymphs (#92), Sokoban L2A (#93), Gehennom (#94), Saber (#95)
+
+All five **CLEAN**.
+
+- Provisions and Dining: hunger thresholds, corpse rot window, tin opening (blessed tin instant or 50/50 vs 1 turn), cannibalism -2 to -5 + aggravate, all special corpse effects (wraith XL, stalker invis, lizard cure, mind flayer Int, gelatinous cube fire/cold/shock/sleep, giant only via M2_GIANT) all match `eat.c`.
+- Nymphs `n`: 3 rows match `monsters.h:702-723`. AD_SITM (item steal) confirmed; M1_TPORT.
+- Sokoban L2A: 20 boulders mapped to `soko3-1.lua`; bowling-alley 15-hole trap row; tally 7+5+1+2 = 15 finished, 5 remaining = 20 total.
+- Gehennom: 246-line chapter, all major claims verified. Prayer fails (`pray.c:2307-2314`), hot ground at `do.c:318-354`, Valley/Vlad/Wizard/Sanctum/Asmodeus/Baalzebub/Juiblex layouts; throne math `rnd(6)>4` × 4/13 wish; bribery = `cash * (rnd(80)+20*Athome) / (100*(1+same_align))` via main inventory (`minion.c:309-311`); MS_BRIBE on 4 demons (Geryon/Dispater/Baalzebub/Asmodeus).
+- Saber: scimitar 1d8/1d8 wt 40 cost 15 iron; silver saber 1d8/1d8 wt 40 cost 75 silver. Grayswandir + Werebane both SILVER_SABER artifacts in `artilist.h:166-172`. 5.0 scimitar→saber merger reflected.
+
+### Pass-3 queue
+95/183 done.
