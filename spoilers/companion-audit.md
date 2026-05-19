@@ -9260,3 +9260,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 140/183 done.
+
+## 2026-05-19 — v3 audit batch 29: Vortices (#141), Sea monsters (#142), Finding Secret Doors (#143), Bow (#144), Sokoban conduct (#145)
+
+All five **CLEAN**.
+
+- Vortices `v`: 6 rows match `monsters.h:1053-1110`; energy vortex 2d6 drain-Pw + 0d4 passive shock.
+- Sea monsters `;`: 6 rows match `monsters.h:3205-3256`; wrap-and-drown limited to eels + kraken; jellyfish AD_DRST drain-Str.
+- Finding Secret Doors: fund cap at +5 via `detect.c:2026-2032`; `rnl(7-fund)`; 3×3 search; ring of searching auto-call `allmain.c:342`; wand-of-secret-door-detection `findit` BOLT_LIM radius.
+- Bow: 9 rows match `objects.h:141-154, 395-402`. Multishot context intentionally omitted per no-trivia.
+- Sokoban conduct: `sokoban_guilt` at `trap.c:7039-7054`; callers `hack.c:299/307/398/403` (squeeze), `zap.c:1711` (poly), `zap.c:5556` (striking), `read.c:1951` (scroll of earth), `steed.c:767` (dismount). Pick-axe digging + jumping correctly NOT triggers.
+
+### Pass-3 queue
+145/183 done.

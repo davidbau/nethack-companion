@@ -150,11 +150,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#138**  L 8784  (  23 lines)     ↳ Bestiary Tables → Quantum mechanics `Q`
 - [x] **#139**  L 6335  ( 101 lines)     ↳ Sokoban Solutions → Level 2, Version B
 - [x] **#140**  L 2266  (  21 lines)     ↳ Dangerous Encounters → Choking
-- [ ] **#141**  L 8410  (  20 lines)     ↳ Bestiary Tables → Vortices `v`
-- [ ] **#142**  L 9123  (  19 lines)     ↳ Bestiary Tables → Sea monsters `;`
-- [ ] **#143**  L 1382  (  51 lines)     ↳ Traps and Hazards → Finding Secret Doors
-- [ ] **#144**  L 7597  (  18 lines)     ↳ Weapons Tables → Bow
-- [ ] **#145**  L 7032  (  14 lines)     ↳ Voluntary Challenges → Sokoban (new in 5.0)
+- [x] **#141**  L 8410  (  20 lines)     ↳ Bestiary Tables → Vortices `v`
+- [x] **#142**  L 9123  (  19 lines)     ↳ Bestiary Tables → Sea monsters `;`
+- [x] **#143**  L 1382  (  51 lines)     ↳ Traps and Hazards → Finding Secret Doors
+- [x] **#144**  L 7597  (  18 lines)     ↳ Weapons Tables → Bow
+- [x] **#145**  L 7032  (  14 lines)     ↳ Voluntary Challenges → Sokoban (new in 5.0)
 - [ ] **#146**  L 8115  (  25 lines)     ↳ Bestiary Tables → Felines `f`
 - [ ] **#147**  L 3939  ( 148 lines)   📖 Tools of the Trade
 - [ ] **#148**  L 8194  (  17 lines)     ↳ Bestiary Tables → Jellies `j`
