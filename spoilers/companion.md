@@ -6966,12 +6966,10 @@ since 3.6.
 senses to navigate. Officially tracked since 3.6.
 
 Mazes 5.0 added five more tracked conducts: Pauper, Petless,
-Permadeaf, Sokoban, and Bonesless. Pauper, Permadeaf, and Bonesless
-are start-of-game options (you opt in or out before play). Sokoban
-is tracked automatically based on what you do during the run.
-Petless is also gameplay-tracked: suppressing the starting pet
-requires `OPTIONS=pettype:none` in your rcfile. (Pauper suppresses
-your starting inventory but still gives you a pet.)
+Permadeaf, Sokoban, and Bonesless. Pauper, Permadeaf, Petless, and
+Bonesless are start-of-game options (you opt in or out before
+play). Sokoban is tracked automatically based on what you do
+during the run.
 
 #### Pauper (new in 5.0)
 <!-- audit 2026-05-17 #72 (re-audit 2026-05-19 v2 #129, v3 #178): v3 expanded the pauper role-knowledge list. Per pauper_reinit at u_init.c:890-922, Cleric/Knight/Monk all know SPE_PROTECTION, and Cave Dweller knows FLINT — these were missing from the v2 list. Added them; Protection book is a load-bearing early-game spell for those three roles, and recognizing it on sight in supply chests is the kind of edge a pauper actually needs. v2 fix: "rcfile or command line only" was wrong — pauper is `set_in_config` at optlist.h:559, meaning rcfile or NETHACKOPTIONS env. v1: ini_inv early-return at u_init.c:1308-1309 confirmed (suppresses items only, not pet); nudist cascade at options.c:5290-5293; end-of-game string at insight.c:2117-2119; xlogfile at topten.c:604. Note: Pauper does NOT suppress the starting pet (`makedog` at dog.c:219-229 only checks pettype:none; dog.c:262-267 just skips the saddle for Pauper). See companion-audit.md. -->
@@ -6999,14 +6997,16 @@ provide much of your first kit.
 
 Never have a pet. Set `OPTIONS=pettype:none` in your rcfile to skip
 the starting companion entirely (this overrides per-role defaults).
-After that the conduct enforces itself: don't tame anything via
-scrolls of taming, charm-monster spells, food thrown at hostile
-dogs and cats, or magic-trap accidents. You lose the curse-detection
-trick, the combat assist, the shoplifting option, and the
-companionship. What you gain is the particular satisfaction of
-knowing that everything that died did so by your hand, and that you
-never had to feel guilty about leading your loyal companion into a
-polymorph trap.
+After that, you lose the conduct the moment anything becomes tame.
+The game won't stop you — scrolls of taming, the charm monster
+spell, food thrown at hostile dogs and cats, and magic-trap
+accidents all still work. Each one just breaks Petless on the
+spot. You also give up everything a pet gives you: the
+curse-detection trick, the combat assist, the shoplifting option,
+and the companionship. What you gain is the particular
+satisfaction of knowing that everything that died did so by your
+hand, and that you never had to feel guilty about leading your
+loyal companion into a polymorph trap.
 
 #### Permadeaf (new in 5.0)
 <!-- audit 2026-05-17 #62 (re-audit 2026-05-19 v2 #122): confirmed permadeaf is u.uroleplay.deaf (optlist.h:267-269), recorded in xlogfile (topten.c:602) and shown in show_conduct (insight.c:2113). Deaf macro at youprop.h:125. Corrected the rcfile option name: was `!acoustics` (a different per-session flavor flag — flags.acoustics — that doesn't earn the conduct), should be `permadeaf` (or `deaf`). Also removed the in-game O-menu instruction: this option is `set_in_config` (options.c:5207), rcfile only. v2 fixes: (a) dropped the "pass `-Dpermadeaf` on the command line" clause — `-D` is the debug/wizard-mode flag at unixmain.c:359-365, not an option-name passer; there is no `-Dpermadeaf` syntax. Rcfile is the path. (b) Added the shrieker note: only the *messages* are suppressed when Deaf, so a shrieker still summons monsters and aggravates (mon.c:4089-4106 m_respond_shrieker only gates the pline on !Deaf; the makemon and aggravate run unconditionally). Real beginner trap, clears the no-trivia bar. See companion-audit.md. -->
