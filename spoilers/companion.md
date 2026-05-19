@@ -4442,10 +4442,10 @@ a slot they can use.
 usual brilliance bonus to intelligence and wisdom (so spell-cast
 more reliably), plus fire resistance while carried, plus a free
 `-1` to AC. `#invoke` for an energy boost, useful for spell-heavy
-Priests. Note: despite what older spoilers say, the artifact's
-M2_UNDEAD flag does **not** grant a damage bonus against undead
-(it has no melee attack to carry one), and the Mitre does not
-grant drain resistance.
+Priests. Note: despite what older spoilers say, the Mitre does
+**not** deal bonus damage against undead (the artifact has no
+melee attack to carry the bonus), and it does not grant drain
+resistance.
 
 **The Longbow of Diana** (Ranger): a real artifact bow with +d5 to hit
 plus reflection while wielded, ESP while carried. `#invoke` conjures
@@ -7873,7 +7873,7 @@ and jumping, which scales continuously).
 | slow monster    | Enchantment | 2   | aimed      | Slows target's speed                | —                             |
 | cause fear      | Enchantment | 3   | untargeted | Visible monsters flee               | —                             |
 | sleep           | Enchantment | 3   | ray        | Puts targets in line to sleep       | —                             |
-| charm monster   | Enchantment | 5   | untargeted | Tames monsters in a 3×3 area (11×11 if confused) | Blessed-scroll behavior |
+| charm monster   | Enchantment | 5   | untargeted | Tames monsters in a 3×3 area              | Blessed-scroll behavior |
 | protection      | Cleric      | 1   | untargeted | Temporary AC bonus paid from Pw     | **Expert**: 2× duration       |
 | create monster  | Cleric      | 2   | untargeted | Summons a random monster nearby     | —                             |
 | remove curse    | Cleric      | 3   | untargeted | Uncurses worn/wielded items         | Blessed: all carried items    |
