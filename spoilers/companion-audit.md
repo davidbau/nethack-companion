@@ -9056,3 +9056,25 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 65/183 done.
+
+## 2026-05-19 — v3 audit batch 14: Apothecary (#66), Orcs (#67), Sokoban L3A (#68), Displacer Beast (#69), Shopping (#70)
+
+Four CLEAN, one real finding on Apothecary.
+
+### The Apothecary (#66) — `spoilers/companion.md:3363` — **1 correction (MEDIUM)**
+The dipping closer paragraph had source/target inverted. Said "never use a cursed potion as a dipping target. Cursed targets always explode" — wrong. Per `potion.c:2279` (`obj = getobj("dip", ...)` first-prompt = DIPPING potion) and `potion.c:2541` (`dip_potion_explosion(obj, ...)` tests `obj->cursed`), the dipping (source) potion is what's BUC-tested; the receiving potion is consumed regardless via `useup(potion)` at 2538. v2 had intended to clarify this but the prose drifted back to "target" and inverted the meaning. v3 rewrote with an explicit "the dipping potion (not the one it goes into)" clarifier.
+
+### Orcs `o` (#67) — `spoilers/companion.md:8279` — 0 corrections
+All 8 rows match `monsters.h:727-796`. Goblin/hobgoblin correctly grouped under S_ORC. Orc shaman single-attack from earlier audit holds.
+
+### Sokoban L3A (#68) — `spoilers/companion.md:6436` — 0 corrections
+13 boulders match `soko2-1.lua:31-47`. 13-step solution geometrically consistent. No prize on L3 (only upstair to L4); prose correctly silent.
+
+### The Displacer Beast (#69) — `spoilers/companion.md:2381` — 0 corrections
+M3_DISPLACES swap mechanic (50% chance, `hack.c:1972`), gated by `goodpos(...GP_ALLOW_U)` at `hack.c:1983` — moat/lava swap-trick correctly dismissed. Corpse → timed `HDisplaced(d(6,6))` (`eat.c:1265-1269`) confirmed same as cloak of displacement (shared DISPLACED property at `youprop.h:202-204`).
+
+### Shopping (#70) — `spoilers/companion.md:7063` — 0 corrections
+246-line chapter, all numeric/procedural claims verified vs `shk.c`. Credit/debit/loan ordering (`shk.c:3874-3909`), shopkeeper starting gold 1030-4000 (`shknam.c:682`), skeleton key on death (`makemon.c:702-703`), Excalibur 16k example (`artilist.h:88` × 4), Orcus-level shopkeepers removed (`shknam.c:794-798`), angry surcharge stickiness via `pacify_shk(shkp, FALSE/TRUE)` distinction.
+
+### Pass-3 queue
+70/183 done.

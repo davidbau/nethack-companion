@@ -75,11 +75,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 63**  L 7909  ( 103 lines)     ↳ Appendices → Skill Caps
 - [x] **# 64**  L 8841  (  20 lines)     ↳ Bestiary Tables → Trolls `T`
 - [x] **# 65**  L 8373  (  17 lines)     ↳ Bestiary Tables → Trappers and lurkers `t`
-- [ ] **# 66**  L 3363  ( 124 lines)   📖 The Apothecary
-- [ ] **# 67**  L 8279  (  21 lines)     ↳ Bestiary Tables → Orcs `o`
-- [ ] **# 68**  L 6436  (  36 lines)     ↳ Sokoban Solutions → Level 3, Version A
-- [ ] **# 69**  L 2381  (  33 lines)     ↳ Dangerous Encounters → The Displacer Beast
-- [ ] **# 70**  L 7063  ( 246 lines)   📖 Shopping and Shopkeeper Pricing
+- [x] **# 66**  L 3363  ( 124 lines)   📖 The Apothecary
+- [x] **# 67**  L 8279  (  21 lines)     ↳ Bestiary Tables → Orcs `o`
+- [x] **# 68**  L 6436  (  36 lines)     ↳ Sokoban Solutions → Level 3, Version A
+- [x] **# 69**  L 2381  (  33 lines)     ↳ Dangerous Encounters → The Displacer Beast
+- [x] **# 70**  L 7063  ( 246 lines)   📖 Shopping and Shopkeeper Pricing
 - [ ] **# 71**  L 4087  ( 130 lines)   📖 The Armory
 - [ ] **# 72**  L 2445  ( 123 lines)   📖 Making Friends
 - [ ] **# 73**  L 2287  (  15 lines)     ↳ Dangerous Encounters → Deadly Poison

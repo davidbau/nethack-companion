@@ -3361,7 +3361,7 @@ until you get it.
 ---
 
 ### The Apothecary
-<!-- audit 2026-05-17 #34: 50+ price/effect/alchemy claims verified, 1 corrected (uncursed extra/full healing also raise maxHP, not blessed-only). v2 audit 2026-05-18 #15: one factual fix — potion of speed grants permanent intrinsic Fast whenever `!cursed` (potion.c:1066), not just when blessed; blessing only extends the temporary timer that overlays it. Voice: replaced colon-stitched sentences with periods in the lead-in, the Water clarification, and the Speed line per the punctuation ladder. Trimmed the "artisanal alchemy vs industrial production" closer to its essential clause. Clarified the cursed-dip-target phrasing ("never use a cursed potion as a dipping target" → "never let the receiving potion be cursed"), since target/source language can confuse readers. See companion-audit.md. -->
+<!-- audit 2026-05-17 #34 (re-audit 2026-05-19 v3 #66): v3 corrected an inverted source/target claim. The closer paragraph said "never use a cursed potion as a dipping target. Cursed targets always explode" — wrong. Per potion.c:2279 (`obj = getobj("dip", ...)` first prompt = the potion being dipped) and potion.c:2541 (`dip_potion_explosion(obj, ...)` tests `obj->cursed`), it's the DIPPING potion that must not be cursed; the potion being dipped INTO (`potion`, consumed via `useup(potion)` at 2538) is consumed regardless and its BUC is not consulted. The v2 reword to "receiving potion" was the right intent but the prose had drifted back to "target" and inverted the meaning. Reworded to "never dip a cursed potion into another" with an explicit clarifier. v2 audit 2026-05-18 #15: potion of speed grants permanent intrinsic Fast whenever `!cursed` (potion.c:1066). v1 audit 2026-05-17 #34: uncursed extra/full healing also raise maxHP. See companion-audit.md. -->
 
 The dungeon is full of mysterious bottles. Ruby liquids, milky
 fluids, smoky concoctions: each one a small gamble between salvation
@@ -3466,9 +3466,11 @@ industrial production.
 The explosion risk is real: roughly 10% on any non-water combination. An
 alchemy smock (if you find one) reduces this to about 1 in 30, which
 is the difference between "risky hobby" and "acceptable profession." Do
-your chemistry in an isolated room, away from your stash, and never use
-a cursed potion as a dipping target. Cursed targets always explode. The
-dungeon is consistent about this if nothing else.
+your chemistry in an isolated room, away from your stash, and never
+dip a cursed potion into another. The dipping potion (not the one it
+goes into) is the one the game tests for explosion, and a cursed
+dip detonates every time. The dungeon is consistent about this if
+nothing else.
 
 #### Unicorn Horn Interactions
 
