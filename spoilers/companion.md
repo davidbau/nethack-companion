@@ -7001,12 +7001,7 @@ After that, you lose the conduct the moment anything becomes tame.
 The game won't stop you — scrolls of taming, the charm monster
 spell, food thrown at hostile dogs and cats, and magic-trap
 accidents all still work. Each one just breaks Petless on the
-spot. You also give up everything a pet gives you: the
-curse-detection trick, the combat assist, the shoplifting option,
-and the companionship. What you gain is the particular
-satisfaction of knowing that everything that died did so by your
-hand, and that you never had to feel guilty about leading your
-loyal companion into a polymorph trap.
+spot.
 
 #### Permadeaf (new in 5.0)
 <!-- audit 2026-05-17 #62 (re-audit 2026-05-19 v2 #122): confirmed permadeaf is u.uroleplay.deaf (optlist.h:267-269), recorded in xlogfile (topten.c:602) and shown in show_conduct (insight.c:2113). Deaf macro at youprop.h:125. Corrected the rcfile option name: was `!acoustics` (a different per-session flavor flag — flags.acoustics — that doesn't earn the conduct), should be `permadeaf` (or `deaf`). Also removed the in-game O-menu instruction: this option is `set_in_config` (options.c:5207), rcfile only. v2 fixes: (a) dropped the "pass `-Dpermadeaf` on the command line" clause — `-D` is the debug/wizard-mode flag at unixmain.c:359-365, not an option-name passer; there is no `-Dpermadeaf` syntax. Rcfile is the path. (b) Added the shrieker note: only the *messages* are suppressed when Deaf, so a shrieker still summons monsters and aggravates (mon.c:4089-4106 m_respond_shrieker only gates the pline on !Deaf; the makemon and aggravate run unconditionally). Real beginner trap, clears the no-trivia bar. See companion-audit.md. -->
