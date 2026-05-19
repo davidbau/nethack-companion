@@ -9091,3 +9091,16 @@ Four CLEAN, one finding on Deadly Poison.
 
 ### Pass-3 queue
 75/183 done.
+
+## 2026-05-19 — v3 audit batch 16: BUC strategy (#76), Humanoids (#77), Luck and Fortune (#78), Xans (#79), Wishes and Wishing (#80)
+
+All five **CLEAN**.
+
+- BUC strategy: altar flash colors amber/black/none at `do.c:379-388`; pet curse-avoidance probabilistic at `dogmove.c:535-538, 1212-1219`; holy water at `pray.c:1383+`.
+- Humanoids `h`: 7 rows match `monsters.h:477-540`. Mind flayer 3 tentacles, master 5; Int=3 death at `eat.c:698` × `role.c` ATTRMIN; helmet 7/8 block at `uhitm.c:3235`.
+- Luck and Fortune: range ±13, 600-turn drift (300 with Amulet), all baseline shifts (full moon, Friday 13, killed_leader), unicorn-toss matrices, sacrifice ceiling at `pray.c:2099-2106` — all verified. Archeologist fedora +1 luck baseline noted but skipped per no-trivia rule.
+- Xans `x`: grid bug + xan match `monsters.h:1149-1164`. AT_STNG/AD_LEGS for xan confirmed (wounds legs → Wounded_legs reduces carrycap).
+- Wishes and Wishing: substitutions at `objnam.c:5003-5018`, artifact denial `rn2(nartifact_exist())>1`, bare-wish armor blessorcurse(otmp,10) ≈ 5%/90%/5%, Vlad's throne 4/13 wish outcomes (`sit.c:241-256`), magic lamp 1/3 djinni × 80% blessed wish ≈ 27%, smoky potion 1/13 × 80% blessed, fountain demon 1/30 × wish-roll ≈ 1/150 shallow zero past DL 20.
+
+### Pass-3 queue
+80/183 done.

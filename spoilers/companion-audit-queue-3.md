@@ -85,11 +85,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 73**  L 2287  (  15 lines)     ↳ Dangerous Encounters → Deadly Poison
 - [x] **# 74**  L 1354  (  28 lines)     ↳ Traps and Hazards → Iron Bars
 - [x] **# 75**  L 6943  (  30 lines)     ↳ Voluntary Challenges → Combining Conducts
-- [ ] **# 76**  L 2600  (  58 lines)     ↳ A Practical Identification Strategy → Blessed, Uncursed, Cursed
-- [ ] **# 77**  L 8155  (  20 lines)     ↳ Bestiary Tables → Humanoids `h`
-- [ ] **# 78**  L 5324  ( 145 lines)   📖 Luck and Fortune
-- [ ] **# 79**  L 8446  (  16 lines)     ↳ Bestiary Tables → Xans and fantastic insects `x`
-- [ ] **# 80**  L 5022  ( 100 lines)   📖 Wishes and Wishing
+- [x] **# 76**  L 2600  (  58 lines)     ↳ A Practical Identification Strategy → Blessed, Uncursed, Cursed
+- [x] **# 77**  L 8155  (  20 lines)     ↳ Bestiary Tables → Humanoids `h`
+- [x] **# 78**  L 5324  ( 145 lines)   📖 Luck and Fortune
+- [x] **# 79**  L 8446  (  16 lines)     ↳ Bestiary Tables → Xans and fantastic insects `x`
+- [x] **# 80**  L 5022  ( 100 lines)   📖 Wishes and Wishing
 - [ ] **# 81**  L 6243  (  61 lines)     ↳ Sokoban Solutions → Level 1, Version B
 - [ ] **# 82**  L 5945  (  94 lines)   📖 The Elemental Planes
 - [ ] **# 83**  L 2017  (  13 lines)     ↳ Dangerous Encounters → Attack Wands and the Warning Shot
