@@ -165,11 +165,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#153**  L 7561  (  13 lines)     ↳ Weapons Tables → Trident
 - [x] **#154**  L 8920  (  19 lines)     ↳ Bestiary Tables → Apelike creatures `Y`
 - [x] **#155**  L 7639  (  11 lines)     ↳ Weapons Tables → Dart
-- [ ] **#156**  L 8390  (  20 lines)     ↳ Bestiary Tables → Unicorns and horses `u`
-- [ ] **#157**  L 5861  (  84 lines)   📖 The Ascension Run
-- [ ] **#158**  L 8336  (  18 lines)     ↳ Bestiary Tables → Rodents `r`
-- [ ] **#159**  L 4725  ( 126 lines)   📖 The Art of Combat
-- [ ] **#160**  L 8316  (  20 lines)     ↳ Bestiary Tables → Quadrupeds `q`
+- [x] **#156**  L 8390  (  20 lines)     ↳ Bestiary Tables → Unicorns and horses `u`
+- [x] **#157**  L 5861  (  84 lines)   📖 The Ascension Run
+- [x] **#158**  L 8336  (  18 lines)     ↳ Bestiary Tables → Rodents `r`
+- [x] **#159**  L 4725  ( 126 lines)   📖 The Art of Combat
+- [x] **#160**  L 8316  (  20 lines)     ↳ Bestiary Tables → Quadrupeds `q`
 - [ ] **#161**  L 8763  (  21 lines)     ↳ Bestiary Tables → Puddings and oozes `P`
 - [ ] **#162**  L 8807  (  14 lines)     ↳ Bestiary Tables → Rust monsters and disenchanters `R`
 - [ ] **#163**  L 8211  (  19 lines)     ↳ Bestiary Tables → Kobolds `k`

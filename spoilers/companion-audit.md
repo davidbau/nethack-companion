@@ -9299,3 +9299,16 @@ Four CLEAN, one cross-section consistency fix on Armor Tables.
 
 ### Pass-3 queue
 155/183 done.
+
+## 2026-05-19 — v3 audit batch 32: Unicorns/horses (#156), Ascension Run (#157), Rodents (#158), Art of Combat (#159), Quadrupeds (#160)
+
+All five **CLEAN**.
+
+- Unicorns/horses `u`: 6 rows match `monsters.h:1002-1049`. Alignment mapping white/gray/black = +7/0/-7. Glass via `noluck` path (`dothrow.c:2319` — GEMSTONE-only is_gem check).
+- Ascension Run: amulet free wish (`allmain.c:445-451`); Wizard summons via `wizard.c:61-103` + `nasty/msummon`; Amulet blocks level-tele (`teleport.c:1185-1188`); Mysterious Force 25% base + decay (`do.c:1541-1573`); Elbereth dead `monmove.c:302` (`In_hell || In_endgame`).
+- Rodents `r`: 6 rows match `monsters.h:889-936`. Rabid rat AD_DRCO drain-Con, wererat AD_WERE lyc, rock mole M1_METALLIVORE.
+- Art of Combat: to-hit `find_roll_to_hit` (`uhitm.c:365-424`); Luck cap `sgn(Luck)*((abs(Luck)+2)/3)`; abon includes Str+Dex (`weapon.c:950-988`); 2H 3/2 STR damage; two-weapon -9/-7/-5/-3 to-hit; conflict requires `m_canseeu` (`mon.c:1306`).
+- Quadrupeds `q`: 7 rows match `monsters.h:831-885`. Mumak 2-attack solo (v2 fix intact).
+
+### Pass-3 queue
+160/183 done.
