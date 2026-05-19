@@ -30,11 +30,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 18**  L 6828  (  18 lines)     ↳ Voluntary Challenges → Weaponless
 - [x] **# 19**  L 7574  (  11 lines)     ↳ Weapons Tables → Lance
 - [x] **# 20**  L 8873  (  17 lines)     ↳ Bestiary Tables → Vampires `V`
-- [ ] **# 21**  L 3165  (  14 lines)     ↳ A Practical Identification Strategy → Naming What You've Learned
-- [ ] **# 22**  L 8939  (  30 lines)     ↳ Bestiary Tables → Zombies `Z`
-- [ ] **# 23**  L 1274  (  55 lines)     ↳ Traps and Hazards → Dangerous Traps
-- [ ] **# 24**  L 8300  (  16 lines)     ↳ Bestiary Tables → Piercers `p`
-- [ ] **# 25**  L 7370  (  13 lines)     ↳ Weapons Tables → Broadsword
+- [x] **# 21**  L 3165  (  14 lines)     ↳ A Practical Identification Strategy → Naming What You've Learned
+- [x] **# 22**  L 8939  (  30 lines)     ↳ Bestiary Tables → Zombies `Z`
+- [x] **# 23**  L 1274  (  55 lines)     ↳ Traps and Hazards → Dangerous Traps
+- [x] **# 24**  L 8300  (  16 lines)     ↳ Bestiary Tables → Piercers `p`
+- [x] **# 25**  L 7370  (  13 lines)     ↳ Weapons Tables → Broadsword
 - [ ] **# 26**  L 7440  (  12 lines)     ↳ Weapons Tables → Club
 - [ ] **# 27**  L 8491  (  20 lines)     ↳ Bestiary Tables → Angelic beings `A`
 - [ ] **# 28**  L 7585  (  12 lines)     ↳ Weapons Tables → Whip

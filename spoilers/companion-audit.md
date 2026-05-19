@@ -8901,3 +8901,25 @@ Vampire / vampire lord / Vlad stats all match `monsters.h`. M2_SHAPESHIFTER, M2_
 
 ### Pass-3 queue
 20/183 done.
+
+## 2026-05-19 — v3 audit batch 5: Naming (#21), Zombies (#22), Dangerous Traps (#23), Piercers (#24), Broadsword (#25)
+
+All five **CLEAN**.
+
+### Naming What You've Learned (#21) — `spoilers/companion.md:3165` — 0 corrections
+`#name` is a valid command alias; `docall` rename-by-overwrite confirmed at `do_name.c:660-672`. Voice and punctuation clean.
+
+### Zombies `Z` (#22) — `spoilers/companion.md:8939` — 0 corrections
+All 10 zombie/skeleton rows verified against `monst.c`/`monsters.h` (kobold/gnome/orc/dwarf/elf/human zombie, ghoul, ettin/giant zombie, skeleton). Stats, claw dice, AC, speed, colors, MR_COLD|MR_SLEEP|MR_POISON, G_NOCORPSE/G_NOGEN flags all match. Mummies correctly NOT conflated (separate `M` class).
+
+### Dangerous Traps (#23) — `spoilers/companion.md:1274` — 0 corrections
+All trap effects verified vs `trap.c`. Bear trap `rn1(4,4)` hold, fire trap destroys scrolls/potions via `dofiretrap`, magic trap 32-outcome table, sleep gas Free-Action/sleep-res bypass, anti-magic field Pw-drain — all confirmed.
+
+### Piercers `p` (#24) — `spoilers/companion.md:8300` — 0 corrections
+Rock/iron/glass piercer: Lvl 3/5/7, Spd 1/1/1, AC 3/0/0, bite 2d6/3d6/4d6. Colors gray/cyan/white. Glass piercer MR_ACID. M1_HIDE | M1_CLING for all three.
+
+### Broadsword (#25) — `spoilers/companion.md:7370` — 0 corrections
+`objects.h` BROADSWORD: 1d4+1d4 / 1d6+1, wt 70, cost 10, hit 0, IRON. Elven broadsword 1d6+1d4. Runesword (Stormbringer base) wt 40, cost 300.
+
+### Pass-3 queue
+25/183 done.
