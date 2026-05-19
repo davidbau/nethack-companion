@@ -8828,3 +8828,28 @@ All four tiers' stats match `monsters.h:1864-1897`. Resistance lists (cold/sleep
 
 ### Pass-3 queue
 5/183 done.
+
+## 2026-05-19 — v3 audit batch 2: Nuisance Traps (#6), What Changed (#7), Xorns (#8), Sokoban L4B (#9), The Riders (#10)
+
+Four CLEAN, one with two real findings on the Pestilence line of The Riders.
+
+### Nuisance Traps (#6) — `spoilers/companion.md:1238` — 0 corrections
+Arrow trap, dart trap, squeaky board, rust trap all verified vs `trap.c`. Free-ammo collection claim (arrow/dart) traced to `place_object`+`stackobj` at `trap.c:1217-1221, 1287-1292`.
+
+### What Changed Since Last Time (#7) — `spoilers/companion.md:9165` — 0 corrections
+All ~40 5.0-change claims verified vs `fixes5-0-0.txt` and src. Chain lightning XL2, Trollsbane SPFX_REGEN, Sunsword BLINDING_RAY, DSM resistance changes, Excalibur 1/30 fountain rate, supply-chest 2/3, amulet of guarding +2 AC +2 MC, two-handed 3/2 STR bonus, Castle no-arch-lich, iron-bars since 3.3, dipsink — all confirmed.
+
+### Xorns `X` (#8) — `spoilers/companion.md:8907` — 0 corrections
+LVL(8, 9, -2, 20, 0), 3 claw + bite 4d6 AD_PHYS, fire/cold/stone resistance, M1_WALLWALK, M1_METALLIVORE, brown — all match `monst.c`.
+
+### Sokoban L4B (#9) — `spoilers/companion.md:6613` — 0 corrections
+Layout and 28-step solution match `sokoban4b.lua`. Prize claim "usually amulet of reflection, 25% bag of holding" matches the `percent(25)` branch in lua. End-state "two boulders (O and S) remain" matches trace at (13,7) and (13,8).
+
+### The Riders (#10) — `spoilers/companion.md:2237` — **2 corrections**
+(a) "Pestilence inflicts the disease that turns into food poisoning" — wrong. `mhitu.c:1039-1040` via `diseasemu()` sets `SICK_NONVOMITABLE`, which `timeout.c:316-333` renders as "illness," not "food poisoning"/"sickness" (SICK_VOMITABLE, from bad corpses). Reworded to "deadly illness."
+(b) "A unicorn horn won't clear the non-vomitable sickness" — wrong. `apply.c:4456` (`unfixable_trouble_count`) only marks Sick unfixable when `(Sick & ~TIMEOUT) != 0L`; Pestilence's induced sickness is purely timed, so the horn's trouble-picker (`apply.c:2312-2313, 2351`) reaches it via `make_sick(0L, NULL, TRUE, SICK_ALL)`. Reworded to "a unicorn horn can sometimes clear it in time."
+
+Stats and other claims (Lvl 30, Spd 12, AC -5, MR 100, regen, see-invis, displaces, two AT_TUCH 8d8 hits, Death 3/20 instakill blockable by Antimagic, Famine 40–79 hunger, all corpses fatal with identical `done(DIED)`, stun-downgrade applies to Pestilence/Famine but not Death) all verified.
+
+### Pass-3 queue
+10/183 done.

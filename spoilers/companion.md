@@ -2235,7 +2235,7 @@ this at experience level 1, though: the level-drain outcome is
 fatal.
 
 #### The Riders
-<!-- audit 2026-05-18 #150 (re-audit 2026-05-19 v2 #167): 4 corrections. (1) "permanently displaced" misreads M3_DISPLACES (monflag.h:175) — that flag means "moves monsters out of its way," not the cloak-of-displacement evasion. (2) "Ignore magic resistance for their signature attacks" — wrong for Death. uhitm.c:3858-3883 shows Antimagic DOES block the 3/20 touch-of-death instakill case. (3) "Eating their corpses is fatal in different ways for each" — wrong; all three trigger the same done(DIED) with killer text "unwisely ate the body of <name>" (eat.c:831-849). (4) "Famine drives you instantly to Weak or Fainting" — overstated; uhitm.c:3791-3795 adds 40-79 hunger units, which doesn't reach Weak from Satiated. v2 voice fix: "Each hits twice per turn with AT_TUCH 8d8" used a C identifier in beginner-voice prose. Reworded to "a touch attack dealing 8d8 damage." See companion-audit.md. -->
+<!-- audit 2026-05-18 #150 (re-audit 2026-05-19 v2 #167, v3 #10): 4 v2 corrections plus 2 v3 corrections on the Pestilence line. v3: (1) "disease that turns into food poisoning" was wrong — Pestilence inflicts SICK_NONVOMITABLE (mhitu.c:1039-1040 via diseasemu), which is "illness" in the source, not the SICK_VOMITABLE/"food poisoning" path from bad corpses (timeout.c:316-333). Reworded to "deadly illness." (2) "A unicorn horn won't clear the non-vomitable sickness" — wrong. apply.c:4456 only marks Sick unfixable when (Sick & ~TIMEOUT) != 0; Pestilence-induced sickness is purely timed, so it IS in the horn's trouble list (apply.c:2312-2313, 2351, calling make_sick(0L, NULL, TRUE, SICK_ALL)). Reworded to "a unicorn horn can sometimes clear it in time." See companion-audit.md. -->
 
 On the Astral Plane, three unique `&`-class beings guard the way
 to the high altars: **Death**, **Famine**, and **Pestilence**, the
@@ -2244,10 +2244,9 @@ invisible, and shove monsters out of their path. Each hits twice
 per turn with a touch attack dealing 8d8 damage. **Death's** touch has a 3-in-20 chance
 of instant-kill on every hit — magic resistance blocks the
 instakill specifically; the regular damage still goes through.
-**Pestilence** inflicts the disease that turns into food poisoning
-over the next several turns; **Sick resistance** is the only
-complete defense (a unicorn horn won't clear the non-vomitable
-sickness once it lands). **Famine** adds 40–79 hunger units to a
+**Pestilence** inflicts a deadly illness that kills you over the
+next several turns. **Sick resistance** is the cleanest defense,
+though a unicorn horn can sometimes clear it in time. **Famine** adds 40–79 hunger units to a
 normal hit, which won't drop you below Hungry in one swing but
 will starve you fast across an encounter. Eating any Rider corpse
 is straight-up fatal (`done(DIED)`). A mercy in 5.0: if Pestilence

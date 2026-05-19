@@ -15,11 +15,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#  3**  L 7510  (  24 lines)     ↳ Weapons Tables → Polearms
 - [x] **#  4**  L 7650  (  11 lines)     ↳ Weapons Tables → Shuriken
 - [x] **#  5**  L 8688  (  18 lines)     ↳ Bestiary Tables → Liches `L`
-- [ ] **#  6**  L 1238  (  14 lines)     ↳ Traps and Hazards → Nuisance Traps
-- [ ] **#  7**  L 9165  ( 200 lines)   📖 What Changed Since Last Time
-- [ ] **#  8**  L 8907  (  13 lines)     ↳ Bestiary Tables → Xorns `X`
-- [ ] **#  9**  L 6613  ( 138 lines)     ↳ Sokoban Solutions → Level 4, Version B (prize: usually amulet of reflection, 25% bag of holding)
-- [ ] **# 10**  L 2237  (  29 lines)     ↳ Dangerous Encounters → The Riders
+- [x] **#  6**  L 1238  (  14 lines)     ↳ Traps and Hazards → Nuisance Traps
+- [x] **#  7**  L 9165  ( 200 lines)   📖 What Changed Since Last Time
+- [x] **#  8**  L 8907  (  13 lines)     ↳ Bestiary Tables → Xorns `X`
+- [x] **#  9**  L 6613  ( 138 lines)     ↳ Sokoban Solutions → Level 4, Version B (prize: usually amulet of reflection, 25% bag of holding)
+- [x] **# 10**  L 2237  (  29 lines)     ↳ Dangerous Encounters → The Riders
 - [ ] **# 11**  L 8096  (  19 lines)     ↳ Bestiary Tables → Eyes and spheres `e`
 - [ ] **# 12**  L 3487  ( 107 lines)   📖 The Scroll Rack
 - [ ] **# 13**  L 8890  (  17 lines)     ↳ Bestiary Tables → Wraiths `W`
