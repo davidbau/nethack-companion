@@ -160,11 +160,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#148**  L 8194  (  17 lines)     ↳ Bestiary Tables → Jellies `j`
 - [x] **#149**  L 1504  (  93 lines)     ↳ Traps and Hazards → Elbereth
 - [x] **#150**  L 2124  (  31 lines)     ↳ Dangerous Encounters → Enchantment Drain
-- [ ] **#151**  L 6534  (  79 lines)     ↳ Sokoban Solutions → Level 4, Version A (prize: usually bag of holding, 25% amulet of reflection)
-- [ ] **#152**  L 7674  ( 163 lines)   📖 Armor Tables
-- [ ] **#153**  L 7561  (  13 lines)     ↳ Weapons Tables → Trident
-- [ ] **#154**  L 8920  (  19 lines)     ↳ Bestiary Tables → Apelike creatures `Y`
-- [ ] **#155**  L 7639  (  11 lines)     ↳ Weapons Tables → Dart
+- [x] **#151**  L 6534  (  79 lines)     ↳ Sokoban Solutions → Level 4, Version A (prize: usually bag of holding, 25% amulet of reflection)
+- [x] **#152**  L 7674  ( 163 lines)   📖 Armor Tables
+- [x] **#153**  L 7561  (  13 lines)     ↳ Weapons Tables → Trident
+- [x] **#154**  L 8920  (  19 lines)     ↳ Bestiary Tables → Apelike creatures `Y`
+- [x] **#155**  L 7639  (  11 lines)     ↳ Weapons Tables → Dart
 - [ ] **#156**  L 8390  (  20 lines)     ↳ Bestiary Tables → Unicorns and horses `u`
 - [ ] **#157**  L 5861  (  84 lines)   📖 The Ascension Run
 - [ ] **#158**  L 8336  (  18 lines)     ↳ Bestiary Tables → Rodents `r`

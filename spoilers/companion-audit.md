@@ -9286,3 +9286,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 150/183 done.
+
+## 2026-05-19 — v3 audit batch 31: Sokoban L4A (#151), Armor Tables (#152), Trident (#153), Apelike (#154), Dart (#155)
+
+Four CLEAN, one cross-section consistency fix on Armor Tables.
+
+- Sokoban L4A: 18 boulders, 16 holes + 1 rolling-boulder trap on row 2 of `soko1-1.lua`. Prize 75% bag of holding / 25% amulet of reflection per source. 2 remain (A and E).
+- **Armor Tables (#152)**: 1 correction. Cloak of protection note read "Best non-magical defensive cloak" — wrong, cloak of protection IS magical (mgc=1 in `objects.h:637`). Same misclassification the v2 Armory chapter audit already caught and renamed column headers for. Reworded to "Highest MC of any cloak" (more informative, factually accurate). All ~70 other armor rows match `objects.h:444-727` exactly.
+- Trident: stats vs `objects.h:194-196`; swimmer to-hit bonus in `hitval()` not damage per v2 fix; no trident artifact.
+- Apelike `Y`: 6 rows match `monsters.h:2372-2417`. Sasquatch LVL 5th field is alignment not MR.
+- Dart: 1d3/1d2 wt 1 cost 2; Tourist starter stack `{DART, 2, WEAPON_CLASS, 21, 40, UNDEF_BLESS}` confirmed +2 enchantment and 21-40 quantity.
+
+### Pass-3 queue
+155/183 done.

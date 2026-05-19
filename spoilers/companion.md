@@ -7756,7 +7756,7 @@ kebab bonus.
 | robe | +2 | 2 | 15 | 50 | cloth | Casting bonus. Cancels most of the metal-armor penalty. |
 | alchemy smock | +1 | 1 | 10 | 50 | cloth | Poison resistance. Fantastic early-game safety. |
 | leather cloak | +1 | 1 | 15 | 40 | leather |  |
-| cloak of protection | +3 | 3 | 10 | 50 | cloth | Best non-magical defensive cloak. |
+| cloak of protection | +3 | 3 | 10 | 50 | cloth | Highest MC of any cloak. |
 | cloak of invisibility | +1 | 1 | 10 | 60 | cloth | Invisibility. |
 | cloak of magic resistance | +1 | 1 | 10 | 60 | cloth | Magic resistance. The lightest source. |
 | cloak of displacement | +1 | 1 | 10 | 50 | cloth | Displacement. |
