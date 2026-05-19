@@ -8555,3 +8555,31 @@ Re-verified all ring prices, auto-curse list, hunger costs, restful-sleep mechan
 138/183 done.
 
 ---
+
+## 2026-05-19 — v2 audit batch 29: Puddings (#139), Sling (#140), Dragons (#141), Scroll Rack (#142), Crossbow (#143)
+
+### The Scroll Rack (#142) — `spoilers/companion.md:3478` — 2 corrections (beginner-saving)
+
+- **Enchant weapon at +6+** was wrong. Companion said "Past +9 the scroll usually does nothing but never destroys the weapon" — but per `wield.c:999-1009 chwepon`, when `uwep->spe > 5` (i.e., +6 or higher) and `amount >= 0`, `rn2(3)` evaluates true 2/3 of the time and destroys the weapon outright. So +6 and above is at 2/3 destruction risk per read. Reworded with "**Safe ceiling: +5**." Real beginner trap.
+- **Charging probability table** was off by one. Source formula `n³/7³` at `read.c:746-758`: 1st 0%, 2nd 0.29%, 3rd 2.33%, 4th 7.87%, 5th 18.66%, 6th 36.44%, 7th 62.97%, 8th 100%. Companion wrote "36% on sixth — and on the seventh, always" — missing the 63% seventh-charge step and labeling the always-explode as 7th instead of 8th. Corrected.
+
+### Puddings and oozes (#139) — `spoilers/companion.md:8744` — 1 correction
+
+"Splits when you hit them with an iron or metal melee weapon" implied all four split. Per `uhitm.c:1609-1610`, only `PM_BLACK_PUDDING || PM_BROWN_PUDDING` split. Gray ooze and green slime don't. Reworded the intro to scope the split to brown/black puddings.
+
+### Sling (#140) — `spoilers/companion.md:7615` — 1 correction (long-overdue)
+
+The Notes cell still read "Trains sling skill from any rock you pick up." The v1 audit comment claimed this was corrected, but the prose wasn't actually updated. Picking up rocks doesn't train any skill (training fires on hit while wielding the launcher, `weapon.c:1750-1761`). Replaced with "Launches rocks, flint stones, and gems. Caveman starting weapon."
+
+### Dragons (#141) — `spoilers/companion.md:8524` — 1 correction
+
+Baby blue dragon Notes cell read "Lightning breath, ditto." — wrong. Baby blue dragon has only bite 2d6 (`monsters.h:1408-1415`, no AT_BREA), and the section intro explicitly states "Babies don't breathe." Appears to be a stray editorial placeholder. Cleared the cell.
+
+### Crossbow (#143) — `spoilers/companion.md:7604` — 1 correction
+
+"Valkyries Skilled" was wrong. `u_init.c:525-547` (Skill_V) has no P_CROSSBOW entry; Valkyries cap at Unskilled. The Skilled role is **Knight** (`u_init.c:366`). Corrected.
+
+### Pass-2 queue
+143/183 done.
+
+---

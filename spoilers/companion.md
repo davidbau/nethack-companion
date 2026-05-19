@@ -3476,7 +3476,7 @@ pharmacy.
 ---
 
 ### The Scroll Rack
-<!-- audit 2026-05-17 #1: 26 claims verified, 2 corrected (enchant +5/+7 destruction wrong; charging "second/third recharge" overstated). See companion-audit.md. -->
+<!-- audit 2026-05-17 #1 (re-audit 2026-05-19 v2 #142): 26 claims verified, 2 corrected (enchant +5/+7 destruction wrong; charging "second/third recharge" overstated). v2 fixes: (a) "Past +9 the scroll usually does nothing but never destroys the weapon" was wrong. Per wield.c:999-1009 `chwepon`, when uwep->spe > 5 (i.e., +6 or higher) and amount >= 0, `rn2(3)` evaluates true 2/3 of the time and destroys the weapon outright. So +6 and above is at 2/3 destruction risk per read. Reworded with **Safe ceiling: +5**. Real beginner trap. (b) Charging probability table was off by one. Source formula `n³/7³` (read.c:746-758): 1st 0%, 2nd 0.29%, 3rd 2.33%, 4th 7.87%, 5th 18.66%, 6th 36.44%, 7th 62.97%, 8th 100%. Companion wrote "36% on sixth — and on the seventh, always" — missing the 63% seventh-charge step and labeling the always-explode as 7th. Corrected. See companion-audit.md. -->
 
 Scrolls are the dungeon's single-use spells: read once, triggered,
 gone. They appear with absurd randomized labels ("ZELGO MER,"
@@ -3518,8 +3518,9 @@ two). You will never have enough of these.
 **Enchant weapon / enchant armor.** The path to endgame power.
 Uncursed enchant *weapon* raises by +1. Blessed raises by up to 3,
 less the more the weapon is already enchanted (no more than +1 once
-the weapon is +6 or higher). Past +9 the scroll usually does nothing
-but never destroys the weapon. Enchant *armor* raises by a small
+the weapon is +6 or higher). And there's a catch: at +6 or higher,
+each read has a 2/3 chance of destroying the weapon outright. **Safe
+ceiling: +5.** Enchant *armor* raises by a small
 random amount that's larger when armor is unenchanted, larger again
 for elven or non-magic armor, and +1 extra when blessed. Once worn
 armor exceeds **+3** (or **+5** for elven / Wizard's Cornuthaum),
@@ -3536,7 +3537,7 @@ for your wand of wishing: one charge means one more wish. Blessed
 charging restores more charges. Each recharge has an `n³/7³` chance
 of the wand exploding (where `n` is the count of previous recharges):
 0% on first, 0.3% on second, 2% on third, 8% on fourth, 19% on fifth,
-36% on sixth — and on the seventh, always. Wand of wishing is the
+36% on sixth, 63% on seventh — and on the eighth, always. Wand of wishing is the
 exception: it explodes 100% of the time on the second recharge, so
 recharge it exactly once and no more.
 
@@ -7593,7 +7594,7 @@ kebab bonus.
 :::
 
 #### Crossbow
-<!-- audit 2026-05-18 #118: 2 corrections. (1) Crossbow bolt damage was "1d4+1 / 1d6+1" — wrong; per objects.h:155-156 PROJECTILE macro sdam=4, ldam=6 = 1d4 / 1d6, no +1 bonus. (2) "Crossbows fire one shot per turn at most" — wrong; dothrow.c:225-231 enables multishot at ACURRSTR >= 18 (>= 16 for gnomes), and PM_GNOME gets a baseline +1 multishot bonus per dothrow.c:205-209. Added role/race context (Rogue/Ranger Expert per u_init.c). -->
+<!-- audit 2026-05-18 #118 (re-audit 2026-05-19 v2 #143): 2 corrections. (1) Crossbow bolt damage was "1d4+1 / 1d6+1" — wrong; per objects.h:155-156 PROJECTILE macro sdam=4, ldam=6 = 1d4 / 1d6, no +1 bonus. (2) "Crossbows fire one shot per turn at most" — wrong; dothrow.c:225-231 enables multishot at ACURRSTR >= 18 (>= 16 for gnomes), and PM_GNOME gets a baseline +1 multishot bonus per dothrow.c:205-209. Added role/race context (Rogue/Ranger Expert per u_init.c). v2 fix: "Valkyries Skilled" was wrong — u_init.c:525-547 (Skill_V) has no P_CROSSBOW entry, so Valkyries cap at Unskilled. The Skilled role is Knight (u_init.c:366). Corrected to "Knights Skilled." See companion-audit.md. -->
 
 
 ::: dense-table
@@ -7601,18 +7602,18 @@ kebab bonus.
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | crossbow bolt | 1d4 / 1d6 | 1 | 2 | — | iron | Stackable. |
-| crossbow | — | 50 | 40 | — | wood | Bolts pierce. Multishot kicks in at **Str 18** (Str 16 for gnomes, who also get a baseline +1 multishot); below that, one bolt per turn. Rogues and Rangers reach Expert, Valkyries Skilled. |
+| crossbow | — | 50 | 40 | — | wood | Bolts pierce. Multishot kicks in at **Str 18** (Str 16 for gnomes, who also get a baseline +1 multishot); below that, one bolt per turn. Rogues and Rangers reach Expert, Knights Skilled. |
 
 :::
 
 #### Sling
-<!-- audit 2026-05-18 #90: sling stats verified vs objects.h:403. Corrected "Trains sling skill from any rock you pick up" — wrong. Per weapon.c:1750, ammo alone doesn't train skill (comment explicitly notes touchstone-Archeologist exclusion); training comes from hits while wielding a sling. Caveman starts with one sling. Sling launches rocks, gems, and flint stones. See companion-audit.md. -->
+<!-- audit 2026-05-18 #90 (re-audit 2026-05-19 v2 #140): sling stats verified vs objects.h:403. Corrected "Trains sling skill from any rock you pick up" — wrong. Per weapon.c:1750, ammo alone doesn't train skill (comment explicitly notes touchstone-Archeologist exclusion); training comes from hits while wielding a sling. Caveman starts with one sling. Sling launches rocks, gems, and flint stones. v2 fix: the v1 audit comment claimed this was corrected, but the Notes cell at companion.md:7615 still read "Trains sling skill from any rock you pick up." Actually corrected the prose this time. Replaced with "Launches rocks, flint stones, and gems. Caveman starting weapon." See companion-audit.md. -->
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| sling | — | 3 | 20 | — | leather | Trains sling skill from any rock you pick up. |
+| sling | — | 3 | 20 | — | leather | Launches rocks, flint stones, and gems. Caveman starting weapon. |
 
 :::
 
@@ -8521,7 +8522,7 @@ Mounted archers with strong physical attacks. They wield bows and shoot at range
 :::
 
 #### Dragons `D`
-<!-- audit 2026-05-17 #54: 10 baby + 10 adult + Chromatic + Ixoth all verified against monsters.h:1325-1562 + 3642-3690 (shimmering correctly omitted, #if 0 DEFERRED). All breath types/damage and adult attack lines clean. Corrected silver dragon color (was "gray", actually CLR_BRIGHT_CYAN per color.h:54; fixed both baby and adult rows). See companion-audit.md. -->
+<!-- audit 2026-05-17 #54 (re-audit 2026-05-19 v2 #141): 10 baby + 10 adult + Chromatic + Ixoth all verified against monsters.h:1325-1562 + 3642-3690 (shimmering correctly omitted, #if 0 DEFERRED). All breath types/damage and adult attack lines clean. Corrected silver dragon color (was "gray", actually CLR_BRIGHT_CYAN per color.h:54; fixed both baby and adult rows). v2 fix: baby blue dragon Notes cell read "Lightning breath, ditto." — wrong. Baby blue dragon has only bite 2d6 (monsters.h:1408-1415, no AT_BREA), and the section intro explicitly states "Babies don't breathe." This row contradicted itself and the source — appears to be a stray editorial placeholder. Cleared the cell. See companion-audit.md. -->
 
 
 Each adult dragon breathes its element type. Reflection bounces the ranged breath back. **Babies don't breathe** — they're just biters until they grow up. Adults are the source of dragon scale mail. See [Dragon Scale Mail](#armor-tables).
@@ -8539,7 +8540,7 @@ All except *Chromatic Dragon* also fly.
 | baby white dragon | white | 12 | 9 | 2 | 10 | bite 2d6 |  |
 | baby orange dragon | orange | 12 | 9 | 2 | 10 | bite 2d6 |  |
 | baby black dragon | black | 12 | 9 | 2 | 10 | bite 2d6 |  |
-| baby blue dragon | blue | 12 | 9 | 2 | 10 | bite 2d6 | Lightning breath, ditto. |
+| baby blue dragon | blue | 12 | 9 | 2 | 10 | bite 2d6 |  |
 | baby green dragon | green | 12 | 9 | 2 | 10 | bite 2d6 | poisonous-corpse. |
 | baby yellow dragon | yellow | 12 | 9 | 2 | 10 | bite 2d6 |  |
 | gray dragon | gray | 15 | 9 | -1 | 20 | breath 4d6 magic · bite 3d8 · claw 1d4 · claw 1d4 | sees-invis. Anti-magic breath. Magic resistance helps; reflection doesn't. |
@@ -8741,10 +8742,10 @@ Big melee brutes that wield weapons. Drop decent weapons and armor.
 :::
 
 #### Puddings and oozes `P`
-<!-- audit 2026-05-18 #126: 2 corrections. (1) Green slime "9-turn countdown" — wrong; make_slimed(10L,...) sets 10 turns at uhitm.c:3199, uhitm.c:3570, polyself.c:456, eat.c:854. The only 5-turn case is engulf+digest at uhitm.c:5099. (2) "Brown puddings corrode armor on touch" — wrong; AD_DCAY is ROT (ERODE_ROT for wood/leather/cloth/bone) per uhitm.c:2389 mhitm_ad_dcay. CORRODE (metal) is the black pudding effect (AD_CORR, uhitm.c:2338-2356). Also added the omitted gray-ooze rust effect (AD_RUST), and clarified that the split trigger requires iron/metal melee weapons (hmon_hitmon_splitmon, uhitm.c:1609-1621). -->
+<!-- audit 2026-05-18 #126 (re-audit 2026-05-19 v2 #139): 2 corrections. (1) Green slime "9-turn countdown" — wrong; make_slimed(10L,...) sets 10 turns at uhitm.c:3199, uhitm.c:3570, polyself.c:456, eat.c:854. The only 5-turn case is engulf+digest at uhitm.c:5099. (2) "Brown puddings corrode armor on touch" — wrong; AD_DCAY is ROT (ERODE_ROT for wood/leather/cloth/bone) per uhitm.c:2389 mhitm_ad_dcay. CORRODE (metal) is the black pudding effect (AD_CORR, uhitm.c:2338-2356). Also added the omitted gray-ooze rust effect (AD_RUST), and clarified that the split trigger requires iron/metal melee weapons (hmon_hitmon_splitmon, uhitm.c:1609-1621). v2 fix: "Splits when you hit them with an iron or metal melee weapon" implied all four split, but uhitm.c:1609-1610 gates this only on PM_BLACK_PUDDING || PM_BROWN_PUDDING. Gray ooze and green slime don't split. Reworded the intro to scope the split to brown/black puddings, and noted gray ooze rusts but doesn't split. See companion-audit.md. -->
 
 
-Splits when you hit them with an iron or metal melee weapon. Brown puddings **rot** your wood/leather/cloth/bone armor on bite; black puddings **corrode** your metal armor on bite *and* corrode your wielded metal weapon on the passive return-hit. Gray ooze **rusts** metal armor. Fire-kill them so they don't split, or pick a chokepoint.
+**Brown and black puddings split** when you hit them with an iron or metal melee weapon. Brown puddings **rot** your wood/leather/cloth/bone armor on bite; black puddings **corrode** your metal armor on bite *and* corrode your wielded metal weapon on the passive return-hit. Gray ooze **rusts** metal armor but doesn't split. Fire-kill puddings so they don't multiply, or pick a chokepoint.
 
 **Green slime** is a Gehennom-only exception: doesn't split, leaves a glob, and one touch starts a 10-turn countdown to becoming one yourself. Fight at range, burn yourself with fire to clear it, or wear an **amulet of unchanging** (blocks and aborts the transformation). Prayer doesn't work in Gehennom, so don't rely on it. See *Delayed Deaths* for the full cure list.
 

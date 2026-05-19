@@ -147,11 +147,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#136**  L 3074  (  51 lines)     ↳ A Practical Identification Strategy → Gray Stones: Four Stones, One Correct Answer
 - [x] **#137**  L 8594  (  16 lines)     ↳ Bestiary Tables → Keystone Kops `K`
 - [x] **#138**  L 3746  ( 146 lines)   📖 Rings and Amulets
-- [ ] **#139**  L 8687  (  21 lines)     ↳ Bestiary Tables → Puddings and oozes `P`
-- [ ] **#140**  L 7550  (  11 lines)     ↳ Weapons Tables → Sling
-- [ ] **#141**  L 8465  (  37 lines)     ↳ Bestiary Tables → Dragons `D`
-- [ ] **#142**  L 3444  ( 106 lines)   📖 The Scroll Rack
-- [ ] **#143**  L 7537  (  13 lines)     ↳ Weapons Tables → Crossbow
+- [x] **#139**  L 8687  (  21 lines)     ↳ Bestiary Tables → Puddings and oozes `P`
+- [x] **#140**  L 7550  (  11 lines)     ↳ Weapons Tables → Sling
+- [x] **#141**  L 8465  (  37 lines)     ↳ Bestiary Tables → Dragons `D`
+- [x] **#142**  L 3444  ( 106 lines)   📖 The Scroll Rack
+- [x] **#143**  L 7537  (  13 lines)     ↳ Weapons Tables → Crossbow
 - [ ] **#144**  L 2388  (  31 lines)     ↳ Dangerous Encounters → The Genetic Engineer
 - [ ] **#145**  L 7321  (  20 lines)     ↳ Weapons Tables → Two-handed sword
 - [ ] **#146**  L 8708  (  23 lines)     ↳ Bestiary Tables → Quantum mechanics `Q`
