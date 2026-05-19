@@ -137,7 +137,24 @@ wraparound cover</a>.
 ---
 
 ### Choosing Your Expedition
-<!-- audit 2026-05-18 #86: most role/race/alignment combos and starting gear claims verified vs u_init.c + role.c + attrib.c. Corrected: Elf "see invisible from the start" (no race grants it; sleep res is at XL 4 not 1); Knight code says fleeing-or-helpless not fleeing-or-peaceful (peaceful penalty is Samurai's giri); Cave Dweller starts with sling + flint, not "rocks for throwing"; Ranger also starts with +2 cloak of displacement; Wizard starts with cloak of magic resistance + wand + rings + scrolls + marker; Healer is immune to sickness (not "can see whether potions are safe"); added Knight intrinsic jumping; Ranger Stealth XL 7 / See Invis XL 15 (not "early"). v2 audit 2026-05-18 #46: two factual fixes and two beginner-affecting wisdom adjustments. (a) Healer paragraph: "convert them to fruit juice with an amethyst" — wrong, the amethyst converts BOOZE to fruit juice (potion.c:2161-2163). Sickness to fruit juice goes through the unicorn horn (potion.c:2151-2154). Reworded. (b) Knight starting lance is +1 not +0 (u_init.c:91-92 `{ LANCE, 1, ... }`). Fixed. (c) Cave Dweller "gain speed early" was misleading next to Samurai/Monk's true XL-1 speed — Cave Dweller's Fast is at XL 7 (attrib.c:37). Softened to "by mid-game" so a beginner picking a role doesn't expect XL-1 speed. (d) Closing recommendation "Mjollnir waiting at the first altar you can sacrifice on" — a cross-aligned altar won't deliver Mjollnir; clarified to "first co-aligned altar." Verified all 13 role alignments/race availabilities against role.c, intrinsic-by-XL tables against attrib.c, and all sacrifice-gift assignments. 0 other corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- Knight starts with +1 long sword and +1 lance (u_init.c:91-92)
+- Cave Dweller gains Fast at XL 7 (attrib.c:37)
+- Knight gains Fast at XL 7 (attrib.c:45)
+- Healer starts with poison resistance at XL 1 (attrib.c:41)
+- Ranger gains Searching XL 1, Stealth XL 7, See Invisible XL 15 (attrib.c:63-66)
+- Elf gains sleep resistance at XL 4 (attrib.c:95)
+- Cave Dweller starts with sling + flint stones (u_init.c:68-71)
+- Ranger starts with +2 cloak of displacement (u_init.c:128)
+- Wizard starts with cloak of MR + wand + rings + potions + scrolls + books + marker (u_init.c:167-176)
+- Knight has intrinsic jumping from XL 1 (u_init.c:691)
+- amethyst converts booze (not sickness) to fruit juice (potion.c:2161-2163)
+- unicorn horn converts sickness to fruit juice (potion.c:2151-2154)
+- Mjollnir is the Valkyrie sacrifice gift; needs a co-aligned altar (artilist.h:109)
+- Knight code penalizes attacks on fleeing or helpless monsters (peaceful is Samurai's giri)
+- all 13 role alignment/race availabilities (role.c)
+-->
 
 The first decision you'll make, before you even set foot on the
 stairs, is who you are. In the Mazes, this means three things: your
@@ -332,7 +349,17 @@ hard.
 
 ---
 
-<!-- audit 2026-05-18 #170 (re-audit 2026-05-18 v2 #36): qualitative section, no numeric claims to refute. Spot-checked: tripe rations are "dog food" for typical PCs (eat.c:2138-2145) but orcs and carnivores enjoy them (eat.c:2132-2136); altar blessed/cursed flash at do.c:363-389 (amber/black) sets bknown; pets avoid cursed items per dogmove.c:535-536, 1065-1067; touchstone gem-ID at apply.c:2658-2696; floating-eye paralysis at uhitm.c:5853, 6022. v2 also confirmed Burdened status label at botl.c:12, food ration weight/nutrition at objects.h:1110, role inventory tables at u_init.c. 0 corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- tripe rations are dog food for typical PCs (eat.c:2138-2145)
+- orcs and carnivores enjoy tripe (eat.c:2132-2136)
+- altar BUC flash is amber/black and sets bknown (do.c:363-389)
+- pets avoid cursed items (dogmove.c:535-536, 1065-1067)
+- touchstone identifies gems (apply.c:2658-2696)
+- floating-eye paralysis fires on melee against the eye (uhitm.c:5853, 6022)
+- Burdened status label (botl.c:12)
+- food ration weight and nutrition (objects.h:1110)
+-->
 ### What to Pack
 
 Any good travel guide will tell you what to bring. Ours has the
@@ -383,7 +410,17 @@ and the ability to outrun a gnome lord. If your status line reads
 ---
 
 ### Your First Descent
-<!-- audit 2026-05-18 v2 #75: qualitative chapter, mostly verified clean. Stair-falling 1-3 HP per do.c:1780-1795 (rnd(3)); floating-eye paralysis at mhitu.c:2536-2557; pet step-around at dogmove.c:535; lizard/lichen nonrotting at eat.c:58-61; killer bee swarms speed 18 G_LGROUP poisoned. Supply chest mechanics verified vs mklev.c:1010-1119 (2/3 above Oracle, 2/3 chest vs 1/3 large box, 5/6 locked, healing potion bias). Two number fixes: prayer cooldown was "300-500 turns" (way too low — community wisdom is ~1000 turns, rnz(300)/rnz(350) scales via rne(4) to 75-2400+ at pray.c:780,1356,1819), updated to "about a thousand turns or so"; corpse-rot "guaranteed-safe within 50 turns" → 30 turns (rotted ≤ 3 needs age ≤ 30 at all divisors, eat.c:1887,1939) and "past ~150 turns certainly tainted" → ~175 turns (guaranteed taint needs age > 174). See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- stair-falling damage is 1-3 HP via rnd(3) (do.c:1780-1795)
+- floating-eye paralysis (mhitu.c:2536-2557)
+- pets step around their owner (dogmove.c:535)
+- lizard and lichen corpses never rot (eat.c:58-61)
+- killer bees: speed 18, G_LGROUP, poisoned bite
+- supply chests appear above Oracle: ~2/3 of rooms; 2/3 chest vs 1/3 large box; 5/6 locked (mklev.c:1010-1119)
+- prayer cooldown averages ~1000 turns: rnz(300)/rnz(350) scaled by rne(4) (pray.c:780, 1356, 1819)
+- corpse safe within 30 turns; tainted past ~175 turns (eat.c:1887, 1939)
+-->
 
 You step down the stairs. The air is cool and damp. A corridor
 stretches before you, branching into darkness. Your starting pet
