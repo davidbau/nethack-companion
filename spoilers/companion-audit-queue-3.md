@@ -135,11 +135,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#123**  L 7046  (  17 lines)     ↳ Voluntary Challenges → Bonesless (new in 5.0)
 - [x] **#124**  L 8140  (  15 lines)     ↳ Bestiary Tables → Gremlins `g`
 - [x] **#125**  L 8479  (  12 lines)     ↳ Bestiary Tables → Zruties `z`
-- [ ] **#126**  L 1000  (  39 lines)     ↳ Branches and Landmarks → The Quest
-- [ ] **#127**  L 2414  (  31 lines)     ↳ Dangerous Encounters → The Genetic Engineer
-- [ ] **#128**  L  981  (  19 lines)     ↳ Branches and Landmarks → The Oracle
-- [ ] **#129**  L 5473  (  86 lines)   📖 The Castle
-- [ ] **#130**  L 1252  (  22 lines)     ↳ Traps and Hazards → Movement Traps
+- [x] **#126**  L 1000  (  39 lines)     ↳ Branches and Landmarks → The Quest
+- [x] **#127**  L 2414  (  31 lines)     ↳ Dangerous Encounters → The Genetic Engineer
+- [x] **#128**  L  981  (  19 lines)     ↳ Branches and Landmarks → The Oracle
+- [x] **#129**  L 5473  (  86 lines)   📖 The Castle
+- [x] **#130**  L 1252  (  22 lines)     ↳ Traps and Hazards → Movement Traps
 - [ ] **#131**  L 1965  (  32 lines)     ↳ Dangerous Encounters → Petrification (Stoning)
 - [ ] **#132**  L 9055  (  42 lines)     ↳ Bestiary Tables → Major demons `&`
 - [ ] **#133**  L 1597  (  43 lines)   📖 Feelings and Sounds

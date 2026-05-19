@@ -9221,3 +9221,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 125/183 done.
+
+## 2026-05-19 — v3 audit batch 26: Quest (#126), Genetic Engineer (#127), Oracle (#128), Castle (#129), Movement Traps (#130)
+
+All five **CLEAN**.
+
+- Quest: portal DL 11-16; MIN_QUEST_LEVEL=14 (`quest.h:45`), MIN_QUEST_ALIGN=20 (`quest.h:43`); Bell of Opening via `mongets()` for MS_NEMESIS at `makemon.c:1378-1384`. "Most nemeses carry amulet of life saving" claim is wiki-belief not source-guarantee but beginner-protective; preserve.
+- Genetic Engineer: Q glyph green, AD_POLY claw, Antimagic/Unchanging block (`mhitm.c:1128-1131`), `polyself(POLY_NOFLAGS)`, M1_TPORT self-teleport, corpse same-as-doppelganger poly (`eat.c:1244-1263`).
+- Oracle: DL 5-9; minor cost 50, major cost `500 + 50*u.ulevel` (`rumors.c:699`); fountains and statues per `oracle.lua`.
+- Castle: 4 corner alcoves with one wand chest (`castle.lua:48-52,142-149`); blessed scroll of scare monster + burned Elbereth protects; 5 trap doors to Valley of the Dead; 16 soldiers + 1 lieutenant; 4 dragons; moat with 4 giant eels + 4 sharks; 5.0 fix: no arch-lich/master-lich (`fixes5-0-0.txt:233-234`).
+- Movement Traps: pit 1d6, spiked pit 1d10+1/6 poison; trapdoor 25%-per-level cascade via `hole_destination` (`trap.c:442-453`); levitation/flying immunity with Sokoban exception (`trap.c:633-639, 1849-1850`).
+
+### Pass-3 queue
+130/183 done.
