@@ -72,7 +72,7 @@ you alive.
 
 **Part Two: Reading the Terrain**
 
-4. [The Lay of the Land](#the-lay-of-the-land) <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#5a5a5a" stroke-width="1.1" style="vertical-align:-2px" aria-label="includes a map figure"><path d="M1 3 L5 2 L9 3.5 L13 2 L13 11 L9 12.5 L5 11 L1 12 Z"/><line x1="5" y1="2" x2="5" y2="11"/><line x1="9" y1="3.5" x2="9" y2="12.5"/></svg> — Rooms, corridors, and dungeon features (with map)
+4. [The Lay of the Land](#the-lay-of-the-land) <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#5a5a5a" stroke-width="1.1" style="vertical-align:-1px" aria-label="includes a map figure"><path d="M1 3 L5 2 L9 3.5 L13 2 L13 11 L9 12.5 L5 11 L1 12 Z"/><line x1="5" y1="2" x2="5" y2="11"/><line x1="9" y1="3.5" x2="9" y2="12.5"/></svg> — Rooms, corridors, and dungeon features (with map)
 5. [Points of Interest](#points-of-interest) — Fountains, altars, thrones, and sinks
 6. [Branches and Landmarks](#branches-and-landmarks) — The Mines, Sokoban, and beyond
 7. [Traps and Hazards](#traps-and-hazards) — What the dungeon has in store for you
@@ -1032,7 +1032,7 @@ clean.
 
 
 Somewhere in the middle dungeon you'll cross a one-level
-historical district. You'll know it when the welcoming line reads,
+historical district.
 *"You enter what seems to be an older, more primitive world."*
 The neighborhood is preserved as it was when **Rogue** was the
 only dungeon-crawl anyone had heard of, and a few details give
@@ -1062,9 +1062,9 @@ leads to a fortified military compound: sixteen soldiers and a
 lieutenant, with more drifting out of the barracks once the alarm
 trips. Four guard dragons. A stone giant. Four giant eels
 patrolling the moat. And **Croesus** on the throne, the vault
-guardian himself. The level is non-diggable as well as `noteleport`,
-so once you're inside the only way out is back through the portal
-or a scroll of teleportation. Kill Croesus, loot the place, leave.
+guardian himself. The level is non-diggable. The level prevents
+teleportation, so once you're inside the only way out is back
+through the portal or a scroll of teleportation. Kill Croesus, loot the place, leave.
 Croesus is covetous and hits hard in melee, so shoot or zap him
 from across the moat rather than walking up.
 
@@ -1121,8 +1121,6 @@ chance of levitation boots, and a 50% chance of a sack to put them
 in. The shield is cursed, so plan to uncurse it before swapping it
 in. The other statues on the level are intentionally empty.
 
-> **Arien Malec's Medusa Checklist**
->
 > *Arien Malec collected crossing strategies from RGRN posters
 > back in the early 2000s, with input from Pat Rankin, Geoduck,
 > Topi Linkala, and others. This is a condensed version of his guide.*
@@ -1302,9 +1300,9 @@ right ring) sidesteps it.
 Counterintuitive enough to mislead returning players. The trap
 drains spell energy, and having *magic resistance* also triggers
 an "anti-magic implosion" that costs you HP. The damage is
-`rnd(4)` base, plus another `rnd(4)` if you have half-physical or
-half-spell damage, plus `rnd(4)` for wielding Magicbane, plus
-`rnd(4)` for carrying any one magic-resistance artifact (only one
+d4 base, plus another d4 if you have half-physical or
+half-spell damage, plus d4 for wielding Magicbane, plus
+d4 for carrying any one magic-resistance artifact (only one
 counts — the check breaks on first match). At worst that's 4d4
 damage, quartered (rounded up) if you can pass through walls. The
 defense is finding the trap first (search) and stepping around it.
@@ -1344,7 +1342,7 @@ empty room, a scatter of arrows or darts on the floor, a square
 your pet refuses to cross, or a themed room whose gimmick is
 hidden hazards.
 
-<!-- audit 2026-05-18 #177: passes_bars (mondata.c:552-563) uses verysmall() = msize<MZ_SMALL = TINY only; kittens and little dogs are MZ_SMALL and do NOT pass through. Lightning shares the ZT_ACID branch at zap.c:5344-5369 (90% per tile melts bars). Wand/spell of striking and force bolt have no IRONBARS handler so they pass through harmlessly. Rock moles eat bars (metallivorous, hack.c:769-784). See companion-audit.md. -->
+<!-- audit 2026-05-18 #177 (re-audit 2026-05-18 v2 #86): passes_bars (mondata.c:552-563) uses verysmall() = msize<MZ_SMALL = TINY only; kittens and little dogs are MZ_SMALL and do NOT pass through. Lightning shares the ZT_ACID branch at zap.c:5344-5369 (90% per tile melts bars). Wand/spell of striking and force bolt have no IRONBARS handler so they pass through harmlessly. Rock moles eat bars (metallivorous, hack.c:769-784). v2 fixes: (a) "wand of lightning will melt bars" overstated — zap.c:5349 has `if (damgtype == ZT_LIGHTNING && rn2(10)) break;` so each tile only melts on a 1-in-10 roll (acid has no such gate). Softened to "can melt them too — though only about one zap in ten actually dissolves the bars." (b) "Ordinary stone on the flanks" geometry wrong: niche bars sit in a room wall, with stone behind them but room-wall tiles to the sides; the trivial "dig through the adjacent wall" framing didn't match the layout. Reworded to digging diagonally past the bars, or through the wall to the stone behind and back into the niche. (c) "Scroll of teleportation guaranteed" overstates the coupling at mklev.c:790-792 — the scroll is placed only when teleport isn't suppressed on the level. Reworded. See companion-audit.md. -->
 #### Iron Bars
 
 Iron bars look like a barrier but aren't solid: light passes through,
@@ -1356,19 +1354,21 @@ fizzle, weapons swing through harmlessly, and kicking just hurts
 your foot. Wands and spells of *striking* and *force bolt* pass
 through the bars without effect. The bars corrode for an acid ray,
 acid breath or spit (if you are polymorphed into a yellow dragon or
-black naga), and a **wand of lightning** will melt bars too.
+black naga), and a **wand of lightning** can melt them too — though
+only about one zap in ten actually dissolves the bars.
 
 The practical early-game answer is to **dig around** them. Iron bars
-sit in a single tile of wall with ordinary stone on the flanks, so a
-pick-axe through the adjacent wall tunnels into the niche from the
-side and the bars stay standing as decoration. Mid-game, polymorph
-into something that breathes acid or lightning, passes walls (xorn,
-earth elemental), is **tiny** enough to slip between, or eats metal
-(rock mole). Starting pets won't fit, but a polymorphed pet can.
+sit in a niche cut into a room wall, so digging diagonally past the
+bars (or breaking through the wall to the stone behind and then back
+into the niche) reaches the contents without touching the bars. Mid-game,
+polymorph into something that breathes acid or lightning, passes
+walls (xorn, earth elemental), is **tiny** enough to slip between,
+or eats metal (rock mole). Starting pets won't fit, but a polymorphed
+pet can.
 
-What's typically behind them: a scroll of teleportation (guaranteed
-if teleport isn't suppressed on the level), occasionally a random
-item or a previous adventurer's corpse. The scroll is a joke: you'd
+What's typically behind them: a scroll of teleportation (unless the
+level is non-teleport, in which case the niche skips it), occasionally
+a random item or a previous adventurer's corpse. The scroll is a joke: you'd
 need one already to read it from outside the bars.
 
 #### Finding Secret Doors
@@ -1734,7 +1734,7 @@ A few map glyphs aren't monsters in the conventional sense, but you'll see them 
 ---
 
 ### What Actually Kills Adventurers
-<!-- audit 2026-05-17 #29: ~30 claims verified, 3 corrected (mount slip 10-14 HP not 11-15; mumakil 2-attack solo not 4-attack pack; shimmering DSM removed since it's #if 0 DEFERRED in 5.0). Also caught my own audit-#15 errors: shimmering DSM and missing Blue DSM speed. See companion-audit.md. -->
+<!-- audit 2026-05-17 #29 (re-audit 2026-05-18 v2 #87): ~30 claims verified, 3 corrected (mount slip 10-14 HP not 11-15; mumakil 2-attack solo not 4-attack pack; shimmering DSM removed since it's #if 0 DEFERRED in 5.0). Also caught my own audit-#15 errors: shimmering DSM and missing Blue DSM speed. v2 fixes: (a) one fix to scale-mail AC convention. The agent also flagged the confused-genocide line but was wrong — u.umonster is set from gu.urole.mnum (u_init.c:991), so confused genocide kills your ROLE's monster (PM_VALKYRIE, PM_WIZARD, etc.), exactly as the original text said. Original kept. (b) "AC 1 worn" for scale mails used the raw objects.h field; rest of book uses the +9 AC-bonus convention (see Body Armor table at line 7650+). Reworded to "the best AC in the body slot" to avoid sign-convention confusion. Re-verified: mount slip 10-14 (steed.c:354), water demon 1/30 fountain (fountain.c:247), all 9 DSM dual-property claims against do_wear.c:810-880, MC blocking mimic stick (uhitm.c:3310,3324). See companion-audit.md. -->
 
 Only about **0.4% of games end in ascension.** The other 99.6%
 are deaths. NetHack ends in death by default; survival is the
@@ -1929,8 +1929,8 @@ uncursed, 2 cursed) — the only body-slot light source in the game,
 and it lets you abandon torches and oil. It also confers
 hallucination resistance.
 
-All scale mails are dragonhide, body-slot, AC 1 worn, and resist
-disenchantment naturally. The choice of which color to chase is
+All scale mails are dragonhide, body-slot, +9 AC worn (the best in
+the body slot), and resist disenchantment naturally. The choice of which color to chase is
 usually whichever dragon's territory you can reach safely; killing
 a dragon yields scales you can wear immediately or convert to
 scale mail.
@@ -7545,7 +7545,7 @@ kebab bonus.
 
 :::
 
-<!-- audit 2026-05-18 #157: all 9 rows (arrow/elven/orcish/silver/ya + bow/elven/orcish/yumi) verified clean vs objects.h:141-154, 395-402. Yumi prob=0 (Samurai-only) — note correct. 0 corrections. See companion-audit.md. -->
+<!-- audit 2026-05-18 #157 (re-audit 2026-05-18 v2 #88): all 9 rows (arrow/elven/orcish/silver/ya + bow/elven/orcish/yumi) verified clean vs objects.h:141-154, 395-402. Yumi prob=0 (Samurai-only) — note correct. 0 corrections. v2 noted gaps (multishot Str/Ranger/Samurai-yumi note, Longbow of Diana pointer, role skill caps) but per no-trivia rule these are additions, not corrections; intentionally not applied. See companion-audit.md. -->
 #### Bow
 
 ::: dense-table
@@ -8323,6 +8323,7 @@ All arachnids and centipedes are poison-resistant.
 :::
 
 #### Trappers and lurkers `t`
+<!-- audit 2026-05-18 v2 #85: stats verified vs monsters.h:981-998 (lurker above gray L10 Spd3 AC3 MR0 engulf 1d6 + wrap 2d6; trapper green L12 Spd3 AC3 MR0 engulf 1d8 + wrap 2d8). AD_WRAP+AD_PHYS (not AD_DGST per monsters.h:973-980 retcon). Both have M1_HIDE; lurker is M1_FLY (ceiling hider per mondata.h:43-45), trapper is floor hider. Both M2_STALK (follow stairs). 0 corrections. See companion-audit.md. -->
 
 Stationary engulfers that look like a piece of dungeon. Stepping into one starts a swallow attack you can't easily escape. Identify with `;` (farlook) before walking into obvious-trap squares.
 
@@ -8918,7 +8919,7 @@ All zombies are mindless and undead.
 :::
 
 #### Humans and elves `@`
-<!-- audit 2026-05-17 #17: 43 rows / 200+ cells verified, 1 corrected (Kops are class K not @). All numeric stats match monsters.h exactly. Close calls: intro promises ninja/Wizard of Yendor/quest nemeses coverage that the table doesn't include. See companion-audit.md. -->
+<!-- audit 2026-05-17 #17 (re-audit 2026-05-18 v2 #84): 43 rows / 200+ cells verified, 1 corrected (Kops are class K not @). All numeric stats match monsters.h exactly. Close calls: intro promises ninja/Wizard of Yendor/quest nemeses coverage that the table doesn't include. v2 fixes: (a) added Wizard of Yendor row between Medusa and Croesus (monsters.h:2847-2858): bright-magenta, L30 Spd12 AC-8 MR100, claw 2d12 steal-amulet + spell, flies/regenerates/sees-invis/fire-res/poison-res, covetous. The intro had promised him for two audit passes. (b) Master of Thieves was labeled "Rogue quest nemesis" — wrong; per Rog-strt.lua:106 he is the Rogue quest LEADER (consistent with monsters.h categorizing him as a quest leader), and per Tou-goal.lua:117 + monsters.h:3564 he is the Tourist quest nemesis. Updated annotation. (c) Master Assassin was labeled "Rogue quest nemesis backup" — wrong; Rog-goal.lua:72 names him as the primary Rogue quest nemesis. Dropped "backup". See companion-audit.md. -->
 
 The catch-all `@` class: shopkeepers, priests, watchmen, role nemeses, quest leaders, soldiers, ninja, doppelgangers, weres, Medusa, Croesus, the Wizard of Yendor, and the player. Most start peaceful; the ones that don't are very dangerous. (Kops are *not* in this class — they're `K`.)
 
@@ -8951,6 +8952,7 @@ The catch-all `@` class: shopkeepers, priests, watchmen, role nemeses, quest lea
 | watchman | gray | 6 | 10 | 10 | 0 | weapon 1d8 | follows stairs, starts peaceful. |
 | watch captain | green | 10 | 10 | 10 | 15 | weapon 3d4 · weapon 3d4 | follows stairs, starts peaceful. |
 | Medusa | bright-green | 20 | 12 | 2 | 50 | weapon 2d4 · claw 1d8 · gaze petrify · bite 1d6 poison | flies, swims, amphibious, poisonous-corpse. |
+| Wizard of Yendor | bright-magenta | 30 | 12 | -8 | 100 | claw 2d12 steal-amulet · spell spell | flies, regenerates, sees-invis, fire-res, poison-res. Covetous: teleports to you in late Gehennom and on the planes. The final boss. |
 | Croesus | magenta | 20 | 15 | 0 | 40 | weapon 4d10 | sees-invis, follows stairs. Vault guardian on Fort Ludios. Wields a two-handed sword and hoards gold, gems, and magic items off the floor. |
 | Charon | white | 76 | 18 | -5 | 120 | weapon 1d8 · touch 1d8 paralyse | sees-invis, starts peaceful. |
 | archeologist | white | 10 | 12 | 10 | 1 | weapon 1d6 · weapon 1d6 | tunnels. |
@@ -8974,14 +8976,14 @@ The catch-all `@` class: shopkeepers, priests, watchmen, role nemeses, quest lea
 | Grand Master | black | 25 | 15 | 0 | 90 | claw 4d10 · kick 2d8 · spell 2d8 cleric · spell 2d8 cleric | sees-invis, starts peaceful. Monk quest leader. |
 | Arch Priest | white | 25 | 15 | 7 | 90 | weapon 4d10 · kick 2d8 · spell 2d8 cleric · spell 2d8 cleric | sees-invis, starts peaceful. Priest quest leader. |
 | Orion | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · spell 4d8 spell | swims, amphibious, sees-invis, starts peaceful. Ranger quest leader. Bow user. |
-| Master of Thieves | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · weapon 2d6 · claw 2d4 steal-amulet | starts peaceful. Rogue quest nemesis. |
+| Master of Thieves | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · weapon 2d6 · claw 2d4 steal-amulet | starts peaceful. Rogue quest leader; also Tourist quest nemesis. |
 | Lord Sato | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · weapon 4d10 | starts peaceful. |
 | Twoflower | white | 20 | 15 | 10 | 90 | weapon 4d10 | starts peaceful. Tourist quest leader. |
 | Norn | magenta | 20 | 15 | 0 | 90 | weapon 4d10 · weapon 4d10 | starts peaceful, cold-res. Valkyrie quest leader. |
 | Neferet the Green | green | 20 | 15 | 0 | 90 | weapon 4d10 · spell 2d8 spell · spell 2d8 spell | starts peaceful. Wizard quest leader. |
 | Thoth Amon | magenta | 16 | 12 | 0 | 10 | weapon 1d6 · spell spell · spell spell · claw 1d4 steal-amulet | follows stairs. |
 | Master Kaen | magenta | 25 | 12 | -10 | 10 | claw 16d2 · claw 16d2 · spell cleric · claw 1d4 steal-amulet | sees-invis, follows stairs. |
-| Master Assassin | magenta | 15 | 12 | 0 | 30 | weapon 2d6 poison · weapon 2d8 · claw 2d6 steal-amulet | follows stairs. Rogue quest nemesis backup. |
+| Master Assassin | magenta | 15 | 12 | 0 | 30 | weapon 2d6 poison · weapon 2d8 · claw 2d6 steal-amulet | follows stairs. Rogue quest nemesis. |
 | Ashikaga Takauji | magenta | 15 | 12 | 0 | 40 | weapon 2d6 · weapon 2d6 · claw 2d6 steal-amulet | follows stairs. Samurai quest nemesis. |
 | Dark One | black | 15 | 12 | 0 | 80 | weapon 1d6 · weapon 1d6 · claw 1d4 steal-amulet · spell spell | follows stairs. |
 | student | white | 5 | 12 | 10 | 10 | weapon 1d6 | tunnels, starts peaceful. |

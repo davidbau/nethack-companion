@@ -8201,3 +8201,37 @@ Source: `spoilers/companion.md` line 2982. 4 factual corrections.
 - All armor price tiers verified vs `objects.h:686-727, 637-650`.
 
 ---
+
+## 2026-05-18 — v2 audit batch 18: Humans/elves (#84), Trappers/lurkers (#85), Iron Bars (#86), What Actually Kills (#87), Bow (#88)
+
+### Humans and elves `@` (#84) — `spoilers/companion.md:8920` — 3 corrections
+
+- **Master of Thieves was "Rogue quest nemesis"** — wrong. Per `dat/Rog-strt.lua:106` he is the Rogue quest *leader* (consistent with monsters.h:3559-3568 placing him in the quest-leaders section), and per `dat/Tou-goal.lua:117` plus the `monsters.h:3564` comment "Master of Thieves is also the Tourist's nemesis," he is the Tourist quest *nemesis*. Updated to "Rogue quest leader; also Tourist quest nemesis."
+- **Master Assassin was "Rogue quest nemesis backup"** — wrong. `dat/Rog-goal.lua:72` names him as the *primary* Rogue quest nemesis. Dropped "backup."
+- **Wizard of Yendor row missing** — promised in the section intro and flagged in audit #17's close calls, never added. Inserted between Medusa and Croesus per source order at `monsters.h:2847-2858`: bright-magenta, L30 Spd12 AC-8 MR100, claw 2d12 steal-amulet + spell, flies/regenerates/sees-invis/fire-res/poison-res, covetous, the final boss.
+
+### Trappers and lurkers `t` (#85) — `spoilers/companion.md:8325` — 0 corrections, badge added
+
+Stats verified vs `monsters.h:981-998`. AD_WRAP + AD_PHYS (not AD_DGST, per the 5.0 retcon at `monsters.h:973-980`). Both have M1_HIDE; lurker above has M1_FLY so it's a ceiling hider, trapper is a floor hider (`mondata.h:43-45`). Both M2_STALK = follow you up and down stairs (`monflag.h:146`). Engulf escape and farlook tip are accurate.
+
+### Iron Bars (#86) — `spoilers/companion.md:1346` — 3 corrections
+
+- **"Wand of lightning *will* melt bars"** overstated. `zap.c:5349` has `if (damgtype == ZT_LIGHTNING && rn2(10)) break;`, so each beam-tile only dissolves on a 1-in-10 roll (acid has no such gate). Softened to "can melt them too — though only about one zap in ten actually dissolves the bars."
+- **"Ordinary stone on the flanks"** geometry wrong. Niche bars sit in a room wall with stone *behind* them, but the flanking tiles are room-wall (not stone). The trivial "pick-axe through the adjacent wall tunnels into the niche from the side" framing didn't match the layout — digging the flank reaches stone, not the niche. Reworded to digging diagonally past the bars, or through the wall to the stone behind and back into the niche.
+- **"Scroll of teleportation guaranteed"** overstated. `mklev.c:790-792` skips the scroll on noteleport levels. Reworded to "unless the level is non-teleport, in which case the niche skips it."
+
+### What Actually Kills Adventurers (#87) — `spoilers/companion.md:1737` — 1 correction + 1 agent error caught
+
+- **Scale mails "AC 1 worn"** used the raw `objects.h` `ac` field, inconsistent with the body-armor equipment table (line 7650+) which uses the `+9` AC-bonus convention. Reworded to "+9 AC worn (the best in the body slot)" — matches both the equipment table and the NetHack Wiki convention ("9 base AC" / "+9 base AC", positive integers).
+- **Agent flagged confused-genocide line as wrong** ("Valkyrie, Wizard" examples allegedly impossible because `u.umonster` is supposedly the race). FALSE. `u_init.c:991` sets `u.umonster = gu.urole.mnum` (the role's monster index, per the `Role_if(X)` macro at `role.h:247`). Confused genocide kills your role's species — exactly as the original text said. Original kept; audit comment now documents the agent's error so future passes don't repeat it.
+
+Re-verified all DSM dual-property claims against `do_wear.c:810-880`, mount slip 10-14 (`steed.c:354` `rn1(5, 10)`), water demon 1/30 fountain (`fountain.c:247`), bones items cursed 4/5 (`bones.c:290`), mimic stick MC-gated (`uhitm.c:3310, 3324`), rope golem AT_HUGS, all standard top-killer lore.
+
+### Bow (#88) — `spoilers/companion.md:7549` — 0 corrections, badge updated
+
+All 9 rows (arrow/elven/orcish/silver/ya + bow/elven/orcish/yumi) verified clean vs `objects.h:141-154, 395-402`. Yumi `prob=0` correct (Samurai-only via `u_init.c:142-146`; Rangers get plain BOW). Agent flagged gaps — multishot Str/Ranger/Samurai-yumi bonuses at `dothrow.c:58-77`, Longbow of Diana, role skill caps — but per the no-trivia rule these are additions, not corrections, and intentionally not applied.
+
+### Pass-2 queue
+88/183 done.
+
+---
