@@ -2284,13 +2284,12 @@ an attack, it's a timer death. Polymorphing into a Breathless form
 amulets.
 
 #### Deadly Poison
-<!-- audit 2026-05-17 #7 (re-audit 2026-05-19 v2 #165): 7 claims verified, 1 corrected (Famine corpse missing from instakill list). v2 re-verified: AD_DRST 1/240 frequency (rn2(8) × rn2(30) gate at uhitm.c:3154+attrib.c:362); poison resistance grants full immunity (attrib.c:338-343); Famine corpse fatal at eat.c:831-838 alongside Death/Pestilence. 0 new corrections. See companion-audit.md. -->
+<!-- audit 2026-05-17 #7 (re-audit 2026-05-19 v2 #165, v3 #73): v3 dropped a spurious "or while burdened" qualifier from the poison-death warning. Burden has no role in the poison death formula — per attrib.c:366 the kill condition is purely `u.uhp <= loss`, no carrycap term. Reworded to "at low HP it can outright kill you." v2 re-verified AD_DRST 1/240 frequency (rn2(8) × rn2(30), uhitm.c:3154 + attrib.c:362), poison resistance grants full immunity (attrib.c:338-343), Famine corpse fatal at eat.c:831-838. See companion-audit.md. -->
 
 A handful of monsters (pit vipers, killer bees, cobras, some
 spiders) have a poison-damage branch that can deliver 10 to 34
 extra HP of damage on top of the normal hit. At full HP you
-usually survive; at low HP or while burdened, it can outright
-kill you. The "extra-damage" roll fires about 1 in 240 per
+usually survive; at low HP it can outright kill you. The "extra-damage" roll fires about 1 in 240 per
 qualifying hit. Eating any Rider corpse (Death, Pestilence, *or*
 Famine) is genuinely instantly fatal regardless of HP.
 

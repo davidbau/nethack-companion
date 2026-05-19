@@ -80,11 +80,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 68**  L 6436  (  36 lines)     ↳ Sokoban Solutions → Level 3, Version A
 - [x] **# 69**  L 2381  (  33 lines)     ↳ Dangerous Encounters → The Displacer Beast
 - [x] **# 70**  L 7063  ( 246 lines)   📖 Shopping and Shopkeeper Pricing
-- [ ] **# 71**  L 4087  ( 130 lines)   📖 The Armory
-- [ ] **# 72**  L 2445  ( 123 lines)   📖 Making Friends
-- [ ] **# 73**  L 2287  (  15 lines)     ↳ Dangerous Encounters → Deadly Poison
-- [ ] **# 74**  L 1354  (  28 lines)     ↳ Traps and Hazards → Iron Bars
-- [ ] **# 75**  L 6943  (  30 lines)     ↳ Voluntary Challenges → Combining Conducts
+- [x] **# 71**  L 4087  ( 130 lines)   📖 The Armory
+- [x] **# 72**  L 2445  ( 123 lines)   📖 Making Friends
+- [x] **# 73**  L 2287  (  15 lines)     ↳ Dangerous Encounters → Deadly Poison
+- [x] **# 74**  L 1354  (  28 lines)     ↳ Traps and Hazards → Iron Bars
+- [x] **# 75**  L 6943  (  30 lines)     ↳ Voluntary Challenges → Combining Conducts
 - [ ] **# 76**  L 2600  (  58 lines)     ↳ A Practical Identification Strategy → Blessed, Uncursed, Cursed
 - [ ] **# 77**  L 8155  (  20 lines)     ↳ Bestiary Tables → Humanoids `h`
 - [ ] **# 78**  L 5324  ( 145 lines)   📖 Luck and Fortune

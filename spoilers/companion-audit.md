@@ -9078,3 +9078,16 @@ M3_DISPLACES swap mechanic (50% chance, `hack.c:1972`), gated by `goodpos(...GP_
 
 ### Pass-3 queue
 70/183 done.
+
+## 2026-05-19 — v3 audit batch 15: Armory (#71), Making Friends (#72), Deadly Poison (#73), Iron Bars (#74), Combining Conducts (#75)
+
+Four CLEAN, one finding on Deadly Poison.
+
+- Armory: all armor numerics vs `objects.h`; cloak of protection sole MC3 source; MC formula `rn2(10) >= 3*armpro`; small shield only no-spell-penalty option (`spell.c:2269`). v1/v2 fixes intact.
+- Making Friends: pet curse-avoidance probabilistic (`dog.c:475`); tameness loss via hunger/separation/abuse_dog; scroll of taming 3×3 / confused 11×11 (spell never reaches the confused path per `spell.c:1372`); sad-feeling = offscreen pet death (`mon.c:3101/3495`); altar prayer corpse-revive (`pray.c:2175-2196`).
+- **Deadly Poison (#73)**: 1 correction. "At low HP **or while burdened**, it can outright kill you" — burdened has no role. Per `attrib.c:366`, the poison-kill condition is purely `u.uhp <= loss` with no carrycap term. Reworded to "at low HP it can outright kill you."
+- Iron Bars: tiny-only squeeze via `verysmall(mptr)` in `passes_bars` at `mondata.c:554-562`; lightning 1/10 dissolve (`zap.c:5349` `rn2(10)` skip); striking/force-bolt pass through (no IRONBARS case in zap_map); polymorph escape list (xorn/earth elemental/tiny/rock-mole) all confirmed.
+- Combining Conducts: Petless via `pettype:none` (`dog.c:225-229`) OR Pauper (`u_init.c:1308-1309`); show_conduct in `insight.c`. 5.0 conducts split correctly.
+
+### Pass-3 queue
+75/183 done.
