@@ -4046,8 +4046,8 @@ mid-write, scrolls disappear entirely (paper + charges wasted); a
 spellbook's paper survives but the writing fades.
 
 The big-ticket writes for an ascension kit are scrolls of
-**genocide** (three of these wipe the worst monster letters — L,
-&, h — out of the game; uniquely-named demon lords survive any
+**genocide** (three of these wipe the worst monster letters L, &, h
+out of the game, though uniquely-named demon lords survive any
 class genocide), **charging** (a blessed one restores one
 additional wish to an empty wand of wishing for 8-15 charges very
 well spent, though a second charging attempt always explodes the
