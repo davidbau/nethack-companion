@@ -8598,3 +8598,30 @@ All five sections re-audit clean — 0 prose corrections.
 148/183 done.
 
 ---
+
+## 2026-05-19 — v2 audit batch 31: Eyes/spheres (#149), Lights (#150), Sokoban L1A (#151), Sokoban L4A (#152), Boomerang (#153)
+
+### Sokoban Level 1, Version A (#151) — `spoilers/companion.md:6172` — 1 correction (v1 regression)
+
+The v1 audit (#30) "corrected" scroll coordinates from (3,12)/(4,12) to (2,12)/(3,12), claiming "column 4 is the ┌ wall character." That was based on a column miscount. Row 12 character-by-character (with the 4-char `12  ` label and col 1 = pos 4 of the line): col 1 = space, col 2 = │ (wall), cols 3-4 = `··` (the two floor squares where scrolls land), col 5 = ┌ (corner), cols 6-13 = `─` (bottom corridor), col 14 = ┘. So scrolls are at companion (3,12) and (4,12), matching `soko4-1.lua:94-95` `des.object("scroll of earth", 02, 11)` and `(03, 11)` under the standard `lua_xy + 1 = spoiler_col,row` mapping. Restored the original v1-incorrect/v0-correct coordinates.
+
+### Eyes and spheres (#149) — `spoilers/companion.md:8077` — 1 correction
+
+Floating eye Notes mentioned "Use ranged, blind yourself, or close eyes first." There's no close-eyes command in NetHack 5.0; the only way to break sight is being Blind (status, or worn blindfold/towel). A beginner could hunt for a non-existent command. Reworded to "Use ranged, or wear a blindfold or towel to break sight."
+
+### Boomerang (#153) — `spoilers/companion.md:7642` — 1 correction (long-overdue)
+
+The Notes cell still read "Returns when thrown. Always." The v1 audit flagged this as false but didn't actually update the prose — same pattern as the Sling fix in batch 29 v2 #140. Per `zap.c:boomhit`, the boomerang flies a 10-step curved path that stops on the first monster, wall, closed door, or sink; catching on return requires a Dex check (auto-fails if Fumbling) and a failed catch hits the thrower. Reworded to "Curves back on a clear path; stops on a monster, wall, door, or sink. Low Dex or Fumbling means you catch it in the face."
+
+### Lights (#150) — `spoilers/companion.md:8443` — 0 corrections, badge updated
+
+Both rows verified vs `monsters.h:1168-1191`. AT_EXPL means the monster dies on attack ("bursts on contact" in prose).
+
+### Sokoban Level 4, Version A (#152) — `spoilers/companion.md:6516` — 0 corrections, badge added
+
+All 19 push steps re-simulated geometrically against `dat/soko1-1.lua`. Intermediate map after step 13 shows exactly 8 holes filled (F, G, H, I, K, L, M, N). Final remainder of 2 boulders (A and E) exact. Prize odds 75% bag of holding / 25% amulet of reflection at lua:102-111. Chamber coordinates (17,12)/(17,14)/(17,16) map to lua (16,11)/(16,13)/(16,15), adjacent to zoo region (18,10,22,16) — "next to the treasure zoo" correct.
+
+### Pass-2 queue
+153/183 done.
+
+---

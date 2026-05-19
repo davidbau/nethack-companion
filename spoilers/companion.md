@@ -6170,7 +6170,7 @@ The solutions still work; just mirror the directions.
 > for this guide.*
 
 #### Level 1, Version A
-<!-- audit 2026-05-17 #30: map/step internal consistency verified, 1 corrected (scroll coordinates "(3,12) and (4,12)" → "(2,12) and (3,12)" — column 4 is the ┌ wall character). See companion-audit.md. -->
+<!-- audit 2026-05-17 #30 (re-audit 2026-05-19 v2 #151): map/step internal consistency verified. v2: the v1 "correction" of scroll coordinates from (3,12)/(4,12) to (2,12)/(3,12) was itself wrong, based on a miscount. Row 12 character-by-character (with the 4-char `12  ` label and col 1 = pos 4 of the line): col 1=space, col 2=│ (wall), cols 3-4=·· (the two floor squares where scrolls land), col 5=┌ (corner), cols 6-13=─── (bottom corridor), col 14=┘. So the scrolls are at companion (3,12) and (4,12) — matching lua (02,11) and (03,11) at soko4-1.lua:94-95 under the standard lua_xy+1=spoiler_col,row mapping. v1 audit was right; v1's "correction" broke it. Restored. All 19 push steps re-simulated against soko4-1.lua and verified; final remainder (boulder A) exact. See companion-audit.md. -->
 
 ```
             11111
@@ -6219,7 +6219,7 @@ The map now looks like this:
 6. Push H left one square.
 7. Finish I, J, E, G, H, F, B, D, and C.
 
-One boulder (A) remains. The two scrolls at (2,12) and (3,12)
+One boulder (A) remains. The two scrolls at (3,12) and (4,12)
 are always scrolls of earth.
 
 #### Level 1, Version B
@@ -6514,6 +6514,7 @@ The map now looks like this:
 Five boulders (A, B, D, E, and J) remain.
 
 #### Level 4, Version A (prize: usually bag of holding, 25% amulet of reflection)
+<!-- audit 2026-05-19 v2 #152: 18-boulder layout and all 19 solution steps verified geometrically against dat/soko1-1.lua. Player start at lua (1,1) = spoiler (2,2); 16 holes + 1 rolling boulder at row 1 (lua hole at col 7, rolling boulder at col 8, holes at cols 9-23). All four chamber passages confirmed (lua row 3 col 7, row 6 col 8, row 9 col 5, row 13 col 7). Intermediate map after step 13 shows exactly 8 holes filled (F,G,H,I,K,L,M,N), matching simulation. Final remainder of 2 boulders (A and E) exact. Prize odds 75% bag of holding / 25% amulet of reflection at soko1-1.lua:102-111. "Next to the treasure zoo" chambers at spoiler (17,12)/(17,14)/(17,16) = lua (16,11)/(16,13)/(16,15), adjacent to zoo region (18,10,22,16). 0 corrections. See companion-audit.md. -->
 
 ```
             11111111112222222
@@ -7640,13 +7641,13 @@ kebab bonus.
 :::
 
 #### Boomerang
-<!-- audit 2026-05-18 #96: stats clean vs objects.h:166-168. Corrected "Returns when thrown. Always." — false. Per zap.c:boomhit, the boomerang flies a 10-step curved path, stops on monster/wall/door/sink hits, and catching on return requires a DEX check (auto-fails if Fumbling); failed catch hits the thrower. Enchanted boomerangs get multi-hit (spe+1). Useless underwater. See companion-audit.md. -->
+<!-- audit 2026-05-18 #96 (re-audit 2026-05-19 v2 #153): stats clean vs objects.h:166-168. Corrected "Returns when thrown. Always." — false. Per zap.c:boomhit, the boomerang flies a 10-step curved path, stops on monster/wall/door/sink hits, and catching on return requires a DEX check (auto-fails if Fumbling); failed catch hits the thrower. Enchanted boomerangs get multi-hit (spe+1). Useless underwater. v2 fix: the v1 audit flagged "Returns when thrown. Always." but didn't actually update the Notes cell — same pattern as the sling fix in batch 29 v2 #140. Actually reworded the cell this time: "Curves back on a clear path; stops on a monster, wall, door, or sink. Low Dex or Fumbling means you catch it in the face." See companion-audit.md. -->
 
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
-| boomerang | 1d9 / 1d9 | 5 | 20 | — | wood | Returns when thrown. Always. |
+| boomerang | 1d9 / 1d9 | 5 | 20 | — | wood | Curves back on a clear path; stops on a monster, wall, door, or sink. Low Dex or Fumbling means you catch it in the face. |
 
 :::
 
@@ -8075,7 +8076,7 @@ Wild canines hunt in packs. Domestic ones can be tamed by feeding (see [Making F
 :::
 
 #### Eyes and spheres `e`
-<!-- audit 2026-05-17 #57: roster matches monsters.h:325-366 (beholder correctly omitted, #if 0). All stats clean. Corrected floating-eye paralysis trigger: was "in daylight", really requires mutual sight (canseemon + mon->mcansee per uhitm.c:6022-6053). Added the corpse-grants-telepathy note (eat.c:1071 TELEPAT case). See companion-audit.md. -->
+<!-- audit 2026-05-17 #57 (re-audit 2026-05-19 v2 #149): roster matches monsters.h:325-366 (beholder correctly omitted, #if 0). All stats clean. Corrected floating-eye paralysis trigger: was "in daylight", really requires mutual sight (canseemon + mon->mcansee per uhitm.c:6022-6053). Added the corpse-grants-telepathy note (eat.c:1071 TELEPAT case). v2 fix: floating eye row said "or close eyes first" — there's no close-eyes command in NetHack 5.0; the only way to break sight is being Blind (status or worn blindfold/towel). A beginner could hunt for a non-existent command. Reworded to "wear a blindfold or towel to break sight." See companion-audit.md. -->
 
 The floating eye's passive paralysis gaze is the single most famous newbie killer in the game: never melee one without free action, blindness, or a ranged attack. Once it's dead, eat the corpse: it grants intrinsic telepathy.
 
@@ -8086,7 +8087,7 @@ All eyes and spheres fly. All except *floating eye* also are mindless.
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | gas spore | gray | 1 | 3 | 10 | 0 | death-burst 4d6 |  |
-| floating eye | blue | 2 | 1 | 9 | 10 | passive 0d70 paralyse | amphibious. (no mindless) Passive gaze paralyses on melee if you and the eye can both see each other. Use ranged, blind yourself, or close eyes first. Corpse grants telepathy. |
+| floating eye | blue | 2 | 1 | 9 | 10 | passive 0d70 paralyse | amphibious. (no mindless) Passive gaze paralyses on melee if you and the eye can both see each other. Use ranged, or wear a blindfold or towel to break sight. Corpse grants telepathy. |
 | freezing sphere | white | 6 | 13 | 4 | 0 | explode 4d6 cold | cold-res. |
 | flaming sphere | red | 6 | 13 | 4 | 0 | explode 4d6 fire | fire-res. |
 | shocking sphere | bright-blue | 6 | 13 | 4 | 0 | explode 4d6 shock | shock-res. |
@@ -8441,7 +8442,7 @@ All xans and fantastic insects are poison-resistant.
 :::
 
 #### Lights `y`
-<!-- audit 2026-05-18 #80: 2 rows (yellow light lvl 3 yellow + black light lvl 5 black) verified vs monsters.h:1168-1191. Attacks AT_EXPL/AD_BLND 10d20 and AT_EXPL/AD_HALU 10d12. M1_FLY|M1_AMORPHOUS|M1_MINDLESS on both, M1_SEE_INVIS adds for black. Corrected prose "(10d20 damage if unresistant)" — it's blindness DURATION not HP damage. See companion-audit.md. -->
+<!-- audit 2026-05-18 #80 (re-audit 2026-05-19 v2 #150): 2 rows (yellow light lvl 3 yellow + black light lvl 5 black) verified vs monsters.h:1168-1191. Attacks AT_EXPL/AD_BLND 10d20 and AT_EXPL/AD_HALU 10d12. M1_FLY|M1_AMORPHOUS|M1_MINDLESS on both, M1_SEE_INVIS adds for black. Corrected prose "(10d20 damage if unresistant)" — it's blindness DURATION not HP damage. v2 re-verified both rows; AT_EXPL means the monster dies on attack ("bursts on contact" in prose). 0 new corrections. See companion-audit.md. -->
 
 Yellow light bursts on contact and blinds you for 10d20 turns. Black light bursts and hallucinates you for 10d12 turns. See [Light Bursts](#light-bursts).
 

@@ -157,11 +157,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#146**  L 8708  (  23 lines)     ↳ Bestiary Tables → Quantum mechanics `Q`
 - [x] **#147**  L 1574  (  43 lines)   📖 Feelings and Sounds
 - [x] **#148**  L  965  (  19 lines)     ↳ Branches and Landmarks → The Oracle
-- [ ] **#149**  L 8020  (  19 lines)     ↳ Bestiary Tables → Eyes and spheres `e`
-- [ ] **#150**  L 8384  (  17 lines)     ↳ Bestiary Tables → Lights `y`
-- [ ] **#151**  L 6128  (  53 lines)     ↳ Sokoban Solutions → Level 1, Version A
-- [ ] **#152**  L 6471  (  78 lines)     ↳ Sokoban Solutions → Level 4, Version A (prize: usually bag of holding, 25% amulet of reflection)
-- [ ] **#153**  L 7583  (  13 lines)     ↳ Weapons Tables → Boomerang
+- [x] **#149**  L 8020  (  19 lines)     ↳ Bestiary Tables → Eyes and spheres `e`
+- [x] **#150**  L 8384  (  17 lines)     ↳ Bestiary Tables → Lights `y`
+- [x] **#151**  L 6128  (  53 lines)     ↳ Sokoban Solutions → Level 1, Version A
+- [x] **#152**  L 6471  (  78 lines)     ↳ Sokoban Solutions → Level 4, Version A (prize: usually bag of holding, 25% amulet of reflection)
+- [x] **#153**  L 7583  (  13 lines)     ↳ Weapons Tables → Boomerang
 - [ ] **#154**  L 1022  (  25 lines)     ↳ Branches and Landmarks → The Rogue Level
 - [ ] **#155**  L 4452  ( 218 lines)   📖 Divine Relations
 - [ ] **#156**  L 8450  (  15 lines)     ↳ Bestiary Tables → Centaurs `C`
