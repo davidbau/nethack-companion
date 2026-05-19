@@ -2425,7 +2425,16 @@ eucalyptus, or pray.</td>
 <hr />
 <section id="a-field-guide-to-dungeon-fauna" class="level3">
 <h3>A Field Guide to Dungeon Fauna</h3>
-<!-- audit 2026-05-18 #130 (re-audit 2026-05-19 v2 #177): chapter overview verified against include/defsym.h symbols and individual monsters.h entries. 2 corrections: (1) "Xan, a leg-wound trapper" misreads — xan does AT_STNG AD_LEGS (sting cripples legs) but is NOT a trapper (S_TRAPPER is the engulfer t-class). Reworded. (2) "Leprechaun single bite drains gold" — leprechaun is AT_CLAW AD_SGLD (monsters.h:660), not bite. Reworded. All other class-symbol mappings, monster stats, and tactical claims verified clean. v2 fixes: (a) `w` Worms "grow tail segments after each hit" was wrong — per worm.c:218-237, long worms grow on a movement-driven timer (wgrowtime per worm number), not per hit. Reworded to "grow tail segments as they move." (b) `P` Puddings "Use silver, dragonhide, or spells" — "dragonhide" misleading; there are no dragonhide weapons in 5.0 (DRAGON_HIDE material is body-armor-only). The split gate at uhitm.c:1616-1618 admits IRON|METAL only, so wooden and silver weapons are the actual non-splitters. Reworded to "Use a silver or wooden weapon, or spells." See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- xan: AT_STNG AD_LEGS (sting cripples legs); xan is class `x`, not the engulfer `t` (S_TRAPPER)
+- leprechaun attack is AT_CLAW AD_SGLD (gold-steal claw), not a bite (monsters.h:660)
+- long worms grow tail segments on a movement-driven wgrowtime timer, not per hit (worm.c:218-237)
+- pudding split admits IRON|METAL weapons only (uhitm.c:1616-1618)
+- there are no dragonhide weapons in 5.0; DRAGON_HIDE material is body-armor-only
+- silver and wooden weapons are the actual pudding non-splitters
+- all other class-symbol mappings (defsym.h) and per-monster stats verified clean
+-->
 <p>The Mazes are home to hundreds of monster species, organized into
 classes denoted by letters. Lowercase letters are generally smaller or
 less dangerous; uppercase letters are larger or more threatening. Color
@@ -3136,7 +3145,19 @@ defined an instadeath as “a single move death which does not involve the
 player’s hit points dropping to zero,” and that taxonomy has been the
 standard reference ever since.</em></p>
 </blockquote>
-<!-- audit 2026-05-18 #172 (re-audit 2026-05-18 v2 #50): stoning timer starts at 5 (uhitm.c:3937) and ticks 5→1 with five distinct messages (timeout.c:128-148). At tick 3 "Your limbs have turned to stone" the hero is paralyzed via nomul(-3) (timeout.c:163-165), closing the action window. Corrected: acid-blob corpse confers only TIMED stoning resistance (HStone_resistance += d(3,6) at eat.c:932-934, 1089-1094), not permanent. Removed amulet-of-unchanging "interrupt": Unchanging doesn't affect stoning (only blocks poly per polyself.c:1381-1384), and wearing it WHILE stoning is actively bad — it blocks the stone-golem auto-poly escape. Plain wand of polymorph isn't an "interrupt" either: only `poly_when_stoned` monsters (golems, mondata.c:80-85) auto-cure stoning, and the wand can't target that outcome. Stepping on a cockatrice corpse is safe ONLY without Fumbling — Fumbling can trip and instapetrify (timeout.c:1256-1261). v2 fixes: "the next message kills you" was off by two — after "Your limbs have turned to stone" (counter 3) two more messages appear ("You have turned to stone" counter 2, "You are a statue" counter 1) before done(STONING) fires at counter 0. Reworded to "the final messages kill you." Softened the Unchanging warning: poly_when_stoned at mondata.c:80-85 requires you to ALREADY be polymorphed into a non-stone golem, so the "blocks the rescue" framing was over-strong for an unpolymorphed hero who was never going to get the rescue anyway. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- stoning timer starts at 5 (uhitm.c:3937)
+- ticks 5→1 with five distinct messages (timeout.c:128-148)
+- at counter 3 "limbs have turned to stone" sets nomul(-3) paralysis (timeout.c:163-165)
+- two more messages fire after paralysis before done(STONING) at counter 0
+- acid-blob corpse grants TIMED HStone_resistance += d(3,6), not permanent (eat.c:932-934, 1089-1094)
+- Unchanging does not interrupt stoning: only blocks poly (polyself.c:1381-1384)
+- poly_when_stoned auto-cure requires already being a non-stone golem (mondata.c:80-85)
+- plain wand of polymorph cannot target the poly_when_stoned outcome
+- stepping on a cockatrice corpse without Fumbling is safe
+- Fumbling can trip the hero onto the corpse for instapetrify (timeout.c:1256-1261)
+-->
 <section id="petrification-stoning" class="level4">
 <h4>Petrification (Stoning)</h4>
 <p>Touching a cockatrice without gloves, eating a cockatrice corpse,
@@ -3169,7 +3190,16 @@ anything you hit that lacks stoning resistance turns to stone.</p>
 </section>
 <section id="drowning" class="level4">
 <h4>Drowning</h4>
-<!-- audit 2026-05-17 #11 (re-audit 2026-05-18 v2 #28): 5 claims verified, 2 corrected (encumbrance doesn't gate grab-drown; "stay unburdened" doesn't defend against the grab path). v2 re-verified: drown check uses monster's tile (uhitm.c:3389-3390), Swimming/Amphibious/Breathless all defeat it (youprop.h:264-277), pool-entry check at hack.c:3272 also lets Flying skip (left unmentioned — Levitation is the canonical defense), emergency_disrobe gated by Stressed+ at trap.c:4897-4941, krakens generate only on Medusa-4 and the Water Plane (the "swamp rooms" reference is to eels not krakens per mkroom.c:557-565 comment). 0 corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- drown check uses monster's tile (uhitm.c:3389-3390)
+- Swimming, Amphibious, or Breathless all defeat the drown (youprop.h:264-277)
+- pool-entry check at hack.c:3272; Flying also skips entry, Levitation is the canonical defense
+- emergency_disrobe is gated on Stressed+ (trap.c:4897-4941)
+- krakens generate only on Medusa-4 and the Water Plane
+- "swamp rooms" comment refers to eels, not krakens (mkroom.c:557-565)
+- encumbrance does NOT gate the grab-drown path: being Burdened won't save you once grabbed
+-->
 <p>Giant eels, electric eels, and krakens can grab you with their wrap
 attack. Once they have you, each of the monster’s turns you can drown —
 the check uses the <em>monster’s</em> tile (always water for an eel or
@@ -3189,7 +3219,15 @@ requires adjacency.</p>
 </section>
 <section id="attack-wands-and-the-warning-shot" class="level4">
 <h4>Attack Wands and the Warning Shot</h4>
-<!-- audit 2026-05-17 #21 (re-audit 2026-05-18 v2 #110): 6 claims verified, 0 corrected; added the late-game carve-out (Stronghold/Knox/Quest/Gehennom/endgame monsters start mwandexp=TRUE per makemon.c:1290). v2: re-verified mwandexp at muse.c:1830-1860, buzz_force_miss path, six wands (death/sleep/fire/cold/lightning/magic missile) in the buzzfn dispatch at muse.c:1842-1847, late-game zone list at makemon.c:1291-1293 (Stronghold || Knox || endgame || hell || V_tower || quest). 0 new corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- mwandexp gates the first-zap warning miss (muse.c:1830-1860)
+- buzz_force_miss is the dispatch path for the warning shot
+- 6 beam wands trigger the warning: death, sleep, fire, cold, lightning, magic missile (muse.c:1842-1847)
+- the visible warning shot identifies the wand to the player
+- late-game zones spawn monsters with mwandexp=TRUE — no warning shot (makemon.c:1290-1293)
+- late-game zones: Stronghold, Knox, Quest, Gehennom, Vlad's Tower, endgame
+-->
 <p>The first time any given monster zaps a beam wand (death, sleep,
 fire, cold, lightning, magic missile) at you, the shot misses. If you
 can see the monster, the wand identifies itself in the same moment, so
