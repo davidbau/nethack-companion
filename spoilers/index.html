@@ -8446,13 +8446,11 @@ liberally.</li>
 <li><strong>Kill the Wizard fast.</strong> When he shows up (and he
 will), don’t try to be clever. Finger of death, wand of death, or brute
 force. The faster he’s down, the fewer monsters he summons.</li>
-<li><strong>Don’t rely on Elbereth past the Castle.</strong> The
-<code>Inhell</code> and <code>In_endgame</code> checks in
-<code>onscary()</code> mean Elbereth is <strong>completely
-ignored</strong> in all of Gehennom and on all four Elemental Planes
-plus Astral. You can still write it for the alignment, but no monster
-will care. Plan your heal-and-recover breaks around corridors, scrolls
-of teleportation, and conflict instead.</li>
+<li><strong>Don’t rely on Elbereth past the Castle.</strong> Elbereth is
+<strong>completely ignored</strong> in all of Gehennom and on all four
+Elemental Planes plus Astral. You can still write it for the alignment,
+but no monster will care. Plan your heal-and-recover breaks around
+corridors, scrolls of teleportation, and conflict instead.</li>
 </ul>
 <p>The Ascension Run rewards preparation and punishes hesitation. If you
 packed well at the Castle and your resistances are solid, this is a
@@ -8665,8 +8663,8 @@ If something about the interface annoys you, there is almost certainly a
 setting for it.</p>
 <p>A bigger interface shift requires a different binary: NetHack built
 with the <strong>curses</strong> windowtype (<code>nethack-curses</code>
-on most distributions, or a recompile with <code>WANT_WIN_CURSES</code>)
-draws a properly paneled UI inside the terminal. Set
+on most distributions, or a custom build with curses support) draws a
+properly paneled UI inside the terminal. Set
 <code>windowtype:curses</code>, <code>align_message:right</code>,
 <code>align_status:bottom</code>, <code>perm_invent</code>, and
 <code>windowborders</code> in your rc, open a 120×40 terminal, and you
@@ -10863,12 +10861,11 @@ class.</p>
 <section id="spear" class="level4">
 <h4>Spear</h4>
 <!-- audit 2026-05-18 #115: stats verified vs objects.h:174-191. Added context the table omitted: Valkyrie starts with a plain spear at Expert (u_init.c:160-161, 537); kebab bonus is +2 to-hit vs the big monsters (xorns, dragons, jabberwocks, nagas, giants) per weapon.c:71-73, 167-168 is_spear() check. Trident is correctly in its own section since it uses P_TRIDENT, a separate skill class. v2 audit 2026-05-18 #57: corrected a significant factual error. The pass-1 audit attributed the +1 spear multishot to Valkyrie; per dothrow.c:47-52, the bonus actually belongs to PM_CAVE_DWELLER (Caveman), not Valkyrie. Valkyrie has no class-specific spear multishot — she gets only the generic Expert multishot ceiling. Reworded the strategic framing: the Valkyrie still starts with the spear and reaches Expert, but it's the Caveman who can spam thrown javelins. Updated the javelin Notes cell from "Valkyries can ranged-spam them" to "Cavemen can ranged-spam them". See companion-audit.md. -->
-<p>All spears share the <code>P_SPEAR</code> skill (trident is a
-different class — see below). The Valkyrie starts with one and can train
-to Expert. The <strong>Caveman</strong> is the actual spear-multishot
-specialist: Cavemen get +1 multishot on any thrown spear (regular,
-silver, javelin alike), so a stack of javelins is real ranged firepower
-for them.</p>
+<p>All spears share the same skill (trident uses a different class — see
+below). The Valkyrie starts with one and can train to Expert. The
+<strong>Caveman</strong> is the actual spear-multishot specialist:
+Cavemen get +1 multishot on any thrown spear (regular, silver, javelin
+alike), so a stack of javelins is real ranged firepower for them.</p>
 <p>Spears get a <strong>+2 to-hit bonus</strong> when used against the
 big monsters — xorns, dragons, jabberwocks, nagas, and giants — the
 kebab bonus.</p>
@@ -14003,8 +14000,8 @@ werewolves can give lycanthropy.</p>
 <td>2</td>
 <td>20</td>
 <td>bite 3d6 · bite 3d6 · bite 3d6</td>
-<td>fire-res. Three-headed hellhound. Compiled in only with
-<code>CHARON</code> defined; not in the default build.</td>
+<td>fire-res. Three-headed hellhound. Only present in custom builds; not
+in the default game.</td>
 </tr>
 </tbody>
 </table>

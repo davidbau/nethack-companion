@@ -5929,12 +5929,12 @@ ball through the entire opposing team. Speed is everything.
 - **Kill the Wizard fast.** When he shows up (and he will), don't
   try to be clever. Finger of death, wand of death, or brute force.
   The faster he's down, the fewer monsters he summons.
-- **Don't rely on Elbereth past the Castle.** The `Inhell` and
-  `In_endgame` checks in `onscary()` mean Elbereth is **completely
-  ignored** in all of Gehennom and on all four Elemental Planes
-  plus Astral. You can still write it for the alignment, but no
-  monster will care. Plan your heal-and-recover breaks around
-  corridors, scrolls of teleportation, and conflict instead.
+- **Don't rely on Elbereth past the Castle.** Elbereth is
+  **completely ignored** in all of Gehennom and on all four
+  Elemental Planes plus Astral. You can still write it for the
+  alignment, but no monster will care. Plan your heal-and-recover
+  breaks around corridors, scrolls of teleportation, and conflict
+  instead.
 
 The Ascension Run rewards preparation and punishes hesitation. If
 you packed well at the Castle and your resistances are solid, this
@@ -6149,7 +6149,7 @@ almost certainly a setting for it.
 
 A bigger interface shift requires a different binary: NetHack
 built with the **curses** windowtype (`nethack-curses` on most
-distributions, or a recompile with `WANT_WIN_CURSES`) draws a
+distributions, or a custom build with curses support) draws a
 properly paneled UI inside the terminal. Set `windowtype:curses`,
 `align_message:right`, `align_status:bottom`, `perm_invent`, and
 `windowborders` in your rc, open a 120×40 terminal, and you get a
@@ -7533,8 +7533,8 @@ All polearms are two-handed. To strike at range, `#apply` the weapon (not wield-
 #### Spear
 <!-- audit 2026-05-18 #115: stats verified vs objects.h:174-191. Added context the table omitted: Valkyrie starts with a plain spear at Expert (u_init.c:160-161, 537); kebab bonus is +2 to-hit vs the big monsters (xorns, dragons, jabberwocks, nagas, giants) per weapon.c:71-73, 167-168 is_spear() check. Trident is correctly in its own section since it uses P_TRIDENT, a separate skill class. v2 audit 2026-05-18 #57: corrected a significant factual error. The pass-1 audit attributed the +1 spear multishot to Valkyrie; per dothrow.c:47-52, the bonus actually belongs to PM_CAVE_DWELLER (Caveman), not Valkyrie. Valkyrie has no class-specific spear multishot — she gets only the generic Expert multishot ceiling. Reworded the strategic framing: the Valkyrie still starts with the spear and reaches Expert, but it's the Caveman who can spam thrown javelins. Updated the javelin Notes cell from "Valkyries can ranged-spam them" to "Cavemen can ranged-spam them". See companion-audit.md. -->
 
-All spears share the `P_SPEAR` skill (trident is a different
-class — see below). The Valkyrie starts with one and can train to
+All spears share the same skill (trident uses a different class
+— see below). The Valkyrie starts with one and can train to
 Expert. The **Caveman** is the actual spear-multishot specialist:
 Cavemen get +1 multishot on any thrown spear (regular, silver,
 javelin alike), so a stack of javelins is real ranged firepower
@@ -8088,7 +8088,7 @@ Wild canines hunt in packs. Domestic ones can be tamed by feeding (see [Making F
 | winter wolf | cyan | 7 | 12 | 4 | 20 | bite 2d6 · breath 2d6 cold | cold-res. |
 | hell hound pup | red | 7 | 12 | 4 | 20 | bite 2d6 · breath 2d6 fire | fire-res. |
 | hell hound | red | 12 | 14 | 2 | 20 | bite 3d6 · breath 3d6 fire | fire-res. |
-| Cerberus | red | 12 | 10 | 2 | 20 | bite 3d6 · bite 3d6 · bite 3d6 | fire-res. Three-headed hellhound. Compiled in only with `CHARON` defined; not in the default build. |
+| Cerberus | red | 12 | 10 | 2 | 20 | bite 3d6 · bite 3d6 · bite 3d6 | fire-res. Three-headed hellhound. Only present in custom builds; not in the default game. |
 
 :::
 
