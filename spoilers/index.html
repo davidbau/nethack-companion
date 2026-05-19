@@ -3421,7 +3421,15 @@ active claw: at MC3 the claw will mostly fail to land. (MC doesn’t help
 against the passive counter, so still don’t melee them.) Range-kill is
 the cleanest plan; rings of conflict and pets reliably redirect them.
 <strong>Don’t eat the corpse</strong>: it strips a random intrinsic.</p>
-<!-- audit 2026-05-18 #179 (re-audit 2026-05-18 v2 #93): lurker above (ceiling-hider, M1_HIDE+M1_FLY) and trapper (floor-hider, M1_HIDE) verified vs monsters.h:973-998. Both use AT_ENGL with AD_WRAP+AD_PHYS — NOT AD_DGST (header comment at monsters.h:973-980 explicitly notes the 5.0 retcon away from digestion). Damage handler at mhitu.c:1437-1453. Search/telepathy/warning all valid defenses (detect.c:2016-2092 for search; both have no M1_MINDLESS; warnreveal at detect.c:2107-2120 triggers on mlev/4 ≥ warning level). v2: re-verified consistency with the Trappers/lurkers bestiary just audited in v2 #85 — stats and attack types match. Weapons-still-work-while-swallowed verified at uhitm.c:781,805 (mhit guaranteed when u.uswallow). 0 corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- lurker above is ceiling-hider, M1_HIDE+M1_FLY; trapper is floor-hider, M1_HIDE (monsters.h:973-998)
+- both use AT_ENGL with AD_WRAP+AD_PHYS, NOT AD_DGST (5.0 retcon away from digestion)
+- damage handler at mhitu.c:1437-1453
+- search reveals; both have no M1_MINDLESS so telepathy and warning work too
+- warnreveal triggers when mlev/4 ≥ warning level (detect.c:2107-2120)
+- weapons still hit normally while swallowed: mhit guaranteed when u.uswallow (uhitm.c:781, 805)
+-->
 </section>
 <section id="engulfment-from-hiding" class="level4">
 <h4>Engulfment from Hiding</h4>
@@ -3441,7 +3449,15 @@ inside.</p>
 </section>
 <section id="light-bursts" class="level4">
 <h4>Light Bursts</h4>
-<!-- audit 2026-05-17 #66 (re-audit 2026-05-19 v2 #163): AT_EXPL/AD_BLND yellow light + AT_EXPL/AD_HALU black light verified against monsters.h:1169-1191 and mhitu.c:1623-1650. Both die in their own explosion. Black light is perminvis (makemon.c:1317-1320). Corrected: yellow light is monster level 3, black light is level 5 (not "level 3-5" — that read as a range per monster). Telepathy does NOT help vs black lights (M1_MINDLESS in monsters.h:1188-1189); only warning does. Plain potion of healing only cures blindness when blessed (potion.c:1994-2004); extra/full healing always cures. v2 re-verified all claims. Note: warning detects them only at adjacent range, which is exactly when they explode — so warning helps less in practice than the prose implies, but the prose doesn't overstate. 0 new corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- yellow light: AT_EXPL/AD_BLND, monster level 3 (monsters.h:1169-1191, mhitu.c:1623-1650)
+- black light: AT_EXPL/AD_HALU, monster level 5; perminvis (makemon.c:1317-1320)
+- both die in their own explosion
+- telepathy does NOT reveal black lights (M1_MINDLESS at monsters.h:1188-1189); only warning does
+- warning detects only at adjacent range — exactly when they explode, so it helps less than it looks
+- plain potion of healing cures blindness only when blessed (potion.c:1994-2004); extra/full always do
+-->
 <p><strong>Yellow lights</strong> (<code>y</code>, level 3) and
 <strong>black lights</strong> (<code>y</code>, level 5) attack by
 exploding the moment you’re adjacent. Yellow lights blind you for
@@ -3461,7 +3477,13 @@ unicorn horn cures it.</p>
 </section>
 <section id="seduction" class="level4">
 <h4>Seduction</h4>
-<!-- audit 2026-05-17 #33: self-audit caught 2 errors in my prior rewrite — items aren't dropped on floor (just unequipped to inventory); demon's succubus/incubus form is random, not based on player gender. v2 audit 2026-05-18 #17: one factual fix plus one safety note. (1) "Depending on its randomly assigned gender" was incomplete: could_seduce at mhitu.c:1980 requires opposite-sex genagr/gendef, so a same-sex foocubus never seduces and just claws. Reworded. (2) Added XL-1 caveat to the "keep one alive to farm" note (the level-drain outcome is fatal at XL 1). The ring-of-adornment interactions (mhitu.c:2019-2110) were added in an initial v2 edit and then reverted as trivia — the section is about the encounter, not a complete catalogue. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- could_seduce at mhitu.c:1980 requires opposite-sex genagr/gendef; same-sex foocubus just claws
+- demon's succubus/incubus form is randomly assigned at generation, not based on player gender
+- stripped items go to inventory, not dropped on the floor
+- level-drain outcome is fatal at XL 1 — do not farm a foocubus at low level
+-->
 <p>The <strong>amorous demon</strong> (<code>&amp;</code>, gray) appears
 as a <strong>succubus</strong> to male heroes and an
 <strong>incubus</strong> to female ones. A same-sex foocubus just claws
@@ -3525,7 +3547,16 @@ fatal.</p>
 </section>
 <section id="the-riders" class="level4">
 <h4>The Riders</h4>
-<!-- audit 2026-05-18 #150 (re-audit 2026-05-19 v2 #167, v3 #10): 4 v2 corrections plus 2 v3 corrections on the Pestilence line. v3: (1) "disease that turns into food poisoning" was wrong — Pestilence inflicts SICK_NONVOMITABLE (mhitu.c:1039-1040 via diseasemu), which is "illness" in the source, not the SICK_VOMITABLE/"food poisoning" path from bad corpses (timeout.c:316-333). Reworded to "deadly illness." (2) "A unicorn horn won't clear the non-vomitable sickness" — wrong. apply.c:4456 only marks Sick unfixable when (Sick & ~TIMEOUT) != 0; Pestilence-induced sickness is purely timed, so it IS in the horn's trouble list (apply.c:2312-2313, 2351, calling make_sick(0L, NULL, TRUE, SICK_ALL)). Reworded to "a unicorn horn can sometimes clear it in time." See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- Pestilence inflicts SICK_NONVOMITABLE via diseasemu (mhitu.c:1039-1040)
+- SICK_NONVOMITABLE is "illness," not the SICK_VOMITABLE food-poisoning path (timeout.c:316-333)
+- unicorn horn CAN clear it: apply.c:4456 only marks Sick unfixable when (Sick & ~TIMEOUT) != 0
+- Pestilence sickness is purely timed, so the horn's trouble list reaches it (apply.c:2312-2313, 2351)
+- Riders: level 30, regen, see invisible, shove monsters; two 8d8 touches per turn
+- Death's touch has 3/20 chance of instakill; MR blocks the instakill, not the 8d8 damage
+- 5.0 mercy: Pestilence/Famine's second hit on a turn downgrades to stun
+-->
 <p>On the Astral Plane, three unique <code>&amp;</code>-class beings
 guard the way to the high altars: <strong>Death</strong>,
 <strong>Famine</strong>, and <strong>Pestilence</strong>, the Riders.
@@ -3553,7 +3584,15 @@ altar.</p>
 </section>
 <section id="choking" class="level4">
 <h4>Choking</h4>
-<!-- audit 2026-05-17 #68 (re-audit 2026-05-19 v2 #159): eat-while-satiated death (eat.c:248, 286 done(CHOKING)) and warning string (eat.c:3314) verified. Corrected "if you confirm, you're dead" — the prompt only appears with paranoid_confirmation:eating enabled (default off); death only fires at uhunger >= 2000 with a 1/20 escape, AND Breathless creatures never choke (eat.c:258-266). Added the amulet of strangulation path (timeout.c) which is the other major choking death. v2 fixes: (a) "Take it off" was misleading for the AoS, which is 90% cursed at gen (mkobj.c:1063); a beginner trying to remove it usually can't. Replaced with the real escape: pray, or uncurse with holy water / remove curse. (b) "Magic resistance doesn't help (it's a physical attack)" — the rationale was wrong. Strangulation isn't an attack at all; it's a timer death via done_timeout(DIED, STRANGLED). MR-doesn't-help is true, but the reason is "no attack to resist." Reworded. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- eat-while-satiated death via done(CHOKING) (eat.c:248, 286); warning string at eat.c:3314
+- "Continue eating?" prompt only with paranoid_confirmation:eating (default off)
+- death only fires at u.uhunger >= 2000 with 1/20 escape; Breathless never choke (eat.c:258-266)
+- amulet of strangulation generates 90% cursed (mkobj.c:1063); beginner can't just take it off
+- escape: pray, or uncurse via holy water or remove curse
+- strangulation is a timer death via done_timeout(DIED, STRANGLED), not an attack — MR has nothing to block
+-->
 <p>If you push past Satiated and keep eating, you can choke and die. The
 game prints “You’re having a hard time getting all of it down” as a
 warning; if you have eating-confirmations turned on it’ll also prompt
@@ -3571,7 +3610,13 @@ unidentified amulets.</p>
 </section>
 <section id="deadly-poison" class="level4">
 <h4>Deadly Poison</h4>
-<!-- audit 2026-05-17 #7 (re-audit 2026-05-19 v2 #165, v3 #73): v3 dropped a spurious "or while burdened" qualifier from the poison-death warning. Burden has no role in the poison death formula — per attrib.c:366 the kill condition is purely `u.uhp <= loss`, no carrycap term. Reworded to "at low HP it can outright kill you." v2 re-verified AD_DRST 1/240 frequency (rn2(8) × rn2(30), uhitm.c:3154 + attrib.c:362), poison resistance grants full immunity (attrib.c:338-343), Famine corpse fatal at eat.c:831-838. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- AD_DRST extra-damage roll is ~1/240 per qualifying hit: rn2(8) × rn2(30) (uhitm.c:3154, attrib.c:362)
+- poison death is purely `u.uhp <= loss`, no carrycap term (attrib.c:366) — burden is irrelevant
+- poison resistance grants full immunity (attrib.c:338-343)
+- Famine corpse is instantly fatal (eat.c:831-838)
+-->
 <p>A handful of monsters (pit vipers, killer bees, cobras, some spiders)
 have a poison-damage branch that can deliver 10 to 34 extra HP of damage
 on top of the normal hit. At full HP you usually survive; at low HP it
@@ -3584,7 +3629,16 @@ one of the first intrinsics worth acquiring.</p>
 </section>
 <section id="disintegration" class="level4">
 <h4>Disintegration</h4>
-<!-- audit 2026-05-18 #137 (re-audit 2026-05-19 v2 #161): corrected the "wide-angle disintegration beam" claim — there's no such thing in 5.0. The only player-facing AD_DISN source is the black dragon's breath (monsters.h:1520, ZT_BREATH(ZT_DEATH) at zap.c:4464-4493). The beholder is the only other AD_DISN monster and it's #if 0-gated. Also clarified worn-armor priority destruction (shield first per zap.c:4476-4479, then suit+cloak per zap.c:4480-4486), and that amulet of life saving does rescue you (end.c:1081 catches DIED; the breath-handling at zap.c:4487-4492 explicitly destroys cloak/shirt "in case of life-saving or bones"). v2 fixes: (a) "Reflection bounces the beam back ... the bounce often kills it outright" — wrong. Black dragons have MR_DISINT in both attack and defense slots (monsters.h:1523), so per resists_disint at zap.c:4318 the reflected beam does no damage to them. Reflection protects you; it doesn't kill the dragon. Reworded. (b) "shield of reflection that fails to reflect" was misleading — shields of reflection don't have a failure mode; the shield-eats-one-breath behavior applies to *ordinary* shields. Reworded to "an ordinary shield." See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- only player-facing AD_DISN is black dragon breath (monsters.h:1520, ZT_BREATH(ZT_DEATH) at zap.c:4464-4493)
+- beholder is the only other AD_DISN monster and is #if 0-gated
+- black dragons have MR_DISINT in attack and defense slots (monsters.h:1523)
+- reflected beam does 0 damage to them via resists_disint (zap.c:4318)
+- worn-armor priority on disint hit: shield first (zap.c:4476-4479), then body armor + cloak (zap.c:4480-4486)
+- amulet of life saving rescues you (end.c catches DIED) but breath still destroys cloak/shirt (zap.c:4487-4492)
+- an ordinary shield eats one breath; shields of reflection don't have a failure mode
+-->
 <p>A black dragon’s breath is the only thing in the game that
 disintegrates you. There’s no other monster, spell, or wand that deals
 the same damage type.</p>
@@ -3611,7 +3665,14 @@ your own species. Don’t do this.</p>
 </section>
 <section id="delayed-deaths" class="level4">
 <h4>Delayed Deaths</h4>
-<!-- audit 2026-05-18 #93 (re-audit 2026-05-19 v2 #172, v3 #36): v3 actually applied the two v2 fixes that the v2 comment claimed were applied but weren't. The prose still read "~9-turn transformation" and still listed "cancellation negates the touch attack" inline among the sliming cures. (a) Sliming timer is 10, not 9 — verified `make_slimed(10L,...)` at uhitm.c:3199, eat.c:854, polyself.c:456, uhitm.c:3570. The 9-turn impression came from the t/2 message cadence at timeout.c:391. (b) Cancellation prevents new infections (uhitm.c:3556-3560) but does nothing to a running Slimed timer — no make_slimed(0L) in that path. Moved out of the Cures list and into a separate clarifying sentence. v1+v2: timer + cure mechanics verified vs timeout.c/pray.c/eat.c/potion.c/trap.c; polymorph cure requires flaming() or PM_GREEN_SLIME (polyself.c:842); vomiting only cures SICK_VOMITABLE; Pestilence is SICK_NONVOMITABLE. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- sliming timer is 10, not 9: make_slimed(10L,...) (uhitm.c:3199, eat.c:854, polyself.c:456, uhitm.c:3570)
+- the "9-turn" impression came from the t/2 message cadence (timeout.c:391)
+- cancellation prevents new infections (uhitm.c:3556-3560) but does NOT clear a running Slimed timer
+- polymorph cure requires flaming() or PM_GREEN_SLIME (polyself.c:842)
+- vomiting cures only SICK_VOMITABLE; Pestilence's SICK_NONVOMITABLE is unaffected
+-->
 <p>Not every fatal threat kills instantly. Several give you a few turns
 to react. Knowing the warning signs and the cures can save a run.</p>
 <p><strong>Sliming.</strong> Being hit by a green slime (or eating its
@@ -3661,8 +3722,17 @@ prayer).</p>
 </section>
 <section id="the-displacer-beast" class="level4">
 <h4>The Displacer Beast</h4>
-<!-- audit 2026-05-17 #42: rewrote section. Prior version described it as having cloak-of-displacement style image-offset; this is wrong. The "displacer" mechanic is M3_DISPLACES (barge-through): 50% chance on player melee that it swaps places with you instead of being attacked (hack.c:1972). Corpse intrinsic Displacement claim verified (eat.c:1265). See companion-audit.md. -->
-<!-- audit 2026-05-18 #106 (re-audit 2026-05-18 v2 #76): dropped the "lure it adjacent to a moat or lava and let it swap itself in" tactic — wrong. hack.c:1972 ends with goodpos(u.ux0, u.uy0, mtmp, GP_ALLOW_U); teleport.c:134-162 goodpos refuses to place a non-swimmer/non-flier in water and a non-fire-resistant non-flier in lava. Displacer beasts have none of those. Even if the hero were standing IN the hazard via water-walking/levitation, the beast still can't swap there. v2 dropped a fabricated mechanic from the pet-tame paragraph: "hostiles meleeing your pet displacer beast trigger the same 50% place-swap" — wrong. M3_DISPLACES is only consulted at hack.c:1972 (hero attacks displacer) and mon.c:2462 via mfndpos (the displacer moves through another monster's square, ALLOW_MDISP). There is NO mhitm.c path for hostile-attacks-pet-displacer triggering a swap. Removed the claim; the pet is still excellent, just for the AC, attack count, and 0% MR (taming reliability), not for a swap trick. -->
+<!-- audit
+2026-05-18:
+- M3_DISPLACES is barge-through, NOT cloak-style image-offset
+- 50% chance on player melee that the beast swaps places with you (hack.c:1972)
+- swap only fires if destination is survivable for the beast: goodpos(..., GP_ALLOW_U) (teleport.c:134-162)
+- a non-swimmer/non-flier won't swap into water; non-fire-res won't swap into lava
+- corpse grants Displacement intrinsic (eat.c:1265) — cloak-style, not the swap
+- M3_DISPLACES is consulted only at hack.c:1972 and mon.c:2462 (ALLOW_MDISP)
+- no mhitm.c path for hostile-attacks-pet-displacer triggering a swap — pet trick fabricated
+- pet beast is still excellent: 0% MR (reliable taming), high AC, three-attack
+-->
 <p>The <strong>displacer beast</strong> (<code>f</code>, blue, 5.0
 addition) is a tiger-sized feline with AC −10 and three attacks per turn
 (4d4 / 4d4 / 2d10). The misleading name: it isn’t displaced in the
@@ -3691,7 +3761,15 @@ attackers.</p>
 </section>
 <section id="the-genetic-engineer" class="level4">
 <h4>The Genetic Engineer</h4>
-<!-- audit 2026-05-17 #12 (re-audit 2026-05-19 v2 #144): 14 claims verified, 1 corrected (hit message wording was the corpse string); added magic resistance to defenses. v2 re-verified: AD_POLY claw at mhitm.c:1135 + polyself(POLY_NOFLAGS) at mhitm.c:1136; Antimagic blocks polymorph at mhitm.c:1128-1129; Unchanging blocks at mhitm.c:1130-1131; corpse polyself fall-through at eat.c:1244-1263; tin+poly-control combo at eat.c:1253. 0 new corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- AD_POLY claw + polyself(POLY_NOFLAGS) (mhitm.c:1135-1136)
+- Antimagic blocks the polymorph (mhitm.c:1128-1129)
+- Unchanging blocks the polymorph (mhitm.c:1130-1131)
+- eating a genetic engineer corpse triggers a polyself fall-through (eat.c:1244-1263)
+- tinned engineer + poly-control combo at eat.c:1253
+- genetic engineer also teleports itself on its own
+-->
 <p>The <strong>genetic engineer</strong> (<code>Q</code>, green) shares
 its symbol class with the quantum mechanic but plays differently: where
 a quantum mechanic <em>teleports</em> its target on a hit, a genetic
