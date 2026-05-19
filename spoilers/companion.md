@@ -1062,7 +1062,7 @@ though that was a Hack-era addition. A small and forgivable
 anachronism.
 
 #### Fort Ludios
-<!-- audit 2026-05-18 #138: 2 corrections + omitted features. (1) "Captains" overstated — knox.lua fixes only 17 soldiers + 1 lieutenant; captains can appear via barracks zoo squadmon but aren't a guaranteed garrison. (2) "Legendary wealth" — Croesus is the vault guardian/warden (MS_GUARD, monsters.h:2863), not a merchant; the gold belongs to the vault, not him. The companion's own bestiary row labels him "Vault guardian." Added the noteleport flag, four dragons, four giant eels in the moat, stone giant, and corner-tower gem caches (knox.lua:9, 144-167). v2 audit 2026-05-18 #14: four factual corrections. (a) Garrison is sixteen soldiers + one lieutenant from knox.lua:126-142, not "seventeen" or "roughly twenty"; the barracks zoo can spawn more once aggro. (b) Portal range is Dlvl 11 down to just above Medusa, not Dlvl 18-22 — the dungeon.lua hint is base 18 range 4 (so 18-21) but mklev.c:2647-2651 only requires depth >10 and above Medusa, and the wiki agrees. (c) The portal is always inside a vault per mklev.c:1331,2624-2658, not "often inside a small vault." (d) The level is non-diggable (knox.lua:35), so "through the walls" doesn't work; level teleport via scroll/wand still does (noteleport blocks only intra-level teleport). Wisdom: Croesus is covetous and dangerous in melee — community advice is to range-attack across the moat, not "engage him" in melee. Voice: dropped "the unique fortress warden" meta; replaced "(15x4 treasury, most tiles trapped)" parenthetical with plain prose noting the 1/3-trapped rate; trimmed "decent weapons" to "serviceable weapons" and dropped the "protection rackets" reference (Ludios gold is more often spent on ID/shop stock at that depth). See companion-audit.md. -->
+<!-- audit 2026-05-18 #138 (re-audit 2026-05-19 v3 #40): v3 added one correction. "Croesus is covetous" was wrong — per monsters.h:2868 his only mflags3 is M3_INFRAVISIBLE; he is NOT M3_COVETOUS. True covetous monsters (Wizard of Yendor, Vlad, Riders) teleport across the level to recover specific items. Croesus is M2_GREEDY|M2_NASTY|M2_STALK — picks up gold and stalks, but doesn't have the covetous teleport behavior. Dropped the word; tactical advice ("hits hard in melee, shoot or zap from across the moat") still holds via M2_NASTY + 4d10 weapon. v2 audit 2026-05-18 #14: four factual corrections — garrison 16+1 from knox.lua:126-142; portal range Dlvl 11 to just above Medusa per mklev.c:2647-2651; portal always inside a vault per mklev.c:1331,2624-2658; non-diggable per knox.lua:35 + noteleport blocks intra-level teleport only. v1 #138: dropped "captains" overstatement, "legendary wealth" misframe; added the noteleport flag, four dragons, four moat eels, stone giant, gem caches. See companion-audit.md. -->
 
 Fort Ludios is optional and easy to miss entirely. It appears as a
 magic portal anywhere from Dlvl 11 down to just above Medusa,
@@ -1073,9 +1073,9 @@ trips. Four guard dragons. A stone giant. Four giant eels
 patrolling the moat. And **Croesus** on the throne, the vault
 guardian himself. The level is non-diggable. The level prevents
 teleportation, so once you're inside the only way out is back
-through the portal or a scroll of teleportation. Croesus is
-covetous and hits hard in melee, so shoot or zap him from across
-the moat rather than walking up.
+through the portal or a scroll of teleportation. Croesus
+hits hard in melee, so shoot or zap him from across the moat
+rather than walking up.
 
 The real prize is the gold. A 60-square treasury holds 36k to 54k
 gold, with land mines and spiked pits on roughly a third of the
@@ -2326,23 +2326,24 @@ Reading an uncursed scroll of genocide while confused can genocide
 your own species. Don't do this.
 
 #### Delayed Deaths
-<!-- audit 2026-05-18 #93 (re-audit 2026-05-19 v2 #172): timer + cure mechanics verified vs timeout.c/pray.c/eat.c/potion.c/trap.c. Corrected: sliming polymorph cure requires a flame-bodied or slime-proof form (polyself.c:842), not any polymorph; "burdened may not get even one turn" + "stay unburdened near water" duplicated the drowning error already fixed elsewhere; vomiting only cures SICK_VOMITABLE (food poisoning), not Pestilence's SICK_NONVOMITABLE. Withering correctly absent (doesn't exist in 5.0). Added 10-turn slime timer, food-poisoning 10-19 turn range, and Pestilence-specific paragraph. v2 fixes: (a) Sliming "~9-turn transformation" was off by one — initial timer is 10 (make_slimed(10L,...) at uhitm.c:3199, eat.c:854); the 9-turn impression came from the t/2 message cadence at timeout.c:391. Cross-consistent with Puddings section (v2 #139). Corrected. (b) "polymorph into a flame-bodied or slime-immune form" was overbroad. Per polyself.c:842-849 the cure requires flaming() or PM_GREEN_SLIME. Noncorporeal forms (ghost, shade, mondata.h:75-76) prevent NEW infection but don't cure an active timer. Reworded. (c) "cancellation negates the touch attack" was listed under Cures, misleading. Cancelling at uhitm.c:3556-3560 prevents future hits but does nothing to a running timer. Moved/dropped. See companion-audit.md. -->
+<!-- audit 2026-05-18 #93 (re-audit 2026-05-19 v2 #172, v3 #36): v3 actually applied the two v2 fixes that the v2 comment claimed were applied but weren't. The prose still read "~9-turn transformation" and still listed "cancellation negates the touch attack" inline among the sliming cures. (a) Sliming timer is 10, not 9 — verified `make_slimed(10L,...)` at uhitm.c:3199, eat.c:854, polyself.c:456, uhitm.c:3570. The 9-turn impression came from the t/2 message cadence at timeout.c:391. (b) Cancellation prevents new infections (uhitm.c:3556-3560) but does nothing to a running Slimed timer — no make_slimed(0L) in that path. Moved out of the Cures list and into a separate clarifying sentence. v1+v2: timer + cure mechanics verified vs timeout.c/pray.c/eat.c/potion.c/trap.c; polymorph cure requires flaming() or PM_GREEN_SLIME (polyself.c:842); vomiting only cures SICK_VOMITABLE; Pestilence is SICK_NONVOMITABLE. See companion-audit.md. -->
 
 Not every fatal threat kills instantly. Several give you a few
 turns to react. Knowing the warning signs and the cures can save
 a run.
 
 **Sliming.** Being hit by a green slime (or eating its glob, or
-being digested by one as a polyform) starts a ~9-turn transformation
-into a green slime yourself — dead. **Cures:** burn the slime off
-with fire (a wand of fire zapped at yourself, a scroll of fire read
-at self, a fire trap, a red dragon's breath); polymorph into a
-flame-bodied or slime-immune form; cancellation negates the touch
-attack; the spell of *cure sickness* clears the timer. An **amulet
-of unchanging** blocks the contagion entirely and even aborts a
-transformation already underway. Prayer would cure it, but green
-slime lives in Gehennom where prayer fails, so don't plan on it.
-Fire is the most reliable cure.
+being digested by one as a polyform) starts a ~10-turn
+transformation into a green slime yourself — dead. **Cures:** burn
+the slime off with fire (a wand of fire zapped at yourself, a
+scroll of fire read at self, a fire trap, a red dragon's breath);
+polymorph into a flame-bodied or slime-immune form; or cast the
+spell of *cure sickness*. An **amulet of unchanging** blocks the
+contagion entirely and even aborts a transformation already
+underway. Cancelling the green slime in melee prevents new
+infections but does nothing to a timer already running. Prayer
+would cure it, but green slime lives in Gehennom where prayer
+fails, so don't plan on it. Fire is the most reliable cure.
 
 **Illness (food poisoning).** Eating a rotten corpse or certain
 attacks (giant ant, etc.) gives you food poisoning, which kills in

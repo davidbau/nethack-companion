@@ -8967,3 +8967,27 @@ All 53 stat rows verified vs `monsters.h:2609-3914`. Watchman, watch captain, al
 
 ### Pass-3 queue
 35/183 done.
+
+## 2026-05-19 — v3 audit batch 8: Delayed Deaths (#36), Short sword (#37), Blobs (#38), Genocide (#39), Fort Ludios (#40)
+
+Three CLEAN, two real findings.
+
+### Delayed Deaths (#36) — `spoilers/companion.md:2329` — **2 corrections (MAJOR)**
+The v2 audit comment claimed two corrections were applied that never actually landed in the prose:
+(a) Sliming "~9-turn transformation" — wrong. Initial timer is 10 (`make_slimed(10L,...)` at `uhitm.c:3199, eat.c:854, polyself.c:456, uhitm.c:3570`). The 9-turn impression came from the t/2 message cadence (`timeout.c:391`). Changed to "~10-turn."
+(b) "Cancellation negates the touch attack" — listed among Cures but doesn't clear a running Slimed timer. `uhitm.c:3556-3560` cancels future hits only; no `make_slimed(0L,...)` in that path. Moved out of the cure list into a separate clarifying sentence.
+
+### Short sword (#37) — `spoilers/companion.md:7345` — 0 corrections
+All four rows match `objects.h:244-255`. Samurai wakizashi = SHORT_SWORD (`u_init.c:144` + `objnam.c:106` alias). Rogue starter = SHORT_SWORD (`u_init.c:134`).
+
+### Blobs `b` (#38) — `spoilers/companion.md:8034` — 0 corrections
+Acid blob, quivering blob, gelatinous cube stats all match `monsters.h:137-166`. Passive AD_ACID, AD_PHYS, AD_PLYS verified.
+
+### Genocide (#39) — `spoilers/companion.md:2323` — 0 corrections
+Single-sentence beginner warning. Confused-uncursed-genocide killing own species via `do_genocide((!scursed) | (2 * !!Confusion))` → how=3=REALLY|PLAYER → `u.umonster` from `gu.urole.mnum` confirmed.
+
+### Fort Ludios (#40) — `spoilers/companion.md:1064` — **1 correction (MEDIUM)**
+"Croesus is covetous" was wrong. Per `monsters.h:2868`, his only mflags3 is `M3_INFRAVISIBLE` — he is NOT `M3_COVETOUS`. True covetous monsters (Wizard, Vlad, Riders) teleport to recover items. Croesus is `M2_GREEDY|M2_NASTY|M2_STALK` — picks up gold and chases, but no covetous-recovery teleport. Dropped the word; tactical advice still holds via M2_NASTY + 4d10 weapon. All other claims verified: 16 soldiers + 1 lieutenant, four dragons, four moat eels, stone giant, gold 36k-54k, gem caches, 1/3 trap rate.
+
+### Pass-3 queue
+40/183 done.

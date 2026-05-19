@@ -45,11 +45,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 33**  L 2658  ( 295 lines)     ↳ A Practical Identification Strategy → The Price Is Right
 - [x] **# 34**  L 8636  (  23 lines)     ↳ Bestiary Tables → Giant humanoids `H`
 - [x] **# 35**  L 8969  (  86 lines)     ↳ Bestiary Tables → Humans and elves `@`
-- [ ] **# 36**  L 2329  (  52 lines)     ↳ Dangerous Encounters → Delayed Deaths
-- [ ] **# 37**  L 7345  (  13 lines)     ↳ Weapons Tables → Short sword
-- [ ] **# 38**  L 8034  (  17 lines)     ↳ Bestiary Tables → Blobs `b`
-- [ ] **# 39**  L 2323  (   6 lines)     ↳ Dangerous Encounters → Genocide
-- [ ] **# 40**  L 1064  (  28 lines)     ↳ Branches and Landmarks → Fort Ludios
+- [x] **# 36**  L 2329  (  52 lines)     ↳ Dangerous Encounters → Delayed Deaths
+- [x] **# 37**  L 7345  (  13 lines)     ↳ Weapons Tables → Short sword
+- [x] **# 38**  L 8034  (  17 lines)     ↳ Bestiary Tables → Blobs `b`
+- [x] **# 39**  L 2323  (   6 lines)     ↳ Dangerous Encounters → Genocide
+- [x] **# 40**  L 1064  (  28 lines)     ↳ Branches and Landmarks → Fort Ludios
 - [ ] **# 41**  L 7628  (  11 lines)     ↳ Weapons Tables → Sling
 - [ ] **# 42**  L  336  (  49 lines)   📖 What to Pack
 - [ ] **# 43**  L 2172  (  19 lines)     ↳ Dangerous Encounters → Light Bursts
