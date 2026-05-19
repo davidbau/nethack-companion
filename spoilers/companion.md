@@ -2249,7 +2249,7 @@ next several turns. **Sick resistance** is the cleanest defense,
 though a unicorn horn can sometimes clear it in time. **Famine** adds 40–79 hunger units to a
 normal hit, which won't drop you below Hungry in one swing but
 will starve you fast across an encounter. Eating any Rider corpse
-is straight-up fatal (`done(DIED)`). A mercy in 5.0: if Pestilence
+is straight-up fatal. A mercy in 5.0: if Pestilence
 or Famine land their first attack on a turn, the second downgrades
 to a stun.
 
@@ -2352,10 +2352,10 @@ satiated and eating more). Vomiting from other causes also cures
 food poisoning. Poison resistance does NOT protect against food
 poisoning — that's *sickness resistance*, a separate intrinsic.
 
-**Pestilence's terminal illness** is the harder cousin: it's
-`SICK_NONVOMITABLE`, so vomiting won't clear it, and the timer is
-Constitution-dependent (~20+Con turns). The cures that *do* work:
-unicorn horn, prayer, eucalyptus leaf.
+**Pestilence's terminal illness** is the harder cousin: vomiting
+won't clear it, and the timer is Constitution-dependent (~20+Con
+turns). The cures that *do* work: unicorn horn, prayer, eucalyptus
+leaf.
 
 **Sinking in lava.** Falling into lava without levitation or fire
 resistance gives you a few turns to escape before you sink and die.
