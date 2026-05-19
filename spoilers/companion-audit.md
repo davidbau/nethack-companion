@@ -9234,3 +9234,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 130/183 done.
+
+## 2026-05-19 — v3 audit batch 27: Petrification (#131), Major demons (#132), Feelings and Sounds (#133), Mace (#134), Medusa's Island (#135)
+
+Four CLEAN, one with FOUR real findings on Major demons.
+
+- Petrification: 5-stage countdown via `timeout.c:128-134`; paralysis stage `nomul(-3)`; all stoning sources and cures verified.
+- **Major demons `&` (#132)**: **4 corrections**. Bone devil, Orcus, and Geryon "sting 2d4 poison" + Baalzebub "bite 2d6 poison" were all wrong. Per `monsters.h:2999/:3082/:3093/:3112` these are all `AT_*/AD_DRST` (drain-Str), not `AD_POISON`. A v2 audit had flagged this AD_DRST-vs-poison pattern for vampire bat/jellyfish/killer bee but the four demon rows were missed. Changed all four to "drain-Str." Beginner danger: poison-resistant players would think themselves safe and watch their Strength score crash.
+- Feelings and Sounds: all ambient messages verified vs `sounds.c`, intrinsic-from-corpse vs `eat.c`, blessed-restore-ability "Wow! This makes you feel great!" gate.
+- Mace: mace 1d6+1/1d6 wt 30 cost 5 iron; silver mace wt 36 cost 60 silver. Demonbane = SILVER_MACE base, PHYS(5,0), BANISH invoke, PM_CLERIC gift.
+- Medusa's Island: 4 layouts confirmed; Perseus loot 75/25/50/50 percents; Medusa asleep on all 4; eels by layout (3 giant / 6 electric / 2 giant / 2 giant + 1 kraken).
+
+### Pass-3 queue
+135/183 done.

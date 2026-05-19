@@ -140,11 +140,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#128**  L  981  (  19 lines)     ↳ Branches and Landmarks → The Oracle
 - [x] **#129**  L 5473  (  86 lines)   📖 The Castle
 - [x] **#130**  L 1252  (  22 lines)     ↳ Traps and Hazards → Movement Traps
-- [ ] **#131**  L 1965  (  32 lines)     ↳ Dangerous Encounters → Petrification (Stoning)
-- [ ] **#132**  L 9055  (  42 lines)     ↳ Bestiary Tables → Major demons `&`
-- [ ] **#133**  L 1597  (  43 lines)   📖 Feelings and Sounds
-- [ ] **#134**  L 7452  (  12 lines)     ↳ Weapons Tables → Mace
-- [ ] **#135**  L 1092  (  97 lines)     ↳ Branches and Landmarks → Medusa's Island
+- [x] **#131**  L 1965  (  32 lines)     ↳ Dangerous Encounters → Petrification (Stoning)
+- [x] **#132**  L 9055  (  42 lines)     ↳ Bestiary Tables → Major demons `&`
+- [x] **#133**  L 1597  (  43 lines)   📖 Feelings and Sounds
+- [x] **#134**  L 7452  (  12 lines)     ↳ Weapons Tables → Mace
+- [x] **#135**  L 1092  (  97 lines)     ↳ Branches and Landmarks → Medusa's Island
 - [ ] **#136**  L 6993  (  14 lines)     ↳ Voluntary Challenges → Petless (new in 5.0)
 - [ ] **#137**  L 8462  (  17 lines)     ↳ Bestiary Tables → Lights `y`
 - [ ] **#138**  L 8784  (  23 lines)     ↳ Bestiary Tables → Quantum mechanics `Q`

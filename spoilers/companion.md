@@ -9055,6 +9055,7 @@ The catch-all `@` class: shopkeepers, priests, watchmen, role nemeses, quest lea
 
 <!-- audit 2026-05-18 #167 (re-audit 2026-05-19 v2 #171): stats/colors/attacks for the full roster verified vs monsters.h:2911-3194. Two corrections: erinys does follow stairs (M2_STALK at monsters.h:2958 — every row in this table carries M2_STALK), so the "except erinys" qualifier is bogus. Amorous demon's displayed form depends on the demon's own randomly-assigned gender (doseduce at mhitu.c:1988-1989 reads Mgender(mon)), not the player's. balrog and amorous demon don't summon (mhitu.c:967). v2 fix: 3 stings mislabeled as "poison" when the C source has AD_DRST (strength-drain, not generic poison): bone devil (monsters.h:2999), Orcus (monsters.h:3082), and Geryon (monsters.h:3093) all have `ATTK(AT_STNG, AD_DRST, 2, 4)`. Same drain-Str pattern as the jellyfish fix in batch 30. Beginner trap: a player armored against poison would not be protected — they'd watch Strength drop during combat. Changed all three to "sting 2d4 drain-Str." See companion-audit.md. -->
 #### Major demons `&`
+<!-- audit 2026-05-19 v3 #132: 4 corrections. The bone devil, Orcus, and Geryon "sting 2d4 poison" cells and Baalzebub's "bite 2d6 poison" cell were all wrong — per monsters.h:2999, :3082, :3093, :3112 these are all AT_*/AD_DRST (drain-Str), not AD_POISON. Poison-resistant players would think themselves safe from these attacks, then watch their Strength score crash. Changed all four cells to "drain-Str." A v2 audit comment on the Riders section had already flagged this AD_DRST-vs-poison labeling pattern for vampire bat/jellyfish/killer bee but the four demon rows were missed. See companion-audit.md. -->
 
 Major demons. Most can gate in reinforcements (a single barbed devil in your face can become five). Silver weapons and Demonbane do extra damage. Demon lords can be bribed with gold to leave.
 
@@ -9072,7 +9073,7 @@ They all follow you up and down stairs.
 | marilith | red | 7 | 12 | -6 | 80 | weapon 2d4 · weapon 2d4 · claw 2d4 · claw 2d4 · claw 2d4 · claw 2d4 | sees-invis, poisonous-corpse, demonic. |
 | vrock | green | 8 | 12 | 0 | 50 | claw 1d4 · claw 1d4 · claw 1d8 · claw 1d8 · bite 1d6 | poisonous-corpse, demonic. |
 | hezrou | green | 9 | 6 | -2 | 55 | claw 1d3 · claw 1d3 · bite 4d4 | poisonous-corpse, demonic. |
-| bone devil | gray | 9 | 15 | -1 | 40 | weapon 3d4 · sting 2d4 poison | poisonous-corpse, demonic. |
+| bone devil | gray | 9 | 15 | -1 | 40 | weapon 3d4 · sting 2d4 drain-Str | poisonous-corpse, demonic. |
 | ice devil | white | 11 | 6 | -4 | 55 | claw 1d4 · claw 1d4 · bite 2d4 · sting 3d4 cold · touch 1d1 slow | sees-invis, poisonous-corpse, demonic. |
 | nalfeshnee | red | 11 | 9 | -1 | 65 | claw 1d4 · claw 1d4 · bite 2d4 · spell spell | poisonous-corpse, demonic. |
 | pit fiend | red | 13 | 6 | -3 | 65 | weapon 4d2 · weapon 4d2 · hug 2d4 | sees-invis, poisonous-corpse, demonic. |
@@ -9080,10 +9081,10 @@ They all follow you up and down stairs.
 | balrog | red | 16 | 5 | -2 | 75 | weapon 8d4 · weapon 4d6 | flies, sees-invis, poisonous-corpse, demonic. |
 | Juiblex | bright-green | 50 | 3 | -7 | 65 | engulf 4d10 disease · spit 3d6 acid | flies, amphibious, amorphous, sees-invis, poisonous-corpse, demonic, fire-res, pois-res, acid-res, ston-res. |
 | Yeenoghu | magenta | 56 | 18 | -5 | 80 | weapon 3d6 · weapon 2d8 confuse · claw 1d6 paralyse · spell 2d6 magic | flies, sees-invis, poisonous-corpse, demonic, fire-res, pois-res. |
-| Orcus | magenta | 66 | 9 | -6 | 85 | weapon 3d6 · claw 3d4 · claw 3d4 · spell 8d6 spell · sting 2d4 poison | flies, sees-invis, poisonous-corpse, demonic, fire-res, pois-res. |
-| Geryon | magenta | 72 | 3 | -3 | 75 | claw 3d6 · claw 3d6 · sting 2d4 poison | flies, sees-invis, poisonous-corpse, demonic, fire-res, pois-res. |
+| Orcus | magenta | 66 | 9 | -6 | 85 | weapon 3d6 · claw 3d4 · claw 3d4 · spell 8d6 spell · sting 2d4 drain-Str | flies, sees-invis, poisonous-corpse, demonic, fire-res, pois-res. |
+| Geryon | magenta | 72 | 3 | -3 | 75 | claw 3d6 · claw 3d6 · sting 2d4 drain-Str | flies, sees-invis, poisonous-corpse, demonic, fire-res, pois-res. |
 | Dispater | magenta | 78 | 15 | -2 | 80 | weapon 4d6 · spell 6d6 spell | flies, sees-invis, poisonous-corpse, demonic, fire-res, pois-res. |
-| Baalzebub | magenta | 89 | 9 | -5 | 85 | bite 2d6 poison · gaze 2d6 stun | flies, sees-invis, poisonous-corpse, demonic, fire-res, pois-res. |
+| Baalzebub | magenta | 89 | 9 | -5 | 85 | bite 2d6 drain-Str · gaze 2d6 stun | flies, sees-invis, poisonous-corpse, demonic, fire-res, pois-res. |
 | Asmodeus | magenta | 105 | 12 | -7 | 90 | claw 4d4 · spell 6d6 cold | flies, sees-invis, poisonous-corpse, demonic, fire-res, cold-res, pois-res. |
 | Demogorgon | magenta | 106 | 15 | -8 | 95 | spell 8d6 spell · sting 1d4 drain-XL · claw 1d6 disease · claw 1d6 disease | flies, sees-invis, poisonous-corpse, demonic, fire-res, pois-res. |
 | Death | hi_overlord | 30 | 12 | -5 | 100 | touch 8d8 death · touch 8d8 death | flies, regenerates, sees-invis, teleport-control. Rider of the Apocalypse. Vanquish three to ascend. |
