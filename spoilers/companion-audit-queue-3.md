@@ -95,11 +95,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 83**  L 2017  (  13 lines)     ↳ Dangerous Encounters → Attack Wands and the Warning Shot
 - [x] **# 84**  L 7837  (  72 lines)     ↳ Appendices → Spell Tables
 - [x] **# 85**  L 8599  (  21 lines)     ↳ Bestiary Tables → Fungi and molds `F`
-- [ ] **# 86**  L 2998  ( 115 lines)     ↳ A Practical Identification Strategy → Use-Testing (The Careful Way)
-- [ ] **# 87**  L 7313  (  17 lines)     ↳ Weapons Tables → Dagger
-- [ ] **# 88**  L 1329  (  25 lines)     ↳ Traps and Hazards → Searching and Detection
-- [ ] **# 89**  L 8069  (  27 lines)     ↳ Bestiary Tables → Dogs and canines `d`
-- [ ] **# 90**  L 9142  (  23 lines)     ↳ Bestiary Tables → Lizards `:`
+- [x] **# 86**  L 2998  ( 115 lines)     ↳ A Practical Identification Strategy → Use-Testing (The Careful Way)
+- [x] **# 87**  L 7313  (  17 lines)     ↳ Weapons Tables → Dagger
+- [x] **# 88**  L 1329  (  25 lines)     ↳ Traps and Hazards → Searching and Detection
+- [x] **# 89**  L 8069  (  27 lines)     ↳ Bestiary Tables → Dogs and canines `d`
+- [x] **# 90**  L 9142  (  23 lines)     ↳ Bestiary Tables → Lizards `:`
 - [ ] **# 91**  L 3218  ( 145 lines)   📖 Provisions and Dining
 - [ ] **# 92**  L 8261  (  18 lines)     ↳ Bestiary Tables → Nymphs `n`
 - [ ] **# 93**  L 6304  (  31 lines)     ↳ Sokoban Solutions → Level 2, Version A

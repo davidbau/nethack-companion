@@ -9117,3 +9117,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 85/183 done.
+
+## 2026-05-19 — v3 audit batch 18: Use-Testing (#86), Dagger (#87), Searching (#88), Dogs (#89), Lizards (#90)
+
+All five **CLEAN**.
+
+- Use-Testing: poisonable ammo per `obj.h:264-268`; unicorn horn dip table at `potion.c:2151-2159`; confused remove curse scope at `read.c:1549-1552`; auto-curse 90% list at `mkobj.c:1086-1090`; all four appearance-pool prices match `objects.h:476-727`.
+- Dagger: 5 rows match `objects.h:200-214`; Rogue P_DAGGER multishot 1+Expert+Skilled+role-bonus = rnd(4) per `dothrow.c:55-83`; Sting = ELVEN_DAGGER, Magicbane = ATHAME (`artilist.h`); athame engrave exempt from dulling (`engrave.c:1306-1307`).
+- Searching: `dosearch0`, `rnl(8)` for traps, `rnl(7-fund)` for SDOOR/SCORR with `fund` from SPFX_SEARCH+lenses only.
+- Dogs `d`: 16 rows match `monsters.h:199-320`. AD_WERE on werejackal/werewolf; G_SGROUP on most wild d's. Cerberus `#ifdef CHARON`-gated.
+- Lizards `:`: 8 rows match `monsters.h:3260-3324`. Lizard MR_STONE cure (`eat.c:827-829`); newt Pw boost (`eat.c:1237,1312`); chameleon M2_SHAPESHIFTER; salamander G_HELL.
+
+### Pass-3 queue
+90/183 done.
