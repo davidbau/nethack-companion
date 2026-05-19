@@ -1399,7 +1399,19 @@ fountain risks.</p>
 </section>
 <section id="the-quest" class="level4">
 <h4>The Quest</h4>
-<!-- audit 2026-05-17 #39: 8 role/artifact/nemesis pairs and entry mechanics verified against role.c + artilist.h. Corrected: "Most provide magic resistance" was wrong (only Platinum Yendorian Express Card grants carried MR; others vary). v2 audit 2026-05-18 #5: four factual corrections. (a) Portal range left at 11 through 16 (a transient v2 mis-edit to "11 through 17" was reverted after closer reading of dungeon.c:380-411 and a wiki cross-check; level_range() returns a count, so range=2 means base..base+1, giving max = 9 + 6 + 1 = 16, not 17). (b) "Only the Tourist's PYEC" was wrong on the carried-MR claim — Orb of Detection (Archeologist) and Magic Mirror of Merlin (Knight) also carry MR (CARY(AD_MAGM) at artilist.h:221,257,293). Reworded to "a few" without naming, since the Artifacts chapter has the per-role list. Same shape for the wielded/worn-MR clause — three artifacts have DFNS(AD_MAGM) at artilist.h:233,261,304 (Sceptre of Might / Eyes of the Overworld / Eye of the Aethiopica); kept the generic "a few others." (d) "Nemesis drops two things on the floor" misleads: only the Bell drops from inventory on kill; the quest artifact is placed under the nemesis at level generation (e.g. dat/Val-goal.lua:49,76 same square for both). Reworded. Wisdom additions: nemesis lifesaving (most carry an amulet of life saving — expect to kill twice); portal-back warning (the return portal is only on the first Quest level). Voice: "milestone that marks the transition from surviving to preparing for the endgame" softened to "major power spike"; trimmed three short sentences into two; em-dashes around "from attacking peacefuls, for instance" replaced with periods per the punctuation-ladder rule. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- quest portal Dlvl 11-16: Oracle DL 5-9 + base=6 range=2 chained off Oracle (dungeon.lua:62-64, 27-31)
+- XL 14 required to descend (quest.h:45 MIN_QUEST_LEVEL, quest.c:149)
+- friendly word with leader on first quest level (quest.c:97 Is_qstart → on_start)
+- alignment-record refusal at MIN_QUEST_ALIGN below threshold (quest.c:164)
+- 3 artifacts grant carried MR via CARY(AD_MAGM): Orb of Detection, Magic Mirror, PYEC (artilist.h:221, 257, 293)
+- 3 artifacts grant wielded/worn MR via DFNS(AD_MAGM): Sceptre of Might, Eyes of Overworld, Eye of Aethiopica (artilist.h:234, 262, 305)
+- nemesis gets Bell of Opening as starting inventory; drops on kill (makemon.c:1378-1379)
+- quest artifact is placed under nemesis at level generation, NOT carried (Val-goal.lua:49,76; Wiz-goal.lua:73,96; etc.)
+- return portal lives on Is_qstart (first quest level) only (quest.c:97, 191-204)
+- "nemesis carries an amulet of life saving" is wiki-belief, not source-guaranteed; M2_COLLECT means they may pick one up (https://nethackwiki.com/wiki/Nemesis)
+-->
 <p>Around dungeon levels 11 through 16, a magic portal drops you onto
 your Quest. You’ll need experience level 14 and a friendly word with
 your quest leader on the first floor before they’ll let you descend. The
@@ -1433,7 +1445,18 @@ clean.</p>
 </section>
 <section id="the-rogue-level" class="level4">
 <h4>The Rogue Level</h4>
-<!-- audit 2026-05-18 #125 (re-audit 2026-05-19 v2 #154): clean audit, no corrections needed. All claims verified: welcome line (do.c:1913), uppercase-only monsters (makemon.c:1672), symbol swaps for armor `]`/amulet `,`/food `:`/gold-same-as-gems (drawing.c:73-79), no closed doors (mklev.c:647-648), no fountains/sinks/altars/shops (mklev.c:988-989 skip_nonrogue branch), no spellbooks/tools/amulets in natural item pool (mkobj.c:58-64 rogueprobs). Dungeon level range is Dlvl 15-18 per dungeon.lua base=15, range=4. v2 re-verified all claims; tile mode off across all 4 GUI ports. 0 new corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- Rogue Level appears DL 15-18 per base=15 range=4 (dungeon.lua:54-58)
+- welcome message "older, more primitive world" (do.c:1913)
+- uppercase-only monsters via Is_rogue_level (makemon.c:1672)
+- symbol swaps: armor `]`, amulet `,`, food `:`, gold same as gems (drawing.c:73-79)
+- doors forced D_NODOOR — no closed doors (mklev.c:647-648)
+- no fountains/sinks/altars/shops/graves via skip_nonrogue (mklev.c:988-989)
+- rogueprobs item pool: weapon/armor/food/potion/scroll/wand/ring only — no spellbooks/tools/amulets/gems/coins (mkobj.c:58-64)
+- tile mode disabled in Qt, X11, win32, curses ports
+- engraving has no rogue-level guard — Elbereth works as usual (engrave.c)
+-->
 <p>Somewhere in the middle dungeon you’ll cross a one-level historical
 district. <em>“You enter what seems to be an older, more primitive
 world.”</em> The neighborhood is preserved as it was when
@@ -1457,7 +1480,25 @@ anachronism.</p>
 </section>
 <section id="fort-ludios" class="level4">
 <h4>Fort Ludios</h4>
-<!-- audit 2026-05-18 #138 (re-audit 2026-05-19 v3 #40): v3 added one correction. "Croesus is covetous" was wrong — per monsters.h:2868 his only mflags3 is M3_INFRAVISIBLE; he is NOT M3_COVETOUS. True covetous monsters (Wizard of Yendor, Vlad, Riders) teleport across the level to recover specific items. Croesus is M2_GREEDY|M2_NASTY|M2_STALK — picks up gold and stalks, but doesn't have the covetous teleport behavior. Dropped the word; tactical advice ("hits hard in melee, shoot or zap from across the moat") still holds via M2_NASTY + 4d10 weapon. v2 audit 2026-05-18 #14: four factual corrections — garrison 16+1 from knox.lua:126-142; portal range Dlvl 11 to just above Medusa per mklev.c:2647-2651; portal always inside a vault per mklev.c:1331,2624-2658; non-diggable per knox.lua:35 + noteleport blocks intra-level teleport only. v1 #138: dropped "captains" overstatement, "legendary wealth" misframe; added the noteleport flag, four dragons, four moat eels, stone giant, gem caches. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- portal placed Dlvl 11 up to just above Medusa, 1/3 chance per qualifying level (mklev.c:2647-2651)
+- portal always inside a sealed vault (mklev.c:1322-1331 calls mk_knox_portal from add_room VAULT)
+2026-05-18:
+- level is non-diggable: des.non_diggable over full level (knox.lua:35)
+- noteleport flag blocks intra-level teleport AND scroll of plain teleport — only LEVEL teleport escapes (teleport.c:854, 1502, knox.lua:9)
+- garrison: 16 soldiers + 1 lieutenant (knox.lua:126-142)
+- 4 D-class dragons in storerooms (knox.lua:146-149); 4 giant eels in moat (knox.lua:151-154); 1 stone giant (knox.lua:144)
+- 4 corner-tower gem caches: diamond, emerald, ruby, amethyst (knox.lua:156-167)
+- treasury is 15×4=60 tiles; each holds 600+rnd(0,300) gold and 1/3 of them are trapped (knox.lua:57-69)
+- treasury gold totals 36k-54k (60 × 600 = min, 60 × 900 = max)
+- Croesus is L20 / 4d10 weapon / MS_GUARD (monsters.h:2861-2863)
+- Croesus is NOT M3_COVETOUS — his only mflags3 is M3_INFRAVISIBLE (monsters.h:2865-2868)
+- only Wizard of Yendor has M3_COVETOUS; Vlad has M3_WANTSCAND; Riders use their own logic
+- alarm sounds on arrival and every revisit until Croesus dies (do.c:1893-1904)
+- alarm wakes existing soldiers; it doesn't spawn new ones
+- soldiers carry K_RATION / C_RATION (makemon.c:694-700)
+-->
 <p>Fort Ludios is optional and easy to miss entirely. It appears as a
 magic portal anywhere from Dlvl 11 down to just above Medusa, always
 inside a sealed vault, so you’ll need to dig in. The portal leads to a
@@ -1467,8 +1508,9 @@ dragons. A stone giant. Four giant eels patrolling the moat. And
 <strong>Croesus</strong> on the throne, the vault guardian himself. The
 level is non-diggable. The level prevents teleportation, so once you’re
 inside the only way out is back through the portal or a scroll of
-teleportation. Croesus hits hard in melee, so shoot or zap him from
-across the moat rather than walking up.</p>
+<em>level</em> teleportation (a plain scroll of teleportation won’t work
+here). Croesus hits hard in melee, so shoot or zap him from across the
+moat rather than walking up.</p>
 <p>The real prize is the gold. A 60-square treasury holds 36k to 54k
 gold, with land mines and spiked pits on roughly a third of the tiles.
 Gem caches in each corner tower (diamonds, emeralds, rubies, amethysts),
@@ -1481,7 +1523,22 @@ bonus, not a requirement.</p>
 </section>
 <section id="medusas-island" class="level4">
 <h4>Medusa’s Island</h4>
-<!-- audit 2026-05-18 v2 #78: level placement DL ~20-29 verified (dungeon.lua:75-81 Medusa base=-5 range=4 from DoD bottom 25-30); four layouts (medusa-1..4.lua); Perseus loot 75% shield of reflection (cursed) / 25% levitation boots / 50% blessed +2 scimitar / 50% sack confirmed across all four layouts. Gaze reflection stones Medusa per mhitu.c:1721-1745. Eel grab uses eel's tile for drown (uhitm.c:3389-3401), so levitation/water-walking on adjacent dry land does NOT save you — correctly stated in the section. Kraken only on medusa-4 (medusa-4.lua:122). Two corrections: dropped "(or ladder)" — every medusa-*.lua uses des.stair("down"), no ladder; noted electric eels on one layout (medusa-2 has six electric eels instead of giant eels, monsters.h:3239-3247) — same grab-and-drown threat, plus AD_ELEC bite. Stone resistance also blocks the gaze per mhitu.c:1747-1748 but is rarely attainable pre-Medusa; omitted per no-trivia. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- Perseus loot is per-layout — not uniform: shield 75% in medusa-1/3/4 but 25% in medusa-2 (medusa-2.lua:58-63)
+- boots are 25% in medusa-1/3/4 but 75% in medusa-2 — swapped with the shield
+2026-05-18:
+- Medusa DL 20-29: base=-5 range=4 from DoD bottom 25-29 (dungeon.lua:75-81)
+- four layouts (medusa-1.lua through medusa-4.lua); all use des.stair("down") — no ladder
+- scimitar blessed +2 at 50% and sack at 50% are constant across all four layouts
+- shield is cursed in every layout (medusa-1.lua:64 and matching lines in others)
+- gaze reflection stones Medusa via ureflects → killed(mtmp) (mhitu.c:1721-1745)
+- stone resistance also blocks the gaze (mhitu.c:1747-1748) — rarely attainable pre-Medusa
+- eel grab drown uses eel's tile, not yours: is_pool(magr->mx, magr->my) (uhitm.c:3389-3401)
+- levitation/water-walking on adjacent dry land does NOT save you once grabbed
+- medusa-2 has six electric eels (not giant eels), AD_ELEC bite (medusa-2.lua:99-104, monsters.h:3239-3247)
+- kraken only on medusa-4 (medusa-4.lua:122)
+-->
 <p>Medusa’s level sits near the bottom of the Dungeons of Doom, around
 level 25. You’ll know it by the large body of water and the statues
 scattered around (those used to be adventurers).</p>
@@ -1580,7 +1637,19 @@ killing the eel first are reliable.</li>
 </section>
 <section id="the-castle" class="level4">
 <h4>The Castle</h4>
-<!-- audit 2026-05-17 #37 (re-audit 2026-05-19 v2 #121): castle.lua/dungeon.lua-verified. 2 corrected: wand of striking destroys the drawbridge (not opens), and the wand of wishing is in a corner tower (not a treasure chamber). v2 fix: "A maze section to each side may contain minotaurs" was fabricated — castle.lua has no minotaurs and no internal maze rooms (the des.mazewalk calls at lines 223-224 fill the entry-approach corridors outside the walls). Same error already corrected in the full Castle section (v1 #109); just needed to be removed from this brief entry too. Dropped the sentence. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- Castle is the last DoD level: base=-1 (dungeon.lua:7-12, 82-85)
+- layout: moat + drawbridge + 4 corner towers + throne room + 2 barracks + 4 storerooms (castle.lua:25-41, 80-81, 234, 248-249)
+- wand of wishing in a trapped/locked chest in one randomly chosen corner tower (castle.lua:48-52, 142-149)
+- burned Elbereth + cursed scroll of scare monster on the chest's tile keep gnawers away (castle.lua:151-152)
+- drawbridge passtune is 5 notes A-G, Mastermind-style miss feedback (music.c:793, 836-884)
+- only blowable instruments work for the passtune (flutes, horns, bugle — harp excluded) (music.c:769-771)
+- wand of striking DESTROYS the drawbridge (does not just close it) (zap.c:3290-3305)
+- wand of opening or spell of knock opens the drawbridge
+- Gehennom branches off the Castle with branchtype=no_down, so the stairs do not return (dungeon.lua:39-43)
+- no minotaurs and no internal maze; the two des.mazewalk calls fill the OUTSIDE approach corridors (castle.lua:223-224)
+-->
 <p>The Castle is the last level of the Dungeons of Doom proper, around
 level 27. It’s a large fortified structure surrounded by a moat, with a
 drawbridge as the main entrance.</p>
