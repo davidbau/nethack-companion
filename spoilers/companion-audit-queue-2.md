@@ -59,11 +59,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 48**  L 6974  (  17 lines)     ↳ Voluntary Challenges → Bonesless (new in 5.0)
 - [x] **# 49**  L 1220  (  14 lines)     ↳ Traps and Hazards → Nuisance Traps
 - [x] **# 50**  L 1942  (  31 lines)     ↳ Dangerous Encounters → Petrification (Stoning)
-- [ ] **# 51**  L 7507  (  12 lines)     ↳ Weapons Tables → Whip
-- [ ] **# 52**  L 2006  (  27 lines)     ↳ Dangerous Encounters → The Touch of Death
-- [ ] **# 53**  L 1410  (  71 lines)     ↳ Traps and Hazards → Engravings
-- [ ] **# 54**  L 6796  (  14 lines)     ↳ Voluntary Challenges → Illiterate
-- [ ] **# 55**  L 7572  (  11 lines)     ↳ Weapons Tables → Shuriken
+- [x] **# 51**  L 7507  (  12 lines)     ↳ Weapons Tables → Whip
+- [x] **# 52**  L 2006  (  27 lines)     ↳ Dangerous Encounters → The Touch of Death
+- [x] **# 53**  L 1410  (  71 lines)     ↳ Traps and Hazards → Engravings
+- [x] **# 54**  L 6796  (  14 lines)     ↳ Voluntary Challenges → Illiterate
+- [x] **# 55**  L 7572  (  11 lines)     ↳ Weapons Tables → Shuriken
 - [ ] **# 56**  L 6273  ( 100 lines)     ↳ Sokoban Solutions → Level 2, Version B
 - [ ] **# 57**  L 7457  (  26 lines)     ↳ Weapons Tables → Spear
 - [ ] **# 58**  L 6856  (  23 lines)     ↳ Voluntary Challenges → Wishing Restrictions

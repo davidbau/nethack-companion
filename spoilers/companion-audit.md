@@ -7684,3 +7684,80 @@ Source: `spoilers/companion.md` line 1949. 1 timing fix + 1 wisdom softening.
 - Cures: lizard/acidic flesh (`eat.c:3941-3944`); potion of acid (`potion.c:1312`); stone-to-flesh (`zap.c:2974`); prayer (`pray.c:382`).
 
 ---
+
+## 2026-05-18 — v2 audit #51: Weapons Tables — Whip
+
+Source: `spoilers/companion.md` line 7526. No corrections (re-audit clean).
+
+### Verified
+- rubber hose 1d4/1d3, wt 20, cost 3, plastic, P_WHIP, prob 0 (never random) at `include/objects.h:374-376`.
+- bullwhip 1d2/1, wt 20, cost 4, leather, P_WHIP at `include/objects.h:390-392`.
+- Archeologist starter +1 proficient at `src/apply.c:2992-2993`.
+- Disarm only when target wielding a weapon at `src/apply.c:3148-3153`.
+- Pit yank anchors at `src/apply.c:3089-3099`.
+- No whip artifacts in `include/artilist.h`.
+
+---
+
+## 2026-05-18 — v2 audit #52: Dangerous Encounters — The Touch of Death
+
+Source: `spoilers/companion.md` line 2016. No corrections (re-audit clean).
+
+### Verified
+- Death the Rider's two AT_TUCH AD_DETH attacks (8d8 each) at `include/monsters.h:3144-3153`.
+- `rn2(20)` roll: 17-19 = full touch (15%), 5-16 = permdrain=1 life drain (60%), 0-4 = miss (25%) at `src/uhitm.c:3858-3882`.
+- Full touch `dmg = 50 + d(8,6)`, permadrain half at `src/mcastu.c:323-353`.
+- `if (!Antimagic)` guard on the 17-19 branch with FALLTHROUGH to default drain at `src/uhitm.c:3862-3868`.
+- Wand/spell self-zap checks only `nonliving || is_demon` (no Antimagic check) at `src/zap.c:2885-2902`; ray-hits-hero path checks both at `src/zap.c:4493-4502`.
+- `nonliving` covers undead/manes/golems/S_VORTEX per `include/mondata.h:219-220`.
+
+---
+
+## 2026-05-18 — v2 audit #53: Traps and Hazards — Engravings
+
+Source: `spoilers/companion.md` line 1419. No corrections (re-audit clean).
+
+### Verified
+- Engraving rate default 10 (instant); slow methods (dulling_wep / RING / GEM) set rate=1 at `engrave.c:1275, 1320-1325`.
+- Uncursed athame skips slow branch and doesn't dull at `engrave.c:1306-1307`.
+- Edged weapon dulling -1 enchantment per ~2 chars at `engrave.c:1357-1382`.
+- Impairment garble (Blind 1/11, Confused 1/7, Stunned 1/4, Hallucinating 1/2) applies universally at `engrave.c:1218-1228`.
+- Wand types: WAN_DIGGING → ENGRAVE, WAN_FIRE/LIGHTNING → BURN at `engrave.c:684-732`.
+- DUST monster-step erodes 1 char per turn at `monmove.c:734` + `engrave.c:271-289`.
+- BURN damage on ice or magical fire @ 50% at `engrave.c:278`.
+- Strict-match Elbereth at `engrave.c:256`.
+- "ad aerarium" niche placement at `mklev.c:728-737`.
+
+---
+
+## 2026-05-18 — v2 audit #54: Voluntary Challenges — Illiterate
+
+Source: `spoilers/companion.md` line 6814. 1 wisdom softening.
+
+### Wisdom softening
+- **"Without spellbooks, you have no spells"**: overstates. Wizards, Priests, Healers, Monks, and Knights start with one pre-learned spell that lasts until `KEEN = 20000` turns expire (`spell.h:17`, `spell.c:2340`). For a casting role attempting Illiterate, the starting spell is a real (if temporary) asset. Reworded to "Without spellbooks, you can't learn new spells or refresh old ones, so any starting spell you have will eventually fade."
+
+### Verified
+- "x"/"X" engraving exemption at `engrave.c:1213` (length-1 with x/X).
+- Blank scrolls/spellbooks exempt at `read.c:600-601`.
+- Book of the Dead exempt at `read.c:600`.
+- Hawaiian shirts exempt at `read.c:392-395` (returns before literate increment).
+- Floor engraving redraw at `engrave.c:1724` (no conduct logic).
+- Scrolls/spellbooks at `read.c:602`; fortune cookies at `eat.c:2525`; T-shirts at `read.c:397`; marker writing at `write.c:245`.
+- Novel-only-on-read at `spell.c:519`.
+
+### Notes
+- Forbidden-reads list is technically incomplete (coins, credit cards, candy bars, magic markers, dunce caps, Orb of Fate signature, naming artifacts, Archeologist scroll auto-decipher), but per no-trivia the headline cases suffice. Tourists attempting Illiterate need to ditch their starting dunce cap; Archeologists must not pick up unknown scrolls — both are role-specific traps that an Illiterate player will discover.
+
+---
+
+## 2026-05-18 — v2 audit #55: Weapons Tables — Shuriken
+
+Source: `spoilers/companion.md` line 7591. No corrections (re-audit clean).
+
+### Verified
+- 1d8/1d6, wt 1, cost 5, +2 hit, iron, PIERCE, missile, P_SHURIKEN at `include/objects.h:163-165`.
+- `is_poisonable` per `include/obj.h:264-268`.
+- Samurai trains to Expert per `src/u_init.c:481`.
+
+---
