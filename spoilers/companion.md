@@ -717,7 +717,7 @@ the basin.
 
 | Outcome         | Effect                                                |
 | --------------- | ----------------------------------------------------- |
-| Water demon     | A water demon appears (~1/30). On shallow levels he may grant a wish; deeper down he's just hostile. Wish odds work out to roughly 1/150 shallow and zero past DLvl 20. |
+| Water demon     | A water demon appears, hostile (see note below for shallow-level wish odds)              |
 | Healing         | You regain hit points                                 |
 | Attribute boost | A random attribute increases                          |
 | Attribute loss  | A random attribute decreases                          |
@@ -727,7 +727,10 @@ the basin.
 
 Most of the time, nothing happens. Sometimes something wonderful
 happens. And sometimes a water demon appears and reminds you that
-curiosity has a body count.
+curiosity has a body count. Demons appear about 1 quaff in 30; on
+shallow levels they may grant you a wish before leaving, working out
+to roughly 1 wish per 150 quaffs. Past Dlvl 20 the wish odds drop to
+zero — only the hostility remains.
 
 **Dipping in a fountain** is a different gamble, and one that Lawful
 characters should know by heart. If you're at least experience level
@@ -825,7 +828,7 @@ risking a sip. Five potions print unique sink-only messages:
 
 | Sink message                                                 | Potion             |
 | ------------------------------------------------------------ | ------------------ |
-| *"The sink transforms into a fountain/throne/altar/grave!"* (or *"The sink vanishes."*) | polymorph (destroys the sink) |
+| *"The sink transforms into a fountain/throne/altar/grave!"* (or *"The sink vanishes."*) | polymorph                     |
 | *"Muddy waste pops up from the drain..."* (first time per sink also drops a ring) | levitation |
 | *"It leaves an oily film on the basin."*                     | oil                |
 | *"The drain seems less clogged."* (blind: *"a sucking sound"*)| acid               |
@@ -934,8 +937,8 @@ pick up before relying on it.)
 The entrance staircase appears somewhere around dungeon levels 6
 through 10 (one level below the Oracle), and it goes up. Sokoban is a set of
 four puzzle levels where you push boulders onto holes or into place
-to open a path. No teleport works here, and you can't dig down off
-the entrance level (its floor is reinforced).
+to open a path. Teleport doesn't work here, and you can't dig down
+off the entrance level (its floor is reinforced).
 
 The puzzles are fixed (two variants per level, randomly chosen).
 <!-- audit 2026-05-18 #111: "break it ... by force-fighting it" is wrong. Force-fighting a bare boulder is harmless per hack.c:2287, 2318-2321 ("you harmlessly attack the boulder"). The cheat path is digging with a wielded pick-axe/mattock (hack.c:2269-2275). Reworded to fracture-via-striking/earth-scroll/polymorph and added the pick-axe caveat. Confirmed all other Sokoban claims: Oracle base 5-9 + Sokoban one above = entrance dlvl 6-10 (dungeon.lua:21-24, 60-66); 4 levels × 2 variants each; noteleport flag; sokoban_guilt() calls at hack.c:307 (squeeze), zap.c:5555 (fracture by striking), zap.c:1710 (polymorph), read.c:1951 (earth scroll); each triggers change_luck(-1) + u.uconduct.sokocheat (trap.c:7039-7054); conduct reported only when branch entered (insight.c:2215-2228). Levitation/flying free of penalty (hack.c:415-425). v2 audit 2026-05-18 #24: two fixes. (a) "Can't dig through the floors" was too broad — hardfloor is set only on the entrance level (soko4-{1,2}.lua:38,7); interior soko levels would let you dig down, but only onto another soko level (Sokoban is a single-direction up-branch). Narrowed to "can't dig down off the entrance level." (b) "Levitation or flying over unfinished pits is free of penalty" was misleading because hack.c:415-425 rejects boulder pushes while levitating ("you don't have enough leverage"), so levitation prevents Sokoban progress entirely. Split: flying is the useful tactic; levitation is no penalty but also no progress. See companion-audit.md. -->
@@ -948,9 +951,8 @@ fit), **dig the boulder out** (dig the wall or dig the boulder
 with a wielded pick-axe or mattock), or **fracture it** with a
 wand of striking or a scroll of earth (or polymorph the boulder
 into something else). Each of these costs a point of Luck and
-breaks the Sokoban conduct. Flying lets you skip unfinished pits
-without penalty. Levitation avoids pits too, but it also prevents
-you from pushing boulders at all, so it's useless for solving.
+breaks the Sokoban conduct. Flying or levitation lets you skip
+unfinished pits without penalty.
 **Teleport doesn't work here:** the level forbids it.
 
 The prize at the top is either a **bag of holding** or an **amulet
@@ -1010,16 +1012,14 @@ or worn intrinsics: protection, luck, ESP, warning, reflection, or
 stealth depending on role. A few grant magic resistance just by
 being carried; a few others block magic attacks only when wielded
 or worn. The Artifacts chapter has the per-role list. Getting your
-quest artifact is a major power spike. The late game starts here.
+quest artifact is a pivotal moment. The late game starts here.
 
 **Two prizes wait on the nemesis's square.** The **Bell of Opening**
 rides in the nemesis's pack and falls when you kill them (one of the
 three invocation items you'll need for Gehennom). Your role's quest
 artifact has been sitting under their feet the whole time, placed
-when the level was generated. Pick both up. They don't auto-add to
-your pack and they don't reappear, so if you leave the floor without
-them you're walking back. The Quest is the only place in the game
-you can get them.
+when the level was generated. Pick both up. The Quest is the only
+place in the game you can get them.
 
 Most nemeses carry an amulet of life saving, so expect to kill them
 twice. The portal back is on the first Quest level only. If you
@@ -1066,9 +1066,9 @@ trips. Four guard dragons. A stone giant. Four giant eels
 patrolling the moat. And **Croesus** on the throne, the vault
 guardian himself. The level is non-diggable. The level prevents
 teleportation, so once you're inside the only way out is back
-through the portal or a scroll of teleportation. Kill Croesus, loot the place, leave.
-Croesus is covetous and hits hard in melee, so shoot or zap him
-from across the moat rather than walking up.
+through the portal or a scroll of teleportation. Croesus is
+covetous and hits hard in melee, so shoot or zap him from across
+the moat rather than walking up.
 
 The real prize is the gold. A 60-square treasury holds 36k to 54k
 gold, with land mines and spiked pits on roughly a third of the
@@ -2527,8 +2527,7 @@ win. A dead pet is not just a loss of utility; it's a cold feeling
 in the pit of your stomach.
 
 If you change levels and your pet isn't adjacent, it won't follow.
-There's no message: the pet simply isn't with you on the new
-level, alive on the floor where you left it. Its loyalty is
+Your pet is still alive on the previous level, but its loyalty is
 ticking down. Go back for it before it forgets you were friends.
 
 If you see *"You have a sad feeling for a moment"* — that's
@@ -5155,8 +5154,10 @@ Here's a rough guide to what you can safely read:
 
 The "Minimum Int + XL" column means the sum of your Intelligence
 and experience level. With 18 Intelligence at level 14, your sum is
-32, so you can reliably read up to level 6 spells. A blessed book
-effectively adds 2-3 to this number.
+32, so you can reliably read up to level 6 spells. **A blessed
+book skips the difficulty check entirely and always succeeds**, no
+matter what your Int and level are — which is one reason to save
+holy water for your hardest unread spellbooks.
 
 **Wizards identify books by training.** In 5.0, advancing
 a spell school skill to each rank automatically reveals the appearances
@@ -5805,12 +5806,12 @@ winners carry. Here is the canonical kit, slot by slot:
 |--------|------------------------|---------------------------------------|
 | **Body** | Dragon scale mail | Gray (magic resistance) or silver (reflection) are the popular picks; blue (shock) also works. |
 | **Cloak** | Cloak of magic resistance | Or a robe for casters. Magic resistance is non-negotiable in Gehennom. |
-| **Helm** | Helm of brilliance or helm of telepathy | Brilliance for casters; telepathy when you might be blind. (Priest can wear the Mitre of Holiness — a helm of brilliance that adds fire resistance, +1 protection, and an energy-boost invoke.) |
+| **Helm** | Helm of brilliance or helm of telepathy | Brilliance for casters; telepathy when you might be blind. |
 | **Gloves** | Gauntlets of power | Skip them only if you have a different STR strategy (e.g. a Knight with a +STR ring). |
 | **Boots** | Speed boots | **Universal.** |
 | **Shirt** | Hawaiian shirt or T-shirt | A free body slot under everything else — winners enchant it heavily (typically blessed +4 or +5) for several extra AC at no cost. |
 | **Shield** | Mostly skipped | Reflection comes from silver dragon scale mail or an amulet instead; two-weapon fighters can't use a shield anyway. |
-| **Amulet** | Amulet of life saving | The "extra life" plan. (Wizards who survive to their quest can wear the Eye of the Aethiopica instead for magic resistance, half-spell-damage, and energy regen.) |
+| **Amulet** | Amulet of life saving | The "extra life" plan. |
 | **Ring (L)** | Free action | Anti-paralysis is non-negotiable on the Astral Plane. |
 | **Ring (R)** | Slow digestion, conflict, or regeneration | Conflict is the standard Astral-Plane crowd-control choice. |
 | **Weapon** | Your role's quest artifact + a silver saber | Silver saber appears in most builds as the off-hand because silver bypasses demon resistances. |
@@ -5898,7 +5899,7 @@ Everything that can go wrong will try:
   Chaotics and softest on Lawfuls, but Lawfuls also pay the
   longest tail when it does trigger. In 5.0 it **decays** as it
   triggers: every yank slightly reduces the chance of the next
-  one. The force is a hard Gehennom gate — it stops the moment
+  one. The force is a hard Gehennom gate: it stops the moment
   you climb out of Gehennom, and it also never fires on the
   bottom four levels.
 
@@ -5966,7 +5967,7 @@ carry you across the level faster than fighting against it,
 and a bubble may eventually drift you onto the portal square
 itself. (Note that teleportation is blocked on every plane, so
 wand of teleport on yourself just prints "A mysterious force
-prevents you from teleporting!" — it still works on monsters for
+prevents you from teleporting!" It still works on monsters for
 clearing space.)
 
 #### Plane of Fire
@@ -6014,8 +6015,8 @@ they revive, they pursue, they do not stop. Don't try to clear
 the level. You are not here to fight. You are here to reach one
 altar, make one sacrifice, and end this.
 
-- Conflict and teleportation wands clear a path through the crowds
-  — though note teleportation on **yourself** fails on every
+- Conflict and teleportation wands clear a path through the
+  crowds, though note teleportation on **yourself** fails on every
   elemental plane (only monster-targeted teleport works).
 - Identify the correct altar by walking adjacent to it: farlook
   (`;`) reveals an altar's alignment only when you're standing
@@ -6958,9 +6959,8 @@ Mazes 5.0 added five more tracked conducts: Pauper, Petless,
 Permadeaf, Sokoban, and Bonesless. Pauper, Permadeaf, and Bonesless
 are start-of-game options (you opt in or out before play). Sokoban
 is tracked automatically based on what you do during the run.
-Petless requires never having a pet — including the starting one —
-so it's effectively a Pauper sub-conduct (only Pauper suppresses
-your starting pet).
+Petless is also gameplay-tracked, but suppressing the starting pet
+requires either `OPTIONS=pettype:none` or playing Pauper.
 
 #### Pauper (new in 5.0)
 <!-- audit 2026-05-17 #72 (re-audit 2026-05-19 v2 #129): ini_inv early-return at u_init.c:1308-1309 confirmed (no starting items at all, not just no armor/gold). nudist cascade at options.c:5290-5293. End-of-game string at insight.c:2117-2119. xlogfile at topten.c:604. Corrected "permanent conduct, set at birth and never lost" — pauper flag itself is permanent, but the cascading nudist flag IS cleared the moment you wear armor (worn.c:135-136). Added the pauper compensations from u_init.c:870+ (weapon-skill slots, known spell/item per role, supply chests). v2 fix: "rcfile or command line only" was wrong — pauper is `set_in_config` at optlist.h:559, which means rcfile or NETHACKOPTIONS env. Unix command-line option parsing in unixmain.c:343-426 has no generic `-pauper` handler (same pattern as the Permadeaf `-Dpermadeaf` fix in v2 #122). Reworded to "rcfile or NETHACKOPTIONS env only." Applied the same fix to the Bonesless section since the same wording appears there too. See companion-audit.md. -->
@@ -6993,7 +6993,7 @@ dogs and cats, or magic-trap accidents. You lose the curse-detection
 trick, the combat assist, the shoplifting option, and the
 companionship. What you gain is the particular satisfaction of
 knowing that everything that died did so by your hand, and that you
-never had to feel guilty about leading something loyal into a
+never had to feel guilty about leading your loyal companion into a
 polymorph trap.
 
 #### Permadeaf (new in 5.0)

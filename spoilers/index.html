@@ -886,9 +886,8 @@ these reels:</p>
 <tbody>
 <tr>
 <td>Water demon</td>
-<td>A water demon appears (~1/30). On shallow levels he may grant a
-wish; deeper down he’s just hostile. Wish odds work out to roughly 1/150
-shallow and zero past DLvl 20.</td>
+<td>A water demon appears, hostile (see note below for shallow-level
+wish odds)</td>
 </tr>
 <tr>
 <td>Healing</td>
@@ -918,7 +917,10 @@ shallow and zero past DLvl 20.</td>
 </table>
 <p>Most of the time, nothing happens. Sometimes something wonderful
 happens. And sometimes a water demon appears and reminds you that
-curiosity has a body count.</p>
+curiosity has a body count. Demons appear about 1 quaff in 30; on
+shallow levels they may grant you a wish before leaving, working out to
+roughly 1 wish per 150 quaffs. Past Dlvl 20 the wish odds drop to zero —
+only the hostility remains.</p>
 <p><strong>Dipping in a fountain</strong> is a different gamble, and one
 that Lawful characters should know by heart. If you’re at least
 experience level 5, dipping a long sword may transform it into
@@ -1018,7 +1020,7 @@ risking a sip. Five potions print unique sink-only messages:</p>
 <tr>
 <td><em>“The sink transforms into a fountain/throne/altar/grave!”</em>
 (or <em>“The sink vanishes.”</em>)</td>
-<td>polymorph (destroys the sink)</td>
+<td>polymorph</td>
 </tr>
 <tr>
 <td><em>“Muddy waste pops up from the drain…”</em> (first time per sink
@@ -1212,8 +1214,8 @@ before relying on it.)</p>
 <p>The entrance staircase appears somewhere around dungeon levels 6
 through 10 (one level below the Oracle), and it goes up. Sokoban is a
 set of four puzzle levels where you push boulders onto holes or into
-place to open a path. No teleport works here, and you can’t dig down off
-the entrance level (its floor is reinforced).</p>
+place to open a path. Teleport doesn’t work here, and you can’t dig down
+off the entrance level (its floor is reinforced).</p>
 <p>The puzzles are fixed (two variants per level, randomly chosen).
 <!-- audit 2026-05-18 #111: "break it ... by force-fighting it" is wrong. Force-fighting a bare boulder is harmless per hack.c:2287, 2318-2321 ("you harmlessly attack the boulder"). The cheat path is digging with a wielded pick-axe/mattock (hack.c:2269-2275). Reworded to fracture-via-striking/earth-scroll/polymorph and added the pick-axe caveat. Confirmed all other Sokoban claims: Oracle base 5-9 + Sokoban one above = entrance dlvl 6-10 (dungeon.lua:21-24, 60-66); 4 levels × 2 variants each; noteleport flag; sokoban_guilt() calls at hack.c:307 (squeeze), zap.c:5555 (fracture by striking), zap.c:1710 (polymorph), read.c:1951 (earth scroll); each triggers change_luck(-1) + u.uconduct.sokocheat (trap.c:7039-7054); conduct reported only when branch entered (insight.c:2215-2228). Levitation/flying free of penalty (hack.c:415-425). v2 audit 2026-05-18 #24: two fixes. (a) "Can't dig through the floors" was too broad — hardfloor is set only on the entrance level (soko4-{1,2}.lua:38,7); interior soko levels would let you dig down, but only onto another soko level (Sokoban is a single-direction up-branch). Narrowed to "can't dig down off the entrance level." (b) "Levitation or flying over unfinished pits is free of penalty" was misleading because hack.c:415-425 rejects boulder pushes while levitating ("you don't have enough leverage"), so levitation prevents Sokoban progress entirely. Split: flying is the useful tactic; levitation is no penalty but also no progress. See companion-audit.md. --></p>
 <p>Each level has exactly one correct solution. If you push a boulder
@@ -1224,10 +1226,9 @@ fit), <strong>dig the boulder out</strong> (dig the wall or dig the
 boulder with a wielded pick-axe or mattock), or <strong>fracture
 it</strong> with a wand of striking or a scroll of earth (or polymorph
 the boulder into something else). Each of these costs a point of Luck
-and breaks the Sokoban conduct. Flying lets you skip unfinished pits
-without penalty. Levitation avoids pits too, but it also prevents you
-from pushing boulders at all, so it’s useless for solving.
-<strong>Teleport doesn’t work here:</strong> the level forbids it.</p>
+and breaks the Sokoban conduct. Flying or levitation lets you skip
+unfinished pits without penalty. <strong>Teleport doesn’t work
+here:</strong> the level forbids it.</p>
 <p>The prize at the top is either a <strong>bag of holding</strong> or
 an <strong>amulet of reflection</strong>, both extremely valuable; the
 <a href="#sokoban-solutions">Sokoban Solutions appendix</a> documents
@@ -1280,16 +1281,14 @@ Overworld. And so on.</p>
 worn intrinsics: protection, luck, ESP, warning, reflection, or stealth
 depending on role. A few grant magic resistance just by being carried; a
 few others block magic attacks only when wielded or worn. The Artifacts
-chapter has the per-role list. Getting your quest artifact is a major
-power spike. The late game starts here.</p>
+chapter has the per-role list. Getting your quest artifact is a pivotal
+moment. The late game starts here.</p>
 <p><strong>Two prizes wait on the nemesis’s square.</strong> The
 <strong>Bell of Opening</strong> rides in the nemesis’s pack and falls
 when you kill them (one of the three invocation items you’ll need for
 Gehennom). Your role’s quest artifact has been sitting under their feet
-the whole time, placed when the level was generated. Pick both up. They
-don’t auto-add to your pack and they don’t reappear, so if you leave the
-floor without them you’re walking back. The Quest is the only place in
-the game you can get them.</p>
+the whole time, placed when the level was generated. Pick both up. The
+Quest is the only place in the game you can get them.</p>
 <p>Most nemeses carry an amulet of life saving, so expect to kill them
 twice. The portal back is on the first Quest level only. If you descend
 underprepared you may have a long climb home.</p>
@@ -1333,9 +1332,8 @@ dragons. A stone giant. Four giant eels patrolling the moat. And
 <strong>Croesus</strong> on the throne, the vault guardian himself. The
 level is non-diggable. The level prevents teleportation, so once you’re
 inside the only way out is back through the portal or a scroll of
-teleportation. Kill Croesus, loot the place, leave. Croesus is covetous
-and hits hard in melee, so shoot or zap him from across the moat rather
-than walking up.</p>
+teleportation. Croesus is covetous and hits hard in melee, so shoot or
+zap him from across the moat rather than walking up.</p>
 <p>The real prize is the gold. A 60-square treasury holds 36k to 54k
 gold, with land mines and spiked pits on roughly a third of the tiles.
 Gem caches in each corner tower (diamonds, emeralds, rubies, amethysts),
@@ -3388,9 +3386,8 @@ monsters, drowning in water. Keep an eye on your companion’s health
 A dead pet is not just a loss of utility; it’s a cold feeling in the pit
 of your stomach.</p>
 <p>If you change levels and your pet isn’t adjacent, it won’t follow.
-There’s no message: the pet simply isn’t with you on the new level,
-alive on the floor where you left it. Its loyalty is ticking down. Go
-back for it before it forgets you were friends.</p>
+Your pet is still alive on the previous level, but its loyalty is
+ticking down. Go back for it before it forgets you were friends.</p>
 <p>If you see <em>“You have a sad feeling for a moment”</em> — that’s
 different. That message means a pet of yours just died offscreen on
 another level, usually one you left behind that got into a fight it
@@ -7522,8 +7519,10 @@ the failure effects above.</p>
 </table>
 <p>The “Minimum Int + XL” column means the sum of your Intelligence and
 experience level. With 18 Intelligence at level 14, your sum is 32, so
-you can reliably read up to level 6 spells. A blessed book effectively
-adds 2-3 to this number.</p>
+you can reliably read up to level 6 spells. <strong>A blessed book skips
+the difficulty check entirely and always succeeds</strong>, no matter
+what your Int and level are — which is one reason to save holy water for
+your hardest unread spellbooks.</p>
 <p><strong>Wizards identify books by training.</strong> In 5.0,
 advancing a spell school skill to each rank automatically reveals the
 appearances of spellbooks in that school: unskilled unlocks level-1
@@ -8274,9 +8273,7 @@ Gehennom.</td>
 <tr>
 <td><strong>Helm</strong></td>
 <td>Helm of brilliance or helm of telepathy</td>
-<td>Brilliance for casters; telepathy when you might be blind. (Priest
-can wear the Mitre of Holiness — a helm of brilliance that adds fire
-resistance, +1 protection, and an energy-boost invoke.)</td>
+<td>Brilliance for casters; telepathy when you might be blind.</td>
 </tr>
 <tr>
 <td><strong>Gloves</strong></td>
@@ -8304,9 +8301,7 @@ two-weapon fighters can’t use a shield anyway.</td>
 <tr>
 <td><strong>Amulet</strong></td>
 <td>Amulet of life saving</td>
-<td>The “extra life” plan. (Wizards who survive to their quest can wear
-the Eye of the Aethiopica instead for magic resistance,
-half-spell-damage, and energy regen.)</td>
+<td>The “extra life” plan.</td>
 </tr>
 <tr>
 <td><strong>Ring (L)</strong></td>
@@ -8413,7 +8408,7 @@ levels (Neutral max), or even three (Lawfuls only) — the dungeon is
 literally holding onto you. The pull is hardest on Chaotics and softest
 on Lawfuls, but Lawfuls also pay the longest tail when it does trigger.
 In 5.0 it <strong>decays</strong> as it triggers: every yank slightly
-reduces the chance of the next one. The force is a hard Gehennom gate —
+reduces the chance of the next one. The force is a hard Gehennom gate:
 it stops the moment you climb out of Gehennom, and it also never fires
 on the bottom four levels.</li>
 </ul>
@@ -8481,7 +8476,7 @@ shift with it. Walking with the drift can carry you across the level
 faster than fighting against it, and a bubble may eventually drift you
 onto the portal square itself. (Note that teleportation is blocked on
 every plane, so wand of teleport on yourself just prints “A mysterious
-force prevents you from teleporting!” — it still works on monsters for
+force prevents you from teleporting!” It still works on monsters for
 clearing space.)</p>
 </section>
 <section id="plane-of-fire" class="level4">
@@ -8527,7 +8522,7 @@ revive, they pursue, they do not stop. Don’t try to clear the level. You
 are not here to fight. You are here to reach one altar, make one
 sacrifice, and end this.</p>
 <ul>
-<li>Conflict and teleportation wands clear a path through the crowds —
+<li>Conflict and teleportation wands clear a path through the crowds,
 though note teleportation on <strong>yourself</strong> fails on every
 elemental plane (only monster-targeted teleport works).</li>
 <li>Identify the correct altar by walking adjacent to it: farlook
@@ -9410,10 +9405,9 @@ other senses to navigate. Officially tracked since 3.6.</p>
 <p>Mazes 5.0 added five more tracked conducts: Pauper, Petless,
 Permadeaf, Sokoban, and Bonesless. Pauper, Permadeaf, and Bonesless are
 start-of-game options (you opt in or out before play). Sokoban is
-tracked automatically based on what you do during the run. Petless
-requires never having a pet — including the starting one — so it’s
-effectively a Pauper sub-conduct (only Pauper suppresses your starting
-pet).</p>
+tracked automatically based on what you do during the run. Petless is
+also gameplay-tracked, but suppressing the starting pet requires either
+<code>OPTIONS=pettype:none</code> or playing Pauper.</p>
 </section>
 <section id="pauper-new-in-5.0" class="level4">
 <h4>Pauper (new in 5.0)</h4>
@@ -9444,7 +9438,7 @@ and cats, or magic-trap accidents. You lose the curse-detection trick,
 the combat assist, the shoplifting option, and the companionship. What
 you gain is the particular satisfaction of knowing that everything that
 died did so by your hand, and that you never had to feel guilty about
-leading something loyal into a polymorph trap.</p>
+leading your loyal companion into a polymorph trap.</p>
 </section>
 <section id="permadeaf-new-in-5.0" class="level4">
 <h4>Permadeaf (new in 5.0)</h4>
