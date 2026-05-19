@@ -7761,3 +7761,85 @@ Source: `spoilers/companion.md` line 7591. No corrections (re-audit clean).
 - Samurai trains to Expert per `src/u_init.c:481`.
 
 ---
+
+## 2026-05-18 — v2 audit #56: Sokoban Solutions — Level 2, Version B
+
+Source: `spoilers/companion.md` line 6290. No spoiler-text corrections; 1 badge correction.
+
+### Wrong → fixed (badge only)
+- The pass-1 badge cited "soko2-2.lua" as the source file. The actual source is `dat/soko3-2.lua` (NetHack Sokoban .lua files are numbered from the bottom up, so spoiler "Level 2" = second-from-top = soko3-X). Badge corrected.
+
+### Verified
+- All 16 boulder start coords (A-P) match `dat/soko3-2.lua:33-48` under spoiler = lua+1.
+- Downstair @=(4,2)/lua(3,1), upstair <=(21,5)/lua(20,4), locked door +=(25,10)/lua(24,9), rolling-boulder →=(12,11)/lua(11,10), twelve hole traps at spoiler (13-24,11).
+- All 22 push steps geometrically legal.
+- Both intermediate diagrams (after step 9, after step 16) match simulated boulder positions.
+- Step 17 (H left one) is necessary to clear the pushing position for steps 18 and 22.
+- Final tally "Four boulders (A, D, G, and H) remain" — checks.
+
+### Notes
+- Step 21 ("Push G right one square. Push D up one square.") is gratuitous (the pass-1 badge already flagged this as "harmless"). Left as-is.
+
+---
+
+## 2026-05-18 — v2 audit #57: Weapons Tables — Spear
+
+Source: `spoilers/companion.md` line 7476. 1 factual correction.
+
+### Wrong → fixed
+- **"The Valkyrie ... gets +1 multishot on any thrown spear"**: wrong. Per `src/dothrow.c:47-52` the P_SPEAR class multishot bonus goes to `PM_CAVE_DWELLER` (Caveman), not Valkyrie. Valkyrie has no class-specific spear multishot — she gets only the generic Expert-tier multishot that any Expert spear-user gets. The pass-1 audit asserted this incorrectly. Reworded the strategic framing: Valkyrie still starts with a spear and trains to Expert, but the Caveman is the actual multishot specialist. Updated the javelin Notes cell from "Valkyries can ranged-spam them" to "Cavemen can ranged-spam them."
+
+### Verified
+- All damage/weight/cost stats match `include/objects.h:174-191`.
+- Valkyrie starts with a spear and caps at Expert (`u_init.c:160-161, 537`).
+- Kebab +2 to-hit list (xorn, dragon, jabberwock, naga, giant) at `src/weapon.c:71-73, 167-168`.
+- No spear artifacts in `include/artilist.h`.
+- Stiletto is P_KNIFE, correctly excluded.
+
+---
+
+## 2026-05-18 — v2 audit #58: Voluntary Challenges — Wishing Restrictions
+
+Source: `spoilers/companion.md` line 6874. No corrections (re-audit clean).
+
+### Verified
+- Two separate counters: `u.uconduct.wishes` and `u.uconduct.wisharti` at `include/you.h:157-158`.
+- Two xlogfile achievements: `wishless` / `artiwishless` at `topten.c:596-597`.
+- Wish sources: wand of wishing, smoky-potion djinni, fountain water demon, Vlad's throne, Amulet of Yendor pickup. All routes converge on `makewish()`.
+- Wishing for literal "nothing" returns early without ticking the counter (`zap.c:6369-6373`).
+- `wisharti` ticks even for *denied* artifact wishes (`objnam.c:5362-5365` runs BEFORE the deny branch at 5371-5381).
+
+---
+
+## 2026-05-18 — v2 audit #59: Voluntary Challenges — Petless
+
+Source: `spoilers/companion.md` line 6945. 1 factual correction (fabrication removed).
+
+### Wrong → fixed
+- **"dairy products to foocubi"**: not a NetHack mechanic. Food-throw taming gates on `is_domestic(ptr)` (or monkey/ape + banana) per `include/mondata.h:255-261 befriend_with_obj()`. Foocubi aren't domestic and cannot be tamed by thrown food of any kind. The wiki-known foocubus trick is throwing a ring of adornment (pacification, not taming). Fabricated mechanism. Replaced with the actual food-throw taming path that was missing from the list: "food thrown at hostile dogs and cats."
+
+### Verified
+- `u.uconduct.pets` counter at `include/you.h:161`, incremented in `dog.c:87`.
+- `OPTIONS=pettype:none` short-circuits `makedog()` at `dog.c:225-229`, overriding per-role mandatory pets.
+- 5.0 addition per `doc/fixes5-0-0.txt:2843`.
+- Real taming paths: scrolls of taming (`read.c:1057, 3325`), charm-monster spell (`spell.c:1522`), magic trap (`trap.c:4429`), food-throw at domestic monsters (covered by the fix above), magic flute (`music.c:214`), figurines.
+- `petless` xlogfile achievement at `topten.c:606`.
+
+### Notes
+- The list is still exemplary rather than exhaustive (figurines, magic flute, werecreatures, demon-summoning prayer rewards all missing) — but per no-trivia the four examples in the spoiler suffice.
+
+---
+
+## 2026-05-18 — v2 audit #60: Sokoban Solutions — Level 3, Version B
+
+Source: `spoilers/companion.md` line 6427. No corrections (re-audit clean).
+
+### Verified
+- All 16 boulders A-P map to `dat/soko2-2.lua` coords under spoiler = lua+1.
+- Upstair `<` at (16,7) per pass-1 fix; downstair/start `@` at (7,12); rolling-boulder trap at (8,12); eleven holes at cols 9-19; two locked doors at (20,10) and (20,12).
+- 15 numbered steps faithfully compress Boudewijn Waijers's original 22 steps (the spoiler merges adjacent Push+Finish pairs).
+- Each push geometrically reachable.
+- Intermediate map state after step 7 matches expected boulder positions.
+- Final tally "Five boulders (A, B, D, E, and J) remain" exact (16 − 11 finished).
+
+---

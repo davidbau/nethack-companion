@@ -64,11 +64,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 53**  L 1410  (  71 lines)     ↳ Traps and Hazards → Engravings
 - [x] **# 54**  L 6796  (  14 lines)     ↳ Voluntary Challenges → Illiterate
 - [x] **# 55**  L 7572  (  11 lines)     ↳ Weapons Tables → Shuriken
-- [ ] **# 56**  L 6273  ( 100 lines)     ↳ Sokoban Solutions → Level 2, Version B
-- [ ] **# 57**  L 7457  (  26 lines)     ↳ Weapons Tables → Spear
-- [ ] **# 58**  L 6856  (  23 lines)     ↳ Voluntary Challenges → Wishing Restrictions
-- [ ] **# 59**  L 6927  (  13 lines)     ↳ Voluntary Challenges → Petless (new in 5.0)
-- [ ] **# 60**  L 6409  (  62 lines)     ↳ Sokoban Solutions → Level 3, Version B
+- [x] **# 56**  L 6273  ( 100 lines)     ↳ Sokoban Solutions → Level 2, Version B
+- [x] **# 57**  L 7457  (  26 lines)     ↳ Weapons Tables → Spear
+- [x] **# 58**  L 6856  (  23 lines)     ↳ Voluntary Challenges → Wishing Restrictions
+- [x] **# 59**  L 6927  (  13 lines)     ↳ Voluntary Challenges → Petless (new in 5.0)
+- [x] **# 60**  L 6409  (  62 lines)     ↳ Sokoban Solutions → Level 3, Version B
 - [ ] **# 61**  L 8502  (  19 lines)     ↳ Bestiary Tables → Elementals `E`
 - [ ] **# 62**  L 3892  ( 146 lines)   📖 Tools of the Trade
 - [ ] **# 63**  L 1310  (  24 lines)     ↳ Traps and Hazards → Searching and Detection

@@ -8798,7 +8798,7 @@ are always scrolls of earth.</p>
 </section>
 <section id="level-2-version-b" class="level4">
 <h4>Level 2, Version B</h4>
-<!-- audit 2026-05-18 #94: 16-boulder layout + all 22 solution steps verified geometrically by simulation (player connectivity + clear-path checks). Intermediate diagrams at steps 9 and 16 match the simulated boulder positions. Both end-of-solution boulder lists correct. Close call: step 21's "G right 1, D up 1" is gratuitous (those boulders aren't going to a hole) but harmless. Map is a stylized rendering of soko2-2.lua, topologically equivalent. See companion-audit.md. -->
+<!-- audit 2026-05-18 #94 (re-audit 2026-05-18 v2 #56): 16-boulder layout + all 22 solution steps verified geometrically by simulation (player connectivity + clear-path checks). Intermediate diagrams at steps 9 and 16 match the simulated boulder positions. Both end-of-solution boulder lists correct. Close call: step 21's "G right 1, D up 1" is gratuitous (those boulders aren't going to a hole) but harmless. v2 corrected the pass-1 badge: the actual source file is soko3-2.lua, not soko2-2.lua (NetHack Sokoban numbers .lua files from bottom up, so spoiler "Level 2" = second-from-top = soko3-X). Map is a stylized rendering of soko3-2.lua, topologically equivalent. v2 re-verified all 16 boulders and step 17 (push H left) is necessary, not cosmetic. 0 spoiler-text corrections. See companion-audit.md. -->
 <pre><code>            11111111112222222
    12345678901234567890123456
  1  ┌──┐          ┌─────────┐
@@ -8920,7 +8920,7 @@ like E.</li>
 </section>
 <section id="level-3-version-b" class="level4">
 <h4>Level 3, Version B</h4>
-<!-- audit 2026-05-18 #112: upstair < was placed at spoiler (16,8) in both the initial and intermediate maps; soko2-2.lua:25 puts it at (15,6) which translates to spoiler (16,7). Moved up one row in both maps. Otherwise clean: 16 boulders match, 15 solution steps verified against soko2-2.lua. -->
+<!-- audit 2026-05-18 #112 (re-audit 2026-05-18 v2 #60): upstair < was placed at spoiler (16,8) in both the initial and intermediate maps; soko2-2.lua:25 puts it at (15,6) which translates to spoiler (16,7). Moved up one row in both maps. Otherwise clean: 16 boulders match, 15 solution steps verified against soko2-2.lua. v2 re-verified: all 16 boulders A-P map exactly to lua coords; upstair at (16,7), downstair/start at (7,12), rolling-boulder trap at (8,12) with 11 holes at cols 9-19, two locked doors at (20,10) and (20,12). 15 steps compress Boudewijn Waijers's original 22; each push geometrically reachable. "Five boulders remain" tally exact. 0 corrections. See companion-audit.md. -->
 <pre><code>            1111111111222
    1234567890123456789012
  1   ┌─┬────┐  
@@ -9340,7 +9340,7 @@ players use to obtain specific high-value items.</p>
 </section>
 <section id="wishing-restrictions" class="level4">
 <h4>Wishing Restrictions</h4>
-<!-- audit 2026-05-18 #83: u.uconduct.wishes and u.uconduct.wisharti are two separate counters with two separate xlogfile achievements (you.h:157-158, topten.c:596-597). Wishing for the literal string "nothing" doesn't increment the counter (zap.c:6369). Amulet-of-Yendor first-pickup wish (allmain.c:445) must be declined for wishless conduct. See companion-audit.md. -->
+<!-- audit 2026-05-18 #83 (re-audit 2026-05-18 v2 #58): u.uconduct.wishes and u.uconduct.wisharti are two separate counters with two separate xlogfile achievements (you.h:157-158, topten.c:596-597). Wishing for the literal string "nothing" doesn't increment the counter (zap.c:6369). Amulet-of-Yendor first-pickup wish (allmain.c:445) must be declined for wishless conduct. v2 re-verified: wisharti counter ticks even for *denied* artifact wishes per objnam.c:5362-5365 (before the deny branch); fountain water demon routes through mongrantswish → makewish; wresting empty wands also routes through makewish at zap.c:2583. 0 corrections. See companion-audit.md. -->
 <p>Two related conducts:</p>
 <p><strong>Wishless.</strong> Never make a wish. Refuse wishes from
 wands, fountains, smoky potion djinn, thrones, and all other sources.
@@ -9403,16 +9403,16 @@ every 5.0 game, not just pauper) can provide much of your first kit.</p>
 </section>
 <section id="petless-new-in-5.0" class="level4">
 <h4>Petless (new in 5.0)</h4>
-<!-- audit 2026-05-17 #50: all claims verified. pettype:none bypasses pet_type via dog.c:225-229; tamedog increments u.uconduct.pets across all taming paths; minion.c:533-539 explicitly preserves petless on the endgame angel. xlogfile achievement at topten.c (add_achieveX "petless"). 0 corrections. See companion-audit.md. -->
+<!-- audit 2026-05-17 #50: all claims verified. pettype:none bypasses pet_type via dog.c:225-229; tamedog increments u.uconduct.pets across all taming paths; minion.c:533-539 explicitly preserves petless on the endgame angel. xlogfile achievement at topten.c (add_achieveX "petless"). 0 corrections. v2 audit 2026-05-18 #59: corrected one fabricated mechanism. "Dairy products to foocubi" is not a thing — befriend_with_obj at mondata.h:255-261 gates food-throw taming on is_domestic(ptr) (plus monkey/ape + banana), and foocubi aren't domestic. The wiki-known foocubus interaction is throwing a ring of adornment (pacification, not taming), not dairy. Replaced with "food thrown at hostile dogs and cats" — the actual food-throw taming path that was missing from the list. See companion-audit.md. -->
 <p>Never have a pet. Set <code>OPTIONS=pettype:none</code> in your
 rcfile to skip the starting companion entirely (this overrides per-role
 defaults). After that the conduct enforces itself: don’t tame anything
-via scrolls of taming, charm-monster spells, dairy products to foocubi,
-or magic-trap accidents. You lose the curse-detection trick, the combat
-assist, the shoplifting option, and the companionship. What you gain is
-the particular satisfaction of knowing that everything that died did so
-by your hand, and that you never had to feel guilty about leading
-something loyal into a polymorph trap.</p>
+via scrolls of taming, charm-monster spells, food thrown at hostile dogs
+and cats, or magic-trap accidents. You lose the curse-detection trick,
+the combat assist, the shoplifting option, and the companionship. What
+you gain is the particular satisfaction of knowing that everything that
+died did so by your hand, and that you never had to feel guilty about
+leading something loyal into a polymorph trap.</p>
 </section>
 <section id="permadeaf-new-in-5.0" class="level4">
 <h4>Permadeaf (new in 5.0)</h4>
@@ -10814,12 +10814,13 @@ identical across the class.</p>
 </section>
 <section id="spear" class="level4">
 <h4>Spear</h4>
-<!-- audit 2026-05-18 #115: stats verified vs objects.h:174-191. Added context the table omitted: Valkyrie starts with a plain spear at Expert (u_init.c:160-161, 537); Valkyries get +1 multishot for any thrown P_SPEAR item per dothrow.c:50-51 multishot_class_bonus (applies to silver spear and javelin too, not just plain spear); kebab bonus is +2 to-hit vs the big monsters (xorns, dragons, jabberwocks, nagas, giants) per weapon.c:71-73, 167-168 is_spear() check. Trident is correctly in its own section since it uses P_TRIDENT, a separate skill class. -->
+<!-- audit 2026-05-18 #115: stats verified vs objects.h:174-191. Added context the table omitted: Valkyrie starts with a plain spear at Expert (u_init.c:160-161, 537); kebab bonus is +2 to-hit vs the big monsters (xorns, dragons, jabberwocks, nagas, giants) per weapon.c:71-73, 167-168 is_spear() check. Trident is correctly in its own section since it uses P_TRIDENT, a separate skill class. v2 audit 2026-05-18 #57: corrected a significant factual error. The pass-1 audit attributed the +1 spear multishot to Valkyrie; per dothrow.c:47-52, the bonus actually belongs to PM_CAVE_DWELLER (Caveman), not Valkyrie. Valkyrie has no class-specific spear multishot — she gets only the generic Expert multishot ceiling. Reworded the strategic framing: the Valkyrie still starts with the spear and reaches Expert, but it's the Caveman who can spam thrown javelins. Updated the javelin Notes cell from "Valkyries can ranged-spam them" to "Cavemen can ranged-spam them". See companion-audit.md. -->
 <p>All spears share the <code>P_SPEAR</code> skill (trident is a
-different class — see below). The Valkyrie is the spear specialist:
-starts with one, can train to Expert, and <strong>gets +1 multishot on
-any thrown spear</strong> (regular, silver, javelin alike) — so a stack
-of javelins becomes a real ranged option for her.</p>
+different class — see below). The Valkyrie starts with one and can train
+to Expert. The <strong>Caveman</strong> is the actual spear-multishot
+specialist: Cavemen get +1 multishot on any thrown spear (regular,
+silver, javelin alike), so a stack of javelins is real ranged firepower
+for them.</p>
 <p>Spears get a <strong>+2 to-hit bonus</strong> when used against the
 big monsters — xorns, dragons, jabberwocks, nagas, and giants — the
 kebab bonus.</p>
@@ -10898,7 +10899,7 @@ kebab bonus.</p>
 <td>3</td>
 <td>—</td>
 <td>iron</td>
-<td>Stackable thrown weapon; Valkyries can ranged-spam them.</td>
+<td>Stackable thrown weapon; Cavemen can ranged-spam them.</td>
 </tr>
 </tbody>
 </table>
