@@ -9465,9 +9465,15 @@ Drew Streib, Alex Smith, Shawn Moore, George Koehler, Tjr,
 ZeroOne, and Ray Chason. The wiki's
 [NetHack 5.0.0 page](https://nethackwiki.com/wiki/NetHack_5.0.0)
 is the community's living changelog and was a major reference
-for the 5.0 update of this guide. The wiki is hosted alongside
-[nethack.alt.org](https://alt.org/nethack/), the longest-running
-public NetHack server.
+for the 5.0 update of this guide.
+
+**The public servers** where most NetHack is played today are
+[nethack.alt.org](https://alt.org/nethack/) (the longest-running
+public NetHack server, run by M. Drew Streib and Pasi Kallinen)
+and [hardfought.org](https://hardfought.org/) (run by K2,
+which also hosts the major variants). Both are free to play and
+log every ascension; the cause-of-death and ascension statistics
+cited throughout this guide come from their public records.
 
 **The r/nethack community** on Reddit has kept NetHack discussion
 alive for a new generation of players. Its moderators over the
