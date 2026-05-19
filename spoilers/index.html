@@ -8225,7 +8225,7 @@ by foot</li>
 </section>
 <section id="the-ascension-kit" class="level3">
 <h3>The Ascension Kit</h3>
-<!-- audit 2026-05-17 #15: ~30 claims verified, 3 corrected (helm of holiness doesn't exist; prayer CAN cure hunger and uncurse worn items per pray.c). See companion-audit.md. -->
+<!-- audit 2026-05-17 #15 (re-audit 2026-05-18 v2 #117): ~30 claims verified, 3 corrected (helm of holiness doesn't exist; prayer CAN cure hunger and uncurse worn items per pray.c). v2 fixes: (a) Mitre of Holiness row claimed "fire resistance + see invisible" — wrong. Per artilist.h:265-269, Mitre is a HELM_OF_BRILLIANCE base with CARY(AD_FIRE) (fire resistance), SPFX_PROTECT (+1 protection), M2_UNDEAD bonus, and ENERGY_BOOST invoke. No see invisible at all. The artifact table at line 4386 already has this right. Reworded the Ascension Kit cell to "a helm of brilliance that adds fire resistance, +1 protection, and an energy-boost invoke." (b) "An ascended Monk wore the Eye of the Aethiopica" — wrong. Eye of the Aethiopica is PM_WIZARD restricted (artilist.h:303-307, SPFX_RESTR + PM_WIZARD), so a Monk picking it up triggers the badclass blast (artifact.c:920-948). Reworded to "Wizards who survive to their quest can wear the Eye of the Aethiopica instead." Wand-of-death on the High Priest verified clean (zap.c:4314 type=-1 skips saving throws, High Priest has no antimagic gear or intrinsic mr1=70 doesn't gate). 0 other corrections. See companion-audit.md. -->
 <p>By the time you’re ready to invoke Moloch’s Sanctum, the loadout that
 experienced players actually wear has converged. A survey of recent
 ascensions from the public NetHack server shows what most winners carry.
@@ -8260,8 +8260,8 @@ Gehennom.</td>
 <td><strong>Helm</strong></td>
 <td>Helm of brilliance or helm of telepathy</td>
 <td>Brilliance for casters; telepathy when you might be blind. (Priest
-can wear the Mitre of Holiness for fire resistance + see
-invisible.)</td>
+can wear the Mitre of Holiness — a helm of brilliance that adds fire
+resistance, +1 protection, and an energy-boost invoke.)</td>
 </tr>
 <tr>
 <td><strong>Gloves</strong></td>
@@ -8289,8 +8289,9 @@ two-weapon fighters can’t use a shield anyway.</td>
 <tr>
 <td><strong>Amulet</strong></td>
 <td>Amulet of life saving</td>
-<td>The “extra life” plan. (An ascended Monk wore the Eye of the
-Aethiopica instead — a viable alternative for casters.)</td>
+<td>The “extra life” plan. (Wizards who survive to their quest can wear
+the Eye of the Aethiopica instead for magic resistance,
+half-spell-damage, and energy regen.)</td>
 </tr>
 <tr>
 <td><strong>Ring (L)</strong></td>
@@ -9370,7 +9371,7 @@ you can get the artifact before asking.</p>
 </section>
 <section id="combining-conducts" class="level4">
 <h4>Combining Conducts</h4>
-<!-- audit 2026-05-17 #52: u_conduct/u_roleplay fields verified against insight.c + you.h + topten.c. Verified: nudist/blind tracking since 3.6, 5.0 added pauper/petless/permadeaf/sokoban/bonesless, vegan ⊂ vegetarian hierarchy, show_conduct end-screen listing. Cross-section fix in Bonesless below removed false claims about lucky-no-bones earning the conduct and about #conduct tracking lifesaving uses. See companion-audit.md. -->
+<!-- audit 2026-05-17 #52 (re-audit 2026-05-18 v2 #114): u_conduct/u_roleplay fields verified against insight.c + you.h + topten.c. Verified: nudist/blind tracking since 3.6, 5.0 added pauper/petless/permadeaf/sokoban/bonesless, vegan ⊂ vegetarian hierarchy, show_conduct end-screen listing. Cross-section fix in Bonesless below removed false claims about lucky-no-bones earning the conduct and about #conduct tracking lifesaving uses. v2 fix: summary line misclassified two of the five new conducts. Pauper, Permadeaf, and Bonesless are start-of-game options (optlist.h:213-215 for `bones`, 268 for `permadeaf`, 559 for `pauper`); Sokoban is tracked from in-game actions. Petless is NOT a start-of-game option — no `petless` option exists. u.uconduct.pets++ at dog.c:87 is unconditional (the comment at dog.c:77-79 says the starting pet is created before in_moveloop, but it still bumps the counter). So Petless requires never having a pet — including the starting one — which only Pauper provides (u_init.c:1308-1309 early-return). Reworded summary line to reflect: Pauper/Permadeaf/Bonesless = start options, Sokoban = in-game tracked, Petless = Pauper sub-conduct. See companion-audit.md. -->
 <p>The real prestige comes from combining multiple conducts. A
 vegetarian atheist run is substantially harder than either alone. A
 pacifist illiterate vegan foodless atheist weaponless run is the stuff
@@ -9388,9 +9389,12 @@ tracked since 3.6.</p>
 the <code>blind</code> option at game start. You’ll need telepathy and
 other senses to navigate. Officially tracked since 3.6.</p>
 <p>Mazes 5.0 added five more tracked conducts: Pauper, Petless,
-Permadeaf, Sokoban, and Bonesless. The first three are start-of-game
-options; the latter two are tracked automatically based on what you do
-during the run.</p>
+Permadeaf, Sokoban, and Bonesless. Pauper, Permadeaf, and Bonesless are
+start-of-game options (you opt in or out before play). Sokoban is
+tracked automatically based on what you do during the run. Petless
+requires never having a pet — including the starting one — so it’s
+effectively a Pauper sub-conduct (only Pauper suppresses your starting
+pet).</p>
 </section>
 <section id="pauper-new-in-5.0" class="level4">
 <h4>Pauper (new in 5.0)</h4>
@@ -9444,7 +9448,7 @@ information you normally get for free.</p>
 </section>
 <section id="sokoban-new-in-5.0" class="level4">
 <h4>Sokoban (new in 5.0)</h4>
-<!-- audit 2026-05-18 #145: corrected "No digging through the puzzle levels" — digging doesn't trigger sokoban_guilt (dig.c has no such call). The conduct-violating actions are squeeze (hack.c:299, 307), boulder fracture by wand of striking (zap.c:5556), polymorph boulder (zap.c:1711), scroll of earth (read.c:1951), and dismount onto a boulder (steed.c:767). Each costs -1 Luck (trap.c:7039-7054) and increments u.uconduct.sokocheat. Achievement reported only if the branch was entered (insight.c:2215-2228). Teleportation IS blocked by the level's noteleport flag (teleport.c:1185), so "no teleportation" is a level constraint, not a conduct trigger. -->
+<!-- audit 2026-05-18 #145 (re-audit 2026-05-18 v2 #118): corrected "No digging through the puzzle levels" — digging doesn't trigger sokoban_guilt (dig.c has no such call). The conduct-violating actions are squeeze (hack.c:299, 307), boulder fracture by wand of striking (zap.c:5556), polymorph boulder (zap.c:1711), scroll of earth (read.c:1951), and dismount onto a boulder (steed.c:767). Each costs -1 Luck (trap.c:7039-7054) and increments u.uconduct.sokocheat. Achievement reported only if the branch was entered (insight.c:2215-2228). Teleportation IS blocked by the level's noteleport flag (teleport.c:1185), so "no teleportation" is a level constraint, not a conduct trigger. v2: all five conduct-trigger sites re-verified. 0 new corrections. -->
 <p>Complete Sokoban without breaking the rules. Each cheating action
 costs <strong>1 point of Luck</strong> and increments the conduct
 counter: pushing into a wall to <strong>squeeze past</strong> a boulder
@@ -14182,7 +14186,7 @@ creatures.</p>
 </section>
 <section id="gremlins-g" class="level4">
 <h4>Gremlins <code>g</code></h4>
-<!-- audit 2026-05-18 #152: headnote conflated two distinct mechanics. Water/fountain triggers gremlin SPLIT (mon.c:987-992, 2/3 chance per step) — clones themselves, doesn't touch your intrinsics. Night triggers AD_CURS (uhitm.c:3040-3057, sit.c:644+ attrcurse) which strips ONE random intrinsic (1/10 chance per hit, only at night, only if not cancelled). Reworded to keep them separate. -->
+<!-- audit 2026-05-18 #152 (re-audit 2026-05-18 v2 #116): headnote conflated two distinct mechanics. Water/fountain triggers gremlin SPLIT (mon.c:987-992, 2/3 chance per step) — clones themselves, doesn't touch your intrinsics. Night triggers AD_CURS (uhitm.c:3040-3057, sit.c:644+ attrcurse) which strips ONE random intrinsic (1/10 chance per hit, only at night, only if not cancelled). Reworded to keep them separate. v2: re-verified all three rows (gremlin/gargoyle/winged gargoyle) against monsters.h:448-473. Gargoyles do NOT petrify by touch or corpse (touch_petrifies in mondata.h:200-201 = cockatrice/chickatrice only). 0 new corrections. -->
 <p>At night, their touch strips a random intrinsic (fire resistance,
 telepathy, etc.). In water or fountains they split into more gremlins.
 Kill them on dry land, ideally during daylight.</p>
@@ -19672,7 +19676,7 @@ simultaneously. Welcome, adventurer.</em></p>
 </section>
 <section id="acknowledgements" class="level3">
 <h3>Acknowledgements</h3>
-<!-- audit 2026-05-17 #18: historical claims spot-checked against Wikipedia + bundled dat/history. NetHack 1987, Fenlason→Brouwer→Stephenson lineage, DevTeam founders, Izchak Miller 1994 death, Hack 1982 origin all verified. WikiHack founding year, article counts, and some spoiler-author attributions could not be independently verified (nethackwiki.com 403). See companion-audit.md. -->
+<!-- audit 2026-05-17 #18 (re-audit 2026-05-18 v2 #115): historical claims spot-checked against Wikipedia + bundled dat/history. NetHack 1987, Fenlason→Brouwer→Stephenson lineage, DevTeam founders, Izchak Miller 1994 death, Hack 1982 origin all verified. WikiHack founding year, article counts, and some spoiler-author attributions could not be independently verified (nethackwiki.com 403). v2 fixes: (a) WCST "(originally the 'World's Encyclopaedia of NetHack')" parenthetical expansion was never verified — the original WCST file at pdwaterman.com doesn't expand the acronym, and Waterman's Wheaton, IL distribution address suggests "WC" is Wheaton College. User confirmed and dropped the false expansion; replaced with the verifiable "(distributed from Wheaton, Illinois starting in 1991)". (b) Kevin Hugo was missing from the current-team list at line 9478, despite being on the official 5.0 core team list at dat/history:314 (and already credited above as a 3.2.2 spoiler author). Added. See companion-audit.md. -->
 <p>NetHack has been played, cursed at, loved, and documented since 1987.
 The game itself is the work of the NetHack DevTeam, a loose collective
 of developers who have maintained one of the longest-running
@@ -19715,12 +19719,12 @@ artifacts, food, monsters, spells, and more. The item data tables
 throughout Parts Four and Five of this guide are verified against their
 work. Published under BSD-like terms.</p>
 <p><strong>Paul Waterman</strong> wrote the WCST NetHack Spoilers
-(originally the “World’s Encyclopaedia of NetHack”), a single sprawling
-document that covered the entire game in a conversational, opinionated
-voice. Where Hugo and O’Donnell wrote reference manuals, the WCST was a
-travel guide. It told you not just what things did but what to do about
-them. It was the original inspiration for the tone and structure of this
-guide, though no text has been copied from it.</p>
+(distributed from Wheaton, Illinois starting in 1991), a single
+sprawling document that covered the entire game in a conversational,
+opinionated voice. Where Hugo and O’Donnell wrote reference manuals, the
+WCST was a travel guide. It told you not just what things did but what
+to do about them. It was the original inspiration for the tone and
+structure of this guide, though no text has been copied from it.</p>
 <p><strong>Kate Nepveu</strong> maintained steelypips.org, the web
 archive that preserved the Hugo/O’Donnell spoilers, the RGRN community
 articles, and her own excellent guides (including the Elbereth FAQ cited
@@ -19797,11 +19801,11 @@ tells you something about what kind of artifact NetHack is. Version 3.6
 arrived in December 2015, and active development has continued
 since.</p>
 <p>The current team, including Michael Allison, Ken Arromdee, David
-Cohrs, Jessie Collet, Pasi Kallinen, Ken Lorber, Dean Luick, Patric
-Mueller, Pat Rankin, Derek S. Ray, Alex Smith, Mike Stephenson, Janet
-Walz, Paul Winner, Bart House, and Warwick Allison, has maintained and
-extended the game across nearly four decades. Everything in these pages
-is downstream of their work.</p>
+Cohrs, Jessie Collet, Kevin Hugo, Pasi Kallinen, Ken Lorber, Dean Luick,
+Patric Mueller, Pat Rankin, Derek S. Ray, Alex Smith, Mike Stephenson,
+Janet Walz, Paul Winner, Bart House, and Warwick Allison, has maintained
+and extended the game across nearly four decades. Everything in these
+pages is downstream of their work.</p>
 <p>This is what a community looks like over decades. People writing
 things down so that others don’t have to die the same stupid death. It’s
 generous, it’s nerdy, and it’s one of the best things about NetHack.</p>

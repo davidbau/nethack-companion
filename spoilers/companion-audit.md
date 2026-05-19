@@ -8389,3 +8389,41 @@ All 5 rows re-verified vs `monsters.h:1206-1265`. M1_FLY on all except Aleax, M1
 113/183 done.
 
 ---
+
+## 2026-05-18 — v2 audit batch 24: Combining Conducts (#114), Acknowledgements (#115), Gremlins (#116), Ascension Kit (#117), Sokoban-conduct (#118)
+
+### Combining Conducts (#114) — `spoilers/companion.md:6917` — 1 correction
+
+Summary line misclassified two of the five new-in-5.0 conducts. The corrected split is:
+- **Pauper, Permadeaf, Bonesless**: start-of-game options (`optlist.h:213-215` for `bones`, `:268` for `permadeaf`, `:559` for `pauper`).
+- **Sokoban**: tracked from in-game actions.
+- **Petless**: not a settable option at all. `u.uconduct.pets++` at `dog.c:87` is unconditional, and the comment at `dog.c:77-79` notes the starting pet is created before `in_moveloop` but still bumps the counter. The only way to have `!u.uconduct.pets` is to start without a pet, which requires Pauper (`u_init.c:1308-1309` early-return suppresses the starting pet). So Petless is effectively a Pauper sub-conduct.
+
+The book had Pauper/Petless/Permadeaf as "start-of-game options" and Sokoban/Bonesless as "tracked automatically" — the right partition flips both Petless and Bonesless.
+
+### Acknowledgements (#115) — `spoilers/companion.md:9334` — 2 corrections
+
+- **WCST "(originally the 'World's Encyclopaedia of NetHack')"** parenthetical was never verifiable. The WCST source file at pdwaterman.com doesn't expand the acronym, and Waterman's Wheaton, Illinois distribution address strongly suggests "WC" stands for Wheaton College. User confirmed; replaced with "(distributed from Wheaton, Illinois starting in 1991)" which matches the verifiable WCST v7.00 contact line.
+- **Kevin Hugo missing from current-team list** at line 9478. `dat/history:314` lists him on the 5.0 core team, and the book already credits him above as a 3.2.2 spoiler author. Added between Collet and Kallinen.
+
+Re-verified: 1987 NetHack origin via Stephenson's 1.4 (`dat/history:25-26`), Fenlason→Brouwer→Stephenson lineage, 3.4.3 December 2003 (`dat/history:193`), twelve-year hiatus to 3.6.0 in December 2015, Izchak Miller "founding member" who died between 3.1.3 and 3.2.0 (1994 by community consensus, not in bundled docs), Rogue 1980 by Toy/Wichman, NAO operators Streib + Kallinen (`dat/history:344-346`).
+
+### Ascension Kit (#117) — `spoilers/companion.md:5783` — 2 corrections
+
+- **Mitre of Holiness "fire resistance + see invisible"** wrong. Per `artilist.h:265-269`, Mitre is a `HELM_OF_BRILLIANCE` base with `CARY(AD_FIRE)` (fire resistance), `SPFX_PROTECT` (+1 protection), `M2_UNDEAD` bonus (×2 vs undead), `ENERGY_BOOST` invoke. No see invisible. The artifact-table line at 4386 already had this right. Reworded to "a helm of brilliance that adds fire resistance, +1 protection, and an energy-boost invoke."
+- **"An ascended Monk wore the Eye of the Aethiopica"** wrong. Eye of the Aethiopica is `PM_WIZARD`-restricted with `SPFX_RESTR` at `artilist.h:303-307`. A Monk picking it up triggers the badclass blast at `artifact.c:920-948`. Reworded to "Wizards who survive to their quest can wear the Eye of the Aethiopica instead."
+
+Re-verified: Gray DSM = MR, Silver = reflection, Blue = shock (`objects.h:502, 507, 521`); speed boots = FAST; gauntlets of power lock Str 25 (`attrib.c:1214, 1278`); choking-through-slow-digestion at SATIATED (`eat.c:248`). Wand of death on the High Priest verified clean (`zap.c:4314` sets `type = -1` to skip saving throws; High Priest has no antimagic gear or covered intrinsic).
+
+### Gremlins `g` (#116) — `spoilers/companion.md:8109` — 0 corrections, badge updated
+
+All 3 rows re-verified vs `monsters.h:448-473`. Water/fountain split (`mon.c:987-992`, 2/3) vs. night AD_CURS (`uhitm.c:3037-3058`) correctly distinguished by v2 #152.
+
+### Sokoban-conduct (#118) — `spoilers/companion.md:7002` — 0 corrections, badge updated
+
+All five guilt-triggering sites verified: squeeze (`hack.c:299, 307`), wand-of-striking fracture (`zap.c:5556`), polymorph boulder (`zap.c:1711`), scroll of earth (`read.c:1951`), dismount onto boulder (`steed.c:767`). Conduct reported only if branch was entered (`insight.c:2216 sokoban_in_play`).
+
+### Pass-2 queue
+118/183 done.
+
+---

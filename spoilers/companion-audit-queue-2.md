@@ -122,11 +122,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#111**  L 6747  (  17 lines)     ↳ Voluntary Challenges → Atheist
 - [x] **#112**  L 8401  (  12 lines)     ↳ Bestiary Tables → Zruties `z`
 - [x] **#113**  L 8413  (  20 lines)     ↳ Bestiary Tables → Angelic beings `A`
-- [ ] **#114**  L 6879  (  28 lines)     ↳ Voluntary Challenges → Combining Conducts
-- [ ] **#115**  L 9288  ( 166 lines)   📖 Acknowledgements
-- [ ] **#116**  L 8064  (  15 lines)     ↳ Bestiary Tables → Gremlins `g`
-- [ ] **#117**  L 5746  (  56 lines)   📖 The Ascension Kit
-- [ ] **#118**  L 6960  (  14 lines)     ↳ Voluntary Challenges → Sokoban (new in 5.0)
+- [x] **#114**  L 6879  (  28 lines)     ↳ Voluntary Challenges → Combining Conducts
+- [x] **#115**  L 9288  ( 166 lines)   📖 Acknowledgements
+- [x] **#116**  L 8064  (  15 lines)     ↳ Bestiary Tables → Gremlins `g`
+- [x] **#117**  L 5746  (  56 lines)   📖 The Ascension Kit
+- [x] **#118**  L 6960  (  14 lines)     ↳ Voluntary Challenges → Sokoban (new in 5.0)
 - [ ] **#119**  L 6810  (  26 lines)     ↳ Voluntary Challenges → No Genocide
 - [ ] **#120**  L 4971  ( 100 lines)   📖 Wishes and Wishing
 - [ ] **#121**  L 1170  (  36 lines)     ↳ Branches and Landmarks → The Castle
