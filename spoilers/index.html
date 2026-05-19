@@ -1975,7 +1975,16 @@ you’d need one already to read it from outside the bars.</p>
 </section>
 <section id="finding-secret-doors" class="level4">
 <h4>Finding Secret Doors</h4>
-<!-- audit 2026-05-19 v2 #182: 1 correction. Excalibur enchantment and lenses don't stack independently — per detect.c:2026-2032, both feed a single `fund` variable that is then capped at +5. So lenses + a +5 Excalibur still gives fund=5; lenses only help if Excalibur's enchantment is below +3. Reworded. Re-verified `rnl(7 - fund)` per-square search roll at detect.c:2042-2054, ring of searching auto-call at allmain.c:342-344, blessed magic mapping SDOOR conversion at read.c:2121-2130, Excalibur SPFX_SEARCH at artilist.h:86. -->
+<!-- audit
+2026-05-19:
+- ring of searching auto-calls dosearch0(1) each turn unless level is noautosearch (allmain.c:342-344)
+- Excalibur enchantment feeds `fund = uwep->spe` only if SPFX_SEARCH (detect.c:2026-2027, artilist.h:85-86)
+- lenses add +2 to fund if worn and not Blind (detect.c:2029-2030)
+- fund is capped at +5 — a +5 Excalibur alone hits the cap; lenses only help if enchantment is <+3 (detect.c:2031-2032)
+- per-square reveal roll is rnl(7 - fund) for SDOOR/SCORR (detect.c:2042-2054)
+- blessed scroll of magic mapping converts every SDOOR to a visible door (read.c:2121-2130)
+- +0 Excalibur contributes nothing because fund = spe = 0
+-->
 <p>The Dungeons of Doom were designed by architects who believed that
 every room should have one emergency exit that requires ten minutes of
 tapping on walls to locate. Secret doors and corridors are the game’s
@@ -2024,7 +2033,20 @@ methodically to every wall section in sequence. The downstairs you seek
 is behind one of these walls. Finding it is a matter of systematic
 elimination. The only mistake is giving up after three searches and
 declaring the level “impossible.”</p>
-<!-- audit 2026-05-18 #176 (re-audit 2026-05-18 v2 #53): Three corrections. (1) Athame is INSTANT for Elbereth-length engravings: uncursed athame is not in dulling_wep (engrave.c:1306), and as a WEAPON_CLASS it doesn't trigger the rate=1 branch (engrave.c:1321-1325) — rate stays at 10, finishing 8 chars in one occupation action. Cursed athame does dull and would use rate=1. (2) Edged weapon dulls by ~1 enchantment per 2 chars engraved (engrave.c:1357-1382, comment at 1360-1361: "-2=>3, -1=>5, 0=>7, +1=>9, +2=>11 chars"); Elbereth costs ~-4 enchantment, not -1. (3) Impairment garble: only the DUST/BLOOD surface-garble (engrave.c:1223, 1/25) is bypassed by BURN/ENGRAVE; the Blind 1/11, Confused 1/7, Stunned 1/4, and Hallucinating 1/2 per-character scrambles at engrave.c:1224-1225 apply to ALL types including wand-of-fire BURN. "ad aerarium" also marks LEVEL_TELEP niches (mklev.c:809-811), not only vault niches (mklev.c:820-824). v2 re-verified: rate=10 default with rate=1 only on dulling_wep/RING/GEM branches; uncursed athame dulling-exempt at engrave.c:1306-1307; BURN damage on ice or magical fire @ 50% at engrave.c:278; strict-match Elbereth at engrave.c:256; vault 2×2 + makevtele() at mklev.c:1320-1333; "ad aerarium" niche placement at mklev.c:728-737. DUST monster-step erodes 1 char per monster-turn (monmove.c:734 + engrave.c:271-289). 0 corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- uncursed athame is excluded from dulling_wep — instant Elbereth, no enchantment cost (engrave.c:1306-1307)
+- cursed athame dulls like any blade
+- default engrave rate is 10 (one occupation tick for an 8-char word); rate=1 only on dulling_wep / RING_CLASS / GEM_CLASS (engrave.c:1320-1325)
+- edged weapon dulls about 1 enchantment per 2 chars (engrave.c:1357-1365 + comment); 8-char Elbereth costs ~−4 enchantment from spe=0
+- DUST/BLOOD surface-garble is 1/25 and bypassed by BURN/ENGRAVE (engrave.c:1223)
+- impairment scrambles (Blind 1/11, Confused 1/7, Stunned 1/4, Hallucination 1/2) apply to ALL engraving types (engrave.c:1224-1225)
+- strict-match Elbereth: full engr_txt must equal "Elbereth" exactly (engrave.c:256)
+- BURN engravings erode only on ice or magical fire @ 50% (engrave.c:278)
+- DUST monster-step erosion is 1 char per monster move (monmove.c:734, engrave.c:271-289)
+- "ad aerarium" engraving marks BOTH TELEP_TRAP and LEVEL_TELEP niches (mklev.c:733, 809-811, 823)
+- vault is a 2×2 room placed by create_room then filled + makevtele() (mklev.c:53, 1320-1333)
+-->
 </section>
 <section id="engravings" class="level4">
 <h4>Engravings</h4>
@@ -2140,7 +2162,23 @@ ready for what’s on the other side.</p>
 </section>
 <section id="elbereth" class="level4">
 <h4>Elbereth</h4>
-<!-- audit 2026-05-18 #122 (re-audit 2026-05-19 v2 #170): 2 corrections. (1) "Levitation trick" (engrave Elbereth in dust while floating) is non-functional in 5.0: engrave.c:198 requires can_reach_floor() which returns FALSE under Levitation; finger-engrave is refused outright at engrave.c:1003-1006, and wand zaps only "gesture toward the floor below you" per engrave.c:1008-1010 — no actual writing happens. Replaced with the 5.0 reality. (2) "−5 alignment hit" stated as flat; mon.c:4280 is adjalign((u.ualign.record > 5) ? -5 : -rnd(5)), so it's flat −5 only with healthy alignment, otherwise rnd(5) (avg −3). Reworded. v2 re-verified: defile rule (mon.c:4267-4285, del_engr_at unconditional), exact-word requirement (engrave.c:256), Inhell/endgame deadness (teleport.c:68-70 onscary), S_HUMAN/elf/were/shopkeeper/quest-nemesis immunity (monmove.c:259-261), Riders/Angels/lawful-minions/Wizard immunity (monmove.c:251-253), minotaur exclusion (monmove.c:301), blind/peaceful pass-through (monmove.c:299-300), cornered ALLOW_SSM step-through (mon.c:2278-2282). 0 new corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- while levitating, finger and weapon engraving refused (engrave.c:1003-1006)
+- but wand engraving falls through after "gesture toward floor"; ptext=TRUE wands (fire, lightning, cold, digging) still complete the engraving (engrave.c:1007-1011, 1099-1104, 1186-1189)
+- v2 "no actual writing happens" claim was wrong for BURN wands — corrected
+2026-05-18:
+- hypocrite alignment hit: adjalign((u.ualign.record > 5) ? -5 : -rnd(5)) — flat −5 only with healthy alignment, else rnd(5) avg −3 (mon.c:4280)
+- defile rule: del_engr_at fires unconditionally — burned Elbereth wiped too (mon.c:4267-4285)
+- strict-match Elbereth: full engr_txt must equal "Elbereth" (engrave.c:256)
+- Elbereth dead in Gehennom and the endgame planes (monmove.c:302, In_hell || In_endgame)
+- onscary lives at monmove.c:241 (not teleport.c as old comment claimed)
+- ignored by S_HUMAN + unique_corpstat (quest nemeses, named monsters) (monmove.c:259-261)
+- ignored by Riders, Angels, lawful minions, Wizard of Yendor (monmove.c:251-253)
+- ignored by minotaur (monmove.c:301)
+- blind and peaceful monsters pass through (monmove.c:299-300)
+- cornered ALLOW_SSM step-through (mon.c:2278-2282)
+-->
 <section id="where-the-word-comes-from" class="level5">
 <h5>Where the word comes from</h5>
 <p><em>Elbereth</em> is Sindarin for “Star-Queen,” one of the Elvish
@@ -2220,19 +2258,32 @@ a wand of fire or lightning. One turn, no interruption risk, no
 impairment penalty, no wear. A semi-permanent engraving (athame, weapon,
 gem, wand of digging) is the middle ground: durable, but the slow
 methods can be interrupted mid-word.</p>
-<p>In 5.0, engraving requires you to be <strong>able to reach the
-floor</strong>. Levitation makes that impossible — finger-engrave is
-refused outright, and a wand zap only “gestures toward the floor below
-you” rather than writing anything. The old levitation-locks-dust trick
-from earlier editions no longer works; if you want a durable spot you
-have to land first and use fire/lightning/ athame.</p>
+<p>While levitating, you can’t engrave with your finger or your weapon:
+the game refuses both. A wand of fire, lightning, cold, or digging still
+works from above. You’ll see “you gesture toward the floor below you”
+first, but the burn lands anyway. The old finger-in-dust trick from
+earlier editions is gone, but torching Elbereth into the floor from a
+wand of fire while floating still works.</p>
 <hr />
 </section>
 </section>
 </section>
 <section id="feelings-and-sounds" class="level3">
 <h3>Feelings and Sounds</h3>
-<!-- audit 2026-05-18 #140 (re-audit 2026-05-19 v2 #147): 5 corrections. (1) "Counting gold coins" message specifically means a vault WITH gold; an empty vault gives "someone searching" (sounds.c:253-262). (2) "Wow! This makes you feel great!" is the blessed-tier restore ability OR blessed magic fountain; the spoiler attributed it generically to restore-ability (potion.c:658-661, fountain.c:257). (3) "Move very quietly" doesn't include elven boots — boots produce "walk very quietly" (do_wear.c:123-129). (4) Lycanthropy cure is QUAFFING holy water, not dipping (potion.c:728-737 set_ulycn in the blessed-water branch). (5) "Seem faster" from quantum mechanic corpse only fires if you don't already have intrinsic speed; otherwise you "seem slower" instead (eat.c:1227-1235). Also added the global suppressor: Deaf/!flags.acoustics/u.uswallow/Underwater silences all dosounds() messages (sounds.c:208-209). v2 re-verified: vault sounds, fountain "bubbling water" / "water falling on coins", oracle "strange wind", shop "cursing shoplifters", bugle reveille (muse.c:844-845), sad-feeling (mon.c:3101) NOT gated by Deaf (it's a feeling not a sound). 0 new corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- vault sounds: "counting gold" means vault with gold; "searching" means empty vault (sounds.c:253-262)
+- "Wow! ...great!" needs blessed restore-ability with zero unfixable troubles (potion.c:658-661)
+- same string also fires from a blessed magic fountain (fountain.c:257)
+- non-boot stealth gear gives "move very quietly"; boots give "walk very quietly" (do_wear.c:123-129)
+- lycanthropy cure is quaffing holy water, not dipping (potion.c:728-737)
+- quantum corpse toggles HFast on or off: "seem faster" or "seem slower" by current state (eat.c:1227-1235)
+- dosounds() is silenced by Deaf, !flags.acoustics, u.uswallow, or Underwater (sounds.c:208-209)
+- bugle reveille at muse.c:843-846 is gated only by !Deaf (not by dosounds)
+- sad-feeling at mon.c:3100-3101 is NOT gated by Deaf — it's a feeling, not a sound
+- oracle "strange wind" (sounds.c:190); shop "cursing shoplifters" (sounds.c:322)
+- fountain "bubbling water" or "water falling on coins" (sounds.c:214-218)
+-->
 <p>Much of the most important information in NetHack comes to you as
 cryptic feelings and sounds. They sound like atmosphere, but most of
 them are specific signals. If you don’t know what they mean, you’ll miss
