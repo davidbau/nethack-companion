@@ -1096,8 +1096,9 @@ The level has three challenges stacked together:
    without preparation, because:
 
 2. **Giant eels** (electric eels on one layout). The water is home
-   to giant eels that can grab and drown you on a successful hit.
-   Stay unburdened while crossing, or avoid the water entirely.
+   to giant eels that can grab and drown you on a successful hit,
+   reaching into adjacent dry tiles too. See the eel-survival rules
+   below.
 
 3. **Medusa herself.** Her gaze turns you to stone. You need
    either **reflection** (a shield of reflection or amulet of
