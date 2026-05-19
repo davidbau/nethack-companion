@@ -8524,3 +8524,34 @@ Re-verified all mind-flayer mechanics: 3 vs 5 tentacles, 2d1 drain-Int per tenta
 133/183 done.
 
 ---
+
+## 2026-05-19 — v2 audit batch 28: Gehennom (#134), Lance (#135), Gray Stones (#136), Keystone Kops (#137), Rings/Amulets (#138)
+
+### Gehennom (#134) — `spoilers/companion.md:5540` — 4 corrections
+
+- **Asmodeus "carries a wand of cold"** — actually wands of cold AND fire (`makemon.c:804-807`).
+- **Asmodeus "cold- and poison-resistant"** — also fire-resistant (`MR_FIRE | MR_COLD | MR_POISON` at `monsters.h:3124`). Updated to "fire-, cold-, and poison-resistant."
+- **Baalzebub "surrounded by a poison-gas cloud, summons swarms of flies"** was fabricated. Per `monsters.h:3110-3119`, his attacks are AT_BITE/AD_DRST (poisonous bite, drains Str) and AT_GAZE/AD_STUN. No gas cloud, no fly summons. The "Lord of the Flies" name + beetle-shaped lair are real (`mkmaze.c:471 baalz_fixup`). Reworded.
+- **Vlad's throne arithmetic** was wrong. Book said "4/13 chance per sit of the wish ending it, so on average you sit ~3 times before the wish (and absorb two of the bad effects)." Per `sit.c:45`, only `rnd(6) > 4` (1/3 of sits) triggers any effect at all; of those, 4/13 are the wish. Unconditional rate is `(1/3) × (4/13) = 4/39 ≈ 10%`, so average ~10 sits with ~7 bad effects absorbed. Reworded.
+
+### Keystone Kops `K` (#137) — `spoilers/companion.md:8651` — 2 corrections
+
+- **Respawn "near up-stairs"** wrong. `mon.c:3148` calls `stairway_find_type_dir(FALSE, FALSE)`; the second `FALSE` is the `up` flag, so it finds **down-stairs** (`stairs.c:89-95`, `mklev.c:2193`).
+- **Respawn odds "1-in-5 stairs / 2-in-5 random / 2-in-5 dead"** wrong arithmetic. `mon.c:3151-3164` rolls `rnd(5)` (1..5 uniform): case 1 → stairs (1/5), case 2 → random (1/5), default 3/4/5 → dead (3/5).
+
+### Gray Stones (#136) — `spoilers/companion.md:3104` — 1 correction
+
+"A loadstone auto-curses itself the moment you pick it up" — wrong. Loadstones are cursed at object creation (`mkobj.c:978-979`); the curse is intrinsic from generation, not an event-triggered curse on pickup. Reworded to "Loadstones are cursed when they generate, and a cursed loadstone refuses to be dropped at all."
+
+### Lance (#135) — `spoilers/companion.md:7552` — 0 corrections, badge updated
+
+Joust bonus and shatter chance re-verified vs `objects.h:351-352`, `uhitm.c:1546, 2123-2125`.
+
+### Rings and Amulets (#138) — `spoilers/companion.md:3779` — 0 prose corrections, badge updated
+
+Re-verified all ring prices, auto-curse list, hunger costs, restful-sleep mechanics. The v1 close call about restful sleep being "always cursed per mkobj.c:1065" was itself wrong (90% per `rn2(10)` at `mkobj.c:1063-1066`); the body text "usually cursed" was correct.
+
+### Pass-2 queue
+138/183 done.
+
+---

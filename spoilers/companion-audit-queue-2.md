@@ -142,11 +142,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#131**  L 7993  (  27 lines)     ↳ Bestiary Tables → Dogs and canines `d`
 - [x] **#132**  L 2045  (  27 lines)     ↳ Dangerous Encounters → Brainlessness
 - [x] **#133**  L 5270  ( 145 lines)   📖 Luck and Fortune
-- [ ] **#134**  L 5504  ( 242 lines)   📖 Gehennom
-- [ ] **#135**  L 7496  (  11 lines)     ↳ Weapons Tables → Lance
-- [ ] **#136**  L 3074  (  51 lines)     ↳ A Practical Identification Strategy → Gray Stones: Four Stones, One Correct Answer
-- [ ] **#137**  L 8594  (  16 lines)     ↳ Bestiary Tables → Keystone Kops `K`
-- [ ] **#138**  L 3746  ( 146 lines)   📖 Rings and Amulets
+- [x] **#134**  L 5504  ( 242 lines)   📖 Gehennom
+- [x] **#135**  L 7496  (  11 lines)     ↳ Weapons Tables → Lance
+- [x] **#136**  L 3074  (  51 lines)     ↳ A Practical Identification Strategy → Gray Stones: Four Stones, One Correct Answer
+- [x] **#137**  L 8594  (  16 lines)     ↳ Bestiary Tables → Keystone Kops `K`
+- [x] **#138**  L 3746  ( 146 lines)   📖 Rings and Amulets
 - [ ] **#139**  L 8687  (  21 lines)     ↳ Bestiary Tables → Puddings and oozes `P`
 - [ ] **#140**  L 7550  (  11 lines)     ↳ Weapons Tables → Sling
 - [ ] **#141**  L 8465  (  37 lines)     ↳ Bestiary Tables → Dragons `D`

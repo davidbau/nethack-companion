@@ -3102,6 +3102,7 @@ can't tell stealth-from-kicking or fumbling-from-power by price
 alone. Try them on (BUC-checked) and watch for the messages.
 
 #### Gray Stones: Four Stones, One Correct Answer
+<!-- audit 2026-05-19 v2 #136: 1 correction. "A loadstone auto-curses itself the moment you pick it up" was wrong — loadstones are cursed at object creation (mkobj.c:978-979), not on pickup. The cursed-on-creation state is what blocks dropping; auto-curse-on-pickup would be a different mechanic. Reworded. Re-verified prices (luckstone 60, touchstone 45, loadstone 1, flint 1 per objects.h:1598-1605), weights (500 vs 10), touchstone-by-blessed-ID consistent with batch 22 v2 #105, Mine's End not-cursed luckstone guarantee. See companion-audit.md. -->
 
 Gray stones deserve their own section because they look identical
 but have wildly different value. There are four types:
@@ -3121,10 +3122,10 @@ Here's how to tell them apart:
 If it scoots away normally, it's not a loadstone. A loadstone is
 abnormally heavy and resists being kicked.
 
-**The pick-up test.** A loadstone auto-curses itself the moment
-you pick it up, and a cursed loadstone refuses to be dropped at
-all — the game prints "For some reason, you cannot drop the
-stone!" and the stone stays in your pack. If you pick up a gray
+**The pick-up test.** Loadstones are cursed when they generate,
+and a cursed loadstone refuses to be dropped at all — the game
+prints "For some reason, you cannot drop the stone!" and the
+stone stays in your pack. If you pick up a gray
 stone and it weighs you down suspiciously, try to drop it. If
 you can't, you're stuck with a cursed loadstone until you can
 uncurse it (holy water, scroll of remove curse, prayer) — then
@@ -3777,7 +3778,7 @@ wishing too.
 ---
 
 ### Rings and Amulets
-<!-- audit 2026-05-18 #139: ~144 lines, no substantive corrections. All ring prices match objects.h:741-827; auto-curse list (TELEPORTATION/POLYMORPH/AGGRAVATE_MONSTER/HUNGER at 90% per mkobj.c:1143-1146) is correct; aggravate-monster effective-depth doubling capped at 50 (dungeon.c:2080-2082); free-action paralysis immunity via Free_action checks (apply.c:1044, mcastu.c:506); per-ring hunger cost at turns 4 and 12 (eat.c:3237-3267); amulet of guarding +2 AC +2 MC (do_wear.c:2496, mhitu.c:1121-1126); restful-sleep regen +1 HP while sleeping (allmain.c:663-664). Minor close calls: (a) restful sleep is *always* cursed per mkobj.c:1065, not "usually"; (b) blessed polymorph potion grants control only from base form (potion.c:1318-1329, POLY_LOW_CTRL restricts forms); (c) protection-from-shape-changers covers chameleons/doppelgangers/sandestins too, not just werebeasts (makemon.c:1355-1358). Not corrected inline — section is illustrative. -->
+<!-- audit 2026-05-18 #139 (re-audit 2026-05-19 v2 #138): ~144 lines, no substantive corrections. All ring prices match objects.h:741-827; auto-curse list (TELEPORTATION/POLYMORPH/AGGRAVATE_MONSTER/HUNGER at 90% per mkobj.c:1143-1146) is correct; aggravate-monster effective-depth doubling capped at 50 (dungeon.c:2080-2082); free-action paralysis immunity via Free_action checks (apply.c:1044, mcastu.c:506); per-ring hunger cost at turns 4 and 12 (eat.c:3237-3267); amulet of guarding +2 AC +2 MC (do_wear.c:2496, mhitu.c:1121-1126); restful-sleep regen +1 HP while sleeping (allmain.c:663-664). v2 note: the v1 close call (a) saying "restful sleep is *always* cursed per mkobj.c:1065" was itself wrong — mkobj.c:1063-1066 uses rn2(10), so restful sleep is 90% cursed at generation, not 100%. The body text's "usually cursed" is right. No prose change. Re-verified ring of protection AC subtraction (do_wear.c:2492-2495), conflict pet-aggression (dogmove.c:1046-1054, mhitm.c:104-145), blessed polymorph control from base form only (potion.c:1322-1325). 0 new corrections. See companion-audit.md. -->
 
 
 Two ring fingers. One neck. These are the most constrained equipment
@@ -5538,6 +5539,7 @@ If you're missing any of these, go back up and find them.
 ---
 
 ### Gehennom
+<!-- audit 2026-05-19 v2 #134: 4 corrections. (a) Asmodeus "carries a wand of cold" — actually wands of cold AND fire per makemon.c:804-807. (b) Asmodeus "cold- and poison-resistant" — also fire-resistant per MR_FIRE|MR_COLD|MR_POISON at monsters.h:3124. Updated to "fire-, cold-, and poison-resistant." (c) Baalzebub "surrounded by a poison-gas cloud, summons swarms of flies" was fabricated. Per monsters.h:3110-3119 his attacks are AT_BITE/AD_DRST (drain Str on bite, poisonous) and AT_GAZE/AD_STUN (stun gaze). No gas cloud, no fly summons. The "Lord of the Flies" name + beetle-shaped lair are real (mkmaze.c:471 baalz_fixup). Reworded to actual mechanics. (d) Vlad's throne arithmetic was wrong. The book said "4/13 chance per sit of the wish ending it, so on average you sit ~3 times before the wish (and absorb two of the bad effects)." Per sit.c:45 only `rnd(6) > 4` (= 1/3 of sits) triggers any effect at all; of those, 4/13 are the wish. Unconditional rate is (1/3) × (4/13) = 4/39 ≈ 10%, so average ~10 sits with ~7 bad effects absorbed. Reworded. Re-verified: Valley flags, demon-lord teleport block (teleport.c:21-34), bribery math (minion.c:309-311), bribable set (Geryon/Dispater/Baalzebub/Asmodeus via MS_BRIBE), Vlad throne 13 effects (sit.c:238-353), Orcus magic-lamp-or-marker 50/50 (orcus.lua:107-111), Sanctum noteleport+nommap. Cross-section: Mysterious Force prose consistent with v2 #127. See companion-audit.md. -->
 
 Below the Castle, the dungeon changes. The corridors give way to
 mazes. The monsters give way to demons. The comforting knowledge
@@ -5610,11 +5612,12 @@ Moloch has a special fate reserved for members of those classes).
 #### The demon-prince lairs
 
 Three of Gehennom's special levels are the personal thrones of
-**Asmodeus** (cold- and poison-resistant, casts spells, carries a
-wand of cold), **Baalzebub** (Lord of the Flies, surrounded by
-a poison-gas cloud, summons swarms of flies), and **Juiblex**
-(the Faceless Lord, a slime that engulfs in melee and splashes
-acid). All three sit alone in their lairs and **won't pursue**
+**Asmodeus** (fire-, cold-, and poison-resistant, casts cold
+spells, carries wands of cold and fire), **Baalzebub** (the Lord
+of the Flies — gaze that stuns you and a poisonous bite that
+drains Strength; his lair is a beetle-shaped maze), and
+**Juiblex** (the Faceless Lord, a slime that engulfs in melee
+and spits acid). All three sit alone in their lairs and **won't pursue**
 you, so you can avoid them entirely by skipping their level.
 
 **Asmodeus and Baalzebub are bribable**: the demand is a random
@@ -5651,9 +5654,11 @@ remove curse on your gear, forced polymorph, acid damage in
 eighty-HP gulps if you don't have acid resistance, or a randomized
 stat shuffle that will probably make several of your scores worse.
 
-The arithmetic: 4/13 chance per sit of the wish ending it, so on
-average you sit ~3 times before the wish (and absorb two of the
-bad effects on the way). Plan accordingly. Stand at full HP,
+The arithmetic: only one sit in three picks an effect at all
+(the other two roll "you feel out of place" and do nothing); of
+those that fire, 4/13 are the wish. Unconditional rate is about
+1 in 10, so plan on roughly ten sits before the wish lands, with
+about seven bad effects absorbed along the way. Plan accordingly. Stand at full HP,
 don't carry potions you can't afford to grease, and have acid
 resistance or magic resistance ready before you sit. If you don't
 want a forced wish (say, you've already used your Castle wish and
@@ -7545,7 +7550,7 @@ kebab bonus.
 
 :::
 
-<!-- audit 2026-05-18 #165: stats clean vs objects.h:349 (P_LANCE skill, one-handed, IRON). "Useless on foot" overstated — without a steed it's a regular 1d6/1d8 piercer with no joust bonus, but it still hits and damages normally. Reworded to "no bonus on foot." See companion-audit.md. -->
+<!-- audit 2026-05-18 #165 (re-audit 2026-05-19 v2 #135): stats clean vs objects.h:349 (P_LANCE skill, one-handed, IRON). "Useless on foot" overstated — without a steed it's a regular 1d6/1d8 piercer with no joust bonus, but it still hits and damages normally. Reworded to "no bonus on foot." v2 re-verified: joust bonus +2d10 primary / +2d2 off-hand at objects.h:351-352 + uhitm.c:1546; shatter at 1/250 per successful joust (uhitm.c:2123-2125 + 1559). 0 new corrections. See companion-audit.md. -->
 #### Lance
 
 ::: dense-table
@@ -8645,9 +8650,9 @@ The monster from Lewis Carroll's *Jabberwocky* ("O frabjous day! Callooh! Callay
 :::
 
 #### Keystone Kops `K`
-<!-- audit 2026-05-18 #114: stats all match monsters.h:1829-1860; shopkeeper-anger trigger confirmed at shk.c:623, 680 + makekops at shk.c:5113. Added the respawn note: dead Kops respawn per mon.c:3147-3164 (rnd(5): 1-in-5 returns near up-stairs, 2-in-5 returns at random location, 2-in-5 stays dead). All four are G_GENO so genocide does work to clear them permanently. -->
+<!-- audit 2026-05-18 #114 (re-audit 2026-05-19 v2 #137): stats all match monsters.h:1829-1860; shopkeeper-anger trigger confirmed at shk.c:623, 680 + makekops at shk.c:5113. Added the respawn note: dead Kops respawn per mon.c:3147-3164 (rnd(5): 1-in-5 returns near down-stairs, 1-in-5 returns at random location, 3-in-5 stays dead). All four are G_GENO so genocide does work to clear them permanently. v2 fix: original respawn note said "near up-stairs" and "2-in-5 random / 2-in-5 dead." Both wrong. (a) `stairway_find_type_dir(FALSE, FALSE)` finds DOWN-stairs (the second FALSE is the `up` flag — stairs.c:89-95, mklev.c:2193). (b) mon.c:3151-3164 rolls rnd(5): case 1 → stairs (1/5), case 2 → random (1/5), default (3/4/5) → dead (3/5). Corrected the prose. See companion-audit.md. -->
 
-Police force triggered by stealing from shops or hurting shopkeepers. Mostly weak individually but they swarm — and dead Kops respawn: each fallen Kop has a 1-in-5 chance to come back near the up-stairs and a 2-in-5 chance to come back at a random location, so killing them isn't a stable solution. Get away or genocide them instead.
+Police force triggered by stealing from shops or hurting shopkeepers. Mostly weak individually but they swarm — and dead Kops respawn: each fallen Kop has a 1-in-5 chance to come back near the down-stairs and a 1-in-5 chance to come back at a random location, so killing them isn't a stable solution. Get away or genocide them instead.
 
 ::: dense-table
 
