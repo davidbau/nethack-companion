@@ -69,11 +69,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 58**  L 6856  (  23 lines)     ↳ Voluntary Challenges → Wishing Restrictions
 - [x] **# 59**  L 6927  (  13 lines)     ↳ Voluntary Challenges → Petless (new in 5.0)
 - [x] **# 60**  L 6409  (  62 lines)     ↳ Sokoban Solutions → Level 3, Version B
-- [ ] **# 61**  L 8502  (  19 lines)     ↳ Bestiary Tables → Elementals `E`
+- [x] **# 61**  L 8502  (  19 lines)     ↳ Bestiary Tables → Elementals `E`
 - [ ] **# 62**  L 3892  ( 146 lines)   📖 Tools of the Trade
 - [ ] **# 63**  L 1310  (  24 lines)     ↳ Traps and Hazards → Searching and Detection
-- [ ] **# 64**  L 8368  (  16 lines)     ↳ Bestiary Tables → Xans and fantastic insects `x`
-- [ ] **# 65**  L 8765  (  20 lines)     ↳ Bestiary Tables → Trolls `T`
+- [x] **# 64**  L 8368  (  16 lines)     ↳ Bestiary Tables → Xans and fantastic insects `x`
+- [x] **# 65**  L 8765  (  20 lines)     ↳ Bestiary Tables → Trolls `T`
 - [ ] **# 66**  L 7364  (  12 lines)     ↳ Weapons Tables → Club
 - [ ] **# 67**  L 8185  (  18 lines)     ↳ Bestiary Tables → Nymphs `n`
 - [ ] **# 68**  L 2569  (  58 lines)     ↳ A Practical Identification Strategy → Blessed, Uncursed, Cursed

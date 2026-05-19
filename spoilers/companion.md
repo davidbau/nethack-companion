@@ -8385,9 +8385,9 @@ Long worms become a maze of tail segments as they grow. Purple worms swallow you
 :::
 
 #### Xans and fantastic insects `x`
-<!-- audit 2026-05-17 #16: 9 cells/claims verified, 0 corrected. All grid bug and xan stats match monsters.h. See companion-audit.md. -->
+<!-- audit 2026-05-17 #16 (re-audit 2026-05-18 v2 #64): 9 cells/claims verified, 0 corrected. All grid bug and xan stats match monsters.h. v2 fixed the intro: "sting your legs and slow you down" was wrong — AD_LEGS / Wounded_legs reduces carry capacity (hack.c:4331-4336) and abuses Dex (attrib.c:472, 581) but does NOT reduce movement speed. Reworded to "sting your legs and cut your carrying capacity." Stats re-verified vs monsters.h:1149-1164. See companion-audit.md. -->
 
-Grid bugs are trivial; xans, the bigger relatives, sting your legs and slow you down.
+Grid bugs are trivial; xans, the bigger relatives, sting your legs and cut your carrying capacity.
 
 All xans and fantastic insects are poison-resistant.
 
@@ -8519,7 +8519,7 @@ All except *Chromatic Dragon* also fly.
 :::
 
 #### Elementals `E`
-<!-- audit 2026-05-17 #14: 32 cells/claims verified, 0 corrected. All stats match monsters.h. Close call: fire/air rows could enrich Notes with their resistances (MR_FIRE etc.) like earth/water rows do. See companion-audit.md. -->
+<!-- audit 2026-05-17 #14 (re-audit 2026-05-18 v2 #61): 32 cells/claims verified, 0 corrected. All stats match monsters.h. Close call: fire/air rows could enrich Notes with their resistances (MR_FIRE etc.) like earth/water rows do. v2 re-confirmed every row vs monsters.h:1566-1610: stalker (no mindless, sees-invis, M2_STALK), air (AT_ENGL AD_PHYS 1d10), fire (claw 3d6 AD_FIRE + passive 0d4 fire), earth (claw 4d6 + MR_FIRE|MR_COLD|MR_POISON|MR_STONE), water (claw 5d6 + M1_SWIM|M1_AMPHIBIOUS + MR_POISON|MR_STONE). "Water drowns if you're adjacent in water" is defensible flavor — water elementals don't have a drown attack themselves, but spawning only on water tiles means encountering one already places you near the standard water-tile drowning risk. "Air suffocates" is engulf-flavor for AT_ENGL AD_PHYS, not a mechanical AD_DRST. 0 corrections. See companion-audit.md. -->
 
 Air engulfs and suffocates, fire deals fire damage, water drowns if you're adjacent in water, earth is slow but tough.
 
@@ -8780,7 +8780,7 @@ All snakes swim. All except *python* also hide.
 :::
 
 #### Trolls `T`
-<!-- audit 2026-05-17 #3: 17 stat claims verified. Self-audit caught the rewrite's "fire/water/force-bolt destroy corpses" claim was wrong (burn_floor_objects only burns scrolls/spellbooks/slime; no general corpse-destruction by these means). Trimmed to verified options only. See companion-audit.md. -->
+<!-- audit 2026-05-17 #3 (re-audit 2026-05-18 v2 #65): 17 stat claims verified. Self-audit caught the rewrite's "fire/water/force-bolt destroy corpses" claim was wrong (burn_floor_objects only burns scrolls/spellbooks/slime; no general corpse-destruction by these means). Trimmed to verified options only. v2 re-confirmed all five rows vs monsters.h:2225-2266 (troll/ice/rock/water/Olog-hai). All carry M1_REGEN | M2_STALK; S_TROLL is is_reviver per mondata.h:170. Trollsbane sets mkcorpstat_norevive at uhitm.c:1906,4867 + mhitm.c:1082. Stoning leaves a statue (mon.c:671), so no corpse to revive from. 0 corrections. See companion-audit.md. -->
 
 Regenerates from corpses on a timer. Three reliable ways to keep a troll dead: **eat the corpse** before it revives; **kill it with Trollsbane wielded** (the artifact disables the revive timer); or **stone it** so it leaves a statue instead of a corpse. A troll left behind on an old level will be alive when you come back.
 

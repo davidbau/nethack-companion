@@ -7843,3 +7843,46 @@ Source: `spoilers/companion.md` line 6427. No corrections (re-audit clean).
 - Final tally "Five boulders (A, B, D, E, and J) remain" exact (16 − 11 finished).
 
 ---
+
+## 2026-05-18 — v2 audit #61: Bestiary Tables — Elementals `E`
+
+Source: `spoilers/companion.md` line 8521. No corrections (re-audit clean).
+
+### Verified
+- All five rows match `include/monsters.h:1566-1610`: stalker (no mindless, sees-invis, M2_STALK); air (AT_ENGL AD_PHYS 1d10); fire (claw 3d6 AD_FIRE + passive 0d4); earth (claw 4d6 + MR_FIRE|MR_COLD|MR_POISON|MR_STONE); water (claw 5d6 + M1_SWIM|M1_AMPHIBIOUS + MR_POISON|MR_STONE).
+- Lead-in "all except stalker also are mindless" matches the M1_MINDLESS flags.
+
+### Notes
+- "Water drowns if you're adjacent in water" is defensible flavor — water elementals don't have a drown attack but spawn only on water tiles, so encountering one already places you near the water-tile drowning risk.
+- "Air engulfs and suffocates" — engulf is AD_PHYS, not AD_DRST; "suffocates" reads as engulf-flavor and is defensible.
+- Air and fire rows could enrich Notes with their resistances (MR_POISON|MR_STONE on air, MR_FIRE|MR_POISON|MR_STONE on fire) to match earth/water rows. Pass-1 already flagged this as a close call; left for now.
+
+---
+
+## 2026-05-18 — v2 audit #64: Bestiary Tables — Xans and fantastic insects `x`
+
+Source: `spoilers/companion.md` line 8387. 1 factual fix.
+
+### Wrong → fixed
+- **"sting your legs and slow you down"**: xan's AD_LEGS / Wounded_legs reduces carrying capacity (`hack.c:4331-4336`) and abuses Dex (`attrib.c:472, 581`) but does NOT reduce movement speed. Reworded to "sting your legs and cut your carrying capacity."
+
+### Verified
+- Grid bug Lvl 0, Spd 12, AC 9, bite 1d1 shock at `monsters.h:1149-1156`.
+- Xan Lvl 7, Spd 18, AC -4, sting 1d4 AD_LEGS, M1_FLY|M1_POIS at `monsters.h:1157-1164`.
+- Both carry MR_POISON.
+
+---
+
+## 2026-05-18 — v2 audit #65: Bestiary Tables — Trolls `T`
+
+Source: `spoilers/companion.md` line 8782. No corrections (re-audit clean).
+
+### Verified
+- All five rows match `include/monsters.h:2225-2266`: troll, ice troll, rock troll, water troll, Olog-hai.
+- All carry M1_REGEN | M2_STALK.
+- S_TROLL class is `is_reviver` per `mondata.h:170`.
+- Revival via `revive_corpse` at `mon.c:1560, 1679`.
+- Trollsbane disables revive via `mkcorpstat_norevive` flag at `monst.h:247-248`, applied at `uhitm.c:1906, 4867` and `mhitm.c:1082`.
+- Stoning leaves a statue (`mon.c:671 mkcorpstat(STATUE,...)`), so no corpse to revive from.
+
+---
