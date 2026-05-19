@@ -1011,7 +1011,7 @@ Quest artifacts are powerful. Each grants a unique mix of carried
 or worn intrinsics: protection, luck, ESP, warning, reflection, or
 stealth depending on role. A few grant magic resistance just by
 being carried; a few others block magic attacks only when wielded
-or worn. The Artifacts chapter has the per-role list. Getting your
+or worn. The [Artifacts](#artifacts) chapter has the per-role list. Getting your
 quest artifact is a pivotal moment. The late game starts here.
 
 **Two prizes wait on the nemesis's square.** The **Bell of Opening**
@@ -1148,7 +1148,7 @@ Your options, from safest to most desperate:
 
 - **Levitation** (ring, boots, potion, or spell). The easiest way
   to cross, but **does not protect you from eel grabs** in adjacent
-  water (see *Drowning* in Dangerous Encounters). Use it to traverse
+  water (see [Drowning](#drowning) in [Dangerous Encounters](#dangerous-encounters)). Use it to traverse
   fast, not as a defense.
 - **Water walking boots.** You walk on the surface. Eels can still
   grab you in adjacent water.
@@ -1697,10 +1697,10 @@ AC / attack details on every monster, see the
 | `S`    | Snakes            | Cobras and pit vipers poison. Water moccasins come from fountains.                                   |
 | `t`    | Trappers / lurkers above | Hide in plain sight on floor or ceiling and engulf you when you walk under/onto them. See the engulfment write-up under Dangerous Encounters. |
 | `T`    | Trolls            | Regenerate. They come back from the dead unless you eat or tin the corpse.                           |
-| `u`    | Horses / unicorns | Horses are usually mountable, mostly peaceful in the wild. Unicorns are color-coded by alignment: same-aligned spawn peaceful, cross-aligned hostile. The gem-throwing negotiation playbook is in the Luck chapter. |
+| `u`    | Horses / unicorns | Horses are usually mountable, mostly peaceful in the wild. Unicorns are color-coded by alignment: same-aligned spawn peaceful, cross-aligned hostile. The gem-throwing negotiation playbook is in [Luck and Fortune](#luck-and-fortune). |
 | `U`    | Umber hulk        | Confuses on sight. Avoid looking at them directly.                                                   |
 | `v`    | Vortices          | Engulfing wisps. Air, fire, ice, and steam vortices each apply their element to whatever they engulf. Kill at range. |
-| `w`    | Worms             | Long worms grow tail segments as they move and can be a corridor in themselves. Purple worms swallow you whole (see Don't Want, below). |
+| `w`    | Worms             | Long worms grow tail segments as they move and can be a corridor in themselves. Purple worms swallow you whole (see [Things You Don't Want to Meet](#things-you-dont-want-to-meet), below). |
 | `W`    | Wraiths           | Drain levels on hit. But their corpses grant a level, so eat them fresh.                             |
 | `y`    | Yellow/black lights | Explode adjacent. Yellow blinds you; black hallucinates you. Black lights are invisible without *see invisible*. Kill at range. |
 | `Y`    | Yetis             | Tough melee combatants. Corpses may grant cold resistance.                                           |
@@ -1833,7 +1833,7 @@ underestimate the threat.**
   you. (Electric shock is a top-100 cause of death in its own
   right.) Stop kicking things.
 - **Wrath of a god.** You prayed when your god wasn't willing.
-  See the Divine Relations chapter.
+  See the [Divine Relations](#divine-relations) chapter.
 - **Scroll of genocide.** Read while confused → genocides your
   own role's species (Valkyrie, Wizard, etc.) → instant kill.
   Don't read scrolls under confusion unless you know what they are.
@@ -1843,7 +1843,7 @@ underestimate the threat.**
 The pattern across the whole list: routine mistakes kill far more
 adventurers than exotic instadeaths. Floating eyes, cockatrices,
 mind flayers, and disenchanters all matter (and they're catalogued
-under Dangerous Encounters below). But the median death is a
+under [Dangerous Encounters](#dangerous-encounters) below). But the median death is a
 preventable swarm of jackals on Dlvl 3.
 
 #### A note on mimics
@@ -2100,7 +2100,7 @@ restores all lost levels at once), or by eating a wraith corpse.
 
 (Don't confuse drain-life with *Strength* drain: a vampire bat's
 poisoned bite drains Str, not levels. Stat drain is a separate
-problem and the section on *Enchantment Drain* covers its cousin.)
+problem and [Enchantment Drain](#enchantment-drain) covers its cousin.)
 
 **Defenses:** *Drain resistance* makes you immune. The classic
 sources are wielding Excalibur (Lawful), Stormbringer (Chaotic),
@@ -2364,7 +2364,7 @@ check uses the eel's tile, so levitation, water walking, and
 encumbrance status are irrelevant once the grab lands. **Cures:**
 magical breathing (amulet or spell), kill or teleport the eel
 before it pulls you under, or avoid water entirely. See
-*Drowning* in Dangerous Encounters for the full picture.
+[Drowning](#drowning) in [Dangerous Encounters](#dangerous-encounters) for the full picture.
 
 **Strangulation.** Wearing a cursed amulet of strangulation slowly
 kills you over a few turns. **Cure:** remove the amulet (requires
@@ -4880,7 +4880,7 @@ training will help. A Wizard caps at Basic with a mace and is
 restricted from long swords. Restricted skills don't appear on
 `#enhance` and stay Unskilled, with one exception: if your god
 grants you an artifact weapon, you're auto-unrestricted in its
-skill up to Basic. The full role caps live in the appendix.
+skill up to Basic. The full role caps live in the [Skill Caps](#skill-caps) appendix.
 
 #### Training a Skill
 
@@ -5029,7 +5029,7 @@ The Mazes are stingy, but there are more wish sources than most
 travelers realize:
 
 - **Wand of wishing:** found in the Castle treasure room
-  (see Wands → Key Wands for the 5.0 charge mechanics). The
+  (see [Key Wands](#key-wands) for the 5.0 charge mechanics). The
   Castle chest also contains a potion of gain level, because the
   Mazes occasionally feel generous.
 <!-- src/sit.c special_throne_effect(): cases 1-4 (of 13) = wish,
@@ -5528,7 +5528,7 @@ recharge), so plan a *small* wishlist and accept that further
 wishes will need to come from other guaranteed sources — Vlad's
 throne, the Amulet pickup, Orcus Town's lamp/marker, fountain
 luck, or wresting. The era of the bottomless wishing wand is over
-(see Wands → Key Wands for the full mechanics).
+(see [Key Wands](#key-wands) for the full mechanics).
 
 Once you're fully equipped, the staircase down leads to Gehennom.
 Take a moment before descending. Sit down. Have a snack. Check your
@@ -5776,8 +5776,8 @@ frantic climb back to the surface. The steps:
    the **Ascension Run** — every covetous monster in the game has
    noticed, the Wizard of Yendor will keep teleporting to you to
    take his Amulet back, and the Mysterious Force will keep
-   yanking you back down. Climb fast (see the Ascension Run
-   section below).
+   yanking you back down. Climb fast (see [The Ascension Run](#the-ascension-run)
+   below).
 
 #### Survival Tips
 
@@ -7356,7 +7356,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
 | scimitar | 1d8 / 1d8 | 40 | 15 | — | iron |  |
-| silver saber | 1d8 / 1d8 | 40 | 75 | — | silver | Silver does bonus damage to demons/weres/vampires/imps. Artifact forms: **Grayswandir** and **Werebane** (see Artifacts). |
+| silver saber | 1d8 / 1d8 | 40 | 75 | — | silver | Silver does bonus damage to demons/weres/vampires/imps. Artifact forms: **Grayswandir** and **Werebane** (see [Artifacts](#artifacts)). |
 
 :::
 
@@ -8385,7 +8385,7 @@ All trappers and lurkers hide and follow you up and down stairs.
 
 There are two equine `u`-class creatures. **Horses** (pony, horse, warhorse) spawn hostile in the wild but can be tamed, saddled, and ridden; the Knight starts on a saddled pony.
 
-**Unicorns** (white, gray, black for Lawful, Neutral, Chaotic) are powerful kickers, peaceful when your alignment matches theirs and hostile otherwise. Killing a co-aligned unicorn is a −5 Luck penalty (the game tells you "You feel guilty..."). Killing a cross-aligned one has no Luck consequence either way. If you don't want the fight, throw any gem — even worthless glass — to pacify a hostile unicorn at no cost; throwing real gems also adjusts your Luck (see the Luck chapter). A killed unicorn drops its horn.
+**Unicorns** (white, gray, black for Lawful, Neutral, Chaotic) are powerful kickers, peaceful when your alignment matches theirs and hostile otherwise. Killing a co-aligned unicorn is a −5 Luck penalty (the game tells you "You feel guilty..."). Killing a cross-aligned one has no Luck consequence either way. If you don't want the fight, throw any gem — even worthless glass — to pacify a hostile unicorn at no cost; throwing real gems also adjusts your Luck (see [Luck and Fortune](#luck-and-fortune)). A killed unicorn drops its horn.
 
 ::: dense-table
 
@@ -8782,8 +8782,8 @@ The `Q` class is two creatures, both with random claw effects. The
 lost position more than the damage, but in dangerous neighbourhoods
 a random teleport CAN kill. The **genetic engineer** polymorphs
 you: unless you have *Unchanging* or magic resistance, one claw and
-you become something else. See **Dangerous Encounters → The Genetic
-Engineer** for the full treatment.
+you become something else. See [The Genetic Engineer](#the-genetic-engineer)
+for the full treatment.
 
 Both species also teleport themselves at random, and both leave
 poisonous corpses.
