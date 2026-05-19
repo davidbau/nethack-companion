@@ -132,11 +132,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#121**  L 1170  (  36 lines)     ↳ Branches and Landmarks → The Castle
 - [x] **#122**  L 6940  (  20 lines)     ↳ Voluntary Challenges → Permadeaf (new in 5.0)
 - [x] **#123**  L 8844  (  19 lines)     ↳ Bestiary Tables → Apelike creatures `Y`
-- [ ] **#124**  L 8814  (  17 lines)     ↳ Bestiary Tables → Wraiths `W`
-- [ ] **#125**  L 8352  (  16 lines)     ↳ Bestiary Tables → Worms `w`
-- [ ] **#126**  L 7411  (  11 lines)     ↳ Weapons Tables → Hammer
-- [ ] **#127**  L 5802  (  82 lines)   📖 The Ascension Run
-- [ ] **#128**  L 8079  (  20 lines)     ↳ Bestiary Tables → Humanoids `h`
+- [x] **#124**  L 8814  (  17 lines)     ↳ Bestiary Tables → Wraiths `W`
+- [x] **#125**  L 8352  (  16 lines)     ↳ Bestiary Tables → Worms `w`
+- [x] **#126**  L 7411  (  11 lines)     ↳ Weapons Tables → Hammer
+- [x] **#127**  L 5802  (  82 lines)   📖 The Ascension Run
+- [x] **#128**  L 8079  (  20 lines)     ↳ Bestiary Tables → Humanoids `h`
 - [ ] **#129**  L 6907  (  20 lines)     ↳ Voluntary Challenges → Pauper (new in 5.0)
 - [ ] **#130**  L 8785  (  12 lines)     ↳ Bestiary Tables → Umber hulks `U`
 - [ ] **#131**  L 7993  (  27 lines)     ↳ Bestiary Tables → Dogs and canines `d`

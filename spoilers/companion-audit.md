@@ -8459,3 +8459,36 @@ All 6 rows re-verified vs `monsters.h:2372-2417`. monkey AD_SITM, ape AT_BITE th
 123/183 done.
 
 ---
+
+## 2026-05-19 — v2 audit batch 26: Wraiths (#124), Worms (#125), Hammer (#126), Ascension Run (#127), Humanoids (#128)
+
+### Ascension Run (#127) — `spoilers/companion.md:5838` — 1 correction
+
+Mysterious Force paragraph had two related errors:
+- **"dropped back down one to three levels"** overstates the per-alignment max. Per `do.c:1544` `odds = 3 + ualign.type` and `diff = rn2(odds)`: Chaotics (`odds=2`) max -1; Neutrals (`odds=3`) max -2; only Lawfuls (`odds=4`) reach -3.
+- **"A smaller chance just teleports you elsewhere on the same level"** inverts the distribution. Same-level (diff==0) is the *majority* outcome among triggers — 50% for Lawful/Chaotic, 33% for Neutral; only Lawfuls have the -3 tail.
+
+Reworded to: "Often it just shuffles you elsewhere on the same level; sometimes it drops you down a level (Chaotic max), two (Neutral max), or even three (Lawfuls only)." Also dropped the backtick around `Inhell` — was a C-identifier leak; now reads "a hard Gehennom gate."
+
+Re-verified all other claims: Amulet pickup wish (`allmain.c:446-451`), Wizard respawn (`wizard.c:721-757`), Amulet blocks level teleport (`teleport.c:1185-1189`), covetous warp (`wizard.c:274+`), bottom-four-levels exclusion (`do.c:1541` `dunlev < dunlevs_in_dungeon - 3`), Elbereth dead in Gehennom and endgame (`teleport.c:68-70`).
+
+### Wraiths `W` (#124) — `spoilers/companion.md:8865` — 0 corrections, badge updated
+
+All 3 rows re-verified vs `monsters.h:2326-2353`. Only plain wraith leaves an eatable corpse (barrow wight + Nazgul both G_NOCORPSE). Wraith corpse pluslvl at `eat.c:1141-1142`.
+
+### Worms `w` (#125) — `spoilers/companion.md:8405` — 0 corrections, badge updated
+
+All 4 rows re-verified vs `monsters.h:1114-1145`. Worm tooth drop only fires for `PM_LONG_WORM` (not baby long worm) per `mon.c:619` — spoiler row placement correct.
+
+### Hammer (#126) — `spoilers/companion.md:7463` — 0 corrections, badge updated
+
+War hammer 1d4+1/1d4 verified against `objects.h:367-369` ("`+1 small`" comment). Mjollnir Valkyrie role-lock + alignment-fixup verified at `artilist.h:109-112` + `artifact.c:86-95`. Aklys correctly excluded (uses P_CLUB, not P_HAMMER).
+
+### Humanoids `h` (#128) — `spoilers/companion.md:8131` — 0 corrections, badge updated
+
+All 7 rows re-verified vs `monsters.h:477-540`. Helmet-blocks-7/8 of mind flayer tentacles confirmed at `uhitm.c:3235` (`uarmh && rn2(8)`). Bugbear is AT_WEAP only (no bite — spoiler correctly omits).
+
+### Pass-2 queue
+128/183 done.
+
+---

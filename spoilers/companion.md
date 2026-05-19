@@ -5836,7 +5836,7 @@ clear.
 ---
 
 ### The Ascension Run
-<!-- audit 2026-05-18 #134: corrected three claims and added the missing Amulet-wish note. (1) "Mysterious Force yanks you back to a random location on the level instead of going up" — wrong; do.c:1541-1573 mostly sends you DOWN one to three levels (assign_rnd_level diff = rn2(3 + ualign.type)); the same-level teleport is the fallback when assign_rnd_level returns a no-op. Distance is alignment-biased (chaotic worst). (2) "Stops once you're above Gehennom, where the dungeon's grip weakens" — misleading; it's a hard Inhell gate at do.c:1541, not a gradient. Also never fires on the bottom 4 levels per dunlev < dunlevs_in_dungeon-3. (3) "Use Elbereth when you need a turn to heal" — wrong for almost the entire run; teleport.c:68-70 onscary() returns FALSE for Inhell || In_endgame, so Elbereth is dead in all of Gehennom and on all four Elemental Planes plus Astral. Added the Amulet-pickup wish (allmain.c:446-451 fires on next moveloop iteration after pickup, if !u.uevent.amulet_wish) and the 5.0 Mysterious-Force decay (do.c:1536-1563 — frequency tapers with each trigger). -->
+<!-- audit 2026-05-18 #134 (re-audit 2026-05-19 v2 #127): corrected three claims and added the missing Amulet-wish note. (1) "Mysterious Force yanks you back to a random location on the level instead of going up" — wrong; do.c:1541-1573 mostly sends you DOWN one to three levels (assign_rnd_level diff = rn2(3 + ualign.type)); the same-level teleport is the fallback when assign_rnd_level returns a no-op. Distance is alignment-biased (chaotic worst). (2) "Stops once you're above Gehennom, where the dungeon's grip weakens" — misleading; it's a hard Inhell gate at do.c:1541, not a gradient. Also never fires on the bottom 4 levels per dunlev < dunlevs_in_dungeon-3. (3) "Use Elbereth when you need a turn to heal" — wrong for almost the entire run; teleport.c:68-70 onscary() returns FALSE for Inhell || In_endgame, so Elbereth is dead in all of Gehennom and on all four Elemental Planes plus Astral. Added the Amulet-pickup wish (allmain.c:446-451 fires on next moveloop iteration after pickup, if !u.uevent.amulet_wish) and the 5.0 Mysterious-Force decay (do.c:1536-1563 — frequency tapers with each trigger). v2 fix: "dropped back **down** one to three levels" + "smaller chance just teleports you elsewhere on the same level" had two errors. Per do.c:1544 `odds = 3 + ualign.type` and `diff = rn2(odds)`: Chaotics (odds=2) max -1; Neutrals (odds=3) max -2; only Lawfuls (odds=4) reach -3. And same-level (diff==0) is the MAJORITY outcome, not "smaller chance" — 50% for Lawful/Chaotic, 33% for Neutral. Reworded to "Often it just shuffles you elsewhere on the same level; sometimes it drops you down a level (Chaotic max), two (Neutral max), or even three (Lawfuls only)." Also dropped the backtick around `Inhell` (was a C-identifier leak) — now plain "Gehennom gate." See companion-audit.md. -->
 
 You did it. You fought through Gehennom, defeated the High Priest,
 and snatched the Amulet of Yendor from Moloch's Sanctum. Now all
@@ -5876,13 +5876,15 @@ Everything that can go wrong will try:
   directly to your position and attack. They specifically target you
   for the Amulet, because apparently everyone wants this thing.
 - **The Mysterious Force.** While carrying the Amulet in Gehennom,
-  each time you climb stairs there's a chance you'll be dropped
-  back **down** one to three levels instead of going up — the
-  dungeon is literally holding onto you. (A smaller chance just
-  teleports you elsewhere on the same level.) The pull is hardest
-  on Chaotics, softest on Lawfuls, and in 5.0 it **decays** as
-  it triggers: every yank slightly reduces the chance of the next
-  one. The force is a hard `Inhell` gate — it stops the moment
+  each time you climb stairs there's a chance the force grabs you
+  instead. Often it just shuffles you elsewhere on the same level;
+  sometimes it drops you **down** a level (Chaotic max), two
+  levels (Neutral max), or even three (Lawfuls only) — the
+  dungeon is literally holding onto you. The pull is hardest on
+  Chaotics and softest on Lawfuls, but Lawfuls also pay the
+  longest tail when it does trigger. In 5.0 it **decays** as it
+  triggers: every yank slightly reduces the chance of the next
+  one. The force is a hard Gehennom gate — it stops the moment
   you climb out of Gehennom, and it also never fires on the
   bottom four levels.
 
@@ -7459,7 +7461,7 @@ other bimanual weapon.
 :::
 
 #### Hammer
-<!-- audit 2026-05-17 #45: war hammer stats verified vs objects.h:367-369 + weapon.c. Mjollnir note corrected: "Neutral Valkyrie sacrifice gift" wrongly implied alignment restriction. hack_artifacts at artifact.c:92-95 fixes the artifact's alignment to match player's initalign, so any Valkyrie can receive Mjollnir. Same wording fix applied at line ~242. See companion-audit.md. -->
+<!-- audit 2026-05-17 #45 (re-audit 2026-05-19 v2 #126): war hammer stats verified vs objects.h:367-369 + weapon.c. Mjollnir note corrected: "Neutral Valkyrie sacrifice gift" wrongly implied alignment restriction. hack_artifacts at artifact.c:92-95 fixes the artifact's alignment to match player's initalign, so any Valkyrie can receive Mjollnir. Same wording fix applied at line ~242. v2 re-verified war hammer +1 small bonus comment matches sdam/ldam fields; aklys is correctly NOT in this section (uses P_CLUB skill). 0 new corrections. See companion-audit.md. -->
 
 ::: dense-table
 
@@ -8126,7 +8128,7 @@ At night, their touch strips a random intrinsic (fire resistance, telepathy, etc
 :::
 
 #### Humanoids `h`
-<!-- audit 2026-05-17 #27: 50+ cells verified, 2 corrected (mind flayer "alignment-matching helmet" → any helmet; "telepathy + free action" defenses → any helmet; both per uhitm.c:3235). See companion-audit.md. -->
+<!-- audit 2026-05-17 #27 (re-audit 2026-05-19 v2 #128): 50+ cells verified, 2 corrected (mind flayer "alignment-matching helmet" → any helmet; "telepathy + free action" defenses → any helmet; both per uhitm.c:3235). v2 re-verified all 7 rows; helmet-blocks-7/8 confirmed at uhitm.c:3235 (`uarmh && rn2(8)`). Bugbear is AT_WEAP only, no bite — spoiler correctly omits. Dwarf race peacefulness via race_peaceful() at makemon.c:2283 for Dwarf PCs. 0 new corrections. See companion-audit.md. -->
 
 Dwarves and similar. Dwarves carry better-than-average loot (weapons, armor, pick-axes) and can wreck low-level heroes with that loot.
 
@@ -8401,7 +8403,7 @@ All vortices fly, are mindless, and leave no corpse.
 :::
 
 #### Worms `w`
-<!-- audit 2026-05-18 #84: 4 rows × 8 cells verified against monsters.h:1114-1145. Long worm tail mechanic in worm.c, purple worm AT_ENGL/AD_DGST swallow in mhitu.c. Added "drops worm tooth" note to long worm (mon.c:619). 0 corrections beyond that. See companion-audit.md. -->
+<!-- audit 2026-05-18 #84 (re-audit 2026-05-19 v2 #125): 4 rows × 8 cells verified against monsters.h:1114-1145. Long worm tail mechanic in worm.c, purple worm AT_ENGL/AD_DGST swallow in mhitu.c. Added "drops worm tooth" note to long worm (mon.c:619). v2 re-verified all 4 rows; worm tooth drop only fires for PM_LONG_WORM (not baby), spoiler placement correct. 0 new corrections. See companion-audit.md. -->
 
 Long worms become a maze of tail segments as they grow. Purple worms swallow you whole and digest. Don't get cornered.
 
@@ -8861,7 +8863,7 @@ All vampires fly, regenerate, are undead, follow you up and down stairs, and sha
 :::
 
 #### Wraiths `W`
-<!-- audit 2026-05-17 #13: 24 claims/cells verified, 0 corrected. All stats match monsters.h. Close call: wraith row could enrich Notes with stone-res + unsolid. See companion-audit.md. -->
+<!-- audit 2026-05-17 #13 (re-audit 2026-05-19 v2 #124): 24 claims/cells verified, 0 corrected. All stats match monsters.h. Close call: wraith row could enrich Notes with stone-res + unsolid. v2: re-verified all 3 rows against monsters.h:2326-2353. Only plain wraith leaves an eatable corpse (barrow wight + Nazgul both G_NOCORPSE). Wraith corpse pluslvl at eat.c:1141-1142. 0 new corrections. See companion-audit.md. -->
 
 Drains XL on touch. The wraith corpse, however, **gives** a level when eaten: one of the best food items in the game. Always eat a wraith corpse if you can.
 
