@@ -170,11 +170,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#158**  L 8336  (  18 lines)     ↳ Bestiary Tables → Rodents `r`
 - [x] **#159**  L 4725  ( 126 lines)   📖 The Art of Combat
 - [x] **#160**  L 8316  (  20 lines)     ↳ Bestiary Tables → Quadrupeds `q`
-- [ ] **#161**  L 8763  (  21 lines)     ↳ Bestiary Tables → Puddings and oozes `P`
-- [ ] **#162**  L 8807  (  14 lines)     ↳ Bestiary Tables → Rust monsters and disenchanters `R`
-- [ ] **#163**  L 8211  (  19 lines)     ↳ Bestiary Tables → Kobolds `k`
-- [ ] **#164**  L 2302  (  21 lines)     ↳ Dangerous Encounters → Disintegration
-- [ ] **#165**  L 8511  (  17 lines)     ↳ Bestiary Tables → Bats and birds `B`
+- [x] **#161**  L 8763  (  21 lines)     ↳ Bestiary Tables → Puddings and oozes `P`
+- [x] **#162**  L 8807  (  14 lines)     ↳ Bestiary Tables → Rust monsters and disenchanters `R`
+- [x] **#163**  L 8211  (  19 lines)     ↳ Bestiary Tables → Kobolds `k`
+- [x] **#164**  L 2302  (  21 lines)     ↳ Dangerous Encounters → Disintegration
+- [x] **#165**  L 8511  (  17 lines)     ↳ Bestiary Tables → Bats and birds `B`
 - [ ] **#166**  L 1189  (  35 lines)     ↳ Branches and Landmarks → The Castle
 - [ ] **#167**  L 9365  ( 166 lines)   📖 Acknowledgements
 - [ ] **#168**  L 6901  (  19 lines)     ↳ Voluntary Challenges → Polymorph Restrictions

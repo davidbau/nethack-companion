@@ -9312,3 +9312,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 160/183 done.
+
+## 2026-05-19 — v3 audit batch 33: Puddings (#161), Rust monsters (#162), Kobolds (#163), Disintegration (#164), Bats and birds (#165)
+
+All five **CLEAN**.
+
+- Puddings `P`: 4 rows match `monsters.h`; split gating at `uhitm.c:1609-1620` (only BLACK/BROWN puddings on IRON|METAL); gray ooze MR_FIRE; green slime G_HELL Gehennom-only.
+- Rust monsters `R`: 2 rows match `monsters.h:2147-2161`. AD_RUST 0d0 × 3 (rust monster), AD_ENCH 4d4 active + passive (disenchanter).
+- Kobolds `k`: 4 rows match `monsters.h:622-656`. All M1_POIS poisonous corpses.
+- Disintegration: black dragon breath via `zap.c:4464-4493`; Disint_resistance immunity; armor strip order (shield→body+cloak→life-saved with cloak+shirt destroyed); MR doesn't help (return before Antimagic check at `zap.c:4497`); reflection bounce doesn't kill the dragon (`zap.c:4318` resists_disint).
+- Bats/birds `B`: 4 rows match `monsters.h:1269-1297`. Vampire bat 2nd attack AD_DRST (drain-Str), poison-res blocks. All M1_FLY.
+
+### Pass-3 queue
+165/183 done.
