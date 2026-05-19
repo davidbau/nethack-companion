@@ -3484,7 +3484,7 @@ pharmacy.
 ---
 
 ### The Scroll Rack
-<!-- audit 2026-05-17 #1 (re-audit 2026-05-19 v2 #142): 26 claims verified, 2 corrected (enchant +5/+7 destruction wrong; charging "second/third recharge" overstated). v2 fixes: (a) "Past +9 the scroll usually does nothing but never destroys the weapon" was wrong. Per wield.c:999-1009 `chwepon`, when uwep->spe > 5 (i.e., +6 or higher) and amount >= 0, `rn2(3)` evaluates true 2/3 of the time and destroys the weapon outright. So +6 and above is at 2/3 destruction risk per read. Reworded with **Safe ceiling: +5**. Real beginner trap. (b) Charging probability table was off by one. Source formula `n³/7³` (read.c:746-758): 1st 0%, 2nd 0.29%, 3rd 2.33%, 4th 7.87%, 5th 18.66%, 6th 36.44%, 7th 62.97%, 8th 100%. Companion wrote "36% on sixth — and on the seventh, always" — missing the 63% seventh-charge step and labeling the always-explode as 7th. Corrected. See companion-audit.md. -->
+<!-- audit 2026-05-17 #1 (re-audit 2026-05-19 v2 #142, v3 #12): v2 fixes preserved; v3 added one correction. v3: "Confused destroy armor doesn't destroy anything: it erodeproofs" was wrong — read.c:1341 sets `new_erodeproof = scursed`, so only cursed confused destroy armor erodeproofs; uncursed or blessed actively *strips* erodeproofing (sets oerodeproof=0). The asymmetric to confused enchant armor/weapon (read.c:1138 `new_erodeproof = !scursed`) is now spelled out in both bullets. v2: (a) "Past +9 the scroll usually does nothing but never destroys the weapon" was wrong. Per wield.c:999-1009 `chwepon`, when uwep->spe > 5 and amount >= 0, `rn2(3)` evaluates true 2/3 of the time and destroys the weapon outright. So +6 and above is at 2/3 destruction risk per read. Reworded with **Safe ceiling: +5**. (b) Charging probability table was off by one. Source formula `n³/7³` (read.c:746-758): 1st 0%, 2nd 0.29%, 3rd 2.33%, 4th 7.87%, 5th 18.66%, 6th 36.44%, 7th 62.97%, 8th 100%. Corrected. See companion-audit.md. -->
 
 Scrolls are the dungeon's single-use spells: read once, triggered,
 gone. They appear with absurd randomized labels ("ZELGO MER,"
@@ -3576,11 +3576,12 @@ Here's a trick the dungeon doesn't advertise: many scrolls do
 something completely different when read while confused. Some of
 these alternate effects are *better* than the normal ones:
 
-- **Confused destroy armor** doesn't destroy anything: it
-  *erodeproofs* a piece of armor. One of the best tricks in the game
-- **Confused enchant armor / enchant weapon** also erodeproof
-  instead of enchanting. Useful when you need protection from rust
-  more than another +1
+- **Confused destroy armor**, *if cursed*, doesn't destroy
+  anything: it erodeproofs a piece of armor. (Uncursed or blessed
+  strips erodeproofing instead.) One of the best tricks in the game
+- **Confused enchant armor / enchant weapon**, *if uncursed or
+  blessed*, erodeproofs the item instead of enchanting. Useful when
+  you need protection from rust more than another +1
 - **Confused remove curse** has a 25% chance of blessing *or*
   cursing each uncursed item. Risky, but it's a clever way to create
   holy water if you confuse-read while carrying uncursed potions of

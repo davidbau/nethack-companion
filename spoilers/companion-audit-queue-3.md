@@ -20,11 +20,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#  8**  L 8907  (  13 lines)     ↳ Bestiary Tables → Xorns `X`
 - [x] **#  9**  L 6613  ( 138 lines)     ↳ Sokoban Solutions → Level 4, Version B (prize: usually amulet of reflection, 25% bag of holding)
 - [x] **# 10**  L 2237  (  29 lines)     ↳ Dangerous Encounters → The Riders
-- [ ] **# 11**  L 8096  (  19 lines)     ↳ Bestiary Tables → Eyes and spheres `e`
-- [ ] **# 12**  L 3487  ( 107 lines)   📖 The Scroll Rack
-- [ ] **# 13**  L 8890  (  17 lines)     ↳ Bestiary Tables → Wraiths `W`
-- [ ] **# 14**  L 8244  (  17 lines)     ↳ Bestiary Tables → Mimics `m`
-- [ ] **# 15**  L 8016  (  18 lines)     ↳ Bestiary Tables → Ants and insects `a`
+- [x] **# 11**  L 8096  (  19 lines)     ↳ Bestiary Tables → Eyes and spheres `e`
+- [x] **# 12**  L 3487  ( 107 lines)   📖 The Scroll Rack
+- [x] **# 13**  L 8890  (  17 lines)     ↳ Bestiary Tables → Wraiths `W`
+- [x] **# 14**  L 8244  (  17 lines)     ↳ Bestiary Tables → Mimics `m`
+- [x] **# 15**  L 8016  (  18 lines)     ↳ Bestiary Tables → Ants and insects `a`
 - [ ] **# 16**  L 1745  ( 204 lines)   📖 What Actually Kills Adventurers
 - [ ] **# 17**  L 6875  (  26 lines)     ↳ Voluntary Challenges → No Genocide
 - [ ] **# 18**  L 6828  (  18 lines)     ↳ Voluntary Challenges → Weaponless

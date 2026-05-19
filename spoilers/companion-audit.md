@@ -8853,3 +8853,27 @@ Stats and other claims (Lvl 30, Spd 12, AC -5, MR 100, regen, see-invis, displac
 
 ### Pass-3 queue
 10/183 done.
+
+## 2026-05-19 — v3 audit batch 3: Eyes & spheres (#11), Scroll Rack (#12), Wraiths (#13), Mimics (#14), Ants & insects (#15)
+
+Four CLEAN, one with a real BUC-asymmetry finding on Scroll Rack.
+
+### Eyes and spheres `e` (#11) — `spoilers/companion.md:8096` — 0 corrections
+Stats for gas spore, floating eye, freezing/flaming/shocking sphere all match `monsters.h`. Floating-eye passive paralysis 0d70 with WIS-12 fail-roll cap; Free Action and Blindness block the gaze (`uhitm.c:6022-6053`).
+
+### The Scroll Rack (#12) — `spoilers/companion.md:3487` — **1 correction**
+"Confused destroy armor doesn't destroy anything: it erodeproofs" was wrong. Per `read.c:1341`, `new_erodeproof = scursed` — only cursed confused destroy armor erodeproofs; uncursed or blessed *strips* erodeproofing (`oerodeproof = 0`). This is opposite of confused enchant armor/weapon (`read.c:1138`: `new_erodeproof = !scursed`, where uncursed/blessed proofs and cursed strips). Both bullets now spell out the BUC precondition.
+
+All other Scroll Rack claims verified clean: price table; identify blessed +luck min 2 (`read.c:2086-2091`); magic mapping reveals secret doors blessed; teleport cursed/confused = level-tele; genocide blessed=class, confused=own role; enchant weapon +5 safe ceiling (2/3 destroy at spe ≥ 6, `wield.c:999-1009`); charging cube-cubed-over-7³ probability; scare monster pickup→dust.
+
+### Wraiths `W` (#13) — `spoilers/companion.md:8890` — 0 corrections
+Barrow wight, wraith, Nazgul stats and attack tuples match `monsters.h`. Wraith corpse → +1 XL via `pluslvl()` at `eat.c:1141-1142` confirmed.
+
+### Mimics `m` (#14) — `spoilers/companion.md:8244` — 0 corrections
+Small (Lvl 7), large (Lvl 8), giant (Lvl 9) all match `monsters.h`. Speed 3 / AC 7. AD_STCK glue on large+giant. 3d4 / 3d4 / 3d6 ×2.
+
+### Ants and insects `a` (#15) — `spoilers/companion.md:8016` — 0 corrections
+Giant ant, killer bee, soldier ant, fire ant, giant beetle, queen bee stats all match. M1_POIS killer-bee/soldier-ant corpses are poisonous; conveyed resistance bits match notes column. Fire ant fire-res via MR_FIRE.
+
+### Pass-3 queue
+15/183 done.
