@@ -9338,3 +9338,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 170/183 done.
+
+## 2026-05-19 — v3 audit batch 35: Arachnids (#171), Curses (#172), Practical Strategy (#173), Long sword (#174), Gnomes (#175)
+
+All five **CLEAN**.
+
+- Arachnids `s`: 5 rows match `monsters.h:940-972, 3713-3722`. Cave spider/centipede safe corpses; giant spider + scorpion M1_POIS.
+- Curses: remove curse scope `read.c:1489-1589` (cursed disintegrates, uncursed wornmask + loadstone/leash, blessed entire inv); confused 25/25/50 via `blessorcurse(obj,2)`; prayer uncurse `pray.c:254,533,597`; holy water dip `potion.c:1514-1518`.
+- Practical Strategy: synthesis cross-consistent with all sub-sections (BUC, Naming, Engrave Test, Price Is Right).
+- Long sword: 1d8/1d12 vs 1d10/1d12 katana; Excalibur fountain XL5+ at `fountain.c:404-440`, Knight 1/6 vs others 1/30, non-Lawful cursed.
+- Gnomes `G`: 4 rows match `monsters.h:1681-1709`. No deep gnome (correctly omitted).
+
+### Pass-3 queue
+175/183 done.

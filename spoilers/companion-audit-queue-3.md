@@ -180,11 +180,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#168**  L 6901  (  19 lines)     ↳ Voluntary Challenges → Polymorph Restrictions
 - [x] **#169**  L 7330  (  15 lines)     ↳ Weapons Tables → Knife
 - [x] **#170**  L 5805  (  56 lines)   📖 The Ascension Kit
-- [ ] **#171**  L 8354  (  19 lines)     ↳ Bestiary Tables → Arachnids and centipedes `s`
-- [ ] **#172**  L 5245  (  79 lines)   📖 Curses and How to Break Them
-- [ ] **#173**  L 3179  (  39 lines)     ↳ A Practical Identification Strategy → A Practical Strategy
-- [ ] **#174**  L 7383  (  13 lines)     ↳ Weapons Tables → Long sword
-- [ ] **#175**  L 8620  (  16 lines)     ↳ Bestiary Tables → Gnomes `G`
+- [x] **#171**  L 8354  (  19 lines)     ↳ Bestiary Tables → Arachnids and centipedes `s`
+- [x] **#172**  L 5245  (  79 lines)   📖 Curses and How to Break Them
+- [x] **#173**  L 3179  (  39 lines)     ↳ A Practical Identification Strategy → A Practical Strategy
+- [x] **#174**  L 7383  (  13 lines)     ↳ Weapons Tables → Long sword
+- [x] **#175**  L 8620  (  16 lines)     ↳ Bestiary Tables → Gnomes `G`
 - [ ] **#176**  L 1997  (  20 lines)     ↳ Dangerous Encounters → Drowning
 - [ ] **#177**  L 4507  ( 218 lines)   📖 Divine Relations
 - [ ] **#178**  L 6973  (  20 lines)     ↳ Voluntary Challenges → Pauper (new in 5.0)
