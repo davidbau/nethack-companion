@@ -3026,7 +3026,7 @@ inside.</p>
 </section>
 <section id="light-bursts" class="level4">
 <h4>Light Bursts</h4>
-<!-- audit 2026-05-17 #66: AT_EXPL/AD_BLND yellow light + AT_EXPL/AD_HALU black light verified against monsters.h:1169-1191 and mhitu.c:1623-1650. Both die in their own explosion. Black light is perminvis (makemon.c:1317-1320). Corrected: yellow light is monster level 3, black light is level 5 (not "level 3-5" — that read as a range per monster). Telepathy does NOT help vs black lights (M1_MINDLESS in monsters.h:1188-1189); only warning does. Plain potion of healing only cures blindness when blessed (potion.c:1994-2004); extra/full healing always cures. See companion-audit.md. -->
+<!-- audit 2026-05-17 #66 (re-audit 2026-05-19 v2 #163): AT_EXPL/AD_BLND yellow light + AT_EXPL/AD_HALU black light verified against monsters.h:1169-1191 and mhitu.c:1623-1650. Both die in their own explosion. Black light is perminvis (makemon.c:1317-1320). Corrected: yellow light is monster level 3, black light is level 5 (not "level 3-5" — that read as a range per monster). Telepathy does NOT help vs black lights (M1_MINDLESS in monsters.h:1188-1189); only warning does. Plain potion of healing only cures blindness when blessed (potion.c:1994-2004); extra/full healing always cures. v2 re-verified all claims. Note: warning detects them only at adjacent range, which is exactly when they explode — so warning helps less in practice than the prose implies, but the prose doesn't overstate. 0 new corrections. See companion-audit.md. -->
 <p><strong>Yellow lights</strong> (<code>y</code>, level 3) and
 <strong>black lights</strong> (<code>y</code>, level 5) attack by
 exploding the moment you’re adjacent. Yellow lights blind you for
@@ -3138,7 +3138,7 @@ altar.</p>
 </section>
 <section id="choking" class="level4">
 <h4>Choking</h4>
-<!-- audit 2026-05-17 #68: eat-while-satiated death (eat.c:248, 286 done(CHOKING)) and warning string (eat.c:3314) verified. Corrected "if you confirm, you're dead" — the prompt only appears with paranoid_confirmation:eating enabled (default off); death only fires at uhunger >= 2000 with a 1/20 escape, AND Breathless creatures never choke (eat.c:258-266). Added the amulet of strangulation path (timeout.c) which is the other major choking death. See companion-audit.md. -->
+<!-- audit 2026-05-17 #68 (re-audit 2026-05-19 v2 #159): eat-while-satiated death (eat.c:248, 286 done(CHOKING)) and warning string (eat.c:3314) verified. Corrected "if you confirm, you're dead" — the prompt only appears with paranoid_confirmation:eating enabled (default off); death only fires at uhunger >= 2000 with a 1/20 escape, AND Breathless creatures never choke (eat.c:258-266). Added the amulet of strangulation path (timeout.c) which is the other major choking death. v2 fixes: (a) "Take it off" was misleading for the AoS, which is 90% cursed at gen (mkobj.c:1063); a beginner trying to remove it usually can't. Replaced with the real escape: pray, or uncurse with holy water / remove curse. (b) "Magic resistance doesn't help (it's a physical attack)" — the rationale was wrong. Strangulation isn't an attack at all; it's a timer death via done_timeout(DIED, STRANGLED). MR-doesn't-help is true, but the reason is "no attack to resist." Reworded. See companion-audit.md. -->
 <p>If you push past Satiated and keep eating, you can choke and die. The
 game prints “You’re having a hard time getting all of it down” as a
 warning; if you have eating-confirmations turned on it’ll also prompt
@@ -3146,9 +3146,11 @@ you. Past a hard nutrition threshold the choke check fires and, unless
 you’re Breathless or pass a 1-in-20 escape, kills you instantly.</p>
 <p><strong>The other path to choking is the amulet of
 strangulation.</strong> Worn, it puts a short countdown on your throat
-and kills you when it runs out. Take it off. Magic resistance doesn’t
-help (it’s a physical attack); polymorphing into a Breathless form
-does.</p>
+and kills you when it runs out. The amulet generates cursed 90% of the
+time, so you usually can’t just take it off: pray, or uncurse it with
+holy water or remove curse. Magic resistance doesn’t help —
+strangulation isn’t an attack, it’s a timer death. Polymorphing into a
+Breathless form <em>does</em> save you.</p>
 <p><strong>Defense:</strong> Don’t eat above Satiated. Be paranoid about
 unidentified amulets.</p>
 </section>
@@ -3168,23 +3170,24 @@ one of the first intrinsics worth acquiring.</p>
 </section>
 <section id="disintegration" class="level4">
 <h4>Disintegration</h4>
-<!-- audit 2026-05-18 #137: corrected the "wide-angle disintegration beam" claim — there's no such thing in 5.0. The only player-facing AD_DISN source is the black dragon's breath (monsters.h:1520, ZT_BREATH(ZT_DEATH) at zap.c:4464-4493). The beholder is the only other AD_DISN monster and it's #if 0-gated. Also clarified worn-armor priority destruction (shield first per zap.c:4476-4479, then suit+cloak per zap.c:4480-4486), and that amulet of life saving does rescue you (end.c:1081 catches DIED; the breath-handling at zap.c:4487-4492 explicitly destroys cloak/shirt "in case of life-saving or bones"). -->
+<!-- audit 2026-05-18 #137 (re-audit 2026-05-19 v2 #161): corrected the "wide-angle disintegration beam" claim — there's no such thing in 5.0. The only player-facing AD_DISN source is the black dragon's breath (monsters.h:1520, ZT_BREATH(ZT_DEATH) at zap.c:4464-4493). The beholder is the only other AD_DISN monster and it's #if 0-gated. Also clarified worn-armor priority destruction (shield first per zap.c:4476-4479, then suit+cloak per zap.c:4480-4486), and that amulet of life saving does rescue you (end.c:1081 catches DIED; the breath-handling at zap.c:4487-4492 explicitly destroys cloak/shirt "in case of life-saving or bones"). v2 fixes: (a) "Reflection bounces the beam back ... the bounce often kills it outright" — wrong. Black dragons have MR_DISINT in both attack and defense slots (monsters.h:1523), so per resists_disint at zap.c:4318 the reflected beam does no damage to them. Reflection protects you; it doesn't kill the dragon. Reworded. (b) "shield of reflection that fails to reflect" was misleading — shields of reflection don't have a failure mode; the shield-eats-one-breath behavior applies to *ordinary* shields. Reworded to "an ordinary shield." See companion-audit.md. -->
 <p>A black dragon’s breath is the only thing in the game that
 disintegrates you. There’s no other monster, spell, or wand that deals
 the same damage type.</p>
 <p><strong>Defenses:</strong> Disintegration resistance (from eating a
 black dragon corpse or wearing black dragon scale mail) gives full
-immunity. <strong>Reflection</strong> bounces the beam back — and since
-the dragon has no reflection of its own, the bounce often kills it
-outright. Magic resistance does <strong>not</strong> help.</p>
+immunity. <strong>Reflection</strong> bounces the beam back, protecting
+you — but black dragons are themselves disintegration-resistant, so the
+bounce won’t kill them. Magic resistance does <strong>not</strong>
+help.</p>
 <p><strong>Without disintegration resistance</strong>, the game tries to
 save your worn armor before disintegrating you: the breath destroys your
 <strong>shield</strong> first if you have one, then your <strong>body
 armor</strong>; only if neither is worn do you die outright (with your
-cloak and shirt destroyed in the process). So a shield of reflection
-that <em>fails</em> to reflect at least eats one breath for you before
-being lost. An amulet of life saving still rescues you from the fatal
-case, though you lose any armor it took.</p>
+cloak and shirt destroyed in the process). So an ordinary shield at
+least eats one breath for you before being lost. An amulet of life
+saving still rescues you from the fatal case, though you lose any armor
+it took.</p>
 </section>
 <section id="genocide" class="level4">
 <h4>Genocide</h4>
@@ -6116,7 +6119,7 @@ enchantment. It also repairs any existing damage.</p>
 </section>
 <section id="artifacts" class="level3">
 <h3>Artifacts</h3>
-<!-- audit 2026-05-18 #113: 4 substantive corrections + 3 useful additions. (1) Magicbane "curse protection while carried" wrong — Magicbane has SPFX_RESTR|SPFX_ATTK|SPFX_DEFN, STUN(3,4), DFNS(AD_MAGM), NO_CARY (artilist.h:145-147); all four code paths at wield.c:1036, trap.c:2360, mplayer.c:273, sit.c:576 require wielding. Reworded table and prose. (2) Master Key non-rogue: spoiler said "non-blessed Key carried by anyone else" — opposite of C. artifact.c:2778-2784: Rogue needs !cursed, non-rogues need blessed. (3) Eyes of the Overworld "carried gives magic resistance" wrong — DFNS(AD_MAGM), NO_CARY (artilist.h:262); MR only when worn (per artifact.c:731 wp_mask check). Both table row and prose fixed. (4) Tsurugi "grants magic resistance" wrong — cspfx=SPFX_LUCK|SPFX_PROTECT only, no MR via spfx/defn/cary (artilist.h:285-289). Added: Sceptre of Might double-damage hits chaotic/NEUTRAL/unaligned (SPFX_DALIGN at artifact.c:1031-1034 triggers for any sgn(maligntyp)!=weap.alignment, and the Sceptre is Lawful); Mjollnir return is Valkyrie-only-reliable per artilist.h:97-108; Frost/Fire Brand have SNOWSTORM/FIRESTORM invokes (artilist.h:150, 154); Stormbringer is SPFX_INTEL so cross-alignment touch deals 4d10 not 4d4. -->
+<!-- audit 2026-05-18 #113 (re-audit 2026-05-19 v2 #160): 4 substantive corrections + 3 useful additions. (1) Magicbane "curse protection while carried" wrong — Magicbane has SPFX_RESTR|SPFX_ATTK|SPFX_DEFN, STUN(3,4), DFNS(AD_MAGM), NO_CARY (artilist.h:145-147); all four code paths at wield.c:1036, trap.c:2360, mplayer.c:273, sit.c:576 require wielding. Reworded table and prose. (2) Master Key non-rogue: spoiler said "non-blessed Key carried by anyone else" — opposite of C. artifact.c:2778-2784: Rogue needs !cursed, non-rogues need blessed. (3) Eyes of the Overworld "carried gives magic resistance" wrong — DFNS(AD_MAGM), NO_CARY (artilist.h:262); MR only when worn (per artifact.c:731 wp_mask check). Both table row and prose fixed. (4) Tsurugi "grants magic resistance" wrong — cspfx=SPFX_LUCK|SPFX_PROTECT only, no MR via spfx/defn/cary (artilist.h:285-289). Added: Sceptre of Might double-damage hits chaotic/NEUTRAL/unaligned (SPFX_DALIGN at artifact.c:1031-1034 triggers for any sgn(maligntyp)!=weap.alignment, and the Sceptre is Lawful); Mjollnir return is Valkyrie-only-reliable per artilist.h:97-108; Frost/Fire Brand have SNOWSTORM/FIRESTORM invokes (artilist.h:150, 154); Stormbringer is SPFX_INTEL so cross-alignment touch deals 4d10 not 4d4. v2 fixes: (a) Frost Brand / Fire Brand "extras" column had them swapped — Frost Brand DFNS=COLD grants COLD resistance; Fire Brand DFNS=FIRE grants FIRE resistance (set_artifact_intrinsic at artifact.c:730-736). Each defends against its OWN element. Swapped. (b) Grimtooth row said "+d6 physical; ×2 vs elves" — wrong. spec_dbon at artifact.c:1099-1102 explicitly bypasses spec_applies for Grimtooth so the +d6 damage applies to ALL targets, not just elves (per the comment "we want its damage bonus to apply to all targets"). The warning is elf-specific but the damage is universal. Reworded. (c) Mitre of Holiness "×2 vs undead" was fictional. Mitre's ATTK is NO_ATTK, so spec_dbon at artifact.c:1095-1098 sets spec_dbon_applies=FALSE and no damage bonus is ever applied. The M2_UNDEAD flag only enables shade_glare (artifact.c:554-571) which checks weapons, not worn helms. Dropped from both the table and the prose; reworded to name the actual benefits. (d) Eye of the Aethiopica MR was "worn or carried" — wrong. DFNS(AD_MAGM) + NO_CARY at artilist.h:303-305 means MR fires only when worn (an amulet, so in practice always); only the cspfx flags (EREGEN, HSPDAM) work when carried. Reworded. See companion-audit.md. -->
 <p>Scattered throughout the Mazes are items of legend: named weapons,
 amulets, and tools that carry powers no ordinary gear can match. Each
 artifact exists only once per game, so when you find one, you’re holding
@@ -6228,7 +6231,7 @@ any member of that monster class.</p>
 <td>long sword</td>
 <td>+d5</td>
 <td>(base only) cold</td>
-<td>fire resistance + cold defense</td>
+<td>cold resistance while wielded</td>
 </tr>
 <tr>
 <td>Fire Brand</td>
@@ -6236,7 +6239,7 @@ any member of that monster class.</p>
 <td>long sword</td>
 <td>+d5</td>
 <td>(base only) fire</td>
-<td>cold resistance + fire defense</td>
+<td>fire resistance while wielded</td>
 </tr>
 <tr>
 <td>Sunsword</td>
@@ -6293,7 +6296,7 @@ direction (camera-style; works on any monster)</td>
 <td>Chaotic</td>
 <td>orcish dagger</td>
 <td>+d2</td>
-<td>+d6 physical; ×2 vs elves</td>
+<td>+d6 physical (any target)</td>
 <td>warns of elves; defends vs poison</td>
 </tr>
 <tr>
@@ -6510,7 +6513,7 @@ interval before it can be used again.</p>
 <td>Priest</td>
 <td>The Mitre of Holiness</td>
 <td>helm</td>
-<td>×2 vs undead, +1 prot.</td>
+<td>+1 prot. (brilliance base)</td>
 <td>fire res.</td>
 <td>energy boost</td>
 </tr>
@@ -6599,12 +6602,13 @@ to be worn — carrying them in inventory does nothing.
 <code>#invoke</code> enlightens you. For a Monk who can’t safely wear
 body armor, a powerful passive on a slot they can use.</p>
 <p><strong>The Mitre of Holiness</strong> (Priest): a helm of brilliance
-that grants double damage vs undead while worn, plus the brilliance
-bonus to intelligence and wisdom (so spell-cast more reliably), plus
-fire resistance while carried, plus a free <code>-1</code> to AC.
-<code>#invoke</code> for an energy boost, useful for spell-heavy
-Priests. Note: despite what older spoilers say, it does
-<strong>not</strong> grant drain resistance.</p>
+with the usual brilliance bonus to intelligence and wisdom (so
+spell-cast more reliably), plus fire resistance while carried, plus a
+free <code>-1</code> to AC. <code>#invoke</code> for an energy boost,
+useful for spell-heavy Priests. Note: despite what older spoilers say,
+the artifact’s M2_UNDEAD flag does <strong>not</strong> grant a damage
+bonus against undead (it has no melee attack to carry one), and the
+Mitre does not grant drain resistance.</p>
 <p><strong>The Longbow of Diana</strong> (Ranger): a real artifact bow
 with +d5 to hit plus reflection while wielded, ESP while carried.
 <code>#invoke</code> conjures free arrows out of thin air. Combined with
@@ -6634,12 +6638,13 @@ spell <em>and</em> physical damage taken. <code>#invoke</code> is
 levitate-or-teleport (a toggle, very useful in the Sanctum). Valkyries
 also have Mjollnir to throw, so the Orb sits in inventory as pure carry
 value.</p>
-<p><strong>The Eye of the Aethiopica</strong> (Wizard): worn or carried,
-it grants magic resistance, half spell damage taken, and <em>extra
-energy regeneration</em>, a Wizard’s most precious resource.
-<code>#invoke</code> opens a portal that drops you in Vlad’s Tower
-(one-way; useful for shortcutting the Castle → Vlad’s traversal). For a
-spell-caster this is irreplaceable.</p>
+<p><strong>The Eye of the Aethiopica</strong> (Wizard): grants magic
+resistance when <strong>worn</strong> (a Wizard’s wearing slot for it is
+the amulet, so in practice always); carrying also gives half spell
+damage taken and <em>extra energy regeneration</em>, a Wizard’s most
+precious resource. <code>#invoke</code> opens a portal that drops you in
+Vlad’s Tower (one-way; useful for shortcutting the Castle → Vlad’s
+traversal). For a spell-caster this is irreplaceable.</p>
 <hr />
 </section>
 </section>
@@ -13570,7 +13575,7 @@ poisonous-corpse, etc.) alongside specific heads-ups for monsters that
 deserve one.</p>
 <section id="ants-and-insects-a" class="level4">
 <h4>Ants and insects <code>a</code></h4>
-<!-- audit 2026-05-17 #40: 48 cells / 6 rows verified, 0 corrected. All entries match monsters.h:89-133. See companion-audit.md. -->
+<!-- audit 2026-05-17 #40 (re-audit 2026-05-19 v2 #162): 48 cells / 6 rows verified, 0 corrected. All entries match monsters.h:89-133. v2 re-verified all 6 rows; killer/soldier/queen stings are AD_DRST (strength-drain, poison-family), shown as "poison" in the table for beginner voice. Group sizes correctly distinguished (killer bee G_LGROUP, others smaller). 0 new corrections. See companion-audit.md. -->
 <p>Insects, often in groups. The soldier ant is the early game’s
 infamous killer: its poison sting can two-shot a low-level hero. Killer
 bees swarm; the queen bee in a beehive room is tough on her own.</p>

@@ -8657,3 +8657,35 @@ All claims re-verified vs source. Tile mode off across all 4 GUI ports.
 158/183 done.
 
 ---
+
+## 2026-05-19 — v2 audit batch 33: Choking (#159), Artifacts (#160), Disintegration (#161), Ants (#162), Light Bursts (#163)
+
+### Artifacts (#160) — `spoilers/companion.md:4210` — 4 corrections
+
+- **Frost Brand / Fire Brand resistance swap.** The book said Frost Brand grants "fire resistance + cold defense" and Fire Brand "cold resistance + fire defense." Per `artilist.h:149-155` and `set_artifact_intrinsic` at `artifact.c:730-736`: Frost Brand `DFNS=COLD` grants COLD resistance; Fire Brand `DFNS=FIRE` grants FIRE resistance. Each defends against its OWN element. Swapped.
+- **Grimtooth ×2-vs-elves.** Wrong. `spec_dbon` at `artifact.c:1099-1102` explicitly bypasses `spec_applies` for Grimtooth so the +d6 damage applies to all targets, not just elves. The warning is elf-specific but the damage is universal.
+- **Mitre of Holiness "×2 vs undead"** is fictional. Mitre's ATTK is NO_ATTK, so `spec_dbon` at `artifact.c:1095-1098` sets `spec_dbon_applies=FALSE` and no damage bonus is ever applied. The M2_UNDEAD flag only enables `shade_glare` on weapons (`artifact.c:554-571`), not on worn helms. Dropped from the table row and rewrote the prose to name the real benefits.
+- **Eye of the Aethiopica "worn or carried" MR.** Wrong. `DFNS(AD_MAGM)` + `NO_CARY` at `artilist.h:303-305` means the MR fires only when worn (an amulet is worn in practice, so this rarely matters strategically — but the prose was inaccurate). The cspfx flags (EREGEN, HSPDAM) work when carried. Reworded.
+
+### Disintegration (#161) — `spoilers/companion.md:2295` — 2 corrections
+
+- **"Reflection ... the bounce often kills it outright"** wrong. Black dragons have MR_DISINT in both attack and defense slots (`monsters.h:1523`); per `resists_disint` at `zap.c:4318` the reflected beam does no damage to them. Reflection protects you but doesn't kill the dragon.
+- **"shield of reflection that fails to reflect"** misleading. Shields of reflection don't have a failure mode. The shield-eats-one-breath behavior applies to *ordinary* shields. Reworded.
+
+### Choking (#159) — `spoilers/companion.md:2259` — 2 corrections
+
+- **"Take it off"** was misleading. The amulet of strangulation is 90% cursed at gen (`mkobj.c:1063`), so a beginner trying to remove it usually can't. Replaced with the real escape: pray, or uncurse with holy water / remove curse.
+- **"Magic resistance doesn't help (it's a physical attack)"** had a wrong rationale. Strangulation isn't an attack — it's a timer death via `done_timeout(DIED, STRANGLED)`. MR-doesn't-help is true, but the reason is "no attack to resist." Reworded.
+
+### Ants and insects (#162) — `spoilers/companion.md:8007` — 0 corrections, badge updated
+
+All 6 rows re-verified vs `monsters.h:89-133`.
+
+### Light Bursts (#163) — `spoilers/companion.md:2165` — 0 corrections, badge updated
+
+All claims re-verified vs `monsters.h:1169-1191` and `mhitu.c:1623-1650`. Note: warning detects yellow/black lights only at adjacent range, which is also their explosion range — so warning is less helpful in practice than the prose implies, but the prose doesn't overstate.
+
+### Pass-2 queue
+163/183 done.
+
+---

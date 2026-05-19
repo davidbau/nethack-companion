@@ -167,11 +167,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#156**  L 8450  (  15 lines)     ↳ Bestiary Tables → Centaurs `C`
 - [x] **#157**  L 3550  ( 196 lines)   📖 Wands and Staves
 - [x] **#158**  L 5884  (  93 lines)   📖 The Elemental Planes
-- [ ] **#159**  L 2239  (  18 lines)     ↳ Dangerous Encounters → Choking
-- [ ] **#160**  L 4165  ( 279 lines)   📖 Artifacts
-- [ ] **#161**  L 2272  (  22 lines)     ↳ Dangerous Encounters → Disintegration
-- [ ] **#162**  L 7940  (  18 lines)     ↳ Bestiary Tables → Ants and insects `a`
-- [ ] **#163**  L 2148  (  19 lines)     ↳ Dangerous Encounters → Light Bursts
+- [x] **#159**  L 2239  (  18 lines)     ↳ Dangerous Encounters → Choking
+- [x] **#160**  L 4165  ( 279 lines)   📖 Artifacts
+- [x] **#161**  L 2272  (  22 lines)     ↳ Dangerous Encounters → Disintegration
+- [x] **#162**  L 7940  (  18 lines)     ↳ Bestiary Tables → Ants and insects `a`
+- [x] **#163**  L 2148  (  19 lines)     ↳ Dangerous Encounters → Light Bursts
 - [ ] **#164**  L 7422  (  11 lines)     ↳ Weapons Tables → Quarterstaff
 - [ ] **#165**  L 2257  (  15 lines)     ↳ Dangerous Encounters → Deadly Poison
 - [ ] **#166**  L 8558  (  23 lines)     ↳ Bestiary Tables → Giant humanoids `H`
