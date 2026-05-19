@@ -8806,3 +8806,25 @@ All 8 entries verified vs `monsters.h:3260-3324`. Lizard corpse stoning cure, ne
 **183/183 done — v2 pass complete.**
 
 ---
+
+## 2026-05-19 — v3 audit batch 1: Imps & minor demons (#1), Leprechauns (#2), Polearms (#3), Shuriken (#4), Liches (#5)
+
+All five sections **CLEAN** — no findings.
+
+### Imps and minor demons `i` (#1) — `spoilers/companion.md:8175` — 0 corrections
+All six entries (manes, homunculus, imp, lemure, quasit, tengu) verified vs `monsters.h`. Lvl/Spd/AC/MR%, attack tuples, M1/M2/MR flags, corpse effects all match. "All follow you up and down stairs" (M2_STALK) verified; "all except imp are poison-resistant" verified.
+
+### Leprechauns `l` (#2) — `spoilers/companion.md:8230` — 0 corrections
+Stats verified: Lvl 5, Spd 15, AC 8, MR 20, green, AT_CLAW AD_SGLD 1d2, M1_TPORT. Steal-gold-then-teleport behavior confirmed in `mhitu.c`.
+
+### Polearms (#3) — `spoilers/companion.md:7510` — 0 corrections
+All 12 polearm rows match `objects.h:294-341` exactly for damage dice, weight, cost, hit bonus, material. Mechanics prose (two-handed; distance-2 orthogonal at Basic, extra positions at Skilled; adjacent attack clamps to 1d2 base; weapon-skill bonus skipped but Strength bonus still applies; no role caps above Skilled) all verified against `apply.c:3355-3386` and `uhitm.c:1076-1471`.
+
+### Shuriken (#4) — `spoilers/companion.md:7650` — 0 corrections
+`objects.h:163-165` SHURIKEN: 1d8/1d6, weight 1, cost 5, +2 hit, PIERCE, IRON, P_SHURIKEN. Matches table.
+
+### Liches `L` (#5) — `spoilers/companion.md:8688` — 0 corrections
+All four tiers' stats match `monsters.h:1864-1897`. Resistance lists (cold/sleep/poison for all; +fire for master/arch; +shock for arch) match. The v2 #183 fix is intact: only the arch-lich casts touch-of-death, per `mcastu.h:37` (DEATH_TOUCH level 20) and `mcastu.c:111` (master lich `m_lev=17` caps `rn2(m_lev)` at 16). "Magic resistance mandatory" verified via `mcastu.c:394` (Antimagic blocks).
+
+### Pass-3 queue
+5/183 done.

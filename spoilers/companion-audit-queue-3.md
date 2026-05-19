@@ -10,11 +10,11 @@ humorous, terse).
 
 Process in numbered order. Mark each `[x]` as it's audited.
 
-- [ ] **#  1**  L 8175  (  19 lines)     ↳ Bestiary Tables → Imps and minor demons `i`
-- [ ] **#  2**  L 8230  (  14 lines)     ↳ Bestiary Tables → Leprechauns `l`
-- [ ] **#  3**  L 7510  (  24 lines)     ↳ Weapons Tables → Polearms
-- [ ] **#  4**  L 7650  (  11 lines)     ↳ Weapons Tables → Shuriken
-- [ ] **#  5**  L 8688  (  18 lines)     ↳ Bestiary Tables → Liches `L`
+- [x] **#  1**  L 8175  (  19 lines)     ↳ Bestiary Tables → Imps and minor demons `i`
+- [x] **#  2**  L 8230  (  14 lines)     ↳ Bestiary Tables → Leprechauns `l`
+- [x] **#  3**  L 7510  (  24 lines)     ↳ Weapons Tables → Polearms
+- [x] **#  4**  L 7650  (  11 lines)     ↳ Weapons Tables → Shuriken
+- [x] **#  5**  L 8688  (  18 lines)     ↳ Bestiary Tables → Liches `L`
 - [ ] **#  6**  L 1238  (  14 lines)     ↳ Traps and Hazards → Nuisance Traps
 - [ ] **#  7**  L 9165  ( 200 lines)   📖 What Changed Since Last Time
 - [ ] **#  8**  L 8907  (  13 lines)     ↳ Bestiary Tables → Xorns `X`
