@@ -65,11 +65,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 53**  L 2030  (  27 lines)     ↳ Dangerous Encounters → The Touch of Death
 - [x] **# 54**  L 7429  (  11 lines)     ↳ Weapons Tables → Pick-axe
 - [x] **# 55**  L 7007  (  25 lines)     ↳ Voluntary Challenges → Permadeaf (new in 5.0)
-- [ ] **# 56**  L  942  (  39 lines)     ↳ Branches and Landmarks → Sokoban
-- [ ] **# 57**  L 8659  (  13 lines)     ↳ Bestiary Tables → Jabberwocks `J`
-- [ ] **# 58**  L 2155  (  17 lines)     ↳ Dangerous Encounters → Engulfment from Hiding
-- [ ] **# 59**  L 8748  (  15 lines)     ↳ Bestiary Tables → Ogres `O`
-- [ ] **# 60**  L 7396  (  20 lines)     ↳ Weapons Tables → Two-handed sword
+- [x] **# 56**  L  942  (  39 lines)     ↳ Branches and Landmarks → Sokoban
+- [x] **# 57**  L 8659  (  13 lines)     ↳ Bestiary Tables → Jabberwocks `J`
+- [x] **# 58**  L 2155  (  17 lines)     ↳ Dangerous Encounters → Engulfment from Hiding
+- [x] **# 59**  L 8748  (  15 lines)     ↳ Bestiary Tables → Ogres `O`
+- [x] **# 60**  L 7396  (  20 lines)     ↳ Weapons Tables → Two-handed sword
 - [ ] **# 61**  L 1433  (  71 lines)     ↳ Traps and Hazards → Engravings
 - [ ] **# 62**  L 8528  (  15 lines)     ↳ Bestiary Tables → Centaurs `C`
 - [ ] **# 63**  L 7909  ( 103 lines)     ↳ Appendices → Skill Caps

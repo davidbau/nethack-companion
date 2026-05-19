@@ -9030,3 +9030,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 55/183 done.
+
+## 2026-05-19 — v3 audit batch 12: Sokoban branch (#56), Jabberwocks (#57), Engulfment (#58), Ogres (#59), Two-handed sword (#60)
+
+All five **CLEAN**.
+
+- Sokoban branch: 4 levels × 2 variants per `dungeon.lua:226-244`; prize roll per soko1-{1,2}.lua matches 75/25 weighting per variant; sokocheat trigger sites (`trap.c:7039`, `hack.c:299,307,398,403`, `zap.c:1711,5556`, `read.c:1951`, `steed.c:767`) match prose list.
+- Jabberwocks: LVL(15,12,-2,50), 2× bite + 2× claw 2d10 each, M1_FLY, G_GENO|1. Vorpal Blade auto-behead `artifact.c:1595-1623` (PM_JABBERWOCK short-circuits dieroll).
+- Engulfment: lurker above (Lvl 10, ceiling M1_FLY+M1_HIDE) and trapper (Lvl 12, floor M1_HIDE) both use AD_WRAP + AD_PHYS — 5.0 retcon to "wraps and crushes" verified in `monsters.h:973-980` header comment. Weapons-still-work confirmed `uhitm.c:781,805` (`u.uswallow` forces hit).
+- Ogres: 3 rows match `monsters.h:2052-2075`. M2_STRONG, M2_GREEDY, M2_COLLECT.
+- Two-handed sword: wt 150/60, cost 50/500, 1d12/1d6+2d6 (two-h sword), 1d16/1d8+2d6 hit +2 (tsurugi). Vorpal Blade correctly NOT claimed here (it's LONG_SWORD per `artilist.h:191`).
+
+### Pass-3 queue
+60/183 done.
