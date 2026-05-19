@@ -5070,7 +5070,20 @@ rarely be surprised.</p>
 </section>
 <section id="provisions-and-dining" class="level3">
 <h3>Provisions and Dining</h3>
-<!-- audit 2026-05-18 #77: many claims verified clean (food nutritions, cannibalism penalty, prayer tiers, slow digestion, tin opening, lizard cures stoning, newt-zap, wraith corpse level, stalker corpse invis+see-invis). Corrected 6: gelatinous cube grants only fire/cold/shock/sleep (not poison/acid/stoning); disenchanter corpse STRIPS an intrinsic (not "intrinsic protection"); hunger threshold table off-by-one (now uses strict bounds); encumbrance kicks in at Stressed not Burdened (eat.c:3197 near_capacity > SLT_ENCUMBER); split fire-giant from fire-ant row (giants give Str on eat); red/brown mold also grant poison resistance; clarified vegetarian-vs-vegan eggs distinction. v2 audit 2026-05-18 #38: three factual fixes. (a) Weak status effect was "movement slowed" — actually a -1 Str ATEMP penalty (attrib.c:471 via eat.c:3455), not a speed change. (b) "Blessed tins open instantly" was incomplete — that's only with a blessed tin opener (eat.c:1740-1745); with an ordinary tin opener a blessed tin still rolls rn2(2), so 50/50 between instant and one turn. (c) Glob lifetime "about 25 turns to vanish" misread the shrink interval — globs lose 1 weight unit per ~25 turns (mkobj.c:1487-1490 comment "twice as long as the average corpse"), so a fresh weight-20 glob lasts ~500 turns. Also corpse-eat window expanded from "a few turns" to 30-50 turns (rotted threshold at eat.c:1887-1939 makes corpses safe for ~50 turns). See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- gelatinous cube corpse: fire/cold/shock/sleep only (not poison/acid/stoning)
+- disenchanter corpse STRIPS an intrinsic, doesn't grant one
+- encumbrance kicks in at Stressed, not Burdened (eat.c:3197 near_capacity > SLT_ENCUMBER)
+- fire giant corpse grants Str on eat; separate row from fire ant
+- red and brown mold corpses also grant poison resistance
+- eggs count as vegetarian but not vegan
+- Weak status is -1 Str ATEMP, not slowed movement (attrib.c:471, eat.c:3455)
+- blessed tin opens instantly only with a blessed tin opener (eat.c:1740-1745)
+- ordinary tin opener on a blessed tin: 50/50 instant vs one turn via rn2(2)
+- globs lose 1 weight per ~25 turns; a weight-20 glob lasts ~500 turns (mkobj.c:1487-1490)
+- corpses stay safe to eat for ~30-50 turns before rotting (eat.c:1887-1939)
+-->
 <p>Of all the things that kill adventurers in the Mazes of Menace (the
 dragons, the liches, the cockatrices, the inexplicable decision to kick
 a sink), none is quite as embarrassing as starving to death while
@@ -5325,7 +5338,15 @@ hungry).</li>
 </section>
 <section id="the-apothecary" class="level3">
 <h3>The Apothecary</h3>
-<!-- audit 2026-05-17 #34 (re-audit 2026-05-19 v3 #66): v3 corrected an inverted source/target claim. The closer paragraph said "never use a cursed potion as a dipping target. Cursed targets always explode" — wrong. Per potion.c:2279 (`obj = getobj("dip", ...)` first prompt = the potion being dipped) and potion.c:2541 (`dip_potion_explosion(obj, ...)` tests `obj->cursed`), it's the DIPPING potion that must not be cursed; the potion being dipped INTO (`potion`, consumed via `useup(potion)` at 2538) is consumed regardless and its BUC is not consulted. The v2 reword to "receiving potion" was the right intent but the prose had drifted back to "target" and inverted the meaning. Reworded to "never dip a cursed potion into another" with an explicit clarifier. v2 audit 2026-05-18 #15: potion of speed grants permanent intrinsic Fast whenever `!cursed` (potion.c:1066). v1 audit 2026-05-17 #34: uncursed extra/full healing also raise maxHP. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- dip_potion_explosion tests the DIPPING potion's BUC, not the receiver (potion.c:2279, 2541)
+- the receiving potion is consumed regardless via useup(potion) (potion.c:2538)
+- never dip a CURSED potion into another — guaranteed explosion
+2026-05-18:
+- potion of speed grants permanent intrinsic Fast when !cursed (potion.c:1066)
+- uncursed extra/full healing also raise maxHP
+-->
 <p>The dungeon is full of mysterious bottles. Ruby liquids, milky
 fluids, smoky concoctions: each one a small gamble between salvation and
 catastrophe. The colors are shuffled every game, so the “bubbly potion”
@@ -5510,7 +5531,16 @@ invisible. Nothing is wasted in a well-run dungeon pharmacy.</p>
 </section>
 <section id="the-scroll-rack" class="level3">
 <h3>The Scroll Rack</h3>
-<!-- audit 2026-05-17 #1 (re-audit 2026-05-19 v2 #142, v3 #12): v2 fixes preserved; v3 added one correction. v3: "Confused destroy armor doesn't destroy anything: it erodeproofs" was wrong — read.c:1341 sets `new_erodeproof = scursed`, so only cursed confused destroy armor erodeproofs; uncursed or blessed actively *strips* erodeproofing (sets oerodeproof=0). The asymmetric to confused enchant armor/weapon (read.c:1138 `new_erodeproof = !scursed`) is now spelled out in both bullets. v2: (a) "Past +9 the scroll usually does nothing but never destroys the weapon" was wrong. Per wield.c:999-1009 `chwepon`, when uwep->spe > 5 and amount >= 0, `rn2(3)` evaluates true 2/3 of the time and destroys the weapon outright. So +6 and above is at 2/3 destruction risk per read. Reworded with **Safe ceiling: +5**. (b) Charging probability table was off by one. Source formula `n³/7³` (read.c:746-758): 1st 0%, 2nd 0.29%, 3rd 2.33%, 4th 7.87%, 5th 18.66%, 6th 36.44%, 7th 62.97%, 8th 100%. Corrected. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- confused destroy armor erodeproofs ONLY if cursed; uncursed/blessed strip erodeproofing (read.c:1341)
+- confused enchant armor/weapon erodeproofs when !cursed — opposite BUC condition (read.c:1138)
+2026-05-18:
+- above +5 with amount >= 0, chwepon has 2/3 destroy chance via rn2(3) (wield.c:999-1009)
+- safe enchantment ceiling for weapons is +5
+- charging success is n^3/7^3 per try (read.c:746-758)
+- charging odds: 2nd 0.29%, 3rd 2.33%, 4th 7.87%, 5th 18.66%, 6th 36.44%, 7th 62.97%, 8th 100%
+-->
 <p>Scrolls are the dungeon’s single-use spells: read once, triggered,
 gone. They appear with absurd randomized labels (“ZELGO MER,” “DAIYEN
 FOOELS,” “PRATYAVAYAH”) that stay consistent within a game but mean
@@ -5646,7 +5676,19 @@ kills you. Don’t get confused at the wrong moment</li>
 </section>
 <section id="wands-and-staves" class="level3">
 <h3>Wands and Staves</h3>
-<!-- audit 2026-05-18 #105 (re-audit 2026-05-19 v2 #157): five corrections. (1) Wand of stasis was missing entirely from the table and the NODIR list; objects.h:1460 defines WAN_STASIS (NODIR, $150, prob 45), zap.c:2559-2568 freezes the level. (2) "Nothing" prose said NODIR, but it's IMMEDIATE per objects.h:1462 (the table already had BEAM, prose was inconsistent — fixed prose). (3) "Wand of undead turning raises it as a zombie" is wrong; zap.c:WAN_UNDEAD_TURNING calls unturn_dead() which revives held/floor corpses to their original species (see also montraits revival path). (4) Engrave-test outcomes for "vanishes" / "disappears" / silent group were muddled. Per engrave.c: cancellation and make-invisible erase the engraving in place; teleportation moves it elsewhere on the level; polymorph rewrites it to a different random engraving (engrave.c:618-633); nothing, undead-turning, opening, locking, probing produce no message at all (engrave.c:635-640). (5) The silent-IMMEDIATE group was unmentioned. Also dropped "raises as zombie" misreading. v2 fixes (RAY-wand and BEAM-wand engrave-test signatures): (a) Magic missile and death were grouped as silent "just write in dust" — wrong. Magic missile prints "The <surface> is riddled by bullet holes!" (engrave.c:642-648), distinctive. Sleep and death share the same "the bugs on the <surface> stop moving!" message (engrave.c:651-656). The price-distinguish hint should be for sleep vs death, not magic missile vs death. (b) "Striking scatters dust around" was wrong — actual message is "The wand unsuccessfully fights your attempt to write!" (engrave.c:602-605). (c) Slow monster and speed monster produce distinctive engrave messages ("bugs slow down" / "speed up" at engrave.c:606-616) — they belong in step 1, not in the "needs zap test" step. Rewrote the engrave-test paragraph to fix all three. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- wand of stasis: NODIR, $150, prob 45, freezes the level (objects.h:1460, zap.c:2559-2568)
+- wand of nothing is IMMEDIATE, not NODIR (objects.h:1462)
+- undead turning revives corpses to their original species via unturn_dead — NOT as zombies
+- engrave-test: cancellation and make-invisible erase in place (engrave.c:618-633)
+- engrave-test: teleportation moves the engraving elsewhere; polymorph rewrites it
+- nothing, undead turning, opening, locking, probing produce NO engrave message (engrave.c:635-640)
+- magic missile engraves "riddled by bullet holes" — distinctive (engrave.c:642-648)
+- sleep and death share "the bugs on the <surface> stop moving" (engrave.c:651-656)
+- striking message: "wand unsuccessfully fights your attempt to write" (engrave.c:602-605)
+- slow/speed monster: distinctive "bugs slow down" / "speed up" (engrave.c:606-616)
+-->
 <p>Wands are reusable magical items that produce directed effects when
 zapped. They come in three types: <strong>ray wands</strong> fire a beam
 in a direction that bounces off walls, <strong>beam wands</strong>
@@ -5974,7 +6016,20 @@ too.</p>
 </section>
 <section id="rings-and-amulets" class="level3">
 <h3>Rings and Amulets</h3>
-<!-- audit 2026-05-18 #139 (re-audit 2026-05-19 v2 #138): ~144 lines, no substantive corrections. All ring prices match objects.h:741-827; auto-curse list (TELEPORTATION/POLYMORPH/AGGRAVATE_MONSTER/HUNGER at 90% per mkobj.c:1143-1146) is correct; aggravate-monster effective-depth doubling capped at 50 (dungeon.c:2080-2082); free-action paralysis immunity via Free_action checks (apply.c:1044, mcastu.c:506); per-ring hunger cost at turns 4 and 12 (eat.c:3237-3267); amulet of guarding +2 AC +2 MC (do_wear.c:2496, mhitu.c:1121-1126); restful-sleep regen +1 HP while sleeping (allmain.c:663-664). v2 note: the v1 close call (a) saying "restful sleep is *always* cursed per mkobj.c:1065" was itself wrong — mkobj.c:1063-1066 uses rn2(10), so restful sleep is 90% cursed at generation, not 100%. The body text's "usually cursed" is right. No prose change. Re-verified ring of protection AC subtraction (do_wear.c:2492-2495), conflict pet-aggression (dogmove.c:1046-1054, mhitm.c:104-145), blessed polymorph control from base form only (potion.c:1322-1325). 0 new corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- ring prices match objects.h:741-827
+- teleportation, polymorph, aggravate-monster, hunger rings 90% cursed (mkobj.c:1143-1146)
+- aggravate-monster effective-depth doubling is capped at 50 (dungeon.c:2080-2082)
+- free action gives paralysis immunity via Free_action (apply.c:1044, mcastu.c:506)
+- ring hunger cost ticks at turns 4 and 12 (eat.c:3237-3267)
+- amulet of guarding: +2 AC, +2 MC (do_wear.c:2496, mhitu.c:1121-1126)
+- restful sleep regenerates +1 HP per sleep tick (allmain.c:663-664)
+- restful sleep is 90% cursed at generation, not 100% (mkobj.c:1063-1066 via rn2(10))
+- ring of protection subtracts from AC (do_wear.c:2492-2495)
+- conflict makes pets attack you (dogmove.c:1046-1054, mhitm.c:104-145)
+- blessed polymorph control rolls from base form only (potion.c:1322-1325)
+-->
 <p>Two ring fingers. One neck. These are the most constrained equipment
 slots in the game, which makes choosing what to wear a genuine strategic
 decision. Both rings and amulets have randomized appearances, and some
@@ -6276,7 +6331,16 @@ than it looks.</p>
 </section>
 <section id="tools-of-the-trade" class="level3">
 <h3>Tools of the Trade</h3>
-<!-- audit 2026-05-17 #28 (re-audit 2026-05-18 v2 #62): ~40 claims verified, 5 corrected (container locked counts, unicorn horn cure list, crystal ball one-class-per-gaze, Bell of Opening is Quest reward not Vlad, passtune any tonal instrument). v2 audit found four corrections. (a) Bell of Opening "granted by your quest leader on Quest completion" was wrong — the Bell is carried by the quest *nemesis* and looted from their corpse (makemon.c:1378-1379 BELL_OF_OPENING goes to MS_NEMESIS); the quest leader chides you if you finish without it (quest.c:267-268) but doesn't grant it. (b) "One blessed scroll of charging restores it to at least 50" misleads — an uncursed scroll also reaches 50 (read.c:880-883); blessing pushes the floor to 75. Reworded to "non-cursed scroll of charging restores it to at least 50 (more if blessed)." (c) Magic lamp "rub it while blessed and there's a 1-in-3 chance" implies blessing affects emergence; bless only affects the wish-grant probability (apply.c:1817) — 1/3 emergence is independent. Reworded. (d) "~16 charges very well spent" was the basecost; actual scroll-of-charging write cost is rn1(8,8) = 8-15 charges. Updated. Also added the G_UNIQ-skip caveat to class genocide: "uniquely-named demon lords survive any class genocide" (read.c:2998). See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- Bell of Opening is carried by the quest nemesis; loot from the corpse (makemon.c:1378-1379)
+- quest leader chides you if you finish without the Bell but doesn't grant it (quest.c:267-268)
+- uncursed scroll of charging restores a magic lamp to at least 50 (read.c:880-883)
+- blessed scroll of charging pushes the floor to 75
+- magic lamp 1/3 djinni emergence is independent of bless; bless only affects the wish-grant odds (apply.c:1817)
+- scroll of charging write cost is rn1(8,8) = 8-15 charges
+- class genocide skips uniquely-named demon lords via G_UNIQ (read.c:2998)
+-->
 <p>The <code>(</code> symbol covers the dungeon’s most eclectic
 category: pickaxes, magic lamps, unicorn horns, musical instruments,
 crystal balls, and bags that eat other bags. If it doesn’t fit neatly
@@ -6497,7 +6561,18 @@ kit.</p>
 </section>
 <section id="the-armory" class="level3">
 <h3>The Armory</h3>
-<!-- audit 2026-05-18 v2 #94: 3 corrections. (a) "drain resistance (the only non-artifact source)" — wrong; shield of drain resistance (objects.h:656-658, new in 5.0) also provides it non-artifactually. Reworded to "one of two non-artifact sources." (b) Warning glyph color description "yellow for moderate, red for deadly" — wrong; drawing.c:39-52 sets six levels white/red/red/red/magenta/bright-magenta with no yellow. Reworded to "white for the least threat, through red, with magenta for the worst." (c) Column headers "Best mundane options / Best magical options" were misleading — most "mundane" picks (cloak of protection, helm of caution, gauntlets of power, speed boots, shield of reflection) are magical (mgc=1 per objects.h), and the "magical" column's small shield is mundane. Relabeled to "Primary pick / Specialty pick" which describes the actual use intent honestly. Verified: cloak of protection MC3 / cloak of magic resistance MC1 (objects.h:637-646), MC formula at uhitm.c:87 (MC3 = 90% block), helm of caution WARNING at do_wear.c:448-450, DSM dual-property pattern at do_wear.c:806-883 (gray/silver no extras), DSM s>=0 trigger at read.c:1225, small shield as only no-penalty shield via spell.c:2269. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- shield of drain resistance is a second non-artifact source (objects.h:656-658)
+- warning glyph levels: white, red ×3, magenta, bright-magenta — no yellow (drawing.c:39-52)
+- cloak of protection MC3; cloak of magic resistance MC1 (objects.h:637-646)
+- MC formula at uhitm.c:87 — MC3 blocks 90% of monster spells
+- helm of caution grants the WARNING intrinsic (do_wear.c:448-450)
+- DSM dual-property pattern: armor + per-color intrinsic (do_wear.c:806-883)
+- gray and silver DSM grant no extra intrinsic
+- DSM scroll-of-enchant transformation requires spe ≥ 0 (read.c:1225)
+- small shield is the only shield with no spellcast penalty (spell.c:2269)
+-->
 <p>Weapons and armor are the bread and butter of combat. Your choice of
 equipment determines how hard you hit, how well you dodge, and what
 special resistances you carry. This section covers the strategy of
@@ -7229,7 +7304,16 @@ combat, gems, and luck mechanics, all updated for 5.0.</em></p>
 <hr />
 <section id="divine-relations" class="level3">
 <h3>Divine Relations</h3>
-<!-- audit 2026-05-18 #121 (re-audit 2026-05-19 v2 #155): 3 corrections. (1) Trouble list had Punishment as #10 major trouble — wrong; TROUBLE_PUNISHED = -1 in pray.c:91, i.e. MINOR trouble, handled in the "additional blessings" tier. Demoted Punishment to that tier and added the genuine missing major troubles (stinking cloud TROUBLE_REGION, collapsing under load, stuck in wall, cursed levitation boots, unusable hands, cursed blindfold per pray.c:218-243). (2) "Crowning raises the prayer timeout to at least 1000 turns" — wrong; pray.c:1356-1361 adds rnz(1000) * kick on top of the ordinary rnz(350), so the post-crowning total averages much higher but can be lower than 1000. Reworded to "adds a large random penalty on top of the ordinary post-prayer wait, on the order of ~1000 turns on average." (3) "Crowning locks your alignment (you can never change it)" — wrong; gcrownu at pray.c:805-996 sets no alignment lock. The actual one-way conversion gate is the u.ualignbase[A_CURRENT] == u.ualignbase[A_ORIGINAL] check at pray.c:1638, independent of crowning. Dropped the claim. v2 fixes: (a) Trouble priority list item 10 ("Blindness, confusion, stunning, hallucination") was still misclassified as major — these are TROUBLE_BLIND=-5, STUNNED=-9, CONFUSED=-10, HALLUCINATION=-11 at pray.c:95,99-101, all MINOR. Same parallel mistake as the v1-demoted Punishment, never applied to this row. Moved these afflictions to the "additional blessings" tier and renumbered. (b) Same-race sacrifice "exception" said it "can convert an altar to your alignment" — wrong. Per pray.c:1717-1720, same-race blood always converts a lawful or neutral altar to CHAOTIC, not to co-aligned. Only chaotic heroes benefit. On a chaotic altar it summons a demon. Reworded. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- TROUBLE_PUNISHED = -1 is a MINOR trouble, not major (pray.c:91)
+- major troubles: stinking cloud (TROUBLE_REGION), collapsing, stuck-in-wall, cursed levitation boots, unusable hands, cursed blindfold (pray.c:218-243)
+- minor afflictions: blind=-5, stunned=-9, confused=-10, hallucination=-11 (pray.c:95, 99-101)
+- crowning adds rnz(1000) * kick on top of the ordinary rnz(350) prayer wait (pray.c:1356-1361)
+- crowning does NOT lock alignment — the one-way conversion gate is ualignbase[CURRENT]==ualignbase[ORIGINAL] (pray.c:1638)
+- same-race blood always converts lawful or neutral altars to CHAOTIC, never to co-aligned (pray.c:1717-1720)
+- on a chaotic altar, same-race blood summons a demon
+-->
 <p>Your relationship with your god is one of the most important
 mechanics in the game. A happy god answers prayers, forgives
 transgressions, and occasionally sends gift artifacts. An angry god
@@ -7443,7 +7527,21 @@ need.</p>
 </section>
 <section id="the-art-of-combat" class="level3">
 <h3>The Art of Combat</h3>
-<!-- audit 2026-05-18 #82: many claims verified (XL/Str/Luck/enchantment/AC factors in find_roll_to_hit, dbon Str cap, 3/2 two-handed Str bonus, conflict requires mutual sight + Cha-Lvl resist roll, shields forbidden with two-weapon). Three corrections: (1) Two-weapon roles wrong — actual EXPERT roles are Rogue + Samurai, not Rangers + Barbarians (Rangers can't two-weapon at all per u_init.c); penalty is a flat negative replacement table per skill, not a "split." (2) Luck to-hit caps around ±5 but Luck itself goes to ±10 (±13 with luckstone). (3) Reworded "monster spellcasters no longer get free extra step" — left as plausible but unverified. v2 audit 2026-05-18 #43: two factual fixes. (a) The to-hit list "Your Strength bonus (muscles still matter underground)" was incomplete — abon() at weapon.c:950-988 includes BOTH Strength AND Dexterity (dex 25 yields +11, often dominant at high levels). Reworded to "Your Strength and Dexterity bonuses (muscles plus agility, both matter)". (b) Dropped the "Monster spellcasters no longer get a free extra step after casting" bullet entirely — the pass-1 audit flagged it as "plausible but unverified", and the v2 auditor confirmed no such fix exists in git history. Monsters still move via m_move() (PHASE THREE) then attack/cast via mattacku()/castmu() (PHASE FOUR) on the same turn (monmove.c:911, 943-944, 971). Fabricated 5.0 change. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- to-hit factors: XL, Str, Dex, Luck, enchantment, AC (find_roll_to_hit)
+- abon includes both Strength AND Dexterity; Dex 25 yields +11 (weapon.c:950-988)
+- dbon has a Strength cap
+- two-handed weapons get a 3/2 Strength-bonus multiplier
+- conflict requires mutual sight and a Cha-vs-Lvl resist roll
+- two-weapon and shield are mutually exclusive
+- Expert two-weapon: Rogue and Samurai only (u_init.c skill tables)
+- Rangers cannot two-weapon at all (no P_TWO_WEAPON_COMBAT entry)
+- two-weapon penalty is a flat table: -9/-7/-5/-3 to-hit, -3/-1/0/+1 damage
+- Luck to-hit caps at ±5; Luck itself ranges ±10 (±13 with luckstone)
+- monsters use m_move (phase 3) then mattacku/castmu (phase 4) on the same turn (monmove.c:911, 943-944, 971)
+- no "free extra step" change exists; that earlier claim was fabricated
+-->
 <p>The most important combat technique in the Mazes is knowing when
 <em>not</em> to fight. The second most important is making sure you hit
 really, really hard when you do.</p>
@@ -7598,7 +7696,25 @@ arrangement. Keep an exit behind the monster, or expect contact.</li>
 </section>
 <section id="enhancing-skills" class="level3">
 <h3>Enhancing Skills</h3>
-<!-- audit 2026-05-18 #98 (revised 2026-05-18 #181): ranks (P_UNSKILLED..P_GRAND_MASTER) and the level²×20 practice formula (20/80/180/320/500 cumulative) verified against skills.h:92-106. Slot costs (weapon 1/2/3, non-weapon 1/1/2/2/3) and crowning bonus from u_init.c skill tables and weapon.c:can_advance. Bare-hand 50% / martial-arts 75% damage-bonus check from weapon.c:weapon_hit_bonus. Riding 100-square threshold (steed.c:393-396, ++u.urideturns >= 100) and action-gating (pickup/loot/dip/trap/engrave require Basic) from u_init.c + do.c. Slot ceiling is 32 for an XL-30 crowned hero (2 starting + 29 level-ups + 1 crowning) per u_init.c:884 and pray.c:992-993. Ranger divination caps Expert (u_init.c:461). Wizard restricted from long sword per u_init.c skill table; artifact-gift unrestrict in artifact.c:artifact_hit. Spell-school precredit of 20 uses at starting Basic per u_init.c. Skilled cone-of-cold / fireball / identify rank gating per spell.c spelleffects. "You feel more confident in your skills" / "You feel you could be more dangerous" message strings in weapon.c. v2 audit 2026-05-18 #13: three factual fixes. (a) Two-weapon uses the WEAPON slot column (1/2/3), not the non-weapon column — per weapon.c:1141 `if (skill <= P_LAST_WEAPON || skill == P_TWO_WEAPON_COMBAT)`. Pre-3.7 lore had it on the non-weapon side. (b) Valkyrie example math was 11 with the old assumption; with correct costs it is 6+6+2 = 14. Fixed. (c) "Bare-hand and martial-arts bonuses still only apply to 50%/75% of hits" conflates practice-training rate with bonus application; the bonuses apply on every hit per weapon.c:1611-1613. Wisdom: cone-of-cold and fireball Skilled upgrade is a cluster of 3×3 explosions (spell.c:1419-1452), not "room-clearing" — corrected both mentions; Knights start at Basic riding (weapon.c:1787-1789), so the advancement target is Skilled, not Basic. Voice: dropped invented in-world reason "the dungeon's quiet subsidy for magic"; trimmed "restricted from long swords entirely. Restricted skills..."; replaced colorful "killing blow vs monster shrug" line with the bare numbers; cut "Specialization by decree." meta; clarified "past level 3" as spell-level. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- skill ranks P_UNSKILLED through P_GRAND_MASTER; practice formula level²×20 (skills.h:92-106)
+- cumulative practice thresholds: 20/80/180/320/500
+- weapon slot costs 1/2/3 per rank; non-weapon costs 1/1/2/2/3
+- two-weapon uses the WEAPON slot column (weapon.c:1141)
+- bare-hand and martial-arts bonuses apply every hit (weapon.c:1611-1613)
+- bare-hand 50% / martial-arts 75% rate is the practice-training check, not bonus gating
+- riding trains after 100 mounted squares (steed.c:393-396, u.urideturns >= 100)
+- Knights start at Basic riding; target is Skilled (weapon.c:1787-1789)
+- pickup/loot/dip/trap/engrave actions gated at Basic riding
+- slot ceiling 32 for an XL-30 crowned hero: 2 starting + 29 level-ups + 1 crowning (u_init.c:884, pray.c:992-993)
+- Ranger divination caps at Expert (u_init.c:461)
+- Wizard restricted from long sword
+- spell schools start with a 20-use precredit at Basic
+- Skilled cone-of-cold and fireball: cluster of 3×3 explosions (spell.c:1419-1452), not room-clearing
+- Valkyrie 6+6+2 = 14 slot example math
+- crown gives +1 slot
+-->
 <p>Most adventurers discover the skill system the first time they press
 <code>#enhance</code> and realize the broadsword they’ve been swinging
 for several levels is finally ready to graduate from Basic to Skilled.
