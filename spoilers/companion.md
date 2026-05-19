@@ -9484,10 +9484,12 @@ thousands of threads, has informed the practical advice throughout
 this guide.
 
 Above all, this guide exists because the game itself exists.
-**NetHack** has been developed since 1987 by the NetHack DevTeam,
-founded by Mike Stephenson, Izchak Miller, and Janet Walz. Izchak
-Miller passed away in 1994; the shopkeeper who bears his name in
-the Mines is a small measure of how much his work meant.
+**[NetHack](https://www.nethack.org/)** has been developed since
+1987 by the NetHack DevTeam, founded by Mike Stephenson, Izchak
+Miller, and Janet Walz. Izchak Miller passed away in 1994; the
+shopkeeper who bears his name in the Mines is a small measure of
+how much his work meant. The source lives at
+[github.com/NetHack/NetHack](https://github.com/NetHack/NetHack).
 
 The game itself descends from earlier roguelikes. **Hack** was
 written by Jay Fenlason in 1982 as a class project at Lincoln-Sudbury
