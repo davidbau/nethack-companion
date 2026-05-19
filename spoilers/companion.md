@@ -1437,7 +1437,17 @@ Here are the traps you'll encounter, roughly grouped by how much
 you'll regret finding them:
 
 #### Nuisance Traps
-<!-- audit 2026-05-17 #26 (re-audit 2026-05-18 v2 #49): 4 trap entries verified, 1 broadened (rust trap also affects non-metal armor, lit lamps, potions). v2 re-verified all four rows: arrow trap at trap.c:1190-1248 (1/15 trap-empty chance once known); dart trap with 1-in-6 poisoned dart at trap.c:1273; squeaky board at trap.c:1402-1476 (wake_nearby/wake_nearto, skipped by Levitation OR Flying); rust trap at trap.c:1595-1654 (40% default branch hits cloak/suit/shirt in order plus dousing lamps). Missed arrows and darts land via place_object + stackobj, supporting "Veterans sometimes trigger them deliberately to stock up." 0 corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- arrow trap empty-click is 1/15 once `trap->once && trap->tseen` (trap.c:1199, 1228)
+- dart trap 1/6 chance the dart is poisoned (trap.c:1273)
+- squeaky board skipped by Levitation OR Flying unless forcetrap (trap.c:1419)
+- squeaky board wakes monsters: wake_nearby for player, wake_nearto range 40 for monster (trap.c:1436, 1473)
+- rust trap default branch (40% via cases 3,4 of rn2(5)) douses lamplit items then cloak else suit else shirt (trap.c:1610, 1632-1643)
+- rust trap cases 0/1/2 hit helm, then left-arm chain (shield→weapon→gloves), then right-arm (weapon→gloves) (trap.c:1611-1627)
+- missed arrows and darts land via place_object + stackobj — can be farmed (trap.c:1217-1220, 1288-1291)
+- mounted player: steed absorbs the hit 50% of the time (trap.c:1211, 1276)
+-->
 
 | Trap            | Effect                                              |
 | --------------- | --------------------------------------------------- |
@@ -1451,7 +1461,15 @@ produce free ammunition. Veterans sometimes trigger them deliberately
 to stock up.
 
 #### Movement Traps
-<!-- audit 2026-05-18 #123 (re-audit 2026-05-19 v2 #169): trapdoor description "drops you to the next level down" understates the mechanic. hole_destination at trap.c:442-453 rolls each level: while dst->dlevel < bottom, increment; if rn2(4) break — 25% chance per level to keep falling. So a trapdoor can drop you several levels. Same for holes. Also clarified that Flying (not just Levitation) skips pits/holes/trapdoor (trap.c:635, 1850), with the !Sokoban guard that disables the skip on Sokoban puzzle levels. v2 re-verified all numbers and mechanics; pit damage 1d6, spiked 1d10 + 1/6 poison. 0 new corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- trapdoor cascade: dlevel++ per loop iteration, `if (rn2(4)) break` = 25%/level chance to keep falling (trap.c:442-453)
+- holes use the same hole_destination cascade as trapdoors
+- pit base damage 1d6 (trap.c:1950, rnd(adj_pit ? 3 : 6))
+- spiked pit base damage 1d10 with 1/6 chance of poison (trap.c:1925, 1938-1945)
+- Levitation OR Flying skip pit/hole/trapdoor, gated `!Sokoban && ...` (trap.c:633-639, 1850)
+- in Sokoban the skip is disabled — pits suck you in regardless
+-->
 
 
 | Trap             | Effect                                                     |
@@ -1473,7 +1491,18 @@ entirely — except in Sokoban, where the puzzle levels disable the
 skip and you fall in regardless.
 
 #### Dangerous Traps
-<!-- audit 2026-05-18 #132: 3 corrections. (1) Anti-magic implosion damage "halved to 1d4 if you can pass through walls" — wrong; trap.c:2371-2372 dmgval2 = (dmgval2 + 3) / 4 — QUARTERED (rounded up), not halved. From max 4d4 the result is at most 4, not 1d4. (2) "Destroying it from range by zapping cancellation at it to defuse it without setting it off" — wrong; cancellation aimed at any magical trap (including ANTI_MAGIC per trap.h:118-122) triggers an explosion of 20 + d(3,6) damage at the trap's square (zap.c:3611-3621). It removes the trap but doesn't silent-defuse. (3) Polymorph trap "only PolyControl helps" — incomplete; Antimagic and Unchanging both block the polymorph entirely (trap.c:2486-2489). Added that to the polymorph-trap paragraph. v2 audit 2026-05-18 #42: one-sentence addition to the sleep-gas paragraph noting that sleep resistance (elven blood, the right ring) sidesteps it entirely (trap.c:2772-2773 — sleep gas check returns early on Sleep_resistance). Re-verified the anti-magic implosion math, polymorph trap Antimagic/Unchanging blocks, iron-footwear interactions, and cancellation-explosion damage formula. 0 other corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- anti-magic implosion damage QUARTERED (not halved) for pass-walls: `dmgval2 = (dmgval2 + 3) / 4` (trap.c:2371-2372)
+- max 4d4 raw damage caps at 4 after quartering (16+3)/4 = 4
+- anti-magic damage composition: base 1d4 + 1d4 per half_physical/half_spell + 1d4 for wielding Magicbane + 1d4 for carrying first non-quest AD_MAGM artifact (trap.c:2351-2369; loop breaks on first match)
+- cancellation on any magical trap detonates `20 + d(3,6)` at the square then removes trap (zap.c:3611-3621)
+- ANTI_MAGIC counts as is_magical_trap (trap.h:121)
+- polymorph trap is blocked entirely by Antimagic OR Unchanging (trap.c:2486-2489) — PolyControl only directs the change
+- sleep gas: Sleep_resistance skips the fall_asleep branch in trapeffect_slp_gas_trap (trap.c:1570)
+- iron footwear: blocks bear-trap leg damage (trap.c:1517-1518), blocks spiked-pit spikes (trap.c:1901-1903), blocks polymorph trap (trap.c:2478-2483)
+- iron footwear absorbs an anti-magic drain by losing 1 enchantment, but only if spe>0 (trap.c:2328-2343)
+-->
 
 
 | Trap              | Effect                                               |
@@ -1528,7 +1557,17 @@ enchantment instead. Useful protection to have on if you haven't
 found anything better yet.
 
 #### Searching and Detection
-<!-- audit 2026-05-18 #92 (re-audit 2026-05-18 v2 #63): dosearch0 mechanics verified (detect.c:2016-2093); rnl Luck bias confirmed (rnd.c:112). Corrected: wand of secret door detection is NODIR; also reveals SDOOR/SCORR/traps/trapped chests/hidden mimics, not just traps. Levitation/Flying immune to most but not all floor traps. Search artifact/lenses bonus only helps door/corridor discovery (rnl(7-fund)); trap roll uses rnl(8) with no fund. v2 corrected the wand's area shape: it's a circular area of radius BOLT_LIM=8 (vision.c:27-45 circle_data + 2107-2148 do_clear_area) blocked by line of sight via couldsee(), NOT a square. Reworded "square radius around you" to "roughly circular area around you (radius about eight, blocked by line of sight)." Excalibur is the only SPFX_SEARCH artifact (artilist.h:85-86). See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- dosearch0 search mechanics at detect.c:2016-2093
+- rnl applies a Luck bias (good Luck → 0, bad Luck → x-1) (rnd.c:112-128)
+- SDOOR/SCORR roll is rnl(7 - fund); fund capped at +5 (detect.c:2026-2032, 2042-2054)
+- trap-detection roll is rnl(8) with NO fund bonus (detect.c:2079) — Excalibur+lenses don't speed trap-finding
+- Excalibur is the only SPFX_SEARCH artifact (artilist.h:85-86)
+- wand of secret door detection is NODIR; findit reveals SDOOR/SCORR/traps/trapped chests/trapped doors/hidden mimics/hiders (detect.c:1639-1718, zap.c:2552-2558)
+- wand area is a circle of radius BOLT_LIM=8 (vision.c:27-45 circle_data, hack.h:49) gated by couldsee() line of sight (vision.c:2144)
+- Flying/Levitation skip most floor traps but NOT magic/teleport/anti-magic
+-->
 
 The best defense against traps is finding them before they find you:
 
@@ -1551,7 +1590,18 @@ empty room, a scatter of arrows or darts on the floor, a square
 your pet refuses to cross, or a themed room whose gimmick is
 hidden hazards.
 
-<!-- audit 2026-05-18 #177 (re-audit 2026-05-18 v2 #86): passes_bars (mondata.c:552-563) uses verysmall() = msize<MZ_SMALL = TINY only; kittens and little dogs are MZ_SMALL and do NOT pass through. Lightning shares the ZT_ACID branch at zap.c:5344-5369 (90% per tile melts bars). Wand/spell of striking and force bolt have no IRONBARS handler so they pass through harmlessly. Rock moles eat bars (metallivorous, hack.c:769-784). v2 fixes: (a) "wand of lightning will melt bars" overstated — zap.c:5349 has `if (damgtype == ZT_LIGHTNING && rn2(10)) break;` so each tile only melts on a 1-in-10 roll (acid has no such gate). Softened to "can melt them too — though only about one zap in ten actually dissolves the bars." (b) "Ordinary stone on the flanks" geometry wrong: niche bars sit in a room wall, with stone behind them but room-wall tiles to the sides; the trivial "dig through the adjacent wall" framing didn't match the layout. Reworded to digging diagonally past the bars, or through the wall to the stone behind and back into the niche. (c) "Scroll of teleportation guaranteed" overstates the coupling at mklev.c:790-792 — the scroll is placed only when teleport isn't suppressed on the level. Reworded. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- passes_bars uses verysmall() = msize < MZ_SMALL = TINY only (mondata.c:552-563)
+- grid bug / bat / sewer rat are MZ_TINY (monsters.h:889, 1149, 1269); kitten and little dog are MZ_SMALL and stay out
+- acid (ray/breath/spit) corrodes bars unconditionally (zap.c:5347-5369)
+- lightning shares the acid branch but is gated `rn2(10) break` — melts on roughly 1 zap in 10 (zap.c:5349)
+- striking and force bolt have NO IRONBARS handler — they pass through harmlessly
+- rock moles eat bars via the metallivorous arm (hack.c:769-784)
+- xorns and earth elementals pass walls and so pass bars
+- bars sit on a room-wall tile (mklev.c:783); niche payload one square further into stone
+- scroll of teleportation placed in niche only when `!noteleport` on the level (mklev.c:790-792)
+-->
 #### Iron Bars
 
 Iron bars look like a barrier but aren't solid: light passes through,
