@@ -49,11 +49,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 38**  L 3178  ( 143 lines)   📖 Provisions and Dining
 - [x] **# 39**  L 8135  (  19 lines)     ↳ Bestiary Tables → Kobolds `k`
 - [x] **# 40**  L 8039  (  25 lines)     ↳ Bestiary Tables → Felines `f`
-- [ ] **# 41**  L 8628  (  23 lines)     ↳ Bestiary Tables → Mummies `M`
-- [ ] **# 42**  L 1256  (  54 lines)     ↳ Traps and Hazards → Dangerous Traps
-- [ ] **# 43**  L 4670  ( 132 lines)   📖 The Art of Combat
-- [ ] **# 44**  L 2072  (  28 lines)     ↳ Dangerous Encounters → Level Drain
-- [ ] **# 45**  L 3139  (  39 lines)     ↳ A Practical Identification Strategy → A Practical Strategy
+- [x] **# 41**  L 8628  (  23 lines)     ↳ Bestiary Tables → Mummies `M`
+- [x] **# 42**  L 1256  (  54 lines)     ↳ Traps and Hazards → Dangerous Traps
+- [x] **# 43**  L 4670  ( 132 lines)   📖 The Art of Combat
+- [x] **# 44**  L 2072  (  28 lines)     ↳ Dangerous Encounters → Level Drain
+- [x] **# 45**  L 3139  (  39 lines)     ↳ A Practical Identification Strategy → A Practical Strategy
 - [ ] **# 46**  L  132  ( 195 lines)   📖 Choosing Your Expedition
 - [ ] **# 47**  L 8118  (  17 lines)     ↳ Bestiary Tables → Jellies `j`
 - [ ] **# 48**  L 6974  (  17 lines)     ↳ Voluntary Challenges → Bonesless (new in 5.0)

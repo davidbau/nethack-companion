@@ -7499,3 +7499,93 @@ Source: `spoilers/companion.md` line 8055. No corrections (re-audit clean).
 - Intro lists Valkyrie and Tourist as 50/50 kitten/dog, but Archeologist, Healer, Priest, Monk, Rogue, and Ranger also default to 50/50 when `urole.petnum` is `NON_PM` (`dog.c:93-100`). Only Wizard is guaranteed. Phrasing isn't wrong, just slightly partial; left as-is per preserve-voice.
 
 ---
+
+## 2026-05-18 — v2 audit #41: Bestiary Tables — Mummies `M`
+
+Source: `spoilers/companion.md` line 8644. 1 factual fix.
+
+### Wrong → fixed
+- **"All mummies have poisonous corpses and are mindless and undead."**: every mummy row carries `G_NOCORPSE` (`monsters.h:1902, 1910, 1918, 1927, 1936, 1944, 1953, 1961`; flag at `monflag.h:201`). Mummies never leave a corpse, so the M1_POIS flag is dormant. Reworded to "All mummies are mindless undead and leave no corpse."
+
+### Verified
+- All 8 rows (kobold/gnome/orc/dwarf/elf/human/ettin/giant mummy) match `include/monsters.h:1901-1968`.
+- All carry MR_COLD | MR_SLEEP | MR_POISON, M1_MINDLESS | M2_UNDEAD.
+- All attacks AD_PHYS only; no AD_DISE / "withering" mechanic (pass-1's removal stayed).
+
+---
+
+## 2026-05-18 — v2 audit #42: Traps and Hazards — Dangerous Traps
+
+Source: `spoilers/companion.md` line 1262. 1 wisdom addition.
+
+### Wisdom addition
+- Sleeping-gas paragraph didn't mention sleep resistance. `trap.c:2772-2773` returns early on Sleep_resistance, so elves and ring-of-sleep-resistance wearers sidestep the trap entirely. Added one short sentence: "Sleep resistance (elven blood, the right ring) sidesteps it." Real strategic info for an elf player wondering if they need to fear sleep traps.
+
+### Verified
+- Anti-magic implosion formula at `trap.c:2351-2370` (rnd(4) base + Half_physical||Half_spell + Magicbane + first carried magic-resistance artifact, max 4d4; quartered for Passes_walls).
+- Polymorph trap blocked by `Antimagic || Unchanging` at `trap.c:2486-2489`. Iron shoes checked first and convert into kicking boots (or vice versa) at `trap.c:2478-2486`.
+- Fire trap damage `d(2,4)`; items still take `destroy_items` regardless of Fire_resistance per `trap.c:4233-4309`.
+- Cancellation on magical trap: `20 + d(3,6)` explosion at `zap.c:3593-3621`.
+
+### Notes
+- Auditor flagged the iron-footwear polymorph-trap conversion as a potential addition; section already covers it ("your shoes shift instead"). Skipped.
+- Auditor flagged "if you carry magic resistance" vs "if you're magic-resistant" wording difference between table cell and body paragraph; minor and not strategic. Left.
+
+---
+
+## 2026-05-18 — v2 audit #43: The Art of Combat
+
+Source: `spoilers/companion.md` line 4685. 2 factual fixes.
+
+### Wrong → fixed
+- **To-hit list "Your Strength bonus (muscles still matter underground)"**: incomplete. `abon()` at `src/weapon.c:950-988` includes BOTH Strength AND Dexterity. Dex 25 yields +11, often the dominant contributor at high levels. Pass-1 missed this. Reworded to "Your Strength and Dexterity bonuses (muscles plus agility, both matter)" — preserves voice without expanding into a list.
+- **"Monster spellcasters no longer get a free extra step after casting"** (full bullet): fabricated 5.0 change. The pass-1 audit flagged this as "plausible but unverified"; the v2 auditor confirmed no such fix exists in git history. Monsters still move via `m_move()` (PHASE THREE) then attack/cast via `mattacku()`/`castmu()` (PHASE FOUR) on the same turn (`monmove.c:911, 943-944, 971`). Bullet dropped entirely.
+
+### Verified
+- d20 + abon + AC + uhitinc + Luck + level formula at `src/uhitm.c:376-378`.
+- Luck contribution cap `(|Luck|+2)/3` (so ±5 at Luck 13).
+- Str damage +6 cap at STR ≥ 18/100.
+- Two-handed Str-damage 50% bonus at `src/uhitm.c:1465-1468`.
+- Two-weapon -9/-7/-5/-3 to-hit and -3/-1/0/+1 damage by skill at `src/weapon.c:1559-1600`.
+- Conflict requires mutual sight at `src/mon.c:1306`; resist formula `rnd(20) > min(19, Cha - m_lev + u.ulevel)` at `src/mondata.c:1607-1612`.
+- Ranged-monster keep-distance behavior new in 5.0/3.7 at `src/monmove.c:1180-1224`.
+- Cornered scared monsters fight via `panicattk` at `src/monmove.c:918-920, 968`.
+
+---
+
+## 2026-05-18 — v2 audit #44: Dangerous Encounters — Level Drain
+
+Source: `spoilers/companion.md` line 2079. 1 factual fix + 1 wisdom addition.
+
+### Wrong → fixed
+- **"the bite of a hostile incubus or succubus (see Seduction below)"**: under default `sysopt.seduce = 1` at `sys.c:100`, the demon's bite is `AD_SSEX`, not `AD_DRLI`. The `AD_SSEX → AD_DRLI` substitution at `mhitu.c:327-334` only fires when SEDUCE is disabled. So under stock options hostile foocubi do not drain levels. Dropped the clause.
+
+### Wisdom addition
+- Existing text said "you have to kill enough monsters to re-earn them" — implies that's the only path. Added: potion of restore ability restores one lost level per quaff, and a blessed one restores all at once (`potion.c:687-691`). Wraith corpse already listed; this rounds out the recovery options for a beginner who just got drained.
+
+### Verified
+- AD_DRLI carriers (wraith, barrow wight, Nazgul, vampire, vampire leader, Vlad) at `monsters.h:2281-2348`.
+- Drain mechanic at `uhitm.c:2479-2488`: 1-in-3 chance, blocked by `Drain_resistance` or `mhitm_mgc_atk_negated`.
+- HP/power loss per `u.uhpinc[u.ulevel]` / `u.ueninc[u.ulevel]` at `exper.c:251-273`.
+- Drain resistance carriers (all wielded only): Excalibur, Stormbringer, Aesculapius at `artilist.h`.
+- Black DSM grants both disintegration and drain resistance at `do_wear.c:809-815`.
+- Shield of drain resistance has DRAIN_RES as its sole `oc_oprop` at `objects.h:656-658`.
+- Wraith corpse +1 level via `pluslvl(FALSE)` at `eat.c:1141-1142`; weight 0 / cnutrit 0 makes it untinnable.
+
+### Notes
+- Synced the vampire-bat parenthetical to match the v2 #37 reword ("poisoned bite" not "second bite").
+
+---
+
+## 2026-05-18 — v2 audit #45: A Practical Identification Strategy — A Practical Strategy
+
+Source: `spoilers/companion.md` line 3152. No corrections (re-audit clean).
+
+### Verified
+- Altar BUC flash at `do.c:379-389`.
+- Engrave-test costs one charge at `engrave.c:792` + `zap.c:2520`.
+- Wand of digging auto-IDs via "Gravel flies up" at `engrave.c:684-704`.
+- WAN_COLD engrave message "A few ice cubes drop from the wand" at `engrave.c:658-661`.
+- All amulets fixed 150gp at `objects.h:834`.
+
+---

@@ -1260,7 +1260,7 @@ entirely — except in Sokoban, where the puzzle levels disable the
 skip and you fall in regardless.
 
 #### Dangerous Traps
-<!-- audit 2026-05-18 #132: 3 corrections. (1) Anti-magic implosion damage "halved to 1d4 if you can pass through walls" — wrong; trap.c:2371-2372 dmgval2 = (dmgval2 + 3) / 4 — QUARTERED (rounded up), not halved. From max 4d4 the result is at most 4, not 1d4. (2) "Destroying it from range by zapping cancellation at it to defuse it without setting it off" — wrong; cancellation aimed at any magical trap (including ANTI_MAGIC per trap.h:118-122) triggers an explosion of 20 + d(3,6) damage at the trap's square (zap.c:3611-3621). It removes the trap but doesn't silent-defuse. (3) Polymorph trap "only PolyControl helps" — incomplete; Antimagic and Unchanging both block the polymorph entirely (trap.c:2486-2489). Added that to the polymorph-trap paragraph. -->
+<!-- audit 2026-05-18 #132: 3 corrections. (1) Anti-magic implosion damage "halved to 1d4 if you can pass through walls" — wrong; trap.c:2371-2372 dmgval2 = (dmgval2 + 3) / 4 — QUARTERED (rounded up), not halved. From max 4d4 the result is at most 4, not 1d4. (2) "Destroying it from range by zapping cancellation at it to defuse it without setting it off" — wrong; cancellation aimed at any magical trap (including ANTI_MAGIC per trap.h:118-122) triggers an explosion of 20 + d(3,6) damage at the trap's square (zap.c:3611-3621). It removes the trap but doesn't silent-defuse. (3) Polymorph trap "only PolyControl helps" — incomplete; Antimagic and Unchanging both block the polymorph entirely (trap.c:2486-2489). Added that to the polymorph-trap paragraph. v2 audit 2026-05-18 #42: one-sentence addition to the sleep-gas paragraph noting that sleep resistance (elven blood, the right ring) sidesteps it entirely (trap.c:2772-2773 — sleep gas check returns early on Sleep_resistance). Re-verified the anti-magic implosion math, polymorph trap Antimagic/Unchanging blocks, iron-footwear interactions, and cancellation-explosion damage formula. 0 other corrections. See companion-audit.md. -->
 
 
 | Trap              | Effect                                               |
@@ -1289,7 +1289,8 @@ but MR or Unchanging let you walk through it untouched.
 
 Sleeping gas is murder in monster-rich areas. You can't fight, you
 can't run, you can't even wake up on purpose. Monsters line up
-to hit you like it's a buffet.
+to hit you like it's a buffet. Sleep resistance (elven blood, the
+right ring) sidesteps it.
 
 **Anti-magic fields hit harder if you're magic-resistant.**
 Counterintuitive enough to mislead returning players. The trap
@@ -2076,19 +2077,19 @@ attributes, so don't rely on it. Stockpile at least one restore
 ability before pushing into mind flayer territory.
 
 #### Level Drain
-<!-- audit 2026-05-17 #43: corrected "vampire bats" from drain-life list (their second bite is AD_DRST, drain Strength, not AD_DRLI). Added shield of drain resistance (new in 5.0). Verified wraith corpse mechanic (eat.c:1141 pluslvl), drained-level HP/power math (exper.c:251-273 u.uhpinc/u.ueninc), drain-resistance carriers (artilist + do_wear.c). Fixed awkward "zero nutritional weight" framing (real reason is cnutrit==0). See companion-audit.md. -->
+<!-- audit 2026-05-17 #43: corrected "vampire bats" from drain-life list (their second bite is AD_DRST, drain Strength, not AD_DRLI). Added shield of drain resistance (new in 5.0). Verified wraith corpse mechanic (eat.c:1141 pluslvl), drained-level HP/power math (exper.c:251-273 u.uhpinc/u.ueninc), drain-resistance carriers (artilist + do_wear.c). Fixed awkward "zero nutritional weight" framing (real reason is cnutrit==0). v2 audit 2026-05-18 #44: two fixes. (a) Dropped "the bite of a hostile incubus or succubus (see Seduction below)" — under default sysopt.seduce=1 (sys.c:100) the demon's bite is AD_SSEX, not AD_DRLI; AD_SSEX→AD_DRLI substitution at mhitu.c:327-334 only fires when SEDUCE is disabled, so stock-options foocubi don't drain levels. (b) Added potion-of-restore-ability to the recovery options (potion.c:687-691 blessed restores all lost levels at once, uncursed/plain restores one per quaff). Also synced the vampire-bat parenthetical to match the v2 #37 reword ("poisoned bite" not "second bite"). See companion-audit.md. -->
 
 A recurring theme in the bestiary: certain monsters reduce your
 experience level on a hit, taking the HP and power gains that came
 with each lost level. Wraiths, barrow wights, Nazgul, vampires,
 vampire leaders, and Vlad himself all carry level-drain attacks.
-Stormbringer in an enemy's hand does the same. So does the bite of
-a hostile incubus or succubus (see Seduction below). Drained
-levels do not come back on their own; you have to kill enough
-monsters to re-earn them.
+Stormbringer in an enemy's hand does the same. Drained levels do
+not come back on their own. You re-earn them by killing more
+monsters, by drinking a potion of restore ability (a blessed one
+restores all lost levels at once), or by eating a wraith corpse.
 
 (Don't confuse drain-life with *Strength* drain: a vampire bat's
-second bite drains Str, not levels. Stat drain is a separate
+poisoned bite drains Str, not levels. Stat drain is a separate
 problem and the section on *Enchantment Drain* covers its cousin.)
 
 **Defenses:** *Drain resistance* makes you immune. The classic
@@ -3149,7 +3150,7 @@ who die on level 8 from adventurers who reach the Castle. The dungeon
 doesn't keep notes for you. You have to do it yourself.
 
 #### A Practical Strategy
-<!-- audit 2026-05-18 #151: ~39 lines, no substantive errors. Altar-flash BUC verified (do.c:379-389); engrave-test costs one charge (engrave.c:792 + zap.c:2520); wand of digging auto-IDs from engrave message (engrave.c:684-704); all 12 amulet costs are 150 (objects.h:834). One prose nit: "A wand that freezes your engraving is cold" — actual WAN_COLD engrave message is "A few ice cubes drop from the wand" (engrave.c:658-661); the vanish/freeze branch only triggers when overwriting an existing BURN engraving. Reworded to "drops ice cubes." -->
+<!-- audit 2026-05-18 #151 (re-audit 2026-05-18 v2 #45): ~39 lines, no substantive errors. Altar-flash BUC verified (do.c:379-389); engrave-test costs one charge (engrave.c:792 + zap.c:2520); wand of digging auto-IDs from engrave message (engrave.c:684-704); all 12 amulet costs are 150 (objects.h:834). One prose nit: "A wand that freezes your engraving is cold" — actual WAN_COLD engrave message is "A few ice cubes drop from the wand" (engrave.c:658-661); the vanish/freeze branch only triggers when overwriting an existing BURN engraving. Reworded to "drops ice cubes." v2 re-confirmed all mechanical claims: ice-cubes wand message accurate for the fresh-floor engrave-test, amulet uniform 150gp pricing, escalation order (altar/shop free → engrave-test cheap → use-test risky → identify scrolls last) matches standard NetHack identification priority. 0 corrections. See companion-audit.md. -->
 
 
 All of these techniques combine into a workflow. Here's what a
@@ -4683,7 +4684,7 @@ they've secured the items they need.
 ---
 
 ### The Art of Combat
-<!-- audit 2026-05-18 #82: many claims verified (XL/Str/Luck/enchantment/AC factors in find_roll_to_hit, dbon Str cap, 3/2 two-handed Str bonus, conflict requires mutual sight + Cha-Lvl resist roll, shields forbidden with two-weapon). Three corrections: (1) Two-weapon roles wrong — actual EXPERT roles are Rogue + Samurai, not Rangers + Barbarians (Rangers can't two-weapon at all per u_init.c); penalty is a flat negative replacement table per skill, not a "split." (2) Luck to-hit caps around ±5 but Luck itself goes to ±10 (±13 with luckstone). (3) Reworded "monster spellcasters no longer get free extra step" — left as plausible but unverified. See companion-audit.md. -->
+<!-- audit 2026-05-18 #82: many claims verified (XL/Str/Luck/enchantment/AC factors in find_roll_to_hit, dbon Str cap, 3/2 two-handed Str bonus, conflict requires mutual sight + Cha-Lvl resist roll, shields forbidden with two-weapon). Three corrections: (1) Two-weapon roles wrong — actual EXPERT roles are Rogue + Samurai, not Rangers + Barbarians (Rangers can't two-weapon at all per u_init.c); penalty is a flat negative replacement table per skill, not a "split." (2) Luck to-hit caps around ±5 but Luck itself goes to ±10 (±13 with luckstone). (3) Reworded "monster spellcasters no longer get free extra step" — left as plausible but unverified. v2 audit 2026-05-18 #43: two factual fixes. (a) The to-hit list "Your Strength bonus (muscles still matter underground)" was incomplete — abon() at weapon.c:950-988 includes BOTH Strength AND Dexterity (dex 25 yields +11, often dominant at high levels). Reworded to "Your Strength and Dexterity bonuses (muscles plus agility, both matter)". (b) Dropped the "Monster spellcasters no longer get a free extra step after casting" bullet entirely — the pass-1 audit flagged it as "plausible but unverified", and the v2 auditor confirmed no such fix exists in git history. Monsters still move via m_move() (PHASE THREE) then attack/cast via mattacku()/castmu() (PHASE FOUR) on the same turn (monmove.c:911, 943-944, 971). Fabricated 5.0 change. See companion-audit.md. -->
 
 The most important combat technique in the Mazes is knowing when
 *not* to fight. The second most important is making sure you hit
@@ -4697,7 +4698,7 @@ the game can think of to make your life interesting:
 - Your experience level (the game's way of saying "you've seen things")
 - Your weapon's enchantment (a +7 Excalibur hits *noticeably* better)
 - Your Luck (the universe literally takes sides; the to-hit contribution caps around ±5 even though Luck itself ranges further)
-- Your Strength bonus (muscles still matter underground)
+- Your Strength and Dexterity bonuses (muscles plus agility, both matter)
 - The monster's AC (the lower their AC, the harder they are to tag)
 
 You need to roll at or above (10 + defender's AC - your modifiers).
@@ -4805,12 +4806,6 @@ are the time-tested tactics that keep adventurers breathing:
   recover. If you've carved Elbereth in a corridor and then backed a
   monster into a dead end, be ready for it to make a decision about
   that arrangement. Keep an exit behind the monster, or expect contact.
-- **Monster spellcasters no longer get a free extra step after
-  casting.** This was a 3.6.x quirk that made casters feel
-  unpredictably aggressive: they'd cast a spell and then *also* move.
-  Fixed in 5.0. Combat near spellcasters is now more predictable
-  — enjoy it briefly before the dungeon introduces something else
-  that isn't.
 
 ---
 
@@ -8644,11 +8639,11 @@ All liches regenerate, leave no corpse, and are undead, cold-resistant, sleep-re
 :::
 
 #### Mummies `M`
-<!-- audit 2026-05-18 #149: corrected the "touch curses your worn items" advice — every mummy's attack in monsters.h:1901-1968 is plain AD_PHYS; only gremlins have AD_CURS (monattk.h:92). No special curse logic for S_MUMMY in mhitu.c/uhitm.c/mhitm.c. The note was residue from the prior "mummy withering" myth that audit #46 was supposed to scrub. Reworded to factual physical-only + undead-turning vulnerability. -->
+<!-- audit 2026-05-18 #149: corrected the "touch curses your worn items" advice — every mummy's attack in monsters.h:1901-1968 is plain AD_PHYS; only gremlins have AD_CURS (monattk.h:92). No special curse logic for S_MUMMY in mhitu.c/uhitm.c/mhitm.c. The note was residue from the prior "mummy withering" myth that audit #46 was supposed to scrub. Reworded to factual physical-only + undead-turning vulnerability. v2 audit 2026-05-18 #41: dropped "All mummies have poisonous corpses" — every M-class row carries G_NOCORPSE (monsters.h:1902,1910,1918,1927,1936,1944,1953,1961), so mummies never leave any corpse. Reworded the intro to "leave no corpse." Same shape as the Vampires fix in v2 #8. See companion-audit.md. -->
 
 Mindless undead. Wand and scroll of undead turning shred them.
 
-All mummies have poisonous corpses and are mindless and undead.
+All mummies are mindless undead and leave no corpse.
 
 ::: dense-table
 
