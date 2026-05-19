@@ -129,7 +129,7 @@ class TrunkRow:
 # ============================================================================
 
 DOD: list[TrunkRow] = [
-    TrunkRow(bubble=Bubble('Dlvl 1 — Entry', 'up-stair to exit'), pearls_below=2),
+    TrunkRow(bubble=Bubble('The Dungeon Entrance', 'up-stair to exit'), pearls_below=2),
     TrunkRow(  # Mines branch LEFT (down-stairs)
         branch=Branch(
             side='left', color='mines',
@@ -358,6 +358,11 @@ def layout_trunk(rows: list[TrunkRow], y_start: int, trunk_color_key: str,
 
 def text_el(x, y, content, **kwargs):
     parts = ' '.join(f'{k.replace("_", "-")}="{v}"' for k, v in kwargs.items())
+    # rsvg-convert misrenders EB Garamond's Qu ligature: the u is positioned
+    # above the Q instead of nestled in its curve. Wrapping Q in a tspan
+    # breaks the OpenType ligature substitution while preserving plain
+    # rendering. (No effect on Chrome or fontspec/xelatex.)
+    content = re.sub(r'Q(?=u)', '<tspan>Q</tspan>', content)
     return f'<text x="{x}" y="{y}" {parts}>{content}</text>'
 
 
@@ -596,7 +601,8 @@ def _wrap_svg(parts: list[str], height: int, aria_label: str) -> str:
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {height}" '
         f'role="img" aria-label="{aria_label}" '
         f'style="display:block;margin:0 auto;max-width:{WIDTH}px;width:100%;'
-        f"height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;\">"
+        f"height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;"
+        f"font-feature-settings:'liga' 0, 'dlig' 0;\">"
     )
     defs = (
         '<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" '
