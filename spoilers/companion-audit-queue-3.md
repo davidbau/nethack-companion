@@ -105,11 +105,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **# 93**  L 6304  (  31 lines)     ↳ Sokoban Solutions → Level 2, Version A
 - [x] **# 94**  L 5559  ( 246 lines)   📖 Gehennom
 - [x] **# 95**  L 7358  (  12 lines)     ↳ Weapons Tables → Saber
-- [ ] **# 96**  L 7615  (  13 lines)     ↳ Weapons Tables → Crossbow
-- [ ] **# 97**  L 2191  (  46 lines)     ↳ Dangerous Encounters → Seduction
-- [ ] **# 98**  L 2069  (  27 lines)     ↳ Dangerous Encounters → Brainlessness
-- [ ] **# 99**  L 8821  (  20 lines)     ↳ Bestiary Tables → Snakes `S`
-- [ ] **#100**  L 1644  ( 101 lines)   📖 A Field Guide to Dungeon Fauna
+- [x] **# 96**  L 7615  (  13 lines)     ↳ Weapons Tables → Crossbow
+- [x] **# 97**  L 2191  (  46 lines)     ↳ Dangerous Encounters → Seduction
+- [x] **# 98**  L 2069  (  27 lines)     ↳ Dangerous Encounters → Brainlessness
+- [x] **# 99**  L 8821  (  20 lines)     ↳ Bestiary Tables → Snakes `S`
+- [x] **#100**  L 1644  ( 101 lines)   📖 A Field Guide to Dungeon Fauna
 - [ ] **#101**  L 6846  (  14 lines)     ↳ Voluntary Challenges → Pacifist
 - [ ] **#102**  L 7464  (  12 lines)     ↳ Weapons Tables → Morning star
 - [ ] **#103**  L  892  (  50 lines)     ↳ Branches and Landmarks → The Gnomish Mines

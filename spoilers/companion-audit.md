@@ -9143,3 +9143,16 @@ All five **CLEAN**.
 
 ### Pass-3 queue
 95/183 done.
+
+## 2026-05-19 — v3 audit batch 20: Crossbow (#96), Seduction (#97), Brainlessness (#98), Snakes (#99), Field Guide (#100)
+
+All five **CLEAN**.
+
+- Crossbow: 1d4/1d6, wt 50, cost 40 match `objects.h`. Multishot at Str 18 (16 gnome). Skill caps Knight Skilled, Rogue/Ranger Expert.
+- Seduction: Cha+Int formula `rn2(35) > min(attr_tot, 32)` (mhitu.c:2178); 5 bad / 5 good outcomes; HP `rn1(10,6)` = 6-15; same-sex foocubus never seduces (could_seduce); peaceful 1/5 cost; high Cha refuses payment.
+- Brainlessness: Int=3 death via `ABASE(A_INT) <= ATTRMIN(A_INT)` (`eat.c:698`); any helmet 7/8 block (`uhitm.c:3235`); amnesia 5% losespells; greasing roll separate at `uhitm.c:3232`.
+- Snakes `S`: 6 rows (no mamba in 5.0) match `monsters.h:2167-2221`. Python no M1_CONCEAL. Cobra spit blind.
+- Field Guide: spot-checked ~20 class entries against monst.h. Soldier ant AD_DRST drain, vampire bat AD_DRST (not levels), displacer beast `hack.c:1972` 50% swap, mind flayer ATTRMIN=3 death, leprechaun AD_SGLD, nagas red/black/golden/guardian breath types, scalpel/tsurugi MAT_METAL pudding split.
+
+### Pass-3 queue
+100/183 done.
