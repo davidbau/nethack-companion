@@ -2783,7 +2783,12 @@ breath for you before being lost. An amulet of life saving still
 rescues you from the fatal case, though you lose any armor it took.
 
 #### Genocide
-<!-- audit 2026-05-17 #71 (re-audit 2026-05-18 v2 #71): confused-uncursed-scroll self-genocide verified at read.c:1737 + do_genocide PLAYER+REALLY branch at lines 2838-2972 (killer = "genocidal confusion"). v2 corrected "your own race" to "your own species": the PLAYER branch at read.c:2839 uses mndx = u.umonster, which is gu.urole.mnum (u_init.c:991), the **role's** monster (PM_VALKYRIE, PM_ARCHEOLOGIST, etc.), NOT the race (PM_HUMAN, PM_ELF, ...). "Species" is the accurate noun. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- confused-uncursed scroll of genocide self-genocides your role's species (read.c:1737)
+- PLAYER+REALLY branch in do_genocide kills you with killer = "genocidal confusion" (read.c:2838-2972)
+- mndx = u.umonster = gu.urole.mnum (read.c:2839, u_init.c:991) — role species (PM_VALKYRIE etc.), not race
+-->
 
 Reading an uncursed scroll of genocide while confused can genocide
 your own species. Don't do this.
@@ -2930,7 +2935,15 @@ loss; the second one in your bag is a kit.
 ---
 
 ### Making Friends
-<!-- audit 2026-05-17 #36 (re-audit 2026-05-18 v2 #96): ~25 claims verified, 4 corrected (pet-curse-avoidance overstated, tameness loss sources narrowed, displacement guards corrected, charm monster spell is multi-target not single). v2 fixes: (a) "You have a sad feeling for a moment" was attributed to the "left pet behind alive on a previous level" case — wrong. The message fires when a pet of yours dies offscreen (mon.c:952 mtmp->mtame && !canseemon, message at mon.c:3101/3495). Leaving a pet behind alive produces no message at all; loyalty just decays at 1 per 150 moves apart (dog.c:689-697). Separated the two cases in the prose. Beginner trap: a reader who saw the message thinking "still alive" would go back for a corpse. (b) Confused scroll of taming / charm monster radius was "5×5" — wrong. read.c:1689 sets bd = confused ? 5 : 1, loop spans [-bd..bd] so area = (2*bd+1)²: normal 3×3, confused 11×11. Corrected. v2 follow-up: the confused-wide-area trick is scroll-only. spell.c:1372 fails confused casts outright ("You fail to cast the spell correctly."), so charm monster never reaches the 11×11 path. Clarified in the prose. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- "sad feeling for a moment" fires when an offscreen pet dies (mon.c:952, 3101, 3495)
+- leaving a pet behind alive produces no message; loyalty decays at 1 per 150 moves apart (dog.c:689-697)
+- pet curse-avoidance has a starvation exception (dogmove.c:535-538)
+- tameness loss sources: hunger past threshold, long separation, player-dealt damage (not damage from other monsters)
+- scroll of taming radius: bd = confused ? 5 : 1, area (2*bd+1)² (read.c:1689) — 3×3 normal, 11×11 confused
+- confused charm-monster spell fails outright (spell.c:1372) — the 11×11 trick is scroll-only
+-->
 
 The Mazes of Menace are dark, hostile, and full of things that want
 to eat you. Under those circumstances, a loyal companion is worth
@@ -3085,7 +3098,17 @@ single most powerful identification tool you have.
 <div><figure style="margin: 1.5em 0; text-align: center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 736" role="img" aria-label="The identification flowchart" style="max-width: 760px; width: 100%; height: auto; font-family: 'EB Garamond', 'Garamond', 'Georgia', serif;"><title>The Identification Flowchart</title><defs><marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker><style>.start{fill:#E8F4FD;stroke:#3B6FA0;stroke-width:2}.decision{fill:#FFF4E6;stroke:#B5651D;stroke-width:2}.action{fill:#F0F9E8;stroke:#5B8E3A;stroke-width:2}.final{fill:#FCE8E6;stroke:#A14A3F;stroke-width:2}.label{font-size:18px;fill:#1f2933;text-anchor:middle}.startlbl{font-size:19px;font-weight:600;fill:#1f2933;text-anchor:middle}.branch{font-size:16px;font-style:italic;fill:#5a5a5a}.edge{fill:none;stroke:#5a5a5a;stroke-width:1.5}</style></defs><rect class="start" x="40" y="20" width="320" height="50" rx="25" ry="25"/><text class="startlbl" x="200" y="51">Found an item</text><path class="edge" d="M 200 70 L 200 100" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="100" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="133">Can you reach an altar?</text><path class="edge" d="M 360 128 L 430 128" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="121" text-anchor="middle">yes</text><rect class="action" x="430" y="100" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="133">Drop it. Check BUC.</text><text class="branch" x="210" y="172">no</text><path class="edge" d="M 200 156 L 200 190" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="190" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="223">Is your pet nearby?</text><path class="edge" d="M 360 218 L 430 218" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="211" text-anchor="middle">yes</text><rect class="action" x="430" y="184" width="290" height="62" rx="8" ry="8"/><text class="label" x="575" y="210">Drop it. Pet avoids it?</text><text class="label" x="575" y="232" style="font-size: 16px;"><tspan style="font-style: italic; fill:#5a5a5a;">yes</tspan>: it's cursed; <tspan style="font-style: italic; fill:#5a5a5a;">no</tspan>: it's safe</text><text class="branch" x="210" y="262">no</text><path class="edge" d="M 200 246 L 200 290" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="290" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="323">Can you reach a shop?</text><path class="edge" d="M 360 318 L 430 318" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="311" text-anchor="middle">yes</text><rect class="action" x="430" y="290" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="323">Check price.</text><text class="branch" x="210" y="362">no</text><path class="edge" d="M 200 346 L 200 380" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="380" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="413">Is it a wand?</text><path class="edge" d="M 360 408 L 430 408" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="401" text-anchor="middle">yes</text><rect class="action" x="430" y="380" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="413">Engrave-test it.</text><text class="branch" x="210" y="452">no</text><path class="edge" d="M 200 436 L 200 470" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="470" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="503">Spare ring or potion with a sink?</text><path class="edge" d="M 360 498 L 430 498" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="491" text-anchor="middle">yes</text><rect class="action" x="430" y="470" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="503">Drop ring or dip potion.</text><text class="branch" x="210" y="542">no</text><path class="edge" d="M 200 526 L 200 560" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="560" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="593">Is it safe to use-test?</text><path class="edge" d="M 360 588 L 430 588" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="581" text-anchor="middle">yes</text><rect class="action" x="430" y="560" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="593">Try it carefully.</text><text class="branch" x="210" y="632">no</text><path class="edge" d="M 200 616 L 200 660" marker-end="url(#arrowhead)"/><rect class="final" x="40" y="660" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="693">Read a scroll of identify.</text></svg><figcaption style="font-style: italic; color: #5a5a5a; font-size: 0.9em; margin-top: 0.5em;">The identification flowchart: cheapest method first, scroll of identify last.</figcaption></figure></div>
 
 #### Blessed, Uncursed, Cursed
-<!-- audit 2026-05-18 #88 (re-audit 2026-05-18 v2 #68): altar/pet test mechanics, Priest BUC sense, cursed armor sticks, cursed gain-level rises, luckstone +luck, holy/unholy water dipping all verified vs do.c/dogmove.c/objnam.c/attrib.c/potion.c. Corrected: blessed scroll of identify gives at least 2 items + 1-in-5 chance whole pack (was "every item"); cursed scroll IDs only itself on first cursed read (read.c:2074-2081), not "single item." Cursed teleport scroll is a *level* teleport (not "somewhere terrible"). Added how to make holy water (pray on co-aligned altar with potions of water). v2 re-confirmed: altar flash do.c:379-388; pet step-around dogmove.c:535-538 (with starvation exception); cursed gain-level message at potion.c:1083-1109; level-tele on cursed/confused scroll at read.c:2015-2025; holy water making at pray.c:2336-2339; Priest natural BUC at invent.c:2763,3545; blessed scroll identify branch at read.c:2086-2092; cursed scroll only-IDs-itself first read at read.c:2074-2081. 0 corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- altar flash on drop: amber blessed, black cursed, no flash uncursed (do.c:379-388)
+- pet steps around cursed items (dogmove.c:535-538); starvation exception
+- cursed gain-level rockets you through the ceiling (potion.c:1083-1109)
+- cursed or confused scroll of teleportation is a LEVEL teleport (read.c:2015-2025)
+- holy water made by praying on a co-aligned altar with potions of water (pray.c:2336-2339)
+- Priest senses BUC naturally (invent.c:2763, 3545)
+- blessed scroll of identify: at least 2 items, plus 1-in-5 chance for the whole pack (read.c:2086-2092)
+- cursed scroll of identify IDs only itself on first cursed read (read.c:2074-2081)
+-->
 
 Before you can worry about *what* an item is, you need to know
 *what condition* it's in. Every item in the Mazes is blessed, uncursed,
@@ -3143,7 +3166,17 @@ items per read. A cursed scroll IDs only itself the first time you
 read one of that type, then one item per cursed read after.
 
 #### The Price Is Right
-<!-- audit 2026-05-17 #32: 50+ price/multiplier claims verified across all item classes, 1 corrected (sell-offer blurb ¼ → ½ and ³⁄₁₆ → ³⁄₈). Live JS computeBuy/computeSell match shk.c exactly. Close call: angry-shop surcharge is sticky beyond bill payment (only cleared on new-customer transition). v2 audit 2026-05-18 #29: one factual fix. The Angry-shop paragraph said the +33% surcharge stays "until you pay your bill in full" — backwards. shk.c:2663 pacify_shk(shkp, FALSE) does NOT clear the surcharge flag; it's only cleared by pacify_shk(shkp, TRUE) at shk.c:302, 793 (bones-load and new-customer transitions). The pass-1 close-call note had it right, but the body text was never corrected. Reworded: paying the bill clears the bill but not the surcharge; the flag sticks for the rest of your visits to that shopkeeper. Verified every Cha/Tourist multiplier and shop-state edge against shk.c. JS widget computeBuy/computeSell still match get_cost/set_cost exactly. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- buy/sell multipliers and Cha bands match shk.c get_cost/set_cost
+- sell offer is 1/2 base; 3/8 on unID items from an unfamiliar shopkeeper
+- Tourist surcharge (+33%) applies with dunce cap, Tourist below XL 15, or visible Hawaiian shirt — non-stacking
+- ~1/4 of unID items carry a fixed 4/3 buy surcharge per item
+- ~1/4 of shopkeepers are "unfamiliar" with unID; they offer 3/4 sell, fixed per shop
+- angry-shop +33% surcharge sticks: pacify_shk(FALSE) at shk.c:2663 does NOT clear it
+- only pacify_shk(TRUE) clears (shk.c:302, 793 — bones-load and new-customer transitions)
+- the JS price widget mirrors get_cost/set_cost exactly
+-->
 
 Shopkeepers are, without exaggeration, your most important
 identification tool. Every unidentified item has a fixed base price
@@ -3472,7 +3505,12 @@ zap them at a monster or in a safe direction.
 **Warning:** In 5.0, cursed wands may **explode** when used to
 engrave. BUC-test your wands before engraving with them.
 
-<!-- audit 2026-05-18 v2 #34: dosinkring at do.c:498-650 verified — 28 ring types each produce a distinctive message; searching and slow digestion "goto giveback" and are dropped back on the floor identified (do.c:507-516); other rings usually consumed with a 1/20 backup chance and 1/5 buried chance (do.c:649-660). Section correctly defers detail to the Sinks subsection. 0 corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- dosinkring at do.c:498-650 — 28 ring types each give a distinctive message
+- searching and slow digestion goto giveback, dropped back on the floor identified (do.c:507-516)
+- other rings usually consumed: 1/20 backup chance, 1/5 buried chance (do.c:649-660)
+-->
 #### The Sink Test (Rings)
 
 If you find a sink, you can drop a ring down it. Each ring type
@@ -3483,7 +3521,19 @@ slow digestion come back to you (free identification), and every
 other ring is consumed.
 
 #### Use-Testing (The Careful Way)
-<!-- audit 2026-05-18 #79 (re-audit 2026-05-18 v2 #21, v2 #83): substantial engrave-test table rewrite. Verified against engrave.c + zap.c: real messages are "Flames fly from the wand" (fire), "A few ice cubes drop" (cold), "Lightning arcs from the wand" (lightning), "Gravel flies up" (digging), "riddled by bullet holes" (magic missile not digging), polymorph randomizes existing engraving (not "vanishes"), cancellation/make-invisible/teleportation all share the same "vanishes" message. Wand-of-wishing engrave DOES grant the wish (zap.c:2575-2585) — reverse of previous warning. Also corrected unicorn-horn neutralization (sickness → fruit juice, not water; blindness/confusion/hallucination → water). v2 re-audit confirmed every wand message. v2 #83 (Use-Testing): four factual corrections. (a) "Dipping a poisonable weapon (dagger, arrow, spear) into a potion of sickness" was wrong about daggers and spears — is_poisonable at obj.h:264-268 requires oc_skill in [-P_SHURIKEN, -P_BOW] = [-24, -20], i.e., ranged ammunition only. Daggers (skill +1) and spears (skill +17) are NOT poisonable. Reworded to "stack of poisonable ammunition (arrows, crossbow bolts, darts, shuriken, or sling stones)." (b) Confused remove curse ratio overstated: blessorcurse(obj, 2) at mkobj.c:1841-1853 gives 1/4 blessed, 1/4 cursed, 1/2 unchanged — not "half/half." Reworded. (c) Scope omitted: non-blessed confused remove curse only touches worn/wielded items per read.c:1549-1552; only blessed touches all inventory. Added. (d) Helm of opposite alignment was missing from the auto-curse warning — same 90% branch at mkobj.c:1087-1090, appearance pool "etched/crested/visored/plumed helmet" overlaps with the plain helm and helm of caution/telepathy. Added. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- engrave-test messages: fire "Flames fly", cold "A few ice cubes drop", lightning "Lightning arcs", digging "Gravel flies up", magic missile "riddled by bullet holes" (engrave.c, zap.c)
+- polymorph randomizes existing engraving, not "vanishes"
+- cancellation, make-invisible, teleportation all share the "vanishes" message
+- wand of wishing engrave DOES grant the wish (zap.c:2575-2585)
+- unicorn horn dipped in sickness → fruit juice; in confusion/hallucination/blindness → water
+- is_poisonable requires oc_skill in [-P_SHURIKEN, -P_BOW] (obj.h:264-268) — ranged ammo only
+- daggers (skill +1) and spears (skill +17) are NOT poisonable
+- confused remove curse via blessorcurse(obj, 2): 1/4 bless, 1/4 curse, 1/2 unchanged (mkobj.c:1841-1853)
+- non-blessed confused remove curse touches only worn/wielded (read.c:1549-1552); blessed touches all
+- 90% auto-curse branch (mkobj.c:1087-1090) covers fumble boots, levitation boots, gauntlets of fumbling, helm of opposite alignment
+-->
 
 When you don't have access to a shop or a sink, you can sometimes
 figure out what an item is by using it carefully. Here's the approach
@@ -3598,7 +3648,15 @@ can't tell stealth-from-kicking or fumbling-from-power by price
 alone. Try them on (BUC-checked) and watch for the messages.
 
 #### Gray Stones: Four Stones, One Correct Answer
-<!-- audit 2026-05-19 v2 #136: 1 correction. "A loadstone auto-curses itself the moment you pick it up" was wrong — loadstones are cursed at object creation (mkobj.c:978-979), not on pickup. The cursed-on-creation state is what blocks dropping; auto-curse-on-pickup would be a different mechanic. Reworded. Re-verified prices (luckstone 60, touchstone 45, loadstone 1, flint 1 per objects.h:1598-1605), weights (500 vs 10), touchstone-by-blessed-ID consistent with batch 22 v2 #105, Mine's End not-cursed luckstone guarantee. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- loadstones are cursed at object creation (mkobj.c:978-979), not on pickup
+- cursed-on-creation state is what blocks dropping; "auto-curse on pickup" would be a different mechanic
+- prices: luckstone 60, touchstone 45, loadstone 1, flint 1 (objects.h:1598-1605)
+- weights: loadstone 500, others 10
+- blessed touchstone (or Archeologist/Gnome holding uncursed) IDs gems on rub
+- Mine's End luckstone is guaranteed not-cursed
+-->
 
 Gray stones deserve their own section because they look identical
 but have wildly different value. There are four types:
@@ -3650,7 +3708,13 @@ if it's cursed, you're stuck with it until you find a way to
 uncurse. Kick it first. Check BUC second. Then pick it up.
 
 #### Naming What You've Learned
-<!-- audit 2026-05-17 #2 (re-audit 2026-05-18 v2 #69): 5 claims verified, 1 corrected (N keystroke only works in number_pad mode; default vi-keys binds N to run-north — the cross-layout shortcut is C for #call). v2 re-confirmed: `#name`/`#call` aliases at cmd.c:1773-1774; class naming at do_name.c:571-588; rename-by-overwrite at do_name.c:660-672. 0 corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- `#name` and `#call` aliases at cmd.c:1773-1774
+- class naming at do_name.c:571-588
+- rename-by-overwrite at do_name.c:660-672
+- N keystroke only works in number_pad mode; default vi-keys binds N to run-north — cross-layout shortcut is C for #call
+-->
 
 As you gather clues, use the `#name` command to track what you
 know. You can **call** an entire item class by a name you choose.
@@ -3664,7 +3728,15 @@ who die on level 8 from adventurers who reach the Castle. The dungeon
 doesn't keep notes for you. You have to do it yourself.
 
 #### A Practical Strategy
-<!-- audit 2026-05-18 #151 (re-audit 2026-05-18 v2 #45): ~39 lines, no substantive errors. Altar-flash BUC verified (do.c:379-389); engrave-test costs one charge (engrave.c:792 + zap.c:2520); wand of digging auto-IDs from engrave message (engrave.c:684-704); all 12 amulet costs are 150 (objects.h:834). One prose nit: "A wand that freezes your engraving is cold" — actual WAN_COLD engrave message is "A few ice cubes drop from the wand" (engrave.c:658-661); the vanish/freeze branch only triggers when overwriting an existing BURN engraving. Reworded to "drops ice cubes." v2 re-confirmed all mechanical claims: ice-cubes wand message accurate for the fresh-floor engrave-test, amulet uniform 150gp pricing, escalation order (altar/shop free → engrave-test cheap → use-test risky → identify scrolls last) matches standard NetHack identification priority. 0 corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- altar-flash BUC at do.c:379-389
+- engrave-test costs one charge (engrave.c:792, zap.c:2520)
+- wand of digging auto-IDs from engrave message (engrave.c:684-704)
+- all 12 amulet appearances are priced at 150 gp (objects.h:834)
+- WAN_COLD fresh-floor engrave message: "A few ice cubes drop from the wand" (engrave.c:658-661)
+- the vanish/freeze branch only triggers when overwriting an existing BURN engraving
+-->
 
 
 All of these techniques combine into a workflow. Here's what a
