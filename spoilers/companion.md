@@ -5774,7 +5774,18 @@ a wish. A wish is for things that change the fundamental equation
 of your survival.
 
 #### Wish Syntax
-<!-- audit 2026-05-18 #102 (re-audit 2026-05-19 v2 #120): corrected three claims in the wish-syntax bullets. (1) Bare "gray dragon scale mail" does NOT force uncursed +0; objnam.c:5094-5096 retains the random mksobj spe, and objnam.c:5258-5268 only sets BUC when a buc adjective is given — blessorcurse(otmp,10) leaves ~5% blessed, ~5% cursed, ~90% uncursed (1/10 chance of blessorcurse firing, then 1/2 each direction). (2) "Cannot wish for artifacts already generated" is wrong: objnam.c:5374 makes denial probabilistic (oartifact && rn2(nartifact_exist())>1), scaled by TOTAL artifacts in existence (including bones-file ones), and u.uconduct.wisharti increments either way. Only quest artifacts are absolutely blocked. (3) "Cannot wish for the Amulet of Yendor" is misleading — objnam.c:5003-5006 silently substitutes a FAKE_AMULET_OF_YENDOR. Same trapdoor for Bell of Opening, Book of the Dead, Candelabrum, and (particularly relevant here) magic lamp -> oil lamp. Also dropped "+AC" from gauntlets of power notes — all gloves give +1 AC, the gauntlets just give +6 to-hit/dmg via STR 25. v2 re-verified all wish sources and arithmetic: Vlad's throne 4/13 wish rate (sit.c:241-256), magic lamp 1/3 × 4/5 ≈ 27% wish-blessed (apply.c:1817 + potion.c:2833-2845), fountain demon wish (fountain.c:78,314), Amulet pickup wish (allmain.c:446-451). 0 new prose corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- bare "gray dragon scale mail" keeps random spe and rolls BUC via blessorcurse(otmp,10): ~5% blessed / ~5% cursed / ~90% uncursed (objnam.c:5094-5096, 5258-5268)
+- artifact wishes are probabilistic: oartifact && rn2(nartifact_exist())>1 (objnam.c:5374), scaled by TOTAL existing artifacts including bones
+- u.uconduct.wisharti increments whether the wish is granted or denied
+- only quest artifacts are absolutely blocked
+- silent substitutes: Amulet of Yendor, Bell of Opening, Book of the Dead, Candelabrum, magic lamp → oil lamp (objnam.c:5003-5006)
+- all gloves give +1 AC; gauntlets of power give STR 25 (+6 to-hit/dmg), not bonus AC
+- Vlad's throne wish rate is 4/13 per effective sit (sit.c:241-256)
+- magic lamp ≈27% wish-blessed: 1/3 djinni × 4/5 wish (apply.c:1817, potion.c:2833-2845)
+- fountain water-demon wish (fountain.c:78, 314); Amulet-of-Yendor pickup wish (allmain.c:446-451)
+-->
 
 When the game asks "For what do you wish?", be specific. This is
 not the time for ambiguity:
@@ -5798,7 +5809,22 @@ not the time for ambiguity:
 ---
 
 ### Spellcasting
-<!-- audit 2026-05-17 #59: corrected 6 substantive claims. (1) Force bolt damage is 2d12, not "d6 to 4d6 by skill"; spell-school skill doesn't scale damage. (2) Chain lightning is level 4, not 7, NODIR not "bouncing ray." (3) Failed reading does NOT paralyze or summon monsters; cursed_book enumerates teleport/aggravate/blindness/take-gold/confusion/contact poison/exploding rune/rndcurse (spell.c:130). (4) Spellbook decay is by SUCCESS count (MAX_SPELL_STUDY successful reads, spell.c:401-418), not failure wear; failures use a single 1/3 random destruction (spell.c:612). (5) "Spell maintenance" system is fabricated — no Pw drain from memorized spells anywhere in spell.c. (6) "Energy vortex + amulet of reflection = +max Pw" is fabricated; drain_en only ever decreases Pw. Also: blessed books bypass the read-ability check entirely (auto-success), not "equivalent to a few points of Int." Pw cost per spell is 5 × level. v2 audit 2026-05-18 #9: three factual fixes. (a) Spellbook fade ceiling is "four" not "about five" — MAX_SPELL_STUDY = 3 with `> MAX_SPELL_STUDY` check at spell.c:401 caps at 4 successful reads; the comment at spell.c:400 explicitly says "a normal book can be read and re-read a total of 4 times." (b) Charm monster "5×5 confused" implied confused casting works; spell.c:1372 fails confused casts outright. Reworded the row to drop the unreachable area and mention the Skilled+ blessed-scroll behavior. (c) Power-regen prose missed Intelligence and the Wizard-rate factor: allmain.c:605-607 uses `(Wis + Int)/15 + 1` with Wizards ticking on a factor of 3 instead of 4. Voice: full-paragraph parenthetical (Min Int+XL explainer) promoted to plain prose; the "1-in-3 destruction on failed read" caveat consolidated to the spellbook-fade paragraph (was duplicated earlier in the Learning Spells paragraph). Wisdom: softened the Valkyrie-identify line — Valkyries are restricted in divination per Skill_V (u_init.c:525-546), so reading identify is occasional-at-best. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- force bolt damage is 2d12; school skill does NOT scale damage
+- chain lightning is level 4 NODIR, not level 7, not a bouncing ray (objects.h:1409-1411)
+- failed spellbook read effects: teleport, aggravate, blindness, take-gold, confusion, contact poison, exploding rune, rndcurse (spell.c:130)
+- failed read has a single 1/3 destruction chance (spell.c:612)
+- spellbook fade ceiling is 4 successful reads: MAX_SPELL_STUDY=3 with `> MAX_SPELL_STUDY` (spell.c:400-418)
+- no Pw drain from memorized spells exists; "spell maintenance" is fabricated
+- drain_en only ever DECREASES Pw — no reflection+vortex max-Pw trick
+- blessed book bypasses the read-ability check entirely (auto-success)
+- Pw cost per spell = 5 × level
+- confused casts fail outright (spell.c:1372); charm monster has no confused-area mode
+- Skilled+ casting acts like a blessed scroll
+- Pw regen: (Wis + Int)/15 + 1; Wizards tick on factor 3 vs 4 (allmain.c:605-607)
+- Valkyries restricted in divination, so reading scroll of identify is occasional at best (u_init.c:525-546)
+-->
 
 Magic in the Mazes is less "wave a wand and sparkles happen" and
 more "laboriously study a crumbling book, hope it doesn't go off in
@@ -5921,7 +5947,16 @@ holding a stick.
 ---
 
 ### Curses and How to Break Them
-<!-- audit 2026-05-18 #117 (re-audit 2026-05-18 v2 #106): dropped the "Temple priest will identify BUC status for a fee" claim — fabricated. priest.c:629-718 shows temple donation grants HClairvoyant + u.ublessed (Protection); nothing in temple-donation code sets bknown on inventory. The "priest auto-bknown" code at invent.c:2763, 3545 and objnam.c:1964 refers to the PLAYER being a Priest class character (Priests see BUC for free), not to NPC temple priests. Common spoiler myth. Replaced with a brief myth-bust + added the formal price-ID-via-shop angle. v2: re-verified bones 80% cursed (bones.c:290), rings of teleport/poly + amulet of strangulation 90% cursed (mkobj.c:1063-1066, 1143-1147), cursed BoH doubles weight (mkobj.c:1950-1953), confused remove-curse 25/25/50 (read.c:1556-1557 + mkobj.c:1846-1852), blessed-vs-uncursed remove-curse scope (read.c:1524, 1549) — all consistent with batch 17 v2 #83. 0 new corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- bones items are 80% cursed at pickup (bones.c:290)
+- rings of teleport/polymorph and amulet of strangulation generate 90% cursed (mkobj.c:1063-1066, 1143-1147)
+- cursed bag of holding doubles its contents' weight (mkobj.c:1950-1953)
+- confused remove-curse uncurses 25/curses 25/no-op 50 per item (read.c:1556-1557, mkobj.c:1846-1852)
+- blessed remove-curse hits all worn+carried; uncursed only worn (read.c:1524, 1549)
+- temple priests do NOT reveal BUC for a fee; only Priest CLASS sees BUC free (priest.c:629-718 sets HClairvoyant + Protection, not bknown)
+- shop price-id can infer BUC indirectly
+-->
 
 
 Sooner or later, you will put on something cursed. Maybe it's a
@@ -6000,7 +6035,22 @@ without them.
 ---
 
 ### Luck and Fortune
-<!-- audit 2026-05-18 #144 (re-audit 2026-05-19 v2 #133): 7 corrections. (1) Cursed luckstone doesn't "reverse the drift" — timeout.c:616-619 cursed-only luckstone holds negative Luck in place but positive Luck still decays normally toward baseline. (2) "Uncursed luckstone freezes drift but gives no bonus" — wrong; attrib.c:441-450 set_moreluck gives +3 to any non-cursed luckstone (uncursed counts the same as blessed for the bonus). (3) Killing peaceful is -1 with 50% probability, not "-1 to -5" — mon.c:3665. -5 is for killing co-aligned unicorns specifically (mon.c:3667). (4) "At Luck -10 or worse, prayer always fails" — wrong threshold; pray.c:2155 rejects prayer on ANY negative Luck. (5) "Going down stairs in Sokoban -1" — fabricated; no luck penalty for descending Sokoban stairs. (6) "Throw real gem to cross-aligned unicorn -3 to +3" — that's only for fully identified gems (dothrow.c:2334 rn2(7)-3); unidentified is -1 to +1 (rn2(3)-1 at dothrow.c:2349). (7) "Identifying gems for a shopkeeper +1" — no such mechanic in shk.c; fabricated. Added killed_leader (-4 to baseline, timeout.c:600), full-moon/Friday baseline shift (timeout.c:595-598), and the doubled drift rate (300 turns) when carrying the Amulet of Yendor or u.ugangr > 0 (timeout.c:607). v2 fixes: (a) "Killing your quest leader: −4 to baseline luck" was incomplete — mon.c:3680 also applies change_luck(-20) immediately (floored at -10 via LUCKMIN), plus u.ugangr += 7. Expanded the row. (b) "Attacking your pet -1" mislabeled — mon.c:3664 fires on KILLING a tame monster, not each attack; also -15 alignment via adjalign (mon.c:3704). Changed to "Killing your pet" with both penalties. (c) "Breaking a mirror or crystal -2" — only mirror has the luck hook (uhitm.c:1133, dothrow.c:2496, dokick.c:445,1724); crystal balls and crystal armor don't trigger it. Dropped "or crystal." (d) "Archeologists begin with all gems identified ... unicorn negotiation class perk" was fabricated — u_init.c:903 only sets TOUCHSTONE knowledge; the touchstone tool (u_init.c:50) lets Archeologists VERIFY gems before throwing, but gems aren't pre-identified. The "unicorn negotiation" class-description quote doesn't exist. Reworded to the actual touchstone mechanic. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- cursed luckstone holds NEGATIVE Luck in place, but positive Luck still decays toward baseline (timeout.c:616-619)
+- any non-cursed luckstone (blessed or uncursed) gives +3 max-Luck cap (attrib.c:441-450)
+- killing peaceful: -1 with 50% probability (mon.c:3665); -5 reserved for co-aligned unicorns (mon.c:3667)
+- prayer is rejected on ANY negative Luck (pray.c:2155), not just <= -10
+- no Sokoban-down-stairs Luck penalty exists
+- thrown gem to cross-aligned unicorn: identified -3..+3 (dothrow.c:2334 rn2(7)-3); unidentified -1..+1 (dothrow.c:2349 rn2(3)-1)
+- "ID gems for shopkeeper +1" is fabricated; shk.c has no such hook
+- killing quest leader: -4 baseline, immediate change_luck(-20), u.ugangr += 7 (mon.c:3680, timeout.c:600)
+- killing pet: -1 plus alignment -15 via adjalign (mon.c:3664, 3704)
+- only mirror breaks for Luck -2 (uhitm.c:1133, dothrow.c:2496, dokick.c:445/1724); crystal balls/armor don't
+- full-moon/Friday-the-13th baseline shift (timeout.c:595-598)
+- carrying the Amulet or u.ugangr > 0 doubles drift rate (300 turns, timeout.c:607)
+- Archeologists start with TOUCHSTONE knowledge only (u_init.c:50, 903); gems are NOT pre-identified
+-->
 
 
 The Mazes are rigged. Not unfairly (the dungeon doesn't *hate*
@@ -6149,7 +6199,17 @@ random numbers, which in the Mazes is the closest thing to love.
 ---
 
 ### The Castle
-<!-- audit 2026-05-18 #109: 3 corrections to the Castle section. (1) "Maze section with a minotaur guarding it" is fabricated — castle.lua has no minotaur and no internal maze room (only mazewalk fill outside the fortress for entry corridors); minotaurs are placed in earth/fire/hellfill, not the Castle. Dropped the bullet. (2) "Elbereth keeps shopkeeper-class wanderers from stealing the treasure" — wrong target. The lua author's comment at castle.lua:150 says the engraving + cursed scroll are there to "Prevent monsters from eating it. (@'s never eat objects)" — i.e., they repel non-@ monsters that gnaw containers. Shopkeepers aren't repelled by Elbereth. Reworded. (3) "Intelligent monsters can unlock locked chests if they carry keys" — wrong for chests. muse.c:2273 mloot_container bails on olocked; monsters can unlock doors (monmove.c:1554) but never chests. The Castle wand chest is created locked at castle.lua:144, so it's safe from monster looting. Dropped the warning. Also added the storerooms (4 D-class dragons), central trap-door row (5 trap doors), fountain, and moat sea-monsters that the spoiler had omitted. v2 audit 2026-05-18 #32: three factual fixes. (a) "Throne room with a throne and guards" was wrong — castle.lua:54,195-221 fills the throne room with random L/N/E/H/M/O/R/T/X/Z court monsters, not soldiers; the soldiers/lieutenant guard the entry hall and tower corners. Reworded. (b) "Five trap doors at evenly-spaced squares" — castle.lua:156-160 places them at columns 40/44/48/52/55 (gaps 4/4/4/3), not strictly even. Dropped "evenly-spaced." (c) "Stepping on one drops you to a random Gehennom level" was wrong — trap.c:669-670 takes the Is_stronghold branch and calls find_hell (dungeon.c:1949-1953) which always sets dlevel=1, i.e. the Valley of the Dead. Reworded. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- no minotaur or internal maze in castle.lua; minotaurs live in earth/fire/hellfill
+- wand chest is locked at creation (castle.lua:144); monsters cannot unlock chests (muse.c:2273 mloot_container bails on olocked)
+- Elbereth + cursed scroll target food-eaters, not shopkeepers (castle.lua:150 author comment)
+- throne room is filled with random court monsters (L/N/E/H/M/O/R/T/X/Z), not soldiers (castle.lua:54, 195-221)
+- soldiers and lieutenant guard the entry hall and tower corners
+- five trap doors at columns 40/44/48/52/55 (gaps 4/4/4/3), not strictly even (castle.lua:156-160)
+- trap door always sends you to Valley of the Dead (dlevel=1), not a random Gehennom level (trap.c:669-670, dungeon.c:1949-1953)
+- storerooms hold four D-class dragons; moat holds sea monsters; fountain present
+-->
 
 If you've reached the Castle, congratulations: you've survived the
 easy part. Everything below is worse.
@@ -6235,7 +6295,19 @@ If you're missing any of these, go back up and find them.
 ---
 
 ### Gehennom
-<!-- audit 2026-05-19 v2 #134: 4 corrections. (a) Asmodeus "carries a wand of cold" — actually wands of cold AND fire per makemon.c:804-807. (b) Asmodeus "cold- and poison-resistant" — also fire-resistant per MR_FIRE|MR_COLD|MR_POISON at monsters.h:3124. Updated to "fire-, cold-, and poison-resistant." (c) Baalzebub "surrounded by a poison-gas cloud, summons swarms of flies" was fabricated. Per monsters.h:3110-3119 his attacks are AT_BITE/AD_DRST (drain Str on bite, poisonous) and AT_GAZE/AD_STUN (stun gaze). No gas cloud, no fly summons. The "Lord of the Flies" name + beetle-shaped lair are real (mkmaze.c:471 baalz_fixup). Reworded to actual mechanics. (d) Vlad's throne arithmetic was wrong. The book said "4/13 chance per sit of the wish ending it, so on average you sit ~3 times before the wish (and absorb two of the bad effects)." Per sit.c:45 only `rnd(6) > 4` (= 1/3 of sits) triggers any effect at all; of those, 4/13 are the wish. Unconditional rate is (1/3) × (4/13) = 4/39 ≈ 10%, so average ~10 sits with ~7 bad effects absorbed. Reworded. Re-verified: Valley flags, demon-lord teleport block (teleport.c:21-34), bribery math (minion.c:309-311), bribable set (Geryon/Dispater/Baalzebub/Asmodeus via MS_BRIBE), Vlad throne 13 effects (sit.c:238-353), Orcus magic-lamp-or-marker 50/50 (orcus.lua:107-111), Sanctum noteleport+nommap. Cross-section: Mysterious Force prose consistent with v2 #127. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- Asmodeus carries wands of cold AND fire (makemon.c:804-807)
+- Asmodeus is fire-, cold-, AND poison-resistant: MR_FIRE|MR_COLD|MR_POISON (monsters.h:3124)
+- Baalzebub: AT_BITE/AD_DRST (drain Str, poisonous) + AT_GAZE/AD_STUN (stun) — NO gas cloud, NO fly summons (monsters.h:3110-3119)
+- Baalzebub's lair is beetle-shaped (mkmaze.c:471 baalz_fixup)
+- demon-lord teleport blocked (teleport.c:21-34)
+- Geryon/Dispater/Baalzebub/Asmodeus are the bribable major demons (MS_BRIBE) — minion.c:309-311 sets bribe price
+- Vlad's throne effect rate: only rnd(6) > 4 (= 1/3 of sits) triggers anything; 4/13 of those are the wish (sit.c:45, 238-353)
+- so unconditional wish rate is (1/3)·(4/13) = 4/39 ≈ 10%; ~10 sits average, ~7 bad effects absorbed
+- Orcus drops magic lamp or magic marker, 50/50 (orcus.lua:107-111)
+- Sanctum has noteleport + nommap
+-->
 
 Below the Castle, the dungeon changes. The corridors give way to
 mazes. The monsters give way to demons. The comforting knowledge
@@ -6481,7 +6553,14 @@ frantic climb back to the surface. The steps:
 ---
 
 ### The Ascension Kit
-<!-- audit 2026-05-17 #15 (re-audit 2026-05-18 v2 #117): ~30 claims verified, 3 corrected (helm of holiness doesn't exist; prayer CAN cure hunger and uncurse worn items per pray.c). v2 fixes: (a) Mitre of Holiness row claimed "fire resistance + see invisible" — wrong. Per artilist.h:265-269, Mitre is a HELM_OF_BRILLIANCE base with CARY(AD_FIRE) (fire resistance), SPFX_PROTECT (+1 protection), M2_UNDEAD bonus, and ENERGY_BOOST invoke. No see invisible at all. The artifact table at line 4386 already has this right. Reworded the Ascension Kit cell to "a helm of brilliance that adds fire resistance, +1 protection, and an energy-boost invoke." (b) "An ascended Monk wore the Eye of the Aethiopica" — wrong. Eye of the Aethiopica is PM_WIZARD restricted (artilist.h:303-307, SPFX_RESTR + PM_WIZARD), so a Monk picking it up triggers the badclass blast (artifact.c:920-948). Reworded to "Wizards who survive to their quest can wear the Eye of the Aethiopica instead." Wand-of-death on the High Priest verified clean (zap.c:4314 type=-1 skips saving throws, High Priest has no antimagic gear or intrinsic mr1=70 doesn't gate). 0 other corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-18:
+- there is no "helm of holiness"; the artifact is Mitre of Holiness
+- Mitre of Holiness = HELM_OF_BRILLIANCE base + CARY(AD_FIRE) + SPFX_PROTECT (+1) + M2_UNDEAD + ENERGY_BOOST invoke (artilist.h:265-269)
+- Eye of the Aethiopica is Wizard-only: SPFX_RESTR + PM_WIZARD; other classes get the badclass blast (artilist.h:303-307, artifact.c:920-948)
+- wand-of-death on the High Priest works: type=-1 skips saving throws (zap.c:4314); High Priest has no antimagic and mr1=70 does not gate ZT_DEATH
+- prayer CAN cure hunger and uncurse worn items (pray.c)
+-->
 
 By the time you're ready to invoke Moloch's Sanctum, the loadout
 that experienced players actually wear has converged. A survey of
@@ -6537,7 +6616,15 @@ clear.
 ---
 
 ### The Ascension Run
-<!-- audit 2026-05-18 #134 (re-audit 2026-05-19 v2 #127): corrected three claims and added the missing Amulet-wish note. (1) "Mysterious Force yanks you back to a random location on the level instead of going up" — wrong; do.c:1541-1573 mostly sends you DOWN one to three levels (assign_rnd_level diff = rn2(3 + ualign.type)); the same-level teleport is the fallback when assign_rnd_level returns a no-op. Distance is alignment-biased (chaotic worst). (2) "Stops once you're above Gehennom, where the dungeon's grip weakens" — misleading; it's a hard Inhell gate at do.c:1541, not a gradient. Also never fires on the bottom 4 levels per dunlev < dunlevs_in_dungeon-3. (3) "Use Elbereth when you need a turn to heal" — wrong for almost the entire run; teleport.c:68-70 onscary() returns FALSE for Inhell || In_endgame, so Elbereth is dead in all of Gehennom and on all four Elemental Planes plus Astral. Added the Amulet-pickup wish (allmain.c:446-451 fires on next moveloop iteration after pickup, if !u.uevent.amulet_wish) and the 5.0 Mysterious-Force decay (do.c:1536-1563 — frequency tapers with each trigger). v2 fix: "dropped back **down** one to three levels" + "smaller chance just teleports you elsewhere on the same level" had two errors. Per do.c:1544 `odds = 3 + ualign.type` and `diff = rn2(odds)`: Chaotics (odds=2) max -1; Neutrals (odds=3) max -2; only Lawfuls (odds=4) reach -3. And same-level (diff==0) is the MAJORITY outcome, not "smaller chance" — 50% for Lawful/Chaotic, 33% for Neutral. Reworded to "Often it just shuffles you elsewhere on the same level; sometimes it drops you down a level (Chaotic max), two (Neutral max), or even three (Lawfuls only)." Also dropped the backtick around `Inhell` (was a C-identifier leak) — now plain "Gehennom gate." See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- Mysterious Force is gated on Gehennom only (do.c:1541); same-level shuffle is the majority outcome
+- odds = 3 + ualign.type; diff = rn2(odds): Chaotics max -1, Neutrals max -2, only Lawfuls reach -3 (do.c:1544)
+- never fires on bottom 4 levels (dunlev < dunlevs_in_dungeon-3)
+- Force frequency tapers with each trigger (do.c:1536-1563)
+- Amulet-pickup wish fires once on next moveloop iteration if !u.uevent.amulet_wish (allmain.c:446-451)
+- Elbereth is DEAD in Gehennom, all four Elemental Planes, and Astral: onscary returns FALSE for Inhell || In_endgame (teleport.c:68-70)
+-->
 
 You did it. You fought through Gehennom, defeated the High Priest,
 and snatched the Amulet of Yendor from Moloch's Sanctum. Now all
@@ -6621,7 +6708,17 @@ last obstacle between you and divinity.
 ---
 
 ### The Elemental Planes
-<!-- audit 2026-05-18 #104 (re-audit 2026-05-19 v2 #158): four substantive corrections. (1) Plane of Air vortex/bubble conflation: vortex AT_ENGL attacks just damage you, they do not move bubbles or carry you across the level. Bubble drift is a separate system implemented by mv_bubble in mkmaze.c:1648-1685, 1951-1965 — being inside a cloud-bubble whose position shifts each turn is what drifts you toward the portal. (2) Plane of Water drowning is NOT instant death — done(DROWNING) at trap.c:5171-5193 honors amulet of life saving; Breathless intrinsic (e.g. magical breathing amulet, Amphibious) prevents drowning entirely (trap.c:5106-5126). (3) Astral wrong-altar offering does NOT lose the Amulet for retrieval; pray.c:1562-1572 ends the game immediately with done(ESCAPED) and the opposing god gains dominion. The Amulet is consumed at pray.c:1537-1540 before the alignment branch. (4) Farlook on an altar only reveals alignment when you are ADJACENT to it; otherwise pager.c:744-754 returns "aligned high altar" with no alignment word. Also flagged in notes: every plane has noteleport, so wand-of-teleport on self silently fails (still works on monsters). v2 fix: "silently fails" was the wrong word in two places. teleport.c:854-855 prints "A mysterious force prevents you from teleporting!" — audible feedback, not silent. Self-zap WAN_TELEPORTATION reaches scrolltele() at line 844 from zap.c:2876-2878. Reworded to name the actual message in one place and drop "silently" in the other. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- Plane of Air: vortex AT_ENGL just damages you; it does NOT move bubbles or carry you (mkmaze.c)
+- bubble drift is a separate system: mv_bubble shifts cloud-bubbles each turn (mkmaze.c:1648-1685, 1951-1965)
+- Plane of Water drowning is NOT instant death: done(DROWNING) honors life saving (trap.c:5171-5193); Breathless prevents it (trap.c:5106-5126)
+- Astral wrong-altar offering ends the game immediately with done(ESCAPED) and the opposing god gains dominion (pray.c:1562-1572)
+- the Amulet is consumed BEFORE the alignment branch (pray.c:1537-1540) — no retrieval
+- altar farlook reveals alignment only when ADJACENT; otherwise just "aligned high altar" (pager.c:744-754)
+- every plane has noteleport; self-zap WAN_TELEPORTATION prints "A mysterious force prevents you from teleporting!" (teleport.c:854-855)
+- self-teleport reaches scrolltele() at line 844 from zap.c:2876-2878, so the wand still works on monsters
+-->
 
 Beyond the top of the Dungeons of Doom, the world dissolves into
 its raw elements. Four planes stand between you and the gods, each
@@ -6719,7 +6816,16 @@ altar, make one sacrifice, and end this.
 ---
 
 ### Advanced Controls
-<!-- audit 2026-05-17 #48 (re-audit 2026-05-19 v2 #168): keystrokes (F, G, g, m, O, v, _, ;, /, Ctrl+A/P/R/O, #overview, #chronicle, #annotate, #conduct) all verified in cmd.c:1662-2065. number_pad/autopickup/pickup_types option semantics verified vs optlist.h. Corrected `verbose` claim: it controls extra descriptive messages (wielding/digging/sounds/pets), not "why multi-commands stopped." v2 re-verified: double-tap `F` cancel (cmd.c:1622-1633), `m` prefix on `e`/`a`/`,` for menu, Ctrl+A stores executed-command only (cmd.c:3732-3736), count limit 32767 (global.h:135). 0 new corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- F/G/g/m/O/v/_/;//, Ctrl+A/P/R/O, #overview, #chronicle, #annotate, #conduct all verified (cmd.c:1662-2065)
+- `verbose` controls extra descriptive messages (wielding/digging/sounds/pets), NOT "why multi-commands stopped"
+- double-tap F cancels the attack lock (cmd.c:1622-1633)
+- `m` prefix on e/a/, opens a menu
+- Ctrl+A repeats only the last EXECUTED command, not the last input (cmd.c:3732-3736)
+- repeat-count cap is 32767 (global.h:135)
+- number_pad/autopickup/pickup_types option semantics consistent with optlist.h
+-->
 
 The basic keys get you through every situation in NetHack. The
 commands below get you through them faster. Once you've spent a
@@ -7446,7 +7552,21 @@ eat a corpse on turn 1, you've broken foodless, vegan, and
 vegetarian for the rest of the run. There's no going back.
 
 #### The Food Conducts
-<!-- audit 2026-05-18 #142: 5 corrections. (1) "Brown and yellow puddings" — there is no yellow pudding; S_PUDDING per monsters.h:2081-2113 is gray ooze / brown pudding / green slime / black pudding, and per mondata.h:241 the vegetarian-safe ones are all but black pudding (so gray ooze, brown pudding, green slime). (2) Shriekers are S_FUNGUS — already covered by "all F (fungi and molds)," so the separate mention is misleading. (3) "Avoid eating eggs, pancakes, lumps of royal jelly, cream pies, and candy bars" — incomplete: fortune cookies ALSO break vegan (eat.c:3016 lists FORTUNE_COOKIE as VEGGY-but-vegan-violating), so the spoiler's "vegetarian-friendly fortune cookie" advice contradicts itself. (4) Foodless: "polymorphing breaks foodless" — wrong. polyself.c has no u.uconduct.food increment; polymorph only breaks the polyself conduct. (5) "Prayer cures hunger when you're Weak or Fainting" — wrong threshold; pray.c:275 TROUBLE_HUNGRY fires at uhs >= HUNGRY (Hungry / Weak / Fainting all qualify). v2 audit 2026-05-18 #2: corrected pudding "corpses" to globs (puddings are G_NOCORPSE per monsters.h:2081-2113); replaced fabricated "internal egg-derived material flag" claim with the in-world reason that fortune cookies contain eggs (the eat.c:3016-3018 list is hardcoded otyp, no such flag); dropped "all ghosts" from the vegan corpse list (S_GHOST is G_NOCORPSE per monsters.h:2888,2897); removed S_PUDDING C-identifier from prose; added vegetarian-not-safe warning (yellow mold, violet fungus, acid blob); added Monk vegetarian-is-mostly-free note; added wish-for-slow-digestion route to foodless; trimmed two filler sentences and the orphan polyself clarification; checked data.base:570-576 — the "dairy" reason for vegan-excluding puddings is not lore-supported (puddings are described as amoeboid slimes), so the rule is stated without a fabricated reason. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- vegetarian-safe puddings: gray ooze, brown pudding, green slime; not black pudding (mondata.h:241)
+- no yellow pudding exists (monsters.h:2081-2113)
+- puddings are G_NOCORPSE and leave globs, not corpses
+- shriekers are S_FUNGUS, already covered by "all F (fungi and molds)"
+- vegan-violating VEGGY foods: eggs, pancakes, royal jelly, cream pies, candy bars, fortune cookies (eat.c:3016-3018)
+- fortune cookies contain eggs, so they break vegan
+- ghosts are G_NOCORPSE; ghost corpses don't exist (monsters.h:2888,2897)
+- watch out for: yellow mold, violet fungus, acid blob (NOT vegetarian-safe)
+- polymorph does NOT break foodless: polyself.c has no u.uconduct.food increment
+- prayer cures hunger at Hungry/Weak/Fainting (pray.c:275, uhs >= HUNGRY)
+- wishing for slow digestion is a viable foodless route
+- Monk: vegetarian is nearly free
+-->
 
 These form a hierarchy: foodless is stricter than vegan, which is
 stricter than vegetarian.
@@ -7487,7 +7607,14 @@ magic lamp turns up. Chewing through walls also breaks this
 conduct (it counts as eating rock).
 
 #### Atheist
-<!-- audit 2026-05-17 #64 (re-audit 2026-05-18 v2 #111): u.uconduct.gnostic verified (insight.c:2134, topten.c:590). #pray (pray.c:2221), #offer corpse (pray.c:1977), #turn (pray.c:2426), and #chat with priest (priest.c:572) all confirmed as breaking the conduct. Corrected false claim about altar BUC: do.c:370 increments gnostic on any non-coin drop, so the BUC flash is a religious interaction. Added: the final Amulet offering for ascension is exempt (pray.c:1529-1588 has no gnostic increment). v2: re-verified all 5 conduct-breaking sites; Priest role's starting holy water doesn't auto-break (u_init.c:716-722 comment). 0 new corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- Atheist tracks u.uconduct.gnostic (insight.c:2134, topten.c:590)
+- breaks on: #pray (pray.c:2221), #offer corpse (pray.c:1977), #turn (pray.c:2426), #chat with priest (priest.c:572)
+- dropping any non-coin on an altar breaks the conduct via the BUC flash (do.c:370)
+- final Amulet offering for ascension is exempt (pray.c:1529-1588 has no gnostic increment)
+- Priest's starting holy water does NOT auto-break the conduct (u_init.c:716-722)
+-->
 
 Don't interact with the divine. Specifically: don't `#pray`, don't
 `#offer` corpses at altars, don't `#turn` undead, and don't `#chat`
@@ -7504,7 +7631,15 @@ The final Amulet offering for ascension is exempt, so a clean
 atheist ascension is mechanically possible.
 
 #### Weaponless
-<!-- audit 2026-05-18 #128 (re-audit 2026-05-18 v2 #72): clean conduct logic per uhitm.c:616-617 (weaphit++ requires weapon non-NULL AND (WEAPON_CLASS || is_weptool)). Added the missing weapon-tool list (pick-axe, unicorn horn etc. break conduct via the is_weptool branch), and the one ranged exception that DOES break weaponless: wielded polearm at range via #apply, the HMON_APPLIED path at dothrow.c:2199-2203. Confirmed thrown weapons / fired ammo / wands / spells / barehand / martial arts / cockatrice-corpse-wield all do NOT break the conduct. v2 corrected two misclassifications: (a) iron chain is CHAIN_CLASS (objects.h:101, 1631), not a weptool, so wielding+swinging an iron chain does NOT break Weaponless — removed from the list. (b) Aklys is WEAPON_CLASS (objects.h:381-383 via WEAPON() macro), not a weptool, so it does break the conduct but via the WEAPON_CLASS branch; kept in the list but reordered to flow with the other weapons. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- weaphit++ requires weapon non-NULL AND (WEAPON_CLASS OR is_weptool) (uhitm.c:616-617)
+- weapon-tools that break: pick-axe, unicorn horn, other is_weptool items
+- wielded polearm at range via #apply DOES break (HMON_APPLIED, dothrow.c:2199-2203)
+- do NOT break: thrown weapons, fired ammo, wands, spells, barehand, martial arts, cockatrice-corpse-wield
+- iron chain is CHAIN_CLASS, not a weptool; swinging it does NOT break (objects.h:101, 1631)
+- aklys is WEAPON_CLASS, not a weptool; it breaks via the WEAPON_CLASS branch (objects.h:381-383)
+-->
 
 Never hit a monster with a wielded weapon or weapon-tool. You can
 throw weapons, fire them from bows and crossbows, and use wands
@@ -7522,7 +7657,12 @@ wands, and thrown daggers. A wielded cockatrice corpse still works
 output of late-game artifact weapons.
 
 #### Pacifist
-<!-- audit 2026-05-17 #53: all claims verified. u.uconduct.killer incremented only by xkilled (mon.c:3500) and the explicit "pet killed by trap you pushed it into" case (hack.c:2201); pet/conflict kills don't count. Charm-monster spell + Elbereth + pet tactics all verified. 0 corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- Pacifist tracks u.uconduct.killer; only xkilled (mon.c:3500) and pet-pushed-into-trap (hack.c:2201) increment
+- pet kills and conflict kills do NOT break the conduct
+- charm-monster spell, Elbereth, and pet tactics are all safe
+-->
 
 Don't kill any monsters. Not directly, not with pets, not through
 any means that the game attributes to you. The pacifist runs on
@@ -7536,7 +7676,14 @@ pet (often polymorphed into a purple worm or similar), the spell
 of charm monster, and extremely patient tactics.
 
 #### Illiterate
-<!-- audit 2026-05-18 #87 (re-audit 2026-05-18 v2 #54): corrected "engraving is fine" — only an "x" or "X" signature engrave is exempt (engrave.c:1213); anything else breaks the conduct. Confirmed: scrolls, spellbooks, fortune cookies, T-shirts, magic-marker writing all count (read.c:602, eat.c:2525, read.c:397, write.c:245). Blank paper, novel-if-unread, Book of the Dead, Hawaiian shirts, and reading floor engravings (Elbereth) do NOT count. Pet-on-scroll workaround verified. v2: softened "Without spellbooks, you have no spells" — starting spells last ~20K turns per spell.h:17 KEEN, so a Wizard/Priest/Healer/Monk/Knight has access to one pre-learned spell until it fades. The full forbidden-reads list (coins, credit cards, candy bars, magic markers, dunce caps, Orb of Fate signature, artifact naming, Archeologist auto-decipher on pickup) is real but per no-trivia, the section deliberately gives the headline cases rather than enumerating every edge. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- only an "x" or "X" signature engrave is exempt; everything else breaks the conduct (engrave.c:1213)
+- breaks: scrolls, spellbooks, fortune cookies, T-shirts, magic-marker writing (read.c:602, eat.c:2525, read.c:397, write.c:245)
+- do NOT break: blank paper, unread novels, Book of the Dead, Hawaiian shirts, reading floor engravings (Elbereth)
+- pet-on-scroll workaround for identifying scrolls is safe
+- Wizard/Priest/Healer/Monk/Knight keep one pre-learned spell until it fades, ~20K turns (spell.h:17 KEEN)
+-->
 
 Don't read anything. No scrolls, no spellbooks, no fortune cookies,
 no T-shirts. You also can't engrave anything more than a single
@@ -7551,7 +7698,16 @@ old ones, so any starting spell you have will eventually fade. This
 forces extreme reliance on wands, potions, and creative workarounds.
 
 #### No Genocide
-<!-- audit 2026-05-18 #108 (re-audit 2026-05-19 v2 #119): three corrections to the No Genocide conduct text. (1) "Astral Plane's final wish" path is fabricated — wishes never offer genocide. Genocide is only prompted by reading a scroll of genocide (uncursed = single species; blessed = whole class via do_class_genocide at read.c:2638) and by sitting on a throne (sit.c:125-132 case 8 of throne_sit_effect calls do_genocide(5), a single-species prompt; class genocide only comes from a blessed scroll). (2) "Leave it blank" is misleading for cursed scrolls — empty input re-prompts (read.c:2865-2871) and on a cursed scroll the random rndmonst() path (read.c:2848-2849) creates monsters rather than letting you escape; type "none" instead. (3) End-of-game tracking is by counting G_GENOD species in mvitals[] (insight.c:2951-2966 num_genocides), not a u_conduct counter — but the conduct is preserved as long as no species ever gets G_GENOD'd. The conduct survives even on a cursed scroll's monster-creation path because no species is flagged. v2 fix: original v1 framing said "Vlad's throne" prompts a "class" genocide. Both wrong — Vlad's tower thrones take a different code path (special_throne_effect at sit.c:63-66 has no genocide case). The prompt is on regular thrones, and the question is for a single species, not a class. Reworded to "sitting on a throne" + "single species" + "case 8 of 13." See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- genocide is only prompted by scroll of genocide and by sitting on a regular throne; wishes never offer it
+- uncursed scroll: single species; blessed scroll: whole class (do_class_genocide, read.c:2638)
+- throne prompt is single-species only: case 8 of 13 in throne_sit_effect, calls do_genocide(5) (sit.c:125-132)
+- Vlad's tower thrones take a different path with no genocide case (special_throne_effect, sit.c:63-66)
+- on a cursed scroll, empty input re-prompts and rndmonst() creates monsters; type "none" to escape (read.c:2848-2871)
+- end-of-game tracking counts G_GENOD species in mvitals[], not a u_conduct counter (insight.c:2951-2966 num_genocides)
+- cursed-scroll monster-creation preserves the conduct (no species gets G_GENOD'd)
+-->
 
 Never genocide any monster. Genocide is prompted by reading a
 **scroll of genocide** (uncursed picks one species; blessed wipes
@@ -7575,7 +7731,17 @@ genociding anything simply because they never find the scroll and
 never roll case 8 on a throne. But deliberately maintaining it
 against late-game threats takes discipline.
 
-<!-- audit 2026-05-18 #161: dropped "cursed scroll of polymorph" (no SCR_POLYMORPH exists in 5.0). Added missing conduct-breaking sources: genetic engineer claw (AD_POLY → polyself); eating chameleon/doppelganger/sandestin corpses (eat.c:1244-1263) and mimic corpses (eat.c:1199); green slime auto-poly (timeout.c:493); stone-golem auto-poly via poly_when_stoned (trap.c:3848 etc.). Added Unchanging-blocks-all and system-shock-doesn't-break notes per polyself.c:483-495. v2 audit 2026-05-18 #20: two narrow factual fixes (everything else proposed by the sub-agent was reverted as scope-creep — the section is about the conduct, not an encyclopedia of polymorph mechanics). Dropped "sandestin" from the corpse list since sandestins are G_NOCORPSE (eat.c:1246 comment, unreachable). Dropped "surviving a stoning attack (auto-transforms to stone golem)" because poly_when_stoned (mondata.c:80-86) only fires if you're already polymorphed into a non-stone golem; a normal character just dies. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- no SCR_POLYMORPH exists in 5.0; "cursed scroll of polymorph" is not a thing
+- breaks: genetic engineer claw (AD_POLY -> polyself)
+- breaks: eating chameleon, doppelganger, or mimic corpses (eat.c:1244-1263, eat.c:1199)
+- breaks: green slime auto-poly (timeout.c:493)
+- breaks: stone-golem auto-poly via poly_when_stoned (trap.c:3848)
+- Unchanging blocks all polymorph; system shock does NOT break the conduct (polyself.c:483-495)
+- sandestins are G_NOCORPSE; their corpses are unreachable (eat.c:1246)
+- poly_when_stoned only fires if already polymorphed into a non-stone golem; normal characters die (mondata.c:80-86)
+-->
 #### Polymorph Restrictions
 
 Two related conducts track polymorphing:
@@ -7596,7 +7762,15 @@ powerful item-generation strategy (polypiling) that many players use
 to obtain specific high-value items.
 
 #### Wishing Restrictions
-<!-- audit 2026-05-18 #83 (re-audit 2026-05-18 v2 #58): u.uconduct.wishes and u.uconduct.wisharti are two separate counters with two separate xlogfile achievements (you.h:157-158, topten.c:596-597). Wishing for the literal string "nothing" doesn't increment the counter (zap.c:6369). Amulet-of-Yendor first-pickup wish (allmain.c:445) must be declined for wishless conduct. v2 re-verified: wisharti counter ticks even for *denied* artifact wishes per objnam.c:5362-5365 (before the deny branch); fountain water demon routes through mongrantswish → makewish; wresting empty wands also routes through makewish at zap.c:2583. 0 corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- u.uconduct.wishes and u.uconduct.wisharti are separate counters with separate xlogfile achievements (you.h:157-158, topten.c:596-597)
+- wishing for the literal string "nothing" doesn't tick the counter (zap.c:6369)
+- Amulet-of-Yendor first-pickup wish must be declined for wishless (allmain.c:445)
+- wisharti ticks even for DENIED artifact wishes: increment is before the deny branch (objnam.c:5362-5365)
+- fountain water demon routes through mongrantswish -> makewish
+- wresting empty wands routes through makewish (zap.c:2583)
+-->
 
 Two related conducts:
 
@@ -7619,7 +7793,17 @@ gives you "something in your hand" instead), so be sure you can
 get the artifact before asking.
 
 #### Combining Conducts
-<!-- audit 2026-05-17 #52 (re-audit 2026-05-18 v2 #114, v3 #178): v3 corrected a false v2 claim that Pauper suppresses the starting pet. It doesn't — `makedog()` at dog.c:219-229 only returns NULL when `gp.preferred_pet == 'n'`; Pauper's u_init.c:1308-1309 only short-circuits `ini_inv` (items), not pet creation. `dog.c:262-267` shows Pauper specifically skips the pony saddle but still gets the pony. So the only way to skip the starting pet is `OPTIONS=pettype:none`. Reworded the summary accordingly. v1+v2 verified: nudist/blind tracking since 3.6, 5.0 added pauper/petless/permadeaf/sokoban/bonesless, vegan ⊂ vegetarian hierarchy, show_conduct end-screen listing. Cross-section: Bonesless removed false lucky-no-bones claim. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- Pauper does NOT suppress the starting pet; makedog() only returns NULL on pettype:none (dog.c:219-229)
+- Pauper's u_init.c:1308-1309 short-circuits ini_inv (items only, not pet creation)
+- dog.c:262-267 skips the pony saddle for Pauper but still grants the pony
+- only OPTIONS=pettype:none can skip the starting pet
+- nudist and blind have been tracked since 3.6
+- 5.0 added pauper, petless, permadeaf, sokoban, bonesless
+- vegan is a strict subset of vegetarian
+- all conducts appear in the show_conduct end-screen
+-->
 
 The real prestige comes from combining multiple conducts. A
 vegetarian atheist run is substantially harder than either alone.
@@ -7648,7 +7832,18 @@ play). Sokoban is tracked automatically based on what you do
 during the run.
 
 #### Pauper (new in 5.0)
-<!-- audit 2026-05-17 #72 (re-audit 2026-05-19 v2 #129, v3 #178): v3 expanded the pauper role-knowledge list. Per pauper_reinit at u_init.c:890-922, Cleric/Knight/Monk all know SPE_PROTECTION, and Cave Dweller knows FLINT — these were missing from the v2 list. Added them; Protection book is a load-bearing early-game spell for those three roles, and recognizing it on sight in supply chests is the kind of edge a pauper actually needs. v2 fix: "rcfile or command line only" was wrong — pauper is `set_in_config` at optlist.h:559, meaning rcfile or NETHACKOPTIONS env. v1: ini_inv early-return at u_init.c:1308-1309 confirmed (suppresses items only, not pet); nudist cascade at options.c:5290-5293; end-of-game string at insight.c:2117-2119; xlogfile at topten.c:604. Note: Pauper does NOT suppress the starting pet (`makedog` at dog.c:219-229 only checks pettype:none; dog.c:262-267 just skips the saddle for Pauper). See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- Pauper is set_in_config: rcfile or NETHACKOPTIONS env only, not in-game O menu (optlist.h:559)
+- ini_inv early-return suppresses starting items only, not the pet (u_init.c:1308-1309)
+- Pauper does NOT suppress the starting pet (dog.c:219-229; only pettype:none does)
+- dog.c:262-267 skips the pony saddle for Pauper
+- Cleric, Knight, Monk start knowing SPE_PROTECTION (pauper_reinit, u_init.c:890-922)
+- Cave Dweller starts knowing FLINT (pauper_reinit, u_init.c:890-922)
+- Protection book is a load-bearing early-game pickup for those three roles
+- nudist cascade triggers when pauper is set (options.c:5290-5293)
+- end-of-game string at insight.c:2117-2119; xlogfile at topten.c:604
+-->
 
 Start with absolutely nothing: no gold, no inventory, no armor, no
 starting weapon. Set `OPTIONS=pauper` in your rcfile (rcfile or
@@ -7669,7 +7864,16 @@ the Oracle (a feature in every 5.0 game, not just pauper) can
 provide much of your first kit.
 
 #### Petless (new in 5.0)
-<!-- audit 2026-05-17 #50: all claims verified. pettype:none bypasses pet_type via dog.c:225-229; tamedog increments u.uconduct.pets across all taming paths; minion.c:533-539 explicitly preserves petless on the endgame angel. xlogfile achievement at topten.c (add_achieveX "petless"). 0 corrections. v2 audit 2026-05-18 #59: corrected one fabricated mechanism. "Dairy products to foocubi" is not a thing — befriend_with_obj at mondata.h:255-261 gates food-throw taming on is_domestic(ptr) (plus monkey/ape + banana), and foocubi aren't domestic. The wiki-known foocubus interaction is throwing a ring of adornment (pacification, not taming), not dairy. Replaced with "food thrown at hostile dogs and cats" — the actual food-throw taming path that was missing from the list. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- pettype:none bypasses pet_type (dog.c:225-229)
+- tamedog increments u.uconduct.pets across all taming paths
+- the endgame angel preserves petless (minion.c:533-539)
+- xlogfile achievement "petless" via add_achieveX (topten.c)
+- "dairy to foocubi" is fabricated: befriend_with_obj gates on is_domestic, and foocubi aren't (mondata.h:255-261)
+- foocubus + ring of adornment is pacification, not taming
+- food thrown at hostile dogs and cats IS a taming path that breaks petless
+-->
 
 Never have a pet. Set `OPTIONS=pettype:none` in your rcfile to skip
 the starting companion entirely (this overrides per-role defaults).
@@ -7680,7 +7884,15 @@ accidents all still work. Each one just breaks Petless on the
 spot.
 
 #### Permadeaf (new in 5.0)
-<!-- audit 2026-05-17 #62 (re-audit 2026-05-19 v2 #122): confirmed permadeaf is u.uroleplay.deaf (optlist.h:267-269), recorded in xlogfile (topten.c:602) and shown in show_conduct (insight.c:2113). Deaf macro at youprop.h:125. Corrected the rcfile option name: was `!acoustics` (a different per-session flavor flag — flags.acoustics — that doesn't earn the conduct), should be `permadeaf` (or `deaf`). Also removed the in-game O-menu instruction: this option is `set_in_config` (options.c:5207), rcfile only. v2 fixes: (a) dropped the "pass `-Dpermadeaf` on the command line" clause — `-D` is the debug/wizard-mode flag at unixmain.c:359-365, not an option-name passer; there is no `-Dpermadeaf` syntax. Rcfile is the path. (b) Added the shrieker note: only the *messages* are suppressed when Deaf, so a shrieker still summons monsters and aggravates (mon.c:4089-4106 m_respond_shrieker only gates the pline on !Deaf; the makemon and aggravate run unconditionally). Real beginner trap, clears the no-trivia bar. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- permadeaf is u.uroleplay.deaf, in xlogfile (topten.c:602) and show_conduct (insight.c:2113)
+- Deaf macro at youprop.h:125
+- rcfile option name is `permadeaf` (or `deaf`), NOT `!acoustics` (a different flavor flag, flags.acoustics)
+- permadeaf is set_in_config: rcfile only, not in-game O menu (options.c:5207)
+- there is no `-Dpermadeaf` syntax; `-D` is the debug/wizard-mode flag (unixmain.c:359-365)
+- Deaf only suppresses shrieker MESSAGES; makemon and aggravate still run (mon.c:4089-4106)
+-->
 
 Never hear anything. Set `OPTIONS=permadeaf` (or `OPTIONS=deaf`)
 in your rcfile. This option is set-in-config only; the in-game
@@ -7705,7 +7917,15 @@ out to be possible and occasionally educational about how much
 information you normally get for free.
 
 #### Sokoban (new in 5.0)
-<!-- audit 2026-05-18 #145 (re-audit 2026-05-18 v2 #118): corrected "No digging through the puzzle levels" — digging doesn't trigger sokoban_guilt (dig.c has no such call). The conduct-violating actions are squeeze (hack.c:299, 307), boulder fracture by wand of striking (zap.c:5556), polymorph boulder (zap.c:1711), scroll of earth (read.c:1951), and dismount onto a boulder (steed.c:767). Each costs -1 Luck (trap.c:7039-7054) and increments u.uconduct.sokocheat. Achievement reported only if the branch was entered (insight.c:2215-2228). Teleportation IS blocked by the level's noteleport flag (teleport.c:1185), so "no teleportation" is a level constraint, not a conduct trigger. v2: all five conduct-trigger sites re-verified. 0 new corrections. -->
+<!-- audit
+2026-05-19:
+- digging does NOT trigger sokoban_guilt; dig.c has no such call
+- breaks: squeeze through (hack.c:299, 307), boulder fracture by wand of striking (zap.c:5556)
+- breaks: polymorph a boulder (zap.c:1711), scroll of earth (read.c:1951), dismount onto a boulder (steed.c:767)
+- each violation costs -1 Luck and increments u.uconduct.sokocheat (trap.c:7039-7054)
+- achievement reported only if the branch was entered (insight.c:2215-2228)
+- teleportation is blocked by the level's noteleport flag (teleport.c:1185); it's a level constraint, not a conduct trigger
+-->
 
 Complete Sokoban without breaking the rules. Each cheating action
 costs **1 point of Luck** and increments the conduct counter: pushing
@@ -7720,7 +7940,16 @@ boulder-shoving and want their playthrough to acknowledge a
 clean solve.
 
 #### Bonesless (new in 5.0)
-<!-- audit 2026-05-17 (sweep from #52) (re-audit 2026-05-18 v2 #48): the xlogfile bonesless achievement is set only if !flags.bones (topten.c:605), i.e. you turned bones loading off. Just *not encountering* bones is a separate Miscellaneous enlightenment line ("never encountered any bones levels", insight.c:439) and is NOT the bonesless conduct. Earlier text wrongly said you could "get bonesless by luck." Also removed false "amulet of life saving" tracking claim (show_conduct never lists lifesaving uses). v2 re-confirmed: `bones` is set_in_config per optlist.h:213-215 (config file / command line only, not the in-game O menu); !flags.bones blocks both save (bones.c:360) and load (bones.c:642) — "cuts both directions"; the "didn't encounter any bones levels" enlightenment is distinct (insight.c:439-441 requires flags.bones true + u.uroleplay.numbones==0). 0 corrections. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- bonesless achievement requires !flags.bones; you must turn bones loading off (topten.c:605)
+- not encountering bones is a separate Miscellaneous enlightenment line, NOT the conduct (insight.c:439)
+- you cannot get bonesless by luck alone
+- show_conduct never lists lifesaving uses; there is no amulet-of-life-saving tracking
+- `bones` is set_in_config: config file or command line only, not in-game O menu (optlist.h:213-215)
+- !flags.bones blocks both save (bones.c:360) and load (bones.c:642) — cuts both directions
+- "never encountered any bones levels" enlightenment requires flags.bones true AND u.uroleplay.numbones==0 (insight.c:439-441)
+-->
 
 Never inherit from another player's grave. To get the bonesless
 conduct, you have to turn bones off for the run: set
@@ -9840,7 +10069,19 @@ Mostly harmless. **Lizard corpses cure petrification and never rot.** Carry one 
 ---
 
 ### What Changed Since Last Time
-<!-- audit 2026-05-17 #46 (re-audit 2026-05-19 v2 #173): ~30 5.0 changes verified against fixes5-0-0 + source. Corrected 4: chain lightning is level 4 not 7; "mummy withering" was fabricated; Elbereth -5 alignment penalty is not a 5.0 change; supply chests appear above the Oracle, not "the first ten levels." Also clarified: mind flayer change is map/ID amnesia is gone, spell/skill loss persists; sink dipping for potions only. v2 fixes: (a) Touch of death "Magic resistance reduces but no longer fully prevents it" was wrong. Per mcastu.c:391-407, the spell is binary — `!Antimagic && rn2(m_lev) > 12` gates the touch_of_death() kill; Antimagic in the else branch triggers `shieldeff()` and "Lucky for you, it didn't work!" Antimagic still fully blocks the spell in 5.0; the 5.0 change is the unprotected outcome (instakill → drain+damage per fixes5-0-0.txt:538), not the MR semantics. Reworded. (b) Iron bars "(since 3.6)" — wrong date. Iron bars were added in 3.3.0 per fixes3-3-0.txt:349 ("add graves, iron bars, trees, and arboreal levels"). Corrected to "since 3.3." (c) Gold dragon scale mail "in addition to its two resistances" — wrong; gold DSM grants only hallucination resistance + innate light (do_wear.c:846-851), not two resistances. The DRGN_ARMR slot for gold is 0 (objects.h:505). Reworded. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- chain lightning is level 4 NODIR (objects.h:1409-1411 SPELL("chain lightning",..., P_ATTACK_SPELL, 25, 4, 2, 1, NODIR))
+- "mummy withering" was fabricated; no such mechanic in 5.0
+- Elbereth -5 alignment penalty is NOT a 5.0 change (engrave.c writeable_engrave, predates 5.0)
+- supply chests appear strictly above the Oracle (mklev.c:1037 `u.uz.dlevel < oracle_level.dlevel`), not "the first ten levels"
+- mind flayer: spell loss (uhitm.c:3266 losespells) and skill drain (uhitm.c:3270 drain_weapon_skill) persist; map/ID amnesia is gone (no forget_map call in eat_brains, eat.c:603)
+- sink dipping is for potions only: non-potions just take water_damage (fountain.c:716-733)
+- touch of death is still binary: !Antimagic && rn2(m_lev) > 12 kills; Antimagic shows shieldeff and "Lucky for you, it didn't work!" (mcastu.c:391-407)
+- the 5.0 change is the unprotected outcome (instakill -> drain + damage) per fixes5-0-0.txt:538
+- iron bars were added in 3.3.0, not 3.6 (fixes3-3-0.txt:349)
+- gold dragon scale mail grants only hallucination resistance + innate light, not two resistances (do_wear.c:846-851, objects.h:505 DRGN_ARMR slot 0)
+-->
 
 If you're an experienced traveler returning after some time away, the
 5.0 of the Mazes (NetHack 5.0.0, released May 2, 2026) includes
@@ -10040,7 +10281,14 @@ more dangerous simultaneously. Welcome, adventurer.*
 ---
 
 ### Acknowledgements
-<!-- audit 2026-05-17 #18 (re-audit 2026-05-18 v2 #115): historical claims spot-checked against Wikipedia + bundled dat/history. NetHack 1987, Fenlason→Brouwer→Stephenson lineage, DevTeam founders, Izchak Miller 1994 death, Hack 1982 origin all verified. WikiHack founding year, article counts, and some spoiler-author attributions could not be independently verified (nethackwiki.com 403). v2 fixes: (a) WCST "(originally the 'World's Encyclopaedia of NetHack')" parenthetical expansion was never verified — the original WCST file at pdwaterman.com doesn't expand the acronym, and Waterman's Wheaton, IL distribution address suggests "WC" is Wheaton College. User confirmed and dropped the false expansion; replaced with the verifiable "(distributed from Wheaton, Illinois starting in 1991)". (b) Kevin Hugo was missing from the current-team list at line 9478, despite being on the official 5.0 core team list at dat/history:314 (and already credited above as a 3.2.2 spoiler author). Added. See companion-audit.md. -->
+<!-- audit
+2026-05-19:
+- NetHack 1987, Fenlason -> Brouwer -> Stephenson lineage verified (Wikipedia, dat/history)
+- DevTeam founders, Izchak Miller died 1994, Hack 1982 origin all verified
+- WCST acronym is not expanded in the original Waterman file; Wheaton, IL distribution started 1991 (pdwaterman.com)
+- Kevin Hugo is on the official 5.0 core team list (dat/history:314)
+- nethackwiki.com returned 403, so wiki article counts and some spoiler-author attributions are unverified
+-->
 
 NetHack has been played, cursed at, loved, and documented since
 1987. The game itself is the work of the NetHack DevTeam, a
