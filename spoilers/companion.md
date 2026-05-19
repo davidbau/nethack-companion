@@ -2436,7 +2436,7 @@ loss; the second one in your bag is a kit.
 ---
 
 ### Making Friends
-<!-- audit 2026-05-17 #36 (re-audit 2026-05-18 v2 #96): ~25 claims verified, 4 corrected (pet-curse-avoidance overstated, tameness loss sources narrowed, displacement guards corrected, charm monster spell is multi-target not single). v2 fixes: (a) "You have a sad feeling for a moment" was attributed to the "left pet behind alive on a previous level" case — wrong. The message fires when a pet of yours dies offscreen (mon.c:952 mtmp->mtame && !canseemon, message at mon.c:3101/3495). Leaving a pet behind alive produces no message at all; loyalty just decays at 1 per 150 moves apart (dog.c:689-697). Separated the two cases in the prose. Beginner trap: a reader who saw the message thinking "still alive" would go back for a corpse. (b) Confused scroll of taming / charm monster radius was "5×5" — wrong. read.c:1689 sets bd = confused ? 5 : 1, loop spans [-bd..bd] so area = (2*bd+1)²: normal 3×3, confused 11×11. Corrected. See companion-audit.md. -->
+<!-- audit 2026-05-17 #36 (re-audit 2026-05-18 v2 #96): ~25 claims verified, 4 corrected (pet-curse-avoidance overstated, tameness loss sources narrowed, displacement guards corrected, charm monster spell is multi-target not single). v2 fixes: (a) "You have a sad feeling for a moment" was attributed to the "left pet behind alive on a previous level" case — wrong. The message fires when a pet of yours dies offscreen (mon.c:952 mtmp->mtame && !canseemon, message at mon.c:3101/3495). Leaving a pet behind alive produces no message at all; loyalty just decays at 1 per 150 moves apart (dog.c:689-697). Separated the two cases in the prose. Beginner trap: a reader who saw the message thinking "still alive" would go back for a corpse. (b) Confused scroll of taming / charm monster radius was "5×5" — wrong. read.c:1689 sets bd = confused ? 5 : 1, loop spans [-bd..bd] so area = (2*bd+1)²: normal 3×3, confused 11×11. Corrected. v2 follow-up: the confused-wide-area trick is scroll-only. spell.c:1372 fails confused casts outright ("You fail to cast the spell correctly."), so charm monster never reaches the 11×11 path. Clarified in the prose. See companion-audit.md. -->
 
 The Mazes of Menace are dark, hostile, and full of things that want
 to eat you. Under those circumstances, a loyal companion is worth
@@ -2489,7 +2489,8 @@ methods of taming exist:
   produce for horses
 - **Scroll of taming** or **spell of charm monster** both route
   through the same handler and tame all eligible creatures within
-  a 3×3 radius (11×11 when confused)
+  a 3×3 radius. Reading the scroll while confused widens that to
+  11×11 (but you can't cast the spell while confused).
 - **Magic trap effects** occasionally produce taming
 
 Taming isn't limited to small animals: with a scroll of taming or
@@ -7204,7 +7205,7 @@ guaranteed at Mine's End and sometimes found elsewhere). Rubbing an
 unidentified gem against a **blessed** touchstone names the gem
 outright; with a merely uncursed touchstone you only get a streak
 color. (Archeologists and Gnomes get the full name from a non-cursed
-stone — racial perk.) Hardness doesn't matter; every gem works.
+stone, a racial perk.) Hardness doesn't matter; every gem works.
 Once identified, real gems sell for their real value (often hundreds
 of zm each) while glass sells for almost nothing.
 
@@ -8720,7 +8721,7 @@ All mummies are mindless undead and leave no corpse.
 <!-- audit 2026-05-18 #173: all 8 rows verified clean vs monsters.h:1972-2048. All carry MR_POISON. Removed false claim "Healers find the guardian naga peaceful" — guardian naga is MS_MUMBLE (not MS_GUARDIAN), no M2_PEACEFUL, and PM_GUARDIAN_NAGA's appearance in the Rogue's role.c:338 entry is as a Rogue-quest creature slot, not a Healer/Rogue peace mechanism. peace_minded (makemon.c:2270-2285) finds no path that auto-peaces it. Black naga corpse confers poison + acid + stoning resistance — worth eating but companion doesn't currently surface this. v2 audit 2026-05-18 #25: pass-1 thought it had removed the wrong Healer-peaceful note, but the table still carried "Friendly to the Healer. Hostile otherwise." in the guardian-naga row. Replaced with "Lawful PCs may find them peaceful" — guardian naga maligntyp = +7 (lawful) per monsters.h:2040, so peace_minded matches via sgn(mal)==sgn(ual) for lawful heroes. Other fixes: dropped the wrong "breath weapons (acid / fire / poison)" enumeration in the intro — only red naga actually breathes (AT_BREA fire); black/guardian spit (AT_SPIT); golden casts spells (AT_MAGC AD_SPEL) — narrowed to "with ranged attacks." Fixed "spell 4d6 spell" duplication to "cast spell 4d6" matching AT_MAGC notation elsewhere. Dropped duplicate "All nagas are poison-resistant" sentence-paragraph. See companion-audit.md. -->
 #### Nagas `N`
 
-Long serpentine bodies with ranged attacks. All nagas are poison-resistant. Black naga corpses confer poison, acid, *and* stoning resistance — easily the best of the four eats.
+Long serpentine bodies with ranged attacks. All nagas are poison-resistant. Black naga corpses confer poison, acid, *and* stoning resistance. That's easily the best of the four eats.
 
 ::: dense-table
 
@@ -9404,8 +9405,8 @@ armor, artifacts, food, monsters, spells, and more. The item data
 tables throughout Parts Four and Five of this guide are verified
 against their work. Published under BSD-like terms.
 
-**Paul Waterman** wrote the WCST NetHack Spoilers (distributed
-from Wheaton, Illinois starting in 1991), a single sprawling document
+**Paul Waterman** wrote the WCST NetHack Spoilers (at Wheaton
+College in 1991), a single sprawling document
 that covered the entire game in a conversational, opinionated voice.
 Where Hugo and O'Donnell wrote reference manuals, the WCST was
 a travel guide. It told you not just what things did but what to do

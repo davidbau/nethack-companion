@@ -3299,7 +3299,7 @@ kit.</p>
 </section>
 <section id="making-friends" class="level3">
 <h3>Making Friends</h3>
-<!-- audit 2026-05-17 #36 (re-audit 2026-05-18 v2 #96): ~25 claims verified, 4 corrected (pet-curse-avoidance overstated, tameness loss sources narrowed, displacement guards corrected, charm monster spell is multi-target not single). v2 fixes: (a) "You have a sad feeling for a moment" was attributed to the "left pet behind alive on a previous level" case — wrong. The message fires when a pet of yours dies offscreen (mon.c:952 mtmp->mtame && !canseemon, message at mon.c:3101/3495). Leaving a pet behind alive produces no message at all; loyalty just decays at 1 per 150 moves apart (dog.c:689-697). Separated the two cases in the prose. Beginner trap: a reader who saw the message thinking "still alive" would go back for a corpse. (b) Confused scroll of taming / charm monster radius was "5×5" — wrong. read.c:1689 sets bd = confused ? 5 : 1, loop spans [-bd..bd] so area = (2*bd+1)²: normal 3×3, confused 11×11. Corrected. See companion-audit.md. -->
+<!-- audit 2026-05-17 #36 (re-audit 2026-05-18 v2 #96): ~25 claims verified, 4 corrected (pet-curse-avoidance overstated, tameness loss sources narrowed, displacement guards corrected, charm monster spell is multi-target not single). v2 fixes: (a) "You have a sad feeling for a moment" was attributed to the "left pet behind alive on a previous level" case — wrong. The message fires when a pet of yours dies offscreen (mon.c:952 mtmp->mtame && !canseemon, message at mon.c:3101/3495). Leaving a pet behind alive produces no message at all; loyalty just decays at 1 per 150 moves apart (dog.c:689-697). Separated the two cases in the prose. Beginner trap: a reader who saw the message thinking "still alive" would go back for a corpse. (b) Confused scroll of taming / charm monster radius was "5×5" — wrong. read.c:1689 sets bd = confused ? 5 : 1, loop spans [-bd..bd] so area = (2*bd+1)²: normal 3×3, confused 11×11. Corrected. v2 follow-up: the confused-wide-area trick is scroll-only. spell.c:1372 fails confused casts outright ("You fail to cast the spell correctly."), so charm monster never reaches the 11×11 path. Clarified in the prose. See companion-audit.md. -->
 <p>The Mazes of Menace are dark, hostile, and full of things that want
 to eat you. Under those circumstances, a loyal companion is worth more
 than a bag of gold. Fortunately, the dungeon provides.</p>
@@ -3348,7 +3348,9 @@ of taming exist:</p>
 and cats, produce for horses</li>
 <li><strong>Scroll of taming</strong> or <strong>spell of charm
 monster</strong> both route through the same handler and tame all
-eligible creatures within a 3×3 radius (11×11 when confused)</li>
+eligible creatures within a 3×3 radius. Reading the scroll while
+confused widens that to 11×11 (but you can’t cast the spell while
+confused).</li>
 <li><strong>Magic trap effects</strong> occasionally produce taming</li>
 </ul>
 <p>Taming isn’t limited to small animals: with a scroll of taming or the
@@ -9639,7 +9641,7 @@ base price 45, guaranteed at Mine’s End and sometimes found elsewhere).
 Rubbing an unidentified gem against a <strong>blessed</strong>
 touchstone names the gem outright; with a merely uncursed touchstone you
 only get a streak color. (Archeologists and Gnomes get the full name
-from a non-cursed stone — racial perk.) Hardness doesn’t matter; every
+from a non-cursed stone, a racial perk.) Hardness doesn’t matter; every
 gem works. Once identified, real gems sell for their real value (often
 hundreds of zm each) while glass sells for almost nothing.</p>
 <section id="real-gem-prices" class="level5">
@@ -16975,7 +16977,7 @@ resistance mandatory.</td>
 <h4>Nagas <code>N</code></h4>
 <p>Long serpentine bodies with ranged attacks. All nagas are
 poison-resistant. Black naga corpses confer poison, acid, <em>and</em>
-stoning resistance — easily the best of the four eats.</p>
+stoning resistance. That’s easily the best of the four eats.</p>
 <div class="dense-table">
 <table>
 <colgroup>
@@ -19740,13 +19742,13 @@ covering potions, scrolls, wands, rings, amulets, tools, weapons, armor,
 artifacts, food, monsters, spells, and more. The item data tables
 throughout Parts Four and Five of this guide are verified against their
 work. Published under BSD-like terms.</p>
-<p><strong>Paul Waterman</strong> wrote the WCST NetHack Spoilers
-(distributed from Wheaton, Illinois starting in 1991), a single
-sprawling document that covered the entire game in a conversational,
-opinionated voice. Where Hugo and O’Donnell wrote reference manuals, the
-WCST was a travel guide. It told you not just what things did but what
-to do about them. It was the original inspiration for the tone and
-structure of this guide, though no text has been copied from it.</p>
+<p><strong>Paul Waterman</strong> wrote the WCST NetHack Spoilers (at
+Wheaton College in 1991), a single sprawling document that covered the
+entire game in a conversational, opinionated voice. Where Hugo and
+O’Donnell wrote reference manuals, the WCST was a travel guide. It told
+you not just what things did but what to do about them. It was the
+original inspiration for the tone and structure of this guide, though no
+text has been copied from it.</p>
 <p><strong>Kate Nepveu</strong> maintained steelypips.org, the web
 archive that preserved the Hugo/O’Donnell spoilers, the RGRN community
 articles, and her own excellent guides (including the Elbereth FAQ cited
