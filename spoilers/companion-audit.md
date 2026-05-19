@@ -8779,3 +8779,30 @@ All claims re-verified. Speed 9, M1_WALLWALK (not M1_TUNNEL), AD_PHYS attacks on
 178/183 done.
 
 ---
+
+## 2026-05-19 — v2 audit batch 37 (FINAL): Skill Caps (#179), Lizards (#180), Trident (#181), Secret Doors (#182), Liches (#183)
+
+### Trident (#181) — `spoilers/companion.md:7552` — 1 correction
+
+Swimmer bonus labeled "+4 damage / +2" — wrong type. Per `weapon.c:170-176`, the bonus path is inside `hitval()`, not `dmgval()` — it's a **to-hit** bonus, not damage. Reworded.
+
+### Finding Secret Doors (#182) — `spoilers/companion.md:1375` — 1 correction
+
+Excalibur enchantment and lenses don't stack independently. Per `detect.c:2026-2032`, both feed a single `fund` variable that is then capped at +5. So lenses + a +5 Excalibur still gives `fund=5`; lenses only add value if Excalibur's enchantment is below +3. Reworded to make the shared cap explicit.
+
+### Liches `L` (#183) — `spoilers/companion.md:8679` — 1 correction
+
+"The higher tiers can cast touch of death" — wrong; only the arch-lich can. Per `mcastu.c:111`, monster spell selection rolls `rn2(m_lev)` and matches against spell-level thresholds; DEATH_TOUCH is at spell-level 20. Master lich `m_lev=17` means `rn2(17) ≤ 16` — can never reach 20. Only arch-lich (`m_lev=25`) can. The v1 audit caught this and corrected it once; the prose drifted back. Re-corrected.
+
+### Skill Caps (#179) — `spoilers/companion.md:7833` — 0 corrections
+
+All 494 cells exact-match verified: 27 weapon rows + 4 fighting-style rows + 7 spell-school rows × 13 role columns. Cross-section consistent with every other v2 audit that touched skill rows.
+
+### Lizards `:` (#180) — `spoilers/companion.md:9133` — 0 corrections, badge updated
+
+All 8 entries verified vs `monsters.h:3260-3324`. Lizard corpse stoning cure, newt Pw boost, chameleon shape-shifter eat-poly all confirmed.
+
+### Pass-2 queue
+**183/183 done — v2 pass complete.**
+
+---

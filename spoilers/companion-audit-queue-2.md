@@ -187,8 +187,8 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#176**  L 7433  (  24 lines)     ↳ Weapons Tables → Polearms
 - [x] **#177**  L 1621  ( 101 lines)   📖 A Field Guide to Dungeon Fauna
 - [x] **#178**  L 8831  (  13 lines)     ↳ Bestiary Tables → Xorns `X`
-- [ ] **#179**  L 7833  ( 103 lines)     ↳ Appendices → Skill Caps
-- [ ] **#180**  L 9065  (  23 lines)     ↳ Bestiary Tables → Lizards `:`
-- [ ] **#181**  L 7483  (  13 lines)     ↳ Weapons Tables → Trident
-- [ ] **#182**  L 1360  (  50 lines)     ↳ Traps and Hazards → Finding Secret Doors
-- [ ] **#183**  L 8610  (  18 lines)     ↳ Bestiary Tables → Liches `L`
+- [x] **#179**  L 7833  ( 103 lines)     ↳ Appendices → Skill Caps
+- [x] **#180**  L 9065  (  23 lines)     ↳ Bestiary Tables → Lizards `:`
+- [x] **#181**  L 7483  (  13 lines)     ↳ Weapons Tables → Trident
+- [x] **#182**  L 1360  (  50 lines)     ↳ Traps and Hazards → Finding Secret Doors
+- [x] **#183**  L 8610  (  18 lines)     ↳ Bestiary Tables → Liches `L`

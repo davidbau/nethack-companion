@@ -1720,6 +1720,7 @@ you’d need one already to read it from outside the bars.</p>
 </section>
 <section id="finding-secret-doors" class="level4">
 <h4>Finding Secret Doors</h4>
+<!-- audit 2026-05-19 v2 #182: 1 correction. Excalibur enchantment and lenses don't stack independently — per detect.c:2026-2032, both feed a single `fund` variable that is then capped at +5. So lenses + a +5 Excalibur still gives fund=5; lenses only help if Excalibur's enchantment is below +3. Reworded. Re-verified `rnl(7 - fund)` per-square search roll at detect.c:2042-2054, ring of searching auto-call at allmain.c:342-344, blessed magic mapping SDOOR conversion at read.c:2121-2130, Excalibur SPFX_SEARCH at artilist.h:86. -->
 <p>The Dungeons of Doom were designed by architects who believed that
 every room should have one emergency exit that requires ten minutes of
 tapping on walls to locate. Secret doors and corridors are the game’s
@@ -1751,10 +1752,11 @@ than being trapped on Dlvl 1 forever.</p>
 <li><strong>Ring of searching</strong> auto-searches every turn while
 it’s worn</li>
 <li><strong>Excalibur</strong> (or any artifact with the searching
-aura), wielded, adds its enchantment to your search bonus (capped at +5;
-a freshly-dipped +0 Excalibur adds nothing)</li>
+aura), wielded, adds its enchantment to your search bonus (a
+freshly-dipped +0 Excalibur adds nothing)</li>
 <li><strong>Lenses</strong> worn (and you not blind) add +2 to the
-search bonus</li>
+search bonus — but the total bonus from Excalibur + lenses caps at +5,
+so lenses only help if Excalibur’s enchantment is below +3</li>
 <li><strong>Wand of secret door detection</strong> instantly reveals
 nearby secrets in a radius</li>
 <li><strong>Blessed scroll of magic mapping</strong> shows every secret
@@ -10946,7 +10948,7 @@ kebab bonus.</p>
 </section>
 <section id="trident" class="level4">
 <h4>Trident</h4>
-<!-- audit 2026-05-18 #129: stats verified vs objects.h:195. The Note "giant-killer" was misleading — the +1/+2d4 bonus dice are the universal land-creature bonus shared by two-handed sword, battle-axe, bardiche etc. (weapon.c:251-276), not trident-specific. The trident's actual signature is the swimmer-only bonus at weapon.c:170-176: +4 vs is_swimmer(ptr) when in a pool, +2 vs S_EEL or S_SNAKE. Reworded the Notes column accordingly. -->
+<!-- audit 2026-05-18 #129 (re-audit 2026-05-19 v2 #181): stats verified vs objects.h:195. The Note "giant-killer" was misleading — the +1/+2d4 bonus dice are the universal land-creature bonus shared by two-handed sword, battle-axe, bardiche etc. (weapon.c:251-276), not trident-specific. The trident's actual signature is the swimmer-only bonus at weapon.c:170-176: +4 vs is_swimmer(ptr) when in a pool, +2 vs S_EEL or S_SNAKE. Reworded the Notes column accordingly. v2 fix: the swimmer bonus was labeled "+4 damage / +2" but the weapon.c:170-176 path is `hitval()`, not `dmgval()` — the bonus is to-hit, not damage. Reworded to "+4 to-hit vs swimmers in water, +2 vs eels and snakes." See companion-audit.md. -->
 <div class="dense-table">
 <table>
 <colgroup>
@@ -10977,7 +10979,7 @@ kebab bonus.</p>
 <td>5</td>
 <td>—</td>
 <td>iron</td>
-<td>One-handed. <strong>+4 damage vs swimmers in water, +2 vs eels and
+<td>One-handed. <strong>+4 to-hit vs swimmers in water, +2 vs eels and
 snakes</strong> — the trident’s signature bonus. Outside water it’s an
 ordinary side-arm.</td>
 </tr>
@@ -12791,7 +12793,7 @@ with rank, even when the spell’s behavior doesn’t otherwise change.</p>
 </section>
 <section id="skill-caps" class="level3">
 <h3>Skill Caps</h3>
-<!-- audit 2026-05-18 #100 (re-verified 2026-05-18 #183): all 13 role skill tables extracted from u_init.c (Skill_A through Skill_W) and grouped by skill category. Skills not listed in a role's def_skill array are restricted (P_UNSKILLED, locked). Scimitar omitted because no role has it in 5.0 (merged into saber, per skills.h header note and audit #82). Note "Monks/Samurai only roles with martial arts" verified: P_MARTIAL_ARTS appears only in Skill_Mon (P_GRAND_MASTER) and Skill_S (P_MASTER). Monks have P_BARE_HANDED_COMBAT restricted (—) — they get martial arts instead. Re-audit 2026-05-18 #183: every cell of all three sub-tables (27 weapon rows, 4 fighting-style rows, 7 spell-school rows) × 13 role columns confirmed exact-match against u_init.c:257-572. 0 corrections. -->
+<!-- audit 2026-05-18 #100 (re-audit 2026-05-19 v2 #179): all 13 role skill tables extracted from u_init.c (Skill_A through Skill_W) and grouped by skill category. Skills not listed in a role's def_skill array are restricted (P_UNSKILLED, locked). Scimitar omitted because no role has it in 5.0 (merged into saber, per skills.h header note and audit #82). Note "Monks/Samurai only roles with martial arts" verified: P_MARTIAL_ARTS appears only in Skill_Mon (P_GRAND_MASTER) and Skill_S (P_MASTER). Monks have P_BARE_HANDED_COMBAT restricted (—) — they get martial arts instead. v2 #179: all 494 cells (27 weapon rows + 4 fighting-style rows + 7 spell-school rows × 13 role columns) exact-match verified against u_init.c:257-572. Cross-section consistency with batch 29 v2 #143 (Knights Skilled crossbow), batch 19 v2 #88 (yumi Samurai-only), batch 33 v2 #163 (Boomerang row), batch 34 v2 #164 (Quarterstaff row) all confirmed. 0 corrections. -->
 <p>Every role has fixed maximum ranks for each weapon, fighting style,
 and spell school. Skills not listed for a role are
 <strong>restricted</strong> (the rank is locked at Unskilled) — except
@@ -16783,9 +16785,9 @@ stable solution. Get away or genocide them instead.</p>
 </section>
 <section id="liches-l" class="level4">
 <h4>Liches <code>L</code></h4>
-<!-- audit 2026-05-17 #4: 12 claims verified, 3 corrected (no corpse not poisonous; double-trouble is Wizard-of-Yendor only; arch-lich casts touch of death not rays). See companion-audit.md. -->
-<p>Skeletal spellcasters. The higher tiers can cast touch of death;
-master and arch-liches require magic resistance to survive their spell
+<!-- audit 2026-05-17 #4 (re-audit 2026-05-19 v2 #183): 12 claims verified, 3 corrected (no corpse not poisonous; double-trouble is Wizard-of-Yendor only; arch-lich casts touch of death not rays). v2 fix: the prose at the section intro said "The higher tiers can cast touch of death" — but only arch-lich can. Per mcastu.c:111, monster spell selection rolls `rn2(m_lev)` and matches against spell-level thresholds; DEATH_TOUCH is at spell-level 20. Master lich m_lev=17 means rn2(17) ≤ 16 — can never select DEATH_TOUCH. Only arch-lich (m_lev=25) reaches it. Reworded "higher tiers" → "the arch-lich." (v1 audit caught the same issue but the prose drifted again.) See companion-audit.md. -->
+<p>Skeletal spellcasters. The arch-lich can cast touch of death; master
+and arch-liches both require magic resistance to survive their spell
 barrages.</p>
 <p>All liches regenerate, leave no corpse, and are undead,
 cold-resistant, sleep-resistant, and poison-resistant.</p>
@@ -19377,7 +19379,7 @@ square unless you have it.</p>
 </section>
 <section id="lizards" class="level4">
 <h4>Lizards <code>:</code></h4>
-<!-- audit 2026-05-18 #146: clean. All 8 entries (newt, gecko, iguana, baby crocodile, lizard, chameleon, crocodile, salamander) match monsters.h:3260-3324 for stats, attacks, and special flags. Lizard corpse cures stoning (eat.c:827-830, fix_petrification), never rots (eat.c:1483, 1510). Newt corpse occasionally restores 1-3 Pw via eye_of_newt_buzz (eat.c:1102-1123). Chameleon is M2_SHAPESHIFTER. Salamander has the 4-attack chain weapon 2d8 / touch 1d6 fire / hug 2d6 / hug 3d6 fire. -->
+<!-- audit 2026-05-18 #146 (re-audit 2026-05-19 v2 #180): clean. All 8 entries (newt, gecko, iguana, baby crocodile, lizard, chameleon, crocodile, salamander) match monsters.h:3260-3324 for stats, attacks, and special flags. Lizard corpse cures stoning (eat.c:827-830, fix_petrification), never rots (eat.c:1483, 1510). Newt corpse occasionally restores 1-3 Pw via eye_of_newt_buzz (eat.c:1102-1123). Chameleon is M2_SHAPESHIFTER. Salamander has the 4-attack chain weapon 2d8 / touch 1d6 fire / hug 2d6 / hug 3d6 fire. v2 re-verified all rows; salamander G_HELL (Gehennom-only). 0 new corrections. -->
 <p>Mostly harmless. <strong>Lizard corpses cure petrification and never
 rot.</strong> Carry one at all times — this is the standard answer to
 cockatrices and Medusa.</p>
