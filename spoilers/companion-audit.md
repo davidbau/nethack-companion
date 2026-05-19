@@ -8583,3 +8583,18 @@ Baby blue dragon Notes cell read "Lightning breath, ditto." — wrong. Baby blue
 143/183 done.
 
 ---
+
+## 2026-05-19 — v2 audit batch 30: Genetic Engineer (#144), Two-handed sword (#145), Quantum mechanics (#146), Feelings and Sounds (#147), The Oracle (#148)
+
+All five sections re-audit clean — 0 prose corrections.
+
+- **Genetic Engineer (#144)**: claw + corpse polymorph mechanics, defenses (kill, Antimagic, Unchanging) verified vs mhitm.c:1128-1136, eat.c:1244-1263.
+- **Two-handed sword (#145)**: stats vs objects.h:273-285, 3/2 Str bonus formula at uhitm.c:1467-1468 (technically `(3*|dbon|+1)/2` ceiling, but "1.5x" reads correctly for beginner voice).
+- **Quantum mechanics (#146)**: both rows speed 12 (not 24 as prompt hint had suggested); AD_TLPT vs AD_POLY correctly distinguished.
+- **Feelings and Sounds (#147)**: vault/fountain/oracle/shop sounds, bugle reveille, sad-feeling (a feeling, not gated by Deaf) all verified vs sounds.c.
+- **The Oracle (#148)**: DL 5-9, 4 fountains, minor=50, major=500+50×XL, minor consult always rumors.tru, Sokoban entrance upstairs, 8 centaur statues.
+
+### Pass-2 queue
+148/183 done.
+
+---

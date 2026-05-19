@@ -969,7 +969,7 @@ each level honestly if you can.
 For complete solutions to all eight level variants, see
 [Sokoban Solutions](#sokoban-solutions) in the appendices.
 
-<!-- audit 2026-05-18 #164: level range DL 5-9 verified vs dungeon.lua:60-66 + dungeon.c:405-409. Corrected fountain count (4, not 1) per oracle.lua:19-22. Corrected minor-consultation framing: rumors.c:147-156 always passes truth=1 to getrumor, so minor consultations always pull from rumors.tru (true tips), not the false-rumor pool. Major consultation cost: 500 + 50*ulevel (rumors.c:699). See companion-audit.md. -->
+<!-- audit 2026-05-18 #164 (re-audit 2026-05-19 v2 #148): level range DL 5-9 verified vs dungeon.lua:60-66 + dungeon.c:405-409. Corrected fountain count (4, not 1) per oracle.lua:19-22. Corrected minor-consultation framing: rumors.c:147-156 always passes truth=1 to getrumor, so minor consultations always pull from rumors.tru (true tips), not the false-rumor pool. Major consultation cost: 500 + 50*ulevel (rumors.c:699). v2 re-verified all costs and content sources; Sokoban entrance upstairs from Oracle (dungeon.lua:20-25); 8 centaur statues flank her (oracle.lua:9-16). 0 new corrections. See companion-audit.md. -->
 #### The Oracle
 
 Somewhere in the mid-levels of the Dungeons of Doom (around levels
@@ -1588,7 +1588,7 @@ athame.
 ---
 
 ### Feelings and Sounds
-<!-- audit 2026-05-18 #140: 5 corrections. (1) "Counting gold coins" message specifically means a vault WITH gold; an empty vault gives "someone searching" (sounds.c:253-262). (2) "Wow! This makes you feel great!" is the blessed-tier restore ability OR blessed magic fountain; the spoiler attributed it generically to restore-ability (potion.c:658-661, fountain.c:257). (3) "Move very quietly" doesn't include elven boots — boots produce "walk very quietly" (do_wear.c:123-129). (4) Lycanthropy cure is QUAFFING holy water, not dipping (potion.c:728-737 set_ulycn in the blessed-water branch). (5) "Seem faster" from quantum mechanic corpse only fires if you don't already have intrinsic speed; otherwise you "seem slower" instead (eat.c:1227-1235). Also added the global suppressor: Deaf/!flags.acoustics/u.uswallow/Underwater silences all dosounds() messages (sounds.c:208-209). -->
+<!-- audit 2026-05-18 #140 (re-audit 2026-05-19 v2 #147): 5 corrections. (1) "Counting gold coins" message specifically means a vault WITH gold; an empty vault gives "someone searching" (sounds.c:253-262). (2) "Wow! This makes you feel great!" is the blessed-tier restore ability OR blessed magic fountain; the spoiler attributed it generically to restore-ability (potion.c:658-661, fountain.c:257). (3) "Move very quietly" doesn't include elven boots — boots produce "walk very quietly" (do_wear.c:123-129). (4) Lycanthropy cure is QUAFFING holy water, not dipping (potion.c:728-737 set_ulycn in the blessed-water branch). (5) "Seem faster" from quantum mechanic corpse only fires if you don't already have intrinsic speed; otherwise you "seem slower" instead (eat.c:1227-1235). Also added the global suppressor: Deaf/!flags.acoustics/u.uswallow/Underwater silences all dosounds() messages (sounds.c:208-209). v2 re-verified: vault sounds, fountain "bubbling water" / "water falling on coins", oracle "strange wind", shop "cursing shoplifters", bugle reveille (muse.c:844-845), sad-feeling (mon.c:3101) NOT gated by Deaf (it's a feeling not a sound). 0 new corrections. See companion-audit.md. -->
 
 Much of the most important information in NetHack comes to you as
 cryptic feelings and sounds. They sound like atmosphere, but most
@@ -2403,7 +2403,7 @@ name: you get the same effect as wearing a cloak of displacement,
 not the ability to swap places with attackers.
 
 #### The Genetic Engineer
-<!-- audit 2026-05-17 #12: 14 claims verified, 1 corrected (hit message wording was the corpse string); added magic resistance to defenses. See companion-audit.md. -->
+<!-- audit 2026-05-17 #12 (re-audit 2026-05-19 v2 #144): 14 claims verified, 1 corrected (hit message wording was the corpse string); added magic resistance to defenses. v2 re-verified: AD_POLY claw at mhitm.c:1135 + polyself(POLY_NOFLAGS) at mhitm.c:1136; Antimagic blocks polymorph at mhitm.c:1128-1129; Unchanging blocks at mhitm.c:1130-1131; corpse polyself fall-through at eat.c:1244-1263; tin+poly-control combo at eat.c:1253. 0 new corrections. See companion-audit.md. -->
 
 The **genetic engineer** (`Q`, green) shares its symbol class
 with the quantum mechanic but plays differently: where a quantum
@@ -7376,7 +7376,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 :::
 
 #### Two-handed sword
-<!-- audit 2026-05-18 #127: clean stats vs objects.h:273-285. Added the 5.0 3/2 Str damage bonus for bimanual weapons (uhitm.c:1467-1468, gated on bimanual(uwep) + HMON_MELEE) which the section had previously omitted; bonus also applies to battle-axe, dwarvish mattock, bardiche. Confirmed Tsurugi is the artifact form (artilist.h:285-289), not Vorpal Blade (which was a corrected misattribution in earlier audit #78). -->
+<!-- audit 2026-05-18 #127 (re-audit 2026-05-19 v2 #145): clean stats vs objects.h:273-285. Added the 5.0 3/2 Str damage bonus for bimanual weapons (uhitm.c:1467-1468, gated on bimanual(uwep) + HMON_MELEE) which the section had previously omitted; bonus also applies to battle-axe, dwarvish mattock, bardiche. Confirmed Tsurugi is the artifact form (artilist.h:285-289), not Vorpal Blade (which was a corrected misattribution in earlier audit #78). v2 re-verified: both rows match objects.h; the 3/2 bonus formula at uhitm.c:1467 is technically `(3*|dbon|+1)/2` (ceiling), but "multiplied by 1.5" reads correctly for beginner voice. Vorpal Blade is LONG_SWORD per artilist.h:191 (correctly not claimed here). 0 new corrections. See companion-audit.md. -->
 
 Two-handed weapons get a **3/2 Strength damage bonus** in 5.0 —
 your STR damage contribution is multiplied by 1.5 when wielding a
@@ -8763,7 +8763,7 @@ All puddings and oozes are amorphous, mindless, cold-resistant, poison-resistant
 :::
 
 #### Quantum mechanics `Q`
-<!-- audit 2026-05-17 #69: stats verified vs monsters.h:2127, 2136. Quantum mechanic = AD_TLPT (teleports you), genetic engineer = AD_POLY (polymorphs you, new in 5.0 per fixes5-0-0.txt:2696). Corrected "All quantum mechanics teleport" — only the quantum mechanic does; genetic engineer polymorphs. Both have poisonous corpses (M1_POIS). Both self-teleport (M1_TPORT). Added corpse-effect notes (quantum corpse toggles Fast per eat.c:1227; genetic engineer corpse triggers polyself per eat.c:1247). See companion-audit.md. -->
+<!-- audit 2026-05-17 #69 (re-audit 2026-05-19 v2 #146): stats verified vs monsters.h:2127, 2136. Quantum mechanic = AD_TLPT (teleports you), genetic engineer = AD_POLY (polymorphs you, new in 5.0 per fixes5-0-0.txt:2696). Corrected "All quantum mechanics teleport" — only the quantum mechanic does; genetic engineer polymorphs. Both have poisonous corpses (M1_POIS). Both self-teleport (M1_TPORT). Added corpse-effect notes (quantum corpse toggles Fast per eat.c:1227; genetic engineer corpse triggers polyself per eat.c:1247). v2 re-verified: both rows speed 12 (not 24 as prompt hint suggested); attack damages AD_TLPT vs AD_POLY confirmed. 0 new corrections. See companion-audit.md. -->
 
 The `Q` class is two creatures, both with random claw effects. The
 **quantum mechanic** teleports you on a hit: the annoyance is the

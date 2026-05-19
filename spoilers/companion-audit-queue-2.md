@@ -152,11 +152,11 @@ Process in numbered order. Mark each `[x]` as it's audited.
 - [x] **#141**  L 8465  (  37 lines)     ↳ Bestiary Tables → Dragons `D`
 - [x] **#142**  L 3444  ( 106 lines)   📖 The Scroll Rack
 - [x] **#143**  L 7537  (  13 lines)     ↳ Weapons Tables → Crossbow
-- [ ] **#144**  L 2388  (  31 lines)     ↳ Dangerous Encounters → The Genetic Engineer
-- [ ] **#145**  L 7321  (  20 lines)     ↳ Weapons Tables → Two-handed sword
-- [ ] **#146**  L 8708  (  23 lines)     ↳ Bestiary Tables → Quantum mechanics `Q`
-- [ ] **#147**  L 1574  (  43 lines)   📖 Feelings and Sounds
-- [ ] **#148**  L  965  (  19 lines)     ↳ Branches and Landmarks → The Oracle
+- [x] **#144**  L 2388  (  31 lines)     ↳ Dangerous Encounters → The Genetic Engineer
+- [x] **#145**  L 7321  (  20 lines)     ↳ Weapons Tables → Two-handed sword
+- [x] **#146**  L 8708  (  23 lines)     ↳ Bestiary Tables → Quantum mechanics `Q`
+- [x] **#147**  L 1574  (  43 lines)   📖 Feelings and Sounds
+- [x] **#148**  L  965  (  19 lines)     ↳ Branches and Landmarks → The Oracle
 - [ ] **#149**  L 8020  (  19 lines)     ↳ Bestiary Tables → Eyes and spheres `e`
 - [ ] **#150**  L 8384  (  17 lines)     ↳ Bestiary Tables → Lights `y`
 - [ ] **#151**  L 6128  (  53 lines)     ↳ Sokoban Solutions → Level 1, Version A
