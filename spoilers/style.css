@@ -103,6 +103,22 @@ h5 {
   white-space: nowrap;
 }
 
+.download-box {
+  border: 1px solid var(--color-rule, #d0d0d0);
+  border-radius: 6px;
+  padding: 0.7em 1em;
+  margin: 1.5em 0;
+  background: #fafaf6;
+  font-size: 0.95em;
+  line-height: 1.45;
+}
+
+@media print {
+  .download-box {
+    display: none;
+  }
+}
+
 /* --- Paragraphs --------------------------------------------- */
 
 p {

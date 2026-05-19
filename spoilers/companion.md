@@ -60,6 +60,13 @@ thinking, or you're tired of starving on dungeon level four thinking
 the gods had abandoned you, read on. We'll do our best to keep
 you alive.
 
+<aside class="download-box">
+<strong>Prefer to print or read offline?</strong>
+Download the <a href="companion-latex.pdf">paperback-format PDF</a>
+(288 pages, 5×8 trim) or the <a href="cover/cover.pdf">print-ready
+wraparound cover</a>.
+</aside>
+
 ---
 
 ## Table of Contents
@@ -2217,7 +2224,7 @@ your stats before you accept.
 | 6–15 HP damage                    | HP restored to max           |
 
 The demon then charges 500+ zorkmids (high Cha can refuse; peaceful
-demons charge ⅕). Being asleep or otherwise unresponsive defers
+demons charge 1/5). Being asleep or otherwise unresponsive defers
 the attempt entirely.
 
 **Strategic note.** At high Cha+Int the encounter is net-positive,

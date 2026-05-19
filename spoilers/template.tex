@@ -15,6 +15,15 @@
   footskip=0.3in
 ]{geometry}
 
+% --- Symbol fonts and unicode glyph fallbacks ---
+% EB Garamond has no ★ (U+2605) or ⅕ (U+2155); remap them to LaTeX
+% equivalents so xelatex doesn't print .notdef boxes.
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{newunicodechar}
+\newunicodechar{★}{\ensuremath{\bigstar}}
+\newunicodechar{⅕}{\ensuremath{\tfrac{1}{5}}}
+
 % --- Fonts via fontspec (XeLaTeX) ---
 \usepackage{fontspec}
 \setmainfont{EB Garamond}[

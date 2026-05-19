@@ -1,5 +1,5 @@
 # Built outputs (regenerable from sources)
-spoilers/companion-latex.pdf
+# companion-latex.pdf is tracked so it can be downloaded from GitHub Pages.
 spoilers/audit-diff.html
 
 # Cover build artifacts (intermediates from build-cover.py)
