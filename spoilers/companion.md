@@ -11164,6 +11164,9 @@ point.) The most significant:
 
 A few 5.0 changes have tactical implications worth pulling out:
 
+**Gold dragon scale mail is a light source.** Its innate 2-square
+radius lets you skip the lamp and free that inventory slot.
+
 **A blessed potion of polymorph is now a self-contained controlled
 polymorph.** No ring of polymorph control required: blessing the
 potion grants control for that one transformation. Single-use
@@ -11177,10 +11180,6 @@ transformation, one blessed potion does the same job.
 can `#monster` to switch between vampire, bat, and fog cloud. Fog
 passes through doors, bat flies, vampire fights — plan routes by
 form rather than direction.
-
-**Gold dragon scale mail retires your light source.** The mail's
-innate 2-square light radius means you can drop the lamp and free
-that slot.
 
 #### What to Watch Out For
 
