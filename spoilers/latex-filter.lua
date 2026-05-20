@@ -34,19 +34,35 @@ end
 -- the bestiary header shape and assign explicit fractional widths.
 local function maybe_set_bestiary_widths(blk)
   if blk.tag ~= "Table" then return end
-  if #blk.colspecs ~= 8 then return end
-  -- Pull the header cells' text to detect the bestiary shape.
+  -- Pull the header cells' text to detect the table shape.
   local headers = {}
   if blk.head and blk.head.rows and blk.head.rows[1] then
     for _, cell in ipairs(blk.head.rows[1].cells) do
       table.insert(headers, pandoc.utils.stringify(cell))
     end
   end
-  if headers[1] == "Name" and headers[2] == "Color"
+  -- 8-column bestiary tables (Name | Color | Lvl | Spd | AC | MR% |
+  -- Attacks | Notes): pandoc auto-sizing makes Name and Color too
+  -- cramped and Attacks/Notes too wide.
+  if #blk.colspecs == 8
+      and headers[1] == "Name" and headers[2] == "Color"
       and headers[3] == "Lvl" and headers[7] == "Attacks"
       and headers[8] == "Notes" then
     local widths = {0.18, 0.10, 0.04, 0.04, 0.04, 0.05, 0.25, 0.30}
     for i = 1, 8 do
+      blk.colspecs[i][2] = widths[i]
+    end
+  end
+  -- 6-column Quest artifacts table (Role | Artifact | Form |
+  -- Wear/wield | Carry | #invoke): Form needs room for
+  -- "quarterstaff"; Wear/wield carries the longest text.
+  if #blk.colspecs == 6
+      and headers[1] == "Role" and headers[2] == "Artifact"
+      and headers[3] == "Form" and headers[4] == "Wear/wield" then
+    -- Form needs to fit "quarterstaff" (12 chars) without overflow;
+    -- Wear/wield carries the longest free-form text.
+    local widths = {0.05, 0.22, 0.14, 0.24, 0.18, 0.17}
+    for i = 1, 6 do
       blk.colspecs[i][2] = widths[i]
     end
   end
@@ -297,10 +313,14 @@ function Pandoc(doc)
     end
 
     -- Convert horizontal rules to decorative diamond ornament (centered)
-    -- Flow naturally between sections; let LaTeX page-break as it likes.
+    -- Stretchable, non-discardable glue on both sides: when the ornament
+    -- flows inline mid-page, the glue compresses to a 1em gap; when the
+    -- ornament lands alone on a page (because the previous content
+    -- filled the page first), both sides stretch equally to center it
+    -- vertically.
     if block.tag == "HorizontalRule" then
       table.insert(new_blocks, pandoc.RawBlock("latex",
-        "\\vspace{1em}\n" ..
+        "\\par\\vspace*{1em plus 1fill}\n" ..
         "\\begin{center}\n" ..
         "{\\color[gray]{0.45}" ..
         "\\rule[0.35ex]{3em}{0.4pt}" ..
@@ -309,7 +329,7 @@ function Pandoc(doc)
         "\\hspace{0.4em}" ..
         "\\rule[0.35ex]{3em}{0.4pt}}\n" ..
         "\\end{center}\n" ..
-        "\\vspace{1em}"))
+        "\\par\\vspace*{1em plus 1fill}"))
       i = i + 1
       goto continue
     end

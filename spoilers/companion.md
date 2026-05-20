@@ -1990,7 +1990,7 @@ AC / attack details on every monster, see the
 
 #### Common Early Encounters
 
-| Symbol | Class                  | Notes                                                                      |
+| Sym    | Class                  | Notes                                                                      |
 | ------ | ---------------------- | -------------------------------------------------------------------------- |
 | `a`    | Ants      | **Soldier ants are the famous early killer**: speed 18, two attacks per turn (bite + strength-draining sting), and they travel in packs. A wandering soldier-ant group on Dlvl 4 can end a careless run. Killer bees, giant ants, fire ants are all the same shape of problem. |
 | `b`    | Blobs     | Acidic or gelatinous. Acid blobs have no active attack — they only splash 1d8 acid back when *you* hit *them*, and the splash can corrode your weapon. Kill at range, or walk past. |
@@ -2011,7 +2011,7 @@ AC / attack details on every monster, see the
 
 #### Mid-Dungeon Threats
 
-| Symbol | Class             | Notes                                                                                                |
+| Sym    | Class             | Notes                                                                                                |
 | ------ | ----------------- | ---------------------------------------------------------------------------------------------------- |
 | `A`    | Angels            | Powerful, usually aligned. Don't fight your own.                                                     |
 | `C`    | Centaurs          | Fast (speed 18-20). Half spawn with a bow or crossbow, but they'll still close into melee for weapon and kick attacks. Mountain centaurs hit hardest: 1d10 weapon plus *two* 1d6 kicks per turn. |
@@ -2049,7 +2049,7 @@ AC / attack details on every monster, see the
 
 #### Things You Don't Want to Meet
 
-| Symbol | Class            | Notes                                                                                                    |
+| Sym    | Class            | Notes                                                                                                    |
 | ------ | ---------------- | -------------------------------------------------------------------------------------------------------- |
 | `c`    | Cockatrices      | **Touch = instant petrification.** Never hit one barehanded. Wield their corpse with gloves as a weapon. |
 | `D`    | Dragons          | Each color has its own breath weapon, resistance, and scale mail property. See note below.               |
@@ -2060,13 +2060,13 @@ AC / attack details on every monster, see the
 | `;`    | Sea monsters     | Drowning is an instadeath. Don't fight in water without a plan.                                          |
 | `&`    | Demons           | Major demons (Orcus, Demogorgon, Asmodeus) are boss-level threats.                                       |
 | `@`    | Humans (hostile) | Includes the Wizard of Yendor, who is the most persistent nuisance in the game.                          |
-| `Q`    | Quantum mechanics / genetic engineers | Quantum mechanics teleport their target on a hit; genetic engineers (new in 5.0) polymorph their target. The `Q` class is small but every one of them is a surprise. |
+| `Q`    | Quantum mechanics / genetic engineers | Quantum mechanics teleport their target on a hit; genetic engineers (new in 5.0) polymorph their target. The `Q` class is rare but every one of them is a surprise. |
 
 #### Special Symbols
 
 A few map glyphs aren't monsters in the conventional sense, but you'll see them and need to know what they mean.
 
-| Symbol | What it is               | Notes                                                                                                |
+| Sym    | What it is               | Notes                                                                                                |
 | ------ | ------------------------ | ---------------------------------------------------------------------------------------------------- |
 | `I`    | Invisible monster marker | The game remembers the last spot you sensed something you couldn't see. The `I` stays there until you bump it or step on the square; the monster has usually moved. |
 | `~`    | Long worm tail segment   | Part of a long worm's body. Hitting the tail damages the worm and shortens the chain; hitting the head (the `w`) is full melee. |
@@ -5256,21 +5256,21 @@ again.
 
 ::: dense-table
 
-| Role       | Artifact                                     | Form         | Wear/wield                  | Carry                  | `#invoke`        |
-|-----------|-------------------------------------------------------------|--------------|--------------------------|------------------------|-----------------|
-| Archeologist| The Orb of Detection                | crystal ball | —                              | MR, ESP, ½ spell dmg   | invisibility      |
-| Barbarian   | The Heart of Ahriman                | luckstone    | ×2 dmg as a projectile         | stealth, +luck         | levitation        |
-| Caveman     | The Sceptre of Might                | mace         | +d5 hit; ×2 vs non-lawful      | magic resistance       | conflict          |
-| Healer      | The Staff of Aesculapius            | quarterstaff | drain-life on hit              | drain res., regen      | full heal + cure  |
-| Knight      | The Magic Mirror of Merlin          | mirror       | (speaks to you)                | MR, ESP                | —                 |
-| Monk        | The Eyes of the Overworld           | lenses       | astral vision, magic res. (when worn) | —              | enlightenment     |
-| Priest      | The Mitre of Holiness               | helm         | +1 prot. (brilliance base)     | fire res.              | energy boost      |
-| Ranger      | The Longbow of Diana                | bow          | +d5 hit; reflection            | ESP                    | conjure arrows    |
-| Rogue       | The Master Key of Thievery          | skeleton key | —                              | warn, t-ctrl, ½ phys   | guaranteed untrap |
-| Samurai     | The Tsurugi of Muramasa             | tsurugi      | +d8 phys; chance to behead     | +luck, +1 prot.        | —                 |
-| Tourist     | Platinum Yendorian Express Card     | credit card  | —                              | MR, ESP, ½ spell dmg   | charge an item    |
-| Valkyrie    | The Orb of Fate                     | crystal ball | —                              | +luck, warn, ½ all dmg | levitate/teleport |
-| Wizard      | The Eye of the Aethiopica           | amulet       | —                              | MR, ½ spell, +energy   | create portal     |
+| Role | Artifact                            | Form           | Wear/wield                          | Carry                    | `#invoke`           |
+|------|------------------------------------------|----------------|-----------------------------------|--------------------------|---------------------|
+| Arc  | The Orb of Detection                    | crystal ball | —                                     | MR, ESP, ½ spell dmg     | invisibility        |
+| Bar  | The Heart of Ahriman                    | luckstone    | ×2 dmg as a projectile                | stealth, +luck           | levitation          |
+| Cav  | The Sceptre of Might                    | mace         | +d5 hit; ×2 vs non-lawful             | magic resistance         | conflict            |
+| Hea  | The Staff of Aesculapius                | quarterstaff | drain-life on hit                     | drain res., regen        | full heal + cure    |
+| Kni  | The Magic Mirror of Merlin              | mirror       | (speaks to you)                       | MR, ESP                  | —                   |
+| Mon  | The Eyes of the Overworld               | lenses       | astral vision, magic res. (when worn) | —                        | enlightenment       |
+| Pri  | The Mitre of Holiness                   | helm         | +1 prot. (brilliance base)            | fire res.                | energy boost        |
+| Ran  | The Longbow of Diana                    | bow          | +d5 hit; reflection                   | ESP                      | conjure arrows      |
+| Rog  | The Master Key of Thievery              | skeleton key | —                                     | warn, t-ctrl, ½ phys     | guaranteed untrap   |
+| Sam  | The Tsurugi of Muramasa                 | tsurugi      | +d8 phys; chance to behead            | +luck, +1 prot.          | —                   |
+| Tou  | Platinum Yendorian Express Card         | credit card  | —                                     | MR, ESP, ½ spell dmg     | charge an item      |
+| Val  | The Orb of Fate                         | crystal ball | —                                     | +luck, warn, ½ all dmg   | levitate / teleport |
+| Wiz  | The Eye of the Aethiopica               | amulet       | —                                     | MR, ½ spell, +energy     | create portal       |
 
 :::
 
@@ -5343,8 +5343,8 @@ weapon's reputation. One of the strongest artifacts in the game,
 the Samurai's reward for a hard quest.
 
 **The Platinum Yendorian Express Card** (Tourist): the Tourist's
-get-out-of-jail card. Carry grants ESP, magic resistance, and half
-spell damage; `#invoke` charges an item (a wand, ring, or marker),
+get-out-of-jail card. Carrying it grants ESP, magic resistance, and
+half spell damage; `#invoke` charges an item (a wand, ring, or marker),
 which in the Tourist's hands is roughly "a free wish per ~1000
 turns." Pairs especially well with marker-stockpiling strategies.
 
@@ -8567,7 +8567,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | dagger | 1d4 / 1d3 | 10 | 4 | +2 | iron | Stackable; Expert-skill Rogues can multishot up to four in a single throw. |
 | elven dagger | 1d5 / 1d3 | 10 | 4 | +2 | wood | Stackable. Sting is the artifact form. |
 | orcish dagger | 1d3 / 1d3 | 10 | 4 | +2 | iron | Stackable. |
@@ -8588,7 +8588,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | scalpel | 1d3 / 1d3 | 5 | 6 | +2 | metal | The Healer's starter. |
 | knife | 1d3 / 1d2 | 5 | 4 | — | iron |  |
 | stiletto | 1d3 / 1d2 | 5 | 4 | — | iron |  |
@@ -8609,7 +8609,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | short sword | 1d6 / 1d8 | 30 | 10 | — | iron | The Rogue's starter; Samurai's *wakizashi* is just a short sword by another name. |
 | elven short sword | 1d8 / 1d8 | 30 | 10 | — | wood |  |
 | orcish short sword | 1d5 / 1d8 | 30 | 10 | — | iron |  |
@@ -8629,7 +8629,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | scimitar | 1d8 / 1d8 | 40 | 15 | — | iron |  |
 | silver saber | 1d8 / 1d8 | 40 | 75 | — | silver | Silver does bonus damage to demons/weres/vampires/imps. Artifact forms: **Grayswandir** and **Werebane** (see [Artifacts](#artifacts)). |
 
@@ -8646,7 +8646,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | broadsword | 1d4+1d4 / 1d6+1 | 70 | 10 | — | iron |  |
 | elven broadsword | 1d6+1d4 / 1d6+1 | 70 | 10 | — | wood |  |
 | runesword | 1d4+1d4 / 1d6+1 | 40 | 300 | — | iron | Stormbringer is the chaotic artifact form. |
@@ -8669,7 +8669,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | long sword | 1d8 / 1d12 | 40 | 15 | — | iron | At XL 5+, dipping in a fountain rolls 1-in-30. Knights get 1-in-6. On a hit, Lawfuls get **Excalibur**. Others get the sword cursed. Artifact forms: Excalibur, Frost Brand, Fire Brand, Giantslayer, Vorpal Blade, Sunsword. |
 | katana | 1d10 / 1d12 | 40 | 80 | +1 | iron | +1 to-hit baked in. Snickersnee is the artifact form. |
 
@@ -8695,7 +8695,7 @@ other bimanual weapon.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | two-handed sword | 1d12 / 1d6+2d6 | 150 | 50 | — | iron | Two-handed (no shield, no off-hand weapon). No dedicated artifact form. |
 | tsurugi | 1d16 / 1d8+2d6 | 60 | 500 | +2 | metal | Two-handed. The Tsurugi of Muramasa is the artifact form. |
 
@@ -8712,7 +8712,7 @@ other bimanual weapon.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | axe | 1d6 / 1d4 | 60 | 8 | — | iron |  |
 | battle-axe | 1d8+1d4 / 1d6+2d4 | 120 | 40 | — | iron | Two-handed (gets the 5.0 3/2 Str damage bonus). +1d4 small, +2d4 large. The Barbarian quest artifact **Cleaver** is a battle-axe. |
 
@@ -8731,7 +8731,7 @@ other bimanual weapon.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | pick-axe | 1d6 / 1d3 | 100 | 50 | — | iron | Weapon-tool. Apply to dig through walls or down through floors (creates pit, then hole). Same `pick-axe` skill as the mattock. |
 | dwarvish mattock | 1d12 / 1d8+2d6 | 120 | 50 | −1 | iron | Two-handed (3/2 Str damage bonus). Digs through walls like a pick-axe. Slight to-hit penalty (−1). |
 
@@ -8749,7 +8749,7 @@ other bimanual weapon.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | club | 1d6 / 1d3 | 30 | 3 | — | wood | Caveman starter. |
 | aklys | 1d6 / 1d3 | 15 | 4 | — | iron | Returns when thrown if wielded as your primary weapon (it's tethered); occasional misfire. |
 
@@ -8769,7 +8769,7 @@ other bimanual weapon.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | mace | 1d6+1 / 1d6 | 30 | 5 | — | iron | The Priest's guaranteed first sacrifice gift, Demonbane: a silver mace with +1d5 to-hit and double damage versus demons, plus a banish invoke. |
 | silver mace | 1d6+1 / 1d6 | 36 | 60 | — | silver | +1d20 versus demons, weres, vampires, shades, and most imps. |
 
@@ -8787,7 +8787,7 @@ other bimanual weapon.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | morning star | 1d4+1d4 / 1d6+1 | 120 | 10 | — | iron | +1d4 small, +1 large — punches above its weight for a one-hander. |
 
 :::
@@ -8804,7 +8804,7 @@ other bimanual weapon.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | flail | 1d6+1 / 1d4+1d4 | 15 | 4 | — | iron | +1 small, +1d4 large; one-handed. |
 | grappling hook | 1d2 / 1d6 | 30 | 50 | — | iron | Tool, not a primary weapon, but trains P_FLAIL. `#apply` to hook and pull a target toward you. |
 
@@ -8821,7 +8821,7 @@ other bimanual weapon.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | war hammer | 1d4+1 / 1d4 | 50 | 5 | — | iron | Mjollnir is the artifact form (Valkyrie sacrifice gift; its alignment will match the player's). |
 
 :::
@@ -8839,7 +8839,7 @@ other bimanual weapon.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | quarterstaff | 1d6 / 1d6 | 40 | 5 | — | wood | Two-handed but light; the Wizard's starting weapon. |
 
 :::
@@ -8860,7 +8860,7 @@ All polearms are two-handed. To strike at range, `#apply` the weapon (not wield-
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | partisan | 1d6 / 1d6+1 | 80 | 10 | — | iron | Reach. |
 | ranseur | 1d4+1d4 / 1d4+1d4 | 50 | 6 | — | iron | +1d4 small, +1d4 large. |
 | spetum | 1d6+1 / 1d6+1d6 | 50 | 5 | — | iron | +1 small, +1d6 large. |
@@ -8902,7 +8902,7 @@ kebab bonus.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | spear | 1d6 / 1d8 | 30 | 3 | — | iron | Throwable. Valkyrie's starting weapon. |
 | elven spear | 1d7 / 1d8 | 30 | 3 | — | wood |  |
 | orcish spear | 1d5 / 1d8 | 30 | 3 | — | iron |  |
@@ -8924,7 +8924,7 @@ kebab bonus.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | trident | 1d6+1 / 1d4+2d4 | 25 | 5 | — | iron | One-handed. **+4 to-hit vs swimmers in water, +2 vs eels and snakes** — the trident's signature bonus. Outside water it's an ordinary side-arm. |
 
 :::
@@ -8941,7 +8941,7 @@ kebab bonus.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | lance | 1d6 / 1d8 | 180 | 10 | — | iron | One-handed, P_LANCE skill. Mounted only: chance to joust for +2d10 primary (+2d2 off-hand) extra damage; a critical can shatter the lance. No bonus on foot. |
 
 :::
@@ -8960,7 +8960,7 @@ kebab bonus.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | rubber hose | 1d4 / 1d3 | 20 | 3 | — | plastic | Joke weapon; never spawns randomly. |
 | bullwhip | 1d2 / 1 | 20 | 4 | — | leather | Archeologist's starter. Apply to disarm an adjacent monster (only when the target is wielding a weapon), or to yank yourself out of a pit (anchors on a nearby boulder, furniture, or big monster). |
 
@@ -8978,7 +8978,7 @@ kebab bonus.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | arrow | 1d6 / 1d6 | 1 | 2 | — | iron |  |
 | elven arrow | 1d7 / 1d6 | 1 | 2 | — | wood |  |
 | orcish arrow | 1d5 / 1d6 | 1 | 2 | — | iron |  |
@@ -9004,7 +9004,7 @@ kebab bonus.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | crossbow bolt | 1d4 / 1d6 | 1 | 2 | — | iron | Stackable. |
 | crossbow | — | 50 | 40 | — | wood | Bolts pierce. Multishot kicks in at **Str 18** (Str 16 for gnomes, who also get a baseline +1 multishot); below that, one bolt per turn. Rogues and Rangers reach Expert, Knights Skilled. |
 
@@ -9022,7 +9022,7 @@ kebab bonus.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | sling | — | 3 | 20 | — | leather | Launches rocks, flint stones, and gems. Caveman starting weapon. |
 
 :::
@@ -9038,7 +9038,7 @@ kebab bonus.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | dart | 1d3 / 1d2 | 1 | 2 | — | iron | Poisonable. Tourist starts with a stack of ~21–40 at +2. |
 
 :::
@@ -9054,7 +9054,7 @@ kebab bonus.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | shuriken | 1d8 / 1d6 | 1 | 5 | +2 | iron |  |
 
 :::
@@ -9072,7 +9072,7 @@ kebab bonus.
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
-|--------------------|--------------|----|------|-----|----------|--------------------------------------------------------------------|
+|--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | boomerang | 1d9 / 1d9 | 5 | 20 | — | wood | Curves back on a clear path; stops on a monster, wall, door, or sink. Low Dex or Fumbling means you catch it in the face. |
 
 :::
