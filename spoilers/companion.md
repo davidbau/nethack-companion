@@ -274,29 +274,33 @@ get free book-ID just by casting (see
 Your race affects your starting attributes, maximum attributes, and
 which intrinsics you begin with or can gain.
 
-**Human.** You know what a human is. No infravision, no poison
-resistance, no particular talents. On the bright side, every role is
-open to you, and nobody in the dungeon singles you out for being one.
-Perfectly serviceable.
+| Race  | Str    | Int | Wis | Dex | Con | Cha | Intrinsics                     |
+|-------|--------|-----|-----|-----|-----|-----|--------------------------------|
+| Human | 18/100 | 18  | 18  | 18  | 18  | 18  | —                              |
+| Elf   | 18     | 20  | 20  | 18  | 16  | 18  | Infravision; sleep res at XL 4 |
+| Dwarf | 18/100 | 16  | 16  | 20  | 20  | 16  | Infravision                    |
+| Gnome | 18/50  | 19  | 18  | 18  | 18  | 18  | Infravision                    |
+| Orc   | 18/50  | 16  | 16  | 18  | 18  | 16  | Infravision, poison res        |
 
-**Dwarf.** Dwarves are sturdy and strong, with infravision (they can
-see warm-blooded creatures in the dark). They're good fighters with
-high Strength, Dex, and Con caps. Available for: Archeologist, Cave
-Dweller, Valkyrie.
+**Human.** No infravision, no poison resistance, no special talents.
+On the bright side, every role is open to you and nobody in the
+dungeon singles you out for being one.
 
-**Elf.** Elves start with infravision and gain sleep resistance at
-XL 4. They're a bit more fragile than humans but have the highest
-Int and Wis caps (20). Elf Priests and Wizards even get a free
-musical instrument. Available for: Priest, Ranger, Wizard.
+**Dwarf.** Sturdy fighters with the best Dex and Con caps and matching
+human Strength. Available for: Archeologist, Cave Dweller, Valkyrie.
 
-**Gnome.** Gnomes get infravision and a slightly higher Int cap (19).
-They're small but resourceful. Available for: Archeologist, Cave
-Dweller, Healer, Ranger, Wizard.
+**Elf.** Infravision plus sleep resistance at XL 4. Fragile compared
+to humans but with the best Int and Wis caps. Elf Priests and
+Wizards get a free musical instrument. Available for: Priest,
+Ranger, Wizard.
 
-**Orc.** Orcs get infravision and poison resistance, which is
-genuinely useful. Stat caps run lower than human (Str 18/50, Cha 16,
-Wis 16). Humans, elves, and dwarves are race-hostile to orcs
-(including shopkeepers, priests, and watchmen); other orcs aren't
+**Gnome.** Small but resourceful; slightly higher Int cap than a
+human. Available for: Archeologist, Cave Dweller, Healer, Ranger,
+Wizard.
+
+**Orc.** Poison resistance from level 1 is genuinely useful. Lower
+stat caps overall, and humans, elves, and dwarves are race-hostile
+to orcs (shopkeepers, priests, watchmen included); other orcs aren't
 automatically peaceful either. Available for: Barbarian, Ranger,
 Rogue, Wizard.
 
