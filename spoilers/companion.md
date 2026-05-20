@@ -10934,8 +10934,9 @@ point.) The most significant:
 - **Wand of speed monster** no longer grants permanent speed when
   self-zapped; use potions of speed instead.
 - **Supply chests** now appear on the dungeon levels above the
-  Oracle (about a 2-in-3 chance per fillable room), containing
-  useful early-game items like healing potions and enchant scrolls.
+  Oracle (about a 2-in-3 chance per level, placed in one random
+  ordinary room), containing useful early-game items like healing
+  potions and enchant scrolls.
 - **Pets** can gain resistances from eating corpses, and dead pets
   can be revived by praying at a co-aligned altar while standing
   on their corpse.
