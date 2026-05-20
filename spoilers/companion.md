@@ -3294,14 +3294,14 @@ three candidates.
 Pick up an item and note the quoted price. With average Charisma
 (11-15), buy price equals base and sell is half base. Low Charisma
 pushes buy up (×2 at Cha ≤ 5); high Charisma pulls it down (×½ at
-Cha ≥ 19). Sell prices barely move with Charisma, but a **mark**
-appearance flips them: sell drops to a third of base and buy rises
-to 4/3. Three visible cues count as marks (and don't stack):
-wearing a **dunce cap**, playing a **Tourist** below XL 15, or
-wearing a **Hawaiian shirt visibly** (no body armor or cloak over
-it). The rest of this guide refers to them collectively as
-*Tourist*. You don't need to memorize the formulas; what matters
-is grouping by price tier.
+Cha ≥ 19). Sell prices don't change with Charisma, but if
+shopkeepers see you as a **mark**, then you can only sell at a
+third of base, and you'll have to pay 4/3 to buy. Three visible
+cues count you as a mark: wearing a **dunce cap**, playing a
+**Tourist** below XL 15, or wearing a **Hawaiian shirt visibly**
+(no body armor or cloak over it). The rest of this guide refers to
+them collectively as *Tourist*. You don't need to memorize the
+formulas; what matters is grouping by price tier.
 
 Two further wrinkles affect unidentified items. About a quarter of
 unID'd items carry an extra 4/3 buy surcharge, fixed per item, so a
