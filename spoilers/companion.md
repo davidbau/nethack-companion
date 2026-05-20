@@ -973,9 +973,7 @@ free:
 
 ### Branches and Landmarks
 
-The branch diagram we showed earlier gives the shape of the dungeon,
-but it doesn't tell you what to actually do when you arrive. Here's
-a more practical tour, in roughly the order you'll visit these places.
+A practical tour of the branches and landmarks, in roughly the order you'll visit them.
 
 #### The Gnomish Mines
 <!-- audit
@@ -1343,9 +1341,8 @@ entering her level:
 Your options, from safest to most desperate:
 
 - **Levitation** (ring, boots, potion, or spell). The easiest way
-  to cross, but **does not protect you from eel grabs** in adjacent
-  water (see [Drowning](#drowning) in [Dangerous Encounters](#dangerous-encounters)). Use it to traverse
-  fast, not as a defense.
+  to cross. Eels can still grab you from adjacent water (see
+  [Drowning](#drowning) in [Dangerous Encounters](#dangerous-encounters)).
 - **Water walking boots.** You walk on the surface. Eels can still
   grab you in adjacent water.
 - **Wand of cold.** Zap the water to freeze a path of ice. Ice
@@ -1371,9 +1368,8 @@ you. Critical rules:
   thrown weapons all work. Don't melee eels in the water.
 - Levitation and water walking do NOT protect against being grabbed
   by an eel in adjacent water. The drown check uses the *eel's*
-  tile, not yours, so even standing on dry land or hovering above
-  water doesn't help once the grab lands. Only oilskin/grease,
-  magical breathing, or killing the eel first are reliable.
+  tile, not yours. Only oilskin/grease, magical breathing, or
+  killing the eel first are reliable.
 
 #### The Castle
 <!-- audit
@@ -3341,8 +3337,7 @@ If a wand costs $500, you are having a very good day.
 ##### Amulet Prices
 
 All amulets have a base price of $150 except the cheap Amulet of
-Yendor imitations ($0). Price doesn't help here. You'll need to rely
-on other methods.
+Yendor imitations ($0). Price won't ID them; you'll need other methods.
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -4574,9 +4569,8 @@ than it looks.
 
 The `(` symbol covers the dungeon's most eclectic category: pickaxes,
 magic lamps, unicorn horns, musical instruments, crystal balls, and
-bags that eat other bags. If it doesn't fit neatly into any other
-class, it's a tool. Some of the most powerful items in the game hide
-in this grab-bag.
+bags that eat other bags. Some of the most powerful items in the game
+hide in this grab-bag.
 
 #### Containers
 
@@ -5100,10 +5094,10 @@ plus drain resistance just by carrying it. `#invoke` heals fully and
 cures nearly every bad status. Few artifacts change a role's late
 game as much as this one.
 
-**The Magic Mirror of Merlin** (Knight): doesn't fight (it's a
-mirror), but grants ESP and magic resistance, and occasionally
-*speaks*, dropping hints. Knights already have Excalibur for combat,
-so the Mirror is pure passive utility.
+**The Magic Mirror of Merlin** (Knight): grants ESP and magic
+resistance, and occasionally *speaks*, dropping hints. Knights
+already have Excalibur for combat, so the Mirror is pure passive
+utility.
 
 **The Eyes of the Overworld** (Monk): lenses that, when worn, give
 astral vision (see invisible, see through walls, spot secret doors)
@@ -5126,9 +5120,9 @@ plus reflection while wielded, ESP while carried. `#invoke` conjures
 free arrows out of thin air. Combined with the Ranger's ranged
 specialization this is the role's centerpiece.
 
-**The Master Key of Thievery** (Rogue): doesn't fight, but the carry
-package is enormous: warning, teleport control, half physical damage
-taken, and `#invoke` instantly untraps a nearby trap. The unlocking
+**The Master Key of Thievery** (Rogue): a carry package of warning,
+teleport control, half physical damage taken, and `#invoke` instantly
+untraps a nearby trap. The unlocking
 bonus depends on alignment: a Rogue gets it from any non-cursed
 Key; everyone else needs a **blessed** Key. With those preconditions
 met, `#untrap` also gains a perfect-detection bonus on doors and
@@ -5975,12 +5969,9 @@ is 35 Pw). A failed cast still spends half. Power regenerates over
 time, faster with higher Wisdom and Intelligence, faster still for
 Wizards or with a regeneration source.
 
-High-level spells cost serious power. You can't spam finger of
-death unless you have a colossal power pool, and even then you'll
-run dry faster than you'd like. Plan your casting, carry backup
-options (wands, scrolls) for when your mana runs low, and remember
-that a Wizard who can't cast spells is just a person in a bathrobe
-holding a stick.
+High-level spells cost serious power. Plan your casting and carry
+backup wands and scrolls: a Wizard out of Pw is just a person in a
+bathrobe holding a stick.
 
 ---
 
@@ -8121,9 +8112,8 @@ sale:
 **How credit gets used.** When you buy something, the shopkeeper
 applies your credit against the purchase price first ("the price is
 deducted from your credit"). Any remainder comes out of your gold.
-Credit is per-shop and per-shopkeeper: you can't carry it between
-shops, withdraw it back to gold, or hand it to a different
-shopkeeper.
+Credit is per-shop and per-shopkeeper, and cannot be withdrawn back
+to gold.
 
 **Is paying from credit better or worse than paying in gold?** The
 price itself is identical: credit is deducted from the *post-
@@ -8319,9 +8309,8 @@ A few rules of thumb:
   fire-sale them to a non-gem-buying shop for half price.
 - **Worthless glass never costs luck.** Glass thrown at a unicorn is
   either rejected ("not interested in your junk") or quietly
-  accepted with no effect. The luck risk on unicorn throws comes
-  from *real* gems thrown at the **wrong-alignment** unicorn, which
-  rolls a random −3 to +3.
+  accepted. The Luck risk only fires on *real* gems thrown to a
+  **wrong-alignment** unicorn (random −3 to +3).
 
 Read the table as a **selling guide**, not a discard guide: real
 gems near the top are worth making time to sell at a gem dealer
