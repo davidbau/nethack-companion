@@ -64,9 +64,9 @@ thinking, or you’re tired of starving on dungeon level four thinking the
 gods had abandoned you, read on. We’ll do our best to keep you
 alive.</p>
 <aside class="download-box">
-<strong>Prefer to print or read offline?</strong> Download the
-<a href="companion-latex.pdf">paperback-format PDF</a> (288 pages, 5×8
-trim) or the <a href="cover/cover.pdf">print-ready wraparound cover</a>.
+<strong>Prefer to read offline?</strong> Print the
+<a href="companion-latex.pdf">book-format PDF</a> (288pp, 5×8 trim,
+<a href="cover/cover.pdf">cover</a>).
 </aside>
 <hr />
 </section>
@@ -2416,9 +2416,8 @@ quietly”</em> instead.)</td>
 </tr>
 <tr>
 <td><em>“You feel feverish.”</em></td>
-<td>Lycanthropy infection from a were-monster. <strong>Quaff</strong>
-holy water, eat wolfsbane, or pray. (Dipping doesn’t cure it; only
-drinking does.)</td>
+<td>Lycanthropy infection from a were-monster. <code>q</code>uaff holy
+water, eat wolfsbane, or <code>#pray</code>.</td>
 </tr>
 <tr>
 <td><em>“You are slowing down.”</em></td>
@@ -2427,8 +2426,9 @@ acid, or pray.</td>
 </tr>
 <tr>
 <td><em>“You are turning into slime.”</em></td>
-<td>Green-slime contagion. Burn it off (fire scroll/spell/wand) or
-pray.</td>
+<td>Green-slime contagion. Burn it off (read a fire scroll, cast
+fireball on yourself, or self-zap a wand of fire), or
+<code>#pray</code>.</td>
 </tr>
 <tr>
 <td><em>“You feel deathly sick.”</em></td>
@@ -2454,6 +2454,7 @@ eucalyptus, or pray.</td>
 - there are no dragonhide weapons in 5.0; DRAGON_HIDE material is body-armor-only
 - silver and wooden weapons are the actual pudding non-splitters (uhitm.c:1616-1620 admits IRON|METAL only)
 - all other class-symbol mappings (defsym.h) and per-monster stats verified clean
+- rothe ('q'-class fame): three attacks per turn (claw + two bites), the only Q-class monster lacking M2_STRONG, and the canonical early-q threat per NetHackWiki (https://nethackwiki.com/wiki/Rothe, https://nethackwiki.com/wiki/Quadruped)
 -->
 <p>The Mazes are home to hundreds of monster species, organized into
 classes denoted by letters. Lowercase letters are generally smaller or
@@ -2482,11 +2483,10 @@ href="#bestiary-tables">Bestiary Tables</a> appendix.</p>
 <tr>
 <td><code>a</code></td>
 <td>Ants</td>
-<td><strong>Soldier ants are the famous early killer</strong>: speed 18,
-two attacks per turn (bite + strength-draining sting), and they travel
-in packs. A wandering soldier-ant group on Dlvl 4 can end a careless
-run. Killer bees, giant ants, fire ants are all the same shape of
-problem.</td>
+<td>Soldier ants are a frequent early-game killer: speed 18, two attacks
+per turn (bite + strength-draining sting), and they travel in packs. A
+wandering soldier-ant group on Dlvl 4 can end a careless run. Killer
+bees, giant ants, fire ants are all the same shape of problem.</td>
 </tr>
 <tr>
 <td><code>b</code></td>
@@ -2512,19 +2512,18 @@ bats are still in the bat class but their second bite drains Strength
 kitten via cat-class) <strong>and</strong> the most numerous early-game
 predators. <strong>Jackals</strong> are the single most common cause of
 death on the public server — they only bite for 1d2, but they spawn in
-packs and there are a <em>lot</em> of them on the upper levels.
-<strong>Foxes</strong> bite for 1d3 and are faster (speed 15) but spawn
-alone. Coyotes, dingos, wolves get progressively worse. Tame
-<code>d</code> (your pet, larger dogs you’ve fed up) help fight
-everything else.</td>
+packs and there are a <em>lot</em> of them on the upper levels. Foxes
+bite for 1d3 and are faster (speed 15) but spawn alone. Coyotes, dingos,
+wolves get progressively worse. Tame <code>d</code> (your pet, larger
+dogs you’ve fed up) help fight everything else.</td>
 </tr>
 <tr>
 <td><code>e</code></td>
 <td>Eyes</td>
 <td><strong>Floating eyes paralyze on melee hit.</strong> Never hit an
 <code>e</code> in melee. Use ranged attacks. Spheres
-(flaming/freezing/shocking) explode in a 3×3 area; kill them at range.
-Melee finishes them but you eat the blast.</td>
+(flaming/freezing/shocking) explode in a 3×3 area; also kill them at
+range.</td>
 </tr>
 <tr>
 <td><code>f</code></td>
@@ -6825,7 +6824,7 @@ useful all the way down.</p>
 <p><strong>Dragon scale mail</strong> is the endgame body armor of
 choice. In 5.0, most colors provide two extrinsic resistances (gray and
 silver provide only the named one). Gray dragon scale mail provides
-magic resistance and is the most popular wish target. Silver provides
+magic resistance and is a popular wish target. Silver provides
 reflection. Black provides disintegration resistance and drain
 resistance (one of two non-artifact sources, alongside the shield of
 drain resistance). Green provides poison resistance and sickness
@@ -14252,6 +14251,7 @@ with rank, even when the spell’s behavior doesn’t otherwise change.</p>
 - All 494 cells (27 weapons + 4 fighting styles + 7 spell schools × 13 roles) exact-match against u_init.c:257-572.
 - Scimitar omitted: no role has it in 5.0 (merged into saber per skills.h header note).
 - P_MARTIAL_ARTS appears only in Skill_Mon (P_GRAND_MASTER) and Skill_S (P_MASTER); Monks have P_BARE_HANDED_COMBAT restricted (they get martial arts instead).
+- Wizard and Monk are the only roles with all 7 spell schools listed in their def_skill table (Skill_W u_init.c:562-568 has all 7 P_*_SPELL entries; Skill_Mon u_init.c:380-386 has all 7). Other roles list a subset (Priest at u_init.c:408-410 has only 3, Healer at u_init.c:342 has only 1, etc.).
 -->
 <p>Every role has fixed maximum ranks for each weapon, fighting style,
 and spell school. Skills not listed for a role are
@@ -15498,6 +15498,7 @@ in the default game.</td>
 - Floating eye paralysis requires mutual sight (canseemon + mon->mcansee per uhitm.c:6022-6053), NOT "in daylight."
 - Floating eye corpse grants telepathy (eat.c:1071 TELEPAT case).
 - No close-eyes command exists in 5.0; to break sight you must be Blind (status or worn blindfold/towel).
+- Newbie-killer framing aligned with NetHackWiki: floating eye is "an infamous source of early game deaths" (https://nethackwiki.com/wiki/Floating_eye).
 -->
 <p>The floating eye’s passive paralysis gaze is the single most famous
 newbie killer in the game: never melee one without free action,
@@ -21499,6 +21500,8 @@ prompt.</li>
 <section id="what-to-lean-into" class="level4">
 <h4>What to Lean Into</h4>
 <p>A few 5.0 changes have tactical implications worth pulling out:</p>
+<p><strong>Gold dragon scale mail is a light source.</strong> Its innate
+2-square radius lets you skip the lamp and free that inventory slot.</p>
 <p><strong>A blessed potion of polymorph is now a self-contained
 controlled polymorph.</strong> No ring of polymorph control required:
 blessing the potion grants control for that one transformation.
@@ -21511,9 +21514,6 @@ transformation, one blessed potion does the same job.</p>
 polymorphed vampire can <code>#monster</code> to switch between vampire,
 bat, and fog cloud. Fog passes through doors, bat flies, vampire fights
 — plan routes by form rather than direction.</p>
-<p><strong>Gold dragon scale mail retires your light source.</strong>
-The mail’s innate 2-square light radius means you can drop the lamp and
-free that slot.</p>
 </section>
 <section id="what-to-watch-out-for" class="level4">
 <h4>What to Watch Out For</h4>

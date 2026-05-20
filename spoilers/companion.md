@@ -50,9 +50,7 @@ the gods had abandoned you, read on. We'll do our best to keep
 you alive.
 
 <aside class="download-box">
-<strong>Prefer to print or read offline?</strong>
-Download the <a href="companion-latex.pdf">paperback-format PDF</a>
-(288 pages, 5×8 trim, <a href="cover/cover.pdf">printable cover</a>).
+<strong>Prefer to read offline?</strong> Print the <a href="companion-latex.pdf">book-format PDF</a> (288pp, 5×8 trim, <a href="cover/cover.pdf">cover</a>).
 </aside>
 
 ---
