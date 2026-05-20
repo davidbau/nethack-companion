@@ -2060,7 +2060,11 @@ AC / attack details on every monster, see the
 | `;`    | Sea monsters     | Drowning is an instadeath. Don't fight in water without a plan.                                          |
 | `&`    | Demons           | Major demons (Orcus, Demogorgon, Asmodeus) are boss-level threats.                                       |
 | `@`    | Humans (hostile) | Includes the Wizard of Yendor, who is the most persistent nuisance in the game.                          |
-| `Q`    | Quantum mechanics / genetic engineers | Quantum mechanics teleport their target on a hit; genetic engineers (new in 5.0) polymorph their target. The `Q` class is rare but every one of them is a surprise. |
+| `Q`    | Quantum mechanics / genetic engineers | Quantum mechanics teleport their target on a hit; genetic engineers (new in 5.0) polymorph their target. The `Q` class is rare but every one of them is a surprise. See [The Genetic Engineer](#the-genetic-engineer) for more information. |
+
+```{=latex}
+\pagebreak[4]
+```
 
 #### Special Symbols
 
@@ -2175,7 +2179,14 @@ underestimate the threat.**
   several Quest dungeons have them in numbers. Gold golems are
   another quiet killer.
 
-**The colorful deaths.**
+```{=latex}
+\enlargethispage{2\baselineskip}
+```
+
+**Colorful deaths.**
+```{=latex}
+\nopagebreak[4]\par\nopagebreak[4]
+```
 
 - **Killed by your own wand.** Self-zapped attack wands, rays
   ricocheting off the wall in a narrow corridor and back into your
