@@ -796,6 +796,7 @@ rather than a direction.
 - Ring of hunger vanishes ALL items on the sink square (do.c:556-570)
 - Ring of teleportation moves the sink to a fresh ROOM tile (do.c:575-580)
 - Rotten food in fountains is slime molds, not fruit (objnam.c:414-427)
+- VAULT_GUARD_TIME = 30 turns (hack.h:69) before the guard appears; "Croesus", "Kroisos", "Creosote" all dismiss the guard if Croesus is still alive (vault.c:513-543); lying with a Lawful character loses one alignment (vault.c:507-511)
 -->
 
 Not everything interesting in the dungeon is trying to kill you.
@@ -972,6 +973,24 @@ free:
 | *"The sink momentarily vanishes."*<br>sink moves to a new spot         | teleportation         | no |
 | *"The sink transforms into a fountain/throne/altar/grave!"*<br>(or rarely *"The sink vanishes."* if grave generation fails) | polymorph             | no |
 
+#### Vaults
+
+A vault is a tiny walled-off 2×2 room not connected to the rest of
+the level. Each one holds a pile of gold. You'll usually find one by
+digging through stone or by teleporting in. The engraving *"ad
+aerarium"* on a level marks one nearby (see
+[Engravings](#engravings)).
+
+After about thirty turns inside, a guard appears at the doorway and
+asks *"Who are you?"* The trick: answer *Croesus* (also accepted as
+*Kroisos* or *Creosote*). The guard takes that as the name of the
+vault's owner and politely leaves, gold untouched. If you give your
+real name, the guard escorts you out the long way and the gold goes
+with him. If you're Lawful, lying costs you one alignment.
+
+If Croesus himself is dead (you killed him at Fort Ludios), claiming
+his name angers the guard. Use the real-name route then.
+
 ---
 
 ### Branches and Landmarks
@@ -1070,6 +1089,7 @@ The puzzles are fixed (two variants per level, randomly chosen).
 - cursed scroll of scare monster placed under the prize as bait (soko1-1.lua:111, soko1-2.lua:113)
 - conduct only reported once the branch is entered (insight.c:2215-2228)
 - strategy aligned with NetHackWiki Sokoban, Amulet of reflection: prize/cheat-luck-penalty mechanics and the "solve honestly for the prize" advice match (https://nethackwiki.com/wiki/Sokoban, https://nethackwiki.com/wiki/Amulet_of_reflection)
+- pushing a boulder exercises Strength via exercise(A_STR, TRUE) (hack.c boulder push handler); Stressed encumbrance exercises Str too but applies HP cost via near_capacity checks (attrib.c, eat.c:3197+)
 -->
 
 Each level has exactly one correct solution. If you push a boulder
@@ -1097,6 +1117,13 @@ One important rule: the Sokoban levels penalize you for "cheating."
 Breaking or polymorphing boulders, reading scrolls of earth, or
 squeezing past boulders costs you a point of luck each time. Solve
 each level honestly if you can.
+
+**Strength training side effect.** Every legitimate boulder-push
+exercises Strength. Sokoban is the safest place to grind Str up
+since the puzzles require dozens of pushes without putting you in
+combat. Don't try to train Str by walking around Stressed in the
+rest of the dungeon: the HP penalty isn't worth what you'd gain.
+
 For complete solutions to all eight level variants, see
 [Sokoban Solutions](#sokoban-solutions) in the appendices.
 
@@ -2309,6 +2336,7 @@ epitaph.
 - stepping on a cockatrice corpse without Fumbling is safe
 - Fumbling can trip the hero onto the corpse for instapetrify (timeout.c:1256-1261)
 - strategy aligned with NetHackWiki Stoning, Cockatrice, Lizard: gloves around cockatrice corpses, lizard/acid corpse to interrupt the countdown, weaponized corpse for offense (https://nethackwiki.com/wiki/Stoning, https://nethackwiki.com/wiki/Cockatrice, https://nethackwiki.com/wiki/Lizard)
+- eating any acidic corpse cures in-progress stoning (eat.c:860-861, fix_petrification at eat.c:867-877)
 -->
 #### Petrification (Stoning)
 
@@ -2337,6 +2365,12 @@ of Unchanging does **not** interrupt stoning. If you happen to be
 polymorphed into a non-stone golem, wearing it during the countdown
 is actively harmful — it blocks the stone-golem auto-poly that
 would otherwise save you on death.
+
+Out of lizards? Any acidic corpse will do: acid blob, jellies,
+yellow dragon, black naga, and yes, green slime works (but green
+slime starts a *different* countdown that turns you to slime; only
+reach for it as a last resort). Quaffing a potion of acid has the
+same curative effect.
 
 **The other side of the coin:** a wielded cockatrice corpse (with
 gloves on) is one of the game's most devastating weapons —
@@ -2585,8 +2619,11 @@ them. **Don't eat the corpse**: it strips a random intrinsic.
 - search reveals; both have no M1_MINDLESS so telepathy and warning work too
 - warnreveal triggers when mlev/4 ≥ warning level (detect.c:2107-2120)
 - weapons still hit normally while swallowed: mhit guaranteed when u.uswallow (uhitm.c:781, 805)
+- wand of digging while swallowed: zap_dig reduces engulfer HP to 1 and calls expels (dig.c:1568-1582); whirly engulfers ignored
+- wand of opening / knock spell at engulfer or at self: release_hold expels you (zap.c:382-391, 575-609, 2929-2947)
+- ranged buzz wands "rip into" the engulfer from inside (zap.c:4802-4820)
 -->
-#### Engulfment from Hiding
+#### Engulfment
 
 Two monsters hide in plain sight until you walk into them. The
 **lurker above** (`t`, gray, level 10) hides on the ceiling and
@@ -2595,13 +2632,25 @@ green, level 12) hides on the floor and engulfs whoever steps
 onto it. Both look like ordinary terrain until they trigger.
 Engulfment wraps and crushes rather than digesting, but you still
 take damage every turn until you cut your way out, with limited
-movement
-options while inside.
+movement options while inside.
+
+Other engulfers don't hide; they just swallow you in melee.
+Dragons and purple worms can swallow whole creatures up to their
+size. Dragons tend to be polite about it (you escape after one or
+two turns); purple worms are the bigger danger, and the dread
+**fog cloud** and **air elemental** count as engulfers too even
+though they don't digest.
 
 **Defenses:** Searching reveals hidden monsters. *Telepathy*
 shows them through the deception. Wearing a *ring of warning* or
-a *helm of caution* tips you off before you step. Once engulfed,
-attack the host repeatedly; weapons still work from inside.
+a *helm of caution* tips you off before you step.
+
+**Getting out.** Once engulfed, attack the host repeatedly;
+weapons still work from inside. If you have a wand of digging,
+zap it (no direction needed): it almost always expels you
+immediately, leaving the engulfer at 1 HP. A wand of opening or
+the knock spell forces the engulfer to release you on the spot.
+Ranged spells and rays will tear into the host from the inside.
 
 #### Light Bursts
 <!-- audit
@@ -2963,6 +3012,10 @@ loss; the second one in your bag is a kit.
 - scroll of taming radius: bd = confused ? 5 : 1, area (2*bd+1)² (read.c:1689) — 3×3 normal, 11×11 confused
 - confused charm-monster spell fails outright (spell.c:1372) — the 11×11 trick is scroll-only
 - strategy aligned with NetHackWiki Pet, Tameness, Scroll of taming: keep your pet fed for tameness, pet-shoplift trick, confused-scroll-of-taming 11×11 area effect (https://nethackwiki.com/wiki/Pet, https://nethackwiki.com/wiki/Tameness, https://nethackwiki.com/wiki/Scroll_of_taming)
+- apport: edog->apport initialized to A_CHA (dog.c:60), grows as the pet eats food you drop near you, drives pickup/return behavior (dogmove.c:316-422); enables pet-shoplifting in practice
+- magic whistle teleports pets toward the hero on every apply (apply.c whistle handler)
+- gray dragon resists magic damage via resists_magm (mondata.c:215-225 includes AD_MAGM and PM_BABY_GRAY_DRAGON); magic-resistant targets cannot be polymorphed
+- long worm's lengthening tail occupies a chain of map tiles (worm.c:27-100); the head moves but segments stay until they shrink
 -->
 
 The Mazes of Menace are dark, hostile, and full of things that want
@@ -3022,8 +3075,9 @@ methods of taming exist:
 
 Taming isn't limited to small animals: with a scroll of taming or
 the charm monster spell, you can recruit a purple worm to swallow
-your enemies whole, a dragon to breathe fire at them, a titan to
-crush them underfoot. The exclusion list is substantial, though:
+your enemies whole (its growing tail will sprawl across the room
+and get in the way of your shots), a dragon to breathe fire at
+them, a titan to crush them underfoot. The exclusion list is substantial, though:
 no humans (priests, shopkeepers, watchmen, soldiers, kings), no
 covetous monsters (the Wizard, liches, masters), no demons (unless
 you are one), no vault guards, quest leaders, nor minions can be
@@ -3045,6 +3099,28 @@ A well-fed pet earns its keep in several ways:
 - **Sacrifice fodder.** Monsters your pet kills leave corpses
   you can sacrifice on altars, exactly as if you'd killed them
   yourself
+
+**Training apport (fetching).** Hand-feeding your pet builds a
+score called apport. A pet with high apport will pick up nearby
+items and bring them to you. This is what makes pet-shoplifting
+practical: once your pet returns dropped items reliably, you can
+drop something at the shop counter, walk out, and trust the pet
+to follow with the goods. Pair it with a magic whistle (below) to
+yank a loaded pet to your side from anywhere on the level.
+
+**Upgrading your pet.** Three moves matter most.
+
+- A **magic whistle** teleports every tame creature on the level
+  to a spot next to you each time you blow it. Distance doesn't
+  matter; trapped pets get freed in the process.
+- Tame a **warhorse** early (throw apples or carrots) and you have
+  a fast, hard-hitting mount before mid-game.
+- Late in the run, **polymorph your pet** into a stronger form.
+  Titans, balrogs, and gray dragons are popular targets; a gray
+  dragon has magic resistance and resists further polymorph, so
+  it locks in. Cast polymorph carefully: random self-poly on the
+  pet can downgrade it, and a polymorphed steed stops being
+  saddled.
 
 #### Keeping Your Pet Alive
 
@@ -3811,6 +3887,7 @@ and you'll rarely be surprised.
 - globs lose 1 weight per ~25 turns; a weight-20 glob lasts ~500 turns (mkobj.c:1487-1490)
 - corpses stay safe to eat for ~30-50 turns before rotting (eat.c:1887-1939)
 - strategy aligned with NetHackWiki Resistance, Poison resistance, Partial intrinsic: corpse-eating to bank resistances is canonical, gelatinous cube and dragon corpses are the highest-density sources (https://nethackwiki.com/wiki/Resistance, https://nethackwiki.com/wiki/Poison_resistance, https://nethackwiki.com/wiki/Partial_intrinsic)
+- sprig of wolfsbane cures lycanthropy on eat via you_unwere (eat.c:2513-2516)
 -->
 
 Of all the things that kill adventurers in the Mazes of Menace (the
@@ -3936,6 +4013,11 @@ ascension-kit intrinsics in the game. Each resistance is a *chance*
 per eat (not a guarantee), so eat *every* one of these you find,
 not just the first.
 
+**Sprig of wolfsbane.** Not a corpse but the same shelf. Eating one
+cures lycanthropy outright. If you're heading anywhere were-things
+roam (the Mines, the Quest for some roles), carry a sprig or two.
+It weighs almost nothing.
+
 **Globs vs corpses.** Puddings (gray ooze, brown pudding, black
 pudding) and acid blobs in 5.0 leave **globs** instead of corpses.
 Globs sit on the floor and shrink slowly (about one weight unit
@@ -3965,6 +4047,7 @@ until you get it.
 - potion of speed grants permanent intrinsic Fast when !cursed (potion.c:1066)
 - uncursed extra/full healing also raise maxHP (potion.c:1398-1440)
 - strategy aligned with NetHackWiki Potion, Alchemy, Dip: alchemy odds and the guaranteed-blast cases for cursed/acid potions match (https://nethackwiki.com/wiki/Potion, https://nethackwiki.com/wiki/Alchemy, https://nethackwiki.com/wiki/Dip)
+- dipping an item (including a single arrow/dart) into a polymorph potion changes its type via poly_obj and identifies the potion (potion.c:2468-2499)
 -->
 
 The dungeon is full of mysterious bottles. Ruby liquids, milky
@@ -4028,6 +4111,12 @@ enchant weapon. You will never have enough holy water.
 **Gain level.** Raises your experience level by 1. Useful for
 reaching quest eligibility quickly, or converting into something
 better through alchemy.
+
+**Identifying a polymorph potion.** A clean test: dip a single
+arrow or dart into an unknown potion. If the arrow turns into a
+different item, the potion was polymorph and identifies itself.
+You spend one arrow and one potion; you save the gamble of
+quaffing it.
 
 #### Alchemy
 
@@ -4095,6 +4184,13 @@ pharmacy.
 2026-05-19:
 - confused destroy armor erodeproofs ONLY if cursed; uncursed/blessed strip erodeproofing (read.c:1341)
 - confused enchant armor/weapon erodeproofs when !cursed — opposite BUC condition (read.c:1138)
+- confused taming radius widens to 11×11 (read.c:1689)
+- confused teleportation forces a level teleport (read.c:2015-2025)
+- confused gold detection routes through trap_detect (read.c:2041)
+- confused light spawns cancelled tame yellow lights (or black lights if cursed) (read.c:1756-1783)
+- confused charging restores u.uen / u.uenmax instead of charging an item (read.c:1799-1812)
+- confused scare monster wakes monsters and prints sad wailing (read.c:1467-1485)
+- confused genocide forces PLAYER bit: confused+uncursed = REALLY|PLAYER = self-genocide; confused+cursed = PLAYER without REALLY, spawns 4-6 of your race/role (read.c:1737, 2826-3015)
 2026-05-18:
 - above +5 with amount >= 0, chwepon has 2/3 destroy chance via rn2(3) (wield.c:999-1009)
 - safe enchantment ceiling for weapons is +5
@@ -4175,6 +4271,14 @@ while confused and you genocide your own role's species
 (Valkyrie, Wizard, etc.), which kills you instantly. Read
 carefully.
 
+**Reverse genocide.** A cursed scroll of genocide doesn't remove
+its target; it spawns 4 to 6 of the named species at your feet.
+The named species must be one that can ordinarily be created.
+Naming wraiths gives you a corpse pile for level recovery; naming
+mind flayers buys an Int-fed feast if you're polymorphed into one;
+naming an easy-to-tame creature gives you instant pet candidates.
+Don't try unique monsters (the gods refuse).
+
 **Magic mapping.** Reveals the entire level layout; blessed also
 shows secret doors. Invaluable in Gehennom's maddening mazes,
 where mapping by hand could take a lifetime you don't have.
@@ -4205,6 +4309,22 @@ these alternate effects are *better* than the normal ones:
   cursing each uncursed item. Risky, but it's a clever way to create
   holy water if you confuse-read while carrying uncursed potions of
   water
+- **Confused taming** widens the scroll's reach from a 3×3 area
+  around you to 11×11. The trick is scroll-only; confused charm
+  monster just fizzles
+- **Confused teleportation** sends you to a random *dungeon level*
+  instead of a random spot on this floor. Useful as a panic button,
+  dangerous if you're shallow and don't want to skip the early game
+- **Confused gold detection** detects *traps* on this level
+  instead of gold. Faster and safer than the search command
+- **Confused light** creates a small posse of cancelled, friendly
+  yellow lights around you (or black lights, if the scroll is
+  cursed). They die quietly and can't harm you
+- **Confused charging** restores some power instead of charging an
+  item. A pinch of mana when you've spent everything
+- **Confused scare monster** wakes nearby sleepers and you hear sad
+  wailing in the distance. The opposite of helpful. Don't read this
+  for an emergency
 - **Confused genocide** genocides your own role. This kills you.
   Don't get confused at the wrong moment
 
@@ -4223,6 +4343,8 @@ these alternate effects are *better* than the normal ones:
 - sleep and death share "the bugs on the <surface> stop moving" (engrave.c:651-656)
 - striking message: "wand unsuccessfully fights your attempt to write" (engrave.c:602-605)
 - slow/speed monster: distinctive "bugs slow down" / "speed up" (engrave.c:606-616)
+- self-polymorph into a small form (sliparm) drops body armor (cursed or not) into inventory via Armor_gone+dropp (polyself.c:1198-1228); large forms (breakarm) destroy it instead (polyself.c:1162-1197)
+- engrave-test ambiguity between cancellation, make-invisible, teleportation, polymorph can be resolved by zapping a known item: make-invisible turns it invisible; teleportation moves it; cancellation dulls it (zap.c:2313-2317); polymorph changes its type (zap.c:weffects branch)
 - strategy aligned with NetHackWiki Wand, Engraving, Wand of wishing: engrave-test as the safest wand-ID method, $500 narrowed to death-or-wishing, wand of wishing recharge mechanics (https://nethackwiki.com/wiki/Wand, https://nethackwiki.com/wiki/Engraving, https://nethackwiki.com/wiki/Wand_of_wishing)
 -->
 
@@ -4233,6 +4355,8 @@ hit in a straight line, and **non-directional wands** affect the
 area around you.
 
 #### The Wand Table
+
+<div class="price-id-toolbar"></div>
 
 | Price | Wand                    | Type  | Max Charges |
 | ----- | ----------------------- | ----- | ----------- |
@@ -4386,6 +4510,14 @@ after engraving, zap them at safe targets:
   will dull it. Note: cancellation does NOT affect booze, fruit
   juice, or oil, so don't use those as test subjects.
 
+**The three "vanishes" wands.** Cancellation, make-invisible, and
+teleportation all print *"The engraving vanishes!"* on the
+engrave-test. To tell them apart, drop a known item and zap each
+candidate: make-invisible makes the item invisible; teleportation
+moves it elsewhere on the level; cancellation dulls its magic.
+(Polymorph isn't in this group: it rewrites your engraving as a
+different random one, which is its own giveaway.)
+
 **Step 3: When in doubt, check the price.** If testing hasn't
 resolved the wand, its shop price narrows the field further. A
 $150 wand is one of thirteen types. A $200 wand is one of four.
@@ -4420,6 +4552,31 @@ When a wand has 0 charges, you can still try to zap it. There is a
 turns to dust. This is a last resort, but it works on wands of
 wishing too.
 
+#### Polymorph as a Tool
+
+Self-polymorph is not just a randomizer; it's a serviceable tool.
+A wand of polymorph zapped at yourself, a potion of polymorph, the
+polymorph self spell, or stepping on a polytrap all do the same
+thing: roll a new form for you.
+
+- **With polymorph control** (the ring or intrinsic), the game
+  prompts you for the form. Without it, the form is random.
+- **Drop cursed body armor.** Polymorph into a form too small for
+  your suit and your armor falls off into your inventory, curse
+  intact but no longer worn. You can now pick it up, dip it in
+  holy water, and forget it ever owned you. (Larger forms break
+  out of armor instead, destroying it; the small-form route is
+  the safe one.)
+- **Travel.** A xorn phases through walls. An eel breathes water.
+  A vampire becomes a bat or fog and slips under doors.
+- **Bring your own resistances.** A red dragon form gives you fire
+  breath; a brown mold form gives cold attacks to anything that
+  hits you.
+
+Caveat: cursed polymorph items strip control even if you have it,
+and rough transformations can hit you with system shock damage.
+Try not to be at 5 HP when you reach for the wand.
+
 ---
 
 ### Rings and Amulets
@@ -4447,6 +4604,8 @@ appearances, and some of the best items in the game hide behind
 unassuming descriptions like "granite ring" or "circular amulet."
 
 #### The Ring Table
+
+<div class="price-id-toolbar"></div>
 
 | Price | Ring                           | Notes                          |
 | ----- | ------------------------------ | ------------------------------ |
@@ -4593,6 +4752,7 @@ than it looks.
 - scroll of charging write cost is rn1(basecost/2, basecost/2) = rn1(8,8) = 8-15 charges (write.c:44, 265)
 - class genocide skips uniquely-named demon lords via G_UNIQ (read.c:2998)
 - strategy aligned with NetHackWiki Bag of holding, Magic lamp, Unicorn horn: never bag a cancellation wand/bag-of-tricks/another BoH, bless magic lamps before rubbing, blessed unicorn horn for ailments (https://nethackwiki.com/wiki/Bag_of_holding, https://nethackwiki.com/wiki/Magic_lamp, https://nethackwiki.com/wiki/Unicorn_horn)
+- BoH explosion fires only on insertion via mbag_explodes (pickup.c:2658-2669); zapping a wand of cancellation at the bag just calls cancel_item which uncurses (zap.c:1239-1361 cancel_item)
 -->
 
 The `(` symbol covers the dungeon's most eclectic category: pickaxes,
@@ -4612,7 +4772,7 @@ hide in this grab-bag.
 | Chest          | 600    | Comes with 0 to 5 items (0 to 7 if locked) |
 | Ice box        | 900    | Preserves corpses from rotting           |
 
-The **bag of holding** deserves its own paragraph because it
+The **bag of holding** deserves special mention because it
 transforms how you play. A blessed bag reduces the weight of
 everything inside to roughly one quarter, meaning you can carry your
 entire potion supply, your backup armor, your scroll library, and
@@ -4626,16 +4786,22 @@ inventory across the floor. In older editions it *destroyed*
 everything. Either way, it's a game-ending mistake that every
 veteran has made exactly once.
 
-One 5.0 hazard that the adventuring community is still
-adjusting to: intelligent monsters can now loot unlocked containers.
+If you find a *cursed* bag of holding (in a bones pile, perhaps),
+don't open it. Drop it on the floor and zap a wand of cancellation
+*at the bag from outside*. Cancellation uncurses items it touches,
+and the explosion rule only triggers on insertion, not on a zap.
+You'll have a safe, uncursed bag.
+
+One 5.0 hazard that you will need to be aware of:
+**intelligent monsters can now loot unlocked containers**.
 They can remove items, carry containers away, and unlock chests with
 keys. If you've been leaving your secondary stash in an unlocked chest
 on a partially-cleared level while you scouted ahead, stop. The Castle
 chest in particular (containing the wand of wishing) can be emptied
 by the level's residents if you leave them time and opportunity. Clear
-levels before abandoning valuables, and keep your most important
-containers locked. The dungeon has gotten better at wanting what you
-have.
+levels before abandoning valuables, and **keep your most important
+containers locked**. The dungeon has gotten better at wanting what
+you have.
 
 #### Unlocking Tools
 
@@ -4644,6 +4810,10 @@ slow. A **skeleton key** is the gold standard (70%+ success on
 doors, 75%+ on boxes). A **lock pick** is respectable. A **credit
 card** is the worst but still better than kicking. Always carry one
 of these. The weight is negligible and the utility is constant.
+
+Skeleton keys and lock picks can also **lock** what they can unlock,
+so they double as your way to relock a chest after stashing loot.
+Credit cards are unlock-only.
 
 #### Light Sources
 
@@ -4860,6 +5030,8 @@ game, see the [Weapons Tables](#weapons-tables) appendix.
 - Uncursed enchant weapon always adds +1 (read.c:1669-1671).
 - Armor enchant destruction risk begins above +3; above +5 for "special" armor (elven, cornuthaum) (read.c:1179).
 - BLS/curse status changes success rate only, not the destruction threshold (read.c:1179).
+- Wearing dragon scales and reading a non-cursed scroll of enchant armor merges them into the corresponding scale mail; blessed scroll bumps spe and blesses the result; cursed reading skips the merge (read.c:1225-1252).
+- Greasing armor: applying a can of grease (apply.c:2603-2645) sets obj->greased; deflects monster grab via mhitu.c:1063-1083.
 -->
 #### Enchantment
 
@@ -4884,6 +5056,28 @@ To fix erosion, read a confused scroll of enchant weapon (for your
 weapon) or confused scroll of enchant armor (for a random worn armor
 piece). This erodeproofs the item permanently without changing its
 enchantment. It also repairs any existing damage.
+
+To slow erosion in the first place, coat an armor piece with grease
+(apply a can of grease). The grease layer also makes the piece
+slippery to monster steal and to grab attacks, but it wears off
+after a few hits.
+
+#### Dragon Scale Mail
+
+Killing a dragon doesn't always drop full scale mail. Often you'll
+find loose **scales** instead. Scales wear in the body slot just
+like the mail and carry the color's full intrinsic property (gray
+gives magic resistance, silver reflection, and so on, identical to
+the mail). The trade-off is AC: scales give +3 where the mail gives
++9. Same weight.
+
+To upgrade scales into scale mail: wear the scales and read a
+non-cursed scroll of enchant armor. The scales merge and harden
+into the corresponding dragon scale mail at +0 (or higher if
+blessed; a blessed scroll also blesses the result). A cursed
+scroll just gives the usual bad enchant effect; no merge.
+
+For which color to chase, see [A note on dragons](#a-note-on-dragons).
 
 ---
 
@@ -5879,7 +6073,7 @@ not the time for ambiguity:
 2026-05-18:
 - force bolt damage is 2d12; school skill does NOT scale damage (zap.c:2720-2724)
 - chain lightning is level 4 NODIR, not level 7, not a bouncing ray (objects.h:1409-1411)
-- failed spellbook read effects: teleport, aggravate, blindness, take-gold, confusion, contact poison, exploding rune, rndcurse (spell.c:130)
+- failed spellbook read effects: teleport (lvl 1+), aggravate (lvl 2+), blindness (lvl 3+), take-gold (lvl 4+), confusion (lvl 5+), contact poison (lvl 6+), exploding rune (lvl 7+ — 2d10+5 dmg, antimagic resists), default rndcurse (spell.c:130-185)
 - failed read has a single 1/3 destruction chance (spell.c:612)
 - spellbook fade ceiling is 4 successful reads: MAX_SPELL_STUDY=3 with `> MAX_SPELL_STUDY` (spell.c:400-418)
 - no Pw drain from memorized spells exists; "spell maintenance" is fabricated (allmain.c moveloop has no per-spell Pw decrement; only cast_spell at spell.c:1245 decrements via SPELL_LEV_PW)
@@ -5908,6 +6102,17 @@ several turns and can fail. A failed reading can teleport you, take
 your gold, blind, confuse, or poison you, blow up in your face for
 HP damage, or randomly curse one of your items. A book that survives
 failures can be retried.
+
+The specific bad effect rolls within the book's level. A level-1
+book can only teleport you or aggravate monsters. A level-3 book
+adds blindness, gold theft, and confusion. A level-5 book adds
+contact poison (the book was coated; bare hands get a Strength
+hit). A level-7 book adds an exploding rune (magic resistance
+shrugs it off; otherwise it's 2d10+5 damage). All levels can fall
+through to the random-curse outcome on the default branch. A
+cursed book always rolls one of these; an uncursed book rolls
+only on a failed read. Practical rule: don't read books you can't
+afford to fail.
 
 The chance of successfully reading a spellbook depends on the
 **spell level**, your **Intelligence**, and your **experience
@@ -6021,6 +6226,7 @@ bathrobe holding a stick.
 - temple priests do NOT reveal BUC for a fee; only Priest CLASS sees BUC free (priest.c:629-718 sets HClairvoyant + Protection, not bknown)
 - shop price-id can infer BUC indirectly
 - strategy aligned with NetHackWiki BUC, Scroll of remove curse, Potion of holy water: altar/pet test, blessed remove-curse hits entire inventory, holy water dip uncurses (https://nethackwiki.com/wiki/BUC, https://nethackwiki.com/wiki/Scroll_of_remove_curse, https://nethackwiki.com/wiki/Potion_of_holy_water)
+- polymorph into a sliparm form drops body armor (cursed or not) into inventory (polyself.c:1198-1228)
 -->
 
 
@@ -6091,6 +6297,11 @@ When prevention fails, you have three remedies:
 - **Prayer.** A pleased god uncurses your worn items as a side
   benefit of answering prayer. Don't waste a prayer solely on this,
   but it's a nice bonus
+
+Stuck in cursed body armor? Polymorphing into a form too small for
+the suit drops it off into your inventory (curse and all), even
+though it would normally refuse to come off. From there, dip in
+holy water and re-wear. See [Polymorph as a Tool](#polymorph-as-a-tool).
 
 The lesson: always carry holy water and a scroll of remove curse.
 The moment you find yourself stuck with cursed levitation boots
@@ -6376,6 +6587,7 @@ If you're missing any of these, go back up and find them.
 - Sanctum has noteleport + nommap (sanctum.lua:8)
 - Valley of the Dead has noteleport + nommap + non-diggable walls (valley.lua:10, 74)
 - strategy aligned with NetHackWiki Gehennom, Bribe, Demon lords and princes: prayer dead, bribery (gold in open inventory) for the lawful demon princes, Excalibur disables bribery, dig don't navigate (https://nethackwiki.com/wiki/Gehennom, https://nethackwiki.com/wiki/Bribe, https://nethackwiki.com/wiki/Demon_lords_and_princes)
+- blessed scroll of genocide on class 'L' wipes lich/demilich/master lich/arch-lich (read.c:2638-3015 do_class_genocide, monsters.h:1864-1899 four S_LICH entries); Wizard of Yendor is S_HUMAN (monsters.h:2847-2858), not affected
 -->
 
 Below the Castle, the dungeon changes. The corridors give way to
@@ -6618,6 +6830,11 @@ frantic climb back to the surface. The steps:
 - **The Amulet anchors you.** Level teleportation doesn't work
   while you carry it. Every step back to the surface must be
   climbed by foot
+- **Genocide the lich class.** A blessed scroll of genocide
+  applied to **L** removes liches, demiliches, master liches, and
+  arch-liches in one read. These are some of the worst Gehennom
+  threats. The Wizard of Yendor is human-class, not lich, so this
+  doesn't touch him
 
 ---
 
