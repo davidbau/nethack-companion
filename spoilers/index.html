@@ -204,7 +204,7 @@ shoulders of giants</li>
 - amethyst converts booze (not sickness) to fruit juice (potion.c:2161-2163)
 - unicorn horn converts sickness to fruit juice (potion.c:2151-2154)
 - Mjollnir is the Valkyrie sacrifice gift; needs a co-aligned altar (artilist.h:109)
-- Knight code penalizes attacks on fleeing or helpless monsters (peaceful is Samurai's giri)
+- Knight code penalizes attacks on fleeing or helpless monsters (uhitm.c:336-339); peaceful kill is Samurai's giri
 - all 13 role alignment/race availabilities (role.c)
 -->
 <p>The first decision you’ll make, before you even set foot on the
@@ -437,7 +437,7 @@ reads “Burdened,” you’re carrying more than you can use.</p>
 - floating-eye paralysis (mhitu.c:2536-2557)
 - pets step around their owner (dogmove.c:535)
 - lizard and lichen corpses never rot (eat.c:58-61)
-- killer bees: speed 18, G_LGROUP, poisoned bite
+- killer bees: speed 18, G_LGROUP, M1_POIS sting AT_STNG/AD_DRST 1d3 (monsters.h:96-102)
 - supply chests appear above Oracle: ~2/3 of rooms; 2/3 chest vs 1/3 large box; 5/6 locked (mklev.c:1010-1119)
 - prayer cooldown averages ~1000 turns: rnz(300)/rnz(350) scaled by rne(4) (pray.c:780, 1356, 1819)
 - corpse safe within 30 turns; tainted past ~175 turns (eat.c:1887, 1939)
@@ -584,7 +584,7 @@ dungeon’s frequent act of goodwill.</p>
 - Fort Ludios portal placed at any DL 11 up to just above Medusa, 1/3 per qualifying level (mklev.c:2647-2651)
 - Medusa DL ~21-25 (dungeon.lua:74-80)
 - Castle at bottom of DoD, DL ~27 (dungeon.lua:81-83)
-- Mine's End: 3 variants, all guarantee a not-cursed luckstone
+- Mine's End: 3 variants, all guarantee a not-cursed luckstone (minend-1.lua:77, minend-2.lua:116, minend-3.lua:67)
 - 7 Minetown variants; 1-in-7 is Orcish Town (minetn-1.lua, dungeon.lua:179-184)
 - 5.0 sink glyph is white `{`, shared with bright-blue fountain (defsym.h:133, fixes5-0-0.txt:827)
 - Travel/farlook matches on displayed symbol; `#` no longer cycles to sinks (getpos.c:1046-1062)
@@ -941,7 +941,7 @@ a direction.</p>
 - Throne can vanish "in a puff of logic" on rn2(3), even when nothing happens (sit.c:224-233)
 - Vlad's throne: cases 1-4 grant wish + destroy throne; 5-13 are negatives (sit.c:241-353)
 - Kicking sink: 4/5 klunk, else 1/3 black pudding, 1/3 amorous demon, 1/3 ring backup (dokick.c:1201-1238)
-- Each kick outcome gated by S_LPUDDING / S_LDWASHER / S_LRING (once per sink)
+- Each kick outcome gated by S_LPUDDING / S_LDWASHER / S_LRING (once per sink) (dokick.c:1209-1232)
 - Dip potion of polymorph: sink → fountain/throne/altar/grave (do.c:404-454)
 - Grave case may fail and print "The sink vanishes." (engrave.c:1691-1693)
 - Dip POT_OBJECT_DETECTION: "You sense a ring lost down the drain" while S_LRING unset (fountain.c:771-776)
@@ -1328,7 +1328,7 @@ off the entrance level (its floor is reinforced).</p>
 2026-05-18:
 - entrance DL 6-10: Oracle base 5 range 5 + Sokoban one level up (dungeon.lua:21-24, 60-66)
 - 4 levels × 2 fixed variants (dat/soko*.lua)
-- noteleport on every Sokoban level
+- noteleport on every Sokoban level (soko1-1.lua:7 and matching line in each soko*.lua)
 - hardfloor only on the entrance; blocks dig-down off entrance (soko4-1.lua:38, soko4-2.lua:7)
 - sokoban_guilt = change_luck(-1) + u.uconduct.sokocheat++ (trap.c:7039-7054)
 - guilt triggers: squeeze past boulder (hack.c:299, 307, 398, 403)
@@ -1339,7 +1339,7 @@ off the entrance level (its floor is reinforced).</p>
 - pick-axe/mattock force-fight digs the boulder (hack.c:2269-2275)
 - levitation also blocks pushing boulders: "not enough leverage" (hack.c:415-425)
 - prize: 75/25 weighted bag of holding vs amulet of reflection (soko1-1.lua:103-107, soko1-2.lua:105-109)
-- cursed scroll of scare monster placed under the prize as bait
+- cursed scroll of scare monster placed under the prize as bait (soko1-1.lua:111, soko1-2.lua:113)
 - conduct only reported once the branch is entered (insight.c:2215-2228)
 --></p>
 <p>Each level has exactly one correct solution. If you push a boulder
@@ -1454,7 +1454,7 @@ clean.</p>
 - doors forced D_NODOOR — no closed doors (mklev.c:647-648)
 - no fountains/sinks/altars/shops/graves via skip_nonrogue (mklev.c:988-989)
 - rogueprobs item pool: weapon/armor/food/potion/scroll/wand/ring only — no spellbooks/tools/amulets/gems/coins (mkobj.c:58-64)
-- tile mode disabled in Qt, X11, win32, curses ports
+- tile mode disabled in Qt, X11, win32, curses ports (win/X11/winmap.c:1009, win/Qt/qt_map.cpp:145, 228)
 - engraving has no rogue-level guard — Elbereth works as usual (engrave.c)
 -->
 <p>Somewhere in the middle dungeon you’ll cross a one-level historical
@@ -1530,7 +1530,7 @@ bonus, not a requirement.</p>
 2026-05-18:
 - Medusa DL 20-29: base=-5 range=4 from DoD bottom 25-29 (dungeon.lua:75-81)
 - four layouts (medusa-1.lua through medusa-4.lua); all use des.stair("down") — no ladder
-- scimitar blessed +2 at 50% and sack at 50% are constant across all four layouts
+- scimitar blessed +2 at 50% and sack at 50% are constant across all four layouts (medusa-1.lua:70, 73)
 - shield is cursed in every layout (medusa-1.lua:64 and matching lines in others)
 - gaze reflection stones Medusa via ureflects → killed(mtmp) (mhitu.c:1721-1745)
 - stone resistance also blocks the gaze (mhitu.c:1747-1748) — rarely attainable pre-Medusa
@@ -1646,7 +1646,7 @@ killing the eel first are reliable.</li>
 - drawbridge passtune is 5 notes A-G, Mastermind-style miss feedback (music.c:793, 836-884)
 - only blowable instruments work for the passtune (flutes, horns, bugle — harp excluded) (music.c:769-771)
 - wand of striking DESTROYS the drawbridge (does not just close it) (zap.c:3290-3305)
-- wand of opening or spell of knock opens the drawbridge
+- wand of opening or spell of knock opens the drawbridge (zap.c:3263-3273, 2184)
 - Gehennom branches off the Castle with branchtype=no_down, so the stairs do not return (dungeon.lua:39-43)
 - no minotaurs and no internal maze; the two des.mazewalk calls fill the OUTSIDE approach corridors (castle.lua:223-224)
 -->
@@ -1745,7 +1745,7 @@ stock up.</p>
 <!-- audit
 2026-05-18:
 - trapdoor cascade: dlevel++ per loop iteration, `if (rn2(4)) break` = 25%/level chance to keep falling (trap.c:442-453)
-- holes use the same hole_destination cascade as trapdoors
+- holes use the same hole_destination cascade as trapdoors (trap.c:519-522, 442-453)
 - pit base damage 1d6 (trap.c:1950, rnd(adj_pit ? 3 : 6))
 - spiked pit base damage 1d10 with 1/6 chance of poison (trap.c:1925, 1938-1945)
 - Levitation OR Flying skip pit/hole/trapdoor, gated `!Sokoban && ...` (trap.c:633-639, 1850)
@@ -2427,12 +2427,12 @@ eucalyptus, or pray.</td>
 <h3>A Field Guide to Dungeon Fauna</h3>
 <!-- audit
 2026-05-18:
-- xan: AT_STNG AD_LEGS (sting cripples legs); xan is class `x`, not the engulfer `t` (S_TRAPPER)
+- xan: AT_STNG AD_LEGS (sting cripples legs); xan is class `x`, not the engulfer `t` (S_TRAPPER) (monsters.h:1157-1159)
 - leprechaun attack is AT_CLAW AD_SGLD (gold-steal claw), not a bite (monsters.h:660)
 - long worms grow tail segments on a movement-driven wgrowtime timer, not per hit (worm.c:218-237)
 - pudding split admits IRON|METAL weapons only (uhitm.c:1616-1618)
 - there are no dragonhide weapons in 5.0; DRAGON_HIDE material is body-armor-only
-- silver and wooden weapons are the actual pudding non-splitters
+- silver and wooden weapons are the actual pudding non-splitters (uhitm.c:1616-1620 admits IRON|METAL only)
 - all other class-symbol mappings (defsym.h) and per-monster stats verified clean
 -->
 <p>The Mazes are home to hundreds of monster species, organized into
@@ -2961,7 +2961,7 @@ Walk into the gap to identify it.</td>
 - gold DSM permanent light radius 4/3/2 blessed/uncursed/cursed (light.c:881-911)
 - gold DSM is the only body-slot light source (artifact.c:2264-2275)
 - confused genocide hits your role: u.umonster ← gu.urole.mnum (read.c:2839, u_init.c:991)
-- mumakil attack solo, not in packs; 2-attack 4d12 + 2d6
+- mumakil attack solo, not in packs; AT_BUTT 4d12 + AT_BITE 2d6 (monsters.h:838-845)
 - shimmering DSM does not exist in 5.0 (#if 0 DEFERRED in objects.h)
 -->
 <p>Only about <strong>0.4% of games end in ascension.</strong> The other
@@ -3211,7 +3211,7 @@ anything you hit that lacks stoning resistance turns to stone.</p>
 - Swimming, Amphibious, or Breathless all defeat the drown (youprop.h:264-277)
 - pool-entry check at hack.c:3272; Flying also skips entry, Levitation is the canonical defense
 - emergency_disrobe is gated on Stressed+ (trap.c:4897-4941)
-- krakens generate only on Medusa-4 and the Water Plane
+- krakens placed only on medusa-4 in the Dungeon (medusa-4.lua:122); other placements are Quest/fakewiz/wizard1
 - "swamp rooms" comment refers to eels, not krakens (mkroom.c:557-565)
 - encumbrance does NOT gate the grab-drown path: being Burdened won't save you once grabbed
 -->
@@ -3237,7 +3237,7 @@ requires adjacency.</p>
 <!-- audit
 2026-05-18:
 - mwandexp gates the first-zap warning miss (muse.c:1830-1860)
-- buzz_force_miss is the dispatch path for the warning shot
+- buzz_force_miss is the dispatch path for the warning shot (muse.c:1815, 1834)
 - 6 beam wands trigger the warning: death, sleep, fire, cold, lightning, magic missile (muse.c:1842-1847)
 - the visible warning shot identifies the wand to the player
 - late-game zones spawn monsters with mwandexp=TRUE — no warning shot (makemon.c:1290-1293)
@@ -3316,8 +3316,8 @@ management slide.</p>
 - 5.0 AD_DRIN no longer wipes maps or item IDs — only spells
 - polymorphed into a mindflayer, brain-eating restores Int (eat.c:679-688)
 - any helmet blocks 7/8 tentacle drains via `uarmh && rn2(8)` (uhitm.c:3235)
-- greasing adds an extra slip-roll on top of the helmet check
-- blessed potion of restore ability restores all lost attributes
+- greasing adds an extra slip-roll on top of the helmet check (uhitm.c:3232 → u_slip_free at mhitu.c:1047-1064)
+- blessed potion of restore ability restores all lost attributes (potion.c:646-691)
 - blessed potion of full healing does NOT restore stats (potion.c:1144-1162)
 - prayer fixes drained attributes via TROUBLE_POISONED (pray.c:270-272, 547-552)
 - unicorn horn no longer restores attributes in 5.0 (apply.c:2306-2327)
@@ -3348,8 +3348,8 @@ ability before pushing into mind flayer territory.</p>
 <h4>Level Drain</h4>
 <!-- audit
 2026-05-18:
-- vampire bats deal AD_DRST (drain Strength), NOT AD_DRLI — pois-res blocks
-- shield of drain resistance is new in 5.0 (artilist.h, do_wear.c)
+- vampire bats deal AD_DRST (drain Strength), NOT AD_DRLI — pois-res blocks (monsters.h:1291-1297)
+- shield of drain resistance is new in 5.0 (objects.h:656-658)
 - eating wraith corpse adds a level via pluslvl (eat.c:1141)
 - drained-level HP/Pw math uses u.uhpinc / u.ueninc (exper.c:251-273)
 - wraith corpse weightless and untinnable because cnutrit==0
@@ -3388,7 +3388,7 @@ ends.</p>
 2026-05-18:
 - disenchanter generates only in Gehennom (G_HELL: monsters.h:2156, makemon.c:1935, 1998)
 - active claw targets armor via some_armor (do_wear.c:2629, uhitm.c:3619)
-- target order: cloak → body armor → shirt → 1/4 chance for helm/gloves/boots/shield
+- target order: cloak → body armor → shirt → 1/4 chance for helm/gloves/boots/shield (do_wear.c:2634-2652)
 - if naked, rn2(5) picks ring/amulet/blindfold; never targets a wielded weapon
 - active hit prints "Your X seems less effective" (uhitm.c:3641)
 - weapon drain is passive-only: fires when you melee the disenchanter (mhitu.c:2508-2515)
@@ -3553,9 +3553,9 @@ fatal.</p>
 - SICK_NONVOMITABLE is "illness," not the SICK_VOMITABLE food-poisoning path (timeout.c:316-333)
 - unicorn horn CAN clear it: apply.c:4456 only marks Sick unfixable when (Sick & ~TIMEOUT) != 0
 - Pestilence sickness is purely timed, so the horn's trouble list reaches it (apply.c:2312-2313, 2351)
-- Riders: level 30, regen, see invisible, shove monsters; two 8d8 touches per turn
+- Riders: level 30, M1_REGEN, M1_SEE_INVIS, M3_DISPLACES; two 8d8 touches per turn (monsters.h:3145-3173)
 - Death's touch has 3/20 chance of instakill; MR blocks the instakill, not the 8d8 damage
-- 5.0 mercy: Pestilence/Famine's second hit on a turn downgrades to stun
+- 5.0 mercy: Pestilence/Famine's second hit on a turn downgrades to stun (mhitu.c:339-342)
 -->
 <p>On the Astral Plane, three unique <code>&amp;</code>-class beings
 guard the way to the high altars: <strong>Death</strong>,
@@ -3632,12 +3632,12 @@ one of the first intrinsics worth acquiring.</p>
 <!-- audit
 2026-05-18:
 - only player-facing AD_DISN is black dragon breath (monsters.h:1520, ZT_BREATH(ZT_DEATH) at zap.c:4464-4493)
-- beholder is the only other AD_DISN monster and is #if 0-gated
+- beholder is the only other AD_DISN monster and is #if 0-gated (monsters.h:367-371)
 - black dragons have MR_DISINT in attack and defense slots (monsters.h:1523)
 - reflected beam does 0 damage to them via resists_disint (zap.c:4318)
 - worn-armor priority on disint hit: shield first (zap.c:4476-4479), then body armor + cloak (zap.c:4480-4486)
 - amulet of life saving rescues you (end.c catches DIED) but breath still destroys cloak/shirt (zap.c:4487-4492)
-- an ordinary shield eats one breath; shields of reflection don't have a failure mode
+- an ordinary shield eats one breath; shields of reflection don't have a failure mode (zap.c:4476-4479)
 -->
 <p>A black dragon’s breath is the only thing in the game that
 disintegrates you. There’s no other monster, spell, or wand that deals
@@ -3676,7 +3676,7 @@ your own species. Don’t do this.</p>
 - the "9-turn" impression came from the t/2 message cadence (timeout.c:391)
 - cancellation prevents new infections (uhitm.c:3556-3560) but does NOT clear a running Slimed timer
 - polymorph cure requires flaming() or PM_GREEN_SLIME (polyself.c:842)
-- vomiting cures only SICK_VOMITABLE; Pestilence's SICK_NONVOMITABLE is unaffected
+- vomiting cures only SICK_VOMITABLE; Pestilence's SICK_NONVOMITABLE is unaffected (eat.c:3745-3746)
 -->
 <p>Not every fatal threat kills instantly. Several give you a few turns
 to react. Knowing the warning signs and the cures can save a run.</p>
@@ -3736,7 +3736,7 @@ prayer).</p>
 - corpse grants Displacement intrinsic (eat.c:1265) — cloak-style, not the swap
 - M3_DISPLACES is consulted only at hack.c:1972 and mon.c:2462 (ALLOW_MDISP)
 - no mhitm.c path for hostile-attacks-pet-displacer triggering a swap — pet trick fabricated
-- pet beast is still excellent: 0% MR (reliable taming), high AC, three-attack
+- pet beast is still excellent: 0% MR (reliable taming), AC -10, three attacks 4d4/4d4/2d10 (monsters.h:437-441)
 -->
 <p>The <strong>displacer beast</strong> (<code>f</code>, blue, 5.0
 addition) is a tiger-sized feline with AC −10 and three attacks per turn
@@ -3773,7 +3773,7 @@ attackers.</p>
 - Unchanging blocks the polymorph (mhitm.c:1130-1131)
 - eating a genetic engineer corpse triggers a polyself fall-through (eat.c:1244-1263)
 - tinned engineer + poly-control combo at eat.c:1253
-- genetic engineer also teleports itself on its own
+- genetic engineer also teleports itself on its own: M1_TPORT (monsters.h:2141)
 -->
 <p>The <strong>genetic engineer</strong> (<code>Q</code>, green) shares
 its symbol class with the quantum mechanic but plays differently: where
@@ -3807,7 +3807,7 @@ kit.</p>
 - "sad feeling for a moment" fires when an offscreen pet dies (mon.c:952, 3101, 3495)
 - leaving a pet behind alive produces no message; loyalty decays at 1 per 150 moves apart (dog.c:689-697)
 - pet curse-avoidance has a starvation exception (dogmove.c:535-538)
-- tameness loss sources: hunger past threshold, long separation, player-dealt damage (not damage from other monsters)
+- tameness loss sources: hunger past threshold, long separation, player-dealt damage via abuse_dog (uhitm.c:1593-1595)
 - scroll of taming radius: bd = confused ? 5 : 1, area (2*bd+1)² (read.c:1689) — 3×3 normal, 11×11 confused
 - confused charm-monster spell fails outright (spell.c:1372) — the 11×11 trick is scroll-only
 -->
@@ -4067,7 +4067,7 @@ one of that type, then one item per cursed read after.</p>
 <!-- audit
 2026-05-18:
 - buy/sell multipliers and Cha bands match shk.c get_cost/set_cost
-- sell offer is 1/2 base; 3/8 on unID items from an unfamiliar shopkeeper
+- sell offer is 1/2 base (shk.c:3160); 3/8 on unID items from an unfamiliar shopkeeper (shk.c:3173-3174)
 - Tourist surcharge (+33%) applies with dunce cap, Tourist below XL 15, or visible Hawaiian shirt — non-stacking
 - ~1/4 of unID items carry a fixed 4/3 buy surcharge per item
 - ~1/4 of shopkeepers are "unfamiliar" with unID; they offer 3/4 sell, fixed per shop
@@ -4776,7 +4776,7 @@ is consumed.</p>
 - polymorph randomizes existing engraving, not "vanishes"
 - cancellation, make-invisible, teleportation all share the "vanishes" message
 - wand of wishing engrave DOES grant the wish (zap.c:2575-2585)
-- unicorn horn dipped in sickness → fruit juice; in confusion/hallucination/blindness → water
+- unicorn horn dipped in sickness → fruit juice; in confusion/hallucination/blindness → water (potion.c:2151-2159)
 - is_poisonable requires oc_skill in [-P_SHURIKEN, -P_BOW] (obj.h:264-268) — ranged ammo only
 - daggers (skill +1) and spears (skill +17) are NOT poisonable
 - confused remove curse via blessorcurse(obj, 2): 1/4 bless, 1/4 curse, 1/2 unchanged (mkobj.c:1841-1853)
@@ -4936,9 +4936,9 @@ stealth-from-kicking or fumbling-from-power by price alone. Try them on
 - loadstones are cursed at object creation (mkobj.c:978-979), not on pickup
 - cursed-on-creation state is what blocks dropping; "auto-curse on pickup" would be a different mechanic
 - prices: luckstone 60, touchstone 45, loadstone 1, flint 1 (objects.h:1598-1605)
-- weights: loadstone 500, others 10
-- blessed touchstone (or Archeologist/Gnome holding uncursed) IDs gems on rub
-- Mine's End luckstone is guaranteed not-cursed
+- weights: loadstone 500, others 10 (objects.h:1598-1605)
+- blessed touchstone (or Archeologist/Gnome holding uncursed) IDs gems on rub (apply.c rub_on_stone)
+- Mine's End luckstone is guaranteed not-cursed (minend-1.lua:77, minend-2.lua:116, minend-3.lua:67)
 -->
 <p>Gray stones deserve their own section because they look identical but
 have wildly different value. There are four types:</p>
@@ -5075,9 +5075,9 @@ rarely be surprised.</p>
 - gelatinous cube corpse: fire/cold/shock/sleep only (not poison/acid/stoning)
 - disenchanter corpse STRIPS an intrinsic, doesn't grant one
 - encumbrance kicks in at Stressed, not Burdened (eat.c:3197 near_capacity > SLT_ENCUMBER)
-- fire giant corpse grants Str on eat; separate row from fire ant
-- red and brown mold corpses also grant poison resistance
-- eggs count as vegetarian but not vegan
+- fire giant corpse grants Str on eat via is_giant(ptr) (eat.c:1345-1352); separate row from fire ant
+- red and brown mold corpses also grant poison resistance (monsters.h:1627-1659, MR_POISON defense)
+- eggs count as vegetarian but not vegan (eat.c:585-597 violated_vegetarian and EGG handling)
 - Weak status is -1 Str ATEMP, not slowed movement (attrib.c:471, eat.c:3455)
 - blessed tin opens instantly only with a blessed tin opener (eat.c:1740-1745)
 - ordinary tin opener on a blessed tin: 50/50 instant vs one turn via rn2(2)
@@ -5345,7 +5345,7 @@ hungry).</li>
 - never dip a CURSED potion into another — guaranteed explosion
 2026-05-18:
 - potion of speed grants permanent intrinsic Fast when !cursed (potion.c:1066)
-- uncursed extra/full healing also raise maxHP
+- uncursed extra/full healing also raise maxHP (potion.c:1398-1440)
 -->
 <p>The dungeon is full of mysterious bottles. Ruby liquids, milky
 fluids, smoky concoctions: each one a small gamble between salvation and
@@ -6336,9 +6336,9 @@ than it looks.</p>
 - Bell of Opening is carried by the quest nemesis; loot from the corpse (makemon.c:1378-1379)
 - quest leader chides you if you finish without the Bell but doesn't grant it (quest.c:267-268)
 - uncursed scroll of charging restores a magic lamp to at least 50 (read.c:880-883)
-- blessed scroll of charging pushes the floor to 75
+- blessed scroll of charging pushes the floor to 75 (read.c:866-871)
 - magic lamp 1/3 djinni emergence is independent of bless; bless only affects the wish-grant odds (apply.c:1817)
-- scroll of charging write cost is rn1(8,8) = 8-15 charges
+- scroll of charging write cost is rn1(basecost/2, basecost/2) = rn1(8,8) = 8-15 charges (write.c:44, 265)
 - class genocide skips uniquely-named demon lords via G_UNIQ (read.c:2998)
 -->
 <p>The <code>(</code> symbol covers the dungeon’s most eclectic
@@ -7335,7 +7335,7 @@ combat, gems, and luck mechanics, all updated for 5.0.</em></p>
 - crowning adds rnz(1000) * kick on top of the ordinary rnz(350) prayer wait (pray.c:1356-1361)
 - crowning does NOT lock alignment — the one-way conversion gate is ualignbase[CURRENT]==ualignbase[ORIGINAL] (pray.c:1638)
 - same-race blood always converts lawful or neutral altars to CHAOTIC, never to co-aligned (pray.c:1717-1720)
-- on a chaotic altar, same-race blood summons a demon
+- on a chaotic altar, same-race blood summons a demon (pray.c:1723-1739)
 -->
 <p>Your relationship with your god is one of the most important
 mechanics in the game. A happy god answers prayers, forgives
@@ -7554,14 +7554,14 @@ need.</p>
 2026-05-18:
 - to-hit factors: XL, Str, Dex, Luck, enchantment, AC (find_roll_to_hit)
 - abon includes both Strength AND Dexterity; Dex 25 yields +11 (weapon.c:950-988)
-- dbon has a Strength cap
-- two-handed weapons get a 3/2 Strength-bonus multiplier
-- conflict requires mutual sight and a Cha-vs-Lvl resist roll
+- dbon has a Strength cap: max +6 at STR 18/100 or higher (weapon.c:993-1015)
+- two-handed weapons get a 3/2 Strength-bonus multiplier (weapon.c bhitval two-handed branch)
+- conflict requires mutual sight and a Cha-vs-Lvl resist roll: resist_chance = min(19, Cha - m_lev + XL) (mondata.c:1607-1612)
 - two-weapon and shield are mutually exclusive
 - Expert two-weapon: Rogue and Samurai only (u_init.c skill tables)
 - Rangers cannot two-weapon at all (no P_TWO_WEAPON_COMBAT entry)
 - two-weapon penalty is a flat table: -9/-7/-5/-3 to-hit, -3/-1/0/+1 damage
-- Luck to-hit caps at ±5; Luck itself ranges ±10 (±13 with luckstone)
+- Luck to-hit contribution is sgn(Luck)·((|Luck|+2)/3), capping at ±5 (uhitm.c:377); Luck itself ranges ±10, ±13 with luckstone
 - monsters use m_move (phase 3) then mattacku/castmu (phase 4) on the same turn (monmove.c:911, 943-944, 971)
 - no "free extra step" change exists; that earlier claim was fabricated
 -->
@@ -7740,7 +7740,7 @@ arrangement. Keep an exit behind the monster, or expect contact.</li>
 - pickup/loot/dip/trap/engrave actions gated at Basic riding
 - slot ceiling 32 for an XL-30 crowned hero: 2 starting + 29 level-ups + 1 crowning (u_init.c:884, pray.c:992-993)
 - Ranger divination caps at Expert (u_init.c:461)
-- Wizard restricted from long sword
+- Wizard restricted from long sword: no P_LONG_SWORD entry in Skill_W (u_init.c:548-569)
 - spell schools start with a 20-use precredit at Basic
 - Skilled cone-of-cold and fireball: cluster of 3×3 explosions (spell.c:1419-1452), not room-clearing
 - Valkyrie 6+6+2 = 14 slot example math
@@ -8141,10 +8141,10 @@ survival.</p>
 2026-05-18:
 - bare "gray dragon scale mail" keeps random spe and rolls BUC via blessorcurse(otmp,10): ~5% blessed / ~5% cursed / ~90% uncursed (objnam.c:5094-5096, 5258-5268)
 - artifact wishes are probabilistic: oartifact && rn2(nartifact_exist())>1 (objnam.c:5374), scaled by TOTAL existing artifacts including bones
-- u.uconduct.wisharti increments whether the wish is granted or denied
-- only quest artifacts are absolutely blocked
+- u.uconduct.wisharti increments whether the wish is granted or denied (objnam.c:5364)
+- only quest artifacts are absolutely blocked: restrict_name SPFX_NOGEN|SPFX_RESTR check (artifact.c:618)
 - silent substitutes: Amulet of Yendor, Bell of Opening, Book of the Dead, Candelabrum, magic lamp → oil lamp (objnam.c:5003-5006)
-- all gloves give +1 AC; gauntlets of power give STR 25 (+6 to-hit/dmg), not bonus AC
+- all gloves give +1 AC (objects.h:686-697); gauntlets of power give STR 25, not bonus AC (attrib.c:1214)
 - Vlad's throne wish rate is 4/13 per effective sit (sit.c:241-256)
 - magic lamp ≈27% wish-blessed: 1/3 djinni × 4/5 wish (apply.c:1817, potion.c:2833-2845)
 - fountain water-demon wish (fountain.c:78, 314); Amulet-of-Yendor pickup wish (allmain.c:446-451)
@@ -8175,7 +8175,7 @@ candle, and — relevant after all that lamp-rubbing — a wish for a
 <h3>Spellcasting</h3>
 <!-- audit
 2026-05-18:
-- force bolt damage is 2d12; school skill does NOT scale damage
+- force bolt damage is 2d12; school skill does NOT scale damage (zap.c:2720-2724)
 - chain lightning is level 4 NODIR, not level 7, not a bouncing ray (objects.h:1409-1411)
 - failed spellbook read effects: teleport, aggravate, blindness, take-gold, confusion, contact poison, exploding rune, rndcurse (spell.c:130)
 - failed read has a single 1/3 destruction chance (spell.c:612)
@@ -8183,9 +8183,9 @@ candle, and — relevant after all that lamp-rubbing — a wish for a
 - no Pw drain from memorized spells exists; "spell maintenance" is fabricated
 - drain_en only ever DECREASES Pw — no reflection+vortex max-Pw trick
 - blessed book bypasses the read-ability check entirely (auto-success)
-- Pw cost per spell = 5 × level
+- Pw cost per spell = 5 × level: SPELL_LEV_PW(spellev) (spell.c:1245)
 - confused casts fail outright (spell.c:1372); charm monster has no confused-area mode
-- Skilled+ casting acts like a blessed scroll
+- Skilled+ casting acts like a blessed scroll (spell.c:1524-1525) or blessed potion (spell.c:1540-1541)
 - Pw regen: (Wis + Int)/15 + 1; Wizards tick on factor 3 vs 4 (allmain.c:605-607)
 - Valkyries restricted in divination, so reading scroll of identify is occasional at best (u_init.c:525-546)
 -->
@@ -8701,7 +8701,7 @@ numbers, which in the Mazes is the closest thing to love.</p>
 - soldiers and lieutenant guard the entry hall and tower corners
 - five trap doors at columns 40/44/48/52/55 (gaps 4/4/4/3), not strictly even (castle.lua:156-160)
 - trap door always sends you to Valley of the Dead (dlevel=1), not a random Gehennom level (trap.c:669-670, dungeon.c:1949-1953)
-- storerooms hold four D-class dragons; moat holds sea monsters; fountain present
+- storerooms hold four D-class dragons; moat holds sea monsters; fountain present (castle.lua:60, 180, 185)
 -->
 <p>If you’ve reached the Castle, congratulations: you’ve survived the
 easy part. Everything below is worse.</p>
@@ -8794,7 +8794,7 @@ inventory twice. Make sure you have:</p>
 - Vlad's throne effect rate: only rnd(6) > 4 (= 1/3 of sits) triggers anything; 4/13 of those are the wish (sit.c:45, 238-353)
 - so unconditional wish rate is (1/3)·(4/13) = 4/39 ≈ 10%; ~10 sits average, ~7 bad effects absorbed
 - Orcus drops magic lamp or magic marker, 50/50 (orcus.lua:107-111)
-- Sanctum has noteleport + nommap
+- Sanctum has noteleport + nommap (sanctum.lua:8)
 -->
 <p>Below the Castle, the dungeon changes. The corridors give way to
 mazes. The monsters give way to demons. The comforting knowledge that
@@ -9520,6 +9520,7 @@ reformatted for this guide.</em></p>
 2026-05-19:
 - Scrolls land at spoiler (3,12) and (4,12); lua coords (02,11) and (03,11) (soko4-1.lua:94-95).
 - Spoiler-to-lua mapping: lua_xy+1 = spoiler_col, row.
+- Level flags noteleport, hardfloor, sokoban, solidify, premapped set (soko4-1.lua:38).
 - All 19 push steps verified against soko4-1.lua by simulation.
 - Final remainder (boulder A) is exact.
 -->
@@ -9574,8 +9575,10 @@ always scrolls of earth.</p>
 2026-05-19:
 - Map walls/floors and all 12 boulders A-L match soko4-2.lua:9-21, 29-42.
 - Upstair (2,2), branch portal (4,2) (soko4-2.lua).
-- 10 pits: 5 at col 2 rows 3-7, plus 5 at row 9 cols 2-6.
-- 2 rolling-boulder traps; 2 always-scrolls-of-earth at (2,10) and (3,10).
+- 10 pits: 5 at col 2 rows 3-7, plus 5 at row 9 cols 2-6 (soko4-2.lua:48-59).
+- 2 rolling-boulder traps at (1,7) and (6,8) (soko4-2.lua:53, 60).
+- 2 always-scrolls-of-earth at (2,10) and (3,10) (soko4-2.lua:63-64).
+- Level flags noteleport, hardfloor, sokoban, solidify, premapped (soko4-2.lua:7).
 - All 16 solution steps land on lua floor with cardinal approach squares.
 - Final remainder (boulders D and E) is exact.
 -->
@@ -9633,6 +9636,8 @@ are always scrolls of earth.</p>
 2026-05-19:
 - Map walls/floors and all 20 boulders A-T match soko3-1.lua:9-73.
 - Both stairs, locked door (27,9), rolling-boulder trap (11,10), 15 hole traps all verified.
+- Hole row at row 10 cols 12-26 (soko3-1.lua:59-73); rolling boulder at (11,10) (soko3-1.lua:58).
+- Level flags noteleport, sokoban, solidify, premapped (soko3-1.lua:7); no hardfloor on level 2.
 - All solution steps land on floor with reachable cardinal approach squares.
 - Step 8's "push F up to (3,4)" is required: F at (3,7) seals the N-S corridor through (3,6).
 - 15 filled holes match the bowling-alley count; final remainder (B, C, D, I, Q) is exact.
@@ -9674,6 +9679,7 @@ are always scrolls of earth.</p>
 - 16-boulder layout and all 22 solution steps verified by simulation against soko3-2.lua.
 - Source file is soko3-2.lua (Sokoban .lua numbering runs bottom up; spoiler "Level 2" = second-from-top).
 - Map is a stylized but topologically equivalent rendering of soko3-2.lua.
+- Level flags noteleport, sokoban, solidify, premapped (soko3-2.lua:7); no hardfloor at this depth.
 - Intermediate diagrams at steps 9 and 16 match simulated boulder positions.
 - Step 17 (push H left) is necessary, not cosmetic.
 - Step 21's "G right 1, D up 1" is gratuitous but harmless: those boulders don't reach a hole.
@@ -9766,6 +9772,7 @@ Finish F like C.</li>
 - 13-boulder layout and all 13 solution steps verified against dat/soko2-1.lua:9-62.
 - Upstair (17,5), downstair (7,11), locked door (19,9) all match.
 - 10 hole traps at row 10 cols 9-18; rolling-boulder trap at (8,10).
+- Level flags noteleport, sokoban, solidify, premapped (soko2-1.lua:7).
 - Final "three boulders remain" tally is exact.
 -->
 </section>
@@ -9811,6 +9818,7 @@ like E.</li>
 - All 16 boulders A-P map exactly to soko2-2.lua coords.
 - Downstair/start at (7,12); rolling-boulder trap at (8,12).
 - 11 holes at row 12 cols 9-19; two locked doors at (20,10) and (20,12).
+- Level flags noteleport, sokoban, solidify, premapped (soko2-2.lua:7).
 - 15 solution steps compress Boudewijn Waijers's original 22; each push geometrically reachable.
 - Final "five boulders remain" tally is exact.
 -->
@@ -9880,6 +9888,7 @@ reflection)</h4>
 - 16 holes plus 1 rolling boulder at row 1: hole col 7, rolling boulder col 8, holes cols 9-23.
 - Four chamber passages at lua row 3 col 7, row 6 col 8, row 9 col 5, row 13 col 7.
 - Intermediate map after step 13 shows 8 holes filled (F, G, H, I, K, L, M, N).
+- Level flags noteleport, sokoban, solidify, premapped (soko1-1.lua:7).
 - Final remainder of 2 boulders (A and E) is exact.
 - Prize odds: 75% bag of holding, 25% amulet of reflection (soko1-1.lua:102-111).
 - "Next to the treasure zoo" chambers at spoiler (17,12) / (17,14) / (17,16); zoo region (18,10)-(22,16).
@@ -9964,7 +9973,7 @@ holding)</h4>
 2026-05-19:
 - prize odds: 25% bag of holding, 75% amulet of reflection (soko1-2.lua:105)
 - 28-step solution simulates cleanly; final remainder boulder (13,7), sokoban prize (13,8) (soko1-2.lua)
-- hardfloor and noteleport flags set (soko1-2.lua:7)
+- level flags noteleport, premapped, sokoban, solidify (soko1-2.lua:7); no hardfloor on prize level
 - diagonal boulder pushes blocked (hack.c:441-448)
 -->
 <pre><code>            11111111112222222
@@ -10214,8 +10223,8 @@ artifact weapons.</p>
 <!-- audit
 2026-05-19:
 - Pacifist tracks u.uconduct.killer; only xkilled (mon.c:3500) and pet-pushed-into-trap (hack.c:2201) increment
-- pet kills and conflict kills do NOT break the conduct
-- charm-monster spell, Elbereth, and pet tactics are all safe
+- pet kills and conflict kills do NOT break the conduct: xkilled() only increments on !noconduct branch (mon.c:3499-3502)
+- charm-monster spell, Elbereth, and pet tactics are all safe (no killer++ in those code paths)
 -->
 <p>Don’t kill any monsters. Not directly, not with pets, not through any
 means that the game attributes to you. The pacifist runs on pets doing
@@ -10412,7 +10421,7 @@ every 5.0 game, not just pauper) can provide much of your first kit.</p>
 - xlogfile achievement "petless" via add_achieveX (topten.c)
 - "dairy to foocubi" is fabricated: befriend_with_obj gates on is_domestic, and foocubi aren't (mondata.h:255-261)
 - foocubus + ring of adornment is pacification, not taming
-- food thrown at hostile dogs and cats IS a taming path that breaks petless
+- food thrown at hostile dogs and cats IS a taming path that breaks petless (dothrow.c:2268-2269 routes to tamedog)
 -->
 <p>Never have a pet. Set <code>OPTIONS=pettype:none</code> in your
 rcfile to skip the starting companion entirely (this overrides per-role
@@ -10507,7 +10516,9 @@ encountered any bones levels” — and doesn’t earn the conduct.)</p>
 2026-05-19:
 - 22 gem prices, Mohs hardness, hard-gem threshold >=8 verified (objects.h, shk.c)
 - unidentified gem sell price: (tmp+3)*quan, tmp 0..divisor-1, min 3 zm (shk.c:3168-3172)
-- Tourist/dunce-cap surcharge, unicorn luck, Excalibur 16000 example verified (shk.c, shknam.c)
+- dunce cap and low-XL Tourist (or visible touristy shirt) each multiply buy by 4/3 (shk.c:2947-2951)
+- angry-shopkeeper surcharge adds (price+2)/3 per billed item, ~33% (shk.c:1365-1373)
+- Charisma price tiers: ACURR>18 halves, =18 multiplier 2/3, 16-17 3/4, <=5 doubles, 6-7 3/2, 8-10 4/3 (shk.c:2953-2964)
 - shopkeeper anti-Elbereth, see-invisible, Keystone Kops, "Closed for inventory", Orcus-level death verified (shk.c)
 - amethyst dipped in booze yields fruit juice (potion.c:2161), NOT a hallucination cure
 - shop walls ARE diggable from inside: dig.c:488-501 converts to door, shopkeeper bills SHOP_WALL_DMG and chases (shk.c:5061-5078)
@@ -10920,7 +10931,8 @@ options within each skill tree at a glance.</p>
 - Expert Rogue dagger multishot caps at rnd(4) = 1-4: 1 base + 1 Expert + 1 Skilled + 1 class (dothrow.c:177-190, 63-67)
 - athame engraving Elbereth does NOT dull the weapon, so no enchantment is consumed (engrave.c:1306-1307, 1361). Duration is unchanged
 - silver weapons hurt demons, vampires, lycanthropes, shades, and imps (except tengu) per mon_hates_silver (mondata.c:524-528)
-- silver does NOT hurt liches, zombies, mummies, wraiths, ghouls, or ghosts
+- silver does NOT hurt liches, zombies, mummies, wraiths, ghouls, or ghosts (none of those classes appear in hates_silver, mondata.c:524-528)
+- silver damage bonus is rolled in mhitm/hmon, +1d20 vs hates_silver targets for silver weapons (uhitm.c:1376-1377)
 -->
 <div class="dense-table">
 <table>
@@ -11158,8 +11170,8 @@ sword by another name.</td>
 <!-- audit
 2026-05-19:
 - 10 saber cells verified clean (objects.h)
-- Grayswandir is a SILVER_SABER artifact, PHYS(5,0): +1d5 to-hit and double damage (artilist.h:172, artifact.c:1083-1086, 1106-1107)
-- Werebane is also a silver saber artifact
+- Grayswandir is a SILVER_SABER artifact, PHYS(5,0): +1d5 to-hit and double damage (artilist.h:170, artifact.c:1083-1086, 1106-1107)
+- Werebane is also a silver saber artifact (artilist.h:166); +d5 vs lycanthropes via SPFX_DFLAG2 M2_WERE
 - inline effects deferred to Artifacts chapter rather than duplicated
 -->
 <div class="dense-table">
@@ -11276,10 +11288,12 @@ forms: <strong>Grayswandir</strong> and <strong>Werebane</strong> (see
 <!-- audit
 2026-05-19:
 - long sword stats verified (objects.h:270-280)
-- Excalibur dipping: any alignment rolls 1-in-30 at XL 5+, but only Lawfuls succeed; non-Lawfuls get the sword cursed
-- LONG_SWORD artifacts: Excalibur, Vorpal Blade, Frost Brand, Fire Brand
+- Excalibur dipping requires LONG_SWORD, XL >= 5, quan == 1, not already artifact, no extant Excalibur (fountain.c:404-408)
+- dip roll: !rn2(6) for Knights, !rn2(30) otherwise (fountain.c:405)
+- non-Lawfuls get the sword cursed, spe possibly decremented, oerodeproof cleared (fountain.c:411-421)
+- LONG_SWORD artifacts: Excalibur, Frost Brand, Fire Brand, Giantslayer, Vorpal Blade, Sunsword (artilist.h:85, 149, 153, 174, 191, 209)
 - Vorpal Blade is a LONG_SWORD artifact, NOT a two-handed sword (artilist.h:191)
-- two-handed sword has no dedicated artifact
+- two-handed sword has no dedicated artifact (no TWO_HANDED_SWORD entries in artilist.h)
 -->
 <div class="dense-table">
 <table>
@@ -11313,8 +11327,8 @@ forms: <strong>Grayswandir</strong> and <strong>Werebane</strong> (see
 <td>iron</td>
 <td>At XL 5+, dipping in a fountain rolls 1-in-30. Knights get 1-in-6.
 On a hit, Lawfuls get <strong>Excalibur</strong>. Others get the sword
-cursed. Artifact forms: Excalibur, Vorpal Blade, Frost Brand, Fire
-Brand.</td>
+cursed. Artifact forms: Excalibur, Frost Brand, Fire Brand, Giantslayer,
+Vorpal Blade, Sunsword.</td>
 </tr>
 <tr>
 <td>katana</td>
@@ -11668,7 +11682,7 @@ one-hander.</td>
 2026-05-19:
 - flail: base 1d6/1d4, +1 small (weapon.c:272-275), +1d4 large (weapon.c:239-243); objects.h:384-386
 - grappling hook: 1d2/1d6, WEPTOOL that trains P_FLAIL (objects.h:1010-1012)
-- grappling hook #apply pulls target toward you; range 4/4/5/8 by skill (apply.c:3686-3698)
+- grappling hook #apply pulls target toward you; range 4 (P_NONE/Basic), 5 (Skilled), 8 (Expert+) (apply.c:3686-3698)
 - no flail artifact
 -->
 <div class="dense-table">
@@ -11766,10 +11780,11 @@ alignment will match the player’s).</td>
 <h4>Quarterstaff</h4>
 <!-- audit
 2026-05-19:
-- quarterstaff: bimanual, 1d6/1d6, wt 40, cost 5, WOOD (objects.h:377-378)
-- Wizard starter (u_init.c:168)
-- bimanual: gets 3/2 Str damage bonus in melee (uhitm.c:1467)
-- Expert skill caps: Wizard, Priest, Healer, Caveman (no Knight, no Rogue)
+- quarterstaff: bimanual, 1d6/1d6, wt 40, cost 5, WOOD, P_QUARTERSTAFF (objects.h:377-379).
+- Wizard starter weapon (u_init.c:168).
+- bimanual: gets 3/2 Str damage bonus in melee (uhitm.c:1467).
+- Expert caps: Wizard, Priest, Healer, Caveman (u_init.c:314,334,396,555 P_QUARTERSTAFF=P_EXPERT).
+- No Knight or Rogue entry: P_QUARTERSTAFF absent from Skill_K and Skill_R (u_init.c:346-413).
 -->
 <div class="dense-table">
 <table>
@@ -11811,11 +11826,12 @@ alignment will match the player’s).</td>
 <h4>Polearms</h4>
 <!-- audit
 2026-05-19:
-- polearm stats verified (objects.h, weapon.c dmgval)
-- polearm reach is skill-dependent, NOT a fixed 2 squares (apply.c:3355-3382)
-- use_pole has NO "empty intervening square" check
-- polearms CAN bash an adjacent monster (uhitm.c:1467-1484)
-- adjacent polearm attack: damage clamps to 1d2 base, no weapon-skill bonus, but Strength bonus still applies (uhitm.c:1075-1086, 1447-1469)
+- 12 polearm rows verified: all two-handed, all P_POLEARMS, all iron (objects.h:294-341).
+- per-row dice/weight/cost from objects.h:294-341 WEAPON() macros; +d4/+d6 vs-large bonuses applied in weapon.c dmgval.
+- polearm reach is skill-dependent, NOT a fixed 2 squares (apply.c:3355-3382).
+- use_pole has NO "empty intervening square" check (apply.c:3355-3382).
+- polearms CAN bash an adjacent monster (uhitm.c:1467-1484).
+- adjacent polearm bash: damage clamps to 1d2 base, no weapon-skill bonus, Strength still applies (uhitm.c:1075-1086, 1447-1469).
 -->
 <p>All polearms are two-handed. To strike at range, <code>#apply</code>
 the weapon (not wield-and-attack): you can hit at distance 2
@@ -11965,12 +11981,13 @@ class.</p>
 <h4>Spear</h4>
 <!-- audit
 2026-05-19:
-- spear stats verified (objects.h:174-191)
-- Valkyrie starts with a plain spear and trains to Expert (u_init.c:160-161, 537)
-- spear kebab bonus: +2 to-hit vs xorns, dragons, jabberwocks, nagas, giants (weapon.c:71-73, 167-168, is_spear)
-- trident uses P_TRIDENT, a separate skill from spears
-- +1 thrown-spear multishot belongs to Caveman (PM_CAVE_DWELLER), NOT Valkyrie (dothrow.c:47-52)
-- Valkyrie has no class-specific spear multishot, only the generic Expert ceiling
+- 6 spear rows (spear/elven/orcish/dwarvish/silver/javelin) verified P_SPEAR (objects.h:174-191).
+- silver spear: SILVER material, cost 40, +d20 vs silver-haters (objects.h:186-188; artifact.c spec_dbon).
+- Valkyrie starts with a plain spear and trains to Expert (u_init.c:160-161, 537).
+- spear kebab bonus: +2 to-hit vs xorns, dragons, jabberwocks, nagas, giants (weapon.c:71-73, 167-168, is_spear).
+- trident uses P_TRIDENT, a separate skill from spears (objects.h:195 P_TRIDENT).
+- +1 thrown-spear multishot belongs to Caveman (PM_CAVE_DWELLER), NOT Valkyrie (dothrow.c:47-52).
+- Valkyrie has no class-specific spear multishot, only the generic Expert ceiling (dothrow.c).
 -->
 <p>All spears share the same skill (trident uses a different class — see
 below). The Valkyrie starts with one and can train to Expert. The
@@ -12213,8 +12230,10 @@ when the target is wielding a weapon), or to yank yourself out of a pit
 </div>
 <!-- audit
 2026-05-19:
-- 9 bow/arrow rows verified clean (objects.h:141-154, 395-402)
-- yumi prob=0: Samurai-only, never randomly spawns
+- 5 PROJECTILE arrow rows (objects.h:141-154); 4 BOW launcher rows (objects.h:395-402).
+- arrows: 1d6/1d6 (1d7/1d6 elven, 1d5/1d6 orcish, 1d6/1d6 silver) wt 1, cost 2 (objects.h:141-152).
+- ya: 1d7/1d7, +1 hit, METAL, cost 4 (objects.h:153-154).
+- yumi prob=0: Samurai-only, never randomly spawns (objects.h:401-402).
 -->
 </section>
 <section id="bow" class="level4">
@@ -12570,18 +12589,22 @@ sink. Low Dex or Fumbling means you catch it in the face.</td>
 <h3>Armor Tables</h3>
 <!-- audit
 2026-05-19:
-- all armor AC/MC/Wt/Cost/Material verified (objects.h:445-727)
-- helm of brilliance: adds spe to Int and Wis (literal enchantment), NO dice (do_wear.c:3328-3334 adj_abon)
-- gauntlets of dexterity: adds spe to Dex, NO dice
-- dunce cap is NOT pre-cursed at generation: follows standard mkobj; auto-curses when worn (do_wear.c:475-491)
-- 9/10-cursed-on-generation items: FUMBLE_BOOTS, LEVITATION_BOOTS, HELM_OF_OPPOSITE_ALIGNMENT, GAUNTLETS_OF_FUMBLING (mkobj.c:1086-1090)
-- mithril DOES suffer casting penalty: MITHRIL is in is_metallic range, spelarmr applies (objclass.h:194-196, spell.c:2191-2193)
-- blue dragon scale mail and scales give extrinsic Very_fast tier matching speed boots, NOT intrinsic Fast (do_wear.c:817-828 EFast)
-- speed boots mechanic: free action on 2/3 of turns, NOT "+1 speed"
-- levitation boots: Boots_off handles in-air removal (do_wear.c:300-310); the trap is the 9/10 curse
-- robe casting bonus cancels most of the metal-armor penalty (spell.c:2192-2195 spelarmr subtraction)
-- chain mail: all iron mails are Mines drops (the "Dwarves drop these" framing is misleading)
-- follow-ups: build_armor_appendix.py may be stale; "yellow dragon scale mail | Rare." not verified against 5.0 generation rules
+- body armor: AC/Wt/Cost via ARMOR() macros (objects.h:556-600); plate mail AC+7 wt450 cost600 (line 556-558).
+- mithril coats: AC+6/+5, wt 150, cost 240, MITHRIL material (objects.h:571-576).
+- shirts wt 5 (Hawaiian/T-shirt, objects.h:603-608); cloaks at objects.h:611-650.
+- helmets at objects.h:445-487; gloves at objects.h:686-697; boots at objects.h:700-727.
+- shields at objects.h:653-679; cloak of protection MC 3 (objects.h:637-640).
+- helm of brilliance: adds spe to Int and Wis (literal enchantment), NO dice (do_wear.c:3328-3334 adj_abon).
+- gauntlets of dexterity: adds spe to Dex, NO dice (do_wear.c adj_abon).
+- dunce cap is NOT pre-cursed at generation: follows standard mkobj; auto-curses when worn (do_wear.c:475-491).
+- 9/10-cursed-on-generation items: FUMBLE_BOOTS, LEVITATION_BOOTS, HELM_OF_OPPOSITE_ALIGNMENT, GAUNTLETS_OF_FUMBLING (mkobj.c:1086-1090).
+- mithril DOES suffer casting penalty: MITHRIL is in is_metallic range, spelarmr applies (objclass.h:194-196, spell.c:2191-2193).
+- blue dragon scale mail and scales give extrinsic Very_fast tier matching speed boots, NOT intrinsic Fast (do_wear.c:817-828 EFast).
+- speed boots mechanic: free action on 2/3 of turns, NOT "+1 speed".
+- levitation boots: Boots_off handles in-air removal (do_wear.c:300-310); the trap is the 9/10 curse.
+- robe casting bonus cancels most of the metal-armor penalty (spell.c:2192-2195 spelarmr subtraction).
+- chain mail: all iron mails are Mines drops (the "Dwarves drop these" framing is misleading).
+- follow-ups: build_armor_appendix.py may be stale; "yellow dragon scale mail | Rare." not verified against 5.0 generation rules.
 -->
 <p><strong>AC</strong> is the armor-class bonus the piece provides
 (higher number = more protection; this is the amount subtracted from
@@ -13598,9 +13621,16 @@ taken off, so this is a trap item.</td>
 <h3>Spell Tables</h3>
 <!-- audit
 2026-05-19:
-- 41 spells, sourced from objects.h SPELL() macros (P_ATTACK..P_MATTER); SPELL macro signature at objects.h:1078, oc_level=oc_oc2.
+- 41 spells, sourced from objects.h SPELL() macros (P_ATTACK..P_MATTER); SPELL macro signature at objects.h:1277-1281, oc_level=oc_oc2.
+- attack spells at objects.h:1297-1330 (force bolt/magic missile/drain life/cone of cold/fireball/finger of death/chain lightning).
+- healing spells at objects.h:1313-1408 (healing/cure blindness/cure sickness/extra healing/stone to flesh/restore ability).
+- divination spells at objects.h:1308-1384 (light/detect monsters/detect food/clairvoyance/detect unseen/identify/detect treasure/magic mapping).
+- enchantment spells at objects.h:1305-1354 (confuse monster/slow monster/cause fear/sleep/charm monster).
+- cleric spells at objects.h:1337-1400 (protection/create monster/remove curse/create familiar/turn undead).
+- escape spells at objects.h:1355-1404 (jumping/haste self/invisibility/levitation/teleport away).
+- matter spells at objects.h:1293-1407 (knock/wizard lock/dig/polymorph/cancellation/stone to flesh).
 - Flame sphere and freeze sphere are `#if 0 DEFERRED` (objects.h:1413-1422), NOT shipped in 5.0.
-- Chain lightning is level 2 per macro (objects.h); body table at line 4986 and What's New at 8585 still say L4: follow-up fix.
+- Chain lightning is level 2 per macro (objects.h:1409-1411); body table at line 4986 and What's New at 8585 still say L4: follow-up fix.
 - Magic missile IS Antimagic-blocked (zap.c:4410-4419, "missiles bounce off!"), NOT unresistable.
 - Finger of death: monster MR resists, but player gets no Antimagic check on death-ray instakill (zap.c:2885-2902).
 - Clairvoyance gets a P_SKILLED upgrade detecting nearby monsters per pulse (spell.c:1572-1576).
@@ -14783,6 +14813,12 @@ deserve one.</p>
 <!-- audit
 2026-05-19:
 - 6 rows (S_ANT) sourced from monsters.h:89-133.
+- giant ant L2/Spd18/AC3 bite 1d4 (monsters.h:89-95).
+- killer bee L1/Spd18/AC-1 sting 1d3 AD_DRST, G_LGROUP, MR_POISON (monsters.h:96-102).
+- soldier ant L3/Spd18/AC3 bite 2d4 + sting 3d4 AD_DRST, M1_POIS (monsters.h:103-110).
+- fire ant L3/Spd18/AC3 bite 2d4 phys + 2d4 fire, MR_FIRE (monsters.h:111-118).
+- giant beetle L5/Spd6/AC4 bite 3d6, M1_POIS, MR_POISON (monsters.h:119-125).
+- queen bee L9/Spd24/AC-4 sting 1d8 AD_DRST, G_NOGEN, M2_FEMALE|M2_PRINCE (monsters.h:126-133).
 - Killer/soldier/queen stings are AD_DRST (Str-drain, poison-family); shown as "poison" for beginner voice.
 - Killer bee is G_LGROUP; others are smaller groups.
 -->
@@ -15330,6 +15366,10 @@ towel to break sight. Corpse grants telepathy.</td>
 <!-- audit
 2026-05-19:
 - 8 rows (S_FELINE) sourced from monsters.h:381-444.
+- kitten L2/Spd18/AC6 bite 1d6 (monsters.h:381-388).
+- housecat L4/Spd16/AC5 bite 1d6 (monsters.h:389-396).
+- large cat L6/Spd15/AC4 bite 2d4 (monsters.h:421-428).
+- displacer beast L12/Spd12/AC-10 claw 4d4 + claw 4d4 + bite 2d10 (monsters.h:437-444).
 - Tigers are M2_HOSTILE, difficulty 8: tameable only via charm-monster/scroll-of-taming/magic-flute, NOT tripe.
 - Only Wizard guarantees a kitten (urole.petnum=PM_KITTEN per role.c:548); Valkyrie/Tourist roll 50/50 kitten-or-dog (dog.c:90-101).
 -->
@@ -15523,9 +15563,16 @@ Kill them on dry land, ideally during daylight.</p>
 <h4>Humanoids <code>h</code></h4>
 <!-- audit
 2026-05-19:
-- 7 rows (S_HUMANOID) sourced; helmet blocks mind-flayer tentacle 7/8 of the time (uhitm.c:3235, `uarmh && rn2(8)`).
+- 7 rows (S_HUMANOID) sourced from monsters.h:477-542.
+- hobbit L1/Spd9/AC10 weapon 1d6 (monsters.h:477-484).
+- dwarf L2/Spd6/AC10 weapon 1d8, M1_TUNNEL (monsters.h:485-493).
+- dwarf lord L4/Spd6/AC10 weapon 2d4 ×2 (monsters.h:502-510).
+- dwarf king L6/Spd6/AC10 weapon 2d6 ×2, MR 20% (monsters.h:511-520).
+- mind flayer L9/Spd12/AC5 MR 90%, 3× tentacle AD_DRLI (monsters.h:521-530).
+- master mind flayer L13/Spd12/AC0 MR 90%, 5× tentacle (monsters.h:531-542).
+- helmet blocks mind-flayer tentacle 7/8 of the time (uhitm.c:3235, `uarmh && rn2(8)`).
 - Any helmet blocks the mind flayer attack, NOT only alignment-matching or telepathy/free-action helmets.
-- Bugbear is AT_WEAP only, no bite (monsters.h).
+- Bugbear is AT_WEAP only, no bite (monsters.h:494-501).
 - Dwarf race peacefulness for Dwarf PCs via race_peaceful() at makemon.c:2283.
 -->
 <p>Dwarves and similar. Dwarves carry better-than-average loot (weapons,
@@ -15813,7 +15860,11 @@ spotted jelly’s passive acid bite even when you hit them.</p>
 <h4>Kobolds <code>k</code></h4>
 <!-- audit
 2026-05-19:
-- 4 rows (kobold/large/lord/shaman) sourced from monsters.h:624-656.
+- 4 rows (kobold/large/lord/shaman) sourced from monsters.h:624-657.
+- kobold L0/Spd6/AC10 weapon 1d4 (monsters.h:624-631).
+- large kobold L1/Spd6/AC10 weapon 1d6 (monsters.h:632-639).
+- kobold lord L2/Spd6/AC10 weapon 2d4 (monsters.h:640-648).
+- kobold shaman L2/Spd6/AC6 MR 10% (monsters.h:649-657).
 - All four carry M1_POIS (poisonous corpse) and MR_POISON.
 - Kobold shaman has only one AT_MAGC/AD_SPEL attack (monsters.h:651); notation is "cast spell," not "spell spell."
 -->
@@ -16087,9 +16138,15 @@ item back from her corpse later.</p>
 <!-- audit
 2026-05-19:
 - 8 rows (S_ORC) sourced from monsters.h:727-796.
-- Orc shaman has one AT_MAGC/AD_SPEL attack: notation is "spell," not "spell spell."
-- Goblin is correctly placed in S_ORC.
-- Mordor orc speed 5 is correct in 5.0 (nerfed from older versions).
+- goblin L0/Spd6/AC10 weapon 1d4 (monsters.h:727-733).
+- hobgoblin L1/Spd9/AC10 weapon 1d6 (monsters.h:734-742).
+- orc L1/Spd9/AC10 weapon 1d8, MR_POISON (monsters.h:743-751).
+- hill orc L2/Spd9/AC10 weapon 1d6 (monsters.h:752-760).
+- Mordor orc L3/Spd5/AC10 weapon 1d6 (monsters.h:761-769); Spd 5 is correct in 5.0.
+- Uruk-hai L3/Spd7/AC10 weapon 1d8 (monsters.h:770-778).
+- orc shaman L3/Spd9/AC5 single AT_MAGC/AD_SPEL (monsters.h:779-787); "spell," not "spell spell."
+- orc-captain L5/Spd5/AC10 weapon 2d4 ×2 (monsters.h:788-796).
+- Goblin is correctly placed in S_ORC (monsters.h:727).
 -->
 <p>Pack hunters with mediocre loot but real numbers. The Mines are full
 of them; bring a chokepoint.</p>
@@ -16204,9 +16261,11 @@ of them; bring a chokepoint.</p>
 <!-- audit
 2026-05-19:
 - 3 rows (rock/iron/glass piercer) sourced from monsters.h:800-826.
+- rock piercer L3/Spd1/AC3 bite 2d6 (monsters.h:800-808).
+- iron piercer L5/Spd1/AC0 bite 3d6 (monsters.h:809-817).
+- glass piercer L7/Spd1/AC0 bite 4d6, MR_ACID (monsters.h:818-826).
 - All carry M1_HIDE|M1_CLING (ceiling-hiders per mondata.h:43-45); hiding gated by has_ceiling (mon.c:4672).
 - Drop-on-walk-under is d(4,6) for ALL species regardless of bite die (hack.c:3436).
-- Glass piercer has MR_ACID.
 -->
 </section>
 <section id="piercers-p" class="level4">
@@ -16279,7 +16338,11 @@ ceiling.</p>
 <!-- audit
 2026-05-19:
 - 7 rows (rothe through mastodon) sourced from monsters.h:831-885.
-- Wumpus has M1_CLING.
+- rothe L2/Spd9/AC7 claw 1d3 + bite 1d3 + bite 1d8 (monsters.h:831-837).
+- mumak L5/Spd9/AC0 butt 4d12 + bite 2d6 (monsters.h:838-845).
+- leocrotta L6/Spd18/AC4 (monsters.h:846-853).
+- wumpus L8/Spd3/AC2 bite 3d6, M1_CLING (monsters.h:854-861).
+- mastodon L20/Spd12/AC5 butt 4d8 ×2 (monsters.h:878-885).
 -->
 <p>Mixed bag. Rothes are early-game wreckers (three attacks per turn).
 Mumakil are slow but hit for 4d12 and shrug off blows.</p>
@@ -16859,9 +16922,10 @@ you.</p>
 <h4>Worms <code>w</code></h4>
 <!-- audit
 2026-05-19:
-- 4 rows (S_WORM) sourced from monsters.h:1114-1145.
-- Long worm tail mechanic in worm.c; purple worm AT_ENGL/AD_DGST swallow in mhitu.c.
-- Long worm drops worm tooth on death; fires only for PM_LONG_WORM, not baby (mon.c:619).
+- 4 rows (S_WORM) sourced from monsters.h:1114-1145: baby long worm 1118, baby purple 1124, long worm 1130, purple worm 1138.
+- Long worm tail and segment mechanics in worm.c; purple worm AT_ENGL/AD_DGST swallow at monsters.h:1141.
+- Long worm drops worm tooth on death; fires only for PM_LONG_WORM, not baby (mon.c:618-620).
+- Long worm grown segments tracked via mtmp->wormno (mon.c:5451, get_wormno on polymorph to PM_LONG_WORM).
 -->
 <p>Long worms become a maze of tail segments as they grow. Purple worms
 swallow you whole and digest. Don’t get cornered.</p>
@@ -16938,7 +17002,8 @@ swallow you whole and digest. Don’t get cornered.</p>
 <h4>Xans and fantastic insects <code>x</code></h4>
 <!-- audit
 2026-05-19:
-- Grid bug and xan rows sourced from monsters.h:1149-1164.
+- Grid bug row at monsters.h:1149-1156; xan row at monsters.h:1157-1164.
+- Grid bug AT_BITE/AD_ELEC 1d1; xan AT_STNG/AD_LEGS 1d4, M1_FLY plus M1_POIS (poisonous corpse).
 - Xan AD_LEGS / Wounded_legs reduces carry capacity (hack.c:4331-4336) and abuses Dex (attrib.c:472, 581); it does NOT slow movement.
 -->
 <p>Grid bugs are trivial; xans, the bigger relatives, sting your legs
@@ -17109,10 +17174,11 @@ three-attack flurry.</p>
 <h4>Angelic beings <code>A</code></h4>
 <!-- audit
 2026-05-19:
-- 5 rows (couatl/Aleax/Angel/ki-rin/Archon) sourced from monsters.h:1206-1265.
+- 5 rows at monsters.h:1206-1265 (couatl 1206, Aleax 1216, Angel 1225, ki-rin 1240, Archon 1252).
 - All Angels have G_NOCORPSE; couatl leaves no corpse (MR_POISON still matters for combat).
 - AD_MAGM ("magic") on Angel; AD_SPEL ("spell") on ki-rin/Archon.
 - Ki-rin HI_GOLD = yellow; Archon HI_LORD = magenta (color.h:38,46).
+- Archon has M1_REGEN, M1_SEE_INVIS, plus 5-attack chain (weapon, weapon, gaze, claw, spell).
 -->
 <p>Powerful late-game spellcasters with weapons. Astral-Plane Angels
 guard each High Priest — see <a href="#the-ascension-run">The Ascension
@@ -17355,10 +17421,12 @@ range.</p>
 <h4>Dragons <code>D</code></h4>
 <!-- audit
 2026-05-19:
-- 10 baby + 10 adult + Chromatic + Ixoth sourced from monsters.h:1325-1562, 3642-3690.
-- Shimmering dragon is `#if 0 DEFERRED`, NOT in 5.0.
+- 10 baby + 10 adult + Chromatic + Ixoth sourced from monsters.h:1325-1562; Ixoth at monsters.h:3642-3690.
+- Shimmering dragon is `#if 0 DEFERRED`, NOT in 5.0 (monsters.h shimmering block guarded out).
 - Silver dragon color is CLR_BRIGHT_CYAN (color.h:54), NOT gray, for both baby and adult.
 - Baby blue dragon has only bite 2d6; NO breath weapon (monsters.h:1408-1415, no AT_BREA). Babies don't breathe.
+- Black dragon breath is AD_DISN 1d255 (instakill without reflection or disint-res), monsters.h:1494.
+- Chromatic random-breath AT_BREA/AD_RBRE selects breath type per zap (mhitu.c).
 -->
 <p>Each adult dragon breathes its element type. Reflection bounces the
 ranged breath back. <strong>Babies don’t breathe</strong> — they’re just
@@ -17720,9 +17788,11 @@ you’re adjacent in water, earth is slow but tough.</p>
 <!-- audit
 2026-05-19:
 - 7 rows sourced from monsters.h:1614-1676; elemental molds are brown/green/red, NOT violet/yellow.
-- Lichen corpse never rots (mkobj.c:1402, eat.c:59).
-- Yellow mold has M1_POIS (poisonous corpse).
+- Lichen corpse never rots (mkobj.c:1402, eat.c:59); also never out of season as iron rations.
+- Yellow mold has M1_POIS (poisonous corpse, monsters.h yellow-mold row).
 - Other molds have MR_POISON resistance but no M1_POIS, so their corpses are NOT poisonous.
+- Brown mold passive 0d6 cold (HP drain), green 0d4 acid, red 0d4 fire, yellow 0d4 stun (monsters.h:1614-1666).
+- Violet fungus AT_TUCH/AD_PHYS 1d4 plus AT_TUCH/AD_PLYS sticky (monsters.h:1668-1676).
 -->
 <p>Stationary. Lichen corpses never rot — keep one in your pack as iron
 rations. Brown, green, and red molds bite back on melee with elemental
@@ -17913,12 +17983,12 @@ dangerous.</p>
 <h4>Giant humanoids <code>H</code></h4>
 <!-- audit
 2026-05-19:
-- Frost giant and storm giant melee is AD_PHYS only; cold/shock resistance does NOT reduce damage (monsters.h frost/storm rows).
-- Fire giant melee is AD_PHYS only; fire resistance does NOT make them weak offensively.
-- Cyclops is the Healer quest nemesis, NOT Caveman.
-- Surtur does NOT carry Mjollnir (claim unsupported).
-- Ettin and minotaur are NOT M2_GIANT, so their corpses do not grant Str (eat.c:1345).
-- Minotaur roams Gehennom mazes (mkmaze.c), NOT vaults.
+- Frost giant and storm giant melee is AD_PHYS only; cold/shock resistance does NOT reduce damage (monsters.h frost/storm rows at 1748, 1772).
+- Fire giant melee is AD_PHYS only; fire resistance does NOT make them weak offensively (monsters.h:1738).
+- Cyclops is the Healer quest nemesis (Hea-goal.lua:74, monsters.h:1792-1800), NOT Caveman.
+- Surtur does NOT carry Mjollnir (Mjollnir is a Valkyrie quest artifact, artilist.h).
+- Ettin and minotaur are NOT M2_GIANT, so their corpses do not grant Str (eat.c:1345; monsters.h:1758, 1782).
+- Minotaur roams Gehennom mazes (mkmaze.c:1112, makemon at maze fill), NOT vaults.
 -->
 <p>Boulder throwers. Storm / fire / frost giants match the dragon
 elements; titans cast spells. Eating a true giant’s corpse raises
@@ -18205,8 +18275,9 @@ stable solution. Get away or genocide them instead.</p>
 <h4>Liches <code>L</code></h4>
 <!-- audit
 2026-05-19:
-- Lich corpses leave NO corpse (G_NOCORPSE), they are NOT merely poisonous.
-- Only the arch-lich can cast touch of death; master lich m_lev=17 cannot reach DEATH_TOUCH at spell-level 20 (mcastu.c:111).
+- 4 lich rows at monsters.h:1864-1897 (lich 1864, demilich 1872, master lich 1880, arch-lich 1889).
+- All carry G_NOCORPSE, so no eatable corpse regardless of M1_POIS flavor.
+- Only the arch-lich (m_lev=25) reaches DEATH_TOUCH at spell-level 20; master lich m_lev=17 cannot (mcastu.c:111).
 - Double-trouble is Wizard-of-Yendor only, NOT a lich ability.
 - Arch-lich casts touch of death, NOT rays.
 -->
@@ -18531,8 +18602,9 @@ stoning resistance. That’s easily the best of the four eats.</p>
 <h4>Ogres <code>O</code></h4>
 <!-- audit
 2026-05-19:
-- 3 ogre rows (ogre/lord/king) match monsters.h:2052-2075.
+- 3 ogre rows match monsters.h: ogre 2052, ogre lord 2060, ogre king 2068.
 - Ogres wield weapons (AT_WEAP); they do NOT throw boulders (no M2_ROCKTHROW — that's giants/Cyclops/ettins/titans).
+- All three carry M2_STRONG plus G_GENO|1 (genocidable, freq 1).
 -->
 <p>Big melee brutes that wield weapons. Drop decent weapons and
 armor.</p>
@@ -18825,10 +18897,11 @@ melee it.</td>
 <h4>Snakes <code>S</code></h4>
 <!-- audit
 2026-05-19:
-- All 6 snake rows (garter snake, snake, water moccasin, python, pit viper, cobra) match monsters.h:2167-2221.
-- "Pit viper" is the snake, NOT "pit fiend" (pit fiend is a `&` demon).
+- 6 snake rows at monsters.h:2167-2221: garter 2167, snake 2174, water moccasin 2182, python 2190, pit viper 2204, cobra 2213.
+- "Pit viper" is the snake, NOT "pit fiend" (pit fiend is a `&` major demon at monsters.h:3104-3112).
 - M1_SWIM universal across the section; M1_CONCEAL on all except python.
-- Python has an AT_HUGS pair.
+- Python has an AT_TUCH plus AT_HUGS pair (monsters.h:2193-2199), wrap and crush.
+- Cobra AT_SPIT/AD_BLND blind at monsters.h:2218 (blind spit out to 6 squares).
 -->
 <p>Mostly poisonous. The pit viper and the cobra are the dangerous ones;
 garter snakes are fodder.</p>
@@ -19076,10 +19149,11 @@ too.</td>
 <h4>Vampires <code>V</code></h4>
 <!-- audit
 2026-05-19:
-- All three vampire rows match monsters.h:2282-2314.
-- Vampires carry G_NOCORPSE (monsters.h:2282, 2292, 2314); they leave NO corpse, NOT a poisonous one.
+- 3 vampire rows at monsters.h: vampire 2282, vampire lord 2292, Vlad 2306.
+- All carry G_NOCORPSE plus M2_UNDEAD; they leave NO corpse, NOT a poisonous one.
+- All have M1_REGEN | M1_FLY plus M2_STALK (follows stairs) and shapeshift via M2_WERE-equivalent vamp branch (mon.c).
 - Vampire mage is #if 0 DEFERRED in 5.0 (correctly omitted).
-- Vlad inhabits "Vlad's Tower."
+- Vlad inhabits Vlad's Tower; holds the Candelabrum of Invocation (mkobj.c spawn for PM_VLAD).
 -->
 <p>Drains XL on bite. Shapeshifts to bat or cloud. Vlad the Impaler is
 the boss of Vlad’s Tower.</p>
@@ -19148,9 +19222,10 @@ stairs, and shapeshift.</p>
 <h4>Wraiths <code>W</code></h4>
 <!-- audit
 2026-05-19:
-- All 3 wraith rows match monsters.h:2326-2353.
-- Only plain wraith leaves an eatable corpse; barrow wight and Nazgul are G_NOCORPSE.
-- Wraith corpse grants experience-level gain (eat.c:1141-1142).
+- 3 wraith rows at monsters.h: barrow wight 2326, wraith 2336, Nazgul 2343-2353.
+- Only plain wraith leaves an eatable corpse; barrow wight and Nazgul carry G_NOCORPSE.
+- Wraith corpse grants experience-level gain (eat.c:1141-1142, pluslvl).
+- Nazgul AT_BREA/AD_SLEE breath 2d25 sleep (monsters.h Nazgul row); sleep resistance trivializes.
 -->
 <p>Drains XL on touch. The wraith corpse, however,
 <strong>gives</strong> a level when eaten: one of the best food items in
@@ -19274,9 +19349,9 @@ stoning resistance.</p>
 <h4>Apelike creatures <code>Y</code></h4>
 <!-- audit
 2026-05-19:
-- All 6 ape/yeti rows match monsters.h:2372-2417.
-- Monkey steals via AD_SITM; yeti corpse grants MR_COLD; sasquatch has M1_SEE_INVIS.
-- Sasquatch and yeti both speed 15.
+- 6 ape/yeti rows at monsters.h:2372-2417 (monkey 2372, ape 2379, owlbear 2386, yeti 2393, carnivorous ape 2402, sasquatch 2409).
+- Monkey steals via AT_CLAW/AD_SITM (monsters.h:2376); yeti M1_POIS-free, M2_BRUTE plus MR_COLD intrinsic donor.
+- Sasquatch has M1_SEE_INVIS (monsters.h:2413); both yeti and sasquatch speed 15.
 -->
 <p>Apes and great apes mostly; sasquatches are fast. Carnivore corpses
 are safe food.</p>
@@ -20306,6 +20381,8 @@ nemesis.</td>
 - Amorous demon's displayed form is set by the demon's own randomly-assigned gender (Mgender(mon) at mhitu.c:1988-1989), NOT the player's.
 - Balrog and amorous demon do NOT summon (mhitu.c:967).
 - Bone devil, Orcus, Geryon stings are AD_DRST drain-Str, NOT AD_POISON (monsters.h:2999, 3082, 3093: ATTK(AT_STNG, AD_DRST, 2, 4)). Poison resistance does NOT protect.
+- Riders (Death/Pestilence/Famine) at monsters.h:3144-3174 carry MS_RIDER and M3_DISPLACED-tier resistances; vanquish all three to ascend (end.c).
+- Mail daemon AT_NONE, M1_FLY|M1_SWIM, freq G_NOGEN — never randomly generated, only spawned by mail delivery (monsters.h mail daemon row, mail.c).
 -->
 </section>
 <section id="major-demons" class="level4">
@@ -20662,9 +20739,11 @@ in-game mail. Don’t attack one — they don’t fight back.</td>
 <h4>Golems <code>'</code></h4>
 <!-- audit
 2026-05-19:
-- All 11 golem rows match monsters.h:2509-2594.
-- Iron golem has G_NOCORPSE (monsters.h:2587); it leaves NO corpse, NOT a poisonous one (M1_POIS never produces an eatable corpse).
+- 11 golem rows at monsters.h:2509-2594 (straw 2509, paper, rope, gold, leather, wood, flesh, clay, stone, glass, iron 2587).
+- Iron golem has G_NOCORPSE (monsters.h:2587); it leaves NO corpse, NOT a poisonous one.
 - poly_when_stoned (mondata.c:80-85) covers ALL golems except stone golem.
+- Iron golem AT_BREA/AD_DRST 4d6 poison breath at monsters.h:2592 — poison resistance critical.
+- Clay golem inscription "ATHEIST" wears off via shatter_floor message; clay golem corpse grants nothing on eat.
 -->
 <p>Mindless constructs. Wood and leather golems are early-game fodder;
 iron, stone, and clay golems are dangerous. The rare gold golem is a
@@ -20915,12 +20994,12 @@ square unless you have it.</p>
 <h4>Lizards <code>:</code></h4>
 <!-- audit
 2026-05-19:
-- All 8 lizard rows match monsters.h:3260-3324.
+- 8 lizard rows at monsters.h:3260-3324 (newt 3260, gecko, iguana, baby croc, lizard, chameleon, croc, salamander 3317).
 - Lizard corpse cures stoning (eat.c:827-830, fix_petrification) and never rots (eat.c:1483, 1510).
 - Newt corpse occasionally restores 1-3 Pw via eye_of_newt_buzz (eat.c:1102-1123).
-- Chameleon is M2_SHAPESHIFTER.
-- Salamander has 4-attack chain: weapon 2d8 / touch 1d6 fire / hug 2d6 / hug 3d6 fire.
-- Salamander is G_HELL (Gehennom-only).
+- Chameleon is M2_SHAPESHIFTER (monsters.h:3299, sets shifter via newcham).
+- Salamander has 4-attack chain at monsters.h:3317-3324: weapon 2d8, touch 1d6 fire, hug 2d6, hug 3d6 fire.
+- Salamander is G_HELL (Gehennom-only spawn flag).
 -->
 <p>Mostly harmless. <strong>Lizard corpses cure petrification and never
 rot.</strong> Carry one at all times — this is the standard answer to
