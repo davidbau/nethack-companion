@@ -30,23 +30,12 @@ Most of them died. The ones who made it back brought stories, and some
 of those stories eventually got written down. You're reading the latest
 edition of that accumulated lore.
 
-The Mazes have predecessors. Before this dungeon took its current form,
-adventurers explored simpler places: a dungeon called Hack, and before
-that the legendary Rogue, whose procedurally-generated corridors first
-established what a dungeon could mean in the age of computing. Each
-generation of explorers added to what the previous one learned, until
-the Mazes became what they are today: one of the deepest, most thoroughly
-documented, and most reliably fatal adventure destinations ever devised.
-The knowledge in this guide is the inheritance of everything those
-explorers found out, usually the hard way.
-
-**A word of caution.** This guide will change how you experience the
-Mazes forever. Once you know that a floating eye can paralyze you with
-a glance, you can never un-know it. Once you learn what a cockatrice
-corpse can do when wielded with gloves, the dungeon becomes a
-different place. Some adventurers prefer the thrill of discovery over
-the comfort of preparation. If that's you, close this guide now and
-go learn things the hard way. There is real joy in that.
+**A word of caution.** This guide will change how you experience
+the Mazes. Once you know that a floating eye can paralyze you with
+a glance, you can never un-know it. Some adventurers prefer the
+thrill of discovery over the comfort of preparation. If that's
+you, close this guide now and go learn things the hard way. There
+is real joy in that.
 
 **Looking for the manual instead?** If you're just looking for game
 commands, item lists, and mechanics without spoilers, you want the
@@ -1180,13 +1169,12 @@ your quest leader on the first floor before they'll let you descend.
 The leader sends you to retrieve your role's quest artifact from a
 quest nemesis.
 
-Each role has a unique Quest with unique maps, a unique nemesis, and
-a unique artifact reward. The Valkyrie hunts the Orb of Fate from
-Lord Surtur. The Wizard retrieves the Eye of the Aethiopica from
-the Dark One. The Tourist battles the Master of Thieves for the
-Platinum Yendorian Express Card. The Samurai duels Ashikaga Takauji
-for the Tsurugi of Muramasa. The Monk faces Master Kaen for the
-Eyes of the Overworld. And so on.
+Each role has a unique Quest with unique maps, a unique nemesis,
+and a unique artifact reward. The Valkyrie hunts Lord Surtur for
+the Orb of Fate. A Samurai's path ends in a duel with Ashikaga
+Takauji over the Tsurugi of Muramasa. The Wizard descends into
+the Dark One's stronghold for the Eye of the Aethiopica. The
+[Artifacts](#artifacts) chapter has the full per-role list.
 
 Quest artifacts are powerful. Each grants a unique mix of carried
 or worn intrinsics: protection, luck, ESP, warning, reflection, or
@@ -1449,9 +1437,8 @@ to deter the court monsters from displacing it). See
 [Wishes and Wishing](#wishes-and-wishing) for the full mechanics
 and how many wishes a 5.0 Castle wand actually yields.
 
-Below the Castle lies Gehennom. There is no going back to the
-upper dungeon once you descend without climbing back up through
-everything. Make sure you're prepared before you go down.
+Below the Castle lies Gehennom. There is no shortcut back, so make
+sure you're prepared before you descend.
 
 ---
 
@@ -3293,21 +3280,17 @@ are in the same **price group**. If you know the price, you can
 narrow down the possibilities enormously, sometimes to just two or
 three candidates.
 
-Here's how to do it. Pick up an item in a shop and note the price
-quoted. With average Charisma (11-15) the quoted **buy** price equals
-the base price exactly, while the **sell** offer is half of base. Low
-Charisma pushes buy prices up sharply (×2 at Cha ≤ 5); high Charisma
-pulls them down (×½ at Cha ≥ 19). Sell prices are mostly unaffected
-by Charisma; they only shift when the player looks like a mark, in
-which case sell drops to a third of base and buy rises to 4/3. Three
-visible cues count as "looking like a mark," and they all have the
-same effect (and don't stack): wearing a **dunce cap**, playing a
-**Tourist** below experience level 15, or wearing a **Hawaiian shirt
-visibly** (no body armor or cloak over it). All three trigger the same
-+33% buy markup; the rest of this guide refers to them collectively
-as *Tourist*. You don't need to memorize the exact formulas — what
-matters is grouping: items quoted at similar prices are in the same
-price tier.
+Pick up an item and note the quoted price. With average Charisma
+(11-15), buy price equals base and sell is half base. Low Charisma
+pushes buy up (×2 at Cha ≤ 5); high Charisma pulls it down (×½ at
+Cha ≥ 19). Sell prices barely move with Charisma, but a **mark**
+appearance flips them: sell drops to a third of base and buy rises
+to 4/3. Three visible cues count as marks (and don't stack):
+wearing a **dunce cap**, playing a **Tourist** below XL 15, or
+wearing a **Hawaiian shirt visibly** (no body armor or cloak over
+it). The rest of this guide refers to them collectively as
+*Tourist*. You don't need to memorize the formulas; what matters
+is grouping by price tier.
 
 Two further wrinkles affect unidentified items. About a quarter of
 unID'd items carry an extra 4/3 buy surcharge, fixed per item, so a
@@ -3685,20 +3668,16 @@ reveals itself if you go blind while wearing it (you'll see monsters
 as brain-shapes). Amulet of reflection is trickier to detect, but
 you'll notice it when a ray bounces off you.
 
-**Armor.** Magical armor reveals itself when worn: speed boots make
-you faster, a cloak of invisibility makes you invisible. But trying
-on unknown armor is **dangerous in a shop**: if the item is cursed,
-it welds itself to you, you can't drop it, and the shopkeeper still
-expects payment. Worse, the auto-cursed armor types (fumble boots,
-levitation boots, gauntlets of fumbling, and the helm of opposite
-alignment) are exactly the ones that masquerade as desirable boots,
-gloves, and helms. **Always verify BUC before wearing unknown
-armor in a shop.** Shops don't
-have altars, so the standard altar-drop BUC check isn't available
-in-store; the in-shop options are the pet-step test (your pet
-refuses to walk over cursed items, so lure it past the suspect
-square), Priest intrinsic BUC sense, or a scroll of identify from
-your own inventory.
+**Armor.** Magical armor reveals itself when worn: speed boots
+make you faster, a cloak of invisibility makes you invisible. But
+trying on unknown armor in a shop is dangerous: if it's cursed it
+welds itself on, you can't drop it, and the shopkeeper still
+expects payment. Worse, the auto-cursed types (fumble boots,
+levitation boots, gauntlets of fumbling, helm of opposite alignment)
+masquerade as the desirable ones. **Verify BUC before wearing
+unknown armor in a shop.** Without an altar, your options are the
+pet-step test, Priest intrinsic BUC sense, or a scroll of identify
+from your own inventory.
 
 Each type of special armor has a **randomized appearance**, so
 the same "snow boots" that were safe levitation in your last game
@@ -3864,11 +3843,10 @@ methods: amulets (all the same price), spellbooks (dangerous to
 read if unknown), and the one stubborn potion in the $50 group that
 you can't quite pin down.
 
-The whole system is about reducing uncertainty with the cheapest,
-safest method first. Altars and shops are free. Engrave-testing costs
-one charge. Use-testing costs more and carries risk. Scrolls of
-identify are the precious last resort. Work through the list in order
-and you'll rarely be surprised.
+The system is about reducing uncertainty with the cheapest, safest
+method first: altars and shops are free, engrave-testing costs one
+charge, use-testing costs more and carries risk, and scrolls of
+identify are the precious last resort.
 
 ---
 
@@ -4554,28 +4532,33 @@ wishing too.
 
 #### Polymorph as a Tool
 
-Self-polymorph is not just a randomizer; it's a serviceable tool.
+Self-polymorph is one of the most interesting tools in the game.
 A wand of polymorph zapped at yourself, a potion of polymorph, the
 polymorph self spell, or stepping on a polytrap all do the same
-thing: roll a new form for you.
+thing: roll a new form for you. With **polymorph control** (the
+ring or intrinsic) the game lets you *choose* the form, which is
+where the real fun begins.
 
-- **With polymorph control** (the ring or intrinsic), the game
-  prompts you for the form. Without it, the form is random.
-- **Drop cursed body armor.** Polymorph into a form too small for
-  your suit and your armor falls off into your inventory, curse
-  intact but no longer worn. You can now pick it up, dip it in
-  holy water, and forget it ever owned you. (Larger forms break
-  out of armor instead, destroying it; the small-form route is
-  the safe one.)
-- **Travel.** A xorn phases through walls. An eel breathes water.
-  A vampire becomes a bat or fog and slips under doors.
-- **Bring your own resistances.** A red dragon form gives you fire
-  breath; a brown mold form gives cold attacks to anything that
-  hits you.
+- **Travel where your legs can't.** A xorn phases through walls.
+  An eel breathes underwater. A vampire becomes a bat or a fog
+  cloud and slips under doors. A floating eye drifts past traps
+  you can't disarm.
+- **Bring your own resistances and attacks.** A red dragon form
+  gives you fire breath. A brown mold form burns anything that
+  hits you in melee. A purple worm swallows your problems whole.
+  Most monster powers are yours when you wear their shape.
+- **Grow a bigger body.** A stronger form rolls a new max HP and
+  your current HP scales with the ratio. A dying Wizard at 50/100
+  wakes up at 200/400 as a fresh titan.
+- **Escape cursed body armor.** A *bigger* form breaks out and
+  destroys the suit. A *smaller* form drops it intact into your
+  inventory, where you can holy-water it back to neutral.
+- **Eat what you can't.** A metallivore form eats iron bars. A
+  green dragon shrugs off poisonous corpses.
 
-Caveat: cursed polymorph items strip control even if you have it,
-and rough transformations can hit you with system shock damage.
-Try not to be at 5 HP when you reach for the wand.
+Caveat: cursed polymorph items strip control, and rough
+transformations can hit you with system shock. Don't be at 5 HP
+when you reach for the wand.
 
 ---
 
@@ -5057,10 +5040,10 @@ weapon) or confused scroll of enchant armor (for a random worn armor
 piece). This erodeproofs the item permanently without changing its
 enchantment. It also repairs any existing damage.
 
-To slow erosion in the first place, coat an armor piece with grease
-(apply a can of grease). The grease layer also makes the piece
-slippery to monster steal and to grab attacks, but it wears off
-after a few hits.
+You can also slow erosion without magic. Coat an armor piece with
+grease (apply a can of grease). The grease layer also makes the
+piece slippery to monster steal and to grab attacks, but it wears
+off after a few hits.
 
 #### Dragon Scale Mail
 
@@ -5605,15 +5588,11 @@ behavior), your god may crown you. Crowning grants:
 - A class-specific bonus: Wizards get the *finger of death* spell;
   Monks get *restore ability*.
 
-The catch is that crowning **adds a large random penalty to your
-prayer timeout** — on the order of an extra ~1000 turns on
-average, on top of the ordinary post-prayer wait. Many experienced
-players avoid being crowned because that hike turns prayer into an
-unreliable emergency tool during the most dangerous part of the
-game. If you're sacrificing a lot to fish for an artifact gift,
-know that you might accidentally trigger a crowning instead. Some
-players deliberately keep their alignment record modest until
-they've secured the items they need.
+The catch is that crowning **adds about ~1000 turns of prayer
+timeout** on top of the usual post-prayer wait, turning prayer into
+an unreliable emergency tool. If you're sacrificing to fish for an
+artifact gift, watch the alignment record so you don't trigger a
+crowning by accident.
 
 ---
 
@@ -5946,13 +5925,10 @@ A few principles:
   naturally. Anyone else dabbling in unarmed combat should plan
   to stop at Basic.
 
-A few spells also get sharper at Skilled, not just more reliable.
-Cone of cold and fireball stop being beams and become a cluster
-of 3×3 **explosions** you can place at range. Identify, remove
-curse, haste self, detect monsters, and several others gain the
-blessed-scroll effect (multi-item ID, full uncurse, longer
-duration). If you cast those spells regularly, the extra slots
-earn themselves back.
+A few spells get sharper at Skilled. Cone of cold and fireball
+become a cluster of 3×3 **explosions** you can place at range.
+Identify, remove curse, haste self, detect monsters, and several
+others gain the blessed-scroll effect.
 
 ---
 
@@ -6073,7 +6049,7 @@ not the time for ambiguity:
 2026-05-18:
 - force bolt damage is 2d12; school skill does NOT scale damage (zap.c:2720-2724)
 - chain lightning is level 4 NODIR, not level 7, not a bouncing ray (objects.h:1409-1411)
-- failed spellbook read effects: teleport (lvl 1+), aggravate (lvl 2+), blindness (lvl 3+), take-gold (lvl 4+), confusion (lvl 5+), contact poison (lvl 6+), exploding rune (lvl 7+ — 2d10+5 dmg, antimagic resists), default rndcurse (spell.c:130-185)
+- failed spellbook read effects: teleport (lvl 1+), aggravate (lvl 2+), blindness (lvl 3+), take-gold (lvl 4+), confusion (lvl 5+), contact poison (lvl 6+), exploding rune (lvl 7+, 2d10+5 dmg, antimagic resists). Default rndcurse branch never fires: max spell level is 7 so rn2(lev) maxes at 6 (spell.c:130-185)
 - failed read has a single 1/3 destruction chance (spell.c:612)
 - spellbook fade ceiling is 4 successful reads: MAX_SPELL_STUDY=3 with `> MAX_SPELL_STUDY` (spell.c:400-418)
 - no Pw drain from memorized spells exists; "spell maintenance" is fabricated (allmain.c moveloop has no per-spell Pw decrement; only cast_spell at spell.c:1245 decrements via SPELL_LEV_PW)
@@ -6103,16 +6079,17 @@ your gold, blind, confuse, or poison you, blow up in your face for
 HP damage, or randomly curse one of your items. A book that survives
 failures can be retried.
 
-The specific bad effect rolls within the book's level. A level-1
-book can only teleport you or aggravate monsters. A level-3 book
-adds blindness, gold theft, and confusion. A level-5 book adds
-contact poison (the book was coated; bare hands get a Strength
-hit). A level-7 book adds an exploding rune (magic resistance
-shrugs it off; otherwise it's 2d10+5 damage). All levels can fall
-through to the random-curse outcome on the default branch. A
-cursed book always rolls one of these; an uncursed book rolls
-only on a failed read. Practical rule: don't read books you can't
-afford to fail.
+The book's level decides which effects are on the table. A level-1
+book can teleport you somewhere random when you fail to read it. A
+level-2 book might aggravate nearby monsters instead. Misread a
+level-3 book and it can blind you for 250 to 350 turns. A level-4
+book can take all your gold, and level 5 can leave you confused
+for 16 to 22 turns. Misread a level-6 book and you may be
+contact-poisoned: gloves take corrosion damage, bare hands take
+1 or 2 points of Strength plus 1d10 HP (1d6 with poison
+resistance). And a level-7 book can have an exploding rune. Magic
+resistance blocks the explosion; without it, you take 2d10+5
+damage. Practical rule: don't read books you can't afford to fail.
 
 The chance of successfully reading a spellbook depends on the
 **spell level**, your **Intelligence**, and your **experience
@@ -6554,21 +6531,12 @@ luck, or wresting. The era of the bottomless wishing wand is over
 (see [Key Wands](#key-wands) for the full mechanics).
 
 Once you're fully equipped, the staircase down leads to Gehennom.
-Take a moment before descending. Sit down. Have a snack. Check your
-inventory twice. Make sure you have:
-
-- Magic resistance
-- Reflection
-- Fire resistance
-- Poison resistance
-- A wand of digging
-- A unicorn horn
-- Plenty of food
-- Holy water
-- Scrolls of teleportation and identify
-- Your quest artifact
-
-If you're missing any of these, go back up and find them.
+Take a moment before descending. Sit down. Have a snack. Check
+your inventory twice. You should have **magic resistance**,
+**reflection**, **fire** and **poison resistance**, a **wand of
+digging**, a **unicorn horn**, plenty of food, holy water,
+scrolls of teleportation and identify, and your **quest
+artifact**.
 
 ---
 
@@ -6592,9 +6560,8 @@ If you're missing any of these, go back up and find them.
 
 Below the Castle, the dungeon changes. The corridors give way to
 mazes. The monsters give way to demons. The comforting knowledge
-that you can pray to your god for help gives way to silence, because
-your god can't hear you in Gehennom. You are deeper than faith
-reaches.
+that you can pray to your god for help gives way to silence: in
+Gehennom, you walk beyond the protective gaze of your god.
 
 This is the part of the game that separates tourists from
 ascenders. Everything you've prepared for has been leading here.
@@ -6727,19 +6694,15 @@ fingertip cantrip is also a death ray, so wear an amulet of life
 saving and consider opening with your own wand of death rather
 than a melee approach.
 
-His level is a *ghost town*: the layout of a normal shopping
-district is preserved, but the shopkeepers and customers are all
-dead — Orcus's presence ambient-kills everything not already
-undead, and what's left is his honor guard of liches, vampires,
-and ghouls. The buildings are stocked with random loot rather than
-for-sale inventory; somewhere on the level the dungeon guarantees
-either a **magic lamp** or a **magic marker** (50/50). The level
-is studded with fire traps and magic traps, so don't sprint. Walk
-it carefully, deal with the residents, and lift the lamp or marker
-on your way out. Either is a meaningful supplement to the Castle
-wand's single charge: a djinni wish (rub the lamp; the lamp
-becomes ordinary afterward) or however many high-value scrolls
-you can write before the marker runs dry.
+His level is a ghost town: a normal shopping district with all
+the shopkeepers and customers killed off by his ambient aura, the
+buildings stocked with random loot instead of for-sale inventory.
+What's left is an honor guard of liches, vampires, and ghouls.
+Somewhere on the level the dungeon guarantees either a **magic
+lamp** or a **magic marker** (50/50). Walk carefully (fire and
+magic traps everywhere), deal with the residents, and lift the
+lamp or marker on your way out. Either is a real supplement to
+the Castle wand's single charge.
 
 #### The Wizard's Tower
 
@@ -6832,9 +6795,8 @@ frantic climb back to the surface. The steps:
   climbed by foot
 - **Genocide the lich class.** A blessed scroll of genocide
   applied to **L** removes liches, demiliches, master liches, and
-  arch-liches in one read. These are some of the worst Gehennom
-  threats. The Wizard of Yendor is human-class, not lich, so this
-  doesn't touch him
+  arch-liches in one read. Some of the worst Gehennom threats,
+  gone for the rest of the run
 
 ---
 
@@ -11135,9 +11097,6 @@ point.) The most significant:
   a spear, making the Excalibur strategy less immediate.
 - **Excalibur** fountain dipping is much harder for non-Knights:
   1/30 chance per dip instead of the Knight's 1/6.
-- **Magic cancellation** was overhauled in 3.6. The cloak of
-  magic resistance is now MC1 (was MC3). The cloak of protection is
-  the only single item providing MC3. MC3 now blocks 90% (was 98%).
 - **New amulets**: the amulet of flying grants flight, and the
   amulet of guarding provides +2 AC and +2 MC.
 - **Minetown** has a 1/7 chance of generating as Orcish Town,
@@ -11184,10 +11143,6 @@ point.) The most significant:
   and eggs possible.
 - **Monsters** no longer drop food items as death drops (except
   their own corpse), reducing food availability in the early game.
-- **Iron bars** are a dungeon feature (since 3.3). You can't break
-  them with a weapon or dig through them; the practical way past is
-  to dig around the side through the adjacent wall, or polymorph into
-  something with acid breath. (Potions of acid don't work on bars.)
 - **Shopkeepers** can now remove pits and webs around them, nerfing
   the classic pit-pinning kill setup. Walking into a peaceful
   shopkeeper now auto-pays any debts before the inventory prompt.
@@ -11207,52 +11162,30 @@ without needing to find or wish for the ring first. The ring is
 still useful for ongoing polymorphing, but for a single planned
 transformation, one blessed potion does the same job.
 
-**Vampire polymorph supports genuine form cycling.** A polymorphed
-vampire can `#monster` to switch between vampire, bat, and fog
-cloud forms. This used to be a one-way door; in 5.0 it's a loop.
-Fog cloud passes through doors and certain barriers, bat form
-offers flight and mobility, vampire form does the fighting. A
-polyed vampire plans routes by form rather than by direction: fog
-through the chokepoint, fight in the open room, reposition as bat,
-repeat.
+**Vampire polymorph cycles between forms.** A polymorphed vampire
+can `#monster` to switch between vampire, bat, and fog cloud. Fog
+passes through doors, bat flies, vampire fights — plan routes by
+form rather than direction.
 
-**Gold dragon scale mail eliminates your light source slot.** The
-mail provides a 2-square innate light radius in addition to its
-hallucination resistance. In the late game, when inventory is a
-puzzle and every slot counts, wearing it lets you retire the lamp
-and free that slot for something else.
+**Gold dragon scale mail retires your light source.** The mail's
+innate 2-square light radius means you can drop the lamp and free
+that slot.
 
 #### What to Watch Out For
 
-**Luck-grinding by sacrificing weak corpses no longer works.** In
-3.6.x, a stack of kobold corpses on a co-aligned altar could push
-your luck to maximum through sheer volume. In 5.0, if your current
-luck score already exceeds the difficulty rating of the monster
-being sacrificed, you gain zero luck. The gods accept your kobold,
-bless the corpse, and give you nothing. To push luck higher once
-you're past the low positives, you need fresh corpses of monsters
-whose difficulty actually exceeds your luck value. In practice: a
-luckstone handles maintenance; sacrifice mid-tier monsters when
+**Sacrificing weak corpses no longer grinds Luck.** If your current
+Luck exceeds the sacrificed monster's difficulty, you gain zero.
+A luckstone handles maintenance; sacrifice mid-tier monsters when
 you want to push higher.
 
----
+**Cleared but not cleaned levels lose loot.** Monsters now loot
+unlocked containers and animate corpse piles. Lock your stash
+and don't haul speculative corpses through caster-heavy floors.
 
-#### What to Change in Your Gameplay Habits in 5.0
-
-- Stop leaving containers unattended in cleared-but-not-cleaned
-  areas, and stop hauling speculative corpse collections through
-  caster-heavy floors (monsters now loot and animate).
-- Stop dropping potions on the floor in Gehennom (hot ground
-  shatters them).
-- Start checking every container in the first ten levels for
-  supply caches.
+**Gehennom shatters potions.** Hot ground breaks any potion you
+drop. Carry, don't stash.
 
 ---
-
-*For more than forty years, NetHack has challenged and surprised
-generations of players, and for 5.0 the dungeon has been
-thoughtfully redesigned by people who wanted it to be better and
-more dangerous simultaneously. Welcome, adventurer.*
 
 *You descend the stairs...*
 
@@ -11286,21 +11219,14 @@ someone had asked before you. Someone usually had.
 
 RGRN gave the community its vocabulary. A **YASD** (*Yet Another
 Stupid Death*) is the post you make after dying to something you
-should have known better than to do. The term captures something
-important: NetHack kills you in ways that feel obvious in retrospect,
-and the community's response to that is not bitterness but
-documentation. A **YAFAP** (*Yet Another First Ascension Post*)
-is the post you make when you finally win. Both traditions persist
-today, in the wiki, on Reddit, in Discord servers: the ritual
-confession of failure and the ritual celebration of survival. They
-are the two poles around which the whole community orbits.
+should have known better than to do. A **YAFAP** (*Yet Another
+First Ascension Post*) is the post you make when you finally win.
+Both traditions persist today, in the wiki, on Reddit, in Discord.
 
-Out of those conversations came the first spoiler files: plain text
-documents that attempted to catalog every item, every monster, every
-interaction. They were written by hand, cross-referenced against the
-source code, and shared freely. They represented hundreds of hours
-of work by people who simply loved the game and wanted to help
-others play it.
+Out of those conversations came the first spoiler files: plain-text
+catalogs of every item, every monster, every interaction. Written
+by hand, cross-referenced against the source code, and shared
+freely.
 
 This guide stands on their work. Specifically:
 
@@ -11332,27 +11258,15 @@ this material might have disappeared when Usenet faded.
 The following **RGRN community authors** contributed articles,
 FAQs, and guides that informed specific sections of this guide:
 
-**David Damerell** wrote the Object Identification FAQ, the
-original systematic guide to figuring out what you've found
-without wasting scrolls of identify.
-**Kieron Dunbar** wrote the wand identification guide, laying
-out the engrave-test method that remains the fastest way to sort
-wands.
-**Trevor Powell** compiled the Instadeath Spoiler, the definitive
-catalog of ways to die in a single turn, cited in our Dangerous
-Encounters chapter.
-**Arien Malec** wrote the Medusa guide, collecting crossing
-strategies from dozens of RGRN posters and organizing them into
-a clear checklist.
-**Matthew Lahut** wrote the prayer guide that untangled the
-timeout and alignment systems.
-**Boudewijn Waijers** mapped solutions for all eight Sokoban
-level variants.
-**Steven Bush** calculated spellbook reading success rates.
-**Gregory Bond** documented shopkeeper pricing formulas.
-**Dion Nicolaas** cataloged the voluntary challenge conducts.
-**David Goldfarb** wrote the air elemental FAQ.
-**Hojita Discordia** documented experience value calculations.
+**David Damerell** wrote the Object Identification FAQ. **Kieron
+Dunbar** wrote the wand identification guide. **Trevor Powell**
+compiled the Instadeath Spoiler. **Arien Malec** wrote the Medusa
+guide. **Matthew Lahut** wrote the prayer guide. **Boudewijn
+Waijers** mapped all eight Sokoban variants. **Steven Bush**
+calculated spellbook reading success rates. **Gregory Bond**
+documented shopkeeper pricing formulas. **Dion Nicolaas**
+cataloged the conducts. **David Goldfarb** wrote the air elemental
+FAQ. **Hojita Discordia** documented experience-value calculations.
 
 And many others: Ray Chason, Pat Rankin, Geoduck, Topi Linkala,
 Geoffrey Eadon, Roger Broadbent, Sebastian Haas, Jukka Lahtinen,

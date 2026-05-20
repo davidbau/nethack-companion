@@ -297,10 +297,10 @@ function Pandoc(doc)
     end
 
     -- Convert horizontal rules to decorative diamond ornament (centered)
-    -- vfill on both sides so it centers vertically if alone on a page
+    -- Flow naturally between sections; let LaTeX page-break as it likes.
     if block.tag == "HorizontalRule" then
       table.insert(new_blocks, pandoc.RawBlock("latex",
-        "\\null\\vfill\n" ..
+        "\\vspace{1em}\n" ..
         "\\begin{center}\n" ..
         "{\\color[gray]{0.45}" ..
         "\\rule[0.35ex]{3em}{0.4pt}" ..
@@ -309,7 +309,7 @@ function Pandoc(doc)
         "\\hspace{0.4em}" ..
         "\\rule[0.35ex]{3em}{0.4pt}}\n" ..
         "\\end{center}\n" ..
-        "\\vfill\\null"))
+        "\\vspace{1em}"))
       i = i + 1
       goto continue
     end
