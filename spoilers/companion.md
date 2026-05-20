@@ -154,6 +154,7 @@ wraparound cover</a>.
 - Mjollnir is the Valkyrie sacrifice gift; needs a co-aligned altar (artilist.h:109)
 - Knight code penalizes attacks on fleeing or helpless monsters (uhitm.c:336-339); peaceful kill is Samurai's giri
 - all 13 role alignment/race availabilities (role.c)
+- strategy aligned with NetHackWiki Valkyrie, Excalibur: Valkyrie is widely cited as the easiest beginner role; Knight 1-in-6 Excalibur dip at XL 5+ confirmed (https://nethackwiki.com/wiki/Valkyrie, https://nethackwiki.com/wiki/Excalibur)
 -->
 
 The first decision you'll make, before you even set foot on the
@@ -359,23 +360,16 @@ hard.
 - floating-eye paralysis fires on melee against the eye (uhitm.c:5853, 6022)
 - Burdened status label (botl.c:12)
 - food ration weight and nutrition (objects.h:1110)
+- strategy aligned with NetHackWiki Curse-testing, Altar: altar amber/black flash and pet step-avoidance are confirmed canonical curse-testing techniques (https://nethackwiki.com/wiki/Curse-testing, https://nethackwiki.com/wiki/Altar)
 -->
 ### What to Pack
 
-Any good travel guide will tell you what to bring. Ours has the
-awkward job of telling you that you don't get to choose. Your
-starting kit is determined by your role, and you'll descend with
-whatever your role provides, no more.
-
-What you *can* choose is what to prioritize once you're down there.
-Every role starts with equipment suited to its strengths. The
-important thing isn't what's in your pack on turn one; it's knowing
-what to scavenge from the first few levels to shore up your
+Your starting kit is fixed by your role and suited to its strengths,
+but you'll want to improve on it. In the early game, keep an eye out
+for these items as you descend. They'll shore up most roles'
 weaknesses.
 
 #### The Early Shopping List
-
-No matter your role, here's what you should be looking for:
 
 **A source of nutrition.** You will get hungry. It happens faster
 than you think. But your main food source isn't going to be the
@@ -402,6 +396,14 @@ provide armor class benefits and can protect against specific attacks.
 from range is almost always safer than melee, and some monsters (like
 floating eyes) should never be fought in melee.
 
+**Supply chests.** Some of the large boxes and chests you find on
+the levels above the Oracle are special supply chests. They are
+usually locked but stocked with useful magical items: healing or
+gain-energy potions, enchant-weapon or enchant-armor scrolls,
+sometimes a wand of digging or a low-level spellbook. About
+two-thirds of the early levels have one. Picking or forcing them is
+almost always worth the time.
+
 **Restraint.** New adventurers pick up everything they find. Veterans
 pick up everything they need. The difference is about forty pounds
 and the ability to outrun a gnome lord. If your status line reads
@@ -417,9 +419,10 @@ and the ability to outrun a gnome lord. If your status line reads
 - pets step around their owner (dogmove.c:535)
 - lizard and lichen corpses never rot (eat.c:58-61)
 - killer bees: speed 18, G_LGROUP, M1_POIS sting AT_STNG/AD_DRST 1d3 (monsters.h:96-102)
-- supply chests appear above Oracle: ~2/3 of rooms; 2/3 chest vs 1/3 large box; 5/6 locked (mklev.c:1010-1119)
+- supply chests appear above Oracle: at most one per level (placed in a random fillable room); 2/3 chance per level; 2/3 chest vs 1/3 large box; 5/6 locked (mklev.c:1010-1119)
 - prayer cooldown averages ~1000 turns: rnz(300)/rnz(350) scaled by rne(4) (pray.c:780, 1356, 1819)
 - corpse safe within 30 turns; tainted past ~175 turns (eat.c:1887, 1939)
+- strategy aligned with NetHackWiki Stoning, Prayer, Magic resistance: lizard corpse as petrification cure, prayer-when-in-Trouble cooldown, and MR/reflection/poison-resistance "big three" are canonical advice (https://nethackwiki.com/wiki/Stoning, https://nethackwiki.com/wiki/Prayer, https://nethackwiki.com/wiki/Magic_resistance)
 -->
 
 You step down the stairs. The air is cool and damp. A corridor
@@ -987,6 +990,7 @@ A practical tour of the branches and landmarks, in roughly the order you'll visi
 - all 3 Mine's End layouts place a not-cursed luckstone (minend-1.lua:77, minend-2.lua:116, minend-3.lua:67)
 - minend-1 also places a mimic appear_as="obj:luckstone" — BUC-test before grabbing (minend-1.lua:59)
 - Minetown watchmen are peaceful=1 in non-orcish variants (minetn-2.lua:149)
+- strategy aligned with NetHackWiki Gnomish Mines, Minetown, Mines' End: Minetown described as the prime price-ID/BUC-test/priest-donation stop; guaranteed luckstone at Mine's End is canonical (https://nethackwiki.com/wiki/Gnomish_Mines, https://nethackwiki.com/wiki/Minetown, https://nethackwiki.com/wiki/Mines%27_End)
 -->
 
 
@@ -1065,6 +1069,7 @@ The puzzles are fixed (two variants per level, randomly chosen).
 - prize: 75/25 weighted bag of holding vs amulet of reflection (soko1-1.lua:103-107, soko1-2.lua:105-109)
 - cursed scroll of scare monster placed under the prize as bait (soko1-1.lua:111, soko1-2.lua:113)
 - conduct only reported once the branch is entered (insight.c:2215-2228)
+- strategy aligned with NetHackWiki Sokoban, Amulet of reflection: prize/cheat-luck-penalty mechanics and the "solve honestly for the prize" advice match (https://nethackwiki.com/wiki/Sokoban, https://nethackwiki.com/wiki/Amulet_of_reflection)
 -->
 
 Each level has exactly one correct solution. If you push a boulder
@@ -1105,6 +1110,7 @@ For complete solutions to all eight level variants, see
 - minor consults ALWAYS pull from the true-rumor pool (rumors.c:747, 151-156)
 - Sokoban branch goes up from the Oracle level (dungeon.lua:20-25)
 - Oracle is M2_PEACEFUL with AT_NONE; she never attacks (monsters.h:2738-2745)
+- strategy aligned with NetHackWiki Oracle (level), List of major consultations: paying for a major consultation is a recognized wisdom-and-intel investment (https://nethackwiki.com/wiki/Oracle_(level), https://nethackwiki.com/wiki/List_of_major_consultations)
 -->
 #### The Oracle
 
@@ -1138,6 +1144,7 @@ fountain risks.
 - quest artifact is placed under nemesis at level generation, NOT carried (Val-goal.lua:49,76; Wiz-goal.lua:73,96; etc.)
 - return portal lives on Is_qstart (first quest level) only (quest.c:97, 191-204)
 - "nemesis carries an amulet of life saving" is wiki-belief, not source-guaranteed; M2_COLLECT means they may pick one up (https://nethackwiki.com/wiki/Nemesis)
+- strategy aligned with NetHackWiki Quest, Bell of Opening, Quest artifact: XL 14 + 20 alignment record gate, nemesis guards both artifact and Bell, return-portal only on the first quest level (https://nethackwiki.com/wiki/Quest, https://nethackwiki.com/wiki/Bell_of_Opening, https://nethackwiki.com/wiki/Quest_artifact)
 -->
 
 Around dungeon levels 11 through 16, a magic portal drops you onto
@@ -1231,6 +1238,7 @@ anachronism.
 - alarm sounds on arrival and every revisit until Croesus dies (do.c:1893-1904)
 - alarm wakes existing soldiers; it doesn't spawn new ones
 - soldiers carry K_RATION / C_RATION (makemon.c:694-700)
+- strategy aligned with NetHackWiki Fort Ludios, Croesus: bag-of-holding-for-gold and shoot-Croesus-across-the-moat are canonical (https://nethackwiki.com/wiki/Fort_Ludios, https://nethackwiki.com/wiki/Croesus)
 -->
 
 Fort Ludios is optional and easy to miss entirely. It appears as a
@@ -1275,6 +1283,7 @@ a bonus, not a requirement.
 - levitation/water-walking on adjacent dry land does NOT save you once grabbed
 - medusa-2 has six electric eels (not giant eels), AD_ELEC bite (medusa-2.lua:99-104, monsters.h:3239-3247)
 - kraken only on medusa-4 (medusa-4.lua:122)
+- strategy aligned with NetHackWiki Medusa, Reflection, Perseus: reflection/blindfold against the gaze, levitation/water-walking to cross, Perseus statue as a backup reflection source (https://nethackwiki.com/wiki/Medusa, https://nethackwiki.com/wiki/Reflection, https://nethackwiki.com/wiki/Perseus)
 -->
 
 Medusa's level sits near the bottom of the Dungeons of Doom, around
@@ -1384,6 +1393,7 @@ you. Critical rules:
 - wand of opening or spell of knock opens the drawbridge (zap.c:3263-3273, 2184)
 - Gehennom branches off the Castle with branchtype=no_down, so the stairs do not return (dungeon.lua:39-43)
 - no minotaurs and no internal maze; the two des.mazewalk calls fill the OUTSIDE approach corridors (castle.lua:223-224)
+- strategy aligned with NetHackWiki Castle, Passtune, Drawbridge: passtune-as-Mastermind, wand-of-opening/spell-of-knock alternatives, and wand of striking destroying the drawbridge match (https://nethackwiki.com/wiki/Castle, https://nethackwiki.com/wiki/Passtune, https://nethackwiki.com/wiki/Drawbridge)
 -->
 
 The Castle is the last level of the Dungeons of Doom proper, around
@@ -1498,6 +1508,7 @@ skip and you fall in regardless.
 - sleep gas: Sleep_resistance skips the fall_asleep branch in trapeffect_slp_gas_trap (trap.c:1570)
 - iron footwear: blocks bear-trap leg damage (trap.c:1517-1518), blocks spiked-pit spikes (trap.c:1901-1903), blocks polymorph trap (trap.c:2478-2483)
 - iron footwear absorbs an anti-magic drain by losing 1 enchantment, but only if spe>0 (trap.c:2328-2343)
+- strategy aligned with NetHackWiki Fire trap, Anti-magic field, Polymorph trap: fire trap destroys scrolls/potions/spellbooks, MR makes anti-magic trap deal extra damage, MR/Unchanging block polymorph traps (https://nethackwiki.com/wiki/Fire_trap, https://nethackwiki.com/wiki/Anti-magic_field, https://nethackwiki.com/wiki/Polymorph_trap)
 -->
 
 
@@ -1787,6 +1798,7 @@ on the other side.
 - ignored by minotaur (monmove.c:301)
 - blind and peaceful monsters pass through (monmove.c:299-300)
 - cornered ALLOW_SSM step-through (mon.c:2278-2282)
+- strategy aligned with NetHackWiki Elbereth, Engraving: exact-spelling rule, defile-and-hypocrite penalty, ward dead in Gehennom/endgame, burn-with-wand-of-fire for permanence (https://nethackwiki.com/wiki/Elbereth, https://nethackwiki.com/wiki/Engraving)
 -->
 
 
@@ -2065,6 +2077,7 @@ A few map glyphs aren't monsters in the conventional sense, but you'll see them 
 - confused genocide hits your role: u.umonster ← gu.urole.mnum (read.c:2839, u_init.c:991)
 - mumakil attack solo, not in packs; AT_BUTT 4d12 + AT_BITE 2d6 (monsters.h:838-845)
 - shimmering DSM does not exist in 5.0 (#if 0 DEFERRED in objects.h:509-511, 536-538)
+- strategy aligned with NetHackWiki Bones, Yet Another Stupid Death: bones loot 80% cursed and dangerous, early-game pacing matters more than depth (https://nethackwiki.com/wiki/Bones, https://nethackwiki.com/wiki/Yet_Another_Stupid_Death)
 -->
 
 Only about **0.4% of games end in ascension.** The other 99.6%
@@ -2295,6 +2308,7 @@ epitaph.
 - plain wand of polymorph cannot target the poly_when_stoned outcome
 - stepping on a cockatrice corpse without Fumbling is safe
 - Fumbling can trip the hero onto the corpse for instapetrify (timeout.c:1256-1261)
+- strategy aligned with NetHackWiki Stoning, Cockatrice, Lizard: gloves around cockatrice corpses, lizard/acid corpse to interrupt the countdown, weaponized corpse for offense (https://nethackwiki.com/wiki/Stoning, https://nethackwiki.com/wiki/Cockatrice, https://nethackwiki.com/wiki/Lizard)
 -->
 #### Petrification (Stoning)
 
@@ -2338,6 +2352,7 @@ anything you hit that lacks stoning resistance turns to stone.
 - krakens placed only on medusa-4 in the Dungeon (medusa-4.lua:122); other placements are Quest/fakewiz/wizard1
 - "swamp rooms" comment refers to eels, not krakens (mkroom.c:557-565)
 - encumbrance does NOT gate the grab-drown path: being Burdened won't save you once grabbed
+- strategy aligned with NetHackWiki Drowning, Giant eel, Amulet of magical breathing: range-kill sea monsters, magical breathing/Swimming/Amphibious as the only true grab-drown defenses (https://nethackwiki.com/wiki/Drowning, https://nethackwiki.com/wiki/Giant_eel, https://nethackwiki.com/wiki/Amulet_of_magical_breathing)
 -->
 
 Giant eels, electric eels, and krakens can grab you with their
@@ -2388,6 +2403,7 @@ zap can connect. The freebie is an early-to-mid-game courtesy.
 - 8d6 + 50 + half-damage permdrain only on rolls 17-19
 - MR on the 17-19 branch falls through to the smaller permdrain rather than being harmless
 - the smaller permdrain on rolls 5-16 is NOT reduced by MR (mcastu.c:326-337)
+- strategy aligned with NetHackWiki Touch of death, Wand of death, Death resistance: MR blocks incoming death rays but not self-zap; nonliving/demon polyform is the self-zap fallback (https://nethackwiki.com/wiki/Touch_of_death, https://nethackwiki.com/wiki/Wand_of_death, https://nethackwiki.com/wiki/Death_resistance)
 -->
 
 Some monsters, most notably Death (one of the Riders on the Astral
@@ -2420,6 +2436,7 @@ kills you outright.
 - STARVED death at u.uhunger < -(100 + 10*Con) (eat.c:3437-3447)
 - initial u.uhunger = 900 (eat.c:129)
 - TROUBLE_STARVING covers Weak through STARVED (pray.c:216-217)
+- strategy aligned with NetHackWiki Hunger, Prayer: praying when Weak/Fainting is a canonical TROUBLE_STARVING fix (https://nethackwiki.com/wiki/Hunger, https://nethackwiki.com/wiki/Prayer)
 -->
 #### Starvation
 
@@ -2449,6 +2466,7 @@ management slide.
 - blessed potion of full healing does NOT restore stats (potion.c:1144-1162)
 - prayer fixes drained attributes via TROUBLE_POISONED (pray.c:270-272, 547-552)
 - unicorn horn no longer restores attributes in 5.0 (apply.c:2306-2327)
+- strategy aligned with NetHackWiki Mind flayer, Helm: any helmet blocks 7/8 tentacles, greasing stacks slip-roll, range-kill is safest (https://nethackwiki.com/wiki/Mind_flayer, https://nethackwiki.com/wiki/Helm)
 -->
 
 Mind flayers drain Intelligence with their tentacle attacks. If
@@ -2487,6 +2505,7 @@ ability before pushing into mind flayer territory.
 - foocubus bite is AD_SSEX; AD_SSEX→AD_DRLI substitution only fires when SEDUCE disabled (mhitu.c:327-334)
 - blessed potion of restore ability restores ALL lost levels (potion.c:687-691)
 - uncursed/plain restore ability returns one level per quaff
+- strategy aligned with NetHackWiki Drain resistance, Wraith, Excalibur: Excalibur/Stormbringer/Staff of Aesculapius for drain resistance, eat wraith corpse to regain a level (https://nethackwiki.com/wiki/Drain_resistance, https://nethackwiki.com/wiki/Wraith, https://nethackwiki.com/wiki/Excalibur)
 -->
 
 A recurring theme in the bestiary: certain monsters reduce your
@@ -2528,6 +2547,7 @@ as the fight ends.
 - Invocation items and Rider corpses always resist (zap.c:1462-1467)
 - MC negates the active attack (uhitm.c:3613) but NOT the passive counter
 - eating a disenchanter corpse strips a random intrinsic (eat.c:1270-1275)
+- strategy aligned with NetHackWiki Disenchanter, Magic cancellation: MC armor blocks the active claw but not the passive counter; range-kill is the cleanest plan, and the corpse is not safe to eat (https://nethackwiki.com/wiki/Disenchanter, https://nethackwiki.com/wiki/Magic_cancellation)
 -->
 
 **Disenchanters** (`R`, blue) appear only in Gehennom. Their
@@ -2942,6 +2962,7 @@ loss; the second one in your bag is a kit.
 - tameness loss sources: hunger past threshold, long separation, player-dealt damage via abuse_dog (uhitm.c:1593-1595)
 - scroll of taming radius: bd = confused ? 5 : 1, area (2*bd+1)² (read.c:1689) — 3×3 normal, 11×11 confused
 - confused charm-monster spell fails outright (spell.c:1372) — the 11×11 trick is scroll-only
+- strategy aligned with NetHackWiki Pet, Tameness, Scroll of taming: keep your pet fed for tameness, pet-shoplift trick, confused-scroll-of-taming 11×11 area effect (https://nethackwiki.com/wiki/Pet, https://nethackwiki.com/wiki/Tameness, https://nethackwiki.com/wiki/Scroll_of_taming)
 -->
 
 The Mazes of Menace are dark, hostile, and full of things that want
@@ -3107,6 +3128,7 @@ single most powerful identification tool you have.
 - Priest senses BUC naturally (invent.c:2763, 3545)
 - blessed scroll of identify: at least 2 items, plus 1-in-5 chance for the whole pack (read.c:2086-2092)
 - cursed scroll of identify IDs only itself on first cursed read (read.c:2074-2081)
+- strategy aligned with NetHackWiki Identification, Curse-testing, BUC: altar > pet > shop-price > engrave/sink > use-test > scroll-of-identify ordering matches canonical advice (https://nethackwiki.com/wiki/Identification, https://nethackwiki.com/wiki/Curse-testing, https://nethackwiki.com/wiki/BUC)
 -->
 
 Before you can worry about *what* an item is, you need to know
@@ -3788,6 +3810,7 @@ and you'll rarely be surprised.
 - ordinary tin opener on a blessed tin: 50/50 instant vs one turn via rn2(2)
 - globs lose 1 weight per ~25 turns; a weight-20 glob lasts ~500 turns (mkobj.c:1487-1490)
 - corpses stay safe to eat for ~30-50 turns before rotting (eat.c:1887-1939)
+- strategy aligned with NetHackWiki Resistance, Poison resistance, Partial intrinsic: corpse-eating to bank resistances is canonical, gelatinous cube and dragon corpses are the highest-density sources (https://nethackwiki.com/wiki/Resistance, https://nethackwiki.com/wiki/Poison_resistance, https://nethackwiki.com/wiki/Partial_intrinsic)
 -->
 
 Of all the things that kill adventurers in the Mazes of Menace (the
@@ -3941,6 +3964,7 @@ until you get it.
 2026-05-18:
 - potion of speed grants permanent intrinsic Fast when !cursed (potion.c:1066)
 - uncursed extra/full healing also raise maxHP (potion.c:1398-1440)
+- strategy aligned with NetHackWiki Potion, Alchemy, Dip: alchemy odds and the guaranteed-blast cases for cursed/acid potions match (https://nethackwiki.com/wiki/Potion, https://nethackwiki.com/wiki/Alchemy, https://nethackwiki.com/wiki/Dip)
 -->
 
 The dungeon is full of mysterious bottles. Ruby liquids, milky
@@ -4078,6 +4102,7 @@ pharmacy.
 - charging odds: 2nd 0.29%, 3rd 2.33%, 4th 7.87%, 5th 18.66%, 6th 36.44%, 7th 62.97%, 8th 100%
 - WAN_WISHING lim=1; cursed strips charges; blessed gives the same +1 as uncursed (read.c:738-789)
 - second recharge on a wand of wishing is a 100% explosion via the recharged>0 branch (read.c:761-764)
+- strategy aligned with NetHackWiki Scroll of charging, Scroll of enchant weapon, Scroll of destroy armor: +5 safe ceiling for weapons, wand-of-wishing-recharges-exactly-once rule, confused destroy-armor erodeproofs (https://nethackwiki.com/wiki/Scroll_of_charging, https://nethackwiki.com/wiki/Scroll_of_enchant_weapon, https://nethackwiki.com/wiki/Scroll_of_destroy_armor)
 -->
 
 Scrolls are the dungeon's single-use spells: read once, triggered,
@@ -4198,6 +4223,7 @@ these alternate effects are *better* than the normal ones:
 - sleep and death share "the bugs on the <surface> stop moving" (engrave.c:651-656)
 - striking message: "wand unsuccessfully fights your attempt to write" (engrave.c:602-605)
 - slow/speed monster: distinctive "bugs slow down" / "speed up" (engrave.c:606-616)
+- strategy aligned with NetHackWiki Wand, Engraving, Wand of wishing: engrave-test as the safest wand-ID method, $500 narrowed to death-or-wishing, wand of wishing recharge mechanics (https://nethackwiki.com/wiki/Wand, https://nethackwiki.com/wiki/Engraving, https://nethackwiki.com/wiki/Wand_of_wishing)
 -->
 
 Wands are reusable magical items that produce directed effects when
@@ -4410,6 +4436,7 @@ wishing too.
 - ring of protection subtracts from AC (do_wear.c:2492-2495)
 - conflict makes pets attack you (dogmove.c:1046-1054, mhitm.c:104-145)
 - blessed polymorph control rolls from base form only (potion.c:1322-1325)
+- strategy aligned with NetHackWiki Ring strategy, Ring of free action, Ring of conflict, Amulet of life saving: free action against late-game paralysis, conflict for crowd control, life saving for risky endgame moments (https://nethackwiki.com/wiki/Ring_strategy, https://nethackwiki.com/wiki/Ring_of_free_action, https://nethackwiki.com/wiki/Ring_of_conflict, https://nethackwiki.com/wiki/Amulet_of_life_saving)
 -->
 
 
@@ -4565,6 +4592,7 @@ than it looks.
 - magic lamp 1/3 djinni emergence is independent of bless; bless only affects the wish-grant odds (apply.c:1817)
 - scroll of charging write cost is rn1(basecost/2, basecost/2) = rn1(8,8) = 8-15 charges (write.c:44, 265)
 - class genocide skips uniquely-named demon lords via G_UNIQ (read.c:2998)
+- strategy aligned with NetHackWiki Bag of holding, Magic lamp, Unicorn horn: never bag a cancellation wand/bag-of-tricks/another BoH, bless magic lamps before rubbing, blessed unicorn horn for ailments (https://nethackwiki.com/wiki/Bag_of_holding, https://nethackwiki.com/wiki/Magic_lamp, https://nethackwiki.com/wiki/Unicorn_horn)
 -->
 
 The `(` symbol covers the dungeon's most eclectic category: pickaxes,
@@ -4723,6 +4751,7 @@ ascension kit.
 - gray and silver DSM grant no extra intrinsic
 - DSM scroll-of-enchant transformation requires spe ≥ 0 (read.c:1225)
 - small shield is the only shield with no spellcast penalty (spell.c:2269)
+- strategy aligned with NetHackWiki Dragon scale mail, Cloak of protection, Magic cancellation, Speed boots: GDSM as the popular MR wish, MC3 from cloak of protection, speed boots make turns more numerous (https://nethackwiki.com/wiki/Dragon_scale_mail, https://nethackwiki.com/wiki/Cloak_of_protection, https://nethackwiki.com/wiki/Magic_cancellation, https://nethackwiki.com/wiki/Speed_boots)
 -->
 
 Weapons and armor are the bread and butter of combat. Your choice
@@ -4876,6 +4905,7 @@ enchantment. It also repairs any existing damage.
 - M2_UNDEAD flag only enables shade_glare on weapons, not worn helms (artifact.c:554-571).
 - Eye of the Aethiopica magic resistance requires worn, NOT carried (artilist.h:303-305, NO_CARY).
 - Eye of the Aethiopica carry effects: energy regen, half spell damage (cspfx EREGEN, HSPDAM).
+- strategy aligned with NetHackWiki Artifact weapon, Grayswandir, Magicbane, Mjollnir: Grayswandir/Magicbane/Mjollnir as the top wish artifacts; alignment-mismatched artifacts blast on touch (https://nethackwiki.com/wiki/Artifact_weapon, https://nethackwiki.com/wiki/Grayswandir, https://nethackwiki.com/wiki/Magicbane, https://nethackwiki.com/wiki/Mjollnir)
 -->
 
 
@@ -5175,6 +5205,7 @@ For a spell-caster this is irreplaceable.
 - crowning does NOT lock alignment — the one-way conversion gate is ualignbase[CURRENT]==ualignbase[ORIGINAL] (pray.c:1638)
 - same-race blood always converts lawful or neutral altars to CHAOTIC, never to co-aligned (pray.c:1717-1720)
 - on a chaotic altar, same-race blood summons a demon (pray.c:1723-1739)
+- strategy aligned with NetHackWiki Prayer, Sacrifice, Protection racket, Crowning: prayer-as-emergency rules, sacrifice-fresh-corpses, protection-AC stacks across donations, crowning penalty (https://nethackwiki.com/wiki/Prayer, https://nethackwiki.com/wiki/Sacrifice, https://nethackwiki.com/wiki/Protection_racket, https://nethackwiki.com/wiki/Crowning)
 -->
 
 
@@ -5407,6 +5438,7 @@ they've secured the items they need.
 - Luck to-hit contribution is sgn(Luck)·((|Luck|+2)/3), capping at ±5 (uhitm.c:377); Luck itself ranges ±10, ±13 with luckstone
 - monsters use m_move (phase 3) then mattacku/castmu (phase 4) on the same turn (monmove.c:911, 943-944, 971)
 - no "free extra step" change exists; that earlier claim was fabricated
+- strategy aligned with NetHackWiki Corridor, Movement tactics, Twoweapon: corridor chokepoint as the single biggest tactical principle, two-weapon penalty tied to skill rank (https://nethackwiki.com/wiki/Corridor, https://nethackwiki.com/wiki/Movement_tactics, https://nethackwiki.com/wiki/Twoweapon)
 -->
 
 The most important combat technique in the Mazes is knowing when
@@ -5559,6 +5591,7 @@ are the time-tested tactics that keep adventurers breathing:
 - Skilled cone-of-cold and fireball: cluster of 3×3 explosions (spell.c:1419-1452), not room-clearing
 - Valkyrie 6+6+2 = 14 slot example math
 - crown gives +1 slot
+- strategy aligned with NetHackWiki Skill, Twoweapon: slot budget tied to XL + crowning, non-weapon skills cost half, restricted skills only unrestrict to Basic via artifact gift (https://nethackwiki.com/wiki/Skill, https://nethackwiki.com/wiki/Twoweapon)
 -->
 
 Most adventurers discover the skill system the first time they
@@ -5817,6 +5850,7 @@ of your survival.
 - Vlad's throne wish rate is 4/13 per effective sit (sit.c:241-256)
 - magic lamp ≈27% wish-blessed: 1/3 djinni × 4/5 wish (apply.c:1817, potion.c:2833-2845)
 - fountain water-demon wish (fountain.c:78, 314); Amulet-of-Yendor pickup wish (allmain.c:446-451)
+- strategy aligned with NetHackWiki Wish, Gray dragon scale mail, Speed boots, Magic lamp: GDSM/SDSM as top wishes, speed boots and gauntlets of power as standard follow-ups, bare wishes risk cursed/random spe (https://nethackwiki.com/wiki/Wish, https://nethackwiki.com/wiki/Gray_dragon_scale_mail, https://nethackwiki.com/wiki/Speed_boots, https://nethackwiki.com/wiki/Magic_lamp)
 -->
 
 When the game asks "For what do you wish?", be specific. This is
@@ -5856,6 +5890,7 @@ not the time for ambiguity:
 - Skilled+ casting acts like a blessed scroll (spell.c:1524-1525) or blessed potion (spell.c:1540-1541)
 - Pw regen: (Wis + Int)/15 + 1; Wizards tick on factor 3 vs 4 (allmain.c:605-607)
 - Valkyries restricted in divination, so reading scroll of identify is occasional at best (u_init.c:525-546)
+- strategy aligned with NetHackWiki Spellbook, Spellcasting: Int + 4 + XL/2 − 2·level success formula, blessed book auto-success, Pw = 5 × level (https://nethackwiki.com/wiki/Spellbook, https://nethackwiki.com/wiki/Spellcasting)
 -->
 
 Magic in the Mazes is less "wave a wand and sparkles happen" and
@@ -5985,6 +6020,7 @@ bathrobe holding a stick.
 - blessed remove-curse hits all worn+carried; uncursed only worn (read.c:1524, 1549)
 - temple priests do NOT reveal BUC for a fee; only Priest CLASS sees BUC free (priest.c:629-718 sets HClairvoyant + Protection, not bknown)
 - shop price-id can infer BUC indirectly
+- strategy aligned with NetHackWiki BUC, Scroll of remove curse, Potion of holy water: altar/pet test, blessed remove-curse hits entire inventory, holy water dip uncurses (https://nethackwiki.com/wiki/BUC, https://nethackwiki.com/wiki/Scroll_of_remove_curse, https://nethackwiki.com/wiki/Potion_of_holy_water)
 -->
 
 
@@ -6079,6 +6115,7 @@ without them.
 - full-moon/Friday-the-13th baseline shift (timeout.c:595-598)
 - carrying the Amulet or u.ugangr > 0 doubles drift rate (300 turns, timeout.c:607)
 - Archeologists start with TOUCHSTONE knowledge only (u_init.c:50, 903); gems are NOT pre-identified
+- strategy aligned with NetHackWiki Luck, Luckstone, Luck item: ±13 cap with non-cursed luckstone, drift toward 0 every 600 turns, cursed luckstone locks negative Luck (https://nethackwiki.com/wiki/Luck, https://nethackwiki.com/wiki/Luckstone, https://nethackwiki.com/wiki/Luck_item)
 -->
 
 
@@ -6238,6 +6275,7 @@ random numbers, which in the Mazes is the closest thing to love.
 - five trap doors at columns 40/44/48/52/55 (gaps 4/4/4/3), not strictly even (castle.lua:156-160)
 - trap door always sends you to Valley of the Dead (dlevel=1), not a random Gehennom level (trap.c:669-670, dungeon.c:1949-1953)
 - storerooms hold four D-class dragons; moat holds sea monsters; fountain present (castle.lua:60, 180, 185)
+- strategy aligned with NetHackWiki Castle, Wand of wishing: bring conflict for crowd control, plan a small wishlist, secure MR/reflection/fire-res/poison-res before descending (https://nethackwiki.com/wiki/Castle, https://nethackwiki.com/wiki/Wand_of_wishing)
 -->
 
 If you've reached the Castle, congratulations: you've survived the
@@ -6337,6 +6375,7 @@ If you're missing any of these, go back up and find them.
 - Orcus drops magic lamp or magic marker, 50/50 (orcus.lua:107-111)
 - Sanctum has noteleport + nommap (sanctum.lua:8)
 - Valley of the Dead has noteleport + nommap + non-diggable walls (valley.lua:10, 74)
+- strategy aligned with NetHackWiki Gehennom, Bribe, Demon lords and princes: prayer dead, bribery (gold in open inventory) for the lawful demon princes, Excalibur disables bribery, dig don't navigate (https://nethackwiki.com/wiki/Gehennom, https://nethackwiki.com/wiki/Bribe, https://nethackwiki.com/wiki/Demon_lords_and_princes)
 -->
 
 Below the Castle, the dungeon changes. The corridors give way to
@@ -6590,6 +6629,7 @@ frantic climb back to the surface. The steps:
 - Eye of the Aethiopica is Wizard-only: SPFX_RESTR + PM_WIZARD; other classes get the badclass blast (artilist.h:303-307, artifact.c:920-948)
 - wand-of-death on the High Priest works: type=-1 skips saving throws (zap.c:4314); High Priest has no antimagic and mr1=70 does not gate ZT_DEATH
 - prayer CAN cure hunger and uncurse worn items (pray.c)
+- strategy aligned with NetHackWiki Ascension kit: GDSM/SDSM, cloak of MR, speed boots, gauntlets of power, life saving, bag of holding, wand of death, candles are the canonical kit (https://nethackwiki.com/wiki/Ascension_kit)
 -->
 
 By the time you're ready to invoke Moloch's Sanctum, the loadout
@@ -6655,6 +6695,7 @@ clear.
 - Amulet-pickup wish fires once on next moveloop iteration if !u.uevent.amulet_wish (allmain.c:446-451)
 - Elbereth is DEAD in Gehennom, all four Elemental Planes, and Astral: onscary returns FALSE for Inhell || In_endgame (teleport.c:68-70)
 - carrying the Amulet blocks level teleport via the u.uhave.amulet guard (teleport.c:1185-1189)
+- strategy aligned with NetHackWiki Ascension run, Mysterious force, Amulet of Yendor: run-don't-fight, dig straight lines, kill the Wizard fast, the Force as the primary climb obstacle (https://nethackwiki.com/wiki/Ascension_run, https://nethackwiki.com/wiki/Mysterious_force, https://nethackwiki.com/wiki/Amulet_of_Yendor)
 -->
 
 You did it. You fought through Gehennom, defeated the High Priest,
@@ -6749,6 +6790,7 @@ last obstacle between you and divinity.
 - altar farlook reveals alignment only when ADJACENT; otherwise just "aligned high altar" (pager.c:744-754)
 - every plane has noteleport; self-zap WAN_TELEPORTATION prints "A mysterious force prevents you from teleporting!" (teleport.c:854-855)
 - self-teleport reaches scrolltele() at line 844 from zap.c:2876-2878, so the wand still works on monsters
+- strategy aligned with NetHackWiki Plane of Water, Scroll of genocide, Plane of Air, Astral Plane: genocide class `;` on the Plane of Water, conflict to clear Air's elementals, wrong-altar offering ends the game (https://nethackwiki.com/wiki/Plane_of_Water, https://nethackwiki.com/wiki/Scroll_of_genocide, https://nethackwiki.com/wiki/Plane_of_Air, https://nethackwiki.com/wiki/Astral_Plane)
 -->
 
 Beyond the top of the Dungeons of Doom, the world dissolves into
@@ -7665,6 +7707,7 @@ vegetarian for the rest of the run. There's no going back.
 - prayer cures hunger at Hungry/Weak/Fainting (pray.c:275, uhs >= HUNGRY)
 - wishing for slow digestion is a viable foodless route
 - Monk: vegetarian is nearly free
+- strategy aligned with NetHackWiki Conduct, Foodless, Veggy: vegetarian/vegan/foodless hierarchy and the slow-digestion / prayer / stone-to-flesh strategy for foodless are canonical (https://nethackwiki.com/wiki/Conduct, https://nethackwiki.com/wiki/Foodless, https://nethackwiki.com/wiki/Veggy)
 -->
 
 These form a hierarchy: foodless is stricter than vegan, which is
@@ -7713,6 +7756,7 @@ conduct (it counts as eating rock).
 - dropping any non-coin on an altar breaks the conduct via the BUC flash (do.c:370)
 - final Amulet offering for ascension is exempt (pray.c:1529-1588 has no gnostic increment)
 - Priest's starting holy water does NOT auto-break the conduct (u_init.c:716-722)
+- strategy aligned with NetHackWiki Atheist: no prayer / sacrifice / chat-with-priest / altar drops; final ascension Amulet offering is exempt (https://nethackwiki.com/wiki/Atheist)
 -->
 
 Don't interact with the divine. Specifically: don't `#pray`, don't
@@ -7738,6 +7782,7 @@ atheist ascension is mechanically possible.
 - do NOT break: thrown weapons, fired ammo, wands, spells, barehand, martial arts, cockatrice-corpse-wield
 - iron chain is CHAIN_CLASS, not a weptool; swinging it does NOT break (objects.h:101, 1631)
 - aklys is WEAPON_CLASS, not a weptool; it breaks via the WEAPON_CLASS branch (objects.h:381-383)
+- strategy aligned with NetHackWiki Weaponless, Martial arts: thrown/fired weapons and martial arts preserve the conduct, wielded-polearm-#apply still breaks it (https://nethackwiki.com/wiki/Weaponless, https://nethackwiki.com/wiki/Martial_arts)
 -->
 
 Never hit a monster with a wielded weapon or weapon-tool. You can
@@ -7761,6 +7806,7 @@ output of late-game artifact weapons.
 - Pacifist tracks u.uconduct.killer; only xkilled (mon.c:3500) and pet-pushed-into-trap (hack.c:2201) increment
 - pet kills and conflict kills do NOT break the conduct: xkilled() only increments on !noconduct branch (mon.c:3499-3502)
 - charm-monster spell, Elbereth, and pet tactics are all safe (no killer++ in those code paths)
+- strategy aligned with NetHackWiki Pacifist, Conflict: pacifist runs lean on strong pets (often polymorph-amplified) and a ring of conflict for crowds (https://nethackwiki.com/wiki/Pacifist, https://nethackwiki.com/wiki/Conflict)
 -->
 
 Don't kill any monsters. Not directly, not with pets, not through
@@ -7782,6 +7828,7 @@ of charm monster, and extremely patient tactics.
 - do NOT break: blank paper, unread novels, Book of the Dead, Hawaiian shirts, reading floor engravings (Elbereth)
 - pet-on-scroll workaround for identifying scrolls is safe
 - Wizard/Priest/Healer/Monk/Knight keep one pre-learned spell until it fades, ~20K turns (spell.h:17 KEEN)
+- strategy aligned with NetHackWiki Illiterate: only an "x"-signature engrave is safe, scroll of scare monster is the rare exception that doesn't break the conduct (https://nethackwiki.com/wiki/Illiterate)
 -->
 
 Don't read anything. No scrolls, no spellbooks, no fortune cookies,
@@ -7806,6 +7853,7 @@ forces extreme reliance on wands, potions, and creative workarounds.
 - on a cursed scroll, empty input re-prompts and rndmonst() creates monsters; type "none" to escape (read.c:2848-2871)
 - end-of-game tracking counts G_GENOD species in mvitals[], not a u_conduct counter (insight.c:2951-2966 num_genocides)
 - cursed-scroll monster-creation preserves the conduct (no species gets G_GENOD'd)
+- strategy aligned with NetHackWiki Genocide, Throne: answer "none" at the prompt, throne genocides are always safe, Plane of Water class-`;` wipe is off-limits for genocideless (https://nethackwiki.com/wiki/Genocide, https://nethackwiki.com/wiki/Throne)
 -->
 
 Never genocide any monster. Genocide is prompted by reading a
@@ -7840,6 +7888,7 @@ against late-game threats takes discipline.
 - Unchanging blocks all polymorph; system shock does NOT break the conduct (polyself.c:483-495)
 - sandestins are G_NOCORPSE; their corpses are unreachable (eat.c:1246)
 - poly_when_stoned only fires if already polymorphed into a non-stone golem; normal characters die (mondata.c:80-86)
+- strategy aligned with NetHackWiki Polymorph, Amulet of unchanging, Polypiling: Unchanging blocks every involuntary path, polypileless forfeits the polypile item-generation trick (https://nethackwiki.com/wiki/Polymorph, https://nethackwiki.com/wiki/Amulet_of_unchanging, https://nethackwiki.com/wiki/Polypiling)
 -->
 #### Polymorph Restrictions
 
@@ -7869,6 +7918,7 @@ to obtain specific high-value items.
 - wisharti ticks even for DENIED artifact wishes: increment is before the deny branch (objnam.c:5362-5365)
 - fountain water demon routes through mongrantswish -> makewish
 - wresting empty wands routes through makewish (zap.c:2583)
+- strategy aligned with NetHackWiki Conduct, Wish: wishless vs no-wishing-for-artifacts are separately tracked, "nothing" is the canonical escape for a forced wish (https://nethackwiki.com/wiki/Conduct, https://nethackwiki.com/wiki/Wish)
 -->
 
 Two related conducts:
@@ -7958,9 +8008,8 @@ signature spell or item. Wizard knows force bolt; Healer knows
 healing; Cleric, Knight, and Monk all know protection (Cleric
 also knows water); Archeologist knows touchstone; Cave Dweller
 knows flint; Rogue and Tourist know sack; Samurai knows gunyoki
-rations. The **supply chests** scattered on early levels above
-the Oracle (a feature in every 5.0 game, not just pauper) can
-provide much of your first kit.
+rations. The supply chests on early levels (see [What to
+Pack](#what-to-pack)) can provide much of your first kit.
 
 #### Petless (new in 5.0)
 <!-- audit
