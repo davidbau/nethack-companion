@@ -2762,6 +2762,7 @@ of the first intrinsics worth acquiring.
 - worn-armor priority on disint hit: shield first (zap.c:4476-4479), then body armor + cloak (zap.c:4480-4486)
 - amulet of life saving rescues you (end.c catches DIED) but breath still destroys cloak/shirt (zap.c:4487-4492)
 - an ordinary shield eats one breath; shields of reflection don't have a failure mode (zap.c:4476-4479)
+- Antimagic check is on the death-ray branch only; the AD_DISN breath branch checks Disint_resistance only (zap.c:4464-4497)
 -->
 
 A black dragon's breath is the only thing in the game that
@@ -2801,6 +2802,8 @@ your own species. Don't do this.
 - cancellation prevents new infections (uhitm.c:3556-3560) but does NOT clear a running Slimed timer
 - polymorph cure requires flaming() or PM_GREEN_SLIME (polyself.c:842)
 - vomiting cures only SICK_VOMITABLE; Pestilence's SICK_NONVOMITABLE is unaffected (eat.c:3745-3746)
+- rotted-corpse food poisoning is gated by Sick_resistance, NOT poison resistance (eat.c:1904-1914)
+- Fire_resistance survives lava damage but still gets trapped: lava_effects sets utrap TT_LAVA on the fire-res branch (trap.c:6964-6968)
 -->
 
 Not every fatal threat kills instantly. Several give you a few
@@ -3176,6 +3179,7 @@ read one of that type, then one item per cursed read after.
 - angry-shop +33% surcharge sticks: pacify_shk(FALSE) at shk.c:2663 does NOT clear it
 - only pacify_shk(TRUE) clears (shk.c:302, 793 — bones-load and new-customer transitions)
 - the JS price widget mirrors get_cost/set_cost exactly
+- AMULET macro hard-codes base price 150 for every magic amulet; FAKE_AMULET_OF_YENDOR is base 0 (objects.h:831-834, 865-869)
 -->
 
 Shopkeepers are, without exaggeration, your most important
@@ -3533,6 +3537,7 @@ other ring is consumed.
 - confused remove curse via blessorcurse(obj, 2): 1/4 bless, 1/4 curse, 1/2 unchanged (mkobj.c:1841-1853)
 - non-blessed confused remove curse touches only worn/wielded (read.c:1549-1552); blessed touches all
 - 90% auto-curse branch (mkobj.c:1087-1090) covers fumble boots, levitation boots, gauntlets of fumbling, helm of opposite alignment
+- cursed worn armor refuses to be taken off via the otmp->cursed check (do_wear.c:1900); cursed loadstone refuses to drop (do.c:685-695)
 -->
 
 When you don't have access to a shop or a sink, you can sometimes
@@ -4076,6 +4081,8 @@ pharmacy.
 - safe enchantment ceiling for weapons is +5
 - charging success is n^3/7^3 per try (read.c:746-758)
 - charging odds: 2nd 0.29%, 3rd 2.33%, 4th 7.87%, 5th 18.66%, 6th 36.44%, 7th 62.97%, 8th 100%
+- WAN_WISHING lim=1; cursed strips charges; blessed gives the same +1 as uncursed (read.c:738-789)
+- second recharge on a wand of wishing is a 100% explosion via the recharged>0 branch (read.c:761-764)
 -->
 
 Scrolls are the dungeon's single-use spells: read once, triggered,
@@ -6338,6 +6345,7 @@ If you're missing any of these, go back up and find them.
 - so unconditional wish rate is (1/3)·(4/13) = 4/39 ≈ 10%; ~10 sits average, ~7 bad effects absorbed
 - Orcus drops magic lamp or magic marker, 50/50 (orcus.lua:107-111)
 - Sanctum has noteleport + nommap (sanctum.lua:8)
+- Valley of the Dead has noteleport + nommap + non-diggable walls (valley.lua:10, 74)
 -->
 
 Below the Castle, the dungeon changes. The corridors give way to
@@ -6655,6 +6663,7 @@ clear.
 - Force frequency tapers with each trigger (do.c:1536-1563)
 - Amulet-pickup wish fires once on next moveloop iteration if !u.uevent.amulet_wish (allmain.c:446-451)
 - Elbereth is DEAD in Gehennom, all four Elemental Planes, and Astral: onscary returns FALSE for Inhell || In_endgame (teleport.c:68-70)
+- carrying the Amulet blocks level teleport via the u.uhave.amulet guard (teleport.c:1185-1189)
 -->
 
 You did it. You fought through Gehennom, defeated the High Priest,
@@ -8077,6 +8086,7 @@ the conduct.)
 - shop walls ARE diggable from inside: dig.c:488-501 converts to door, shopkeeper bills SHOP_WALL_DMG and chases (shk.c:5061-5078)
 - touchstone full-name ID requires blessed (or non-cursed for Archeologist/Gnome); uncursed gives only streak color (apply.c:2744-2751)
 - touchstone hardness is irrelevant: works on all gems
+- glass gems do NOT take the is_gem branch in unicorn gift handling — Luck never changes either direction (dothrow.c:2319, 2358-2368)
 -->
 
 Shops do more than sell: their pricing system is your most
@@ -10791,6 +10801,8 @@ Mostly harmless. **Lizard corpses cure petrification and never rot.** Carry one 
 - the 5.0 change is the unprotected outcome (instakill -> drain + damage) per fixes5-0-0.txt:538
 - iron bars were added in 3.3.0, not 3.6 (fixes3-3-0.txt:349)
 - gold dragon scale mail grants only hallucination resistance + innate light, not two resistances (do_wear.c:846-851, objects.h:505 DRGN_ARMR slot 0)
+- bag-of-holding explosion scatters contents via scatter() rather than destroying them all; only 1/13 items vanish per is_boh_item_gone (pickup.c:2509-2532)
+- death drops delobj() any rolled FOOD_CLASS item unless the monster has M2_COLLECT — corpses are still left (mon.c:3597-3604)
 -->
 
 If you're an experienced traveler returning after some time away, the
