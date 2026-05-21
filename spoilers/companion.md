@@ -6463,7 +6463,7 @@ A few principles:
   appearances in that school (the identification payoff from the
   [Spellcasting](#spellcasting) chapter). Schools containing your
   unidentified books deserve priority.
-- **Riding's silent gate.** Without **Basic riding** you can't
+- **Riding is a skill.** Without **Basic riding** you can't
   pick up items, loot, dip, set or disarm traps, or engrave on
   the floor while mounted. Knights start at Basic. Pushing to
   Skilled erases the −1 to-hit penalty in the saddle and adds
