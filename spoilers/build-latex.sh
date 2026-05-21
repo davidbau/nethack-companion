@@ -47,15 +47,18 @@ caption = (
 )
 replacement = (
     '\n\n```{=latex}\n'
+    '\\begingroup\\setlength{\\parskip}{0pt}\n'
     '\\begin{center}\n'
-    '\\includegraphics[width=\\linewidth]{images/dmap-dod.pdf}\n'
-    '\\par\\nointerlineskip\\nopagebreak[4]\n'
-    '\\includegraphics[width=\\linewidth]{images/dmap-geh.pdf}\n'
-    '\\par\\nointerlineskip\n'
-    '\\includegraphics[width=\\linewidth]{images/dmap-planes.pdf}\n'
-    '\\par\\vspace{0.6em}\n'
-    f'{{\\footnotesize\\itshape {caption}\\par}}\n'
+    '\\offinterlineskip\n'
+    '\\vbox{%\n'
+    '  \\hbox{\\includegraphics[width=\\linewidth]{images/dmap-dod.pdf}}%\n'
+    '  \\hbox{\\includegraphics[width=\\linewidth]{images/dmap-geh.pdf}}%\n'
+    '  \\hbox{\\includegraphics[width=\\linewidth]{images/dmap-planes.pdf}}%\n'
+    '}\n'
     '\\end{center}\n'
+    '\\endgroup\n'
+    '\\vspace{0.6em}\n'
+    f'{{\\footnotesize\\itshape\\noindent {caption}\\par}}\n'
     '```\n\n'
 )
 md = re.sub(
