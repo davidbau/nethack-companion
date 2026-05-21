@@ -171,9 +171,9 @@ various experience levels, and a different quest to complete in the
 mid-game.
 
 **Archeologist.** You start with a bullwhip, a pickaxe, a tinning
-kit, and a touchstone. The pickaxe is the kit's quiet
-workhorse: it lets you dig through walls and create your own
-escape routes from the very first level. The tinning kit lets you
+kit, and a touchstone. The pickaxe is the kit's workhorse:
+it lets you dig through walls and create your own escape routes
+from the very first level. The tinning kit lets you
 preserve corpses for later, and the touchstone identifies real vs
 worthless glass gems when you rub a gem on it. Archeologists are
 capable and flexible, though a bit fragile in early combat. You
