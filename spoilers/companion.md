@@ -434,10 +434,10 @@ Welcome to the dungeon.
 The first few levels of the Mazes are designed to ease you in, which
 is a relative term. Monsters are weaker, but you are too. Your gear is
 minimal, your hit points are low, and you don't yet have the
-resistances that make the mid-game survivable. More experienced
-adventurers will tell you that levels one through five are where the
-most characters die, not because the threats are the greatest, but
-because you have the fewest resources to deal with them.
+resistances that make the mid-game survivable. Levels one through
+five are where the most characters die, not because the threats
+are the greatest, but because you have the fewest resources to
+deal with them.
 
 #### The Golden Rules of Early Survival
 
