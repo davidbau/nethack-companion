@@ -5323,6 +5323,8 @@ than it looks.
 - Large box base weight 350, chest 600, ice box 900 (objects.h:899-904)
 - door diagonal-move rules: cannot move diagonally INTO an intact doorway (hack.c:1140-1149); cannot move diagonally OUT of one (hack.c:1209-1213)
 - low-intelligence monsters cannot open closed doors; intelligent monsters open/unlock per monmove.c:1567-1585
+- inventory letter limit is invlet_basic = 52 (hack.h:584); inv_cnt(FALSE) >= 52 triggers "Your pack is too full" (invent.c:5246-5251); items in containers are not in gi.invent and don't count against the limit
+- #adjust (doorganize, also M-a binding) swaps items between letters and can force-merge mergable stacks (cmd.c:1673-1674, invent.c:4981)
 -->
 <!-- audit
 2026-05-18:
@@ -5402,6 +5404,22 @@ or worse without a reason. The bag of holding is the standard
 answer to the encumbrance problem; carrying everything inside one
 reduces the effective weight to roughly a quarter, which is why
 veteran players treat finding one as a turning point in the run.
+
+**Running out of inventory letters.** Weight isn't the only limit.
+Your inventory has **52 slots** (`a-z` plus `A-Z`), and a 53rd
+item hits *"Your pack is too full."* Stackable items consolidate
+into a single slot only when the game can tell they're the same
+thing — five identified scrolls of identify share one letter, but
+identified and unidentified scrolls of the same type stay in
+separate slots, and weapons of different enchantments don't
+merge. So clutter is usually an identification problem in
+disguise: the more you ID, the more your inventory consolidates.
+The bag of holding doubles as the answer here too — items inside
+any container don't count against your 52, so a stash of
+twenty potions in a BoH costs you a single letter. The `#adjust`
+command lets you swap items between letters, force-merge stacks
+that didn't merge, or split a stack to a new letter — purely
+relabeling, no game effect.
 
 One 5.0 hazard that you will need to be aware of:
 **intelligent monsters can now loot unlocked containers**.
