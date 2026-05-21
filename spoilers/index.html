@@ -2255,48 +2255,26 @@ not yours. Only oilskin/grease, magical breathing, or killing the eel
 first are reliable.</li>
 </ul>
 </section>
-<section id="the-castle" class="level4">
+<section id="castle-overview" class="level4">
 <h4>The Castle</h4>
 <!-- audit
 2026-05-18:
 - Castle is the last DoD level: base=-1 (dungeon.lua:7-12, 82-85)
-- layout: moat + drawbridge + 4 corner towers + throne room + 2 barracks + 4 storerooms (castle.lua:25-41, 80-81, 234, 248-249)
-- wand of wishing in a trapped/locked chest in one randomly chosen corner tower (castle.lua:48-52, 142-149)
-- burned Elbereth + cursed scroll of scare monster on the chest's tile keep gnawers away (castle.lua:151-152)
-- drawbridge passtune is 5 notes A-G, Mastermind-style miss feedback (music.c:793, 836-884)
-- only blowable instruments work for the passtune (flutes, horns, bugle — harp excluded) (music.c:769-771)
-- wand of striking DESTROYS the drawbridge (does not just close it) (zap.c:3290-3305)
-- wand of opening or spell of knock opens the drawbridge (zap.c:3263-3273, 2184)
-- Gehennom branches off the Castle with branchtype=no_down, so the stairs do not return (dungeon.lua:39-43)
-- no minotaurs and no internal maze; the two des.mazewalk calls fill the OUTSIDE approach corridors (castle.lua:223-224)
-- strategy aligned with NetHackWiki Castle, Passtune, Drawbridge: passtune-as-Mastermind, wand-of-opening/spell-of-knock alternatives, and wand of striking destroying the drawbridge match (https://nethackwiki.com/wiki/Castle, https://nethackwiki.com/wiki/Passtune, https://nethackwiki.com/wiki/Drawbridge)
+- fortified structure surrounded by a moat with a drawbridge (castle.lua:25-41)
+- defenders: soldiers in barracks, dragons in storerooms, court of high-letter monsters in throne room (castle.lua:54, 60, 180, 185, 195-221)
+- wand of wishing in a locked chest in one of the four corner towers (castle.lua:48-52, 142-149)
+- Gehennom branches off the Castle; the stairs do not return (dungeon.lua:39-43)
 -->
-<p>The Castle is the last level of the Dungeons of Doom proper, around
-level 27. It’s a large fortified structure surrounded by a moat, with a
-drawbridge as the main entrance.</p>
-<p>To enter the Castle, you need to open the drawbridge. Options:</p>
-<ul>
-<li><strong>Play the passtune.</strong> A five-note musical sequence
-played on any tonal instrument (wooden flute, magic flute, tooled horn,
-frost or fire horn, bugle, harp) opens the drawbridge. The notes are
-randomized per game. You can learn them by trying different sequences:
-the game tells you how many notes are correct after each attempt, like a
-game of Mastermind.</li>
-<li><strong>Wand of opening</strong> pointed at the drawbridge.</li>
-<li><strong>Spell of knock</strong> cast at the drawbridge.</li>
-<li><strong>Wand of striking</strong> <em>destroys</em> the drawbridge
-entirely. The moat squares become walkable, but the bridge is gone and
-the tune is useless afterward. Use this as a one-way option.</li>
-</ul>
-<p>Inside the Castle: a throne room, two barracks, and several
-storerooms. The <strong>wand of wishing</strong> — one of the most
-important items in the game — is in a chest in one of the four corner
-towers (guarded by Elbereth and a cursed scroll of scare monster to
-deter the court monsters from displacing it). See <a
-href="#wishes-and-wishing">Wishes and Wishing</a> for the full mechanics
-and how many wishes a 5.0 Castle wand actually yields.</p>
-<p>Below the Castle lies <a href="#gehennom">Gehennom</a>. There is no
-shortcut back, so make sure you’re prepared before you descend.</p>
+<p>The Castle is the last level of the Dungeons of Doom proper, a stone
+fortress surrounded by a moat with a drawbridge as its only entrance.
+Inside waits an army of defenders: soldiers in the barracks, dragons
+guarding the storerooms, and a court of high-letter monsters in the
+throne room. Hidden in a chest in one of the four corner towers is the
+<strong>wand of wishing</strong>.</p>
+<p>The Castle is the last step of the dungeon proper and the gateway to
+<a href="#gehennom">Gehennom</a>. For how to open the drawbridge and
+what to do once you’re inside, see <a href="#the-castle">The Castle</a>
+in Part Six.</p>
 <hr />
 </section>
 </section>
@@ -9000,7 +8978,7 @@ candle, and — relevant after all that lamp-rubbing — a wish for a
 </section>
 <section id="part-six-the-deep-dungeon" class="level2">
 <h2>Part Six: The Deep Dungeon</h2>
-<section id="the-castle-1" class="level3">
+<section id="the-castle" class="level3">
 <h3>The Castle</h3>
 <!-- audit
 2026-05-18:
@@ -9012,18 +8990,33 @@ candle, and — relevant after all that lamp-rubbing — a wish for a
 - five trap doors at columns 40/44/48/52/55 (gaps 4/4/4/3), not strictly even (castle.lua:156-160)
 - trap door always sends you to Valley of the Dead (dlevel=1), not a random Gehennom level (trap.c:669-670, dungeon.c:1949-1953)
 - storerooms hold four D-class dragons; moat holds sea monsters; fountain present (castle.lua:60, 180, 185)
-- strategy aligned with NetHackWiki Castle, Wand of wishing: bring conflict for crowd control, plan a small wishlist, secure MR/reflection/fire-res/poison-res before descending (https://nethackwiki.com/wiki/Castle, https://nethackwiki.com/wiki/Wand_of_wishing)
+- drawbridge passtune is 5 notes A-G, Mastermind-style miss feedback (music.c:793, 836-884)
+- any instrument can attempt the passtune; flutes/horns/bugle require can_blow, harp and drums don't (music.c:769-771)
+- wand of striking DESTROYS the drawbridge; wand of locking/spell of wizard lock closes it (zap.c:3290-3305)
+- wand of opening or spell of knock opens the drawbridge (zap.c:3263-3273, 2184)
+- strategy aligned with NetHackWiki Castle, Passtune, Drawbridge, Wand of wishing: passtune-as-Mastermind, wand-of-opening/spell-of-knock alternatives, wand of striking destroys, bring conflict for crowd control, plan a small wishlist, secure MR/reflection/fire-res/poison-res before descending (https://nethackwiki.com/wiki/Castle, https://nethackwiki.com/wiki/Passtune, https://nethackwiki.com/wiki/Drawbridge, https://nethackwiki.com/wiki/Wand_of_wishing)
 -->
 <p>If you’ve reached the Castle, congratulations: you’ve survived the
 easy part. Everything below is worse.</p>
 <p>The Castle sits at the bottom of the Dungeons of Doom, guarded by a
 drawbridge and whatever the dungeon decided to stuff inside this time.
 (5.0 at least no longer pre-loads the place with arch-liches to greet
-you on arrival.) We covered how to find and enter it in <a
-href="#branches-and-landmarks">Branches and Landmarks</a>. Here’s what
-to do once the drawbridge is down and you’re standing in the foyer
-wondering what you’ve gotten yourself into.</p>
-<p>The Castle contains:</p>
+you on arrival.)</p>
+<p>The drawbridge is the first puzzle. You can lower it four ways:</p>
+<ul>
+<li><strong>Play the passtune.</strong> A five-note musical sequence
+played on any tonal instrument (wooden flute, magic flute, tooled horn,
+frost or fire horn, bugle, harp) opens the drawbridge. The notes are
+randomized per game. You can learn them by trying different sequences:
+the game tells you how many notes are correct after each attempt, like a
+game of Mastermind.</li>
+<li><strong>Wand of opening</strong> pointed at the drawbridge.</li>
+<li><strong>Spell of knock</strong> cast at the drawbridge.</li>
+<li><strong>Wand of striking</strong> <em>destroys</em> the drawbridge
+entirely. The moat squares become walkable, but the bridge is gone and
+the tune is useless afterward. Use this as a one-way option.</li>
+</ul>
+<p>Once you’re across, the Castle contains:</p>
 <ul>
 <li>A <strong>throne room</strong> with a throne and a random court of
 high-letter monsters (liches, nymphs, eyes, giants, and the like).
