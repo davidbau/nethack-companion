@@ -6118,6 +6118,7 @@ book skips the difficulty check entirely and always succeeds**, no
 matter what your Int and level are — which is one reason to save
 holy water for your hardest unread spellbooks.
 
+[]{#wizards-identify-books}
 **Wizards identify books by training.** In 5.0, advancing
 a spell school skill to each rank automatically reveals the appearances
 of spellbooks in that school: unskilled unlocks level-1 appearances,
@@ -6528,11 +6529,11 @@ A few principles:
   appears.
 - **Wizards get two benefits from spell schools.** Each rank-up
   improves casting success *and* reveals more spellbook
-  appearances in that school (the identification payoff covered
-  in the [Spellcasting](#spellcasting) chapter). Schools
-  containing your unidentified books deserve priority. This
-  double benefit is Wizard-only; other roles only get the
-  casting-success benefit.
+  appearances in that school (the [identification
+  payoff](#wizards-identify-books) covered in the Spellcasting
+  chapter). Schools containing your unidentified books deserve
+  priority. This double benefit is Wizard-only; other roles only
+  get the casting-success benefit.
 - **Riding is a skill.** Without **Basic riding** you can't
   pick up items, loot, dip, set or disarm traps, or engrave on
   the floor while mounted. Knights start at Basic. Pushing to
