@@ -6330,8 +6330,7 @@ works once your luck is already above modest levels. To raise luck via
 sacrifice in the mid-to-late game, you need fresh corpses of monsters
 whose difficulty exceeds your current luck value. In practice: a
 luckstone, occasional mid-tier sacrifices, and not killing peacefuls is
-now the standard path to high luck. The dungeon made luck feel like luck
-again.
+now the standard path to high luck.
 
 #### Why Luck Matters
 
