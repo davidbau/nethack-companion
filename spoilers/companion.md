@@ -516,7 +516,7 @@ If you do get food poisoning, pray immediately.
 
 **Falling down stairs while overburdened.** If you're carrying too
 much, taking the stairs can make you tumble for 1–3 HP. Annoying
-rather than dangerous, but a habit worth avoiding — drop items
+rather than dangerous, but a habit worth avoiding: drop items
 before descending or manage your inventory.
 
 **Killer bees.** They come in swarms, they're fast, and in the early
