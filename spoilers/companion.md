@@ -275,10 +275,9 @@ get free book-ID just by casting (see
 
 #### The Races
 
-Your race affects your starting attributes, maximum attributes, and
-which intrinsics you begin with or can gain. The table below shows
-the maximum each race can reach for each stat; the floor is 3 for
-every stat across all races.
+Your race affects your starting and maximum attributes, and which
+intrinsics you get. All stats range from 3 and higher; the table
+below shows the maximum each race can reach for each attribute.
 
 | Race  | Str    | Int | Wis | Dex | Con | Cha | Intrinsics                     |
 |-------|--------|-----|-----|-----|-----|-----|--------------------------------|
