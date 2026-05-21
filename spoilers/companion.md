@@ -6155,11 +6155,9 @@ on their spells in the late game.
 novel rather than a real spellbook. Read it: the first novel you
 pick up in a game grants 20 XP, which is exactly enough to lift
 a fresh character from experience level 1 to 2. (The 20 XP only
-fires once; subsequent paperbacks just display a quote.) The text
-inside is a tribute to **Terry Pratchett** — each paperback rolls
-a Discworld title at game start ("The Truth," "Guards! Guards!,"
-"Mort," "Small Gods," "Going Postal," dozens more) and reading it
-opens a passage from the corresponding novel.
+fires once; subsequent paperbacks just display a quote.) Each
+paperback is a Terry Pratchett **Discworld** title, and reading
+it opens a passage from the novel.
 
 #### Key Spells
 
