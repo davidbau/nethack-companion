@@ -68,6 +68,25 @@ local function maybe_set_bestiary_widths(blk)
   end
 end
 
+-- The two Useful Corpse Effects tables (Corpse | Effect) wrap content
+-- in the Corpse column under pandoc auto-sizing. Force a wider Corpse
+-- column so "Black pudding (glob)", "Gelatinous cube †", etc. fit on
+-- one line.
+function Table(blk)
+  if not blk.colspecs or #blk.colspecs ~= 2 then return end
+  local headers = {}
+  if blk.head and blk.head.rows and blk.head.rows[1] then
+    for _, cell in ipairs(blk.head.rows[1].cells) do
+      table.insert(headers, pandoc.utils.stringify(cell))
+    end
+  end
+  if headers[1] == "Corpse" and headers[2] == "Effect" then
+    blk.colspecs[1][2] = 0.40
+    blk.colspecs[2][2] = 0.60
+    return blk
+  end
+end
+
 function Div(div)
   for _, class in ipairs(div.classes) do
     if class == "dense-table" then
