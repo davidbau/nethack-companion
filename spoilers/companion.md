@@ -413,6 +413,12 @@ and the ability to outrun a gnome lord. If your status line reads
 
 ### Your First Descent
 <!-- audit
+2026-05-21:
+- poison-resistance corpse list for Rule 6, all with MR_POISON in both mresists and mconveys: killer bee (monsters.h:100), cave spider (monsters.h:944), yellow mold (monsters.h:1636); black pudding glob also conveys MR_POISON via mconveys (monsters.h:2118)
+- puddings carry G_NOCORPSE (monsters.h:2114) so there is no CORPSE object, but on death they drop a GLOB_OF_BLACK_PUDDING / GLOB_OF_BROWN_PUDDING / etc. food item (mon.c:715-734 mksobj_at)
+- eating a glob takes the same intrinsic path as eating a corpse: `piece->otyp == CORPSE || piece->globby` both trigger cpostfx(corpsenm) which calls givit() for each conveyed property (eat.c:562, 2040, 2984)
+- kicking a sink can summon a black pudding: 4/5 outcomes are klunk, otherwise 1/3 chance of black pudding (dokick.c:1201-1238) — the canonical beginner trick to roll cold+shock+poison resistance globs
+- magic resistance and reflection have no intrinsic source for players in 5.0; both come only from extrinsics: GDSM (do_wear.c:806-883), amulet of reflection, cloak of MR, silver shield, silver/gray DSM
 2026-05-18:
 - stair-falling damage is 1-3 HP via rnd(3) (do.c:1780-1795)
 - floating-eye paralysis (mhitu.c:2536-2557)
@@ -501,7 +507,8 @@ game. The three most important are **magic resistance**,
 **reflection**, and **poison resistance** (plus a **lizard
 corpse** in your pack for petrification emergencies). Poison
 resistance can be acquired as an *intrinsic* by eating the right
-corpse, like a killer bee, a cave spider, or a yellow mold.
+corpse, like a killer bee, a cave spider, a yellow mold, or a
+black pudding kicked from a sink.
 Magic resistance and reflection come from gear: dragon scale
 mail (gray for MR, silver for reflection), an amulet of
 reflection, or an artifact granted by your god, won on the
