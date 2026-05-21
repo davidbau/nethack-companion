@@ -2515,12 +2515,11 @@ are.
 **Scroll of earth on yourself.** Buried under a pile of
 boulders you summoned on your own head.
 
-The pattern across the whole list: routine mistakes kill far
-more adventurers than exotic instadeaths. Floating eyes,
-cockatrices, mind flayers, and disenchanters all matter
-(and they're catalogued in the named-death entries below).
-But the median death is a preventable swarm of jackals on
-Dlvl 3.
+Routine mistakes kill far more adventurers than exotic
+instadeaths. Floating eyes, cockatrices, mind flayers, and
+disenchanters all matter (and they're catalogued in
+[Yet More Ways to Die](#yet-more-ways-to-die)). But the median
+death is a preventable swarm of jackals on Dlvl 3.
 
 #### A note on mimics
 
@@ -3746,9 +3745,9 @@ opinions have consequences:
   most literal architectural sense: you rocket through the ceiling
   to the floor above, instead of gaining an experience level.
 
-The pattern is consistent: blessed items are helpful beyond their
-description, uncursed items work as advertised, and cursed items find
-creative ways to ruin your day. A blessed luckstone passively
+Blessed items are helpful beyond their description, uncursed
+items work as advertised, and cursed items find creative ways to
+ruin your day. A blessed luckstone passively
 improves your luck; a cursed one drags it down. A cursed scroll of
 teleportation sends you to a random *level* instead of teleporting
 within the current one. You get the idea.
@@ -5827,10 +5826,9 @@ the suit drops it off into your inventory (curse and all), even
 though it would normally refuse to come off. From there, dip in
 holy water and re-wear. See [Polymorph as a Tool](#polymorph-as-a-tool).
 
-The lesson: always carry holy water and a scroll of remove curse.
-The moment you find yourself stuck with cursed levitation boots
-over a moat, you'll understand why veterans never leave home
-without them.
+Always carry holy water and a scroll of remove curse. The moment
+you find yourself stuck with cursed levitation boots over a moat,
+you'll understand why veterans never leave home without them.
 
 ---
 
@@ -6097,9 +6095,9 @@ penalty, though most players just embrace the theme.)
 | Cannibalism                                         | −2 to −5    |
 | Breaking a mirror                                   | −2          |
 
-The pattern is consistent: be virtuous and the numbers smile on you.
-Be a monster and they frown. The Mazes have a moral compass, and
-it's embedded in the math.
+Be virtuous and the numbers smile on you. Be a monster and they
+frown. The Mazes have a moral compass, and it's embedded in the
+math.
 
 **Unicorn gem-throwing is the strongest active Luck source in the
 game.** Throw a properly-identified real gem (not glass) at a unicorn
