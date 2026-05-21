@@ -6468,7 +6468,7 @@ A few principles:
   the floor while mounted. Knights start at Basic. Pushing to
   Skilled erases the −1 to-hit penalty in the saddle and adds
   +1 damage.
-- **Bare hands and martial arts are a Monk story.** Grand Master
+- **Bare hands and martial arts are the domain of Monks.** Grand Master
   needs **9 cumulative non-weapon slots**, which Monks reach
   naturally. Anyone else dabbling in unarmed combat should plan
   to stop at Basic.
