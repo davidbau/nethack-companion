@@ -68,21 +68,36 @@ local function maybe_set_bestiary_widths(blk)
   end
 end
 
--- The two Useful Corpse Effects tables (Corpse | Effect) wrap content
--- in the Corpse column under pandoc auto-sizing. Force a wider Corpse
--- column so "Black pudding (glob)", "Gelatinous cube †", etc. fit on
--- one line.
+-- Top-level Table handler. Forces wider columns on a few specific
+-- table shapes whose auto-sized layout wraps content awkwardly.
 function Table(blk)
-  if not blk.colspecs or #blk.colspecs ~= 2 then return end
+  if not blk.colspecs then return end
   local headers = {}
   if blk.head and blk.head.rows and blk.head.rows[1] then
     for _, cell in ipairs(blk.head.rows[1].cells) do
       table.insert(headers, pandoc.utils.stringify(cell))
     end
   end
-  if headers[1] == "Corpse" and headers[2] == "Effect" then
+
+  -- Useful Corpse Effects tables (Corpse | Effect): widen Corpse so
+  -- "Black pudding (glob)", "Gelatinous cube †", etc. fit on one line.
+  if #blk.colspecs == 2
+      and headers[1] == "Corpse" and headers[2] == "Effect" then
     blk.colspecs[1][2] = 0.40
     blk.colspecs[2][2] = 0.60
+    return blk
+  end
+
+  -- Field Guide tables (Sym | Class | Notes): pandoc's auto-sizing
+  -- makes the Class column narrow enough that "disenchanter" and
+  -- "Trappers / lurkers above" hyphenate. Bump Class wide enough
+  -- that the longest entry fits without breaking.
+  if #blk.colspecs == 3
+      and headers[1] == "Sym" and headers[2] == "Class"
+      and headers[3] == "Notes" then
+    blk.colspecs[1][2] = 0.05
+    blk.colspecs[2][2] = 0.22
+    blk.colspecs[3][2] = 0.73
     return blk
   end
 end
