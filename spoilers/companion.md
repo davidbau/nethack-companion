@@ -2621,8 +2621,8 @@ epitaph.
 Touching a cockatrice without gloves, eating a cockatrice corpse,
 catching Medusa's gaze, or **kicking** a cockatrice corpse barefoot
 will turn you to stone. *Stepping* on the corpse is safe so long as
-you don't have Fumbling — Fumbling can trip you over the corpse for
-instant death. The process is sometimes immediate; otherwise a
+you don't have Fumbling (Fumbling can trip you over the corpse for
+instant death). The process is sometimes immediate; otherwise a
 five-turn countdown announces itself with *"You are slowing down,"*
 *"Your limbs are stiffening,"* *"Your limbs have turned to stone"*
 (at which point you are **paralyzed** and can no longer act),
