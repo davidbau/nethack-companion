@@ -3534,6 +3534,11 @@ crowning by accident.
 
 ### Making Friends
 <!-- audit
+2026-05-21:
+- Titan stats: LVL(16, 18, -3, 70, 9); attacks AT_WEAP 2d8 + AT_MAGC AD_SPEL; M1_FLY, M2_ROCKTHROW, M2_MAGIC; difficulty 20 (monsters.h:1777-1785)
+- Balrog stats: LVL(16, 5, -2, 75, -14); AT_WEAP 8d4 + AT_WEAP 4d6; M1_FLY; MR_FIRE|MR_POISON; difficulty 20 (monsters.h:3043-3051) — speed 5 is the limiter
+- Archon stats: LVL(19, 16, -6, 80, 15); AT_WEAP 2d4 × 2 + AT_GAZE AD_BLND 2d6 + AT_CLAW 1d8 + AT_MAGC AD_SPEL 4d6; MR_FIRE|MR_COLD|MR_ELEC|MR_SLEEP|MR_POISON; M1_FLY|M1_SEE_INVIS|M1_REGEN; M2_NOPOLY (monsters.h:1254-1265)
+- polyok() rejects M2_NOPOLY: #define polyok(ptr) (((ptr)->mflags2 & M2_NOPOLY) == 0L) (mondata.h:93) — Archons cannot be a polymorph result
 2026-05-18:
 - "sad feeling for a moment" fires when an offscreen pet dies (mon.c:952, 3101, 3495)
 - leaving a pet behind alive produces no message; loyalty decays at 1 per 150 moves apart (dog.c:689-697)
@@ -3646,11 +3651,24 @@ yank a loaded pet to your side from anywhere on the level.
 - Tame a **warhorse** early (throw apples or carrots) and you have
   a fast, hard-hitting mount before mid-game.
 - Late in the run, **polymorph your pet** into a stronger form.
-  Titans, balrogs, and gray dragons are popular targets; a gray
-  dragon has magic resistance and resists further polymorph, so
-  it locks in. Cast polymorph carefully: random self-poly on the
-  pet can downgrade it, and a polymorphed steed stops being
-  saddled.
+  **Titan** is a popular target: level 16, speed 18, flies,
+  throws boulders, and casts spells. Faster than anything else
+  this strong, so it keeps up with a speed-boosted hero, and the
+  spell-cast attack threatens at range. Balrog hits harder but
+  is speed 5, slow enough that anything that runs gets away.
+  Gray dragon is an alternative when you specifically want the
+  magic-resistance intrinsic and a body that won't accidentally
+  re-polymorph. Cast carefully: random self-poly on the pet can
+  downgrade it, and a polymorphed steed stops being saddled.
+- If you can tame an **Archon** directly (via a scroll of taming
+  on a hostile, magic-whistle recall of one you tamed earlier, or
+  a conflict-ring accident), keep it. Archons are the consensus
+  gold standard for pets: level 19, speed 16, AC −6, magic
+  resistance, sees invisible, flies, regenerates, and a multi-
+  attack that includes a blinding gaze and a spell-cast. They
+  cannot be reached via polymorph (the `M2_NOPOLY` flag puts them
+  off-limits as a polymorph result), so a direct tame is the
+  only way in.
 
 #### Keeping Your Pet Alive
 
