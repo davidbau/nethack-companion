@@ -6120,13 +6120,13 @@ monster you just sacrificed, you gain nothing. The altar accepts your
 offering politely and gives you nothing in return, because the gods have
 standards.
 
-So 5.0 closes an old strategy: sitting at a co-aligned altar with
-a pile of kobold corpses and grinding luck to maximum. It no longer
-works once your luck is already above modest levels. To raise luck via
-sacrifice in the mid-to-late game, you need fresh corpses of monsters
-whose difficulty exceeds your current luck value. In practice: a
-luckstone, occasional mid-tier sacrifices, and not killing peacefuls is
-now the standard path to high luck.
+Before 5.0, players used to be able to sit at a co-aligned altar
+with a pile of kobold corpses and grind luck to maximum. That no
+longer works once your luck is already above modest levels. To
+raise luck via sacrifice in the mid-to-late game, you need fresh
+corpses of monsters whose difficulty exceeds your current luck
+value. In practice: a luckstone, occasional mid-tier sacrifices,
+and not killing peacefuls is the standard path to high luck.
 
 #### Why Luck Matters
 
