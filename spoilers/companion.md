@@ -697,7 +697,7 @@ Item symbols are punctuation marks:
 | `(`    | Tools              |
 | `+`    | Spellbooks         |
 | `*`    | Gems and stones    |
-| `$`    | Gold (the dungeon's currency is the **zorkmid**, abbreviated **zm**) |
+| `$`    | Gold (zorkmids, abbreviated **zm**) |
 
 #### Room Types
 
