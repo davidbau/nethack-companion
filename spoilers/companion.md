@@ -4308,6 +4308,9 @@ uncurse. Kick it first. Check BUC second. Then pick it up.
 
 #### Naming What You've Learned
 <!-- audit
+2026-05-21:
+- mergable() requires identical otyp, enchantment (spe), BUC, erodeproof state, erosion (oeroded, oeroded2), greased state, oeaten/orotten for food; coins merge unconditionally (invent.c:4379-4460)
+- on merge that propagates a previously-unknown property, the game prints "You learn more about your items by comparing them." (invent.c:938-942); guarded against LOST_THROWN to avoid spam when monsters strip ID
 2026-05-18:
 - `#name` and `#call` aliases at cmd.c:1773-1774
 - class naming at do_name.c:571-588
@@ -4330,10 +4333,13 @@ doesn't keep notes for you. You have to do it yourself.
 merges it into an existing slot only if the two are *identical*:
 same type, same enchantment, same BUC, same erodeproofing. So
 whether a new item stacks with one you already understand leaks
-information for free. A second potion with the same appearance
-that *doesn't* merge with your identified pile is a different
-potion, or carries a different BUC, or has been diluted. Pay
-attention to which slots merge and which don't.
+information for free. When a merge actually teaches you something
+the game says so explicitly: *"You learn more about your items by
+comparing them."* That message is your cue that the merge
+propagated a known property (BUC, enchantment, erosion) to the
+previously unknown side. Two same-appearance items that *don't*
+merge are a different potion, a different BUC, or one side has
+been diluted or eroded.
 
 #### A Practical Strategy
 <!-- audit
