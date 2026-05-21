@@ -127,7 +127,7 @@ you alive.
 ### Choosing Your Expedition
 <!-- audit
 2026-05-21:
-- Archeologist starts with touchstone (u_init.c:50); touchstone identifies gems by rubbing per apply.c:2678-2707 (Ken Arnold)
+- Archeologist starts with touchstone (u_init.c:50) and knows_object(TOUCHSTONE) so the tool itself is identified (u_init.c:660-662); does NOT have knows_class(GEM_CLASS) — gems are NOT pre-identified; touchstone identifies gems by rubbing per apply.c:2678-2707 (Ken Arnold)
 - Healer starts with wand of sleep, 4 potions of healing, 4 potions of extra healing, and 3 blessed spellbooks (healing, extra healing, stone-to-flesh) (u_init.c:81-90); the spellbooks are always blessed so reading them always succeeds
 - Tourist starts with 4 scrolls of magic mapping, 2 potions of extra healing, 21-40 +2 darts, Hawaiian shirt, expensive camera, credit card, and 10 random food items (u_init.c:150-159)
 2026-05-18:
@@ -171,15 +171,14 @@ various experience levels, and a different quest to complete in the
 mid-game.
 
 **Archeologist.** You start with a bullwhip, a pickaxe, a tinning
-kit, and a touchstone. The pickaxe is the kit's workhorse:
-it lets you dig through walls and create your own escape routes
-from the very first level. The tinning kit lets you
-preserve corpses for later, and the touchstone identifies real vs
-worthless glass gems when you rub a gem on it. Archeologists are
-capable and flexible, though a bit fragile in early combat. You
-begin knowing what all gems are, which is a nice parlor trick and
-occasionally useful for unicorn negotiation. *Alignment: Lawful
-or Neutral.*
+kit, and a touchstone. The pickaxe is the kit's workhorse: it
+lets you dig through walls and create your own escape routes from
+the very first level. The tinning kit lets you preserve corpses
+for later, and the touchstone is your gem-identification edge:
+rub a gem on it and the game tells you whether it's the real
+thing or worthless glass. Useful for unicorn negotiation and shop
+pricing. Archeologists are capable and flexible, though a bit
+fragile in early combat. *Alignment: Lawful or Neutral.*
 
 **Barbarian.** You start strong. Literally. A two-handed sword and
 good starting strength mean you can hack through early monsters with
@@ -698,7 +697,7 @@ Item symbols are punctuation marks:
 | `(`    | Tools              |
 | `+`    | Spellbooks         |
 | `*`    | Gems and stones    |
-| `$`    | Gold               |
+| `$`    | Gold (the dungeon's currency is the **zorkmid**, abbreviated **zm**) |
 
 #### Room Types
 
@@ -2578,7 +2577,7 @@ black dragons to grow disintegration resistance before going where
 they live. Their scale mail grants disintegration resistance plus
 drain resistance, a rare extrinsic source of the latter.
 
-**Yellow** dragon scale mail is the sleeper pick. Listed power is
+**Yellow** dragon scale mail is an underrated pick. Listed power is
 acid resistance, but it also grants **stoning resistance** — the
 same outright immunity acid blob corpses give. If you find a yellow
 dragon and don't already have stone-res, killing it is worth the
@@ -5324,7 +5323,7 @@ over moats, fountains, pools, and the Castle's drawbridge entirely
 — a fast Knight can cross Medusa's island and the Castle from edge
 to edge without worrying about the water at all. Stack with boots
 of speed and a wand of speed monster on the mount and you have a
-genuinely terrifying cavalry unit.
+terrifying cavalry unit.
 
 **Restful sleep** puts you to sleep randomly and is usually cursed,
 which should tell you everything you need to know about when to put it
