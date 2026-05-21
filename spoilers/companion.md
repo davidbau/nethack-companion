@@ -861,7 +861,7 @@ AC / attack details on every monster, see the
 | [`K`](#keystone-kops-k)    | [Keystone Kops](#keystone-kops-k)     | The shopkeeper-summoned constabulary. They appear when you steal, refuse to pay, or anger a shopkeeper. Individually weak but they swarm, and they jeer at you. |
 | [`l`](#leprechauns-l)    | [Leprechauns](#leprechauns-l)       | Steal your gold and teleport away. A single claw can grab up to *all* of your purse. Hide gold in a sack, drop it elsewhere, or fight at range. |
 | [`L`](#liches-l)    | [Liches](#liches-l)            | Spellcasters. Arch-liches are among the most dangerous monsters in the game.                         |
-| [`m`](#mimics-m)    | [Mimics](#mimics-m)            | Disguised as items, walls, doors, fountains, altars, or boulders. See the mimics note below.         |
+| [`m`](#mimics-m)    | [Mimics](#mimics-m)            | Disguised as items, walls, doors, fountains, altars, or boulders. See [A note on mimics](#a-note-on-mimics) in Ways to Die.         |
 | [`M`](#mummies-m)    | [Mummies](#mummies-m)           | Aggressive undead with physical claw attacks. Their corpses are dangerous to eat (age you). Mummy wrappings worn as a cloak block invisibility — usually a downside, but useful if you've gone invisible and need a shopkeeper to interact with you. |
 | [`n`](#nymphs-n)    | [Nymphs](#nymphs-n)            | Steal items from your inventory, then teleport away. Fight from range.                               |
 | [`N`](#nagas-n)    | [Nagas](#nagas-n)             | Large serpent-bodied creatures. Red nagas breathe fire, black nagas spit acid, golden nagas cast spells, guardian nagas spit Str-drain poison and have a paralyzing bite. Tough; speeds 12–16. |
@@ -910,8 +910,8 @@ A few map glyphs aren't monsters in the conventional sense, but you'll see them 
 | ------ | ------------------------ | ---------------------------------------------------------------------------------------------------- |
 | `I`    | Invisible monster marker | The game remembers the last spot you sensed something you couldn't see. The `I` stays there until you bump it or step on the square; the monster has usually moved. |
 | `~`    | Long worm tail segment   | Part of a long worm's body. Hitting the tail damages the worm and shortens the chain; hitting the head (the `w`) is full melee. |
-| `]`    | Strange object           | **Always a mimic.** No ordinary item ever displays as `]` (compare `[`, armor — `]` is its mirror). See the mimics note below. |
-| `□`<br>(space) | Ghost            | Ghosts left from bones files. The glyph is a literal space, which paints over the floor underneath: in a room, a ghost shows as a one-square *gap* in the floor where a `.` should be. Walk into the gap to identify it. |
+| `]`    | Strange object           | **Always a mimic.** No ordinary item ever displays as `]` (compare `[`, armor — `]` is its mirror). See [A note on mimics](#a-note-on-mimics) in Ways to Die. |
+| `⎕`<br>(space) | Ghost            | Ghosts left from bones files. The glyph is a literal space, which paints over the floor underneath: in a room, a ghost shows as a one-square *gap* in the floor where a `.` should be. Walk into the gap to identify it. |
 
 ---
 

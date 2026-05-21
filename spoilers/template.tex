@@ -23,6 +23,10 @@
 \usepackage{newunicodechar}
 \newunicodechar{★}{\ensuremath{\bigstar}}
 \newunicodechar{⅕}{\ensuremath{\tfrac{1}{5}}}
+% APL QUAD (U+2395) — used as an empty-cursor box for the ghost glyph in the
+% Special Symbols table. Source Code Pro doesn't ship it; render it manually
+% as a thin framed box at line height.
+\newunicodechar{⎕}{{\setlength{\fboxsep}{0pt}\framebox[0.55em]{\rule{0pt}{1ex}}}}
 
 % --- Fonts via fontspec (XeLaTeX) ---
 \usepackage{fontspec}
