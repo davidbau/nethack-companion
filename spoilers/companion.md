@@ -66,7 +66,7 @@ you alive.
 **Part Two: Dungeon Sights**
 
 4. [The Lay of the Land](#the-lay-of-the-land) — Rooms, corridors, and dungeon features (with map)
-5. [A Field Guide to Dungeon Fauna](#a-field-guide-to-dungeon-fauna) — Monster classes at a glance
+5. [Field Guide to Dungeon Fauna](#field-guide-to-dungeon-fauna) — Monster classes at a glance
 6. [Points of Interest](#points-of-interest) — Fountains, altars, thrones, and sinks
 7. [Branches and Landmarks](#branches-and-landmarks) — The Mines, Sokoban, and beyond
 8. [Traps and Hazards](#traps-and-hazards) — What the dungeon has in store for you
@@ -643,7 +643,7 @@ Learning to read these symbols quickly is important:
 Letters represent monsters: `d` for dogs, `D` for dragons, `Z` for
 zombies. Colors help distinguish within a class: a red `D` is a red
 dragon, while a gray `D` is a gray dragon (see
-[A Field Guide to Dungeon Fauna](#a-field-guide-to-dungeon-fauna)).
+[Field Guide to Dungeon Fauna](#field-guide-to-dungeon-fauna)).
 
 Item symbols are punctuation marks:
 
@@ -762,7 +762,7 @@ rather than a direction.
 
 ---
 
-### A Field Guide to Dungeon Fauna
+### Field Guide to Dungeon Fauna
 <!-- audit
 2026-05-18:
 - xan: AT_STNG AD_LEGS (sting cripples legs); xan is class `x`, not the engulfer `t` (S_TRAPPER) (monsters.h:1157-1159)
@@ -790,75 +790,75 @@ AC / attack details on every monster, see the
 
 | Sym    | Class                  | Notes                                                                      |
 | ------ | ---------------------- | -------------------------------------------------------------------------- |
-| `a`    | Ants      | Soldier ants are a frequent early-game killer: speed 18, two attacks per turn (bite + strength-draining sting), and they travel in packs. A wandering soldier-ant group on Dlvl 4 can end a careless run. Killer bees, giant ants, fire ants are all the same shape of problem. |
-| `b`    | Blobs     | Acidic or gelatinous. Acid blobs have no active attack — they only splash 1d8 acid back when *you* hit *them*, and the splash can corrode your weapon. Kill at range, or walk past. |
-| `B`    | Bats      | The `B` class is **deceptively dangerous because of speed**. Bats and giant bats clock in at speed 22 — nearly twice the player's base 12, so they get roughly two bites per one of your swings. Giant bats bite for 1d6 each; the math catches up fast. Vampire bats are still in the bat class but their second bite drains Strength (not levels). |
-| `d`    | Dogs and other canines | The `d` class covers your starting pet (little dog, kitten via cat-class) **and** the most numerous early-game predators. **Jackals** are the single most common cause of death on the public server — they only bite for 1d2, but they spawn in packs and there are a *lot* of them on the upper levels. Foxes bite for 1d3 and are faster (speed 15) but spawn alone. Coyotes, dingos, wolves get progressively worse. Tame `d` (your pet, larger dogs you've fed up) help fight everything else. |
-| `e`    | Eyes      | **Floating eyes paralyze on melee hit.** Never hit an `e` in melee. Use ranged attacks. Spheres (flaming/freezing/shocking) explode in a 3×3 area; also kill them at range. |
-| `f`    | Cats      | Like dogs, often starting pets. Felines can be tamed with tripe.                        |
-| `G`    | Gnomes    | The standard inhabitants of the Gnomish Mines. Individually weak, but the Mines have a lot of them — and **plain gnomes, gnome lords, and (later) gnome rulers are all in the top fifteen causes of death** on the public server, because mid-game players treat the Mines as a milk run and walk into a four-on-one with full-strength enemies. If you're a gnome yourself, most of them are peaceful. |
-| `h`    | Humanoids | Dwarves, bugbears, mind flayers. Wide range of difficulty. **Dwarves in particular are dangerously underrated**: they hit harder than they look, they're armored, and they're the second most common cause of death on the public server because of how many you meet in the Mines. Don't trade blows with one in melee until your AC is solid. |
-| `i`    | Imps      | Minor pests. Weak claw, regeneration, and a stream of insults — annoying but not dangerous. |
-| `j`    | Jellies   | Spotted and ochre jellies. Passive acid damage on melee.                                |
-| `k`    | Kobolds   | Weak individually but sometimes carry poisoned weapons.                                 |
-| `o`    | Orcs      | Numerous and modest in strength one-on-one; dangerous in packs. Hill orcs and Mordor orcs are the common upper-dungeon variants. |
-| `r`    | Rodents   | Rats and rock moles. Rock moles eat metal items, so protect your gear.                  |
-| `s`    | Spiders   | Cave spiders are weak. Giant spiders poison.                                            |
-| `x`    | Grid bugs | The weakest monster in the game; they can't even move diagonally. Free XP — they don't leave corpses. The `x` class also covers the much-later **xan**, whose sting cripples your legs (slow movement until it heals). |
-| `:`    | Lizards   | Newts, geckos, and iguanas are individually weak — usually not too dangerous if you're paying attention. The class matters mostly for the corpses: **lizard corpses cure petrification** (always carry one for cockatrice/Medusa insurance), and newt corpses may restore 1–3 mana to spellcasters. |
+| [`a`](#ants-and-insects-a)    | [Ants](#ants-and-insects-a)      | Soldier ants are a frequent early-game killer: speed 18, two attacks per turn (bite + strength-draining sting), and they travel in packs. A wandering soldier-ant group on Dlvl 4 can end a careless run. Killer bees, giant ants, fire ants are all the same shape of problem. |
+| [`b`](#blobs-b)    | [Blobs](#blobs-b)     | Acidic or gelatinous. Acid blobs have no active attack — they only splash 1d8 acid back when *you* hit *them*, and the splash can corrode your weapon. Kill at range, or walk past. |
+| [`B`](#bats-and-birds-b)    | [Bats](#bats-and-birds-b)      | The `B` class is **deceptively dangerous because of speed**. Bats and giant bats clock in at speed 22 — nearly twice the player's base 12, so they get roughly two bites per one of your swings. Giant bats bite for 1d6 each; the math catches up fast. Vampire bats are still in the bat class but their second bite drains Strength (not levels). |
+| [`d`](#dogs-and-canines-d)    | [Dogs and other canines](#dogs-and-canines-d) | The `d` class covers your starting pet (little dog, kitten via cat-class) **and** the most numerous early-game predators. **Jackals** are the single most common cause of death on the public server — they only bite for 1d2, but they spawn in packs and there are a *lot* of them on the upper levels. Foxes bite for 1d3 and are faster (speed 15) but spawn alone. Coyotes, dingos, wolves get progressively worse. Tame `d` (your pet, larger dogs you've fed up) help fight everything else. |
+| [`e`](#eyes-and-spheres-e)    | [Eyes](#eyes-and-spheres-e)      | **Floating eyes paralyze on melee hit.** Never hit an `e` in melee. Use ranged attacks. Spheres (flaming/freezing/shocking) explode in a 3×3 area; also kill them at range. |
+| [`f`](#felines-f)    | [Cats](#felines-f)      | Like dogs, often starting pets. Felines can be tamed with tripe.                        |
+| [`G`](#gnomes-g)    | [Gnomes](#gnomes-g)    | The standard inhabitants of the Gnomish Mines. Individually weak, but the Mines have a lot of them — and **plain gnomes, gnome lords, and (later) gnome rulers are all in the top fifteen causes of death** on the public server, because mid-game players treat the Mines as a milk run and walk into a four-on-one with full-strength enemies. If you're a gnome yourself, most of them are peaceful. |
+| [`h`](#humanoids-h)    | [Humanoids](#humanoids-h) | Dwarves, bugbears, mind flayers. Wide range of difficulty. **Dwarves in particular are dangerously underrated**: they hit harder than they look, they're armored, and they're the second most common cause of death on the public server because of how many you meet in the Mines. Don't trade blows with one in melee until your AC is solid. |
+| [`i`](#imps-and-minor-demons-i)    | [Imps](#imps-and-minor-demons-i)      | Minor pests. Weak claw, regeneration, and a stream of insults — annoying but not dangerous. |
+| [`j`](#jellies-j)    | [Jellies](#jellies-j)   | Spotted and ochre jellies. Passive acid damage on melee.                                |
+| [`k`](#kobolds-k)    | [Kobolds](#kobolds-k)   | Weak individually but sometimes carry poisoned weapons.                                 |
+| [`o`](#orcs-o)    | [Orcs](#orcs-o)      | Numerous and modest in strength one-on-one; dangerous in packs. Hill orcs and Mordor orcs are the common upper-dungeon variants. |
+| [`r`](#rodents-r)    | [Rodents](#rodents-r)   | Rats and rock moles. Rock moles eat metal items, so protect your gear.                  |
+| [`s`](#arachnids-and-centipedes-s)    | [Spiders](#arachnids-and-centipedes-s)   | Cave spiders are weak. Giant spiders poison.                                            |
+| [`x`](#xans-and-fantastic-insects-x)    | [Grid bugs](#xans-and-fantastic-insects-x) | The weakest monster in the game; they can't even move diagonally. Free XP — they don't leave corpses. The `x` class also covers the much-later **xan**, whose sting cripples your legs (slow movement until it heals). |
+| [`:`](#lizards)    | [Lizards](#lizards)   | Newts, geckos, and iguanas are individually weak — usually not too dangerous if you're paying attention. The class matters mostly for the corpses: **lizard corpses cure petrification** (always carry one for cockatrice/Medusa insurance), and newt corpses may restore 1–3 mana to spellcasters. |
 
 #### Mid-Dungeon Threats
 
 | Sym    | Class             | Notes                                                                                                |
 | ------ | ----------------- | ---------------------------------------------------------------------------------------------------- |
-| `A`    | Angels            | Powerful, usually aligned. Don't fight your own.                                                     |
-| `C`    | Centaurs          | Fast (speed 18-20). Half spawn with a bow or crossbow, but they'll still close into melee for weapon and kick attacks. Mountain centaurs hit hardest: 1d10 weapon plus *two* 1d6 kicks per turn. |
-| `E`    | Elementals        | Hard to kill. Air elementals engulf; earth elementals phase through walls.                           |
-| `f`    | Displacer beast   | Cat-class, but vicious: AC −10, three-attack melee, and a 50% chance on each player melee to swap places with you instead. Eat the corpse for temporary intrinsic Displacement. |
-| `F`    | Fungi             | Yellow mold, green mold, shriekers. Shriekers summon other monsters.                                 |
-| `G`    | Gnome lords/kings | Tougher gnomes. Still fairly manageable.                                                             |
-| `'`    | Golems            | Built things. Iron golems hit hard and resist nearly everything; clay, stone, and wood golems are softer. Glass golems leave gems on death. |
-| `H`    | Giants            | Strong melee, throw boulders. Giants carry gems.                                                     |
-| `J`    | Jabberwock        | Rare, but if you see one you're in for a fight. Four 2d10 attacks per turn (two bites and two claws) at normal speed. |
-| `K`    | Keystone Kops     | The shopkeeper-summoned constabulary. They appear when you steal, refuse to pay, or anger a shopkeeper. Individually weak but they swarm, and they jeer at you. |
-| `l`    | Leprechauns       | Steal your gold and teleport away. A single claw can grab up to *all* of your purse. Hide gold in a sack, drop it elsewhere, or fight at range. |
-| `L`    | Liches            | Spellcasters. Arch-liches are among the most dangerous monsters in the game.                         |
-| `m`    | Mimics            | Disguised as items, walls, doors, fountains, altars, or boulders. See the mimics note below.         |
-| `M`    | Mummies           | Aggressive undead with physical claw attacks. Their corpses are dangerous to eat (age you). Mummy wrappings worn as a cloak block invisibility — usually a downside, but useful if you've gone invisible and need a shopkeeper to interact with you. |
-| `n`    | Nymphs            | Steal items from your inventory, then teleport away. Fight from range.                               |
-| `N`    | Nagas             | Large serpent-bodied creatures. Red nagas breathe fire, black nagas spit acid, golden nagas cast spells, guardian nagas spit Str-drain poison and have a paralyzing bite. Tough; speeds 12–16. |
-| `O`    | Ogres             | Strong melee fighters. Ogre lords and kings are tougher.                                             |
-| `p`    | Piercers          | Disguise as stalactites; drop from the ceiling onto whatever walks below. The fall does serious damage. Hard to spot in advance. |
-| `P`    | Puddings          | Black AND brown puddings split when hit in melee with an iron or metal weapon (scalpel and tsurugi count). Use a silver or wooden weapon, or spells.                              |
-| `q`    | Quadrupeds        | Multi-attack mid-game bruisers. The **rothe** is the famous one (three attacks per turn at sluggish speed 9, dangerous in packs); mumakil are solo two-attack bruisers (4d12 butt + 2d6 bite).                              |
-| `R`    | Rust monster / disenchanter | Rust monsters corrode worn iron armor when they hit you, and your wielded iron weapon when you hit them. Use non-iron alternatives (mithril, silver, dragonhide) or take iron gear off before the fight; iron items kept in your inventory aren't touched. **Disenchanters** drain enchantment on hit and have their own write-up under [Ways to Die](#ways-to-die). |
-| `S`    | Snakes            | Cobras and pit vipers poison. Water moccasins come from fountains.                                   |
-| `t`    | Trappers / lurkers above | Hide in plain sight on floor or ceiling and engulf you when you walk under/onto them. See the engulfment write-up under [Ways to Die](#ways-to-die). |
-| `T`    | Trolls            | Regenerate. They come back from the dead unless you eat or tin the corpse.                           |
-| `u`    | Horses / unicorns | Horses are usually mountable, mostly peaceful in the wild. Unicorns are color-coded by alignment: same-aligned spawn peaceful, cross-aligned hostile. The gem-throwing negotiation playbook is in [Luck and Fortune](#luck-and-fortune). |
-| `U`    | Umber hulk        | Confuses on sight. Avoid looking at them directly.                                                   |
-| `v`    | Vortices          | Engulfing wisps. Air, fire, ice, and steam vortices each apply their element to whatever they engulf. Kill at range. |
-| `w`    | Worms             | Long worms grow tail segments as they move and can be a corridor in themselves. Purple worms swallow you whole (see [Things You Don't Want to Meet](#things-you-dont-want-to-meet), below). |
-| `W`    | Wraiths           | Drain levels on hit. But their corpses grant a level, so eat them fresh.                             |
-| `y`    | Yellow/black lights | Explode adjacent. Yellow blinds you; black hallucinates you. Black lights are invisible without *see invisible*. Kill at range. |
-| `Y`    | Yetis             | Tough melee combatants. Corpses may grant cold resistance.                                           |
-| `z`    | Zruty             | Three-attack mid-game brute. Uncommon but a fair fight if you've geared up.                          |
-| `Z`    | Zombies           | Slow, numerous, come in many varieties. Zombie corpses are old and will rot.                         |
+| [`A`](#angelic-beings-a)    | [Angels](#angelic-beings-a)            | Powerful, usually aligned. Don't fight your own.                                                     |
+| [`C`](#centaurs-c)    | [Centaurs](#centaurs-c)          | Fast (speed 18-20). Half spawn with a bow or crossbow, but they'll still close into melee for weapon and kick attacks. Mountain centaurs hit hardest: 1d10 weapon plus *two* 1d6 kicks per turn. |
+| [`E`](#elementals-e)    | [Elementals](#elementals-e)        | Hard to kill. Air elementals engulf; earth elementals phase through walls.                           |
+| [`f`](#felines-f)    | [Displacer beast](#felines-f)   | Cat-class, but vicious: AC −10, three-attack melee, and a 50% chance on each player melee to swap places with you instead. Eat the corpse for temporary intrinsic Displacement. |
+| [`F`](#fungi-and-molds-f)    | [Fungi](#fungi-and-molds-f)             | Yellow mold, green mold, shriekers. Shriekers summon other monsters.                                 |
+| [`G`](#gnomes-g)    | [Gnome lords/kings](#gnomes-g) | Tougher gnomes. Still fairly manageable.                                                             |
+| [`'`](#golems)    | [Golems](#golems)            | Built things. Iron golems hit hard and resist nearly everything; clay, stone, and wood golems are softer. Glass golems leave gems on death. |
+| [`H`](#giant-humanoids-h)    | [Giants](#giant-humanoids-h)            | Strong melee, throw boulders. Giants carry gems.                                                     |
+| [`J`](#jabberwocks-j)    | [Jabberwock](#jabberwocks-j)        | Rare, but if you see one you're in for a fight. Four 2d10 attacks per turn (two bites and two claws) at normal speed. |
+| [`K`](#keystone-kops-k)    | [Keystone Kops](#keystone-kops-k)     | The shopkeeper-summoned constabulary. They appear when you steal, refuse to pay, or anger a shopkeeper. Individually weak but they swarm, and they jeer at you. |
+| [`l`](#leprechauns-l)    | [Leprechauns](#leprechauns-l)       | Steal your gold and teleport away. A single claw can grab up to *all* of your purse. Hide gold in a sack, drop it elsewhere, or fight at range. |
+| [`L`](#liches-l)    | [Liches](#liches-l)            | Spellcasters. Arch-liches are among the most dangerous monsters in the game.                         |
+| [`m`](#mimics-m)    | [Mimics](#mimics-m)            | Disguised as items, walls, doors, fountains, altars, or boulders. See the mimics note below.         |
+| [`M`](#mummies-m)    | [Mummies](#mummies-m)           | Aggressive undead with physical claw attacks. Their corpses are dangerous to eat (age you). Mummy wrappings worn as a cloak block invisibility — usually a downside, but useful if you've gone invisible and need a shopkeeper to interact with you. |
+| [`n`](#nymphs-n)    | [Nymphs](#nymphs-n)            | Steal items from your inventory, then teleport away. Fight from range.                               |
+| [`N`](#nagas-n)    | [Nagas](#nagas-n)             | Large serpent-bodied creatures. Red nagas breathe fire, black nagas spit acid, golden nagas cast spells, guardian nagas spit Str-drain poison and have a paralyzing bite. Tough; speeds 12–16. |
+| [`O`](#ogres-o)    | [Ogres](#ogres-o)             | Strong melee fighters. Ogre lords and kings are tougher.                                             |
+| [`p`](#piercers-p)    | [Piercers](#piercers-p)          | Disguise as stalactites; drop from the ceiling onto whatever walks below. The fall does serious damage. Hard to spot in advance. |
+| [`P`](#puddings-and-oozes-p)    | [Puddings](#puddings-and-oozes-p)          | Black AND brown puddings split when hit in melee with an iron or metal weapon (scalpel and tsurugi count). Use a silver or wooden weapon, or spells.                              |
+| [`q`](#quadrupeds-q)    | [Quadrupeds](#quadrupeds-q)        | Multi-attack mid-game bruisers. The **rothe** is the famous one (three attacks per turn at sluggish speed 9, dangerous in packs); mumakil are solo two-attack bruisers (4d12 butt + 2d6 bite).                              |
+| [`R`](#rust-monsters-and-disenchanters-r)    | [Rust monster / disenchanter](#rust-monsters-and-disenchanters-r) | Rust monsters corrode worn iron armor when they hit you, and your wielded iron weapon when you hit them. Use non-iron alternatives (mithril, silver, dragonhide) or take iron gear off before the fight; iron items kept in your inventory aren't touched. **Disenchanters** drain enchantment on hit and have their own write-up under [Ways to Die](#ways-to-die). |
+| [`S`](#snakes-s)    | [Snakes](#snakes-s)            | Cobras and pit vipers poison. Water moccasins come from fountains.                                   |
+| [`t`](#trappers-and-lurkers-t)    | [Trappers / lurkers above](#trappers-and-lurkers-t) | Hide in plain sight on floor or ceiling and engulf you when you walk under/onto them. See the engulfment write-up under [Ways to Die](#ways-to-die). |
+| [`T`](#trolls-t)    | [Trolls](#trolls-t)            | Regenerate. They come back from the dead unless you eat or tin the corpse.                           |
+| [`u`](#unicorns-and-horses-u)    | [Horses / unicorns](#unicorns-and-horses-u) | Horses are usually mountable, mostly peaceful in the wild. Unicorns are color-coded by alignment: same-aligned spawn peaceful, cross-aligned hostile. The gem-throwing negotiation playbook is in [Luck and Fortune](#luck-and-fortune). |
+| [`U`](#umber-hulks-u)    | [Umber hulk](#umber-hulks-u)        | Confuses on sight. Avoid looking at them directly.                                                   |
+| [`v`](#vortices-v)    | [Vortices](#vortices-v)          | Engulfing wisps. Air, fire, ice, and steam vortices each apply their element to whatever they engulf. Kill at range. |
+| [`w`](#worms-w)    | [Worms](#worms-w)             | Long worms grow tail segments as they move and can be a corridor in themselves. Purple worms swallow you whole (see [Things You Don't Want to Meet](#things-you-dont-want-to-meet), below). |
+| [`W`](#wraiths-w)    | [Wraiths](#wraiths-w)           | Drain levels on hit. But their corpses grant a level, so eat them fresh.                             |
+| [`y`](#lights-y)    | [Yellow/black lights](#lights-y) | Explode adjacent. Yellow blinds you; black hallucinates you. Black lights are invisible without *see invisible*. Kill at range. |
+| [`Y`](#apelike-creatures-y)    | [Yetis](#apelike-creatures-y)             | Tough melee combatants. Corpses may grant cold resistance.                                           |
+| [`z`](#zruties-z)    | [Zruty](#zruties-z)             | Three-attack mid-game brute. Uncommon but a fair fight if you've geared up.                          |
+| [`Z`](#zombies-z)    | [Zombies](#zombies-z)           | Slow, numerous, come in many varieties. Zombie corpses are old and will rot.                         |
 
 #### Things You Don't Want to Meet
 
 | Sym    | Class            | Notes                                                                                                    |
 | ------ | ---------------- | -------------------------------------------------------------------------------------------------------- |
-| `c`    | Cockatrices      | **Touch = instant petrification.** Never hit one barehanded. Wield their corpse with gloves as a weapon. |
-| `D`    | Dragons          | Each color has its own breath weapon, resistance, and scale mail property. See note below.               |
-| `h`    | Mind flayers     | Drain intelligence on hit. **If Int hits your racial minimum (3 for humans), you die.** Keep distance or kill fast.                    |
-| `V`    | Vampires         | Drain levels. Vampire lords fly and are fast.                                                            |
-| `w`    | Purple worms     | The big worm: swallows you whole on a hit, then digests. Cut your way out from inside.                  |
-| `X`    | Xorn             | Phases through walls and floors. Three claws and a bite per turn; hard to ambush and hard to escape from. |
-| `;`    | Sea monsters     | Drowning is an instadeath. Don't fight in water without a plan.                                          |
-| `&`    | Demons           | Major demons (Orcus, Demogorgon, Asmodeus) are boss-level threats.                                       |
-| `@`    | Humans (hostile) | Includes the Wizard of Yendor, who is the most persistent nuisance in the game.                          |
-| `Q`    | Quantum mechanics / genetic engineers | Quantum mechanics teleport their target on a hit; genetic engineers (new in 5.0) polymorph their target. The `Q` class is rare but every one of them is a surprise. See [The Genetic Engineer](#the-genetic-engineer) for more information. |
+| [`c`](#cockatrices-c)    | [Cockatrices](#cockatrices-c)      | **Touch = instant petrification.** Never hit one barehanded. Wield their corpse with gloves as a weapon. |
+| [`D`](#dragons-d)    | [Dragons](#dragons-d)          | Each color has its own breath weapon, resistance, and scale mail property. See note below.               |
+| [`h`](#humanoids-h)    | [Mind flayers](#humanoids-h)     | Drain intelligence on hit. **If Int hits your racial minimum (3 for humans), you die.** Keep distance or kill fast.                    |
+| [`V`](#vampires-v)    | [Vampires](#vampires-v)         | Drain levels. Vampire lords fly and are fast.                                                            |
+| [`w`](#worms-w)    | [Purple worms](#worms-w)     | The big worm: swallows you whole on a hit, then digests. Cut your way out from inside.                  |
+| [`X`](#xorns-x)    | [Xorn](#xorns-x)             | Phases through walls and floors. Three claws and a bite per turn; hard to ambush and hard to escape from. |
+| [`;`](#sea-monsters)    | [Sea monsters](#sea-monsters)     | Drowning is an instadeath. Don't fight in water without a plan.                                          |
+| [`&`](#major-demons)    | [Demons](#major-demons)           | Major demons (Orcus, Demogorgon, Asmodeus) are boss-level threats.                                       |
+| [`@`](#humans-and-elves)    | [Humans (hostile)](#humans-and-elves) | Includes the Wizard of Yendor, who is the most persistent nuisance in the game.                          |
+| [`Q`](#quantum-mechanics-q)    | [Quantum mechanics / genetic engineers](#quantum-mechanics-q) | Quantum mechanics teleport their target on a hit; genetic engineers (new in 5.0) polymorph their target. The `Q` class is rare but every one of them is a surprise. See [The Genetic Engineer](#the-genetic-engineer) for more information. |
 
 ```{=latex}
 \pagebreak[4]
@@ -5302,12 +5302,12 @@ The key armor slots:
 
 | Slot   | Primary pick                               | Specialty pick                        |
 | ------ | ------------------------------------------ | ------------------------------------- |
-| Body   | Splint mail, banded mail                   | Dragon scale mail (two extrinsics)    |
-| Cloak  | Cloak of protection                        | Cloak of magic resistance             |
-| Helmet | Helm of caution (early game)               | Helm of telepathy / helm of brilliance |
-| Gloves | Gauntlets of power                         | Gauntlets of dexterity                |
-| Boots  | Speed boots                                | Water walking boots, levitation boots |
-| Shield | Shield of reflection                       | Small shield (for spellcasters)       |
+| [Body](#body-armor-suits)   | Splint mail, banded mail                   | Dragon scale mail (two extrinsics)    |
+| [Cloak](#cloaks)  | Cloak of protection                        | Cloak of magic resistance             |
+| [Helmet](#helmets) | Helm of caution (early game)               | Helm of telepathy / helm of brilliance |
+| [Gloves](#gloves) | Gauntlets of power                         | Gauntlets of dexterity                |
+| [Boots](#boots)  | Speed boots                                | Water walking boots, levitation boots |
+| [Shield](#shields) | Shield of reflection                       | Small shield (for spellcasters)       |
 
 The **helm of caution** is new in 5.0: it grants
 *warning*, the same intrinsic the ring provides, in the helmet
@@ -5358,14 +5358,14 @@ Weapon choice depends heavily on your role and skill caps.
 
 | Weapon         | Damage (sm/lg) | Notes                              |
 | -------------- | -------------- | ---------------------------------- |
-| Long sword     | d8 / d12       | Lawfuls can dip for Excalibur      |
-| Katana         | d10 / d12      | Best base damage for a one-hander  |
-| Silver saber   | d8 / d8        | +d20 vs silver-hating monsters     |
-| Crysknife      | d10 / d10      | Excellent damage, fragile          |
-| Tsurugi        | d16 / d8+2d6   | Two-handed, bisects small monsters |
-| Runesword      | d4 / d6+d4     | Chaotic weapon                     |
-| Battle-axe     | d8+d4 / d6+2d4 | Two-handed, good damage            |
-| Rubber hose    | d4 / d3        | No, seriously, don't use this      |
+| [Long sword](#long-sword)     | d8 / d12       | Lawfuls can dip for Excalibur      |
+| [Katana](#long-sword)         | d10 / d12      | Best base damage for a one-hander  |
+| [Silver saber](#saber)   | d8 / d8        | +d20 vs silver-hating monsters     |
+| [Crysknife](#knife)      | d10 / d10      | Excellent damage, fragile          |
+| [Tsurugi](#two-handed-sword)        | d16 / d8+2d6   | Two-handed, bisects small monsters |
+| [Runesword](#broadsword)      | d4 / d6+d4     | Chaotic weapon                     |
+| [Battle-axe](#axe)     | d8+d4 / d6+2d4 | Two-handed, good damage            |
+| [Rubber hose](#whip)    | d4 / d3        | No, seriously, don't use this      |
 
 **Excalibur** (long sword dipped in a fountain while Lawful) is one
 of the best weapons: +d5 to hit and +d10 damage, level drain resistance,
