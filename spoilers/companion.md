@@ -571,7 +571,7 @@ breaking. An orcish dagger off the first orc you kill is
 a perfect tool (pet-test it first: could be cursed). The contents aren't guaranteed
 to change your run, but finding a stack of healing potions on level
 4 before you've learned the hard way how much you need them is the
-dungeon's frequent act of goodwill.
+dungeon's act of goodwill.
 
 ---
 
