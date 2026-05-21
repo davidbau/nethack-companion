@@ -1363,9 +1363,9 @@ You'll know when you've reached the right level. The first time you
 arrive there, a faint telepathic call from your quest leader breaks
 through:
 
-> *You receive a faint telepathic message from ...: Your help is
-> urgently needed at ...! Look for a ...ic transporter. You
-> couldn't quite make out that last message.*
+> *You receive a faint telepathic message .... Your help is urgently
+> needed .... Look for a ...ic transporter. You couldn't quite make
+> out that last message.*
 
 You are now looking for a magic portal, which renders as a bright
 magenta `^` once you discover it. Like any trap, it stays hidden
