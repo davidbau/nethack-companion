@@ -507,7 +507,7 @@ Pick up every food ration you find.
 **Floating eyes.** They're the `e` on the map. Small, blue, and
 seemingly harmless. If you hit one in melee, you'll be paralyzed, and
 every monster in the vicinity will take free shots at your frozen body.
-Use ranged attacks, or just walk around them. They don't pursue you.
+Use ranged attacks, or just walk around them. They are very slow.
 
 **Rotted corpses.** If you eat a corpse that's been on the ground too
 long, you'll get food poisoning, which is lethal without treatment.
