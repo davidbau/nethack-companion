@@ -2299,7 +2299,7 @@ Only about **0.4% of games end in ascension.** The other 99.6%
 are deaths. NetHack ends in death by default; survival is the
 exception.
 
-**The early dungeon is where you die.** The top ten killers are,
+**The early dungeon is deadly.** The top ten killers are,
 in order: jackals, dwarves, soldier ants, gnome lords, sewer rats,
 giant bats, small mimics, gnomes, foxes, water moccasins. Every
 one of them lives on the upper dungeon levels. None are
