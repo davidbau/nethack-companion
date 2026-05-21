@@ -3329,14 +3329,14 @@ you among other things, and a sleeping adventurer in a Mines room is a
 dead one. Take the branch when you have HP, a real weapon, and sleep
 resistance. A positive AC at XL 5 is not enough.</p>
 <p><strong>Sleep without resistance is a near-instadeath.</strong> A
-homunculus bite, a gnomish wizard’s sleep spell, or later an orange
-dragon or Nazgul breath puts you to sleep for several turns. If you are
-alone in a corridor it costs you a couple of rounds. If you are
-surrounded by anything else, the surrounding monsters chew through your
-HP while you cannot move. Sleep resistance comes from any elf, elven
-mummy, or giant corpse, and from several roles’ starting kits (Wizard’s
-cloak of MR, Ranger’s elven cloak). Eat for it before descending into
-the Mines or the lower Quest.</p>
+homunculus (<code>i</code>) bite, a gnomish wizard’s sleep spell, or
+later an orange dragon or Nazgul breath puts you to sleep for several
+turns. If you are alone in a corridor it costs you a couple of rounds.
+If you are surrounded by anything else, the surrounding monsters chew
+through your HP while you cannot move. Sleep resistance comes from any
+elf, elven mummy, or giant corpse, and from several roles’ starting kits
+(Wizard’s cloak of MR, Ranger’s elven cloak). Eat for it before
+descending into the Mines or the lower Quest.</p>
 <p><strong>Bats and other speedsters</strong> (<code>B</code>). Bats and
 giant bats clock in at speed 22, nearly twice your starting 12. They get
 two attacks for every one of yours, and a 1d4 bite at double rate chews
@@ -22004,8 +22004,11 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
   contentSections.forEach(function(section) {
     var heading = section.querySelector('h1, h2, h3, h4');
     if (!heading) return;
-    // Gather text from direct child p, li, td elements
-    var textEls = section.querySelectorAll(':scope > p, :scope > ul > li, :scope > ol > li, :scope > table td, :scope > blockquote p');
+    // Gather text from direct child p, li, td elements plus tables
+    // wrapped in pandoc's div.dense-table containers (which the search
+    // would otherwise skip — that's why bestiary entries like
+    // "homunculus" weren't surfacing).
+    var textEls = section.querySelectorAll(':scope > p, :scope > ul > li, :scope > ol > li, :scope > table td, :scope > blockquote p, :scope > div.dense-table table td, :scope > div > table td');
     var text = '';
     textEls.forEach(function(el) { text += el.textContent + ' '; });
     searchData.push({

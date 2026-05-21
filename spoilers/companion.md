@@ -2355,7 +2355,7 @@ a Mines room is a dead one. Take the branch when you have HP, a real weapon,
 and sleep resistance. A positive AC at XL 5 is not enough.
 
 **Sleep without resistance is a near-instadeath.** A homunculus
-bite, a gnomish wizard's sleep spell, or later an orange dragon
+(`i`) bite, a gnomish wizard's sleep spell, or later an orange dragon
 or Nazgul breath puts you to sleep for several turns. If you
 are alone in a corridor it costs you a couple of rounds. If
 you are surrounded by anything else, the surrounding monsters

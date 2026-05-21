@@ -137,8 +137,11 @@ $body$
   contentSections.forEach(function(section) {
     var heading = section.querySelector('h1, h2, h3, h4');
     if (!heading) return;
-    // Gather text from direct child p, li, td elements
-    var textEls = section.querySelectorAll(':scope > p, :scope > ul > li, :scope > ol > li, :scope > table td, :scope > blockquote p');
+    // Gather text from direct child p, li, td elements plus tables
+    // wrapped in pandoc's div.dense-table containers (which the search
+    // would otherwise skip — that's why bestiary entries like
+    // "homunculus" weren't surfacing).
+    var textEls = section.querySelectorAll(':scope > p, :scope > ul > li, :scope > ol > li, :scope > table td, :scope > blockquote p, :scope > div.dense-table table td, :scope > div > table td');
     var text = '';
     textEls.forEach(function(el) { text += el.textContent + ' '; });
     searchData.push({
