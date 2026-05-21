@@ -3665,10 +3665,8 @@ yank a loaded pet to your side from anywhere on the level.
   a conflict-ring accident), do it. Archons are the consensus
   ultimate pet: level 19, speed 16, AC −6, magic
   resistance, sees invisible, flies, regenerates, and a multi-
-  attack that includes a blinding gaze and a spell-cast. They
-  cannot be reached via polymorph (the `M2_NOPOLY` flag puts them
-  off-limits as a polymorph result), so a direct tame is the
-  only way in.
+  attack that includes a blinding gaze and a spell-cast.
+  Polymorph cannot reach them: a direct tame is the only way in.
 
 #### Keeping Your Pet Alive
 
