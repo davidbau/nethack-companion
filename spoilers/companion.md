@@ -1110,6 +1110,15 @@ his name angers the guard. Use the real-name route then.
 
 A practical tour of the branches and landmarks, in roughly the order you'll visit them.
 
+**Sokoban or Mines first?** The Mines entrance shows up first
+(Dlvl 2 to 4), but the *strategic* answer for most beginners is
+Sokoban. It's a controlled puzzle crawl with mostly trivial
+monsters, and the prize at the top (reflection or a bag of
+holding) materially helps the Mines run afterward. Go
+Mines-first if you specifically want the luckstone at Mine's End
+early, or if a gnomish race makes most Mines residents peaceful
+to you.
+
 #### The Gnomish Mines
 <!-- audit
 2026-05-18:
@@ -1122,7 +1131,7 @@ A practical tour of the branches and landmarks, in roughly the order you'll visi
 - all 3 Mine's End layouts place a not-cursed luckstone (minend-1.lua:77, minend-2.lua:116, minend-3.lua:67)
 - minend-1 also places a mimic appear_as="obj:luckstone" — BUC-test before grabbing (minend-1.lua:59)
 - Minetown watchmen are peaceful=1 in non-orcish variants (minetn-2.lua:149)
-- strategy aligned with NetHackWiki Gnomish Mines, Minetown, Mines' End: Minetown described as the prime price-ID/BUC-test/priest-donation stop; guaranteed luckstone at Mine's End is canonical (https://nethackwiki.com/wiki/Gnomish_Mines, https://nethackwiki.com/wiki/Minetown, https://nethackwiki.com/wiki/Mines%27_End)
+- strategy aligned with NetHackWiki Gnomish Mines, Minetown, Mines' End, Standard strategy: Minetown described as the prime price-ID/BUC-test/priest-donation stop; guaranteed luckstone at Mine's End is canonical; Standard strategy recommends Sokoban-before-Mines as the default branch ordering for the reflection/BoH prize before tackling the Mines pack fights (https://nethackwiki.com/wiki/Gnomish_Mines, https://nethackwiki.com/wiki/Minetown, https://nethackwiki.com/wiki/Mines%27_End, https://nethackwiki.com/wiki/Standard_strategy)
 -->
 
 
@@ -4656,6 +4665,10 @@ pharmacy.
 
 ### The Scroll Rack
 <!-- audit
+2026-05-21:
+- blessed class genocide kills the player on the spot if any of the genocided species i matches gu.urole.mnum OR gu.urace.mnum: u.uhp = -1, done(GENOCIDED) (read.c:2769-2780)
+- player race mnum mappings: Dwarf is PM_DWARF in class h (monsters.h:485 S_HUMANOID); Gnome is PM_GNOME in class G; Elf is PM_ELF in class @; Orc is PM_ORC in class o; Human is PM_HUMAN in class @
+- mind flayers are also class h, so the popular "blessed-genocide h" pick is fatal for Dwarves
 2026-05-19:
 - confused destroy armor erodeproofs ONLY if cursed; uncursed/blessed strip erodeproofing (read.c:1341)
 - confused enchant armor/weapon erodeproofs when !cursed — opposite BUC condition (read.c:1138)
@@ -4746,10 +4759,14 @@ recharge it exactly once and no more.
 []{#scroll-genocide}
 **Genocide.** The nuclear option. Uncursed eliminates a single
 species; blessed wipes an entire monster class from the game
-forever. Liches and mind flayers are popular targets. Read one
-while confused and you genocide your own role's species
-(Valkyrie, Wizard, etc.), which kills you instantly. Read
-carefully.
+forever. Liches (`L`) are the canonical blessed target.
+**Never blessed-genocide a class that contains your own race
+or role.** Dwarves are `h`, Gnomes are `G`, Elves and Humans
+are `@`, Orcs are `o`; a blessed scroll targeting one of those
+ends the game with "killed by a scroll of genocide". (That
+makes the popular "wipe mind flayers" pick a Dwarf trap, since
+mind flayers are also `h`.) Read one while confused and you
+genocide your own role's species the same way. Read carefully.
 
 []{#scroll-reverse-genocide}
 **Reverse genocide.** A cursed scroll of genocide doesn't remove
@@ -5407,9 +5424,10 @@ mid-write, scrolls disappear entirely (paper + charges wasted); a
 spellbook's paper survives but the writing fades.
 
 The big-ticket writes for an ascension kit are scrolls of
-**genocide** (three of these wipe the worst monster letters L, &, h
-out of the game, though uniquely-named demon lords survive any
-class genocide), **charging** (a blessed one restores one
+**genocide** (three of these wipe the worst monster letters L, &,
+and h out of the game, though uniquely-named demon lords survive
+any class genocide; see [Genocide](#scroll-genocide) for the
+race-trap warning), **charging** (a blessed one restores one
 additional wish to an empty wand of wishing for 8-15 charges very
 well spent, though a second charging attempt always explodes the
 wand), and **enchant weapon / enchant armor** for the +7 ascension
