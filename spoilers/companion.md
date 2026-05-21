@@ -520,10 +520,12 @@ game. The three most important are **magic resistance**,
 resistance can be acquired as an *intrinsic* by eating the right
 corpse, like a killer bee, a cave spider, a yellow mold, or a
 black pudding kicked from a sink.
-Magic resistance and reflection come from gear: dragon scale
-mail (gray for MR, silver for reflection), an amulet of
-reflection, or an artifact granted by your god, won on the
-Quest, or bestowed by a wish.
+Magic resistance and reflection come from special gear: scale
+mail made from the hide of a slain dragon (gray for MR, silver
+for reflection), a special cloak (of MR) or amulet (of
+reflection), or a one-of-a-kind artifact bestowed by your god,
+won on the Quest, or granted as a wish. Your adventure will be
+shaped by the protective items you can obtain.
 
 #### Dungeon Hazards (and How to Survive Them)
 
