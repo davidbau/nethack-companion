@@ -590,6 +590,10 @@ dungeon's act of goodwill.
 
 ## Part Two: Dungeon Sights
 
+```{=latex}
+\vspace*{0.6in}
+```
+
 ### The Lay of the Land
 <!-- audit
 2026-05-21:
