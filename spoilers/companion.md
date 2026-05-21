@@ -963,7 +963,7 @@ the basin.
 
 | Outcome         | Effect                                                |
 | --------------- | ----------------------------------------------------- |
-| Water demon     | A water demon appears, hostile (see note below for shallow-level wish odds)              |
+| Water demon     | A water demon appears, hostile                                                             |
 | Healing         | You regain hit points                                 |
 | Attribute boost | A random attribute increases                          |
 | Attribute loss  | A random attribute decreases                          |
