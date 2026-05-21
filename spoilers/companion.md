@@ -4654,34 +4654,42 @@ Here's a trick the dungeon doesn't advertise: many scrolls do
 something completely different when read while confused. Some of
 these alternate effects are *better* than the normal ones:
 
-- **Confused destroy armor**, *if cursed*, doesn't destroy
-  anything: it erodeproofs a piece of armor. (Uncursed or blessed
-  strips erodeproofing instead.) One of the best tricks in the game
-- **Confused enchant armor / enchant weapon**, *if uncursed or
-  blessed*, erodeproofs the item instead of enchanting. Useful when
-  you need protection from rust more than another +1
-- **Confused remove curse** has a 25% chance of blessing *or*
-  cursing each uncursed item. Risky, but it's a clever way to create
-  holy water if you confuse-read while carrying uncursed potions of
-  water
-- **Confused taming** widens the scroll's reach from a 3×3 area
-  around you to 11×11. The trick is scroll-only; confused charm
-  monster just fizzles
-- **Confused teleportation** sends you to a random *dungeon level*
-  instead of a random spot on this floor. Useful as a panic button,
-  dangerous if you're shallow and don't want to skip the early game
-- **Confused gold detection** detects *traps* on this level
-  instead of gold. Faster and safer than the search command
-- **Confused light** creates a small posse of cancelled, friendly
-  yellow lights around you (or black lights, if the scroll is
-  cursed). They die quietly and can't harm you
-- **Confused charging** restores some power instead of charging an
-  item. A pinch of mana when you've spent everything
-- **Confused scare monster** wakes nearby sleepers and you hear sad
-  wailing in the distance. The opposite of helpful. Don't read this
-  for an emergency
-- **Confused genocide** genocides your own role. This kills you.
-  Don't get confused at the wrong moment
+**Confused destroy armor**, *if cursed*, doesn't destroy anything:
+it erodeproofs a piece of armor. (Uncursed or blessed strips
+erodeproofing instead.) One of the best tricks in the game.
+
+**Confused enchant armor / enchant weapon**, *if uncursed or
+blessed*, erodeproofs the item instead of enchanting. Useful when
+you need protection from rust more than another +1.
+
+**Confused remove curse** has a 25% chance of blessing *or* cursing
+each uncursed item. Risky, but it's a clever way to create holy
+water if you confuse-read while carrying uncursed potions of water.
+
+**Confused taming** widens the scroll's reach from a 3×3 area
+around you to 11×11. The trick is scroll-only; confused charm
+monster just fizzles.
+
+**Confused teleportation** sends you to a random *dungeon level*
+instead of a random spot on this floor. Useful as a panic button,
+dangerous if you're shallow and don't want to skip the early game.
+
+**Confused gold detection** detects *traps* on this level instead
+of gold. Faster and safer than the search command.
+
+**Confused light** creates a small posse of cancelled, friendly
+yellow lights around you (or black lights, if the scroll is cursed).
+They die quietly and can't harm you.
+
+**Confused charging** restores some power instead of charging an
+item. A pinch of mana when you've spent everything.
+
+**Confused scare monster** wakes nearby sleepers and you hear sad
+wailing in the distance. The opposite of helpful. Don't read this
+for an emergency.
+
+**Confused genocide** genocides your own role. This kills you.
+Don't get confused at the wrong moment.
 
 ---
 
