@@ -7488,30 +7488,54 @@ the gods.
 
 #### The Astral Plane
 
-You surface into the presence of the divine. Three altars stand in
-the great temple: Lawful, Neutral, and Chaotic. You must sacrifice
-the Amulet of Yendor on the altar matching your alignment to
-ascend. **Choose wrong and the game ends on the spot**: the
-opposing god gains dominion over your god, and you've handed
-victory to the other side. There is no retrieval — pick the
-right altar the first time.
+You surface into the presence of the divine. Three altars stand
+in the great temple: Lawful, Neutral, and Chaotic. You must
+sacrifice the Amulet of Yendor on the altar matching your
+alignment to ascend. **Choose wrong and the game ends on the
+spot**: the opposing god gains dominion over your god, and you've
+handed victory to the other side. There is no retrieval; pick
+the right altar the first time. Farlook (`;`) shows an altar's
+alignment only when you are *adjacent* to it. From across the
+room you only see "an aligned high altar," so plan to walk
+within one square of each in turn until one matches yours.
 
-The plane is swarming with Angels and the three Riders: Death,
-Famine, and Pestilence. The Riders cannot be permanently killed;
-they revive, they pursue, they do not stop. Don't try to clear
-the level. You are not here to fight. You are here to reach one
-altar, make one sacrifice, and end this.
+The plane is swarming with Angels and the three **Riders**:
+Death, Famine, and Pestilence. They are level 30, regenerate
+while you fight, see invisible, and shove monsters out of their
+path. Each one hits twice per turn with a touch attack dealing
+8d8 damage.
 
-- Conflict and teleportation wands clear a path through the
-  crowds, though note teleportation on **yourself** fails on every
-  elemental plane (only monster-targeted teleport works).
-- Identify the correct altar by walking adjacent to it: farlook
-  (`;`) reveals an altar's alignment only when you're standing
-  next to it. From across the room you only see "an aligned high
-  altar." Plan to visit each in turn if necessary.
-- The Riders will follow you. Outrun them, don't outfight them
-- When you offer the Amulet on the correct altar: you ascend.
-  The game is won. You've done what so few have done. Congratulations.
+- **Death's** touch has a 3-in-20 chance of instant kill on
+  every hit. Magic resistance blocks the instakill, but not the
+  8d8 baseline.
+- **Pestilence** inflicts a deadly illness that kills you over
+  the next several turns. Sick resistance is the cleanest
+  defense; a unicorn horn can sometimes clear the timer in time
+  if you don't have intrinsic.
+- **Famine** adds 40 to 79 hunger units to every hit. One swing
+  won't drop you below Hungry, but a few in a row will starve
+  you mid-fight.
+
+A 5.0 mercy: if Pestilence or Famine land their first attack on
+a turn, their second downgrades to a stun.
+
+**The Riders cannot be permanently killed.** They revive, they
+pursue, they do not stop. **Eating any Rider corpse is
+instantly fatal.** You are not here to fight; you are here to
+reach one altar, make one sacrifice, and end this.
+
+**Defenses.** An **amulet of life saving** is the best insurance
+on Astral, full stop. Magic resistance stops Death's instakill.
+Sick resistance handles Pestilence. Carry plenty of food (Famine
+bypasses normal nutrition pacing) and a unicorn horn for the
+stun side effects. Conflict creates a battling mob that slows
+the Riders, and teleportation wands can clear a path, though
+note that **self-teleport fails on every elemental plane** —
+zapping a wand of teleportation at yourself does nothing. Only
+zapping it at others teleports them.
+
+When you offer the Amulet on the correct altar: you ascend. The
+game is won. You've done what so few have done. Congratulations.
 
 ---
 
