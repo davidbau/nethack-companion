@@ -426,8 +426,8 @@ and the ability to outrun a gnome lord. If your status line reads
 -->
 
 You step down the stairs. The air is cool and damp. A corridor
-stretches before you, branching into darkness. Your starting pet
-trots along behind you.
+stretches before you, branching into darkness. Your pet trots
+beside you.
 
 Welcome to the dungeon.
 
