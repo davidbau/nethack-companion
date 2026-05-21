@@ -497,9 +497,11 @@ don't grind. When you've found what the level has to offer, move on.
 **Rule 6: Chase the big three.** The short list of acquisitions that
 keep you alive through the whole run is **magic resistance**,
 **reflection**, and **poison resistance**, plus a **lizard corpse**
-in your pack for petrification emergencies. Everything else is
-luxury. Get these as early as you can — they decide which late-game
-fights are survivable.
+in your pack for petrification emergencies. These are *intrinsics
+and resistances* you bank from corpses, gear, and wishes. The
+deeper point: your real goal in the first half of the game isn't
+accumulating treasure; it's acquiring the resistances that will
+decide your survival in the late game.
 
 #### Things That Kill You (And How Not to Let Them)
 
