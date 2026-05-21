@@ -2521,42 +2521,6 @@ disenchanters all matter (and they're catalogued in
 [Yet More Ways to Die](#yet-more-ways-to-die)). But the median
 death is a preventable swarm of jackals on Dlvl 3.
 
-#### A note on mimics
-
-You will frequently meet mimics in **shops**, with more as you get
-deeper. An average shop has one or two mimics sitting in the
-aisles, masquerading as items. They're slow (speed 3) but their
-claws hit hard. Small mimics rank in the top ten causes of death.
-
-**The visual tell.** A mimic appearing as a generic "strange
-object" renders on the map as `]` — a mirror of `[`, the armor
-class. No real item ever displays as `]`. A `]` on a shop floor
-or anywhere else is always a mimic.
-
-**Other contextual disguises** (rare in practice but worth
-knowing): a mimic in a temple may appear as an extra altar, in a
-Delphi room as a second fountain, in a maze as a lone boulder. So
-"a single piece of furniture that shouldn't be there" is
-suspicious.
-
-**How to uncover one safely.** Search the adjacent square (`s`)
-reveals concealed mimics like it reveals traps. Throw a cheap item
-at the suspected square; the mimic uncloaks and the item lands
-harmlessly. A stethoscope applied to the square also uncloaks.
-Telepathy, ESP, astral vision, and a wand of secret door detection
-see through the disguise and show the mimic as `m`. Your pet won't
-step onto a mimic.
-
-**Sticking.** Large and giant mimics glue you in place on a
-successful claw hit: you can't move, you can't go down stairs, you
-can't escape down a hole. Magic cancellation (cloak of protection,
-amulet of guarding, etc.) reduces the sticking chance — one more
-reason to secure MC before browsing mid-game shops.
-
-**Eating the corpse** turns you into a pile of gold (or, while
-hallucinating, an orange) for 20 / 40 / 50 turns depending on
-size. Anything that tries to pick "you" up snaps the spell.
-
 #### A note on dragons
 
 Dragons deserve a full briefing. Each color has its own breath
@@ -2612,48 +2576,6 @@ usually whichever dragon's territory you can reach safely; killing
 a dragon yields scales you can wear immediately or convert to
 scale mail.
 
-#### A note on the displacer beast
-<!-- audit
-2026-05-18:
-- M3_DISPLACES is barge-through, NOT cloak-style image-offset
-- 50% chance on player melee that the beast swaps places with you (hack.c:1972)
-- swap only fires if destination is survivable for the beast: goodpos(..., GP_ALLOW_U) (teleport.c:134-162)
-- a non-swimmer/non-flier won't swap into water; non-fire-res won't swap into lava
-- corpse grants Displacement intrinsic (eat.c:1265) — cloak-style, not the swap
-- M3_DISPLACES is consulted only at hack.c:1972 and mon.c:2462 (ALLOW_MDISP)
-- no mhitm.c path for hostile-attacks-pet-displacer triggering a swap — pet trick fabricated
-- pet beast is still excellent: 0% MR (reliable taming), AC -10, three attacks 4d4/4d4/2d10 (monsters.h:437-441)
--->
-
-
-The **displacer beast** (`f`, blue, 5.0 addition) is a tiger-sized
-feline with AC −10 and three attacks per turn (4d4 / 4d4 / 2d10).
-The misleading name: it isn't displaced in the cloak-of-displacement
-sense. Its trick is the opposite, when you melee it, half the time
-it **swaps places with you** instead of taking the hit, which can
-pull you off Elbereth, out of a doorway, or onto a trap. Ranged
-attacks (wand, spell, thrown) bypass the swap entirely. It also
-has **MR 0** — extremely unusual for a level-12 monster, where
-most peers carry 10–70% resistance — so sleep, paralysis, and
-charm/taming all land with no save. Speed 12, so a speed-boosted
-hero outpaces it. (Don't bother trying to swap it into a moat or
-lava — the swap only fires if the destination square is
-survivable for the beast, and water/lava aren't.)
-
-**Tame one and you have one of the best pets in the game.** AC
-−10, three attacks (4d4 claw / 4d4 claw / 2d10 bite), speed 12.
-Charm monster works first try; a scroll of taming with no MR roll
-to fail is essentially guaranteed. A tame displacer beast will
-walk into late-game fights and walk out, eating tough hostiles
-while taking minimal retaliation.
-
-Eating the corpse gives you cloak-style displacement for a few turns:
-monsters target a phantom image one square off from where you
-really are and miss accordingly. Note that this is a different
-mechanic from the beast's own place-swap, despite the shared
-name: you get the same effect as wearing a cloak of displacement,
-not the ability to swap places with attackers.
-
 #### A note on the genetic engineer
 <!-- audit
 2026-05-18:
@@ -2690,6 +2612,125 @@ have a portable polymorph source. Pair a tin with *polymorph
 control* and you have a controlled polymorph that survives
 Gehennom's hot ground. The first engineer that kills you is a
 loss; the second one in your bag is a kit.
+
+#### A note on mimics
+
+You will frequently meet mimics in **shops**, with more as you get
+deeper. An average shop has one or two mimics sitting in the
+aisles, masquerading as items. They're slow (speed 3) but their
+claws hit hard. Small mimics rank in the top ten causes of death.
+
+**The visual tell.** A mimic appearing as a generic "strange
+object" renders on the map as `]` — a mirror of `[`, the armor
+class. No real item ever displays as `]`. A `]` on a shop floor
+or anywhere else is always a mimic.
+
+**Other contextual disguises** (rare in practice but worth
+knowing): a mimic in a temple may appear as an extra altar, in a
+Delphi room as a second fountain, in a maze as a lone boulder. So
+"a single piece of furniture that shouldn't be there" is
+suspicious.
+
+**How to uncover one safely.** Search the adjacent square (`s`)
+reveals concealed mimics like it reveals traps. Throw a cheap item
+at the suspected square; the mimic uncloaks and the item lands
+harmlessly. A stethoscope applied to the square also uncloaks.
+Telepathy, ESP, astral vision, and a wand of secret door detection
+see through the disguise and show the mimic as `m`. Your pet won't
+step onto a mimic.
+
+**Sticking.** Large and giant mimics glue you in place on a
+successful claw hit: you can't move, you can't go down stairs, you
+can't escape down a hole. Magic cancellation (cloak of protection,
+amulet of guarding, etc.) reduces the sticking chance — one more
+reason to secure MC before browsing mid-game shops.
+
+**Eating the corpse** turns you into a pile of gold (or, while
+hallucinating, an orange) for 20 / 40 / 50 turns depending on
+size. Anything that tries to pick "you" up snaps the spell.
+
+#### A note on nymphs
+
+The `n` class (wood, water, mountain) doesn't want to kill you.
+She wants your inventory. Each successful claw hit lifts a random
+item from your pack, and the nymph then **teleports away** —
+sometimes within the level, sometimes off it entirely. Your bag
+of holding, your amulet of reflection, a freshly-wished cloak of
+magic resistance: gone, often to a level you'll never revisit.
+
+**The second claw is seduction.** Nymphs get two attacks per
+turn, and the seduction half drains experience levels if the
+nymph is the opposite gender of your character. A single bump
+can both rob you and drop your XL.
+
+**Defenses.** Kill at range (darts, force bolt, a wand of
+anything). Engrave **Elbereth**: nymphs respect it. Or drop your
+most irreplaceable items on the floor before approaching —
+whatever's not in your pack can't be stolen.
+
+**Never engage a nymph while carrying the Amulet of Yendor**
+during the Ascension Run. Losing the Amulet to a teleporting
+thief sends you back to Moloch's Sanctum to retrieve it.
+
+#### A note on puddings
+
+The `P` class lives in the mid-dungeon and Gehennom.
+**Brown and black puddings split when you hit them with an iron
+or metal weapon** (uhitm.c material check) — one becomes two,
+two becomes four, and your long-sword grinding session turns
+into a swarm. **Black pudding additionally corrodes your wielded
+weapon** on its passive return-hit, so each round of splitting
+is also a step toward your blade rusting away.
+
+**Defenses.** Melee with a **silver or wooden weapon** (silver
+dagger, elven dagger, athame, club, quarterstaff). These don't
+trigger the split. Mithril also bypasses the check. Wands of
+cold and fire kill puddings outright with no split, and most
+spells work too.
+
+**Gray ooze** doesn't split, but it rusts armor on a hit; don't
+engage in your starting iron suit if you can avoid it.
+
+**Eating the glob.** Pudding corpses are actually globs (food
+items), and they grant cold, shock, and poison resistance over
+multiple eats. See [Useful Corpse Effects](#useful-corpse-effects).
+
+#### A note on trolls
+
+The `T` class doesn't stay dead. After you kill a troll, its
+corpse sits on the floor for a few hidden turns and then stands
+back up — at full HP, fresh and angry. A pile of corpses after a
+five-troll fight is a *timer*, not a kill count: walk away for
+twenty turns and the same five trolls are coming back.
+
+**Stopping the revival.** Eat the corpse (trolls are safe to
+eat for everyone but vegetarians). Tin it with a tin opener.
+Apply a magic whistle to summon a pet who'll eat it. Zap a wand
+of teleportation at the corpse to send it off-level. Destroy it
+with a wand of striking. Any of these breaks the revival.
+
+**Class members.** Plain troll, ice troll, rock troll, water
+troll, and the late-game Olog-hai. All revive; the corpse
+behaves the same way regardless of variant.
+
+#### A note on wraiths
+
+The `W` class has a touch attack that **drains an experience
+level** — one of the few permanent character setbacks in the
+game. You lose stat points, hit points, mana, and the most
+recent skill slot. There is no easy undo.
+
+**But the corpse is one of the most valuable consumables in the
+game.** Eating a fresh wraith corpse grants you a level — the
+inverse operation. So the recipe: kill the wraith carefully
+(the touch is melee-range only, so engage at distance or in a
+corridor where you control the spacing), then eat the corpse
+the moment it drops.
+
+**The intentional version.** Some ascending players actively
+hunt wraiths in the upper Quest and Gehennom for free XP. A
+cursed scroll of genocide naming "wraith" reverse-genocides
+4–6 fresh wraiths at your feet, all for eating.
 
 ---
 
@@ -9727,7 +9768,7 @@ The complete spellbook catalog, sorted by school then level. **Lvl**
 is the spell level; **Pw cost** is always 5×level. **Type**
 distinguishes how the spell targets:
 
-- **aimed** — a single-square IMMEDIATE; you pick a direction.
+- **aimed** — you pick a direction; the spell hits one square at that vector.
 - **ray** — a beam from the caster through every square in a
   line until it stops.
 - **untargeted** — no direction needed; the effect is on you,

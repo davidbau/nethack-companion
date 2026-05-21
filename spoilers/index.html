@@ -3474,37 +3474,6 @@ Floating eyes, cockatrices, mind flayers, and disenchanters all matter
 to Die</a>). But the median death is a preventable swarm of jackals on
 Dlvl 3.</p>
 </section>
-<section id="a-note-on-mimics" class="level4">
-<h4>A note on mimics</h4>
-<p>You will frequently meet mimics in <strong>shops</strong>, with more
-as you get deeper. An average shop has one or two mimics sitting in the
-aisles, masquerading as items. They’re slow (speed 3) but their claws
-hit hard. Small mimics rank in the top ten causes of death.</p>
-<p><strong>The visual tell.</strong> A mimic appearing as a generic
-“strange object” renders on the map as <code>]</code> — a mirror of
-<code>[</code>, the armor class. No real item ever displays as
-<code>]</code>. A <code>]</code> on a shop floor or anywhere else is
-always a mimic.</p>
-<p><strong>Other contextual disguises</strong> (rare in practice but
-worth knowing): a mimic in a temple may appear as an extra altar, in a
-Delphi room as a second fountain, in a maze as a lone boulder. So “a
-single piece of furniture that shouldn’t be there” is suspicious.</p>
-<p><strong>How to uncover one safely.</strong> Search the adjacent
-square (<code>s</code>) reveals concealed mimics like it reveals traps.
-Throw a cheap item at the suspected square; the mimic uncloaks and the
-item lands harmlessly. A stethoscope applied to the square also
-uncloaks. Telepathy, ESP, astral vision, and a wand of secret door
-detection see through the disguise and show the mimic as <code>m</code>.
-Your pet won’t step onto a mimic.</p>
-<p><strong>Sticking.</strong> Large and giant mimics glue you in place
-on a successful claw hit: you can’t move, you can’t go down stairs, you
-can’t escape down a hole. Magic cancellation (cloak of protection,
-amulet of guarding, etc.) reduces the sticking chance — one more reason
-to secure MC before browsing mid-game shops.</p>
-<p><strong>Eating the corpse</strong> turns you into a pile of gold (or,
-while hallucinating, an orange) for 20 / 40 / 50 turns depending on
-size. Anything that tries to pick “you” up snaps the spell.</p>
-</section>
 <section id="a-note-on-dragons" class="level4">
 <h4>A note on dragons</h4>
 <p>Dragons deserve a full briefing. Each color has its own breath
@@ -3552,45 +3521,6 @@ color to chase is usually whichever dragon’s territory you can reach
 safely; killing a dragon yields scales you can wear immediately or
 convert to scale mail.</p>
 </section>
-<section id="a-note-on-the-displacer-beast" class="level4">
-<h4>A note on the displacer beast</h4>
-<!-- audit
-2026-05-18:
-- M3_DISPLACES is barge-through, NOT cloak-style image-offset
-- 50% chance on player melee that the beast swaps places with you (hack.c:1972)
-- swap only fires if destination is survivable for the beast: goodpos(..., GP_ALLOW_U) (teleport.c:134-162)
-- a non-swimmer/non-flier won't swap into water; non-fire-res won't swap into lava
-- corpse grants Displacement intrinsic (eat.c:1265) — cloak-style, not the swap
-- M3_DISPLACES is consulted only at hack.c:1972 and mon.c:2462 (ALLOW_MDISP)
-- no mhitm.c path for hostile-attacks-pet-displacer triggering a swap — pet trick fabricated
-- pet beast is still excellent: 0% MR (reliable taming), AC -10, three attacks 4d4/4d4/2d10 (monsters.h:437-441)
--->
-<p>The <strong>displacer beast</strong> (<code>f</code>, blue, 5.0
-addition) is a tiger-sized feline with AC −10 and three attacks per turn
-(4d4 / 4d4 / 2d10). The misleading name: it isn’t displaced in the
-cloak-of-displacement sense. Its trick is the opposite, when you melee
-it, half the time it <strong>swaps places with you</strong> instead of
-taking the hit, which can pull you off Elbereth, out of a doorway, or
-onto a trap. Ranged attacks (wand, spell, thrown) bypass the swap
-entirely. It also has <strong>MR 0</strong> — extremely unusual for a
-level-12 monster, where most peers carry 10–70% resistance — so sleep,
-paralysis, and charm/taming all land with no save. Speed 12, so a
-speed-boosted hero outpaces it. (Don’t bother trying to swap it into a
-moat or lava — the swap only fires if the destination square is
-survivable for the beast, and water/lava aren’t.)</p>
-<p><strong>Tame one and you have one of the best pets in the
-game.</strong> AC −10, three attacks (4d4 claw / 4d4 claw / 2d10 bite),
-speed 12. Charm monster works first try; a scroll of taming with no MR
-roll to fail is essentially guaranteed. A tame displacer beast will walk
-into late-game fights and walk out, eating tough hostiles while taking
-minimal retaliation.</p>
-<p>Eating the corpse gives you cloak-style displacement for a few turns:
-monsters target a phantom image one square off from where you really are
-and miss accordingly. Note that this is a different mechanic from the
-beast’s own place-swap, despite the shared name: you get the same effect
-as wearing a cloak of displacement, not the ability to swap places with
-attackers.</p>
-</section>
 <section id="a-note-on-the-genetic-engineer" class="level4">
 <h4>A note on the genetic engineer</h4>
 <!-- audit
@@ -3624,6 +3554,110 @@ polymorph source. Pair a tin with <em>polymorph control</em> and you
 have a controlled polymorph that survives Gehennom’s hot ground. The
 first engineer that kills you is a loss; the second one in your bag is a
 kit.</p>
+</section>
+<section id="a-note-on-mimics" class="level4">
+<h4>A note on mimics</h4>
+<p>You will frequently meet mimics in <strong>shops</strong>, with more
+as you get deeper. An average shop has one or two mimics sitting in the
+aisles, masquerading as items. They’re slow (speed 3) but their claws
+hit hard. Small mimics rank in the top ten causes of death.</p>
+<p><strong>The visual tell.</strong> A mimic appearing as a generic
+“strange object” renders on the map as <code>]</code> — a mirror of
+<code>[</code>, the armor class. No real item ever displays as
+<code>]</code>. A <code>]</code> on a shop floor or anywhere else is
+always a mimic.</p>
+<p><strong>Other contextual disguises</strong> (rare in practice but
+worth knowing): a mimic in a temple may appear as an extra altar, in a
+Delphi room as a second fountain, in a maze as a lone boulder. So “a
+single piece of furniture that shouldn’t be there” is suspicious.</p>
+<p><strong>How to uncover one safely.</strong> Search the adjacent
+square (<code>s</code>) reveals concealed mimics like it reveals traps.
+Throw a cheap item at the suspected square; the mimic uncloaks and the
+item lands harmlessly. A stethoscope applied to the square also
+uncloaks. Telepathy, ESP, astral vision, and a wand of secret door
+detection see through the disguise and show the mimic as <code>m</code>.
+Your pet won’t step onto a mimic.</p>
+<p><strong>Sticking.</strong> Large and giant mimics glue you in place
+on a successful claw hit: you can’t move, you can’t go down stairs, you
+can’t escape down a hole. Magic cancellation (cloak of protection,
+amulet of guarding, etc.) reduces the sticking chance — one more reason
+to secure MC before browsing mid-game shops.</p>
+<p><strong>Eating the corpse</strong> turns you into a pile of gold (or,
+while hallucinating, an orange) for 20 / 40 / 50 turns depending on
+size. Anything that tries to pick “you” up snaps the spell.</p>
+</section>
+<section id="a-note-on-nymphs" class="level4">
+<h4>A note on nymphs</h4>
+<p>The <code>n</code> class (wood, water, mountain) doesn’t want to kill
+you. She wants your inventory. Each successful claw hit lifts a random
+item from your pack, and the nymph then <strong>teleports away</strong>
+— sometimes within the level, sometimes off it entirely. Your bag of
+holding, your amulet of reflection, a freshly-wished cloak of magic
+resistance: gone, often to a level you’ll never revisit.</p>
+<p><strong>The second claw is seduction.</strong> Nymphs get two attacks
+per turn, and the seduction half drains experience levels if the nymph
+is the opposite gender of your character. A single bump can both rob you
+and drop your XL.</p>
+<p><strong>Defenses.</strong> Kill at range (darts, force bolt, a wand
+of anything). Engrave <strong>Elbereth</strong>: nymphs respect it. Or
+drop your most irreplaceable items on the floor before approaching —
+whatever’s not in your pack can’t be stolen.</p>
+<p><strong>Never engage a nymph while carrying the Amulet of
+Yendor</strong> during the Ascension Run. Losing the Amulet to a
+teleporting thief sends you back to Moloch’s Sanctum to retrieve it.</p>
+</section>
+<section id="a-note-on-puddings" class="level4">
+<h4>A note on puddings</h4>
+<p>The <code>P</code> class lives in the mid-dungeon and Gehennom.
+<strong>Brown and black puddings split when you hit them with an iron or
+metal weapon</strong> (uhitm.c material check) — one becomes two, two
+becomes four, and your long-sword grinding session turns into a swarm.
+<strong>Black pudding additionally corrodes your wielded weapon</strong>
+on its passive return-hit, so each round of splitting is also a step
+toward your blade rusting away.</p>
+<p><strong>Defenses.</strong> Melee with a <strong>silver or wooden
+weapon</strong> (silver dagger, elven dagger, athame, club,
+quarterstaff). These don’t trigger the split. Mithril also bypasses the
+check. Wands of cold and fire kill puddings outright with no split, and
+most spells work too.</p>
+<p><strong>Gray ooze</strong> doesn’t split, but it rusts armor on a
+hit; don’t engage in your starting iron suit if you can avoid it.</p>
+<p><strong>Eating the glob.</strong> Pudding corpses are actually globs
+(food items), and they grant cold, shock, and poison resistance over
+multiple eats. See <a href="#useful-corpse-effects">Useful Corpse
+Effects</a>.</p>
+</section>
+<section id="a-note-on-trolls" class="level4">
+<h4>A note on trolls</h4>
+<p>The <code>T</code> class doesn’t stay dead. After you kill a troll,
+its corpse sits on the floor for a few hidden turns and then stands back
+up — at full HP, fresh and angry. A pile of corpses after a five-troll
+fight is a <em>timer</em>, not a kill count: walk away for twenty turns
+and the same five trolls are coming back.</p>
+<p><strong>Stopping the revival.</strong> Eat the corpse (trolls are
+safe to eat for everyone but vegetarians). Tin it with a tin opener.
+Apply a magic whistle to summon a pet who’ll eat it. Zap a wand of
+teleportation at the corpse to send it off-level. Destroy it with a wand
+of striking. Any of these breaks the revival.</p>
+<p><strong>Class members.</strong> Plain troll, ice troll, rock troll,
+water troll, and the late-game Olog-hai. All revive; the corpse behaves
+the same way regardless of variant.</p>
+</section>
+<section id="a-note-on-wraiths" class="level4">
+<h4>A note on wraiths</h4>
+<p>The <code>W</code> class has a touch attack that <strong>drains an
+experience level</strong> — one of the few permanent character setbacks
+in the game. You lose stat points, hit points, mana, and the most recent
+skill slot. There is no easy undo.</p>
+<p><strong>But the corpse is one of the most valuable consumables in the
+game.</strong> Eating a fresh wraith corpse grants you a level — the
+inverse operation. So the recipe: kill the wraith carefully (the touch
+is melee-range only, so engage at distance or in a corridor where you
+control the spacing), then eat the corpse the moment it drops.</p>
+<p><strong>The intentional version.</strong> Some ascending players
+actively hunt wraiths in the upper Quest and Gehennom for free XP. A
+cursed scroll of genocide naming “wraith” reverse-genocides 4–6 fresh
+wraiths at your feet, all for eating.</p>
 <hr />
 </section>
 </section>
@@ -15054,8 +15088,8 @@ taken off, so this is a trap item.</td>
 always 5×level. <strong>Type</strong> distinguishes how the spell
 targets:</p>
 <ul>
-<li><strong>aimed</strong> — a single-square IMMEDIATE; you pick a
-direction.</li>
+<li><strong>aimed</strong> — you pick a direction; the spell hits one
+square at that vector.</li>
 <li><strong>ray</strong> — a beam from the caster through every square
 in a line until it stops.</li>
 <li><strong>untargeted</strong> — no direction needed; the effect is on
