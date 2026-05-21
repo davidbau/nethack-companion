@@ -1359,6 +1359,22 @@ your quest leader on the first floor before they'll let you descend.
 The leader sends you to retrieve your role's quest artifact from a
 quest nemesis.
 
+You'll know when you've reached the right level. The first time you
+arrive there, a faint telepathic call from your quest leader breaks
+through:
+
+> *You receive a faint telepathic message from \<leader\>: Your help
+> is urgently needed at \<homebase\>! Look for a ...ic transporter.
+> You couldn't quite make out that last message.*
+
+The garbled word is "magic" — the portal you're now looking for is a
+magic portal, which renders as a bright magenta `^` once you discover
+it. Like any trap, it stays hidden until you step on it (which also
+triggers it) or search the square. If you leave the level without
+entering, you'll get a brief reminder ("You again sense \<leader\>
+pleading for help") on each return — Rogues, who answer to the Master
+of Thieves, instead "again sense \<leader\> demanding your attendance."
+
 Each role has a unique Quest with unique maps, a unique nemesis,
 and a unique artifact reward. The Valkyrie hunts Lord Surtur for
 the Orb of Fate. A Samurai's path ends in a duel with Ashikaga
