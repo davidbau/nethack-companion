@@ -5174,11 +5174,11 @@ still have room for loot. Almost every ascending player carries
 one. Sokoban's prize is a bag of holding half the time; otherwise
 wish for one when you can.
 
-The cardinal rule: **never** put a wand of cancellation, another bag
-of holding, or a charged bag of tricks inside a bag of holding. The
+A warning: **never** put a wand of cancellation, another bag of
+holding, or a charged bag of tricks inside a bag of holding. The
 resulting magical explosion scatters your carefully curated
-inventory across the floor. In older editions it *destroyed*
-everything. Either way, it's a game-ending mistake that every
+inventory across the floor (in older editions it *destroyed*
+everything!). Either way, it's a game-ending mistake that every
 veteran has made exactly once.
 
 If you find a *cursed* bag of holding (in a bones pile, perhaps),
