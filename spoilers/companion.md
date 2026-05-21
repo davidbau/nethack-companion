@@ -2280,6 +2280,11 @@ are the time-tested tactics that keep adventurers breathing:
   record at least 20 *and* experience level at least 14. A handful
   of careless peaceful kills can lock a Knight or Samurai out of
   the Quest for the rest of the run.
+- **Doors and diagonals.** You can't move diagonally through a
+  door — approach and leave orthogonally. **Closing a door**
+  (`c` + direction) blocks pets and any monster lacking the
+  intelligence or hands to open it; handy when you want to slip
+  away from your pet, or when you need a turn or two of quiet.
 
 ---
 
@@ -5311,6 +5316,15 @@ than it looks.
 
 ### Tools of the Trade
 <!-- audit
+2026-05-21:
+- weight_cap = 25 * (Str + Con) + 50, capped at MAX_CARR_CAP = 1000 (hack.c:4295-4312, weight.h:12-25)
+- encumbrance tier = (excess_weight * 2 / cap) + 1, clamped to OVERLOADED; tier names "Burdened/Stressed/Strained/Overtaxed/Overloaded" (hack.c:4372-4382, botl.c:12-13)
+- Stressed+ encumbrance triggers extra hunger on odd turns (eat.c:3197 near_capacity > SLT_ENCUMBER)
+- Large box base weight 350, chest 600, ice box 900 (objects.h:899-904)
+- door diagonal-move rules: cannot move diagonally INTO an intact doorway (hack.c:1140-1149); cannot move diagonally OUT of one (hack.c:1209-1213)
+- low-intelligence monsters cannot open closed doors; intelligent monsters open/unlock per monmove.c:1567-1585
+-->
+<!-- audit
 2026-05-18:
 - Bell of Opening is carried by the quest nemesis; loot from the corpse (makemon.c:1378-1379)
 - quest leader chides you if you finish without the Bell but doesn't grant it (quest.c:267-268)
@@ -5340,6 +5354,11 @@ hide in this grab-bag.
 | Chest          | 600    | Comes with 0 to 5 items (0 to 7 if locked) |
 | Ice box        | 900    | Preserves corpses from rotting           |
 
+Note the weights. Sacks are 15 (carry one). Boxes and chests are
+furniture, not luggage: a large box weighs 350, a chest 600, an
+ice box 900 — comparable to your *entire* carrying capacity. Use
+them as floor stash, not as something to drag from level to level.
+
 The **bag of holding** deserves special mention because it
 transforms how you play. A blessed bag reduces the weight of
 everything inside to roughly one quarter, meaning you can carry your
@@ -5360,6 +5379,29 @@ don't open it. Drop it on the floor and zap a wand of cancellation
 *at the bag from outside*. Cancellation uncurses items it touches,
 and the explosion rule only triggers on insertion, not on a zap.
 You'll have a safe, uncursed bag.
+
+##### Carrying capacity
+
+Your carrying capacity is roughly **25 × (Strength + Constitution)
++ 50**, capped at 1000. Average human stats land you near 950;
+a low-Str spellcaster might start closer to 700. As you load up,
+the status line walks through these tiers:
+
+| Tier         | When                                    | Cost                                        |
+| ------------ | --------------------------------------- | ------------------------------------------- |
+| Unencumbered | weight at or below capacity             | None                                        |
+| Burdened     | up to about 1.5× capacity               | Status flag, but movement and nutrition fine |
+| Stressed     | up to about 2× capacity                 | Extra hunger every odd turn                 |
+| Strained     | up to about 2.5× capacity               | Worse hunger, harder to dodge water         |
+| Overtaxed    | up to about 3× capacity                 | Bad                                         |
+| Overloaded   | beyond 3× capacity                      | You can't even pick anything else up        |
+
+Practical rule: stay **Unencumbered** in normal play, accept
+**Burdened** during loot runs, and never linger at **Stressed**
+or worse without a reason. The bag of holding is the standard
+answer to the encumbrance problem; carrying everything inside one
+reduces the effective weight to roughly a quarter, which is why
+veteran players treat finding one as a turning point in the run.
 
 One 5.0 hazard that you will need to be aware of:
 **intelligent monsters can now loot unlocked containers**.

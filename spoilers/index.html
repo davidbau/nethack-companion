@@ -3261,6 +3261,11 @@ penalty for Samurai). The Quest entrance check requires alignment record
 at least 20 <em>and</em> experience level at least 14. A handful of
 careless peaceful kills can lock a Knight or Samurai out of the Quest
 for the rest of the run.</li>
+<li><strong>Doors and diagonals.</strong> You can’t move diagonally
+through a door — approach and leave orthogonally. <strong>Closing a
+door</strong> (<code>c</code> + direction) blocks pets and any monster
+lacking the intelligence or hands to open it; handy when you want to
+slip away from your pet, or when you need a turn or two of quiet.</li>
 </ul>
 <hr />
 </section>
@@ -7150,6 +7155,15 @@ than it looks.</p>
 <section id="tools-of-the-trade" class="level3">
 <h3>Tools of the Trade</h3>
 <!-- audit
+2026-05-21:
+- weight_cap = 25 * (Str + Con) + 50, capped at MAX_CARR_CAP = 1000 (hack.c:4295-4312, weight.h:12-25)
+- encumbrance tier = (excess_weight * 2 / cap) + 1, clamped to OVERLOADED; tier names "Burdened/Stressed/Strained/Overtaxed/Overloaded" (hack.c:4372-4382, botl.c:12-13)
+- Stressed+ encumbrance triggers extra hunger on odd turns (eat.c:3197 near_capacity > SLT_ENCUMBER)
+- Large box base weight 350, chest 600, ice box 900 (objects.h:899-904)
+- door diagonal-move rules: cannot move diagonally INTO an intact doorway (hack.c:1140-1149); cannot move diagonally OUT of one (hack.c:1209-1213)
+- low-intelligence monsters cannot open closed doors; intelligent monsters open/unlock per monmove.c:1567-1585
+-->
+<!-- audit
 2026-05-18:
 - Bell of Opening is carried by the quest nemesis; loot from the corpse (makemon.c:1378-1379)
 - quest leader chides you if you finish without the Bell but doesn't grant it (quest.c:267-268)
@@ -7213,6 +7227,10 @@ items in the game hide in this grab-bag.</p>
 </tr>
 </tbody>
 </table>
+<p>Note the weights. Sacks are 15 (carry one). Boxes and chests are
+furniture, not luggage: a large box weighs 350, a chest 600, an ice box
+900 — comparable to your <em>entire</em> carrying capacity. Use them as
+floor stash, not as something to drag from level to level.</p>
 <p>The <strong>bag of holding</strong> deserves special mention because
 it transforms how you play. A blessed bag reduces the weight of
 everything inside to roughly one quarter, meaning you can carry your
@@ -7231,6 +7249,64 @@ perhaps), don’t open it. Drop it on the floor and zap a wand of
 cancellation <em>at the bag from outside</em>. Cancellation uncurses
 items it touches, and the explosion rule only triggers on insertion, not
 on a zap. You’ll have a safe, uncursed bag.</p>
+<section id="carrying-capacity" class="level5">
+<h5>Carrying capacity</h5>
+<p>Your carrying capacity is roughly <strong>25 × (Strength +
+Constitution) + 50</strong>, capped at 1000. Average human stats land
+you near 950; a low-Str spellcaster might start closer to 700. As you
+load up, the status line walks through these tiers:</p>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 41%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr>
+<th>Tier</th>
+<th>When</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unencumbered</td>
+<td>weight at or below capacity</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Burdened</td>
+<td>up to about 1.5× capacity</td>
+<td>Status flag, but movement and nutrition fine</td>
+</tr>
+<tr>
+<td>Stressed</td>
+<td>up to about 2× capacity</td>
+<td>Extra hunger every odd turn</td>
+</tr>
+<tr>
+<td>Strained</td>
+<td>up to about 2.5× capacity</td>
+<td>Worse hunger, harder to dodge water</td>
+</tr>
+<tr>
+<td>Overtaxed</td>
+<td>up to about 3× capacity</td>
+<td>Bad</td>
+</tr>
+<tr>
+<td>Overloaded</td>
+<td>beyond 3× capacity</td>
+<td>You can’t even pick anything else up</td>
+</tr>
+</tbody>
+</table>
+<p>Practical rule: stay <strong>Unencumbered</strong> in normal play,
+accept <strong>Burdened</strong> during loot runs, and never linger at
+<strong>Stressed</strong> or worse without a reason. The bag of holding
+is the standard answer to the encumbrance problem; carrying everything
+inside one reduces the effective weight to roughly a quarter, which is
+why veteran players treat finding one as a turning point in the run.</p>
 <p>One 5.0 hazard that you will need to be aware of: <strong>intelligent
 monsters can now loot unlocked containers</strong>. They can remove
 items, carry containers away, and unlock chests with keys. If you’ve
@@ -7241,6 +7317,7 @@ level’s residents if you leave them time and opportunity. Clear levels
 before abandoning valuables, and <strong>keep your most important
 containers locked</strong>. The dungeon has gotten better at wanting
 what you have.</p>
+</section>
 </section>
 <section id="unlocking-tools" class="level4">
 <h4>Unlocking Tools</h4>
