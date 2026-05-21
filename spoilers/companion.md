@@ -4419,13 +4419,13 @@ short list of candidates:
 
 | Price | Potions                                                                     |
 | ----- | --------------------------------------------------------------------------- |
-|    20 | healing                                                                     |
+|    20 | [healing](#potion-healing)                                                                     |
 |    50 | booze, fruit juice, see invisible, sickness                                 |
-|   100 | confusion, extra healing, hallucination, restore ability, sleeping, water   |
+|   100 | confusion, [extra healing](#potion-healing), hallucination, restore ability, sleeping, [water](#potion-holy-water)   |
 |   150 | blindness, gain energy, invisibility, monster detection, object detection   |
-|   200 | enlightenment, full healing, levitation, polymorph, speed                   |
+|   200 | enlightenment, [full healing](#potion-healing), levitation, [polymorph](#potion-polymorph), [speed](#potion-speed)                   |
 |   250 | acid, oil                                                                   |
-|   300 | gain ability, gain level, paralysis                                         |
+|   300 | [gain ability](#potion-gain-ability), [gain level](#potion-gain-level), paralysis                                         |
 
 <div class="price-id-toolbar"></div>
 
@@ -4436,6 +4436,7 @@ everything.
 
 #### Key Potions
 
+[]{#potion-healing}
 **Healing, extra healing, full healing.** The healing chain, and
 your lifeline in combat. Extra healing is the workhorse: it always
 cures blindness and (non-cursed) also cures sickness in addition
@@ -4443,10 +4444,12 @@ to restoring HP. Non-cursed extra and full healing raise your
 maximum HP if the heal would otherwise overflow; blessed versions
 give the biggest boost. You can never have too many of these.
 
+[]{#potion-gain-ability}
 **Gain ability.** When blessed, raises *all* your stats by 1.
 Uncursed raises a random stat. This is liquid gold: save every
 one until you can bless it.
 
+[]{#potion-speed}
 **Speed.** One non-cursed quaff and you're permanently faster for
 the rest of the game; blessing only stretches the temporary timer
 that overlays the intrinsic. Speed is arguably the single most
@@ -4456,6 +4459,7 @@ hitting twice before they swing once. In 5.0, the wand of speed
 monster no longer grants permanent speed when self-zapped, only a
 temporary burst of 50–74 turns. The potion is the real prize.
 
+[]{#potion-holy-water}
 **Holy water.** Not a potion you find: a potion you *make*. Drop
 uncursed water on a co-aligned altar, pray, and the gods bless it
 for you. Holy water can then bless any item you dip into it. This
@@ -4463,10 +4467,12 @@ is the engine that drives your entire inventory: blessed scrolls
 of identify, blessed potions of gain ability, blessed scrolls of
 enchant weapon. You will never have enough holy water.
 
+[]{#potion-gain-level}
 **Gain level.** Raises your experience level by 1. Useful for
 reaching quest eligibility quickly, or converting into something
 better through alchemy.
 
+[]{#potion-polymorph}
 **Identifying a polymorph potion.** A clean test: dip a single
 arrow or dart into an unknown potion. If the arrow turns into a
 different item, the potion was polymorph and identifies itself.
@@ -4736,34 +4742,35 @@ area around you.
 | ----- | ----------------------- | ----- | ----------- |
 |   100 | Light                   | NODIR | 15          |
 |   100 | Nothing                 | BEAM  | 15          |
-|   150 | Digging                 | RAY   | 8           |
+|   150 | [Digging](#wand-digging)                 | RAY   | 8           |
 |   150 | Enlightenment           | NODIR | 15          |
 |   150 | Magic missile           | RAY   | 8           |
-|   150 | Make invisible          | BEAM  | 8           |
+|   150 | [Make invisible](#wand-make-invisible)          | BEAM  | 8           |
 |   150 | Opening                 | BEAM  | 8           |
 |   150 | Probing                 | BEAM  | 8           |
 |   150 | Secret door detection   | NODIR | 15          |
 |   150 | Slow monster            | BEAM  | 8           |
 |   150 | Speed monster           | BEAM  | 8           |
-|   150 | Stasis                  | NODIR | 15          |
+|   150 | [Stasis](#wand-stasis)                  | NODIR | 15          |
 |   150 | Striking                | BEAM  | 8           |
 |   150 | Undead turning          | BEAM  | 8           |
 |   150 | Locking                 | BEAM  | 8           |
-|   175 | Cold                    | RAY   | 8           |
-|   175 | Fire                    | RAY   | 8           |
-|   175 | Lightning               | RAY   | 8           |
+|   175 | [Cold](#wand-fire-cold-lightning)                    | RAY   | 8           |
+|   175 | [Fire](#wand-fire-cold-lightning)                    | RAY   | 8           |
+|   175 | [Lightning](#wand-fire-cold-lightning)               | RAY   | 8           |
 |   175 | Sleep                   | RAY   | 8           |
-|   200 | Cancellation            | BEAM  | 8           |
+|   200 | [Cancellation](#wand-cancellation)            | BEAM  | 8           |
 |   200 | Create monster          | NODIR | 15          |
-|   200 | Polymorph               | BEAM  | 8           |
-|   200 | Teleportation           | BEAM  | 8           |
-|   500 | Death                   | RAY   | 8           |
-|   500 | Wishing                 | NODIR | 3           |
+|   200 | [Polymorph](#wand-polymorph)               | BEAM  | 8           |
+|   200 | [Teleportation](#wand-teleportation)           | BEAM  | 8           |
+|   500 | [Death](#wand-death)                   | RAY   | 8           |
+|   500 | [Wishing](#wand-wishing)                 | NODIR | 3           |
 
 <div class="price-id-toolbar"></div>
 
 #### Key Wands
 
+[]{#wand-wishing}
 **Wishing.** The most valuable item in the game. Each zap grants one
 wish. In 5.0, wands of wishing generate with only **1
 charge** and can be recharged once (and only once) to a maximum of
@@ -4772,34 +4779,41 @@ yields 2 wishes plus a possible wrested third, a significant
 reduction from older versions where it could provide 5 to 7. Plan
 your wishes carefully before you find one.
 
+[]{#wand-death}
 **Death.** Fires a death ray that instantly kills most things it
 hits. Reflected by reflection. Blocked by magic resistance. One
 of the best offensive tools in the late game.
 
+[]{#wand-digging}
 **Digging.** Essential utility. Dig through walls to create
 shortcuts, dig down to escape dangerous situations, dig through
 rock to reach vaults and hidden areas. Every ascension kit should
 include a wand of digging.
 
+[]{#wand-teleportation}
 **Teleportation.** Zap monsters to send them somewhere else on the
 level. Zap yourself to teleport. Enormously useful for escaping
 trouble or removing a dangerous monster from your path.
 
+[]{#wand-fire-cold-lightning}
 **Fire, cold, lightning.** Offensive ray wands that bounce off walls.
 Fire burns scrolls and spellbooks on the floor. Cold freezes water
 (useful for creating paths). Lightning blinds monsters.
 
+[]{#wand-cancellation}
 **Cancellation.** Removes special properties from items and monsters.
 A cancelled monster loses most of its special attacks. Do NOT put
 this wand in a bag of holding (it will explode the bag). Keep it
 separate in your main inventory.
 
+[]{#wand-polymorph}
 **Polymorph.** Transforms monsters into random other monsters and
 items into random other items of the same class. Can be used
 creatively (polymorph a pile of junk armor hoping for dragon scale
 mail, polymorph a weak monster hoping for a useful corpse). Risky
 but powerful.
 
+[]{#wand-make-invisible}
 **Make invisible.** Turns a target (or yourself, if you zap it
 reflexively) invisible. In older editions, self-zapping granted a
 permanent invisibility intrinsic, which made this a coveted find. In
@@ -4811,6 +4825,7 @@ tool rather than a build enabler: think of it as "invisibility on
 demand for the next minute" rather than "invisibility forever from one
 lucky find."
 
+[]{#wand-stasis}
 **Stasis.** A new 5.0 wand that freezes every monster on the level
 for **10–30 turns**. No ray, no aim, no message — just a hush. Use
 it when you're surrounded and need a free moment to engrave
@@ -5155,8 +5170,9 @@ The **bag of holding** deserves special mention because it
 transforms how you play. A blessed bag reduces the weight of
 everything inside to roughly one quarter, meaning you can carry your
 entire potion supply, your backup armor, your scroll library, and
-still have room for loot. Get one from Sokoban or wish for one
-early. It's that important.
+still have room for loot. Almost every ascending player carries
+one. Sokoban's prize is a bag of holding half the time; otherwise
+wish for one when you can.
 
 The cardinal rule: **never** put a wand of cancellation, another bag
 of holding, or a charged bag of tricks inside a bag of holding. The
