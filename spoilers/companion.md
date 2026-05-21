@@ -494,17 +494,18 @@ items you need. The sweet spot is to explore each level fairly
 completely (check rooms, open doors, look for hidden passages) but
 don't grind. When you've found what the level has to offer, move on.
 
-**Rule 6: Build three key defenses.** In the first half of the
-game, your real goal isn't accumulating treasure. It's acquiring
-the resistances and protections that will help you survive the
-late game. The three most important are **magic resistance**,
+**Rule 6: Build your defenses.** In the first half of the game,
+your real goal isn't accumulating treasure. It's acquiring the
+resistances and protections that will help you survive the late
+game. The three most important are **magic resistance**,
 **reflection**, and **poison resistance** (plus a **lizard
 corpse** in your pack for petrification emergencies). Poison
 resistance you can bank as an *intrinsic* by eating the right
-corpse (a killer bee, a quasit). Magic resistance and reflection
-come from gear: dragon scale mail (gray for MR, silver for
-reflection), an amulet of reflection, or an artifact granted by
-your god, won on the Quest, or bestowed by a wish.
+corpse: a killer bee, a cave spider, a yellow mold, or a quasit.
+Magic resistance and reflection come from gear: dragon scale
+mail (gray for MR, silver for reflection), an amulet of
+reflection, or an artifact granted by your god, won on the
+Quest, or bestowed by a wish.
 
 #### Things That Kill You (And How Not to Let Them)
 
