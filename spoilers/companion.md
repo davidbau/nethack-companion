@@ -4681,8 +4681,10 @@ of gold. Faster and safer than the search command.
 yellow lights around you (or black lights, if the scroll is cursed).
 They die quietly and can't harm you.
 
-**Confused charging** restores some power instead of charging an
-item. A pinch of mana when you've spent everything.
+**Confused charging** restores Pw, and if you're already at full,
+*raises your max Pw* by 4–16 (6–24 blessed). A spellcaster's
+permanent buff if you can spare the scroll. Cursed reading zeroes
+your Pw instead.
 
 **Confused scare monster** wakes nearby sleepers and you hear sad
 wailing in the distance. The opposite of helpful. Don't read this
