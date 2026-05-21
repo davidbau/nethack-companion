@@ -501,7 +501,7 @@ game. The three most important are **magic resistance**,
 **reflection**, and **poison resistance** (plus a **lizard
 corpse** in your pack for petrification emergencies). Poison
 resistance can be acquired as an *intrinsic* by eating the right
-corpse: a killer bee, a cave spider, or a yellow mold.
+corpse, like a killer bee, a cave spider, or a yellow mold.
 Magic resistance and reflection come from gear: dragon scale
 mail (gray for MR, silver for reflection), an amulet of
 reflection, or an artifact granted by your god, won on the
