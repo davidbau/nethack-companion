@@ -1200,7 +1200,7 @@ The Mines are populated primarily by gnomes, dwarves, and the
 occasional dwarf lord. If you're playing a gnomish character, most
 of them will be peaceful, which makes the Mines a relatively
 comfortable detour. Everyone else will need to fight through a
-modest but steady stream of hostile gnomes.
+steady stream of hostile gnomes and dwarves.
 
 **Minetown** appears a few levels into the Mines. Usually it's a small
 settlement with shops and a temple, and it's worth visiting early.
