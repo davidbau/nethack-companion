@@ -1126,8 +1126,8 @@ his name angers the guard. Use the real-name route then.
 A practical tour of the branches and landmarks, in roughly the order you'll visit them.
 
 **Sokoban or Mines first?** The Mines entrance shows up first
-(Dlvl 2 to 4), but the *strategic* answer for most beginners is
-Sokoban. It's a controlled puzzle crawl with mostly trivial
+(Dlvl 2 to 4), but the *strategic* suggestion for most beginners
+is Sokoban. It's a controlled puzzle crawl with mostly trivial
 monsters, and the prize at the top (reflection or a bag of
 holding) materially helps the Mines run afterward. Go
 Mines-first if you specifically want the luckstone at Mine's End
