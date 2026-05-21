@@ -470,7 +470,8 @@ to you in single file.
 **Rule 2: Don't eat things you don't understand.** Monster corpses
 can grant powerful intrinsics, or they can poison you, give you food
 poisoning, or worse. Until you know what a corpse does, leave it on
-the ground. The exceptions: you can always safely eat food rations,
+the ground. (Kobold `k` meat, for example, is poisonous and confers
+nothing.) The exceptions: you can always safely eat food rations,
 lembas wafers, cram rations, and fruits. Lichen corpses are safe and
 never rot. Lizard corpses are safe, never rot, and cure
 petrification. Always carry one if you can.
@@ -565,8 +566,8 @@ cram ration, or lembas wafer.
 These look like ordinary containers, no special marking. On your
 first ten levels, check every chest and large box you find. A
 locked one will yield to a credit card, a key, a wand of opening,
-or — failing those — you can `#force` the issue with a weapon you
-don't mind breaking. An orcish dagger off the first orc you kill is
+or you can `#force` the issue with a weapon you don't mind
+breaking. An orcish dagger off the first orc you kill is
 a perfect tool (pet-test it first: could be cursed). The contents aren't guaranteed
 to change your run, but finding a stack of healing potions on level
 4 before you've learned the hard way how much you need them is the
@@ -1041,9 +1042,9 @@ first.)
 Sinks are the dungeon's most underrated identification tool.
 
 **Kicking a sink** can shake loose a ring (useful!), summon a black
-pudding (terrifying, but its glob is a triple-resistance snack —
-cold, shock, and poison), summon an *amorous demon* posing as
-"the dish washer" (the same incubus/succubus as [a seduction
+pudding (terrifying, but its glob is a [triple-resistance
+snack](#useful-corpse-effects)), summon an *amorous demon* posing
+as "the dish washer" (the same incubus/succubus as [a seduction
 encounter](#seduction) — careful!), or just stub your toe. Each
 non-stub outcome fires at most once per sink. Worth a kick in the
 early game if you can handle what comes out.
@@ -4487,7 +4488,7 @@ gives the aggravate monster intrinsic. Cavemen and orcs are exempt.
 | Yeti                    | Cold resistance                                                        |
 | Quivering blob          | Poison resistance                                                      |
 | Acid blob               | Acid and stoning resistance                                            |
-| Gelatinous cube         | Fire, cold, shock, and sleep resistance (chance for each per eat)      |
+| Gelatinous cube         | Fire, cold, shock, and sleep resistance                                |
 | Brown or black pudding  | Cold, shock, and poison resistance                                     |
 | Gray ooze               | Fire, cold, and poison resistance                                      |
 | Wraith                  | Gain an experience level                                               |
@@ -4510,13 +4511,13 @@ cures lycanthropy outright. If you're heading anywhere were-things
 roam (the Mines, the Quest for some roles), carry a sprig or two.
 It weighs almost nothing.
 
-**Globs vs corpses.** Puddings (gray ooze, brown pudding, black
-pudding) and acid blobs in 5.0 leave **globs** instead of corpses.
-Globs sit on the floor and shrink slowly (about one weight unit
-every 25 turns, so a fresh glob lasts about 500 turns — twice as
-long as a corpse) — and globs of the same color stack, so saving
-up a pile of brown pudding globs lets you re-roll shock resistance
-until you get it.
+**Eat the puddings, cubes, molds, and blobs.** They look like
+inedible terrain, but every one of them yields an intrinsic when
+eaten. Puddings and acid blobs leave **globs** rather than
+corpses (a 5.0 food-handling detail that doesn't change the
+strategy), and the globs of one color stack and shrink slowly,
+so a pile of brown-pudding globs is a re-rollable chance at
+shock resistance.
 
 #### Food Strategy
 
