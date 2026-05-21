@@ -75,51 +75,52 @@ will do our best to keep you alive.
 **Part Three: Survival**
 
 10. [The Art of Combat](#the-art-of-combat) — Hit probability, damage, and tactics
-11. [Ways to Die](#ways-to-die) — Top-ten killers, instadeaths, mimics, dragons
-12. [Divine Relations](#divine-relations) — Prayer, sacrifice, and altars
-13. [Making Friends](#making-friends) — Pets, taming, and peaceful coexistence
+11. [Ways to Die](#ways-to-die) — Top-ten killers, common deaths, mimics, dragons
+12. [Yet More Ways to Die](#yet-more-ways-to-die) — Instadeaths and how to recognize them
+13. [Divine Relations](#divine-relations) — Prayer, sacrifice, and altars
+14. [Making Friends](#making-friends) — Pets, taming, and peaceful coexistence
 
 **Part Four: Gear and Provisions**
 
-14. [A Practical Identification Strategy](#a-practical-identification-strategy) — Figuring out what you've found (with flowchart)
-15. [Provisions and Dining](#provisions-and-dining) — Food, nutrition, and dining
-16. [The Apothecary](#the-apothecary) — Potions and their many uses
-17. [The Scroll Rack](#the-scroll-rack) — Scrolls, their effects, and confused reading
-18. [Wands and Staves](#wands-and-staves) — Magical implements
-19. [Rings and Amulets](#rings-and-amulets) — Jewelry, for better or worse
-20. [Tools of the Trade](#tools-of-the-trade) — From pickaxes to magic lamps
-21. [The Armory](#the-armory) — Weapons, armor, and hitting things
-22. [Curses and How to Break Them](#curses-and-how-to-break-them)
-23. [Artifacts](#artifacts) — Legendary equipment and how to obtain it
+15. [A Practical Identification Strategy](#a-practical-identification-strategy) — Figuring out what you've found (with flowchart)
+16. [Provisions and Dining](#provisions-and-dining) — Food, nutrition, and dining
+17. [The Apothecary](#the-apothecary) — Potions and their many uses
+18. [The Scroll Rack](#the-scroll-rack) — Scrolls, their effects, and confused reading
+19. [Wands and Staves](#wands-and-staves) — Magical implements
+20. [Rings and Amulets](#rings-and-amulets) — Jewelry, for better or worse
+21. [Tools of the Trade](#tools-of-the-trade) — From pickaxes to magic lamps
+22. [The Armory](#the-armory) — Weapons, armor, and hitting things
+23. [Curses and How to Break Them](#curses-and-how-to-break-them)
+24. [Artifacts](#artifacts) — Legendary equipment and how to obtain it
 
 **Part Five: Mastery**
 
-24. [Spellcasting](#spellcasting) — Magic for the studious adventurer
-25. [Luck and Fortune](#luck-and-fortune) — The hidden numbers that shape your fate
-26. [Enhancing Skills](#enhancing-skills)
-27. [Wishes and Wishing](#wishes-and-wishing) — Getting what you want
+25. [Spellcasting](#spellcasting) — Magic for the studious adventurer
+26. [Luck and Fortune](#luck-and-fortune) — The hidden numbers that shape your fate
+27. [Enhancing Skills](#enhancing-skills)
+28. [Wishes and Wishing](#wishes-and-wishing) — Getting what you want
 
 **Part Six: The Deep Dungeon**
 
-28. [The Castle](#the-castle) — The gateway to Gehennom
-29. [Gehennom](#gehennom) — A travel advisory
-30. [The Ascension Kit](#the-ascension-kit) — What the winners actually carry
-31. [The Ascension Run](#the-ascension-run) — Getting back out alive
-32. [The Elemental Planes](#the-elemental-planes) — The final gauntlet
+29. [The Castle](#the-castle) — The gateway to Gehennom
+30. [Gehennom](#gehennom) — A travel advisory
+31. [The Ascension Kit](#the-ascension-kit) — What the winners actually carry
+32. [The Ascension Run](#the-ascension-run) — Getting back out alive
+33. [The Elemental Planes](#the-elemental-planes) — The final gauntlet
 
 **Appendices**
 
-33. [Advanced Controls](#advanced-controls) — Command counts, prefixes, and efficiency techniques
-34. [Sokoban Solutions](#sokoban-solutions) — All eight level variants, solved
-35. [Voluntary Challenges](#voluntary-challenges) — Conducts and self-imposed restrictions
-36. [Shopping and Shopkeeper Pricing](#shopping-and-shopkeeper-pricing) — Commerce in the dungeon
-37. [Weapons Tables](#weapons-tables)
-38. [Armor Tables](#armor-tables)
-39. [Spell Tables](#spell-tables)
-40. [Skill Caps](#skill-caps)
-41. [Bestiary Tables](#bestiary-tables)
-42. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x, and what to do about it
-43. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
+34. [Advanced Controls](#advanced-controls) — Command counts, prefixes, and efficiency techniques
+35. [Sokoban Solutions](#sokoban-solutions) — All eight level variants, solved
+36. [Voluntary Challenges](#voluntary-challenges) — Conducts and self-imposed restrictions
+37. [Shopping and Shopkeeper Pricing](#shopping-and-shopkeeper-pricing) — Commerce in the dungeon
+38. [Weapons Tables](#weapons-tables)
+39. [Armor Tables](#armor-tables)
+40. [Spell Tables](#spell-tables)
+41. [Skill Caps](#skill-caps)
+42. [Bestiary Tables](#bestiary-tables)
+43. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x, and what to do about it
+44. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
 
 
 ## Part One: Before You Set Out
@@ -2612,6 +2613,9 @@ usually whichever dragon's territory you can reach safely; killing
 a dragon yields scales you can wear immediately or convert to
 scale mail.
 
+---
+
+### Yet More Ways to Die
 
 Some things in the Mazes kill you outright. Not by whittling down
 your hit points, not by wearing you down over time, but by ending
