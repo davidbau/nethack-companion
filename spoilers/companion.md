@@ -1558,7 +1558,7 @@ to deter the court monsters from displacing it). See
 [Wishes and Wishing](#wishes-and-wishing) for the full mechanics
 and how many wishes a 5.0 Castle wand actually yields.
 
-Below the Castle lies Gehennom. There is no shortcut back, so make
+Below the Castle lies [Gehennom](#gehennom). There is no shortcut back, so make
 sure you're prepared before you descend.
 
 ---
