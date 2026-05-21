@@ -1610,6 +1610,9 @@ skip and you fall in regardless.
 
 #### Dangerous Traps
 <!-- audit
+2026-05-20:
+- random polymorph timer is rn1(500, 500) = 500-999 turns (polyself.c:813); decremented each turn until 0
+- nohands or verysmall form on polymorph triggers break_armor() which dropx() drops worn gear to the floor (polyself.c:1248-1351)
 2026-05-18:
 - anti-magic implosion damage QUARTERED (not halved) for pass-walls: `dmgval2 = (dmgval2 + 3) / 4` (trap.c:2371-2372)
 - max 4d4 raw damage caps at 4 after quartering (16+3)/4 = 4
@@ -1645,8 +1648,18 @@ Polymorph traps are a double-edged sword. With polymorph control,
 they're a free polymorphing booth. Without it, you become something
 random, possibly a newt that can't use any of its equipment.
 **Magic resistance and the Unchanging intrinsic both block the
-polymorph entirely** — Tcontrol is the only way to *use* the trap,
-but MR or Unchanging let you walk through it untouched.
+polymorph entirely.** Tcontrol is the only way to *use* the trap;
+MR or Unchanging let you walk through it untouched.
+
+If you do get caught and polymorphed into a handless form, your
+gear drops to the floor on the spot. Don't panic and don't move:
+random polymorphs wear off in a few hundred turns, and your kit
+is at the square you're standing on. Defend the square if you
+can, pray if a monster has you in a corner, and pick everything
+up the moment you change back. (If you happen to be carrying a
+wand of polymorph or know the spell, zapping or casting it on
+yourself lets you reroll the form, but only if your current form
+can use a wand or cast.)
 
 Sleeping gas is murder in monster-rich areas. You can't fight, you
 can't run, you can't even wake up on purpose. Monsters line up
@@ -2063,6 +2076,13 @@ messages still come through.)
 
 ### The Art of Combat
 <!-- audit
+2026-05-20:
+- waking a sleeping monster via attack invokes wakeup() (uhitm.c:250, 305, 1403, 1926, 5213, 5590, 5694, 5764, 5774); if the struck monster was sleeping AND not MS_SILENT AND not helpless, growl() fires (mon.c:4353-4356 wakeup)
+- growl() calls wake_nearto(mtmp->mx, mtmp->my, mtmp->data->mlevel * 18) (sounds.c:421) — radius approx sqrt(mlevel * 18) in tiles
+- Knight caitiff penalty: -1 alignment for attacking helpless or fleeing non-undead monsters when Lawful (uhitm.c:336-341)
+- Samurai dishonor penalty: -1 alignment for attacking peacefuls (uhitm.c:342-345)
+- Samurai poisoned-weapon penalty: -sgn(u.ualign.type) alignment (uhitm.c:1521)
+- Quest entrance requires alignment record >= MIN_QUEST_ALIGN = 20 AND ulevel >= MIN_QUEST_LEVEL = 14 (quest.h:43-45)
 2026-05-18:
 - to-hit factors: XL, Str, Dex, Luck, enchantment, AC (find_roll_to_hit)
 - abon includes both Strength AND Dexterity; Dex 25 yields +11 (weapon.c:950-988)
@@ -2207,11 +2227,40 @@ are the time-tested tactics that keep adventurers breathing:
   recover. If you've carved Elbereth in a corridor and then backed a
   monster into a dead end, be ready for it to make a decision about
   that arrangement. Keep an exit behind the monster, or expect contact.
+- **The first swing wakes the room.** Sleeping monsters stay asleep
+  while you walk past them, but a hit on one wakes everything around
+  it: the struck monster growls, and the growl wakes any other
+  sleeping monster within roughly seven squares for a level-3 gnome,
+  more for larger creatures. A packed room becomes a simultaneous
+  brawl on swing two. Pull the pack one at a time by *backing away*
+  into a corridor first (so they wake strung out in a line) or write
+  Elbereth and let them come.
+- **Watch your alignment around peacefuls.** Knights and Samurai
+  take a special alignment hit for attacking the helpless, fleeing,
+  or peaceful (a caitiff penalty for Knights, a giri-breaking
+  penalty for Samurai). The Quest entrance check requires alignment
+  record at least 20 *and* experience level at least 14. A handful
+  of careless peaceful kills can lock a Knight or Samurai out of
+  the Quest for the rest of the run.
 
 ---
 
 ### Ways to Die
 <!-- audit
+2026-05-20:
+- mines residents are class G (gnomes, S_GNOME) and h (humanoids incl. dwarves, S_HUMANOID); g is gremlins/gargoyles (defsym.h:295, 301, 303, 333)
+- gnomish wizard has AT_MAGC AD_SPEL — random spellcaster, can cast sleep (monsters.h:1695-1701)
+- homunculus AT_BITE AD_SLEE 1d3 (monsters.h:551-558)
+- soldier ant speed 18, AT_BITE 2d4 + AT_STNG AD_DRST 3d4 (monsters.h:103-110)
+- water demon: S_DEMON class &, level 8, NOCORPSE NOGEN (monsters.h:2911-2919)
+- rope golem AT_HUGS 6d1 grapple (monsters.h:2523-2529)
+- iron golem level 18, speed 6, AT_WEAP 4d10 + AT_BREA AD_DRST 4d6 (poison gas, drains Strength), MR_FIRE|MR_COLD|MR_ELEC|MR_SLEEP|MR_POISON (monsters.h:2586-2594); slow but heavy hitter, not a speedster
+- bats and giant bats speed 22; raven and vampire bat speed 20 with two attacks each (monsters.h:1269-1294)
+- steam/fire vortices speed 22; queen bee speed 24 (rare); air elemental speed 36 (monsters.h vortices, queen bee, air elemental rows)
+- water demon wish: rnd(100) > (80 + level_difficulty()) — 20% chance at depth 0, drops to 0% past level_difficulty 20 (fountain.c:78)
+- clay golem AT_CLAW AD_PHYS 3d10 single (monsters.h:2562-2569)
+- stone golem AT_CLAW AD_PHYS 3d8 single (monsters.h:2570-2577)
+- golems are class ' (apostrophe), not P (defsym.h:359)
 2026-05-19:
 - Very_fast = (HFast & ~INTRINSIC) || EFast (youprop.h:377)
 - Blue DSM sets EFast |= W_ARM (do_wear.c:822); speed boots set EFast |= W_ARMF
@@ -2226,7 +2275,7 @@ are the time-tested tactics that keep adventurers breathing:
 - confused genocide hits your role: u.umonster ← gu.urole.mnum (read.c:2839, u_init.c:991)
 - mumakil attack solo, not in packs; AT_BUTT 4d12 + AT_BITE 2d6 (monsters.h:838-845)
 - shimmering DSM does not exist in 5.0 (#if 0 DEFERRED in objects.h:509-511, 536-538)
-- strategy aligned with NetHackWiki Bones, Yet Another Stupid Death: bones loot 80% cursed and dangerous, early-game pacing matters more than depth (https://nethackwiki.com/wiki/Bones, https://nethackwiki.com/wiki/Yet_Another_Stupid_Death)
+- strategy aligned with NetHackWiki Bones, Yet Another Stupid Death, Sleep, Golem: bones loot 80% cursed and dangerous, early-game pacing matters more than depth, sleep resistance recommended before Mines, iron golem and rope golem are the dangerous golems for the player (https://nethackwiki.com/wiki/Bones, https://nethackwiki.com/wiki/Yet_Another_Stupid_Death, https://nethackwiki.com/wiki/Sleep, https://nethackwiki.com/wiki/Golem)
 -->
 
 Only about **0.4% of games end in ascension.** The other 99.6%
@@ -2268,81 +2317,157 @@ above-depth monster on a bones level as evidence to retreat, not
 to engage. If your character isn't ready for the monster, leave
 the level and come back when you are.
 
-**Specific tips beyond the top ten, where players consistently
-underestimate the threat.**
+#### Common Combat Deaths
 
-- **Mines residents** (`g`, `h`). Plain dwarves, gnomes, and gnome
-  lords are all top-fifteen killers because the Gnomish Mines
-  funnel a lot of armed humanoids into a confined space. Dwarves
-  in particular hit harder than they look. Don't try to clear the
-  Mines as a routine errand — treat each room of dwarves like
-  several real fights stacked on top of each other.
-- **Bats** (`B`). Giant bats and ordinary bats are fast (speed 22
-  vs your 12), so they double-attack every turn. A 1d4 bite (1d6
-  for giant bats) at double rate eats through low-level HP pools
-  quickly.
-- **Quadrupeds** (`q`). Rothes are three-attack pack hunters at
-  sluggish speed 9: dangerous mostly in numbers. Mumakil are
-  solo two-attack bruisers (4d12 butt + 2d6 bite) that hit harder
-  than anything else in the Mines.
-- **Eating mistakes.** Rotted corpse, poisonous corpse, and
-  choking each show up high on the list. Don't eat old corpses.
-  Don't eat while satiated. Pray immediately if you ate something
-  you shouldn't have.
-- **Water demons.** Quaffing a fountain summons one ~1 in 30
-  times, and they hit hard before they think about granting a
-  wish. Wish odds also drop with depth, so casual quaffing pays
-  worse the deeper you go.
-- **Mount slips and riding accidents.** More heroes die slipping
-  off saddled ponies than die to mind flayers. Getting on a steed
-  rolls against your XP level plus the steed's tameness; if you
-  fail, you take 10–14 HP. Don't mount while Confused, Fumbling,
-  or Glib, don't mount with a cursed or greased saddle, and don't
-  mount a barely-tame pony at experience level 2.
-- **Boiling potion (Gehennom).** Hot ground shatters potions
-  dropped on the floor. The shrapnel is deadly. Keep potions in a
-  bag once you're below the Castle.
-- **Pet kills.** Kittens, little dogs, housecats, and ponies all
-  appear on the list — almost always because the player put on a
-  ring of conflict and forgot to take it off. Remove the ring
-  before walking back to your pet.
-- **Golems.** The rope golem in particular grapples you, and
-  several Quest dungeons have them in numbers. Gold golems are
-  another quiet killer.
+Beyond the top ten, certain enemy categories kill more
+beginners than their depth or appearance would suggest.
+The shape of the threat is usually pack tactics, surprising
+speed, or one catastrophic special attack.
 
-```{=latex}
-\enlargethispage{2\baselineskip}
-```
+**The Gnomish Mines is a choice, not a routine stop.** Mines
+residents are not class `g`, which is gremlins. They are `G`,
+gnomes, and `h`, the humanoid class that includes dwarves.
+Plain gnomes, gnome lords, dwarves, and gnomish wizards all
+sit in the top fifteen causes of death on the public server,
+because the Mines funnel four or five armed opponents into
+a single room and beginners walk in at XL 3 expecting an
+extra branch. Dwarves hit harder than they look and come
+armored. Gnomish wizards (a `G` with spell attacks) can cast
+sleep at you among other things, and a sleeping adventurer in
+a Mines room is a dead one. Take the branch when you have HP, a real weapon,
+and sleep resistance. A positive AC at XL 5 is not enough.
 
-**Colorful deaths.**
-```{=latex}
-\nopagebreak[4]\par\nopagebreak[4]
-```
+**Sleep without resistance is a near-instadeath.** A homunculus
+bite, a gnomish wizard's sleep spell, or later an orange dragon
+or Nazgul breath puts you to sleep for several turns. If you
+are alone in a corridor it costs you a couple of rounds. If
+you are surrounded by anything else, the surrounding monsters
+chew through your HP while you cannot move. Sleep resistance
+comes from any elf, elven mummy, or giant corpse, and from
+several roles' starting kits (Wizard's cloak of MR, Ranger's
+elven cloak). Eat for it before descending into the Mines or
+the lower Quest.
 
-- **Killed by your own wand.** Self-zapped attack wands, rays
-  ricocheting off the wall in a narrow corridor and back into your
-  face. Identify wands before pointing them at yourself.
-- **Killed by a grid bug.** The *weakest monster in the game*
-  kills more than 11,000 adventurers per year. They get the last
-  hit on someone who walked away from a real fight at 2 HP. Don't
-  read a scroll on the turn a grid bug is adjacent.
-- **Killed by kicking.** Kicking sinks, doors, locked chests. The
-  reaction can break a toe, summon a black pudding, or electrocute
-  you. (Electric shock is a top-100 cause of death in its own
-  right.) Stop kicking things.
-- **Wrath of a god.** You prayed when your god wasn't willing.
-  See the [Divine Relations](#divine-relations) chapter.
-- **Scroll of genocide.** Read while confused → genocides your
-  own role's species (Valkyrie, Wizard, etc.) → instant kill.
-  Don't read scrolls under confusion unless you know what they are.
-- **Scroll of earth.** Buried under a pile of boulders you summoned
-  on yourself.
+**Bats and other speedsters** (`B`). Bats and giant bats clock in
+at speed 22, nearly twice your starting 12. They get two attacks
+for every one of yours, and a 1d4 bite at double rate chews
+through low HP fast. Ravens and vampire bats are speed 20 with
+two attacks each (and the vampire bat's second bite drains
+Strength). The defense is positioning, not HP totals: fight from
+a doorway so they cannot kite around you, or kill them at range.
+Centaurs (speed 18 to 20) and vortices raise the same problem
+later on.
 
-The pattern across the whole list: routine mistakes kill far more
-adventurers than exotic instadeaths. Floating eyes, cockatrices,
-mind flayers, and disenchanters all matter (and they're catalogued
-under [Ways to Die](#ways-to-die) below). But the median death is a
-preventable swarm of jackals on Dlvl 3.
+**Ants and other pack travelers** (`a`). Soldier ants are
+speed 18 with two attacks (bite plus a Strength-draining
+sting) and travel in groups. A wandering soldier-ant pack
+on Dlvl 4 can end a careless run. Killer bees, giant ants,
+and fire ants are the same shape of problem. Treat any
+chittering or buzzing on an unexplored level as a reason
+to back up and find a chokepoint before the pack closes.
+
+**Quadrupeds** (`q`). Rothes are three-attack pack hunters
+at sluggish speed 9: a single one is easy to outrun, but
+three in a room is several real fights stacked together.
+Mumakil are solo two-attack bruisers (4d12 butt plus 2d6
+bite) that hit harder than anything else in the upper
+dungeon. Both wander mid-level rooms.
+
+**Golems** (`'`). Golems are class `'` (apostrophe), not
+`P` (which is puddings). Most are slow but several hit
+disproportionately hard. The rope golem grapples on a hugs
+attack and pins you in place for adjacent friends to chew on.
+Clay and stone golems deliver 3d10 and 3d8 in a single claw.
+The iron golem is the endgame model: level 18, 4d10 weapon
+plus a 4d6 poison-gas breath that drains Strength, and resistant
+to fire, cold, electricity, sleep, and poison. Most golems
+leave no corpse, so they cannot be eaten for intrinsics. Kill
+them quickly and at range when you can.
+
+**Water demons from fountains** (`&`). Quaffing a fountain
+summons a water demon roughly 1 quaff in 30. Water demons
+are major demons (class `&`, level 8) who attack first and
+grant a wish only if you survive. Wish odds also drop with
+depth, so casual quaffing pays worse the deeper you go.
+Don't quaff from fountains until you have magic resistance,
+reflection, or a clear path of retreat.
+
+#### Deadly Mistakes
+
+Routine mistakes kill more adventurers than exotic instadeaths.
+The list below is sorted roughly by frequency on the public
+server.
+
+**Eating mistakes.** Rotted corpse, poisonous corpse, and
+choking each rank in the top forty causes of death. Don't
+eat old corpses. Don't eat while Satiated. Don't finish a
+heavy corpse if you're already approaching Satiated. Pray
+immediately if you ate something you shouldn't have.
+
+**Reading unidentified scrolls in a shop.** A confused or
+cursed scroll of teleportation level-teles you out of the
+shop with the unpaid merchandise still in your pack, turning
+the shopkeeper hostile when you return. A scroll of fire
+destroys shop goods you are liable for. Save the price-ID
+session for outside.
+
+**Mount slips and riding accidents.** More heroes die slipping
+off saddled ponies than die to mind flayers. Getting on a
+steed rolls against your experience level plus the steed's
+tameness; on a failure you take 10 to 14 HP. Don't mount
+while Confused, Fumbling, or Glib, don't mount with a cursed
+or greased saddle, and don't mount a barely-tame pony at
+experience level 2.
+
+**Pet kills.** Kittens, little dogs, housecats, and ponies
+all appear on the death list, almost always because the
+player put on a ring of conflict and forgot to take it off.
+Remove the ring before walking back to your pet.
+
+**Boiling and shattering potions.** Hot ground in Gehennom
+shatters any potion you drop on the floor, and the shrapnel
+is deadly. Keep potions in a bag once you descend below the
+Castle. Bagging your potion and scroll stash earlier is also
+wise: a yellow dragon's lightning bolt shatters every loose
+potion in your pack, and a fire trap incinerates loose
+scrolls.
+
+**Killed by your own wand.** Self-zapped attack wands, rays
+ricocheting off a wall in a narrow corridor and back into
+your face. Engrave-test wands before pointing them at
+yourself.
+
+**Killed by a grid bug.** The weakest monster in the game
+kills more than 11,000 adventurers per year. They get the
+last hit on someone who walked away from a real fight at
+2 HP, or someone who decided to read a scroll on the turn
+one was adjacent. Don't read scrolls under threat.
+
+**Killed by kicking.** Kicking sinks summons a black pudding,
+a foocubus, or worse. Kicking doors can break your toe.
+Kicking locked chests can electrocute you, and electric
+shock is a top-100 cause of death on its own. Stop kicking
+things.
+
+**Wrath of a god.** You prayed when your god wasn't willing.
+See [Divine Relations](#divine-relations) for the prayer
+cooldown and what counts as "trouble" worth a prayer.
+
+**Scroll of genocide while confused.** Confused genocide
+removes your role's own species from the world (Valkyrie,
+Wizard, Samurai). You become the genocide. Don't read
+scrolls under confusion unless you already know what they
+are.
+
+**Scroll of earth on yourself.** Buried under a pile of
+boulders you summoned on your own head.
+
+The pattern across the whole list: routine mistakes kill far
+more adventurers than exotic instadeaths. Floating eyes,
+cockatrices, mind flayers, and disenchanters all matter
+(and they're catalogued in the named-death entries below).
+But the median death is a preventable swarm of jackals on
+Dlvl 3.
 
 #### A note on mimics
 
@@ -4206,6 +4331,10 @@ identify are the precious last resort.
 
 ### Provisions and Dining
 <!-- audit
+2026-05-20:
+- tin opening is an occupation; opentin is called per turn, gives up after svc.context.tin.usedtime >= 50 turns (eat.c:1710-1719, 1794)
+- tin open time by tool: blessed tin opener wielded = 0; uncursed tin opener rn2(2); cursed rn2(3); dagger family = 3; axe/pick-axe = 6; bare hands = rn1(1 + 500/(Dex+Str), 10) which is ~11-26 at avg stats, up to the 50-turn cap (eat.c:1740-1786)
+- tin of spinach grants +1 Str on eat (eat.c spinach branch)
 2026-05-18:
 - gelatinous cube corpse: fire/cold/shock/sleep only (not poison/acid/stoning) (monsters.h:160-162 mresists has MR_FIRE|MR_COLD|MR_ELEC|MR_SLEEP|MR_POISON|MR_ACID|MR_STONE but mconveys row is MR_FIRE|MR_COLD|MR_ELEC|MR_SLEEP only)
 - disenchanter corpse STRIPS an intrinsic, doesn't grant one (eat.c:1270-1275 PM_DISENCHANTER calls attrcurse)
@@ -4286,11 +4415,16 @@ more often.
 **Tripe rations** are terrible for you (your character retches) but
 pets love them. Save tripe for your pet.
 
-**Tins** are preserved food that never spoils. They take several
-turns to open (one turn with a tin opener, three with a dagger,
-more with bare hands). Blessed tins open quickly — instantly with
-a blessed tin opener, otherwise a coin-flip between instant and
-one turn. A tin of spinach increases your strength.
+**Tins** are preserved food that never spoils, but they are also
+a *trap if you're sloppy about where you open them*. Opening a
+tin is an occupation: you cannot act while you work, and a
+monster can wander up and attack you mid-open. A tin opener
+finishes in zero or one turn, a dagger in three, an axe in six,
+and bare hands in as many as fifty turns of helpless effort.
+Don't pop a tin in a corridor next to a sleeping room. Blessed
+tins are the one exception: they open in zero or one turn no
+matter the tool (instantly with a blessed tin opener). A tin of
+spinach increases your Strength.
 
 **Vegetarian characters** have to live on rations, lembas, fruits,
 and the small set of non-meat corpses (fungi, molds, lichens,
