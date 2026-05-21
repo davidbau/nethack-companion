@@ -1354,10 +1354,7 @@ fountain risks.
 -->
 
 Around dungeon levels 11 through 16, a magic portal drops you onto
-your Quest. You'll need experience level 14 and a friendly word with
-your quest leader on the first floor before they'll let you descend.
-The leader sends you to retrieve your role's quest artifact from a
-quest nemesis.
+your Quest.
 
 You'll know when you've reached the right level. The first time you
 arrive there, a faint telepathic call from your quest leader breaks
@@ -1370,6 +1367,12 @@ through:
 You are now looking for a magic portal, which renders as a bright
 magenta `^` once you discover it. Like any trap, it stays hidden
 until you step on it (which also triggers it) or search the square.
+
+To embark on your Quest, you will need experience level 14 and a
+friendly word with your quest leader on the first floor before
+they will let you descend. If you are prepared and worthy, your
+leader will send you to retrieve your role's quest artifact from
+a quest nemesis.
 
 Each role has a unique Quest with unique maps, a unique nemesis,
 and a unique artifact reward. The Valkyrie hunts Lord Surtur for
