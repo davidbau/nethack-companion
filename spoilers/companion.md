@@ -668,10 +668,8 @@ dragon, while a gray `D` is a gray dragon (see
 **Color memo: branch staircases turn yellow.** Staircases that
 lead into a sub-branch (Mines, Sokoban, the Quest, and so on)
 display in yellow once you've used them. Ordinary main-trunk
-stairs stay default-colored. The dungeon overview tells you
-which *level* has the branch; the yellow `<` or `>` is the only
-on-map signal for *which* staircase on a multi-stair level is
-the branch entrance.
+stairs stay default-colored, so on a level with several stairs
+the yellow one is your way back into the branch.
 
 Item symbols are punctuation marks:
 
