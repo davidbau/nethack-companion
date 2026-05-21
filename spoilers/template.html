@@ -167,7 +167,10 @@ $body$
     var level = parseInt(heading.tagName.substring(1), 10);
     var segments = [{ kind: 'heading', level: level,
                       text: heading.textContent, boldRanges: [] }];
-    var flat = heading.textContent + ' ';
+    // `flat` holds body-only text for snippet generation. The title is
+    // already shown in the search result heading, so excluding it here
+    // keeps the snippet from repeating it back.
+    var flat = '';
     var textEls = section.querySelectorAll(':scope > p, :scope > ul > li, :scope > ol > li, :scope > pre, :scope > table td, :scope > blockquote p, :scope > div.dense-table table td, :scope > div > table td');
     textEls.forEach(function(el) {
       var info = elTextAndBold(el);
