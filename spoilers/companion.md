@@ -2620,20 +2620,30 @@ item from your pack, and the nymph then **teleports away**,
 sometimes within the level, sometimes off it entirely. Your bag
 of holding, your amulet of reflection, a freshly-wished cloak of
 magic resistance: gone, often to a level you'll never revisit.
+No NetHack horror story is more universal than "a nymph walked
+off the level with my bag of holding."
 
 **The second claw is seduction.** Nymphs get two attacks per
 turn, and the seduction half drains experience levels if the
-nymph is the opposite gender of your character. A single bump
-can both rob you and drop your XL.
+nymph is the opposite gender of your character. A successful
+seduction can also strip a ring or amulet you're wearing. A
+single bump can rob you, drop your XL, and snatch the cloak off
+your shoulders, all in one round.
 
 **Defenses.** Kill at range (darts, force bolt, a wand of
 anything). Engrave **Elbereth**: nymphs respect it. Or drop your
 most irreplaceable items on the floor before approaching.
 Whatever's not in your pack can't be stolen.
 
+**Already robbed?** A satiated nymph stays in the dungeon
+somewhere, often a nearby level, and her corpse drops what she
+stole. If you have time, search the floors above and below;
+sometimes you get the bag of holding back.
+
 **Never engage a nymph while carrying the Amulet of Yendor**
 during the Ascension Run. Losing the Amulet to a teleporting
-thief sends you back to Moloch's Sanctum to retrieve it.
+thief means a return trip to Moloch's Sanctum, which is usually
+where ascension runs go to die.
 
 #### A note on puddings
 
@@ -2643,7 +2653,9 @@ or metal weapon**: one becomes two, two becomes four, and your
 long-sword grinding session turns into a swarm. **Black pudding
 additionally corrodes your wielded weapon** on its passive
 return-hit, so each round of splitting is also a step toward
-your blade rusting away.
+your blade rusting away. The community consensus: a beginner
+discovers puddings the same way every time — by feeding them
+their best weapon and watching the population graph go up.
 
 **Defenses.** Melee with a **silver or wooden weapon** (silver
 dagger, elven dagger, athame, club, quarterstaff). These don't
@@ -2677,36 +2689,58 @@ The `T` class doesn't stay dead. After you kill a troll, its
 corpse sits on the floor for a few hidden turns and then stands
 back up — at full HP, fresh and angry. A pile of corpses after a
 five-troll fight is a *timer*, not a kill count: walk away for
-twenty turns and the same five trolls are coming back.
+twenty turns and the same five trolls are coming back. The
+veteran's lament — *"I beat the trolls, I got cocky, the trolls
+beat me"* — is the most repeated story on the public boards.
 
 **Stopping the revival.** Eat the corpse (trolls are safe to
 eat for everyone but vegetarians). Tin it with a tin opener.
 Apply a magic whistle to summon a pet who'll eat it. Zap a wand
 of teleportation at the corpse to send it off-level. Destroy it
-with a wand of striking. Any of these breaks the revival.
+with a wand of striking. In Gehennom, the lava under your feet
+is the simplest solution — kick the corpse onto a lava square
+and walk on.
+
+**Trolls drop their gear when they die.** If they revive, they
+re-collect what they were carrying, so a revive-and-recollect
+cycle leaves piles of mixed troll-gear and dead-troll bodies on
+the same square. Pick up the gear before they wake up; the loot
+is yours either way.
 
 **Class members.** Plain troll, ice troll, rock troll, water
 troll, and the late-game Olog-hai. All revive; the corpse
-behaves the same way regardless of variant.
+behaves the same way regardless of variant. The Olog-hai is the
+one to fear — a three-attack hitter at level 13, and "fighting
+the same Olog-hai twice in twenty turns" is one of those
+experiences that turns a careless run into a careful one.
 
 #### A note on wraiths
 
 The `W` class has a touch attack that **drains an experience
 level** — one of the few permanent character setbacks in the
 game. You lose stat points, hit points, mana, and the most
-recent skill slot. There is no easy undo.
+recent skill slot. There is no easy undo, and the wraith can
+land the touch again if you let it. The standard advice on the
+public boards: fear the wraith on first sight, plan the kill
+from across the room.
 
 **But the corpse is one of the most valuable consumables in the
 game.** Eating a fresh wraith corpse grants you a level — the
 inverse operation. So the recipe: kill the wraith carefully
-(the touch is melee-range only, so engage at distance or in a
-corridor where you control the spacing), then eat the corpse
-the moment it drops.
+(the touch is melee-range only, so engage at distance or from
+inside a corridor where you control the spacing), then eat the
+corpse the moment it drops. Wraith corpses spoil quickly, so
+hesitation costs you the trade.
 
-**The intentional version.** Some ascending players actively
-hunt wraiths in the upper Quest and Gehennom for free XP. A
-cursed scroll of genocide naming "wraith" reverse-genocides
-4–6 fresh wraiths at your feet, all for eating.
+**The intentional version.** Mid-to-late-game players actively
+hunt wraiths in the upper Quest and throughout Gehennom for free
+XP. A *cursed* scroll of genocide naming "wraith" reverse-
+genocides four to six fresh wraiths at your feet — a ready-made
+banquet, if you can drop each one in the turn it arrives. The
+classic setup is to stand on stairs (so you can escape if it
+goes wrong), drop a stack of cursed scrolls, and graze. Some
+ascending heroes credit a wraith binge for the experience levels
+that carried them through Gehennom.
 
 ---
 
