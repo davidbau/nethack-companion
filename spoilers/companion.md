@@ -1041,11 +1041,12 @@ first.)
 Sinks are the dungeon's most underrated identification tool.
 
 **Kicking a sink** can shake loose a ring (useful!), summon a black
-pudding (terrifying!), summon an *amorous demon* posing as "the dish
-washer" (the same incubus/succubus as [a seduction
-encounter](#seduction) — careful!), or just stub your toe. Each non-stub outcome fires at most
-once per sink. Worth a kick in the early game if you can handle what
-comes out.
+pudding (terrifying, but its glob is a triple-resistance snack —
+cold, shock, and poison), summon an *amorous demon* posing as
+"the dish washer" (the same incubus/succubus as [a seduction
+encounter](#seduction) — careful!), or just stub your toe. Each
+non-stub outcome fires at most once per sink. Worth a kick in the
+early game if you can handle what comes out.
 
 **Pouring potions down a sink** (by dipping) produces telltale
 effects — a clever way to narrow down potion identities without
