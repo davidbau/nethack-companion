@@ -2342,8 +2342,8 @@ The shape of the threat is usually pack tactics, surprising
 speed, or one catastrophic special attack.
 
 **The Gnomish Mines is a choice, not a routine stop.** Mines
-residents are not class `g`, which is gremlins. They are `G`,
-gnomes, and `h`, the humanoid class that includes dwarves.
+residents are `G`, gnomes, and `h`, the humanoid class that
+includes dwarves.
 Plain gnomes, gnome lords, dwarves, and gnomish wizards all
 sit in the top fifteen causes of death on the public server,
 because the Mines funnel four or five armed opponents into
