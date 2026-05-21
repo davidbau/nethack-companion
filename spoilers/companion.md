@@ -579,6 +579,9 @@ dungeon's act of goodwill.
 
 ### The Lay of the Land
 <!-- audit
+2026-05-21:
+- branch staircases render with the S_brupstair / S_brdnstair symbols in CLR_YELLOW (defsym.h:124-125)
+- the brupstair / brdnstair glyph is only selected after known_branch_stairs is true: the stair leads to a different dungeon AND the hero has traversed it (stairs.c:180-183, display.c:2347-2354)
 2026-05-18:
 - DoD is 25-29 levels (rn1(5,25) = rn2(5)+25) (dungeon.lua:10-11, hack.h:1535)
 - Gnomish Mines branch DL 2-4 (dungeon.lua:15-19)
@@ -661,6 +664,14 @@ Letters represent monsters: `d` for dogs, `D` for dragons, `Z` for
 zombies. Colors help distinguish within a class: a red `D` is a red
 dragon, while a gray `D` is a gray dragon (see
 [Field Guide to Dungeon Fauna](#field-guide-to-dungeon-fauna)).
+
+**Color cue: branch staircases turn yellow.** In 5.0, once you've
+used a staircase that leads to a different dungeon (the Mines,
+Sokoban, the Quest, and so on), the `<` or `>` displays in yellow
+on every subsequent visit. A yellow `<` or `>` on a level you're
+revisiting is the entrance to (or exit from) a sub-branch — useful
+for spotting your way back into the Mines without consulting the
+dungeon overview.
 
 Item symbols are punctuation marks:
 

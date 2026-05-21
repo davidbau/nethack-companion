@@ -654,6 +654,9 @@ goodwill.</p>
 <section id="the-lay-of-the-land" class="level3">
 <h3>The Lay of the Land</h3>
 <!-- audit
+2026-05-21:
+- branch staircases render with the S_brupstair / S_brdnstair symbols in CLR_YELLOW (defsym.h:124-125)
+- the brupstair / brdnstair glyph is only selected after known_branch_stairs is true: the stair leads to a different dungeon AND the hero has traversed it (stairs.c:180-183, display.c:2347-2354)
 2026-05-18:
 - DoD is 25-29 levels (rn1(5,25) = rn2(5)+25) (dungeon.lua:10-11, hack.h:1535)
 - Gnomish Mines branch DL 2-4 (dungeon.lua:15-19)
@@ -854,6 +857,13 @@ a class: a red <code>D</code> is a red dragon, while a gray
 <code>D</code> is a gray dragon (see <a
 href="#field-guide-to-dungeon-fauna">Field Guide to Dungeon
 Fauna</a>).</p>
+<p><strong>Color cue: branch staircases turn yellow.</strong> In 5.0,
+once you’ve used a staircase that leads to a different dungeon (the
+Mines, Sokoban, the Quest, and so on), the <code>&lt;</code> or
+<code>&gt;</code> displays in yellow on every subsequent visit. A yellow
+<code>&lt;</code> or <code>&gt;</code> on a level you’re revisiting is
+the entrance to (or exit from) a sub-branch — useful for spotting your
+way back into the Mines without consulting the dungeon overview.</p>
 <p>Item symbols are punctuation marks:</p>
 <table>
 <thead>
