@@ -910,7 +910,7 @@ A few map glyphs aren't monsters in the conventional sense, but you'll see them 
 | `I`    | Invisible monster marker | The game remembers the last spot you sensed something you couldn't see. The `I` stays there until you bump it or step on the square; the monster has usually moved. |
 | `~`    | Long worm tail segment   | Part of a long worm's body. Hitting the tail damages the worm and shortens the chain; hitting the head (the `w`) is full melee. |
 | `]`    | Strange object           | **Always a mimic.** No ordinary item ever displays as `]` (compare `[`, armor — `]` is its mirror). See the mimics note below. |
-| ` ` (space) | Ghost               | Ghosts left from bones files. The glyph is a literal space, which paints over the floor underneath: in a room, a ghost shows as a one-square *gap* in the floor where a `.` should be. Walk into the gap to identify it. |
+| `□`<br>(space) | Ghost            | Ghosts left from bones files. The glyph is a literal space, which paints over the floor underneath: in a room, a ghost shows as a one-square *gap* in the floor where a `.` should be. Walk into the gap to identify it. |
 
 ---
 
