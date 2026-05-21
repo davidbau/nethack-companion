@@ -4569,13 +4569,13 @@ cheapest scroll (base 20) is always identify, the one you need most:
 
 | Price | Scrolls                                                                                                           |
 | ----- | ----------------------------------------------------------------------------------------------------------------- |
-|    20 | identify                                                                                                          |
+|    20 | [identify](#scroll-identify)                                                                                                          |
 |    50 | light                                                                                                             |
-|    60 | blank paper, enchant weapon                                                                                       |
-|    80 | enchant armor, remove curse                                                                                       |
-|   100 | confuse monster, destroy armor, fire, food detection, gold detection, magic mapping, scare monster, teleportation |
+|    60 | blank paper, [enchant weapon](#scroll-enchant)                                                                                       |
+|    80 | [enchant armor](#scroll-enchant), [remove curse](#scroll-remove-curse)                                                                                       |
+|   100 | confuse monster, destroy armor, fire, food detection, gold detection, [magic mapping](#scroll-magic-mapping), [scare monster](#scroll-scare-monster), [teleportation](#scroll-teleportation) |
 |   200 | amnesia, create monster, earth, taming                                                                            |
-|   300 | charging, genocide, punishment, stinking cloud                                                                    |
+|   300 | [charging](#scroll-charging), [genocide](#scroll-genocide), punishment, stinking cloud                                                                    |
 
 <div class="price-id-toolbar"></div>
 
@@ -4589,10 +4589,12 @@ genocide (the game's nuclear option) and punishment
 
 #### Key Scrolls
 
+[]{#scroll-identify}
 **Identify.** The bread and butter of dungeon life. Blessed identify
 reveals multiple items at once (with positive luck, always at least
 two). You will never have enough of these.
 
+[]{#scroll-enchant}
 **Enchant weapon / enchant armor.** The path to endgame power.
 Uncursed enchant *weapon* raises by +1. Blessed raises by up to 3,
 less the more the weapon is already enchanted (no more than +1 once
@@ -4605,11 +4607,13 @@ armor exceeds **+3** (or **+5** for elven / Wizard's Cornuthaum),
 each further enchant attempt can destroy the armor; the scroll
 "evaporates" your gear. Blessed scrolls don't bypass this cap.
 
+[]{#scroll-remove-curse}
 **Remove curse.** Frees you from cursed equipment. Uncursed version
 works on worn and wielded items only; blessed version uncurses your
 entire inventory. Every adventurer has a "put on a cursed ring"
 story. This scroll is the happy ending.
 
+[]{#scroll-charging}
 **Charging.** Recharges wands and rechargeable tools. Save these
 for your wand of wishing: one charge means one more wish. Blessed
 charging restores more charges. Each recharge has an `n³/7³` chance
@@ -4619,6 +4623,7 @@ of the wand exploding (where `n` is the count of previous recharges):
 exception: it explodes 100% of the time on the second recharge, so
 recharge it exactly once and no more.
 
+[]{#scroll-genocide}
 **Genocide.** The nuclear option. Uncursed eliminates a single
 species; blessed wipes an entire monster class from the game
 forever. Liches and mind flayers are popular targets. Read one
@@ -4626,6 +4631,7 @@ while confused and you genocide your own role's species
 (Valkyrie, Wizard, etc.), which kills you instantly. Read
 carefully.
 
+[]{#scroll-reverse-genocide}
 **Reverse genocide.** A cursed scroll of genocide doesn't remove
 its target; it spawns 4 to 6 of the named species at your feet.
 The named species must be one that can ordinarily be created.
@@ -4634,15 +4640,18 @@ mind flayers buys an Int-fed feast if you're polymorphed into one;
 naming an easy-to-tame creature gives you instant pet candidates.
 Don't try unique monsters (the gods refuse).
 
+[]{#scroll-magic-mapping}
 **Magic mapping.** Reveals the entire level layout; blessed also
 shows secret doors. Invaluable in Gehennom's maddening mazes,
 where mapping by hand could take a lifetime you don't have.
 
+[]{#scroll-scare-monster}
 **Scare monster.** The trick: don't read it. Drop it on the floor
 and stand on it. It works like a permanent Elbereth, frightening
 most monsters away. The catch: pick it up after it's been dropped
 and it crumbles to dust. So choose your standing spot wisely.
 
+[]{#scroll-teleportation}
 **Teleportation.** Uncursed teleports you randomly on the level.
 Cursed or confused reading sends you to a random dungeon level.
 With teleport control, *you* choose where you land — the game's
