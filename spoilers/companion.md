@@ -896,7 +896,7 @@ AC / attack details on every monster, see the
 | [`;`](#sea-monsters)    | [Sea monsters](#sea-monsters)     | Drowning is an instadeath. Don't fight in water without a plan.                                          |
 | [`&`](#major-demons)    | [Demons](#major-demons)           | Major demons (Orcus, Demogorgon, Asmodeus) are boss-level threats.                                       |
 | [`@`](#humans-and-elves)    | [Humans (hostile)](#humans-and-elves) | Includes the Wizard of Yendor, who is the most persistent nuisance in the game.                          |
-| [`Q`](#quantum-mechanics-q)    | [Quantum mechanics / genetic engineers](#quantum-mechanics-q) | Quantum mechanics teleport their target on a hit; genetic engineers (new in 5.0) polymorph their target. The `Q` class is rare but every one of them is a surprise. See [A note on the genetic engineer](#a-note-on-the-genetic-engineer) for more information. |
+| [`Q`](#quantum-mechanics-q)    | [Quantum mechanics / genetic engineers](#quantum-mechanics-q) | Quantum mechanics teleport their target on a hit; genetic engineers (new in 5.0) polymorph their target. The `Q` class is rare but every one of them is a surprise. |
 
 ```{=latex}
 \pagebreak[4]
@@ -2575,43 +2575,6 @@ the body slot), and resist disenchantment naturally. The choice of which color t
 usually whichever dragon's territory you can reach safely; killing
 a dragon yields scales you can wear immediately or convert to
 scale mail.
-
-#### A note on the genetic engineer
-<!-- audit
-2026-05-18:
-- AD_POLY claw + polyself(POLY_NOFLAGS) (mhitm.c:1135-1136)
-- Antimagic blocks the polymorph (mhitm.c:1128-1129)
-- Unchanging blocks the polymorph (mhitm.c:1130-1131)
-- eating a genetic engineer corpse triggers a polyself fall-through (eat.c:1244-1263)
-- tinned engineer + poly-control combo at eat.c:1253
-- genetic engineer also teleports itself on its own: M1_TPORT (monsters.h:2141)
--->
-
-The **genetic engineer** (`Q`, green) shares its symbol class
-with the quantum mechanic but plays differently: where a quantum
-mechanic *teleports* its target on a hit, a genetic engineer
-*polymorphs* its target. One claw and, unless you have
-*Unchanging* or magic resistance, you become something else: same
-roll as any other uncontrolled polymorph source, with the dramatic
-message "you are subjected to a freakish metamorphosis."
-Engineers also teleport on their own, so range alone won't save
-you forever.
-
-**Defenses:** *Unchanging* (immune), magic resistance (also fully
-blocks the polymorph), kill it before it closes, or accept the
-next several turns of the dungeon playing as something else. The
-engineer has a short cooldown between successful polymorph hits,
-so the encounter is survivable even without unchanging if you can
-finish quickly.
-
-**The corpse is a tool.** Eating a genetic engineer corpse is
-mechanically identical to eating a doppelganger corpse: the
-same uncontrolled polymorph, just with louder flavor text. The
-practical use is the same as the doppelganger's: tin it, and you
-have a portable polymorph source. Pair a tin with *polymorph
-control* and you have a controlled polymorph that survives
-Gehennom's hot ground. The first engineer that kills you is a
-loss; the second one in your bag is a kit.
 
 #### A note on mimics
 
@@ -10905,9 +10868,8 @@ The `Q` class is two creatures, both with random claw effects. The
 **quantum mechanic** teleports you on a hit: the annoyance is the
 lost position more than the damage, but in dangerous neighbourhoods
 a random teleport CAN kill. The **genetic engineer** polymorphs
-you: unless you have *Unchanging* or magic resistance, one claw and
-you become something else. See [A note on the genetic engineer](#a-note-on-the-genetic-engineer)
-for the full treatment.
+you: unless you have *Unchanging* or magic resistance, one claw
+and you become something else.
 
 Both species also teleport themselves at random, and both leave
 poisonous corpses.
