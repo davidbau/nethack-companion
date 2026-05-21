@@ -2683,43 +2683,6 @@ splitting becomes a *feature* — every divided pudding is one
 more glob to eat. The full intrinsic table is in
 [Useful Corpse Effects](#useful-corpse-effects).
 
-#### A note on the Riders
-<!-- audit
-2026-05-19:
-- Pestilence inflicts SICK_NONVOMITABLE via diseasemu (mhitu.c:1039-1040)
-- SICK_NONVOMITABLE is "illness," not the SICK_VOMITABLE food-poisoning path (timeout.c:316-333)
-- unicorn horn CAN clear it: apply.c:4456 only marks Sick unfixable when (Sick & ~TIMEOUT) != 0
-- Pestilence sickness is purely timed, so the horn's trouble list reaches it (apply.c:2312-2313, 2351)
-- Riders: level 30, M1_REGEN, M1_SEE_INVIS, M3_DISPLACES; two 8d8 touches per turn (monsters.h:3145-3173)
-- Death's touch has 3/20 chance of instakill; MR blocks the instakill, not the 8d8 damage (uhitm.c:3858-3872 cases 17/18/19 call touch_of_death only when !Antimagic; otherwise fallthrough to permdmg drain)
-- 5.0 mercy: Pestilence/Famine's second hit on a turn downgrades to stun (mhitu.c:339-342)
--->
-
-On the Astral Plane, three unique `&`-class beings guard the way
-to the high altars: **Death**, **Famine**, and **Pestilence**, the
-Riders. They are level 30, regenerate while you fight, see
-invisible, and shove monsters out of their path. Each hits twice
-per turn with a touch attack dealing 8d8 damage. **Death's** touch has a 3-in-20 chance
-of instant-kill on every hit — magic resistance blocks the
-instakill specifically; the regular damage still goes through.
-**Pestilence** inflicts a deadly illness that kills you over the
-next several turns. **Sick resistance** is the cleanest defense,
-though a unicorn horn can sometimes clear it in time. **Famine** adds 40–79 hunger units to a
-normal hit, which won't drop you below Hungry in one swing but
-will starve you fast across an encounter. Eating any Rider corpse
-is straight-up fatal. A mercy in 5.0: if Pestilence
-or Famine land their first attack on a turn, the second downgrades
-to a stun.
-
-**Defenses:** An **amulet of life saving** is the best insurance
-on Astral, full stop. Magic resistance is what stops Death's
-instakill (but not its 8d8 baseline). Sick resistance handles
-Pestilence. Carry plenty of food (Famine's drain bypasses normal
-nutrition) and a unicorn horn for the stun secondary effects. In
-a crowd, a ring of conflict can keep the Riders tangled fighting
-nearby monsters instead of chasing you, sometimes long enough to
-reach the altar.
-
 #### A note on trolls
 
 The `T` class doesn't stay dead. After you kill a troll, its
@@ -2780,6 +2743,43 @@ ascending heroes credit a wraith binge for the experience levels
 that carried them through Gehennom.
 
 ---
+
+#### A note on the Riders
+<!-- audit
+2026-05-19:
+- Pestilence inflicts SICK_NONVOMITABLE via diseasemu (mhitu.c:1039-1040)
+- SICK_NONVOMITABLE is "illness," not the SICK_VOMITABLE food-poisoning path (timeout.c:316-333)
+- unicorn horn CAN clear it: apply.c:4456 only marks Sick unfixable when (Sick & ~TIMEOUT) != 0
+- Pestilence sickness is purely timed, so the horn's trouble list reaches it (apply.c:2312-2313, 2351)
+- Riders: level 30, M1_REGEN, M1_SEE_INVIS, M3_DISPLACES; two 8d8 touches per turn (monsters.h:3145-3173)
+- Death's touch has 3/20 chance of instakill; MR blocks the instakill, not the 8d8 damage (uhitm.c:3858-3872 cases 17/18/19 call touch_of_death only when !Antimagic; otherwise fallthrough to permdmg drain)
+- 5.0 mercy: Pestilence/Famine's second hit on a turn downgrades to stun (mhitu.c:339-342)
+-->
+
+On the Astral Plane, three unique `&`-class beings guard the way
+to the high altars: **Death**, **Famine**, and **Pestilence**, the
+Riders. They are level 30, regenerate while you fight, see
+invisible, and shove monsters out of their path. Each hits twice
+per turn with a touch attack dealing 8d8 damage. **Death's** touch has a 3-in-20 chance
+of instant-kill on every hit — magic resistance blocks the
+instakill specifically; the regular damage still goes through.
+**Pestilence** inflicts a deadly illness that kills you over the
+next several turns. **Sick resistance** is the cleanest defense,
+though a unicorn horn can sometimes clear it in time. **Famine** adds 40–79 hunger units to a
+normal hit, which won't drop you below Hungry in one swing but
+will starve you fast across an encounter. Eating any Rider corpse
+is straight-up fatal. A mercy in 5.0: if Pestilence
+or Famine land their first attack on a turn, the second downgrades
+to a stun.
+
+**Defenses:** An **amulet of life saving** is the best insurance
+on Astral, full stop. Magic resistance is what stops Death's
+instakill (but not its 8d8 baseline). Sick resistance handles
+Pestilence. Carry plenty of food (Famine's drain bypasses normal
+nutrition) and a unicorn horn for the stun secondary effects. In
+a crowd, a ring of conflict can keep the Riders tangled fighting
+nearby monsters instead of chasing you, sometimes long enough to
+reach the altar.
 
 ### More Ways to Die
 
