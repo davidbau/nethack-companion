@@ -7470,7 +7470,7 @@ there. Don't stop to fight anything you don't have to.
 The entire level is underwater. Without magical breathing (an
 amulet, the Amphibious intrinsic, or a polyform that breathes
 water) you will drown. Drowning calls the standard death path,
-so an **amulet of life saving** will rescue you — but you'll
+so an **amulet of life saving** will rescue you, but you'll
 drown again on your next turn unless something has changed.
 The level is a labyrinth of water-filled chambers with occasional
 air pockets. Sea monsters prowl the corridors.
@@ -7479,7 +7479,7 @@ air pockets. Sea monsters prowl the corridors.
 scroll of genocide, target the entire `;` class (eels, krakens,
 sea monsters, sharks, jellyfish, piranhas), and the level instantly
 empties of anything that can drag you under. This is the right
-moment for that scroll — class `;` is almost nowhere else in the
+moment for that scroll. Class `;` is almost nowhere else in the
 game (a kraken in Medusa's pool, a moccasin from a fountain are
 isolated encounters not worth burning a class-wipe on), and on the
 next plane it's irrelevant. Spend the scroll here. Then find the
@@ -7528,11 +7528,12 @@ reach one altar, make one sacrifice, and end this.
 on Astral, full stop. Magic resistance stops Death's instakill.
 Sick resistance handles Pestilence. Carry plenty of food (Famine
 bypasses normal nutrition pacing) and a unicorn horn for the
-stun side effects. Conflict creates a battling mob that slows
-the Riders, and teleportation wands can clear a path, though
-note that **self-teleport fails on every elemental plane** —
-zapping a wand of teleportation at yourself does nothing. Only
-zapping it at others teleports them.
+stun side effects. A ring of **conflict** keeps the Riders
+tangled fighting Angels and minor demons instead of chasing you,
+sometimes long enough to reach the altar. Teleportation wands
+can clear a path through the crowds; note that **self-teleport
+fails on every elemental plane**, so zapping the wand at
+yourself does nothing. Only zapping it at others teleports them.
 
 When you offer the Amulet on the correct altar: you ascend. The
 game is won. You've done what so few have done. Congratulations.
