@@ -49,7 +49,7 @@ replacement = (
     '\n\n```{=latex}\n'
     '\\begin{center}\n'
     '\\includegraphics[width=\\linewidth]{images/dmap-dod.pdf}\n'
-    '\\par\\nointerlineskip\n'
+    '\\par\\nointerlineskip\\nopagebreak[4]\n'
     '\\includegraphics[width=\\linewidth]{images/dmap-geh.pdf}\n'
     '\\par\\nointerlineskip\n'
     '\\includegraphics[width=\\linewidth]{images/dmap-planes.pdf}\n'

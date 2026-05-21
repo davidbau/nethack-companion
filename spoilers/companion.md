@@ -44,13 +44,13 @@ reference manual that comes with the game. This document is a
 *strategic* guide. It assumes you already know how to play and want
 to know how to *survive*.
 
-But if you've died to one too many floating eyes you hit without
-thinking, or you're tired of starving on dungeon level four thinking
-the gods had abandoned you, read on. We'll do our best to keep
-you alive.
+But if you have perished under the deadly gaze of just one too
+many floating eyes, or if you are tired of the gods abandoning
+you to starve with no food rations on level four, read on. We
+will do our best to keep you alive.
 
 <aside class="download-box">
-<strong>Prefer to read offline?</strong> Print the <a href="companion-latex.pdf">book-format PDF</a> (280pp, 5×8 trim, <a href="cover/cover.pdf">cover</a>).
+<strong>Prefer to read offline?</strong> Print the <a href="companion-latex.pdf">book-format PDF</a> (285pp, 5×8 trim, <a href="cover/cover.pdf">cover</a>).
 </aside>
 
 ---
