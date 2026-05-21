@@ -8269,6 +8269,11 @@ traversal). For a spell-caster this is irreplaceable.</p>
 <section id="spellcasting" class="level3">
 <h3>Spellcasting</h3>
 <!-- audit
+2026-05-21:
+- spellbook of type SPE_NOVEL appears as "paperback" until read (objects.h:1433-1436)
+- reading the first novel in a game grants more_experienced(20, 0) and the ACH_NOVL achievement; u.uevent.read_tribute gates the once-per-game bonus (spell.c:513-535)
+- 20 XP is the XL 1->2 threshold so a fresh character gains an experience level on the first paperback read
+- novel title is rolled at game start per novelidx; titles come from a list of Terry Pratchett Discworld novels stored in the tribute file (do_name.c:297 noveltitle, files.c:3474 read_tribute)
 2026-05-18:
 - force bolt damage is 2d12; school skill does NOT scale damage (zap.c:2720-2724)
 - chain lightning is level 4 NODIR, not level 7, not a bouncing ray (objects.h:1409-1411)
@@ -8405,6 +8410,15 @@ four before the book fades to blank paper. Failed reads don’t add to
 that counter, but each failure has its own 1-in-3 chance to destroy the
 book outright. Carry important spellbooks with you if you plan to rely
 on their spells in the late game.</p>
+<p><strong>Paperbacks.</strong> A spellbook that appears as a
+<em>paperback</em> is a novel rather than a real spellbook. Read it: the
+first novel you pick up in a game grants 20 XP, which is exactly enough
+to lift a fresh character from experience level 1 to 2. (The 20 XP only
+fires once; subsequent paperbacks just display a quote.) The text inside
+is a tribute to <strong>Terry Pratchett</strong> — each paperback rolls
+a Discworld title at game start (“The Truth,” “Guards! Guards!,” “Mort,”
+“Small Gods,” “Going Postal,” dozens more) and reading it opens a
+passage from the corresponding novel.</p>
 </section>
 <section id="key-spells" class="level4">
 <h4>Key Spells</h4>
