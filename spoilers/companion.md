@@ -96,7 +96,7 @@ will do our best to keep you alive.
 
 24. [Spellcasting](#spellcasting) — Magic for the studious adventurer
 25. [Luck and Fortune](#luck-and-fortune) — The hidden numbers that shape your fate
-26. [Enhancing Skills](#enhancing-skills) — Skill ranks, slot budgets, and `#enhance`
+26. [Enhancing Skills](#enhancing-skills) — Mastering specific kinds of combat and magic
 27. [Wishes and Wishing](#wishes-and-wishing) — Getting what you want
 28. [Artifacts](#artifacts) — Legendary equipment and how to obtain it
 
@@ -117,10 +117,9 @@ will do our best to keep you alive.
 38. [Weapons Tables](#weapons-tables)
 39. [Armor Tables](#armor-tables)
 40. [Spell Tables](#spell-tables)
-41. [Skill Caps](#skill-caps)
-42. [Bestiary Tables](#bestiary-tables)
-43. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x, and what to do about it
-44. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
+41. [Bestiary Tables](#bestiary-tables)
+42. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x, and what to do about it
+43. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
 
 
 ## Part One: Before You Set Out
@@ -6214,7 +6213,8 @@ training will help. A Wizard caps at Basic with a mace and is
 restricted from long swords. Restricted skills don't appear on
 `#enhance` and stay Unskilled, with one exception: if your god
 grants you an artifact weapon, you're auto-unrestricted in its
-skill up to Basic. The full role caps live in the [Skill Caps](#skill-caps) appendix.
+skill up to Basic. The full role caps are tabled in
+[Per-Role Skill Caps](#per-role-skill-caps) below.
 
 #### Training a Skill
 
@@ -6283,28 +6283,112 @@ stack, haste self lasts longer, and so on.
 | Escape      | Mobility, evasion, levitation          | Jumping         |
 | Matter      | Manipulation, transmutation, polymorph | Knock           |
 
-Role caps vary sharply across schools:
+#### Per-Role Skill Caps
+<!-- audit
+2026-05-19:
+- All 13 role skill tables sourced from u_init.c (Skill_A through Skill_W); skills not in def_skill are P_UNSKILLED-locked. (u_init.c:257-569 tables Skill_A/B/C/H/K/Mon/P/R/Ran/S/T/V/W; weapon.c:1738-1781 skill_init defaults all to P_ISRESTRICTED then walks the def_skill list)
+- All 494 cells (27 weapons + 4 fighting styles + 7 spell schools × 13 roles) exact-match against u_init.c:257-572.
+- Scimitar omitted: no role has it in 5.0 (merged into saber per skills.h header note).
+- P_MARTIAL_ARTS appears only in Skill_Mon (P_GRAND_MASTER) and Skill_S (P_MASTER); Monks have P_BARE_HANDED_COMBAT restricted (they get martial arts instead).
+- Wizard and Monk are the only roles with all 7 spell schools listed in their def_skill table (Skill_W u_init.c:562-568 has all 7 P_*_SPELL entries; Skill_Mon u_init.c:380-386 has all 7). Other roles list a subset (Priest at u_init.c:408-410 has only 3, Healer at u_init.c:342 has only 1, etc.).
+-->
 
-- **Wizards** have access to all seven schools and cap at Expert
-  in attack, divination, escape, and matter.
-- **Monks** also have access to all seven, but cap at Expert only
-  in healing, Skilled in cleric and escape, Basic elsewhere.
-- **Priests** reach Expert in healing, divination, and cleric.
-- **Healers** cap at Expert in healing and are *restricted*
-  from every other school. Specialization by decree.
-- **Knights** train attack, healing, and cleric to Skilled.
-- **Rangers** push divination to Expert, their one specialty school.
-- **Rogues, Tourists, Samurai** each get two or three schools at
-  Skilled or lower, usually built around divination or escape.
-- **Cavemen** reach Skilled in matter and Basic in attack: two
-  schools only.
-- **Barbarians and Valkyries** cap at Basic in their two schools
-  (attack and escape) and can't reliably cast spells past
-  spell-level 3.
+Three tables of fixed maxima follow: weapons, fighting styles,
+and spell schools. Skills not listed for a role are
+**restricted**: the rank is locked at Unskilled, with one
+exception (a god-given artifact weapon unrestricts you to Basic
+in its skill). Key: **B**=Basic, **S**=Skilled, **E**=Expert,
+**M**=Master, **GM**=Grand Master, **—**=restricted.
 
-Full role caps for every weapon, fighting style, and spell school
-are in the [Skill Caps](#skill-caps) appendix; the full list of
-43 spells is in the [Spell Tables](#spell-tables) appendix.
+A "—" doesn't mean the skill is unusable, just locked at
+Unskilled forever. A Healer can still read a spellbook of force
+bolt and try to cast it. A Wizard can still swing a long sword.
+They'll just always pay the Unskilled penalty from the
+[Skill Ladder](#the-skill-ladder) (−4/−2 for a weapon, −9/−3
+per strike for two-weapon, the Unskilled cast-failure rate for
+a spell school), with no path to improvement. Role abbreviations:
+Arc=Archeologist, Bar=Barbarian, Cav=Caveman, Hea=Healer,
+Kni=Knight, Mon=Monk, Pri=Priest, Rog=Rogue, Ran=Ranger,
+Sam=Samurai, Tou=Tourist, Val=Valkyrie, Wiz=Wizard.
+
+##### Weapon Skill Caps
+
+::: dense-table
+
+| Weapon           | Arc | Bar | Cav | Hea | Kni | Mon | Pri | Rog | Ran | Sam | Tou | Val | Wiz |
+|------------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| dagger           | B   | B   | B   | S   | B   | —   | —   | E   | E   | B   | E   | E   | E   |
+| knife            | B   | —   | S   | E   | B   | —   | —   | E   | S   | S   | S   | —   | S   |
+| axe              | —   | E   | S   | —   | S   | —   | —   | —   | S   | —   | B   | E   | S   |
+| pick-axe         | E   | S   | B   | —   | B   | —   | —   | —   | B   | —   | B   | S   | —   |
+| short sword      | B   | E   | —   | S   | S   | —   | —   | E   | B   | E   | E   | S   | B   |
+| broadsword       | —   | S   | —   | —   | S   | —   | —   | S   | —   | S   | B   | S   | —   |
+| long sword       | —   | S   | —   | —   | E   | —   | —   | S   | —   | E   | B   | E   | —   |
+| two-handed sword | —   | E   | —   | —   | S   | —   | —   | B   | —   | E   | B   | E   | —   |
+| saber            | E   | S   | —   | B   | S   | —   | —   | S   | —   | B   | S   | B   | —   |
+| club             | S   | S   | E   | S   | B   | —   | E   | S   | —   | —   | —   | —   | S   |
+| mace             | —   | S   | E   | B   | S   | —   | E   | S   | —   | —   | B   | —   | B   |
+| morning star     | —   | S   | B   | —   | S   | —   | E   | B   | B   | —   | B   | —   | —   |
+| flail            | —   | B   | S   | —   | B   | —   | E   | B   | S   | S   | B   | —   | —   |
+| hammer           | —   | E   | S   | —   | B   | —   | E   | B   | B   | —   | B   | E   | —   |
+| quarterstaff     | S   | B   | E   | E   | —   | B   | E   | —   | B   | B   | B   | B   | E   |
+| polearms         | —   | —   | S   | B   | S   | —   | S   | B   | S   | S   | B   | S   | S   |
+| spear            | —   | S   | E   | B   | S   | B   | S   | B   | E   | S   | B   | E   | B   |
+| trident          | —   | S   | S   | B   | B   | —   | S   | —   | B   | —   | B   | B   | B   |
+| lance            | —   | —   | —   | —   | E   | —   | B   | —   | —   | S   | B   | S   | —   |
+| bow              | —   | B   | S   | —   | B   | —   | B   | —   | E   | E   | B   | —   | —   |
+| sling            | S   | —   | E   | S   | —   | —   | B   | —   | E   | —   | B   | B   | S   |
+| crossbow         | —   | —   | —   | —   | S   | B   | B   | E   | E   | —   | B   | —   | —   |
+| dart             | B   | —   | —   | E   | —   | —   | B   | E   | E   | —   | E   | —   | E   |
+| shuriken         | —   | —   | —   | S   | —   | B   | B   | S   | S   | E   | B   | —   | B   |
+| boomerang        | E   | —   | E   | —   | —   | —   | B   | —   | E   | —   | B   | —   | —   |
+| whip             | E   | —   | —   | —   | —   | —   | —   | —   | B   | —   | B   | —   | —   |
+| unicorn horn     | S   | —   | B   | E   | —   | —   | S   | —   | —   | —   | S   | —   | —   |
+
+:::
+
+Scimitar was merged into saber in 5.0; both refer to the same skill
+now.
+
+##### Fighting Style Caps
+
+::: dense-table
+
+| Style        | Arc | Bar | Cav | Hea | Kni | Mon | Pri | Rog | Ran | Sam | Tou | Val | Wiz |
+|--------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| bare hands   | E   | M   | M   | B   | E   | —   | B   | E   | B   | —   | S   | E   | B   |
+| two-weapon   | B   | B   | —   | —   | S   | —   | —   | E   | —   | E   | S   | S   | —   |
+| riding       | B   | B   | —   | —   | E   | —   | —   | B   | B   | S   | B   | S   | B   |
+| martial arts | —   | —   | —   | —   | —   | GM  | —   | —   | —   | M   | —   | —   | —   |
+
+:::
+
+Only Monks and Samurai have martial arts at all, and only Monks
+reach Grand Master.
+
+##### Spell School Caps
+
+::: dense-table
+
+| School      | Arc | Bar | Cav | Hea | Kni | Mon | Pri | Rog | Ran | Sam | Tou | Val | Wiz |
+|-------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| Attack      | B   | B   | B   | —   | S   | B   | —   | —   | —   | B   | —   | B   | E   |
+| Healing     | B   | —   | —   | E   | S   | E   | E   | —   | B   | —   | —   | —   | S   |
+| Divination  | E   | —   | —   | —   | —   | B   | E   | S   | E   | B   | B   | —   | E   |
+| Enchantment | —   | —   | —   | —   | —   | B   | —   | —   | —   | —   | B   | —   | S   |
+| Cleric      | —   | —   | —   | —   | S   | S   | E   | —   | —   | S   | —   | —   | S   |
+| Escape      | —   | B   | —   | —   | —   | S   | —   | S   | B   | —   | S   | B   | E   |
+| Matter      | B   | —   | S   | —   | —   | B   | —   | S   | —   | —   | —   | —   | E   |
+
+:::
+
+Healers cap at Expert in healing but are restricted from every
+other school — the only role with this kind of single-school
+specialization. Wizards and Monks are the only roles with access
+to all seven schools, though only Wizards can push four of them
+to Expert; Monks reach Expert only in healing. Barbarians and
+Valkyries cap at Basic in their two available schools (attack and
+escape) and are restricted from the other five.
 
 #### Spending Slots Wisely
 
@@ -9689,115 +9773,6 @@ scales with rank, even when the spell's behavior doesn't otherwise
 change.
 
 ---
-
-### Skill Caps
-<!-- audit
-2026-05-19:
-- All 13 role skill tables sourced from u_init.c (Skill_A through Skill_W); skills not in def_skill are P_UNSKILLED-locked. (u_init.c:257-569 tables Skill_A/B/C/H/K/Mon/P/R/Ran/S/T/V/W; weapon.c:1738-1781 skill_init defaults all to P_ISRESTRICTED then walks the def_skill list)
-- All 494 cells (27 weapons + 4 fighting styles + 7 spell schools × 13 roles) exact-match against u_init.c:257-572.
-- Scimitar omitted: no role has it in 5.0 (merged into saber per skills.h header note).
-- P_MARTIAL_ARTS appears only in Skill_Mon (P_GRAND_MASTER) and Skill_S (P_MASTER); Monks have P_BARE_HANDED_COMBAT restricted (they get martial arts instead).
-- Wizard and Monk are the only roles with all 7 spell schools listed in their def_skill table (Skill_W u_init.c:562-568 has all 7 P_*_SPELL entries; Skill_Mon u_init.c:380-386 has all 7). Other roles list a subset (Priest at u_init.c:408-410 has only 3, Healer at u_init.c:342 has only 1, etc.).
--->
-
-Every role has fixed maximum ranks for each weapon, fighting style,
-and spell school. Skills not listed for a role are **restricted**
-(the rank is locked at Unskilled) — except that a god-given
-artifact weapon unrestricts you to Basic in its skill. Key:
-**B**=Basic, **S**=Skilled, **E**=Expert, **M**=Master,
-**GM**=Grand Master, **—**=restricted.
-
-A "**—**" does *not* mean the skill is unusable — it means the
-rank is locked at Unskilled forever, so you always pay the
-Unskilled penalty from the [Skill Ladder](#the-skill-ladder)
-(−4/−2 for a weapon, −9/−3 per strike for two-weapon, the Unskilled
-cast-failure rate for a spell school) and no rank-gated upgrades
-ever unlock. A Healer
-can still read a spellbook of force bolt and try to cast it; a
-Wizard can still swing a long sword; they'll just always do it
-clumsily, with no path to improvement. Roles are abbreviated: Arc=Archeologist,
-Bar=Barbarian, Cav=Caveman, Hea=Healer, Kni=Knight, Mon=Monk,
-Pri=Priest, Rog=Rogue, Ran=Ranger, Sam=Samurai, Tou=Tourist,
-Val=Valkyrie, Wiz=Wizard.
-
-#### Weapon Skill Caps
-
-::: dense-table
-
-| Weapon           | Arc | Bar | Cav | Hea | Kni | Mon | Pri | Rog | Ran | Sam | Tou | Val | Wiz |
-|------------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| dagger           | B   | B   | B   | S   | B   | —   | —   | E   | E   | B   | E   | E   | E   |
-| knife            | B   | —   | S   | E   | B   | —   | —   | E   | S   | S   | S   | —   | S   |
-| axe              | —   | E   | S   | —   | S   | —   | —   | —   | S   | —   | B   | E   | S   |
-| pick-axe         | E   | S   | B   | —   | B   | —   | —   | —   | B   | —   | B   | S   | —   |
-| short sword      | B   | E   | —   | S   | S   | —   | —   | E   | B   | E   | E   | S   | B   |
-| broadsword       | —   | S   | —   | —   | S   | —   | —   | S   | —   | S   | B   | S   | —   |
-| long sword       | —   | S   | —   | —   | E   | —   | —   | S   | —   | E   | B   | E   | —   |
-| two-handed sword | —   | E   | —   | —   | S   | —   | —   | B   | —   | E   | B   | E   | —   |
-| saber            | E   | S   | —   | B   | S   | —   | —   | S   | —   | B   | S   | B   | —   |
-| club             | S   | S   | E   | S   | B   | —   | E   | S   | —   | —   | —   | —   | S   |
-| mace             | —   | S   | E   | B   | S   | —   | E   | S   | —   | —   | B   | —   | B   |
-| morning star     | —   | S   | B   | —   | S   | —   | E   | B   | B   | —   | B   | —   | —   |
-| flail            | —   | B   | S   | —   | B   | —   | E   | B   | S   | S   | B   | —   | —   |
-| hammer           | —   | E   | S   | —   | B   | —   | E   | B   | B   | —   | B   | E   | —   |
-| quarterstaff     | S   | B   | E   | E   | —   | B   | E   | —   | B   | B   | B   | B   | E   |
-| polearms         | —   | —   | S   | B   | S   | —   | S   | B   | S   | S   | B   | S   | S   |
-| spear            | —   | S   | E   | B   | S   | B   | S   | B   | E   | S   | B   | E   | B   |
-| trident          | —   | S   | S   | B   | B   | —   | S   | —   | B   | —   | B   | B   | B   |
-| lance            | —   | —   | —   | —   | E   | —   | B   | —   | —   | S   | B   | S   | —   |
-| bow              | —   | B   | S   | —   | B   | —   | B   | —   | E   | E   | B   | —   | —   |
-| sling            | S   | —   | E   | S   | —   | —   | B   | —   | E   | —   | B   | B   | S   |
-| crossbow         | —   | —   | —   | —   | S   | B   | B   | E   | E   | —   | B   | —   | —   |
-| dart             | B   | —   | —   | E   | —   | —   | B   | E   | E   | —   | E   | —   | E   |
-| shuriken         | —   | —   | —   | S   | —   | B   | B   | S   | S   | E   | B   | —   | B   |
-| boomerang        | E   | —   | E   | —   | —   | —   | B   | —   | E   | —   | B   | —   | —   |
-| whip             | E   | —   | —   | —   | —   | —   | —   | —   | B   | —   | B   | —   | —   |
-| unicorn horn     | S   | —   | B   | E   | —   | —   | S   | —   | —   | —   | S   | —   | —   |
-
-:::
-
-Scimitar was merged into saber in 5.0; both refer to the same skill
-now.
-
-#### Fighting Style Caps
-
-::: dense-table
-
-| Style        | Arc | Bar | Cav | Hea | Kni | Mon | Pri | Rog | Ran | Sam | Tou | Val | Wiz |
-|--------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| bare hands   | E   | M   | M   | B   | E   | —   | B   | E   | B   | —   | S   | E   | B   |
-| two-weapon   | B   | B   | —   | —   | S   | —   | —   | E   | —   | E   | S   | S   | —   |
-| riding       | B   | B   | —   | —   | E   | —   | —   | B   | B   | S   | B   | S   | B   |
-| martial arts | —   | —   | —   | —   | —   | GM  | —   | —   | —   | M   | —   | —   | —   |
-
-:::
-
-Only Monks and Samurai have martial arts at all, and only Monks
-reach Grand Master.
-
-#### Spell School Caps
-
-::: dense-table
-
-| School      | Arc | Bar | Cav | Hea | Kni | Mon | Pri | Rog | Ran | Sam | Tou | Val | Wiz |
-|-------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| Attack      | B   | B   | B   | —   | S   | B   | —   | —   | —   | B   | —   | B   | E   |
-| Healing     | B   | —   | —   | E   | S   | E   | E   | —   | B   | —   | —   | —   | S   |
-| Divination  | E   | —   | —   | —   | —   | B   | E   | S   | E   | B   | B   | —   | E   |
-| Enchantment | —   | —   | —   | —   | —   | B   | —   | —   | —   | —   | B   | —   | S   |
-| Cleric      | —   | —   | —   | —   | S   | S   | E   | —   | —   | S   | —   | —   | S   |
-| Escape      | —   | B   | —   | —   | —   | S   | —   | S   | B   | —   | S   | B   | E   |
-| Matter      | B   | —   | S   | —   | —   | B   | —   | S   | —   | —   | —   | —   | E   |
-
-:::
-
-Healers cap at Expert in healing but are restricted from every
-other school — the only role with this kind of single-school
-specialization. Wizards and Monks are the only roles with access
-to all seven schools, though only Wizards can push four of them
-to Expert; Monks reach Expert only in healing. Barbarians and
-Valkyries cap at Basic in their two available schools (attack and
-escape) and are restricted from the other five.
 
 ---
 

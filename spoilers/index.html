@@ -137,8 +137,8 @@ Them</a> — Spotting them, undoing them, surviving them</li>
 adventurer</li>
 <li><a href="#luck-and-fortune">Luck and Fortune</a> — The hidden
 numbers that shape your fate</li>
-<li><a href="#enhancing-skills">Enhancing Skills</a> — Skill ranks, slot
-budgets, and <code>#enhance</code></li>
+<li><a href="#enhancing-skills">Enhancing Skills</a> — Mastering
+specific kinds of combat and magic</li>
 <li><a href="#wishes-and-wishing">Wishes and Wishing</a> — Getting what
 you want</li>
 <li><a href="#artifacts">Artifacts</a> — Legendary equipment and how to
@@ -168,7 +168,6 @@ Pricing</a> — Commerce in the dungeon</li>
 <li><a href="#weapons-tables">Weapons Tables</a></li>
 <li><a href="#armor-tables">Armor Tables</a></li>
 <li><a href="#spell-tables">Spell Tables</a></li>
-<li><a href="#skill-caps">Skill Caps</a></li>
 <li><a href="#bestiary-tables">Bestiary Tables</a></li>
 <li><a href="#what-changed-since-last-time">What Changed Since Last
 Time</a> — What’s new in 5.0 vs 3.6.x, and what to do about it</li>
@@ -8389,8 +8388,8 @@ of training will help. A Wizard caps at Basic with a mace and is
 restricted from long swords. Restricted skills don’t appear on
 <code>#enhance</code> and stay Unskilled, with one exception: if your
 god grants you an artifact weapon, you’re auto-unrestricted in its skill
-up to Basic. The full role caps live in the <a href="#skill-caps">Skill
-Caps</a> appendix.</p>
+up to Basic. The full role caps are tabled in <a
+href="#per-role-skill-caps">Per-Role Skill Caps</a> below.</p>
 </section>
 <section id="training-a-skill" class="level4">
 <h4>Training a Skill</h4>
@@ -8560,35 +8559,781 @@ lasts longer, and so on.</p>
 </tr>
 </tbody>
 </table>
-<p>Role caps vary sharply across schools:</p>
-<ul>
-<li><strong>Wizards</strong> have access to all seven schools and cap at
-Expert in attack, divination, escape, and matter.</li>
-<li><strong>Monks</strong> also have access to all seven, but cap at
-Expert only in healing, Skilled in cleric and escape, Basic
-elsewhere.</li>
-<li><strong>Priests</strong> reach Expert in healing, divination, and
-cleric.</li>
-<li><strong>Healers</strong> cap at Expert in healing and are
-<em>restricted</em> from every other school. Specialization by
-decree.</li>
-<li><strong>Knights</strong> train attack, healing, and cleric to
-Skilled.</li>
-<li><strong>Rangers</strong> push divination to Expert, their one
-specialty school.</li>
-<li><strong>Rogues, Tourists, Samurai</strong> each get two or three
-schools at Skilled or lower, usually built around divination or
-escape.</li>
-<li><strong>Cavemen</strong> reach Skilled in matter and Basic in
-attack: two schools only.</li>
-<li><strong>Barbarians and Valkyries</strong> cap at Basic in their two
-schools (attack and escape) and can’t reliably cast spells past
-spell-level 3.</li>
-</ul>
-<p>Full role caps for every weapon, fighting style, and spell school are
-in the <a href="#skill-caps">Skill Caps</a> appendix; the full list of
-43 spells is in the <a href="#spell-tables">Spell Tables</a>
-appendix.</p>
+</section>
+<section id="per-role-skill-caps" class="level4">
+<h4>Per-Role Skill Caps</h4>
+<!-- audit
+2026-05-19:
+- All 13 role skill tables sourced from u_init.c (Skill_A through Skill_W); skills not in def_skill are P_UNSKILLED-locked. (u_init.c:257-569 tables Skill_A/B/C/H/K/Mon/P/R/Ran/S/T/V/W; weapon.c:1738-1781 skill_init defaults all to P_ISRESTRICTED then walks the def_skill list)
+- All 494 cells (27 weapons + 4 fighting styles + 7 spell schools × 13 roles) exact-match against u_init.c:257-572.
+- Scimitar omitted: no role has it in 5.0 (merged into saber per skills.h header note).
+- P_MARTIAL_ARTS appears only in Skill_Mon (P_GRAND_MASTER) and Skill_S (P_MASTER); Monks have P_BARE_HANDED_COMBAT restricted (they get martial arts instead).
+- Wizard and Monk are the only roles with all 7 spell schools listed in their def_skill table (Skill_W u_init.c:562-568 has all 7 P_*_SPELL entries; Skill_Mon u_init.c:380-386 has all 7). Other roles list a subset (Priest at u_init.c:408-410 has only 3, Healer at u_init.c:342 has only 1, etc.).
+-->
+<p>Three tables of fixed maxima follow: weapons, fighting styles, and
+spell schools. Skills not listed for a role are
+<strong>restricted</strong>: the rank is locked at Unskilled, with one
+exception (a god-given artifact weapon unrestricts you to Basic in its
+skill). Key: <strong>B</strong>=Basic, <strong>S</strong>=Skilled,
+<strong>E</strong>=Expert, <strong>M</strong>=Master,
+<strong>GM</strong>=Grand Master, <strong>—</strong>=restricted.</p>
+<p>A “—” doesn’t mean the skill is unusable, just locked at Unskilled
+forever. A Healer can still read a spellbook of force bolt and try to
+cast it. A Wizard can still swing a long sword. They’ll just always pay
+the Unskilled penalty from the <a href="#the-skill-ladder">Skill
+Ladder</a> (−4/−2 for a weapon, −9/−3 per strike for two-weapon, the
+Unskilled cast-failure rate for a spell school), with no path to
+improvement. Role abbreviations: Arc=Archeologist, Bar=Barbarian,
+Cav=Caveman, Hea=Healer, Kni=Knight, Mon=Monk, Pri=Priest, Rog=Rogue,
+Ran=Ranger, Sam=Samurai, Tou=Tourist, Val=Valkyrie, Wiz=Wizard.</p>
+<section id="weapon-skill-caps" class="level5">
+<h5>Weapon Skill Caps</h5>
+<div class="dense-table">
+<table style="width:100%;">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr>
+<th>Weapon</th>
+<th>Arc</th>
+<th>Bar</th>
+<th>Cav</th>
+<th>Hea</th>
+<th>Kni</th>
+<th>Mon</th>
+<th>Pri</th>
+<th>Rog</th>
+<th>Ran</th>
+<th>Sam</th>
+<th>Tou</th>
+<th>Val</th>
+<th>Wiz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dagger</td>
+<td>B</td>
+<td>B</td>
+<td>B</td>
+<td>S</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>E</td>
+<td>B</td>
+<td>E</td>
+<td>E</td>
+<td>E</td>
+</tr>
+<tr>
+<td>knife</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+<td>E</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>S</td>
+<td>S</td>
+<td>S</td>
+<td>—</td>
+<td>S</td>
+</tr>
+<tr>
+<td>axe</td>
+<td>—</td>
+<td>E</td>
+<td>S</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>E</td>
+<td>S</td>
+</tr>
+<tr>
+<td>pick-axe</td>
+<td>E</td>
+<td>S</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+<td>S</td>
+<td>—</td>
+</tr>
+<tr>
+<td>short sword</td>
+<td>B</td>
+<td>E</td>
+<td>—</td>
+<td>S</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>B</td>
+<td>E</td>
+<td>E</td>
+<td>S</td>
+<td>B</td>
+</tr>
+<tr>
+<td>broadsword</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>S</td>
+<td>—</td>
+</tr>
+<tr>
+<td>long sword</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>E</td>
+<td>B</td>
+<td>E</td>
+<td>—</td>
+</tr>
+<tr>
+<td>two-handed sword</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>E</td>
+<td>B</td>
+<td>E</td>
+<td>—</td>
+</tr>
+<tr>
+<td>saber</td>
+<td>E</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>S</td>
+<td>B</td>
+<td>—</td>
+</tr>
+<tr>
+<td>club</td>
+<td>S</td>
+<td>S</td>
+<td>E</td>
+<td>S</td>
+<td>B</td>
+<td>—</td>
+<td>E</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+</tr>
+<tr>
+<td>mace</td>
+<td>—</td>
+<td>S</td>
+<td>E</td>
+<td>B</td>
+<td>S</td>
+<td>—</td>
+<td>E</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+</tr>
+<tr>
+<td>morning star</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>E</td>
+<td>B</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>flail</td>
+<td>—</td>
+<td>B</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>E</td>
+<td>B</td>
+<td>S</td>
+<td>S</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>hammer</td>
+<td>—</td>
+<td>E</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>E</td>
+<td>B</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+<td>E</td>
+<td>—</td>
+</tr>
+<tr>
+<td>quarterstaff</td>
+<td>S</td>
+<td>B</td>
+<td>E</td>
+<td>E</td>
+<td>—</td>
+<td>B</td>
+<td>E</td>
+<td>—</td>
+<td>B</td>
+<td>B</td>
+<td>B</td>
+<td>B</td>
+<td>E</td>
+</tr>
+<tr>
+<td>polearms</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>S</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>S</td>
+<td>S</td>
+<td>B</td>
+<td>S</td>
+<td>S</td>
+</tr>
+<tr>
+<td>spear</td>
+<td>—</td>
+<td>S</td>
+<td>E</td>
+<td>B</td>
+<td>S</td>
+<td>B</td>
+<td>S</td>
+<td>B</td>
+<td>E</td>
+<td>S</td>
+<td>B</td>
+<td>E</td>
+<td>B</td>
+</tr>
+<tr>
+<td>trident</td>
+<td>—</td>
+<td>S</td>
+<td>S</td>
+<td>B</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+<td>B</td>
+<td>B</td>
+</tr>
+<tr>
+<td>lance</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>S</td>
+<td>—</td>
+</tr>
+<tr>
+<td>bow</td>
+<td>—</td>
+<td>B</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>E</td>
+<td>E</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>sling</td>
+<td>S</td>
+<td>—</td>
+<td>E</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>B</td>
+<td>B</td>
+<td>S</td>
+</tr>
+<tr>
+<td>crossbow</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>B</td>
+<td>E</td>
+<td>E</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>dart</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>E</td>
+<td>E</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>E</td>
+</tr>
+<tr>
+<td>shuriken</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>B</td>
+<td>S</td>
+<td>S</td>
+<td>E</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+</tr>
+<tr>
+<td>boomerang</td>
+<td>E</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>whip</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>unicorn horn</td>
+<td>S</td>
+<td>—</td>
+<td>B</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Scimitar was merged into saber in 5.0; both refer to the same skill
+now.</p>
+</section>
+<section id="fighting-style-caps" class="level5">
+<h5>Fighting Style Caps</h5>
+<div class="dense-table">
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr>
+<th>Style</th>
+<th>Arc</th>
+<th>Bar</th>
+<th>Cav</th>
+<th>Hea</th>
+<th>Kni</th>
+<th>Mon</th>
+<th>Pri</th>
+<th>Rog</th>
+<th>Ran</th>
+<th>Sam</th>
+<th>Tou</th>
+<th>Val</th>
+<th>Wiz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bare hands</td>
+<td>E</td>
+<td>M</td>
+<td>M</td>
+<td>B</td>
+<td>E</td>
+<td>—</td>
+<td>B</td>
+<td>E</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+<td>E</td>
+<td>B</td>
+</tr>
+<tr>
+<td>two-weapon</td>
+<td>B</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>E</td>
+<td>S</td>
+<td>S</td>
+<td>—</td>
+</tr>
+<tr>
+<td>riding</td>
+<td>B</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>B</td>
+<td>S</td>
+<td>B</td>
+<td>S</td>
+<td>B</td>
+</tr>
+<tr>
+<td>martial arts</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>GM</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>M</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Only Monks and Samurai have martial arts at all, and only Monks reach
+Grand Master.</p>
+</section>
+<section id="spell-school-caps" class="level5">
+<h5>Spell School Caps</h5>
+<div class="dense-table">
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr>
+<th>School</th>
+<th>Arc</th>
+<th>Bar</th>
+<th>Cav</th>
+<th>Hea</th>
+<th>Kni</th>
+<th>Mon</th>
+<th>Pri</th>
+<th>Rog</th>
+<th>Ran</th>
+<th>Sam</th>
+<th>Tou</th>
+<th>Val</th>
+<th>Wiz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attack</td>
+<td>B</td>
+<td>B</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>B</td>
+<td>E</td>
+</tr>
+<tr>
+<td>Healing</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+<td>S</td>
+<td>E</td>
+<td>E</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+</tr>
+<tr>
+<td>Divination</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>E</td>
+<td>S</td>
+<td>E</td>
+<td>B</td>
+<td>B</td>
+<td>—</td>
+<td>E</td>
+</tr>
+<tr>
+<td>Enchantment</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+</tr>
+<tr>
+<td>Cleric</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>S</td>
+<td>E</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+<td>B</td>
+<td>E</td>
+</tr>
+<tr>
+<td>Matter</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>B</td>
+<td>—</td>
+<td>S</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>E</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Healers cap at Expert in healing but are restricted from every other
+school — the only role with this kind of single-school specialization.
+Wizards and Monks are the only roles with access to all seven schools,
+though only Wizards can push four of them to Expert; Monks reach Expert
+only in healing. Barbarians and Valkyries cap at Basic in their two
+available schools (attack and escape) and are restricted from the other
+five.</p>
+</section>
 </section>
 <section id="spending-slots-wisely" class="level4">
 <h4>Spending Slots Wisely</h4>
@@ -14653,784 +15398,7 @@ demon forms are immune.)</td>
 death, and the unskilled forms of cone of cold and fireball) also scales
 with rank, even when the spell’s behavior doesn’t otherwise change.</p>
 <hr />
-</section>
-<section id="skill-caps" class="level3">
-<h3>Skill Caps</h3>
-<!-- audit
-2026-05-19:
-- All 13 role skill tables sourced from u_init.c (Skill_A through Skill_W); skills not in def_skill are P_UNSKILLED-locked. (u_init.c:257-569 tables Skill_A/B/C/H/K/Mon/P/R/Ran/S/T/V/W; weapon.c:1738-1781 skill_init defaults all to P_ISRESTRICTED then walks the def_skill list)
-- All 494 cells (27 weapons + 4 fighting styles + 7 spell schools × 13 roles) exact-match against u_init.c:257-572.
-- Scimitar omitted: no role has it in 5.0 (merged into saber per skills.h header note).
-- P_MARTIAL_ARTS appears only in Skill_Mon (P_GRAND_MASTER) and Skill_S (P_MASTER); Monks have P_BARE_HANDED_COMBAT restricted (they get martial arts instead).
-- Wizard and Monk are the only roles with all 7 spell schools listed in their def_skill table (Skill_W u_init.c:562-568 has all 7 P_*_SPELL entries; Skill_Mon u_init.c:380-386 has all 7). Other roles list a subset (Priest at u_init.c:408-410 has only 3, Healer at u_init.c:342 has only 1, etc.).
--->
-<p>Every role has fixed maximum ranks for each weapon, fighting style,
-and spell school. Skills not listed for a role are
-<strong>restricted</strong> (the rank is locked at Unskilled) — except
-that a god-given artifact weapon unrestricts you to Basic in its skill.
-Key: <strong>B</strong>=Basic, <strong>S</strong>=Skilled,
-<strong>E</strong>=Expert, <strong>M</strong>=Master,
-<strong>GM</strong>=Grand Master, <strong>—</strong>=restricted.</p>
-<p>A “<strong>—</strong>” does <em>not</em> mean the skill is unusable —
-it means the rank is locked at Unskilled forever, so you always pay the
-Unskilled penalty from the <a href="#the-skill-ladder">Skill Ladder</a>
-(−4/−2 for a weapon, −9/−3 per strike for two-weapon, the Unskilled
-cast-failure rate for a spell school) and no rank-gated upgrades ever
-unlock. A Healer can still read a spellbook of force bolt and try to
-cast it; a Wizard can still swing a long sword; they’ll just always do
-it clumsily, with no path to improvement. Roles are abbreviated:
-Arc=Archeologist, Bar=Barbarian, Cav=Caveman, Hea=Healer, Kni=Knight,
-Mon=Monk, Pri=Priest, Rog=Rogue, Ran=Ranger, Sam=Samurai, Tou=Tourist,
-Val=Valkyrie, Wiz=Wizard.</p>
-<section id="weapon-skill-caps" class="level4">
-<h4>Weapon Skill Caps</h4>
-<div class="dense-table">
-<table style="width:100%;">
-<colgroup>
-<col style="width: 21%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-</colgroup>
-<thead>
-<tr>
-<th>Weapon</th>
-<th>Arc</th>
-<th>Bar</th>
-<th>Cav</th>
-<th>Hea</th>
-<th>Kni</th>
-<th>Mon</th>
-<th>Pri</th>
-<th>Rog</th>
-<th>Ran</th>
-<th>Sam</th>
-<th>Tou</th>
-<th>Val</th>
-<th>Wiz</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>dagger</td>
-<td>B</td>
-<td>B</td>
-<td>B</td>
-<td>S</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-<td>E</td>
-<td>E</td>
-<td>B</td>
-<td>E</td>
-<td>E</td>
-<td>E</td>
-</tr>
-<tr>
-<td>knife</td>
-<td>B</td>
-<td>—</td>
-<td>S</td>
-<td>E</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-<td>E</td>
-<td>S</td>
-<td>S</td>
-<td>S</td>
-<td>—</td>
-<td>S</td>
-</tr>
-<tr>
-<td>axe</td>
-<td>—</td>
-<td>E</td>
-<td>S</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>B</td>
-<td>E</td>
-<td>S</td>
-</tr>
-<tr>
-<td>pick-axe</td>
-<td>E</td>
-<td>S</td>
-<td>B</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>B</td>
-<td>S</td>
-<td>—</td>
-</tr>
-<tr>
-<td>short sword</td>
-<td>B</td>
-<td>E</td>
-<td>—</td>
-<td>S</td>
-<td>S</td>
-<td>—</td>
-<td>—</td>
-<td>E</td>
-<td>B</td>
-<td>E</td>
-<td>E</td>
-<td>S</td>
-<td>B</td>
-</tr>
-<tr>
-<td>broadsword</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>S</td>
-<td>B</td>
-<td>S</td>
-<td>—</td>
-</tr>
-<tr>
-<td>long sword</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>—</td>
-<td>E</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>E</td>
-<td>B</td>
-<td>E</td>
-<td>—</td>
-</tr>
-<tr>
-<td>two-handed sword</td>
-<td>—</td>
-<td>E</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>E</td>
-<td>B</td>
-<td>E</td>
-<td>—</td>
-</tr>
-<tr>
-<td>saber</td>
-<td>E</td>
-<td>S</td>
-<td>—</td>
-<td>B</td>
-<td>S</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>B</td>
-<td>S</td>
-<td>B</td>
-<td>—</td>
-</tr>
-<tr>
-<td>club</td>
-<td>S</td>
-<td>S</td>
-<td>E</td>
-<td>S</td>
-<td>B</td>
-<td>—</td>
-<td>E</td>
-<td>S</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-</tr>
-<tr>
-<td>mace</td>
-<td>—</td>
-<td>S</td>
-<td>E</td>
-<td>B</td>
-<td>S</td>
-<td>—</td>
-<td>E</td>
-<td>S</td>
-<td>—</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>B</td>
-</tr>
-<tr>
-<td>morning star</td>
-<td>—</td>
-<td>S</td>
-<td>B</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>E</td>
-<td>B</td>
-<td>B</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>flail</td>
-<td>—</td>
-<td>B</td>
-<td>S</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>E</td>
-<td>B</td>
-<td>S</td>
-<td>S</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>hammer</td>
-<td>—</td>
-<td>E</td>
-<td>S</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>E</td>
-<td>B</td>
-<td>B</td>
-<td>—</td>
-<td>B</td>
-<td>E</td>
-<td>—</td>
-</tr>
-<tr>
-<td>quarterstaff</td>
-<td>S</td>
-<td>B</td>
-<td>E</td>
-<td>E</td>
-<td>—</td>
-<td>B</td>
-<td>E</td>
-<td>—</td>
-<td>B</td>
-<td>B</td>
-<td>B</td>
-<td>B</td>
-<td>E</td>
-</tr>
-<tr>
-<td>polearms</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-<td>B</td>
-<td>S</td>
-<td>—</td>
-<td>S</td>
-<td>B</td>
-<td>S</td>
-<td>S</td>
-<td>B</td>
-<td>S</td>
-<td>S</td>
-</tr>
-<tr>
-<td>spear</td>
-<td>—</td>
-<td>S</td>
-<td>E</td>
-<td>B</td>
-<td>S</td>
-<td>B</td>
-<td>S</td>
-<td>B</td>
-<td>E</td>
-<td>S</td>
-<td>B</td>
-<td>E</td>
-<td>B</td>
-</tr>
-<tr>
-<td>trident</td>
-<td>—</td>
-<td>S</td>
-<td>S</td>
-<td>B</td>
-<td>B</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>B</td>
-<td>B</td>
-<td>B</td>
-</tr>
-<tr>
-<td>lance</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>E</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-<td>B</td>
-<td>S</td>
-<td>—</td>
-</tr>
-<tr>
-<td>bow</td>
-<td>—</td>
-<td>B</td>
-<td>S</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>E</td>
-<td>E</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>sling</td>
-<td>S</td>
-<td>—</td>
-<td>E</td>
-<td>S</td>
-<td>—</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>E</td>
-<td>—</td>
-<td>B</td>
-<td>B</td>
-<td>S</td>
-</tr>
-<tr>
-<td>crossbow</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-<td>B</td>
-<td>B</td>
-<td>E</td>
-<td>E</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>dart</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-<td>E</td>
-<td>—</td>
-<td>—</td>
-<td>B</td>
-<td>E</td>
-<td>E</td>
-<td>—</td>
-<td>E</td>
-<td>—</td>
-<td>E</td>
-</tr>
-<tr>
-<td>shuriken</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>B</td>
-<td>B</td>
-<td>S</td>
-<td>S</td>
-<td>E</td>
-<td>B</td>
-<td>—</td>
-<td>B</td>
-</tr>
-<tr>
-<td>boomerang</td>
-<td>E</td>
-<td>—</td>
-<td>E</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>E</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>whip</td>
-<td>E</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>unicorn horn</td>
-<td>S</td>
-<td>—</td>
-<td>B</td>
-<td>E</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>—</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Scimitar was merged into saber in 5.0; both refer to the same skill
-now.</p>
-</section>
-<section id="fighting-style-caps" class="level4">
-<h4>Fighting Style Caps</h4>
-<div class="dense-table">
-<table>
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-</colgroup>
-<thead>
-<tr>
-<th>Style</th>
-<th>Arc</th>
-<th>Bar</th>
-<th>Cav</th>
-<th>Hea</th>
-<th>Kni</th>
-<th>Mon</th>
-<th>Pri</th>
-<th>Rog</th>
-<th>Ran</th>
-<th>Sam</th>
-<th>Tou</th>
-<th>Val</th>
-<th>Wiz</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>bare hands</td>
-<td>E</td>
-<td>M</td>
-<td>M</td>
-<td>B</td>
-<td>E</td>
-<td>—</td>
-<td>B</td>
-<td>E</td>
-<td>B</td>
-<td>—</td>
-<td>S</td>
-<td>E</td>
-<td>B</td>
-</tr>
-<tr>
-<td>two-weapon</td>
-<td>B</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>—</td>
-<td>E</td>
-<td>—</td>
-<td>E</td>
-<td>S</td>
-<td>S</td>
-<td>—</td>
-</tr>
-<tr>
-<td>riding</td>
-<td>B</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-<td>E</td>
-<td>—</td>
-<td>—</td>
-<td>B</td>
-<td>B</td>
-<td>S</td>
-<td>B</td>
-<td>S</td>
-<td>B</td>
-</tr>
-<tr>
-<td>martial arts</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>GM</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>M</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Only Monks and Samurai have martial arts at all, and only Monks reach
-Grand Master.</p>
-</section>
-<section id="spell-school-caps" class="level4">
-<h4>Spell School Caps</h4>
-<div class="dense-table">
-<table style="width:100%;">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-</colgroup>
-<thead>
-<tr>
-<th>School</th>
-<th>Arc</th>
-<th>Bar</th>
-<th>Cav</th>
-<th>Hea</th>
-<th>Kni</th>
-<th>Mon</th>
-<th>Pri</th>
-<th>Rog</th>
-<th>Ran</th>
-<th>Sam</th>
-<th>Tou</th>
-<th>Val</th>
-<th>Wiz</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Attack</td>
-<td>B</td>
-<td>B</td>
-<td>B</td>
-<td>—</td>
-<td>S</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>B</td>
-<td>E</td>
-</tr>
-<tr>
-<td>Healing</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-<td>E</td>
-<td>S</td>
-<td>E</td>
-<td>E</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-</tr>
-<tr>
-<td>Divination</td>
-<td>E</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>B</td>
-<td>E</td>
-<td>S</td>
-<td>E</td>
-<td>B</td>
-<td>B</td>
-<td>—</td>
-<td>E</td>
-</tr>
-<tr>
-<td>Enchantment</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>S</td>
-</tr>
-<tr>
-<td>Cleric</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-<td>S</td>
-<td>E</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-</tr>
-<tr>
-<td>Escape</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>S</td>
-<td>B</td>
-<td>—</td>
-<td>S</td>
-<td>B</td>
-<td>E</td>
-</tr>
-<tr>
-<td>Matter</td>
-<td>B</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>—</td>
-<td>B</td>
-<td>—</td>
-<td>S</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>E</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Healers cap at Expert in healing but are restricted from every other
-school — the only role with this kind of single-school specialization.
-Wizards and Monks are the only roles with access to all seven schools,
-though only Wizards can push four of them to Expert; Monks reach Expert
-only in healing. Barbarians and Valkyries cap at Basic in their two
-available schools (attack and escape) and are restricted from the other
-five.</p>
 <hr />
-</section>
 </section>
 <section id="bestiary-tables" class="level3">
 <h3>Bestiary Tables</h3>
