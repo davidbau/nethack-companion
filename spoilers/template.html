@@ -318,6 +318,27 @@ $body$
     doSearch();
   });
 
+  // Title-match bonus: if the query covers the content-bearing words of
+  // the section's title, that section is almost certainly the intended
+  // hit. Without this, a section title-matching the query can lose to a
+  // distant section that mentions the query many times in passing (e.g.
+  // a search for "Quest" lost to the Bestiary section listing every
+  // role's "quest leader" / "quest nemesis").
+  function titleMatchBonus(title, word) {
+    var contentWords = title.toLowerCase().split(/\s+/).map(function(w) {
+      return w.replace(/[^a-z0-9]/g, '');
+    }).filter(function(w) { return w && !STOPWORDS[w]; });
+    if (contentWords.length === 0) return 0;
+    var matches = 0;
+    for (var i = 0; i < contentWords.length; i++) {
+      if (contentWords[i] === word) matches++;
+    }
+    if (matches === 0) return 0;
+    // Scale 0-50 by title coverage. 1.0 coverage (single-word title equals
+    // the query) is worth ~50 plain-text mentions.
+    return 50 * matches / contentWords.length;
+  }
+
   function doSearch() {
     var query = searchInput.value.trim().toLowerCase();
     if (query.length < 2) {
@@ -338,6 +359,7 @@ $body$
       for (var w = 0; w < words.length; w++) {
         if (haystack.indexOf(words[w]) === -1) { allMatch = false; break; }
         score += scoreWordInSection(item, words[w]);
+        score += titleMatchBonus(item.title, words[w]);
       }
       if (allMatch) score += scoreBigramsInSection(item, words);
       if (allMatch && score > 0) matches.push({ item: item, score: score });
