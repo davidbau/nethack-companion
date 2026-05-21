@@ -526,7 +526,7 @@ for reflection), a special cloak (of MR) or amulet (of
 reflection), a polished silver shield (reflection too), or a
 one-of-a-kind artifact bestowed by your
 god, won on the Quest, or granted as a wish. Your adventure will be
-shaped by the protective items you can obtain.
+shaped by the protective items you obtain.
 
 #### Dungeon Hazards (and How to Survive Them)
 
