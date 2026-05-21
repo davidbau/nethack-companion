@@ -896,7 +896,7 @@ AC / attack details on every monster, see the
 | [`;`](#sea-monsters)    | [Sea monsters](#sea-monsters)     | Drowning is an instadeath. Don't fight in water without a plan.                                          |
 | [`&`](#major-demons)    | [Demons](#major-demons)           | Major demons (Orcus, Demogorgon, Asmodeus) are boss-level threats.                                       |
 | [`@`](#humans-and-elves)    | [Humans (hostile)](#humans-and-elves) | Includes the Wizard of Yendor, who is the most persistent nuisance in the game.                          |
-| [`Q`](#quantum-mechanics-q)    | [Quantum mechanics / genetic engineers](#quantum-mechanics-q) | Quantum mechanics teleport their target on a hit; genetic engineers (new in 5.0) polymorph their target. The `Q` class is rare but every one of them is a surprise. See [The Genetic Engineer](#the-genetic-engineer) for more information. |
+| [`Q`](#quantum-mechanics-q)    | [Quantum mechanics / genetic engineers](#quantum-mechanics-q) | Quantum mechanics teleport their target on a hit; genetic engineers (new in 5.0) polymorph their target. The `Q` class is rare but every one of them is a surprise. See [A note on the genetic engineer](#a-note-on-the-genetic-engineer) for more information. |
 
 ```{=latex}
 \pagebreak[4]
@@ -2612,6 +2612,85 @@ usually whichever dragon's territory you can reach safely; killing
 a dragon yields scales you can wear immediately or convert to
 scale mail.
 
+#### A note on the displacer beast
+<!-- audit
+2026-05-18:
+- M3_DISPLACES is barge-through, NOT cloak-style image-offset
+- 50% chance on player melee that the beast swaps places with you (hack.c:1972)
+- swap only fires if destination is survivable for the beast: goodpos(..., GP_ALLOW_U) (teleport.c:134-162)
+- a non-swimmer/non-flier won't swap into water; non-fire-res won't swap into lava
+- corpse grants Displacement intrinsic (eat.c:1265) — cloak-style, not the swap
+- M3_DISPLACES is consulted only at hack.c:1972 and mon.c:2462 (ALLOW_MDISP)
+- no mhitm.c path for hostile-attacks-pet-displacer triggering a swap — pet trick fabricated
+- pet beast is still excellent: 0% MR (reliable taming), AC -10, three attacks 4d4/4d4/2d10 (monsters.h:437-441)
+-->
+
+
+The **displacer beast** (`f`, blue, 5.0 addition) is a tiger-sized
+feline with AC −10 and three attacks per turn (4d4 / 4d4 / 2d10).
+The misleading name: it isn't displaced in the cloak-of-displacement
+sense. Its trick is the opposite, when you melee it, half the time
+it **swaps places with you** instead of taking the hit, which can
+pull you off Elbereth, out of a doorway, or onto a trap. Ranged
+attacks (wand, spell, thrown) bypass the swap entirely. It also
+has **MR 0** — extremely unusual for a level-12 monster, where
+most peers carry 10–70% resistance — so sleep, paralysis, and
+charm/taming all land with no save. Speed 12, so a speed-boosted
+hero outpaces it. (Don't bother trying to swap it into a moat or
+lava — the swap only fires if the destination square is
+survivable for the beast, and water/lava aren't.)
+
+**Tame one and you have one of the best pets in the game.** AC
+−10, three attacks (4d4 claw / 4d4 claw / 2d10 bite), speed 12.
+Charm monster works first try; a scroll of taming with no MR roll
+to fail is essentially guaranteed. A tame displacer beast will
+walk into late-game fights and walk out, eating tough hostiles
+while taking minimal retaliation.
+
+Eating the corpse gives you cloak-style displacement for a few turns:
+monsters target a phantom image one square off from where you
+really are and miss accordingly. Note that this is a different
+mechanic from the beast's own place-swap, despite the shared
+name: you get the same effect as wearing a cloak of displacement,
+not the ability to swap places with attackers.
+
+#### A note on the genetic engineer
+<!-- audit
+2026-05-18:
+- AD_POLY claw + polyself(POLY_NOFLAGS) (mhitm.c:1135-1136)
+- Antimagic blocks the polymorph (mhitm.c:1128-1129)
+- Unchanging blocks the polymorph (mhitm.c:1130-1131)
+- eating a genetic engineer corpse triggers a polyself fall-through (eat.c:1244-1263)
+- tinned engineer + poly-control combo at eat.c:1253
+- genetic engineer also teleports itself on its own: M1_TPORT (monsters.h:2141)
+-->
+
+The **genetic engineer** (`Q`, green) shares its symbol class
+with the quantum mechanic but plays differently: where a quantum
+mechanic *teleports* its target on a hit, a genetic engineer
+*polymorphs* its target. One claw and, unless you have
+*Unchanging* or magic resistance, you become something else: same
+roll as any other uncontrolled polymorph source, with the dramatic
+message "you are subjected to a freakish metamorphosis."
+Engineers also teleport on their own, so range alone won't save
+you forever.
+
+**Defenses:** *Unchanging* (immune), magic resistance (also fully
+blocks the polymorph), kill it before it closes, or accept the
+next several turns of the dungeon playing as something else. The
+engineer has a short cooldown between successful polymorph hits,
+so the encounter is survivable even without unchanging if you can
+finish quickly.
+
+**The corpse is a tool.** Eating a genetic engineer corpse is
+mechanically identical to eating a doppelganger corpse: the
+same uncontrolled polymorph, just with louder flavor text. The
+practical use is the same as the doppelganger's: tin it, and you
+have a portable polymorph source. Pair a tin with *polymorph
+control* and you have a controlled polymorph that survives
+Gehennom's hot ground. The first engineer that kills you is a
+loss; the second one in your bag is a kit.
+
 ---
 
 ### Yet More Ways to Die
@@ -3226,85 +3305,6 @@ before it pulls you under, or avoid water entirely. See
 kills you over a few turns. **Cure:** remove the amulet (requires
 uncursing it first, since cursed amulets can't be removed: use a
 scroll of remove curse, holy water, or prayer).
-
-#### The Displacer Beast
-<!-- audit
-2026-05-18:
-- M3_DISPLACES is barge-through, NOT cloak-style image-offset
-- 50% chance on player melee that the beast swaps places with you (hack.c:1972)
-- swap only fires if destination is survivable for the beast: goodpos(..., GP_ALLOW_U) (teleport.c:134-162)
-- a non-swimmer/non-flier won't swap into water; non-fire-res won't swap into lava
-- corpse grants Displacement intrinsic (eat.c:1265) — cloak-style, not the swap
-- M3_DISPLACES is consulted only at hack.c:1972 and mon.c:2462 (ALLOW_MDISP)
-- no mhitm.c path for hostile-attacks-pet-displacer triggering a swap — pet trick fabricated
-- pet beast is still excellent: 0% MR (reliable taming), AC -10, three attacks 4d4/4d4/2d10 (monsters.h:437-441)
--->
-
-
-The **displacer beast** (`f`, blue, 5.0 addition) is a tiger-sized
-feline with AC −10 and three attacks per turn (4d4 / 4d4 / 2d10).
-The misleading name: it isn't displaced in the cloak-of-displacement
-sense. Its trick is the opposite, when you melee it, half the time
-it **swaps places with you** instead of taking the hit, which can
-pull you off Elbereth, out of a doorway, or onto a trap. Ranged
-attacks (wand, spell, thrown) bypass the swap entirely. It also
-has **MR 0** — extremely unusual for a level-12 monster, where
-most peers carry 10–70% resistance — so sleep, paralysis, and
-charm/taming all land with no save. Speed 12, so a speed-boosted
-hero outpaces it. (Don't bother trying to swap it into a moat or
-lava — the swap only fires if the destination square is
-survivable for the beast, and water/lava aren't.)
-
-**Tame one and you have one of the best pets in the game.** AC
-−10, three attacks (4d4 claw / 4d4 claw / 2d10 bite), speed 12.
-Charm monster works first try; a scroll of taming with no MR roll
-to fail is essentially guaranteed. A tame displacer beast will
-walk into late-game fights and walk out, eating tough hostiles
-while taking minimal retaliation.
-
-Eating the corpse gives you cloak-style displacement for a few turns:
-monsters target a phantom image one square off from where you
-really are and miss accordingly. Note that this is a different
-mechanic from the beast's own place-swap, despite the shared
-name: you get the same effect as wearing a cloak of displacement,
-not the ability to swap places with attackers.
-
-#### The Genetic Engineer
-<!-- audit
-2026-05-18:
-- AD_POLY claw + polyself(POLY_NOFLAGS) (mhitm.c:1135-1136)
-- Antimagic blocks the polymorph (mhitm.c:1128-1129)
-- Unchanging blocks the polymorph (mhitm.c:1130-1131)
-- eating a genetic engineer corpse triggers a polyself fall-through (eat.c:1244-1263)
-- tinned engineer + poly-control combo at eat.c:1253
-- genetic engineer also teleports itself on its own: M1_TPORT (monsters.h:2141)
--->
-
-The **genetic engineer** (`Q`, green) shares its symbol class
-with the quantum mechanic but plays differently: where a quantum
-mechanic *teleports* its target on a hit, a genetic engineer
-*polymorphs* its target. One claw and, unless you have
-*Unchanging* or magic resistance, you become something else: same
-roll as any other uncontrolled polymorph source, with the dramatic
-message "you are subjected to a freakish metamorphosis."
-Engineers also teleport on their own, so range alone won't save
-you forever.
-
-**Defenses:** *Unchanging* (immune), magic resistance (also fully
-blocks the polymorph), kill it before it closes, or accept the
-next several turns of the dungeon playing as something else. The
-engineer has a short cooldown between successful polymorph hits,
-so the encounter is survivable even without unchanging if you can
-finish quickly.
-
-**The corpse is a tool.** Eating a genetic engineer corpse is
-mechanically identical to eating a doppelganger corpse: the
-same uncontrolled polymorph, just with louder flavor text. The
-practical use is the same as the doppelganger's: tin it, and you
-have a portable polymorph source. Pair a tin with *polymorph
-control* and you have a controlled polymorph that survives
-Gehennom's hot ground. The first engineer that kills you is a
-loss; the second one in your bag is a kit.
 
 ---
 
@@ -10865,7 +10865,7 @@ The `Q` class is two creatures, both with random claw effects. The
 lost position more than the damage, but in dangerous neighbourhoods
 a random teleport CAN kill. The **genetic engineer** polymorphs
 you: unless you have *Unchanging* or magic resistance, one claw and
-you become something else. See [The Genetic Engineer](#the-genetic-engineer)
+you become something else. See [A note on the genetic engineer](#a-note-on-the-genetic-engineer)
 for the full treatment.
 
 Both species also teleport themselves at random, and both leave
