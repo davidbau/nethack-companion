@@ -7493,7 +7493,7 @@ in the great temple: Lawful, Neutral, and Chaotic. You must
 sacrifice the Amulet of Yendor on the altar matching your
 alignment to ascend. **Choose wrong and the game ends on the
 spot**: the opposing god gains dominion over your god, and you've
-handed victory to the other side. There is no retrieval; pick
+handed victory to the other side. There is no retrying. Pick
 the right altar the first time. Farlook (`;`) shows an altar's
 alignment only when you are *adjacent* to it. From across the
 room you only see "an aligned high altar," so plan to walk
