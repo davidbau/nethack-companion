@@ -4635,8 +4635,8 @@ last.
 </figcaption>
 </figure>
 </div>
-<section id="blessed-uncursed-cursed" class="level4">
-<h4>Blessed, Uncursed, Cursed</h4>
+<section id="blessed-uncursed-cursed-buc" class="level4">
+<h4>Blessed, Uncursed, Cursed (BUC)</h4>
 <!-- audit
 2026-05-18:
 - altar flash on drop: amber blessed, black cursed, no flash uncursed (do.c:379-388)
@@ -5705,6 +5705,10 @@ are the precious last resort.</p>
 <section id="provisions-and-dining" class="level3">
 <h3>Provisions and Dining</h3>
 <!-- audit
+2026-05-21:
+- vegan classes: S_BLOB, S_JELLY, S_FUNGUS, S_VORTEX, S_LIGHT, S_ELEMENTAL (except stalker), S_GOLEM (except flesh/leather), and noncorporeal (S_GHOST) (mondata.h:232-238)
+- vegetarian = vegan + S_PUDDING except black pudding (mondata.h:239-241); brown pudding and gray ooze are vegetarian, black pudding is not
+- corpse_intrinsic picks one mconveys property uniformly at random per eat, then should_givit rolls mlevel/15 (or mlevel-vs-rn2(15)); killer bee/scorpion poison-res has a 25% boosted-chance branch (eat.c:961-989, 1351-1373)
 2026-05-20:
 - tin opening is an occupation; opentin is called per turn, gives up after svc.context.tin.usedtime >= 50 turns (eat.c:1710-1719, 1794)
 - tin open time by tool: blessed tin opener wielded = 0; uncursed tin opener rn2(2); cursed rn2(3); dagger family = 3; axe/pick-axe = 6; bare hands = rn1(1 + 500/(Dex+Str), 10) which is ~11-26 at avg stats, up to the 50-turn cap (eat.c:1740-1786)
@@ -5854,6 +5858,12 @@ exempt.</p>
 </section>
 <section id="useful-corpse-effects" class="level4">
 <h4>Useful Corpse Effects</h4>
+<p>Eating for intrinsics is the highest-leverage habit in the early and
+mid game. Each resistance is a <em>chance</em> per eat, not a guarantee,
+so eat <em>every</em> one of these you find, not just the first. Two
+tables follow: meat corpses and vegetarian-safe corpses, each ordered
+roughly by when you’ll first meet the creature on a typical descent.</p>
+<p><strong>Meat corpses:</strong></p>
 <table>
 <colgroup>
 <col style="width: 24%" />
@@ -5867,84 +5877,56 @@ exempt.</p>
 </thead>
 <tbody>
 <tr>
-<td>Floating eye</td>
-<td>Telepathy (but paralyzes you too)</td>
+<td>Newt</td>
+<td>May restore 1 to 3 mana</td>
 </tr>
 <tr>
 <td>Killer bee</td>
 <td>Poison resistance</td>
 </tr>
 <tr>
-<td>Fire giant</td>
-<td>Fire resistance + Strength</td>
+<td>Lizard</td>
+<td>Cures stoning in progress</td>
+</tr>
+<tr>
+<td>Floating eye</td>
+<td>Telepathy (but paralyzes you too)</td>
 </tr>
 <tr>
 <td>Fire ant</td>
 <td>Fire resistance</td>
 </tr>
 <tr>
-<td>Red mold</td>
-<td>Fire resistance + poison resistance</td>
-</tr>
-<tr>
-<td>Winter wolf</td>
-<td>Cold resistance</td>
-</tr>
-<tr>
-<td>Blue jelly</td>
-<td>Cold and poison resistance</td>
-</tr>
-<tr>
-<td>Brown mold</td>
-<td>Cold resistance + poison resistance</td>
+<td>Wraith</td>
+<td>Gain an experience level</td>
 </tr>
 <tr>
 <td>Yeti</td>
 <td>Cold resistance</td>
 </tr>
 <tr>
-<td>Quivering blob</td>
-<td>Poison resistance</td>
+<td>Tengu</td>
+<td>Teleportitis / teleport control</td>
 </tr>
 <tr>
-<td>Acid blob</td>
-<td>Acid and stoning resistance</td>
-</tr>
-<tr>
-<td>Gelatinous cube</td>
-<td>Fire, cold, shock, and sleep resistance</td>
-</tr>
-<tr>
-<td>Brown or black pudding</td>
-<td>Cold, shock, and poison resistance</td>
-</tr>
-<tr>
-<td>Gray ooze</td>
-<td>Fire, cold, and poison resistance</td>
-</tr>
-<tr>
-<td>Wraith</td>
-<td>Gain an experience level</td>
-</tr>
-<tr>
-<td>Giant</td>
+<td>Giant (any)</td>
 <td>Increase strength</td>
 </tr>
 <tr>
-<td>Lizard</td>
-<td>Cures stoning in progress</td>
-</tr>
-<tr>
-<td>Newt</td>
-<td>May restore 1 to 3 mana</td>
+<td>Winter wolf</td>
+<td>Cold resistance</td>
 </tr>
 <tr>
 <td>Stalker</td>
 <td>Invisibility (and see invisible)</td>
 </tr>
 <tr>
-<td>Tengu</td>
-<td>Teleportitis / teleport control</td>
+<td>Black pudding (glob)</td>
+<td>Cold, shock, and poison resistance</td>
+</tr>
+<tr>
+<td>Fire giant</td>
+<td>Fire resistance + Strength</td>
 </tr>
 <tr>
 <td>Disenchanter</td>
@@ -5952,11 +5934,61 @@ exempt.</p>
 </tr>
 </tbody>
 </table>
-<p>Eating for intrinsics is the highest-leverage habit in the early and
-mid game. Poison resistance should be a top priority, and a gelatinous
-cube is the highest-density source of ascension-kit intrinsics in the
-game. Each resistance is a <em>chance</em> per eat (not a guarantee), so
-eat <em>every</em> one of these you find, not just the first.</p>
+<p><strong>Vegetarian-safe corpses</strong> (those marked
+<strong>†</strong> are also vegan):</p>
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr>
+<th>Corpse</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acid blob †</td>
+<td>Acid and stoning resistance</td>
+</tr>
+<tr>
+<td>Yellow mold †</td>
+<td>Poison resistance</td>
+</tr>
+<tr>
+<td>Brown mold †</td>
+<td>Cold and poison resistance</td>
+</tr>
+<tr>
+<td>Red mold †</td>
+<td>Fire and poison resistance</td>
+</tr>
+<tr>
+<td>Quivering blob †</td>
+<td>Poison resistance</td>
+</tr>
+<tr>
+<td>Gray ooze (glob)</td>
+<td>Fire, cold, and poison resistance</td>
+</tr>
+<tr>
+<td>Blue jelly †</td>
+<td>Cold and poison resistance</td>
+</tr>
+<tr>
+<td>Brown pudding (glob)</td>
+<td>Cold, shock, and poison resistance</td>
+</tr>
+<tr>
+<td>Gelatinous cube †</td>
+<td>Fire, cold, shock, and sleep resistance</td>
+</tr>
+</tbody>
+</table>
+<p>A gelatinous cube is the highest-density source of ascension-kit
+intrinsics in the game; poison resistance off any of the early corpses
+is the most important single intrinsic to bank.</p>
 <p><strong>Sprig of wolfsbane.</strong> Not a corpse but the same shelf.
 Eating one cures lycanthropy outright. If you’re heading anywhere
 were-things roam (the Mines, the Quest for some roles), carry a sprig or
@@ -22340,14 +22372,14 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
 
   // --- Humorous index (shown when search is empty) ---
   var indexEntries = [
-    ['Acid blob, rubber-banded', 'your-first-descent'],
     ['Amorous demon, expensive evening with', 'seduction'],
+    ['BUC, avoiding curses by checking', 'blessed-uncursed-cursed-buc'],
     ['Amulet of Yendor, retrieving', 'the-ascension-run'],
     ['Ascension, how to not die during', 'the-ascension-run'],
     ['Boulders, pushing (see: Sokoban)', 'sokoban-solutions'],
     ['Castle, storming the', 'the-castle'],
     ['Cockatrice corpse, wielding', 'petrification-stoning'],
-    ['Death, causes of (see: everything)', 'dangerous-encounters'],
+    ['Death, causes of (see: everything)', 'ways-to-die'],
     ['Disenchanter, mourning your former +5', 'enchantment-drain'],
     ['Displacer beast, taming', 'the-displacer-beast'],
     ['Drowning, preventable', 'drowning'],
@@ -22358,7 +22390,7 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
     ['Gods, angering', 'altars-and-alignment'],
     ['Identify, never enough scrolls of', 'the-scroll-rack'],
     ['Luck, secretly ruining yours', 'gaining-and-losing-luck'],
-    ['Lurker above, looking up too late', 'engulfment-from-hiding'],
+    ['Lurker above, looking up too late', 'engulfment'],
     ['Mines, gnomish', 'the-gnomish-mines'],
     ['Pet, accidentally killing your', 'keeping-your-pet-alive'],
     ['Prayer, when to', 'prayer'],

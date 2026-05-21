@@ -3686,7 +3686,7 @@ single most powerful identification tool you have.
 
 <div><figure style="margin: 1.5em 0; text-align: center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 736" role="img" aria-label="The identification flowchart" style="max-width: 760px; width: 100%; height: auto; font-family: 'EB Garamond', 'Garamond', 'Georgia', serif;"><title>The Identification Flowchart</title><defs><marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker><style>.start{fill:#E8F4FD;stroke:#3B6FA0;stroke-width:2}.decision{fill:#FFF4E6;stroke:#B5651D;stroke-width:2}.action{fill:#F0F9E8;stroke:#5B8E3A;stroke-width:2}.final{fill:#FCE8E6;stroke:#A14A3F;stroke-width:2}.label{font-size:18px;fill:#1f2933;text-anchor:middle}.startlbl{font-size:19px;font-weight:600;fill:#1f2933;text-anchor:middle}.branch{font-size:16px;font-style:italic;fill:#5a5a5a}.edge{fill:none;stroke:#5a5a5a;stroke-width:1.5}</style></defs><rect class="start" x="40" y="20" width="320" height="50" rx="25" ry="25"/><text class="startlbl" x="200" y="51">Found an item</text><path class="edge" d="M 200 70 L 200 100" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="100" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="133">Can you reach an altar?</text><path class="edge" d="M 360 128 L 430 128" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="121" text-anchor="middle">yes</text><rect class="action" x="430" y="100" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="133">Drop it. Check BUC.</text><text class="branch" x="210" y="172">no</text><path class="edge" d="M 200 156 L 200 190" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="190" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="223">Is your pet nearby?</text><path class="edge" d="M 360 218 L 430 218" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="211" text-anchor="middle">yes</text><rect class="action" x="430" y="184" width="290" height="62" rx="8" ry="8"/><text class="label" x="575" y="210">Drop it. Pet avoids it?</text><text class="label" x="575" y="232" style="font-size: 16px;"><tspan style="font-style: italic; fill:#5a5a5a;">yes</tspan>: it's cursed; <tspan style="font-style: italic; fill:#5a5a5a;">no</tspan>: it's safe</text><text class="branch" x="210" y="262">no</text><path class="edge" d="M 200 246 L 200 290" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="290" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="323">Can you reach a shop?</text><path class="edge" d="M 360 318 L 430 318" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="311" text-anchor="middle">yes</text><rect class="action" x="430" y="290" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="323">Check price.</text><text class="branch" x="210" y="362">no</text><path class="edge" d="M 200 346 L 200 380" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="380" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="413">Is it a wand?</text><path class="edge" d="M 360 408 L 430 408" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="401" text-anchor="middle">yes</text><rect class="action" x="430" y="380" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="413">Engrave-test it.</text><text class="branch" x="210" y="452">no</text><path class="edge" d="M 200 436 L 200 470" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="470" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="503">Spare ring or potion with a sink?</text><path class="edge" d="M 360 498 L 430 498" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="491" text-anchor="middle">yes</text><rect class="action" x="430" y="470" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="503">Drop ring or dip potion.</text><text class="branch" x="210" y="542">no</text><path class="edge" d="M 200 526 L 200 560" marker-end="url(#arrowhead)"/><rect class="decision" x="40" y="560" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="593">Is it safe to use-test?</text><path class="edge" d="M 360 588 L 430 588" marker-end="url(#arrowhead)"/><text class="branch" x="395" y="581" text-anchor="middle">yes</text><rect class="action" x="430" y="560" width="290" height="56" rx="8" ry="8"/><text class="label" x="575" y="593">Try it carefully.</text><text class="branch" x="210" y="632">no</text><path class="edge" d="M 200 616 L 200 660" marker-end="url(#arrowhead)"/><rect class="final" x="40" y="660" width="320" height="56" rx="10" ry="10"/><text class="label" x="200" y="693">Read a scroll of identify.</text></svg><figcaption style="font-style: italic; color: #5a5a5a; font-size: 0.9em; margin-top: 0.5em;">The identification flowchart: cheapest method first, scroll of identify last.</figcaption></figure></div>
 
-#### Blessed, Uncursed, Cursed
+#### Blessed, Uncursed, Cursed (BUC)
 <!-- audit
 2026-05-18:
 - altar flash on drop: amber blessed, black cursed, no flash uncursed (do.c:379-388)
@@ -4358,6 +4358,10 @@ identify are the precious last resort.
 
 ### Provisions and Dining
 <!-- audit
+2026-05-21:
+- vegan classes: S_BLOB, S_JELLY, S_FUNGUS, S_VORTEX, S_LIGHT, S_ELEMENTAL (except stalker), S_GOLEM (except flesh/leather), and noncorporeal (S_GHOST) (mondata.h:232-238)
+- vegetarian = vegan + S_PUDDING except black pudding (mondata.h:239-241); brown pudding and gray ooze are vegetarian, black pudding is not
+- corpse_intrinsic picks one mconveys property uniformly at random per eat, then should_givit rolls mlevel/15 (or mlevel-vs-rn2(15)); killer bee/scorpion poison-res has a 25% boosted-chance branch (eat.c:961-989, 1351-1373)
 2026-05-20:
 - tin opening is an occupation; opentin is called per turn, gives up after svc.context.tin.usedtime >= 50 turns (eat.c:1710-1719, 1794)
 - tin open time by tool: blessed tin opener wielded = 0; uncursed tin opener rn2(2); cursed rn2(3); dagger family = 3; axe/pick-axe = 6; bare hands = rn1(1 + 500/(Dex+Str), 10) which is ~11-26 at avg stats, up to the 50-turn cap (eat.c:1740-1786)
@@ -4475,36 +4479,49 @@ gives the aggravate monster intrinsic. Cavemen and orcs are exempt.
 
 #### Useful Corpse Effects
 
+Eating for intrinsics is the highest-leverage habit in the early
+and mid game. Each resistance is a *chance* per eat, not a
+guarantee, so eat *every* one of these you find, not just the
+first. Two tables follow: meat corpses and vegetarian-safe
+corpses, each ordered roughly by when you'll first meet the
+creature on a typical descent.
+
+**Meat corpses:**
+
 | Corpse                  | Effect                                                                 |
 | ----------------------- | ---------------------------------------------------------------------- |
-| Floating eye            | Telepathy (but paralyzes you too)                                      |
-| Killer bee              | Poison resistance                                                      |
-| Fire giant              | Fire resistance + Strength                                             |
-| Fire ant                | Fire resistance                                                        |
-| Red mold                | Fire resistance + poison resistance                                    |
-| Winter wolf             | Cold resistance                                                        |
-| Blue jelly              | Cold and poison resistance                                             |
-| Brown mold              | Cold resistance + poison resistance                                    |
-| Yeti                    | Cold resistance                                                        |
-| Quivering blob          | Poison resistance                                                      |
-| Acid blob               | Acid and stoning resistance                                            |
-| Gelatinous cube         | Fire, cold, shock, and sleep resistance                                |
-| Brown or black pudding  | Cold, shock, and poison resistance                                     |
-| Gray ooze               | Fire, cold, and poison resistance                                      |
-| Wraith                  | Gain an experience level                                               |
-| Giant                   | Increase strength                                                      |
-| Lizard                  | Cures stoning in progress                                              |
 | Newt                    | May restore 1 to 3 mana                                                |
-| Stalker                 | Invisibility (and see invisible)                                       |
+| Killer bee              | Poison resistance                                                      |
+| Lizard                  | Cures stoning in progress                                              |
+| Floating eye            | Telepathy (but paralyzes you too)                                      |
+| Fire ant                | Fire resistance                                                        |
+| Wraith                  | Gain an experience level                                               |
+| Yeti                    | Cold resistance                                                        |
 | Tengu                   | Teleportitis / teleport control                                        |
+| Giant (any)             | Increase strength                                                      |
+| Winter wolf             | Cold resistance                                                        |
+| Stalker                 | Invisibility (and see invisible)                                       |
+| Black pudding (glob)    | Cold, shock, and poison resistance                                     |
+| Fire giant              | Fire resistance + Strength                                             |
 | Disenchanter            | **STRIPS** a random intrinsic. Never eat.                              |
 
-Eating for intrinsics is the highest-leverage habit in the early
-and mid game. Poison resistance should be a top
-priority, and a gelatinous cube is the highest-density source of
-ascension-kit intrinsics in the game. Each resistance is a *chance*
-per eat (not a guarantee), so eat *every* one of these you find,
-not just the first.
+**Vegetarian-safe corpses** (those marked **†** are also vegan):
+
+| Corpse                  | Effect                                                                 |
+| ----------------------- | ---------------------------------------------------------------------- |
+| Acid blob †             | Acid and stoning resistance                                            |
+| Yellow mold †           | Poison resistance                                                      |
+| Brown mold †            | Cold and poison resistance                                             |
+| Red mold †              | Fire and poison resistance                                             |
+| Quivering blob †        | Poison resistance                                                      |
+| Gray ooze (glob)        | Fire, cold, and poison resistance                                      |
+| Blue jelly †            | Cold and poison resistance                                             |
+| Brown pudding (glob)    | Cold, shock, and poison resistance                                     |
+| Gelatinous cube †       | Fire, cold, shock, and sleep resistance                                |
+
+A gelatinous cube is the highest-density source of ascension-kit
+intrinsics in the game; poison resistance off any of the early
+corpses is the most important single intrinsic to bank.
 
 **Sprig of wolfsbane.** Not a corpse but the same shelf. Eating one
 cures lycanthropy outright. If you're heading anywhere were-things
