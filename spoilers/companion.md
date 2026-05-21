@@ -126,6 +126,10 @@ you alive.
 
 ### Choosing Your Expedition
 <!-- audit
+2026-05-21:
+- Archeologist starts with touchstone (u_init.c:50); touchstone identifies gems by rubbing per apply.c:2678-2707 (Ken Arnold)
+- Healer starts with wand of sleep, 4 potions of healing, 4 potions of extra healing, and 3 blessed spellbooks (healing, extra healing, stone-to-flesh) (u_init.c:81-90); the spellbooks are always blessed so reading them always succeeds
+- Tourist starts with 4 scrolls of magic mapping, 2 potions of extra healing, 21-40 +2 darts, Hawaiian shirt, expensive camera, credit card, and 10 random food items (u_init.c:150-159)
 2026-05-18:
 - Knight starts with +1 long sword and +1 lance (u_init.c:91-92)
 - Cave Dweller gains Fast at XL 7 (attrib.c:37)
@@ -166,13 +170,16 @@ different starting equipment, different intrinsic abilities gained at
 various experience levels, and a different quest to complete in the
 mid-game.
 
-**Archeologist.** You start with a bullwhip, a pickaxe, and a tinning
-kit. The pickaxe is the kit's quiet workhorse: it lets you dig through
-walls and create your own escape routes from the very first level. The tinning kit lets you preserve corpses for
-later. Archeologists are capable and flexible, though a bit fragile in
-early combat. You begin knowing what all gems are, which is a nice
-parlor trick and occasionally useful for unicorn negotiation.
-*Alignment: Lawful or Neutral.*
+**Archeologist.** You start with a bullwhip, a pickaxe, a tinning
+kit, and a touchstone. The pickaxe is the kit's quiet
+workhorse: it lets you dig through walls and create your own
+escape routes from the very first level. The tinning kit lets you
+preserve corpses for later, and the touchstone identifies real vs
+worthless glass gems when you rub a gem on it. Archeologists are
+capable and flexible, though a bit fragile in early combat. You
+begin knowing what all gems are, which is a nice parlor trick and
+occasionally useful for unicorn negotiation. *Alignment: Lawful
+or Neutral.*
 
 **Barbarian.** You start strong. Literally. A two-handed sword and
 good starting strength mean you can hack through early monsters with
@@ -188,13 +195,16 @@ mid-game and your hit dice are generous. The Cave Dweller's
 simplicity is a virtue: fewer tools means fewer things to manage.
 *Alignment: Lawful or Neutral.*
 
-**Healer.** You begin with a stethoscope, healing potions, and poison
-resistance. The stethoscope is remarkable: it lets you check a
-monster's hit points and your own internal state. Healers are fragile
-fighters, but their medical knowledge keeps them alive through
-situations that would kill other roles. You're also **immune to
-sickness**, so unknown potions of sickness become a free quaff-test
-(and you can convert them to fruit juice by dipping a unicorn horn). *Alignment: Neutral.*
+**Healer.** You begin with a stethoscope, four potions of healing
+and four of extra healing, a **wand of sleep**, three **blessed
+spellbooks** (healing, extra healing, stone-to-flesh, all
+guaranteed to read), and poison resistance. The stethoscope lets
+you check a monster's hit points and your own internal state; the
+wand of sleep makes Healers a stronger early-game combatant than
+the medical kit suggests. You're also **immune to sickness**, so
+unknown potions of sickness become a free quaff-test (dip a
+unicorn horn into them to convert to fruit juice).
+*Alignment: Neutral.*
 
 **Knight.** You start mounted on a saddled pony, with a +1 long sword
 and a +1 lance among your gear. The pony is a decent combatant early
@@ -250,12 +260,14 @@ bow with arrows. Samurai get speed early and have a strong martial
 kit overall. The katana's damage output carries you through the
 early game with ease. *Alignment: Lawful.*
 
-**Tourist.** You start with a Hawaiian shirt, a credit card, a
-camera, and a truly absurd number of darts. Tourists have weak combat
-and a fragile early game: this is the hardest of the standard roles.
-The darts do train ranged skills fast, though, and the camera can
-blind monsters in a pinch. A good role for players who have ascended
-before and want a real challenge. *Alignment: Neutral.*
+**Tourist.** You start with a Hawaiian shirt, a credit card, an
+expensive camera, a truly absurd number of +2 darts, two potions
+of extra healing, and **four scrolls of magic mapping**. Tourists
+have weak combat and a fragile early game (this is the hardest of
+the standard roles), but the mapping scrolls take the edge off
+exploration and the darts train ranged skills fast. The camera
+blinds monsters in a pinch. A good role for players who have
+ascended before and want a real challenge. *Alignment: Neutral.*
 
 **Valkyrie.** The standard recommendation for a first serious
 attempt. You start with a spear, a small shield, and cold
