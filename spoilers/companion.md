@@ -523,8 +523,8 @@ black pudding kicked from a sink.
 Magic resistance and reflection come from special gear: scale
 mail made from the hide of a slain dragon (gray for MR, silver
 for reflection), a special cloak (of MR) or amulet (of
-reflection), a polished silver shield you may come across
-(reflection too), or a one-of-a-kind artifact bestowed by your
+reflection), a polished silver shield (reflection too), or a
+one-of-a-kind artifact bestowed by your
 god, won on the Quest, or granted as a wish. Your adventure will be
 shaped by the protective items you can obtain.
 
