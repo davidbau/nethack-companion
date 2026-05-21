@@ -6918,10 +6918,9 @@ the Castle wand's single charge.
 
 #### The Wizard's Tower
 
-Three sequential Gehennom levels (wizard1 → wizard2 → wizard3,
-each reached by the normal down-stair from the level above) leading
-to the **Wizard of Yendor** himself and the **Book of the Dead**.
-He is the most dangerous enemy in the game — not because he's the
+A sequence of three special Gehennom levels that lead to the
+**Wizard of Yendor** himself and the **Book of the Dead**. He
+is the most dangerous enemy in the game, not because he's the
 strongest fighter, but because he **never stops**. He teleports to
 your location, summons monsters, steals back his Amulet whenever
 you grab it, curses your gear, and once you wake him he *will not
@@ -6943,10 +6942,6 @@ just one more maze. Once the seal breaks, descend to find the
 boss who casts spells, summons minions, and aggrieves anyone in
 melee range — the standard answer is a wand of death or finger of
 death from a safe distance.
-
-The Sanctum's up-stair lets you leave whenever you like, but the
-**Astral plane portal at the top of the Endgame ladder won't open
-without the Amulet** in your inventory.
 
 #### The Heist
 
@@ -7078,6 +7073,10 @@ clear.
 
 ### The Ascension Run
 <!-- audit
+2026-05-21:
+- bones save converts the real Amulet of Yendor to FAKE_AMULET_OF_YENDOR and curses it when a previous adventurer dies carrying it (bones.c:170-173)
+- wish for an Amulet of Yendor silently substitutes a fake (objnam.c:5003-5006 substitution list)
+- Astral altar offering accepts only the real Amulet; fake amulets fail and the death message reads "(with a fake Amulet)" (end.c:1413-1414)
 2026-05-19:
 - Mysterious Force is gated on Gehennom only (do.c:1541); same-level shuffle is the majority outcome
 - odds = 3 + ualign.type; diff = rn2(odds): Chaotics max -1, Neutrals max -2, only Lawfuls reach -3 (do.c:1544)
@@ -7104,6 +7103,18 @@ of the most generous moments in the game. Have your wish list
 ready *before* you reach the Sanctum: gauntlets of power, a
 +5 weapon of your choice, blessed cloak of magic resistance, or
 whatever you're missing for the climb. You only get it once.
+
+**Bring the authentic Amulet.** The climb out is always open:
+every up-stair in the Dungeons of Doom takes you closer to the
+surface regardless of what you carry. The **Astral plane portal**
+at the top of the Endgame ladder, however, won't open without
+the real Amulet of Yendor in your inventory. Only the Amulet you
+took off the High Priest's body in Moloch's Sanctum counts.
+Bones-pile Amulets are fakes (the game converts a dead
+adventurer's real Amulet to a fake when their corpse becomes a
+bones level), and a wish for an Amulet of Yendor silently
+substitutes a fake too. If you didn't pick yours up off the High
+Priest, you don't have the real one.
 
 The Ascension Run is the victory lap that keeps killing even the
 strongest adventurers. You have the most powerful artifact in the
