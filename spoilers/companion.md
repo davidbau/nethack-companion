@@ -1150,10 +1150,11 @@ A practical tour of the branches and landmarks, in roughly the order you'll visi
 (Dlvl 2 to 4), but the *strategic* suggestion for most beginners
 is Sokoban. It's a controlled puzzle crawl with mostly trivial
 monsters, and the prize at the top (reflection or a bag of
-holding) materially helps the Mines run afterward. Go
-Mines-first if you specifically want the luckstone at Mine's End
-early, or if a gnomish race makes most Mines residents peaceful
-to you.
+holding) materially helps the Mines run afterward. Slashing
+through the Mines early is exciting and fun, but if you want to
+play the strategic game, skip them until you've solved Sokoban
+and then return to the Mines when you are stronger and better
+equipped.
 
 #### The Gnomish Mines
 <!-- audit
@@ -1173,7 +1174,21 @@ to you.
 
 The entrance appears somewhere around dungeon levels 2 through 4, as
 a downward staircase. You'll know you're in the Mines because the
-walls become rough stone and the corridors get irregular.
+walls become rough stone and the corridors get irregular, as
+pictured below.
+
+```
+          ----
+       --|....|---        -----
+     -|...........|-----|.....|
+    |.....G..*......|...|..G..|
+    |......h..@......|..|.....|-
+    -|........d......|..|..*..|
+      -|......*.G...|---|.....|
+        --|........|     -|.>.|-
+           -|...|-        -----
+             ---
+```
 
 The Mines are populated primarily by gnomes, dwarves, and the
 occasional dwarf lord. If you're playing a gnomish character, most
