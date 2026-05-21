@@ -396,8 +396,8 @@ the levels above the Oracle are special supply chests. They are
 usually locked but stocked with useful magical items: healing or
 gain-energy potions, enchant-weapon or enchant-armor scrolls,
 sometimes a wand of digging or a low-level spellbook. About
-two-thirds of the early levels have one. Picking or forcing them is
-almost always worth the time.
+two-thirds of the early levels have one. Picking or `#force`ing them
+open is almost always worth the time.
 
 **Restraint.** New adventurers pick up everything they find. Veterans
 pick up everything they need. The difference is about forty pounds
