@@ -2616,7 +2616,7 @@ size. Anything that tries to pick "you" up snaps the spell.
 
 The `n` class (wood, water, mountain) doesn't want to kill you.
 She wants your inventory. Each successful claw hit lifts a random
-item from your pack, and the nymph then **teleports away** —
+item from your pack, and the nymph then **teleports away**,
 sometimes within the level, sometimes off it entirely. Your bag
 of holding, your amulet of reflection, a freshly-wished cloak of
 magic resistance: gone, often to a level you'll never revisit.
@@ -2628,8 +2628,8 @@ can both rob you and drop your XL.
 
 **Defenses.** Kill at range (darts, force bolt, a wand of
 anything). Engrave **Elbereth**: nymphs respect it. Or drop your
-most irreplaceable items on the floor before approaching —
-whatever's not in your pack can't be stolen.
+most irreplaceable items on the floor before approaching.
+Whatever's not in your pack can't be stolen.
 
 **Never engage a nymph while carrying the Amulet of Yendor**
 during the Ascension Run. Losing the Amulet to a teleporting
@@ -2639,11 +2639,11 @@ thief sends you back to Moloch's Sanctum to retrieve it.
 
 The `P` class lives in the mid-dungeon and Gehennom.
 **Brown and black puddings split when you hit them with an iron
-or metal weapon** (uhitm.c material check) — one becomes two,
-two becomes four, and your long-sword grinding session turns
-into a swarm. **Black pudding additionally corrodes your wielded
-weapon** on its passive return-hit, so each round of splitting
-is also a step toward your blade rusting away.
+or metal weapon**: one becomes two, two becomes four, and your
+long-sword grinding session turns into a swarm. **Black pudding
+additionally corrodes your wielded weapon** on its passive
+return-hit, so each round of splitting is also a step toward
+your blade rusting away.
 
 **Defenses.** Melee with a **silver or wooden weapon** (silver
 dagger, elven dagger, athame, club, quarterstaff). These don't
@@ -2654,9 +2654,22 @@ spells work too.
 **Gray ooze** doesn't split, but it rusts armor on a hit; don't
 engage in your starting iron suit if you can avoid it.
 
-**Eating the glob.** Pudding corpses are actually globs (food
-items), and they grant cold, shock, and poison resistance over
-multiple eats. See [Useful Corpse Effects](#useful-corpse-effects).
+**Eat the globs.** A pudding leaves a **glob** rather than a
+corpse, and the globs are some of the best food in the game.
+They're slow to spoil (about 500 turns of edibility, twice a
+normal corpse) and packed with resistances. A brown-pudding glob
+grants **cold, shock, and poison resistance** over repeated
+eats; a gray-ooze glob grants **fire, cold, and poison
+resistance**; a black-pudding glob also grants **cold, shock,
+and poison resistance**. Brown pudding and gray ooze are
+*vegetarian*-safe; black pudding is not. Globs of the same color
+stack and shrink together, so a pile of brown-pudding globs is a
+re-rollable chance at the resistance you don't yet have. The
+strategic flip-side of the splitting trap: if you can kill one
+pudding cleanly (silver weapon, cold/fire wand, spell), the
+splitting becomes a *feature* — every divided pudding is one
+more glob to eat. The full intrinsic table is in
+[Useful Corpse Effects](#useful-corpse-effects).
 
 #### A note on trolls
 
