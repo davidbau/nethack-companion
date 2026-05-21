@@ -11661,7 +11661,7 @@ source code. Any errors are ours alone.
 ---
 
 *A Traveler's Companion to the Mazes of Menace 5.0 Launch Edition,*<br>
-*compiled by David Bau, using Claude 4.x Opus to collate and check facts.*
+*compiled by David Bau, using Claude 4.7 Opus to collate and check facts.*
 
 *This work is licensed under
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).*
