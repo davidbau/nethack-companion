@@ -289,14 +289,15 @@ below shows the maximum each race can reach for each attribute.
 | Gnome | 18/50  | 19  | 18  | 18  | 18  | 18  | Infravision                    |
 | Orc   | 18/50  | 16  | 16  | 18  | 18  | 16  | Infravision, poison res        |
 
-**Human.** No infravision (the ability to see warm-blooded
-creatures in the dark), no poison resistance, no special
+**Human.** No infravision, no poison resistance, no special
 talents. On the bright side, every role is open to you and
 nobody in the dungeon singles you out for being one.
 Perfectly serviceable.
 
-**Dwarf.** Sturdy fighters with the best Dex and Con caps and matching
-human Strength. Available for: Archeologist, Cave Dweller, Valkyrie.
+**Dwarf.** Sturdy fighters with the best Dex and Con caps and
+matching human Strength. Infravision (the ability to see
+warm-blooded creatures in the dark) from level 1. Available
+for: Archeologist, Cave Dweller, Valkyrie.
 
 **Elf.** Infravision plus sleep resistance at XL 4. Fragile compared
 to humans but with the best Int and Wis caps. Elf Priests and
