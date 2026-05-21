@@ -6523,8 +6523,9 @@ A few principles:
   (short of losing experience). If you're not committed to a
   weapon, hold the slot until you are.
 - **Cap-aware investment.** Pushing a skill to its role cap is
-  fine: the menu just stops offering further advances. Aiming
-  beyond the cap costs nothing because the option never appears.
+  fine: the menu just stops offering further advances. You can't
+  waste enhancements past the cap because the option never
+  appears.
 - **Wizards train spell schools twice over.** Each rank up
   improves casting success *and* reveals more spellbook
   appearances in that school (the identification payoff from the
