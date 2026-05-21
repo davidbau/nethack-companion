@@ -6526,11 +6526,13 @@ A few principles:
   fine: the menu just stops offering further advances. You can't
   waste enhancements past the cap because the option never
   appears.
-- **Wizards train spell schools twice over.** Each rank up
+- **Wizards get two benefits from spell schools.** Each rank-up
   improves casting success *and* reveals more spellbook
-  appearances in that school (the identification payoff from the
-  [Spellcasting](#spellcasting) chapter). Schools containing your
-  unidentified books deserve priority.
+  appearances in that school (the identification payoff covered
+  in the [Spellcasting](#spellcasting) chapter). Schools
+  containing your unidentified books deserve priority. This
+  double benefit is Wizard-only; other roles only get the
+  casting-success benefit.
 - **Riding is a skill.** Without **Basic riding** you can't
   pick up items, loot, dip, set or disarm traps, or engrave on
   the floor while mounted. Knights start at Basic. Pushing to
