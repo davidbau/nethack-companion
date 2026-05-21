@@ -3662,7 +3662,7 @@ yank a loaded pet to your side from anywhere on the level.
   downgrade it, and a polymorphed steed stops being saddled.
 - If you can tame an **Archon** directly (via a scroll of taming
   on a hostile, magic-whistle recall of one you tamed earlier, or
-  a conflict-ring accident), keep it. Archons are the consensus
+  a conflict-ring accident), do it. Archons are the consensus
   gold standard for pets: level 19, speed 16, AC −6, magic
   resistance, sees invisible, flies, regenerates, and a multi-
   attack that includes a blinding gaze and a spell-cast. They
