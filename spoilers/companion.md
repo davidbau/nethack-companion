@@ -96,7 +96,7 @@ will do our best to keep you alive.
 
 24. [Spellcasting](#spellcasting) — Magic for the studious adventurer
 25. [Luck and Fortune](#luck-and-fortune) — The hidden numbers that shape your fate
-26. [Enhancing Skills](#enhancing-skills) — Mastering specific kinds of combat and magic
+26. [Enhancing Skills](#enhancing-skills) — Mastering specific styles of combat and magic
 27. [Wishes and Wishing](#wishes-and-wishing) — Getting what you want
 28. [Artifacts](#artifacts) — Legendary equipment and how to obtain it
 
