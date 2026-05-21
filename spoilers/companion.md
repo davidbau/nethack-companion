@@ -2281,7 +2281,7 @@ are the time-tested tactics that keep adventurers breathing:
   of careless peaceful kills can lock a Knight or Samurai out of
   the Quest for the rest of the run.
 - **Doors and diagonals.** You can't move diagonally through a
-  door — approach and leave orthogonally. **Closing a door**
+  door: approach and leave orthogonally. **Closing a door**
   (`c` + direction) blocks pets and any monster lacking the
   intelligence or hands to open it; handy when you want to slip
   away from your pet, or when you need a turn or two of quiet.
