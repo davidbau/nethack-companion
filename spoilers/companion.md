@@ -7516,8 +7516,8 @@ path. Each one hits twice per turn with a touch attack dealing
   won't drop you below Hungry, but a few in a row will starve
   you mid-fight.
 
-A 5.0 mercy: if Pestilence or Famine land their first attack on
-a turn, their second downgrades to a stun.
+A slight mercy that is new to 5.0: if Pestilence or Famine land
+their first attack on a turn, their second downgrades to a stun.
 
 **The Riders cannot be permanently killed.** They revive, they
 pursue, they do not stop. **Eating any Rider corpse is
