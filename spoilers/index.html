@@ -130,11 +130,9 @@ to magic lamps</li>
 things</li>
 <li><a href="#curses-and-how-to-break-them">Curses and How to Break
 Them</a></li>
-<li><a href="#artifacts">Artifacts</a> — Legendary equipment and how to
-obtain it</li>
 </ol>
 <p><strong>Part Five: Mastery</strong></p>
-<ol start="25" type="1">
+<ol start="24" type="1">
 <li><a href="#spellcasting">Spellcasting</a> — Magic for the studious
 adventurer</li>
 <li><a href="#luck-and-fortune">Luck and Fortune</a> — The hidden
@@ -142,6 +140,8 @@ numbers that shape your fate</li>
 <li><a href="#enhancing-skills">Enhancing Skills</a></li>
 <li><a href="#wishes-and-wishing">Wishes and Wishing</a> — Getting what
 you want</li>
+<li><a href="#artifacts">Artifacts</a> — Legendary equipment and how to
+obtain it</li>
 </ol>
 <p><strong>Part Six: The Deep Dungeon</strong></p>
 <ol start="29" type="1">
@@ -7845,555 +7845,6 @@ you’ll understand why veterans never leave home without them.</p>
 <hr />
 </section>
 </section>
-<section id="artifacts" class="level3">
-<h3>Artifacts</h3>
-<!-- audit
-2026-05-19:
-- Magicbane effects (stun, magic resistance) require wielding, NOT just carrying (artilist.h:145-147, NO_CARY).
-- All four Magicbane code paths gate on wielding (wield.c:1036, trap.c:2360, mplayer.c:273, sit.c:576).
-- Master Key: Rogue needs !cursed; non-rogues need BLESSED (artifact.c:2778-2784).
-- Eyes of the Overworld: magic resistance requires worn, NOT carried (artilist.h:262, NO_CARY; artifact.c:731).
-- Tsurugi grants luck + protection, NOT magic resistance (artilist.h:285-289).
-- Sceptre of Might (Lawful) does double damage vs chaotic, NEUTRAL, and unaligned (artifact.c:1031-1034).
-- Mjollnir reliable return is Valkyrie-only (artilist.h:97-108).
-- Frost Brand and Fire Brand have SNOWSTORM / FIRESTORM invokes (artilist.h:150, 154).
-- Frost Brand grants cold resistance (DFNS=COLD); Fire Brand grants fire resistance (DFNS=FIRE) (artifact.c:730-736).
-- Stormbringer is SPFX_INTEL: cross-alignment touch deals 4d10, not 4d4. (artilist.h:93-96 Stormbringer has SPFX_INTEL; artifact.c:953 `dmg = d((Antimagic ? 2 : 4), (self_willed ? 10 : 4))`)
-- Grimtooth +d6 damage bonus applies to ALL targets, not just elves (artifact.c:1099-1102).
-- Mitre of Holiness gives NO damage bonus vs undead; ATTK is NO_ATTK (artifact.c:1095-1098).
-- M2_UNDEAD flag only enables shade_glare on weapons, not worn helms (artifact.c:554-571).
-- Eye of the Aethiopica magic resistance requires worn, NOT carried (artilist.h:303-305, NO_CARY).
-- Eye of the Aethiopica carry effects: energy regen, half spell damage (cspfx EREGEN, HSPDAM).
-- strategy aligned with NetHackWiki Artifact weapon, Grayswandir, Magicbane, Mjollnir: Grayswandir/Magicbane/Mjollnir as the top wish artifacts; alignment-mismatched artifacts blast on touch (https://nethackwiki.com/wiki/Artifact_weapon, https://nethackwiki.com/wiki/Grayswandir, https://nethackwiki.com/wiki/Magicbane, https://nethackwiki.com/wiki/Mjollnir)
--->
-<p>Scattered throughout the Mazes are items of legend: named weapons,
-amulets, and tools that carry powers no ordinary gear can match. Each
-artifact exists only once per game, so when you find one, you’re holding
-a genuine one-of-a-kind. Here’s how they come into your hands:</p>
-<ul>
-<li><strong>Fountain dipping</strong> (Excalibur, for Lawful
-characters).</li>
-<li><strong>Sacrifice</strong> on an altar (your god may gift you an
-aligned artifact).</li>
-<li><strong>Quest completion</strong> (each role’s unique quest
-artifact).</li>
-<li><strong>Wishing</strong> (you can wish for most artifacts, but they
-resist if they don’t match your alignment).</li>
-<li><strong>Random generation</strong> (rare, but weapons have a small
-chance of being generated as an artifact).</li>
-</ul>
-<section id="alignment-and-blasting" class="level4">
-<h4>Alignment and Blasting</h4>
-<p>Each artifact has an alignment. If you try to handle an artifact that
-doesn’t match your alignment:</p>
-<ul>
-<li><strong>Intelligent artifacts</strong> (most quest artifacts and
-certain alignment-restricted artifacts): 4d10 damage (or 2d10 with magic
-resistance) and the item evades your grasp. You cannot wield these.</li>
-<li><strong>Other misaligned artifacts</strong>: 4d4 damage on first
-touch (2d4 with magic resistance), 1/4 chance of being blasted on each
-subsequent touch.</li>
-</ul>
-</section>
-<section id="wishable-random-artifacts" class="level4">
-<h4>Wishable / random artifacts</h4>
-<p>These are the artifacts you can find, get from a sacrifice gift,
-fountain-dip up (Excalibur), or wish for. Bonus damage is rolled fresh
-on each hit (e.g. <code>+d10</code> means roll 1d10). The “extra” column
-is the damage rolled <em>on top of</em> the base weapon’s own damage. A
-weapon listed as “×2 vs X” rolls its base damage <em>twice</em> against
-any member of that monster class.</p>
-<table>
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 7%" />
-<col style="width: 13%" />
-<col style="width: 5%" />
-<col style="width: 17%" />
-<col style="width: 39%" />
-</colgroup>
-<thead>
-<tr>
-<th>Artifact</th>
-<th>Align</th>
-<th>Weapon</th>
-<th>Hit</th>
-<th>Extra damage</th>
-<th>Notable</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Excalibur</td>
-<td>Lawful</td>
-<td>long sword</td>
-<td>+d5</td>
-<td>+d10 physical</td>
-<td>drain resistance, automatic searching</td>
-</tr>
-<tr>
-<td>Grayswandir</td>
-<td>Lawful</td>
-<td>silver saber</td>
-<td>+d5</td>
-<td>(base only)</td>
-<td>half physical damage received, hallucination res.</td>
-</tr>
-<tr>
-<td>Mjollnir</td>
-<td>Neutral</td>
-<td>war hammer</td>
-<td>+d5</td>
-<td>+d24 shock</td>
-<td>returns when thrown if STR 25</td>
-</tr>
-<tr>
-<td>Magicbane</td>
-<td>Neutral</td>
-<td>athame</td>
-<td>+d3</td>
-<td>+d4 magic (stun)</td>
-<td>magic resistance and curse protection while <em>wielded</em></td>
-</tr>
-<tr>
-<td>Stormbringer</td>
-<td>Chaotic</td>
-<td>runesword</td>
-<td>+d5</td>
-<td>+d2 drain life</td>
-<td>drains a level (you gain it); attacks peacefuls</td>
-</tr>
-<tr>
-<td>Vorpal Blade</td>
-<td>any</td>
-<td>long sword</td>
-<td>+d5</td>
-<td>+d1 physical</td>
-<td>chance to behead on hit</td>
-</tr>
-<tr>
-<td>Frost Brand</td>
-<td>any</td>
-<td>long sword</td>
-<td>+d5</td>
-<td>(base only) cold</td>
-<td>cold resistance while wielded</td>
-</tr>
-<tr>
-<td>Fire Brand</td>
-<td>any</td>
-<td>long sword</td>
-<td>+d5</td>
-<td>(base only) fire</td>
-<td>fire resistance while wielded</td>
-</tr>
-<tr>
-<td>Sunsword</td>
-<td>Lawful</td>
-<td>long sword</td>
-<td>+d5</td>
-<td>(base only); ×2 vs undead</td>
-<td>wielded light; <code>#invoke</code> fires a blinding ray any
-direction (camera-style; works on any monster)</td>
-</tr>
-<tr>
-<td>Snickersnee</td>
-<td>Lawful</td>
-<td>katana</td>
-<td>—</td>
-<td>+d8 physical</td>
-<td>acts as a polearm without a steed; one free reach-attack per turn
-(the “Shkinng!” hit)</td>
-</tr>
-<tr>
-<td>Cleaver</td>
-<td>Neutral</td>
-<td>battle-axe</td>
-<td>+d3</td>
-<td>+d6 physical</td>
-<td>one-handed wield → strikes target <em>and</em> both flanks</td>
-</tr>
-<tr>
-<td>Demonbane</td>
-<td>Lawful</td>
-<td>silver mace</td>
-<td>+d5</td>
-<td>(base only); ×2 vs demons</td>
-<td>banishes demons; Priest’s first sacrifice gift</td>
-</tr>
-<tr>
-<td>Sting</td>
-<td>Chaotic</td>
-<td>elven dagger</td>
-<td>+d5</td>
-<td>(base only); ×2 vs orcs</td>
-<td>warns of orcs (the dagger glows blue)</td>
-</tr>
-<tr>
-<td>Orcrist</td>
-<td>Chaotic</td>
-<td>elven broadsword</td>
-<td>+d5</td>
-<td>(base only); ×2 vs orcs</td>
-<td>warns of orcs</td>
-</tr>
-<tr>
-<td>Grimtooth</td>
-<td>Chaotic</td>
-<td>orcish dagger</td>
-<td>+d2</td>
-<td>+d6 physical (any target)</td>
-<td>warns of elves; defends vs poison</td>
-</tr>
-<tr>
-<td>Dragonbane</td>
-<td>any</td>
-<td>broadsword</td>
-<td>+d5</td>
-<td>(base only); ×2 vs dragons</td>
-<td>reflection while wielded</td>
-</tr>
-<tr>
-<td>Werebane</td>
-<td>any</td>
-<td>silver saber</td>
-<td>+d5</td>
-<td>(base only); ×2 vs were-</td>
-<td>defends against lycanthropy</td>
-</tr>
-<tr>
-<td>Giantslayer</td>
-<td>Neutral</td>
-<td>long sword</td>
-<td>+d5</td>
-<td>(base only); ×2 vs giants</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Ogresmasher</td>
-<td>any</td>
-<td>war hammer</td>
-<td>+d5</td>
-<td>(base only); ×2 vs ogres</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Trollsbane</td>
-<td>any</td>
-<td>morning star</td>
-<td>+d5</td>
-<td>(base only); ×2 vs trolls</td>
-<td>regeneration while wielded</td>
-</tr>
-</tbody>
-</table>
-<p>Not every entry is equally desirable. <strong>Grayswandir</strong>
-and <strong>Magicbane</strong> are the artifacts most players try to
-wish for first; <strong>Mjollnir</strong> is the Valkyrie’s archetypal
-wish; <strong>Excalibur</strong> is usually fountain-dipped rather than
-wished. <strong>Frost Brand</strong>, <strong>Vorpal Blade</strong>, and
-<strong>Stormbringer</strong> are common second wishes.
-<strong>Snickersnee</strong> and <strong>Sunsword</strong> were
-historically considered flavour pieces, but their 5.0 effects (free
-reach attack per turn; on-demand camera-style blind) have moved them
-into the “worth wishing for, role permitting” tier. The remaining
-entries (the bane weapons, Fire Brand, Cleaver) are usually accepted as
-sacrifice gifts rather than spent wishes on.</p>
-<p><strong>Excalibur</strong> is the go-to weapon for Lawful characters;
-the drain resistance alone is worth carrying it, even after you have a
-stronger weapon. Knights start aligned to it and have unique 1-in-6
-fountain-dip odds; every other Lawful role faces 1-in-30.</p>
-<p><strong>Grayswandir</strong> is wishable and arguably the game’s best
-melee weapon. It’s silver (extra damage to many monsters), halves
-incoming physical damage, and grants hallucination resistance.</p>
-<p><strong>Mjollnir</strong> is the Valkyrie’s signature
-throw-and-return weapon — and only Valkyries get the reliable 99%
-catch-back. Other roles can wield it for melee but won’t reliably catch
-it on the return throw. It needs Strength 25 to wield in either case
-(gauntlets of power or rings of gain strength get you there). Its +d24
-shock damage is brutal against anything not shock-resistant.</p>
-<p><strong>Magicbane</strong> is the Wizard’s go-to athame. The combined
-effect of its stun damage, curse protection, and magic resistance — all
-of which require it to be <strong>wielded</strong>, not just carried —
-makes it Wizard’s preferred melee weapon. Often the first gift from a
-Neutral sacrifice.</p>
-<p><strong>Stormbringer</strong> is dangerous to use because it attacks
-peaceful monsters automatically, which can cause alignment problems. But
-each hit drains a level from the target and gives it to you, which is
-huge in the early-to-mid game. Stormbringer is also
-<em>intelligent</em>: a Lawful or Neutral wielder who touches it without
-permission takes the heavier 4d10 magical-blast damage rather than the
-4d4 dealt by ordinary cross-alignment artifacts.</p>
-<p><strong>Cleaver</strong> is the Barbarian quest artifact. When
-wielded one-handed (not two-weaponing), every swing strikes the primary
-target <em>and</em> one square on each side of it: three monsters per
-attack when packed in a corridor mouth or against a diagonal pair. The
-two-weapon penalty suppresses the spin, so most Barbarians keep Cleaver
-as their primary and a shield in the off slot.</p>
-<p><strong>Frost Brand</strong> and <strong>Fire Brand</strong> each
-have an <code>#invoke</code> power the wishable table doesn’t capture:
-Frost Brand summons a snowstorm around you (cold damage to nearby
-squares), Fire Brand summons a firestorm. Either one clears the room
-around you when you’re cornered.</p>
-<p><strong>Snickersnee</strong> got a major buff in 5.0: it now counts
-as a polearm even when you’re on foot (regular pole weapons require a
-steed). Once per turn you can <code>#apply</code> it for a free reach
-attack at a target up to two squares away — a real free action that
-<em>doesn’t</em> end your turn, leaving you a normal melee swing on top.
-The free hit is announced by a distinctive “Shkinng!” The combined
-output (one ranged + one melee per turn) makes Snickersnee a contender
-for best Samurai weapon in the game, not just a flavor piece.</p>
-<p><strong>Sunsword</strong> is the Lawful long sword that wants to be a
-tool. Wielded, it lights its current radius (handy in caves and the
-Mines without costing an oil lamp). <code>#invoke</code> it for a
-directed <em>blinding ray</em> — mechanically a Camera flash in any
-direction, <em>not</em> limited to undead. It costs 5×spell-level Pw to
-invoke, so save it for the fights that demand it (Riders, mind flayers,
-the Wizard of Yendor), but a blind monster is a monster that misses you.
-Invoking up or down lights the room; invoking at yourself self-blinds
-(don’t).</p>
-<p><strong>Bane weapons</strong> (Sunsword, Demonbane, Sting, Orcrist,
-Grimtooth, Dragonbane, Werebane, Giantslayer, Ogresmasher, Trollsbane)
-deal double base damage against their target class. Most are
-disappointing as a primary weapon, but the defensive riders are often
-the real reason to swap one in: Trollsbane regenerates while wielded
-(genuinely useful for an early character holding the line), Dragonbane
-reflects, Werebane neutralizes lycanthropy, Grimtooth defends against
-poison. Sting and Orcrist are notable because elves can start with elven
-daggers and broadswords as their base weapons.</p>
-</section>
-<section id="quest-artifacts" class="level4">
-<h4>Quest artifacts</h4>
-<p>Each role has exactly one quest artifact, awarded for completing the
-role’s quest. They are intelligent: only the rightful owner can safely
-wield them; anyone else gets blasted. Most of the non-weapon ones grant
-magic resistance just by sitting in your inventory, so roles whose quest
-artifact is a passive object still benefit from carrying it.</p>
-<p><strong>A wishing quirk to know about.</strong> The wish system
-blocks <em>your own</em> role’s quest artifact (you have to earn it the
-hard way), but it doesn’t block <em>other roles’</em> quest artifacts. A
-neutral character can wish for any neutral quest artifact, a lawful one
-for any lawful quest artifact, and so on. The alignment-blast rule still
-applies if you actually wield or wear a misaligned one, but carry
-bonuses (MR, drain resistance, regeneration, half spell damage, energy
-regeneration, etc.) work for anyone. A neutral Monk can wish for the
-Healer’s <em>Staff of Aesculapius</em> for the drain-life-on-hit and
-drain-resistance carry bonus, or the Wizard’s <em>Eye of the
-Aethiopica</em> for MR + half-spell-damage + energy regen, even though
-those quests are closed to the Monk. Wishes for artifacts of all kinds
-also have an increasing fizzle chance as more artifacts already exist in
-the game.</p>
-<p><code>#invoke</code> (default <code>^A</code>) activates each
-artifact’s special power; the cost is some energy plus a wear-out
-interval before it can be used again.</p>
-<div class="dense-table">
-<table style="width:100%;">
-<colgroup>
-<col style="width: 4%" />
-<col style="width: 28%" />
-<col style="width: 10%" />
-<col style="width: 23%" />
-<col style="width: 17%" />
-<col style="width: 14%" />
-</colgroup>
-<thead>
-<tr>
-<th>Role</th>
-<th>Artifact</th>
-<th>Form</th>
-<th>Wear/wield</th>
-<th>Carry</th>
-<th><code>#invoke</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Arc</td>
-<td>The Orb of Detection</td>
-<td>crystal ball</td>
-<td>—</td>
-<td>MR, ESP, ½ spell dmg</td>
-<td>invisibility</td>
-</tr>
-<tr>
-<td>Bar</td>
-<td>The Heart of Ahriman</td>
-<td>luckstone</td>
-<td>×2 dmg as a projectile</td>
-<td>stealth, +luck</td>
-<td>levitation</td>
-</tr>
-<tr>
-<td>Cav</td>
-<td>The Sceptre of Might</td>
-<td>mace</td>
-<td>+d5 hit; ×2 vs non-lawful</td>
-<td>magic resistance</td>
-<td>conflict</td>
-</tr>
-<tr>
-<td>Hea</td>
-<td>The Staff of Aesculapius</td>
-<td>quarterstaff</td>
-<td>drain-life on hit</td>
-<td>drain res., regen</td>
-<td>full heal + cure</td>
-</tr>
-<tr>
-<td>Kni</td>
-<td>The Magic Mirror of Merlin</td>
-<td>mirror</td>
-<td>(speaks to you)</td>
-<td>MR, ESP</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Mon</td>
-<td>The Eyes of the Overworld</td>
-<td>lenses</td>
-<td>astral vision, magic res. (when worn)</td>
-<td>—</td>
-<td>enlightenment</td>
-</tr>
-<tr>
-<td>Pri</td>
-<td>The Mitre of Holiness</td>
-<td>helm</td>
-<td>+1 prot. (brilliance base)</td>
-<td>fire res.</td>
-<td>energy boost</td>
-</tr>
-<tr>
-<td>Ran</td>
-<td>The Longbow of Diana</td>
-<td>bow</td>
-<td>+d5 hit; reflection</td>
-<td>ESP</td>
-<td>conjure arrows</td>
-</tr>
-<tr>
-<td>Rog</td>
-<td>The Master Key of Thievery</td>
-<td>skeleton key</td>
-<td>—</td>
-<td>warn, t-ctrl, ½ phys</td>
-<td>guaranteed untrap</td>
-</tr>
-<tr>
-<td>Sam</td>
-<td>The Tsurugi of Muramasa</td>
-<td>tsurugi</td>
-<td>+d8 phys; chance to behead</td>
-<td>+luck, +1 prot.</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Tou</td>
-<td>Platinum Yendorian Express Card</td>
-<td>credit card</td>
-<td>—</td>
-<td>MR, ESP, ½ spell dmg</td>
-<td>charge an item</td>
-</tr>
-<tr>
-<td>Val</td>
-<td>The Orb of Fate</td>
-<td>crystal ball</td>
-<td>—</td>
-<td>+luck, warn, ½ all dmg</td>
-<td>levitate / teleport</td>
-</tr>
-<tr>
-<td>Wiz</td>
-<td>The Eye of the Aethiopica</td>
-<td>amulet</td>
-<td>—</td>
-<td>MR, ½ spell, +energy</td>
-<td>create portal</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>The Orb of Detection</strong> (Archeologist): a crystal ball
-that grants ESP and magic resistance just by being carried.
-<code>#invoke</code> toggles invisibility. Archeologists are already
-exceptional at stealth, and this turns them into a ghost.</p>
-<p><strong>The Heart of Ahriman</strong> (Barbarian): a luckstone that
-doubles as a +1 luck talisman with stealth. Critically, it counts as a
-luckstone for <em>all</em> the luckstone mechanics (mine’s-end
-protection, gem-throw luck math, luck cap +13 instead of +10). It’s also
-a projectile weapon: Barbarians can throw it for double damage and pick
-it back up. <code>#invoke</code> is levitation.</p>
-<p><strong>The Sceptre of Might</strong> (Caveman): mace base, +d5
-to-hit, double damage against any monster whose alignment differs from
-the artifact’s (the Sceptre itself is Lawful, so it deals doubled damage
-against chaotic, neutral, <em>and</em> unaligned monsters — most of the
-dungeon’s hostiles once you reach Gehennom). It also grants magic
-resistance while <em>wielded</em>. <code>#invoke</code> casts conflict
-(monsters fight each other) at a steep energy cost.</p>
-<p><strong>The Staff of Aesculapius</strong> (Healer): the Healer’s
-salvation. Each hit drains life (one of only three drain-life weapons;
-the others are Stormbringer and the rider Death) and gives you
-regeneration plus drain resistance just by carrying it.
-<code>#invoke</code> heals fully and cures nearly every bad status. Few
-artifacts change a role’s late game as much as this one.</p>
-<p><strong>The Magic Mirror of Merlin</strong> (Knight): grants ESP and
-magic resistance, and occasionally <em>speaks</em>, dropping hints.
-Knights already have Excalibur for combat, so the Mirror is pure passive
-utility.</p>
-<p><strong>The Eyes of the Overworld</strong> (Monk): lenses that, when
-worn, give astral vision (see invisible, see through walls, spot secret
-doors) <strong>and</strong> magic resistance. Both effects require them
-to be worn — carrying them in inventory does nothing.
-<code>#invoke</code> enlightens you. For a Monk who can’t safely wear
-body armor, a powerful passive on a slot they can use.</p>
-<p><strong>The Mitre of Holiness</strong> (Priest): a helm of brilliance
-with the usual brilliance bonus to intelligence and wisdom (so
-spell-cast more reliably), plus fire resistance while carried, plus a
-free <code>-1</code> to AC. <code>#invoke</code> for an energy boost,
-useful for spell-heavy Priests. Note: despite what older spoilers say,
-the Mitre does <strong>not</strong> deal bonus damage against undead
-(the artifact has no melee attack to carry the bonus), and it does not
-grant drain resistance.</p>
-<p><strong>The Longbow of Diana</strong> (Ranger): a real artifact bow
-with +d5 to hit plus reflection while wielded, ESP while carried.
-<code>#invoke</code> conjures free arrows out of thin air. Combined with
-the Ranger’s ranged specialization this is the role’s centerpiece.</p>
-<p><strong>The Master Key of Thievery</strong> (Rogue): a carry package
-of warning, teleport control, half physical damage taken, and
-<code>#invoke</code> instantly untraps a nearby trap. The unlocking
-bonus depends on alignment: a Rogue gets it from any non-cursed Key;
-everyone else needs a <strong>blessed</strong> Key. With those
-preconditions met, <code>#untrap</code> also gains a perfect-detection
-bonus on doors and chests.</p>
-<p><strong>The Tsurugi of Muramasa</strong> (Samurai): a katana-grade
-two-handed sword with +d8 damage <em>and</em> a behead chance (like
-Vorpal Blade) <em>and</em> a +1 protection bonus, and it acts as a
-luckstone. Note that Tsurugi does <strong>not</strong> grant magic
-resistance, despite the weapon’s reputation. One of the strongest
-artifacts in the game, the Samurai’s reward for a hard quest.</p>
-<p><strong>The Platinum Yendorian Express Card</strong> (Tourist): the
-Tourist’s get-out-of-jail card. Carrying it grants ESP, magic
-resistance, and half spell damage; <code>#invoke</code> charges an item
-(a wand, ring, or marker), which in the Tourist’s hands is roughly “a
-free wish per ~1000 turns.” Pairs especially well with
-marker-stockpiling strategies.</p>
-<p><strong>The Orb of Fate</strong> (Valkyrie): the most generous
-passive in the game: counts as a luckstone, grants warning, halves both
-spell <em>and</em> physical damage taken. <code>#invoke</code> is
-levitate-or-teleport (a toggle, very useful in the Sanctum). Valkyries
-also have Mjollnir to throw, so the Orb sits in inventory as pure carry
-value.</p>
-<p><strong>The Eye of the Aethiopica</strong> (Wizard): grants magic
-resistance when <strong>worn</strong> (a Wizard’s wearing slot for it is
-the amulet, so in practice always); carrying also gives half spell
-damage taken and <em>extra energy regeneration</em>, a Wizard’s most
-precious resource. <code>#invoke</code> opens a portal that drops you in
-Vlad’s Tower (one-way; useful for shortcutting the Castle → Vlad’s
-traversal). For a spell-caster this is irreplaceable.</p>
-<hr />
-</section>
-</section>
 </section>
 <section id="part-five-mastery" class="level2">
 <h2>Part Five: Mastery</h2>
@@ -9285,6 +8736,555 @@ Dead</strong> blank paper, the <strong>Candelabrum</strong> a tallow
 candle, and — relevant after all that lamp-rubbing — a wish for a
 <strong>magic lamp</strong> hands you an ordinary oil lamp.</li>
 </ul>
+<hr />
+</section>
+</section>
+<section id="artifacts" class="level3">
+<h3>Artifacts</h3>
+<!-- audit
+2026-05-19:
+- Magicbane effects (stun, magic resistance) require wielding, NOT just carrying (artilist.h:145-147, NO_CARY).
+- All four Magicbane code paths gate on wielding (wield.c:1036, trap.c:2360, mplayer.c:273, sit.c:576).
+- Master Key: Rogue needs !cursed; non-rogues need BLESSED (artifact.c:2778-2784).
+- Eyes of the Overworld: magic resistance requires worn, NOT carried (artilist.h:262, NO_CARY; artifact.c:731).
+- Tsurugi grants luck + protection, NOT magic resistance (artilist.h:285-289).
+- Sceptre of Might (Lawful) does double damage vs chaotic, NEUTRAL, and unaligned (artifact.c:1031-1034).
+- Mjollnir reliable return is Valkyrie-only (artilist.h:97-108).
+- Frost Brand and Fire Brand have SNOWSTORM / FIRESTORM invokes (artilist.h:150, 154).
+- Frost Brand grants cold resistance (DFNS=COLD); Fire Brand grants fire resistance (DFNS=FIRE) (artifact.c:730-736).
+- Stormbringer is SPFX_INTEL: cross-alignment touch deals 4d10, not 4d4. (artilist.h:93-96 Stormbringer has SPFX_INTEL; artifact.c:953 `dmg = d((Antimagic ? 2 : 4), (self_willed ? 10 : 4))`)
+- Grimtooth +d6 damage bonus applies to ALL targets, not just elves (artifact.c:1099-1102).
+- Mitre of Holiness gives NO damage bonus vs undead; ATTK is NO_ATTK (artifact.c:1095-1098).
+- M2_UNDEAD flag only enables shade_glare on weapons, not worn helms (artifact.c:554-571).
+- Eye of the Aethiopica magic resistance requires worn, NOT carried (artilist.h:303-305, NO_CARY).
+- Eye of the Aethiopica carry effects: energy regen, half spell damage (cspfx EREGEN, HSPDAM).
+- strategy aligned with NetHackWiki Artifact weapon, Grayswandir, Magicbane, Mjollnir: Grayswandir/Magicbane/Mjollnir as the top wish artifacts; alignment-mismatched artifacts blast on touch (https://nethackwiki.com/wiki/Artifact_weapon, https://nethackwiki.com/wiki/Grayswandir, https://nethackwiki.com/wiki/Magicbane, https://nethackwiki.com/wiki/Mjollnir)
+-->
+<p>Scattered throughout the Mazes are items of legend: named weapons,
+amulets, and tools that carry powers no ordinary gear can match. Each
+artifact exists only once per game, so when you find one, you’re holding
+a genuine one-of-a-kind. Here’s how they come into your hands:</p>
+<ul>
+<li><strong>Fountain dipping</strong> (Excalibur, for Lawful
+characters).</li>
+<li><strong>Sacrifice</strong> on an altar (your god may gift you an
+aligned artifact).</li>
+<li><strong>Quest completion</strong> (each role’s unique quest
+artifact).</li>
+<li><strong>Wishing</strong> (you can wish for most artifacts, but they
+resist if they don’t match your alignment).</li>
+<li><strong>Random generation</strong> (rare, but weapons have a small
+chance of being generated as an artifact).</li>
+</ul>
+<section id="alignment-and-blasting" class="level4">
+<h4>Alignment and Blasting</h4>
+<p>Each artifact has an alignment. If you try to handle an artifact that
+doesn’t match your alignment:</p>
+<ul>
+<li><strong>Intelligent artifacts</strong> (most quest artifacts and
+certain alignment-restricted artifacts): 4d10 damage (or 2d10 with magic
+resistance) and the item evades your grasp. You cannot wield these.</li>
+<li><strong>Other misaligned artifacts</strong>: 4d4 damage on first
+touch (2d4 with magic resistance), 1/4 chance of being blasted on each
+subsequent touch.</li>
+</ul>
+</section>
+<section id="wishable-random-artifacts" class="level4">
+<h4>Wishable / random artifacts</h4>
+<p>These are the artifacts you can find, get from a sacrifice gift,
+fountain-dip up (Excalibur), or wish for. Bonus damage is rolled fresh
+on each hit (e.g. <code>+d10</code> means roll 1d10). The “extra” column
+is the damage rolled <em>on top of</em> the base weapon’s own damage. A
+weapon listed as “×2 vs X” rolls its base damage <em>twice</em> against
+any member of that monster class.</p>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 7%" />
+<col style="width: 13%" />
+<col style="width: 5%" />
+<col style="width: 17%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Align</th>
+<th>Weapon</th>
+<th>Hit</th>
+<th>Extra damage</th>
+<th>Notable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Excalibur</td>
+<td>Lawful</td>
+<td>long sword</td>
+<td>+d5</td>
+<td>+d10 physical</td>
+<td>drain resistance, automatic searching</td>
+</tr>
+<tr>
+<td>Grayswandir</td>
+<td>Lawful</td>
+<td>silver saber</td>
+<td>+d5</td>
+<td>(base only)</td>
+<td>half physical damage received, hallucination res.</td>
+</tr>
+<tr>
+<td>Mjollnir</td>
+<td>Neutral</td>
+<td>war hammer</td>
+<td>+d5</td>
+<td>+d24 shock</td>
+<td>returns when thrown if STR 25</td>
+</tr>
+<tr>
+<td>Magicbane</td>
+<td>Neutral</td>
+<td>athame</td>
+<td>+d3</td>
+<td>+d4 magic (stun)</td>
+<td>magic resistance and curse protection while <em>wielded</em></td>
+</tr>
+<tr>
+<td>Stormbringer</td>
+<td>Chaotic</td>
+<td>runesword</td>
+<td>+d5</td>
+<td>+d2 drain life</td>
+<td>drains a level (you gain it); attacks peacefuls</td>
+</tr>
+<tr>
+<td>Vorpal Blade</td>
+<td>any</td>
+<td>long sword</td>
+<td>+d5</td>
+<td>+d1 physical</td>
+<td>chance to behead on hit</td>
+</tr>
+<tr>
+<td>Frost Brand</td>
+<td>any</td>
+<td>long sword</td>
+<td>+d5</td>
+<td>(base only) cold</td>
+<td>cold resistance while wielded</td>
+</tr>
+<tr>
+<td>Fire Brand</td>
+<td>any</td>
+<td>long sword</td>
+<td>+d5</td>
+<td>(base only) fire</td>
+<td>fire resistance while wielded</td>
+</tr>
+<tr>
+<td>Sunsword</td>
+<td>Lawful</td>
+<td>long sword</td>
+<td>+d5</td>
+<td>(base only); ×2 vs undead</td>
+<td>wielded light; <code>#invoke</code> fires a blinding ray any
+direction (camera-style; works on any monster)</td>
+</tr>
+<tr>
+<td>Snickersnee</td>
+<td>Lawful</td>
+<td>katana</td>
+<td>—</td>
+<td>+d8 physical</td>
+<td>acts as a polearm without a steed; one free reach-attack per turn
+(the “Shkinng!” hit)</td>
+</tr>
+<tr>
+<td>Cleaver</td>
+<td>Neutral</td>
+<td>battle-axe</td>
+<td>+d3</td>
+<td>+d6 physical</td>
+<td>one-handed wield → strikes target <em>and</em> both flanks</td>
+</tr>
+<tr>
+<td>Demonbane</td>
+<td>Lawful</td>
+<td>silver mace</td>
+<td>+d5</td>
+<td>(base only); ×2 vs demons</td>
+<td>banishes demons; Priest’s first sacrifice gift</td>
+</tr>
+<tr>
+<td>Sting</td>
+<td>Chaotic</td>
+<td>elven dagger</td>
+<td>+d5</td>
+<td>(base only); ×2 vs orcs</td>
+<td>warns of orcs (the dagger glows blue)</td>
+</tr>
+<tr>
+<td>Orcrist</td>
+<td>Chaotic</td>
+<td>elven broadsword</td>
+<td>+d5</td>
+<td>(base only); ×2 vs orcs</td>
+<td>warns of orcs</td>
+</tr>
+<tr>
+<td>Grimtooth</td>
+<td>Chaotic</td>
+<td>orcish dagger</td>
+<td>+d2</td>
+<td>+d6 physical (any target)</td>
+<td>warns of elves; defends vs poison</td>
+</tr>
+<tr>
+<td>Dragonbane</td>
+<td>any</td>
+<td>broadsword</td>
+<td>+d5</td>
+<td>(base only); ×2 vs dragons</td>
+<td>reflection while wielded</td>
+</tr>
+<tr>
+<td>Werebane</td>
+<td>any</td>
+<td>silver saber</td>
+<td>+d5</td>
+<td>(base only); ×2 vs were-</td>
+<td>defends against lycanthropy</td>
+</tr>
+<tr>
+<td>Giantslayer</td>
+<td>Neutral</td>
+<td>long sword</td>
+<td>+d5</td>
+<td>(base only); ×2 vs giants</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Ogresmasher</td>
+<td>any</td>
+<td>war hammer</td>
+<td>+d5</td>
+<td>(base only); ×2 vs ogres</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Trollsbane</td>
+<td>any</td>
+<td>morning star</td>
+<td>+d5</td>
+<td>(base only); ×2 vs trolls</td>
+<td>regeneration while wielded</td>
+</tr>
+</tbody>
+</table>
+<p>Not every entry is equally desirable. <strong>Grayswandir</strong>
+and <strong>Magicbane</strong> are the artifacts most players try to
+wish for first; <strong>Mjollnir</strong> is the Valkyrie’s archetypal
+wish; <strong>Excalibur</strong> is usually fountain-dipped rather than
+wished. <strong>Frost Brand</strong>, <strong>Vorpal Blade</strong>, and
+<strong>Stormbringer</strong> are common second wishes.
+<strong>Snickersnee</strong> and <strong>Sunsword</strong> were
+historically considered flavour pieces, but their 5.0 effects (free
+reach attack per turn; on-demand camera-style blind) have moved them
+into the “worth wishing for, role permitting” tier. The remaining
+entries (the bane weapons, Fire Brand, Cleaver) are usually accepted as
+sacrifice gifts rather than spent wishes on.</p>
+<p><strong>Excalibur</strong> is the go-to weapon for Lawful characters;
+the drain resistance alone is worth carrying it, even after you have a
+stronger weapon. Knights start aligned to it and have unique 1-in-6
+fountain-dip odds; every other Lawful role faces 1-in-30.</p>
+<p><strong>Grayswandir</strong> is wishable and arguably the game’s best
+melee weapon. It’s silver (extra damage to many monsters), halves
+incoming physical damage, and grants hallucination resistance.</p>
+<p><strong>Mjollnir</strong> is the Valkyrie’s signature
+throw-and-return weapon — and only Valkyries get the reliable 99%
+catch-back. Other roles can wield it for melee but won’t reliably catch
+it on the return throw. It needs Strength 25 to wield in either case
+(gauntlets of power or rings of gain strength get you there). Its +d24
+shock damage is brutal against anything not shock-resistant.</p>
+<p><strong>Magicbane</strong> is the Wizard’s go-to athame. The combined
+effect of its stun damage, curse protection, and magic resistance — all
+of which require it to be <strong>wielded</strong>, not just carried —
+makes it Wizard’s preferred melee weapon. Often the first gift from a
+Neutral sacrifice.</p>
+<p><strong>Stormbringer</strong> is dangerous to use because it attacks
+peaceful monsters automatically, which can cause alignment problems. But
+each hit drains a level from the target and gives it to you, which is
+huge in the early-to-mid game. Stormbringer is also
+<em>intelligent</em>: a Lawful or Neutral wielder who touches it without
+permission takes the heavier 4d10 magical-blast damage rather than the
+4d4 dealt by ordinary cross-alignment artifacts.</p>
+<p><strong>Cleaver</strong> is the Barbarian quest artifact. When
+wielded one-handed (not two-weaponing), every swing strikes the primary
+target <em>and</em> one square on each side of it: three monsters per
+attack when packed in a corridor mouth or against a diagonal pair. The
+two-weapon penalty suppresses the spin, so most Barbarians keep Cleaver
+as their primary and a shield in the off slot.</p>
+<p><strong>Frost Brand</strong> and <strong>Fire Brand</strong> each
+have an <code>#invoke</code> power the wishable table doesn’t capture:
+Frost Brand summons a snowstorm around you (cold damage to nearby
+squares), Fire Brand summons a firestorm. Either one clears the room
+around you when you’re cornered.</p>
+<p><strong>Snickersnee</strong> got a major buff in 5.0: it now counts
+as a polearm even when you’re on foot (regular pole weapons require a
+steed). Once per turn you can <code>#apply</code> it for a free reach
+attack at a target up to two squares away — a real free action that
+<em>doesn’t</em> end your turn, leaving you a normal melee swing on top.
+The free hit is announced by a distinctive “Shkinng!” The combined
+output (one ranged + one melee per turn) makes Snickersnee a contender
+for best Samurai weapon in the game, not just a flavor piece.</p>
+<p><strong>Sunsword</strong> is the Lawful long sword that wants to be a
+tool. Wielded, it lights its current radius (handy in caves and the
+Mines without costing an oil lamp). <code>#invoke</code> it for a
+directed <em>blinding ray</em> — mechanically a Camera flash in any
+direction, <em>not</em> limited to undead. It costs 5×spell-level Pw to
+invoke, so save it for the fights that demand it (Riders, mind flayers,
+the Wizard of Yendor), but a blind monster is a monster that misses you.
+Invoking up or down lights the room; invoking at yourself self-blinds
+(don’t).</p>
+<p><strong>Bane weapons</strong> (Sunsword, Demonbane, Sting, Orcrist,
+Grimtooth, Dragonbane, Werebane, Giantslayer, Ogresmasher, Trollsbane)
+deal double base damage against their target class. Most are
+disappointing as a primary weapon, but the defensive riders are often
+the real reason to swap one in: Trollsbane regenerates while wielded
+(genuinely useful for an early character holding the line), Dragonbane
+reflects, Werebane neutralizes lycanthropy, Grimtooth defends against
+poison. Sting and Orcrist are notable because elves can start with elven
+daggers and broadswords as their base weapons.</p>
+</section>
+<section id="quest-artifacts" class="level4">
+<h4>Quest artifacts</h4>
+<p>Each role has exactly one quest artifact, awarded for completing the
+role’s quest. They are intelligent: only the rightful owner can safely
+wield them; anyone else gets blasted. Most of the non-weapon ones grant
+magic resistance just by sitting in your inventory, so roles whose quest
+artifact is a passive object still benefit from carrying it.</p>
+<p><strong>A wishing quirk to know about.</strong> The wish system
+blocks <em>your own</em> role’s quest artifact (you have to earn it the
+hard way), but it doesn’t block <em>other roles’</em> quest artifacts. A
+neutral character can wish for any neutral quest artifact, a lawful one
+for any lawful quest artifact, and so on. The alignment-blast rule still
+applies if you actually wield or wear a misaligned one, but carry
+bonuses (MR, drain resistance, regeneration, half spell damage, energy
+regeneration, etc.) work for anyone. A neutral Monk can wish for the
+Healer’s <em>Staff of Aesculapius</em> for the drain-life-on-hit and
+drain-resistance carry bonus, or the Wizard’s <em>Eye of the
+Aethiopica</em> for MR + half-spell-damage + energy regen, even though
+those quests are closed to the Monk. Wishes for artifacts of all kinds
+also have an increasing fizzle chance as more artifacts already exist in
+the game.</p>
+<p><code>#invoke</code> (default <code>^A</code>) activates each
+artifact’s special power; the cost is some energy plus a wear-out
+interval before it can be used again.</p>
+<div class="dense-table">
+<table style="width:100%;">
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 28%" />
+<col style="width: 10%" />
+<col style="width: 23%" />
+<col style="width: 17%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th>Role</th>
+<th>Artifact</th>
+<th>Form</th>
+<th>Wear/wield</th>
+<th>Carry</th>
+<th><code>#invoke</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arc</td>
+<td>The Orb of Detection</td>
+<td>crystal ball</td>
+<td>—</td>
+<td>MR, ESP, ½ spell dmg</td>
+<td>invisibility</td>
+</tr>
+<tr>
+<td>Bar</td>
+<td>The Heart of Ahriman</td>
+<td>luckstone</td>
+<td>×2 dmg as a projectile</td>
+<td>stealth, +luck</td>
+<td>levitation</td>
+</tr>
+<tr>
+<td>Cav</td>
+<td>The Sceptre of Might</td>
+<td>mace</td>
+<td>+d5 hit; ×2 vs non-lawful</td>
+<td>magic resistance</td>
+<td>conflict</td>
+</tr>
+<tr>
+<td>Hea</td>
+<td>The Staff of Aesculapius</td>
+<td>quarterstaff</td>
+<td>drain-life on hit</td>
+<td>drain res., regen</td>
+<td>full heal + cure</td>
+</tr>
+<tr>
+<td>Kni</td>
+<td>The Magic Mirror of Merlin</td>
+<td>mirror</td>
+<td>(speaks to you)</td>
+<td>MR, ESP</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Mon</td>
+<td>The Eyes of the Overworld</td>
+<td>lenses</td>
+<td>astral vision, magic res. (when worn)</td>
+<td>—</td>
+<td>enlightenment</td>
+</tr>
+<tr>
+<td>Pri</td>
+<td>The Mitre of Holiness</td>
+<td>helm</td>
+<td>+1 prot. (brilliance base)</td>
+<td>fire res.</td>
+<td>energy boost</td>
+</tr>
+<tr>
+<td>Ran</td>
+<td>The Longbow of Diana</td>
+<td>bow</td>
+<td>+d5 hit; reflection</td>
+<td>ESP</td>
+<td>conjure arrows</td>
+</tr>
+<tr>
+<td>Rog</td>
+<td>The Master Key of Thievery</td>
+<td>skeleton key</td>
+<td>—</td>
+<td>warn, t-ctrl, ½ phys</td>
+<td>guaranteed untrap</td>
+</tr>
+<tr>
+<td>Sam</td>
+<td>The Tsurugi of Muramasa</td>
+<td>tsurugi</td>
+<td>+d8 phys; chance to behead</td>
+<td>+luck, +1 prot.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Tou</td>
+<td>Platinum Yendorian Express Card</td>
+<td>credit card</td>
+<td>—</td>
+<td>MR, ESP, ½ spell dmg</td>
+<td>charge an item</td>
+</tr>
+<tr>
+<td>Val</td>
+<td>The Orb of Fate</td>
+<td>crystal ball</td>
+<td>—</td>
+<td>+luck, warn, ½ all dmg</td>
+<td>levitate / teleport</td>
+</tr>
+<tr>
+<td>Wiz</td>
+<td>The Eye of the Aethiopica</td>
+<td>amulet</td>
+<td>—</td>
+<td>MR, ½ spell, +energy</td>
+<td>create portal</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>The Orb of Detection</strong> (Archeologist): a crystal ball
+that grants ESP and magic resistance just by being carried.
+<code>#invoke</code> toggles invisibility. Archeologists are already
+exceptional at stealth, and this turns them into a ghost.</p>
+<p><strong>The Heart of Ahriman</strong> (Barbarian): a luckstone that
+doubles as a +1 luck talisman with stealth. Critically, it counts as a
+luckstone for <em>all</em> the luckstone mechanics (mine’s-end
+protection, gem-throw luck math, luck cap +13 instead of +10). It’s also
+a projectile weapon: Barbarians can throw it for double damage and pick
+it back up. <code>#invoke</code> is levitation.</p>
+<p><strong>The Sceptre of Might</strong> (Caveman): mace base, +d5
+to-hit, double damage against any monster whose alignment differs from
+the artifact’s (the Sceptre itself is Lawful, so it deals doubled damage
+against chaotic, neutral, <em>and</em> unaligned monsters — most of the
+dungeon’s hostiles once you reach Gehennom). It also grants magic
+resistance while <em>wielded</em>. <code>#invoke</code> casts conflict
+(monsters fight each other) at a steep energy cost.</p>
+<p><strong>The Staff of Aesculapius</strong> (Healer): the Healer’s
+salvation. Each hit drains life (one of only three drain-life weapons;
+the others are Stormbringer and the rider Death) and gives you
+regeneration plus drain resistance just by carrying it.
+<code>#invoke</code> heals fully and cures nearly every bad status. Few
+artifacts change a role’s late game as much as this one.</p>
+<p><strong>The Magic Mirror of Merlin</strong> (Knight): grants ESP and
+magic resistance, and occasionally <em>speaks</em>, dropping hints.
+Knights already have Excalibur for combat, so the Mirror is pure passive
+utility.</p>
+<p><strong>The Eyes of the Overworld</strong> (Monk): lenses that, when
+worn, give astral vision (see invisible, see through walls, spot secret
+doors) <strong>and</strong> magic resistance. Both effects require them
+to be worn — carrying them in inventory does nothing.
+<code>#invoke</code> enlightens you. For a Monk who can’t safely wear
+body armor, a powerful passive on a slot they can use.</p>
+<p><strong>The Mitre of Holiness</strong> (Priest): a helm of brilliance
+with the usual brilliance bonus to intelligence and wisdom (so
+spell-cast more reliably), plus fire resistance while carried, plus a
+free <code>-1</code> to AC. <code>#invoke</code> for an energy boost,
+useful for spell-heavy Priests. Note: despite what older spoilers say,
+the Mitre does <strong>not</strong> deal bonus damage against undead
+(the artifact has no melee attack to carry the bonus), and it does not
+grant drain resistance.</p>
+<p><strong>The Longbow of Diana</strong> (Ranger): a real artifact bow
+with +d5 to hit plus reflection while wielded, ESP while carried.
+<code>#invoke</code> conjures free arrows out of thin air. Combined with
+the Ranger’s ranged specialization this is the role’s centerpiece.</p>
+<p><strong>The Master Key of Thievery</strong> (Rogue): a carry package
+of warning, teleport control, half physical damage taken, and
+<code>#invoke</code> instantly untraps a nearby trap. The unlocking
+bonus depends on alignment: a Rogue gets it from any non-cursed Key;
+everyone else needs a <strong>blessed</strong> Key. With those
+preconditions met, <code>#untrap</code> also gains a perfect-detection
+bonus on doors and chests.</p>
+<p><strong>The Tsurugi of Muramasa</strong> (Samurai): a katana-grade
+two-handed sword with +d8 damage <em>and</em> a behead chance (like
+Vorpal Blade) <em>and</em> a +1 protection bonus, and it acts as a
+luckstone. Note that Tsurugi does <strong>not</strong> grant magic
+resistance, despite the weapon’s reputation. One of the strongest
+artifacts in the game, the Samurai’s reward for a hard quest.</p>
+<p><strong>The Platinum Yendorian Express Card</strong> (Tourist): the
+Tourist’s get-out-of-jail card. Carrying it grants ESP, magic
+resistance, and half spell damage; <code>#invoke</code> charges an item
+(a wand, ring, or marker), which in the Tourist’s hands is roughly “a
+free wish per ~1000 turns.” Pairs especially well with
+marker-stockpiling strategies.</p>
+<p><strong>The Orb of Fate</strong> (Valkyrie): the most generous
+passive in the game: counts as a luckstone, grants warning, halves both
+spell <em>and</em> physical damage taken. <code>#invoke</code> is
+levitate-or-teleport (a toggle, very useful in the Sanctum). Valkyries
+also have Mjollnir to throw, so the Orb sits in inventory as pure carry
+value.</p>
+<p><strong>The Eye of the Aethiopica</strong> (Wizard): grants magic
+resistance when <strong>worn</strong> (a Wizard’s wearing slot for it is
+the amulet, so in practice always); carrying also gives half spell
+damage taken and <em>extra energy regeneration</em>, a Wizard’s most
+precious resource. <code>#invoke</code> opens a portal that drops you in
+Vlad’s Tower (one-way; useful for shortcutting the Castle → Vlad’s
+traversal). For a spell-caster this is irreplaceable.</p>
 <hr />
 </section>
 </section>
