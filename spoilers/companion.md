@@ -1769,46 +1769,6 @@ empty room, a scatter of arrows or darts on the floor, a square
 your pet refuses to cross, or a themed room whose gimmick is
 hidden hazards.
 
-<!-- audit
-2026-05-18:
-- passes_bars uses verysmall() = msize < MZ_SMALL = TINY only (mondata.c:552-563)
-- grid bug / bat / sewer rat are MZ_TINY (monsters.h:889, 1149, 1269); kitten and little dog are MZ_SMALL and stay out
-- acid (ray/breath/spit) corrodes bars unconditionally (zap.c:5347-5369)
-- lightning shares the acid branch but is gated `rn2(10) break` — melts on roughly 1 zap in 10 (zap.c:5349)
-- striking and force bolt have NO IRONBARS handler — they pass through harmlessly
-- rock moles eat bars via the metallivorous arm (hack.c:769-784)
-- xorns and earth elementals pass walls and so pass bars
-- bars sit on a room-wall tile (mklev.c:783); niche payload one square further into stone
-- scroll of teleportation placed in niche only when `!noteleport` on the level (mklev.c:790-792)
--->
-#### Iron Bars
-
-Iron bars look like a barrier but aren't solid: light passes through,
-you can see what's on the other side, and **tiny** creatures (grid
-bugs, bats, rats) can squeeze between — kittens and little dogs are
-already too big. What they resist is almost everything the player
-can throw at them: pick-axes bounce off ("Clang!"), wands of digging
-fizzle, weapons swing through harmlessly, and kicking just hurts
-your foot. Wands and spells of *striking* and *force bolt* pass
-through the bars without effect. The bars corrode for an acid ray,
-acid breath or spit (if you are polymorphed into a yellow dragon or
-black naga), and a **wand of lightning** can melt them too — though
-only about one zap in ten actually dissolves the bars.
-
-The practical early-game answer is to **dig around** them. Iron bars
-sit in a niche cut into a room wall, so digging diagonally past the
-bars (or breaking through the wall to the stone behind and then back
-into the niche) reaches the contents without touching the bars. Mid-game,
-polymorph into something that breathes acid or lightning, passes
-walls (xorn, earth elemental), is **tiny** enough to slip between,
-or eats metal (rock mole). Starting pets won't fit, but a polymorphed
-pet can.
-
-What's typically behind them: a scroll of teleportation (unless the
-level is non-teleport, in which case the niche skips it), occasionally
-a random item or a previous adventurer's corpse. The scroll is a joke: you'd
-need one already to read it from outside the bars.
-
 #### Finding Secret Doors
 <!-- audit
 2026-05-19:
@@ -2061,6 +2021,46 @@ finger-in-dust trick from earlier editions is gone, but torching
 Elbereth into the floor from a wand of fire while floating still
 works.
 
+<!-- audit
+2026-05-18:
+- passes_bars uses verysmall() = msize < MZ_SMALL = TINY only (mondata.c:552-563)
+- grid bug / bat / sewer rat are MZ_TINY (monsters.h:889, 1149, 1269); kitten and little dog are MZ_SMALL and stay out
+- acid (ray/breath/spit) corrodes bars unconditionally (zap.c:5347-5369)
+- lightning shares the acid branch but is gated `rn2(10) break` — melts on roughly 1 zap in 10 (zap.c:5349)
+- striking and force bolt have NO IRONBARS handler — they pass through harmlessly
+- rock moles eat bars via the metallivorous arm (hack.c:769-784)
+- xorns and earth elementals pass walls and so pass bars
+- bars sit on a room-wall tile (mklev.c:783); niche payload one square further into stone
+- scroll of teleportation placed in niche only when `!noteleport` on the level (mklev.c:790-792)
+-->
+#### Iron Bars
+
+Iron bars look like a barrier but aren't solid: light passes through,
+you can see what's on the other side, and **tiny** creatures (grid
+bugs, bats, rats) can squeeze between — kittens and little dogs are
+already too big. What they resist is almost everything the player
+can throw at them: pick-axes bounce off ("Clang!"), wands of digging
+fizzle, weapons swing through harmlessly, and kicking just hurts
+your foot. Wands and spells of *striking* and *force bolt* pass
+through the bars without effect. The bars corrode for an acid ray,
+acid breath or spit (if you are polymorphed into a yellow dragon or
+black naga), and a **wand of lightning** can melt them too — though
+only about one zap in ten actually dissolves the bars.
+
+The practical early-game answer is to **dig around** them. Iron bars
+sit in a niche cut into a room wall, so digging diagonally past the
+bars (or breaking through the wall to the stone behind and then back
+into the niche) reaches the contents without touching the bars. Mid-game,
+polymorph into something that breathes acid or lightning, passes
+walls (xorn, earth elemental), is **tiny** enough to slip between,
+or eats metal (rock mole). Starting pets won't fit, but a polymorphed
+pet can.
+
+What's typically behind them: a scroll of teleportation (unless the
+level is non-teleport, in which case the niche skips it), occasionally
+a random item or a previous adventurer's corpse. The scroll is a joke: you'd
+need one already to read it from outside the bars.
+
 ---
 
 ### Feelings and Sounds
@@ -2084,7 +2084,7 @@ cryptic feelings and sounds. They sound like atmosphere, but most
 of them are specific signals. If you don't know what they mean,
 you'll miss the cues entirely. They are worth memorizing.
 
-(Caveat: being **Deaf**, **swallowed**, or **underwater** silences
+(Caveat: being **deaf**, **swallowed**, or **underwater** silences
 the ambient-sound channel completely — Permadeaf conducts in
 particular lose every level-flavor cue. The feeling-from-corpse
 messages still come through.)
