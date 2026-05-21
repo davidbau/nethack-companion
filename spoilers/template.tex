@@ -210,6 +210,7 @@ $endif$
 % Override Highlighting for our formatting
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{
   fontsize=\footnotesize,
+  baselinestretch=0.85,
   frame=single,
   framesep=0.3em,
   rulecolor=\color{codeframe},
@@ -218,9 +219,12 @@ $endif$
   breaksymbol={}
 }
 
-% Plain verbatim: also footnotesize with frame
+% Plain verbatim: also footnotesize with frame.
+% Tight baselinestretch so line-drawing chars (|, -) touch
+% vertically in ASCII figures.
 \DefineVerbatimEnvironment{verbatim}{Verbatim}{
   fontsize=\footnotesize,
+  baselinestretch=0.85,
   breaklines=true,
   breakanywhere=true,
   frame=single,
