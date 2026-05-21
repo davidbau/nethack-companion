@@ -274,6 +274,18 @@ tbody tr:nth-child(even) {
   white-space: normal;
 }
 
+/* Useful Corpse Effects tables (Corpse | Effect): widen the Corpse
+   column so entries like "Black pudding (glob)" and "Gelatinous cube †"
+   stay on one line. Same proportion as the LaTeX colspec override. */
+#useful-corpse-effects table th:first-child,
+#useful-corpse-effects table td:first-child {
+  width: 40%;
+}
+#useful-corpse-effects table th:nth-child(2),
+#useful-corpse-effects table td:nth-child(2) {
+  width: 60%;
+}
+
 /* --- Lists -------------------------------------------------- */
 
 ul, ol {
