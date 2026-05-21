@@ -665,13 +665,12 @@ zombies. Colors help distinguish within a class: a red `D` is a red
 dragon, while a gray `D` is a gray dragon (see
 [Field Guide to Dungeon Fauna](#field-guide-to-dungeon-fauna)).
 
-**Color cue: branch staircases turn yellow.** In 5.0, once you've
-used a staircase that leads to a different dungeon (the Mines,
-Sokoban, the Quest, and so on), the `<` or `>` displays in yellow
-on every subsequent visit. A yellow `<` or `>` on a level you're
-revisiting is the entrance to (or exit from) a sub-branch — useful
-for spotting your way back into the Mines without consulting the
-dungeon overview.
+**Color memo: branch staircases turn yellow.** Staircases that
+lead into a sub-branch (Mines, Sokoban, the Quest, and so on)
+display in yellow once you've used them. Ordinary main-trunk
+stairs stay default-colored. A yellow `<` or `>` on a level
+you're revisiting is your way back into the branch, useful for
+spotting it without consulting the dungeon overview.
 
 Item symbols are punctuation marks:
 
