@@ -4326,6 +4326,15 @@ This habit of annotating your discoveries is what separates adventurers
 who die on level 8 from adventurers who reach the Castle. The dungeon
 doesn't keep notes for you. You have to do it yourself.
 
+**Identification by stacking.** When you pick up an item, the game
+merges it into an existing slot only if the two are *identical*:
+same type, same enchantment, same BUC, same erodeproofing. So
+whether a new item stacks with one you already understand leaks
+information for free. A second potion with the same appearance
+that *doesn't* merge with your identified pile is a different
+potion, or carries a different BUC, or has been diluted. Pay
+attention to which slots merge and which don't.
+
 #### A Practical Strategy
 <!-- audit
 2026-05-18:
