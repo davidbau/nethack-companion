@@ -7525,7 +7525,7 @@ instantly fatal.** You are not here to fight; you are here to
 reach one altar, make one sacrifice, and end this.
 
 **Defenses.** An **amulet of life saving** is the best insurance
-on Astral, full stop. Magic resistance stops Death's instakill.
+on Astral. Magic resistance stops Death's instakill.
 Sick resistance handles Pestilence. Carry plenty of food (Famine
 bypasses normal nutrition pacing) and a unicorn horn for the
 stun side effects. A ring of **conflict** keeps the Riders
