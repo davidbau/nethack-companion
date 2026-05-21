@@ -9393,9 +9393,10 @@ artifact weapon unrestricts you to Basic in its skill. Key:
 
 A "**—**" does *not* mean the skill is unusable — it means the
 rank is locked at Unskilled forever, so you always pay the
-Unskilled penalty from the rank table (−4/−2 for a weapon, −9/−3
-per strike for two-weapon, the Unskilled cast-failure rate for a
-spell school) and no rank-gated upgrades ever unlock. A Healer
+Unskilled penalty from the [Skill Ladder](#the-skill-ladder)
+(−4/−2 for a weapon, −9/−3 per strike for two-weapon, the Unskilled
+cast-failure rate for a spell school) and no rank-gated upgrades
+ever unlock. A Healer
 can still read a spellbook of force bolt and try to cast it; a
 Wizard can still swing a long sword; they'll just always do it
 clumsily, with no path to improvement. Roles are abbreviated: Arc=Archeologist,
