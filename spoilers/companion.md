@@ -6225,12 +6225,12 @@ Practice accumulates through use:
   count. Spears, javelins, knives, daggers, and aklys train the
   same skill whether you stab with them or throw them.
 - **Bare hands** counts **50%** of your hits; **martial arts**
-  counts **75%**. The rank still applies on every hit — this just
+  counts **75%**. The rank still applies on every hit; this just
   slows the climb.
 - **Riding** earns one tick every **100 squares** ridden.
 - **Spell schools** earn **N practice per successful cast of a
-  level-N spell**. Every school has a level-1 option to grind —
-  see the schools table below.
+  level-N spell**. Every school has a level-1 option to grind.
+  See the schools table below.
 
 Skills your role starts at Basic come **pre-credited with 20
 practice uses**, so you're already a quarter of the way to Skilled
