@@ -516,8 +516,7 @@ don't grind. When you've found what the level has to offer, move on.
 your real goal isn't accumulating treasure. It's acquiring the
 resistances and protections that will help you survive the late
 game. The three most important are **magic resistance**,
-**reflection**, and **poison resistance** (plus a **lizard
-corpse** in your pack for petrification emergencies). Poison
+**reflection**, and **poison resistance**. Poison
 resistance can be acquired as an *intrinsic* by eating the right
 corpse, like a killer bee, a cave spider, a yellow mold, or a
 black pudding kicked from a sink.
