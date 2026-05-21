@@ -90,13 +90,13 @@ will do our best to keep you alive.
 20. [Rings and Amulets](#rings-and-amulets) — Jewelry, for better or worse
 21. [Tools of the Trade](#tools-of-the-trade) — From pickaxes to magic lamps
 22. [The Armory](#the-armory) — Weapons, armor, and hitting things
-23. [Curses and How to Break Them](#curses-and-how-to-break-them)
+23. [Curses and How to Break Them](#curses-and-how-to-break-them) — Spotting them, undoing them, surviving them
 
 **Part Five: Mastery**
 
 24. [Spellcasting](#spellcasting) — Magic for the studious adventurer
 25. [Luck and Fortune](#luck-and-fortune) — The hidden numbers that shape your fate
-26. [Enhancing Skills](#enhancing-skills)
+26. [Enhancing Skills](#enhancing-skills) — Skill ranks, slot budgets, and `#enhance`
 27. [Wishes and Wishing](#wishes-and-wishing) — Getting what you want
 28. [Artifacts](#artifacts) — Legendary equipment and how to obtain it
 
