@@ -6288,15 +6288,15 @@ Role caps vary sharply across schools:
 - **Wizards** have access to all seven schools and cap at Expert
   in attack, divination, escape, and matter.
 - **Monks** also have access to all seven, but cap at Expert only
-  in healing — Skilled in cleric and escape, Basic elsewhere.
+  in healing, Skilled in cleric and escape, Basic elsewhere.
 - **Priests** reach Expert in healing, divination, and cleric.
 - **Healers** cap at Expert in healing and are *restricted*
   from every other school. Specialization by decree.
 - **Knights** train attack, healing, and cleric to Skilled.
-- **Rangers** push divination to Expert — their one specialty school.
+- **Rangers** push divination to Expert, their one specialty school.
 - **Rogues, Tourists, Samurai** each get two or three schools at
   Skilled or lower, usually built around divination or escape.
-- **Cavemen** reach Skilled in matter and Basic in attack — two
+- **Cavemen** reach Skilled in matter and Basic in attack: two
   schools only.
 - **Barbarians and Valkyries** cap at Basic in their two schools
   (attack and escape) and can't reliably cast spells past
