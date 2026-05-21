@@ -75,8 +75,8 @@ will do our best to keep you alive.
 **Part Three: Survival**
 
 10. [The Art of Combat](#the-art-of-combat) — Hit probability, damage, and tactics
-11. [Ways to Die](#ways-to-die) — Top-ten killers, common deaths, mimics, dragons
-12. [Yet More Ways to Die](#yet-more-ways-to-die) — Instadeaths and how to recognize them
+11. [Things That Will Kill You](#things-that-will-kill-you) — Top-ten killers, common deaths, mimics, dragons
+12. [More Ways to Die](#more-ways-to-die) — Instadeaths and how to recognize them
 13. [Divine Relations](#divine-relations) — Prayer, sacrifice, and altars
 14. [Making Friends](#making-friends) — Pets, taming, and peaceful coexistence
 
@@ -526,7 +526,7 @@ mail (gray for MR, silver for reflection), an amulet of
 reflection, or an artifact granted by your god, won on the
 Quest, or bestowed by a wish.
 
-#### Things That Kill You (And How Not to Let Them)
+#### Dungeon Hazards (and How to Survive Them)
 
 Here's a short list of common early deaths and how to prevent them:
 
@@ -869,9 +869,9 @@ AC / attack details on every monster, see the
 | [`p`](#piercers-p)    | [Piercers](#piercers-p)          | Disguise as stalactites; drop from the ceiling onto whatever walks below. The fall does serious damage. Hard to spot in advance. |
 | [`P`](#puddings-and-oozes-p)    | [Puddings](#puddings-and-oozes-p)          | Black AND brown puddings split when hit in melee with an iron or metal weapon (scalpel and tsurugi count). Use a silver or wooden weapon, or spells.                              |
 | [`q`](#quadrupeds-q)    | [Quadrupeds](#quadrupeds-q)        | Multi-attack mid-game bruisers. The **rothe** is the famous one (three attacks per turn at sluggish speed 9, dangerous in packs); mumakil are solo two-attack bruisers (4d12 butt + 2d6 bite).                              |
-| [`R`](#rust-monsters-and-disenchanters-r)    | [Rust monster / disenchanter](#rust-monsters-and-disenchanters-r) | Rust monsters corrode worn iron armor when they hit you, and your wielded iron weapon when you hit them. Use non-iron alternatives (mithril, silver, dragonhide) or take iron gear off before the fight; iron items kept in your inventory aren't touched. **Disenchanters** drain enchantment on hit and have their own write-up under [Ways to Die](#ways-to-die). |
+| [`R`](#rust-monsters-and-disenchanters-r)    | [Rust monster / disenchanter](#rust-monsters-and-disenchanters-r) | Rust monsters corrode worn iron armor when they hit you, and your wielded iron weapon when you hit them. Use non-iron alternatives (mithril, silver, dragonhide) or take iron gear off before the fight; iron items kept in your inventory aren't touched. **Disenchanters** drain enchantment on hit and have their own write-up under [More Ways to Die](#more-ways-to-die). |
 | [`S`](#snakes-s)    | [Snakes](#snakes-s)            | Cobras and pit vipers poison. Water moccasins come from fountains.                                   |
-| [`t`](#trappers-and-lurkers-t)    | [Trappers / lurkers above](#trappers-and-lurkers-t) | Hide in plain sight on floor or ceiling and engulf you when you walk under/onto them. See the engulfment write-up under [Ways to Die](#ways-to-die). |
+| [`t`](#trappers-and-lurkers-t)    | [Trappers / lurkers above](#trappers-and-lurkers-t) | Hide in plain sight on floor or ceiling and engulf you when you walk under/onto them. See the engulfment write-up under [More Ways to Die](#more-ways-to-die). |
 | [`T`](#trolls-t)    | [Trolls](#trolls-t)            | Regenerate. They come back from the dead unless you eat or tin the corpse.                           |
 | [`u`](#unicorns-and-horses-u)    | [Horses / unicorns](#unicorns-and-horses-u) | Horses are usually mountable, mostly peaceful in the wild. Unicorns are color-coded by alignment: same-aligned spawn peaceful, cross-aligned hostile. The gem-throwing negotiation playbook is in [Luck and Fortune](#luck-and-fortune). |
 | [`U`](#umber-hulks-u)    | [Umber hulk](#umber-hulks-u)        | Confuses on sight. Avoid looking at them directly.                                                   |
@@ -1535,7 +1535,7 @@ Your options, from safest to most desperate:
 
 - **Levitation** (ring, boots, potion, or spell). The easiest way
   to cross. Eels can still grab you from adjacent water (see
-  [Drowning](#drowning) in [Ways to Die](#ways-to-die)).
+  [Drowning](#drowning) in [More Ways to Die](#more-ways-to-die)).
 - **Water walking boots.** You walk on the surface. Eels can still
   grab you in adjacent water.
 - **Wand of cold.** Zap the water to freeze a path of ice. Ice
@@ -2298,7 +2298,7 @@ are the time-tested tactics that keep adventurers breathing:
 
 ---
 
-### Ways to Die
+### Things That Will Kill You
 <!-- audit
 2026-05-20:
 - mines residents are class G (gnomes, S_GNOME) and h (humanoids incl. dwarves, S_HUMANOID); g is gremlins/gargoyles (defsym.h:295, 301, 303, 333)
@@ -2518,7 +2518,7 @@ boulders you summoned on your own head.
 Routine mistakes kill far more adventurers than exotic
 instadeaths. Floating eyes, cockatrices, mind flayers, and
 disenchanters all matter (and they're catalogued in
-[Yet More Ways to Die](#yet-more-ways-to-die)). But the median
+[More Ways to Die](#more-ways-to-die)). But the median
 death is a preventable swarm of jackals on Dlvl 3.
 
 #### A note on dragons
@@ -2734,7 +2734,7 @@ cursed scroll of genocide naming "wraith" reverse-genocides
 
 ---
 
-### Yet More Ways to Die
+### More Ways to Die
 
 Some things in the Mazes kill you outright. Not by whittling down
 your hit points, not by wearing you down over time, but by ending
@@ -3340,7 +3340,7 @@ check uses the eel's tile, so levitation, water walking, and
 encumbrance status are irrelevant once the grab lands. **Cures:**
 magical breathing (amulet or spell), kill or teleport the eel
 before it pulls you under, or avoid water entirely. See
-[Drowning](#drowning) in [Ways to Die](#ways-to-die) for the full picture.
+[Drowning](#drowning) in [More Ways to Die](#more-ways-to-die) for the full picture.
 
 **Strangulation.** Wearing a cursed amulet of strangulation slowly
 kills you over a few turns. **Cure:** remove the amulet (requires
