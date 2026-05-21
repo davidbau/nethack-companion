@@ -6324,7 +6324,7 @@ monster you just sacrificed, you gain nothing. The altar accepts your
 offering politely and gives you nothing in return, because the gods have
 standards.
 
-This closes a beloved old strategy: sitting at a co-aligned altar with
+So 5.0 closes an old strategy: sitting at a co-aligned altar with
 a pile of kobold corpses and grinding luck to maximum. It no longer
 works once your luck is already above modest levels. To raise luck via
 sacrifice in the mid-to-late game, you need fresh corpses of monsters
