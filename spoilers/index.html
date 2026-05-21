@@ -22006,26 +22006,141 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
   var searchResults = document.getElementById('search-results');
   var searchIndex = document.getElementById('search-index');
 
-  // Build searchable data from headings and paragraphs
+  // --- Stopwords skipped when normalizing hit position within a sentence ---
+  var STOPWORDS = { 'the':1, 'a':1, 'an':1, 'of':1, 'to':1, 'and':1, 'or':1,
+                    'in':1, 'on':1, 'at':1, 'for':1, 'is':1, 'are':1, 'as':1, 'by':1 };
+
+  // Walk an element and produce its concatenated text together with
+  // the character offset ranges of any bold (strong/b) spans within.
+  function elTextAndBold(el) {
+    var text = '';
+    var ranges = [];
+    function walk(node, inBold) {
+      if (node.nodeType === 3) { text += node.nodeValue; return; }
+      if (node.nodeType !== 1) return;
+      var nowBold = inBold || node.tagName === 'STRONG' || node.tagName === 'B';
+      if (nowBold && !inBold) {
+        var start = text.length;
+        for (var i = 0; i < node.childNodes.length; i++) walk(node.childNodes[i], true);
+        ranges.push([start, text.length]);
+      } else {
+        for (var j = 0; j < node.childNodes.length; j++) walk(node.childNodes[j], nowBold);
+      }
+    }
+    walk(el, false);
+    return { text: text, boldRanges: ranges };
+  }
+
+  // Build searchable data from headings and paragraphs. Each section gets
+  // a list of typed segments so the scorer can weight heading/bold/plain
+  // differently. The flat `text` field is kept for snippet generation.
   var searchData = [];
   var contentSections = document.querySelectorAll('main section[id]');
   contentSections.forEach(function(section) {
     var heading = section.querySelector('h1, h2, h3, h4');
     if (!heading) return;
-    // Gather text from direct child p, li, td elements plus tables
-    // wrapped in pandoc's div.dense-table containers (which the search
-    // would otherwise skip — that's why bestiary entries like
-    // "homunculus" weren't surfacing).
+    var level = parseInt(heading.tagName.substring(1), 10);
+    var segments = [{ kind: 'heading', level: level,
+                      text: heading.textContent, boldRanges: [] }];
+    var flat = heading.textContent + ' ';
     var textEls = section.querySelectorAll(':scope > p, :scope > ul > li, :scope > ol > li, :scope > table td, :scope > blockquote p, :scope > div.dense-table table td, :scope > div > table td');
-    var text = '';
-    textEls.forEach(function(el) { text += el.textContent + ' '; });
+    textEls.forEach(function(el) {
+      var info = elTextAndBold(el);
+      var kind = (el.tagName === 'TD' || el.tagName === 'TH') ? 'cell' : 'plain';
+      segments.push({ kind: kind, text: info.text, boldRanges: info.boldRanges });
+      flat += info.text + ' ';
+    });
     searchData.push({
       id: section.id,
       title: heading.textContent,
-      text: text.substring(0, 2000),
-      level: heading.tagName
+      level: level,
+      text: flat.substring(0, 4000),
+      segments: segments
     });
   });
+
+  // --- Scoring helpers ---
+  function isInBold(pos, ranges) {
+    for (var i = 0; i < ranges.length; i++) {
+      if (pos >= ranges[i][0] && pos < ranges[i][1]) return true;
+    }
+    return false;
+  }
+  // Scan backward; a hit is inside parentheses if we find an unmatched '('.
+  function isInParens(text, pos) {
+    var depth = 0;
+    for (var j = pos - 1; j >= 0; j--) {
+      var c = text.charCodeAt(j);
+      if (c === 41) depth++;          // ')'
+      else if (c === 40) {            // '('
+        if (depth === 0) return true;
+        depth--;
+      }
+    }
+    return false;
+  }
+  // Find the [start, end) bounds of the sentence containing `pos`.
+  function sentenceContaining(text, pos) {
+    var start = 0;
+    for (var j = pos; j > 0; j--) {
+      var c = text.charCodeAt(j - 1);
+      if (c === 46 || c === 33 || c === 63) {  // .!?
+        start = j;
+        while (start < text.length && /\s/.test(text[start])) start++;
+        break;
+      }
+    }
+    var end = text.length;
+    for (var k = pos + 1; k < text.length; k++) {
+      var cc = text.charCodeAt(k);
+      if (cc === 46 || cc === 33 || cc === 63) { end = k; break; }
+    }
+    return { start: start, end: end };
+  }
+  // Skip a leading run of stopwords from the sentence (returns char count).
+  function stopwordSkip(text, start, end) {
+    var i = start;
+    while (i < end) {
+      while (i < end && !/[a-z]/i.test(text[i])) i++;
+      if (i >= end) break;
+      var wstart = i;
+      while (i < end && /[a-z]/i.test(text[i])) i++;
+      if (!STOPWORDS[text.substring(wstart, i).toLowerCase()]) return wstart - start;
+    }
+    return i - start;
+  }
+
+  // Score one section against a single (lowercase) query word.
+  function scoreWordInSection(item, word) {
+    var total = 0;
+    for (var s = 0; s < item.segments.length; s++) {
+      var seg = item.segments[s];
+      var t = seg.text;
+      var lt = t.toLowerCase();
+      var i = 0;
+      while ((i = lt.indexOf(word, i)) !== -1) {
+        var weight;
+        if (seg.kind === 'heading') {
+          // h2=80, h3=40, h4=20, h5=10 — higher in the hierarchy weighs more.
+          weight = 160 / Math.pow(2, seg.level - 1);
+        } else if (seg.kind === 'cell') {
+          weight = 3;
+        } else {
+          weight = isInBold(i, seg.boldRanges) ? 6 : 1;
+        }
+        if (seg.kind !== 'heading' && isInParens(t, i)) weight *= 0.6;
+        // Position bonus: 1.0 at sentence start (after stopwords), 0 at end.
+        var sent = sentenceContaining(t, i);
+        var skip = stopwordSkip(t, sent.start, sent.end);
+        var effPos = Math.max(0, (i - sent.start) - skip);
+        var effLen = Math.max(1, (sent.end - sent.start) - skip);
+        var posBonus = Math.max(0, 1 - effPos / effLen);
+        total += weight * (0.5 + posBonus);
+        i += word.length;
+      }
+    }
+    return total;
+  }
 
   var searchClear = document.getElementById('search-clear');
   function updateClearButton() {
@@ -22061,20 +22176,11 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
       var haystack = (item.title + ' ' + item.text).toLowerCase();
       var score = 0;
       var allMatch = true;
-      words.forEach(function(w) {
-        if (haystack.indexOf(w) === -1) {
-          allMatch = false;
-        } else {
-          // Title matches score higher
-          if (item.title.toLowerCase().indexOf(w) !== -1) score += 10;
-          // Count occurrences in text
-          var idx = 0;
-          while ((idx = haystack.indexOf(w, idx)) !== -1) { score++; idx += w.length; }
-        }
-      });
-      if (allMatch && score > 0) {
-        matches.push({ item: item, score: score });
+      for (var w = 0; w < words.length; w++) {
+        if (haystack.indexOf(words[w]) === -1) { allMatch = false; break; }
+        score += scoreWordInSection(item, words[w]);
       }
+      if (allMatch && score > 0) matches.push({ item: item, score: score });
     });
 
     matches.sort(function(a, b) { return b.score - a.score; });
