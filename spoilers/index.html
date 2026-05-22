@@ -22278,10 +22278,17 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
     // already shown in the search result heading, so excluding it here
     // keeps the snippet from repeating it back.
     var flat = '';
-    var textEls = section.querySelectorAll(':scope > p, :scope > ul > li, :scope > ol > li, :scope > pre, :scope > table td, :scope > blockquote p, :scope > div.dense-table table td, :scope > div > table td');
+    // Each segment is one "container unit": a paragraph, a list item, a
+    // code block, a blockquote paragraph, or one whole table.  Body
+    // scoring caps at one hit per segment (best occurrence wins), which
+    // matters most for tables — a Bestiary table with twelve cells
+    // saying "quest leader" / "quest nemesis" is one signal, not twelve.
+    var textEls = section.querySelectorAll(':scope > p, :scope > ul > li, :scope > ol > li, :scope > pre, :scope > table, :scope > blockquote p, :scope > div.dense-table table, :scope > div > table');
     textEls.forEach(function(el) {
       var info = elTextAndBold(el);
-      var kind = (el.tagName === 'TD' || el.tagName === 'TH') ? 'cell' : 'plain';
+      var kind;
+      if (el.tagName === 'TABLE') kind = 'table';
+      else kind = 'plain';
       segments.push({ kind: kind, text: info.text, boldRanges: info.boldRanges });
       flat += info.text + ' ';
     });
@@ -22378,27 +22385,26 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
 
   // Score one section against a single (lowercase) query word.
   //
-  // Heading hits (and title-match bonuses elsewhere) contribute their
-  // full per-occurrence weight, since there's typically only one
-  // heading per section.  Body mentions, on the other hand, are
-  // aggregated and then dampened by a square root — a section with
-  // 16 passing references to a term shouldn't outrank a section that
-  // is actually *about* the term but only names it 4 times.
+  // Heading hits contribute their full per-occurrence weight.  Body
+  // segments (paragraphs, list items, code blocks, whole tables, etc.)
+  // each contribute *at most one hit* — the best occurrence within that
+  // segment.  Multiple mentions inside the same paragraph (or the same
+  // table) are evidence of the same point, not independent signals.
   function scoreWordInSection(item, word) {
-    var headingScore = 0;
-    var bodyScore = 0;
+    var total = 0;
     for (var s = 0; s < item.segments.length; s++) {
       var seg = item.segments[s];
       var t = seg.text;
       var lt = t.toLowerCase();
       var i = 0;
+      var segBest = 0;
       while ((i = lt.indexOf(word, i)) !== -1) {
         var weight;
         if (seg.kind === 'heading') {
           // h2=80, h3=40, h4=20, h5=10 — higher in the hierarchy weighs more.
           weight = 160 / Math.pow(2, seg.level - 1);
-        } else if (seg.kind === 'cell') {
-          weight = 3;
+        } else if (seg.kind === 'table') {
+          weight = 4;
         } else {
           weight = isInBold(i, seg.boldRanges) ? 6 : 1;
         }
@@ -22410,12 +22416,18 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
         var effLen = Math.max(1, (sent.end - sent.start) - skip);
         var posBonus = Math.max(0, 1 - effPos / effLen);
         var per = weight * (0.5 + posBonus);
-        if (seg.kind === 'heading') headingScore += per;
-        else bodyScore += per;
+        if (seg.kind === 'heading') {
+          // Heading: every (rare) hit counts in full.
+          total += per;
+        } else {
+          // Body segment: only the best hit within this segment counts.
+          if (per > segBest) segBest = per;
+        }
         i += word.length;
       }
+      if (seg.kind !== 'heading') total += segBest;
     }
-    return headingScore + Math.sqrt(bodyScore) * 4;
+    return total;
   }
 
   var searchClear = document.getElementById('search-clear');
@@ -22446,14 +22458,21 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
       return w.replace(/[^a-z0-9]/g, '');
     }).filter(function(w) { return w && !STOPWORDS[w]; });
     if (contentWords.length === 0) return 0;
-    var matches = 0;
+    // Exact match counts 1.0; prefix-match (e.g. "amulet" vs "amulets")
+    // counts 0.7 as long as the query covers ≥ 70% of the title word.
+    var coverage = 0;
     for (var i = 0; i < contentWords.length; i++) {
-      if (contentWords[i] === word) matches++;
+      var tw = contentWords[i];
+      if (tw === word) {
+        coverage += 1.0;
+      } else if (tw.indexOf(word) === 0 && word.length / tw.length >= 0.7) {
+        coverage += 0.7;
+      }
     }
-    if (matches === 0) return 0;
-    // Scale 0-50 by title coverage. 1.0 coverage (single-word title equals
-    // the query) is worth ~50 plain-text mentions.
-    return 50 * matches / contentWords.length;
+    if (coverage === 0) return 0;
+    // Scale 0–50 by title coverage. 1.0 coverage (a single-word title
+    // that equals the query) is worth ~50 plain-text mentions.
+    return 50 * coverage / contentWords.length;
   }
 
   function doSearch() {
