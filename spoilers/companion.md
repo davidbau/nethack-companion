@@ -2701,7 +2701,7 @@ single bump can rob you, drop your XL, and snatch the cloak off
 your shoulders, all in one round.
 
 **Defenses.** Kill at range (darts, force bolt, a wand of
-anything). Engrave **Elbereth**: nymphs respect it. Or drop your
+anything). [Engrave **Elbereth**](#engravings): nymphs respect it. Or drop your
 most irreplaceable items on the floor before approaching.
 Whatever's not in your pack can't be stolen.
 
@@ -2802,7 +2802,7 @@ inside a corridor where you control the spacing), then eat the
 corpse the moment it drops. Wraith corpses spoil quickly, so
 hesitation costs you the trade.
 
-**The intentional version.** Mid-to-late-game players actively
+**Farming wraiths.** Mid-to-late-game players actively
 hunt wraiths in the upper Quest and throughout Gehennom for free
 XP. A *cursed* scroll of genocide naming "wraith" reverse-
 genocides four to six fresh wraiths at your feet — a ready-made
