@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Build script for "A Traveler's Companion to the Mazes of Menace"
-# LaTeX pipeline: companion.md → pandoc + lua filter → xelatex → companion-latex.pdf
+# LaTeX pipeline: companion.md → pandoc + lua filter → xelatex → book.pdf
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
@@ -78,8 +78,8 @@ pandoc .companion-print.md \
   --lua-filter=latex-filter.lua \
   --top-level-division=part \
   --toc \
-  --output=companion-latex.pdf 2>&1
+  --output=book.pdf 2>&1
 rm -f .companion-print.md
 
-echo "    → companion-latex.pdf"
+echo "    → book.pdf"
 echo "=== Done ==="

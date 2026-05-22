@@ -470,7 +470,7 @@ def main():
                 draw_thumb_cell(cell_x, cell_y, col_w, row_h,
                                 cell[1], cell[2], cell[3])
 
-    final = HERE / "cover.pdf"
+    final = HERE.parent / "cover.pdf"
     out.save(str(final))
     out.close()
     print(f"Wrote {final} ({final.stat().st_size} bytes)")

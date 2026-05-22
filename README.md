@@ -64,7 +64,7 @@ worthy of printing as a physical open-source book, to celebrate the
 ./setup.sh                       # one-time: pull NetHack 5.0 source submodule
 spoilers/bootstrap-fonts.sh      # one-time: install EB Garamond + Source Code Pro
 spoilers/build.sh                # builds index.html from companion.md (Pandoc)
-spoilers/build-latex.sh          # builds companion-latex.pdf (XeLaTeX)
+spoilers/build-latex.sh          # builds book.pdf (XeLaTeX)
 python3 spoilers/cover/build-cover.py    # builds the print cover PDF
 ```
 

@@ -50,7 +50,7 @@ you to starve with no food rations on level four, read on. We
 will do our best to keep you alive.
 
 <aside class="download-box">
-<strong>Prefer to read offline?</strong> Print the <a href="companion-latex.pdf">book-format PDF</a> (285pp, 5×8 trim, <a href="cover/cover.pdf">cover</a>).
+<strong>Prefer to read offline?</strong> Print the <a href="book.pdf">book-format PDF</a> (285pp, 5×8 trim, <a href="cover.pdf">cover</a>).
 </aside>
 
 ---
