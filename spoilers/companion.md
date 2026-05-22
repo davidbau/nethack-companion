@@ -629,11 +629,19 @@ patterns is the first step toward navigating them effectively.
 
 #### The Big Picture
 
-Even though the dungeon is different every time you play, it is
-not totally random. The layout of any one level is random, but
-the overall map follows a familiar structure, and that structure
-guides the path of your game through a progressively more varied
-and challenging series of adventures.
+When Jay Fenlason wrote the original *Hack* in 1982, every level
+in the dungeon looked the same: rooms, corridors, a staircase down
+to more of the same. More than forty years of community
+development later, the Dungeons of Doom you first descend into are
+only one neighborhood of a much larger world. If you survive long
+enough, your adventure will lead you through towns, towers, and
+castles; swamps and islands and fortresses; an underworld of
+molten halls and four elemental planes that climb back to a temple
+where angels, demons, and Riders crowd the altars of the gods.
+Each landmark has its own architecture, its own inhabitants, and
+its own rewards. Every game is different, but the dungeon has a
+story to tell: an arc through a familiar cast of landmarks, each
+tougher and stranger than the last.
 
 The dungeon is a branching tree with a main trunk that descends
 through three main phases. Off the trunk are several optional side
