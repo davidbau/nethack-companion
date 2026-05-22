@@ -7,9 +7,12 @@ print book2.pdf as the bound block alongside cover2.pdf, the bound
 block's first and last pages carry the inside-cover artwork that
 the coil cover can't.
 
+Both new pages go at the END to keep book.pdf's odd/even (recto/verso)
+parity intact.
+
 Page assembly:
-  book2 page 1:         inside-FRONT-cover artwork  (left  panel of cover.pdf p2)
-  book2 pages 2..N+1:   book.pdf pages 1..N
+  book2 pages 1..N:     book.pdf pages 1..N
+  book2 page N+1:       inside-FRONT-cover artwork  (left  panel of cover.pdf p2)
   book2 page N+2:       inside-BACK-cover artwork   (right panel of cover.pdf p2)
 """
 
@@ -68,8 +71,8 @@ def main():
     inside_back  = extract_panel(cover, 1, RIGHT_PANEL)
 
     out = fitz.open()
-    out.insert_pdf(inside_front)
     out.insert_pdf(book)
+    out.insert_pdf(inside_front)
     out.insert_pdf(inside_back)
     out.save(str(OUT))
 
