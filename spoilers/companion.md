@@ -965,7 +965,9 @@ says *"Wow! This makes you feel great!"*, restores all your
 attributes to their maximum values, and raises a random attribute by
 one, and consumes the magic charge; afterwards the fountain behaves
 like any other. (You can also *wish* for a magic fountain by asking
-for "a magic fountain"; sink-kicked fountains are never magic.)
+for "a magic fountain"; sink-kicked fountains are never magic, and
+dipping gets no benefits from the magic charge but could lose it by
+drying the fountain.)
 
 **Quaffing from a fountain** is a slot machine with these reels:
 
