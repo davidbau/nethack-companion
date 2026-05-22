@@ -1001,12 +1001,7 @@ uncurse the dipped item.
 
 The conventional wisdom: if you're a lawful Knight carrying a long
 sword, dip in every fountain you see until Excalibur appears. Other
-lawful characters should try too, but pack patience. And if you're
-not lawful? *Dipping* has nothing for you but wet boots and regret.
-*Quaffing* may still be worth it if you have lost attributes. About
-a 1-in-10 chance at any fountain restores all attributes to maximum
-and grants a bonus, plus various lesser benefits besides. (Seems
-like it might be worth a single sip!)
+lawful characters should try too, but pack patience. If you're not lawful, don't dip.
 
 #### Altars `_`
 
