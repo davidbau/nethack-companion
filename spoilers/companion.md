@@ -4628,7 +4628,7 @@ creature on a typical descent.
 | Corpse                  | Effect                                                                 |
 | ----------------------- | ---------------------------------------------------------------------- |
 | Newt                    | May restore 1 to 3 mana                                                |
-| Killer bee              | Poison resistance                                                      |
+| Cave spider, centipede, killer bee | Poison resistance                                           |
 | Lizard                  | Cures stoning in progress                                              |
 | Floating eye            | Telepathy (but paralyzes you too)                                      |
 | Fire ant                | Fire resistance                                                        |
