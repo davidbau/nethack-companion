@@ -957,14 +957,15 @@ curious, and occasionally punish them. Learning what to do (and what
 
 Ah, fountains. That gentle bubbling sound has lured more adventurers
 to their doom than any trap, with the promise of a cool refreshing
-drink. You should know that about one in seven fountains is a **magic
-fountain** that is indistinguishable from a regular fountain. Drinking
-from a magic one says *"Wow! This makes you feel great!"*, restores
-all your attributes to their maximum values, and raises a random
-attribute by one, and consumes the magic charge; afterwards the
-fountain behaves like any other. (You can also *wish* for a magic
-fountain by asking for "a magic fountain"; sink-kicked fountains are
-never magic.)
+drink.
+
+About one in seven fountains is a **magic fountain** that is
+indistinguishable from a regular fountain. Drinking from a magic one
+says *"Wow! This makes you feel great!"*, restores all your
+attributes to their maximum values, and raises a random attribute by
+one, and consumes the magic charge; afterwards the fountain behaves
+like any other. (You can also *wish* for a magic fountain by asking
+for "a magic fountain"; sink-kicked fountains are never magic.)
 
 **Quaffing from a fountain** is a slot machine with these reels:
 
