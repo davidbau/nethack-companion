@@ -4651,6 +4651,7 @@ creature on a typical descent.
 | Fire giant              | Fire resistance + Strength                                             |
 | Disenchanter            | **STRIPS** a random intrinsic. Never eat.                              |
 
+[]{#vegetarian-safe-corpses}
 **Vegetarian-safe corpses** (those marked **†** are also vegan):
 
 | Corpse                  | Effect                                                                 |
@@ -8412,10 +8413,12 @@ technically vegan, but eating its glob slimes you. The vegetarian
 monster list is broader than you might expect: all `b` (blobs),
 all `j` (jellies), all `F` (fungi and molds), all `v` (vortices),
 all `y` (lights), all `E` (elementals) except stalkers, and all
-`'` (golems) except flesh golems and leather golems. Vegetarian-safe
-is not the same as safe. Yellow mold corpses poison, violet fungus
-paralyzes, and acid blobs sting going down. Monks already pay an
-alignment penalty for meat, so vegetarian is mostly free for them.
+`'` (golems) except flesh and leather golems. Many [vegetarian
+corpses grant useful intrinsics](#vegetarian-safe-corpses).
+Vegetarian-safe is not the same as safe. Yellow mold corpses
+poison, violet fungus paralyzes, and acid blobs sting going down.
+Monks are a good role to play vegetarian; they already pay an
+alignment penalty for meat.
 
 **Vegan.** Follow all vegetarian restrictions, plus avoid eating
 eggs, pancakes, lumps of royal jelly, cream pies, candy bars, *and*
