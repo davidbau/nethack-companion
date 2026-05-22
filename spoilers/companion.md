@@ -4155,8 +4155,8 @@ document.addEventListener('DOMContentLoaded', function() {
 The single most useful wand-identification trick costs only one
 charge and preserves the rest.
 
-1. **BUC-test the wand first.** In 5.0, a cursed wand used to
-   engrave may **explode**. Drop the wand on an aligned altar, hand
+1. **BUC-test the wand first.** A cursed wand used to engrave may
+   **explode**. Drop the wand on an aligned altar, hand
    it to a priest, or otherwise determine its BUC before testing.
 2. **Write a short message on the floor with your finger.** Engrave
    anything in the dust first (command `E`, then select "`-`" for
