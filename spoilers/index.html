@@ -1558,6 +1558,24 @@ Walk into the gap to identify it.</td>
 <section id="points-of-interest" class="level3">
 <h3>Points of Interest</h3>
 <!-- audit
+2026-05-22 fountains fact-check:
+- magic-fountain placement: mklev.c:2297 mkfountain() rolls !rn2(7) — 1/7 of *randomly placed* fountains; predefined fountains via lua des.feature("fountain",x,y) call lspo_feature (sp_lev.c:4904) which sets FOUNTAIN typ + looted/warned only, never blessedftn — so Minetown, Mine's End, Oracle, Big Room (bigrm-4), Castle, Juiblex's swamp are never magic
+- magic-fountain gate: mgkftn && u.uluck >= 0 && fate >= 10 (fountain.c:254); fires on 21/30 quaffs at Luck ≥ 0; "Wow! This makes you feel great!" at fountain.c:257; AMAX restore loop fountain.c:259-263; +1 attr 264-272; flag consumed at fountain.c:275
+- sink-kicked fountain blessedftn=0 explicit (do.c:421)
+- dipfountain has no blessedftn check; dryup() at fountain.c:232 clears it — dipping a magic fountain can waste the charge if the fountain dries
+- curse-some-items (case 24, "This water's no good!"): iterates gi.invent only (fountain.c:312-320), so container contents (bag interior) are safe
+- poisonous water (case 21, "The water is contaminated!"): poison_strdmg if no Poison_resistance else losehp(rnd(4),"unrefrigerated sip of juice") (fountain.c:300-307)
+- scare-monsters (case 29, "bad breath"): iterates fmon entire-level, monflee each (fountain.c:367-381)
+- water demon 1 in 30 (case 23); wish gate rnd(100) > 80 + level_difficulty() (fountain.c:78); level_difficulty in DoD == depth(&u.uz) (dungeon.c:2027); at DL ≥ 20, threshold 100, rnd(100) never > 100, so 0% wish
+- Elbereth scares water demons in DoD: onscary excludes only Rodney/lawful-minions/Angels/Riders (monmove.c:243-271); Elbereth disabled in Gehennom/Planes (Inhell || In_endgame, monmove.c:295-302); musical instruments use the auditory_scare=(x=0,y=0) path which BYPASSES the Inhell/In_endgame check (works in Gehennom)
+- Wizard random starting items: u_init.c:167-178 has 3 random scrolls (may roll SCR_TAMING) and 1 random spellbook (may roll SPE_CHARM_MONSTER); Wizards do NOT roll random tools so cannot start with magic harp / tooled horn / leather drum
+- strategy refs:
+  + https://nethackwiki.com/wiki/Fountain — general mechanics; never-magic-fountain list
+  + https://nethackwiki.com/wiki/Talk:Water_demon — "double-Elbereth" survival strategy (~97.95% survivable per wiki claim)
+  + https://nethackwiki.com/wiki/Fountain_quaffing — early-game wish-fishing strategy, risk discussion
+  + http://www.chiark.greenend.org.uk/~damerell/games/magicfountain.txt — Damerell statistical defense; drop items on the fountain tile to avoid make-pool curse; sack interior protected
+  + https://www.steelypips.org/nethack/331/foun-331.html — Steelypips fountain spoiler
+
 2026-05-18:
 - Fountain quaff: 7 case branches in rnd(30) (fountain.c:286-387)
 - Water demon spawn rate: 1 in 30 quaffs (fountain.c:247, 314)
@@ -1669,8 +1687,9 @@ shallow levels it may grant you a wish instead of attacking, working out
 to roughly 1 wish per 150 quaffs, dropping to zero chance past Dlvl 20.
 If you want to take the risk, it is a good idea to put your items in a
 bag to protect them from cursing and engrave Elbereth on a couple
-squares to protect against demons. Wizards start with items that can
-charm or scare a demon, so for them quaffing is a better gamble.</p>
+squares to protect against demons. Wizards’ random starting items can
+include a scroll of taming or charm-monster spellbook, making the gamble
+safer for them.</p>
 <p><strong>Dipping in a fountain</strong> is a different gamble, and one
 that Lawful characters should know by heart. If you’re at least
 experience level 5, dipping a long sword may transform it into
