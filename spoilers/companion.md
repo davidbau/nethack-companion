@@ -11508,7 +11508,21 @@ point.) The most significant:
 
 ---
 
-#### What to Lean Into
+#### New Dangers
+
+**Sacrificing weak corpses no longer grinds Luck.** If your current
+Luck exceeds the sacrificed monster's difficulty, you gain zero.
+A luckstone handles maintenance; sacrifice mid-tier monsters when
+you want to push higher.
+
+**Cleared but not cleaned levels lose loot.** Monsters now loot
+unlocked containers and animate corpse piles. Lock your stash
+and don't haul speculative corpses through caster-heavy floors.
+
+**Gehennom shatters potions.** Hot ground breaks any potion you
+drop. Carry, don't stash.
+
+#### New Hacks
 
 A few 5.0 changes have tactical implications worth pulling out:
 
@@ -11528,20 +11542,6 @@ transformation, one blessed potion does the same job.
 can `#monster` to switch between vampire, bat, and fog cloud. Fog
 passes through doors, bat flies, vampire fights — plan routes by
 form rather than direction.
-
-#### What to Watch Out For
-
-**Sacrificing weak corpses no longer grinds Luck.** If your current
-Luck exceeds the sacrificed monster's difficulty, you gain zero.
-A luckstone handles maintenance; sacrifice mid-tier monsters when
-you want to push higher.
-
-**Cleared but not cleaned levels lose loot.** Monsters now loot
-unlocked containers and animate corpse piles. Lock your stash
-and don't haul speculative corpses through caster-heavy floors.
-
-**Gehennom shatters potions.** Hot ground breaks any potion you
-drop. Carry, don't stash.
 
 ---
 
