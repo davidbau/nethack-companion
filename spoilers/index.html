@@ -5377,102 +5377,36 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 <section id="the-engrave-test-wands" class="level4">
 <h4>The Engrave Test (Wands)</h4>
-<p>The single most useful wand-identification trick costs you nothing.
-Apply a wand by engraving on the floor with it (command: <code>E</code>,
-then select the wand). What happens tells you what the wand is:</p>
-<table>
-<colgroup>
-<col style="width: 57%" />
-<col style="width: 42%" />
-</colgroup>
-<thead>
-<tr>
-<th>What you see when you engrave</th>
-<th>Wand type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><em>“A lit field surrounds you”</em></td>
-<td>light</td>
-</tr>
-<tr>
-<td><em>“The floor is riddled by bullet holes”</em></td>
-<td>magic missile</td>
-</tr>
-<tr>
-<td><em>“Gravel flies up from the floor”</em></td>
-<td>digging</td>
-</tr>
-<tr>
-<td><em>“A few ice cubes drop from the wand”</em></td>
-<td>cold</td>
-</tr>
-<tr>
-<td><em>“Flames fly from the wand”</em></td>
-<td>fire</td>
-</tr>
-<tr>
-<td><em>“Lightning arcs from the wand”</em> (may blind)</td>
-<td>lightning</td>
-</tr>
-<tr>
-<td><em>“The bugs on the floor stop moving!”</em></td>
-<td>sleep or death</td>
-</tr>
-<tr>
-<td>You feel self-knowledgeable</td>
-<td>enlightenment</td>
-</tr>
-<tr>
-<td>Floor reveals secret features</td>
-<td>secret door detection</td>
-</tr>
-<tr>
-<td>Monsters appear next to you</td>
-<td>create monster</td>
-</tr>
-<tr>
-<td>Pre-existing engraving randomizes</td>
-<td>polymorph</td>
-</tr>
-<tr>
-<td>Pre-existing engraving “vanishes”</td>
-<td>cancellation, make invisible, or teleportation (test against floor
-with no prior writing to disambiguate)</td>
-</tr>
-<tr>
-<td>“<em>The wand unsuccessfully fights your attempt to
-write!</em>”</td>
-<td>striking (this exact phrasing is striking-only)</td>
-</tr>
-<tr>
-<td>“<em>The bugs on the floor slow down!</em>”</td>
-<td>slow monster</td>
-</tr>
-<tr>
-<td>“<em>The bugs on the floor speed up!</em>”</td>
-<td>speed monster</td>
-</tr>
-<tr>
-<td>You write in the dust with no special-case message</td>
-<td>nothing, undead turning, opening, locking, probing, or stasis —
-zap-test to disambiguate</td>
-</tr>
-<tr>
-<td>Wish prompt appears</td>
-<td><strong>wand of wishing</strong> (yes, engrave gives you the wish —
-don’t be afraid to engrave the suspected $500 wand)</td>
-</tr>
-</tbody>
-</table>
-<p>The engrave test costs one charge per wand but preserves the rest.
-With one zap you can sort most wands into clear categories. For wands
-that just write in the dust, you’ll need further testing: zap them at a
-monster or in a safe direction.</p>
-<p><strong>Warning:</strong> In 5.0, cursed wands may
-<strong>explode</strong> when used to engrave. BUC-test your wands
-before engraving with them.</p>
+<p>The single most useful wand-identification trick costs only one
+charge and preserves the rest.</p>
+<ol type="1">
+<li><strong>BUC-test the wand first.</strong> In 5.0, a cursed wand used
+to engrave may <strong>explode</strong>. Drop the wand on an aligned
+altar, hand it to a priest, or otherwise determine its BUC before
+testing.</li>
+<li><strong>Write a short message on the floor with your
+finger.</strong> Engrave anything in the dust first (command
+<code>E</code>, then select “<code>-</code>” for fingers, then type a
+word or two). This matters because a few wands act on the
+<em>existing</em> engraving rather than producing a visible effect on
+bare floor: polymorph rewrites the message as a random new one, and
+cancellation, make-invisible, and teleportation each make it “vanish”.
+Without a pre-written message you won’t see those behaviors.</li>
+<li><strong>Engrave again with the wand.</strong> Use <code>E</code> and
+select the wand. Observe the result. The <a href="#the-wand-table">Wand
+Table</a> lists the engrave-test result for each wand; most wands reveal
+themselves here. A few share results — see <a
+href="#resolving-ambiguous-engrave-results">Resolving Ambiguous Engrave
+Results</a>.</li>
+</ol>
+<p><strong>Don’t be afraid of the suspected wand of wishing.</strong>
+Engraving with it grants the wish: if a $500 candidate prompts you with
+<em>“For what do you wish?”</em>, take the wish — that’s the
+identification and the reward in one step.</p>
+<blockquote>
+<p><em>Procedure adapted from Kieron Dunbar’s “Identifying Wands by
+Zapping” spoiler, originally posted to RGRN.</em></p>
+</blockquote>
 <!-- audit
 2026-05-18:
 - dosinkring at do.c:498-650 — 28 ring types each give a distinctive message
@@ -6549,8 +6483,9 @@ wands</strong> affect the area around you.</p>
 specific wand — a $150 wand is one of thirteen possibilities. The
 <strong>engrave-test result</strong> in the rightmost column is far more
 useful: most wands reveal themselves in one zap. See <a
-href="#identification-by-engraving">Identification by Engraving</a> for
-how to run the test and how to resolve the few shared results.</p>
+href="#the-engrave-test-wands">The Engrave Test (Wands)</a> for the
+procedure and <a href="#resolving-ambiguous-engrave-results">Resolving
+Ambiguous Engrave Results</a> for the few shared results.</p>
 <div class="price-id-toolbar">
 
 </div>
@@ -6808,23 +6743,6 @@ you’re surrounded and need a free moment to engrave Elbereth, drink a
 potion, change weapons, or just walk past. The silence on engraving
 makes it harder to identify by the engrave test, but if you sit on a
 charge for a fight you’ll know.</p>
-</section>
-<section id="identification-by-engraving" class="level4">
-<h4>Identification by Engraving</h4>
-<p>The engrave test (described in <a
-href="#a-practical-identification-strategy">A Practical Identification
-Strategy</a>) is the fastest way to sort wands. Every wand type produces
-a distinctive result when used to engrave on the floor.</p>
-<blockquote>
-<p><em>Kieron Dunbar’s “Identifying Wands by Zapping” spoiler,
-originally posted to RGRN, describes a systematic protocol for narrowing
-down wand identity through controlled experiments. The approach below is
-adapted from his checklist.</em></p>
-</blockquote>
-<p>Before you start writing on the floor: in 5.0, a <em>cursed</em> wand
-used to engrave may explode, so BUC-test before you test (see <a
-href="#the-engrave-test-wands">The Engrave Test (Wands)</a> for the full
-safety procedure).</p>
 </section>
 <section id="resolving-ambiguous-engrave-results" class="level4">
 <h4>Resolving Ambiguous Engrave Results</h4>

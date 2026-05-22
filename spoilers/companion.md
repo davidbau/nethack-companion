@@ -4152,38 +4152,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
 #### The Engrave Test (Wands)
 
-The single most useful wand-identification trick costs you nothing.
-Apply a wand by engraving on the floor with it
-(command: `E`, then select the wand). What happens tells you what
-the wand is:
+The single most useful wand-identification trick costs only one
+charge and preserves the rest.
 
-| What you see when you engrave              | Wand type                       |
-| ------------------------------------------ | ------------------------------- |
-| *"A lit field surrounds you"*              | light                           |
-| *"The floor is riddled by bullet holes"*   | magic missile                   |
-| *"Gravel flies up from the floor"*         | digging                         |
-| *"A few ice cubes drop from the wand"*     | cold                            |
-| *"Flames fly from the wand"*               | fire                            |
-| *"Lightning arcs from the wand"* (may blind) | lightning                     |
-| *"The bugs on the floor stop moving!"*     | sleep or death                  |
-| You feel self-knowledgeable                | enlightenment                   |
-| Floor reveals secret features              | secret door detection           |
-| Monsters appear next to you                | create monster                  |
-| Pre-existing engraving randomizes          | polymorph                       |
-| Pre-existing engraving "vanishes"          | cancellation, make invisible, or teleportation (test against floor with no prior writing to disambiguate) |
-| "*The wand unsuccessfully fights your attempt to write!*" | striking (this exact phrasing is striking-only) |
-| "*The bugs on the floor slow down!*"       | slow monster                    |
-| "*The bugs on the floor speed up!*"        | speed monster                   |
-| You write in the dust with no special-case message | nothing, undead turning, opening, locking, probing, or stasis — zap-test to disambiguate |
-| Wish prompt appears                        | **wand of wishing** (yes, engrave gives you the wish — don't be afraid to engrave the suspected $500 wand) |
+1. **BUC-test the wand first.** In 5.0, a cursed wand used to
+   engrave may **explode**. Drop the wand on an aligned altar, hand
+   it to a priest, or otherwise determine its BUC before testing.
+2. **Write a short message on the floor with your finger.** Engrave
+   anything in the dust first (command `E`, then select "`-`" for
+   fingers, then type a word or two). This matters because a few
+   wands act on the *existing* engraving rather than producing a
+   visible effect on bare floor: polymorph rewrites the message as a
+   random new one, and cancellation, make-invisible, and
+   teleportation each make it "vanish". Without a pre-written
+   message you won't see those behaviors.
+3. **Engrave again with the wand.** Use `E` and select the wand.
+   Observe the result. The [Wand Table](#the-wand-table) lists the
+   engrave-test result for each wand; most wands reveal themselves
+   here. A few share results — see [Resolving Ambiguous Engrave
+   Results](#resolving-ambiguous-engrave-results).
 
-The engrave test costs one charge per wand but preserves the rest.
-With one zap you can sort most wands into clear categories. For
-wands that just write in the dust, you'll need further testing:
-zap them at a monster or in a safe direction.
+**Don't be afraid of the suspected wand of wishing.** Engraving with
+it grants the wish: if a $500 candidate prompts you with *"For what
+do you wish?"*, take the wish — that's the identification and the
+reward in one step.
 
-**Warning:** In 5.0, cursed wands may **explode** when used to
-engrave. BUC-test your wands before engraving with them.
+> *Procedure adapted from Kieron Dunbar's "Identifying Wands by
+> Zapping" spoiler, originally posted to RGRN.*
 
 <!-- audit
 2026-05-18:
@@ -5010,10 +5005,11 @@ area around you.
 
 Unlike scroll and potion prices, wand prices alone rarely pin down a
 specific wand — a $150 wand is one of thirteen possibilities. The
-**engrave-test result** in the rightmost column is far more useful: most
-wands reveal themselves in one zap. See [Identification by
-Engraving](#identification-by-engraving) for how to run the test and
-how to resolve the few shared results.
+**engrave-test result** in the rightmost column is far more useful:
+most wands reveal themselves in one zap. See [The Engrave Test
+(Wands)](#the-engrave-test-wands) for the procedure and [Resolving
+Ambiguous Engrave Results](#resolving-ambiguous-engrave-results) for
+the few shared results.
 
 <div class="price-id-toolbar"></div>
 
@@ -5114,22 +5110,6 @@ it when you're surrounded and need a free moment to engrave
 Elbereth, drink a potion, change weapons, or just walk past. The
 silence on engraving makes it harder to identify by the engrave
 test, but if you sit on a charge for a fight you'll know.
-
-#### Identification by Engraving
-
-The engrave test (described in
-[A Practical Identification Strategy](#a-practical-identification-strategy)) is the
-fastest way to sort wands. Every wand type produces a distinctive
-result when used to engrave on the floor.
-
-> *Kieron Dunbar's "Identifying Wands by Zapping" spoiler,
-> originally posted to RGRN, describes a systematic protocol for
-> narrowing down wand identity through controlled experiments. The
-> approach below is adapted from his checklist.*
-
-Before you start writing on the floor: in 5.0, a *cursed* wand used
-to engrave may explode, so BUC-test before you test (see [The Engrave
-Test (Wands)](#the-engrave-test-wands) for the full safety procedure).
 
 #### Resolving Ambiguous Engrave Results
 
