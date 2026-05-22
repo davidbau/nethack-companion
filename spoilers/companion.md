@@ -8967,9 +8967,11 @@ just 1, and gems of the same identified type stack into a single
 inventory slot regardless of count, so the only cost of hoarding a
 heap of identified rubies is one slot's worth of clutter.
 
-Every real gem, with the unangry-shopkeeper buy price. Use the
-Cha/Sell/Tourist/Angry toolbar to see how the modifiers shift
-things.
+Every real gem, with the unangry-shopkeeper buy price.
+
+::: web-only
+Use the Cha/Sell/Tourist/Angry toolbar to see how the modifiers shift things.
+:::
 
 The Mohs column is real-world mineral hardness on the Mohs scale
 (talc 1, diamond 10), and the game uses it in two places. Gems of

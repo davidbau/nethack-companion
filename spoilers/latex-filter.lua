@@ -135,6 +135,12 @@ function Div(div)
       table.insert(result, pandoc.RawBlock("latex", "\\endgroup"))
       return result
     end
+    -- Sentences/paragraphs that only make sense in the HTML build
+    -- (interactive widgets, scroll references, etc.) get wrapped in
+    -- a `web-only` div. Drop the whole block for the LaTeX/print pipeline.
+    if class == "web-only" then
+      return {}
+    end
   end
 end
 
