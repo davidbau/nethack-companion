@@ -630,17 +630,17 @@ patterns is the first step toward navigating them effectively.
 #### The Big Picture
 
 Even though the dungeon is different every time you play, it is
-not totally random. From level to level, the overall dungeon map
-has a structure, and that structure guides the path of your game
-through a progressively more varied and challenging series of
-adventures.
+not totally random. The layout of any one level is random, but
+the overall map follows a familiar structure, and that structure
+guides the path of your game through a progressively more varied
+and challenging series of adventures.
 
-The dungeon is a branching tree with a main trunk that goes
-through three main phases. Off the main trunk are many optional
-branches that you will want to explore. The overall arrangement
-is randomized, but the diagram that follows shows the full layout
-in a typical game. Knowing where you are in this tree helps you
-know what's coming.
+The dungeon is a branching tree with a main trunk that descends
+through three main phases. Off the trunk are many optional side
+branches that you will want to explore along the way. The exact
+depths and layouts vary from game to game, but the diagram that
+follows shows the typical shape. Knowing where you are in this
+tree helps you know what's coming.
 
 The **Dungeons of Doom** form the upper half, roughly levels 1
 through 27. Along the way you'll find branches leading to the
