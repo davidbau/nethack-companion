@@ -960,8 +960,8 @@ to their doom than any trap, with the promise of a cool refreshing
 drink.
 
 If you don't have [bad luck](#gaining-and-losing-luck), about one in
-seven randomly-generated fountains is a **magic fountain** that is
-indistinguishable from a regular fountain until you take a drink.
+seven is a **magic fountain** that is indistinguishable from a
+regular fountain until you take a drink.
 Quaffing from a magic one says, *Wow! This makes you feel great!*,
 restores all your attributes to their maximum values, and raises a
 random attribute by one, consuming the magic charge; afterwards the
