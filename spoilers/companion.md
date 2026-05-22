@@ -629,11 +629,17 @@ patterns is the first step toward navigating them effectively.
 
 #### The Big Picture
 
-Before we talk about what the symbols mean, here's the overall
-shape of the place. The dungeon is a branching tree with a main
-trunk (the Dungeons of Doom) and several side branches. The
-diagram nearby shows the full layout. Knowing where you are in this
-tree helps you plan your route and know what's coming.
+Even though the dungeon is procedurally generated, it is not all
+the same. The dungeon has a structure, and that structure guides
+the path of your game through a progressively more varied and
+challenging series of adventures.
+
+The dungeon is a branching tree with a main trunk that goes
+through three main phases. Off the main trunk are many optional
+branches that you will want to explore. The overall arrangement
+is randomized, but the diagram that follows shows the full layout
+in a typical game. Knowing where you are in this tree helps you
+know what's coming.
 
 The **Dungeons of Doom** form the upper half, roughly levels 1
 through 27. Along the way you'll find branches leading to the
