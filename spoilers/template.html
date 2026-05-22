@@ -270,8 +270,16 @@ $body$
   }
 
   // Score one section against a single (lowercase) query word.
+  //
+  // Heading hits (and title-match bonuses elsewhere) contribute their
+  // full per-occurrence weight, since there's typically only one
+  // heading per section.  Body mentions, on the other hand, are
+  // aggregated and then dampened by a square root — a section with
+  // 16 passing references to a term shouldn't outrank a section that
+  // is actually *about* the term but only names it 4 times.
   function scoreWordInSection(item, word) {
-    var total = 0;
+    var headingScore = 0;
+    var bodyScore = 0;
     for (var s = 0; s < item.segments.length; s++) {
       var seg = item.segments[s];
       var t = seg.text;
@@ -294,11 +302,13 @@ $body$
         var effPos = Math.max(0, (i - sent.start) - skip);
         var effLen = Math.max(1, (sent.end - sent.start) - skip);
         var posBonus = Math.max(0, 1 - effPos / effLen);
-        total += weight * (0.5 + posBonus);
+        var per = weight * (0.5 + posBonus);
+        if (seg.kind === 'heading') headingScore += per;
+        else bodyScore += per;
         i += word.length;
       }
     }
-    return total;
+    return headingScore + Math.sqrt(bodyScore) * 4;
   }
 
   var searchClear = document.getElementById('search-clear');
