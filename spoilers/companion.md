@@ -960,16 +960,17 @@ to their doom than any trap, with the promise of a cool refreshing
 drink.
 
 About one in seven fountains is a **magic fountain** that is
-indistinguishable from a regular fountain. Drinking from a magic one
-says *"Wow! This makes you feel great!"*, restores all your
-attributes to their maximum values, and raises a random attribute by
-one, and consumes the magic charge; afterwards the fountain behaves
-like any other. (You can also *wish* for a magic fountain by asking
-for "a magic fountain"; sink-kicked fountains are never magic, and
-dipping gets no benefits from the magic charge but could lose it by
-drying the fountain.)
+indistinguishable from a regular fountain until you take a drink.
+`q`uaffing from a magic one says *Wow! This makes you feel great!*,
+restores all your attributes to their maximum values, and raises a
+random attribute by one, consuming the magic charge; afterwards the
+fountain behaves like any other. (You can also *wish* for a magic
+fountain by asking for "a magic fountain"; sink-kicked fountains
+are never magic; dipping gets no benefits from the magic charge but
+could use it up.)
 
-**Quaffing from a fountain** is a slot machine with these reels:
+**Quaffing from an ordinary fountain** is a dangerous slot machine
+with these reels among dozens of random effects:
 
 | Outcome           | Effect                                                |
 | ----------------- | ----------------------------------------------------- |
@@ -988,8 +989,7 @@ Most of the time, nothing happens. Sometimes something wonderful
 happens. And sometimes a water demon appears and reminds you that
 curiosity has a body count. Demons appear about 1 quaff in 30; on
 shallow levels they may grant you a wish before leaving, working out
-to roughly 1 wish per 150 quaffs. Past Dlvl 20 the wish odds drop to
-zero — only the hostility remains.
+to roughly 1 wish per 150 quaffs. Past Dlvl 20 the wish odds drop to zero.
 
 **Dipping in a fountain** is a different gamble, and one that Lawful
 characters should know by heart. If you're at least experience level
