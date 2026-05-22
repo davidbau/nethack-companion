@@ -8902,9 +8902,8 @@ consequences for the player:
 - A shopkeeper *can* be killed for the entire stock plus the till
   (1,000–4,000 zm and a skeleton key on death), but they're a tough
   fight, and killing
-  them summons a wave of Keystone Kops to pursue you, costs you a
-  chunk of alignment, and leaves the shop permanently empty: no more
-  buying, no more selling, no more price-ID from that shopkeeper.
+  them summons a wave of Keystone Kops to pursue you, and costs you
+  a chunk of alignment.
   Two community notes worth knowing: **polymorphing the shopkeeper
   first** (via wand or trap) means killing them no longer counts as
   murder, which is the preferred approach for Lawful and Neutral
