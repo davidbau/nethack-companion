@@ -222,9 +222,11 @@ reposition without spending an attack. *Alignment: Lawful.*
 at all. Monks gain martial arts abilities as they level, eventually
 becoming formidable unarmed combatants. You start
 with sleep resistance and see invisible, and you should avoid eating
-meat if you want to maintain your spiritual discipline. One of the
-more unusual roles, rewarding for experienced players.
-*Alignment: Any.*
+meat if you want to maintain your spiritual discipline. **Don't
+put on body armor** — Monks take a −20 to-hit penalty in it.
+The starting robe is a spellcasting bonus larger than a Wizard's;
+keep wearing that. One of the more unusual roles, rewarding for
+experienced players. *Alignment: Any.*
 
 **Priest.** You start with a mace, four potions of holy water, and
 the ability to intuitively sense whether items are blessed, cursed,
@@ -232,15 +234,17 @@ or uncursed, so you know on sight whether that cloak you just found
 is safe to wear. Competent fighters with access to clerical spells.
 Your first sacrifice gift is guaranteed: Demonbane (now a silver
 mace), which aligns with your weapon skill — sacrifice early and
-often. *Alignment: Any (matches your god).*
+often. Keep at least one holy water in reserve: dipping plain water
+into it makes more, indefinitely. *Alignment: Any (matches your god).*
 
 **Ranger.** You start with a bow, a generous supply of arrows, a
 dagger, and a **+2 cloak of displacement** — one of the strongest
 defensive starts in the game. You're unmatched as an early-game
 ranged threat. Rangers gain Searching at XL 1, Stealth at XL 7,
 and See Invisible at XL 15. Your elven racial option grants sleep
-resistance at XL 4. If you enjoy picking off enemies from a
-distance, this is your role. *Alignment: Neutral or Chaotic.*
+resistance at XL 4. Hoard the +2 stack of arrows; they break at
+roughly 25% per hit while +0s break around 67%. Mulch the cheap
+stack on the level-1 newts. *Alignment: Neutral or Chaotic.*
 
 **Rogue.** NetHack's thief class: lockpicking and stealthy
 assassinations. You start with a short sword, six daggers for
@@ -251,7 +255,11 @@ Your lock pick makes every locked door, chest, and box openable from
 turn one. You get stealth from the beginning, which lets you walk up
 to sleeping enemies without waking them, and your backstab ability
 deals extra damage (+1 to +your level) when you hit a monster that's
-fleeing or helpless. *Alignment: Chaotic.*
+fleeing or helpless. Throw daggers rather than stab with them:
+Rogues get a multishot bonus on thrown daggers, and the backstab
+modifier applies to throws against fleeing targets too. The
+canonical Rogue routine is Elbereth in the doorway, daggers from
+beyond. *Alignment: Chaotic.*
 
 **Samurai.** You start with a katana, which is one of the better
 one-handed weapons in the game, plus a wakizashi backup and a yumi
@@ -264,9 +272,11 @@ expensive camera, a truly absurd number of +2 darts, two potions
 of extra healing, and **four scrolls of magic mapping**. Tourists
 have weak combat and a fragile early game (this is the hardest of
 the standard roles), but the mapping scrolls take the edge off
-exploration and the darts train ranged skills fast. The camera
-blinds monsters in a pinch. A good role for players who have
-ascended before and want a real challenge. *Alignment: Neutral.*
+exploration and the darts train ranged skills fast. The standard
+survival kit is Elbereth on the floor, a camera-flash blinding
+whatever's closest, and the pet doing the cleanup. A good role
+for players who have ascended before and want a real challenge.
+*Alignment: Neutral.*
 
 **Valkyrie.** The standard recommendation for a first serious
 attempt. You start with a spear, a small shield, and cold
@@ -284,7 +294,10 @@ combat is terrible, so spells are the answer: fragile early,
 overwhelming late. Advancing a spell-school skill (new in 5.0)
 also identifies spellbooks of that school by appearance, so you
 get free book-ID just by casting (see
-[Spellcasting](#spellcasting)). *Alignment: Neutral or Chaotic.*
+[Spellcasting](#spellcasting)). Two warnings — Wizards start with
+*zero* food rations and a kitten that won't share lunch, and force
+bolt shatters potions on the ground and breaks any mirror a nymph
+is carrying. *Alignment: Neutral or Chaotic.*
 
 #### The Races
 
@@ -418,7 +431,12 @@ open is almost always worth the time.
 **Restraint.** New adventurers pick up everything they find. Veterans
 pick up everything they need. The difference is about forty pounds
 and the ability to outrun a gnome lord. If your status line reads
-"Burdened," you're carrying more than you can use.
+"Burdened," you're carrying more than you can use — and you're also
+moving slow enough for some monsters to land two hits per one of yours.
+
+**Stashing.** When the pile gets too heavy, drop the non-essentials
+one level up from where you're exploring. Monsters loot containers
+in 5.0, but they don't carry stashes between levels.
 
 ---
 
@@ -485,7 +503,10 @@ the ground. (Kobold `k` meat, for example, is poisonous and confers
 nothing.) The exceptions: you can always safely eat food rations,
 lembas wafers, cram rations, and fruits. Lichen corpses are safe and
 never rot. Lizard corpses are safe, never rot, and cure
-petrification. Always carry one if you can.
+petrification — keep one in *open* inventory, not buried in a bag:
+if a cockatrice touches you, you have two turns to chew. Newt
+corpses are safe, and they sometimes restore 1–3 Pw, which is the
+first sustainable mana source a spellcaster will see.
 
 **Rule 3: Your pet is your friend.** Your starting pet is more useful
 than it appears. It will fight alongside you, pick up items (which
@@ -503,7 +524,10 @@ wrong time (when your god is angry, when you're in Gehennom, or
 when you've prayed too recently) can make things much worse. Think
 of prayer as an emergency button with a cooldown. Don't waste it
 on minor problems (see [Divine Relations](#divine-relations) for
-the full mechanics).
+the full mechanics). If you've blundered into a peaceful and your
+alignment tanks, you can grind it back by killing the always-hostile
+classes (fungi `F`, fluids and oozes, insects); a clean ledger is
+worth the detour.
 
 **Rule 5: Explore thoroughly but move purposefully.** Every turn you
 spend in the dungeon costs nutrition. If you stand around for hundreds
@@ -548,8 +572,9 @@ If you do get food poisoning, pray immediately.
 
 **Falling down stairs while overburdened.** If you're carrying too
 much, taking the stairs can make you tumble for 1–3 HP. Annoying
-rather than dangerous, but a habit worth avoiding: drop items
-before descending or manage your inventory.
+rather than dangerous, unless you're carrying a cockatrice corpse:
+the tumble counts as touching it, and stairs become the most
+literal instadeath in the game.
 
 **Killer bees.** They come in swarms, they're fast, and in the early
 game, a group of them can overwhelm you. If you see one bee, expect
@@ -1050,14 +1075,17 @@ This is free, unlimited, and works on everything. In the early game,
 your first altar becomes your testing laboratory: haul every
 suspicious piece of gear there before putting it on. Many promising
 ascensions have been saved by the simple discipline of altar-testing
-before wearing.
+before wearing. (Drop the whole pile at once; you'll see one flash
+per item.)
 
 **Sacrificing monster corpses on an altar** deepens your relationship
 with your god. The corpse must be fresh (stale sacrifices are an
 insult) and the bigger the monster, the more your god is impressed.
 Sacrifice enough and your deity may reward you with an artifact
-weapon aligned to your cause. See [Divine Relations](#divine-relations)
-for the full theology.
+weapon aligned to your cause. Don't sacrifice your starting pet —
+the alignment penalty is steep and the residual aggravate-monster
+intrinsic sticks around for the rest of the run. See
+[Divine Relations](#divine-relations) for the full theology.
 
 **Converting an altar** to your alignment is possible by sacrificing
 ordinary monster corpses on a cross-aligned altar. Each attempt has
@@ -1089,12 +1117,15 @@ possible outcomes reads like a wish list shuffled with a hit list:
 
 About one time in three, something happens, but you won't know which
 column of the ledger it's going to hit. Sit on a throne when you're
-strong enough to survive the worst row of that table, and ideally
-when your luck is positive (for a shot at the wish). Even when
-nothing happens, the throne may vanish in a puff of logic, so
-you might get several tries or none at all. (Vlad's throne in
-the Tower is special: it never vanishes without granting a wish
-first.)
+strong enough to survive the worst row of that table; the wish
+branch only fires above Luck 7, so grab the luckstone first if
+that's what you're after. Even when nothing happens, the throne
+may vanish in a puff of logic, so you might get several tries or
+none at all. (Vlad's throne in the Tower is special: it never
+vanishes without granting a wish first.) Kicking a throne is a
+different gamble: at positive Luck it dislodges 201–500 gold and
+Luck+1 gems (max 6), which doubles as a free Luck-meter if you've
+lost track.
 <!-- Throne mechanics: src/sit.c throne_sit_effect(), rnd(6)>4 for 1/3
      activation, rnd(13) for effect, !rn2(3) for vanishing.
      Vlad's throne: special_throne_effect(), cases 1-4 grant wish and
@@ -1145,7 +1176,9 @@ a water elemental, or it could polymorph you.
 **Dropping a ring down a sink** produces a message unique to the ring
 type — the most reliable non-magical way to identify rings. **Most
 rings are consumed**, but two come back after IDing themselves for
-free:
+free. Reserve a virgin sink for this: a sink that's already been
+kicked, quaffed, or poly'd may have moved, vanished, or angered
+nearby monsters by the time you've found rings to test.
 
 | Message                                              | Ring                  | Ring kept? |
 |------------------------------------------------------|-----------------------|------------|
@@ -1171,7 +1204,9 @@ A vault is a tiny walled-off 2×2 room not connected to the rest of
 the level. Each one holds a pile of gold. You'll usually find one by
 digging through stone or by teleporting in. The engraving *"ad
 aerarium"* on a level marks one nearby (see
-[Engravings](#engravings)).
+[Engravings](#engravings)) — though a scroll of gold detection
+(or object detection) will spotlight the gold pile through the
+walls, and magic mapping reveals the closet directly.
 
 After about thirty turns inside, a guard appears at the doorway and
 asks *"Who are you?"* The trick: answer *Croesus* (also accepted as
@@ -1242,6 +1277,12 @@ occasional dwarf lord. If you're playing a gnomish character, most
 of them will be peaceful, which makes the Mines a relatively
 comfortable detour. Everyone else will need to fight through a
 steady stream of hostile gnomes and dwarves.
+
+The Mines also have a notorious surprise guest: a mind flayer can
+spawn on any random Mines level outside Minetown and Mine's End.
+*"You sense a faint wave of psychic energy"* on an unexplored Mines
+level is the warning, and the community shorthand — "minesflayer" —
+is a healthy thing to take seriously. Retreat, prep, or skip the level.
 
 **Minetown** appears a few levels into the Mines. Usually it's a small
 settlement with shops and a temple, and it's worth visiting early.
@@ -2084,7 +2125,7 @@ either step off the dust ward to keep it for next time (it survives
 until a monster steps on the square), or upgrade to something more
 durable.
 
-For a permanent safe spot — useful for stashing items, resting at a
+For a permanent safe spot, useful for stashing items, resting at a
 fixed retreat point, or anchoring a corridor fight — burn the word
 with a wand of fire or lightning. One turn, no interruption risk,
 no impairment penalty, no wear. A semi-permanent engraving (athame,
@@ -2522,6 +2563,21 @@ depth, so casual quaffing pays worse the deeper you go.
 Don't quaff from fountains until you have magic resistance,
 reflection, or a clear path of retreat.
 
+**Floating eyes** (`e`). The single most preventable instadeath
+in the early dungeon. Hit one in melee and you're paralyzed for
+~70 turns; whatever passes by during that nap kills you. Kill at
+range, every time. Then eat the corpse for telepathy.
+
+**Minotaurs** (`H`, in the Castle and maze levels of Gehennom).
+Three attacks averaging ~38 damage per turn — the hardest hitter
+short of the Riders themselves. A wand of sleep, a thrown potion
+of paralysis (with free action), or just digging down before they
+reach you are the standard answers.
+
+**Major demons gate in more major demons.** Every melee hit from
+a major demon has roughly a 1-in-13 chance of summoning another.
+A single bad fight in Gehennom can cascade into an arena.
+
 #### Deadly Mistakes
 
 Routine mistakes kill more adventurers than exotic instadeaths.
@@ -2867,7 +2923,7 @@ five-turn countdown announces itself with *"You are slowing down,"*
 **Defenses ahead of time:** wear gloves around cockatrice corpses,
 use reflection against Medusa, and pile up *timed* stoning
 resistance from acid blob corpses (each one grants d(3,6) turns of
-HStone resistance — useful, but not permanent). For something
+HStone resistance: useful but not permanent). For something
 permanent, wear yellow dragon scale mail.
 
 **Defenses while it's happening:** eat a lizard corpse (this is
@@ -2888,7 +2944,13 @@ same curative effect.
 
 **The other side of the coin:** a wielded cockatrice corpse (with
 gloves on) is one of the game's most devastating weapons —
-anything you hit that lacks stoning resistance turns to stone.
+anything you hit that lacks stoning resistance turns to stone. The
+classic offense, known to veterans as the "rubber chicken,"
+handles demon lords, Medusa, and even a Rider on a good day. The
+failure modes you must guard against are falling into a pit, hole,
+or trapdoor while carrying it, and losing the gloves. Thrown
+cockatrice eggs work the same way and have the same hazard if a
+monster throws one at you.
 
 #### Drowning
 <!-- audit
@@ -2956,7 +3018,10 @@ zap can connect. The freebie is an early-to-mid-game courtesy.
 
 Some monsters, most notably Death (one of the Riders on the Astral
 Plane), can kill you with a single touch. The Finger of Death spell
-and the wand of death work similarly.
+and the wand of death work similarly. **Do not zap a wand of death
+or finger of death at Death the Rider** — Death absorbs the
+attack and gains max HP. Magic missile is the canonical answer
+against all three Riders.
 
 **Death the Rider's touch** rolls 1d20 each hit. Rolls 17-19 trigger
 the full **8d6 + 50** instakill attempt and permadrain half the
@@ -2998,6 +3063,11 @@ and you are Weak or Fainting (prayer cures hunger). Carry food
 rations, tripe rations, or lembas wafers. Don't let nutrition
 management slide.
 
+**Famine** — the second of the three Riders — drains 40–80
+nutrition per hit, and no extrinsic blocks it. Enter the Astral
+Plane Satiated and carry a stack of food rations through the
+fight, or expect to be Faint by the third meeting.
+
 #### Brainlessness
 <!-- audit
 2026-05-18:
@@ -3034,7 +3104,10 @@ longer.)
 seven of every eight tentacle drains. Greasing the helmet stacks an
 additional slip-off roll on top, so a greased helmet is the gold
 standard. Better yet, kill them at range (wands, spells) so the
-question doesn't arise. To recover drained Intelligence you need a
+question doesn't arise. One counterintuitive detail: a mind
+flayer's *mind blast* only fires if you have telepathy. If you're
+wearing an amulet of ESP and you can spare the turn, take it off
+before the fight. To recover drained Intelligence you need a
 *potion of restore ability* (uncursed restores one stat; blessed
 restores all), the spell of restore ability, or prayer when you're
 in good standing. In 5.0 the unicorn horn no longer restores lost
@@ -3163,7 +3236,9 @@ a *helm of caution* tips you off before you step.
 weapons still work from inside. If you have a wand of digging,
 zap it (no direction needed): it almost always expels you
 immediately, leaving the engulfer at 1 HP. A wand of opening or
-the knock spell forces the engulfer to release you on the spot.
+the knock spell forces the engulfer to release you on the spot
+without killing it, useful if a *tame* purple worm has swallowed
+you in conflict.
 Ranged spells and rays will tear into the host from the inside.
 
 #### Light Bursts
@@ -3511,7 +3586,16 @@ with your god. The rules:
 
 With enough sacrifice credit, your god may gift you an artifact
 weapon. The first gift comes after relatively modest sacrifice;
-subsequent gifts require substantially more. Gift artifacts are
+subsequent gifts require substantially more — the per-attempt
+chance is roughly 1 / (10 + 2·gifts_already_received), so the
+first one is a 1-in-10 roll and the second drops to about
+1-in-14. Don't be surprised if you get one artifact and then
+nothing more for thousands of turns.
+
+The first gift is biased toward your role's signature artifact
+(Magicbane for Wizards, Demonbane for Priests, Mjollnir for
+Valkyries, and so on), so sacrifice early — it locks in the
+role-bias gift before the random pool dilutes it. Gift artifacts are
 always aligned to your god and always match a weapon skill you can
 use.
 
@@ -3536,8 +3620,9 @@ the two reward tiers.
   map awareness (you "see" the immediate area around you every few
   turns without moving). Granted if you offer in the lower tier.
 - **Protection** — an intrinsic AC bonus that *stacks* across
-  visits. Granted if you offer in the upper tier. Each successful
-  donation pushes the bonus up by 1 (rarely more), capped at 20.
+  visits. Granted if you offer in the upper tier. Your **first**
+  donation grants 2–4 points; subsequent donations add 1 each up
+  to 9; past 9, the chance to get another point drops to 1-in-N.
   The bonus persists for life, unlike clairvoyance.
 
 **The cost.** Pay enough and the benefit is yours. The priest's
@@ -3605,14 +3690,19 @@ Two things to **never** sacrifice on any altar:
 
 #### Crowning
 
-If your alignment record is very high (through sacrifice and good
-behavior), your god may crown you. Crowning grants:
+If your alignment record reaches 20 *and* your Luck reaches 10,
+your god may crown you on a successful prayer. Crowning grants:
 
 - A special title (e.g., "Hand of Elbereth" for lawful characters).
 - An artifact weapon appropriate to your alignment, if one is
-  available that you can use.
+  available that you can use. A Lawful crowning transforms whatever
+  long sword you happen to be wielding into Excalibur in place, so
+  having a +7 long sword in hand at the moment of crowning gives
+  you a +7 Excalibur.
 - Intrinsic fire resistance, cold resistance, shock resistance,
   sleep resistance, poison resistance, and see invisible.
+- Permanent skill-unrestriction on your alignment's sword slot, and
+  permanent knowledge of your role's special spell.
 - A class-specific bonus: Wizards get the *finger of death* spell;
   Monks get *restore ability*.
 
@@ -3620,7 +3710,8 @@ The catch is that crowning **adds about ~1000 turns of prayer
 timeout** on top of the usual post-prayer wait, turning prayer into
 an unreliable emergency tool. If you're sacrificing to fish for an
 artifact gift, watch the alignment record so you don't trigger a
-crowning by accident.
+crowning by accident; applying a stethoscope to yourself reports
+the number.
 
 ---
 
@@ -3769,8 +3860,14 @@ win. A dead pet is not just a loss of utility; it's a cold feeling
 in the pit of your stomach.
 
 If you change levels and your pet isn't adjacent, it won't follow.
-Your pet is still alive on the previous level, but its loyalty is
-ticking down. Go back for it before it forgets you were friends.
+Your pet is still alive on the previous level. Its loyalty is
+ticking down, though, so go back for it before it forgets you
+were friends.
+A **magic whistle** is the canonical fix: applying one warps every
+pet on your level to a square next to you, even on no-teleport
+floors. **Sokoban** also doesn't let pet loyalty decay — leaving
+a pet there while you do the Quest or the Mines is the dungeon's
+safest kennel.
 
 If you see *"You have a sad feeling for a moment"* — that's
 different. That message means a pet of yours just died
@@ -4388,7 +4485,15 @@ Here's how to tell them apart:
 
 **The kick test.** Kick an unidentified gray stone on the floor.
 If it scoots away normally, it's not a loadstone. A loadstone is
-abnormally heavy and resists being kicked.
+abnormally heavy and resists being kicked. Take off gauntlets of
+power and kicking boots first, or you may overpower a real
+loadstone and fool yourself.
+
+**The weight-menu test.** Drop any junk item onto the gray stone
+to force a pickup menu the next time you walk over it. The menu
+shows weight; a loadstone is 500, everything else is 10. The
+menu test gives a clean read without committing to picking the
+stone up.
 
 **The pick-up test.** Loadstones are cursed when they generate,
 and a cursed loadstone refuses to be dropped at all — the game
@@ -5123,9 +5228,13 @@ Fire burns scrolls and spellbooks on the floor. Cold freezes water
 
 []{#wand-cancellation}
 **Cancellation.** Removes special properties from items and monsters.
-A cancelled monster loses most of its special attacks. Do NOT put
-this wand in a bag of holding (it will explode the bag). Keep it
-separate in your main inventory.
+A cancelled monster loses most of its special attacks — a cancelled
+cockatrice can't petrify, a cancelled mind flayer can't suck brains,
+and a cancelled clay golem dissolves on the spot. Do NOT put this
+wand in a bag of holding (it will explode the bag). Pointed at a
+pile of unidentified scrolls and potions, it converts them into
+blank scrolls and water, which feed the magic-marker and holy-water
+production lines. Keep it separate in your main inventory.
 
 []{#wand-polymorph}
 **Polymorph.** Transforms monsters into random other monsters and
@@ -5629,6 +5738,27 @@ wand), and **enchant weapon / enchant armor** for the +7 ascension
 kit. A well-used marker can produce a meaningful share of your
 ascension kit.
 
+The **tinning kit** turns a fresh corpse (`a`pply, then select the
+corpse) into a tin: 450 nutrition's worth of preserved food that
+keeps indefinitely. The interesting part is that tin-eating skips
+the raw-corpse poison and acid damage checks. A tinned killer bee
+or acid blob is safe to eat with no resistance, and the
+intrinsic-grant still applies — so the kit doubles as a way to
+grind poison or acid resistance without taking the per-corpse
+hits. One warning the kit doesn't give: tinning a cockatrice
+without gloves petrifies you on the spot.
+
+The **crystal ball** is a one-question oracle when applied (`a`):
+pick a glyph class, point at a square, learn what's there or what's
+on the level. Beautiful in theory; ruinous in practice if your
+Intelligence is low. A blessed ball wants Int 16+ to be reliable,
+and a cursed ball can hallucinate, blind, or simply shatter. Drop
+it on an altar before the first use.
+
+The **magic lamp** must be blessed before you rub it: cursed magic
+lamps never grant the wish, uncursed are around 40%, blessed are
+~80%. Take it to a co-aligned altar first.
+
 ---
 
 ### The Armory
@@ -5657,8 +5787,12 @@ appendices give the full stats for every item.
 
 Armor Class (AC) starts at 10 and decreases as you add protection.
 Lower is better. Each point of AC reduces the chance of being hit.
-At AC -10 or below, you're quite difficult to damage with physical
-attacks.
+At AC −10 or below, you're quite difficult to damage with physical
+attacks; community consensus is that −20 is the practical target
+for an ascension kit, with diminishing returns past −25. The
+**cloak of displacement** is the underrated layer — monsters waste
+attacks on your phantom image, which complements low AC instead of
+competing with it.
 
 The key armor slots:
 
@@ -6590,10 +6724,15 @@ of your survival.
 When the game asks "For what do you wish?", be specific. This is
 not the time for ambiguity:
 
-- "blessed +3 gray dragon scale mail" gets you exactly that.
+- "blessed greased fixed +3 gray dragon scale mail" is the
+  veteran's incantation. `blessed` because BUC defaults to random,
+  `greased` deflects nymph theft and Rider grabs, `fixed` (or
+  `erodeproof`) locks erosion, `+3` is the safe enchantment ceiling.
 - "gray dragon scale mail" alone lets the dice pick blessed/
   cursed and enchantment — a bare wish can roll cursed. You
-  had *one* wish; spell out the BUC and the plus.
+  had *one* wish; spell out the BUC and the plus. And don't
+  forget "scale" — "gray dragon mail" hands you a scroll of
+  mail instead.
 - Artifact wishes get *harder* as artifacts accumulate. The
   denial roll scales with the total artifacts in the world
   (yours, generated, even bones-file ones), and your
@@ -6943,7 +7082,11 @@ The drawbridge is the first puzzle. You can lower it four ways:
   frost or fire horn, bugle, harp) opens the drawbridge. The
   notes are randomized per game. You can learn them by trying
   different sequences: the game tells you how many notes are
-  correct after each attempt, like a game of Mastermind.
+  correct after each attempt, like a game of Mastermind. Stand
+  one knight's-move from the bridge while guessing — adjacent
+  squares get crushed when the bridge opens or breaks. The notes
+  are A–G; "H" is also accepted, in the German notation where it
+  means B.
 - **Wand of opening** pointed at the drawbridge.
 - **Spell of knock** cast at the drawbridge.
 - **Wand of striking** *destroys* the drawbridge entirely. The
@@ -6962,7 +7105,9 @@ Once you're across, the Castle contains:
   to say *your* equipment once you've dealt with them.
 - **Four corner-tower alcoves**. One (and only one, randomly)
   contains the **wand of wishing** in a locked chest. *Search them
-  all.* In 5.0, that chest also holds a **potion of gain level**,
+  all*, or quaff a potion of object detection from the courtyard
+  to see which tower holds the chest and skip the other three.
+  In 5.0, that chest also holds a **potion of gain level**,
   included as a small make-good for the wand's charge changes (see
   below). The chest's square is protected by a burned-in
   [*Elbereth*](#elbereth) engraving and sealed with a cursed scroll of
@@ -7300,7 +7445,7 @@ winners carry. Here is the canonical kit, slot by slot:
 | **Ring (L)** | Free action | Anti-paralysis is non-negotiable on the Astral Plane. |
 | **Ring (R)** | Slow digestion, conflict, or regeneration | Conflict is the standard Astral-Plane crowd-control choice. |
 | **Weapon** | Your role's quest artifact + a silver saber | Silver saber appears in most builds as the off-hand because silver bypasses demon resistances. |
-| **Pack** | Bag of holding, magic lamp, unicorn horn, luckstone, wand of death, multiple wands of teleport, seven candles | The "bag-of-holding bundle." Candles are for the Candelabrum — Izchak's Minetown lighting shop is an easy source. |
+| **Pack** | Bag of holding, magic lamp, unicorn horn, luckstone, wand of death, multiple wands of teleport, seven candles, ≥5 holy water, a couple of blessed potions of full healing, a cockatrice corpse | The "bag-of-holding bundle." Holy water re-blesses items the Wizard or liches keep cursing in Gehennom; full healing is a one-action panic button; a wielded cockatrice corpse one-shots Riders (and other non-stoning-resistant nasties). Candles are for the Candelabrum — Izchak's Minetown lighting shop is an easy source. |
 | **Required loot** | Bell of Opening, Candelabrum of Invocation, Book of the Dead, Amulet of Yendor | The Invocation chain plus the prize. |
 
 A typical ascension AC sits in the **−25 to −40** range, but AC
@@ -7366,7 +7511,10 @@ fires automatically — you don't need to invoke it). This is one
 of the most generous moments in the game. Have your wish list
 ready *before* you reach the Sanctum: gauntlets of power, a
 +5 weapon of your choice, blessed cloak of magic resistance, or
-whatever you're missing for the climb. You only get it once.
+whatever you're missing for the climb. You only get it once. A
+late-game favorite: a wish for a **cursed potion of gain level**.
+Drinking one while carrying the Amulet skips you up a whole
+Gehennom level without provoking the Mysterious Force.
 
 **Bring the authentic Amulet.** The climb out is always open:
 every up-stair in the Dungeons of Doom takes you closer to the
@@ -7563,12 +7711,19 @@ reach one altar, make one sacrifice, and end this.
 on Astral. Magic resistance stops Death's instakill.
 Sick resistance handles Pestilence. Carry plenty of food (Famine
 bypasses normal nutrition pacing) and a unicorn horn for the
-stun side effects. A ring of **conflict** keeps the Riders
+stun side effects. A wielded cockatrice corpse (with gloves) can
+remove a Rider on a single landed hit — they have no stoning
+resistance. A ring of **conflict** keeps the Riders
 tangled fighting Angels and minor demons instead of chasing you,
-sometimes long enough to reach the altar. Teleportation wands
+sometimes long enough to reach the altar; just don't put the ring
+on while your own minion Angel is still alive — it vanishes and
+your god replaces it with four hostile Angels. Teleportation wands
 can clear a path through the crowds; note that **self-teleport
 fails on every elemental plane**, so zapping the wand at
 yourself does nothing. Only zapping it at others teleports them.
+
+**Don't zap a wand of death at Death.** It heals them. Magic
+missile works on all three Riders; use that instead.
 
 When you offer the Amulet on the correct altar: you ascend. The
 game is won. You've done what so few have done. Congratulations.
@@ -7640,6 +7795,22 @@ They are essential for moving safely through populated areas.
   requests a menu instead of the default single-target prompt:
   `me` is "what would you like to eat?", `ma` is "which tool?",
   `m,` lets you pick from a floor pile.
+
+#### Travel
+
+The underscore key (`_`) is the autopilot. Press `_`, point at a
+destination you've already explored, then `.` to confirm, and your
+character walks the shortest path there, opening doors and stopping
+on any interruption. `_<.` walks to the up-staircase; `__` walks
+to a known altar; `_>.` walks to the down-staircase. After Ctrl+A,
+this is the single biggest quality-of-life command in the game.
+
+#### Forcing locked chests
+
+`#force` (or `#f`) pries a locked chest open with your wielded
+weapon when you don't have a lockpick or key. Bladed weapons risk
+breaking the blade on the lock; blunt weapons risk destroying the
+chest's contents.
 
 #### Message history and redraw
 
