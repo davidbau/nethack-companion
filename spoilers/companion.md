@@ -630,9 +630,9 @@ patterns is the first step toward navigating them effectively.
 #### The Big Picture
 
 Even though the dungeon is procedurally generated, it is not all
-the same. The dungeon has a structure, and that structure guides
-the path of your game through a progressively more varied and
-challenging series of adventures.
+the same. The dungeon has a structure that guides the path of your game
+through a progressively more varied and challenging series of
+adventures.
 
 The dungeon is a branching tree with a main trunk that goes
 through three main phases. Off the main trunk are many optional
