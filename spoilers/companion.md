@@ -8904,7 +8904,7 @@ consequences for the player:
   fight, and killing
   them summons a wave of Keystone Kops to pursue you, and costs you
   a chunk of alignment.
-  Two community notes worth knowing: **polymorphing the shopkeeper
+  Two techniques worth knowing: **polymorphing the shopkeeper
   first** (via wand or trap) means killing them no longer counts as
   murder, which is the preferred approach for Lawful and Neutral
   characters. And **chaotic humans** can sacrifice the shopkeeper's
