@@ -968,15 +968,13 @@ the basin.
 | Water demon       | A water demon appears, hostile                        |
 | Water nymph       | A water nymph appears and tries to steal an item      |
 | Water moccasins   | A swarm of snakes appears                             |
-| Curse some items  | Some carried items become cursed                      |
-| Attribute loss    | A random attribute decreases                          |
-| Healing           | You regain hit points                                 |
-| Attribute boost   | A random attribute increases                          |
+| Curse some items  | "This water's no good!" — some carried items become cursed |
+| Poisonous water   | "The water is contaminated!" — Str damage (poison resistance blocks the worst) |
 | See invisible     | You gain the ability to see invisible creatures       |
 | Detect monsters   | Brief view of every monster on the level              |
 | Self-knowledge    | A brief enlightenment readout of your own state       |
 | Scare monsters    | Bad breath — every monster on the level panics        |
-| Nothing           | "The water is cool and refreshing"                    |
+| Nothing           | "The water is cool and refreshing" or "tasteless"     |
 
 Most of the time, nothing happens. Sometimes something wonderful
 happens. And sometimes a water demon appears and reminds you that
@@ -984,6 +982,16 @@ curiosity has a body count. Demons appear about 1 quaff in 30; on
 shallow levels they may grant you a wish before leaving, working out
 to roughly 1 wish per 150 quaffs. Past Dlvl 20 the wish odds drop to
 zero — only the hostility remains.
+
+**Magic fountains.** About one fountain in seven is a *magic
+fountain* — generated identical to the regular kind, with the same
+`{` glyph; there is no way to tell by looking. Quaffing one says
+*"Wow! This makes you feel great!"*, restores all your attributes
+to their maximum values, and raises a random attribute by one. The
+magic charge is consumed in a single quaff; afterwards the fountain
+behaves like any other. (You can also *wish* for a magic fountain by
+asking for "a magic fountain"; sink-kicked fountains are never
+magic.)
 
 **Dipping in a fountain** is a different gamble, and one that Lawful
 characters should know by heart. If you're at least experience level
