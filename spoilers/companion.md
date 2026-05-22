@@ -11697,11 +11697,6 @@ Stephenson, Janet Walz, Paul Winner, Bart House, and Warwick
 Allison, has maintained and extended the game across nearly four
 decades. Everything in these pages is downstream of their work.
 
-This is what a community looks like over decades. People writing
-things down so that others don't have to die the same stupid death.
-It's generous, it's nerdy, and it's one of the best things about
-NetHack.
-
 All data in this guide has been verified against the current game
 source code. Any errors are ours alone.
 
