@@ -963,15 +963,20 @@ the basin.
 
 **Quaffing from a fountain** is a slot machine with these reels:
 
-| Outcome         | Effect                                                |
-| --------------- | ----------------------------------------------------- |
-| Water demon     | A water demon appears, hostile                                                             |
-| Healing         | You regain hit points                                 |
-| Attribute boost | A random attribute increases                          |
-| Attribute loss  | A random attribute decreases                          |
-| Water moccasin  | Snakes appear                                         |
-| See invisible   | You gain the ability to see invisible creatures       |
-| Nothing         | "The water is cool and refreshing"                    |
+| Outcome           | Effect                                                |
+| ----------------- | ----------------------------------------------------- |
+| Water demon       | A water demon appears, hostile                        |
+| Water nymph       | A water nymph appears and tries to steal an item      |
+| Water moccasins   | A swarm of snakes appears                             |
+| Curse some items  | Some carried items become cursed                      |
+| Attribute loss    | A random attribute decreases                          |
+| Healing           | You regain hit points                                 |
+| Attribute boost   | A random attribute increases                          |
+| See invisible     | You gain the ability to see invisible creatures       |
+| Detect monsters   | Brief view of every monster on the level              |
+| Self-knowledge    | A brief enlightenment readout of your own state       |
+| Scare monsters    | Bad breath — every monster on the level panics        |
+| Nothing           | "The water is cool and refreshing"                    |
 
 Most of the time, nothing happens. Sometimes something wonderful
 happens. And sometimes a water demon appears and reminds you that
