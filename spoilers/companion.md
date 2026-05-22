@@ -637,7 +637,7 @@ only one neighborhood of a much larger world. If you survive long
 enough, your adventure will lead you through towns, towers, and
 castles; swamps and islands and fortresses; an underworld of
 molten halls and four elemental planes that climb back to a temple
-where angels, demons, and Riders crowd the altars of the gods.
+where angels and demons do battle around the altars to the gods.
 Each landmark has its own architecture, its own inhabitants, and
 its own rewards. Every game is different, but the dungeon has a
 story to tell: an arc through a familiar cast of landmarks, each
