@@ -986,8 +986,8 @@ with these reels among dozens of random effects:
 | Scare monsters    | Bad breath — every monster on the level panics        |
 | Nothing           | "The water is cool and refreshing" or "tasteless"     |
 
-Most of the time, nothing happens. Demons appear about 1/30; on
-shallow levels they may grant you a wish instead of attacking,
+Most of the time, nothing happens. A demon appears about 1/30; on
+shallow levels it may grant you a wish instead of attacking,
 working out to roughly 1 wish per 150 quaffs, dropping to zero
 chance past Dlvl 20. If you want to take the risk, it is a good idea
 to put your items in a bag to protect them from cursing and engrave
