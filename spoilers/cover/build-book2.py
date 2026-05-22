@@ -17,8 +17,6 @@ Page assembly:
 """
 
 from pathlib import Path
-import shutil
-import subprocess
 
 import fitz  # PyMuPDF
 
@@ -76,8 +74,11 @@ def main():
     out.insert_pdf(book)
     out.insert_pdf(inside_front)
     out.insert_pdf(inside_back)
-    raw = OUT.with_suffix(".raw.pdf")
-    out.save(str(raw))
+    # PyMuPDF's insert_font embeds the full TTF; the cover panels'
+    # embedded Garamond doubles the file size when both panels are
+    # included verbatim. Subset to just the glyphs actually used.
+    out.subset_fonts()
+    out.save(str(OUT), garbage=4, deflate=True, clean=True)
 
     n = out.page_count
     out.close()
@@ -85,27 +86,6 @@ def main():
     book.close()
     inside_front.close()
     inside_back.close()
-
-    # cover.pdf's inside-back-cover key block uses PyMuPDF
-    # insert_text() with Times-Bold and Times-Italic. Those are PDF
-    # base-14 fonts and PyMuPDF leaves them unembedded — which Lulu's
-    # preflight check (rightly) rejects. Re-run the assembled PDF
-    # through Ghostscript with EmbedAllFonts=true; gs subsets and
-    # embeds NimbusRoman (a free Times equivalent) for the two
-    # offending fonts and leaves everything else as-is.
-    if not shutil.which("gs"):
-        raise SystemExit(
-            "ghostscript ('gs') is required to embed fonts; brew install ghostscript")
-    subprocess.run([
-        "gs", "-dNOPAUSE", "-dBATCH", "-dQUIET",
-        "-sDEVICE=pdfwrite",
-        "-dPDFSETTINGS=/prepress",
-        "-dEmbedAllFonts=true",
-        "-dSubsetFonts=true",
-        f"-sOutputFile={OUT}",
-        str(raw),
-    ], check=True)
-    raw.unlink()
 
     print(f"Wrote {OUT} ({OUT.stat().st_size} bytes, {n} pages)")
 

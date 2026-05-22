@@ -420,6 +420,16 @@ def main():
     row_h = KEY_BLOCK_H / 3
     col_xs = [key_l, key_l + col_w + col_gap]
 
+    # Register EB Garamond bold + italic as embedded TTFs.
+    # PyMuPDF's insert_text() with the PDF base-14 ("Times-Bold",
+    # "Times-Italic") leaves the fonts unembedded, which Lulu's
+    # preflight rejects. Embed Garamond — it also matches the
+    # title font on the front cover.
+    GARAMOND_BOLD_TTF = HERE.parent / "fonts" / "EBGaramond-Bold.ttf"
+    GARAMOND_ITALIC_TTF = HERE.parent / "fonts" / "EBGaramond-Italic.ttf"
+    page2.insert_font(fontname="garamond-bold",   fontfile=str(GARAMOND_BOLD_TTF))
+    page2.insert_font(fontname="garamond-italic", fontfile=str(GARAMOND_ITALIC_TTF))
+
     def draw_thumb_cell(cell_x, cell_y, cell_w, cell_h, svg_name, line1, line2):
         raw, vw, vh = thumb_pdfs[svg_name]
         pad = 3
@@ -441,10 +451,10 @@ def main():
         # check), so it always renders even if the cell is tight.
         page2.insert_text(
             fitz.Point(cap_x, cap_top + 9),
-            line1, fontname='Times-Bold', fontsize=9.5, color=(0, 0, 0))
+            line1, fontname='garamond-bold', fontsize=9.5, color=(0, 0, 0))
         page2.insert_text(
             fitz.Point(cap_x, cap_top + 21),
-            line2, fontname='Times-Italic', fontsize=8.5,
+            line2, fontname='garamond-italic', fontsize=8.5,
             color=(0.25, 0.25, 0.25))
 
     def draw_header_cell(cell_x, cell_y, cell_w, cell_h, title, subtitle):
@@ -453,10 +463,10 @@ def main():
         title_baseline = cell_y + cell_h / 2 + 1
         page2.insert_text(
             fitz.Point(cell_x, title_baseline),
-            title, fontname='Times-Bold', fontsize=13, color=(0, 0, 0))
+            title, fontname='garamond-bold', fontsize=13, color=(0, 0, 0))
         page2.insert_text(
             fitz.Point(cell_x, title_baseline + 13),
-            subtitle, fontname='Times-Italic', fontsize=9,
+            subtitle, fontname='garamond-italic', fontsize=9,
             color=(0.25, 0.25, 0.25))
 
     for r_i, row in enumerate(grid_rows):
@@ -471,7 +481,10 @@ def main():
                                 cell[1], cell[2], cell[3])
 
     final = HERE.parent / "cover.pdf"
-    out.save(str(final))
+    # Subset the embedded Garamond TTFs down to just the glyphs used
+    # (insert_font embeds the full file by default).
+    out.subset_fonts()
+    out.save(str(final), garbage=4, deflate=True, clean=True)
     out.close()
     print(f"Wrote {final} ({final.stat().st_size} bytes)")
 
