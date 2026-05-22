@@ -636,7 +636,7 @@ guides the path of your game through a progressively more varied
 and challenging series of adventures.
 
 The dungeon is a branching tree with a main trunk that descends
-through three main phases. Off the trunk are many optional side
+through three main phases. Off the trunk are several optional side
 branches that you will want to explore along the way. The exact
 depths and layouts vary from game to game, but the diagram that
 follows shows the typical shape. Knowing where you are in this
