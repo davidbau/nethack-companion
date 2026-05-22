@@ -4632,7 +4632,7 @@ creature on a typical descent.
 | Lizard                  | Cures stoning in progress                                              |
 | Floating eye            | Telepathy (but paralyzes you too)                                      |
 | Fire ant                | Fire resistance                                                        |
-| Wraith                  | Gain an experience level                                               |
+| Wraith                  | **Gain an experience level**                                           |
 | Yeti                    | Cold resistance                                                        |
 | Tengu                   | Teleportitis / teleport control                                        |
 | Giant (any)             | Increase strength                                                      |
