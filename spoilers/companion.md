@@ -783,7 +783,7 @@ them. Some have unusual *shapes*, and some have unusual
   from arrow traps to anti-magic to land mines; recognize the
   pattern, retreat, prepare, return.
 - **Light-and-frame rooms (pillars, room-in-a-room, blocked
-  center).** Tactically excellent for setting up Elbereth
+  center).** Tactically excellent for setting up [Elbereth](#elbereth)
   squares or anchoring a polearm fight.
 
 Themed rooms are mixed in with ordinary rooms; you can have
@@ -1009,7 +1009,7 @@ shallow levels it may grant you a wish instead of attacking,
 working out to roughly 1 wish per 150 quaffs, dropping to zero
 chance past Dlvl 20. If you want to take the risk, it is a good idea
 to put your items in a bag to protect them from cursing and engrave
-Elbereth on a couple squares to protect against demons. Wizards'
+[Elbereth](#elbereth) on a couple squares to protect against demons. Wizards'
 random starting items can include a scroll of taming or charm-monster
 spellbook, and any character with a protective instrument (tooled
 horn, leather drum, magic harp) can scare or charm a demon — making
@@ -1468,7 +1468,7 @@ the era away:
   no spellbooks, tools, or amulets in the natural item pool, all
   post-Rogue inventions.
 
-Modern mechanics still work; you can engrave Elbereth here even
+Modern mechanics still work; you can engrave [Elbereth](#elbereth) here even
 though that was a Hack-era addition. A small and forgivable
 anachronism.
 
@@ -2341,7 +2341,7 @@ are the time-tested tactics that keep adventurers breathing:
   engrave-and-regenerate tactic still works, but only when the monster
   has somewhere to go. A frightened monster that has nowhere to flee
   will now turn and fight rather than stand helplessly while you
-  recover. If you've carved Elbereth in a corridor and then backed a
+  recover. If you've carved [Elbereth](#elbereth) in a corridor and then backed a
   monster into a dead end, be ready for it to make a decision about
   that arrangement. Keep an exit behind the monster, or expect contact.
 - **The first swing wakes the room.** Sleeping monsters stay asleep
@@ -2351,7 +2351,7 @@ are the time-tested tactics that keep adventurers breathing:
   more for larger creatures. A packed room becomes a simultaneous
   brawl on swing two. Pull the pack one at a time by *backing away*
   into a corridor first (so they wake strung out in a line) or write
-  Elbereth and let them come.
+  [Elbereth](#elbereth) and let them come.
 - **Watch your alignment around peacefuls.** Knights and Samurai
   take a special alignment hit for attacking the helpless, fleeing,
   or peaceful (a caitiff penalty for Knights, a giri-breaking
@@ -2701,7 +2701,7 @@ single bump can rob you, drop your XL, and snatch the cloak off
 your shoulders, all in one round.
 
 **Defenses.** Kill at range (darts, force bolt, a wand of
-anything). [Engrave **Elbereth**](#engravings): nymphs respect it. Or drop your
+anything). [Engrave **Elbereth**](#elbereth): nymphs respect it. Or drop your
 most irreplaceable items on the floor before approaching.
 Whatever's not in your pack can't be stolen.
 
@@ -4954,7 +4954,7 @@ where mapping by hand could take a lifetime you don't have.
 
 []{#scroll-scare-monster}
 **Scare monster.** The trick: don't read it. Drop it on the floor
-and stand on it. It works like a permanent Elbereth, frightening
+and stand on it. It works like a permanent [Elbereth](#elbereth), frightening
 most monsters away. The catch: pick it up after it's been dropped
 and it crumbles to dust. So choose your standing spot wisely.
 
@@ -5141,7 +5141,7 @@ lucky find."
 **Stasis.** A new 5.0 wand that freezes every monster on the level
 for **10–30 turns**. No ray, no aim, no message — just a hush. Use
 it when you're surrounded and need a free moment to engrave
-Elbereth, drink a potion, change weapons, or just walk past. The
+[Elbereth](#elbereth), drink a potion, change weapons, or just walk past. The
 silence on engraving makes it harder to identify by the engrave
 test, but if you sit on a charge for a fight you'll know.
 
@@ -6955,8 +6955,9 @@ Once you're across, the Castle contains:
   contains the **wand of wishing** in a locked chest. *Search them
   all.* In 5.0, that chest also holds a **potion of gain level**,
   included as a small make-good for the wand's charge changes (see
-  below). The chest's square is protected by a burned-in *Elbereth*
-  engraving and sealed with a cursed scroll of scare monster. Those
+  below). The chest's square is protected by a burned-in
+  [*Elbereth*](#elbereth) engraving and sealed with a cursed scroll of
+  scare monster. Those
   wards exist to keep wandering monsters from *eating* the chest
   itself (some species, like leprechauns and rats, gnaw containers);
   the cursed scroll is also a known gotcha — don't try to read it
@@ -7615,7 +7616,7 @@ They are essential for moving safely through populated areas.
   even if no monster is visible there. Use it on suspected
   invisible monsters, on a displaced creature whose image is one
   square off from its real position, or to break your own
-  Elbereth. Double-tap `F` to cancel without acting.
+  [Elbereth](#elbereth). Double-tap `F` to cancel without acting.
 - **`G`** then a direction — **run** that direction until
   something interesting appears: a monster, an unknown item, a
   trap, a corridor branch, a closed door. Capital-letter
@@ -8491,7 +8492,7 @@ output of late-game artifact weapons.
 Don't kill any monsters. Not directly, not with pets, not through
 any means that the game attributes to you. The pacifist runs on
 pets doing the fighting, on conflict to make monsters attack each
-other, on Elbereth to keep them at bay, and on creative use of
+other, on [Elbereth](#elbereth) to keep them at bay, and on creative use of
 the dungeon environment.
 
 Pacifist ascensions are possible but require deep knowledge of the
@@ -8877,7 +8878,7 @@ Dropping gold in the shop pays this off before adding credit.
 debt turns the shopkeeper hostile. The Keystone Kops will pursue
 you through the dungeon, and the shopkeeper themselves is one of
 the toughest melee NPCs in the game: high HP, low AC, and
-unfazed by Elbereth. Pay the bill at the door.
+unfazed by [Elbereth](#elbereth). Pay the bill at the door.
 
 #### Shopkeeper Behavior
 
@@ -8976,7 +8977,7 @@ The Mohs column is real-world mineral hardness on the Mohs scale
 (talc 1, diamond 10), and the game uses it in two places. Gems of
 Mohs 8 or higher count as **"hard"**, and hard gems do two things
 softer gems and glass can't: they can be used as a stylus to
-*engrave* Elbereth and other messages permanently into the dungeon
+*engrave* [Elbereth](#elbereth) and other messages permanently into the dungeon
 floor (instead of the temporary dust scratch a finger or soft gem
 leaves), and they have about a 50% chance to *survive* being
 thrown rather than shattering on impact. Below Mohs 8, the gem
