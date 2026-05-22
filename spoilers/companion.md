@@ -851,7 +851,7 @@ AC / attack details on every monster, see the
 | ------ | ----------------- | ---------------------------------------------------------------------------------------------------- |
 | [`A`](#angelic-beings-a)    | [Angels](#angelic-beings-a)            | Powerful, usually aligned. Don't fight your own.                                                     |
 | [`C`](#centaurs-c)    | [Centaurs](#centaurs-c)          | Fast (speed 18-20). Half spawn with a bow or crossbow, but they'll still close into melee for weapon and kick attacks. Mountain centaurs hit hardest: 1d10 weapon plus *two* 1d6 kicks per turn. |
-| [`E`](#elementals-e)    | [Elementals](#elementals-e)        | Hard to kill. Air elementals engulf; earth elementals phase through walls.                           |
+| [`E`](#elementals-e)    | [Elementals](#elementals-e)        | Hard to kill. Air elementals [engulf](#engulfment); earth elementals phase through walls. |
 | [`f`](#felines-f)    | [Displacer beast](#felines-f)   | Cat-class, but vicious: AC −10, three-attack melee, and a 50% chance on each player melee to swap places with you instead. Eat the corpse for temporary intrinsic Displacement. |
 | [`F`](#fungi-and-molds-f)    | [Fungi](#fungi-and-molds-f)             | Yellow mold, green mold, shriekers. Shriekers summon other monsters.                                 |
 | [`g`](#gremlins-g)    | [Gremlins / gargoyles](#gremlins-g)   | Heavy claws plus a special trick. Gremlins **strip a random intrinsic on hit at night** and **multiply when wet** (don't kick one into a fountain). Gargoyles are slow but armored (AC −4) with three-attack salvos; winged gargoyles fly. |
@@ -862,23 +862,23 @@ AC / attack details on every monster, see the
 | [`K`](#keystone-kops-k)    | [Keystone Kops](#keystone-kops-k)     | The shopkeeper-summoned constabulary. They appear when you steal, refuse to pay, or anger a shopkeeper. Individually weak but they swarm, and they jeer at you. |
 | [`l`](#leprechauns-l)    | [Leprechauns](#leprechauns-l)       | Steal your gold and teleport away. A single claw can grab up to *all* of your purse. Hide gold in a sack, drop it elsewhere, or fight at range. |
 | [`L`](#liches-l)    | [Liches](#liches-l)            | Spellcasters. Arch-liches are among the most dangerous monsters in the game.                         |
-| [`m`](#mimics-m)    | [Mimics](#mimics-m)            | Disguised as items, walls, doors, fountains, altars, or boulders. See [A note on mimics](#a-note-on-mimics) in Ways to Die.         |
+| [`m`](#mimics-m)    | [Mimics](#mimics-m)            | Disguised as items, walls, doors, fountains, altars, or boulders. See [A note on mimics](#a-note-on-mimics). |
 | [`M`](#mummies-m)    | [Mummies](#mummies-m)           | Aggressive undead with physical claw attacks. Their corpses are dangerous to eat (age you). Mummy wrappings worn as a cloak block invisibility — usually a downside, but useful if you've gone invisible and need a shopkeeper to interact with you. |
-| [`n`](#nymphs-n)    | [Nymphs](#nymphs-n)            | Steal items from your inventory, then teleport away. Fight from range.                               |
+| [`n`](#nymphs-n)    | [Nymphs](#nymphs-n)            | [Steal items from your inventory, then teleport away](#a-note-on-nymphs). Fight from range. |
 | [`N`](#nagas-n)    | [Nagas](#nagas-n)             | Large serpent-bodied creatures. Red nagas breathe fire, black nagas spit acid, golden nagas cast spells, guardian nagas spit Str-drain poison and have a paralyzing bite. Tough; speeds 12–16. |
 | [`O`](#ogres-o)    | [Ogres](#ogres-o)             | Strong melee fighters. Ogre lords and kings are tougher.                                             |
 | [`p`](#piercers-p)    | [Piercers](#piercers-p)          | Disguise as stalactites; drop from the ceiling onto whatever walks below. The fall does serious damage. Hard to spot in advance. |
-| [`P`](#puddings-and-oozes-p)    | [Puddings](#puddings-and-oozes-p)          | Black AND brown puddings split when hit in melee with an iron or metal weapon (scalpel and tsurugi count). Good to eat for [intrinsics](#useful-corpse-effects).                                            |
+| [`P`](#puddings-and-oozes-p)    | [Puddings](#puddings-and-oozes-p)          | [Black AND brown puddings split when hit in melee with an iron or metal weapon](#a-note-on-puddings) (scalpel and tsurugi count). Good to eat for [intrinsics](#useful-corpse-effects). |
 | [`q`](#quadrupeds-q)    | [Quadrupeds](#quadrupeds-q)        | Multi-attack mid-game bruisers. The **rothe** is the famous one (three attacks per turn at sluggish speed 9, dangerous in packs); mumakil are solo two-attack bruisers (4d12 butt + 2d6 bite).                              |
 | [`R`](#rust-monsters-and-disenchanters-r)    | [Rust monster / disenchanter](#rust-monsters-and-disenchanters-r) | Rust monsters corrode worn iron armor when they hit you, and your wielded iron weapon when you hit them. Use non-iron alternatives (mithril, silver, dragonhide) or take iron gear off before the fight; iron items kept in your inventory aren't touched. **Disenchanters** drain enchantment on hit; see [Enchantment Drain](#enchantment-drain). |
 | [`S`](#snakes-s)    | [Snakes](#snakes-s)            | Cobras and pit vipers poison. Water moccasins come from fountains.                                   |
-| [`t`](#trappers-and-lurkers-t)    | [Trappers / lurkers above](#trappers-and-lurkers-t) | Hide in plain sight on floor or ceiling and engulf you when you walk under/onto them. See the engulfment write-up under [More Ways to Die](#more-ways-to-die). |
-| [`T`](#trolls-t)    | [Trolls](#trolls-t)            | Regenerate. They come back from the dead unless you eat or tin the corpse.                           |
+| [`t`](#trappers-and-lurkers-t)    | [Trappers / lurkers above](#trappers-and-lurkers-t) | Hide in plain sight on floor or ceiling and [engulf you](#engulfment) when you walk under/onto them. |
+| [`T`](#trolls-t)    | [Trolls](#trolls-t)            | [Regenerate. They come back from the dead unless you eat or tin the corpse](#a-note-on-trolls). |
 | [`u`](#unicorns-and-horses-u)    | [Horses / unicorns](#unicorns-and-horses-u) | Horses are usually mountable, mostly peaceful in the wild. Unicorns are color-coded by alignment: same-aligned spawn peaceful, cross-aligned hostile. The gem-throwing negotiation playbook is in [Luck and Fortune](#luck-and-fortune). |
 | [`U`](#umber-hulks-u)    | [Umber hulk](#umber-hulks-u)        | Confuses on sight. Avoid looking at them directly.                                                   |
-| [`v`](#vortices-v)    | [Vortices](#vortices-v)          | Engulfing wisps. Air, fire, ice, and steam vortices each apply their element to whatever they engulf. Kill at range. |
-| [`w`](#worms-w)    | [Worms](#worms-w)             | Long worms grow tail segments as they move and can be a corridor in themselves. Purple worms swallow you whole (see [Things You Don't Want to Meet](#things-you-dont-want-to-meet), below). |
-| [`W`](#wraiths-w)    | [Wraiths](#wraiths-w)           | Drain levels on hit. But their corpses grant a level, so eat them fresh.                             |
+| [`v`](#vortices-v)    | [Vortices](#vortices-v)          | [Engulfing](#engulfment) wisps. Air, fire, ice, and steam vortices each apply their element to whatever they engulf. Kill at range. |
+| [`w`](#worms-w)    | [Worms](#worms-w)             | Long worms grow tail segments as they move and can be a corridor in themselves. Purple worms [swallow you whole](#engulfment) (see [Things You Don't Want to Meet](#things-you-dont-want-to-meet), below). |
+| [`W`](#wraiths-w)    | [Wraiths](#wraiths-w)           | [Drain levels on hit](#level-drain). But [their corpses grant a level](#a-note-on-wraiths), so eat them fresh. |
 | [`y`](#lights-y)    | [Yellow/black lights](#lights-y) | Explode adjacent. Yellow blinds you; black hallucinates you. Black lights are invisible without *see invisible*. Kill at range. |
 | [`Y`](#apelike-creatures-y)    | [Yetis](#apelike-creatures-y)             | Tough melee combatants. Corpses may grant cold resistance.                                           |
 | [`z`](#zruties-z)    | [Zruty](#zruties-z)             | Three-attack mid-game brute. Uncommon but a fair fight if you've geared up.                          |
@@ -888,13 +888,13 @@ AC / attack details on every monster, see the
 
 | Sym    | Class            | Notes                                                                                                    |
 | ------ | ---------------- | -------------------------------------------------------------------------------------------------------- |
-| [`c`](#cockatrices-c)    | [Cockatrices](#cockatrices-c)      | **Touch = instant petrification.** Never hit one barehanded. Wield their corpse with gloves as a weapon. |
-| [`D`](#dragons-d)    | [Dragons](#dragons-d)          | Each color has its own breath weapon, resistance, and scale mail property. See note below.               |
-| [`h`](#humanoids-h)    | [Mind flayers](#humanoids-h)     | Drain intelligence on hit. **If Int hits your racial minimum (3 for humans), you die.** Keep distance or kill fast.                    |
-| [`V`](#vampires-v)    | [Vampires](#vampires-v)         | Drain levels. Vampire lords fly and are fast.                                                            |
-| [`w`](#worms-w)    | [Purple worms](#worms-w)     | The big worm: swallows you whole on a hit, then digests. Cut your way out from inside.                  |
+| [`c`](#cockatrices-c)    | [Cockatrices](#cockatrices-c)      | **Touch = [instant petrification](#petrification-stoning).** Never hit one barehanded. Wield their corpse with gloves as a weapon. |
+| [`D`](#dragons-d)    | [Dragons](#dragons-d)          | [Each color has its own breath weapon, resistance, and scale mail property](#a-note-on-dragons). See note below. |
+| [`h`](#humanoids-h)    | [Mind flayers](#humanoids-h)     | [Drain intelligence on hit](#brainlessness). **If Int hits your racial minimum (3 for humans), you die.** Keep distance or kill fast. |
+| [`V`](#vampires-v)    | [Vampires](#vampires-v)         | [Drain levels](#level-drain). Vampire lords fly and are fast. |
+| [`w`](#worms-w)    | [Purple worms](#worms-w)     | The big worm: [swallows you whole on a hit, then digests](#engulfment). Cut your way out from inside. |
 | [`X`](#xorns-x)    | [Xorn](#xorns-x)             | Phases through walls and floors. Three claws and a bite per turn; hard to ambush and hard to escape from. |
-| [`;`](#sea-monsters)    | [Sea monsters](#sea-monsters)     | Drowning is an instadeath. Don't fight in water without a plan.                                          |
+| [`;`](#sea-monsters)    | [Sea monsters](#sea-monsters)     | [Drowning is an instadeath](#drowning). Don't fight in water without a plan. |
 | [`&`](#major-demons)    | [Demons](#major-demons)           | Major demons (Orcus, Demogorgon, Asmodeus) are boss-level threats.                                       |
 | [`@`](#humans-and-elves)    | [Humans (hostile)](#humans-and-elves) | Includes the Wizard of Yendor, who is the most persistent nuisance in the game.                          |
 | [`Q`](#quantum-mechanics-q)    | [Quantum mechanics / genetic engineers](#quantum-mechanics-q) | Quantum mechanics teleport their target on a hit; genetic engineers (new in 5.0) polymorph their target. The `Q` class is rare but every one of them is a surprise. |
@@ -911,7 +911,7 @@ A few map glyphs aren't monsters in the conventional sense, but you'll see them 
 | ------ | ------------------------ | ---------------------------------------------------------------------------------------------------- |
 | `I`    | Invisible monster marker | The game remembers the last spot you sensed something you couldn't see. The `I` stays there until you bump it or step on the square; the monster has usually moved. |
 | `~`    | Long worm tail segment   | Part of a long worm's body. Hitting the tail damages the worm and shortens the chain; hitting the head (the `w`) is full melee. |
-| `]`    | Strange object           | **Always a mimic.** No ordinary item ever displays as `]` (compare `[`, armor — `]` is its mirror). See [A note on mimics](#a-note-on-mimics) in Ways to Die. |
+| `]`    | Strange object           | **Always a [mimic](#a-note-on-mimics).** No ordinary item ever displays as `]` (compare `[`, armor — `]` is its mirror). |
 | `⎕`<br>(space) | Ghost            | Ghosts left from bones files. The glyph is a literal space, which paints over the floor underneath: in a room, a ghost shows as a one-square *gap* in the floor where a `.` should be. Walk into the gap to identify it. |
 
 ---
@@ -3740,8 +3740,7 @@ yank a loaded pet to your side from anywhere on the level.
   is speed 5, slow enough that anything that runs gets away.
   Gray dragon is an alternative when you specifically want the
   magic-resistance intrinsic and a body that won't accidentally
-  re-polymorph. Cast carefully: random self-poly on the pet can
-  downgrade it, and a polymorphed steed stops being saddled.
+  re-polymorph.
 - If you can tame an **Archon** directly (via a scroll of taming
   on a hostile, magic-whistle recall of one you tamed earlier, or
   a conflict-ring accident), do it. Archons are the consensus
