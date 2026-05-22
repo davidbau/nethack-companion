@@ -45,20 +45,30 @@ caption = (
     'items (Bell of Opening, Candelabrum, Book of the Dead) '
     "needed to enter Moloch's Sanctum and claim the Amulet."
 )
+    # Map image dimensions (PDF points, native):
+    #   dmap-dod.pdf:    570 x 458.25
+    #   dmap-geh.pdf:    570 x 510.75
+    #   dmap-planes.pdf: 570 x 224.25
+    # At A5 trim with current margins the text height is ~6.4 in.
+    # Stacked DoD+Geh natively span 8.03 in at \linewidth — so constrain
+    # each to a fixed 3.5 in width; DoD becomes 2.81 in and Geh 3.14 in
+    # tall, total 5.95 in. The Planes image uses the same 3.5 in width
+    # for visual continuity.
+DMAP_WIDTH = "3.5in"
 replacement = (
     '\n\n```{=latex}\n'
     '\\begingroup\\setlength{\\parskip}{0pt}\n'
     '\\begin{center}\n'
     '\\offinterlineskip\n'
     '\\vbox{%\n'
-    '  \\hbox{\\includegraphics[width=\\linewidth]{images/dmap-dod.pdf}}%\n'
-    '  \\hbox{\\includegraphics[width=\\linewidth]{images/dmap-geh.pdf}}%\n'
+    f'  \\hbox{{\\includegraphics[width={DMAP_WIDTH}]{{images/dmap-dod.pdf}}}}%\n'
+    f'  \\hbox{{\\includegraphics[width={DMAP_WIDTH}]{{images/dmap-geh.pdf}}}}%\n'
     '}\n'
     '\\end{center}\n'
     '\\endgroup\n'
     '\\clearpage\n'
     '\\begin{center}\n'
-    '\\includegraphics[width=\\linewidth]{images/dmap-planes.pdf}\n'
+    f'\\includegraphics[width={DMAP_WIDTH}]{{images/dmap-planes.pdf}}\n'
     '\\end{center}\n'
     '\\vspace{0.6em}\n'
     f'{{\\footnotesize\\itshape\\noindent {caption}\\par}}\n'
