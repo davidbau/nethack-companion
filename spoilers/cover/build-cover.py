@@ -7,15 +7,15 @@ font correctly when the source font is installed on the system), then
 compose the final 2-page cover by stamping those PDFs onto positioned
 rectangles of a black/white background, using PyMuPDF's show_pdf_page().
 
-Page dimensions are taken from the Lulu template
-(Novella-Duplex-Soft-Cover.pdf):
+Trim: A5 (148 × 210 mm = 419.528 × 595.276 pt) per panel, 0.125"
+bleed all around. Spine width is a placeholder (51.746 pt) carried
+over from the prior 5×8" Lulu template — recompute and update once
+the new page count is known.
 
-  Page: 789.746 x 594 pt  (10.969" x 8.25", 0.125" bleed all around)
-  Trim: (9, 9) to (780.746, 585)
-  Spine fold: x = 369 to 420.746  (width 51.746)
-  Back trim: 9..369    (5")
-  Front trim: 420.746..780.746  (5")
-  Safety inset from trim: 13.536 pt
+  Per-panel trim:  A5 = 419.528 x 595.276 pt
+  Bleed:           9 pt (0.125") all sides
+  Spine width:     51.746 pt (placeholder — re-template after page count settles)
+  Page (with bleed): 2*A5w + spine + 2*bleed  x  A5h + 2*bleed
 """
 
 from pathlib import Path
@@ -30,17 +30,19 @@ HERE = Path(__file__).parent
 TMP = HERE / "build"        # working dir for per-SVG PDFs
 TMP.mkdir(exist_ok=True)
 
-# ---- template-derived dimensions ----
-PAGE_W = 789.746
-PAGE_H = 594.0
+# ---- A5 wraparound dimensions ----
+A5_W = 419.528  # 148 mm
+A5_H = 595.276  # 210 mm
 BLEED = 9.0
-SPINE_LEFT = 369.0
-SPINE_RIGHT = 420.746
-SPINE_W = SPINE_RIGHT - SPINE_LEFT
+SPINE_W = 51.746        # placeholder — re-template at the new page count
+PAGE_W = 2 * A5_W + SPINE_W + 2 * BLEED
+PAGE_H = A5_H + 2 * BLEED
 BACK_LEFT = BLEED
-BACK_RIGHT = SPINE_LEFT
+BACK_RIGHT = BACK_LEFT + A5_W
+SPINE_LEFT = BACK_RIGHT
+SPINE_RIGHT = SPINE_LEFT + SPINE_W
 FRONT_LEFT = SPINE_RIGHT
-FRONT_RIGHT = PAGE_W - BLEED
+FRONT_RIGHT = FRONT_LEFT + A5_W
 TRIM_TOP = BLEED
 TRIM_BOTTOM = PAGE_H - BLEED
 SAFETY_INSET = 13.536

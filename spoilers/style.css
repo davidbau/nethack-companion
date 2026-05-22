@@ -906,7 +906,7 @@ body { position: relative; }
   /* --- Page setup ------------------------------------------- */
 
   @page {
-    size: 5in 8in;
+    size: 148mm 210mm; /* A5 */
     margin: 0.55in 0.5in 0.65in 0.6in; /* top right bottom left(inner) */
 
     @bottom-center {

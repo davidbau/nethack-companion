@@ -5,15 +5,16 @@ Single-page exterior cover for spiral / coil binding. No spine — the
 back cover panel sits directly against the front cover panel at the
 page center line.
 
-Dimensions are taken from the Lulu Coil-No-Spine template
-(m2g8rnk-cover-template.pdf):
+Dimensions: A5 (148 × 210 mm = 419.528 × 595.276 pt) trim per panel,
+0.125" bleed all around, no spine — back panel meets front panel
+at the page centre line.
 
-  Page (with bleed):    738 x 594 pt   (10.25" x 8.25")
-  Bleed:                9 pt           (0.125" all sides)
-  Trim:                 (9, 9) to (729, 585)  — 10" x 8"
-  Each panel trim:      5" x 8"        (360 x 576 pt)
-  Center line:          x = 369        (back ends / front begins)
-  Safety margin:        36 pt          (0.5" from trim edge)
+  Each panel trim:      A5 = 419.528 x 595.276 pt
+  Bleed:                9 pt = 0.125" all sides
+  Page (with bleed):    2*A5w + 2*bleed  x  A5h + 2*bleed
+                        = 857.056 x 613.276 pt
+  Centre line:          back ends / front begins
+  Safety margin:        36 pt (0.5" from trim edge)
 
 Re-uses the intermediate PDFs left in cover/build/ by build-cover.py
 when those exist; otherwise renders them on the fly via rsvg-convert
@@ -31,18 +32,20 @@ HERE = Path(__file__).parent
 TMP = HERE / "build"
 TMP.mkdir(exist_ok=True)
 
-# ---- Coil-no-spine template dimensions ----
-PAGE_W = 738.0
-PAGE_H = 594.0
+# ---- A5 coil-no-spine template dimensions ----
+A5_W = 419.528  # 148 mm
+A5_H = 595.276  # 210 mm
 BLEED = 9.0
-CENTER_X = PAGE_W / 2.0          # 369 — back/front boundary, no spine
-BACK_LEFT = BLEED                # 9
-BACK_RIGHT = CENTER_X            # 369
-FRONT_LEFT = CENTER_X            # 369
-FRONT_RIGHT = PAGE_W - BLEED     # 729
+PAGE_W = 2 * A5_W + 2 * BLEED    # 857.056 pt
+PAGE_H = A5_H + 2 * BLEED        # 613.276 pt
+CENTER_X = PAGE_W / 2.0          # back/front boundary, no spine
+BACK_LEFT = BLEED
+BACK_RIGHT = CENTER_X
+FRONT_LEFT = CENTER_X
+FRONT_RIGHT = PAGE_W - BLEED
 TRIM_TOP = BLEED
 TRIM_BOTTOM = PAGE_H - BLEED
-SAFETY_INSET = 36.0              # 0.5" — Lulu template spec for this size
+SAFETY_INSET = 36.0              # 0.5" from trim edge
 
 TITLE_LINE1 = "A Traveller's Companion"
 TITLE_LINE2_PARTS = ('to the Mazes of', 'Menace')

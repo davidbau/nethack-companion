@@ -26,23 +26,17 @@ BOOK = SPOILERS / "book.pdf"
 COVER = SPOILERS / "cover.pdf"
 OUT = SPOILERS / "book2.pdf"
 
-# cover.pdf p2 layout (top-left origin, PDF points):
-#   Page:        789.746 x 594  (10.969" x 8.25", 0.125" bleed all sides)
-#   Bleed:       9 pt
-#   Spine:       x = 369 .. 420.746
-#   Left panel  (inside FRONT cover): x = 9..369,         y = 9..585
-#   Right panel (inside BACK cover):  x = 420.746..780.746, y = 9..585
-# Each panel's trim is 360 x 576 pt = 5" x 8", which matches book.pdf.
-PAGE_W_COVER = 789.746
-PAGE_H_COVER = 594.0
-BLEED = 9.0
-SPINE_LEFT = 369.0
-SPINE_RIGHT = 420.746
-LEFT_PANEL  = fitz.Rect(BLEED,       BLEED, SPINE_LEFT,             PAGE_H_COVER - BLEED)
-RIGHT_PANEL = fitz.Rect(SPINE_RIGHT, BLEED, PAGE_W_COVER - BLEED,   PAGE_H_COVER - BLEED)
+# Book trim is A5: 148 × 210 mm = 419.528 × 595.276 pt (1 mm = 2.83465 pt).
+BOOK_W = 419.528
+BOOK_H = 595.276
 
-BOOK_W = 360.0
-BOOK_H = 576.0
+# cover.pdf p2 layout (top-left origin, PDF points). Computed live from
+# the source PDF so that the panel rects stay in sync if build-cover.py
+# changes its dimensions (e.g. when the spine width is re-templated).
+#   Layout: bleed | back panel (A5) | spine | front panel (A5) | bleed
+BLEED = 9.0
+COVER_PANEL_W = BOOK_W
+COVER_PANEL_H = BOOK_H
 
 
 def extract_panel(cover_doc, page_num: int, clip_rect: fitz.Rect):
@@ -67,8 +61,19 @@ def main():
     cover = fitz.open(COVER)
     book = fitz.open(BOOK)
 
-    inside_front = extract_panel(cover, 1, LEFT_PANEL)
-    inside_back  = extract_panel(cover, 1, RIGHT_PANEL)
+    # Derive panel rectangles from cover.pdf p2 dimensions, so the
+    # extraction tracks any spine-width change. Layout:
+    #   bleed | back panel | spine | front panel | bleed
+    cover_w = cover[1].rect.width
+    cover_h = cover[1].rect.height
+    spine_w = cover_w - 2 * BLEED - 2 * COVER_PANEL_W
+    spine_left = BLEED + COVER_PANEL_W
+    spine_right = spine_left + spine_w
+    left_panel = fitz.Rect(BLEED, BLEED, spine_left, cover_h - BLEED)
+    right_panel = fitz.Rect(spine_right, BLEED, cover_w - BLEED, cover_h - BLEED)
+
+    inside_front = extract_panel(cover, 1, left_panel)
+    inside_back  = extract_panel(cover, 1, right_panel)
 
     out = fitz.open()
     out.insert_pdf(book)
