@@ -47,28 +47,23 @@ caption = (
 )
     # Map image dimensions (PDF points, native):
     #   dmap-dod.pdf:    570 x 458.25
-    #   dmap-geh.pdf:    570 x 510.75
+    #   dmap-geh.pdf:    570 x 510.75  (combined aspect h/w = 1.700)
     #   dmap-planes.pdf: 570 x 224.25
-    # At A5 trim the text area is 7.018 in tall. Stacked DoD+Geh have
-    # combined aspect (h/w) = 1.700, so a width of 3.85 in gives a
-    # stack height of 6.545 in — comfortably inside the text area
-    # after \vbox + center env padding. Planes uses the same width.
-DMAP_WIDTH = "3.85in"
+    # A5 text area is 7.018 in tall. At width 4.0 in, the DoD+Geh
+    # stack is 6.8 in tall, with 0.2 in slack inside the text area
+    # (we use \centerline rather than the center env so there's no
+    # env padding eating that budget). Planes uses the same width.
+DMAP_WIDTH = "4.0in"
 replacement = (
     '\n\n```{=latex}\n'
     '\\begingroup\\setlength{\\parskip}{0pt}\n'
-    '\\begin{center}\n'
-    '\\offinterlineskip\n'
-    '\\vbox{%\n'
+    '\\centerline{\\vbox{\\offinterlineskip%\n'
     f'  \\hbox{{\\includegraphics[width={DMAP_WIDTH}]{{images/dmap-dod.pdf}}}}%\n'
     f'  \\hbox{{\\includegraphics[width={DMAP_WIDTH}]{{images/dmap-geh.pdf}}}}%\n'
-    '}\n'
-    '\\end{center}\n'
+    '}}\n'
     '\\endgroup\n'
     '\\clearpage\n'
-    '\\begin{center}\n'
-    f'\\includegraphics[width={DMAP_WIDTH}]{{images/dmap-planes.pdf}}\n'
-    '\\end{center}\n'
+    f'\\centerline{{\\includegraphics[width={DMAP_WIDTH}]{{images/dmap-planes.pdf}}}}\n'
     '\\vspace{0.6em}\n'
     f'{{\\footnotesize\\itshape\\noindent {caption}\\par}}\n'
     '```\n\n'

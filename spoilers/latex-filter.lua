@@ -92,13 +92,24 @@ function Table(blk)
   -- makes the Class column narrow enough that "disenchanter" and
   -- "Trappers / lurkers above" hyphenate. Bump Class wide enough
   -- that the longest entry fits without breaking.
+  --
+  -- Also wrap with `\let\endhead\endfirsthead` so the header is
+  -- registered as first-page-only. Without this, longtable's normal
+  -- header-repeat behaviour emits a phantom "Sym Class Notes" header
+  -- at the top of the next page when the table content ends right at
+  -- a page break — which the Field Guide subsections do regularly,
+  -- since each is short enough to fit on one page.
   if #blk.colspecs == 3
       and headers[1] == "Sym" and headers[2] == "Class"
       and headers[3] == "Notes" then
     blk.colspecs[1][2] = 0.05
     blk.colspecs[2][2] = 0.22
     blk.colspecs[3][2] = 0.73
-    return blk
+    return {
+      pandoc.RawBlock("latex", "\\begingroup\\let\\endhead\\endfirsthead"),
+      blk,
+      pandoc.RawBlock("latex", "\\endgroup"),
+    }
   end
 
   -- The Wand Table (Price | Wand | Type | Max Charges | Engrave-test
