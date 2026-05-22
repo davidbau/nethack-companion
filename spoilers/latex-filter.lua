@@ -100,6 +100,23 @@ function Table(blk)
     blk.colspecs[3][2] = 0.73
     return blk
   end
+
+  -- The Wand Table (Price | Wand | Type | Max Charges | Engrave-test
+  -- result): pandoc auto-sizes the wand-name column wide enough for
+  -- "Secret door detection" and leaves the engrave-test column too
+  -- narrow for two-word phrases. Halve the wand column and give
+  -- engrave the slack.
+  if #blk.colspecs == 5
+      and headers[1] == "Price" and headers[2] == "Wand"
+      and headers[3] == "Type" and headers[4] == "Max Charges"
+      and headers[5] == "Engrave-test result" then
+    blk.colspecs[1][2] = 0.10
+    blk.colspecs[2][2] = 0.20
+    blk.colspecs[3][2] = 0.12
+    blk.colspecs[4][2] = 0.15
+    blk.colspecs[5][2] = 0.43
+    return blk
+  end
 end
 
 function Div(div)

@@ -277,6 +277,19 @@ tbody tr:nth-child(even) {
 /* Useful Corpse Effects tables (Corpse | Effect): widen the Corpse
    column so entries like "Black pudding (glob)" and "Gelatinous cube †"
    stay on one line. Same proportion as the LaTeX colspec override. */
+/* The Wand Table (5 cols): halve the Wand column and give the
+   Engrave-test result column the slack. */
+#the-wand-table table th:nth-child(1),
+#the-wand-table table td:nth-child(1) { width: 10%; }
+#the-wand-table table th:nth-child(2),
+#the-wand-table table td:nth-child(2) { width: 20%; }
+#the-wand-table table th:nth-child(3),
+#the-wand-table table td:nth-child(3) { width: 12%; }
+#the-wand-table table th:nth-child(4),
+#the-wand-table table td:nth-child(4) { width: 15%; }
+#the-wand-table table th:nth-child(5),
+#the-wand-table table td:nth-child(5) { width: 43%; }
+
 #useful-corpse-effects table th:first-child,
 #useful-corpse-effects table td:first-child {
   width: 40%;

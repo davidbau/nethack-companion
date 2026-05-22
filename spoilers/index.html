@@ -6545,15 +6545,22 @@ affect what they hit in a straight line, and <strong>non-directional
 wands</strong> affect the area around you.</p>
 <section id="the-wand-table" class="level4">
 <h4>The Wand Table</h4>
+<p>Unlike scroll and potion prices, wand prices alone rarely pin down a
+specific wand — a $150 wand is one of thirteen possibilities. The
+<strong>engrave-test result</strong> in the rightmost column is far more
+useful: most wands reveal themselves in one zap. See <a
+href="#identification-by-engraving">Identification by Engraving</a> for
+how to run the test and how to resolve the few shared results.</p>
 <div class="price-id-toolbar">
 
 </div>
 <table>
 <colgroup>
-<col style="width: 11%" />
-<col style="width: 52%" />
-<col style="width: 11%" />
-<col style="width: 25%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr>
@@ -6561,6 +6568,7 @@ wands</strong> affect the area around you.</p>
 <th>Wand</th>
 <th>Type</th>
 <th>Max Charges</th>
+<th>Engrave-test result</th>
 </tr>
 </thead>
 <tbody>
@@ -6569,153 +6577,180 @@ wands</strong> affect the area around you.</p>
 <td>Light</td>
 <td>NODIR</td>
 <td>15</td>
+<td>room lights up</td>
 </tr>
 <tr>
 <td>100</td>
 <td>Nothing</td>
 <td>BEAM</td>
 <td>15</td>
+<td>no message</td>
 </tr>
 <tr>
 <td>150</td>
 <td><a href="#wand-digging">Digging</a></td>
 <td>RAY</td>
 <td>8</td>
+<td>gravel flies up</td>
 </tr>
 <tr>
 <td>150</td>
 <td>Enlightenment</td>
 <td>NODIR</td>
 <td>15</td>
+<td>you feel enlightened</td>
 </tr>
 <tr>
 <td>150</td>
 <td>Magic missile</td>
 <td>RAY</td>
 <td>8</td>
+<td>bullet holes</td>
 </tr>
 <tr>
 <td>150</td>
 <td><a href="#wand-make-invisible">Make invisible</a></td>
 <td>BEAM</td>
 <td>8</td>
+<td>engraving vanishes ¹</td>
 </tr>
 <tr>
 <td>150</td>
 <td>Opening</td>
 <td>BEAM</td>
 <td>8</td>
+<td>no message</td>
 </tr>
 <tr>
 <td>150</td>
 <td>Probing</td>
 <td>BEAM</td>
 <td>8</td>
+<td>no message</td>
 </tr>
 <tr>
 <td>150</td>
 <td>Secret door detection</td>
 <td>NODIR</td>
 <td>15</td>
+<td>doors revealed</td>
 </tr>
 <tr>
 <td>150</td>
 <td>Slow monster</td>
 <td>BEAM</td>
 <td>8</td>
+<td>bugs slow down</td>
 </tr>
 <tr>
 <td>150</td>
 <td>Speed monster</td>
 <td>BEAM</td>
 <td>8</td>
+<td>bugs speed up</td>
 </tr>
 <tr>
 <td>150</td>
 <td><a href="#wand-stasis">Stasis</a></td>
 <td>NODIR</td>
 <td>15</td>
+<td>no message</td>
 </tr>
 <tr>
 <td>150</td>
 <td>Striking</td>
 <td>BEAM</td>
 <td>8</td>
+<td>wand fights you</td>
 </tr>
 <tr>
 <td>150</td>
 <td>Undead turning</td>
 <td>BEAM</td>
 <td>8</td>
+<td>no message</td>
 </tr>
 <tr>
 <td>150</td>
 <td>Locking</td>
 <td>BEAM</td>
 <td>8</td>
+<td>no message</td>
 </tr>
 <tr>
 <td>175</td>
 <td><a href="#wand-fire-cold-lightning">Cold</a></td>
 <td>RAY</td>
 <td>8</td>
+<td>ice cubes drop</td>
 </tr>
 <tr>
 <td>175</td>
 <td><a href="#wand-fire-cold-lightning">Fire</a></td>
 <td>RAY</td>
 <td>8</td>
+<td>flames fly</td>
 </tr>
 <tr>
 <td>175</td>
 <td><a href="#wand-fire-cold-lightning">Lightning</a></td>
 <td>RAY</td>
 <td>8</td>
+<td>lightning arcs</td>
 </tr>
 <tr>
 <td>175</td>
 <td>Sleep</td>
 <td>RAY</td>
 <td>8</td>
+<td>bugs stop moving ²</td>
 </tr>
 <tr>
 <td>200</td>
 <td><a href="#wand-cancellation">Cancellation</a></td>
 <td>BEAM</td>
 <td>8</td>
+<td>engraving vanishes ¹</td>
 </tr>
 <tr>
 <td>200</td>
 <td>Create monster</td>
 <td>NODIR</td>
 <td>15</td>
+<td>bugs appear</td>
 </tr>
 <tr>
 <td>200</td>
 <td><a href="#wand-polymorph">Polymorph</a></td>
 <td>BEAM</td>
 <td>8</td>
+<td>engraving rewrites</td>
 </tr>
 <tr>
 <td>200</td>
 <td><a href="#wand-teleportation">Teleportation</a></td>
 <td>BEAM</td>
 <td>8</td>
+<td>engraving vanishes ¹</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="#wand-death">Death</a></td>
 <td>RAY</td>
 <td>8</td>
+<td>bugs stop moving ²</td>
 </tr>
 <tr>
 <td>500</td>
 <td><a href="#wand-wishing">Wishing</a></td>
 <td>NODIR</td>
 <td>3</td>
+<td>prompts for a wish</td>
 </tr>
 </tbody>
 </table>
+<p><small>¹ Shared by cancellation, make-invisible, and teleportation. ²
+Shared by sleep and death.</small></p>
 <div class="price-id-toolbar">
 
 </div>
@@ -6791,69 +6826,42 @@ used to engrave may explode, so BUC-test before you test (see <a
 href="#the-engrave-test-wands">The Engrave Test (Wands)</a> for the full
 safety procedure).</p>
 </section>
-<section id="beyond-engraving-systematic-wand-testing" class="level4">
-<h4>Beyond Engraving: Systematic Wand Testing</h4>
-<p>The engrave test sorts most wands immediately, but a few produce
-ambiguous results. For those, a systematic testing protocol helps:</p>
-<p><strong>Step 1: Note the wand category.</strong> When you engrave,
-the result tells you whether the wand is NODIR (non-directional), RAY,
-or BEAM (immediate). This alone cuts the possibilities dramatically.</p>
+<section id="resolving-ambiguous-engrave-results" class="level4">
+<h4>Resolving Ambiguous Engrave Results</h4>
+<p>A few engrave-test results are shared by more than one wand. To
+disambiguate:</p>
 <ul>
-<li><strong>NODIR wands</strong> (light, enlightenment, create monster,
-secret door detection, stasis, wishing): Most reveal themselves through
-the engrave-test message. Light creates a lit field. Enlightenment makes
-you feel self-knowledgeable. Create monster says “bugs appear.” Wishing
-prompts you for a wish. <strong>Stasis</strong> is deliberately silent
-on engraving — the C code hides it among the other silent wands so the
-engrave test can’t single it out.</li>
-<li><strong>RAY wands</strong> (digging, magic missile, fire, cold,
-lightning, sleep, death): Digging riddles the floor with holes. Fire,
-cold, and lightning produce obvious elemental effects. Magic missile
-riddles the surface with <strong>bullet holes</strong>. <strong>Sleep
-and death</strong> both produce the same “the bugs on the surface stop
-moving!” message — price-test to tell them apart (death is $500).</li>
-<li><strong>BEAM wands</strong> (everything else): The engrave test
-distinguishes most of them. <strong>Cancellation and make
-invisible</strong> erase the engraving in place.
-<strong>Teleportation</strong> moves it elsewhere on the level (look
-around to spot it). <strong>Polymorph</strong> rewrites your engraving
-as a different random one. <strong>Striking</strong> interrupts with
-<em>“The wand unsuccessfully fights your attempt to write!”</em>
-<strong>Slow monster</strong> and <strong>speed monster</strong> make
-the bugs on the surface slow down or speed up, respectively. Five BEAM
-wands — <strong>nothing, undead turning, opening, locking,
-probing</strong> — produce <em>no engrave message at all</em>. Combined
-with the silent NODIR stasis (above), a wand that engraves in silence is
-one of six possibilities; the zap tests below will resolve them.</li>
-</ul>
-<p><strong>Step 2: Safe zapping tests.</strong> For wands that remain
-unidentified after engraving, zap them at safe targets:</p>
+<li><p><strong>“The engraving vanishes!”</strong> belongs to
+<strong>cancellation</strong>, <strong>make-invisible</strong>, or
+<strong>teleportation</strong>. Drop a known item and zap each
+candidate: make-invisible hides it, teleportation sends it elsewhere on
+the level, cancellation dulls its magic.</p></li>
+<li><p><strong>“The bugs on the floor stop moving!”</strong> belongs to
+<strong>sleep</strong> or <strong>death</strong>. Death is the only $500
+ray wand.</p></li>
+<li><p><strong>No engrave message at all</strong> narrows to one of six:
+<strong>nothing</strong>, <strong>opening</strong>,
+<strong>locking</strong>, <strong>probing</strong>, <strong>undead
+turning</strong>, or <strong>stasis</strong>. Test each at a safe
+target:</p>
 <ul>
-<li><strong>Zap at a locked chest or door.</strong> A wand of opening
-unlocks it. A wand of locking locks it. A wand of striking breaks
-it.</li>
-<li><strong>Zap at a corpse on the floor.</strong> A wand of undead
-turning revives the corpse to its original species (and animates any
-carried corpses too). A wand of polymorph transforms it.</li>
-<li><strong>Zap at a tame or weak monster.</strong> Speed monster makes
-it faster. Slow monster makes it slower. Make invisible makes it vanish.
-Probing reveals its stats.</li>
-<li><strong>Zap at a cancellable item</strong> (a potion, a figurine).
-Cancellation will dull it. Note: cancellation does NOT affect booze,
-fruit juice, or oil, so don’t use those as test subjects.</li>
+<li><strong>Opening</strong> unlocks a chest or door.
+<strong>Locking</strong> locks one.</li>
+<li><strong>Probing</strong> reveals a nearby monster’s stats.</li>
+<li><strong>Undead turning</strong> revives a fresh corpse to its
+original species (and animates any corpses the target was
+carrying).</li>
+<li><strong>Stasis</strong> halts every monster on the level — the
+silent freeze is unmistakable mid-combat.</li>
+<li><strong>Nothing</strong> does nothing.</li>
+</ul></li>
 </ul>
-<p><strong>The three “vanishes” wands.</strong> Cancellation,
-make-invisible, and teleportation all print <em>“The engraving
-vanishes!”</em> on the engrave-test. To tell them apart, drop a known
-item and zap each candidate: make-invisible makes the item invisible;
-teleportation moves it elsewhere on the level; cancellation dulls its
-magic. (Polymorph isn’t in this group: it rewrites your engraving as a
-different random one, which is its own giveaway.)</p>
-<p><strong>Step 3: When in doubt, check the price.</strong> If testing
-hasn’t resolved the wand, its shop price narrows the field further. A
-$150 wand is one of thirteen types. A $200 wand is one of four. A $500
-wand is death or wishing, and you should be very careful with it either
-way.</p>
+<p>For non-ambiguous wands, a follow-up zap at a safe target confirms
+what the engrave-test already suggested: <strong>slow monster</strong> /
+<strong>speed monster</strong> at a tame or weak monster,
+<strong>striking</strong> at a closed door, <strong>polymorph</strong>
+at a pile of junk gear. Avoid zapping unidentified wands at
+yourself.</p>
 </section>
 <section id="recharging" class="level4">
 <h4>Recharging</h4>
