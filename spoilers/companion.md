@@ -843,7 +843,7 @@ AC / attack details on every monster, see the
 | [`r`](#rodents-r)    | [Rodents](#rodents-r)   | Rats and rock moles. Rock moles eat metal items, so protect your gear.                  |
 | [`s`](#arachnids-and-centipedes-s)    | [Spiders](#arachnids-and-centipedes-s)   | Cave spiders are weak (eat them for poison resistance). Giant spiders poison.            |
 | [`x`](#xans-and-fantastic-insects-x)    | [Grid bugs](#xans-and-fantastic-insects-x) | The weakest monster in the game; they can't even move diagonally. Free XP — they don't leave corpses. The `x` class also covers the much-later **xan**, whose sting cripples your legs (slow movement until it heals). |
-| [`:`](#lizards)    | [Lizards](#lizards)   | Newts, geckos, and iguanas are individually weak — usually not too dangerous if you're paying attention. The class matters mostly for the corpses: **lizard corpses cure petrification** (always carry one for cockatrice/Medusa insurance), and newt corpses may restore 1–3 mana to spellcasters. |
+| [`:`](#lizards)    | [Lizards](#lizards)   | Newts, geckos, and iguanas are individually weak — usually not too dangerous if you're paying attention. The class matters mostly for the corpses: **lizard corpses cure [petrification](#petrification-stoning)** (always carry one for cockatrice/Medusa insurance), and newt corpses may restore 1–3 mana to spellcasters. |
 
 #### Mid-Dungeon Threats
 
@@ -2519,8 +2519,8 @@ Routine mistakes kill more adventurers than exotic instadeaths.
 The list below is sorted roughly by frequency on the public
 server.
 
-**Eating mistakes.** Rotted corpse, poisonous corpse, and
-choking each rank in the top forty causes of death. Don't
+**Eating mistakes.** Rotted corpse, [poisonous corpse](#deadly-poison), and
+[choking](#choking) each rank in the top forty causes of death. Don't
 eat old corpses. Don't eat while Satiated. Don't finish a
 heavy corpse if you're already approaching Satiated. Pray
 immediately if you ate something you shouldn't have.
@@ -2584,8 +2584,9 @@ are.
 boulders you summoned on your own head.
 
 Routine mistakes kill far more adventurers than exotic
-instadeaths. Floating eyes, cockatrices, mind flayers, and
-disenchanters all matter (and they're catalogued in
+instadeaths. Floating eyes, [cockatrices](#petrification-stoning),
+[mind flayers](#brainlessness), and
+[disenchanters](#enchantment-drain) all matter (and they're catalogued in
 [More Ways to Die](#more-ways-to-die)). But the median
 death is a preventable swarm of jackals on Dlvl 3.
 
