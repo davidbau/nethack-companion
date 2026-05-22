@@ -5133,26 +5133,27 @@ Test (Wands)](#the-engrave-test-wands) for the full safety procedure).
 
 #### Resolving Ambiguous Engrave Results
 
-A few engrave-test results are shared by more than one wand. To
-disambiguate:
+A few engrave-test results are shared by more than one wand.
 
-- **"The engraving vanishes!"** belongs to **cancellation**,
-  **make-invisible**, or **teleportation**. Drop a known item and
-  zap each candidate: make-invisible hides it, teleportation sends
-  it elsewhere on the level, cancellation dulls its magic.
-- **"The bugs on the floor stop moving!"** belongs to **sleep** or
-  **death**. Death is the only $500 ray wand.
-- **No engrave message at all** narrows to one of six: **nothing**,
-  **opening**, **locking**, **probing**, **undead turning**, or
-  **stasis**. Test each at a safe target:
+**"The engraving vanishes!"** belongs to **cancellation**,
+**make-invisible**, or **teleportation**. Drop a known item and zap
+each candidate: make-invisible hides it, teleportation sends it
+elsewhere on the level, cancellation dulls its magic.
 
-    - **Opening** unlocks a chest or door. **Locking** locks one.
-    - **Probing** reveals a nearby monster's stats.
-    - **Undead turning** revives a fresh corpse to its original
-      species (and animates any corpses the target was carrying).
-    - **Stasis** halts every monster on the level — the silent
-      freeze is unmistakable mid-combat.
-    - **Nothing** does nothing.
+**"The bugs on the floor stop moving!"** belongs to **sleep** or
+**death**. Death is the only $500 ray wand.
+
+**No engrave message at all** narrows to one of six: **nothing**,
+**opening**, **locking**, **probing**, **undead turning**, or
+**stasis**. Test each at a safe target:
+
+- **Opening** unlocks a chest or door. **Locking** locks one.
+- **Probing** reveals a nearby monster's stats.
+- **Undead turning** revives a fresh corpse to its original species
+  (and animates any corpses the target was carrying).
+- **Stasis** halts every monster on the level — the silent freeze is
+  unmistakable mid-combat.
+- **Nothing** does nothing.
 
 For non-ambiguous wands, a follow-up zap at a safe target confirms
 what the engrave-test already suggested: **slow monster** /
