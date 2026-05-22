@@ -629,8 +629,9 @@ patterns is the first step toward navigating them effectively.
 
 #### The Big Picture
 
-Even though the dungeon is procedurally generated, it is not all
-the same. The dungeon has a structure that guides the path of your game
+Even though the dungeon is different every time you play, it is
+not totally random. From level to level, the overall dungeon map
+has a structure, and that structure guides the path of your game
 through a progressively more varied and challenging series of
 adventures.
 
