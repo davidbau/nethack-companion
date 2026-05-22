@@ -959,15 +959,16 @@ Ah, fountains. That gentle bubbling sound has lured more adventurers
 to their doom than any trap, with the promise of a cool refreshing
 drink.
 
-About one in seven fountains is a **magic fountain** that is
+If you don't have [bad luck](#gaining-and-losing-luck), about one in
+seven randomly-generated fountains is a **magic fountain** that is
 indistinguishable from a regular fountain until you take a drink.
-`q`uaffing from a magic one says *Wow! This makes you feel great!*,
+Quaffing from a magic one says, *Wow! This makes you feel great!*,
 restores all your attributes to their maximum values, and raises a
 random attribute by one, consuming the magic charge; afterwards the
-fountain behaves like any other. (You can also *wish* for a magic
-fountain by asking for "a magic fountain"; sink-kicked fountains
-are never magic; dipping gets no benefits from the magic charge but
-could use it up.)
+fountain behaves like any other. (Don't bother drinking from pre-placed
+fountains like the ones in Minetown and the Oracle, or sink-kicked
+fountains, since they are never magic; also, dipping gets no
+benefits from the magic charge but could use it up.)
 
 **Quaffing from an ordinary fountain** is a dangerous slot machine
 with these reels among dozens of random effects:
@@ -977,7 +978,7 @@ with these reels among dozens of random effects:
 | Water demon       | A water demon appears, hostile                        |
 | Water nymph       | A water nymph appears and tries to steal an item      |
 | Water moccasins   | A swarm of snakes appears                             |
-| Curse some items  | "This water's no good!" — some carried items become cursed |
+| Curse some items  | "This water's no good!" — items in your main inventory may be cursed (items inside a bag are safe) |
 | Poisonous water   | "The water is contaminated!" — Str damage (poison resistance blocks the worst) |
 | See invisible     | You gain the ability to see invisible creatures       |
 | Detect monsters   | Brief view of every monster on the level              |
@@ -985,11 +986,11 @@ with these reels among dozens of random effects:
 | Scare monsters    | Bad breath — every monster on the level panics        |
 | Nothing           | "The water is cool and refreshing" or "tasteless"     |
 
-Most of the time, nothing happens. Sometimes something wonderful
-happens. And sometimes a water demon appears and reminds you that
-curiosity has a body count. Demons appear about 1 quaff in 30; on
-shallow levels they may grant you a wish before leaving, working out
-to roughly 1 wish per 150 quaffs. Past Dlvl 20 the wish odds drop to zero.
+Most of the time, nothing happens. If you want to take the risk, it
+is a good idea to put your items in a bag to protect them from
+cursing and engrave Elbereth on a couple squares to protect against
+demons. Wizards start with items that can charm or scare a demon,
+so for them quaffing is a better gamble.
 
 **Dipping in a fountain** is a different gamble, and one that Lawful
 characters should know by heart. If you're at least experience level
