@@ -7722,7 +7722,7 @@ can clear a path through the crowds; note that **self-teleport
 fails on every elemental plane**, so zapping the wand at
 yourself does nothing. Only zapping it at others teleports them.
 
-**Don't zap a wand of death at Death.** It heals them. Magic
+**Don't zap a wand of death at Death.** It heals him. Magic
 missile works on all three Riders; use that instead.
 
 When you offer the Amulet on the correct altar: you ascend. The
