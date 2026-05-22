@@ -49,12 +49,11 @@ caption = (
     #   dmap-dod.pdf:    570 x 458.25
     #   dmap-geh.pdf:    570 x 510.75
     #   dmap-planes.pdf: 570 x 224.25
-    # At A5 trim with current margins the text height is ~6.4 in.
-    # Stacked DoD+Geh natively span 8.03 in at \linewidth — so constrain
-    # each to a fixed 3.5 in width; DoD becomes 2.81 in and Geh 3.14 in
-    # tall, total 5.95 in. The Planes image uses the same 3.5 in width
-    # for visual continuity.
-DMAP_WIDTH = "3.5in"
+    # At A5 trim the text area is 7.018 in tall. Stacked DoD+Geh have
+    # combined aspect (h/w) = 1.700, so a width of 3.85 in gives a
+    # stack height of 6.545 in — comfortably inside the text area
+    # after \vbox + center env padding. Planes uses the same width.
+DMAP_WIDTH = "3.85in"
 replacement = (
     '\n\n```{=latex}\n'
     '\\begingroup\\setlength{\\parskip}{0pt}\n'
