@@ -519,7 +519,7 @@ game. The three most important are **magic resistance**,
 **reflection**, and **poison resistance**. Poison
 resistance can be acquired as an *intrinsic* by eating the right
 corpse, like a killer bee, a cave spider, a yellow mold, or a
-black pudding kicked from a sink.
+[black pudding](#a-note-on-puddings) kicked from a sink.
 Magic resistance and reflection come from special gear: scale
 mail made from the hide of a slain dragon (gray for MR, silver
 for reflection), a special cloak (of MR) or amulet (of
@@ -1096,9 +1096,10 @@ first.)
 
 Sinks are the dungeon's most underrated identification tool.
 
-**Kicking a sink** can shake loose a ring (useful!), summon a black
-pudding (terrifying, but its glob is a [triple-resistance
-snack](#useful-corpse-effects)), summon an *amorous demon* posing
+**Kicking a sink** can shake loose a ring (useful!), summon a
+[black pudding](#a-note-on-puddings) (terrifying, but its glob is a
+[triple-resistance snack](#useful-corpse-effects)), summon an
+*amorous demon* posing
 as "the dish washer" (the same incubus/succubus as [a seduction
 encounter](#seduction) — careful!), or just stub your toe. Each
 non-stub outcome fires at most once per sink. Worth a kick in the
@@ -1266,9 +1267,9 @@ variants contain a guaranteed (not-cursed) luckstone, so you'll
 get one wherever you arrive. A luckstone in your open inventory
 prevents your luck from timing out toward zero, which affects
 everything from combat to fountain wishes. Grab it and carry it
-for the rest of the game. (One layout variant also seeds a **fake
-luckstone mimic** disguised as a luckstone — BUC-test what you
-pick up before relying on it.)
+for the rest of the game. (One layout variant also seeds a [**fake
+luckstone mimic**](#a-note-on-mimics) disguised as a luckstone —
+BUC-test what you pick up before relying on it.)
 
 #### Sokoban
 
@@ -2405,7 +2406,7 @@ exception.
 
 **The early dungeon is deadly.** The top ten killers are,
 in order: jackals, dwarves, soldier ants, gnome lords, sewer rats,
-giant bats, small mimics, gnomes, foxes, water moccasins. Every
+giant bats, [small mimics](#a-note-on-mimics), gnomes, foxes, water moccasins. Every
 one of them lives on the upper dungeon levels. None are
 intrinsically dangerous to a prepared character. They get you
 because you haven't built HP, AC, or resistances yet and they
@@ -2564,7 +2565,7 @@ last hit on someone who walked away from a real fight at
 2 HP, or someone who decided to read a scroll on the turn
 one was adjacent. Don't read scrolls under threat.
 
-**Killed by kicking.** Kicking sinks summons a black pudding,
+**Killed by kicking.** Kicking sinks summons a [black pudding](#a-note-on-puddings),
 a foocubus, or worse. Kicking doors can break your toe.
 Kicking locked chests can electrocute you, and electric
 shock is a top-100 cause of death on its own. Stop kicking
@@ -4632,13 +4633,13 @@ creature on a typical descent.
 | Lizard                  | Cures stoning in progress                                              |
 | Floating eye            | Telepathy (but paralyzes you too)                                      |
 | Fire ant                | Fire resistance                                                        |
-| Wraith                  | **Gain an experience level**                                           |
+| [Wraith](#a-note-on-wraiths) | **Gain an experience level**                                      |
 | Yeti                    | Cold resistance                                                        |
 | Tengu                   | Teleportitis / teleport control                                        |
 | Giant (any)             | Increase strength                                                      |
 | Winter wolf             | Cold resistance                                                        |
 | Stalker                 | Invisibility (and see invisible)                                       |
-| Black pudding (glob)    | Cold, shock, and poison resistance                                     |
+| [Black pudding](#a-note-on-puddings) (glob) | Cold, shock, and poison resistance                       |
 | Fire giant              | Fire resistance + Strength                                             |
 | Disenchanter            | **STRIPS** a random intrinsic. Never eat.                              |
 
@@ -4653,7 +4654,7 @@ creature on a typical descent.
 | Quivering blob †        | Poison resistance                                                      |
 | Gray ooze (glob)        | Fire, cold, and poison resistance                                      |
 | Blue jelly †            | Cold and poison resistance                                             |
-| Brown pudding (glob)    | Cold, shock, and poison resistance                                     |
+| [Brown pudding](#a-note-on-puddings) (glob) | Cold, shock, and poison resistance                       |
 | Gelatinous cube †       | Fire, cold, shock, and sleep resistance                                |
 
 A gelatinous cube is the highest-density source of ascension-kit
