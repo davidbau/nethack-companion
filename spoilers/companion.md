@@ -956,10 +956,15 @@ curious, and occasionally punish them. Learning what to do (and what
 #### Fountains `{`
 
 Ah, fountains. That gentle bubbling sound has lured more adventurers
-to their doom than any trap. Every experienced player has a fountain
-story: the time they summoned a water demon on dungeon level 3, the
-time they quaffed and got a wish, the time snakes poured out of
-the basin.
+to their doom than any trap, with the promise of a cool refreshing
+drink. You should know that about one in seven fountains is a **magic
+fountain** that is indistinguishable from a regular fountain. Drinking
+from a magic one says *"Wow! This makes you feel great!"*, restores
+all your attributes to their maximum values, and raises a random
+attribute by one, and consumes the magic charge; afterwards the
+fountain behaves like any other. (You can also *wish* for a magic
+fountain by asking for "a magic fountain"; sink-kicked fountains are
+never magic.)
 
 **Quaffing from a fountain** is a slot machine with these reels:
 
@@ -982,16 +987,6 @@ curiosity has a body count. Demons appear about 1 quaff in 30; on
 shallow levels they may grant you a wish before leaving, working out
 to roughly 1 wish per 150 quaffs. Past Dlvl 20 the wish odds drop to
 zero — only the hostility remains.
-
-**Magic fountains.** About one fountain in seven is a *magic
-fountain* — generated identical to the regular kind, with the same
-`{` glyph; there is no way to tell by looking. Quaffing one says
-*"Wow! This makes you feel great!"*, restores all your attributes
-to their maximum values, and raises a random attribute by one. The
-magic charge is consumed in a single quaff; afterwards the fountain
-behaves like any other. (You can also *wish* for a magic fountain by
-asking for "a magic fountain"; sink-kicked fountains are never
-magic.)
 
 **Dipping in a fountain** is a different gamble, and one that Lawful
 characters should know by heart. If you're at least experience level
