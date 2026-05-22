@@ -8934,8 +8934,7 @@ Beyond the rules, a few tactical habits pay off:
   breaking the door down to get in just earns you a normal shop
   visit plus an angry shopkeeper. (In Orcus Town the shopkeepers
   are usually dead by the time you arrive — Orcus killed them —
-  so the items there often *are* ownerless, but that's because of
-  Orcus, not the engraving.)
+  so the items there often *are* ownerless.)
 
 The best strategy is usually to play fair: sell what you don't need,
 buy what you do, and use the pricing system to identify as much as
