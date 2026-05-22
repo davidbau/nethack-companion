@@ -8901,7 +8901,7 @@ consequences for the player:
   that exorbitant price is a give-away.
 - A shopkeeper *can* be killed for the entire stock plus the till
   (1,000–4,000 zm and a skeleton key on death), but they're a tough
-  fight (high HP, low AC, hits hard with their weapon), and killing
+  fight, and killing
   them summons a wave of Keystone Kops to pursue you, costs you a
   chunk of alignment, and leaves the shop permanently empty: no more
   buying, no more selling, no more price-ID from that shopkeeper.
