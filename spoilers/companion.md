@@ -971,7 +971,7 @@ fountains, since they are never magic; also, dipping gets no
 benefits from the magic charge but could use it up.)
 
 **Quaffing from an ordinary fountain** is a dangerous slot machine
-with these reels among dozens of random effects:
+with dozens of random effects including:
 
 | Outcome           | Effect                                                |
 | ----------------- | ----------------------------------------------------- |
