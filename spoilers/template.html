@@ -189,7 +189,13 @@ $body$
       id: section.id,
       title: heading.textContent,
       level: level,
-      text: flat.substring(0, 4000),
+      // `text` is used (a) for the allMatch gate before scoring and
+      // (b) for snippet generation. Truncating it caused a long
+      // section's trailing content to be silently unsearchable — e.g.
+      // "Discworld" at char 4387 of Learning Spells was invisible
+      // when the limit was 4000. Keep the whole body; per-section
+      // body text is small in absolute terms (a few KB at most).
+      text: flat,
       segments: segments
     });
   });
