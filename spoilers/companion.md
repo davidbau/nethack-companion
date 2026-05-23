@@ -1040,10 +1040,10 @@ regular fountain until you take a drink.
 Quaffing from a magic one says, *Wow! This makes you feel great!*,
 restores all your attributes to their maximum values, and raises a
 random attribute by one, consuming the magic charge; afterwards the
-fountain behaves like any other. (Don't bother drinking from pre-placed
-fountains like the ones in Minetown and the Oracle, or sink-kicked
-fountains, since they are never magic; also, dipping gets no
-benefits from the magic charge but could use it up.)
+fountain behaves like any other. (Pre-placed fountains like those
+in Minetown or the Oracle, or sink-kicked fountains, are never
+magic. Also: dipping gets no benefits from the magic charge but
+could use it up.)
 
 **Quaffing from an ordinary fountain** is a dangerous slot machine
 with dozens of random effects including:
