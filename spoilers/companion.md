@@ -4192,10 +4192,11 @@ band (like *11–15*) is the baseline; *11–15^T^* is Cha 11–15 with
 one ×4/3 surcharge applied; *11–15^T2^* is Cha 11–15 with two
 surcharges stacked. Surcharges come from three independent
 sources: a Tourist markup (low-XL Tourist, dunce cap, or visible
-undershirt), an angry shopkeeper, and the random "sucker"
-surcharge that fires on about 1 item in 4 (deterministic per
-object). Combined labels show every Cha-and-surcharge combination
-that produces the same price.
+undershirt), an angry shopkeeper, and the random unidentified-
+item surcharge that fires on about 1 item in 4 (deterministic
+per object, so two of the same appearance disagreeing on price
+is the giveaway). Combined labels show every Cha-and-surcharge
+combination that produces the same price.
 
 | Charisma                         |   Mult |  20 |  50 |  60 |  80 | 100 | 150 | 175 | 200 | 300 |  500 |
 |----------------------------------|-------:|----:|----:|----:|----:|----:|----:|----:|----:|----:|-----:|
