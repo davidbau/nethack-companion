@@ -177,7 +177,9 @@ end
 -- \pageref*. Triggered only when the immediately preceding word is
 -- "see" / "See" (or ends with that, to catch "(see"). Other
 -- internal links pass through unchanged so the book doesn't get
--- littered with page numbers everywhere.
+-- littered with page numbers everywhere. Also suppressed when the
+-- author has already said ", below" or "above" — the reader has
+-- been told where to look without needing a page number.
 function Inlines(inlines)
   local out = pandoc.List({})
   for i, x in ipairs(inlines) do
@@ -190,9 +192,23 @@ function Inlines(inlines)
         and inlines[i - 2].tag == "Str" then
       local prev = inlines[i - 2].text
       if prev:match("[Ss]ee$") then
-        local label = x.target:sub(2)
-        out:insert(pandoc.RawInline("latex",
-          "~(p.~\\pageref*{" .. label .. "})"))
+        -- Suppress when the author already orients the reader
+        -- with ", below" or ", above" near the link.
+        local skip = false
+        for j = i + 1, math.min(i + 4, #inlines) do
+          if inlines[j].tag == "Str"
+              and inlines[j].text:match("[Bb]elow")
+            or inlines[j].tag == "Str"
+              and inlines[j].text:match("[Aa]bove") then
+            skip = true
+            break
+          end
+        end
+        if not skip then
+          local label = x.target:sub(2)
+          out:insert(pandoc.RawInline("latex",
+            "~(p.~\\pageref*{" .. label .. "})"))
+        end
       end
     end
   end
