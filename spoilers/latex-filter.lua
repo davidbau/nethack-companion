@@ -275,6 +275,31 @@ local function is_sokoban_map(block)
   return block.text:match("%^") and block.text:match("[┌┐└┘├┤┬┴┼│─]")
 end
 
+-- Centered ASCII-art diagrams: code blocks with box-drawing
+-- characters that aren't Sokoban maps and aren't the special
+-- Dungeons-of-Doom overview map. Pandoc renders these as a plain
+-- verbatim left-flush within the frame, which leaves visible
+-- empty space on the right when the diagram is narrower than the
+-- column. We pad each line with leading spaces so the block (as a
+-- whole) sits centered within the full-width frame, while keeping
+-- the box's internal alignment intact.
+local function is_centered_box_diagram(block)
+  if block.tag ~= "CodeBlock" then return false end
+  if block.text:match("Dungeons of Doom") then return false end
+  if is_sokoban_map(block) then return false end
+  return block.text:match("[┌┐└┘├┤┬┴┼│─]") ~= nil
+end
+
+-- Count UTF-8 code points (visual length) instead of bytes; box
+-- drawing characters are three bytes each in UTF-8.
+local function display_length(s)
+  local n = 0
+  for _ in s:gmatch("[%z\1-\127\194-\244][\128-\191]*") do
+    n = n + 1
+  end
+  return n
+end
+
 -- Escape special LaTeX characters in a plain text string
 local function escape_latex(s)
   s = s:gsub("\\", "\\textbackslash{}")
@@ -300,6 +325,37 @@ local function pad_code(text, spaces)
     table.insert(lines, pad .. line)
   end
   return table.concat(lines, "\n")
+end
+
+-- Render a centered box-diagram code block. Emits a custom
+-- \begin{Verbatim} (capital V — the lowercase one Pandoc emits
+-- gets the page-break minipage wrap from template.tex, this
+-- variant doesn't) styled to match the surrounding verbatim
+-- environments, and with each line padded with leading spaces so
+-- the diagram sits centered within the full-width frame.
+--
+-- Empirical chars-per-linewidth at \footnotesize Source Code Pro
+-- (scaled to 0.80 in template.tex) on the A5 text column: about
+-- 70. Tighter than the theoretical 89 to stay clear of the right
+-- margin and to leave room for the 0.3em framesep on each side.
+local function centered_box_diagram(code_block)
+  local text = code_block.text
+  local max_line = 0
+  for line in text:gmatch("[^\n]+") do
+    local n = display_length(line)
+    if n > max_line then max_line = n end
+  end
+  local avail_chars = 70
+  local pad = math.max(0, math.floor((avail_chars - max_line) / 2))
+  local padded = pad > 0 and pad_code(text, pad) or text
+
+  return pandoc.RawBlock("latex",
+    "\\begin{minipage}{\\linewidth}\\vspace{0.3em}\n" ..
+    "\\begin{Verbatim}[fontsize=\\footnotesize,baselinestretch=0.85," ..
+    "frame=single,framesep=0.3em,rulecolor=\\color{codeframe}]\n" ..
+    padded .. "\n" ..
+    "\\end{Verbatim}\n" ..
+    "\\vspace{0.3em}\\end{minipage}")
 end
 
 -- Create side-by-side Sokoban layout: map minipage + instructions minipage
@@ -491,6 +547,15 @@ function Pandoc(doc)
     if is_sokoban_map(block) and i + 1 <= #blocks and blocks[i+1].tag == "OrderedList" then
       table.insert(new_blocks, sokoban_side_by_side(block, blocks[i+1]))
       i = i + 2  -- skip both the code block and the list
+      goto continue
+    end
+
+    -- Centered ASCII-art diagrams (corridor demos, room types,
+    -- mines preview): pad each line so the whole block sits
+    -- centered within the full-width frame.
+    if is_centered_box_diagram(block) then
+      table.insert(new_blocks, centered_box_diagram(block))
+      i = i + 1
       goto continue
     end
 
