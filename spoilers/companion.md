@@ -9581,7 +9581,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 | elven dagger | 1d5 / 1d3 | 10 | 4 | +2 | wood | Stackable. Sting is the artifact form. |
 | orcish dagger | 1d3 / 1d3 | 10 | 4 | +2 | iron | Stackable. |
 | silver dagger | 1d4 / 1d3 | 12 | 40 | +2 | silver | Stackable. Silver damage to demons, vampires, lycanthropes, shades, and imps. Common Rogue/Ranger off-hand. |
-| athame | 1d4 / 1d3 | 10 | 4 | +2 | iron | Stackable. Engraving with an athame **doesn't dull the blade** — you can write Elbereth in dust without spending an enchantment, the way other weapons must. |
+| athame | 1d4 / 1d3 | 10 | 4 | +2 | iron | Stackable. Engraving with an athame **doesn't dull the blade**. |
 
 :::
 
@@ -9602,7 +9602,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 | knife | 1d3 / 1d2 | 5 | 4 | — | iron |  |
 | stiletto | 1d3 / 1d2 | 5 | 4 | — | iron |  |
 | worm tooth | 1d2 / 1d2 | 20 | 2 | — | bone |  |
-| crysknife | 1d10 / 1d10 | 20 | 100 | +3 | bone | Reverts to a worm tooth when dropped. Keep it wielded; a fixed (erodeproof) crysknife reverts on only ~10% of drops. |
+| crysknife | 1d10 / 1d10 | 20 | 100 | +3 | bone | Reverts to a worm tooth when dropped (unwielding is fine; only dropping triggers it). An erodeproof one reverts only ~10% of the time. |
 
 :::
 
