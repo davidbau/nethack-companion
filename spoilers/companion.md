@@ -8197,9 +8197,9 @@ After solving a level, push leftover boulders into corners so they
 can't block you if you return later. Items sometimes hide under
 boulders.
 
-**A note on mirroring.** In 5.0 of the game,
-Sokoban levels may be flipped horizontally and/or vertically.
-The solutions still work; just mirror the directions.
+**A note on mirroring.** Sokoban levels may be flipped
+horizontally and/or vertically in 5.0. The solutions still work;
+just mirror the directions.
 
 > *Solutions originally compiled by Boudewijn Waijers, with
 > contributions by Jukka Lahtinen and others, for the steelypips.org
