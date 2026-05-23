@@ -12173,7 +12173,7 @@ Waijers** mapped all eight Sokoban variants. **Steven Bush**
 calculated spellbook reading success rates. **Gregory Bond**
 documented shopkeeper pricing formulas. **Dion Nicolaas**
 cataloged the conducts. **David Goldfarb** wrote the air elemental
-FAQ. **Hojita Discordia** documented experience-value calculations.
+FAQ. **Hojita Discordia** documented XP value calculations.
 
 And many others: Ray Chason, Pat Rankin, Geoduck, Topi Linkala,
 Geoffrey Eadon, Roger Broadbent, Sebastian Haas, Jukka Lahtinen,
