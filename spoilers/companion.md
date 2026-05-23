@@ -12177,8 +12177,8 @@ FAQ. **Hojita Discordia** documented XP value calculations.
 
 And many others: Ray Chason, Pat Rankin, Geoduck, Topi Linkala,
 Geoffrey Eadon, Roger Broadbent, Sebastian Haas, Jukka Lahtinen,
-and the countless anonymous posters on RGRN who asked "has anyone
-tried..." and then reported back.
+and the countless anonymous posters on the newsgroup who asked
+"has anyone tried..." and then reported back.
 
 **The [NetHack Wiki](https://nethackwiki.com/)** has been an
 indispensable reference for this guide. Founded as "WikiHack" by
