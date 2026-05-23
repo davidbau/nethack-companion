@@ -12228,16 +12228,16 @@ film *Tron*) — were already in Hack before NetHack inherited them.
 The dungeon is older than the game.
 
 The development was not always continuous. After version 3.4.3 in
-December 2003, the DevTeam went quiet (not absent, but silent)
-for twelve years. The dungeon was frozen. New players descended into
-the same unchanging corridors that had been killing people since
-2003, writing new spoilers about a fixed game, dying in the same
-newly-documented ways. That the accumulated community wisdom from
-those twelve silent years remained useful, that the game was deep
-enough to sustain a decade of fresh analysis without adding a line
-of new code, tells you something about what kind of artifact
-NetHack is. Version 3.6 arrived in December 2015, and active
-development has continued since.
+December 2003, the DevTeam went quiet for twelve years: silent to
+the public, working in private. The running community joke during
+the gap was *The DevTeam is THINKING.* The dungeon was frozen.
+New players descended into the same unchanging corridors that had
+been killing people since 2003, writing new spoilers about a fixed
+game, dying in the same newly-documented ways. The accumulated
+community wisdom from those twelve silent years remained useful,
+and the game was deep enough to sustain a decade of fresh analysis
+without a single new line of code. Version 3.6 arrived in December
+2015, and active development has continued since.
 
 The current team, including Michael Allison, Ken Arromdee, David
 Cohrs, Jessie Collet, Kevin Hugo, Pasi Kallinen, Ken Lorber, Dean
