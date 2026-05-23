@@ -8926,8 +8926,7 @@ lists all maintained conducts, and the community has long
 celebrated players who push the boundaries of what's possible
 within self-imposed constraints. For scale: on the public NAO
 server, about one in nine ascensions is wishless, and only one
-in eighty is foodless. The single-conduct difficulty ranking is
-real.
+in eighty is foodless.
 
 Recent editions of the Mazes have added several more tracked
 conducts:
