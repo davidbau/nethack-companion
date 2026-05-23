@@ -3797,8 +3797,7 @@ arriving just as you exhale; have an exit plan in case the
 "victory" comes with company. And if you try this with a
 *negative* alignment record, the result inverts: instead of the
 altar flipping to your god, your god disowns you and you become a
-follower of the altar's god permanently. Run the conversion clean
-or not at all.
+follower of the altar's god permanently.
 
 Two things to **never** sacrifice on any altar:
 
