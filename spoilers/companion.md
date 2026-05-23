@@ -3453,7 +3453,7 @@ A black dragon's breath is the only monster, spell, or wand that
 disintegrates you. (A deeply angered god can also call down a
 wide-angle disintegration beam as a follow-up to lightning;
 reflection won't block that one. Only disintegration resistance
-will. The lesson is to stay on speaking terms with your god.)
+will. Stay on speaking terms with your god.)
 
 **Defenses:** Disintegration resistance (from eating a black dragon
 corpse or wearing black dragon scale mail) gives full immunity.
