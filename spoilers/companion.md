@@ -3271,8 +3271,8 @@ claw is the silent ascension-killer it's reputed to be, but the
 mechanic is more constrained than common lore suggests.
 
 Their **active** claw picks one of your worn armor pieces (cloak
-first, then suit, shirt, helm/gloves/boots/shield by weighted
-chance) and shaves 1 off its enchantment. If you have no armor at
+first, then suit, then shirt, then helm, gloves, boots, or shield
+by weighted chance) and shaves 1 off its enchantment. If you have no armor at
 all, it can instead chew a ring, amulet, or blindfold. **It can't
 reach your wielded weapon** with the active attack. The game does
 print "Your *thing* seems less effective" each time, so you'll
