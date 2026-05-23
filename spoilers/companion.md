@@ -1042,8 +1042,8 @@ restores all your attributes to their maximum values, and raises a
 random attribute by one, consuming the magic charge; afterwards the
 fountain behaves like any other. (Pre-placed fountains like those
 in Minetown or the Oracle, or sink-kicked fountains, are never
-magic. Also: dipping gets no benefits from the magic charge but
-could use it up.)
+magic. Also: dipping gets no benefits from magic charge but could
+consume it.)
 
 **Quaffing from an ordinary fountain** is a dangerous slot machine
 with dozens of random effects including:
