@@ -3828,9 +3828,10 @@ your god may crown you on a successful prayer. Crowning grants:
 The catch is that crowning **adds about ~1000 turns of prayer
 timeout** on top of the usual post-prayer wait, turning prayer into
 an unreliable emergency tool. If you're sacrificing to fish for an
-artifact gift, watch the alignment record so you don't trigger a
-crowning by accident; applying a stethoscope to yourself reports
-the number.
+artifact gift, watch your piousness so you don't trigger a crowning
+by accident. Applying a stethoscope to yourself reports it in
+words, and *piously* is the highest band — the one in which the
+next sacrifice could crown you.
 
 ---
 
@@ -3881,8 +3882,8 @@ walks past versus what it walks around. If it has no choice, it
 will still cross the cursed square, but consistent avoidance
 across many turns is a strong tell. Even when it does step onto
 a cursed pile (chasing food, or pulled by a magic whistle), the
-game prints *"[pet] moves reluctantly onto …"* — that verb is
-the confirmation. Watch the messages, not just the path.
+game prints *"[pet] moves reluctantly onto …"*. That message is a
+giveaway.
 
 #### Feeding and Loyalty
 
