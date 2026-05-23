@@ -233,13 +233,15 @@ reposition without spending an attack. *Alignment: Lawful.*
 
 **Monk.** You fight best with bare hands and start with no weapon
 at all. Monks gain martial arts abilities as they level, eventually
-becoming formidable unarmed combatants. You start
-with sleep resistance and see invisible, and you should avoid eating
-meat if you want to maintain your spiritual discipline. **Don't
-put on body armor** — Monks take a −20 to-hit penalty in it.
-The starting robe is a spellcasting bonus larger than a Wizard's;
-keep wearing that. One of the more unusual roles, rewarding for
-experienced players. *Alignment: Any.*
+becoming formidable unarmed combatants. You start with sleep
+resistance and see invisible, and you should avoid eating meat if
+you want to maintain your spiritual discipline. **Mind what you
+wear:** body armor costs −20 to-hit, a shield disables your
+martial-arts hit bonus, and metallic helmets, gloves, or boots
+each add a casting penalty. The starting robe is a cloak (not
+body armor) and grants a −20 spellcasting bonus larger than a
+Wizard's. Keep wearing it. One of the more unusual roles,
+rewarding for experienced players. *Alignment: Any.*
 
 **Priest.** You start with a mace, four potions of holy water, and
 the ability to intuitively sense whether items are blessed, cursed,
