@@ -10180,8 +10180,8 @@ direction (camera-style; works on any monster)</td>
 <td>katana</td>
 <td>—</td>
 <td>+d8 physical</td>
-<td>acts as a polearm without a steed; one free reach-attack per turn
-(the “Shkinng!” hit)</td>
+<td>one free reach attack per turn (the “Shkinng!” hit) at polearm
+distance, on top of normal katana melee</td>
 </tr>
 <tr>
 <td>Cleaver</td>
@@ -10316,14 +10316,15 @@ have an <code>#invoke</code> power the wishable table doesn’t capture:
 Frost Brand summons a snowstorm around you (cold damage to nearby
 squares), Fire Brand summons a firestorm. Either one clears the room
 around you when you’re cornered.</p>
-<p><strong>Snickersnee</strong> got a major buff in 5.0: it now counts
-as a polearm even when you’re on foot (regular pole weapons require a
-steed). Once per turn you can <code>#apply</code> it for a free reach
-attack at a target up to two squares away — a real free action that
-<em>doesn’t</em> end your turn, leaving you a normal melee swing on top.
-The free hit is announced by a distinctive “Shkinng!” The combined
-output (one ranged + one melee per turn) makes Snickersnee a contender
-for best Samurai weapon in the game, not just a flavor piece.</p>
+<p><strong>Snickersnee</strong> got a major buff in 5.0: once per turn
+you can <code>#apply</code> it for a free reach attack at a target up to
+two squares away — a real free action that <em>doesn’t</em> end your
+turn, leaving you a normal melee swing on top. The free hit is announced
+by a distinctive “Shkinng!” The combined output (one ranged + one melee
+per turn) makes Snickersnee a contender for best Samurai weapon in the
+game, not just a flavor piece. (Regular polearm reach attacks via
+<code>#apply</code> end your turn; Snickersnee’s is the unique free
+version.)</p>
 <p><strong>Sunsword</strong> is the Lawful long sword that wants to be a
 tool. Wielded, it lights its current radius (handy in caves and the
 Mines without costing an oil lamp). <code>#invoke</code> it for a
@@ -22416,7 +22417,7 @@ permanently inflates future baselines.</li>
 <li><strong>Artifact effects</strong> have been broadened. Several
 previously flavour-only artifacts now have real tactical edges. The most
 notable: <strong>Snickersnee</strong> now grants one free polearm-style
-reach attack per turn (“Shkinng!”) even on foot.
+reach attack per turn (“Shkinng!”) on top of normal melee.
 <strong>Sunsword</strong> gains a <code>#invoke</code> blinding ray that
 works on any monster, not just undead — a 5-Pw on-demand Camera flash.
 <strong>Trollsbane</strong> regenerates while wielded, a real lifeline
