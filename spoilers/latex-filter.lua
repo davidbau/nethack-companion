@@ -172,28 +172,42 @@ function Table(blk)
   end
 end
 
+-- Anchors that always carry a "(p. NN)" reference when linked, no
+-- matter the surrounding prose. These are chapter-level sections
+-- whose proper-noun title appears in the body of the book ("...the
+-- gem-throwing negotiation playbook is in Luck and Fortune.") — in
+-- print, the page number helps the reader jump there.
+local always_pageref = {
+  ["more-ways-to-die"] = true,
+  ["luck-and-fortune"] = true,
+  ["field-guide-to-dungeon-fauna"] = true,
+}
+
 -- "see [X](#anchor)" cross-references: in print, append a page
 -- reference like "(p. 63)" after the link, using LaTeX's
--- \pageref*. Triggered only when the immediately preceding word is
--- "see" / "See" (or ends with that, to catch "(see"). Other
+-- \pageref*. Triggered when the immediately preceding word is
+-- "see" / "See" (or ends with that, to catch "(see"), or when the
+-- target is one of the always-pageref section anchors above. Other
 -- internal links pass through unchanged so the book doesn't get
--- littered with page numbers everywhere. Also suppressed when the
--- author has already said ", below" or "above" — the reader has
--- been told where to look without needing a page number.
+-- littered with page numbers everywhere. The "see" path is also
+-- suppressed when the author has already said ", below" or
+-- "above" — the reader has been told where to look without needing
+-- a page number.
 function Inlines(inlines)
   local out = pandoc.List({})
   for i, x in ipairs(inlines) do
     out:insert(x)
     if x.tag == "Link"
         and x.target
-        and x.target:sub(1, 1) == "#"
-        and i >= 3
-        and inlines[i - 1].tag == "Space"
-        and inlines[i - 2].tag == "Str" then
-      local prev = inlines[i - 2].text
-      if prev:match("[Ss]ee$") then
-        -- Suppress when the author already orients the reader
-        -- with ", below" or ", above" near the link.
+        and x.target:sub(1, 1) == "#" then
+      local label = x.target:sub(2)
+      local appended = false
+      if i >= 3
+          and inlines[i - 1].tag == "Space"
+          and inlines[i - 2].tag == "Str"
+          and inlines[i - 2].text:match("[Ss]ee$") then
+        -- "see X" path. Suppress when the author has oriented the
+        -- reader with ", below" or ", above" near the link.
         local skip = false
         for j = i + 1, math.min(i + 4, #inlines) do
           if inlines[j].tag == "Str"
@@ -205,10 +219,14 @@ function Inlines(inlines)
           end
         end
         if not skip then
-          local label = x.target:sub(2)
           out:insert(pandoc.RawInline("latex",
             "~(p.~\\pageref*{" .. label .. "})"))
+          appended = true
         end
+      end
+      if not appended and always_pageref[label] then
+        out:insert(pandoc.RawInline("latex",
+          "~(p.~\\pageref*{" .. label .. "})"))
       end
     end
   end

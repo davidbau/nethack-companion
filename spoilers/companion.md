@@ -928,7 +928,7 @@ AC / attack details on every monster, see the
 | [`u`](#unicorns-and-horses-u)    | [Horses / unicorns](#unicorns-and-horses-u) | Horses are usually mountable, mostly peaceful in the wild. Unicorns are color-coded by alignment: same-aligned spawn peaceful, cross-aligned hostile. The gem-throwing negotiation playbook is in [Luck and Fortune](#luck-and-fortune). |
 | [`U`](#umber-hulks-u)    | [Umber hulk](#umber-hulks-u)        | Confuses on sight. Avoid looking at them directly.                                                   |
 | [`v`](#vortices-v)    | [Vortices](#vortices-v)          | [Engulfing](#engulfment) wisps. Air, fire, ice, and steam vortices each apply their element to whatever they engulf. Kill at range. |
-| [`w`](#worms-w)    | [Worms](#worms-w)             | Long worms grow tail segments as they move and can be a corridor in themselves. Purple worms [swallow you whole](#engulfment) (see [Things You Don't Want to Meet](#things-you-dont-want-to-meet), below). |
+| [`w`](#worms-w)    | [Worms](#worms-w)             | Long worms grow tail segments as they move and can be a corridor in themselves. |
 | [`W`](#wraiths-w)    | [Wraiths](#wraiths-w)           | [Drain levels on hit](#level-drain). But [their corpses grant a level](#a-note-on-wraiths), so eat them fresh. |
 | [`y`](#lights-y)    | [Yellow/black lights](#lights-y) | Explode adjacent. Yellow blinds you; black hallucinates you. Black lights are invisible without *see invisible*. Kill at range. |
 | [`Y`](#apelike-creatures-y)    | [Yetis](#apelike-creatures-y)             | Tough melee combatants. Corpses may grant cold resistance.                                           |
