@@ -12113,8 +12113,9 @@ longest-running continuously developed open source projects in existence. But th
 documentation, the strategy, the collected wisdom about how to
 actually survive the thing, that came from the players.
 
-In the early days, knowledge spread through Usenet, specifically
-the newsgroup **rec.games.roguelike.nethack** (RGRN). Thousands
+In the early days, knowledge spread through Usenet, on the
+newsgroup **RGRN** (more formally, rec.games.roguelike.nethack).
+Thousands
 of players posted questions, argued about strategy, and slowly
 assembled a shared body of knowledge about a game that refused to
 explain itself. This was before wikis, before Reddit, before
