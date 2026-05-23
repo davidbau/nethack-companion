@@ -3001,11 +3001,10 @@ resistance from acid blob corpses (each one grants d(3,6) turns of
 HStone resistance: useful but not permanent). For something
 permanent, wear yellow dragon scale mail.
 
-**The new-moon catch.** A cockatrice's hiss has a small chance to
-start stoning on any landed melee hit (roughly 1 in 30). On the
-real-world night of a new moon, that jumps to about 1 in 3. There
-is no item-level mitigation in 5.0; the only defense is the
-calendar. Cockatrice nests can wait a day.
+**Peril in the new moon.** A cockatrice's hiss has a small chance
+to start stoning on any landed melee hit (roughly 1 in 30). On
+the real-world night of a new moon, that jumps to about 1 in 3.
+Cockatrice nests can wait a day.
 
 **Defenses while it's happening:** eat a lizard corpse (this is
 why you carry one), eat an acidic corpse, drink a potion of acid,
