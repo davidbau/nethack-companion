@@ -8,12 +8,15 @@ block's first and last pages carry the inside-cover artwork that
 the coil cover can't.
 
 Both new pages go at the END to keep book.pdf's odd/even (recto/verso)
-parity intact.
+parity intact. If book.pdf has an odd page count, a blank is inserted
+before the inside-cover panels so they always land together on a fresh
+leaf (recto + verso), never split across two physical leaves.
 
 Page assembly:
   book2 pages 1..N:     book.pdf pages 1..N
-  book2 page N+1:       inside-FRONT-cover artwork  (left  panel of cover.pdf p2)
-  book2 page N+2:       inside-BACK-cover artwork   (right panel of cover.pdf p2)
+  book2 page N+1:       blank (only when N is odd)
+  book2 page (N+1|N+2): inside-FRONT-cover artwork  (left  panel of cover.pdf p2)
+  book2 page (N+2|N+3): inside-BACK-cover artwork   (right panel of cover.pdf p2)
 """
 
 from pathlib import Path
@@ -77,6 +80,8 @@ def main():
 
     out = fitz.open()
     out.insert_pdf(book)
+    if book.page_count % 2 == 1:
+        out.new_page(width=BOOK_W, height=BOOK_H)
     out.insert_pdf(inside_front)
     out.insert_pdf(inside_back)
     # PyMuPDF's insert_font embeds the full TTF; the cover panels'
