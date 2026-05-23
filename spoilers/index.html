@@ -177,6 +177,18 @@ shoulders of giants</li>
 </section>
 <section id="part-one-before-you-set-out" class="level2">
 <h2>Part One: Before You Set Out</h2>
+<!-- audit
+2026-05-22 community-strategy additions citation index:
+- This audit-pass folded a curated batch of community strategies
+  into the book. Each addition is cross-cited with its source URL
+  in the planning document `strategy-audit.md` (sibling file in
+  this repo). The primary sources drawn on were the NetHackWiki
+  (https://nethackwiki.com/wiki/), its Fandom mirror
+  (https://nethack.fandom.com/wiki/), David Damerell's ID and
+  prayer spoilers at chiark.greenend.org.uk, and Kate Nepveu's
+  Steelypips RGRN archive at https://www.steelypips.org/nethack/.
+- See strategy-audit.md for the per-addition citation entries.
+-->
 <section id="choosing-your-expedition" class="level3">
 <h3>Choosing Your Expedition</h3>
 <!-- audit
@@ -2139,7 +2151,10 @@ back at their casters. Either one is worth the detour.</p>
 <p>One important rule: the Sokoban levels penalize you for “cheating.”
 Breaking or polymorphing boulders, reading scrolls of earth, or
 squeezing past boulders costs you a point of luck each time. Solve each
-level honestly if you can.</p>
+level honestly if you can. The luck penalty isn’t a sentence, though: it
+clears the moment you legitimately finish the level above it, and the
+prize still drops regardless of how many infractions piled up. If you’re
+stuck near the end, one desperate fracture won’t ruin the run.</p>
 <p><strong>Strength training side effect.</strong> Every legitimate
 boulder-push exercises Strength. Sokoban is the safest place to grind
 Str up since the puzzles require dozens of pushes without putting you in
@@ -2212,6 +2227,11 @@ square.</p>
 friendly word with your quest leader on the first floor before they will
 let you descend. If you are prepared and worthy, your leader will send
 you to retrieve your role’s quest artifact from a quest nemesis.</p>
+<p>Mid-game XP earns slowly, so the bridge to XL 14 is usually a few <a
+href="#a-note-on-wraiths">wraith corpses</a> (one experience level each)
+or a blessed potion of gain level. Wraith corpses don’t drop on
+graveyard levels, though, so lead a wraith out of the Valley of the Dead
+before killing it.</p>
 <p>Each role has a unique Quest with unique maps, a unique nemesis, and
 a unique artifact reward. The Valkyrie hunts Lord Surtur for the Orb of
 Fate. A Samurai’s path ends in a duel with Ashikaga Takauji over the
@@ -2389,8 +2409,11 @@ close range. More dangerous than passive reflection since you need to be
 adjacent.</li>
 <li><strong>One-shot kill.</strong> If you have a wand of death, the
 spell finger of death, or a cockatrice corpse, you can kill Medusa
-before she gets a turn. Combine with speed or stealth for
-reliability.</li>
+before she gets a turn. Combine with speed or stealth for reliability.
+(A wielded cockatrice corpse, with gloves, is the cheapest of these
+options and bypasses the reflection requirement entirely.) Whatever you
+do, <strong>don’t eat her corpse</strong>: she’s the Gorgon, and the
+cadaver instantly petrifies whoever sits down for dinner.</li>
 </ul>
 <p><strong>Crossing the water.</strong> The island is surrounded by deep
 water. Your options, from safest to most desperate:</p>
@@ -2645,7 +2668,9 @@ your square is in its path</td>
 real catastrophe is your inventory: scrolls burn, potions shatter, and
 that stack of twenty scrolls of identify you’ve been hoarding is
 suddenly ash. Fire resistance saves your skin but <em>not</em> your
-belongings.</p>
+belongings. Items inside a <em>sack</em> or <em>oilskin sack</em>
+survive the trap; the sack itself absorbs the burn. Gehennom is
+fire-trap country — keep your consumables bagged.</p>
 <p>Polymorph traps are a double-edged sword. With polymorph control,
 they’re a free polymorphing booth. Without it, you become something
 random, possibly a newt that can’t use any of its equipment.
@@ -2664,6 +2689,19 @@ but only if your current form can use a wand or cast.)</p>
 can’t run, you can’t even wake up on purpose. Monsters line up to hit
 you like it’s a buffet. Sleep resistance (elven blood, the right ring)
 sidesteps it.</p>
+<p>Magic traps are the dungeon’s worst slot machine: a few outcomes are
+bad (level summoning, item destruction), a few are flavour, and a few
+are <em>great</em> — one row of the table is a Charisma bonus. Patient
+players sometimes camp a found magic trap until their shop prices
+fall.</p>
+<p>Bear traps clamp on for several turns. Try to step
+<em>diagonally</em> off the square; the diagonal escape is about five
+times faster than orthogonal. A wand of opening or spell of knock frees
+you on the spot.</p>
+<p>If you have magic resistance and you <em>want</em> to enter a
+teleport trap (for vault access, say), MR blocks the trip — unless you
+press <code>Ctrl+T</code> first, which forces a voluntary trap-use that
+bypasses the resistance.</p>
 <p><strong>Anti-magic fields hit harder if you’re
 magic-resistant.</strong> Counterintuitive enough to mislead returning
 players. The trap drains spell energy, and having <em>magic
@@ -2713,6 +2751,10 @@ level</li>
 for clues</li>
 <li><strong>Flying and levitation</strong> make you immune to most floor
 traps (you’ll still trigger magic, teleport, and anti-magic traps)</li>
+<li><strong>A scroll of gold detection read while confused</strong>
+turns the gold-reveal into a <em>trap</em> reveal — every magical trap
+on the level lights up at once. Confused gold detection is the cheapest
+pre-Gehennom trap survey.</li>
 </ul>
 <p>A good time to search is when the dungeon has already hinted that
 something is wrong: a stray corpse in the middle of an otherwise empty
@@ -3011,6 +3053,11 @@ works from above. You’ll see “you gesture toward the floor below you”
 first, but the burn lands anyway. The old finger-in-dust trick from
 earlier editions is gone, but torching Elbereth into the floor from a
 wand of fire while floating still works.</p>
+<p>A <strong>scroll of scare monster</strong> dropped on the floor acts
+like Elbereth on its square, doesn’t erode, and works while you’re not
+standing on it. The catch: it disappears one read after you pick it up,
+so leave it where you want the safe spot. The Castle wand chest is
+parked on top of a cursed one for exactly this reason.</p>
 <!-- audit
 2026-05-18:
 - passes_bars uses verysmall() = msize < MZ_SMALL = TINY only (mondata.c:552-563)
@@ -4921,7 +4968,12 @@ heavily.</p>
 <p><strong>Pet testing.</strong> Your pet won’t step on cursed items. If
 you drop something and your dog walks around it, it’s cursed. If the dog
 walks over it (or picks it up), it’s safe. Not as precise as an altar,
-but works anywhere.</p>
+but works anywhere. Two ways the test silently lies: a hungry pet will
+march straight over a cursed pile if there’s food in the same stack, and
+items that <em>autocurse on wear</em> (helm of opposite alignment,
+gauntlets of fumbling, dunce cap, levitation boots) read as uncursed on
+the floor and then curse themselves the instant you put them on.
+Pet-tested armor still wants an altar before it goes on your head.</p>
 <p><strong>Holy water.</strong> Dipping an item in blessed water (holy
 water) will uncurse a cursed item or bless an uncursed one. Dipping in
 cursed water (unholy water) curses an uncursed item or unblesses a
@@ -4932,7 +4984,9 @@ for items you’ve already identified.</p>
 least 2 items in your pack, more with positive Luck, with a 1-in-5
 chance to ID the whole pack outright. An uncursed scroll IDs one or two
 items per read. A cursed scroll IDs only itself the first time you read
-one of that type, then one item per cursed read after.</p>
+one of that type, then one item per cursed read after. Pile every
+unidentified item on your square before reading a blessed one — the
+jackpot reads <em>everything</em>.</p>
 </section>
 <section id="the-price-is-right" class="level4">
 <h4>The Price Is Right</h4>
@@ -5246,6 +5300,17 @@ detection, magic mapping, scare monster, teleportation</td>
 than other categories. But you can still narrow things down. If a scroll
 is in the $20 group, it’s identify. Period. That’s one of the most
 useful scrolls in the game and you just found it for free.</p>
+<p>A favourite shortcut: a <em>single</em> unidentified scroll alone in
+a one-square closet, behind a door or in a niche, is almost always
+scroll of teleportation — the dungeon generator hides it there as the
+level’s teleport-trap clue. If you find that closet, you’ve probably
+found a free $100 ID.</p>
+<p><strong>Spellbooks aren’t in the table above</strong> (the prices
+fall in a separate set), but they’re easy to read: a spellbook prices at
+about 100 × spell level. The $100 book is level 1 and safe to read even
+at low XL; the $700 book is level 7 and will explode in the hands of
+anyone who isn’t a careful Wizard. Always price-ID a spellbook before
+reading.</p>
 </section>
 <section id="potion-prices" class="level5">
 <h5>Potion Prices</h5>
@@ -5878,9 +5943,15 @@ cubes is cold. Simple.</p>
 rings one at a time. Throw potions at monsters. Read scrolls from safe
 price groups after removing your armor.</p>
 <p><strong>Save your scrolls of identify</strong> for the items that
-resist other methods: amulets (all the same price), spellbooks
-(dangerous to read if unknown), and the one stubborn potion in the $50
-group that you can’t quite pin down.</p>
+resist other methods, in roughly this order: <strong>spellbooks
+first</strong> (reading an unknown high-level book is the most lethal
+mistake on the identification table), <strong>amulets</strong> next (all
+the same price), then the resistance/utility rings in the $200 group,
+then any wands that engrave-tested ambiguously.</p>
+<p><strong>Damerell’s altar trick.</strong> If you’ve dropped a stack on
+an altar and the flash says “blessed,” <code>#name</code> the appearance
+“blessed” right there. Every future stack of that appearance you find
+will arrive pre-tagged — you only need to altar-test the type once.</p>
 <p>The system is about reducing uncertainty with the cheapest, safest
 method first: altars and shops are free, engrave-testing costs one
 charge, use-testing costs more and carries risk, and scrolls of identify
@@ -6862,7 +6933,11 @@ game.</p>
 <p><span id="wand-digging"></span> <strong>Digging.</strong> Essential
 utility. Dig through walls to create shortcuts, dig down to escape
 dangerous situations, dig through rock to reach vaults and hidden areas.
-Every ascension kit should include a wand of digging.</p>
+Every ascension kit should include a wand of digging. It also doubles as
+the universal “I’m leaving” button: a downward zap drops you straight
+onto the next floor, the same direction you wanted to go anyway. One
+quirk to remember: a <em>cursed</em> wand of digging zaps downward no
+matter which direction you point it.</p>
 <p><span id="wand-teleportation"></span> <strong>Teleportation.</strong>
 Zap monsters to send them somewhere else on the level. Zap yourself to
 teleport. Enormously useful for escaping trouble or removing a dangerous
@@ -7217,7 +7292,11 @@ wish for something else.</p>
 hunger rate. Two rings drain food noticeably faster. The veteran habit
 is to keep rings in inventory and slip them on only when needed: free
 action before fighting mind flayers, conflict before entering a throne
-room. Economy of fingers is an art.</p>
+room. Economy of fingers is an art. (One curiosity for the
+ring-of-slow-digestion holder: the two hands tick hunger on different
+turns, so wearing two slow-digestion rings doesn’t double the saving,
+and swapping a hungry ring onto the <em>other</em> hand briefly skips
+the tick entirely.)</p>
 </section>
 <section id="amulets" class="level4">
 <h4>Amulets</h4>
@@ -7416,6 +7495,11 @@ perhaps), don’t open it. Drop it on the floor and zap a wand of
 cancellation <em>at the bag from outside</em>. Cancellation uncurses
 items it touches, and the explosion rule only triggers on insertion, not
 on a zap. You’ll have a safe, uncursed bag.</p>
+<p>If you’re heading into water — Medusa’s moat, the Plane of Water, or
+just an unlucky fountain dunk — apply a can of grease to the bag of
+holding before you go. Greased bags shield their contents from water
+damage, the way an oilskin sack does, without giving up the
+carry-capacity discount.</p>
 <section id="carrying-capacity" class="level5">
 <h5>Carrying capacity</h5>
 <p>Your carrying capacity is roughly <strong>25 × (Strength +
@@ -10404,13 +10488,17 @@ skipping their level.</p>
 random fraction of the gold in your main inventory, so <strong>stash
 gold in a bag of holding before walking up to the throne</strong> and a
 few hundred zm will buy off a prince who would otherwise have demanded
-thousands. <strong>Juiblex is not bribable</strong> — only the
-Arch-Devil demons with the bribe disposition (Geryon, Dispater,
+thousands. Lawful characters get a sweetener: all four bribable demon
+princes are themselves lawful, and they discount the demand by half for
+a co-aligned visitor. <strong>Juiblex is not bribable</strong> — only
+the Arch-Devil demons with the bribe disposition (Geryon, Dispater,
 Baalzebub, Asmodeus) accept gold; Juiblex, Yeenoghu, Orcus, and
 Demogorgon attack on sight regardless. Fighting Juiblex is viable late
 game (wand of death works on all four), but expect a real fight. None of
 their corpses is useful for sacrifice the way a fresh weak monster’s
-would be.</p>
+would be. One thing the demon never forgets: a <em>refused</em> bribe
+converts the prince to permanent hostility, and they will not offer
+terms again. Bribe or fight; don’t dither.</p>
 </section>
 <section id="vlads-tower" class="level4">
 <h4>Vlad’s Tower</h4>
@@ -11969,8 +12057,10 @@ vegetarian atheist run is substantially harder than either alone. A
 pacifist illiterate vegan foodless atheist weaponless run is the stuff
 of legends (and has been done). The game’s end screen lists all
 maintained conducts, and the community has long celebrated players who
-push the boundaries of what’s possible within self-imposed
-constraints.</p>
+push the boundaries of what’s possible within self-imposed constraints.
+For scale: on the public NAO server, about one in nine ascensions is
+wishless, and only one in eighty is foodless. The single-conduct
+difficulty ranking is real.</p>
 <p>Recent editions of the Mazes have added several more tracked
 conducts:</p>
 <p><strong>Nudist.</strong> Never wear any armor, shirt, cloak, gloves,
@@ -14904,8 +14994,10 @@ gives +3 Int and +3 Wis).</td>
 <td>50</td>
 <td>50</td>
 <td>iron</td>
-<td>Flips alignment while worn. Generated cursed 9 times in 10. Trap
-item.</td>
+<td>Flips your alignment while worn. Generated cursed 9 times in 10, so
+it sticks. Mostly a trap, but the alignment flip lets you sacrifice on a
+cross-aligned altar, claim the opposite alignment’s quest artifact, or —
+at the Astral Plane — adjust which altar accepts the Amulet.</td>
 </tr>
 <tr>
 <td>helm of telepathy</td>
