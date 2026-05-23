@@ -11322,8 +11322,8 @@ All liches regenerate, leave no corpse, and are undead, cold-resistant, sleep-re
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | lich | brown | 11 | 6 | 0 | 30 | touch 1d10 cold · spell spell |  |
 | demilich | red | 14 | 9 | -2 | 60 | touch 3d4 cold · spell spell |  |
-| master lich | magenta | 17 | 9 | -4 | 90 | touch 3d6 cold · spell spell | fire-res. Draws from the wizard spell list. Disperse or kill from afar. |
-| arch-lich | magenta | 25 | 9 | -6 | 90 | touch 5d6 cold · spell spell | fire-res, shock-res. End-game tier. Casts touch of death; magic resistance mandatory. |
+| master lich | magenta | 17 | 9 | -4 | 90 | touch 3d6 cold · spell spell | fire-res. Casts wizard spells. Kill from afar. |
+| arch-lich | magenta | 25 | 9 | -6 | 90 | touch 5d6 cold · spell spell | fire-res, shock-res. Casts touch of death; magic resistance mandatory. |
 
 :::
 
@@ -12088,7 +12088,8 @@ transformation, one blessed potion does the same job.
 **Vampire polymorph cycles between forms.** A polymorphed vampire
 can `#monster` to switch between vampire, bat, and fog cloud. Fog
 passes through doors, bat flies, vampire fights — plan routes by
-form rather than direction.
+form rather than direction, so traversing the dungeon map can be
+a very different experience.
 
 ---
 
