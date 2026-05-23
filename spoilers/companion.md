@@ -12240,8 +12240,8 @@ Charging: \hyperref[scroll-charging]{explosion chance (n³/7³), a wand of wishi
 \hyperref[golems]{Clay golem, dissolves to cancellation, p.~\pageref*{golems}}\par
 \hyperref[wishable-random-artifacts]{Cleaver (Barbarian), three-monster swing, p.~\pageref*{wishable-random-artifacts}}\par
 \hyperref[armor-and-ac]{Cloak of displacement, the underrated layer, p.~\pageref*{armor-and-ac}}\par
-Cloak of magic resistance: \hyperref[armor-and-ac]{MC1 in 5.0, p.~\pageref*{armor-and-ac}}; \hyperref[cloaks]{(MC1), p.~\pageref*{cloaks}}\par
-Cloak of protection: \hyperref[armor-and-ac]{MC3 the only single source, p.~\pageref*{armor-and-ac}}; \hyperref[cloaks]{(MC3), p.~\pageref*{cloaks}}\par
+Cloak of magic resistance: \hyperref[armor-and-ac]{MC1 in 5.0, p.~\pageref*{armor-and-ac}}; \hyperref[cloaks]{MC1, p.~\pageref*{cloaks}}\par
+Cloak of protection: \hyperref[armor-and-ac]{MC3 the only single source, p.~\pageref*{armor-and-ac}}; \hyperref[cloaks]{MC3, p.~\pageref*{cloaks}}\par
 \hyperref[shopkeeper-behavior]{Closed for inventory, locked shop door, p.~\pageref*{shopkeeper-behavior}}\par
 Cockatrice: \hyperref[dungeon-hazards-and-how-to-survive-them]{corpse on the stairs, the most literal instadeath, p.~\pageref*{dungeon-hazards-and-how-to-survive-them}}; \hyperref[cockatrices-c]{instant petrification on touch, p.~\pageref*{cockatrices-c}}; \hyperref[petrification-stoning]{corpse, wielding (with gloves!), corpse, the rubber chicken, new moon hiss (1 in 3), p.~\pageref*{petrification-stoning}}; \hyperref[the-astral-plane]{corpse, one-shot Rider, p.~\pageref*{the-astral-plane}}\par
 \hyperref[the-art-of-combat]{Combat, knowing when not to fight, p.~\pageref*{the-art-of-combat}}\par

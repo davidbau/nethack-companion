@@ -1085,8 +1085,8 @@ Not alphabetized; that's a final-pass concern.
 ### Tables (weapons, armor, spells, bestiary)
 
 - "Shirts, Hawaiian and T-shirt" → #shirts
-- "Cloak of magic resistance (MC1)" → #cloaks
-- "Cloak of protection (MC3)" → #cloaks
+- "Cloak of magic resistance, MC1" → #cloaks
+- "Cloak of protection, MC3" → #cloaks
 - "Robe, casting bonus" → #cloaks
 - "Alchemy smock, poison resistance" → #cloaks
 - "Mummy wrapping, blocks invisibility" → #cloaks
