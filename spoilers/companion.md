@@ -239,8 +239,8 @@ you want to maintain your spiritual discipline. **Mind what you
 wear:** body armor costs −20 to-hit, a shield disables your
 martial-arts hit bonus, and metallic helmets, gloves, or boots
 each add a casting penalty. The starting robe is a cloak (not
-body armor) and grants a −20 spellcasting bonus larger than a
-Wizard's. Keep wearing it. One of the more unusual roles,
+body armor) and adds a 20-point spellcasting bonus, larger than
+the Wizard's own. Keep wearing it. One of the more unusual roles,
 rewarding for experienced players. *Alignment: Any.*
 
 **Priest.** You start with a mace, four potions of holy water, and
