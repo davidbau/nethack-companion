@@ -7745,12 +7745,12 @@ was *behavior*:
   of the Sanctum — burned the last wand-of-death charge before
   reserving an escape route, then died blind and surrounded.
 
-The gear gets you to Gehennom. **Discipline** gets you to the
+The gear gets you to Gehennom, but **Discipline** gets you to the
 Sanctum. Keep at least one escape consumable (scroll of
 teleportation, wand of digging, oilskin sack with a potion of full
-healing) within reach at all times. Don't take a turn that isn't
-moving you toward the Sanctum unless every adjacent square is
-clear.
+healing) within reach. Stay alert, and do not get distracted from
+the many things that can kill you on your journey to retrieve the
+Amulet.
 
 ---
 
