@@ -223,7 +223,7 @@ and a +1 lance among your gear. The pony is a decent combatant early
 on and the basis of your unique trick: jousting from horseback with
 the lance is devastating when it connects, though the lance is largely
 useless on foot. As a Lawful character with a starting long sword, you
-also have the best odds in the game at Excalibur. Dip your long sword
+also have the best odds in the game at **Excalibur**. Dip your long sword
 in a fountain at experience level 5+ and Knights get a 1-in-6 chance
 per dip, far better than the 1-in-30 every other Lawful role faces.
 Knights follow a code of conduct that imposes alignment penalties
