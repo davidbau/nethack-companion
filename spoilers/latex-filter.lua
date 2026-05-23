@@ -157,6 +157,19 @@ function Table(blk)
       pandoc.RawBlock("latex", "\\endgroup"),
     }
   end
+
+  -- The "Tool | Use" tables in the Tools chapter (containers,
+  -- unlocking tools, light sources, musical instruments, other
+  -- notable tools): same phantom-header story as the price tables.
+  -- One of them ends at the bottom of a page and the next section's
+  -- heading gets a ghost "Tool | Use" header overlapping with it.
+  if headers[1] == "Tool" and headers[2] == "Use" and #blk.colspecs == 2 then
+    return {
+      pandoc.RawBlock("latex", "\\begingroup\\let\\endhead\\endfirsthead"),
+      blk,
+      pandoc.RawBlock("latex", "\\endgroup"),
+    }
+  end
 end
 
 function Div(div)
