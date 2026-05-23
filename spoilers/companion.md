@@ -6068,7 +6068,7 @@ down means more monster swings whiff past you. AC starts at 10 and
 drops as you add protection. Lower is better. At AC −10 or below,
 you're quite difficult to damage with physical attacks; community consensus is that −20 is the practical target
 for an ascension kit, with diminishing returns past −25. The
-**cloak of displacement** is the underrated layer — monsters waste
+**cloak of displacement** should not be underrated: monsters waste
 attacks on your phantom image, which complements low AC instead of
 competing with it.
 
