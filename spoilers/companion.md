@@ -10532,7 +10532,7 @@ really "early-game" creatures.
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
-| kitten | white | 2 | 18 | 6 | 0 | bite 1d6 | tameable. Common starting pet. |
+| kitten | white | 2 | 18 | 6 | 0 | bite 1d6 | tameable. Common pet. |
 | housecat | white | 4 | 16 | 5 | 0 | bite 1d6 | tameable. |
 | jaguar | brown | 4 | 15 | 6 | 0 | claw 1d4 · claw 1d4 · bite 1d8 |  |
 | lynx | cyan | 5 | 15 | 6 | 0 | claw 1d4 · claw 1d4 · bite 1d10 |  |
