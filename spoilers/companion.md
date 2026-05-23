@@ -5454,12 +5454,11 @@ a **guaranteed explosion**. So the lifetime cap on a single wand
 of wishing is two wishes reliably, or three if you successfully
 wrest the final charge at the end.
 
-Rings are chargeable too, but with a practical ceiling: each
-attempted recharge has a 1-in-spe chance of exploding the ring,
-so +6 is roughly where the expected loss starts outpacing the
-gain. Recharging a +0 or +1 ring of protection is virtually
-free; chasing +7 burns more rings and scrolls than the dungeon
-hands you.
+Rings are chargeable too, but with a practical ceiling. The
+explosion chance scales with the ring's current enchantment:
+roughly 1/7 per point. A +0 or +1 ring of protection is virtually
+free to charge; a +3 ring explodes about 43% of the time; +7 is a
+guaranteed bang. The popular cap is around +5.
 
 #### Wresting
 
