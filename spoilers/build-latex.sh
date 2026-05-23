@@ -75,14 +75,23 @@ md = re.sub(
 Path('.companion-print.md').write_text(md)
 PY
 
-pandoc .companion-print.md \
-  --from=markdown \
-  --pdf-engine=xelatex \
-  --template=template.tex \
-  --lua-filter=latex-filter.lua \
-  --top-level-division=part \
-  --toc \
-  --output=book.pdf 2>&1
+PANDOC_ARGS=(
+  .companion-print.md
+  --from=markdown
+  --pdf-engine=xelatex
+  --template=template.tex
+  --lua-filter=latex-filter.lua
+  --top-level-division=part
+  --toc
+  --output=book.pdf
+)
+
+# Two-pass build: first pass writes the .aux file (labels and pages);
+# second pass uses it to resolve cross-references like the index's
+# \pageref calls. Without this, page numbers in the index will be
+# stale (showing values from a previous build, or ?? on a fresh build).
+pandoc "${PANDOC_ARGS[@]}" 2>&1
+pandoc "${PANDOC_ARGS[@]}" 2>&1
 rm -f .companion-print.md
 
 echo "    → book.pdf"

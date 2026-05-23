@@ -12127,7 +12127,7 @@ a very different experience.
 \hyperref[major-demons]{`\&` major demons, p.~\pageref*{major-demons}}\par
 \hyperref[things-that-will-kill-you]{0.4\%, the ascension rate, p.~\pageref*{things-that-will-kill-you}}\par
 \hyperref[finding-secret-doors]{20s, the search command, p.~\pageref*{finding-secret-doors}}\par
-5.0: \hyperref[what-changed-since-last-time]{themed rooms became a regular feature, four new monster species, helm of caution, chain lightning, dragon scale mail two extrinsics, unicorn horn no longer restores stats, supply chests, monsters loot containers, pet revival at altar, sink dipping for potions, two-handed weapons +50\% Str damage, touch of death reworked (not instakill), gold dragon (new species, light source mail), p.~\pageref*{what-changed-since-last-time}}; \hyperref[new-dangers]{new dangers (sacrifice ceiling, hot ground), p.~\pageref*{new-dangers}}; \hyperref[new-hacks]{new hacks (blessed polymorph potion, vampire forms), p.~\pageref*{new-hacks}}\par
+5.0: \hyperref[what-changed-since-last-time]{new features, items, and mechanics, p.~\pageref*{what-changed-since-last-time}}; \hyperref[new-dangers]{new dangers and new hacks, p.~\pageref*{new-dangers}}\par
 \hyperref[carrying-capacity]{52 inventory slots, the letter limit, p.~\pageref*{carrying-capacity}}\par
 \hyperref[lizards]{`:` lizards, p.~\pageref*{lizards}}\par
 \hyperref[sea-monsters]{`;` sea monsters, p.~\pageref*{sea-monsters}}\par
@@ -12163,10 +12163,12 @@ Amulet of Yendor: \hyperref[molochs-sanctum]{the prize, p.~\pageref*{molochs-san
 \hyperref[amulets]{Amulets, all the same price, p.~\pageref*{amulets}}\par
 \hyperref[angelic-beings-a]{Angel, on the Astral Plane, p.~\pageref*{angelic-beings-a}}\par
 \hyperref[the-price-is-right]{Angry-shopkeeper +33\% surcharge, permanent, p.~\pageref*{the-price-is-right}}\par
+\hyperref[dungeon-overview-and-event-journal]{Annotate (`\#annotate`), labeling levels, p.~\pageref*{dungeon-overview-and-event-journal}}\par
 \hyperref[dungeon-overview-and-event-journal]{Annotate (`\#annotate`), labeling stash floors, p.~\pageref*{dungeon-overview-and-event-journal}}\par
 \hyperref[dangerous-traps]{Anti-magic field, hits harder with MR, p.~\pageref*{dangerous-traps}}\par
 \hyperref[common-combat-deaths]{Ants, pack travelers, p.~\pageref*{common-combat-deaths}}\par
 \hyperref[the-apothecary]{Apothecary, mysterious bottles, p.~\pageref*{the-apothecary}}\par
+\hyperref[tools-of-the-trade]{Apply (`a`/`\#apply`), tools and polearm reach, p.~\pageref*{tools-of-the-trade}}\par
 \hyperref[what-pets-do-for-you]{Apport, the fetching score, p.~\pageref*{what-pets-do-for-you}}\par
 \hyperref[liches-l]{Arch-lich, touch of death, p.~\pageref*{liches-l}}\par
 \hyperref[the-roles]{Archeologist, pickaxe from turn one, p.~\pageref*{the-roles}}\par
@@ -12214,7 +12216,11 @@ Ascension: \hyperref[the-ascension-kit]{kit, the canonical loadout, p.~\pageref*
 \hyperref[the-quest]{Bell of Opening, looted from nemesis, p.~\pageref*{the-quest}}\par
 \hyperref[bestiary-tables]{Bestiary tables (full appendix), p.~\pageref*{bestiary-tables}}\par
 \hyperref[field-guide-to-dungeon-fauna]{Bestiary, by letter, p.~\pageref*{field-guide-to-dungeon-fauna}}\par
-Black: \hyperref[the-golden-rules-of-early-survival]{pudding glob from a sink, snack of resistances, p.~\pageref*{the-golden-rules-of-early-survival}}; \hyperref[nagas-n]{naga corpse, three resistances, p.~\pageref*{nagas-n}}; \hyperref[a-note-on-puddings]{pudding, do not split with iron, p.~\pageref*{a-note-on-puddings}}; \hyperref[light-bursts]{light, hallucinates, p.~\pageref*{light-bursts}}; \hyperref[a-note-on-dragons]{dragon scale mail, disintegration + drain res, p.~\pageref*{a-note-on-dragons}}\par
+\hyperref[a-note-on-dragons]{Black dragon scale mail, disintegration + drain res, p.~\pageref*{a-note-on-dragons}}\par
+\hyperref[light-bursts]{Black light, hallucinates, p.~\pageref*{light-bursts}}\par
+\hyperref[nagas-n]{Black naga corpse, three resistances, p.~\pageref*{nagas-n}}\par
+\hyperref[the-golden-rules-of-early-survival]{Black pudding glob from a sink, snack of resistances, p.~\pageref*{the-golden-rules-of-early-survival}}\par
+\hyperref[a-note-on-puddings]{Black pudding, do not split with iron, p.~\pageref*{a-note-on-puddings}}\par
 \hyperref[scroll-genocide]{Blessed genocide, class L wipe, p.~\pageref*{scroll-genocide}}\par
 \hyperref[potion-polymorph]{Blessed potion of polymorph, controlled poly (new in 5.0), p.~\pageref*{potion-polymorph}}\par
 \hyperref[learning-spells]{Blessed spellbook, auto-success, p.~\pageref*{learning-spells}}\par
@@ -12254,6 +12260,7 @@ BUC: \hyperref[blessed-uncursed-cursed-buc]{(Blessed Uncursed Cursed), avoiding 
 \hyperref[dangerous-foods]{Cannibalism, –2 to –5 Luck plus aggravate, p.~\pageref*{dangerous-foods}}\par
 \hyperref[strategy]{Carrying Amulet, casts cost more (drop to cast), p.~\pageref*{strategy}}\par
 \hyperref[carrying-capacity]{Carrying capacity, 25(Str+Con)+50, p.~\pageref*{carrying-capacity}}\par
+\hyperref[spellcasting]{Cast (`Z`), spells, p.~\pageref*{spellcasting}}\par
 Castle: \hyperref[castle-overview]{overview, the gateway to Gehennom, p.~\pageref*{castle-overview}}; \hyperref[the-castle]{storming the, wand chest, sitting on cursed scroll of scare monster, central hallway of five trap doors, two wishes reliably (1 charge + 1 recharge), p.~\pageref*{the-castle}}\par
 \hyperref[the-roles]{Cave Dweller, sling and flint, p.~\pageref*{the-roles}}\par
 \hyperref[arachnids-and-centipedes-s]{Cave spider, eat for poison resistance, p.~\pageref*{arachnids-and-centipedes-s}}\par
@@ -12265,6 +12272,7 @@ Castle: \hyperref[castle-overview]{overview, the gateway to Gehennom, p.~\pagere
 \hyperref[the-price-is-right]{Charisma, buy-price bands, p.~\pageref*{the-price-is-right}}\par
 \hyperref[key-spells]{Charm monster, 3×3 tame, p.~\pageref*{key-spells}}\par
 \hyperref[humans-and-elves]{Charon, ferryman, p.~\pageref*{humans-and-elves}}\par
+\hyperref[donating-to-priests]{Chat (`\#chat`), priests, shopkeepers, prices, p.~\pageref*{donating-to-priests}}\par
 \hyperref[the-price-is-right]{Chat to shopkeeper, polite price-ID, p.~\pageref*{the-price-is-right}}\par
 \hyperref[donating-to-priests]{Cheapskate flag, priest grudge, p.~\pageref*{donating-to-priests}}\par
 \hyperref[choking]{Choking, eating past Satiated, p.~\pageref*{choking}}\par
@@ -12275,7 +12283,11 @@ Castle: \hyperref[castle-overview]{overview, the gateway to Gehennom, p.~\pagere
 \hyperref[golems]{Clay golem, dissolves to cancellation, p.~\pageref*{golems}}\par
 \hyperref[wishable-random-artifacts]{Cleaver (Barbarian), three-monster swing, p.~\pageref*{wishable-random-artifacts}}\par
 \hyperref[the-seven-spell-schools]{Cleric school, p.~\pageref*{the-seven-spell-schools}}\par
-Cloak: \hyperref[armor-and-ac]{of displacement, the underrated layer, of magic resistance, MC1 in 5.0, of protection, MC3 the only single source, p.~\pageref*{armor-and-ac}}; \hyperref[cloaks]{of magic resistance (MC1), of protection (MC3), p.~\pageref*{cloaks}}\par
+\hyperref[armor-and-ac]{Cloak of displacement, the underrated layer, p.~\pageref*{armor-and-ac}}\par
+\hyperref[cloaks]{Cloak of magic resistance (MC1), p.~\pageref*{cloaks}}\par
+\hyperref[armor-and-ac]{Cloak of magic resistance, MC1 in 5.0, p.~\pageref*{armor-and-ac}}\par
+\hyperref[cloaks]{Cloak of protection (MC3), p.~\pageref*{cloaks}}\par
+\hyperref[armor-and-ac]{Cloak of protection, MC3 the only single source, p.~\pageref*{armor-and-ac}}\par
 \hyperref[cloaks]{Cloaks, table by AC/MC, p.~\pageref*{cloaks}}\par
 \hyperref[shopkeeper-behavior]{Closed for inventory, locked shop door, p.~\pageref*{shopkeeper-behavior}}\par
 Cockatrice: \hyperref[dungeon-hazards-and-how-to-survive-them]{corpse on the stairs, the most literal instadeath, p.~\pageref*{dungeon-hazards-and-how-to-survive-them}}; \hyperref[cockatrices-c]{instant petrification on touch, p.~\pageref*{cockatrices-c}}; \hyperref[petrification-stoning]{corpse, wielding (with gloves!), corpse, the rubber chicken, new moon hiss (1 in 3), p.~\pageref*{petrification-stoning}}; \hyperref[the-astral-plane]{corpse, one-shot Rider, p.~\pageref*{the-astral-plane}}\par
@@ -12309,10 +12321,13 @@ Confused: \hyperref[searching-and-detection]{gold detection, cheap trap reveal, 
 \hyperref[message-history-and-redraw]{Ctrl+P, message history, p.~\pageref*{message-history-and-redraw}}\par
 \hyperref[message-history-and-redraw]{Ctrl+R, redraw, p.~\pageref*{message-history-and-redraw}}\par
 \hyperref[removing-curses]{Curse, removing, p.~\pageref*{removing-curses}}\par
-Cursed: \hyperref[effects-of-cursed-items]{armor, won't come off, weapon, can't be unwielded, bag of holding, doubles weight, p.~\pageref*{effects-of-cursed-items}}; \hyperref[how-luck-works]{luckstone, locks negative, p.~\pageref*{how-luck-works}}\par
+\hyperref[effects-of-cursed-items]{Cursed armor, won't come off, p.~\pageref*{effects-of-cursed-items}}\par
+\hyperref[effects-of-cursed-items]{Cursed bag of holding, doubles weight, p.~\pageref*{effects-of-cursed-items}}\par
+\hyperref[how-luck-works]{Cursed luckstone, locks negative, p.~\pageref*{how-luck-works}}\par
 \hyperref[alchemy]{Cursed potion dip, guaranteed explosion, p.~\pageref*{alchemy}}\par
 \hyperref[the-ascension-run]{Cursed potion of gain level wish, free Gehennom skip, p.~\pageref*{the-ascension-run}}\par
 \hyperref[sokoban]{Cursed scroll of scare monster, bait for the Sokoban prize, p.~\pageref*{sokoban}}\par
+\hyperref[effects-of-cursed-items]{Cursed weapon, can't be unwielded, p.~\pageref*{effects-of-cursed-items}}\par
 \hyperref[options-worth-knowing-about]{Curses windowtype, the paneled UI, p.~\pageref*{options-worth-knowing-about}}\par
 \hyperref[curses-and-how-to-break-them]{Curses, breaking them, p.~\pageref*{curses-and-how-to-break-them}}\par
 \hyperref[feelings-and-sounds]{Cursing shoplifters, shop on level, p.~\pageref*{feelings-and-sounds}}\par
@@ -12336,6 +12351,7 @@ Cursed: \hyperref[effects-of-cursed-items]{armor, won't come off, weapon, can't 
 \hyperref[wishable-random-artifacts]{Demonbane (Lawful silver mace), Priest first gift, p.~\pageref*{wishable-random-artifacts}}\par
 \hyperref[detecting-curses]{Detecting curses, altar/pet/shop, p.~\pageref*{detecting-curses}}\par
 \hyperref[to-hit-calculation]{Dexterity, +to-hit contribution, p.~\pageref*{to-hit-calculation}}\par
+\hyperref[wand-digging]{Dig (pickaxe / wand of digging), p.~\pageref*{wand-digging}}\par
 \hyperref[use-testing-the-careful-way]{Dipping ammo in sickness (poison), p.~\pageref*{use-testing-the-careful-way}}\par
 \hyperref[fountains]{Dipping in a fountain, can uncurse, p.~\pageref*{fountains}}\par
 \hyperref[use-testing-the-careful-way]{Dipping unicorn horn in potions, p.~\pageref*{use-testing-the-careful-way}}\par
@@ -12351,8 +12367,13 @@ Cursed: \hyperref[effects-of-cursed-items]{armor, won't come off, weapon, can't 
 \hyperref[donating-to-priests]{Donating to priests, AC stacks, p.~\pageref*{donating-to-priests}}\par
 \hyperref[fighting-smart]{Doors, closing for breathing room, p.~\pageref*{fighting-smart}}\par
 \hyperref[fighting-smart]{Doors, no diagonal entry, p.~\pageref*{fighting-smart}}\par
-Dragon: \hyperref[a-note-on-dragons]{s, a full briefing, p.~\pageref*{a-note-on-dragons}}; \hyperref[armor-and-ac]{scale mail, color cheat sheet, p.~\pageref*{armor-and-ac}}; \hyperref[dragon-scale-mail]{scale mail, upgrade from scales, p.~\pageref*{dragon-scale-mail}}; \hyperref[wishable-random-artifacts]{bane, reflection while wielded, p.~\pageref*{wishable-random-artifacts}}; \hyperref[dragon-scales]{scale mail / dragon scales tables, p.~\pageref*{dragon-scales}}\par
+\hyperref[dragon-scales]{Dragon scale mail / dragon scales tables, p.~\pageref*{dragon-scales}}\par
+\hyperref[armor-and-ac]{Dragon scale mail, color cheat sheet, p.~\pageref*{armor-and-ac}}\par
+\hyperref[dragon-scale-mail]{Dragon scale mail, upgrade from scales, p.~\pageref*{dragon-scale-mail}}\par
+\hyperref[wishable-random-artifacts]{Dragonbane, reflection while wielded, p.~\pageref*{wishable-random-artifacts}}\par
+\hyperref[a-note-on-dragons]{Dragons, a full briefing, p.~\pageref*{a-note-on-dragons}}\par
 \hyperref[the-castle]{Drawbridge, four ways to lower, p.~\pageref*{the-castle}}\par
+\hyperref[carrying-capacity]{Drop (`d`), placing on the floor, p.~\pageref*{carrying-capacity}}\par
 \hyperref[shopkeeper-behavior]{Drop everything at the door, see your bill, p.~\pageref*{shopkeeper-behavior}}\par
 \hyperref[drowning]{Drowning, preventable, p.~\pageref*{drowning}}\par
 \hyperref[musical-instruments]{Drum of earthquake, pits around you, p.~\pageref*{musical-instruments}}\par
@@ -12373,7 +12394,7 @@ Dragon: \hyperref[a-note-on-dragons]{s, a full briefing, p.~\pageref*{a-note-on-
 \hyperref[the-golden-rules-of-early-survival]{Eat the things you don't understand (don't), p.~\pageref*{the-golden-rules-of-early-survival}}\par
 \hyperref[deadly-mistakes]{Eating mistakes, top forty, p.~\pageref*{deadly-mistakes}}\par
 \hyperref[medusas-island]{Eels (giant, electric), at Medusa, p.~\pageref*{medusas-island}}\par
-Elbereth: \hyperref[elbereth]{writing frantically, p.~\pageref*{elbereth}}; \hyperref[where-the-word-comes-from]{where the word comes from, p.~\pageref*{where-the-word-comes-from}}; \hyperref[the-ward]{the ward (basic), p.~\pageref*{the-ward}}; \hyperref[rules-of-the-ward]{rules of the ward, who ignores it, dead in Gehennom, p.~\pageref*{rules-of-the-ward}}; \hyperref[the-defile-rule-important]{the defile rule (important), p.~\pageref*{the-defile-rule-important}}; \hyperref[practical-use]{practical use, p.~\pageref*{practical-use}}; \hyperref[strategy]{dead past Castle, p.~\pageref*{strategy}}\par
+Elbereth: \hyperref[elbereth]{writing frantically, where the word comes from, the ward (basic), p.~\pageref*{elbereth}}; \hyperref[rules-of-the-ward]{rules of the ward, who ignores it, dead in Gehennom, the defile rule (important), p.~\pageref*{rules-of-the-ward}}; \hyperref[practical-use]{practical use, p.~\pageref*{practical-use}}; \hyperref[strategy]{dead past Castle, p.~\pageref*{strategy}}\par
 \hyperref[sea-monsters]{Electric eel, six in medusa-2, p.~\pageref*{sea-monsters}}\par
 \hyperref[the-elemental-planes]{Elemental Planes, four obstacles, p.~\pageref*{the-elemental-planes}}\par
 \hyperref[the-races]{Elf, sleep resistance at XL 4, p.~\pageref*{the-races}}\par
@@ -12383,13 +12404,12 @@ Elbereth: \hyperref[elbereth]{writing frantically, p.~\pageref*{elbereth}}; \hyp
 \hyperref[enchantment-drain]{Enchantment drain, the silent ascension-killer, p.~\pageref*{enchantment-drain}}\par
 \hyperref[the-seven-spell-schools]{Enchantment school, p.~\pageref*{the-seven-spell-schools}}\par
 \hyperref[enchantment]{Enchantment, weapon ceiling +9, armor +3/+5, p.~\pageref*{enchantment}}\par
-\hyperref[engravings]{Engrave command (`E`), p.~\pageref*{engravings}}\par
-\hyperref[the-engrave-test-wands]{Engrave test, pre-write a word in dust, p.~\pageref*{the-engrave-test-wands}}\par
-\hyperref[the-engrave-test-wands]{Engrave test, the procedure, p.~\pageref*{the-engrave-test-wands}}\par
+Engrave: \hyperref[engravings]{command (`E`), (`E`), Elbereth and wand identification, p.~\pageref*{engravings}}; \hyperref[the-engrave-test-wands]{test, the procedure, test, pre-write a word in dust, p.~\pageref*{the-engrave-test-wands}}\par
 \hyperref[engravings]{Engraving methods, dust to permanent, p.~\pageref*{engravings}}\par
 \hyperref[resolving-ambiguous-engrave-results]{Engraving vanishes, three candidates, p.~\pageref*{resolving-ambiguous-engrave-results}}\par
 \hyperref[engravings]{Engraving, impairment garbles spelling, p.~\pageref*{engravings}}\par
 \hyperref[engulfment]{Engulfment, two hidden monsters, p.~\pageref*{engulfment}}\par
+\hyperref[enhancing-skills]{Enhance (`\#enhance`), spending skill slots, p.~\pageref*{enhancing-skills}}\par
 \hyperref[enhancing-skills]{Enhancing skills, \#enhance command, p.~\pageref*{enhancing-skills}}\par
 \hyperref[erosion-and-proofing]{Erosion, rust, fire, corrosion, p.~\pageref*{erosion-and-proofing}}\par
 \hyperref[the-seven-spell-schools]{Escape school, p.~\pageref*{the-seven-spell-schools}}\par
@@ -12419,13 +12439,14 @@ Fire: \hyperref[dangerous-traps]{trap, sleeper threat for inventory, p.~\pageref
 \hyperref[fighting-smart]{First swing wakes the room, p.~\pageref*{fighting-smart}}\par
 \hyperref[alignment]{First-game recommendation, p.~\pageref*{alignment}}\par
 \hyperref[gray-stones-four-stones-one-correct-answer]{Flint, useless ammunition, p.~\pageref*{gray-stones-four-stones-one-correct-answer}}\par
-Floating eye corpse, telepathy, pp.~\hyperref[eyes-and-spheres-e]{\pageref*{eyes-and-spheres-e}}; \hyperref[useful-corpse-effects]{\pageref*{useful-corpse-effects}}\par
+Floating eye corpse, telepathy, pp.~\hyperref[eyes-and-spheres-e]{\pageref*{eyes-and-spheres-e}}, \hyperref[useful-corpse-effects]{\pageref*{useful-corpse-effects}}\par
 \hyperref[dungeon-hazards-and-how-to-survive-them]{Floating eye, do not hit, p.~\pageref*{dungeon-hazards-and-how-to-survive-them}}\par
 \hyperref[eyes-and-spheres-e]{Floating eye, never melee, p.~\pageref*{eyes-and-spheres-e}}\par
 \hyperref[the-map-symbols]{Floor, corridor, wall, door symbols, p.~\pageref*{the-map-symbols}}\par
 \hyperref[seduction]{Foocubus, can strip cursed armor, p.~\pageref*{seduction}}\par
 Food: \hyperref[the-early-shopping-list]{rations, two or three is plenty, p.~\pageref*{the-early-shopping-list}}; \hyperref[how-hunger-works]{running out of, p.~\pageref*{how-hunger-works}}; \hyperref[what-to-eat]{rations, weight 20, p.~\pageref*{what-to-eat}}; \hyperref[food-strategy]{strategy, the six rules, p.~\pageref*{food-strategy}}; \hyperref[the-food-conducts]{conducts, the hierarchy, p.~\pageref*{the-food-conducts}}\par
 \hyperref[the-food-conducts]{Foodless conduct, p.~\pageref*{the-food-conducts}}\par
+\hyperref[forcing-locked-chests]{Force (`\#force`), prying chests open, p.~\pageref*{forcing-locked-chests}}\par
 \hyperref[key-spells]{Force bolt, level 1 attack, p.~\pageref*{key-spells}}\par
 \hyperref[forcing-locked-chests]{\#force, prying chests open, p.~\pageref*{forcing-locked-chests}}\par
 \hyperref[movement-prefixes]{Force-attack (F), p.~\pageref*{movement-prefixes}}\par
@@ -12448,7 +12469,7 @@ Food: \hyperref[the-early-shopping-list]{rations, two or three is plenty, p.~\pa
 \hyperref[gloves]{Gauntlets of dexterity, +spe to Dex, p.~\pageref*{gloves}}\par
 \hyperref[gloves]{Gauntlets of fumbling, 9-in-10 cursed, p.~\pageref*{gloves}}\par
 \hyperref[gloves]{Gauntlets of power, Str 25, p.~\pageref*{gloves}}\par
-Gehennom: \hyperref[the-big-picture]{lower trunk, p.~\pageref*{the-big-picture}}; \hyperref[gehennom]{why is it so hot, p.~\pageref*{gehennom}}; \hyperref[whats-different-in-gehennom]{no prayer, fire everywhere, hot ground shatters potions, mazes, p.~\pageref*{whats-different-in-gehennom}}\par
+Gehennom: \hyperref[the-big-picture]{lower trunk, p.~\pageref*{the-big-picture}}; \hyperref[gehennom]{why is it so hot, no prayer, fire everywhere, hot ground shatters potions, mazes, p.~\pageref*{gehennom}}\par
 \hyperref[vegetarian-safe-corpses]{Gelatinous cube corpse, four resistances, p.~\pageref*{vegetarian-safe-corpses}}\par
 \hyperref[blobs-b]{Gelatinous cube, paralysis-cube of resistances, p.~\pageref*{blobs-b}}\par
 \hyperref[gem-identification-through-selling]{Gem identification through selling (not reliable), p.~\pageref*{gem-identification-through-selling}}\par
@@ -12500,7 +12521,11 @@ Healing: \hyperref[potion-prices]{potion, \$20 alone, p.~\pageref*{potion-prices
 \hyperref[quest-artifacts]{Heart of Ahriman (Barbarian), p.~\pageref*{quest-artifacts}}\par
 \hyperref[how-luck-works]{Heart of Ahriman, counts as luckstone, p.~\pageref*{how-luck-works}}\par
 \hyperref[the-heist]{Heist, the choreographed sequence, p.~\pageref*{the-heist}}\par
-Helm: \hyperref[armor-and-ac]{of caution, warning intrinsic (new in 5.0), p.~\pageref*{armor-and-ac}}; \hyperref[the-gauntlet]{of opposite alignment, Chaotic detour, p.~\pageref*{the-gauntlet}}; \hyperref[helmets]{of opposite alignment, alignment-flip tactical uses, of brilliance, +spe to Int and Wis, of telepathy, when blind, p.~\pageref*{helmets}}\par
+\hyperref[helmets]{Helm of brilliance, +spe to Int and Wis, p.~\pageref*{helmets}}\par
+\hyperref[armor-and-ac]{Helm of caution, warning intrinsic (new in 5.0), p.~\pageref*{armor-and-ac}}\par
+\hyperref[helmets]{Helm of opposite alignment, alignment-flip tactical uses, p.~\pageref*{helmets}}\par
+\hyperref[the-gauntlet]{Helm of opposite alignment, Chaotic detour, p.~\pageref*{the-gauntlet}}\par
+\hyperref[helmets]{Helm of telepathy, when blind, p.~\pageref*{helmets}}\par
 \hyperref[helmets]{Helmets, by AC, p.~\pageref*{helmets}}\par
 \hyperref[molochs-sanctum]{High Priest of Moloch, on the high altar, p.~\pageref*{molochs-sanctum}}\par
 \hyperref[movement-traps]{Hole, like a trapdoor with manners, p.~\pageref*{movement-traps}}\par
@@ -12549,6 +12574,7 @@ Iron: \hyperref[golems]{golem, poison breath, p.~\pageref*{golems}}; \hyperref[d
 \hyperref[weapons]{Katana, best one-hander, p.~\pageref*{weapons}}\par
 \hyperref[key-spells]{Key spells, the short list, p.~\pageref*{key-spells}}\par
 \hyperref[angelic-beings-a]{Ki-rin, flying spellcaster, p.~\pageref*{angelic-beings-a}}\par
+\hyperref[iron-bars]{Kick (`\textasciicircum{}d`), doors, walls, gray stones, p.~\pageref*{iron-bars}}\par
 \hyperref[deadly-mistakes]{Kicking sinks, the foocubus surprise, p.~\pageref*{deadly-mistakes}}\par
 \hyperref[useful-corpse-effects]{Killer bee corpse, poison resistance, p.~\pageref*{useful-corpse-effects}}\par
 \hyperref[ants-and-insects-a]{Killer bee, swarm, p.~\pageref*{ants-and-insects-a}}\par
@@ -12582,7 +12608,7 @@ Knight: \hyperref[the-roles]{pony of, Excalibur odds (1 in 6), caitiff penalty, 
 \hyperref[alchemy]{Levitation + Enlightenment → Gain level, p.~\pageref*{alchemy}}\par
 \hyperref[boots]{Levitation boots, the cursed trap, p.~\pageref*{boots}}\par
 \hyperref[drowning]{Levitation, doesn't save from eels, p.~\pageref*{drowning}}\par
-Lichen corpse, never rots, pp.~\hyperref[the-golden-rules-of-early-survival]{\pageref*{the-golden-rules-of-early-survival}}; \hyperref[fungi-and-molds-f]{\pageref*{fungi-and-molds-f}}\par
+Lichen corpse, never rots, pp.~\hyperref[the-golden-rules-of-early-survival]{\pageref*{the-golden-rules-of-early-survival}}, \hyperref[fungi-and-molds-f]{\pageref*{fungi-and-molds-f}}\par
 \hyperref[light-bursts]{Light bursts, yellow and black, p.~\pageref*{light-bursts}}\par
 \hyperref[room-types]{Light source room, free lit lamp, p.~\pageref*{room-types}}\par
 \hyperref[light-sources]{Light sources, candles and oil lamps, p.~\pageref*{light-sources}}\par
@@ -12592,10 +12618,12 @@ Lichen corpse, never rots, pp.~\hyperref[the-golden-rules-of-early-survival]{\pa
 \hyperref[gray-stones-four-stones-one-correct-answer]{Loadstone, the \#tip escape, p.~\pageref*{gray-stones-four-stones-one-correct-answer}}\par
 \hyperref[gray-stones-four-stones-one-correct-answer]{Loadstone, the kick test, p.~\pageref*{gray-stones-four-stones-one-correct-answer}}\par
 \hyperref[credit-and-debt]{Loan, lent gold from shopkeeper, p.~\pageref*{credit-and-debt}}\par
+\hyperref[unlocking-tools]{Lock / Unlock, doors and chests, p.~\pageref*{unlocking-tools}}\par
 \hyperref[unlocking-tools]{Lock pick, respectable, p.~\pageref*{unlocking-tools}}\par
 \hyperref[weapons]{Long sword, dip for Excalibur, p.~\pageref*{weapons}}\par
 \hyperref[worms-w]{Long worm, tail segments, p.~\pageref*{worms-w}}\par
 \hyperref[quest-artifacts]{Longbow of Diana (Ranger), conjure arrows invoke, p.~\pageref*{quest-artifacts}}\par
+\hyperref[containers]{Loot (`\#loot`), opening containers, p.~\pageref*{containers}}\par
 \hyperref[giant-humanoids-h]{Lord Surtur, Valkyrie quest nemesis, p.~\pageref*{giant-humanoids-h}}\par
 \hyperref[how-luck-works]{Luck timeout, 600 turns toward 0, p.~\pageref*{how-luck-works}}\par
 \hyperref[gaining-and-losing-luck]{Luck, secretly ruining yours, p.~\pageref*{gaining-and-losing-luck}}\par
@@ -12610,12 +12638,18 @@ Lichen corpse, never rots, pp.~\hyperref[the-golden-rules-of-early-survival]{\pa
 \hyperref[movement-prefixes]{m prefix, no-attack and menu, p.~\pageref*{movement-prefixes}}\par
 \hyperref[mimics-m]{`m` mimics, p.~\pageref*{mimics-m}}\par
 \hyperref[mummies-m]{`M` mummies, undead-turning shreds, p.~\pageref*{mummies-m}}\par
-Magic: \hyperref[fountains]{fountain, one in seven, p.~\pageref*{fountains}}; \hyperref[movement-traps]{portal, branch entrances, p.~\pageref*{movement-traps}}; \hyperref[dangerous-traps]{trap, slot machine of outcomes, trap, Charisma farming, p.~\pageref*{dangerous-traps}}; \hyperref[the-touch-of-death]{missile, the answer to Riders, p.~\pageref*{the-touch-of-death}}; \hyperref[enchantment-drain]{cancellation (MC), MC3 blocks 90\%, p.~\pageref*{enchantment-drain}}; \hyperref[light-sources]{lamp, the wish gamble, p.~\pageref*{light-sources}}; \hyperref[musical-instruments]{harp, charms monsters, flute, sleep, p.~\pageref*{musical-instruments}}; \hyperref[quest-artifacts]{Mirror of Merlin (Knight), p.~\pageref*{quest-artifacts}}\par
+Magic: \hyperref[fountains]{fountain, one in seven, p.~\pageref*{fountains}}; \hyperref[movement-traps]{portal, branch entrances, p.~\pageref*{movement-traps}}; \hyperref[enchantment-drain]{cancellation (MC), MC3 blocks 90\%, p.~\pageref*{enchantment-drain}}; \hyperref[quest-artifacts]{Mirror of Merlin (Knight), p.~\pageref*{quest-artifacts}}\par
+\hyperref[musical-instruments]{Magic flute, sleep, p.~\pageref*{musical-instruments}}\par
+\hyperref[musical-instruments]{Magic harp, charms monsters, p.~\pageref*{musical-instruments}}\par
+\hyperref[light-sources]{Magic lamp, the wish gamble, p.~\pageref*{light-sources}}\par
 \hyperref[key-spells]{Magic mapping spell, level 5, p.~\pageref*{key-spells}}\par
 \hyperref[scroll-magic-mapping]{Magic mapping, blessed shows secret doors, p.~\pageref*{scroll-magic-mapping}}\par
 \hyperref[other-notable-tools]{Magic marker, ascension-kit writes, p.~\pageref*{other-notable-tools}}\par
 \hyperref[other-notable-tools]{Magic marker, scroll printer, p.~\pageref*{other-notable-tools}}\par
+\hyperref[the-touch-of-death]{Magic missile, the answer to Riders, p.~\pageref*{the-touch-of-death}}\par
 \hyperref[the-golden-rules-of-early-survival]{Magic resistance, reflection, poison resistance: the big three, p.~\pageref*{the-golden-rules-of-early-survival}}\par
+\hyperref[dangerous-traps]{Magic trap, Charisma farming, p.~\pageref*{dangerous-traps}}\par
+\hyperref[dangerous-traps]{Magic trap, slot machine of outcomes, p.~\pageref*{dangerous-traps}}\par
 \hyperref[what-pets-do-for-you]{Magic whistle, teleports tame creatures to you, p.~\pageref*{what-pets-do-for-you}}\par
 \hyperref[drowning]{Magical breathing, ends grab-drown, p.~\pageref*{drowning}}\par
 \hyperref[wishable-random-artifacts]{Magicbane (Neutral athame), wielded magic resistance, p.~\pageref*{wishable-random-artifacts}}\par
@@ -12627,7 +12661,7 @@ Magic: \hyperref[fountains]{fountain, one in seven, p.~\pageref*{fountains}}; \h
 \hyperref[room-types]{Massacre room, role corpses for sacrifice, p.~\pageref*{room-types}}\par
 \hyperref[quest-artifacts]{Master Key of Thievery (Rogue), untrap invoke, p.~\pageref*{quest-artifacts}}\par
 \hyperref[liches-l]{Master lich, magic resistance mandatory, p.~\pageref*{liches-l}}\par
-Master mind flayer, five tentacles, pp.~\hyperref[humanoids-h]{\pageref*{humanoids-h}}; \hyperref[brainlessness]{\pageref*{brainlessness}}\par
+Master mind flayer, five tentacles, pp.~\hyperref[humanoids-h]{\pageref*{humanoids-h}}, \hyperref[brainlessness]{\pageref*{brainlessness}}\par
 \hyperref[the-seven-spell-schools]{Matter school, p.~\pageref*{the-seven-spell-schools}}\par
 \hyperref[room-types]{Mausoleum, mummy waiting, p.~\pageref*{room-types}}\par
 \hyperref[the-big-picture]{Mazes of Menace, the whole thing, p.~\pageref*{the-big-picture}}\par
@@ -12666,6 +12700,7 @@ Master mind flayer, five tentacles, pp.~\hyperref[humanoids-h]{\pageref*{humanoi
 
 \hyperref[nagas-n]{`N` nagas, p.~\pageref*{nagas-n}}\par
 \hyperref[nymphs-n]{`n` nymphs, p.~\pageref*{nymphs-n}}\par
+\hyperref[naming-what-youve-learned]{Name (`\#name`/`\#call`), labeling items by appearance, p.~\pageref*{naming-what-youve-learned}}\par
 \hyperref[naming-what-youve-learned]{Naming what you've learned (\#name, \#call), p.~\pageref*{naming-what-youve-learned}}\par
 \hyperref[acknowledgements]{NAO (nethack.alt.org), the public server, p.~\pageref*{acknowledgements}}\par
 \hyperref[wraiths-w]{Nazgul, sleep breath, p.~\pageref*{wraiths-w}}\par
@@ -12692,6 +12727,7 @@ Master mind flayer, five tentacles, pp.~\hyperref[humanoids-h]{\pageref*{humanoi
 \hyperref[drowning]{Oilskin cloak, eel-slip, p.~\pageref*{drowning}}\par
 \hyperref[containers]{Oilskin sack, protects from water, p.~\pageref*{containers}}\par
 \hyperref[a-note-on-trolls]{Olog-hai, the troll you fear, p.~\pageref*{a-note-on-trolls}}\par
+\hyperref[the-map-symbols]{Open / Close (`o`/`c`), doors, p.~\pageref*{the-map-symbols}}\par
 \hyperref[options-worth-knowing-about]{Options worth knowing about, p.~\pageref*{options-worth-knowing-about}}\par
 Oracle: \hyperref[humans-and-elves]{peaceful by design, p.~\pageref*{humans-and-elves}}; \hyperref[the-oracle]{mid-levels, minor consultation (50 zm), major consultation, p.~\pageref*{the-oracle}}\par
 \hyperref[a-note-on-dragons]{Orange dragon scale mail, sleep + free action, p.~\pageref*{a-note-on-dragons}}\par
@@ -12717,26 +12753,36 @@ Oracle: \hyperref[humans-and-elves]{peaceful by design, p.~\pageref*{humans-and-
 \hyperref[learning-spells]{Paperback, the Discworld novel, p.~\pageref*{learning-spells}}\par
 \hyperref[the-castle]{Passtune, the five-note Mastermind, p.~\pageref*{the-castle}}\par
 \hyperref[pauper-new-in-5.0]{Pauper conduct, no starting gear (new in 5.0), p.~\pageref*{pauper-new-in-5.0}}\par
+\hyperref[shopping-and-shopkeeper-pricing]{Pay (`p`), shopkeeper, p.~\pageref*{shopping-and-shopkeeper-pricing}}\par
 \hyperref[per-role-skill-caps]{Per-role skill caps, p.~\pageref*{per-role-skill-caps}}\par
 \hyperref[permadeaf-new-in-5.0]{Permadeaf conduct (new in 5.0), p.~\pageref*{permadeaf-new-in-5.0}}\par
 \hyperref[medusas-island]{Perseus statue, looting the legend, p.~\pageref*{medusas-island}}\par
 \hyperref[the-astral-plane]{Pestilence the Rider, the one to fear, p.~\pageref*{the-astral-plane}}\par
 \hyperref[delayed-deaths]{Pestilence's terminal illness, Constitution timer, p.~\pageref*{delayed-deaths}}\par
-Pet: \hyperref[the-golden-rules-of-early-survival]{your friend (mostly), p.~\pageref*{the-golden-rules-of-early-survival}}; \hyperref[deadly-mistakes]{kills (yours), via conflict ring, p.~\pageref*{deadly-mistakes}}; \hyperref[keeping-your-pet-alive]{accidentally killing your, leaving on Sokoban (kennel), reviving at a co-aligned altar (new in 5.0), gains resistances from corpses (new in 5.0), p.~\pageref*{keeping-your-pet-alive}}; \hyperref[starting-pets]{your best early asset, growth from feeding, curse detection (drop and watch), p.~\pageref*{starting-pets}}; \hyperref[taming-new-creatures]{taming new creatures, p.~\pageref*{taming-new-creatures}}; \hyperref[what-pets-do-for-you]{shoplifting, store-without-paying, p.~\pageref*{what-pets-do-for-you}}\par
+Pet: \hyperref[the-golden-rules-of-early-survival]{your friend (mostly), p.~\pageref*{the-golden-rules-of-early-survival}}; \hyperref[deadly-mistakes]{kills (yours), via conflict ring, p.~\pageref*{deadly-mistakes}}; \hyperref[keeping-your-pet-alive]{accidentally killing your, leaving on Sokoban (kennel), reviving at a co-aligned altar (new in 5.0), gains resistances from corpses (new in 5.0), p.~\pageref*{keeping-your-pet-alive}}; \hyperref[starting-pets]{your best early asset, growth from feeding, curse detection (drop and watch), p.~\pageref*{starting-pets}}; \hyperref[taming-new-creatures]{taming new creatures, shoplifting, store-without-paying, p.~\pageref*{taming-new-creatures}}\par
 \hyperref[petless-new-in-5.0]{Petless conduct (new in 5.0), p.~\pageref*{petless-new-in-5.0}}\par
 \hyperref[petrification-stoning]{Petrification (stoning), the five-turn ladder, p.~\pageref*{petrification-stoning}}\par
+\hyperref[carrying-capacity]{Pick up (`,`), retrieving from floor, p.~\pageref*{carrying-capacity}}\par
 \hyperref[other-notable-tools]{Pickaxe and mattock, dig anywhere, p.~\pageref*{other-notable-tools}}\par
 \hyperref[piercers-p]{Piercer, drop from ceiling, p.~\pageref*{piercers-p}}\par
 \hyperref[snakes-s]{Pit viper, cobra, poison bites, p.~\pageref*{snakes-s}}\par
 \hyperref[movement-traps]{Pit, climb out, p.~\pageref*{movement-traps}}\par
-Plane: \hyperref[the-elemental-planes]{portals, find with confused gold detection, p.~\pageref*{the-elemental-planes}}; \hyperref[plane-of-earth]{of Earth, dig the portal, p.~\pageref*{plane-of-earth}}; \hyperref[plane-of-air]{of Air, cloud bubbles drift, of Air, conflict tactic, p.~\pageref*{plane-of-air}}; \hyperref[plane-of-fire]{of Fire, fire resistance non-optional, p.~\pageref*{plane-of-fire}}; \hyperref[plane-of-water]{of Water, magical breathing required, p.~\pageref*{plane-of-water}}\par
+Plane: \hyperref[the-elemental-planes]{portals, find with confused gold detection, of Earth, dig the portal, of Air, cloud bubbles drift, of Air, conflict tactic, p.~\pageref*{the-elemental-planes}}; \hyperref[plane-of-fire]{of Fire, fire resistance non-optional, of Water, magical breathing required, p.~\pageref*{plane-of-fire}}\par
 \hyperref[quest-artifacts]{Platinum Yendorian Express Card (Tourist), charge an item, p.~\pageref*{quest-artifacts}}\par
 Polymorph: \hyperref[dangerous-traps]{trap, free booth with control, p.~\pageref*{dangerous-traps}}; \hyperref[polymorph-as-a-tool]{as a tool, self-poly, control, the form-chooser, p.~\pageref*{polymorph-as-a-tool}}; \hyperref[removing-curses]{escape from cursed body armor, p.~\pageref*{removing-curses}}; \hyperref[polymorph-restrictions]{restrictions (poly self, poly objects), p.~\pageref*{polymorph-restrictions}}\par
 \hyperref[shopkeeper-behavior]{Polymorphing the shopkeeper, the prep, p.~\pageref*{shopkeeper-behavior}}\par
 \hyperref[what-pets-do-for-you]{Polymorphing your pet, titan first choice, p.~\pageref*{what-pets-do-for-you}}\par
 \hyperref[polymorph-as-a-tool]{Polypile, away from your bag, p.~\pageref*{polymorph-as-a-tool}}\par
-Potion: \hyperref[potion-prices]{prices, \$20 to \$300, p.~\pageref*{potion-prices}}; \hyperref[the-potion-table]{table, by price, p.~\pageref*{the-potion-table}}; \hyperref[potion-gain-ability]{of gain ability, blessed = all stats, p.~\pageref*{potion-gain-ability}}; \hyperref[potion-speed]{of speed, permanent intrinsic, p.~\pageref*{potion-speed}}; \hyperref[potion-gain-level]{of gain level, raises XL, p.~\pageref*{potion-gain-level}}; \hyperref[blessed-uncursed-cursed-buc]{of gain level, cursed = up through ceiling, p.~\pageref*{blessed-uncursed-cursed-buc}}; \hyperref[potion-polymorph]{of polymorph, dip-one-arrow test, p.~\pageref*{potion-polymorph}}; \hyperref[confused-reading]{of confusion, the controlled confuser, p.~\pageref*{confused-reading}}\par
+\hyperref[confused-reading]{Potion of confusion, the controlled confuser, p.~\pageref*{confused-reading}}\par
+\hyperref[potion-gain-ability]{Potion of gain ability, blessed = all stats, p.~\pageref*{potion-gain-ability}}\par
+\hyperref[blessed-uncursed-cursed-buc]{Potion of gain level, cursed = up through ceiling, p.~\pageref*{blessed-uncursed-cursed-buc}}\par
+\hyperref[potion-gain-level]{Potion of gain level, raises XL, p.~\pageref*{potion-gain-level}}\par
+\hyperref[potion-polymorph]{Potion of polymorph, dip-one-arrow test, p.~\pageref*{potion-polymorph}}\par
+\hyperref[potion-speed]{Potion of speed, permanent intrinsic, p.~\pageref*{potion-speed}}\par
+\hyperref[potion-prices]{Potion prices, \$20 to \$300, p.~\pageref*{potion-prices}}\par
+\hyperref[the-potion-table]{Potion table, by price, p.~\pageref*{the-potion-table}}\par
 \hyperref[a-practical-strategy]{Practical strategy, the workflow, p.~\pageref*{a-practical-strategy}}\par
+\hyperref[prayer]{Pray (`\#pray`), calling on your god, p.~\pageref*{prayer}}\par
 Prayer: \hyperref[the-golden-rules-of-early-survival]{emergency button cooldown, p.~\pageref*{the-golden-rules-of-early-survival}}; \hyperref[prayer]{when to, what it fixes (priority order), requirements (alignment, luck, cooldown), cooldown, \textasciitilde{}500 turn ballpark, p.~\pageref*{prayer}}\par
 \hyperref[the-roles]{Priest, BUC sense for free, p.~\pageref*{the-roles}}\par
 \hyperref[the-roles]{Priest, Demonbane first gift, p.~\pageref*{the-roles}}\par
@@ -12749,6 +12795,7 @@ Prayer: \hyperref[the-golden-rules-of-early-survival]{emergency button cooldown,
 
 \hyperref[quadrupeds-q]{`q` quadrupeds, p.~\pageref*{quadrupeds-q}}\par
 \hyperref[quantum-mechanics-q]{`Q` quantum mechanics, teleport-on-claw, p.~\pageref*{quantum-mechanics-q}}\par
+\hyperref[the-apothecary]{Quaff (`q`), drinking potions, p.~\pageref*{the-apothecary}}\par
 \hyperref[fountains]{Quaffing a fountain, slot-machine table, p.~\pageref*{fountains}}\par
 \hyperref[quantum-mechanics-q]{Quantum mechanic corpse, toggles Fast, p.~\pageref*{quantum-mechanics-q}}\par
 \hyperref[imps-and-minor-demons-i]{Quasit, drains Dex, p.~\pageref*{imps-and-minor-demons-i}}\par
@@ -12765,6 +12812,7 @@ Quest: \hyperref[the-quest]{the role's special dungeon, portal, magenta `\textas
 \hyperref[the-roles]{Ranger, +2 cloak of displacement start, p.~\pageref*{the-roles}}\par
 \hyperref[the-roles]{Ranger, dagger and arrow stack, p.~\pageref*{the-roles}}\par
 \hyperref[what-a-rank-buys-you]{Rank effects, to-hit/damage table, p.~\pageref*{what-a-rank-buys-you}}\par
+\hyperref[the-scroll-rack]{Read (`r`), scrolls and spellbooks, p.~\pageref*{the-scroll-rack}}\par
 \hyperref[deadly-mistakes]{Reading unidentified scrolls in a shop, p.~\pageref*{deadly-mistakes}}\par
 \hyperref[real-gem-prices]{Real gem prices, the table, p.~\pageref*{real-gem-prices}}\par
 \hyperref[recharging]{Recharging, n³/343 explosion formula, p.~\pageref*{recharging}}\par
@@ -12779,7 +12827,17 @@ Quest: \hyperref[the-quest]{the role's special dungeon, portal, magenta `\textas
 \hyperref[the-astral-plane]{Riders cannot be permanently killed, p.~\pageref*{the-astral-plane}}\par
 \hyperref[the-astral-plane]{Riders, three deaths of (Pestilence too), p.~\pageref*{the-astral-plane}}\par
 \hyperref[training-a-skill]{Riding, 100 squares per tick, p.~\pageref*{training-a-skill}}\par
-Ring: \hyperref[fighting-smart]{of conflict, in combat, p.~\pageref*{fighting-smart}}; \hyperref[ring-prices]{prices, \$100 to \$300, p.~\pageref*{ring-prices}}; \hyperref[the-ring-table]{table, by price tier, of free action, anti-paralysis, of teleport control, on-demand transport, of conflict, monsters fight each other, of slow digestion, foodless option, of polymorph control, less critical now, of aggravate monster, the niche use, hunger, every ring costs nutrition, of protection, chargeable, of regeneration, hungry healer, of searching, auto-search each turn, of warning, threat-color overlay, of sustain ability, prevents stat drain, p.~\pageref*{the-ring-table}}\par
+Ring: \hyperref[ring-prices]{prices, \$100 to \$300, p.~\pageref*{ring-prices}}; \hyperref[the-ring-table]{table, by price tier, of teleport control, on-demand transport, hunger, every ring costs nutrition, of sustain ability, prevents stat drain, p.~\pageref*{the-ring-table}}\par
+\hyperref[the-ring-table]{Ring of aggravate monster, the niche use, p.~\pageref*{the-ring-table}}\par
+\hyperref[fighting-smart]{Ring of conflict, in combat, p.~\pageref*{fighting-smart}}\par
+\hyperref[the-ring-table]{Ring of conflict, monsters fight each other, p.~\pageref*{the-ring-table}}\par
+\hyperref[the-ring-table]{Ring of free action, anti-paralysis, p.~\pageref*{the-ring-table}}\par
+\hyperref[the-ring-table]{Ring of polymorph control, less critical now, p.~\pageref*{the-ring-table}}\par
+\hyperref[the-ring-table]{Ring of protection, chargeable, p.~\pageref*{the-ring-table}}\par
+\hyperref[the-ring-table]{Ring of regeneration, hungry healer, p.~\pageref*{the-ring-table}}\par
+\hyperref[the-ring-table]{Ring of searching, auto-search each turn, p.~\pageref*{the-ring-table}}\par
+\hyperref[the-ring-table]{Ring of slow digestion, foodless option, p.~\pageref*{the-ring-table}}\par
+\hyperref[the-ring-table]{Ring of warning, threat-color overlay, p.~\pageref*{the-ring-table}}\par
 \hyperref[rings-and-amulets]{Rings and amulets, constrained slots, p.~\pageref*{rings-and-amulets}}\par
 \hyperref[cloaks]{Robe, casting bonus, p.~\pageref*{cloaks}}\par
 \hyperref[rodents-r]{Rock mole, eats your metal, p.~\pageref*{rodents-r}}\par
@@ -12802,7 +12860,7 @@ Rogue: \hyperref[the-roles]{multishot dagger throw, backstab bonus, p.~\pageref*
 \hyperref[arachnids-and-centipedes-s]{`s` arachnids and centipedes, p.~\pageref*{arachnids-and-centipedes-s}}\par
 \hyperref[snakes-s]{`S` snakes, p.~\pageref*{snakes-s}}\par
 \hyperref[containers]{Sack, basic storage, p.~\pageref*{containers}}\par
-Sacrifice: \hyperref[sacrifice]{fresh within 50 turns, role-biased first gift, minimum corpse value, p.~\pageref*{sacrifice}}; \hyperref[gaining-and-losing-luck]{luck ceiling, difficulty must exceed, p.~\pageref*{gaining-and-losing-luck}}\par
+Sacrifice: \hyperref[sacrifice]{fresh within 50 turns, role-biased first gift, minimum corpse value, (`\#offer`), corpses on altars, p.~\pageref*{sacrifice}}; \hyperref[gaining-and-losing-luck]{luck ceiling, difficulty must exceed, p.~\pageref*{gaining-and-losing-luck}}\par
 \hyperref[feelings-and-sounds]{Sad feeling for a moment, pet died, p.~\pageref*{feelings-and-sounds}}\par
 \hyperref[feelings-and-sounds]{Sad feeling, your pet died offscreen, p.~\pageref*{feelings-and-sounds}}\par
 \hyperref[lizards]{Salamander, Gehennom-only, p.~\pageref*{lizards}}\par
@@ -12813,14 +12871,17 @@ Sacrifice: \hyperref[sacrifice]{fresh within 50 turns, role-biased first gift, m
 \hyperref[apelike-creatures-y]{Sasquatch, fast, p.~\pageref*{apelike-creatures-y}}\par
 \hyperref[quest-artifacts]{Sceptre of Might (Caveman), conflict invoke, p.~\pageref*{quest-artifacts}}\par
 \hyperref[arachnids-and-centipedes-s]{Scorpius, named quest nemesis, p.~\pageref*{arachnids-and-centipedes-s}}\par
-Scroll: \hyperref[deadly-mistakes]{of earth on yourself, buried alive, p.~\pageref*{deadly-mistakes}}; \hyperref[taming-new-creatures]{of taming, 3×3 area, p.~\pageref*{taming-new-creatures}}; \hyperref[scroll-prices]{prices, \$20 to \$300, p.~\pageref*{scroll-prices}}; \hyperref[the-scroll-rack]{rack, single-use spells, labels, randomized, p.~\pageref*{the-scroll-rack}}; \hyperref[the-scroll-table]{table, by price, p.~\pageref*{the-scroll-table}}\par
+Scroll: \hyperref[scroll-prices]{prices, \$20 to \$300, p.~\pageref*{scroll-prices}}; \hyperref[the-scroll-rack]{rack, single-use spells, labels, randomized, table, by price, p.~\pageref*{the-scroll-rack}}\par
 \hyperref[scroll-charging]{Scroll of charging, save for wand of wishing, p.~\pageref*{scroll-charging}}\par
+\hyperref[deadly-mistakes]{Scroll of earth on yourself, buried alive, p.~\pageref*{deadly-mistakes}}\par
 \hyperref[scroll-genocide]{Scroll of genocide, the nuclear option, p.~\pageref*{scroll-genocide}}\par
 \hyperref[scroll-identify]{Scroll of identify, blessed jackpot 1-in-5, p.~\pageref*{scroll-identify}}\par
 \hyperref[scroll-identify]{Scroll of identify, main-inventory only, p.~\pageref*{scroll-identify}}\par
 \hyperref[scroll-scare-monster]{Scroll of scare monster, drop don't read, p.~\pageref*{scroll-scare-monster}}\par
 \hyperref[practical-use]{Scroll of scare monster, drop-and-stand, p.~\pageref*{practical-use}}\par
+\hyperref[taming-new-creatures]{Scroll of taming, 3×3 area, p.~\pageref*{taming-new-creatures}}\par
 \hyperref[scroll-teleportation]{Scroll of teleportation, escape hatch, p.~\pageref*{scroll-teleportation}}\par
+\hyperref[finding-secret-doors]{Search (`s`), secret doors and traps, p.~\pageref*{finding-secret-doors}}\par
 \hyperref[searching-and-detection]{Searching (`s` command), repeat with luck, p.~\pageref*{searching-and-detection}}\par
 \hyperref[the-sink-test-rings]{Searching ring, kept on drop, p.~\pageref*{the-sink-test-rings}}\par
 \hyperref[finding-secret-doors]{Secret doors, the architects believed in them, p.~\pageref*{finding-secret-doors}}\par
@@ -12844,6 +12905,7 @@ Shield: \hyperref[level-drain]{of drain resistance, new in 5.0, p.~\pageref*{lev
 Sink: \hyperref[sinks]{kicking for rings and trouble, the amorous dishwasher demon, dipping potions for messages, quaffing the drain, dropping a ring down, p.~\pageref*{sinks}}; \hyperref[the-sink-test-rings]{test, the ring drop, p.~\pageref*{the-sink-test-rings}}\par
 \hyperref[delayed-deaths]{Sinking in lava, levitate or pray, p.~\pageref*{delayed-deaths}}\par
 \hyperref[sinks]{Sinks, dungeon's underrated ID tool, p.~\pageref*{sinks}}\par
+\hyperref[thrones]{Sit (`\#sit`), throne, altar, fountain, p.~\pageref*{thrones}}\par
 \hyperref[zombies-z]{Skeleton, only from a trap, p.~\pageref*{zombies-z}}\par
 \hyperref[the-skill-ladder]{Skill ladder, Unskilled to Grand Master, p.~\pageref*{the-skill-ladder}}\par
 \hyperref[the-skill-ladder]{Skill slots, 2 + XL + crowning, p.~\pageref*{the-skill-ladder}}\par
@@ -12857,7 +12919,7 @@ Sink: \hyperref[sinks]{kicking for rings and trouble, the amorous dishwasher dem
 \hyperref[a-note-on-mimics]{Small mimic, top-ten killer, p.~\pageref*{a-note-on-mimics}}\par
 \hyperref[shields]{Small shield, no spellcast penalty, p.~\pageref*{shields}}\par
 \hyperref[wishable-random-artifacts]{Snickersnee (Samurai katana), Shkinng! free polearm reach, p.~\pageref*{wishable-random-artifacts}}\par
-Sokoban: \hyperref[sokoban]{entry one level above Oracle, boulders into pits, no teleport here, cheating cost (–1 Luck each), prize, bag of holding or amulet of reflection, Strength training side effect, p.~\pageref*{sokoban}}; \hyperref[sokoban-solutions]{solutions appendix, solving without cheating, mirrored variants (new in 5.0), p.~\pageref*{sokoban-solutions}}; \hyperref[level-1-version-a]{level 1 A and B variants, scrolls of earth as fillers, p.~\pageref*{level-1-version-a}}; \hyperref[level-2-version-a]{level 2 variants, p.~\pageref*{level-2-version-a}}; \hyperref[level-3-version-a]{level 3 variants, p.~\pageref*{level-3-version-a}}; \hyperref[level-4-version-a]{level 4 variants (the prize), p.~\pageref*{level-4-version-a}}; \hyperref[sokoban-new-in-5.0]{(no cheating) conduct (new in 5.0), p.~\pageref*{sokoban-new-in-5.0}}\par
+Sokoban: \hyperref[sokoban]{entry one level above Oracle, boulders into pits, no teleport here, cheating cost (–1 Luck each), prize, bag of holding or amulet of reflection, Strength training side effect, p.~\pageref*{sokoban}}; \hyperref[sokoban-solutions]{solutions appendix, solving without cheating, mirrored variants (new in 5.0), level 1 A and B variants, scrolls of earth as fillers, p.~\pageref*{sokoban-solutions}}; \hyperref[level-2-version-a]{level 2 variants, p.~\pageref*{level-2-version-a}}; \hyperref[level-3-version-a]{level 3 variants, p.~\pageref*{level-3-version-a}}; \hyperref[level-4-version-a]{level 4 variants (the prize), p.~\pageref*{level-4-version-a}}; \hyperref[sokoban-new-in-5.0]{(no cheating) conduct (new in 5.0), p.~\pageref*{sokoban-new-in-5.0}}\par
 \hyperref[ants-and-insects-a]{Soldier ant, speed 18 packs, p.~\pageref*{ants-and-insects-a}}\par
 \hyperref[room-types]{Special rooms, what to expect, p.~\pageref*{room-types}}\par
 \hyperref[boots]{Speed boots, free action on 2/3 turns, p.~\pageref*{boots}}\par
@@ -12915,12 +12977,14 @@ Spellbook: \hyperref[spellbook-prices]{prices, 100 × level, p.~\pageref*{spellb
 \hyperref[room-types]{Themed rooms, new in 5.0, p.~\pageref*{room-types}}\par
 \hyperref[things-that-will-kill-you]{Things that will kill you, p.~\pageref*{things-that-will-kill-you}}\par
 Throne: \hyperref[room-types]{room, sit at your own risk, p.~\pageref*{room-types}}; \hyperref[thrones]{the purest gamble, wish only at positive Luck 7+, vanishes in a puff of logic, kicking for gold and gems, p.~\pageref*{thrones}}; \hyperref[the-castle]{room (Castle court), p.~\pageref*{the-castle}}\par
+\hyperref[the-art-of-combat]{Throw (`t`), daggers and projectiles, p.~\pageref*{the-art-of-combat}}\par
 \hyperref[use-testing-the-careful-way]{Throw potions at monsters (potion test), p.~\pageref*{use-testing-the-careful-way}}\par
 \hyperref[the-price-is-right]{Throw-into-shop trick, free quote, p.~\pageref*{the-price-is-right}}\par
 \hyperref[what-to-eat]{Tin of spinach, +1 Str, p.~\pageref*{what-to-eat}}\par
 \hyperref[other-notable-tools]{Tin opener, blessed instant, p.~\pageref*{other-notable-tools}}\par
 \hyperref[other-notable-tools]{Tinning kit, intrinsic grinder bypass, p.~\pageref*{other-notable-tools}}\par
 \hyperref[what-to-eat]{Tins, the occupation trap, p.~\pageref*{what-to-eat}}\par
+\hyperref[gray-stones-four-stones-one-correct-answer]{Tip (`\#tip`), dumping containers (loadstone escape), p.~\pageref*{gray-stones-four-stones-one-correct-answer}}\par
 \hyperref[giant-humanoids-h]{Titan, spell-casting pet target, p.~\pageref*{giant-humanoids-h}}\par
 \hyperref[to-hit-calculation]{To-hit roll, the d20 of fate, p.~\pageref*{to-hit-calculation}}\par
 \hyperref[tools-of-the-trade]{Tools of the trade, eclectic category, p.~\pageref*{tools-of-the-trade}}\par
@@ -12939,6 +13003,7 @@ Throne: \hyperref[room-types]{room, sit at your own risk, p.~\pageref*{room-type
 \hyperref[trappers-and-lurkers-t]{Trapper, floor in disguise, p.~\pageref*{trappers-and-lurkers-t}}\par
 \hyperref[traps-and-hazards]{Traps, found by stepping on them, p.~\pageref*{traps-and-hazards}}\par
 \hyperref[travel]{Travel (`\_`), shortest path autopilot, p.~\pageref*{travel}}\par
+\hyperref[advanced-controls]{Travel (`\_`), the autopilot, p.~\pageref*{advanced-controls}}\par
 \hyperref[feeding-and-loyalty]{Tripe ration, dog food, p.~\pageref*{feeding-and-loyalty}}\par
 \hyperref[a-note-on-trolls]{Trolls, gear-and-corpse loop, p.~\pageref*{a-note-on-trolls}}\par
 \hyperref[a-note-on-trolls]{Trolls, revive timer, p.~\pageref*{a-note-on-trolls}}\par
@@ -12956,7 +13021,10 @@ Throne: \hyperref[room-types]{room, sit at your own risk, p.~\pageref*{room-type
 \hyperref[unicorns-and-horses-u]{`u` horses and unicorns, p.~\pageref*{unicorns-and-horses-u}}\par
 \hyperref[umber-hulks-u]{`U` umber hulk, confusion gaze, p.~\pageref*{umber-hulks-u}}\par
 \hyperref[blessed-uncursed-cursed-buc]{Unholy water, the evil twin, p.~\pageref*{blessed-uncursed-cursed-buc}}\par
-Unicorn: \hyperref[unicorns-and-horses-u]{gem-throwing playbook, p.~\pageref*{unicorns-and-horses-u}}; \hyperref[altars-and-alignment]{(co-aligned), never sacrifice, p.~\pageref*{altars-and-alignment}}; \hyperref[unicorn-horn-interactions]{horn, dip table, horn, no longer a cure-all, p.~\pageref*{unicorn-horn-interactions}}; \hyperref[other-notable-tools]{horn, status-cure all, horn, blessed seven ailments, p.~\pageref*{other-notable-tools}}; \hyperref[gaining-and-losing-luck]{gem-throwing, +5 luck max, p.~\pageref*{gaining-and-losing-luck}}\par
+\hyperref[altars-and-alignment]{Unicorn (co-aligned), never sacrifice, p.~\pageref*{altars-and-alignment}}\par
+\hyperref[gaining-and-losing-luck]{Unicorn gem-throwing, +5 luck max, p.~\pageref*{gaining-and-losing-luck}}\par
+Unicorn horn: \hyperref[unicorn-horn-interactions]{dip table, no longer a cure-all, p.~\pageref*{unicorn-horn-interactions}}; \hyperref[other-notable-tools]{status-cure all, blessed seven ailments, p.~\pageref*{other-notable-tools}}\par
+\hyperref[unicorns-and-horses-u]{Unicorn, gem-throwing playbook, p.~\pageref*{unicorns-and-horses-u}}\par
 \hyperref[unlocking-tools]{Unlocking tools, skeleton key best, p.~\pageref*{unlocking-tools}}\par
 \hyperref[use-testing-the-careful-way]{Use-testing, the careful way, p.~\pageref*{use-testing-the-careful-way}}\par
 \hyperref[useful-corpse-effects]{Useful corpse effects (meat), p.~\pageref*{useful-corpse-effects}}\par
@@ -12993,9 +13061,10 @@ Vlad's: \hyperref[vlads-tower]{throne, fourth sit's the charm, Tower, branches u
 \hyperref[worms-w]{`w` worms, p.~\pageref*{worms-w}}\par
 \hyperref[wraiths-w]{`W` wraiths, p.~\pageref*{wraiths-w}}\par
 \hyperref[credit-and-debt]{Walk-out hazard, unpaid items, p.~\pageref*{credit-and-debt}}\par
-Wand: \hyperref[searching-and-detection]{of secret door detection, no aim, p.~\pageref*{searching-and-detection}}; \hyperref[wand-prices]{prices, \$100 to \$500, p.~\pageref*{wand-prices}}; \hyperref[the-engrave-test-wands]{identifying by engraving, p.~\pageref*{the-engrave-test-wands}}; \hyperref[the-wand-table]{table, type and engrave-test, p.~\pageref*{the-wand-table}}; \hyperref[wand-fire-cold-lightning]{of cold, freezes water (ice path), p.~\pageref*{wand-fire-cold-lightning}}; \hyperref[wand-make-invisible]{of make invisible, 31-45 turns now, p.~\pageref*{wand-make-invisible}}; \hyperref[wand-stasis]{of stasis, new in 5.0, p.~\pageref*{wand-stasis}}; \hyperref[key-wands]{of probing, diagnostic tool, p.~\pageref*{key-wands}}; \hyperref[wands-and-staves]{of secret door detection, area reveal, p.~\pageref*{wands-and-staves}}; \hyperref[the-castle]{of striking, destroys drawbridge, of opening / spell of knock, opens drawbridge, p.~\pageref*{the-castle}}; \hyperref[orcus-town]{of Orcus, his fingertip death ray, p.~\pageref*{orcus-town}}\par
+Wand: \hyperref[wand-prices]{prices, \$100 to \$500, p.~\pageref*{wand-prices}}; \hyperref[the-engrave-test-wands]{identifying by engraving, p.~\pageref*{the-engrave-test-wands}}; \hyperref[the-wand-table]{table, type and engrave-test, p.~\pageref*{the-wand-table}}; \hyperref[orcus-town]{of Orcus, his fingertip death ray, p.~\pageref*{orcus-town}}\par
 \hyperref[wand-cancellation]{Wand of cancellation, never in a bag, p.~\pageref*{wand-cancellation}}\par
 \hyperref[wand-cancellation]{Wand of cancellation, on cursed bag of holding, p.~\pageref*{wand-cancellation}}\par
+\hyperref[wand-fire-cold-lightning]{Wand of cold, freezes water (ice path), p.~\pageref*{wand-fire-cold-lightning}}\par
 \hyperref[the-astral-plane]{Wand of death on Death, heals him, p.~\pageref*{the-astral-plane}}\par
 \hyperref[the-touch-of-death]{Wand of death, don't zap at Death, p.~\pageref*{the-touch-of-death}}\par
 \hyperref[wand-death]{Wand of death, the closer, p.~\pageref*{wand-death}}\par
@@ -13004,7 +13073,14 @@ Wand: \hyperref[searching-and-detection]{of secret door detection, no aim, p.~\p
 \hyperref[engulfment]{Wand of digging, escape from inside, p.~\pageref*{engulfment}}\par
 \hyperref[engravings]{Wand of fire, burns Elbereth permanently, p.~\pageref*{engravings}}\par
 \hyperref[wand-fire-cold-lightning]{Wand of fire, cold, lightning (rays), p.~\pageref*{wand-fire-cold-lightning}}\par
+\hyperref[wand-make-invisible]{Wand of make invisible, 31-45 turns now, p.~\pageref*{wand-make-invisible}}\par
+\hyperref[the-castle]{Wand of opening / spell of knock, opens drawbridge, p.~\pageref*{the-castle}}\par
 \hyperref[wand-polymorph]{Wand of polymorph, on a pile (polypile), p.~\pageref*{wand-polymorph}}\par
+\hyperref[key-wands]{Wand of probing, diagnostic tool, p.~\pageref*{key-wands}}\par
+\hyperref[wands-and-staves]{Wand of secret door detection, area reveal, p.~\pageref*{wands-and-staves}}\par
+\hyperref[searching-and-detection]{Wand of secret door detection, no aim, p.~\pageref*{searching-and-detection}}\par
+\hyperref[wand-stasis]{Wand of stasis, new in 5.0, p.~\pageref*{wand-stasis}}\par
+\hyperref[the-castle]{Wand of striking, destroys drawbridge, p.~\pageref*{the-castle}}\par
 \hyperref[wand-teleportation]{Wand of teleportation, monster removal, p.~\pageref*{wand-teleportation}}\par
 \hyperref[wand-wishing]{Wand of wishing, found with one charge, p.~\pageref*{wand-wishing}}\par
 \hyperref[wand-wishing]{Wand of wishing, recharge once and only once, p.~\pageref*{wand-wishing}}\par
@@ -13024,6 +13100,7 @@ Water: \hyperref[snakes-s]{moccasin, from fountain, p.~\pageref*{snakes-s}}; \hy
 \hyperref[what-to-wish-for]{What to wish for, GDSM/SDSM/speed/gauntlets/lifesaving, p.~\pageref*{what-to-wish-for}}\par
 \hyperref[a-note-on-dragons]{White dragon scale mail, cold + slow digestion, p.~\pageref*{a-note-on-dragons}}\par
 \hyperref[why-luck-matters]{Why Luck matters, even the gods are picky, p.~\pageref*{why-luck-matters}}\par
+\hyperref[two-weapon-combat]{Wield (`w`), choosing your weapon, p.~\pageref*{two-weapon-combat}}\par
 \hyperref[whats-different-in-gehennom]{Wielding Excalibur or Demonbane, no bribery, p.~\pageref*{whats-different-in-gehennom}}\par
 Wish: \hyperref[sources-of-wishes]{sources, six in total, p.~\pageref*{sources-of-wishes}}; \hyperref[wish-syntax]{syntax, blessed greased fixed +3 GDSM, silent substitutions (fake amulet, etc.), p.~\pageref*{wish-syntax}}; \hyperref[wishing-restrictions]{for \\"nothing\\", the escape hatch, p.~\pageref*{wishing-restrictions}}\par
 \hyperref[wishable-random-artifacts]{Wishable artifacts, the random pool, p.~\pageref*{wishable-random-artifacts}}\par
@@ -13057,7 +13134,10 @@ Wizard: \hyperref[the-roles]{kitten that won't share lunch, cloak of magic resis
 \hyperref[acknowledgements]{YASD (Yet Another Stupid Death), p.~\pageref*{acknowledgements}}\par
 \hyperref[your-first-descent]{YASD, inevitability of, p.~\pageref*{your-first-descent}}\par
 \hyperref[major-demons]{Yeenoghu, attacks on sight, p.~\pageref*{major-demons}}\par
-Yellow: \hyperref[light-bursts]{light, blinds 10d20 turns, p.~\pageref*{light-bursts}}; \hyperref[a-note-on-dragons]{dragon scale mail, stoning resistance bonus, p.~\pageref*{a-note-on-dragons}}; \hyperref[fungi-and-molds-f]{mold, stuns and poisons, p.~\pageref*{fungi-and-molds-f}}; \hyperref[petrification-stoning]{dragon scale mail, permanent stoning resistance, p.~\pageref*{petrification-stoning}}\par
+\hyperref[petrification-stoning]{Yellow dragon scale mail, permanent stoning resistance, p.~\pageref*{petrification-stoning}}\par
+\hyperref[a-note-on-dragons]{Yellow dragon scale mail, stoning resistance bonus, p.~\pageref*{a-note-on-dragons}}\par
+\hyperref[light-bursts]{Yellow light, blinds 10d20 turns, p.~\pageref*{light-bursts}}\par
+\hyperref[fungi-and-molds-f]{Yellow mold, stuns and poisons, p.~\pageref*{fungi-and-molds-f}}\par
 \hyperref[useful-corpse-effects]{Yeti corpse, cold resistance, p.~\pageref*{useful-corpse-effects}}\par
 \hyperref[apelike-creatures-y]{Yeti, cold resistance corpse, p.~\pageref*{apelike-creatures-y}}\par
 \hyperref[dungeon-hazards-and-how-to-survive-them]{Your own pet, swapping places, p.~\pageref*{dungeon-hazards-and-how-to-survive-them}}\par
@@ -13066,6 +13146,7 @@ Yellow: \hyperref[light-bursts]{light, blinds 10d20 turns, p.~\pageref*{light-bu
 
 \hyperref[zombies-z]{`Z` zombies, p.~\pageref*{zombies-z}}\par
 \hyperref[zruties-z]{`z` zruty, three-attack brute, p.~\pageref*{zruties-z}}\par
+\hyperref[wands-and-staves]{Zap (`z`), wand direction prompts, p.~\pageref*{wands-and-staves}}\par
 \hyperref[room-types]{Zoo, wake them one at a time, p.~\pageref*{room-types}}\par
 \hyperref[the-map-symbols]{Zorkmid, abbreviation zm, p.~\pageref*{the-map-symbols}}\par
 
