@@ -12107,6 +12107,1249 @@ passes through doors, bat flies, vampire fights — plan routes by
 form rather than direction, so traversing the dungeon map can be
 a very different experience.
 
+::: print-only
+
+## Index of Useful Knowledge
+
+```{=latex}
+\begin{multicols}{2}
+\footnotesize\raggedright\setlength{\parskip}{0.15em plus 0.05em}
+\setlength{\parindent}{0pt}
+\hyphenpenalty=10000\exhyphenpenalty=10000
+
+\par\smallskip{\normalsize\bfseries 0--9}\par\smallskip
+
+\$200 potions, the hidden traps, p.~\pageref*{use-testing-the-careful-way}\par
+\$30 boots, the warning, p.~\pageref*{armor-prices}\par
+\$500 wand, very good day, p.~\pageref*{wand-prices}\par
+`\&` major demons, p.~\pageref*{major-demons}\par
+`'` golems, p.~\pageref*{golems}\par
+0.4\%, the ascension rate, p.~\pageref*{things-that-will-kill-you}\par
+20s, the search command, p.~\pageref*{finding-secret-doors}\par
+5.0, chain lightning, p.~\pageref*{what-changed-since-last-time}\par
+5.0, dragon scale mail two extrinsics, p.~\pageref*{what-changed-since-last-time}\par
+5.0, four new monster species, p.~\pageref*{what-changed-since-last-time}\par
+5.0, gold dragon (new species, light source mail), p.~\pageref*{what-changed-since-last-time}\par
+5.0, helm of caution, p.~\pageref*{what-changed-since-last-time}\par
+5.0, monsters loot containers, p.~\pageref*{what-changed-since-last-time}\par
+5.0, new dangers (sacrifice ceiling, hot ground), p.~\pageref*{new-dangers}\par
+5.0, new hacks (blessed polymorph potion, vampire forms), p.~\pageref*{new-hacks}\par
+5.0, pet revival at altar, p.~\pageref*{what-changed-since-last-time}\par
+5.0, sink dipping for potions, p.~\pageref*{what-changed-since-last-time}\par
+5.0, supply chests, p.~\pageref*{what-changed-since-last-time}\par
+5.0, themed rooms became a regular feature, p.~\pageref*{what-changed-since-last-time}\par
+5.0, touch of death reworked (not instakill), p.~\pageref*{what-changed-since-last-time}\par
+5.0, two-handed weapons +50\% Str damage, p.~\pageref*{what-changed-since-last-time}\par
+5.0, unicorn horn no longer restores stats, p.~\pageref*{what-changed-since-last-time}\par
+52 inventory slots, the letter limit, p.~\pageref*{carrying-capacity}\par
+`:` lizards, p.~\pageref*{lizards}\par
+`;` sea monsters, p.~\pageref*{sea-monsters}\par
+`@` humans and elves (monster class), p.~\pageref*{humans-and-elves}\par
+`]` strange object, always a mimic, p.~\pageref*{a-note-on-mimics}\par
+`\textasciitilde{}` long worm tail, p.~\pageref*{special-symbols}\par
+
+\par\smallskip{\normalsize\bfseries A}\par\smallskip
+
+`A` angelic beings, p.~\pageref*{angelic-beings-a}\par
+`a` ants and insects, p.~\pageref*{ants-and-insects-a}\par
+AC, special attacks ignore, p.~\pageref*{ac-and-defense}\par
+AC, the AC ladder to -20, p.~\pageref*{ac-and-defense}\par
+Acid blob corpse, stoning resistance (timed), p.~\pageref*{vegetarian-safe-corpses}\par
+Acid blob corpse, timed stoning resistance, p.~\pageref*{petrification-stoning}\par
+Acid blob, melee with bare hands (don't), p.~\pageref*{blobs-b}\par
+Ad aerarium engraving, vault closet marker, p.~\pageref*{engravings}\par
+\#adjust, swap and merge letters, p.~\pageref*{carrying-capacity}\par
+Advanced controls, faster play, p.~\pageref*{advanced-controls}\par
+Air elemental, engulfs and suffocates, p.~\pageref*{elementals-e}\par
+Air, fire, ice, steam, energy, dust vortex, p.~\pageref*{vortices-v}\par
+Alchemy chain, healing → extra → full → gain ability, p.~\pageref*{alchemy}\par
+Alchemy smock, blast chance \textasciitilde{}1 in 30, p.~\pageref*{alchemy}\par
+Alchemy smock, poison resistance, p.~\pageref*{cloaks}\par
+Alchemy, dip recipes, p.~\pageref*{alchemy}\par
+Aleax, fights cheap-aligned heroes, p.~\pageref*{angelic-beings-a}\par
+Alignment and blasting, misaligned artifact damage, p.~\pageref*{alignment-and-blasting}\par
+Alignment, it's a number, p.~\pageref*{alignment}\par
+Altar conversion, the inversion trap, p.~\pageref*{altars-and-alignment}\par
+Altar, amber/black flash, p.~\pageref*{altars-_}\par
+Altar, BUC test at, p.~\pageref*{altars-_}\par
+Altar, converting a cross-aligned, p.~\pageref*{altars-_}\par
+Altar, dropping the whole pile, p.~\pageref*{altars-_}\par
+Altars, converting cross-aligned, p.~\pageref*{altars-and-alignment}\par
+Altars, single most useful furniture, p.~\pageref*{altars-_}\par
+Ambiguous engrave results, resolving, p.~\pageref*{resolving-ambiguous-engrave-results}\par
+Amorous demon, expensive evening with, p.~\pageref*{seduction}\par
+Amulet blocks teleportation, climb by foot, p.~\pageref*{the-gauntlet}\par
+Amulet of ESP (telepathy), p.~\pageref*{amulets}\par
+Amulet of flying, mount flies too (new in 5.0), p.~\pageref*{amulets}\par
+Amulet of guarding, +2 AC +2 MC (new in 5.0), p.~\pageref*{amulets}\par
+Amulet of life saving, revives once, p.~\pageref*{amulets}\par
+Amulet of life saving, when to wear, p.~\pageref*{amulets}\par
+Amulet of magical breathing, underwater, p.~\pageref*{amulets}\par
+Amulet of reflection, ray bouncing, p.~\pageref*{amulets}\par
+Amulet of restful sleep, the rebrand, p.~\pageref*{amulets}\par
+Amulet of strangulation, 90\% cursed, p.~\pageref*{amulets}\par
+Amulet of strangulation, timer death, p.~\pageref*{choking}\par
+Amulet of unchanging, blocks polymorph, p.~\pageref*{amulets}\par
+Amulet of unchanging, blocks slime, p.~\pageref*{delayed-deaths}\par
+Amulet of Yendor pickup wish, on next turn, p.~\pageref*{the-ascension-run}\par
+Amulet of Yendor, retrieving, p.~\pageref*{the-ascension-run}\par
+Amulet of Yendor, the compass, p.~\pageref*{the-elemental-planes}\par
+Amulet of Yendor, the prize, p.~\pageref*{molochs-sanctum}\par
+Amulet prices, all \$150, p.~\pageref*{amulet-prices}\par
+Amulets, all the same price, p.~\pageref*{amulets}\par
+Angel, on the Astral Plane, p.~\pageref*{angelic-beings-a}\par
+Angry-shopkeeper +33\% surcharge, permanent, p.~\pageref*{the-price-is-right}\par
+Annotate (`\#annotate`), labeling stash floors, p.~\pageref*{dungeon-overview-and-event-journal}\par
+Anti-magic field, hits harder with MR, p.~\pageref*{dangerous-traps}\par
+Ants, pack travelers, p.~\pageref*{common-combat-deaths}\par
+Apothecary, mysterious bottles, p.~\pageref*{the-apothecary}\par
+Apport, the fetching score, p.~\pageref*{what-pets-do-for-you}\par
+Arch-lich, touch of death, p.~\pageref*{liches-l}\par
+Archeologist, pickaxe from turn one, p.~\pageref*{the-roles}\par
+Archeologist, touchstone advantage, p.~\pageref*{the-roles}\par
+Archon, the consensus ultimate pet, p.~\pageref*{what-pets-do-for-you}\par
+Archon, ultimate pet, p.~\pageref*{angelic-beings-a}\par
+Armor and AC, the slot list, p.~\pageref*{armor-and-ac}\par
+Armor improvements, even basic, p.~\pageref*{the-early-shopping-list}\par
+Armor pools, helms cloaks gloves boots, p.~\pageref*{use-testing-the-careful-way}\par
+Armor prices, the danger zones, p.~\pageref*{armor-prices}\par
+Armor tables (full appendix), p.~\pageref*{armor-tables}\par
+Armor, randomized appearances, p.~\pageref*{use-testing-the-careful-way}\par
+Armory, weapons and armor strategy, p.~\pageref*{the-armory}\par
+Arrow trap, free ammunition farm, p.~\pageref*{nuisance-traps}\par
+Artifacts, scattered legends, p.~\pageref*{artifacts}\par
+Artifacts, sources (sacrifice, quest, wish, fountain, random), p.~\pageref*{artifacts}\par
+Ascension kit, the canonical loadout, p.~\pageref*{the-ascension-kit}\par
+Ascension Run strategy, run don't fight, p.~\pageref*{strategy}\par
+Ascension Run, the gauntlet, p.~\pageref*{the-ascension-run}\par
+Ascension, how to not die during, p.~\pageref*{the-ascension-run}\par
+Ascension, three things winners do that runners-up don't, p.~\pageref*{what-killed-the-runners-up}\par
+Asmodeus, bribable cold caster, p.~\pageref*{the-demon-prince-lairs}\par
+Astral Plane, three altars, p.~\pageref*{the-astral-plane}\par
+Astral, choose wrong altar = game ends, p.~\pageref*{the-astral-plane}\par
+Astral, farlook reveals altar only when adjacent, p.~\pageref*{the-astral-plane}\par
+Athame, the non-dulling stylus, p.~\pageref*{engravings}\par
+Atheist conduct, p.~\pageref*{atheist}\par
+Atheist, ascension Amulet offering is exempt, p.~\pageref*{atheist}\par
+Attack school, force bolt grind, p.~\pageref*{the-seven-spell-schools}\par
+Authentic Amulet, only from the High Priest, p.~\pageref*{the-ascension-run}\par
+Auto-curse items, read as uncursed (trap), p.~\pageref*{blessed-uncursed-cursed-buc}\par
+Auto-curse rings (teleport, polymorph, aggravate, hunger), p.~\pageref*{the-ring-table}\par
+Autopickup and pickup\_types, p.~\pageref*{options-worth-knowing-about}\par
+
+\par\smallskip{\normalsize\bfseries B}\par\smallskip
+
+`B` bats and birds, p.~\pageref*{bats-and-birds-b}\par
+`b` blobs, p.~\pageref*{blobs-b}\par
+Baalzebub, beetle-shaped lair, p.~\pageref*{the-demon-prince-lairs}\par
+Baby dragon, doesn't breathe, p.~\pageref*{dragons-d}\par
+Bag of holding, never insert wand of cancellation, p.~\pageref*{containers}\par
+Bag of holding, the turning point, p.~\pageref*{containers}\par
+Bag of tricks, not actually a bag, p.~\pageref*{containers}\par
+Balrog, slow but heavy, p.~\pageref*{major-demons}\par
+Bane weapons, defensive riders, p.~\pageref*{wishable-random-artifacts}\par
+Barbarian, just hit things harder, p.~\pageref*{the-roles}\par
+Barbarian, poison resistance gift, p.~\pageref*{the-roles}\par
+Barracks, organized armed soldiers, p.~\pageref*{room-types}\par
+Bats and speedsters, doorway fighting, p.~\pageref*{common-combat-deaths}\par
+Battle-axe, two-handed good damage, p.~\pageref*{weapons}\par
+Bear trap, escape diagonally, p.~\pageref*{dangerous-traps}\par
+Beehive, royal jelly inside, p.~\pageref*{room-types}\par
+Bell of Opening, Invocation item, p.~\pageref*{other-notable-tools}\par
+Bell of Opening, looted from nemesis, p.~\pageref*{the-quest}\par
+Bestiary tables (full appendix), p.~\pageref*{bestiary-tables}\par
+Bestiary, by letter, p.~\pageref*{field-guide-to-dungeon-fauna}\par
+Black dragon scale mail, disintegration + drain res, p.~\pageref*{a-note-on-dragons}\par
+Black light, hallucinates, p.~\pageref*{light-bursts}\par
+Black naga corpse, three resistances, p.~\pageref*{nagas-n}\par
+Black pudding glob from a sink, snack of resistances, p.~\pageref*{the-golden-rules-of-early-survival}\par
+Black pudding, do not split with iron, p.~\pageref*{a-note-on-puddings}\par
+Blessed genocide, class L wipe, p.~\pageref*{scroll-genocide}\par
+Blessed potion of polymorph, controlled poly (new in 5.0), p.~\pageref*{potion-polymorph}\par
+Blessed spellbook, auto-success, p.~\pageref*{learning-spells}\par
+Blind / Zen conduct, p.~\pageref*{combining-conducts}\par
+Blindfold, voluntary blindness, p.~\pageref*{other-notable-tools}\par
+Blue dragon scale mail, shock + speed, p.~\pageref*{a-note-on-dragons}\par
+Blue jelly corpse, cold + poison resistance, p.~\pageref*{jellies-j}\par
+Body armor (suits) table, p.~\pageref*{body-armor-suits}\par
+BoH, ascension carry, p.~\pageref*{containers}\par
+Boiling and shattering potions, Gehennom hot ground, p.~\pageref*{deadly-mistakes}\par
+Bones level, 80\% cursed items, p.~\pageref*{things-that-will-kill-you}\par
+Bones level, monsters above depth, p.~\pageref*{things-that-will-kill-you}\par
+Bones-shop gotcha, items still belong, p.~\pageref*{shopkeeper-behavior}\par
+Bonesless conduct, must disable bones (new in 5.0), p.~\pageref*{bonesless-new-in-5.0}\par
+Book of the Dead, at the Tower bottom, p.~\pageref*{the-wizards-tower}\par
+Boots, p.~\pageref*{boots}\par
+Brainlessness, mind flayer drain, p.~\pageref*{brainlessness}\par
+Branch order, Sokoban or Mines first, p.~\pageref*{branches-and-landmarks}\par
+Branch staircases, turn yellow, p.~\pageref*{the-map-symbols}\par
+Breaking a mirror, –2 Luck, p.~\pageref*{gaining-and-losing-luck}\par
+Bribe demand, halved for Lawful visitors, p.~\pageref*{whats-different-in-gehennom}\par
+Brown mold, passive cold, p.~\pageref*{fungi-and-molds-f}\par
+Brown pudding, vegetarian-safe glob, p.~\pageref*{a-note-on-puddings}\par
+BUC (Blessed Uncursed Cursed), p.~\pageref*{blessed-uncursed-cursed-buc}\par
+BUC, avoiding curses by checking, p.~\pageref*{blessed-uncursed-cursed-buc}\par
+BUC, pet step-around, p.~\pageref*{blessed-uncursed-cursed-buc}\par
+BUC, the altar amber/black flash, p.~\pageref*{blessed-uncursed-cursed-buc}\par
+Bugle reveille, soldier woke neighbors, p.~\pageref*{feelings-and-sounds}\par
+Burdened status, two hits per yours, p.~\pageref*{the-early-shopping-list}\par
+Burdened, Stressed, Strained, Overtaxed, Overloaded, p.~\pageref*{carrying-capacity}\par
+Buried treasure room, dig for it, p.~\pageref*{room-types}\par
+
+\par\smallskip{\normalsize\bfseries C}\par\smallskip
+
+`C` centaurs, p.~\pageref*{centaurs-c}\par
+`c` cockatrices, p.~\pageref*{cockatrices-c}\par
+Can of grease, slip and waterproofing, p.~\pageref*{other-notable-tools}\par
+Candelabrum of Invocation, at top of Vlad's Tower, p.~\pageref*{vlads-tower}\par
+Candelabrum of Invocation, requires seven candles, p.~\pageref*{light-sources}\par
+Cannibalism, –2 to –5 Luck plus aggravate, p.~\pageref*{dangerous-foods}\par
+Carrying Amulet, casts cost more (drop to cast), p.~\pageref*{strategy}\par
+Carrying capacity, 25(Str+Con)+50, p.~\pageref*{carrying-capacity}\par
+Castle overview, the gateway to Gehennom, p.~\pageref*{castle-overview}\par
+Castle wand chest, sitting on cursed scroll of scare monster, p.~\pageref*{the-castle}\par
+Castle, central hallway of five trap doors, p.~\pageref*{the-castle}\par
+Castle, storming the, p.~\pageref*{the-castle}\par
+Castle, two wishes reliably (1 charge + 1 recharge), p.~\pageref*{the-castle}\par
+Cave Dweller, sling and flint, p.~\pageref*{the-roles}\par
+Cave spider, eat for poison resistance, p.~\pageref*{arachnids-and-centipedes-s}\par
+Chain lightning, 5.0 room-clearer, p.~\pageref*{key-spells}\par
+Chameleon corpse, polymorphs you, p.~\pageref*{lizards}\par
+Chaotic, paired with Rogue for theme, p.~\pageref*{alignment}\par
+Charging a wand of wishing, exactly once, p.~\pageref*{scroll-charging}\par
+Charging, explosion chance (n³/7³), p.~\pageref*{scroll-charging}\par
+Charisma, buy-price bands, p.~\pageref*{the-price-is-right}\par
+Charm monster, 3×3 tame, p.~\pageref*{key-spells}\par
+Charon, ferryman, p.~\pageref*{humans-and-elves}\par
+Chat to shopkeeper, polite price-ID, p.~\pageref*{the-price-is-right}\par
+Cheapskate flag, priest grudge, p.~\pageref*{donating-to-priests}\par
+Choking, eating past Satiated, p.~\pageref*{choking}\par
+Chromatic Dragon, random breath weapons, p.~\pageref*{dragons-d}\par
+Chronicle (`v` / \#chronicle), the journal, p.~\pageref*{dungeon-overview-and-event-journal}\par
+Chugging sound, monster drank a potion, p.~\pageref*{feelings-and-sounds}\par
+Clairvoyance, lower-tier priest gift, p.~\pageref*{donating-to-priests}\par
+Clay golem, dissolves to cancellation, p.~\pageref*{golems}\par
+Cleaver (Barbarian), three-monster swing, p.~\pageref*{wishable-random-artifacts}\par
+Cleric school, p.~\pageref*{the-seven-spell-schools}\par
+Cloak of displacement, the underrated layer, p.~\pageref*{armor-and-ac}\par
+Cloak of magic resistance (MC1), p.~\pageref*{cloaks}\par
+Cloak of magic resistance, MC1 in 5.0, p.~\pageref*{armor-and-ac}\par
+Cloak of protection (MC3), p.~\pageref*{cloaks}\par
+Cloak of protection, MC3 the only single source, p.~\pageref*{armor-and-ac}\par
+Cloaks, table by AC/MC, p.~\pageref*{cloaks}\par
+Closed for inventory, locked shop door, p.~\pageref*{shopkeeper-behavior}\par
+Cockatrice corpse on the stairs, the most literal instadeath, p.~\pageref*{dungeon-hazards-and-how-to-survive-them}\par
+Cockatrice corpse, one-shot Rider, p.~\pageref*{the-astral-plane}\par
+Cockatrice corpse, the rubber chicken, p.~\pageref*{petrification-stoning}\par
+Cockatrice corpse, wielding (with gloves!), p.~\pageref*{petrification-stoning}\par
+Cockatrice, instant petrification on touch, p.~\pageref*{cockatrices-c}\par
+Cockatrice, new moon hiss (1 in 3), p.~\pageref*{petrification-stoning}\par
+Combat, knowing when not to fight, p.~\pageref*{the-art-of-combat}\par
+Combining conducts, the legendary stacks, p.~\pageref*{combining-conducts}\par
+Command counts (10s, 20., etc.), p.~\pageref*{command-counts}\par
+Conducts, voluntary challenges, p.~\pageref*{voluntary-challenges}\par
+Conflict ring on Astral, Angels go hostile if your Angel dies, p.~\pageref*{the-astral-plane}\par
+Conflict, Charisma scales reliability, p.~\pageref*{fighting-smart}\par
+Conflict, sight required, p.~\pageref*{fighting-smart}\par
+Confused charging, raises max Pw, p.~\pageref*{confused-reading}\par
+Confused destroy armor cursed, erodeproofs, p.~\pageref*{confused-reading}\par
+Confused enchant weapon/armor, erodeproofs, p.~\pageref*{confused-reading}\par
+Confused enchant weapon/armor, erodeproofs, p.~\pageref*{erosion-and-proofing}\par
+Confused genocide, kills you, p.~\pageref*{genocide}\par
+Confused genocide, kills you, p.~\pageref*{confused-reading}\par
+Confused genocide, self-extinction, p.~\pageref*{deadly-mistakes}\par
+Confused gold detection, cheap trap reveal, p.~\pageref*{searching-and-detection}\par
+Confused gold detection, traps revealed, p.~\pageref*{confused-reading}\par
+Confused reading, alternate effects, p.~\pageref*{use-testing-the-careful-way}\par
+Confused reading, alternate effects, p.~\pageref*{confused-reading}\par
+Confused remove curse, randomizes BUC, p.~\pageref*{confused-reading}\par
+Confused taming, 11×11 widening, p.~\pageref*{taming-new-creatures}\par
+Containers, p.~\pageref*{containers}\par
+Cornered scared monsters, fight, p.~\pageref*{fighting-smart}\par
+Cornuthaum, Wizard's clairvoyance, p.~\pageref*{helmets}\par
+Corridor chokepoint, single-file enemies, p.~\pageref*{the-golden-rules-of-early-survival}\par
+Couatl, feathered serpent, p.~\pageref*{angelic-beings-a}\par
+Counting gold coins, vault marker, p.~\pageref*{feelings-and-sounds}\par
+Covetous monsters, warp to you, p.~\pageref*{the-gauntlet}\par
+Crashing rock, a tunneler at work, p.~\pageref*{feelings-and-sounds}\par
+Credit card, worst but works, p.~\pageref*{unlocking-tools}\par
+Credit cloning, the gold-lure routine, p.~\pageref*{credit-and-debt}\par
+Credit, two ways to accumulate, p.~\pageref*{credit-and-debt}\par
+Croesus, vault guardian, p.~\pageref*{humans-and-elves}\par
+Crowning, alignment 20 and Luck 10, p.~\pageref*{crowning}\par
+Crowning, prayer-cooldown penalty, p.~\pageref*{crowning}\par
+Crysknife, fragile excellence, p.~\pageref*{weapons}\par
+Crystal ball trap survey, p.~\pageref*{searching-and-detection}\par
+Crystal ball, the one-question oracle, p.~\pageref*{other-notable-tools}\par
+Ctrl+A, repeat last command, p.~\pageref*{repeat-last-command-ctrla}\par
+Ctrl+O / \#overview, the level list, p.~\pageref*{dungeon-overview-and-event-journal}\par
+Ctrl+P, message history, p.~\pageref*{message-history-and-redraw}\par
+Ctrl+R, redraw, p.~\pageref*{message-history-and-redraw}\par
+Curse, removing, p.~\pageref*{removing-curses}\par
+Cursed armor, won't come off, p.~\pageref*{effects-of-cursed-items}\par
+Cursed bag of holding, doubles weight, p.~\pageref*{effects-of-cursed-items}\par
+Cursed luckstone, locks negative, p.~\pageref*{how-luck-works}\par
+Cursed potion dip, guaranteed explosion, p.~\pageref*{alchemy}\par
+Cursed potion of gain level wish, free Gehennom skip, p.~\pageref*{the-ascension-run}\par
+Cursed scroll of scare monster, bait for the Sokoban prize, p.~\pageref*{sokoban}\par
+Cursed weapon, can't be unwielded, p.~\pageref*{effects-of-cursed-items}\par
+Curses windowtype, the paneled UI, p.~\pageref*{options-worth-knowing-about}\par
+Curses, breaking them, p.~\pageref*{curses-and-how-to-break-them}\par
+Cursing shoplifters, shop on level, p.~\pageref*{feelings-and-sounds}\par
+Cyclops, Healer quest nemesis, p.~\pageref*{giant-humanoids-h}\par
+
+\par\smallskip{\normalsize\bfseries D}\par\smallskip
+
+`d` dogs and canines, p.~\pageref*{dogs-and-canines-d}\par
+`D` dragons, color cheat-sheet, p.~\pageref*{a-note-on-dragons}\par
+Damerell, Object Identification FAQ, p.~\pageref*{acknowledgements}\par
+Damerell, prayer spoiler, p.~\pageref*{acknowledgements}\par
+Dangerous foods, list, p.~\pageref*{dangerous-foods}\par
+Deadly poison, the 1-in-240 spike, p.~\pageref*{deadly-poison}\par
+Death the Rider, instakill chance, p.~\pageref*{the-astral-plane}\par
+Death, causes of (see: everything), p.~\pageref*{things-that-will-kill-you}\par
+Debt, using unpaid items in-shop, p.~\pageref*{credit-and-debt}\par
+Delayed deaths, the runners, p.~\pageref*{delayed-deaths}\par
+Demogorgon, attacks on sight, no bribe, p.~\pageref*{major-demons}\par
+Demon lord bribery, gold in main inventory, p.~\pageref*{whats-different-in-gehennom}\par
+Demon-prince lairs, three sit alone, p.~\pageref*{the-demon-prince-lairs}\par
+Demonbane (Lawful silver mace), Priest first gift, p.~\pageref*{wishable-random-artifacts}\par
+Detecting curses, altar/pet/shop, p.~\pageref*{detecting-curses}\par
+Dexterity, +to-hit contribution, p.~\pageref*{to-hit-calculation}\par
+Dipping ammo in sickness (poison), p.~\pageref*{use-testing-the-careful-way}\par
+Dipping in a fountain, can uncurse, p.~\pageref*{fountains}\par
+Dipping unicorn horn in potions, p.~\pageref*{use-testing-the-careful-way}\par
+Discipline, the difference, p.~\pageref*{what-killed-the-runners-up}\par
+Disenchanter corpse, never eat, p.~\pageref*{useful-corpse-effects}\par
+Disenchanter, mourning your former +5, p.~\pageref*{enchantment-drain}\par
+Disenchanter, range-kill don't melee, p.~\pageref*{enchantment-drain}\par
+Disintegration, only black dragon breath, p.~\pageref*{disintegration}\par
+Dispater, bribable arch-devil, p.~\pageref*{major-demons}\par
+Displacer beast, taming, p.~\pageref*{felines-f}\par
+Divination school, p.~\pageref*{the-seven-spell-schools}\par
+Divine relations, your god watches, p.~\pageref*{divine-relations}\par
+Donating to priests, AC stacks, p.~\pageref*{donating-to-priests}\par
+Doors, closing for breathing room, p.~\pageref*{fighting-smart}\par
+Doors, no diagonal entry, p.~\pageref*{fighting-smart}\par
+Dragon scale mail / dragon scales tables, p.~\pageref*{dragon-scales}\par
+Dragon scale mail, color cheat sheet, p.~\pageref*{armor-and-ac}\par
+Dragon scale mail, upgrade from scales, p.~\pageref*{dragon-scale-mail}\par
+Dragonbane, reflection while wielded, p.~\pageref*{wishable-random-artifacts}\par
+Dragons, a full briefing, p.~\pageref*{a-note-on-dragons}\par
+Drawbridge, four ways to lower, p.~\pageref*{the-castle}\par
+Drop everything at the door, see your bill, p.~\pageref*{shopkeeper-behavior}\par
+Drowning, preventable, p.~\pageref*{drowning}\par
+Drum of earthquake, pits around you, p.~\pageref*{musical-instruments}\par
+Dunce cap, Int/Wis → 6, auto-curse, p.~\pageref*{helmets}\par
+Dungeon hazards, common deaths, p.~\pageref*{dungeon-hazards-and-how-to-survive-them}\par
+Dungeon layout, the branching tree, p.~\pageref*{the-big-picture}\par
+Dungeons of Doom, upper trunk, p.~\pageref*{the-big-picture}\par
+Dwarf, dangerously underrated, p.~\pageref*{humanoids-h}\par
+Dwarf, Str and Con caps, p.~\pageref*{the-races}\par
+
+\par\smallskip{\normalsize\bfseries E}\par\smallskip
+
+`E` elementals, p.~\pageref*{elementals-e}\par
+`e` eyes and spheres, p.~\pageref*{eyes-and-spheres-e}\par
+Early dungeon, the deadliest stretch, p.~\pageref*{things-that-will-kill-you}\par
+Early shopping list, p.~\pageref*{the-early-shopping-list}\par
+Earth elemental, phases through walls, p.~\pageref*{elementals-e}\par
+Eat the things you don't understand (don't), p.~\pageref*{the-golden-rules-of-early-survival}\par
+Eating mistakes, top forty, p.~\pageref*{deadly-mistakes}\par
+Eels (giant, electric), at Medusa, p.~\pageref*{medusas-island}\par
+Elbereth dead past Castle, p.~\pageref*{strategy}\par
+Elbereth, dead in Gehennom, p.~\pageref*{rules-of-the-ward}\par
+Elbereth, practical use, p.~\pageref*{practical-use}\par
+Elbereth, rules of the ward, p.~\pageref*{rules-of-the-ward}\par
+Elbereth, the defile rule (important), p.~\pageref*{the-defile-rule-important}\par
+Elbereth, the ward (basic), p.~\pageref*{the-ward}\par
+Elbereth, where the word comes from, p.~\pageref*{where-the-word-comes-from}\par
+Elbereth, who ignores it, p.~\pageref*{rules-of-the-ward}\par
+Elbereth, writing frantically, p.~\pageref*{elbereth}\par
+Electric eel, six in medusa-2, p.~\pageref*{sea-monsters}\par
+Elemental Planes, four obstacles, p.~\pageref*{the-elemental-planes}\par
+Elf, sleep resistance at XL 4, p.~\pageref*{the-races}\par
+Elven boots, stealth and silent walk, p.~\pageref*{boots}\par
+Enchant armor, +3 ceiling safe, p.~\pageref*{scroll-enchant}\par
+Enchant weapon, +5 ceiling safe, p.~\pageref*{scroll-enchant}\par
+Enchantment drain, the silent ascension-killer, p.~\pageref*{enchantment-drain}\par
+Enchantment school, p.~\pageref*{the-seven-spell-schools}\par
+Enchantment, weapon ceiling +9, armor +3/+5, p.~\pageref*{enchantment}\par
+Engrave command (`E`), p.~\pageref*{engravings}\par
+Engrave test, pre-write a word in dust, p.~\pageref*{the-engrave-test-wands}\par
+Engrave test, the procedure, p.~\pageref*{the-engrave-test-wands}\par
+Engraving methods, dust to permanent, p.~\pageref*{engravings}\par
+Engraving vanishes, three candidates, p.~\pageref*{resolving-ambiguous-engrave-results}\par
+Engraving, impairment garbles spelling, p.~\pageref*{engravings}\par
+Engulfment, two hidden monsters, p.~\pageref*{engulfment}\par
+Enhancing skills, \#enhance command, p.~\pageref*{enhancing-skills}\par
+Erosion, rust, fire, corrosion, p.~\pageref*{erosion-and-proofing}\par
+Escape school, p.~\pageref*{the-seven-spell-schools}\par
+Excalibur (Lawful long sword), drain res + search, p.~\pageref*{wishable-random-artifacts}\par
+Excalibur, drain resistance, p.~\pageref*{level-drain}\par
+Excalibur, fountain dip, p.~\pageref*{fountains}\par
+Excalibur, fountain dipping odds, p.~\pageref*{weapons}\par
+Excalibur, search bonus by enchantment, p.~\pageref*{finding-secret-doors}\par
+Eye of the Aethiopica (Wizard), Vlad portal invoke, p.~\pageref*{quest-artifacts}\par
+Eyes of the Overworld (Monk), astral vision when worn, p.~\pageref*{quest-artifacts}\par
+
+\par\smallskip{\normalsize\bfseries F}\par\smallskip
+
+`f` felines, p.~\pageref*{felines-f}\par
+`F` fungi and molds, p.~\pageref*{fungi-and-molds-f}\par
+Fake amulet, from bones or wish, p.~\pageref*{the-ascension-run}\par
+Fake Delphi, a geometric joke, p.~\pageref*{room-types}\par
+Fake luckstone mimic, BUC-test first, p.~\pageref*{the-gnomish-mines}\par
+Falling down stairs while burdened, p.~\pageref*{dungeon-hazards-and-how-to-survive-them}\par
+Famine the Rider, hunger per hit, p.~\pageref*{the-astral-plane}\par
+Famine, the second Rider, p.~\pageref*{starvation}\par
+Feel deathly sick, Pestilence or rot, p.~\pageref*{feelings-and-sounds}\par
+Feel feverish, lycanthropy infection, p.~\pageref*{feelings-and-sounds}\par
+Feelings and sounds, atmosphere or signal, p.~\pageref*{feelings-and-sounds}\par
+Fighting style caps (bare hands, two-weapon, riding, martial arts), p.~\pageref*{fighting-style-caps}\par
+Finger in dust, fragile but instant, p.~\pageref*{engravings}\par
+Finger of death, MR blocks (outside-in), p.~\pageref*{the-touch-of-death}\par
+Finger of death, the argument-ender, p.~\pageref*{key-spells}\par
+Fire ant corpse, fire resistance, p.~\pageref*{useful-corpse-effects}\par
+Fire Brand, fire + firestorm invoke, p.~\pageref*{wishable-random-artifacts}\par
+Fire giant corpse, fire + Strength, p.~\pageref*{useful-corpse-effects}\par
+Fire trap, sleeper threat for inventory, p.~\pageref*{dangerous-traps}\par
+First descent, welcome to the dungeon, p.~\pageref*{your-first-descent}\par
+First swing wakes the room, p.~\pageref*{fighting-smart}\par
+First-game recommendation, p.~\pageref*{alignment}\par
+Flint, useless ammunition, p.~\pageref*{gray-stones-four-stones-one-correct-answer}\par
+Floating eye corpse, telepathy, p.~\pageref*{eyes-and-spheres-e}\par
+Floating eye corpse, telepathy, p.~\pageref*{useful-corpse-effects}\par
+Floating eye, do not hit, p.~\pageref*{dungeon-hazards-and-how-to-survive-them}\par
+Floating eye, never melee, p.~\pageref*{eyes-and-spheres-e}\par
+Floor, corridor, wall, door symbols, p.~\pageref*{the-map-symbols}\par
+Foocubus, can strip cursed armor, p.~\pageref*{seduction}\par
+Food conducts, the hierarchy, p.~\pageref*{the-food-conducts}\par
+Food rations, two or three is plenty, p.~\pageref*{the-early-shopping-list}\par
+Food rations, weight 20, p.~\pageref*{what-to-eat}\par
+Food strategy, the six rules, p.~\pageref*{food-strategy}\par
+Food, running out of, p.~\pageref*{how-hunger-works}\par
+Foodless conduct, p.~\pageref*{the-food-conducts}\par
+Force bolt, level 1 attack, p.~\pageref*{key-spells}\par
+\#force, prying chests open, p.~\pageref*{forcing-locked-chests}\par
+Force-attack (F), p.~\pageref*{movement-prefixes}\par
+Forest centaur, bow user, p.~\pageref*{centaurs-c}\par
+Fort Ludios, Croesus across the moat, p.~\pageref*{fort-ludios}\par
+Fort Ludios, vault full of gold, p.~\pageref*{fort-ludios}\par
+Fountains, gentle bubbling doom, p.~\pageref*{fountains}\par
+Four corner-tower alcoves, one with wishing wand, p.~\pageref*{the-castle}\par
+Friday the 13th, –1 baseline Luck, p.~\pageref*{how-luck-works}\par
+Frost Brand, cold + snowstorm invoke, p.~\pageref*{wishable-random-artifacts}\par
+Full moon, +1 baseline Luck, p.~\pageref*{how-luck-works}\par
+Fumble boots, 9-in-10 cursed, p.~\pageref*{boots}\par
+
+\par\smallskip{\normalsize\bfseries G}\par\smallskip
+
+`G` gnomes, p.~\pageref*{gnomes-g}\par
+`g` gremlins and gargoyles, p.~\pageref*{gremlins-g}\par
+Gaining and losing Luck, the table, p.~\pageref*{gaining-and-losing-luck}\par
+Gas spore, walking explosion, p.~\pageref*{eyes-and-spheres-e}\par
+Gauntlets of dexterity, +spe to Dex, p.~\pageref*{gloves}\par
+Gauntlets of fumbling, 9-in-10 cursed, p.~\pageref*{gloves}\par
+Gauntlets of power, Str 25, p.~\pageref*{gloves}\par
+Gehennom, fire everywhere, p.~\pageref*{whats-different-in-gehennom}\par
+Gehennom, hot ground shatters potions, p.~\pageref*{whats-different-in-gehennom}\par
+Gehennom, lower trunk, p.~\pageref*{the-big-picture}\par
+Gehennom, mazes, p.~\pageref*{whats-different-in-gehennom}\par
+Gehennom, no prayer, p.~\pageref*{whats-different-in-gehennom}\par
+Gehennom, why is it so hot, p.~\pageref*{gehennom}\par
+Gelatinous cube corpse, four resistances, p.~\pageref*{vegetarian-safe-corpses}\par
+Gelatinous cube, paralysis-cube of resistances, p.~\pageref*{blobs-b}\par
+Gem identification through selling (not reliable), p.~\pageref*{gem-identification-through-selling}\par
+Genetic engineer, polymorph-on-claw, p.~\pageref*{quantum-mechanics-q}\par
+Genocide (scroll), nuclear option, p.~\pageref*{genocide}\par
+Genocide class `;`, on Plane of Water, p.~\pageref*{plane-of-water}\par
+Genocide L, removes liches in one read, p.~\pageref*{survival-tips}\par
+Genocide, race-trap warning (h, G, @, o), p.~\pageref*{scroll-genocide}\par
+Geryon, bribable arch-devil, p.~\pageref*{major-demons}\par
+Ghost, paints over the floor as a gap, p.~\pageref*{special-symbols}\par
+Giant bat, speed 22 swarmer, p.~\pageref*{bats-and-birds-b}\par
+Giant corpse, +1 Strength, p.~\pageref*{giant-humanoids-h}\par
+Giant eel, grab and drown, p.~\pageref*{sea-monsters}\par
+Giantslayer, double vs giants, p.~\pageref*{wishable-random-artifacts}\par
+Glob, instead of corpse, p.~\pageref*{a-note-on-puddings}\par
+Gloves, p.~\pageref*{gloves}\par
+Gnome lord, gnome king, p.~\pageref*{gnomes-g}\par
+Gnome, slightly higher Int, p.~\pageref*{the-races}\par
+Gnomish Mines, a choice not a routine stop, p.~\pageref*{common-combat-deaths}\par
+Gnomish Mines, entry around Dlvl 2-4, p.~\pageref*{the-gnomish-mines}\par
+Gnomish wizard, sleep spell danger, p.~\pageref*{gnomes-g}\par
+Gods, angering, p.~\pageref*{altars-and-alignment}\par
+Gold dragon scale mail, the body-slot lantern, p.~\pageref*{a-note-on-dragons}\par
+Gold golem, walking treasure pile, p.~\pageref*{golems}\par
+Golden Rules of Early Survival, p.~\pageref*{the-golden-rules-of-early-survival}\par
+Gray dragon scale mail, magic resistance, p.~\pageref*{a-note-on-dragons}\par
+Gray ooze, rusts armor, p.~\pageref*{a-note-on-puddings}\par
+Gray stones, four stones one answer, p.~\pageref*{gray-stones-four-stones-one-correct-answer}\par
+Grayswandir (Lawful silver saber), half phys, p.~\pageref*{wishable-random-artifacts}\par
+Grease, applied to armor, p.~\pageref*{erosion-and-proofing}\par
+Green dragon scale mail, poison + sickness resistance, p.~\pageref*{a-note-on-dragons}\par
+Green slime, ten-turn countdown, p.~\pageref*{a-note-on-puddings}\par
+Gremlin, multiplies in water, p.~\pageref*{gremlins-g}\par
+Gremlin, strips intrinsic at night, p.~\pageref*{gremlins-g}\par
+Grid bug, can't move diagonally, p.~\pageref*{xans-and-fantastic-insects-x}\par
+Grid bug, last-hit kills, p.~\pageref*{deadly-mistakes}\par
+Grid bug, name and Tron reference, p.~\pageref*{acknowledgements}\par
+Grimtooth (Chaotic orcish dagger), warns of elves, p.~\pageref*{wishable-random-artifacts}\par
+
+\par\smallskip{\normalsize\bfseries H}\par\smallskip
+
+`H` giants and minotaurs, p.~\pageref*{giant-humanoids-h}\par
+`h` humanoids, p.~\pageref*{humanoids-h}\par
+Hack (1982), Jay Fenlason, p.~\pageref*{acknowledgements}\par
+Hard gems (Mohs 8+), survive throws, p.~\pageref*{real-gem-prices}\par
+Hardfought, the variants server, p.~\pageref*{acknowledgements}\par
+Haste self, alternative to speed boots, p.~\pageref*{armor-and-ac}\par
+Healer, sickness immunity, p.~\pageref*{the-roles}\par
+Healer, sleep-wand surprise, p.~\pageref*{the-roles}\par
+Healing chain, blessed pumps maxHP, p.~\pageref*{potion-healing}\par
+Healing potion, \$20 alone, p.~\pageref*{potion-prices}\par
+Healing school, p.~\pageref*{the-seven-spell-schools}\par
+Healing spell, level 1, p.~\pageref*{key-spells}\par
+Health currently feels amplified, shock resistance, p.~\pageref*{feelings-and-sounds}\par
+Heart of Ahriman (Barbarian), p.~\pageref*{quest-artifacts}\par
+Heart of Ahriman, counts as luckstone, p.~\pageref*{how-luck-works}\par
+Heist, the choreographed sequence, p.~\pageref*{the-heist}\par
+Helm of brilliance, +spe to Int and Wis, p.~\pageref*{helmets}\par
+Helm of caution, warning intrinsic (new in 5.0), p.~\pageref*{armor-and-ac}\par
+Helm of opposite alignment, alignment-flip tactical uses, p.~\pageref*{helmets}\par
+Helm of opposite alignment, Chaotic detour, p.~\pageref*{the-gauntlet}\par
+Helm of telepathy, when blind, p.~\pageref*{helmets}\par
+Helmets, by AC, p.~\pageref*{helmets}\par
+High Priest of Moloch, on the high altar, p.~\pageref*{molochs-sanctum}\par
+Hole, like a trapdoor with manners, p.~\pageref*{movement-traps}\par
+Holy water, blessing items, p.~\pageref*{blessed-uncursed-cursed-buc}\par
+Holy water, dipping water multiplies, p.~\pageref*{potion-holy-water}\par
+Holy water, making (pray on co-aligned altar), p.~\pageref*{potion-holy-water}\par
+How items get cursed (bones, monsters, etc.), p.~\pageref*{how-items-get-cursed}\par
+Human, no infravision, no special talents, p.~\pageref*{the-races}\par
+Hunger thresholds, Satiated to Fainting, p.~\pageref*{how-hunger-works}\par
+Hypocrite, alignment hit when defiling, p.~\pageref*{the-defile-rule-important}\par
+
+\par\smallskip{\normalsize\bfseries I}\par\smallskip
+
+`i` imps and minor demons, p.~\pageref*{imps-and-minor-demons-i}\par
+`I` invisible monster marker, p.~\pageref*{special-symbols}\par
+Identification by stacking, the merge clue, p.~\pageref*{naming-what-youve-learned}\par
+Identification flowchart, p.~\pageref*{a-practical-identification-strategy}\par
+Identified gem to co-aligned unicorn, +5, p.~\pageref*{gaining-and-losing-luck}\par
+Identify scroll, \$20 alone, p.~\pageref*{scroll-prices}\par
+Identify scroll, valuable but late, p.~\pageref*{the-early-shopping-list}\par
+Identify spell, blessed multi-ID, p.~\pageref*{key-spells}\par
+Identify, never enough scrolls of, p.~\pageref*{scroll-identify}\par
+Illiterate conduct, p.~\pageref*{illiterate}\par
+Illiterate, only x signature allowed, p.~\pageref*{illiterate}\par
+Illness (food poisoning), unicorn horn cure, p.~\pageref*{delayed-deaths}\par
+Imp, stream of insults, p.~\pageref*{imps-and-minor-demons-i}\par
+Incubus, succubus, the encounter table, p.~\pageref*{seduction}\par
+Instadeaths, recognizing the setup, p.~\pageref*{more-ways-to-die}\par
+Intelligent artifacts, 4d10 blast, p.~\pageref*{alignment-and-blasting}\par
+Invocation ritual, three items on the vibrating square, p.~\pageref*{the-heist}\par
+Iron bars, dig around them, p.~\pageref*{iron-bars}\par
+Iron bars, light passes through, p.~\pageref*{iron-bars}\par
+Iron bars, wand of lightning melts (sometimes), p.~\pageref*{iron-bars}\par
+Iron footwear, surprisingly protective, p.~\pageref*{dangerous-traps}\par
+Iron golem, poison breath, p.~\pageref*{golems}\par
+Iron shoes, traps protection, p.~\pageref*{boots}\par
+Item symbols, the punctuation marks, p.~\pageref*{the-map-symbols}\par
+Ixoth, Quest dragon (Archeologist), p.~\pageref*{dragons-d}\par
+Izchak Miller, the lighting shopkeeper, p.~\pageref*{acknowledgements}\par
+Izchak's lighting store, seven candles, p.~\pageref*{the-gnomish-mines}\par
+
+\par\smallskip{\normalsize\bfseries J}\par\smallskip
+
+`J` jabberwock, four 2d10 attacks, p.~\pageref*{jabberwocks-j}\par
+`j` jellies, p.~\pageref*{jellies-j}\par
+Jackal, leading cause of death, p.~\pageref*{dogs-and-canines-d}\par
+Juiblex, Faceless Lord, swamp, p.~\pageref*{the-demon-prince-lairs}\par
+Jumping boots, leap-apply, p.~\pageref*{boots}\par
+
+\par\smallskip{\normalsize\bfseries K}\par\smallskip
+
+`K` Keystone Kops, p.~\pageref*{keystone-kops-k}\par
+`k` kobolds, p.~\pageref*{kobolds-k}\par
+Katana, best one-hander, p.~\pageref*{weapons}\par
+Key spells, the short list, p.~\pageref*{key-spells}\par
+Ki-rin, flying spellcaster, p.~\pageref*{angelic-beings-a}\par
+Kicking sinks, the foocubus surprise, p.~\pageref*{deadly-mistakes}\par
+Killer bee corpse, poison resistance, p.~\pageref*{useful-corpse-effects}\par
+Killer bee, swarm, p.~\pageref*{ants-and-insects-a}\par
+Killer bees, expect more, p.~\pageref*{the-golden-rules-of-early-survival}\par
+Killing co-aligned unicorn, –5, p.~\pageref*{gaining-and-losing-luck}\par
+Killing peaceful, –1 Luck (50\%), p.~\pageref*{gaining-and-losing-luck}\par
+Killing pet, –1 Luck plus –15 alignment, p.~\pageref*{gaining-and-losing-luck}\par
+Kitten, common starter pet, p.~\pageref*{felines-f}\par
+Knight, caitiff penalty, p.~\pageref*{the-roles}\par
+Knight, Excalibur odds (1 in 6), p.~\pageref*{the-roles}\par
+Knight, jousting on lance, p.~\pageref*{the-roles}\par
+Knight, pony of, p.~\pageref*{the-roles}\par
+Kobold meat, poisonous and pointless, p.~\pageref*{kobolds-k}\par
+Kops, summoned by shoplifting, p.~\pageref*{keystone-kops-k}\par
+Kraken, Medusa's pool variant, p.~\pageref*{sea-monsters}\par
+Kraken, only on medusa-4, p.~\pageref*{medusas-island}\par
+
+\par\smallskip{\normalsize\bfseries L}\par\smallskip
+
+`l` leprechauns, p.~\pageref*{leprechauns-l}\par
+`L` liches, p.~\pageref*{liches-l}\par
+Land mine, items destroyed, p.~\pageref*{dangerous-traps}\par
+Large box, chest, ice box (furniture), p.~\pageref*{containers}\par
+Large mimic, sticky claw, p.~\pageref*{a-note-on-mimics}\par
+Lawful, perks and pieties, p.~\pageref*{alignment}\par
+Learning spells, success formula, p.~\pageref*{learning-spells}\par
+Leash, follows through stairs, p.~\pageref*{other-notable-tools}\par
+Lembas wafers, best nutrition by weight, p.~\pageref*{what-to-eat}\par
+Lenses, +2 search (capped), p.~\pageref*{finding-secret-doors}\par
+Leprechaun, your gold and gone, p.~\pageref*{leprechauns-l}\par
+Level drain, wraiths and friends, p.~\pageref*{level-drain}\par
+Level teleporter, separated from your pet, p.~\pageref*{movement-traps}\par
+Levels 1 through 5, where most die, p.~\pageref*{your-first-descent}\par
+Levitation + Enlightenment → Gain level, p.~\pageref*{alchemy}\par
+Levitation boots, the cursed trap, p.~\pageref*{boots}\par
+Levitation, doesn't save from eels, p.~\pageref*{drowning}\par
+Lichen corpse, never rots, p.~\pageref*{the-golden-rules-of-early-survival}\par
+Lichen corpse, never rots, p.~\pageref*{fungi-and-molds-f}\par
+Light bursts, yellow and black, p.~\pageref*{light-bursts}\par
+Light source room, free lit lamp, p.~\pageref*{room-types}\par
+Light sources, candles and oil lamps, p.~\pageref*{light-sources}\par
+Lizard corpse, carry one, p.~\pageref*{the-golden-rules-of-early-survival}\par
+Lizard corpse, cures stoning, p.~\pageref*{lizards}\par
+Loadstone, cursed and refuses to drop, p.~\pageref*{gray-stones-four-stones-one-correct-answer}\par
+Loadstone, the \#tip escape, p.~\pageref*{gray-stones-four-stones-one-correct-answer}\par
+Loadstone, the kick test, p.~\pageref*{gray-stones-four-stones-one-correct-answer}\par
+Loan, lent gold from shopkeeper, p.~\pageref*{credit-and-debt}\par
+Lock pick, respectable, p.~\pageref*{unlocking-tools}\par
+Long sword, dip for Excalibur, p.~\pageref*{weapons}\par
+Long worm, tail segments, p.~\pageref*{worms-w}\par
+Longbow of Diana (Ranger), conjure arrows invoke, p.~\pageref*{quest-artifacts}\par
+Lord Surtur, Valkyrie quest nemesis, p.~\pageref*{giant-humanoids-h}\par
+Luck timeout, 600 turns toward 0, p.~\pageref*{how-luck-works}\par
+Luck, secretly ruining yours, p.~\pageref*{gaining-and-losing-luck}\par
+Luck, the hidden number, p.~\pageref*{how-luck-works}\par
+Luckstone, freezes the drift, p.~\pageref*{how-luck-works}\par
+Luckstone, preserves luck, p.~\pageref*{gray-stones-four-stones-one-correct-answer}\par
+Lurker above, ceiling drop, p.~\pageref*{engulfment}\par
+Lurker above, looking up too late, p.~\pageref*{engulfment}\par
+
+\par\smallskip{\normalsize\bfseries M}\par\smallskip
+
+m prefix, no-attack and menu, p.~\pageref*{movement-prefixes}\par
+`m` mimics, p.~\pageref*{mimics-m}\par
+`M` mummies, undead-turning shreds, p.~\pageref*{mummies-m}\par
+Magic cancellation (MC), MC3 blocks 90\%, p.~\pageref*{enchantment-drain}\par
+Magic flute, sleep, p.~\pageref*{musical-instruments}\par
+Magic fountain, one in seven, p.~\pageref*{fountains}\par
+Magic harp, charms monsters, p.~\pageref*{musical-instruments}\par
+Magic lamp, the wish gamble, p.~\pageref*{light-sources}\par
+Magic mapping spell, level 5, p.~\pageref*{key-spells}\par
+Magic mapping, blessed shows secret doors, p.~\pageref*{scroll-magic-mapping}\par
+Magic marker, ascension-kit writes, p.~\pageref*{other-notable-tools}\par
+Magic marker, scroll printer, p.~\pageref*{other-notable-tools}\par
+Magic Mirror of Merlin (Knight), p.~\pageref*{quest-artifacts}\par
+Magic missile, the answer to Riders, p.~\pageref*{the-touch-of-death}\par
+Magic portal, branch entrances, p.~\pageref*{movement-traps}\par
+Magic resistance, reflection, poison resistance: the big three, p.~\pageref*{the-golden-rules-of-early-survival}\par
+Magic trap, Charisma farming, p.~\pageref*{dangerous-traps}\par
+Magic trap, slot machine of outcomes, p.~\pageref*{dangerous-traps}\par
+Magic whistle, teleports tame creatures to you, p.~\pageref*{what-pets-do-for-you}\par
+Magical breathing, ends grab-drown, p.~\pageref*{drowning}\par
+Magicbane (Neutral athame), wielded magic resistance, p.~\pageref*{wishable-random-artifacts}\par
+Mail daemon, do not attack, p.~\pageref*{major-demons}\par
+Major demons, summoning each other, p.~\pageref*{common-combat-deaths}\par
+Mana, 5 Pw per spell level, p.~\pageref*{mana-management}\par
+Map, learning to read, p.~\pageref*{the-map-symbols}\par
+Mark, the sucker conditions, p.~\pageref*{the-price-is-right}\par
+Massacre room, role corpses for sacrifice, p.~\pageref*{room-types}\par
+Master Key of Thievery (Rogue), untrap invoke, p.~\pageref*{quest-artifacts}\par
+Master lich, magic resistance mandatory, p.~\pageref*{liches-l}\par
+Master mind flayer, five tentacles, p.~\pageref*{humanoids-h}\par
+Master mind flayer, five tentacles, p.~\pageref*{brainlessness}\par
+Matter school, p.~\pageref*{the-seven-spell-schools}\par
+Mausoleum, mummy waiting, p.~\pageref*{room-types}\par
+Mazes of Menace, the whole thing, p.~\pageref*{the-big-picture}\par
+Medusa's Island, three layered challenges, p.~\pageref*{medusas-island}\par
+Medusa, surviving the gaze, p.~\pageref*{medusas-island}\par
+Medusa, the Gorgon, p.~\pageref*{humans-and-elves}\par
+Mimics, shop disguise, p.~\pageref*{a-note-on-mimics}\par
+Mind flayer, drains Int, p.~\pageref*{humanoids-h}\par
+Mind flayer, greased helmet stacks, p.~\pageref*{brainlessness}\par
+Mind flayer, wear any helmet, p.~\pageref*{brainlessness}\par
+Mine's End, guaranteed luckstone, p.~\pageref*{the-gnomish-mines}\par
+Mines branch chest, food edition, p.~\pageref*{supply-containers}\par
+Mines, gnomish (general), p.~\pageref*{the-gnomish-mines}\par
+Minesflayer, the mind flayer surprise, p.~\pageref*{the-gnomish-mines}\par
+Minetown watch, attacking peacefuls, p.~\pageref*{the-gnomish-mines}\par
+Minetown, shops and temple, p.~\pageref*{the-gnomish-mines}\par
+Minotaur, \textasciitilde{}38 average damage per turn, p.~\pageref*{giant-humanoids-h}\par
+Mitre of Holiness (Priest), p.~\pageref*{quest-artifacts}\par
+Mjollnir (Neutral war hammer), Str 25 return, p.~\pageref*{wishable-random-artifacts}\par
+Mohs hardness, gems for engraving, p.~\pageref*{real-gem-prices}\par
+Moloch shrine, do not pray, p.~\pageref*{the-valley-of-the-dead}\par
+Moloch's Sanctum, sealed level, p.~\pageref*{molochs-sanctum}\par
+Monk, no body armor please, p.~\pageref*{the-roles}\par
+Monk, robe spellcasting bonus, p.~\pageref*{the-roles}\par
+Monsters loot unlocked containers (new in 5.0), p.~\pageref*{carrying-capacity}\par
+Mount slip, riding accidents, p.~\pageref*{deadly-mistakes}\par
+Mountain centaur, two kicks plus weapon, p.~\pageref*{centaurs-c}\par
+Movement prefixes (F, G, m), p.~\pageref*{movement-prefixes}\par
+Mumak, 4d12 butt, p.~\pageref*{quadrupeds-q}\par
+Mummy wrapping, blocks invisibility, p.~\pageref*{cloaks}\par
+Musical instruments, the passtune, p.~\pageref*{musical-instruments}\par
+Mysterious Force, Chaotic discount, p.~\pageref*{the-gauntlet}\par
+Mysterious Force, every staircase a chance, p.~\pageref*{the-gauntlet}\par
+
+\par\smallskip{\normalsize\bfseries N}\par\smallskip
+
+`N` nagas, p.~\pageref*{nagas-n}\par
+`n` nymphs, p.~\pageref*{nymphs-n}\par
+Naming what you've learned (\#name, \#call), p.~\pageref*{naming-what-youve-learned}\par
+NAO (nethack.alt.org), the public server, p.~\pageref*{acknowledgements}\par
+Nazgul, sleep breath, p.~\pageref*{wraiths-w}\par
+Negative Luck, prayer fails, p.~\pageref*{why-luck-matters}\par
+NetHack DevTeam, who maintain it, p.~\pageref*{acknowledgements}\par
+NetHack Wiki, the living changelog, p.~\pageref*{acknowledgements}\par
+Neutral, the most flexibility, p.~\pageref*{alignment}\par
+Newt corpse, free mana sometimes, p.~\pageref*{the-golden-rules-of-early-survival}\par
+Newt corpse, restores 1-3 Pw, p.~\pageref*{lizards}\par
+No Genocide conduct, type \\"none\\", p.~\pageref*{no-genocide}\par
+No wishing for artifacts conduct, p.~\pageref*{wishing-restrictions}\par
+Nudist conduct (since 3.6), p.~\pageref*{combining-conducts}\par
+Nuisance traps, arrow and dart, p.~\pageref*{nuisance-traps}\par
+Number\_pad, the keypad layout, p.~\pageref*{options-worth-knowing-about}\par
+Nymph, walks off the level with your bag of holding, p.~\pageref*{a-note-on-nymphs}\par
+Nymphs, never engage carrying the Amulet, p.~\pageref*{a-note-on-nymphs}\par
+Nymphs, the universal horror story, p.~\pageref*{a-note-on-nymphs}\par
+
+\par\smallskip{\normalsize\bfseries O}\par\smallskip
+
+`O` ogres, p.~\pageref*{ogres-o}\par
+`o` orcs, p.~\pageref*{orcs-o}\par
+Ogresmasher, double vs ogres, p.~\pageref*{wishable-random-artifacts}\par
+Oilskin cloak, eel-slip, p.~\pageref*{drowning}\par
+Oilskin sack, protects from water, p.~\pageref*{containers}\par
+Olog-hai, the troll you fear, p.~\pageref*{a-note-on-trolls}\par
+Options worth knowing about, p.~\pageref*{options-worth-knowing-about}\par
+Oracle, major consultation, p.~\pageref*{the-oracle}\par
+Oracle, mid-levels, p.~\pageref*{the-oracle}\par
+Oracle, minor consultation (50 zm), p.~\pageref*{the-oracle}\par
+Oracle, peaceful by design, p.~\pageref*{humans-and-elves}\par
+Orange dragon scale mail, sleep + free action, p.~\pageref*{a-note-on-dragons}\par
+Orb of Detection (Archeologist), p.~\pageref*{quest-artifacts}\par
+Orb of Fate (Valkyrie), p.~\pageref*{quest-artifacts}\par
+Orb of Fate, counts as luckstone, p.~\pageref*{how-luck-works}\par
+Orc, peaceful-to-orcs, p.~\pageref*{the-races}\par
+Orc-captain, two attacks, p.~\pageref*{orcs-o}\par
+Orcish Town, 1-in-7 Minetown variant, p.~\pageref*{the-gnomish-mines}\par
+Orcrist (Chaotic elven broadsword), warns of orcs, p.~\pageref*{wishable-random-artifacts}\par
+Orcus Town, ghost shopping district, p.~\pageref*{orcus-town}\par
+Orcus Town, guaranteed magic lamp or marker, p.~\pageref*{orcus-town}\par
+Orcus, Prince of Undead, p.~\pageref*{orcus-town}\par
+
+\par\smallskip{\normalsize\bfseries P}\par\smallskip
+
+`p` piercers, p.~\pageref*{piercers-p}\par
+`P` puddings and oozes, p.~\pageref*{puddings-and-oozes-p}\par
+Pacifist conduct, p.~\pageref*{pacifist}\par
+Pacifist, the figurine-of-Archon plan, p.~\pageref*{pacifist}\par
+Pacing, XL near Dlvl, p.~\pageref*{things-that-will-kill-you}\par
+Paperback, +20 XP on first read, p.~\pageref*{learning-spells}\par
+Paperback, the Discworld novel, p.~\pageref*{learning-spells}\par
+Passtune, the five-note Mastermind, p.~\pageref*{the-castle}\par
+Pauper conduct, no starting gear (new in 5.0), p.~\pageref*{pauper-new-in-5.0}\par
+Per-role skill caps, p.~\pageref*{per-role-skill-caps}\par
+Permadeaf conduct (new in 5.0), p.~\pageref*{permadeaf-new-in-5.0}\par
+Perseus statue, looting the legend, p.~\pageref*{medusas-island}\par
+Pestilence the Rider, the one to fear, p.~\pageref*{the-astral-plane}\par
+Pestilence's terminal illness, Constitution timer, p.~\pageref*{delayed-deaths}\par
+Pet kills (yours), via conflict ring, p.~\pageref*{deadly-mistakes}\par
+Pet shoplifting, store-without-paying, p.~\pageref*{what-pets-do-for-you}\par
+Pet, accidentally killing your, p.~\pageref*{keeping-your-pet-alive}\par
+Pet, curse detection (drop and watch), p.~\pageref*{starting-pets}\par
+Pet, gains resistances from corpses (new in 5.0), p.~\pageref*{keeping-your-pet-alive}\par
+Pet, growth from feeding, p.~\pageref*{starting-pets}\par
+Pet, leaving on Sokoban (kennel), p.~\pageref*{keeping-your-pet-alive}\par
+Pet, reviving at a co-aligned altar (new in 5.0), p.~\pageref*{keeping-your-pet-alive}\par
+Pet, taming new creatures, p.~\pageref*{taming-new-creatures}\par
+Pet, your best early asset, p.~\pageref*{starting-pets}\par
+Pet, your friend (mostly), p.~\pageref*{the-golden-rules-of-early-survival}\par
+Petless conduct (new in 5.0), p.~\pageref*{petless-new-in-5.0}\par
+Petrification (stoning), the five-turn ladder, p.~\pageref*{petrification-stoning}\par
+Pickaxe and mattock, dig anywhere, p.~\pageref*{other-notable-tools}\par
+Piercer, drop from ceiling, p.~\pageref*{piercers-p}\par
+Pit viper, cobra, poison bites, p.~\pageref*{snakes-s}\par
+Pit, climb out, p.~\pageref*{movement-traps}\par
+Plane of Air, cloud bubbles drift, p.~\pageref*{plane-of-air}\par
+Plane of Air, conflict tactic, p.~\pageref*{plane-of-air}\par
+Plane of Earth, dig the portal, p.~\pageref*{plane-of-earth}\par
+Plane of Fire, fire resistance non-optional, p.~\pageref*{plane-of-fire}\par
+Plane of Water, magical breathing required, p.~\pageref*{plane-of-water}\par
+Plane portals, find with confused gold detection, p.~\pageref*{the-elemental-planes}\par
+Platinum Yendorian Express Card (Tourist), charge an item, p.~\pageref*{quest-artifacts}\par
+Polymorph as a tool, self-poly, p.~\pageref*{polymorph-as-a-tool}\par
+Polymorph control, the form-chooser, p.~\pageref*{polymorph-as-a-tool}\par
+Polymorph escape from cursed body armor, p.~\pageref*{removing-curses}\par
+Polymorph restrictions (poly self, poly objects), p.~\pageref*{polymorph-restrictions}\par
+Polymorph trap, free booth with control, p.~\pageref*{dangerous-traps}\par
+Polymorphing the shopkeeper, the prep, p.~\pageref*{shopkeeper-behavior}\par
+Polymorphing your pet, titan first choice, p.~\pageref*{what-pets-do-for-you}\par
+Polypile, away from your bag, p.~\pageref*{polymorph-as-a-tool}\par
+Potion of confusion, the controlled confuser, p.~\pageref*{confused-reading}\par
+Potion of gain ability, blessed = all stats, p.~\pageref*{potion-gain-ability}\par
+Potion of gain level, cursed = up through ceiling, p.~\pageref*{blessed-uncursed-cursed-buc}\par
+Potion of gain level, raises XL, p.~\pageref*{potion-gain-level}\par
+Potion of polymorph, dip-one-arrow test, p.~\pageref*{potion-polymorph}\par
+Potion of speed, permanent intrinsic, p.~\pageref*{potion-speed}\par
+Potion prices, \$20 to \$300, p.~\pageref*{potion-prices}\par
+Potion table, by price, p.~\pageref*{the-potion-table}\par
+Practical strategy, the workflow, p.~\pageref*{a-practical-strategy}\par
+Prayer cooldown, \textasciitilde{}500 turn ballpark, p.~\pageref*{prayer}\par
+Prayer, emergency button cooldown, p.~\pageref*{the-golden-rules-of-early-survival}\par
+Prayer, requirements (alignment, luck, cooldown), p.~\pageref*{prayer}\par
+Prayer, what it fixes (priority order), p.~\pageref*{prayer}\par
+Prayer, when to, p.~\pageref*{prayer}\par
+Priest, BUC sense for free, p.~\pageref*{the-roles}\par
+Priest, Demonbane first gift, p.~\pageref*{the-roles}\par
+Protection racket, the donation ladder, p.~\pageref*{donating-to-priests}\par
+Puddings, splitting trap, p.~\pageref*{a-note-on-puddings}\par
+Purple worm, swallows you whole, p.~\pageref*{worms-w}\par
+Pyrolisk, fire-gaze cousin, p.~\pageref*{cockatrices-c}\par
+
+\par\smallskip{\normalsize\bfseries Q}\par\smallskip
+
+`q` quadrupeds, p.~\pageref*{quadrupeds-q}\par
+`Q` quantum mechanics, teleport-on-claw, p.~\pageref*{quantum-mechanics-q}\par
+Quaffing a fountain, slot-machine table, p.~\pageref*{fountains}\par
+Quantum mechanic corpse, toggles Fast, p.~\pageref*{quantum-mechanics-q}\par
+Quasit, drains Dex, p.~\pageref*{imps-and-minor-demons-i}\par
+Queen bee, royal jelly source, p.~\pageref*{ants-and-insects-a}\par
+Quest artifact, on the nemesis's square, p.~\pageref*{the-quest}\par
+Quest artifacts, the per-role list, p.~\pageref*{quest-artifacts}\par
+Quest leader, on the first floor, p.~\pageref*{the-quest}\par
+Quest nemesis, kill twice (life saving), p.~\pageref*{the-quest}\par
+Quest portal, magenta `\textasciicircum{}`, p.~\pageref*{the-quest}\par
+Quest, the role's special dungeon, p.~\pageref*{the-quest}\par
+Quest, XL 14 and alignment 20, p.~\pageref*{the-quest}\par
+
+\par\smallskip{\normalsize\bfseries R}\par\smallskip
+
+`r` rodents, p.~\pageref*{rodents-r}\par
+`R` rust monster, disenchanter, p.~\pageref*{rust-monsters-and-disenchanters-r}\par
+Races, the five, p.~\pageref*{the-races}\par
+Ranged attack, almost always safer, p.~\pageref*{the-early-shopping-list}\par
+Ranged attackers retreat, backing into corners, p.~\pageref*{fighting-smart}\par
+Ranger, +2 cloak of displacement start, p.~\pageref*{the-roles}\par
+Ranger, dagger and arrow stack, p.~\pageref*{the-roles}\par
+Rank effects, to-hit/damage table, p.~\pageref*{what-a-rank-buys-you}\par
+Reading unidentified scrolls in a shop, p.~\pageref*{deadly-mistakes}\par
+Real gem prices, the table, p.~\pageref*{real-gem-prices}\par
+Recharging, n³/343 explosion formula, p.~\pageref*{recharging}\par
+Red dragon scale mail, fire + infravision, p.~\pageref*{a-note-on-dragons}\par
+Reflection, bounces back but they resist, p.~\pageref*{disintegration}\par
+Remove curse, the happy ending, p.~\pageref*{scroll-remove-curse}\par
+Restore ability, returning lost stats, p.~\pageref*{brainlessness}\par
+Restraint, forty pounds of, p.~\pageref*{the-early-shopping-list}\par
+Reverse genocide, cursed scroll = spawn 4-6, p.~\pageref*{scroll-reverse-genocide}\par
+RGRN (rec.games.roguelike.nethack), p.~\pageref*{acknowledgements}\par
+Rider corpse, instantly fatal to eat, p.~\pageref*{the-astral-plane}\par
+Riders cannot be permanently killed, p.~\pageref*{the-astral-plane}\par
+Riders, three deaths of (Pestilence too), p.~\pageref*{the-astral-plane}\par
+Riding, 100 squares per tick, p.~\pageref*{training-a-skill}\par
+Ring hunger, every ring costs nutrition, p.~\pageref*{the-ring-table}\par
+Ring of aggravate monster, the niche use, p.~\pageref*{the-ring-table}\par
+Ring of conflict, in combat, p.~\pageref*{fighting-smart}\par
+Ring of conflict, monsters fight each other, p.~\pageref*{the-ring-table}\par
+Ring of free action, anti-paralysis, p.~\pageref*{the-ring-table}\par
+Ring of polymorph control, less critical now, p.~\pageref*{the-ring-table}\par
+Ring of protection, chargeable, p.~\pageref*{the-ring-table}\par
+Ring of regeneration, hungry healer, p.~\pageref*{the-ring-table}\par
+Ring of searching, auto-search each turn, p.~\pageref*{the-ring-table}\par
+Ring of slow digestion, foodless option, p.~\pageref*{the-ring-table}\par
+Ring of sustain ability, prevents stat drain, p.~\pageref*{the-ring-table}\par
+Ring of teleport control, on-demand transport, p.~\pageref*{the-ring-table}\par
+Ring of warning, threat-color overlay, p.~\pageref*{the-ring-table}\par
+Ring prices, \$100 to \$300, p.~\pageref*{ring-prices}\par
+Ring table, by price tier, p.~\pageref*{the-ring-table}\par
+Rings and amulets, constrained slots, p.~\pageref*{rings-and-amulets}\par
+Robe, casting bonus, p.~\pageref*{cloaks}\par
+Rock mole, eats your metal, p.~\pageref*{rodents-r}\par
+Rogue (1980), Toy and Wichman, p.~\pageref*{acknowledgements}\par
+Rogue Level, all uppercase wildlife, p.~\pageref*{the-rogue-level}\par
+Rogue Level, older more primitive world, p.~\pageref*{the-rogue-level}\par
+Rogue, backstab bonus, p.~\pageref*{the-roles}\par
+Rogue, multishot dagger throw, p.~\pageref*{the-roles}\par
+Role, choosing one, p.~\pageref*{choosing-your-expedition}\par
+Roles, the thirteen, p.~\pageref*{the-roles}\par
+Rolling boulder, fixed track, p.~\pageref*{dangerous-traps}\par
+Rope golem, grappling hug, p.~\pageref*{golems}\par
+Rothe, three attacks per turn, p.~\pageref*{quadrupeds-q}\par
+Rotted corpse, the 30-turn window, p.~\pageref*{dungeon-hazards-and-how-to-survive-them}\par
+Rubber hose, joke weapon, p.~\pageref*{weapons}\par
+Rule 1, don't fight what you can't beat, p.~\pageref*{the-golden-rules-of-early-survival}\par
+Run direction (G), p.~\pageref*{movement-prefixes}\par
+Runesword, Stormbringer base, p.~\pageref*{weapons}\par
+Rust monster, strip iron first, p.~\pageref*{rust-monsters-and-disenchanters-r}\par
+Rust trap, splashes water, p.~\pageref*{nuisance-traps}\par
+
+\par\smallskip{\normalsize\bfseries S}\par\smallskip
+
+`s` arachnids and centipedes, p.~\pageref*{arachnids-and-centipedes-s}\par
+`S` snakes, p.~\pageref*{snakes-s}\par
+Sack, basic storage, p.~\pageref*{containers}\par
+Sacrifice luck ceiling, difficulty must exceed, p.~\pageref*{gaining-and-losing-luck}\par
+Sacrifice, fresh within 50 turns, p.~\pageref*{sacrifice}\par
+Sacrifice, minimum corpse value, p.~\pageref*{sacrifice}\par
+Sacrifice, role-biased first gift, p.~\pageref*{sacrifice}\par
+Sad feeling for a moment, pet died, p.~\pageref*{feelings-and-sounds}\par
+Sad feeling, your pet died offscreen, p.~\pageref*{feelings-and-sounds}\par
+Salamander, Gehennom-only, p.~\pageref*{lizards}\par
+Same-race sacrifice, forbidden, p.~\pageref*{sacrifice}\par
+Samurai, giri-breaking penalty, p.~\pageref*{the-roles}\par
+Samurai, katana opening, p.~\pageref*{the-roles}\par
+Samurai, wakizashi is dead weight, p.~\pageref*{the-roles}\par
+Sasquatch, fast, p.~\pageref*{apelike-creatures-y}\par
+Sceptre of Might (Caveman), conflict invoke, p.~\pageref*{quest-artifacts}\par
+Scorpius, named quest nemesis, p.~\pageref*{arachnids-and-centipedes-s}\par
+Scroll labels, randomized, p.~\pageref*{the-scroll-rack}\par
+Scroll of charging, save for wand of wishing, p.~\pageref*{scroll-charging}\par
+Scroll of earth on yourself, buried alive, p.~\pageref*{deadly-mistakes}\par
+Scroll of genocide, the nuclear option, p.~\pageref*{scroll-genocide}\par
+Scroll of identify, blessed jackpot 1-in-5, p.~\pageref*{scroll-identify}\par
+Scroll of identify, main-inventory only, p.~\pageref*{scroll-identify}\par
+Scroll of scare monster, drop don't read, p.~\pageref*{scroll-scare-monster}\par
+Scroll of scare monster, drop-and-stand, p.~\pageref*{practical-use}\par
+Scroll of taming, 3×3 area, p.~\pageref*{taming-new-creatures}\par
+Scroll of teleportation, escape hatch, p.~\pageref*{scroll-teleportation}\par
+Scroll prices, \$20 to \$300, p.~\pageref*{scroll-prices}\par
+Scroll rack, single-use spells, p.~\pageref*{the-scroll-rack}\par
+Scroll table, by price, p.~\pageref*{the-scroll-table}\par
+Searching (`s` command), repeat with luck, p.~\pageref*{searching-and-detection}\par
+Searching ring, kept on drop, p.~\pageref*{the-sink-test-rings}\par
+Secret doors, the architects believed in them, p.~\pageref*{finding-secret-doors}\par
+Seduction (foocubus encounter), p.~\pageref*{seduction}\par
+Self-zap of death, only nonliving safe, p.~\pageref*{the-touch-of-death}\par
+Self-zapped wand, ray ricochet, p.~\pageref*{deadly-mistakes}\par
+Seven spell schools, focus and grind, p.~\pageref*{the-seven-spell-schools}\par
+Shield of drain resistance (new in 5.0), p.~\pageref*{shields}\par
+Shield of drain resistance, new in 5.0, p.~\pageref*{level-drain}\par
+Shield of reflection, saves the body slot, p.~\pageref*{shields}\par
+Shield of shock resistance (new in 5.0), p.~\pageref*{shields}\par
+Shields, p.~\pageref*{shields}\par
+Shirts, Hawaiian and T-shirt, p.~\pageref*{shirts}\par
+Shop, identified by shopkeeper, p.~\pageref*{room-types}\par
+Shopkeeper behavior, the toughest NPCs, p.~\pageref*{shopkeeper-behavior}\par
+Shopkeeper, angering, p.~\pageref*{shopping-and-shopkeeper-pricing}\par
+Shopkeeper, tougher NPC than you, p.~\pageref*{humans-and-elves}\par
+Shopping and shopkeeper pricing, full details, p.~\pageref*{shopping-and-shopkeeper-pricing}\par
+Shrieker, summons neighbors, p.~\pageref*{fungi-and-molds-f}\par
+Silver dragon scale mail, reflection, p.~\pageref*{a-note-on-dragons}\par
+Silver saber bonus, late-game weapon, p.~\pageref*{weapons}\par
+Silver saber, demon damage, p.~\pageref*{weapons}\par
+Single-monster-type room, almost always themed, p.~\pageref*{room-types}\par
+Sink test, the ring drop, p.~\pageref*{the-sink-test-rings}\par
+Sink, dipping potions for messages, p.~\pageref*{sinks}\par
+Sink, dropping a ring down, p.~\pageref*{sinks}\par
+Sink, kicking for rings and trouble, p.~\pageref*{sinks}\par
+Sink, quaffing the drain, p.~\pageref*{sinks}\par
+Sink, the amorous dishwasher demon, p.~\pageref*{sinks}\par
+Sinking in lava, levitate or pray, p.~\pageref*{delayed-deaths}\par
+Sinks, dungeon's underrated ID tool, p.~\pageref*{sinks}\par
+Skeleton, only from a trap, p.~\pageref*{zombies-z}\par
+Skill ladder, Unskilled to Grand Master, p.~\pageref*{the-skill-ladder}\par
+Skill slots, 2 + XL + crowning, p.~\pageref*{the-skill-ladder}\par
+Skill, 32-slot ceiling at XL 30 crowned, p.~\pageref*{the-skill-ladder}\par
+Sleep without resistance, near-instadeath, p.~\pageref*{common-combat-deaths}\par
+Sleeping gas trap, murder in monster rooms, p.~\pageref*{dangerous-traps}\par
+Sliming, ten-turn countdown, p.~\pageref*{delayed-deaths}\par
+Slow digestion ring, kept on drop, p.~\pageref*{the-sink-test-rings}\par
+Slowing down, you're turning to stone, p.~\pageref*{feelings-and-sounds}\par
+Slurping sound, gelatinous cube ate items, p.~\pageref*{feelings-and-sounds}\par
+Small mimic, top-ten killer, p.~\pageref*{a-note-on-mimics}\par
+Small shield, no spellcast penalty, p.~\pageref*{shields}\par
+Snickersnee (Samurai katana), Shkinng! free polearm reach, p.~\pageref*{wishable-random-artifacts}\par
+Sokoban (no cheating) conduct (new in 5.0), p.~\pageref*{sokoban-new-in-5.0}\par
+Sokoban prize, bag of holding or amulet of reflection, p.~\pageref*{sokoban}\par
+Sokoban solutions appendix, p.~\pageref*{sokoban-solutions}\par
+Sokoban, boulders into pits, p.~\pageref*{sokoban}\par
+Sokoban, cheating cost (–1 Luck each), p.~\pageref*{sokoban}\par
+Sokoban, entry one level above Oracle, p.~\pageref*{sokoban}\par
+Sokoban, level 1 A and B variants, p.~\pageref*{level-1-version-a}\par
+Sokoban, level 2 variants, p.~\pageref*{level-2-version-a}\par
+Sokoban, level 3 variants, p.~\pageref*{level-3-version-a}\par
+Sokoban, level 4 variants (the prize), p.~\pageref*{level-4-version-a}\par
+Sokoban, mirrored variants (new in 5.0), p.~\pageref*{sokoban-solutions}\par
+Sokoban, no teleport here, p.~\pageref*{sokoban}\par
+Sokoban, scrolls of earth as fillers, p.~\pageref*{level-1-version-a}\par
+Sokoban, solving without cheating, p.~\pageref*{sokoban-solutions}\par
+Sokoban, Strength training side effect, p.~\pageref*{sokoban}\par
+Soldier ant, speed 18 packs, p.~\pageref*{ants-and-insects-a}\par
+Special rooms, what to expect, p.~\pageref*{room-types}\par
+Speed boots, free action on 2/3 turns, p.~\pageref*{boots}\par
+Speed boots, more turns equals more, p.~\pageref*{armor-and-ac}\par
+Spell amnesia, mind flayer side effect, p.~\pageref*{brainlessness}\par
+Spell memory, \textasciitilde{}20,000 turns, p.~\pageref*{learning-spells}\par
+Spell school caps, by role, p.~\pageref*{spell-school-caps}\par
+Spell tables (full appendix), p.~\pageref*{spell-tables}\par
+Spell-school practice, level × cast, p.~\pageref*{training-a-skill}\par
+Spellbook prices, 100 × level, p.~\pageref*{spellbook-prices}\par
+Spellbook, 4 successful reads to fade, p.~\pageref*{learning-spells}\par
+Spellbook, failure effects by level, p.~\pageref*{learning-spells}\par
+Spellbook, level 7 explosion rune, p.~\pageref*{learning-spells}\par
+Spellcasting, mana not sparkles, p.~\pageref*{spellcasting}\par
+Spending slots wisely, the principles, p.~\pageref*{spending-slots-wisely}\par
+Spider nest, scales with depth, p.~\pageref*{room-types}\par
+Spiked pit, possibly poisoned, p.~\pageref*{movement-traps}\par
+Spoilers, Hugo and O'Donnell, p.~\pageref*{acknowledgements}\par
+Spotted jelly, passive acid, p.~\pageref*{jellies-j}\par
+Sprig of wolfsbane, cures lycanthropy, p.~\pageref*{useful-corpse-effects}\par
+Squeaky board, wakes the room, p.~\pageref*{nuisance-traps}\par
+Staff of Aesculapius (Healer), drain-life on hit, p.~\pageref*{quest-artifacts}\par
+Staff of Aesculapius, drain res, p.~\pageref*{level-drain}\par
+Stairs, up and down (`<`, `>`), p.~\pageref*{the-map-symbols}\par
+Stalker corpse, invisibility and see invisible, p.~\pageref*{useful-corpse-effects}\par
+Stalker, see-invisible corpse, p.~\pageref*{elementals-e}\par
+Starting kit, improving on, p.~\pageref*{what-to-pack}\par
+Starvation, eat at Hungry not Weak, p.~\pageref*{dungeon-hazards-and-how-to-survive-them}\par
+Starvation, faint then die, p.~\pageref*{starvation}\par
+Stashing, one level up, p.~\pageref*{the-early-shopping-list}\par
+Steelypips, Kate Nepveu's archive, p.~\pageref*{acknowledgements}\par
+Stethoscope, HP check and crowning meter, p.~\pageref*{other-notable-tools}\par
+Sting (Chaotic elven dagger), warns of orcs, p.~\pageref*{wishable-random-artifacts}\par
+Stinking cloud, room-clearing fog, p.~\pageref*{scroll-stinking-cloud}\par
+Stoning, avoiding, p.~\pageref*{petrification-stoning}\par
+Storm, fire, frost giant breath of boulders, p.~\pageref*{giant-humanoids-h}\par
+Stormbringer (Chaotic runesword), drain life, p.~\pageref*{wishable-random-artifacts}\par
+Stormbringer, drain res while wielded (chaotic), p.~\pageref*{level-drain}\par
+Strange mental acuity, telepathy gained, p.~\pageref*{feelings-and-sounds}\par
+Strange wind, Oracle level, p.~\pageref*{feelings-and-sounds}\par
+Strangulation, uncurse first, p.~\pageref*{delayed-deaths}\par
+Strength bonus, capped at +6, p.~\pageref*{damage}\par
+Sunsword (Lawful), 5.0 blinding ray, p.~\pageref*{wishable-random-artifacts}\par
+Supply chests, locked with goodies, p.~\pageref*{supply-containers}\par
+Supply containers, care packages from somebody, p.~\pageref*{supply-containers}\par
+Survival tips, Gehennom checklist, p.~\pageref*{survival-tips}\par
+
+\par\smallskip{\normalsize\bfseries T}\par\smallskip
+
+`t` trappers and lurkers, p.~\pageref*{trappers-and-lurkers-t}\par
+`T` trolls, do not stay dead, p.~\pageref*{a-note-on-trolls}\par
+Tameness, the invisible score, p.~\pageref*{feeding-and-loyalty}\par
+Teleport trap, free transport with control, p.~\pageref*{movement-traps}\par
+Teleportation hub, fixed-destination, p.~\pageref*{room-types}\par
+Temple donation, does NOT reveal BUC, p.~\pageref*{detecting-curses}\par
+Temple, altar plus priest, p.~\pageref*{room-types}\par
+Tengu corpse, teleportitis / teleport control, p.~\pageref*{useful-corpse-effects}\par
+Tengu, teleport and teleport-control corpse, p.~\pageref*{imps-and-minor-demons-i}\par
+The DevTeam is THINKING, the 12-year gap, p.~\pageref*{acknowledgements}\par
+The Price Is Right, shopkeepers identify, p.~\pageref*{the-price-is-right}\par
+Themed rooms, new in 5.0, p.~\pageref*{room-types}\par
+Things that will kill you, p.~\pageref*{things-that-will-kill-you}\par
+Throne room (Castle court), p.~\pageref*{the-castle}\par
+Throne room, sit at your own risk, p.~\pageref*{room-types}\par
+Throne, kicking for gold and gems, p.~\pageref*{thrones}\par
+Throne, the purest gamble, p.~\pageref*{thrones}\par
+Throne, vanishes in a puff of logic, p.~\pageref*{thrones}\par
+Throne, wish only at positive Luck 7+, p.~\pageref*{thrones}\par
+Throw potions at monsters (potion test), p.~\pageref*{use-testing-the-careful-way}\par
+Throw-into-shop trick, free quote, p.~\pageref*{the-price-is-right}\par
+Tin of spinach, +1 Str, p.~\pageref*{what-to-eat}\par
+Tin opener, blessed instant, p.~\pageref*{other-notable-tools}\par
+Tinning kit, intrinsic grinder bypass, p.~\pageref*{other-notable-tools}\par
+Tins, the occupation trap, p.~\pageref*{what-to-eat}\par
+Titan, spell-casting pet target, p.~\pageref*{giant-humanoids-h}\par
+To-hit roll, the d20 of fate, p.~\pageref*{to-hit-calculation}\par
+Tools of the trade, eclectic category, p.~\pageref*{tools-of-the-trade}\par
+Top ten killers, the list, p.~\pageref*{things-that-will-kill-you}\par
+Touch of death (Rider Death), p.~\pageref*{the-touch-of-death}\par
+Touchstone, blessed names gems on rub, p.~\pageref*{gem-identification-through-selling}\par
+Touchstone, helpful not urgent, p.~\pageref*{the-early-shopping-list}\par
+Touchstone, real gem on rub, p.~\pageref*{gray-stones-four-stones-one-correct-answer}\par
+Tourist, camera-flash plan, p.~\pageref*{the-roles}\par
+Tourist, hardest of the standard roles, p.~\pageref*{the-roles}\par
+Tourist, magic mapping scrolls at start, p.~\pageref*{the-roles}\par
+Towel, cream pie and blindfold, p.~\pageref*{other-notable-tools}\par
+Training a skill, dmg>1 counts, p.~\pageref*{training-a-skill}\par
+Trap room, recognize and retreat, p.~\pageref*{room-types}\par
+Trapdoor, 25\% chance to keep falling, p.~\pageref*{movement-traps}\par
+Trapper, floor in disguise, p.~\pageref*{trappers-and-lurkers-t}\par
+Traps, found by stepping on them, p.~\pageref*{traps-and-hazards}\par
+Travel (`\_`), shortest path autopilot, p.~\pageref*{travel}\par
+Tripe ration, dog food, p.~\pageref*{feeding-and-loyalty}\par
+Trolls, gear-and-corpse loop, p.~\pageref*{a-note-on-trolls}\par
+Trolls, revive timer, p.~\pageref*{a-note-on-trolls}\par
+Trollsbane, regeneration while wielded, p.~\pageref*{wishable-random-artifacts}\par
+Tsurugi of Muramasa (Samurai), p.~\pageref*{quest-artifacts}\par
+Tsurugi of Muramasa, counts as luckstone, p.~\pageref*{how-luck-works}\par
+Tsurugi, two-handed bisects, p.~\pageref*{weapons}\par
+Turning into slime, the 10-turn timer, p.~\pageref*{feelings-and-sounds}\par
+Two-handed weapons, 3/2 Strength damage, p.~\pageref*{damage}\par
+Two-weapon combat, flat penalty per strike, p.~\pageref*{two-weapon-combat}\par
+Two-weapon Expert, Rogue and Samurai only, p.~\pageref*{two-weapon-combat}\par
+
+\par\smallskip{\normalsize\bfseries U}\par\smallskip
+
+`u` horses and unicorns, p.~\pageref*{unicorns-and-horses-u}\par
+`U` umber hulk, confusion gaze, p.~\pageref*{umber-hulks-u}\par
+Unholy water, the evil twin, p.~\pageref*{blessed-uncursed-cursed-buc}\par
+Unicorn (co-aligned), never sacrifice, p.~\pageref*{altars-and-alignment}\par
+Unicorn gem-throwing, +5 luck max, p.~\pageref*{gaining-and-losing-luck}\par
+Unicorn horn, blessed seven ailments, p.~\pageref*{other-notable-tools}\par
+Unicorn horn, dip table, p.~\pageref*{unicorn-horn-interactions}\par
+Unicorn horn, no longer a cure-all, p.~\pageref*{unicorn-horn-interactions}\par
+Unicorn horn, status-cure all, p.~\pageref*{other-notable-tools}\par
+Unicorn, gem-throwing playbook, p.~\pageref*{unicorns-and-horses-u}\par
+Unlocking tools, skeleton key best, p.~\pageref*{unlocking-tools}\par
+Use-testing, the careful way, p.~\pageref*{use-testing-the-careful-way}\par
+Useful corpse effects (meat), p.~\pageref*{useful-corpse-effects}\par
+Useful corpse effects (vegetarian), p.~\pageref*{vegetarian-safe-corpses}\par
+
+\par\smallskip{\normalsize\bfseries V}\par\smallskip
+
+`V` vampires, p.~\pageref*{vampires-v}\par
+`v` vortices, p.~\pageref*{vortices-v}\par
+Valkyrie, easy-mode recommendation, p.~\pageref*{the-roles}\par
+Valkyrie, Female only, p.~\pageref*{the-roles}\par
+Valkyrie, Mjollnir waiting, p.~\pageref*{the-roles}\par
+Valley of the Dead, Gehennom entrance, p.~\pageref*{the-valley-of-the-dead}\par
+Vampire bat, Str-draining bite, p.~\pageref*{bats-and-birds-b}\par
+Vampire, level drain, p.~\pageref*{vampires-v}\par
+Varda Elentári, Star-Queen, p.~\pageref*{where-the-word-comes-from}\par
+Vault guard, lying costs Lawfuls alignment, p.~\pageref*{vaults}\par
+Vault guard, name yourself Croesus, p.~\pageref*{vaults}\par
+Vaults, the 2×2 closet of gold, p.~\pageref*{vaults}\par
+Vegan conduct, p.~\pageref*{the-food-conducts}\par
+Vegan, no eggs either, p.~\pageref*{what-to-eat}\par
+Vegetarian conduct, p.~\pageref*{the-food-conducts}\par
+Vegetarian, allowed corpses, p.~\pageref*{what-to-eat}\par
+Verbose option, message-log noise, p.~\pageref*{options-worth-knowing-about}\par
+Vibrating square, search by walking, p.~\pageref*{the-heist}\par
+Violet fungus, sticky paralysis, p.~\pageref*{fungi-and-molds-f}\par
+Vlad the Impaler, top of his tower, p.~\pageref*{vampires-v}\par
+Vlad was here, trap-door closet marker, p.~\pageref*{engravings}\par
+Vlad's throne, four wishes in thirteen, p.~\pageref*{vlads-tower}\par
+Vlad's throne, fourth sit's the charm, p.~\pageref*{vlads-tower}\par
+Vlad's throne, the nine bad outcomes, p.~\pageref*{vlads-tower}\par
+Vlad's Tower, branches upward, p.~\pageref*{vlads-tower}\par
+Vorpal Blade, behead chance, p.~\pageref*{wishable-random-artifacts}\par
+
+\par\smallskip{\normalsize\bfseries W}\par\smallskip
+
+`w` worms, p.~\pageref*{worms-w}\par
+`W` wraiths, p.~\pageref*{wraiths-w}\par
+Walk-out hazard, unpaid items, p.~\pageref*{credit-and-debt}\par
+Wand of cancellation, never in a bag, p.~\pageref*{wand-cancellation}\par
+Wand of cancellation, on cursed bag of holding, p.~\pageref*{wand-cancellation}\par
+Wand of cold, freezes water (ice path), p.~\pageref*{wand-fire-cold-lightning}\par
+Wand of death on Death, heals him, p.~\pageref*{the-astral-plane}\par
+Wand of death, don't zap at Death, p.~\pageref*{the-touch-of-death}\par
+Wand of death, the closer, p.~\pageref*{wand-death}\par
+Wand of digging, ascension kit staple, p.~\pageref*{wand-digging}\par
+Wand of digging, cursed zaps down, p.~\pageref*{wand-digging}\par
+Wand of digging, escape from inside, p.~\pageref*{engulfment}\par
+Wand of fire, burns Elbereth permanently, p.~\pageref*{engravings}\par
+Wand of fire, cold, lightning (rays), p.~\pageref*{wand-fire-cold-lightning}\par
+Wand of make invisible, 31-45 turns now, p.~\pageref*{wand-make-invisible}\par
+Wand of opening / spell of knock, opens drawbridge, p.~\pageref*{the-castle}\par
+Wand of Orcus, his fingertip death ray, p.~\pageref*{orcus-town}\par
+Wand of polymorph, on a pile (polypile), p.~\pageref*{wand-polymorph}\par
+Wand of probing, diagnostic tool, p.~\pageref*{key-wands}\par
+Wand of secret door detection, area reveal, p.~\pageref*{wands-and-staves}\par
+Wand of secret door detection, no aim, p.~\pageref*{searching-and-detection}\par
+Wand of stasis, new in 5.0, p.~\pageref*{wand-stasis}\par
+Wand of striking, destroys drawbridge, p.~\pageref*{the-castle}\par
+Wand of teleportation, monster removal, p.~\pageref*{wand-teleportation}\par
+Wand of wishing, found with one charge, p.~\pageref*{wand-wishing}\par
+Wand of wishing, recharge once and only once, p.~\pageref*{wand-wishing}\par
+Wand prices, \$100 to \$500, p.~\pageref*{wand-prices}\par
+Wand table, type and engrave-test, p.~\pageref*{the-wand-table}\par
+Wand, identifying by engraving, p.~\pageref*{the-engrave-test-wands}\par
+Wands and staves, three types, p.~\pageref*{wands-and-staves}\par
+Warhorse, ridden into mid-game, p.~\pageref*{unicorns-and-horses-u}\par
+Warning shot, monster's first wand zap, p.~\pageref*{attack-wands-and-the-warning-shot}\par
+Water demon wish, roughly 1 in 150 quaffs, p.~\pageref*{fountains}\par
+Water demon, fountain summons, p.~\pageref*{major-demons}\par
+Water moccasin, from fountain, p.~\pageref*{snakes-s}\par
+Water potion, always clear, p.~\pageref*{the-potion-table}\par
+Water walking boots, Castle drawbridge, p.~\pageref*{boots}\par
+Weak status, –1 Str, p.~\pageref*{how-hunger-works}\par
+Weapon skill caps, the matrix, p.~\pageref*{weapon-skill-caps}\par
+Weaponless conduct, p.~\pageref*{weaponless}\par
+Weapons tables (full appendix), p.~\pageref*{weapons-tables}\par
+Weapons, choice depends on role, p.~\pageref*{weapons}\par
+Werebane, lycanthropy defense, p.~\pageref*{wishable-random-artifacts}\par
+Werewolf, werejackal, lycanthropy, p.~\pageref*{dogs-and-canines-d}\par
+What changed since last time, 5.0 release, p.~\pageref*{what-changed-since-last-time}\par
+What to eat, fresh kills first, p.~\pageref*{what-to-eat}\par
+What to wish for, GDSM/SDSM/speed/gauntlets/lifesaving, p.~\pageref*{what-to-wish-for}\par
+White dragon scale mail, cold + slow digestion, p.~\pageref*{a-note-on-dragons}\par
+Why Luck matters, even the gods are picky, p.~\pageref*{why-luck-matters}\par
+Wielding Excalibur or Demonbane, no bribery, p.~\pageref*{whats-different-in-gehennom}\par
+Wish for \\"nothing\\", the escape hatch, p.~\pageref*{wishing-restrictions}\par
+Wish sources, six in total, p.~\pageref*{sources-of-wishes}\par
+Wish syntax, blessed greased fixed +3 GDSM, p.~\pageref*{wish-syntax}\par
+Wish, silent substitutions (fake amulet, etc.), p.~\pageref*{wish-syntax}\par
+Wishable artifacts, the random pool, p.~\pageref*{wishable-random-artifacts}\par
+Wishes, optimal use of, p.~\pageref*{what-to-wish-for}\par
+Wishing for other roles' quest artifacts, carry bonuses, p.~\pageref*{quest-artifacts}\par
+Wishing, found with one charge, p.~\pageref*{wand-wishing}\par
+Wishless conduct, refuse all, p.~\pageref*{wishing-restrictions}\par
+Wizard of Yendor, never stops, p.~\pageref*{the-wizards-tower}\par
+Wizard of Yendor, the eternal nuisance, p.~\pageref*{the-gauntlet}\par
+Wizard of Yendor, the most persistent ex, p.~\pageref*{humans-and-elves}\par
+Wizard's Tower, three special levels, p.~\pageref*{the-wizards-tower}\par
+Wizard, cloak of magic resistance from turn one, p.~\pageref*{the-roles}\par
+Wizard, dagger Expert opening, p.~\pageref*{spending-slots-wisely}\par
+Wizard, force bolt shatters potions, p.~\pageref*{the-roles}\par
+Wizard, kitten that won't share lunch, p.~\pageref*{the-roles}\par
+Wizards identify books by training, p.~\pageref*{wizards-identify-books}\par
+Worthless glass, unicorn-safe junk, p.~\pageref*{real-gem-prices}\par
+Wow! This makes you feel great!, magic fountain hit, p.~\pageref*{feelings-and-sounds}\par
+Wraith corpse, gain an experience level, p.~\pageref*{a-note-on-wraiths}\par
+Wraith corpse, the recipe, p.~\pageref*{a-note-on-wraiths}\par
+Wraith reverse genocide, banquet, p.~\pageref*{scroll-reverse-genocide}\par
+Wraiths, farming with reverse genocide, p.~\pageref*{a-note-on-wraiths}\par
+Wrath of a god, prayer gone wrong, p.~\pageref*{deadly-mistakes}\par
+Wresting, 1/121 final charge, p.~\pageref*{wresting}\par
+
+\par\smallskip{\normalsize\bfseries X}\par\smallskip
+
+`x` xans and fantastic insects, p.~\pageref*{xans-and-fantastic-insects-x}\par
+`X` xorn, phases through walls, p.~\pageref*{xorns-x}\par
+Xan, sting cripples your legs, p.~\pageref*{xans-and-fantastic-insects-x}\par
+
+\par\smallskip{\normalsize\bfseries Y}\par\smallskip
+
+`Y` apelike creatures, p.~\pageref*{apelike-creatures-y}\par
+`y` lights, p.~\pageref*{lights-y}\par
+YAFAP (Yet Another First Ascension Post), p.~\pageref*{acknowledgements}\par
+YASD (Yet Another Stupid Death), p.~\pageref*{acknowledgements}\par
+YASD, inevitability of, p.~\pageref*{your-first-descent}\par
+Yeenoghu, attacks on sight, p.~\pageref*{major-demons}\par
+Yellow dragon scale mail, permanent stoning resistance, p.~\pageref*{petrification-stoning}\par
+Yellow dragon scale mail, stoning resistance bonus, p.~\pageref*{a-note-on-dragons}\par
+Yellow light, blinds 10d20 turns, p.~\pageref*{light-bursts}\par
+Yellow mold, stuns and poisons, p.~\pageref*{fungi-and-molds-f}\par
+Yeti corpse, cold resistance, p.~\pageref*{useful-corpse-effects}\par
+Yeti, cold resistance corpse, p.~\pageref*{apelike-creatures-y}\par
+Your own pet, swapping places, p.~\pageref*{dungeon-hazards-and-how-to-survive-them}\par
+
+\par\smallskip{\normalsize\bfseries Z}\par\smallskip
+
+`Z` zombies, p.~\pageref*{zombies-z}\par
+`z` zruty, three-attack brute, p.~\pageref*{zruties-z}\par
+Zoo, wake them one at a time, p.~\pageref*{room-types}\par
+Zorkmid, abbreviation zm, p.~\pageref*{the-map-symbols}\par
+
+\end{multicols}
+```
+
+:::
+
+
 ---
 
 *You descend the stairs...*
