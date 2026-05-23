@@ -2276,6 +2276,12 @@ messages still come through.)
 | *"You hear someone cursing shoplifters."* | Shop on this level.                                                                 |
 | *"You hear bubbling water."*<br>*"You hear water falling on coins."* | Fountain on this level.                                          |
 | *"You hear a bugle playing reveille!"* | A soldier just woke nearby soldiers; expect a fight.                                   |
+| *"You hear a slurping sound."*         | A gelatinous cube just ate items off the floor on this level.                          |
+| *"You hear a crunching sound."*        | A rust monster, rock mole, or other metallivore just ate something metallic.           |
+| *"You hear a wolf howling at the moon."* (or jackal) | A werecreature is somewhere on this level.                               |
+| *"You hear crashing rock."*            | A tunneler (dwarf, gnome miner, rock mole, umber hulk) just dug through stone.         |
+| *"You hear a chugging sound."*         | A monster just drank a potion (usually healing themselves).                            |
+| *"You hear a nearby zap."*             | A monster just zapped a wand at something offscreen.                                   |
 | *"You feel healthy."*                  | Intrinsic poison resistance from a corpse.                                             |
 | *"You feel a momentary chill."*        | Intrinsic fire resistance from a corpse.                                               |
 | *"You feel full of hot air."*          | Intrinsic cold resistance from a corpse.                                               |
@@ -2764,10 +2770,12 @@ and it lets you abandon torches and oil. It also confers
 hallucination resistance.
 
 All scale mails are dragonhide, body-slot, +9 AC worn (the best in
-the body slot), and resist disenchantment naturally. The choice of which color to chase is
-usually whichever dragon's territory you can reach safely; killing
-a dragon yields scales you can wear immediately or convert to
-scale mail.
+the body slot), and resist disenchantment naturally. The choice of
+which color to chase is usually whichever dragon's territory you
+can reach safely; about one in three adult-dragon kills drops a
+set of scales, which you can wear directly or convert to scale
+mail by reading a non-cursed scroll of enchant armor while
+wearing them.
 
 #### A note on mimics
 
@@ -3733,11 +3741,19 @@ to donate anything at all also costs you alignment with your god.
 
 To convert a cross-aligned altar, sacrifice ordinary fresh
 corpses on it. Each attempt either flips the altar to your god
-(success), costs you Luck (failure), or — if your god is
-already angry — converts *you* to the altar's alignment instead.
-Better odds at higher experience level. Worth the risk when you
-need a co-aligned altar for sacrifice gifts, holy water, or BUC
-testing.
+(success), costs you Luck (failure), or, if your god is already
+angry, converts *you* to the altar's alignment instead. Better
+odds at higher experience level. Worth the risk when you need a
+co-aligned altar for sacrifice gifts, holy water, or BUC testing.
+
+Two complications worth knowing. A *successful* conversion can
+still summon a pair of hostile minions from the displaced god,
+arriving just as you exhale; have an exit plan in case the
+"victory" comes with company. And if you try this with a
+*negative* alignment record, the result inverts: instead of the
+altar flipping to your god, your god disowns you and you become a
+follower of the altar's god permanently. Run the conversion clean
+or not at all.
 
 Two things to **never** sacrifice on any altar:
 
@@ -4073,6 +4089,21 @@ identification tool. Every unidentified item has a fixed base price
 that depends on what it actually is. When you pick up an item in a
 shop, the shopkeeper quotes you a price derived from that base price,
 modified by your Charisma and the shopkeeper's markup.
+
+Two ways to get a quote without committing to the buy: **throw**
+the item into the shop from outside (you forfeit ownership but the
+shopkeeper still quotes the buy price as they pick it up), or
+**`#chat`** with the shopkeeper while standing on the item to hear
+the same quote. The chat trick is the polite way to price-ID a
+heavy item, or to price-test under teleportitis.
+
+A note on the markup: three things give you "sucker" sell prices
+(1/3 base instead of 1/2). Wearing a *dunce cap*, being a *Tourist
+under XL 15*, or letting a *T-shirt or Hawaiian shirt show* (no
+body armor and no cloak) all flip the divisor. Cover the shirt
+before you sell, and don't browse in your cone hat. Charisma
+doesn't touch sell prices at all; the Charisma bands in the table
+above only move *buy* prices.
 
 > *Shopkeeper pricing was first documented in detail by Gregory
 > Bond's Shopping Spoiler, HTML-formatted by Kate Nepveu and
@@ -4963,10 +4994,10 @@ temporary burst of 50–74 turns. The potion is the real prize.
 []{#potion-holy-water}
 **Holy water.** Not a potion you find: a potion you *make*. Drop
 uncursed water on a co-aligned altar, pray, and the gods bless it
-for you. Holy water can then bless any item you dip into it. This
-is the engine that drives your entire inventory: blessed scrolls
-of identify, blessed potions of gain ability, blessed scrolls of
-enchant weapon. You will never have enough holy water.
+for you (pile every water you own on the same square and a single
+prayer blesses the whole stack). Holy water then blesses any item
+you dip into it. A holy water can even bless *more water* by
+dipping into it. Keep one to make more.
 
 []{#potion-gain-level}
 **Gain level.** Raises your experience level by 1. Useful for
@@ -5366,6 +5397,12 @@ it when you're surrounded and need a free moment to engrave
 silence on engraving makes it harder to identify by the engrave
 test, but if you sit on a charge for a fight you'll know.
 
+**Probing.** A diagnostic wand: zap at a monster to learn its HP,
+max HP, level, and *what it's carrying*. Useful on shopkeepers,
+soldiers, and named adventurers whose inventory might be worth
+the trouble. A stethoscope reports HP and status but not gear; if
+you want to know what's in the pack, probing is the tool.
+
 #### Resolving Ambiguous Engrave Results
 
 A few engrave-test results are shared by more than one wand.
@@ -5417,6 +5454,13 @@ a **guaranteed explosion**. So the lifetime cap on a single wand
 of wishing is two wishes reliably, or three if you successfully
 wrest the final charge at the end.
 
+Rings are chargeable too, but with a practical ceiling: each
+attempted recharge has a 1-in-spe chance of exploding the ring,
+so +6 is roughly where the expected loss starts outpacing the
+gain. Recharging a +0 or +1 ring of protection is virtually
+free; chasing +7 burns more rings and scrolls than the dungeon
+hands you.
+
 #### Wresting
 
 When a wand has 0 charges, you can still try to zap it. There is a
@@ -5453,6 +5497,14 @@ where the real fun begins.
 Caveat: cursed polymorph items strip control, and rough
 transformations can hit you with system shock. Don't be at 5 HP
 when you reach for the wand.
+
+A wand of polymorph zapped at a *pile* of junk items reshuffles
+each one into a random item of the same class — the famous
+"polypile" trick that turns scroll dross into the scroll you
+needed. Drop the fodder on a square far from your real pack:
+a misaimed zap that catches your bag of holding rolls the bag too.
+Max your Luck first, because polypile failures sometimes spawn
+golems on the spot.
 
 ---
 
@@ -5846,6 +5898,13 @@ well spent, though a second charging attempt always explodes the
 wand), and **enchant weapon / enchant armor** for the +7 ascension
 kit. A well-used marker can produce a meaningful share of your
 ascension kit.
+
+The marker also feeds the **wraith feast**: write a *cursed*
+scroll of genocide, read it on a non-graveyard level, and the
+game reverse-genocides four to six fresh wraiths at your feet
+(see [Farming wraiths](#a-note-on-wraiths)). At ~1.6 corpses per
+scroll, a marker plus a stack of blank paper is a small XP
+factory for the late game.
 
 The **tinning kit** turns a fresh corpse (`a`pply, then select the
 corpse) into a tin: 450 nutrition's worth of preserved food that
@@ -6976,7 +7035,10 @@ is brutal against anything not shock-resistant.
 its stun damage, curse protection, and magic resistance — all of
 which require it to be **wielded**, not just carried — makes it
 Wizard's preferred melee weapon. Often the first gift from a
-Neutral sacrifice.
+Neutral sacrifice. One nuance for two-weapon Wizards: the curse
+protection only applies while Magicbane is the *primary* wielded
+weapon. If you stash Magicbane in the off-hand to swing a heavier
+blade, you've also turned off its anti-curse aura.
 
 **Stormbringer** is dangerous to use because it attacks peaceful
 monsters automatically, which can cause alignment problems. But
@@ -7698,6 +7760,10 @@ ball through the entire opposing team. Speed is everything.
 - **Zap problems away.** Teleportation wands move monsters out of
   your path. Death wands remove them permanently. Use both
   liberally.
+- **Casters: drop the Amulet to cast.** Carrying the Amulet drains
+  1–2× the spell's base cost on each cast. Drop the Amulet, cast
+  your finger of death or magic mapping, pick it back up. The
+  three-turn round trip is cheaper than the Pw burn.
 - **Kill the Wizard fast.** When he shows up (and he will), don't
   try to be clever. Finger of death, wand of death, or brute force.
   The faster he's down, the fewer monsters he summons.
@@ -7829,6 +7895,13 @@ their first attack on a turn, their second downgrades to a stun.
 pursue, they do not stop. **Eating any Rider corpse is
 instantly fatal.** You are not here to fight; you are here to
 reach one altar, make one sacrifice, and end this.
+
+If you have to pick which Rider to engage first, the community
+consensus is **Pestilence is the one to fear most**: the sickness
+timer keeps killing you after you've moved away, and unicorn-horn
+cures sometimes lose the race. Death's instakill is blocked by
+magic resistance; Famine you can outrun with a stack of food.
+Pestilence wants to be settled before either of the others.
 
 **Defenses.** An **amulet of life saving** is the best insurance
 on Astral. Magic resistance stops Death's instakill.
@@ -8801,9 +8874,11 @@ other, on [Elbereth](#elbereth) to keep them at bay, and on creative use of
 the dungeon environment.
 
 Pacifist ascensions are possible but require deep knowledge of the
-game's mechanics. Most pacifist players use a large, well-trained
-pet (often polymorphed into a purple worm or similar), the spell
-of charm monster, and extremely patient tactics.
+game's mechanics. The canonical late-game plan is a
+**figurine of an Archon** (wished, broken, then re-tamed if it
+turns hostile) as your champion fighter, the spell of *charm
+monster* for crowd pacification, and a ring of conflict for fights
+you can't talk your way out of.
 
 #### Illiterate
 <!-- audit
@@ -8827,6 +8902,10 @@ teleportation, remove curse, and genocide in their most common
 forms. Without spellbooks, you can't learn new spells or refresh
 old ones, so any starting spell you have will eventually fade. This
 forces extreme reliance on wands, potions, and creative workarounds.
+The standard workarounds are **pet-step BUC testing** (does the dog
+walk over it?) and **price-ID** (looking at a shopkeeper's quote
+doesn't count as reading), which together cover most of the ID
+table that scroll of identify would have handled.
 
 #### No Genocide
 <!-- audit
@@ -9170,6 +9249,12 @@ no markup or discount either way. The differences are about how
 Practical balance: park spare gold as credit at a shop you intend
 to keep visiting (the Gnomish Mines general store is a popular
 choice), but don't deposit more than you expect to spend there.
+
+(A more inventive use, called *credit cloning*: drop gold inside
+the shop, then lure a gold-loving monster — an orc, a leprechaun —
+to pick it up, walk it outside, and kill it. The credit stays with
+the shopkeeper and the gold comes back to you. It's one of
+NetHack's older shop-cheese routines.)
 
 **Debit** is the inverse: it accrues when you *use* an unpaid item
 inside the shop (read a scroll, quaff a potion, zap a wand) and you
