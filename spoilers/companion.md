@@ -311,7 +311,9 @@ get free book-ID just by casting (see
 [Spellcasting](#spellcasting)). Two warnings — Wizards start with
 *zero* food rations and a kitten that won't share lunch, and force
 bolt shatters potions on the ground and breaks any mirror a nymph
-is carrying. *Alignment: Neutral or Chaotic.*
+is carrying. Keep the quarterstaff wielded while you cast: any
+quarterstaff lowers spell-failure rate, a small free bonus on top
+of the cloak. *Alignment: Neutral or Chaotic.*
 
 #### The Races
 
@@ -842,8 +844,7 @@ more item discovery, and the occasional educational ambush.
 room, not a coincidence.** Themed rooms have above-average monster
 density concentrated around a single type, so any room that looks
 curated deserves more respect than a random room of equivalent
-apparent difficulty. Retreat, assess, and enter with a plan
-rather than a direction.
+apparent difficulty. Pause, assess, and enter with a plan.
 
 ---
 
@@ -1475,10 +1476,10 @@ a quest nemesis.
 
 Mid-game XP is slow to earn, so the path to XL 14 usually
 includes eating a few [wraith corpses](#a-note-on-wraiths) (one
-experience level each), or a blessed potion of gain level. Wraith
-corpses don't drop on graveyard levels, though! A good strategy
-is to lead a wraith out of the Valley of the Dead before killing
-it.
+experience level each), or a blessed potion of gain level.
+(Wraith corpses don't drop on graveyard levels, though! A good
+strategy is to lead a wraith out of the Valley of the Dead before
+killing it.)
 
 Each role has a unique Quest with unique maps, a unique nemesis,
 and a unique artifact reward. The Valkyrie hunts Lord Surtur for
@@ -2411,7 +2412,9 @@ Some roles can fight with a weapon in each hand, which looks
 impressive and gives more attacks per turn. The catch: each strike
 takes a flat to-hit and damage penalty determined by your
 two-weapon skill (−9/−7/−5/−3 to hit, −3/−1/0/+1 damage from
-Unskilled through Expert), and you can't use a shield. Only
+Unskilled through Expert), and the loadout must be melee on both
+sides — no shield, no launcher (bow, crossbow, sling), no ammo
+(arrows, bolts), no projectiles (darts, shuriken). Only
 **Rogue** and **Samurai** can reach Expert; Valkyrie and Knight
 cap at Skilled; everyone else lower or none. Rangers don't have
 the skill at all. If you're not sure, just use one really good
@@ -6394,6 +6397,14 @@ infinite scrolls, except they cost mana instead of inventory space.
 **Finger of death** is the ultimate argument-ender. **Charm
 monster** turns your enemies into your friends, which is even better
 than killing them because friends carry things and absorb hits.
+
+**Chain lightning** is the 5.0 room-clearer. At level 2 it's
+within reach of any character who can cast at all. The spell
+auto-fires in all eight directions without a target prompt, deals
+2d6 per hit, and stops dead at any peaceful or tame monster — so
+you can clear a hostile room without lighting up your pet or a
+shopkeeper down the hall. Shock-resistant hostiles eat one hit,
+then end that beam.
 
 #### Mana Management
 
