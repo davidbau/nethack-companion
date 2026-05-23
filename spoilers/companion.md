@@ -8100,10 +8100,12 @@ They are essential for moving safely through populated areas.
 
 #### Travel
 
-The underscore key (`_`) is an autopilot. Press `_`, point at a
-destination you've already explored, then `.` to confirm, and your
-character walks the shortest path there, opening doors and stopping
-on any interruption. `_<.` walks to the up-staircase; `__` walks
+The underscore key (`_`) is the "travel" command, a speedy
+autopilot. Press `_`, point at a destination you've already
+explored, then `.` to confirm, and your character walks the
+shortest path there, stopping on any interruption — including
+closed doors, which travel walks up to but doesn't open
+(press a direction to step through them, or `o` first). `_<.` walks to the up-staircase; `__` walks
 to a known altar; `_>.` walks to the down-staircase. After Ctrl+A,
 this is the single biggest quality-of-life command in the game.
 

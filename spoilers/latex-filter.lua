@@ -198,8 +198,8 @@ local function sokoban_side_by_side(code_block, list_block)
     map_lines = map_lines + 1
   end
 
-  -- Wider maps get 40% of page, narrow maps get 33%
-  local map_frac = max_line > 25 and 0.40 or 0.33
+  -- Wider maps get 35% of page, narrow maps get 29%
+  local map_frac = max_line > 25 and 0.35 or 0.29
   local instr_frac = 0.96 - map_frac
 
   local instructions = render_instructions(list_block)
@@ -227,7 +227,7 @@ local function sokoban_side_by_side(code_block, list_block)
 
   local result =
     "\\begin{minipage}[t]{" .. string.format("%.2f", map_frac) .. "\\linewidth}\n" ..
-    "\\begin{Verbatim}[fontsize=\\scriptsize," ..
+    "\\begin{Verbatim}[fontsize=\\scriptsize,baselinestretch=0.85," ..
     "frame=single,framesep=0.3em," ..
     "rulecolor=\\color{codeframe}]\n" ..
     padded_map .. "\n" ..
