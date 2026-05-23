@@ -2451,7 +2451,11 @@ are the time-tested tactics that keep adventurers breathing:
   noticeably more reliable, low Cha makes it flaky.
 - **Elbereth for emergencies.** Write it, stand on it, recover.
   The monsters will mill around you looking confused and angry,
-  which is exactly how you want them.
+  which is exactly how you want them. Step off Elbereth before
+  resuming the fight: any attack from on top — melee, thrown, or
+  zapped — defiles the engraving and costs you alignment ("you
+  feel like a hypocrite"). Elbereth is a rest stop, not a
+  firing position.
 - **Ranged attackers retreat.** Monsters with ranged attacks
   (archers, spellcasters, anything that can hurt you from a distance)
   now actively back away when you close to melee range. Walking toward
