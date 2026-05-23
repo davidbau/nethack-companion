@@ -4225,11 +4225,6 @@ unidentified item you bring in. *S^TP^* stacks both.
 | S^T^                             |  ×0.333 |   7 |  17 |  20 |  27 |  33 |  50 |  58 |  67 | 100 |  167 |
 | S^TP^                            |  ×0.25 |   5 |  13 |  15 |  20 |  25 |  38 |  44 |  50 |  75 |  125 |
 
-Numbers are NetHack's integer-rounded prices, not the round-number
-multiplier reapplied. Sell offers are unaffected by Charisma, so
-they aren't shown; an unangry shopkeeper offers ½ of base on a sell
-(³⁄₈ on unidentified items from an unfamiliar shop).
-
 :::
 
 ##### Scroll Prices
