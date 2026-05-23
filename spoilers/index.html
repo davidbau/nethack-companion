@@ -321,7 +321,9 @@ Stealth and range are the role. <em>Alignment: Chaotic.</em></p>
 the better one-handed weapons in the game, plus a wakizashi backup and a
 yumi bow with arrows. Samurai get speed early and have a strong martial
 kit overall. The katana’s damage output carries you through the early
-game with ease. <em>Alignment: Lawful.</em></p>
+game with ease. The wakizashi is community-classified dead weight: drop
+it and find a long sword for the off-hand instead, since long sword
+shares katana skill for two-weapon. <em>Alignment: Lawful.</em></p>
 <p><strong>Tourist.</strong> You start with a Hawaiian shirt, a credit
 card, an expensive camera, a truly absurd number of +2 darts, two
 potions of extra healing, and four scrolls of magic mapping. Tourists
@@ -2945,14 +2947,14 @@ you find are random flavor (graffiti, “elbereth” left by someone else,
 etc.), but two specific messages are <em>trap markers</em> placed by the
 dungeon: <em>“ad aerarium”</em> (Latin: <em>to the treasury</em>) is
 engraved near a secret closet containing either a <strong>vault
-teleporter</strong> (a one-shot TELEP_TRAP that drops you into Croesus’s
-2×2 gold vault on the same level — pick up the gold, then escape ahead
-of the vault guard) or a <strong>level teleporter</strong> (a
-LEVEL_TELEP that sends you to a random dungeon level, often unwelcome
-without Teleport control); <em>“Vlad was here”</em> marks a secret
-closet containing a <strong>trap door</strong>. Both are easy to miss in
-the message log, and worth investigating when you see them — but be
-ready for what’s on the other side.</p>
+teleporter</strong> (a one-shot trap that drops you into Croesus’s 2×2
+gold vault on the same level — pick up the gold, then escape ahead of
+the vault guard) or a <strong>level teleporter</strong> (sends you to a
+random dungeon level, often unwelcome without teleport control);
+<em>“Vlad was here”</em> marks a secret closet containing a <strong>trap
+door</strong>. Both are easy to miss in the message log, and worth
+investigating when you see them — but be ready for what’s on the other
+side.</p>
 </section>
 <section id="elbereth" class="level4">
 <h4>Elbereth</h4>
@@ -3829,8 +3831,11 @@ most spells work too.</p>
 hit; don’t engage in your starting iron suit if you can avoid it.</p>
 <p><strong>Eat the globs.</strong> A pudding leaves a
 <strong>glob</strong> rather than a corpse, and the globs are some of
-the best food in the game. They’re slow to spoil (about 500 turns of
-edibility, twice a normal corpse) and packed with resistances. A
+the best food in the game. (That’s <em>instead</em> of a corpse, not in
+addition to one: the old 3.4-era “pudding farm for endless altar fodder”
+trick doesn’t work in 5.0. The reward from a split pudding is more
+globs, not more sacrifice meat.) They’re slow to spoil (about 500 turns
+of edibility, twice a normal corpse) and packed with resistances. A
 brown-pudding glob grants <strong>cold, shock, and poison
 resistance</strong> over repeated eats; a gray-ooze glob grants
 <strong>fire, cold, and poison resistance</strong>; a black-pudding glob
@@ -3954,7 +3959,9 @@ On the real-world night of a new moon, that jumps to about 1 in 3. Hunt
 the nest on another night.</p>
 <p><strong>Defenses while it’s happening:</strong> eat a lizard corpse
 (this is why you carry one), eat an acidic corpse, drink a potion of
-acid, pray, or cast stone-to-flesh on yourself. Note: act
+acid, pray, or cast stone-to-flesh on yourself. Keep the lizard in your
+<strong>main inventory</strong>, not in a bag: pulling it out of a bag
+takes a turn you can’t spare against a two-turn timer. Note: act
 <em>before</em> the “Your limbs have turned to stone” message — after
 that you’re paralyzed for three turns and the final messages kill you.
 Amulet of Unchanging does <strong>not</strong> interrupt stoning. If you
@@ -4781,7 +4788,10 @@ uncursed alternative, which makes it a <em>probabilistic</em>
 curse-detector. Drop items on the ground and watch what your pet walks
 past versus what it walks around. If it has no choice, it will still
 cross the cursed square, but consistent avoidance across many turns is a
-strong tell.</p>
+strong tell. Even when it does step onto a cursed pile (chasing food, or
+pulled by a magic whistle), the game prints <em>“[pet] moves reluctantly
+onto …”</em> — that verb is the confirmation. Watch the messages, not
+just the path.</p>
 </section>
 <section id="feeding-and-loyalty" class="level4">
 <h4>Feeding and Loyalty</h4>
@@ -5802,6 +5812,12 @@ unicorn horn into a potion of <strong>confusion</strong>,
 <strong>hallucination</strong>, or <strong>blindness</strong> turns it
 into water; dipping into a potion of <strong>sickness</strong> turns it
 into fruit juice.</p>
+<p><strong>Testing a $200 potion.</strong> The $200 group
+(enlightenment, full healing, levitation, polymorph, speed) has the best
+payouts but two hidden traps. Quaff levitation and you’re stuck off the
+floor for a few hundred turns. Quaff polymorph and you may turn into a
+form that destroys or sheds your body armor. Strip down to a shirt
+before you test, and quaff somewhere nothing is hunting you.</p>
 <p><strong>Scrolls.</strong> Reading is risky. Some scrolls (destroy
 armor, amnesia, punishment) are outright harmful. The safest approach is
 to price-ID first, then read scrolls from safe price groups. If you must
@@ -5995,6 +6011,13 @@ in your pack. If you pick up a gray stone and it weighs you down
 suspiciously, try to drop it. If you can’t, you’re stuck with a cursed
 loadstone until you can uncurse it (holy water, scroll of remove curse,
 prayer) — then drop it.</p>
+<p><strong>The <code>#tip</code> escape.</strong> Or, more elegantly:
+stow the cursed loadstone in any container you carry (a 2z sack is
+enough), then apply <code>#tip</code> to the container. The contents
+spill onto your square, loadstone included, because <code>#tip</code>
+extracts items directly and bypasses the cursed-drop check. Step off and
+walk away. The trick has worked through every NetHack edition and the
+5.0 source still leaves the asymmetry in place.</p>
 <p><strong>The price test.</strong> If you can reach a shop: a $60 gray
 stone is a luckstone. A $45 gray stone is a touchstone. A $1 gray stone
 is flint or a loadstone.</p>
@@ -8030,7 +8053,11 @@ then read a (non-cursed) scroll of enchant armor while wearing them
 (they transform into scale mail); or wish for the mail directly.</p>
 <p><strong>Speed boots</strong> are worth wishing for. Being faster than
 your enemies means you get more turns — more chances to attack, cast
-spells, or run away.</p>
+spells, or run away. Casters with surplus Pw (Wizard or Monk late game,
+especially with the Eye of the Aethiopica) can lean on <strong>haste
+self</strong> as a substitute and free the boots slot for water walking
+or jumping. Haste self alone reaches <em>very fast</em> just like the
+boots; maintenance costs about 10 Pw every 150 turns at Skilled.</p>
 <p><strong>Cloak of magic resistance</strong> provides magic resistance
 in the cloak slot and frees up other slots for different resistances.
 However, be aware that since 3.6, <strong>magic cancellation (MC) values
@@ -11050,13 +11077,19 @@ for the Amulet, because apparently everyone wants this thing.</li>
 Gehennom, each time you climb stairs there’s a chance the force grabs
 you instead. Often it just shuffles you elsewhere on the same level;
 sometimes it drops you <strong>down</strong> a level (Chaotic max), two
-levels (Neutral max), or even three (Lawfuls only) — the dungeon is
-literally holding onto you. The pull is hardest on Chaotics and softest
-on Lawfuls, but Lawfuls also pay the longest tail when it does trigger.
-In 5.0 it <strong>decays</strong> as it triggers: every yank slightly
-reduces the chance of the next one. The force is a hard Gehennom gate:
-it stops the moment you climb out of Gehennom, and it also never fires
-on the bottom four levels.</li>
+levels (Neutral max), or even three (Lawfuls only). The worst yank is
+hardest on Lawfuls and gentlest on Chaotics: a Chaotic climb can never
+lose more than one level at a time. In 5.0 the trigger chance also
+<strong>decays</strong> as it fires — every yank slightly reduces the
+chance of the next one, and decays faster when the yank was deeper, so
+over the whole climb the per-step trigger rate stays roughly even across
+alignments. The force stops the moment you climb out of Gehennom, and it
+never fires on the bottom four levels.</li>
+<li><strong>Consider a Chaotic detour.</strong> A helm of opposite
+alignment worn just before the climb flips you to Chaotic and caps every
+yank at one level. The cost: your Astral offering then goes to the
+Chaotic altar, since the altar check uses your <em>current</em>
+alignment. An optimization choice, not a free lunch.</li>
 </ul>
 </section>
 <section id="strategy" class="level4">
