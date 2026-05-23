@@ -4187,30 +4187,30 @@ field reference for shopping trips.
 ##### Quoted-price conversion
 
 Each row shows the buy price you'd be quoted for the listed base
-prices. Find the row that matches your situation: plain
-**Charisma** rows are the baseline; **T** rows have one ×4/3
-surcharge applied; **T2** rows have two surcharges stacked.
-Surcharges come from three independent sources, and any
-combination of them adds to the count: a Tourist markup (low-XL
-Tourist, dunce cap, or visible undershirt), an angry shopkeeper,
-and the random "sucker" surcharge that fires on about 1 item in
-4 (deterministic per object). Combined labels show every Cha-and-
-surcharge combination that produces the same price.
+prices. Find the row that matches your situation. A bare Charisma
+band (like *11–15*) is the baseline; *11–15^T^* is Cha 11–15 with
+one ×4/3 surcharge applied; *11–15^T2^* is Cha 11–15 with two
+surcharges stacked. Surcharges come from three independent
+sources: a Tourist markup (low-XL Tourist, dunce cap, or visible
+undershirt), an angry shopkeeper, and the random "sucker"
+surcharge that fires on about 1 item in 4 (deterministic per
+object). Combined labels show every Cha-and-surcharge combination
+that produces the same price.
 
-| Charisma                       |   Mult |  20 |  50 |  60 |  80 | 100 | 150 | 175 | 200 | 300 |  500 |
-|--------------------------------|-------:|----:|----:|----:|----:|----:|----:|----:|----:|----:|-----:|
-| T2 6–7                         |  ×2.67 |  53 | 133 | 160 | 213 | 267 | 400 | 467 | 533 | 800 | 1333 |
-| T2 8–10                        |  ×2.37 |  47 | 119 | 142 | 190 | 237 | 356 | 415 | 474 | 711 | 1185 |
-| T 6–7                          |  ×2.0  |  40 | 100 | 120 | 160 | 200 | 300 | 350 | 400 | 600 | 1000 |
-| T 8–10, T2 11–15               |  ×1.78 |  36 |  89 | 107 | 142 | 178 | 267 | 311 | 356 | 533 |  889 |
-| 6–7                            |  ×1.5  |  30 |  75 |  90 | 120 | 150 | 225 | 263 | 300 | 450 |  750 |
-| 8–10, T 11–15, T2 16–17        |  ×1.33 |  27 |  67 |  80 | 107 | 133 | 200 | 233 | 267 | 400 |  667 |
-| T2 18                          |  ×1.19 |  24 |  59 |  71 |  95 | 119 | 178 | 207 | 237 | 356 |  593 |
-| 11–15, T 16–17                 |  ×1.00 |  20 |  50 |  60 |  80 | 100 | 150 | 175 | 200 | 300 |  500 |
-| T 18, T2 19+                   |  ×0.89 |  18 |  44 |  53 |  71 |  89 | 133 | 156 | 178 | 267 |  444 |
-| 16–17                          |  ×0.75 |  15 |  38 |  45 |  60 |  75 | 113 | 131 | 150 | 225 |  375 |
-| 18, T 19+                      |  ×0.67 |  13 |  33 |  40 |  53 |  67 | 100 | 117 | 133 | 200 |  333 |
-| 19+                            |  ×0.5  |  10 |  25 |  30 |  40 |  50 |  75 |  88 | 100 | 150 |  250 |
+| Charisma                         |   Mult |  20 |  50 |  60 |  80 | 100 | 150 | 175 | 200 | 300 |  500 |
+|----------------------------------|-------:|----:|----:|----:|----:|----:|----:|----:|----:|----:|-----:|
+| 6–7^T2^                          |  ×2.67 |  53 | 133 | 160 | 213 | 267 | 400 | 467 | 533 | 800 | 1333 |
+| 8–10^T2^                         |  ×2.37 |  47 | 119 | 142 | 190 | 237 | 356 | 415 | 474 | 711 | 1185 |
+| 6–7^T^                           |  ×2.0  |  40 | 100 | 120 | 160 | 200 | 300 | 350 | 400 | 600 | 1000 |
+| 8–10^T^, 11–15^T2^               |  ×1.78 |  36 |  89 | 107 | 142 | 178 | 267 | 311 | 356 | 533 |  889 |
+| 6–7                              |  ×1.5  |  30 |  75 |  90 | 120 | 150 | 225 | 263 | 300 | 450 |  750 |
+| 8–10, 11–15^T^, 16–17^T2^        |  ×1.33 |  27 |  67 |  80 | 107 | 133 | 200 | 233 | 267 | 400 |  667 |
+| 18^T2^                           |  ×1.19 |  24 |  59 |  71 |  95 | 119 | 178 | 207 | 237 | 356 |  593 |
+| 11–15, 16–17^T^                  |  ×1.00 |  20 |  50 |  60 |  80 | 100 | 150 | 175 | 200 | 300 |  500 |
+| 18^T^, 19+^T2^                   |  ×0.89 |  18 |  44 |  53 |  71 |  89 | 133 | 156 | 178 | 267 |  444 |
+| 16–17                            |  ×0.75 |  15 |  38 |  45 |  60 |  75 | 113 | 131 | 150 | 225 |  375 |
+| 18, 19+^T^                       |  ×0.67 |  13 |  33 |  40 |  53 |  67 | 100 | 117 | 133 | 200 |  333 |
+| 19+                              |  ×0.5  |  10 |  25 |  30 |  40 |  50 |  75 |  88 | 100 | 150 |  250 |
 
 Numbers are NetHack's integer-rounded prices, not the round-number
 multiplier reapplied. Sell offers are unaffected by Charisma, so
