@@ -941,7 +941,7 @@ AC / attack details on every monster, see the
 | ------ | ---------------- | -------------------------------------------------------------------------------------------------------- |
 | [`c`](#cockatrices-c)    | [Cockatrices](#cockatrices-c)      | **Touch = [instant petrification](#petrification-stoning).** Never hit one barehanded. Wield their corpse with gloves as a weapon. |
 | [`D`](#dragons-d)    | [Dragons](#dragons-d)          | [Each color has its own breath weapon, resistance, and scale mail property](#a-note-on-dragons). See note below. |
-| [`h`](#humanoids-h)    | [Mind flayers](#humanoids-h)     | [Drain intelligence on hit](#brainlessness). **If Int hits your racial minimum (3 for humans), you die.** Keep distance or kill fast. |
+| [`h`](#humanoids-h)    | [Mind flayers](#humanoids-h)     | [Drain intelligence on hit](#brainlessness). **If Int hits your racial minimum (3 for humans), you die.** A helmet blocks 7/8 tentacles. Kill from range. |
 | [`V`](#vampires-v)    | [Vampires](#vampires-v)         | [Drain levels](#level-drain). Vampire lords fly and are fast. |
 | [`w`](#worms-w)    | [Purple worms](#worms-w)     | The big worm: [swallows you whole on a hit, then digests](#engulfment). Cut your way out from inside. |
 | [`X`](#xorns-x)    | [Xorn](#xorns-x)             | Phases through walls and floors. Three claws and a bite per turn; hard to ambush and hard to escape from. |
@@ -10480,7 +10480,6 @@ Wild canines hunt in packs. Domestic ones can be tamed by feeding (see [Making F
 | winter wolf | cyan | 7 | 12 | 4 | 20 | bite 2d6 · breath 2d6 cold | cold-res. |
 | hell hound pup | red | 7 | 12 | 4 | 20 | bite 2d6 · breath 2d6 fire | fire-res. |
 | hell hound | red | 12 | 14 | 2 | 20 | bite 3d6 · breath 3d6 fire | fire-res. |
-| Cerberus | red | 12 | 10 | 2 | 20 | bite 3d6 · bite 3d6 · bite 3d6 | fire-res. Three-headed hellhound. Only present in custom builds; not in the default game. |
 
 :::
 
@@ -10533,7 +10532,7 @@ really "early-game" creatures.
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
-| kitten | white | 2 | 18 | 6 | 0 | bite 1d6 | tameable. Common Valkyrie/Wizard/Tourist starting pet. |
+| kitten | white | 2 | 18 | 6 | 0 | bite 1d6 | tameable. Common starting pet. |
 | housecat | white | 4 | 16 | 5 | 0 | bite 1d6 | tameable. |
 | jaguar | brown | 4 | 15 | 6 | 0 | claw 1d4 · claw 1d4 · bite 1d8 |  |
 | lynx | cyan | 5 | 15 | 6 | 0 | claw 1d4 · claw 1d4 · bite 1d10 |  |

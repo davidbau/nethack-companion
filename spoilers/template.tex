@@ -119,9 +119,12 @@
   {}
 \titlespacing*{\section}{0pt}{1.5em}{0.5em}
 
-% Subsection formatting
+% Subsection formatting. needspace bumped to 7 lines so a #### heading
+% never strands at the bottom of a page above a table that has been
+% pushed onto the next page (the Dart, Boots, and Liches headings
+% were the recurring offenders).
 \titleformat{\subsection}
-  {\needspace{4\baselineskip}\normalfont\large\bfseries}
+  {\needspace{7\baselineskip}\normalfont\large\bfseries}
   {}
   {0pt}
   {}
