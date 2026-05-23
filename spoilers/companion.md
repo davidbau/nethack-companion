@@ -3717,9 +3717,7 @@ There is a minimum. In 5.0, not every corpse you drop on
 the altar moves you toward the next artifact gift. The gods have
 opinions about what constitutes a worthy offering, and a kobold doesn't
 make the cut. Fresh corpses of appropriately challenging monsters are
-what advances your standing. If you've been feeding the altar with
-early-dungeon sweepings and wondering why the gifts aren't arriving,
-this is why.
+what advances your standing.
 
 #### Donating to Priests
 
@@ -3748,7 +3746,7 @@ experience level and how much gold you're carrying:
 - **Protection:** twice that — 300–500 zorkmids × experience level
 
 If you walk in carrying far more gold than the baseline, the
-priest scales the ask up to match — roughly a third of your purse
+priest scales the ask up to match, roughly a third of your purse
 for clairvoyance, two-thirds for protection. A rich hero who hands
 over only the baseline amount will be politely thanked but not
 blessed. The prompt always tells you the exact figure, so trust
