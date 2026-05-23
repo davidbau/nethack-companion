@@ -5131,17 +5131,27 @@ unaffected.</p>
 reference for shopping trips.</p>
 <section id="quoted-price-conversion" class="level5 print-only">
 <h5>Quoted-price conversion</h5>
-<p>Each row shows the buy price you’d be quoted for the listed base
-prices. Find the row that matches your situation. A bare Charisma band
-(like <em>11–15</em>) is the baseline; <em>11–15<sup>T</sup></em> is Cha
-11–15 with one ×4/3 surcharge applied; <em>11–15<sup>T2</sup></em> is
-Cha 11–15 with two surcharges stacked. Surcharges come from three
-independent sources: a Tourist markup (low-XL Tourist, dunce cap, or
-visible undershirt), an angry shopkeeper, and the random unidentified-
-item surcharge that fires on about 1 item in 4 (deterministic per
-object, so two of the same appearance disagreeing on price is the
-giveaway). Combined labels show every Cha-and-surcharge combination that
-produces the same price.</p>
+<p>Each row shows the price you’d transact for the listed base
+prices.</p>
+<p><strong>Buy rows</strong> are the Charisma bands (the price you’d be
+<em>quoted</em> to buy). A bare band (like <em>11–15</em>) is the
+baseline; <em>11–15<sup>T</sup></em> is Cha 11–15 with one ×4/3
+surcharge applied; <em>11–15<sup>T2</sup></em> is two surcharges
+stacked. Surcharges come from three sources: a Tourist markup (low-XL
+Tourist, dunce cap, or visible undershirt), an angry shopkeeper, or the
+random unidentified-item surcharge that fires on about 1 item in 4
+(deterministic per object — two of the same appearance disagreeing is
+the giveaway).</p>
+<p><strong>Sell rows</strong> at the bottom show what an unangry
+shopkeeper <em>offers</em> for a sale. Sell prices ignore Charisma.
+<em>S</em> is the baseline ½ of base. <em>S<sup>T</sup></em> is the same
+sucker condition (dunce cap, low-XL Tourist, visible undershirt) — on
+the sell side it cuts your offer to ⅓ instead of ½.
+<em>S<sup>P</sup></em> is a pennypinching shopkeeper (1 in 4) who shaves
+¼ off unidentified items; unlike the buy-side unid surcharge, this is
+per-shopkeeper, not per-item — the same pennypinching shop applies it to
+every unidentified item you bring in. <em>S<sup>TP</sup></em> stacks
+both.</p>
 <table style="width:100%;">
 <colgroup>
 <col style="width: 36%" />
@@ -5159,7 +5169,7 @@ produces the same price.</p>
 </colgroup>
 <thead>
 <tr>
-<th>Charisma</th>
+<th>Buy / Sell</th>
 <th style="text-align: right;">Mult</th>
 <th style="text-align: right;">20</th>
 <th style="text-align: right;">50</th>
@@ -5329,7 +5339,7 @@ produces the same price.</p>
 <td style="text-align: right;">333</td>
 </tr>
 <tr>
-<td>19+</td>
+<td>19+, S</td>
 <td style="text-align: right;">×0.5</td>
 <td style="text-align: right;">10</td>
 <td style="text-align: right;">25</td>
@@ -5341,6 +5351,48 @@ produces the same price.</p>
 <td style="text-align: right;">100</td>
 <td style="text-align: right;">150</td>
 <td style="text-align: right;">250</td>
+</tr>
+<tr>
+<td>S<sup>P</sup></td>
+<td style="text-align: right;">×0.375</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">56</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: right;">113</td>
+<td style="text-align: right;">188</td>
+</tr>
+<tr>
+<td>S<sup>T</sup></td>
+<td style="text-align: right;">×0.333</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">167</td>
+</tr>
+<tr>
+<td>S<sup>TP</sup></td>
+<td style="text-align: right;">×0.25</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: right;">125</td>
 </tr>
 </tbody>
 </table>

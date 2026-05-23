@@ -4186,19 +4186,28 @@ field reference for shopping trips.
 
 ##### Quoted-price conversion
 
-Each row shows the buy price you'd be quoted for the listed base
-prices. Find the row that matches your situation. A bare Charisma
-band (like *11–15*) is the baseline; *11–15^T^* is Cha 11–15 with
-one ×4/3 surcharge applied; *11–15^T2^* is Cha 11–15 with two
-surcharges stacked. Surcharges come from three independent
-sources: a Tourist markup (low-XL Tourist, dunce cap, or visible
-undershirt), an angry shopkeeper, and the random unidentified-
-item surcharge that fires on about 1 item in 4 (deterministic
-per object, so two of the same appearance disagreeing on price
-is the giveaway). Combined labels show every Cha-and-surcharge
-combination that produces the same price.
+Each row shows the price you'd transact for the listed base prices.
 
-| Charisma                         |   Mult |  20 |  50 |  60 |  80 | 100 | 150 | 175 | 200 | 300 |  500 |
+**Buy rows** are the Charisma bands (the price you'd be *quoted*
+to buy). A bare band (like *11–15*) is the baseline; *11–15^T^*
+is Cha 11–15 with one ×4/3 surcharge applied; *11–15^T2^* is two
+surcharges stacked. Surcharges come from three sources: a Tourist
+markup (low-XL Tourist, dunce cap, or visible undershirt), an
+angry shopkeeper, or the random unidentified-item surcharge that
+fires on about 1 item in 4 (deterministic per object — two of the
+same appearance disagreeing is the giveaway).
+
+**Sell rows** at the bottom show what an unangry shopkeeper
+*offers* for a sale. Sell prices ignore Charisma. *S* is the
+baseline ½ of base. *S^T^* is the same sucker condition (dunce
+cap, low-XL Tourist, visible undershirt) — on the sell side it
+cuts your offer to ⅓ instead of ½. *S^P^* is a pennypinching
+shopkeeper (1 in 4) who shaves ¼ off unidentified items;
+unlike the buy-side unid surcharge, this is per-shopkeeper, not
+per-item — the same pennypinching shop applies it to every
+unidentified item you bring in. *S^TP^* stacks both.
+
+| Buy / Sell                       |   Mult |  20 |  50 |  60 |  80 | 100 | 150 | 175 | 200 | 300 |  500 |
 |----------------------------------|-------:|----:|----:|----:|----:|----:|----:|----:|----:|----:|-----:|
 | 6–7^T2^                          |  ×2.67 |  53 | 133 | 160 | 213 | 267 | 400 | 467 | 533 | 800 | 1333 |
 | 8–10^T2^                         |  ×2.37 |  47 | 119 | 142 | 190 | 237 | 356 | 415 | 474 | 711 | 1185 |
@@ -4211,7 +4220,10 @@ combination that produces the same price.
 | 18^T^, 19+^T2^                   |  ×0.89 |  18 |  44 |  53 |  71 |  89 | 133 | 156 | 178 | 267 |  444 |
 | 16–17                            |  ×0.75 |  15 |  38 |  45 |  60 |  75 | 113 | 131 | 150 | 225 |  375 |
 | 18, 19+^T^                       |  ×0.67 |  13 |  33 |  40 |  53 |  67 | 100 | 117 | 133 | 200 |  333 |
-| 19+                              |  ×0.5  |  10 |  25 |  30 |  40 |  50 |  75 |  88 | 100 | 150 |  250 |
+| 19+, S                           |  ×0.5  |  10 |  25 |  30 |  40 |  50 |  75 |  88 | 100 | 150 |  250 |
+| S^P^                             |  ×0.375 |   8 |  19 |  23 |  30 |  38 |  56 |  66 |  75 | 113 |  188 |
+| S^T^                             |  ×0.333 |   7 |  17 |  20 |  27 |  33 |  50 |  58 |  67 | 100 |  167 |
+| S^TP^                            |  ×0.25 |   5 |  13 |  15 |  20 |  25 |  38 |  44 |  50 |  75 |  125 |
 
 Numbers are NetHack's integer-rounded prices, not the round-number
 multiplier reapplied. Sell offers are unaffected by Charisma, so
