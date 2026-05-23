@@ -3004,8 +3004,9 @@ epitaph.
 -->
 #### Petrification (Stoning)
 
-Stoning is the dungeon's most famous instakill, and the reason
-every experienced player carries a lizard corpse. Touching a
+Petrification is the dungeon's most notorious way to instantly
+kill you, and the reason every experienced player carries a lizard
+corpse. Touching a
 cockatrice without gloves, eating a cockatrice corpse, catching
 Medusa's gaze, or **kicking** a cockatrice corpse barefoot will
 turn you to stone. *Stepping* on the corpse is safe so long as
