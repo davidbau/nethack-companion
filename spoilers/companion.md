@@ -3004,7 +3004,7 @@ permanent, wear yellow dragon scale mail.
 **Peril in the new moon.** A cockatrice's hiss has a small chance
 to start stoning on any landed melee hit (roughly 1 in 30). On
 the real-world night of a new moon, that jumps to about 1 in 3.
-Cockatrice nests can wait a day.
+Hunt the nest on another night.
 
 **Defenses while it's happening:** eat a lizard corpse (this is
 why you carry one), eat an acidic corpse, drink a potion of acid,
