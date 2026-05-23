@@ -3676,10 +3676,11 @@ actions per level, it takes longer to feel.
 
 #### Sacrifice
 
-Sacrifice is how you cash in dead monsters for divine help. Drop a
-fresh corpse on an altar that matches your alignment (`#offer`) and
-your god takes notice. Over time that notice pays out as artifact
-weapons, holy water, restored alignment, and eventually a crown.
+Sacrifice is a trade: a corpse you could eat, given up to your god
+in exchange for divine help. Drop a fresh corpse on an altar that
+matches your alignment (`#offer`) and your god takes notice. Over
+time that notice pays out as artifact weapons, holy water, restored
+alignment, and eventually a crown.
 
 The rules:
 
