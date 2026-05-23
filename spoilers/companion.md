@@ -1392,9 +1392,8 @@ Breaking or polymorphing boulders, reading scrolls of earth, or
 squeezing past boulders costs you a point of luck each time. Solve
 each level honestly if you can. The luck penalty isn't a sentence,
 though: it clears the moment you legitimately finish the level
-above it, and the prize still drops regardless of how many
-infractions piled up. If you're stuck near the end, one desperate
-fracture won't ruin the run.
+above it, and the prize is still available regardless of
+infractions. One desperate boulder-smash won't ruin the run.
 
 **Strength training side effect.** Every legitimate boulder-push
 exercises Strength. Sokoban is the safest place to grind Str up
@@ -1473,11 +1472,12 @@ they will let you descend. If you are prepared and worthy, your
 leader will send you to retrieve your role's quest artifact from
 a quest nemesis.
 
-Mid-game XP earns slowly, so the bridge to XL 14 is usually a few
-[wraith corpses](#a-note-on-wraiths) (one experience level each)
-or a blessed potion of gain level. Wraith corpses don't drop on
-graveyard levels, though, so lead a wraith out of the Valley of
-the Dead before killing it.
+Mid-game XP is slow to earn, so the path to XL 14 usually
+includes eating a few [wraith corpses](#a-note-on-wraiths) (one
+experience level each), or a blessed potion of gain level. Wraith
+corpses don't drop on graveyard levels, though! A good strategy
+is to lead a wraith out of the Valley of the Dead before killing
+it.
 
 Each role has a unique Quest with unique maps, a unique nemesis,
 and a unique artifact reward. The Valkyrie hunts Lord Surtur for
@@ -1837,7 +1837,7 @@ shatter, and that stack of twenty scrolls of identify you've been
 hoarding is suddenly ash. Fire resistance saves your skin but
 *not* your belongings. Items inside a *sack* or *oilskin sack*
 survive the trap; the sack itself absorbs the burn. Gehennom is
-fire-trap country — keep your consumables bagged.
+fire-trap country, so keep your consumables bagged.
 
 Polymorph traps are a double-edged sword. With polymorph control,
 they're a free polymorphing booth. Without it, you become something
@@ -1861,11 +1861,15 @@ can't run, you can't even wake up on purpose. Monsters line up
 to hit you like it's a buffet. Sleep resistance (elven blood, the
 right ring) sidesteps it.
 
-Magic traps are the dungeon's worst slot machine: a few outcomes
-are bad (level summoning, item destruction), a few are flavour,
-and a few are *great* — one row of the table is a Charisma bonus.
-Patient players sometimes camp a found magic trap until their
-shop prices fall.
+Magic traps roll one of about a dozen random effects. The
+bad outcomes are summoning hostile monsters, cursing one of
+your items, aggravating monsters, blindness, sleep, stun,
+vomiting, and an earthquake that pops pits open in the
+surrounding squares. The good outcomes are an HP restore, a
+mana refill, a Charisma boost, a magic-mapping flash, and a
+room-lighting flash. Patient players sometimes camp a known
+magic trap until their Charisma climbs (about +1.4 average per
+zap), shop prices and all.
 
 Bear traps clamp on for several turns. Try to step *diagonally*
 off the square; the diagonal escape is about five times faster
@@ -4028,13 +4032,12 @@ use it heavily.
 **Pet testing.** Your pet won't step on cursed items. If you drop
 something and your dog walks around it, it's cursed. If the dog walks
 over it (or picks it up), it's safe. Not as precise as an altar, but
-works anywhere. Two ways the test silently lies: a hungry pet will
-march straight over a cursed pile if there's food in the same stack,
-and items that *autocurse on wear* (helm of opposite alignment,
+works anywhere. Two ways the test can lie: a hungry pet will march
+straight over a cursed pile if there's food in the same stack, and
+items that *autocurse on wear* (helm of opposite alignment,
 gauntlets of fumbling, dunce cap, levitation boots) read as
-uncursed on the floor and then curse themselves the instant you put
-them on. Pet-tested armor still wants an altar before it goes on
-your head.
+uncursed on both pet and altar tests, then curse themselves the
+instant you put them on.
 
 **Holy water.** Dipping an item in blessed water (holy water) will
 uncurse a cursed item or bless an uncursed one. Dipping in cursed
@@ -4047,9 +4050,9 @@ so save it for items you've already identified.
 items in your pack, more with positive Luck, with a 1-in-5 chance
 to ID the whole pack outright. An uncursed scroll IDs one or two
 items per read. A cursed scroll IDs only itself the first time you
-read one of that type, then one item per cursed read after. Pile
-every unidentified item on your square before reading a blessed
-one — the jackpot reads *everything*.
+read one of that type, then one item per cursed read after. Pick
+every unidentified item into your inventory before reading a
+blessed scroll: the jackpot reads everything in your pack.
 
 #### The Price Is Right
 <!-- audit
@@ -4167,18 +4170,31 @@ than other categories. But you can still narrow things down. If a
 scroll is in the $20 group, it's identify. Period. That's one of the
 most useful scrolls in the game and you just found it for free.
 
-A favourite shortcut: a *single* unidentified scroll alone in a
+A closet tip: a *single* unidentified scroll alone in a
 one-square closet, behind a door or in a niche, is almost always
-scroll of teleportation — the dungeon generator hides it there as
+scroll of teleportation. The dungeon generator hides it there as
 the level's teleport-trap clue. If you find that closet, you've
 probably found a free $100 ID.
 
-**Spellbooks aren't in the table above** (the prices fall in a
-separate set), but they're easy to read: a spellbook prices at
-about 100 × spell level. The $100 book is level 1 and safe to read
-even at low XL; the $700 book is level 7 and will explode in the
-hands of anyone who isn't a careful Wizard. Always price-ID a
-spellbook before reading.
+##### Spellbook Prices
+
+Spellbooks price at 100 × the spell's level, which makes reading
+risk easy to gauge: a $700 book is level 7 and will probably
+explode in the hands of anyone who isn't a careful Wizard.
+
+<div class="price-id-toolbar"></div>
+
+| Price | Level | Spellbooks                                                                                                                  |
+| ----- | ----- | --------------------------------------------------------------------------------------------------------------------------- |
+|   100 | 1     | confuse monster, detect monsters, flame sphere, force bolt, freeze sphere, healing, jumping, knock, light, protection      |
+|   200 | 2     | chain lightning, create monster, cure blindness, detect food, drain life, magic missile, slow monster, wizard lock          |
+|   300 | 3     | cause fear, clairvoyance, cure sickness, detect unseen, extra healing, haste self, identify, remove curse, sleep, stone to flesh |
+|   400 | 4     | cone of cold, detect treasure, fireball, invisibility, levitation, restore ability                                          |
+|   500 | 5     | charm monster, dig, magic mapping                                                                                           |
+|   600 | 6     | create familiar, polymorph, teleport away, turn undead                                                                      |
+|   700 | 7     | cancellation, finger of death                                                                                               |
+
+<div class="price-id-toolbar"></div>
 
 ##### Potion Prices
 
@@ -4677,11 +4693,6 @@ unknown high-level book is the most lethal mistake on the
 identification table), **amulets** next (all the same price), then
 the resistance/utility rings in the $200 group, then any wands
 that engrave-tested ambiguously.
-
-**Damerell's altar trick.** If you've dropped a stack on an altar
-and the flash says "blessed," `#name` the appearance "blessed"
-right there. Every future stack of that appearance you find will
-arrive pre-tagged — you only need to altar-test the type once.
 
 The system is about reducing uncertainty with the cheapest, safest
 method first: altars and shops are free, engrave-testing costs one
@@ -5206,6 +5217,11 @@ for an emergency.
 **Confused genocide** genocides your own role. This kills you.
 Don't get confused at the wrong moment.
 
+The cleanest way to confuse yourself on purpose is a **potion of
+confusion**: drink one and the timer runs about 25–80 turns. Eating
+a stalker corpse or a fortune cookie can do the same, with side
+effects of their own.
+
 ---
 
 ### Wands and Staves
@@ -5299,9 +5315,9 @@ shortcuts, dig down to escape dangerous situations, dig through
 rock to reach vaults and hidden areas. Every ascension kit should
 include a wand of digging. It also doubles as the universal "I'm
 leaving" button: a downward zap drops you straight onto the next
-floor, the same direction you wanted to go anyway. One quirk to
-remember: a *cursed* wand of digging zaps downward no matter
-which direction you point it.
+floor, the same direction you wanted to go anyway. One quirk: a
+*cursed* wand of digging zaps downward no matter which direction
+you point it.
 
 []{#wand-teleportation}
 **Teleportation.** Zap monsters to send them somewhere else on the
@@ -5672,13 +5688,8 @@ If you find a *cursed* bag of holding (in a bones pile, perhaps),
 don't open it. Drop it on the floor and zap a wand of cancellation
 *at the bag from outside*. Cancellation uncurses items it touches,
 and the explosion rule only triggers on insertion, not on a zap.
-You'll have a safe, uncursed bag.
-
-If you're heading into water — Medusa's moat, the Plane of Water,
-or just an unlucky fountain dunk — apply a can of grease to the
-bag of holding before you go. Greased bags shield their contents
-from water damage, the way an oilskin sack does, without giving up
-the carry-capacity discount.
+You'll have a safe, uncursed bag. (A bag of holding can also be
+*greased* — see [Can of grease](#other-notable-tools).)
 
 ##### Carrying capacity
 
@@ -5780,6 +5791,7 @@ but no special effects, useful only for confusing the issue.
 | Stethoscope        | Check HP and status of a monster              |
 | Tin opener         | Open tins in one turn                         |
 | Tinning kit        | Preserve corpses as tins                      |
+| Can of grease      | Coat armor, weapons, bags                     |
 | Blindfold          | Voluntarily go blind (useful for telepathy)   |
 | Towel              | Wipe cream pie from face, use as blindfold    |
 | Magic marker       | Write scrolls and spellbooks on blank paper   |
@@ -5855,6 +5867,15 @@ it on an altar before the first use.
 The **magic lamp** must be blessed before you rub it: cursed magic
 lamps never grant the wish, uncursed are around 40%, blessed are
 ~80%. Take it to a co-aligned altar first.
+
+The **can of grease** is the cheapest hardening upgrade in the
+dungeon. Apply it to a worn armor piece and the slick coat makes
+the wearer harder to grab and steal from: nymphs slide off, the
+Riders' grab attacks miss, and weapon-snatch attempts fail. Applied
+to a bag of holding, it waterproofs the contents like an oilskin
+sack — handy before crossing Medusa's moat or the Plane of Water.
+The coat wears off after a few hits, so it's per-fight protection,
+not a long-lasting investment.
 
 ---
 
@@ -9990,10 +10011,15 @@ kebab bonus.
 | helm of brilliance | +1 | — | 40 | 50 | glass | Adds enchantment value to both Int and Wis while worn (a +3 helm gives +3 Int and +3 Wis). |
 | helmet | +1 | — | 30 | 10 | iron |  |
 | helm of caution | +1 | — | 50 | 50 | iron | Warning. |
-| helm of opposite alignment | +1 | — | 50 | 50 | iron | Flips your alignment while worn. Generated cursed 9 times in 10, so it sticks. Mostly a trap, but the alignment flip lets you sacrifice on a cross-aligned altar, claim the opposite alignment's quest artifact, or — at the Astral Plane — adjust which altar accepts the Amulet. |
+| helm of opposite alignment | +1 | — | 50 | 50 | iron | Flips your alignment while worn. Cursed 90%. |
 | helm of telepathy | +1 | — | 50 | 50 | iron | Telepathy while blind. |
 
 :::
+
+The helm of opposite alignment is mostly a trap, but the alignment
+flip is sometimes useful on purpose: sacrifice on a cross-aligned
+altar, claim the opposite alignment's quest artifact, or, on the
+Astral Plane, change which altar accepts the Amulet.
 
 #### Gloves
 
