@@ -7901,7 +7901,7 @@ Find the portal. Survive the plane. Move on. There is no going back.
 
 **Two cheap ways to find a portal.** A scroll of gold detection
 read while confused marks every trap on the level, the portal
-included: one read, one map. The Amulet of Yendor is itself a
+included: one read, one map. And the Amulet of Yendor is itself a
 compass while you carry it: wielded or worn, it occasionally
 mutters *hot*, *very warm*, or *warm* as you get closer (within
 3, 8, or 12 squares of the portal). It's a hot/cold game you can
