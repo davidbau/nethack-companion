@@ -2976,6 +2976,12 @@ epitaph.
 - Fumbling can trip the hero onto the corpse for instapetrify (timeout.c:1256-1261)
 - strategy aligned with NetHackWiki Stoning, Cockatrice, Lizard: gloves around cockatrice corpses, lizard/acid corpse to interrupt the countdown, weaponized corpse for offense (https://nethackwiki.com/wiki/Stoning, https://nethackwiki.com/wiki/Cockatrice, https://nethackwiki.com/wiki/Lizard)
 - eating any acidic corpse cures in-progress stoning (eat.c:860-861, fix_petrification at eat.c:867-877)
+2026-05-23:
+- cockatrice hiss (AD_STON) fires on 1/3 of landed melee hits (uhitm.c:4215)
+- stoning roll within is `!rn2(10) || flags.moonphase == NEW_MOON` (uhitm.c:4245)
+- 5.0 explicitly removed the lizard-corpse new-moon override (uhitm.c:4231-4243 source comment)
+- net per-hit stoning rate: ~1/30 baseline, ~1/3 on new moon
+- citation: source comment names the design change; NetHackWiki Cockatrice page still documents pre-5.0 lizard mitigation (https://nethackwiki.com/wiki/Cockatrice)
 -->
 #### Petrification (Stoning)
 
@@ -2994,6 +3000,12 @@ use reflection against Medusa, and pile up *timed* stoning
 resistance from acid blob corpses (each one grants d(3,6) turns of
 HStone resistance: useful but not permanent). For something
 permanent, wear yellow dragon scale mail.
+
+**The new-moon catch.** A cockatrice's hiss has a small chance to
+start stoning on any landed melee hit (roughly 1 in 30). On the
+real-world night of a new moon, that jumps to about 1 in 3. There
+is no item-level mitigation in 5.0; the only defense is the
+calendar. Cockatrice nests can wait a day.
 
 **Defenses while it's happening:** eat a lizard corpse (this is
 why you carry one), eat an acidic corpse, drink a potion of acid,
@@ -5100,6 +5112,11 @@ pharmacy.
 - WAN_WISHING lim=1; cursed strips charges; blessed gives the same +1 as uncursed (read.c:738-789)
 - second recharge on a wand of wishing is a 100% explosion via the recharged>0 branch (read.c:761-764)
 - strategy aligned with NetHackWiki Scroll of charging, Scroll of enchant weapon, Scroll of destroy armor: +5 safe ceiling for weapons, wand-of-wishing-recharges-exactly-once rule, confused destroy-armor erodeproofs (https://nethackwiki.com/wiki/Scroll_of_charging, https://nethackwiki.com/wiki/Scroll_of_enchant_weapon, https://nethackwiki.com/wiki/Scroll_of_destroy_armor)
+2026-05-23:
+- identify_pack iterates gi.invent only (invent.c:2711-2735) — bag contents and floor items are not touched
+- read.c:2087-2092 sets cval: blessed always rolls cval=rn2(5); uncursed rolls only on 1/5; cursed always cval=1
+- cval==0 (1-in-5 of the blessed roll) identifies ALL inventory items; blessed+Luck>0 promotes cval=1 to 2 so minimum is two
+- citation: NetHackWiki Scroll of identify (https://nethackwiki.com/wiki/Scroll_of_identify)
 -->
 
 Scrolls are the dungeon's single-use spells: read once, triggered,
@@ -5136,9 +5153,13 @@ genocide (the game's nuclear option) and punishment
 #### Key Scrolls
 
 []{#scroll-identify}
-**Identify.** The bread and butter of dungeon life. Blessed identify
-reveals multiple items at once (with positive luck, always at least
-two). You will never have enough of these.
+**Identify.** The bread and butter of dungeon life. The scroll
+only inspects your **main inventory**: items inside a bag or
+sitting on the floor are invisible to it. Pull everything out of
+your bag, pick up nearby unknowns, and consolidate them in your
+pack before reading. Blessed identify with positive Luck names at
+least two items, and on a 1-in-5 roll it names your whole
+inventory at once. You will never have enough of these.
 
 []{#scroll-enchant}
 **Enchant weapon / enchant armor.** The path to endgame power.
@@ -6565,6 +6586,10 @@ random numbers, which in the Mazes is the closest thing to love.
 - Valkyrie 6+6+2 = 14 slot example math
 - crown gives +1 slot
 - strategy aligned with NetHackWiki Skill, Twoweapon: slot budget tied to XL + crowning, non-weapon skills cost half, restricted skills only unrestrict to Basic via artifact gift (https://nethackwiki.com/wiki/Skill, https://nethackwiki.com/wiki/Twoweapon)
+2026-05-23:
+- Wizard dagger Expert opening: Wizards are unrestricted in dagger (Skill_W u_init.c:548-569), cap at Expert; thrown daggers benefit from a class multishot bonus (dothrow.c:177-190); early Pw budget is tight at base regen (Wis+Int)/15+1 (allmain.c:605-607)
+- six-slot Dagger Expert cost = 1+2+3 (weapon column, skills.h:92-106)
+- citation: community Wizard opening guides on NetHackWiki Wizard strategy and Damerell, "How to play a Wizard" (https://nethackwiki.com/wiki/Wizard, https://www.steelypips.org/nethack/)
 -->
 
 Most adventurers discover the skill system the first time they
@@ -6803,6 +6828,11 @@ A few principles:
   chapter). Schools containing your unidentified books deserve
   priority. This double benefit is Wizard-only; other roles only
   get the casting-success benefit.
+- **Wizards: daggers before schools.** A common opening pushes
+  **Dagger to Expert** (six slots) before serious investment in
+  spell schools. Thrown daggers carry the early game while Pw is
+  scarce, and school ranks then come online to upgrade the late
+  game without leaving the early game starving.
 - **Riding is a skill.** Without **Basic riding** you can't
   pick up items, loot, dip, set or disarm traps, or engrave on
   the floor while mounted. Knights start at Basic. Pushing to
