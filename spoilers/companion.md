@@ -2863,7 +2863,9 @@ where ascension runs go to die.
 
 #### A note on puddings
 
-The `P` class lives in the mid-dungeon and Gehennom.
+Puddings are the dungeon's signature self-multiplying monsters,
+and their leftover globs are also among the best food you can
+find. The class lives in the mid-dungeon and Gehennom.
 **Brown and black puddings split when you hit them with an iron
 or metal weapon**: one becomes two, two becomes four, and your
 long-sword grinding session turns into a swarm. **Black pudding
@@ -3002,9 +3004,11 @@ epitaph.
 -->
 #### Petrification (Stoning)
 
-Touching a cockatrice without gloves, eating a cockatrice corpse,
-catching Medusa's gaze, or **kicking** a cockatrice corpse barefoot
-will turn you to stone. *Stepping* on the corpse is safe so long as
+Stoning is the dungeon's most famous instakill, and the reason
+every experienced player carries a lizard corpse. Touching a
+cockatrice without gloves, eating a cockatrice corpse, catching
+Medusa's gaze, or **kicking** a cockatrice corpse barefoot will
+turn you to stone. *Stepping* on the corpse is safe so long as
 you don't have Fumbling (Fumbling can trip you over the corpse for
 instant death). The process is sometimes immediate; otherwise a
 five-turn countdown announces itself with *"You are slowing down,"*
@@ -3672,8 +3676,12 @@ actions per level, it takes longer to feel.
 
 #### Sacrifice
 
-Offering fresh monster corpses at an altar (`#offer`) builds favor
-with your god. The rules:
+Sacrifice is how you cash in dead monsters for divine help. Drop a
+fresh corpse on an altar that matches your alignment (`#offer`) and
+your god takes notice. Over time that notice pays out as artifact
+weapons, holy water, restored alignment, and eventually a crown.
+
+The rules:
 
 - The corpse must be fresh — killed within the last **50 turns**.
   A corpse older than that has zero sacrifice value (the gods
@@ -5523,9 +5531,10 @@ unidentified wands at yourself.
 
 #### Recharging
 
-Wands can be recharged with a scroll of charging. Each recharge
-increases the risk of the wand exploding. The formula is
-(recharges cubed) / 343, so:
+Wands can be recharged with a scroll of charging. The most prized
+use is on a wand of wishing, where one recharge safely turns a
+single wish into two. Each successive recharge raises the risk of
+the wand exploding. The formula is (recharges cubed) / 343, so:
 
 - First recharge: 0.3% explosion chance.
 - Second: 2.3%.
@@ -5793,6 +5802,10 @@ hide in this grab-bag.
 
 #### Containers
 
+Sooner or later every adventurer runs out of carrying capacity.
+The bag of holding is the dungeon's most coveted answer to the
+problem, and the other containers below have their places too.
+
 | Container      | Weight | Special                                  |
 | -------------- | ------ | ---------------------------------------- |
 | Sack           | 15     | Basic storage                            |
@@ -6049,10 +6062,11 @@ appendices give the full stats for every item.
 
 #### Armor and AC
 
-Armor Class (AC) starts at 10 and decreases as you add protection.
-Lower is better. Each point of AC reduces the chance of being hit.
-At AC −10 or below, you're quite difficult to damage with physical
-attacks; community consensus is that −20 is the practical target
+Armor Class is what decides how often you get hit, and it's the
+most important defensive number in the game. Each point you push
+down means more monster swings whiff past you. AC starts at 10 and
+drops as you add protection. Lower is better. At AC −10 or below,
+you're quite difficult to damage with physical attacks; community consensus is that −20 is the practical target
 for an ascension kit, with diminishing returns past −25. The
 **cloak of displacement** is the underrated layer — monsters waste
 attacks on your phantom image, which complements low AC instead of
@@ -6669,11 +6683,13 @@ their own proficiency, and you train them one slot at a time.
 
 #### The Skill Ladder
 
-Most skills run **Unskilled → Basic → Skilled → Expert**. **Bare
-hands** and **martial arts** alone reach **Master** and **Grand
-Master**. Each rank-up costs both **practice** (uses of the skill)
-and **skill slots** (a finite budget tied to your experience
-level).
+Practice with a weapon improves how often you hit and how hard. The
+game tracks this as a **skill rank**: more practice, higher rank,
+more deadly swings. Most skills run **Unskilled → Basic → Skilled
+→ Expert**. **Bare hands** and **martial arts** alone reach
+**Master** and **Grand Master**. Each rank-up costs both
+**practice** (uses of the skill) and **skill slots** (a finite
+budget tied to your experience level).
 
 | To reach     | Practice (cumulative) | Weapon slots | Non-weapon slots |
 | ------------ | --------------------- | ------------ | ---------------- |
