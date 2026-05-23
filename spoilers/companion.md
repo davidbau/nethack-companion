@@ -7810,7 +7810,8 @@ The most exhilarating and terrifying stretch of the game.
 
 #### The Problems
 
-Everything that can go wrong will try:
+Four kinds of trouble run at once, all of them aimed at the
+Amulet in your pack:
 
 - **The Wizard of Yendor** periodically teleports to you, summoning
   nasty monsters and trying to steal back his Amulet. He will not
