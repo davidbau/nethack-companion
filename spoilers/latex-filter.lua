@@ -327,39 +327,38 @@ local function pad_code(text, spaces)
   return table.concat(lines, "\n")
 end
 
--- Render a centered box-diagram code block. Uses SaveVerbatim to
--- capture the diagram content first (verbatim-mode scanners can't
--- fire inside another command's argument, like \makebox{...} or
--- \fcolorbox{}{}{...}, so an inline BVerbatim in that position
--- fails with "Paragraph ended before \FV@BeginScanning was
--- complete"). The saved box is then dropped into a centered
--- \makebox at the full text-column width, wrapped in an \fcolorbox
--- that mimics the surrounding verbatim frame.
+-- Render a centered box-diagram code block. We emit a regular
+-- Verbatim (same env Pandoc uses for fenced code blocks, so the
+-- font/spacing match the surrounding verbatim style exactly) and
+-- pad each line with leading spaces so the diagram block sits
+-- visually centered within the full-width frame. The page-break
+-- minipage wrap that template.tex applies to the lowercase
+-- `verbatim` env doesn't trigger here (we use capital V), so we
+-- add it ourselves.
 --
--- SaveVerbatim does accept blank lines, but on the off chance the
--- diagram has any, we still substitute a single-space line to
--- match the visual gap without surprises.
+-- avail_chars is the number of monospace columns that fit in a
+-- linewidth at \footnotesize Source Code Pro (Scale=0.80 in
+-- template.tex) on the A5 print column (~4.7 in). Measured by
+-- counting where the longest rendered verbatim line lands; 90 is
+-- a generous-but-safe figure that gives visible centering without
+-- pushing wide diagrams past the right margin.
 local function centered_box_diagram(code_block)
   local text = code_block.text
-  local lines = {}
-  for line in (text .. "\n"):gmatch("([^\n]*)\n") do
-    if line:match("^%s*$") then
-      table.insert(lines, " ")
-    else
-      table.insert(lines, line)
-    end
+  local max_line = 0
+  for line in text:gmatch("[^\n]+") do
+    local n = display_length(line)
+    if n > max_line then max_line = n end
   end
-  local safe_text = table.concat(lines, "\n")
+  local avail_chars = 90
+  local pad = math.max(0, math.floor((avail_chars - max_line) / 2))
+  local padded = pad > 0 and pad_code(text, pad) or text
+
   return pandoc.RawBlock("latex",
-    "\\begin{SaveVerbatim}[fontsize=\\footnotesize,baselinestretch=0.85]{nhdiagram}\n" ..
-    safe_text .. "\n" ..
-    "\\end{SaveVerbatim}\n" ..
-    "\\begin{minipage}{\\linewidth}\\vspace{0.3em}%\n" ..
-    "\\noindent\n" ..
-    "{\\setlength{\\fboxsep}{0.3em}\\setlength{\\fboxrule}{0.4pt}%\n" ..
-    "\\fcolorbox{codeframe}{white}{%\n" ..
-    "\\makebox[\\dimexpr\\linewidth-2\\fboxsep-2\\fboxrule\\relax][c]{%\n" ..
-    "\\BUseVerbatim{nhdiagram}}}}%\n" ..
+    "\\begin{minipage}{\\linewidth}\\vspace{0.3em}\n" ..
+    "\\begin{Verbatim}[fontsize=\\footnotesize,baselinestretch=0.85," ..
+    "frame=single,framesep=0.3em,rulecolor=\\color{codeframe}]\n" ..
+    padded .. "\n" ..
+    "\\end{Verbatim}\n" ..
     "\\vspace{0.3em}\\end{minipage}")
 end
 
