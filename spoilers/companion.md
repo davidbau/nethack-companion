@@ -3688,7 +3688,10 @@ The rules:
 - The corpse must be fresh — killed within the last **50 turns**.
   A corpse older than that has zero sacrifice value (the gods
   simply ignore it).
-- Bigger monsters are more valuable sacrifices.
+- Bigger monsters are more valuable sacrifices, and your god
+  expects more impressive offerings after each gift received. If
+  the altar gives back *"You have a feeling of inadequacy,"* the
+  corpse fell short of what your god was hoping for this time.
 - The altar must match your alignment, or you're praying to someone
   else's god (which has its own consequences).
 - Same-race sacrifice is forbidden and severely punished. On a
@@ -3697,10 +3700,10 @@ The rules:
 
 With enough sacrifice credit, your god may gift you an artifact
 weapon. The first gift comes after relatively modest sacrifice;
-subsequent gifts require substantially more — the per-attempt
-chance is roughly 1 / (10 + 2·gifts_already_received), so the
-first one is a 1-in-10 roll and the second drops to about
-1-in-14. Don't be surprised if you get one artifact and then
+subsequent gifts require substantially more. The per-attempt
+chance is roughly 1 in (10 + 2·*n*), where *n* is the number of
+gifts you've already received, so the first roll is 1-in-10 and
+the second drops to about 1-in-14. Don't be surprised if you get one artifact and then
 nothing more for thousands of turns.
 
 The first gift is biased toward your role's signature artifact
