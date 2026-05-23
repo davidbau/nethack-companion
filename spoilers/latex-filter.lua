@@ -152,6 +152,17 @@ function Div(div)
     if class == "web-only" then
       return {}
     end
+    -- Mirror image: `print-only` content is hidden on the web (via
+    -- CSS) and visible in print. In LaTeX we just want the contents
+    -- to render normally. If we leave the Div in place, Pandoc counts
+    -- it as a heading-nesting level, which silently demotes any
+    -- headings inside (e.g. ##### -> \subparagraph instead of
+    -- \paragraph), and \subparagraph's run-in style confuses
+    -- pagination around the longtable that follows. Unwrap and
+    -- return the contents directly.
+    if class == "print-only" then
+      return div.content
+    end
   end
 end
 

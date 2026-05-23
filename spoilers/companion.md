@@ -4190,8 +4190,8 @@ The per-class tables below show **buy prices at Cha 11–15 with no
 Tourist markup** (the baseline). To recover the base price from a
 quoted price under different conditions, find the row that matches
 your situation and read across; or, given a base price you suspect,
-read the price you'd be quoted. *T Cha* rows are the same Cha bands
-with the Tourist surcharge stacked on.
+read the price you'd be quoted. *T Cha* rows show the Tourist
+surcharge stacked on.
 
 | Modifier            |   Mult |  20 |  50 |  60 |  80 | 100 | 150 | 175 | 200 | 300 |
 |---------------------|-------:|----:|----:|----:|----:|----:|----:|----:|----:|----:|
