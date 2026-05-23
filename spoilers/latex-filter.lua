@@ -172,6 +172,33 @@ function Table(blk)
   end
 end
 
+-- "see [X](#anchor)" cross-references: in print, append a page
+-- reference like "(p. 63)" after the link, using LaTeX's
+-- \pageref*. Triggered only when the immediately preceding word is
+-- "see" / "See" (or ends with that, to catch "(see"). Other
+-- internal links pass through unchanged so the book doesn't get
+-- littered with page numbers everywhere.
+function Inlines(inlines)
+  local out = pandoc.List({})
+  for i, x in ipairs(inlines) do
+    out:insert(x)
+    if x.tag == "Link"
+        and x.target
+        and x.target:sub(1, 1) == "#"
+        and i >= 3
+        and inlines[i - 1].tag == "Space"
+        and inlines[i - 2].tag == "Str" then
+      local prev = inlines[i - 2].text
+      if prev:match("[Ss]ee$") then
+        local label = x.target:sub(2)
+        out:insert(pandoc.RawInline("latex",
+          "~(p.~\\pageref*{" .. label .. "})"))
+      end
+    end
+  end
+  return out
+end
+
 function Div(div)
   for _, class in ipairs(div.classes) do
     if class == "dense-table" then
