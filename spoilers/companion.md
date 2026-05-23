@@ -3449,13 +3449,15 @@ of the first intrinsics worth acquiring.
 - Antimagic check is on the death-ray branch only; the AD_DISN breath branch checks Disint_resistance only (zap.c:4464-4497)
 -->
 
-A black dragon's breath is the only thing in the game that
-disintegrates you. There's no other monster, spell, or wand that
-deals the same damage type.
+A black dragon's breath is the only monster, spell, or wand that
+disintegrates you. (A deeply angered god can also call down a
+wide-angle disintegration beam as a follow-up to lightning;
+reflection won't block that one. Only disintegration resistance
+will. The lesson is to stay on speaking terms with your god.)
 
 **Defenses:** Disintegration resistance (from eating a black dragon
 corpse or wearing black dragon scale mail) gives full immunity.
-**Reflection** bounces the beam back, protecting you — but black
+**Reflection** bounces the breath back, protecting you — but black
 dragons are themselves disintegration-resistant, so the bounce
 won't kill them. Magic resistance does **not** help.
 
@@ -5202,6 +5204,16 @@ and it crumbles to dust. So choose your standing spot wisely.
 Cursed or confused reading sends you to a random dungeon level.
 With teleport control, *you* choose where you land — the game's
 most flexible escape hatch.
+
+[]{#scroll-stinking-cloud}
+**Stinking cloud.** Reading places a poison-gas fog at any square
+you can see (about fifteen squares of coverage uncursed,
+twenty-five if blessed) that blinds anything inside and deals
+roughly 6–13 HP per turn to anything not poison-resistant. A
+clean way to clear a throne room or the Wizard's Tower from a
+safe corridor, as long as *you* are poison-resistant or
+unbreathing: the gas doesn't pick sides. Kills inside the cloud
+still count as yours for XP and alignment.
 
 #### Confused Reading
 
@@ -7759,10 +7771,11 @@ ball through the entire opposing team. Speed is everything.
 - **Zap problems away.** Teleportation wands move monsters out of
   your path. Death wands remove them permanently. Use both
   liberally.
-- **Casters: drop the Amulet to cast.** Carrying the Amulet drains
-  1–2× the spell's base cost on each cast. Drop the Amulet, cast
-  your finger of death or magic mapping, pick it back up. The
-  three-turn round trip is cheaper than the Pw burn.
+- **Casters: drop the Amulet to cast.** Carrying the Amulet adds
+  an extra 1–2× the spell's base cost on every cast, so you pay
+  roughly 2–3× total. Drop the Amulet, cast your finger of death
+  or magic mapping, pick it back up. The three-turn round trip is
+  cheaper than the Pw burn.
 - **Kill the Wizard fast.** When he shows up (and he will), don't
   try to be clever. Finger of death, wand of death, or brute force.
   The faster he's down, the fewer monsters he summons.
@@ -7800,6 +7813,14 @@ its raw elements. Four planes stand between you and the gods, each
 one a different flavor of hostile. There are no stairs here, only
 magic portals, hidden somewhere in each level, leading to the next.
 Find the portal. Survive the plane. Move on. There is no going back.
+
+**Two cheap ways to find a portal.** A scroll of gold detection
+read while confused marks every trap on the level, the portal
+included: one read, one map. The Amulet of Yendor is itself a
+compass while you carry it: wielded or worn, it occasionally
+mutters *hot*, *very warm*, or *warm* as you get closer (within
+3, 8, or 12 squares of the portal). It's a hot/cold game you can
+play your way across the void.
 
 #### Plane of Earth
 
