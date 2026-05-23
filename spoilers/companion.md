@@ -284,12 +284,12 @@ early game with ease. *Alignment: Lawful.*
 
 **Tourist.** You start with a Hawaiian shirt, a credit card, an
 expensive camera, a truly absurd number of +2 darts, two potions
-of extra healing, and **four scrolls of magic mapping**. Tourists
+of extra healing, and four scrolls of magic mapping. Tourists
 have weak combat and a fragile early game (this is the hardest of
 the standard roles), but the mapping scrolls take the edge off
-exploration and the darts train ranged skills fast. The standard
-survival kit is Elbereth on the floor, a camera-flash blinding
-whatever's closest, and the pet doing the cleanup. A good role
+exploration and the darts train ranged skills fast. Most runs
+lean on a **camera-flash blinding** of whatever's closest,
+follow-up darts from range, and the pet to finish. A good role
 for players who have ascended before and want a real challenge.
 *Alignment: Neutral.*
 
