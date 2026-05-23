@@ -8100,7 +8100,7 @@ They are essential for moving safely through populated areas.
 
 #### Travel
 
-The underscore key (`_`) is the autopilot. Press `_`, point at a
+The underscore key (`_`) is an autopilot. Press `_`, point at a
 destination you've already explored, then `.` to confirm, and your
 character walks the shortest path there, opening doors and stopping
 on any interruption. `_<.` walks to the up-staircase; `__` walks
