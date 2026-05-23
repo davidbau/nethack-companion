@@ -595,15 +595,21 @@ rather than dangerous, unless you're carrying a cockatrice corpse:
 the tumble counts as touching it, and stairs become the most
 literal instadeath in the game.
 
-**Killer bees.** They come in swarms, they're fast, and in the early
-game, a group of them can overwhelm you. If you see one bee, expect
-more. Use a corridor to fight them one at a time.
+**Caught in the open by a pack.** Jackals are the single most common
+cause of death on the public server. They bite for 1d2, but packs
+of four to seven spawn on the upper levels and surround you in
+open rooms. Killer bees, foxes, soldier ants, dwarves, and gnomes
+all kill in this same shape. Retreat to a doorway or corridor at
+the first sign of more than two attackers; they can only approach
+single-file there.
 
-**Your own pet.** If your pet is between you and a narrow corridor,
-you might accidentally swap places with it repeatedly instead of
-moving. Worse, if you attack it (because you got confused or forgot
-it was there), you lose alignment and trust. Be aware of where your
-pet is.
+**Pushing too quickly into the Mines.** The problem isn't depth,
+it's getting there too early. The deeper Mines below Minetown are
+crowded with armored dwarves and gnome rulers, second only to
+jackals as a public-server killer. If your gear and experience
+level aren't ready for armored melee fighters in packs, head back
+up to the main Dungeons of Doom branch and come back to the Mines
+later.
 
 #### Supply Containers
 
