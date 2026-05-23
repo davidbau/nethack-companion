@@ -24,6 +24,20 @@ if [ ! -f images/dmap-dod.pdf ] || [ companion.md -nt images/dmap-dod.pdf ]; the
   python3 dungeon_map.py --pdfs
 fi
 
+# Make sure the identification-flowchart PDF is present and current.
+# The SVG source lives in cover/ alongside the cover-art SVGs; the
+# print build includes the rendered PDF directly. (build-cover.py
+# also produces this file, but the main book build needs it
+# whether or not the cover has been built.)
+if [ ! -f cover/build/flowchart.pdf ] || [ cover/flowchart.svg -nt cover/build/flowchart.pdf ]; then
+  if ! command -v rsvg-convert &>/dev/null; then
+    echo "Error: rsvg-convert not found. Install with: brew install librsvg" >&2
+    exit 1
+  fi
+  mkdir -p cover/build
+  rsvg-convert -f pdf -o cover/build/flowchart.pdf cover/flowchart.svg
+fi
+
 # Print version drops web-only asides ("or more likely scrolling
 # through" — true in a browser, false on paper). Anything that's
 # accurate-on-screen-only-and-wrong-in-print belongs in this sed.
