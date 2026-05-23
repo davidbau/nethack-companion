@@ -3689,9 +3689,9 @@ The rules:
   A corpse older than that has zero sacrifice value (the gods
   simply ignore it).
 - Bigger monsters are more valuable sacrifices, and your god
-  expects more impressive offerings after each gift received. If
-  the altar gives back *"You have a feeling of inadequacy,"* the
-  corpse fell short of what your god was hoping for this time.
+  expects more impressive offerings as you advance. If the altar
+  gives back *"You have a feeling of inadequacy,"* the corpse fell
+  short of what your god was hoping for this time.
 - The altar must match your alignment, or you're praying to someone
   else's god (which has its own consequences).
 - Same-race sacrifice is forbidden and severely punished. On a
