@@ -315,9 +315,8 @@ the beginning, which lets you walk up to sleeping enemies without waking
 them, and your backstab ability deals extra damage (+1 to +your level)
 when you hit a monster that’s fleeing or helpless. Throw daggers rather
 than stab with them: Rogues get a multishot bonus on thrown daggers, and
-the backstab modifier applies to throws against fleeing targets too. The
-canonical Rogue routine is Elbereth in the doorway, daggers from beyond.
-<em>Alignment: Chaotic.</em></p>
+the backstab modifier applies to throws against fleeing targets too.
+Stealth and range are the role. <em>Alignment: Chaotic.</em></p>
 <p><strong>Samurai.</strong> You start with a katana, which is one of
 the better one-handed weapons in the game, plus a wakizashi backup and a
 yumi bow with arrows. Samurai get speed early and have a strong martial
@@ -2973,6 +2972,10 @@ ready for what’s on the other side.</p>
 - blind and peaceful monsters pass through (monmove.c:299-300)
 - cornered ALLOW_SSM step-through (mon.c:2278-2282)
 - strategy aligned with NetHackWiki Elbereth, Engraving: exact-spelling rule, defile-and-hypocrite penalty, ward dead in Gehennom/endgame, burn-with-wand-of-fire for permanence (https://nethackwiki.com/wiki/Elbereth, https://nethackwiki.com/wiki/Engraving)
+2026-05-23:
+- defile rule fires for any attack with via_attack=TRUE: melee (uhitm.c:1293,1302,1403,6398), thrown weapons via dothrow.c:1965,2230,2282 → wakeup(mon, TRUE) → setmangry(mtmp, TRUE) (mon.c:4350-4355), and wand zaps via zap.c:4948,5495
+- "kill at range from Elbereth" is therefore a 4.x-era piece of advice; in 5.0 it defiles too
+- Rogue "Elbereth in the doorway, daggers from beyond" cannot work in 5.0: throwing from Elbereth defiles it; standing off Elbereth means Elbereth doesn't protect anything (monmove.c:295-302 requires u_at(x,y))
 -->
 <section id="where-the-word-comes-from" class="level5">
 <h5>Where the word comes from</h5>
@@ -3025,20 +3028,22 @@ own.</li>
 </section>
 <section id="the-defile-rule-important" class="level5">
 <h5>The defile rule (important)</h5>
-<p>If you melee-attack a monster while standing on Elbereth (and that
-monster <em>would</em> have feared the ward, or is peaceful), the
-engraving is <strong>deleted instantly, in full, regardless of how it
-was made.</strong> Even a burned-permanent Elbereth disappears in one
-swing. You take an <strong>alignment hit</strong> (“You feel like a
-hypocrite”) and see the message <em>“The engraving beneath you
-fades.”</em> The hit is a flat −5 if your alignment record is
-comfortably positive (above +5); otherwise it’s a random −1 to −5.</p>
+<p>If you attack a monster while standing on Elbereth — melee, thrown
+weapon, or wand zap — and that monster <em>would</em> have feared the
+ward (or is peaceful), the engraving is <strong>deleted instantly, in
+full, regardless of how it was made.</strong> Even a burned-permanent
+Elbereth disappears in one swing. You take an <strong>alignment
+hit</strong> (“You feel like a hypocrite”) and see the message <em>“The
+engraving beneath you fades.”</em> The hit is a flat −5 if your
+alignment record is comfortably positive (above +5); otherwise it’s a
+random −1 to −5.</p>
 <p>The durability table doesn’t show this: “permanent” and
 “semi-permanent” describe resistance to <em>passive</em> wear (monster
 footsteps, erosion). Your own hostile action wipes the word regardless
 of tier. So Elbereth is strictly <strong>defensive</strong>. Use it to
-heal, drink a potion, read a scroll, swap gear — and step off (or kill
-at range) when you want to attack.</p>
+heal, drink a potion, read a scroll, swap gear, regroup. Any attack from
+on top — melee, thrown, or zapped — defiles it, so step off when you
+mean to fight back.</p>
 </section>
 <section id="practical-use" class="level5">
 <h5>Practical use</h5>
