@@ -12194,8 +12194,8 @@ for the 5.0 update of this guide.
 **The public servers** where most NetHack is played today are
 [nethack.alt.org](https://alt.org/nethack/) (the longest-running
 public NetHack server, run by M. Drew Streib and Pasi Kallinen)
-and [hardfought.org](https://hardfought.org/) (run by K2,
-which also hosts the major variants). Both are free to play and
+and [Hardfought](https://hardfought.org/) (run by K2, which also
+hosts the major variants). Both are free to play and
 log every ascension; the cause-of-death and ascension statistics
 cited throughout this guide come from their public records (see
 NAO's [top types of deaths](https://alt.org/nethack/topdeaths.html)).
