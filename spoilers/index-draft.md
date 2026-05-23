@@ -9,8 +9,6 @@ Not alphabetized; that's a final-pass concern.
 
 ### Choosing your role, race, alignment
 
-- "Role, choosing one" → #choosing-your-expedition
-- "Roles, the thirteen" → #the-roles
 - "Archeologist, touchstone advantage" → #the-roles
 - "Archeologist, pickaxe from turn one" → #the-roles
 - "Barbarian, just hit things harder" → #the-roles
@@ -20,20 +18,19 @@ Not alphabetized; that's a final-pass concern.
 - "Healer, sickness immunity" → #the-roles
 - "Knight, pony of" → #the-roles
 - "Knight, Excalibur odds (1 in 6)" → #the-roles
-- "Knight, caitiff penalty" → #the-roles
 - "Knight, jousting on lance" → #the-roles
-- "Monk, no body armor please" → #the-roles
+- "Monk, no body armor" → #the-roles
 - "Monk, robe spellcasting bonus" → #the-roles
 - "Priest, BUC sense for free" → #the-roles
 - "Priest, Demonbane first gift" → #the-roles
-- "Ranger, +2 cloak of displacement start" → #the-roles
+- "Ranger, +2 cloak of displacement at start" → #the-roles
 - "Ranger, dagger and arrow stack" → #the-roles
 - "Rogue, multishot dagger throw" → #the-roles
 - "Rogue, backstab bonus" → #the-roles
 - "Samurai, katana opening" → #the-roles
 - "Samurai, wakizashi is dead weight" → #the-roles
 - "Samurai, giri-breaking penalty" → #the-roles
-- "Tourist, hardest of the standard roles" → #the-roles
+- "Tourist, hardest standard role" → #the-roles
 - "Tourist, camera-flash plan" → #the-roles
 - "Tourist, magic mapping scrolls at start" → #the-roles
 - "Valkyrie, easy-mode recommendation" → #the-roles
@@ -46,8 +43,7 @@ Not alphabetized; that's a final-pass concern.
 - "Human, no infravision, no special talents" → #the-races
 - "Elf, sleep resistance at XL 4" → #the-races
 - "Dwarf, Str and Con caps" → #the-races
-- "Gnome, slightly higher Int" → #the-races
-- "Orc, peaceful-to-orcs" → #the-races
+- "Orc, peaceful to other orcs" → #the-races
 - "Alignment, it's a number" → #alignment
 - "Lawful, perks and pieties" → #alignment
 - "Neutral, the most flexibility" → #alignment
@@ -58,39 +54,26 @@ Not alphabetized; that's a final-pass concern.
 
 - "Starting kit, improving on" → #what-to-pack
 - "Early shopping list" → #the-early-shopping-list
-- "Food rations, two or three is plenty" → #the-early-shopping-list
-- "Identify scroll, valuable but late" → #the-early-shopping-list
-- "Touchstone, helpful not urgent" → #the-early-shopping-list
 - "Armor improvements, even basic" → #the-early-shopping-list
 - "Ranged attack, almost always safer" → #the-early-shopping-list
-- "Restraint, forty pounds of" → #the-early-shopping-list
 - "Burdened status, two hits per yours" → #the-early-shopping-list
 - "Stashing, one level up" → #the-early-shopping-list
 - "First descent, welcome to the dungeon" → #your-first-descent
 - "Levels 1 through 5, where most die" → #your-first-descent
 - "YASD, inevitability of" → #your-first-descent
-- "Golden Rules of Early Survival" → #the-golden-rules-of-early-survival
-- "Rule 1, don't fight what you can't beat" → #the-golden-rules-of-early-survival
 - "Corridor chokepoint, single-file enemies" → #the-golden-rules-of-early-survival
-- "Eat the things you don't understand (don't)" → #the-golden-rules-of-early-survival
 - "Lichen corpse, never rots" → #the-golden-rules-of-early-survival
 - "Lizard corpse, carry one" → #the-golden-rules-of-early-survival
 - "Newt corpse, free mana sometimes" → #the-golden-rules-of-early-survival
-- "Pet, your friend (mostly)" → #the-golden-rules-of-early-survival
 - "Prayer, emergency button cooldown" → #the-golden-rules-of-early-survival
-- "Killer bees, expect more" → #the-golden-rules-of-early-survival
-- "Magic resistance, reflection, poison resistance: the big three" → #the-golden-rules-of-early-survival
-- "Black pudding glob from a sink, snack of resistances" → #the-golden-rules-of-early-survival
-- "Dungeon hazards, common deaths" → #dungeon-hazards-and-how-to-survive-them
-- "Starvation, eat at Hungry not Weak" → #dungeon-hazards-and-how-to-survive-them
+- "Black pudding glob, resistances from a sink" → #the-golden-rules-of-early-survival
 - "Floating eye, do not hit" → #dungeon-hazards-and-how-to-survive-them
 - "Rotted corpse, the 30-turn window" → #dungeon-hazards-and-how-to-survive-them
 - "Falling down stairs while burdened" → #dungeon-hazards-and-how-to-survive-them
 - "Cockatrice corpse on the stairs, the most literal instadeath" → #dungeon-hazards-and-how-to-survive-them
 - "Your own pet, swapping places" → #dungeon-hazards-and-how-to-survive-them
-- "Supply containers, care packages from somebody" → #supply-containers
-- "Supply chests, locked with goodies" → #supply-containers
-- "Mines branch chest, food edition" → #supply-containers
+- "Supply containers" → #supply-containers
+- "Supply chests, locked treasure" → #supply-containers
 
 ---
 
@@ -103,7 +86,6 @@ Not alphabetized; that's a final-pass concern.
 - "Gehennom, lower trunk" → #the-big-picture
 - "Mazes of Menace, the whole thing" → #the-big-picture
 - "Map, learning to read" → #the-map-symbols
-- "Floor, corridor, wall, door symbols" → #the-map-symbols
 - "Stairs, up and down (`<`, `>`)" → #the-map-symbols
 - "Branch staircases, turn yellow" → #the-map-symbols
 - "Item symbols, the punctuation marks" → #the-map-symbols
@@ -111,14 +93,11 @@ Not alphabetized; that's a final-pass concern.
 
 ### Special rooms
 
-- "Special rooms, what to expect" → #room-types
-- "Shop, identified by shopkeeper" → #room-types
 - "Temple, altar plus priest" → #room-types
 - "Throne room, sit at your own risk" → #room-types
 - "Zoo, wake them one at a time" → #room-types
 - "Barracks, organized armed soldiers" → #room-types
 - "Beehive, royal jelly inside" → #room-types
-- "Themed rooms, new in 5.0" → #room-types
 - "Light source room, free lit lamp" → #room-types
 - "Buried treasure room, dig for it" → #room-types
 - "Massacre room, role corpses for sacrifice" → #room-types
@@ -131,13 +110,11 @@ Not alphabetized; that's a final-pass concern.
 
 ### Field guide to fauna (by class)
 
-- "Bestiary, by letter" → #field-guide-to-dungeon-fauna
 - "`a` ants and insects" → #ants-and-insects-a
 - "Soldier ant, speed 18 packs" → #ants-and-insects-a
 - "Killer bee, swarm" → #ants-and-insects-a
 - "Queen bee, royal jelly source" → #ants-and-insects-a
 - "`b` blobs" → #blobs-b
-- "Acid blob, melee with bare hands (don't)" → #blobs-b
 - "Gelatinous cube, paralysis-cube of resistances" → #blobs-b
 - "`c` cockatrices" → #cockatrices-c
 - "Cockatrice, instant petrification on touch" → #cockatrices-c
@@ -172,7 +149,7 @@ Not alphabetized; that's a final-pass concern.
 - "`k` kobolds" → #kobolds-k
 - "Kobold meat, poisonous and pointless" → #kobolds-k
 - "`l` leprechauns" → #leprechauns-l
-- "Leprechaun, your gold and gone" → #leprechauns-l
+- "Leprechaun, steals gold and flees" → #leprechauns-l
 - "`m` mimics" → #mimics-m
 - "`]` strange object, always a mimic" → #a-note-on-mimics
 - "Small mimic, top-ten killer" → #a-note-on-mimics
@@ -232,7 +209,6 @@ Not alphabetized; that's a final-pass concern.
 - "`X` xorn, phases through walls" → #xorns-x
 - "`y` lights" → #lights-y
 - "Yellow light, blinds 10d20 turns" → #light-bursts
-- "Black light, hallucinates" → #light-bursts
 - "`Y` apelike creatures" → #apelike-creatures-y
 - "Yeti, cold resistance corpse" → #apelike-creatures-y
 - "Sasquatch, fast" → #apelike-creatures-y
@@ -240,7 +216,6 @@ Not alphabetized; that's a final-pass concern.
 - "`Z` zombies" → #zombies-z
 - "Skeleton, only from a trap" → #zombies-z
 - "`A` angelic beings" → #angelic-beings-a
-- "Aleax, fights cheap-aligned heroes" → #angelic-beings-a
 - "Angel, on the Astral Plane" → #angelic-beings-a
 - "Archon, ultimate pet" → #angelic-beings-a
 - "Couatl, feathered serpent" → #angelic-beings-a
@@ -276,7 +251,7 @@ Not alphabetized; that's a final-pass concern.
 - "Shrieker, summons neighbors" → #fungi-and-molds-f
 - "Lichen corpse, never rots" → #fungi-and-molds-f
 - "`H` giants and minotaurs" → #giant-humanoids-h
-- "Storm, fire, frost giant breath of boulders" → #giant-humanoids-h
+- "Giants throw boulders (storm, fire, frost)" → #giant-humanoids-h
 - "Giant corpse, +1 Strength" → #giant-humanoids-h
 - "Minotaur, ~38 average damage per turn" → #giant-humanoids-h
 - "Titan, spell-casting pet target" → #giant-humanoids-h
@@ -338,10 +313,9 @@ Not alphabetized; that's a final-pass concern.
 - "Quaffing a fountain, slot-machine table" → #fountains
 - "Water demon wish, roughly 1 in 150 quaffs" → #fountains
 - "Excalibur, fountain dip" → #fountains
-- "Dipping in a fountain, can uncurse" → #fountains
+- "Fountain dip, uncurses items" → #fountains
 - "Altars, single most useful furniture" → #altars-_
 - "Altar, BUC test at" → #altars-_
-- "Altar, amber/black flash" → #altars-_
 - "Altar, dropping the whole pile" → #altars-_
 - "Altar, converting a cross-aligned" → #altars-_
 - "Throne, the purest gamble" → #thrones
@@ -351,25 +325,24 @@ Not alphabetized; that's a final-pass concern.
 - "Vlad's throne, fourth sit's the charm" → #vlads-tower
 - "Sinks, dungeon's underrated ID tool" → #sinks
 - "Sink, kicking for rings and trouble" → #sinks
-- "Sink, the amorous dishwasher demon" → #sinks
+- "Sink, dishwasher demon (sink foocubus)" → #sinks
 - "Sink, dipping potions for messages" → #sinks
 - "Sink, quaffing the drain" → #sinks
 - "Sink, dropping a ring down" → #sinks
 - "Vaults, the 2×2 closet of gold" → #vaults
 - "Vault guard, name yourself Croesus" → #vaults
-- "Vault guard, lying costs Lawfuls alignment" → #vaults
+- "Vault guard, lying costs Lawful alignment" → #vaults
 - "Ad aerarium engraving, vault closet marker" → #engravings
 
 ### Branches and landmarks
 
 - "Branch order, Sokoban or Mines first" → #branches-and-landmarks
 - "Gnomish Mines, entry around Dlvl 2-4" → #the-gnomish-mines
-- "Mines, gnomish (general)" → #the-gnomish-mines
 - "Minesflayer, the mind flayer surprise" → #the-gnomish-mines
 - "Minetown, shops and temple" → #the-gnomish-mines
 - "Izchak's lighting store, seven candles" → #the-gnomish-mines
 - "Orcish Town, 1-in-7 Minetown variant" → #the-gnomish-mines
-- "Minetown watch, attacking peacefuls" → #the-gnomish-mines
+- "Minetown watch, don't attack peacefuls" → #the-gnomish-mines
 - "Mine's End, guaranteed luckstone" → #the-gnomish-mines
 - "Fake luckstone mimic, BUC-test first" → #the-gnomish-mines
 - "Sokoban, entry one level above Oracle" → #sokoban
@@ -377,17 +350,15 @@ Not alphabetized; that's a final-pass concern.
 - "Sokoban, no teleport here" → #sokoban
 - "Sokoban, cheating cost (–1 Luck each)" → #sokoban
 - "Sokoban prize, bag of holding or amulet of reflection" → #sokoban
-- "Cursed scroll of scare monster, bait for the Sokoban prize" → #sokoban
+- "Cursed scare monster scroll, Sokoban-prize bait" → #sokoban
 - "Sokoban, Strength training side effect" → #sokoban
-- "Sokoban solutions appendix" → #sokoban-solutions
 - "Oracle, mid-levels" → #the-oracle
 - "Oracle, minor consultation (50 zm)" → #the-oracle
 - "Oracle, major consultation" → #the-oracle
-- "Quest, the role's special dungeon" → #the-quest
 - "Quest portal, magenta `^`" → #the-quest
 - "Quest, XL 14 and alignment 20" → #the-quest
-- "Quest leader, on the first floor" → #the-quest
-- "Quest nemesis, kill twice (life saving)" → #the-quest
+- "Quest leader, first floor" → #the-quest
+- "Quest nemesis, kill twice (life-saving)" → #the-quest
 - "Quest artifact, on the nemesis's square" → #the-quest
 - "Bell of Opening, looted from nemesis" → #the-quest
 - "Rogue Level, older more primitive world" → #the-rogue-level
@@ -399,12 +370,10 @@ Not alphabetized; that's a final-pass concern.
 - "Perseus statue, looting the legend" → #medusas-island
 - "Eels (giant, electric), at Medusa" → #medusas-island
 - "Kraken, only on medusa-4" → #medusas-island
-- "Castle overview, the gateway to Gehennom" → #castle-overview
+- "Castle, gateway to Gehennom" → #castle-overview
 
 ### Traps
 
-- "Traps, found by stepping on them" → #traps-and-hazards
-- "Nuisance traps, arrow and dart" → #nuisance-traps
 - "Arrow trap, free ammunition farm" → #nuisance-traps
 - "Squeaky board, wakes the room" → #nuisance-traps
 - "Rust trap, splashes water" → #nuisance-traps
@@ -417,31 +386,26 @@ Not alphabetized; that's a final-pass concern.
 - "Magic portal, branch entrances" → #movement-traps
 - "Land mine, items destroyed" → #dangerous-traps
 - "Bear trap, escape diagonally" → #dangerous-traps
-- "Sleeping gas trap, murder in monster rooms" → #dangerous-traps
+- "Sleeping gas trap, deadly in zoos" → #dangerous-traps
 - "Fire trap, sleeper threat for inventory" → #dangerous-traps
-- "Magic trap, slot machine of outcomes" → #dangerous-traps
+- "Magic trap, random outcomes" → #dangerous-traps
 - "Magic trap, Charisma farming" → #dangerous-traps
 - "Anti-magic field, hits harder with MR" → #dangerous-traps
 - "Polymorph trap, free booth with control" → #dangerous-traps
 - "Rolling boulder, fixed track" → #dangerous-traps
-- "Iron footwear, surprisingly protective" → #dangerous-traps
 - "Searching (`s` command), repeat with luck" → #searching-and-detection
 - "Wand of secret door detection, no aim" → #searching-and-detection
-- "Crystal ball trap survey" → #searching-and-detection
+- "Crystal ball, trap survey" → #searching-and-detection
 - "Confused gold detection, cheap trap reveal" → #searching-and-detection
 - "Secret doors, the architects believed in them" → #finding-secret-doors
-- "20s, the search command" → #finding-secret-doors
-- "Excalibur, search bonus by enchantment" → #finding-secret-doors
+- "Excalibur, search bonus" → #finding-secret-doors
 - "Lenses, +2 search (capped)" → #finding-secret-doors
 
 ### Engravings and Elbereth
 
-- "Engrave command (`E`)" → #engravings
-- "Engraving methods, dust to permanent" → #engravings
 - "Finger in dust, fragile but instant" → #engravings
 - "Athame, the non-dulling stylus" → #engravings
 - "Wand of fire, burns Elbereth permanently" → #engravings
-- "Engraving, impairment garbles spelling" → #engravings
 - "Vlad was here, trap-door closet marker" → #engravings
 - "Elbereth, writing frantically" → #elbereth
 - "Elbereth, where the word comes from" → #where-the-word-comes-from
@@ -460,16 +424,12 @@ Not alphabetized; that's a final-pass concern.
 
 ### Feelings and sounds
 
-- "Feelings and sounds, atmosphere or signal" → #feelings-and-sounds
 - "Sad feeling, your pet died offscreen" → #feelings-and-sounds
-- "Counting gold coins, vault marker" → #feelings-and-sounds
 - "Strange wind, Oracle level" → #feelings-and-sounds
-- "Cursing shoplifters, shop on level" → #feelings-and-sounds
 - "Bugle reveille, soldier woke neighbors" → #feelings-and-sounds
 - "Slurping sound, gelatinous cube ate items" → #feelings-and-sounds
 - "Crashing rock, a tunneler at work" → #feelings-and-sounds
 - "Chugging sound, monster drank a potion" → #feelings-and-sounds
-- "Sad feeling for a moment, pet died" → #feelings-and-sounds
 - "Wow! This makes you feel great!, magic fountain hit" → #feelings-and-sounds
 - "Feel feverish, lycanthropy infection" → #feelings-and-sounds
 - "Slowing down, you're turning to stone" → #feelings-and-sounds
@@ -487,56 +447,49 @@ Not alphabetized; that's a final-pass concern.
 - "Combat, knowing when not to fight" → #the-art-of-combat
 - "To-hit roll, the d20 of fate" → #to-hit-calculation
 - "Strength bonus, capped at +6" → #damage
-- "Dexterity, +to-hit contribution" → #to-hit-calculation
+- "Dexterity, +to-hit bonus" → #to-hit-calculation
 - "AC, the AC ladder to -20" → #ac-and-defense
 - "AC, special attacks ignore" → #ac-and-defense
-- "Two-weapon combat, flat penalty per strike" → #two-weapon-combat
 - "Two-weapon Expert, Rogue and Samurai only" → #two-weapon-combat
 - "Two-handed weapons, 3/2 Strength damage" → #damage
 - "Ring of conflict, in combat" → #fighting-smart
 - "Conflict, sight required" → #fighting-smart
 - "Conflict, Charisma scales reliability" → #fighting-smart
 - "Doors, no diagonal entry" → #fighting-smart
-- "Doors, closing for breathing room" → #fighting-smart
-- "Cornered scared monsters, fight" → #fighting-smart
+- "Doors, close for breathing room" → #fighting-smart
+- "Cornered scared monsters still fight" → #fighting-smart
 - "Ranged attackers retreat, backing into corners" → #fighting-smart
 - "First swing wakes the room" → #fighting-smart
 
 ### Things that kill you
 
-- "Things that will kill you" → #things-that-will-kill-you
 - "Death, causes of (see: everything)" → #things-that-will-kill-you
-- "0.4%, the ascension rate" → #things-that-will-kill-you
 - "Early dungeon, the deadliest stretch" → #things-that-will-kill-you
 - "Top ten killers, the list" → #things-that-will-kill-you
 - "Pacing, XL near Dlvl" → #things-that-will-kill-you
 - "Bones level, 80% cursed items" → #things-that-will-kill-you
-- "Bones level, monsters above depth" → #things-that-will-kill-you
+- "Bones level, over-leveled monsters" → #things-that-will-kill-you
 - "Sleep without resistance, near-instadeath" → #common-combat-deaths
 - "Gnomish Mines, a choice not a routine stop" → #common-combat-deaths
 - "Bats and speedsters, doorway fighting" → #common-combat-deaths
 - "Ants, pack travelers" → #common-combat-deaths
-- "Major demons, summoning each other" → #common-combat-deaths
+- "Demons, summoning more demons" → #common-combat-deaths
 - "Eating mistakes, top forty" → #deadly-mistakes
 - "Reading unidentified scrolls in a shop" → #deadly-mistakes
 - "Mount slip, riding accidents" → #deadly-mistakes
 - "Pet kills (yours), via conflict ring" → #deadly-mistakes
 - "Boiling and shattering potions, Gehennom hot ground" → #deadly-mistakes
-- "Self-zapped wand, ray ricochet" → #deadly-mistakes
+- "Self-zap wand, ray ricochet" → #deadly-mistakes
 - "Kicking sinks, the foocubus surprise" → #deadly-mistakes
 - "Wrath of a god, prayer gone wrong" → #deadly-mistakes
 - "Confused genocide, self-extinction" → #deadly-mistakes
 - "Scroll of earth on yourself, buried alive" → #deadly-mistakes
 - "Dragons, a full briefing" → #a-note-on-dragons
-- "Mimics, shop disguise" → #a-note-on-mimics
 - "Nymphs, the universal horror story" → #a-note-on-nymphs
 - "Nymphs, never engage carrying the Amulet" → #a-note-on-nymphs
-- "Puddings, splitting trap" → #a-note-on-puddings
 - "Glob, instead of corpse" → #a-note-on-puddings
 - "Trolls, revive timer" → #a-note-on-trolls
 - "Trolls, gear-and-corpse loop" → #a-note-on-trolls
-- "Wraith corpse, the recipe" → #a-note-on-wraiths
-- "Wraiths, farming with reverse genocide" → #a-note-on-wraiths
 
 ### More ways to die
 
@@ -549,15 +502,12 @@ Not alphabetized; that's a final-pass concern.
 - "Acid blob corpse, timed stoning resistance" → #petrification-stoning
 - "Yellow dragon scale mail, permanent stoning resistance" → #petrification-stoning
 - "Drowning, preventable" → #drowning
-- "Magical breathing, ends grab-drown" → #drowning
-- "Levitation, doesn't save from eels" → #drowning
+- "Magical breathing, breaks the drowning hold" → #drowning
+- "Levitation, doesn't help vs eels" → #drowning
 - "Oilskin cloak, eel-slip" → #drowning
 - "Warning shot, monster's first wand zap" → #attack-wands-and-the-warning-shot
-- "Touch of death (Rider Death)" → #the-touch-of-death
 - "Wand of death, don't zap at Death" → #the-touch-of-death
 - "Magic missile, the answer to Riders" → #the-touch-of-death
-- "Finger of death, MR blocks (outside-in)" → #the-touch-of-death
-- "Self-zap of death, only nonliving safe" → #the-touch-of-death
 - "Starvation, faint then die" → #starvation
 - "Famine, the second Rider" → #starvation
 - "Brainlessness, mind flayer drain" → #brainlessness
@@ -577,16 +527,14 @@ Not alphabetized; that's a final-pass concern.
 - "Engulfment, two hidden monsters" → #engulfment
 - "Lurker above, ceiling drop" → #engulfment
 - "Wand of digging, escape from inside" → #engulfment
-- "Light bursts, yellow and black" → #light-bursts
 - "Seduction (foocubus encounter)" → #seduction
-- "Incubus, succubus, the encounter table" → #seduction
+- "Incubus, succubus, encounter table" → #seduction
 - "Foocubus, can strip cursed armor" → #seduction
 - "Choking, eating past Satiated" → #choking
 - "Amulet of strangulation, timer death" → #choking
 - "Deadly poison, the 1-in-240 spike" → #deadly-poison
 - "Disintegration, only black dragon breath" → #disintegration
 - "Reflection, bounces back but they resist" → #disintegration
-- "Genocide (scroll), nuclear option" → #genocide
 - "Confused genocide, kills you" → #genocide
 - "Delayed deaths, the runners" → #delayed-deaths
 - "Sliming, ten-turn countdown" → #delayed-deaths
@@ -594,24 +542,21 @@ Not alphabetized; that's a final-pass concern.
 - "Illness (food poisoning), unicorn horn cure" → #delayed-deaths
 - "Pestilence's terminal illness, Constitution timer" → #delayed-deaths
 - "Sinking in lava, levitate or pray" → #delayed-deaths
-- "Strangulation, uncurse first" → #delayed-deaths
+- "Strangulation, uncurse amulet first" → #delayed-deaths
 
 ### Divine relations
 
-- "Divine relations, your god watches" → #divine-relations
 - "Prayer, when to" → #prayer
-- "Prayer, what it fixes (priority order)" → #prayer
-- "Prayer, requirements (alignment, luck, cooldown)" → #prayer
-- "Prayer cooldown, ~500 turn ballpark" → #prayer
+- "Prayer, what it fixes" → #prayer
+- "Prayer cooldown, ~1000 turns" → #prayer
 - "Gods, angering" → #altars-and-alignment
 - "Sacrifice, fresh within 50 turns" → #sacrifice
 - "Sacrifice, role-biased first gift" → #sacrifice
 - "Sacrifice, minimum corpse value" → #sacrifice
 - "Same-race sacrifice, forbidden" → #sacrifice
 - "Donating to priests, AC stacks" → #donating-to-priests
-- "Protection racket, the donation ladder" → #donating-to-priests
+- "Protection racket, donation AC ladder" → #donating-to-priests
 - "Clairvoyance, lower-tier priest gift" → #donating-to-priests
-- "Cheapskate flag, priest grudge" → #donating-to-priests
 - "Altars, converting cross-aligned" → #altars-and-alignment
 - "Altar conversion, the inversion trap" → #altars-and-alignment
 - "Unicorn (co-aligned), never sacrifice" → #altars-and-alignment
@@ -623,21 +568,17 @@ Not alphabetized; that's a final-pass concern.
 - "Pet, accidentally killing your" → #keeping-your-pet-alive
 - "Pet, your best early asset" → #starting-pets
 - "Pet, growth from feeding" → #starting-pets
-- "Pet, curse detection (drop and watch)" → #starting-pets
+- "Pet, curse detection" → #starting-pets
 - "Tameness, the invisible score" → #feeding-and-loyalty
 - "Tripe ration, dog food" → #feeding-and-loyalty
-- "Pet, taming new creatures" → #taming-new-creatures
 - "Scroll of taming, 3×3 area" → #taming-new-creatures
-- "Confused taming, 11×11 widening" → #taming-new-creatures
+- "Confused taming, 11×11 area" → #taming-new-creatures
 - "Pet shoplifting, store-without-paying" → #what-pets-do-for-you
-- "Apport, the fetching score" → #what-pets-do-for-you
 - "Magic whistle, teleports tame creatures to you" → #what-pets-do-for-you
 - "Polymorphing your pet, titan first choice" → #what-pets-do-for-you
-- "Archon, the consensus ultimate pet" → #what-pets-do-for-you
-- "Pet, leaving on Sokoban (kennel)" → #keeping-your-pet-alive
-- "Pet, reviving at a co-aligned altar (new in 5.0)" → #keeping-your-pet-alive
-- "Pet, gains resistances from corpses (new in 5.0)" → #keeping-your-pet-alive
-- "Leash, follows through stairs" → #other-notable-tools
+- "Pet, revive at co-aligned altar" → #keeping-your-pet-alive
+- "Pet, gains resistances from corpses" → #keeping-your-pet-alive
+- "Leash, pet follows through stairs" → #other-notable-tools
 
 ---
 
@@ -645,13 +586,11 @@ Not alphabetized; that's a final-pass concern.
 
 ### Identification strategy
 
-- "Identification flowchart" → #a-practical-identification-strategy
-- "BUC (Blessed Uncursed Cursed)" → #blessed-uncursed-cursed-buc
 - "BUC, avoiding curses by checking" → #blessed-uncursed-cursed-buc
 - "BUC, the altar amber/black flash" → #blessed-uncursed-cursed-buc
 - "BUC, pet step-around" → #blessed-uncursed-cursed-buc
 - "Auto-curse items, read as uncursed (trap)" → #blessed-uncursed-cursed-buc
-- "Holy water, blessing items" → #blessed-uncursed-cursed-buc
+- "Holy water, blesses items" → #blessed-uncursed-cursed-buc
 - "Unholy water, the evil twin" → #blessed-uncursed-cursed-buc
 - "The Price Is Right, shopkeepers identify" → #the-price-is-right
 - "Charisma, buy-price bands" → #the-price-is-right
@@ -659,7 +598,6 @@ Not alphabetized; that's a final-pass concern.
 - "Angry-shopkeeper +33% surcharge, permanent" → #the-price-is-right
 - "Throw-into-shop trick, free quote" → #the-price-is-right
 - "Chat to shopkeeper, polite price-ID" → #the-price-is-right
-- "Scroll prices, $20 to $300" → #scroll-prices
 - "Identify scroll, $20 alone" → #scroll-prices
 - "Spellbook prices, 100 × level" → #spellbook-prices
 - "Potion prices, $20 to $300" → #potion-prices
@@ -675,9 +613,8 @@ Not alphabetized; that's a final-pass concern.
 - "Sink test, the ring drop" → #the-sink-test-rings
 - "Searching ring, kept on drop" → #the-sink-test-rings
 - "Slow digestion ring, kept on drop" → #the-sink-test-rings
-- "Use-testing, the careful way" → #use-testing-the-careful-way
 - "Throw potions at monsters (potion test)" → #use-testing-the-careful-way
-- "Dipping ammo in sickness (poison)" → #use-testing-the-careful-way
+- "Dip ammo in sickness, poison arrows" → #use-testing-the-careful-way
 - "Dipping unicorn horn in potions" → #use-testing-the-careful-way
 - "$200 potions, the hidden traps" → #use-testing-the-careful-way
 - "Confused reading, alternate effects" → #use-testing-the-careful-way
@@ -692,16 +629,12 @@ Not alphabetized; that's a final-pass concern.
 - "Touchstone, real gem on rub" → #gray-stones-four-stones-one-correct-answer
 - "Luckstone, preserves luck" → #gray-stones-four-stones-one-correct-answer
 - "Flint, useless ammunition" → #gray-stones-four-stones-one-correct-answer
-- "Naming what you've learned (#name, #call)" → #naming-what-youve-learned
 - "Identification by stacking, the merge clue" → #naming-what-youve-learned
-- "Practical strategy, the workflow" → #a-practical-strategy
 
 ### Food
 
 - "Food, running out of" → #how-hunger-works
-- "Hunger thresholds, Satiated to Fainting" → #how-hunger-works
 - "Weak status, –1 Str" → #how-hunger-works
-- "What to eat, fresh kills first" → #what-to-eat
 - "Food rations, weight 20" → #what-to-eat
 - "Lembas wafers, best nutrition by weight" → #what-to-eat
 - "Tins, the occupation trap" → #what-to-eat
@@ -710,8 +643,6 @@ Not alphabetized; that's a final-pass concern.
 - "Vegan, no eggs either" → #what-to-eat
 - "Dangerous foods, list" → #dangerous-foods
 - "Cannibalism, –2 to –5 Luck plus aggravate" → #dangerous-foods
-- "Useful corpse effects (meat)" → #useful-corpse-effects
-- "Useful corpse effects (vegetarian)" → #vegetarian-safe-corpses
 - "Sprig of wolfsbane, cures lycanthropy" → #useful-corpse-effects
 - "Acid blob corpse, stoning resistance (timed)" → #vegetarian-safe-corpses
 - "Gelatinous cube corpse, four resistances" → #vegetarian-safe-corpses
@@ -723,35 +654,30 @@ Not alphabetized; that's a final-pass concern.
 - "Yeti corpse, cold resistance" → #useful-corpse-effects
 - "Disenchanter corpse, never eat" → #useful-corpse-effects
 - "Floating eye corpse, telepathy" → #useful-corpse-effects
-- "Food strategy, the six rules" → #food-strategy
 
 ### Apothecary
 
-- "Apothecary, mysterious bottles" → #the-apothecary
 - "Potion table, by price" → #the-potion-table
 - "Water potion, always clear" → #the-potion-table
 - "Healing chain, blessed pumps maxHP" → #potion-healing
-- "Potion of gain ability, blessed = all stats" → #potion-gain-ability
+- "Potion of gain ability, blessed boosts all stats" → #potion-gain-ability
 - "Potion of speed, permanent intrinsic" → #potion-speed
-- "Holy water, making (pray on co-aligned altar)" → #potion-holy-water
-- "Holy water, dipping water multiplies" → #potion-holy-water
+- "Holy water, making (altar prayer)" → #potion-holy-water
+- "Holy water, multiplying via dip" → #potion-holy-water
 - "Potion of gain level, raises XL" → #potion-gain-level
-- "Potion of gain level, cursed = up through ceiling" → #blessed-uncursed-cursed-buc
-- "Potion of polymorph, dip-one-arrow test" → #potion-polymorph
+- "Cursed gain level, up through ceiling" → #blessed-uncursed-cursed-buc
+- "Potion of polymorph, dip-arrow test" → #potion-polymorph
 - "Blessed potion of polymorph, controlled poly (new in 5.0)" → #potion-polymorph
 - "Alchemy, dip recipes" → #alchemy
 - "Alchemy chain, healing → extra → full → gain ability" → #alchemy
 - "Alchemy smock, blast chance ~1 in 30" → #alchemy
 - "Cursed potion dip, guaranteed explosion" → #alchemy
-- "Levitation + Enlightenment → Gain level" → #alchemy
+- "Levitation + Enlightenment dip = Gain level" → #alchemy
 - "Unicorn horn, dip table" → #unicorn-horn-interactions
 - "Unicorn horn, no longer a cure-all" → #unicorn-horn-interactions
 
 ### Scrolls
 
-- "Scroll rack, single-use spells" → #the-scroll-rack
-- "Scroll labels, randomized" → #the-scroll-rack
-- "Scroll table, by price" → #the-scroll-table
 - "Identify, never enough scrolls of" → #scroll-identify
 - "Scroll of identify, main-inventory only" → #scroll-identify
 - "Scroll of identify, blessed jackpot 1-in-5" → #scroll-identify
@@ -763,15 +689,14 @@ Not alphabetized; that's a final-pass concern.
 - "Charging a wand of wishing, exactly once" → #scroll-charging
 - "Scroll of genocide, the nuclear option" → #scroll-genocide
 - "Blessed genocide, class L wipe" → #scroll-genocide
-- "Genocide, race-trap warning (h, G, @, o)" → #scroll-genocide
+- "Genocide race trap (h, G, @, o)" → #scroll-genocide
 - "Reverse genocide, cursed scroll = spawn 4-6" → #scroll-reverse-genocide
 - "Wraith reverse genocide, banquet" → #scroll-reverse-genocide
 - "Magic mapping, blessed shows secret doors" → #scroll-magic-mapping
 - "Scroll of scare monster, drop don't read" → #scroll-scare-monster
 - "Scroll of teleportation, escape hatch" → #scroll-teleportation
-- "Stinking cloud, room-clearing fog" → #scroll-stinking-cloud
+- "Stinking cloud, area attack" → #scroll-stinking-cloud
 - "Confused reading, alternate effects" → #confused-reading
-- "Confused destroy armor cursed, erodeproofs" → #confused-reading
 - "Confused enchant weapon/armor, erodeproofs" → #confused-reading
 - "Confused remove curse, randomizes BUC" → #confused-reading
 - "Confused gold detection, traps revealed" → #confused-reading
@@ -781,12 +706,9 @@ Not alphabetized; that's a final-pass concern.
 
 ### Wands
 
-- "Wands and staves, three types" → #wands-and-staves
-- "Wand table, type and engrave-test" → #the-wand-table
-- "Wishing, found with one charge" → #wand-wishing
 - "Wand of wishing, recharge once and only once" → #wand-wishing
 - "Wand of death, the closer" → #wand-death
-- "Wand of digging, ascension kit staple" → #wand-digging
+- "Wand of digging, ascension staple" → #wand-digging
 - "Wand of digging, cursed zaps down" → #wand-digging
 - "Wand of teleportation, monster removal" → #wand-teleportation
 - "Wand of fire, cold, lightning (rays)" → #wand-fire-cold-lightning
@@ -795,21 +717,17 @@ Not alphabetized; that's a final-pass concern.
 - "Wand of cancellation, on cursed bag of holding" → #wand-cancellation
 - "Wand of polymorph, on a pile (polypile)" → #wand-polymorph
 - "Polypile, away from your bag" → #polymorph-as-a-tool
-- "Wand of make invisible, 31-45 turns now" → #wand-make-invisible
+- "Wand of make invisible, 31-45 turns" → #wand-make-invisible
 - "Wand of stasis, new in 5.0" → #wand-stasis
-- "Wand of probing, diagnostic tool" → #key-wands
+- "Wand of probing, HP / status check" → #key-wands
 - "Wand of secret door detection, area reveal" → #wands-and-staves
-- "Ambiguous engrave results, resolving" → #resolving-ambiguous-engrave-results
 - "Engraving vanishes, three candidates" → #resolving-ambiguous-engrave-results
 - "Recharging, n³/343 explosion formula" → #recharging
 - "Wresting, 1/121 final charge" → #wresting
-- "Polymorph as a tool, self-poly" → #polymorph-as-a-tool
 - "Polymorph control, the form-chooser" → #polymorph-as-a-tool
 
 ### Rings and amulets
 
-- "Rings and amulets, constrained slots" → #rings-and-amulets
-- "Ring table, by price tier" → #the-ring-table
 - "Ring of free action, anti-paralysis" → #the-ring-table
 - "Ring of teleport control, on-demand transport" → #the-ring-table
 - "Ring of conflict, monsters fight each other" → #the-ring-table
@@ -823,7 +741,6 @@ Not alphabetized; that's a final-pass concern.
 - "Ring of searching, auto-search each turn" → #the-ring-table
 - "Ring of warning, threat-color overlay" → #the-ring-table
 - "Ring of sustain ability, prevents stat drain" → #the-ring-table
-- "Amulets, all the same price" → #amulets
 - "Amulet of life saving, when to wear" → #amulets
 - "Amulet of life saving, revives once" → #amulets
 - "Amulet of reflection, ray bouncing" → #amulets
@@ -837,8 +754,6 @@ Not alphabetized; that's a final-pass concern.
 
 ### Tools
 
-- "Tools of the trade, eclectic category" → #tools-of-the-trade
-- "Containers" → #containers
 - "Sack, basic storage" → #containers
 - "Oilskin sack, protects from water" → #containers
 - "Bag of holding, the turning point" → #containers
@@ -846,7 +761,6 @@ Not alphabetized; that's a final-pass concern.
 - "Bag of holding, never insert wand of cancellation" → #containers
 - "Bag of tricks, not actually a bag" → #containers
 - "Large box, chest, ice box (furniture)" → #containers
-- "Carrying capacity, 25(Str+Con)+50" → #carrying-capacity
 - "Burdened, Stressed, Strained, Overtaxed, Overloaded" → #carrying-capacity
 - "52 inventory slots, the letter limit" → #carrying-capacity
 - "#adjust, swap and merge letters" → #carrying-capacity
@@ -877,43 +791,33 @@ Not alphabetized; that's a final-pass concern.
 
 ### Armory
 
-- "Armory, weapons and armor strategy" → #the-armory
-- "Armor and AC, the slot list" → #armor-and-ac
 - "Cloak of displacement, the underrated layer" → #armor-and-ac
 - "Helm of caution, warning intrinsic (new in 5.0)" → #armor-and-ac
 - "Cloak of magic resistance, MC1 in 5.0" → #armor-and-ac
 - "Cloak of protection, MC3 the only single source" → #armor-and-ac
 - "Speed boots, more turns equals more" → #armor-and-ac
 - "Haste self, alternative to speed boots" → #armor-and-ac
-- "Dragon scale mail, color cheat sheet" → #armor-and-ac
 - "Weapons, choice depends on role" → #weapons
-- "Long sword, dip for Excalibur" → #weapons
 - "Katana, best one-hander" → #weapons
 - "Silver saber, demon damage" → #weapons
 - "Crysknife, fragile excellence" → #weapons
-- "Tsurugi, two-handed bisects" → #weapons
 - "Runesword, Stormbringer base" → #weapons
 - "Battle-axe, two-handed good damage" → #weapons
 - "Rubber hose, joke weapon" → #weapons
 - "Excalibur, fountain dipping odds" → #weapons
 - "Silver saber bonus, late-game weapon" → #weapons
 - "Enchantment, weapon ceiling +9, armor +3/+5" → #enchantment
-- "Erosion, rust, fire, corrosion" → #erosion-and-proofing
 - "Confused enchant weapon/armor, erodeproofs" → #erosion-and-proofing
 - "Grease, applied to armor" → #erosion-and-proofing
 - "Dragon scale mail, upgrade from scales" → #dragon-scale-mail
 
 ### Curses
 
-- "Curses, breaking them" → #curses-and-how-to-break-them
 - "Curse, removing" → #removing-curses
-- "How items get cursed (bones, monsters, etc.)" → #how-items-get-cursed
 - "Cursed armor, won't come off" → #effects-of-cursed-items
 - "Cursed weapon, can't be unwielded" → #effects-of-cursed-items
 - "Cursed bag of holding, doubles weight" → #effects-of-cursed-items
-- "Detecting curses, altar/pet/shop" → #detecting-curses
 - "Temple donation, does NOT reveal BUC" → #detecting-curses
-- "Polymorph escape from cursed body armor" → #removing-curses
 
 ---
 
@@ -927,7 +831,6 @@ Not alphabetized; that's a final-pass concern.
 - "Spellbook, 4 successful reads to fade" → #learning-spells
 - "Blessed spellbook, auto-success" → #learning-spells
 - "Spellbook, level 7 explosion rune" → #learning-spells
-- "Wizards identify books by training" → #wizards-identify-books
 - "Spell memory, ~20,000 turns" → #learning-spells
 - "Paperback, the Discworld novel" → #learning-spells
 - "Paperback, +20 XP on first read" → #learning-spells
@@ -961,46 +864,27 @@ Not alphabetized; that's a final-pass concern.
 - "Killing co-aligned unicorn, –5" → #gaining-and-losing-luck
 - "Breaking a mirror, –2 Luck" → #gaining-and-losing-luck
 - "Sacrifice luck ceiling, difficulty must exceed" → #gaining-and-losing-luck
-- "Why Luck matters, even the gods are picky" → #why-luck-matters
 - "Negative Luck, prayer fails" → #why-luck-matters
 
 ### Skills
 
-- "Enhancing skills, #enhance command" → #enhancing-skills
-- "Skill ladder, Unskilled to Grand Master" → #the-skill-ladder
 - "Skill slots, 2 + XL + crowning" → #the-skill-ladder
-- "Skill, 32-slot ceiling at XL 30 crowned" → #the-skill-ladder
-- "Training a skill, dmg>1 counts" → #training-a-skill
 - "Riding, 100 squares per tick" → #training-a-skill
-- "Spell-school practice, level × cast" → #training-a-skill
-- "Rank effects, to-hit/damage table" → #what-a-rank-buys-you
-- "Seven spell schools, focus and grind" → #the-seven-spell-schools
+- "Skill rank effects, to-hit/damage" → #what-a-rank-buys-you
 - "Attack school, force bolt grind" → #the-seven-spell-schools
-- "Healing school" → #the-seven-spell-schools
-- "Divination school" → #the-seven-spell-schools
-- "Enchantment school" → #the-seven-spell-schools
-- "Cleric school" → #the-seven-spell-schools
-- "Escape school" → #the-seven-spell-schools
-- "Matter school" → #the-seven-spell-schools
 - "Per-role skill caps" → #per-role-skill-caps
-- "Weapon skill caps, the matrix" → #weapon-skill-caps
 - "Fighting style caps (bare hands, two-weapon, riding, martial arts)" → #fighting-style-caps
-- "Spell school caps, by role" → #spell-school-caps
-- "Spending slots wisely, the principles" → #spending-slots-wisely
 - "Wizard, dagger Expert opening" → #spending-slots-wisely
 
 ### Wishes and artifacts
 
 - "Wishes, optimal use of" → #what-to-wish-for
 - "Wish sources, six in total" → #sources-of-wishes
-- "What to wish for, GDSM/SDSM/speed/gauntlets/lifesaving" → #what-to-wish-for
-- "Wish syntax, blessed greased fixed +3 GDSM" → #wish-syntax
+- "What to wish for" → #what-to-wish-for
+- "Wish syntax, blessed greased fixed +3" → #wish-syntax
 - "Wish, silent substitutions (fake amulet, etc.)" → #wish-syntax
-- "Artifacts, scattered legends" → #artifacts
-- "Artifacts, sources (sacrifice, quest, wish, fountain, random)" → #artifacts
 - "Alignment and blasting, misaligned artifact damage" → #alignment-and-blasting
 - "Intelligent artifacts, 4d10 blast" → #alignment-and-blasting
-- "Wishable artifacts, the random pool" → #wishable-random-artifacts
 - "Excalibur (Lawful long sword), drain res + search" → #wishable-random-artifacts
 - "Grayswandir (Lawful silver saber), half phys" → #wishable-random-artifacts
 - "Mjollnir (Neutral war hammer), Str 25 return" → #wishable-random-artifacts
@@ -1051,9 +935,9 @@ Not alphabetized; that's a final-pass concern.
 - "Wand of opening / spell of knock, opens drawbridge" → #the-castle
 - "Throne room (Castle court)" → #the-castle
 - "Four corner-tower alcoves, one with wishing wand" → #the-castle
-- "Castle wand chest, sitting on cursed scroll of scare monster" → #the-castle
-- "Castle, central hallway of five trap doors" → #the-castle
-- "Castle, two wishes reliably (1 charge + 1 recharge)" → #the-castle
+- "Castle wand chest, sit on cursed scare monster" → #the-castle
+- "Castle, five trap doors in the hall" → #the-castle
+- "Castle, two reliable wishes" → #the-castle
 
 ### Gehennom
 
@@ -1061,15 +945,13 @@ Not alphabetized; that's a final-pass concern.
 - "Gehennom, no prayer" → #whats-different-in-gehennom
 - "Gehennom, fire everywhere" → #whats-different-in-gehennom
 - "Gehennom, hot ground shatters potions" → #whats-different-in-gehennom
-- "Gehennom, mazes" → #whats-different-in-gehennom
 - "Demon lord bribery, gold in main inventory" → #whats-different-in-gehennom
 - "Bribe demand, halved for Lawful visitors" → #whats-different-in-gehennom
 - "Wielding Excalibur or Demonbane, no bribery" → #whats-different-in-gehennom
 - "Valley of the Dead, Gehennom entrance" → #the-valley-of-the-dead
 - "Moloch shrine, do not pray" → #the-valley-of-the-dead
-- "Demon-prince lairs, three sit alone" → #the-demon-prince-lairs
 - "Vlad's Tower, branches upward" → #vlads-tower
-- "Vlad's throne, four wishes in thirteen" → #vlads-tower
+- "Vlad's throne, four wishes in thirteen sits" → #vlads-tower
 - "Vlad's throne, the nine bad outcomes" → #vlads-tower
 - "Candelabrum of Invocation, at top of Vlad's Tower" → #vlads-tower
 - "Orcus Town, ghost shopping district" → #orcus-town
@@ -1085,16 +967,12 @@ Not alphabetized; that's a final-pass concern.
 - "Heist, the choreographed sequence" → #the-heist
 - "Invocation ritual, three items on the vibrating square" → #the-heist
 - "Vibrating square, search by walking" → #the-heist
-- "Survival tips, Gehennom checklist" → #survival-tips
-- "Genocide L, removes liches in one read" → #survival-tips
 
 ### Ascension
 
-- "Ascension kit, the canonical loadout" → #the-ascension-kit
 - "Ascension, how to not die during" → #the-ascension-run
 - "Ascension, three things winners do that runners-up don't" → #what-killed-the-runners-up
 - "Discipline, the difference" → #what-killed-the-runners-up
-- "Ascension Run, the gauntlet" → #the-ascension-run
 - "Amulet of Yendor pickup wish, on next turn" → #the-ascension-run
 - "Cursed potion of gain level wish, free Gehennom skip" → #the-ascension-run
 - "Authentic Amulet, only from the High Priest" → #the-ascension-run
@@ -1102,7 +980,7 @@ Not alphabetized; that's a final-pass concern.
 - "Wizard of Yendor, the eternal nuisance" → #the-gauntlet
 - "Amulet blocks teleportation, climb by foot" → #the-gauntlet
 - "Covetous monsters, warp to you" → #the-gauntlet
-- "Mysterious Force, every staircase a chance" → #the-gauntlet
+- "Mysterious Force, downstairs reroll" → #the-gauntlet
 - "Mysterious Force, Chaotic discount" → #the-gauntlet
 - "Helm of opposite alignment, Chaotic detour" → #the-gauntlet
 - "Ascension Run strategy, run don't fight" → #strategy
@@ -1112,7 +990,7 @@ Not alphabetized; that's a final-pass concern.
 ### Elemental planes
 
 - "Elemental Planes, four obstacles" → #the-elemental-planes
-- "Plane portals, find with confused gold detection" → #the-elemental-planes
+- "Plane portals, confused gold detection" → #the-elemental-planes
 - "Amulet of Yendor, the compass" → #the-elemental-planes
 - "Plane of Earth, dig the portal" → #plane-of-earth
 - "Plane of Air, cloud bubbles drift" → #plane-of-air
@@ -1126,8 +1004,6 @@ Not alphabetized; that's a final-pass concern.
 - "Death the Rider, instakill chance" → #the-astral-plane
 - "Pestilence the Rider, the one to fear" → #the-astral-plane
 - "Famine the Rider, hunger per hit" → #the-astral-plane
-- "Riders, three deaths of (Pestilence too)" → #the-astral-plane
-- "Riders cannot be permanently killed" → #the-astral-plane
 - "Rider corpse, instantly fatal to eat" → #the-astral-plane
 - "Conflict ring on Astral, Angels go hostile if your Angel dies" → #the-astral-plane
 - "Cockatrice corpse, one-shot Rider" → #the-astral-plane
@@ -1139,10 +1015,9 @@ Not alphabetized; that's a final-pass concern.
 
 ### Advanced controls
 
-- "Advanced controls, faster play" → #advanced-controls
 - "Command counts (10s, 20., etc.)" → #command-counts
 - "Ctrl+A, repeat last command" → #repeat-last-command-ctrla
-- "Movement prefixes (F, G, m)" → #movement-prefixes
+- "Movement prefixes (F force, G run, m no-attack)" → #movement-prefixes
 - "Force-attack (F)" → #movement-prefixes
 - "Run direction (G)" → #movement-prefixes
 - "m prefix, no-attack and menu" → #movement-prefixes
@@ -1153,25 +1028,19 @@ Not alphabetized; that's a final-pass concern.
 - "Ctrl+O / #overview, the level list" → #dungeon-overview-and-event-journal
 - "Annotate (`#annotate`), labeling stash floors" → #dungeon-overview-and-event-journal
 - "Chronicle (`v` / #chronicle), the journal" → #dungeon-overview-and-event-journal
-- "Options worth knowing about" → #options-worth-knowing-about
 - "Autopickup and pickup_types" → #options-worth-knowing-about
-- "Number_pad, the keypad layout" → #options-worth-knowing-about
+- "Number_pad option" → #options-worth-knowing-about
 - "Verbose option, message-log noise" → #options-worth-knowing-about
 - "Curses windowtype, the paneled UI" → #options-worth-knowing-about
 
 ### Sokoban solutions
 
 - "Sokoban, solving without cheating" → #sokoban-solutions
-- "Sokoban, level 1 A and B variants" → #level-1-version-a
 - "Sokoban, scrolls of earth as fillers" → #level-1-version-a
-- "Sokoban, level 2 variants" → #level-2-version-a
-- "Sokoban, level 3 variants" → #level-3-version-a
-- "Sokoban, level 4 variants (the prize)" → #level-4-version-a
 - "Sokoban, mirrored variants (new in 5.0)" → #sokoban-solutions
 
 ### Voluntary challenges (conducts)
 
-- "Conducts, voluntary challenges" → #voluntary-challenges
 - "Food conducts, the hierarchy" → #the-food-conducts
 - "Vegetarian conduct" → #the-food-conducts
 - "Vegan conduct" → #the-food-conducts
@@ -1188,25 +1057,20 @@ Not alphabetized; that's a final-pass concern.
 - "Wishless conduct, refuse all" → #wishing-restrictions
 - "Wish for \"nothing\", the escape hatch" → #wishing-restrictions
 - "No wishing for artifacts conduct" → #wishing-restrictions
-- "Combining conducts, the legendary stacks" → #combining-conducts
 - "Nudist conduct (since 3.6)" → #combining-conducts
 - "Blind / Zen conduct" → #combining-conducts
 - "Pauper conduct, no starting gear (new in 5.0)" → #pauper-new-in-5.0
 - "Petless conduct (new in 5.0)" → #petless-new-in-5.0
 - "Permadeaf conduct (new in 5.0)" → #permadeaf-new-in-5.0
-- "Sokoban (no cheating) conduct (new in 5.0)" → #sokoban-new-in-5.0
-- "Bonesless conduct, must disable bones (new in 5.0)" → #bonesless-new-in-5.0
 
 ### Shopping and pricing
 
-- "Shopping and shopkeeper pricing, full details" → #shopping-and-shopkeeper-pricing
 - "Shopkeeper, angering" → #shopping-and-shopkeeper-pricing
 - "Credit, two ways to accumulate" → #credit-and-debt
 - "Debt, using unpaid items in-shop" → #credit-and-debt
 - "Loan, lent gold from shopkeeper" → #credit-and-debt
 - "Credit cloning, the gold-lure routine" → #credit-and-debt
 - "Walk-out hazard, unpaid items" → #credit-and-debt
-- "Shopkeeper behavior, the toughest NPCs" → #shopkeeper-behavior
 - "Drop everything at the door, see your bill" → #shopkeeper-behavior
 - "Polymorphing the shopkeeper, the prep" → #shopkeeper-behavior
 - "Bones-shop gotcha, items still belong" → #shopkeeper-behavior
@@ -1220,28 +1084,20 @@ Not alphabetized; that's a final-pass concern.
 
 ### Tables (weapons, armor, spells, bestiary)
 
-- "Weapons tables (full appendix)" → #weapons-tables
-- "Armor tables (full appendix)" → #armor-tables
-- "Body armor (suits) table" → #body-armor-suits
-- "Dragon scale mail / dragon scales tables" → #dragon-scales
 - "Shirts, Hawaiian and T-shirt" → #shirts
-- "Cloaks, table by AC/MC" → #cloaks
 - "Cloak of magic resistance (MC1)" → #cloaks
 - "Cloak of protection (MC3)" → #cloaks
 - "Robe, casting bonus" → #cloaks
 - "Alchemy smock, poison resistance" → #cloaks
 - "Mummy wrapping, blocks invisibility" → #cloaks
-- "Helmets, by AC" → #helmets
 - "Helm of opposite alignment, alignment-flip tactical uses" → #helmets
 - "Cornuthaum, Wizard's clairvoyance" → #helmets
 - "Dunce cap, Int/Wis → 6, auto-curse" → #helmets
 - "Helm of brilliance, +spe to Int and Wis" → #helmets
 - "Helm of telepathy, when blind" → #helmets
-- "Gloves" → #gloves
 - "Gauntlets of power, Str 25" → #gloves
 - "Gauntlets of dexterity, +spe to Dex" → #gloves
 - "Gauntlets of fumbling, 9-in-10 cursed" → #gloves
-- "Boots" → #boots
 - "Speed boots, free action on 2/3 turns" → #boots
 - "Water walking boots, Castle drawbridge" → #boots
 - "Jumping boots, leap-apply" → #boots
@@ -1249,30 +1105,14 @@ Not alphabetized; that's a final-pass concern.
 - "Fumble boots, 9-in-10 cursed" → #boots
 - "Elven boots, stealth and silent walk" → #boots
 - "Iron shoes, traps protection" → #boots
-- "Shields" → #shields
 - "Small shield, no spellcast penalty" → #shields
 - "Shield of reflection, saves the body slot" → #shields
 - "Shield of drain resistance (new in 5.0)" → #shields
 - "Shield of shock resistance (new in 5.0)" → #shields
-- "Spell tables (full appendix)" → #spell-tables
-- "Bestiary tables (full appendix)" → #bestiary-tables
 
 ### What changed since 3.6
 
-- "What changed since last time, 5.0 release" → #what-changed-since-last-time
-- "5.0, themed rooms became a regular feature" → #what-changed-since-last-time
 - "5.0, four new monster species" → #what-changed-since-last-time
-- "5.0, helm of caution" → #what-changed-since-last-time
-- "5.0, chain lightning" → #what-changed-since-last-time
-- "5.0, dragon scale mail two extrinsics" → #what-changed-since-last-time
-- "5.0, unicorn horn no longer restores stats" → #what-changed-since-last-time
-- "5.0, supply chests" → #what-changed-since-last-time
-- "5.0, monsters loot containers" → #what-changed-since-last-time
-- "5.0, pet revival at altar" → #what-changed-since-last-time
-- "5.0, sink dipping for potions" → #what-changed-since-last-time
-- "5.0, two-handed weapons +50% Str damage" → #what-changed-since-last-time
-- "5.0, touch of death reworked (not instakill)" → #what-changed-since-last-time
-- "5.0, gold dragon (new species, light source mail)" → #what-changed-since-last-time
 - "5.0, new dangers (sacrifice ceiling, hot ground)" → #new-dangers
 - "5.0, new hacks (blessed polymorph potion, vampire forms)" → #new-hacks
 
@@ -1281,7 +1121,7 @@ Not alphabetized; that's a final-pass concern.
 - "YAFAP (Yet Another First Ascension Post)" → #acknowledgements
 - "YASD (Yet Another Stupid Death)" → #acknowledgements
 - "RGRN (rec.games.roguelike.nethack)" → #acknowledgements
-- "NetHack DevTeam, who maintain it" → #acknowledgements
+- "NetHack DevTeam" → #acknowledgements
 - "Hack (1982), Jay Fenlason" → #acknowledgements
 - "Rogue (1980), Toy and Wichman" → #acknowledgements
 - "Izchak Miller, the lighting shopkeeper" → #acknowledgements
