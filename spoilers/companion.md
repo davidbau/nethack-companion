@@ -7808,7 +7808,7 @@ dungeon in your pack, every covetous monster in the Mazes knows
 it, and the dungeon itself is fighting to keep you from leaving.
 The most exhilarating and terrifying stretch of the game.
 
-#### The Problems
+#### The Gauntlet
 
 Four kinds of trouble run at once, all of them aimed at the
 Amulet in your pack:
