@@ -130,6 +130,22 @@ function Table(blk)
     -- fall through to the Price-table phantom-header wrap
   end
 
+  -- Quoted-price conversion table (Charisma | Mult | 20 | ... | 500):
+  -- pandoc's auto-sizing makes the 500 column just barely fit "1333"
+  -- and crowds the longest Charisma label ("8-10, 11-15^T, 16-17^T2").
+  -- Widen Charisma a touch, widen the 500 column, give all price
+  -- columns a little more breathing room.
+  if #blk.colspecs == 12 and headers[1] == "Charisma" and headers[2] == "Mult" then
+    blk.colspecs[1][2] = 0.22  -- Charisma (combined labels)
+    blk.colspecs[2][2] = 0.08  -- Mult
+    -- price columns: 20 50 60 80 100 150 175 200 300 500
+    local price_widths = {0.06, 0.06, 0.06, 0.06, 0.07, 0.07, 0.07, 0.07, 0.07, 0.09}
+    for i = 1, 10 do
+      blk.colspecs[i + 2][2] = price_widths[i]
+    end
+    return blk
+  end
+
   -- Price-ID tables (Scroll Prices, Spellbook Prices, Potion Prices,
   -- Ring Prices, Amulet Prices, Wand Prices, ...): first column
   -- header is "Price". These are short tables (~6-25 rows each) but
