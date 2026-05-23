@@ -8010,7 +8010,8 @@ Pestilence wants to be settled before either of the others.
 
 **Defenses.** An **amulet of life saving** is the best insurance
 on Astral. Magic resistance stops Death's instakill.
-Sick resistance handles Pestilence. Carry plenty of food (Famine
+Sick resistance handles Pestilence (green dragon scale mail is
+a source). Carry plenty of food (Famine
 bypasses normal nutrition pacing) and a unicorn horn for the
 stun side effects. A wielded cockatrice corpse (with gloves) can
 remove a Rider on a single landed hit — they have no stoning
