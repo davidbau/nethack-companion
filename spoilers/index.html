@@ -5132,14 +5132,18 @@ reference for shopping trips.</p>
 <section id="quoted-price-conversion" class="level5 print-only">
 <h5>Quoted-price conversion</h5>
 <p>The per-class tables below show <strong>buy prices at Cha 11–15 with
-no Tourist markup</strong> (the baseline). To recover the base price
-from a quoted price under different conditions, find the row that
-matches your situation and read across; or, given a base price you
-suspect, read the price you’d be quoted. <em>T Cha</em> rows show the
-Tourist surcharge stacked on.</p>
-<table style="width:100%;">
+no surcharges</strong> (the baseline). To recover the base price from a
+quoted price, find the row that matches your situation and read across;
+or, given a base price you suspect, read the price you’d be quoted.
+<em>T Cha</em> rows show the price with one <strong>×4/3
+surcharge</strong> stacked on, which can come from any of three sources:
+a Tourist markup (low-XL Tourist, dunce cap, or visible undershirt), an
+angry shopkeeper, or the random “sucker” surcharge that fires on about 1
+item in 4 (deterministic per object). Two surcharges stacked: take any
+<em>T Cha</em> cell × 4/3 again.</p>
+<table>
 <colgroup>
-<col style="width: 28%" />
+<col style="width: 26%" />
 <col style="width: 10%" />
 <col style="width: 6%" />
 <col style="width: 6%" />
@@ -5150,6 +5154,7 @@ Tourist surcharge stacked on.</p>
 <col style="width: 6%" />
 <col style="width: 6%" />
 <col style="width: 6%" />
+<col style="width: 7%" />
 </colgroup>
 <thead>
 <tr>
@@ -5164,6 +5169,7 @@ Tourist surcharge stacked on.</p>
 <th style="text-align: right;">175</th>
 <th style="text-align: right;">200</th>
 <th style="text-align: right;">300</th>
+<th style="text-align: right;">500</th>
 </tr>
 </thead>
 <tbody>
@@ -5179,6 +5185,7 @@ Tourist surcharge stacked on.</p>
 <td style="text-align: right;">263</td>
 <td style="text-align: right;">300</td>
 <td style="text-align: right;">450</td>
+<td style="text-align: right;">750</td>
 </tr>
 <tr>
 <td>Cha 8–10</td>
@@ -5192,6 +5199,7 @@ Tourist surcharge stacked on.</p>
 <td style="text-align: right;">233</td>
 <td style="text-align: right;">267</td>
 <td style="text-align: right;">400</td>
+<td style="text-align: right;">667</td>
 </tr>
 <tr>
 <td>Cha 11–15</td>
@@ -5205,6 +5213,7 @@ Tourist surcharge stacked on.</p>
 <td style="text-align: right;">175</td>
 <td style="text-align: right;">200</td>
 <td style="text-align: right;">300</td>
+<td style="text-align: right;">500</td>
 </tr>
 <tr>
 <td>Cha 16–17</td>
@@ -5218,6 +5227,7 @@ Tourist surcharge stacked on.</p>
 <td style="text-align: right;">131</td>
 <td style="text-align: right;">150</td>
 <td style="text-align: right;">225</td>
+<td style="text-align: right;">375</td>
 </tr>
 <tr>
 <td>Cha 18</td>
@@ -5231,6 +5241,7 @@ Tourist surcharge stacked on.</p>
 <td style="text-align: right;">117</td>
 <td style="text-align: right;">133</td>
 <td style="text-align: right;">200</td>
+<td style="text-align: right;">333</td>
 </tr>
 <tr>
 <td>Cha 19+</td>
@@ -5244,6 +5255,7 @@ Tourist surcharge stacked on.</p>
 <td style="text-align: right;">88</td>
 <td style="text-align: right;">100</td>
 <td style="text-align: right;">150</td>
+<td style="text-align: right;">250</td>
 </tr>
 <tr>
 <td>T Cha 6–7</td>
@@ -5257,6 +5269,7 @@ Tourist surcharge stacked on.</p>
 <td style="text-align: right;">350</td>
 <td style="text-align: right;">400</td>
 <td style="text-align: right;">600</td>
+<td style="text-align: right;">1000</td>
 </tr>
 <tr>
 <td>T Cha 8–10</td>
@@ -5270,6 +5283,7 @@ Tourist surcharge stacked on.</p>
 <td style="text-align: right;">311</td>
 <td style="text-align: right;">356</td>
 <td style="text-align: right;">533</td>
+<td style="text-align: right;">889</td>
 </tr>
 <tr>
 <td>T Cha 11–15</td>
@@ -5283,6 +5297,7 @@ Tourist surcharge stacked on.</p>
 <td style="text-align: right;">233</td>
 <td style="text-align: right;">267</td>
 <td style="text-align: right;">400</td>
+<td style="text-align: right;">667</td>
 </tr>
 <tr>
 <td>T Cha 16–17</td>
@@ -5296,6 +5311,7 @@ Tourist surcharge stacked on.</p>
 <td style="text-align: right;">175</td>
 <td style="text-align: right;">200</td>
 <td style="text-align: right;">300</td>
+<td style="text-align: right;">500</td>
 </tr>
 <tr>
 <td>T Cha 18</td>
@@ -5309,6 +5325,7 @@ Tourist surcharge stacked on.</p>
 <td style="text-align: right;">156</td>
 <td style="text-align: right;">178</td>
 <td style="text-align: right;">267</td>
+<td style="text-align: right;">444</td>
 </tr>
 <tr>
 <td>T Cha 19+</td>
@@ -5322,6 +5339,7 @@ Tourist surcharge stacked on.</p>
 <td style="text-align: right;">117</td>
 <td style="text-align: right;">133</td>
 <td style="text-align: right;">200</td>
+<td style="text-align: right;">333</td>
 </tr>
 </tbody>
 </table>

@@ -4187,26 +4187,30 @@ field reference for shopping trips.
 ##### Quoted-price conversion
 
 The per-class tables below show **buy prices at Cha 11–15 with no
-Tourist markup** (the baseline). To recover the base price from a
-quoted price under different conditions, find the row that matches
-your situation and read across; or, given a base price you suspect,
-read the price you'd be quoted. *T Cha* rows show the Tourist
-surcharge stacked on.
+surcharges** (the baseline). To recover the base price from a
+quoted price, find the row that matches your situation and read
+across; or, given a base price you suspect, read the price you'd
+be quoted. *T Cha* rows show the price with one **×4/3 surcharge**
+stacked on, which can come from any of three sources: a Tourist
+markup (low-XL Tourist, dunce cap, or visible undershirt), an
+angry shopkeeper, or the random "sucker" surcharge that fires on
+about 1 item in 4 (deterministic per object). Two surcharges
+stacked: take any *T Cha* cell × 4/3 again.
 
-| Modifier            |   Mult |  20 |  50 |  60 |  80 | 100 | 150 | 175 | 200 | 300 |
-|---------------------|-------:|----:|----:|----:|----:|----:|----:|----:|----:|----:|
-| Cha 6–7             |  ×1.5  |  30 |  75 |  90 | 120 | 150 | 225 | 263 | 300 | 450 |
-| Cha 8–10            |  ×1.33 |  27 |  67 |  80 | 107 | 133 | 200 | 233 | 267 | 400 |
-| Cha 11–15           |  ×1.00 |  20 |  50 |  60 |  80 | 100 | 150 | 175 | 200 | 300 |
-| Cha 16–17           |  ×0.75 |  15 |  38 |  45 |  60 |  75 | 113 | 131 | 150 | 225 |
-| Cha 18              |  ×0.67 |  13 |  33 |  40 |  53 |  67 | 100 | 117 | 133 | 200 |
-| Cha 19+             |  ×0.5  |  10 |  25 |  30 |  40 |  50 |  75 |  88 | 100 | 150 |
-| T Cha 6–7           |  ×2.0  |  40 | 100 | 120 | 160 | 200 | 300 | 350 | 400 | 600 |
-| T Cha 8–10          |  ×1.78 |  36 |  89 | 107 | 142 | 178 | 267 | 311 | 356 | 533 |
-| T Cha 11–15         |  ×1.33 |  27 |  67 |  80 | 107 | 133 | 200 | 233 | 267 | 400 |
-| T Cha 16–17         |  ×1.00 |  20 |  50 |  60 |  80 | 100 | 150 | 175 | 200 | 300 |
-| T Cha 18            |  ×0.89 |  18 |  44 |  53 |  71 |  89 | 133 | 156 | 178 | 267 |
-| T Cha 19+           |  ×0.67 |  13 |  33 |  40 |  53 |  67 | 100 | 117 | 133 | 200 |
+| Modifier            |   Mult |  20 |  50 |  60 |  80 | 100 | 150 | 175 | 200 | 300 |  500 |
+|---------------------|-------:|----:|----:|----:|----:|----:|----:|----:|----:|----:|-----:|
+| Cha 6–7             |  ×1.5  |  30 |  75 |  90 | 120 | 150 | 225 | 263 | 300 | 450 |  750 |
+| Cha 8–10            |  ×1.33 |  27 |  67 |  80 | 107 | 133 | 200 | 233 | 267 | 400 |  667 |
+| Cha 11–15           |  ×1.00 |  20 |  50 |  60 |  80 | 100 | 150 | 175 | 200 | 300 |  500 |
+| Cha 16–17           |  ×0.75 |  15 |  38 |  45 |  60 |  75 | 113 | 131 | 150 | 225 |  375 |
+| Cha 18              |  ×0.67 |  13 |  33 |  40 |  53 |  67 | 100 | 117 | 133 | 200 |  333 |
+| Cha 19+             |  ×0.5  |  10 |  25 |  30 |  40 |  50 |  75 |  88 | 100 | 150 |  250 |
+| T Cha 6–7           |  ×2.0  |  40 | 100 | 120 | 160 | 200 | 300 | 350 | 400 | 600 | 1000 |
+| T Cha 8–10          |  ×1.78 |  36 |  89 | 107 | 142 | 178 | 267 | 311 | 356 | 533 |  889 |
+| T Cha 11–15         |  ×1.33 |  27 |  67 |  80 | 107 | 133 | 200 | 233 | 267 | 400 |  667 |
+| T Cha 16–17         |  ×1.00 |  20 |  50 |  60 |  80 | 100 | 150 | 175 | 200 | 300 |  500 |
+| T Cha 18            |  ×0.89 |  18 |  44 |  53 |  71 |  89 | 133 | 156 | 178 | 267 |  444 |
+| T Cha 19+           |  ×0.67 |  13 |  33 |  40 |  53 |  67 | 100 | 117 | 133 | 200 |  333 |
 
 Numbers are NetHack's integer-rounded prices, not the round-number
 multiplier reapplied. Sell offers are unaffected by Charisma, so
