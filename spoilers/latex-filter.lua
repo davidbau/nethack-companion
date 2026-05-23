@@ -116,7 +116,8 @@ function Table(blk)
   -- result): pandoc auto-sizes the wand-name column wide enough for
   -- "Secret door detection" and leaves the engrave-test column too
   -- narrow for two-word phrases. Halve the wand column and give
-  -- engrave the slack.
+  -- engrave the slack. (Phantom-header wrap is applied by the
+  -- Price-table catch-all below.)
   if #blk.colspecs == 5
       and headers[1] == "Price" and headers[2] == "Wand"
       and headers[3] == "Type" and headers[4] == "Max Charges"
@@ -126,7 +127,25 @@ function Table(blk)
     blk.colspecs[3][2] = 0.12
     blk.colspecs[4][2] = 0.15
     blk.colspecs[5][2] = 0.43
-    return blk
+    -- fall through to the Price-table phantom-header wrap
+  end
+
+  -- Price-ID tables (Scroll Prices, Spellbook Prices, Potion Prices,
+  -- Ring Prices, Amulet Prices, Wand Prices, ...): first column
+  -- header is "Price". These are short tables (~6-25 rows each) but
+  -- they sit in a long sequence right after the Cha-conversion
+  -- longtable, so they regularly end exactly at a page break.
+  -- longtable's normal header-repeat behaviour then emits a phantom
+  -- "Price <Class>" header at the top of the next page, overlapping
+  -- with whatever heading the following section starts with. The fix
+  -- is the same as the Field Guide tables: register the header as
+  -- first-page-only via \let\endhead\endfirsthead.
+  if headers[1] == "Price" and #blk.colspecs >= 2 then
+    return {
+      pandoc.RawBlock("latex", "\\begingroup\\let\\endhead\\endfirsthead"),
+      blk,
+      pandoc.RawBlock("latex", "\\endgroup"),
+    }
   end
 end
 
