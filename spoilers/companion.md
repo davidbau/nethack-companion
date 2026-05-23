@@ -1543,8 +1543,7 @@ the era away:
   post-Rogue inventions.
 
 Modern mechanics still work; you can engrave [Elbereth](#elbereth) here even
-though that was a Hack-era addition. A small and forgivable
-anachronism.
+though that was a Hack-era addition. A small anachronism.
 
 #### Fort Ludios
 <!-- audit
