@@ -814,8 +814,8 @@ them. Some have unusual *shapes*, and some have unusual
 
 - **Light source rooms.** They reliably contain a lit oil
   lamp. Free torch.
-- **Buried treasure.** The floor needs digging, but the haul
-  is real. A pick-axe earns its weight here.
+- **Buried treasure.** The floor needs digging, but the haul is
+  worth it. A pick-axe earns its weight here.
 - **Massacre.** Floor strewn with adventurer-role corpses (rogue,
   ranger, valkyrie, etc.). Useful for sacrifice and for eating
   the safe ones for intrinsics if you know the role.
@@ -5007,7 +5007,7 @@ healing up to gain ability is still there; you just do it in small batches
 with undiluted inputs. Think of it as artisanal alchemy rather than
 industrial production.
 
-The explosion risk is real: roughly 10% on any non-water combination. An
+Alchemy carries an explosion risk: roughly 10% on any non-water combination. An
 alchemy smock (if you find one) reduces this to about 1 in 30, which
 is the difference between "risky hobby" and "acceptable profession." Do
 your chemistry in an isolated room, away from your stash, and never
