@@ -6189,20 +6189,23 @@ off after a few hits.
 
 #### Dragon Scale Mail
 
-Killing a dragon doesn't always drop full scale mail. Often you'll
-find loose **scales** instead. Scales wear in the body slot just
-like the mail and carry the color's full intrinsic property (gray
-gives magic resistance, silver reflection, and so on, identical to
-the mail). The trade-off is AC: scales give +3 where the mail gives
-+9. Same weight.
+Dragon scales are prized for their toughness and their magical
+protections, and mail forged from those scales is among the best
+body armor in the game.
+
+Dragons don't always drop scales, though, and they never drop the
+mail itself — a fresh kill yields scales about one time in three,
+and a revived dragon only one time in twenty. **Scales** wear in the
+body slot just like the mail and carry the color's full intrinsic
+property (gray gives magic resistance, silver reflection, and so on,
+identical to the mail). The trade-off is AC: scales give +3 where
+the mail gives +9. Same weight.
 
 To upgrade scales into scale mail: wear the scales and read a
 non-cursed scroll of enchant armor. The scales merge and harden
 into the corresponding dragon scale mail at +0 (or higher if
 blessed; a blessed scroll also blesses the result). A cursed
 scroll just gives the usual bad enchant effect; no merge.
-
-For which color to chase, see [A note on dragons](#a-note-on-dragons).
 
 ---
 
