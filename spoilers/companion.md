@@ -4234,6 +4234,10 @@ than other categories. But you can still narrow things down. If a
 scroll is in the $20 group, it's identify. Period. That's one of the
 most useful scrolls in the game and you just found it for free.
 
+```{=latex}
+\needspace{6\baselineskip}
+```
+
 A closet tip: a *single* unidentified scroll alone in a
 one-square closet, behind a door or in a niche, is almost always
 scroll of teleportation. The dungeon generator hides it there as
