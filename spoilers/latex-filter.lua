@@ -132,11 +132,11 @@ function Table(blk)
 
   -- Quoted-price conversion table (Charisma | Mult | 20 | ... | 500):
   -- Pandoc's auto-sizing is mostly right but leaves the 500 column a
-  -- touch tight for "1333"; nudge a couple of points away from the
+  -- touch tight for "1333"; nudge a few points away from the
   -- generous Charisma column and into the 500 column.
   if #blk.colspecs == 12 and headers[1] == "Charisma" and headers[2] == "Mult" then
-    blk.colspecs[1][2]  = blk.colspecs[1][2]  - 0.006  -- Charisma: −~2pt
-    blk.colspecs[12][2] = blk.colspecs[12][2] + 0.003  -- 500:     +~1pt
+    blk.colspecs[1][2]  = blk.colspecs[1][2]  - 0.009  -- Charisma: −~3pt
+    blk.colspecs[12][2] = blk.colspecs[12][2] + 0.006  -- 500:     +~2pt
     return blk
   end
 
