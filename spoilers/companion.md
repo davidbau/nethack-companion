@@ -8603,7 +8603,11 @@ The map now looks like this:
 
 Five boulders (A, B, D, E, and J) remain.
 
-#### Level 4, Version A (prize: usually bag of holding, 25% amulet of reflection)
+#### Level 4, Version A
+
+The prize on this version is usually a bag of holding, with a 1
+in 4 chance of being an amulet of reflection instead.
+
 <!-- audit
 2026-05-19:
 - 18-boulder layout and all 19 solution steps verified against dat/soko1-1.lua.
@@ -8693,7 +8697,11 @@ Two boulders (A and E) remain. There is a bag of holding in one
 of the small chambers ((17,12), (17,14), or (17,16)) next to the
 treasure zoo.
 
-#### Level 4, Version B (prize: usually amulet of reflection, 25% bag of holding)
+#### Level 4, Version B
+
+The prize on this version is usually an amulet of reflection, with
+a 1 in 4 chance of being a bag of holding instead.
+
 <!-- audit
 2026-05-19:
 - prize odds: 25% bag of holding, 75% amulet of reflection (soko1-2.lua:105)
