@@ -1306,9 +1306,9 @@ spawn on any random Mines level outside Minetown and Mine's End.
 *"You sense a faint wave of psychic energy"* on an unexplored Mines
 level is the warning. A mind flayer drains Intelligence on every
 successful tentacle hit, and reaching your racial minimum is fatal.
-At Mines depth you usually don't yet have helmet protection (which
-blocks most tentacles) or the ranged options to fight one safely.
-Retreat, prep, or skip the level.
+In early game you may not have the helmet protection and ranged
+attack power you'll need to fight one safely. Retreat to prep, or
+skip the branch.
 
 **Minetown** appears a few levels into the Mines. Usually it's a small
 settlement with shops and a temple, and it's worth visiting early.
