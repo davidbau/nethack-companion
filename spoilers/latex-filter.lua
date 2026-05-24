@@ -160,6 +160,21 @@ function Table(blk)
     }
   end
 
+  -- Armor tables (Armor | AC | MC | Wt | Cost | Material | Notes):
+  -- pandoc auto-sizes Material too narrow for "dragonhide" (10 chars
+  -- vs the "Material" header's 8), causing dragon-scale-mail rows to
+  -- render "dragonhideMagic resistance" with no space. Shift ~3% of
+  -- linewidth from Notes to Material so "dragonhide" fits.
+  if #blk.colspecs == 7
+      and headers[1] == "Armor" and headers[2] == "AC"
+      and headers[3] == "MC" and headers[4] == "Wt"
+      and headers[5] == "Cost" and headers[6] == "Material"
+      and headers[7] == "Notes" then
+    blk.colspecs[6][2] = blk.colspecs[6][2] + 0.03
+    blk.colspecs[7][2] = blk.colspecs[7][2] - 0.03
+    return blk
+  end
+
   -- The "Tool | Use" tables in the Tools chapter (containers,
   -- unlocking tools, light sources, musical instruments, other
   -- notable tools): same phantom-header story as the price tables.
