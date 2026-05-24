@@ -104,7 +104,7 @@ will do our best to keep you alive.
 
 29. [The Castle](#the-castle) — The gateway to Gehennom
 30. [Gehennom](#gehennom) — A travel advisory
-31. [The Ascension Kit](#the-ascension-kit) — What the winners actually carry
+31. [The Ascension Kit](#the-ascension-kit) — Gear for the long climb
 32. [The Ascension Run](#the-ascension-run) — Getting back out alive
 33. [The Elemental Planes](#the-elemental-planes) — The final gauntlet
 
@@ -2649,10 +2649,9 @@ depth, so casual quaffing pays worse the deeper you go.
 Don't quaff from fountains until you have magic resistance,
 reflection, or a clear path of retreat.
 
-**Floating eyes** (`e`). The single most preventable instadeath
-in the early dungeon. Hit one in melee and you're paralyzed for
-~70 turns; whatever passes by during that nap kills you. Kill at
-range, every time. Then eat the corpse for telepathy.
+**Floating eyes** (`e`). Hit one in melee and you're paralyzed for
+~70 turns; whatever passes by during the nap kills you. Kill at
+range, then eat the corpse for telepathy.
 
 **Minotaurs** (`H`, in the Castle and maze levels of Gehennom).
 Three attacks averaging ~38 damage per turn — the hardest hitter
@@ -2734,12 +2733,7 @@ are.
 **Scroll of earth on yourself.** Buried under a pile of
 boulders you summoned on your own head.
 
-Routine mistakes kill far more adventurers than exotic
-instadeaths. Floating eyes, [cockatrices](#petrification-stoning),
-[mind flayers](#brainlessness), and
-[disenchanters](#enchantment-drain) all matter (and they're catalogued in
-[Ways to Die Instantly](#ways-to-die-instantly)). But the median
-death is a preventable swarm of jackals on Dlvl 3.
+The median death is a preventable swarm of jackals on Dlvl 3.
 
 #### A note on dragons
 
@@ -4035,11 +4029,6 @@ write it off. The dungeon kept this secret for a long time. Now you know.
 Here is the central puzzle of the Mazes, and the thing that kills
 more promising expeditions than any monster: you will find dozens of
 items, and you won't know what most of them are.
-
-That potion might heal you or it might make you hallucinate. That
-scroll could enchant your armor or destroy it. That ring could grant
-you invisibility or slowly starve you to death. In the Mazes,
-ignorance is not bliss. Ignorance is death by unidentified wand.
 
 Every game, the dungeon shuffles the deck. Potions, scrolls, wands,
 rings, amulets, and spellbooks are all given randomized appearances.
