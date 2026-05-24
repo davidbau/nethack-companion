@@ -3012,59 +3012,26 @@ epitaph.
 - net per-hit stoning rate: ~1/30 baseline, ~1/3 on new moon
 - citation: source comment names the design change; NetHackWiki Cockatrice page still documents pre-5.0 lizard mitigation (https://nethackwiki.com/wiki/Cockatrice)
 -->
-#### Petrification (Stoning)
+#### Attack Wands and the Warning Shot
+<!-- audit
+2026-05-18:
+- mwandexp gates the first-zap warning miss (muse.c:1830-1860)
+- buzz_force_miss is the dispatch path for the warning shot (muse.c:1815, 1834)
+- 6 beam wands trigger the warning: death, sleep, fire, cold, lightning, magic missile (muse.c:1842-1847)
+- the visible warning shot identifies the wand to the player
+- late-game zones spawn monsters with mwandexp=TRUE — no warning shot (makemon.c:1290-1293)
+- late-game zones: Stronghold, Knox, Quest, Gehennom, Vlad's Tower, endgame
+-->
 
-Petrification is the dungeon's most notorious way to instantly
-kill you, and the reason every experienced player carries a lizard
-corpse. Touching a
-cockatrice without gloves, eating a cockatrice corpse, catching
-Medusa's gaze, or **kicking** a cockatrice corpse barefoot will
-turn you to stone. *Stepping* on the corpse is safe so long as
-you don't have Fumbling (Fumbling can trip you over the corpse for
-instant death). The process is sometimes immediate; otherwise a
-five-turn countdown announces itself with *"You are slowing down,"*
-*"Your limbs are stiffening,"* *"Your limbs have turned to stone"*
-(at which point you are **paralyzed** and can no longer act),
-*"You have turned to stone,"* and *"You are a statue"* (death).
-
-**Defenses ahead of time:** wear gloves around cockatrice corpses,
-use reflection against Medusa, and pile up *timed* stoning
-resistance from acid blob corpses (each one grants d(3,6) turns of
-HStone resistance: useful but not permanent). For something
-permanent, wear yellow dragon scale mail.
-
-**Peril in the new moon.** A cockatrice's hiss has a small chance
-to start stoning on any landed melee hit (roughly 1 in 30). On
-the real-world night of a new moon, that jumps to about 1 in 3.
-Hunt the nest on another night.
-
-**Defenses while it's happening:** eat a lizard corpse (this is
-why you carry one), eat an acidic corpse, drink a potion of acid,
-pray, or cast stone-to-flesh on yourself. Keep the lizard in your
-**main inventory**, not in a bag: pulling it out of a bag takes a
-turn you can't spare against a two-turn timer. Note: act *before*
-the "Your limbs have turned to stone" message — after that
-you're paralyzed for three turns and the final messages kill you. Amulet
-of Unchanging does **not** interrupt stoning. If you happen to be
-polymorphed into a non-stone golem, wearing it during the countdown
-is actively harmful — it blocks the stone-golem auto-poly that
-would otherwise save you on death.
-
-Out of lizards? Any acidic corpse will do: acid blob, jellies,
-yellow dragon, black naga, and yes, green slime works (but green
-slime starts a *different* countdown that turns you to slime; only
-reach for it as a last resort). Quaffing a potion of acid has the
-same curative effect.
-
-**The other side of the coin:** a wielded cockatrice corpse (with
-gloves on) is one of the game's most devastating weapons —
-anything you hit that lacks stoning resistance turns to stone. The
-classic offense, known to veterans as the "rubber chicken,"
-handles demon lords, Medusa, and even a Rider on a good day. The
-failure modes you must guard against are falling into a pit, hole,
-or trapdoor while carrying it, and losing the gloves. Thrown
-cockatrice eggs work the same way and have the same hazard if a
-monster throws one at you.
+Being hit by a powerful wand can mean instant death. A wand of
+death or finger of death kills an unprotected character outright,
+and ray wands of cold, fire, lightning, or magic missile can roll
+lethal damage too. But the first time any given monster zaps a
+beam wand (death, sleep, fire, cold, lightning, magic missile)
+at you, the shot misses. If you can see the monster, the wand
+identifies itself in the same moment, so now you know what was
+just aimed at you and you have a turn to do something about it
+before the next zap connects.
 
 #### Drowning
 <!-- audit
@@ -3096,75 +3063,58 @@ you above pools so you can't walk into them, but **does not save
 you from an eel's grab** once it lands. Kill sea monsters at range
 whenever possible — their grab attack requires adjacency.
 
-#### Attack Wands and the Warning Shot
+#### Seduction
 <!-- audit
 2026-05-18:
-- mwandexp gates the first-zap warning miss (muse.c:1830-1860)
-- buzz_force_miss is the dispatch path for the warning shot (muse.c:1815, 1834)
-- 6 beam wands trigger the warning: death, sleep, fire, cold, lightning, magic missile (muse.c:1842-1847)
-- the visible warning shot identifies the wand to the player
-- late-game zones spawn monsters with mwandexp=TRUE — no warning shot (makemon.c:1290-1293)
-- late-game zones: Stronghold, Knox, Quest, Gehennom, Vlad's Tower, endgame
+- could_seduce at mhitu.c:1980 requires opposite-sex genagr/gendef; same-sex foocubus just claws
+- demon's succubus/incubus form is randomly assigned at generation, not based on player gender (makemon.c:1278-1279 `mtmp->female = femaleok ? rn2(2) : 0`; mhitu.c:1988-1989 doseduce reads Mgender(mon) not player)
+- stripped items go to inventory, not dropped on the floor (mhitu.c:2351 calls remove_worn_item which just unequips into inventory, steal.c:213)
+- level-drain outcome is fatal at XL 1 — do not farm a foocubus at low level (exper.c:232-238 losexp at u.ulevel==1 with non-null drainer calls done(DIED))
 -->
 
-The first time any given monster zaps a beam wand (death, sleep,
-fire, cold, lightning, magic missile) at you, the shot misses. If
-you can see the monster, the wand identifies itself in the same
-moment, so now you know what was just aimed at you and you have a
-turn to do something about it before the next zap connects.
-**Late-game exception:** monsters generated in the Stronghold,
-Knox, the Quest, Gehennom, Vlad's Tower, or the endgame planes
-start with their "experience" flag already set, so their first
-zap can connect. The freebie is an early-to-mid-game courtesy.
+The **amorous demon** (`&`, gray) appears as a **succubus** to
+male heroes and an **incubus** to female ones. A same-sex foocubus
+just claws at you and never starts the seduction. The encounter is
+a Cha+Int gamble: five bad outcomes vs. five good ones, plus a
+payment phase. Handled badly it can drain a level, an attribute,
+and 6–15 HP; handled well it grants a level, an attribute, full
+HP, and extra max Pw.
 
-#### The Touch of Death
-<!-- audit
-2026-05-18:
-- self-zap WAN_DEATH or SPE_FINGER_OF_DEATH skips the Antimagic check (zap.c:2885-2902)
-- only the ray-bolt path checks Antimagic (zap.c:4497-4502)
-- self-zap escape requires being nonliving (undead/manes/golems/S_VORTEX) or is_demon (mondata.h:219-220)
-- Rider Death rn2(20): 17-19 = full touch (15%), 5-16 = permdrain=1 (60%), 0-4 = miss (25%) (uhitm.c:3858-3882)
-- 8d6 + 50 + half-damage permdrain only on rolls 17-19
-- MR on the 17-19 branch falls through to the smaller permdrain rather than being harmless
-- the smaller permdrain on rolls 5-16 is NOT reduced by MR (mcastu.c:326-337)
-- strategy aligned with NetHackWiki Touch of death, Wand of death, Death resistance: MR blocks incoming death rays but not self-zap; nonliving/demon polyform is the self-zap fallback (https://nethackwiki.com/wiki/Touch_of_death, https://nethackwiki.com/wiki/Wand_of_death, https://nethackwiki.com/wiki/Death_resistance)
--->
+**Mechanics.** The demon must be adjacent and not on cooldown. It
+strips off your worn armor one piece at a time (cloak, suit,
+boots, gloves, shield, helm, shirt). The items are unequipped to
+your inventory, not taken or dropped on the floor; the only thing
+the strip costs you is the slot for the rest of the encounter.
+You get a yes/no prompt before each piece comes off with
+probability Cha/20 (so Cha 18 prompts about 9 times in 10; Cha 10
+about half the time). **If you're still wearing a body armor or
+cloak when the strip ends, the encounter ends right there** and the
+demon walks away. A hard-to-remove suit is the simplest defense.
 
-Some monsters, most notably Death (one of the Riders on the Astral
-Plane), can kill you with a single touch. The Finger of Death spell
-and the wand of death work similarly. **Do not zap a wand of death
-or finger of death at Death the Rider** — Death absorbs the
-attack and gains max HP. Magic missile is the recommended answer
-against all three Riders.
+If you do get to the act, the outcome rolls against your combined
+Cha+Int (capped at 32). At the cap the bad-outcome chance is about
+6%; at Cha+Int = 20 it's about 40%; at 10 it's nearly 70%. Check
+your stats before you accept.
 
-**Death the Rider's touch** rolls 1d20 each hit. Rolls 17-19 trigger
-the full **8d6 + 50** instakill attempt and permadrain half the
-damage from your max HP — magic resistance fully blocks this
-high-damage branch. Rolls 5-16 (the most common 60%) deliver a
-smaller life-drain that MR does **not** block. Rolls 0-4 miss
-entirely. A high-level character with many hit points can survive
-the high-damage hit; the permadrain still hurts.
+| Bad outcome (low Cha+Int)         | Good outcome (high Cha+Int) |
+|-----------------------------------|------------------------------|
+| Energy drained (Pw → 0, −1d10 max)| +1d5 max Pw, refilled        |
+| −1 Constitution                   | +1 Constitution              |
+| −1 Wisdom                         | +1 Wisdom                    |
+| Lose 1 XP level (drain res blocks)| Gain 1 XP level              |
+| 6–15 HP damage                    | HP restored to max           |
 
-**The wand of death and Finger of Death spell** are gated by magic
-resistance only when the death ray *hits you from outside*. If you
-misfire and self-zap, MR doesn't save you — only being **nonliving**
-(polymorphed into a vampire, lich, skeleton, etc.) or a demon will.
-This is one of the rare cases where being polymorphed into something
-dead is the safer state. The same nonliving/demon immunity also
-protects against incoming death rays.
+The demon then charges 500+ zorkmids (high Cha can refuse; peaceful
+demons charge 1/5). Being asleep or otherwise unresponsive defers
+the attempt entirely.
 
-An amulet of life saving will revive you once if the touch or zap
-kills you outright.
+**Strategic note.** At high Cha+Int the encounter is net-positive,
+and the armor-removal step strips *cursed* worn pieces too — an
+amorous demon can be the cheapest curse-removal in the dungeon.
+Some players keep one alive to farm XP and attributes. Don't try
+this at experience level 1, though: the level-drain outcome is
+fatal.
 
-<!-- audit
-2026-05-18:
-- hunger thresholds: Satiated >1000, Not Hungry >150, Hungry >50, Weak >0, Fainting ≤0 (eat.c:3369-3372)
-- faint path (eat.c:3410-3432)
-- STARVED death at u.uhunger < -(100 + 10*Con) (eat.c:3437-3447)
-- initial u.uhunger = 900 (eat.c:129)
-- TROUBLE_STARVING covers Weak through STARVED (pray.c:216-217)
-- strategy aligned with NetHackWiki Hunger, Prayer: praying when Weak/Fainting is a canonical TROUBLE_STARVING fix (https://nethackwiki.com/wiki/Hunger, https://nethackwiki.com/wiki/Prayer)
--->
 #### Starvation
 
 This isn't technically instant, but it feels like it. If your
@@ -3181,6 +3131,82 @@ management slide.
 nutrition per hit, and no extrinsic blocks it. Enter the Astral
 Plane Satiated and carry a stack of food rations through the
 fight, or expect to be Faint by the third meeting.
+
+#### Choking
+<!-- audit
+2026-05-18:
+- eat-while-satiated death via done(CHOKING) (eat.c:248, 286); warning string at eat.c:3314
+- "Continue eating?" prompt only with paranoid_confirmation:eating (default off)
+- death only fires at u.uhunger >= 2000 with 1/20 escape; Breathless never choke (eat.c:258-266)
+- amulet of strangulation generates 90% cursed (mkobj.c:1063); beginner can't just take it off
+- escape: pray, or uncurse via holy water or remove curse
+- strangulation is a timer death via done_timeout(DIED, STRANGLED), not an attack — MR has nothing to block (timeout.c:890-894)
+-->
+
+If you push past Satiated and keep eating, you can choke and die.
+The game prints "You're having a hard time getting all of it down"
+as a warning; if you have eating-confirmations turned on it'll also
+prompt you. Past a hard nutrition threshold the choke check fires
+and, unless you're Breathless or pass a 1-in-20 escape, kills you
+instantly.
+
+**The other path to choking is the amulet of strangulation.** Worn,
+it puts a short countdown on your throat and kills you when it runs
+out. The amulet generates cursed 90% of the time, so you usually
+can't just take it off: pray, or uncurse it with holy water or
+remove curse. Magic resistance doesn't help — strangulation isn't
+an attack, it's a timer death. Polymorphing into a Breathless form
+*does* save you.
+
+**Defense:** Don't eat above Satiated. Be paranoid about unidentified
+amulets.
+
+#### Deadly Poison
+<!-- audit
+2026-05-19:
+- AD_DRST extra-damage roll is ~1/240 per qualifying hit: rn2(8) × rn2(30) (uhitm.c:3154, attrib.c:362)
+- poison death is purely `u.uhp <= loss`, no carrycap term (attrib.c:366) — burden is irrelevant
+- poison resistance grants full immunity (attrib.c:338-343)
+- Famine corpse is instantly fatal (eat.c:831-838)
+-->
+
+A handful of monsters (pit vipers, killer bees, cobras, some
+spiders) have a poison-damage branch that can deliver 10 to 34
+extra HP of damage on top of the normal hit. At full HP you
+usually survive; at low HP it can outright kill you. The "extra-damage" roll fires about 1 in 240 per
+qualifying hit. Eating any Rider corpse (Death, Pestilence, *or*
+Famine) is genuinely instantly fatal regardless of HP.
+
+**Defenses:** Poison resistance makes you immune. Most characters
+can get this early by eating enough appropriate corpses. It's one
+of the first intrinsics worth acquiring.
+
+#### Light Bursts
+<!-- audit
+2026-05-18:
+- yellow light: AT_EXPL/AD_BLND, monster level 3 (monsters.h:1169-1191, mhitu.c:1623-1650)
+- black light: AT_EXPL/AD_HALU, monster level 5; perminvis (makemon.c:1317-1320)
+- both die in their own explosion
+- telepathy does NOT reveal black lights (M1_MINDLESS at monsters.h:1188-1189); only warning does
+- warning detects only at adjacent range — exactly when they explode, so it helps less than it looks
+- plain potion of healing cures blindness only when blessed (potion.c:1994-2004); extra/full always do
+-->
+
+**Yellow lights** (`y`, level 3) and **black lights** (`y`, level 5)
+attack by exploding the moment you're adjacent. Yellow lights blind
+you for **10d20 turns** (up to 200 — a *blessed* potion of healing
+or any extra/full healing cures, or apply a unicorn horn); black
+lights hallucinate you for **10d12 turns** (a unicorn horn cures it,
+or wait it out). Both lights die in the explosion, so the encounter
+resolves immediately, but the after-effect is long enough to be the
+real threat. Black lights are invisible; *see invisible* reveals them, but
+because they die in the same turn they attack, you'll only "see"
+them just before they vanish.
+
+**Defenses:** Kill them at range with wands, thrown daggers, breath
+weapons — anything that doesn't bring you adjacent. *Warning*
+detects them through invisibility, but *telepathy* does not (they're
+mindless). If you do get blinded, a unicorn horn cures it.
 
 #### Brainlessness
 <!-- audit
@@ -3227,6 +3253,70 @@ restores all), the spell of restore ability, or prayer when you're
 in good standing. In 5.0 the unicorn horn no longer restores lost
 attributes, so don't rely on it. Stockpile at least one restore
 ability before pushing into mind flayer territory.
+
+#### Engulfment
+
+Two monsters hide in plain sight until you walk into them. The
+**lurker above** (`t`, gray, level 10) hides on the ceiling and
+drops onto whoever passes underneath; the **trapper** (`t`,
+green, level 12) hides on the floor and engulfs whoever steps
+onto it. Both look like ordinary terrain until they trigger.
+Engulfment wraps and crushes rather than digesting, but you still
+take damage every turn until you cut your way out, with limited
+movement options while inside.
+
+Other engulfers don't hide; they just swallow you in melee.
+Dragons and purple worms can swallow whole creatures up to their
+size. Dragons tend to be polite about it (you escape after one or
+two turns); purple worms are the bigger danger, and the dread
+**fog cloud** and **air elemental** count as engulfers too even
+though they don't digest.
+
+**Defenses:** Searching reveals hidden monsters. *Telepathy*
+shows them through the deception. Wearing a *ring of warning* or
+a *helm of caution* tips you off before you step.
+
+**Getting out.** Once engulfed, attack the host repeatedly;
+weapons still work from inside. If you have a wand of digging,
+zap it (no direction needed): it almost always expels you
+immediately, leaving the engulfer at 1 HP. A wand of opening or
+the knock spell forces the engulfer to release you on the spot
+without killing it, useful if a *tame* purple worm has swallowed
+you in conflict.
+Ranged spells and rays will tear into the host from the inside.
+
+#### Disintegration
+<!-- audit
+2026-05-18:
+- only player-facing AD_DISN is black dragon breath (monsters.h:1520, ZT_BREATH(ZT_DEATH) at zap.c:4464-4493)
+- beholder is the only other AD_DISN monster and is #if 0-gated (monsters.h:367-371)
+- black dragons have MR_DISINT in attack and defense slots (monsters.h:1523)
+- reflected beam does 0 damage to them via resists_disint (zap.c:4318)
+- worn-armor priority on disint hit: shield first (zap.c:4476-4479), then body armor + cloak (zap.c:4480-4486)
+- amulet of life saving rescues you (end.c catches DIED) but breath still destroys cloak/shirt (zap.c:4487-4492)
+- an ordinary shield eats one breath; shields of reflection don't have a failure mode (zap.c:4476-4479)
+- Antimagic check is on the death-ray branch only; the AD_DISN breath branch checks Disint_resistance only (zap.c:4464-4497)
+-->
+
+A black dragon's breath is the only monster, spell, or wand that
+disintegrates you. (A deeply angered god can also call down a
+wide-angle disintegration beam as a follow-up to lightning;
+reflection won't block that one. Only disintegration resistance
+will. Stay on speaking terms with your god.)
+
+**Defenses:** Disintegration resistance (from eating a black dragon
+corpse or wearing black dragon scale mail) gives full immunity.
+**Reflection** bounces the breath back, protecting you — but black
+dragons are themselves disintegration-resistant, so the bounce
+won't kill them. Magic resistance does **not** help.
+
+**Without disintegration resistance**, the game tries to save your
+worn armor before disintegrating you: the breath destroys your
+**shield** first if you have one, then your **body armor**; only
+if neither is worn do you die outright (with your cloak and shirt
+destroyed in the process). So an ordinary shield at least eats one
+breath for you before being lost. An amulet of life saving still
+rescues you from the fatal case, though you lose any armor it took.
 
 #### Level Drain
 <!-- audit
@@ -3324,198 +3414,108 @@ them. **Don't eat the corpse**: it strips a random intrinsic.
 - wand of opening / knock spell at engulfer or at self: release_hold expels you (zap.c:382-391, 575-609, 2929-2947)
 - ranged buzz wands "rip into" the engulfer from inside (zap.c:4802-4820)
 -->
-#### Engulfment
+#### Petrification (Stoning)
 
-Two monsters hide in plain sight until you walk into them. The
-**lurker above** (`t`, gray, level 10) hides on the ceiling and
-drops onto whoever passes underneath; the **trapper** (`t`,
-green, level 12) hides on the floor and engulfs whoever steps
-onto it. Both look like ordinary terrain until they trigger.
-Engulfment wraps and crushes rather than digesting, but you still
-take damage every turn until you cut your way out, with limited
-movement options while inside.
+Petrification is the dungeon's most notorious way to instantly
+kill you, and the reason every experienced player carries a lizard
+corpse. Touching a
+cockatrice without gloves, eating a cockatrice corpse, catching
+Medusa's gaze, or **kicking** a cockatrice corpse barefoot will
+turn you to stone. *Stepping* on the corpse is safe so long as
+you don't have Fumbling (Fumbling can trip you over the corpse for
+instant death). The process is sometimes immediate; otherwise a
+five-turn countdown announces itself with *"You are slowing down,"*
+*"Your limbs are stiffening,"* *"Your limbs have turned to stone"*
+(at which point you are **paralyzed** and can no longer act),
+*"You have turned to stone,"* and *"You are a statue"* (death).
 
-Other engulfers don't hide; they just swallow you in melee.
-Dragons and purple worms can swallow whole creatures up to their
-size. Dragons tend to be polite about it (you escape after one or
-two turns); purple worms are the bigger danger, and the dread
-**fog cloud** and **air elemental** count as engulfers too even
-though they don't digest.
+**Defenses ahead of time:** wear gloves around cockatrice corpses,
+use reflection against Medusa, and pile up *timed* stoning
+resistance from acid blob corpses (each one grants d(3,6) turns of
+HStone resistance: useful but not permanent). For something
+permanent, wear yellow dragon scale mail.
 
-**Defenses:** Searching reveals hidden monsters. *Telepathy*
-shows them through the deception. Wearing a *ring of warning* or
-a *helm of caution* tips you off before you step.
+**Peril in the new moon.** A cockatrice's hiss has a small chance
+to start stoning on any landed melee hit (roughly 1 in 30). On
+the real-world night of a new moon, that jumps to about 1 in 3.
+Hunt the nest on another night.
 
-**Getting out.** Once engulfed, attack the host repeatedly;
-weapons still work from inside. If you have a wand of digging,
-zap it (no direction needed): it almost always expels you
-immediately, leaving the engulfer at 1 HP. A wand of opening or
-the knock spell forces the engulfer to release you on the spot
-without killing it, useful if a *tame* purple worm has swallowed
-you in conflict.
-Ranged spells and rays will tear into the host from the inside.
+**Defenses while it's happening:** eat a lizard corpse (this is
+why you carry one), eat an acidic corpse, drink a potion of acid,
+pray, or cast stone-to-flesh on yourself. Keep the lizard in your
+**main inventory**, not in a bag: pulling it out of a bag takes a
+turn you can't spare against a two-turn timer. Note: act *before*
+the "Your limbs have turned to stone" message — after that
+you're paralyzed for three turns and the final messages kill you. Amulet
+of Unchanging does **not** interrupt stoning. If you happen to be
+polymorphed into a non-stone golem, wearing it during the countdown
+is actively harmful — it blocks the stone-golem auto-poly that
+would otherwise save you on death.
 
-#### Light Bursts
+Out of lizards? Any acidic corpse will do: acid blob, jellies,
+yellow dragon, black naga, and yes, green slime works (but green
+slime starts a *different* countdown that turns you to slime; only
+reach for it as a last resort). Quaffing a potion of acid has the
+same curative effect.
+
+**The other side of the coin:** a wielded cockatrice corpse (with
+gloves on) is one of the game's most devastating weapons —
+anything you hit that lacks stoning resistance turns to stone. The
+classic offense, known to veterans as the "rubber chicken,"
+handles demon lords, Medusa, and even a Rider on a good day. The
+failure modes you must guard against are falling into a pit, hole,
+or trapdoor while carrying it, and losing the gloves. Thrown
+cockatrice eggs work the same way and have the same hazard if a
+monster throws one at you.
+
+#### The Touch of Death
 <!-- audit
 2026-05-18:
-- yellow light: AT_EXPL/AD_BLND, monster level 3 (monsters.h:1169-1191, mhitu.c:1623-1650)
-- black light: AT_EXPL/AD_HALU, monster level 5; perminvis (makemon.c:1317-1320)
-- both die in their own explosion
-- telepathy does NOT reveal black lights (M1_MINDLESS at monsters.h:1188-1189); only warning does
-- warning detects only at adjacent range — exactly when they explode, so it helps less than it looks
-- plain potion of healing cures blindness only when blessed (potion.c:1994-2004); extra/full always do
+- self-zap WAN_DEATH or SPE_FINGER_OF_DEATH skips the Antimagic check (zap.c:2885-2902)
+- only the ray-bolt path checks Antimagic (zap.c:4497-4502)
+- self-zap escape requires being nonliving (undead/manes/golems/S_VORTEX) or is_demon (mondata.h:219-220)
+- Rider Death rn2(20): 17-19 = full touch (15%), 5-16 = permdrain=1 (60%), 0-4 = miss (25%) (uhitm.c:3858-3882)
+- 8d6 + 50 + half-damage permdrain only on rolls 17-19
+- MR on the 17-19 branch falls through to the smaller permdrain rather than being harmless
+- the smaller permdrain on rolls 5-16 is NOT reduced by MR (mcastu.c:326-337)
+- strategy aligned with NetHackWiki Touch of death, Wand of death, Death resistance: MR blocks incoming death rays but not self-zap; nonliving/demon polyform is the self-zap fallback (https://nethackwiki.com/wiki/Touch_of_death, https://nethackwiki.com/wiki/Wand_of_death, https://nethackwiki.com/wiki/Death_resistance)
 -->
 
-**Yellow lights** (`y`, level 3) and **black lights** (`y`, level 5)
-attack by exploding the moment you're adjacent. Yellow lights blind
-you for **10d20 turns** (up to 200 — a *blessed* potion of healing
-or any extra/full healing cures, or apply a unicorn horn); black
-lights hallucinate you for **10d12 turns** (a unicorn horn cures it,
-or wait it out). Both lights die in the explosion, so the encounter
-resolves immediately, but the after-effect is long enough to be the
-real threat. Black lights are invisible; *see invisible* reveals them, but
-because they die in the same turn they attack, you'll only "see"
-them just before they vanish.
+Some monsters, most notably Death (one of the Riders on the Astral
+Plane), can kill you with a single touch. The Finger of Death spell
+and the wand of death work similarly. **Do not zap a wand of death
+or finger of death at Death the Rider** — Death absorbs the
+attack and gains max HP. Magic missile is the recommended answer
+against all three Riders.
 
-**Defenses:** Kill them at range with wands, thrown daggers, breath
-weapons — anything that doesn't bring you adjacent. *Warning*
-detects them through invisibility, but *telepathy* does not (they're
-mindless). If you do get blinded, a unicorn horn cures it.
+**Death the Rider's touch** rolls 1d20 each hit. Rolls 17-19 trigger
+the full **8d6 + 50** instakill attempt and permadrain half the
+damage from your max HP — magic resistance fully blocks this
+high-damage branch. Rolls 5-16 (the most common 60%) deliver a
+smaller life-drain that MR does **not** block. Rolls 0-4 miss
+entirely. A high-level character with many hit points can survive
+the high-damage hit; the permadrain still hurts.
 
-#### Seduction
+**The wand of death and Finger of Death spell** are gated by magic
+resistance only when the death ray *hits you from outside*. If you
+misfire and self-zap, MR doesn't save you — only being **nonliving**
+(polymorphed into a vampire, lich, skeleton, etc.) or a demon will.
+This is one of the rare cases where being polymorphed into something
+dead is the safer state. The same nonliving/demon immunity also
+protects against incoming death rays.
+
+An amulet of life saving will revive you once if the touch or zap
+kills you outright.
+
 <!-- audit
 2026-05-18:
-- could_seduce at mhitu.c:1980 requires opposite-sex genagr/gendef; same-sex foocubus just claws
-- demon's succubus/incubus form is randomly assigned at generation, not based on player gender (makemon.c:1278-1279 `mtmp->female = femaleok ? rn2(2) : 0`; mhitu.c:1988-1989 doseduce reads Mgender(mon) not player)
-- stripped items go to inventory, not dropped on the floor (mhitu.c:2351 calls remove_worn_item which just unequips into inventory, steal.c:213)
-- level-drain outcome is fatal at XL 1 — do not farm a foocubus at low level (exper.c:232-238 losexp at u.ulevel==1 with non-null drainer calls done(DIED))
+- hunger thresholds: Satiated >1000, Not Hungry >150, Hungry >50, Weak >0, Fainting ≤0 (eat.c:3369-3372)
+- faint path (eat.c:3410-3432)
+- STARVED death at u.uhunger < -(100 + 10*Con) (eat.c:3437-3447)
+- initial u.uhunger = 900 (eat.c:129)
+- TROUBLE_STARVING covers Weak through STARVED (pray.c:216-217)
+- strategy aligned with NetHackWiki Hunger, Prayer: praying when Weak/Fainting is a canonical TROUBLE_STARVING fix (https://nethackwiki.com/wiki/Hunger, https://nethackwiki.com/wiki/Prayer)
 -->
-
-The **amorous demon** (`&`, gray) appears as a **succubus** to
-male heroes and an **incubus** to female ones. A same-sex foocubus
-just claws at you and never starts the seduction. The encounter is
-a Cha+Int gamble: five bad outcomes vs. five good ones, plus a
-payment phase. Handled badly it can drain a level, an attribute,
-and 6–15 HP; handled well it grants a level, an attribute, full
-HP, and extra max Pw.
-
-**Mechanics.** The demon must be adjacent and not on cooldown. It
-strips off your worn armor one piece at a time (cloak, suit,
-boots, gloves, shield, helm, shirt). The items are unequipped to
-your inventory, not taken or dropped on the floor; the only thing
-the strip costs you is the slot for the rest of the encounter.
-You get a yes/no prompt before each piece comes off with
-probability Cha/20 (so Cha 18 prompts about 9 times in 10; Cha 10
-about half the time). **If you're still wearing a body armor or
-cloak when the strip ends, the encounter ends right there** and the
-demon walks away. A hard-to-remove suit is the simplest defense.
-
-If you do get to the act, the outcome rolls against your combined
-Cha+Int (capped at 32). At the cap the bad-outcome chance is about
-6%; at Cha+Int = 20 it's about 40%; at 10 it's nearly 70%. Check
-your stats before you accept.
-
-| Bad outcome (low Cha+Int)         | Good outcome (high Cha+Int) |
-|-----------------------------------|------------------------------|
-| Energy drained (Pw → 0, −1d10 max)| +1d5 max Pw, refilled        |
-| −1 Constitution                   | +1 Constitution              |
-| −1 Wisdom                         | +1 Wisdom                    |
-| Lose 1 XP level (drain res blocks)| Gain 1 XP level              |
-| 6–15 HP damage                    | HP restored to max           |
-
-The demon then charges 500+ zorkmids (high Cha can refuse; peaceful
-demons charge 1/5). Being asleep or otherwise unresponsive defers
-the attempt entirely.
-
-**Strategic note.** At high Cha+Int the encounter is net-positive,
-and the armor-removal step strips *cursed* worn pieces too — an
-amorous demon can be the cheapest curse-removal in the dungeon.
-Some players keep one alive to farm XP and attributes. Don't try
-this at experience level 1, though: the level-drain outcome is
-fatal.
-
-#### Choking
-<!-- audit
-2026-05-18:
-- eat-while-satiated death via done(CHOKING) (eat.c:248, 286); warning string at eat.c:3314
-- "Continue eating?" prompt only with paranoid_confirmation:eating (default off)
-- death only fires at u.uhunger >= 2000 with 1/20 escape; Breathless never choke (eat.c:258-266)
-- amulet of strangulation generates 90% cursed (mkobj.c:1063); beginner can't just take it off
-- escape: pray, or uncurse via holy water or remove curse
-- strangulation is a timer death via done_timeout(DIED, STRANGLED), not an attack — MR has nothing to block (timeout.c:890-894)
--->
-
-If you push past Satiated and keep eating, you can choke and die.
-The game prints "You're having a hard time getting all of it down"
-as a warning; if you have eating-confirmations turned on it'll also
-prompt you. Past a hard nutrition threshold the choke check fires
-and, unless you're Breathless or pass a 1-in-20 escape, kills you
-instantly.
-
-**The other path to choking is the amulet of strangulation.** Worn,
-it puts a short countdown on your throat and kills you when it runs
-out. The amulet generates cursed 90% of the time, so you usually
-can't just take it off: pray, or uncurse it with holy water or
-remove curse. Magic resistance doesn't help — strangulation isn't
-an attack, it's a timer death. Polymorphing into a Breathless form
-*does* save you.
-
-**Defense:** Don't eat above Satiated. Be paranoid about unidentified
-amulets.
-
-#### Deadly Poison
-<!-- audit
-2026-05-19:
-- AD_DRST extra-damage roll is ~1/240 per qualifying hit: rn2(8) × rn2(30) (uhitm.c:3154, attrib.c:362)
-- poison death is purely `u.uhp <= loss`, no carrycap term (attrib.c:366) — burden is irrelevant
-- poison resistance grants full immunity (attrib.c:338-343)
-- Famine corpse is instantly fatal (eat.c:831-838)
--->
-
-A handful of monsters (pit vipers, killer bees, cobras, some
-spiders) have a poison-damage branch that can deliver 10 to 34
-extra HP of damage on top of the normal hit. At full HP you
-usually survive; at low HP it can outright kill you. The "extra-damage" roll fires about 1 in 240 per
-qualifying hit. Eating any Rider corpse (Death, Pestilence, *or*
-Famine) is genuinely instantly fatal regardless of HP.
-
-**Defenses:** Poison resistance makes you immune. Most characters
-can get this early by eating enough appropriate corpses. It's one
-of the first intrinsics worth acquiring.
-
-#### Disintegration
-<!-- audit
-2026-05-18:
-- only player-facing AD_DISN is black dragon breath (monsters.h:1520, ZT_BREATH(ZT_DEATH) at zap.c:4464-4493)
-- beholder is the only other AD_DISN monster and is #if 0-gated (monsters.h:367-371)
-- black dragons have MR_DISINT in attack and defense slots (monsters.h:1523)
-- reflected beam does 0 damage to them via resists_disint (zap.c:4318)
-- worn-armor priority on disint hit: shield first (zap.c:4476-4479), then body armor + cloak (zap.c:4480-4486)
-- amulet of life saving rescues you (end.c catches DIED) but breath still destroys cloak/shirt (zap.c:4487-4492)
-- an ordinary shield eats one breath; shields of reflection don't have a failure mode (zap.c:4476-4479)
-- Antimagic check is on the death-ray branch only; the AD_DISN breath branch checks Disint_resistance only (zap.c:4464-4497)
--->
-
-A black dragon's breath is the only monster, spell, or wand that
-disintegrates you. (A deeply angered god can also call down a
-wide-angle disintegration beam as a follow-up to lightning;
-reflection won't block that one. Only disintegration resistance
-will. Stay on speaking terms with your god.)
-
-**Defenses:** Disintegration resistance (from eating a black dragon
-corpse or wearing black dragon scale mail) gives full immunity.
-**Reflection** bounces the breath back, protecting you — but black
-dragons are themselves disintegration-resistant, so the bounce
-won't kill them. Magic resistance does **not** help.
-
-**Without disintegration resistance**, the game tries to save your
-worn armor before disintegrating you: the breath destroys your
-**shield** first if you have one, then your **body armor**; only
-if neither is worn do you die outright (with your cloak and shirt
-destroyed in the process). So an ordinary shield at least eats one
-breath for you before being lost. An amulet of life saving still
-rescues you from the fatal case, though you lose any armor it took.
-
 #### Genocide
 <!-- audit
 2026-05-18:
@@ -3527,7 +3527,7 @@ rescues you from the fatal case, though you lose any armor it took.
 Reading an uncursed scroll of genocide while confused can genocide
 your own species. Don't do this.
 
-#### Delayed Deaths
+#### Saving Yourself from Imminent Death
 <!-- audit
 2026-05-19:
 - sliming timer is 10, not 9: make_slimed(10L,...) (uhitm.c:3199, eat.c:854, polyself.c:456, uhitm.c:3570)
