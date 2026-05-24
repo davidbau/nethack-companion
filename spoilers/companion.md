@@ -7812,8 +7812,8 @@ was *behavior*:
   while satiated and choked to death. The ring of slow digestion on
   her finger does not prevent choking.
 - **Out of escape consumables.** A Wizard on Dlvl 50 — within sight
-  of the Sanctum — burned the last wand-of-death charge before
-  reserving an escape route, then died blind and surrounded.
+  of the Sanctum — burned the last wand-of-death charge without any
+  further escape route, then died blind and surrounded.
 
 The gear gets you to Gehennom, but **Discipline** gets you to the
 Sanctum. Keep at least one escape consumable (scroll of
