@@ -350,7 +350,9 @@ local function centered_box_diagram(code_block)
     if n > max_line then max_line = n end
   end
   local avail_chars = 90
-  local pad = math.max(0, math.floor((avail_chars - max_line) / 2))
+  -- 0.375 = 0.75 * (1/2): half of the available slack, scaled to
+  -- 75% so the indent is visible without dominating the diagram.
+  local pad = math.max(0, math.floor((avail_chars - max_line) * 0.375))
   local padded = pad > 0 and pad_code(text, pad) or text
 
   return pandoc.RawBlock("latex",
