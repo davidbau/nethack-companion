@@ -3527,7 +3527,7 @@ kills you outright.
 Reading an uncursed scroll of genocide while confused can genocide
 your own species. Don't do this.
 
-#### Saving Yourself from Imminent Death
+#### Saving Yourself from Imminent Death {#delayed-deaths}
 <!-- audit
 2026-05-19:
 - sliming timer is 10, not 9: make_slimed(10L,...) (uhitm.c:3199, eat.c:854, polyself.c:456, uhitm.c:3570)
