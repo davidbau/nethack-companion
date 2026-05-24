@@ -6667,7 +6667,7 @@ better:
 
 At negative luck, all of these go wrong. Even one point of negative
 Luck causes prayer to backfire. Instead of helping, your god
-responds with punishment: a stat loss with the *"thou hast strayed
+responds with punishment: a stat loss with a *"thou hast strayed
 from the path"* sermon, a black glow that curses your gear, or in
 the worst case bolts of damage. You'll miss attacks you should
 have hit. Scrolls will backfire. The dungeon
