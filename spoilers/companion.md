@@ -7412,8 +7412,7 @@ easy part. Everything below is worse.
 
 The Castle sits at the bottom of the Dungeons of Doom, guarded by
 a drawbridge and whatever the dungeon decided to stuff inside this
-time. (5.0 at least no longer pre-loads the place with arch-liches
-to greet you on arrival.)
+time.
 
 The drawbridge is the first puzzle. You can lower it four ways:
 
