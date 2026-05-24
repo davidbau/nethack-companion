@@ -790,22 +790,53 @@ def replace_inplace(target_md: Path) -> None:
     print(f'Updated {target_md}', file=sys.stderr)
 
 
+CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+
+def svg_to_pdf_chrome(svg_path: Path, pdf_path: Path) -> None:
+    """Render an SVG to PDF using headless Chrome. Chrome correctly
+    handles EB Garamond's italic kerning (rsvg-convert mis-kerns the
+    italic 'f' against the following space, rendering 'vault of gold'
+    as 'vault ofgold'; it also fuses 'fl' into a ligature even when
+    font-feature-settings disables ligatures, and over-tightens 'gi').
+    We wrap the SVG in a minimal HTML page sized to match the viewBox
+    so Chrome doesn't add print margins or shift the content."""
+    text = svg_path.read_text()
+    m = re.search(r'viewBox\s*=\s*"\s*[\d.eE+-]+\s+[\d.eE+-]+\s+([\d.eE+-]+)\s+([\d.eE+-]+)\s*"', text)
+    vb_w, vb_h = (float(m.group(1)), float(m.group(2))) if m else (760, 600)
+    page_w_in = vb_w / 96.0
+    page_h_in = vb_h / 96.0
+    html_path = pdf_path.with_suffix(".html")
+    html_path.write_text(
+        f'<!doctype html>'
+        f'<html><head><meta charset="utf-8"><style>'
+        f'@page {{ size: {page_w_in:.6f}in {page_h_in:.6f}in; margin: 0; }} '
+        f'html, body {{ margin: 0; padding: 0; background: transparent; }} '
+        f'svg {{ display: block; }}'
+        f'</style></head><body>{text}</body></html>',
+        encoding='utf-8')
+    subprocess.run(
+        [CHROME, "--headless", "--disable-gpu", "--no-pdf-header-footer",
+         f"--print-to-pdf={pdf_path}", f"file://{html_path.resolve()}"],
+        check=True, capture_output=True,
+    )
+    html_path.unlink()
+
+
 def write_pdfs(images_dir: Path) -> None:
-    """Write each map section as a standalone SVG plus PDF (via rsvg-convert)
+    """Write each map section as a standalone SVG plus PDF (via headless
+    Chrome — see svg_to_pdf_chrome for why we avoid rsvg-convert here)
     into images_dir/. The PDFs are what the LaTeX print pipeline includes;
     the SVGs are kept alongside for diffability."""
-    if shutil.which('rsvg-convert') is None:
-        sys.exit('rsvg-convert not found. Install with: brew install librsvg')
+    if not Path(CHROME).exists():
+        sys.exit(f'Chrome not found at {CHROME}; install Google Chrome or update CHROME in dungeon_map.py')
     images_dir.mkdir(parents=True, exist_ok=True)
     sections = render_sections()
     for name, svg in sections.items():
         svg_path = images_dir / f'dmap-{name}.svg'
         pdf_path = images_dir / f'dmap-{name}.pdf'
         svg_path.write_text(svg)
-        subprocess.run(
-            ['rsvg-convert', '-f', 'pdf', '-o', str(pdf_path), str(svg_path)],
-            check=True,
-        )
+        svg_to_pdf_chrome(svg_path, pdf_path)
         print(f'Wrote {pdf_path}', file=sys.stderr)
 
 
