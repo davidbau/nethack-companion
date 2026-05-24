@@ -450,11 +450,13 @@ open is almost always worth the time.
 **Restraint.** New adventurers pick up everything they find. Veterans
 pick up everything they need. The difference is about forty pounds
 and the ability to outrun a gnome lord. If your status line reads
-"Burdened," you're carrying more than you can use — and you're also
+"Burdened," you're carrying more than you can use. You are also
 moving slow enough for some monsters to land two hits per one of
-yours. When the pile gets too heavy, drop the non-essentials one
-level up from where you're exploring. Monsters loot containers in
-5.0, but they don't carry stashes between levels.
+yours. When your pile of stuff gets too heavy, drop the non-essentials.
+Careful about what you leave for monsters, though. Remember that
+monsters can pick up what you drop, and they can loot containers.
+You can drop stuff a level up; monsters don't carry stashes between
+levels.
 
 ---
 
