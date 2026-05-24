@@ -5630,8 +5630,9 @@ each one into a random item of the same class. This trick is
 called "polypiling," because it can turn a pile of dross into a
 selection of stuff you need. Drop the fodder on a square far from your real pack:
 a misaimed zap that catches your bag of holding rolls the bag too.
-Max your Luck first, because polypile failures sometimes spawn
-golems on the spot.
+Max your Luck first. When polypile fails, one of the zapped items
+can turn into a hostile golem made from its material, and every
+point of Luck lowers the chance of that going wrong.
 
 ---
 
