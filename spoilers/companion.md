@@ -1545,7 +1545,7 @@ The neighborhood is preserved as it was when **Rogue** was the
 only dungeon-crawl anyone had heard of, and a few details give
 the era away:
 
-- All the wildlife is in capital letters — lowercase species
+- All the wildlife is in capital letters: lowercase species
   hadn't been invented yet.
 - Armor displays as `]`, food as `:`, amulets as `,`, and gold
   shares a symbol with gems (in Rogue they were the same thing).
