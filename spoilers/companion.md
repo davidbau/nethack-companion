@@ -4889,8 +4889,8 @@ while there's a freshly dead rat at your feet. A few rules:
 - Some corpses grant intrinsic resistances (poison resistance from
   killer bees, fire resistance from fire giants, etc.). Eat these
   deliberately, even when you're not hungry — see the table below.
-- Some corpses are harmful (floating eyes paralyze you, green slimes
-  turn you into slime, cockatrice corpses kill you). Know which
+- Some corpses are harmful (cockatrice corpses petrify you, green
+  slimes turn you into slime, kobold meat is poisonous). Know which
   corpses are safe before eating.
 
 **Food rations** are the emergency backup. 800 nutrition, weight
@@ -4951,7 +4951,7 @@ creature on a typical descent.
 | Newt                    | May restore 1 to 3 mana                                                |
 | Cave spider, centipede, killer bee | Poison resistance                                           |
 | Lizard                  | Cures stoning in progress                                              |
-| Floating eye            | Telepathy (but paralyzes you too)                                      |
+| Floating eye            | Telepathy. Safe to eat — paralysis is only from meleeing one.          |
 | Fire ant                | Fire resistance                                                        |
 | [Wraith](#a-note-on-wraiths) | **Gain an experience level**                                      |
 | Yeti                    | Cold resistance                                                        |
