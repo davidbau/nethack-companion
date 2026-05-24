@@ -3523,8 +3523,7 @@ your own species. Don't do this.
 -->
 
 Not every fatal threat kills instantly. Several give you a few
-turns to react. Knowing the warning signs and the cures can save
-a run.
+turns to react.
 
 **Sliming.** Being hit by a green slime (or eating its glob, or
 being digested by one as a polyform) starts a ~10-turn
