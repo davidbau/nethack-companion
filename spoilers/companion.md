@@ -3432,15 +3432,12 @@ when you hit them in melee. Three or four melee strikes will take
 a +7 sword to +3; that passive drain is silent. Range-killing
 sidesteps both attacks at once.
 
-**Defenses.** Every artifact has a 90% chance to resist each
-enchantment-drain attempt on itself; ordinary items resist 10% of
-the time. The Invocation items (Amulet, Bell, Candelabrum, Book
-of the Dead) and Rider corpses always resist. **Magic-cancellation
-armor** is the strongest non-artifact armor defense for the active
-claw: at MC3 the claw will mostly fail to land. (MC doesn't help
-against the passive counter, so still don't melee them.) Range-kill
-is the cleanest plan; rings of conflict and pets reliably redirect
-them. **Don't eat the corpse**: it strips a random intrinsic.
+**Defenses.** **Magic-cancellation armor** at MC3 mostly blocks the
+active claw, but doesn't help against the passive counter. Don't
+melee them even with MC3 armor. Rings of conflict and pets
+reliably redirect them to other targets. Artifacts resist drain
+9 times in 10; ordinary items only 1 in 10. **Don't eat the
+corpse**: it strips a random intrinsic.
 
 <!-- audit
 2026-05-18:
