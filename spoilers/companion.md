@@ -2425,8 +2425,8 @@ sides — no shield, no launcher (bow, crossbow, sling), no ammo
 **Rogue** and **Samurai** can reach Expert; Valkyrie and Knight
 cap at Skilled; everyone else lower or none. Rangers don't have
 the skill at all. If you're not sure, just use one really good
-weapon. In 5.0, two-handed weapons got a buff (3/2 strength damage
-bonus) that makes them a good alternative.
+weapon. In 5.0, two-handed weapons gained a 3/2 strength damage
+bonus, making them a good alternative.
 
 #### Fighting Smart
 
@@ -4600,8 +4600,8 @@ Then put it on. Many rings produce an immediate message or visible
 effect: you start levitating, you become invisible, you feel
 stronger. If nothing obvious happens, check your stats and inventory
 for subtle changes (protection, searching). Take it off quickly if
-you start feeling hungry faster than normal (hunger ring) or if
-monsters seem to be approaching more aggressively (aggravate monster).
+you feel hungry faster than normal (hunger ring) or if monsters
+seem newly aggressive (aggravate monster).
 
 **Amulets.** Most amulets are safe to wear briefly. Put it on, wait
 a few turns, take it off. The dangerous ones (strangulation, restful
@@ -5223,9 +5223,9 @@ The $60 group is treasure (enchant weapon lurks there alongside
 innocent blank paper). The $80 group is equally good: enchant armor
 and remove curse, two scrolls you'll always want more of. The $100
 group is the danger zone, a grab-bag mixing magic mapping and
-teleportation with destroy armor. And at $300, you'll find both
-genocide (the game's nuclear option) and punishment
-(a ball and chain permanently attached to your ankle). Choose wisely.
+teleportation with destroy armor. At $300, you'll find both
+genocide (the nuclear option) and punishment (a ball and chain
+attached to your ankle). Choose wisely.
 
 #### Key Scrolls
 
@@ -6756,8 +6756,7 @@ at −7 each, which is much worse than one solid swing. Bare hands
 and martial arts bonuses apply on every hit; only the practice
 counter is gated by the dmg>1 roll. The Expert weapon line
 (+3 / +2) is why dedicating to a single weapon matters: that's
-the difference between landing the killing blow and watching the
-monster shrug.
+the difference between killing the monster and watching it shrug.
 
 #### The Seven Spell Schools
 
@@ -7955,10 +7954,9 @@ that move on their own each turn: if you're standing in a bubble
 when it shifts, you shift with it. Walking with the drift can
 carry you across the level faster than fighting against it,
 and a bubble may eventually drift you onto the portal square
-itself. (Note that teleportation is blocked on every plane, so
-wand of teleport on yourself just prints "A mysterious force
-prevents you from teleporting!" It still works on monsters for
-clearing space.)
+itself. (Teleportation is blocked on every plane, so a wand of
+teleport on yourself just prints "A mysterious force prevents you
+from teleporting!" It still works on monsters.)
 
 #### Plane of Fire
 
@@ -10782,7 +10780,7 @@ All nymphs teleport.
 - Goblin is correctly placed in S_ORC (monsters.h:727).
 -->
 
-Pack hunters with mediocre loot but real numbers. The Mines are full of them; bring a chokepoint.
+Pack hunters with mediocre loot but real numbers; bring a chokepoint to the Mines.
 
 ::: dense-table
 
