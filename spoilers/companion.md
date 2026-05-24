@@ -6412,7 +6412,10 @@ success. Lenses add +2. A **blessed** spellbook bypasses the check
 entirely and always succeeds. A **cursed** spellbook fails
 automatically and applies one of the failure effects above.
 
-Here's a rough guide to what you can safely read:
+In the table below, the *"Minimum Int + XL needed"* column means
+the sum of your Intelligence and your experience level. With 18
+Intelligence at level 14, your sum is 32, so you can reliably read
+up to level 6 spells.
 
 | Spell Level | Minimum Int + XL needed | Who can read it reliably     |
 | ----------- | ----------------------- | ---------------------------- |
@@ -6424,12 +6427,9 @@ Here's a rough guide to what you can safely read:
 | 6           | ~30                     | Wizards with serious investment |
 | 7           | ~34                     | Only well-built Wizards      |
 
-The "Minimum Int + XL" column means the sum of your Intelligence
-and experience level. With 18 Intelligence at level 14, your sum is
-32, so you can reliably read up to level 6 spells. **A blessed
-book skips the difficulty check entirely and always succeeds**, no
-matter what your Int and level are — which is one reason to save
-holy water for your hardest unread spellbooks.
+**A blessed book skips the difficulty check entirely and always
+succeeds**, no matter what your Int and level are, which is one
+reason to save holy water for your hardest unread spellbooks.
 
 []{#wizards-identify-books}
 **Wizards identify books by training.** In 5.0, advancing
