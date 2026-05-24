@@ -4010,15 +4010,13 @@ well-fed pet is also a better-armored one. This is not something you can
 reliably engineer, but it's a reason to let your pet eat rather than
 scooping up every corpse yourself.
 
-Second, and more importantly: pets can now be revived. If your companion
-falls in battle, stand on its corpse at a co-aligned altar and pray.
-The gods, in their occasional mercy, may return it to you. This is a
-last-resort miracle, not a renewable strategy: your prayer timeout,
-your alignment, and a certain amount of luck all factor in. But it means
-that the large cat you've carried since level 3, the one who has earned
-names and battle scars and the terrified respect of every dungeon denizen
-you've walked past, is worth a detour to the nearest temple before you
-write it off. The dungeon kept this secret for a long time. Now you know.
+Second: pets can now be revived. If your companion falls in battle,
+stand on its corpse at a co-aligned altar and pray. The gods, in
+their occasional mercy, may return it to you. This is a last-resort
+miracle, not a renewable strategy: your prayer timeout, your
+alignment, and a certain amount of luck all factor in. A pet
+you've carried since the early game is worth a detour to the
+nearest temple before you write it off.
 
 ---
 
@@ -5851,17 +5849,13 @@ wish for one when you can.
 
 A warning: **never** put a wand of cancellation, another bag of
 holding, or a charged bag of tricks inside a bag of holding. The
-resulting magical explosion scatters your carefully curated
-inventory across the floor (in older editions it *destroyed*
-everything!). Either way, it's a game-ending mistake that every
-veteran has made exactly once.
+resulting magical explosion scatters your inventory across the
+floor.
 
 If you find a *cursed* bag of holding (in a bones pile, perhaps),
 don't open it. Drop it on the floor and zap a wand of cancellation
-*at the bag from outside*. Cancellation uncurses items it touches,
-and the explosion rule only triggers on insertion, not on a zap.
-You'll have a safe, uncursed bag. (A bag of holding can also be
-*greased* — see [Can of grease](#other-notable-tools).)
+at it. The explosion rule only fires on insertion, not on a zap,
+so the bag uncurses safely.
 
 ##### Carrying capacity
 
@@ -7804,12 +7798,9 @@ was *behavior*:
   of the Sanctum — burned the last wand-of-death charge without any
   further escape route, then died blind and surrounded.
 
-The gear gets you to Gehennom, but **Discipline** gets you to the
-Sanctum. Keep at least one escape consumable (scroll of
-teleportation, wand of digging, oilskin sack with a potion of full
-healing) within reach. Stay alert, and do not get distracted from
-the many things that can kill you on your journey to retrieve the
-Amulet.
+Keep at least one escape consumable within reach: a scroll of
+teleportation, a wand of digging, or an oilskin sack with a potion
+of full healing.
 
 ---
 
