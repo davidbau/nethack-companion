@@ -1520,7 +1520,7 @@ level only. If you descend underprepared and have to turn back, you
 may have a long climb home.
 
 If your alignment record is too low, your quest leader will refuse
-to send you. Attacking peacefuls is the usual cause. Keep your hands
+to send you. A history of attacking peacefuls is the usual cause. Keep your hands
 clean.
 
 #### The Rogue Level
