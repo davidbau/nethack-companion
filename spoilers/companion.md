@@ -5344,21 +5344,10 @@ dangerous if you're shallow and don't want to skip the early game.
 **Confused gold detection** detects *traps* on this level instead
 of gold. Faster and safer than the search command.
 
-**Confused light** creates a small posse of cancelled, friendly
-yellow lights around you (or black lights, if the scroll is cursed).
-They die quietly and can't harm you.
-
 **Confused charging** restores Pw, and if you're already at full,
 *raises your max Pw* by 4–16 (6–24 blessed). A spellcaster's
 permanent buff if you can spare the scroll. Cursed reading zeroes
 your Pw instead.
-
-**Confused scare monster** wakes nearby sleepers and you hear sad
-wailing in the distance. The opposite of helpful. Don't read this
-for an emergency.
-
-**Confused genocide** genocides your own role. This kills you.
-Don't get confused at the wrong moment.
 
 The cleanest way to confuse yourself on purpose is a **potion of
 confusion**: drink one and the timer runs about 25–80 turns. A
@@ -7164,11 +7153,9 @@ It needs Strength 25 to wield in either case (gauntlets of power
 or rings of gain strength get you there). Its +d24 shock damage
 is brutal against anything not shock-resistant.
 
-**Magicbane** is the Wizard's go-to athame. The combined effect of
-its stun damage, curse protection, and magic resistance — all of
-which require it to be **wielded**, not just carried — makes it
-Wizard's preferred melee weapon. Often the first gift from a
-Neutral sacrifice. One nuance for two-weapon Wizards: the curse
+**Magicbane** is the Wizard's go-to athame. Its stun damage, curse
+protection, and magic resistance all require it to be **wielded**,
+not just carried. Often the first gift from a Neutral sacrifice. One nuance for two-weapon Wizards: the curse
 protection only applies while Magicbane is the *primary* wielded
 weapon. If you stash Magicbane in the off-hand to swing a heavier
 blade, you've also turned off its anti-curse aura.
@@ -7206,22 +7193,20 @@ unique free version.)
 
 **Sunsword** is the Lawful long sword that wants to be a tool. Wielded,
 it lights its current radius (handy in caves and the Mines without
-costing an oil lamp). `#invoke` it for a directed *blinding ray* —
-mechanically a Camera flash in any direction, *not* limited to
-undead. It costs 5×spell-level Pw to invoke, so save it for the
-fights that demand it (Riders, mind flayers, the Wizard of Yendor),
-but a blind monster is a monster that misses you. Invoking up or
-down lights the room; invoking at yourself self-blinds (don't).
+costing an oil lamp). `#invoke` it for a directed *blinding ray*,
+mechanically a Camera flash in any direction (not limited to undead).
+It costs 5×spell-level Pw to invoke, so save it for the fights that
+demand it: Riders, mind flayers, the Wizard of Yendor. Invoking up
+or down lights the room; invoking at yourself self-blinds you.
 
 **Bane weapons** (Sunsword, Demonbane, Sting, Orcrist, Grimtooth,
 Dragonbane, Werebane, Giantslayer, Ogresmasher, Trollsbane) deal
 double base damage against their target class. Most are disappointing
 as a primary weapon, but the defensive riders are often the real
-reason to swap one in: Trollsbane regenerates while wielded (genuinely
-useful for an early character holding the line), Dragonbane reflects,
-Werebane neutralizes lycanthropy, Grimtooth defends against poison.
-Sting and Orcrist are notable because elves can start with elven
-daggers and broadswords as their base weapons.
+reason to swap one in: Trollsbane regenerates while wielded
+(genuinely useful for an early character holding the line),
+Dragonbane reflects, Werebane neutralizes lycanthropy, Grimtooth
+defends against poison.
 
 #### Quest artifacts
 
