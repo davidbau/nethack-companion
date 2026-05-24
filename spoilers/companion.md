@@ -1515,8 +1515,9 @@ when the level was generated. Pick both up. The Quest is the only
 place in the game you can get them.
 
 Most nemeses carry an amulet of life saving, so expect to kill them
-twice. The portal back is on the first Quest level only. If you
-descend underprepared you may have a long climb home.
+twice. The portal back to the main dungeon is on the first Quest
+level only. If you descend underprepared and have to turn back, you
+may have a long climb home.
 
 If your alignment record is too low, your quest leader will refuse
 to send you. Attacking peacefuls is the usual cause. Keep your hands
