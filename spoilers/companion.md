@@ -5362,9 +5362,8 @@ Don't get confused at the wrong moment.
 
 The cleanest way to confuse yourself on purpose is a **potion of
 confusion**: drink one and the timer runs about 25–80 turns. A
-non-blessed **potion of booze** is the common backup. It confuses
-you for several turns (longer if you're hungry) and adds a small
-amount of nutrition on the side.
+non-blessed **potion of booze** will also confuse you for a few
+turns.
 
 ---
 
