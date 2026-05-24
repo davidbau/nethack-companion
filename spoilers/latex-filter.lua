@@ -178,7 +178,7 @@ end
 -- gem-throwing negotiation playbook is in Luck and Fortune.") — in
 -- print, the page number helps the reader jump there.
 local always_pageref = {
-  ["more-ways-to-die"] = true,
+  ["ways-to-die-instantly"] = true,
   ["luck-and-fortune"] = true,
   ["field-guide-to-dungeon-fauna"] = true,
 }

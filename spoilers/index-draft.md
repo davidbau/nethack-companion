@@ -493,7 +493,7 @@ Not alphabetized; that's a final-pass concern.
 
 ### More ways to die
 
-- "Instadeaths, recognizing the setup" → #more-ways-to-die
+- "Instadeaths, recognizing the setup" → #ways-to-die-instantly
 - "Petrification (stoning), the five-turn ladder" → #petrification-stoning
 - "Stoning, avoiding" → #petrification-stoning
 - "Cockatrice corpse, wielding (with gloves!)" → #petrification-stoning

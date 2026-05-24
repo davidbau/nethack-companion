@@ -76,7 +76,7 @@ will do our best to keep you alive.
 
 10. [The Art of Combat](#the-art-of-combat) — Hit probability, damage, and tactics
 11. [Things That Will Kill You](#things-that-will-kill-you) — Top-ten killers, common deaths, mimics, dragons
-12. [More Ways to Die](#more-ways-to-die) — Instadeaths and how to recognize them
+12. [Ways to Die Instantly](#ways-to-die-instantly) — Instadeaths and how to recognize them
 13. [Divine Relations](#divine-relations) — Prayer, sacrifice, and altars
 14. [Making Friends](#making-friends) — Pets, taming, and peaceful coexistence
 
@@ -1692,7 +1692,7 @@ Your options, from safest to most desperate:
 
 - **Levitation** (ring, boots, potion, or spell). The easiest way
   to cross. Eels can still grab you from adjacent water (see
-  [Drowning](#drowning) in [More Ways to Die](#more-ways-to-die)).
+  [Drowning](#drowning) in [Ways to Die Instantly](#ways-to-die-instantly)).
 - **Water walking boots.** You walk on the surface. Eels can still
   grab you in adjacent water.
 - **Wand of cold.** Zap the water to freeze a path of ice. Ice
@@ -2740,7 +2740,7 @@ Routine mistakes kill far more adventurers than exotic
 instadeaths. Floating eyes, [cockatrices](#petrification-stoning),
 [mind flayers](#brainlessness), and
 [disenchanters](#enchantment-drain) all matter (and they're catalogued in
-[More Ways to Die](#more-ways-to-die)). But the median
+[Ways to Die Instantly](#ways-to-die-instantly)). But the median
 death is a preventable swarm of jackals on Dlvl 3.
 
 #### A note on dragons
@@ -3053,7 +3053,7 @@ mindless). If you do get blinded, a unicorn horn cures it.
 
 ---
 
-### More Ways to Die
+### Ways to Die Instantly
 
 Some things in the Mazes kill you outright. Not by whittling down
 your hit points, not by wearing you down over time, but by ending
@@ -3583,7 +3583,7 @@ check uses the eel's tile, so levitation, water walking, and
 encumbrance status are irrelevant once the grab lands. **Cures:**
 magical breathing (amulet or spell), kill or teleport the eel
 before it pulls you under, or avoid water entirely. See
-[Drowning](#drowning) in [More Ways to Die](#more-ways-to-die) for the full picture.
+[Drowning](#drowning) in [Ways to Die Instantly](#ways-to-die-instantly) for the full picture.
 
 **Strangulation.** Wearing a cursed amulet of strangulation slowly
 kills you over a few turns. **Cure:** remove the amulet (requires
@@ -12478,7 +12478,7 @@ Illiterate: \hyperref[illiterate]{conduct, only x signature allowed, p.~\pageref
 \hyperref[delayed-deaths]{Illness (food poisoning), unicorn horn cure, p.~\pageref*{delayed-deaths}}\par
 \hyperref[imps-and-minor-demons-i]{Imp, stream of insults, p.~\pageref*{imps-and-minor-demons-i}}\par
 \hyperref[seduction]{Incubus, succubus, encounter table, p.~\pageref*{seduction}}\par
-\hyperref[more-ways-to-die]{Instadeaths, recognizing the setup, p.~\pageref*{more-ways-to-die}}\par
+\hyperref[ways-to-die-instantly]{Instadeaths, recognizing the setup, p.~\pageref*{ways-to-die-instantly}}\par
 \hyperref[alignment-and-blasting]{Intelligent artifacts, 4d10 blast, p.~\pageref*{alignment-and-blasting}}\par
 \hyperref[the-heist]{Invocation ritual, three items on the vibrating square, p.~\pageref*{the-heist}}\par
 Iron: \hyperref[golems]{golem, poison breath, p.~\pageref*{golems}}; \hyperref[iron-bars]{bars, light passes through, bars, dig around them, bars, wand of lightning melts (sometimes), p.~\pageref*{iron-bars}}; \hyperref[boots]{shoes, traps protection, p.~\pageref*{boots}}\par
