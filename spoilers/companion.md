@@ -1305,9 +1305,8 @@ The Mines also have a notorious surprise guest: a mind flayer can
 spawn on any random Mines level outside Minetown and Mine's End.
 *"You sense a faint wave of psychic energy"* on an unexplored Mines
 level is the warning. A mind flayer drains Intelligence on every
-successful tentacle hit, and reaching your racial minimum is fatal.
-In early game you may not have the helmet protection and ranged
-attack power you'll need to fight one safely. Retreat to prep, or
+successful tentacle hit. In early game you may not have the helmet
+protection and ranged attack power you'll need to fight one safely. Retreat to prep, or
 skip the branch.
 
 **Minetown** appears a few levels into the Mines. Usually it's a small
