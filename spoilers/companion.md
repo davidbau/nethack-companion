@@ -10386,10 +10386,7 @@ and jumping, which scales continuously).
 
 The to-hit chance of most rays (sleep, magic missile, finger of
 death, and the unskilled forms of cone of cold and fireball) also
-scales with rank, even when the spell's behavior doesn't otherwise
-change.
-
----
+scales with rank.
 
 ---
 
