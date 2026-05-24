@@ -6665,9 +6665,12 @@ better:
 - Wands of wishing are more likely to work perfectly on wresting.
 - Fountain wishes become slightly more likely.
 
-At negative luck, all of these go wrong. **Any** negative Luck
-causes prayer to fail with the "too naughty" rejection, not just at
-the floor of −10. You'll miss attacks you should have hit. Scrolls will backfire. The dungeon
+At negative luck, all of these go wrong. Even one point of negative
+Luck causes prayer to backfire. Instead of helping, your god
+responds with punishment: a stat loss with the *"thou hast strayed
+from the path"* sermon, a black glow that curses your gear, or in
+the worst case bolts of damage. You'll miss attacks you should
+have hit. Scrolls will backfire. The dungeon
 becomes a place that is trying to kill you even harder than
 usual, which is saying something.
 
