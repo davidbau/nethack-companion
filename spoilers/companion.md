@@ -2974,66 +2974,7 @@ goes wrong), drop a stack of cursed scrolls, and graze. Some
 ascending heroes credit a wraith binge for the experience levels
 that carried them through Gehennom.
 
----
-
-### More Ways to Die
-
-Some things in the Mazes kill you outright. Not by whittling down
-your hit points, not by wearing you down over time, but by ending
-your life in a single move with no second chance. These are called
-instadeaths, and learning to recognize the situations that produce
-them is the difference between a promising run and a one-line
-epitaph.
-
-> *The catalog of instadeaths below is inspired by Trevor Powell's
-> Instadeath Spoiler, which drew on Dylan O'Donnell's RGRN files.
-> Trevor defined an instadeath as "a single move death which does
-> not involve the player's hit points dropping to zero," and that
-> taxonomy has been the standard reference ever since.*
-
-<!-- audit
-2026-05-18:
-- stoning timer starts at 5 (uhitm.c:3937)
-- ticks 5→1 with five distinct messages (timeout.c:128-148)
-- at counter 3 "limbs have turned to stone" sets nomul(-3) paralysis (timeout.c:163-165)
-- two more messages fire after paralysis before done(STONING) at counter 0
-- acid-blob corpse grants TIMED HStone_resistance += d(3,6), not permanent (eat.c:932-934, 1089-1094)
-- Unchanging does not interrupt stoning: only blocks poly (polyself.c:1381-1384)
-- poly_when_stoned auto-cure requires already being a non-stone golem (mondata.c:80-85)
-- plain wand of polymorph cannot target the poly_when_stoned outcome
-- stepping on a cockatrice corpse without Fumbling is safe
-- Fumbling can trip the hero onto the corpse for instapetrify (timeout.c:1256-1261)
-- strategy aligned with NetHackWiki Stoning, Cockatrice, Lizard: gloves around cockatrice corpses, lizard/acid corpse to interrupt the countdown, weaponized corpse for offense (https://nethackwiki.com/wiki/Stoning, https://nethackwiki.com/wiki/Cockatrice, https://nethackwiki.com/wiki/Lizard)
-- eating any acidic corpse cures in-progress stoning (eat.c:860-861, fix_petrification at eat.c:867-877)
-2026-05-23:
-- cockatrice hiss (AD_STON) fires on 1/3 of landed melee hits (uhitm.c:4215)
-- stoning roll within is `!rn2(10) || flags.moonphase == NEW_MOON` (uhitm.c:4245)
-- 5.0 explicitly removed the lizard-corpse new-moon override (uhitm.c:4231-4243 source comment)
-- net per-hit stoning rate: ~1/30 baseline, ~1/3 on new moon
-- citation: source comment names the design change; NetHackWiki Cockatrice page still documents pre-5.0 lizard mitigation (https://nethackwiki.com/wiki/Cockatrice)
--->
-#### Attack Wands and the Warning Shot
-<!-- audit
-2026-05-18:
-- mwandexp gates the first-zap warning miss (muse.c:1830-1860)
-- buzz_force_miss is the dispatch path for the warning shot (muse.c:1815, 1834)
-- 6 beam wands trigger the warning: death, sleep, fire, cold, lightning, magic missile (muse.c:1842-1847)
-- the visible warning shot identifies the wand to the player
-- late-game zones spawn monsters with mwandexp=TRUE — no warning shot (makemon.c:1290-1293)
-- late-game zones: Stronghold, Knox, Quest, Gehennom, Vlad's Tower, endgame
--->
-
-Being hit by a powerful wand can mean instant death. A wand of
-death or finger of death kills an unprotected character outright,
-and ray wands of cold, fire, lightning, or magic missile can roll
-lethal damage too. But the first time any given monster zaps a
-beam wand (death, sleep, fire, cold, lightning, magic missile)
-at you, the shot misses. If you can see the monster, the wand
-identifies itself in the same moment, so now you know what was
-just aimed at you and you have a turn to do something about it
-before the next zap connects.
-
-#### Seduction
+#### A note on Seduction {#seduction}
 <!-- audit
 2026-05-18:
 - could_seduce at mhitu.c:1980 requires opposite-sex genagr/gendef; same-sex foocubus just claws
@@ -3085,22 +3026,70 @@ Some players keep one alive to farm XP and attributes. Don't try
 this at experience level 1, though: the level-drain outcome is
 fatal.
 
-#### Starvation
+#### A note on Light Bursts {#light-bursts}
+<!-- audit
+2026-05-18:
+- yellow light: AT_EXPL/AD_BLND, monster level 3 (monsters.h:1169-1191, mhitu.c:1623-1650)
+- black light: AT_EXPL/AD_HALU, monster level 5; perminvis (makemon.c:1317-1320)
+- both die in their own explosion
+- telepathy does NOT reveal black lights (M1_MINDLESS at monsters.h:1188-1189); only warning does
+- warning detects only at adjacent range — exactly when they explode, so it helps less than it looks
+- plain potion of healing cures blindness only when blessed (potion.c:1994-2004); extra/full always do
+-->
 
-This isn't technically instant, but it feels like it. If your
-nutrition drops to zero, you faint. If you don't eat something while
-fainted, you die. In the early game before you've established a food
-supply, starvation is a real threat.
+**Yellow lights** (`y`, level 3) and **black lights** (`y`, level 5)
+attack by exploding the moment you're adjacent. Yellow lights blind
+you for **10d20 turns** (up to 200 — a *blessed* potion of healing
+or any extra/full healing cures, or apply a unicorn horn); black
+lights hallucinate you for **10d12 turns** (a unicorn horn cures it,
+or wait it out). Both lights die in the explosion, so the encounter
+resolves immediately, but the after-effect is long enough to be the
+real threat. Black lights are invisible; *see invisible* reveals them, but
+because they die in the same turn they attack, you'll only "see"
+them just before they vanish.
 
-**Defenses:** Eat corpses promptly. Pray when your god is willing
-and you are Weak or Fainting (prayer cures hunger). Carry food
-rations, tripe rations, or lembas wafers. Don't let nutrition
-management slide.
+**Defenses:** Kill them at range with wands, thrown daggers, breath
+weapons — anything that doesn't bring you adjacent. *Warning*
+detects them through invisibility, but *telepathy* does not (they're
+mindless). If you do get blinded, a unicorn horn cures it.
 
-**Famine** — the second of the three Riders — drains 40–80
-nutrition per hit, and no extrinsic blocks it. Enter the Astral
-Plane Satiated and carry a stack of food rations through the
-fight, or expect to be Faint by the third meeting.
+---
+
+### More Ways to Die
+
+Some things in the Mazes kill you outright. Not by whittling down
+your hit points, not by wearing you down over time, but by ending
+your life in a single move with no second chance. These are called
+instadeaths, and learning to recognize the situations that produce
+them is the difference between a promising run and a one-line
+epitaph.
+
+> *The catalog of instadeaths below is inspired by Trevor Powell's
+> Instadeath Spoiler, which drew on Dylan O'Donnell's RGRN files.
+> Trevor defined an instadeath as "a single move death which does
+> not involve the player's hit points dropping to zero," and that
+> taxonomy has been the standard reference ever since.*
+
+#### Attack Wands and the Warning Shot
+<!-- audit
+2026-05-18:
+- mwandexp gates the first-zap warning miss (muse.c:1830-1860)
+- buzz_force_miss is the dispatch path for the warning shot (muse.c:1815, 1834)
+- 6 beam wands trigger the warning: death, sleep, fire, cold, lightning, magic missile (muse.c:1842-1847)
+- the visible warning shot identifies the wand to the player
+- late-game zones spawn monsters with mwandexp=TRUE — no warning shot (makemon.c:1290-1293)
+- late-game zones: Stronghold, Knox, Quest, Gehennom, Vlad's Tower, endgame
+-->
+
+Being hit by a powerful wand can mean instant death. A wand of
+death or finger of death kills an unprotected character outright,
+and ray wands of cold, fire, lightning, or magic missile can roll
+lethal damage too. But the first time any given monster zaps a
+beam wand (death, sleep, fire, cold, lightning, magic missile)
+at you, the shot misses. If you can see the monster, the wand
+identifies itself in the same moment, so now you know what was
+just aimed at you and you have a turn to do something about it
+before the next zap connects.
 
 #### Choking
 <!-- audit
@@ -3131,6 +3120,25 @@ an attack, it's a timer death. Polymorphing into a Breathless form
 **Defense:** Don't eat above Satiated. Be paranoid about unidentified
 amulets.
 
+#### Starvation
+
+This isn't technically instant, but it feels like it. If your
+nutrition drops to zero, you faint. If you don't eat something while
+fainted, you die. In the early game before you've established a food
+supply, starvation is a real threat.
+
+**Defenses:** Eat corpses promptly. Pray when your god is willing
+and you are Weak or Fainting (prayer cures hunger). Carry food
+rations, tripe rations, or lembas wafers. Don't let nutrition
+management slide.
+
+**Famine**, one of the three Riders in the endgame, will kill you
+quickly through starvation by draining 40–80 nutrition per
+hit, without any extrinsic that blocks it. At the end of the
+game, be sure to enter the Astral Plane Satiated and carry a
+stack of food rations through the fight, or you will be Faint
+soon after Famine hits.
+
 #### Deadly Poison
 <!-- audit
 2026-05-19:
@@ -3150,33 +3158,6 @@ Famine) is genuinely instantly fatal regardless of HP.
 **Defenses:** Poison resistance makes you immune. Most characters
 can get this early by eating enough appropriate corpses. It's one
 of the first intrinsics worth acquiring.
-
-#### Light Bursts
-<!-- audit
-2026-05-18:
-- yellow light: AT_EXPL/AD_BLND, monster level 3 (monsters.h:1169-1191, mhitu.c:1623-1650)
-- black light: AT_EXPL/AD_HALU, monster level 5; perminvis (makemon.c:1317-1320)
-- both die in their own explosion
-- telepathy does NOT reveal black lights (M1_MINDLESS at monsters.h:1188-1189); only warning does
-- warning detects only at adjacent range — exactly when they explode, so it helps less than it looks
-- plain potion of healing cures blindness only when blessed (potion.c:1994-2004); extra/full always do
--->
-
-**Yellow lights** (`y`, level 3) and **black lights** (`y`, level 5)
-attack by exploding the moment you're adjacent. Yellow lights blind
-you for **10d20 turns** (up to 200 — a *blessed* potion of healing
-or any extra/full healing cures, or apply a unicorn horn); black
-lights hallucinate you for **10d12 turns** (a unicorn horn cures it,
-or wait it out). Both lights die in the explosion, so the encounter
-resolves immediately, but the after-effect is long enough to be the
-real threat. Black lights are invisible; *see invisible* reveals them, but
-because they die in the same turn they attack, you'll only "see"
-them just before they vanish.
-
-**Defenses:** Kill them at range with wands, thrown daggers, breath
-weapons — anything that doesn't bring you adjacent. *Warning*
-detects them through invisibility, but *telepathy* does not (they're
-mindless). If you do get blinded, a unicorn horn cures it.
 
 #### Brainlessness
 <!-- audit
@@ -3286,6 +3267,28 @@ you from an eel's grab** once it lands. Kill sea monsters at range
 whenever possible — their grab attack requires adjacency.
 
 #### Petrification (Stoning)
+<!-- audit
+2026-05-18:
+- stoning timer starts at 5 (uhitm.c:3937)
+- ticks 5→1 with five distinct messages (timeout.c:128-148)
+- at counter 3 "limbs have turned to stone" sets nomul(-3) paralysis (timeout.c:163-165)
+- two more messages fire after paralysis before done(STONING) at counter 0
+- acid-blob corpse grants TIMED HStone_resistance += d(3,6), not permanent (eat.c:932-934, 1089-1094)
+- Unchanging does not interrupt stoning: only blocks poly (polyself.c:1381-1384)
+- poly_when_stoned auto-cure requires already being a non-stone golem (mondata.c:80-85)
+- plain wand of polymorph cannot target the poly_when_stoned outcome
+- stepping on a cockatrice corpse without Fumbling is safe
+- Fumbling can trip the hero onto the corpse for instapetrify (timeout.c:1256-1261)
+- strategy aligned with NetHackWiki Stoning, Cockatrice, Lizard: gloves around cockatrice corpses, lizard/acid corpse to interrupt the countdown, weaponized corpse for offense (https://nethackwiki.com/wiki/Stoning, https://nethackwiki.com/wiki/Cockatrice, https://nethackwiki.com/wiki/Lizard)
+- eating any acidic corpse cures in-progress stoning (eat.c:860-861, fix_petrification at eat.c:867-877)
+2026-05-23:
+- cockatrice hiss (AD_STON) fires on 1/3 of landed melee hits (uhitm.c:4215)
+- stoning roll within is `!rn2(10) || flags.moonphase == NEW_MOON` (uhitm.c:4245)
+- 5.0 explicitly removed the lizard-corpse new-moon override (uhitm.c:4231-4243 source comment)
+- net per-hit stoning rate: ~1/30 baseline, ~1/3 on new moon
+- citation: source comment names the design change; NetHackWiki Cockatrice page still documents pre-5.0 lizard mitigation (https://nethackwiki.com/wiki/Cockatrice)
+-->
+
 
 Petrification is the dungeon's most notorious way to instantly
 kill you, and the reason every experienced player carries a lizard

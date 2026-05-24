@@ -58,6 +58,10 @@ $body$
   var tocItems = [];
 
   headings.forEach(function(h) {
+    // Print-only sections (Index of Useful Knowledge, etc.) are
+    // hidden by CSS but still in the DOM. Skip their headings so
+    // they don't show up in the web sidebar TOC.
+    if (h.closest('.print-only')) return;
     var section = h.closest('section') || h.parentElement;
     var id = section.id || h.id;
     if (!id) return;
