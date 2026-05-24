@@ -7639,13 +7639,13 @@ those that fire, 4/13 are the wish. Unconditional rate is about
 1 in 10, so plan on roughly ten sits before the wish lands, with
 about seven bad effects absorbed along the way. Plan accordingly. Stand at full HP,
 leave any precious gear behind (a grease hit coats your whole
-pack and makes you Glib for 100 to 200 turns, dropping items
-from your hands when you try to use them), and have acid
+pack and makes your hands slippery for 100 to 200 turns, dropping
+items when you try to use them), and have acid
 resistance or magic resistance ready before you sit. If you don't
 want a forced wish (say, you've already used your Castle wish and
 Amulet wish and want to keep this one for the ascension kit), you
 can sit at any time; you don't have to do it right now. The
-throne stays put unless something on the level destroys it.
+throne stays put unless something destroys it.
 
 #### Orcus Town
 
