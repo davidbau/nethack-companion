@@ -3172,9 +3172,8 @@ Mind flayers drain Intelligence with their tentacle attacks. If
 your Intelligence drops to your racial minimum (3 for humans), the
 next drain kills you: "brainlessness." A regular mind flayer has
 three tentacle attacks per turn; the **master mind flayer** has
-*five*, plus a heavier weapon strike, and is widely called the
-most lethal non-boss monster in the dungeon. A single unprepared
-turn next to a master mind flayer can drop your Int by up to ten.
+*five*, plus a heavier weapon strike. A single unprepared turn
+next to a master mind flayer can drop your Int by up to ten.
 Each hit also has a 1-in-5 chance to trigger **spell amnesia**: a
 random number of your memorized spells (zero to all of them) drop
 to zero retention; re-study from spellbooks to restore. (Before
@@ -6108,19 +6107,11 @@ edge against ambushes. Late game it competes with helm of
 brilliance (Wizards) and helm of telepathy (everyone), but the
 warning bonus stays useful all the way down.
 
-**Dragon scale mail** is the endgame body armor of choice. In
-5.0, most colors provide two extrinsic resistances (gray and
-silver provide only the named one). Gray dragon scale mail
-provides magic resistance and is a popular wish target.
-Silver provides reflection. Black provides disintegration
-resistance and drain resistance (one of two non-artifact sources,
-alongside the shield of drain resistance).
-Green provides poison resistance and sickness immunity.
-
-To get dragon scale mail: kill a dragon, pick up the scales it
-drops, then read a (non-cursed) scroll of enchant armor while
-wearing them (they transform into scale mail); or wish for the
-mail directly.
+**Dragon scale mail** is the endgame body armor of choice. **Gray**
+grants magic resistance and is the most-wished color, **silver**
+grants reflection, and other colors carry one or two intrinsics
+each. See [Dragon Scale Mail](#dragon-scale-mail) below for the
+full list and the forge recipe.
 
 **Speed boots** are worth wishing for. Being faster than your
 enemies means you get more turns — more chances to attack, cast
