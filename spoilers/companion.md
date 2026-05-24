@@ -1304,8 +1304,11 @@ steady stream of hostile gnomes and dwarves.
 The Mines also have a notorious surprise guest: a mind flayer can
 spawn on any random Mines level outside Minetown and Mine's End.
 *"You sense a faint wave of psychic energy"* on an unexplored Mines
-level is the warning, and the community shorthand — "minesflayer" —
-is a healthy thing to take seriously. Retreat, prep, or skip the level.
+level is the warning. A mind flayer drains Intelligence on every
+successful tentacle hit, and reaching your racial minimum is fatal.
+At Mines depth you usually don't yet have helmet protection (which
+blocks most tentacles) or the ranged options to fight one safely.
+Retreat, prep, or skip the level.
 
 **Minetown** appears a few levels into the Mines. Usually it's a small
 settlement with shops and a temple, and it's worth visiting early.
