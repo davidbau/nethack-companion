@@ -6637,7 +6637,7 @@ gamble. Archeologists start with a **touchstone**, which lets
 them verify whether a gem is real before throwing it at a
 unicorn.
 
-There is a ceiling on the luck you can harvest from any given corpse.
+There is a ceiling on the luck you can obtain from any given kind of offering.
 If your current luck score already exceeds the difficulty rating of the
 monster you just sacrificed, you gain nothing. The altar accepts your
 offering politely and gives you nothing in return, because the gods have
@@ -6648,8 +6648,8 @@ with a pile of kobold corpses and grind luck to maximum. That no
 longer works once your luck is already above modest levels. To
 raise luck via sacrifice in the mid-to-late game, you need fresh
 corpses of monsters whose difficulty exceeds your current luck
-value. In practice: a luckstone, occasional mid-tier sacrifices,
-and not killing peacefuls is the standard path to high luck.
+value. A luckstone, occasional mid-tier sacrifices, and care to
+avoid killing peacefuls is the standard path to high luck.
 
 #### Why Luck Matters
 
