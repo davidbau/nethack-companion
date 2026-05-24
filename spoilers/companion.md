@@ -6431,6 +6431,16 @@ up to level 6 spells.
 succeeds**, no matter what your Int and level are, which is one
 reason to save holy water for your hardest unread spellbooks.
 
+**Wizards** are the undisputed masters of magic: they learn faster,
+fail less, and have the widest range of useful spells. A well-built
+Wizard can eventually learn *every* spell in the game, which is the
+closest the Mazes come to letting you cheat. Other roles can cast
+some spells but with less panache. A Valkyrie can occasionally read
+identify (level 3) if her Intelligence is boosted by gain-ability
+potions, but non-spellcasters are usually better off with scrolls.
+Tourists, Barbarians, and Cavemen should probably stick to hitting
+things.
+
 []{#wizards-identify-books}
 **Wizards identify books by training.** In 5.0, advancing
 a spell school skill to each rank automatically reveals the appearances
@@ -6439,21 +6449,6 @@ basic level-3, skilled level-5, expert level-7. A Wizard starts knowing
 all level-1 appearances and level-3 in attack and enchantment, which
 means they begin the game with a meaningful identification advantage in
 their core schools.
-
-So training your spell schools pays off twice: better casting *and*
-free book-ID. The unknown book you've been carrying since level 5?
-Train up the right school and suddenly you know what it is.
-Prioritize the schools containing your most-wanted unidentified
-books, not just the ones that improve your current casting.
-
-Wizards are the undisputed masters of magic: they learn faster, fail
-less, and have the widest range of useful spells. A well-built Wizard
-can eventually learn *every* spell in the game, which is the closest
-the Mazes come to letting you cheat. Other roles can cast some spells
-but with less panache. A Valkyrie can occasionally read identify
-(level 3) if her Intelligence is boosted by gain-ability potions, but
-non-spellcasters are usually better off with scrolls. Tourists,
-Barbarians, and Cavemen should probably stick to hitting things.
 
 Each spell stays in memory for about 20,000 turns, then fades and
 must be relearned. The spell list (`+`) shows time-remaining. You
