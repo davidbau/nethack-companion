@@ -825,8 +825,9 @@ them. Some have unusual *shapes*, and some have unusual
 
 - **Light source rooms.** They reliably contain a lit oil
   lamp. Free torch.
-- **Buried treasure.** The floor needs digging, but the haul is
-  worth it. A pick-axe earns its weight here.
+- **Buried treasure.** A burned engraving somewhere on the floor
+  reads *"Dig 3 east 2 south"* (or wherever) and points to a buried
+  chest plus 3–12 random items. A pick-axe earns its weight here.
 - **Massacre.** Floor strewn with adventurer-role corpses (rogue,
   ranger, valkyrie, etc.). Useful for sacrifice and for eating
   the safe ones for intrinsics if you know the role.
