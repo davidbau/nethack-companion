@@ -4211,10 +4211,15 @@ field reference for shopping trips.
 ::: print-only
 
 ```{=latex}
+\clearpage
+\thispagestyle{plain}
+\vspace*{\fill}
 \begin{center}
-\includegraphics[width=0.92\linewidth]{cover/build/flowchart.pdf}\\[0.3em]
+\includegraphics[width=0.92\linewidth]{cover/build/flowchart.pdf}\\[0.6em]
 {\itshape\footnotesize The identification flowchart: cheapest method first, scroll of identify last.}
 \end{center}
+\vspace*{\fill}
+\clearpage
 ```
 
 ##### Quoted-price conversion
