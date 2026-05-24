@@ -3134,7 +3134,7 @@ Some monsters, most notably Death (one of the Riders on the Astral
 Plane), can kill you with a single touch. The Finger of Death spell
 and the wand of death work similarly. **Do not zap a wand of death
 or finger of death at Death the Rider** — Death absorbs the
-attack and gains max HP. Magic missile is the canonical answer
+attack and gains max HP. Magic missile is the standard answer
 against all three Riders.
 
 **Death the Rider's touch** rolls 1d20 each hit. Rolls 17-19 trigger
@@ -3996,7 +3996,7 @@ If you change levels and your pet isn't adjacent, it won't follow.
 Your pet is still alive on the previous level. Its loyalty is
 ticking down, though, so go back for it before it forgets you
 were friends.
-A **magic whistle** is the canonical fix: applying one warps every
+A **magic whistle** is the standard fix: applying one warps every
 pet on your level to a square next to you, even on no-teleport
 floors. **Sokoban** also doesn't let pet loyalty decay — leaving
 a pet there while you do the Quest or the Mines is the dungeon's
@@ -5626,7 +5626,7 @@ transformations can hit you with system shock. Don't be at 5 HP
 when you reach for the wand.
 
 A wand of polymorph zapped at a *pile* of junk items reshuffles
-each one into a random item of the same class — the famous
+each one into a random item of the same class. This is the
 "polypile" trick that turns scroll dross into the scroll you
 needed. Drop the fodder on a square far from your real pack:
 a misaimed zap that catches your bag of holding rolls the bag too.
@@ -6562,9 +6562,8 @@ Your sins, alas, are also forgiven.
 
 **Luckstone.** Carrying a luckstone in your open inventory
 (not inside a container) freezes the timer. Your luck stays wherever
-it is until something changes it. This is why getting the luckstone
-from Mine's End is one of the first things every experienced player
-does. It's a small gray stone that makes the universe remember you
+it is until something changes it. Grabbing the luckstone from
+Mine's End is a standard early-game goal for this reason. It's a small gray stone that makes the universe remember you
 fondly.
 
 **Bless state matters.** Any **non-cursed** luckstone (blessed
