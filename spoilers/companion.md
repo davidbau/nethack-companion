@@ -3033,36 +3033,6 @@ identifies itself in the same moment, so now you know what was
 just aimed at you and you have a turn to do something about it
 before the next zap connects.
 
-#### Drowning
-<!-- audit
-2026-05-18:
-- drown check uses monster's tile (uhitm.c:3389-3390)
-- Swimming, Amphibious, or Breathless all defeat the drown (youprop.h:264-277)
-- pool-entry check at hack.c:3272; Flying also skips entry, Levitation is the canonical defense
-- emergency_disrobe is gated on Stressed+ (trap.c:4897-4941)
-- krakens placed only on medusa-4 in the Dungeon (medusa-4.lua:122); other placements are Quest/fakewiz/wizard1
-- "swamp rooms" comment refers to eels, not krakens (mkroom.c:557-565)
-- encumbrance does NOT gate the grab-drown path: being Burdened won't save you once grabbed
-- strategy aligned with NetHackWiki Drowning, Giant eel, Amulet of magical breathing: range-kill sea monsters, magical breathing/Swimming/Amphibious as the only true grab-drown defenses (https://nethackwiki.com/wiki/Drowning, https://nethackwiki.com/wiki/Giant_eel, https://nethackwiki.com/wiki/Amulet_of_magical_breathing)
--->
-
-Giant eels, electric eels, and krakens can grab you with their
-wrap attack. Once they have you, each of the monster's turns you
-can drown — the check uses the *monster's* tile (always water for
-an eel or kraken), not yours, so you can drown even while standing
-on adjacent dry land. Only *Swimming*, *magical breathing*, or
-*amphibious form* prevent the drown; encumbrance doesn't matter
-here. (Encumbrance only matters if you *fall* into water and need
-to crawl out — stressed or worse forces emergency disrobe.) You'll
-meet eels and krakens at Medusa's level, in moats around the
-Castle, in swamp rooms, and on the Water Plane.
-
-**Defenses:** An amulet (or spell) of *magical breathing* gives
-you Breathless and ends the grab-drown threat. Levitation keeps
-you above pools so you can't walk into them, but **does not save
-you from an eel's grab** once it lands. Kill sea monsters at range
-whenever possible — their grab attack requires adjacency.
-
 #### Seduction
 <!-- audit
 2026-05-18:
@@ -3285,6 +3255,90 @@ without killing it, useful if a *tame* purple worm has swallowed
 you in conflict.
 Ranged spells and rays will tear into the host from the inside.
 
+#### Drowning
+<!-- audit
+2026-05-18:
+- drown check uses monster's tile (uhitm.c:3389-3390)
+- Swimming, Amphibious, or Breathless all defeat the drown (youprop.h:264-277)
+- pool-entry check at hack.c:3272; Flying also skips entry, Levitation is the canonical defense
+- emergency_disrobe is gated on Stressed+ (trap.c:4897-4941)
+- krakens placed only on medusa-4 in the Dungeon (medusa-4.lua:122); other placements are Quest/fakewiz/wizard1
+- "swamp rooms" comment refers to eels, not krakens (mkroom.c:557-565)
+- encumbrance does NOT gate the grab-drown path: being Burdened won't save you once grabbed
+- strategy aligned with NetHackWiki Drowning, Giant eel, Amulet of magical breathing: range-kill sea monsters, magical breathing/Swimming/Amphibious as the only true grab-drown defenses (https://nethackwiki.com/wiki/Drowning, https://nethackwiki.com/wiki/Giant_eel, https://nethackwiki.com/wiki/Amulet_of_magical_breathing)
+-->
+
+Giant eels, electric eels, and krakens can grab you with their
+wrap attack. Once they have you, each of the monster's turns you
+can drown — the check uses the *monster's* tile (always water for
+an eel or kraken), not yours, so you can drown even while standing
+on adjacent dry land. Only *Swimming*, *magical breathing*, or
+*amphibious form* prevent the drown; encumbrance doesn't matter
+here. (Encumbrance only matters if you *fall* into water and need
+to crawl out — stressed or worse forces emergency disrobe.) You'll
+meet eels and krakens at Medusa's level, in moats around the
+Castle, in swamp rooms, and on the Water Plane.
+
+**Defenses:** An amulet (or spell) of *magical breathing* gives
+you Breathless and ends the grab-drown threat. Levitation keeps
+you above pools so you can't walk into them, but **does not save
+you from an eel's grab** once it lands. Kill sea monsters at range
+whenever possible — their grab attack requires adjacency.
+
+#### Petrification (Stoning)
+
+Petrification is the dungeon's most notorious way to instantly
+kill you, and the reason every experienced player carries a lizard
+corpse. Touching a
+cockatrice without gloves, eating a cockatrice corpse, catching
+Medusa's gaze, or **kicking** a cockatrice corpse barefoot will
+turn you to stone. *Stepping* on the corpse is safe so long as
+you don't have Fumbling (Fumbling can trip you over the corpse for
+instant death). The process is sometimes immediate; otherwise a
+five-turn countdown announces itself with *"You are slowing down,"*
+*"Your limbs are stiffening,"* *"Your limbs have turned to stone"*
+(at which point you are **paralyzed** and can no longer act),
+*"You have turned to stone,"* and *"You are a statue"* (death).
+
+**Defenses ahead of time:** wear gloves around cockatrice corpses,
+use reflection against Medusa, and pile up *timed* stoning
+resistance from acid blob corpses (each one grants d(3,6) turns of
+HStone resistance: useful but not permanent). For something
+permanent, wear yellow dragon scale mail.
+
+**Peril in the new moon.** A cockatrice's hiss has a small chance
+to start stoning on any landed melee hit (roughly 1 in 30). On
+the real-world night of a new moon, that jumps to about 1 in 3.
+Hunt the nest on another night.
+
+**Defenses while it's happening:** eat a lizard corpse (this is
+why you carry one), eat an acidic corpse, drink a potion of acid,
+pray, or cast stone-to-flesh on yourself. Keep the lizard in your
+**main inventory**, not in a bag: pulling it out of a bag takes a
+turn you can't spare against a two-turn timer. Note: act *before*
+the "Your limbs have turned to stone" message — after that
+you're paralyzed for three turns and the final messages kill you. Amulet
+of Unchanging does **not** interrupt stoning. If you happen to be
+polymorphed into a non-stone golem, wearing it during the countdown
+is actively harmful — it blocks the stone-golem auto-poly that
+would otherwise save you on death.
+
+Out of lizards? Any acidic corpse will do: acid blob, jellies,
+yellow dragon, black naga, and yes, green slime works (but green
+slime starts a *different* countdown that turns you to slime; only
+reach for it as a last resort). Quaffing a potion of acid has the
+same curative effect.
+
+**The other side of the coin:** a wielded cockatrice corpse (with
+gloves on) is one of the game's most devastating weapons —
+anything you hit that lacks stoning resistance turns to stone. The
+classic offense, known to veterans as the "rubber chicken,"
+handles demon lords, Medusa, and even a Rider on a good day. The
+failure modes you must guard against are falling into a pit, hole,
+or trapdoor while carrying it, and losing the gloves. Thrown
+cockatrice eggs work the same way and have the same hazard if a
+monster throws one at you.
+
 #### Disintegration
 <!-- audit
 2026-05-18:
@@ -3414,60 +3468,6 @@ them. **Don't eat the corpse**: it strips a random intrinsic.
 - wand of opening / knock spell at engulfer or at self: release_hold expels you (zap.c:382-391, 575-609, 2929-2947)
 - ranged buzz wands "rip into" the engulfer from inside (zap.c:4802-4820)
 -->
-#### Petrification (Stoning)
-
-Petrification is the dungeon's most notorious way to instantly
-kill you, and the reason every experienced player carries a lizard
-corpse. Touching a
-cockatrice without gloves, eating a cockatrice corpse, catching
-Medusa's gaze, or **kicking** a cockatrice corpse barefoot will
-turn you to stone. *Stepping* on the corpse is safe so long as
-you don't have Fumbling (Fumbling can trip you over the corpse for
-instant death). The process is sometimes immediate; otherwise a
-five-turn countdown announces itself with *"You are slowing down,"*
-*"Your limbs are stiffening,"* *"Your limbs have turned to stone"*
-(at which point you are **paralyzed** and can no longer act),
-*"You have turned to stone,"* and *"You are a statue"* (death).
-
-**Defenses ahead of time:** wear gloves around cockatrice corpses,
-use reflection against Medusa, and pile up *timed* stoning
-resistance from acid blob corpses (each one grants d(3,6) turns of
-HStone resistance: useful but not permanent). For something
-permanent, wear yellow dragon scale mail.
-
-**Peril in the new moon.** A cockatrice's hiss has a small chance
-to start stoning on any landed melee hit (roughly 1 in 30). On
-the real-world night of a new moon, that jumps to about 1 in 3.
-Hunt the nest on another night.
-
-**Defenses while it's happening:** eat a lizard corpse (this is
-why you carry one), eat an acidic corpse, drink a potion of acid,
-pray, or cast stone-to-flesh on yourself. Keep the lizard in your
-**main inventory**, not in a bag: pulling it out of a bag takes a
-turn you can't spare against a two-turn timer. Note: act *before*
-the "Your limbs have turned to stone" message — after that
-you're paralyzed for three turns and the final messages kill you. Amulet
-of Unchanging does **not** interrupt stoning. If you happen to be
-polymorphed into a non-stone golem, wearing it during the countdown
-is actively harmful — it blocks the stone-golem auto-poly that
-would otherwise save you on death.
-
-Out of lizards? Any acidic corpse will do: acid blob, jellies,
-yellow dragon, black naga, and yes, green slime works (but green
-slime starts a *different* countdown that turns you to slime; only
-reach for it as a last resort). Quaffing a potion of acid has the
-same curative effect.
-
-**The other side of the coin:** a wielded cockatrice corpse (with
-gloves on) is one of the game's most devastating weapons —
-anything you hit that lacks stoning resistance turns to stone. The
-classic offense, known to veterans as the "rubber chicken,"
-handles demon lords, Medusa, and even a Rider on a good day. The
-failure modes you must guard against are falling into a pit, hole,
-or trapdoor while carrying it, and losing the gloves. Thrown
-cockatrice eggs work the same way and have the same hazard if a
-monster throws one at you.
-
 #### The Touch of Death
 <!-- audit
 2026-05-18:
