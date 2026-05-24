@@ -131,12 +131,14 @@ function Table(blk)
   end
 
   -- Quoted-price conversion table (Charisma / Markups | Mult | 20 | ... | 500):
-  -- Pandoc's auto-sizing is mostly right but leaves the 500 column a
-  -- touch tight for "1333"; nudge several points away from the
-  -- generous label column and into the 500 column.
+  -- The longest label row ("8–10, 11–15^T^, 16–17^T2^") wraps to two
+  -- lines unless we widen the label column. Take ~4pt back from the
+  -- Mult column (whose widest cell "×0.375" leaves whitespace) and
+  -- ~1pt from the 500 column (still wider than auto so "1333" fits).
   if #blk.colspecs == 12 and headers[1] == "Charisma / Markups" and headers[2] == "Mult" then
-    blk.colspecs[1][2]  = blk.colspecs[1][2]  - 0.015  -- label: −~5pt
-    blk.colspecs[12][2] = blk.colspecs[12][2] + 0.012  -- 500:   +~4pt
+    blk.colspecs[1][2]  = blk.colspecs[1][2]  + 0.015  -- label: +~5pt
+    blk.colspecs[2][2]  = blk.colspecs[2][2]  - 0.012  -- Mult:  −~4pt
+    blk.colspecs[12][2] = blk.colspecs[12][2] - 0.003  -- 500:   −~1pt
     return blk
   end
 
