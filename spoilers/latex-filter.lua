@@ -181,6 +181,7 @@ local always_pageref = {
   ["ways-to-die-instantly"] = true,
   ["luck-and-fortune"] = true,
   ["field-guide-to-dungeon-fauna"] = true,
+  ["thrones"] = true,
 }
 
 -- "see [X](#anchor)" cross-references: in print, append a page

@@ -800,10 +800,9 @@ won't be friendly about your attempts. The priest will also accept
 gold donations in exchange for clairvoyance or a permanent AC bonus
 — see [Donating to Priests](#donating-to-priests).
 
-**Throne rooms.** A room with a throne (`\`) and usually surrounded
-by monsters. Sitting on the throne has random effects, sometimes
-wonderful, sometimes terrible. See
-[Points of Interest](#points-of-interest).
+**Throne rooms.** A room with a [*throne* (`\`)](#thrones) and
+usually surrounded by monsters. Sitting on the throne has random
+effects, sometimes wonderful, sometimes terrible.
 
 **Zoos.** A room packed with sleeping monsters and gold. They wake
 **not** when you enter, but from the noise of you fighting the
@@ -848,12 +847,6 @@ Themed rooms are mixed in with ordinary rooms; you can have
 several on a single level. They make the early dungeon less
 predictable in a friendly way: more terrain types to fight in,
 more item discovery, and the occasional educational ambush.
-
-**A room full of one kind of monster is almost certainly a themed
-room, not a coincidence.** Themed rooms have above-average monster
-density concentrated around a single type, so any room that looks
-curated deserves more respect than a random room of equivalent
-apparent difficulty. Pause, assess, and enter with a plan.
 
 ---
 
