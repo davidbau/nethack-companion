@@ -6434,12 +6434,16 @@ reason to save holy water for your hardest unread spellbooks.
 **Wizards** are the undisputed masters of magic: they learn faster,
 fail less, and have the widest range of useful spells. A well-built
 Wizard can eventually learn *every* spell in the game, which is the
-closest the Mazes come to letting you cheat. Other roles can cast
-some spells but with less panache. A Valkyrie can occasionally read
-identify (level 3) if her Intelligence is boosted by gain-ability
-potions, but non-spellcasters are usually better off with scrolls.
-Tourists, Barbarians, and Cavemen should probably stick to hitting
-things.
+closest the Mazes come to letting you cheat. **Monks** are the
+surprising second. They have access to all seven spell schools too,
+and their no-body-armor restriction actually helps casting because
+body armor adds a failure penalty; the monk-favored robe grants
+another bonus on top. Priests and Healers cast meaningfully in their
+own schools. Other roles can manage the occasional spell with help.
+A Valkyrie can sometimes read identify (level 3) if her Intelligence
+is boosted by gain-ability potions, but non-spellcasters are usually
+better off with scrolls. Tourists, Barbarians, and Cavemen should
+probably stick to hitting things.
 
 []{#wizards-identify-books}
 **Wizards identify books by training.** In 5.0, advancing
@@ -6662,9 +6666,8 @@ better:
 - Fountain wishes become slightly more likely.
 
 At negative luck, all of these go wrong. **Any** negative Luck
-causes prayer to fail with the "too naughty" rejection
-(`pray.c:2155`) — not just at the floor of −10. You'll miss
-attacks you should have hit. Scrolls will backfire. The dungeon
+causes prayer to fail with the "too naughty" rejection, not just at
+the floor of −10. You'll miss attacks you should have hit. Scrolls will backfire. The dungeon
 becomes a place that is trying to kill you even harder than
 usual, which is saying something.
 
