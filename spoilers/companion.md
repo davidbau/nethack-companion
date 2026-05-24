@@ -1315,9 +1315,11 @@ settlement with shops and a temple, and it's worth visiting early.
 The shops let you sell unwanted items for gold and buy useful gear.
 The temple has an altar (check the alignment) and a resident priest.
 If the altar matches your alignment, you've found a safe place to
-identify items by dropping them on it. The Minetown priest is also
-the cheapest source of intrinsic AC bonuses in the game — donating
-500 zorkmids at low XL stacks each visit (see
+identify items by dropping them on it. The Minetown priest can also
+grant permanent AC reductions. Donate at least the amount the
+priest names and you gain a point of intrinsic protection (a
+permanent −1 to your AC). The asked amount scales with your
+experience level, so early visits give you the cheapest points (see
 [Donating to Priests](#donating-to-priests)).
 
 Candles spawn often enough that you'll usually have enough by
