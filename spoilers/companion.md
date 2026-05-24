@@ -4951,7 +4951,7 @@ creature on a typical descent.
 | Newt                    | May restore 1 to 3 mana                                                |
 | Cave spider, centipede, killer bee | Poison resistance                                           |
 | Lizard                  | Cures stoning in progress                                              |
-| Floating eye            | Telepathy. Safe to eat — paralysis is only from meleeing one.          |
+| Floating eye            | **Telepathy.** (Great to eat.)                                         |
 | Fire ant                | Fire resistance                                                        |
 | [Wraith](#a-note-on-wraiths) | **Gain an experience level**                                      |
 | Yeti                    | Cold resistance                                                        |
