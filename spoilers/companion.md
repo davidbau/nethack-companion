@@ -1286,11 +1286,12 @@ pictured below.
              └──┐····└  └───┘ ─┐·│····┌┘
 ```
 
-The Mines are populated primarily by gnomes, dwarves, and the
-occasional dwarf lord. If you're playing a gnomish character, most
-of them will be peaceful, which makes the Mines a relatively
-comfortable detour. Everyone else will need to fight through a
-steady stream of hostile gnomes and dwarves.
+The Mines are populated primarily by gnomes and dwarves, with
+tougher variants (gnome lords, dwarf lords, then gnome and dwarf
+kings) appearing as you descend. If you're playing a gnomish
+character, most of them will be peaceful, which makes the Mines a
+relatively comfortable detour. Everyone else will need to fight
+through a steady stream of hostile gnomes and dwarves.
 
 The Mines also have a notorious surprise guest: a mind flayer can
 spawn on any random Mines level outside Minetown and Mine's End.
@@ -8192,7 +8193,8 @@ the `NETHACKOPTIONS` environment variable.
 - **`autopickup`** picks items up as you walk over them, filtered
   by **`pickup_types`** (e.g. `pickup_types:$?!=/` for gold,
   scrolls, potions, rings, and wands). The `m` prefix on movement
-  suppresses autopickup for one step.
+  suppresses autopickup for one step. Press `@` any time to toggle
+  autopickup on or off for the rest of the session.
 - **`autopickup_exception`** layers per-pattern rules on top:
   `autopickup_exception:">rock"` skips rocks even when the type
   filter would grab them; `autopickup_exception:"<holy water"`
