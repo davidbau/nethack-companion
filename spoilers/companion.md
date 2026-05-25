@@ -2313,9 +2313,6 @@ messages still come through.)
 | *"You feel like a hypocrite."*         | You just attacked a monster while standing on Elbereth. The engraving is gone, and your alignment took a hit (flat −5 if your record is comfortably positive, otherwise −1 to −5). |
 | *"You feel that monsters are aware of your presence."* | Aggravate-monster effect just turned on (cursed ring of aggravate monster, a cast from a foe, etc.). Until removed, monsters home in on you from further away. |
 | *"You feel that monsters have difficulty pinpointing your location."* | Stealth just turned on (you wore a ring of stealth, elven cloak, or other stealth source). *"…no longer have difficulty…"* means it just turned off. |
-| *"You feel a strange vibration beneath your feet."* | You're standing on the Castle's *vibrating square* — the spot you need to play the Bell of Opening on to begin the Invocation. |
-| *"You feel the presence of a friendly angel near you."* | A friendly angel just arrived (you were crowned, or a same-alignment Astral angel manifested). |
-| *"You feel your luck is changing."*    | Your Luck just shifted (a successful throne sit, killing a co-aligned unicorn, and other Luck triggers). |
 | *"You move very quietly."*             | Ring of stealth or elven cloak. (Elven boots give *"You walk very quietly"* instead.)  |
 | *"Wow! This makes you feel great!"*    | Blessed potion of restore ability with no remaining troubles — *or* a blessed magic fountain hit. |
 | *"You feel feverish."*                 | Lycanthropy infection from a were-monster. `q`uaff holy water, eat wolfsbane, or `#pray`. |
