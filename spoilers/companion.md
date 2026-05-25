@@ -111,15 +111,16 @@ will do our best to keep you alive.
 **Appendices**
 
 34. [Advanced Controls](#advanced-controls) — Command counts, prefixes, and efficiency techniques
-35. [Sokoban Solutions](#sokoban-solutions) — All eight level variants, solved
-36. [Voluntary Challenges](#voluntary-challenges) — Conducts and self-imposed restrictions
-37. [Shopping and Shopkeeper Pricing](#shopping-and-shopkeeper-pricing) — Commerce in the dungeon
-38. [Weapons Tables](#weapons-tables)
-39. [Armor Tables](#armor-tables)
-40. [Spell Tables](#spell-tables)
-41. [Bestiary Tables](#bestiary-tables)
-42. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x, and what to do about it
-43. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
+35. [Customization](#options-worth-knowing-about) — rcfile options worth knowing
+36. [Sokoban Solutions](#sokoban-solutions) — All eight level variants, solved
+37. [Voluntary Challenges](#voluntary-challenges) — Conducts and self-imposed restrictions
+38. [Shopping and Shopkeeper Pricing](#shopping-and-shopkeeper-pricing) — Commerce in the dungeon
+39. [Weapons Tables](#weapons-tables)
+40. [Armor Tables](#armor-tables)
+41. [Spell Tables](#spell-tables)
+42. [Bestiary Tables](#bestiary-tables)
+43. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x, and what to do about it
+44. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
 
 
 ## Part One: Before You Set Out
@@ -8155,37 +8156,80 @@ milestones, and entries into major branches. Mainly for
 end-of-run storytelling; for current conduct state use
 `#conduct`.
 
-#### Options worth knowing about
+---
 
-Open the options screen with `O` (capital O, not zero). The
-defaults are reasonable, but a few settings change how the
-commands above feel:
+### Customization {#options-worth-knowing-about}
+
+NetHack's defaults are sensible, but a handful of options
+dramatically improve quality of life. Flip them in-session with
+`O` (capital O), or persist them in your rcfile: `~/.nethackrc` on
+macOS/Linux, `nethack.cnf` in the install folder on Windows, or
+the `NETHACKOPTIONS` environment variable.
+
+**Status display.**
+
+- **`hilite_status`** colorizes the bottom status line: HP turns
+  yellow then red as you take damage, hunger goes yellow at Hungry
+  and red at Weak, AC bands shift color as you improve. The single
+  most-recommended setting in community rcfiles.
+- **`menucolors`** colorizes menu entries by regex pattern. A
+  common setup highlights holy water, magic markers, and blessed
+  items so you can spot them at a glance.
+- **`force_invmenu`** shows inventory as a menu rather than a
+  letter prompt.
+- **`pile_limit:5`** triggers the pile menu when 5 or more items
+  are stacked on a tile.
+
+**Safety.**
+
+- **`paranoid_confirmation:Attack pray Remove quit`** requires you
+  to type the full word `yes` for the listed actions: attacking
+  peacefuls, praying, removing worn gear, and quitting. Catches
+  almost every fat-finger accident.
+
+**Pickup.**
+
+- **`autopickup`** picks items up as you walk over them, filtered
+  by **`pickup_types`** (e.g. `pickup_types:$?!=/` for gold,
+  scrolls, potions, rings, and wands). The `m` prefix on movement
+  suppresses autopickup for one step.
+- **`autopickup_exception`** layers per-pattern rules on top:
+  `autopickup_exception:">rock"` skips rocks even when the type
+  filter would grab them; `autopickup_exception:"<holy water"`
+  always grabs holy water.
+
+**Movement.**
 
 - **`number_pad`** turns the numeric keypad into movement keys
   (1–9 for directions). Off by default; enabling it changes
   digit-prefix behavior so you press `n` first to enter a count.
-- **`autopickup`** picks items up as you walk over them, filtered
-  by `pickup_types` (e.g. `pickup_types:$?!` for gold, scrolls,
-  and potions). The `m` prefix on movement suppresses autopickup
-  for one step.
-- **`verbose`** turns on a layer of extra descriptive messages
-  (more detailed feedback when wielding, digging, hearing monsters,
-  watching your pet, and so on). Turn it off if the message log
-  feels noisy.
+- **`runmode:walk`** slows the travel command down enough that
+  you stop on interesting messages (default `runonly` blasts
+  through everything until you hit something).
 
-The full options list is deep, but the rest is taste and
-convenience. If something about the interface annoys you, there is
-almost certainly a setting for it.
+**Verbosity.**
 
-A bigger interface shift requires a different binary: NetHack
-built with the **curses** windowtype (`nethack-curses` on most
-distributions, or a custom build with curses support) draws a
-properly paneled UI inside the terminal. Set `windowtype:curses`,
-`align_message:right`, `align_status:bottom`, `perm_invent`, and
-`windowborders` in your rc, open a 120×40 terminal, and you get a
-permanent inventory column, a multi-line message panel, and
-bordered status and map regions. Plain tty NetHack pins the
-message line at row 0 no matter what you set.
+- **`verbose`** turns on extra descriptive messages. Turn it off
+  if the message log feels noisy.
+
+**A starter rcfile.** A few lines that cover most of the above:
+
+```
+OPTIONS=hilite_status,menucolors,force_invmenu,pile_limit:5
+OPTIONS=paranoid_confirmation:Attack pray Remove quit
+OPTIONS=autopickup,pickup_types:$?!=/
+OPTIONS=runmode:walk
+```
+
+**Curses for a paneled UI.** A bigger interface shift requires a
+different binary. NetHack built with the **curses** windowtype
+(`nethack-curses` on most distributions, or a custom build with
+curses support) draws a properly paneled UI inside the terminal.
+Set `windowtype:curses`, `align_message:right`, `align_status:bottom`,
+`perm_invent`, and `windowborders` in your rc, open a 120×40
+terminal, and you get a permanent inventory column, a multi-line
+message panel, and bordered status and map regions. Plain tty
+NetHack pins the message line at row 0 no matter what you set.
 
 ---
 

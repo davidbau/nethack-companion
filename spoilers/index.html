@@ -159,6 +159,8 @@ gauntlet</li>
 <ol start="34" type="1">
 <li><a href="#advanced-controls">Advanced Controls</a> — Command counts,
 prefixes, and efficiency techniques</li>
+<li><a href="#options-worth-knowing-about">Customization</a> — rcfile
+options worth knowing</li>
 <li><a href="#sokoban-solutions">Sokoban Solutions</a> — All eight level
 variants, solved</li>
 <li><a href="#voluntary-challenges">Voluntary Challenges</a> — Conducts
@@ -11438,42 +11440,84 @@ from this run: first kills, conduct breaks, artifact gifts and
 crownings, prayer outcomes, level milestones, and entries into major
 branches. Mainly for end-of-run storytelling; for current conduct state
 use <code>#conduct</code>.</p>
+<hr />
 </section>
-<section id="options-worth-knowing-about" class="level4">
-<h4>Options worth knowing about</h4>
-<p>Open the options screen with <code>O</code> (capital O, not zero).
-The defaults are reasonable, but a few settings change how the commands
-above feel:</p>
+</section>
+<section id="options-worth-knowing-about" class="level3">
+<h3>Customization</h3>
+<p>NetHack’s defaults are sensible, but a handful of options
+dramatically improve quality of life. Flip them in-session with
+<code>O</code> (capital O), or persist them in your rcfile:
+<code>~/.nethackrc</code> on macOS/Linux, <code>nethack.cnf</code> in
+the install folder on Windows, or the <code>NETHACKOPTIONS</code>
+environment variable.</p>
+<p><strong>Status display.</strong></p>
+<ul>
+<li><strong><code>hilite_status</code></strong> colorizes the bottom
+status line: HP turns yellow then red as you take damage, hunger goes
+yellow at Hungry and red at Weak, AC bands shift color as you improve.
+The single most-recommended setting in community rcfiles.</li>
+<li><strong><code>menucolors</code></strong> colorizes menu entries by
+regex pattern. A common setup highlights holy water, magic markers, and
+blessed items so you can spot them at a glance.</li>
+<li><strong><code>force_invmenu</code></strong> shows inventory as a
+menu rather than a letter prompt.</li>
+<li><strong><code>pile_limit:5</code></strong> triggers the pile menu
+when 5 or more items are stacked on a tile.</li>
+</ul>
+<p><strong>Safety.</strong></p>
+<ul>
+<li><strong><code>paranoid_confirmation:Attack pray Remove quit</code></strong>
+requires you to type the full word <code>yes</code> for the listed
+actions: attacking peacefuls, praying, removing worn gear, and quitting.
+Catches almost every fat-finger accident.</li>
+</ul>
+<p><strong>Pickup.</strong></p>
+<ul>
+<li><strong><code>autopickup</code></strong> picks items up as you walk
+over them, filtered by <strong><code>pickup_types</code></strong>
+(e.g. <code>pickup_types:$?!=/</code> for gold, scrolls, potions, rings,
+and wands). The <code>m</code> prefix on movement suppresses autopickup
+for one step.</li>
+<li><strong><code>autopickup_exception</code></strong> layers
+per-pattern rules on top: <code>autopickup_exception:"&gt;rock"</code>
+skips rocks even when the type filter would grab them;
+<code>autopickup_exception:"&lt;holy water"</code> always grabs holy
+water.</li>
+</ul>
+<p><strong>Movement.</strong></p>
 <ul>
 <li><strong><code>number_pad</code></strong> turns the numeric keypad
 into movement keys (1–9 for directions). Off by default; enabling it
 changes digit-prefix behavior so you press <code>n</code> first to enter
 a count.</li>
-<li><strong><code>autopickup</code></strong> picks items up as you walk
-over them, filtered by <code>pickup_types</code>
-(e.g. <code>pickup_types:$?!</code> for gold, scrolls, and potions). The
-<code>m</code> prefix on movement suppresses autopickup for one
-step.</li>
-<li><strong><code>verbose</code></strong> turns on a layer of extra
-descriptive messages (more detailed feedback when wielding, digging,
-hearing monsters, watching your pet, and so on). Turn it off if the
-message log feels noisy.</li>
+<li><strong><code>runmode:walk</code></strong> slows the travel command
+down enough that you stop on interesting messages (default
+<code>runonly</code> blasts through everything until you hit
+something).</li>
 </ul>
-<p>The full options list is deep, but the rest is taste and convenience.
-If something about the interface annoys you, there is almost certainly a
-setting for it.</p>
-<p>A bigger interface shift requires a different binary: NetHack built
-with the <strong>curses</strong> windowtype (<code>nethack-curses</code>
-on most distributions, or a custom build with curses support) draws a
-properly paneled UI inside the terminal. Set
-<code>windowtype:curses</code>, <code>align_message:right</code>,
-<code>align_status:bottom</code>, <code>perm_invent</code>, and
-<code>windowborders</code> in your rc, open a 120×40 terminal, and you
-get a permanent inventory column, a multi-line message panel, and
-bordered status and map regions. Plain tty NetHack pins the message line
-at row 0 no matter what you set.</p>
+<p><strong>Verbosity.</strong></p>
+<ul>
+<li><strong><code>verbose</code></strong> turns on extra descriptive
+messages. Turn it off if the message log feels noisy.</li>
+</ul>
+<p><strong>A starter rcfile.</strong> A few lines that cover most of the
+above:</p>
+<pre><code>OPTIONS=hilite_status,menucolors,force_invmenu,pile_limit:5
+OPTIONS=paranoid_confirmation:Attack pray Remove quit
+OPTIONS=autopickup,pickup_types:$?!=/
+OPTIONS=runmode:walk</code></pre>
+<p><strong>Curses for a paneled UI.</strong> A bigger interface shift
+requires a different binary. NetHack built with the
+<strong>curses</strong> windowtype (<code>nethack-curses</code> on most
+distributions, or a custom build with curses support) draws a properly
+paneled UI inside the terminal. Set <code>windowtype:curses</code>,
+<code>align_message:right</code>, <code>align_status:bottom</code>,
+<code>perm_invent</code>, and <code>windowborders</code> in your rc,
+open a 120×40 terminal, and you get a permanent inventory column, a
+multi-line message panel, and bordered status and map regions. Plain tty
+NetHack pins the message line at row 0 no matter what you set.</p>
 <hr />
-</section>
 </section>
 <section id="sokoban-solutions" class="level3">
 <h3>Sokoban Solutions</h3>
