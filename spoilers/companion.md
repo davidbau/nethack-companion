@@ -2305,6 +2305,12 @@ messages still come through.)
 | *"You sense a lack of food nearby."*   | Scroll of food detection, no food on level.                                            |
 | *"You feel materially poor."*          | Scroll of gold detection, no gold on level.                                            |
 | *"You feel like someone is helping you."* | Scroll of remove curse; worn/wielded cursed items uncursed.                         |
+| *"Your hands begin to glow red."*      | Scroll or spell of confuse monster. Your next melee strike will confuse the target. (Purple if you read it while already confused.) |
+| *"You feel a little strange."*         | Self-polymorph just fired: potion or scroll of polymorph, or a polymorph trap. Check what you've become. |
+| *"You feel guilty."*                   | Blessed or confused scroll of punishment. The ball and chain don't attach — but the scroll is now identified. |
+| *"Who was that Maud person anyway?"*<br>*"As your mind turns inward…"* | Scroll of amnesia. Some of your memorized spells (all if cursed) are now gone. |
+| *"It tasted bad."*                     | Cursed potion of gain level read on a level you can't rise off (already at the top, no Amulet, or against the ceiling). Cursed, but otherwise harmless. |
+| *"You have an uneasy feeling…"*        | Cursed potion of enlightenment, or cursed potion of gain level in a no-rise spot. Identifies the potion; no other effect (a Wisdom exercise penalty for enlightenment). |
 | *"You move very quietly."*             | Ring of stealth or elven cloak. (Elven boots give *"You walk very quietly"* instead.)  |
 | *"Wow! This makes you feel great!"*    | Blessed potion of restore ability with no remaining troubles — *or* a blessed magic fountain hit. |
 | *"You feel feverish."*                 | Lycanthropy infection from a were-monster. `q`uaff holy water, eat wolfsbane, or `#pray`. |
