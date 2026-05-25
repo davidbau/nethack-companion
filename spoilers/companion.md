@@ -2306,7 +2306,6 @@ messages still come through.)
 | *"You feel materially poor."*          | Scroll of gold detection, no gold on level.                                            |
 | *"You feel like someone is helping you."* | Scroll of remove curse; worn/wielded cursed items uncursed.                         |
 | *"Your hands begin to glow red."*      | Scroll or spell of confuse monster. Your next melee strike will confuse the target. (Purple if you read it while already confused.) |
-| *"You feel a little strange."*         | Self-polymorph just fired: potion or scroll of polymorph, or a polymorph trap. Check what you've become. |
 | *"You feel guilty."*                   | Blessed or confused scroll of punishment. The ball and chain don't attach — but the scroll is now identified. |
 | *"Who was that Maud person anyway?"*<br>*"As your mind turns inward…"* | Scroll of amnesia. Some of your memorized spells (all if cursed) are now gone. |
 | *"It tasted bad."*                     | Cursed potion of gain level read on a level you can't rise off (already at the top, no Amulet, or against the ceiling). Cursed, but otherwise harmless. |
