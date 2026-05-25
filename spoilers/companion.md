@@ -2313,6 +2313,10 @@ messages still come through.)
 | *"You feel like a hypocrite."*         | You just attacked a monster while standing on Elbereth. The engraving is gone, and your alignment took a hit (flat −5 if your record is comfortably positive, otherwise −1 to −5). |
 | *"You feel that monsters are aware of your presence."* | Aggravate-monster effect just turned on (cursed ring of aggravate monster, a cast from a foe, etc.). Until removed, monsters home in on you from further away. |
 | *"You feel that monsters have difficulty pinpointing your location."* | Stealth just turned on (you wore a ring of stealth, elven cloak, or other stealth source). *"…no longer have difficulty…"* means it just turned off. |
+| *"You hear the rumble of distant thunder…"* | You just killed your own pet (or tame creature). **−15 alignment and your god is now angry** — expect prayer to backfire for a long time. |
+| *"You feel as if you need some help."* | A nearby monster just cast curse-items on you: something in your inventory was randomly cursed. BUC-test gear before relying on it. |
+| *"You feel the presence of evil."* | A hostile water demon (or other major demon) was just summoned from a fountain but isn't visible to you yet. It's coming. |
+| *"You hear someone summoning something, and…"* (and *"…summoning <something>"*) | An offscreen spellcaster (wizard, demon, lich) just summoned a monster. Expect company on the next level transition or as it walks in. |
 | *"You move very quietly."*             | Ring of stealth or elven cloak. (Elven boots give *"You walk very quietly"* instead.)  |
 | *"Wow! This makes you feel great!"*    | Blessed potion of restore ability with no remaining troubles — *or* a blessed magic fountain hit. |
 | *"You feel feverish."*                 | Lycanthropy infection from a were-monster. `q`uaff holy water, eat wolfsbane, or `#pray`. |
