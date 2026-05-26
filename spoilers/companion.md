@@ -2593,12 +2593,10 @@ The shape of the threat is usually pack tactics, surprising
 speed, or one catastrophic special attack.
 
 **The Gnomish Mines are a top killer.** This side branch is harder
-than it looks: gnomes, gnome lords, dwarves, and gnomish wizards
-all sit in the top fifteen causes of death on the public server.
-Mines rooms are large and open caves, so four or five armed
-opponents have plenty of room to swarm around you. Use ranged
-attacks, or look for natural pinch points where the cave walls
-narrow. Dwarves hit harder than gnomes, and gnomish
+than it looks: Mines rooms are large open caves where four or five
+armed opponents have plenty of room to swarm around you. Use
+ranged attacks, or look for natural pinch points where the cave
+walls narrow. Dwarves hit harder than gnomes, and gnomish
 wizards (the first spellcasting enemy you meet) can sleep you,
 confuse you, and worse. Lords and kings appear deeper, with
 differently colored `G` and `h` glyphs. Take a look at the first
