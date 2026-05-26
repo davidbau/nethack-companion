@@ -2597,13 +2597,13 @@ than it looks: gnomes, gnome lords, dwarves, and gnomish wizards
 all sit in the top fifteen causes of death on the public server.
 The Mines funnel four or five armed opponents into one open room
 and let them swarm around you; fight from corridors and small
-rooms when you can. **Dwarves hit harder than gnomes**, and
-gnomish wizards (the first spellcasting enemy you meet) can sleep
-you, confuse you, and worse. Lords and kings appear deeper, with
-differently colored `G` and `h` glyphs as a tell. Take a careful
-look at the first Mines level, then come back later. **Don't
-descend further until you are at XL 5 or better, have sleep
-resistance, and have AC at zero or below.**
+rooms when you can. Dwarves hit harder than gnomes, and gnomish
+wizards (the first spellcasting enemy you meet) can sleep you,
+confuse you, and worse. Lords and kings appear deeper, with
+differently colored `G` and `h` glyphs. Take a careful look at
+the first Mines level, but it is usually wise to come back later
+after you are at XL 5 or better, have sleep resistance, and have
+AC at zero or below.
 
 **Sleep without resistance is a near-instadeath.** A homunculus
 (`i`) bite, a gnomish wizard's sleep spell, or later an orange dragon
