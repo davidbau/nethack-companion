@@ -2595,9 +2595,9 @@ speed, or one catastrophic special attack.
 **The Gnomish Mines are a top killer.** This side branch is harder
 than it looks: gnomes, gnome lords, dwarves, and gnomish wizards
 all sit in the top fifteen causes of death on the public server.
-The Mines funnel four or five armed opponents into one open room
-and let them swarm around you; fight from corridors and small
-rooms when you can. Dwarves hit harder than gnomes, and gnomish
+Mines rooms are large and open, so four or five armed opponents
+have plenty of room to swarm around you; fight from corridors and
+small rooms when you can. Dwarves hit harder than gnomes, and gnomish
 wizards (the first spellcasting enemy you meet) can sleep you,
 confuse you, and worse. Lords and kings appear deeper, with
 differently colored `G` and `h` glyphs. Take a careful look at
