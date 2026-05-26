@@ -7627,11 +7627,11 @@ the Castle wand's single charge.
 #### The Wizard's Tower
 
 A sequence of three special Gehennom levels that lead to the
-**Wizard of Yendor** himself and the **Book of the Dead**. What
-makes him dangerous isn't raw combat power but persistence: he
+**Wizard of Yendor** himself and the **Book of the Dead**. He is
+dangerous not for raw combat power but because he never stops. He
 teleports to your location, summons monsters, steals back his
 Amulet whenever you grab it, curses your gear, and once you wake
-him he keeps hounding you for the rest of the game.
+him he *will not leave you alone* for the rest of the game.
 
 Kill him cleanly the first time, grab the Book, and move on.
 Subsequent kills don't yield new loot (he respawns), so don't
