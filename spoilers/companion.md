@@ -2592,29 +2592,18 @@ beginners than their depth or appearance would suggest.
 The shape of the threat is usually pack tactics, surprising
 speed, or one catastrophic special attack.
 
-**The Gnomish Mines are a top killer.** The Mines are a side
-branch off the main Dungeons of Doom, and they are harder than
-they look. Plain gnomes, gnome lords, dwarves, and gnomish
-wizards all sit in the top fifteen causes of death on the public
-server. The Mines funnel four or five armed opponents into a
-single open room and let them swarm around you. Open ground is
-much harder to defend than a corridor or a small room where
-enemies can only approach single-file.
-
-The first Mines level alone is rough. **Dwarves hit harder than
-gnomes**, and gnomish wizards (the first spellcasting enemy you
-meet in the dungeon) can sleep you, confuse you, and worse. A
-sleeping adventurer in a Mines room is a dead one.
-
-Further down, gnome and dwarf lords (and eventually kings) join
-the mix. Their `G` and `h` glyphs are colored differently from
-their lower-level cousins as a tell. They hit harder, have more
-HP, and travel in mixed packs.
-
-The usual advice: take a careful look at the first Mines level,
-then come back later. **Don't descend further into the Mines
-until you are at XL 5 or better, have sleep resistance, and
-have your AC at zero or below.**
+**The Gnomish Mines are a top killer.** This side branch is harder
+than it looks: gnomes, gnome lords, dwarves, and gnomish wizards
+all sit in the top fifteen causes of death on the public server.
+The Mines funnel four or five armed opponents into one open room
+and let them swarm around you; fight from corridors and small
+rooms when you can. **Dwarves hit harder than gnomes**, and
+gnomish wizards (the first spellcasting enemy you meet) can sleep
+you, confuse you, and worse. Lords and kings appear deeper, with
+differently colored `G` and `h` glyphs as a tell. Take a careful
+look at the first Mines level, then come back later. **Don't
+descend further until you are at XL 5 or better, have sleep
+resistance, and have AC at zero or below.**
 
 **Sleep without resistance is a near-instadeath.** A homunculus
 (`i`) bite, a gnomish wizard's sleep spell, or later an orange dragon
