@@ -2601,10 +2601,10 @@ attacks, or look for natural pinch points where the cave walls
 narrow. Dwarves hit harder than gnomes, and gnomish
 wizards (the first spellcasting enemy you meet) can sleep you,
 confuse you, and worse. Lords and kings appear deeper, with
-differently colored `G` and `h` glyphs. Take a careful look at
-the first Mines level, but it is usually wise to come back later
-after you are at XL 5 or better, have sleep resistance, and have
-AC at zero or below.
+differently colored `G` and `h` glyphs. Take a look at the first
+Mines level, but it is usually wise to come back later after you
+are at XL 5 or better, have sleep resistance, and have AC at zero
+or below.
 
 **Sleep without resistance is a near-instadeath.** A homunculus
 (`i`) bite, a gnomish wizard's sleep spell, or later an orange dragon
