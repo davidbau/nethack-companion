@@ -497,12 +497,12 @@ deal with them.
 
 #### The Golden Rules of Early Survival
 
-**Rule 1: Don't fight what you can't beat.** This sounds obvious, but
-it's the single most violated principle in the Mazes. If a monster is
+**Rule 1: Don't fight what you can't beat.** This sounds obvious,
+but it's easy to forget once a fight is underway. If a monster is
 too tough for you, walk away. Use corridors as chokepoints. Funnel
-enemies so you fight them one at a time. If you stumble into a room
-full of monsters, step back into the corridor and force them to come
-to you in single file.
+enemies so you fight them one at a time. If you stumble into a
+room full of monsters, step back into the corridor and force them
+to come to you in single file.
 
 ```
   Bad: fighting in the open       Good: corridor chokepoint
@@ -597,21 +597,19 @@ rather than dangerous, unless you're carrying a cockatrice corpse:
 the tumble counts as touching it, and stairs become the most
 literal instadeath in the game.
 
-**Caught in the open by a pack.** Jackals are the single most common
-cause of death on the public server. They bite for 1d2, but packs
-of four to seven spawn on the upper levels and surround you in
-open rooms. Killer bees, foxes, soldier ants, dwarves, and gnomes
-all kill in this same shape. Retreat to a doorway or corridor at
-the first sign of more than two attackers; they can only approach
-single-file there.
+**Caught in the open by a pack.** Jackals bite for only 1d2 each,
+but packs of four to seven spawn on the upper levels and surround
+you in open rooms. Killer bees, foxes, soldier ants, dwarves, and
+gnomes all kill in this same shape. Retreat to a doorway or
+corridor at the first sign of more than two attackers; they can
+only approach single-file there.
 
 **Pushing too quickly into the Mines.** The problem isn't depth,
 it's getting there too early. The deeper Mines below Minetown are
-crowded with armored dwarves and gnome rulers, second only to
-jackals as a public-server killer. If your gear and experience
-level aren't ready for armored melee fighters in packs, head back
-up to the main Dungeons of Doom branch and come back to the Mines
-later.
+crowded with armored dwarves and gnome rulers. If your gear and
+experience level aren't ready for armored melee fighters in packs,
+head back up to the main Dungeons of Doom branch and return to the
+Mines later.
 
 #### Supply Containers
 
@@ -882,11 +880,11 @@ AC / attack details on every monster, see the
 | [`a`](#ants-and-insects-a)    | [Ants](#ants-and-insects-a)      | Soldier ants are a frequent early-game killer: speed 18, two attacks per turn (bite + strength-draining sting), and they travel in packs. A wandering soldier-ant group on Dlvl 4 can end a careless run. Killer bees, giant ants, fire ants are all the same shape of problem. |
 | [`b`](#blobs-b)    | [Blobs](#blobs-b)     | Acidic or gelatinous. Acid blobs have no active attack — they only splash 1d8 acid back when *you* hit *them*, and the splash can corrode your weapon. Kill at range. Eat for [resistances](#useful-corpse-effects). |
 | [`B`](#bats-and-birds-b)    | [Bats](#bats-and-birds-b)      | The `B` class is **deceptively dangerous because of speed**. Bats and giant bats clock in at speed 22 — nearly twice the player's base 12, so they get roughly two bites per one of your swings. Giant bats bite for 1d6 each; the math catches up fast. Vampire bats are still in the bat class but their second bite drains Strength (not levels). |
-| [`d`](#dogs-and-canines-d)    | [Dogs and other canines](#dogs-and-canines-d) | The `d` class covers your starting pet (little dog, kitten via cat-class) **and** the most numerous early-game predators. **Jackals** are the single most common cause of death on the public server — they only bite for 1d2, but they spawn in packs and there are a *lot* of them on the upper levels. Foxes bite for 1d3 and are faster (speed 15) but spawn alone. Coyotes, dingos, wolves get progressively worse. Tame `d` (your pet, larger dogs you've fed up) help fight everything else. |
+| [`d`](#dogs-and-canines-d)    | [Dogs and other canines](#dogs-and-canines-d) | The `d` class covers your starting pet (little dog, kitten via cat-class) **and** the most numerous early-game predators. **Jackals** only bite for 1d2, but they spawn in packs and there are a *lot* of them on the upper levels — the single most common cause of death on the public server. Foxes bite for 1d3 and are faster (speed 15) but spawn alone. Coyotes, dingos, wolves get progressively worse. Tame `d` (your pet, larger dogs you've fed up) help fight everything else. |
 | [`e`](#eyes-and-spheres-e)    | [Eyes](#eyes-and-spheres-e)      | **Floating eyes paralyze on melee hit.** Never hit an `e` in melee. Use ranged attacks. (And eat them for telepathy.) Spheres (flaming/freezing/shocking) explode in a 3×3 area; also kill them at range. |
 | [`f`](#felines-f)    | [Cats](#felines-f)      | Like dogs, often starting pets. Felines can be tamed with tripe.                        |
-| [`G`](#gnomes-g)    | [Gnomes](#gnomes-g)    | The standard inhabitants of the Gnomish Mines. Individually weak, but the Mines have a lot of them — and **plain gnomes, gnome lords, and (later) gnome rulers are all in the top fifteen causes of death** on the public server, because mid-game players treat the Mines as a milk run and walk into a four-on-one with full-strength enemies. If you're a gnome yourself, most of them are peaceful. |
-| [`h`](#humanoids-h)    | [Humanoids](#humanoids-h) | Dwarves, bugbears, mind flayers. Wide range of difficulty. **Dwarves in particular are dangerously underrated**: they hit harder than they look, they're armored, and they're the second most common cause of death on the public server because of how many you meet in the Mines. Don't trade blows with one in melee until your AC is solid. |
+| [`G`](#gnomes-g)    | [Gnomes](#gnomes-g)    | The standard inhabitants of the Gnomish Mines. Individually weak, but the Mines have a lot of them, and mid-game players who treat the Mines as a milk run walk into a four-on-one with full-strength enemies. If you're a gnome yourself, most of them are peaceful. |
+| [`h`](#humanoids-h)    | [Humanoids](#humanoids-h) | Dwarves, bugbears, mind flayers. Wide range of difficulty. Dwarves in particular are dangerously underrated: they hit harder than they look, and they're armored. Don't trade blows with one in melee until your AC is solid. |
 | [`i`](#imps-and-minor-demons-i)    | [Imps](#imps-and-minor-demons-i)      | Minor pests. Weak claw, regeneration, and a stream of insults — annoying but not dangerous. |
 | [`j`](#jellies-j)    | [Jellies](#jellies-j)   | Spotted and ochre jellies. Passive acid damage on melee.                                |
 | [`k`](#kobolds-k)    | [Kobolds](#kobolds-k)   | Weak individually but sometimes carry poisoned weapons.                                 |
@@ -2550,16 +2548,15 @@ Only about **0.4% of games end in ascension.** The other 99.6%
 are deaths. NetHack ends in death by default; survival is the
 exception.
 
-**The early dungeon is deadly.** The top ten killers are,
-in order: jackals, dwarves, soldier ants, gnome lords, sewer rats,
-giant bats, [small mimics](#a-note-on-mimics), gnomes, foxes, water moccasins. Every
-one of them lives on the upper dungeon levels. None are
-intrinsically dangerous to a prepared character. They get you
-because you haven't built HP, AC, or resistances yet and they
-outnumber you. The strategic takeaway: the early game has been the
-deadliest stretch of NetHack since 1987. Don't push to descend;
-spend the turns clearing levels, finding altars, and getting BUC
-information.
+**The early dungeon is deadly.** The monsters that kill the most
+characters all live on the upper levels — jackals, dwarves,
+soldier ants, gnome lords, sewer rats, giant bats,
+[small mimics](#a-note-on-mimics), gnomes, foxes, water
+moccasins. None of them are intrinsically dangerous to a prepared
+character. They get you because you haven't built HP, AC, or
+resistances yet, and they outnumber you. Spend the early turns
+clearing levels, finding altars, and getting BUC information
+before pushing deeper.
 
 **On pacing.** A rough rule of thumb: your experience level should
 be at least somewhere near the dungeon level you're standing on.
@@ -2679,10 +2676,10 @@ Routine mistakes kill more adventurers than exotic instadeaths.
 The list below is sorted roughly by frequency on the public
 server.
 
-**Eating mistakes.** Rotted corpse, [poisonous corpse](#deadly-poison), and
-[choking](#choking) each rank in the top forty causes of death. Don't
-eat old corpses. Don't eat while Satiated. Don't finish a
-heavy corpse if you're already approaching Satiated. Pray
+**Eating mistakes.** Old corpses cause food poisoning, poisonous
+corpses ([deadly poison](#deadly-poison)) drop you fast, and
+eating while Satiated risks [choking](#choking). Watch your
+nutrition before committing to a heavy corpse, and pray
 immediately if you ate something you shouldn't have.
 
 **Reading unidentified scrolls in a shop.** A confused or
@@ -2692,13 +2689,12 @@ the shopkeeper hostile when you return. A scroll of fire
 destroys shop goods you are liable for. Save the price-ID
 session for outside.
 
-**Mount slips and riding accidents.** More heroes die slipping
-off saddled ponies than die to mind flayers. Getting on a
-steed rolls against your experience level plus the steed's
-tameness; on a failure you take 10 to 14 HP. Don't mount
-while Confused, Fumbling, or Glib, don't mount with a cursed
-or greased saddle, and don't mount a barely-tame pony at
-experience level 2.
+**Mount slips and riding accidents.** Getting on a steed rolls
+against your experience level plus the steed's tameness; a failure
+costs 10 to 14 HP. The dangerous cases are a cursed or greased
+saddle (the slip is essentially guaranteed and the fall hurts).
+The Confused or Fumbling or Glib cases just have worse odds, and
+a barely-tame pony at experience level 2 is a coin flip.
 
 **Pet kills.** Kittens, little dogs, housecats, and ponies
 all appear on the death list, almost always because the
@@ -2718,17 +2714,15 @@ ricocheting off a wall in a narrow corridor and back into
 your face. Engrave-test wands before pointing them at
 yourself.
 
-**Killed by a grid bug.** The weakest monster in the game
-kills more than 11,000 adventurers per year. They get the
-last hit on someone who walked away from a real fight at
-2 HP, or someone who decided to read a scroll on the turn
-one was adjacent. Don't read scrolls under threat.
+**Killed by a grid bug.** The weakest monster in the game gets
+the last hit on someone who walked away from a real fight at 2 HP,
+or who decided to read a scroll on the turn one was adjacent.
+Don't read scrolls under threat.
 
 **Killed by kicking.** Kicking sinks summons a [black pudding](#a-note-on-puddings),
-a foocubus, or worse. Kicking doors can break your toe.
-Kicking locked chests can electrocute you, and electric
-shock is a top-100 cause of death on its own. Stop kicking
-things.
+a foocubus, or worse. Kicking doors can break your toe. Kicking
+locked chests can electrocute you. Kick what you mean to kick,
+and only when you can spare the consequence.
 
 **Wrath of a god.** You prayed when your god wasn't willing.
 See [Divine Relations](#divine-relations) for the prayer
@@ -6309,9 +6303,9 @@ the suit drops it off into your inventory (curse and all), even
 though it would normally refuse to come off. From there, dip in
 holy water and re-wear. See [Polymorph as a Tool](#polymorph-as-a-tool).
 
-Always carry holy water and a scroll of remove curse. The moment
-you find yourself stuck with cursed levitation boots over a moat,
-you'll understand why veterans never leave home without them.
+Most veterans carry holy water and a scroll of remove curse at all
+times. The first time you find yourself stuck in cursed levitation
+boots over a moat is the moment you'll see why.
 
 ---
 
@@ -7633,12 +7627,11 @@ the Castle wand's single charge.
 #### The Wizard's Tower
 
 A sequence of three special Gehennom levels that lead to the
-**Wizard of Yendor** himself and the **Book of the Dead**. He
-is the most dangerous enemy in the game, not because he's the
-strongest fighter, but because he **never stops**. He teleports to
-your location, summons monsters, steals back his Amulet whenever
-you grab it, curses your gear, and once you wake him he *will not
-leave you alone* for the rest of the game.
+**Wizard of Yendor** himself and the **Book of the Dead**. What
+makes him dangerous isn't raw combat power but persistence: he
+teleports to your location, summons monsters, steals back his
+Amulet whenever you grab it, curses your gear, and once you wake
+him he keeps hounding you for the rest of the game.
 
 Kill him cleanly the first time, grab the Book, and move on.
 Subsequent kills don't yield new loot (he respawns), so don't
