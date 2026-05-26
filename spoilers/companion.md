@@ -7628,7 +7628,7 @@ the Castle wand's single charge.
 
 A sequence of three special Gehennom levels that lead to the
 **Wizard of Yendor** himself and the **Book of the Dead**. He is
-dangerous not for raw combat power but because he never stops. He
+dangerous not for raw combat power but because he *never stops*. He
 teleports to your location, summons monsters, steals back his
 Amulet whenever you grab it, curses your gear, and once you wake
 him he *will not leave you alone* for the rest of the game.
