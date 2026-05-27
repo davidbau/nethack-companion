@@ -137,6 +137,8 @@ Them</a> — Spotting them, undoing them, surviving them</li>
 adventurer</li>
 <li><a href="#luck-and-fortune">Luck and Fortune</a> — The hidden
 numbers that shape your fate</li>
+<li><a href="#exercising-your-stats">Exercising Your Stats</a> — Habits
+that slowly drift Str, Dex, Con, and Wis</li>
 <li><a href="#enhancing-skills">Enhancing Skills</a> — Mastering
 specific styles of combat and magic</li>
 <li><a href="#wishes-and-wishing">Wishes and Wishing</a> — Getting what
@@ -145,7 +147,7 @@ you want</li>
 obtain it</li>
 </ol>
 <p><strong>Part Six: The Deep Dungeon</strong></p>
-<ol start="29" type="1">
+<ol start="30" type="1">
 <li><a href="#the-castle">The Castle</a> — The gateway to Gehennom</li>
 <li><a href="#gehennom">Gehennom</a> — A travel advisory</li>
 <li><a href="#the-ascension-kit">The Ascension Kit</a> — Gear for the
@@ -156,7 +158,7 @@ out alive</li>
 gauntlet</li>
 </ol>
 <p><strong>Appendices</strong></p>
-<ol start="34" type="1">
+<ol start="35" type="1">
 <li><a href="#advanced-controls">Advanced Controls</a> — Command counts,
 prefixes, and efficiency techniques</li>
 <li><a href="#options-worth-knowing-about">Customization</a> — rcfile
@@ -3342,6 +3344,14 @@ invisibility.</td>
 <td>A monster you’d sensed-but-not-seen (the <code>I</code> marker on
 the map) just left your awareness — it walked off the level, died, or
 vanished. You can stop worrying about it.</td>
+</tr>
+<tr>
+<td><em>“You feel agile! You must have been working on your
+reflexes!”</em> (and Str / Wis / Con variants)</td>
+<td>A stat just went up from the hidden exercise system. See <a
+href="#exercising-your-stats">Exercising Your Stats</a> for what habits
+feed each. The mirror message <em>“You haven’t been working on reflexes
+lately”</em> fires when abuse wins instead.</td>
 </tr>
 <tr>
 <td><em>“You move very quietly.”</em></td>
@@ -8888,6 +8898,87 @@ even harder than usual, which is saying something.</p>
 to keep luck positive, and don’t kill peacefuls. Treat the universe well
 and it will return the favor, in the form of slightly better random
 numbers, which in the Mazes is the closest thing to love.</p>
+<hr />
+</section>
+</section>
+<section id="exercising-your-stats" class="level3">
+<h3>Exercising Your Stats</h3>
+<p>Behind the scenes, NetHack keeps a hidden exercise counter for four
+of your six stats: <strong>Str</strong>, <strong>Dex</strong>,
+<strong>Con</strong>, and <strong>Wis</strong>. (Int and Cha don’t
+exercise — they only change through magical sources like gain-ability
+potions.) Living a way that <em>trains</em> a stat slowly pushes the
+counter up; living a way that <em>abuses</em> it pushes the counter
+down. Every several hundred turns the game checks the counter and may
+grant a +1 or −1.</p>
+<section id="how-exercise-works" class="level4">
+<h4>How Exercise Works</h4>
+<p>The counter is invisible. A long enough streak of exercising
+behavior, plus a passing random roll (with diminishing returns once
+you’ve already gained), gives you the message <em>“You feel agile! You
+must have been working on your reflexes!”</em> — or the matching one for
+the other stats. The reverse, <em>“You haven’t been working on reflexes
+lately,”</em> fires when the abuse counter wins instead.</p>
+<p>Exercise can lift a stat up to <strong>18</strong> (your innate
+maximum isn’t bypassed; potions of gain ability still rule the top end).
+Abuse can drop it down to your racial minimum.</p>
+</section>
+<section id="actions-that-exercise-and-abuse" class="level4">
+<h4>Actions That Exercise and Abuse</h4>
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 44%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Exercises</th>
+<th>Abuses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Str</strong></td>
+<td>Carrying a moderate or heavy load, intrinsic regeneration, throwing
+heavy items</td>
+<td>Being Weak from hunger</td>
+</tr>
+<tr>
+<td><strong>Dex</strong></td>
+<td>Successful kicks (locks, sinks, doors), successful thrown
+weapons</td>
+<td>Being Satiated, heavy encumbrance, Fumbling, Stunned, Wounded legs,
+missed kicks</td>
+</tr>
+<tr>
+<td><strong>Con</strong></td>
+<td>Staying just-Not-Hungry consistently</td>
+<td>Fainting, Sick, Vomiting, polluted fountains, extreme
+encumbrance</td>
+</tr>
+<tr>
+<td><strong>Wis</strong></td>
+<td>Active Clairvoyance, successful detection (gold/monster/food), a
+willing prayer, a worthy sacrifice</td>
+<td>Confusion, Hallucination, cursed enlightenment, digging up
+graves</td>
+</tr>
+</tbody>
+</table>
+<p>Two Monk-specific quirks: a Monk who is Weak from fasting exercises
+Wis, and a Satiated Monk abuses it. The vow of restraint pays in
+wisdom.</p>
+</section>
+<section id="why-exercise-matters" class="level4">
+<h4>Why Exercise Matters</h4>
+<p>Stats matter for almost everything: Str for damage and carrying
+capacity, Dex for hit chance, Con for HP per level, Wis for prayer
+success and Pw regeneration. Drifting one of them up over the course of
+a run is a small but real upgrade. Drifting one down because you’ve
+spent five hundred turns Satiated and Fumbling is a small but real loss.
+The mechanic rewards habits more than single actions.</p>
 <hr />
 </section>
 </section>

@@ -96,31 +96,32 @@ will do our best to keep you alive.
 
 24. [Spellcasting](#spellcasting) — Magic for the studious adventurer
 25. [Luck and Fortune](#luck-and-fortune) — The hidden numbers that shape your fate
-26. [Enhancing Skills](#enhancing-skills) — Mastering specific styles of combat and magic
-27. [Wishes and Wishing](#wishes-and-wishing) — Getting what you want
-28. [Artifacts](#artifacts) — Legendary equipment and how to obtain it
+26. [Exercising Your Stats](#exercising-your-stats) — Habits that slowly drift Str, Dex, Con, and Wis
+27. [Enhancing Skills](#enhancing-skills) — Mastering specific styles of combat and magic
+28. [Wishes and Wishing](#wishes-and-wishing) — Getting what you want
+29. [Artifacts](#artifacts) — Legendary equipment and how to obtain it
 
 **Part Six: The Deep Dungeon**
 
-29. [The Castle](#the-castle) — The gateway to Gehennom
-30. [Gehennom](#gehennom) — A travel advisory
-31. [The Ascension Kit](#the-ascension-kit) — Gear for the long climb
-32. [The Ascension Run](#the-ascension-run) — Getting back out alive
-33. [The Elemental Planes](#the-elemental-planes) — The final gauntlet
+30. [The Castle](#the-castle) — The gateway to Gehennom
+31. [Gehennom](#gehennom) — A travel advisory
+32. [The Ascension Kit](#the-ascension-kit) — Gear for the long climb
+33. [The Ascension Run](#the-ascension-run) — Getting back out alive
+34. [The Elemental Planes](#the-elemental-planes) — The final gauntlet
 
 **Appendices**
 
-34. [Advanced Controls](#advanced-controls) — Command counts, prefixes, and efficiency techniques
-35. [Customization](#options-worth-knowing-about) — rcfile options worth knowing
-36. [Sokoban Solutions](#sokoban-solutions) — All eight level variants, solved
-37. [Voluntary Challenges](#voluntary-challenges) — Conducts and self-imposed restrictions
-38. [Shopping and Shopkeeper Pricing](#shopping-and-shopkeeper-pricing) — Commerce in the dungeon
-39. [Weapons Tables](#weapons-tables)
-40. [Armor Tables](#armor-tables)
-41. [Spell Tables](#spell-tables)
-42. [Bestiary Tables](#bestiary-tables)
-43. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x, and what to do about it
-44. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
+35. [Advanced Controls](#advanced-controls) — Command counts, prefixes, and efficiency techniques
+36. [Customization](#options-worth-knowing-about) — rcfile options worth knowing
+37. [Sokoban Solutions](#sokoban-solutions) — All eight level variants, solved
+38. [Voluntary Challenges](#voluntary-challenges) — Conducts and self-imposed restrictions
+39. [Shopping and Shopkeeper Pricing](#shopping-and-shopkeeper-pricing) — Commerce in the dungeon
+40. [Weapons Tables](#weapons-tables)
+41. [Armor Tables](#armor-tables)
+42. [Spell Tables](#spell-tables)
+43. [Bestiary Tables](#bestiary-tables)
+44. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x, and what to do about it
+45. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
 
 
 ## Part One: Before You Set Out
@@ -2318,6 +2319,7 @@ messages still come through.)
 | *"You feel mildly hot."* / *"You feel mildly chilly."* | A fire (or cold) attack hit you and your intrinsic resistance absorbed it. Useful confirmation that you actually have the resistance you think you do. |
 | *"You feel rather itchy under your <mummy wrapping>."* | You just read a scroll, zapped a wand, or cast a spell of invisibility, but the mummy-wrapping cloak blocked it. You're not invisible — and you've just confirmed the scroll/wand is invisibility. |
 | *"You feel less paranoid."* | A monster you'd sensed-but-not-seen (the `I` marker on the map) just left your awareness — it walked off the level, died, or vanished. You can stop worrying about it. |
+| *"You feel agile! You must have been working on your reflexes!"* (and Str / Wis / Con variants) | A stat just went up from the hidden exercise system. See [Exercising Your Stats](#exercising-your-stats) for what habits feed each. The mirror message *"You haven't been working on reflexes lately"* fires when abuse wins instead. |
 | *"You move very quietly."*             | Ring of stealth or elven cloak. (Elven boots give *"You walk very quietly"* instead.)  |
 | *"Wow! This makes you feel great!"*    | Blessed potion of restore ability with no remaining troubles — *or* a blessed magic fountain hit. |
 | *"You feel feverish."*                 | Lycanthropy infection from a were-monster. `q`uaff holy water, eat wolfsbane, or `#pray`. |
@@ -6638,6 +6640,54 @@ The practical advice: get a luckstone early, sacrifice occasionally
 to keep luck positive, and don't kill peacefuls. Treat the universe
 well and it will return the favor, in the form of slightly better
 random numbers, which in the Mazes is the closest thing to love.
+
+---
+
+### Exercising Your Stats
+
+Behind the scenes, NetHack keeps a hidden exercise counter for four
+of your six stats: **Str**, **Dex**, **Con**, and **Wis**. (Int and
+Cha don't exercise — they only change through magical sources like
+gain-ability potions.) Living a way that *trains* a stat slowly
+pushes the counter up; living a way that *abuses* it pushes the
+counter down. Every several hundred turns the game checks the
+counter and may grant a +1 or −1.
+
+#### How Exercise Works
+
+The counter is invisible. A long enough streak of exercising
+behavior, plus a passing random roll (with diminishing returns once
+you've already gained), gives you the message *"You feel agile! You
+must have been working on your reflexes!"* — or the matching one
+for the other stats. The reverse, *"You haven't been working on
+reflexes lately,"* fires when the abuse counter wins instead.
+
+Exercise can lift a stat up to **18** (your innate maximum isn't
+bypassed; potions of gain ability still rule the top end). Abuse
+can drop it down to your racial minimum.
+
+#### Actions That Exercise and Abuse
+
+| Stat | Exercises | Abuses |
+|------|-----------|--------|
+| **Str** | Carrying a moderate or heavy load, intrinsic regeneration, throwing heavy items | Being Weak from hunger |
+| **Dex** | Successful kicks (locks, sinks, doors), successful thrown weapons | Being Satiated, heavy encumbrance, Fumbling, Stunned, Wounded legs, missed kicks |
+| **Con** | Staying just-Not-Hungry consistently | Fainting, Sick, Vomiting, polluted fountains, extreme encumbrance |
+| **Wis** | Active Clairvoyance, successful detection (gold/monster/food), a willing prayer, a worthy sacrifice | Confusion, Hallucination, cursed enlightenment, digging up graves |
+
+Two Monk-specific quirks: a Monk who is Weak from fasting exercises
+Wis, and a Satiated Monk abuses it. The vow of restraint pays in
+wisdom.
+
+#### Why Exercise Matters
+
+Stats matter for almost everything: Str for damage and carrying
+capacity, Dex for hit chance, Con for HP per level, Wis for prayer
+success and Pw regeneration. Drifting one of them up over the
+course of a run is a small but real upgrade. Drifting one down
+because you've spent five hundred turns Satiated and Fumbling is a
+small but real loss. The mechanic rewards habits more than single
+actions.
 
 ---
 
