@@ -2280,18 +2280,18 @@ messages still come through.)
 | Message                                          | What it means                                                            |
 |--------------------------------------------------|--------------------------------------------------------------------------|
 | *"You have a sad feeling for a moment, then it passes."* | Your pet just died offscreen.                                        |
+| *"You hear someone cursing shoplifters."*<br>*"You hear the chime of a cash register."* | Shop on this level.                                  |
 | *"You hear someone counting gold coins."* | Vault on this level, with gold still in it.                                                       |
 | *"You hear the footsteps of a guard on patrol."*<br>*"You hear someone searching."* | Vault on this level (the "searching" message means the vault is already empty).    |
-| *"You hear a strange wind."*           | Oracle on this level.                                                                  |
-| *"You hear someone cursing shoplifters."* | Shop on this level.                                                                 |
 | *"You hear bubbling water."*<br>*"You hear water falling on coins."* | Fountain on this level.                                          |
-| *"You hear a bugle playing reveille!"* | A soldier just woke nearby soldiers; expect a fight.                                   |
-| *"You hear a slurping sound."*         | A gelatinous cube just ate items off the floor on this level.                          |
-| *"You hear a crunching sound."*        | A rust monster, rock mole, or other metallivore just ate something metallic.           |
 | *"You hear a wolf howling at the moon."* (or jackal) | A werecreature is somewhere on this level.                               |
 | *"You hear crashing rock."*            | A tunneler (dwarf, gnome miner, rock mole, umber hulk) just dug through stone.         |
 | *"You hear a chugging sound."*         | A monster just drank a potion (usually healing themselves).                            |
 | *"You hear a nearby zap."*             | A monster just zapped a wand at something offscreen.                                   |
+| *"You hear a strange wind."*           | Oracle on this level.                                                                  |
+| *"You hear a slurping sound."*         | A gelatinous cube just ate items off the floor on this level.                          |
+| *"You hear a crunching sound."*        | A rust monster, rock mole, or other metallivore just ate something metallic.           |
+| *"You hear a bugle playing reveille!"* | A soldier just woke nearby soldiers; expect a fight.                                   |
 | *"You feel healthy."*                  | Intrinsic poison resistance from a corpse.                                             |
 | *"You feel a momentary chill."*        | Intrinsic fire resistance from a corpse.                                               |
 | *"You feel full of hot air."*          | Intrinsic cold resistance from a corpse.                                               |
