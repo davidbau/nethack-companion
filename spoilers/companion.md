@@ -2280,9 +2280,9 @@ messages still come through.)
 | Message                                          | What it means                                                            |
 |--------------------------------------------------|--------------------------------------------------------------------------|
 | *"You have a sad feeling for a moment, then it passes."* | Your pet just died offscreen.                                        |
-| *"You hear someone cursing shoplifters."*<br>*"You hear the chime of a cash register."* | Shop on this level.                                  |
-| *"You hear someone counting gold coins."* (gold still in it)<br>*"You hear the footsteps of a guard on patrol."*<br>*"You hear someone searching."* (vault already empty) | Vault on this level. |
 | *"You hear bubbling water."*<br>*"You hear water falling on coins."* | Fountain on this level.                                          |
+| *"You hear someone cursing shoplifters."*<br>*"You hear the chime of a cash register."* | Shop on this level.                                  |
+| *"You hear someone counting gold coins."*<br>*"You hear the footsteps of a guard on patrol."*<br>*"You hear someone searching."* | Vault on this level. The "counting" message means there's still gold inside; "searching" means the vault is already empty. |
 | *"You hear a wolf howling at the moon."* (or jackal) | A werecreature is somewhere on this level.                               |
 | *"You hear crashing rock."*            | A tunneler (dwarf, gnome miner, rock mole, umber hulk) just dug through stone.         |
 | *"You hear a chugging sound."*         | A monster just drank a potion (usually healing themselves).                            |
