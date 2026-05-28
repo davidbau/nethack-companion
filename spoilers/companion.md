@@ -2322,10 +2322,10 @@ messages still come through.)
 | *"You feel agile! You must have been working on your reflexes!"* (and Str / Wis / Con variants) | A stat just went up from the hidden exercise system. See [Exercising Your Stats](#exercising-your-stats) for what counts as exercise. The mirror message *"You haven't been working on reflexes lately"* fires after a streak of abuse instead. |
 | *"You move very quietly."*             | Ring of stealth or elven cloak. (Elven boots give *"You walk very quietly"* instead.)  |
 | *"Wow! This makes you feel great!"*    | Blessed potion of restore ability with no remaining troubles — *or* a blessed magic fountain hit. |
-| *"You feel feverish."*                 | Lycanthropy infection from a were-monster. `q`uaff holy water, eat wolfsbane, or `#pray`. |
-| *"You are slowing down."*              | You're turning to stone. Immediately eat a lizard corpse, drink acid, or pray.         |
+| *"You feel feverish."*                 | Lycanthropy infection from a were-monster. *Quaff* holy water, eat wolfsbane, or `#pray`. |
+| *"You are slowing down."*              | You're turning to stone. Immediately eat a lizard corpse, drink acid, or `#pray`.      |
 | *"You are turning into slime."*        | Green-slime contagion. Burn it off (read a fire scroll, cast fireball on yourself, or self-zap a wand of fire), or `#pray`. |
-| *"You feel deathly sick."*             | Terminal illness (Pestilence, Demogorgon). Quaff extra healing, eat eucalyptus, or pray. |
+| *"You feel deathly sick."*             | Terminal illness (Pestilence, Demogorgon). Quaff extra healing, eat eucalyptus, or `#pray`. |
 
 ---
 
