@@ -29,7 +29,7 @@ one thing that stays constant is that the dungeon is trying to
 kill you.
 
 Most adventurers who go down there never come back. The ones
-who do had taken time to prepare: they had read the myths,
+who do have taken time to prepare: they have read the myths,
 learned the lore, and listened to the warnings of those who
 went before. The pages that follow gather the wisdom of many
 adventurers and seers, paid for by the lives of those who did
