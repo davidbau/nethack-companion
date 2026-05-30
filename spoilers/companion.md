@@ -19,13 +19,13 @@ players.
 
 The dungeon is old. No one remembers who built it, only that
 its entrance has stood open for more than forty years to anyone
-bold enough to descend. They come from every land, drawn by
-tales of an artifact hidden in its depths: Knights, Wizards,
+bold enough to descend. Brave souls come from every land, drawn
+by tales of an artifact hidden in its depths: Knights, Wizards,
 Valkyries, Samurai, Archeologists with their picks, even
 Tourists with their cameras. No two of them have found the same
-mazes. Rooms shift between visits, stairwells move, and a
-route that worked for years can turn deadly today. The
-one constant is that the dungeon is trying to kill you.
+mazes. Rooms shift between visits, stairwells move. An old
+reliable route can turn deadly today. The one constant is that
+the dungeon is trying to kill you.
 
 Most adventurers who go down there never come back. The ones
 who do have taken time to prepare: they have read the myths,
