@@ -5308,9 +5308,17 @@ where mapping by hand could take a lifetime you don't have.
 
 []{#scroll-scare-monster}
 **Scare monster.** The trick: don't read it. Drop it on the floor
-and stand on it. It works like a permanent [Elbereth](#elbereth), frightening
-most monsters away. The catch: pick it up after it's been dropped
-and it crumbles to dust. So choose your standing spot wisely.
+and stand on it. It works like a permanent [Elbereth](#elbereth),
+frightening most monsters away.
+
+The scroll itself has a built-in countdown. An uncursed scroll
+gets "stamped" the first time you pick it up, so the scroll
+survives but a flag is set on it. The next time you pick it up,
+the message reads *"The scroll turns to dust as you pick it up,"*
+and the scroll is gone. So a freshly-dropped uncursed scroll can
+be moved exactly once before it crumbles. A cursed scroll turns
+to dust on the very first pickup, so [BUC-test](#blessed-uncursed-cursed-buc)
+before relying on one as portable furniture.
 
 []{#scroll-teleportation}
 **Teleportation.** Uncursed teleports you randomly on the level.
