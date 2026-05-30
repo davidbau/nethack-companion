@@ -17,35 +17,33 @@ players.
 
 ## Before You Read Further
 
-You are holding (or more likely scrolling through) a guide to the
-Mazes of Menace, the vast and ever-shifting dungeon complex that sits
-beneath a place the locals just call "the dungeon entrance." What lies
-below is one of the oldest and most treacherous adventure destinations
-in existence: dozens of levels of corridors, vaults, and special
-chambers, stretching from the relatively tame upper mines all the way
-down to the molten depths of Gehennom and beyond.
+The dungeon is old. Adventurers have been descending into it for
+more than forty years, and no two journeys have been the same.
+Rooms shift between visits, stairwells move, and a route that
+worked last time can get you eaten this time. The one thing that
+stays constant is that the dungeon is trying to kill you.
 
-People have been descending into these depths for more than four decades.
-Most of them died. The ones who made it back brought stories, and some
-of those stories eventually got written down. You're reading the latest
-edition of that accumulated lore.
+Most adventurers who go down there never come back. Those who do
+bring stories, and those stories have accumulated into a body of
+lore. This book gathers that lore together. It was paid for by
+the lives of those who did not return, and by the careful
+observations of those who did.
 
 **A word of caution.** This guide will change how you experience
-the Mazes. Once you know that a floating eye can paralyze you with
-a glance, you can never un-know it. Some adventurers prefer the
-thrill of discovery over the comfort of preparation. If that's
-you, close this guide now and go learn things the hard way. There
-is real joy in that.
+the Mazes. Once you know that a floating eye can paralyze you
+with a glance, you can never un-know it. Some adventurers prefer
+the thrill of discovery to the comfort of preparation. If that is
+you, close the guide now and learn the hard way. There is real
+joy in that.
 
-**Looking for the manual instead?** If you're just looking for game
-commands, item lists, and mechanics without spoilers, you want the
-**[Guide to the Mazes of Menace](../guidebook/)** instead. That's the
-reference manual that comes with the game. This document is a
-*strategic* guide. It assumes you already know how to play and want
-to know how to *survive*.
+**Looking for the manual instead?** If you want commands, item
+lists, and bare mechanics without spoilers, you want the
+**[Guide to the Mazes of Menace](../guidebook/)** that comes
+with the game. This document is a *strategic* guide. It assumes
+you already know how to play and want to know how to *survive*.
 
-But if you have perished under the deadly gaze of just one too
-many floating eyes, or if you are tired of the gods abandoning
+If you have been stripped of your belongings by one too many
+water nymphs, or if you have grown tired of the gods abandoning
 you to starve with no food rations on level four, read on. We
 will do our best to keep you alive.
 
