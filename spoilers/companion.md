@@ -49,9 +49,10 @@ guide. It assumes you already know how to play and want to know
 how to *survive*.
 
 Read on if you have been stripped of your belongings by one too
-many water nymphs, or if you have grown tired of the gods
-abandoning you to starve with no food rations on level four. We
-will do our best to keep you alive.
+many water nymphs, if you cannot survive the Gnomish Mines, or
+if you have grown tired of the gods abandoning you to starve
+with no food rations on level four. We will do our best to keep
+you alive.
 
 <aside class="download-box">
 <strong>Prefer to read offline?</strong> Print the <a href="book.pdf">book-format PDF</a> (A5 trim, <a href="cover.pdf">cover</a>).
