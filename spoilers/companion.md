@@ -48,9 +48,9 @@ with the game. The document you are reading is a *strategic*
 guide. It assumes you already know how to play and want to know
 how to *survive*.
 
-If you have been stripped of your belongings by one too many
-water nymphs, or if you have grown tired of the gods abandoning
-you to starve with no food rations on level four, read on. We
+Read on if you have been stripped of your belongings by one too
+many water nymphs, or if you have grown tired of the gods
+abandoning you to starve with no food rations on level four. We
 will do our best to keep you alive.
 
 <aside class="download-box">
