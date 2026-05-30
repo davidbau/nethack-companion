@@ -809,9 +809,10 @@ won't be friendly about your attempts. The priest will also accept
 gold donations in exchange for clairvoyance or a permanent AC bonus
 — see [Donating to Priests](#donating-to-priests).
 
-**Throne rooms.** A room with a [*throne* (`\`)](#thrones) and
-usually surrounded by monsters. Sitting on the throne has random
-effects, sometimes wonderful, sometimes terrible.
+**Throne rooms.** A room with a [*throne* (`\`)](#thrones), a
+sleeping ruler at the throne, and a full court of monsters filling
+the rest. Sitting on the throne has random effects, sometimes
+wonderful, sometimes terrible.
 
 **Zoos.** A room packed with sleeping monsters and gold. They wake
 **not** when you enter, but from the noise of you fighting the
