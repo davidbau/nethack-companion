@@ -39,8 +39,9 @@ joy in that.
 **Looking for the manual instead?** If you want commands, item
 lists, and bare mechanics without spoilers, you want the
 **[Guide to the Mazes of Menace](../guidebook/)** that comes
-with the game. This document is a *strategic* guide. It assumes
-you already know how to play and want to know how to *survive*.
+with the game. The document you are reading is a *strategic*
+guide. It assumes you already know how to play and want to know
+how to *survive*.
 
 If you have been stripped of your belongings by one too many
 water nymphs, or if you have grown tired of the gods abandoning
