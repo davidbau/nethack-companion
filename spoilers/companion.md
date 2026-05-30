@@ -24,7 +24,7 @@ tales of an artifact hidden in its depths: Knights, Wizards,
 Valkyries, Samurai, Archeologists with their picks, even
 Tourists with their cameras. No two of them have found the same
 dungeon. Rooms shift between visits, stairwells move, and a
-route that worked for years can kill you today. The
+route that worked for years can turn deadly today. The
 one thing that stays constant is that the dungeon is trying to
 kill you.
 
