@@ -24,7 +24,7 @@ tales of an artifact hidden in its depths: knights, wizards,
 valkyries, samurai, archeologists with their picks, even
 tourists with their cameras. No two of them have found the same
 dungeon. Rooms shift between visits, stairwells move, and a
-route that worked last time can get you eaten this time. The
+route that worked for years can get you eaten today. The
 one thing that stays constant is that the dungeon is trying to
 kill you.
 
