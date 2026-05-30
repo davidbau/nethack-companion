@@ -54,9 +54,13 @@ if you have grown tired of the gods abandoning you to starve
 with no food rations on level four. We will do our best to keep
 you alive.
 
+::: web-only
+
 <aside class="download-box">
 <strong>Prefer to read offline?</strong> Print the <a href="book.pdf">book-format PDF</a> (A5 trim, <a href="cover.pdf">cover</a>).
 </aside>
+
+:::
 
 ---
 
