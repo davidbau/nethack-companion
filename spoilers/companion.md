@@ -2868,9 +2868,9 @@ staircase. Her corpse drops what she stole, so it's often worth
 sweeping the level you were on before moving on.
 
 **Never engage a nymph while carrying the Amulet of Yendor**
-during the Ascension Run. Losing the Amulet to a teleporting
-thief means a return trip to Moloch's Sanctum, which is usually
-where ascension runs go to die.
+during the Ascension Run. If she steals it, you abandon your
+climb to sweep the current level for her corpse, and the
+mysterious force does not pause while you search.
 
 #### A note on puddings
 
