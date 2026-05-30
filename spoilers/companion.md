@@ -2838,12 +2838,12 @@ size. Anything that tries to pick "you" up snaps the spell.
 
 The `n` class (wood, water, mountain) doesn't want to kill you.
 She wants your inventory. Each successful claw hit lifts a random
-item from your pack, and the nymph then **teleports away**,
-sometimes within the level, sometimes off it entirely. Your bag
-of holding, your amulet of reflection, a freshly-wished cloak of
-magic resistance: gone, often to a level you'll never revisit.
-No NetHack horror story is more universal than "a nymph walked
-off the level with my bag of holding."
+item from your pack, and the nymph then **teleports away** to a
+random spot on the same level. Your bag of holding, your amulet
+of reflection, a freshly-wished cloak of magic resistance: gone,
+across the map, often into a room you haven't explored. No
+NetHack horror story is more universal than "a nymph walked off
+with my bag of holding."
 
 **The second claw is seduction.** Nymphs get two attacks per
 turn, and the seduction half drains experience levels if the
@@ -2857,10 +2857,10 @@ anything). [Engrave **Elbereth**](#elbereth): nymphs respect it. Or drop your
 most irreplaceable items on the floor before approaching.
 Whatever's not in your pack can't be stolen.
 
-**Already robbed?** A satiated nymph stays in the dungeon
-somewhere, often a nearby level, and her corpse drops what she
-stole. If you have time, search the floors above and below;
-sometimes you get the bag of holding back.
+**Already robbed?** A satiated nymph stays on the same level
+unless she later falls through a trapdoor or wanders onto a
+staircase. Her corpse drops what she stole, so it's often worth
+sweeping the level you were on before moving on.
 
 **Never engage a nymph while carrying the Amulet of Yendor**
 during the Ascension Run. Losing the Amulet to a teleporting
@@ -10838,7 +10838,7 @@ All mimics are amorphous, hide, and are acid-resistant.
 -->
 
 
-Steals one item and teleports away. The cure is to engage from range, block her path with pets, or wear an amulet of life saving and steal the item back from her corpse later.
+Steals one item and teleports to a random spot on the same level. Engage from range, block her path with pets, or engrave Elbereth. If she gets a hit in, sweep the level for her corpse, which drops what she stole.
 
 All nymphs teleport.
 
