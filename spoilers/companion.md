@@ -17,17 +17,23 @@ players.
 
 ## Before You Read Further
 
-The dungeon is old. Adventurers have been descending into it for
-more than forty years, and no two journeys have been the same.
-Rooms shift between visits, stairwells move, and a route that
-worked last time can get you eaten this time. The one thing that
-stays constant is that the dungeon is trying to kill you.
+The dungeon is old. No one remembers who built it, only that
+its entrance has stood open for more than forty years to anyone
+bold enough to descend. They come from every land, drawn by
+tales of an artifact hidden in its depths: knights, wizards,
+valkyries, samurai, archeologists with their picks, even
+tourists with their cameras. No two of them have found the same
+dungeon. Rooms shift between visits, stairwells move, and a
+route that worked last time can get you eaten this time. The
+one thing that stays constant is that the dungeon is trying to
+kill you.
 
-Most adventurers who go down there never come back. Those who do
-bring stories, and those stories have accumulated into a body of
-lore. This book gathers that lore together. It was paid for by
-the lives of those who did not return, and by the careful
-observations of those who did.
+Most adventurers who go down there never come back. The ones
+who do had taken time to prepare: they had read the myths,
+learned the lore, and listened to the warnings of those who
+went before. The pages that follow gather the wisdom of many
+adventurers and seers, paid for by the lives of those who did
+not return and by the careful observations of those who did.
 
 **A word of caution.** This guide will change how you experience
 the Mazes. Once you know that a floating eye can paralyze you
