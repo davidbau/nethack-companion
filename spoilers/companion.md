@@ -786,8 +786,8 @@ and monsters scattered about. But some rooms are special:
    Items for sale.         $ = gold piles         Monsters guard.
 ```
 
-**Shops.** Identified by the shopkeeper standing in the doorway (or
-inside). Shops sell items of a particular type: general
+**Shops.** Identified by the shopkeeper inside, usually near the
+door. Shops sell items of a particular type: general
 stores, armor shops, weapon shops, scroll shops, potion shops, and
 more. Items on the shop floor belong to the shopkeeper; pick one up
 and you'll be quoted a price. You can sell items too. Shopkeepers are
