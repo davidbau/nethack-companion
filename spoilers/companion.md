@@ -2285,6 +2285,7 @@ messages still come through.)
 | *"You hear someone counting gold coins."*<br>*"You hear the footsteps of a guard on patrol."*<br>*"You hear someone searching."* | Vault on this level. The "counting" message means there's still gold inside; "searching" means the vault is already empty. |
 | *"You hear a wolf howling at the moon."* (or jackal) | A werecreature is somewhere on this level.                               |
 | *"You hear crashing rock."*            | A tunneler (dwarf, gnome miner, rock mole, umber hulk) just dug through stone.         |
+| *"You hear rumbling nearby."* (or *in the distance*) | A rolling boulder trap just fired offscreen. If you're standing in a corridor on this level, step aside. *"A rumbling stop abruptly"* means the boulder fell into a pit or teleport trap and is no longer a threat. |
 | *"You hear a chugging sound."*         | A monster just drank a potion (usually healing themselves).                            |
 | *"You hear a nearby zap."*             | A monster just zapped a wand at something offscreen.                                   |
 | *"You hear a strange wind."*           | Oracle on this level.                                                                  |
