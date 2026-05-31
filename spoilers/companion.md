@@ -7978,9 +7978,9 @@ frantic climb back to the surface. The steps:
 By the time you're ready to invoke Moloch's Sanctum, the loadout
 that experienced players actually wear has converged. A survey of
 recent ascensions from the public NetHack server shows what most
-winners carry. Here is the canonical kit, slot by slot:
+winners carry. Here is the typical kit, slot by slot:
 
-| Slot | Canonical pick | Notes |
+| Slot | Typical pick | Notes |
 |--------|------------------------|---------------------------------------|
 | **Body** | Dragon scale mail | Gray (magic resistance) or silver (reflection) are the popular picks; blue (shock) also works. |
 | **Cloak** | Cloak of magic resistance | Or a robe for casters. Magic resistance is non-negotiable in Gehennom. |
