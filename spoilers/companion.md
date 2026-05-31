@@ -8270,9 +8270,9 @@ path. Each one hits twice per turn with a touch attack dealing
   curse before it takes hold; without it, a unicorn horn may
   clear the timer in time, but the race is real and the timer
   is short.
-- **Famine** is the long one. Each touch is 8d8 damage and 40
-  to 79 turns of hunger taken straight out of you. No single
-  swing starves you. Three swings in a row will.
+- **Famine** kills by accumulation. Each touch is 8d8 damage
+  and 40 to 79 turns of hunger taken straight out of you. No
+  single swing starves you. Three swings in a row will.
 
 A slight mercy that is new to 5.0: if Pestilence or Famine land
 their first attack on a turn, their second downgrades to a stun.
