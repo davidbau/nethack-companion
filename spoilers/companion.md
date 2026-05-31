@@ -2131,8 +2131,8 @@ when you see them, and be ready for what is on the other side.
 
 *Elbereth* is Sindarin for "Star-Queen," one of the Elvish names
 of **Varda Elentári**, highest of the Valar in J.R.R. Tolkien's
-*Silmarillion* — the one who set the stars in the sky. In *The
-Lord of the Rings* the Elves invoke her name for protection
+*Silmarillion* and the one who set the stars in the sky. In
+*The Lord of the Rings* the Elves invoke her name for protection
 against evil: Frodo cries *"O Elbereth! Gilthoniel!"* on
 Weathertop and the Witch-king recoils, and Sam invokes her in
 Shelob's lair to make the Phial of Galadriel burn brighter.
@@ -2148,10 +2148,10 @@ dungeon floor is an appeal to a higher power for safe ground.
 Writing the word **Elbereth** on the floor creates a protective
 ward. Most monsters will not melee-attack you while you stand on an
 Elbereth square; they mill around, frustrated, instead. The ward
-applies whether you wrote it or found it already engraved, and the
-underlying engraving method (dust, scratched, burned) doesn't
-affect the strength of the protection — only how long the engraving
-will survive.
+applies whether you wrote it or found it already engraved, and
+the underlying engraving method (dust, scratched, burned) does
+not affect the strength of the protection, only how long the
+engraving will survive.
 
 ##### Rules of the ward
 
@@ -2174,23 +2174,23 @@ will survive.
 
 ##### The defile rule (important)
 
-If you attack a monster while standing on Elbereth — melee, thrown
-weapon, or wand zap — and that monster *would* have feared the
-ward (or is peaceful), the engraving is **deleted instantly, in
-full, regardless of how it was made.** Even a burned-permanent
-Elbereth disappears in one swing.
-You take an **alignment hit** ("You feel like a hypocrite") and see
-the message *"The engraving beneath you fades."* The hit is a flat
-−5 if your alignment record is comfortably positive (above +5);
-otherwise it's a random −1 to −5.
+If you attack a monster while standing on Elbereth (whether by
+melee, thrown weapon, or wand zap), and that monster *would*
+have feared the ward, or is peaceful, the engraving is
+**deleted instantly, in full, regardless of how it was made.**
+Even a burned-permanent Elbereth disappears in one swing. You
+take an **alignment hit** ("You feel like a hypocrite") and see
+the message *"The engraving beneath you fades."* The hit is a
+flat −5 if your alignment record is comfortably positive
+(above +5); otherwise it is a random −1 to −5.
 
-The durability table doesn't show this: "permanent" and
+The durability table doesn't show this. "Permanent" and
 "semi-permanent" describe resistance to *passive* wear (monster
 footsteps, erosion). Your own hostile action wipes the word
-regardless of tier. So Elbereth is strictly **defensive**.
-Use it to heal, drink a potion, read a scroll, swap gear, regroup.
-Any attack from on top — melee, thrown, or zapped — defiles it, so
-step off when you mean to fight back.
+regardless of tier. So Elbereth is strictly **defensive**. Use
+it to heal, drink a potion, read a scroll, swap gear, regroup.
+Any attack from on top defiles it, so step off when you mean
+to fight back.
 
 ##### Practical use
 
@@ -2201,12 +2201,13 @@ either step off the dust ward to keep it for next time (it survives
 until a monster steps on the square), or upgrade to something more
 durable.
 
-For a permanent safe spot, useful for stashing items, resting at a
-fixed retreat point, or anchoring a corridor fight — burn the word
-with a wand of fire or lightning. One turn, no interruption risk,
-no impairment penalty, no wear. A semi-permanent engraving (athame,
-weapon, gem, wand of digging) is the middle ground: durable, but
-the slow methods can be interrupted mid-word.
+For a permanent safe spot, useful for stashing items, resting
+at a fixed retreat point, or anchoring a corridor fight, burn
+the word with a wand of fire or lightning. One turn, no
+interruption risk, no impairment penalty, no wear. A
+semi-permanent engraving (athame, weapon, gem, wand of digging)
+is the middle ground: durable, but the slow methods can be
+interrupted mid-word.
 
 While levitating, you can't engrave with your finger or your
 weapon: the game refuses both. A wand of fire, lightning, cold,
@@ -2217,10 +2218,12 @@ Elbereth into the floor from a wand of fire while floating still
 works.
 
 A **scroll of scare monster** dropped on the floor acts like
-Elbereth on its square, doesn't erode, and works while you're not
-standing on it. The catch: it disappears one read after you pick
-it up, so leave it where you want the safe spot. The Castle wand
-chest is parked on top of a cursed one for exactly this reason.
+Elbereth on its square. It does not erode and works while you
+are not standing on it. The catch: picking it up may destroy it
+(cursed scrolls crumble on the first pickup, uncursed on the
+second), so leave it where you want the safe spot. The Castle
+wand chest is parked on top of a cursed one for exactly this
+reason.
 
 <!-- audit
 2026-05-18:
@@ -7091,22 +7094,22 @@ not the time for ambiguity:
   veteran's incantation. `blessed` because BUC defaults to random,
   `greased` deflects nymph theft and Rider grabs, `fixed` (or
   `erodeproof`) locks erosion, `+3` is the safe enchantment ceiling.
-- "gray dragon scale mail" alone lets the dice pick blessed/
-  cursed and enchantment — a bare wish can roll cursed. You
-  had *one* wish; spell out the BUC and the plus. And don't
-  forget "scale" — "gray dragon mail" hands you a scroll of
-  mail instead.
+- "gray dragon scale mail" alone lets the dice pick the BUC
+  and the enchantment, so a bare wish can land cursed. You had
+  *one* wish; spell out the BUC and the plus. And don't forget
+  "scale": "gray dragon mail" alone hands you a scroll of mail
+  instead.
 - Artifact wishes get *harder* as artifacts accumulate. The
   denial roll scales with the total artifacts in the world
   (yours, generated, even bones-file ones), and your
   artifact-wish counter ticks whether or not the artifact
   actually appears. Quest artifacts are absolutely blocked.
-- A few targets are silently nerfed into mundane substitutes:
-  the **Amulet of Yendor** becomes a fake amulet, the **Bell
+- A few targets are silently nerfed into mundane substitutes.
+  The **Amulet of Yendor** becomes a fake amulet, the **Bell
   of Opening** a plain bell, the **Book of the Dead** blank
-  paper, the **Candelabrum** a tallow candle, and — relevant
-  after all that lamp-rubbing — a wish for a **magic lamp**
-  hands you an ordinary oil lamp.
+  paper, and the **Candelabrum** a tallow candle. A wish for
+  a **magic lamp** also fails, handing you an ordinary oil
+  lamp. Cruel, after all that lamp-rubbing.
 
 ---
 
@@ -9502,10 +9505,10 @@ to keep visiting (the Gnomish Mines general store is a popular
 choice), but don't deposit more than you expect to spend there.
 
 (A more inventive use, called *credit cloning*: drop gold inside
-the shop, then lure a gold-loving monster — an orc, a leprechaun —
-to pick it up, walk it outside, and kill it. The credit stays with
-the shopkeeper and the gold comes back to you. It's one of
-NetHack's older shop-cheese routines.)
+the shop, then lure a gold-loving monster such as an orc or a
+leprechaun to pick it up, walk it outside, and kill it. The
+credit stays with the shopkeeper and the gold comes back to you.
+It is one of NetHack's older shop-cheese routines.)
 
 **Debit** is the inverse: it accrues when you *use* an unpaid item
 inside the shop (read a scroll, quaff a potion, zap a wand) and you
@@ -9528,9 +9531,9 @@ unfazed by [Elbereth](#elbereth). Pay the bill at the door.
 A shopkeeper is one of the toughest NPCs in the game: high HP,
 good AC, hits hard, and unfazed by Elbereth or by the kind of
 clever escape that works on other monsters. They also see
-everything — they track every item you pick up and every item
-that enters the shop, even when you're invisible. The practical
-consequences for the player:
+everything: the shopkeeper tracks every item you pick up and
+every item that enters the shop, even when you are invisible.
+The practical consequences for the player:
 
 - Shopkeepers block the door whenever you have unpaid items.
 - If you break something in the shop (a potion, a wand), you pay
@@ -9558,11 +9561,11 @@ consequences for the player:
 Beyond the rules, a few tactical habits pay off:
 
 - **Drop everything at the door to see your bill.** Standing on
-  the door square, drop your whole inventory; the shopkeeper's
+  the door square, drop your whole inventory and the shopkeeper's
   bill highlights the items you owe for. The shopkeeper isn't
-  guessing — the game tracks unpaid items precisely — but it's a
-  handy way to recall what you actually picked up when the shop
-  has a hundred lookalikes.
+  guessing (the game tracks unpaid items precisely), but it is
+  a handy way to recall what you actually picked up when the
+  shop has a hundred lookalikes.
 - **Sell to build credit.** Credit acts as gold you can spend in
   that shop, and credit doesn't get stolen by nymphs or fall into
   pits. Selling a stack of useless daggers to a weapon shop is a
@@ -9576,8 +9579,8 @@ Beyond the rules, a few tactical habits pay off:
   shopkeeper is still inside, the stock is still unpaid, and
   breaking the door down to get in just earns you a normal shop
   visit plus an angry shopkeeper. (In Orcus Town the shopkeepers
-  are usually dead by the time you arrive — Orcus killed them —
-  so the items there often *are* ownerless.)
+  are usually dead by the time you arrive, killed by Orcus's
+  ambient aura, so the items there often *are* ownerless.)
 
 The best strategy is usually to play fair: sell what you don't need,
 buy what you do, and use the pricing system to identify as much as
