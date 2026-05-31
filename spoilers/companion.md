@@ -7662,7 +7662,10 @@ Once you're across, the Castle contains:
   alcoves; the storerooms hold random fodder.
 - A **central hallway lined with five trap doors**. Stepping on
   one drops you straight to the Valley of the Dead, which is rarely
-  what you want at this stage. Watch the floor.
+  what you want at this stage. Watch the floor. The trap doors
+  are also the *only* way down from the Castle: the level has no
+  conventional `>` stair to Gehennom, so when you are ready to
+  descend, you do so by deliberately stepping on one.
 - A **fountain** in the moat-side corridor — usable in emergencies
   but not worth risking the wand of wishing for.
 - A **moat** surrounding the fortress, occupied by giant eels and
