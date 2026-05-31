@@ -6534,9 +6534,9 @@ boots over a moat is the moment you'll see why.
 - strategy aligned with NetHackWiki Spellbook, Spellcasting: Int + 4 + XL/2 − 2·level success formula, blessed book auto-success, Pw = 5 × level (https://nethackwiki.com/wiki/Spellbook, https://nethackwiki.com/wiki/Spellcasting)
 -->
 
-Magic in the Mazes is less "wave a wand and sparkles happen" and
-more "laboriously study a crumbling book, hope it doesn't go off in
-your face, and then set things on fire with your mind." Spells are
+Magic in the Mazes is hard-won. You study a crumbling spellbook,
+hope it doesn't explode in your face, and earn the power to set
+things on fire with your mind. Spells are
 reusable abilities learned from spellbooks. Unlike scrolls (consumed
 on use) or wands (limited charges), spells can be cast repeatedly as
 long as you have mana (Pw, power) and the spell hasn't expired from
