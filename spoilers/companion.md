@@ -3803,8 +3803,9 @@ to donate anything at all also costs you alignment with your god.
 To convert a cross-aligned altar, sacrifice ordinary fresh
 corpses on it. Each attempt either flips the altar to your god
 (success), costs you Luck (failure), or, if your god is already
-angry, converts *you* to the altar's alignment instead. Better
-odds at higher experience level. Worth the risk when you need a
+angry, converts *you* to the altar's alignment instead. Below
+XL 10 the failure rate is high enough that you are likely to
+lose Luck before the altar flips. Worth the risk when you need a
 co-aligned altar for sacrifice gifts, holy water, or BUC testing.
 
 Two complications worth knowing. A *successful* conversion can
