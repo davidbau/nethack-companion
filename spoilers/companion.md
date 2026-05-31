@@ -7538,158 +7538,157 @@ artifact**.
 - blessed scroll of genocide on class 'L' wipes lich/demilich/master lich/arch-lich (read.c:2638-3015 do_class_genocide, monsters.h:1864-1899 four S_LICH entries); Wizard of Yendor is S_HUMAN (monsters.h:2847-2858), not affected
 -->
 
-Below the Castle, the dungeon changes. The corridors give way to
-mazes. The monsters give way to demons. The comforting knowledge
-that you can pray to your god for help gives way to silence: in
-Gehennom, you walk beyond the protective gaze of your god.
+Below the Castle the dungeon changes its character. Corridors
+give way to mazes, ordinary monsters to demons. Worst of all,
+your god goes silent. Prayer fails in Gehennom, and from this
+point on you survive on what you packed at the Castle.
 
-This is the part of the game that separates tourists from
-ascenders. Everything you've prepared for has been leading here.
+This is the stretch of the game that separates tourists from
+ascenders. Everything you have prepared for has been leading
+here.
 
 #### The Valley of the Dead
 
-The very first level of Gehennom, immediately below the Castle, is
-a named special level called the **Valley of the Dead**. You'll
-see the arrival message — *"You arrive at the Valley of the
-Dead..."* — and the dungeon overview will mark it for you. It's
-a wide hand-designed map with three irregular graveyards scattered
+The first level of Gehennom, immediately below the Castle, is
+the **Valley of the Dead**. The arrival message reads *"You
+arrive at the Valley of the Dead..."* and the dungeon overview
+marks the level for the rest of the game. The map is a wide
+hand-designed level with three irregular graveyards scattered
 across it and a permanent **shrine to Moloch** in the upper-left
-corner (an unaligned high altar; do not pray here). Walls are
-non-diggable everywhere, so you can't shortcut through them, and
-the level is flagged `noteleport` and `nommap` — magic mapping
-won't reveal it and teleportation doesn't work.
+corner. The shrine sits on an unaligned high altar; do not pray
+here. The walls are non-diggable everywhere, so no shortcuts,
+and both `noteleport` and `nommap` are set, which means magic
+mapping will not reveal the level and teleportation does not
+work.
 
-The morbid detail worth noticing: scattered across the level are
+A morbid detail worth noticing. Scattered across the level are
 **dead bodies of every player role** the dungeon has ever seen
-descend — two corpses each of Archeologists, Barbarians, Cavemen,
+descend: two corpses each of Archeologists, Barbarians, Cavemen,
 Healers, Knights, Rangers, Rogues, Samurai, Tourists, Valkyries,
-and Wizards. Pointedly absent: **no Priests, no Monks** (maybe
-Moloch has a special fate reserved for members of those classes).
+and Wizards. Pointedly absent: no Priests and no Monks. Moloch
+may have a special fate reserved for members of those classes.
 
 #### What's Different in Gehennom
 
-- **No prayer.** Your god is deaf to you in Gehennom (unless you're
-  a Moloch worshipper, and you're not). No emergency healing. No
-  food rescue. No curse removal via divine intervention. Pack
-  accordingly, because down here, you are completely on your own
-- **Fire everywhere.** Fire traps litter the corridors. Demons
-  breathe fire as casually as you breathe air. If you don't have
-  fire resistance by now, turn around
-- **Hot ground.** In 5.0, the ground itself is hot
-  enough to shatter potions dropped on the floor. Keep everything
-  in a bag at all times
-- **Demon lords.** Named demon lords (Orcus, Baalzebub, Asmodeus,
-  Juiblex, Yeenoghu, and if you're very unlucky, Demogorgon) hold
-  court on specific levels. Each is a major battle. Several can
-  summon reinforcements. All of them are angry you're here.
-  However, **most demon lords can be bribed.** On first sight, if
-  you haven't already attacked them, a major demon will name a
-  price in gold for safe passage. The demand is a random fraction
-  (roughly 20–100%) of the gold sitting **in your main inventory**
-  — not gold inside containers — so a well-known runner-up trick
-  is to **stash most of your gold in a bag of holding before
-  approaching the throne**: the demand shrinks proportionally, and
-  a few hundred zm bribe can buy off a prince who would otherwise
-  have demanded thousands. The alternative is fighting a high-level
-  boss, so unless you specifically want the XP or sacrifice corpse,
-  bribery is often the better trade. (Wielding Excalibur or
-  Demonbane closes off the bribery option — they refuse to talk and
-  attack on sight.) The Riders on the Astral Plane and a small
-  handful of demons (notably Demogorgon) won't take a bribe; the
-  rest usually will
-- **Teleportation restrictions.** In 5.0, teleportation
-  is blocked on a demon lord's lair level while that lord still
+- **No prayer.** Your god is deaf to you in Gehennom (unless you
+  are a Moloch worshipper, and you are not). No emergency healing,
+  no food rescue, no curse removal via divine intervention. Pack
+  accordingly; from here on you are on your own.
+- **Fire everywhere.** Fire traps litter the corridors, and demons
+  breathe fire as casually as you breathe air. If you do not have
+  fire resistance by now, turn around.
+- **Hot ground.** In 5.0, the ground itself is hot enough to
+  shatter potions dropped on the floor. Keep everything in a bag
+  at all times.
+- **Demon lords on specific levels.** Asmodeus, Baalzebub,
+  Juiblex, Orcus, Yeenoghu, and, very rarely, Demogorgon hold
+  court on private throne levels. Each fight is a major battle,
+  several can summon reinforcements, and all of them are angry
+  you are here. Their lairs and the bribery rules get their own
+  section below.
+- **Teleportation restrictions.** In 5.0, teleportation is
+  blocked on a demon lord's lair level while that lord still
   lives. Kill or banish them and the restriction lifts. In older
-  editions, most Gehennom levels permanently blocked teleportation
-- **Mazes.** Nearly every level is a maze. A wand of digging or
-  pickaxe isn't optional here; it's as essential as your weapon.
-  Dig straight lines to the stairs and don't look back
+  editions, most Gehennom levels permanently blocked teleportation,
+  which is no longer the case.
+- **Mazes.** Nearly every level is a maze. A wand of digging or a
+  pickaxe is no longer optional. Dig straight lines to the stairs
+  and don't look back.
 
 #### The demon-prince lairs
 
 Three of Gehennom's special levels are the personal thrones of
 **Asmodeus** (fire-, cold-, and poison-resistant, casts cold
 spells, carries wands of cold and fire), **Baalzebub** (the Lord
-of the Flies — gaze that stuns you and a poisonous bite that
+of the Flies, with a stunning gaze and a poisonous bite that
 drains Strength; his lair is a beetle-shaped maze), and
 **Juiblex** (the Faceless Lord, a slime that engulfs in melee
-and spits acid). All three sit alone in their lairs and **won't pursue**
-you, so you can avoid them entirely by skipping their level.
+and spits acid). All three sit alone in their lairs and **will
+not pursue** you, so you can avoid them entirely by skipping
+their level.
 
-**Asmodeus and Baalzebub are bribable**: the demand is a random
-fraction of the gold in your main inventory, so **stash gold in a
-bag of holding before walking up to the throne** and a few hundred
-zm will buy off a prince who would otherwise have demanded
-thousands. Lawful characters get a sweetener: all four bribable
-demon princes are themselves lawful, and they discount the demand
-by half for a co-aligned visitor. **Juiblex is not bribable** —
-only the Arch-Devil demons with the bribe disposition (Geryon,
-Dispater, Baalzebub, Asmodeus) accept gold; Juiblex, Yeenoghu,
-Orcus, and Demogorgon attack on sight regardless. Fighting Juiblex
-is viable late game (wand of death works on all four), but expect
-a real fight. None of their corpses is useful for sacrifice the
-way a fresh weak monster's would be. One thing the demon never
-forgets: a *refused* bribe converts the prince to permanent
-hostility, and they will not offer terms again. Bribe or fight;
-don't dither.
+**Asmodeus and Baalzebub are bribable.** The demand is a random
+fraction of the gold in your main inventory, so **stash gold in
+a bag of holding before walking up to the throne** and a few
+hundred zm will buy off a prince who would otherwise have
+demanded thousands. Lawful characters get a sweetener. All four
+bribable demon princes are themselves lawful, and they discount
+the demand by half for a co-aligned visitor. **Juiblex is not
+bribable**, and neither are Yeenoghu, Orcus, or Demogorgon. Only
+the Arch-Devil demons with the bribe disposition (Geryon,
+Dispater, Baalzebub, Asmodeus) accept gold. The rest attack on
+sight regardless of how friendly your wallet looks.
+
+Fighting Juiblex is viable late game (a wand of death works on
+all four), but expect a real fight. None of their corpses is
+useful for sacrifice the way a fresh weak monster's would be.
+One thing the demon never forgets: a *refused* bribe converts
+the prince to permanent hostility, and he will not offer terms
+again. Bribe or fight. Don't dither.
+
+**Wielding Excalibur or Demonbane closes off bribery entirely.**
+Those artifacts refuse to talk and attack on sight, so a Lawful
+character planning to bribe should sheathe them before approach.
 
 #### Vlad's Tower
 
-A three-level tower branching **upward** off Gehennom (one of the
-only side-branches in the lower dungeon). **Vlad the Impaler** —
-a unique vampire lord — guards the **Candelabrum of Invocation**
-at the top. Climb the tower, kill Vlad, take the Candelabrum.
+A three-level tower branching **upward** off Gehennom, one of
+the only side-branches in the lower dungeon. **Vlad the
+Impaler**, a unique vampire lord, guards the **Candelabrum of
+Invocation** at the top. Climb the tower, kill Vlad, take the
+Candelabrum.
 
-The tower also contains a **special throne**, and 5.0 has made it
-both more rewarding and more painful. The good news: it never
+The tower also contains a **special throne**, and 5.0 has made
+it both more rewarding and more painful. The good news: it never
 disintegrates from sheer use the way ordinary thrones do, so you
 can sit on it again and again. The bad news: you will, because
 the prize is rare. Each sit rolls one of thirteen effects. Four
 of them grant a wish (the throne *does* disintegrate after the
-wish, having spent its power). The other nine are bad: permanent
-level drain, an inventory-coating layer of grease (your weapon
-will slip, your shield will fall off), a stripped intrinsic, a
-forced level teleport to the vibrating-square level (sometimes
-useful, often not), three summoned demons, a confused-blessed
-remove curse on your gear, forced polymorph, acid damage in
-eighty-HP gulps if you don't have acid resistance, or a randomized
-stat shuffle that will probably make several of your scores worse.
+wish, having spent its power). The other nine are bad:
+permanent level drain, an inventory-coating layer of grease
+(your weapon will slip, your shield will fall off), a stripped
+intrinsic, a forced level teleport to the vibrating-square level
+(sometimes useful, often not), three summoned demons, a
+confused-blessed remove curse on your gear, forced polymorph,
+acid damage in eighty-HP gulps if you do not have acid
+resistance, or a randomized stat shuffle that will probably make
+several of your scores worse.
 
 The arithmetic: only one sit in three picks an effect at all
-(the other two roll "you feel out of place" and do nothing); of
-those that fire, 4/13 are the wish. Unconditional rate is about
-1 in 10, so plan on roughly ten sits before the wish lands, with
-about seven bad effects absorbed along the way. Plan accordingly. Stand at full HP,
-leave any precious gear behind (a grease hit coats your whole
-pack and makes your hands slippery for 100 to 200 turns, dropping
-items when you try to use them), and have acid
-resistance or magic resistance ready before you sit. If you don't
-want a forced wish (say, you've already used your Castle wish and
-Amulet wish and want to keep this one for the ascension kit), you
-can sit at any time; you don't have to do it right now. The
-throne stays put unless something destroys it.
+(the other two roll "you feel out of place" and do nothing), and
+of those that fire, 4/13 are the wish. The unconditional rate is
+about 1 in 10, so plan on roughly ten sits before the wish
+lands, with about seven bad effects absorbed along the way.
+Stand at full HP, leave any precious gear behind (a grease hit
+coats your whole pack and makes your hands slippery for 100 to
+200 turns, dropping items when you try to use them), and have
+acid resistance or magic resistance ready before you sit. If you
+do not want a forced wish right now (say, you have already used
+your Castle wish and Amulet wish and want to keep this one for
+the ascension kit), you can come back later. The throne stays
+put unless something destroys it.
 
 #### Orcus Town
 
-**Orcus** is a god of the underworld in Roman mythology — a
-chthonic figure who punishes broken oaths and devours the dead. In
-NetHack he's a unique demon prince (`&`, level 66, fast flier),
-the **Prince of Undead**, who casts spells, swings a weapon, claws
-twice, and stings for strength drain. His signature artifact is
-the **Wand of Orcus** — a wand of death by another name; his
-fingertip cantrip is also a death ray, so wear an amulet of life
-saving and consider opening with your own wand of death rather
-than a melee approach.
+**Orcus** is a god of the underworld in Roman mythology, a
+chthonic figure who punishes broken oaths and devours the dead.
+In NetHack he is a unique demon prince (`&`, level 66, fast
+flier), the **Prince of Undead**, who casts spells, swings a
+weapon, claws twice, and stings for strength drain. His
+signature artifact is the **Wand of Orcus**, a wand of death by
+another name. His fingertip cantrip is also a death ray, so wear
+an amulet of life saving and consider opening with your own wand
+of death rather than a melee approach.
 
-His level is a ghost town: a normal shopping district with all
-the shopkeepers and customers killed off by his ambient aura, the
-buildings stocked with random loot instead of for-sale inventory.
-What's left is an honor guard of liches, vampires, and ghouls.
-Somewhere on the level the dungeon guarantees either a **magic
-lamp** or a **magic marker** (50/50). Walk carefully (fire and
-magic traps everywhere), deal with the residents, and lift the
-lamp or marker on your way out. Either is a real supplement to
-the Castle wand's single charge.
+His level is a ghost town. A normal shopping district has been
+emptied: the shopkeepers and customers were all killed off by
+his ambient aura, and the buildings are stocked with random loot
+instead of for-sale inventory. What remains is an honor guard of
+liches, vampires, and ghouls. Somewhere on the level the dungeon
+guarantees either a **magic lamp** or a **magic marker** (50/50).
+Walk carefully, since fire and magic traps are everywhere; deal
+with the residents, and lift the lamp or marker on your way out.
+Either is a real supplement to the Castle wand's single charge.
 
 #### The Wizard's Tower
 
@@ -7714,7 +7713,7 @@ just one more maze. Once the seal breaks, descend to find the
 **High Priest of Moloch** standing on the **high altar** with the
 **Amulet of Yendor**. The High Priest is a unique non-bribable
 boss who casts spells, summons minions, and aggrieves anyone in
-melee range — the standard answer is a wand of death or finger of
+melee range. The standard answer is a wand of death or finger of
 death from a safe distance.
 
 #### The Heist
@@ -7742,7 +7741,7 @@ frantic climb back to the surface. The steps:
    above Moloch's Sanctum, a single square vibrates when you step
    on it: *"You feel an unsettling vibration under your feet."*
    The square's position is random within the maze, so you have
-   to search by walking — scrolls of magic mapping help enormously.
+   to search by walking. Scrolls of magic mapping help enormously.
 
 4. **Perform the Invocation.** Standing on the vibrating square,
    with the Candelabrum lit and the Book in your pack, **`#invoke`
@@ -7753,31 +7752,33 @@ frantic climb back to the surface. The steps:
    **High Priest** (wand of death is the clean answer), walk onto
    the high altar, and pick up the **Amulet of Yendor**.
 
-6. **Begin the getaway.** The up-stair from the Sanctum now lifts
-   you out (it wouldn't before you had the Amulet). You're now on
-   the **Ascension Run** — every covetous monster in the game has
-   noticed, the Wizard of Yendor will keep teleporting to you to
-   take his Amulet back, and the Mysterious Force will keep
-   yanking you back down. Climb fast (see [The Ascension Run](#the-ascension-run)
-   below).
+6. **Begin the getaway.** The up-stair from the Sanctum now
+   lifts you out (it would not before you had the Amulet). You
+   are now on the **Ascension Run**. Every covetous monster in
+   the game has noticed, the Wizard of Yendor will keep
+   teleporting to you to take his Amulet back, and the
+   Mysterious Force will keep yanking you back down. Climb fast
+   (see [The Ascension Run](#the-ascension-run) below).
 
 #### Survival Tips
 
-- **Bring extra food** — you'll be moving fast and praying is not a reliable refill
-- **Bring scrolls of remove curse** — fast inventory cleanup when something goes wrong
+- **Bring extra food.** You will be moving fast and prayer is
+  not a reliable refill.
+- **Bring scrolls of remove curse.** Fast inventory cleanup when
+  something goes wrong.
 - **Dig, don't navigate.** Maze walls are faster to go through
-  than around
+  than around.
 - **Kill the Wizard quickly.** Every turn he lives is another
   summoned monster, another stolen item, another cursed piece of
-  gear. He'll come back (he always comes back), but the intervals
-  between his appearances give you breathing room
-- **The Amulet anchors you.** Level teleportation doesn't work
+  gear. He will come back (he always comes back), but the
+  intervals between his appearances give you breathing room.
+- **The Amulet anchors you.** Level teleportation does not work
   while you carry it. Every step back to the surface must be
-  climbed by foot
+  climbed by foot.
 - **Genocide the lich class.** A blessed scroll of genocide
-  applied to **L** removes liches, demiliches, master liches, and
-  arch-liches in one read. Some of the worst Gehennom threats,
-  gone for the rest of the run
+  applied to **L** removes liches, demiliches, master liches,
+  and arch-liches in one read. Some of the worst Gehennom
+  threats, gone for the rest of the run.
 
 ---
 
@@ -7804,13 +7805,13 @@ winners carry. Here is the canonical kit, slot by slot:
 | **Helm** | Helm of brilliance or helm of telepathy | Brilliance for casters; telepathy when you might be blind. |
 | **Gloves** | Gauntlets of power | Skip them only if you have a different STR strategy (e.g. a Knight with a +STR ring). |
 | **Boots** | Speed boots | **Universal.** |
-| **Shirt** | Hawaiian shirt or T-shirt | A free body slot under everything else — winners enchant it heavily (typically blessed +4 or +5) for several extra AC at no cost. |
+| **Shirt** | Hawaiian shirt or T-shirt | A free body slot under everything else. Winners enchant it heavily (typically blessed +4 or +5) for several extra AC at no cost. |
 | **Shield** | Mostly skipped | Reflection comes from silver dragon scale mail or an amulet instead; two-weapon fighters can't use a shield anyway. |
 | **Amulet** | Amulet of life saving | The "extra life" plan. |
 | **Ring (L)** | Free action | Anti-paralysis is non-negotiable on the Astral Plane. |
 | **Ring (R)** | Slow digestion, conflict, or regeneration | Conflict is the standard Astral-Plane crowd-control choice. |
 | **Weapon** | Your role's quest artifact + a silver saber | Silver saber appears in most builds as the off-hand because silver bypasses demon resistances. |
-| **Pack** | Bag of holding, magic lamp, unicorn horn, luckstone, wand of death, multiple wands of teleport, seven candles, ≥5 holy water, a couple of blessed potions of full healing, a cockatrice corpse | The "bag-of-holding bundle." Holy water re-blesses items the Wizard or liches keep cursing in Gehennom; full healing is a one-action panic button; a wielded cockatrice corpse one-shots Riders (and other non-stoning-resistant nasties). Candles are for the Candelabrum — Izchak's Minetown lighting shop is an easy source. |
+| **Pack** | Bag of holding, magic lamp, unicorn horn, luckstone, wand of death, multiple wands of teleport, seven candles, ≥5 holy water, a couple of blessed potions of full healing, a cockatrice corpse | The "bag-of-holding bundle." Holy water re-blesses items the Wizard or liches keep cursing in Gehennom; full healing is a one-action panic button; a wielded cockatrice corpse one-shots Riders (and other non-stoning-resistant nasties). Candles are for the Candelabrum, and Izchak's Minetown lighting shop is an easy source. |
 | **Required loot** | Bell of Opening, Candelabrum of Invocation, Book of the Dead, Amulet of Yendor | The Invocation chain plus the prize. |
 
 A typical ascension AC sits in the **−25 to −40** range, but AC
@@ -7832,9 +7833,10 @@ was *behavior*:
   Invocation items, deep in Gehennom, chose to eat a stalker corpse
   while satiated and choked to death. The ring of slow digestion on
   her finger does not prevent choking.
-- **Out of escape consumables.** A Wizard on Dlvl 50 — within sight
-  of the Sanctum — burned the last wand-of-death charge without any
-  further escape route, then died blind and surrounded.
+- **Out of escape consumables.** A Wizard on Dlvl 50, within
+  sight of the Sanctum, burned the last wand-of-death charge
+  without any further escape route, then died blind and
+  surrounded.
 
 Keep at least one escape consumable within reach: a scroll of
 teleportation, a wand of digging, or an oilskin sack with a potion
@@ -7868,27 +7870,28 @@ through the Elemental Planes to the Astral Plane where your god
 awaits. Easy, right?
 
 **A free wish on pickup.** The moment you pick up the Amulet of
-Yendor, your god grants you a single wish on the next turn (it
-fires automatically — you don't need to invoke it). This is one
+Yendor, your god grants you a single wish on the next turn. It
+fires automatically; you do not need to invoke it. This is one
 of the most generous moments in the game. Have your wish list
-ready *before* you reach the Sanctum: gauntlets of power, a
-+5 weapon of your choice, blessed cloak of magic resistance, or
-whatever you're missing for the climb. You only get it once. A
-late-game favorite: a wish for a **cursed potion of gain level**.
-Drinking one while carrying the Amulet skips you up a whole
-Gehennom level without provoking the Mysterious Force.
+ready *before* you reach the Sanctum: gauntlets of power, a +5
+weapon of your choice, a blessed cloak of magic resistance, or
+whatever you are missing for the climb. You only get this wish
+once. A late-game favorite is a wish for a **cursed potion of
+gain level**. Drinking one while carrying the Amulet skips you
+up a whole Gehennom level without provoking the Mysterious
+Force.
 
-**Bring the authentic Amulet.** The climb out is always open:
-every up-stair in the Dungeons of Doom takes you closer to the
-surface regardless of what you carry. The **Astral plane portal**
-at the top of the Endgame ladder, however, won't open without
-the real Amulet of Yendor in your inventory. Only the Amulet you
-took off the High Priest's body in Moloch's Sanctum counts.
-Bones-pile Amulets are fakes (the game converts a dead
-adventurer's real Amulet to a fake when their corpse becomes a
-bones level), and a wish for an Amulet of Yendor silently
-substitutes a fake too. If you didn't pick yours up off the High
-Priest, you don't have the real one.
+**Bring the authentic Amulet.** The climb out is always open.
+Every up-stair in the Dungeons of Doom takes you closer to the
+surface regardless of what you carry. The **Astral plane
+portal** at the top of the Endgame ladder, however, will not
+open without the real Amulet of Yendor in your inventory. Only
+the Amulet you took off the High Priest's body in Moloch's
+Sanctum counts. Bones-pile Amulets are fakes (the game converts
+a dead adventurer's real Amulet to a fake when their corpse
+becomes a bones level), and a wish for an Amulet of Yendor
+silently substitutes a fake too. If you didn't pick yours up off
+the High Priest, you don't have the real one.
 
 The Ascension Run is the victory lap that keeps killing even the
 strongest adventurers. You have the most powerful artifact in the
@@ -7901,35 +7904,35 @@ The most exhilarating and terrifying stretch of the game.
 Four kinds of trouble run at once, all of them aimed at the
 Amulet in your pack:
 
-- **The Wizard of Yendor** periodically teleports to you, summoning
-  nasty monsters and trying to steal back his Amulet. He will not
-  stop.
-  Kill him each time; he always comes back. He is the world's most
-  persistent ex.
-- **The Amulet blocks teleportation.** You can't level teleport
-  while carrying the Amulet. You must climb every single staircase
-  from the bottom of Gehennom to the surface. All of them. By foot.
+- **The Wizard of Yendor** periodically teleports to your
+  location, summoning monsters and reaching for the Amulet. He
+  will not stop. Kill him each time. He always comes back. He is
+  the world's most persistent ex.
+- **The Amulet blocks teleportation.** You cannot level teleport
+  while carrying the Amulet. Every single staircase from the
+  bottom of Gehennom to the surface has to be climbed by foot.
 - **Covetous monsters.** Demon lords and the Wizard can warp
-  directly to your position and attack. They specifically target you
-  for the Amulet, because apparently everyone wants this thing.
-- **The Mysterious Force.** While carrying the Amulet in Gehennom,
-  each time you climb stairs there's a chance the force grabs you
-  instead. Often it just shuffles you elsewhere on the same level;
-  sometimes it drops you **down** a level (Chaotic max), two
-  levels (Neutral max), or even three (Lawfuls only). The
-  worst yank is hardest on Lawfuls and gentlest on Chaotics: a
-  Chaotic climb can never lose more than one level at a time. In
-  5.0 the trigger chance also **decays** as it fires — every yank
-  slightly reduces the chance of the next one, and decays faster
-  when the yank was deeper, so over the whole climb the per-step
-  trigger rate stays roughly even across alignments. The force
-  stops the moment you climb out of Gehennom, and it never fires
-  on the bottom four levels.
+  directly to your position and attack. They are specifically
+  targeting you for the Amulet, because apparently everyone
+  wants this thing.
+- **The Mysterious Force.** While you carry the Amulet in
+  Gehennom, each time you climb stairs there is a chance the
+  force grabs you instead. Often it just shuffles you elsewhere
+  on the same level. Sometimes it drops you **down** a level
+  (Chaotic max), two levels (Neutral max), or even three
+  (Lawfuls only). The worst yank is hardest on Lawfuls and
+  gentlest on Chaotics: a Chaotic climb can never lose more than
+  one level at a time. In 5.0 the trigger chance also **decays**
+  as it fires. Every yank slightly reduces the chance of the
+  next one, and the decay is faster when the yank was deeper,
+  so over the whole climb the per-step rate stays roughly even
+  across alignments. The force stops the moment you climb out
+  of Gehennom, and it never fires on the bottom four levels.
 - **Consider a Chaotic detour.** A helm of opposite alignment
   worn just before the climb flips you to Chaotic and caps every
-  yank at one level. The cost: your Astral offering then goes to
-  the Chaotic altar, since the altar check uses your *current*
-  alignment. An optimization choice, not a free lunch.
+  yank at one level. The cost is that your Astral offering then
+  goes to the Chaotic altar, since the altar check uses your
+  *current* alignment. An optimization choice, not a free lunch.
 
 #### Strategy
 
