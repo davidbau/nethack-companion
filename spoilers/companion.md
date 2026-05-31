@@ -1259,7 +1259,9 @@ route then.
 
 ### Branches and Landmarks
 
-A practical tour of the branches and landmarks, in roughly the order you'll visit them.
+The main trunk of the dungeon goes straight down, but most of
+the rewards wait off to the side, in branches and at named
+landmarks roughly in the order that follows.
 
 **Sokoban or Mines first?** The Mines entrance shows up first
 (Dlvl 2 to 4), but the *strategic* suggestion for most beginners
