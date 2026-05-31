@@ -5312,9 +5312,9 @@ and stand on it. It works like a permanent [Elbereth](#elbereth),
 frightening most monsters away. The first time you pick up an
 uncursed scroll, it survives but gets "stamped"; the next pickup
 ends with *"The scroll turns to dust as you pick it up,"* and
-the scroll is gone. A cursed scroll skips the stamp and dusts
-on the first pickup, so [BUC-test](#blessed-uncursed-cursed-buc)
-before deploying.
+the scroll is gone. A cursed scroll dusts on the first pickup.
+Drop where you want the safe spot, not where you will need to
+relocate.
 
 []{#scroll-teleportation}
 **Teleportation.** Uncursed teleports you randomly on the level.
