@@ -34,9 +34,8 @@ who do have taken time to prepare: they have read the myths,
 learned the lore, and listened to the warnings of those who
 have gone before. The following pages gather the wisdom of generations
 of adventurers, and now seers have updated the canon with insights on
-the latest dungeon changes. Each piece of advice has been paid for
-by the lives of those who did not return and by the painstaking
-observations of those who did.
+the latest dungeon changes. Every word has been paid for by the lives of those who did not
+return and by the painstaking observations of those who did.
 
 **A word of caution.** This guide will change how you experience
 the Mazes. Once you know that a floating eye can paralyze you
