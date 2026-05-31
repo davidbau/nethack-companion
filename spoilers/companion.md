@@ -1755,10 +1755,9 @@ barracks, dragons guarding the storerooms, and a court of
 high-letter monsters in the throne room. Hidden in a chest in
 one of the four corner towers is the **wand of wishing**.
 
-The Castle is the last step of the dungeon proper and the gateway
-to [Gehennom](#gehennom). For how to open the drawbridge and what
-to do once you're inside, see [The Castle](#the-castle) in Part
-Six.
+The Castle also serves as the gateway to [Gehennom](#gehennom).
+For how to open the drawbridge and what to do once you're
+inside, see [The Castle](#the-castle) in Part Six.
 
 ---
 
