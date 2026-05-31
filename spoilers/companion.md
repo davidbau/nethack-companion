@@ -936,7 +936,7 @@ AC / attack details on every monster, see the
 | [`S`](#snakes-s)    | [Snakes](#snakes-s)            | Cobras and pit vipers poison. Water moccasins come from fountains.                                   |
 | [`t`](#trappers-and-lurkers-t)    | [Trappers / lurkers above](#trappers-and-lurkers-t) | Hide in plain sight on floor or ceiling and [engulf you](#engulfment) when you walk under/onto them. |
 | [`T`](#trolls-t)    | [Trolls](#trolls-t)            | [Regenerate. They come back from the dead unless you eat or tin the corpse](#a-note-on-trolls). |
-| [`u`](#unicorns-and-horses-u)    | [Horses / unicorns](#unicorns-and-horses-u) | Horses are usually mountable, mostly peaceful in the wild. Unicorns are color-coded by alignment: same-aligned spawn peaceful, cross-aligned hostile. The gem-throwing negotiation playbook is in [Luck and Fortune](#luck-and-fortune). |
+| [`u`](#unicorns-and-horses-u)    | [Horses / unicorns](#unicorns-and-horses-u) | Horses are usually mountable, mostly peaceful in the wild. Unicorns are color-coded by alignment: same-aligned spawn peaceful, cross-aligned hostile. Throw them gems; the gem-throwing negotiation playbook is in [Luck and Fortune](#luck-and-fortune). |
 | [`U`](#umber-hulks-u)    | [Umber hulk](#umber-hulks-u)        | Confuses on sight. Avoid looking at them directly.                                                   |
 | [`v`](#vortices-v)    | [Vortices](#vortices-v)          | [Engulfing](#engulfment) wisps. Air, fire, ice, and steam vortices each apply their element to whatever they engulf. Kill at range. |
 | [`w`](#worms-w)    | [Worms](#worms-w)             | Long worms grow tail segments as they move and can be a corridor in themselves. |
