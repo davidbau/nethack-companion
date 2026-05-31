@@ -402,7 +402,16 @@ def render_bubble(b: Bubble, x: int, y: int) -> list[str]:
         parts.append(text_el(cx, title_y, title,
                              font_size=title_size, font_weight=title_weight,
                              fill=title_color, text_anchor='middle'))
-        parts.append(text_el(cx, detail_y, b.detail,
+        # The detail line is italic, but if it starts with the star marker
+        # we keep the star itself upright via a tspan override so the glyph
+        # reads cleanly rather than tilting along with the prose.
+        detail_content = b.detail
+        if detail_content.startswith('★ '):
+            detail_content = (
+                '<tspan font-style="normal">★ </tspan>'
+                + detail_content[2:]
+            )
+        parts.append(text_el(cx, detail_y, detail_content,
                              font_size=detail_size, font_style='italic',
                              fill=detail_color, text_anchor='middle'))
     else:

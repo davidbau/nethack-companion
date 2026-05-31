@@ -63,11 +63,14 @@ caption = (
     #   dmap-dod.pdf:    570 x 458.25
     #   dmap-geh.pdf:    570 x 510.75  (combined aspect h/w = 1.700)
     #   dmap-planes.pdf: 570 x 224.25
-    # A5 text area is 7.018 in tall. At width 4.0 in, the DoD+Geh
-    # stack is 6.8 in tall, with 0.2 in slack inside the text area
-    # (we use \centerline rather than the center env so there's no
-    # env padding eating that budget). Planes uses the same width.
-DMAP_WIDTH = "4.0in"
+    # A5 text area is 7.018 in tall. At width 4.12 in (3% up from
+    # the original 4.0 in), the DoD+Geh stack is about 7.00 in
+    # tall, sitting just inside the text area with a thin slack
+    # margin. (We use \centerline rather than the center env so
+    # there's no env padding eating that budget.) The Planes
+    # figure on the facing page uses the same width and so scales
+    # in matching proportion.
+DMAP_WIDTH = "4.12in"
 replacement = (
     '\n\n```{=latex}\n'
     '\\begingroup\\setlength{\\parskip}{0pt}\n'
