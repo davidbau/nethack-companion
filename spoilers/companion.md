@@ -1225,23 +1225,35 @@ those all just print *"nothing seems to happen."*
 
 #### Vaults
 
-A vault is a tiny walled-off 2×2 room not connected to the rest of
-the level. Each one holds a pile of gold. You'll usually find one by
-digging through stone or by teleporting in. The engraving *"ad
-aerarium"* on a level marks one nearby (see
-[Engravings](#engravings)) — though a scroll of gold detection
-(or object detection) will spotlight the gold pile through the
+A vault is a tiny walled-off 2×2 room not connected to the rest
+of the level. Each one holds a pile of gold. You will usually
+find one by digging through stone or by teleporting in. The
+engraving *"ad aerarium"* on a level marks one nearby (see
+[Engravings](#engravings)). A scroll of gold detection (or
+object detection) will spotlight the gold pile through the
 walls, and magic mapping reveals the closet directly.
 
-After about thirty turns inside, a guard appears at the doorway and
-asks *"Who are you?"* The trick: answer *Croesus* (also accepted as
-*Kroisos* or *Creosote*). The guard takes that as the name of the
-vault's owner and politely leaves, gold untouched. If you give your
-real name, the guard escorts you out the long way and the gold goes
-with him. If you're Lawful, lying costs you one alignment.
+There is no door, and no obvious way out. After about thirty
+turns inside, a vault guard appears and asks *"Who are you?"*
+You have two real answers.
 
-If Croesus himself is dead (you killed him at Fort Ludios), claiming
-his name angers the guard. Use the real-name route then.
+**Tell the truth.** The guard demands you drop *all* your gold,
+opens a temporary corridor through the wall, leads you out, and
+re-seals the vault behind him. You lose every coin you were
+carrying, but you escape.
+
+**Answer *Croesus*** (also accepted as *Kroisos* or *Creosote*).
+The guard takes that as the name of the vault's owner and
+politely leaves. Lawful characters lose one point of alignment
+for lying. You keep your gold, but the guard does not open a
+corridor: you are now sealed in alone with your treasure.
+
+If you do not want to starve, follow the guard and leave the
+gold, unless you have a way to dig or teleport out on your own.
+
+If Croesus himself is dead (you killed him at Fort Ludios),
+the *Croesus* answer instead angers the guard. Use the real-name
+route then.
 
 ---
 
