@@ -758,10 +758,10 @@ dragon, while a gray `D` is a gray dragon (see
 [Field Guide to Dungeon Fauna](#field-guide-to-dungeon-fauna)).
 
 **Color memo: branch staircases turn yellow.** Staircases that
-lead into a sub-branch (Mines, Sokoban, the Quest, and so on)
-display in yellow once you've used them. Ordinary main-trunk
-stairs stay default-colored, so on a level with several stairs
-the yellow one is your way back into the branch.
+lead into a sub-branch (Mines or Sokoban) display in yellow
+once you've used them. Ordinary main-trunk stairs stay
+default-colored, so on a level with several stairs the yellow
+one is your way back into the branch.
 
 Item symbols are punctuation marks:
 
