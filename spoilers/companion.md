@@ -5811,7 +5811,8 @@ point of Luck lowers the chance of that going wrong.
 -->
 
 
-Two ring fingers. One neck. These are the most constrained equipment
+You can wear two rings (one on each hand) and one amulet
+(around your neck). These are the most constrained equipment
 slots in the game, which makes choosing what to wear a genuine
 strategic decision. Both rings and amulets have randomized
 appearances, and some of the best items in the game hide behind
