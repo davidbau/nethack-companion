@@ -2486,12 +2486,9 @@ time-tested tactics that keep adventurers breathing.
   want to fight from, not toward the monster. Arrive at the
   chokepoint a turn before they do, and they meet you on your
   terms.
-- **Use an inside corner when you find one.** Concave wall
-  corners (the kind you can stand behind) are common in the
-  Mines caves and some theme rooms, and uncommon in the main
-  Dungeon's rectangular floor plans. Where one is available,
-  stepping behind it costs an approaching monster a turn to
-  round, and you get a free hit as it arrives at the corner
+- **Step around a corner.** Inside corners provide a tactical
+  advantage: an approaching monster spends a turn rounding the
+  corner, and you get a free hit as it arrives at the corner
   square.
 - **Compare speeds before committing.** You move at speed 12 (or
   18 with speed boots). Most monsters fall between 6 and 18. If
