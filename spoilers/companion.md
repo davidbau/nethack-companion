@@ -2486,10 +2486,13 @@ time-tested tactics that keep adventurers breathing.
   want to fight from, not toward the monster. Arrive at the
   chokepoint a turn before they do, and they meet you on your
   terms.
-- **Step around a corner.** When no corridor is convenient, step
-  around a wall corner so the monster has to round it to reach
-  you. They spend a turn arriving at the corner square; you get
-  a free hit before they can swing back.
+- **Use an inside corner when you find one.** Concave wall
+  corners (the kind you can stand behind) are common in the
+  Mines caves and some theme rooms, and uncommon in the main
+  Dungeon's rectangular floor plans. Where one is available,
+  stepping behind it costs an approaching monster a turn to
+  round, and you get a free hit as it arrives at the corner
+  square.
 - **Compare speeds before committing.** You move at speed 12 (or
   18 with speed boots). Most monsters fall between 6 and 18. If
   the monster is faster, you cannot kite or retreat: commit to
