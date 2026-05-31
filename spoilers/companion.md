@@ -1024,10 +1024,11 @@ A few map glyphs aren't monsters in the conventional sense, but you'll see them 
 - VAULT_GUARD_TIME = 30 turns (hack.h:69) before the guard appears; "Croesus", "Kroisos", "Creosote" all dismiss the guard if Croesus is still alive (vault.c:513-543); lying with a Lawful character loses one alignment (vault.c:507-511)
 -->
 
-Not everything interesting in the dungeon is trying to kill you.
-Scattered throughout the levels are fixtures that reward the
-curious, and occasionally punish them. Learning what to do (and what
-*not* to do) with each of these is a rite of passage.
+On your visit to the dungeon, be sure to make time for the
+landmarks. Scattered throughout the levels are fixtures that
+reward the curious, and occasionally punish them. Learning what
+to do (and what *not* to do) with each of these is a rite of
+passage.
 
 #### Fountains `{`
 
