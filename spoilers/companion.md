@@ -17,9 +17,9 @@ players.
 
 ## Before You Read Further
 
-The dungeon is old. No one remembers who built it, only that
-its entrance has stood open for more than forty years to anyone
-bold enough to descend. Brave souls come from every land, drawn
+The dungeon is an ancient temptation. No one remembers who
+built it, only that its entrance has stood open for more than
+forty years to anyone bold enough to descend. Brave souls come from every land, drawn
 by tales of an artifact hidden in its depths: Knights, Wizards,
 Valkyries, Samurai, Archeologists with their picks, even
 Tourists with their cameras. No two of them have found the same
