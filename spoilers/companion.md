@@ -2442,6 +2442,45 @@ attacks (breath weapons, spells, gaze attacks) that ignore AC
 entirely. You can be wearing impenetrable armor and a disenchanter
 will still ruin your day. AC is necessary but not sufficient.
 
+#### Speed
+
+Speed determines how many actions you take per game turn. Your
+base speed is **12**; most monsters fall between 6 (slow) and 24
+(very fast). A faster monster takes more turns per game turn
+than you do, so it lands more hits, closes distance faster, and
+is harder to retreat from. Two intrinsic states sit above the
+baseline:
+
+- **Fast** (intrinsic, gained from certain corpses) gives you a
+  free action on roughly **one turn in three**, raising your
+  effective speed to about 16.
+- **Very Fast** (speed boots, potion of speed, the haste self
+  spell) gives you a free action on roughly **two turns in
+  three**, raising your effective speed to about 20.
+
+Very Fast overrides Fast; they do not stack. Speed boots are
+universally cited as the best boots in the game for exactly
+this reason: they grant Very Fast for free, with no inventory
+cost or spell slot.
+
+**Encumbrance cuts speed.** Burdened costs 25% of your
+movement, Stressed costs 50%, Strained costs 75%, Overtaxed
+costs 87.5%. A Stressed character with intrinsic Fast still
+moves slower than a baseline Unencumbered one.
+
+**Common monster speeds.** Speed 6 is slow (zombies, fungi).
+Speed 12 matches your base (kobolds, gnomes, foocubi, fire
+ants). Speed 18 is the fast threshold (centaurs, ki-rin,
+ravens). Speed 24 (vampire bats, queen bees, vortices) is
+faster than your Very Fast. Speed 36 (air elementals) cannot be
+outrun on foot.
+
+**The practical rule.** Compare speeds before engagement. If
+the monster is faster than you, you cannot kite or retreat;
+commit, zap, or burn an escape consumable. If you are faster,
+every step you take is a free move; use the lead to set up the
+square you want to fight from.
+
 #### Two-Weapon Combat
 <!-- audit
 2026-05-19:
