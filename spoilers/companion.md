@@ -9750,11 +9750,14 @@ Beyond the rules, a few tactical habits pay off:
   shopkeeper full price. The shop floor is not free loot.
 - **"Closed for inventory" engraving on a door.** This marks a
   shop whose door spawned **locked**, not an abandoned one. The
-  shopkeeper is still inside, the stock is still unpaid, and
-  breaking the door down to get in just earns you a normal shop
-  visit plus an angry shopkeeper. (In Orcus Town the shopkeepers
-  are usually dead by the time you arrive, killed by Orcus's
-  ambient aura, so the items there often *are* ownerless.)
+  shopkeeper is still inside, and the stock is still unpaid.
+  Kicking the door down earns you a normal shop visit plus an
+  angry shopkeeper (the broken door is on your bill), but
+  picking the lock with a skeleton key, credit card, lock pick,
+  or wand of opening unlocks it cleanly with no damage and no
+  anger. (In Orcus Town the shopkeepers are usually dead by the
+  time you arrive, killed by Orcus's ambient aura, so the items
+  there often *are* ownerless.)
 
 The best strategy is usually to play fair: sell what you don't need,
 buy what you do, and use the pricing system to identify as much as
