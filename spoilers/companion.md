@@ -7999,10 +7999,10 @@ alone is not the difference between winners and losers.
 
 #### What killed the runners-up
 
-A look at characters who died in deep Gehennom (Dlvl 35-50) shows
-that their *inventories were nearly indistinguishable* from the
-winners'. Their AC was −23 to −40. They had wands of death, all
-three Invocation items, silver dragon scale mail. What killed them
+A look at adventurers who fell deep in Gehennom shows that
+their gear was nearly indistinguishable from the winners'.
+Their AC was −23 to −40. They had wands of death, all three
+Invocation items, silver dragon scale mail. What killed them
 was *behavior*:
 
 - **Inventory management mid-combat.** An Archeologist on Dlvl 35
