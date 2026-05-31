@@ -1169,35 +1169,6 @@ encounter](#seduction) — careful!), or just stub your toe. Each
 non-stub outcome fires at most once per sink. Worth a kick in the
 early game if you can handle what comes out.
 
-**Pouring potions down a sink** (by dipping) produces telltale
-effects — a clever way to narrow down potion identities without
-risking a sip. Five potions print unique sink-only messages:
-
-| Sink message                                                 | Potion             |
-| ------------------------------------------------------------ | ------------------ |
-| *"The sink transforms into a fountain/throne/altar/grave!"* (or *"The sink vanishes."*) | polymorph                     |
-| *"Muddy waste pops up from the drain..."* (first time per sink also drops a ring) | levitation |
-| *"It leaves an oily film on the basin."*                     | oil                |
-| *"The drain seems less clogged."* (blind: *"a sucking sound"*)| acid               |
-| *"You sense a ring lost down the drain."* (once per sink)    | object detection   |
-
-For most other potions, the sink instead prints *"A wisp of vapor
-rises up..."* and then applies the same vapor effect as breathing a
-broken potion: the side effect normally identifies the potion
-(sleeping makes you yawn, hallucination starts hallucinating,
-blindness blinds briefly, healing nudges HP, and so on). Wasted on
-water, fruit juice, gain level, gain energy, and monster detection:
-those all just print *"nothing seems to happen."*
-
-**Quaffing from a sink** rolls one of 20 random effects. Mostly
-nothing useful (mild flavor messages, summoned sewer rat, vomit,
-scalding water), but three outcomes are worth the occasional risk:
-~5% chance to gain an experience level outright, ~5% chance to find a
-ring at your feet (once per sink), and ~5% chance to drink a random
-unidentified potion. Worth a quaff or two from any sink you
-encounter, but keep HP and an escape plan in reserve: it could summon
-a water elemental, or it could polymorph you.
-
 **Dropping a ring down a sink** produces a message unique to the ring
 type — the most reliable non-magical way to identify rings. **Most
 rings are consumed**, but two come back after IDing themselves for
@@ -1222,6 +1193,35 @@ nearby monsters by the time you've found rings to test.
 | *"Suddenly, [items] vanish from the sink!"*<br>any other items on the sink square vanish too | hunger                | no |
 | *"The sink momentarily vanishes."*<br>sink moves to a new spot         | teleportation         | no |
 | *"The sink transforms into a fountain/throne/altar/grave!"*<br>(or rarely *"The sink vanishes."* if grave generation fails) | polymorph             | no |
+
+**Quaffing from a sink** rolls one of 20 random effects. Mostly
+nothing useful (mild flavor messages, summoned sewer rat, vomit,
+scalding water), but three outcomes are worth the occasional risk:
+~5% chance to gain an experience level outright, ~5% chance to find a
+ring at your feet (once per sink), and ~5% chance to drink a random
+unidentified potion. Worth a quaff or two from any sink you
+encounter, but keep HP and an escape plan in reserve: it could summon
+a water elemental, or it could polymorph you.
+
+**Pouring potions down a sink** (by dipping) produces telltale
+effects — a clever way to narrow down potion identities without
+risking a sip. Five potions print unique sink-only messages:
+
+| Sink message                                                 | Potion             |
+| ------------------------------------------------------------ | ------------------ |
+| *"The sink transforms into a fountain/throne/altar/grave!"* (or *"The sink vanishes."*) | polymorph                     |
+| *"Muddy waste pops up from the drain..."* (first time per sink also drops a ring) | levitation |
+| *"It leaves an oily film on the basin."*                     | oil                |
+| *"The drain seems less clogged."* (blind: *"a sucking sound"*)| acid               |
+| *"You sense a ring lost down the drain."* (once per sink)    | object detection   |
+
+For most other potions, the sink instead prints *"A wisp of vapor
+rises up..."* and then applies the same vapor effect as breathing a
+broken potion: the side effect normally identifies the potion
+(sleeping makes you yawn, hallucination starts hallucinating,
+blindness blinds briefly, healing nudges HP, and so on). Wasted on
+water, fruit juice, gain level, gain energy, and monster detection:
+those all just print *"nothing seems to happen."*
 
 #### Vaults
 
