@@ -6867,7 +6867,7 @@ can drop it down to your racial minimum.
 
 | Stat | Exercises | Abuses |
 |------|-----------|--------|
-| **Str** | Carrying a moderate or heavy load, intrinsic regeneration, throwing heavy items | Being Weak from hunger |
+| **Str** | Carrying a moderate or heavy load (Stressed but not Overtaxed), intrinsic regeneration, throwing heavy items | Being Weak from hunger |
 | **Dex** | Successful kicks (locks, sinks, doors), successful thrown weapons | Being Satiated, heavy encumbrance, Fumbling, Stunned, Wounded legs, missed kicks |
 | **Con** | Staying just-Not-Hungry consistently | Fainting, Sick, Vomiting, polluted fountains, extreme encumbrance |
 | **Wis** | Active Clairvoyance, successful detection (gold/monster/food), a willing prayer, a worthy sacrifice | Confusion, Hallucination, cursed enlightenment, digging up graves |
@@ -8083,8 +8083,8 @@ The most exhilarating and terrifying stretch of the game.
 
 #### The Gauntlet
 
-Four kinds of trouble run at once, all of them aimed at the
-Amulet in your pack:
+The dungeon now opposes you on four fronts, all of them aimed
+at the Amulet in your pack:
 
 - **The Wizard of Yendor** periodically teleports to your
   location, summoning monsters and reaching for the Amulet. He
