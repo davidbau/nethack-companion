@@ -7975,10 +7975,8 @@ frantic climb back to the surface. The steps:
 - strategy aligned with NetHackWiki Ascension kit: GDSM/SDSM, cloak of MR, speed boots, gauntlets of power, life saving, bag of holding, wand of death, candles are the canonical kit (https://nethackwiki.com/wiki/Ascension_kit)
 -->
 
-By the time you're ready to invoke Moloch's Sanctum, the loadout
-that experienced players actually wear has converged. A survey of
-recent ascensions from the public NetHack server shows what most
-winners carry. Here is the typical kit, slot by slot:
+Here is what most successful adventurers carry into Moloch's
+Sanctum, slot by slot:
 
 | Slot | Typical pick | Notes |
 |--------|------------------------|---------------------------------------|
