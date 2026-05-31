@@ -33,7 +33,7 @@ Most adventurers who go down there never come back. The ones
 who do have taken time to prepare: they have read the myths,
 learned the lore, and listened to the warnings of those who
 have gone before. The following pages gather the wisdom of generations
-of adventurers, and now seers have updated them with insights on
+of adventurers, and now seers have updated the canon with insights on
 the latest dungeon changes. Each piece of advice has been paid for
 by the lives of those who did not return and by the painstaking
 observations of those who did.
