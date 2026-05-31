@@ -40,7 +40,7 @@ observations of those who did.
 the Mazes. Once you know that a floating eye can paralyze you
 with a glance, you can never un-know it. Some adventurers prefer
 the thrill of discovery to the comfort of preparation. If that is
-you, close the guide now and learn the hard way. There is real
+you, close the Companion now and learn the hard way. There is real
 joy in that.
 
 **Looking for the manual instead?** If you want commands, item
