@@ -9171,8 +9171,9 @@ Abuse can drop it down to your racial minimum.</p>
 <tbody>
 <tr>
 <td><strong>Str</strong></td>
-<td>Carrying a moderate or heavy load (Stressed but not Overtaxed),
-intrinsic regeneration, throwing heavy items</td>
+<td>Carrying a heavy load (Stressed but not Overtaxed), intrinsic
+regeneration, throwing or pushing a boulder, throwing the heavy iron
+ball</td>
 <td>Being Weak from hunger</td>
 </tr>
 <tr>
@@ -11602,8 +11603,9 @@ between you and divinity.</p>
 <p>Beyond the top of the Dungeons of Doom, the world dissolves into its
 raw elements. Four planes stand between you and the gods, each one a
 different flavor of hostile. There are no stairs here, only magic
-portals, hidden somewhere in each level, leading to the next. Find the
-portal. Survive the plane. Move on. There is no going back.</p>
+portals, hidden somewhere on each plane, leading to the next. Each plane
+is a closed world; the portal you find is the only way out of it, and it
+closes behind you. There is no going back.</p>
 <p><strong>Two cheap ways to find a portal.</strong> A scroll of gold
 detection read while confused marks every trap on the level, the portal
 included: one read, one map. And the Amulet of Yendor is itself a
@@ -11615,10 +11617,12 @@ play your way across the void.</p>
 <h4>Plane of Earth</h4>
 <p>You arrive encased in solid rock and boulders, surrounded by earth
 elementals that hit like the mountain itself. The portal is buried
-somewhere in the level. Dig. A wand of digging is essential; a scroll of
-magic mapping or crystal ball reveals the portal’s location so you can
-dig <em>toward</em> it instead of blind. This level is claustrophobic,
-dark, and punishing, but it’s the gentlest of the four.</p>
+somewhere in the stone, and the only way to it is to tunnel. A wand of
+digging is essential here; a scroll of magic mapping or crystal ball
+tells you which direction to tunnel, so you can dig <em>toward</em> the
+portal rather than thrash blindly through the rock. The plane is
+claustrophobic, dark, and punishing, but it is the gentlest of the
+four.</p>
 </section>
 <section id="plane-of-air" class="level4">
 <h4>Plane of Air</h4>
@@ -11626,14 +11630,16 @@ dark, and punishing, but it’s the gentlest of the four.</p>
 feel, just empty sky and air elementals moving faster than thought. They
 attack multiple times per turn and they cannot be genocided. A ring of
 conflict is devastating here: let them tear each other apart while you
-search for the portal. A scroll of magic mapping reveals it. The level
+search for the portal. A scroll of magic mapping reveals it. The plane
 is divided into drifting <strong>cloud bubbles</strong> that move on
-their own each turn: if you’re standing in a bubble when it shifts, you
-shift with it. Walking with the drift can carry you across the level
+their own each turn, and if you are standing in a bubble when it shifts,
+you shift with it. Walking with the drift can carry you across the plane
 faster than fighting against it, and a bubble may eventually drift you
-onto the portal square itself. (Teleportation is blocked on every plane,
-so a wand of teleport on yourself just prints “A mysterious force
-prevents you from teleporting!” It still works on monsters.)</p>
+onto the portal square itself.</p>
+<p>The plane bars its own shortcut. Self-teleportation meets only the
+message <em>“A mysterious force prevents you from teleporting!”</em> A
+wand of teleportation still moves whatever is chasing you; it just will
+not move you.</p>
 </section>
 <section id="plane-of-fire" class="level4">
 <h4>Plane of Fire</h4>
@@ -11645,13 +11651,13 @@ stop to fight anything you don’t have to.</p>
 </section>
 <section id="plane-of-water" class="level4">
 <h4>Plane of Water</h4>
-<p>The entire level is underwater. Without magical breathing (an amulet,
+<p>The entire plane is underwater. Without magical breathing (an amulet,
 the Amphibious intrinsic, or a polyform that breathes water) you will
-drown. Drowning calls the standard death path, so an <strong>amulet of
-life saving</strong> will rescue you, but you’ll drown again on your
-next turn unless something has changed. The level is a labyrinth of
-water-filled chambers with occasional air pockets. Sea monsters prowl
-the corridors.</p>
+drown. An <strong>amulet of life saving</strong> rescues you from the
+first death, but the water is still there, and the next turn drowns you
+again unless something has changed. The plane is a labyrinth of
+water-filled chambers with occasional air pockets between them. Sea
+monsters prowl the corridors.</p>
 <p><strong>The standard tactic on arrival: genocide class
 <code>;</code>.</strong> Read a scroll of genocide, target the entire
 <code>;</code> class (eels, krakens, sea monsters, sharks, jellyfish,
@@ -11681,16 +11687,18 @@ until one matches yours.</p>
 their path. Each one hits twice per turn with a touch attack dealing 8d8
 damage.</p>
 <ul>
-<li><strong>Death’s</strong> touch has a 3-in-20 chance of instant kill
-on every hit. Magic resistance blocks the instakill, but not the 8d8
-baseline.</li>
-<li><strong>Pestilence</strong> inflicts a deadly illness that kills you
-over the next several turns. Sick resistance is the cleanest defense; a
-unicorn horn can sometimes clear the timer in time if you don’t have
-intrinsic.</li>
-<li><strong>Famine</strong> adds 40 to 79 hunger units to every hit. One
-swing won’t drop you below Hungry, but a few in a row will starve you
-mid-fight.</li>
+<li><strong>Death</strong> moves with the slow inevitability of his
+name. Every touch is 8d8 damage, and roughly three in twenty land the
+kill itself. Magic resistance blocks the instakill but not the baseline
+damage; without magic resistance you live or die at random on every
+swing.</li>
+<li><strong>Pestilence</strong> comes with a sickness that finishes you
+a few turns after the swing connects. Sick resistance breaks the curse
+before it takes hold; without it, a unicorn horn may clear the timer in
+time, but the race is real and the timer is short.</li>
+<li><strong>Famine</strong> is the long one. Each touch is 8d8 damage
+and 40 to 79 turns of hunger taken straight out of you. No single swing
+starves you. Three swings in a row will.</li>
 </ul>
 <p>A slight mercy that is new to 5.0: if Pestilence or Famine land their
 first attack on a turn, their second downgrades to a stun.</p>
@@ -11721,8 +11729,10 @@ zapping the wand at yourself does nothing. Only zapping it at others
 teleports them.</p>
 <p><strong>Don’t zap a wand of death at Death.</strong> It heals him.
 Magic missile works on all three Riders; use that instead.</p>
-<p>When you offer the Amulet on the correct altar: you ascend. The game
-is won. You’ve done what so few have done. Congratulations.</p>
+<p>Offer the Amulet at the correct altar. Your god accepts the gift, the
+Amulet vanishes into the divine flame, and you ascend among the
+immortals. Few adventurers reach this moment. The book closes here, with
+you.</p>
 <hr />
 </section>
 </section>

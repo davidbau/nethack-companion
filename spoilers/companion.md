@@ -6867,7 +6867,7 @@ can drop it down to your racial minimum.
 
 | Stat | Exercises | Abuses |
 |------|-----------|--------|
-| **Str** | Carrying a moderate or heavy load (Stressed but not Overtaxed), intrinsic regeneration, throwing heavy items | Being Weak from hunger |
+| **Str** | Carrying a heavy load (Stressed but not Overtaxed), intrinsic regeneration, throwing or pushing a boulder, throwing the heavy iron ball | Being Weak from hunger |
 | **Dex** | Successful kicks (locks, sinks, doors), successful thrown weapons | Being Satiated, heavy encumbrance, Fumbling, Stunned, Wounded legs, missed kicks |
 | **Con** | Staying just-Not-Hungry consistently | Fainting, Sick, Vomiting, polluted fountains, extreme encumbrance |
 | **Wis** | Active Clairvoyance, successful detection (gold/monster/food), a willing prayer, a worthy sacrifice | Confusion, Hallucination, cursed enlightenment, digging up graves |
@@ -8166,11 +8166,13 @@ last obstacle between you and divinity.
 - strategy aligned with NetHackWiki Plane of Water, Scroll of genocide, Plane of Air, Astral Plane: genocide class `;` on the Plane of Water, conflict to clear Air's elementals, wrong-altar offering ends the game (https://nethackwiki.com/wiki/Plane_of_Water, https://nethackwiki.com/wiki/Scroll_of_genocide, https://nethackwiki.com/wiki/Plane_of_Air, https://nethackwiki.com/wiki/Astral_Plane)
 -->
 
-Beyond the top of the Dungeons of Doom, the world dissolves into
-its raw elements. Four planes stand between you and the gods, each
-one a different flavor of hostile. There are no stairs here, only
-magic portals, hidden somewhere in each level, leading to the next.
-Find the portal. Survive the plane. Move on. There is no going back.
+Beyond the top of the Dungeons of Doom, the world dissolves
+into its raw elements. Four planes stand between you and the
+gods, each one a different flavor of hostile. There are no
+stairs here, only magic portals, hidden somewhere on each
+plane, leading to the next. Each plane is a closed world; the
+portal you find is the only way out of it, and it closes behind
+you. There is no going back.
 
 **Two cheap ways to find a portal.** A scroll of gold detection
 read while confused marks every trap on the level, the portal
@@ -8182,29 +8184,33 @@ play your way across the void.
 
 #### Plane of Earth
 
-You arrive encased in solid rock and boulders, surrounded by earth
-elementals that hit like the mountain itself. The portal is buried
-somewhere in the level. Dig. A wand of digging is essential; a
-scroll of magic mapping or crystal ball reveals the portal's
-location so you can dig *toward* it instead of blind. This level
-is claustrophobic, dark, and punishing, but it's the gentlest of
-the four.
+You arrive encased in solid rock and boulders, surrounded by
+earth elementals that hit like the mountain itself. The portal
+is buried somewhere in the stone, and the only way to it is to
+tunnel. A wand of digging is essential here; a scroll of magic
+mapping or crystal ball tells you which direction to tunnel,
+so you can dig *toward* the portal rather than thrash blindly
+through the rock. The plane is claustrophobic, dark, and
+punishing, but it is the gentlest of the four.
 
 #### Plane of Air
 
 The opposite extreme: an open void with no walls, no floor you can
 feel, just empty sky and air elementals moving faster than thought.
 They attack multiple times per turn and they cannot be genocided.
-A ring of conflict is devastating here: let them tear each other
-apart while you search for the portal. A scroll of magic mapping
-reveals it. The level is divided into drifting **cloud bubbles**
-that move on their own each turn: if you're standing in a bubble
-when it shifts, you shift with it. Walking with the drift can
-carry you across the level faster than fighting against it,
-and a bubble may eventually drift you onto the portal square
-itself. (Teleportation is blocked on every plane, so a wand of
-teleport on yourself just prints "A mysterious force prevents you
-from teleporting!" It still works on monsters.)
+A ring of conflict is devastating here: let them tear each
+other apart while you search for the portal. A scroll of magic
+mapping reveals it. The plane is divided into drifting **cloud
+bubbles** that move on their own each turn, and if you are
+standing in a bubble when it shifts, you shift with it. Walking
+with the drift can carry you across the plane faster than
+fighting against it, and a bubble may eventually drift you onto
+the portal square itself.
+
+The plane bars its own shortcut. Self-teleportation meets only
+the message *"A mysterious force prevents you from teleporting!"*
+A wand of teleportation still moves whatever is chasing you;
+it just will not move you.
 
 #### Plane of Fire
 
@@ -8216,13 +8222,13 @@ there. Don't stop to fight anything you don't have to.
 
 #### Plane of Water
 
-The entire level is underwater. Without magical breathing (an
+The entire plane is underwater. Without magical breathing (an
 amulet, the Amphibious intrinsic, or a polyform that breathes
-water) you will drown. Drowning calls the standard death path,
-so an **amulet of life saving** will rescue you, but you'll
-drown again on your next turn unless something has changed.
-The level is a labyrinth of water-filled chambers with occasional
-air pockets. Sea monsters prowl the corridors.
+water) you will drown. An **amulet of life saving** rescues you
+from the first death, but the water is still there, and the
+next turn drowns you again unless something has changed. The
+plane is a labyrinth of water-filled chambers with occasional
+air pockets between them. Sea monsters prowl the corridors.
 
 **The standard tactic on arrival: genocide class `;`.** Read a
 scroll of genocide, target the entire `;` class (eels, krakens,
@@ -8254,16 +8260,19 @@ while you fight, see invisible, and shove monsters out of their
 path. Each one hits twice per turn with a touch attack dealing
 8d8 damage.
 
-- **Death's** touch has a 3-in-20 chance of instant kill on
-  every hit. Magic resistance blocks the instakill, but not the
-  8d8 baseline.
-- **Pestilence** inflicts a deadly illness that kills you over
-  the next several turns. Sick resistance is the cleanest
-  defense; a unicorn horn can sometimes clear the timer in time
-  if you don't have intrinsic.
-- **Famine** adds 40 to 79 hunger units to every hit. One swing
-  won't drop you below Hungry, but a few in a row will starve
-  you mid-fight.
+- **Death** moves with the slow inevitability of his name.
+  Every touch is 8d8 damage, and roughly three in twenty land
+  the kill itself. Magic resistance blocks the instakill but
+  not the baseline damage; without magic resistance you live
+  or die at random on every swing.
+- **Pestilence** comes with a sickness that finishes you a few
+  turns after the swing connects. Sick resistance breaks the
+  curse before it takes hold; without it, a unicorn horn may
+  clear the timer in time, but the race is real and the timer
+  is short.
+- **Famine** is the long one. Each touch is 8d8 damage and 40
+  to 79 turns of hunger taken straight out of you. No single
+  swing starves you. Three swings in a row will.
 
 A slight mercy that is new to 5.0: if Pestilence or Famine land
 their first attack on a turn, their second downgrades to a stun.
@@ -8299,8 +8308,10 @@ yourself does nothing. Only zapping it at others teleports them.
 **Don't zap a wand of death at Death.** It heals him. Magic
 missile works on all three Riders; use that instead.
 
-When you offer the Amulet on the correct altar: you ascend. The
-game is won. You've done what so few have done. Congratulations.
+Offer the Amulet at the correct altar. Your god accepts the
+gift, the Amulet vanishes into the divine flame, and you ascend
+among the immortals. Few adventurers reach this moment. The
+book closes here, with you.
 
 ---
 
