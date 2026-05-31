@@ -2444,42 +2444,106 @@ will still ruin your day. AC is necessary but not sufficient.
 
 #### Speed
 
-Speed determines how many actions you take per game turn. Your
-base speed is **12**; most monsters fall between 6 (slow) and 24
-(very fast). A faster monster takes more turns per game turn
-than you do, so it lands more hits, closes distance faster, and
-is harder to retreat from. Two intrinsic states sit above the
-baseline:
+Every entity in the dungeon (you and every monster) runs on the
+same movement-budget system. Each of you has a private movement
+counter measured in points. **An action costs 12 points.** When
+your counter reaches 12, you act, and the system deducts 12.
 
-- **Fast** (intrinsic, gained from certain corpses) gives you a
-  free action on roughly **one turn in three**, raising your
-  effective speed to about 16.
-- **Very Fast** (speed boots, potion of speed, the haste self
-  spell) gives you a free action on roughly **two turns in
-  three**, raising your effective speed to about 20.
+**How the loop works.** After you take an action, the game gives
+every monster whose counter is already at 12 or more its turn,
+each spending 12. If no one (including you) has enough points to
+act, the game performs an **allocation**: every entity on the
+level receives its **speed** worth of points to its counter at
+once. Allocations repeat until you have 12 points again, at
+which point the loop pauses and waits for your next keystroke.
 
-Very Fast overrides Fast; they do not stack. Speed boots are
-universally cited as the best boots in the game for exactly
-this reason: they grant Very Fast for free, with no inventory
-cost or spell slot.
+Your base speed is **12**. Monster speed comes from each
+monster's bestiary entry: zombies move at 6, gnomes at 12,
+centaurs at 18, vampire bats at 20, air elementals at 36.
 
-**Encumbrance cuts speed.** Burdened costs 25% of your
-movement, Stressed costs 50%, Strained costs 75%, Overtaxed
-costs 87.5%. A Stressed character with intrinsic Fast still
-moves slower than a baseline Unencumbered one.
+**The translation rule.** Because allocations only happen when
+no one can act, your speed effectively controls how many
+allocations occur between your keystrokes, and therefore how
+many actions each monster can take between yours. To a first
+approximation, the monster gets **(monster_speed ÷
+your_effective_speed)** actions for every one of yours.
 
-**Common monster speeds.** Speed 6 is slow (zombies, fungi).
-Speed 12 matches your base (kobolds, gnomes, foocubi, fire
-ants). Speed 18 is the fast threshold (centaurs, ki-rin,
-ravens). Speed 24 (vampire bats, queen bees, vortices) is
-faster than your Very Fast. Speed 36 (air elementals) cannot be
-outrun on foot.
+You at base speed 12 against a speed-18 centaur: ratio 18/12 =
+1.5. The centaur lands three hits for every two of yours, which
+is how it wins a melee duel.
 
-**The practical rule.** Compare speeds before engagement. If
-the monster is faster than you, you cannot kite or retreat;
-commit, zap, or burn an escape consumable. If you are faster,
-every step you take is a free move; use the lead to set up the
-square you want to fight from.
+With **speed boots** (Very Fast, effective ~20) against the same
+centaur: ratio 18/20 = 0.9. The centaur now gets nine actions
+for every ten of yours; you have flipped the matchup.
+
+Against an air elemental at speed 36, the baseline ratio is 3.0
+(the elemental acts three times for every one of yours). With
+speed boots the ratio is 1.8. Speed boots help, but the gap is
+still hopeless on foot: this is a ranged-or-skip fight.
+
+**The two intrinsic states above 12.** Both work by adding a
+**probabilistic +12 bonus** to each allocation:
+
+- **Fast** (intrinsic, gained from certain corpses): the bonus
+  lands on roughly **one allocation in three**. Average effective
+  speed ~16.
+- **Very Fast** (speed boots, potion of speed, haste self): the
+  bonus lands on roughly **two allocations in three**. Average
+  effective speed ~20.
+
+The bonus is rolled each allocation, not sustained. On any one
+allocation either you got the bonus or you didn't. Tactical
+timing is therefore stochastic: the average is reliable across
+many actions, but any single tense round may or may not give
+you the extra. Very Fast does not stack with Fast; the better
+state overrides. **Speed boots are universally cited as the
+best boots in the game** because they grant Very Fast as a
+passive worn effect with no inventory or spell-slot cost.
+
+**Encumbrance shaves the allocation directly.** It reduces the
+points your allocation gives you, before the intrinsic bonus is
+applied:
+
+| Status        | Base points | Effective speed |
+| ------------- | ----------- | --------------- |
+| Unencumbered  | 12          | full            |
+| Burdened      | 9           | −25%            |
+| Stressed      | 6           | −50%            |
+| Strained      | 3           | −75%            |
+| Overtaxed     | ~1.5        | −87.5%          |
+
+A Stressed character with intrinsic Fast still moves slower than
+a baseline Unencumbered one. At Stressed, a speed-6 zombie acts
+*more often than you do*. Get to Unencumbered, ideally with a
+bag of holding.
+
+**Reference: common monster speeds.**
+
+| Speed | Tier                 | Examples                                          |
+| ----- | -------------------- | ------------------------------------------------- |
+| 6     | slow                 | zombies, fungi, brown molds                       |
+| 12    | normal (your base)   | gnomes, kobolds, foocubi, fire ants               |
+| 18    | fast                 | centaurs, ki-rin, soldier ants                    |
+| 20    | very fast            | bats, ravens, vampire bats                        |
+| 24    | extreme              | queen bees, vortices                              |
+| 36    | untouchable on foot  | air elementals                                    |
+
+**Practical rules for play.**
+
+1. **Before engaging, divide.** Monster's speed by your effective
+   speed. The result is how often they act for every action you
+   take.
+2. **Ratio above 1.0** is a fight you lose to attrition unless
+   you can drop them in your first burst. Wand them, use a
+   ranged attack, or skip the fight.
+3. **Ratio below 1.0** is kiteable. You can attack and retreat
+   between their actions; back into a corridor and let them
+   approach one step at a time.
+4. **The big returns from speed boots come against fast
+   monsters.** Against a speed-6 zombie, your ratio improves
+   only from 0.5 to 0.3, which is marginal. Against a speed-18
+   centaur, it improves from 1.5 to 0.9, which is the difference
+   between losing a chase and winning a duel.
 
 #### Two-Weapon Combat
 <!-- audit
@@ -2529,12 +2593,11 @@ time-tested tactics that keep adventurers breathing.
   advantage: an approaching monster spends a turn rounding the
   corner, and you get a free hit as it arrives at the corner
   square.
-- **Compare speeds before committing.** You move at speed 12 (or
-  18 with speed boots). Most monsters fall between 6 and 18. If
-  the monster is faster, you cannot kite or retreat: commit to
-  melee, zap, or run *before* contact. If you are faster, every
-  step you take is a free move; use that lead to set up the
-  square you want to fight from.
+- **Compare speeds before committing.** Their speed divided by
+  yours gives the number of actions they take per action of
+  yours (see the [Speed](#speed) subsection). Ratio above 1.0:
+  you lose attrition fights, so commit fast, zap, or run before
+  contact. Ratio below 1.0: every step you take is a free move.
 - **Keep an exit at your back.** Never let yourself be
   surrounded. Keep at least one square open in the direction of
   your fallback (stairs, a known corridor, an Elbereth square).
