@@ -2524,13 +2524,6 @@ time-tested tactics that keep adventurers breathing.
   your place is the best damage soak in the game. Step so the
   pet stays in melee range with the monster rather than blocking
   its approach.
-- **Burst-kill the Wizard of Yendor.** When wounded, the Wizard
-  teleports away to heal and returns at full HP, often with a
-  fresh summon and your Amulet in his pocket. Trading hits with
-  him is wasted damage; use wand of death or finger of death to
-  drop him in one strike. The same do-not-grind principle
-  applies to any boss-tier singleton you can finish in a single
-  burst.
 - **The first swing wakes the room.** Sleeping monsters stay
   asleep while you walk past them, but a hit on one wakes
   everything around it: the struck monster growls, and the growl
