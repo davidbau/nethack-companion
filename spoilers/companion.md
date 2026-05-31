@@ -4723,13 +4723,12 @@ menu test gives a clean read without committing to picking the
 stone up.
 
 **The pick-up test.** Loadstones are cursed when they generate,
-and a cursed loadstone refuses to be dropped at all — the game
+and a cursed loadstone refuses to be dropped at all. The game
 prints "For some reason, you cannot drop the stone!" and the
-stone stays in your pack. If you pick up a gray
-stone and it weighs you down suspiciously, try to drop it. If
-you can't, you're stuck with a cursed loadstone until you can
-uncurse it (holy water, scroll of remove curse, prayer) — then
-drop it.
+stone stays in your pack. If you pick up a gray stone and it
+weighs you down suspiciously, try to drop it. If you can't, you
+are stuck with a cursed loadstone until you uncurse it (holy
+water, scroll of remove curse, prayer). Then you can drop it.
 
 **The `#tip` escape.** Or, more elegantly: stow the cursed
 loadstone in any container you carry (a 2z sack is enough), then
@@ -5889,21 +5888,23 @@ answer to the encumbrance problem; carrying everything inside one
 reduces the effective weight to roughly a quarter, which is why
 veteran players treat finding one as a turning point in the run.
 
-**Running out of inventory letters.** Weight isn't the only limit.
-Your inventory has **52 slots** (`a-z` plus `A-Z`), and a 53rd
-item hits *"Your pack is too full."* Stackable items consolidate
-into a single slot only when the game can tell they're the same
-thing — five identified scrolls of identify share one letter, but
-identified and unidentified scrolls of the same type stay in
-separate slots, and weapons of different enchantments don't
-merge. So clutter is usually an identification problem in
-disguise: the more you ID, the more your inventory consolidates.
-The bag of holding doubles as the answer here too — items inside
-any container don't count against your 52, so a stash of
-twenty potions in a BoH costs you a single letter. The `#adjust`
-command lets you swap items between letters, force-merge stacks
-that didn't merge, or split a stack to a new letter — purely
-relabeling, no game effect.
+**Running out of inventory letters.** Weight isn't the only
+limit. Your inventory has **52 slots** (`a-z` plus `A-Z`), and a
+53rd item hits *"Your pack is too full."* Stackable items
+consolidate into a single slot only when the game can tell they
+are the same thing. Five identified scrolls of identify share
+one letter, but identified and unidentified scrolls of the same
+type stay in separate slots, and weapons of different
+enchantments do not merge. Clutter is usually an identification
+problem in disguise: the more you identify, the more your
+inventory consolidates.
+
+The bag of holding doubles as the answer here too. Items
+inside any container do not count against your 52, so a stash
+of twenty potions in a BoH costs you a single letter. The
+`#adjust` command lets you swap items between letters,
+force-merge stacks that didn't merge, or split a stack to a new
+letter; it is purely relabeling, with no game effect.
 
 One 5.0 hazard that you will need to be aware of:
 **intelligent monsters can now loot unlocked containers**.
@@ -7461,11 +7462,11 @@ The drawbridge is the first puzzle. You can lower it four ways:
 Once you're across, the Castle contains:
 
 - A **throne room** with a throne and a random court of
-  high-letter monsters (liches, nymphs, eyes, giants, and the like).
-  Sitting on the throne is tempting but risky (see
-  [Points of Interest](#points-of-interest)). The throne room also
-  holds a separate **treasure chest** with random loot — not the
-  wand chest, just a side prize.
+  high-letter monsters (liches, nymphs, eyes, giants, and the
+  like). Sitting on the throne is tempting but risky (see
+  [Points of Interest](#points-of-interest)). The throne room
+  also holds a separate **treasure chest** with random loot.
+  This is not the wand chest, just a side prize.
 - **Barracks** full of soldiers carrying decent equipment, which is
   to say *your* equipment once you've dealt with them.
 - **Four corner-tower alcoves**. One (and only one, randomly)
@@ -7473,15 +7474,14 @@ Once you're across, the Castle contains:
   all*, or quaff a potion of object detection from the courtyard
   to see which tower holds the chest and skip the other three.
   In 5.0, that chest also holds a **potion of gain level**,
-  included as a small make-good for the wand's charge changes (see
-  below). The chest's square is protected by a burned-in
-  [*Elbereth*](#elbereth) engraving and sealed with a cursed scroll of
-  scare monster. Those
-  wards exist to keep wandering monsters from *eating* the chest
-  itself (some species, like leprechauns and rats, gnaw containers);
-  the cursed scroll is also a known gotcha — don't try to read it
-  casually. The locked chest opens by force, by a key, or by a wand
-  of opening.
+  included as a small make-good for the wand's charge changes
+  (see below). The chest's square is protected by a burned-in
+  [*Elbereth*](#elbereth) engraving and sealed with a cursed
+  scroll of scare monster. Those wards exist to keep wandering
+  monsters from *eating* the chest itself (some species, like
+  leprechauns and rats, gnaw containers). The cursed scroll is
+  also a known gotcha: don't try to read it casually. The locked
+  chest opens by force, by a key, or by a wand of opening.
 - Four **storerooms** along the north and south walls, each guarded
   by a dragon (`D`-class). Don't confuse them with the corner
   alcoves; the storerooms hold random fodder.

@@ -6177,12 +6177,12 @@ gray stone to force a pickup menu the next time you walk over it. The
 menu shows weight; a loadstone is 500, everything else is 10. The menu
 test gives a clean read without committing to picking the stone up.</p>
 <p><strong>The pick-up test.</strong> Loadstones are cursed when they
-generate, and a cursed loadstone refuses to be dropped at all — the game
+generate, and a cursed loadstone refuses to be dropped at all. The game
 prints “For some reason, you cannot drop the stone!” and the stone stays
 in your pack. If you pick up a gray stone and it weighs you down
-suspiciously, try to drop it. If you can’t, you’re stuck with a cursed
-loadstone until you can uncurse it (holy water, scroll of remove curse,
-prayer) — then drop it.</p>
+suspiciously, try to drop it. If you can’t, you are stuck with a cursed
+loadstone until you uncurse it (holy water, scroll of remove curse,
+prayer). Then you can drop it.</p>
 <p><strong>The <code>#tip</code> escape.</strong> Or, more elegantly:
 stow the cursed loadstone in any container you carry (a 2z sack is
 enough), then apply <code>#tip</code> to the container. The contents
@@ -7912,17 +7912,18 @@ why veteran players treat finding one as a turning point in the run.</p>
 only limit. Your inventory has <strong>52 slots</strong>
 (<code>a-z</code> plus <code>A-Z</code>), and a 53rd item hits <em>“Your
 pack is too full.”</em> Stackable items consolidate into a single slot
-only when the game can tell they’re the same thing — five identified
+only when the game can tell they are the same thing. Five identified
 scrolls of identify share one letter, but identified and unidentified
 scrolls of the same type stay in separate slots, and weapons of
-different enchantments don’t merge. So clutter is usually an
-identification problem in disguise: the more you ID, the more your
-inventory consolidates. The bag of holding doubles as the answer here
-too — items inside any container don’t count against your 52, so a stash
-of twenty potions in a BoH costs you a single letter. The
-<code>#adjust</code> command lets you swap items between letters,
-force-merge stacks that didn’t merge, or split a stack to a new letter —
-purely relabeling, no game effect.</p>
+different enchantments do not merge. Clutter is usually an
+identification problem in disguise: the more you identify, the more your
+inventory consolidates.</p>
+<p>The bag of holding doubles as the answer here too. Items inside any
+container do not count against your 52, so a stash of twenty potions in
+a BoH costs you a single letter. The <code>#adjust</code> command lets
+you swap items between letters, force-merge stacks that didn’t merge, or
+split a stack to a new letter; it is purely relabeling, with no game
+effect.</p>
 <p>One 5.0 hazard that you will need to be aware of: <strong>intelligent
 monsters can now loot unlocked containers</strong>. They can remove
 items, carry containers away, and unlock chests with keys. If you’ve
@@ -10799,8 +10800,8 @@ the tune is useless afterward. Use this as a one-way option.</li>
 high-letter monsters (liches, nymphs, eyes, giants, and the like).
 Sitting on the throne is tempting but risky (see <a
 href="#points-of-interest">Points of Interest</a>). The throne room also
-holds a separate <strong>treasure chest</strong> with random loot — not
-the wand chest, just a side prize.</li>
+holds a separate <strong>treasure chest</strong> with random loot. This
+is not the wand chest, just a side prize.</li>
 <li><strong>Barracks</strong> full of soldiers carrying decent
 equipment, which is to say <em>your</em> equipment once you’ve dealt
 with them.</li>
@@ -10814,8 +10815,8 @@ changes (see below). The chest’s square is protected by a burned-in <a
 href="#elbereth"><em>Elbereth</em></a> engraving and sealed with a
 cursed scroll of scare monster. Those wards exist to keep wandering
 monsters from <em>eating</em> the chest itself (some species, like
-leprechauns and rats, gnaw containers); the cursed scroll is also a
-known gotcha — don’t try to read it casually. The locked chest opens by
+leprechauns and rats, gnaw containers). The cursed scroll is also a
+known gotcha: don’t try to read it casually. The locked chest opens by
 force, by a key, or by a wand of opening.</li>
 <li>Four <strong>storerooms</strong> along the north and south walls,
 each guarded by a dragon (<code>D</code>-class). Don’t confuse them with
