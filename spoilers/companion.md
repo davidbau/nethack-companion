@@ -2048,7 +2048,7 @@ to erase, and whether your stylus suffers wear.
 | ------------------------- | ------------- | -------------- | --------------------------------- |
 | Finger (dust)             | Instant       | Fragile        | Smudges when monsters step on it  |
 | Uncursed athame           | Instant       | Semi-permanent | Doesn't dull (cursed athame does) |
-| Other edged weapon        | Several turns | Semi-permanent | Interruptible; dulls (~1 enchantment per 2 chars — "Elbereth" costs ~−4) |
+| Other edged weapon        | Several turns | Semi-permanent | Interruptible. Dulls roughly 1 enchantment per 2 characters, so "Elbereth" costs about −4. |
 | Hard gem or diamond       | Several turns | Semi-permanent | Interruptible                     |
 | Wand of digging           | Instant       | Semi-permanent | Good middle ground                |
 | Wand of fire or lightning | Instant       | Permanent      | Burns the word into the floor     |
@@ -2056,24 +2056,24 @@ to erase, and whether your stylus suffers wear.
 The three durability tiers correspond to how the text resists
 ordinary erosion:
 
-- **Fragile** (dust) — a monster stepping on the square smudges
+- **Fragile (dust).** A monster stepping on the square smudges
   one character. In dust, an Elbereth lasts as long as the floor
   stays clear.
-- **Semi-permanent** (scratched into the floor) — monster traffic
+- **Semi-permanent (scratched into the floor).** Monster traffic
   doesn't smudge it. Random erosion can occasionally chip a
   character under unusual conditions, but in practice the
   engraving lasts indefinitely.
-- **Permanent** (burned in) — the engraving doesn't erode at all
-  under normal conditions; only ice tiles or magical attacks can
+- **Permanent (burned in).** The engraving doesn't erode at all
+  under normal conditions. Only ice tiles or magical attacks can
   damage it.
 
-**Engraving is an interruptible occupation.** Anything written by
-hand at multi-turn speed (non-athame edged weapon, gem) takes one
-turn per letter. If you're interrupted mid-word — by an attack, a
-monster wandering into view, or anything else that breaks an
-occupation — you get a partial engraving that does nothing useful.
-Instant methods (any wand, finger-in-dust, or an uncursed athame)
-finish in a single occupation action.
+**Engraving by hand can be interrupted.** Anything written by
+hand at multi-turn speed (non-athame edged weapon, gem) takes
+one turn per letter. If something breaks the engraving mid-word
+(an attack, a monster wandering into view, a passing earthquake),
+the partial word you leave behind does nothing useful. Instant
+methods (any wand, finger-in-dust, or an uncursed athame) finish
+in one action.
 
 **Impairment and errors.** If you are blind, confused, stunned, or
 hallucinating, you have a chance of misspelling each letter, and
@@ -2088,18 +2088,19 @@ must read *exactly* that word and nothing else, so the appended
 text usually destroys the ward. To refresh, overwrite the square
 or pick a fresh one.
 
-**Two engravings worth recognizing.** Most engravings you find are
-random flavor (graffiti, "elbereth" left by someone else, etc.),
-but two specific messages are *trap markers* placed by the
-dungeon: *"ad aerarium"* (Latin: *to the treasury*) is engraved
-near a secret closet containing either a **vault teleporter**
-(a one-shot trap that drops you into Croesus's 2×2 gold vault on
-the same level — pick up the gold, then escape ahead of the vault
-guard) or a **level teleporter** (sends you to a random dungeon
-level, often unwelcome without teleport control); *"Vlad was
-here"* marks a secret closet containing a **trap door**. Both are easy to miss in the message log, and
-worth investigating when you see them — but be ready for what's
-on the other side.
+**Two engravings worth recognizing.** Most engravings you find
+are random flavor (graffiti, "elbereth" left by someone else,
+and the like). Two specific messages, though, are *trap markers*
+placed by the dungeon. *"Ad aerarium"* (Latin: *to the
+treasury*) marks a secret closet containing either a **vault
+teleporter** or a **level teleporter**. The vault teleporter is
+a one-shot trap that drops you into Croesus's 2×2 gold vault on
+the same level; pick up the gold and escape ahead of the vault
+guard. The level teleporter sends you to a random dungeon
+level, often unwelcome without teleport control. *"Vlad was
+here"* marks a secret closet containing a **trap door**. Both
+messages are easy to miss in the message log. Investigate them
+when you see them, and be ready for what is on the other side.
 
 #### Elbereth
 <!-- audit
