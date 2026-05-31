@@ -899,7 +899,7 @@ AC / attack details on every monster, see the
 | [`f`](#felines-f)    | [Cats](#felines-f)      | Like dogs, often starting pets. Felines can be tamed with tripe.                        |
 | [`G`](#gnomes-g)    | [Gnomes](#gnomes-g)    | The standard inhabitants of the Gnomish Mines. Individually weak, but the Mines have a lot of them, and mid-game players who treat the Mines as a milk run walk into a four-on-one with full-strength enemies. If you're a gnome yourself, most of them are peaceful. |
 | [`h`](#humanoids-h)    | [Humanoids](#humanoids-h) | Dwarves, bugbears, mind flayers. Wide range of difficulty. Dwarves in particular are dangerously underrated: they hit harder than they look, and they're armored. Don't trade blows with one in melee until your AC is solid. |
-| [`i`](#imps-and-minor-demons-i)    | [Imps](#imps-and-minor-demons-i)      | Mostly minor pests, but a homunculus's sleep bite is a real early-game threat. Fight one at range if you lack sleep resistance. |
+| [`i`](#imps-and-minor-demons-i)    | [Imps](#imps-and-minor-demons-i)      | Mostly minor pests, but a homunculus's bite can put you to sleep. Without sleep resistance, fight at range. |
 | [`j`](#jellies-j)    | [Jellies](#jellies-j)   | Spotted and ochre jellies. Passive acid damage on melee.                                |
 | [`k`](#kobolds-k)    | [Kobolds](#kobolds-k)   | Weak individually but sometimes carry poisoned weapons.                                 |
 | [`o`](#orcs-o)    | [Orcs](#orcs-o)      | Numerous and modest in strength one-on-one; dangerous in packs. Hill orcs and Mordor orcs are the common upper-dungeon variants. |
@@ -10932,7 +10932,7 @@ Dwarves and similar. Dwarves carry better-than-average loot (weapons, armor, pic
 -->
 #### Imps and minor demons `i`
 
-Mostly annoying small fry. Imps insult you and miss; quasits drain Dexterity. The homunculus is the early-game exception: its sleep bite can drop you for several turns, and a few turns asleep in a crowded room is a finish. Without sleep resistance, fight one at range.
+Mostly annoying small fry. Imps insult you and miss; quasits drain Dexterity. A homunculus's bite can put you to sleep, which is very dangerous. Without sleep resistance, fight at range.
 
 All imps and minor demons follow you up and down stairs. All except *imp* are poison-resistant.
 
