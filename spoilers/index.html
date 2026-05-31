@@ -3547,54 +3547,65 @@ damage bonus, making them a good alternative.</p>
 </section>
 <section id="fighting-smart" class="level4">
 <h4>Fighting Smart</h4>
-<p>The dungeon rewards cowardice, cunning, and property damage. Here are
-the time-tested tactics that keep adventurers breathing:</p>
+<p>The dungeon rewards cowardice, cunning, and property damage. The
+reliable way to win a NetHack fight is to make the fight unfair before
+it starts, and that means thinking about where you stand, when you
+swing, and what happens if it goes wrong. Here are the time-tested
+tactics that keep adventurers breathing.</p>
+<section id="position-before-contact" class="level5">
+<h5>Position before contact</h5>
 <ul>
 <li><strong>Use corridors.</strong> Monsters can only approach one at a
-time in a corridor — the single most important tactical principle in the
-Mazes. Never fight a mob in an open room if you can retreat to a
+time in a corridor. This is the single most important tactical principle
+in the Mazes. Never fight a mob in an open room if you can retreat to a
 chokepoint and fight them in single file. It turns a suicide mission
 into a turkey shoot.</li>
-<li><strong>Fight at range.</strong> Wands, thrown weapons, and spells
-let you soften up monsters before they reach you. This is especially
-important against monsters with dangerous melee attacks. A fire ant is
-scary in melee. A fire ant that you’ve already zapped three times is
-just a warm corpse.</li>
-<li><strong>Know when to run.</strong> The Mazes have no medals for
-bravery, only for survival. If a fight is going badly, use a scroll of
-teleportation, a wand of teleportation, or just run. Dead adventurers
-don’t get second chances (unless wearing an amulet of life saving).</li>
-<li><strong>Use conflict.</strong> A ring of conflict makes monsters
-fight each other. Walk into a room full of enemies, put on the ring, and
-watch from the doorway as they destroy each other. Two 5.0 caveats: a
-monster has to <em>see</em> you for conflict to affect it (so blind or
-out-of-sight monsters keep their wits), and the chance scales with your
-<strong>Charisma</strong>: high Cha makes it noticeably more reliable,
-low Cha makes it flaky.</li>
-<li><strong>Elbereth for emergencies.</strong> Write it, stand on it,
-recover. The monsters will mill around you looking confused and angry,
-which is exactly how you want them. Step off Elbereth before resuming
-the fight: any attack from on top — melee, thrown, or zapped — defiles
-the engraving and costs you alignment (“you feel like a hypocrite”).
-Elbereth is a rest stop, not a firing position.</li>
-<li><strong>Ranged attackers retreat.</strong> Monsters with ranged
-attacks (archers, spellcasters, anything that can hurt you from a
-distance) now actively back away when you close to melee range. Walking
-toward a centaur archer to neutralize its bow no longer works; it will
-simply back up and keep shooting. The tactical implications: use corners
-and narrow passages to cut off their retreat, bring ranged options of
-your own, or use a wand of teleportation to skip past the dance. This
-change also means monster spellcasters are more dangerous than they used
-to be: they’ll maintain the range they need to cast while you struggle
-to close.</li>
-<li><strong>Cornered scared monsters fight.</strong> Elbereth still
-works, and the engrave-and-regenerate tactic still works, but only when
-the monster has somewhere to go. A frightened monster that has nowhere
-to flee will now turn and fight rather than stand helplessly while you
-recover. If you’ve carved <a href="#elbereth">Elbereth</a> in a corridor
-and then backed a monster into a dead end, be ready for it to make a
-decision about that arrangement. Keep an exit behind the monster, or
-expect contact.</li>
+<li><strong>Pick the square before contact.</strong> When you see a
+monster crossing an open room, walk toward the corridor or doorway you
+want to fight from, not toward the monster. Arrive at the chokepoint a
+turn before they do, and they meet you on your terms.</li>
+<li><strong>Step around a corner.</strong> When no corridor is
+convenient, step around a wall corner so the monster has to round it to
+reach you. They spend a turn arriving at the corner square; you get a
+free hit before they can swing back.</li>
+<li><strong>Compare speeds before committing.</strong> You move at speed
+12 (or 18 with speed boots). Most monsters fall between 6 and 18. If the
+monster is faster, you cannot kite or retreat: commit to melee, zap, or
+run <em>before</em> contact. If you are faster, every step you take is a
+free move; use that lead to set up the square you want to fight
+from.</li>
+<li><strong>Keep an exit at your back.</strong> Never let yourself be
+surrounded. Keep at least one square open in the direction of your
+fallback (stairs, a known corridor, an Elbereth square). The moment you
+are boxed in, your retreat consumables are your only way out.</li>
+<li><strong>Doors and diagonals.</strong> You cannot move diagonally
+through a door: approach and leave orthogonally. <strong>Closing a
+door</strong> (<code>c</code> + direction) blocks pets and any monster
+lacking the intelligence or hands to open it; handy when you want to
+slip away from your pet, or when you need a turn or two of quiet.</li>
+</ul>
+</section>
+<section id="during-the-fight" class="level5">
+<h5>During the fight</h5>
+<ul>
+<li><strong>Trade hits only when the math works.</strong> Estimate how
+many rounds you need to drop the monster and how many it needs to drop
+you. If your number is smaller, trade. If theirs is smaller, retreat
+now: a turn spent backing up is cheaper than a death.</li>
+<li><strong>Fight at range when you can.</strong> Wands, thrown weapons,
+and spells let you soften up monsters before they reach you. This
+matters most against monsters with dangerous melee attacks. A fire ant
+is scary in melee. A fire ant that you have already zapped three times
+is just a warm corpse.</li>
+<li><strong>Stay in your pet’s path.</strong> Your pet absorbs one hit
+per round if it can reach the monster, and a pet trading hits in your
+place is the best damage soak in the game. Step so the pet stays in
+melee range with the monster rather than blocking its approach.</li>
+<li><strong>Do not trade hits with covetous monsters.</strong> The
+Wizard of Yendor, demon lords, and arch-liches will teleport away to
+heal when wounded and come back at full HP. Trading hits with them is
+wasted damage. Burst with wand of death or finger of death; do not
+grind.</li>
 <li><strong>The first swing wakes the room.</strong> Sleeping monsters
 stay asleep while you walk past them, but a hit on one wakes everything
 around it: the struck monster growls, and the growl wakes any other
@@ -3603,6 +3614,51 @@ for larger creatures. A packed room becomes a simultaneous brawl on
 swing two. Pull the pack one at a time by <em>backing away</em> into a
 corridor first (so they wake strung out in a line) or write <a
 href="#elbereth">Elbereth</a> and let them come.</li>
+</ul>
+</section>
+<section id="when-the-fight-goes-badly" class="level5">
+<h5>When the fight goes badly</h5>
+<ul>
+<li><strong>Know when to run.</strong> The Mazes have no medals for
+bravery, only for survival. If a fight is going badly, use a scroll of
+teleportation, a wand of teleportation, or just run. Dead adventurers do
+not get second chances (unless wearing an amulet of life saving).</li>
+<li><strong>Use conflict.</strong> A ring of conflict makes monsters
+fight each other. Walk into a room full of enemies, put on the ring, and
+watch from the doorway as they destroy each other. Two 5.0 caveats: a
+monster has to <em>see</em> you for conflict to affect it (so blind or
+out-of-sight monsters keep their wits), and the chance scales with your
+<strong>Charisma</strong>. High Cha makes it noticeably more reliable.
+Low Cha makes it flaky.</li>
+<li><strong>Elbereth for emergencies.</strong> Write it, stand on it,
+recover. The monsters will mill around you looking confused and angry,
+which is exactly how you want them. Step off Elbereth before resuming
+the fight. Any attack from on top defiles the engraving and costs you
+alignment (“you feel like a hypocrite”). Elbereth is a rest stop, not a
+firing position.</li>
+</ul>
+</section>
+<section id="edge-cases-worth-knowing" class="level5">
+<h5>Edge cases worth knowing</h5>
+<ul>
+<li><strong>Ranged attackers retreat.</strong> Monsters with ranged
+attacks (archers, spellcasters, anything that can hurt you from a
+distance) now actively back away when you close to melee range. Walking
+toward a centaur archer to neutralize its bow no longer works; it will
+simply back up and keep shooting. The tactical implications: use corners
+and narrow passages to cut off their retreat, bring ranged options of
+your own, or use a wand of teleportation to skip past the dance. This
+change also means monster spellcasters are more dangerous than they used
+to be: they will maintain the range they need to cast while you struggle
+to close.</li>
+<li><strong>Cornered scared monsters fight.</strong> Elbereth still
+works, and the engrave-and-regenerate tactic still works, but only when
+the monster has somewhere to go. A frightened monster that has nowhere
+to flee will now turn and fight rather than stand helplessly while you
+recover. If you have carved <a href="#elbereth">Elbereth</a> in a
+corridor and then backed a monster into a dead end, be ready for it to
+make a decision about that arrangement. Keep an exit behind the monster,
+or expect contact.</li>
 <li><strong>Watch your alignment around peacefuls.</strong> Knights and
 Samurai take a special alignment hit for attacking the helpless,
 fleeing, or peaceful (a caitiff penalty for Knights, a giri-breaking
@@ -3610,13 +3666,9 @@ penalty for Samurai). The Quest entrance check requires alignment record
 at least 20 <em>and</em> experience level at least 14. A handful of
 careless peaceful kills can lock a Knight or Samurai out of the Quest
 for the rest of the run.</li>
-<li><strong>Doors and diagonals.</strong> You can’t move diagonally
-through a door: approach and leave orthogonally. <strong>Closing a
-door</strong> (<code>c</code> + direction) blocks pets and any monster
-lacking the intelligence or hands to open it; handy when you want to
-slip away from your pet, or when you need a turn or two of quiet.</li>
 </ul>
 <hr />
+</section>
 </section>
 </section>
 <section id="things-that-will-kill-you" class="level3">
