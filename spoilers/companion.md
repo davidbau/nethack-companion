@@ -17,7 +17,7 @@ players.
 
 ## Before You Read Further
 
-The dungeon is an ancient temptation. Old, but very much alive.
+The dungeon is an ancient temptation, old, but very much alive.
 No one remembers who built it, only that its entrance has stood
 open for more than forty years to anyone bold enough to descend.
 Brave souls come from every land, drawn by tales of an artifact
