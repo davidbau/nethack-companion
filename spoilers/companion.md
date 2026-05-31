@@ -18,9 +18,9 @@ players.
 ## Before You Read Further
 
 The dungeon is an ancient temptation, old, but very much alive.
-No one remembers the warriors who created it, only that its
-entrance has stood open for more than forty years to anyone
-bold enough to descend.
+No one remembers the sudburian warriors who created it, only
+that its entrance has stood open for more than forty years to
+anyone bold enough to descend.
 Brave souls come from every land, drawn by tales of an artifact
 hidden in its depths: Knights, Wizards, Valkyries, Samurai,
 Archeologists with their picks, even Tourists with their
