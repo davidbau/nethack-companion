@@ -1774,6 +1774,15 @@ search repeatedly in suspicious areas. Your pet, being closer to the
 ground and warier by nature, will hesitate to step on traps it
 knows about; watch its movement for clues.
 
+A useful pattern to recognize: an unexplained corpse sitting
+alone on a room floor is often covering the trap that killed
+it. The corpse's `%` glyph draws on top of the `^`, so the
+trap stays hidden even after you would otherwise have seen it.
+The corpse may also be sitting on dropped gear from its owner,
+which makes the square worth investigating. Search the
+adjacent squares to reveal the trap, then `#untrap` to try to
+disarm it instead of stepping on.
+
 Here are the traps you'll encounter, roughly grouped by how much
 you'll regret finding them:
 
