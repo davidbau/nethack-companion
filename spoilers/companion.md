@@ -2474,7 +2474,7 @@ before it starts, and that means thinking about where you stand,
 when you swing, and what happens if it goes wrong. Here are the
 time-tested tactics that keep adventurers breathing.
 
-##### Position before contact
+*Position before contact.*
 
 - **Use corridors.** Monsters can only approach one at a time in
   a corridor. This is the single most important tactical
@@ -2507,7 +2507,7 @@ time-tested tactics that keep adventurers breathing.
   intelligence or hands to open it; handy when you want to slip
   away from your pet, or when you need a turn or two of quiet.
 
-##### During the fight
+*During the fight.*
 
 - **Trade hits only when the math works.** Estimate how many
   rounds you need to drop the monster and how many it needs to
@@ -2524,11 +2524,13 @@ time-tested tactics that keep adventurers breathing.
   your place is the best damage soak in the game. Step so the
   pet stays in melee range with the monster rather than blocking
   its approach.
-- **Do not trade hits with covetous monsters.** The Wizard of
-  Yendor, demon lords, and arch-liches will teleport away to
-  heal when wounded and come back at full HP. Trading hits with
-  them is wasted damage. Burst with wand of death or finger of
-  death; do not grind.
+- **Burst-kill the Wizard of Yendor.** When wounded, the Wizard
+  teleports away to heal and returns at full HP, often with a
+  fresh summon and your Amulet in his pocket. Trading hits with
+  him is wasted damage; use wand of death or finger of death to
+  drop him in one strike. The same do-not-grind principle
+  applies to any boss-tier singleton you can finish in a single
+  burst.
 - **The first swing wakes the room.** Sleeping monsters stay
   asleep while you walk past them, but a hit on one wakes
   everything around it: the struck monster growls, and the growl
@@ -2536,10 +2538,12 @@ time-tested tactics that keep adventurers breathing.
   for a level-3 gnome, more for larger creatures. A packed room
   becomes a simultaneous brawl on swing two. Pull the pack one
   at a time by *backing away* into a corridor first (so they
-  wake strung out in a line) or write [Elbereth](#elbereth) and
-  let them come.
+  wake strung out in a line), or write [Elbereth](#elbereth) so
+  they cluster around the ward instead of swarming. Then step
+  off to engage individually; attacking from on top of the
+  engraving defiles it.
 
-##### When the fight goes badly
+*When the fight goes badly.*
 
 - **Know when to run.** The Mazes have no medals for bravery,
   only for survival. If a fight is going badly, use a scroll of
@@ -2560,7 +2564,7 @@ time-tested tactics that keep adventurers breathing.
   engraving and costs you alignment ("you feel like a
   hypocrite"). Elbereth is a rest stop, not a firing position.
 
-##### Edge cases worth knowing
+*Edge cases worth knowing.*
 
 - **Ranged attackers retreat.** Monsters with ranged attacks
   (archers, spellcasters, anything that can hurt you from a
