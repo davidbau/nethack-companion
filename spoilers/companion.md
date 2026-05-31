@@ -1092,10 +1092,9 @@ If fountains are slot machines, altars are the single most useful
 piece of furniture in the dungeon. Treat every altar like the
 treasure it is.
 
-**Dropping items on an altar** reveals their BUC status instantly:
-- **Amber flash** → blessed
-- **Black flash** → cursed
-- No flash → uncursed
+**Dropping items on an altar** reveals their BUC status instantly.
+**Amber flash** → Blessed. **No flash** → Uncursed. **Black
+flash** → Cursed.
 
 This is free, unlimited, and works on everything. In the early game,
 your first altar becomes your testing laboratory: haul every
