@@ -8311,7 +8311,7 @@ missile works on all three Riders; use that instead.
 Offer the Amulet at the correct altar. Your god accepts the
 gift, the Amulet vanishes into the divine flame, and you ascend
 among the immortals. Few adventurers reach this moment. The
-book closes here, with you.
+book closes here. Congratulations.
 
 ---
 
