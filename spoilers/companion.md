@@ -7999,7 +7999,7 @@ alone is not the difference between winners and losers.
 
 #### What killed the runners-up
 
-A look at adventurers who fell deep in Gehennom shows that
+A look at adventurers who died deep in Gehennom shows that
 their gear was nearly indistinguishable from the winners'.
 Their AC was −23 to −40. They had wands of death, all three
 Invocation items, silver dragon scale mail. What killed them
