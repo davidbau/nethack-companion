@@ -2927,60 +2927,61 @@ more glob to eat. The full intrinsic table is in
 
 The `T` class doesn't stay dead. After you kill a troll, its
 corpse sits on the floor for a few hidden turns and then stands
-back up — at full HP, fresh and angry. A pile of corpses after a
-five-troll fight is a *timer*, not a kill count: walk away for
+back up at full HP, fresh and angry. A pile of corpses after a
+five-troll fight is a timer, not a kill count. Walk away for
 twenty turns and the same five trolls are coming back. The
-veteran's lament — *"I beat the trolls, I got cocky, the trolls
-beat me"* — is the most repeated story on the public boards.
+veteran's lament *"I beat the trolls, I got cocky, the trolls
+beat me"* is one of the most repeated stories on the public
+boards.
 
-**Stopping the revival.** Eat the corpse (trolls are safe to
-eat for everyone but vegetarians). Tin it with a tin opener.
-Apply a magic whistle to summon a pet who'll eat it. Zap a wand
-of teleportation at the corpse to send it off-level. Destroy it
-with a wand of striking. In Gehennom, the lava under your feet
-is the simplest solution — kick the corpse onto a lava square
-and walk on.
+**Stopping the revival.** The simplest cure is to eat the corpse,
+since trolls are safe to eat for everyone but vegetarians. You
+can also tin it with a tin opener, apply a magic whistle to call
+a pet over to eat it, zap a wand of teleportation at the corpse
+to send it off-level, or destroy it with a wand of striking. In
+Gehennom, kicking the corpse onto a lava square works in one
+move.
 
-**Trolls drop their gear when they die.** If they revive, they
-re-collect what they were carrying, so a revive-and-recollect
+**Trolls drop their gear when they die.** A revived troll
+re-collects what it was carrying, so a revive-and-recollect
 cycle leaves piles of mixed troll-gear and dead-troll bodies on
-the same square. Pick up the gear before they wake up; the loot
+the same square. Pick up the gear before they wake up. The loot
 is yours either way.
 
 **Class members.** Plain troll, ice troll, rock troll, water
-troll, and the late-game Olog-hai. All revive; the corpse
+troll, and the late-game Olog-hai. All revive, and the corpse
 behaves the same way regardless of variant. The Olog-hai is the
-one to fear — a three-attack hitter at level 13, and "fighting
-the same Olog-hai twice in twenty turns" is one of those
-experiences that turns a careless run into a careful one.
+variant to fear, a three-attack hitter at level 13. Fighting the
+same Olog-hai twice in twenty turns is the experience that turns
+a careless run into a careful one.
 
 #### A note on wraiths
 
 The `W` class has a touch attack that **drains an experience
-level** — one of the few permanent character setbacks in the
+level**, one of the few permanent character setbacks in the
 game. You lose stat points, hit points, mana, and the most
 recent skill slot. There is no easy undo, and the wraith can
 land the touch again if you let it. The standard advice on the
-public boards: fear the wraith on first sight, plan the kill
-from across the room.
+public boards is to fear the wraith on first sight and plan the
+kill from across the room.
 
-**But the corpse is one of the most valuable consumables in the
-game.** Eating a fresh wraith corpse grants you a level — the
-inverse operation. So the recipe: kill the wraith carefully
-(the touch is melee-range only, so engage at distance or from
-inside a corridor where you control the spacing), then eat the
-corpse the moment it drops. Wraith corpses spoil quickly, so
-hesitation costs you the trade.
+**The corpse, though, is one of the most valuable consumables
+in the game.** Eating a fresh wraith corpse grants you a level,
+the inverse operation. The recipe is to kill the wraith
+carefully and then eat the corpse the moment it drops. The
+touch is melee-range only, so engage at distance or from inside
+a corridor where you control the spacing. Wraith corpses spoil
+quickly, so hesitation costs you the trade.
 
-**Farming wraiths.** Mid-to-late-game players actively
-hunt wraiths in the upper Quest and throughout Gehennom for free
-XP. A *cursed* scroll of genocide naming "wraith" reverse-
-genocides four to six fresh wraiths at your feet — a ready-made
-banquet, if you can drop each one in the turn it arrives. The
-classic setup is to stand on stairs (so you can escape if it
-goes wrong), drop a stack of cursed scrolls, and graze. Some
-ascending heroes credit a wraith binge for the experience levels
-that carried them through Gehennom.
+**Farming wraiths.** Mid-to-late-game players actively hunt
+wraiths in the upper Quest and throughout Gehennom for free XP.
+A *cursed* scroll of genocide naming "wraith" reverse-genocides
+four to six fresh wraiths at your feet, a ready-made banquet if
+you can drop each one in the turn it arrives. The classic setup
+is to stand on stairs (so you can escape if it goes wrong),
+drop a stack of cursed scrolls, and graze. Some ascending
+heroes credit a wraith binge for the experience levels that
+carried them through Gehennom.
 
 #### A note on Seduction {#seduction}
 <!-- audit
