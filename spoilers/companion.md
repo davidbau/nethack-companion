@@ -440,9 +440,11 @@ don't need to hoard. Tripe rations are for your pet, not for you.
 **A way to identify things.** In the early game, your primary
 identification tools are altars (drop items to see if they flash
 blessed/cursed), your pet (it won't step on cursed items), and
-experimentation. A scroll of identify is valuable, but you might not
-find one for a while. A touchstone (a gray stone that identifies gems)
-is helpful but not urgent.
+experimentation. A scroll of identify is valuable, but you might
+not find one for a while. A touchstone (a gray stone that
+identifies gems) is helpful but not urgent. The full identification
+playbook is in
+[A Practical Identification Strategy](#a-practical-identification-strategy).
 
 **Armor improvements.** Whatever you're wearing, you can probably do
 better. Look for cloaks, helmets, gloves, and boots to fill empty
@@ -8182,8 +8184,8 @@ play your way across the void.
 
 #### Plane of Earth
 
-You arrive in a small cavern in the lower right of the plane.
-The light is dim, and two figures are already there to meet you:
+You arrive in a small cavern in the corner of the plane. The
+light is dim, and two figures are already there to meet you:
 an Elvenking and a minotaur, both hostile. The plane is a
 constellation of small caverns scattered through diggable rock,
 and the portal to the Plane of Air is hidden in another one of

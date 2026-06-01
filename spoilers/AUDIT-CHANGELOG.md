@@ -10,7 +10,7 @@ Each batch is committed individually.
 ## Progress
 
 - Total sections: 272
-- Audited: 1
+- Audited: 2
 - Status: in progress
 
 ## Findings
@@ -42,5 +42,19 @@ scroll of magic mapping immediately to locate the portal cavern.
 Rewrote to keep the close, dim, claustrophobic feel while naming the
 real arrival ambush and the actual cavern-network structure.
 
-**Changes**: rewrote the paragraph (companion.md:8183).
+**Changes**: rewrote the paragraph (companion.md:8183). Followup: `lower right` -> `corner` per user feedback, since the level can be flipped on both axes (sp_lev.c:967 flip_level_rnd; only `castle.lua` and `bigrm-12.lua` opt out via noflipx/noflipy).
+
+### Audit 2: The Early Shopping List (companion.md:429)
+
+**Accuracy** — verified:
+- Supply chests: `mklev.c:1041` confirms the 5.0 feature; appears on `dlevel < oracle_level.dlevel` with `rn2(3)` truthy chance (= 2/3 of qualifying levels). Book's "two-thirds" is correct.
+- Supply chest contents (potions of healing/extra healing/speed/gain energy, scrolls of enchant weapon/armor/confuse monster/scare monster, wand of digging, spell of healing) verified at `mklev.c:1050-1060`.
+- Tripe rations: `eat.c:2131-2146` — non-orc, non-carnivorous players vomit 50% of the time. Book's "for your pet, not for you" is correct.
+- Burdened encumbrance vs fast monster math: verified against the new Speed section's allocation mechanics. A speed-18 monster gets 2× actions vs a Burdened (9 pts/turn) hero. Book's "two hits per one of yours" against "some monsters" is correct.
+
+**Language** — clean, beginner-friendly. No code jargon.
+
+**Hyperlinks** — added a cross-reference from the identification paragraph to the full identification chapter (`#a-practical-identification-strategy`).
+
+**Changes**: added one hyperlink (companion.md:445).
 </content>
