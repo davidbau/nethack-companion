@@ -17,7 +17,7 @@ players.
 
 ## Before You Read Further
 
-The dungeon is an ancient temptation, old, but very much alive.
+The dungeon is an ancient temptation: old, but very much alive.
 No one remembers the sudburian warriors who created it, only
 that its entrance has stood open for more than forty years to
 anyone bold enough to descend.
@@ -25,17 +25,17 @@ Brave souls come from every land, drawn by tales of an artifact
 hidden in its depths: Knights, Wizards, Valkyries, Samurai,
 Archeologists with their picks, even Tourists with their
 cameras. No two find the same mazes. Rooms shift between visits,
-stairwells move. When the dungeon shifts, an old reliable route
-can turn deadly. The one
+stairwells move. The one
 constant is that the dungeon is trying to kill you.
 
 Most adventurers who go down there never come back. The ones
 who do have taken time to prepare: they have read the myths,
 learned the lore, and listened to the warnings of those who
-have gone before. The following pages gather the wisdom of generations
-of adventurers, and now seers have updated the canon with insights on
-the latest dungeon changes. Every word has been paid for by the lives of those who did not
-return and by the painstaking observations of those who did.
+have gone before. The following pages gather the wisdom of
+generations of adventurers, and now seers have updated the
+canon with the latest intrigues of the dungeon. Every word
+has been paid for by the lives of those who did not return
+and by the painstaking observations of those who did.
 
 **A word of caution.** This guide will change how you experience
 the Mazes. Once you know that a floating eye can paralyze you
@@ -442,9 +442,9 @@ identification tools are altars (drop items to see if they flash
 blessed/cursed), your pet (it won't step on cursed items), and
 experimentation. A scroll of identify is valuable, but you might
 not find one for a while. A touchstone (a gray stone that
-identifies gems) is helpful but not urgent. The full identification
-playbook is in
-[A Practical Identification Strategy](#a-practical-identification-strategy).
+identifies gems) is helpful but not urgent. The full
+identification playbook is in [A Practical Identification
+Strategy](#a-practical-identification-strategy).
 
 **Armor improvements.** Whatever you're wearing, you can probably do
 better. Look for cloaks, helmets, gloves, and boots to fill empty
@@ -603,7 +603,9 @@ Use ranged attacks, or just walk around them. They are very slow.
 
 **Rotted corpses.** If you eat a corpse that's been on the ground too
 long, you'll get food poisoning, which is lethal without treatment.
-Eat corpses fresh, within about 30 turns of the kill for a guaranteed-safe meal. Past that, the rot roll turns random; past ~175 turns an uncursed corpse is certainly tainted.
+Eat corpses fresh, within about 30 turns of the kill for a
+guaranteed-safe meal. Past that, the rot roll turns random;
+past ~175 turns an uncursed corpse is certainly tainted.
 If you do get food poisoning, pray immediately.
 
 **Falling down stairs while overburdened.** If you're carrying too
@@ -644,13 +646,13 @@ cram ration, or lembas wafer.
 
 These look like ordinary containers, no special marking. On your
 first ten levels, check every chest and large box you find. A
-locked one will yield to a credit card, a key, a wand of opening,
-or you can `#force` the issue with a weapon you don't mind
-breaking. An orcish dagger off the first orc you kill is
-a perfect tool (pet-test it first: could be cursed). The contents aren't guaranteed
-to change your run, but finding a stack of healing potions on level
-4 before you've learned the hard way how much you need them is the
-dungeon's act of goodwill.
+locked one will yield to a credit card, a key, a wand of
+opening, or you can `#force` the issue with a weapon you don't
+mind breaking. An orcish dagger off the first orc you kill is a
+perfect tool (pet-test it first: could be cursed). The contents
+aren't guaranteed to change your run, but finding a stack of
+healing potions on level 4 before you've learned the hard way
+how much you need them is the dungeon's act of goodwill.
 
 ---
 
@@ -1075,16 +1077,16 @@ with dozens of random effects including:
 | Scare monsters    | Bad breath, every monster on the level panics        |
 | Nothing           | "The water is cool and refreshing" or "tasteless"     |
 
-Most of the time, nothing happens. A demon appears about 1/30; on
-shallow levels it may grant you a wish instead of attacking,
+Most of the time, nothing happens. A demon appears about 1/30;
+on shallow levels it may grant you a wish instead of attacking,
 working out to roughly 1 wish per 150 quaffs, dropping to zero
-chance past Dlvl 20. If you want to take the risk, it is a good idea
-to put your items in a bag to protect them from cursing and engrave
-[Elbereth](#elbereth) on a couple squares to protect against demons. Wizards'
-random starting items can include a scroll of taming or charm-monster
-spellbook, and any character with a protective instrument (tooled
-horn, leather drum, magic harp) can scare or charm a demon, making
-the gamble safer.
+chance past Dlvl 20. If you want to take the risk, it is a good
+idea to put your items in a bag to protect them from cursing and
+engrave [Elbereth](#elbereth) on a couple squares to protect
+against demons. Wizards' random starting items can include a
+scroll of taming or charm-monster spellbook, and any character
+with a protective instrument (tooled horn, leather drum, magic
+harp) can scare or charm a demon, making the gamble safer.
 
 **Dipping in a fountain** is a different gamble, and one that Lawful
 characters should know by heart. If you're at least experience level
@@ -1094,9 +1096,10 @@ dip; everyone else gets a meager 1/30. Otherwise, dipping can rust
 your gear, summon hostile water creatures, or occasionally
 uncurse the dipped item.
 
-The conventional wisdom: if you're a lawful Knight carrying a long
-sword, dip in every fountain you see until Excalibur appears. Other
-lawful characters should try too, but pack patience. If you're not lawful, don't dip.
+The conventional wisdom: if you're a lawful Knight carrying a
+long sword, dip in every fountain you see until Excalibur
+appears. Other lawful characters should try too, but pack
+patience. If you're not lawful, don't dip.
 
 #### Altars `_`
 
@@ -1330,13 +1333,14 @@ character, most of them will be peaceful, which makes the Mines a
 relatively comfortable detour. Everyone else will need to fight
 through a steady stream of hostile gnomes and dwarves.
 
-The Mines also have a notorious surprise guest: a mind flayer can
-spawn on any random Mines level outside Minetown and Mine's End.
-*"You sense a faint wave of psychic energy"* on an unexplored Mines
-level is the warning. A mind flayer drains Intelligence on every
-successful tentacle hit. In the early game you may not have the helmet
-protection or ranged attack power you'll need to fight one safely. Retreat to prep, or
-skip the branch.
+The Mines also have a notorious surprise guest: a mind flayer
+can spawn on any random Mines level outside Minetown and Mine's
+End. *"You sense a faint wave of psychic energy"* on an
+unexplored Mines level is the warning. A mind flayer drains
+Intelligence on every successful tentacle hit. In the early game
+you may not have the helmet protection or ranged attack power
+you'll need to fight one safely. Retreat to prep, or skip the
+branch.
 
 **Minetown** appears a few levels into the Mines. Usually it's a small
 settlement with shops and a temple, and it's worth visiting early.
@@ -1379,10 +1383,11 @@ BUC-test what you pick up before relying on it.)
 #### Sokoban
 
 The entrance staircase appears somewhere around dungeon levels 6
-through 10 (one level below the Oracle), and it goes up. Sokoban is a set of
-four puzzle levels where you push boulders onto holes or into place
-to open a path. Teleport doesn't work here, and you can't dig down
-off the entrance level (its floor is reinforced).
+through 10 (one level below the Oracle), and it goes up. Sokoban
+is a set of four puzzle levels where you push boulders onto
+holes or into place to open a path. Teleport doesn't work here,
+and you can't dig down off the entrance level (its floor is
+reinforced).
 
 The puzzles are fixed (two variants per level, randomly chosen).
 <!-- audit
@@ -1529,12 +1534,13 @@ Takauji over the Tsurugi of Muramasa. The Wizard descends into
 the Dark One's stronghold for the Eye of the Aethiopica. The
 [Artifacts](#artifacts) chapter has the full per-role list.
 
-Quest artifacts are powerful. Each grants a unique mix of carried
-or worn intrinsics: protection, luck, ESP, warning, reflection, or
-stealth depending on role. A few grant magic resistance just by
-being carried; a few others block magic attacks only when wielded
-or worn. The [Artifacts](#artifacts) chapter has the per-role list. Getting your
-quest artifact is a pivotal moment. The late game starts here.
+Quest artifacts are powerful. Each grants a unique mix of
+carried or worn intrinsics: protection, luck, ESP, warning,
+reflection, or stealth depending on role. A few grant magic
+resistance just by being carried; a few others block magic
+attacks only when wielded or worn. The [Artifacts](#artifacts)
+chapter has the per-role list. Getting your quest artifact is a
+pivotal moment. The late game starts here.
 
 **Two prizes wait on the nemesis's square.** The **Bell of Opening**
 rides in the nemesis's pack and falls when you kill them (one of the
@@ -1548,9 +1554,9 @@ twice. The portal back to the main dungeon is on the first Quest
 level only. If you descend underprepared and have to turn back, you
 may have a long climb home.
 
-If your alignment record is too low, your quest leader will refuse
-to send you. A history of attacking peacefuls is the usual cause. Keep your hands
-clean.
+If your alignment record is too low, your quest leader will
+refuse to send you. A history of attacking peacefuls is the
+usual cause. Keep your hands clean.
 
 #### The Rogue Level
 <!-- audit
@@ -1584,8 +1590,9 @@ the era away:
   no spellbooks, tools, or amulets in the natural item pool, all
   post-Rogue inventions.
 
-Modern mechanics still work; you can engrave [Elbereth](#elbereth) here even
-though that was a Hack-era addition. A small anachronism.
+Modern mechanics still work; you can engrave
+[Elbereth](#elbereth) here even though that was a Hack-era
+addition. A small anachronism.
 
 #### Fort Ludios
 <!-- audit
@@ -2300,10 +2307,11 @@ walls (xorn, earth elemental), is **tiny** enough to slip between,
 or eats metal (rock mole). Starting pets won't fit, but a polymorphed
 pet can.
 
-What's typically behind them: a scroll of teleportation (unless the
-level is non-teleport, in which case the niche skips it), occasionally
-a random item or a previous adventurer's corpse. The scroll is a joke: you'd
-need one already to read it from outside the bars.
+What's typically behind them: a scroll of teleportation (unless
+the level is non-teleport, in which case the niche skips it),
+occasionally a random item or a previous adventurer's corpse.
+The scroll is a joke: you'd need one already to read it from
+outside the bars.
 
 ---
 
@@ -2928,10 +2936,11 @@ the last hit on someone who walked away from a real fight at 2 HP,
 or who decided to read a scroll on the turn one was adjacent.
 Don't read scrolls under threat.
 
-**Killed by kicking.** Kicking sinks summons a [black pudding](#a-note-on-puddings),
-a foocubus, or worse. Kicking doors can break your toe. Kicking
-locked chests can electrocute you. Kick what you mean to kick,
-and only when you can spare the consequence.
+**Killed by kicking.** Kicking sinks summons a
+[black pudding](#a-note-on-puddings), a foocubus, or worse.
+Kicking doors can break your toe. Kicking locked chests can
+electrocute you. Kick what you mean to kick, and only when you
+can spare the consequence.
 
 **Wrath of a god.** You prayed when your god wasn't willing.
 See [Divine Relations](#divine-relations) for the prayer
@@ -3060,9 +3069,9 @@ single bump can rob you, drop your XL, and snatch the cloak off
 your shoulders, all in one round.
 
 **Defenses.** Kill at range (darts, force bolt, a wand of
-anything). [Engrave **Elbereth**](#elbereth): nymphs respect it. Or drop your
-most irreplaceable items on the floor before approaching.
-Whatever's not in your pack can't be stolen.
+anything). [Engrave **Elbereth**](#elbereth): nymphs respect it.
+Or drop your most irreplaceable items on the floor before
+approaching. Whatever's not in your pack can't be stolen.
 
 **Already robbed?** A satiated nymph stays on the same level
 unless she later falls through a trapdoor or wanders onto a
@@ -3098,23 +3107,23 @@ spells work too.
 engage in your starting iron suit if you can avoid it.
 
 **Eat the globs.** A pudding leaves a **glob** rather than a
-corpse, and the globs are some of the best food in the game.
-One difference between a glob and a corpse is that you cannot
+corpse, and the globs are some of the best food in the game. One
+difference between a glob and a corpse is that you cannot
 sacrifice globs at an altar, so puddings can't be farmed for
 offerings. The globs are slow to spoil (about 500 turns of
-edibility, twice a normal corpse) and packed with resistances. A brown-pudding glob
-grants **cold, shock, and poison resistance** over repeated
-eats; a gray-ooze glob grants **fire, cold, and poison
-resistance**; a black-pudding glob also grants **cold, shock,
-and poison resistance**. Brown pudding and gray ooze are
-*vegetarian*-safe; black pudding is not. Globs of the same color
-stack and shrink together, so a pile of brown-pudding globs is a
-re-rollable chance at the resistance you don't yet have. The
-strategic flip-side of the splitting trap: if you can kill one
-pudding cleanly (silver weapon, cold/fire wand, spell), the
-splitting becomes a *feature*: every divided pudding is one
-more glob to eat. The full intrinsic table is in
-[Useful Corpse Effects](#useful-corpse-effects).
+edibility, twice a normal corpse) and packed with resistances. A
+brown-pudding glob grants **cold, shock, and poison resistance**
+over repeated eats; a gray-ooze glob grants
+**fire, cold, and poison resistance**; a black-pudding glob also
+grants **cold, shock, and poison resistance**. Brown pudding and
+gray ooze are *vegetarian*-safe; black pudding is not. Globs of
+the same color stack and shrink together, so a pile of
+brown-pudding globs is a re-rollable chance at the resistance
+you don't yet have. The strategic flip-side of the splitting
+trap: if you can kill one pudding cleanly (silver weapon,
+cold/fire wand, spell), the splitting becomes a *feature*: every
+divided pudding is one more glob to eat. The full intrinsic
+table is in [Useful Corpse Effects](#useful-corpse-effects).
 
 #### A note on trolls
 
@@ -3353,8 +3362,9 @@ soon after Famine hits.
 A handful of monsters (pit vipers, killer bees, cobras, some
 spiders) have a poison-damage branch that can deliver 10 to 34
 extra HP of damage on top of the normal hit. At full HP you
-usually survive; at low HP it can outright kill you. The "extra-damage" roll fires about 1 in 240 per
-qualifying hit. Eating any Rider corpse (Death, Pestilence, *or*
+usually survive; at low HP it can outright kill you. The
+"extra-damage" roll fires about 1 in 240 per qualifying hit.
+Eating any Rider corpse (Death, Pestilence, *or*
 Famine) is genuinely instantly fatal regardless of HP.
 
 **Defenses:** Poison resistance makes you immune. Most characters
@@ -3638,12 +3648,12 @@ claw is the silent ascension-killer it's reputed to be, but the
 mechanic is more constrained than common lore suggests.
 
 Their **active** claw picks one of your worn armor pieces (cloak
-first, then suit, then shirt, then helm, gloves, boots, or shield
-by weighted chance) and shaves 1 off its enchantment. If you have no armor at
-all, it can instead chew a ring, amulet, or blindfold. **It can't
-reach your wielded weapon** with the active attack. The game does
-print "Your *thing* seems less effective" each time, so you'll
-know when it lands.
+first, then suit, then shirt, then helm, gloves, boots, or
+shield by weighted chance) and shaves 1 off its enchantment. If
+you have no armor at all, it can instead chew a ring, amulet, or
+blindfold. **It can't reach your wielded weapon** with the
+active attack. The game does print "Your *thing* seems less
+effective" each time, so you'll know when it lands.
 
 Your weapon only takes enchantment damage as a **passive** counter
 when you hit them in melee. Three or four melee strikes will take
@@ -3779,10 +3789,12 @@ sinking. Lava immersion also destroys most of your inventory.
 **Drowning (being held).** When grabbed by an eel or kraken in
 water, you have a few turns to escape before drowning. The drown
 check uses the eel's tile, so levitation, water walking, and
-encumbrance status are irrelevant once the grab lands. **Cures:**
-magical breathing (amulet or spell), kill or teleport the eel
-before it pulls you under, or avoid water entirely. See
-[Drowning](#drowning) in [Ways to Die Instantly](#ways-to-die-instantly) for the full picture.
+encumbrance status are irrelevant once the grab lands.
+**Cures:** magical breathing (amulet or spell), kill or teleport
+the eel before it pulls you under, or avoid water entirely. See
+[Drowning](#drowning) in
+[Ways to Die Instantly](#ways-to-die-instantly) for the full
+picture.
 
 **Strangulation.** Wearing a cursed amulet of strangulation slowly
 kills you over a few turns. **Cure:** remove the amulet (requires
@@ -4140,15 +4152,16 @@ methods of taming exist:
   11×11 (but you can't cast the spell while confused).
 - **Magic trap effects** occasionally produce taming
 
-Taming isn't limited to small animals: with a scroll of taming or
-the charm monster spell, you can recruit a purple worm to swallow
-your enemies whole (its growing tail will sprawl across the room
-and get in the way of your shots), a dragon to breathe fire at
-them, a titan to crush them underfoot. The exclusion list is substantial, though:
-no humans (priests, shopkeepers, watchmen, soldiers, kings), no
-covetous monsters (the Wizard, liches, masters), no demons (unless
-you are one), no vault guards, quest leaders, nor minions can be
-tamed. Unique monsters (Medusa, etc.) also resist.
+Taming isn't limited to small animals: with a scroll of taming
+or the charm monster spell, you can recruit a purple worm to
+swallow your enemies whole (its growing tail will sprawl across
+the room and get in the way of your shots), a dragon to breathe
+fire at them, a titan to crush them underfoot. The exclusion
+list is substantial, though: no humans (priests, shopkeepers,
+watchmen, soldiers, kings), no covetous monsters (the Wizard,
+liches, masters), no demons (unless you are one), no vault
+guards, quest leaders, nor minions can be tamed. Unique monsters
+(Medusa, etc.) also resist.
 
 #### What Pets Do for You
 
@@ -4411,13 +4424,13 @@ for all unID sales at that shop. Either wrinkle can shift a quoted
 price into an adjacent tier, so when in doubt check the surrounding
 tiers too.
 
-**Angry.** A shopkeeper you've previously angered (fired a wand from a doorway,
-attacked them, picked up an unpaid item while broke) and then made
-amends (paid the bill, fled and let them calm down) becomes peaceful
-again but keeps a permanent +33% buy surcharge on every item. Paying
-the bill clears the bill but not the surcharge; that flag sticks for
-the rest of your visits to that shopkeeper. Sell prices are
-unaffected.
+**Angry.** A shopkeeper you've previously angered (fired a wand
+from a doorway, attacked them, picked up an unpaid item while
+broke) and then made amends (paid the bill, fled and let them
+calm down) becomes peaceful again but keeps a permanent +33% buy
+surcharge on every item. Paying the bill clears the bill but not
+the surcharge; that flag sticks for the rest of your visits to
+that shopkeeper. Sell prices are unaffected.
 
 The price tables for each item class follow. These are your
 field reference for shopping trips.
@@ -5149,12 +5162,12 @@ tins are the one exception: they open in zero or one turn no
 matter the tool (instantly with a blessed tin opener). A tin of
 spinach increases your Strength.
 
-**Vegetarian characters** have to live on rations, lembas, fruits,
-and the small set of non-meat corpses (fungi, molds, lichens,
-jellies, plus eggs). **Vegans** lose the eggs, so they're stricter still: rations,
-lembas, fruits, and plant corpses only. Plan ahead. The corpse-pile
-strategy doesn't work for either, so rations and fruit are the
-budget items to hoard.
+**Vegetarian characters** have to live on rations, lembas,
+fruits, and the small set of non-meat corpses (fungi, molds,
+lichens, jellies, plus eggs). **Vegans** lose the eggs, so
+they're stricter still: rations, lembas, fruits, and plant
+corpses only. Plan ahead. The corpse-pile strategy doesn't work
+for either, so rations and fruit are the budget items to hoard.
 
 #### Dangerous Foods
 
@@ -5365,14 +5378,15 @@ healing up to gain ability is still there; you just do it in small batches
 with undiluted inputs. Think of it as artisanal alchemy rather than
 industrial production.
 
-Alchemy carries an explosion risk: roughly 10% on any non-water combination. An
-alchemy smock (if you find one) reduces this to about 1 in 30, which
-is the difference between "risky hobby" and "acceptable profession." Do
-your chemistry in an isolated room, away from your stash, and never
-dip a cursed potion into another. The dipping potion (not the one it
-goes into) is the one the game tests for explosion, and a cursed
-dip detonates every time. The dungeon is consistent about this if
-nothing else.
+Alchemy carries an explosion risk: roughly 10% on any non-water
+combination. An alchemy smock (if you find one) reduces this to
+about 1 in 30, which is the difference between "risky hobby" and
+"acceptable profession." Do your chemistry in an isolated room,
+away from your stash, and never dip a cursed potion into
+another. The dipping potion (not the one it goes into) is the
+one the game tests for explosion, and a cursed dip detonates
+every time. The dungeon is consistent about this if nothing
+else.
 
 #### Unicorn Horn Interactions
 
@@ -5486,15 +5500,15 @@ works on worn and wielded items only; blessed version uncurses your
 entire inventory. Every adventurer has a "put on a cursed ring"
 story. This scroll is the happy ending.
 
-[]{#scroll-charging}
-**Charging.** Recharges wands and rechargeable tools. Save these
-for your wand of wishing: one charge means one more wish. Blessed
-charging restores more charges. Each recharge has an `n³/7³` chance
-of the wand exploding (where `n` is the count of previous recharges):
-0% on first, 0.3% on second, 2% on third, 8% on fourth, 19% on fifth,
-36% on sixth, 63% on seventh, and on the eighth, always. Wand of wishing is the
-exception: it explodes 100% of the time on the second recharge, so
-recharge it exactly once and no more.
+[]{#scroll-charging} **Charging.** Recharges wands and
+rechargeable tools. Save these for your wand of wishing: one
+charge means one more wish. Blessed charging restores more
+charges. Each recharge has an `n³/7³` chance of the wand
+exploding (where `n` is the count of previous recharges): 0% on
+first, 0.3% on second, 2% on third, 8% on fourth, 19% on fifth,
+36% on sixth, 63% on seventh, and on the eighth, always. Wand of
+wishing is the exception: it explodes 100% of the time on the
+second recharge, so recharge it exactly once and no more.
 
 []{#scroll-genocide}
 **Genocide.** The nuclear option. Uncursed eliminates a single
@@ -5719,13 +5733,13 @@ through a dangerous area or turning a fight in your favor. For
 lasting invisibility, use a ring of invisibility or a cloak of
 invisibility.
 
-[]{#wand-stasis}
-**Stasis.** A new 5.0 wand that freezes every monster on the level
-for **10–30 turns**. No ray, no aim, no message. Just a hush. Use
-it when you're surrounded and need a free moment to engrave
-[Elbereth](#elbereth), drink a potion, change weapons, or just walk past. The
-silence on engraving makes it harder to identify by the engrave
-test, but if you sit on a charge for a fight you'll know.
+[]{#wand-stasis} **Stasis.** A new 5.0 wand that freezes every
+monster on the level for **10–30 turns**. No ray, no aim, no
+message. Just a hush. Use it when you're surrounded and need a
+free moment to engrave [Elbereth](#elbereth), drink a potion,
+change weapons, or just walk past. The silence on engraving
+makes it harder to identify by the engrave test, but if you sit
+on a charge for a fight you'll know.
 
 **Probing.** A diagnostic wand: zap at a monster to learn its HP,
 max HP, level, and *what it's carrying*. Useful on shopkeepers,
@@ -5831,11 +5845,12 @@ when you reach for the wand.
 A wand of polymorph zapped at a *pile* of junk items reshuffles
 each one into a random item of the same class. This trick is
 called "polypiling," because it can turn a pile of dross into a
-selection of stuff you need. Drop the fodder on a square far from your real pack:
-a misaimed zap that catches your bag of holding rolls the bag too.
-Max your Luck first. When polypile fails, one of the zapped items
-can turn into a hostile golem made from its material, and every
-point of Luck lowers the chance of that going wrong.
+selection of stuff you need. Drop the fodder on a square far
+from your real pack: a misaimed zap that catches your bag of
+holding rolls the bag too. Max your Luck first. When polypile
+fails, one of the zapped items can turn into a hostile golem
+made from its material, and every point of Luck lowers the
+chance of that going wrong.
 
 ---
 
@@ -6299,8 +6314,9 @@ Armor Class is what decides how often you get hit, and it's the
 most important defensive number in the game. Each point you push
 down means more monster swings whiff past you. AC starts at 10 and
 drops as you add protection. Lower is better. At AC −10 or below,
-you're quite difficult to damage with physical attacks; community consensus is that −20 is the practical target
-for an ascension kit, with diminishing returns past −25. The
+you're quite difficult to damage with physical attacks;
+community consensus is that −20 is the practical target for an
+ascension kit, with diminishing returns past −25. The
 **cloak of displacement** should not be underrated: monsters waste
 attacks on your phantom image, which complements low AC instead of
 competing with it.
@@ -6798,8 +6814,8 @@ Your sins, alas, are also forgiven.
 **Luckstone.** Carrying a luckstone in your open inventory
 (not inside a container) freezes the timer. Your luck stays wherever
 it is until something changes it. For this reason, getting the
-luckstone from Mine's End early is recommended. It's a small gray stone that makes the universe remember you
-fondly.
+luckstone from Mine's End early is recommended. It's a small
+gray stone that makes the universe remember you fondly.
 
 **Bless state matters.** Any **non-cursed** luckstone (blessed
 *or* uncursed) freezes drift toward your baseline and adds **+3
@@ -6871,11 +6887,11 @@ gamble. Archeologists start with a **touchstone**, which lets
 them verify whether a gem is real before throwing it at a
 unicorn.
 
-There is a ceiling on the luck you can obtain from any given kind of offering.
-If your current luck score already exceeds the difficulty rating of the
-monster you just sacrificed, you gain nothing. The altar accepts your
-offering politely and gives you nothing in return, because the gods have
-standards.
+There is a ceiling on the luck you can obtain from any given
+kind of offering. If your current luck score already exceeds the
+difficulty rating of the monster you just sacrificed, you gain
+nothing. The altar accepts your offering politely and gives you
+nothing in return, because the gods have standards.
 
 Before 5.0, players used to be able to sit at a co-aligned altar
 with a pile of kobold corpses and grind luck to maximum. That no
@@ -7473,7 +7489,8 @@ is brutal against anything not shock-resistant.
 
 **Magicbane** is the Wizard's go-to athame. Its stun damage, curse
 protection, and magic resistance all require it to be **wielded**,
-not just carried. Often the first gift from a Neutral sacrifice. One nuance for two-weapon Wizards: the curse
+not just carried. Often the first gift from a Neutral
+sacrifice. One nuance for two-weapon Wizards: the curse
 protection only applies while Magicbane is the *primary* wielded
 weapon. If you stash Magicbane in the off-hand to swing a heavier
 blade, you've also turned off its anti-curse aura.
@@ -9431,8 +9448,9 @@ you can't talk your way out of.
 
 Don't read anything. No scrolls, no spellbooks, no fortune cookies,
 no T-shirts. You also can't engrave anything more than a single
-"x" or "X" (the traditional illiterate's signature). You don't lose the conduct if you read blank scrolls or
-spellbooks, or Hawaiian shirts, the Book of the Dead, or messages
+"x" or "X" (the traditional illiterate's signature). You don't
+lose the conduct if you read blank scrolls or spellbooks, or
+Hawaiian shirts, the Book of the Dead, or messages
 already engraved on the floor.
 
 Without scrolls, you lose access to identify, enchant weapon/armor,
@@ -9706,14 +9724,14 @@ clean solve.
 Never inherit from another player's grave. To get the bonesless
 conduct, you have to turn bones off for the run: set
 `OPTIONS=!bones` in your rcfile (rcfile or `NETHACKOPTIONS` env
-only; the in-game `O` menu cannot toggle it). The same flag also stops
-your *own* death from generating a bones file for future players,
-so `!bones` cuts both directions of the bones cycle. The bonesless
-achievement is recorded only when bones was disabled, not when
-you happened not to encounter any. (Going a whole game without bones because the
-dungeon directory has nothing eligible is a separate enlightenment
-line ('never encountered any bones levels') and doesn't earn
-the conduct.)
+only; the in-game `O` menu cannot toggle it). The same flag also
+stops your *own* death from generating a bones file for future
+players, so `!bones` cuts both directions of the bones cycle.
+The bonesless achievement is recorded only when bones was
+disabled, not when you happened not to encounter any. (Going a
+whole game without bones because the dungeon directory has
+nothing eligible is a separate enlightenment line ('never
+encountered any bones levels') and doesn't earn the conduct.)
 
 ---
 
@@ -9911,16 +9929,16 @@ Use the Cha/Sell/Tourist/Angry toolbar to see how the modifiers shift things.
 :::
 
 The Mohs column is real-world mineral hardness on the Mohs scale
-(talc 1, diamond 10), and the game uses it in two places. Gems of
-Mohs 8 or higher count as **"hard"**, and hard gems do two things
-softer gems and glass can't: they can be used as a stylus to
-*engrave* [Elbereth](#elbereth) and other messages permanently into the dungeon
-floor (instead of the temporary dust scratch a finger or soft gem
-leaves), and they have about a 50% chance to *survive* being
-thrown rather than shattering on impact. Below Mohs 8, the gem
-only writes in dust and breaks on impact like glass. Hardness
-doesn't affect touchstoning: every gem can be identified by a
-blessed touchstone regardless.
+(talc 1, diamond 10), and the game uses it in two places. Gems
+of Mohs 8 or higher count as **"hard"**, and hard gems do two
+things softer gems and glass can't: they can be used as a stylus
+to *engrave* [Elbereth](#elbereth) and other messages
+permanently into the dungeon floor (instead of the temporary
+dust scratch a finger or soft gem leaves), and they have about a
+50% chance to *survive* being thrown rather than shattering on
+impact. Below Mohs 8, the gem only writes in dust and breaks on
+impact like glass. Hardness doesn't affect touchstoning: every
+gem can be identified by a blessed touchstone regardless.
 
 <div class="price-id-toolbar"></div>
 
@@ -13387,13 +13405,13 @@ log every ascension; the cause-of-death and ascension statistics
 cited throughout this guide come from their public records (see
 NAO's [top types of deaths](https://alt.org/nethack/topdeaths.html)).
 
-**The [r/nethack](https://www.reddit.com/r/nethack/) community** on Reddit has kept NetHack discussion
-alive for a new generation of players. Its moderators over the
-years have maintained a welcoming space where veterans and newcomers
-trade advice, share ascension stories, and argue about optimal wish
-choices. The community's collective knowledge, passed along in
-thousands of threads, has informed the practical advice throughout
-this guide.
+**The [r/nethack](https://www.reddit.com/r/nethack/) community**
+on Reddit has kept NetHack discussion alive for a new generation
+of players. Its moderators over the years have maintained a
+welcoming space where veterans and newcomers trade advice, share
+ascension stories, and argue about optimal wish choices. The
+community's collective knowledge, passed along in thousands of
+threads, has informed the practical advice throughout this guide.
 
 Above all, this guide exists because the game itself exists.
 **[NetHack](https://www.nethack.org/)** has been developed since
