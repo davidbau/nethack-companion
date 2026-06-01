@@ -3098,11 +3098,10 @@ engage in your starting iron suit if you can avoid it.
 
 **Eat the globs.** A pudding leaves a **glob** rather than a
 corpse, and the globs are some of the best food in the game.
-Unlike previous versions, puddings leave globs instead of
-corpses, which means you cannot farm them for sacrifice on
-altars.
-They're slow to spoil (about 500 turns of edibility, twice a
-normal corpse) and packed with resistances. A brown-pudding glob
+One difference between a glob and a corpse is that you cannot
+sacrifice globs at an altar, so puddings can't be farmed for
+offerings. The globs are slow to spoil (about 500 turns of
+edibility, twice a normal corpse) and packed with resistances. A brown-pudding glob
 grants **cold, shock, and poison resistance** over repeated
 eats; a gray-ooze glob grants **fire, cold, and poison
 resistance**; a black-pudding glob also grants **cold, shock,
