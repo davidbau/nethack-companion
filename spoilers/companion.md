@@ -899,8 +899,8 @@ AC / attack details on every monster, see the
 | ------ | ---------------------- | -------------------------------------------------------------------------- |
 | [`a`](#ants-and-insects-a)    | [Ants](#ants-and-insects-a)      | Soldier ants are a frequent early-game killer: speed 18, two attacks per turn (bite + strength-draining sting), and they travel in packs. A wandering soldier-ant group on Dlvl 4 can end a careless run. Killer bees, giant ants, fire ants are all the same shape of problem. |
 | [`b`](#blobs-b)    | [Blobs](#blobs-b)     | Acidic or gelatinous. Acid blobs have no active attack. They only splash 1d8 acid back when *you* hit *them*, and the splash can corrode your weapon. Kill at range. Eat for [resistances](#useful-corpse-effects). |
-| [`B`](#bats-and-birds-b)    | [Bats](#bats-and-birds-b)      | The `B` class is **deceptively dangerous because of speed**. Bats and giant bats clock in at speed 22 — nearly twice the player's base 12, so they get roughly two bites per one of your swings. Giant bats bite for 1d6 each; the math catches up fast. Vampire bats are still in the bat class but their second bite drains Strength (not levels). |
-| [`d`](#dogs-and-canines-d)    | [Dogs and other canines](#dogs-and-canines-d) | The `d` class covers your starting pet (little dog, kitten via cat-class) **and** the most numerous early-game predators. **Jackals** only bite for 1d2, but they spawn in packs and there are a *lot* of them on the upper levels — the single most common cause of death on the public server. Foxes bite for 1d3 and are faster (speed 15) but spawn alone. Coyotes, dingos, wolves get progressively worse. Tame `d` (your pet, larger dogs you've fed up) help fight everything else. |
+| [`B`](#bats-and-birds-b)    | [Bats](#bats-and-birds-b)      | The `B` class is **deceptively dangerous because of speed**. Bats and giant bats clock in at speed 22, nearly twice the player's base 12, so they get roughly two bites per one of your swings. Giant bats bite for 1d6 each; the math catches up fast. Vampire bats are still in the bat class but their second bite drains Strength (not levels). |
+| [`d`](#dogs-and-canines-d)    | [Dogs and other canines](#dogs-and-canines-d) | The `d` class covers your starting pet (little dog, kitten via cat-class) and the most numerous early-game predators. **Jackals** only bite for 1d2, but they spawn in packs and there are a *lot* of them on the upper levels — the single most common cause of death on the public server. Foxes bite for 1d3 and are faster (speed 15) but spawn alone. Coyotes, dingos, wolves get progressively worse. Tame `d` (your pet, larger dogs you've fed up) help fight everything else. |
 | [`e`](#eyes-and-spheres-e)    | [Eyes](#eyes-and-spheres-e)      | **Floating eyes paralyze on melee hit.** Never hit an `e` in melee. Use ranged attacks. (And eat them for telepathy.) Spheres (flaming/freezing/shocking) explode in a 3×3 area; also kill them at range. |
 | [`f`](#felines-f)    | [Cats](#felines-f)      | Like dogs, often starting pets. Felines can be tamed with tripe.                        |
 | [`G`](#gnomes-g)    | [Gnomes](#gnomes-g)    | The standard inhabitants of the Gnomish Mines. Individually weak, but the Mines have a lot of them, and mid-game players who treat the Mines as a milk run walk into a four-on-one with full-strength enemies. If you're a gnome yourself, most of them are peaceful. |
@@ -2355,7 +2355,7 @@ messages still come through.)
 | *"You feel wide awake."*               | Intrinsic sleep resistance from a corpse.                                              |
 | *"You feel very firm."*                | Intrinsic disintegration resistance from a corpse.                                     |
 | *"You feel a strange mental acuity."*  | Intrinsic telepathy from a corpse.                                                     |
-| *"You seem faster."*                   | Intrinsic speed from a quantum mechanic corpse. (If you already had speed, you instead "seem slower" — quantum corpses toggle.) |
+| *"You seem faster."*                   | Intrinsic speed from a quantum mechanic corpse. (If you already had speed, you instead "seem slower". Quantum corpses toggle.) |
 | *"You feel a mild buzz."*              | Eye of newt corpse restored 1–3 mana.                                                  |
 | *"You sense a lack of food nearby."*   | Scroll of food detection, no food on level.                                            |
 | *"You feel materially poor."*          | Scroll of gold detection, no gold on level.                                            |
@@ -2368,7 +2368,7 @@ messages still come through.)
 | *"You feel like a hypocrite."*         | You just attacked a monster while standing on Elbereth. The engraving is gone, and your alignment took a hit (flat −5 if your record is comfortably positive, otherwise −1 to −5). |
 | *"You feel that monsters are aware of your presence."* | Aggravate-monster effect just turned on (cursed ring of aggravate monster, a cast from a foe, etc.). Until removed, monsters home in on you from further away. |
 | *"You feel that monsters have difficulty pinpointing your location."* | Stealth just turned on (you wore a ring of stealth, elven cloak, or other stealth source). *"…no longer have difficulty…"* means it just turned off. |
-| *"You hear the rumble of distant thunder…"* | You just killed your own pet (or tame creature). **−15 alignment and your god is now angry** — expect prayer to backfire for a long time. |
+| *"You hear the rumble of distant thunder…"* | You just killed your own pet (or tame creature). **−15 alignment and your god is now angry**. Expect prayer to backfire for a long time. |
 | *"You feel as if you need some help."* | A nearby monster just cast curse-items on you: something in your inventory was randomly cursed. BUC-test gear before relying on it. |
 | *"You feel the presence of evil."* | A hostile water demon (or other major demon) was just summoned from a fountain but isn't visible to you yet. It's coming. |
 | *"You hear someone summoning something, and…"* (and *"…summoning <something>"*) | An offscreen spellcaster (wizard, demon, lich) just summoned a monster. Expect company on the next level transition or as it walks in. |
@@ -7076,7 +7076,7 @@ and spell schools. Skills not listed for a role are
 **restricted**: the rank is locked at Unskilled, with one
 exception (a god-given artifact weapon unrestricts you to Basic
 in its skill). Key: **B**=Basic, **S**=Skilled, **E**=Expert,
-**M**=Master, **GM**=Grand Master, **—**=restricted.
+**M**=Master, **GM**=Grand Master, **(blank)**=restricted.
 
 A blank cell doesn't mean the skill is unusable, just locked at
 Unskilled forever. A Healer can still read a spellbook of force
@@ -10191,7 +10191,7 @@ bardiche, and any other bimanual weapon.
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
-| morning star | 1d4+1d4 / 1d6+1 | 120 | 10 | — | iron | +1d4 small, +1 large — punches above its weight for a one-hander. |
+| morning star | 1d4+1d4 / 1d6+1 | 120 | 10 | — | iron | +1d4 small, +1 large. Punches above its weight for a one-hander. |
 
 :::
 
@@ -10292,14 +10292,14 @@ All polearms are two-handed. To strike at range, `#apply` the weapon (not wield-
 -->
 
 All spears share the same skill (trident uses a different class
-— see below). The Valkyrie starts with one and can train to
+(see below). The Valkyrie starts with one and can train to
 Expert. The **Caveman** is the actual spear-multishot specialist:
 Cavemen get +1 multishot on any thrown spear (regular, silver,
 javelin alike), so a stack of javelins is real ranged firepower
 for them.
 
 Spears get a **+2 to-hit bonus** when used against the big
-monsters — xorns, dragons, jabberwocks, nagas, and giants — the
+monsters (xorns, dragons, jabberwocks, nagas, and giants): the
 kebab bonus.
 
 ::: dense-table
@@ -10328,7 +10328,7 @@ kebab bonus.
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
-| trident | 1d6+1 / 1d4+2d4 | 25 | 5 | — | iron | One-handed. **+4 to-hit vs swimmers in water, +2 vs eels and snakes** — the trident's signature bonus. Outside water it's an ordinary side-arm. |
+| trident | 1d6+1 / 1d4+2d4 | 25 | 5 | — | iron | One-handed. **+4 to-hit vs swimmers in water, +2 vs eels and snakes**: the trident's signature bonus. Outside water it's an ordinary side-arm. |
 
 :::
 
@@ -10517,7 +10517,7 @@ kebab bonus.
 | splint mail | +6 | 1 | 400 | 80 | iron |  |
 | banded mail | +6 | 1 | 350 | 90 | iron |  |
 | dwarvish mithril-coat | +6 | 2 | 150 | 240 | mithril | Light, but mithril is metallic so the spellcasting penalty still applies (smaller than plate, larger than zero). Wizard mid-game goal. |
-| elven mithril-coat | +5 | 2 | 150 | 240 | mithril | Light, expensive. Mithril is metallic, so a casting penalty still applies — smaller than plate but not zero. |
+| elven mithril-coat | +5 | 2 | 150 | 240 | mithril | Light, expensive. Mithril is metallic, so a casting penalty still applies (smaller than plate but not zero). |
 | chain mail | +5 | 1 | 300 | 75 | iron |  |
 | orcish chain mail | +4 | 1 | 300 | 75 | iron |  |
 | scale mail | +4 | 1 | 250 | 45 | iron |  |
@@ -10719,7 +10719,7 @@ and jumping, which scales continuously).
 | magic missile   | Attack      | 2   | ray        | 2d6 force ray; Antimagic blocks it  | —                             |
 | cone of cold    | Attack      | 4   | ray        | 4d6 cold ray                        | Aimed explosion               |
 | fireball        | Attack      | 4   | ray        | 4d6 fire ray                        | Aimed explosion               |
-| finger of death | Attack      | 7   | ray        | Death-magic beam; monsters with magic resistance resist. (Against the player it's an instakill with no Antimagic check — only nonliving or demon forms are immune.) | —                             |
+| finger of death | Attack      | 7   | ray        | Death-magic beam; monsters with magic resistance resist. (Against the player it's an instakill with no Antimagic check; only nonliving or demon forms are immune.) | —                             |
 | healing         | Healing     | 1   | aimed      | Restore hit points                  | —                             |
 | cure blindness  | Healing     | 2   | aimed      | Removes blindness                   | —                             |
 | cure sickness   | Healing     | 3   | untargeted | Cures food poisoning and illness    | —                             |
@@ -12001,7 +12001,7 @@ All wraiths are undead and follow you up and down stairs.
 - Xorn corpse grants temporary stone resistance.
 -->
 
-D&D's three-armed, three-eyed creatures from the Elemental Plane of Earth. They **phase through walls** (no rubble, no dig) and eat metal items off the floor* — including the orcish dagger you were about to pick up. Their claws and bite are physical only, so worn armor and wielded weapons aren't directly at risk, but they hit hard for their level. The corpse grants temporary stoning resistance.
+D&D's three-armed, three-eyed creatures from the Elemental Plane of Earth. They **phase through walls** (no rubble, no dig) and eat metal items off the floor, including the orcish dagger you were about to pick up. Their claws and bite are physical only, so worn armor and wielded weapons aren't directly at risk, but they hit hard for their level. The corpse grants temporary stoning resistance.
 
 ::: dense-table
 
@@ -12485,7 +12485,7 @@ transformation, one blessed potion does the same job.
 
 **Vampire polymorph cycles between forms.** A polymorphed vampire
 can `#monster` to switch between vampire, bat, and fog cloud. Fog
-passes through doors, bat flies, vampire fights — plan routes by
+passes through doors, bat flies, vampire fights. Plan routes by
 form rather than direction, so traversing the dungeon map can be
 a very different experience.
 
@@ -13373,10 +13373,10 @@ written by Jay Fenlason in 1982 as a class project at Lincoln-Sudbury
 Regional High School, drawing on Toy and Wichman's *Rogue* (1980),
 and extended by Andries Brouwer through the mid-1980s. NetHack
 forked from Brouwer's Hack in 1987. Many of the most distinctive
-NetHack monsters — including the **grid bug**, the orthogonal-only
+NetHack monsters, including the **grid bug**, the orthogonal-only
 critter whose name puns on both "insect" and "software bug" living
 on a character-cell grid (with a likely nod to the bugs in the 1982
-film *Tron*) — were already in Hack before NetHack inherited them.
+film *Tron*), were already in Hack before NetHack inherited them.
 The dungeon is older than the game.
 
 The development was not always continuous. After version 3.4.3 in
