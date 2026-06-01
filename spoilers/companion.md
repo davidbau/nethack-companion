@@ -5670,10 +5670,11 @@ Fire burns scrolls and spellbooks on the floor. Cold freezes water
 (useful for creating paths). Lightning blinds monsters.
 
 []{#wand-cancellation}
-**Cancellation.** Removes special properties from items and monsters.
-A cancelled monster loses most of its special attacks — a cancelled
-cockatrice can't petrify, a cancelled mind flayer can't suck brains,
-and a cancelled clay golem dissolves on the spot. Do NOT put this
+**Cancellation.** Removes special properties from items and
+monsters. A cancelled monster loses most of its special attacks:
+a cancelled cockatrice can't petrify, a cancelled mind flayer
+can't suck brains, and a cancelled clay golem dissolves on the
+spot. Do NOT put this
 wand in a bag of holding (it will explode the bag). Pointed at a
 pile of unidentified scrolls and potions, it converts them into
 blank scrolls and water, which feed the magic-marker and holy-water

@@ -10,7 +10,7 @@ Each batch is committed individually.
 ## Progress
 
 - Total sections: 272
-- Audited: 10 (+ 1 deferred: the giant Bestiary group)
+- Audited: 19 (+ 1 deferred: the giant Bestiary group)
 - Status: in progress
 
 ## Findings
@@ -130,4 +130,17 @@ real arrival ambush and the actual cavern-network structure.
 **Language** — em-dash removed from "in 5.0 — your STR damage" (now colon) (companion.md:10046).
 
 **Changes**: em-dash removed.
+
+### Audits 13-19 (batch summary)
+
+- **Moloch's Sanctum (companion.md:7902)** — clean. Pre-existing claims about the sealed Sanctum, High Priest, and Amulet location all consistent with the source.
+- **The Scroll Table (companion.md:5409)** — accurate (scroll prices match objects.h). Pre-existing hyperlinks to scroll-specific subsections useful.
+- **The Apothecary intro (companion.md:5224)** — atmospheric, no em-dashes, no specific verifiable claims beyond the table that follows.
+- **Starting Pets (companion.md:4070)** — accurate; "most roles begin with a little dog or kitten" is a fair generalization (Knights have pony, Healers vary). No fixes.
+- **Fighting Smart (companion.md:2587)** — recently revised in earlier turns. Confirmed clean.
+- **Key Wands — Wand of Wishing (companion.md:5639)** — verified 1 charge at generation (mkobj.c:1117 `otmp->spe = 1`), recharge limit 1 (read.c:738-740 `lim = 1`), explosion on second recharge attempt (read.c:761-762). Book's "2 wishes plus a possible wrested third" correct.
+- **Key Wands — Make Invisible duration (companion.md:5689)** — verified 31-45 turns (zap.c:2836 `incr_itimeout(&HInvis, rn1(15, 31))`). Book's range correct.
+- **Key Wands — Cancellation (companion.md:5672)** — em-dash removed from "loses most of its special attacks — a cancelled cockatrice".
+- **Luck and Fortune intro (companion.md:6696)** — clean. Friendly framing, no em-dashes. Pre-existing audit notes verify mechanics (drift, cap, peaceful kill costs, prayer rejection).
+- **Broadsword, Long sword variants (companion.md:9997, 10015)** — clean per pre-existing audit notes.
 </content>
