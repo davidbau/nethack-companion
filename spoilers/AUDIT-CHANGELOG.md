@@ -30,6 +30,26 @@ Each batch is committed individually.
 11. **Vaults (companion.md:1233)** — rewrote the guard interaction. Real-name answer: guard demands gold, opens corridor, leads you out (vault.c:551-585). Croesus answer: guard leaves, you keep gold, but you're sealed in. Croesus answer when Croesus is dead: guard goes hostile.
 12. **Traps and Hazards (companion.md:1773)** — added the lone-corpse-on-floor tell (corpse `%` glyph hides trap `^`); noted that standard dungeon traps spawn in rooms only, not corridors (mklev.c:2032-2099).
 
+## Late-pass fixes from user feedback
+
+- **Castle Strategy paragraph (companion.md:7740)** — "Once you're fully equipped, the staircase down leads to Gehennom" was missed in the first pass. Corrected to "the trap doors in the central hallway are your way down to Gehennom" (since the Castle has no `>` stair to Gehennom).
+- **"chew through your HP" (companion.md:2818)** — replaced with "hit you freely" in the sleep-while-surrounded warning. Phrase the user flagged as off.
+- **Golems disambiguation (companion.md:2849)** — dropped the "Golems are class `'` (apostrophe), not `P` (which is puddings)" defensive note. The class header already labels the class.
+- **Humans `@` disambiguation (companion.md:12084)** — same treatment: dropped "(Kops are *not* in this class — they're `K`)" defensive note.
+- **Unicorns parenthetical (companion.md:11308)** — em-dash-bracketed "throw any gem — even worthless glass — to pacify" became "(even worthless glass)".
+
+## Sections sampled but not modified
+
+After the deep audits and bulk em-dash sweep, sampling of remaining bestiary entries, weapon/armor table rows, Sokoban level layouts, and other small subsections turned up no further substantive issues. The bestiary stat tables are extensively verified by pre-existing in-source audit comments (each monster's LVL/Spd/AC/MR/attacks confirmed against `include/monsters.h`).
+
+## Final status
+
+- Prose em-dashes book-wide: down from ~160 prose instances to ~10 stragglers (mostly table cell headers and the Per-Role Skill Caps legend, which use `—` as an explicit placeholder rather than prose punctuation).
+- Major factual errors found: 12 (all fixed and cited).
+- Sections deeply audited with source verification: ~45.
+- Print PDF page count: 277 (was 275 pre-audit; +2 from the Sacrifice rewrite and a few other paragraphs).
+- HTML audit-comment citations: 12 chapter/section audit blocks now carry `2026-05-31` entries documenting the source-code references.
+
 ## Findings
 
 ### Audit 1: Plane of Earth (companion.md:8183)
