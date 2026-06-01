@@ -1677,11 +1677,11 @@ that leads toward the Castle. The level has four possible layouts
 single map.
 
 **The Perseus statue.** One of the statues on the island is named
-**Perseus** — the mythological hero who killed Medusa with a
+**Perseus**, the mythological hero who killed Medusa with a
 mirrored shield. `#loot` him for a (cursed) **shield of reflection**
 (75% in three of the four layouts; 25% in the fourth), a blessed +2
 **scimitar** (50%), **levitation boots** (25% in three layouts; 75%
-in the fourth — the same layout that's stingy with the shield), and
+in the fourth, the same layout that is stingy with the shield), and
 a **sack** to put them in (50%). The shield is cursed, so plan to
 uncurse it before swapping it in. The other statues on the level are
 intentionally empty.
@@ -2267,14 +2267,14 @@ reason.
 
 Iron bars look like a barrier but aren't solid: light passes through,
 you can see what's on the other side, and **tiny** creatures (grid
-bugs, bats, rats) can squeeze between — kittens and little dogs are
+bugs, bats, rats) can squeeze between, but kittens and little dogs are
 already too big. What they resist is almost everything the player
 can throw at them: pick-axes bounce off ("Clang!"), wands of digging
 fizzle, weapons swing through harmlessly, and kicking just hurts
 your foot. Wands and spells of *striking* and *force bolt* pass
 through the bars without effect. The bars corrode for an acid ray,
 acid breath or spit (if you are polymorphed into a yellow dragon or
-black naga), and a **wand of lightning** can melt them too — though
+black naga), and a **wand of lightning** can melt them too, though
 only about one zap in ten actually dissolves the bars.
 
 The practical early-game answer is to **dig around** them. Iron bars
@@ -6138,7 +6138,7 @@ fill it, so start hoarding candles when you find them.
 
 Music has power in the Mazes. Any tonal instrument (wooden flute,
 magic flute, tooled horn, frost or fire horn, bugle, or harp) can
-play the passtune at the Castle drawbridge — you'll find the notes
+play the passtune at the Castle drawbridge. You will find the notes
 nearby, so listen carefully. A **magic harp** charms monsters into
 tameness. A **magic flute** puts them to sleep. A **drum of
 earthquake** creates pits around you, which is as chaotic as it
@@ -6224,7 +6224,7 @@ corpse) into a tin: 450 nutrition's worth of preserved food that
 keeps indefinitely. The interesting part is that tin-eating skips
 the raw-corpse poison and acid damage checks. A tinned killer bee
 or acid blob is safe to eat with no resistance, and the
-intrinsic-grant still applies — so the kit doubles as a way to
+intrinsic-grant still applies, so the kit doubles as a way to
 grind poison or acid resistance without taking the per-corpse
 hits. One warning the kit doesn't give: tinning a cockatrice
 without gloves petrifies you on the spot.
@@ -9553,13 +9553,13 @@ Pack](#what-to-pack)) can provide much of your first kit.
 - food thrown at hostile dogs and cats IS a taming path that breaks petless (dothrow.c:2268-2269 routes to tamedog)
 -->
 
-Never have a pet. Set `OPTIONS=pettype:none` in your rcfile to skip
-the starting companion entirely (this overrides per-role defaults).
-After that, you lose the conduct the moment anything becomes tame.
-The game won't stop you — scrolls of taming, the charm monster
-spell, food thrown at hostile dogs and cats, and magic-trap
-accidents all still work. Each one just breaks Petless on the
-spot.
+Never have a pet. Set `OPTIONS=pettype:none` in your rcfile to
+skip the starting companion entirely (this overrides per-role
+defaults). After that, you lose the conduct the moment anything
+becomes tame. The game won't stop you. Scrolls of taming, the
+charm monster spell, food thrown at hostile dogs and cats, and
+magic-trap accidents all still work; each one just breaks
+Petless on the spot.
 
 #### Permadeaf (new in 5.0)
 <!-- audit
@@ -9583,10 +9583,10 @@ open" messages and the ambient monster sounds ("you hear a
 slurp" and friends) are suppressed.
 
 The catch: only the *messages* are suppressed. A shrieker still
-shrieks and still summons monsters and aggravates the level —
+shrieks and still summons monsters and aggravates the level;
 you just don't get the warning that it happened. Treat empty
-silence near a `F`-class monster as the same threat as the usual
-SCREECH.
+silence near a `F`-class monster as the same threat as the
+usual SCREECH.
 
 Many monster warnings, environmental cues (vaults, fountains, doors
 opening off-screen), and status messages arrive as sounds. Permadeaf
@@ -9841,7 +9841,7 @@ floor (instead of the temporary dust scratch a finger or soft gem
 leaves), and they have about a 50% chance to *survive* being
 thrown rather than shattering on impact. Below Mohs 8, the gem
 only writes in dust and breaks on impact like glass. Hardness
-doesn't affect touchstoning — every gem can be identified by a
+doesn't affect touchstoning: every gem can be identified by a
 blessed touchstone regardless.
 
 <div class="price-id-toolbar"></div>
@@ -9903,7 +9903,7 @@ A few rules of thumb:
 Read the table as a **selling guide**, not a discard guide: real
 gems near the top are worth making time to sell at a gem dealer
 and worth wishing for if you're flush on wishes. Lower-priced gems
-aren't trash — they still feed unicorns and still touchstone-identify
+aren't trash. They still feed unicorns and still touchstone-identify
 other gems by hardness comparison.
 
 

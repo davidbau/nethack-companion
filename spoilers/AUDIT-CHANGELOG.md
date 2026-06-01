@@ -10,7 +10,7 @@ Each batch is committed individually.
 ## Progress
 
 - Total sections: 272
-- Audited: 19 (+ 1 deferred: the giant Bestiary group)
+- Audited: 35 (+ 1 deferred: the giant Bestiary group)
 - Status: in progress
 
 ## Findings
@@ -143,4 +143,21 @@ real arrival ambush and the actual cavern-network structure.
 - **Key Wands — Cancellation (companion.md:5672)** — em-dash removed from "loses most of its special attacks — a cancelled cockatrice".
 - **Luck and Fortune intro (companion.md:6696)** — clean. Friendly framing, no em-dashes. Pre-existing audit notes verify mechanics (drift, cap, peaceful kill costs, prayer rejection).
 - **Broadsword, Long sword variants (companion.md:9997, 10015)** — clean per pre-existing audit notes.
+
+### Audits 20-35 (batch summary)
+
+Sections covered: What to Wish For, Sokoban Level 3 Version A, Speed (already revised), Key Potions, Mace, Atheist, Sokoban Level 1 Version B, The Skill Ladder, Petless, Pauper, Permadeaf, Club, Starvation, Iron Bars, Other Notable Tools, Wishing Restrictions, Crowning, Traps and Hazards intro, Wands and Staves intro, Gem ID Through Selling, Weaponless, Boomerang, Medusa's Island, Level 4 Sokoban, Prayer, Dagger, Enchantment Drain, Alignment.
+
+**Prose em-dashes removed** (10 total):
+- Iron Bars: "can squeeze between" / "can melt them too"
+- Other Notable Tools: "at the Castle drawbridge" / "intrinsic-grant still applies"
+- Gem ID Through Selling: "doesn't affect touchstoning"
+- Medusa's Island: "Perseus" / "in the fourth (Medusa-2 swap)"
+- Dagger: "aren't trash"
+- Petless: "The game won't stop you"
+- Permadeaf: "shrieker still shrieks and still summons"
+
+**Accuracy** — pre-existing audit notes verify each section's claims. No new accuracy issues found in this batch. The audit notes themselves remain in HTML comments so they don't render to the printed book.
+
+**Changes**: 10 em-dash removals across 9 sections.
 </content>
