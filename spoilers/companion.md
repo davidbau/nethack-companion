@@ -7738,8 +7738,8 @@ luck, or wresting. The era of the bottomless wishing wand is over
 (see [Key Wands](#key-wands) for the full mechanics).
 
 Once you're fully equipped, the trap doors in the central
-hallway are your way down to Gehennom (the Castle has no
-conventional down-stair). Take a moment before descending. Sit down. Have a snack. Check
+hallway are your way down to Gehennom. Take a moment before
+descending. Sit down. Have a snack. Check
 your inventory twice. You should have **magic resistance**,
 **reflection**, **fire** and **poison resistance**, a **wand of
 digging**, a **unicorn horn**, plenty of food, holy water,
