@@ -5714,15 +5714,10 @@ but powerful.
 
 []{#wand-make-invisible}
 **Make invisible.** Turns a target (or yourself, if you zap it
-reflexively) invisible. In older editions, self-zapping granted a
-permanent invisibility intrinsic, which made this a coveted find. In
-5.0, it gives you 31–45 turns of temporary invisibility.
-Still useful for slipping through a dangerous area or turning a fight
-in your favor, but not a permanent upgrade. For lasting invisibility,
-you want a ring of invisibility or a cloak. The wand is now a tactical
-tool rather than a build enabler: think of it as "invisibility on
-demand for the next minute" rather than "invisibility forever from one
-lucky find."
+reflexively) invisible for 31–45 turns. Useful for slipping
+through a dangerous area or turning a fight in your favor. For
+lasting invisibility, use a ring of invisibility or a cloak of
+invisibility.
 
 []{#wand-stasis}
 **Stasis.** A new 5.0 wand that freezes every monster on the level
@@ -6347,15 +6342,14 @@ water walking or jumping. Haste self alone reaches *very fast*
 just like the boots; maintenance costs about 10 Pw every 150
 turns at Skilled.
 
-**Cloak of magic resistance** provides magic resistance in the cloak
-slot and frees up other slots for different resistances. However,
-be aware that since 3.6, **magic cancellation (MC) values were
-overhauled**: the cloak of magic resistance now provides only MC1,
-not MC3. The **cloak of protection** is now the only single item
-that provides MC3, which blocks 90% of monster special attacks (down
-from 98% in older editions). A ring of protection now contributes
-+1 MC, and the new amulet of guarding provides +2 MC, giving you
-more ways to assemble full magic cancellation coverage.
+**Cloak of magic resistance** provides magic resistance in the
+cloak slot and frees up other slots for different resistances.
+It contributes **MC1** to your magic-cancellation total. The
+only single item that provides **MC3**, which blocks 90% of
+monster special attacks, is the **cloak of protection**. A ring
+of protection adds +1 MC, and an amulet of guarding adds +2 MC,
+which gives you several ways to assemble full magic
+cancellation coverage.
 
 For the AC, MC, weight, cost, and granted-power numbers on every
 piece of armor in the game, see the
