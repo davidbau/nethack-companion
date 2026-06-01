@@ -10,8 +10,25 @@ Each batch is committed individually.
 ## Progress
 
 - Total sections: 272
-- Audited: 35 (+ 1 deferred: the giant Bestiary group)
-- Status: in progress
+- Deeply audited: ~45 sections
+- Em-dash sweep applied across the whole book: 162 prose em-dashes removed
+- Retroactive HTML audit citations added: 11 chapter/section audit blocks updated with 2026-05-31 entries
+- Status: substantial first pass complete; the giant Bestiary group remains deferred for a future pass
+
+## Summary of major factual corrections
+
+1. **Plane of Earth (companion.md:8183)** — was "encased in solid rock and boulders, surrounded by earth elementals." Actually arrives in a small cavern at (69,16) with a scripted Elvenking + minotaur (dat/earth.lua:52-56); earth elementals cluster in other caverns; the plane is a network of caverns separated by diggable rock.
+2. **Plane of Water (companion.md:8229)** — species list cited "sea monsters" (not a species; just the monsters.h section comment) and "moccasin from a fountain" (water moccasin is S_SNAKE, not class `;`). Corrected to the actual S_EEL species and the kraken-in-Medusa's-pool reference.
+3. **Sacrifice (companion.md:3875)** — artifact gift formula was wrong. Book said "1 in (10 + 2·n)" giving 1/10 first roll and 1/14 second. Actual (pray.c:1792): `!rn2(6 + (2 * u.ugifts * nartifacts))`, so first gift is 1/6, subsequent gifts drop multiplicatively. Also added XL>=3 + non-negative Luck prerequisites and the acid blob 50-turn exception.
+4. **Castle (companion.md:7615)** — added that the Castle has no conventional down-stair to Gehennom; the five trap doors are the only descent route (dungeon.lua `no_down`, castle.lua:156-160). Castle and bigrm-12 are the only two levels exempt from random mirroring.
+5. **Travel (companion.md:8392)** — `__` shortcut for walking to altar was missing the trailing `.`; consistent with `_<.` and `_>.` is `__.`.
+6. **Field Guide / Imps (companion.md:905, 10976)** — was "annoying but not dangerous" / "none individually scary." Actually homunculus AD_SLEE bite (monsters.h:551-558) is a real early-game threat; both summaries now flag it.
+7. **Liches bestiary (companion.md:11689)** — touch of death kill chance at arch-lich m_lev 25 is ~48% per cast without Antimagic (mcastu.c:389-408). Only the Wizard of Yendor literally has M3_COVETOUS in 5.0 (monsters.h:2857), so the broader "covetous monsters" framing was overstated.
+8. **Nymphs (companion.md:11100)** — post-theft rloc is within-level only (mhitu.c:2303 -> teleport.c:1799). The "nymph walks off the level with your bag of holding" framing was overstated.
+9. **Scroll of scare monster (companion.md:5388, 2218)** — full pickup state-machine documented (pickup.c:1832-1861): blessed unblesses, uncursed stamps then dusts on second pickup, cursed dusts on first. BUC test is destructive.
+10. **Shopping (companion.md:9668, 9756)** — kicking shop door bills + angers (dokick.c:953-956); picking the lock with skeleton key / credit card / lock pick / wand of opening just flips D_LOCKED to D_CLOSED with no damage (lock.c:147-148).
+11. **Vaults (companion.md:1233)** — rewrote the guard interaction. Real-name answer: guard demands gold, opens corridor, leads you out (vault.c:551-585). Croesus answer: guard leaves, you keep gold, but you're sealed in. Croesus answer when Croesus is dead: guard goes hostile.
+12. **Traps and Hazards (companion.md:1773)** — added the lone-corpse-on-floor tell (corpse `%` glyph hides trap `^`); noted that standard dungeon traps spawn in rooms only, not corridors (mklev.c:2032-2099).
 
 ## Findings
 
