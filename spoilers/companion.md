@@ -877,6 +877,9 @@ more item discovery, and the occasional educational ambush.
 - silver and wooden weapons are the actual pudding non-splitters (uhitm.c:1616-1620 admits IRON|METAL only)
 - all other class-symbol mappings (defsym.h) and per-monster stats verified clean
 - rothe ('q'-class fame): three attacks per turn (claw + two bites), the only Q-class monster lacking M2_STRONG, and the canonical early-q threat per NetHackWiki (https://nethackwiki.com/wiki/Rothe, https://nethackwiki.com/wiki/Quadruped)
+2026-05-31 audit:
+- homunculus (S_IMP class `i`) AT_BITE AD_SLEE 1d3, Level 2, speed 12, flies, sleep-resistant itself (monsters.h:551-558). The sleep effect on bite is a real early-game threat — sleep status + adjacent enemies is often lethal. Both the Field Guide summary at companion.md:905 and the bestiary intro at companion.md:10976 had previously described the `i` class as "annoying but not dangerous" / "none individually scary"; corrected to flag the homunculus specifically.
+- water moccasin (M1_POIS, AD_DRST bite drains Str): poisonous corpse but also confers poison resistance (MR_POISON in both mresists and mconveys columns at monsters.h WATER_MOCCASIN row). Eating risks 1d4 Str + 1d15 HP on the 1-in-5 poison roll without resistance (eat.c:1928-1936); ~1-in-15 conferred-resistance grant per successful eat.
 -->
 
 
@@ -3790,6 +3793,13 @@ scroll of remove curse, holy water, or prayer).
 - same-race blood always converts lawful or neutral altars to CHAOTIC, never to co-aligned (pray.c:1717-1720)
 - on a chaotic altar, same-race blood summons a demon (pray.c:1723-1739)
 - strategy aligned with NetHackWiki Prayer, Sacrifice, Protection racket, Crowning: prayer-as-emergency rules, sacrifice-fresh-corpses, protection-AC stacks across donations, crowning penalty (https://nethackwiki.com/wiki/Prayer, https://nethackwiki.com/wiki/Sacrifice, https://nethackwiki.com/wiki/Protection_racket, https://nethackwiki.com/wiki/Crowning)
+2026-05-31 audit:
+- corpse 50-turn freshness rule verified at pray.c:1843-1849. EXCEPT: an acid blob corpse (PM_ACID_BLOB) is the one exception and never spoils for sacrifice purposes (pray.c:1843).
+- sacrifice value formula: mons[corpsenm].difficulty + 1 (pray.c:1845). Bigger/tougher monsters yield higher value.
+- artifact gift chance per qualifying sacrifice: !rn2(6 + (2 * u.ugifts * nartifacts)) (pray.c:1792). First gift is 1 in 6; subsequent gifts drop by a multiplicative factor (gift count × total artifacts in world), NOT additive +2·n as previously stated.
+- prerequisites: u.ulevel > 2 (XL>=3) AND u.uluck >= 0 (pray.c:1784).
+- first-gift bias is alignment + skill compatibility, not role-name lookup (artifact.c:230 `a->alignment != A_NONE || u.ugifts > 0 || !rn2(3)`).
+- pre-existing book claim "1 in (10 + 2·n)" (giving 1/10 first, 1/14 second) was incorrect; rewrote to match the source.
 -->
 
 
@@ -7621,6 +7631,10 @@ For a spell-caster this is irreplaceable.
 - wand of striking DESTROYS the drawbridge; wand of locking/spell of wizard lock closes it (zap.c:3290-3305)
 - wand of opening or spell of knock opens the drawbridge (zap.c:3263-3273, 2184)
 - strategy aligned with NetHackWiki Castle, Passtune, Drawbridge, Wand of wishing: passtune-as-Mastermind, wand-of-opening/spell-of-knock alternatives, wand of striking destroys, bring conflict for crowd control, plan a small wishlist, secure MR/reflection/fire-res/poison-res before descending (https://nethackwiki.com/wiki/Castle, https://nethackwiki.com/wiki/Passtune, https://nethackwiki.com/wiki/Drawbridge, https://nethackwiki.com/wiki/Wand_of_wishing)
+2026-05-31 audit:
+- Castle has NO conventional down-stair to Gehennom. The Gehennom branch is flagged `branchtype = "no_down"` in dungeon.lua, so the branch connection point gets no automatic `>` stair. The five trap doors in the central hallway at columns 40/44/48/52/55 (castle.lua:156-160) are the only way to descend into Gehennom.
+- The Castle level is one of only two levels that opt out of random mirroring via `noflipx`/`noflipy` in its .lua definition; the other is bigrm-12.lua (Big Room variant 12). All other special levels — Sokoban, Oracle, Mines branch, Quest levels, Medusa, Valley of the Dead, the four Elemental Planes, demon lord lairs, Vlad's Tower, Orcus Town, Wizard's Tower, Moloch's Sanctum, Astral Plane — can flip on either axis via sp_lev.c:967 flip_level_rnd with allow_flips default 3.
+- ★ glyph on the dungeon map figure (Quest goal, Vlad the Impaler, Wizard of Yendor) is rendered upright on otherwise-italic detail lines via a tspan font-style:normal override in dungeon_map.py.
 -->
 
 If you've reached the Castle, congratulations: you've survived the
@@ -8176,6 +8190,12 @@ last obstacle between you and divinity.
 - every plane has noteleport; self-zap WAN_TELEPORTATION prints "A mysterious force prevents you from teleporting!" (teleport.c:854-855)
 - self-teleport reaches scrolltele() at line 844 from zap.c:2876-2878, so the wand still works on monsters
 - strategy aligned with NetHackWiki Plane of Water, Scroll of genocide, Plane of Air, Astral Plane: genocide class `;` on the Plane of Water, conflict to clear Air's elementals, wrong-altar offering ends the game (https://nethackwiki.com/wiki/Plane_of_Water, https://nethackwiki.com/wiki/Scroll_of_genocide, https://nethackwiki.com/wiki/Plane_of_Air, https://nethackwiki.com/wiki/Astral_Plane)
+2026-05-31 audit:
+- Plane of Earth arrival is at (69,16) per dat/earth.lua:52 teleport_region — a cleared cavern, NOT solid stone or boulders. Map shows scattered cavern clearings (dots in dat/earth.lua:26-47) separated by walls of diggable rock.
+- The arrival cavern contains a scripted Elvenking at (67,16) and a minotaur at (67,14), both hostile (dat/earth.lua:55-56). Earth elementals cluster in the OTHER caverns (dat/earth.lua:61-127).
+- Portal is randomly placed via des.levregion in region {0,0,75,19} excluding the arrival corner {65,13,75,19} (dat/earth.lua:53). The portal lives in another cavern, not buried in undug rock.
+- Level flag `shortsighted` (rm.h:449 Bitfield, set via dat/earth.lua:15) only affects monster vision range, not the player's.
+- `;` class on the Plane of Water (S_EEL) species verified from monsters.h: jellyfish, piranha, shark, giant eel, electric eel, kraken. "sea monsters" was the section comment header, not a species name. Water moccasin is S_SNAKE and NOT affected by class-`;` genocide.
 -->
 
 Beyond the top of the Dungeons of Doom, the world dissolves
@@ -8345,6 +8365,8 @@ book closes here. Congratulations.
 - Ctrl+A repeats only the last EXECUTED command, not the last input (cmd.c:3732-3736)
 - repeat-count cap is 32767 (global.h:135)
 - number_pad/autopickup/pickup_types option semantics consistent with optlist.h
+2026-05-31 audit:
+- travel command (`_`) enters background-symbol-target mode (getpos.c:194-218). Typing a background symbol after `_` jumps the cursor to the next instance; `.` confirms and walks. So the patterns are `_<.` (upstair), `_>.` (downstair), `__.` (altar). The book originally showed `__` without the trailing `.`, which is inconsistent with the other two.
 -->
 
 The basic keys get you through every situation in NetHack. The
