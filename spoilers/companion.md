@@ -1029,6 +1029,11 @@ A few map glyphs aren't monsters in the conventional sense, but you'll see them 
 - Ring of teleportation moves the sink to a fresh ROOM tile (do.c:575-580)
 - Rotten food in fountains is slime molds, not fruit (objnam.c:414-427)
 - VAULT_GUARD_TIME = 30 turns (hack.h:69) before the guard appears; "Croesus", "Kroisos", "Creosote" all dismiss the guard if Croesus is still alive (vault.c:513-543); lying with a Lawful character loses one alignment (vault.c:507-511)
+2026-05-31:
+- Real-name answer: guard demands "Please drop that gold and follow me." then opens a temporary corridor in the wall (the fake-corridor system in vault.c), leads the player out, and re-seals the wall behind. Player loses all carried gold (vault.c:551-585).
+- Croesus answer (with Croesus alive): guard says "Oh, yes, of course. Sorry to have disturbed you." and `mongone(guard)` removes him (vault.c:513-543). No corridor opens. Player keeps gold but stays sealed inside.
+- Croesus answer with Croesus dead: guard goes hostile and attacks (vault.c:525-540).
+- Implication: lying keeps the gold but requires the player to have an independent way out (wand of digging, scroll of teleportation, level teleport, etc.). Truth-telling guarantees escape at the cost of the gold.
 -->
 
 On your visit to the dungeon, be sure to make time for the
@@ -1771,6 +1776,12 @@ inside, see [The Castle](#the-castle) in Part Six.
 ---
 
 ### Traps and Hazards
+<!-- audit
+2026-05-31:
+- mktrap() places traps in rooms only (somexyspace(croom)) on standard dungeon levels; the MAZEFLAG path that allows corridor traps is set on maze levels (Gehennom mazes, etc.). Standard corridors do not generate traps (mklev.c:2032-2099, somexyspace usage at line 2093).
+- display priority: monster > object > trap > floor. A corpse object on a trap square draws as `%` and hides the `^` glyph (display.c symbol layering).
+- #untrap requires the trap to be visible (known) and the player to be adjacent (or on the trap). It then attempts to disarm based on trap type (trap.c untrap_object).
+-->
 
 Traps are invisible until you step on one, detect it with a search
 (`s` command), or reveal it by other means. Once discovered, they
@@ -5408,6 +5419,12 @@ pharmacy.
 - read.c:2087-2092 sets cval: blessed always rolls cval=rn2(5); uncursed rolls only on 1/5; cursed always cval=1
 - cval==0 (1-in-5 of the blessed roll) identifies ALL inventory items; blessed+Luck>0 promotes cval=1 to 2 so minimum is two
 - citation: NetHackWiki Scroll of identify (https://nethackwiki.com/wiki/Scroll_of_identify)
+2026-05-31:
+- Scroll of scare monster pickup logic at pickup.c:1832-1861:
+  - blessed scroll: pickup unblesses it (becomes uncursed), no dust;
+  - uncursed unstamped (spe==0): first pickup sets spe=1, scroll survives;
+  - uncursed stamped (spe==1) OR cursed (any spe): pickup prints "The scroll turns to dust as you pick it up" and useupf() destroys it.
+- So an uncursed scroll allows one move (drop + pickup + drop), then crumbles on the next pickup. A cursed scroll dusts on the first pickup. BUC-testing on an altar reveals the BUC via the flash but the subsequent pickup still follows the same rule — meaning a cursed BUC-test is effectively destructive.
 -->
 
 Scrolls are the dungeon's single-use spells: read once, triggered,
@@ -9679,6 +9696,10 @@ the conduct.)
 - touchstone full-name ID requires blessed (or non-cursed for Archeologist/Gnome); uncursed gives only streak color (apply.c:2744-2751)
 - touchstone hardness is irrelevant: works on all gems
 - glass gems do NOT take the is_gem branch in unicorn gift handling — Luck never changes either direction (dothrow.c:2319, 2358-2368)
+2026-05-31 audit:
+- shop door kicked open at dokick.c:953-956: add_damage(x, y, SHOP_DOOR_COST) + pay_for_damage("break", FALSE) bills the player and angers the shopkeeper.
+- shop door picked open at lock.c:147-148: doormask flips D_LOCKED -> D_CLOSED with no add_damage call, so no bill and no anger. Same applies to wand of opening (zap.c:3263-3273).
+- "Closed for inventory" engraving marks a shop whose door spawned with D_LOCKED set (vs an abandoned shop). The shopkeeper is present and the stock is unpaid; the engraving is just a flavor signpost.
 -->
 
 Shops do more than sell: their pricing system is your most
@@ -11094,6 +11115,10 @@ All mimics are amorphous, hide, and are acid-resistant.
 - Water nymph has M1_SWIM (line 714); all three carry M1_TPORT|MR_POISON.
 - AD_SITM steal-and-teleport at uhitm.c:4724,4798; AD_SEDU at uhitm.c:4642.
 - Corpse grants intrinsic teleportitis at 10% per should_givit (eat.c:936-975).
+2026-05-31:
+- Post-theft teleport calls rloc(mon, RLOC_MSG) at mhitu.c:2303, which is the within-level relocation routine (teleport.c:1799). The nymph does NOT migrate to another level after stealing; she ends up at a random valid position on the SAME level.
+- The book's earlier claim that a nymph might "walk off the level with my bag of holding" was an overstatement of the rare incidental case where she later falls through a trapdoor or wanders onto a staircase.
+- The Amulet of Yendor has no return-to-Sanctum mechanic on theft. A nymph carrying the Amulet stays on the same level, so the Ascension Run warning was corrected to point at the turn-budget cost of searching the level while the Mysterious Force keeps pulling.
 -->
 
 
@@ -11680,6 +11705,9 @@ Police force triggered by stealing from shops or hurting shopkeepers. Mostly wea
 - Only the arch-lich (m_lev=25) reaches DEATH_TOUCH at spell-level 20; master lich m_lev=17 cannot (mcastu.c:111).
 - Double-trouble is Wizard-of-Yendor only, NOT a lich ability.
 - Arch-lich casts touch of death, NOT rays.
+2026-05-31:
+- Touch of death (mcastu.c:389-408): without Antimagic, the kill check is `rn2(mtmp->m_lev) > 12`. At m_lev 25 (arch-lich) that is 12/25 ≈ 48% chance of an outright kill per successful cast. Magic resistance blocks the instakill but not the 8d8 baseline damage.
+- Only the Wizard of Yendor literally has M3_COVETOUS in 5.0 (monsters.h:2857; single row). Arch-liches do NOT teleport-away-to-heal. Their threat profile is the touch-of-death spell, not the covetous return-at-full-HP behavior the Wizard has.
 -->
 
 Skeletal spellcasters. The arch-lich can cast touch of death; master and arch-liches both require magic resistance to survive their spell barrages.
