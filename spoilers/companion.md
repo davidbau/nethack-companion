@@ -895,7 +895,7 @@ AC / attack details on every monster, see the
 | Sym    | Class                  | Notes                                                                      |
 | ------ | ---------------------- | -------------------------------------------------------------------------- |
 | [`a`](#ants-and-insects-a)    | [Ants](#ants-and-insects-a)      | Soldier ants are a frequent early-game killer: speed 18, two attacks per turn (bite + strength-draining sting), and they travel in packs. A wandering soldier-ant group on Dlvl 4 can end a careless run. Killer bees, giant ants, fire ants are all the same shape of problem. |
-| [`b`](#blobs-b)    | [Blobs](#blobs-b)     | Acidic or gelatinous. Acid blobs have no active attack — they only splash 1d8 acid back when *you* hit *them*, and the splash can corrode your weapon. Kill at range. Eat for [resistances](#useful-corpse-effects). |
+| [`b`](#blobs-b)    | [Blobs](#blobs-b)     | Acidic or gelatinous. Acid blobs have no active attack. They only splash 1d8 acid back when *you* hit *them*, and the splash can corrode your weapon. Kill at range. Eat for [resistances](#useful-corpse-effects). |
 | [`B`](#bats-and-birds-b)    | [Bats](#bats-and-birds-b)      | The `B` class is **deceptively dangerous because of speed**. Bats and giant bats clock in at speed 22 — nearly twice the player's base 12, so they get roughly two bites per one of your swings. Giant bats bite for 1d6 each; the math catches up fast. Vampire bats are still in the bat class but their second bite drains Strength (not levels). |
 | [`d`](#dogs-and-canines-d)    | [Dogs and other canines](#dogs-and-canines-d) | The `d` class covers your starting pet (little dog, kitten via cat-class) **and** the most numerous early-game predators. **Jackals** only bite for 1d2, but they spawn in packs and there are a *lot* of them on the upper levels — the single most common cause of death on the public server. Foxes bite for 1d3 and are faster (speed 15) but spawn alone. Coyotes, dingos, wolves get progressively worse. Tame `d` (your pet, larger dogs you've fed up) help fight everything else. |
 | [`e`](#eyes-and-spheres-e)    | [Eyes](#eyes-and-spheres-e)      | **Floating eyes paralyze on melee hit.** Never hit an `e` in melee. Use ranged attacks. (And eat them for telepathy.) Spheres (flaming/freezing/shocking) explode in a 3×3 area; also kill them at range. |
@@ -909,7 +909,7 @@ AC / attack details on every monster, see the
 | [`r`](#rodents-r)    | [Rodents](#rodents-r)   | Rats and rock moles. Rock moles eat metal items, so protect your gear.                  |
 | [`s`](#arachnids-and-centipedes-s)    | [Spiders](#arachnids-and-centipedes-s)   | Cave spiders are weak (eat them for poison resistance). Giant spiders poison.            |
 | [`x`](#xans-and-fantastic-insects-x)    | [Grid bugs](#xans-and-fantastic-insects-x) | The weakest monster in the game; they can't even move diagonally. But they don't leave corpses. The `x` class also covers the much-later **xan**, whose sting cripples your legs (slow movement until it heals). |
-| [`:`](#lizards)    | [Lizards](#lizards)   | Newts, geckos, and iguanas are individually weak — usually not too dangerous if you're paying attention. The class matters mostly for the corpses: **lizard corpses cure [petrification](#petrification-stoning)** (always carry one for cockatrice/Medusa insurance), and newt corpses may restore 1–3 mana. |
+| [`:`](#lizards)    | [Lizards](#lizards)   | Newts, geckos, and iguanas are individually weak, usually not too dangerous if you are paying attention. The class matters mostly for the corpses: **lizard corpses cure [petrification](#petrification-stoning)** (always carry one for cockatrice/Medusa insurance), and newt corpses may restore 1–3 mana. |
 
 #### Mid-Dungeon Threats
 
@@ -973,7 +973,7 @@ A few map glyphs aren't monsters in the conventional sense, but you'll see them 
 | ------ | ------------------------ | ---------------------------------------------------------------------------------------------------- |
 | `I`    | Invisible monster marker | The game remembers the last spot you sensed something you couldn't see. The `I` stays there until you bump it or step on the square; the monster has usually moved. |
 | `~`    | Long worm tail segment   | Part of a long worm's body. Hitting the tail damages the worm and shortens the chain; hitting the head (the `w`) is full melee. |
-| `]`    | Strange object           | **Always a [mimic](#a-note-on-mimics).** No ordinary item ever displays as `]` (compare `[`, armor — `]` is its mirror). |
+| `]`    | Strange object           | **Always a [mimic](#a-note-on-mimics).** No ordinary item ever displays as `]` (compare `[`, armor, and `]` is its mirror). |
 | `⎕` <br>(space) | Ghost            | Ghosts left from bones files. The glyph is a literal space, which paints over the floor underneath: in a room, a ghost shows as a one-square *gap* in the floor where a `.` should be. Walk into the gap to identify it. |
 
 ---
@@ -1059,12 +1059,12 @@ with dozens of random effects including:
 | Water demon       | A water demon appears, hostile                        |
 | Water nymph       | A water nymph appears and tries to steal an item      |
 | Water moccasins   | A swarm of snakes appears                             |
-| Curse some items  | "This water's no good!" — items in your main inventory may be cursed (items inside a bag are safe) |
-| Poisonous water   | "The water is contaminated!" — Str damage (poison resistance blocks the worst) |
+| Curse some items  | "This water's no good!" (items in your main inventory may be cursed (items inside a bag are safe) |
+| Poisonous water   | "The water is contaminated!" Str damage (poison resistance blocks the worst) |
 | See invisible     | You gain the ability to see invisible creatures       |
 | Detect monsters   | Brief view of every monster on the level              |
 | Self-knowledge    | A brief enlightenment readout of your own state       |
-| Scare monsters    | Bad breath — every monster on the level panics        |
+| Scare monsters    | Bad breath, every monster on the level panics        |
 | Nothing           | "The water is cool and refreshing" or "tasteless"     |
 
 Most of the time, nothing happens. A demon appears about 1/30; on
@@ -1075,7 +1075,7 @@ to put your items in a bag to protect them from cursing and engrave
 [Elbereth](#elbereth) on a couple squares to protect against demons. Wizards'
 random starting items can include a scroll of taming or charm-monster
 spellbook, and any character with a protective instrument (tooled
-horn, leather drum, magic harp) can scare or charm a demon — making
+horn, leather drum, magic harp) can scare or charm a demon, making
 the gamble safer.
 
 **Dipping in a fountain** is a different gamble, and one that Lawful
@@ -1111,7 +1111,7 @@ per item.)
 with your god. The corpse must be fresh (stale sacrifices are an
 insult) and the bigger the monster, the more your god is impressed.
 Sacrifice enough and your deity may reward you with an artifact
-weapon aligned to your cause. Don't sacrifice your starting pet —
+weapon aligned to your cause. Don't sacrifice your starting pet.
 the alignment penalty is steep and the residual aggravate-monster
 intrinsic sticks around for the rest of the run. See
 [Divine Relations](#divine-relations) for the full theology.
@@ -1133,7 +1133,7 @@ possible outcomes reads like a wish list shuffled with a hit list:
 
 - A wish (if your luck is positive)
 - Genocide of a monster class
-- Free identification of one to four items in your pack — or, one time in five, your entire inventory
+- Free identification of one to four items in your pack (or, one time in five, your entire inventory
 - A stat boost or a stat drain
 - An electric shock
 - Full healing
@@ -1169,12 +1169,12 @@ Sinks are the dungeon's most underrated identification tool.
 [triple-resistance snack](#useful-corpse-effects)), summon an
 *amorous demon* posing
 as "the dish washer" (the same incubus/succubus as [a seduction
-encounter](#seduction) — careful!), or just stub your toe. Each
+encounter](#seduction); careful!), or just stub your toe. Each
 non-stub outcome fires at most once per sink. Worth a kick in the
 early game if you can handle what comes out.
 
 **Dropping a ring down a sink** produces a message unique to the ring
-type — the most reliable non-magical way to identify rings. **Most
+type. This is the most reliable non-magical way to identify rings. **Most
 rings are consumed**, but two come back after IDing themselves for
 free. Reserve a virgin sink for this: a sink that's already been
 kicked, quaffed, or poly'd may have moved, vanished, or angered
@@ -1208,7 +1208,7 @@ encounter, but keep HP and an escape plan in reserve: it could summon
 a water elemental, or it could polymorph you.
 
 **Pouring potions down a sink** (by dipping) produces telltale
-effects — a clever way to narrow down potion identities without
+effects, a clever way to narrow down potion identities without
 risking a sip. Five potions print unique sink-only messages:
 
 | Sink message                                                 | Potion             |
@@ -1365,7 +1365,7 @@ get one wherever you arrive. A luckstone in your open inventory
 prevents your luck from timing out toward zero, which affects
 everything from combat to fountain wishes. Grab it and carry it
 for the rest of the game. (One layout variant also seeds a [**fake
-luckstone mimic**](#a-note-on-mimics) disguised as a luckstone —
+luckstone mimic**](#a-note-on-mimics) disguised as a luckstone.
 BUC-test what you pick up before relying on it.)
 
 #### Sokoban
@@ -1410,7 +1410,7 @@ fit), **dig the boulder** with a wielded pick-axe or mattock, or
 polymorph the boulder into something else). Each of these costs a
 point of Luck and breaks the Sokoban conduct. The walls themselves
 are non-diggable on every Sokoban level, and pit traps are inescapable
-— even flying or levitation won't carry you over an open pit, the
+Even flying or levitation will not carry you over an open pit, the
 air currents pull you down anyway. **Teleport doesn't work here:**
 the level forbids it.
 
@@ -1572,7 +1572,7 @@ the era away:
   shares a symbol with gems (in Rogue they were the same thing).
 - Doors don't close. Hinges came later.
 - Tile mode switches off in favor of plain ASCII characters.
-- No fountains, sinks, altars, shopkeepers, or priests — and
+- No fountains, sinks, altars, shopkeepers, or priests, and
   no spellbooks, tools, or amulets in the natural item pool, all
   post-Rogue inventions.
 
@@ -1830,7 +1830,7 @@ to stock up.
 | ---------------- | ---------------------------------------------------------- |
 | Pit              | You fall in, take minor damage, can climb out              |
 | Spiked pit       | Like a pit, but with spikes (more damage, possible poison) |
-| Trapdoor         | Drops you down a dungeon shaft — usually one level, but with a 25%-per-level chance to keep falling, so you can land several deeper |
+| Trapdoor         | Drops you down a dungeon shaft. Usually one level, but with a 25%-per-level chance to keep falling, so you can land several deeper |
 | Teleport trap    | Teleports you randomly on the level                        |
 | Level teleporter | Teleports you to a random dungeon level                    |
 | Hole             | Like a trapdoor, but you can see it                        |
@@ -1841,7 +1841,7 @@ step and you're separated from your pet, your stash, and your
 carefully explored map. But with teleport control (from an item or
 intrinsic), teleport traps become free transportation. **Levitation
 or flying** both make you immune to pits, holes, and trapdoors
-entirely — except in Sokoban, where the puzzle levels disable the
+entirely. Except in Sokoban, where the puzzle levels disable the
 skip and you fall in regardless.
 
 #### Dangerous Traps
@@ -1920,7 +1920,7 @@ than orthogonal. A wand of opening or spell of knock frees you on
 the spot.
 
 If you have magic resistance and you *want* to enter a teleport
-trap (for vault access, say), MR blocks the trip — unless you
+trap (for vault access, say), MR blocks the trip, unless you
 press `Ctrl+T` first, which forces a voluntary trap-use that
 bypasses the resistance.
 
@@ -1931,12 +1931,12 @@ an "anti-magic implosion" that costs you HP. The damage is
 d4 base, plus another d4 if you have half-physical or
 half-spell damage, plus d4 for wielding Magicbane, plus
 d4 for carrying any one magic-resistance artifact (only one
-counts — the check breaks on first match). At worst that's 4d4
+counts; the check breaks on first match). At worst that's 4d4
 damage, quartered (rounded up) if you can pass through walls. The
 defense is finding the trap first (search) and stepping around it.
 A wand of cancellation aimed at a magical trap *does* remove the
 trap, but it triggers a 20 + 3d6 damage blast at the trap's square
-in the process — not a silent defuse.
+in the process; not a silent defuse.
 
 Iron footwear (iron shoes or kicking boots) absorbs a
 surprising amount of trap punishment in 5.0: no leg damage from a
@@ -1974,7 +1974,7 @@ The best defense against traps is finding them before they find you:
 - **Flying and levitation** make you immune to most floor traps
   (you'll still trigger magic, teleport, and anti-magic traps)
 - **A scroll of gold detection read while confused** turns the
-  gold-reveal into a *trap* reveal — every magical trap on the
+  gold-reveal into a *trap* reveal: every magical trap on the
   level lights up at once. Confused gold detection is the cheapest
   pre-Gehennom trap survey.
 
@@ -2030,7 +2030,7 @@ cheaper than being trapped on Dlvl 1 forever.
 
 - **Ring of searching** auto-searches every turn while it's worn
 - **Excalibur** (or any artifact with the searching aura), wielded, adds its enchantment to your search bonus (a freshly-dipped +0 Excalibur adds nothing)
-- **Lenses** worn (and you not blind) add +2 to the search bonus — but the total bonus from Excalibur + lenses caps at +5, so lenses only help if Excalibur's enchantment is below +3
+- **Lenses** worn (and you not blind) add +2 to the search bonus, but the total bonus from Excalibur + lenses caps at +5, so lenses only helplp if Excalibur's enchantment is below +3
 - **Wand of secret door detection** instantly reveals nearby secrets in a radius
 - **Blessed scroll of magic mapping** shows every secret door on the level (only the blessed version)
 
@@ -2315,7 +2315,7 @@ of them are specific signals. If you don't know what they mean,
 you'll miss the cues entirely. They are worth memorizing.
 
 (Caveat: being **deaf**, **swallowed**, or **underwater** silences
-the ambient-sound channel completely — Permadeaf conducts in
+the ambient-sound channel completely. Permadeaf conducts in
 particular lose every level-flavor cue. The feeling-from-corpse
 messages still come through.)
 
@@ -2347,7 +2347,7 @@ messages still come through.)
 | *"You feel materially poor."*          | Scroll of gold detection, no gold on level.                                            |
 | *"You feel like someone is helping you."* | Scroll of remove curse; worn/wielded cursed items uncursed.                         |
 | *"Your hands begin to glow red."*      | Scroll or spell of confuse monster. Your next melee strike will confuse the target. (Purple if you read it while already confused.) |
-| *"You feel guilty."*                   | Blessed or confused scroll of punishment. The ball and chain don't attach — but the scroll is now identified. |
+| *"You feel guilty."*                   | Blessed or confused scroll of punishment. The ball and chain don't attach, but the scroll is now identified. |
 | *"Who was that Maud person anyway?"*<br>*"As your mind turns inward…"* | Scroll of amnesia. Some of your memorized spells (all if cursed) are now gone. |
 | *"It tasted bad."*                     | Cursed potion of gain level read on a level you can't rise off (already at the top, no Amulet, or against the ceiling). Cursed, but otherwise harmless. |
 | *"You have an uneasy feeling…"*        | Cursed potion of enlightenment, or cursed potion of gain level in a no-rise spot. Identifies the potion; no other effect (a Wisdom exercise penalty for enlightenment). |
@@ -2360,10 +2360,10 @@ messages still come through.)
 | *"You hear someone summoning something, and…"* (and *"…summoning <something>"*) | An offscreen spellcaster (wizard, demon, lich) just summoned a monster. Expect company on the next level transition or as it walks in. |
 | *"You feel mildly hot."* / *"You feel mildly chilly."* | A fire (or cold) attack hit you and your intrinsic resistance absorbed it. Useful confirmation that you actually have the resistance you think you do. |
 | *"You feel rather itchy under your <mummy wrapping>."* | You just read a scroll, zapped a wand, or cast a spell of invisibility, but the mummy-wrapping cloak blocked it. You're not invisible — and you've just confirmed the scroll/wand is invisibility. |
-| *"You feel less paranoid."* | A monster you'd sensed-but-not-seen (the `I` marker on the map) just left your awareness — it walked off the level, died, or vanished. You can stop worrying about it. |
+| *"You feel less paranoid."* | A monster you'd sensed-but-not-seen (the `I` marker on the map) just left your awareness. It walked off the level, died, or vanished. You can stop worrying about it. |
 | *"You feel agile! You must have been working on your reflexes!"* (and Str / Wis / Con variants) | A stat just went up from the hidden exercise system. See [Exercising Your Stats](#exercising-your-stats) for what counts as exercise. The mirror message *"You haven't been working on reflexes lately"* fires after a streak of abuse instead. |
 | *"You move very quietly."*             | Ring of stealth or elven cloak. (Elven boots give *"You walk very quietly"* instead.)  |
-| *"Wow! This makes you feel great!"*    | Blessed potion of restore ability with no remaining troubles — *or* a blessed magic fountain hit. |
+| *"Wow! This makes you feel great!"*    | Blessed potion of restore ability with no remaining troubles, or a blessed magic fountain hit. |
 | *"You feel feverish."*                 | Lycanthropy infection from a were-monster. *Quaff* holy water, eat wolfsbane, or `#pray`. |
 | *"You are slowing down."*              | You're turning to stone. Immediately eat a lizard corpse, drink acid, or `#pray`.      |
 | *"You are turning into slime."*        | Green-slime contagion. Burn it off (read a fire scroll, cast fireball on yourself, or self-zap a wand of fire), or `#pray`. |
@@ -2576,7 +2576,7 @@ impressive and gives more attacks per turn. The catch: each strike
 takes a flat to-hit and damage penalty determined by your
 two-weapon skill (−9/−7/−5/−3 to hit, −3/−1/0/+1 damage from
 Unskilled through Expert), and the loadout must be melee on both
-sides — no shield, no launcher (bow, crossbow, sling), no ammo
+sides. No shield, no launcher (bow, crossbow, sling), no ammo
 (arrows, bolts), no projectiles (darts, shuriken). Only
 **Rogue** and **Samurai** can reach Expert; Valkyrie and Knight
 cap at Skilled; everyone else lower or none. Rangers don't have
@@ -2744,7 +2744,7 @@ are deaths. NetHack ends in death by default; survival is the
 exception.
 
 **The early dungeon is deadly.** The monsters that kill the most
-characters all live on the upper levels — jackals, dwarves,
+characters all live on the upper levels: jackals, dwarves,
 soldier ants, gnome lords, sewer rats, giant bats,
 [small mimics](#a-note-on-mimics), gnomes, foxes, water
 moccasins. None of them are intrinsically dangerous to a prepared
@@ -2757,7 +2757,7 @@ before pushing deeper.
 be at least somewhere near the dungeon level you're standing on.
 Going down stairs at experience level 4 onto Dungeon level 12 is
 how you meet things you can't outrun and can't outfight. The
-dungeon doesn't wait — every step deeper raises the monster
+dungeon doesn't wait. Every step deeper raises the monster
 difficulty roll, and a fragile character with 30 HP isn't going
 to soak even a single bad encounter. There's no prize for getting
 to Sokoban quickly. Clear, identify, level up, then descend.
@@ -2856,7 +2856,7 @@ reflection, or a clear path of retreat.
 range, then eat the corpse for telepathy.
 
 **Minotaurs** (`H`, in the Castle and maze levels of Gehennom).
-Three attacks averaging ~38 damage per turn — the hardest hitter
+Three attacks averaging ~38 damage per turn. The hardest hitter
 short of the Riders themselves. A wand of sleep, a thrown potion
 of paralysis (with free action), or just digging down before they
 reach you are the standard answers.
@@ -2955,7 +2955,7 @@ they live. Their scale mail grants disintegration resistance plus
 drain resistance, a rare extrinsic source of the latter.
 
 **Yellow** dragon scale mail is an underrated pick. Listed power is
-acid resistance, but it also grants **stoning resistance** — the
+acid resistance, but it also grants **stoning resistance**, the
 same outright immunity acid blob corpses give. If you find a yellow
 dragon and don't already have stone-res, killing it is worth the
 trip. Yellow dragons are rare, though.
@@ -2964,22 +2964,22 @@ trip. Yellow dragons are rare, though.
 action (the ring's effect), bundled into one slot.
 
 **White** dragon scale mail grants cold resistance *and* slow
-digestion — a useful nutritional save on long descents.
+digestion, a useful nutritional save on long descents.
 
 **Red** dragon scale mail grants fire resistance *and* infravision,
 the same effect as a ring of infravision or being elven.
 
 **Green** dragon scale mail grants poison resistance *and* sickness
-resistance — a pair of niche defenses in one slot.
+resistance. A pair of niche defenses in one slot.
 
 **Blue** dragon scale mail grants shock resistance *and* intrinsic
-**speed** — same tier as speed boots. (Wearing both at once doesn't
+**speed**, same tier as speed boots. (Wearing both at once doesn't
 make you faster; either alone reaches Very Fast.) One of the most
 powerful body slots in the game.
 
 **Gold** dragons are new in 5.0 and breathe fire. Their scale mail
 has no resistance power but is permanently lit (radius 4 blessed, 3
-uncursed, 2 cursed) — the only body-slot light source in the game,
+uncursed, 2 cursed). The only body-slot light source in the game,
 and it lets you abandon torches and oil. It also confers
 hallucination resistance.
 
@@ -2999,7 +2999,7 @@ aisles, masquerading as items. They're slow (speed 3) but their
 claws hit hard. Small mimics rank in the top ten causes of death.
 
 **The visual tell.** A mimic appearing as a generic "strange
-object" renders on the map as `]` — a mirror of `[`, the armor
+object" renders on the map as `]`, a mirror of `[`, the armor
 class. No real item ever displays as `]`. A `]` on a shop floor
 or anywhere else is always a mimic.
 
@@ -3020,7 +3020,7 @@ step onto a mimic.
 **Sticking.** Large and giant mimics glue you in place on a
 successful claw hit: you can't move, you can't go down stairs, you
 can't escape down a hole. Magic cancellation (cloak of protection,
-amulet of guarding, etc.) reduces the sticking chance — one more
+amulet of guarding, etc.) reduces the sticking chance, one more
 reason to secure MC before browsing mid-game shops.
 
 **Eating the corpse** turns you into a pile of gold (or, while
@@ -3071,7 +3071,7 @@ long-sword grinding session turns into a swarm. **Black pudding
 additionally corrodes your wielded weapon** on its passive
 return-hit, so each round of splitting is also a step toward
 your blade rusting away. The community consensus: a beginner
-discovers puddings the same way every time — by feeding them
+discovers puddings the same way every time: by feeding them
 their best weapon and watching the population graph go up.
 
 **Defenses.** Melee with a **silver or wooden weapon** (silver
@@ -3100,7 +3100,7 @@ stack and shrink together, so a pile of brown-pudding globs is a
 re-rollable chance at the resistance you don't yet have. The
 strategic flip-side of the splitting trap: if you can kill one
 pudding cleanly (silver weapon, cold/fire wand, spell), the
-splitting becomes a *feature* — every divided pudding is one
+splitting becomes a *feature*: every divided pudding is one
 more glob to eat. The full intrinsic table is in
 [Useful Corpse Effects](#useful-corpse-effects).
 
@@ -3210,7 +3210,7 @@ demons charge 1/5). Being asleep or otherwise unresponsive defers
 the attempt entirely.
 
 **Strategic note.** At high Cha+Int the encounter is net-positive,
-and the armor-removal step strips *cursed* worn pieces too — an
+and the armor-removal step strips *cursed* worn pieces too, an
 amorous demon can be the cheapest curse-removal in the dungeon.
 Some players keep one alive to farm XP and attributes. Don't try
 this at experience level 1, though: the level-drain outcome is
@@ -3229,7 +3229,7 @@ fatal.
 
 **Yellow lights** (`y`, level 3) and **black lights** (`y`, level 5)
 attack by exploding the moment you're adjacent. Yellow lights blind
-you for **10d20 turns** (up to 200 — a *blessed* potion of healing
+you for **10d20 turns** (up to 200, but a *blessed* potion of healing
 or any extra/full healing cures, or apply a unicorn horn); black
 lights hallucinate you for **10d12 turns** (a unicorn horn cures it,
 or wait it out). Both lights die in the explosion, so the encounter
@@ -3239,7 +3239,7 @@ because they die in the same turn they attack, you'll only "see"
 them just before they vanish.
 
 **Defenses:** Kill them at range with wands, thrown daggers, breath
-weapons — anything that doesn't bring you adjacent. *Warning*
+weapons: anything that doesn't bring you adjacent. *Warning*
 detects them through invisibility, but *telepathy* does not (they're
 mindless). If you do get blinded, a unicorn horn cures it.
 
@@ -3303,7 +3303,7 @@ instantly.
 it puts a short countdown on your throat and kills you when it runs
 out. The amulet generates cursed 90% of the time, so you usually
 can't just take it off: pray, or uncurse it with holy water or
-remove curse. Magic resistance doesn't help — strangulation isn't
+remove curse. Magic resistance doesn't help; strangulation isn't
 an attack, it's a timer death. Polymorphing into a Breathless form
 *does* save you.
 
@@ -3440,12 +3440,12 @@ Ranged spells and rays will tear into the host from the inside.
 
 Giant eels, electric eels, and krakens can grab you with their
 wrap attack. Once they have you, each of the monster's turns you
-can drown — the check uses the *monster's* tile (always water for
+can drown. The check uses the *monster's* tile (always water for
 an eel or kraken), not yours, so you can drown even while standing
 on adjacent dry land. Only *Swimming*, *magical breathing*, or
 *amphibious form* prevent the drown; encumbrance doesn't matter
 here. (Encumbrance only matters if you *fall* into water and need
-to crawl out — stressed or worse forces emergency disrobe.) You'll
+to crawl out; Stressed or worse forces emergency disrobe.) You'll
 meet eels and krakens at Medusa's level, in moats around the
 Castle, in swamp rooms, and on the Water Plane.
 
@@ -3453,7 +3453,7 @@ Castle, in swamp rooms, and on the Water Plane.
 you Breathless and ends the grab-drown threat. Levitation keeps
 you above pools so you can't walk into them, but **does not save
 you from an eel's grab** once it lands. Kill sea monsters at range
-whenever possible — their grab attack requires adjacency.
+whenever possible; their grab attack requires adjacency.
 
 #### Petrification (Stoning)
 <!-- audit
@@ -3508,11 +3508,11 @@ why you carry one), eat an acidic corpse, drink a potion of acid,
 pray, or cast stone-to-flesh on yourself. Keep the lizard in your
 **main inventory**, not in a bag: pulling it out of a bag takes a
 turn you can't spare against a two-turn timer. Note: act *before*
-the "Your limbs have turned to stone" message — after that
+the "Your limbs have turned to stone" message; after that
 you're paralyzed for three turns and the final messages kill you. Amulet
 of Unchanging does **not** interrupt stoning. If you happen to be
 polymorphed into a non-stone golem, wearing it during the countdown
-is actively harmful — it blocks the stone-golem auto-poly that
+is actively harmful; it blocks the stone-golem auto-poly that
 would otherwise save you on death.
 
 Out of lizards? Any acidic corpse will do: acid blob, jellies,
