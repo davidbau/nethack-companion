@@ -4919,17 +4919,18 @@ luckstone. A $45 gray stone is a touchstone. A $1 gray stone is
 flint or a loadstone.
 
 **The rub test.** Apply (`a`) a gray stone to a gem in your pack.
-A touchstone produces a colored-streak message — and if the
+A touchstone produces a colored-streak message. If the
 touchstone is **blessed** (or you're an Archeologist or Gnome
 holding an uncursed one), the streak also identifies the gem.
 Other gray stones produce similar streak messages, so a streak
 alone doesn't prove touchstone; an *identification* result does.
 A cursed touchstone can shatter the gem.
 
-**Location clue.** The luckstone at Mine's End is guaranteed. If
-you find a gray stone at the bottom of the Mines, it's almost
-certainly the luckstone. Bless-test it at an altar to confirm
-(the guaranteed one is always uncursed).
+**Location clue.** The luckstone at the bottom of [the Gnomish
+Mines](#the-gnomish-mines) is guaranteed. If you find a gray
+stone at Mine's End, it's almost certainly the luckstone.
+Bless-test it at an altar to confirm (the guaranteed one is
+always uncursed).
 
 The rule of thumb: if you find a gray stone, don't pick it up
 until you've tested it. A loadstone can ruin your encumbrance, and
@@ -8237,15 +8238,15 @@ plane is a labyrinth of water-filled chambers with occasional
 air pockets between them. Sea monsters prowl the corridors.
 
 **The standard tactic on arrival: genocide class `;`.** Read a
-scroll of genocide, target the entire `;` class (eels, krakens,
-sea monsters, sharks, jellyfish, piranhas), and the level instantly
-empties of anything that can drag you under. This is the right
-moment for that scroll. Class `;` is almost nowhere else in the
-game (a kraken in Medusa's pool, a moccasin from a fountain are
-isolated encounters not worth burning a class-wipe on), and on the
-next plane it's irrelevant. Spend the scroll here. Then find the
-portal and push through. This is the last barrier between you and
-the gods.
+scroll of genocide, target the entire `;` class (jellyfish,
+piranhas, sharks, giant eels, electric eels, krakens), and the
+plane instantly empties of anything that can drag you under.
+This is the right moment for that scroll. Class `;` is almost
+nowhere else in the game (a kraken occasionally appears in
+Medusa's pool, but that is the only meaningful encounter), and
+on the next plane it is irrelevant. Spend the scroll here. Then
+find the portal and push through. This is the last barrier
+between you and the gods.
 
 #### The Astral Plane
 
@@ -8392,11 +8393,14 @@ They are essential for moving safely through populated areas.
 The underscore key (`_`) is the "travel" command, a speedy
 autopilot. Press `_`, point at a destination you've already
 explored, then `.` to confirm, and your character walks the
-shortest path there, stopping on any interruption — including
-closed doors, which travel walks up to but doesn't open
-(press a direction to step through them, or `o` first). `_<.` walks to the up-staircase; `__` walks
-to a known altar; `_>.` walks to the down-staircase. After Ctrl+A,
-this is the single biggest quality-of-life command in the game.
+shortest path there. The walk stops on any interruption,
+including closed doors, which travel walks up to but doesn't
+open (press a direction to step through them, or `o` first).
+After `_`, you can type a background symbol to jump the cursor
+to the next one of that kind: `_<.` walks to the up-staircase,
+`_>.` walks to the down-staircase, `__.` walks to a known
+altar. After Ctrl+A, this is the single biggest
+quality-of-life command in the game.
 
 #### Forcing locked chests
 

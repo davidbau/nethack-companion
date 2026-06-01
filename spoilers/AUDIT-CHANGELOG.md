@@ -10,7 +10,7 @@ Each batch is committed individually.
 ## Progress
 
 - Total sections: 272
-- Audited: 2
+- Audited: 5 (+ 1 deferred: the giant Bestiary group)
 - Status: in progress
 
 ## Findings
@@ -57,4 +57,30 @@ real arrival ambush and the actual cavern-network structure.
 **Hyperlinks** — added a cross-reference from the identification paragraph to the full identification chapter (`#a-practical-identification-strategy`).
 
 **Changes**: added one hyperlink (companion.md:445).
+
+### Audit 3: Travel (companion.md:8390)
+
+**Accuracy** — verified travel mechanics against `getpos.c:194-218` and `hack.c:1263-1346`. The `_` command enters travel-target mode; typing a background symbol jumps the cursor to the next instance; `.` confirms.
+
+**Language** — em-dash removed from "stopping on any interruption — including" (now a period).
+
+**Consistency** — `__` (walk to known altar) was shown without trailing `.`, inconsistent with `_<.` and `_>.`. Fixed to `__.` for consistency. The pattern is "_" + background_symbol + "." across all three.
+
+**Changes**: rewrote the paragraph to clarify the travel-symbol-shortcut pattern (companion.md:8390).
+
+### Audit 4: Plane of Water (companion.md:8229)
+
+**Accuracy** — the `;` class species list cited "sea monsters" (not a real species name; just the comment header for `S_EEL` in monsters.h). Real species: jellyfish, piranhas, sharks, giant eels, electric eels, krakens (`monsters.h` MON definitions for S_EEL). Also: "moccasin from a fountain" was wrong — water moccasins are `S_SNAKE`, not `;`. Class-`;` genocide does not affect moccasins.
+
+**Changes**: corrected species list, replaced misleading moccasin reference with "kraken occasionally appears in Medusa's pool" (companion.md:8239).
+
+### Audit 5: Gray Stones (companion.md:4864)
+
+**Accuracy** — pre-existing audit notes verified prices (luckstone 60, touchstone 45, loadstone 1, flint 1 at objects.h:1598-1605), weights (loadstone 500, others 10), loadstone curse-at-creation (mkobj.c:978-979), blessed-touchstone rub-identification (apply.c rub_on_stone), Mine's End guaranteed luckstone (minend-*.lua). All correct.
+
+**Language** — em-dash removed from "colored-streak message — and if the touchstone is".
+
+**Hyperlink** — added link from "Mine's End" reference to the Gnomish Mines chapter (`#the-gnomish-mines`).
+
+**Changes**: em-dash removed; hyperlink added (companion.md:4922).
 </content>
