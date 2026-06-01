@@ -262,12 +262,12 @@ the ability to intuitively sense whether items are blessed, cursed,
 or uncursed, so you know on sight whether that cloak you just found
 is safe to wear. Competent fighters with access to clerical spells.
 Your first sacrifice gift is guaranteed: Demonbane (now a silver
-mace), which aligns with your weapon skill — sacrifice early and
+mace), which aligns with your weapon skill, so sacrifice early and
 often. Keep at least one holy water in reserve: dipping plain water
 into it makes more, indefinitely. *Alignment: Any (matches your god).*
 
 **Ranger.** You start with a bow, a generous supply of arrows, a
-dagger, and a **+2 cloak of displacement** — one of the strongest
+dagger, and a **+2 cloak of displacement**, one of the strongest
 defensive starts in the game. You're unmatched as an early-game
 ranged threat. Rangers gain Searching at XL 1, Stealth at XL 7,
 and See Invisible at XL 15. Your elven racial option grants sleep
@@ -279,7 +279,7 @@ stack on the level-1 newts. *Alignment: Neutral or Chaotic.*
 assassinations. You start with a short sword, six daggers for
 throwing, leather armor, a lock pick, a sack, and a potion of
 sickness (toss it at an enemy, or save it to coat any darts,
-shuriken, or arrows you find — only missiles can be poisoned).
+shuriken, or arrows you find. Only missiles can be poisoned.)
 Your lock pick makes every locked door, chest, and box openable from
 turn one. You get stealth from the beginning, which lets you walk up
 to sleeping enemies without waking them, and your backstab ability
@@ -325,7 +325,7 @@ combat is terrible, so spells are the answer: fragile early,
 overwhelming late. Advancing a spell-school skill (new in 5.0)
 also identifies spellbooks of that school by appearance, so you
 get free book-ID just by casting (see
-[Spellcasting](#spellcasting)). Two warnings — Wizards start with
+[Spellcasting](#spellcasting)). Two warnings: Wizards start with
 *zero* food rations and a kitten that won't share lunch, and force
 bolt shatters potions on the ground and breaks any mirror a nymph
 is carrying. Keep the quarterstaff wielded while you cast: any
@@ -539,7 +539,7 @@ the ground. (Kobold `k` meat, for example, is poisonous and confers
 nothing.) The exceptions: you can always safely eat food rations,
 lembas wafers, cram rations, and fruits. Lichen corpses are safe and
 never rot. Lizard corpses are safe, never rot, and cure
-petrification — keep one in *open* inventory, not buried in a bag:
+petrification. Keep one in *open* inventory, not buried in a bag:
 if a cockatrice touches you, you have two turns to chew. Newt
 corpses are safe, and they sometimes restore 1–3 Pw, which is the
 first sustainable mana source a spellcaster will see.
@@ -603,7 +603,7 @@ Use ranged attacks, or just walk around them. They are very slow.
 
 **Rotted corpses.** If you eat a corpse that's been on the ground too
 long, you'll get food poisoning, which is lethal without treatment.
-Eat corpses fresh — within about 30 turns of the kill for a guaranteed-safe meal. Past that, the rot roll turns random; past ~175 turns an uncursed corpse is certainly tainted.
+Eat corpses fresh, within about 30 turns of the kill for a guaranteed-safe meal. Past that, the rot roll turns random; past ~175 turns an uncursed corpse is certainly tainted.
 If you do get food poisoning, pray immediately.
 
 **Falling down stairs while overburdened.** If you're carrying too
@@ -813,7 +813,7 @@ it. The altar's alignment matters: if it matches yours, you can
 sacrifice here for good effects. If it doesn't, the resident priest
 won't be friendly about your attempts. The priest will also accept
 gold donations in exchange for clairvoyance or a permanent AC bonus
-— see [Donating to Priests](#donating-to-priests).
+See [Donating to Priests](#donating-to-priests).
 
 **Throne rooms.** A room with a [*throne* (`\`)](#thrones), a
 sleeping ruler at the throne, and a full court of monsters filling
@@ -3536,7 +3536,7 @@ reach for it as a last resort). Quaffing a potion of acid has the
 same curative effect.
 
 **The other side of the coin:** a wielded cockatrice corpse (with
-gloves on) is one of the game's most devastating weapons —
+gloves on) is one of the game's most devastating weapons.
 anything you hit that lacks stoning resistance turns to stone. The
 classic offense, known to veterans as the "rubber chicken,"
 handles demon lords, Medusa, and even a Rider on a good day. The
@@ -3566,7 +3566,7 @@ will. Stay on speaking terms with your god.)
 
 **Defenses:** Disintegration resistance (from eating a black dragon
 corpse or wearing black dragon scale mail) gives full immunity.
-**Reflection** bounces the breath back, protecting you — but black
+**Reflection** bounces the breath back, protecting you, but black
 dragons are themselves disintegration-resistant, so the bounce
 won't kill them. Magic resistance does **not** help.
 
@@ -3687,13 +3687,13 @@ corpse**: it strips a random intrinsic.
 Some monsters, most notably Death (one of the Riders on the Astral
 Plane), can kill you with a single touch. The Finger of Death spell
 and the wand of death work similarly. **Do not zap a wand of death
-or finger of death at Death the Rider** — Death absorbs the
+or finger of death at Death the Rider**. Death absorbs the
 attack and gains max HP. Magic missile is the recommended answer
 against all three Riders.
 
 **Death the Rider's touch** rolls 1d20 each hit. Rolls 17-19 trigger
 the full **8d6 + 50** instakill attempt and permadrain half the
-damage from your max HP — magic resistance fully blocks this
+damage from your max HP. Magic resistance fully blocks this
 high-damage branch. Rolls 5-16 (the most common 60%) deliver a
 smaller life-drain that MR does **not** block. Rolls 0-4 miss
 entirely. A high-level character with many hit points can survive
@@ -3701,7 +3701,7 @@ the high-damage hit; the permadrain still hurts.
 
 **The wand of death and Finger of Death spell** are gated by magic
 resistance only when the death ray *hits you from outside*. If you
-misfire and self-zap, MR doesn't save you — only being **nonliving**
+misfire and self-zap, MR doesn't save you; only being **nonliving**
 (polymorphed into a vampire, lich, skeleton, etc.) or a demon will.
 This is one of the rare cases where being polymorphed into something
 dead is the safer state. The same nonliving/demon immunity also
@@ -3747,7 +3747,7 @@ turns to react.
 
 **Sliming.** Being hit by a green slime (or eating its glob, or
 being digested by one as a polyform) starts a ~10-turn
-transformation into a green slime yourself — dead. **Cures:** burn
+transformation into a green slime yourself. Dead. **Cures:** burn
 the slime off with fire (a wand of fire zapped at yourself, a
 scroll of fire read at self, a fire trap, a red dragon's breath);
 polymorph into a flame-bodied or slime-immune form; or cast the
@@ -3764,7 +3764,7 @@ attacks (giant ant, etc.) gives you food poisoning, which kills in
 (apply it), pray, eat a eucalyptus leaf, or vomit (by being
 satiated and eating more). Vomiting from other causes also cures
 food poisoning. Poison resistance does NOT protect against food
-poisoning — that's *sickness resistance*, a separate intrinsic.
+poisoning. That is *sickness resistance*, a separate intrinsic.
 
 **Pestilence's terminal illness** is the harder cousin: vomiting
 won't clear it, and the timer is Constitution-dependent (~20+Con
@@ -3956,10 +3956,10 @@ the two reward tiers.
 
 **What you get:**
 
-- **Clairvoyance** — a few hundred turns of automatic short-range
+- **Clairvoyance.** A few hundred turns of automatic short-range
   map awareness (you "see" the immediate area around you every few
   turns without moving). Granted if you offer in the lower tier.
-- **Protection** — an intrinsic AC bonus that *stacks* across
+- **Protection.** An intrinsic AC bonus that *stacks* across
   visits. Granted if you offer in the upper tier. Your **first**
   donation grants 2–4 points; subsequent donations add 1 each up
   to 9; past 9, the chance to get another point drops to 1-in-N.
@@ -3971,7 +3971,7 @@ experience level and how much gold you're carrying:
 
 - **Clairvoyance:** a randomized 150–250 zorkmids × experience
   level as the base ask
-- **Protection:** twice that — 300–500 zorkmids × experience level
+- **Protection:** twice that, 300 to 500 zorkmids × experience level
 
 If you walk in carrying far more gold than the baseline, the
 priest scales the ask up to match, roughly a third of your purse
@@ -4058,7 +4058,7 @@ timeout** on top of the usual post-prayer wait, turning prayer into
 an unreliable emergency tool. If you're sacrificing to fish for an
 artifact gift, watch your piousness so you don't trigger a crowning
 by accident. Applying a stethoscope to yourself reports it in
-words, and *piously* is the highest band — the one in which the
+words, and *piously* is the highest band, the one in which the
 next sacrifice could crown you.
 
 ---
@@ -4216,11 +4216,11 @@ ticking down, though, so go back for it before it forgets you
 were friends.
 A **magic whistle** is the recommended fix: applying one warps every
 pet on your level to a square next to you, even on no-teleport
-floors. **Sokoban** also doesn't let pet loyalty decay — leaving
+floors. **Sokoban** also doesn't let pet loyalty decay; leaving
 a pet there while you do the Quest or the Mines is the dungeon's
 safest kennel.
 
-If you see *"You have a sad feeling for a moment"* — that's
+If you see *"You have a sad feeling for a moment"*, that's
 different. That message means a pet of yours just died
 offscreen on another level, usually one you left behind that
 got into a fight it couldn't win.
@@ -4448,17 +4448,17 @@ is Cha 11–15 with one ×4/3 surcharge applied; *11–15^T2^* is two
 surcharges stacked. Surcharges come from three sources: a Tourist
 markup (low-XL Tourist, dunce cap, or visible undershirt), an
 angry shopkeeper, or the random unidentified-item surcharge that
-fires on about 1 item in 4 (deterministic per object — two of the
+fires on about 1 item in 4 (deterministic per object; two of the
 same appearance disagreeing is the giveaway).
 
 **Sell rows** at the bottom show what an unangry shopkeeper
 *offers* for a sale. Sell prices ignore Charisma. *S* is the
 baseline ½ of base. *S^T^* is the same sucker condition (dunce
-cap, low-XL Tourist, visible undershirt) — on the sell side it
+cap, low-XL Tourist, visible undershirt). On the sell side it
 cuts your offer to ⅓ instead of ½. *S^P^* is a pennypinching
 shopkeeper (1 in 4) who shaves ¼ off unidentified items;
 unlike the buy-side unid surcharge, this is per-shopkeeper, not
-per-item — the same pennypinching shop applies it to every
+per-item: the same pennypinching shop applies it to every
 unidentified item you bring in. *S^TP^* stacks both.
 
 | Charisma / Markups               |   Mult |  20 |  50 |  60 |  80 | 100 | 150 | 175 | 200 | 300 |  500 |
@@ -4734,12 +4734,12 @@ charge and preserves the rest.
 3. **Engrave again with the wand.** Use `E` and select the wand.
    Observe the result. The [Wand Table](#the-wand-table) lists the
    engrave-test result for each wand; most wands reveal themselves
-   here. A few share results — see [Resolving Ambiguous Engrave
+   here. A few share results; see [Resolving Ambiguous Engrave
    Results](#resolving-ambiguous-engrave-results).
 
 **Don't be afraid of the suspected wand of wishing.** Engraving with
 it grants the wish: if a $500 candidate prompts you with *"For what
-do you wish?"*, take the wish — that's the identification and the
+do you wish?"*, take the wish; that is the identification and the
 reward in one step.
 
 > *Procedure adapted from Kieron Dunbar's "Identifying Wands by
@@ -5124,7 +5124,7 @@ while there's a freshly dead rat at your feet. A few rules:
 - Never eat old corpses. If in doubt, don't eat it.
 - Some corpses grant intrinsic resistances (poison resistance from
   killer bees, fire resistance from fire giants, etc.). Eat these
-  deliberately, even when you're not hungry — see the table below.
+  deliberately, even when you are not hungry. See the table below.
 - Some corpses are harmful (cockatrice corpses petrify you, green
   slimes turn you into slime, kobold meat is poisonous). Know which
   corpses are safe before eating.
@@ -5154,7 +5154,7 @@ spinach increases your Strength.
 **Vegetarian characters** have to live on rations, lembas, fruits,
 and the small set of non-meat corpses (fungi, molds, lichens,
 jellies, plus eggs). **Vegans** lose the eggs, so they're stricter still: rations,
-lembas, fruits, and plant corpses only. Plan ahead — the corpse-pile
+lembas, fruits, and plant corpses only. Plan ahead. The corpse-pile
 strategy doesn't work for either, so rations and fruit are the
 budget items to hoard.
 
@@ -5494,7 +5494,7 @@ for your wand of wishing: one charge means one more wish. Blessed
 charging restores more charges. Each recharge has an `n³/7³` chance
 of the wand exploding (where `n` is the count of previous recharges):
 0% on first, 0.3% on second, 2% on third, 8% on fourth, 19% on fifth,
-36% on sixth, 63% on seventh — and on the eighth, always. Wand of wishing is the
+36% on sixth, 63% on seventh, and on the eighth, always. Wand of wishing is the
 exception: it explodes 100% of the time on the second recharge, so
 recharge it exactly once and no more.
 
@@ -5537,7 +5537,7 @@ relocate.
 []{#scroll-teleportation}
 **Teleportation.** Uncursed teleports you randomly on the level.
 Cursed or confused reading sends you to a random dungeon level.
-With teleport control, *you* choose where you land — the game's
+With teleport control, *you* choose where you land. The game's
 most flexible escape hatch.
 
 []{#scroll-stinking-cloud}
@@ -5618,7 +5618,7 @@ area around you.
 #### The Wand Table
 
 Unlike scroll and potion prices, wand prices alone rarely pin down a
-specific wand — a $150 wand is one of thirteen possibilities. The
+specific wand. A $150 wand is one of thirteen possibilities. The
 **engrave-test result** in the rightmost column is far more useful:
 most wands reveal themselves in one zap. See [The Engrave Test
 (Wands)](#the-engrave-test-wands) for the procedure and [Resolving
@@ -5728,7 +5728,7 @@ lucky find."
 
 []{#wand-stasis}
 **Stasis.** A new 5.0 wand that freezes every monster on the level
-for **10–30 turns**. No ray, no aim, no message — just a hush. Use
+for **10–30 turns**. No ray, no aim, no message. Just a hush. Use
 it when you're surrounded and need a free moment to engrave
 [Elbereth](#elbereth), drink a potion, change weapons, or just walk past. The
 silence on engraving makes it harder to identify by the engrave
@@ -5760,7 +5760,7 @@ elsewhere on the level, cancellation dulls its magic.
 - **Probing** reveals a nearby monster's stats.
 - **Undead turning** revives a fresh corpse to its original species
   (and animates any corpses the target was carrying).
-- **Stasis** halts every monster on the level — the silent freeze is
+- **Stasis** halts every monster on the level. The silent freeze is
   unmistakable mid-combat.
 - **Nothing** does nothing.
 
@@ -5782,7 +5782,7 @@ the wand exploding. The formula is (recharges cubed) / 343, so:
 - Third: 7.9%.
 - Seventh: 100%.
 
-Use blessed charging for the best results — except on a wand of
+Use blessed charging for the best results, except on a wand of
 wishing, which follows its own rules. A fresh wand of wishing is
 always generated with **exactly one** charge. A scroll of charging
 adds **one more** wish whether blessed or uncursed; blessing
@@ -5995,7 +5995,7 @@ the air the same way, but you can still pick things up and you
 can choose to drop down on your turn. The under-appreciated bonus
 is that **your steed flies with you**. A flying warhorse skips
 over moats, fountains, pools, and the Castle's drawbridge entirely
-— a fast Knight can cross Medusa's island and the Castle from edge
+A fast Knight can cross Medusa's island and the Castle from edge
 to edge without worrying about the water at all. Stack with boots
 of speed and a wand of speed monster on the mount and you have a
 terrifying cavalry unit.
@@ -6061,7 +6061,7 @@ problem, and the other containers below have their places too.
 
 Note the weights. Sacks are 15 (carry one). Boxes and chests are
 furniture, not luggage: a large box weighs 350, a chest 600, an
-ice box 900 — comparable to your *entire* carrying capacity. Use
+ice box 900, comparable to your *entire* carrying capacity. Use
 them as floor stash, not as something to drag from level to level.
 
 The **bag of holding** deserves special mention because it
@@ -6150,7 +6150,7 @@ Credit cards are unlock-only.
 **Oil lamps** and **candles** light dark corridors, which is
 pleasant but not essential. The real prize is the **magic lamp**:
 rub it and there's a 1-in-3 chance the djinni emerges, then a
-chance it grants you a wish — 80% if the lamp is blessed (so
+chance it grants you a wish (80% if the lamp is blessed, so
 ~27% wish per rub overall), less if it isn't. Try again on the
 same lamp until the djinni shows. Never, ever use a magic lamp
 for light. That's like using a winning lottery ticket as a
@@ -6272,7 +6272,7 @@ dungeon. Apply it to a worn armor piece and the slick coat makes
 the wearer harder to grab and steal from: nymphs slide off, the
 Riders' grab attacks miss, and weapon-snatch attempts fail. Applied
 to a bag of holding, it waterproofs the contents like an oilskin
-sack — handy before crossing Medusa's moat or the Plane of Water.
+sack, handy before crossing Medusa's moat or the Plane of Water.
 The coat wears off after a few hits, so it's per-fight protection,
 not a long-lasting investment.
 
@@ -6341,7 +6341,7 @@ each. See [Dragon Scale Mail](#dragon-scale-mail) below for the
 full list and the forge recipe.
 
 **Speed boots** are worth wishing for. Being faster than your
-enemies means you get more turns — more chances to attack, cast
+enemies means you get more turns, more chances to attack, cast
 spells, or run away. Casters with surplus Pw (Wizard or Monk
 late game, especially with the Eye of the Aethiopica) can lean
 on **haste self** as a substitute and free the boots slot for
@@ -6410,7 +6410,7 @@ Weapons and armor can be enchanted using scrolls of enchant weapon
 and enchant armor. Each scroll adds +1 (uncursed) or potentially
 more (blessed). For **weapons** there's no destruction limit at
 all: above +9 the scroll just becomes less likely to add a point,
-but the weapon is never lost. **Armor** is different — above +3
+but the weapon is never lost. **Armor** is different: above +3
 each new scroll has a chance to destroy the item (above +5 for
 "special" armor like elven pieces, or the Wizard's cornuthaum).
 Blessed scrolls give more points per read but don't change the
@@ -6520,7 +6520,7 @@ Prevention is better than cure. Test items *before* wearing them:
   item to a few possibilities; combined with the altar test you
   can often pin it down
 
-(Temple donation does *not* reveal BUC — that's a common spoiler
+(Temple donation does *not* reveal BUC; that's a common spoiler
 myth. Donating to a priest grants temporary clairvoyance and a
 Protection bonus, but inventory BUC stays hidden.)
 
@@ -6529,7 +6529,7 @@ Protection bonus, but inventory BUC stays hidden.)
 When prevention fails, you have three remedies:
 
 - **Scroll of remove curse.** Uncursed removes curses from worn
-  and wielded items. Blessed uncurses your entire inventory — a
+  and wielded items. Blessed uncurses your entire inventory, a
   real relief when the curse problem has gotten out of hand
 - **Holy water.** Dip a cursed item in holy water and it becomes
   uncursed. Simple, reliable, and reason enough to stockpile holy
@@ -6700,7 +6700,7 @@ than killing them because friends carry things and absorb hits.
 **Chain lightning** is the 5.0 room-clearer. At level 2 it's
 within reach of any character who can cast at all. The spell
 auto-fires in all eight directions without a target prompt, deals
-2d6 per hit, and stops dead at any peaceful or tame monster — so
+2d6 per hit, and stops dead at any peaceful or tame monster, so
 you can clear a hostile room without lighting up your pet or a
 shopkeeper down the hall. Shock-resistant hostiles eat one hit,
 then end that beam.
@@ -6885,7 +6885,7 @@ random numbers, which in the Mazes is the closest thing to love.
 
 Behind the scenes, NetHack keeps a hidden exercise counter for four
 of your six stats: **Str**, **Dex**, **Con**, and **Wis**. (Int and
-Cha don't exercise — they only change through magical sources like
+Cha don't exercise; they only change through magical sources like
 gain-ability potions.) Living a way that *trains* a stat slowly
 pushes the counter up; living a way that *abuses* it pushes the
 counter down. Every several hundred turns the game checks the
@@ -6896,7 +6896,7 @@ counter and may grant a +1 or −1.
 The counter is invisible. A long enough streak of exercising
 behavior, plus a passing random roll (with diminishing returns once
 you've already gained), gives you the message *"You feel agile! You
-must have been working on your reflexes!"* — or the matching one
+must have been working on your reflexes!"*, or the matching one
 for the other stats. The reverse, *"You haven't been working on
 reflexes lately,"* fires when the abuse counter wins instead.
 
@@ -6979,8 +6979,8 @@ budget tied to your experience level).
 | Master       | 320                   | —            | 2                |
 | Grand Master | 500                   | —            | 3                |
 
-Non-weapon skills — spell schools, riding, bare hands, martial
-arts — cost roughly half as many slots as melee weapons, the
+Non-weapon skills (spell schools, riding, bare hands, martial
+arts) cost roughly half as many slots as melee weapons, the
 dungeon's quiet subsidy for magic. (Two-weapon uses the weapon
 column despite the name.) You start with 2 slots, gain one per
 experience level (29 more by XL 30), and one more if you are
@@ -7018,7 +7018,7 @@ before the first turn.
 When you've earned enough practice, the game says **"You feel more
 confident in your skills."** That's your cue to type `#enhance`.
 If more advancements remain after you pick one, you'll see **"You
-feel you could be more dangerous!"** — keep going.
+feel you could be more dangerous!"** Keep going.
 
 #### What a Rank Buys You
 
@@ -7078,7 +7078,7 @@ exception (a god-given artifact weapon unrestricts you to Basic
 in its skill). Key: **B**=Basic, **S**=Skilled, **E**=Expert,
 **M**=Master, **GM**=Grand Master, **—**=restricted.
 
-A "—" doesn't mean the skill is unusable, just locked at
+A blank cell doesn't mean the skill is unusable, just locked at
 Unskilled forever. A Healer can still read a spellbook of force
 bolt and try to cast it. A Wizard can still swing a long sword.
 They'll just always pay the Unskilled penalty from the
@@ -7161,7 +7161,7 @@ reach Grand Master.
 :::
 
 Healers cap at Expert in healing but are restricted from every
-other school — the only role with this kind of single-school
+other school. The only role with this kind of single-school
 specialization. Wizards and Monks are the only roles with access
 to all seven schools, though only Wizards can push four of them
 to Expert; Monks reach Expert only in healing. Barbarians and
@@ -7430,7 +7430,7 @@ odds; every other Lawful role faces 1-in-30.
 weapon. It's silver (extra damage to many monsters), halves
 incoming physical damage, and grants hallucination resistance.
 
-**Mjollnir** is the Valkyrie's signature throw-and-return weapon —
+**Mjollnir** is the Valkyrie's signature throw-and-return weapon.
 and only Valkyries get the reliable 99% catch-back. Other roles can
 wield it for melee but won't reliably catch it on the return throw.
 It needs Strength 25 to wield in either case (gauntlets of power
@@ -7467,7 +7467,7 @@ you're cornered.
 
 **Snickersnee** got a major buff in 5.0: once per turn you can
 `#apply` it for a free reach attack at a target up to two squares
-away — a real free action that *doesn't* end your turn, leaving
+away. A real free action that *doesn't* end your turn, leaving
 you a normal melee swing on top. The free hit is announced by a
 distinctive "Shkinng!" The combined output (one ranged + one
 melee per turn) makes Snickersnee a contender for best Samurai
@@ -7555,7 +7555,7 @@ up. `#invoke` is levitation.
 **The Sceptre of Might** (Caveman): mace base, +d5 to-hit, double
 damage against any monster whose alignment differs from the
 artifact's (the Sceptre itself is Lawful, so it deals doubled
-damage against chaotic, neutral, *and* unaligned monsters — most
+damage against chaotic, neutral, *and* unaligned monsters: most
 of the dungeon's hostiles once you reach Gehennom). It also grants
 magic resistance while *wielded*. `#invoke` casts conflict
 (monsters fight each other) at a steep energy cost.
@@ -7574,7 +7574,7 @@ utility.
 
 **The Eyes of the Overworld** (Monk): lenses that, when worn, give
 astral vision (see invisible, see through walls, spot secret doors)
-**and** magic resistance. Both effects require them to be worn —
+**and** magic resistance. Both effects require them to be worn.
 carrying them in inventory does nothing. `#invoke` enlightens you.
 For a Monk who can't safely wear body armor, a powerful passive on
 a slot they can use.
@@ -7669,7 +7669,7 @@ The drawbridge is the first puzzle. You can lower it four ways:
   notes are randomized per game. You can learn them by trying
   different sequences: the game tells you how many notes are
   correct after each attempt, like a game of Mastermind. Stand
-  one knight's-move from the bridge while guessing — adjacent
+  one knight's-move from the bridge while guessing; adjacent
   squares get crushed when the bridge opens or breaks. The notes
   are A–G; "H" is also accepted, in the German notation where it
   means B.
@@ -7711,7 +7711,7 @@ Once you're across, the Castle contains:
   are also the *only* way down from the Castle: the level has no
   conventional `>` stair to Gehennom, so when you are ready to
   descend, you do so by deliberately stepping on one.
-- A **fountain** in the moat-side corridor — usable in emergencies
+- A **fountain** in the moat-side corridor, usable in emergencies
   but not worth risking the wand of wishing for.
 - A **moat** surrounding the fortress, occupied by giant eels and
   the occasional shark.
@@ -7732,7 +7732,7 @@ fair game.
 
 The Castle wand yields only two wishes reliably (one charge + one
 recharge), so plan a *small* wishlist and accept that further
-wishes will need to come from other guaranteed sources — Vlad's
+wishes will need to come from other guaranteed sources: Vlad's
 throne, the Amulet pickup, Orcus Town's lamp/marker, fountain
 luck, or wresting. The era of the bottomless wishing wand is over
 (see [Key Wands](#key-wands) for the full mechanics).
@@ -8350,11 +8350,11 @@ Sick resistance handles Pestilence (green dragon scale mail is
 a source). Carry plenty of food (Famine
 bypasses normal nutrition pacing) and a unicorn horn for the
 stun side effects. A wielded cockatrice corpse (with gloves) can
-remove a Rider on a single landed hit — they have no stoning
+remove a Rider on a single landed hit: they have no stoning
 resistance. A ring of **conflict** keeps the Riders
 tangled fighting Angels and minor demons instead of chasing you,
 sometimes long enough to reach the altar; just don't put the ring
-on while your own minion Angel is still alive — it vanishes and
+on while your own minion Angel is still alive: it vanishes and
 your god replaces it with four hostile Angels. Teleportation wands
 can clear a path through the crowds; note that **self-teleport
 fails on every elemental plane**, so zapping the wand at
@@ -8396,7 +8396,7 @@ at a time, you may find they become reflexive.
 Type a number before any command and the game repeats it that
 many times: `10s` searches ten times, `20.` waits twenty turns,
 `5h` walks west five times. The sequence interrupts automatically
-as soon as anything interesting happens — a monster appears
+as soon as anything interesting happens (a monster appears
 adjacent, your HP changes, a `--More--` prompt fires, the search
 turns up something. Press ESC to cancel early.
 
@@ -8418,19 +8418,19 @@ that were canceled or bumped against a wall.
 A handful of prefix keys modify the next command and then clear.
 They are essential for moving safely through populated areas.
 
-- **`F`** then a direction — **force attack** into that square,
+- **`F`** then a direction is **force attack** into that square,
   even if no monster is visible there. Use it on suspected
   invisible monsters, on a displaced creature whose image is one
   square off from its real position, or to break your own
   [Elbereth](#elbereth). Double-tap `F` to cancel without acting.
-- **`G`** then a direction — **run** that direction until
+- **`G`** then a direction is **run** that direction until
   something interesting appears: a monster, an unknown item, a
   trap, a corridor branch, a closed door. Capital-letter
   directions (`H`, `J`, `K`, `L`, and the diagonals `Y`, `U`,
   `B`, `N`) are the same thing in one keystroke and are what
   most players actually use. `g` is a less-cautious variant of
   `G`, but in practice the difference is negligible.
-- **`m`** then a direction — **move without attacking and without
+- **`m`** then a direction is **move without attacking and without
   picking up**. Walk past your pet without striking it ("Pardon
   me, Fido"), step past an autopickup heap, refuse to walk into a
   known pool or lava square. With non-movement commands, `m`
@@ -8467,20 +8467,20 @@ price quote, or a status onset is preserved long enough to read it
 twice. The buffer holds the last several dozen lines; older
 messages roll off silently.
 
-`Ctrl+R` redraws the screen — a useful reflex when the terminal
+`Ctrl+R` redraws the screen, a useful reflex when the terminal
 gets garbled or when something doesn't look right.
 
 #### Dungeon overview and event journal
 
 `Ctrl+O` (or `#overview`) lists the interesting levels you've
-visited — anywhere with an altar, throne, fountain, sink, shop,
+visited (anywhere with an altar, throne, fountain, sink, shop,
 temple, vault, or branch stair, plus the Castle's tune once you
 learn it. Prefix with `m` to see *all* visited levels in a menu
 and add or edit annotations from there; `#annotate` does the
 same for the level you're standing on. The classic use is
 labeling stash floors so you remember which one held the bag.
 
-`v` (or `#chronicle`) opens the **chronicle** — a chronological
+`v` (or `#chronicle`) opens the **chronicle**, a chronological
 journal of major events from this run: first kills, conduct
 breaks, artifact gifts and crownings, prayer outcomes, level
 milestones, and entries into major branches. Mainly for
@@ -9428,7 +9428,7 @@ Never genocide any monster. Genocide is prompted by reading a
 the whole class) and by **sitting on a throne**: one outcome in
 the throne-effect table (case 8 of 13) prompts you to genocide a
 single species. To preserve the conduct, type **"none"** at the
-prompt — don't just press Enter, because empty input re-prompts
+prompt. Don't just press Enter, because empty input re-prompts
 and on a *cursed* scroll the game will eventually conjure random
 monsters instead of letting you escape.
 
@@ -9494,7 +9494,7 @@ Two related conducts:
 smoky potion djinn, thrones, and all other sources. **Picking up
 the Amulet of Yendor also triggers a wish prompt**: wish for "nothing"
 (the literal string) and the counter doesn't tick. Wishing for
-"nothing" is the standard escape hatch for any forced wish — keep
+"nothing" is the standard escape hatch for any forced wish. Keep
 it in mind whenever something hands you an unwanted wish. This is
 extremely challenging because wishes are the primary way to obtain
 critical items (silver dragon scale mail, speed boots, a bag of
@@ -9650,7 +9650,7 @@ into a wall to **squeeze past** a boulder (when you drop your stuff
 to fit), **fracturing** a boulder with a wand of striking or scroll
 of earth, **polymorphing** a boulder, or **dismounting** onto a
 boulder. Flying and levitation don't let you skip Sokoban's pit
-traps — the air currents pull you down regardless. The game
+traps. The air currents pull you down regardless. The game
 tracks violations automatically. The conduct is for players who
 enjoy Sokoban's
 boulder-shoving and want their playthrough to acknowledge a
@@ -9677,7 +9677,7 @@ so `!bones` cuts both directions of the bones cycle. The bonesless
 achievement is recorded only when bones was disabled, not when
 you happened not to encounter any. (Going a whole game without bones because the
 dungeon directory has nothing eligible is a separate enlightenment
-line — "never encountered any bones levels" — and doesn't earn
+line ('never encountered any bones levels') and doesn't earn
 the conduct.)
 
 ---
@@ -10699,10 +10699,10 @@ The complete spellbook catalog, sorted by school then level. **Lvl**
 is the spell level; **Pw cost** is always 5×level. **Type**
 distinguishes how the spell targets:
 
-- **aimed** — you pick a direction; the spell hits one square at that vector.
-- **ray** — a beam from the caster through every square in a
+- **aimed.** You pick a direction; the spell hits one square at that vector.
+- **ray.** A beam from the caster through every square in a
   line until it stops.
-- **untargeted** — no direction needed; the effect is on you,
+- **untargeted.** No direction needed; the effect is on you,
   the level, or a fixed area.
 
 **Upgrade** is the behavior change at **Skilled** rank or above
@@ -10813,7 +10813,7 @@ All blobs are mindless, sleep-resistant, and poison-resistant.
 
 | Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
-| acid blob | green | 1 | 3 | 8 | 0 | passive 1d8 acid | amorphous, acid-res, ston-res. Passive acid damage — punching one corrodes your gloves. |
+| acid blob | green | 1 | 3 | 8 | 0 | passive 1d8 acid | amorphous, acid-res, ston-res. Passive acid damage; punching one corrodes your gloves. |
 | quivering blob | white | 5 | 1 | 8 | 0 | touch 1d8 |  |
 | gelatinous cube | cyan | 6 | 6 | 8 | 0 | touch 2d4 paralyse · passive 1d4 paralyse | fire-res, cold-res, shock-res, acid-res, ston-res. Slow but paralyses on touch. Don't melee without free-action. |
 
@@ -11051,7 +11051,7 @@ All jellies are amorphous and mindless.
 -->
 
 
-Weak early-game fodder. Most are poisonous to eat — leave the corpses unless you have poison resistance.
+Weak early-game fodder. Most are poisonous to eat. Leave the corpses unless you have poison resistance.
 
 All kobolds have poisonous corpses and are poison-resistant.
 
@@ -11421,7 +11421,7 @@ All lights fly and are amorphous and mindless.
 -->
 #### Zruties `z`
 
-Slavic folklore — a hairy wild man of the woods. One species, one role here: a nasty mid-game brute. Good XP if you can handle the three-attack flurry.
+Slavic folklore; a hairy wild man of the woods. One species, one role here: a nasty mid-game brute. Good XP if you can handle the three-attack flurry.
 
 ::: dense-table
 
@@ -11441,7 +11441,7 @@ Slavic folklore — a hairy wild man of the woods. One species, one role here: a
 - Archon has M1_REGEN, M1_SEE_INVIS, plus 5-attack chain (weapon, weapon, gaze, claw, spell).
 -->
 
-Powerful late-game spellcasters with weapons. Astral-Plane Angels guard each High Priest — see [The Ascension Run](#the-ascension-run).
+Powerful late-game spellcasters with weapons. Astral-Plane Angels guard each High Priest. See [The Ascension Run](#the-ascension-run).
 
 All angelic beings follow you up and down stairs. All except *Aleax* also fly. All except *couatl* also see invisible.
 
@@ -11513,7 +11513,7 @@ Half-horse archers with strong physical attacks. Forest centaurs wield bows; pla
 -->
 
 
-Each adult dragon breathes its element type. Reflection bounces the ranged breath back. **Babies don't breathe** — they're just biters until they grow up. Adults are the source of dragon scale mail. See [Dragon Scale Mail](#armor-tables).
+Each adult dragon breathes its element type. Reflection bounces the ranged breath back. **Babies don't breathe**; they're just biters until they grow up. Adults are the source of dragon scale mail. See [Dragon Scale Mail](#armor-tables).
 
 All except *Chromatic Dragon* also fly.
 
@@ -11584,7 +11584,7 @@ All except *stalker* also are mindless.
 - Violet fungus AT_TUCH/AD_PHYS 1d4 plus AT_TUCH/AD_PLYS sticky (monsters.h:1668-1676).
 -->
 
-Stationary. Lichen corpses never rot — keep one in your pack as iron rations. Brown, green, and red molds bite back on melee with elemental passive damage (cold, acid, fire). Yellow mold stuns on passive contact; violet fungus has an active touch attack with sticking.
+Stationary. Lichen corpses never rot; keep one in your pack as iron rations. Brown, green, and red molds bite back on melee with elemental passive damage (cold, acid, fire). Yellow mold stuns on passive contact; violet fungus has an active touch attack with sticking.
 
 All fungi and molds are mindless.
 
@@ -11684,7 +11684,7 @@ The monster from Lewis Carroll's *Jabberwocky* ("O frabjous day! Callooh! Callay
 - All four Kops carry G_GENO, so genocide permanently clears them.
 -->
 
-Police force triggered by stealing from shops or hurting shopkeepers. Mostly weak individually but they swarm — and dead Kops respawn: each fallen Kop has a 1-in-5 chance to come back near the down-stairs and a 1-in-5 chance to come back at a random location, so killing them isn't a stable solution. Get away or genocide them instead.
+Police force triggered by stealing from shops or hurting shopkeepers. Mostly weak individually but they swarm, and dead Kops respawn: each fallen Kop has a 1-in-5 chance to come back near the down-stairs and a 1-in-5 chance to come back at a random location, so killing them isn't a stable solution. Get away or genocide them instead.
 
 ::: dense-table
 
@@ -11935,7 +11935,7 @@ All trolls regenerate and follow you up and down stairs.
 -->
 #### Umber hulks `U`
 
-Confusion gaze. Don't melee without some way to dodge the gaze — blindness defeats it (the gaze requires mutual sight); free action does *not* (it covers paralysis, holding, and sleep, never confusion). The confusion stacks and wrecks navigation, and confused spellbook study garbles the spell.
+Confusion gaze. Don't melee without some way to dodge the gaze. Blindness defeats it (the gaze requires mutual sight); free action does *not* (it covers paralysis, holding, and sleep, never confusion). The confusion stacks and wrecks navigation, and confused spellbook study garbles the spell.
 
 ::: dense-table
 
@@ -12001,7 +12001,7 @@ All wraiths are undead and follow you up and down stairs.
 - Xorn corpse grants temporary stone resistance.
 -->
 
-D&D's three-armed, three-eyed creatures from the Elemental Plane of Earth. They **phase through walls** (no rubble, no dig) and **eat metal items off the floor** — including the orcish dagger you were about to pick up. Their claws and bite are physical only, so worn armor and wielded weapons aren't directly at risk, but they hit hard for their level. The corpse grants temporary stoning resistance.
+D&D's three-armed, three-eyed creatures from the Elemental Plane of Earth. They **phase through walls** (no rubble, no dig) and eat metal items off the floor* — including the orcish dagger you were about to pick up. Their claws and bite are physical only, so worn armor and wielded weapons aren't directly at risk, but they hit hard for their level. The corpse grants temporary stoning resistance.
 
 ::: dense-table
 
@@ -12290,7 +12290,7 @@ All sea monsters swim and are amphibious.
 -->
 
 
-Mostly harmless. **Lizard corpses cure petrification and never rot.** Carry one at all times — this is the standard answer to cockatrices and Medusa.
+Mostly harmless. **Lizard corpses cure petrification and never rot.** Carry one at all times. This is the standard answer to cockatrices and Medusa.
 
 ::: dense-table
 
@@ -12373,7 +12373,7 @@ point.) The most significant:
   notable: **Snickersnee** now grants one free polearm-style reach
   attack per turn ("Shkinng!") on top of normal melee. **Sunsword**
   gains a `#invoke` blinding ray that works on any monster, not just
-  undead — a 5-Pw on-demand Camera flash. **Trollsbane** regenerates
+  undead, a 5-Pw on-demand Camera flash. **Trollsbane** regenerates
   while wielded, a real lifeline for an early character. **Amulet of
   flying** confers flight on your steed as well as you, turning
   warhorses into water-crossing cavalry.
