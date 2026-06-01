@@ -3579,9 +3579,10 @@ for every ten of yours; you have flipped the matchup.</p>
 elemental acts three times for every one of yours). With speed boots the
 ratio is 1.8. Speed boots help, but the gap is still hopeless on foot:
 this is a ranged-or-skip fight.</p>
-<p><strong>The two intrinsic states above 12.</strong> Both work by
-adding a <strong>probabilistic +12 bonus</strong> to each
-allocation:</p>
+<p><strong>Intrinsic speed is probabilistic.</strong> There are two
+levels of intrinsics that can raise your speed over 12, and both add a
+<strong>+12 bonus</strong> to each allocation with some random
+chance:</p>
 <ul>
 <li><strong>Fast</strong> (intrinsic, gained from certain corpses): the
 bonus lands on roughly <strong>one allocation in three</strong>. Average
@@ -8464,14 +8465,71 @@ especially with the Eye of the Aethiopica) can lean on <strong>haste
 self</strong> as a substitute and free the boots slot for water walking
 or jumping. Haste self alone reaches <em>very fast</em> just like the
 boots; maintenance costs about 10 Pw every 150 turns at Skilled.</p>
-<p><strong>Cloak of magic resistance</strong> provides magic resistance
-in the cloak slot and frees up other slots for different resistances. It
-contributes <strong>MC1</strong> to your magic-cancellation total. The
-only single item that provides <strong>MC3</strong>, which blocks 90% of
-monster special attacks, is the <strong>cloak of protection</strong>. A
-ring of protection adds +1 MC, and an amulet of guarding adds +2 MC,
-which gives you several ways to assemble full magic cancellation
-coverage.</p>
+<p><strong>Magic cancellation (MC).</strong> Worn armor pieces
+contribute a hidden defensive value called MC, capped at 3. When a
+monster lands a “special attack” on you (gaze, breath, touch effect,
+monster-cast spell, sticky grab, status inflictor), the game rolls to
+<em>negate</em> the attack, with the block chance set by your MC
+level:</p>
+<table>
+<thead>
+<tr>
+<th>MC</th>
+<th>Block chance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>1</td>
+<td>30%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>60%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>90%</td>
+</tr>
+</tbody>
+</table>
+<p>Your MC is the highest <code>MC</code> value among your worn armor
+pieces, plus +1 if you have extrinsic Protection (+2 if the Protection
+comes via the <strong>amulet of guarding</strong>), capped at 3. The
+most common single-item paths to MC3 are wearing the cloak of
+protection, or wearing any MC2 piece together with extrinsic Protection,
+or stacking the amulet of guarding’s +2 onto an MC1 piece.</p>
+<p><strong>MC is not the same as the magic resistance
+intrinsic.</strong> Magic resistance is a binary on/off flag that blocks
+specific <em>magical</em> attacks at 100%: wand-of-death rays, magic
+missile, the touch of death spell, polymorph beams, magic traps, and so
+on. MC, by contrast, dampens a different category of special attacks at
+a percentage rate: cockatrice touch petrification, mind flayer brain
+suck, monster cancellation, status inflictors, and the like. The two
+defenses cover different threats, and an ascending hero generally wants
+both.</p>
+<p><strong>Cloak of magic resistance vs. cloak of protection.</strong>
+These two cloaks cover those two different defenses:</p>
+<ul>
+<li>The <strong>cloak of magic resistance</strong> grants the magic
+resistance intrinsic and contributes MC1. It is the simplest source of
+magic resistance in the game; mid-game heroes who haven’t yet wished for
+gray dragon scale mail rely on it.</li>
+<li>The <strong>cloak of protection</strong> grants no magic resistance,
+but contributes MC3 on its own. It is the late-game choice once you
+already have magic resistance from another source.</li>
+</ul>
+<p>The canonical ascension kit takes both defenses by putting
+<strong>gray dragon scale mail</strong> in the body slot (which grants
+magic resistance there) and then wearing the <strong>cloak of
+protection</strong> in the cloak slot (for the MC3). Before you have
+gray dragon scale mail, the cloak of magic resistance is doing essential
+work in the cloak slot, and the cloak of protection waits in your
+pack.</p>
 <p>For the AC, MC, weight, cost, and granted-power numbers on every
 piece of armor in the game, see the <a href="#armor-tables">Armor
 Tables</a> appendix.</p>
@@ -23573,8 +23631,8 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
     var shown = Math.min(matches.length, 15);
     for (var i = 0; i < shown; i++) {
       var m = matches[i].item;
-      // Find a snippet containing the query
-      var snippet = getSnippet(m.text, words[0]);
+      // Find a snippet containing the longest n-gram of the query
+      var snippet = getSnippet(m.text, words);
       html += '<a class="search-result" href="#' + m.id + '">';
       html += '<span class="search-result-title">' + highlightMatches(m.title, words) + '</span>';
       if (snippet) html += '<span class="search-result-snippet">' + highlightMatches(snippet, words) + '</span>';
@@ -23629,37 +23687,47 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
       }
     );
 
+    // Collect all eligible text nodes once, then look for the longest
+    // matching n-gram of the query across them. Falling back to single
+    // words only if no multi-word phrase appears keeps the scroll-anchor
+    // on the full phrase a user typed — e.g. a search for "cloak of magic
+    // resistance" jumps to that phrase rather than the first stray "of".
+    var allNodes = [];
+    while (walker.nextNode()) allNodes.push(walker.currentNode);
+
     var firstMatch = null;
-    var matchedWord = null;
-
-    // Walk through all text nodes to find the first match
-    while (walker.nextNode()) {
-      var textNode = walker.currentNode;
-      var text = textNode.textContent;
-      var lowerText = text.toLowerCase();
-
-      for (var i = 0; i < words.length; i++) {
-        var word = words[i].toLowerCase();
-        var idx = lowerText.indexOf(word);
-        if (idx !== -1) {
-          firstMatch = textNode;
-          matchedWord = word;
-          break;
+    var matchedPhrase = null;
+    var matchedIndex = -1;
+    for (var len = words.length; len >= 1 && !firstMatch; len--) {
+      for (var n = 0; n < allNodes.length && !firstMatch; n++) {
+        var nodeLower = allNodes[n].textContent.toLowerCase();
+        var bestIdxInNode = -1;
+        var bestPhraseInNode = null;
+        for (var start = 0; start + len <= words.length; start++) {
+          var phrase = words.slice(start, start + len).join(' ').toLowerCase();
+          var pIdx = nodeLower.indexOf(phrase);
+          if (pIdx === -1) continue;
+          if (bestIdxInNode === -1 || pIdx < bestIdxInNode) {
+            bestIdxInNode = pIdx;
+            bestPhraseInNode = phrase;
+          }
+        }
+        if (bestPhraseInNode !== null) {
+          firstMatch = allNodes[n];
+          matchedPhrase = bestPhraseInNode;
+          matchedIndex = bestIdxInNode;
         }
       }
-      if (firstMatch) break;
     }
 
-    if (firstMatch && matchedWord) {
-      // Split the text node and wrap the match in a highlight span
+    if (firstMatch && matchedPhrase) {
       var text = firstMatch.textContent;
-      var lowerText = text.toLowerCase();
-      var idx = lowerText.indexOf(matchedWord);
+      var idx = matchedIndex;
 
       if (idx !== -1) {
         var before = text.substring(0, idx);
-        var match = text.substring(idx, idx + matchedWord.length);
-        var after = text.substring(idx + matchedWord.length);
+        var match = text.substring(idx, idx + matchedPhrase.length);
+        var after = text.substring(idx + matchedPhrase.length);
 
         var beforeNode = document.createTextNode(before);
         var highlightSpan = document.createElement('span');
@@ -23690,11 +23758,35 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
     }
   }
 
-  function getSnippet(text, word) {
-    var idx = text.toLowerCase().indexOf(word);
-    if (idx === -1) return '';
-    var start = Math.max(0, idx - 40);
-    var end = Math.min(text.length, idx + word.length + 60);
+  // Find the earliest occurrence of the longest matching n-gram from
+  // `words` inside `text`. Tries the full query first, then progressively
+  // shorter contiguous slices, then individual words. Within a given
+  // length, the n-gram that appears earliest in the text wins. Returns
+  // { phrase, index } or null.
+  function findLongestPhrase(text, words) {
+    var lower = text.toLowerCase();
+    for (var len = words.length; len >= 1; len--) {
+      var bestIdx = -1;
+      var bestPhrase = null;
+      for (var start = 0; start + len <= words.length; start++) {
+        var phrase = words.slice(start, start + len).join(' ');
+        var idx = lower.indexOf(phrase);
+        if (idx === -1) continue;
+        if (bestIdx === -1 || idx < bestIdx) {
+          bestIdx = idx;
+          bestPhrase = phrase;
+        }
+      }
+      if (bestPhrase !== null) return { phrase: bestPhrase, index: bestIdx };
+    }
+    return null;
+  }
+
+  function getSnippet(text, words) {
+    var hit = findLongestPhrase(text, words);
+    if (!hit) return '';
+    var start = Math.max(0, hit.index - 40);
+    var end = Math.min(text.length, hit.index + hit.phrase.length + 60);
     var s = text.substring(start, end).replace(/\s+/g, ' ').trim();
     if (start > 0) s = '\u2026' + s;
     if (end < text.length) s = s + '\u2026';
@@ -23709,11 +23801,22 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
 
   function highlightMatches(text, words) {
     var safe = escHtml(text);
-    // Build a regex matching any of the search words (longest first to avoid partial overlap)
-    var sorted = words.slice().sort(function(a, b) { return b.length - a.length; });
     var reChars = /[.*+?^${}()|[\]\\]/g;
-    var escaped = sorted.map(function(w) { return escHtml(w).replace(reChars, '\\$&'); });
-    var re = new RegExp('(' + escaped.join('|') + ')', 'gi');
+    function esc(w) { return escHtml(w).replace(reChars, '\\$&'); }
+    // Build an alternation that prefers longer phrases. JavaScript regex
+    // alternation tries each branch in order at each position, so listing
+    // the full query first, then progressively shorter contiguous slices,
+    // then individual words, means a search for "cloak of magic resistance"
+    // bolds the full phrase as one match rather than four separate words.
+    var alts = [];
+    for (var len = words.length; len >= 2; len--) {
+      for (var start = 0; start + len <= words.length; start++) {
+        alts.push(words.slice(start, start + len).map(esc).join('\\s+'));
+      }
+    }
+    var sortedSingles = words.slice().sort(function(a, b) { return b.length - a.length; });
+    sortedSingles.forEach(function(w) { alts.push(esc(w)); });
+    var re = new RegExp('(' + alts.join('|') + ')', 'gi');
     return safe.replace(re, '<b>$1</b>');
   }
 

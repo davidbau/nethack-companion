@@ -2510,8 +2510,9 @@ Against an air elemental at speed 36, the baseline ratio is 3.0
 speed boots the ratio is 1.8. Speed boots help, but the gap is
 still hopeless on foot: this is a ranged-or-skip fight.
 
-**The two intrinsic states above 12.** Both work by adding a
-**probabilistic +12 bonus** to each allocation:
+**Intrinsic speed is probabilistic.** There are two levels of
+intrinsics that can raise your speed over 12, and both add a
+**+12 bonus** to each allocation with some random chance:
 
 - **Fast** (intrinsic, gained from certain corpses): the bonus
   lands on roughly **one allocation in three**. Average effective
@@ -6341,14 +6342,56 @@ water walking or jumping. Haste self alone reaches *very fast*
 just like the boots; maintenance costs about 10 Pw every 150
 turns at Skilled.
 
-**Cloak of magic resistance** provides magic resistance in the
-cloak slot and frees up other slots for different resistances.
-It contributes **MC1** to your magic-cancellation total. The
-only single item that provides **MC3**, which blocks 90% of
-monster special attacks, is the **cloak of protection**. A ring
-of protection adds +1 MC, and an amulet of guarding adds +2 MC,
-which gives you several ways to assemble full magic
-cancellation coverage.
+**Magic cancellation (MC).** Worn armor pieces contribute a
+hidden defensive value called MC, capped at 3. When a monster
+lands a "special attack" on you (gaze, breath, touch effect,
+monster-cast spell, sticky grab, status inflictor), the game
+rolls to *negate* the attack, with the block chance set by your
+MC level:
+
+| MC | Block chance |
+|----|--------------|
+|  0 | 0%           |
+|  1 | 30%          |
+|  2 | 60%          |
+|  3 | 90%          |
+
+Your MC is the highest `MC` value among your worn armor pieces,
+plus +1 if you have extrinsic Protection (+2 if the Protection
+comes via the **amulet of guarding**), capped at 3. The most
+common single-item paths to MC3 are wearing the cloak of
+protection, or wearing any MC2 piece together with extrinsic
+Protection, or stacking the amulet of guarding's +2 onto an MC1
+piece.
+
+**MC is not the same as the magic resistance intrinsic.** Magic
+resistance is a binary on/off flag that blocks specific *magical*
+attacks at 100%: wand-of-death rays, magic missile, the touch of
+death spell, polymorph beams, magic traps, and so on. MC, by
+contrast, dampens a different category of special attacks at a
+percentage rate: cockatrice touch petrification, mind flayer brain
+suck, monster cancellation, status inflictors, and the like. The
+two defenses cover different threats, and an ascending hero
+generally wants both.
+
+**Cloak of magic resistance vs. cloak of protection.** These two
+cloaks cover those two different defenses:
+
+- The **cloak of magic resistance** grants the magic resistance
+  intrinsic and contributes MC1. It is the simplest source of
+  magic resistance in the game; mid-game heroes who haven't yet
+  wished for gray dragon scale mail rely on it.
+- The **cloak of protection** grants no magic resistance, but
+  contributes MC3 on its own. It is the late-game choice once you
+  already have magic resistance from another source.
+
+The canonical ascension kit takes both defenses by putting
+**gray dragon scale mail** in the body slot (which grants magic
+resistance there) and then wearing the **cloak of protection**
+in the cloak slot (for the MC3). Before you have gray dragon
+scale mail, the cloak of magic resistance is doing essential
+work in the cloak slot, and the cloak of protection waits in
+your pack.
 
 For the AC, MC, weight, cost, and granted-power numbers on every
 piece of armor in the game, see the

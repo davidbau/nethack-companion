@@ -415,8 +415,8 @@ $body$
     var shown = Math.min(matches.length, 15);
     for (var i = 0; i < shown; i++) {
       var m = matches[i].item;
-      // Find a snippet containing the query
-      var snippet = getSnippet(m.text, words[0]);
+      // Find a snippet containing the longest n-gram of the query
+      var snippet = getSnippet(m.text, words);
       html += '<a class="search-result" href="#' + m.id + '">';
       html += '<span class="search-result-title">' + highlightMatches(m.title, words) + '</span>';
       if (snippet) html += '<span class="search-result-snippet">' + highlightMatches(snippet, words) + '</span>';
@@ -471,37 +471,47 @@ $body$
       }
     );
 
+    // Collect all eligible text nodes once, then look for the longest
+    // matching n-gram of the query across them. Falling back to single
+    // words only if no multi-word phrase appears keeps the scroll-anchor
+    // on the full phrase a user typed — e.g. a search for "cloak of magic
+    // resistance" jumps to that phrase rather than the first stray "of".
+    var allNodes = [];
+    while (walker.nextNode()) allNodes.push(walker.currentNode);
+
     var firstMatch = null;
-    var matchedWord = null;
-
-    // Walk through all text nodes to find the first match
-    while (walker.nextNode()) {
-      var textNode = walker.currentNode;
-      var text = textNode.textContent;
-      var lowerText = text.toLowerCase();
-
-      for (var i = 0; i < words.length; i++) {
-        var word = words[i].toLowerCase();
-        var idx = lowerText.indexOf(word);
-        if (idx !== -1) {
-          firstMatch = textNode;
-          matchedWord = word;
-          break;
+    var matchedPhrase = null;
+    var matchedIndex = -1;
+    for (var len = words.length; len >= 1 && !firstMatch; len--) {
+      for (var n = 0; n < allNodes.length && !firstMatch; n++) {
+        var nodeLower = allNodes[n].textContent.toLowerCase();
+        var bestIdxInNode = -1;
+        var bestPhraseInNode = null;
+        for (var start = 0; start + len <= words.length; start++) {
+          var phrase = words.slice(start, start + len).join(' ').toLowerCase();
+          var pIdx = nodeLower.indexOf(phrase);
+          if (pIdx === -1) continue;
+          if (bestIdxInNode === -1 || pIdx < bestIdxInNode) {
+            bestIdxInNode = pIdx;
+            bestPhraseInNode = phrase;
+          }
+        }
+        if (bestPhraseInNode !== null) {
+          firstMatch = allNodes[n];
+          matchedPhrase = bestPhraseInNode;
+          matchedIndex = bestIdxInNode;
         }
       }
-      if (firstMatch) break;
     }
 
-    if (firstMatch && matchedWord) {
-      // Split the text node and wrap the match in a highlight span
+    if (firstMatch && matchedPhrase) {
       var text = firstMatch.textContent;
-      var lowerText = text.toLowerCase();
-      var idx = lowerText.indexOf(matchedWord);
+      var idx = matchedIndex;
 
       if (idx !== -1) {
         var before = text.substring(0, idx);
-        var match = text.substring(idx, idx + matchedWord.length);
-        var after = text.substring(idx + matchedWord.length);
+        var match = text.substring(idx, idx + matchedPhrase.length);
+        var after = text.substring(idx + matchedPhrase.length);
 
         var beforeNode = document.createTextNode(before);
         var highlightSpan = document.createElement('span');
@@ -532,11 +542,35 @@ $body$
     }
   }
 
-  function getSnippet(text, word) {
-    var idx = text.toLowerCase().indexOf(word);
-    if (idx === -1) return '';
-    var start = Math.max(0, idx - 40);
-    var end = Math.min(text.length, idx + word.length + 60);
+  // Find the earliest occurrence of the longest matching n-gram from
+  // `words` inside `text`. Tries the full query first, then progressively
+  // shorter contiguous slices, then individual words. Within a given
+  // length, the n-gram that appears earliest in the text wins. Returns
+  // { phrase, index } or null.
+  function findLongestPhrase(text, words) {
+    var lower = text.toLowerCase();
+    for (var len = words.length; len >= 1; len--) {
+      var bestIdx = -1;
+      var bestPhrase = null;
+      for (var start = 0; start + len <= words.length; start++) {
+        var phrase = words.slice(start, start + len).join(' ');
+        var idx = lower.indexOf(phrase);
+        if (idx === -1) continue;
+        if (bestIdx === -1 || idx < bestIdx) {
+          bestIdx = idx;
+          bestPhrase = phrase;
+        }
+      }
+      if (bestPhrase !== null) return { phrase: bestPhrase, index: bestIdx };
+    }
+    return null;
+  }
+
+  function getSnippet(text, words) {
+    var hit = findLongestPhrase(text, words);
+    if (!hit) return '';
+    var start = Math.max(0, hit.index - 40);
+    var end = Math.min(text.length, hit.index + hit.phrase.length + 60);
     var s = text.substring(start, end).replace(/\s+/g, ' ').trim();
     if (start > 0) s = '\u2026' + s;
     if (end < text.length) s = s + '\u2026';
@@ -551,11 +585,22 @@ $body$
 
   function highlightMatches(text, words) {
     var safe = escHtml(text);
-    // Build a regex matching any of the search words (longest first to avoid partial overlap)
-    var sorted = words.slice().sort(function(a, b) { return b.length - a.length; });
     var reChars = /[.*+?^$${}()|[\]\\]/g;
-    var escaped = sorted.map(function(w) { return escHtml(w).replace(reChars, '\\$$&'); });
-    var re = new RegExp('(' + escaped.join('|') + ')', 'gi');
+    function esc(w) { return escHtml(w).replace(reChars, '\\$$&'); }
+    // Build an alternation that prefers longer phrases. JavaScript regex
+    // alternation tries each branch in order at each position, so listing
+    // the full query first, then progressively shorter contiguous slices,
+    // then individual words, means a search for "cloak of magic resistance"
+    // bolds the full phrase as one match rather than four separate words.
+    var alts = [];
+    for (var len = words.length; len >= 2; len--) {
+      for (var start = 0; start + len <= words.length; start++) {
+        alts.push(words.slice(start, start + len).map(esc).join('\\s+'));
+      }
+    }
+    var sortedSingles = words.slice().sort(function(a, b) { return b.length - a.length; });
+    sortedSingles.forEach(function(w) { alts.push(esc(w)); });
+    var re = new RegExp('(' + alts.join('|') + ')', 'gi');
     return safe.replace(re, '<b>$$1</b>');
   }
 
