@@ -1,0 +1,272 @@
+0	184	8183	8193	####	Plane of Earth
+1	5	429	476	####	The Early Shopping List
+2	264	10704	12149	####	Bestiary group: Ants and insects `a` -> Major demons `&` (53 entries)
+3	193	8382	8392	####	Travel
+4	187	8221	8241	####	Plane of Water
+5	95	4862	4936	####	Gray Stones: Four Stones, One Correct Answer
+6	79	3873	3916	####	Sacrifice
+7	9	627	659	####	Supply Containers
+8	6	477	510	###	Your First Descent
+9	232	9993	10014	####	Long sword
+10	230	9957	9974	####	Saber
+11	268	12239	12382	###	What Changed Since Last Time
+12	233	10015	10040	####	Two-handed sword
+13	175	7889	7900	####	Moloch's Sanctum
+14	110	5396	5420	####	The Scroll Table
+15	104	5211	5229	###	The Apothecary
+16	84	4058	4082	####	Starting Pets
+17	50	2584	2705	####	Fighting Smart
+18	115	5623	5701	####	Key Wands
+19	144	6682	6711	###	Luck and Fortune
+20	231	9975	9992	####	Broadsword
+21	161	7227	7250	####	What to Wish For
+22	203	8824	8859	####	Level 3, Version A
+23	48	2457	2559	####	Speed
+24	106	5253	5297	####	Key Potions
+25	237	10095	10114	####	Mace
+26	209	9250	9274	####	Atheist
+27	200	8596	8675	####	Level 1, Version B
+28	153	6923	6956	####	The Skill Ladder
+29	218	9521	9540	####	Petless (new in 5.0)
+30	217	9490	9520	####	Pauper (new in 5.0)
+31	219	9541	9573	####	Permadeaf (new in 5.0)
+32	236	10077	10094	####	Club
+33	65	3310	3328	####	Starvation
+34	42	2263	2292	####	Iron Bars
+35	128	6136	6239	####	Other Notable Tools
+36	215	9417	9448	####	Wishing Restrictions
+37	82	4005	4032	####	Crowning
+38	34	1767	1789	###	Traps and Hazards
+39	113	5554	5577	###	Wands and Staves
+40	225	9779	9888	####	Gem Identification Through Selling
+41	210	9275	9301	####	Weaponless
+42	252	10399	10418	####	Boomerang
+43	32	1627	1743	####	Medusa's Island
+44	205	8931	9024	####	Level 4, Version A
+45	78	3798	3872	####	Prayer
+46	227	9893	9922	####	Dagger
+47	265	12150	12188	####	Golems `'`
+48	73	3604	3656	####	Enchantment Drain
+49	3	374	421	####	Alignment
+50	138	6468	6485	####	Detecting Curses
+51	45	2402	2417	####	To-Hit Calculation
+52	61	3216	3244	####	A note on Light Bursts
+53	148	6843	6852	###	Exercising Your Stats
+54	66	3329	3348	####	Deadly Poison
+55	123	5975	6004	###	Tools of the Trade
+56	173	7853	7874	####	Orcus Town
+57	164	7328	7339	####	Alignment and Blasting
+58	229	9944	9956	####	Short sword
+59	248	10331	10349	####	Crossbow
+60	221	9597	9622	####	Bonesless (new in 5.0)
+61	4	422	428	###	What to Pack
+62	133	6379	6394	####	Erosion and Proofing
+63	249	10350	10366	####	Sling
+64	261	10585	10604	####	Shields
+65	271	13179	13338	###	Acknowledgements
+66	146	6761	6812	####	Gaining and Losing Luck
+67	103	5200	5210	####	Food Strategy
+68	51	2706	2776	###	Things That Will Kill You
+69	247	10313	10330	####	Bow
+70	105	5230	5252	####	The Potion Table
+71	100	5079	5126	####	What to Eat
+72	27	1368	1450	####	Sokoban
+73	185	8194	8212	####	Plane of Air
+74	135	6417	6438	###	Curses and How to Break Them
+75	211	9302	9323	####	Pacifist
+76	21	1090	1125	####	Bestiary group: Altars `_` -> Altars `_` (1 entries)
+77	70	3455	3530	####	Petrification (Stoning)
+78	60	3164	3215	####	A note on Seduction
+79	120	5808	5832	###	Rings and Amulets
+80	183	8153	8182	###	The Elemental Planes
+81	129	6240	6261	###	The Armory
+82	170	7753	7779	####	What's Different in Gehennom
+83	238	10115	10131	####	Morning star
+84	85	4083	4098	####	Feeding and Loyalty
+85	10	660	692	###	The Lay of the Land
+86	72	3564	3603	####	Level Drain
+87	89	4217	4238	###	A Practical Identification Strategy
+88	7	511	588	####	The Golden Rules of Early Survival
+89	30	1544	1578	####	The Rogue Level
+90	139	6486	6512	####	Removing Curses
+91	46	2418	2438	####	Damage
+92	172	7815	7852	####	Vlad's Tower
+93	131	6325	6365	####	Weapons
+94	182	8117	8152	####	Strategy
+95	181	8082	8116	####	The Gauntlet
+96	76	3716	3778	####	Saving Yourself from Imminent Death
+97	122	5913	5974	####	Amulets
+98	152	6891	6922	###	Enhancing Skills
+99	99	5055	5078	####	How Hunger Works
+100	244	10252	10275	####	Trident
+101	124	6005	6094	####	Containers
+102	199	8536	8595	####	Level 1, Version A
+103	260	10566	10584	####	Boots
+104	19	978	1033	###	Points of Interest
+105	202	8707	8823	####	Level 2, Version B
+106	77	3779	3797	###	Divine Relations
+107	253	10419	10441	###	Armor Tables
+108	81	3980	4004	####	Altars and Alignment
+109	107	5298	5344	####	Alchemy
+110	38	1946	1983	####	Searching and Detection
+111	177	7945	7966	####	Survival Tips
+112	259	10553	10565	####	Gloves
+113	257	10506	10526	####	Cloaks
+114	159	7175	7185	###	Wishes and Wishing
+115	22	1126	1159	####	Thrones `\`
+116	134	6395	6416	####	Dragon Scale Mail
+117	132	6366	6378	####	Enchantment
+118	33	1744	1766	####	The Castle
+119	121	5833	5912	####	The Ring Table
+120	112	5513	5553	####	Confused Reading
+121	213	9351	9397	####	No Genocide
+122	0	154	192	###	Choosing Your Expedition
+123	192	8357	8381	####	Movement prefixes
+124	204	8860	8930	####	Level 3, Version B
+125	239	10132	10149	####	Flail
+126	37	1844	1945	####	Dangerous Traps
+127	269	12383	12396	####	New Dangers
+128	242	10184	10215	####	Polearms
+129	167	7594	7704	###	The Castle
+130	29	1470	1543	####	The Quest
+131	2	335	373	####	The Races
+132	64	3281	3309	####	Choking
+133	258	10527	10552	####	Helmets
+134	190	8335	8347	####	Command counts
+135	98	5020	5054	###	Provisions and Dining
+136	166	7454	7593	####	Quest artifacts
+137	243	10216	10251	####	Spear
+138	245	10276	10294	####	Lance
+139	240	10150	10165	####	Hammer
+140	28	1451	1469	####	The Oracle
+141	270	12397	13178	####	New Hacks
+142	235	10066	10076	####	Pick-axe
+143	126	6107	6122	####	Light Sources
+144	130	6262	6324	####	Armor and AC
+145	156	7005	7022	####	The Seven Spell Schools
+146	189	8318	8334	###	Advanced Controls
+147	255	10476	10494	####	Dragon scales
+148	168	7705	7731	###	Gehennom
+149	151	6879	6890	####	Why Exercise Matters
+150	109	5359	5395	###	The Scroll Rack
+151	149	6853	6865	####	How Exercise Works
+152	157	7023	7129	####	Per-Role Skill Caps
+153	223	9645	9715	####	Credit and Debt
+154	143	6667	6681	####	Mana Management
+155	63	3260	3280	####	Attack Wands and the Warning Shot
+156	35	1790	1813	####	Nuisance Traps
+157	228	9923	9943	####	Knife
+158	36	1814	1843	####	Movement Traps
+159	224	9716	9778	####	Shopkeeper Behavior
+160	256	10495	10505	####	Shirts
+161	127	6123	6135	####	Musical Instruments
+162	188	8242	8317	####	The Astral Plane
+163	208	9192	9249	####	The Food Conducts
+164	145	6712	6760	####	How Luck Works
+165	54	2934	2990	####	A note on dragons
+166	262	10605	10699	###	Spell Tables
+167	191	8348	8356	####	Repeat last command (Ctrl+A)
+168	102	5140	5199	####	Useful Corpse Effects
+169	80	3917	3979	####	Donating to Priests
+170	8	589	626	####	Dungeon Hazards (and How to Survive Them)
+171	250	10367	10382	####	Dart
+172	14	866	889	###	Field Guide to Dungeon Fauna
+173	83	4033	4057	###	Making Friends
+174	254	10442	10475	####	Body armor (suits)
+175	142	6634	6666	####	Key Spells
+176	176	7901	7944	####	The Heist
+177	163	7292	7327	###	Artifacts
+178	69	3425	3454	####	Drowning
+179	201	8676	8706	####	Level 2, Version A
+180	118	5760	5766	####	Wresting
+181	196	8411	8429	####	Dungeon overview and event journal
+182	62	3245	3259	###	Ways to Die Instantly
+183	136	6439	6452	####	How Items Get Cursed
+184	43	2293	2372	###	Feelings and Sounds
+185	198	8506	8535	###	Sokoban Solutions
+186	155	6982	7004	####	What a Rank Buys You
+187	18	965	977	####	Special Symbols
+188	165	7340	7453	####	Wishable / random artifacts
+189	174	7875	7888	####	The Wizard's Tower
+190	179	8000	8026	####	What killed the runners-up
+191	68	3394	3424	####	Engulfment
+192	171	7780	7814	####	The demon-prince lairs
+193	53	2865	2933	####	Deadly Mistakes
+194	90	4239	4314	####	Blessed, Uncursed, Cursed (BUC)
+195	94	4730	4861	####	Use-Testing (The Careful Way)
+196	41	2128	2262	####	Elbereth
+197	93	4721	4729	####	The Sink Test (Rings)
+198	162	7251	7291	####	Wish Syntax
+199	116	5702	5731	####	Resolving Ambiguous Engrave Results
+200	241	10166	10183	####	Quarterstaff
+201	234	10041	10065	####	Axe
+202	25	1261	1276	###	Branches and Landmarks
+203	59	3136	3163	####	A note on wraiths
+204	220	9574	9596	####	Sokoban (new in 5.0)
+205	74	3657	3704	####	The Touch of Death
+206	197	8430	8505	###	Customization
+207	58	3104	3135	####	A note on trolls
+208	169	7732	7752	####	The Valley of the Dead
+209	226	9889	9892	###	Weapons Tables
+210	17	950	964	####	Things You Don't Want to Meet
+211	180	8027	8081	###	The Ascension Run
+212	49	2560	2583	####	Two-Weapon Combat
+213	147	6813	6842	####	Why Luck Matters
+214	92	4685	4720	####	The Engrave Test (Wands)
+215	158	7130	7174	####	Spending Slots Wisely
+216	160	7186	7226	####	Sources of Wishes
+217	212	9324	9350	####	Illiterate
+218	75	3705	3715	####	Genocide
+219	141	6545	6633	####	Learning Spells
+220	20	1034	1089	####	Fountains `{`
+221	96	4937	4971	####	Naming What You've Learned
+222	31	1579	1626	####	Fort Ludios
+223	137	6453	6467	####	Effects of Cursed Items
+224	117	5732	5759	####	Recharging
+225	186	8213	8220	####	Plane of Fire
+226	11	693	736	####	The Big Picture
+227	246	10295	10312	####	Whip
+228	67	3349	3393	####	Brainlessness
+229	154	6957	6981	####	Training a Skill
+230	88	4172	4216	####	Keeping Your Pet Alive
+231	263	10700	10703	###	Bestiary Tables
+232	91	4315	4684	####	The Price Is Right
+233	24	1227	1260	####	Vaults
+234	97	4972	5019	####	A Practical Strategy
+235	23	1160	1226	####	Sinks `{`
+236	26	1277	1367	####	The Gnomish Mines
+237	86	4099	4121	####	Taming New Creatures
+238	195	8400	8410	####	Message history and redraw
+239	55	2991	3026	####	A note on mimics
+240	39	1984	2056	####	Finding Secret Doors
+241	251	10383	10398	####	Shuriken
+242	87	4122	4171	####	What Pets Do for You
+243	108	5345	5358	####	Unicorn Horn Interactions
+244	178	7967	7999	###	The Ascension Kit
+245	40	2057	2127	####	Engravings
+246	206	9025	9172	####	Level 4, Version B
+247	194	8393	8399	####	Forcing locked chests
+248	1	193	334	####	The Roles
+249	222	9623	9644	###	Shopping and Shopkeeper Pricing
+250	207	9173	9191	###	Voluntary Challenges
+251	266	12189	12207	####	Bestiary group: Sea monsters `;` -> Sea monsters `;` (1 entries)
+252	150	6866	6878	####	Actions That Exercise and Abuse
+253	267	12208	12238	####	Lizards `:`
+254	56	3027	3059	####	A note on nymphs
+255	214	9398	9416	####	Polymorph Restrictions
+256	101	5127	5139	####	Dangerous Foods
+257	13	784	865	####	Room Types
+258	119	5767	5807	####	Polymorph as a Tool
+259	111	5421	5512	####	Key Scrolls
+260	47	2439	2456	####	AC and Defense
+261	15	890	910	####	Common Early Encounters
+262	16	911	949	####	Mid-Dungeon Threats
+263	216	9449	9489	####	Combining Conducts
+264	44	2373	2401	###	The Art of Combat
+265	52	2777	2864	####	Common Combat Deaths
+266	71	3531	3563	####	Disintegration
+267	114	5578	5622	####	The Wand Table
+268	125	6095	6106	####	Unlocking Tools
+269	140	6513	6544	###	Spellcasting
+270	12	737	783	####	The Map Symbols
+271	57	3060	3103	####	A note on puddings
