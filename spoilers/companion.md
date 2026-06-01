@@ -2846,8 +2846,7 @@ Mumakil are solo two-attack bruisers (4d12 butt plus 2d6
 bite) that hit harder than anything else in the upper
 dungeon. Both wander mid-level rooms.
 
-**Golems** (`'`). Golems are class `'` (apostrophe), not
-`P` (which is puddings). Most are slow but several hit
+**Golems** (`'`). Most are slow but several hit
 disproportionately hard. The rope golem grapples on a hugs
 attack and pins you in place for adjacent friends to chew on.
 Clay and stone golems deliver 3d10 and 3d8 in a single claw.
