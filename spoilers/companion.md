@@ -503,10 +503,10 @@ beside you.
 Welcome to the dungeon.
 
 The first few levels of the Mazes are designed to ease you in, which
-is a relative term. Monsters are weaker, but you are too. Your gear is
-minimal, your hit points are low, and you don't yet have the
+is a relative term. Monsters are weaker, but you are too. Your gear
+is minimal, your hit points are low, and you don't yet have the
 resistances that make the mid-game survivable. Levels one through
-five are where the most characters die, not because the threats
+five are where the most adventurers die, not because the threats
 are the greatest, but because you have the fewest resources to
 deal with them.
 
@@ -630,9 +630,10 @@ Mines later.
 
 New in NetHack 5.0: somebody has been leaving care packages.
 
-Every level above the Oracle has a 2/3 chance of hosting a "supply
-chest": usually a chest (sometimes a large box), usually locked,
-seeded with at least one survivability item. The contents pool:
+Every level above [the Oracle](#the-oracle) has a 2/3 chance of
+hosting a "supply chest": usually a chest (sometimes a large
+box), usually locked, seeded with at least one survivability
+item. The contents pool:
 potion of healing (about a 50% chance per chest, sometimes a pair),
 or otherwise potion of extra healing / speed / gain energy, scroll
 of enchant weapon, enchant armor, confuse monster, or scare monster,
@@ -3882,39 +3883,48 @@ alignment, and eventually a crown.
 
 The rules:
 
-- The corpse must be fresh — killed within the last **50 turns**.
+- The corpse must be fresh, killed within the last **50 turns**.
   A corpse older than that has zero sacrifice value (the gods
-  simply ignore it).
-- Bigger monsters are more valuable sacrifices, and your god
+  simply ignore it). Acid blob corpses are the one exception
+  and never spoil for this purpose.
+- Bigger monsters make more valuable sacrifices, and your god
   expects more impressive offerings as you advance. If the altar
-  gives back *"You have a feeling of inadequacy,"* the corpse fell
-  short of what your god was hoping for this time.
-- The altar must match your alignment, or you're praying to someone
-  else's god (which has its own consequences).
+  gives back *"You have a feeling of inadequacy,"* the corpse
+  fell short of what your god was hoping for this time.
+- The altar must match your alignment, or you're praying to
+  someone else's god (which has its own consequences).
 - Same-race sacrifice is forbidden and severely punished. On a
-  lawful or neutral altar it turns the altar chaotic (not co-aligned —
-  only chaotic heroes benefit); on a chaotic altar it summons a demon.
+  lawful or neutral altar it turns the altar chaotic, which is
+  no use unless you are chaotic yourself; on a chaotic altar
+  it summons a demon.
+- Two requirements before any gift can fire: you must be
+  experience level **3 or higher**, and your Luck must not be
+  negative.
 
 With enough sacrifice credit, your god may gift you an artifact
-weapon. The first gift comes after relatively modest sacrifice;
-subsequent gifts require substantially more. The per-attempt
-chance is roughly 1 in (10 + 2·*n*), where *n* is the number of
-gifts you've already received, so the first roll is 1-in-10 and
-the second drops to about 1-in-14. Don't be surprised if you get one artifact and then
-nothing more for thousands of turns.
+weapon. The chance per qualifying sacrifice is roughly **1 in 6**
+for the first gift, then drops sharply for each subsequent gift.
+The drop depends on two things: how many gifts you have already
+received and how many artifacts exist in the game (yours,
+randomly generated, and from any bones files you have inherited).
+The second gift is more like 1 in 16 to 1 in 26 per sacrifice,
+and the third is in the dozens to hundreds. Don't be surprised
+if you get one artifact and then nothing more for thousands of
+turns.
 
-The first gift is biased toward your role's signature artifact
-(Magicbane for Wizards, Demonbane for Priests, Mjollnir for
-Valkyries, and so on), so sacrifice early — it locks in the
-role-bias gift before the random pool dilutes it. Gift artifacts are
-always aligned to your god and always match a weapon skill you can
-use.
+The first gift is biased toward an artifact that matches your
+alignment and a weapon skill you can use, which in practice
+usually means your role's signature artifact (Magicbane for
+Wizards, Mjollnir for Valkyries, and so on). Sacrifice early to
+lock in that bias before the random pool dilutes it. Gift
+artifacts are always aligned to your god and always match a
+weapon skill you can use.
 
-There is a minimum. In 5.0, not every corpse you drop on
-the altar moves you toward the next artifact gift. The gods have
-opinions about what constitutes a worthy offering, and a kobold doesn't
-make the cut. Fresh corpses of appropriately challenging monsters are
-what advances your standing.
+Worthiness floor: the gods filter the artifact pool by the
+sacrifice's value, so a kobold corpse can roll for a gift but
+nothing interesting will come of it. Fresh corpses of
+appropriately challenging monsters are what advances your
+standing.
 
 #### Donating to Priests
 
@@ -10033,13 +10043,13 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 - Tsurugi is the two-handed sword artifact (artilist.h:285-289); Vorpal Blade is a LONG_SWORD (artilist.h:191), NOT the artifact form here
 -->
 
-Two-handed weapons get a **3/2 Strength damage bonus** in 5.0 —
-your STR damage contribution is multiplied by 1.5 when wielding a
-bimanual weapon. Combined with the high base dice below, that's a
-big chunk of why two-handed swords compete with one-hand-plus-
-shield even though you forfeit the shield slot. The same bonus
-applies to the battle-axe, dwarvish mattock, bardiche, and any
-other bimanual weapon.
+Two-handed weapons get a **3/2 Strength damage bonus** in 5.0:
+your STR damage contribution is multiplied by 1.5 when wielding
+a bimanual weapon. Combined with the high base dice below, that
+is a big chunk of why two-handed swords compete with
+one-hand-plus-shield even though you forfeit the shield slot.
+The same bonus applies to the battle-axe, dwarvish mattock,
+bardiche, and any other bimanual weapon.
 
 ::: dense-table
 

@@ -10,7 +10,7 @@ Each batch is committed individually.
 ## Progress
 
 - Total sections: 272
-- Audited: 5 (+ 1 deferred: the giant Bestiary group)
+- Audited: 10 (+ 1 deferred: the giant Bestiary group)
 - Status: in progress
 
 ## Findings
@@ -83,4 +83,51 @@ real arrival ambush and the actual cavern-network structure.
 **Hyperlink** — added link from "Mine's End" reference to the Gnomish Mines chapter (`#the-gnomish-mines`).
 
 **Changes**: em-dash removed; hyperlink added (companion.md:4922).
+
+### Audit 6: Sacrifice (companion.md:3875)
+
+**Accuracy** — multiple fixes:
+
+- Em-dashes removed (two instances: "killed within the last — 50 turns" and "altar chaotic (not co-aligned —").
+- Artifact-gift formula was wrong. Book said "1 in (10 + 2·n)" giving 1/10 first roll and 1/14 second. Actual formula (pray.c:1792): `!rn2(6 + (2 * u.ugifts * nartifacts))`, where `nartifacts` is the total count of artifacts existing in the game world. First gift is 1 in 6 per qualifying sacrifice; subsequent drops sharply because of multiplication, not just additive `+2·n`. Rewrote to give the correct intuition without an over-precise formula.
+- Missing prerequisite added: bestow_artifact requires `u.ulevel > 2 && u.uluck >= 0` (pray.c:1784).
+- Acid blob exception to the 50-turn rule added (pray.c:1843): `otmp->corpsenm == PM_ACID_BLOB || (svm.moves <= peek_at_iced_corpse_age(otmp) + 50)`.
+- "Role's signature artifact" framing is the practical effect, not the mechanism. Actual mechanism (artifact.c:230) is alignment match + skill compatibility. Clarified.
+- "There is a minimum" softened to a worthiness-floor framing. The actual mechanic is that mk_artifact filters by giftvalue against the sacrifice value, so low-value sacrifices roll but find no eligible artifact, rather than being rejected outright.
+
+**Changes**: rewrote the rules list and artifact-gift paragraph (companion.md:3883).
+
+### Audit 7: Supply Containers (companion.md:629)
+
+**Accuracy** — verified against mklev.c:1010-1119. All claims correct: 2/3 chance above Oracle, 2/3 chest vs 1/3 large box, 5/6 locked, contents pool, Mines-entry food bonus. Pre-existing audit notes already covered the verification.
+
+**Hyperlinks** — added link from "above the Oracle" to the Oracle section (companion.md:633).
+
+**Changes**: hyperlink only.
+
+### Audit 8: Your First Descent intro (companion.md:479)
+
+**Accuracy** — verified against pre-existing audit notes (no specific claims to re-verify beyond what was already documented).
+
+**Language** — `characters` -> `adventurers` for in-world voice consistency (companion.md:509).
+
+### Audit 9: Long sword (companion.md:10015)
+
+**Accuracy** — pre-existing audit notes verify long-sword stats (objects.h:270-280), Excalibur dipping mechanics (fountain.c:404-421: XL>=5, quan==1, 1/30 normally, 1/6 for Knights, non-Lawfuls get cursed sword), and artifact forms list (Excalibur, Frost Brand, Fire Brand, Giantslayer, Vorpal Blade, Sunsword). All correct.
+
+**Changes**: no changes needed.
+
+### Audit 10: Saber (companion.md:9979)
+
+**Accuracy** — pre-existing audit notes verify saber stats and artifact forms (Grayswandir from artilist.h:170, Werebane from artilist.h:166). All correct.
+
+**Changes**: no changes needed.
+
+### Audit 11: Two-handed sword (companion.md:10037)
+
+**Accuracy** — pre-existing audit notes verify the 3/2 Strength damage bonus (uhitm.c:1467-1468 gated on bimanual + HMON_MELEE) and that Tsurugi of Muramasa is the artifact form, NOT Vorpal Blade (which is a long sword). All correct.
+
+**Language** — em-dash removed from "in 5.0 — your STR damage" (now colon) (companion.md:10046).
+
+**Changes**: em-dash removed.
 </content>
