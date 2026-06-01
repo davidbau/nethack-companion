@@ -2815,7 +2815,7 @@ or below.
 or Nazgul breath puts you to sleep for several turns. If you
 are alone in a corridor it costs you a couple of rounds. If
 you are surrounded by anything else, the surrounding monsters
-chew through your HP while you cannot move. Sleep resistance
+hit you freely while you cannot move. Sleep resistance
 comes from any elf, elven mummy, or giant corpse, and from
 several roles' starting kits (Wizard's cloak of MR, Ranger's
 elven cloak). Eat for it before descending into the Mines or
