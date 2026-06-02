@@ -136,6 +136,26 @@ function Table(blk)
     }
   end
 
+  -- Actions That Exercise and Abuse (Stat | Exercises | Abuses): a
+  -- 4-row table that fits on one page, but longtable was emitting a
+  -- phantom "Stat | Exercises | Abuses" header above the real one.
+  -- Also narrow the Stat column — the three-letter abbreviations
+  -- ("Str", "Dex", "Con", "Wis") don't need anything close to a
+  -- third of the page width, so give the slack to Exercises and
+  -- Abuses where the long action lists need it.
+  if #blk.colspecs == 3
+      and headers[1] == "Stat" and headers[2] == "Exercises"
+      and headers[3] == "Abuses" then
+    blk.colspecs[1][2] = 0.07
+    blk.colspecs[2][2] = 0.47
+    blk.colspecs[3][2] = 0.46
+    return {
+      pandoc.RawBlock("latex", "\\begingroup\\let\\endhead\\endfirsthead"),
+      blk,
+      pandoc.RawBlock("latex", "\\endgroup"),
+    }
+  end
+
   -- The Wand Table (Price | Wand | Type | Max Charges | Engrave-test
   -- result): pandoc auto-sizes the wand-name column wide enough for
   -- "Secret door detection" and leaves the engrave-test column too
@@ -632,25 +652,17 @@ function Pandoc(doc)
     end
 
     -- Convert horizontal rules to decorative diamond ornament (centered).
-    -- Two guards keep the ornament from rendering in awkward places:
-    --   1. If the next block is a Header, skip — headings already have
-    --      their own visual separation (and at chapter level they force
-    --      a clearpage, which would orphan the ornament with empty
-    --      space above and below it on the trailing page).
-    --   2. If less than ~2 inches of vertical space remain on the
-    --      current page, skip — otherwise the ornament would force a
-    --      near-empty trailing page just to host it. The stretchable
-    --      glue on both sides of the surviving ornament centers it
-    --      vertically when it does render.
+    -- The ornament renders only when the current page already has enough
+    -- slack to absorb it; if remaining space is less than ~2 inches the
+    -- ornament is silently dropped so the page break would-be-forced by
+    -- the ornament doesn't appear (which would leave the diamond alone
+    -- at the top of a new mostly-empty page). Stretchable glue on both
+    -- sides centers the ornament vertically when it does render.
     if block.tag == "HorizontalRule" then
-      local next_block = blocks[i+1]
-      if next_block and next_block.t == "Header" then
-        i = i + 1
-        goto continue
-      end
       table.insert(new_blocks, pandoc.RawBlock("latex",
         "\\par\n" ..
-        "\\ifdim\\dimexpr\\pagegoal-\\pagetotal\\relax>2in\n" ..
+        "\\ifdim\\pagetotal>3in\n" ..
+        "\\ifdim\\dimexpr\\pagegoal-\\pagetotal\\relax>1in\n" ..
         "\\vspace*{1em plus 1fill}\n" ..
         "\\begin{center}\n" ..
         "{\\color[gray]{0.45}" ..
@@ -661,7 +673,7 @@ function Pandoc(doc)
         "\\rule[0.35ex]{3em}{0.4pt}}\n" ..
         "\\end{center}\n" ..
         "\\par\\vspace*{1em plus 1fill}\n" ..
-        "\\fi"))
+        "\\fi\\fi"))
       i = i + 1
       goto continue
     end
