@@ -3411,7 +3411,11 @@ three tentacle attacks per turn; the **master mind flayer** has
 next to a master mind flayer can drop your Int by up to ten.
 Each hit also has a 1-in-5 chance to trigger **spell amnesia**: a
 random number of your spells (up to all of them) drop to zero
-retention; re-study spellbooks to restore.
+retention; re-study spellbooks to restore. Independently, each hit
+has another 1-in-5 chance to drain one or two of your **weapon
+skills** — Basic falls back to Unskilled, Expert to Skilled, and
+so on. Skill loss has to be earned back the slow way at training
+posts; pack a long fight against a mind flayer carefully.
 
 **Defenses:** **Wear any helmet.** Even a plain orcish helm blocks
 seven of every eight tentacle drains. Greasing the helmet stacks an
@@ -6031,6 +6035,8 @@ than it looks.
 - weight_cap = 25 * (Str + Con) + 50, capped at MAX_CARR_CAP = 1000 (hack.c:4295-4312, weight.h:12-25)
 - encumbrance tier = (excess_weight * 2 / cap) + 1, clamped to OVERLOADED; tier names "Burdened/Stressed/Strained/Overtaxed/Overloaded" (hack.c:4372-4382, botl.c:12-13)
 - Stressed+ encumbrance triggers extra hunger on odd turns (eat.c:3197 near_capacity > SLT_ENCUMBER)
+- 2026-06-02: encumbrance reduces movement allocation via u_calc_moveamt (allmain.c:136-153): Burdened −25%, Stressed −50%, Strained −75%, Overtaxed −87.5%. Earlier "Burdened: movement fine" was wrong.
+- Strained+ encumbrance costs 1 HP every 3 attack rounds via overexert_hp (hack.c:3035-3047, gated on near_capacity ≥ HVY_ENCUMBER at hack.c:3057). At 0 HP the hero passes out instead of dying.
 - Large box base weight 350, chest 600, ice box 900 (objects.h:899-904)
 - door diagonal-move rules: cannot move diagonally INTO an intact doorway (hack.c:1140-1149); cannot move diagonally OUT of one (hack.c:1209-1213)
 - low-intelligence monsters cannot open closed doors; intelligent monsters open/unlock per monmove.c:1567-1585
@@ -6100,14 +6106,14 @@ Your carrying capacity is roughly **25 × (Strength + Constitution)
 a low-Str spellcaster might start closer to 700. As you load up,
 the status line walks through these tiers:
 
-| Tier         | When                                    | Cost                                        |
-| ------------ | --------------------------------------- | ------------------------------------------- |
-| Unencumbered | weight at or below capacity             | None                                        |
-| Burdened     | up to about 1.5× capacity               | Status flag, but movement and nutrition fine |
-| Stressed     | up to about 2× capacity                 | Extra hunger every odd turn                 |
-| Strained     | up to about 2.5× capacity               | Worse hunger, harder to dodge water         |
-| Overtaxed    | up to about 3× capacity                 | Bad                                         |
-| Overloaded   | beyond 3× capacity                      | You can't even pick anything else up        |
+| Tier         | When                                    | Cost                                                                     |
+| ------------ | --------------------------------------- | ------------------------------------------------------------------------ |
+| Unencumbered | weight at or below capacity             | None                                                                     |
+| Burdened     | up to about 1.5× capacity               | Movement −25%; nutrition fine                                            |
+| Stressed     | up to about 2× capacity                 | Movement −50%; extra hunger on odd turns                                 |
+| Strained     | up to about 2.5× capacity               | Movement −75%; extra hunger; combat exerts you (1 HP every 3 attacks)    |
+| Overtaxed    | up to about 3× capacity                 | Movement −87.5%; same hunger and exertion; pass out instead of dying     |
+| Overloaded   | beyond 3× capacity                      | You can't pick anything else up                                          |
 
 Practical rule: stay **Unencumbered** in normal play, accept
 **Burdened** during loot runs, and never linger at **Stressed**
