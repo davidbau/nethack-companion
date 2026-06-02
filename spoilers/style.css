@@ -1288,4 +1288,10 @@ td.pi-price { color: var(--color-accent); font-weight: 500; }
   #sokoban-solutions .sokoban-level ol {
     display: flow-root;
   }
+  /* Level 3A has a small map with a long solution list — keep default
+   * flow so items past the map's bottom can reclaim the full width
+   * instead of being stuck in a narrow right-of-map column. */
+  #sokoban-solutions #level-3-version-a ol {
+    display: block;
+  }
 }
