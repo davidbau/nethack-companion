@@ -3760,7 +3760,8 @@ reliable way to win a NetHack fight is to make the fight unfair before
 it starts, and that means thinking about where you stand, when you
 swing, and what happens if it goes wrong. Here are the time-tested
 tactics that keep adventurers breathing.</p>
-<p><em>Position before contact.</em></p>
+<section id="position-before-contact" class="level5">
+<h5>Position before contact</h5>
 <p><strong>Use corridors.</strong> Monsters can only approach one at a
 time in a corridor. This is the single most important tactical principle
 in the Mazes. Never fight a mob in an open room if you can retreat to a
@@ -3787,7 +3788,9 @@ through a door: approach and leave orthogonally. <strong>Closing a
 door</strong> (<code>c</code> + direction) blocks pets and any monster
 lacking the intelligence or hands to open it; handy when you want to
 slip away from your pet, or when you need a turn or two of quiet.</p>
-<p><em>During the fight.</em></p>
+</section>
+<section id="during-the-fight" class="level5">
+<h5>During the fight</h5>
 <p><strong>Trade hits only when the math works.</strong> Estimate how
 many rounds you need to drop the monster and how many it needs to drop
 you. If your number is smaller, trade. If theirs is smaller, retreat
@@ -3811,7 +3814,9 @@ corridor first (so they wake strung out in a line), or write <a
 href="#elbereth">Elbereth</a> so they cluster around the ward instead of
 swarming. Then step off to engage individually; attacking from on top of
 the engraving defiles it.</p>
-<p><em>When the fight goes badly.</em></p>
+</section>
+<section id="when-the-fight-goes-badly" class="level5">
+<h5>When the fight goes badly</h5>
 <p><strong>Know when to run.</strong> The Mazes have no medals for
 bravery, only for survival. If a fight is going badly, use a scroll of
 teleportation, a wand of teleportation, or just run. Dead adventurers do
@@ -3830,7 +3835,9 @@ which is exactly how you want them. Step off Elbereth before resuming
 the fight. Any attack from on top defiles the engraving and costs you
 alignment (“you feel like a hypocrite”). Elbereth is a rest stop, not a
 firing position.</p>
-<p><em>Edge cases worth knowing.</em></p>
+</section>
+<section id="edge-cases-worth-knowing" class="level5">
+<h5>Edge cases worth knowing</h5>
 <p><strong>Ranged attackers retreat.</strong> Monsters with ranged
 attacks (archers, spellcasters, anything that can hurt you from a
 distance) now actively back away when you close to melee range. Walking
@@ -3857,6 +3864,7 @@ at least 20 <em>and</em> experience level at least 14. A handful of
 careless peaceful kills can lock a Knight or Samurai out of <a
 href="#the-quest">the Quest</a> for the rest of the run.</p>
 <hr />
+</section>
 </section>
 </section>
 <section id="things-that-will-kill-you" class="level3">
@@ -12036,7 +12044,8 @@ dramatically improve quality of life. Flip them in-session with
 <code>~/.nethackrc</code> on macOS/Linux, <code>nethack.cnf</code> in
 the install folder on Windows, or the <code>NETHACKOPTIONS</code>
 environment variable.</p>
-<p><em>Status display.</em></p>
+<section id="status-display" class="level4">
+<h4>Status display</h4>
 <p><strong><code>hilite_status</code></strong> colorizes the bottom
 status line — HP, hunger, AC and the other fields can each carry their
 own threshold rules. Pair it with
@@ -12061,12 +12070,16 @@ other words like “unbleached” or “blessed-cure-injury”.</p>
 rather than a letter prompt.</p>
 <p><strong><code>pile_limit:5</code></strong> triggers the pile menu
 when 5 or more items are stacked on a tile.</p>
-<p><em>Safety.</em></p>
+</section>
+<section id="safety" class="level4">
+<h4>Safety</h4>
 <p><strong><code>paranoid_confirmation:Attack pray Remove quit</code></strong>
 requires you to type the full word <code>yes</code> for the listed
 actions: attacking peacefuls, praying, removing worn gear, and quitting.
 Catches almost every fat-finger accident.</p>
-<p><em>Pickup.</em></p>
+</section>
+<section id="pickup" class="level4">
+<h4>Pickup</h4>
 <p><strong><code>autopickup</code></strong> picks items up as you walk
 over them, filtered by <strong><code>pickup_types</code></strong>
 (e.g. <code>pickup_types:$?!=/</code> for gold, scrolls, potions, rings,
@@ -12083,7 +12096,9 @@ autopickup the moment a pickup would push you into Burdened. The default
 is <code>S</code> (only stop at Stressed), which means autopickup
 happily slides you through Burdened first; setting <code>U</code> keeps
 you nimble.</p>
-<p><em>Movement.</em></p>
+</section>
+<section id="movement" class="level4">
+<h4>Movement</h4>
 <p><strong><code>number_pad</code></strong> turns the numeric keypad
 into movement keys (1–9 for directions). Off by default; enabling it
 changes digit-prefix behavior so you press <code>n</code> first to enter
@@ -12092,7 +12107,9 @@ a count.</p>
 down enough that you stop on interesting messages (default
 <code>runonly</code> blasts through everything until you hit
 something).</p>
-<p><em>Verbosity.</em></p>
+</section>
+<section id="verbosity" class="level4">
+<h4>Verbosity</h4>
 <p><strong><code>verbose</code></strong> turns on extra descriptive
 messages. Turn it off if the message log feels noisy.</p>
 <p><strong>A starter rcfile.</strong> A few lines that cover most of the
@@ -12121,6 +12138,7 @@ open a 120×40 terminal, and you get a permanent inventory column, a
 multi-line message panel, and bordered status and map regions. Plain tty
 NetHack pins the message line at row 0 no matter what you set.</p>
 <hr />
+</section>
 </section>
 <section id="sokoban-solutions" class="level3">
 <h3>Sokoban Solutions</h3>

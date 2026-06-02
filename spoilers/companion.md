@@ -2616,7 +2616,7 @@ before it starts, and that means thinking about where you stand,
 when you swing, and what happens if it goes wrong. Here are the
 time-tested tactics that keep adventurers breathing.
 
-*Position before contact.*
+##### Position before contact
 
 **Use corridors.** Monsters can only approach one at a time in
 a corridor. This is the single most important tactical
@@ -2653,7 +2653,7 @@ door: approach and leave orthogonally. **Closing a door**
 intelligence or hands to open it; handy when you want to slip
 away from your pet, or when you need a turn or two of quiet.
 
-*During the fight.*
+##### During the fight
 
 **Trade hits only when the math works.** Estimate how many
 rounds you need to drop the monster and how many it needs to
@@ -2685,7 +2685,7 @@ they cluster around the ward instead of swarming. Then step
 off to engage individually; attacking from on top of the
 engraving defiles it.
 
-*When the fight goes badly.*
+##### When the fight goes badly
 
 **Know when to run.** The Mazes have no medals for bravery,
 only for survival. If a fight is going badly, use a scroll of
@@ -2708,7 +2708,7 @@ resuming the fight. Any attack from on top defiles the
 engraving and costs you alignment ("you feel like a
 hypocrite"). Elbereth is a rest stop, not a firing position.
 
-*Edge cases worth knowing.*
+##### Edge cases worth knowing
 
 **Ranged attackers retreat.** Monsters with ranged attacks
 (archers, spellcasters, anything that can hurt you from a
@@ -8548,7 +8548,7 @@ dramatically improve quality of life. Flip them in-session with
 macOS/Linux, `nethack.cnf` in the install folder on Windows, or
 the `NETHACKOPTIONS` environment variable.
 
-*Status display.*
+#### Status display
 
 **`hilite_status`** colorizes the bottom status line — HP, hunger,
 AC and the other fields can each carry their own threshold rules.
@@ -8585,14 +8585,14 @@ prompt.
 **`pile_limit:5`** triggers the pile menu when 5 or more items are
 stacked on a tile.
 
-*Safety.*
+#### Safety
 
 **`paranoid_confirmation:Attack pray Remove quit`** requires you to
 type the full word `yes` for the listed actions: attacking peacefuls,
 praying, removing worn gear, and quitting. Catches almost every
 fat-finger accident.
 
-*Pickup.*
+#### Pickup
 
 **`autopickup`** picks items up as you walk over them, filtered by
 **`pickup_types`** (e.g. `pickup_types:$?!=/` for gold, scrolls,
@@ -8610,7 +8610,7 @@ would push you into Burdened. The default is `S` (only stop at
 Stressed), which means autopickup happily slides you through
 Burdened first; setting `U` keeps you nimble.
 
-*Movement.*
+#### Movement
 
 **`number_pad`** turns the numeric keypad into movement keys (1–9
 for directions). Off by default; enabling it changes digit-prefix
@@ -8620,7 +8620,7 @@ behavior so you press `n` first to enter a count.
 stop on interesting messages (default `runonly` blasts through
 everything until you hit something).
 
-*Verbosity.*
+#### Verbosity
 
 **`verbose`** turns on extra descriptive messages. Turn it off if
 the message log feels noisy.
