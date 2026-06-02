@@ -12053,12 +12053,14 @@ own threshold rules. Pair it with
 without it the rules below parse but nothing colors. Concrete HP and
 hunger rules:</p>
 <pre><code>OPTIONS=statushilites
-OPTIONS=hilite_status:hitpoints/&lt;66%/yellow/
+OPTIONS=hilite_status:hitpoints/&lt;66%/yellow/\
  &lt;50%/orange/&lt;33%/red&amp;bold/&lt;15%/red&amp;inverse
-OPTIONS=hilite_status:hunger/Satiated/yellow/
- Hungry/orange/Weak/red&amp;bold/Fainting/red&amp;inverse/
+OPTIONS=hilite_status:hunger/Satiated/yellow/\
+ Hungry/orange/Weak/red&amp;bold/Fainting/red&amp;inverse/\
  Fainted/red&amp;inverse+blink</code></pre>
-<p>The single most-recommended setting in community rcfiles.</p>
+<p>The trailing <code>\</code> continues each rule onto the next line;
+the rcfile parser only merges lines that explicitly end in a backslash.
+This is the single most-recommended setting in community rcfiles.</p>
 <p><strong><code>menucolors</code></strong> colorizes menu entries by
 pattern. The two most-useful rules are the BUC tags, so anything cursed
 jumps out red and anything pre-blessed reads as cyan:</p>
@@ -12118,10 +12120,10 @@ messages. Turn it off if the message log feels noisy.</p>
 <p><strong>A starter rcfile.</strong> A few lines that cover most of the
 above:</p>
 <pre><code>OPTIONS=statushilites
-OPTIONS=hilite_status:hitpoints/&lt;66%/yellow/
+OPTIONS=hilite_status:hitpoints/&lt;66%/yellow/\
  &lt;50%/orange/&lt;33%/red&amp;bold/&lt;15%/red&amp;inverse
-OPTIONS=hilite_status:hunger/Satiated/yellow/
- Hungry/orange/Weak/red&amp;bold/Fainting/red&amp;inverse/
+OPTIONS=hilite_status:hunger/Satiated/yellow/\
+ Hungry/orange/Weak/red&amp;bold/Fainting/red&amp;inverse/\
  Fainted/red&amp;inverse+blink
 MENUCOLOR=&quot; cursed &quot;=red
 MENUCOLOR=&quot; blessed &quot;=cyan

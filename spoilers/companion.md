@@ -8558,14 +8558,16 @@ rules:
 
 ```
 OPTIONS=statushilites
-OPTIONS=hilite_status:hitpoints/<66%/yellow/
+OPTIONS=hilite_status:hitpoints/<66%/yellow/\
  <50%/orange/<33%/red&bold/<15%/red&inverse
-OPTIONS=hilite_status:hunger/Satiated/yellow/
- Hungry/orange/Weak/red&bold/Fainting/red&inverse/
+OPTIONS=hilite_status:hunger/Satiated/yellow/\
+ Hungry/orange/Weak/red&bold/Fainting/red&inverse/\
  Fainted/red&inverse+blink
 ```
 
-The single most-recommended setting in community rcfiles.
+The trailing `\` continues each rule onto the next line; the rcfile
+parser only merges lines that explicitly end in a backslash. This is
+the single most-recommended setting in community rcfiles.
 
 **`menucolors`** colorizes menu entries by pattern. The two
 most-useful rules are the BUC tags, so anything cursed jumps out red
@@ -8633,10 +8635,10 @@ the message log feels noisy.
 
 ```
 OPTIONS=statushilites
-OPTIONS=hilite_status:hitpoints/<66%/yellow/
+OPTIONS=hilite_status:hitpoints/<66%/yellow/\
  <50%/orange/<33%/red&bold/<15%/red&inverse
-OPTIONS=hilite_status:hunger/Satiated/yellow/
- Hungry/orange/Weak/red&bold/Fainting/red&inverse/
+OPTIONS=hilite_status:hunger/Satiated/yellow/\
+ Hungry/orange/Weak/red&bold/Fainting/red&inverse/\
  Fainted/red&inverse+blink
 MENUCOLOR=" cursed "=red
 MENUCOLOR=" blessed "=cyan
