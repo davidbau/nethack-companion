@@ -1263,3 +1263,23 @@ td.pi-price { color: var(--color-accent); font-weight: 500; }
 @media print {
   .sokoban-flipbar { display: none; }
 }
+
+/* Sokoban level layout (HTML only — the print build has its own
+ * pagination via xelatex). Float each map left so the numbered
+ * solution list flows alongside it. Headings, paragraphs, and the
+ * flip toolbar clear the float so they don't wrap around the map. */
+@media screen {
+  #sokoban-solutions .sokoban-level pre {
+    display: inline-block;
+    float: left;
+    margin-right: 32px;
+    margin-top: 8px;
+    clear: both;
+  }
+  #sokoban-solutions h4,
+  #sokoban-solutions p,
+  #sokoban-solutions blockquote,
+  #sokoban-solutions .sokoban-flipbar {
+    clear: both;
+  }
+}
