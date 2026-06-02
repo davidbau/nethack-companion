@@ -88,53 +88,54 @@ you alive.
 
 10. [The Art of Combat](#the-art-of-combat) — Hit probability, damage, and tactics
 11. [Things That Will Kill You](#things-that-will-kill-you) — Top-ten killers, common deaths, mimics, dragons
-12. [Ways to Die Instantly](#ways-to-die-instantly) — Instadeaths and how to recognize them
-13. [Divine Relations](#divine-relations) — Prayer, sacrifice, and altars
-14. [Making Friends](#making-friends) — Pets, taming, and peaceful coexistence
+12. [Saving and Bones](#saving-and-bones) — How runs continue across sessions, and what dead heroes leave behind
+13. [Ways to Die Instantly](#ways-to-die-instantly) — Instadeaths and how to recognize them
+14. [Divine Relations](#divine-relations) — Prayer, sacrifice, and altars
+15. [Making Friends](#making-friends) — Pets, taming, and peaceful coexistence
 
 **Part Four: Gear and Provisions**
 
-15. [A Practical Identification Strategy](#a-practical-identification-strategy) — Figuring out what you've found (with flowchart)
-16. [Provisions and Dining](#provisions-and-dining) — Food, nutrition, and dining
-17. [The Apothecary](#the-apothecary) — Potions and their many uses
-18. [The Scroll Rack](#the-scroll-rack) — Scrolls, their effects, and confused reading
-19. [Wands and Staves](#wands-and-staves) — Magical implements
-20. [Rings and Amulets](#rings-and-amulets) — Jewelry, for better or worse
-21. [Tools of the Trade](#tools-of-the-trade) — From pickaxes to magic lamps
-22. [The Armory](#the-armory) — Weapons, armor, and hitting things
-23. [Curses and How to Break Them](#curses-and-how-to-break-them) — Spotting them, undoing them, surviving them
+16. [A Practical Identification Strategy](#a-practical-identification-strategy) — Figuring out what you've found (with flowchart)
+17. [Provisions and Dining](#provisions-and-dining) — Food, nutrition, and dining
+18. [The Apothecary](#the-apothecary) — Potions and their many uses
+19. [The Scroll Rack](#the-scroll-rack) — Scrolls, their effects, and confused reading
+20. [Wands and Staves](#wands-and-staves) — Magical implements
+21. [Rings and Amulets](#rings-and-amulets) — Jewelry, for better or worse
+22. [Tools of the Trade](#tools-of-the-trade) — From pickaxes to magic lamps
+23. [The Armory](#the-armory) — Weapons, armor, and hitting things
+24. [Curses and How to Break Them](#curses-and-how-to-break-them) — Spotting them, undoing them, surviving them
 
 **Part Five: Mastery**
 
-24. [Spellcasting](#spellcasting) — Magic for the studious adventurer
-25. [Luck and Fortune](#luck-and-fortune) — The hidden numbers that shape your fate
-26. [Exercising Your Stats](#exercising-your-stats) — Habits that slowly drift Str, Dex, Con, and Wis
-27. [Enhancing Skills](#enhancing-skills) — Mastering specific styles of combat and magic
-28. [Wishes and Wishing](#wishes-and-wishing) — Getting what you want
-29. [Artifacts](#artifacts) — Legendary equipment and how to obtain it
+25. [Spellcasting](#spellcasting) — Magic for the studious adventurer
+26. [Luck and Fortune](#luck-and-fortune) — The hidden numbers that shape your fate
+27. [Exercising Your Stats](#exercising-your-stats) — Habits that slowly drift Str, Dex, Con, and Wis
+28. [Enhancing Skills](#enhancing-skills) — Mastering specific styles of combat and magic
+29. [Wishes and Wishing](#wishes-and-wishing) — Getting what you want
+30. [Artifacts](#artifacts) — Legendary equipment and how to obtain it
 
 **Part Six: The Deep Dungeon**
 
-30. [The Castle](#the-castle) — The gateway to Gehennom
-31. [Gehennom](#gehennom) — A travel advisory
-32. [The Ascension Kit](#the-ascension-kit) — Gear for the long climb
-33. [The Ascension Run](#the-ascension-run) — Getting back out alive
-34. [The Elemental Planes](#the-elemental-planes) — The final gauntlet
+31. [The Castle](#the-castle) — The gateway to Gehennom
+32. [Gehennom](#gehennom) — A travel advisory
+33. [The Ascension Kit](#the-ascension-kit) — Gear for the long climb
+34. [The Ascension Run](#the-ascension-run) — Getting back out alive
+35. [The Elemental Planes](#the-elemental-planes) — The final gauntlet
 
 **Appendices**
 
-35. [Advanced Controls](#advanced-controls) — Command counts, prefixes, and efficiency techniques
-36. [Customization](#options-worth-knowing-about) — rcfile options worth knowing
-37. [Sokoban Solutions](#sokoban-solutions) — All eight level variants, solved
-38. [Voluntary Challenges](#voluntary-challenges) — Conducts and self-imposed restrictions
-39. [Shopping and Shopkeeper Pricing](#shopping-and-shopkeeper-pricing) — Commerce in the dungeon
-40. [Weapons Tables](#weapons-tables)
-41. [Armor Tables](#armor-tables)
-42. [Spell Tables](#spell-tables)
-43. [Bestiary Tables](#bestiary-tables)
-44. [Intrinsic and Extrinsic Tables](#intrinsic-and-extrinsic-tables) — Properties you can attain and where they come from
-45. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x, and what to do about it
-46. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
+36. [Advanced Controls](#advanced-controls) — Command counts, prefixes, and efficiency techniques
+37. [Customization](#options-worth-knowing-about) — rcfile options worth knowing
+38. [Sokoban Solutions](#sokoban-solutions) — All eight level variants, solved
+39. [Voluntary Challenges](#voluntary-challenges) — Conducts and self-imposed restrictions
+40. [Shopping and Shopkeeper Pricing](#shopping-and-shopkeeper-pricing) — Commerce in the dungeon
+41. [Weapons Tables](#weapons-tables)
+42. [Armor Tables](#armor-tables)
+43. [Spell Tables](#spell-tables)
+44. [Bestiary Tables](#bestiary-tables)
+45. [Intrinsic and Extrinsic Tables](#intrinsic-and-extrinsic-tables) — Properties you can attain and where they come from
+46. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x, and what to do about it
+47. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
 
 
 ## Part One: Before You Set Out
@@ -588,6 +589,20 @@ reflection), a polished silver shield (reflection too), or a
 one-of-a-kind artifact bestowed by your
 god, won on [the Quest](#the-quest), or granted as a wish. Your adventure will be
 shaped by the protective items you obtain.
+
+**Rule 7: Type deliberately, never autorepeat.** Each key you
+press is a turn. If you hold a movement key down and let it
+autorepeat, your character marches blindly until something stops
+them — usually a monster you didn't intend to engage, a trap
+that's just been revealed, or a fountain you didn't mean to
+quaff. Press each key once and pause. To cross long corridors
+without typing one key per square, learn the **shift-direction**
+shortcut: capital `H J K L Y U B N` (or shift+arrow on number-
+pad layouts) moves continuously in that direction until something
+interesting appears. `G`+direction stops at the next item or
+monster; the `_` travel command goes to a clicked or specified
+target. These commands all *yield control* the instant something
+warrants your attention — autorepeat does not.
 
 #### Dungeon Hazards (and How to Survive Them)
 
@@ -2798,21 +2813,6 @@ difficulty roll, and a fragile character with 30 HP isn't going
 to soak even a single bad encounter. There's no prize for getting
 to [Sokoban](#sokoban) quickly. Clear, identify, level up, then descend.
 
-**On bones.** "Bones" levels are levels saved from another
-adventurer's death and replayed in your game. The game flags them
-("This place looks familiar..." or a recognized layout, plus a
-grave marker in the dungeon overview) but doesn't otherwise warn
-you. They are dangerous in two ways. First, items on a bones level
-generate cursed about 80% of the time, so don't put on anything
-you find there without altar-testing or pet-testing. Second, and
-much less well known: bones-level *monsters* can be far above the
-level's normal difficulty. The previous adventurer may have died
-with a master mind flayer adjacent, or a summoned demon nearby, or
-in monster form. Those creatures stick around. Treat any
-above-depth monster on a bones level as evidence to retreat, not
-to engage. If your character isn't ready for the monster, leave
-the level and come back when you are.
-
 #### Common Combat Deaths
 
 Beyond the top ten, certain enemy categories kill more
@@ -3132,11 +3132,11 @@ grants **cold, shock, and poison resistance**. Brown pudding and
 gray ooze are *vegetarian*-safe; black pudding is not. Globs of
 the same color stack and shrink together, so a pile of
 brown-pudding globs is a re-rollable chance at the resistance
-you don't yet have. The strategic flip-side of the splitting
-trap: if you can kill one pudding cleanly (silver weapon,
-cold/fire wand, spell), the splitting becomes a *feature*: every
-divided pudding is one more glob to eat. The full intrinsic
-table is in [Useful Corpse Effects](#useful-corpse-effects).
+you don't yet have. Pudding splitting can have a strategic
+benefit. If you can kill one pudding cleanly, the splitting
+becomes a *feature*: very divided pudding is another glob to
+eat. The full intrinsic table is in
+[Useful Corpse Effects](#useful-corpse-effects).
 
 #### A note on trolls
 
@@ -3276,6 +3276,113 @@ them just before they vanish.
 weapons: anything that doesn't bring you adjacent. *Warning*
 detects them through invisibility, but *telepathy* does not (they're
 mindless). If you do get blinded, a unicorn horn cures it.
+
+---
+
+### Saving and Bones
+<!-- audit
+2026-06-02:
+- save deletes file on load: anti-scum design (restore.c, save.c)
+- explore mode preserves save: -X command-line flag, "discover game" tag
+- Friday-13th sampled at session start: allmain.c:64-66 flags.friday13 = friday_13th(); insight.c:672-680 comments confirm it persists across the session even if real clock changes
+- moonphase sampled at session start: allmain.c sets flags.moonphase; insight.c:653-659 explicit comment that the value is at start of session, not real-time
+- bones generation chance = floor(depth/4) / (floor(depth/4) + 1); never above DL 4 (wiki/Bones)
+- bones-ineligible levels: branch-stair levels, Mines' End, Sokoban, Quest home/goal, Fort Ludios, Medusa, Castle, top/bottom of Vlad's, top/bottom of Wizard's Tower, vibrating square, Sanctum, all planes
+- items in bones: 4/5 cursed; artifacts revert to base items; quest artifacts stripped; Amulet of Yendor replaced with "cheap plastic imitation"; Candelabrum, Bell, Book of the Dead similarly replaced (bones.c)
+- unique monsters (Wizard, Medusa, Vlad, quest leader, quest nemesis) removed from saved bones; their statues become doppelgangers
+- monster type substitution at death: ghost (default), vampire (V kills), wraith (W kills), ghoul (ghoul kills), mummy of race (mummy kills), green slime (sliming death), statue (cockatrice death) (wiki/Bones)
+- bones=false rcfile option blocks both creation and loading; required for Bonesless conduct (insight.c:439-441)
+-->
+
+A single NetHack run can span multiple play sessions. Two
+mechanisms govern what carries across that gap: **saves**, which
+preserve your game between sessions, and **bones files**, which
+preserve a dead adventurer's level for a future hero to stumble
+into.
+
+**Saving.** Press `S` and confirm to save and quit. To resume,
+start NetHack again with the same character name; the game loads
+your save and **deletes the save file in the process**. That
+deletion is the game's anti-scum mechanism: there is no "load and
+try again." If your character dies, the run is over. Copying save
+files outside the game to retry a death is what the community
+calls **save scumming** and is considered cheating.
+
+NetHack does offer an honest opt-out for learning: launch with
+the `-X` command-line flag to enter **explore mode**, which keeps
+the save file after loading and unlocks `#wizard`-lite
+debugging commands. Explore mode disables scoring and tags your
+end-of-game record as a "discover game" so it doesn't compete
+with real runs.
+
+**The real-world clock.** Your in-game state — Luck, alignment,
+prayer timeout, the turn counter, every active timer — persists
+exactly across a save and resume. But a handful of effects are
+sampled at *session start* against your computer's real clock,
+and those refresh when you resume:
+
+- **Moon phase.** Full-moon and new-moon effects (e.g., the
+  cockatrice 1-in-3 stoning rate on a new moon) are determined by
+  the date on which you started the session and held fixed for
+  the whole session, even if you play past midnight.
+- **Friday the 13th.** A real-world Friday the 13th imposes a
+  small Luck penalty for the whole session. Like the moon phase,
+  it's sampled once at start.
+- **Day vs. night.** Some undead effects (e.g., a nymph's
+  attribute drain at night) check the real clock too.
+
+If you start a session on a Friday-the-13th new-moon evening, the
+dungeon is genuinely worse — but only for that session. Save and
+resume the next day and those flags refresh.
+
+**Bones levels.** When a hero dies on certain levels — most
+ordinary Dungeons-of-Doom levels at Dlvl 4 or deeper, plus
+Minetown and similar special levels (but *not* Sokoban, the
+Quest, Mines' End, the Castle, Vlad's outer floors, or the
+planes) — the game saves the level as a **bones file**. A future
+game has roughly a 1-in-3 chance of loading that bones file in
+place of generating that level from scratch, scaling up to 4/5 by
+Dlvl 16. The dungeon overview tags a loaded bones level
+(*"This place looks familiar..."* on entry) and a grave marker
+appears in the level overview.
+
+The bones level keeps its layout, traps, and items, with several
+adjustments:
+
+- The dead hero leaves behind a *named* remnant — usually a
+  **ghost**, but a **vampire** if killed by a vampire, a
+  **wraith** if killed by one, a **mummy** for a mummy kill, a
+  **green slime** for a sliming death, or a **statue** if the
+  hero was petrified by a cockatrice. The hero's corpse stays
+  where it fell.
+- Every non-artifact item in the hero's inventory has an
+  **80% chance of being cursed**, even items in containers. Pet
+  test or altar test anything before wearing or wielding it.
+- Artifacts revert to their base items, and any *quest* artifact
+  is stripped entirely.
+- The Amulet of Yendor and the three Invocation items, if the
+  former hero carried them, are swapped with cursed mundane
+  doubles — a "cheap plastic imitation" amulet, a blank
+  spellbook, a partly-used wax candle, an ordinary bell.
+- Unique monsters that *should* be on the level (the Wizard,
+  Medusa, Vlad, your quest leader and nemesis) are removed; any
+  statues of unique monsters are silently swapped for
+  doppelgangers in their guise.
+
+**Bones-level dangers.** The 80% curse rate is the obvious one,
+but the subtler danger is that bones-level *monsters* can be far
+above the level's normal difficulty. The previous adventurer may
+have died with a master mind flayer adjacent, or a summoned demon
+nearby, or in monster form. Those creatures stick around. Treat
+any above-depth monster on a bones level as evidence to retreat,
+not to engage. If your character isn't ready for the monster,
+leave the level and come back when you are.
+
+**Opting out.** Set `OPTIONS=bones=false` in your rcfile if you
+want a bones-free run. This blocks both *creating* bones (your
+own death won't generate a file) and *loading* bones (you'll
+never inherit a level). The **Bonesless** conduct (new in 5.0)
+requires it.
 
 ---
 

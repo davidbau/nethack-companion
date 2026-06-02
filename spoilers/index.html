@@ -108,6 +108,8 @@ messages the dungeon uses to tell you what just happened</li>
 probability, damage, and tactics</li>
 <li><a href="#things-that-will-kill-you">Things That Will Kill You</a> —
 Top-ten killers, common deaths, mimics, dragons</li>
+<li><a href="#saving-and-bones">Saving and Bones</a> — How runs continue
+across sessions, and what dead heroes leave behind</li>
 <li><a href="#ways-to-die-instantly">Ways to Die Instantly</a> —
 Instadeaths and how to recognize them</li>
 <li><a href="#divine-relations">Divine Relations</a> — Prayer,
@@ -116,7 +118,7 @@ sacrifice, and altars</li>
 peaceful coexistence</li>
 </ol>
 <p><strong>Part Four: Gear and Provisions</strong></p>
-<ol start="15" type="1">
+<ol start="16" type="1">
 <li><a href="#a-practical-identification-strategy">A Practical
 Identification Strategy</a> — Figuring out what you’ve found (with
 flowchart)</li>
@@ -138,7 +140,7 @@ things</li>
 Them</a> — Spotting them, undoing them, surviving them</li>
 </ol>
 <p><strong>Part Five: Mastery</strong></p>
-<ol start="24" type="1">
+<ol start="25" type="1">
 <li><a href="#spellcasting">Spellcasting</a> — Magic for the studious
 adventurer</li>
 <li><a href="#luck-and-fortune">Luck and Fortune</a> — The hidden
@@ -153,7 +155,7 @@ you want</li>
 obtain it</li>
 </ol>
 <p><strong>Part Six: The Deep Dungeon</strong></p>
-<ol start="30" type="1">
+<ol start="31" type="1">
 <li><a href="#the-castle">The Castle</a> — The gateway to Gehennom</li>
 <li><a href="#gehennom">Gehennom</a> — A travel advisory</li>
 <li><a href="#the-ascension-kit">The Ascension Kit</a> — Gear for the
@@ -164,7 +166,7 @@ out alive</li>
 gauntlet</li>
 </ol>
 <p><strong>Appendices</strong></p>
-<ol start="35" type="1">
+<ol start="36" type="1">
 <li><a href="#advanced-controls">Advanced Controls</a> — Command counts,
 prefixes, and efficiency techniques</li>
 <li><a href="#options-worth-knowing-about">Customization</a> — rcfile
@@ -664,6 +666,19 @@ special cloak (of MR) or amulet (of reflection), a polished silver
 shield (reflection too), or a one-of-a-kind artifact bestowed by your
 god, won on <a href="#the-quest">the Quest</a>, or granted as a wish.
 Your adventure will be shaped by the protective items you obtain.</p>
+<p><strong>Rule 7: Type deliberately, never autorepeat.</strong> Each
+key you press is a turn. If you hold a movement key down and let it
+autorepeat, your character marches blindly until something stops them —
+usually a monster you didn’t intend to engage, a trap that’s just been
+revealed, or a fountain you didn’t mean to quaff. Press each key once
+and pause. To cross long corridors without typing one key per square,
+learn the <strong>shift-direction</strong> shortcut: capital
+<code>H J K L Y U B N</code> (or shift+arrow on number- pad layouts)
+moves continuously in that direction until something interesting
+appears. <code>G</code>+direction stops at the next item or monster; the
+<code>_</code> travel command goes to a clicked or specified target.
+These commands all <em>yield control</em> the instant something warrants
+your attention — autorepeat does not.</p>
 </section>
 <section id="dungeon-hazards-and-how-to-survive-them" class="level4">
 <h4>Dungeon Hazards (and How to Survive Them)</h4>
@@ -3920,19 +3935,6 @@ roll, and a fragile character with 30 HP isn’t going to soak even a
 single bad encounter. There’s no prize for getting to <a
 href="#sokoban">Sokoban</a> quickly. Clear, identify, level up, then
 descend.</p>
-<p><strong>On bones.</strong> “Bones” levels are levels saved from
-another adventurer’s death and replayed in your game. The game flags
-them (“This place looks familiar…” or a recognized layout, plus a grave
-marker in the dungeon overview) but doesn’t otherwise warn you. They are
-dangerous in two ways. First, items on a bones level generate cursed
-about 80% of the time, so don’t put on anything you find there without
-altar-testing or pet-testing. Second, and much less well known:
-bones-level <em>monsters</em> can be far above the level’s normal
-difficulty. The previous adventurer may have died with a master mind
-flayer adjacent, or a summoned demon nearby, or in monster form. Those
-creatures stick around. Treat any above-depth monster on a bones level
-as evidence to retreat, not to engage. If your character isn’t ready for
-the monster, leave the level and come back when you are.</p>
 <section id="common-combat-deaths" class="level4">
 <h4>Common Combat Deaths</h4>
 <p>Beyond the top ten, certain enemy categories kill more beginners than
@@ -4204,11 +4206,10 @@ also grants <strong>cold, shock, and poison resistance</strong>. Brown
 pudding and gray ooze are <em>vegetarian</em>-safe; black pudding is
 not. Globs of the same color stack and shrink together, so a pile of
 brown-pudding globs is a re-rollable chance at the resistance you don’t
-yet have. The strategic flip-side of the splitting trap: if you can kill
-one pudding cleanly (silver weapon, cold/fire wand, spell), the
-splitting becomes a <em>feature</em>: every divided pudding is one more
-glob to eat. The full intrinsic table is in <a
-href="#useful-corpse-effects">Useful Corpse Effects</a>.</p>
+yet have. Pudding splitting can have a strategic benefit. If you can
+kill one pudding cleanly, the splitting becomes a <em>feature</em>: very
+divided pudding is another glob to eat. The full intrinsic table is in
+<a href="#useful-corpse-effects">Useful Corpse Effects</a>.</p>
 </section>
 <section id="a-note-on-trolls" class="level4">
 <h4>A note on trolls</h4>
@@ -4360,6 +4361,106 @@ daggers, breath weapons: anything that doesn’t bring you adjacent.
 unicorn horn cures it.</p>
 <hr />
 </section>
+</section>
+<section id="saving-and-bones" class="level3">
+<h3>Saving and Bones</h3>
+<!-- audit
+2026-06-02:
+- save deletes file on load: anti-scum design (restore.c, save.c)
+- explore mode preserves save: -X command-line flag, "discover game" tag
+- Friday-13th sampled at session start: allmain.c:64-66 flags.friday13 = friday_13th(); insight.c:672-680 comments confirm it persists across the session even if real clock changes
+- moonphase sampled at session start: allmain.c sets flags.moonphase; insight.c:653-659 explicit comment that the value is at start of session, not real-time
+- bones generation chance = floor(depth/4) / (floor(depth/4) + 1); never above DL 4 (wiki/Bones)
+- bones-ineligible levels: branch-stair levels, Mines' End, Sokoban, Quest home/goal, Fort Ludios, Medusa, Castle, top/bottom of Vlad's, top/bottom of Wizard's Tower, vibrating square, Sanctum, all planes
+- items in bones: 4/5 cursed; artifacts revert to base items; quest artifacts stripped; Amulet of Yendor replaced with "cheap plastic imitation"; Candelabrum, Bell, Book of the Dead similarly replaced (bones.c)
+- unique monsters (Wizard, Medusa, Vlad, quest leader, quest nemesis) removed from saved bones; their statues become doppelgangers
+- monster type substitution at death: ghost (default), vampire (V kills), wraith (W kills), ghoul (ghoul kills), mummy of race (mummy kills), green slime (sliming death), statue (cockatrice death) (wiki/Bones)
+- bones=false rcfile option blocks both creation and loading; required for Bonesless conduct (insight.c:439-441)
+-->
+<p>A single NetHack run can span multiple play sessions. Two mechanisms
+govern what carries across that gap: <strong>saves</strong>, which
+preserve your game between sessions, and <strong>bones files</strong>,
+which preserve a dead adventurer’s level for a future hero to stumble
+into.</p>
+<p><strong>Saving.</strong> Press <code>S</code> and confirm to save and
+quit. To resume, start NetHack again with the same character name; the
+game loads your save and <strong>deletes the save file in the
+process</strong>. That deletion is the game’s anti-scum mechanism: there
+is no “load and try again.” If your character dies, the run is over.
+Copying save files outside the game to retry a death is what the
+community calls <strong>save scumming</strong> and is considered
+cheating.</p>
+<p>NetHack does offer an honest opt-out for learning: launch with the
+<code>-X</code> command-line flag to enter <strong>explore
+mode</strong>, which keeps the save file after loading and unlocks
+<code>#wizard</code>-lite debugging commands. Explore mode disables
+scoring and tags your end-of-game record as a “discover game” so it
+doesn’t compete with real runs.</p>
+<p><strong>The real-world clock.</strong> Your in-game state — Luck,
+alignment, prayer timeout, the turn counter, every active timer —
+persists exactly across a save and resume. But a handful of effects are
+sampled at <em>session start</em> against your computer’s real clock,
+and those refresh when you resume:</p>
+<ul>
+<li><strong>Moon phase.</strong> Full-moon and new-moon effects (e.g.,
+the cockatrice 1-in-3 stoning rate on a new moon) are determined by the
+date on which you started the session and held fixed for the whole
+session, even if you play past midnight.</li>
+<li><strong>Friday the 13th.</strong> A real-world Friday the 13th
+imposes a small Luck penalty for the whole session. Like the moon phase,
+it’s sampled once at start.</li>
+<li><strong>Day vs. night.</strong> Some undead effects (e.g., a nymph’s
+attribute drain at night) check the real clock too.</li>
+</ul>
+<p>If you start a session on a Friday-the-13th new-moon evening, the
+dungeon is genuinely worse — but only for that session. Save and resume
+the next day and those flags refresh.</p>
+<p><strong>Bones levels.</strong> When a hero dies on certain levels —
+most ordinary Dungeons-of-Doom levels at Dlvl 4 or deeper, plus Minetown
+and similar special levels (but <em>not</em> Sokoban, the Quest, Mines’
+End, the Castle, Vlad’s outer floors, or the planes) — the game saves
+the level as a <strong>bones file</strong>. A future game has roughly a
+1-in-3 chance of loading that bones file in place of generating that
+level from scratch, scaling up to 4/5 by Dlvl 16. The dungeon overview
+tags a loaded bones level (<em>“This place looks familiar…”</em> on
+entry) and a grave marker appears in the level overview.</p>
+<p>The bones level keeps its layout, traps, and items, with several
+adjustments:</p>
+<ul>
+<li>The dead hero leaves behind a <em>named</em> remnant — usually a
+<strong>ghost</strong>, but a <strong>vampire</strong> if killed by a
+vampire, a <strong>wraith</strong> if killed by one, a
+<strong>mummy</strong> for a mummy kill, a <strong>green slime</strong>
+for a sliming death, or a <strong>statue</strong> if the hero was
+petrified by a cockatrice. The hero’s corpse stays where it fell.</li>
+<li>Every non-artifact item in the hero’s inventory has an <strong>80%
+chance of being cursed</strong>, even items in containers. Pet test or
+altar test anything before wearing or wielding it.</li>
+<li>Artifacts revert to their base items, and any <em>quest</em>
+artifact is stripped entirely.</li>
+<li>The Amulet of Yendor and the three Invocation items, if the former
+hero carried them, are swapped with cursed mundane doubles — a “cheap
+plastic imitation” amulet, a blank spellbook, a partly-used wax candle,
+an ordinary bell.</li>
+<li>Unique monsters that <em>should</em> be on the level (the Wizard,
+Medusa, Vlad, your quest leader and nemesis) are removed; any statues of
+unique monsters are silently swapped for doppelgangers in their
+guise.</li>
+</ul>
+<p><strong>Bones-level dangers.</strong> The 80% curse rate is the
+obvious one, but the subtler danger is that bones-level
+<em>monsters</em> can be far above the level’s normal difficulty. The
+previous adventurer may have died with a master mind flayer adjacent, or
+a summoned demon nearby, or in monster form. Those creatures stick
+around. Treat any above-depth monster on a bones level as evidence to
+retreat, not to engage. If your character isn’t ready for the monster,
+leave the level and come back when you are.</p>
+<p><strong>Opting out.</strong> Set <code>OPTIONS=bones=false</code> in
+your rcfile if you want a bones-free run. This blocks both
+<em>creating</em> bones (your own death won’t generate a file) and
+<em>loading</em> bones (you’ll never inherit a level). The
+<strong>Bonesless</strong> conduct (new in 5.0) requires it.</p>
+<hr />
 </section>
 <section id="ways-to-die-instantly" class="level3">
 <h3>Ways to Die Instantly</h3>
