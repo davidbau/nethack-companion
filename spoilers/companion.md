@@ -8792,6 +8792,12 @@ NetHack pins the message line at row 0 no matter what you set.
   effect even when the hero is flying or levitating. So flying/
   levitation does not let you skip Sokoban's pits — different
   mechanic from the Luck penalty.
+- digging walls is blocked by the level's `solidify` flag, which
+  sets W_NONDIGGABLE and W_NONPASSWALL on every wall (sp_lev.c:
+  315-323 solidify_map). Wand of digging fails on Sokoban walls
+  and xorn / earth-elemental polyforms can't phase through them
+  either. Like the air-currents mechanic above, this is a level-
+  design constraint rather than a Luck penalty.
 - counted as the `sokocheat` conduct counter (insight.c:2219,
   topten.c:446) — affects the "Sokoban completion" achievement
 -->
@@ -8802,10 +8808,10 @@ You push boulders onto pits to fill them and create a path to the
 next staircase. The penalty for cheating (squeezing past or
 stepping onto a boulder instead of pushing it, destroying boulders
 with wands, reading a scroll of earth in Sokoban) is a −1 Luck
-penalty per infraction, and it stacks. Flying and levitation
-don't help, either — Sokoban pits and holes apply *"Air currents
-pull you down…"* the moment you step over one, bypassing the
-usual float-over escape. Play fair.
+penalty per infraction, and it stacks. Digging walls doesn't work
+in Sokoban — the rock is too hard. Flying and levitation don't
+help either: *"Air currents pull you down…"* if you try to fly
+over an unfilled pit. Play fair.
 
 > *Solutions originally compiled by Boudewijn Waijers, with
 > contributions by Jukka Lahtinen and others, for the steelypips.org
