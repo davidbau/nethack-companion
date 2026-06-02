@@ -11340,7 +11340,7 @@ Mixed bag. Rothes are early-game wreckers (three attacks per turn). Mumakil are 
 - Rock mole is M1_METALLIVORE: eats metal, including bag of gold and unattended weapons (mondata.c:561, hack.c:769-784).
 -->
 
-Mostly nuisance fodder. Giant rats are common in the early dungeon; their corpses are safe food.
+Mostly nuisance fodder. Giant rats are common in the early dungeon; their corpses are safe food. Don't eat wererats.
 
 ::: dense-table
 
