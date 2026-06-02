@@ -11026,9 +11026,7 @@ All eyes and spheres fly. All except *floating eye* also are mindless.
 Cats. Kittens are common starting pets (Wizards always start with
 one; Valkyries and Tourists roll 50/50 between kitten and little
 dog). Wild felines (jaguar, lynx, panther, tiger, displacer beast)
-are hostile by default; you'd need a charm-monster spell, scroll
-of taming, or magic flute to flip them, and the wild rows aren't
-really "early-game" creatures.
+are hostile by default.
 
 ::: dense-table
 
