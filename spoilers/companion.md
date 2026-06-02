@@ -8617,7 +8617,7 @@ for directions). Off by default; enabling it changes digit-prefix
 behavior so you press `n` first to enter a count.
 
 **`runmode:walk`** slows the travel command down enough that you
-stop on interesting messages (default `runonly` blasts through
+stop on interesting messages (default `run` blasts through
 everything until you hit something).
 
 #### Verbosity
