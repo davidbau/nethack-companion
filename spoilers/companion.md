@@ -3398,8 +3398,8 @@ three tentacle attacks per turn; the **master mind flayer** has
 *five*, plus a heavier weapon strike. A single unprepared turn
 next to a master mind flayer can drop your Int by up to ten.
 Each hit also has a 1-in-5 chance to trigger **spell amnesia**: a
-random number of your memorized spells (zero to all of them) drop
-to zero retention; re-study from spellbooks to restore.
+random number of your spells (up to all of them) drop to zero
+retention; re-study spellbooks to restore.
 
 **Defenses:** **Wear any helmet.** Even a plain orcish helm blocks
 seven of every eight tentacle drains. Greasing the helmet stacks an
@@ -3422,8 +3422,7 @@ Two monsters hide in plain sight until you walk into them. The
 drops onto whoever passes underneath; the **trapper** (`t`,
 green, level 12) hides on the floor and engulfs whoever steps
 onto it. Both look like ordinary terrain until they trigger.
-Engulfment wraps and crushes rather than digesting, but you still
-take damage every turn until you cut your way out.
+Their engulfment wraps and crushes rather than digesting.
 
 Other engulfers don't hide; they just swallow you in melee.
 Dragons and purple worms can swallow whole creatures up to their
