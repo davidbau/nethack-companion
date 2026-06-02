@@ -8809,7 +8809,7 @@ next staircase. The penalty for cheating (squeezing past or
 stepping onto a boulder instead of pushing it, destroying boulders
 with wands, reading a scroll of earth in Sokoban) is a −1 Luck
 penalty per infraction, and it stacks. Digging walls doesn't work
-in Sokoban — the rock is too hard. Flying and levitation don't
+in Sokoban: the rock is too hard. Flying and levitation don't
 help either: *"Air currents pull you down…"* if you try to fly
 over an unfilled pit. Play fair.
 
