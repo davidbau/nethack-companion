@@ -8552,18 +8552,17 @@ the `NETHACKOPTIONS` environment variable.
 
 - **`hilite_status`** colorizes the bottom status line — HP, hunger,
   AC and the other fields can each carry their own threshold rules.
-  Pair it with **`statushilites=N`**: the master on/off for the
-  highlighting system. Any non-zero N enables it; N also sets how
-  many turns a brief "value just changed" flash stays visible
-  (default 3, minimum 1). Concrete HP and hunger rules:
+  Pair it with **`statushilites`**, which turns the system on;
+  without it the rules below parse but nothing colors. Concrete HP
+  and hunger rules:
 
   ```
+  OPTIONS=statushilites
   OPTIONS=hilite_status:hitpoints/<66%/yellow/
    <50%/orange/<33%/red&bold/<15%/red&inverse
   OPTIONS=hilite_status:hunger/Satiated/yellow/
    Hungry/orange/Weak/red&bold/Fainting/red&inverse/
    Fainted/red&inverse+blink
-  OPTIONS=statushilites=1
   ```
 
   The single most-recommended setting in community rcfiles.

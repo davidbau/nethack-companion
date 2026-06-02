@@ -12041,16 +12041,15 @@ environment variable.</p>
 <li><p><strong><code>hilite_status</code></strong> colorizes the bottom
 status line — HP, hunger, AC and the other fields can each carry their
 own threshold rules. Pair it with
-<strong><code>statushilites=N</code></strong>: the master on/off for the
-highlighting system. Any non-zero N enables it; N also sets how many
-turns a brief “value just changed” flash stays visible (default 3,
-minimum 1). Concrete HP and hunger rules:</p>
-<pre><code>OPTIONS=hilite_status:hitpoints/&lt;66%/yellow/
+<strong><code>statushilites</code></strong>, which turns the system on;
+without it the rules below parse but nothing colors. Concrete HP and
+hunger rules:</p>
+<pre><code>OPTIONS=statushilites
+OPTIONS=hilite_status:hitpoints/&lt;66%/yellow/
  &lt;50%/orange/&lt;33%/red&amp;bold/&lt;15%/red&amp;inverse
 OPTIONS=hilite_status:hunger/Satiated/yellow/
  Hungry/orange/Weak/red&amp;bold/Fainting/red&amp;inverse/
- Fainted/red&amp;inverse+blink
-OPTIONS=statushilites=1</code></pre>
+ Fainted/red&amp;inverse+blink</code></pre>
 <p>The single most-recommended setting in community rcfiles.</p></li>
 <li><p><strong><code>menucolors</code></strong> colorizes menu entries
 by pattern. The two most-useful rules are the BUC tags, so anything
