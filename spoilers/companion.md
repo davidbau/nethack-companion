@@ -13666,7 +13666,7 @@ forked from Brouwer's Hack in 1987. Many of the most distinctive
 NetHack monsters, including the **grid bug**, the orthogonal-only
 critter whose name puns on both "insect" and "software bug" living
 on a character-cell grid (with a likely nod to the bugs in the 1982
-film *Tron*), were already in Hack before NetHack inherited them.
+film *Tron*), are inherited from Fenlason's original Hack.
 The dungeon is older than the game.
 
 The development was not always continuous. After version 3.4.3 in
