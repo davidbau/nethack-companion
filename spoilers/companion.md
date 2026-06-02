@@ -3399,9 +3399,7 @@ three tentacle attacks per turn; the **master mind flayer** has
 next to a master mind flayer can drop your Int by up to ten.
 Each hit also has a 1-in-5 chance to trigger **spell amnesia**: a
 random number of your memorized spells (zero to all of them) drop
-to zero retention; re-study from spellbooks to restore. (Before
-5.0 amnesia used to wipe maps and identification also, but no
-longer.)
+to zero retention; re-study from spellbooks to restore.
 
 **Defenses:** **Wear any helmet.** Even a plain orcish helm blocks
 seven of every eight tentacle drains. Greasing the helmet stacks an
@@ -3425,8 +3423,7 @@ drops onto whoever passes underneath; the **trapper** (`t`,
 green, level 12) hides on the floor and engulfs whoever steps
 onto it. Both look like ordinary terrain until they trigger.
 Engulfment wraps and crushes rather than digesting, but you still
-take damage every turn until you cut your way out, with limited
-movement options while inside.
+take damage every turn until you cut your way out.
 
 Other engulfers don't hide; they just swallow you in melee.
 Dragons and purple worms can swallow whole creatures up to their
@@ -3662,11 +3659,10 @@ a +7 sword to +3; that passive drain is silent. Range-killing
 sidesteps both attacks at once.
 
 **Defenses.** **Magic-cancellation armor** at MC3 mostly blocks
-their armor drain, but doesn't stop melee from draining your
-weapon. Don't melee them even with MC3 armor. Rings of conflict and pets
-reliably redirect them to other targets. Artifacts resist drain
-9 times in 10; ordinary items only 1 in 10. **Don't eat the
-corpse**: it strips a random intrinsic.
+their armor drain but doesn't stop the melee counter that drains
+your weapon. Rings of conflict and pets redirect them to other
+targets. Artifacts resist drain 9 times in 10; ordinary items only
+1 in 10. **Don't eat the corpse**: it strips a random intrinsic.
 
 <!-- audit
 2026-05-18:
@@ -3712,9 +3708,8 @@ the high-damage hit; the permadrain still hurts.
 resistance only when the death ray *hits you from outside*. If you
 misfire and self-zap, MR doesn't save you; only being **nonliving**
 (polymorphed into a vampire, lich, skeleton, etc.) or a demon will.
-This is one of the rare cases where being polymorphed into something
-dead is the safer state. The same nonliving/demon immunity also
-protects against incoming death rays.
+The same nonliving/demon immunity also protects against incoming
+death rays.
 
 An amulet of life saving will revive you once if the touch or zap
 kills you outright.
@@ -3793,14 +3788,11 @@ check uses the eel's tile, so levitation, water walking, and
 encumbrance status are irrelevant once the grab lands.
 **Cures:** magical breathing (amulet or spell), kill or teleport
 the eel before it pulls you under, or avoid water entirely. See
-[Drowning](#drowning) in
-[Ways to Die Instantly](#ways-to-die-instantly) for the full
-picture.
+[Drowning](#drowning) above for the full picture.
 
-**Strangulation.** Wearing a cursed amulet of strangulation slowly
-kills you over a few turns. **Cure:** remove the amulet (requires
-uncursing it first, since cursed amulets can't be removed: use a
-scroll of remove curse, holy water, or prayer).
+**Strangulation.** A cursed amulet of strangulation slowly kills
+you. **Cure:** uncurse it first (scroll of remove curse, holy water,
+or prayer), then remove it.
 
 ---
 
