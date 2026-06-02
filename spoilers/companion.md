@@ -8706,8 +8706,7 @@ The map now looks like this:
 6. Push H left one square.
 7. Finish I, J, E, G, H, F, B, D, and C.
 
-One boulder (A) remains. The two scrolls at (3,12) and (4,12)
-are always scrolls of earth.
+One boulder (A) remains. The scrolls at (3,12) and (4,12) are scrolls of earth.
 
 #### Level 1, Version B {.sokoban-level data-width=15 data-height=11}
 <!-- audit
@@ -8776,8 +8775,7 @@ The map now looks like this:
 15. Move A up one square.
 16. Finish A like B.
 
-Two boulders (D and E) remain. The two scrolls at (2,10) and
-(3,10) are always scrolls of earth.
+Two boulders (D and E) remain. The scrolls at (2,10) and (3,10) are scrolls of earth.
 
 <!-- audit
 2026-05-19:
