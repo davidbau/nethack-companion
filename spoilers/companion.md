@@ -212,7 +212,7 @@ fragile in early combat. *Alignment: Lawful or Neutral.*
 good starting strength mean you can hack through early monsters with
 ease. The downside is that two-handed weapons prevent you from using a
 shield, and Barbarians are not known for their finesse. You do get
-poison resistance from the start, which saves you from several common
+[poison resistance](#damage-resistances) from the start, which saves you from several common
 early deaths. A straightforward role for players who like straightforward
 solutions. *Alignment: Neutral or Chaotic.*
 
@@ -249,7 +249,7 @@ reposition without spending an attack. *Alignment: Lawful.*
 **Monk.** You fight best with bare hands and start with no weapon
 at all. Monks gain martial arts abilities as they level, eventually
 becoming formidable unarmed combatants. You start with sleep
-resistance and see invisible, and you should avoid eating meat if
+resistance and [see invisible](#senses-and-perception), and you should avoid eating meat if
 you want to maintain your spiritual discipline. **Mind what you
 wear:** body armor costs −20 to-hit, a shield disables your
 martial-arts hit bonus, and metallic helmets, gloves, or boots
@@ -347,7 +347,7 @@ below shows the maximum each race can reach for each attribute.
 | Gnome | 18/50  | 19  | 18  | 18  | 18  | 18  | Infravision                    |
 | Orc   | 18/50  | 16  | 16  | 18  | 18  | 16  | Infravision, poison res        |
 
-**Human.** No infravision, no poison resistance, no special
+**Human.** No [infravision](#senses-and-perception), no poison resistance, no special
 talents. On the bright side, every role is open to you and
 nobody in the dungeon singles you out for being one.
 Perfectly serviceable.
@@ -357,7 +357,7 @@ matching human Strength. Infravision (the ability to see
 warm-blooded creatures in the dark) from level 1. Available
 for: Archeologist, Cave Dweller, Valkyrie.
 
-**Elf.** Infravision plus sleep resistance at XL 4. Fragile compared
+**Elf.** Infravision plus [sleep resistance](#damage-resistances) at XL 4. Fragile compared
 to humans but with the best Int and Wis caps. Elf Priests and
 Wizards get a free musical instrument. Available for: Priest,
 Ranger, Wizard.
@@ -401,7 +401,7 @@ expectations. Chaotic is often paired with Rogue for thematic
 consistency.
 
 For your first game: **Lawful or Neutral Valkyrie, Human or Dwarf.** Strong
-combat, cold resistance, and Mjollnir waiting at the first
+combat, [cold resistance](#damage-resistances), and Mjollnir waiting at the first
 co-aligned altar you can sacrifice on. It's the closest thing to
 an easy mode the Mazes offer, which is to say it's still very
 hard.
@@ -576,8 +576,8 @@ don't grind. When you've found what the level has to offer, move on.
 **Rule 6: Build your defenses.** In the first half of the game,
 your real goal isn't accumulating treasure. It's acquiring the
 resistances and protections that will help you survive the late
-game. The three most important are **magic resistance**,
-**reflection**, and **poison resistance**. Poison
+game. The three most important are **[magic resistance](#damage-resistances)**,
+**reflection**, and **[poison resistance](#damage-resistances)**. Poison
 resistance can be acquired as an *intrinsic* by eating the right
 corpse, like a killer bee, a cave spider, a yellow mold, or a
 [black pudding](#a-note-on-puddings) kicked from a sink.
@@ -1153,7 +1153,7 @@ possible outcomes reads like a wish list shuffled with a hit list:
 - Confusion
 - A curse on one of your items
 - Magic mapping of the level
-- See invisible
+- [See invisible](#senses-and-perception)
 - All your gold, vanished
 
 About one time in three, something happens, but you won't know which
@@ -1550,7 +1550,7 @@ artifact has been sitting under their feet the whole time, placed
 when the level was generated. Pick both up. The Quest is the only
 place in the game you can get them.
 
-Most nemeses carry an amulet of life saving, so expect to kill them
+Most nemeses carry an amulet of [life saving](#special-and-utility), so expect to kill them
 twice. The portal back to the main dungeon is on the first Quest
 level only. If you descend underprepared and have to turn back, you
 may have a long climb home.
@@ -1669,7 +1669,7 @@ statues scattered around (those used to be adventurers).
 The level has three challenges stacked together:
 
 1. **Crossing the water.** The island is surrounded by water.
-   You'll need levitation, water walking boots, or some creative
+   You'll need levitation, [water walking](#movement-and-spatial-behavior) boots, or some creative
    approach (freezing water with a wand of cold, building a boulder
    bridge, polymorphing into a flying creature). Don't wade in
    without preparation, because:
@@ -1713,7 +1713,7 @@ entering her level:
   Her gaze bounces back and stones her instead. This is the
   cleanest solution and the one most players use.
 - **Blindfold or towel.** Wear it before entering line of sight.
-  You'll need telepathy or monster detection to navigate while
+  You'll need [telepathy](#senses-and-perception) or monster detection to navigate while
   blind. Works perfectly but makes the level harder to explore.
 - **A mirror.** Apply it at Medusa to reflect her gaze at close
   range. More dangerous than passive reflection since you need to
@@ -1740,7 +1740,7 @@ Your options, from safest to most desperate:
 - **Scroll of earth.** Creates boulders that fall into the water,
   making a boulder bridge. Slow but works if you have nothing else.
 - **Polymorph** into a flying or swimming creature. Risky if you
-  lack polymorph control.
+  lack [polymorph control](#special-and-utility).
 - **Jumping boots or the knight's jump.** Can leap across narrow
   water gaps, but requires careful positioning.
 
@@ -1751,7 +1751,7 @@ you. Critical rules:
 - An **oilskin cloak** or **greased armor** makes the eel slip off
   on the grab attempt. Greasing wears off, so it's not fully
   reliable; oilskin doesn't.
-- **Magical breathing** (amulet or polymorph) prevents the drown
+- **[Magical breathing](#movement-and-spatial-behavior)** (amulet or polymorph) prevents the drown
   even after being grabbed.
 - **Kill eels at range** whenever possible. Wands, spells, and
   thrown weapons all work. Don't melee eels in the water.
@@ -1860,7 +1860,7 @@ to stock up.
 
 Trapdoors and level teleporters are the most disruptive: one wrong
 step and you're separated from your pet, your stash, and your
-carefully explored map. But with teleport control (from an item or
+carefully explored map. But with [teleport control](#movement-and-spatial-behavior) (from an item or
 intrinsic), teleport traps become free transportation. **Levitation
 or flying** both make you immune to pits, holes, and trapdoors
 entirely. Except in Sokoban, where the puzzle levels disable the
@@ -1899,15 +1899,15 @@ skip and you fall in regardless.
 Fire traps are the sleeper threat. The fire itself hurts, but
 the real catastrophe is your inventory: scrolls burn, potions
 shatter, and that stack of twenty scrolls of identify you've been
-hoarding is suddenly ash. Fire resistance saves your skin but
+hoarding is suddenly ash. [Fire resistance](#damage-resistances) saves your skin but
 *not* your belongings. Items inside a *sack* or *oilskin sack*
 survive the trap; the sack itself absorbs the burn. Gehennom is
 fire-trap country, so keep your consumables bagged.
 
-Polymorph traps are a double-edged sword. With polymorph control,
+Polymorph traps are a double-edged sword. With [polymorph control](#special-and-utility),
 they're a free polymorphing booth. Without it, you become something
 random, possibly a newt that can't use any of its equipment.
-**Magic resistance and the Unchanging intrinsic both block the
+**[Magic resistance](#damage-resistances) and the [Unchanging](#special-and-utility) intrinsic both block the
 polymorph entirely.** Tcontrol is the only way to *use* the trap;
 MR or Unchanging let you walk through it untouched.
 
@@ -1923,7 +1923,7 @@ can use a wand or cast.)
 
 Sleeping gas is murder in monster-rich areas. You can't fight, you
 can't run, you can't even wake up on purpose. Monsters line up
-to hit you like it's a buffet. Sleep resistance (elven blood, the
+to hit you like it's a buffet. [Sleep resistance](#damage-resistances) (elven blood, the
 right ring) sidesteps it.
 
 Magic traps roll one of about a dozen random effects. The
@@ -2683,7 +2683,7 @@ time-tested tactics that keep adventurers breathing.
   only for survival. If a fight is going badly, use a scroll of
   teleportation, a wand of teleportation, or just run. Dead
   adventurers do not get second chances (unless wearing an
-  amulet of life saving).
+  amulet of [life saving](#special-and-utility)).
 - **Use conflict.** A ring of conflict makes monsters fight each
   other. Walk into a room full of enemies, put on the ring, and
   watch from the doorway as they destroy each other. Two 5.0
@@ -2817,7 +2817,7 @@ wizards (the first spellcasting enemy you meet) can sleep you,
 confuse you, and worse. Lords and kings appear deeper, with
 differently colored `G` and `h` glyphs. Take a look at the first
 Mines level, but it is usually wise to come back later after you
-are at XL 5 or better, have sleep resistance, and have AC at zero
+are at XL 5 or better, have [sleep resistance](#damage-resistances), and have AC at zero
 or below.
 
 **Sleep without resistance is a near-instadeath.** A homunculus
@@ -2871,17 +2871,17 @@ summons a water demon roughly 1 quaff in 30. Water demons
 are major demons (class `&`, level 8) who attack first and
 grant a wish only if you survive. Wish odds also drop with
 depth, so casual quaffing pays worse the deeper you go.
-Don't quaff from fountains until you have magic resistance,
+Don't quaff from fountains until you have [magic resistance](#damage-resistances),
 reflection, or a clear path of retreat.
 
 **Floating eyes** (`e`). Hit one in melee and you're paralyzed for
 ~70 turns; whatever passes by during the nap kills you. Kill at
-range, then eat the corpse for telepathy.
+range, then eat the corpse for [telepathy](#senses-and-perception).
 
 **Minotaurs** (`H`, in the Castle and maze levels of Gehennom).
 Three attacks averaging ~38 damage per turn. The hardest hitter
 short of the Riders themselves. A wand of sleep, a thrown potion
-of paralysis (with free action), or just digging down before they
+of paralysis (with [free action](#combat-and-defense)), or just digging down before they
 reach you are the standard answers.
 
 **Major demons gate in more major demons.** Every melee hit from
@@ -2974,9 +2974,9 @@ not dying to wands.
 
 **Black** dragons disintegrate everything you're wearing along with
 you, including your magic resistance. Carry reflection or eat enough
-black dragons to grow disintegration resistance before going where
+black dragons to grow [disintegration resistance](#damage-resistances) before going where
 they live. Their scale mail grants disintegration resistance plus
-drain resistance, a rare extrinsic source of the latter.
+[drain resistance](#damage-resistances), a rare extrinsic source of the latter.
 
 **Yellow** dragon scale mail is an underrated pick. Listed power is
 acid resistance, but it also grants **stoning resistance**, the
@@ -3325,7 +3325,7 @@ instantly.
 it puts a short countdown on your throat and kills you when it runs
 out. The amulet generates cursed 90% of the time, so you usually
 can't just take it off: pray, or uncurse it with holy water or
-remove curse. Magic resistance doesn't help; strangulation isn't
+remove curse. [Magic resistance](#damage-resistances) doesn't help; strangulation isn't
 an attack, it's a timer death. Polymorphing into a Breathless form
 *does* save you.
 
@@ -3368,7 +3368,7 @@ usually survive; at low HP it can outright kill you. The
 Eating any Rider corpse (Death, Pestilence, *or*
 Famine) is genuinely instantly fatal regardless of HP.
 
-**Defenses:** Poison resistance makes you immune. Most characters
+**Defenses:** [Poison resistance](#damage-resistances) makes you immune. Most characters
 can get this early by eating enough appropriate corpses. It's one
 of the first intrinsics worth acquiring.
 
@@ -3408,7 +3408,7 @@ seven of every eight tentacle drains. Greasing the helmet stacks an
 additional slip-off roll on top, so a greased helmet is the gold
 standard. Better yet, kill them at range (wands, spells) so the
 question doesn't arise. One counterintuitive detail: a mind
-flayer's *mind blast* only fires if you have telepathy. If you're
+flayer's *mind blast* only fires if you have [telepathy](#senses-and-perception). If you're
 wearing an amulet of ESP and you can spare the turn, take it off
 before the fight. To recover drained Intelligence you need a
 *potion of restore ability* (uncursed restores one stat; blessed
@@ -3465,7 +3465,7 @@ Giant eels, electric eels, and krakens can grab you with their
 wrap attack. Once they have you, each of the monster's turns you
 can drown. The check uses the *monster's* tile (always water for
 an eel or kraken), not yours, so you can drown even while standing
-on adjacent dry land. Only *Swimming*, *magical breathing*, or
+on adjacent dry land. Only *Swimming*, *[magical breathing](#movement-and-spatial-behavior)*, or
 *amphibious form* prevent the drown; encumbrance doesn't matter
 here. (Encumbrance only matters if you *fall* into water and need
 to crawl out; Stressed or worse forces emergency disrobe.) You'll
@@ -3533,7 +3533,7 @@ pray, or cast stone-to-flesh on yourself. Keep the lizard in your
 turn you can't spare against a two-turn timer. Note: act *before*
 the "Your limbs have turned to stone" message; after that
 you're paralyzed for three turns and the final messages kill you. Amulet
-of Unchanging does **not** interrupt stoning. If you happen to be
+of [Unchanging](#special-and-utility) does **not** interrupt stoning. If you happen to be
 polymorphed into a non-stone golem, wearing it during the countdown
 is actively harmful; it blocks the stone-golem auto-poly that
 would otherwise save you on death.
@@ -3546,7 +3546,7 @@ same curative effect.
 
 **The other side of the coin:** a wielded cockatrice corpse (with
 gloves on) is one of the game's most devastating weapons.
-anything you hit that lacks stoning resistance turns to stone. The
+anything you hit that lacks [stoning resistance](#damage-resistances) turns to stone. The
 classic offense, known to veterans as the "rubber chicken,"
 handles demon lords, Medusa, and even a Rider on a good day. The
 failure modes you must guard against are falling into a pit, hole,
@@ -3857,7 +3857,7 @@ After resolving the major troubles above, your god may also grant
 additional blessings: clearing minor afflictions (plain hunger,
 blindness, confusion, stunning, hallucination, ordinary punishment
 with iron ball and chain), improving your alignment, or even
-gifting intrinsics like telepathy or speed.
+gifting intrinsics like [telepathy](#senses-and-perception) or speed.
 
 **The requirements for a safe prayer.** All of the following must
 be true:
@@ -4057,8 +4057,8 @@ your god may crown you on a successful prayer. Crowning grants:
   long sword you happen to be wielding into Excalibur in place, so
   having a +7 long sword in hand at the moment of crowning gives
   you a +7 Excalibur.
-- Intrinsic fire resistance, cold resistance, shock resistance,
-  sleep resistance, poison resistance, and see invisible.
+- Intrinsic [fire resistance](#damage-resistances), [cold resistance](#damage-resistances), [shock resistance](#damage-resistances),
+  [sleep resistance](#damage-resistances), [poison resistance](#damage-resistances), and see invisible.
 - Permanent skill-unrestriction on your alignment's sword slot, and
   permanent knowledge of your role's special spell.
 - A class-specific bonus: Wizards get the *finger of death* spell;
@@ -4241,7 +4241,7 @@ Current editions have added two things that veteran pet-owners should know.
 
 First: your pet eats for a reason beyond loyalty. The same corpse
 mechanics that grant you resistances apply to pets as well. A pet that
-dines on the right monsters will gain resistances: fire resistance, cold
+dines on the right monsters will gain resistances: [fire resistance](#damage-resistances), cold
 resistance, whatever the dungeon's terrible buffet was offering. A
 well-fed pet is also a better-armored one. This is not something you can
 reliably engineer, but it's a reason to let your pet eat rather than
@@ -4559,7 +4559,7 @@ explode in the hands of anyone who isn't a careful Wizard.
 Healing sits alone at $20, uniquely identifiable from the price tag.
 Water is always the "clear" potion, so if you see "clear potion" you
 know what it is without even checking the price. The $50 group is
-tricky because sickness and see invisible are in there together (one
+tricky because sickness and [see invisible](#senses-and-perception) are in there together (one
 very good, one very bad). The $200 group is packed with excellent
 potions.
 
@@ -4575,7 +4575,7 @@ potions.
 <div class="price-id-toolbar"></div>
 
 The $300 group is extremely informative: only four rings live there,
-and three of them (conflict, polymorph control, teleport control) are
+and three of them (conflict, [polymorph control](#special-and-utility), [teleport control](#movement-and-spatial-behavior)) are
 among the most powerful in the game.
 
 ##### Wand Prices
@@ -4769,7 +4769,7 @@ If you find a sink, you can drop a ring down it. Each ring type
 produces a characteristic message, identifying the ring. See
 [Sinks](#sinks) under Points of Interest for the full
 message-to-ring table; the short version is that searching and
-slow digestion come back to you (free identification), and every
+[slow digestion](#special-and-utility) come back to you (free identification), and every
 other ring is consumed.
 
 #### Use-Testing (The Careful Way)
@@ -4866,12 +4866,12 @@ pools are:
 
 - 4 magical **helms** share 4 appearances: plumed / etched /
   crested / visored helmet → one of helmet, helm of caution, helm
-  of opposite alignment, helm of telepathy. (Helm of brilliance is
+  of opposite alignment, helm of [telepathy](#senses-and-perception). (Helm of brilliance is
   always "crystal helmet"; dunce cap and cornuthaum both look like
   "conical hat"; that pair *is* a fixed pun.)
 - 4 magical **cloaks** share 4 appearances: tattered cape / opera
   cloak / ornamental cope / piece of cloth → one of cloak of
-  protection, invisibility, magic resistance, or displacement.
+  protection, invisibility, [magic resistance](#damage-resistances), or displacement.
 - 4 **gloves** share 4 appearances: old / padded / riding / fencing
   gloves → leather gloves or one of the three gauntlet types
   (fumbling, power, dexterity).
@@ -5104,7 +5104,7 @@ Your nutrition starts at 900 and ticks down steadily. The rate
 depends on what you're doing:
 
 - **Base consumption** costs 1 point per turn (less while sleeping).
-- **Regeneration** (from a ring or intrinsic) costs extra on odd turns.
+- **[Regeneration](#combat-and-defense)** (from a ring or intrinsic) costs extra on odd turns.
 - **Encumbrance** costs extra on odd turns if you're **stressed** or worse (burdened alone is free).
 - **Rings** cause additional hunger while worn. Two rings drain faster.
 
@@ -5134,8 +5134,8 @@ while there's a freshly dead rat at your feet. A few rules:
 - Eat corpses within 30 to 50 turns of the kill. Past that they risk
   being tainted, which means food poisoning (lethal without treatment).
 - Never eat old corpses. If in doubt, don't eat it.
-- Some corpses grant intrinsic resistances (poison resistance from
-  killer bees, fire resistance from fire giants, etc.). Eat these
+- Some corpses grant intrinsic resistances ([poison resistance](#damage-resistances) from
+  killer bees, [fire resistance](#damage-resistances) from fire giants, etc.). Eat these
   deliberately, even when you are not hungry. See the table below.
 - Some corpses are harmful (cockatrice corpses petrify you, green
   slimes turn you into slime, kobold meat is poisonous). Know which
@@ -5241,7 +5241,7 @@ eaten. Puddings and acid blobs leave **globs** rather than
 corpses (a 5.0 food-handling detail that doesn't change the
 strategy), and the globs of one color stack and shrink slowly,
 so a pile of brown-pudding globs is a re-rollable chance at
-shock resistance.
+[shock resistance](#damage-resistances).
 
 #### Food Strategy
 
@@ -6261,7 +6261,7 @@ keeps indefinitely. The interesting part is that tin-eating skips
 the raw-corpse poison and acid damage checks. A tinned killer bee
 or acid blob is safe to eat with no resistance, and the
 intrinsic-grant still applies, so the kit doubles as a way to
-grind poison or acid resistance without taking the per-corpse
+grind poison or [acid resistance](#damage-resistances) without taking the per-corpse
 hits. One warning the kit doesn't give: tinning a cockatrice
 without gloves petrifies you on the spot.
 
@@ -7322,7 +7322,7 @@ Generations of adventurers have argued about optimal wish order.
 Here's the conventional wisdom, battle-tested by thousands of
 ascensions:
 
-1. **Gray dragon scale mail** (magic resistance + AC; magic resistance
+1. **Gray dragon scale mail** ([magic resistance](#damage-resistances) + AC; magic resistance
    is the most important protection in the game, so this is highly recommended).
 2. **Silver dragon scale mail** (reflection + AC, the second pillar
    of not dying to wands).
@@ -7330,7 +7330,7 @@ ascensions:
    for both offense and escape).
 4. **Gauntlets of power** (STR 25 if your role benefits;
    most roles benefit from punching harder).
-5. **Amulet of life saving** (insurance for the endgame, when
+5. **Amulet of [life saving](#special-and-utility)** (insurance for the endgame, when
    overconfidence kills more adventurers than monsters do).
 6. **A specific artifact** (Grayswandir is a common target for the
    silver damage against everything in Gehennom).
@@ -7792,8 +7792,8 @@ luck, or wresting. The era of the bottomless wishing wand is over
 Once you're fully equipped, the trap doors in the central
 hallway are your way down to Gehennom. Take a moment before
 descending. Sit down. Have a snack. Check
-your inventory twice. You should have **magic resistance**,
-**reflection**, **fire** and **poison resistance**, a **wand of
+your inventory twice. You should have **[magic resistance](#damage-resistances)**,
+**reflection**, **fire** and **[poison resistance](#damage-resistances)**, a **wand of
 digging**, a **unicorn horn**, plenty of food, holy water,
 scrolls of teleportation and identify, and your **quest
 artifact**.
@@ -7856,7 +7856,7 @@ may have a special fate reserved for members of those classes.
   accordingly; from here on you are on your own.
 - **Fire everywhere.** Fire traps litter the corridors, and demons
   breathe fire as casually as you breathe air. If you do not have
-  fire resistance by now, turn around.
+  [fire resistance](#damage-resistances) by now, turn around.
 - **Hot ground.** In 5.0, the ground itself is hot enough to
   shatter potions dropped on the floor. Keep everything in a bag
   at all times.
@@ -7942,7 +7942,7 @@ lands, with about seven bad effects absorbed along the way.
 Stand at full HP, leave any precious gear behind (a grease hit
 coats your whole pack and makes your hands slippery for 100 to
 200 turns, dropping items when you try to use them), and have
-acid resistance or magic resistance ready before you sit. If you
+[acid resistance](#damage-resistances) or [magic resistance](#damage-resistances) ready before you sit. If you
 do not want a forced wish right now (say, you have already used
 your Castle wish and Amulet wish and want to keep this one for
 the ascension kit), you can come back later. The throne stays
@@ -7957,7 +7957,7 @@ flier), the **Prince of Undead**, who casts spells, swings a
 weapon, claws twice, and stings for strength drain. His
 signature artifact is the **Wand of Orcus**, a wand of death by
 another name. His fingertip cantrip is also a death ray, so wear
-an amulet of life saving and consider opening with your own wand
+an amulet of [life saving](#special-and-utility) and consider opening with your own wand
 of death rather than a melee approach.
 
 His level is a ghost town. A normal shopping district has been
@@ -8109,7 +8109,7 @@ was *behavior*:
   didn't have.
 - **Eating when not hungry.** A Tourist with AC −40 and all three
   Invocation items, deep in Gehennom, chose to eat a stalker corpse
-  while satiated and choked to death. The ring of slow digestion on
+  while satiated and choked to death. The ring of [slow digestion](#special-and-utility) on
   her finger does not prevent choking.
 - **Out of escape consumables.** A Wizard on Dlvl 50, within
   sight of the Sanctum, burned the last wand-of-death charge
@@ -8152,7 +8152,7 @@ Yendor, your god grants you a single wish on the next turn. It
 fires automatically; you do not need to invoke it. This is one
 of the most generous moments in the game. Have your wish list
 ready *before* you reach the Sanctum: gauntlets of power, a +5
-weapon of your choice, a blessed cloak of magic resistance, or
+weapon of your choice, a blessed cloak of [magic resistance](#damage-resistances), or
 whatever you are missing for the climb. You only get this wish
 once. A late-game favorite is a wish for a **cursed potion of
 gain level**. Drinking one while carrying the Amulet skips you
@@ -8330,9 +8330,9 @@ there. Don't stop to fight anything you don't have to.
 
 #### Plane of Water
 
-The entire plane is underwater. Without magical breathing (an
+The entire plane is underwater. Without [magical breathing](#movement-and-spatial-behavior) (an
 amulet, the Amphibious intrinsic, or a polyform that breathes
-water) you will drown. An **amulet of life saving** rescues you
+water) you will drown. An **amulet of [life saving](#special-and-utility)** rescues you
 from the first death, but the water is still there, and the
 next turn drowns you again unless something has changed. The
 plane is a labyrinth of water-filled chambers with occasional
@@ -8364,13 +8364,13 @@ within one square of each in turn until one matches yours.
 
 The plane is swarming with Angels and the three **Riders**:
 Death, Famine, and Pestilence. They are level 30, regenerate
-while you fight, see invisible, and shove monsters out of their
+while you fight, [see invisible](#senses-and-perception), and shove monsters out of their
 path. Each one hits twice per turn with a touch attack dealing
 8d8 damage.
 
 - **Death** moves with the slow inevitability of his name.
   Every touch is 8d8 damage, and roughly three in twenty land
-  the kill itself. Magic resistance blocks the instakill but
+  the kill itself. [Magic resistance](#damage-resistances) blocks the instakill but
   not the baseline damage; without magic resistance you live
   or die at random on every swing.
 - **Pestilence** comes with a sickness that finishes you a few
