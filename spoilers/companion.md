@@ -52,7 +52,7 @@ guide. It assumes you already know how to play and want to know
 how to *survive*.
 
 Read on if you have been stripped of your belongings by one too
-many water nymphs, if you cannot survive the Gnomish Mines, or
+many water nymphs, if you cannot survive [the Gnomish Mines](#the-gnomish-mines)s](#the-gnomish-mines), or
 if you have grown tired of the gods abandoning you to starve
 with no food rations on level four. We will do our best to keep
 you alive.
@@ -238,7 +238,7 @@ and a +1 lance among your gear. The pony is a decent combatant early
 on and the basis of your unique trick: jousting from horseback with
 the lance is devastating when it connects, though the lance is largely
 useless on foot. As a Lawful character with a starting long sword, you
-also have the best odds in the game at **Excalibur**. Dip your long sword
+also have the best odds in the game at **[Excalibur](#excalibur-artifact)**. Dip your long sword
 in a fountain at experience level 5+ and Knights get a 1-in-6 chance
 per dip, far better than the 1-in-30 every other Lawful role faces.
 Knights follow a code of conduct that imposes alignment penalties
@@ -313,7 +313,7 @@ for players who have ascended before and want a real challenge.
 **Valkyrie.** The standard recommendation for a first serious
 attempt. You start with a spear, a small shield, and cold
 resistance; strong combat stats and good starting equipment do
-the rest. **Mjollnir** (+d5/+d24 war hammer that returns when
+the rest. **[Mjollnir](#mjollnir)** (+d5/+d24 war hammer that returns when
 thrown at Strength 25) drops as your sacrifice gift regardless
 of alignment, and is what you'll wield by the late game.
 *Alignment: Lawful or Neutral. Female only.*
@@ -457,7 +457,7 @@ from range is almost always safer than melee, and some monsters (like
 floating eyes) should never be fought in melee.
 
 **Supply chests.** Some of the large boxes and chests you find on
-the levels above the Oracle are special supply chests. They are
+the levels above [the Oracle](#the-oracle) are special supply chests. They are
 usually locked but stocked with useful magical items: healing or
 gain-energy potions, enchant-weapon or enchant-armor scrolls,
 sometimes a wand of digging or a low-level spellbook. About
@@ -557,7 +557,7 @@ critically low, starving, turning to stone) you
 can pray to your god for help. In the early game, with decent
 alignment, prayer will almost certainly save you. But you can only
 pray about once every thousand turns or so, and praying at the
-wrong time (when your god is angry, when you're in Gehennom, or
+wrong time (when your god is angry, when you're in [Gehennom](#gehennom), or
 when you've prayed too recently) can make things much worse. Think
 of prayer as an emergency button with a cooldown. Don't waste it
 on minor problems (see [Divine Relations](#divine-relations) for
@@ -586,7 +586,7 @@ mail made from the hide of a slain dragon (gray for MR, silver
 for reflection), a special cloak (of MR) or amulet (of
 reflection), a polished silver shield (reflection too), or a
 one-of-a-kind artifact bestowed by your
-god, won on the Quest, or granted as a wish. Your adventure will be
+god, won on [the Quest](#the-quest), or granted as a wish. Your adventure will be
 shaped by the protective items you obtain.
 
 #### Dungeon Hazards (and How to Survive Them)
@@ -622,7 +622,7 @@ gnomes all kill in this same shape. Retreat to a doorway or
 corridor at the first sign of more than two attackers; they can
 only approach single-file there.
 
-**Pushing too quickly into the Mines.** The problem isn't depth,
+**Pushing too quickly into [the Mines](#the-gnomish-mines).** The problem isn't depth,
 it's getting there too early. The deeper Mines below Minetown are
 crowded with armored dwarves and gnome rulers. If your gear and
 experience level aren't ready for armored melee fighters in packs,
@@ -720,22 +720,22 @@ follows shows the typical shape. Knowing where you are in this
 tree helps you know what's coming.
 
 The **Dungeons of Doom** form the upper half, roughly levels 1
-through 27. Side branches lead to the **Gnomish Mines** (where
+through 27. Side branches lead to the **[Gnomish Mines](#the-gnomish-mines)** (where
 you can find a *[luckstone](#luck-and-fortune)* and
-*[shops](#shopping-and-shopkeeper-pricing)*), **Sokoban** (a
+*[shops](#shopping-and-shopkeeper-pricing)*), **[Sokoban](#sokoban)** (a
 *[puzzle](#sokoban)* with a prize at the top), your
 [Quest dungeon](#the-quest), and sometimes **Fort Ludios** (a vault
 full of gold). The trunk ends at **The Castle**, the gateway to
-Gehennom.
+[Gehennom](#gehennom).
 
 **Gehennom** is the lower half: maze levels and demon lords,
-with the **Amulet of Yendor** at the bottom in Moloch's Sanctum.
+with the **Amulet of Yendor** at the bottom in [Moloch's Sanctum](#molochs-sanctum).
 Once you have it, you climb back up through the **Elemental
 Planes** to the **Astral Plane**, where your god awaits your
 offering.
 
 <!-- DMAP-BEGIN -->
-<div><figure style="margin: 1.5em 0; text-align: center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 611" role="img" aria-label="Dungeons of Doom map" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;font-feature-settings:'liga' 0, 'dlig' 0;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><line x1="380" y1="55" x2="380" y2="611" stroke="#B5651D" stroke-width="2.5" fill="none"/><rect x="40" y="0" width="680" height="39" rx="4" fill="#B5651D"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">DUNGEONS OF DOOM</text><line x1="150" y1="140" x2="150" y2="246" stroke="#5B8E3A" stroke-width="2" fill="none"/><line x1="630" y1="166" x2="630" y2="194" stroke="#B58A1A" stroke-width="2" fill="none"/><line x1="630" y1="305" x2="630" y2="343" stroke="#3B6FA0" stroke-width="2" fill="none"/><rect x="290" y="55" width="180" height="40" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="72" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">The Dungeon Entrance</text><text x="380" y="89" font-size="12" font-style="italic" fill="#555" text-anchor="middle">up-stair to exit</text><rect x="60" y="108" width="180" height="32" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="129" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Gnomish Mines</text><rect x="60" y="168" width="180" height="40" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="185" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Minetown</text><text x="150" y="202" font-size="12" font-style="italic" fill="#555" text-anchor="middle">shops, temple</text><rect x="60" y="246" width="180" height="40" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="263" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Mine's End</text><text x="150" y="280" font-size="12" font-style="italic" fill="#555" text-anchor="middle">luckstone</text><rect x="290" y="163" width="180" height="40" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="180" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">The Oracle</text><text x="380" y="197" font-size="12" font-style="italic" fill="#555" text-anchor="middle">paid hints</text><rect x="540" y="126" width="180" height="40" rx="6" fill="#FFF4CC" stroke="#B58A1A" stroke-width="1.5"/><text x="630" y="143" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Sokoban prize</text><text x="630" y="160" font-size="12" font-style="italic" fill="#555" text-anchor="middle">bag of holding/amulet of reflection</text><rect x="540" y="194" width="180" height="32" rx="6" fill="#FFF4CC" stroke="#B58A1A" stroke-width="1.5"/><text x="630" y="215" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Sokoban entry</text><rect x="290" y="269" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="290" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle"><tspan>Q</tspan>uest portal</text><rect x="540" y="265" width="180" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="630" y="282" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle"><tspan>Q</tspan>uest entry</text><text x="630" y="299" font-size="12" font-style="italic" fill="#555" text-anchor="middle">your role's dungeon</text><rect x="540" y="343" width="180" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="630" y="360" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle"><tspan>Q</tspan>uest goal</text><text x="630" y="377" font-size="12" font-style="italic" fill="#555" text-anchor="middle"><tspan font-style="normal">★ </tspan>Bell of Opening, role artifact</text><rect x="290" y="329" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="350" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Big Room (40%)</text><rect x="290" y="389" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="410" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Rogue Level</text><rect x="60" y="420" width="180" height="40" rx="6" fill="#FFD966" stroke="#B5891A" stroke-width="1.5"/><text x="150" y="437" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Fort Ludios</text><text x="150" y="454" font-size="12" font-style="italic" fill="#555" text-anchor="middle">vault of gold</text><rect x="290" y="479" width="180" height="32" rx="6" fill="#B8D4F0" stroke="#2E5C8E" stroke-width="1.5"/><text x="380" y="500" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Medusa's Island</text><rect x="230" y="539" width="300" height="58" rx="8" fill="#FFFFFF" stroke="#B5891A" stroke-width="2.5"/><text x="380" y="565" font-size="17" font-weight="600" fill="#1f2933" text-anchor="middle">THE CASTLE</text><text x="380" y="582" font-size="14" font-style="italic" fill="#7A5A0A" text-anchor="middle">wand of wishing</text><line x1="380" y1="124" x2="240" y2="124" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="380" y1="210" x2="540" y2="210" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="470" y1="285" x2="540" y2="285" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="380" y1="440" x2="240" y2="440" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><text x="275" y="120" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">down</text><text x="500" y="206" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">up</text><text x="505" y="281" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portal</text><text x="275" y="436" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portal</text><circle cx="380" cy="124" r="4" fill="#B5651D"/><circle cx="380" cy="210" r="4" fill="#B5651D"/><circle cx="380" cy="440" r="4" fill="#B5651D"/><circle cx="380" cy="104.0" r="4" fill="#B5651D"/><circle cx="380" cy="114.0" r="4" fill="#B5651D"/><circle cx="150" cy="149.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="159.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="217.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="227.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="237.0" r="4" fill="#5B8E3A"/><circle cx="380" cy="134.0" r="4" fill="#B5651D"/><circle cx="380" cy="144.0" r="4" fill="#B5651D"/><circle cx="380" cy="154.0" r="4" fill="#B5651D"/><circle cx="630" cy="175.0" r="4" fill="#B58A1A"/><circle cx="630" cy="185.0" r="4" fill="#B58A1A"/><circle cx="380" cy="220.0" r="4" fill="#B5651D"/><circle cx="380" cy="230.0" r="4" fill="#B5651D"/><circle cx="380" cy="240.0" r="4" fill="#B5651D"/><circle cx="380" cy="250.0" r="4" fill="#B5651D"/><circle cx="380" cy="260.0" r="4" fill="#B5651D"/><circle cx="630" cy="314.0" r="4" fill="#3B6FA0"/><circle cx="630" cy="324.0" r="4" fill="#3B6FA0"/><circle cx="630" cy="334.0" r="4" fill="#3B6FA0"/><circle cx="380" cy="310.0" r="4" fill="#B5651D"/><circle cx="380" cy="320.0" r="4" fill="#B5651D"/><circle cx="380" cy="370.0" r="4" fill="#B5651D"/><circle cx="380" cy="380.0" r="4" fill="#B5651D"/><circle cx="380" cy="430.0" r="4" fill="#B5651D"/><circle cx="380" cy="450.0" r="4" fill="#B5651D"/><circle cx="380" cy="460.0" r="4" fill="#B5651D"/><circle cx="380" cy="470.0" r="4" fill="#B5651D"/><circle cx="380" cy="520.0" r="4" fill="#B5651D"/><circle cx="380" cy="530.0" r="4" fill="#B5651D"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 681" role="img" aria-label="Gehennom map" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;font-feature-settings:'liga' 0, 'dlig' 0;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><line x1="380" y1="0" x2="380" y2="39" stroke="#B5651D" stroke-width="2.5" fill="none"/><line x1="380" y1="0" x2="380" y2="625" stroke="#A14A3F" stroke-width="2.5" fill="none"/><rect x="40" y="0" width="680" height="39" rx="4" fill="#A14A3F"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">GEHENNOM</text><line x1="150" y1="288" x2="150" y2="306" stroke="#6B4E96" stroke-width="2" fill="none"/><rect x="290" y="53" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="70" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Valley of the Dead</text><text x="380" y="87" font-size="12" font-style="italic" fill="#555" text-anchor="middle">Gehennom's entrance</text><rect x="290" y="141" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="162" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Asmodeus's Lair</text><rect x="290" y="191" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="212" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Juiblex's Swamp</text><rect x="290" y="251" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="272" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Baalzebub's Lair</text><rect x="60" y="248" width="180" height="40" rx="6" fill="#E3D8F0" stroke="#6B4E96" stroke-width="1.5"/><text x="150" y="265" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Vlad the Impaler</text><text x="150" y="282" font-size="12" font-style="italic" fill="#555" text-anchor="middle"><tspan font-style="normal">★ </tspan>Candelabrum</text><rect x="60" y="306" width="180" height="32" rx="6" fill="#E3D8F0" stroke="#6B4E96" stroke-width="1.5"/><text x="150" y="327" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Vlad's Tower</text><rect x="290" y="351" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="368" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Orcus Town</text><text x="380" y="385" font-size="12" font-style="italic" fill="#555" text-anchor="middle">Wand of Orcus · magic lamp/marker</text><rect x="290" y="419" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="440" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Wizard's Tower</text><rect x="290" y="469" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="486" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Wizard of Yendor</text><text x="380" y="503" font-size="12" font-style="italic" fill="#555" text-anchor="middle"><tspan font-style="normal">★ </tspan>Book of the Dead</text><rect x="230" y="567" width="300" height="58" rx="8" fill="#2D2D2D" stroke="#FFC857" stroke-width="2.5"/><text x="380" y="593" font-size="17" font-weight="600" fill="#FFC857" text-anchor="middle">Moloch's Sanctum</text><text x="380" y="610" font-size="14" font-style="italic" fill="#FFE680" text-anchor="middle">the Amulet of Yendor</text><line x1="380" y1="322" x2="240" y2="322" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><text x="275" y="318" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">up</text><circle cx="380" cy="322" r="4" fill="#A14A3F"/><circle cx="380" cy="102.0" r="4" fill="#A14A3F"/><circle cx="380" cy="112.0" r="4" fill="#A14A3F"/><circle cx="380" cy="122.0" r="4" fill="#A14A3F"/><circle cx="380" cy="132.0" r="4" fill="#A14A3F"/><circle cx="380" cy="182.0" r="4" fill="#A14A3F"/><circle cx="380" cy="232.0" r="4" fill="#A14A3F"/><circle cx="380" cy="242.0" r="4" fill="#A14A3F"/><circle cx="380" cy="292.0" r="4" fill="#A14A3F"/><circle cx="380" cy="302.0" r="4" fill="#A14A3F"/><circle cx="380" cy="312.0" r="4" fill="#A14A3F"/><circle cx="150" cy="297.0" r="4" fill="#6B4E96"/><circle cx="380" cy="332.0" r="4" fill="#A14A3F"/><circle cx="380" cy="342.0" r="4" fill="#A14A3F"/><circle cx="380" cy="400.0" r="4" fill="#A14A3F"/><circle cx="380" cy="410.0" r="4" fill="#A14A3F"/><circle cx="380" cy="460.0" r="4" fill="#A14A3F"/><circle cx="380" cy="518.0" r="4" fill="#A14A3F"/><circle cx="380" cy="528.0" r="4" fill="#A14A3F"/><circle cx="380" cy="538.0" r="4" fill="#A14A3F"/><circle cx="380" cy="548.0" r="4" fill="#A14A3F"/><circle cx="380" cy="558.0" r="4" fill="#A14A3F"/><line x1="380" y1="631" x2="380" y2="681" stroke="#5B8E3A" stroke-width="2.5" stroke-dasharray="7,5" fill="none"/><text x="400" y="661" font-size="15" font-weight="600" font-style="italic" fill="#5B8E3A">now go <tspan style="font-weight:800;font-size:17px">ALL</tspan> the way back up...</text></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 299" role="img" aria-label="Elemental Planes and Ascension" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;font-feature-settings:'liga' 0, 'dlig' 0;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><rect x="40" y="0" width="680" height="39" rx="4" fill="#5D3C8E"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">THE ELEMENTAL PLANES</text><rect x="68" y="89" width="120" height="40" rx="6" fill="#E8DDC8" stroke="#8B6F47" stroke-width="1.5"/><text x="128" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Earth</text><rect x="236" y="89" width="120" height="40" rx="6" fill="#E0F4FA" stroke="#3B9FA8" stroke-width="1.5"/><text x="296" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Air</text><rect x="404" y="89" width="120" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="464" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Fire</text><rect x="572" y="89" width="120" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="632" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Water</text><rect x="260" y="179" width="240" height="42" rx="6" fill="#D8C6F0" stroke="#5D3C8E" stroke-width="1.5"/><text x="380" y="197" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Astral Plane</text><text x="380" y="213" font-size="12" font-style="italic" fill="#555" text-anchor="middle">three altars · pick yours</text><rect x="230" y="239" width="300" height="50" rx="10" fill="#FFE680" stroke="#B5891A" stroke-width="2.5"/><text x="380" y="262" font-size="18" font-weight="700" fill="#7A5A0A" text-anchor="middle" letter-spacing="0.1em">ASCENSION</text><text x="380" y="281" font-size="11" font-style="italic" fill="#7A5A0A" text-anchor="middle">offer the Amulet at your altar</text><path d="M 380 39 C 380 53 128 53 128 67 L 128 89" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="188" y1="109" x2="236" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><text x="212" y="105" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portals</text><line x1="356" y1="109" x2="404" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="524" y1="109" x2="572" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><path d="M 632 129 C 632 143 380 143 380 157 L 380 179" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="380" y1="221" x2="380" y2="239" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/></svg><figcaption style="font-style: italic; color: #5a5a5a; font-size: 0.9em; margin-top: 0.5em;">Branches extend left and right of the main trunk. Pearls (small colored dots) indicate the approximate number of intervening dungeon levels. ★ marks the three Invocation items (Bell of Opening, Candelabrum, Book of the Dead) needed to enter Moloch's Sanctum and claim the Amulet.</figcaption></figure></div>
+<div><figure style="margin: 1.5em 0; text-align: center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 611" role="img" aria-label="Dungeons of Doom map" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;font-feature-settings:'liga' 0, 'dlig' 0;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><line x1="380" y1="55" x2="380" y2="611" stroke="#B5651D" stroke-width="2.5" fill="none"/><rect x="40" y="0" width="680" height="39" rx="4" fill="#B5651D"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">DUNGEONS OF DOOM</text><line x1="150" y1="140" x2="150" y2="246" stroke="#5B8E3A" stroke-width="2" fill="none"/><line x1="630" y1="166" x2="630" y2="194" stroke="#B58A1A" stroke-width="2" fill="none"/><line x1="630" y1="305" x2="630" y2="343" stroke="#3B6FA0" stroke-width="2" fill="none"/><rect x="290" y="55" width="180" height="40" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="72" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">The Dungeon Entrance</text><text x="380" y="89" font-size="12" font-style="italic" fill="#555" text-anchor="middle">up-stair to exit</text><rect x="60" y="108" width="180" height="32" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="129" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Gnomish Mines</text><rect x="60" y="168" width="180" height="40" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="185" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Minetown</text><text x="150" y="202" font-size="12" font-style="italic" fill="#555" text-anchor="middle">shops, temple</text><rect x="60" y="246" width="180" height="40" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="263" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Mine's End</text><text x="150" y="280" font-size="12" font-style="italic" fill="#555" text-anchor="middle">luckstone</text><rect x="290" y="163" width="180" height="40" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="180" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">The Oracle</text><text x="380" y="197" font-size="12" font-style="italic" fill="#555" text-anchor="middle">paid hints</text><rect x="540" y="126" width="180" height="40" rx="6" fill="#FFF4CC" stroke="#B58A1A" stroke-width="1.5"/><text x="630" y="143" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Sokoban prize</text><text x="630" y="160" font-size="12" font-style="italic" fill="#555" text-anchor="middle">bag of holding/amulet of reflection</text><rect x="540" y="194" width="180" height="32" rx="6" fill="#FFF4CC" stroke="#B58A1A" stroke-width="1.5"/><text x="630" y="215" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Sokoban entry</text><rect x="290" y="269" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="290" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle"><tspan>Q</tspan>uest portal</text><rect x="540" y="265" width="180" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="630" y="282" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle"><tspan>Q</tspan>uest entry</text><text x="630" y="299" font-size="12" font-style="italic" fill="#555" text-anchor="middle">your role's dungeon</text><rect x="540" y="343" width="180" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="630" y="360" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle"><tspan>Q</tspan>uest goal</text><text x="630" y="377" font-size="12" font-style="italic" fill="#555" text-anchor="middle"><tspan font-style="normal">★ </tspan>Bell of Opening, role artifact</text><rect x="290" y="329" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="350" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Big Room (40%)</text><rect x="290" y="389" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="410" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Rogue Level</text><rect x="60" y="420" width="180" height="40" rx="6" fill="#FFD966" stroke="#B5891A" stroke-width="1.5"/><text x="150" y="437" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Fort Ludios</text><text x="150" y="454" font-size="12" font-style="italic" fill="#555" text-anchor="middle">vault of gold</text><rect x="290" y="479" width="180" height="32" rx="6" fill="#B8D4F0" stroke="#2E5C8E" stroke-width="1.5"/><text x="380" y="500" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Medusa's Island</text><rect x="230" y="539" width="300" height="58" rx="8" fill="#FFFFFF" stroke="#B5891A" stroke-width="2.5"/><text x="380" y="565" font-size="17" font-weight="600" fill="#1f2933" text-anchor="middle">THE CASTLE</text><text x="380" y="582" font-size="14" font-style="italic" fill="#7A5A0A" text-anchor="middle">wand of wishing</text><line x1="380" y1="124" x2="240" y2="124" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="380" y1="210" x2="540" y2="210" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="470" y1="285" x2="540" y2="285" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="380" y1="440" x2="240" y2="440" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><text x="275" y="120" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">down</text><text x="500" y="206" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">up</text><text x="505" y="281" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portal</text><text x="275" y="436" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portal</text><circle cx="380" cy="124" r="4" fill="#B5651D"/><circle cx="380" cy="210" r="4" fill="#B5651D"/><circle cx="380" cy="440" r="4" fill="#B5651D"/><circle cx="380" cy="104.0" r="4" fill="#B5651D"/><circle cx="380" cy="114.0" r="4" fill="#B5651D"/><circle cx="150" cy="149.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="159.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="217.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="227.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="237.0" r="4" fill="#5B8E3A"/><circle cx="380" cy="134.0" r="4" fill="#B5651D"/><circle cx="380" cy="144.0" r="4" fill="#B5651D"/><circle cx="380" cy="154.0" r="4" fill="#B5651D"/><circle cx="630" cy="175.0" r="4" fill="#B58A1A"/><circle cx="630" cy="185.0" r="4" fill="#B58A1A"/><circle cx="380" cy="220.0" r="4" fill="#B5651D"/><circle cx="380" cy="230.0" r="4" fill="#B5651D"/><circle cx="380" cy="240.0" r="4" fill="#B5651D"/><circle cx="380" cy="250.0" r="4" fill="#B5651D"/><circle cx="380" cy="260.0" r="4" fill="#B5651D"/><circle cx="630" cy="314.0" r="4" fill="#3B6FA0"/><circle cx="630" cy="324.0" r="4" fill="#3B6FA0"/><circle cx="630" cy="334.0" r="4" fill="#3B6FA0"/><circle cx="380" cy="310.0" r="4" fill="#B5651D"/><circle cx="380" cy="320.0" r="4" fill="#B5651D"/><circle cx="380" cy="370.0" r="4" fill="#B5651D"/><circle cx="380" cy="380.0" r="4" fill="#B5651D"/><circle cx="380" cy="430.0" r="4" fill="#B5651D"/><circle cx="380" cy="450.0" r="4" fill="#B5651D"/><circle cx="380" cy="460.0" r="4" fill="#B5651D"/><circle cx="380" cy="470.0" r="4" fill="#B5651D"/><circle cx="380" cy="520.0" r="4" fill="#B5651D"/><circle cx="380" cy="530.0" r="4" fill="#B5651D"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 681" role="img" aria-label="Gehennom map" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;font-feature-settings:'liga' 0, 'dlig' 0;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><line x1="380" y1="0" x2="380" y2="39" stroke="#B5651D" stroke-width="2.5" fill="none"/><line x1="380" y1="0" x2="380" y2="625" stroke="#A14A3F" stroke-width="2.5" fill="none"/><rect x="40" y="0" width="680" height="39" rx="4" fill="#A14A3F"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">GEHENNOM</text><line x1="150" y1="288" x2="150" y2="306" stroke="#6B4E96" stroke-width="2" fill="none"/><rect x="290" y="53" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="70" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Valley of the Dead</text><text x="380" y="87" font-size="12" font-style="italic" fill="#555" text-anchor="middle">Gehennom's entrance</text><rect x="290" y="141" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="162" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Asmodeus's Lair</text><rect x="290" y="191" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="212" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Juiblex's Swamp</text><rect x="290" y="251" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="272" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Baalzebub's Lair</text><rect x="60" y="248" width="180" height="40" rx="6" fill="#E3D8F0" stroke="#6B4E96" stroke-width="1.5"/><text x="150" y="265" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Vlad the Impaler</text><text x="150" y="282" font-size="12" font-style="italic" fill="#555" text-anchor="middle"><tspan font-style="normal">★ </tspan>Candelabrum</text><rect x="60" y="306" width="180" height="32" rx="6" fill="#E3D8F0" stroke="#6B4E96" stroke-width="1.5"/><text x="150" y="327" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">[Vlad's Tower](#vlads-tower)</text><rect x="290" y="351" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="368" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Orcus Town</text><text x="380" y="385" font-size="12" font-style="italic" fill="#555" text-anchor="middle">Wand of Orcus · magic lamp/marker</text><rect x="290" y="419" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="440" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Wizard's Tower</text><rect x="290" y="469" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="486" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Wizard of Yendor</text><text x="380" y="503" font-size="12" font-style="italic" fill="#555" text-anchor="middle"><tspan font-style="normal">★ </tspan>Book of the Dead</text><rect x="230" y="567" width="300" height="58" rx="8" fill="#2D2D2D" stroke="#FFC857" stroke-width="2.5"/><text x="380" y="593" font-size="17" font-weight="600" fill="#FFC857" text-anchor="middle">Moloch's Sanctum</text><text x="380" y="610" font-size="14" font-style="italic" fill="#FFE680" text-anchor="middle">the Amulet of Yendor</text><line x1="380" y1="322" x2="240" y2="322" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><text x="275" y="318" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">up</text><circle cx="380" cy="322" r="4" fill="#A14A3F"/><circle cx="380" cy="102.0" r="4" fill="#A14A3F"/><circle cx="380" cy="112.0" r="4" fill="#A14A3F"/><circle cx="380" cy="122.0" r="4" fill="#A14A3F"/><circle cx="380" cy="132.0" r="4" fill="#A14A3F"/><circle cx="380" cy="182.0" r="4" fill="#A14A3F"/><circle cx="380" cy="232.0" r="4" fill="#A14A3F"/><circle cx="380" cy="242.0" r="4" fill="#A14A3F"/><circle cx="380" cy="292.0" r="4" fill="#A14A3F"/><circle cx="380" cy="302.0" r="4" fill="#A14A3F"/><circle cx="380" cy="312.0" r="4" fill="#A14A3F"/><circle cx="150" cy="297.0" r="4" fill="#6B4E96"/><circle cx="380" cy="332.0" r="4" fill="#A14A3F"/><circle cx="380" cy="342.0" r="4" fill="#A14A3F"/><circle cx="380" cy="400.0" r="4" fill="#A14A3F"/><circle cx="380" cy="410.0" r="4" fill="#A14A3F"/><circle cx="380" cy="460.0" r="4" fill="#A14A3F"/><circle cx="380" cy="518.0" r="4" fill="#A14A3F"/><circle cx="380" cy="528.0" r="4" fill="#A14A3F"/><circle cx="380" cy="538.0" r="4" fill="#A14A3F"/><circle cx="380" cy="548.0" r="4" fill="#A14A3F"/><circle cx="380" cy="558.0" r="4" fill="#A14A3F"/><line x1="380" y1="631" x2="380" y2="681" stroke="#5B8E3A" stroke-width="2.5" stroke-dasharray="7,5" fill="none"/><text x="400" y="661" font-size="15" font-weight="600" font-style="italic" fill="#5B8E3A">now go <tspan style="font-weight:800;font-size:17px">ALL</tspan> the way back up...</text></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 299" role="img" aria-label="Elemental Planes and Ascension" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;font-feature-settings:'liga' 0, 'dlig' 0;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><rect x="40" y="0" width="680" height="39" rx="4" fill="#5D3C8E"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">THE ELEMENTAL PLANES</text><rect x="68" y="89" width="120" height="40" rx="6" fill="#E8DDC8" stroke="#8B6F47" stroke-width="1.5"/><text x="128" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Earth</text><rect x="236" y="89" width="120" height="40" rx="6" fill="#E0F4FA" stroke="#3B9FA8" stroke-width="1.5"/><text x="296" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Air</text><rect x="404" y="89" width="120" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="464" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Fire</text><rect x="572" y="89" width="120" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="632" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Water</text><rect x="260" y="179" width="240" height="42" rx="6" fill="#D8C6F0" stroke="#5D3C8E" stroke-width="1.5"/><text x="380" y="197" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Astral Plane</text><text x="380" y="213" font-size="12" font-style="italic" fill="#555" text-anchor="middle">three altars · pick yours</text><rect x="230" y="239" width="300" height="50" rx="10" fill="#FFE680" stroke="#B5891A" stroke-width="2.5"/><text x="380" y="262" font-size="18" font-weight="700" fill="#7A5A0A" text-anchor="middle" letter-spacing="0.1em">ASCENSION</text><text x="380" y="281" font-size="11" font-style="italic" fill="#7A5A0A" text-anchor="middle">offer the Amulet at your altar</text><path d="M 380 39 C 380 53 128 53 128 67 L 128 89" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="188" y1="109" x2="236" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><text x="212" y="105" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portals</text><line x1="356" y1="109" x2="404" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="524" y1="109" x2="572" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><path d="M 632 129 C 632 143 380 143 380 157 L 380 179" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="380" y1="221" x2="380" y2="239" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/></svg><figcaption style="font-style: italic; color: #5a5a5a; font-size: 0.9em; margin-top: 0.5em;">Branches extend left and right of the main trunk. Pearls (small colored dots) indicate the approximate number of intervening dungeon levels. ★ marks the three Invocation items (Bell of Opening, Candelabrum, Book of the Dead) needed to enter Moloch's Sanctum and claim the Amulet.</figcaption></figure></div>
 <!-- DMAP-END -->
 
 Simple enough on paper. Surviving it is another matter.
@@ -1058,7 +1058,7 @@ Quaffing from a magic one says, *Wow! This makes you feel great!*,
 restores all your attributes to their maximum values, and raises a
 random attribute by one, consuming the magic charge; afterwards the
 fountain behaves like any other. (Pre-placed fountains like those
-in Minetown or the Oracle, or sink-kicked fountains, are never
+in Minetown or [the Oracle](#the-oracle), or sink-kicked fountains, are never
 magic. Also: dipping gets no benefits from magic charge but could
 consume it.)
 
@@ -1091,7 +1091,7 @@ harp) can scare or charm a demon, making the gamble safer.
 
 **Dipping in a fountain** is a different gamble, and one that Lawful
 characters should know by heart. If you're at least experience level
-5, dipping a long sword may transform it into Excalibur, one of the
+5, dipping a long sword may transform it into [Excalibur](#excalibur-artifact), one of the
 finest weapons in the dungeon. Knights get a generous 1/6 chance per
 dip; everyone else gets a meager 1/30. Otherwise, dipping can rust
 your gear, summon hostile water creatures, or occasionally
@@ -1279,11 +1279,11 @@ The main trunk of the dungeon goes straight down, but most of
 the rewards wait off to the side, in branches and at named
 landmarks roughly in the order that follows.
 
-**Sokoban or Mines first?** The Mines entrance shows up first
+**[Sokoban](#sokoban) or Mines first?** The Mines entrance shows up first
 (Dlvl 2 to 4), but the *strategic* suggestion for most beginners
 is Sokoban. It's a controlled puzzle crawl with mostly trivial
 monsters, and the prize at the top (reflection or a bag of
-holding) materially helps the Mines run afterward. Slashing
+holding) materially helps [the Mines](#the-gnomish-mines) run afterward. Slashing
 through the Mines early is exciting and fun, but if you want to
 play the strategic game, skip them until you've solved Sokoban
 and then return to the Mines when you are stronger and better
@@ -1384,7 +1384,7 @@ BUC-test what you pick up before relying on it.)
 #### Sokoban
 
 The entrance staircase appears somewhere around dungeon levels 6
-through 10 (one level below the Oracle), and it goes up. Sokoban
+through 10 (one level below [the Oracle](#the-oracle)), and it goes up. Sokoban
 is a set of four puzzle levels where you push boulders onto
 holes or into place to open a path. Teleport doesn't work here,
 and you can't dig down off the entrance level (its floor is
@@ -1530,9 +1530,9 @@ killing it.)
 
 Each role has a unique Quest with unique maps, a unique nemesis,
 and a unique artifact reward. The Valkyrie hunts Lord Surtur for
-the Orb of Fate. A Samurai's path ends in a duel with Ashikaga
-Takauji over the Tsurugi of Muramasa. The Wizard descends into
-the Dark One's stronghold for the Eye of the Aethiopica. The
+the [Orb of Fate](#orb-of-fate). A Samurai's path ends in a duel with Ashikaga
+Takauji over the [Tsurugi of Muramasa](#tsurugi-of-muramasa). The Wizard descends into
+the Dark One's stronghold for the [Eye of the Aethiopica](#eye-of-the-aethiopica). The
 [Artifacts](#artifacts) chapter has the full per-role list.
 
 Quest artifacts are powerful. Each grants a unique mix of
@@ -1545,7 +1545,7 @@ pivotal moment. The late game starts here.
 
 **Two prizes wait on the nemesis's square.** The **Bell of Opening**
 rides in the nemesis's pack and falls when you kill them (one of the
-three invocation items you'll need for Gehennom). Your role's quest
+three invocation items you'll need for [Gehennom](#gehennom)). Your role's quest
 artifact has been sitting under their feet the whole time, placed
 when the level was generated. Pick both up. The Quest is the only
 place in the game you can get them.
@@ -1688,7 +1688,7 @@ The level has three challenges stacked together:
    Sokoban, you're already prepared.
 
 There is a downward staircase on the island itself
-that leads toward the Castle. The level has four possible layouts
+that leads toward [the Castle](#the-castle). The level has four possible layouts
 (two added in 3.6), so don't rely on memorizing a
 single map.
 
@@ -1863,7 +1863,7 @@ step and you're separated from your pet, your stash, and your
 carefully explored map. But with [teleport control](#movement-and-spatial-behavior) (from an item or
 intrinsic), teleport traps become free transportation. **Levitation
 or flying** both make you immune to pits, holes, and trapdoors
-entirely. Except in Sokoban, where the puzzle levels disable the
+entirely. Except in [Sokoban](#sokoban), where the puzzle levels disable the
 skip and you fall in regardless.
 
 #### Dangerous Traps
@@ -1901,7 +1901,7 @@ the real catastrophe is your inventory: scrolls burn, potions
 shatter, and that stack of twenty scrolls of identify you've been
 hoarding is suddenly ash. [Fire resistance](#damage-resistances) saves your skin but
 *not* your belongings. Items inside a *sack* or *oilskin sack*
-survive the trap; the sack itself absorbs the burn. Gehennom is
+survive the trap; the sack itself absorbs the burn. [Gehennom](#gehennom) is
 fire-trap country, so keep your consumables bagged.
 
 Polymorph traps are a double-edged sword. With [polymorph control](#special-and-utility),
@@ -1951,7 +1951,7 @@ Counterintuitive enough to mislead returning players. The trap
 drains spell energy, and having *magic resistance* also triggers
 an "anti-magic implosion" that costs you HP. The damage is
 d4 base, plus another d4 if you have half-physical or
-half-spell damage, plus d4 for wielding Magicbane, plus
+half-spell damage, plus d4 for wielding [Magicbane](#magicbane), plus
 d4 for carrying any one magic-resistance artifact (only one
 counts; the check breaks on first match). At worst that's 4d4
 damage, quartered (rounded up) if you can pass through walls. The
@@ -2051,7 +2051,7 @@ cheaper than being trapped on Dlvl 1 forever.
 **Items that help:**
 
 - **Ring of searching** auto-searches every turn while it's worn
-- **Excalibur** (or any artifact with the searching aura), wielded, adds its enchantment to your search bonus (a freshly-dipped +0 Excalibur adds nothing)
+- **[Excalibur](#excalibur-artifact)** (or any artifact with the searching aura), wielded, adds its enchantment to your search bonus (a freshly-dipped +0 Excalibur adds nothing)
 - **Lenses** worn (and you not blind) add +2 to the search bonus, but the total bonus from Excalibur + lenses caps at +5, so lenses only helplp if Excalibur's enchantment is below +3
 - **Wand of secret door detection** instantly reveals nearby secrets in a radius
 - **Blessed scroll of magic mapping** shows every secret door on the level (only the blessed version)
@@ -2218,7 +2218,7 @@ engraving will survive.
   enough to recognize the misuse, anything that can't perceive the
   inscription, and anything with nothing to lose disregards the ward.
 - **Elbereth doesn't work in Gehennom, on the Elemental Planes, or
-  on the Astral Plane.** Below the Castle, you're on your own.
+  on the Astral Plane.** Below [the Castle](#the-castle), you're on your own.
 
 ##### The defile rule (important)
 
@@ -2431,7 +2431,7 @@ Every swing of your weapon is a d20 roll, modified by everything
 the game can think of to make your life interesting:
 
 - Your experience level (the game's way of saying "you've seen things")
-- Your weapon's enchantment (a +7 Excalibur hits *noticeably* better)
+- Your weapon's enchantment (a +7 [Excalibur](#excalibur-artifact) hits *noticeably* better)
 - Your Luck (the universe literally takes sides; the to-hit contribution caps around ±5 even though Luck itself ranges further)
 - Your Strength and Dexterity bonuses (muscles plus agility, both matter)
 - The monster's AC (the lower their AC, the harder they are to tag)
@@ -2726,7 +2726,7 @@ time-tested tactics that keep adventurers breathing.
   giri-breaking penalty for Samurai). The Quest entrance check
   requires alignment record at least 20 *and* experience level
   at least 14. A handful of careless peaceful kills can lock a
-  Knight or Samurai out of the Quest for the rest of the run.
+  Knight or Samurai out of [the Quest](#the-quest) for the rest of the run.
 
 ---
 
@@ -2784,7 +2784,7 @@ how you meet things you can't outrun and can't outfight. The
 dungeon doesn't wait. Every step deeper raises the monster
 difficulty roll, and a fragile character with 30 HP isn't going
 to soak even a single bad encounter. There's no prize for getting
-to Sokoban quickly. Clear, identify, level up, then descend.
+to [Sokoban](#sokoban) quickly. Clear, identify, level up, then descend.
 
 **On bones.** "Bones" levels are levels saved from another
 adventurer's death and replayed in your game. The game flags them
@@ -2808,7 +2808,7 @@ beginners than their depth or appearance would suggest.
 The shape of the threat is usually pack tactics, surprising
 speed, or one catastrophic special attack.
 
-**The Gnomish Mines are a top killer.** This side branch is harder
+**The [Gnomish Mines](#the-gnomish-mines) are a top killer.** This side branch is harder
 than it looks: Mines rooms are large open caves where four or five
 armed opponents have plenty of room to swarm around you. Use
 ranged attacks, or look for natural pinch points where the cave
@@ -2828,7 +2828,7 @@ you are surrounded by anything else, the surrounding monsters
 hit you freely while you cannot move. Sleep resistance
 comes from any elf, elven mummy, or giant corpse, and from
 several roles' starting kits (Wizard's cloak of MR, Ranger's
-elven cloak). Eat for it before descending into the Mines or
+elven cloak). Eat for it before descending into [the Mines](#the-gnomish-mines) or
 the lower Quest.
 
 **Bats and other speedsters** (`B`). Bats and giant bats clock in
@@ -2878,7 +2878,7 @@ reflection, or a clear path of retreat.
 ~70 turns; whatever passes by during the nap kills you. Kill at
 range, then eat the corpse for [telepathy](#senses-and-perception).
 
-**Minotaurs** (`H`, in the Castle and maze levels of Gehennom).
+**Minotaurs** (`H`, in [the Castle](#the-castle) and maze levels of [Gehennom](#gehennom)).
 Three attacks averaging ~38 damage per turn. The hardest hitter
 short of the Riders themselves. A wand of sleep, a thrown potion
 of paralysis (with [free action](#combat-and-defense)), or just digging down before they
@@ -3606,7 +3606,7 @@ A recurring theme in the bestiary: certain monsters reduce your
 experience level on a hit, taking the HP and power gains that came
 with each lost level. Wraiths, barrow wights, Nazgul, vampires,
 vampire leaders, and Vlad himself all carry level-drain attacks.
-Stormbringer in an enemy's hand does the same. Drained levels do
+[Stormbringer](#stormbringer) in an enemy's hand does the same. Drained levels do
 not come back on their own. You re-earn them by killing more
 monsters, by drinking a potion of restore ability (a blessed one
 restores all lost levels at once), or by eating a wraith corpse.
@@ -3616,8 +3616,8 @@ poisoned bite drains Str, not levels. Stat drain is a separate
 problem and [Enchantment Drain](#enchantment-drain) covers its cousin.)
 
 **Defenses:** *Drain resistance* makes you immune. The classic
-sources are wielding Excalibur (Lawful), Stormbringer (Chaotic),
-or the Staff of Aesculapius (Healer's quest artifact). New in 5.0:
+sources are wielding [Excalibur](#excalibur-artifact) (Lawful), Stormbringer (Chaotic),
+or the [Staff of Aesculapius](#staff-of-aesculapius) (Healer's quest artifact). New in 5.0:
 wearing **black dragon scale mail** (disintegration resistance
 plus drain resistance, both in one slot) or a **shield of drain
 resistance** (random shop find, no other property).
@@ -3644,7 +3644,7 @@ as the fight ends.
 - strategy aligned with NetHackWiki Disenchanter, Magic cancellation: MC armor blocks the active claw but not the passive counter; range-kill is the cleanest plan, and the corpse is not safe to eat (https://nethackwiki.com/wiki/Disenchanter, https://nethackwiki.com/wiki/Magic_cancellation)
 -->
 
-**Disenchanters** (`R`, blue) appear only in Gehennom. Their
+**Disenchanters** (`R`, blue) appear only in [Gehennom](#gehennom). Their
 claw is the silent ascension-killer it's reputed to be, but the
 mechanic is more constrained than common lore suggests.
 
@@ -3878,7 +3878,7 @@ be true:
   expiring.
 - You must not be **polymorphed** into a demon or undead while
   worshipping a non-chaotic god.
-- You must not be in **Gehennom** (unless you worship Moloch, which
+- You must not be in **[Gehennom](#gehennom)** (unless you worship Moloch, which
   no standard role does). Your god cannot hear you there. This is
   one of the things that makes Gehennom so dangerous.
 - If you're on an altar, it should be **co-aligned**. Praying on a
@@ -3946,8 +3946,8 @@ turns.
 
 The first gift is biased toward an artifact that matches your
 alignment and a weapon skill you can use, which in practice
-usually means your role's signature artifact (Magicbane for
-Wizards, Mjollnir for Valkyries, and so on). Sacrifice early to
+usually means your role's signature artifact ([Magicbane](#magicbane) for
+Wizards, [Mjollnir](#mjollnir) for Valkyries, and so on). Sacrifice early to
 lock in that bias before the random pool dilutes it. Gift
 artifacts are always aligned to your god and always match a
 weapon skill you can use.
@@ -4003,7 +4003,7 @@ to donate anything at all also costs you alignment with your god.
 
 - **Donate early, donate often.** Protection stacks, so 500 zm at
   XL 1 buys the same AC reduction as 15000 zm at XL 30. Visiting
-  the Minetown temple every time you climb back up from the Mines
+  the Minetown temple every time you climb back up from [the Mines](#the-gnomish-mines)
   is a classic stacking ritual.
 - **Count gold before chatting.** The priest's roll is sensitive to
   what's in your inventory; drop excess gold on the floor outside
@@ -4054,7 +4054,7 @@ your god may crown you on a successful prayer. Crowning grants:
 - A special title (e.g., "Hand of Elbereth" for lawful characters).
 - An artifact weapon appropriate to your alignment, if one is
   available that you can use. A Lawful crowning transforms whatever
-  long sword you happen to be wielding into Excalibur in place, so
+  long sword you happen to be wielding into [Excalibur](#excalibur-artifact) in place, so
   having a +7 long sword in hand at the moment of crowning gives
   you a +7 Excalibur.
 - Intrinsic [fire resistance](#damage-resistances), [cold resistance](#damage-resistances), [shock resistance](#damage-resistances),
@@ -4228,8 +4228,8 @@ ticking down, though, so go back for it before it forgets you
 were friends.
 A **magic whistle** is the recommended fix: applying one warps every
 pet on your level to a square next to you, even on no-teleport
-floors. **Sokoban** also doesn't let pet loyalty decay; leaving
-a pet there while you do the Quest or the Mines is the dungeon's
+floors. **[Sokoban](#sokoban)** also doesn't let pet loyalty decay; leaving
+a pet there while you do [the Quest](#the-quest) or [the Mines](#the-gnomish-mines) is the dungeon's
 safest kennel.
 
 If you see *"You have a sad feeling for a moment"*, that's
@@ -5000,7 +5000,7 @@ throw one at a monster and it speeds up, you can rename the class to
 "speed."
 
 This habit of annotating your discoveries is what separates adventurers
-who die on level 8 from adventurers who reach the Castle. The dungeon
+who die on level 8 from adventurers who reach [the Castle](#the-castle). The dungeon
 doesn't keep notes for you. You have to do it yourself.
 
 **Identification by stacking.** When you pick up an item, the game
@@ -5232,7 +5232,7 @@ corpses is the most important single intrinsic to bank.
 
 **Sprig of wolfsbane.** Not a corpse but the same shelf. Eating one
 cures lycanthropy outright. If you're heading anywhere were-things
-roam (the Mines, the Quest for some roles), carry a sprig or two.
+roam ([the Mines](#the-gnomish-mines), [the Quest](#the-quest) for some roles), carry a sprig or two.
 It weighs almost nothing.
 
 **Eat the puddings, cubes, molds, and blobs.** They look like
@@ -5534,7 +5534,7 @@ Don't try unique monsters (the gods refuse).
 
 []{#scroll-magic-mapping}
 **Magic mapping.** Reveals the entire level layout; blessed also
-shows secret doors. Invaluable in Gehennom's maddening mazes,
+shows secret doors. Invaluable in [Gehennom](#gehennom)'s maddening mazes,
 where mapping by hand could take a lifetime you don't have.
 
 []{#scroll-scare-monster}
@@ -5679,7 +5679,7 @@ the few shared results.
 **Wishing.** The most valuable item in the game. Each zap grants one
 wish. In 5.0, wands of wishing generate with only **1
 charge** and can be recharged once (and only once) to a maximum of
-1 additional charge. This means the Castle wand of wishing typically
+1 additional charge. This means [the Castle](#the-castle) wand of wishing typically
 yields 2 wishes plus a possible wrested third, a significant
 reduction from older versions where it could provide 5 to 7. Plan
 your wishes carefully before you find one.
@@ -6003,7 +6003,7 @@ Water (entirely underwater). Then it's existential.
 the air the same way, but you can still pick things up and you
 can choose to drop down on your turn. The under-appreciated bonus
 is that **your steed flies with you**. A flying warhorse skips
-over moats, fountains, pools, and the Castle's drawbridge entirely
+over moats, fountains, pools, and [the Castle](#the-castle)'s drawbridge entirely
 A fast Knight can cross Medusa's island and the Castle from edge
 to edge without worrying about the water at all. Stack with boots
 of speed and a wand of speed monster on the mount and you have a
@@ -6078,7 +6078,7 @@ transforms how you play. A blessed bag reduces the weight of
 everything inside to roughly one quarter, meaning you can carry your
 entire potion supply, your backup armor, your scroll library, and
 still have room for loot. Almost every ascending player carries
-one. Sokoban's prize is a bag of holding half the time; otherwise
+one. [Sokoban](#sokoban)'s prize is a bag of holding half the time; otherwise
 wish for one when you can.
 
 A warning: **never** put a wand of cancellation, another bag of
@@ -6166,15 +6166,15 @@ for light. That's like using a winning lottery ticket as a
 bookmark.
 
 The **Candelabrum of Invocation** is a unique candelabra found in
-Vlad's Tower. It's one of three items needed for the invocation
-ritual to enter Moloch's Sanctum. You'll need seven candles to
+[Vlad's Tower](#vlads-tower). It's one of three items needed for the invocation
+ritual to enter [Moloch's Sanctum](#molochs-sanctum). You'll need seven candles to
 fill it, so start hoarding candles when you find them.
 
 #### Musical Instruments
 
 Music has power in the Mazes. Any tonal instrument (wooden flute,
 magic flute, tooled horn, frost or fire horn, bugle, or harp) can
-play the passtune at the Castle drawbridge. You will find the notes
+play the passtune at [the Castle](#the-castle) drawbridge. You will find the notes
 nearby, so listen carefully. A **magic harp** charms monsters into
 tameness. A **magic flute** puts them to sleep. A **drum of
 earthquake** creates pits around you, which is as chaotic as it
@@ -6353,12 +6353,13 @@ full list and the forge recipe.
 **Speed boots** are worth wishing for. Being faster than your
 enemies means you get more turns, more chances to attack, cast
 spells, or run away. Casters with surplus Pw (Wizard or Monk
-late game, especially with the Eye of the Aethiopica) can lean
+late game, especially with the [Eye of the Aethiopica](#eye-of-the-aethiopica)) can lean
 on **haste self** as a substitute and free the boots slot for
 water walking or jumping. Haste self alone reaches *very fast*
 just like the boots; maintenance costs about 10 Pw every 150
 turns at Skilled.
 
+[]{#magic-cancellation}
 **Magic cancellation (MC).** Worn armor pieces contribute a
 hidden defensive value called MC, capped at 3. When a monster
 lands a "special attack" on you (gaze, breath, touch effect,
@@ -6429,7 +6430,7 @@ Weapon choice depends heavily on your role and skill caps.
 | [Battle-axe](#axe)     | d8+d4 / d6+2d4 | Two-handed, good damage            |
 | [Rubber hose](#whip)    | d4 / d3        | No, seriously, don't use this      |
 
-**Excalibur** (long sword dipped in a fountain while Lawful) is one
+**[Excalibur](#excalibur-artifact)** (long sword dipped in a fountain while Lawful) is one
 of the best weapons: +d5 to hit and +d10 damage, level drain resistance,
 automatic searching. For Lawful characters, getting Excalibur early
 is a priority.
@@ -6828,7 +6829,7 @@ it, and bless it on an altar if you can. (The +3 bonus comes
 from `set_moreluck`; the curse doesn't speed positive Luck's
 decay, but it locks bad Luck in.)
 
-**The Heart of Ahriman, Tsurugi of Muramasa, and Orb of Fate all
+**The [Heart of Ahriman](#heart-of-ahriman), [Tsurugi of Muramasa](#tsurugi-of-muramasa), and [Orb of Fate](#orb-of-fate) all
 count as luckstones.** Barbarian, Samurai, and Valkyrie quest
 artifacts confer the same drift-freeze and bless-state bonus, so
 those three roles get a "free luckstone" from their quest reward.
@@ -7280,7 +7281,7 @@ who ascends and one who dies memorably on the Plane of Fire.
 The Mazes are stingy, but there are more wish sources than most
 travelers realize:
 
-- **Wand of wishing:** found in the Castle treasure room
+- **Wand of wishing:** found in [the Castle](#the-castle) treasure room
   (see [Key Wands](#key-wands) for the 5.0 charge mechanics). The
   Castle chest also contains a potion of gain level, because the
   Mazes occasionally feel generous.
@@ -7332,8 +7333,8 @@ ascensions:
    most roles benefit from punching harder).
 5. **Amulet of [life saving](#special-and-utility)** (insurance for the endgame, when
    overconfidence kills more adventurers than monsters do).
-6. **A specific artifact** (Grayswandir is a common target for the
-   silver damage against everything in Gehennom).
+6. **A specific artifact** ([Grayswandir](#grayswandir) is a common target for the
+   silver damage against everything in [Gehennom](#gehennom)).
 
 Don't wish for consumables (scrolls, potions) unless you're in
 dire straits. Items you can find through normal play aren't worth
@@ -7472,23 +7473,23 @@ into the "worth wishing for, role permitting" tier. The remaining
 entries (the bane weapons, Fire Brand, Cleaver) are usually accepted
 as sacrifice gifts rather than spent wishes on.
 
-**Excalibur** is the go-to weapon for Lawful characters; the drain
+**[Excalibur]{#excalibur-artifact}** is the go-to weapon for Lawful characters; the drain
 resistance alone is worth carrying it, even after you have a stronger
 weapon. Knights start aligned to it and have unique 1-in-6 fountain-dip
 odds; every other Lawful role faces 1-in-30.
 
-**Grayswandir** is wishable and arguably the game's best melee
+**[Grayswandir]{#grayswandir}** is wishable and arguably the game's best melee
 weapon. It's silver (extra damage to many monsters), halves
 incoming physical damage, and grants hallucination resistance.
 
-**Mjollnir** is the Valkyrie's signature throw-and-return weapon.
+**[Mjollnir]{#mjollnir}** is the Valkyrie's signature throw-and-return weapon.
 and only Valkyries get the reliable 99% catch-back. Other roles can
 wield it for melee but won't reliably catch it on the return throw.
 It needs Strength 25 to wield in either case (gauntlets of power
 or rings of gain strength get you there). Its +d24 shock damage
 is brutal against anything not shock-resistant.
 
-**Magicbane** is the Wizard's go-to athame. Its stun damage, curse
+**[Magicbane]{#magicbane}** is the Wizard's go-to athame. Its stun damage, curse
 protection, and magic resistance all require it to be **wielded**,
 not just carried. Often the first gift from a Neutral
 sacrifice. One nuance for two-weapon Wizards: the curse
@@ -7496,7 +7497,7 @@ protection only applies while Magicbane is the *primary* wielded
 weapon. If you stash Magicbane in the off-hand to swing a heavier
 blade, you've also turned off its anti-curse aura.
 
-**Stormbringer** is dangerous to use because it attacks peaceful
+**[Stormbringer]{#stormbringer}** is dangerous to use because it attacks peaceful
 monsters automatically, which can cause alignment problems. But
 each hit drains a level from the target and gives it to you, which
 is huge in the early-to-mid game. Stormbringer is also
@@ -7504,20 +7505,20 @@ is huge in the early-to-mid game. Stormbringer is also
 permission takes the heavier 4d10 magical-blast damage rather than
 the 4d4 dealt by ordinary cross-alignment artifacts.
 
-**Cleaver** is the Barbarian quest artifact. When wielded one-handed
+**[Cleaver]{#cleaver}** is the Barbarian quest artifact. When wielded one-handed
 (not two-weaponing), every swing strikes the primary target *and* one
 square on each side of it: three monsters per attack when packed in
 a corridor mouth or against a diagonal pair. The two-weapon penalty
 suppresses the spin, so most Barbarians keep Cleaver as their primary
 and a shield in the off slot.
 
-**Frost Brand** and **Fire Brand** each have an `#invoke` power
+**[Frost Brand]{#frost-and-fire-brand}** and **Fire Brand** each have an `#invoke` power
 the wishable table doesn't capture: Frost Brand summons a
 snowstorm around you (cold damage to nearby squares), Fire Brand
 summons a firestorm. Either one clears the room around you when
 you're cornered.
 
-**Snickersnee** got a major buff in 5.0: once per turn you can
+**[Snickersnee]{#snickersnee}** got a major buff in 5.0: once per turn you can
 `#apply` it for a free reach attack at a target up to two squares
 away. A real free action that *doesn't* end your turn, leaving
 you a normal melee swing on top. The free hit is announced by a
@@ -7527,15 +7528,15 @@ weapon in the game, not just a flavor piece. (Regular polearm
 reach attacks via `#apply` end your turn; Snickersnee's is the
 unique free version.)
 
-**Sunsword** is the Lawful long sword that wants to be a tool. Wielded,
-it lights its current radius (handy in caves and the Mines without
+**[Sunsword]{#sunsword}** is the Lawful long sword that wants to be a tool. Wielded,
+it lights its current radius (handy in caves and [the Mines](#the-gnomish-mines) without
 costing an oil lamp). `#invoke` it for a directed *blinding ray*,
 mechanically a Camera flash in any direction (not limited to undead).
 It costs 5×spell-level Pw to invoke, so save it for the fights that
 demand it: Riders, mind flayers, the Wizard of Yendor. Invoking up
 or down lights the room; invoking at yourself self-blinds you.
 
-**Bane weapons** (Sunsword, Demonbane, Sting, Orcrist, Grimtooth,
+**[Bane weapons]{#bane-weapons}** (Sunsword, Demonbane, Sting, Orcrist, Grimtooth,
 Dragonbane, Werebane, Giantslayer, Ogresmasher, Trollsbane) deal
 double base damage against their target class. Most are disappointing
 as a primary weapon, but the defensive riders are often the real
@@ -7592,46 +7593,46 @@ again.
 
 :::
 
-**The Orb of Detection** (Archeologist): a crystal ball that grants
+**[The Orb of Detection]{#orb-of-detection}** (Archeologist): a crystal ball that grants
 ESP and magic resistance just by being carried. `#invoke` toggles
 invisibility. Archeologists are already exceptional at stealth, and
 this turns them into a ghost.
 
-**The Heart of Ahriman** (Barbarian): a luckstone that doubles as a
+**[The Heart of Ahriman]{#heart-of-ahriman}** (Barbarian): a luckstone that doubles as a
 +1 luck talisman with stealth. Critically, it counts as a luckstone
 for *all* the luckstone mechanics (mine's-end protection, gem-throw
 luck math, luck cap +13 instead of +10). It's also a projectile
 weapon: Barbarians can throw it for double damage and pick it back
 up. `#invoke` is levitation.
 
-**The Sceptre of Might** (Caveman): mace base, +d5 to-hit, double
+**[The Sceptre of Might]{#sceptre-of-might}** (Caveman): mace base, +d5 to-hit, double
 damage against any monster whose alignment differs from the
 artifact's (the Sceptre itself is Lawful, so it deals doubled
 damage against chaotic, neutral, *and* unaligned monsters: most
-of the dungeon's hostiles once you reach Gehennom). It also grants
+of the dungeon's hostiles once you reach [Gehennom](#gehennom)). It also grants
 magic resistance while *wielded*. `#invoke` casts conflict
 (monsters fight each other) at a steep energy cost.
 
-**The Staff of Aesculapius** (Healer): the Healer's salvation. Each
+**[The Staff of Aesculapius]{#staff-of-aesculapius}** (Healer): the Healer's salvation. Each
 hit drains life (one of only three drain-life weapons; the others
 are Stormbringer and the rider Death) and gives you regeneration
 plus drain resistance just by carrying it. `#invoke` heals fully and
 cures nearly every bad status. Few artifacts change a role's late
 game as much as this one.
 
-**The Magic Mirror of Merlin** (Knight): grants ESP and magic
+**[The Magic Mirror of Merlin]{#magic-mirror-of-merlin}** (Knight): grants ESP and magic
 resistance, and occasionally *speaks*, dropping hints. Knights
 already have Excalibur for combat, so the Mirror is pure passive
 utility.
 
-**The Eyes of the Overworld** (Monk): lenses that, when worn, give
+**[The Eyes of the Overworld]{#eyes-of-the-overworld}** (Monk): lenses that, when worn, give
 astral vision (see invisible, see through walls, spot secret doors)
 **and** magic resistance. Both effects require them to be worn.
 carrying them in inventory does nothing. `#invoke` enlightens you.
 For a Monk who can't safely wear body armor, a powerful passive on
 a slot they can use.
 
-**The Mitre of Holiness** (Priest): a helm of brilliance with the
+**[The Mitre of Holiness]{#mitre-of-holiness}** (Priest): a helm of brilliance with the
 usual brilliance bonus to intelligence and wisdom (so spell-cast
 more reliably), plus fire resistance while carried, plus a free
 `-1` to AC. `#invoke` for an energy boost, useful for spell-heavy
@@ -7640,12 +7641,12 @@ Priests. Note: despite what older spoilers say, the Mitre does
 melee attack to carry the bonus), and it does not grant drain
 resistance.
 
-**The Longbow of Diana** (Ranger): a real artifact bow with +d5 to hit
+**[The Longbow of Diana]{#longbow-of-diana}** (Ranger): a real artifact bow with +d5 to hit
 plus reflection while wielded, ESP while carried. `#invoke` conjures
 free arrows out of thin air. Combined with the Ranger's ranged
 specialization this is the role's centerpiece.
 
-**The Master Key of Thievery** (Rogue): a carry package of warning,
+**[The Master Key of Thievery]{#master-key-of-thievery}** (Rogue): a carry package of warning,
 teleport control, half physical damage taken, and `#invoke` instantly
 untraps a nearby trap. The unlocking
 bonus depends on alignment: a Rogue gets it from any non-cursed
@@ -7653,31 +7654,31 @@ Key; everyone else needs a **blessed** Key. With those preconditions
 met, `#untrap` also gains a perfect-detection bonus on doors and
 chests.
 
-**The Tsurugi of Muramasa** (Samurai): a katana-grade two-handed
+**[The Tsurugi of Muramasa]{#tsurugi-of-muramasa}** (Samurai): a katana-grade two-handed
 sword with +d8 damage *and* a behead chance (like Vorpal Blade)
 *and* a +1 protection bonus, and it acts as a luckstone. Note
 that Tsurugi does **not** grant magic resistance, despite the
 weapon's reputation. One of the strongest artifacts in the game,
 the Samurai's reward for a hard quest.
 
-**The Platinum Yendorian Express Card** (Tourist): the Tourist's
+**[The Platinum Yendorian Express Card]{#platinum-yendorian-express-card}** (Tourist): the Tourist's
 get-out-of-jail card. Carrying it grants ESP, magic resistance, and
 half spell damage; `#invoke` charges an item (a wand, ring, or marker),
 which in the Tourist's hands is roughly "a free wish per ~1000
 turns." Pairs especially well with marker-stockpiling strategies.
 
-**The Orb of Fate** (Valkyrie): the most generous passive in the
+**[The Orb of Fate]{#orb-of-fate}** (Valkyrie): the most generous passive in the
 game: counts as a luckstone, grants warning, halves both spell *and*
 physical damage taken. `#invoke` is levitate-or-teleport (a toggle,
 very useful in the Sanctum). Valkyries also have Mjollnir to throw,
 so the Orb sits in inventory as pure carry value.
 
-**The Eye of the Aethiopica** (Wizard): grants magic resistance
+**[The Eye of the Aethiopica]{#eye-of-the-aethiopica}** (Wizard): grants magic resistance
 when **worn** (a Wizard's wearing slot for it is the amulet, so
 in practice always); carrying also gives half spell damage taken
 and *extra energy regeneration*, a Wizard's most precious
-resource. `#invoke` opens a portal that drops you in Vlad's Tower
-(one-way; useful for shortcutting the Castle → Vlad's traversal).
+resource. `#invoke` opens a portal that drops you in [Vlad's Tower](#vlads-tower)
+(one-way; useful for shortcutting [the Castle](#the-castle) → Vlad's traversal).
 For a spell-caster this is irreplaceable.
 
 ---
@@ -7761,7 +7762,7 @@ Once you're across, the Castle contains:
   one drops you straight to the Valley of the Dead, which is rarely
   what you want at this stage. Watch the floor. The trap doors
   are also the *only* way down from the Castle: the level has no
-  conventional `>` stair to Gehennom, so when you are ready to
+  conventional `>` stair to [Gehennom](#gehennom), so when you are ready to
   descend, you do so by deliberately stepping on one.
 - A **fountain** in the moat-side corridor, usable in emergencies
   but not worth risking the wand of wishing for.
@@ -7818,7 +7819,7 @@ artifact**.
 - blessed scroll of genocide on class 'L' wipes lich/demilich/master lich/arch-lich (read.c:2638-3015 do_class_genocide, monsters.h:1864-1899 four S_LICH entries); Wizard of Yendor is S_HUMAN (monsters.h:2847-2858), not affected
 -->
 
-Below the Castle the dungeon changes its character. Corridors
+Below [the Castle](#the-castle) the dungeon changes its character. Corridors
 give way to mazes, ordinary monsters to demons. Worst of all,
 your god goes silent. Prayer fails in Gehennom, and from this
 point on you survive on what you packed at the Castle.
@@ -7906,7 +7907,7 @@ One thing the demon never forgets: a *refused* bribe converts
 the prince to permanent hostility, and he will not offer terms
 again. Bribe or fight. Don't dither.
 
-**Wielding Excalibur or Demonbane closes off bribery entirely.**
+**Wielding [Excalibur](#excalibur-artifact) or Demonbane closes off bribery entirely.**
 Those artifacts refuse to talk and attack on sight, so a Lawful
 character planning to bribe should sheathe them before approach.
 
@@ -8004,11 +8005,11 @@ frantic climb back to the surface. The steps:
 
 1. **Collect the trio.** You need the **Bell of Opening** (the
    Quest goal, dropped by your quest nemesis), the **Candelabrum
-   of Invocation** (the top of Vlad's Tower), and the **Book of
+   of Invocation** (the top of [Vlad's Tower](#vlads-tower)), and the **Book of
    the Dead** (the bottom of the Wizard's Tower). Missing any one
    means walking all the way back to fetch it; the Bell in
    particular is easy to leave behind on the nemesis's corpse
-   the first time through the Quest.
+   the first time through [the Quest](#the-quest).
 
 2. **Attach all seven candles to the Candelabrum.** Apply (`a`)
    each candle and select the Candelabrum. Candles spawn often
@@ -8018,7 +8019,7 @@ frantic climb back to the surface. The steps:
    absent (Orcish Town layout).
 
 3. **Find the vibrating square.** On the Gehennom level directly
-   above Moloch's Sanctum, a single square vibrates when you step
+   above [Moloch's Sanctum](#molochs-sanctum), a single square vibrates when you step
    on it: *"You feel an unsettling vibration under your feet."*
    The square's position is random within the maze, so you have
    to search by walking. Scrolls of magic mapping help enormously.
@@ -8097,7 +8098,7 @@ alone is not the difference between winners and losers.
 
 #### What killed the runners-up
 
-A look at adventurers who died deep in Gehennom shows that
+A look at adventurers who died deep in [Gehennom](#gehennom) shows that
 their gear was nearly indistinguishable from the winners'.
 Their AC was −23 to −40. They had wands of death, all three
 Invocation items, silver dragon scale mail. What killed them
@@ -8139,8 +8140,8 @@ of full healing.
 - strategy aligned with NetHackWiki Ascension run, Mysterious force, Amulet of Yendor: run-don't-fight, dig straight lines, kill the Wizard fast, the Force as the primary climb obstacle (https://nethackwiki.com/wiki/Ascension_run, https://nethackwiki.com/wiki/Mysterious_force, https://nethackwiki.com/wiki/Amulet_of_Yendor)
 -->
 
-You did it. You fought through Gehennom, defeated the High Priest,
-and snatched the Amulet of Yendor from Moloch's Sanctum. Now all
+You did it. You fought through [Gehennom](#gehennom), defeated the High Priest,
+and snatched the Amulet of Yendor from [Moloch's Sanctum](#molochs-sanctum). Now all
 you have to do is carry it from the absolute bottom of the dungeon,
 through every level of Gehennom, past every demon lord you thought
 you were done with, all the way back to the surface, and then
@@ -8233,7 +8234,7 @@ ball through the entire opposing team. Speed is everything.
 - **Kill the Wizard fast.** When he shows up (and he will), don't
   try to be clever. Finger of death, wand of death, or brute force.
   The faster he's down, the fewer monsters he summons.
-- **Don't rely on Elbereth past the Castle.** Elbereth is
+- **Don't rely on Elbereth past [the Castle](#the-castle).** Elbereth is
   **completely ignored** in all of Gehennom and on all four
   Elemental Planes plus Astral. You can still write it for the
   alignment, but no monster will care. Plan your heal-and-recover
@@ -8527,7 +8528,7 @@ gets garbled or when something doesn't look right.
 
 `Ctrl+O` (or `#overview`) lists the interesting levels you've
 visited (anywhere with an altar, throne, fountain, sink, shop,
-temple, vault, or branch stair, plus the Castle's tune once you
+temple, vault, or branch stair, plus [the Castle](#the-castle)'s tune once you
 learn it. Prefix with `m` to see *all* visited levels in a menu
 and add or edit annotations from there; `#annotate` does the
 same for the level you're standing on. The classic use is
@@ -9556,7 +9557,7 @@ holding) when the dungeon doesn't provide them.
 
 **No wishing for artifacts.** Make wishes, but never wish for an
 artifact. This prevents the most efficient wish strategy (wishing
-for Grayswandir, the Eye of the Aethiopica, or similar game-changing
+for [Grayswandir](#grayswandir), the [Eye of the Aethiopica](#eye-of-the-aethiopica), or similar game-changing
 artifacts) while still allowing wishes for mundane necessities. The
 counter ticks even for *denied* artifact wishes (when the game
 gives you "something in your hand" instead), so be sure you can
@@ -9598,7 +9599,7 @@ since 3.6.
 senses to navigate. Officially tracked since 3.6.
 
 Mazes 5.0 added five more tracked conducts: Pauper, Petless,
-Permadeaf, Sokoban, and Bonesless. Pauper, Permadeaf, Petless, and
+Permadeaf, [Sokoban](#sokoban), and Bonesless. Pauper, Permadeaf, Petless, and
 Bonesless are start-of-game options (you opt in or out before
 play). Sokoban is tracked automatically based on what you do
 during the run.
@@ -9808,7 +9809,7 @@ no markup or discount either way. The differences are about how
   pay shrine fees, and can't bribe a demon out of credit.
 
 Practical balance: park spare gold as credit at a shop you intend
-to keep visiting (the Gnomish Mines general store is a popular
+to keep visiting ([the Gnomish Mines](#the-gnomish-mines)s](#the-gnomish-mines) general store is a popular
 choice), but don't deposit more than you expect to spend there.
 
 (A more inventive use, called *credit cloning*: drop gold inside
@@ -11205,7 +11206,7 @@ All nymphs teleport.
 - Goblin is correctly placed in S_ORC (monsters.h:727).
 -->
 
-Pack hunters with mediocre loot but real numbers; bring a chokepoint to the Mines.
+Pack hunters with mediocre loot but real numbers; bring a chokepoint to [the Mines](#the-gnomish-mines).
 
 ::: dense-table
 
@@ -11866,7 +11867,7 @@ Big melee brutes that wield weapons. Drop decent weapons and armor.
 
 **Brown and black puddings split** when you hit them with an iron or metal melee weapon. Brown puddings **rot** your wood/leather/cloth/bone armor on bite; black puddings **corrode** your metal armor on bite *and* corrode your wielded metal weapon on the passive return-hit. Gray ooze **rusts** metal armor but doesn't split. Fire-kill puddings so they don't multiply, or pick a chokepoint.
 
-**Green slime** is a Gehennom-only exception: doesn't split, leaves a glob, and one touch starts a 10-turn countdown to becoming one yourself. Fight at range, burn yourself with fire to clear it, or wear an **amulet of unchanging** (blocks and aborts the transformation). Prayer doesn't work in Gehennom, so don't rely on it. See *Delayed Deaths* for the full cure list.
+**Green slime** is a [Gehennom](#gehennom)-only exception: doesn't split, leaves a glob, and one touch starts a 10-turn countdown to becoming one yourself. Fight at range, burn yourself with fire to clear it, or wear an **amulet of unchanging** (blocks and aborts the transformation). Prayer doesn't work in Gehennom, so don't rely on it. See *Delayed Deaths* for the full cure list.
 
 All puddings and oozes are amorphous, mindless, cold-resistant, poison-resistant, acid-resistant, and petrification-resistant. All except *gray ooze* also are shock-resistant.
 
@@ -12009,7 +12010,7 @@ Confusion gaze. Don't melee without some way to dodge the gaze. Blindness defeat
 - Vlad inhabits Vlad's Tower; holds the Candelabrum of Invocation (mkobj.c spawn for PM_VLAD).
 -->
 
-Drains XL on bite. Shapeshifts to bat or cloud. Vlad the Impaler is the boss of Vlad's Tower.
+Drains XL on bite. Shapeshifts to bat or cloud. Vlad the Impaler is the boss of [Vlad's Tower](#vlads-tower).
 
 All vampires fly, regenerate, are undead, follow you up and down stairs, and shapeshift.
 
@@ -12469,11 +12470,11 @@ sources.
 | **Poison resistance** | Survive poison stings, poisonous corpses, poison breath. | Barbarian XL 1, Healer XL 1, Orc XL 1, Tourist XL 20, Monk XL 3; eating corpses with `MR_POISON` (killer bee or scorpion at quadruple rate; otherwise green dragon, naga, quasit, etc.). | Ring of poison resistance; amulet versus poison; alchemy smock (cloak); green dragon scales / scale mail. |
 | **Acid resistance** | *Temporary* immunity to acid damage. Resets on level change. | Eating corpses with `MR_ACID` (acid blob, brown pudding, yellow dragon) at half the normal rate. | Yellow dragon scales / scale mail. |
 | **Stoning resistance** | *Temporary* immunity to petrification (cockatrice touch, eating cockatrice/Medusa corpses). Resets on level change. | Eating corpses with `MR_STONE` (acid blob — quite reliable; lizard) at one-quarter normal rate. | Yellow dragon scales / scale mail (yes, both effects). |
-| **Drain resistance** | Blocks level drain from wraiths, vampires, AD_DRLI weapons (Stormbringer, Vorpal Blade). | None from corpses; vampire / lich polyform confers it. | Black dragon scales / scale mail; shield of drain resistance (new in 5.0); wielding Excalibur, Stormbringer, or Staff of Aesculapius. |
+| **Drain resistance** | Blocks level drain from wraiths, vampires, AD_DRLI weapons ([Stormbringer](#stormbringer), Vorpal Blade). | None from corpses; vampire / lich polyform confers it. | Black dragon scales / scale mail; shield of drain resistance (new in 5.0); wielding [Excalibur](#excalibur-artifact), Stormbringer, or [Staff of Aesculapius](#staff-of-aesculapius). |
 | **Sickness resistance** | Blocks deadly disease, food poisoning. | None from corpses. | Green dragon scales / scale mail. |
-| **Magic resistance** | Blocks death rays, magic missile, polymorph beams, the touch-of-death spell, and magic-trap effects at 100%. *Not* the same as MC. | Wizard XL 17 (called Antimagic); magic-trap polymorph from a magic trap can confer it randomly. | Cloak of magic resistance; gray dragon scales / scale mail; wielding Magicbane. |
-| **Hallucination resistance** | Blocks hallucination from violet fungus, hallucinogenic potions, gold-DSM emission. | Polyform-only (forms with `AD_HALU` attacks). | Wielding Grayswandir. |
-| **Blindness resistance** | Blocks light-flash blindness from yellow / black light bursts. | Polyform-only (forms with `AD_BLND` attacks like yellow light). | Wielding Sunsword. |
+| **Magic resistance** | Blocks death rays, magic missile, polymorph beams, the touch-of-death spell, and magic-trap effects at 100%. *Not* the same as [MC](#magic-cancellation). | Wizard XL 17 (called Antimagic); magic-trap polymorph from a magic trap can confer it randomly. | Cloak of magic resistance; gray dragon scales / scale mail; wielding [Magicbane](#magicbane). |
+| **Hallucination resistance** | Blocks hallucination from violet fungus, hallucinogenic potions, gold-DSM emission. | Polyform-only (forms with `AD_HALU` attacks). | Wielding [Grayswandir](#grayswandir). |
+| **Blindness resistance** | Blocks light-flash blindness from yellow / black light bursts. | Polyform-only (forms with `AD_BLND` attacks like yellow light). | Wielding [Sunsword](#sunsword). |
 
 #### Senses and perception
 
@@ -12482,11 +12483,11 @@ let you act on information you couldn't otherwise see.
 
 | Property | What it does | Intrinsic sources | Extrinsic sources |
 |---|---|---|---|
-| **Telepathy** (ESP) | Senses minded monsters anywhere on the level when you are blind (and partially when sighted). Floating-eye corpse is the standard early source. | Eating corpses with the `telepathic` flag (floating eye — at fifteen times normal rate; mind flayer; master mind flayer). | Amulet of ESP; helm of telepathy; Eye of the Aethiopica (carried); Orb of Detection (carried); Platinum Yendorian Express Card (carried); Longbow of Diana (carried); Magicbane (wielded). |
+| **Telepathy** (ESP) | Senses minded monsters anywhere on the level when you are blind (and partially when sighted). Floating-eye corpse is the standard early source. | Eating corpses with the `telepathic` flag (floating eye — at fifteen times normal rate; mind flayer; master mind flayer). | Amulet of ESP; helm of telepathy; [Eye of the Aethiopica](#eye-of-the-aethiopica) (carried); [Orb of Detection](#orb-of-detection) (carried); [Platinum Yendorian Express Card](#platinum-yendorian-express-card) (carried); [Longbow of Diana](#longbow-of-diana) (carried); [Magicbane](#magicbane) (wielded). |
 | **See invisible** | See invisible creatures and yourself when invisible. | Monk XL 1; Ranger XL 15. No corpse path. | Ring of see invisible. |
-| **Warning** | A digit appears next to a hostile creature whose hit-dice exceed yours; the higher the number, the bigger the threat. | Caveperson XL 15; Healer XL 15; Monk XL 7; Priest XL 15; Wizard XL 15; prayer rescue. | Ring of warning; helm of caution; Master Key of Thievery, Orb of Fate, Orcrist, Sting, Grimtooth (all carried). |
+| **Warning** | A digit appears next to a hostile creature whose hit-dice exceed yours; the higher the number, the bigger the threat. | Caveperson XL 15; Healer XL 15; Monk XL 7; Priest XL 15; Wizard XL 15; prayer rescue. | Ring of warning; helm of caution; [Master Key of Thievery](#master-key-of-thievery), [Orb of Fate](#orb-of-fate), [Orcrist](#bane-weapons), [Sting](#bane-weapons), [Grimtooth](#bane-weapons) (all carried). |
 | **Warning of specific class** | The same indicator, restricted to one monster type. | None as intrinsic. | Orcrist / Sting (warn of orcs); Grimtooth (warns of elves); other class-specific artifacts. |
-| **Searching** | Auto-search each step; reveals hidden doors, passages, traps without using a turn. | Archeologist XL 1; Monk XL 9; Ranger XL 1; Rogue XL 10; Tourist XL 10. | Ring of searching; carrying Excalibur. |
+| **Searching** | Auto-search each step; reveals hidden doors, passages, traps without using a turn. | Archeologist XL 1; Monk XL 9; Ranger XL 1; Rogue XL 10; Tourist XL 10. | Ring of searching; carrying [Excalibur](#excalibur-artifact). |
 | **Clairvoyance** | Periodic magical-eye view of the surrounding dungeon. | None as intrinsic. | Cornuthaum (Wizards only). |
 | **Infravision** | See heat signatures in the dark. | Dwarf, Elf, Gnome, Orc races at XL 1. | Red dragon scales / scale mail. |
 
@@ -12499,8 +12500,8 @@ The speed system, the air-walking gear, and the niche-access tools.
 | **Fast** (intrinsic speed) | Each movement allocation has a ~1/3 chance of a +12 bonus. Raises effective speed from 12 to about 16. | Monk XL 1; Samurai XL 1; Valkyrie XL 7; Archeologist XL 10; Barbarian XL 7; Caveperson XL 7; Knight XL 7. Prayer rescue. | Speed boots (grant **Very Fast**, ~2/3 chance, effective ~20); blue dragon scales / scale mail (Very Fast). |
 | **Jumping** | The `#jump` extended command — short controlled hop. | Knight XL 1. | Jumping boots; spell of jumping. |
 | **Teleport** (uncontrolled) | Random teleport every few hundred turns. Useful when paired with control. | Eating corpses with `M1_TPORT` (tengu, homunculus) at slightly above normal rate. | Ring of teleportation. |
-| **Teleport control** | Lets you choose your destination when you teleport. | Monk XL 17; Wizard XL 17; eating corpses with `M1_TPORT_CNTRL` (tengu at normal rate). | Ring of teleport control; carrying Master Key of Thievery; carrying the Amulet of Yendor (yes, the win condition grants TC). |
-| **Levitation** | Constantly floating. Crosses water, lava, ice; can't descend stairs; can't pick up items. | None. | Ring of levitation; levitation boots (cursed = stuck on); carrying the Heart of Ahriman. |
+| **Teleport control** | Lets you choose your destination when you teleport. | Monk XL 17; Wizard XL 17; eating corpses with `M1_TPORT_CNTRL` (tengu at normal rate). | Ring of teleport control; carrying [Master Key of Thievery](#master-key-of-thievery); carrying the Amulet of Yendor (yes, the win condition grants TC). |
+| **Levitation** | Constantly floating. Crosses water, lava, ice; can't descend stairs; can't pick up items. | None. | Ring of levitation; levitation boots (cursed = stuck on); carrying the [Heart of Ahriman](#heart-of-ahriman). |
 | **Flying** | Like levitation but you can descend, pick up, and land voluntarily. | Polyform into a flying monster. | Amulet of flying. |
 | **Water walking** | Cross water and ice as if it were floor; doesn't help in lava. | Polyform into the right form (some undead). | Water-walking boots. |
 | **Magical breathing** | Don't drown when grabbed by an eel or kraken; survive a stinking cloud. | None as intrinsic. | Amulet of magical breathing. |
@@ -12511,14 +12512,14 @@ Layered defenses for the ascension kit: AC, reflection, free action, regen.
 
 | Property | What it does | Intrinsic sources | Extrinsic sources |
 |---|---|---|---|
-| **Protection** | Adds to your AC (lower is better). Also adds +1 MC per worn extrinsic source (+2 for amulet of guarding). | Donating gold to a same-aligned priest converts to prayer-pool protection: 400 zm per +1 (capped). | Ring of protection; cloak of protection (also MC3); amulet of guarding (also MC2); carrying Sceptre of Might, Mitre of Holiness, or Tsurugi of Muramasa. |
-| **Reflection** | Bounces ranged magic (rays, breath) back at the attacker. | None as intrinsic. | Amulet of reflection; silver dragon scales / scale mail; shield of reflection; wielding Dragonbane or Longbow of Diana. |
-| **Regeneration** | HP regenerates faster (about one per turn at high XL). | Troll polyform; high-XL natural regen by role. | Ring of regeneration; wielding Trollsbane or Staff of Aesculapius. |
-| **Energy regeneration** | Spell points regenerate faster. | None as intrinsic. | Carrying Eye of the Aethiopica. |
-| **Half spell damage** | Halves damage from monster-cast spells. | None as intrinsic. | Carrying Orb of Detection, Master Key of Thievery, Platinum Yendorian Express Card, or Orb of Fate. |
+| **Protection** | Adds to your AC (lower is better). Also adds +1 [MC](#magic-cancellation) per worn extrinsic source (+2 for amulet of guarding). | Donating gold to a same-aligned priest converts to prayer-pool protection: 400 zm per +1 (capped). | Ring of protection; cloak of protection (also MC3); amulet of guarding (also MC2); carrying [Sceptre of Might](#sceptre-of-might), [Mitre of Holiness](#mitre-of-holiness), or [Tsurugi of Muramasa](#tsurugi-of-muramasa). |
+| **Reflection** | Bounces ranged magic (rays, breath) back at the attacker. | None as intrinsic. | Amulet of reflection; silver dragon scales / scale mail; shield of reflection; wielding [Dragonbane](#bane-weapons) or [Longbow of Diana](#longbow-of-diana). |
+| **Regeneration** | HP regenerates faster (about one per turn at high XL). | Troll polyform; high-XL natural regen by role. | Ring of regeneration; wielding [Trollsbane](#bane-weapons) or [Staff of Aesculapius](#staff-of-aesculapius). |
+| **Energy regeneration** | Spell points regenerate faster. | None as intrinsic. | Carrying [Eye of the Aethiopica](#eye-of-the-aethiopica). |
+| **Half spell damage** | Halves damage from monster-cast spells. | None as intrinsic. | Carrying [Orb of Detection](#orb-of-detection), [Master Key of Thievery](#master-key-of-thievery), [Platinum Yendorian Express Card](#platinum-yendorian-express-card), or [Orb of Fate](#orb-of-fate). |
 | **Half physical damage** | Halves damage from melee and physical ranged attacks. | None as intrinsic. | Carrying Master Key of Thievery or Orb of Fate. |
 | **Free action** | Immune to paralysis (mind flayer hold, gas-spore explosion, monster-cast paralysis spells) and to slow. | Polyform into certain forms (e.g., master mind flayer corpse sometimes confers it). | Ring of free action; orange dragon scales / scale mail. |
-| **Stealth** | Monsters don't wake when you walk near sleeping ones; you can sneak past. | Archeologist XL 5; Barbarian XL 15; Monk XL 5; Ranger XL 7; Rogue XL 1; Samurai XL 15; Valkyrie XL 3; prayer rescue. | Ring of stealth; elven boots; elven cloak; carrying Heart of Ahriman. |
+| **Stealth** | Monsters don't wake when you walk near sleeping ones; you can sneak past. | Archeologist XL 5; Barbarian XL 15; Monk XL 5; Ranger XL 7; Rogue XL 1; Samurai XL 15; Valkyrie XL 3; prayer rescue. | Ring of stealth; elven boots; elven cloak; carrying [Heart of Ahriman](#heart-of-ahriman). |
 | **Invisibility** | Monsters can't see you (and don't attack you unless they see-invisible, or unless you attack them). | Stalker polyform; potion of invisibility (timed). | Ring of invisibility; cloak of invisibility; carrying Orb of Detection. |
 | **Displacement** | Monsters see you in a wrong nearby square; ranged attacks miss often. | None as intrinsic. | Cloak of displacement. |
 
@@ -12533,7 +12534,7 @@ The grab-bag: digestion timing, polymorph behavior, the win-back-from-death amul
 | **Unchanging** | Locks your current form. Blocks polymorph (any source) and *also blocks the green-slime countdown*. The standard answer to "I just got slimed." | None. | Amulet of unchanging. |
 | **Sustain ability** | Your six stats (Str, Dex, Con, Int, Wis, Cha) don't drift up or down from exercise, abuse, or scrolls. | None. | Ring of sustain ability. |
 | **Protection from shape changers** | Nearby shape-changers (chameleon, doppelganger, foocubus) cannot polymorph. | None. | Ring of protection from shape changers. |
-| **Conflict** | Nearby monsters attack each other instead of you. Highly disruptive in your favor; also keeps shopkeepers from selling things. | None. | Ring of conflict; carrying Sceptre of Might. |
+| **Conflict** | Nearby monsters attack each other instead of you. Highly disruptive in your favor; also keeps shopkeepers from selling things. | None. | Ring of conflict; carrying [Sceptre of Might](#sceptre-of-might). |
 | **Life saving** | When you would die, the amulet activates instead and restores you to one HP. The amulet is destroyed in the process. | None. | Amulet of life saving. |
 | **Adornment** | +1 Charisma. Most useful for shopping prices and seduction immunity. | None. | Ring of adornment. |
 
@@ -13558,7 +13559,7 @@ FAQs, and guides that informed specific sections of this guide:
 Dunbar** wrote the wand identification guide. **Trevor Powell**
 compiled the Instadeath Spoiler. **Arien Malec** wrote the Medusa
 guide. **Matthew Lahut** wrote the prayer guide. **Boudewijn
-Waijers** mapped all eight Sokoban variants. **Steven Bush**
+Waijers** mapped all eight [Sokoban](#sokoban) variants. **Steven Bush**
 calculated spellbook reading success rates. **Gregory Bond**
 documented shopkeeper pricing formulas. **Dion Nicolaas**
 cataloged the conducts. **David Goldfarb** wrote the air elemental
@@ -13601,7 +13602,7 @@ Above all, this guide exists because the game itself exists.
 **[NetHack](https://www.nethack.org/)** has been developed since
 1987 by the NetHack DevTeam, founded by Mike Stephenson, Izchak
 Miller, and Janet Walz. Izchak Miller passed away in 1994; the
-shopkeeper who bears his name in the Mines is a small measure of
+shopkeeper who bears his name in [the Mines](#the-gnomish-mines) is a small measure of
 how much his work meant. The source lives at
 [github.com/NetHack](https://github.com/NetHack/NetHack).
 
