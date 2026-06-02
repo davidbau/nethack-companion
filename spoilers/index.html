@@ -12038,17 +12038,31 @@ the install folder on Windows, or the <code>NETHACKOPTIONS</code>
 environment variable.</p>
 <p><strong>Status display.</strong></p>
 <ul>
-<li><strong><code>hilite_status</code></strong> colorizes the bottom
-status line: HP turns yellow then red as you take damage, hunger goes
-yellow at Hungry and red at Weak, AC bands shift color as you improve.
-The single most-recommended setting in community rcfiles.</li>
-<li><strong><code>menucolors</code></strong> colorizes menu entries by
-regex pattern. A common setup highlights holy water, magic markers, and
-blessed items so you can spot them at a glance.</li>
-<li><strong><code>force_invmenu</code></strong> shows inventory as a
-menu rather than a letter prompt.</li>
-<li><strong><code>pile_limit:5</code></strong> triggers the pile menu
-when 5 or more items are stacked on a tile.</li>
+<li><p><strong><code>hilite_status</code></strong> colorizes the bottom
+status line — HP, hunger, AC and the other fields can each carry their
+own threshold rules. Pair it with
+<strong><code>statushilites=N</code></strong>: the master on/off for the
+highlighting system. Any non-zero N enables it; N also sets how many
+turns a brief “value just changed” flash stays visible (default 3,
+minimum 1). Concrete HP and hunger rules:</p>
+<pre><code>OPTIONS=hilite_status:hitpoints/&lt;66%/yellow/
+ &lt;50%/orange/&lt;33%/red&amp;bold/&lt;15%/red&amp;inverse
+OPTIONS=hilite_status:hunger/Satiated/yellow/
+ Hungry/orange/Weak/red&amp;bold/Fainting/red&amp;inverse/
+ Fainted/red&amp;inverse+blink
+OPTIONS=statushilites=1</code></pre>
+<p>The single most-recommended setting in community rcfiles.</p></li>
+<li><p><strong><code>menucolors</code></strong> colorizes menu entries
+by pattern. The two most-useful rules are the BUC tags, so anything
+cursed jumps out red and anything pre-blessed reads as cyan:</p>
+<pre><code>MENUCOLOR=&quot; cursed &quot;=red
+MENUCOLOR=&quot; blessed &quot;=cyan</code></pre>
+<p>The leading and trailing spaces matter — they prevent matching inside
+other words like “unbleached” or “blessed-cure-injury”.</p></li>
+<li><p><strong><code>force_invmenu</code></strong> shows inventory as a
+menu rather than a letter prompt.</p></li>
+<li><p><strong><code>pile_limit:5</code></strong> triggers the pile menu
+when 5 or more items are stacked on a tile.</p></li>
 </ul>
 <p><strong>Safety.</strong></p>
 <ul>
@@ -12059,17 +12073,23 @@ Catches almost every fat-finger accident.</li>
 </ul>
 <p><strong>Pickup.</strong></p>
 <ul>
-<li><strong><code>autopickup</code></strong> picks items up as you walk
-over them, filtered by <strong><code>pickup_types</code></strong>
+<li><p><strong><code>autopickup</code></strong> picks items up as you
+walk over them, filtered by <strong><code>pickup_types</code></strong>
 (e.g. <code>pickup_types:$?!=/</code> for gold, scrolls, potions, rings,
 and wands). The <code>m</code> prefix on movement suppresses autopickup
 for one step. Press <code>@</code> any time to toggle autopickup on or
-off for the rest of the session.</li>
-<li><strong><code>autopickup_exception</code></strong> layers
+off for the rest of the session.</p></li>
+<li><p><strong><code>autopickup_exception</code></strong> layers
 per-pattern rules on top: <code>autopickup_exception:"&gt;rock"</code>
 skips rocks even when the type filter would grab them;
 <code>autopickup_exception:"&lt;holy water"</code> always grabs holy
-water.</li>
+water.</p></li>
+<li><p><strong><code>pickup_burden:unencumbered</code></strong> stops
+autopickup the moment a pickup would push you into Burdened. The default
+is <code>S</code> (only stop at Stressed), which means autopickup
+happily slides you through Burdened first; setting <code>U</code> keeps
+you nimble:</p>
+<pre><code>OPTIONS=pickup_burden:unencumbered</code></pre></li>
 </ul>
 <p><strong>Movement.</strong></p>
 <ul>

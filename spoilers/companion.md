@@ -8550,13 +8550,34 @@ the `NETHACKOPTIONS` environment variable.
 
 **Status display.**
 
-- **`hilite_status`** colorizes the bottom status line: HP turns
-  yellow then red as you take damage, hunger goes yellow at Hungry
-  and red at Weak, AC bands shift color as you improve. The single
-  most-recommended setting in community rcfiles.
-- **`menucolors`** colorizes menu entries by regex pattern. A
-  common setup highlights holy water, magic markers, and blessed
-  items so you can spot them at a glance.
+- **`hilite_status`** colorizes the bottom status line — HP, hunger,
+  AC and the other fields can each carry their own threshold rules.
+  Pair it with **`statushilites=N`**: the master on/off for the
+  highlighting system. Any non-zero N enables it; N also sets how
+  many turns a brief "value just changed" flash stays visible
+  (default 3, minimum 1). Concrete HP and hunger rules:
+
+  ```
+  OPTIONS=hilite_status:hitpoints/<66%/yellow/
+   <50%/orange/<33%/red&bold/<15%/red&inverse
+  OPTIONS=hilite_status:hunger/Satiated/yellow/
+   Hungry/orange/Weak/red&bold/Fainting/red&inverse/
+   Fainted/red&inverse+blink
+  OPTIONS=statushilites=1
+  ```
+
+  The single most-recommended setting in community rcfiles.
+- **`menucolors`** colorizes menu entries by pattern. The two
+  most-useful rules are the BUC tags, so anything cursed jumps out
+  red and anything pre-blessed reads as cyan:
+
+  ```
+  MENUCOLOR=" cursed "=red
+  MENUCOLOR=" blessed "=cyan
+  ```
+
+  The leading and trailing spaces matter — they prevent matching
+  inside other words like "unbleached" or "blessed-cure-injury".
 - **`force_invmenu`** shows inventory as a menu rather than a
   letter prompt.
 - **`pile_limit:5`** triggers the pile menu when 5 or more items
@@ -8580,6 +8601,14 @@ the `NETHACKOPTIONS` environment variable.
   `autopickup_exception:">rock"` skips rocks even when the type
   filter would grab them; `autopickup_exception:"<holy water"`
   always grabs holy water.
+- **`pickup_burden:unencumbered`** stops autopickup the moment a
+  pickup would push you into Burdened. The default is `S` (only
+  stop at Stressed), which means autopickup happily slides you
+  through Burdened first; setting `U` keeps you nimble:
+
+  ```
+  OPTIONS=pickup_burden:unencumbered
+  ```
 
 **Movement.**
 
