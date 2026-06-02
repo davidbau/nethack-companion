@@ -8649,7 +8649,7 @@ just mirror the directions.
 > NetHack archive maintained by Kate Nepveu. Adapted for 5.0 and reformatted
 > for this guide.*
 
-#### Level 1, Version A
+#### Level 1, Version A {.sokoban-level data-width=14 data-height=13}
 <!-- audit
 2026-05-19:
 - Scrolls land at spoiler (3,12) and (4,12); lua coords (02,11) and (03,11) (soko4-1.lua:94-95).
@@ -8709,7 +8709,7 @@ The map now looks like this:
 One boulder (A) remains. The two scrolls at (3,12) and (4,12)
 are always scrolls of earth.
 
-#### Level 1, Version B
+#### Level 1, Version B {.sokoban-level data-width=15 data-height=11}
 <!-- audit
 2026-05-19:
 - Map walls/floors and all 12 boulders A-L match soko4-2.lua:9-21, 29-42.
@@ -8789,7 +8789,7 @@ Two boulders (D and E) remain. The two scrolls at (2,10) and
 - Step 8's "push F up to (3,4)" is required: F at (3,7) seals the N-S corridor through (3,6).
 - 15 filled holes match the bowling-alley count; final remainder (B, C, D, I, Q) is exact.
 -->
-#### Level 2, Version A
+#### Level 2, Version A {.sokoban-level data-width=29 data-height=12}
 
 ```
             11111111112222222222
@@ -8820,7 +8820,7 @@ Two boulders (D and E) remain. The two scrolls at (2,10) and
 
 Five boulders (B, C, D, I, and Q) remain.
 
-#### Level 2, Version B
+#### Level 2, Version B {.sokoban-level data-width=26 data-height=14}
 <!-- audit
 2026-05-19:
 - 16-boulder layout and all 22 solution steps verified by simulation against soko3-2.lua.
@@ -8937,7 +8937,7 @@ Four boulders (A, D, G, and H) remain.
 - Level flags noteleport, sokoban, solidify, premapped (soko2-1.lua:7).
 - Final "three boulders remain" tally is exact.
 -->
-#### Level 3, Version A
+#### Level 3, Version A {.sokoban-level data-width=20 data-height=12}
 
 ```
             11111111112
@@ -8973,7 +8973,7 @@ Four boulders (A, D, G, and H) remain.
 
 Three boulders (F, G, and H) remain.
 
-#### Level 3, Version B
+#### Level 3, Version B {.sokoban-level data-width=22 data-height=13}
 <!-- audit
 2026-05-19:
 - Upstair at spoiler (16,7); lua (15,6) (soko2-2.lua:25).
@@ -9044,7 +9044,7 @@ The map now looks like this:
 
 Five boulders (A, B, D, E, and J) remain.
 
-#### Level 4, Version A
+#### Level 4, Version A {.sokoban-level data-width=26 data-height=18}
 
 The prize on this version is usually a bag of holding, with a 1
 in 4 chance of being an amulet of reflection instead.
@@ -9138,7 +9138,7 @@ Two boulders (A and E) remain. There is a bag of holding in one
 of the small chambers ((17,12), (17,14), or (17,16)) next to the
 treasure zoo.
 
-#### Level 4, Version B
+#### Level 4, Version B {.sokoban-level data-width=26 data-height=17}
 
 The prize on this version is usually an amulet of reflection, with
 a 1 in 4 chance of being a bag of holding instead.

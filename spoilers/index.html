@@ -12155,8 +12155,10 @@ contributions by Jukka Lahtinen and others, for the steelypips.org
 NetHack archive maintained by Kate Nepveu. Adapted for 5.0 and
 reformatted for this guide.</em></p>
 </blockquote>
-<section id="level-1-version-a" class="level4">
-<h4>Level 1, Version A</h4>
+<section id="level-1-version-a" class="level4 sokoban-level"
+data-width="14" data-height="13">
+<h4 class="sokoban-level" data-width="14" data-height="13">Level 1,
+Version A</h4>
 <!-- audit
 2026-05-19:
 - Scrolls land at spoiler (3,12) and (4,12); lua coords (02,11) and (03,11) (soko4-1.lua:94-95).
@@ -12210,8 +12212,10 @@ reformatted for this guide.</em></p>
 <p>One boulder (A) remains. The two scrolls at (3,12) and (4,12) are
 always scrolls of earth.</p>
 </section>
-<section id="level-1-version-b" class="level4">
-<h4>Level 1, Version B</h4>
+<section id="level-1-version-b" class="level4 sokoban-level"
+data-width="15" data-height="11">
+<h4 class="sokoban-level" data-width="15" data-height="11">Level 1,
+Version B</h4>
 <!-- audit
 2026-05-19:
 - Map walls/floors and all 12 boulders A-L match soko4-2.lua:9-21, 29-42.
@@ -12284,8 +12288,10 @@ are always scrolls of earth.</p>
 - 15 filled holes match the bowling-alley count; final remainder (B, C, D, I, Q) is exact.
 -->
 </section>
-<section id="level-2-version-a" class="level4">
-<h4>Level 2, Version A</h4>
+<section id="level-2-version-a" class="level4 sokoban-level"
+data-width="29" data-height="12">
+<h4 class="sokoban-level" data-width="29" data-height="12">Level 2,
+Version A</h4>
 <pre><code>            11111111112222222222
    12345678901234567890123456789
  1 ┌────┬────┐       ┌─────────┐
@@ -12313,8 +12319,10 @@ are always scrolls of earth.</p>
 </ol>
 <p>Five boulders (B, C, D, I, and Q) remain.</p>
 </section>
-<section id="level-2-version-b" class="level4">
-<h4>Level 2, Version B</h4>
+<section id="level-2-version-b" class="level4 sokoban-level"
+data-width="26" data-height="14">
+<h4 class="sokoban-level" data-width="26" data-height="14">Level 2,
+Version B</h4>
 <!-- audit
 2026-05-19:
 - 16-boulder layout and all 22 solution steps verified by simulation against soko3-2.lua.
@@ -12417,8 +12425,10 @@ Finish F like C.</li>
 - Final "three boulders remain" tally is exact.
 -->
 </section>
-<section id="level-3-version-a" class="level4">
-<h4>Level 3, Version A</h4>
+<section id="level-3-version-a" class="level4 sokoban-level"
+data-width="20" data-height="12">
+<h4 class="sokoban-level" data-width="20" data-height="12">Level 3,
+Version A</h4>
 <pre><code>            11111111112
    12345678901234567890
  1 ┌────────┬───┬─────┐
@@ -12451,8 +12461,10 @@ like E.</li>
 </ol>
 <p>Three boulders (F, G, and H) remain.</p>
 </section>
-<section id="level-3-version-b" class="level4">
-<h4>Level 3, Version B</h4>
+<section id="level-3-version-b" class="level4 sokoban-level"
+data-width="22" data-height="13">
+<h4 class="sokoban-level" data-width="22" data-height="13">Level 3,
+Version B</h4>
 <!-- audit
 2026-05-19:
 - Upstair at spoiler (16,7); lua (15,6) (soko2-2.lua:25).
@@ -12517,8 +12529,10 @@ M.</li>
 </ol>
 <p>Five boulders (A, B, D, E, and J) remain.</p>
 </section>
-<section id="level-4-version-a" class="level4">
-<h4>Level 4, Version A</h4>
+<section id="level-4-version-a" class="level4 sokoban-level"
+data-width="26" data-height="18">
+<h4 class="sokoban-level" data-width="26" data-height="18">Level 4,
+Version A</h4>
 <p>The prize on this version is usually a bag of holding, with a 1 in 4
 chance of being an amulet of reflection instead.</p>
 <!-- audit
@@ -12604,8 +12618,10 @@ Q up one square. Finish Q like R.</li>
 the small chambers ((17,12), (17,14), or (17,16)) next to the treasure
 zoo.</p>
 </section>
-<section id="level-4-version-b" class="level4">
-<h4>Level 4, Version B</h4>
+<section id="level-4-version-b" class="level4 sokoban-level"
+data-width="26" data-height="17">
+<h4 class="sokoban-level" data-width="26" data-height="17">Level 4,
+Version B</h4>
 <p>The prize on this version is usually an amulet of reflection, with a
 1 in 4 chance of being a bag of holding instead.</p>
 <!-- audit
@@ -24543,6 +24559,173 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
   });
   indexHtml += '</div>';
   searchIndex.innerHTML = indexHtml;
+})();
+
+// ============================================================================
+// Sokoban flip controls. Each Sokoban level section (marked
+// .sokoban-level by the markdown attribute) carries data-width / data-height
+// attributes. Two toggle buttons under each level's heading apply a global
+// H/V flip across all Sokoban maps simultaneously, mirroring the wall
+// drawings, the arrows, the boulder positions, and (in the solution
+// prose) the direction words and coordinate tuples.
+// ============================================================================
+(function sokobanFlip() {
+  var sokobanRoot = document.getElementById('sokoban-solutions');
+  if (!sokobanRoot) return;
+  var levels = sokobanRoot.querySelectorAll('section.sokoban-level');
+  if (!levels.length) return;
+
+  // Wall and arrow character mappings.
+  var H_CHAR = {'┌':'┐','┐':'┌','└':'┘','┘':'└','├':'┤','┤':'├',
+                '←':'→','→':'←'};
+  var V_CHAR = {'┌':'└','└':'┌','┐':'┘','┘':'┐','┬':'┴','┴':'┬',
+                '↑':'↓','↓':'↑'};
+  // Direction-word mappings used for solution prose.
+  var H_WORD = {'left':'right','right':'left'};
+  var V_WORD = {'up':'down','down':'up'};
+
+  // Fixed offset where column 1 of the playable area begins inside each
+  // body row. The column header is "   123..." with 3 leading spaces, so
+  // body rows have a 2-character row label followed by 1 separator space,
+  // and the wall content starts at index 3.
+  var LABEL_END = 3;
+
+  // Global flip state shared across every level on the page.
+  var state = { h: false, v: false };
+
+  function parsePre(raw) {
+    var lines = raw.split('\n');
+    while (lines.length && !lines[lines.length-1].trim()) lines.pop();
+    var bodyStart = 0;
+    for (var i = 0; i < lines.length; i++) {
+      var s = lines[i];
+      // A leading line is part of the column header if it is empty or
+      // contains only digits and whitespace.
+      if (s.trim() === '' || /^[\d\s]+$/.test(s)) {
+        bodyStart = i + 1;
+      } else {
+        break;
+      }
+    }
+    return {
+      header: lines.slice(0, bodyStart),
+      body: lines.slice(bodyStart)
+    };
+  }
+
+  function padTo(s, n) {
+    while (s.length < n) s += ' ';
+    return s;
+  }
+
+  function transformChar(c) {
+    if (state.h && H_CHAR[c]) c = H_CHAR[c];
+    if (state.v && V_CHAR[c]) c = V_CHAR[c];
+    return c;
+  }
+
+  function renderPre(parsed, width) {
+    var body = parsed.body;
+    var n = body.length;
+    var rows = body.map(function(origRow, i) {
+      // Label stays bound to the visual row position; content is taken
+      // from the V-flipped source row when V-flip is on.
+      var srcRow = state.v ? body[n - 1 - i] : origRow;
+      var label = origRow.substring(0, LABEL_END);
+      var playable = srcRow.substring(LABEL_END);
+      // For H-flip, pad to the full playable width so the reverse is
+      // symmetric across the grid (irregular row lengths would otherwise
+      // collapse to the wrong column position).
+      if (state.h) {
+        playable = padTo(playable, width).split('').reverse().join('');
+      }
+      // Character substitutions for walls and arrows.
+      var transformed = '';
+      for (var k = 0; k < playable.length; k++) {
+        transformed += transformChar(playable.charAt(k));
+      }
+      // Drop the trailing pad that the H-flip introduced.
+      return label + transformed.replace(/\s+$/, '');
+    });
+    return parsed.header.concat(rows).join('\n');
+  }
+
+  function transformProse(html, width, height) {
+    if (state.h) {
+      html = html.replace(/\b(left|right)\b/g, function(w) {
+        return H_WORD[w];
+      });
+    }
+    if (state.v) {
+      html = html.replace(/\b(up|down)\b/g, function(w) {
+        return V_WORD[w];
+      });
+    }
+    // Coordinate tuples (X,Y) and (X, Y). The grid is 1-indexed, so the
+    // flip formula is x' = (W+1) - x and y' = (H+1) - y.
+    html = html.replace(/\((\d+),\s*(\d+)\)/g, function(_, xs, ys) {
+      var x = +xs, y = +ys;
+      if (state.h) x = (width + 1) - x;
+      if (state.v) y = (height + 1) - y;
+      return '(' + x + ',' + y + ')';
+    });
+    return html;
+  }
+
+  // Capture originals and inject a button bar for each level.
+  levels.forEach(function(level) {
+    var w = parseInt(level.dataset.width, 10);
+    var h = parseInt(level.dataset.height, 10);
+    if (!w || !h) return;
+    level.querySelectorAll('pre').forEach(function(pre) {
+      pre.dataset.origText = pre.textContent;
+    });
+    level.querySelectorAll('li, p').forEach(function(el) {
+      el.dataset.origHtml = el.innerHTML;
+    });
+    var bar = document.createElement('div');
+    bar.className = 'sokoban-flipbar';
+    bar.innerHTML =
+      '<button type="button" data-flip="h" title="Mirror left-right">' +
+      'Flip ↔</button>' +
+      '<button type="button" data-flip="v" title="Mirror top-bottom">' +
+      'Flip ↕</button>';
+    var heading = level.querySelector('h4');
+    if (heading && heading.nextSibling) {
+      heading.parentNode.insertBefore(bar, heading.nextSibling);
+    } else if (heading) {
+      heading.parentNode.appendChild(bar);
+    } else {
+      level.insertBefore(bar, level.firstChild);
+    }
+  });
+
+  function applyState() {
+    levels.forEach(function(level) {
+      var w = parseInt(level.dataset.width, 10);
+      var h = parseInt(level.dataset.height, 10);
+      if (!w || !h) return;
+      level.querySelectorAll('pre').forEach(function(pre) {
+        var parsed = parsePre(pre.dataset.origText);
+        pre.textContent = renderPre(parsed, w);
+      });
+      level.querySelectorAll('li, p').forEach(function(el) {
+        if (el.dataset.origHtml === undefined) return;
+        el.innerHTML = transformProse(el.dataset.origHtml, w, h);
+      });
+    });
+    document.querySelectorAll('.sokoban-flipbar button').forEach(function(btn) {
+      btn.classList.toggle('active', !!state[btn.dataset.flip]);
+    });
+  }
+
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.sokoban-flipbar button');
+    if (!btn) return;
+    var dir = btn.dataset.flip;
+    state[dir] = !state[dir];
+    applyState();
+  });
 })();
 </script>
 </body>
