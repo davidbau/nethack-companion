@@ -8548,87 +8548,98 @@ dramatically improve quality of life. Flip them in-session with
 macOS/Linux, `nethack.cnf` in the install folder on Windows, or
 the `NETHACKOPTIONS` environment variable.
 
-**Status display.**
+*Status display.*
 
-- **`hilite_status`** colorizes the bottom status line — HP, hunger,
-  AC and the other fields can each carry their own threshold rules.
-  Pair it with **`statushilites`**, which turns the system on;
-  without it the rules below parse but nothing colors. Concrete HP
-  and hunger rules:
+**`hilite_status`** colorizes the bottom status line — HP, hunger,
+AC and the other fields can each carry their own threshold rules.
+Pair it with **`statushilites`**, which turns the system on; without
+it the rules below parse but nothing colors. Concrete HP and hunger
+rules:
 
-  ```
-  OPTIONS=statushilites
-  OPTIONS=hilite_status:hitpoints/<66%/yellow/
-   <50%/orange/<33%/red&bold/<15%/red&inverse
-  OPTIONS=hilite_status:hunger/Satiated/yellow/
-   Hungry/orange/Weak/red&bold/Fainting/red&inverse/
-   Fainted/red&inverse+blink
-  ```
+```
+OPTIONS=statushilites
+OPTIONS=hilite_status:hitpoints/<66%/yellow/
+ <50%/orange/<33%/red&bold/<15%/red&inverse
+OPTIONS=hilite_status:hunger/Satiated/yellow/
+ Hungry/orange/Weak/red&bold/Fainting/red&inverse/
+ Fainted/red&inverse+blink
+```
 
-  The single most-recommended setting in community rcfiles.
-- **`menucolors`** colorizes menu entries by pattern. The two
-  most-useful rules are the BUC tags, so anything cursed jumps out
-  red and anything pre-blessed reads as cyan:
+The single most-recommended setting in community rcfiles.
 
-  ```
-  MENUCOLOR=" cursed "=red
-  MENUCOLOR=" blessed "=cyan
-  ```
+**`menucolors`** colorizes menu entries by pattern. The two
+most-useful rules are the BUC tags, so anything cursed jumps out red
+and anything pre-blessed reads as cyan:
 
-  The leading and trailing spaces matter — they prevent matching
-  inside other words like "unbleached" or "blessed-cure-injury".
-- **`force_invmenu`** shows inventory as a menu rather than a
-  letter prompt.
-- **`pile_limit:5`** triggers the pile menu when 5 or more items
-  are stacked on a tile.
+```
+MENUCOLOR=" cursed "=red
+MENUCOLOR=" blessed "=cyan
+```
 
-**Safety.**
+The leading and trailing spaces matter — they prevent matching
+inside other words like "unbleached" or "blessed-cure-injury".
 
-- **`paranoid_confirmation:Attack pray Remove quit`** requires you
-  to type the full word `yes` for the listed actions: attacking
-  peacefuls, praying, removing worn gear, and quitting. Catches
-  almost every fat-finger accident.
+**`force_invmenu`** shows inventory as a menu rather than a letter
+prompt.
 
-**Pickup.**
+**`pile_limit:5`** triggers the pile menu when 5 or more items are
+stacked on a tile.
 
-- **`autopickup`** picks items up as you walk over them, filtered
-  by **`pickup_types`** (e.g. `pickup_types:$?!=/` for gold,
-  scrolls, potions, rings, and wands). The `m` prefix on movement
-  suppresses autopickup for one step. Press `@` any time to toggle
-  autopickup on or off for the rest of the session.
-- **`autopickup_exception`** layers per-pattern rules on top:
-  `autopickup_exception:">rock"` skips rocks even when the type
-  filter would grab them; `autopickup_exception:"<holy water"`
-  always grabs holy water.
-- **`pickup_burden:unencumbered`** stops autopickup the moment a
-  pickup would push you into Burdened. The default is `S` (only
-  stop at Stressed), which means autopickup happily slides you
-  through Burdened first; setting `U` keeps you nimble:
+*Safety.*
 
-  ```
-  OPTIONS=pickup_burden:unencumbered
-  ```
+**`paranoid_confirmation:Attack pray Remove quit`** requires you to
+type the full word `yes` for the listed actions: attacking peacefuls,
+praying, removing worn gear, and quitting. Catches almost every
+fat-finger accident.
 
-**Movement.**
+*Pickup.*
 
-- **`number_pad`** turns the numeric keypad into movement keys
-  (1–9 for directions). Off by default; enabling it changes
-  digit-prefix behavior so you press `n` first to enter a count.
-- **`runmode:walk`** slows the travel command down enough that
-  you stop on interesting messages (default `runonly` blasts
-  through everything until you hit something).
+**`autopickup`** picks items up as you walk over them, filtered by
+**`pickup_types`** (e.g. `pickup_types:$?!=/` for gold, scrolls,
+potions, rings, and wands). The `m` prefix on movement suppresses
+autopickup for one step. Press `@` any time to toggle autopickup on
+or off for the rest of the session.
 
-**Verbosity.**
+**`autopickup_exception`** layers per-pattern rules on top:
+`autopickup_exception:">rock"` skips rocks even when the type filter
+would grab them; `autopickup_exception:"<holy water"` always grabs
+holy water.
 
-- **`verbose`** turns on extra descriptive messages. Turn it off
-  if the message log feels noisy.
+**`pickup_burden:unencumbered`** stops autopickup the moment a pickup
+would push you into Burdened. The default is `S` (only stop at
+Stressed), which means autopickup happily slides you through
+Burdened first; setting `U` keeps you nimble.
+
+*Movement.*
+
+**`number_pad`** turns the numeric keypad into movement keys (1–9
+for directions). Off by default; enabling it changes digit-prefix
+behavior so you press `n` first to enter a count.
+
+**`runmode:walk`** slows the travel command down enough that you
+stop on interesting messages (default `runonly` blasts through
+everything until you hit something).
+
+*Verbosity.*
+
+**`verbose`** turns on extra descriptive messages. Turn it off if
+the message log feels noisy.
 
 **A starter rcfile.** A few lines that cover most of the above:
 
 ```
-OPTIONS=hilite_status,menucolors,force_invmenu,pile_limit:5
+OPTIONS=statushilites
+OPTIONS=hilite_status:hitpoints/<66%/yellow/
+ <50%/orange/<33%/red&bold/<15%/red&inverse
+OPTIONS=hilite_status:hunger/Satiated/yellow/
+ Hungry/orange/Weak/red&bold/Fainting/red&inverse/
+ Fainted/red&inverse+blink
+MENUCOLOR=" cursed "=red
+MENUCOLOR=" blessed "=cyan
+OPTIONS=force_invmenu,pile_limit:5
 OPTIONS=paranoid_confirmation:Attack pray Remove quit
 OPTIONS=autopickup,pickup_types:$?!=/
+OPTIONS=pickup_burden:unencumbered
 OPTIONS=runmode:walk
 ```
 
