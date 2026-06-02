@@ -7649,13 +7649,14 @@ plus reflection while wielded, ESP while carried. `#invoke` conjures
 free arrows out of thin air. Combined with the Ranger's ranged
 specialization this is the role's centerpiece.
 
-**[The Master Key of Thievery]{#master-key-of-thievery}** (Rogue): a carry package of warning,
-teleport control, half physical damage taken, and `#invoke` instantly
-untraps a nearby trap. The unlocking
-bonus depends on alignment: a Rogue gets it from any non-cursed
-Key; everyone else needs a **blessed** Key. With those preconditions
-met, `#untrap` also gains a perfect-detection bonus on doors and
-chests.
+**[The Master Key of Thievery]{#master-key-of-thievery}** (Rogue):
+just carrying it grants warning, teleport control, and half
+physical damage taken. `#invoke` disarms a nearby trap. The Key
+also acts as a universal lockpick — it opens any lock without
+effort, and when you unlock a trapped door or chest with it, the
+trap is detected and you can disarm it on the spot. The lockpick
+behavior depends on bless-curse state and role: a Rogue needs a
+non-cursed Key, everyone else needs a **blessed** one.
 
 **[The Tsurugi of Muramasa]{#tsurugi-of-muramasa}** (Samurai): a katana-grade two-handed
 sword with +d8 damage *and* a behead chance (like Vorpal Blade)
@@ -7670,11 +7671,10 @@ half spell damage; `#invoke` charges an item (a wand, ring, or marker),
 which in the Tourist's hands is roughly "a free wish per ~1000
 turns." Pairs especially well with marker-stockpiling strategies.
 
-**[The Orb of Fate]{#orb-of-fate}** (Valkyrie): the most generous passive in the
-game: counts as a luckstone, grants warning, halves both spell *and*
-physical damage taken. `#invoke` is levitate-or-teleport (a toggle,
-very useful in the Sanctum). Valkyries also have Mjollnir to throw,
-so the Orb sits in inventory as pure carry value.
+**[The Orb of Fate]{#orb-of-fate}** (Valkyrie): the most generous
+carried passive in the game — counts as a luckstone, grants warning,
+halves both spell *and* physical damage taken. `#invoke` is
+levitate-or-teleport (a toggle, very useful in the Sanctum).
 
 **[The Eye of the Aethiopica]{#eye-of-the-aethiopica}** (Wizard): grants magic resistance
 when **worn**; carrying also gives half spell damage taken and
