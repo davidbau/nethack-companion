@@ -632,13 +632,22 @@ function Pandoc(doc)
     end
 
     -- Convert horizontal rules to decorative diamond ornament (centered).
-    -- The ornament renders only when the current page already has enough
-    -- slack to absorb it; if remaining space is less than ~2 inches the
-    -- ornament is silently dropped so that a near-empty trailing page
-    -- doesn't appear just to host the diamond. Stretchable glue on
-    -- both sides centers the ornament vertically when it does render
-    -- and the trailing content fills the rest of the page.
+    -- Two guards keep the ornament from rendering in awkward places:
+    --   1. If the next block is a Header, skip — headings already have
+    --      their own visual separation (and at chapter level they force
+    --      a clearpage, which would orphan the ornament with empty
+    --      space above and below it on the trailing page).
+    --   2. If less than ~2 inches of vertical space remain on the
+    --      current page, skip — otherwise the ornament would force a
+    --      near-empty trailing page just to host it. The stretchable
+    --      glue on both sides of the surviving ornament centers it
+    --      vertically when it does render.
     if block.tag == "HorizontalRule" then
+      local next_block = blocks[i+1]
+      if next_block and next_block.t == "Header" then
+        i = i + 1
+        goto continue
+      end
       table.insert(new_blocks, pandoc.RawBlock("latex",
         "\\par\n" ..
         "\\ifdim\\dimexpr\\pagegoal-\\pagetotal\\relax>2in\n" ..
