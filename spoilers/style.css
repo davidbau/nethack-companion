@@ -1282,4 +1282,10 @@ td.pi-price { color: var(--color-accent); font-weight: 500; }
   #sokoban-solutions .sokoban-flipbar {
     clear: both;
   }
+  /* Make the solution list a block formatting context so it sits as a
+   * column to the right of the floated map instead of letting orphaned
+   * words at the tail end wrap back under the map. */
+  #sokoban-solutions .sokoban-level ol {
+    display: flow-root;
+  }
 }
