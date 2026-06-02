@@ -12585,10 +12585,8 @@ polymorph play.
 
 If you're an experienced traveler returning after some time away, the
 5.0 of the Mazes (NetHack 5.0.0, released May 2, 2026) includes
-several notable changes from 3.6.x, the last widely-played version before
-this one. (NetHack 3.7 was a long-running development branch and never
-shipped as a numbered public release; 3.6.x is the natural comparison
-point.) The most significant:
+several notable changes from 3.6.x, the last widely-played version
+before this one. The most significant:
 
 - **Themed rooms** are now a regular feature of dungeon generation.
   You'll encounter rooms with specific monster or item themes that
