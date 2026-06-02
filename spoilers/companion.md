@@ -6037,6 +6037,7 @@ than it looks.
 - Stressed+ encumbrance triggers extra hunger on odd turns (eat.c:3197 near_capacity > SLT_ENCUMBER)
 - 2026-06-02: encumbrance reduces movement allocation via u_calc_moveamt (allmain.c:136-153): Burdened −25%, Stressed −50%, Strained −75%, Overtaxed −87.5%. Earlier "Burdened: movement fine" was wrong.
 - Strained+ encumbrance costs 1 HP every 3 attack rounds via overexert_hp (hack.c:3035-3047, gated on near_capacity ≥ HVY_ENCUMBER at hack.c:3057). At 0 HP the hero passes out instead of dying.
+- 2026-06-02: encumbrance also exercises/abuses attributes per attrib.c:554-566. Stressed (MOD_ENCUMBER) exercises Str only; Strained (HVY_ENCUMBER) exercises Str and abuses Dex; Overtaxed (EXT_ENCUMBER) abuses Dex and Con (no Str exercise). Burdened has no exercise effect.
 - Large box base weight 350, chest 600, ice box 900 (objects.h:899-904)
 - door diagonal-move rules: cannot move diagonally INTO an intact doorway (hack.c:1140-1149); cannot move diagonally OUT of one (hack.c:1209-1213)
 - low-intelligence monsters cannot open closed doors; intelligent monsters open/unlock per monmove.c:1567-1585
@@ -6110,9 +6111,9 @@ the status line walks through these tiers:
 | ------------ | --------------------------------------- | ------------------------------------------------------------------------ |
 | Unencumbered | weight at or below capacity             | None                                                                     |
 | Burdened     | up to about 1.5× capacity               | Movement −25%; nutrition fine                                            |
-| Stressed     | up to about 2× capacity                 | Movement −50%; extra hunger on odd turns                                 |
-| Strained     | up to about 2.5× capacity               | Movement −75%; extra hunger; combat exerts you (1 HP every 3 attacks)    |
-| Overtaxed    | up to about 3× capacity                 | Movement −87.5%; same hunger and exertion; pass out instead of dying     |
+| Stressed     | up to about 2× capacity                 | Movement −50%; extra hunger on odd turns; **exercises Str** (free upside)|
+| Strained     | up to about 2.5× capacity               | Movement −75%; extra hunger; combat exerts you (1 HP every 3 attacks); exercises Str but abuses Dex |
+| Overtaxed    | up to about 3× capacity                 | Movement −87.5%; same hunger and exertion; pass out instead of dying; abuses Dex and Con |
 | Overloaded   | beyond 3× capacity                      | You can't pick anything else up                                          |
 
 Practical rule: stay **Unencumbered** in normal play, accept
