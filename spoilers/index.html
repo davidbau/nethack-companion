@@ -4599,7 +4599,7 @@ and can no longer act), <em>“You have turned to stone,”</em> and
 <p><strong>Defenses ahead of time:</strong> wear gloves around
 cockatrice corpses, use reflection against Medusa, and pile up
 <em>timed</em> stoning resistance from acid blob corpses (each one
-grants d(3,6) turns of HStone resistance: useful but not permanent). For
+grants a few hundred turns of resistance: useful but not permanent). For
 something permanent, wear yellow dragon scale mail.</p>
 <p><strong>Peril in the new moon.</strong> A cockatrice’s hiss has a
 small chance to start stoning on any landed melee hit (roughly 1 in 30).
@@ -23094,10 +23094,11 @@ wield).</p>
 <p>A few patterns worth knowing before you read further:</p>
 <ul>
 <li><strong>Corpses confer most resistances at a rate that scales with
-the monster’s level</strong> (<code>(mlevel &gt; rn2(15))</code> for
-most resistances; faster for a few — killer-bee corpse gives poison res
-at four times the normal rate, and floating-eye / mind-flayer corpses
-give telepathy at fifteen times normal).</li>
+the monster’s level</strong> — a higher-level monster’s corpse is more
+likely to grant its resistance than a low-level one. A few corpses are
+faster than that baseline: killer-bee corpses give poison resistance at
+four times the normal rate, and floating-eye and mind-flayer corpses
+give telepathy at fifteen times normal.</li>
 <li><strong>Intrinsic + extrinsic don’t stack</strong> — wearing the
 cloak of magic resistance over a Wizard with XL 17 antimagic doesn’t
 double anything. But having both is <strong>redundancy</strong>: take
@@ -23116,6 +23117,7 @@ gives disintegration <em>and</em> drain res, blue gives shock
 <p>The widest, most-used family. Most are gettable from corpses early.
 Magic resistance is the late-game-defining piece and has the fewest
 sources.</p>
+<div class="dense-table">
 <table>
 <colgroup>
 <col style="width: 25%" />
@@ -23136,38 +23138,37 @@ sources.</p>
 <td><strong>Fire resistance</strong></td>
 <td>Halves fire damage; blocks fire-trap injury, fire-breath weapons,
 and lava burns (you still drown in lava).</td>
-<td>Monk XL 11; Priest XL 20; eating corpses with <code>MR_FIRE</code>
-(red dragon, fire ant, fire giant, hell hound, salamander, red mold);
-prayer rescue from lava.</td>
+<td>Monk XL 11; Priest XL 20; red dragon, fire ant, fire giant, hell
+hound, salamander, or red mold corpses; prayer rescue from lava.</td>
 <td>Ring of fire resistance; red dragon scales / scale mail.</td>
 </tr>
 <tr>
 <td><strong>Cold resistance</strong></td>
 <td>Halves cold damage; blocks cold breath, cold blasts; lets you eat
 cold-resistant corpses safely.</td>
-<td>Valkyrie XL 1; Monk XL 13; eating corpses with <code>MR_COLD</code>
-(white dragon, frost giant, winter wolf, brown mold, blue jelly).</td>
+<td>Valkyrie XL 1; Monk XL 13; white dragon, frost giant, winter wolf,
+brown mold, or blue jelly corpses.</td>
 <td>Ring of cold resistance; white dragon scales / scale mail.</td>
 </tr>
 <tr>
 <td><strong>Sleep resistance</strong></td>
 <td>Immune to sleep gas, sleep rays, monster sleep attacks.</td>
-<td>Monk XL 1; Elf XL 4; eating corpses with <code>MR_SLEEP</code> (any
-elf, homunculus, dark one); prayer-rescue.</td>
+<td>Monk XL 1; Elf XL 4; any elf, homunculus, or dark one corpse;
+prayer-rescue.</td>
 <td>Orange dragon scales / scale mail.</td>
 </tr>
 <tr>
 <td><strong>Disintegration resistance</strong></td>
 <td>Black dragon breath stops disintegrating you (still does ordinary
 damage).</td>
-<td>Eating corpses with <code>MR_DISINT</code> (black dragon).</td>
+<td>Black dragon corpse.</td>
 <td>Black dragon scales / scale mail.</td>
 </tr>
 <tr>
 <td><strong>Shock resistance</strong></td>
 <td>Halves electrical damage; blocks lightning breath.</td>
-<td>Monk XL 15; eating corpses with <code>MR_ELEC</code> (blue dragon,
-electric eel, shocking sphere).</td>
+<td>Monk XL 15; blue dragon, electric eel, or shocking sphere
+corpses.</td>
 <td>Ring of shock resistance; blue dragon scales / scale mail; shield of
 shock resistance (new in 5.0).</td>
 </tr>
@@ -23175,31 +23176,34 @@ shock resistance (new in 5.0).</td>
 <td><strong>Poison resistance</strong></td>
 <td>Survive poison stings, poisonous corpses, poison breath.</td>
 <td>Barbarian XL 1, Healer XL 1, Orc XL 1, Tourist XL 20, Monk XL 3;
-eating corpses with <code>MR_POISON</code> (killer bee or scorpion at
-quadruple rate; otherwise green dragon, naga, quasit, etc.).</td>
+killer bee or scorpion corpses (quadruple normal rate); green dragon,
+naga, quasit, and other poisonous corpses at the standard rate.</td>
 <td>Ring of poison resistance; amulet versus poison; alchemy smock
 (cloak); green dragon scales / scale mail.</td>
 </tr>
 <tr>
 <td><strong>Acid resistance</strong></td>
-<td><em>Temporary</em> immunity to acid damage. Resets on level
-change.</td>
-<td>Eating corpses with <code>MR_ACID</code> (acid blob, brown pudding,
-yellow dragon) at half the normal rate.</td>
-<td>Yellow dragon scales / scale mail.</td>
+<td>Survive acid damage. From corpses it’s <em>temporary</em> and resets
+on level change; from yellow dragon scales it’s permanent for as long as
+they’re worn.</td>
+<td>Acid blob, brown pudding, or yellow dragon corpses (half the normal
+rate, timed).</td>
+<td>Yellow dragon scales / scale mail (permanent while worn).</td>
 </tr>
 <tr>
 <td><strong>Stoning resistance</strong></td>
-<td><em>Temporary</em> immunity to petrification (cockatrice touch,
-eating cockatrice/Medusa corpses). Resets on level change.</td>
-<td>Eating corpses with <code>MR_STONE</code> (acid blob — quite
-reliable; lizard) at one-quarter normal rate.</td>
-<td>Yellow dragon scales / scale mail (yes, both effects).</td>
+<td>Immunity to petrification (cockatrice touch, eating
+cockatrice/Medusa corpses). Timed from corpses; permanent from yellow
+dragon scales.</td>
+<td>Acid blob corpse (quite reliable) or lizard corpse, at one-quarter
+normal rate.</td>
+<td>Yellow dragon scales / scale mail (yes, both effects — and permanent
+while worn).</td>
 </tr>
 <tr>
 <td><strong>Drain resistance</strong></td>
-<td>Blocks level drain from wraiths, vampires, AD_DRLI weapons (<a
-href="#stormbringer">Stormbringer</a>, Vorpal Blade).</td>
+<td>Blocks level drain from wraiths, vampires, and drain-life weapons
+(<a href="#stormbringer">Stormbringer</a>, Vorpal Blade).</td>
 <td>None from corpses; vampire / lich polyform confers it.</td>
 <td>Black dragon scales / scale mail; shield of drain resistance (new in
 5.0); wielding <a href="#excalibur-artifact">Excalibur</a>,
@@ -23224,25 +23228,27 @@ trap can confer it randomly.</td>
 </tr>
 <tr>
 <td><strong>Hallucination resistance</strong></td>
-<td>Blocks hallucination from violet fungus, hallucinogenic potions,
-gold-DSM emission.</td>
-<td>Polyform-only (forms with <code>AD_HALU</code> attacks).</td>
+<td>Blocks hallucination from violet fungus, hallucinogenic potions, and
+gold dragon scale mail’s emission.</td>
+<td>Polyform-only (forms whose attacks cause hallucination, like the
+violet fungus).</td>
 <td>Wielding <a href="#grayswandir">Grayswandir</a>.</td>
 </tr>
 <tr>
 <td><strong>Blindness resistance</strong></td>
 <td>Blocks light-flash blindness from yellow / black light bursts.</td>
-<td>Polyform-only (forms with <code>AD_BLND</code> attacks like yellow
-light).</td>
+<td>Polyform-only (forms whose attacks blind, like yellow light).</td>
 <td>Wielding <a href="#sunsword">Sunsword</a>.</td>
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="senses-and-perception" class="level4">
 <h4>Senses and perception</h4>
 <p>ESP and warning are the two senses that change how you <em>play</em>
 — both let you act on information you couldn’t otherwise see.</p>
+<div class="dense-table">
 <table>
 <colgroup>
 <col style="width: 25%" />
@@ -23264,8 +23270,8 @@ light).</td>
 <td>Senses minded monsters anywhere on the level when you are blind (and
 partially when sighted). Floating-eye corpse is the standard early
 source.</td>
-<td>Eating corpses with the <code>telepathic</code> flag (floating eye —
-at fifteen times normal rate; mind flayer; master mind flayer).</td>
+<td>Floating eye corpse (at fifteen times the normal rate, so almost
+always granted); mind flayer or master mind flayer corpses.</td>
 <td>Amulet of ESP; helm of telepathy; <a
 href="#eye-of-the-aethiopica">Eye of the Aethiopica</a> (carried); <a
 href="#orb-of-detection">Orb of Detection</a> (carried); <a
@@ -23321,11 +23327,13 @@ href="#excalibur-artifact">Excalibur</a>.</td>
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="movement-and-spatial-behavior" class="level4">
 <h4>Movement and spatial behavior</h4>
 <p>The speed system, the air-walking gear, and the niche-access
 tools.</p>
+<div class="dense-table">
 <table>
 <colgroup>
 <col style="width: 25%" />
@@ -23361,15 +23369,13 @@ effective ~20); blue dragon scales / scale mail (Very Fast).</td>
 <td><strong>Teleport</strong> (uncontrolled)</td>
 <td>Random teleport every few hundred turns. Useful when paired with
 control.</td>
-<td>Eating corpses with <code>M1_TPORT</code> (tengu, homunculus) at
-slightly above normal rate.</td>
+<td>Tengu or homunculus corpses (at 1.5× the usual rate).</td>
 <td>Ring of teleportation.</td>
 </tr>
 <tr>
 <td><strong>Teleport control</strong></td>
 <td>Lets you choose your destination when you teleport.</td>
-<td>Monk XL 17; Wizard XL 17; eating corpses with
-<code>M1_TPORT_CNTRL</code> (tengu at normal rate).</td>
+<td>Monk XL 17; Wizard XL 17; tengu corpse.</td>
 <td>Ring of teleport control; carrying <a
 href="#master-key-of-thievery">Master Key of Thievery</a>; carrying the
 Amulet of Yendor (yes, the win condition grants TC).</td>
@@ -23404,11 +23410,13 @@ cloud.</td>
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="combat-and-defense" class="level4">
 <h4>Combat and defense</h4>
 <p>Layered defenses for the ascension kit: AC, reflection, free action,
 regen.</p>
+<div class="dense-table">
 <table>
 <colgroup>
 <col style="width: 25%" />
@@ -23509,11 +23517,13 @@ often.</td>
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="special-and-utility" class="level4">
 <h4>Special and utility</h4>
 <p>The grab-bag: digestion timing, polymorph behavior, the
 win-back-from-death amulet, and a few crowd-control items.</p>
+<div class="dense-table">
 <table>
 <colgroup>
 <col style="width: 25%" />
@@ -23590,6 +23600,7 @@ immunity.</td>
 </tr>
 </tbody>
 </table>
+</div>
 <p>A handful of properties exist in the source but are essentially
 <strong>polyform-only</strong> for the player: <em>swimming</em> (rare
 aquatic forms), <em>passes walls</em> (xorn, earth elemental, ghost),

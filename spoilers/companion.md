@@ -3517,8 +3517,8 @@ five-turn countdown announces itself with *"You are slowing down,"*
 
 **Defenses ahead of time:** wear gloves around cockatrice corpses,
 use reflection against Medusa, and pile up *timed* stoning
-resistance from acid blob corpses (each one grants d(3,6) turns of
-HStone resistance: useful but not permanent). For something
+resistance from acid blob corpses (each one grants a few hundred
+turns of resistance: useful but not permanent). For something
 permanent, wear yellow dragon scale mail.
 
 **Peril in the new moon.** A cockatrice's hiss has a small chance
@@ -12436,10 +12436,11 @@ by an item you carry, wear, or wield).
 A few patterns worth knowing before you read further:
 
 - **Corpses confer most resistances at a rate that scales with the
-  monster's level** (`(mlevel > rn2(15))` for most resistances; faster
-  for a few — killer-bee corpse gives poison res at four times the
-  normal rate, and floating-eye / mind-flayer corpses give telepathy at
-  fifteen times normal).
+  monster's level** — a higher-level monster's corpse is more likely
+  to grant its resistance than a low-level one. A few corpses are
+  faster than that baseline: killer-bee corpses give poison resistance
+  at four times the normal rate, and floating-eye and mind-flayer
+  corpses give telepathy at fifteen times normal.
 - **Intrinsic + extrinsic don't stack** — wearing the cloak of magic
   resistance over a Wizard with XL 17 antimagic doesn't double anything.
   But having both is **redundancy**: take the cloak off and the
@@ -12458,30 +12459,36 @@ The widest, most-used family. Most are gettable from corpses early.
 Magic resistance is the late-game-defining piece and has the fewest
 sources.
 
+::: dense-table
+
 | Property | What it does | Intrinsic sources | Extrinsic sources |
 |---|---|---|---|
-| **Fire resistance** | Halves fire damage; blocks fire-trap injury, fire-breath weapons, and lava burns (you still drown in lava). | Monk XL 11; Priest XL 20; eating corpses with `MR_FIRE` (red dragon, fire ant, fire giant, hell hound, salamander, red mold); prayer rescue from lava. | Ring of fire resistance; red dragon scales / scale mail. |
-| **Cold resistance** | Halves cold damage; blocks cold breath, cold blasts; lets you eat cold-resistant corpses safely. | Valkyrie XL 1; Monk XL 13; eating corpses with `MR_COLD` (white dragon, frost giant, winter wolf, brown mold, blue jelly). | Ring of cold resistance; white dragon scales / scale mail. |
-| **Sleep resistance** | Immune to sleep gas, sleep rays, monster sleep attacks. | Monk XL 1; Elf XL 4; eating corpses with `MR_SLEEP` (any elf, homunculus, dark one); prayer-rescue. | Orange dragon scales / scale mail. |
-| **Disintegration resistance** | Black dragon breath stops disintegrating you (still does ordinary damage). | Eating corpses with `MR_DISINT` (black dragon). | Black dragon scales / scale mail. |
-| **Shock resistance** | Halves electrical damage; blocks lightning breath. | Monk XL 15; eating corpses with `MR_ELEC` (blue dragon, electric eel, shocking sphere). | Ring of shock resistance; blue dragon scales / scale mail; shield of shock resistance (new in 5.0). |
-| **Poison resistance** | Survive poison stings, poisonous corpses, poison breath. | Barbarian XL 1, Healer XL 1, Orc XL 1, Tourist XL 20, Monk XL 3; eating corpses with `MR_POISON` (killer bee or scorpion at quadruple rate; otherwise green dragon, naga, quasit, etc.). | Ring of poison resistance; amulet versus poison; alchemy smock (cloak); green dragon scales / scale mail. |
-| **Acid resistance** | *Temporary* immunity to acid damage. Resets on level change. | Eating corpses with `MR_ACID` (acid blob, brown pudding, yellow dragon) at half the normal rate. | Yellow dragon scales / scale mail. |
-| **Stoning resistance** | *Temporary* immunity to petrification (cockatrice touch, eating cockatrice/Medusa corpses). Resets on level change. | Eating corpses with `MR_STONE` (acid blob — quite reliable; lizard) at one-quarter normal rate. | Yellow dragon scales / scale mail (yes, both effects). |
-| **Drain resistance** | Blocks level drain from wraiths, vampires, AD_DRLI weapons ([Stormbringer](#stormbringer), Vorpal Blade). | None from corpses; vampire / lich polyform confers it. | Black dragon scales / scale mail; shield of drain resistance (new in 5.0); wielding [Excalibur](#excalibur-artifact), Stormbringer, or [Staff of Aesculapius](#staff-of-aesculapius). |
+| **Fire resistance** | Halves fire damage; blocks fire-trap injury, fire-breath weapons, and lava burns (you still drown in lava). | Monk XL 11; Priest XL 20; red dragon, fire ant, fire giant, hell hound, salamander, or red mold corpses; prayer rescue from lava. | Ring of fire resistance; red dragon scales / scale mail. |
+| **Cold resistance** | Halves cold damage; blocks cold breath, cold blasts; lets you eat cold-resistant corpses safely. | Valkyrie XL 1; Monk XL 13; white dragon, frost giant, winter wolf, brown mold, or blue jelly corpses. | Ring of cold resistance; white dragon scales / scale mail. |
+| **Sleep resistance** | Immune to sleep gas, sleep rays, monster sleep attacks. | Monk XL 1; Elf XL 4; any elf, homunculus, or dark one corpse; prayer-rescue. | Orange dragon scales / scale mail. |
+| **Disintegration resistance** | Black dragon breath stops disintegrating you (still does ordinary damage). | Black dragon corpse. | Black dragon scales / scale mail. |
+| **Shock resistance** | Halves electrical damage; blocks lightning breath. | Monk XL 15; blue dragon, electric eel, or shocking sphere corpses. | Ring of shock resistance; blue dragon scales / scale mail; shield of shock resistance (new in 5.0). |
+| **Poison resistance** | Survive poison stings, poisonous corpses, poison breath. | Barbarian XL 1, Healer XL 1, Orc XL 1, Tourist XL 20, Monk XL 3; killer bee or scorpion corpses (quadruple normal rate); green dragon, naga, quasit, and other poisonous corpses at the standard rate. | Ring of poison resistance; amulet versus poison; alchemy smock (cloak); green dragon scales / scale mail. |
+| **Acid resistance** | Survive acid damage. From corpses it's *temporary* and resets on level change; from yellow dragon scales it's permanent for as long as they're worn. | Acid blob, brown pudding, or yellow dragon corpses (half the normal rate, timed). | Yellow dragon scales / scale mail (permanent while worn). |
+| **Stoning resistance** | Immunity to petrification (cockatrice touch, eating cockatrice/Medusa corpses). Timed from corpses; permanent from yellow dragon scales. | Acid blob corpse (quite reliable) or lizard corpse, at one-quarter normal rate. | Yellow dragon scales / scale mail (yes, both effects — and permanent while worn). |
+| **Drain resistance** | Blocks level drain from wraiths, vampires, and drain-life weapons ([Stormbringer](#stormbringer), Vorpal Blade). | None from corpses; vampire / lich polyform confers it. | Black dragon scales / scale mail; shield of drain resistance (new in 5.0); wielding [Excalibur](#excalibur-artifact), Stormbringer, or [Staff of Aesculapius](#staff-of-aesculapius). |
 | **Sickness resistance** | Blocks deadly disease, food poisoning. | None from corpses. | Green dragon scales / scale mail. |
 | **Magic resistance** | Blocks death rays, magic missile, polymorph beams, the touch-of-death spell, and magic-trap effects at 100%. *Not* the same as [MC](#magic-cancellation). | Wizard XL 17 (called Antimagic); magic-trap polymorph from a magic trap can confer it randomly. | Cloak of magic resistance; gray dragon scales / scale mail; wielding [Magicbane](#magicbane). |
-| **Hallucination resistance** | Blocks hallucination from violet fungus, hallucinogenic potions, gold-DSM emission. | Polyform-only (forms with `AD_HALU` attacks). | Wielding [Grayswandir](#grayswandir). |
-| **Blindness resistance** | Blocks light-flash blindness from yellow / black light bursts. | Polyform-only (forms with `AD_BLND` attacks like yellow light). | Wielding [Sunsword](#sunsword). |
+| **Hallucination resistance** | Blocks hallucination from violet fungus, hallucinogenic potions, and gold dragon scale mail's emission. | Polyform-only (forms whose attacks cause hallucination, like the violet fungus). | Wielding [Grayswandir](#grayswandir). |
+| **Blindness resistance** | Blocks light-flash blindness from yellow / black light bursts. | Polyform-only (forms whose attacks blind, like yellow light). | Wielding [Sunsword](#sunsword). |
+
+:::
 
 #### Senses and perception
 
 ESP and warning are the two senses that change how you *play* — both
 let you act on information you couldn't otherwise see.
 
+::: dense-table
+
 | Property | What it does | Intrinsic sources | Extrinsic sources |
 |---|---|---|---|
-| **Telepathy** (ESP) | Senses minded monsters anywhere on the level when you are blind (and partially when sighted). Floating-eye corpse is the standard early source. | Eating corpses with the `telepathic` flag (floating eye — at fifteen times normal rate; mind flayer; master mind flayer). | Amulet of ESP; helm of telepathy; [Eye of the Aethiopica](#eye-of-the-aethiopica) (carried); [Orb of Detection](#orb-of-detection) (carried); [Platinum Yendorian Express Card](#platinum-yendorian-express-card) (carried); [Longbow of Diana](#longbow-of-diana) (carried); [Magicbane](#magicbane) (wielded). |
+| **Telepathy** (ESP) | Senses minded monsters anywhere on the level when you are blind (and partially when sighted). Floating-eye corpse is the standard early source. | Floating eye corpse (at fifteen times the normal rate, so almost always granted); mind flayer or master mind flayer corpses. | Amulet of ESP; helm of telepathy; [Eye of the Aethiopica](#eye-of-the-aethiopica) (carried); [Orb of Detection](#orb-of-detection) (carried); [Platinum Yendorian Express Card](#platinum-yendorian-express-card) (carried); [Longbow of Diana](#longbow-of-diana) (carried); [Magicbane](#magicbane) (wielded). |
 | **See invisible** | See invisible creatures and yourself when invisible. | Monk XL 1; Ranger XL 15. No corpse path. | Ring of see invisible. |
 | **Warning** | A digit appears next to a hostile creature whose hit-dice exceed yours; the higher the number, the bigger the threat. | Caveperson XL 15; Healer XL 15; Monk XL 7; Priest XL 15; Wizard XL 15; prayer rescue. | Ring of warning; helm of caution; [Master Key of Thievery](#master-key-of-thievery), [Orb of Fate](#orb-of-fate), [Orcrist](#bane-weapons), [Sting](#bane-weapons), [Grimtooth](#bane-weapons) (all carried). |
 | **Warning of specific class** | The same indicator, restricted to one monster type. | None as intrinsic. | Orcrist / Sting (warn of orcs); Grimtooth (warns of elves); other class-specific artifacts. |
@@ -12489,24 +12496,32 @@ let you act on information you couldn't otherwise see.
 | **Clairvoyance** | Periodic magical-eye view of the surrounding dungeon. | None as intrinsic. | Cornuthaum (Wizards only). |
 | **Infravision** | See heat signatures in the dark. | Dwarf, Elf, Gnome, Orc races at XL 1. | Red dragon scales / scale mail. |
 
+:::
+
 #### Movement and spatial behavior
 
 The speed system, the air-walking gear, and the niche-access tools.
+
+::: dense-table
 
 | Property | What it does | Intrinsic sources | Extrinsic sources |
 |---|---|---|---|
 | **Fast** (intrinsic speed) | Each movement allocation has a ~1/3 chance of a +12 bonus. Raises effective speed from 12 to about 16. | Monk XL 1; Samurai XL 1; Valkyrie XL 7; Archeologist XL 10; Barbarian XL 7; Caveperson XL 7; Knight XL 7. Prayer rescue. | Speed boots (grant **Very Fast**, ~2/3 chance, effective ~20); blue dragon scales / scale mail (Very Fast). |
 | **Jumping** | The `#jump` extended command — short controlled hop. | Knight XL 1. | Jumping boots; spell of jumping. |
-| **Teleport** (uncontrolled) | Random teleport every few hundred turns. Useful when paired with control. | Eating corpses with `M1_TPORT` (tengu, homunculus) at slightly above normal rate. | Ring of teleportation. |
-| **Teleport control** | Lets you choose your destination when you teleport. | Monk XL 17; Wizard XL 17; eating corpses with `M1_TPORT_CNTRL` (tengu at normal rate). | Ring of teleport control; carrying [Master Key of Thievery](#master-key-of-thievery); carrying the Amulet of Yendor (yes, the win condition grants TC). |
+| **Teleport** (uncontrolled) | Random teleport every few hundred turns. Useful when paired with control. | Tengu or homunculus corpses (at 1.5× the usual rate). | Ring of teleportation. |
+| **Teleport control** | Lets you choose your destination when you teleport. | Monk XL 17; Wizard XL 17; tengu corpse. | Ring of teleport control; carrying [Master Key of Thievery](#master-key-of-thievery); carrying the Amulet of Yendor (yes, the win condition grants TC). |
 | **Levitation** | Constantly floating. Crosses water, lava, ice; can't descend stairs; can't pick up items. | None. | Ring of levitation; levitation boots (cursed = stuck on); carrying the [Heart of Ahriman](#heart-of-ahriman). |
 | **Flying** | Like levitation but you can descend, pick up, and land voluntarily. | Polyform into a flying monster. | Amulet of flying. |
 | **Water walking** | Cross water and ice as if it were floor; doesn't help in lava. | Polyform into the right form (some undead). | Water-walking boots. |
 | **Magical breathing** | Don't drown when grabbed by an eel or kraken; survive a stinking cloud. | None as intrinsic. | Amulet of magical breathing. |
 
+:::
+
 #### Combat and defense
 
 Layered defenses for the ascension kit: AC, reflection, free action, regen.
+
+::: dense-table
 
 | Property | What it does | Intrinsic sources | Extrinsic sources |
 |---|---|---|---|
@@ -12521,9 +12536,13 @@ Layered defenses for the ascension kit: AC, reflection, free action, regen.
 | **Invisibility** | Monsters can't see you (and don't attack you unless they see-invisible, or unless you attack them). | Stalker polyform; potion of invisibility (timed). | Ring of invisibility; cloak of invisibility; carrying Orb of Detection. |
 | **Displacement** | Monsters see you in a wrong nearby square; ranged attacks miss often. | None as intrinsic. | Cloak of displacement. |
 
+:::
+
 #### Special and utility
 
 The grab-bag: digestion timing, polymorph behavior, the win-back-from-death amulet, and a few crowd-control items.
+
+::: dense-table
 
 | Property | What it does | Intrinsic sources | Extrinsic sources |
 |---|---|---|---|
@@ -12535,6 +12554,8 @@ The grab-bag: digestion timing, polymorph behavior, the win-back-from-death amul
 | **Conflict** | Nearby monsters attack each other instead of you. Highly disruptive in your favor; also keeps shopkeepers from selling things. | None. | Ring of conflict; carrying [Sceptre of Might](#sceptre-of-might). |
 | **Life saving** | When you would die, the amulet activates instead and restores you to one HP. The amulet is destroyed in the process. | None. | Amulet of life saving. |
 | **Adornment** | +1 Charisma. Most useful for shopping prices and seduction immunity. | None. | Ring of adornment. |
+
+:::
 
 A handful of properties exist in the source but are essentially
 **polyform-only** for the player: *swimming* (rare aquatic forms),
