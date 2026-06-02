@@ -8784,9 +8784,14 @@ NetHack pins the message line at row 0 no matter what you set.
   earth (read.c:1951); polymorphing a boulder (zap.c:1711);
   fracturing a boulder with wand of striking (zap.c:5556);
   dismounting onto a boulder square (steed.c:767)
-- levitation alone does NOT trigger sokoban_guilt; the book's
-  earlier "levitating over pits" claim was wrong — the penalty
-  fires on boulder bypasses, not pit bypasses
+- levitation alone does NOT trigger sokoban_guilt; the −1 Luck
+  penalty fires on boulder bypasses, not pit bypasses
+- BUT Sokoban pits and holes themselves bypass the normal
+  flying/levitating escape: trap.c:3014-3024 emits "Air currents
+  pull you down into [pit]" and proceeds to the normal trap
+  effect even when the hero is flying or levitating. So flying/
+  levitation does not let you skip Sokoban's pits — different
+  mechanic from the Luck penalty.
 - counted as the `sokocheat` conduct counter (insight.c:2219,
   topten.c:446) — affects the "Sokoban completion" achievement
 -->
@@ -8797,7 +8802,10 @@ You push boulders onto pits to fill them and create a path to the
 next staircase. The penalty for cheating (squeezing past or
 stepping onto a boulder instead of pushing it, destroying boulders
 with wands, reading a scroll of earth in Sokoban) is a −1 Luck
-penalty per infraction, and it stacks. Play fair.
+penalty per infraction, and it stacks. Flying and levitation
+don't help, either — Sokoban pits and holes apply *"Air currents
+pull you down…"* the moment you step over one, bypassing the
+usual float-over escape. Play fair.
 
 > *Solutions originally compiled by Boudewijn Waijers, with
 > contributions by Jukka Lahtinen and others, for the steelypips.org
