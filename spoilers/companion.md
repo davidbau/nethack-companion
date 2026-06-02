@@ -1666,6 +1666,10 @@ Medusa's level sits near the bottom of the Dungeons of Doom, around
 level 25. You'll know it by the large body of water and the
 statues scattered around (those used to be adventurers).
 
+> *Arien Malec collected crossing strategies from RGRN posters
+> back in the early 2000s, with input from Pat Rankin, Geoduck,
+> Topi Linkala, and others. This is a condensed version of his guide.*
+
 The level has three challenges stacked together:
 
 1. **Crossing the water.** The island is surrounded by water.
@@ -1701,10 +1705,6 @@ in the fourth, the same layout that is stingy with the shield), and
 a **sack** to put them in (50%). The shield is cursed, so plan to
 uncurse it before swapping it in. The other statues on the level are
 intentionally empty.
-
-> *Arien Malec collected crossing strategies from RGRN posters
-> back in the early 2000s, with input from Pat Rankin, Geoduck,
-> Topi Linkala, and others. This is a condensed version of his guide.*
 
 **Surviving Medusa's gaze.** You need one of the following before
 entering her level:
@@ -2187,7 +2187,7 @@ Shelob's lair to make the Phial of Galadriel burn brighter.
 NetHack lifts the conceit directly: writing Varda's name on the
 dungeon floor is an appeal to a higher power for safe ground.
 
-> *The mechanics below are inspired by Kate Nepveu's Elbereth FAQ.
+> *The mechanics below were inspired by Kate Nepveu's Elbereth FAQ.
 > Kate also maintained steelypips.org, the long-running archive
 > that preserved decades of community spoilers.*
 
@@ -3288,7 +3288,7 @@ instadeaths, and learning to recognize the situations that produce
 them is the difference between a promising run and a one-line
 epitaph.
 
-> *The catalog of instadeaths below is inspired by Trevor Powell's
+> *The catalog of instadeaths below was inspired by Trevor Powell's
 > Instadeath Spoiler, which drew on Dylan O'Donnell's RGRN files.
 > Trevor defined an instadeath as "a single move death which does
 > not involve the player's hit points dropping to zero," and that
@@ -3839,7 +3839,7 @@ Praying (`#pray`) calls on your god for help. When conditions are
 right, prayer is the single most powerful emergency tool in the
 game. When conditions are wrong, it can kill you.
 
-> *The mechanics below are inspired by Matthew Lahut's Praying
+> *The mechanics below were inspired by Matthew Lahut's Praying
 > Spoiler, the long-running RGRN reference for the prayer system.*
 
 **What prayer fixes (in priority order).** Your god addresses your
@@ -4380,6 +4380,12 @@ that depends on what it actually is. When you pick up an item in a
 shop, the shopkeeper quotes you a price derived from that base price,
 modified by your Charisma and the shopkeeper's markup.
 
+> *Shopkeeper pricing was first documented in detail by Gregory
+> Bond's Shopping Spoiler, HTML-formatted by Kate Nepveu and
+> hosted on steelypips.org. David Damerell's Object Identification
+> Spoiler expanded the price-based identification techniques. The
+> mechanics below draw from both.*
+
 Two ways to get a quote without committing to the buy: **throw**
 the item into the shop from outside (you forfeit ownership but the
 shopkeeper still quotes the buy price as they pick it up), or
@@ -4394,12 +4400,6 @@ body armor and no cloak) all flip the divisor. Cover the shirt
 before you sell, and don't browse in your cone hat. Charisma
 doesn't touch sell prices at all; the Charisma bands in the table
 above only move *buy* prices.
-
-> *Shopkeeper pricing was first documented in detail by Gregory
-> Bond's Shopping Spoiler, HTML-formatted by Kate Nepveu and
-> hosted on steelypips.org. David Damerell's Object Identification
-> Spoiler expanded the price-based identification techniques. The
-> mechanics below draw from both.*
 
 The key insight: items in the same category that share a base price
 are in the same **price group**. If you know the price, you can
@@ -4735,6 +4735,9 @@ document.addEventListener('DOMContentLoaded', function() {
 The single most useful wand-identification trick costs only one
 charge and preserves the rest.
 
+> *Procedure adapted from Kieron Dunbar's "Identifying Wands by
+> Zapping" spoiler, originally posted to RGRN.*
+
 1. **BUC-test the wand first.** A cursed wand used to engrave may
    **explode**. Drop the wand on an aligned altar, hand
    it to a priest, or otherwise determine its BUC before testing.
@@ -4756,9 +4759,6 @@ charge and preserves the rest.
 it grants the wish: if a $500 candidate prompts you with *"For what
 do you wish?"*, take the wish; that is the identification and the
 reward in one step.
-
-> *Procedure adapted from Kieron Dunbar's "Identifying Wands by
-> Zapping" spoiler, originally posted to RGRN.*
 
 <!-- audit
 2026-05-18:
@@ -8664,6 +8664,11 @@ next staircase. The penalty for cheating (phasing through walls,
 levitating over pits, destroying boulders) is a −1 Luck penalty
 per infraction, and it stacks. Play fair.
 
+> *Solutions originally compiled by Boudewijn Waijers, with
+> contributions by Jukka Lahtinen and others, for the steelypips.org
+> NetHack archive maintained by Kate Nepveu. Adapted for 5.0 and
+> reformatted for this guide.*
+
 In the maps below, boulders are labeled A through T so the
 solutions can reference them. The `^` symbols mark pits; `<` marks
 the upstairs. Your starting position is marked `@`.
@@ -8679,11 +8684,6 @@ boulders.
 **A note on mirroring.** Sokoban levels may be flipped
 horizontally and/or vertically in 5.0. The solutions still work;
 just mirror the directions.
-
-> *Solutions originally compiled by Boudewijn Waijers, with
-> contributions by Jukka Lahtinen and others, for the steelypips.org
-> NetHack archive maintained by Kate Nepveu. Adapted for 5.0 and reformatted
-> for this guide.*
 
 #### Level 1, Version A {.sokoban-level data-width=14 data-height=13}
 <!-- audit
@@ -9322,17 +9322,16 @@ to the treasure zoo.
 
 ### Voluntary Challenges
 
-> *The conduct system is documented in Dion Nicolaas's Conduct
-> Spoiler, originally posted to RGRN and archived at steelypips.org.
-> The information below has been updated for 5.0 of
-> the Mazes.*
-
 The game tracks a set of optional self-imposed restrictions called
 **conducts**. You can check which ones you've maintained at any time
 with `#conduct`. When you die or ascend, the end-of-game summary
 lists every conduct you kept. No conduct is required for victory;
 they exist for players who want a harder game or a more impressive
 ascension.
+
+> *The conduct system was documented in Dion Nicolaas's Conduct
+> Spoiler, originally posted to RGRN and archived at steelypips.org.
+> The information below has been updated for 5.0 of the Mazes.*
 
 Conducts are not declared in advance. The game simply watches your
 actions and records whether you've broken each restriction. If you
