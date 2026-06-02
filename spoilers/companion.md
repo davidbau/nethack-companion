@@ -7677,12 +7677,11 @@ very useful in the Sanctum). Valkyries also have Mjollnir to throw,
 so the Orb sits in inventory as pure carry value.
 
 **[The Eye of the Aethiopica]{#eye-of-the-aethiopica}** (Wizard): grants magic resistance
-when **worn** (a Wizard's wearing slot for it is the amulet, so
-in practice always); carrying also gives half spell damage taken
-and *extra energy regeneration*, a Wizard's most precious
-resource. `#invoke` opens a portal that drops you in [Vlad's Tower](#vlads-tower)
-(one-way; useful for shortcutting [the Castle](#the-castle) → Vlad's traversal).
-For a spell-caster this is irreplaceable.
+when **worn**; carrying also gives half spell damage taken and
+*extra energy regeneration*, a Wizard's most precious resource.
+`#invoke` opens a portal that drops you in [Vlad's Tower](#vlads-tower) (one-way;
+useful for shortcutting [the Castle](#the-castle) → Vlad's traversal). For a
+spell-caster this is irreplaceable.
 
 ---
 
