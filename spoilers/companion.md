@@ -8579,8 +8579,12 @@ MENUCOLOR=" blessed "=cyan
 The leading and trailing spaces matter — they prevent matching
 inside other words like "unbleached" or "blessed-cure-injury".
 
-**`force_invmenu`** shows inventory as a menu rather than a letter
-prompt.
+**`force_invmenu`** opens a pop-up menu of the eligible items
+whenever a command asks you to pick from inventory (read, drop,
+wield, and so on), instead of the default *"What do you want to
+read? [j-k or ?*]"* single-letter prompt. You see the candidates
+laid out and pick with one keystroke; no need to press `?` first
+or to remember which letter is which.
 
 **`pile_limit:5`** triggers the pile menu when 5 or more items are
 stacked on a tile.
@@ -8589,8 +8593,8 @@ stacked on a tile.
 
 **`paranoid_confirmation:Attack pray Remove quit`** requires you to
 type the full word `yes` for the listed actions: attacking peacefuls,
-praying, removing worn gear, and quitting. Catches almost every
-fat-finger accident.
+praying, removing worn gear, and quitting. Catches many
+fat-fingered accidents.
 
 #### Pickup
 

@@ -12066,8 +12066,12 @@ jumps out red and anything pre-blessed reads as cyan:</p>
 MENUCOLOR=&quot; blessed &quot;=cyan</code></pre>
 <p>The leading and trailing spaces matter — they prevent matching inside
 other words like “unbleached” or “blessed-cure-injury”.</p>
-<p><strong><code>force_invmenu</code></strong> shows inventory as a menu
-rather than a letter prompt.</p>
+<p><strong><code>force_invmenu</code></strong> opens a pop-up menu of
+the eligible items whenever a command asks you to pick from inventory
+(read, drop, wield, and so on), instead of the default <em>“What do you
+want to read? [j-k or ?*]”</em> single-letter prompt. You see the
+candidates laid out and pick with one keystroke; no need to press
+<code>?</code> first or to remember which letter is which.</p>
 <p><strong><code>pile_limit:5</code></strong> triggers the pile menu
 when 5 or more items are stacked on a tile.</p>
 </section>
@@ -12076,7 +12080,7 @@ when 5 or more items are stacked on a tile.</p>
 <p><strong><code>paranoid_confirmation:Attack pray Remove quit</code></strong>
 requires you to type the full word <code>yes</code> for the listed
 actions: attacking peacefuls, praying, removing worn gear, and quitting.
-Catches almost every fat-finger accident.</p>
+Catches many fat-fingered accidents.</p>
 </section>
 <section id="pickup" class="level4">
 <h4>Pickup</h4>
