@@ -3264,19 +3264,13 @@ fatal.
 
 **Yellow lights** (`y`, level 3) and **black lights** (`y`, level 5)
 attack by exploding the moment you're adjacent. Yellow lights blind
-you for **10d20 turns** (up to 200, but a *blessed* potion of healing
-or any extra/full healing cures, or apply a unicorn horn); black
-lights hallucinate you for **10d12 turns** (a unicorn horn cures it,
-or wait it out). Both lights die in the explosion, so the encounter
-resolves immediately, but the after-effect is long enough to be the
-real threat. Black lights are invisible; *see invisible* reveals them, but
-because they die in the same turn they attack, you'll only "see"
-them just before they vanish.
-
-**Defenses:** Kill them at range with wands, thrown daggers, breath
-weapons: anything that doesn't bring you adjacent. *Warning*
-detects them through invisibility, but *telepathy* does not (they're
-mindless). If you do get blinded, a unicorn horn cures it.
+you for **10d20 turns** (a *blessed* potion of healing or any
+extra/full healing cures, or a unicorn horn); black lights
+hallucinate you for **10d12 turns** (unicorn horn cures, or wait).
+Both lights die in the explosion, so the after-effect is the real
+threat. **Defenses:** kill them at range — wands, thrown daggers,
+breath weapons. *Warning* detects them through their invisibility;
+*telepathy* does not (mindless).
 
 ---
 
@@ -5256,9 +5250,10 @@ while there's a freshly dead rat at your feet. A few rules:
   slimes turn you into slime, kobold meat is poisonous). Know which
   corpses are safe before eating.
 
-**Food rations** are the emergency backup. 800 nutrition, weight
-20, common in shops. Carry two or three for the times you don't
-have a fresh kill in front of you. You don't need to hoard them.
+**Food rations** (or **gunyoki**, for Samurai) are the emergency
+backup. 800 nutrition, weight 20, common in shops. Carry two or
+three for the times you don't have a fresh kill in front of you.
+You don't need to hoard them.
 
 **Lembas wafers** are the gold standard: 800 nutrition at only 5
 weight, the best ratio in the game. Elven characters find these
@@ -5714,8 +5709,8 @@ your Pw instead.
 
 The cleanest way to confuse yourself on purpose is a **potion of
 confusion**: drink one and the timer runs about 25–80 turns. A
-non-blessed **potion of booze** will also confuse you for a few
-turns.
+non-blessed **potion of booze** (Samurai: **sake**) will also
+confuse you for a few turns.
 
 ---
 
@@ -6264,9 +6259,10 @@ you have.
 
 The dungeon is full of locked things, and brute force is noisy and
 slow. A **skeleton key** is the gold standard (70%+ success on
-doors, 75%+ on boxes). A **lock pick** is respectable. A **credit
-card** is the worst but still better than kicking. Always carry one
-of these. The weight is negligible and the utility is constant.
+doors, 75%+ on boxes). A **lock pick** (Samurai: **osaku**) is
+respectable. A **credit card** is the worst but still better than
+kicking. Always carry one of these. The weight is negligible and
+the utility is constant.
 
 Skeleton keys and lock picks can also **lock** what they can unlock,
 so they double as your way to relock a chest after stashing loot.
@@ -6293,8 +6289,9 @@ fill it, so start hoarding candles when you find them.
 Music has power in the Mazes. Any tonal instrument (wooden flute,
 magic flute, tooled horn, frost or fire horn, bugle, or harp) can
 play the passtune at [the Castle](#the-castle) drawbridge. You will find the notes
-nearby, so listen carefully. A **magic harp** charms monsters into
-tameness. A **magic flute** puts them to sleep. A **drum of
+nearby, so listen carefully. A **magic harp** (Samurai: **magic
+koto**) charms monsters into tameness; a wooden harp is just a
+**koto**. A **magic flute** puts them to sleep. A **drum of
 earthquake** creates pits around you, which is as chaotic as it
 sounds.
 
@@ -9871,16 +9868,13 @@ information you normally get for free.
 -->
 
 Complete Sokoban without breaking the rules. Each cheating action
-costs **1 point of Luck** and increments the conduct counter: pushing
-into a wall to **squeeze past** a boulder (when you drop your stuff
-to fit), **fracturing** a boulder with a wand of striking or scroll
-of earth, **polymorphing** a boulder, or **dismounting** onto a
-boulder. Flying and levitation don't let you skip Sokoban's pit
-traps. The air currents pull you down regardless. The game
-tracks violations automatically. The conduct is for players who
-enjoy Sokoban's
-boulder-shoving and want their playthrough to acknowledge a
-clean solve.
+costs **1 point of Luck** and increments the conduct counter:
+**squeezing past** a boulder via a small or empty-handed form,
+**fracturing** a boulder with a wand of striking, **polymorphing**
+a boulder, reading a **scroll of earth**, or **dismounting** onto
+a boulder. The game tracks violations automatically. The conduct
+is for players who enjoy Sokoban's boulder-shoving and want their
+playthrough to acknowledge a clean solve.
 
 #### Bonesless (new in 5.0)
 <!-- audit
@@ -9894,17 +9888,10 @@ clean solve.
 - "never encountered any bones levels" enlightenment requires flags.bones true AND u.uroleplay.numbones==0 (insight.c:439-441)
 -->
 
-Never inherit from another player's grave. To get the bonesless
-conduct, you have to turn bones off for the run: set
-`OPTIONS=!bones` in your rcfile (rcfile or `NETHACKOPTIONS` env
-only; the in-game `O` menu cannot toggle it). The same flag also
-stops your *own* death from generating a bones file for future
-players, so `!bones` cuts both directions of the bones cycle.
-The bonesless achievement is recorded only when bones was
-disabled, not when you happened not to encounter any. (Going a
-whole game without bones because the dungeon directory has
-nothing eligible is a separate enlightenment line ('never
-encountered any bones levels') and doesn't earn the conduct.)
+Never inherit from another player's grave. Set `OPTIONS=!bones`
+in your rcfile; see [Saving and Bones](#saving-and-bones) for the
+mechanics. The conduct credits only an explicit opt-out, not a
+lucky run without bones.
 
 ---
 
@@ -10180,7 +10167,7 @@ other gems by hardness comparison.
 
 ### Weapons Tables
 
-Damage is shown as **vs small / vs large**, the dice rolled before enchantment and excluding silver/material bonuses. **Wt** is unit weight; **Cost** is the unenchanted shop base price in zorkmids. **Hit** is the to-hit bonus baked into the weapon itself (most are 0). Two-handed weapons that prevent shield use and two-weapon combat are flagged in the notes. Weapons are grouped by their skill class so you can see your options within each skill tree at a glance.
+Damage is shown as **vs small / vs large**, the dice rolled before enchantment and excluding silver/material bonuses. **Wt** is unit weight; **Cost** is the unenchanted shop base price in zorkmids. **Hit** is the to-hit bonus baked into the weapon itself (most are 0). Two-handed weapons that prevent shield use and two-weapon combat are flagged in the notes. Weapons are grouped by their skill class so you can see your options within each skill tree at a glance. Samurai-language names for a handful of weapons are shown in parentheses (a Samurai sees them on screen by those names; same underlying item).
 
 #### Dagger
 <!-- audit
@@ -10219,7 +10206,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | scalpel | 1d3 / 1d3 | 5 | 6 | +2 | metal | The Healer's starter. |
-| knife | 1d3 / 1d2 | 5 | 4 | — | iron |  |
+| knife (shito) | 1d3 / 1d2 | 5 | 4 | — | iron |  |
 | stiletto | 1d3 / 1d2 | 5 | 4 | — | iron |  |
 | worm tooth | 1d2 / 1d2 | 20 | 2 | — | bone |  |
 | crysknife | 1d10 / 1d10 | 20 | 100 | +3 | bone | Reverts to a worm tooth when dropped (unwielding is fine; only dropping triggers it). An erodeproof one reverts only ~10% of the time. |
@@ -10239,7 +10226,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
-| short sword | 1d6 / 1d8 | 30 | 10 | — | iron | The Rogue's starter; Samurai's *wakizashi* is just a short sword by another name. |
+| short sword (wakizashi) | 1d6 / 1d8 | 30 | 10 | — | iron | The Rogue's starter. |
 | elven short sword | 1d8 / 1d8 | 30 | 10 | — | wood |  |
 | orcish short sword | 1d5 / 1d8 | 30 | 10 | — | iron |  |
 | dwarvish short sword | 1d7 / 1d8 | 30 | 10 | — | iron |  |
@@ -10276,7 +10263,7 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
-| broadsword | 1d4+1d4 / 1d6+1 | 70 | 10 | — | iron |  |
+| broadsword (ninja-to) | 1d4+1d4 / 1d6+1 | 70 | 10 | — | iron |  |
 | elven broadsword | 1d6+1d4 / 1d6+1 | 70 | 10 | — | wood |  |
 | runesword | 1d4+1d4 / 1d6+1 | 40 | 300 | — | iron | Stormbringer is the chaotic artifact form. |
 
@@ -10434,7 +10421,7 @@ bardiche, and any other bimanual weapon.
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
-| flail | 1d6+1 / 1d4+1d4 | 15 | 4 | — | iron | +1 small, +1d4 large; one-handed. |
+| flail (nunchaku) | 1d6+1 / 1d4+1d4 | 15 | 4 | — | iron | +1 small, +1d4 large; one-handed. |
 | grappling hook | 1d2 / 1d6 | 30 | 50 | — | iron | Tool, not a primary weapon, but trains P_FLAIL. `#apply` to hook and pull a target toward you. |
 
 :::
@@ -10493,7 +10480,7 @@ All polearms are two-handed. To strike at range, `#apply` the weapon (not wield-
 | partisan | 1d6 / 1d6+1 | 80 | 10 | — | iron | Reach. |
 | ranseur | 1d4+1d4 / 1d4+1d4 | 50 | 6 | — | iron | +1d4 small, +1d4 large. |
 | spetum | 1d6+1 / 1d6+1d6 | 50 | 5 | — | iron | +1 small, +1d6 large. |
-| glaive | 1d6 / 1d10 | 75 | 6 | — | iron | Reach. |
+| glaive (naginata) | 1d6 / 1d10 | 75 | 6 | — | iron | Reach. |
 | halberd | 1d10 / 1d6+1d6 | 150 | 10 | — | iron | +1d6 large. |
 | bardiche | 1d4+1d4 / 1d4+2d4 | 120 | 7 | — | iron | +1d4 small, +2d4 large. |
 | voulge | 1d4+1d4 / 1d4+1d4 | 125 | 5 | — | iron | +1d4 small, +1d4 large. |
@@ -10729,7 +10716,7 @@ kebab bonus.
 - follow-ups: build_armor_appendix.py may be stale; "yellow dragon scale mail | Rare." not verified against 5.0 generation rules.
 -->
 
-**AC** is the armor-class bonus the piece provides (higher number = more protection; this is the amount subtracted from your displayed AC). **MC** is the magic-cancellation level (1-3) — higher MC reduces the chance of magic attacks landing. **Wt** is weight; **Cost** is shop base price. The **Notes** column folds in the intrinsic property granted while the piece is worn, and tactical caveats. Armor is grouped by slot. Dragon scale mail is listed separately because of its sheer importance to the endgame.
+**AC** is the armor-class bonus the piece provides (higher number = more protection; this is the amount subtracted from your displayed AC). **MC** is the magic-cancellation level (1-3) — higher MC reduces the chance of magic attacks landing. **Wt** is weight; **Cost** is shop base price. The **Notes** column folds in the intrinsic property granted while the piece is worn, and tactical caveats. Armor is grouped by slot. Dragon scale mail is listed separately because of its sheer importance to the endgame. Samurai-language names for a few pieces are shown in parentheses (same underlying item).
 
 #### Body armor (suits)
 
@@ -10737,7 +10724,7 @@ kebab bonus.
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
-| plate mail | +7 | 2 | 450 | 600 | iron | Spellcasting penalty. |
+| plate mail (tanko) | +7 | 2 | 450 | 600 | iron | Spellcasting penalty. |
 | crystal plate mail | +7 | 2 | 415 | 820 | glass | Never rusts. Spellcasting penalty. |
 | bronze plate mail | +6 | 1 | 450 | 400 | copper |  |
 | splint mail | +6 | 1 | 400 | 80 | iron |  |
@@ -10830,7 +10817,7 @@ kebab bonus.
 | dunce cap | +0 | — | 4 | 1 | cloth | Int/Wis → 6. Auto-curses on wear. Needs remove curse to take off. |
 | dented pot | +1 | — | 10 | 8 | iron |  |
 | helm of brilliance | +1 | — | 40 | 50 | glass | Adds enchantment value to both Int and Wis while worn (a +3 helm gives +3 Int and +3 Wis). |
-| helmet | +1 | — | 30 | 10 | iron |  |
+| helmet (kabuto) | +1 | — | 30 | 10 | iron |  |
 | helm of caution | +1 | — | 50 | 50 | iron | Warning. |
 | helm of opposite alignment | +1 | — | 50 | 50 | iron | Flips your alignment while worn. Cursed 90%. |
 | helm of telepathy | +1 | — | 50 | 50 | iron | Telepathy while blind. |
@@ -10848,7 +10835,7 @@ Astral Plane, change which altar accepts the Amulet.
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
-| leather gloves | +1 | — | 10 | 8 | leather |  |
+| leather gloves (yugake) | +1 | — | 10 | 8 | leather |  |
 | gauntlets of fumbling | +1 | — | 10 | 50 | leather | Causes frequent fumbling. Generated cursed 9 times in 10. Avoid. |
 | gauntlets of power | +1 | — | 30 | 50 | iron | Sets Strength to 25. |
 | gauntlets of dexterity | +1 | — | 10 | 50 | leather | Adds enchantment value to Dex while worn (a +3 pair gives +3 Dex). |
