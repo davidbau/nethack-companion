@@ -178,6 +178,8 @@ Pricing</a> — Commerce in the dungeon</li>
 <li><a href="#armor-tables">Armor Tables</a></li>
 <li><a href="#spell-tables">Spell Tables</a></li>
 <li><a href="#bestiary-tables">Bestiary Tables</a></li>
+<li><a href="#intrinsic-and-extrinsic-tables">Intrinsic and Extrinsic
+Tables</a> — Properties you can attain and where they come from</li>
 <li><a href="#what-changed-since-last-time">What Changed Since Last
 Time</a> — What’s new in 5.0 vs 3.6.x, and what to do about it</li>
 <li><a href="#acknowledgements">Acknowledgements</a> — Standing on the
@@ -22899,6 +22901,567 @@ cockatrices and Medusa.</p>
 </tbody>
 </table>
 </div>
+<hr />
+</section>
+</section>
+<section id="intrinsic-and-extrinsic-tables" class="level3">
+<h3>Intrinsic and Extrinsic Tables</h3>
+<!-- audit
+2026-06-01:
+- property list from include/prop.h:14-93 (68 enum entries; we cover the player-attainable subset and skip trouble states and INVULNERABLE)
+- role intrinsic gain levels from src/attrib.c:23-105 (innate structs per role: arc/bar/cav/hea/kni/mon/pri/ran/rog/sam/tou/val/wiz)
+- race intrinsic gain levels from src/attrib.c:91-103 (dwa_abil, elf_abil, gno_abil, orc_abil)
+- corpse intrinsic conferral logic at src/eat.c:903-951 (intrinsic_possible() — mconveys & MR_X check per resistance)
+- give-rate formula at src/eat.c:961-997 (chance=15 standard; chance=4 for killer-bee/scorpion poison; chance=1 telepathy; chance=10 teleport; chance=12 teleport control; chance=6 stone temp; chance=3 acid temp; (ptr->mlevel > rn2(chance)) gates the grant)
+- prayer-conferred intrinsics at src/pray.c:814,817,1321-1325 (HFire_resistance / HSleep_resistance / HFast / HStealth |= FROMOUTSIDE)
+- dragon scale base property at include/objects.h:497-553 (DRGN_ARMR macros — each color's primary granted property; gold has no power, shimmering is DEFERRED)
+- dragon scale special secondary effects at src/do_wear.c:798-884 (dragon_armor_handling switch: black=drain res, blue=fast, green=sick res, red=infravision, orange=free action, yellow=stone res, white=slow digestion, gold=affects hallucination state)
+- ring grants at include/objects.h:741-827 (RING macro 3rd arg = granted property)
+- amulet grants at include/objects.h:835-862 (AMULET macro 3rd arg = granted property)
+- helm of caution grants WARNING (objects.h:479-481)
+- helm of telepathy grants TELEPAT (objects.h:485-487)
+- cornuthaum grants CLAIRVOYANT to Wizard role only (objects.h:457-461)
+- alchemy smock grants POISON_RES (objects.h:630-632)
+- elven boots grant STEALTH (objects.h:715-717); elven cloak grants STEALTH (objects.h:615-617)
+- jumping boots grant JUMPING (objects.h:712-714)
+- water walking boots grant WWALKING (objects.h:709-711)
+- speed boots grant FAST (objects.h:707-709)
+- levitation boots grant LEVITATION (objects.h:725-727)
+- shield of reflection grants REFLECTING (objects.h:677-679)
+- shield of drain resistance NEW in 5.0 (objects.h:656-658)
+- shield of shock resistance NEW in 5.0 (objects.h:659-661)
+- cloak of protection grants PROTECTION + MC3 (objects.h:637-641)
+- cloak of magic resistance grants ANTIMAGIC + MC1 (objects.h:644-646)
+- cloak of invisibility grants INVIS (objects.h:641-643)
+- cloak of displacement grants DISPLACED (objects.h:648-650)
+- amulet of guarding grants PROTECTION + MC2 (objects.h:855-856)
+- amulet of magical breathing grants MAGICAL_BREATHING (objects.h:852-854)
+- amulet of life saving grants LIFESAVED (objects.h:838-839)
+- amulet of unchanging grants UNCHANGING (objects.h:848-849)
+- amulet of reflection grants REFLECTING (objects.h:850-851)
+- amulet of ESP grants TELEPAT (objects.h:835-836)
+- amulet of flying grants FLYING (objects.h:859-860)
+- amulet versus poison grants POISON_RES (objects.h:844-845)
+- Sunsword: extrinsic BLND_RES when wielded (artilist.h:209-212; youprop.h:160 EBlnd_resist comment)
+- Magicbane grants ANTIMAGIC + ESP + stun while wielded (artilist.h:145-147; src/artifact.c handlers)
+- Grayswandir grants HALLUC_RES via SPFX_HALRES (artilist.h:170; src/artifact.c:787)
+- Dragonbane grants REFLECTING via SPFX_REFLECT (artilist.h:157-160; artifact.c:867)
+- Eye of the Aethiopica grants ENERGY_REGENERATION + ESP carried (artilist.h:303-307; artifact.c:841)
+- Heart of Ahriman grants LEVITATION + STEALTH (artilist.h:225-230)
+- Sceptre of Might grants PROTECTION + CONFLICT (artilist.h:232-235)
+- Orb of Detection grants HALF_SPDAM + ESP + INVIS (artilist.h:219-223)
+- Master Key of Thievery grants TELEPORT_CONTROL + WARN + HALF_SPDAM + HALF_PHDAM (artilist.h:279-283)
+- Platinum Yendorian Express Card grants ESP + HALF_SPDAM (artilist.h:291-295)
+- Orb of Fate grants WARN + HALF_SPDAM + HALF_PHDAM (artilist.h:297-301)
+- Longbow of Diana grants ESP + REFLECTING (artilist.h:271-274)
+- Mitre of Holiness grants PROTECTION (artilist.h:265-269)
+- Tsurugi of Muramasa grants PROTECTION (artilist.h:285-289)
+- Trollsbane grants REGENERATION (artilist.h:182-184)
+- Staff of Aesculapius grants REGENERATION + drain res (artilist.h:248-253)
+- Orcrist warns of orcs via SPFX_WARN + M2_ORC (artilist.h:134-136)
+- Sting warns of orcs (artilist.h:138-140)
+- Grimtooth warns of elves via SPFX_WARN + M2_ELF (artilist.h:123-126)
+- ANTIMAGIC and HALLUC_RES are separate properties in prop.h (12 vs 24); magic resistance doesn't automatically block hallucination
+- BLND_RES intrinsic comes only from polyform into AD_BLND attack monsters per src/polyself.c:108; no corpse-grant path
+- HALLUC_RES intrinsic comes only from polyform into AD_HALU attack monsters per src/polyself.c:88; no corpse-grant path
+- SEE_INVIS not conveyed by any corpse per src/eat.c:1356 (intrinsic_possible returns false)
+- PASSES_WALLS, SWIMMING, DETECT_MONSTERS: polyform-only, no player-attainable persistent source
+-->
+<p>NetHack tracks 68 properties on the player. The ones you actively
+want to attain fall into five families: damage resistances, senses and
+perception, movement and spatial behavior, combat and defense, and
+special utility. The tables below list each property, what it does, and
+every reliable source — broken into <strong>intrinsic</strong> (gained
+from corpses, role progression, race, or prayer) and
+<strong>extrinsic</strong> (granted by an item you carry, wear, or
+wield).</p>
+<p>A few patterns worth knowing before you read further:</p>
+<ul>
+<li><strong>Corpses confer most resistances at a rate that scales with
+the monster’s level</strong> (<code>(mlevel &gt; rn2(15))</code> for
+most resistances; faster for a few — killer-bee corpse gives poison res
+at four times the normal rate, and floating-eye / mind-flayer corpses
+give telepathy at fifteen times normal).</li>
+<li><strong>Intrinsic + extrinsic don’t stack</strong> — wearing the
+cloak of magic resistance over a Wizard with XL 17 antimagic doesn’t
+double anything. But having both is <strong>redundancy</strong>: take
+the cloak off and the intrinsic still protects you.</li>
+<li><strong>The Monk has the broadest resistance ladder of any
+role.</strong> Eleven intrinsics gained across levels 1–17, more than
+any other role.</li>
+<li><strong>Dragon scale mail is the universal extrinsic
+gateway</strong> for the resistance system. Each color maps to one base
+resistance; several also grant a <em>secondary</em> effect on top (black
+gives disintegration <em>and</em> drain res, blue gives shock
+<em>and</em> fast, etc.). See the table for the full mapping.</li>
+</ul>
+<section id="damage-resistances" class="level4">
+<h4>Damage resistances</h4>
+<p>The widest, most-used family. Most are gettable from corpses early.
+Magic resistance is the late-game-defining piece and has the fewest
+sources.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Property</th>
+<th>What it does</th>
+<th>Intrinsic sources</th>
+<th>Extrinsic sources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fire resistance</strong></td>
+<td>Halves fire damage; blocks fire-trap injury, fire-breath weapons,
+and lava burns (you still drown in lava).</td>
+<td>Monk XL 11; Priest XL 20; eating corpses with <code>MR_FIRE</code>
+(red dragon, fire ant, fire giant, hell hound, salamander, red mold);
+prayer rescue from lava.</td>
+<td>Ring of fire resistance; red dragon scales / scale mail.</td>
+</tr>
+<tr>
+<td><strong>Cold resistance</strong></td>
+<td>Halves cold damage; blocks cold breath, cold blasts; lets you eat
+cold-resistant corpses safely.</td>
+<td>Valkyrie XL 1; Monk XL 13; eating corpses with <code>MR_COLD</code>
+(white dragon, frost giant, winter wolf, brown mold, blue jelly).</td>
+<td>Ring of cold resistance; white dragon scales / scale mail.</td>
+</tr>
+<tr>
+<td><strong>Sleep resistance</strong></td>
+<td>Immune to sleep gas, sleep rays, monster sleep attacks.</td>
+<td>Monk XL 1; Elf XL 4; eating corpses with <code>MR_SLEEP</code> (any
+elf, homunculus, dark one); prayer-rescue.</td>
+<td>Orange dragon scales / scale mail.</td>
+</tr>
+<tr>
+<td><strong>Disintegration resistance</strong></td>
+<td>Black dragon breath stops disintegrating you (still does ordinary
+damage).</td>
+<td>Eating corpses with <code>MR_DISINT</code> (black dragon).</td>
+<td>Black dragon scales / scale mail.</td>
+</tr>
+<tr>
+<td><strong>Shock resistance</strong></td>
+<td>Halves electrical damage; blocks lightning breath.</td>
+<td>Monk XL 15; eating corpses with <code>MR_ELEC</code> (blue dragon,
+electric eel, shocking sphere).</td>
+<td>Ring of shock resistance; blue dragon scales / scale mail; shield of
+shock resistance (new in 5.0).</td>
+</tr>
+<tr>
+<td><strong>Poison resistance</strong></td>
+<td>Survive poison stings, poisonous corpses, poison breath.</td>
+<td>Barbarian XL 1, Healer XL 1, Orc XL 1, Tourist XL 20, Monk XL 3;
+eating corpses with <code>MR_POISON</code> (killer bee or scorpion at
+quadruple rate; otherwise green dragon, naga, quasit, etc.).</td>
+<td>Ring of poison resistance; amulet versus poison; alchemy smock
+(cloak); green dragon scales / scale mail.</td>
+</tr>
+<tr>
+<td><strong>Acid resistance</strong></td>
+<td><em>Temporary</em> immunity to acid damage. Resets on level
+change.</td>
+<td>Eating corpses with <code>MR_ACID</code> (acid blob, brown pudding,
+yellow dragon) at half the normal rate.</td>
+<td>Yellow dragon scales / scale mail.</td>
+</tr>
+<tr>
+<td><strong>Stoning resistance</strong></td>
+<td><em>Temporary</em> immunity to petrification (cockatrice touch,
+eating cockatrice/Medusa corpses). Resets on level change.</td>
+<td>Eating corpses with <code>MR_STONE</code> (acid blob — quite
+reliable; lizard) at one-quarter normal rate.</td>
+<td>Yellow dragon scales / scale mail (yes, both effects).</td>
+</tr>
+<tr>
+<td><strong>Drain resistance</strong></td>
+<td>Blocks level drain from wraiths, vampires, AD_DRLI weapons
+(Stormbringer, Vorpal Blade).</td>
+<td>None from corpses; vampire / lich polyform confers it.</td>
+<td>Black dragon scales / scale mail; shield of drain resistance (new in
+5.0); wielding Excalibur, Stormbringer, or Staff of Aesculapius.</td>
+</tr>
+<tr>
+<td><strong>Sickness resistance</strong></td>
+<td>Blocks deadly disease, food poisoning.</td>
+<td>None from corpses.</td>
+<td>Green dragon scales / scale mail.</td>
+</tr>
+<tr>
+<td><strong>Magic resistance</strong></td>
+<td>Blocks death rays, magic missile, polymorph beams, the
+touch-of-death spell, and magic-trap effects at 100%. <em>Not</em> the
+same as MC.</td>
+<td>Wizard XL 17 (called Antimagic); magic-trap polymorph from a magic
+trap can confer it randomly.</td>
+<td>Cloak of magic resistance; gray dragon scales / scale mail; wielding
+Magicbane.</td>
+</tr>
+<tr>
+<td><strong>Hallucination resistance</strong></td>
+<td>Blocks hallucination from violet fungus, hallucinogenic potions,
+gold-DSM emission.</td>
+<td>Polyform-only (forms with <code>AD_HALU</code> attacks).</td>
+<td>Wielding Grayswandir.</td>
+</tr>
+<tr>
+<td><strong>Blindness resistance</strong></td>
+<td>Blocks light-flash blindness from yellow / black light bursts.</td>
+<td>Polyform-only (forms with <code>AD_BLND</code> attacks like yellow
+light).</td>
+<td>Wielding Sunsword.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="senses-and-perception" class="level4">
+<h4>Senses and perception</h4>
+<p>ESP and warning are the two senses that change how you <em>play</em>
+— both let you act on information you couldn’t otherwise see.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Property</th>
+<th>What it does</th>
+<th>Intrinsic sources</th>
+<th>Extrinsic sources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Telepathy</strong> (ESP)</td>
+<td>Senses minded monsters anywhere on the level when you are blind (and
+partially when sighted). Floating-eye corpse is the standard early
+source.</td>
+<td>Eating corpses with the <code>telepathic</code> flag (floating eye —
+at fifteen times normal rate; mind flayer; master mind flayer).</td>
+<td>Amulet of ESP; helm of telepathy; Eye of the Aethiopica (carried);
+Orb of Detection (carried); Platinum Yendorian Express Card (carried);
+Longbow of Diana (carried); Magicbane (wielded).</td>
+</tr>
+<tr>
+<td><strong>See invisible</strong></td>
+<td>See invisible creatures and yourself when invisible.</td>
+<td>Monk XL 1; Ranger XL 15. No corpse path.</td>
+<td>Ring of see invisible.</td>
+</tr>
+<tr>
+<td><strong>Warning</strong></td>
+<td>A digit appears next to a hostile creature whose hit-dice exceed
+yours; the higher the number, the bigger the threat.</td>
+<td>Caveperson XL 15; Healer XL 15; Monk XL 7; Priest XL 15; Wizard XL
+15; prayer rescue.</td>
+<td>Ring of warning; helm of caution; Master Key of Thievery, Orb of
+Fate, Orcrist, Sting, Grimtooth (all carried).</td>
+</tr>
+<tr>
+<td><strong>Warning of specific class</strong></td>
+<td>The same indicator, restricted to one monster type.</td>
+<td>None as intrinsic.</td>
+<td>Orcrist / Sting (warn of orcs); Grimtooth (warns of elves); other
+class-specific artifacts.</td>
+</tr>
+<tr>
+<td><strong>Searching</strong></td>
+<td>Auto-search each step; reveals hidden doors, passages, traps without
+using a turn.</td>
+<td>Archeologist XL 1; Monk XL 9; Ranger XL 1; Rogue XL 10; Tourist XL
+10.</td>
+<td>Ring of searching; carrying Excalibur.</td>
+</tr>
+<tr>
+<td><strong>Clairvoyance</strong></td>
+<td>Periodic magical-eye view of the surrounding dungeon.</td>
+<td>None as intrinsic.</td>
+<td>Cornuthaum (Wizards only).</td>
+</tr>
+<tr>
+<td><strong>Infravision</strong></td>
+<td>See heat signatures in the dark.</td>
+<td>Dwarf, Elf, Gnome, Orc races at XL 1.</td>
+<td>Red dragon scales / scale mail.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="movement-and-spatial-behavior" class="level4">
+<h4>Movement and spatial behavior</h4>
+<p>The speed system, the air-walking gear, and the niche-access
+tools.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Property</th>
+<th>What it does</th>
+<th>Intrinsic sources</th>
+<th>Extrinsic sources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fast</strong> (intrinsic speed)</td>
+<td>Each movement allocation has a ~1/3 chance of a +12 bonus. Raises
+effective speed from 12 to about 16.</td>
+<td>Monk XL 1; Samurai XL 1; Valkyrie XL 7; Archeologist XL 10;
+Barbarian XL 7; Caveperson XL 7; Knight XL 7. Prayer rescue.</td>
+<td>Speed boots (grant <strong>Very Fast</strong>, ~2/3 chance,
+effective ~20); blue dragon scales / scale mail (Very Fast).</td>
+</tr>
+<tr>
+<td><strong>Jumping</strong></td>
+<td>The <code>#jump</code> extended command — short controlled hop.</td>
+<td>Knight XL 1.</td>
+<td>Jumping boots; spell of jumping.</td>
+</tr>
+<tr>
+<td><strong>Teleport</strong> (uncontrolled)</td>
+<td>Random teleport every few hundred turns. Useful when paired with
+control.</td>
+<td>Eating corpses with <code>M1_TPORT</code> (tengu, homunculus) at
+slightly above normal rate.</td>
+<td>Ring of teleportation.</td>
+</tr>
+<tr>
+<td><strong>Teleport control</strong></td>
+<td>Lets you choose your destination when you teleport.</td>
+<td>Monk XL 17; Wizard XL 17; eating corpses with
+<code>M1_TPORT_CNTRL</code> (tengu at normal rate).</td>
+<td>Ring of teleport control; carrying Master Key of Thievery; carrying
+the Amulet of Yendor (yes, the win condition grants TC).</td>
+</tr>
+<tr>
+<td><strong>Levitation</strong></td>
+<td>Constantly floating. Crosses water, lava, ice; can’t descend stairs;
+can’t pick up items.</td>
+<td>None.</td>
+<td>Ring of levitation; levitation boots (cursed = stuck on); carrying
+the Heart of Ahriman.</td>
+</tr>
+<tr>
+<td><strong>Flying</strong></td>
+<td>Like levitation but you can descend, pick up, and land
+voluntarily.</td>
+<td>Polyform into a flying monster.</td>
+<td>Amulet of flying.</td>
+</tr>
+<tr>
+<td><strong>Water walking</strong></td>
+<td>Cross water and ice as if it were floor; doesn’t help in lava.</td>
+<td>Polyform into the right form (some undead).</td>
+<td>Water-walking boots.</td>
+</tr>
+<tr>
+<td><strong>Magical breathing</strong></td>
+<td>Don’t drown when grabbed by an eel or kraken; survive a stinking
+cloud.</td>
+<td>None as intrinsic.</td>
+<td>Amulet of magical breathing.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="combat-and-defense" class="level4">
+<h4>Combat and defense</h4>
+<p>Layered defenses for the ascension kit: AC, reflection, free action,
+regen.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Property</th>
+<th>What it does</th>
+<th>Intrinsic sources</th>
+<th>Extrinsic sources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Protection</strong></td>
+<td>Adds to your AC (lower is better). Also adds +1 MC per worn
+extrinsic source (+2 for amulet of guarding).</td>
+<td>Donating gold to a same-aligned priest converts to prayer-pool
+protection: 400 zm per +1 (capped).</td>
+<td>Ring of protection; cloak of protection (also MC3); amulet of
+guarding (also MC2); carrying Sceptre of Might, Mitre of Holiness, or
+Tsurugi of Muramasa.</td>
+</tr>
+<tr>
+<td><strong>Reflection</strong></td>
+<td>Bounces ranged magic (rays, breath) back at the attacker.</td>
+<td>None as intrinsic.</td>
+<td>Amulet of reflection; silver dragon scales / scale mail; shield of
+reflection; wielding Dragonbane or Longbow of Diana.</td>
+</tr>
+<tr>
+<td><strong>Regeneration</strong></td>
+<td>HP regenerates faster (about one per turn at high XL).</td>
+<td>Troll polyform; high-XL natural regen by role.</td>
+<td>Ring of regeneration; wielding Trollsbane or Staff of
+Aesculapius.</td>
+</tr>
+<tr>
+<td><strong>Energy regeneration</strong></td>
+<td>Spell points regenerate faster.</td>
+<td>None as intrinsic.</td>
+<td>Carrying Eye of the Aethiopica.</td>
+</tr>
+<tr>
+<td><strong>Half spell damage</strong></td>
+<td>Halves damage from monster-cast spells.</td>
+<td>None as intrinsic.</td>
+<td>Carrying Orb of Detection, Master Key of Thievery, Platinum
+Yendorian Express Card, or Orb of Fate.</td>
+</tr>
+<tr>
+<td><strong>Half physical damage</strong></td>
+<td>Halves damage from melee and physical ranged attacks.</td>
+<td>None as intrinsic.</td>
+<td>Carrying Master Key of Thievery or Orb of Fate.</td>
+</tr>
+<tr>
+<td><strong>Free action</strong></td>
+<td>Immune to paralysis (mind flayer hold, gas-spore explosion,
+monster-cast paralysis spells) and to slow.</td>
+<td>Polyform into certain forms (e.g., master mind flayer corpse
+sometimes confers it).</td>
+<td>Ring of free action; orange dragon scales / scale mail.</td>
+</tr>
+<tr>
+<td><strong>Stealth</strong></td>
+<td>Monsters don’t wake when you walk near sleeping ones; you can sneak
+past.</td>
+<td>Archeologist XL 5; Barbarian XL 15; Monk XL 5; Ranger XL 7; Rogue XL
+1; Samurai XL 15; Valkyrie XL 3; prayer rescue.</td>
+<td>Ring of stealth; elven boots; elven cloak; carrying Heart of
+Ahriman.</td>
+</tr>
+<tr>
+<td><strong>Invisibility</strong></td>
+<td>Monsters can’t see you (and don’t attack you unless they
+see-invisible, or unless you attack them).</td>
+<td>Stalker polyform; potion of invisibility (timed).</td>
+<td>Ring of invisibility; cloak of invisibility; carrying Orb of
+Detection.</td>
+</tr>
+<tr>
+<td><strong>Displacement</strong></td>
+<td>Monsters see you in a wrong nearby square; ranged attacks miss
+often.</td>
+<td>None as intrinsic.</td>
+<td>Cloak of displacement.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="special-and-utility" class="level4">
+<h4>Special and utility</h4>
+<p>The grab-bag: digestion timing, polymorph behavior, the
+win-back-from-death amulet, and a few crowd-control items.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Property</th>
+<th>What it does</th>
+<th>Intrinsic sources</th>
+<th>Extrinsic sources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slow digestion</strong></td>
+<td>Burn nutrition at roughly one-quarter the normal rate. Hunger is no
+longer a serious concern.</td>
+<td>None.</td>
+<td>Ring of slow digestion; white dragon scales / scale mail.</td>
+</tr>
+<tr>
+<td><strong>Polymorph control</strong></td>
+<td>When you polymorph (from a trap, ring, scroll, or potion), you
+choose the form.</td>
+<td>None.</td>
+<td>Ring of polymorph control.</td>
+</tr>
+<tr>
+<td><strong>Unchanging</strong></td>
+<td>Locks your current form. Blocks polymorph (any source) and <em>also
+blocks the green-slime countdown</em>. The standard answer to “I just
+got slimed.”</td>
+<td>None.</td>
+<td>Amulet of unchanging.</td>
+</tr>
+<tr>
+<td><strong>Sustain ability</strong></td>
+<td>Your six stats (Str, Dex, Con, Int, Wis, Cha) don’t drift up or down
+from exercise, abuse, or scrolls.</td>
+<td>None.</td>
+<td>Ring of sustain ability.</td>
+</tr>
+<tr>
+<td><strong>Protection from shape changers</strong></td>
+<td>Nearby shape-changers (chameleon, doppelganger, foocubus) cannot
+polymorph.</td>
+<td>None.</td>
+<td>Ring of protection from shape changers.</td>
+</tr>
+<tr>
+<td><strong>Conflict</strong></td>
+<td>Nearby monsters attack each other instead of you. Highly disruptive
+in your favor; also keeps shopkeepers from selling things.</td>
+<td>None.</td>
+<td>Ring of conflict; carrying Sceptre of Might.</td>
+</tr>
+<tr>
+<td><strong>Life saving</strong></td>
+<td>When you would die, the amulet activates instead and restores you to
+one HP. The amulet is destroyed in the process.</td>
+<td>None.</td>
+<td>Amulet of life saving.</td>
+</tr>
+<tr>
+<td><strong>Adornment</strong></td>
+<td>+1 Charisma. Most useful for shopping prices and seduction
+immunity.</td>
+<td>None.</td>
+<td>Ring of adornment.</td>
+</tr>
+</tbody>
+</table>
+<p>A handful of properties exist in the source but are essentially
+<strong>polyform-only</strong> for the player: <em>swimming</em> (rare
+aquatic forms), <em>passes walls</em> (xorn, earth elemental, ghost),
+and <em>detect monsters</em> (no persistent source — the wand and scroll
+give a one-shot pulse). They’re real, but you don’t build a strategy
+around them outside of polymorph play.</p>
 <hr />
 </section>
 </section>
