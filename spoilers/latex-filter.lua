@@ -81,11 +81,19 @@ function Table(blk)
 
   -- Useful Corpse Effects tables (Corpse | Effect): widen Corpse so
   -- "Black pudding (glob)", "Gelatinous cube †", etc. fit on one line.
+  -- Also suppress the longtable header-repeat: each Corpse|Effect
+  -- table is short enough to fit on one page, and longtable was
+  -- emitting a phantom "Corpse | Effect" header stacked right above
+  -- the real one in the Provisions and Dining section.
   if #blk.colspecs == 2
       and headers[1] == "Corpse" and headers[2] == "Effect" then
     blk.colspecs[1][2] = 0.40
     blk.colspecs[2][2] = 0.60
-    return blk
+    return {
+      pandoc.RawBlock("latex", "\\begingroup\\let\\endhead\\endfirsthead"),
+      blk,
+      pandoc.RawBlock("latex", "\\endgroup"),
+    }
   end
 
   -- Field Guide tables (Sym | Class | Notes): pandoc's auto-sizing
@@ -105,6 +113,22 @@ function Table(blk)
     blk.colspecs[1][2] = 0.05
     blk.colspecs[2][2] = 0.22
     blk.colspecs[3][2] = 0.73
+    return {
+      pandoc.RawBlock("latex", "\\begingroup\\let\\endhead\\endfirsthead"),
+      blk,
+      pandoc.RawBlock("latex", "\\endgroup"),
+    }
+  end
+
+  -- Special Symbols table (Sym | What it is | Notes): same phantom-
+  -- header hazard as the Field Guide tables — short enough to fit on
+  -- one page, so longtable's header-repeat must be suppressed.
+  if #blk.colspecs == 3
+      and headers[1] == "Sym" and headers[2] == "What it is"
+      and headers[3] == "Notes" then
+    blk.colspecs[1][2] = 0.07
+    blk.colspecs[2][2] = 0.22
+    blk.colspecs[3][2] = 0.71
     return {
       pandoc.RawBlock("latex", "\\begingroup\\let\\endhead\\endfirsthead"),
       blk,
@@ -133,7 +157,12 @@ function Table(blk)
   -- Intrinsic and Extrinsic Tables (Property | What it does |
   -- Intrinsic sources | Extrinsic sources): narrow the Property
   -- column ~33% from the default uniform 25% and give the slack to
-  -- the three description columns.
+  -- the three description columns. Also suppress longtable's
+  -- header-repeat to avoid the phantom-header bug — the largest
+  -- table (Damage resistances, 13 rows) just barely fits on one
+  -- page in dense-table small font, and longtable was rendering a
+  -- ghost "Property | What it does | …" stub at the top of the
+  -- chapter page before the section heading.
   if #blk.colspecs == 4
       and headers[1] == "Property" and headers[2] == "What it does"
       and headers[3] == "Intrinsic sources"
@@ -142,7 +171,11 @@ function Table(blk)
     blk.colspecs[2][2] = 0.28
     blk.colspecs[3][2] = 0.28
     blk.colspecs[4][2] = 0.27
-    return blk
+    return {
+      pandoc.RawBlock("latex", "\\begingroup\\let\\endhead\\endfirsthead"),
+      blk,
+      pandoc.RawBlock("latex", "\\endgroup"),
+    }
   end
 
   -- Quoted-price conversion table (Charisma / Markups | Mult | 20 | ... | 500):
