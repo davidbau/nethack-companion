@@ -8077,26 +8077,26 @@ Sanctum, slot by slot:
 | Slot | Typical pick | Notes |
 |--------|------------------------|---------------------------------------|
 | **Body** | Dragon scale mail | Gray (magic resistance) or silver (reflection) are the popular picks; blue (shock) also works. |
-| **Cloak** | Cloak of magic resistance | Or a robe for casters. Magic resistance is non-negotiable in Gehennom. |
+| **Cloak** | Cloak of magic resistance | Or a robe for casters. Magic resistance keeps you alive through Gehennom. |
 | **Helm** | Helm of brilliance or helm of telepathy | Brilliance for casters; telepathy when you might be blind. |
 | **Gloves** | Gauntlets of power | Skip them only if you have a different STR strategy (e.g. a Knight with a +STR ring). |
 | **Boots** | Speed boots | **Universal.** |
-| **Shirt** | Hawaiian shirt or T-shirt | A free body slot under everything else. Winners enchant it heavily (typically blessed +4 or +5) for several extra AC at no cost. |
+| **Shirt** | Hawaiian shirt or T-shirt | A free body slot under everything else. Heavy enchantment (typically blessed +4 or +5) buys several extra AC at no cost. |
 | **Shield** | Mostly skipped | Reflection comes from silver dragon scale mail or an amulet instead; two-weapon fighters can't use a shield anyway. |
 | **Amulet** | Amulet of life saving | The "extra life" plan. |
-| **Ring (L)** | Free action | Anti-paralysis is non-negotiable on the Astral Plane. |
+| **Ring (L)** | Free action | The Astral Plane is packed with paralyzing attacks; you want this on every step. |
 | **Ring (R)** | Slow digestion, conflict, or regeneration | Conflict is the standard Astral-Plane crowd-control choice. |
 | **Weapon** | Your role's quest artifact + a silver saber | Silver saber appears in most builds as the off-hand because silver bypasses demon resistances. |
 | **Pack** | Bag of holding, magic lamp, unicorn horn, luckstone, wand of death, multiple wands of teleport, seven candles, ≥5 holy water, a couple of blessed potions of full healing, a cockatrice corpse | The "bag-of-holding bundle." Holy water re-blesses items the Wizard or liches keep cursing in Gehennom; full healing is a one-action panic button; a wielded cockatrice corpse one-shots Riders (and other non-stoning-resistant nasties). Candles are for the Candelabrum, and Izchak's Minetown lighting shop is an easy source. |
 | **Required loot** | Bell of Opening, Candelabrum of Invocation, Book of the Dead, Amulet of Yendor | The Invocation chain plus the prize. |
 
 A typical ascension AC sits in the **−25 to −40** range, but AC
-alone is not the difference between winners and losers.
+alone is not the difference between winning and losing.
 
 #### What killed the runners-up
 
 A look at adventurers who died deep in [Gehennom](#gehennom) shows that
-their gear was nearly indistinguishable from the winners'.
+their gear was nearly indistinguishable from the ascenders'.
 Their AC was −23 to −40. They had wands of death, all three
 Invocation items, silver dragon scale mail. What killed them
 was *behavior*:
@@ -10934,7 +10934,7 @@ Wild canines hunt in packs. Domestic ones can be tamed by feeding (see [Making F
 - Newbie-killer framing aligned with NetHackWiki: floating eye is "an infamous source of early game deaths" (https://nethackwiki.com/wiki/Floating_eye).
 -->
 
-The floating eye's passive paralysis gaze is the single most famous newbie killer in the game: never melee one without free action, blindness, or a ranged attack. Once it's dead, eat the corpse: it grants intrinsic telepathy.
+The floating eye's passive paralysis gaze is the most famous early-game death in the dungeon: never melee one without free action, blindness, or a ranged attack. Once it's dead, eat the corpse: it grants intrinsic telepathy.
 
 All eyes and spheres fly. All except *floating eye* also are mindless.
 
@@ -12792,7 +12792,7 @@ Archeologist: \hyperref[the-roles]{touchstone advantage, pickaxe from turn one, 
 \hyperref[angelic-beings-a]{Archon, ultimate pet, p.~\pageref*{angelic-beings-a}}\par
 Armor: \hyperref[the-early-shopping-list]{improvements, even basic, p.~\pageref*{the-early-shopping-list}}; \hyperref[use-testing-the-careful-way]{randomized appearances, pools, helms cloaks gloves boots, p.~\pageref*{use-testing-the-careful-way}}; \hyperref[armor-prices]{prices, the danger zones, p.~\pageref*{armor-prices}}\par
 \hyperref[nuisance-traps]{Arrow trap, free ammunition farm, p.~\pageref*{nuisance-traps}}\par
-Ascension: \hyperref[the-ascension-run]{how to not die during, p.~\pageref*{the-ascension-run}}; \hyperref[what-killed-the-runners-up]{three things winners do that runners-up don't, p.~\pageref*{what-killed-the-runners-up}}; \hyperref[strategy]{Run strategy, run don't fight, p.~\pageref*{strategy}}\par
+Ascension: \hyperref[the-ascension-run]{how to not die during, p.~\pageref*{the-ascension-run}}; \hyperref[what-killed-the-runners-up]{three avoidable near-ascension deaths, p.~\pageref*{what-killed-the-runners-up}}; \hyperref[strategy]{Run strategy, run don't fight, p.~\pageref*{strategy}}\par
 \hyperref[the-demon-prince-lairs]{Asmodeus, bribable cold caster, p.~\pageref*{the-demon-prince-lairs}}\par
 Astral: \hyperref[the-astral-plane]{Plane, three altars, choose wrong altar = game ends, farlook reveals altar only when adjacent, p.~\pageref*{the-astral-plane}}\par
 \hyperref[engravings]{Athame, the non-dulling stylus, p.~\pageref*{engravings}}\par
