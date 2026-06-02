@@ -277,6 +277,18 @@ tbody tr:nth-child(even) {
 /* Useful Corpse Effects tables (Corpse | Effect): widen the Corpse
    column so entries like "Black pudding (glob)" and "Gelatinous cube †"
    stay on one line. Same proportion as the LaTeX colspec override. */
+/* Intrinsic and Extrinsic Tables (4 cols: Property | What it does |
+   Intrinsic sources | Extrinsic sources). Narrow the Property column
+   by ~33% so the three description columns have more room. */
+#intrinsic-and-extrinsic-tables table th:first-child,
+#intrinsic-and-extrinsic-tables table td:first-child { width: 17%; }
+#intrinsic-and-extrinsic-tables table th:nth-child(2),
+#intrinsic-and-extrinsic-tables table td:nth-child(2) { width: 28%; }
+#intrinsic-and-extrinsic-tables table th:nth-child(3),
+#intrinsic-and-extrinsic-tables table td:nth-child(3) { width: 28%; }
+#intrinsic-and-extrinsic-tables table th:nth-child(4),
+#intrinsic-and-extrinsic-tables table td:nth-child(4) { width: 27%; }
+
 /* The Wand Table (5 cols): halve the Wand column and give the
    Engrave-test result column the slack. */
 #the-wand-table table th:nth-child(1),

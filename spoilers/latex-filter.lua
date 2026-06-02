@@ -130,6 +130,21 @@ function Table(blk)
     -- fall through to the Price-table phantom-header wrap
   end
 
+  -- Intrinsic and Extrinsic Tables (Property | What it does |
+  -- Intrinsic sources | Extrinsic sources): narrow the Property
+  -- column ~33% from the default uniform 25% and give the slack to
+  -- the three description columns.
+  if #blk.colspecs == 4
+      and headers[1] == "Property" and headers[2] == "What it does"
+      and headers[3] == "Intrinsic sources"
+      and headers[4] == "Extrinsic sources" then
+    blk.colspecs[1][2] = 0.17
+    blk.colspecs[2][2] = 0.28
+    blk.colspecs[3][2] = 0.28
+    blk.colspecs[4][2] = 0.27
+    return blk
+  end
+
   -- Quoted-price conversion table (Charisma / Markups | Mult | 20 | ... | 500):
   -- The longest label row ("8–10, 11–15^T^, 16–17^T2^") wraps to two
   -- lines unless we widen the label column. Take ~4pt back from the
