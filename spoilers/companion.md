@@ -9762,9 +9762,7 @@ The real prestige comes from combining multiple conducts. A
 vegetarian atheist run is substantially harder than either alone.
 A pacifist illiterate vegan foodless atheist weaponless run is
 the stuff of legends (and has been done). The game's end screen
-lists all maintained conducts, and the community has long
-celebrated players who push the boundaries of what's possible
-within self-imposed constraints. For scale: on the public NAO
+lists all maintained conducts. For scale: on the public NAO
 server, about one in nine ascensions is wishless, and only one
 in eighty is foodless.
 
@@ -9802,11 +9800,10 @@ during the run.
 
 Start with absolutely nothing: no gold, no inventory, no armor, no
 starting weapon. Set `OPTIONS=pauper` in your rcfile (rcfile or
-`NETHACKOPTIONS` env only; the in-game `O` menu cannot toggle it). Pauper
-implicitly sets nudist as well, so you also begin without armor.
-Pauper is a permanent conduct you never lose: it does not forbid
-acquiring or spending gold later. The conduct is about starting
-empty, not about staying penniless.
+`NETHACKOPTIONS` env only; the in-game `O` menu cannot toggle it).
+Pauper implicitly sets nudist. It is a permanent conduct you never
+lose: it does not forbid acquiring or spending gold later, just
+starting empty.
 
 To keep the start from being impossible, the game compensates:
 you get two unspent weapon-skill slots and your role knows one
@@ -9864,11 +9861,11 @@ you just don't get the warning that it happened. Treat empty
 silence near a `F`-class monster as the same threat as the
 usual SCREECH.
 
-Many monster warnings, environmental cues (vaults, fountains, doors
-opening off-screen), and status messages arrive as sounds. Permadeaf
-requires navigating the dungeon by sight and logic alone, which turns
-out to be possible and occasionally educational about how much
-information you normally get for free.
+Monster warnings, environmental cues (vaults, fountains, doors
+opening off-screen), and status messages all arrive as sounds.
+Permadeaf navigates by sight and logic alone, which is possible,
+and educational about how much information you normally get for
+free.
 
 #### Sokoban (new in 5.0)
 <!-- audit
@@ -9886,9 +9883,7 @@ costs **1 point of Luck** and increments the conduct counter:
 **squeezing past** a boulder via a small or empty-handed form,
 **fracturing** a boulder with a wand of striking, **polymorphing**
 a boulder, reading a **scroll of earth**, or **dismounting** onto
-a boulder. The game tracks violations automatically. The conduct
-is for players who enjoy Sokoban's boulder-shoving and want their
-playthrough to acknowledge a clean solve.
+a boulder. The game tracks violations automatically.
 
 #### Bonesless (new in 5.0)
 <!-- audit
@@ -9903,9 +9898,8 @@ playthrough to acknowledge a clean solve.
 -->
 
 Never inherit from another player's grave. Set `OPTIONS=!bones`
-in your rcfile; see [Saving and Bones](#saving-and-bones) for the
-mechanics. The conduct credits only an explicit opt-out, not a
-lucky run without bones.
+(see [Saving and Bones](#saving-and-bones)); a run that just
+happens to find no bones doesn't count.
 
 ---
 
