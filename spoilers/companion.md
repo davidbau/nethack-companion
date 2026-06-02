@@ -7485,12 +7485,13 @@ odds; every other Lawful role faces 1-in-30.
 weapon. It's silver (extra damage to many monsters), halves
 incoming physical damage, and grants hallucination resistance.
 
-**[Mjollnir]{#mjollnir}** is the Valkyrie's signature throw-and-return weapon.
-and only Valkyries get the reliable 99% catch-back. Other roles can
-wield it for melee but won't reliably catch it on the return throw.
-It needs Strength 25 to wield in either case (gauntlets of power
-or rings of gain strength get you there). Its +d24 shock damage
-is brutal against anything not shock-resistant.
+**[Mjollnir]{#mjollnir}** is the Valkyrie's signature
+throw-and-return weapon — only Valkyries catch it back 99% of the
+time. Other roles can wield it in melee, but throwing it is risky
+because the return often misses. Needs Strength 25 to wield in
+either case (gauntlets of power or rings of gain strength get you
+there); +d24 shock damage is brutal against anything not
+shock-resistant.
 
 **[Magicbane]{#magicbane}** is the Wizard's go-to athame. Its stun damage, curse
 protection, and magic resistance all require it to be **wielded**,
@@ -7500,20 +7501,19 @@ protection only applies while Magicbane is the *primary* wielded
 weapon. If you stash Magicbane in the off-hand to swing a heavier
 blade, you've also turned off its anti-curse aura.
 
-**[Stormbringer]{#stormbringer}** is dangerous to use because it attacks peaceful
-monsters automatically, which can cause alignment problems. But
-each hit drains a level from the target and gives it to you, which
-is huge in the early-to-mid game. Stormbringer is also
-*intelligent*: a Lawful or Neutral wielder who touches it without
-permission takes the heavier 4d10 magical-blast damage rather than
-the 4d4 dealt by ordinary cross-alignment artifacts.
+**[Stormbringer]{#stormbringer}** is dangerous because it
+attacks peaceful monsters automatically, which can wreck your
+alignment. But each hit drains a level from the target and gives
+it to you, huge in the early-to-mid game. Stormbringer is also
+*intelligent*: a Lawful or Neutral wielder takes 4d10 blast damage
+on touch, not the 4d4 that ordinary cross-aligned artifacts deal.
 
-**[Cleaver]{#cleaver}** is the Barbarian quest artifact. When wielded one-handed
-(not two-weaponing), every swing strikes the primary target *and* one
-square on each side of it: three monsters per attack when packed in
-a corridor mouth or against a diagonal pair. The two-weapon penalty
-suppresses the spin, so most Barbarians keep Cleaver as their primary
-and a shield in the off slot.
+**[Cleaver]{#cleaver}** is the Barbarian quest artifact. When wielded one-handed,
+every swing strikes the primary target *and* the two squares flanking
+it: three monsters per attack at a corridor mouth or against a
+diagonal pair. The side-strikes don't fire when two-weaponing, so
+most Barbarians keep Cleaver as the primary and a shield in the off
+slot.
 
 **[Frost Brand]{#frost-and-fire-brand}** and **Fire Brand** each have an `#invoke` power
 the wishable table doesn't capture: Frost Brand summons a
@@ -7521,21 +7521,19 @@ snowstorm around you (cold damage to nearby squares), Fire Brand
 summons a firestorm. Either one clears the room around you when
 you're cornered.
 
-**[Snickersnee]{#snickersnee}** got a major buff in 5.0: once per turn you can
-`#apply` it for a free reach attack at a target up to two squares
-away. A real free action that *doesn't* end your turn, leaving
-you a normal melee swing on top. The free hit is announced by a
-distinctive "Shkinng!" The combined output (one ranged + one
+**[Snickersnee]{#snickersnee}** got a major buff in 5.0: once
+per turn you can `#apply` it for a reach attack at a target up to
+two squares away, *without* using your turn — you still get a
+normal melee swing on top. The free hit is announced by a
+distinctive "Shkinng!" That combined output (one reach + one
 melee per turn) makes Snickersnee a contender for best Samurai
-weapon in the game, not just a flavor piece. (Regular polearm
-reach attacks via `#apply` end your turn; Snickersnee's is the
-unique free version.)
+weapon, not the flavor piece it used to be.
 
 **[Sunsword]{#sunsword}** is the Lawful long sword that wants to be a tool. Wielded,
 it lights its current radius (handy in caves and [the Mines](#the-gnomish-mines) without
 costing an oil lamp). `#invoke` it for a directed *blinding ray*,
 mechanically a Camera flash in any direction (not limited to undead).
-It costs 5×spell-level Pw to invoke, so save it for the fights that
+It costs 50 Pw per invocation, so save it for the fights that
 demand it: Riders, mind flayers, the Wizard of Yendor. Invoking up
 or down lights the room; invoking at yourself self-blinds you.
 
@@ -7572,9 +7570,9 @@ even though those quests are closed to the Monk. Wishes for
 artifacts of all kinds also have an increasing fizzle chance as
 more artifacts already exist in the game.
 
-`#invoke` (default `^A`) activates each artifact's special power; the
-cost is some energy plus a wear-out interval before it can be used
-again.
+`#invoke` (default `^A`) activates each artifact's special power
+for an energy cost, and the power has a cooldown before you can
+use it again.
 
 ::: dense-table
 
@@ -7601,12 +7599,11 @@ ESP and magic resistance just by being carried. `#invoke` toggles
 invisibility. Archeologists are already exceptional at stealth, and
 this turns them into a ghost.
 
-**[The Heart of Ahriman]{#heart-of-ahriman}** (Barbarian): a luckstone that doubles as a
-+1 luck talisman with stealth. Critically, it counts as a luckstone
-for *all* the luckstone mechanics (mine's-end protection, gem-throw
-luck math, luck cap +13 instead of +10). It's also a projectile
-weapon: Barbarians can throw it for double damage and pick it back
-up. `#invoke` is levitation.
+**[The Heart of Ahriman]{#heart-of-ahriman}** (Barbarian): a true
+luckstone (so it raises the Luck cap to +13 and counts everywhere
+a luckstone does), plus stealth and a +1 luck bonus. Barbarians can
+also throw it for double damage and pick it back up. `#invoke` is
+levitation.
 
 **[The Sceptre of Might]{#sceptre-of-might}** (Caveman): mace base, +d5 to-hit, double
 damage against any monster whose alignment differs from the
@@ -7630,7 +7627,7 @@ utility.
 
 **[The Eyes of the Overworld]{#eyes-of-the-overworld}** (Monk): lenses that, when worn, give
 astral vision (see invisible, see through walls, spot secret doors)
-**and** magic resistance. Both effects require them to be worn.
+**and** magic resistance. Both effects require them to be worn;
 carrying them in inventory does nothing. `#invoke` enlightens you.
 For a Monk who can't safely wear body armor, a powerful passive on
 a slot they can use.
@@ -7652,11 +7649,9 @@ specialization this is the role's centerpiece.
 **[The Master Key of Thievery]{#master-key-of-thievery}** (Rogue):
 just carrying it grants warning, teleport control, and half
 physical damage taken. `#invoke` disarms a nearby trap. The Key
-also acts as a universal lockpick — it opens any lock without
-effort, and when you unlock a trapped door or chest with it, the
-trap is detected and you can disarm it on the spot. The lockpick
-behavior depends on bless-curse state and role: a Rogue needs a
-non-cursed Key, everyone else needs a **blessed** one.
+also opens any lock without effort and detects traps on doors and
+chests as it unlocks them — for a Rogue this works on any
+non-cursed Key, but everyone else needs it **blessed**.
 
 **[The Tsurugi of Muramasa]{#tsurugi-of-muramasa}** (Samurai): a katana-grade two-handed
 sword with +d8 damage *and* a behead chance (like Vorpal Blade)
