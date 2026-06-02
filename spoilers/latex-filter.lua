@@ -598,15 +598,18 @@ function Pandoc(doc)
       goto continue
     end
 
-    -- Convert horizontal rules to decorative diamond ornament (centered)
-    -- Stretchable, non-discardable glue on both sides: when the ornament
-    -- flows inline mid-page, the glue compresses to a 1em gap; when the
-    -- ornament lands alone on a page (because the previous content
-    -- filled the page first), both sides stretch equally to center it
-    -- vertically.
+    -- Convert horizontal rules to decorative diamond ornament (centered).
+    -- The ornament renders only when the current page already has enough
+    -- slack to absorb it; if remaining space is less than ~2 inches the
+    -- ornament is silently dropped so that a near-empty trailing page
+    -- doesn't appear just to host the diamond. Stretchable glue on
+    -- both sides centers the ornament vertically when it does render
+    -- and the trailing content fills the rest of the page.
     if block.tag == "HorizontalRule" then
       table.insert(new_blocks, pandoc.RawBlock("latex",
-        "\\par\\vspace*{1em plus 1fill}\n" ..
+        "\\par\n" ..
+        "\\ifdim\\dimexpr\\pagegoal-\\pagetotal\\relax>2in\n" ..
+        "\\vspace*{1em plus 1fill}\n" ..
         "\\begin{center}\n" ..
         "{\\color[gray]{0.45}" ..
         "\\rule[0.35ex]{3em}{0.4pt}" ..
@@ -615,7 +618,8 @@ function Pandoc(doc)
         "\\hspace{0.4em}" ..
         "\\rule[0.35ex]{3em}{0.4pt}}\n" ..
         "\\end{center}\n" ..
-        "\\par\\vspace*{1em plus 1fill}"))
+        "\\par\\vspace*{1em plus 1fill}\n" ..
+        "\\fi"))
       i = i + 1
       goto continue
     end
