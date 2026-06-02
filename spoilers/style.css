@@ -1287,6 +1287,7 @@ td.pi-price { color: var(--color-accent); font-weight: 500; }
    * words at the tail end wrap back under the map. */
   #sokoban-solutions .sokoban-level ol {
     display: flow-root;
+    padding-left: 5px;
   }
   /* Level 3A has a small map with a long solution list — keep default
    * flow so items past the map's bottom can reclaim the full width
