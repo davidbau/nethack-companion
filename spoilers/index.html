@@ -12145,12 +12145,29 @@ NetHack pins the message line at row 0 no matter what you set.</p>
 </section>
 <section id="sokoban-solutions" class="level3">
 <h3>Sokoban Solutions</h3>
+<!-- audit
+2026-06-02:
+- sokoban_guilt() fires −1 Luck per infraction (trap.c:7039-7054)
+- triggers: squeezing past or stepping onto a boulder via
+  passes-walls polyform / giant polyform / tiny polyform / very
+  light inventory (hack.c:299, 307, 398, 403 via
+  could_move_onto_boulder at hack.c:145-163); reading a scroll of
+  earth (read.c:1951); polymorphing a boulder (zap.c:1711);
+  fracturing a boulder with wand of striking (zap.c:5556);
+  dismounting onto a boulder square (steed.c:767)
+- levitation alone does NOT trigger sokoban_guilt; the book's
+  earlier "levitating over pits" claim was wrong — the penalty
+  fires on boulder bypasses, not pit bypasses
+- counted as the `sokocheat` conduct counter (insight.c:2219,
+  topten.c:446) — affects the "Sokoban completion" achievement
+-->
 <p>Sokoban is a four-level boulder puzzle branch that goes <em>up</em>
 from its entrance. Each level has two possible layouts, chosen randomly.
 You push boulders onto pits to fill them and create a path to the next
-staircase. The penalty for cheating (phasing through walls, levitating
-over pits, destroying boulders) is a −1 Luck penalty per infraction, and
-it stacks. Play fair.</p>
+staircase. The penalty for cheating (squeezing past or stepping onto a
+boulder instead of pushing it, destroying boulders with wands, reading a
+scroll of earth in Sokoban) is a −1 Luck penalty per infraction, and it
+stacks. Play fair.</p>
 <blockquote>
 <p><em>Solutions originally compiled by Boudewijn Waijers, with
 contributions by Jukka Lahtinen and others, for the steelypips.org
