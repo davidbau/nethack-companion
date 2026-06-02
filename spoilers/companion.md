@@ -3130,9 +3130,10 @@ over repeated eats; a gray-ooze glob grants
 **fire, cold, and poison resistance**; a black-pudding glob also
 grants **cold, shock, and poison resistance**. Brown pudding and
 gray ooze are *vegetarian*-safe; black pudding is not. Globs of
-the same color stack and shrink together, so a pile of
-brown-pudding globs is a re-rollable chance at the resistance
-you don't yet have. Pudding splitting can have a strategic
+the same color stack, and each bite is an independent roll for
+the resistance. A pile of brown-pudding globs is multiple
+chances at the one you don't yet have. Pudding splitting can
+have a strategic
 benefit. If you can kill one pudding cleanly, the splitting
 becomes a *feature*: very divided pudding is another glob to
 eat. The full intrinsic table is in
