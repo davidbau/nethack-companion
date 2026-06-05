@@ -716,7 +716,7 @@ patterns is the first step toward navigating them effectively.
 When Jay Fenlason wrote the original *Hack* in 1982, every level
 in the dungeon looked the same: rooms, corridors, a staircase down
 to more of the same. More than forty years of community
-development later, the Dungeons of Doom you first descend into are
+development later, the Dungeons of Doom you first descend into form
 only one neighborhood of a much larger world. If you survive long
 enough, your adventure will lead you through towns, towers, and
 castles; swamps and islands and fortresses; an underworld of
