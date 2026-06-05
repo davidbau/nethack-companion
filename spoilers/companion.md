@@ -4472,7 +4472,7 @@ blessed scroll: the jackpot reads everything in your pack.
 - buy/sell multipliers and Cha bands match shk.c get_cost/set_cost
 - sell offer is 1/2 base (shk.c:3160); 3/8 on unID items from an unfamiliar shopkeeper (shk.c:3173-3174)
 - Tourist surcharge (+33%) applies with dunce cap, Tourist below XL 15, or visible Hawaiian shirt — non-stacking
-- ~1/4 of unID items carry a fixed 4/3 buy surcharge per item
+- ~1/4 of unID items carry a 4/3 buy surcharge rolled per item instance via oid % 4 (shk.c:2864-2872 oid_price_adjustment); two identical-looking stacks on a shop floor can roll differently because place_object doesn't auto-merge
 - ~1/4 of shopkeepers are "unfamiliar" with unID; they offer 3/4 sell, fixed per shop
 - angry-shop +33% surcharge sticks: pacify_shk(FALSE) at shk.c:2663 does NOT clear it
 - only pacify_shk(TRUE) clears (shk.c:302, 793 — bones-load and new-customer transitions)
@@ -4525,8 +4525,11 @@ them collectively as *Tourist*. You don't need to memorize the
 formulas; what matters is grouping by price tier.
 
 Two further wrinkles affect unidentified items. About a quarter of
-unID'd items carry an extra 4/3 buy surcharge, fixed per item, so a
-given scroll's surcharge status is consistent across shops. And
+unID'd items carry an extra ×4/3 buy surcharge, rolled independently
+for each item when it's created. Two stacks of the same scroll in
+one shop can have different prices, but each stack's surcharge
+follows it for life: once you've paid the surcharged price on a
+particular scroll, the next shop you take it to charges the same. And
 about a quarter of shopkeepers are "unfamiliar" with unID'd
 merchandise and offer only 3/4 of normal on sell, fixed per
 shopkeeper, so once you've tested one unID item you know the rule
