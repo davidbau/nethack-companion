@@ -296,9 +296,10 @@ and range are the role. *Alignment: Chaotic.*
 one-handed weapons in the game, plus a wakizashi backup and a yumi
 bow with arrows. Samurai get speed early and have a strong martial
 kit overall. The katana's damage output carries you through the
-early game with ease. The wakizashi is community-classified
-dead weight: drop it and find a long sword for the off-hand
-instead, since long sword shares katana skill for two-weapon.
+early game with ease. The wakizashi is the wrong off-hand: it's a
+short sword, while your katana is a long sword, so the two don't
+share skill. Drop it for any long sword (the Mines usually provides
+one) and twoweapon for the matched-skill bonus.
 *Alignment: Lawful.*
 
 **Tourist.** You start with a Hawaiian shirt, a credit card, an
@@ -7090,10 +7091,10 @@ katana plus long sword two-weapon combination.
 Shuriken, and Two-Weapon Combat all Expert; Martial Arts Master
 (the only role besides Monk with Martial Arts at all).
 
-**The wakizashi is community-classified dead weight.** It is a short
-sword, not a long sword, so it does not share skill or two-weapon
-synergy with the katana. Drop it for a long sword (the Mines almost
-always provides one) and twoweapon long sword plus katana.
+**The wakizashi is the wrong off-hand.** It's a short sword, while
+your katana is a long sword, so the two don't share skill. Drop it
+for any long sword (the Mines usually provides one) and twoweapon
+for the matched-skill bonus.
 
 **Pivot:** mid-game Samurai who invested in bow can pivot to a
 multishot ranged build. Yumi at Expert with high Str gives 2 or 3
@@ -13953,7 +13954,7 @@ Sacrifice: \hyperref[sacrifice]{fresh within 50 turns, role-biased first gift, m
 \hyperref[feelings-and-sounds]{Sad feeling, your pet died offscreen, p.~\pageref*{feelings-and-sounds}}\par
 \hyperref[lizards]{Salamander, Gehennom-only, p.~\pageref*{lizards}}\par
 \hyperref[sacrifice]{Same-race sacrifice, forbidden, p.~\pageref*{sacrifice}}\par
-Samurai: \hyperref[the-roles]{katana opening, wakizashi is dead weight, giri-breaking penalty, p.~\pageref*{the-roles}}\par
+Samurai: \hyperref[the-roles]{katana opening, drop wakizashi for long sword off-hand, giri-breaking penalty, p.~\pageref*{the-roles}}\par
 \hyperref[apelike-creatures-y]{Sasquatch, fast, p.~\pageref*{apelike-creatures-y}}\par
 \hyperref[quest-artifacts]{Sceptre of Might (Caveman), conflict invoke, p.~\pageref*{quest-artifacts}}\par
 \hyperref[arachnids-and-centipedes-s]{Scorpius, named quest nemesis, p.~\pageref*{arachnids-and-centipedes-s}}\par
