@@ -6118,25 +6118,19 @@ you reach Medusa's level (surrounded by water) or the Plane of
 Water (entirely underwater). Then it's existential.
 
 **Flying** is the late-addition cousin of levitation: you stay in
-the air the same way, but you can still pick things up and you
-can choose to drop down on your turn. The under-appreciated bonus
-is that **your steed flies with you**. A flying warhorse skips
-over moats, fountains, pools, and [the Castle](#the-castle)'s drawbridge entirely
-A fast Knight can cross Medusa's island and the Castle from edge
-to edge without worrying about the water at all. Stack with boots
-of speed and a wand of speed monster on the mount and you have a
-terrifying cavalry unit.
+the air the same way, but you can still pick things up and choose
+to drop down on your turn. The under-appreciated bonus is that
+**your steed flies with you**. A flying warhorse skips over moats,
+pools, and [the Castle](#the-castle)'s drawbridge, and crosses
+Medusa's island edge to edge. Stack with speed boots on the mount
+for a terrifying cavalry unit.
 
 **Restful sleep** puts you to sleep randomly and is usually cursed,
-which should tell you everything you need to know about when to put it
-on unexamined. However, in 5.0, wearing it while asleep
-grants +1 HP per turn via accelerated regeneration, stacking with your
-normal healing. In a fully secured room with the door spiked shut and
-nothing actively trying to kill you, this turns a nearly useless item
-into a slow but functional field hospital. The conditions required
-(safety, time, and nothing better to do) describe a situation you rarely
-find in the Mazes. When you do, the amulet is less embarrassing to wear
-than it looks.
+which should tell you everything you need to know about putting it
+on unexamined. In 5.0, wearing it while asleep grants +1 HP per
+turn via accelerated regeneration. In a fully secured room with
+the door spiked shut, this turns a near-useless item into a slow
+field hospital.
 
 ---
 
@@ -7167,9 +7161,9 @@ Expert, Hammer Expert (Mjollnir's skill), Spear Expert, Dagger
 Expert. The widest practical weapon-skill range in the game.
 
 **Excalibur is also possible.** Lawful Valkyries dipping a long
-sword into a fountain at XL 5 or higher get the standard 1-in-30
-chance per dip; fountain-dip until it appears, then transition to
-Mjollnir at the altar.
+sword into a fountain at XL 5+ get the standard 1-in-30 per dip.
+Fountain-dip until it appears, then transition to Mjollnir at the
+altar.
 
 **Pivot:** Valkyries already have most of the combat they need;
 mid-game focus shifts to magic resistance (gray dragon scale mail)
@@ -7184,37 +7178,25 @@ prayer ends careers.
 #### Wizard
 
 The undisputed caster. You start with a quarterstaff, a +2 cloak of
-magic resistance (an endgame-quality item from turn 1), a wand, two
-rings, three potions, three scrolls, the force-bolt spell plus a
-random spellbook, and a magic marker. Your access to all seven
-spell schools is unmatched.
+magic resistance, a wand, two rings, three potions, three scrolls,
+force bolt plus a random spellbook, and a magic marker.
 
 **Intrinsics:** Warning at XL 15, Teleport control at XL 17.
 
-**Skill caps:** Attack, Divination, Escape, and Matter Spells all
-Expert (four schools at the top cap); Healing, Enchantment, and
-Cleric Skilled. Among weapons, Quarterstaff Expert and Dagger
-Expert. Wielding any quarterstaff lowers spell-failure rate, so
-keep it in hand as you cast.
+**Skill caps:** Four spell schools at Expert (Attack, Divination,
+Escape, Matter); Healing, Enchantment, Cleric Skilled. Quarterstaff
+and Dagger Expert. Wielding a quarterstaff lowers spell-failure.
 
-**Spell-school advancement IDs spellbooks.** In 5.0, advancing a
-spell school's skill rank automatically reveals the appearances of
-spellbooks at progressively higher levels: unskilled IDs level-1,
-basic level-3, skilled level-5, expert level-7. A Wizard starts
-knowing all level-1 appearances and level-3 in attack and
-enchantment, a meaningful identification advantage from turn 1.
+**Spell-school advancement IDs spellbooks.** In 5.0, training a
+spell school auto-reveals book appearances at higher levels.
+Wizards start knowing every level-1 plus level-3 attack and
+enchantment.
 
-**Pivot:** by XL 10 to 12 most Wizards have force bolt at Skilled,
-magic missile from a found spellbook, and a marker to scribe more.
-The mid-game is essentially "get every spellbook." Marker-write
-protection, magic missile, and any school you want to push to
-Expert.
+**Pivot:** by XL 10 the Wizard mid-game is "get every spellbook."
 
-**Avoid:** force-bolting a nymph carrying a mirror, or any vault
-floor that might hide potions; the 2d12 explosion shatters glass
-items in its line of fire. Starting hungry; Wizards begin with zero
-food rations and a kitten that will not share lunch. Plan food
-before Pw.
+**Avoid:** force-bolting glass (nymph mirrors, vault potions); the
+explosion shatters it. Starting hungry, with no rations and a
+kitten that won't share.
 
 ---
 
