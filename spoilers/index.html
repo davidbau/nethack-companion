@@ -8928,6 +8928,430 @@ over a moat is the moment you’ll see why.</p>
 </section>
 <section id="part-five-mastery" class="level2">
 <h2>Part Five: Mastery</h2>
+<section id="playing-each-role" class="level3">
+<h3>Playing Each Role</h3>
+<!-- audit
+2026-06-06:
+- Archeologist intrinsics: Searching XL 1, Stealth XL 5, Fast XL 10 (attrib.c:27-30 arc_abil)
+- Barbarian intrinsics: Poison res XL 1, Fast XL 7, Stealth XL 15 (attrib.c:32-35 bar_abil)
+- Cave Dweller intrinsics: Fast XL 7, Warning XL 15 (attrib.c:37-39 cav_abil); no early resistances
+- Healer intrinsics: Poison res XL 1, Warning XL 15 (attrib.c:41-43 hea_abil)
+- Knight intrinsics: Fast XL 7 only (attrib.c:45 kni_abil)
+- Monk intrinsics: see invisible/sleep res/Fast XL 1, poison XL 3, stealth XL 5, warning XL 7, searching XL 9, fire XL 11, cold XL 13, shock XL 15, teleport control XL 17 (attrib.c:47-58 mon_abil)
+- Priest intrinsics: Warning XL 15, Fire resistance XL 20 (attrib.c:60-62 pri_abil)
+- Ranger intrinsics: Searching XL 1, Stealth XL 7, See invisible XL 15 (attrib.c:64-67 ran_abil)
+- Rogue intrinsics: Stealth XL 1, Searching XL 10 (attrib.c:69-71 rog_abil)
+- Samurai intrinsics: Fast XL 1, Stealth XL 15 (attrib.c:73-75 sam_abil)
+- Tourist intrinsics: Searching XL 10, Poison resistance XL 20 (attrib.c:77-79 tou_abil)
+- Valkyrie intrinsics: Cold res XL 1, Stealth XL 3, Fast XL 7 (attrib.c:81-84 val_abil)
+- Wizard intrinsics: Warning XL 15, Teleport control XL 17 (attrib.c:86-88 wiz_abil)
+- Skill tables verified in u_init.c:257-572 (Skill_A through Skill_W); Archeologist pick-axe/saber/boomerang/whip Expert, Divination Expert; Barbarian two-handed sword/axe/short sword/hammer Expert, Bare-handed Combat MASTER; Cave Dweller club/mace/quarterstaff/spear Expert, Sling Expert, Bare-handed Combat MASTER; Healer knife/quarterstaff/dart/unicorn horn/healing Expert; Knight long sword/lance/riding Expert; Monk martial arts GRAND MASTER, healing Expert; Priest 6 blunt weapons all Expert (club/mace/morning star/flail/hammer/quarterstaff), healing/divination/cleric Expert; Ranger 6 ranged weapons Expert (bow/sling/crossbow/dart/spear/dagger+boomerang); Rogue dagger/knife/short sword/two-weapon/bare-handed Expert; Samurai long sword/two-handed sword/short sword/bow/shuriken/two-weapon Expert, Martial Arts Master; Tourist dagger/short sword/dart Expert only; Valkyrie dagger/axe/long sword/two-handed sword/hammer/spear Expert; Wizard four spell schools Expert + dagger/quarterstaff/dart Expert
+- body armor -20 to-hit Monk penalty (uhitm.c:397-401)
+- Monk bare-handed bonus = (XL/3)+2 with no weapon and no shield (uhitm.c:400)
+- shopkeeper Tourist surcharge: visible touristy shirt OR Tourist below MAXULEV/2 (=15) (shk.c:2949-2951)
+- Excalibur fountain dip: Knight 1-in-6, other Lawful 1-in-30 (artifact.c)
+- Mjollnir is Valkyrie's guaranteed first sacrifice gift regardless of alignment per role.c artifact assignment
+- Demonbane is Priest's guaranteed first sacrifice gift (artifact.c gift table)
+- Eyes of the Overworld is Monk quest artifact (role.c:257 ART_EYES_OF_THE_OVERWORLD); grants MR + astral vision when worn
+- Cave Dweller skill table: P_BARE_HANDED_COMBAT P_MASTER (u_init.c:324); confirmed Cave Dweller reaches BHC Master (alongside Barbarian)
+- Samurai martial arts caps at Master (u_init.c:487), not Grand Master; Monk is the only Grand Master
+- Healer wand of sleep: starting wand has 1d4+4 charges per u_init.c:81-90 starting kit
+- Priest sacrifice gift: Demonbane is silver mace in 5.0 (book confirms at line 266-267)
+- Wizard quarterstaff gives spell failure rate bonus (book confirms at line 333-334); Wizard Pw regen factor 3 vs 4 for others (spell.c via book audit at 6743)
+- Tourist Quest artifact: Platinum Yendorian Express Card, grants MR + telepathy + half spell damage (artilist.h)
+- Holy water mechanic: praying on a co-aligned altar with potions of water blesses them all; dipping plain water into holy water blesses one plain potion but consumes one holy water (1:1 exchange, not multiplication, per potion.c:2460-2466 and H2Opotion_dip)
+- Wikipedia/NetHackWiki strategy text consulted for roles (Monk, Archeologist, Tourist); checked claims against source
+-->
+<p>Every general technique in this book applies to every role, but the
+most leveraged decisions in any run depend on which intrinsics your role
+gains for free, which skills it can push to Expert, and which single
+trick or piece of starting gear turns a fragile early game into a
+winnable mid-game.</p>
+<p>This chapter walks the thirteen roles. For each: the intrinsic
+ladder, the skill caps worth training, the strategic pivot most runs go
+through, and the mistakes that end strong characters before XL 14. We
+have already covered general identification (see <a
+href="#a-practical-identification-strategy">A Practical Identification
+Strategy</a>), combat fundamentals (see <a href="#the-art-of-combat">The
+Art of Combat</a>), and the quest artifacts you might earn (see <a
+href="#artifacts">Artifacts</a>). Here the focus is everyday play, so a
+Knight and a Wizard spend their first ten thousand turns
+differently.</p>
+<section id="archeologist" class="level4">
+<h4>Archeologist</h4>
+<p>Indiana Jones, basically. You start with a bullwhip, a pickaxe, a
+tinning kit, a touchstone, and a sack: a kit built for exploration
+rather than combat. Your starting Strength and HP are modest, so your
+first ten levels lean on stealth and footwork rather than firepower.
+Survive that stretch and you become one of the better mid-game
+spellcasters in the game.</p>
+<p><strong>Intrinsics:</strong> Searching at XL 1, Stealth at XL 5,
+intrinsic speed at XL 10.</p>
+<p><strong>Skill caps:</strong> Pick-axe and saber both reach Expert,
+which makes a silver saber your endgame weapon and the pickaxe your
+mid-game one. Divination Spell hits Expert too, and your special spell
+is magic mapping, one of the most valuable spells in the game.</p>
+<p><strong>The pickaxe is the run.</strong> It lets you skip locked
+doors, chip a diagonal exit from any surrounded room, escape upward when
+cornered, and dig the straight downward shaft that ends most ascension
+runs in a handful of turns. Train Pick-axe to Skilled early by chopping
+at zombies and ogres; the slot cost pays back many times over by the
+Castle.</p>
+<p><strong>The touchstone is the other engine.</strong> An Archeologist
+applies an uncursed touchstone as if it were blessed, so every gem you
+find can be tested for whether it’s the real thing or worthless glass.
+Rub gems before you offer them to a unicorn, before you sell, and on a
+co-aligned altar for full ID.</p>
+<p><strong>Pivot:</strong> by mid-game your Wisdom and Intelligence are
+within reach of Wizard-tier casting. Once you’ve read magic missile,
+identify, and cone of cold, you are a caster who happens to swing a
+saber, not a fighter who happens to read books.</p>
+<p><strong>Avoid:</strong> breaking historic statues (a −1 alignment hit
+per offense, and the Archeologist is the only role that automatically
+recognizes which statues are historic). Carrying so much that you go
+Burdened; your Str cap is mediocre and slowing down ruins your stealth
+advantage.</p>
+</section>
+<section id="barbarian" class="level4">
+<h4>Barbarian</h4>
+<p>A Barbarian’s plan is mostly: hit the thing in front of you. You
+start with poison resistance, good Strength, a two-handed sword or
+battle-axe, and an off-hand short sword. Your skill list reads like a
+weapon shop’s inventory; the early dungeon is much easier when you can
+carve a path through it without thinking too hard.</p>
+<p><strong>Intrinsics:</strong> Poison resistance at XL 1, intrinsic
+speed at XL 7, Stealth at XL 15.</p>
+<p><strong>Skill caps:</strong> Two-handed sword Expert (or Axe Expert
+if you took the axe start), Short Sword Expert, Hammer Expert.
+Bare-handed combat reaches Master, so if you ever lose your weapon to a
+polymorph trap or a wand of disarming you remain a real melee threat
+with your fists.</p>
+<p><strong>Twoweapon early.</strong> The starting twin pair (two-handed
+sword plus short sword, or battle-axe plus short sword) is positioned
+for a two-weapon transition. Once you find a long sword, drop the short
+sword for it and twoweapon for mauling damage.</p>
+<p><strong>Pivot:</strong> around XL 12 to 15 most Barbarians want magic
+resistance and discover that without spell skill they have only artifact
+and armor options. Aim for gray dragon scale mail in the Castle, or
+crown for Stormbringer if you are Chaotic; the Magicbane option is gated
+behind a sacrifice gift that may not roll.</p>
+<p><strong>Avoid:</strong> picking fights you cannot escape. Barbarians
+have no escape spells and no intrinsic teleport, so once surrounded you
+fight your way out or pray. Skipping early quaff-tests; with poison
+resistance handed to you from turn 1, blind quaffs are unusually
+safe.</p>
+</section>
+<section id="cave-dweller" class="level4">
+<h4>Cave Dweller</h4>
+<p>Primitive but tough. You start with a club, a sling, a pile of flint
+stones, and good HP growth. Cave Dwellers are the other role (with
+Barbarian) that pushes bare-handed combat to Master, so even unarmed you
+do real damage. The simplest role in the game: few tools, no starting
+spellbooks, no language quirks.</p>
+<p><strong>Intrinsics:</strong> Speed at XL 7, Warning at XL 15. No
+early resistances at all; this is the role that earns those resistances
+one corpse at a time.</p>
+<p><strong>Skill caps:</strong> Club, mace, quarterstaff, and spear all
+Expert, plus the sling Expert (Cave Dwellers train sling as easily as
+anyone). Bare-handed combat reaches Master.</p>
+<p><strong>Pivot:</strong> the Cave Dweller’s mid-game is built from the
+corpses they eat. Without role-granted resistances, you climb the
+resistance ladder by eating fire ants, killer bees, giants, and the
+right molds. Plan to eat every safe intrinsic-granting corpse you can;
+an amulet of life saving is more valuable here than for almost any other
+role.</p>
+<p><strong>Avoid:</strong> putting too much weight on Intelligence. Cave
+Dwellers have the lowest Int cap of any role and the weakest spell
+access; aside from identify or detect-X scrolls you will mostly be
+reading rather than casting. The gnome racial option leans toward
+casting, so pick dwarf or human if you want the heaviest melee.</p>
+</section>
+<section id="healer" class="level4">
+<h4>Healer</h4>
+<p>You start with a stethoscope, four potions of healing, four of extra
+healing, a wand of sleep, three pre-blessed spellbooks (healing, extra
+healing, stone-to-flesh), poison resistance, and immunity to sickness.
+The stethoscope shows monster HP and your own internal state; the wand
+of sleep makes early combat much easier than the medical kit
+suggests.</p>
+<p><strong>Intrinsics:</strong> Poison resistance at XL 1, Warning at XL
+15.</p>
+<p><strong>Skill caps:</strong> Knife Expert, Quarterstaff Expert, Dart
+Expert, Unicorn Horn Expert (a permanent dividend on every horn you
+find), Healing Spell Expert. Healing pre-blessed books guarantee
+successful reads from turn 1.</p>
+<p><strong>The wand of sleep is your survival.</strong> A handful of
+charges that put even serious monsters down for several turns, and most
+of the early dungeon has no sleep resistance. Spend one charge per
+dangerous encounter, never on an easy kill, and you’ll bridge to XL 6
+before running out. Recharge it later with scrolls of charging or a
+magic marker.</p>
+<p><strong>Sickness immunity is a free quaff-test.</strong> Healers
+cannot be made ill by potions of sickness, so unknown clear-colored
+potions can be tested safely. Dip a unicorn horn into the leftover
+sickness potion to convert it to fruit juice.</p>
+<p><strong>Pivot:</strong> around XL 10, Healers move from “survive on
+potions and sleep” to casting extra healing as a Pw battery. At Skilled
+in the healing school, your healing casts behave like blessed
+potions.</p>
+<p><strong>Avoid:</strong> spending sleep charges on small monsters.
+Quaffing unknown yellow or pink potions without a unicorn horn ready;
+potions of sleeping bypass your sleep resistance because you do not have
+any. Selling the stethoscope.</p>
+</section>
+<section id="knight" class="level4">
+<h4>Knight</h4>
+<p>Mounted from turn 1 on a saddled pony, holding a +1 long sword and a
++1 lance. The pony is a credible early-game ally and the basis of your
+unique attack: a jousting blow from horseback does massive damage, and
+Knights are the only role with Lance at Expert. Two catches: chivalry
+imposes alignment penalties for attacking helpless or fleeing monsters,
+so pick your fights; and the lance is useless on foot.</p>
+<p><strong>Intrinsics:</strong> Speed at XL 7. That is the entire
+ladder.</p>
+<p><strong>Skill caps:</strong> Long Sword Expert (set up for
+Excalibur), Lance Expert, Riding Expert (mounted Knights fight without
+the riding to-hit penalty), Bare-handed Combat Expert. Several blunt and
+edged weapons reach Skilled for fallback options.</p>
+<p><strong>Excalibur is almost guaranteed.</strong> A Lawful Knight
+dipping a long sword into a fountain at XL 5 or higher has a 1-in-6
+chance per dip, five times better than other Lawful roles. Most runs
+find Excalibur before the Mines luckstone.</p>
+<p><strong>Pivot:</strong> when your pony dies or outgrows its
+usefulness, saddle a horse from the Mines or pet-tame a war horse. A
+late-game Knight riding a polymorphed dragon is one of the strongest
+melee builds in the game.</p>
+<p><strong>Avoid:</strong> jousting a fleeing, sleeping, or paralyzed
+monster (a chivalry alignment hit and an alignment record you cannot
+recover quickly). Forgetting that <code>#ride</code> exists; many
+Knights walk everywhere from XL 10 onward and waste their best skill
+cap.</p>
+</section>
+<section id="monk" class="level4">
+<h4>Monk</h4>
+<p>Bare-handed combat by design. The intrinsic ladder is the broadest in
+the game and your Martial Arts caps at Grand Master, hitting +7 to-hit
+and +9 damage with no weapon. The trade-off is a steep set of armor
+restrictions: a body suit costs −20 to-hit, a shield kills your
+martial-arts bonus, and metallic helms, gloves, and boots all add a
+casting penalty. The default Monk fights through the dungeon in a robe
+with no body armor.</p>
+<p><strong>Intrinsics:</strong> see invisible, sleep resistance, and
+intrinsic speed all at XL 1; poison at 3; stealth at 5; warning at 7;
+searching at 9; fire 11; cold 13; shock 15; teleport control 17. Eating
+the matching corpses just accelerates a schedule you’d mostly reach
+anyway.</p>
+<p><strong>Skill caps:</strong> Martial Arts Grand Master, Healing Spell
+Expert, Cleric and Escape Spells Skilled. The four allowed weapon skills
+(quarterstaff, spear, crossbow, shuriken) cap at Basic, so weapon
+training is for the Staff of Aesculapius or the silver spear endgame and
+not much else.</p>
+<p><strong>Gear by slot:</strong> starting robe (+20 spellcasting),
+elven leather helm, gauntlets of dexterity, speed boots, no shield, no
+body armor. The robe is irreplaceable; protect it from polymorph traps
+from D7 onward with a ring of polymorph control or an amulet of
+unchanging.</p>
+<p><strong>Pivot:</strong> the Eyes of the Overworld quest artifact
+grants magic resistance and astral vision, which frees your cloak slot
+for the robe instead of cloak of magic resistance. Most clean Monk runs
+postpone the Quest until after the Castle, then complete the Quest for
+the Eyes.</p>
+<p><strong>Avoid:</strong> eating meat (−1 alignment per offense;
+vegetarian is essentially free for Monks). Wearing iron skull cap, iron
+shoes, or gauntlets of power (all metallic, all penalize casting).
+Picking up a shield for the AC.</p>
+</section>
+<section id="priest" class="level4">
+<h4>Priest</h4>
+<p>Sacrifice-gift specialists. Priests sense the blessed, cursed, and
+uncursed status of every item on sight, so you walk through the dungeon
+knowing which gear is safe to wear. Your first sacrifice gift is
+guaranteed to be Demonbane (in 5.0, a silver mace), and your stack of
+four holy waters lets you re-bless gear at will.</p>
+<p><strong>Intrinsics:</strong> Warning at XL 15, Fire resistance at XL
+20. Almost nothing innately. Priests trade intrinsics for divine
+favor.</p>
+<p><strong>Skill caps:</strong> six blunt weapons all reach Expert
+(club, mace, morning star, flail, hammer, quarterstaff), which means
+whatever blunt weapon drops first becomes your trainable kit. Healing,
+Divination, and Cleric Spells all Expert.</p>
+<p><strong>Holy water is the engine.</strong> Stack potions of water on
+a co-aligned altar and pray; the entire stack becomes holy water (each
+dip elsewhere consumes one holy water but blesses one plain water, a 1:1
+exchange not a multiplier). The supply scales with how much water you
+find. Save at least one holy water for the trail.</p>
+<p><strong>Pivot:</strong> around XL 14 Priests transition from
+“Demonbane bops things” to a clerical-spell cycle: protection prayer,
+healing, remove curse, and the heavy clerical attack spells. High Wis
+means high prayer success, so #pray during low-HP fights against tough
+foes.</p>
+<p><strong>Avoid:</strong> sacrificing on a co-aligned altar during a
+luck low; your god may visit with a wand of death. Selling holy water
+for shop credit; the supply is finite if you do not work the altar
+cycle.</p>
+</section>
+<section id="ranger" class="level4">
+<h4>Ranger</h4>
+<p>The ranged role. You start with a bow, a generous supply of arrows, a
+dagger, a +2 cloak of displacement, and Searching from XL 1. Multishot
+is your engine: a Ranger at Expert bow fires two or three arrows per
+turn at high Str, and your elven racial option also gains sleep
+resistance at XL 4.</p>
+<p><strong>Intrinsics:</strong> Searching at XL 1, Stealth at XL 7, See
+invisible at XL 15.</p>
+<p><strong>Skill caps:</strong> Bow, Sling, Crossbow, Dart, Spear,
+Dagger, and Boomerang all Expert. Almost every ranged weapon in the game
+is at your top tier, plus Divination Spell Expert for utility
+casting.</p>
+<p><strong>The cloak of displacement is the run.</strong> +2 enchanted
+from turn 1 is an endgame defensive item. Protect it; if you find a
+cloak of magic resistance, carry both and swap based on threat (magic
+resistance for monster spells, displacement for melee crowds).</p>
+<p><strong>Pivot:</strong> mid-game Rangers wish for or polypile a stack
+of silver arrows to enchant. Highly enchanted silver arrows on a Ranger
+at Expert bow are one of the highest damage-per-turn options in the
+game.</p>
+<p><strong>Avoid:</strong> mulching your +2 arrow stack. Keep the
+cheaper found arrows as your training stack and reserve the +2s for hard
+fights. Engaging in melee on the front line; your role is ranged.</p>
+</section>
+<section id="rogue" class="level4">
+<h4>Rogue</h4>
+<p>NetHack’s thief: daggers, stealth, and backstab. You start with a
+short sword, six daggers, leather armor, a lock pick, a sack, and a
+potion of sickness. The lock pick opens every locked door, chest, and
+box from turn 1. Stealth at XL 1 lets you walk past sleeping monsters,
+and backstab adds +1 to +XL bonus damage against fleeing or helpless
+targets.</p>
+<p><strong>Intrinsics:</strong> Stealth at XL 1, Searching at XL 10.</p>
+<p><strong>Skill caps:</strong> Dagger Expert, Knife Expert, Short Sword
+Expert, Two-Weapon Combat Expert, Bare-handed Combat Expert. The
+two-weapon synergy with daggers is unique to the role.</p>
+<p><strong>Throw daggers; do not stab.</strong> Rogues get a multishot
+bonus on thrown daggers, and the backstab modifier applies to throws
+against fleeing targets too. A high-enchantment dagger stack carries you
+through Gehennom.</p>
+<p><strong>Pivot:</strong> around XL 8 you can poison your darts and
+daggers with the starting sickness potion or any poison potion you find.
+Coated daggers double or triple damage against non-poison-resistant
+targets.</p>
+<p><strong>Avoid:</strong> noisy actions that break stealth (kicking,
+casting some spells, attacking unsleeping crowds). Single-wielding when
+you could two-weapon. Selling the lock pick; it is the only one you
+get.</p>
+</section>
+<section id="samurai" class="level4">
+<h4>Samurai</h4>
+<p>Katana, off-hand wakizashi, yumi bow with arrows. Samurai start with
+intrinsic speed and a strong opening melee kit. The katana is a long
+sword underneath, so it shares long sword skill: with Long Sword and
+Two-Handed Sword both at Expert, Two-Weapon Combat at Expert, and a
+guaranteed katana start, the role is set up for a katana plus long sword
+two-weapon combination.</p>
+<p><strong>Intrinsics:</strong> Speed at XL 1, Stealth at XL 15.</p>
+<p><strong>Skill caps:</strong> Long Sword, Two-Handed Sword, Short
+Sword, Bow, Shuriken, and Two-Weapon Combat all Expert; Martial Arts
+Master (the only role besides Monk with Martial Arts at all).</p>
+<p><strong>The wakizashi is community-classified dead weight.</strong>
+It is a short sword, not a long sword, so it does not share skill or
+two-weapon synergy with the katana. Drop it for a long sword (the Mines
+almost always provides one) and twoweapon long sword plus katana.</p>
+<p><strong>Pivot:</strong> mid-game Samurai who invested in bow can
+pivot to a multishot ranged build. Yumi at Expert with high Str gives 2
+or 3 arrows per turn, comparable to a Ranger build on a role that
+already starts strong in melee.</p>
+<p><strong>Avoid:</strong> keeping the wakizashi for sentimental
+reasons. Eating meat carries no penalty for Samurai (no vegetarian
+conduct expectation), but watch for cockatrice corpses.</p>
+</section>
+<section id="tourist" class="level4">
+<h4>Tourist</h4>
+<p>The hardest role. Low HP, no melee weapon, a Hawaiian shirt with zero
+base AC. You start with four scrolls of magic mapping, an expensive
+camera, 21 to 40 +2 darts, a credit card, two potions of extra healing,
+ten random food items, and a 1-in-5 chance of a magic marker. Most
+Tourists die in the first thousand turns; those that survive become
+disproportionately powerful in the late game.</p>
+<p><strong>Intrinsics:</strong> Searching at XL 10, Poison resistance at
+XL 20. Both late.</p>
+<p><strong>Skill caps:</strong> Dart Expert, Dagger Expert, Short Sword
+Expert. That is the entire combat-skill list; every other weapon caps at
+Basic, including most melee weapons you might find.</p>
+<p><strong>The camera carries the early game.</strong> Apply it at any
+monster to blind it (and often to scare it). Camera-flash, dart from
+range, let the pet finish, and repeat. Save scrolls of magic mapping for
+levels that look genuinely nasty.</p>
+<p><strong>The Tourist tax.</strong> Shopkeepers charge Tourists below
+XL 15 a +33% markup and offer 1/3 base on sales. Below XL 15 you are
+literally priced as a sucker. Most ascending Tourists do their shopping
+after Quest completion.</p>
+<p><strong>Pivot:</strong> the Tourist quest artifact, the Platinum
+Yendorian Express Card, is one of the best in the game: magic
+resistance, telepathy, and half spell damage all while carried, plus
+charge items by invocation. Tourists who reach the Quest become caster-
+heavy mid-game on a role nobody expects to cast.</p>
+<p><strong>Avoid:</strong> rushing to Minetown without an upgrade
+weapon. Shopping below XL 15. Wearing the Hawaiian shirt without magic
+resistance elsewhere; one polymorph trap and it is a generic shirt.</p>
+</section>
+<section id="valkyrie" class="level4">
+<h4>Valkyrie</h4>
+<p>Recommended for first serious attempt. You start with a long sword
+(or spear), a small shield, intrinsic cold resistance, and good combat
+stats. Mjollnir, a +d5/+d24 war hammer that returns when thrown at
+Strength 25, drops as your guaranteed sacrifice gift regardless of
+alignment, so the late-game weapon question is solved early.</p>
+<p><strong>Intrinsics:</strong> Cold resistance at XL 1, Stealth at XL
+3, intrinsic speed at XL 7.</p>
+<p><strong>Skill caps:</strong> Long Sword Expert, Two-Handed Sword
+Expert, Axe Expert, Hammer Expert (Mjollnir’s skill), Spear Expert,
+Dagger Expert. The widest practical weapon-skill range in the game.</p>
+<p><strong>Excalibur is also possible.</strong> Lawful Valkyries dipping
+a long sword into a fountain at XL 5 or higher get the standard 1-in-30
+chance per dip; fountain-dip until it appears, then transition to
+Mjollnir at the altar.</p>
+<p><strong>Pivot:</strong> Valkyries already have most of the combat
+they need; mid-game focus shifts to magic resistance (gray dragon scale
+mail) and reflection (shield of reflection or amulet of reflection from
+Sokoban). The Castle wand of wishing usually settles the magic
+resistance question with one wish.</p>
+<p><strong>Avoid:</strong> prayer-spamming without watching luck and
+alignment record. Valkyrie HP is high but not infinite; a single
+mistimed prayer ends careers.</p>
+</section>
+<section id="wizard" class="level4">
+<h4>Wizard</h4>
+<p>The undisputed caster. You start with a quarterstaff, a +2 cloak of
+magic resistance (an endgame-quality item from turn 1), a wand, two
+rings, three potions, three scrolls, the force-bolt spell plus a random
+spellbook, and a magic marker. Your access to all seven spell schools is
+unmatched.</p>
+<p><strong>Intrinsics:</strong> Warning at XL 15, Teleport control at XL
+17.</p>
+<p><strong>Skill caps:</strong> Attack, Divination, Escape, and Matter
+Spells all Expert (four schools at the top cap); Healing, Enchantment,
+and Cleric Skilled. Among weapons, Quarterstaff Expert and Dagger
+Expert. Wielding any quarterstaff lowers spell-failure rate, so keep it
+in hand as you cast.</p>
+<p><strong>Spell-school advancement IDs spellbooks.</strong> In 5.0,
+advancing a spell school’s skill rank automatically reveals the
+appearances of spellbooks at progressively higher levels: unskilled IDs
+level-1, basic level-3, skilled level-5, expert level-7. A Wizard starts
+knowing all level-1 appearances and level-3 in attack and enchantment, a
+meaningful identification advantage from turn 1.</p>
+<p><strong>Pivot:</strong> by XL 10 to 12 most Wizards have force bolt
+at Skilled, magic missile from a found spellbook, and a marker to scribe
+more. The mid-game is essentially “get every spellbook.” Marker-write
+protection, magic missile, and any school you want to push to
+Expert.</p>
+<p><strong>Avoid:</strong> force-bolting a nymph carrying a mirror, or
+any vault floor that might hide potions; the 2d12 explosion shatters
+glass items in its line of fire. Starting hungry; Wizards begin with
+zero food rations and a kitten that will not share lunch. Plan food
+before Pw.</p>
+<hr />
+</section>
+</section>
 <section id="spellcasting" class="level3">
 <h3>Spellcasting</h3>
 <!-- audit
