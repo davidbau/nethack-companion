@@ -234,11 +234,14 @@ unknown potions of sickness become a free quaff-test (dip a
 unicorn horn into them to convert to fruit juice).
 *Alignment: Neutral.*
 
-**Knight.** You start mounted on a saddled pony, with a +1 long sword
-and a +1 lance among your gear. The pony is a decent combatant early
-on and the basis of your unique trick: jousting from horseback with
-the lance is devastating when it connects, though the lance is largely
-useless on foot. As a Lawful character with a starting long sword, you
+**Knight.** You start with a saddled pony pet, a +1 long sword,
+and a +1 lance among your gear. The pony is a decent combatant
+early on and the basis of your unique trick: jousting from
+horseback with the lance is devastating when it connects, though
+the lance is largely useless on foot. Don't be in a hurry to
+mount, though: the starting pony has only about 7 HP, a failed
+mount attempt costs *you* 10 to 14 HP, and most Knights keep the
+pony as a fighting pet until it grows up. As a Lawful character with a starting long sword, you
 also have the best odds in the game at **[Excalibur](#excalibur-artifact)**. Dip your long sword
 in a fountain at experience level 5+ and Knights get a 1-in-6 chance
 per dip, far better than the 1-in-30 every other Lawful role faces.
@@ -6916,35 +6919,44 @@ have any. Selling the stethoscope.
 
 #### Knight
 
-Mounted from turn 1 on a saddled pony, holding a +1 long sword and
-a +1 lance. The pony is a credible early-game ally and the basis of
-your unique attack: a jousting blow from horseback does massive
-damage, and Knights are the only role with Lance at Expert. Two
-catches: chivalry imposes alignment penalties for attacking helpless
-or fleeing monsters, so pick your fights; and the lance is useless
-on foot.
+You start with a saddled pony (your pet, not your mount), a +1 long
+sword, and a +1 lance. The pony is a credible early-game ally, and
+the basis of your unique attack: a jousting blow from horseback
+does heavy damage, and Knights are the only role with Lance at
+Expert. Two catches: chivalry imposes alignment penalties for
+attacking helpless or fleeing monsters, so pick your fights; and
+the lance is useless on foot.
 
 **Intrinsics:** Speed at XL 7. That is the entire ladder.
 
 **Skill caps:** Long Sword Expert (set up for Excalibur), Lance
-Expert, Riding Expert (mounted Knights fight without the riding
-to-hit penalty), Bare-handed Combat Expert. Several blunt and edged
-weapons reach Skilled for fallback options.
+Expert, Riding Expert, Bare-handed Combat Expert. Several blunt
+and edged weapons reach Skilled for fallback options.
+
+**Mount strategically.** The pony is saddled, so you can `#ride`
+from turn 1, but a starting Knight has only about 16 HP and a
+failed mount attempt costs 10 to 14 HP ("slipped while mounting a
+saddled pony" is a real death on the scoreboard). At XL 1 the
+failure rate is around 45%, so two unlucky tries in a row are
+fatal. Most ascending Knights stay on foot until the pony has had
+enough successful kills to grow up into a horse, then a warhorse:
+at that point you have intrinsic speed, more XL behind the mount
+roll, and a steed worth riding.
 
 **Excalibur is almost guaranteed.** A Lawful Knight dipping a long
 sword into a fountain at XL 5 or higher has a 1-in-6 chance per dip,
 five times better than other Lawful roles. Most runs find Excalibur
 before the Mines luckstone.
 
-**Pivot:** when your pony dies or outgrows its usefulness, saddle a
-horse from the Mines or pet-tame a war horse. A late-game Knight
-riding a polymorphed dragon is one of the strongest melee builds in
-the game.
+**Pivot:** with Excalibur in hand and a warhorse beneath you,
+mounted fighting finally pays off: long-sword swings with the
+Riding bonus, plus jousting against fleeing targets when you can
+position. A late-game Knight on a polymorphed dragon mount is one
+of the strongest melee builds.
 
 **Avoid:** jousting a fleeing, sleeping, or paralyzed monster (a
 chivalry alignment hit and an alignment record you cannot recover
-quickly). Forgetting that `#ride` exists; many Knights walk
-everywhere from XL 10 onward and waste their best skill cap.
+quickly). Retrying a failed mount when you're already low on HP.
 
 #### Monk
 
