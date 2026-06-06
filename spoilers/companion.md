@@ -265,8 +265,9 @@ or uncursed, so you know on sight whether that cloak you just found
 is safe to wear. Competent fighters with access to clerical spells.
 Your first sacrifice gift is guaranteed: Demonbane (now a silver
 mace), which aligns with your weapon skill, so sacrifice early and
-often. Keep at least one holy water in reserve: dipping plain water
-into it makes more, indefinitely. *Alignment: Any (matches your god).*
+often. Refill the holy water stash by dropping water potions on a
+co-aligned altar and praying: the entire stack blesses at once, so
+the supply is effectively unlimited. *Alignment: Any (matches your god).*
 
 **Ranger.** You start with a bow, a generous supply of arrows, a
 dagger, and a **+2 cloak of displacement**, one of the strongest
