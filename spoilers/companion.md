@@ -6933,26 +6933,23 @@ the lance is useless on foot.
 Expert, Riding Expert, Bare-handed Combat Expert. Several blunt
 and edged weapons reach Skilled for fallback options.
 
-**Mount strategically.** The pony is saddled, so you can `#ride`
-from turn 1, but a starting Knight has only about 16 HP and a
-failed mount attempt costs 10 to 14 HP ("slipped while mounting a
-saddled pony" is a real death on the scoreboard). At XL 1 the
-failure rate is around 45%, so two unlucky tries in a row are
-fatal. Most ascending Knights stay on foot until the pony has had
-enough successful kills to grow up into a horse, then a warhorse:
-at that point you have intrinsic speed, more XL behind the mount
-roll, and a steed worth riding.
+**Mount strategically.** You can `#ride` from turn 1, but a failed
+mount costs 10 to 14 HP ("slipped while mounting a saddled pony" is
+a noted scoreboard death), and at XL 1 the failure rate is around
+45%. Two unlucky tries kill a starting Knight. Most Knights stay
+on foot until the pony grows up into a horse and then a warhorse:
+by then you have intrinsic speed, more XL behind the mount roll,
+and a steed worth riding.
 
 **Excalibur is almost guaranteed.** A Lawful Knight dipping a long
 sword into a fountain at XL 5 or higher has a 1-in-6 chance per dip,
 five times better than other Lawful roles. Most runs find Excalibur
 before the Mines luckstone.
 
-**Pivot:** with Excalibur in hand and a warhorse beneath you,
-mounted fighting finally pays off: long-sword swings with the
-Riding bonus, plus jousting against fleeing targets when you can
-position. A late-game Knight on a polymorphed dragon mount is one
-of the strongest melee builds.
+**Pivot:** with Excalibur and a warhorse, mounted fighting pays
+off: long-sword swings with the Riding bonus plus jousting against
+fleeing targets you can position. A late-game Knight on a
+polymorphed dragon mount is one of the strongest melee builds.
 
 **Avoid:** jousting a fleeing, sleeping, or paralyzed monster (a
 chivalry alignment hit and an alignment record you cannot recover
