@@ -7185,8 +7185,8 @@ enchantment.
 **Pivot:** by XL 10 the Wizard mid-game is "get every spellbook."
 
 **Avoid:** force-bolting glass: breaking a nymph's mirror is −2
-Luck, and shattering potions wastes them. Starting hungry, with no
-rations and a kitten that won't share.
+Luck, and shattering potions wastes them. Putting off food: you
+start with no rations and a kitten that won't share.
 
 ---
 
