@@ -6898,9 +6898,9 @@ sleep" to casting extra healing as a Pw battery. At Skilled in
 the healing school, your healing casts behave like blessed potions.
 
 **Avoid:** spending sleep charges on small monsters. Quaffing
-unknown yellow or pink potions without a unicorn horn ready;
-potions of sleeping bypass your sleep resistance because you do not
-have any. Selling the stethoscope.
+unknown potions without a unicorn horn ready; potions of sleeping
+will knock you out, since Healers don't have sleep resistance.
+Selling the stethoscope.
 
 #### Knight
 
