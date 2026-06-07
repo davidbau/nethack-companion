@@ -6754,16 +6754,15 @@ boots over a moat is the moment you'll see why.
 - Wikipedia/NetHackWiki strategy text consulted for roles (Monk, Archeologist, Tourist); checked claims against source
 -->
 
-The dungeon treats different roles very differently. A Valkyrie
-starts with the combat she needs and grows fast; a Tourist starts
-with no melee weapon and gets the worst shop prices in the game.
-Each role brings a particular kit of starting items, skill caps,
-intrinsic bonuses, and restrictions that can completely change
-what surviving the Mazes feels like. What's safe to eat, what's
-worth picking up, which corridors are deathtraps and which are
-free turns: all of it shifts. The sections that follow give
-role-specific advice for adjusting your play to the strengths and
-pitfalls of each.
+The Mazes treat different roles very differently. A Knight starts
+in full armor with a long sword that will become Excalibur. A
+Wizard starts with no food and a cloak of magic resistance most
+adventurers spend the game looking for. A Monk gets eleven free
+intrinsics at the price of wearing no body armor and eating no
+meat. Starting kits, skill caps, intrinsic ladders, and
+restrictions add up to thirteen distinct games inside the same
+dungeon. The sections that follow give role-specific advice for
+each.
 
 #### Archeologist
 
