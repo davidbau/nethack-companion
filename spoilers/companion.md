@@ -7009,8 +7009,7 @@ foes.
 
 **Avoid:** sacrificing on a co-aligned altar during a luck low;
 your god may visit with a wand of death. Selling holy water for
-shop credit; the supply is finite if you do not work the altar
-cycle.
+shop credit; it's worth far more in your pack than as gold.
 
 #### Ranger
 
