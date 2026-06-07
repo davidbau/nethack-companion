@@ -7065,7 +7065,7 @@ through Gehennom.
 the starting sickness potion or any poison potion you find. Coated
 daggers double or triple damage against non-poison-resistant targets.
 
-**Avoid:** wasting your turn-1 stealth advantage on noisy actions
+**Avoid:** noisy actions that waste your stealth advantage
 (kicking, casting some spells, attacking unsleeping crowds).
 Single-wielding when you could two-weapon. Selling the lock pick:
 Rogues get a +25 to +30 bonus on lock-picking that doesn't apply
