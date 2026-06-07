@@ -6779,18 +6779,18 @@ silver saber your endgame weapon and the pickaxe your mid-game one.
 Divination Spell hits Expert too, and your special spell is magic
 mapping, one of the most valuable spells in the game.
 
-**The pickaxe is the run.** It lets you skip locked doors, chip a
-diagonal exit from any surrounded room, escape upward when cornered,
-and dig the straight downward shaft that ends most ascension runs in
-a handful of turns. Train Pick-axe to Skilled early by chopping at
-zombies and ogres; the slot cost pays back many times over by the
-Castle.
+**Your pickaxe gives you mobility no other role has.** It skips
+locked doors, chips a diagonal exit from a surrounded room, escapes
+upward when you're cornered, and digs the straight downward shaft
+that finishes most ascension runs in a handful of turns. Train
+Pick-axe to Skilled early by chopping at zombies and ogres; the
+slot cost pays back many times over by the Castle.
 
-**The touchstone is the other engine.** An Archeologist applies an
-uncursed touchstone as if it were blessed, so every gem you find
-can be tested for whether it's the real thing or worthless glass.
-Rub gems before you offer them to a unicorn, before you sell, and
-on a co-aligned altar for full ID.
+**Your touchstone identifies gems.** An Archeologist applies an
+uncursed touchstone as if it were blessed, so any gem you find
+can be tested for whether it's real or worthless glass. Rub gems
+before you offer them to a unicorn, before you sell, and on a
+co-aligned altar for full ID.
 
 **Pivot:** by mid-game your Wisdom and Intelligence are within reach
 of Wizard-tier casting. Once you've read magic missile, identify, and
