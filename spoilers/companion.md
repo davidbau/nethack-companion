@@ -7068,8 +7068,9 @@ daggers double or triple damage against non-poison-resistant targets.
 
 **Avoid:** noisy actions that break stealth (kicking, casting some
 spells, attacking unsleeping crowds). Single-wielding when you
-could two-weapon. Selling the lock pick; it is the only one you
-get.
+could two-weapon. Selling the lock pick before you've found a
+replacement; more can be generated randomly, but the starting one
+is your only guaranteed copy.
 
 #### Samurai
 
