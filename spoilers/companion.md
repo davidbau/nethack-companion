@@ -7095,6 +7095,8 @@ arrows per turn, comparable to a Ranger build on a role that
 already starts strong in melee.
 
 **Avoid:** keeping the wakizashi for sentimental reasons.
+Forgetting the yumi: Bow at Expert plus speed puts two or three
+arrows on a target per turn.
 
 #### Tourist
 
@@ -7161,9 +7163,8 @@ Sokoban). The Castle wand of wishing usually settles the magic
 resistance question with one wish.
 
 **Avoid:** coasting through the early game without preparing for
-Gehennom. Remember that magic attacks can bypass your huge HP and
-AC, so you'll want magic resistance, reflection, and the rest of
-the ascension kit lined up before things get hard.
+Gehennom. Magic attacks bypass your HP and AC, so line up magic
+resistance and reflection before things get hard.
 
 #### Wizard
 
@@ -7184,9 +7185,9 @@ enchantment.
 
 **Pivot:** by XL 10 the Wizard mid-game is "get every spellbook."
 
-**Avoid:** force-bolting glass: breaking a nymph's mirror is −2
-Luck, and shattering potions wastes them. Going hungry: you start
-with no food and casting spells drains nutrition fast.
+**Avoid:** force-bolting glass: a nymph's mirror is −2 Luck and
+shattered potions are wasted. Going hungry: you start with no food
+and casting drains nutrition fast.
 
 ---
 
