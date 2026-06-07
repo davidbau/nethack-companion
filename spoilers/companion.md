@@ -6897,10 +6897,8 @@ to convert it to fruit juice.
 sleep" to casting extra healing as a Pw battery. At Skilled in
 the healing school, your healing casts behave like blessed potions.
 
-**Avoid:** spending sleep charges on small monsters. Quaffing
-unknown potions without a unicorn horn ready; potions of sleeping
-will knock you out, since Healers don't have sleep resistance.
-Selling the stethoscope.
+**Avoid:** spending sleep charges on small monsters. Selling the
+stethoscope.
 
 #### Knight
 
@@ -7007,9 +7005,12 @@ remove curse, and the heavy clerical attack spells. High Wis means
 high prayer success, so #pray during low-HP fights against tough
 foes.
 
-**Avoid:** sacrificing on a co-aligned altar during a luck low;
-your god may visit with a wand of death. Selling holy water for
-shop credit; it's worth far more in your pack than as gold.
+**Avoid:** sacrificing on a co-aligned altar during a luck low.
+Priests sacrifice more often than other roles (for gifts and to
+shorten prayer timeouts), so the cumulative risk of an angry-god
+wand-of-death visit is the role's, not the mechanic's. Selling
+holy water for shop credit; it's worth far more in your pack than
+as gold.
 
 #### Ranger
 
@@ -7064,10 +7065,11 @@ through Gehennom.
 the starting sickness potion or any poison potion you find. Coated
 daggers double or triple damage against non-poison-resistant targets.
 
-**Avoid:** noisy actions that break stealth (kicking, casting some
-spells, attacking unsleeping crowds). Single-wielding when you
-could two-weapon. Selling the lock pick: Rogues get a +25 to +30
-bonus on lock-picking that doesn't apply to regular keys.
+**Avoid:** wasting your turn-1 stealth advantage on noisy actions
+(kicking, casting some spells, attacking unsleeping crowds).
+Single-wielding when you could two-weapon. Selling the lock pick:
+Rogues get a +25 to +30 bonus on lock-picking that doesn't apply
+to regular keys.
 
 #### Samurai
 
