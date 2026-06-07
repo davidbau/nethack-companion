@@ -6754,13 +6754,13 @@ boots over a moat is the moment you'll see why.
 - Wikipedia/NetHackWiki strategy text consulted for roles (Monk, Archeologist, Tourist); checked claims against source
 -->
 
-Role choice is the dungeon's first difficulty knob, disguised as
-flavor. A Valkyrie starts with the combat she needs and grows
-fast; a Tourist starts with no melee weapon and gets the worst
-shop prices in the game. Each section below covers a role's
-intrinsic ladder, the skill caps worth pushing to Expert, the
-single piece of starting gear that matters most, and the mistakes
-that end strong characters before the Quest.
+The dungeon treats different roles very differently. A Valkyrie
+starts with the combat she needs and grows fast; a Tourist starts
+with no melee weapon and gets the worst shop prices in the game.
+Each section below covers a role's intrinsic ladder, the skill
+caps worth pushing to Expert, the single piece of starting gear
+that matters most, and the mistakes that end strong characters
+before the Quest.
 
 #### Archeologist
 
