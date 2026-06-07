@@ -6905,7 +6905,7 @@ have any. Selling the stethoscope.
 
 #### Knight
 
-You start with a saddled pony (your pet, not your mount), a +1 long
+You start with a saddled pony, a +1 long
 sword, and a +1 lance. The pony is a credible early-game ally, and
 the basis of your unique attack: a jousting blow from horseback
 does heavy damage, and Knights are the only role with Lance at
