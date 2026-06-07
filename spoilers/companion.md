@@ -6757,10 +6757,13 @@ boots over a moat is the moment you'll see why.
 The dungeon treats different roles very differently. A Valkyrie
 starts with the combat she needs and grows fast; a Tourist starts
 with no melee weapon and gets the worst shop prices in the game.
-Each section below covers a role's intrinsic ladder, the skill
-caps worth pushing to Expert, the single piece of starting gear
-that matters most, and the mistakes that end strong characters
-before the Quest.
+Each role brings a particular kit of starting items, skill caps,
+intrinsic bonuses, and restrictions that can completely change
+what surviving the Mazes feels like. What's safe to eat, what's
+worth picking up, which corridors are deathtraps and which are
+free turns: all of it shifts. The sections that follow give
+role-specific advice for adjusting your play to the strengths and
+pitfalls of each.
 
 #### Archeologist
 
