@@ -6996,11 +6996,11 @@ morning star, flail, hammer, quarterstaff), which means
 whatever blunt weapon drops first becomes your trainable kit.
 Healing, Divination, and Cleric Spells all Expert.
 
-**Holy water is the engine.** Stack potions of water on a co-aligned
-altar and pray; the entire stack becomes holy water (each dip
-elsewhere consumes one holy water but blesses one plain water, a
-1:1 exchange not a multiplier). The supply scales with how much
-water you find. Save at least one holy water for the trail.
+**You can refill holy water at will.** Stack potions of water on a
+co-aligned altar and pray; the entire stack becomes holy water
+(each dip elsewhere consumes one holy water but blesses one plain
+water, a 1:1 exchange not a multiplier). The supply scales with
+how much water you find. Save at least one for the trail.
 
 **Pivot:** around XL 14 Priests transition from "Demonbane bops
 things" to a clerical-spell cycle: protection prayer, healing,
@@ -7028,10 +7028,10 @@ XL 15.
 Boomerang all Expert. Almost every ranged weapon in the game is at
 your top tier, plus Divination Spell Expert for utility casting.
 
-**The cloak of displacement is the run.** +2 enchanted from turn 1
-is an endgame defensive item. Protect it; if you find a cloak of
-magic resistance, carry both and swap based on threat (magic
-resistance for monster spells, displacement for melee crowds).
+**Guard your cloak of displacement.** +2 enchanted from turn 1 is
+an endgame-quality defensive item. If you find a cloak of magic
+resistance, carry both and swap based on threat (magic resistance
+for monster spells, displacement for melee crowds).
 
 **Pivot:** mid-game Rangers wish for or polypile a stack of silver
 arrows to enchant. Highly enchanted silver arrows on a Ranger at
