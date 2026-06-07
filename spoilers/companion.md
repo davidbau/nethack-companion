@@ -7005,9 +7005,9 @@ remove curse, and the heavy clerical attack spells. High Wis means
 high prayer success, so #pray during low-HP fights against tough
 foes.
 
-**Avoid:** sacrificing on a co-aligned altar when your luck is
-low (after breaking a mirror, angering a shopkeeper, or eating
-your own race); your god may visit with a wand of death. Selling
+**Avoid:** abusing your luck (breaking mirrors, angering
+shopkeepers, eating your own race) before sacrificing on a
+co-aligned altar; your god may visit with a wand of death. Selling
 holy water for shop credit; it's worth far more in your pack than
 as gold.
 
@@ -7066,9 +7066,8 @@ daggers double or triple damage against non-poison-resistant targets.
 
 **Avoid:** noisy actions that waste your stealth advantage
 (kicking, casting some spells, attacking unsleeping crowds).
-Single-wielding when you could two-weapon. Selling the lock pick:
-Rogues get a +25 to +30 bonus on lock-picking that doesn't apply
-to regular keys.
+Selling the lock pick: Rogues get a +25 to +30 bonus on
+lock-picking that doesn't apply to regular keys.
 
 #### Samurai
 
