@@ -7005,9 +7005,11 @@ remove curse, and the heavy clerical attack spells. High Wis means
 high prayer success, so #pray during low-HP fights against tough
 foes.
 
-**Avoid:** sacrificing on a co-aligned altar during a luck low;
-your god may visit with a wand of death. Selling holy water for
-shop credit; it's worth far more in your pack than as gold.
+**Avoid:** sacrificing on a co-aligned altar when your luck is
+low (after breaking a mirror, angering a shopkeeper, or eating
+your own race); your god may visit with a wand of death. Selling
+holy water for shop credit; it's worth far more in your pack than
+as gold.
 
 #### Ranger
 
