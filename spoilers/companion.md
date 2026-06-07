@@ -7133,9 +7133,9 @@ items by invocation. Tourists who reach the Quest become caster-
 heavy mid-game on a role nobody expects to cast.
 
 **Avoid:** rushing to Minetown without an upgrade weapon. Shopping
-below XL 15. Investing enchantments in the Hawaiian shirt before
-you have magic resistance; a polymorph trap rolls it into a random
-armor piece and the enchantments go with it.
+below XL 15. Wearing the Hawaiian shirt if you plan to enchant it
+up; before you protect it with magic resistance it's likely to be
+destroyed (a polymorph trap or the destroy-armor monster spell).
 
 #### Valkyrie
 
