@@ -7116,10 +7116,10 @@ Both late.
 That is the entire combat-skill list; every other weapon caps at
 Basic, including most melee weapons you might find.
 
-**The camera carries the early game.** Apply it at any monster to
-blind it (and often to scare it). Camera-flash, dart from range,
-let the pet finish, and repeat. Save scrolls of magic mapping for
-levels that look genuinely nasty.
+**Your camera is the early-game survival tool.** Apply it at any
+monster to blind it (and often to scare it). Camera-flash, dart
+from range, let the pet finish, and repeat. Save scrolls of magic
+mapping for levels that look genuinely nasty.
 
 **The Tourist tax.** Shopkeepers charge Tourists below XL 15 a +33%
 markup and offer 1/3 base on sales. Below XL 15 you are literally
