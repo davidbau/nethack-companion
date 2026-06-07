@@ -6754,21 +6754,13 @@ boots over a moat is the moment you'll see why.
 - Wikipedia/NetHackWiki strategy text consulted for roles (Monk, Archeologist, Tourist); checked claims against source
 -->
 
-Every general technique in this book applies to every role, but the
-most leveraged decisions in any run depend on which intrinsics your
-role gains for free, which skills it can push to Expert, and which
-single trick or piece of starting gear turns a fragile early game
-into a winnable mid-game.
-
-This chapter walks the thirteen roles. For each: the intrinsic
-ladder, the skill caps worth training, the strategic pivot most
-runs go through, and the mistakes that end strong characters
-before XL 14. We have already covered general identification (see
-[A Practical Identification Strategy](#a-practical-identification-strategy)),
-combat fundamentals (see [The Art of Combat](#the-art-of-combat)),
-and the quest artifacts you might earn (see [Artifacts](#artifacts)).
-Here the focus is everyday play, so a Knight and a Wizard spend
-their first ten thousand turns differently.
+Role choice is the dungeon's first difficulty knob, disguised as
+flavor. A Valkyrie starts with the combat she needs and grows
+fast; a Tourist starts with no melee weapon and gets the worst
+shop prices in the game. Each section below covers a role's
+intrinsic ladder, the skill caps worth pushing to Expert, the
+single piece of starting gear that matters most, and the mistakes
+that end strong characters before the Quest.
 
 #### Archeologist
 
