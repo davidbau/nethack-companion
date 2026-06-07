@@ -7097,9 +7097,7 @@ multishot ranged build. Yumi at Expert with high Str gives 2 or 3
 arrows per turn, comparable to a Ranger build on a role that
 already starts strong in melee.
 
-**Avoid:** keeping the wakizashi for sentimental reasons. Eating
-meat carries no penalty for Samurai (no vegetarian conduct
-expectation), but watch for cockatrice corpses.
+**Avoid:** keeping the wakizashi for sentimental reasons.
 
 #### Tourist
 
