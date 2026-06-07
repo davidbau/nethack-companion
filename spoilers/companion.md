@@ -6797,11 +6797,10 @@ of Wizard-tier casting. Once you've read magic missile, identify, and
 cone of cold, you are a caster who happens to swing a saber, not a
 fighter who happens to read books.
 
-**Avoid:** breaking historic statues (a −1 alignment hit per offense,
-and the Archeologist is the only role that automatically recognizes
-which statues are historic). Carrying so much that you go Burdened;
-your Str cap is mediocre, and Burdened costs you both hit chance
-and movement speed (Stealth itself still works fine).
+**Avoid:** breaking historic statues (a −1 alignment hit per
+offense, and the Archeologist is the only role that automatically
+recognizes which statues are historic). Letting your low Str cap
+push you into Burdened sooner than most roles would.
 
 #### Barbarian
 
