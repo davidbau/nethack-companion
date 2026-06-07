@@ -7160,9 +7160,10 @@ and reflection (shield of reflection or amulet of reflection from
 Sokoban). The Castle wand of wishing usually settles the magic
 resistance question with one wish.
 
-**Avoid:** prayer-spamming without watching luck and alignment
-record. Valkyrie HP is high but not infinite; a single mistimed
-prayer ends careers.
+**Avoid:** coasting through the early game without preparing for
+Gehennom. Remember that magic attacks can bypass your huge HP and
+AC, so you'll want magic resistance, reflection, and the rest of
+the ascension kit lined up before things get hard.
 
 #### Wizard
 
