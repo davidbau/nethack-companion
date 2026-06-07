@@ -6799,8 +6799,8 @@ fighter who happens to read books.
 
 **Avoid:** breaking historic statues (a −1 alignment hit per
 offense, and the Archeologist is the only role that automatically
-recognizes which statues are historic). Letting your low Str cap
-push you into Burdened sooner than most roles would.
+recognizes which statues are historic). Getting Burdened collecting
+too many items; the role has a mediocre Str cap.
 
 #### Barbarian
 
