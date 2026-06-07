@@ -6754,13 +6754,12 @@ boots over a moat is the moment you'll see why.
 - Wikipedia/NetHackWiki strategy text consulted for roles (Monk, Archeologist, Tourist); checked claims against source
 -->
 
-The Mazes treat different roles very differently. A Wizard starts
-with no food but a cloak of magic resistance most adventurers
-spend the whole game looking for. A Monk gets eleven free
-intrinsics at the price of wearing no body armor. Starting kits,
-skill caps, intrinsic ladders, and restrictions add up to thirteen
-distinct games inside the same dungeon. The sections that follow
-give role-specific advice for each.
+The Mazes treat different roles very differently. The Knight's
+full-armor mounted combat would not work for a Monk, whose
+weaponless martial arts need a robe and no body armor. Starting
+kits, skill caps, intrinsic ladders, and restrictions add up to
+thirteen distinct games inside the same dungeon. The sections
+that follow give role-specific advice for each.
 
 #### Archeologist
 
