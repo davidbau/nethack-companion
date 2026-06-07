@@ -7069,8 +7069,7 @@ daggers double or triple damage against non-poison-resistant targets.
 **Avoid:** noisy actions that break stealth (kicking, casting some
 spells, attacking unsleeping crowds). Single-wielding when you
 could two-weapon. Selling the lock pick: Rogues get a +20 to +30
-bonus on lock-picking rolls, so chests and doors open quicker and
-quieter for you than for anyone else.
+bonus on lock-picking.
 
 #### Samurai
 
