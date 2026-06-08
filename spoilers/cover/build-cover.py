@@ -291,8 +291,8 @@ def main():
     spine_y_start = TRIM_TOP + 60
     title_x = FRONT_LEFT + SAFETY_INSET + 8
     title_y = TRIM_TOP + SAFETY_INSET + 36 + 20    # baseline for first line
-    title_size = 26
-    title_leading = 30
+    title_size = 30           # ~15% larger than the prior 26pt
+    title_leading = 35
     spine_size = 26    # 67.54 pt spine has room; ~46 pt of glyph-safe width
 
     title_svg = TMP / "title.svg"
