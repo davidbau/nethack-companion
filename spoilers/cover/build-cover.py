@@ -293,7 +293,7 @@ def main():
     title_y = TRIM_TOP + SAFETY_INSET + 36 + 20    # baseline for first line
     title_size = 26
     title_leading = 30
-    spine_size = 14
+    spine_size = 26    # 67.54 pt spine has room; ~46 pt of glyph-safe width
 
     title_svg = TMP / "title.svg"
     title_svg.write_text(
