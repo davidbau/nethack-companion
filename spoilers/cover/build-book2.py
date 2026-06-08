@@ -26,15 +26,15 @@ import fitz  # PyMuPDF
 HERE = Path(__file__).parent
 SPOILERS = HERE.parent
 BOOK = SPOILERS / "book.pdf"
-COVER = SPOILERS / "cover.pdf"
+COVER = SPOILERS / "cover-inside.pdf"
 OUT = SPOILERS / "book2.pdf"
 
 # Book trim is A5: 148 × 210 mm = 419.528 × 595.276 pt (1 mm = 2.83465 pt).
 BOOK_W = 419.528
 BOOK_H = 595.276
 
-# cover.pdf p2 layout (top-left origin, PDF points). Computed live from
-# the source PDF so that the panel rects stay in sync if build-cover.py
+# cover-inside.pdf p1 layout (top-left origin, PDF points). Computed live
+# from the source PDF so the panel rects stay in sync if build-cover.py
 # changes its dimensions (e.g. when the spine width is re-templated).
 #   Layout: bleed | back panel (A5) | spine | front panel (A5) | bleed
 BLEED = 9.0
@@ -67,16 +67,16 @@ def main():
     # Derive panel rectangles from cover.pdf p2 dimensions, so the
     # extraction tracks any spine-width change. Layout:
     #   bleed | back panel | spine | front panel | bleed
-    cover_w = cover[1].rect.width
-    cover_h = cover[1].rect.height
+    cover_w = cover[0].rect.width
+    cover_h = cover[0].rect.height
     spine_w = cover_w - 2 * BLEED - 2 * COVER_PANEL_W
     spine_left = BLEED + COVER_PANEL_W
     spine_right = spine_left + spine_w
     left_panel = fitz.Rect(BLEED, BLEED, spine_left, cover_h - BLEED)
     right_panel = fitz.Rect(spine_right, BLEED, cover_w - BLEED, cover_h - BLEED)
 
-    inside_front = extract_panel(cover, 1, left_panel)
-    inside_back  = extract_panel(cover, 1, right_panel)
+    inside_front = extract_panel(cover, 0, left_panel)
+    inside_back  = extract_panel(cover, 0, right_panel)
 
     out = fitz.open()
     out.insert_pdf(book)

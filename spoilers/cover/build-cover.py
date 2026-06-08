@@ -1,20 +1,31 @@
 #!/usr/bin/env python3
-"""Build the Lulu Novella duplex soft-cover PDF for "A Traveller's Companion
+"""Build the soft-cover PDFs for "A Traveller's Companion
 to the Mazes of Menace."
 
 Pipeline: render each input SVG to its own PDF (rsvg-convert handles the
 font correctly when the source font is installed on the system), then
-compose the final 2-page cover by stamping those PDFs onto positioned
-rectangles of a black/white background, using PyMuPDF's show_pdf_page().
+compose each cover page by stamping those PDFs onto positioned rectangles
+of a black/white background, using PyMuPDF's show_pdf_page().
 
-Trim: A5 (148 × 210 mm = 419.528 × 595.276 pt) per panel, 0.125"
-bleed all around. Spine width is a placeholder (51.746 pt) carried
-over from the prior 5×8" Lulu template — recompute and update once
-the new page count is known.
+Outputs two files:
+  cover.pdf         single-page KDP-style wraparound exterior, primary
+                    print PDF for the print-on-demand service
+  cover-inside.pdf  single-page A5 wraparound inside-leaf artwork, used
+                    by build-book2.py to bind the inside-cover panels
+                    into the coil-bound book block
 
+Primary KDP exterior (cover.pdf):
+  Trim:            6.08" x 8.77" = 437.76 x 631.44 pt per panel
+  Wrap (bleed):    0.625" = 45 pt on all sides
+  Spine width:     0.938" = 67.54 pt for 288 pages
+  Safety inset:    0.625" = 45 pt inside the trim line
+  Total document:  14.348" x 10.02" = 1033.06 x 721.44 pt
+                   (= 2*trim_w + spine + 2*wrap by trim_h + 2*wrap)
+
+Inside leaf (cover-inside.pdf), sized for build-book2.py's A5 extraction:
   Per-panel trim:  A5 = 419.528 x 595.276 pt
   Bleed:           9 pt (0.125") all sides
-  Spine width:     51.746 pt (placeholder — re-template after page count settles)
+  Spine width:     51.746 pt (placeholder; matches old Lulu Novella)
   Page (with bleed): 2*A5w + spine + 2*bleed  x  A5h + 2*bleed
 """
 
@@ -30,22 +41,39 @@ HERE = Path(__file__).parent
 TMP = HERE / "build"        # working dir for per-SVG PDFs
 TMP.mkdir(exist_ok=True)
 
-# ---- A5 wraparound dimensions ----
-A5_W = 419.528  # 148 mm
-A5_H = 595.276  # 210 mm
-BLEED = 9.0
-SPINE_W = 51.746        # placeholder — re-template at the new page count
-PAGE_W = 2 * A5_W + SPINE_W + 2 * BLEED
-PAGE_H = A5_H + 2 * BLEED
+# ---- KDP-style wraparound dimensions (cover.pdf exterior) ----
+TRIM_W = 437.76         # 6.08" — book trim width
+TRIM_H = 631.44         # 8.77" — book trim height
+BLEED = 45.0            # 0.625" — wrap area on all sides
+SPINE_W = 67.54         # 0.938" — for 288 pages
+PAGE_W = 2 * TRIM_W + SPINE_W + 2 * BLEED   # 1033.06 pt
+PAGE_H = TRIM_H + 2 * BLEED                 # 721.44 pt
 BACK_LEFT = BLEED
-BACK_RIGHT = BACK_LEFT + A5_W
+BACK_RIGHT = BACK_LEFT + TRIM_W             # 482.76 pt
 SPINE_LEFT = BACK_RIGHT
-SPINE_RIGHT = SPINE_LEFT + SPINE_W
+SPINE_RIGHT = SPINE_LEFT + SPINE_W          # 550.30 pt
 FRONT_LEFT = SPINE_RIGHT
-FRONT_RIGHT = FRONT_LEFT + A5_W
+FRONT_RIGHT = FRONT_LEFT + TRIM_W           # 988.06 pt
 TRIM_TOP = BLEED
-TRIM_BOTTOM = PAGE_H - BLEED
-SAFETY_INSET = 13.536
+TRIM_BOTTOM = PAGE_H - BLEED                # 676.44 pt
+SAFETY_INSET = 45.0                         # 0.625" inside trim line
+
+# ---- A5 wraparound dimensions (cover-inside.pdf inside leaf for book2) ----
+I_TRIM_W = 419.528       # A5 width: 148 mm
+I_TRIM_H = 595.276       # A5 height: 210 mm
+I_BLEED = 9.0            # 0.125" all sides
+I_SPINE_W = 51.746       # placeholder; build-book2.py reads it back
+I_PAGE_W = 2 * I_TRIM_W + I_SPINE_W + 2 * I_BLEED
+I_PAGE_H = I_TRIM_H + 2 * I_BLEED
+I_BACK_LEFT = I_BLEED
+I_BACK_RIGHT = I_BACK_LEFT + I_TRIM_W
+I_SPINE_LEFT = I_BACK_RIGHT
+I_SPINE_RIGHT = I_SPINE_LEFT + I_SPINE_W
+I_FRONT_LEFT = I_SPINE_RIGHT
+I_FRONT_RIGHT = I_FRONT_LEFT + I_TRIM_W
+I_TRIM_TOP = I_BLEED
+I_TRIM_BOTTOM = I_PAGE_H - I_BLEED
+I_SAFETY_INSET = 13.536  # ~0.188" inside trim line
 
 TITLE_LINE1 = "A Traveller's Companion"
 TITLE_LINE2_PARTS = ('to the Mazes of', 'Menace')  # split before M to add a kern nudge
@@ -211,10 +239,11 @@ def main():
     gehmaze_h = (gehmaze_h - TOP_CLIP - BOTTOM_CLIP) * 0.75
     medusa_h  = (medusa_h  - TOP_CLIP - BOTTOM_CLIP) * 0.75
 
-    out = fitz.open()
+    outer = fitz.open()
+    inner = fitz.open()
 
-    # ===== PAGE 1: OUTSIDE COVER (BLACK) =====
-    page1 = out.new_page(width=PAGE_W, height=PAGE_H)
+    # ===== cover.pdf: OUTSIDE COVER (BLACK) at KDP wraparound dimensions =====
+    page1 = outer.new_page(width=PAGE_W, height=PAGE_H)
     page1.draw_rect(fitz.Rect(0, 0, PAGE_W, PAGE_H), color=(0, 0, 0), fill=(0, 0, 0))
 
     # ---- Back cover (left panel): three maps stacked top-to-bottom
@@ -324,15 +353,17 @@ def main():
         if i < n_gaps:
             y += MAP_GAP_PT
 
-    # ===== PAGE 2: INSIDE COVER (WHITE) =====
-    page2 = out.new_page(width=PAGE_W, height=PAGE_H)
-    page2.draw_rect(fitz.Rect(0, 0, PAGE_W, PAGE_H), color=(1, 1, 1), fill=(1, 1, 1))
+    # ===== cover-inside.pdf: INSIDE COVER (WHITE) at A5 wraparound dimensions =====
+    # Composed at A5 dims (not the new KDP dims) so build-book2.py's panel-
+    # extraction math (BLEED=9, COVER_PANEL_W=A5_W) keeps working.
+    page2 = inner.new_page(width=I_PAGE_W, height=I_PAGE_H)
+    page2.draw_rect(fitz.Rect(0, 0, I_PAGE_W, I_PAGE_H), color=(1, 1, 1), fill=(1, 1, 1))
 
     # ---- Inside FRONT cover (left panel): dungeon maps stacked ----
-    ifc_l = BACK_LEFT + SAFETY_INSET
-    ifc_t = TRIM_TOP + SAFETY_INSET
-    ifc_w = (BACK_RIGHT - SAFETY_INSET) - ifc_l
-    ifc_h = (TRIM_BOTTOM - SAFETY_INSET) - ifc_t
+    ifc_l = I_BACK_LEFT + I_SAFETY_INSET
+    ifc_t = I_TRIM_TOP + I_SAFETY_INSET
+    ifc_w = (I_BACK_RIGHT - I_SAFETY_INSET) - ifc_l
+    ifc_h = (I_TRIM_BOTTOM - I_SAFETY_INSET) - ifc_t
 
     # Stack the three dungeon maps (all viewbox width 760) proportionally
     scale_w = ifc_w / 760.0
@@ -353,10 +384,10 @@ def main():
 
     # ---- Inside BACK cover (right panel): flowchart up top, then a
     # ---- "key to the cover" block with thumbnail + caption rows.
-    ibc_l = FRONT_LEFT + SAFETY_INSET
-    ibc_t = TRIM_TOP + SAFETY_INSET
-    ibc_w = (FRONT_RIGHT - SAFETY_INSET) - ibc_l
-    ibc_h = (TRIM_BOTTOM - SAFETY_INSET) - ibc_t
+    ibc_l = I_FRONT_LEFT + I_SAFETY_INSET
+    ibc_t = I_TRIM_TOP + I_SAFETY_INSET
+    ibc_w = (I_FRONT_RIGHT - I_SAFETY_INSET) - ibc_l
+    ibc_h = (I_TRIM_BOTTOM - I_SAFETY_INSET) - ibc_t
 
     # Reserve the bottom portion for the key block; flowchart fills
     # the rest at the top.
@@ -482,13 +513,18 @@ def main():
                 draw_thumb_cell(cell_x, cell_y, col_w, row_h,
                                 cell[1], cell[2], cell[3])
 
-    final = HERE.parent / "cover.pdf"
     # Subset the embedded Garamond TTFs down to just the glyphs used
     # (insert_font embeds the full file by default).
-    out.subset_fonts()
-    out.save(str(final), garbage=4, deflate=True, clean=True)
-    out.close()
-    print(f"Wrote {final} ({final.stat().st_size} bytes)")
+    outer_path = HERE.parent / "cover.pdf"
+    inner_path = HERE.parent / "cover-inside.pdf"
+    outer.subset_fonts()
+    outer.save(str(outer_path), garbage=4, deflate=True, clean=True)
+    outer.close()
+    inner.subset_fonts()
+    inner.save(str(inner_path), garbage=4, deflate=True, clean=True)
+    inner.close()
+    print(f"Wrote {outer_path} ({outer_path.stat().st_size} bytes)")
+    print(f"Wrote {inner_path} ({inner_path.stat().st_size} bytes)")
 
 
 if __name__ == '__main__':
