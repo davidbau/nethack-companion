@@ -1916,7 +1916,7 @@ skip and you fall in regardless.
 | Polymorph trap    | Polymorphs you into a random creature                |
 | Rolling boulder   | Triggers a boulder rolling along a fixed track; takes you out if your square is in its path |
 
-Fire traps are the sleeper threat. The fire itself hurts, but
+Fire traps are easy to underestimate. The fire itself hurts, but
 the real catastrophe is your inventory: scrolls burn, potions
 shatter, and that stack of twenty scrolls of identify you've been
 hoarding is suddenly ash. [Fire resistance](#damage-resistances) saves your skin but
@@ -13608,7 +13608,7 @@ Famine: \hyperref[starvation]{the second Rider, p.~\pageref*{starvation}}; \hype
 Feel: \hyperref[feelings-and-sounds]{feverish, lycanthropy infection, deathly sick, Pestilence or rot, p.~\pageref*{feelings-and-sounds}}\par
 \hyperref[fighting-style-caps]{Fighting style caps (bare hands, two-weapon, riding, martial arts), p.~\pageref*{fighting-style-caps}}\par
 Finger: \hyperref[engravings]{in dust, fragile but instant, p.~\pageref*{engravings}}; \hyperref[key-spells]{of death, the argument-ender, p.~\pageref*{key-spells}}\par
-Fire: \hyperref[dangerous-traps]{trap, sleeper threat for inventory, p.~\pageref*{dangerous-traps}}; \hyperref[useful-corpse-effects]{ant corpse, fire resistance, giant corpse, fire + Strength, p.~\pageref*{useful-corpse-effects}}; \hyperref[wishable-random-artifacts]{Brand, fire + firestorm invoke, p.~\pageref*{wishable-random-artifacts}}\par
+Fire: \hyperref[dangerous-traps]{trap, easy to underestimate, burns inventory, p.~\pageref*{dangerous-traps}}; \hyperref[useful-corpse-effects]{ant corpse, fire resistance, giant corpse, fire + Strength, p.~\pageref*{useful-corpse-effects}}; \hyperref[wishable-random-artifacts]{Brand, fire + firestorm invoke, p.~\pageref*{wishable-random-artifacts}}\par
 First: \hyperref[your-first-descent]{descent, welcome to the dungeon, p.~\pageref*{your-first-descent}}; \hyperref[fighting-smart]{swing wakes the room, p.~\pageref*{fighting-smart}}\par
 \hyperref[alignment]{First-game recommendation, p.~\pageref*{alignment}}\par
 \hyperref[gray-stones-four-stones-one-correct-answer]{Flint, useless ammunition, p.~\pageref*{gray-stones-four-stones-one-correct-answer}}\par
