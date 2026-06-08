@@ -1098,16 +1098,12 @@ with dozens of random effects including:
 | Scare monsters    | Bad breath, every monster on the level panics        |
 | Nothing           | "The water is cool and refreshing" or "tasteless"     |
 
-Most of the time, nothing happens. A demon appears about 1/30;
-on shallow levels it may grant you a wish instead of attacking,
-working out to roughly 1 wish per 150 quaffs, dropping to zero
-chance past Dlvl 20. If you want to take the risk, it is a good
-idea to put your items in a bag to protect them from cursing and
-engrave [Elbereth](#elbereth) on a couple squares to protect
-against demons. Wizards' random starting items can include a
-scroll of taming or charm-monster spellbook, and any character
-with a protective instrument (tooled horn, leather drum, magic
-harp) can scare or charm a demon, making the gamble safer.
+Most of the time, nothing happens. A demon appears about 1/30; on
+shallow levels it may grant a wish instead of attacking, working
+out to roughly 1 wish per 150 quaffs and dropping to zero past Dlvl
+20. To take the risk: put your items in a bag (cursing protection),
+engrave [Elbereth](#elbereth) (demons keep their distance), and
+have a charm- or scare-monster effect ready in case a demon appears.
 
 **Dipping in a fountain** is a different gamble, and one that Lawful
 characters should know by heart. If you're at least experience level
@@ -1287,7 +1283,9 @@ unless you can dig or teleport out yourself. (If Croesus is dead
 because you killed him at Fort Ludios, the *Croesus* answer angers
 the guard instead; use the real-name route then.)
 
-**Statues.** Most can be broken for any contents inside (pickaxe,
+#### Statues
+
+Most statues can be broken for any contents inside (with a pickaxe,
 wand of striking, or force bolt), but some are statue traps that
 animate the sculpted monster when struck or stepped on.
 Archeologists see historic statues by name and take a −1 alignment
