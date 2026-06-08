@@ -291,8 +291,8 @@ def main():
     spine_y_start = TRIM_TOP + 60
     title_x = FRONT_LEFT + SAFETY_INSET + 8
     title_y = TRIM_TOP + SAFETY_INSET + 36 + 20    # baseline for first line
-    title_size = 30           # ~15% larger than the prior 26pt
-    title_leading = 35
+    title_size = 33           # ~10% larger than the 30pt previous bump
+    title_leading = 38
     spine_size = 26    # 67.54 pt spine has room; ~46 pt of glyph-safe width
 
     title_svg = TMP / "title.svg"
@@ -313,8 +313,11 @@ def main():
         f'{TITLE_LINE2_PARTS[0]} '
         f'<tspan dx="0.07em">{TITLE_LINE2_PARTS[1]}</tspan>'
         f'</text>'
-        # Spine title (rotated +90°, reads top→bottom)
-        f'<g transform="translate({spine_cx + spine_size/3}, {spine_y_start}) rotate(90)">'
+        # Spine title (rotated +90°, reads top→bottom). After rotation
+        # the glyphs extend rightward of the baseline by ~cap_height
+        # (≈0.6*em); offset the baseline LEFT by spine_size/3 so the
+        # visual center of the caps lands on the spine centerline.
+        f'<g transform="translate({spine_cx - spine_size/3}, {spine_y_start}) rotate(90)">'
         f'<text x="0" y="0" fill="white" '
         f'font-family="{GARAMOND}" font-size="{spine_size}">'
         f'{spine_text}</text></g>'
