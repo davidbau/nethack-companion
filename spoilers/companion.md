@@ -6365,22 +6365,28 @@ wand), and **enchant weapon / enchant armor** for the +7 ascension
 kit. A well-used marker can produce a meaningful share of your
 ascension kit.
 
-The marker also feeds the **wraith feast**: write a *cursed*
-scroll of genocide, read it on a non-graveyard level, and the
-game reverse-genocides four to six fresh wraiths at your feet
-(see [Farming wraiths](#a-note-on-wraiths)). At ~1.6 corpses per
-scroll, a marker plus a stack of blank paper is a small XP
-factory for the late game.
+The marker also feeds the **wraith feast**: a cursed scroll of
+genocide on a non-graveyard level summons four to six wraiths at
+your feet (see [Farming wraiths](#a-note-on-wraiths)).
 
 The **tinning kit** turns a fresh corpse (`a`pply, then select the
-corpse) into a tin: 450 nutrition's worth of preserved food that
-keeps indefinitely. The interesting part is that tin-eating skips
-the raw-corpse poison and acid damage checks. A tinned killer bee
-or acid blob is safe to eat with no resistance, and the
-intrinsic-grant still applies, so the kit doubles as a way to
-grind poison or [acid resistance](#damage-resistances) without taking the per-corpse
-hits. One warning the kit doesn't give: tinning a cockatrice
-without gloves petrifies you on the spot.
+corpse) into a tin: 450 nutrition of preserved food that keeps
+indefinitely. Tin-eating skips the raw-corpse poison and acid
+damage checks, so a tinned killer bee or acid blob is safe to eat
+with no resistance, and the intrinsic-grant still applies. The kit
+doubles as a way to grind poison or
+[acid resistance](#damage-resistances) without taking the
+per-corpse hits. Don't tin a cockatrice without gloves; you
+petrify on the spot.
+
+The **pickaxe** and the heavier **dwarvish mattock** dig through
+most walls and floors. Apply (`a`) and pick a direction for a
+sideways tunnel, or apply downward to chip through the floor for
+the straight-shaft escape that ends many ascension runs. Wand of
+digging is faster in a straight line but burns charges. Sokoban
+walls and most of Gehennom are non-diggable. Applied to a statue,
+a pickaxe also breaks it (dropping any contents, or animating the
+sculpted monster if it is a statue trap).
 
 The **crystal ball** is a one-question oracle when applied (`a`):
 pick a glyph class, point at a square, learn what's there or what's
@@ -6389,18 +6395,12 @@ Intelligence is low. A blessed ball wants Int 16+ to be reliable,
 and a cursed ball can hallucinate, blind, or simply shatter. Drop
 it on an altar before the first use.
 
-The **magic lamp** must be blessed before you rub it: cursed magic
-lamps never grant the wish, uncursed are around 40%, blessed are
-~80%. Take it to a co-aligned altar first.
-
 The **can of grease** is the cheapest hardening upgrade in the
-dungeon. Apply it to a worn armor piece and the slick coat makes
-the wearer harder to grab and steal from: nymphs slide off, the
-Riders' grab attacks miss, and weapon-snatch attempts fail. Applied
-to a bag of holding, it waterproofs the contents like an oilskin
-sack, handy before crossing Medusa's moat or the Plane of Water.
-The coat wears off after a few hits, so it's per-fight protection,
-not a long-lasting investment.
+dungeon. Applied to worn armor, the slick coat makes the wearer
+harder to grab and steal from: nymphs slide off, Riders' grab
+attacks miss, weapon-snatch attempts fail. Applied to a bag of
+holding, it waterproofs the contents like an oilskin sack. The
+coat wears off after a few hits, so it's per-fight protection.
 
 ---
 
