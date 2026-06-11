@@ -6791,9 +6791,8 @@ can be tested for whether it's real or worthless glass. Rub gems
 before you offer them to a unicorn, before you sell, and on a
 co-aligned altar for full ID.
 
-**Scrolls auto-identify when you pick them up.** Every unfamiliar
-scroll you pick up (except blank paper, and assuming you can see)
-deciphers itself with a *"You decipher the label..."* message.
+**Scrolls auto-identify when you pick them up** (except blank
+paper, and assuming you can see).
 
 **Pivot:** by mid-game your Wisdom and Intelligence are within reach
 of Wizard-tier casting. Once you've read magic missile, identify, and
