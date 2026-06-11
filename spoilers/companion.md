@@ -372,11 +372,12 @@ Ranger, Wizard.
 human. Available for: Archeologist, Cave Dweller, Healer, Ranger,
 Wizard.
 
-**Orc.** Poison resistance from level 1 is genuinely useful. Lower
-stat caps overall, and humans, elves, and dwarves are race-hostile
-to orcs (shopkeepers, priests, watchmen included); other orcs aren't
-automatically peaceful either. Available for: Barbarian, Ranger,
-Rogue, Wizard.
+**Orc.** Poison resistance from level 1 is genuinely useful, and
+it lets you eat kobold corpses safely (free nutrition in the early
+dungeon). Lower stat caps overall, and humans, elves, and dwarves
+are race-hostile to orcs (shopkeepers, priests, watchmen included);
+other orcs aren't automatically peaceful either. Available for:
+Barbarian, Ranger, Rogue, Wizard.
 
 #### Alignment
 
