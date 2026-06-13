@@ -490,6 +490,16 @@ monsters can pick up what you drop, and they can loot containers.
 You can drop stuff a level up; monsters don't carry stashes between
 levels.
 
+**A note on rerolling.** If you'd like to pick your starting
+inventory more carefully, you can add `OPTIONS=reroll` to your
+NetHack [configuration](#options-worth-knowing-about). When
+enabled, the game lets you reroll your starting attributes and
+inventory at the start of a run, trading whatever was dealt for
+another shuffle. This won't be decisive for your winning
+strategy, since your decisions later in the run weigh far more
+than your initial rolls, but the option is there if you'd like
+to pick out a favorite starting kit before beginning.
+
 ---
 
 ### Your First Descent
