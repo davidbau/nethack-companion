@@ -1,10 +1,31 @@
 #!/usr/bin/env bash
 # Build script for "A Traveler's Companion to the Mazes of Menace"
 # LaTeX pipeline: companion.md → pandoc + lua filter → xelatex → book.pdf
+#
+# Usage:
+#   ./build-latex.sh        # color dungeon overview map → book.pdf
+#   ./build-latex.sh --bw   # monochrome map for print    → book-bw.pdf
+#
+# The BW variant is what build-book2.py picks up so the coil-bound
+# inside-leaf maps and the in-book "Lay of the Land" map are both
+# rendered in the same all-black-on-white treatment.
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
+
+BW=0
+if [ "${1:-}" = "--bw" ]; then
+  BW=1
+fi
+
+if [ "$BW" = "1" ]; then
+  OUTPUT_PDF=book-bw.pdf
+  DMAP_SUFFIX=-bw
+else
+  OUTPUT_PDF=book.pdf
+  DMAP_SUFFIX=
+fi
 
 # Check dependencies
 if ! command -v pandoc &>/dev/null; then
@@ -17,11 +38,17 @@ if ! command -v xelatex &>/dev/null; then
   exit 1
 fi
 
-echo "=== Building PDF via LaTeX ==="
+echo "=== Building $OUTPUT_PDF via LaTeX ==="
 
 # Make sure the dungeon-map PDFs are present and current.
-if [ ! -f images/dmap-dod.pdf ] || [ companion.md -nt images/dmap-dod.pdf ]; then
-  python3 dungeon_map.py --pdfs
+if [ "$BW" = "1" ]; then
+  if [ ! -f images/dmap-dod-bw.pdf ] || [ companion.md -nt images/dmap-dod-bw.pdf ]; then
+    python3 dungeon_map.py --bw-pdfs images
+  fi
+else
+  if [ ! -f images/dmap-dod.pdf ] || [ companion.md -nt images/dmap-dod.pdf ]; then
+    python3 dungeon_map.py --pdfs
+  fi
 fi
 
 # Make sure the identification-flowchart PDF is present and current.
@@ -46,10 +73,12 @@ sed -e 's/ (or more likely scrolling through)//' companion.md > .companion-print
 # Replace the inline-SVG dungeon map block with markdown image
 # references to the PDFs that dungeon_map.py wrote. Pandoc turns
 # these into \begin{figure}\includegraphics... blocks that LaTeX
-# pages correctly.
-python3 - <<'PY'
+# pages correctly. DMAP_SUFFIX controls color vs BW.
+DMAP_SUFFIX="$DMAP_SUFFIX" python3 - <<'PY'
+import os
 import re
 from pathlib import Path
+suffix = os.environ.get('DMAP_SUFFIX', '')
 md = Path('.companion-print.md').read_text()
 caption = (
     'Dungeons of Doom, Gehennom, and the Elemental Planes. '
@@ -75,12 +104,12 @@ replacement = (
     '\n\n```{=latex}\n'
     '\\begingroup\\setlength{\\parskip}{0pt}\n'
     '\\centerline{\\vbox{\\offinterlineskip%\n'
-    f'  \\hbox{{\\includegraphics[width={DMAP_WIDTH}]{{images/dmap-dod.pdf}}}}%\n'
-    f'  \\hbox{{\\includegraphics[width={DMAP_WIDTH}]{{images/dmap-geh.pdf}}}}%\n'
+    f'  \\hbox{{\\includegraphics[width={DMAP_WIDTH}]{{images/dmap-dod{suffix}.pdf}}}}%\n'
+    f'  \\hbox{{\\includegraphics[width={DMAP_WIDTH}]{{images/dmap-geh{suffix}.pdf}}}}%\n'
     '}}\n'
     '\\endgroup\n'
     '\\clearpage\n'
-    f'\\centerline{{\\includegraphics[width={DMAP_WIDTH}]{{images/dmap-planes.pdf}}}}\n'
+    f'\\centerline{{\\includegraphics[width={DMAP_WIDTH}]{{images/dmap-planes{suffix}.pdf}}}}\n'
     '\\vspace{0.6em}\n'
     f'{{\\footnotesize\\itshape\\noindent {caption}\\par}}\n'
     '```\n\n'
@@ -100,7 +129,7 @@ PANDOC_ARGS=(
   --lua-filter=latex-filter.lua
   --top-level-division=part
   --toc
-  --output=book.pdf
+  --output=$OUTPUT_PDF
 )
 
 # Two-pass build: first pass writes the .aux file (labels and pages);
@@ -111,5 +140,5 @@ pandoc "${PANDOC_ARGS[@]}" 2>&1
 pandoc "${PANDOC_ARGS[@]}" 2>&1
 rm -f .companion-print.md
 
-echo "    → book.pdf"
+echo "    → $OUTPUT_PDF"
 echo "=== Done ==="

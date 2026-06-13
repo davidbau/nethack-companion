@@ -25,7 +25,11 @@ import fitz  # PyMuPDF
 
 HERE = Path(__file__).parent
 SPOILERS = HERE.parent
-BOOK = SPOILERS / "book.pdf"
+# book2 uses the monochrome variant of the dungeon overview map in
+# the main content too (not just the inside leaf), so the source
+# is book-bw.pdf built by `./build-latex.sh --bw` rather than the
+# colour book.pdf.
+BOOK = SPOILERS / "book-bw.pdf"
 COVER = SPOILERS / "cover-inside.pdf"
 OUT = SPOILERS / "book2.pdf"
 
@@ -57,7 +61,7 @@ def extract_panel(cover_doc, page_num: int, clip_rect: fitz.Rect):
 
 def main():
     if not BOOK.exists():
-        raise SystemExit(f"missing: {BOOK}; run build-latex.sh first")
+        raise SystemExit(f"missing: {BOOK}; run build-latex.sh --bw first")
     if not COVER.exists():
         raise SystemExit(f"missing: {COVER}; run cover/build-cover.py first")
 
