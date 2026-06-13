@@ -103,13 +103,23 @@
 \usepackage{titlesec}
 \usepackage{needspace}
 
-% Chapter formatting
+% Chapter formatting. We override \@makechapterhead to drop book.cls's
+% default 50pt + 40pt vertical padding (which pushed chapter content
+% well below the page header), letting more material (e.g. the long
+% wand table + first subsection) land on the chapter's first page.
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{0pt}%
+  {\parindent \z@ \raggedright \normalfont
+   \LARGE\bfseries #1\par\nobreak
+   \vskip 10pt}}
+\makeatother
 \titleformat{\chapter}[display]
   {\normalfont\LARGE\bfseries}
   {}
   {0pt}
   {\LARGE}
-\titlespacing*{\chapter}{0pt}{0.3in}{0.2in}
+\titlespacing*{\chapter}{0pt}{0pt}{0.15in}
 
 % Section formatting — needspace ensures heading stays with following content
 \titleformat{\section}

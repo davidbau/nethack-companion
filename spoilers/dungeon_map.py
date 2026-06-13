@@ -10,11 +10,21 @@ Usage:
 from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Optional, Literal
+import contextlib
 import shutil
 import subprocess
 import sys
 import re
 from pathlib import Path
+
+
+# Set to True before rendering for a monochrome version of the map
+# (no inverse-video bars, no gold-on-dark Sanctum bubble — every box is
+# white with a black border, every piece of text is black). Use the
+# `_bw_mode()` context manager rather than flipping this by hand; the
+# context manager also swaps COLORS, PEARL_COLOR, and TRUNK_* so the
+# code paths that look those up directly produce BW output too.
+BW = False
 
 
 # ============================================================================
@@ -80,6 +90,43 @@ PEARL_COLOR = {
     'vlad':   '#6B4E96',
     'ludios': '#B5891A',
 }
+
+
+@contextlib.contextmanager
+def _bw_mode():
+    """Swap COLORS, PEARL_COLOR, and the TRUNK_* color literals to their
+    BW equivalents (white fill, black stroke/text), and set BW=True so
+    code paths with mode-aware text colors flip too. Restored on exit."""
+    global BW, TRUNK_DOD, TRUNK_GEH, TRUNK_PLANES
+    saved_BW = BW
+    saved_DOD = TRUNK_DOD
+    saved_GEH = TRUNK_GEH
+    saved_PLA = TRUNK_PLANES
+    saved_colors = dict(COLORS)
+    saved_pearls = dict(PEARL_COLOR)
+    BW = True
+    TRUNK_DOD = 'black'
+    TRUNK_GEH = 'black'
+    TRUNK_PLANES = 'black'
+    for k in COLORS:
+        COLORS[k] = ('white', 'black')
+    for k in PEARL_COLOR:
+        PEARL_COLOR[k] = 'black'
+    try:
+        yield
+    finally:
+        BW = saved_BW
+        TRUNK_DOD = saved_DOD
+        TRUNK_GEH = saved_GEH
+        TRUNK_PLANES = saved_PLA
+        COLORS.clear()
+        COLORS.update(saved_colors)
+        PEARL_COLOR.clear()
+        PEARL_COLOR.update(saved_pearls)
+
+
+def _arrow_color() -> str:
+    return 'black' if BW else '#5a5a5a'
 
 
 # ============================================================================
@@ -378,7 +425,10 @@ def render_bubble(b: Bubble, x: int, y: int) -> list[str]:
     title = ('★ ' if b.star else '') + b.title
 
     # Color of text differs for sanctum (gold on dark)
-    if b.is_sanctum:
+    if BW:
+        title_color = 'black'
+        detail_color = 'black'
+    elif b.is_sanctum:
         title_color = '#FFC857'
         detail_color = '#FFE680'
     elif b.color == 'castle':
@@ -393,7 +443,13 @@ def render_bubble(b: Bubble, x: int, y: int) -> list[str]:
 
     title_size = 17 if (b.is_big or b.is_sanctum) else 15
     detail_size = 14 if (b.is_big or b.is_sanctum) else 12
-    title_weight = 600 if (b.is_big or b.is_sanctum or b.detail) else 600
+    # Sanctum is inverse video in color mode (gold on dark gray); bump
+    # its weight so thin glyphs don't get swallowed by the dark fill
+    # when printed. BW mode has no inverse video to worry about.
+    if b.is_sanctum and not BW:
+        title_weight = 800
+    else:
+        title_weight = 600
 
     if b.detail:
         # Two-line layout
@@ -438,9 +494,10 @@ def render_trunk_circles(circles: list[tuple[int, int, str]]) -> list[str]:
 
 
 def render_branch_arrows(arrows: list[tuple[int, int, int, int]]) -> list[str]:
+    arr_c = _arrow_color()
     return [
         f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" '
-        f'stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>'
+        f'stroke="{arr_c}" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>'
         for x1, y1, x2, y2 in arrows
     ]
 
@@ -489,6 +546,11 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
         ('Fire',  'fire'),
         ('Water', 'water'),
     ]
+    bubble_title_color = 'black' if BW else '#1f2933'
+    bubble_detail_color = 'black' if BW else '#555'
+    asc_text_color = 'black' if BW else '#7A5A0A'
+    arr_c = _arrow_color()
+
     plane_cx = []
     for i, (name, color_key) in enumerate(plane_data):
         x = row_x_start + i * (plane_w + gap_x)
@@ -496,7 +558,8 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
         parts.append(f'<rect x="{x}" y="{row_y}" width="{plane_w}" height="{plane_h}" rx="6" '
                      f'fill="{fill}" stroke="{stroke}" stroke-width="1.5"/>')
         parts.append(text_el(x + plane_w // 2, row_y + plane_h // 2 + 6, name,
-                             font_size=15, font_weight=600, fill='#1f2933', text_anchor='middle'))
+                             font_size=15, font_weight=600, fill=bubble_title_color,
+                             text_anchor='middle'))
         plane_cx.append(x + plane_w // 2)
 
     water_bottom = row_y + plane_h
@@ -513,14 +576,18 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
     parts.append(f'<rect x="{astral_x}" y="{astral_y}" width="{astral_w}" height="{astral_h}" rx="6" '
                  f'fill="{fill}" stroke="{stroke}" stroke-width="1.5"/>')
     parts.append(text_el(astral_cx, astral_y + 18, 'Astral Plane',
-                         font_size=15, font_weight=600, fill='#1f2933', text_anchor='middle'))
+                         font_size=15, font_weight=600, fill=bubble_title_color,
+                         text_anchor='middle'))
     parts.append(text_el(astral_cx, astral_y + 34, 'three altars · pick yours',
-                         font_size=12, font_style='italic', fill='#555', text_anchor='middle'))
+                         font_size=12, font_style='italic', fill=bubble_detail_color,
+                         text_anchor='middle'))
 
     astral_bottom = astral_y + astral_h
     asc_y = astral_bottom + 18
 
-    # Ascension (width matches Castle and Sanctum)
+    # Ascension (width matches Castle and Sanctum). In color mode the
+    # gold-on-amber text is borderline inverse-video; weight 800 keeps
+    # it from printing thin.
     asc_w = BIG_BUBBLE_W
     asc_h = 50
     asc_x = (WIDTH - asc_w) // 2
@@ -528,10 +595,11 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
     parts.append(f'<rect x="{asc_x}" y="{asc_y}" width="{asc_w}" height="{asc_h}" rx="10" '
                  f'fill="{fill}" stroke="{stroke}" stroke-width="2.5"/>')
     parts.append(text_el(astral_cx, asc_y + 23, 'ASCENSION',
-                         font_size=18, font_weight=700, fill='#7A5A0A',
+                         font_size=18, font_weight=800, fill=asc_text_color,
                          text_anchor='middle', letter_spacing='0.1em'))
     parts.append(text_el(astral_cx, asc_y + 42, 'offer the Amulet at your altar',
-                         font_size=11, font_style='italic', fill='#7A5A0A', text_anchor='middle'))
+                         font_size=11, font_style='italic', fill=asc_text_color,
+                         text_anchor='middle'))
 
     # === Arrows drawn AFTER boxes so arrowheads sit on top of box edges ===
 
@@ -547,7 +615,7 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
         f'<path d="M {WIDTH//2} {bar_bottom} '
         f'C {WIDTH//2} {mid_y} {earth_cx} {mid_y} {earth_cx} {cubic_end_y} '
         f'L {earth_cx} {row_y}" '
-        f'stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
+        f'stroke="{arr_c}" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
     )
 
     # Horizontal arrows between adjacent planes. The first arrow is
@@ -561,12 +629,12 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
         arr_y = row_y + plane_h // 2
         parts.append(
             f'<line x1="{x1}" y1="{arr_y}" x2="{x2}" y2="{arr_y}" '
-            f'stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
+            f'stroke="{arr_c}" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
         )
         if i == 0:
             parts.append(text_el((x1 + x2) // 2, arr_y - 4, 'portals',
                                  font_size=11, font_style='italic',
-                                 fill='#5a5a5a', text_anchor='middle'))
+                                 fill=arr_c, text_anchor='middle'))
 
     # Curved arrow Water bottom-center → Astral top-center, same S-into-line shape.
     cubic_end_y2 = astral_y - vlen
@@ -575,13 +643,13 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
         f'<path d="M {water_cx} {water_bottom} '
         f'C {water_cx} {mid_y2} {astral_cx} {mid_y2} {astral_cx} {cubic_end_y2} '
         f'L {astral_cx} {astral_y}" '
-        f'stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
+        f'stroke="{arr_c}" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
     )
 
     # Astral → Ascension
     parts.append(
         f'<line x1="{astral_cx}" y1="{astral_bottom}" x2="{astral_cx}" y2="{asc_y}" '
-        f'stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
+        f'stroke="{arr_c}" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>'
     )
 
     return parts, asc_y + asc_h
@@ -593,11 +661,23 @@ def render_planes_section(y_start: int) -> tuple[list[str], int]:
 
 def render_section_bar(y: int, label: str, color: str) -> list[str]:
     text_y = y + SECT_BAR_H // 2 + SECT_BAR_FONT // 3   # baseline ~ visual center
+    if BW:
+        # No inverse video in BW: white bar with a black border and
+        # black text.
+        rect_attrs = 'fill="white" stroke="black" stroke-width="2"'
+        text_fill = 'black'
+    else:
+        rect_attrs = f'fill="{color}"'
+        text_fill = '#fff'
     parts = [
         f'<rect x="{SECT_BAR_MARGIN}" y="{y}" width="{WIDTH - 2 * SECT_BAR_MARGIN}" '
-        f'height="{SECT_BAR_H}" rx="4" fill="{color}"/>',
+        f'height="{SECT_BAR_H}" rx="4" {rect_attrs}/>',
+        # Weight 800 for the inverse-video bar so the white glyphs print
+        # heavy enough not to disappear into the colored fill. (In BW
+        # it's black-on-white; the heavier weight reads as boldface,
+        # which still suits a section banner.)
         text_el(WIDTH // 2, text_y, label,
-                font_size=SECT_BAR_FONT, font_weight=600, fill='#fff',
+                font_size=SECT_BAR_FONT, font_weight=800, fill=text_fill,
                 text_anchor='middle', letter_spacing='0.08em'),
     ]
     return parts
@@ -613,10 +693,11 @@ def _wrap_svg(parts: list[str], height: int, aria_label: str) -> str:
         f"height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;"
         f"font-feature-settings:'liga' 0, 'dlig' 0;\">"
     )
+    arr_c = _arrow_color()
     defs = (
         '<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" '
         'markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
-        '<path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs>'
+        f'<path d="M 0 0 L 10 5 L 0 10 z" fill="{arr_c}"/></marker></defs>'
     )
     return svg_open + defs + ''.join(parts) + '</svg>'
 
@@ -627,6 +708,7 @@ def _section_parts(placed: Placed, y_min: int, y_max: int, y_offset: int,
     """Build the SVG body for one section: trunk + bar + boxes + pearls,
     with all coordinates translated to local (subtract y_offset)."""
     parts: list[str] = []
+    arr_c = _arrow_color()
 
     # Layer 1: trunk segments (clipped to [y_min, y_max])
     for x, sy1, sy2, color in placed.trunk_segments:
@@ -662,7 +744,7 @@ def _section_parts(placed: Placed, y_min: int, y_max: int, y_offset: int,
         if y_min <= y1 < y_max:
             parts.append(
                 f'<line x1="{x1}" y1="{y1 - y_offset}" x2="{x2}" y2="{y2 - y_offset}" '
-                f'stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>'
+                f'stroke="{arr_c}" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>'
             )
 
     # Layer 6: arrow labels
@@ -670,7 +752,7 @@ def _section_parts(placed: Placed, y_min: int, y_max: int, y_offset: int,
         if y_min <= y < y_max:
             parts.append(text_el(x, y - y_offset, label,
                                  font_size=11, font_style='italic',
-                                 fill='#5a5a5a', text_anchor='middle'))
+                                 fill=arr_c, text_anchor='middle'))
 
     # Layer 7: trunk circles (on top of branch arrows so the arrow
     # appears to emerge from the pearl)
@@ -690,14 +772,21 @@ def _section_parts(placed: Placed, y_min: int, y_max: int, y_offset: int,
     return parts
 
 
-def render_sections() -> dict[str, str]:
+def render_sections(bw: bool = False) -> dict[str, str]:
     """Render the three map sections. Returns {'dod', 'geh', 'planes'}
-    mapped to their standalone SVG strings."""
+    mapped to their standalone SVG strings. Pass bw=True for the
+    monochrome (black-text-on-white) variant."""
+    if bw:
+        with _bw_mode():
+            return _render(return_sections=True)
     return _render(return_sections=True)
 
 
-def render_svg() -> str:
+def render_svg(bw: bool = False) -> str:
     """Build the assembled three-section figure as one markdown string."""
+    if bw:
+        with _bw_mode():
+            return _render(return_sections=False)
     return _render(return_sections=False)
 
 
@@ -740,11 +829,12 @@ def _render(*, return_sections: bool):
     climb_local_start = climb_y_start - sec_geh_top
     climb_local_end = climb_y_end - sec_geh_top
     climb_label_y = (climb_local_start + climb_local_end) // 2 + 5
+    climb_color = 'black' if BW else '#5B8E3A'
     climb_extras = [
         f'<line x1="{TRUNK_X}" y1="{climb_local_start}" x2="{TRUNK_X}" y2="{climb_local_end}" '
-        f'stroke="#5B8E3A" stroke-width="2.5" stroke-dasharray="7,5" fill="none"/>',
+        f'stroke="{climb_color}" stroke-width="2.5" stroke-dasharray="7,5" fill="none"/>',
         f'<text x="{TRUNK_X + 20}" y="{climb_label_y}" '
-        f'font-size="15" font-weight="600" font-style="italic" fill="#5B8E3A">'
+        f'font-size="15" font-weight="600" font-style="italic" fill="{climb_color}">'
         f'now go <tspan style="font-weight:800;font-size:17px">ALL</tspan> '
         f'the way back up...</text>',
     ]
@@ -832,18 +922,25 @@ def svg_to_pdf_chrome(svg_path: Path, pdf_path: Path) -> None:
     html_path.unlink()
 
 
-def write_pdfs(images_dir: Path) -> None:
+def write_pdfs(images_dir: Path, *, bw: bool = False,
+               filename_template: str = 'dmap-{name}') -> None:
     """Write each map section as a standalone SVG plus PDF (via headless
     Chrome — see svg_to_pdf_chrome for why we avoid rsvg-convert here)
     into images_dir/. The PDFs are what the LaTeX print pipeline includes;
-    the SVGs are kept alongside for diffability."""
+    the SVGs are kept alongside for diffability.
+
+    With bw=True, renders the monochrome variant (no inverse video,
+    everything is black-on-white). filename_template controls the
+    output stem; {name} is replaced with the section key (dod, geh,
+    planes)."""
     if not Path(CHROME).exists():
         sys.exit(f'Chrome not found at {CHROME}; install Google Chrome or update CHROME in dungeon_map.py')
     images_dir.mkdir(parents=True, exist_ok=True)
-    sections = render_sections()
+    sections = render_sections(bw=bw)
     for name, svg in sections.items():
-        svg_path = images_dir / f'dmap-{name}.svg'
-        pdf_path = images_dir / f'dmap-{name}.pdf'
+        stem = filename_template.format(name=name)
+        svg_path = images_dir / f'{stem}.svg'
+        pdf_path = images_dir / f'{stem}.pdf'
         svg_path.write_text(svg)
         svg_to_pdf_chrome(svg_path, pdf_path)
         print(f'Wrote {pdf_path}', file=sys.stderr)
@@ -856,6 +953,12 @@ def main() -> None:
         write_pdfs(here / 'images')
     elif len(sys.argv) > 1 and sys.argv[1] == '--pdfs':
         write_pdfs(Path(__file__).parent / 'images')
+    elif len(sys.argv) > 1 and sys.argv[1] == '--bw-pdfs':
+        # BW SVGs and PDFs for the cover/build-cover.py inside-leaf pipeline.
+        # Default dir: cover/; override with `--bw-pdfs <dir>`.
+        out_dir = (Path(sys.argv[2]) if len(sys.argv) > 2
+                   else Path(__file__).parent / 'cover')
+        write_pdfs(out_dir, bw=True, filename_template='dmap-{name}-bw')
     else:
         print(render_svg())
 

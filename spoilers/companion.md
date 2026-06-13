@@ -204,7 +204,7 @@ kit, and a touchstone. The pickaxe is the kit's workhorse: it
 lets you dig through walls and create your own escape routes from
 the very first level. The tinning kit lets you preserve corpses
 for later, and the touchstone is your gem-identification edge:
-rub a gem on it and the game tells you whether it's the real
+rub a gem on it and the stone shows whether it's the real
 thing or worthless glass. Useful for unicorn negotiation and shop
 pricing. Archeologists are capable and flexible, though a bit
 fragile in early combat. *Alignment: Lawful or Neutral.*
@@ -368,14 +368,19 @@ to humans but with the best Int and Wis caps. Elf Priests and
 Wizards get a free musical instrument. Available for: Priest,
 Ranger, Wizard.
 
-**Gnome.** Small but resourceful; slightly higher Int cap than a
-human. Available for: Archeologist, Cave Dweller, Healer, Ranger,
-Wizard.
+**Gnome.** Infravision from level 1, slightly higher Int cap than
+a human, and most gnomes and dwarves in the Mines are peaceful to
+you. The early branch turns from a meat grinder into a friendly
+shopping trip. Touchstones identify gems for you without needing
+to be blessed. Gnome Rangers also reach crossbow multishot at Str
+16 instead of Str 18. Available for: Archeologist, Cave Dweller,
+Healer, Ranger, Wizard.
 
 **Orc.** Poison resistance from level 1 is genuinely useful, and
 it lets you eat kobold corpses safely (free nutrition in the early
-dungeon). Lower stat caps overall, and humans, elves, and dwarves
-are race-hostile to orcs (shopkeepers, priests, watchmen included);
+dungeon). Don't eat anything on the `o` letter (cannibalism).
+Lower stat caps overall, and humans, elves, and dwarves are
+race-hostile to orcs (shopkeepers, priests, watchmen included);
 other orcs aren't automatically peaceful either. Available for:
 Barbarian, Ranger, Rogue, Wizard.
 
@@ -510,7 +515,7 @@ beside you.
 
 Welcome to the dungeon.
 
-The first few levels of the Mazes are designed to ease you in, which
+The first few levels of the Mazes go easy on you, which
 is a relative term. Monsters are weaker, but you are too. Your gear
 is minimal, your hit points are low, and you don't yet have the
 resistances that make the mid-game survivable. Levels one through
@@ -1499,7 +1504,7 @@ The Oracle offers two services:
   pool, mostly atmospheric, occasionally useful.
 - **Major consultations** are expensive (500 + 50 × experience
   level) but pay back the gold in useful intel: hints about
-  monsters, items, and game mechanics.
+  monsters, items, and rules.
 
 The Oracle is peaceful and never attacks. Her room is a safe place
 to rest for a moment, though the fountains are subject to the usual
@@ -1612,7 +1617,7 @@ the era away:
   no spellbooks, tools, or amulets in the natural item pool, all
   post-Rogue inventions.
 
-Modern mechanics still work; you can engrave
+Your modern tricks still work; you can engrave
 [Elbereth](#elbereth) here even though that was a Hack-era
 addition. A small anachronism.
 
@@ -2279,7 +2284,7 @@ is the middle ground: durable, but the slow methods can be
 interrupted mid-word.
 
 While levitating, you can't engrave with your finger or your
-weapon: the game refuses both. A wand of fire, lightning, cold,
+weapon: neither works. A wand of fire, lightning, cold,
 or digging still works from above. You'll see "you gesture toward
 the floor below you" first, but the burn lands anyway. The old
 finger-in-dust trick from earlier editions is gone, but torching
@@ -2449,9 +2454,9 @@ really, really hard when you do.
 #### To-Hit Calculation
 
 Every swing of your weapon is a d20 roll, modified by everything
-the game can think of to make your life interesting:
+that matters in a sword fight:
 
-- Your experience level (the game's way of saying "you've seen things")
+- Your experience level (higher means you've seen things)
 - Your weapon's enchantment (a +7 [Excalibur](#excalibur-artifact) hits *noticeably* better)
 - Your Luck (the universe literally takes sides; the to-hit contribution caps around ±5 even though Luck itself ranges further)
 - Your Strength and Dexterity bonuses (muscles plus agility, both matter)
@@ -2485,8 +2490,10 @@ again.
 
 #### AC and Defense
 
-Your AC determines how likely monsters are to hit *you*. The journey
-from "I die to gnomes" to "nothing can touch me" looks like this:
+Your AC determines how likely monsters are to hit *you*. AC starts
+at 10 (no armor) and goes down as you put pieces on; lower is
+better. The journey from "I die to gnomes" to "nothing can touch
+me" looks like this:
 
 | Stage         | Typical AC | Protection level        |
 | ------------- | ---------- | ----------------------- |
@@ -2500,6 +2507,33 @@ free to laugh at ogres. But many late-game threats use special
 attacks (breath weapons, spells, gaze attacks) that ignore AC
 entirely. You can be wearing impenetrable armor and a disenchanter
 will still ruin your day. AC is necessary but not sufficient.
+
+**Seven slots, four paths down.** You can wear seven pieces at
+once: body suit, cloak, helmet, gloves, boots, shield, and shirt.
+Filling every slot with ordinary armor gets you from AC 10 to
+roughly AC 0. From there, the paths into negative AC are
+enchantment, swapping ordinary pieces for magic ones (many magic
+pieces carry an intrinsic on top of their AC bonus), and
+extrinsic Protection bought from priests of your alignment.
+See [the Armory](#armor-and-ac) for picks by slot.
+
+**BUC-test before you wear.** Most armor in the dungeon spawns
+unidentified, and a cursed body suit, helm, gloves, or boots will
+not come off until the curse breaks. Drop a new piece on an altar
+(cursed flashes black) or watch your pet step over it (pets
+refuse cursed items). See
+[A Practical Identification Strategy](#a-practical-identification-strategy)
+for the full procedure.
+
+**Changing armor takes turns and layers in order.** Shirt goes
+on first, body suit second, cloak last. To put on a shirt, you
+must first remove your cloak and body suit; to put on a body
+suit, you must first remove your cloak. A metal body suit takes
+**5 turns** to don or remove; leather 3, mithril 1; cloaks,
+helmets, gloves, boots, and shields take 1 turn each; the shirt
+is instant. A full Hawaiian-shirt-to-cloak swap can mean six
+exposed turns, and you take all incoming attacks during them, so
+save armor changes for a clear room or a corridor at your back.
 
 #### Speed
 
@@ -2629,6 +2663,58 @@ the skill at all. If you're not sure, just use one really good
 weapon. In 5.0, two-handed weapons gained a 3/2 strength damage
 bonus, making them a good alternative.
 
+#### Ranged Combat
+
+Hitting at distance is one of the biggest advantages the dungeon
+offers. Every turn a monster spends crossing a corridor toward
+you is a turn you can spend shooting it. Some roles (Ranger,
+Samurai) lean on ranged weapons heavily; others use them
+opportunistically. The toolkit:
+
+**Fire, throw, and swap commands.**
+
+- **`t`** is **throw**: pick an item from inventory and a
+  direction.
+- **`f`** is **fire**: throws whatever is in your **quiver**
+  without re-prompting. Once set, repeated `f` is the fastest
+  ranged attack you have.
+- **`Q`** sets the **quiver**: pick the default thrown stack
+  (arrows for a Ranger, daggers for a Rogue, shuriken or arrows
+  for a Samurai). Set it once at the start of the run.
+- **`x`** **swaps** primary and secondary weapons. Wield your
+  bow, set a melee weapon as secondary, and `x` toggles between
+  them. The common Ranger pattern is: shoot at range, swap to a
+  dagger when the monster closes, swap back to the bow once it's
+  dead.
+
+**Launchers and ammo.** Bows (bow, elven bow, orcish bow, yumi)
+shoot arrows; crossbows shoot bolts (harder per shot but slower,
+and they need Str 18 for full multishot, or Str 16 for gnomes);
+slings shoot rocks or gems. Polearms strike at distance 2 with
+`#apply` instead. You can also throw daggers, darts, shuriken,
+javelins, and boomerangs without a launcher.
+
+**Lining up the shot.** Projectiles travel in a straight line and
+can't bend around a corner or shoot diagonally through a closed
+doorway. If a monster is across a zigzag corridor, advance until
+the line opens. The shot stops at the first solid target along
+the path: if your pet is between you and the monster, you'll hit
+the pet. The same rules apply to wand zaps and spell rays.
+
+**Multishot.** With the right skill and role, a single `f`
+launches multiple projectiles per turn. Rangers get +1 on any
+non-dagger ranged weapon; Rogues get +1 on thrown daggers;
+Samurai get +1 on shuriken and bow; Expert bow adds another +1;
+the Longbow of Diana adds +1 while wielded. At Expert with a
+matching role, two to four projectiles fly per keystroke. A
+Ranger spamming `f` at a closing centaur does the damage of
+three swings per turn before any enchantment bonus.
+
+**Conserving ammo.** Each arrow or bolt has a per-hit break
+chance: roughly 67% for a +0 stack, 25% for a +2 stack. Train
+multishot on a cheap found stack; save your +2s for fights that
+need them.
+
 #### Fighting Smart
 
 The dungeon rewards cowardice, cunning, and property damage. The
@@ -2682,11 +2768,9 @@ drop you. If your number is smaller, trade. If theirs is
 smaller, retreat now: a turn spent backing up is cheaper than
 a death.
 
-**Fight at range when you can.** Wands, thrown weapons, and
-spells let you soften up monsters before they reach you. This
-matters most against monsters with dangerous melee attacks. A
-fire ant is scary in melee. A fire ant that you have already
-zapped three times is just a warm corpse.
+**Soften before they reach you.** A fire ant is scary in melee.
+A fire ant that you have already zapped three times is just a
+warm corpse. See [Ranged Combat](#ranged-combat) for the toolkit.
 
 **Stay in your pet's path.** Your pet absorbs one hit per
 round if it can reach the monster, and a pet trading hits in
@@ -2709,10 +2793,16 @@ engraving defiles it.
 ##### When the fight goes badly
 
 **Know when to run.** The Mazes have no medals for bravery,
-only for survival. If a fight is going badly, use a scroll of
-teleportation, a wand of teleportation, or just run. Dead
-adventurers do not get second chances (unless wearing an
-amulet of [life saving](#special-and-utility)).
+only for survival. Retreat heals you, too: a level-1 hero
+out-heals a normal monster (~1 HP per 9 turns vs 1 per 20), and
+by mid-game you regenerate 5× faster than them, so backing off a
+slow non-regenerating threat (mimic, ogre, leocrotta) is
+essentially free HP. The exceptions are trolls, vampires, naga,
+and the Wizard of Yendor: they regenerate every turn, sometimes
+faster than you. Don't try to outwait those. If the fight is
+past saving, use a scroll of teleportation, a wand of
+teleportation, or just run. Dead adventurers do not get second
+chances (unless wearing an amulet of [life saving](#special-and-utility)).
 
 **Use conflict.** A ring of conflict makes monsters fight each
 other. Walk into a room full of enemies, put on the ring, and
@@ -3035,21 +3125,21 @@ wearing them.
 
 #### A note on mimics
 
-You will frequently meet mimics in **shops**, with more as you get
-deeper. An average shop has one or two mimics sitting in the
-aisles, masquerading as items. They're slow (speed 3) but their
-claws hit hard. Small mimics rank in the top ten causes of death.
+Mimics are an early-game over-leveled threat: their claws hit hard
+enough to kill a low-level character outright, and small mimics
+rank in the top ten causes of death. The reprieve is that **all
+mimics are slow** (speed 3, less than half your base speed). If
+you uncloak one and don't like the matchup, walk away, heal up,
+gain a few levels, and come back. The mimic isn't going anywhere.
+
+You meet them mostly in **shops**: an average shop has one or two
+in the aisles masquerading as merchandise, with more as you
+descend.
 
 **The visual tell.** A mimic appearing as a generic "strange
 object" renders on the map as `]`, a mirror of `[`, the armor
 class. No real item ever displays as `]`. A `]` on a shop floor
 or anywhere else is always a mimic.
-
-**Other contextual disguises** (rare in practice but worth
-knowing): a mimic in a temple may appear as an extra altar, in a
-Delphi room as a second fountain, in a maze as a lone boulder. So
-"a single piece of furniture that shouldn't be there" is
-suspicious.
 
 **How to uncover one safely.** Search the adjacent square (`s`)
 reveals concealed mimics like it reveals traps. Throw a cheap item
@@ -3058,6 +3148,15 @@ harmlessly. A stethoscope applied to the square also uncloaks.
 Telepathy, ESP, astral vision, and a wand of secret door detection
 see through the disguise and show the mimic as `m`. Your pet won't
 step onto a mimic.
+
+**Recognizing a large mimic before it grabs you.** Once an `m` is
+uncloaked you see its color: small mimics are brown, large mimics
+red, giant mimics magenta. That gives you a free look before
+committing to melee. Depth also helps: large and giant mimics
+don't generally appear until mid-dungeon, so almost every mimic in
+the upper levels is a (still very dangerous) small one. If your
+throw uncovers a red or magenta `m`, do not step into sticking
+range without a plan.
 
 **Sticking.** Large and giant mimics glue you in place on a
 successful claw hit: you can't move, you can't go down stairs, you
@@ -3699,11 +3798,10 @@ corpse or wearing black dragon scale mail) gives full immunity.
 dragons are themselves disintegration-resistant, so the bounce
 won't kill them. Magic resistance does **not** help.
 
-**Without disintegration resistance**, the game tries to save your
-worn armor before disintegrating you: the breath destroys your
-**shield** first if you have one, then your **body armor**; only
-if neither is worn do you die outright (with your cloak and shirt
-destroyed in the process). So an ordinary shield at least eats one
+**Without disintegration resistance**, your worn armor takes the
+breath first: the **shield** destroys first if you have one, then
+your **body armor**; only if neither is worn do you die outright
+(with your cloak and shirt destroyed in the process). So an ordinary shield at least eats one
 breath for you before being lost. An amulet of life saving still
 rescues you from the fatal case, though you lose any armor it took.
 
@@ -5022,7 +5120,7 @@ before wearing. $8 boots and $50 gauntlets are the cases where you
 can't tell stealth-from-kicking or fumbling-from-power by price
 alone. Try them on (BUC-checked) and watch for the messages.
 
-#### Gray Stones: Four Stones, One Correct Answer
+#### Gray Stones: Four Stones, One Lucky
 <!-- audit
 2026-05-18:
 - loadstones are cursed at object creation (mkobj.c:978-979), not on pickup
@@ -5212,9 +5310,9 @@ dragons, the liches, the cockatrices, the inexplicable decision to
 kick a sink), none is quite as embarrassing as starving to death
 while carrying forty thousand gold pieces. Hunger is the dungeon's
 most persistent clock: every turn you spend costs nutrition, and
-when the tank hits empty, you faint. Faint a few times without
-eating and you die. It is, in the grand tradition of roguelikes,
-completely your fault.
+when the tank hits empty, you start fainting. Keep fainting without
+eating and you eventually starve, or get killed by whatever was in
+the room when you keeled over.
 
 #### How Hunger Works
 
@@ -5504,8 +5602,7 @@ about 1 in 30, which is the difference between "risky hobby" and
 "acceptable profession." Do your chemistry in an isolated room,
 away from your stash, and never dip a cursed potion into
 another. The dipping potion (not the one it goes into) is the
-one the game tests for explosion, and a cursed dip detonates
-every time. The dungeon is consistent about this if nothing
+one that breaks, and a cursed dip detonates every time. The dungeon is consistent about this if nothing
 else.
 
 #### Unicorn Horn Interactions
@@ -5759,6 +5856,8 @@ the few shared results.
 
 <div class="price-id-toolbar"></div>
 
+::: dense-table
+
 | Price | Wand | Type | Max Charges | Engrave-test result |
 | --- | --- | --- | --- | --- |
 |   100 | Light                                       | NODIR | 15 | room lights up         |
@@ -5786,6 +5885,8 @@ the few shared results.
 |   200 | [Teleportation](#wand-teleportation)        | BEAM  | 8  | engraving vanishes ¹   |
 |   500 | [Death](#wand-death)                        | RAY   | 8  | bugs stop moving ²     |
 |   500 | [Wishing](#wand-wishing)                    | NODIR | 3  | prompts for a wish     |
+
+:::
 
 <small>¹ Shared by cancellation, make-invisible, and teleportation.
 ² Shared by sleep and death.</small>
@@ -6431,59 +6532,77 @@ appendices give the full stats for every item.
 
 Armor Class is what decides how often you get hit, and it's the
 most important defensive number in the game. Each point you push
-down means more monster swings whiff past you. AC starts at 10 and
-drops as you add protection. Lower is better. At AC −10 or below,
-you're quite difficult to damage with physical attacks;
-community consensus is that −20 is the practical target for an
-ascension kit, with diminishing returns past −25. The
-**cloak of displacement** should not be underrated: monsters waste
-attacks on your phantom image, which complements low AC instead of
-competing with it.
+down means more monster swings whiff past you. AC starts at 10
+and drops as you add protection; lower is better. At AC −10 or
+below you're quite difficult to damage with physical attacks; the
+practical target for an ascension kit is **AC −20**, with
+diminishing returns past −25.
 
-The key armor slots:
+**Try armor before you wear it.** A cursed body suit, helm,
+gloves, or boots will not come off until the curse breaks.
+BUC-test (altar or pet) before donning. Knowing the *type*
+matters too: a cloak of displacement carries a strong intrinsic
+that a plain cloak doesn't. See
+[A Practical Identification Strategy](#a-practical-identification-strategy).
+
+**Slot tradeoffs.** Most armor adds AC, but some pieces have side
+effects worth weighing before you commit to a slot.
+
+- **Spellcasting penalty.** Body suits, helmets, and most shields
+  raise your spell failure rate. The shirt slot is free, and the
+  **small shield** is the only shield with no penalty. Wizards,
+  Priests, and Healers feel this hardest; a Wizard in plate mail
+  can fail trivial spells.
+- **Monk armor restrictions.** A Monk wearing a body suit loses
+  Martial Arts effectiveness (−20 to-hit); a shield kills it
+  entirely. The Monk-friendly slots are cloak, helm, gloves,
+  boots, and shirt.
+- **Two-weapon excludes shield.** Fighting with a weapon in each
+  hand leaves the shield slot empty. Pick one or the other; see
+  [Two-Weapon Combat](#two-weapon-combat).
+- **Encumbrance.** Heavier metal suits push Knights, Samurai, and
+  Valkyries toward Burdened quickly. A bag of holding and a
+  decent Strength help, but check the [Armor Tables](#armor-tables)
+  for weight before committing.
+
+**Key armor slots and their picks:**
 
 | Slot   | Primary pick                               | Specialty pick                        |
 | ------ | ------------------------------------------ | ------------------------------------- |
 | [Body](#body-armor-suits)   | Splint mail, banded mail                   | Dragon scale mail (two extrinsics)    |
 | [Cloak](#cloaks)  | Cloak of protection                        | Cloak of magic resistance             |
-| [Helmet](#helmets) | Helm of caution (early game)               | Helm of telepathy / helm of brilliance |
+| [Helmet](#helmets) | Helm of caution (early game)               | Helm of telepathy / brilliance        |
 | [Gloves](#gloves) | Gauntlets of power                         | Gauntlets of dexterity                |
 | [Boots](#boots)  | Speed boots                                | Water walking boots, levitation boots |
 | [Shield](#shields) | Shield of reflection                       | Small shield (for spellcasters)       |
 
-The **helm of caution** is new in 5.0: it grants
-*warning*, the same intrinsic the ring provides, in the helmet
-slot. Warning fills the screen with colored markers indicating
-nearby threats by danger level (white for the least threat,
-through red, with magenta for the worst) without you having to
-see the monsters yet. It is the
-ideal early-game helm slot: cheap (50 zm), light, and a real
-edge against ambushes. Late game it competes with helm of
-brilliance (Wizards) and helm of telepathy (everyone), but the
-warning bonus stays useful all the way down.
+The **helm of caution** (new in 5.0) grants *warning* in the
+helmet slot: cheap, light, a real edge early. The **cloak of
+displacement** is underrated: monsters swing at your phantom
+image, complementing low AC instead of competing with it.
 
-**Dragon scale mail** is the endgame body armor of choice. **Gray**
-grants magic resistance and is the most-wished color, **silver**
-grants reflection, and other colors carry one or two intrinsics
-each. See [Dragon Scale Mail](#dragon-scale-mail) below for the
-full list and the forge recipe.
+**Magic armor doubles as intrinsic delivery.** A helm of
+telepathy puts telepathy in your helm slot, gauntlets of power
+give Str 18/00, gray dragon scale mail grants magic resistance,
+speed boots make you very fast. Armor planning is two problems
+at once: filling slots for AC, and choosing which intrinsics you
+carry on your body versus in your inventory.
 
-**Speed boots** are worth wishing for. Being faster than your
-enemies means you get more turns, more chances to attack, cast
-spells, or run away. Casters with surplus Pw (Wizard or Monk
-late game, especially with the [Eye of the Aethiopica](#eye-of-the-aethiopica)) can lean
-on **haste self** as a substitute and free the boots slot for
-water walking or jumping. Haste self alone reaches *very fast*
-just like the boots; maintenance costs about 10 Pw every 150
-turns at Skilled.
+**Erosion, enchantment, and Protection** each get their own
+section below: armor rusts, burns, or corrodes (see
+[Erosion and Proofing](#erosion-and-proofing)); scrolls of enchant
+armor add +1 each (−1 AC) with destruction risk above +3 (see
+[Enchantment](#enchantment)); and donating gold to a priest of
+your alignment buys extrinsic Protection that stacks with worn AC
+and also adds +1 to [MC](#magic-cancellation) per source (see
+[Donating to Priests](#donating-to-priests)).
 
 []{#magic-cancellation}
 **Magic cancellation (MC).** Worn armor pieces contribute a
 hidden defensive value called MC, capped at 3. When a monster
 lands a "special attack" on you (gaze, breath, touch effect,
-monster-cast spell, sticky grab, status inflictor), the game
-rolls to *negate* the attack, with the block chance set by your
-MC level:
+monster-cast spell, sticky grab, status inflictor), MC rolls to
+*negate* the attack, with the block chance set by your MC level:
 
 | MC | Block chance |
 |----|--------------|
@@ -6943,8 +7062,9 @@ quickly). Retrying a failed mount when you're already low on HP.
 
 #### Monk
 
-Bare-handed combat by design. The intrinsic ladder is the broadest
-in the game and your Martial Arts caps at Grand Master, hitting +7
+Bare-handed combat is the Monk's identity. The intrinsic ladder is
+the broadest in the game and your Martial Arts caps at Grand Master,
+hitting +7
 to-hit and +9 damage with no weapon. The trade-off is a steep set
 of armor restrictions: a body suit costs −20 to-hit, a shield kills
 your martial-arts bonus, and metallic helms, gloves, and boots all
@@ -7023,7 +7143,8 @@ arrows per turn at high Str, and your elven racial option also
 gains sleep resistance at XL 4.
 
 **Intrinsics:** Searching at XL 1, Stealth at XL 7, See invisible at
-XL 15.
+XL 15. Searching is automatic every step you take, so hidden
+corridors and traps reveal themselves without pressing `s`.
 
 **Skill caps:** Bow, Sling, Crossbow, Dart, Spear, Dagger, and
 Boomerang all Expert. Almost every ranged weapon in the game is at
@@ -7353,9 +7474,18 @@ then end that beam.
 Your power (Pw) pool determines how many spells you can cast before
 you need to sit in a corner and regenerate like a phone battery.
 Casting a spell costs **5 Pw per spell level** (so finger of death
-is 35 Pw). A failed cast still spends half. Power regenerates over
-time, faster with higher Wisdom and Intelligence, faster still for
-Wizards or with a regeneration source.
+is 35 Pw). A failed cast still spends half.
+
+Pw regenerates on a periodic tick that gets shorter as you level
+up. At XL 1 you tick about every 24 turns (18 for a Wizard); by
+XL 10 it's every 18 turns (14 Wizard); at XL 20 about every 12 (9
+Wizard); at XL 30 just 5 (4 Wizard). Each tick gives 1 to
+**((Wis + Int) / 15) + 1** Pw, so typically 1-3 at decent stats and
+1-4 with very high Wis and Int. Magical breathing adds 2 to that
+ceiling. The **energy regeneration** intrinsic (from the
+*Eye of the Aethiopica* among other sources) bypasses the period
+entirely so you regen every turn. Stressed or worse encumbrance
+shuts regen off; Burdened is fine.
 
 High-level spells cost serious power. Plan your casting and carry
 backup wands and scrolls: a Wizard out of Pw is just a person in a
@@ -7567,8 +7697,7 @@ capacity, Dex for hit chance, Con for HP per level, Wis for prayer
 success and Pw regeneration. Drifting one of them up over the
 course of a run is a small but real upgrade. Drifting one down
 because you've spent five hundred turns Satiated and Fumbling is a
-small but real loss. The mechanic rewards habits more than single
-actions.
+small but real loss. Your habits matter more than single actions.
 
 ---
 
@@ -7658,7 +7787,7 @@ Skills your role starts at Basic come **pre-credited with 20
 practice uses**, so you're already a quarter of the way to Skilled
 before the first turn.
 
-When you've earned enough practice, the game says **"You feel more
+When you've earned enough practice you see **"You feel more
 confident in your skills."** That's your cue to type `#enhance`.
 If more advancements remain after you pick one, you'll see **"You
 feel you could be more dangerous!"** Keep going.
@@ -7947,7 +8076,7 @@ of your survival.
 - strategy aligned with NetHackWiki Wish, Gray dragon scale mail, Speed boots, Magic lamp: GDSM/SDSM as top wishes, speed boots and gauntlets of power as standard follow-ups, bare wishes risk cursed/random spe (https://nethackwiki.com/wiki/Wish, https://nethackwiki.com/wiki/Gray_dragon_scale_mail, https://nethackwiki.com/wiki/Speed_boots, https://nethackwiki.com/wiki/Magic_lamp)
 -->
 
-When the game asks "For what do you wish?", be specific. This is
+When the prompt asks "For what do you wish?", be specific. This is
 not the time for ambiguity:
 
 - "blessed greased fixed +3 gray dragon scale mail" is the
@@ -8419,7 +8548,7 @@ The first level of Gehennom, immediately below the Castle, is
 the **Valley of the Dead**. The arrival message reads *"You
 arrive at the Valley of the Dead..."* and the dungeon overview
 marks the level for the rest of the game. The map is a wide
-hand-designed level with three irregular graveyards scattered
+irregular level with three graveyards scattered
 across it and a permanent **shrine to Moloch** in the upper-left
 corner. The shrine sits on an unaligned high altar; do not pray
 here. The walls are non-diggable everywhere, so no shortcuts,
@@ -9032,9 +9161,9 @@ at a time, you may find they become reflexive.
 
 #### Command counts
 
-Type a number before any command and the game repeats it that
-many times: `10s` searches ten times, `20.` waits twenty turns,
-`5h` walks west five times. The sequence interrupts automatically
+Type a number before any command to repeat it that many times:
+`10s` searches ten times, `20.` waits twenty turns, `5h` walks
+west five times. The sequence interrupts automatically
 as soon as anything interesting happens (a monster appears
 adjacent, your HP changes, a `--More--` prompt fires, the search
 turns up something. Press ESC to cancel early.
@@ -10089,7 +10218,7 @@ other, on [Elbereth](#elbereth) to keep them at bay, and on creative use of
 the dungeon environment.
 
 Pacifist ascensions are possible but require deep knowledge of the
-game's mechanics. The canonical late-game plan is a
+dungeon's rules. The canonical late-game plan is a
 **figurine of an Archon** (wished, broken, then re-tamed if it
 turns hostile) as your champion fighter, the spell of *charm
 monster* for crowd pacification, and a ring of conflict for fights
@@ -10281,8 +10410,8 @@ Pauper implicitly sets nudist. It is a permanent conduct you never
 lose: it does not forbid acquiring or spending gold later, just
 starting empty.
 
-To keep the start from being impossible, the game compensates:
-you get two unspent weapon-skill slots and your role knows one
+To keep the start from being impossible, you get a few
+compensations: two unspent weapon-skill slots, and your role knows one
 signature spell or item. Wizard knows force bolt; Healer knows
 healing; Cleric, Knight, and Monk all know protection (Cleric
 also knows water); Archeologist knows touchstone; Cave Dweller
@@ -10416,7 +10545,7 @@ sale:
 
 1. **Shopkeeper runs short of gold while paying you.** When you sell
    an item, the shopkeeper pays in gold by default. If they don't
-   have enough gold to cover the offer, the game prompts:
+   have enough gold to cover the offer, the prompt reads:
    "Shopkeeper cannot pay you at present. Will you accept *N*
    zorkmids in credit for that?" Answering yes converts the
    shortfall (or the whole price, if they have zero gold) into
@@ -10663,6 +10792,8 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 - silver damage bonus is rolled in mhitm/hmon, +1d20 vs hates_silver targets for silver weapons (uhitm.c:1376-1377)
 -->
 
+Throw or stab. Daggers stack and rarely break, and Rogues get a
+multishot bonus on thrown daggers (up to four per turn at Expert).
 
 ::: dense-table
 
@@ -10685,6 +10816,9 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 -->
 #### Knife
 
+Mostly melee. Knives stack and can be thrown, but no role gets a
+thrown-knife multishot bonus.
+
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
@@ -10706,6 +10840,9 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 -->
 #### Short sword
 
+One-handed melee. Wakizashi and short sword are the same weapon
+under different role names.
+
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
@@ -10726,6 +10863,9 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 - inline effects deferred to Artifacts chapter rather than duplicated
 -->
 
+One-handed melee. The silver saber's artifact forms (Grayswandir,
+Werebane) are some of the strongest one-handers in the game.
+
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
@@ -10742,6 +10882,8 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 - runesword and broadsword share P_BROAD_SWORD skill and 1d4+1d4 / 1d6+1 dice, hence the confusion
 - artifact details kept in the Artifacts chapter, not duplicated here
 -->
+
+One-handed melee.
 
 ::: dense-table
 
@@ -10765,6 +10907,9 @@ Damage is shown as **vs small / vs large**, the dice rolled before enchantment a
 - two-handed sword has no dedicated artifact (no TWO_HANDED_SWORD entries in artilist.h)
 -->
 
+One-handed melee. The Lawful long sword carries the Excalibur
+fountain-dip path, the highest single-weapon return in the early
+game.
 
 ::: dense-table
 
@@ -10809,6 +10954,9 @@ bardiche, and any other bimanual weapon.
 - Cleaver is the BATTLE_AXE artifact (artilist.h:114-116)
 -->
 
+Melee. The regular axe is one-handed; the battle-axe is
+two-handed (gets the 3/2 Strength damage bonus).
+
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
@@ -10828,6 +10976,9 @@ bardiche, and any other bimanual weapon.
 -->
 #### Pick-axe
 
+Melee weapon and digging tool. `#apply` to dig in any direction.
+The mattock does the same and is two-handed.
+
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
@@ -10845,6 +10996,9 @@ bardiche, and any other bimanual weapon.
 - club is a Caveman starter
 - aklys returns when thrown only if wielded (W_WEP), with ~1% misfire (dothrow.c:30-34, 1710-1759)
 -->
+
+Blunt one-handed melee. The aklys is tethered: thrown while
+wielded as your primary, it returns to your hand.
 
 ::: dense-table
 
@@ -10866,6 +11020,8 @@ bardiche, and any other bimanual weapon.
 - Mjollnir is a war hammer, NOT a mace (artilist.h:109 `A("Mjollnir", WAR_HAMMER, ...)`)
 -->
 
+One-handed blunt melee.
+
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
@@ -10883,6 +11039,7 @@ bardiche, and any other bimanual weapon.
 - Trollsbane IS a MORNING_STAR artifact: regenerates while wielded, +d5 vs trolls (artilist.h:182-184)
 -->
 
+One-handed blunt melee.
 
 ::: dense-table
 
@@ -10901,6 +11058,9 @@ bardiche, and any other bimanual weapon.
 - no flail artifact
 -->
 
+One-handed blunt melee, plus the grappling hook as a utility tool
+that trains the same skill.
+
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
@@ -10917,6 +11077,9 @@ bardiche, and any other bimanual weapon.
 - Mjollnir can be gifted to ANY Valkyrie, not just Neutral: hack_artifacts fixes alignment to player's initalign (artifact.c:92-95)
 - aklys uses P_CLUB and is correctly placed elsewhere
 -->
+
+One-handed blunt melee. Mjollnir, the Valkyrie artifact war
+hammer, returns when thrown.
 
 ::: dense-table
 
@@ -10935,6 +11098,9 @@ bardiche, and any other bimanual weapon.
 - Expert caps: Wizard, Priest, Healer, Caveman (u_init.c:314,334,396,555 P_QUARTERSTAFF=P_EXPERT).
 - No Knight or Rogue entry: P_QUARTERSTAFF absent from Skill_K and Skill_R (u_init.c:346-413).
 -->
+
+Two-handed melee. Gets the 3/2 Strength damage bonus despite the
+modest base dice.
 
 ::: dense-table
 
@@ -11020,6 +11186,8 @@ kebab bonus.
 - trident's signature bonus: +4 to-hit vs swimmers in water, +2 vs eels and snakes (weapon.c:170-176 hitval, not dmgval)
 -->
 
+One-handed melee, separate skill from spears. The signature
+bonus comes out when you're fighting in water.
 
 ::: dense-table
 
@@ -11037,6 +11205,10 @@ kebab bonus.
 - shatter chance 1/250 per successful joust (uhitm.c:2123-2125, 1559)
 -->
 #### Lance
+
+Melee, but built for mounted combat. Charging into a target on
+horseback triggers a joust (heavy extra damage); on foot the
+lance is unremarkable.
 
 ::: dense-table
 
@@ -11057,6 +11229,9 @@ kebab bonus.
 -->
 #### Whip
 
+Light one-handed melee plus a utility tool. `#apply` the bullwhip
+to disarm an adjacent monster or yank yourself out of a pit.
+
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
@@ -11074,6 +11249,10 @@ kebab bonus.
 - yumi prob=0: Samurai-only, never randomly spawns (objects.h:401-402).
 -->
 #### Bow
+
+Two-handed launcher. Wield a bow and fire arrows from your quiver
+with `f`. Expert wielders multishot; Ranger and Samurai are the
+specialists. Cancels shield and two-weapon while wielded.
 
 ::: dense-table
 
@@ -11100,6 +11279,9 @@ kebab bonus.
 - Valkyries cap at Unskilled, NOT Skilled: Skill_V has no P_CROSSBOW entry (u_init.c:525-547)
 -->
 
+Two-handed launcher. Hits harder per shot than the bow but
+reloads more slowly, and full multishot needs Str 18 (Str 16 for
+gnomes).
 
 ::: dense-table
 
@@ -11119,6 +11301,9 @@ kebab bonus.
 - Caveman starts with one sling
 -->
 
+One-handed launcher. Ammo is whatever stones or gems you find on
+the floor (or carry), so cost of fire is essentially nil.
+
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
@@ -11135,6 +11320,9 @@ kebab bonus.
 - Tourist starts with 21-40 darts via trquan() = 21+rn2(20), NOT ~25-60 (u_init.c:150-151)
 -->
 
+Throw-only. Stack big, weigh almost nothing, and can be coated
+with the poison from a potion of sickness.
+
 ::: dense-table
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
@@ -11150,6 +11338,8 @@ kebab bonus.
 - is_poisonable (obj.h:264-268)
 - Samurai trains to Expert (u_init.c:481)
 -->
+
+Throw-only. Samurai get +1 multishot on shuriken.
 
 ::: dense-table
 
@@ -11168,6 +11358,9 @@ kebab bonus.
 - enchanted boomerang hits (spe+1) times
 - useless underwater
 -->
+
+Throw-only. Curves along an arc and returns to you if the path
+stays clear; catching the return needs a Dex check.
 
 ::: dense-table
 
@@ -12000,7 +12193,7 @@ All trappers and lurkers hide and follow you up and down stairs.
 
 There are two equine `u`-class creatures. **Horses** (pony, horse, warhorse) spawn hostile in the wild but can be tamed, saddled, and ridden; the Knight starts on a saddled pony.
 
-**Unicorns** (white, gray, black for Lawful, Neutral, Chaotic) are powerful kickers, peaceful when your alignment matches theirs and hostile otherwise. Killing a co-aligned unicorn is a −5 Luck penalty (the game tells you "You feel guilty..."). Killing a cross-aligned one has no Luck consequence either way. If you don't want the fight, throw any gem (even worthless glass) to pacify a hostile unicorn at no cost; throwing real gems also adjusts your Luck (see [Luck and Fortune](#luck-and-fortune)). A killed unicorn drops its horn.
+**Unicorns** (white, gray, black for Lawful, Neutral, Chaotic) are powerful kickers, peaceful when your alignment matches theirs and hostile otherwise. Killing a co-aligned unicorn is a −5 Luck penalty (you see "You feel guilty..."). Killing a cross-aligned one has no Luck consequence either way. If you don't want the fight, throw any gem (even worthless glass) to pacify a hostile unicorn at no cost; throwing real gems also adjusts your Luck (see [Luck and Fortune](#luck-and-fortune)). A killed unicorn drops its horn.
 
 ::: dense-table
 
@@ -13615,7 +13808,7 @@ Finger: \hyperref[engravings]{in dust, fragile but instant, p.~\pageref*{engravi
 Fire: \hyperref[dangerous-traps]{trap, easy to underestimate, burns inventory, p.~\pageref*{dangerous-traps}}; \hyperref[useful-corpse-effects]{ant corpse, fire resistance, giant corpse, fire + Strength, p.~\pageref*{useful-corpse-effects}}; \hyperref[wishable-random-artifacts]{Brand, fire + firestorm invoke, p.~\pageref*{wishable-random-artifacts}}\par
 First: \hyperref[your-first-descent]{descent, welcome to the dungeon, p.~\pageref*{your-first-descent}}; \hyperref[fighting-smart]{swing wakes the room, p.~\pageref*{fighting-smart}}\par
 \hyperref[alignment]{First-game recommendation, p.~\pageref*{alignment}}\par
-\hyperref[gray-stones-four-stones-one-correct-answer]{Flint, useless ammunition, p.~\pageref*{gray-stones-four-stones-one-correct-answer}}\par
+\hyperref[gray-stones-four-stones-one-lucky]{Flint, useless ammunition, p.~\pageref*{gray-stones-four-stones-one-lucky}}\par
 Floating: \hyperref[dungeon-hazards-and-how-to-survive-them]{eye, do not hit, p.~\pageref*{dungeon-hazards-and-how-to-survive-them}}; \hyperref[eyes-and-spheres-e]{eye, never melee, eye corpse, telepathy, p.~\pageref*{eyes-and-spheres-e}}\par
 \hyperref[seduction]{Foocubus, can strip cursed armor, p.~\pageref*{seduction}}\par
 Food: \hyperref[how-hunger-works]{running out of, p.~\pageref*{how-hunger-works}}; \hyperref[what-to-eat]{rations, weight 20, p.~\pageref*{what-to-eat}}; \hyperref[the-food-conducts]{conducts, the hierarchy, p.~\pageref*{the-food-conducts}}\par
@@ -13658,7 +13851,7 @@ Gnomish: \hyperref[gnomes-g]{wizard, sleep spell danger, p.~\pageref*{gnomes-g}}
 \hyperref[golems]{Gold golem, walking treasure pile, p.~\pageref*{golems}}\par
 \hyperref[a-note-on-dragons]{Gray dragon scale mail, magic resistance, p.~\pageref*{a-note-on-dragons}}\par
 \hyperref[a-note-on-puddings]{Gray ooze, rusts armor, p.~\pageref*{a-note-on-puddings}}\par
-\hyperref[gray-stones-four-stones-one-correct-answer]{Gray stones, four stones one answer, p.~\pageref*{gray-stones-four-stones-one-correct-answer}}\par
+\hyperref[gray-stones-four-stones-one-lucky]{Gray stones, four stones one answer, p.~\pageref*{gray-stones-four-stones-one-lucky}}\par
 \hyperref[wishable-random-artifacts]{Grayswandir (Lawful silver saber), half phys, p.~\pageref*{wishable-random-artifacts}}\par
 \hyperref[erosion-and-proofing]{Grease, applied to armor, p.~\pageref*{erosion-and-proofing}}\par
 \hyperref[a-note-on-dragons]{Green dragon scale mail, poison + sickness resistance, p.~\pageref*{a-note-on-dragons}}\par
@@ -13752,14 +13945,14 @@ Levitation: \hyperref[drowning]{doesn't help vs eels, p.~\pageref*{drowning}}; \
 Lichen corpse, never rots, pp.~\hyperref[the-golden-rules-of-early-survival]{\pageref*{the-golden-rules-of-early-survival}}, \hyperref[fungi-and-molds-f]{\pageref*{fungi-and-molds-f}}\par
 Light: \hyperref[room-types]{source room, free lit lamp, p.~\pageref*{room-types}}; \hyperref[light-sources]{sources, candles and oil lamps, p.~\pageref*{light-sources}}\par
 Lizard: \hyperref[the-golden-rules-of-early-survival]{corpse, carry one, p.~\pageref*{the-golden-rules-of-early-survival}}; \hyperref[lizards]{corpse, cures stoning, p.~\pageref*{lizards}}\par
-Loadstone: \hyperref[gray-stones-four-stones-one-correct-answer]{cursed and refuses to drop, the kick test, the \#tip escape, p.~\pageref*{gray-stones-four-stones-one-correct-answer}}\par
+Loadstone: \hyperref[gray-stones-four-stones-one-lucky]{cursed and refuses to drop, the kick test, the \#tip escape, p.~\pageref*{gray-stones-four-stones-one-lucky}}\par
 \hyperref[credit-and-debt]{Loan, lent gold from shopkeeper, p.~\pageref*{credit-and-debt}}\par
 \hyperref[unlocking-tools]{Lock pick, respectable, p.~\pageref*{unlocking-tools}}\par
 \hyperref[worms-w]{Long worm, tail segments, p.~\pageref*{worms-w}}\par
 \hyperref[quest-artifacts]{Longbow of Diana (Ranger), conjure arrows invoke, p.~\pageref*{quest-artifacts}}\par
 \hyperref[giant-humanoids-h]{Lord Surtur, Valkyrie quest nemesis, p.~\pageref*{giant-humanoids-h}}\par
 Luck: \hyperref[gaining-and-losing-luck]{secretly ruining yours, p.~\pageref*{gaining-and-losing-luck}}; \hyperref[how-luck-works]{the hidden number, timeout, 600 turns toward 0, p.~\pageref*{how-luck-works}}\par
-Luckstone: \hyperref[gray-stones-four-stones-one-correct-answer]{preserves luck, p.~\pageref*{gray-stones-four-stones-one-correct-answer}}; \hyperref[how-luck-works]{freezes the drift, p.~\pageref*{how-luck-works}}\par
+Luckstone: \hyperref[gray-stones-four-stones-one-lucky]{preserves luck, p.~\pageref*{gray-stones-four-stones-one-lucky}}; \hyperref[how-luck-works]{freezes the drift, p.~\pageref*{how-luck-works}}\par
 Lurker: \hyperref[engulfment]{above, looking up too late, above, ceiling drop, p.~\pageref*{engulfment}}\par
 
 \par\smallskip{\normalsize\bfseries M}\par\smallskip
@@ -14023,7 +14216,7 @@ Tin: \hyperref[what-to-eat]{of spinach, +1 Str, p.~\pageref*{what-to-eat}}; \hyp
 \hyperref[giant-humanoids-h]{Titan, spell-casting pet target, p.~\pageref*{giant-humanoids-h}}\par
 \hyperref[to-hit-calculation]{To-hit roll, the d20 of fate, p.~\pageref*{to-hit-calculation}}\par
 \hyperref[things-that-will-kill-you]{Top ten killers, the list, p.~\pageref*{things-that-will-kill-you}}\par
-Touchstone: \hyperref[gray-stones-four-stones-one-correct-answer]{real gem on rub, p.~\pageref*{gray-stones-four-stones-one-correct-answer}}; \hyperref[gem-identification-through-selling]{blessed names gems on rub, p.~\pageref*{gem-identification-through-selling}}\par
+Touchstone: \hyperref[gray-stones-four-stones-one-lucky]{real gem on rub, p.~\pageref*{gray-stones-four-stones-one-lucky}}; \hyperref[gem-identification-through-selling]{blessed names gems on rub, p.~\pageref*{gem-identification-through-selling}}\par
 Tourist: \hyperref[the-roles]{hardest standard role, camera-flash plan, magic mapping scrolls at start, p.~\pageref*{the-roles}}\par
 \hyperref[other-notable-tools]{Towel, cream pie and blindfold, p.~\pageref*{other-notable-tools}}\par
 \hyperref[room-types]{Trap room, recognize and retreat, p.~\pageref*{room-types}}\par

@@ -200,9 +200,13 @@ def main():
     # The other diagrams are vector primitives (no monospace tracking required);
     # rsvg-convert handles them fine.
     flow_pdf, flow_w, flow_h = prepare("flowchart", HERE / "flowchart.svg")
-    d0_pdf, d0_w, d0_h = prepare("dmap0", HERE / "dmap-0-dungeons-of-doom-map.svg")
-    d1_pdf, d1_w, d1_h = prepare("dmap1", HERE / "dmap-1-gehennom-map.svg")
-    d2_pdf, d2_w, d2_h = prepare("dmap2", HERE / "dmap-2-elemental-planes-and-ascension.svg")
+    # Inside leaf uses the monochrome variants (no inverse video, all
+    # black text on white) since coil-bound printers handle pure BW
+    # better than gold-on-dark-gray and white-on-color. Generate with
+    #   python3 dungeon_map.py --bw-pdfs cover
+    d0_pdf, d0_w, d0_h = prepare("dmap0", HERE / "dmap-dod-bw.svg")
+    d1_pdf, d1_w, d1_h = prepare("dmap1", HERE / "dmap-geh-bw.svg")
+    d2_pdf, d2_w, d2_h = prepare("dmap2", HERE / "dmap-planes-bw.svg")
 
     # Chrome embeds the SVG on a US-letter page with margins. Crop to viewBox
     # AND trim the top message line ("You hear...") and bottom status line
