@@ -360,15 +360,18 @@ Perfectly serviceable.
 
 **Dwarf.** Sturdy fighters with the best Dex and Con caps and
 matching human Strength. Infravision from level 1, the best HP
-gain per level of any race, and Mines residents are mostly
-peaceful to you. Available for: Archeologist, Cave Dweller,
-Valkyrie.
+gain per level of any race, pick-axe digging at twice the normal
+speed, and a feel for buried treasure under your feet. Mines
+residents are mostly peaceful to you. Available for:
+Archeologist, Cave Dweller, Valkyrie.
 
 **Elf.** Infravision plus [sleep resistance](#damage-resistances)
 at XL 4. Fragile HP but with the best Int and Wis caps and the
-best Pw growth per level of any race. Elf Priests and Wizards
-get a free musical instrument. Available for: Priest, Ranger,
-Wizard.
+best Pw growth per level of any race, plus an innate bow bonus
+(+1 to-hit with any bow, +2 with an elven bow) that applies even
+to roles that don't normally pick one up. Elf Priests and
+Wizards get a free musical instrument. Available for: Priest,
+Ranger, Wizard.
 
 **Gnome.** Infravision from level 1, slightly higher Int cap than
 a human, and most gnomes and dwarves in the Mines are peaceful to
