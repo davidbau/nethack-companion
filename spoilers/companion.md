@@ -1,7 +1,7 @@
 # A Traveler's Companion to the <span class="nobr">Mazes of Menace</span>
 
 ```{=html}
-<p style="text-align: center; font-style: italic; margin: 1.5em 0;">Do not read this guide aloud. The dungeon is listening.</p>
+<p style="text-align: center; font-style: italic; margin: 1.5em 0;">Most of what follows is true.</p>
 ```
 
 ```{=latex}
@@ -1165,7 +1165,7 @@ and you need a co-aligned one for sacrifice and holy water. See
 
 #### Thrones `\`
 
-Sitting on a throne is the purest gamble in NetHack. The list of
+Sitting on a throne is the purest gamble in the Mazes. The list of
 possible outcomes reads like a wish list shuffled with a hit list:
 
 - A wish (if your luck is positive)
@@ -2087,7 +2087,7 @@ cheaper than being trapped on Dlvl 1 forever.
 
 **The wisdom of patience:**
 
-Secret doors are NetHack's way of teaching you that brute force
+Secret doors are the Mazes' way of teaching you that brute force
 doesn't solve every problem. Sometimes you need brute force applied
 methodically to every wall section in sequence. The downstairs you
 seek is behind one of these walls. Finding it is a matter of
@@ -2361,7 +2361,7 @@ outside the bars.
 - fountain "bubbling water" or "water falling on coins" (sounds.c:214-218)
 -->
 
-Much of the most important information in NetHack comes to you as
+Much of the most important information in the Mazes comes to you as
 cryptic feelings and sounds. They sound like atmosphere, but most
 of them are specific signals. If you don't know what they mean,
 you'll miss the cues entirely. They are worth memorizing.
@@ -2709,7 +2709,7 @@ thirty unbroken +2 arrows has the best damage budget in the game.
 #### Fighting Smart
 
 The dungeon rewards cowardice, cunning, and property damage. The
-reliable way to win a NetHack fight is to make the fight unfair
+reliable way to win a fight in the Mazes is to make the fight unfair
 before it starts, and that means thinking about where you stand,
 when you swing, and what happens if it goes wrong. Here are the
 time-tested tactics that keep adventurers breathing.
@@ -3176,7 +3176,7 @@ item from your pack, and the nymph then **teleports away** to a
 random spot on the same level. Your bag of holding, your amulet
 of reflection, a freshly-wished cloak of magic resistance: gone,
 across the map, often into a room you haven't explored. No
-NetHack horror story is more universal than "a nymph walked off
+dungeon horror story is more universal than "a nymph walked off
 with my bag of holding."
 
 **The second claw is seduction.** Nymphs get two attacks per
@@ -5170,8 +5170,8 @@ loadstone in any container you carry (a 2z sack is enough), then
 apply `#tip` to the container. The contents spill onto your
 square, loadstone included, because `#tip` extracts items
 directly and bypasses the cursed-drop check. Step off and walk
-away. The trick has worked through every NetHack edition and the
-5.0 source still leaves the asymmetry in place.
+away. The trick has worked through every edition of the dungeon,
+including 5.0.
 
 **The price test.** If you can reach a shop: a $60 gray stone is a
 luckstone. A $45 gray stone is a touchstone. A $1 gray stone is
@@ -5532,7 +5532,7 @@ one until you can bless it.
 **Speed.** One non-cursed quaff and you're permanently faster for
 the rest of the game; blessing only stretches the temporary timer
 that overlays the intrinsic. Speed is arguably the single most
-important buff in NetHack; the difference between moving at normal
+important buff in the Mazes; the difference between moving at normal
 speed and fast speed is the difference between trading blows and
 hitting twice before they swing once. In 5.0, the wand of speed
 monster no longer grants permanent speed when self-zapped, only a
@@ -7067,8 +7067,8 @@ Archeologist's starter: a six-foot braided leather lash with a
 small popper at the tip. d2/d1, weak in combat, but `a` the
 bullwhip and you can disarm an adjacent monster, or yank
 yourself out of a pit (the popper anchors on nearby furniture, a
-boulder, or a large monster). The **rubber hose** is NetHack's
-joke weapon; it never spawns randomly.
+boulder, or a large monster). The **rubber hose** is the
+dungeon's joke weapon; it never spawns randomly.
 
 The **grappling hook** is the three-pronged iron hook on a chain
 that a soldier or sailor would use to scale walls. In the
@@ -8104,7 +8104,7 @@ random numbers, which in the Mazes is the closest thing to love.
 
 ### Exercising Your Stats
 
-Behind the scenes, NetHack keeps a hidden exercise counter for four
+Behind the scenes, the dungeon keeps a hidden exercise counter for four
 of your six stats: **Str**, **Dex**, **Con**, and **Wis**. (Int and
 Cha don't exercise; they only change through magical sources like
 gain-ability potions.) Living a way that *trains* a stat slowly
@@ -9602,7 +9602,7 @@ book closes here. Congratulations.
 - travel command (`_`) enters background-symbol-target mode (getpos.c:194-218). Typing a background symbol after `_` jumps the cursor to the next instance; `.` confirms and walks. So the patterns are `_<.` (upstair), `_>.` (downstair), `__.` (altar). The book originally showed `__` without the trailing `.`, which is inconsistent with the other two.
 -->
 
-The basic keys get you through every situation in NetHack. The
+The basic keys get you through every situation in the Mazes. The
 commands below get you through them faster. Once you've spent a
 few thousand turns hammering `s` and walking corridors one square
 at a time, you may find they become reflexive.
