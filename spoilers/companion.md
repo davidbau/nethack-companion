@@ -328,8 +328,8 @@ of alignment, and is what you'll wield by the late game.
 resistance** (an endgame-quality item from turn one), a wand, two
 rings, three potions, three scrolls, the force-bolt spell plus a
 random spellbook, and a high-enchantment magic marker. Physical
-combat is terrible, so spells are the answer: fragile early,
-overwhelming late. Advancing a spell-school skill (new in 5.0)
+combat is a weak point; magic is the Wizard's calling:
+fragile early, overwhelming late. Advancing a spell-school skill
 also identifies spellbooks of that school by appearance, so you
 get free book-ID just by casting (see
 [Spellcasting](#spellcasting)). Two warnings: Wizards start with
@@ -359,14 +359,16 @@ nobody in the dungeon singles you out for being one.
 Perfectly serviceable.
 
 **Dwarf.** Sturdy fighters with the best Dex and Con caps and
-matching human Strength. Infravision (the ability to see
-warm-blooded creatures in the dark) from level 1. Available
-for: Archeologist, Cave Dweller, Valkyrie.
+matching human Strength. Infravision from level 1, the best HP
+gain per level of any race, and Mines residents are mostly
+peaceful to you. Available for: Archeologist, Cave Dweller,
+Valkyrie.
 
-**Elf.** Infravision plus [sleep resistance](#damage-resistances) at XL 4. Fragile compared
-to humans but with the best Int and Wis caps. Elf Priests and
-Wizards get a free musical instrument. Available for: Priest,
-Ranger, Wizard.
+**Elf.** Infravision plus [sleep resistance](#damage-resistances)
+at XL 4. Fragile HP but with the best Int and Wis caps and the
+best Pw growth per level of any race. Elf Priests and Wizards
+get a free musical instrument. Available for: Priest, Ranger,
+Wizard.
 
 **Gnome.** Infravision from level 1, slightly higher Int cap than
 a human, and most gnomes and dwarves in the Mines are peaceful to
@@ -397,8 +399,9 @@ actions that violate your alignment's code decrease it. Your alignment
 record affects your relationship with your god, which in turn affects
 whether prayer will save you or smite you.
 
-**Lawful** characters should avoid attacking peaceful creatures and
-should never murder. Sacrifice frequently at co-aligned altars.
+**Lawful** characters do best when they leave peacefuls alone and
+keep their hands clean of murder. Sacrifice frequently at
+co-aligned altars.
 Lawful has the advantage of access to Excalibur, a top-tier melee
 weapon obtainable as early as experience level 5.
 
@@ -466,7 +469,7 @@ provide armor class benefits and can protect against specific attacks.
 
 **A ranged attack.** Daggers, darts, or a bow with arrows. Fighting
 from range is almost always safer than melee, and some monsters (like
-floating eyes) should never be fought in melee.
+floating eyes) are best handled at range.
 
 **Supply chests.** Some of the large boxes and chests you find on
 the levels above [the Oracle](#the-oracle) are special supply chests. They are
@@ -1859,8 +1862,8 @@ you'll regret finding them:
 | Rust trap       | Splashes water: rusts iron worn armor, soaks cloak/suit/shirt, douses lit lamps |
 
 Annoying but rarely lethal. The silver lining: arrow and dart traps
-produce free ammunition. Veterans sometimes trigger them deliberately
-to stock up.
+produce free ammunition, and you can trigger them on purpose to
+stock up.
 
 #### Movement Traps
 <!-- audit
@@ -2458,7 +2461,7 @@ that matters in a sword fight:
 
 - Your experience level (higher means you've seen things)
 - Your weapon's enchantment (a +7 [Excalibur](#excalibur-artifact) hits *noticeably* better)
-- Your Luck (the universe literally takes sides; the to-hit contribution caps around ±5 even though Luck itself ranges further)
+- Your Luck (the universe takes sides; the to-hit contribution caps around ±5 even though Luck itself ranges further)
 - Your Strength and Dexterity bonuses (muscles plus agility, both matter)
 - The monster's AC (the lower their AC, the harder they are to tag)
 
@@ -2478,7 +2481,7 @@ blades for kobolds, two-handers for ogres. Added to base:
 - Weapon skill bonus (depends on skill level)
 - Special bonuses (silver damage, artifact bonuses, etc.)
 - In 5.0, **two-handed weapons** get a 50% bonus to the strength
-  damage component, a deliberate payoff for giving up your shield
+  damage component, which makes giving up the shield slot worthwhile
 
 This narrows the gap between two-handed builds and dual-wielding
 considerably. A Barbarian with a two-handed sword and respectable
@@ -2678,7 +2681,7 @@ for `f` more than they probably do. The toolkit:
 shoot arrows; crossbows shoot bolts (harder per shot but slower,
 and they need Str 18 for full multishot, or Str 16 for gnomes);
 slings shoot rocks or gems. Polearms strike at distance 2 with
-`#apply` instead. You can also throw daggers, darts, shuriken,
+`a` (apply) instead. You can also throw daggers, darts, shuriken,
 javelins, and boomerangs without a launcher.
 
 **Lining up the shot.** Projectiles travel in a straight line and
@@ -2747,6 +2750,15 @@ door: approach and leave orthogonally. **Closing a door**
 (`c` + direction) blocks pets and any monster lacking the
 intelligence or hands to open it; handy when you want to slip
 away from your pet, or when you need a turn or two of quiet.
+
+**Jump when you have a source.** With the jumping spell,
+jumping boots (use `a`), or a Knight's innate jump, `#jump`
+crosses several squares in one turn: useful for escaping a
+faster monster, slipping into a corridor or onto an Elbereth
+square without walking through attacks of opportunity, skipping
+a known non-fire/non-portal/non-Sokoban trap, un-satiating
+yourself to eat a corpse for an intrinsic, or hopping across
+Medusa's island gap.
 
 ##### During the fight
 
@@ -5354,8 +5366,8 @@ You don't need to hoard them.
 weight, the best ratio in the game. Elven characters find these
 more often.
 
-**Tripe rations** are terrible for you (your character retches) but
-pets love them. Save tripe for your pet.
+**Tripe rations** aren't pleasant eating (your character retches)
+but pets love them. Save tripe for your pet.
 
 **Tins** are preserved food that never spoils, but they are also
 a *trap if you're sloppy about where you open them*. Opening a
@@ -5718,7 +5730,7 @@ second recharge, so recharge it exactly once and no more.
 []{#scroll-genocide}
 **Genocide.** The nuclear option. Uncursed eliminates a single
 species; blessed wipes an entire monster class from the game
-forever. Liches (`L`) are the canonical blessed target.
+forever. Liches (`L`) are the usual blessed target.
 **Never blessed-genocide a class that contains your own race
 or role.** Dwarves are `h`, Gnomes are `G`, Elves and Humans
 are `@`, Orcs are `o`; a blessed scroll targeting one of those
@@ -6133,7 +6145,7 @@ auto-curse means the hard way.
 of terrible things" category. In 5.0, wearing it roughly
 doubles the effective dungeon level for purposes of monster generation,
 so creatures well above your current depth start appearing. This is
-obviously catastrophic if you forget you're wearing it. But for a
+catastrophic if you forget you're wearing it. But for a
 chaotic player who needs high-difficulty sacrifice fodder for the next
 artifact gift, deliberately wearing the ring to force harder spawns
 (then removing it) is a calculated risk with an actual payoff. The key
@@ -6533,48 +6545,247 @@ matters too: a cloak of displacement carries a strong intrinsic
 that a plain cloak doesn't. See
 [A Practical Identification Strategy](#a-practical-identification-strategy).
 
-**Slot tradeoffs.** Most armor adds AC, but some pieces have side
-effects worth weighing before you commit to a slot.
+##### Body suits
 
-- **Spellcasting penalty.** Body suits, helmets, and most shields
-  raise your spell failure rate. The shirt slot is free, and the
-  **small shield** is the only shield with no penalty. Wizards,
-  Priests, and Healers feel this hardest; a Wizard in plate mail
-  can fail trivial spells.
-- **Monk armor restrictions.** A Monk wearing a body suit loses
-  Martial Arts effectiveness (−20 to-hit); a shield kills it
-  entirely. The Monk-friendly slots are cloak, helm, gloves,
-  boots, and shirt.
-- **Two-weapon excludes shield.** Fighting with a weapon in each
-  hand leaves the shield slot empty. Pick one or the other; see
-  [Two-Weapon Combat](#two-weapon-combat).
-- **Encumbrance.** Heavier metal suits push Knights, Samurai, and
-  Valkyries toward Burdened quickly. A bag of holding and a
-  decent Strength help, but check the [Armor Tables](#armor-tables)
-  for weight before committing.
+Body armor is the heaviest slot you wear and the biggest single
+source of AC. Monks should keep this slot empty until they find
+dragon scale mail; any other body suit costs them −20 to-hit on
+Martial Arts.
 
-**Key armor slots and their picks:**
+The lowest rung of body armor is mostly leather. The **leather
+jacket** (1 AC, 30 zm) is the half-suit version, light enough to
+throw on while you sort through bags but not really a primary
+suit. **Leather armor** (2 AC, 150 zm) is plain heavy leather,
+the Cave Dweller's starter and a Wizard's mid-game default if
+mithril hasn't appeared yet. Both are penalty-free for casters
+and neither rusts. **Studded leather armor** (3 AC, 200 zm) is
+what the name says, leather reinforced with metal studs, still
+casting-safe.
 
-| Slot   | Primary pick                               | Specialty pick                        |
-| ------ | ------------------------------------------ | ------------------------------------- |
-| [Body](#body-armor-suits)   | Splint mail, banded mail                   | Dragon scale mail (two extrinsics)    |
-| [Cloak](#cloaks)  | Cloak of protection                        | Cloak of magic resistance             |
-| [Helmet](#helmets) | Helm of caution (early game)               | Helm of telepathy / brilliance        |
-| [Gloves](#gloves) | Gauntlets of power                         | Gauntlets of dexterity                |
-| [Boots](#boots)  | Speed boots                                | Water walking boots, levitation boots |
-| [Shield](#shields) | Shield of reflection                       | Small shield (for spellcasters)       |
+Iron pieces start small and work up. **Ring mail** sews flat
+iron rings to a backing rather than interlocking them, lighter
+protection than chain at 3 AC for the plain version and 2 AC for
+the orcish one. **Scale mail** (4 AC, 250 zm) sews iron scales
+to a backing the way fish overlap their plates, the Roman lorica
+squamata in look. **Chain mail** (5 AC, 300 zm) is what most
+people picture when they say "armor": thousands of interlocking
+iron rings sewn to a tunic. Orcish chain mail comes in a point
+worse and looks like someone's first attempt.
 
-The **helm of caution** (new in 5.0) grants *warning* in the
-helmet slot: cheap, light, a real edge early. The **cloak of
-displacement** is underrated: monsters swing at your phantom
-image, complementing low AC instead of competing with it.
+**Dwarvish mithril-coat** is the dungeon's gift to small
+spellcasters: 6 AC at only 150 zm, mithril rather than iron, no
+rust. Mithril is still metallic, so a spellcasting penalty
+applies, but it's much smaller than plate's. The **elven
+mithril-coat** is the prettier cousin at one point worse (5 AC)
+for the same weight. A Wizard or Priest who finds either in the
+Mines should take it home.
 
-**Magic armor doubles as intrinsic delivery.** A helm of
-telepathy puts telepathy in your helm slot, gauntlets of power
-give Str 18/00, gray dragon scale mail grants magic resistance,
-speed boots make you very fast. Armor planning is two problems
-at once: filling slots for AC, and choosing which intrinsics you
-carry on your body versus in your inventory.
+The heavy workhorses are **splint mail** (iron strips riveted to
+a leather backing) and **banded mail** (overlapping horizontal
+iron bands wrapped around a tunic). Both come in at 6 AC, 350 to
+400 zm: only one point of AC behind plate for noticeably less
+weight. For most non-Wizard runs, one of these two is the
+practical body slot until you reach dragon scales.
+
+At the top is **plate mail**, the late-medieval European
+knight's full harness, articulated steel plates strapped over a
+padded gambeson. The heaviest body suit in the dungeon (450 zm)
+and the strongest (7 AC). The bulk pushes Knights and Valkyries
+toward Burdened in a hurry, and the iron raises your
+spellcasting failure rate. Samurai see the same item on screen
+as **tanko**. **Crystal plate mail** is the same shape rendered
+in clear glass: no rust risk, same AC, much rarer. **Bronze
+plate mail** is the older Mediterranean ancestor at one point
+worse (6 AC), copper-class so it corrodes rather than rusts.
+
+For dragon scales and dragon scale mail, see
+[Dragon Scale Mail](#dragon-scale-mail) below.
+
+##### Shirts
+
+Shirts sit *under* your body armor. They give 0 base AC, but
+they never penalize spellcasting and they weigh almost nothing,
+so a +5 enchanted shirt is doing real work even though its base
+AC reads as zero. The two shirts in the dungeon are
+mechanically identical 5-zm cloth tops: the **Hawaiian shirt**
+is the Tourist starter, the **T-shirt** is the plain alternative.
+Both are layered first when donning armor, so getting a shirt on
+once you're already wearing a body suit means a full strip-down
+and re-armor.
+
+##### Cloaks
+
+Cloaks layer over the body suit and contribute modest AC (0 to
++3) plus real magic cancellation and often a defining intrinsic.
+They also hide what suit you wear underneath, which protects you
+from a foocubus that wants your body armor and from a shopkeeper
+quoting a price that fingerprints your suit.
+
+The plain regional cloaks (**orcish cloak**, **dwarvish cloak**,
+**leather cloak**) are all 0-1 AC at 10-15 zm and distinguished
+mostly by who carries them. **Elven cloak** is the standout in
+this group: 1 AC and grants stealth, which is more useful than
+the AC itself.
+
+**Oilskin cloak** is a waxed-canvas sailor's outer layer; in the
+dungeon it gives 1 AC, MC2, and resistance to monster grab
+attacks. **Robe** is exactly what a spellcaster wears: 2 AC,
+MC2, and most importantly it cancels most of the metal-armor
+spellcasting penalty. A Wizard in chain mail and robe casts
+almost as well as in just leather. **Alchemy smock** is the
+chemist's apron: 1 AC, MC1, plus poison resistance, an
+underrated early-game lifeline.
+
+**Mummy wrapping** is what it sounds like, with one important
+quirk: it blocks invisibility while worn. Most heroes who pick
+one up should drop it; 0 AC and MC1 from any other cloak come
+without the invisibility lockout.
+
+The four signature magical cloaks each anchor a defensive
+strategy:
+
+- **Cloak of protection** contributes MC3 on its own, the
+  highest of any single piece, and 3 AC. The late-game cloak
+  slot for any hero who already has magic resistance from
+  another source.
+- **Cloak of magic resistance** is the simplest, lightest source
+  of magic resistance in the dungeon and a fixture of every
+  mid-game kit before dragon scale mail.
+- **Cloak of displacement** makes monsters swing at your phantom
+  image, complementing low AC instead of competing with it.
+- **Cloak of invisibility** grants invisibility, mostly an
+  offensive bonus since monsters miss more often.
+
+##### Helmets
+
+The helm slot covers your head and protects against the
+dungeon's small surprises: rolling-boulder traps, hidden falling
+rocks, ceiling drops from tunnel collapses. Most helmets
+penalize spellcasting because they're metal; Wizards do well in
+cloth caps.
+
+The plain helmets (**orcish helm**, **dwarvish iron helm**,
+**helmet (kabuto)**, **dented pot**) are iron pieces at 1-2 AC
+and 10-40 zm. Serviceable for fighters, dead weight for casters. **Elven leather helm** is the spellcaster's
+compromise: 1 AC at 3 zm, leather-class, no penalty. **Fedora**
+is the Tourist's starting hat and the base item for the
+**Eye of the Aethiopica**, the Priest quest artifact.
+
+**Cornuthaum** is the Wizard's pointy hat: 0 base AC but MC1,
+and grants clairvoyance to a Wizard while blocking clairvoyance
+for everyone else. **Dunce cap** is the cornuthaum's evil twin:
+auto-curses on wear, sets Int and Wis to 6, refuses to come off
+without remove curse. Unidentified cone-shaped hats are guilty
+until altar-tested.
+
+**Helm of brilliance** adds its enchantment value to both Int
+and Wis while worn. A +3 helm gives +3 Int and +3 Wis, a
+spellcaster's mid-game goal. **Helm of caution** (new in 5.0)
+puts the warning intrinsic in the helm slot: nearby monsters
+appear as colored threat markers without your having to see
+them, cheap and light, the best early-game helm pickup in the
+game. **Helm of telepathy** gives telepathy when blind, a quirky
+source that requires actively blinding yourself to use.
+
+**Helm of opposite alignment** flips your alignment while worn
+(and generates cursed 9 times in 10), mostly a trap but
+occasionally useful on purpose: sacrifice on a cross-aligned
+altar, claim the opposite alignment's quest artifact, or pick a
+different altar on the Astral Plane.
+
+##### Gloves
+
+Gloves are the smallest armor slot (1 AC across the board) but
+they do critical defensive work: with gloves on you can pick up
+a **cockatrice corpse** safely and even wield it as a weapon.
+Without gloves the touch petrifies you immediately. (See
+[Petrification](#petrification-stoning).)
+
+**Leather gloves** (Samurai see **yugake**) are the default at
+1 AC and 10 zm, leather-class, no penalty. **Gauntlets of power**
+are the dungeon's strength shortcut: wearing them sets Str to
+25 regardless of what it was, instantly turning a Wizard into a
+passable melee threat. **Gauntlets of dexterity** add their
+enchantment value to Dex. A +3 pair gives +3 Dex on top of any
+natural Dex you've trained.
+
+**Gauntlets of fumbling** are a trap item: they generate cursed
+9 times in 10 and make you fumble constantly. Never wear an
+unidentified pair without altar-testing first. A cursed glove
+plus a cursed wielded weapon is the dungeon's classic deadlock:
+neither comes off without a scroll of remove curse, holy water,
+or prayer.
+
+##### Boots
+
+Boots are the home of movement intrinsics (water walking,
+jumping, levitation, speed), so for most builds the slot is
+chosen for what the boots *do* rather than the AC (1-2) they
+add.
+
+The plain boots come in two sizes and a few weights:
+**low boots** (1 AC) and **high boots** (2 AC) are light
+leather, the everyday default. **Iron shoes** (2 AC) and
+**kicking boots** (1 AC) are heavier iron variants for kickers
+and fighters.
+
+The desirable magical boots each redefine what your character
+can do:
+
+- **Speed boots** grant the very-fast intrinsic, so two of every
+  three turns are free actions. The most-wished-for boots in the
+  game.
+- **Water walking boots** let you walk on water, critical for
+  the Castle drawbridge moat and the upper Plane of Water. Save
+  them for the moment.
+- **Jumping boots** add jumping as an `a` (apply) ability, so you
+  can leap to a nearby square in combat without casting the
+  spell.
+- **Elven boots** grant stealth, the Rogue and Ranger workhorse.
+
+The **trap boots** generate cursed 9 times in 10:
+
+- **Levitation boots** float you constantly and refuse to come
+  off if cursed. A cursed pair worn over a moat is a classic
+  Yet Another Stupid Death.
+- **Fumble boots** make you fumble every other turn, which in
+  melee means dropping your weapon mid-swing.
+
+Always altar-test before donning boots. The consequences of
+getting it wrong here are some of the worst the dungeon serves.
+
+##### Shields
+
+Shields contribute 1-2 AC, block rays you can't see (a wand of
+cold zapped from offscreen, an arrow trap fired from a tile
+away), and interact with everything else in your loadout: they
+exclude two-weapon combat, the large shields exclude two-handed
+weapons, and they impose a spellcasting penalty unless they're a
+**small shield**. Monks can't use a shield at all; wearing one
+zeros Martial Arts.
+
+The plain shields (**small shield**, **elven shield**,
+**orcish shield**, **Uruk-hai shield**, **dwarvish roundshield**)
+range from 1 to 2 AC with no special properties. The
+**small shield** at 1 AC is the spellcaster's only shield
+option, the only shield in the game with no spell failure
+penalty.
+
+**Large shield** and **dwarvish roundshield** are 2 AC but
+heavy (100 zm), and the large shield's two-handed restriction
+is strict: with one carried you can't wield a two-handed sword,
+battle-axe, or polearm.
+
+**Shield of drain resistance** (1 AC, drain resistance) and
+**shield of shock resistance** (1 AC, shock resistance) grant
+their named resistances. Drain resistance has no non-artifact
+source outside this shield, and the shock version is one of the
+most convenient shock resistors in the game. The **shield of reflection** is silver, 2 AC, and
+grants reflection, the property that bounces death rays, cones
+of cold, and breath weapons back at the caster. It "saves" the
+body slot in the canonical ascension kit by providing reflection
+in the shield slot, leaving the body suit free for gray dragon
+scale mail (which gives magic resistance instead).
 
 **Erosion, enchantment, and Protection** each get their own
 section below: armor rusts, burns, or corrodes (see
@@ -6642,35 +6853,285 @@ piece of armor in the game, see the
 
 #### Weapons
 
-Weapon choice depends heavily on your role and skill caps.
+Your weapon picks your combat style for you: how far away you
+strike, whether you can also throw, how fast you swing per turn,
+which artifacts you can ever hold. The sections that follow group
+the classes by how they're used. For per-skill stat tables, see
+[Weapons Tables](#weapons-tables) in the appendix.
 
-| Weapon         | Damage (sm/lg) | Notes                              |
-| -------------- | -------------- | ---------------------------------- |
-| [Long sword](#long-sword)     | d8 / d12       | Lawfuls can dip for Excalibur      |
-| [Katana](#long-sword)         | d10 / d12      | Best base damage for a one-hander  |
-| [Silver saber](#saber)   | d8 / d8        | +d20 vs silver-hating monsters     |
-| [Crysknife](#knife)      | d10 / d10      | Excellent damage, fragile          |
-| [Tsurugi](#two-handed-sword)        | d16 / d8+2d6   | Two-handed, bisects small monsters |
-| [Runesword](#broadsword)      | d4 / d6+d4     | Chaotic weapon                     |
-| [Battle-axe](#axe)     | d8+d4 / d6+2d4 | Two-handed, good damage            |
-| [Rubber hose](#whip)    | d4 / d3        | No, seriously, don't use this      |
+A handful of commands run through everything below: **`w`** wields
+a weapon in your primary hand; **`x`** swaps primary and secondary
+on demand; **`t`** throws any item; **`f`** fires whatever stack
+you've set in your quiver; **`Q`** sets that quiver. Polearms,
+whips, pick-axes, and grappling hooks are also used through
+**`a`** (apply), the same key used for most tools.
 
-**[Excalibur](#excalibur-artifact)** (long sword dipped in a fountain while Lawful) is one
-of the best weapons: +d5 to hit and +d10 damage, level drain resistance,
-automatic searching. For Lawful characters, getting Excalibur early
-is a priority.
+##### One-handed melee swords
 
-**Silver saber** deserves special mention. Many endgame threats
-(demons, undead, werecreatures) are vulnerable to silver. A silver
-saber does an extra d20 damage against them, making it one of the
-best late-game weapons.
+The everyday swords of Knights, Valkyries, Samurai, and most
+fighters. One-handed, leaving the other hand free for a shield
+or an off-hand weapon.
 
-**Your quest artifact** is often your primary weapon or at least
-worth carrying for its properties. Check what your role's artifact
-does.
+**Short sword** (Samurai see **wakizashi**) is a 60-centimeter
+straight blade designed for close-quarters thrusting. d6 small,
+d8 large. The Rogue's starter and the Samurai's off-hand.
 
-For the full damage/weight/cost numbers on every weapon in the
-game, see the [Weapons Tables](#weapons-tables) appendix.
+**Saber and silver saber.** Sabers are nineteenth-century
+European cavalry swords with a curved blade meant for slashing
+from horseback. **Scimitar** is the curved sword of the Arabian
+Nights, the same shape in iron. **Silver saber** is the silver
+version, and its bonus damage against demons, weres, vampires,
+shades, and most imps makes it one of the strongest late-game
+one-handers. The two artifact silver sabers are **Grayswandir**
+(the priest's wishable favorite, double damage on every swing)
+and **Werebane** (extra damage against lycanthropes).
+
+**Broadsword.** A medieval European blade wider and shorter than
+a long sword, hilted with a cross-shaped guard. **Runesword** is
+the broadsword's chaotic cousin; its artifact form
+**Stormbringer** drains levels from enemies and may swing at
+peaceful targets without your asking.
+
+**Long sword.** The dungeon's iconic blade. A long sword dipped
+in a fountain at experience level 5 or higher has a chance to
+come back as **Excalibur**: 1 in 6 for Knights, 1 in 30 for any
+other Lawful. Non-Lawfuls who try the dip get the sword cursed
+instead. Excalibur is the early-game grail: +d5 to-hit, +d10
+damage, level drain resistance, and a free search every step.
+The long-sword class is also home to **katana** (the Samurai's
+curved one-hander with +1 to-hit baked in, slightly larger dice
+than a plain long sword) and a thicket of long-sword artifacts:
+**Frost Brand**, **Fire Brand**, **Giantslayer**, **Vorpal
+Blade**, **Sunsword**, and the katana artifact **Snickersnee**.
+
+Once you commit to a primary one-hander, the classic move is to
+set a backup weapon in your other slot with `w` (primary) plus
+the prompt, then use `x` to swap between them as the situation
+changes. A Ranger wielding a bow keeps a long sword or dagger
+secondary, then `x` to switch into melee when a monster closes.
+
+##### Two-handed melee
+
+Heavier swings at the cost of your shield slot and off-hand. In
+5.0, bimanual weapons get a **3/2 Strength damage bonus** on
+every melee strike (your Strength damage component is multiplied
+by 1.5), which puts two-handed builds back in serious competition
+with one-hand-plus-shield.
+
+**Two-handed sword.** The German zweihander of the late
+sixteenth century, a 1.5-meter steel blade swung with both hands
+by Landsknecht mercenaries. d12 small, d6+2d6 large, at a
+crushing 150 zm weight. No dedicated artifact form. **Tsurugi**
+is the Japanese straight-edged two-hander, much lighter (60 zm)
+but with the highest small-target dice of any weapon in the game
+(d16). The artifact form is the **Tsurugi of Muramasa**, the
+Samurai quest artifact.
+
+**Quarterstaff.** A simple wooden pole, the kind a wandering
+monk or shepherd would carry. Bimanual at d6/d6 and only 40 zm
+weight, the only two-hander with no spellcasting penalty. The
+Wizard's starter and the casting Priest, Healer, and Caveman all
+reach Expert in it.
+
+Certain two-handed weapons live in other sections because their
+combat role is more defining than their grip: **battle-axe** is
+under Axes, **dwarvish mattock** under Pick-axes, polearms
+under Reach, lance under Mounted, and bow and crossbow under
+Ranged.
+
+##### Axes
+
+The axe's blade biases hard toward big targets: extra damage
+dice against anything large. **Axe** is the standard one-handed
+wood-cutting axe, d6 small / d4 large. **Battle-axe** is the
+two-handed long-hafted version with a wider head (often
+double-bitted), d8+d4 small / d6+2d4 large, two-handed (so it
+gets the 3/2 Strength bonus and locks out the shield). The
+Barbarian quest artifact **Cleaver** is a battle-axe.
+
+##### Blunt one-handed
+
+The mace-and-club family: useful against undead (no blood
+spilled, in the cleric flavor sense) and effective against
+heavily armored targets in the historical sense (a club doesn't
+care that you're in plate).
+
+**Club.** A wooden stick with a heavy end. The Caveman's
+starter. d6/d3, light, no special properties.
+
+**Aklys** is an obscure ancient Greek thrown club with a leather
+thong tied to the haft. The thong matters in the dungeon: when
+you wield the aklys as your primary and throw it, the line yanks
+it back to your hand the way a tethered ball returns. d6/d3,
+occasional misfire on the catch.
+
+**Mace.** The medieval European steel mace, a metal-headed club
+with a shaped striking surface. The Priest's starter. The
+Priest's guaranteed first sacrifice gift is **Demonbane**, a
+silver mace with bonus damage against demons plus a banish
+invoke. **Silver mace** is the plain silver version, with bonus
+damage against demons, weres, vampires, shades, and most imps.
+
+**Morning star.** A spiked-ball mace, the brutal foot-soldier's
+weapon of the late Middle Ages. d4+d4 small / d6+1 large, the
+class punches above its weight for a one-hander. The artifact
+**Trollsbane** is a morning star (regenerates while wielded,
+extra damage against trolls).
+
+**Flail.** A weighted ball on a chain attached to a haft (Samurai
+see **nunchaku**, the chain-linked Okinawan sticks). d6+1 small /
+d4+d4 large, light at 15 zm, stacks well against larger targets.
+The **grappling hook** trains the same skill: `a` (apply) the
+hook to yank a distant target toward you, range 4 to 8 squares
+depending on skill.
+
+**War hammer.** A small one-handed warhammer with a striking
+head and a back spike. d4+1 small / d4 large. The Valkyrie's
+guaranteed sacrifice gift is **Mjollnir**, the Norse god Thor's
+thunder hammer; it does shock damage on hit and returns when
+thrown while wielded.
+
+##### Reach
+
+Reach weapons strike from a distance with `a` (apply). The class
+covers the polearms, the lance, and the long-sword artifact
+**Snickersnee**, all of which route through the same reach
+routine: range scales with your weapon's skill rank, from two
+squares away at Basic out to roughly 2.8 at Expert. Apply works
+in any direction including diagonals. There is no dedicated
+repeat shortcut; **Ctrl+A** repeats the apply command but
+re-prompts for the direction, so reach play involves a lot of
+small keystroke sequences.
+
+**Polearms** are long-hafted weapons with a blade or hook on the
+end: glaive, halberd, partisan, bardiche, voulge, fauchard,
+guisarme, bill-guisarme, lucern hammer, bec de corbin, ranseur,
+spetum. Most are fifteenth-century European battlefield weapons
+designed to pull a knight off his horse or open his armor at a
+joint. The **glaive** also goes by **naginata**, the curved
+blade on a long shaft used by Samurai retainers. All polearms
+are two-handed. If you bump a polearm into an adjacent monster
+the ordinary way, the strike is treated as a **bash**: damage
+clamps to 1d2 base, the weapon-skill bonus doesn't apply, and
+only Strength still adds. Reach is what makes polearms worth
+carrying; up-close they're worse than a dagger.
+
+**Lance** is a long wooden shaft with a steel point, the weapon
+of mounted knights charging at full gallop. It has reach like
+any polearm, and on top of that gets the **joust**: charging
+into a target while mounted on a horse or pony adds +2d10
+damage on contact (or +2d2 if the lance is in your off-hand). A
+critical joust has a 1-in-250 chance of shattering the lance.
+Knights reach Expert in lance and start on a saddled pony with
+one in hand. On horseback a Knight can both joust on contact
+and reach at distance, which makes the lance one of the role's
+most versatile weapons. Most non-Knight roles never see one.
+
+##### Daggers and knives
+
+The small blades, the dungeon's most versatile weapon class.
+
+**Dagger** is the basic 30-centimeter double-edged blade worn at
+the belt since the Bronze Age. d4/d3, +2 baked-in to-hit, light,
+and (critically) the entries **stack**. Daggers are the only
+blade you'd actively want to throw in volume: at Expert with the
+Rogue's class bonus, you can throw up to **four daggers per `f`
+keystroke**. Set the dagger stack as quiver with `Q`, fire with
+`f`, then walk over and pick them back up after the fight
+(daggers rarely break). The dagger family branches into flavor on
+the same chassis: **elven dagger** (the artifact form **Sting**
+glows blue near orcs and is the Tolkien reference), **orcish
+dagger** (a bit worse), **silver dagger** (bonus damage against
+silver-haters, a Ranger's classic off-hand). The **athame** is a
+ritual dagger that engraves Elbereth without dulling.
+
+**Knife** is the kitchen blade or pocketknife, light and small.
+d3/d2, no special multishot. **Scalpel** is the Healer's
+starter, a tiny surgical blade.
+
+**Crysknife** is the Fremen blade from Frank Herbert's *Dune*: a
+20-centimeter blade carved from a sandworm's tooth. d10/d10, +3
+to-hit, but it has a quirk: dropping one on the floor reverts it
+to a worm tooth about nine times out of ten unless you've
+erodeproofed it first.
+
+Daggers and knives benefit hugely from the `w` + secondary + `x`
+rotation pattern. A Rogue typically wields a short sword and
+keeps daggers in the off-hand, then `x` to swap the dagger stack
+into primary for throwing.
+
+##### Whips and grappling hooks
+
+Tools that double as weapons. The **bullwhip** is the
+Archeologist's starter: a six-foot braided leather lash with a
+small popper at the tip. d2/d1, weak in combat, but `a` the
+bullwhip and you can disarm an adjacent monster, or yank
+yourself out of a pit (the popper anchors on nearby furniture, a
+boulder, or a large monster). The **rubber hose** is NetHack's
+joke weapon; it never spawns randomly.
+
+The **grappling hook** is the three-pronged iron hook on a chain
+that a soldier or sailor would use to scale walls. In the
+dungeon, `a` the hook to yank a target up to 4 squares away (8
+at Expert) into melee range with you. Trains the flail skill.
+
+##### Ranged
+
+The structural overview lives in [Ranged Combat](#ranged-combat)
+in the Combat chapter; the items themselves:
+
+**Bows and arrows.** The plain **bow**, **elven bow**, and
+**orcish bow** are 1.5-meter wooden bows of varying quality, all
+firing arrows (1 zm each). **Yumi** is the long Japanese
+asymmetric bow, the Samurai's launcher, paired with **ya**
+(bamboo arrows). The Ranger quest artifact is the **Longbow of
+Diana**, named for the Roman goddess of the hunt; it grants free
+arrows out of thin air. Wield a bow with `w`, set arrows as
+quiver with `Q`, fire with `f`. Rangers, Samurai, and Rogues
+reach Expert.
+
+**Crossbows and bolts.** The **crossbow** is the late-medieval
+mechanical bow that fires short heavy **bolts**. It hits harder
+per shot than a bow but reloads slowly, and full multishot needs
+Strength 18 (16 for gnomes). Rogues and Rangers reach Expert;
+Knights cap at Skilled.
+
+**Sling.** A leather pocket on two cords, the simplest ranged
+weapon and the one David used on Goliath. The Caveman's starter.
+Fires rocks, flint stones, or gems.
+
+**Throw-only weapons.** **Darts** stack big and accept poison
+from a sickness potion. **Shuriken** are the Japanese throwing
+star (Samurai get +1 multishot). **Boomerang** is the Australian
+curved throwing club that returns to your square on a clear miss;
+catching it needs a Dex check. **Aklys** belongs here too: see
+the Blunt one-handed section above.
+
+For all throwables, set the stack with `Q` and fire with `f`.
+Throwing without a quiver is `t` plus a chosen item plus a
+direction.
+
+##### Two-weapon style
+
+When your role can fight with a weapon in each hand, the
+off-hand choice matters as much as the main. Rules and the
+break-even math are in [Two-Weapon Combat](#two-weapon-combat)
+in the Combat chapter; the standard off-hand pairings:
+
+- **Samurai:** katana primary, wakizashi off-hand. The wakizashi
+  is a short sword (not a long sword), so it doesn't share
+  long-sword skill with the katana. This is the price Samurai
+  pay for the two-weapon flavor.
+- **Rogue:** short sword primary, dagger stack off-hand (the
+  daggers double as a throwing stack via `Q` + `f`). A silver
+  dagger off-hand pairs well against silver-haters.
+- **Valkyrie or Knight:** long sword primary, off-hand at
+  Skilled with a silver short sword or silver dagger. Numbers
+  usually favor a two-handed weapon over an off-hand unless
+  you're already at high enchantment.
+- **Barbarian:** caps at Basic; the to-hit penalty swallows the
+  benefit, so a single good weapon is the better call.
+- **Rangers cannot two-weapon at all.**
 
 <!-- audit
 2026-05-19:
@@ -7232,8 +7693,8 @@ from range, let the pet finish, and repeat. Save scrolls of magic
 mapping for levels that look genuinely nasty.
 
 **The Tourist tax.** Shopkeepers charge Tourists below XL 15 a +33%
-markup and offer 1/3 base on sales. Below XL 15 you are literally
-priced as a sucker. Most ascending Tourists do their shopping after
+markup and offer 1/3 base on sales. Below XL 15 you are priced
+as a sucker. Most ascending Tourists do their shopping after
 Quest completion.
 
 **Pivot:** the Tourist quest artifact, the Platinum Yendorian
@@ -7534,9 +7995,8 @@ to your effective Luck on most rolls**. A **cursed** luckstone is
 dangerous: it subtracts 3 from your effective Luck and holds
 *negative* Luck in place (preventing the usual drift back toward
 zero from below). Always BUC-check a luckstone before carrying
-it, and bless it on an altar if you can. (The +3 bonus comes
-from `set_moreluck`; the curse doesn't speed positive Luck's
-decay, but it locks bad Luck in.)
+it, and bless it on an altar if you can. The curse doesn't
+speed positive Luck's decay, but it locks bad Luck in.
 
 **The [Heart of Ahriman](#heart-of-ahriman), [Tsurugi of Muramasa](#tsurugi-of-muramasa), and [Orb of Fate](#orb-of-fate) all
 count as luckstones.** Barbarian, Samurai, and Valkyrie quest
@@ -8186,8 +8646,8 @@ resistance alone is worth carrying it, even after you have a stronger
 weapon. Knights start aligned to it and have unique 1-in-6 fountain-dip
 odds; every other Lawful role faces 1-in-30.
 
-**[Grayswandir]{#grayswandir}** is wishable and arguably the game's best melee
-weapon. It's silver (extra damage to many monsters), halves
+**[Grayswandir]{#grayswandir}** is wishable and one of the strongest melee
+weapons in the dungeon. It's silver (extra damage to many monsters), halves
 incoming physical damage, and grants hallucination resistance.
 
 **[Mjollnir]{#mjollnir}** is the Valkyrie's signature
@@ -8227,7 +8687,7 @@ summons a firestorm. Either one clears the room around you when
 you're cornered.
 
 **[Snickersnee]{#snickersnee}** got a major buff in 5.0: once
-per turn you can `#apply` it for a reach attack at a target up to
+per turn you can `a` (apply) it for a reach attack at a target up to
 two squares away, *without* using your turn — you still get a
 normal melee swing on top. The free hit is announced by a
 distinctive "Shkinng!" That combined output (one reach + one
@@ -9079,8 +9539,8 @@ path. Each one hits twice per turn with a touch attack dealing
 - **Pestilence** comes with a sickness that finishes you a few
   turns after the swing connects. Sick resistance breaks the
   curse before it takes hold; without it, a unicorn horn may
-  clear the timer in time, but the race is real and the timer
-  is short.
+  clear the timer in time, but the timer is short and the
+  margin tight.
 - **Famine** kills by accumulation. Each touch is 8d8 damage
   and 40 to 79 turns of hunger taken straight out of you. No
   single swing starves you. Three swings in a row will.
@@ -10182,7 +10642,7 @@ and spells. You can also fight bare-handed or with martial arts
 mace, aklys, pick-axe, unicorn horn, or any other weapon-class or
 weapon-tool item in melee while it's in your `w`ielded slot. The
 one ranged exception that *does* break the conduct: using a
-wielded polearm at range via `#apply`.
+wielded polearm at range via `a` (apply).
 
 This is less restrictive than it sounds. Monks start with strong
 martial arts and get better. Other classes can rely on spells,
@@ -10964,7 +11424,7 @@ two-handed (gets the 3/2 Strength damage bonus).
 -->
 #### Pick-axe
 
-Melee weapon and digging tool. `#apply` to dig in any direction.
+Melee weapon and digging tool. `a` (apply) to dig in any direction.
 The mattock does the same and is two-handed.
 
 ::: dense-table
@@ -11054,7 +11514,7 @@ that trains the same skill.
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | flail (nunchaku) | 1d6+1 / 1d4+1d4 | 15 | 4 | — | iron | +1 small, +1d4 large; one-handed. |
-| grappling hook | 1d2 / 1d6 | 30 | 50 | — | iron | Tool, not a primary weapon, but trains P_FLAIL. `#apply` to hook and pull a target toward you. |
+| grappling hook | 1d2 / 1d6 | 30 | 50 | — | iron | Tool, not a primary weapon, but trains P_FLAIL. `a` (apply) to hook and pull a target toward you. |
 
 :::
 
@@ -11146,8 +11606,8 @@ All spears share the same skill (trident uses a different class
 (see below). The Valkyrie starts with one and can train to
 Expert. The **Caveman** is the actual spear-multishot specialist:
 Cavemen get +1 multishot on any thrown spear (regular, silver,
-javelin alike), so a stack of javelins is real ranged firepower
-for them.
+javelin alike), so a stack of javelins becomes a strong ranged
+option for them.
 
 Spears get a **+2 to-hit bonus** when used against the big
 monsters (xorns, dragons, jabberwocks, nagas, and giants): the
