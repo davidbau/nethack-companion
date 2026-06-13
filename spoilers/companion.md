@@ -2470,8 +2470,8 @@ luck up. And maybe don't try to punch an arch-lich.
 #### Damage
 
 Base damage depends on your weapon and whether the target is small
-or large. (Most weapons are optimized for one or the other, because
-apparently dungeon physics care about monster volume.) Added to base:
+or large. Most weapons favor one shape over the other: short
+blades for kobolds, two-handers for ogres. Added to base:
 
 - Weapon enchantment (+1 per point)
 - Strength bonus (up to +6 for STR 18/xx, or more)
@@ -2542,57 +2542,37 @@ same movement-budget system. Each of you has a private movement
 counter measured in points. **An action costs 12 points.** When
 your counter reaches 12, you act, and the system deducts 12.
 
-**How the loop works.** After you take an action, the game gives
-every monster whose counter is already at 12 or more its turn,
-each spending 12. If no one (including you) has enough points to
-act, the game performs an **allocation**: every entity on the
-level receives its **speed** worth of points to its counter at
-once. Allocations repeat until you have 12 points again, at
-which point the loop pauses and waits for your next keystroke.
+**How the loop works.** After each action, every monster whose
+counter is at 12 or more takes a turn, each spending 12. When no
+one has enough points to act, an **allocation** fires: each
+entity's counter advances by its **speed** value. Allocations
+repeat until your counter hits 12, then play pauses for your
+next keystroke.
 
 Your base speed is **12**. Monster speed comes from each
-monster's bestiary entry: zombies move at 6, gnomes at 12,
-centaurs at 18, vampire bats at 20, air elementals at 36.
+monster's bestiary entry: zombies at 6, gnomes at 12, centaurs
+at 18, vampire bats at 20, air elementals at 36.
 
-**The translation rule.** Because allocations only happen when
-no one can act, your speed effectively controls how many
-allocations occur between your keystrokes, and therefore how
-many actions each monster can take between yours. To a first
-approximation, the monster gets **(monster_speed ÷
-your_effective_speed)** actions for every one of yours.
+**The shortcut.** To a first approximation, a monster gets
+**(monster_speed ÷ your_effective_speed)** actions for every one
+of yours, and that ratio is the single most useful number in a
+combat decision. A base-12 hero against a speed-18 centaur sees
+a ratio of 1.5: the centaur lands three hits for every two of
+yours and wins a melee duel. Slip on speed boots (effective ~20)
+and the ratio flips to 0.9, and now it's your fight. Against an
+air elemental at speed 36, the ratio is 3.0 unboosted and 1.8
+even with boots, still hopeless on foot. Ranged or skip.
 
-You at base speed 12 against a speed-18 centaur: ratio 18/12 =
-1.5. The centaur lands three hits for every two of yours, which
-is how it wins a melee duel.
-
-With **speed boots** (Very Fast, effective ~20) against the same
-centaur: ratio 18/20 = 0.9. The centaur now gets nine actions
-for every ten of yours; you have flipped the matchup.
-
-Against an air elemental at speed 36, the baseline ratio is 3.0
-(the elemental acts three times for every one of yours). With
-speed boots the ratio is 1.8. Speed boots help, but the gap is
-still hopeless on foot: this is a ranged-or-skip fight.
-
-**Intrinsic speed is probabilistic.** There are two levels of
-intrinsics that can raise your speed over 12, and both add a
-**+12 bonus** to each allocation with some random chance:
-
-- **Fast** (intrinsic, gained from certain corpses): the bonus
-  lands on roughly **one allocation in three**. Average effective
-  speed ~16.
-- **Very Fast** (speed boots, potion of speed, haste self): the
-  bonus lands on roughly **two allocations in three**. Average
-  effective speed ~20.
-
-The bonus is rolled each allocation, not sustained. On any one
-allocation either you got the bonus or you didn't. Tactical
-timing is therefore stochastic: the average is reliable across
-many actions, but any single tense round may or may not give
-you the extra. Very Fast does not stack with Fast; the better
-state overrides. **Speed boots are universally cited as the
-best boots in the game** because they grant Very Fast as a
-passive worn effect with no inventory or spell-slot cost.
+**Intrinsic speed comes in two probabilistic tiers.** **Fast**
+(from certain corpses) adds a +12 bonus to roughly one
+allocation in three, averaging effective speed ~16. **Very Fast**
+(speed boots, potion of speed, haste self) adds the same bonus
+to two allocations in three, averaging ~20. The roll is
+per-allocation, not sustained, so any single tense round may or
+may not give you the extra; the average is reliable over many
+actions. Very Fast doesn't stack with Fast; the better state
+wins. Speed boots are the cleanest source: a worn passive that
+costs no inventory slot and no spell-pool drain.
 
 **Encumbrance shaves the allocation directly.** It reduces the
 points your allocation gives you, before the intrinsic bonus is
@@ -2651,25 +2631,32 @@ bag of holding.
 -->
 
 Some roles can fight with a weapon in each hand, which looks
-impressive and gives more attacks per turn. The catch: each strike
-takes a flat to-hit and damage penalty determined by your
-two-weapon skill (−9/−7/−5/−3 to hit, −3/−1/0/+1 damage from
-Unskilled through Expert), and the loadout must be melee on both
-sides. No shield, no launcher (bow, crossbow, sling), no ammo
-(arrows, bolts), no projectiles (darts, shuriken). Only
-**Rogue** and **Samurai** can reach Expert; Valkyrie and Knight
-cap at Skilled; everyone else lower or none. Rangers don't have
-the skill at all. If you're not sure, just use one really good
-weapon. In 5.0, two-handed weapons gained a 3/2 strength damage
-bonus, making them a good alternative.
+impressive and gives a second swing per turn. The catch: each
+strike takes a flat to-hit and damage penalty by skill rank
+(−9/−7/−5/−3 to hit, −3/−1/0/+1 damage from Unskilled through
+Expert), and the loadout must be melee on both sides. No
+shield, no launcher, no thrown projectiles. Only **Rogue** and
+**Samurai** reach Expert; Valkyrie and Knight cap at Skilled;
+Barbarian at Basic; Rangers can't two-weapon at all.
+
+**When the second swing pays off.** The extra hit is worth its
+to-hit penalty only when your hit chance is already high and
+your damage is healthy. At Expert (−3/+1) with high enchantment
+against a moderate-AC target, a Samurai's katana + wakizashi
+out-damages the katana alone on most rounds. At Skilled (−5/0)
+the math is roughly a wash. Below Skilled the penalty usually
+swallows the benefit, so a Knight or Barbarian is better off
+with one good weapon. The 5.0 two-handed bonus (3/2 Strength
+damage on bimanual weapons) is a strong alternative for any
+role without a two-weapon skill.
 
 #### Ranged Combat
 
-Hitting at distance is one of the biggest advantages the dungeon
-offers. Every turn a monster spends crossing a corridor toward
-you is a turn you can spend shooting it. Some roles (Ranger,
-Samurai) lean on ranged weapons heavily; others use them
-opportunistically. The toolkit:
+Hitting at distance is the dungeon's most underrated advantage.
+Every turn a monster spends closing the gap is a turn you spend
+whittling its HP from a safer square. Rangers and Samurai live
+by their bows; every other role should set a quiver and reach
+for `f` more than they probably do. The toolkit:
 
 **Fire, throw, and swap commands.**
 
@@ -2713,7 +2700,8 @@ three swings per turn before any enchantment bonus.
 **Conserving ammo.** Each arrow or bolt has a per-hit break
 chance: roughly 67% for a +0 stack, 25% for a +2 stack. Train
 multishot on a cheap found stack; save your +2s for fights that
-need them.
+need them. A Ranger who walks out of the upper dungeon with
+thirty unbroken +2 arrows has the best damage budget in the game.
 
 #### Fighting Smart
 
