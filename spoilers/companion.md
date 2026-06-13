@@ -474,14 +474,6 @@ provide armor class benefits and can protect against specific attacks.
 from range is almost always safer than melee, and some monsters (like
 floating eyes) are best handled at range.
 
-**Supply chests.** Some of the large boxes and chests you find on
-the levels above [the Oracle](#the-oracle) are special supply chests. They are
-usually locked but stocked with useful magical items: healing or
-gain-energy potions, enchant-weapon or enchant-armor scrolls,
-sometimes a wand of digging or a low-level spellbook. About
-two-thirds of the early levels have one. Picking or `#force`ing them
-open is almost always worth the time.
-
 **Restraint.** New adventurers pick up everything they find. Veterans
 pick up everything they need. The difference is about forty pounds
 and the ability to outrun a gnome lord. If your status line reads
@@ -740,19 +732,19 @@ patterns is the first step toward navigating them effectively.
 
 #### The Big Picture
 
-When Jay Fenlason wrote the original *Hack* in 1982, every level
-in the dungeon looked the same: rooms, corridors, a staircase down
-to more of the same. More than forty years of community
-development later, the Dungeons of Doom you first descend into form
-only one neighborhood of a much larger world. If you survive long
-enough, your adventure will lead you through towns, towers, and
-castles; swamps and islands and fortresses; an underworld of
-molten halls and four elemental planes that climb back to a temple
-where angels and demons do battle around the altars to the gods.
-Each landmark has its own architecture, its own inhabitants, and
-its own rewards. Every game is different, but the dungeon has a
-story to tell: an arc through a familiar cast of landmarks, each
-tougher and stranger than the last.
+When the dungeon was first mapped, every level looked the same:
+rooms, corridors, a staircase down to more of the same. After
+decades of exploration and discovery, the Dungeons of Doom are
+now known to be just the first neighborhood of a much larger
+world. If you survive long enough, your adventure will lead you
+through towns, towers, and castles; swamps and islands and
+fortresses; an underworld of molten halls and four elemental
+planes that climb back to a temple where angels and demons do
+battle around the altars to the gods. Each landmark has its own
+architecture, its own inhabitants, and its own rewards. Every
+game is different, but the dungeon has a story to tell: an arc
+through a familiar cast of landmarks, each tougher and stranger
+than the last.
 
 The dungeon is a branching tree with a main trunk that descends
 through three main phases. Off the trunk are several optional side
@@ -10877,8 +10869,8 @@ signature spell or item. Wizard knows force bolt; Healer knows
 healing; Cleric, Knight, and Monk all know protection (Cleric
 also knows water); Archeologist knows touchstone; Cave Dweller
 knows flint; Rogue and Tourist know sack; Samurai knows gunyoki
-rations. The supply chests on early levels (see [What to
-Pack](#what-to-pack)) can provide much of your first kit.
+rations. The [supply chests](#supply-containers) on early levels
+can provide much of your first kit.
 
 #### Petless (new in 5.0)
 <!-- audit
