@@ -380,36 +380,30 @@ $endif$
 {\centering Most actions then ask for a direction or an item. \texttt{Esc} cancels; \texttt{Ctrl+A} repeats your last command.\par}
 \normalsize
 \clearpage
-% --- Last-resort panic card (verso, faces the command reference) ---
+% --- Dungeon Emergency Checklist (verso, faces the command reference) ---
 \thispagestyle{empty}
-{\centering{\large\bfseries When You're About to Die}\par\vspace{0.2em}
-{\itshape One turn from death? Reach for these, roughly in this order.}\par}
-\vspace{1.4em}
+{\centering{\large\bfseries Dungeon Emergency Checklist}\par\vspace{0.3em}
+{\itshape The Mazes of Menace are a dangerous place. Consult this handy
+checklist when you find yourself in peril.}\par}
+\vspace{1.5em}
 \footnotesize
-\noindent\hfill\begin{minipage}{0.82\textwidth}
-\textbf{First, pray} (p.~\pageref*{prayer}).\ \ \texttt{\#pray} asks your god
-for rescue, and a god in good standing almost always answers, saving you from
-critically low HP, starvation, turning to stone, turning to slime, or illness.
-The catch: it works only if you haven't prayed in the last
-\textasciitilde1{,}000 turns, your Luck isn't negative, and you aren't in
-Gehennom. When in doubt, this is the button.
-
-\vspace{1em}
-\textbf{Or get out of the losing fight.}
-\begin{itemize}[leftmargin=1.4em,itemsep=0.35em,topsep=0.3em]
-\item \textbf{Drink your healing.} \texttt{q} a potion of full or extra healing. You are probably carrying one. This is the moment. (p.~\pageref*{potion-healing})
-\item \textbf{Kill it outright.} Zap (\texttt{z}) a wand of death or wand of sleep at whatever is killing you. (p.~\pageref*{wand-death})
-\item \textbf{Write Elbereth.} \texttt{E}, then type \texttt{Elbereth}, and stand on it. Most monsters lose their nerve and won't attack. (p.~\pageref*{elbereth})
-\item \textbf{Teleport away.} Read a scroll of teleportation, or zap (\texttt{z}) a wand of teleportation at yourself. (p.~\pageref*{wand-teleportation})
-\item \textbf{Drop through the floor.} Apply (\texttt{a}) a pick-axe or zap a wand of digging straight down, and leave the level behind. (p.~\pageref*{wand-digging})
-\item \textbf{Run for the stairs.} \texttt{<} or \texttt{>} takes you off the level entirely. (p.~\pageref*{when-the-fight-goes-badly})
-\item \textbf{Break up the mob.} A ring of conflict or a scroll of scare monster buys you room. (p.~\pageref*{scroll-scare-monster})
-\item \textbf{Clear a deadly status.} Apply (\texttt{a}) a unicorn horn to shake off blindness, confusion, or stun when one of them is what's getting you killed. (p.~\pageref*{unicorn-horn-interactions})
+\begin{center}
+\begin{minipage}{0.82\textwidth}
+\begin{itemize}[label=\(\square\),leftmargin=1.6em,itemsep=0.55em,topsep=0pt]
+\item \textbf{Do you have a healing potion?} Drink one. A potion of extra healing, full healing, or even gain level will lift your HP in a pinch. (p.~\pageref*{potion-healing})
+\item \textbf{Do you have a wand of death?} Zap (\texttt{z}) it at your enemy to vanquish them instantly. A wand of sleep, or a thrown potion of paralysis or sleeping, can freeze a foe long enough for you to flee. (p.~\pageref*{wand-death})
+\item \textbf{Have you written Elbereth on the ground?} Engrave it in the dust (\texttt{E}, then type \texttt{Elbereth}) and stand on it; most monsters won't dare attack. (p.~\pageref*{elbereth})
+\item \textbf{Can you teleport?} Read a scroll of teleportation, or zap a wand of teleportation at yourself, and vanish from the fight. (p.~\pageref*{wand-teleportation})
+\item \textbf{Can you dig down?} Apply (\texttt{a}) a pick-axe, or zap a wand of digging straight down, and drop to the floor below. (p.~\pageref*{wand-digging})
+\item \textbf{Are the stairs close?} Flee to them (\texttt{<} or \texttt{>}) and leave the level behind. (p.~\pageref*{when-the-fight-goes-badly})
+\item \textbf{Is a crowd closing in?} A ring of conflict or a scroll of scare monster buys you room. (p.~\pageref*{scroll-scare-monster})
+\item \textbf{Are you blinded, confused, or stunned?} Apply (\texttt{a}) a unicorn horn to clear it. (p.~\pageref*{unicorn-horn-interactions})
 \end{itemize}
 
-\vspace{0.9em}
-{\itshape An amulet of life saving revives you once, but only if you are already wearing it (p.~\pageref*{special-and-utility}). The surest escape is the one you set up before you needed it.}
-\end{minipage}\hfill
+\vspace{1em}
+{\centering\textbf{If all else fails, \texttt{\#pray}.}\ \ Your god may pull you back from death itself, but only about once every thousand turns. Save it for the true emergency. (p.~\pageref*{prayer})\par}
+\end{minipage}
+\end{center}
 \normalsize
 \clearpage
 
