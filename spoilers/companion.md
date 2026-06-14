@@ -5805,7 +5805,7 @@ confuse you for a few turns.
 ### Wands and Staves
 <!-- audit
 2026-05-18:
-- wand of stasis: NODIR, $150, prob 45, freezes the level (objects.h:1460, zap.c:2559-2568)
+- wand of stasis: NODIR, $150, prob 45 — makes the level no-teleport for 10-30 turns; does NOT freeze monsters (objects.h:1460, zap.c:2559-2568; effect gated by stasis_until in teleport.c:43 noteleport_level, teleport.c:2269 u_teleport_mon, apply.c:530 magic whistle, do.c:2262 revive rloc)
 - wand of nothing is IMMEDIATE, not NODIR (objects.h:1462)
 - undead turning revives corpses to their original species via unturn_dead — NOT as zombies (zap.c:1156-1228 unturn_dead, zap.c:900 revive uses corpse->corpsenm; only cant_revive-rejected types fall back to zombie/doppelganger at zap.c:982-985)
 - engrave-test: cancellation and make-invisible erase in place (engrave.c:618-633)
@@ -5938,13 +5938,16 @@ through a dangerous area or turning a fight in your favor. For
 lasting invisibility, use a ring of invisibility or a cloak of
 invisibility.
 
-[]{#wand-stasis} **Stasis.** A new 5.0 wand that freezes every
-monster on the level for **10–30 turns**. No ray, no aim, no
-message. Just a hush. Use it when you're surrounded and need a
-free moment to engrave [Elbereth](#elbereth), drink a potion,
-change weapons, or just walk past. The silence on engraving
-makes it harder to identify by the engrave test, but if you sit
-on a charge for a fight you'll know.
+[]{#wand-stasis} **Stasis.** Zap it and nothing seems to happen:
+no ray, no aim, no message. What it really does is seal the level
+against teleportation for **10–30 turns**. While the seal holds,
+nobody can teleport: not you, not your foes, not even the covetous
+monsters that normally blink across the level to reach you. The
+magic whistle falls silent too. Despite the name, it freezes no
+one in place; the monsters around you keep moving and swinging.
+Its use is narrow: pin a teleport-reliant enemy so it cannot
+flee to heal or harry you from afar, at the cost of sealing away
+your own escape teleport along with theirs.
 
 **Probing.** A diagnostic wand: zap at a monster to learn its HP,
 max HP, level, and *what it's carrying*. Useful on shopkeepers,
@@ -5972,8 +5975,9 @@ elsewhere on the level, cancellation dulls its magic.
 - **Probing** reveals a nearby monster's stats.
 - **Undead turning** revives a fresh corpse to its original species
   (and animates any corpses the target was carrying).
-- **Stasis** halts every monster on the level. The silent freeze is
-  unmistakable mid-combat.
+- **Stasis** seals the level against teleportation and gives no
+  outward sign at all, so it is the hardest of the six to pin down;
+  if a later teleport mysteriously fails, that was the wand.
 - **Nothing** does nothing.
 
 For non-ambiguous wands, a follow-up zap at a safe target confirms

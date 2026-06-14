@@ -7501,7 +7501,7 @@ non-blessed <strong>potion of booze</strong> (Samurai:
 <h3>Wands and Staves</h3>
 <!-- audit
 2026-05-18:
-- wand of stasis: NODIR, $150, prob 45, freezes the level (objects.h:1460, zap.c:2559-2568)
+- wand of stasis: NODIR, $150, prob 45 — makes the level no-teleport for 10-30 turns; does NOT freeze monsters (objects.h:1460, zap.c:2559-2568; effect gated by stasis_until in teleport.c:43 noteleport_level, teleport.c:2269 u_teleport_mon, apply.c:530 magic whistle, do.c:2262 revive rloc)
 - wand of nothing is IMMEDIATE, not NODIR (objects.h:1462)
 - undead turning revives corpses to their original species via unturn_dead — NOT as zombies (zap.c:1156-1228 unturn_dead, zap.c:900 revive uses corpse->corpsenm; only cant_revive-rejected types fall back to zombie/doppelganger at zap.c:982-985)
 - engrave-test: cancellation and make-invisible erase in place (engrave.c:618-633)
@@ -7785,13 +7785,16 @@ invisible.</strong> Turns a target (or yourself, if you zap it
 reflexively) invisible for 31–45 turns. Useful for slipping through a
 dangerous area or turning a fight in your favor. For lasting
 invisibility, use a ring of invisibility or a cloak of invisibility.</p>
-<p><span id="wand-stasis"></span> <strong>Stasis.</strong> A new 5.0
-wand that freezes every monster on the level for <strong>10–30
-turns</strong>. No ray, no aim, no message. Just a hush. Use it when
-you’re surrounded and need a free moment to engrave <a
-href="#elbereth">Elbereth</a>, drink a potion, change weapons, or just
-walk past. The silence on engraving makes it harder to identify by the
-engrave test, but if you sit on a charge for a fight you’ll know.</p>
+<p><span id="wand-stasis"></span> <strong>Stasis.</strong> Zap it and
+nothing seems to happen: no ray, no aim, no message. What it really does
+is seal the level against teleportation for <strong>10–30
+turns</strong>. While the seal holds, nobody can teleport: not you, not
+your foes, not even the covetous monsters that normally blink across the
+level to reach you. The magic whistle falls silent too. Despite the
+name, it freezes no one in place; the monsters around you keep moving
+and swinging. Its use is narrow: pin a teleport-reliant enemy so it
+cannot flee to heal or harry you from afar, at the cost of sealing away
+your own escape teleport along with theirs.</p>
 <p><strong>Probing.</strong> A diagnostic wand: zap at a monster to
 learn its HP, max HP, level, and <em>what it’s carrying</em>. Useful on
 shopkeepers, soldiers, and named adventurers whose inventory might be
@@ -7821,8 +7824,9 @@ target:</p>
 <li><strong>Undead turning</strong> revives a fresh corpse to its
 original species (and animates any corpses the target was
 carrying).</li>
-<li><strong>Stasis</strong> halts every monster on the level. The silent
-freeze is unmistakable mid-combat.</li>
+<li><strong>Stasis</strong> seals the level against teleportation and
+gives no outward sign at all, so it is the hardest of the six to pin
+down; if a later teleport mysteriously fails, that was the wand.</li>
 <li><strong>Nothing</strong> does nothing.</li>
 </ul>
 <p>For non-ambiguous wands, a follow-up zap at a safe target confirms
