@@ -5,6 +5,9 @@
 ```
 
 ```{=latex}
+\begin{center}\itshape Most of what follows is true.\end{center}
+\vspace{1em}
+
 For more than forty years the NetHack community has grown Jay
 Fenlason's ``first-semester programming project'' into the most
 unforgivingly intricate and emblematic roguelike, and a thriving
@@ -52,7 +55,7 @@ guide. It assumes you already know how to play and want to know
 how to *survive*.
 
 Read on if you have been stripped of your belongings by one too
-many water nymphs, if you cannot survive [the Gnomish Mines](#the-gnomish-mines)s](#the-gnomish-mines), or
+many water nymphs, if you cannot survive [the Gnomish Mines](#the-gnomish-mines), or
 if you have grown tired of the gods abandoning you to starve
 with no food rations on level four. We will do our best to keep
 you alive.
@@ -281,7 +284,7 @@ resistance at XL 4. Hoard the +2 stack of arrows; they break at
 roughly 25% per hit while +0s break around 67%. Mulch the cheap
 stack on the level-1 newts. *Alignment: Neutral or Chaotic.*
 
-**Rogue.** NetHack's thief class: lockpicking and stealthy
+**Rogue.** The dungeon's thief: lockpicking and stealthy
 assassinations. You start with a short sword, six daggers for
 throwing, leather armor, a lock pick, a sack, and a potion of
 sickness (toss it at an enemy, or save it to coat any darts,
@@ -612,16 +615,16 @@ shaped by the protective items you obtain.
 **Rule 7: Type deliberately, never autorepeat.** Each key you
 press is a turn. If you hold a movement key down and let it
 autorepeat, your character marches blindly until something stops
-them — usually a monster you didn't intend to engage, a trap
+them, usually a monster you didn't intend to engage, a trap
 that's just been revealed, or a fountain you didn't mean to
 quaff. Press each key once and pause. To cross long corridors
 without typing one key per square, learn the **shift-direction**
-shortcut: capital `H J K L Y U B N` (or shift+arrow on number-
-pad layouts) moves continuously in that direction until something
-interesting appears. `G`+direction stops at the next item or
-monster; the `_` travel command goes to a clicked or specified
-target. These commands all *yield control* the instant something
-warrants your attention — autorepeat does not.
+shortcut: capital `H J K L Y U B N` (or shift+arrow on
+number-pad layouts) moves continuously in that direction until
+something interesting appears. `G`+direction stops at the next
+item or monster; the `_` travel command goes to a clicked or
+specified target. These commands all *yield control* the instant
+something warrants your attention. Autorepeat does not.
 
 #### Dungeon Hazards (and How to Survive Them)
 
@@ -769,7 +772,7 @@ Planes** to the **Astral Plane**, where your god awaits your
 offering.
 
 <!-- DMAP-BEGIN -->
-<div><figure style="margin: 1.5em 0; text-align: center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 611" role="img" aria-label="Dungeons of Doom map" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;font-feature-settings:'liga' 0, 'dlig' 0;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><line x1="380" y1="55" x2="380" y2="611" stroke="#B5651D" stroke-width="2.5" fill="none"/><rect x="40" y="0" width="680" height="39" rx="4" fill="#B5651D"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">DUNGEONS OF DOOM</text><line x1="150" y1="140" x2="150" y2="246" stroke="#5B8E3A" stroke-width="2" fill="none"/><line x1="630" y1="166" x2="630" y2="194" stroke="#B58A1A" stroke-width="2" fill="none"/><line x1="630" y1="305" x2="630" y2="343" stroke="#3B6FA0" stroke-width="2" fill="none"/><rect x="290" y="55" width="180" height="40" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="72" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">The Dungeon Entrance</text><text x="380" y="89" font-size="12" font-style="italic" fill="#555" text-anchor="middle">up-stair to exit</text><rect x="60" y="108" width="180" height="32" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="129" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Gnomish Mines</text><rect x="60" y="168" width="180" height="40" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="185" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Minetown</text><text x="150" y="202" font-size="12" font-style="italic" fill="#555" text-anchor="middle">shops, temple</text><rect x="60" y="246" width="180" height="40" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="263" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Mine's End</text><text x="150" y="280" font-size="12" font-style="italic" fill="#555" text-anchor="middle">luckstone</text><rect x="290" y="163" width="180" height="40" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="180" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">The Oracle</text><text x="380" y="197" font-size="12" font-style="italic" fill="#555" text-anchor="middle">paid hints</text><rect x="540" y="126" width="180" height="40" rx="6" fill="#FFF4CC" stroke="#B58A1A" stroke-width="1.5"/><text x="630" y="143" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Sokoban prize</text><text x="630" y="160" font-size="12" font-style="italic" fill="#555" text-anchor="middle">bag of holding/amulet of reflection</text><rect x="540" y="194" width="180" height="32" rx="6" fill="#FFF4CC" stroke="#B58A1A" stroke-width="1.5"/><text x="630" y="215" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Sokoban entry</text><rect x="290" y="269" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="290" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle"><tspan>Q</tspan>uest portal</text><rect x="540" y="265" width="180" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="630" y="282" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle"><tspan>Q</tspan>uest entry</text><text x="630" y="299" font-size="12" font-style="italic" fill="#555" text-anchor="middle">your role's dungeon</text><rect x="540" y="343" width="180" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="630" y="360" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle"><tspan>Q</tspan>uest goal</text><text x="630" y="377" font-size="12" font-style="italic" fill="#555" text-anchor="middle"><tspan font-style="normal">★ </tspan>Bell of Opening, role artifact</text><rect x="290" y="329" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="350" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Big Room (40%)</text><rect x="290" y="389" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="410" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Rogue Level</text><rect x="60" y="420" width="180" height="40" rx="6" fill="#FFD966" stroke="#B5891A" stroke-width="1.5"/><text x="150" y="437" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Fort Ludios</text><text x="150" y="454" font-size="12" font-style="italic" fill="#555" text-anchor="middle">vault of gold</text><rect x="290" y="479" width="180" height="32" rx="6" fill="#B8D4F0" stroke="#2E5C8E" stroke-width="1.5"/><text x="380" y="500" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Medusa's Island</text><rect x="230" y="539" width="300" height="58" rx="8" fill="#FFFFFF" stroke="#B5891A" stroke-width="2.5"/><text x="380" y="565" font-size="17" font-weight="600" fill="#1f2933" text-anchor="middle">THE CASTLE</text><text x="380" y="582" font-size="14" font-style="italic" fill="#7A5A0A" text-anchor="middle">wand of wishing</text><line x1="380" y1="124" x2="240" y2="124" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="380" y1="210" x2="540" y2="210" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="470" y1="285" x2="540" y2="285" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="380" y1="440" x2="240" y2="440" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><text x="275" y="120" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">down</text><text x="500" y="206" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">up</text><text x="505" y="281" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portal</text><text x="275" y="436" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portal</text><circle cx="380" cy="124" r="4" fill="#B5651D"/><circle cx="380" cy="210" r="4" fill="#B5651D"/><circle cx="380" cy="440" r="4" fill="#B5651D"/><circle cx="380" cy="104.0" r="4" fill="#B5651D"/><circle cx="380" cy="114.0" r="4" fill="#B5651D"/><circle cx="150" cy="149.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="159.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="217.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="227.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="237.0" r="4" fill="#5B8E3A"/><circle cx="380" cy="134.0" r="4" fill="#B5651D"/><circle cx="380" cy="144.0" r="4" fill="#B5651D"/><circle cx="380" cy="154.0" r="4" fill="#B5651D"/><circle cx="630" cy="175.0" r="4" fill="#B58A1A"/><circle cx="630" cy="185.0" r="4" fill="#B58A1A"/><circle cx="380" cy="220.0" r="4" fill="#B5651D"/><circle cx="380" cy="230.0" r="4" fill="#B5651D"/><circle cx="380" cy="240.0" r="4" fill="#B5651D"/><circle cx="380" cy="250.0" r="4" fill="#B5651D"/><circle cx="380" cy="260.0" r="4" fill="#B5651D"/><circle cx="630" cy="314.0" r="4" fill="#3B6FA0"/><circle cx="630" cy="324.0" r="4" fill="#3B6FA0"/><circle cx="630" cy="334.0" r="4" fill="#3B6FA0"/><circle cx="380" cy="310.0" r="4" fill="#B5651D"/><circle cx="380" cy="320.0" r="4" fill="#B5651D"/><circle cx="380" cy="370.0" r="4" fill="#B5651D"/><circle cx="380" cy="380.0" r="4" fill="#B5651D"/><circle cx="380" cy="430.0" r="4" fill="#B5651D"/><circle cx="380" cy="450.0" r="4" fill="#B5651D"/><circle cx="380" cy="460.0" r="4" fill="#B5651D"/><circle cx="380" cy="470.0" r="4" fill="#B5651D"/><circle cx="380" cy="520.0" r="4" fill="#B5651D"/><circle cx="380" cy="530.0" r="4" fill="#B5651D"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 681" role="img" aria-label="Gehennom map" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;font-feature-settings:'liga' 0, 'dlig' 0;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><line x1="380" y1="0" x2="380" y2="39" stroke="#B5651D" stroke-width="2.5" fill="none"/><line x1="380" y1="0" x2="380" y2="625" stroke="#A14A3F" stroke-width="2.5" fill="none"/><rect x="40" y="0" width="680" height="39" rx="4" fill="#A14A3F"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">GEHENNOM</text><line x1="150" y1="288" x2="150" y2="306" stroke="#6B4E96" stroke-width="2" fill="none"/><rect x="290" y="53" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="70" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Valley of the Dead</text><text x="380" y="87" font-size="12" font-style="italic" fill="#555" text-anchor="middle">Gehennom's entrance</text><rect x="290" y="141" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="162" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Asmodeus's Lair</text><rect x="290" y="191" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="212" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Juiblex's Swamp</text><rect x="290" y="251" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="272" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Baalzebub's Lair</text><rect x="60" y="248" width="180" height="40" rx="6" fill="#E3D8F0" stroke="#6B4E96" stroke-width="1.5"/><text x="150" y="265" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Vlad the Impaler</text><text x="150" y="282" font-size="12" font-style="italic" fill="#555" text-anchor="middle"><tspan font-style="normal">★ </tspan>Candelabrum</text><rect x="60" y="306" width="180" height="32" rx="6" fill="#E3D8F0" stroke="#6B4E96" stroke-width="1.5"/><text x="150" y="327" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">[Vlad's Tower](#vlads-tower)</text><rect x="290" y="351" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="368" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Orcus Town</text><text x="380" y="385" font-size="12" font-style="italic" fill="#555" text-anchor="middle">Wand of Orcus · magic lamp/marker</text><rect x="290" y="419" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="440" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Wizard's Tower</text><rect x="290" y="469" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="486" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Wizard of Yendor</text><text x="380" y="503" font-size="12" font-style="italic" fill="#555" text-anchor="middle"><tspan font-style="normal">★ </tspan>Book of the Dead</text><rect x="230" y="567" width="300" height="58" rx="8" fill="#2D2D2D" stroke="#FFC857" stroke-width="2.5"/><text x="380" y="593" font-size="17" font-weight="600" fill="#FFC857" text-anchor="middle">Moloch's Sanctum</text><text x="380" y="610" font-size="14" font-style="italic" fill="#FFE680" text-anchor="middle">the Amulet of Yendor</text><line x1="380" y1="322" x2="240" y2="322" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><text x="275" y="318" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">up</text><circle cx="380" cy="322" r="4" fill="#A14A3F"/><circle cx="380" cy="102.0" r="4" fill="#A14A3F"/><circle cx="380" cy="112.0" r="4" fill="#A14A3F"/><circle cx="380" cy="122.0" r="4" fill="#A14A3F"/><circle cx="380" cy="132.0" r="4" fill="#A14A3F"/><circle cx="380" cy="182.0" r="4" fill="#A14A3F"/><circle cx="380" cy="232.0" r="4" fill="#A14A3F"/><circle cx="380" cy="242.0" r="4" fill="#A14A3F"/><circle cx="380" cy="292.0" r="4" fill="#A14A3F"/><circle cx="380" cy="302.0" r="4" fill="#A14A3F"/><circle cx="380" cy="312.0" r="4" fill="#A14A3F"/><circle cx="150" cy="297.0" r="4" fill="#6B4E96"/><circle cx="380" cy="332.0" r="4" fill="#A14A3F"/><circle cx="380" cy="342.0" r="4" fill="#A14A3F"/><circle cx="380" cy="400.0" r="4" fill="#A14A3F"/><circle cx="380" cy="410.0" r="4" fill="#A14A3F"/><circle cx="380" cy="460.0" r="4" fill="#A14A3F"/><circle cx="380" cy="518.0" r="4" fill="#A14A3F"/><circle cx="380" cy="528.0" r="4" fill="#A14A3F"/><circle cx="380" cy="538.0" r="4" fill="#A14A3F"/><circle cx="380" cy="548.0" r="4" fill="#A14A3F"/><circle cx="380" cy="558.0" r="4" fill="#A14A3F"/><line x1="380" y1="631" x2="380" y2="681" stroke="#5B8E3A" stroke-width="2.5" stroke-dasharray="7,5" fill="none"/><text x="400" y="661" font-size="15" font-weight="600" font-style="italic" fill="#5B8E3A">now go <tspan style="font-weight:800;font-size:17px">ALL</tspan> the way back up...</text></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 299" role="img" aria-label="Elemental Planes and Ascension" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;font-feature-settings:'liga' 0, 'dlig' 0;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><rect x="40" y="0" width="680" height="39" rx="4" fill="#5D3C8E"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">THE ELEMENTAL PLANES</text><rect x="68" y="89" width="120" height="40" rx="6" fill="#E8DDC8" stroke="#8B6F47" stroke-width="1.5"/><text x="128" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Earth</text><rect x="236" y="89" width="120" height="40" rx="6" fill="#E0F4FA" stroke="#3B9FA8" stroke-width="1.5"/><text x="296" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Air</text><rect x="404" y="89" width="120" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="464" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Fire</text><rect x="572" y="89" width="120" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="632" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Water</text><rect x="260" y="179" width="240" height="42" rx="6" fill="#D8C6F0" stroke="#5D3C8E" stroke-width="1.5"/><text x="380" y="197" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Astral Plane</text><text x="380" y="213" font-size="12" font-style="italic" fill="#555" text-anchor="middle">three altars · pick yours</text><rect x="230" y="239" width="300" height="50" rx="10" fill="#FFE680" stroke="#B5891A" stroke-width="2.5"/><text x="380" y="262" font-size="18" font-weight="700" fill="#7A5A0A" text-anchor="middle" letter-spacing="0.1em">ASCENSION</text><text x="380" y="281" font-size="11" font-style="italic" fill="#7A5A0A" text-anchor="middle">offer the Amulet at your altar</text><path d="M 380 39 C 380 53 128 53 128 67 L 128 89" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="188" y1="109" x2="236" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><text x="212" y="105" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portals</text><line x1="356" y1="109" x2="404" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="524" y1="109" x2="572" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><path d="M 632 129 C 632 143 380 143 380 157 L 380 179" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="380" y1="221" x2="380" y2="239" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/></svg><figcaption style="font-style: italic; color: #5a5a5a; font-size: 0.9em; margin-top: 0.5em;">Branches extend left and right of the main trunk. Pearls (small colored dots) indicate the approximate number of intervening dungeon levels. ★ marks the three Invocation items (Bell of Opening, Candelabrum, Book of the Dead) needed to enter Moloch's Sanctum and claim the Amulet.</figcaption></figure></div>
+<div><figure style="margin: 1.5em 0; text-align: center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 611" role="img" aria-label="Dungeons of Doom map" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;font-feature-settings:'liga' 0, 'dlig' 0;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><line x1="380" y1="55" x2="380" y2="611" stroke="#B5651D" stroke-width="2.5" fill="none"/><rect x="40" y="0" width="680" height="39" rx="4" fill="#B5651D"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">DUNGEONS OF DOOM</text><line x1="150" y1="140" x2="150" y2="246" stroke="#5B8E3A" stroke-width="2" fill="none"/><line x1="630" y1="166" x2="630" y2="194" stroke="#B58A1A" stroke-width="2" fill="none"/><line x1="630" y1="305" x2="630" y2="343" stroke="#3B6FA0" stroke-width="2" fill="none"/><rect x="290" y="55" width="180" height="40" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="72" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">The Dungeon Entrance</text><text x="380" y="89" font-size="12" font-style="italic" fill="#555" text-anchor="middle">up-stair to exit</text><rect x="60" y="108" width="180" height="32" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="129" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Gnomish Mines</text><rect x="60" y="168" width="180" height="40" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="185" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Minetown</text><text x="150" y="202" font-size="12" font-style="italic" fill="#555" text-anchor="middle">shops, temple</text><rect x="60" y="246" width="180" height="40" rx="6" fill="#E8F4DC" stroke="#5B8E3A" stroke-width="1.5"/><text x="150" y="263" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Mine's End</text><text x="150" y="280" font-size="12" font-style="italic" fill="#555" text-anchor="middle">luckstone</text><rect x="290" y="163" width="180" height="40" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="180" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">The Oracle</text><text x="380" y="197" font-size="12" font-style="italic" fill="#555" text-anchor="middle">paid hints</text><rect x="540" y="126" width="180" height="40" rx="6" fill="#FFF4CC" stroke="#B58A1A" stroke-width="1.5"/><text x="630" y="143" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Sokoban prize</text><text x="630" y="160" font-size="12" font-style="italic" fill="#555" text-anchor="middle">bag of holding/amulet of reflection</text><rect x="540" y="194" width="180" height="32" rx="6" fill="#FFF4CC" stroke="#B58A1A" stroke-width="1.5"/><text x="630" y="215" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Sokoban entry</text><rect x="290" y="269" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="290" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle"><tspan>Q</tspan>uest portal</text><rect x="540" y="265" width="180" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="630" y="282" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle"><tspan>Q</tspan>uest entry</text><text x="630" y="299" font-size="12" font-style="italic" fill="#555" text-anchor="middle">your role's dungeon</text><rect x="540" y="343" width="180" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="630" y="360" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle"><tspan>Q</tspan>uest goal</text><text x="630" y="377" font-size="12" font-style="italic" fill="#555" text-anchor="middle"><tspan font-style="normal">★ </tspan>Bell of Opening, role artifact</text><rect x="290" y="329" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="350" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Big Room (40%)</text><rect x="290" y="389" width="180" height="32" rx="6" fill="#FAF3E0" stroke="#B5651D" stroke-width="1.5"/><text x="380" y="410" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Rogue Level</text><rect x="60" y="420" width="180" height="40" rx="6" fill="#FFD966" stroke="#B5891A" stroke-width="1.5"/><text x="150" y="437" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Fort Ludios</text><text x="150" y="454" font-size="12" font-style="italic" fill="#555" text-anchor="middle">vault of gold</text><rect x="290" y="479" width="180" height="32" rx="6" fill="#B8D4F0" stroke="#2E5C8E" stroke-width="1.5"/><text x="380" y="500" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Medusa's Island</text><rect x="230" y="539" width="300" height="58" rx="8" fill="#FFFFFF" stroke="#B5891A" stroke-width="2.5"/><text x="380" y="565" font-size="17" font-weight="600" fill="#1f2933" text-anchor="middle">THE CASTLE</text><text x="380" y="582" font-size="14" font-style="italic" fill="#7A5A0A" text-anchor="middle">wand of wishing</text><line x1="380" y1="124" x2="240" y2="124" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="380" y1="210" x2="540" y2="210" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="470" y1="285" x2="540" y2="285" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><line x1="380" y1="440" x2="240" y2="440" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><text x="275" y="120" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">down</text><text x="500" y="206" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">up</text><text x="505" y="281" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portal</text><text x="275" y="436" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portal</text><circle cx="380" cy="124" r="4" fill="#B5651D"/><circle cx="380" cy="210" r="4" fill="#B5651D"/><circle cx="380" cy="440" r="4" fill="#B5651D"/><circle cx="380" cy="104.0" r="4" fill="#B5651D"/><circle cx="380" cy="114.0" r="4" fill="#B5651D"/><circle cx="150" cy="149.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="159.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="217.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="227.0" r="4" fill="#5B8E3A"/><circle cx="150" cy="237.0" r="4" fill="#5B8E3A"/><circle cx="380" cy="134.0" r="4" fill="#B5651D"/><circle cx="380" cy="144.0" r="4" fill="#B5651D"/><circle cx="380" cy="154.0" r="4" fill="#B5651D"/><circle cx="630" cy="175.0" r="4" fill="#B58A1A"/><circle cx="630" cy="185.0" r="4" fill="#B58A1A"/><circle cx="380" cy="220.0" r="4" fill="#B5651D"/><circle cx="380" cy="230.0" r="4" fill="#B5651D"/><circle cx="380" cy="240.0" r="4" fill="#B5651D"/><circle cx="380" cy="250.0" r="4" fill="#B5651D"/><circle cx="380" cy="260.0" r="4" fill="#B5651D"/><circle cx="630" cy="314.0" r="4" fill="#3B6FA0"/><circle cx="630" cy="324.0" r="4" fill="#3B6FA0"/><circle cx="630" cy="334.0" r="4" fill="#3B6FA0"/><circle cx="380" cy="310.0" r="4" fill="#B5651D"/><circle cx="380" cy="320.0" r="4" fill="#B5651D"/><circle cx="380" cy="370.0" r="4" fill="#B5651D"/><circle cx="380" cy="380.0" r="4" fill="#B5651D"/><circle cx="380" cy="430.0" r="4" fill="#B5651D"/><circle cx="380" cy="450.0" r="4" fill="#B5651D"/><circle cx="380" cy="460.0" r="4" fill="#B5651D"/><circle cx="380" cy="470.0" r="4" fill="#B5651D"/><circle cx="380" cy="520.0" r="4" fill="#B5651D"/><circle cx="380" cy="530.0" r="4" fill="#B5651D"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 681" role="img" aria-label="Gehennom map" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;font-feature-settings:'liga' 0, 'dlig' 0;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><line x1="380" y1="0" x2="380" y2="39" stroke="#B5651D" stroke-width="2.5" fill="none"/><line x1="380" y1="0" x2="380" y2="625" stroke="#A14A3F" stroke-width="2.5" fill="none"/><rect x="40" y="0" width="680" height="39" rx="4" fill="#A14A3F"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">GEHENNOM</text><line x1="150" y1="288" x2="150" y2="306" stroke="#6B4E96" stroke-width="2" fill="none"/><rect x="290" y="53" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="70" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Valley of the Dead</text><text x="380" y="87" font-size="12" font-style="italic" fill="#555" text-anchor="middle">Gehennom's entrance</text><rect x="290" y="141" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="162" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Asmodeus's Lair</text><rect x="290" y="191" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="212" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Juiblex's Swamp</text><rect x="290" y="251" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="272" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Baalzebub's Lair</text><rect x="60" y="248" width="180" height="40" rx="6" fill="#E3D8F0" stroke="#6B4E96" stroke-width="1.5"/><text x="150" y="265" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Vlad the Impaler</text><text x="150" y="282" font-size="12" font-style="italic" fill="#555" text-anchor="middle"><tspan font-style="normal">★ </tspan>Candelabrum</text><rect x="60" y="306" width="180" height="32" rx="6" fill="#E3D8F0" stroke="#6B4E96" stroke-width="1.5"/><text x="150" y="327" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Vlad's Tower</text><rect x="290" y="351" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="368" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Orcus Town</text><text x="380" y="385" font-size="12" font-style="italic" fill="#555" text-anchor="middle">Wand of Orcus · magic lamp/marker</text><rect x="290" y="419" width="180" height="32" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="440" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Wizard's Tower</text><rect x="290" y="469" width="180" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="380" y="486" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Wizard of Yendor</text><text x="380" y="503" font-size="12" font-style="italic" fill="#555" text-anchor="middle"><tspan font-style="normal">★ </tspan>Book of the Dead</text><rect x="230" y="567" width="300" height="58" rx="8" fill="#2D2D2D" stroke="#FFC857" stroke-width="2.5"/><text x="380" y="593" font-size="17" font-weight="600" fill="#FFC857" text-anchor="middle">Moloch's Sanctum</text><text x="380" y="610" font-size="14" font-style="italic" fill="#FFE680" text-anchor="middle">the Amulet of Yendor</text><line x1="380" y1="322" x2="240" y2="322" stroke="#5a5a5a" stroke-width="1.5" marker-end="url(#arr)" fill="none"/><text x="275" y="318" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">up</text><circle cx="380" cy="322" r="4" fill="#A14A3F"/><circle cx="380" cy="102.0" r="4" fill="#A14A3F"/><circle cx="380" cy="112.0" r="4" fill="#A14A3F"/><circle cx="380" cy="122.0" r="4" fill="#A14A3F"/><circle cx="380" cy="132.0" r="4" fill="#A14A3F"/><circle cx="380" cy="182.0" r="4" fill="#A14A3F"/><circle cx="380" cy="232.0" r="4" fill="#A14A3F"/><circle cx="380" cy="242.0" r="4" fill="#A14A3F"/><circle cx="380" cy="292.0" r="4" fill="#A14A3F"/><circle cx="380" cy="302.0" r="4" fill="#A14A3F"/><circle cx="380" cy="312.0" r="4" fill="#A14A3F"/><circle cx="150" cy="297.0" r="4" fill="#6B4E96"/><circle cx="380" cy="332.0" r="4" fill="#A14A3F"/><circle cx="380" cy="342.0" r="4" fill="#A14A3F"/><circle cx="380" cy="400.0" r="4" fill="#A14A3F"/><circle cx="380" cy="410.0" r="4" fill="#A14A3F"/><circle cx="380" cy="460.0" r="4" fill="#A14A3F"/><circle cx="380" cy="518.0" r="4" fill="#A14A3F"/><circle cx="380" cy="528.0" r="4" fill="#A14A3F"/><circle cx="380" cy="538.0" r="4" fill="#A14A3F"/><circle cx="380" cy="548.0" r="4" fill="#A14A3F"/><circle cx="380" cy="558.0" r="4" fill="#A14A3F"/><line x1="380" y1="631" x2="380" y2="681" stroke="#5B8E3A" stroke-width="2.5" stroke-dasharray="7,5" fill="none"/><text x="400" y="661" font-size="15" font-weight="600" font-style="italic" fill="#5B8E3A">now go <tspan style="font-weight:800;font-size:17px">ALL</tspan> the way back up...</text></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 299" role="img" aria-label="Elemental Planes and Ascension" style="display:block;margin:0 auto;max-width:760px;width:100%;height:auto;font-family:'EB Garamond','Garamond','Georgia',serif;font-feature-settings:'liga' 0, 'dlig' 0;"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5a5a5a"/></marker></defs><rect x="40" y="0" width="680" height="39" rx="4" fill="#5D3C8E"/><text x="380" y="26" font-size="22" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="0.08em">THE ELEMENTAL PLANES</text><rect x="68" y="89" width="120" height="40" rx="6" fill="#E8DDC8" stroke="#8B6F47" stroke-width="1.5"/><text x="128" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Earth</text><rect x="236" y="89" width="120" height="40" rx="6" fill="#E0F4FA" stroke="#3B9FA8" stroke-width="1.5"/><text x="296" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Air</text><rect x="404" y="89" width="120" height="40" rx="6" fill="#FAD7C0" stroke="#A14A3F" stroke-width="1.5"/><text x="464" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Fire</text><rect x="572" y="89" width="120" height="40" rx="6" fill="#DDE9F5" stroke="#3B6FA0" stroke-width="1.5"/><text x="632" y="115" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Water</text><rect x="260" y="179" width="240" height="42" rx="6" fill="#D8C6F0" stroke="#5D3C8E" stroke-width="1.5"/><text x="380" y="197" font-size="15" font-weight="600" fill="#1f2933" text-anchor="middle">Astral Plane</text><text x="380" y="213" font-size="12" font-style="italic" fill="#555" text-anchor="middle">three altars · pick yours</text><rect x="230" y="239" width="300" height="50" rx="10" fill="#FFE680" stroke="#B5891A" stroke-width="2.5"/><text x="380" y="262" font-size="18" font-weight="700" fill="#7A5A0A" text-anchor="middle" letter-spacing="0.1em">ASCENSION</text><text x="380" y="281" font-size="11" font-style="italic" fill="#7A5A0A" text-anchor="middle">offer the Amulet at your altar</text><path d="M 380 39 C 380 53 128 53 128 67 L 128 89" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="188" y1="109" x2="236" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><text x="212" y="105" font-size="11" font-style="italic" fill="#5a5a5a" text-anchor="middle">portals</text><line x1="356" y1="109" x2="404" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="524" y1="109" x2="572" y2="109" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><path d="M 632 129 C 632 143 380 143 380 157 L 380 179" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/><line x1="380" y1="221" x2="380" y2="239" stroke="#5a5a5a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/></svg><figcaption style="font-style: italic; color: #5a5a5a; font-size: 0.9em; margin-top: 0.5em;">Branches extend left and right of the main trunk. Pearls (small colored dots) indicate the approximate number of intervening dungeon levels. ★ marks the three Invocation items (Bell of Opening, Candelabrum, Book of the Dead) needed to enter Moloch's Sanctum and claim the Amulet.</figcaption></figure></div>
 <!-- DMAP-END -->
 
 Simple enough on paper. Surviving it is another matter.
@@ -871,7 +874,7 @@ are dangerous in numbers, but royal jelly is excellent food.
 
 **Themed Rooms.** You'll occasionally walk into rooms that are
 not from the list above but interesting in other ways. These are
-**Themed Rooms**, a new feature of 5.0, and there are dozens of
+**Themed Rooms**, and there are dozens of
 them. Some have unusual *shapes*, and some have unusual
 *contents*. Interesting ones to look out for:
 
@@ -1104,7 +1107,7 @@ with dozens of random effects including:
 | Water demon       | A water demon appears, hostile                        |
 | Water nymph       | A water nymph appears and tries to steal an item      |
 | Water moccasins   | A swarm of snakes appears                             |
-| Curse some items  | "This water's no good!" (items in your main inventory may be cursed (items inside a bag are safe) |
+| Curse some items  | "This water's no good!" (items in your main inventory may be cursed; items inside a bag are safe) |
 | Poisonous water   | "The water is contaminated!" Str damage (poison resistance blocks the worst) |
 | See invisible     | You gain the ability to see invisible creatures       |
 | Detect monsters   | Brief view of every monster on the level              |
@@ -1153,7 +1156,7 @@ per item.)
 with your god. The corpse must be fresh (stale sacrifices are an
 insult) and the bigger the monster, the more your god is impressed.
 Sacrifice enough and your deity may reward you with an artifact
-weapon aligned to your cause. Don't sacrifice your starting pet.
+weapon aligned to your cause. Don't sacrifice your starting pet:
 the alignment penalty is steep and the residual aggravate-monster
 intrinsic sticks around for the rest of the run. See
 [Divine Relations](#divine-relations) for the full theology.
@@ -1173,9 +1176,9 @@ and you need a co-aligned one for sacrifice and holy water. See
 Sitting on a throne is the purest gamble in the Mazes. The list of
 possible outcomes reads like a wish list shuffled with a hit list:
 
-- A wish (if your luck is positive)
+- A wish (if your luck isn't negative)
 - Genocide of a monster class
-- Free identification of one to four items in your pack (or, one time in five, your entire inventory
+- Free identification of one to four items in your pack (or, one time in five, your entire inventory)
 - A stat boost or a stat drain
 - An electric shock
 - Full healing
@@ -1188,9 +1191,9 @@ possible outcomes reads like a wish list shuffled with a hit list:
 
 About one time in three, something happens, but you won't know which
 column of the ledger it's going to hit. Sit on a throne when you're
-strong enough to survive the worst row of that table; the wish
-branch only fires above Luck 7, so grab the luckstone first if
-that's what you're after. Even when nothing happens, the throne
+strong enough to survive the worst row of that table. The wish
+branch needs your luck to be non-negative, so clear any bad luck
+before you sit if a wish is what you're after. Even when nothing happens, the throne
 may vanish in a puff of logic, so you might get several tries or
 none at all. (Vlad's throne in the Tower is special: it never
 vanishes without granting a wish first.) Kicking a throne is a
@@ -1457,8 +1460,8 @@ fit), **dig the boulder** with a wielded pick-axe or mattock, or
 **fracture it** with a wand of striking or a scroll of earth (or
 polymorph the boulder into something else). Each of these costs a
 point of Luck and breaks the Sokoban conduct. The walls themselves
-are non-diggable on every Sokoban level, and pit traps are inescapable
-Even flying or levitation will not carry you over an open pit, the
+are non-diggable on every Sokoban level, and pit traps are inescapable.
+Even flying or levitation will not carry you over an open pit; the
 air currents pull you down anyway. **Teleport doesn't work here:**
 the level forbids it.
 
@@ -1584,8 +1587,9 @@ artifact has been sitting under their feet the whole time, placed
 when the level was generated. Pick both up. The Quest is the only
 place in the game you can get them.
 
-Most nemeses carry an amulet of [life saving](#special-and-utility), so expect to kill them
-twice. The portal back to the main dungeon is on the first Quest
+A nemesis may have picked up an amulet of [life saving](#special-and-utility) along the
+way, so don't be shocked if one shrugs off a killing blow and you
+have to do it twice. The portal back to the main dungeon is on the first Quest
 level only. If you descend underprepared and have to turn back, you
 may have a long climb home.
 
@@ -1726,9 +1730,8 @@ The level has three challenges stacked together:
    Sokoban, you're already prepared.
 
 There is a downward staircase on the island itself
-that leads toward [the Castle](#the-castle). The level has four possible layouts
-(two added in 3.6), so don't rely on memorizing a
-single map.
+that leads toward [the Castle](#the-castle). The level has four possible layouts,
+so don't rely on memorizing a single map.
 
 **The Perseus statue.** One of the statues on the island is named
 **Perseus**, the mythological hero who killed Medusa with a
@@ -1942,8 +1945,9 @@ Polymorph traps are a double-edged sword. With [polymorph control](#special-and-
 they're a free polymorphing booth. Without it, you become something
 random, possibly a newt that can't use any of its equipment.
 **[Magic resistance](#damage-resistances) and the [Unchanging](#special-and-utility) intrinsic both block the
-polymorph entirely.** Tcontrol is the only way to *use* the trap;
-MR or Unchanging let you walk through it untouched.
+polymorph entirely.** Polymorph control is the only way to *use*
+the trap; magic resistance or Unchanging let you walk through it
+untouched.
 
 If you do get caught and polymorphed into a handless form, your
 gear drops to the floor on the spot. Don't panic and don't move:
@@ -2086,7 +2090,7 @@ cheaper than being trapped on Dlvl 1 forever.
 
 - **Ring of searching** auto-searches every turn while it's worn
 - **[Excalibur](#excalibur-artifact)** (or any artifact with the searching aura), wielded, adds its enchantment to your search bonus (a freshly-dipped +0 Excalibur adds nothing)
-- **Lenses** worn (and you not blind) add +2 to the search bonus, but the total bonus from Excalibur + lenses caps at +5, so lenses only helplp if Excalibur's enchantment is below +3
+- **Lenses** worn (and you not blind) add +2 to the search bonus, but the total bonus from Excalibur + lenses caps at +5, so lenses only help if Excalibur's enchantment is below +3
 - **Wand of secret door detection** instantly reveals nearby secrets in a radius
 - **Blessed scroll of magic mapping** shows every secret door on the level (only the blessed version)
 
@@ -2254,7 +2258,7 @@ engraving will survive.
 - **Elbereth doesn't work in Gehennom, on the Elemental Planes, or
   on the Astral Plane.** Below [the Castle](#the-castle), you're on your own.
 
-##### The defile rule (important)
+##### Defiling the name of Elbereth (important)
 
 If you attack a monster while standing on Elbereth (whether by
 melee, thrown weapon, or wand zap), and that monster *would*
@@ -2321,32 +2325,20 @@ reason.
 -->
 #### Iron Bars
 
-Iron bars look like a barrier but aren't solid: light passes through,
-you can see what's on the other side, and **tiny** creatures (grid
-bugs, bats, rats) can squeeze between, but kittens and little dogs are
-already too big. What they resist is almost everything the player
-can throw at them: pick-axes bounce off ("Clang!"), wands of digging
-fizzle, weapons swing through harmlessly, and kicking just hurts
-your foot. Wands and spells of *striking* and *force bolt* pass
-through the bars without effect. The bars corrode for an acid ray,
-acid breath or spit (if you are polymorphed into a yellow dragon or
-black naga), and a **wand of lightning** can melt them too, though
-only about one zap in ten actually dissolves the bars.
+Iron bars look like a barrier but aren't solid: light passes
+through and tiny creatures (grid bugs, bats, rats) can squeeze
+between, though anything kitten-sized or larger is blocked.
+Pick-axes bounce off them, wands of digging fizzle, and striking
+or force bolt pass through harmlessly. Acid breath (yellow
+dragon polyform) and a wand of lightning (about one zap in ten)
+are the ways to melt them.
 
-The practical early-game answer is to **dig around** them. Iron bars
-sit in a niche cut into a room wall, so digging diagonally past the
-bars (or breaking through the wall to the stone behind and then back
-into the niche) reaches the contents without touching the bars. Mid-game,
-polymorph into something that breathes acid or lightning, passes
-walls (xorn, earth elemental), is **tiny** enough to slip between,
-or eats metal (rock mole). Starting pets won't fit, but a polymorphed
-pet can.
-
-What's typically behind them: a scroll of teleportation (unless
-the level is non-teleport, in which case the niche skips it),
-occasionally a random item or a previous adventurer's corpse.
-The scroll is a joke: you'd need one already to read it from
-outside the bars.
+The practical answer is to dig around them. Bars sit in a niche
+cut into a room wall, so digging diagonally past them or through
+the back wall reaches the contents without touching the bars.
+What's usually behind: a scroll of teleportation (a small joke,
+since you'd need one already to read it from outside),
+occasionally a random item or a previous adventurer's bones.
 
 ---
 
@@ -2485,7 +2477,7 @@ blades for kobolds, two-handers for ogres. Added to base:
 - Strength bonus (up to +6 for STR 18/xx, or more)
 - Weapon skill bonus (depends on skill level)
 - Special bonuses (silver damage, artifact bonuses, etc.)
-- In 5.0, **two-handed weapons** get a 50% bonus to the strength
+- **Two-handed weapons** get a 50% bonus to the strength
   damage component, which makes giving up the shield slot worthwhile
 
 This narrows the gap between two-handed builds and dual-wielding
@@ -2561,10 +2553,10 @@ Your base speed is **12**. Monster speed comes from each
 monster's bestiary entry: zombies at 6, gnomes at 12, centaurs
 at 18, vampire bats at 20, air elementals at 36.
 
-**The shortcut.** To a first approximation, a monster gets
-**(monster_speed ÷ your_effective_speed)** actions for every one
-of yours, and that ratio is the single most useful number in a
-combat decision. A base-12 hero against a speed-18 centaur sees
+**The shortcut.** To a first approximation, divide a monster's
+speed by your effective speed: that ratio is how many actions it
+takes for every one of yours, and the single most useful number
+in a combat decision. A base-12 hero against a speed-18 centaur sees
 a ratio of 1.5: the centaur lands three hits for every two of
 yours and wins a melee duel. Slip on speed boots (effective ~20)
 and the ratio flips to 0.9, and now it's your fight. Against an
@@ -2606,8 +2598,9 @@ bag of holding.
 | 6     | slow                 | zombies, fungi, brown molds                       |
 | 12    | normal (your base)   | gnomes, kobolds, foocubi, fire ants               |
 | 18    | fast                 | centaurs, ki-rin, soldier ants                    |
-| 20    | very fast            | bats, ravens, vampire bats                        |
-| 24    | extreme              | queen bees, vortices                              |
+| 20    | very fast            | ravens, vampire bats                              |
+| 22    | very fast            | bats, giant bats, steam and fire vortices         |
+| 24    | extreme              | queen bees                                        |
 | 36    | untouchable on foot  | air elementals                                    |
 
 **Practical rules for play.**
@@ -2891,9 +2884,9 @@ Knight or Samurai out of [the Quest](#the-quest) for the rest of the run.
 - strategy aligned with NetHackWiki Bones, Yet Another Stupid Death, Sleep, Golem: bones loot 80% cursed and dangerous, early-game pacing matters more than depth, sleep resistance recommended before Mines, iron golem and rope golem are the dangerous golems for the player (https://nethackwiki.com/wiki/Bones, https://nethackwiki.com/wiki/Yet_Another_Stupid_Death, https://nethackwiki.com/wiki/Sleep, https://nethackwiki.com/wiki/Golem)
 -->
 
-Only about **0.4% of games end in ascension.** The other 99.6%
-are deaths. NetHack ends in death by default; survival is the
-exception.
+Only about **0.4% of dungeon expeditions end in ascension.** The
+other 99.6% end in death. Dungeon adventures are death by
+default; survival is the exception.
 
 **The early dungeon is deadly.** The monsters that kill the most
 characters all live on the upper levels: jackals, dwarves,
@@ -2992,10 +2985,11 @@ reflection, or a clear path of retreat.
 range, then eat the corpse for [telepathy](#senses-and-perception).
 
 **Minotaurs** (`H`, in [the Castle](#the-castle) and maze levels of [Gehennom](#gehennom)).
-Three attacks averaging ~38 damage per turn. The hardest hitter
-short of the Riders themselves. A wand of sleep, a thrown potion
-of paralysis (with [free action](#combat-and-defense)), or just digging down before they
-reach you are the standard answers.
+Three attacks (two 3d10 claws and a 2d8 head-butt) averaging
+about 42 damage per turn. The hardest hitter short of the Riders
+themselves. Use a wand of sleep, a thrown potion of paralysis
+(with [free action](#combat-and-defense)), or just dig down before they
+reach you.
 
 **Major demons gate in more major demons.** Every melee hit from
 a major demon has roughly a 1-in-13 chance of summoning another.
@@ -3078,7 +3072,7 @@ weapon, resistance, scale mail property, and degree of desire to
 kill you specifically. The summary:
 
 **Gray** dragon scale mail grants magic resistance, the most important
-defensive property in the game, full stop. Gray dragons are the ones
+defensive property in the game. Gray dragons are the ones
 you most want to kill for their skin, and also the ones most likely
 to make you regret trying.
 
@@ -3114,7 +3108,7 @@ resistance. A pair of niche defenses in one slot.
 make you faster; either alone reaches Very Fast.) One of the most
 powerful body slots in the game.
 
-**Gold** dragons are new in 5.0 and breathe fire. Their scale mail
+**Gold** dragons breathe fire. Their scale mail
 has no resistance power but is permanently lit (radius 4 blessed, 3
 uncursed, 2 cursed). The only body-slot light source in the game,
 and it lets you abandon torches and oil. It also confers
@@ -3216,8 +3210,8 @@ or metal weapon**: one becomes two, two becomes four, and your
 long-sword grinding session turns into a swarm. **Black pudding
 additionally corrodes your wielded weapon** on its passive
 return-hit, so each round of splitting is also a step toward
-your blade rusting away. The community consensus: a beginner
-discovers puddings the same way every time: by feeding them
+your blade rusting away. Most beginners
+discover puddings the same way: by feeding them
 their best weapon and watching the population graph go up.
 
 **Defenses.** Melee with a **silver or wooden weapon** (silver
@@ -3287,9 +3281,9 @@ The `W` class has a touch attack that **drains an experience
 level**, one of the few permanent character setbacks in the
 game. You lose stat points, hit points, mana, and the most
 recent skill slot. There is no easy undo, and the wraith can
-land the touch again if you let it. The standard advice on the
-public boards is to fear the wraith on first sight and plan the
-kill from across the room.
+land the touch again if you let it. The standard advice is to
+fear the wraith on first sight and plan the kill from across the
+room.
 
 **The corpse, though, is one of the most valuable consumables
 in the game.** Eating a fresh wraith corpse grants you a level,
@@ -3486,8 +3480,7 @@ leave the level and come back when you are.
 **Opting out.** Set `OPTIONS=bones=false` in your rcfile if you
 want a bones-free run. This blocks both *creating* bones (your
 own death won't generate a file) and *loading* bones (you'll
-never inherit a level). The **Bonesless** conduct (new in 5.0)
-requires it.
+never inherit a level). The **Bonesless** conduct requires it.
 
 ---
 
@@ -3754,9 +3747,9 @@ Hunt the nest on another night.
 why you carry one), eat an acidic corpse, drink a potion of acid,
 pray, or cast stone-to-flesh on yourself. Keep the lizard in your
 **main inventory**, not in a bag: pulling it out of a bag takes a
-turn you can't spare against a two-turn timer. Note: act *before*
-the "Your limbs have turned to stone" message; after that
-you're paralyzed for three turns and the final messages kill you. Amulet
+turn you can't spare. Act *before* the "Your limbs have turned to
+stone" message; after that you're paralyzed for three turns and
+the final messages kill you. Amulet
 of [Unchanging](#special-and-utility) does **not** interrupt stoning. If you happen to be
 polymorphed into a non-stone golem, wearing it during the countdown
 is actively harmful; it blocks the stone-golem auto-poly that
@@ -4425,7 +4418,7 @@ yank a loaded pet to your side from anywhere on the level.
   re-polymorph.
 - If you can tame an **Archon** directly (via a scroll of taming
   on a hostile, magic-whistle recall of one you tamed earlier, or
-  a conflict-ring accident), do it. Archons are the consensus
+  a conflict-ring accident), do it. The Archon is the
   ultimate pet: level 19, speed 16, AC −6, magic
   resistance, sees invisible, flies, regenerates, and a multi-
   attack that includes a blinding gaze and a spell-cast. You
@@ -4589,7 +4582,7 @@ blessed scroll: the jackpot reads everything in your pack.
 - AMULET macro hard-codes base price 150 for every magic amulet; FAKE_AMULET_OF_YENDOR is base 0 (objects.h:831-834, 865-869)
 -->
 
-Shopkeepers are, without exaggeration, your most important
+Shopkeepers are your most important
 identification tool. Every unidentified item has a fixed base price
 that depends on what it actually is. When you pick up an item in a
 shop, the shopkeeper quotes you a price derived from that base price,
@@ -5536,11 +5529,11 @@ one until you can bless it.
 []{#potion-speed}
 **Speed.** One non-cursed quaff and you're permanently faster for
 the rest of the game; blessing only stretches the temporary timer
-that overlays the intrinsic. Speed is arguably the single most
-important buff in the Mazes; the difference between moving at normal
+that overlays the intrinsic. Speed is one of the most
+important buffs in the Mazes; the difference between moving at normal
 speed and fast speed is the difference between trading blows and
-hitting twice before they swing once. In 5.0, the wand of speed
-monster no longer grants permanent speed when self-zapped, only a
+hitting twice before they swing once. The wand of speed
+monster does not grant permanent speed when self-zapped, only a
 temporary burst of 50–74 turns. The potion is the real prize.
 
 []{#potion-holy-water}
@@ -5902,12 +5895,13 @@ the few shared results.
 
 []{#wand-wishing}
 **Wishing.** The most valuable item in the game. Each zap grants one
-wish. In 5.0, wands of wishing generate with only **1
-charge** and can be recharged once (and only once) to a maximum of
-1 additional charge. This means [the Castle](#the-castle) wand of wishing typically
-yields 2 wishes plus a possible wrested third, a significant
-reduction from older versions where it could provide 5 to 7. Plan
-your wishes carefully before you find one.
+wish. Wands of wishing generate with only **1
+charge**, though you can wrest a second wish from the empty wand
+and add a third with a single scroll of charging. This means [the
+Castle](#the-castle) wand of wishing yields two wishes on its own
+and three with a scroll of charging, a significant reduction from
+older versions where it could provide 5 to 7. Plan your wishes
+carefully before you find one.
 
 []{#wand-death}
 **Death.** Fires a death ray that instantly kills most things it
@@ -6017,13 +6011,15 @@ the wand exploding. The formula is (recharges cubed) / 343, so:
 
 Use blessed charging for the best results, except on a wand of
 wishing, which follows its own rules. A fresh wand of wishing is
-always generated with **exactly one** charge. A scroll of charging
-adds **one more** wish whether blessed or uncursed; blessing
-doesn't help here, and a cursed scroll strips the wand to zero
-like any other. You can recharge once safely; a second attempt is
-a **guaranteed explosion**. So the lifetime cap on a single wand
-of wishing is two wishes reliably, or three if you successfully
-wrest the final charge at the end.
+always generated with **exactly one** charge. When that charge is
+spent you can **wrest** one final charge from the empty wand for a
+second wish (it takes a few tries but eventually works). A scroll
+of charging adds **one more** wish whether blessed or uncursed
+(blessing doesn't help here, and a cursed scroll strips the wand
+to zero); you can recharge once safely, but a second recharge is a
+**guaranteed explosion**. So a wand of wishing gives two wishes on
+its own (its charge plus the wrested one), or three if you spend a
+scroll of charging on it.
 
 Rings are chargeable too, but with a practical ceiling. The
 explosion chance scales with the ring's current enchantment:
@@ -6158,15 +6154,15 @@ word is "deliberately." The ring is auto-cursed 90% of the time. If it
 goes on and won't come off, the fact that you're now generating liches
 on dungeon level 8 is no longer a feature.
 
-**The rings that matter most:** Free action is arguably the single
-best ring in the game: paralysis is death in the late game, and
+**The rings that matter most:** Free action is one of the
+best rings in the game: paralysis is death in the late game, and
 this ring makes you immune. Teleport control turns random
 teleportation from a nuisance into on-demand transportation.
 Conflict makes monsters attack each other instead of you, which
 is devastating on crowded levels (though it also turns your pets
 hostile). Slow digestion lets you go indefinitely between meals.
 
-In 5.0, a blessed potion of polymorph grants you polymorph
+A blessed potion of polymorph grants you polymorph
 control for that specific transformation: you choose the form, no ring
 required. This makes the ring of polymorph control less of a critical
 acquisition: you no longer need to find it or wish for it just to do a
@@ -6234,7 +6230,7 @@ for a terrifying cavalry unit.
 
 **Restful sleep** puts you to sleep randomly and is usually cursed,
 which should tell you everything you need to know about putting it
-on unexamined. In 5.0, wearing it while asleep grants +1 HP per
+on unexamined. Wearing it while asleep grants +1 HP per
 turn via accelerated regeneration. In a fully secured room with
 the door spiked shut, this turns a near-useless item into a slow
 field hospital.
@@ -6426,7 +6422,7 @@ but no special effects, useful only for confusing the issue.
 
 The **unicorn horn** is the dungeon's all-purpose first-aid kit.
 Apply it to cure confusion, blindness, sickness, hallucination,
-stunning, vomiting, and (new in 5.0) deafness: most of the status
+stunning, vomiting, and deafness: most of the status
 ailments that matter. Carry one at all times. If you don't have one,
 getting one should be near the top of your priority list.
 
@@ -6495,12 +6491,23 @@ walls and most of Gehennom are non-diggable. Applied to a statue,
 a pickaxe also breaks it (dropping any contents, or animating the
 sculpted monster if it is a statue trap).
 
-The **crystal ball** is a one-question oracle when applied (`a`):
-pick a glyph class, point at a square, learn what's there or what's
-on the level. Beautiful in theory; ruinous in practice if your
-Intelligence is low. A blessed ball wants Int 16+ to be reliable,
-and a cursed ball can hallucinate, blind, or simply shatter. Drop
-it on an altar before the first use.
+The **crystal ball** is a one-question oracle when applied
+(`a`): pick a glyph class (monsters, items, traps, doors, and so
+on), point at a square or `.` for the whole level, and the ball
+reveals what's there. Each use consumes one charge; a scroll of
+charging restores a few. A spent ball still applies but shows
+nothing useful, just colored haze.
+
+Intelligence determines whether each reading lands or backfires.
+The Int check is rolled against an "oops" threshold of 8 for a
+quest artifact, 16 for a blessed ball, or 20 for uncursed; rolling
+over the threshold triggers a misfire. Misfires range from
+harmless ("too much to comprehend") through confusion, blindness,
+and hallucination to (one outcome in five on a non-artifact ball)
+an explosion that hits you for about 1d30. A cursed ball misfires
+every time while charged. Drop a fresh ball on an altar to bless
+it before first use, then aim it at the most baffling level
+you've ever mapped.
 
 The **can of grease** is the cheapest hardening upgrade in the
 dungeon. Applied to worn armor, the slick coat makes the wearer
@@ -6637,7 +6644,8 @@ dungeon it gives 1 AC, MC2, and resistance to monster grab
 attacks. **Robe** is exactly what a spellcaster wears: 2 AC,
 MC2, and most importantly it cancels most of the metal-armor
 spellcasting penalty. A Wizard in chain mail and robe casts
-almost as well as in just leather. **Alchemy smock** is the
+almost as well as in just leather. Monks start with a +1 robe and
+should keep it. **Alchemy smock** is the
 chemist's apron: 1 AC, MC1, plus poison resistance, an
 underrated early-game lifeline.
 
@@ -6680,12 +6688,12 @@ is the Tourist's starting hat and the base item for the
 and grants clairvoyance to a Wizard while blocking clairvoyance
 for everyone else. **Dunce cap** is the cornuthaum's evil twin:
 auto-curses on wear, sets Int and Wis to 6, refuses to come off
-without remove curse. Unidentified cone-shaped hats are guilty
-until altar-tested.
+without remove curse. Unidentified cone-shaped hats cannot be BUC-tested by a pet or
+altar: they are guilty until price-tested in a shop.
 
 **Helm of brilliance** adds its enchantment value to both Int
 and Wis while worn. A +3 helm gives +3 Int and +3 Wis, a
-spellcaster's mid-game goal. **Helm of caution** (new in 5.0)
+spellcaster's mid-game goal. The **helm of caution**
 puts the warning intrinsic in the helm slot: nearby monsters
 appear as colored threat markers without your having to see
 them, cheap and light, the best early-game helm pickup in the
@@ -6881,15 +6889,15 @@ or an off-hand weapon.
 straight blade designed for close-quarters thrusting. d6 small,
 d8 large. The Rogue's starter and the Samurai's off-hand.
 
-**Saber and silver saber.** Sabers are nineteenth-century
-European cavalry swords with a curved blade meant for slashing
-from horseback. **Scimitar** is the curved sword of the Arabian
-Nights, the same shape in iron. **Silver saber** is the silver
-version, and its bonus damage against demons, weres, vampires,
-shades, and most imps makes it one of the strongest late-game
-one-handers. The two artifact silver sabers are **Grayswandir**
-(the priest's wishable favorite, double damage on every swing)
-and **Werebane** (extra damage against lycanthropes).
+**Scimitar and silver saber.** These are the saber-skill blades.
+The **scimitar** is the curved slashing sword of the Arabian
+Nights, an ordinary iron one-hander. The **silver saber** is its
+silver cousin, and its bonus damage against demons, weres,
+vampires, shades, and most imps makes it one of the strongest
+late-game one-handers. The two artifact silver sabers are
+**Grayswandir** (a top-tier wishable: silver, double damage on
+every hit, plus hallucination resistance) and **Werebane** (extra
+damage against lycanthropes).
 
 **Broadsword.** A medieval European blade wider and shorter than
 a long sword, hilted with a cross-shaped guard. **Runesword** is
@@ -6926,8 +6934,8 @@ with one-hand-plus-shield.
 **Two-handed sword.** The German zweihander of the late
 sixteenth century, a 1.5-meter steel blade swung with both hands
 by Landsknecht mercenaries. d12 small, d6+2d6 large, at a
-crushing 150 zm weight. No dedicated artifact form. **Tsurugi**
-is the Japanese straight-edged two-hander, much lighter (60 zm)
+crushing 150 zm weight. **Tsurugi** is the Japanese
+straight-edged two-hander, much lighter (60 zm)
 but with the highest small-target dice of any weapon in the game
 (d16). The artifact form is the **Tsurugi of Muramasa**, the
 Samurai quest artifact.
@@ -7073,7 +7081,7 @@ small popper at the tip. d2/d1, weak in combat, but `a` the
 bullwhip and you can disarm an adjacent monster, or yank
 yourself out of a pit (the popper anchors on nearby furniture, a
 boulder, or a large monster). The **rubber hose** is the
-dungeon's joke weapon; it never spawns randomly.
+dungeon's joke weapon: Keystone Kops sometimes carry one.
 
 The **grappling hook** is the three-pronged iron hook on a chain
 that a soldier or sailor would use to scale walls. In the
@@ -7620,7 +7628,7 @@ Engaging in melee on the front line; your role is ranged.
 
 #### Rogue
 
-NetHack's thief: daggers, stealth, and backstab. You start with a
+The dungeon's thief: daggers, stealth, and backstab. You start with a
 short sword, six daggers, leather armor, a lock pick, a sack, and a
 potion of sickness. The lock pick opens every locked door, chest,
 and box from turn 1. Stealth at XL 1 lets you walk past sleeping
@@ -7689,8 +7697,8 @@ that survive become disproportionately powerful in the late game.
 Both late.
 
 **Skill caps:** Dart Expert, Dagger Expert, Short Sword Expert.
-That is the entire combat-skill list; every other weapon caps at
-Basic, including most melee weapons you might find.
+Knife, saber, unicorn horn, and Escape spells reach Skilled;
+everything else caps at Basic.
 
 **Your camera is the early-game survival tool.** Apply it at any
 monster to blind it (and often to scare it). Camera-flash, dart
@@ -7756,7 +7764,7 @@ force bolt plus a random spellbook, and a magic marker.
 Escape, Matter); Healing, Enchantment, Cleric Skilled. Quarterstaff
 and Dagger Expert. Wielding a quarterstaff lowers spell-failure.
 
-**Spell-school advancement IDs spellbooks.** In 5.0, training a
+**Spell-school advancement IDs spellbooks.** Training a
 spell school auto-reveals book appearances at higher levels.
 Wizards start knowing every level-1 plus level-3 attack and
 enchantment.
@@ -7865,7 +7873,7 @@ better off with scrolls. Tourists, Barbarians, and Cavemen should
 probably stick to hitting things.
 
 []{#wizards-identify-books}
-**Wizards identify books by training.** In 5.0, advancing
+**Wizards identify books by training.** Advancing
 a spell school skill to each rank automatically reveals the appearances
 of spellbooks in that school: unskilled unlocks level-1 appearances,
 basic level-3, skilled level-5, expert level-7. A Wizard starts knowing
@@ -7915,7 +7923,7 @@ infinite scrolls, except they cost mana instead of inventory space.
 monster** turns your enemies into your friends, which is even better
 than killing them because friends carry things and absorb hits.
 
-**Chain lightning** is the 5.0 room-clearer. At level 2 it's
+**Chain lightning** is a fine room-clearer. At level 2 it's
 within reach of any character who can cast at all. The spell
 auto-fires in all eight directions without a target prompt, deals
 2d6 per hit, and stops dead at any peaceful or tame monster, so
@@ -8455,7 +8463,7 @@ The Mazes are stingy, but there are more wish sources than most
 travelers realize:
 
 - **Wand of wishing:** found in [the Castle](#the-castle) treasure room
-  (see [Key Wands](#key-wands) for the 5.0 charge mechanics). The
+  (see [Key Wands](#key-wands) for the charge mechanics). The
   Castle chest also contains a potion of gain level, because the
   Mazes occasionally feel generous.
 <!-- src/sit.c special_throne_effect(): cases 1-4 (of 13) = wish,
@@ -8535,7 +8543,8 @@ not the time for ambiguity:
 - "blessed greased fixed +3 gray dragon scale mail" is the
   veteran's incantation. `blessed` because BUC defaults to random,
   `greased` deflects nymph theft and Rider grabs, `fixed` (or
-  `erodeproof`) locks erosion, `+3` is the safe enchantment ceiling.
+  `rustproof` or `erodeproof`) locks erosion, `+3` is the safe
+  enchantment ceiling.
 - "gray dragon scale mail" alone lets the dice pick the BUC
   and the enchantment, so a bare wish can land cursed. You had
   *one* wish; spell out the BUC and the plus. And don't forget
@@ -8652,11 +8661,12 @@ weapon. Knights start aligned to it and have unique 1-in-6 fountain-dip
 odds; every other Lawful role faces 1-in-30.
 
 **[Grayswandir]{#grayswandir}** is wishable and one of the strongest melee
-weapons in the dungeon. It's silver (extra damage to many monsters), halves
-incoming physical damage, and grants hallucination resistance.
+weapons in the dungeon. It's silver (extra damage to many monsters), doubles
+its physical damage on every hit, adds +d5 to-hit, and grants
+hallucination resistance.
 
 **[Mjollnir]{#mjollnir}** is the Valkyrie's signature
-throw-and-return weapon — only Valkyries catch it back 99% of the
+throw-and-return weapon: only Valkyries catch it back 99% of the
 time. Other roles can wield it in melee, but throwing it is risky
 because the return often misses. Needs Strength 25 to wield in
 either case (gauntlets of power or rings of gain strength get you
@@ -8913,9 +8923,8 @@ Once you're across, the Castle contains:
   contains the **wand of wishing** in a locked chest. *Search them
   all*, or quaff a potion of object detection from the courtyard
   to see which tower holds the chest and skip the other three.
-  In 5.0, that chest also holds a **potion of gain level**,
-  included as a small make-good for the wand's charge changes
-  (see below). The chest's square is protected by a burned-in
+  That chest also holds a **potion of gain level**.
+  The chest's square is protected by a burned-in
   [*Elbereth*](#elbereth) engraving and sealed with a cursed
   scroll of scare monster. Those wards exist to keep wandering
   monsters from *eating* the chest itself (some species, like
@@ -8950,9 +8959,9 @@ unlock chests. A chest that started life locked stays locked
 until you or a wand of opening intervene. Unlocked containers are
 fair game.
 
-The Castle wand yields only two wishes reliably (one charge + one
-recharge), so plan a *small* wishlist and accept that further
-wishes will need to come from other guaranteed sources: Vlad's
+The Castle wand yields only two wishes on its own (its charge plus
+a wrested second), so plan a *small* wishlist and accept that
+further wishes will need to come from other guaranteed sources: Vlad's
 throne, the Amulet pickup, Orcus Town's lamp/marker, fountain
 luck, or wresting. The era of the bottomless wishing wand is over
 (see [Key Wands](#key-wands) for the full mechanics).
@@ -9025,7 +9034,7 @@ may have a special fate reserved for members of those classes.
 - **Fire everywhere.** Fire traps litter the corridors, and demons
   breathe fire as casually as you breathe air. If you do not have
   [fire resistance](#damage-resistances) by now, turn around.
-- **Hot ground.** In 5.0, the ground itself is hot enough to
+- **Hot ground.** The ground itself is hot enough to
   shatter potions dropped on the floor. Keep everything in a bag
   at all times.
 - **Demon lords on specific levels.** Asmodeus, Baalzebub,
@@ -9034,7 +9043,7 @@ may have a special fate reserved for members of those classes.
   several can summon reinforcements, and all of them are angry
   you are here. Their lairs and the bribery rules get their own
   section below.
-- **Teleportation restrictions.** In 5.0, teleportation is
+- **Teleportation restrictions.** Teleportation is
   blocked on a demon lord's lair level while that lord still
   lives. Kill or banish them and the restriction lifts. In older
   editions, most Gehennom levels permanently blocked teleportation,
@@ -9120,7 +9129,7 @@ put unless something destroys it.
 
 **Orcus** is a god of the underworld in Roman mythology, a
 chthonic figure who punishes broken oaths and devours the dead.
-In NetHack he is a unique demon prince (`&`, level 66, fast
+In the Mazes he is a unique demon prince (`&`, level 66, fast
 flier), the **Prince of Undead**, who casts spells, swings a
 weapon, claws twice, and stings for strength drain. His
 signature artifact is the **Wand of Orcus**, a wand of death by
@@ -9136,7 +9145,7 @@ liches, vampires, and ghouls. Somewhere on the level the dungeon
 guarantees either a **magic lamp** or a **magic marker** (50/50).
 Walk carefully, since fire and magic traps are everywhere; deal
 with the residents, and lift the lamp or marker on your way out.
-Either is a real supplement to the Castle wand's single charge.
+Either one extends the wishes you can pull from the Castle wand.
 
 #### The Wizard's Tower
 
@@ -9558,8 +9567,8 @@ pursue, they do not stop. **Eating any Rider corpse is
 instantly fatal.** You are not here to fight; you are here to
 reach one altar, make one sacrifice, and end this.
 
-If you have to pick which Rider to engage first, the community
-consensus is **Pestilence is the one to fear most**: the sickness
+If you have to pick which Rider to engage first, **Pestilence is
+the one to fear most**: the sickness
 timer keeps killing you after you've moved away, and unicorn-horn
 cures sometimes lose the race. Death's instakill is blocked by
 magic resistance; Famine you can outrun with a stack of food.
@@ -11033,7 +11042,7 @@ no markup or discount either way. The differences are about how
   pay shrine fees, and can't bribe a demon out of credit.
 
 Practical balance: park spare gold as credit at a shop you intend
-to keep visiting ([the Gnomish Mines](#the-gnomish-mines)s](#the-gnomish-mines) general store is a popular
+to keep visiting ([the Gnomish Mines](#the-gnomish-mines) general store is a popular
 choice), but don't deposit more than you expect to spend there.
 
 (A more inventive use, called *credit cloning*: drop gold inside
@@ -11394,7 +11403,7 @@ bardiche, and any other bimanual weapon.
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
-| two-handed sword | 1d12 / 1d6+2d6 | 150 | 50 | — | iron | Two-handed (no shield, no off-hand weapon). No dedicated artifact form. |
+| two-handed sword | 1d12 / 1d6+2d6 | 150 | 50 | — | iron | Two-handed (no shield, no off-hand weapon). |
 | tsurugi | 1d16 / 1d8+2d6 | 60 | 500 | +2 | metal | Two-handed. The Tsurugi of Muramasa is the artifact form. |
 
 :::
@@ -11519,7 +11528,7 @@ that trains the same skill.
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
 | flail (nunchaku) | 1d6+1 / 1d4+1d4 | 15 | 4 | — | iron | +1 small, +1d4 large; one-handed. |
-| grappling hook | 1d2 / 1d6 | 30 | 50 | — | iron | Tool, not a primary weapon, but trains P_FLAIL. `a` (apply) to hook and pull a target toward you. |
+| grappling hook | 1d2 / 1d6 | 30 | 50 | — | iron | Tool, not a primary weapon, but trains the flail skill. `a` (apply) to hook and pull a target toward you. |
 
 :::
 
@@ -11689,7 +11698,7 @@ to disarm an adjacent monster or yank yourself out of a pit.
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
-| rubber hose | 1d4 / 1d3 | 20 | 3 | — | plastic | Joke weapon; never spawns randomly. |
+| rubber hose | 1d4 / 1d3 | 20 | 3 | — | plastic | Joke weapon; never spawns randomly. Sometimes carried by Keystone Kops. |
 | bullwhip | 1d2 / 1 | 20 | 4 | — | leather | Archeologist's starter. Apply to disarm an adjacent monster (only when the target is wielding a weapon), or to yank yourself out of a pit (anchors on a nearby boulder, furniture, or big monster). |
 
 :::
@@ -13551,9 +13560,9 @@ They all follow you up and down stairs.
 | Baalzebub | magenta | 89 | 9 | -5 | 85 | bite 2d6 drain-Str · gaze 2d6 stun | flies, sees-invis, poisonous-corpse, demonic, fire-res, pois-res. |
 | Asmodeus | magenta | 105 | 12 | -7 | 90 | claw 4d4 · spell 6d6 cold | flies, sees-invis, poisonous-corpse, demonic, fire-res, cold-res, pois-res. |
 | Demogorgon | magenta | 106 | 15 | -8 | 95 | spell 8d6 spell · sting 1d4 drain-XL · claw 1d6 disease · claw 1d6 disease | flies, sees-invis, poisonous-corpse, demonic, fire-res, pois-res. |
-| Death | hi_overlord | 30 | 12 | -5 | 100 | touch 8d8 death · touch 8d8 death | flies, regenerates, sees-invis, teleport-control. Rider of the Apocalypse. Vanquish three to ascend. |
-| Pestilence | hi_overlord | 30 | 12 | -5 | 100 | touch 8d8 pestilence · touch 8d8 pestilence | flies, regenerates, sees-invis, teleport-control. Rider; spreads disease. |
-| Famine | hi_overlord | 30 | 12 | -5 | 100 | touch 8d8 famine · touch 8d8 famine | flies, regenerates, sees-invis, teleport-control. Rider; drains nutrition to starvation. |
+| Death | bright-magenta | 30 | 12 | -5 | 100 | touch 8d8 death · touch 8d8 death | flies, regenerates, sees-invis, teleport-control. Rider of the Apocalypse. Vanquish three to ascend. |
+| Pestilence | bright-magenta | 30 | 12 | -5 | 100 | touch 8d8 pestilence · touch 8d8 pestilence | flies, regenerates, sees-invis, teleport-control. Rider; spreads disease. |
+| Famine | bright-magenta | 30 | 12 | -5 | 100 | touch 8d8 famine · touch 8d8 famine | flies, regenerates, sees-invis, teleport-control. Rider; drains nutrition to starvation. |
 | mail daemon | bright-blue | 56 | 24 | 10 | 127 | — | flies, swims, sees-invis, poisonous-corpse, starts peaceful, fire-res, cold-res, sleep-res, shock-res, pois-res, ston-res. Delivers in-game mail. Don't attack one — they don't fight back. |
 | djinni | yellow | 7 | 12 | 4 | 30 | weapon 2d8 | flies, poisonous-corpse, pois-res, ston-res. |
 | Minion of Huhetotl | orange | 16 | 12 | -2 | 75 | weapon 8d4 · weapon 4d6 · spell spell · claw 2d6 steal-amulet | flies, sees-invis, poisonous-corpse, demonic. |
@@ -14334,7 +14343,7 @@ Helm of opposite alignment: \hyperref[the-gauntlet]{Chaotic detour, p.~\pageref*
 \hyperref[movement-traps]{Hole, like a trapdoor with manners, p.~\pageref*{movement-traps}}\par
 Holy: \hyperref[blessed-uncursed-cursed-buc]{water, blesses items, p.~\pageref*{blessed-uncursed-cursed-buc}}; \hyperref[potion-holy-water]{water, making (altar prayer), water, multiplying via dip, p.~\pageref*{potion-holy-water}}\par
 \hyperref[the-races]{Human, no infravision, no special talents, p.~\pageref*{the-races}}\par
-\hyperref[the-defile-rule-important]{Hypocrite, alignment hit when defiling, p.~\pageref*{the-defile-rule-important}}\par
+\hyperref[defiling-the-name-of-elbereth-important]{Hypocrite, alignment hit when defiling, p.~\pageref*{defiling-the-name-of-elbereth-important}}\par
 
 \par\smallskip{\normalsize\bfseries I}\par\smallskip
 
@@ -14467,10 +14476,10 @@ Mysterious: \hyperref[the-gauntlet]{Force, downstairs reroll, Force, Chaotic dis
 NetHack: \hyperref[acknowledgements]{DevTeam, Wiki, the living changelog, p.~\pageref*{acknowledgements}}\par
 \hyperref[alignment]{Neutral, the most flexibility, p.~\pageref*{alignment}}\par
 Newt: \hyperref[the-golden-rules-of-early-survival]{corpse, free mana sometimes, p.~\pageref*{the-golden-rules-of-early-survival}}; \hyperref[lizards]{corpse, restores 1-3 Pw, p.~\pageref*{lizards}}\par
-No: \hyperref[no-genocide]{Genocide conduct, type \\"none\\", p.~\pageref*{no-genocide}}; \hyperref[wishing-restrictions]{wishing for artifacts conduct, p.~\pageref*{wishing-restrictions}}\par
+No: \hyperref[no-genocide]{Genocide conduct, type ``none'', p.~\pageref*{no-genocide}}; \hyperref[wishing-restrictions]{wishing for artifacts conduct, p.~\pageref*{wishing-restrictions}}\par
 \hyperref[combining-conducts]{Nudist conduct (since 3.6), p.~\pageref*{combining-conducts}}\par
 \hyperref[options-worth-knowing-about]{Number\_pad option, p.~\pageref*{options-worth-knowing-about}}\par
-\hyperref[a-note-on-nymphs]{Nymph, walks off the level with your bag of holding, p.~\pageref*{a-note-on-nymphs}}\par
+\hyperref[a-note-on-nymphs]{Nymph, steals from your pack then teleports away, p.~\pageref*{a-note-on-nymphs}}\par
 Nymphs: \hyperref[a-note-on-nymphs]{the universal horror story, never engage carrying the Amulet, p.~\pageref*{a-note-on-nymphs}}\par
 
 \par\smallskip{\normalsize\bfseries O}\par\smallskip
@@ -14743,7 +14752,7 @@ Water: \hyperref[snakes-s]{moccasin, from fountain, p.~\pageref*{snakes-s}}; \hy
 \hyperref[what-to-wish-for]{What to wish for, p.~\pageref*{what-to-wish-for}}\par
 \hyperref[a-note-on-dragons]{White dragon scale mail, cold + slow digestion, p.~\pageref*{a-note-on-dragons}}\par
 \hyperref[whats-different-in-gehennom]{Wielding Excalibur or Demonbane, no bribery, p.~\pageref*{whats-different-in-gehennom}}\par
-Wish: \hyperref[sources-of-wishes]{sources, six in total, p.~\pageref*{sources-of-wishes}}; \hyperref[wish-syntax]{syntax, blessed greased fixed +3, silent substitutions (fake amulet, etc.), p.~\pageref*{wish-syntax}}; \hyperref[wishing-restrictions]{for \\"nothing\\", the escape hatch, p.~\pageref*{wishing-restrictions}}\par
+Wish: \hyperref[sources-of-wishes]{sources, six in total, p.~\pageref*{sources-of-wishes}}; \hyperref[wish-syntax]{syntax, blessed greased fixed +3, silent substitutions (fake amulet, etc.), p.~\pageref*{wish-syntax}}; \hyperref[wishing-restrictions]{for ``nothing'', the escape hatch, p.~\pageref*{wishing-restrictions}}\par
 \hyperref[what-to-wish-for]{Wishes, optimal use of, p.~\pageref*{what-to-wish-for}}\par
 \hyperref[quest-artifacts]{Wishing for other roles' quest artifacts, carry bonuses, p.~\pageref*{quest-artifacts}}\par
 \hyperref[wishing-restrictions]{Wishless conduct, refuse all, p.~\pageref*{wishing-restrictions}}\par
@@ -14947,7 +14956,7 @@ source code. Any errors are ours alone.
 ---
 
 *A Traveler's Companion to the Mazes of Menace 5.0 Launch Edition,*<br>
-*compiled by David Bau, using Claude 4.7 Opus to collate and check facts.*
+*compiled by David Bau, using Claude 4.8 Opus to collate and check facts.*
 
 *This work is licensed under
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).*
