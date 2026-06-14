@@ -313,6 +313,104 @@ $endif$
 % ============================================================
 \begin{document}
 
+% --- Quick Command Reference (inside-cover cheat sheet) ---
+\thispagestyle{empty}
+{\centering{\large\bfseries Quick Command Reference}\par\vspace{0.2em}
+{\itshape The keys you reach for most. There are many more; press \texttt{?} in game for the full list.}\par}
+\vspace{1.2em}
+\footnotesize
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Getting around}\par\vspace{0.2em}
+\begin{tabular}{@{}ll@{}}
+\texttt{h j k l} & move west, south, north, east\\
+\texttt{y u b n} & move diagonally\\
+\texttt{H J K L\ldots} & run until something happens\\
+\texttt{\_} & travel to a chosen spot\\
+\texttt{<}\ \ \texttt{>} & go up / down stairs\\
+\texttt{s} & search for hidden doors and traps\\
+\texttt{;} & look at a distant square\\
+\texttt{o}\ \ \texttt{c} & open / close a door\\
+\texttt{\^{}D} & kick\\
+\end{tabular}
+
+\vspace{0.9em}
+\textbf{Using items}\par\vspace{0.2em}
+\begin{tabular}{@{}ll@{}}
+\texttt{,} & pick up\\
+\texttt{d}\ \ \texttt{D} & drop one / several\\
+\texttt{i} & list your inventory\\
+\texttt{e} & eat\\
+\texttt{q} & quaff (drink) a potion\\
+\texttt{r} & read a scroll or spellbook\\
+\texttt{z} & zap a wand\\
+\texttt{Z} & cast a spell\\
+\texttt{a} & apply a tool (horn, lamp, pick-axe)\\
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{Weapons and armor}\par\vspace{0.2em}
+\begin{tabular}{@{}ll@{}}
+\texttt{w} & wield a weapon\\
+\texttt{x} & swap main and off-hand\\
+\texttt{X} & two-weapon combat on/off\\
+\texttt{t}\ \ \texttt{f} & throw / fire from quiver\\
+\texttt{Q} & set the quiver\\
+\texttt{W}\ \ \texttt{T} & wear / take off armor\\
+\texttt{P}\ \ \texttt{R} & put on / remove ring or amulet\\
+\texttt{E} & engrave (write Elbereth)\\
+\end{tabular}
+
+\vspace{0.9em}
+\textbf{Dungeon actions}\ \ {\itshape(type the \texttt{\#} and the word)}\par\vspace{0.2em}
+\begin{tabular}{@{}ll@{}}
+\texttt{\#pray} & pray to your god\\
+\texttt{\#dip} & dip an item (fountains, holy water)\\
+\texttt{\#offer} & sacrifice on an altar\\
+\texttt{\#loot} & loot a container\\
+\texttt{\#force} & force a lock\\
+\texttt{\#enhance} & improve weapon and spell skills\\
+\texttt{\#invoke} & use an artifact's power\\
+\texttt{\#chat} & talk (shop price quotes)\\
+\texttt{\#ride} & mount or dismount a steed\\
+\end{tabular}
+\end{minipage}
+\par\vspace{1.4em}
+{\centering Most actions then ask for a direction or an item. \texttt{Esc} cancels; \texttt{Ctrl+A} repeats your last command.\par}
+\normalsize
+\clearpage
+% --- Last-resort panic card (verso, faces the command reference) ---
+\thispagestyle{empty}
+{\centering{\large\bfseries When You're About to Die}\par\vspace{0.2em}
+{\itshape One turn from death? Reach for these, roughly in this order.}\par}
+\vspace{1.4em}
+\footnotesize
+\noindent\hfill\begin{minipage}{0.82\textwidth}
+\textbf{First, pray} (p.~\pageref*{prayer}).\ \ \texttt{\#pray} asks your god
+for rescue, and a god in good standing almost always answers, saving you from
+critically low HP, starvation, turning to stone, turning to slime, or illness.
+The catch: it works only if you haven't prayed in the last
+\textasciitilde1{,}000 turns, your Luck isn't negative, and you aren't in
+Gehennom. When in doubt, this is the button.
+
+\vspace{1em}
+\textbf{Or get out of the losing fight.}
+\begin{itemize}[leftmargin=1.4em,itemsep=0.35em,topsep=0.3em]
+\item \textbf{Drink your healing.} \texttt{q} a potion of full or extra healing. You are probably carrying one. This is the moment. (p.~\pageref*{potion-healing})
+\item \textbf{Write Elbereth.} \texttt{E}, then type \texttt{Elbereth}, and stand on it. Most monsters lose their nerve and won't attack. (p.~\pageref*{elbereth})
+\item \textbf{Teleport away.} Read a scroll of teleportation, or zap (\texttt{z}) a wand of teleportation at yourself. (p.~\pageref*{wand-teleportation})
+\item \textbf{Drop through the floor.} Apply (\texttt{a}) a pick-axe or zap a wand of digging straight down, and leave the level behind. (p.~\pageref*{wand-digging})
+\item \textbf{Run for the stairs.} \texttt{<} or \texttt{>} takes you off the level entirely. (p.~\pageref*{when-the-fight-goes-badly})
+\item \textbf{Break up the mob.} A ring of conflict or a scroll of scare monster buys you room. (p.~\pageref*{scroll-scare-monster})
+\end{itemize}
+
+\vspace{0.9em}
+{\itshape An amulet of life saving revives you once, but only if you are already wearing it (p.~\pageref*{special-and-utility}). The surest escape is the one you set up before you needed it.}
+\end{minipage}\hfill
+\normalsize
+\clearpage
+
 % --- Title page ---
 \begin{titlepage}
 \thispagestyle{empty}
@@ -326,7 +424,7 @@ $endif$
 \thispagestyle{empty}
 \vspace*{\fill}
 \begin{center}
-{\itshape Do not read this guide aloud. The dungeon is listening.}
+{\itshape Most of what follows is true.}
 \end{center}
 \vspace*{\fill}
 \clearpage

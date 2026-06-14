@@ -417,6 +417,8 @@ section#table-of-contents a {
 
 section#table-of-contents a:hover {
   color: var(--color-link);
+  background: var(--color-code-bg);
+  border-radius: 2px;
 }
 
 /* --- Colophon (final lines) --------------------------------- */

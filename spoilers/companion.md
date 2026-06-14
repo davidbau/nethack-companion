@@ -5,9 +5,6 @@
 ```
 
 ```{=latex}
-\begin{center}\itshape Most of what follows is true.\end{center}
-\vspace{1em}
-
 For more than forty years the NetHack community has grown Jay
 Fenlason's ``first-semester programming project'' into the most
 unforgivingly intricate and emblematic roguelike, and a thriving
@@ -246,8 +243,9 @@ mount, though: the starting pony has only about 7 HP, a failed
 mount attempt costs *you* 10 to 14 HP, and most Knights keep the
 pony as a fighting pet until it grows up. As a Lawful character with a starting long sword, you
 also have the best odds in the game at **[Excalibur](#excalibur-artifact)**. Dip your long sword
-in a fountain at experience level 5+ and Knights get a 1-in-6 chance
-per dip, far better than the 1-in-30 every other Lawful role faces.
+in a fountain (`#dip`) at experience level 5+ and Knights get a
+1-in-6 chance per dip, far better than the 1-in-30 every other
+Lawful role faces.
 Knights follow a code of conduct that imposes alignment penalties
 for attacking fleeing or helpless monsters, so pick your fights
 carefully. Knights also have intrinsic jumping, which lets you
@@ -276,10 +274,11 @@ co-aligned altar and praying: the entire stack blesses at once, so
 the supply is effectively unlimited. *Alignment: Any (matches your god).*
 
 **Ranger.** You start with a bow, a generous supply of arrows, a
-dagger, and a **+2 cloak of displacement**, one of the strongest
+dagger, and a **+2 cloak of displacement** (foes swing at a
+phantom image a step away from the real you), one of the strongest
 defensive starts in the game. You're unmatched as an early-game
-ranged threat. Rangers gain Searching at XL 1, Stealth at XL 7,
-and See Invisible at XL 15. Your elven racial option grants sleep
+ranged threat. Rangers gain Searching at experience level 1 (XL 1
+for short), Stealth at XL 7, and See Invisible at XL 15. Your elven racial option grants sleep
 resistance at XL 4. Hoard the +2 stack of arrows; they break at
 roughly 25% per hit while +0s break around 67%. Mulch the cheap
 stack on the level-1 newts. *Alignment: Neutral or Chaotic.*
@@ -294,8 +293,9 @@ turn one. You get stealth from the beginning, which lets you walk up
 to sleeping enemies without waking them, and your backstab ability
 deals extra damage (+1 to +your level) when you hit a monster that's
 fleeing or helpless. Throw daggers rather than stab with them:
-Rogues get a multishot bonus on thrown daggers, and the backstab
-modifier applies to throws against fleeing targets too. Stealth
+Rogues get a multishot bonus on thrown daggers (several leave
+your hand in a single turn), and the backstab modifier applies to
+throws against fleeing targets too. Stealth
 and range are the role. *Alignment: Chaotic.*
 
 **Samurai.** You start with a katana, which is one of the better
@@ -305,7 +305,8 @@ kit overall. The katana's damage output carries you through the
 early game with ease. The wakizashi is the wrong off-hand: it's a
 short sword, while your katana is a long sword, so the two don't
 share skill. Drop it for any long sword (the Mines usually provides
-one) and twoweapon for the matched-skill bonus.
+one) and fight two-weapon (a blade in each hand) for the
+matched-skill bonus.
 *Alignment: Lawful.*
 
 **Tourist.** You start with a Hawaiian shirt, a credit card, an
@@ -370,8 +371,9 @@ Archeologist, Cave Dweller, Valkyrie.
 
 **Elf.** Infravision plus [sleep resistance](#damage-resistances)
 at XL 4. Fragile HP but with the best Int and Wis caps and the
-best Pw growth per level of any race, plus an innate bow bonus
-(+1 to-hit with any bow, +2 with an elven bow) that applies even
+best Pw (spell energy) growth per level of any race, plus an
+innate bow bonus (+1 to-hit with any bow, +2 with an elven bow)
+that applies even
 to roles that don't normally pick one up. Elf Priests and
 Wizards get a free musical instrument. Available for: Priest,
 Ranger, Wizard.
@@ -454,8 +456,9 @@ weaknesses.
 than you think. But your main food source isn't going to be the
 rations in your pack. Unless you're playing a vegetarian role,
 **most of your food in the early dungeon is the corpses of the
-things you kill.** Eat fresh kills as you go, and rations become
-emergency backup rather than the main course. Grab every food
+things you kill.** Eat fresh kills as you go (`e`, then choose the
+corpse on your square), and rations become emergency backup rather
+than the main course. Grab every food
 ration you see, sure, but two or three is plenty to carry; you
 don't need to hoard. Tripe rations are for your pet, not for you.
 
@@ -577,7 +580,7 @@ your best early assets.
 
 **Rule 4: Learn to pray.** If you are about to die (hit points
 critically low, starving, turning to stone) you
-can pray to your god for help. In the early game, with decent
+can pray to your god (`#pray`) for help. In the early game, with decent
 alignment, prayer will almost certainly save you. But you can only
 pray about once every thousand turns or so, and praying at the
 wrong time (when your god is angry, when you're in [Gehennom](#gehennom), or
@@ -975,7 +978,7 @@ AC / attack details on every monster, see the
 | [`M`](#mummies-m)    | [Mummies](#mummies-m)           | Aggressive undead with physical claw attacks. Their corpses are dangerous to eat (age you). Mummy wrappings worn as a cloak block invisibility. That is usually a downside, but very useful if you've gone invisible and you need a shopkeeper to interact with you. |
 | [`n`](#nymphs-n)    | [Nymphs](#nymphs-n)            | [Steal items from your inventory, then teleport away](#a-note-on-nymphs). Fight from range. |
 | [`N`](#nagas-n)    | [Nagas](#nagas-n)             | Large serpent-bodied creatures. Red nagas breathe fire, black nagas spit acid, golden nagas cast spells, guardian nagas spit Str-drain poison and have a paralyzing bite. Tough; speeds 12–16. |
-| [`O`](#ogres-o)    | [Ogres](#ogres-o)             | Strong melee fighters. Ogre lords and kings are tougher.                                             |
+| [`O`](#ogres-o)    | [Ogres](#ogres-o)             | Heavy hitters for the upper dungeon, and they travel in groups; ogre lords and kings hit harder still. Don't get surrounded. |
 | [`p`](#piercers-p)    | [Piercers](#piercers-p)          | Disguise as stalactites; drop from the ceiling onto whatever walks below. The fall does serious damage. Hard to spot in advance. |
 | [`P`](#puddings-and-oozes-p)    | [Puddings](#puddings-and-oozes-p)          | [Black and brown puddings split when hit in melee with an iron or metal weapon](#a-note-on-puddings) (scalpel and tsurugi count). Good to eat for [intrinsics](#useful-corpse-effects). |
 | [`q`](#quadrupeds-q)    | [Quadrupeds](#quadrupeds-q)        | Multi-attack mid-game bruisers. The **rothe** is the famous one (three attacks per turn at sluggish speed 9, dangerous in packs); mumakil are solo two-attack bruisers (4d12 butt + 2d6 bite).                              |
@@ -989,7 +992,7 @@ AC / attack details on every monster, see the
 | [`w`](#worms-w)    | [Worms](#worms-w)             | Long worms grow tail segments as they move and can be a corridor in themselves. |
 | [`W`](#wraiths-w)    | [Wraiths](#wraiths-w)           | [Drain levels on hit](#level-drain). But [their corpses grant a level](#a-note-on-wraiths), so eat them fresh. |
 | [`y`](#lights-y)    | [Yellow/black lights](#lights-y) | Explode adjacent. Yellow blinds you; black hallucinates you. Black lights are invisible without *see invisible*. Kill at range. |
-| [`Y`](#apelike-creatures-y)    | [Yetis](#apelike-creatures-y)             | Tough melee combatants. Corpses may grant cold resistance.                                           |
+| [`Y`](#apelike-creatures-y)    | [Yetis](#apelike-creatures-y)             | Big white brutes, but the real prize is the corpse: a chance at cold resistance you can bank early. |
 | [`z`](#zruties-z)    | [Zruty](#zruties-z)             | Three-attack mid-game brute. Uncommon but a fair fight if geared up.                          |
 | [`Z`](#zombies-z)    | [Zombies](#zombies-z)           | Slow, numerous, come in many varieties. Zombie corpses are old and will rot.                         |
 
@@ -1141,9 +1144,9 @@ If fountains are slot machines, altars are the single most useful
 piece of furniture in the dungeon. Treat every altar like the
 treasure it is.
 
-**Dropping items on an altar** reveals their BUC status instantly.
-**Amber flash** → Blessed. **No flash** → Uncursed. **Black
-flash** → Cursed.
+**Dropping items on an altar** (`d` for one, `D` to drop several
+at once) reveals their BUC status instantly. **Amber flash** →
+Blessed. **No flash** → Uncursed. **Black flash** → Cursed.
 
 This is free, unlimited, and works on everything. In the early game,
 your first altar becomes your testing laboratory: haul every
@@ -1152,8 +1155,8 @@ ascensions have been saved by the simple discipline of altar-testing
 before wearing. (Drop the whole pile at once; you'll see one flash
 per item.)
 
-**Sacrificing monster corpses on an altar** deepens your relationship
-with your god. The corpse must be fresh (stale sacrifices are an
+**Sacrificing monster corpses on an altar** (`#offer`, while
+standing on it) deepens your relationship with your god. The corpse must be fresh (stale sacrifices are an
 insult) and the bigger the monster, the more your god is impressed.
 Sacrifice enough and your deity may reward you with an artifact
 weapon aligned to your cause. Don't sacrifice your starting pet:
@@ -1506,9 +1509,11 @@ For complete solutions to all eight level variants, see
 
 Somewhere in the mid-levels of the Dungeons of Doom (around levels
 5 through 9), you'll find a special room containing the Oracle of
-Delphi, flanked by centaur statues and four fountains.
+Delphi, flanked by centaur statues and four fountains. Like every
+oracle since antiquity, she trades in riddles and takes payment up
+front.
 
-The Oracle offers two services:
+She offers two services:
 
 - **Minor consultations** are cheap (50 zorkmids) and produce
   fortune-cookie-style messages, drawn from the same true-rumor
@@ -1573,7 +1578,7 @@ the Dark One's stronghold for the [Eye of the Aethiopica](#eye-of-the-aethiopica
 [Artifacts](#artifacts) chapter has the full per-role list.
 
 Quest artifacts are powerful. Each grants a unique mix of
-carried or worn intrinsics: protection, luck, ESP, warning,
+carried or worn intrinsics: protection, luck, telepathy, warning,
 reflection, or stealth depending on role. A few grant magic
 resistance just by being carried; a few others block magic
 attacks only when wielded or worn. The [Artifacts](#artifacts)
@@ -1708,26 +1713,12 @@ statues scattered around (those used to be adventurers).
 > back in the early 2000s, with input from Pat Rankin, Geoduck,
 > Topi Linkala, and others. This is a condensed version of his guide.*
 
-The level has three challenges stacked together:
-
-1. **Crossing the water.** The island is surrounded by water.
-   You'll need levitation, [water walking](#movement-and-spatial-behavior) boots, or some creative
-   approach (freezing water with a wand of cold, building a boulder
-   bridge, polymorphing into a flying creature). Don't wade in
-   without preparation, because:
-
-2. **Giant eels** (electric eels on one layout). The water is home
-   to giant eels that can grab and drown you on a successful hit,
-   reaching into adjacent dry tiles too. See the eel-survival rules
-   below.
-
-3. **Medusa herself.** Her gaze turns you to stone. You need
-   either **reflection** (a shield of reflection or amulet of
-   reflection bounces the gaze back, stoning her instead) or
-   **blindness** (you can't meet her gaze if you can't see). A
-   mirror also works if you apply it at her. Reflection is the
-   cleanest solution. If you got the amulet of reflection from
-   Sokoban, you're already prepared.
+The level stacks three challenges on one island: **crossing the
+water** that surrounds it, the **giant eels** (electric eels on
+one layout) lurking in that water, and **Medusa herself**, whose
+gaze turns you to stone. Each gets its own section below. If you
+carried the amulet of reflection out of Sokoban, the third
+problem is already solved.
 
 There is a downward staircase on the island itself
 that leads toward [the Castle](#the-castle). The level has four possible layouts,
@@ -1807,12 +1798,14 @@ you. Critical rules:
 - Gehennom branches off the Castle; the stairs do not return (dungeon.lua:39-43)
 -->
 
-The Castle is the last level of the Dungeons of Doom proper, a
-stone fortress surrounded by a moat with a drawbridge as its only
-entrance. Inside waits an army of defenders: soldiers in the
-barracks, dragons guarding the storerooms, and a court of
-high-letter monsters in the throne room. Hidden in a chest in
-one of the four corner towers is the **wand of wishing**.
+The Castle is the grand finale of the sunlit dungeon and the
+doorway to everything worse below: a stone fortress ringed by a
+moat, with a drawbridge for its only entrance. Inside waits an
+army of defenders: soldiers in the barracks, dragons guarding the
+storerooms, and a court of high-letter monsters in the throne
+room. The reward that makes the siege worth it sits in a locked
+chest in one of the four corner towers, the **wand of wishing**,
+the most valuable find in the game.
 
 The Castle also serves as the gateway to [Gehennom](#gehennom).
 For how to open the drawbridge and what to do once you're
@@ -2525,7 +2518,8 @@ refuse cursed items). See
 [A Practical Identification Strategy](#a-practical-identification-strategy)
 for the full procedure.
 
-**Changing armor takes turns and layers in order.** Shirt goes
+**Changing armor takes turns and layers in order.** You wear
+armor with `W` and take it off with `T`. Shirt goes
 on first, body suit second, cloak last. To put on a shirt, you
 must first remove your cloak and body suit; to put on a body
 suit, you must first remove your cloak. A metal body suit takes
@@ -2537,31 +2531,27 @@ save armor changes for a clear room or a corridor at your back.
 
 #### Speed
 
-Every entity in the dungeon (you and every monster) runs on the
-same movement-budget system. Each of you has a private movement
-counter measured in points. **An action costs 12 points.** When
-your counter reaches 12, you act, and the system deducts 12.
+**Divide before you engage.** The single most useful number in a
+fight is the monster's speed divided by your effective speed:
+that ratio is how many times it acts for every action you take.
+A base-12 hero against a speed-18 centaur sees a ratio of 1.5,
+so the centaur lands three hits for every two of yours and wins
+a melee duel. Slip on speed boots (effective ~20) and the ratio
+flips to 0.9, and now it's your fight. Against an air elemental
+at speed 36, the ratio is 3.0 unboosted and 1.8 even with boots,
+still hopeless on foot. Ranged or skip. A ratio above 1.0 is a
+fight you lose to attrition unless you can drop the monster in
+your opening burst; a ratio below 1.0 is kiteable, so back into
+a corridor and strike between its steps.
 
-**How the loop works.** After each action, every monster whose
-counter is at 12 or more takes a turn, each spending 12. When no
-one has enough points to act, an **allocation** fires: each
-entity's counter advances by its **speed** value. Allocations
-repeat until your counter hits 12, then play pauses for your
-next keystroke.
-
-Your base speed is **12**. Monster speed comes from each
-monster's bestiary entry: zombies at 6, gnomes at 12, centaurs
-at 18, vampire bats at 20, air elementals at 36.
-
-**The shortcut.** To a first approximation, divide a monster's
-speed by your effective speed: that ratio is how many actions it
-takes for every one of yours, and the single most useful number
-in a combat decision. A base-12 hero against a speed-18 centaur sees
-a ratio of 1.5: the centaur lands three hits for every two of
-yours and wins a melee duel. Slip on speed boots (effective ~20)
-and the ratio flips to 0.9, and now it's your fight. Against an
-air elemental at speed 36, the ratio is 3.0 unboosted and 1.8
-even with boots, still hopeless on foot. Ranged or skip.
+**Under the hood.** Your base speed is **12**, and so is the
+cost of any action. Each creature builds up a private counter;
+when nobody can afford to move, every counter advances by that
+creature's **speed**, and that repeats until someone can act. A
+faster creature's counter simply fills more often, which is why
+the ratio above holds. Monster speeds come from the bestiary:
+zombies at 6, gnomes at 12, centaurs at 18, vampire bats at 20,
+air elementals at 36.
 
 **Intrinsic speed comes in two probabilistic tiers.** **Fast**
 (from certain corpses) adds a +12 bonus to roughly one
@@ -2603,22 +2593,10 @@ bag of holding.
 | 24    | extreme              | queen bees                                        |
 | 36    | untouchable on foot  | air elementals                                    |
 
-**Practical rules for play.**
-
-1. **Before engaging, divide.** Monster's speed by your effective
-   speed. The result is how often they act for every action you
-   take.
-2. **Ratio above 1.0** is a fight you lose to attrition unless
-   you can drop them in your first burst. Wand them, use a
-   ranged attack, or skip the fight.
-3. **Ratio below 1.0** is kiteable. You can attack and retreat
-   between their actions; back into a corridor and let them
-   approach one step at a time.
-4. **The big returns from speed boots come against fast
-   monsters.** Against a speed-6 zombie, your ratio improves
-   only from 0.5 to 0.3, which is marginal. Against a speed-18
-   centaur, it improves from 1.5 to 0.9, which is the difference
-   between losing a chase and winning a duel.
+Speed boots earn their slot against the fast monsters. Against a
+speed-6 zombie your ratio only creeps from 0.5 to 0.3, but
+against a speed-18 centaur it drops from 1.5 to 0.9, the
+difference between losing a chase and winning a duel.
 
 #### Two-Weapon Combat
 <!-- audit
@@ -2647,9 +2625,18 @@ against a moderate-AC target, a Samurai's katana + wakizashi
 out-damages the katana alone on most rounds. At Skilled (−5/0)
 the math is roughly a wash. Below Skilled the penalty usually
 swallows the benefit, so a Knight or Barbarian is better off
-with one good weapon. The 5.0 two-handed bonus (3/2 Strength
+with one good weapon. The two-handed bonus (3/2 Strength
 damage on bimanual weapons) is a strong alternative for any
 role without a two-weapon skill.
+
+**Setting it up.** There is no separate command for the off-hand;
+the second weapon lives in a "secondary" slot you fill with the
+swap command. Wield the off-hand weapon with `w`, press `x` to
+push it into the secondary slot, then `w` your main weapon, and
+finally press `X` (capital, the two-weapon toggle) to fight with
+both. Press `X` again to go back to one weapon. The off-hand has
+to be a one-handed melee weapon, and a cursed weapon in either
+hand jams the whole arrangement.
 
 #### Ranged Combat
 
@@ -2987,7 +2974,8 @@ range, then eat the corpse for [telepathy](#senses-and-perception).
 **Minotaurs** (`H`, in [the Castle](#the-castle) and maze levels of [Gehennom](#gehennom)).
 Three attacks (two 3d10 claws and a 2d8 head-butt) averaging
 about 42 damage per turn. The hardest hitter short of the Riders
-themselves. Use a wand of sleep, a thrown potion of paralysis
+themselves (the three near-unkillable horsemen who guard the
+endgame). Use a wand of sleep, a thrown potion of paralysis
 (with [free action](#combat-and-defense)), or just dig down before they
 reach you.
 
@@ -4617,14 +4605,10 @@ three candidates.
 Pick up an item and note the quoted price. With average Charisma
 (11-15), buy price equals base and sell is half base. Low Charisma
 pushes buy up (×2 at Cha ≤ 5); high Charisma pulls it down (×½ at
-Cha ≥ 19). Sell prices don't change with Charisma, but if
-shopkeepers see you as a **mark**, then you can only sell at a
-third of base, and you'll have to pay 4/3 to buy. Three visible
-cues count you as a mark: wearing a **dunce cap**, playing a
-**Tourist** below XL 15, or wearing a **Hawaiian shirt visibly**
-(no body armor or cloak over it). The rest of this guide refers to
-them collectively as *Tourist*. You don't need to memorize the
-formulas; what matters is grouping by price tier.
+Cha ≥ 19). A sucker (see above) also pays 4/3 to buy on top of the
+worse sell price. The rest of this guide refers to that sucker
+condition collectively as *Tourist*. You don't need to memorize
+the formulas; what matters is grouping by price tier.
 
 Two further wrinkles affect unidentified items. About a quarter of
 unID'd items carry an extra ×4/3 buy surcharge, rolled independently
@@ -5654,8 +5638,8 @@ pharmacy.
 - So an uncursed scroll allows one move (drop + pickup + drop), then crumbles on the next pickup. A cursed scroll dusts on the first pickup. BUC-testing on an altar reveals the BUC via the flash but the subsequent pickup still follows the same rule — meaning a cursed BUC-test is effectively destructive.
 -->
 
-Scrolls are the dungeon's single-use spells: read once, triggered,
-gone. They appear with absurd randomized labels ("ZELGO MER,"
+Scrolls are the dungeon's single-use spells: read once (`r`),
+triggered, gone. They appear with absurd randomized labels ("ZELGO MER,"
 "DAIYEN FOOELS," "PRATYAVAYAH") that stay consistent within a game
 but mean nothing until you identify them. The labels are part of
 the charm. You'll develop superstitious favorites.
@@ -5837,7 +5821,8 @@ confuse you for a few turns.
 -->
 
 Wands are reusable magical items that produce directed effects when
-zapped. They come in three types: **ray wands** fire a beam in a
+zapped (`z`, then a direction). They come in three types: **ray
+wands** fire a beam in a
 direction that bounces off walls, **beam wands** affect what they
 hit in a straight line, and **non-directional wands** affect the
 area around you.
@@ -6095,9 +6080,10 @@ chance of that going wrong.
 
 
 You can wear two rings (one on each hand) and one amulet
-(around your neck). These are the most constrained equipment
-slots in the game, which makes choosing what to wear a genuine
-strategic decision. Both rings and amulets have randomized
+(around your neck). Put one on with `P` and take it off with `R`,
+the pair that handles rings and amulets (armor uses `W` and `T`).
+These are the most constrained equipment slots in the game, which
+makes choosing what to wear a genuine strategic decision. Both rings and amulets have randomized
 appearances, and some of the best items in the game hide behind
 unassuming descriptions like "granite ring" or "circular amulet."
 
@@ -6601,7 +6587,7 @@ practical body slot until you reach dragon scales.
 
 At the top is **plate mail**, the late-medieval European
 knight's full harness, articulated steel plates strapped over a
-padded gambeson. The heaviest body suit in the dungeon (450 zm)
+padded jacket. The heaviest body suit in the dungeon (450 zm)
 and the strongest (7 AC). The bulk pushes Knights and Valkyries
 toward Burdened in a hurry, and the iron raises your
 spellcasting failure rate. Samurai see the same item on screen
@@ -7451,8 +7437,9 @@ so pick dwarf or human if you want the heaviest melee.
 
 #### Healer
 
-You start with a stethoscope, four potions of healing, four of
-extra healing, a wand of sleep, three pre-blessed spellbooks
+The dungeon's doctor. You start with a stethoscope, four potions
+of healing, four of extra healing, a wand of sleep, three
+pre-blessed spellbooks
 (healing, extra healing, stone-to-flesh), poison resistance, and
 immunity to sickness. The stethoscope shows monster HP and your own
 internal state; the wand of sleep makes early combat much easier
@@ -7486,7 +7473,7 @@ stethoscope.
 
 #### Knight
 
-You start with a saddled pony, a +1 long
+Chivalry on horseback. You start with a saddled pony, a +1 long
 sword, and a +1 lance. The pony is a credible early-game ally, and
 the basis of your unique attack: a jousting blow from horseback
 does heavy damage, and Knights are the only role with Lance at
@@ -7657,8 +7644,9 @@ lock-picking that doesn't apply to regular keys.
 
 #### Samurai
 
-Katana, off-hand wakizashi, yumi bow with arrows. Samurai start
-with intrinsic speed and a strong opening melee kit. The katana is
+The disciplined warrior. Katana, off-hand wakizashi, yumi bow
+with arrows. Samurai start with intrinsic speed and a strong
+opening melee kit. The katana is
 a long sword underneath, so it shares long sword skill: with Long
 Sword and Two-Handed Sword both at Expert, Two-Weapon Combat at
 Expert, and a guaranteed katana start, the role is set up for a
@@ -7805,14 +7793,14 @@ Magic in the Mazes is hard-won. You study a crumbling spellbook,
 hope it doesn't explode in your face, and earn the power to set
 things on fire with your mind. Spells are
 reusable abilities learned from spellbooks. Unlike scrolls (consumed
-on use) or wands (limited charges), spells can be cast repeatedly as
-long as you have mana (Pw, power) and the spell hasn't expired from
-your increasingly overtaxed brain.
+on use) or wands (limited charges), spells can be cast (`Z`)
+repeatedly as long as you have mana (Pw, power) and the spell
+hasn't expired from your increasingly overtaxed brain.
 
 #### Learning Spells
 
-Read a spellbook to learn the spell it contains. Reading takes
-several turns and can fail. A failed reading can teleport you, take
+Read a spellbook (`r`, the same key that reads scrolls) to learn
+the spell it contains. Reading takes several turns and can fail. A failed reading can teleport you, take
 your gold, blind, confuse, or poison you, blow up in your face for
 HP damage, or randomly curse one of your items. A book that survives
 failures can be retried.
@@ -8801,9 +8789,9 @@ cures nearly every bad status. Few artifacts change a role's late
 game as much as this one.
 
 **[The Magic Mirror of Merlin]{#magic-mirror-of-merlin}** (Knight): grants ESP and magic
-resistance, and occasionally *speaks*, dropping hints. Knights
-already have Excalibur for combat, so the Mirror is pure passive
-utility.
+resistance, and now and then the old wizard's voice murmurs a hint
+from inside the glass. Knights already have Excalibur for combat,
+so the Mirror rides along as a talking insurance policy.
 
 **[The Eyes of the Overworld]{#eyes-of-the-overworld}** (Monk): lenses that, when worn, give
 astral vision (see invisible, see through walls, spot secret doors)
@@ -9177,7 +9165,11 @@ death from a safe distance.
 
 The climax of the game is a choreographed sequence: three
 Invocation items, one vibrating square, one final boss, and one
-frantic climb back to the surface. The steps:
+frantic climb back to the surface. Everything up to the
+invocation can be done at your own pace; the moment you perform it
+the dungeon wakes up, every covetous monster starts hunting you,
+and there is no longer any such thing as a safe turn. Have the
+whole kit ready before you begin. The steps:
 
 1. **Collect the trio.** You need the **Bell of Opening** (the
    Quest goal, dropped by your quest nemesis), the **Candelabrum
@@ -9250,8 +9242,9 @@ frantic climb back to the surface. The steps:
 - strategy aligned with NetHackWiki Ascension kit: GDSM/SDSM, cloak of MR, speed boots, gauntlets of power, life saving, bag of holding, wand of death, candles are the canonical kit (https://nethackwiki.com/wiki/Ascension_kit)
 -->
 
-Here is what most successful adventurers carry into Moloch's
-Sanctum, slot by slot:
+The adventurers who died deep in Gehennom carried almost exactly
+this kit. Assemble it, then read the next section to see how they
+died anyway. Slot by slot:
 
 | Slot | Typical pick | Notes |
 |--------|------------------------|---------------------------------------|
@@ -9500,10 +9493,13 @@ it just will not move you.
 #### Plane of Fire
 
 Everything is on fire. The ground is fire. The air is fire. Fire
-elementals fill the level, and fire traps dot every corridor. Fire
-resistance isn't just recommended: without it, you'll be dead in
-turns. Map the level, find the portal among the flames, and get
-there. Don't stop to fight anything you don't have to.
+elementals fill the level, and fire traps dot every corridor. The
+twist is that for a prepared hero this is the gentlest plane of
+the four: you've carried fire resistance since the Castle, so the
+fire that defines the place can't touch you, and what's left is
+just a navigation puzzle. Find the portal among the flames and
+go. (Arrive without fire resistance and the plane lives up to its
+name: you'll be dead in a few turns.)
 
 #### Plane of Water
 
