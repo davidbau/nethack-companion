@@ -8498,16 +8498,22 @@ ascensions:
 
 1. **Gray dragon scale mail** ([magic resistance](#damage-resistances) + AC; magic resistance
    is the most important protection in the game, so this is highly recommended).
+   Type `blessed greased fixed +2 gray dragon scale mail`.
 2. **Silver dragon scale mail** (reflection + AC, the second pillar
    of not dying to wands).
+   Type `blessed greased fixed +2 silver dragon scale mail`.
 3. **Speed boots** (being fast gives you more actions per turn, excellent
    for both offense and escape).
+   Type `blessed greased fixed +2 speed boots`.
 4. **Gauntlets of power** (STR 25 if your role benefits;
    most roles benefit from punching harder).
+   Type `blessed greased fixed +2 gauntlets of power`.
 5. **Amulet of [life saving](#special-and-utility)** (insurance for the endgame, when
    overconfidence kills more adventurers than monsters do).
+   Type `blessed amulet of life saving` (amulets take no enchantment or erosion).
 6. **A specific artifact** ([Grayswandir](#grayswandir) is a common target for the
    silver damage against everything in [Gehennom](#gehennom)).
+   Type `blessed greased fixed +2 Grayswandir`.
 
 Don't wish for consumables (scrolls, potions) unless you're in
 dire straits. Items you can find through normal play aren't worth
@@ -8518,6 +8524,7 @@ of your survival.
 <!-- audit
 2026-05-18:
 - bare "gray dragon scale mail" keeps random spe and rolls BUC via blessorcurse(otmp,10): ~5% blessed / ~5% cursed / ~90% uncursed (objnam.c:5094-5096, 5258-5268)
+- wished enchantment on armor/weapon/weptool/charged ring collapses to +0 if requested spe > rnd(5) (and > the item's random base spe): +1 always, +2 4/5, +3 3/5, +4 2/5, +5 1/5, +6+ never (objnam.c:5099-5105). Recommend +2.
 - artifact wishes are probabilistic: oartifact && rn2(nartifact_exist())>1 (objnam.c:5374), scaled by TOTAL existing artifacts including bones
 - u.uconduct.wisharti increments whether the wish is granted or denied (objnam.c:5364)
 - only quest artifacts are absolutely blocked: restrict_name SPFX_NOGEN|SPFX_RESTR check (artifact.c:618)
@@ -8530,13 +8537,20 @@ of your survival.
 -->
 
 When the prompt asks "For what do you wish?", be specific. This is
-not the time for ambiguity:
+not the time for ambiguity. The strings above are written out in
+full for exactly this reason; here is what each word buys you:
 
-- "blessed greased fixed +3 gray dragon scale mail" is the
+- "blessed greased fixed +2 gray dragon scale mail" is the
   veteran's incantation. `blessed` because BUC defaults to random,
   `greased` deflects nymph theft and Rider grabs, `fixed` (or
-  `rustproof` or `erodeproof`) locks erosion, `+3` is the safe
-  enchantment ceiling.
+  `rustproof` or `erodeproof`) locks erosion, and `+2` is the
+  enchantment. Don't reach higher than you have to: when you name
+  a plus on armor or a weapon, the wish secretly rolls a number
+  from 1 to 5, and if your plus is greater than that roll the
+  enchantment collapses to +0. So +1 always lands, +2 lands four
+  times in five, +3 only three in five, and anything past +5 never
+  lands at all. Ask for +2 and enchant the rest of the way with
+  scrolls later.
 - "gray dragon scale mail" alone lets the dice pick the BUC
   and the enchantment, so a bare wish can land cursed. You had
   *one* wish; spell out the BUC and the plus. And don't forget

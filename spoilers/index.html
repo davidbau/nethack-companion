@@ -11473,19 +11473,26 @@ ascensions:</p>
 <li><strong>Gray dragon scale mail</strong> (<a
 href="#damage-resistances">magic resistance</a> + AC; magic resistance
 is the most important protection in the game, so this is highly
-recommended).</li>
+recommended). Type
+<code>blessed greased fixed +2 gray dragon scale mail</code>.</li>
 <li><strong>Silver dragon scale mail</strong> (reflection + AC, the
-second pillar of not dying to wands).</li>
+second pillar of not dying to wands). Type
+<code>blessed greased fixed +2 silver dragon scale mail</code>.</li>
 <li><strong>Speed boots</strong> (being fast gives you more actions per
-turn, excellent for both offense and escape).</li>
+turn, excellent for both offense and escape). Type
+<code>blessed greased fixed +2 speed boots</code>.</li>
 <li><strong>Gauntlets of power</strong> (STR 25 if your role benefits;
-most roles benefit from punching harder).</li>
+most roles benefit from punching harder). Type
+<code>blessed greased fixed +2 gauntlets of power</code>.</li>
 <li><strong>Amulet of <a href="#special-and-utility">life
 saving</a></strong> (insurance for the endgame, when overconfidence
-kills more adventurers than monsters do).</li>
+kills more adventurers than monsters do). Type
+<code>blessed amulet of life saving</code> (amulets take no enchantment
+or erosion).</li>
 <li><strong>A specific artifact</strong> (<a
 href="#grayswandir">Grayswandir</a> is a common target for the silver
-damage against everything in <a href="#gehennom">Gehennom</a>).</li>
+damage against everything in <a href="#gehennom">Gehennom</a>). Type
+<code>blessed greased fixed +2 Grayswandir</code>.</li>
 </ol>
 <p>Don’t wish for consumables (scrolls, potions) unless you’re in dire
 straits. Items you can find through normal play aren’t worth a wish. A
@@ -11497,6 +11504,7 @@ survival.</p>
 <!-- audit
 2026-05-18:
 - bare "gray dragon scale mail" keeps random spe and rolls BUC via blessorcurse(otmp,10): ~5% blessed / ~5% cursed / ~90% uncursed (objnam.c:5094-5096, 5258-5268)
+- wished enchantment on armor/weapon/weptool/charged ring collapses to +0 if requested spe > rnd(5) (and > the item's random base spe): +1 always, +2 4/5, +3 3/5, +4 2/5, +5 1/5, +6+ never (objnam.c:5099-5105). Recommend +2.
 - artifact wishes are probabilistic: oartifact && rn2(nartifact_exist())>1 (objnam.c:5374), scaled by TOTAL existing artifacts including bones
 - u.uconduct.wisharti increments whether the wish is granted or denied (objnam.c:5364)
 - only quest artifacts are absolutely blocked: restrict_name SPFX_NOGEN|SPFX_RESTR check (artifact.c:618)
@@ -11508,14 +11516,20 @@ survival.</p>
 - strategy aligned with NetHackWiki Wish, Gray dragon scale mail, Speed boots, Magic lamp: GDSM/SDSM as top wishes, speed boots and gauntlets of power as standard follow-ups, bare wishes risk cursed/random spe (https://nethackwiki.com/wiki/Wish, https://nethackwiki.com/wiki/Gray_dragon_scale_mail, https://nethackwiki.com/wiki/Speed_boots, https://nethackwiki.com/wiki/Magic_lamp)
 -->
 <p>When the prompt asks “For what do you wish?”, be specific. This is
-not the time for ambiguity:</p>
+not the time for ambiguity. The strings above are written out in full
+for exactly this reason; here is what each word buys you:</p>
 <ul>
-<li>“blessed greased fixed +3 gray dragon scale mail” is the veteran’s
+<li>“blessed greased fixed +2 gray dragon scale mail” is the veteran’s
 incantation. <code>blessed</code> because BUC defaults to random,
 <code>greased</code> deflects nymph theft and Rider grabs,
 <code>fixed</code> (or <code>rustproof</code> or
-<code>erodeproof</code>) locks erosion, <code>+3</code> is the safe
-enchantment ceiling.</li>
+<code>erodeproof</code>) locks erosion, and <code>+2</code> is the
+enchantment. Don’t reach higher than you have to: when you name a plus
+on armor or a weapon, the wish secretly rolls a number from 1 to 5, and
+if your plus is greater than that roll the enchantment collapses to +0.
+So +1 always lands, +2 lands four times in five, +3 only three in five,
+and anything past +5 never lands at all. Ask for +2 and enchant the rest
+of the way with scrolls later.</li>
 <li>“gray dragon scale mail” alone lets the dice pick the BUC and the
 enchantment, so a bare wish can land cursed. You had <em>one</em> wish;
 spell out the BUC and the plus. And don’t forget “scale”: “gray dragon
