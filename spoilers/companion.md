@@ -8524,7 +8524,8 @@ of your survival.
 <!-- audit
 2026-05-18:
 - bare "gray dragon scale mail" keeps random spe and rolls BUC via blessorcurse(otmp,10): ~5% blessed / ~5% cursed / ~90% uncursed (objnam.c:5094-5096, 5258-5268)
-- wished enchantment on armor/weapon/weptool/charged ring collapses to +0 if requested spe > rnd(5) (and > the item's random base spe): +1 always, +2 4/5, +3 3/5, +4 2/5, +5 1/5, +6+ never (objnam.c:5099-5105). Recommend +2.
+- wished enchantment on armor/weapon/weptool/charged ring collapses to +0 if requested spe > rnd(5) (and > the item's random base spe): +1 always, +2 4/5, +3 3/5, +4 2/5, +5 1/5, +6+ never (objnam.c:5099-5105). Recommend +2. Roll is plain rnd(5), NOT luck-adjusted, so positive Luck gives no bonus.
+- Luck < 0 sabotages wishes: "blessed" -> cursed (objnam.c:5263-5264), erodeproof/"fixed" fails to apply (objnam.c:5287), and spe > 2 flips negative (objnam.c:5104). Luck >= 0 is all that's needed; extra Luck does nothing. Wiki: +3 higher average, +2 less chancy and strictly better if enchanting further (https://nethackwiki.com/wiki/Wish).
 - artifact wishes are probabilistic: oartifact && rn2(nartifact_exist())>1 (objnam.c:5374), scaled by TOTAL existing artifacts including bones
 - u.uconduct.wisharti increments whether the wish is granted or denied (objnam.c:5364)
 - only quest artifacts are absolutely blocked: restrict_name SPFX_NOGEN|SPFX_RESTR check (artifact.c:618)
@@ -8549,8 +8550,16 @@ full for exactly this reason; here is what each word buys you:
   from 1 to 5, and if your plus is greater than that roll the
   enchantment collapses to +0. So +1 always lands, +2 lands four
   times in five, +3 only three in five, and anything past +5 never
-  lands at all. Ask for +2 and enchant the rest of the way with
-  scrolls later.
+  lands at all. A +3 wish has the higher average if it lands, but
+  ask for +2 anyway: the plus is steadier, and once you top it off
+  with enchant scrolls it ends up a hair ahead of where a +3 wish
+  would have left you.
+- Mind your Luck before you wish. Non-negative Luck is all you
+  need, and piling up more buys you nothing extra at the prompt.
+  Negative Luck, though, poisons the whole wish: `blessed` comes
+  out cursed, `fixed` fails to hold, and any plus above +2 flips
+  to a minus. If your Luck has soured, mend it before you spend a
+  wish on gear.
 - "gray dragon scale mail" alone lets the dice pick the BUC
   and the enchantment, so a bare wish can land cursed. You had
   *one* wish; spell out the BUC and the plus. And don't forget
