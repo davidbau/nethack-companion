@@ -1509,7 +1509,8 @@ For complete solutions to all eight level variants, see
 
 Somewhere in the mid-levels of the Dungeons of Doom (around levels
 5 through 9), you'll find a special room containing the Oracle of
-Delphi, flanked by centaur statues and four fountains. Like every
+Delphi, flanked by centaur statues (empty, don't bother) and four
+fountains. Like every
 oracle since antiquity, she trades in riddles and takes payment up
 front.
 
@@ -5826,6 +5827,12 @@ wands** fire a beam in a
 direction that bounces off walls, **beam wands** affect what they
 hit in a straight line, and **non-directional wands** affect the
 area around you.
+
+A wand's blessed-uncursed-cursed status doesn't change what it does
+when it works, but a cursed wand has a small chance, about 1 in 100,
+to backfire and explode in your hand each time you zap or engrave
+with it. The blast grows with the charges left inside, so it pays to
+uncurse a wand you mean to lean on, a wand of death above all.
 
 #### The Wand Table
 
