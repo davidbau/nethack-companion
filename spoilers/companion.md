@@ -2080,6 +2080,12 @@ wall coverage with no gaps and no wasted re-searching. The pattern
 looks tedious on paper because it *is* tedious, but tedium is
 cheaper than being trapped on Dlvl 1 forever.
 
+A Ranger is spared much of this: Rangers have the Searching skill
+from the start (as does anyone wielding Excalibur), so they check
+every adjacent square automatically with each step and often turn up
+secrets just by walking the walls. A stubborn door may still want you
+to stop and search a few times.
+
 **Items that help:**
 
 - **Ring of searching** auto-searches every turn while it's worn
