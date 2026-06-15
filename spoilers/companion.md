@@ -7100,6 +7100,11 @@ arrows out of thin air. Wield a bow with `w`, set arrows as
 quiver with `Q`, fire with `f`. Rangers, Samurai, and Rogues
 reach Expert.
 
+Any bow fires any arrow, but a matched set (elven bow with elven
+arrows, orcish bow with orcish arrows, yumi with ya) earns the
+corresponding race or role an extra arrow per volley. See the
+[weapons tables](#weapons-tables) for the pairings.
+
 **Crossbows and bolts.** The **crossbow** is the late-medieval
 mechanical bow that fires short heavy **bolts**. It hits harder
 per shot than a bow but reloads slowly, and full multishot needs
@@ -11750,15 +11755,15 @@ specialists. Cancels shield and two-weapon while wielded.
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
-| arrow | 1d6 / 1d6 | 1 | 2 | — | iron |  |
-| elven arrow | 1d7 / 1d6 | 1 | 2 | — | wood |  |
-| orcish arrow | 1d5 / 1d6 | 1 | 2 | — | iron |  |
-| silver arrow | 1d6 / 1d6 | 1 | 5 | — | silver | Silver damage to demons and weres. |
-| ya | 1d7 / 1d7 | 1 | 4 | +1 | metal |  |
-| bow | — | 30 | 60 | — | wood |  |
-| elven bow | — | 30 | 60 | — | wood |  |
-| orcish bow | — | 30 | 60 | — | wood |  |
-| yumi | — | 30 | 60 | — | wood | The Samurai's bow. |
+| arrow | 1d6 / 1d6 | 1 | 2 | — | iron | Any bow. |
+| elven arrow | 1d7 / 1d6 | 1 | 2 | — | wood | Best from an elven bow (elf volley bonus). |
+| orcish arrow | 1d5 / 1d6 | 1 | 2 | — | iron | Best from an orcish bow (orc volley bonus). |
+| silver arrow | 1d6 / 1d6 | 1 | 5 | — | silver | Any bow. Silver damage to demons and weres. |
+| ya | 1d7 / 1d7 | 1 | 4 | +1 | metal | Best from a yumi (Samurai volley bonus). |
+| bow | — | 30 | 60 | — | wood | Fires any arrow. |
+| elven bow | — | 30 | 60 | — | wood | Best with elven arrows. |
+| orcish bow | — | 30 | 60 | — | wood | Best with orcish arrows. |
+| yumi | — | 30 | 60 | — | wood | The Samurai's bow; best with ya. |
 
 :::
 
