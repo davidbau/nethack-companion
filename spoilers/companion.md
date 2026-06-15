@@ -7108,8 +7108,8 @@ corresponding race or role an extra arrow per volley. See the
 **Crossbows and bolts.** The **crossbow** is the late-medieval
 mechanical bow that fires short heavy **bolts**. It hits harder
 per shot than a bow but reloads slowly, and full multishot needs
-Strength 18 (16 for gnomes). Rogues and Rangers reach Expert;
-Knights cap at Skilled.
+Strength 18 (16 for gnomes). Bolts need a crossbow; no bow fires
+them. Rogues and Rangers reach Expert; Knights cap at Skilled.
 
 **Sling.** A leather pocket on two cords, the simplest ranged
 weapon and the one David used on Goliath. The Caveman's starter.
