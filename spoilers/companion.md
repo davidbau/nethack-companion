@@ -1204,7 +1204,8 @@ lost track.
 
 #### Sinks `{`
 
-Sinks are the dungeon's most underrated identification tool.
+They say a dungeon has everything but the kitchen sink. The Mazes of
+Menace has the kitchen sink too.
 
 **Kicking a sink** can shake loose a ring (useful!), summon a
 [black pudding](#a-note-on-puddings) (terrifying, but its glob is a
@@ -14656,7 +14657,7 @@ Silver: \hyperref[weapons]{saber, demon damage, saber bonus, late-game weapon, p
 \hyperref[room-types]{Single-monster-type room, almost always themed, p.~\pageref*{room-types}}\par
 Sink: \hyperref[sinks]{kicking for rings and trouble, dishwasher demon (sink foocubus), dipping potions for messages, quaffing the drain, dropping a ring down, p.~\pageref*{sinks}}; \hyperref[the-sink-test-rings]{test, the ring drop, p.~\pageref*{the-sink-test-rings}}\par
 \hyperref[delayed-deaths]{Sinking in lava, levitate or pray, p.~\pageref*{delayed-deaths}}\par
-\hyperref[sinks]{Sinks, dungeon's underrated ID tool, p.~\pageref*{sinks}}\par
+\hyperref[sinks]{Sinks, kicking and dropping rings to ID, p.~\pageref*{sinks}}\par
 \hyperref[zombies-z]{Skeleton, only from a trap, p.~\pageref*{zombies-z}}\par
 Skill: \hyperref[the-skill-ladder]{slots, 2 + XL + crowning, p.~\pageref*{the-skill-ladder}}; \hyperref[what-a-rank-buys-you]{rank effects, to-hit/damage, p.~\pageref*{what-a-rank-buys-you}}\par
 \hyperref[common-combat-deaths]{Sleep without resistance, near-instadeath, p.~\pageref*{common-combat-deaths}}\par
