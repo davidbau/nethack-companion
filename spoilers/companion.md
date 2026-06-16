@@ -1221,11 +1221,13 @@ non-stub outcome fires at most once per sink. Worth a kick in the
 early game if you can handle what comes out.
 
 **Dropping a ring down a sink** produces a message unique to the ring
-type. This is the most reliable non-magical way to identify rings. **Most
-rings are consumed**, but two come back after IDing themselves for
-free. Reserve a virgin sink for this: a sink that's already been
-kicked, quaffed, or poly'd may have moved, vanished, or angered
-nearby monsters by the time you've found rings to test.
+type, naming it outright. The catch is that the ring is gone nineteen
+times out of twenty; only searching and slow digestion survive the
+drop, identifying themselves for free. So it is a niche trick, not a
+staple: worth it mainly when you have a duplicate ring to spare, or
+when you're starving and gambling that an unknown ring is slow
+digestion. For anything else, price-ID, an altar, or a scroll of
+identify tells you as much and keeps the ring.
 
 | Message                                              | Ring                  | Ring kept? |
 |------------------------------------------------------|-----------------------|------------|
@@ -1245,14 +1247,16 @@ nearby monsters by the time you've found rings to test.
 | *"The sink momentarily vanishes."*<br>sink moves to a new spot         | teleportation         | no |
 | *"The sink transforms into a fountain/throne/altar/grave!"*<br>(or rarely *"The sink vanishes."* if grave generation fails) | polymorph             | no |
 
-**Quaffing from a sink** rolls one of 20 random effects. Mostly
-nothing useful (mild flavor messages, summoned sewer rat, vomit,
-scalding water), but three outcomes are worth the occasional risk:
-~5% chance to gain an experience level outright, ~5% chance to find a
-ring at your feet (once per sink), and ~5% chance to drink a random
-unidentified potion. Worth a quaff or two from any sink you
-encounter, but keep HP and an escape plan in reserve: it could summon
-a water elemental, or it could polymorph you.
+**Quaffing from a sink** rolls one of twenty random effects, most of
+them nothing. The good ones are thin: about a 1-in-20 chance a ring
+turns up at your feet (once per sink), and a similar chance a random
+potion pours out to drink, which is a gamble in itself. The bad ones
+are worse: one sip in twenty polymorphs you uncontrollably, another
+unleashes a water elemental (a serious fight in the early game), and
+others scald, gas, or sicken you. On balance it is more hazard than
+help: an entertaining gamble if that is your idea of fun, but not
+something to rely on. If you do quaff, keep HP and an escape route in
+reserve.
 
 **Pouring potions down a sink** (by dipping) produces telltale
 effects, a clever way to narrow down potion identities without
@@ -4976,11 +4980,11 @@ reward in one step.
 #### The Sink Test (Rings)
 
 If you find a sink, you can drop a ring down it. Each ring type
-produces a characteristic message, identifying the ring. See
-[Sinks](#sinks) under Points of Interest for the full
-message-to-ring table; the short version is that searching and
-[slow digestion](#special-and-utility) come back to you (free identification), and every
-other ring is consumed.
+produces a characteristic message, identifying the ring. But only
+searching and [slow digestion](#special-and-utility) come back to you;
+every other ring is destroyed in the process, so this is a spare-ring
+or last-resort trick, not a routine one. See [Sinks](#sinks) under
+Points of Interest for the full message-to-ring table.
 
 #### Use-Testing (The Careful Way)
 <!-- audit
