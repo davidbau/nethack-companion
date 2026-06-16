@@ -1304,7 +1304,8 @@ the guard instead; use the real-name route then.)
 
 #### Statues
 
-Most statues can be broken for any contents inside (with a pickaxe,
+A statue is a stone likeness of a monster, now and then a creature
+petrified where it stood. Most statues can be broken for any contents inside (with a pickaxe,
 wand of striking, or force bolt), but some are statue traps that
 animate the sculpted monster when struck or stepped on.
 Archeologists see historic statues by name and take a −1 alignment
@@ -1542,8 +1543,10 @@ fountain risks.
 - strategy aligned with NetHackWiki Quest, Bell of Opening, Quest artifact: XL 14 + 20 alignment record gate, nemesis guards both artifact and Bell, return-portal only on the first quest level (https://nethackwiki.com/wiki/Quest, https://nethackwiki.com/wiki/Bell_of_Opening, https://nethackwiki.com/wiki/Quest_artifact)
 -->
 
-Around dungeon levels 11 through 16, a magic portal drops you onto
-your Quest.
+The Quest is your role's own branch of the dungeon: a leader who
+summons you for help, a nemesis who holds your role's signature
+artifact, and that artifact as the reward for prevailing. Around
+dungeon levels 11 through 16, a magic portal drops you onto it.
 
 You'll know when you've reached the right level. The first time you
 arrive there, a faint telepathic call from your quest leader breaks
@@ -1660,8 +1663,9 @@ addition. A small anachronism.
 - strategy aligned with NetHackWiki Fort Ludios, Croesus: bag-of-holding-for-gold and shoot-Croesus-across-the-moat are canonical (https://nethackwiki.com/wiki/Fort_Ludios, https://nethackwiki.com/wiki/Croesus)
 -->
 
-Fort Ludios is optional and easy to miss entirely. It appears as a
-magic portal anywhere from Dlvl 11 down to just above Medusa,
+Fort Ludios is a treasure fortress, the gold-stuffed stronghold of
+the fabulously rich Croesus. It is optional and easy to miss
+entirely: it appears as a magic portal anywhere from Dlvl 11 down to just above Medusa,
 always inside a sealed vault, so you'll need to dig in. The portal
 leads to a fortified military compound: sixteen soldiers and a
 lieutenant, with more drifting out of the barracks once the alarm
