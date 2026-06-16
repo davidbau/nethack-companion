@@ -1543,10 +1543,11 @@ fountain risks.
 - strategy aligned with NetHackWiki Quest, Bell of Opening, Quest artifact: XL 14 + 20 alignment record gate, nemesis guards both artifact and Bell, return-portal only on the first quest level (https://nethackwiki.com/wiki/Quest, https://nethackwiki.com/wiki/Bell_of_Opening, https://nethackwiki.com/wiki/Quest_artifact)
 -->
 
-The Quest is your role's own branch of the dungeon: a leader who
-summons you for help, a nemesis who holds your role's signature
-artifact, and that artifact as the reward for prevailing. Around
-dungeon levels 11 through 16, a magic portal drops you onto it.
+Sooner or later, your own people call. The Quest is a branch of the
+dungeon shaped for your role alone: a nemesis has seized your role's
+legendary artifact, and your leader summons you to prove yourself,
+defeat that nemesis, and bring it home. Around dungeon levels 11
+through 16, a magic portal drops you onto it.
 
 You'll know when you've reached the right level. The first time you
 arrive there, a faint telepathic call from your quest leader breaks
