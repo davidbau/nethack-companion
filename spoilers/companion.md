@@ -1211,14 +1211,19 @@ lost track.
 They say a dungeon has everything but the kitchen sink. The Mazes of
 Menace has the kitchen sink too.
 
-**Kicking a sink** can shake loose a ring (useful!), summon a
-[black pudding](#a-note-on-puddings) (terrifying, but its glob is a
-[triple-resistance snack](#useful-corpse-effects)), summon an
-*amorous demon* posing
-as "the dish washer" (the same incubus/succubus as [a seduction
-encounter](#seduction); careful!), or just stub your toe. Each
-non-stub outcome fires at most once per sink. Worth a kick in the
-early game if you can handle what comes out.
+A sink, the white `{` on the map, is plumbing you can kick, drink
+from, or drop things down. Think of it as a colorful hazard more than
+a tool: a couple of its tricks can pay off, but most fizzle, and
+several can hurt you.
+
+**Kicking a sink** is a gamble. It might shake loose a ring, or it
+might just as easily summon a [black pudding](#a-note-on-puddings)
+(dangerous, though its glob is a
+[triple-resistance snack](#useful-corpse-effects)) or an *amorous
+demon* posing as "the dish washer" (the same incubus/succubus as
+[a seduction encounter](#seduction)), or just stub your toe. Each
+non-stub outcome fires at most once per sink. Worth a try early on
+only if you can handle whatever climbs out.
 
 **Dropping a ring down a sink** produces a message unique to the ring
 type, naming it outright. The catch is that the ring is gone nineteen
