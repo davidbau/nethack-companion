@@ -1209,12 +1209,10 @@ lost track.
 #### Sinks `{`
 
 They say a dungeon has everything but the kitchen sink. The Mazes of
-Menace has the kitchen sink too.
-
-A sink, the white `{` on the map, is plumbing you can kick, drink
-from, or drop things down. Think of it as a colorful hazard more than
-a tool: a couple of its tricks can pay off, but most fizzle, and
-several can hurt you.
+Menace has the kitchen sink too, the white `{` on the map, and it is
+more colorful hazard than convenience. You can kick it, drink from it,
+or drop things down it: a couple of those tricks pay off, but most
+fizzle, and several can hurt you.
 
 **Kicking a sink** is a gamble. It might shake loose a ring, or it
 might just as easily summon a [black pudding](#a-note-on-puddings)
