@@ -1127,10 +1127,18 @@ dip; everyone else gets a meager 1/30. Otherwise, dipping can rust
 your gear, summon hostile water creatures, or occasionally
 uncurse the dipped item.
 
-The conventional wisdom: if you're a lawful Knight carrying a
-long sword, dip in every fountain you see until Excalibur
-appears. Other lawful characters should try too, but pack
-patience. If you're not lawful, don't dip.
+The conventional wisdom: a lawful Knight carrying a long sword, once
+at experience level 5, should dip in every fountain they pass until
+Excalibur appears. Every
+fountain, because each dip carries roughly a 1-in-3 chance of drying
+the fountain up, so a single one rarely lasts long enough to deliver
+on its own. Don't worry about the rust you collect along the way; the
+instant the sword becomes Excalibur, that rust is wiped clean and the
+blade turns permanently rustproof. A couple of cautions: leave the
+Minetown fountains alone, since draining a town fountain brings the
+Watch down on you, and if you're not lawful, don't dip at all, because
+the Lady of the Lake will only curse the sword. Other lawful roles can
+try, but at 1-in-30 a dip they should pack patience.
 
 #### Altars `_`
 
@@ -2411,6 +2419,7 @@ messages still come through.)
 | *"You feel a strange mental acuity."*  | Intrinsic telepathy from a corpse.                                                     |
 | *"You seem faster."*                   | Intrinsic speed from a quantum mechanic corpse. (If you already had speed, you instead "seem slower". Quantum corpses toggle.) |
 | *"You feel a mild buzz."*              | Eye of newt corpse restored 1–3 mana.                                                  |
+| *"You see an image of someone stalking you. But it disappears."* (blind: *"You feel very self-conscious. Then it passes."*) | A fountain just granted you permanent *see invisible*. A good draught. |
 | *"You sense a lack of food nearby."*   | Scroll of food detection, no food on level.                                            |
 | *"You feel materially poor."*          | Scroll of gold detection, no gold on level.                                            |
 | *"You feel like someone is helping you."* | Scroll of remove curse; worn/wielded cursed items uncursed.                         |
