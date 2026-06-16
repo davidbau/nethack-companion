@@ -105,7 +105,7 @@ you alive.
 23. [The Armory](#the-armory) — Weapons, armor, and hitting things
 24. [Curses and How to Break Them](#curses-and-how-to-break-them) — Spotting them, undoing them, surviving them
 
-**Part Five: Mastery and the Endgame**
+**Part Five: Mastery and Endgame**
 
 25. [Spellcasting](#spellcasting) — Magic for the studious adventurer
 26. [Luck and Fortune](#luck-and-fortune) — The hidden numbers that shape your fate
@@ -7303,7 +7303,7 @@ boots over a moat is the moment you'll see why.
 
 ---
 
-## Part Five: Mastery and the Endgame
+## Part Five: Mastery and Endgame
 
 ### Playing Each Role
 <!-- audit
