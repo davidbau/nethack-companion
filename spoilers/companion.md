@@ -2412,8 +2412,8 @@ messages still come through.)
 | *"You feel less paranoid."* | A monster you'd sensed-but-not-seen (the `I` marker on the map) just left your awareness. It walked off the level, died, or vanished. You can stop worrying about it. |
 | *"You feel agile! You must have been working on your reflexes!"* (and Str / Wis / Con variants) | A stat just went up from the hidden exercise system. See [Exercising Your Stats](#exercising-your-stats) for what counts as exercise. The mirror message *"You haven't been working on reflexes lately"* fires after a streak of abuse instead. |
 | *"You move very quietly."*             | Ring of stealth or elven cloak. (Elven boots give *"You walk very quietly"* instead.)  |
-| *"Wow! This makes you feel good!"*     | Uncursed potion of restore ability; one drained attribute restored (the blessed version restores them all and reads "great" instead). |
-| *"Wow! This makes you feel great!"*    | Blessed potion of restore ability with no remaining troubles, or a blessed magic fountain hit. |
+| *"Wow! This makes you feel good!"*     | Uncursed potion of restore ability; one drained attribute restored. |
+| *"Wow! This makes you feel great!"*    | Blessed potion of restore ability, restoring all attributes, with no remaining troubles; or a blessed magic fountain hit. |
 | *"You feel feverish."*                 | Lycanthropy infection from a were-monster. *Quaff* holy water, eat wolfsbane, or `#pray`. |
 | *"You are slowing down."*              | You're turning to stone. Immediately eat a lizard corpse, drink acid, or `#pray`.      |
 | *"You are turning into slime."*        | Green-slime contagion. Burn it off (read a fire scroll, cast fireball on yourself, or self-zap a wand of fire), or `#pray`. |
