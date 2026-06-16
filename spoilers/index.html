@@ -139,7 +139,7 @@ things</li>
 <li><a href="#curses-and-how-to-break-them">Curses and How to Break
 Them</a> — Spotting them, undoing them, surviving them</li>
 </ol>
-<p><strong>Part Five: Mastery</strong></p>
+<p><strong>Part Five: Mastery and the Endgame</strong></p>
 <ol start="25" type="1">
 <li><a href="#spellcasting">Spellcasting</a> — Magic for the studious
 adventurer</li>
@@ -153,20 +153,13 @@ specific styles of combat and magic</li>
 you want</li>
 <li><a href="#artifacts">Artifacts</a> — Legendary equipment and how to
 obtain it</li>
-</ol>
-<p><strong>Part Six: The Deep Dungeon</strong></p>
-<ol start="31" type="1">
-<li><a href="#the-castle">The Castle</a> — The gateway to Gehennom</li>
-<li><a href="#gehennom">Gehennom</a> — A travel advisory</li>
-<li><a href="#the-ascension-kit">The Ascension Kit</a> — Gear for the
-long climb</li>
-<li><a href="#the-ascension-run">The Ascension Run</a> — Getting back
-out alive</li>
-<li><a href="#the-elemental-planes">The Elemental Planes</a> — The final
-gauntlet</li>
+<li><a href="#into-gehennom">Into Gehennom</a> — The Castle gateway and
+the realm below</li>
+<li><a href="#the-ascension">The Ascension</a> — Assembling the kit and
+climbing back out</li>
 </ol>
 <p><strong>Appendices</strong></p>
-<ol start="36" type="1">
+<ol start="33" type="1">
 <li><a href="#advanced-controls">Advanced Controls</a> — Command counts,
 prefixes, and efficiency techniques</li>
 <li><a href="#options-worth-knowing-about">Customization</a> — rcfile
@@ -2551,7 +2544,7 @@ game.</p>
 <p>The Castle also serves as the gateway to <a
 href="#gehennom">Gehennom</a>. For how to open the drawbridge and what
 to do once you’re inside, see <a href="#the-castle">The Castle</a> in
-Part Six.</p>
+Part Five.</p>
 <hr />
 </section>
 </section>
@@ -9387,8 +9380,8 @@ over a moat is the moment you’ll see why.</p>
 </section>
 </section>
 </section>
-<section id="part-five-mastery" class="level2">
-<h2>Part Five: Mastery</h2>
+<section id="part-five-mastery-and-the-endgame" class="level2">
+<h2>Part Five: Mastery and the Endgame</h2>
 <section id="playing-each-role" class="level3">
 <h3>Playing Each Role</h3>
 <!-- audit
@@ -12140,11 +12133,10 @@ spell-caster this is irreplaceable.</p>
 <hr />
 </section>
 </section>
-</section>
-<section id="part-six-the-deep-dungeon" class="level2">
-<h2>Part Six: The Deep Dungeon</h2>
-<section id="the-castle" class="level3">
-<h3>The Castle</h3>
+<section id="into-gehennom" class="level3">
+<h3>Into Gehennom</h3>
+<section id="the-castle" class="level4">
+<h4>The Castle</h4>
 <!-- audit
 2026-05-18:
 - no minotaur or internal maze in castle.lua; minotaurs live in earth/fire/hellfill
@@ -12254,8 +12246,8 @@ plenty of food, holy water, scrolls of teleportation and identify, and
 your <strong>quest artifact</strong>.</p>
 <hr />
 </section>
-<section id="gehennom" class="level3">
-<h3>Gehennom</h3>
+<section id="gehennom" class="level4">
+<h4>Gehennom</h4>
 <!-- audit
 2026-05-19:
 - Asmodeus carries wands of cold AND fire (makemon.c:804-807)
@@ -12278,6 +12270,7 @@ Worst of all, your god goes silent. Prayer fails in Gehennom, and from
 this point on you survive on what you packed at the Castle.</p>
 <p>This is the stretch of the game that separates tourists from
 ascenders. Everything you have prepared for has been leading here.</p>
+</section>
 <section id="the-valley-of-the-dead" class="level4">
 <h4>The Valley of the Dead</h4>
 <p>The first level of Gehennom, immediately below the Castle, is the
@@ -12511,8 +12504,10 @@ threats, gone for the rest of the run.</li>
 <hr />
 </section>
 </section>
-<section id="the-ascension-kit" class="level3">
-<h3>The Ascension Kit</h3>
+<section id="the-ascension" class="level3">
+<h3>The Ascension</h3>
+<section id="the-ascension-kit" class="level4">
+<h4>The Ascension Kit</h4>
 <!-- audit
 2026-05-18:
 - there is no "helm of holiness"; the artifact is Mitre of Holiness
@@ -12622,8 +12617,8 @@ of Yendor</td>
 </table>
 <p>A typical ascension AC sits in the <strong>−25 to −40</strong> range,
 but AC alone is not the difference between winning and losing.</p>
-<section id="what-killed-the-runners-up" class="level4">
-<h4>What killed the runners-up</h4>
+<section id="what-killed-the-runners-up" class="level5">
+<h5>What killed the runners-up</h5>
 <p>A look at adventurers who died deep in <a
 href="#gehennom">Gehennom</a> shows that their gear was nearly
 indistinguishable from the ascenders’. Their AC was −23 to −40. They had
@@ -12649,8 +12644,8 @@ full healing.</p>
 <hr />
 </section>
 </section>
-<section id="the-ascension-run" class="level3">
-<h3>The Ascension Run</h3>
+<section id="the-ascension-run" class="level4">
+<h4>The Ascension Run</h4>
 <!-- audit
 2026-05-21:
 - bones save converts the real Amulet of Yendor to FAKE_AMULET_OF_YENDOR and curses it when a previous adventurer dies carrying it (bones.c:170-173)
@@ -12699,8 +12694,8 @@ strongest adventurers. You have the most powerful artifact in the
 dungeon in your pack, every covetous monster in the Mazes knows it, and
 the dungeon itself is fighting to keep you from leaving. The most
 exhilarating and terrifying stretch of the game.</p>
-<section id="the-gauntlet" class="level4">
-<h4>The Gauntlet</h4>
+<section id="the-gauntlet" class="level5">
+<h5>The Gauntlet</h5>
 <p>The dungeon now opposes you on four fronts, all of them aimed at the
 Amulet in your pack:</p>
 <ul>
@@ -12734,8 +12729,8 @@ the Chaotic altar, since the altar check uses your <em>current</em>
 alignment. An optimization choice, not a free lunch.</li>
 </ul>
 </section>
-<section id="strategy" class="level4">
-<h4>Strategy</h4>
+<section id="strategy" class="level5">
+<h5>Strategy</h5>
 <p>You are no longer an explorer. You are a running back carrying the
 ball through the entire opposing team. Speed is everything.</p>
 <ul>
@@ -12771,8 +12766,8 @@ between you and divinity.</p>
 <hr />
 </section>
 </section>
-<section id="the-elemental-planes" class="level3">
-<h3>The Elemental Planes</h3>
+<section id="the-elemental-planes" class="level4">
+<h4>The Elemental Planes</h4>
 <!-- audit
 2026-05-19:
 - Plane of Air: vortex AT_ENGL just damages you; it does NOT move bubbles or carry you (vortex rows monsters.h:1062-1109 are plain AT_ENGL damage; bubble drift loop at mkmaze.c:1674-1679 is independent of vortex monsters)
@@ -12804,8 +12799,8 @@ compass while you carry it: wielded or worn, it occasionally mutters
 <em>hot</em>, <em>very warm</em>, or <em>warm</em> as you get closer
 (within 3, 8, or 12 squares of the portal). It’s a hot/cold game you can
 play your way across the void.</p>
-<section id="plane-of-earth" class="level4">
-<h4>Plane of Earth</h4>
+<section id="plane-of-earth" class="level5">
+<h5>Plane of Earth</h5>
 <p>You arrive in a small cavern in the corner of the plane. The light is
 dim, and two figures are already there to meet you: an Elvenking and a
 minotaur, both hostile. The plane is a constellation of small caverns
@@ -12819,8 +12814,8 @@ which cavern holds the portal, so you can dig <em>toward</em> it rather
 than tunnel blindly. The plane is claustrophobic and punishing, but it
 is the gentlest of the four.</p>
 </section>
-<section id="plane-of-air" class="level4">
-<h4>Plane of Air</h4>
+<section id="plane-of-air" class="level5">
+<h5>Plane of Air</h5>
 <p>The opposite extreme: an open void with no walls, no floor you can
 feel, just empty sky and air elementals moving faster than thought. They
 attack multiple times per turn and they cannot be genocided. A ring of
@@ -12836,8 +12831,8 @@ message <em>“A mysterious force prevents you from teleporting!”</em> A
 wand of teleportation still moves whatever is chasing you; it just will
 not move you.</p>
 </section>
-<section id="plane-of-fire" class="level4">
-<h4>Plane of Fire</h4>
+<section id="plane-of-fire" class="level5">
+<h5>Plane of Fire</h5>
 <p>Everything is on fire. The ground is fire. The air is fire. Fire
 elementals fill the level, and fire traps dot every corridor. The twist
 is that for a prepared hero this is the gentlest plane of the four:
@@ -12847,8 +12842,8 @@ puzzle. Find the portal among the flames and go. (Arrive without fire
 resistance and the plane lives up to its name: you’ll be dead in a few
 turns.)</p>
 </section>
-<section id="plane-of-water" class="level4">
-<h4>Plane of Water</h4>
+<section id="plane-of-water" class="level5">
+<h5>Plane of Water</h5>
 <p>The entire plane is underwater. Without <a
 href="#movement-and-spatial-behavior">magical breathing</a> (an amulet,
 the Amphibious intrinsic, or a polyform that breathes water) you will
@@ -12869,8 +12864,8 @@ and on the next plane it is irrelevant. Spend the scroll here. Then find
 the portal and push through. This is the last barrier between you and
 the gods.</p>
 </section>
-<section id="the-astral-plane" class="level4">
-<h4>The Astral Plane</h4>
+<section id="the-astral-plane" class="level5">
+<h5>The Astral Plane</h5>
 <p>You surface into the presence of the divine. Three altars stand in
 the great temple: Lawful, Neutral, and Chaotic. You must sacrifice the
 Amulet of Yendor on the altar matching your alignment to ascend.
@@ -12934,6 +12929,7 @@ Amulet vanishes into the divine flame, and you ascend among the
 immortals. Few adventurers reach this moment. The book closes here.
 Congratulations.</p>
 <hr />
+</section>
 </section>
 </section>
 </section>

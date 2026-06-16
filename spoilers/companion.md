@@ -105,7 +105,7 @@ you alive.
 23. [The Armory](#the-armory) — Weapons, armor, and hitting things
 24. [Curses and How to Break Them](#curses-and-how-to-break-them) — Spotting them, undoing them, surviving them
 
-**Part Five: Mastery**
+**Part Five: Mastery and the Endgame**
 
 25. [Spellcasting](#spellcasting) — Magic for the studious adventurer
 26. [Luck and Fortune](#luck-and-fortune) — The hidden numbers that shape your fate
@@ -113,29 +113,23 @@ you alive.
 28. [Enhancing Skills](#enhancing-skills) — Mastering specific styles of combat and magic
 29. [Wishes and Wishing](#wishes-and-wishing) — Getting what you want
 30. [Artifacts](#artifacts) — Legendary equipment and how to obtain it
-
-**Part Six: The Deep Dungeon**
-
-31. [The Castle](#the-castle) — The gateway to Gehennom
-32. [Gehennom](#gehennom) — A travel advisory
-33. [The Ascension Kit](#the-ascension-kit) — Gear for the long climb
-34. [The Ascension Run](#the-ascension-run) — Getting back out alive
-35. [The Elemental Planes](#the-elemental-planes) — The final gauntlet
+31. [Into Gehennom](#into-gehennom) — The Castle gateway and the realm below
+32. [The Ascension](#the-ascension) — Assembling the kit and climbing back out
 
 **Appendices**
 
-36. [Advanced Controls](#advanced-controls) — Command counts, prefixes, and efficiency techniques
-37. [Customization](#options-worth-knowing-about) — rcfile options worth knowing
-38. [Sokoban Solutions](#sokoban-solutions) — All eight level variants, solved
-39. [Voluntary Challenges](#voluntary-challenges) — Conducts and self-imposed restrictions
-40. [Shopping and Shopkeeper Pricing](#shopping-and-shopkeeper-pricing) — Commerce in the dungeon
-41. [Weapons Tables](#weapons-tables)
-42. [Armor Tables](#armor-tables)
-43. [Spell Tables](#spell-tables)
-44. [Bestiary Tables](#bestiary-tables)
-45. [Intrinsic and Extrinsic Tables](#intrinsic-and-extrinsic-tables) — Properties you can attain and where they come from
-46. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x, and what to do about it
-47. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
+33. [Advanced Controls](#advanced-controls) — Command counts, prefixes, and efficiency techniques
+34. [Customization](#options-worth-knowing-about) — rcfile options worth knowing
+35. [Sokoban Solutions](#sokoban-solutions) — All eight level variants, solved
+36. [Voluntary Challenges](#voluntary-challenges) — Conducts and self-imposed restrictions
+37. [Shopping and Shopkeeper Pricing](#shopping-and-shopkeeper-pricing) — Commerce in the dungeon
+38. [Weapons Tables](#weapons-tables)
+39. [Armor Tables](#armor-tables)
+40. [Spell Tables](#spell-tables)
+41. [Bestiary Tables](#bestiary-tables)
+42. [Intrinsic and Extrinsic Tables](#intrinsic-and-extrinsic-tables) — Properties you can attain and where they come from
+43. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x, and what to do about it
+44. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
 
 
 ## Part One: Before You Set Out
@@ -1810,7 +1804,7 @@ the most valuable find in the game.
 
 The Castle also serves as the gateway to [Gehennom](#gehennom).
 For how to open the drawbridge and what to do once you're
-inside, see [The Castle](#the-castle) in Part Six.
+inside, see [The Castle](#the-castle) in Part Five.
 
 ---
 
@@ -7309,7 +7303,7 @@ boots over a moat is the moment you'll see why.
 
 ---
 
-## Part Five: Mastery
+## Part Five: Mastery and the Endgame
 
 ### Playing Each Role
 <!-- audit
@@ -8894,9 +8888,9 @@ spell-caster this is irreplaceable.
 
 ---
 
-## Part Six: The Deep Dungeon
+### Into Gehennom
 
-### The Castle
+#### The Castle
 <!-- audit
 2026-05-18:
 - no minotaur or internal maze in castle.lua; minotaurs live in earth/fire/hellfill
@@ -9011,7 +9005,7 @@ artifact**.
 
 ---
 
-### Gehennom
+#### Gehennom
 <!-- audit
 2026-05-19:
 - Asmodeus carries wands of cold AND fire (makemon.c:804-807)
@@ -9277,7 +9271,9 @@ whole kit ready before you begin. The steps:
 
 ---
 
-### The Ascension Kit
+### The Ascension
+
+#### The Ascension Kit
 <!-- audit
 2026-05-18:
 - there is no "helm of holiness"; the artifact is Mitre of Holiness
@@ -9311,7 +9307,7 @@ died anyway. Slot by slot:
 A typical ascension AC sits in the **−25 to −40** range, but AC
 alone is not the difference between winning and losing.
 
-#### What killed the runners-up
+##### What killed the runners-up
 
 A look at adventurers who died deep in [Gehennom](#gehennom) shows that
 their gear was nearly indistinguishable from the ascenders'.
@@ -9338,7 +9334,7 @@ of full healing.
 
 ---
 
-### The Ascension Run
+#### The Ascension Run
 <!-- audit
 2026-05-21:
 - bones save converts the real Amulet of Yendor to FAKE_AMULET_OF_YENDOR and curses it when a previous adventurer dies carrying it (bones.c:170-173)
@@ -9393,7 +9389,7 @@ dungeon in your pack, every covetous monster in the Mazes knows
 it, and the dungeon itself is fighting to keep you from leaving.
 The most exhilarating and terrifying stretch of the game.
 
-#### The Gauntlet
+##### The Gauntlet
 
 The dungeon now opposes you on four fronts, all of them aimed
 at the Amulet in your pack:
@@ -9428,7 +9424,7 @@ at the Amulet in your pack:
   goes to the Chaotic altar, since the altar check uses your
   *current* alignment. An optimization choice, not a free lunch.
 
-#### Strategy
+##### Strategy
 
 You are no longer an explorer. You are a running back carrying the
 ball through the entire opposing team. Speed is everything.
@@ -9464,7 +9460,7 @@ last obstacle between you and divinity.
 
 ---
 
-### The Elemental Planes
+#### The Elemental Planes
 <!-- audit
 2026-05-19:
 - Plane of Air: vortex AT_ENGL just damages you; it does NOT move bubbles or carry you (vortex rows monsters.h:1062-1109 are plain AT_ENGL damage; bubble drift loop at mkmaze.c:1674-1679 is independent of vortex monsters)
@@ -9500,7 +9496,7 @@ mutters *hot*, *very warm*, or *warm* as you get closer (within
 3, 8, or 12 squares of the portal). It's a hot/cold game you can
 play your way across the void.
 
-#### Plane of Earth
+##### Plane of Earth
 
 You arrive in a small cavern in the corner of the plane. The
 light is dim, and two figures are already there to meet you:
@@ -9517,7 +9513,7 @@ can dig *toward* it rather than tunnel blindly. The plane is
 claustrophobic and punishing, but it is the gentlest of the
 four.
 
-#### Plane of Air
+##### Plane of Air
 
 The opposite extreme: an open void with no walls, no floor you can
 feel, just empty sky and air elementals moving faster than thought.
@@ -9536,7 +9532,7 @@ the message *"A mysterious force prevents you from teleporting!"*
 A wand of teleportation still moves whatever is chasing you;
 it just will not move you.
 
-#### Plane of Fire
+##### Plane of Fire
 
 Everything is on fire. The ground is fire. The air is fire. Fire
 elementals fill the level, and fire traps dot every corridor. The
@@ -9547,7 +9543,7 @@ just a navigation puzzle. Find the portal among the flames and
 go. (Arrive without fire resistance and the plane lives up to its
 name: you'll be dead in a few turns.)
 
-#### Plane of Water
+##### Plane of Water
 
 The entire plane is underwater. Without [magical breathing](#movement-and-spatial-behavior) (an
 amulet, the Amphibious intrinsic, or a polyform that breathes
@@ -9568,7 +9564,7 @@ on the next plane it is irrelevant. Spend the scroll here. Then
 find the portal and push through. This is the last barrier
 between you and the gods.
 
-#### The Astral Plane
+##### The Astral Plane
 
 You surface into the presence of the divine. Three altars stand
 in the great temple: Lawful, Neutral, and Chaotic. You must
