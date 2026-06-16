@@ -1134,9 +1134,11 @@ patience. If you're not lawful, don't dip.
 
 #### Altars `_`
 
-If fountains are slot machines, altars are the single most useful
-piece of furniture in the dungeon. Treat every altar like the
-treasure it is.
+An altar is a consecrated stone shrine, marked `_` on the map and
+aligned to one of the three gods. It is also the single most useful
+piece of furniture in the dungeon: drop your gear on it to learn at a
+glance what is blessed or cursed, and sacrifice fresh corpses on it to
+earn your god's favor. Treat every altar like the treasure it is.
 
 **Dropping items on an altar** (`d` for one, `D` to drop several
 at once) reveals their BUC status instantly. **Amber flash** →
@@ -1170,8 +1172,10 @@ and you need a co-aligned one for sacrifice and holy water. See
 
 #### Thrones `\`
 
-Sitting on a throne is the purest gamble in the Mazes. The list of
-possible outcomes reads like a wish list shuffled with a hit list:
+A throne is an ornate royal seat, marked `\`, that turns up now and
+then in a room of its own. Sitting on one (`#sit`) is the purest
+gamble in the Mazes: the list of possible outcomes reads like a wish
+list shuffled with a hit list:
 
 - A wish (if your luck isn't negative)
 - Genocide of a monster class
