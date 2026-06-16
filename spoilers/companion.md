@@ -2420,6 +2420,8 @@ messages still come through.)
 | *"You seem faster."*                   | Intrinsic speed from a quantum mechanic corpse. (If you already had speed, you instead "seem slower". Quantum corpses toggle.) |
 | *"You feel a mild buzz."*              | Eye of newt corpse restored 1–3 mana.                                                  |
 | *"You see an image of someone stalking you. But it disappears."* (blind: *"You feel very self-conscious. Then it passes."*) | A fountain just granted you permanent *see invisible*. A good draught. |
+| *"A feeling of loss comes over you."*  | You dipped something in a fountain and hit the uncurse outcome, but the item wasn't cursed. Nothing happened; despite the wording, you lost nothing. |
+| *"You have a feeling of loss."*         | You read a scroll of charging but picked an item that can't be charged (only wands, rings, and certain tools take charges). The scroll is wasted. |
 | *"You sense a lack of food nearby."*   | Scroll of food detection, no food on level.                                            |
 | *"You feel materially poor."*          | Scroll of gold detection, no gold on level.                                            |
 | *"You feel like someone is helping you."* | Scroll of remove curse; worn/wielded cursed items uncursed.                         |
@@ -6339,6 +6341,15 @@ If you find a *cursed* bag of holding (in a bones pile, perhaps),
 don't open it. Drop it on the floor and zap a wand of cancellation
 at it. The explosion rule only fires on insertion, not on a zap,
 so the bag uncurses safely.
+
+The identically-named **bag of tricks** is a different beast, and it
+punishes the obvious move: try to *loot* it like a container and it
+grows a huge set of teeth and bites you (painful, but at least a free
+identification). To use it, **apply** it (`a`) instead. Each charge
+summons a random hostile monster onto your square (rarely a small
+swarm). It carries nothing, but standing beside an altar it makes a
+tidy sacrifice-and-experience engine. Don't apply it when you're weak
+or cornered, since deeper down it can disgorge something dangerous.
 
 ##### Carrying capacity
 
