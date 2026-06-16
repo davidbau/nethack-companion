@@ -1588,20 +1588,24 @@ Takauji over the [Tsurugi of Muramasa](#tsurugi-of-muramasa). The Wizard descend
 the Dark One's stronghold for the [Eye of the Aethiopica](#eye-of-the-aethiopica). The
 [Artifacts](#artifacts) chapter has the full per-role list.
 
-Quest artifacts are powerful. Each grants a unique mix of
-carried or worn intrinsics: protection, luck, telepathy, warning,
-reflection, or stealth depending on role. A few grant magic
-resistance just by being carried; a few others block magic
-attacks only when wielded or worn. The [Artifacts](#artifacts)
-chapter has the per-role list. Getting your quest artifact is a
-pivotal moment. The late game starts here.
+And what a prize it is. Your quest artifact is your role's signature
+relic, attuned to you as no other item in the game can be, and it
+tends to anchor your kit for the rest of the run. Each carries a blend
+of powers suited to its owner: protection, luck, telepathy, warning,
+reflection, or stealth. A few ward off magic just by riding in your
+pack; others raise that shield only once wielded or worn. Claiming
+yours is a turning point. The late game starts here.
 
-**Two prizes wait on the nemesis's square.** The **Bell of Opening**
-rides in the nemesis's pack and falls when you kill them (one of the
-three invocation items you'll need for [Gehennom](#gehennom)). Your role's quest
-artifact has been sitting under their feet the whole time, placed
-when the level was generated. Pick both up. The Quest is the only
-place in the game you can get them.
+**A second important prize waits on the nemesis's square.** The
+**Bell of Opening** rides in the nemesis's pack and drops when you
+kill them. It is one of the three Invocation items, and you cannot
+finish the game without it: at the bottom of [Gehennom](#gehennom),
+on the vibrating square just above [Moloch's Sanctum](#molochs-sanctum),
+you ring the Bell, light the Candelabrum, and read the Book of the
+Dead to open the way down to the Amulet of Yendor (the full ritual is
+[The Heist](#the-heist)). Your quest artifact, meanwhile, lies under
+the nemesis's feet, placed when the level was generated. Grab both
+before you go; the Quest is the only place to get either.
 
 A nemesis may have picked up an amulet of [life saving](#special-and-utility) along the
 way, so don't be shocked if one shrugs off a killing blow and you
@@ -1609,9 +1613,13 @@ have to do it twice. The portal back to the main dungeon is on the first Quest
 level only. If you descend underprepared and have to turn back, you
 may have a long climb home.
 
-If your alignment record is too low, your quest leader will
-refuse to send you. A history of attacking peacefuls is the
-usual cause. Keep your hands clean.
+One requirement bears repeating, since it gates everything above: the
+whole Quest hinges on the blessing of your quest leader. Beyond
+reaching experience level 14, you must satisfy them on character. If
+your alignment record is too low, usually from a habit of attacking
+peaceful creatures, the leader judges you unworthy and will not send
+you to the nemesis at all. You would then have to climb back out, mend
+your standing, and return. Keep your hands clean.
 
 #### The Rogue Level
 <!-- audit
