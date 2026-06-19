@@ -5566,6 +5566,11 @@ prayer blesses the whole stack). Holy water then blesses any item
 you dip into it. A holy water can even bless *more water* by
 dipping into it. Keep one to make more.
 
+Short on water? Make your own. Any potion but acid reduces to plain
+water after two dips in a pool or moat: the first dip dilutes it,
+the second washes it down to water. Unwanted potions become
+holy-water feedstock instead of clutter.
+
 []{#potion-gain-level}
 **Gain level.** Raises your experience level by 1. Useful for
 reaching quest eligibility quickly, or converting into something
@@ -5798,6 +5803,17 @@ clean way to clear a throne room or the Wizard's Tower from a
 safe corridor, as long as *you* are poison-resistant or
 unbreathing: the gas doesn't pick sides. Kills inside the cloud
 still count as yours for XP and alignment.
+
+[]{#scroll-fire}
+**Fire.** Erupts in a burst of flame. Read uncursed or cursed and
+the explosion is centered on *you*, for only a few points of
+damage but enough to ignite the scrolls and potions in your pack.
+Blessed is a different scroll entirely: it deals five times the
+damage and prompts you to aim it at any square in view, making it
+one of the few ranged area attacks a non-spellcaster can carry.
+Either version burns away green slime if it catches you, so it
+doubles as a slime cure. Bless it and keep it. Never price-ID it
+by reading it on your own square.
 
 #### Confused Reading
 
@@ -6499,6 +6515,13 @@ first. Writing by appearance gives a random scroll of that
 appearance, which is usually wasted charges. If charges run out
 mid-write, scrolls disappear entirely (paper + charges wasted); a
 spellbook's paper survives but the writing fades.
+
+Blank paper is the marker's fuel, and you can make your own: **dip
+any unwanted scroll or spellbook in water and it washes blank.** A
+pool or moat does it cleanly and every time; a fountain works too
+but rolls the usual fountain risks on top. So spare scrolls of
+light or create monster aren't junk, they're feedstock for a
+scroll of identify or enchant weapon.
 
 The big-ticket writes for an ascension kit are scrolls of
 **genocide** (three of these wipe the worst monster letters L, &,
@@ -7230,7 +7253,11 @@ enchantment. It also repairs any existing damage.
 You can also slow erosion without magic. Coat an armor piece with
 grease (apply a can of grease). The grease layer also makes the
 piece slippery to monster steal and to grab attacks, but it wears
-off after a few hits.
+off after a few hits. Grease shields gear from water too: a greased
+weapon or suit takes a fountain dip, a water trap, or a wade
+through deep water without rusting. Each soaking has about a 50%
+chance of washing the grease away, so it buys a few dunks of cover,
+not a permanent seal.
 
 #### Dragon Scale Mail
 
@@ -9110,6 +9137,13 @@ may have a special fate reserved for members of those classes.
 - **Hot ground.** The ground itself is hot enough to
   shatter potions dropped on the floor. Keep everything in a bag
   at all times.
+- **Lava.** Rivers of lava split some levels. Levitation or flying
+  carries you across, and so do fireproofed water-walking boots.
+  The neatest trick: a blast of cold (a wand of cold, the
+  cone-of-cold spell, a frost horn, or cold breath) freezes lava
+  permanently into ordinary floor, opening a walkway straight
+  across. Step into unfrozen lava without protection and you sink
+  and burn within a few turns.
 - **Demon lords on specific levels.** Asmodeus, Baalzebub,
   Juiblex, Orcus, Yeenoghu, and, very rarely, Demogorgon hold
   court on private throne levels. Each fight is a major battle,
@@ -13892,7 +13926,7 @@ The speed system, the air-walking gear, and the niche-access tools.
 | **Teleport control** | Lets you choose your destination when you teleport. | Monk XL 17; Wizard XL 17; tengu corpse. | Ring of teleport control; carrying [Master Key of Thievery](#master-key-of-thievery); carrying the Amulet of Yendor (yes, the win condition grants TC). |
 | **Levitation** | Constantly floating. Crosses water, lava, ice; can't descend stairs; can't pick up items. | None. | Ring of levitation; levitation boots (cursed = stuck on); carrying the [Heart of Ahriman](#heart-of-ahriman). |
 | **Flying** | Like levitation but you can descend, pick up, and land voluntarily. | Polyform into a flying monster. | Amulet of flying. |
-| **Water walking** | Cross water and ice as if it were floor; doesn't help in lava. | Polyform into the right form (some undead). | Water-walking boots. |
+| **Water walking** | Cross water and ice as if it were floor. Plain water-walking boots are leather and burn off in lava, but fireproofed boots cross lava too (and unharmed if you also resist fire). | Polyform into the right form (some undead). | Water-walking boots. |
 | **Magical breathing** | Don't drown when grabbed by an eel or kraken; survive a stinking cloud. | None as intrinsic. | Amulet of magical breathing. |
 
 :::
