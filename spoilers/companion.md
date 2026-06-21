@@ -1,7 +1,7 @@
 # A Traveler's Companion to the <span class="nobr">Mazes of Menace</span>
 
 ```{=html}
-<p style="text-align: center; font-style: italic; margin: 1.5em 0;">Most of what follows is true.</p>
+<p style="text-align: center; font-style: italic; margin: 1.5em 0;">You feel like someone is helping you.</p>
 ```
 
 ```{=latex}
