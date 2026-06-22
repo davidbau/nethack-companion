@@ -9779,8 +9779,9 @@ They are essential for moving safely through populated areas.
   `G`, but in practice the difference is negligible.
 - **`m`** then a direction is **move without attacking and without
   picking up**. Walk past your pet without striking it ("Pardon
-  me, Fido"), step past an autopickup heap, refuse to walk into a
-  known pool or lava square. With non-movement commands, `m`
+  me, Fido"), step past an autopickup heap, or step *into* a known
+  pool or lava square on purpose: the prefix overrides the safety
+  stop that would otherwise keep you out. With non-movement commands, `m`
   requests a menu instead of the default single-target prompt:
   `me` is "what would you like to eat?", `ma` is "which tool?",
   `m,` lets you pick from a floor pile.
