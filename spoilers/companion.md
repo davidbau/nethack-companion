@@ -1433,9 +1433,17 @@ variants contain a guaranteed (not-cursed) luckstone, so you'll
 get one wherever you arrive. A luckstone in your open inventory
 prevents your luck from timing out toward zero, which affects
 everything from combat to fountain wishes. Grab it and carry it
-for the rest of the game. (One layout variant also seeds a [**fake
-luckstone mimic**](#a-note-on-mimics) disguised as a luckstone.
-BUC-test what you pick up before relying on it.)
+for the rest of the game.
+
+The catch is finding it. In most layouts the luckstone hides in a
+secret room, so if a maze dead-ends with no treasure in sight,
+search the walls (`s`, `10s`) for hidden doors rather than digging,
+which these levels resist. There may be several such rooms, so don't
+stop at the first. (One variant salts the stones with two
+look-alikes: a **cursed loadstone** that looks just like a luckstone
+and welds to your pack, and a [**mimic**](#a-note-on-mimics). A pet
+spots both, so walk it over a suspect stone first, or kick it: a
+luckstone skids away, a loadstone won't.)
 
 #### Sokoban
 
@@ -12094,12 +12102,16 @@ Astral Plane, change which altar accepts the Amulet.
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
-| leather gloves (yugake) | +1 | — | 10 | 8 | leather |  |
-| gauntlets of fumbling | +1 | — | 10 | 50 | leather | Causes frequent fumbling. Generated cursed 9 times in 10. Avoid. |
-| gauntlets of power | +1 | — | 30 | 50 | iron | Sets Strength to 25. |
-| gauntlets of dexterity | +1 | — | 10 | 50 | leather | Adds enchantment value to Dex while worn (a +3 pair gives +3 Dex). |
+| leather gloves (yugake) \* | +1 | — | 10 | 8 | leather |  |
+| gauntlets of fumbling \* | +1 | — | 10 | 50 | leather | Causes frequent fumbling. Generated cursed 9 times in 10. Avoid. |
+| gauntlets of power \* | +1 | — | 30 | 50 | iron | Sets Strength to 25. |
+| gauntlets of dexterity \* | +1 | — | 10 | 50 | leather | Adds enchantment value to Dex while worn (a +3 pair gives +3 Dex). |
 
 :::
+
+Items marked \* appear under one of four randomized descriptions
+until identified: *old gloves*, *padded gloves*, *riding gloves*,
+*fencing gloves* (plain leather gloves included).
 
 #### Boots
 
@@ -12110,15 +12122,19 @@ Astral Plane, change which altar accepts the Amulet.
 | low boots | +1 | — | 10 | 8 | leather |  |
 | iron shoes | +2 | — | 50 | 16 | iron |  |
 | high boots | +2 | — | 20 | 12 | leather |  |
-| speed boots | +1 | — | 20 | 50 | leather | Very fast. Free extra action on 2/3 of turns. |
-| water walking boots | +1 | — | 15 | 50 | leather | Water walking. Critical for the Castle drawbridge. |
-| jumping boots | +1 | — | 20 | 50 | leather | `#apply` to leap to a chosen nearby square. |
-| elven boots | +1 | — | 15 | 8 | leather | Stealth. |
-| kicking boots | +1 | — | 50 | 8 | iron |  |
-| fumble boots | +1 | — | 20 | 30 | leather | Causes frequent fumbling. Generated cursed 9 times in 10. Avoid. |
-| levitation boots | +1 | — | 15 | 30 | leather | Levitation. Generated cursed 9 times in 10. Cursed boots can't be taken off, so this is a trap item. |
+| speed boots \* | +1 | — | 20 | 50 | leather | Very fast. Free extra action on 2/3 of turns. |
+| water walking boots \* | +1 | — | 15 | 50 | leather | Water walking. Critical for the Castle drawbridge. |
+| jumping boots \* | +1 | — | 20 | 50 | leather | `#apply` to leap to a chosen nearby square. |
+| elven boots \* | +1 | — | 15 | 8 | leather | Stealth. |
+| kicking boots \* | +1 | — | 50 | 8 | iron |  |
+| fumble boots \* | +1 | — | 20 | 30 | leather | Causes frequent fumbling. Generated cursed 9 times in 10. Avoid. |
+| levitation boots \* | +1 | — | 15 | 30 | leather | Levitation. Generated cursed 9 times in 10. Cursed boots can't be taken off, so this is a trap item. |
 
 :::
+
+Items marked \* appear under one of seven randomized descriptions
+until identified: *combat boots*, *jungle boots*, *hiking boots*,
+*mud boots*, *buckled boots*, *riding boots*, *snow boots*.
 
 #### Shields
 
@@ -13781,15 +13797,14 @@ Mostly harmless. **Lizard corpses cure petrification and never rot.** Carry one 
 
 ### The Corpse Table {#the-corpse-table}
 
-Whether a fresh corpse is dinner, treasure, or death, by symbol. It
-mirrors the [Bestiary](#bestiary-tables): the same `;` farlook letter
-that names a monster tells you which row to read. Each row gives the
+Whether a fresh corpse is dinner, treasure, or death, by symbol,
+mirroring the [Bestiary](#bestiary-tables). Each row gives the
 **general** verdict for that symbol and breaks out the members that
-differ. Two rules cut across the whole table. Eat corpses **fresh**:
-anything much over fifty turns old risks food poisoning. And never eat
-**your own race** (cannibalism costs Luck and grants aggravate monster;
-Cavemen and orcs are exempt). A `*` marks a resistance that is only
-**temporary**. For the handful of corpses worth a detour, see
+differ. Two rules cut across the table: eat corpses **fresh** (over
+about fifty turns old risks food poisoning), and never eat **your own
+race** (cannibalism costs Luck and grants aggravate monster; Cavemen
+and orcs are exempt). A `*` marks a resistance that is only
+**temporary**; for corpses worth a detour, see
 [Useful Corpse Effects](#useful-corpse-effects).
 
 **Eat freely** (plain food, no effect, no risk): `C` centaurs, `f`
@@ -14028,10 +14043,10 @@ The grab-bag: digestion timing, polymorph behavior, the win-back-from-death amul
 
 | Property | What it does | Intrinsic sources | Extrinsic sources |
 |---|---|---|---|
-| **Slow digestion** | Burn nutrition at roughly one-quarter the normal rate. Hunger is no longer a serious concern. | None. | Ring of slow digestion; white dragon scales / scale mail. |
+| **Slow digestion** | Burn nutrition at about ¼ the normal rate; hunger stops being a concern. | None. | Ring of slow digestion; white dragon scales / scale mail. |
 | **Polymorph control** | When you polymorph (from a trap, ring, scroll, or potion), you choose the form. | None. | Ring of polymorph control. |
 | **Unchanging** | Locks your current form. Blocks polymorph (any source) and *also blocks the green-slime countdown*. The standard answer to "I just got slimed." | None. | Amulet of unchanging. |
-| **Sustain ability** | Your six stats (Str, Dex, Con, Int, Wis, Cha) don't drift up or down from exercise, abuse, or scrolls. | None. | Ring of sustain ability. |
+| **Sustain ability** | Your six stats (Str, Dex, Con, Int, Wis, Cha) don't drift up or down from exercise, abuse, or scrolls (including Strength loss from poison). | None. | Ring of sustain ability. |
 | **Protection from shape changers** | Nearby shape-changers (chameleon, doppelganger, foocubus) cannot polymorph. | None. | Ring of protection from shape changers. |
 | **Conflict** | Nearby monsters attack each other instead of you. Highly disruptive in your favor; also keeps shopkeepers from selling things. | None. | Ring of conflict; carrying [Sceptre of Might](#sceptre-of-might). |
 | **Life saving** | When you would die, the amulet activates instead and restores you to one HP. The amulet is destroyed in the process. | None. | Amulet of life saving. |
@@ -14039,12 +14054,10 @@ The grab-bag: digestion timing, polymorph behavior, the win-back-from-death amul
 
 :::
 
-A handful of properties exist in the source but are essentially
-**polyform-only** for the player: *swimming* (rare aquatic forms),
+A few properties are essentially **polyform-only**: *swimming*,
 *passes walls* (xorn, earth elemental, ghost), and *detect monsters*
-(no persistent source — the wand and scroll give a one-shot pulse).
-They're real, but you don't build a strategy around them outside of
-polymorph play.
+(only a one-shot pulse from a wand or scroll). Real, but not
+strategy-shaping outside polymorph play.
 
 ---
 

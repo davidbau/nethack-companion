@@ -2188,10 +2188,17 @@ Mine’s End variants contain a guaranteed (not-cursed) luckstone, so
 you’ll get one wherever you arrive. A luckstone in your open inventory
 prevents your luck from timing out toward zero, which affects everything
 from combat to fountain wishes. Grab it and carry it for the rest of the
-game. (One layout variant also seeds a <a
-href="#a-note-on-mimics"><strong>fake luckstone mimic</strong></a>
-disguised as a luckstone. BUC-test what you pick up before relying on
-it.)</p>
+game.</p>
+<p>The catch is finding it. In most layouts the luckstone hides in a
+secret room, so if a maze dead-ends with no treasure in sight, search
+the walls (<code>s</code>, <code>10s</code>) for hidden doors rather
+than digging, which these levels resist. There may be several such
+rooms, so don’t stop at the first. (One variant salts the stones with
+two look-alikes: a <strong>cursed loadstone</strong> that looks just
+like a luckstone and welds to your pack, and a <a
+href="#a-note-on-mimics"><strong>mimic</strong></a>. A pet spots both,
+so walk it over a suspect stone first, or kick it: a luckstone skids
+away, a loadstone won’t.)</p>
 </section>
 <section id="sokoban" class="level4">
 <h4>Sokoban</h4>
@@ -17219,7 +17226,7 @@ change which altar accepts the Amulet.</p>
 </thead>
 <tbody>
 <tr>
-<td>leather gloves (yugake)</td>
+<td>leather gloves (yugake) *</td>
 <td>+1</td>
 <td>—</td>
 <td>10</td>
@@ -17228,7 +17235,7 @@ change which altar accepts the Amulet.</p>
 <td></td>
 </tr>
 <tr>
-<td>gauntlets of fumbling</td>
+<td>gauntlets of fumbling *</td>
 <td>+1</td>
 <td>—</td>
 <td>10</td>
@@ -17238,7 +17245,7 @@ change which altar accepts the Amulet.</p>
 Avoid.</td>
 </tr>
 <tr>
-<td>gauntlets of power</td>
+<td>gauntlets of power *</td>
 <td>+1</td>
 <td>—</td>
 <td>30</td>
@@ -17247,7 +17254,7 @@ Avoid.</td>
 <td>Sets Strength to 25.</td>
 </tr>
 <tr>
-<td>gauntlets of dexterity</td>
+<td>gauntlets of dexterity *</td>
 <td>+1</td>
 <td>—</td>
 <td>10</td>
@@ -17259,6 +17266,10 @@ Dex).</td>
 </tbody>
 </table>
 </div>
+<p>Items marked * appear under one of four randomized descriptions until
+identified: <em>old gloves</em>, <em>padded gloves</em>, <em>riding
+gloves</em>, <em>fencing gloves</em> (plain leather gloves
+included).</p>
 </section>
 <section id="boots-1" class="level4">
 <h4>Boots</h4>
@@ -17313,7 +17324,7 @@ Dex).</td>
 <td></td>
 </tr>
 <tr>
-<td>speed boots</td>
+<td>speed boots *</td>
 <td>+1</td>
 <td>—</td>
 <td>20</td>
@@ -17322,7 +17333,7 @@ Dex).</td>
 <td>Very fast. Free extra action on 2/3 of turns.</td>
 </tr>
 <tr>
-<td>water walking boots</td>
+<td>water walking boots *</td>
 <td>+1</td>
 <td>—</td>
 <td>15</td>
@@ -17331,7 +17342,7 @@ Dex).</td>
 <td>Water walking. Critical for the Castle drawbridge.</td>
 </tr>
 <tr>
-<td>jumping boots</td>
+<td>jumping boots *</td>
 <td>+1</td>
 <td>—</td>
 <td>20</td>
@@ -17340,7 +17351,7 @@ Dex).</td>
 <td><code>#apply</code> to leap to a chosen nearby square.</td>
 </tr>
 <tr>
-<td>elven boots</td>
+<td>elven boots *</td>
 <td>+1</td>
 <td>—</td>
 <td>15</td>
@@ -17349,7 +17360,7 @@ Dex).</td>
 <td>Stealth.</td>
 </tr>
 <tr>
-<td>kicking boots</td>
+<td>kicking boots *</td>
 <td>+1</td>
 <td>—</td>
 <td>50</td>
@@ -17358,7 +17369,7 @@ Dex).</td>
 <td></td>
 </tr>
 <tr>
-<td>fumble boots</td>
+<td>fumble boots *</td>
 <td>+1</td>
 <td>—</td>
 <td>20</td>
@@ -17368,7 +17379,7 @@ Dex).</td>
 Avoid.</td>
 </tr>
 <tr>
-<td>levitation boots</td>
+<td>levitation boots *</td>
 <td>+1</td>
 <td>—</td>
 <td>15</td>
@@ -17380,6 +17391,10 @@ taken off, so this is a trap item.</td>
 </tbody>
 </table>
 </div>
+<p>Items marked * appear under one of seven randomized descriptions
+until identified: <em>combat boots</em>, <em>jungle boots</em>,
+<em>hiking boots</em>, <em>mud boots</em>, <em>buckled boots</em>,
+<em>riding boots</em>, <em>snow boots</em>.</p>
 </section>
 <section id="shields-1" class="level4">
 <h4>Shields</h4>
@@ -24209,18 +24224,16 @@ cockatrices and Medusa.</p>
 </section>
 <section id="the-corpse-table" class="level3">
 <h3>The Corpse Table</h3>
-<p>Whether a fresh corpse is dinner, treasure, or death, by symbol. It
-mirrors the <a href="#bestiary-tables">Bestiary</a>: the same
-<code>;</code> farlook letter that names a monster tells you which row
-to read. Each row gives the <strong>general</strong> verdict for that
-symbol and breaks out the members that differ. Two rules cut across the
-whole table. Eat corpses <strong>fresh</strong>: anything much over
-fifty turns old risks food poisoning. And never eat <strong>your own
-race</strong> (cannibalism costs Luck and grants aggravate monster;
-Cavemen and orcs are exempt). A <code>*</code> marks a resistance that
-is only <strong>temporary</strong>. For the handful of corpses worth a
-detour, see <a href="#useful-corpse-effects">Useful Corpse
-Effects</a>.</p>
+<p>Whether a fresh corpse is dinner, treasure, or death, by symbol,
+mirroring the <a href="#bestiary-tables">Bestiary</a>. Each row gives
+the <strong>general</strong> verdict for that symbol and breaks out the
+members that differ. Two rules cut across the table: eat corpses
+<strong>fresh</strong> (over about fifty turns old risks food
+poisoning), and never eat <strong>your own race</strong> (cannibalism
+costs Luck and grants aggravate monster; Cavemen and orcs are exempt). A
+<code>*</code> marks a resistance that is only
+<strong>temporary</strong>; for corpses worth a detour, see <a
+href="#useful-corpse-effects">Useful Corpse Effects</a>.</p>
 <p><strong>Eat freely</strong> (plain food, no effect, no risk):
 <code>C</code> centaurs, <code>f</code> cats, <code>G</code> gnomes,
 <code>J</code> jabberwocks, <code>K</code> Kops, <code>l</code>
@@ -24973,8 +24986,8 @@ win-back-from-death amulet, and a few crowd-control items.</p>
 <tbody>
 <tr>
 <td><strong>Slow digestion</strong></td>
-<td>Burn nutrition at roughly one-quarter the normal rate. Hunger is no
-longer a serious concern.</td>
+<td>Burn nutrition at about ¼ the normal rate; hunger stops being a
+concern.</td>
 <td>None.</td>
 <td>Ring of slow digestion; white dragon scales / scale mail.</td>
 </tr>
@@ -24996,7 +25009,8 @@ got slimed.”</td>
 <tr>
 <td><strong>Sustain ability</strong></td>
 <td>Your six stats (Str, Dex, Con, Int, Wis, Cha) don’t drift up or down
-from exercise, abuse, or scrolls.</td>
+from exercise, abuse, or scrolls (including Strength loss from
+poison).</td>
 <td>None.</td>
 <td>Ring of sustain ability.</td>
 </tr>
@@ -25032,12 +25046,10 @@ immunity.</td>
 </tbody>
 </table>
 </div>
-<p>A handful of properties exist in the source but are essentially
-<strong>polyform-only</strong> for the player: <em>swimming</em> (rare
-aquatic forms), <em>passes walls</em> (xorn, earth elemental, ghost),
-and <em>detect monsters</em> (no persistent source — the wand and scroll
-give a one-shot pulse). They’re real, but you don’t build a strategy
-around them outside of polymorph play.</p>
+<p>A few properties are essentially <strong>polyform-only</strong>:
+<em>swimming</em>, <em>passes walls</em> (xorn, earth elemental, ghost),
+and <em>detect monsters</em> (only a one-shot pulse from a wand or
+scroll). Real, but not strategy-shaping outside polymorph play.</p>
 <hr />
 </section>
 </section>
