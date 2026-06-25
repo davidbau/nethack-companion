@@ -127,10 +127,9 @@ you alive.
 39. [Armor Tables](#armor-tables)
 40. [Spell Tables](#spell-tables)
 41. [Bestiary Tables](#bestiary-tables)
-42. [The Corpse Table](#the-corpse-table) — What's safe to eat, by symbol
-43. [Intrinsic and Extrinsic Tables](#intrinsic-and-extrinsic-tables) — Properties you can attain and where they come from
-44. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x, and what to do about it
-45. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
+42. [Intrinsic and Extrinsic Tables](#intrinsic-and-extrinsic-tables) — Properties you can attain and where they come from
+43. [What Changed Since Last Time](#what-changed-since-last-time) — What's new in 5.0 vs 3.6.x, and what to do about it
+44. [Acknowledgements](#acknowledgements) — Standing on the shoulders of giants
 
 
 ## Part One: Before You Set Out
@@ -470,6 +469,18 @@ Strategy](#a-practical-identification-strategy).
 better. Look for cloaks, helmets, gloves, and boots to fill empty
 equipment slots. Even basic items like a helmet or pair of gloves
 provide armor class benefits and can protect against specific attacks.
+
+**Your weapon.** Most roles should keep the weapon they started
+with and enchant it: it sits in your best skill, and switching
+weapons throws away the enchantment you've banked. Pick up a
+replacement only when it clearly wins: your starter is feeble
+(Tourist, Caveman, Healer), the new weapon hits harder *in a skill
+you can train just as high* (check with [`#enhance`](#enhancing-skills)), or it's
+**silver** (a hefty bonus against demons, undead, and lycanthropes,
+worth carrying for Gehennom alone). Prefer one-handed so you can
+still hold a shield. One special case: if you're **lawful**, consider
+picking up an ordinary long sword to [dip for Excalibur](#fountains)
+once you reach experience level 5.
 
 **A ranged attack.** Daggers, darts, or a bow with arrows. Fighting
 from range is almost always safer than melee, and some monsters (like
@@ -5432,45 +5443,73 @@ gives the aggravate monster intrinsic. Cavemen and orcs are exempt.
 #### Useful Corpse Effects
 
 Eating for intrinsics is the highest-leverage habit in the early
-and mid game. Each resistance is a *chance* per eat, not a
-guarantee, so eat *every* one of these you find, not just the
-first. Two tables follow: meat corpses and vegetarian-safe
-corpses, each ordered roughly by when you'll first meet the
-creature on a typical descent.
+and mid game. Each resistance is a *chance* per eat, not a guarantee,
+so eat *every* one you find, not just the first. The tables below
+give a verdict for every monster symbol: each row's **general** ruling
+plus the members that differ. Eat corpses **fresh** (much over fifty
+turns old risks food poisoning), and a `*` marks a resistance that is
+only **temporary**.
 
-**Meat corpses:**
+**No corpse, nothing to eat:** `A` angels, `&` demons, `L` liches,
+`M` mummies, `v` vortices, `V` vampires, `y` lights, `Z` zombies.
 
-| Corpse                  | Effect                                                                 |
-| ----------------------- | ---------------------------------------------------------------------- |
-| Newt                    | May restore 1 to 3 mana                                                |
-| Cave spider, centipede, killer bee | Poison resistance                                           |
-| Lizard                  | Cures stoning in progress                                              |
-| Floating eye            | **Telepathy.** (Great to eat.)                                         |
-| Fire ant                | Fire resistance                                                        |
-| [Wraith](#a-note-on-wraiths) | **Gain an experience level**                                      |
-| Yeti                    | Cold resistance                                                        |
-| Tengu                   | Teleportitis / teleport control                                        |
-| Giant (any)             | Increase strength                                                      |
-| Winter wolf             | Cold resistance                                                        |
-| Stalker                 | Invisibility (and see invisible)                                       |
-| [Black pudding](#a-note-on-puddings) (glob) | Cold, shock, and poison resistance                       |
-| Fire giant              | Fire resistance + Strength                                             |
-| Disenchanter            | **STRIPS** a random intrinsic. Never eat.                              |
+**Eat freely** (plain food, no effect or risk): `C` centaurs, `f`
+cats, `G` gnomes, `J` jabberwocks, `K` Kops, `l` leprechauns, `n`
+nymphs, `o` orcs, `O` ogres, `p` piercers, `q` quadrupeds, `t`
+trappers, `U` umber hulks, `w` worms, `z` zruties.
 
 []{#vegetarian-safe-corpses}
-**Vegetarian-safe corpses** (those marked **†** are also vegan):
+**Vegetarian-safe corpses** (vegan, except the pudding globs, which
+are vegetarian only):
 
-| Corpse                  | Effect                                                                 |
-| ----------------------- | ---------------------------------------------------------------------- |
-| Acid blob †             | Acid and stoning resistance                                            |
-| Yellow mold †           | Poison resistance                                                      |
-| Brown mold †            | Cold and poison resistance                                             |
-| Red mold †              | Fire and poison resistance                                             |
-| Quivering blob †        | Poison resistance                                                      |
-| Gray ooze (glob)        | Fire, cold, and poison resistance                                      |
-| Blue jelly †            | Cold and poison resistance                                             |
-| [Brown pudding](#a-note-on-puddings) (glob) | Cold, shock, and poison resistance                       |
-| Gelatinous cube †       | Fire, cold, shock, and sleep resistance                                |
+::: dense-table
+
+| Sym | Class | Eating verdict |
+|----|-------|----------------|
+| `b` | Blobs | Acid blob acidic → acid/stone res\*. Quivering blob → poison res. Gelatinous cube → fire/cold/sleep/shock res. |
+| `j` | Jellies | Mostly acidic → acid/stone res\*. Blue jelly → cold/poison res. |
+| `F` | Fungi & molds | Molds by color → resistances (yellow→poison, brown→cold+poison, red→fire+poison); most are poisonous, so poison res is the usual payoff. Green mold acidic → acid/stone res\*. **Lichen: safe, never rots — carry one.** Violet fungus → hallucination. |
+| `P` | Puddings & oozes | Edible **globs** (vegetarian, not vegan): gray ooze → fire/cold/poison res; brown pudding → cold/shock/poison res (acidic). Black pudding isn't vegetarian. **Green slime → never eat, turns you to slime (death).** |
+
+:::
+
+**Everything else (meat):**
+
+::: dense-table
+
+| Sym | Class | Eating verdict |
+|----|-------|----------------|
+| `a` | Ants & insects | Mostly **poisonous** → poison res. Giant ant plain; fire ant → fire res. |
+| `c` | Cockatrices | **Never eat — petrifies (death).** Pyrolisk is safe → fire res. |
+| `d` | Dogs & canines | Plain, but hell hounds → fire res; winter wolves → cold res; were-jackal/wolf leave no corpse. |
+| `e` | Eyes & spheres | Mostly no corpse. **Floating eye → telepathy** (always eat it). |
+| `g` | Gremlins & gargoyles | Gargoyles → stone res\*. Gremlin poisonous → poison res. |
+| `h` | Dwarves & humanoids | Plain, but mind flayers → **+Int** (and telepathy). |
+| `i` | Imps & minor demons | Mostly no corpse. **Tengu → teleportitis + teleport control.** Quasit → poison res. |
+| `k` | Kobolds | **Poisonous** (no upside). |
+| `m` | Mimics | Edible, but eating one briefly glues you in place. |
+| `r` | Rodents | Plain, but rabid rat poisonous; wererat leaves no corpse. |
+| `s` | Arachnids & centipedes | **Poisonous** → poison res (the classic early source). |
+| `u` | Unicorns & horses | Plain; unicorns → poison res. |
+| `x` | Xans & fantastic insects | Mostly no corpse. Xan poisonous → poison res. |
+| `B` | Bats & birds | Bats → brief **stun**. Raven plain; vampire bat poisonous. |
+| `D` | Dragons | Babies plain. Each **adult → its breath's resistance**: red→fire, white→cold, blue→shock, orange→sleep, black→disintegration, green→poison, yellow→acid. Green and yellow corpses are also poisonous/acidic. Gray, silver, shimmering plain. Chromatic Dragon → all. |
+| `E` | Elementals | Mostly no corpse. **Stalker → invisibility + see invisible.** |
+| `H` | Giants & titans | Eat for **+Str**. Fire/frost/storm giants add fire/cold/shock res. |
+| `N` | Nagas | Eat for poison res. Red naga also → fire res; black naga also → acid/stone res\* (acidic). |
+| `Q` | Quantum mechanics | Poisonous, and eating one randomly speeds *or* slows you. Genetic engineer → random polymorph. |
+| `R` | Rust monsters & disenchanters | Plain, but **disenchanter strips one of your intrinsics — never eat.** |
+| `S` | Snakes | Mostly **poisonous** → poison res. Garter snake and python plain. |
+| `T` | Trolls | Plain (ice troll → cold res). Trolls revive, so eat or move the corpse. |
+| `W` | Wraiths | **Wraith → gain a level** (always eat it). Wights leave no corpse. |
+| `X` | Xorns | Eat for stone res\*. |
+| `Y` | Apelike creatures | Plain; yeti → cold res. |
+| `'` | Golems | Mostly no corpse; flesh golem → fire/cold/sleep/shock/poison res. |
+| `@` | Humans & elves | Plain. Elves → sleep res. **Were-humans → lycanthropy.** Nurse → full heal. **Medusa → never eat, petrifies (death).** |
+| `;` | Eels & sea monsters | Plain; electric eel → shock res; jellyfish poisonous → poison res. |
+| `:` | Lizards | Plain. **Lizard → cures stoning, never rots — carry one.** Newt → a little Pw. Salamander poisonous → fire res. Chameleon → random polymorph. |
+
+:::
 
 A gelatinous cube is the highest-density source of ascension-kit
 intrinsics in the game; poison resistance off any of the early
@@ -13790,70 +13829,6 @@ Mostly harmless. **Lizard corpses cure petrification and never rot.** Carry one 
 | chameleon | brown | 6 | 5 | 6 | 10 | bite 4d2 | shapeshifter. |
 | crocodile | brown | 6 | 9 | 5 | 0 | bite 4d2 · claw 1d12 | swims, amphibious. |
 | salamander | orange | 8 | 12 | -1 | 0 | weapon 2d8 · touch 1d6 fire · hug 2d6 · hug 3d6 fire | poisonous-corpse, follows stairs, fire-res, sleep-res. |
-
-:::
-
----
-
-### The Corpse Table {#the-corpse-table}
-
-Whether a fresh corpse is dinner, treasure, or death, by symbol,
-mirroring the [Bestiary](#bestiary-tables). Each row gives the
-**general** verdict for that symbol and breaks out the members that
-differ. Two rules cut across the table: eat corpses **fresh** (over
-about fifty turns old risks food poisoning), and never eat **your own
-race** (cannibalism costs Luck and grants aggravate monster; Cavemen
-and orcs are exempt). A `*` marks a resistance that is only
-**temporary**; for corpses worth a detour, see
-[Useful Corpse Effects](#useful-corpse-effects).
-
-**Eat freely** (plain food, no effect, no risk): `C` centaurs, `f`
-cats, `G` gnomes, `J` jabberwocks, `K` Kops, `l` leprechauns, `n`
-nymphs, `o` orcs, `O` ogres, `p` piercers, `q` quadrupeds, `t`
-trappers, `U` umber hulks, `w` worms, `z` zruties.
-
-**No corpse, nothing to eat:** `A` angels, `&` demons, `L` liches,
-`M` mummies, `v` vortices, `V` vampires, `y` lights, `Z` zombies.
-
-Every other letter carries a real decision:
-
-::: dense-table
-
-| Sym | Class | Eating verdict |
-|----|-------|----------------|
-| `a` | Ants & insects | Mostly **poisonous** → poison res. Giant ant plain; fire ant → fire res. |
-| `b` | Blobs | Acid blob acidic → acid/stone res\*. Quivering blob → poison res. Gelatinous cube → fire/cold/sleep/shock res. |
-| `c` | Cockatrices | **Never eat — petrifies (death).** Pyrolisk is safe → fire res. |
-| `d` | Dogs & canines | Plain, but hell hounds → fire res; winter wolves → cold res; were-jackal/wolf leave no corpse. |
-| `e` | Eyes & spheres | Mostly no corpse. **Floating eye → telepathy** (always eat it). |
-| `g` | Gremlins & gargoyles | Gargoyles → stone res\*. Gremlin poisonous → poison res. |
-| `h` | Dwarves & humanoids | Plain, but mind flayers → **+Int** (and telepathy). |
-| `i` | Imps & minor demons | Mostly no corpse. **Tengu → teleportitis + teleport control.** Quasit → poison res. |
-| `j` | Jellies | Mostly acidic → acid/stone res\*. Blue jelly → cold/poison res. |
-| `k` | Kobolds | **Poisonous** (no upside). |
-| `m` | Mimics | Edible, but eating one briefly glues you in place. |
-| `r` | Rodents | Plain, but rabid rat poisonous; wererat leaves no corpse. |
-| `s` | Arachnids & centipedes | **Poisonous** → poison res (the classic early source). |
-| `u` | Unicorns & horses | Plain; unicorns → poison res. |
-| `x` | Xans & fantastic insects | Mostly no corpse. Xan poisonous → poison res. |
-| `B` | Bats & birds | Bats → brief **stun**. Raven plain; vampire bat poisonous. |
-| `D` | Dragons | Babies plain. Each **adult → its breath's resistance**: red→fire, white→cold, blue→shock, orange→sleep, black→disintegration, green→poison, yellow→acid. Green and yellow corpses are also poisonous/acidic. Gray, silver, shimmering plain. Chromatic Dragon → all. |
-| `E` | Elementals | Mostly no corpse. **Stalker → invisibility + see invisible.** |
-| `F` | Fungi & molds | Molds by color → resistances (yellow→poison, brown→cold+poison, red→fire+poison); most are poisonous, so poison res is the usual payoff. Green mold acidic → acid/stone res\*. **Lichen: safe, never rots — carry one.** Violet fungus → hallucination. |
-| `H` | Giants & titans | Eat for **+Str**. Fire/frost/storm giants add fire/cold/shock res. |
-| `N` | Nagas | Eat for poison res. Red naga also → fire res; black naga also → acid/stone res\* (acidic). |
-| `P` | Puddings & oozes | Leave edible **globs**. Black/brown pudding → cold/shock/poison res (acidic). Gray ooze → fire/cold/poison res. **Green slime → never eat, turns you to slime (death).** |
-| `Q` | Quantum mechanics | Poisonous, and eating one randomly speeds *or* slows you. Genetic engineer → random polymorph. |
-| `R` | Rust monsters & disenchanters | Plain, but **disenchanter strips one of your intrinsics — never eat.** |
-| `S` | Snakes | Mostly **poisonous** → poison res. Garter snake and python plain. |
-| `T` | Trolls | Plain (ice troll → cold res). Trolls revive, so eat or move the corpse. |
-| `W` | Wraiths | **Wraith → gain a level** (always eat it). Wights leave no corpse. |
-| `X` | Xorns | Eat for stone res\*. |
-| `Y` | Apelike creatures | Plain; yeti → cold res. |
-| `'` | Golems | Mostly no corpse; flesh golem → fire/cold/sleep/shock/poison res. |
-| `@` | Humans & elves | Plain. Elves → sleep res. **Were-humans → lycanthropy.** Nurse → full heal. **Medusa → never eat, petrifies (death).** |
-| `;` | Eels & sea monsters | Plain; electric eel → shock res; jellyfish poisonous → poison res. |
-| `:` | Lizards | Plain. **Lizard → cures stoning, never rots — carry one.** Newt → a little Pw. Salamander poisonous → fire res. Chameleon → random polymorph. |
 
 :::
 

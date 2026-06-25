@@ -174,8 +174,6 @@ Pricing</a> — Commerce in the dungeon</li>
 <li><a href="#armor-tables">Armor Tables</a></li>
 <li><a href="#spell-tables">Spell Tables</a></li>
 <li><a href="#bestiary-tables">Bestiary Tables</a></li>
-<li><a href="#the-corpse-table">The Corpse Table</a> — What’s safe to
-eat, by symbol</li>
 <li><a href="#intrinsic-and-extrinsic-tables">Intrinsic and Extrinsic
 Tables</a> — Properties you can attain and where they come from</li>
 <li><a href="#what-changed-since-last-time">What Changed Since Last
@@ -560,6 +558,19 @@ probably do better. Look for cloaks, helmets, gloves, and boots to fill
 empty equipment slots. Even basic items like a helmet or pair of gloves
 provide armor class benefits and can protect against specific
 attacks.</p>
+<p><strong>Your weapon.</strong> Most roles should keep the weapon they
+started with and enchant it: it sits in your best skill, and switching
+weapons throws away the enchantment you’ve banked. Pick up a replacement
+only when it clearly wins: your starter is feeble (Tourist, Caveman,
+Healer), the new weapon hits harder <em>in a skill you can train just as
+high</em> (check with <a
+href="#enhancing-skills"><code>#enhance</code></a>), or it’s
+<strong>silver</strong> (a hefty bonus against demons, undead, and
+lycanthropes, worth carrying for Gehennom alone). Prefer one-handed so
+you can still hold a shield. One special case: if you’re
+<strong>lawful</strong>, consider picking up an ordinary long sword to
+<a href="#fountains">dip for Excalibur</a> once you reach experience
+level 5.</p>
 <p><strong>A ranged attack.</strong> Daggers, darts, or a bow with
 arrows. Fighting from range is almost always safer than melee, and some
 monsters (like floating eyes) are best handled at range.</p>
@@ -6978,132 +6989,261 @@ exempt.</p>
 <h4>Useful Corpse Effects</h4>
 <p>Eating for intrinsics is the highest-leverage habit in the early and
 mid game. Each resistance is a <em>chance</em> per eat, not a guarantee,
-so eat <em>every</em> one of these you find, not just the first. Two
-tables follow: meat corpses and vegetarian-safe corpses, each ordered
-roughly by when you’ll first meet the creature on a typical descent.</p>
-<p><strong>Meat corpses:</strong></p>
-<table>
-<colgroup>
-<col style="width: 24%" />
-<col style="width: 75%" />
-</colgroup>
-<thead>
-<tr>
-<th>Corpse</th>
-<th>Effect</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Newt</td>
-<td>May restore 1 to 3 mana</td>
-</tr>
-<tr>
-<td>Cave spider, centipede, killer bee</td>
-<td>Poison resistance</td>
-</tr>
-<tr>
-<td>Lizard</td>
-<td>Cures stoning in progress</td>
-</tr>
-<tr>
-<td>Floating eye</td>
-<td><strong>Telepathy.</strong> (Great to eat.)</td>
-</tr>
-<tr>
-<td>Fire ant</td>
-<td>Fire resistance</td>
-</tr>
-<tr>
-<td><a href="#a-note-on-wraiths">Wraith</a></td>
-<td><strong>Gain an experience level</strong></td>
-</tr>
-<tr>
-<td>Yeti</td>
-<td>Cold resistance</td>
-</tr>
-<tr>
-<td>Tengu</td>
-<td>Teleportitis / teleport control</td>
-</tr>
-<tr>
-<td>Giant (any)</td>
-<td>Increase strength</td>
-</tr>
-<tr>
-<td>Winter wolf</td>
-<td>Cold resistance</td>
-</tr>
-<tr>
-<td>Stalker</td>
-<td>Invisibility (and see invisible)</td>
-</tr>
-<tr>
-<td><a href="#a-note-on-puddings">Black pudding</a> (glob)</td>
-<td>Cold, shock, and poison resistance</td>
-</tr>
-<tr>
-<td>Fire giant</td>
-<td>Fire resistance + Strength</td>
-</tr>
-<tr>
-<td>Disenchanter</td>
-<td><strong>STRIPS</strong> a random intrinsic. Never eat.</td>
-</tr>
-</tbody>
-</table>
+so eat <em>every</em> one you find, not just the first. The tables below
+give a verdict for every monster symbol: each row’s
+<strong>general</strong> ruling plus the members that differ. Eat
+corpses <strong>fresh</strong> (much over fifty turns old risks food
+poisoning), and a <code>*</code> marks a resistance that is only
+<strong>temporary</strong>.</p>
+<p><strong>No corpse, nothing to eat:</strong> <code>A</code> angels,
+<code>&amp;</code> demons, <code>L</code> liches, <code>M</code>
+mummies, <code>v</code> vortices, <code>V</code> vampires,
+<code>y</code> lights, <code>Z</code> zombies.</p>
+<p><strong>Eat freely</strong> (plain food, no effect or risk):
+<code>C</code> centaurs, <code>f</code> cats, <code>G</code> gnomes,
+<code>J</code> jabberwocks, <code>K</code> Kops, <code>l</code>
+leprechauns, <code>n</code> nymphs, <code>o</code> orcs, <code>O</code>
+ogres, <code>p</code> piercers, <code>q</code> quadrupeds,
+<code>t</code> trappers, <code>U</code> umber hulks, <code>w</code>
+worms, <code>z</code> zruties.</p>
 <p><span id="vegetarian-safe-corpses"></span> <strong>Vegetarian-safe
-corpses</strong> (those marked <strong>†</strong> are also vegan):</p>
+corpses</strong> (vegan, except the pudding globs, which are vegetarian
+only):</p>
+<div class="dense-table">
 <table>
 <colgroup>
-<col style="width: 24%" />
-<col style="width: 75%" />
+<col style="width: 14%" />
+<col style="width: 25%" />
+<col style="width: 59%" />
 </colgroup>
 <thead>
 <tr>
-<th>Corpse</th>
-<th>Effect</th>
+<th>Sym</th>
+<th>Class</th>
+<th>Eating verdict</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Acid blob †</td>
-<td>Acid and stoning resistance</td>
+<td><code>b</code></td>
+<td>Blobs</td>
+<td>Acid blob acidic → acid/stone res*. Quivering blob → poison res.
+Gelatinous cube → fire/cold/sleep/shock res.</td>
 </tr>
 <tr>
-<td>Yellow mold †</td>
-<td>Poison resistance</td>
+<td><code>j</code></td>
+<td>Jellies</td>
+<td>Mostly acidic → acid/stone res*. Blue jelly → cold/poison res.</td>
 </tr>
 <tr>
-<td>Brown mold †</td>
-<td>Cold and poison resistance</td>
+<td><code>F</code></td>
+<td>Fungi &amp; molds</td>
+<td>Molds by color → resistances (yellow→poison, brown→cold+poison,
+red→fire+poison); most are poisonous, so poison res is the usual payoff.
+Green mold acidic → acid/stone res*. <strong>Lichen: safe, never rots —
+carry one.</strong> Violet fungus → hallucination.</td>
 </tr>
 <tr>
-<td>Red mold †</td>
-<td>Fire and poison resistance</td>
-</tr>
-<tr>
-<td>Quivering blob †</td>
-<td>Poison resistance</td>
-</tr>
-<tr>
-<td>Gray ooze (glob)</td>
-<td>Fire, cold, and poison resistance</td>
-</tr>
-<tr>
-<td>Blue jelly †</td>
-<td>Cold and poison resistance</td>
-</tr>
-<tr>
-<td><a href="#a-note-on-puddings">Brown pudding</a> (glob)</td>
-<td>Cold, shock, and poison resistance</td>
-</tr>
-<tr>
-<td>Gelatinous cube †</td>
-<td>Fire, cold, shock, and sleep resistance</td>
+<td><code>P</code></td>
+<td>Puddings &amp; oozes</td>
+<td>Edible <strong>globs</strong> (vegetarian, not vegan): gray ooze →
+fire/cold/poison res; brown pudding → cold/shock/poison res (acidic).
+Black pudding isn’t vegetarian. <strong>Green slime → never eat, turns
+you to slime (death).</strong></td>
 </tr>
 </tbody>
 </table>
+</div>
+<p><strong>Everything else (meat):</strong></p>
+<div class="dense-table">
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 25%" />
+<col style="width: 59%" />
+</colgroup>
+<thead>
+<tr>
+<th>Sym</th>
+<th>Class</th>
+<th>Eating verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a</code></td>
+<td>Ants &amp; insects</td>
+<td>Mostly <strong>poisonous</strong> → poison res. Giant ant plain;
+fire ant → fire res.</td>
+</tr>
+<tr>
+<td><code>c</code></td>
+<td>Cockatrices</td>
+<td><strong>Never eat — petrifies (death).</strong> Pyrolisk is safe →
+fire res.</td>
+</tr>
+<tr>
+<td><code>d</code></td>
+<td>Dogs &amp; canines</td>
+<td>Plain, but hell hounds → fire res; winter wolves → cold res;
+were-jackal/wolf leave no corpse.</td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td>Eyes &amp; spheres</td>
+<td>Mostly no corpse. <strong>Floating eye → telepathy</strong> (always
+eat it).</td>
+</tr>
+<tr>
+<td><code>g</code></td>
+<td>Gremlins &amp; gargoyles</td>
+<td>Gargoyles → stone res*. Gremlin poisonous → poison res.</td>
+</tr>
+<tr>
+<td><code>h</code></td>
+<td>Dwarves &amp; humanoids</td>
+<td>Plain, but mind flayers → <strong>+Int</strong> (and
+telepathy).</td>
+</tr>
+<tr>
+<td><code>i</code></td>
+<td>Imps &amp; minor demons</td>
+<td>Mostly no corpse. <strong>Tengu → teleportitis + teleport
+control.</strong> Quasit → poison res.</td>
+</tr>
+<tr>
+<td><code>k</code></td>
+<td>Kobolds</td>
+<td><strong>Poisonous</strong> (no upside).</td>
+</tr>
+<tr>
+<td><code>m</code></td>
+<td>Mimics</td>
+<td>Edible, but eating one briefly glues you in place.</td>
+</tr>
+<tr>
+<td><code>r</code></td>
+<td>Rodents</td>
+<td>Plain, but rabid rat poisonous; wererat leaves no corpse.</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>Arachnids &amp; centipedes</td>
+<td><strong>Poisonous</strong> → poison res (the classic early
+source).</td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td>Unicorns &amp; horses</td>
+<td>Plain; unicorns → poison res.</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>Xans &amp; fantastic insects</td>
+<td>Mostly no corpse. Xan poisonous → poison res.</td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td>Bats &amp; birds</td>
+<td>Bats → brief <strong>stun</strong>. Raven plain; vampire bat
+poisonous.</td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td>Dragons</td>
+<td>Babies plain. Each <strong>adult → its breath’s resistance</strong>:
+red→fire, white→cold, blue→shock, orange→sleep, black→disintegration,
+green→poison, yellow→acid. Green and yellow corpses are also
+poisonous/acidic. Gray, silver, shimmering plain. Chromatic Dragon →
+all.</td>
+</tr>
+<tr>
+<td><code>E</code></td>
+<td>Elementals</td>
+<td>Mostly no corpse. <strong>Stalker → invisibility + see
+invisible.</strong></td>
+</tr>
+<tr>
+<td><code>H</code></td>
+<td>Giants &amp; titans</td>
+<td>Eat for <strong>+Str</strong>. Fire/frost/storm giants add
+fire/cold/shock res.</td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td>Nagas</td>
+<td>Eat for poison res. Red naga also → fire res; black naga also →
+acid/stone res* (acidic).</td>
+</tr>
+<tr>
+<td><code>Q</code></td>
+<td>Quantum mechanics</td>
+<td>Poisonous, and eating one randomly speeds <em>or</em> slows you.
+Genetic engineer → random polymorph.</td>
+</tr>
+<tr>
+<td><code>R</code></td>
+<td>Rust monsters &amp; disenchanters</td>
+<td>Plain, but <strong>disenchanter strips one of your intrinsics —
+never eat.</strong></td>
+</tr>
+<tr>
+<td><code>S</code></td>
+<td>Snakes</td>
+<td>Mostly <strong>poisonous</strong> → poison res. Garter snake and
+python plain.</td>
+</tr>
+<tr>
+<td><code>T</code></td>
+<td>Trolls</td>
+<td>Plain (ice troll → cold res). Trolls revive, so eat or move the
+corpse.</td>
+</tr>
+<tr>
+<td><code>W</code></td>
+<td>Wraiths</td>
+<td><strong>Wraith → gain a level</strong> (always eat it). Wights leave
+no corpse.</td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td>Xorns</td>
+<td>Eat for stone res*.</td>
+</tr>
+<tr>
+<td><code>Y</code></td>
+<td>Apelike creatures</td>
+<td>Plain; yeti → cold res.</td>
+</tr>
+<tr>
+<td><code>'</code></td>
+<td>Golems</td>
+<td>Mostly no corpse; flesh golem → fire/cold/sleep/shock/poison
+res.</td>
+</tr>
+<tr>
+<td><code>@</code></td>
+<td>Humans &amp; elves</td>
+<td>Plain. Elves → sleep res. <strong>Were-humans →
+lycanthropy.</strong> Nurse → full heal. <strong>Medusa → never eat,
+petrifies (death).</strong></td>
+</tr>
+<tr>
+<td><code>;</code></td>
+<td>Eels &amp; sea monsters</td>
+<td>Plain; electric eel → shock res; jellyfish poisonous → poison
+res.</td>
+</tr>
+<tr>
+<td><code>:</code></td>
+<td>Lizards</td>
+<td>Plain. <strong>Lizard → cures stoning, never rots — carry
+one.</strong> Newt → a little Pw. Salamander poisonous → fire res.
+Chameleon → random polymorph.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>A gelatinous cube is the highest-density source of ascension-kit
 intrinsics in the game; poison resistance off any of the early corpses
 is the most important single intrinsic to bank.</p>
@@ -24221,248 +24361,6 @@ cockatrices and Medusa.</p>
 </div>
 <hr />
 </section>
-</section>
-<section id="the-corpse-table" class="level3">
-<h3>The Corpse Table</h3>
-<p>Whether a fresh corpse is dinner, treasure, or death, by symbol,
-mirroring the <a href="#bestiary-tables">Bestiary</a>. Each row gives
-the <strong>general</strong> verdict for that symbol and breaks out the
-members that differ. Two rules cut across the table: eat corpses
-<strong>fresh</strong> (over about fifty turns old risks food
-poisoning), and never eat <strong>your own race</strong> (cannibalism
-costs Luck and grants aggravate monster; Cavemen and orcs are exempt). A
-<code>*</code> marks a resistance that is only
-<strong>temporary</strong>; for corpses worth a detour, see <a
-href="#useful-corpse-effects">Useful Corpse Effects</a>.</p>
-<p><strong>Eat freely</strong> (plain food, no effect, no risk):
-<code>C</code> centaurs, <code>f</code> cats, <code>G</code> gnomes,
-<code>J</code> jabberwocks, <code>K</code> Kops, <code>l</code>
-leprechauns, <code>n</code> nymphs, <code>o</code> orcs, <code>O</code>
-ogres, <code>p</code> piercers, <code>q</code> quadrupeds,
-<code>t</code> trappers, <code>U</code> umber hulks, <code>w</code>
-worms, <code>z</code> zruties.</p>
-<p><strong>No corpse, nothing to eat:</strong> <code>A</code> angels,
-<code>&amp;</code> demons, <code>L</code> liches, <code>M</code>
-mummies, <code>v</code> vortices, <code>V</code> vampires,
-<code>y</code> lights, <code>Z</code> zombies.</p>
-<p>Every other letter carries a real decision:</p>
-<div class="dense-table">
-<table>
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 25%" />
-<col style="width: 59%" />
-</colgroup>
-<thead>
-<tr>
-<th>Sym</th>
-<th>Class</th>
-<th>Eating verdict</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>a</code></td>
-<td>Ants &amp; insects</td>
-<td>Mostly <strong>poisonous</strong> → poison res. Giant ant plain;
-fire ant → fire res.</td>
-</tr>
-<tr>
-<td><code>b</code></td>
-<td>Blobs</td>
-<td>Acid blob acidic → acid/stone res*. Quivering blob → poison res.
-Gelatinous cube → fire/cold/sleep/shock res.</td>
-</tr>
-<tr>
-<td><code>c</code></td>
-<td>Cockatrices</td>
-<td><strong>Never eat — petrifies (death).</strong> Pyrolisk is safe →
-fire res.</td>
-</tr>
-<tr>
-<td><code>d</code></td>
-<td>Dogs &amp; canines</td>
-<td>Plain, but hell hounds → fire res; winter wolves → cold res;
-were-jackal/wolf leave no corpse.</td>
-</tr>
-<tr>
-<td><code>e</code></td>
-<td>Eyes &amp; spheres</td>
-<td>Mostly no corpse. <strong>Floating eye → telepathy</strong> (always
-eat it).</td>
-</tr>
-<tr>
-<td><code>g</code></td>
-<td>Gremlins &amp; gargoyles</td>
-<td>Gargoyles → stone res*. Gremlin poisonous → poison res.</td>
-</tr>
-<tr>
-<td><code>h</code></td>
-<td>Dwarves &amp; humanoids</td>
-<td>Plain, but mind flayers → <strong>+Int</strong> (and
-telepathy).</td>
-</tr>
-<tr>
-<td><code>i</code></td>
-<td>Imps &amp; minor demons</td>
-<td>Mostly no corpse. <strong>Tengu → teleportitis + teleport
-control.</strong> Quasit → poison res.</td>
-</tr>
-<tr>
-<td><code>j</code></td>
-<td>Jellies</td>
-<td>Mostly acidic → acid/stone res*. Blue jelly → cold/poison res.</td>
-</tr>
-<tr>
-<td><code>k</code></td>
-<td>Kobolds</td>
-<td><strong>Poisonous</strong> (no upside).</td>
-</tr>
-<tr>
-<td><code>m</code></td>
-<td>Mimics</td>
-<td>Edible, but eating one briefly glues you in place.</td>
-</tr>
-<tr>
-<td><code>r</code></td>
-<td>Rodents</td>
-<td>Plain, but rabid rat poisonous; wererat leaves no corpse.</td>
-</tr>
-<tr>
-<td><code>s</code></td>
-<td>Arachnids &amp; centipedes</td>
-<td><strong>Poisonous</strong> → poison res (the classic early
-source).</td>
-</tr>
-<tr>
-<td><code>u</code></td>
-<td>Unicorns &amp; horses</td>
-<td>Plain; unicorns → poison res.</td>
-</tr>
-<tr>
-<td><code>x</code></td>
-<td>Xans &amp; fantastic insects</td>
-<td>Mostly no corpse. Xan poisonous → poison res.</td>
-</tr>
-<tr>
-<td><code>B</code></td>
-<td>Bats &amp; birds</td>
-<td>Bats → brief <strong>stun</strong>. Raven plain; vampire bat
-poisonous.</td>
-</tr>
-<tr>
-<td><code>D</code></td>
-<td>Dragons</td>
-<td>Babies plain. Each <strong>adult → its breath’s resistance</strong>:
-red→fire, white→cold, blue→shock, orange→sleep, black→disintegration,
-green→poison, yellow→acid. Green and yellow corpses are also
-poisonous/acidic. Gray, silver, shimmering plain. Chromatic Dragon →
-all.</td>
-</tr>
-<tr>
-<td><code>E</code></td>
-<td>Elementals</td>
-<td>Mostly no corpse. <strong>Stalker → invisibility + see
-invisible.</strong></td>
-</tr>
-<tr>
-<td><code>F</code></td>
-<td>Fungi &amp; molds</td>
-<td>Molds by color → resistances (yellow→poison, brown→cold+poison,
-red→fire+poison); most are poisonous, so poison res is the usual payoff.
-Green mold acidic → acid/stone res*. <strong>Lichen: safe, never rots —
-carry one.</strong> Violet fungus → hallucination.</td>
-</tr>
-<tr>
-<td><code>H</code></td>
-<td>Giants &amp; titans</td>
-<td>Eat for <strong>+Str</strong>. Fire/frost/storm giants add
-fire/cold/shock res.</td>
-</tr>
-<tr>
-<td><code>N</code></td>
-<td>Nagas</td>
-<td>Eat for poison res. Red naga also → fire res; black naga also →
-acid/stone res* (acidic).</td>
-</tr>
-<tr>
-<td><code>P</code></td>
-<td>Puddings &amp; oozes</td>
-<td>Leave edible <strong>globs</strong>. Black/brown pudding →
-cold/shock/poison res (acidic). Gray ooze → fire/cold/poison res.
-<strong>Green slime → never eat, turns you to slime
-(death).</strong></td>
-</tr>
-<tr>
-<td><code>Q</code></td>
-<td>Quantum mechanics</td>
-<td>Poisonous, and eating one randomly speeds <em>or</em> slows you.
-Genetic engineer → random polymorph.</td>
-</tr>
-<tr>
-<td><code>R</code></td>
-<td>Rust monsters &amp; disenchanters</td>
-<td>Plain, but <strong>disenchanter strips one of your intrinsics —
-never eat.</strong></td>
-</tr>
-<tr>
-<td><code>S</code></td>
-<td>Snakes</td>
-<td>Mostly <strong>poisonous</strong> → poison res. Garter snake and
-python plain.</td>
-</tr>
-<tr>
-<td><code>T</code></td>
-<td>Trolls</td>
-<td>Plain (ice troll → cold res). Trolls revive, so eat or move the
-corpse.</td>
-</tr>
-<tr>
-<td><code>W</code></td>
-<td>Wraiths</td>
-<td><strong>Wraith → gain a level</strong> (always eat it). Wights leave
-no corpse.</td>
-</tr>
-<tr>
-<td><code>X</code></td>
-<td>Xorns</td>
-<td>Eat for stone res*.</td>
-</tr>
-<tr>
-<td><code>Y</code></td>
-<td>Apelike creatures</td>
-<td>Plain; yeti → cold res.</td>
-</tr>
-<tr>
-<td><code>'</code></td>
-<td>Golems</td>
-<td>Mostly no corpse; flesh golem → fire/cold/sleep/shock/poison
-res.</td>
-</tr>
-<tr>
-<td><code>@</code></td>
-<td>Humans &amp; elves</td>
-<td>Plain. Elves → sleep res. <strong>Were-humans →
-lycanthropy.</strong> Nurse → full heal. <strong>Medusa → never eat,
-petrifies (death).</strong></td>
-</tr>
-<tr>
-<td><code>;</code></td>
-<td>Eels &amp; sea monsters</td>
-<td>Plain; electric eel → shock res; jellyfish poisonous → poison
-res.</td>
-</tr>
-<tr>
-<td><code>:</code></td>
-<td>Lizards</td>
-<td>Plain. <strong>Lizard → cures stoning, never rots — carry
-one.</strong> Newt → a little Pw. Salamander poisonous → fire res.
-Chameleon → random polymorph.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr />
 </section>
 <section id="intrinsic-and-extrinsic-tables" class="level3">
 <h3>Intrinsic and Extrinsic Tables</h3>
