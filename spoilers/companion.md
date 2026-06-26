@@ -1,4 +1,8 @@
-# A Traveler's Companion to the <span class="nobr">Mazes of Menace</span>
+# The NetHack Spoilers
+
+```{=html}
+<p style="text-align: center; font-size: 1.25em; margin: 0.2em 0 1.4em;">A Traveler's Companion to the <span class="nobr">Mazes of Menace</span></p>
+```
 
 ```{=html}
 <p style="text-align: center; font-style: italic; margin: 1.5em 0;">You feel like someone is helping you.</p>
