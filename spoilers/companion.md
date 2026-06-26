@@ -4141,26 +4141,22 @@ be true:
 - If you're on an altar, it should be **co-aligned**. Praying on a
   cross-aligned altar directs your prayer to the wrong god.
 
-**When prayer goes wrong.** If any requirement is unmet, your god
-responds with punishment instead of help: loss of alignment, loss of
-luck, increased timeout, cursing of worn items, or summoning of
-hostile minions. Severe transgressions (praying to a very angry god)
-can trigger lightning or disintegration, both potentially fatal.
+**When prayer goes wrong.** If a requirement is unmet, your god
+punishes instead of helping: lost alignment or luck, a longer
+timeout, cursed worn items, or hostile minions. Severe
+transgressions can trigger lightning or disintegration, both fatal.
 
-**Practical guidance.** Pray when you're about to die and have no
-other option. Starvation, stoning, illness, and critically low HP
-are all valid emergencies. Don't waste prayers on minor
-inconveniences. Before you pray, make a mental check: is my
-alignment positive? Have enough turns passed? Am I on a co-aligned
-altar or no altar at all? If you can't answer yes to these, find
-another solution.
+**Practical guidance.** Pray only when you're about to die and have
+no other option: starvation, stoning, illness, critically low HP.
+Don't waste prayers on minor inconveniences, and first run the
+checklist above (alignment non-negative, timeout expired, no
+cross-aligned altar). If any answer is no, find another way.
 
-**Prayer timeout tracking.** The game doesn't show your timeout
-directly, but you can estimate it. Count roughly 500 turns from
-your last prayer (more if it went badly). In the early game, when
-turns are slow and you're fighting one creature at a time, 500
-turns pass quickly. In the late game, when you might take 100
-actions per level, it takes longer to feel.
+**Prayer timeout tracking.** The game doesn't show your timeout,
+but you can estimate it: count roughly 500 turns from your last
+prayer (more if it went badly). Those turns pass quickly in the
+early game and drag in the late, when a single level can eat
+hundreds of actions.
 
 #### Sacrifice
 
@@ -4205,9 +4201,7 @@ The first gift is biased toward an artifact that matches your
 alignment and a weapon skill you can use, which in practice
 usually means your role's signature artifact ([Magicbane](#magicbane) for
 Wizards, [Mjollnir](#mjollnir) for Valkyries, and so on). Sacrifice early to
-lock in that bias before the random pool dilutes it. Gift
-artifacts are always aligned to your god and always match a
-weapon skill you can use.
+lock in that bias before the random pool dilutes it.
 
 Worthiness floor: the gods filter the artifact pool by the
 sacrifice's value, so a kobold corpse can roll for a gift but
@@ -4287,18 +4281,15 @@ angry, converts *you* to the altar's alignment instead. Better
 odds at higher experience level. Worth the risk when you need a
 co-aligned altar for sacrifice gifts, holy water, or BUC testing.
 
-Two complications worth knowing. A *successful* conversion can
+One complication worth knowing: a *successful* conversion can
 still summon a pair of hostile minions from the displaced god,
-arriving just as you exhale; have an exit plan in case the
-"victory" comes with company. And if you try this with a
-*negative* alignment record, the result inverts: instead of the
-altar flipping to your god, your god disowns you and you become a
-follower of the altar's god permanently.
+arriving just as you exhale, so have an exit plan in case the
+"victory" comes with company.
 
 Two things to **never** sacrifice on any altar:
 
-- **A same-race corpse** (humans for most roles; also elves if
-  you're elven). Punished on every altar; on a Chaotic one it
+- **A corpse of your own race** (human, elf, gnome, dwarf, or orc,
+  whichever you are). Punished on every altar; on a Chaotic one it
   summons a demon.
 - **A unicorn whose alignment matches the altar.** Counts as an
   insult to that god.
@@ -5808,7 +5799,9 @@ forever. Liches (`L`) are the usual blessed target.
 **Never blessed-genocide a class that contains your own race
 or role.** Dwarves are `h`, Gnomes are `G`, Elves and Humans
 are `@`, Orcs are `o`; a blessed scroll targeting one of those
-ends the game with "killed by a scroll of genocide". (That
+ends the game with "killed by a scroll of genocide". And `@` is
+lethal for *every* role, not just elves and humans, since your
+role-self is an `@`. (That
 makes the popular "wipe mind flayers" pick a Dwarf trap, since
 mind flayers are also `h`.) Read one while confused and you
 genocide your own role's species the same way. Read carefully.
