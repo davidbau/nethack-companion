@@ -475,16 +475,14 @@ equipment slots. Even basic items like a helmet or pair of gloves
 provide armor class benefits and can protect against specific attacks.
 
 **Your weapon.** Most roles should keep the weapon they started
-with and enchant it: it sits in your best skill, and switching
-weapons throws away the enchantment you've banked. Pick up a
-replacement only when it clearly wins: your starter is feeble
-(Tourist, Caveman, Healer), the new weapon hits harder *in a skill
-you can train just as high* (check with [`#enhance`](#enhancing-skills)), or it's
-**silver** (a hefty bonus against demons, undead, and lycanthropes,
-worth carrying for Gehennom alone). Prefer one-handed so you can
-still hold a shield. One special case: if you're **lawful**, consider
-picking up an ordinary long sword to [dip for Excalibur](#fountains)
-once you reach experience level 5.
+with: it matches your best skill, which you can
+[`#enhance`](#enhancing-skills) through practice, and switching
+weapons also discards any enchantment it may have started with. Pick
+a replacement if you're a Tourist, Caveman, or Healer who starts
+with a feeble weapon, or if it matches your skills (check the
+`#enhance` chapter), or it's **silver** (a hefty bonus against
+demons, undead, and lycanthropes). Prefer one-handed if you want the
+option to hold a shield.
 
 **A ranged attack.** Daggers, darts, or a bow with arrows. Fighting
 from range is almost always safer than melee, and some monsters (like
