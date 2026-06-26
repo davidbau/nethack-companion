@@ -1,4 +1,4 @@
-# The NetHack Spoilers
+# NetHack Spoilers
 
 ```{=html}
 <p style="text-align: center; font-size: 1.25em; margin: 0.2em 0 1.4em;">A Traveler's Companion to the <span class="nobr">Mazes of Menace</span></p>
