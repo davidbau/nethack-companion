@@ -203,7 +203,7 @@ lets you dig through walls and create your own escape routes from
 the very first level. The tinning kit lets you preserve corpses
 for later, and the touchstone is your gem-identification edge:
 rub a gem on it and the stone shows whether it's the real
-thing or worthless glass. Useful for unicorn negotiation and shop
+thing or worthless glass. Useful for lucky unicorn gifts and shop
 pricing. Archeologists are capable and flexible, though a bit
 fragile in early combat. *Alignment: Lawful or Neutral.*
 
@@ -465,9 +465,19 @@ identification tools are altars (drop items to see if they flash
 blessed/cursed), your pet (it won't step on cursed items), and
 experimentation. A scroll of identify is valuable, but you might
 not find one for a while. A touchstone (a gray stone that
-identifies gems) is helpful but not urgent. The full
-identification playbook is in [A Practical Identification
+identifies gems) is helpful but not urgent. At shops you will learn
+to recognize some items by their prices: the cheapest scroll is an
+identify scroll, and the cheapest potion is a healing potion. The
+full identification playbook is in [A Practical Identification
 Strategy](#a-practical-identification-strategy).
+<!-- price-ID verification (objects.h): scroll of identify base
+cost 20 (objects.h:1213, SCROLL cost field = 5th arg per macro at
+1182) is the cheapest scroll; potion of healing base cost 20
+(objects.h:1145, POTION cost = 6th arg per macro at 1121) is the
+cheapest potion. Each is the unique 20-zm item in its class; the
+next cheapest are scroll of light (50) and potions of booze / fruit
+juice / see invisible / sickness (50). -->
+
 
 **Armor improvements.** Whatever you're wearing, you can probably do
 better. Look for cloaks, helmets, gloves, and boots to fill empty
@@ -5569,10 +5579,19 @@ short list of candidates:
 
 <div class="price-id-toolbar"></div>
 
-Water is the oddity in the $100 group: it always appears as "clear
+Water is an oddity in the $100 group: it always appears as "clear
 potion," identifiable on sight. Don't underestimate it; water is
 the raw material for holy water, which is the foundation of
-everything.
+everything. Oil is another special one, identifiable because it's
+the only potion you can `a`pply: doing so lights it as a flame, a
+safe ID test that also leaves you a brief light source or throwable
+fire.
+<!-- oil verification: POT_OIL is the only applyable potion
+(apply.c:1503 lists it among light sources you can apply). It does
+NOT grease or rustproof items (no POT_OIL link to greased / erode /
+rust anywhere in src/*.c); that protection comes from the can of
+grease. -->
+
 
 #### Key Potions
 
