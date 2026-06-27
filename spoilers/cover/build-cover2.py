@@ -196,12 +196,10 @@ def main():
 
     # ---- Front cover (right panel): large title, subtitle, two maps ----
     title_x = FRONT_LEFT + SAFETY_INSET + 8
-    main_size = 42
-    main_y = TRIM_TOP + SAFETY_INSET + 36 + 10    # baseline of the large title
-    sub_size = 20
-    sub_leading = 25
-    sub_y1 = main_y + 40
-    sub_y2 = sub_y1 + sub_leading
+    main_size = 50            # ~20% larger
+    main_y = TRIM_TOP + SAFETY_INSET + 36 + 14    # baseline of the large title
+    sub_size = 19             # smaller so the subtitle fits on one line
+    sub_y1 = main_y + 44
 
     title_svg = TMP / "title-cover2.svg"
     title_svg.write_text(
@@ -213,14 +211,12 @@ def main():
         f'<text x="{title_x}" y="{main_y}" fill="white" font-weight="600" '
         f'font-family="{GARAMOND}" font-size="{main_size}" font-kerning="normal" text-rendering="optimizeLegibility">'
         f'{TITLE_MAIN}</text>'
-        # Subtitle (two lines, italic, smaller)
+        # Subtitle (one line, italic, smaller). Nudge "Menace" so the f
+        # and M don't touch (rsvg ignores that kern pair).
         f'<text x="{title_x}" y="{sub_y1}" fill="white" font-style="italic" '
         f'font-family="{GARAMOND}" font-size="{sub_size}" font-kerning="normal" text-rendering="optimizeLegibility">'
-        f'{TITLE_LINE1}</text>'
-        f'<text x="{title_x}" y="{sub_y2}" fill="white" font-style="italic" '
-        f'font-family="{GARAMOND}" font-size="{sub_size}" font-kerning="normal" text-rendering="optimizeLegibility">'
-        f'{TITLE_LINE2_PARTS[0]} '
-        f'<tspan dx="0.07em">{TITLE_LINE2_PARTS[1]}</tspan>'
+        f'{TITLE_LINE1} {TITLE_LINE2_PARTS[0]} '
+        f'<tspan dx="0.05em">{TITLE_LINE2_PARTS[1]}</tspan>'
         f'</text>'
         f'</svg>')
     title_pdf = TMP / "title-cover2.pdf"
@@ -229,7 +225,7 @@ def main():
         page.show_pdf_page(fitz.Rect(0, 0, PAGE_W, PAGE_H), src, 0)
 
     fx = FRONT_LEFT + SAFETY_INSET
-    fy = sub_y2 + 30
+    fy = sub_y1 + 30
     fw_box = (FRONT_RIGHT - SAFETY_INSET) - fx
     fh_box = (TRIM_BOTTOM - SAFETY_INSET) - fy
     front_maps = [

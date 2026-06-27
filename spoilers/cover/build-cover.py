@@ -296,12 +296,10 @@ def main():
     spine_size = 40           # short title -> larger; cap height fits the spine width
     spine_y_start = TRIM_TOP + 175   # roughly centered along the spine length
     title_x = FRONT_LEFT + SAFETY_INSET + 8
-    main_size = 44            # large front-cover title (the title is short now)
-    main_y = TRIM_TOP + SAFETY_INSET + 36 + 12   # baseline of the large title
-    sub_size = 21
-    sub_leading = 26
-    sub_y1 = main_y + 42
-    sub_y2 = sub_y1 + sub_leading
+    main_size = 53            # large front-cover title, ~20% up from 44
+    main_y = TRIM_TOP + SAFETY_INSET + 36 + 16   # baseline of the large title
+    sub_size = 19             # ~10% smaller so the subtitle fits on one line
+    sub_y1 = main_y + 46
 
     title_svg = TMP / "title.svg"
     title_svg.write_text(
@@ -313,15 +311,12 @@ def main():
         f'<text x="{title_x}" y="{main_y}" fill="white" font-weight="600" '
         f'font-family="{GARAMOND}" font-size="{main_size}" font-kerning="normal" text-rendering="optimizeLegibility">'
         f'{TITLE_MAIN}</text>'
-        # Front-cover subtitle (two lines, italic, smaller). Split before
-        # "Menace" and nudge it so the f and M don't touch.
+        # Front-cover subtitle (one line, italic, smaller). Nudge "Menace"
+        # so the f and M don't touch (rsvg ignores that kern pair).
         f'<text x="{title_x}" y="{sub_y1}" fill="white" font-style="italic" '
         f'font-family="{GARAMOND}" font-size="{sub_size}" font-kerning="normal" text-rendering="optimizeLegibility">'
-        f'{TITLE_LINE1}</text>'
-        f'<text x="{title_x}" y="{sub_y2}" fill="white" font-style="italic" '
-        f'font-family="{GARAMOND}" font-size="{sub_size}" font-kerning="normal" text-rendering="optimizeLegibility">'
-        f'{TITLE_LINE2_PARTS[0]} '
-        f'<tspan dx="0.07em">{TITLE_LINE2_PARTS[1]}</tspan>'
+        f'{TITLE_LINE1} {TITLE_LINE2_PARTS[0]} '
+        f'<tspan dx="0.05em">{TITLE_LINE2_PARTS[1]}</tspan>'
         f'</text>'
         # Spine title (rotated +90°, reads top→bottom). After rotation
         # the glyphs extend rightward of the baseline by ~cap_height
@@ -339,7 +334,7 @@ def main():
 
     # Front-cover artwork: Dlvl 5 above Castle, stacked vertically.
     fx = FRONT_LEFT + SAFETY_INSET
-    fy = sub_y2 + 30
+    fy = sub_y1 + 30
     fw_box = (FRONT_RIGHT - SAFETY_INSET) - fx
     fh_box = (TRIM_BOTTOM - SAFETY_INSET) - fy
     front_maps = [
