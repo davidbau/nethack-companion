@@ -4170,6 +4170,25 @@ prayer (more if it went badly). Those turns pass quickly in the
 early game and drag in the late, when a single level can eat
 hundreds of actions.
 
+#### Turning Undead
+
+**Knights** and **Priests** can `#turn` to call on their god and
+drive back the undead: every undead and vampire in sight (and
+demons, past experience level 15) within a wide radius. The tougher
+the creature, the higher your level must be to *destroy* it rather
+than merely scare it, zombies at experience level 6 but **ghosts
+not until 14**, liches 16. Below that, a turn only routs them, and
+magic-resistant undead like ghosts resist about half the time.
+Lawful and neutral heroes destroy what they turn; chaotic ones
+pacify it.
+
+Unlike prayer, turning costs nothing with your god: no timeout and
+no goodwill, so lean on it freely, paying only a few turns of
+paralysis while you chant. But like prayer it **fails in
+[Gehennom](#gehennom)**, so it's dead weight in the Valley of the
+Dead. Spellcasters get the same from the turn undead spell, which
+does work there.
+
 #### Sacrifice
 
 Sacrifice is a trade: a corpse you could eat, given up to your god
@@ -11230,6 +11249,8 @@ choice), but don't deposit more than you expect to spend there.
 the shop, then lure a gold-loving monster such as an orc or a
 leprechaun to pick it up, walk it outside, and kill it. The
 credit stays with the shopkeeper and the gold comes back to you.
+Your own pet does it more reliably: drop a **bag of gold** for it
+to shoplift back out, and you keep both the credit and the gold.
 It is one of NetHack's older shop-cheese routines.)
 
 **Debit** is the inverse: it accrues when you *use* an unpaid item
