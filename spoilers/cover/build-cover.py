@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the soft-cover PDFs for "A Traveller's Companion
+"""Build the soft-cover PDFs for "A Traveler's Companion
 to the Mazes of Menace."
 
 Pipeline: render each input SVG to its own PDF (rsvg-convert handles the
@@ -75,7 +75,8 @@ I_TRIM_TOP = I_BLEED
 I_TRIM_BOTTOM = I_PAGE_H - I_BLEED
 I_SAFETY_INSET = 13.536  # ~0.188" inside trim line
 
-TITLE_LINE1 = "A Traveller's Companion"
+TITLE_MAIN = "NetHack Spoilers"
+TITLE_LINE1 = "A Traveler's Companion"
 TITLE_LINE2_PARTS = ('to the Mazes of', 'Menace')  # split before M to add a kern nudge
 GARAMOND = "EB Garamond,Garamond,Georgia,serif"
 
@@ -291,13 +292,16 @@ def main():
     # use Garamond (which rsvg-convert can find via the system font cache).
     # PyMuPDF's builtin fonts don't include Garamond.
     spine_cx = (SPINE_LEFT + SPINE_RIGHT) / 2
-    spine_text = f"{TITLE_LINE1} {' '.join(TITLE_LINE2_PARTS)}"
-    spine_y_start = TRIM_TOP + 60
+    spine_text = TITLE_MAIN
+    spine_size = 40           # short title -> larger; cap height fits the spine width
+    spine_y_start = TRIM_TOP + 175   # roughly centered along the spine length
     title_x = FRONT_LEFT + SAFETY_INSET + 8
-    title_y = TRIM_TOP + SAFETY_INSET + 36 + 20    # baseline for first line
-    title_size = 33           # ~10% larger than the 30pt previous bump
-    title_leading = 38
-    spine_size = 26    # 67.54 pt spine has room; ~46 pt of glyph-safe width
+    main_size = 44            # large front-cover title (the title is short now)
+    main_y = TRIM_TOP + SAFETY_INSET + 36 + 12   # baseline of the large title
+    sub_size = 21
+    sub_leading = 26
+    sub_y1 = main_y + 42
+    sub_y2 = sub_y1 + sub_leading
 
     title_svg = TMP / "title.svg"
     title_svg.write_text(
@@ -305,15 +309,17 @@ def main():
         f'<svg xmlns="http://www.w3.org/2000/svg" '
         f'width="{PAGE_W}pt" height="{PAGE_H}pt" '
         f'viewBox="0 0 {PAGE_W} {PAGE_H}">'
-        # Front-cover title (left-justified, broken before "to")
-        f'<text x="{title_x}" y="{title_y}" fill="white" '
-        f'font-family="{GARAMOND}" font-size="{title_size}" font-kerning="normal" text-rendering="optimizeLegibility">'
+        # Front-cover large main title
+        f'<text x="{title_x}" y="{main_y}" fill="white" font-weight="600" '
+        f'font-family="{GARAMOND}" font-size="{main_size}" font-kerning="normal" text-rendering="optimizeLegibility">'
+        f'{TITLE_MAIN}</text>'
+        # Front-cover subtitle (two lines, italic, smaller). Split before
+        # "Menace" and nudge it so the f and M don't touch.
+        f'<text x="{title_x}" y="{sub_y1}" fill="white" font-style="italic" '
+        f'font-family="{GARAMOND}" font-size="{sub_size}" font-kerning="normal" text-rendering="optimizeLegibility">'
         f'{TITLE_LINE1}</text>'
-        f'<text x="{title_x}" y="{title_y + title_leading}" fill="white" '
-        f'font-family="{GARAMOND}" font-size="{title_size}" font-kerning="normal" text-rendering="optimizeLegibility">'
-        # "to the Mazes of Menace" — rsvg-convert doesn't honor the
-        # font's "f M" kerning pair here, so split before "Menace" and
-        # nudge it right by a hair so the M isn't touching the f.
+        f'<text x="{title_x}" y="{sub_y2}" fill="white" font-style="italic" '
+        f'font-family="{GARAMOND}" font-size="{sub_size}" font-kerning="normal" text-rendering="optimizeLegibility">'
         f'{TITLE_LINE2_PARTS[0]} '
         f'<tspan dx="0.07em">{TITLE_LINE2_PARTS[1]}</tspan>'
         f'</text>'
@@ -322,7 +328,7 @@ def main():
         # (≈0.6*em); offset the baseline LEFT by spine_size/3 so the
         # visual center of the caps lands on the spine centerline.
         f'<g transform="translate({spine_cx - spine_size/3}, {spine_y_start}) rotate(90)">'
-        f'<text x="0" y="0" fill="white" '
+        f'<text x="0" y="0" fill="white" font-weight="600" '
         f'font-family="{GARAMOND}" font-size="{spine_size}">'
         f'{spine_text}</text></g>'
         f'</svg>')
@@ -333,7 +339,7 @@ def main():
 
     # Front-cover artwork: Dlvl 5 above Castle, stacked vertically.
     fx = FRONT_LEFT + SAFETY_INSET
-    fy = title_y + 2 * title_leading + 30
+    fy = sub_y2 + 30
     fw_box = (FRONT_RIGHT - SAFETY_INSET) - fx
     fh_box = (TRIM_BOTTOM - SAFETY_INSET) - fy
     front_maps = [

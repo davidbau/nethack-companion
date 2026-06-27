@@ -47,7 +47,8 @@ TRIM_TOP = BLEED
 TRIM_BOTTOM = PAGE_H - BLEED
 SAFETY_INSET = 36.0              # 0.5" from trim edge
 
-TITLE_LINE1 = "A Traveller's Companion"
+TITLE_MAIN = "NetHack Spoilers"
+TITLE_LINE1 = "A Traveler's Companion"
 TITLE_LINE2_PARTS = ('to the Mazes of', 'Menace')
 GARAMOND = "EB Garamond,Garamond,Georgia,serif"
 
@@ -176,7 +177,8 @@ def main():
     n_gaps = len(back_maps) - 1
     total_native_h = sum(h for _, _, h in back_maps)
     max_native_w = max(w for _, w, _ in back_maps)
-    scale = min((bh - n_gaps * MAP_GAP_PT) / total_native_h, bw / max_native_w)
+    # 15% larger than the fit-to-box size (grows from the centre)
+    scale = 1.15 * min((bh - n_gaps * MAP_GAP_PT) / total_native_h, bw / max_native_w)
     stack_w = max_native_w * scale
     stack_h_total = total_native_h * scale + n_gaps * MAP_GAP_PT
     stack_x = bx + (bw - stack_w) / 2
@@ -192,11 +194,14 @@ def main():
         if i < n_gaps:
             y += MAP_GAP_PT
 
-    # ---- Front cover (right panel): title plus two maps ----
+    # ---- Front cover (right panel): large title, subtitle, two maps ----
     title_x = FRONT_LEFT + SAFETY_INSET + 8
-    title_y = TRIM_TOP + SAFETY_INSET + 36 + 20
-    title_size = 26
-    title_leading = 30
+    main_size = 42
+    main_y = TRIM_TOP + SAFETY_INSET + 36 + 10    # baseline of the large title
+    sub_size = 20
+    sub_leading = 25
+    sub_y1 = main_y + 40
+    sub_y2 = sub_y1 + sub_leading
 
     title_svg = TMP / "title-cover2.svg"
     title_svg.write_text(
@@ -204,11 +209,16 @@ def main():
         f'<svg xmlns="http://www.w3.org/2000/svg" '
         f'width="{PAGE_W}pt" height="{PAGE_H}pt" '
         f'viewBox="0 0 {PAGE_W} {PAGE_H}">'
-        f'<text x="{title_x}" y="{title_y}" fill="white" '
-        f'font-family="{GARAMOND}" font-size="{title_size}" font-kerning="normal" text-rendering="optimizeLegibility">'
+        # Large main title
+        f'<text x="{title_x}" y="{main_y}" fill="white" font-weight="600" '
+        f'font-family="{GARAMOND}" font-size="{main_size}" font-kerning="normal" text-rendering="optimizeLegibility">'
+        f'{TITLE_MAIN}</text>'
+        # Subtitle (two lines, italic, smaller)
+        f'<text x="{title_x}" y="{sub_y1}" fill="white" font-style="italic" '
+        f'font-family="{GARAMOND}" font-size="{sub_size}" font-kerning="normal" text-rendering="optimizeLegibility">'
         f'{TITLE_LINE1}</text>'
-        f'<text x="{title_x}" y="{title_y + title_leading}" fill="white" '
-        f'font-family="{GARAMOND}" font-size="{title_size}" font-kerning="normal" text-rendering="optimizeLegibility">'
+        f'<text x="{title_x}" y="{sub_y2}" fill="white" font-style="italic" '
+        f'font-family="{GARAMOND}" font-size="{sub_size}" font-kerning="normal" text-rendering="optimizeLegibility">'
         f'{TITLE_LINE2_PARTS[0]} '
         f'<tspan dx="0.07em">{TITLE_LINE2_PARTS[1]}</tspan>'
         f'</text>'
@@ -219,7 +229,7 @@ def main():
         page.show_pdf_page(fitz.Rect(0, 0, PAGE_W, PAGE_H), src, 0)
 
     fx = FRONT_LEFT + SAFETY_INSET
-    fy = title_y + 2 * title_leading + 30
+    fy = sub_y2 + 30
     fw_box = (FRONT_RIGHT - SAFETY_INSET) - fx
     fh_box = (TRIM_BOTTOM - SAFETY_INSET) - fy
     front_maps = [
