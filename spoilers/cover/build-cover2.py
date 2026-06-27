@@ -48,9 +48,25 @@ TRIM_BOTTOM = PAGE_H - BLEED
 SAFETY_INSET = 36.0              # 0.5" from trim edge
 
 TITLE_MAIN = "NetHack Spoilers"
-TITLE_LINE1 = "A Traveler's Companion"
-TITLE_LINE2_PARTS = ('to the Mazes of', 'Menace')
+TITLE_SUBTITLE = "A Traveler's Companion to the Mazes of Menace"
 GARAMOND = "EB Garamond,Garamond,Georgia,serif"
+
+
+def kern_caps(s, dx="0.05em", pre="0.5em"):
+    """rsvg-convert ignores the font's kerning for the italic capital M,
+    whose right arm overhangs the next glyph (Ma/Me collide) and whose
+    left side is crowded by a preceding italic f (of Menace). Nudge the
+    text after each M rightward, and the M itself rightward when it
+    follows an f."""
+    if "M" not in s:
+        return s
+    segs = s.split("M")
+    out, prev = segs[0], segs[0]
+    for seg in segs[1:]:
+        m = f'<tspan dx="{pre}">M</tspan>' if prev.rstrip().endswith("f") else "M"
+        out += m + f'<tspan dx="{dx}">{seg}</tspan>'
+        prev = seg
+    return out
 
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
@@ -215,8 +231,7 @@ def main():
         # and M don't touch (rsvg ignores that kern pair).
         f'<text x="{title_x}" y="{sub_y1}" fill="white" font-style="italic" '
         f'font-family="{GARAMOND}" font-size="{sub_size}" font-kerning="normal" text-rendering="optimizeLegibility">'
-        f'{TITLE_LINE1} {TITLE_LINE2_PARTS[0]} '
-        f'<tspan dx="0.05em">{TITLE_LINE2_PARTS[1]}</tspan>'
+        f'{kern_caps(TITLE_SUBTITLE)}'
         f'</text>'
         f'</svg>')
     title_pdf = TMP / "title-cover2.pdf"
