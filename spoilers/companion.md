@@ -9,12 +9,46 @@
 ```
 
 ```{=latex}
-For more than forty years the NetHack community has grown Jay
-Fenlason's ``first-semester programming project'' into the most
-unforgivingly intricate and emblematic roguelike, and a thriving
-culture of fun and community beyond the game itself. We hope this
-companion helps bring the joy of NetHack to a new generation of
-players.
+NetHack is among the oldest computer games still actively
+maintained, its code in continuous development for more than four
+decades. It is inspired by Dungeons and Dragons, with roots in a computer game
+called Rogue, created in 1980 by Michael Toy and Glenn Wichman,
+undergraduates at UC Santa Cruz. Rogue drew its dungeon in ordinary
+text characters and generated it fresh each time, so that it could
+surprise even its makers. Your hero was an \texttt{@}, the monsters were
+letters, and death was permanent. Built on Ken Arnold's curses
+library and carried across the world inside Berkeley's BSD Unix,
+Rogue became the most popular game on the college campuses of its
+day, and the first of a genre now called the ``roguelike.''
+
+Its authors guarded Rogue's source code closely, to discourage
+cheating. So when Jay Fenlason, a high school junior at
+Lincoln-Sudbury Regional High School in Massachusetts, wanted his
+own custom version, he had to start from scratch. His school ran a
+Unix minicomputer kept alive by its own students, and there, with
+his classmates Kenny Woodland, Mike Thome, and Jon Payne, he built
+Hack, a game with monsters that had names, wands that shot beams,
+and a dungeon that remembered each floor you left behind. His
+teacher Brian Harvey sent it out on a USENIX tape in 1982, with
+Jay's note in the README calling it ``my first semester programming
+project'' and giving his home phone number.
+
+Hack might have ended there, but it was passed freely from one
+programmer to the next. In 1984 Andries Brouwer, a mathematician in
+the Netherlands, rewrote it substantially and posted Hack 1.0 to
+Usenet for anyone to take. He added the player roles, the pet that
+follows you down the stairs, and the shopkeepers. Copies and
+variants then multiplied across the early Internet faster than any
+one author could follow.
+
+In 1987, Mike Stephenson gathered those scattered versions back
+together, and with Izchak Miller, Janet Walz, and a widening circle
+of volunteers, merged them into a single game. They named it
+NetHack, after the network that had made the collaboration possible,
+and called themselves the DevTeam. They are still at it. Nearly forty
+years later, the DevTeam maintains NetHack to this day, refining
+the same dungeon that a handful of students first set loose, one
+release at a time.
 ```
 
 ---
