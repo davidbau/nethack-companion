@@ -1014,7 +1014,7 @@ AC / attack details on every monster, see the
 | [`z`](#zruties-z)    | [Zruty](#zruties-z)             | Three-attack mid-game brute. Uncommon but a fair fight if geared up.                          |
 | [`Z`](#zombies-z)    | [Zombies](#zombies-z)           | Slow, numerous, come in many varieties. Zombie corpses are old and will rot.                         |
 
-#### Things You Don't Want to Meet
+#### Very Dangerous Monsters
 
 | Sym    | Class            | Notes                                                                                                    |
 | ------ | ---------------- | -------------------------------------------------------------------------------------------------------- |
@@ -1038,7 +1038,7 @@ A few map glyphs aren't monsters in the conventional sense, but you'll see them 
 | `I`    | Invisible monster marker | The game remembers the last spot you sensed something you couldn't see. The `I` stays there until you bump it or step on the square; the monster has usually moved. |
 | `~`    | Long worm tail segment   | Part of a long worm's body. Hitting the tail damages the worm and shortens the chain; hitting the head (the `w`) is full melee. |
 | `]`    | Strange object           | **Always a [mimic](#a-note-on-mimics).** No ordinary item ever displays as `]` (compare `[`, armor, and `]` is its mirror). |
-| `⎕` <br>(space) | Ghost            | Ghosts left from bones files. The glyph is a literal space, which paints over the floor underneath: in a room, a ghost shows as a one-square *gap* in the floor where a `.` should be. Walk into the gap to identify it. |
+| `⎕`<br>`\newline`{=latex}(space) | Ghost            | Ghosts left from bones files. The glyph is a literal space, which paints over the floor underneath: in a room, a ghost shows as a one-square *gap* in the floor where a `.` should be. Walk into the gap to identify it. |
 
 ---
 
@@ -5239,7 +5239,8 @@ including 5.0.
 luckstone. A $45 gray stone is a touchstone. A $1 gray stone is
 flint or a loadstone.
 
-**The rub test.** Apply (`a`) a gray stone to a gem in your pack.
+**The rub test.** Apply (`a`) a gray stone to a gem in your pack
+(or `#rub` it against one).
 A touchstone produces a colored-streak message. If the
 touchstone is **blessed** (or you're an Archeologist or Gnome
 holding an uncursed one), the streak also identifies the gem.
@@ -6518,7 +6519,7 @@ Credit cards are unlock-only.
 
 **Oil lamps** and **candles** light dark corridors, which is
 pleasant but not essential. The real prize is the **magic lamp**:
-rub it and there's a 1-in-3 chance the djinni emerges, then a
+rub it (`#rub`) and there's a 1-in-3 chance the djinni emerges, then a
 chance it grants you a wish (80% if the lamp is blessed, so
 ~27% wish per rub overall), less if it isn't. Try again on the
 same lamp until the djinni shows. Never, ever use a magic lamp
@@ -12080,16 +12081,16 @@ stays clear; catching the return needs a Dex check.
 | orcish ring mail | +2 | 1 | 250 | 80 | iron |  |
 | leather armor | +2 | 1 | 150 | 5 | leather |  |
 | leather jacket | +1 | — | 30 | 10 | leather |  |
-| gray dragon scale mail | +9 | — | 40 | 1200 | dragonhide | Magic resistance. Endgame body-armor goal. |
-| silver dragon scale mail | +9 | — | 40 | 1200 | dragonhide | Reflection. |
-| black dragon scale mail | +9 | — | 40 | 1200 | dragonhide | Disintegration resistance + drain resistance. |
-| yellow dragon scale mail | +9 | — | 40 | 900 | dragonhide | Acid resistance + stoning resistance. Rare. |
-| orange dragon scale mail | +9 | — | 40 | 900 | dragonhide | Sleep resistance + free action. |
-| white dragon scale mail | +9 | — | 40 | 900 | dragonhide | Cold resistance + slow digestion. |
-| red dragon scale mail | +9 | — | 40 | 900 | dragonhide | Fire resistance + infravision. |
-| green dragon scale mail | +9 | — | 40 | 900 | dragonhide | Poison resistance + sickness resistance. |
-| blue dragon scale mail | +9 | — | 40 | 900 | dragonhide | Shock resistance + speed, same tier as speed boots. |
-| gold dragon scale mail | +9 | — | 40 | 900 | dragonhide | Hallucination resistance + permanent light (only body-slot light source). |
+| gray dragon scale mail | +9 | — | 40 | 1200 | hide | Magic resistance. Endgame body-armor goal. |
+| silver dragon scale mail | +9 | — | 40 | 1200 | hide | Reflection. |
+| black dragon scale mail | +9 | — | 40 | 1200 | hide | Disintegration resistance + drain resistance. |
+| yellow dragon scale mail | +9 | — | 40 | 900 | hide | Acid resistance + stoning resistance. Rare. |
+| orange dragon scale mail | +9 | — | 40 | 900 | hide | Sleep resistance + free action. |
+| white dragon scale mail | +9 | — | 40 | 900 | hide | Cold resistance + slow digestion. |
+| red dragon scale mail | +9 | — | 40 | 900 | hide | Fire resistance + infravision. |
+| green dragon scale mail | +9 | — | 40 | 900 | hide | Poison resistance + sickness resistance. |
+| blue dragon scale mail | +9 | — | 40 | 900 | hide | Shock resistance + speed, same tier as speed boots. |
+| gold dragon scale mail | +9 | — | 40 | 900 | hide | Hallucination resistance + permanent light (only body-slot light source). |
 
 :::
 
@@ -12099,16 +12100,16 @@ stays clear; catching the return needs a Dex check.
 
 | Armor | AC | MC | Wt | Cost | Material | Notes |
 |--------------------------|----|----|----|------|----------|--------------------------------------------------------------------|
-| gray dragon scales | +3 | — | 40 | 700 | dragonhide | Magic resistance. Make-into upgrade to scale mail. |
-| silver dragon scales | +3 | — | 40 | 700 | dragonhide | Reflection. |
-| black dragon scales | +3 | — | 40 | 700 | dragonhide | Disintegration resistance + drain resistance. |
-| yellow dragon scales | +3 | — | 40 | 500 | dragonhide | Acid resistance + stoning resistance. |
-| orange dragon scales | +3 | — | 40 | 500 | dragonhide | Sleep resistance + free action. |
-| white dragon scales | +3 | — | 40 | 500 | dragonhide | Cold resistance + slow digestion. |
-| red dragon scales | +3 | — | 40 | 500 | dragonhide | Fire resistance + infravision. |
-| green dragon scales | +3 | — | 40 | 500 | dragonhide | Poison resistance + sickness resistance. |
-| blue dragon scales | +3 | — | 40 | 500 | dragonhide | Shock resistance + speed, same tier as speed boots. |
-| gold dragon scales | +3 | — | 40 | 500 | dragonhide | Hallucination resistance + permanent light. |
+| gray dragon scales | +3 | — | 40 | 700 | hide | Magic resistance. Make-into upgrade to scale mail. |
+| silver dragon scales | +3 | — | 40 | 700 | hide | Reflection. |
+| black dragon scales | +3 | — | 40 | 700 | hide | Disintegration resistance + drain resistance. |
+| yellow dragon scales | +3 | — | 40 | 500 | hide | Acid resistance + stoning resistance. |
+| orange dragon scales | +3 | — | 40 | 500 | hide | Sleep resistance + free action. |
+| white dragon scales | +3 | — | 40 | 500 | hide | Cold resistance + slow digestion. |
+| red dragon scales | +3 | — | 40 | 500 | hide | Fire resistance + infravision. |
+| green dragon scales | +3 | — | 40 | 500 | hide | Poison resistance + sickness resistance. |
+| blue dragon scales | +3 | — | 40 | 500 | hide | Shock resistance + speed, same tier as speed boots. |
+| gold dragon scales | +3 | — | 40 | 500 | hide | Hallucination resistance + permanent light. |
 
 :::
 
@@ -12327,7 +12328,7 @@ scales with rank.
 
 ### Bestiary Tables
 
-Every monster you might meet. Grouped by ASCII symbol so you can flip to the right page mid-game. **Lvl** is the base monster level. **Spd** is movement rate (12 is normal player speed). **AC** is armor class (lower is better). **MR%** is the percentage chance the monster resists your spells and magic attacks. **Attacks** lists each attack's mode, damage dice, and side effect; multiple attacks separated by `·` are made per turn. **Notes** folds in the most tactically-relevant trait flags (flies, sees-invis, regenerates, poisonous-corpse, etc.) alongside specific heads-ups for monsters that deserve one.
+Every monster you might meet. Grouped by ASCII symbol so you can flip to the right page mid-game. **Lvl** is the base monster level. **Spd** is movement rate (12 is normal player speed). **AC** is armor class (lower is better). **MR** is the percentage chance the monster resists your spells and magic attacks. **Attacks** lists each attack's mode, damage dice, and side effect; multiple attacks separated by `·` are made per turn. **Notes** folds in the most tactically-relevant trait flags (flies, sees-invis, regenerates, poisonous-corpse, etc.) alongside specific heads-ups for monsters that deserve one.
 
 #### Ants and insects `a`
 <!-- audit
@@ -12347,7 +12348,7 @@ Insects, often in groups. The soldier ant is the early game's infamous killer: i
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | giant ant | brown | 2 | 18 | 3 | 0 | bite 1d4 |  |
 | killer bee | yellow | 1 | 18 | -1 | 0 | sting 1d3 poison | flies, poisonous-corpse, pois-res. Stings carry poison; a pack can wipe out an unprepared early hero. |
@@ -12373,7 +12374,7 @@ All blobs are mindless, sleep-resistant, and poison-resistant.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | acid blob | green | 1 | 3 | 8 | 0 | passive 1d8 acid | amorphous, acid-res, ston-res. Passive acid damage; punching one corrodes your gloves. |
 | quivering blob | white | 5 | 1 | 8 | 0 | touch 1d8 |  |
@@ -12395,7 +12396,7 @@ All cockatrices are poison-resistant.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | chickatrice | brown | 4 | 4 | 8 | 30 | bite 1d2 · touch petrify · passive petrify | ston-res. A small cockatrice. Same petrify rules apply. |
 | cockatrice | yellow | 5 | 6 | 6 | 30 | bite 1d3 · touch petrify · passive petrify | ston-res. Touch petrifies. Always carry a lizard corpse. |
@@ -12416,7 +12417,7 @@ Wild canines hunt in packs. Domestic ones can be tamed by feeding (see [Making F
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | jackal | brown | 0 | 12 | 7 | 0 | bite 1d2 | The first thing that ever killed you. |
 | fox | red | 0 | 15 | 7 | 0 | bite 1d3 |  |
@@ -12452,7 +12453,7 @@ All eyes and spheres fly. All except *floating eye* also are mindless.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | gas spore | gray | 1 | 3 | 10 | 0 | death-burst 4d6 |  |
 | floating eye | blue | 2 | 1 | 9 | 10 | passive 0d70 paralyse | amphibious. (no mindless) Passive gaze paralyses on melee if you and the eye can both see each other. Use ranged, or wear a blindfold or towel to break sight. Corpse grants telepathy. |
@@ -12481,7 +12482,7 @@ are hostile by default.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | kitten | white | 2 | 18 | 6 | 0 | bite 1d6 | tameable. Common pet. |
 | housecat | white | 4 | 16 | 5 | 0 | bite 1d6 | tameable. |
@@ -12507,7 +12508,7 @@ At night, their touch strips a random intrinsic (fire resistance, telepathy, etc
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | gremlin | green | 5 | 12 | 2 | 25 | claw 1d6 · claw 1d6 · bite 1d4 · claw curse | swims, poisonous-corpse, follows stairs, pois-res. |
 | gargoyle | brown | 6 | 10 | -4 | 0 | claw 2d6 · claw 2d6 · bite 2d4 | ston-res. |
@@ -12535,7 +12536,7 @@ Dwarves and similar. Dwarves carry better-than-average loot (weapons, armor, pic
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | hobbit | green | 1 | 9 | 10 | 0 | weapon 1d6 |  |
 | dwarf | red | 2 | 6 | 10 | 10 | weapon 1d8 | tunnels. |
@@ -12564,7 +12565,7 @@ All imps and minor demons follow you up and down stairs. All except *imp* are po
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | manes | red | 1 | 3 | 7 | 0 | claw 1d3 · claw 1d3 · bite 1d4 | sleep-res. No corpse. |
 | homunculus | green | 2 | 12 | 6 | 10 | bite 1d3 sleep | flies, poisonous-corpse, sleep-res. |
@@ -12590,7 +12591,7 @@ All jellies are amorphous and mindless.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | blue jelly | blue | 4 | 0 | 8 | 10 | passive 0d6 cold | corpse: cold + poison resistance. |
 | spotted jelly | green | 5 | 0 | 8 | 10 | passive 0d6 acid | corpse: temp acid + stone resistance. |
@@ -12617,7 +12618,7 @@ All kobolds have poisonous corpses and are poison-resistant.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | kobold | brown | 0 | 6 | 10 | 0 | weapon 1d4 |  |
 | large kobold | red | 1 | 6 | 10 | 0 | weapon 1d6 |  |
@@ -12639,7 +12640,7 @@ Steals gold and teleports away. The fix is to carry no gold near them, or to kil
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | leprechaun | green | 5 | 15 | 8 | 20 | claw 1d2 steal-gold | teleports. Steals gold and teleports away. Carry no gold near them. |
 
@@ -12660,7 +12661,7 @@ All mimics are amorphous, hide, and are acid-resistant.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | small mimic | brown | 7 | 3 | 7 | 0 | claw 3d4 |  |
 | large mimic | red | 8 | 3 | 7 | 10 | claw 3d4 sticky |  |
@@ -12688,7 +12689,7 @@ All nymphs teleport.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | wood nymph | green | 3 | 12 | 9 | 20 | claw steal-item · claw seduce |  |
 | water nymph | blue | 3 | 12 | 9 | 20 | claw steal-item · claw seduce | swims. |
@@ -12715,7 +12716,7 @@ Pack hunters with mediocre loot but real numbers; bring a chokepoint to [the Min
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | goblin | gray | 0 | 6 | 10 | 0 | weapon 1d4 |  |
 | hobgoblin | brown | 1 | 9 | 10 | 0 | weapon 1d6 |  |
@@ -12745,7 +12746,7 @@ All piercers hide.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | rock piercer | gray | 3 | 1 | 3 | 0 | bite 2d6 |  |
 | iron piercer | cyan | 5 | 1 | 0 | 0 | bite 3d6 |  |
@@ -12769,7 +12770,7 @@ Mixed bag. Rothes are early-game wreckers (three attacks per turn). Mumakil are 
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | rothe | brown | 2 | 9 | 7 | 0 | claw 1d3 · bite 1d3 · bite 1d8 |  |
 | mumak | gray | 5 | 9 | 0 | 0 | butt 4d12 · bite 2d6 |  |
@@ -12793,7 +12794,7 @@ Mostly nuisance fodder. Giant rats are common in the early dungeon; their corpse
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | sewer rat | brown | 0 | 12 | 7 | 0 | bite 1d3 |  |
 | giant rat | brown | 1 | 10 | 7 | 0 | bite 1d3 |  |
@@ -12819,7 +12820,7 @@ All arachnids and centipedes are poison-resistant.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | cave spider | gray | 1 | 12 | 3 | 0 | bite 1d2 | hides. |
 | centipede | yellow | 2 | 4 | 3 | 0 | bite 1d3 poison | hides. |
@@ -12844,7 +12845,7 @@ All trappers and lurkers hide and follow you up and down stairs.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | lurker above | gray | 10 | 3 | 3 | 0 | engulf 1d6 wrap · engulf 2d6 | flies. |
 | trapper | green | 12 | 3 | 3 | 0 | engulf 1d8 wrap · engulf 2d8 |  |
@@ -12869,7 +12870,7 @@ There are two equine `u`-class creatures. **Horses** (pony, horse, warhorse) spa
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | pony | brown | 3 | 16 | 6 | 0 | kick 1d6 · bite 1d2 | tameable. Knight's starting steed. |
 | white unicorn | white | 4 | 24 | 2 | 70 | butt 1d12 · kick 1d6 | pois-res. |
@@ -12897,7 +12898,7 @@ All vortices fly, are mindless, and leave no corpse.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | fog cloud | gray | 3 | 1 | 0 | 0 | engulf 1d6 | amorphous. |
 | dust vortex | brown | 4 | 20 | 2 | 30 | engulf 2d8 blind |  |
@@ -12921,7 +12922,7 @@ Long worms become a maze of tail segments as they grow. Purple worms swallow you
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | baby long worm | brown | 5 | 3 | 5 | 0 | bite 1d4 |  |
 | baby purple worm | magenta | 8 | 3 | 5 | 0 | bite 1d6 |  |
@@ -12944,7 +12945,7 @@ All xans and fantastic insects are poison-resistant.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | grid bug | magenta | 0 | 12 | 9 | 0 | bite 1d1 shock | shock-res. |
 | xan | red | 7 | 18 | -4 | 0 | sting 1d4 leg-wound | flies, poisonous-corpse. |
@@ -12967,7 +12968,7 @@ All lights fly and are amorphous and mindless.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | yellow light | yellow | 3 | 15 | 0 | 0 | explode 10d20 blind |  |
 | black light | black | 5 | 15 | 0 | 0 | explode 10d12 hallu | sees-invis. |
@@ -12985,7 +12986,7 @@ Slavic folklore; a hairy wild man of the woods. One species, one role here: a na
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | zruty | brown | 9 | 8 | 3 | 0 | claw 3d4 · claw 3d4 · bite 3d6 |  |
 
@@ -13007,7 +13008,7 @@ All angelic beings follow you up and down stairs. All except *Aleax* also fly. A
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | couatl | green | 8 | 10 | 5 | 30 | bite 2d4 poison · bite 1d3 · hug 2d4 wrap | pois-res. (no sees-invis, no corpse) |
 | Aleax | yellow | 10 | 8 | 0 | 30 | weapon 1d6 · weapon 1d6 · kick 1d4 | (no flies) |
@@ -13032,7 +13033,7 @@ All bats and birds fly.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | bat | brown | 0 | 22 | 8 | 0 | bite 1d4 |  |
 | giant bat | red | 2 | 22 | 7 | 0 | bite 1d6 |  |
@@ -13053,7 +13054,7 @@ Half-horse archers with strong physical attacks. Forest centaurs wield bows; pla
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | plains centaur | brown | 4 | 18 | 4 | 0 | weapon 1d6 · kick 1d6 |  |
 | forest centaur | green | 5 | 18 | 3 | 10 | weapon 1d8 · kick 1d6 |  |
@@ -13079,7 +13080,7 @@ All except *Chromatic Dragon* also fly.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | baby gray dragon | gray | 12 | 9 | 2 | 10 | bite 2d6 |  |
 | baby gold dragon | yellow | 12 | 9 | 2 | 10 | bite 2d6 |  |
@@ -13123,7 +13124,7 @@ All except *stalker* also are mindless.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | stalker | white | 8 | 12 | 3 | 0 | claw 4d4 | flies, sees-invis, follows stairs. (no mindless) |
 | air elemental | cyan | 8 | 36 | 2 | 30 | engulf 1d10 | flies. |
@@ -13150,7 +13151,7 @@ All fungi and molds are mindless.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | lichen | bright-green | 0 | 1 | 9 | 0 | touch sticky |  |
 | brown mold | brown | 1 | 0 | 9 | 0 | passive 0d6 cold | cold-res, pois-res. |
@@ -13175,7 +13176,7 @@ Mines residents. Gnomish PCs find most of them peaceful. The gnome lord and gnom
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | gnome | brown | 1 | 6 | 10 | 4 | weapon 1d6 |  |
 | gnome lord | blue | 3 | 8 | 10 | 4 | weapon 1d8 |  |
@@ -13199,7 +13200,7 @@ Boulder throwers. Storm / fire / frost giants match the dragon elements; titans 
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | giant | red | 6 | 6 | 0 | 0 | weapon 2d10 |  |
 | stone giant | gray | 6 | 6 | 0 | 0 | weapon 2d10 |  |
@@ -13228,7 +13229,7 @@ The monster from Lewis Carroll's *Jabberwocky* ("O frabjous day! Callooh! Callay
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | jabberwock | orange | 15 | 12 | -2 | 50 | bite 2d10 · bite 2d10 · claw 2d10 · claw 2d10 | flies. Powerful; baseline speed. Free XP if you're set up. |
 
@@ -13248,7 +13249,7 @@ Police force triggered by stealing from shops or hurting shopkeepers. Mostly wea
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | Keystone Kop | blue | 1 | 6 | 10 | 10 | weapon 1d4 |  |
 | Kop Sergeant | blue | 2 | 8 | 10 | 10 | weapon 1d6 |  |
@@ -13276,7 +13277,7 @@ All liches regenerate, leave no corpse, and are undead, cold-resistant, sleep-re
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | lich | brown | 11 | 6 | 0 | 30 | touch 1d10 cold · spell spell |  |
 | demilich | red | 14 | 9 | -2 | 60 | touch 3d4 cold · spell spell |  |
@@ -13299,7 +13300,7 @@ All mummies are mindless undead and leave no corpse.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | kobold mummy | brown | 3 | 8 | 6 | 20 | claw 1d4 | cold-res, sleep-res, pois-res. |
 | gnome mummy | red | 4 | 10 | 6 | 20 | claw 1d6 | cold-res, sleep-res, pois-res. |
@@ -13326,7 +13327,7 @@ Long serpentine bodies with ranged attacks. All nagas are poison-resistant. Blac
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | red naga hatchling | red | 3 | 10 | 6 | 0 | bite 1d4 | fire-res. |
 | black naga hatchling | black | 3 | 10 | 6 | 0 | bite 1d4 | acid-res, ston-res. |
@@ -13351,7 +13352,7 @@ Big melee brutes that wield weapons. Drop decent weapons and armor.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | ogre | brown | 5 | 10 | 5 | 0 | weapon 2d5 |  |
 | ogre lord | red | 7 | 12 | 3 | 30 | weapon 2d6 |  |
@@ -13378,7 +13379,7 @@ All puddings and oozes are amorphous, mindless, cold-resistant, poison-resistant
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | gray ooze | gray | 3 | 1 | 8 | 0 | bite 2d8 rust | fire-res. (no shock-res) |
 | brown pudding | brown | 5 | 3 | 8 | 0 | bite decay |  |
@@ -13407,7 +13408,7 @@ poisonous corpses.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | quantum mechanic | cyan | 7 | 12 | 3 | 10 | claw 1d4 teleport | Self-teleports. Corpse toggles intrinsic Fast. |
 | genetic engineer | green | 12 | 12 | 3 | 10 | claw 1d4 polymorph | Self-teleports. Corpse triggers polyself. |
@@ -13426,7 +13427,7 @@ Rust monsters rust iron equipment on touch. Disenchanters drain enchantment from
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | rust monster | brown | 5 | 18 | 2 | 0 | touch rust · touch rust · passive rust | swims. Touch rusts iron. Strip armor before engaging or use silver. |
 | disenchanter | blue | 12 | 12 | -10 | 0 | claw 4d4 disenchant · passive disenchant | Gehennom-only. Active drains armor; passive drains weapon when you melee it. |
@@ -13449,7 +13450,7 @@ All snakes swim. All except *python* also hide.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | garter snake | green | 1 | 8 | 8 | 0 | bite 1d2 |  |
 | snake | brown | 4 | 15 | 3 | 0 | bite 1d6 poison | poisonous-corpse, pois-res. |
@@ -13476,7 +13477,7 @@ All trolls regenerate and follow you up and down stairs.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | troll | brown | 7 | 12 | 4 | 0 | weapon 4d2 · claw 4d2 · bite 2d6 |  |
 | ice troll | white | 9 | 10 | 2 | 20 | weapon 2d6 · claw 2d6 cold · bite 2d6 | cold-res. |
@@ -13499,7 +13500,7 @@ Confusion gaze. Don't melee without some way to dodge the gaze. Blindness defeat
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | umber hulk | brown | 9 | 6 | 2 | 25 | claw 3d4 · claw 3d4 · bite 2d5 · gaze confuse | tunnels. Confusion gaze. Hard to navigate around. Hits hard too. |
 
@@ -13521,7 +13522,7 @@ All vampires fly, regenerate, are undead, follow you up and down stairs, and sha
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | vampire | red | 10 | 12 | 1 | 25 | claw 1d6 · bite 1d6 drain-XL |  |
 | vampire lord | blue | 12 | 14 | 0 | 50 | claw 1d8 · bite 1d8 drain-XL |  |
@@ -13544,7 +13545,7 @@ All wraiths are undead and follow you up and down stairs.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | barrow wight | gray | 3 | 12 | 5 | 5 | weapon drain-XL · spell spell · claw 1d4 · touch 1d4 cold | cold-res, sleep-res, pois-res. |
 | wraith | black | 6 | 12 | 4 | 15 | touch 1d6 drain-XL | flies. |
@@ -13565,7 +13566,7 @@ D&D's three-armed, three-eyed creatures from the Elemental Plane of Earth. They 
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | xorn | brown | 8 | 9 | -2 | 20 | claw 1d3 · claw 1d3 · claw 1d3 · bite 4d6 | fire-res, cold-res, ston-res. |
 
@@ -13584,7 +13585,7 @@ Apes and great apes mostly; sasquatches are fast. Carnivore corpses are safe foo
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | monkey | gray | 2 | 12 | 6 | 0 | claw steal-item · bite 1d3 |  |
 | ape | brown | 4 | 12 | 6 | 0 | claw 1d3 · claw 1d3 · bite 1d6 |  |
@@ -13616,7 +13617,7 @@ All zombies are mindless and undead.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | kobold zombie | brown | 0 | 6 | 10 | 0 | claw 1d4 | poisonous-corpse, follows stairs, cold-res, sleep-res, pois-res. |
 | gnome zombie | brown | 1 | 6 | 10 | 0 | claw 1d5 | poisonous-corpse, follows stairs, cold-res, sleep-res, pois-res. |
@@ -13645,7 +13646,7 @@ The catch-all `@` class: shopkeepers, priests, watchmen, role nemeses, quest lea
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | human | white | 0 | 12 | 10 | 0 | weapon 1d6 |  |
 | wererat | brown | 2 | 12 | 10 | 10 | weapon 2d4 | regenerates, poisonous-corpse. |
@@ -13746,7 +13747,7 @@ They all follow you up and down stairs.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | water demon | blue | 8 | 12 | -4 | 30 | weapon 1d3 · claw 1d3 · bite 1d3 | swims, poisonous-corpse, demonic. |
 | [amorous demon](#seduction) | gray | 6 | 12 | 0 | 70 | seduction (see Seduction) | flies, poisonous-corpse, demonic. Displays as succubus or incubus by the demon's own randomly-assigned gender. |
@@ -13796,7 +13797,7 @@ All golems are mindless, sleep-resistant, and poison-resistant.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | straw golem | yellow | 3 | 12 | 10 | 0 | claw 1d2 · claw 1d2 | cold-res. |
 | paper golem | white | 3 | 12 | 10 | 0 | claw 1d3 | cold-res. |
@@ -13827,7 +13828,7 @@ All sea monsters swim and are amphibious.
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | jellyfish | blue | 3 | 3 | 6 | 0 | sting 3d3 drain-Str | poisonous-corpse, pois-res. |
 | piranha | red | 5 | 18 | 4 | 0 | bite 2d6 · bite 2d6 |  |
@@ -13854,7 +13855,7 @@ Mostly harmless. **Lizard corpses cure petrification and never rot.** Carry one 
 
 ::: dense-table
 
-| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |
+| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | newt | yellow | 0 | 6 | 8 | 0 | bite 1d2 | swims, amphibious. |
 | gecko | green | 1 | 6 | 8 | 0 | bite 1d3 |  |
