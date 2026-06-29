@@ -283,11 +283,11 @@ horseback with the lance is devastating when it connects, though
 the lance is largely useless on foot. Don't be in a hurry to
 mount, though: the starting pony has only about 7 HP, a failed
 mount attempt costs *you* 10 to 14 HP, and most Knights keep the
-pony as a fighting pet until it grows up. As a Lawful character with a starting long sword, you
-also have the best odds in the game at **[Excalibur](#excalibur-artifact)**. Dip your long sword
-in a fountain (`#dip`) at experience level 5+ and Knights get a
-1-in-6 chance per dip, far better than the 1-in-30 every other
-Lawful role faces.
+pony as a fighting pet until it grows up. As a Lawful character
+with a starting long sword, you also have the best odds in the game
+at **[Excalibur](#excalibur-artifact)**. Dip your long sword in a
+fountain (`#dip`) at experience level 5+ and Knights get a 1-in-6
+chance per dip for their sword to be transformed.
 Knights follow a code of conduct that imposes alignment penalties
 for attacking fleeing or helpless monsters, so pick your fights
 carefully. Knights can also `#jump`, which lets you reposition
