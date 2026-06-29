@@ -13,13 +13,13 @@ NetHack is among the oldest computer games still actively
 maintained, its code in continuous development for more than four
 decades. Its roots trace back to Rogue, a 1980 computer game by
 Michael Toy and Glenn Wichman that was inspired by Dungeons and
-Dragons. In Rogue, the dungeon is randomly generated and drawn
-with ordinary text characters. Your hero is an \texttt{@}, the
-monsters are letters, and death is permanent. Built on Ken Arnold's
-curses library and carried across the world inside Berkeley's BSD
-Unix, Rogue became the most popular game on the college campuses of
-its day, inspiring a whole genre of similar games called
-``roguelikes.''
+Dragons. In Rogue, the dungeon was randomly generated and drawn
+with ordinary text characters. Your hero was an \texttt{@}, the
+monsters were letters, and death was permanent. Built on Ken
+Arnold's curses library and carried across the world inside
+Berkeley's BSD Unix, Rogue became the most popular game on the
+college campuses of its day, inspiring a whole genre of similar
+games called ``roguelikes.''
 
 NetHack got its start when Jay Fenlason, a high school junior at
 Lincoln-Sudbury Regional High School in Massachusetts, wanted his
