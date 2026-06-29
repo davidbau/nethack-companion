@@ -266,6 +266,7 @@ local always_pageref = {
   ["ways-to-die-instantly"] = true,
   ["luck-and-fortune"] = true,
   ["field-guide-to-dungeon-fauna"] = true,
+  ["a-practical-identification-strategy"] = true,
   ["thrones"] = true,
 }
 

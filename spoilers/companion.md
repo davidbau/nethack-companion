@@ -146,7 +146,7 @@ you alive.
 17. [Provisions and Dining](#provisions-and-dining) — Food, nutrition, and dining
 18. [The Apothecary](#the-apothecary) — Potions and their many uses
 19. [The Scroll Rack](#the-scroll-rack) — Scrolls, their effects, and confused reading
-20. [Wands and Staves](#wands-and-staves) — Magical implements
+20. [Wands](#wands) — Magical implements
 21. [Rings and Amulets](#rings-and-amulets) — Jewelry, for better or worse
 22. [Tools of the Trade](#tools-of-the-trade) — From pickaxes to magic lamps
 23. [The Armory](#the-armory) — Weapons, armor, and hitting things
@@ -796,8 +796,8 @@ how much you need them is the dungeon's act of goodwill.
 -->
 
 The Mazes are procedurally generated. No two visits are quite the
-same. But the dungeon follows patterns, and understanding those
-patterns is the first step toward navigating them effectively.
+same. And yet the dungeon follows patterns. Understanding those
+patterns is the first step towards navigating them effectively.
 
 #### The Big Picture
 
@@ -827,11 +827,12 @@ through 27. Side branches lead to the **[Gnomish Mines](#the-gnomish-mines)** (w
 you can find a *[luckstone](#luck-and-fortune)* and
 *[shops](#shopping-and-shopkeeper-pricing)*), **[Sokoban](#sokoban)** (a
 *[puzzle](#sokoban)* with a prize at the top), your
-[Quest dungeon](#the-quest), and sometimes **Fort Ludios** (a vault
-full of gold). The trunk ends at **The Castle**, the gateway to
+**[Quest](#the-quest)** dungeon (in which your role's leader sends
+you on a mission to retrieve a precious artifact), and sometimes
+**Fort Ludios** (a vault full of gold). The trunk ends at **The Castle**, the gateway to
 [Gehennom](#gehennom).
 
-**Gehennom** is the lower half: maze levels and demon lords,
+**Gehennom** is the lower half: lava-filled maze levels and demon lords,
 with the **Amulet of Yendor** at the bottom in [Moloch's Sanctum](#molochs-sanctum).
 Once you have it, you climb back up through the **Elemental
 Planes** to the **Astral Plane**, where your god awaits your
@@ -851,7 +852,7 @@ Learning to read these symbols quickly is important:
 | Symbol   | Meaning                       |
 | -------- | ----------------------------- |
 | `.`      | Floor (room)                  |
-| `#`      | Corridor                      |
+| `#`      | Corridor or fog               |
 | `-`  `│` | Wall (horizontal, vertical)   |
 | `+`      | Closed door (or spellbook)    |
 | `<`      | Stairs up                     |
@@ -2194,7 +2195,7 @@ to stop and search a few times.
 
 - **Ring of searching** auto-searches every turn while it's worn
 - **[Excalibur](#excalibur-artifact)** (or any artifact with the searching aura), wielded, adds its enchantment to your search bonus (a freshly-dipped +0 Excalibur adds nothing)
-- **Lenses** worn (and you not blind) add +2 to the search bonus, but the total bonus from Excalibur + lenses caps at +5, so lenses only help if Excalibur's enchantment is below +3
+- **Lenses** worn (and you not blind) add +2 to the search bonus
 - **Wand of secret door detection** instantly reveals nearby secrets in a radius
 - **Blessed scroll of magic mapping** shows every secret door on the level (only the blessed version)
 
@@ -2695,6 +2696,10 @@ A Stressed character with intrinsic Fast still moves slower than
 a baseline Unencumbered one. At Stressed, a speed-6 zombie acts
 *more often than you do*. Get to Unencumbered, ideally with a
 bag of holding.
+
+```{=latex}
+\needspace{10\baselineskip}
+```
 
 **Reference: common monster speeds.**
 
@@ -3470,10 +3475,10 @@ fatal.
 -->
 
 **Yellow lights** (`y`, level 3) and **black lights** (`y`, level 5)
-attack by exploding the moment you're adjacent. Yellow lights blind
-you for **10d20 turns** (a *blessed* potion of healing or any
+attack by exploding the moment you're adjacent. Yellow lights
+**blind you** for 10d20 turns (a *blessed* potion of healing or any
 extra/full healing cures, or a unicorn horn); black lights
-hallucinate you for **10d12 turns** (unicorn horn cures, or wait).
+**hallucinate you** for 10d12 turns (unicorn horn cures, or wait).
 Both lights die in the explosion, so the after-effect is the real
 threat. **Defenses:** kill them at range — wands, thrown daggers,
 breath weapons. *Warning* detects them through their invisibility;
@@ -3602,7 +3607,7 @@ epitaph.
 > not involve the player's hit points dropping to zero," and that
 > taxonomy has been the standard reference ever since.*
 
-#### Attack Wands and the Warning Shot
+#### Attack Wands
 <!-- audit
 2026-05-18:
 - mwandexp gates the first-zap warning miss (muse.c:1830-1860)
@@ -3616,9 +3621,11 @@ epitaph.
 Being hit by a powerful wand can mean instant death. A wand of
 death or finger of death kills an unprotected character outright,
 and ray wands of cold, fire, lightning, or magic missile can roll
-lethal damage too. But the first time any given monster zaps a
-beam wand (death, sleep, fire, cold, lightning, magic missile)
-at you, the shot misses. If you can see the monster, the wand
+lethal damage too.
+
+**Defense:** The first time any given monster zaps a beam wand
+(death, sleep, fire, cold, lightning, magic missile) at you, the
+shot misses. If you can see the monster, the wand
 identifies itself in the same moment, so now you know what was
 just aimed at you and you have a turn to do something about it
 before the next zap connects.
@@ -5195,6 +5202,7 @@ pools are:
 - 4 magical **cloaks** share 4 appearances: tattered cape / opera
   cloak / ornamental cope / piece of cloth → one of cloak of
   protection, invisibility, [magic resistance](#damage-resistances), or displacement.
+  All excellent.
 - 4 **gloves** share 4 appearances: old / padded / riding / fencing
   gloves → leather gloves or one of the three gauntlet types
   (fumbling, power, dexterity).
@@ -5684,7 +5692,7 @@ monster does not grant permanent speed when self-zapped, only a
 temporary burst of 50–74 turns. The potion is the real prize.
 
 []{#potion-holy-water}
-**Holy water.** Not a potion you find: a potion you *make*. Drop
+**Holy water.** A potion you can *make*. Drop
 uncursed water on a co-aligned altar, pray, and the gods bless it
 for you (pile every water you own on the same square and a single
 prayer blesses the whole stack). Holy water then blesses any item
@@ -5700,7 +5708,8 @@ potions become holy-water feedstock instead of clutter.
 []{#potion-gain-level}
 **Gain level.** Raises your experience level by 1. Useful for
 reaching quest eligibility quickly, or converting into something
-better through alchemy.
+better through alchemy. When cursed, you rise through the ceiling
+as it physically raises your level.
 
 []{#potion-polymorph}
 **Identifying a polymorph potion.** A clean test: dip a single
@@ -5984,7 +5993,7 @@ confuse you for a few turns.
 
 ---
 
-### Wands and Staves
+### Wands
 <!-- audit
 2026-05-18:
 - wand of stasis: NODIR, $150, prob 45 — makes the level no-teleport for 10-30 turns; does NOT freeze monsters (objects.h:1460, zap.c:2559-2568; effect gated by stasis_until in teleport.c:43 noteleport_level, teleport.c:2269 u_teleport_mon, apply.c:530 magic whistle, do.c:2262 revive rloc)
@@ -14990,13 +14999,13 @@ Wand of fire: \hyperref[engravings]{burns Elbereth permanently, p.~\pageref*{eng
 \hyperref[the-castle]{Wand of opening / spell of knock, opens drawbridge, p.~\pageref*{the-castle}}\par
 \hyperref[wand-polymorph]{Wand of polymorph, on a pile (polypile), p.~\pageref*{wand-polymorph}}\par
 \hyperref[key-wands]{Wand of probing, HP / status check, p.~\pageref*{key-wands}}\par
-Wand of secret door detection: \hyperref[searching-and-detection]{no aim, p.~\pageref*{searching-and-detection}}; \hyperref[wands-and-staves]{area reveal, p.~\pageref*{wands-and-staves}}\par
+Wand of secret door detection: \hyperref[searching-and-detection]{no aim, p.~\pageref*{searching-and-detection}}; \hyperref[wands]{area reveal, p.~\pageref*{wands}}\par
 \hyperref[wand-stasis]{Wand of stasis, new in 5.0, p.~\pageref*{wand-stasis}}\par
 \hyperref[the-castle]{Wand of striking, destroys drawbridge, p.~\pageref*{the-castle}}\par
 \hyperref[wand-teleportation]{Wand of teleportation, monster removal, p.~\pageref*{wand-teleportation}}\par
 Wand of wishing: \hyperref[wand-wishing]{found with one charge, recharge once and only once, p.~\pageref*{wand-wishing}}\par
 \hyperref[unicorns-and-horses-u]{Warhorse, ridden into mid-game, p.~\pageref*{unicorns-and-horses-u}}\par
-\hyperref[attack-wands-and-the-warning-shot]{Warning shot, monster's first wand zap, p.~\pageref*{attack-wands-and-the-warning-shot}}\par
+\hyperref[attack-wands]{Warning shot, monster's first wand zap, p.~\pageref*{attack-wands}}\par
 Water: \hyperref[snakes-s]{moccasin, from fountain, p.~\pageref*{snakes-s}}; \hyperref[major-demons]{demon, fountain summons, p.~\pageref*{major-demons}}; \hyperref[fountains]{demon wish, roughly 1 in 150 quaffs, p.~\pageref*{fountains}}; \hyperref[the-potion-table]{potion, always clear, p.~\pageref*{the-potion-table}}; \hyperref[boots]{walking boots, Castle drawbridge, p.~\pageref*{boots}}\par
 \hyperref[how-hunger-works]{Weak status, –1 Str, p.~\pageref*{how-hunger-works}}\par
 \hyperref[weaponless]{Weaponless conduct, p.~\pageref*{weaponless}}\par
