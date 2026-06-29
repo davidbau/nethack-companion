@@ -1309,4 +1309,27 @@ td.pi-price { color: var(--color-accent); font-weight: 500; }
   #sokoban-solutions #level-3-version-a ol {
     display: block;
   }
+
+  /* Coordinate cross-highlighting (JS-decorated, screen only). Hovering a
+   * map square lights the square plus its row/column numbers; hovering a
+   * coordinate in the solution prose lights the matching square. */
+  #sokoban-solutions .soko-cell,
+  #sokoban-solutions .soko-coord {
+    cursor: crosshair;
+  }
+  #sokoban-solutions .soko-hl {
+    background: #ffe066;
+    box-shadow: 0 0 0 1px #d4a017;
+    border-radius: 2px;
+  }
+  #sokoban-solutions .soko-axis-hl {
+    background: #ffe066;
+    color: var(--color-accent);
+    font-weight: 700;
+    border-radius: 2px;
+  }
+  #sokoban-solutions .soko-coord-active {
+    background: #ffe066;
+    border-radius: 2px;
+  }
 }

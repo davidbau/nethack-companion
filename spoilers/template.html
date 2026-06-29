@@ -737,6 +737,61 @@ $body$
     return parsed.header.concat(rows).join('\n');
   }
 
+  // --- Hover decoration -------------------------------------------------
+  // Rebuild each rendered map as a grid of per-character spans so a square
+  // and its row/column numbers can light up together. Coordinates are read
+  // straight from the displayed glyphs: a content character at string index
+  // idx is grid column idx - 2, the i-th body row is grid row i + 1, and the
+  // number gutters stay fixed while a flip mirrors only the content — so the
+  // mapping is identical whether or not a flip is active.
+  function escapeHtml(c) {
+    return c === '&' ? '&amp;' : c === '<' ? '&lt;' : c === '>' ? '&gt;' : c;
+  }
+
+  function buildPreHtml(rendered, headerCount) {
+    var lines = rendered.split('\n');
+    var out = [];
+    for (var i = 0; i < lines.length; i++) {
+      var line = lines[i], s = '', idx, ch;
+      if (i < headerCount) {
+        // Column-number gutter: tag each digit with its column.
+        for (idx = 0; idx < line.length; idx++) {
+          ch = line.charAt(idx);
+          if (idx >= LABEL_END && ch >= '0' && ch <= '9') {
+            s += '<span class="soko-colhead" data-col="' + (idx - 2) + '">'
+               + ch + '</span>';
+          } else {
+            s += escapeHtml(ch);
+          }
+        }
+      } else {
+        var y = i - headerCount + 1;
+        // Row-label gutter (first LABEL_END characters).
+        for (idx = 0; idx < LABEL_END && idx < line.length; idx++) {
+          ch = line.charAt(idx);
+          s += (ch >= '0' && ch <= '9')
+            ? '<span class="soko-rowhead" data-row="' + y + '">' + ch + '</span>'
+            : escapeHtml(ch);
+        }
+        // Playable squares.
+        for (idx = LABEL_END; idx < line.length; idx++) {
+          s += '<span class="soko-cell" data-x="' + (idx - 2) + '" data-y="'
+             + y + '">' + escapeHtml(line.charAt(idx)) + '</span>';
+        }
+      }
+      out.push(s);
+    }
+    return out.join('\n');
+  }
+
+  // Wrap coordinate tuples in solution prose so they cross-highlight the map.
+  function wrapCoords(html) {
+    return html.replace(/\((\d+),\s*(\d+)\)/g, function(m, xs, ys) {
+      return '<span class="soko-coord" data-x="' + xs + '" data-y="' + ys
+        + '">' + m + '</span>';
+    });
+  }
+
   function transformProse(html, width, height) {
     if (state.h) {
       html = html.replace(/\b(left|right)\b/g, function(w) {
@@ -794,11 +849,11 @@ $body$
       if (!w || !h) return;
       level.querySelectorAll('pre').forEach(function(pre) {
         var parsed = parsePre(pre.dataset.origText);
-        pre.textContent = renderPre(parsed, w);
+        pre.innerHTML = buildPreHtml(renderPre(parsed, w), parsed.header.length);
       });
       level.querySelectorAll('li, p').forEach(function(el) {
         if (el.dataset.origHtml === undefined) return;
-        el.innerHTML = transformProse(el.dataset.origHtml, w, h);
+        el.innerHTML = wrapCoords(transformProse(el.dataset.origHtml, w, h));
       });
     });
     document.querySelectorAll('.sokoban-flipbar button').forEach(function(btn) {
@@ -813,6 +868,61 @@ $body$
     state[dir] = !state[dir];
     applyState();
   });
+
+  // Cross-highlighting: hovering a square lights its row/column numbers, and
+  // hovering a coordinate in the prose lights the matching square. Delegated
+  // from the root so it survives the innerHTML rebuilds that flipping does.
+  function clearHighlights() {
+    sokobanRoot.querySelectorAll('.soko-hl, .soko-axis-hl, .soko-coord-active')
+      .forEach(function(el) {
+        el.classList.remove('soko-hl', 'soko-axis-hl', 'soko-coord-active');
+      });
+  }
+  // A level can show several map states; a prose coordinate refers to the
+  // map it follows in the text. Fall back to the section's first map.
+  function nearestMap(coord) {
+    var section = coord.closest('.sokoban-level');
+    if (!section) return null;
+    var pres = section.querySelectorAll('pre'), best = pres[0] || null;
+    for (var i = 0; i < pres.length; i++) {
+      if (pres[i].compareDocumentPosition(coord)
+          & Node.DOCUMENT_POSITION_FOLLOWING) {
+        best = pres[i];
+      }
+    }
+    return best;
+  }
+  function lightSquare(pre, x, y) {
+    if (!pre) return;
+    var cell = pre.querySelector(
+      '.soko-cell[data-x="' + x + '"][data-y="' + y + '"]');
+    if (cell) cell.classList.add('soko-hl');
+    pre.querySelectorAll('.soko-colhead[data-col="' + x + '"]')
+      .forEach(function(e) { e.classList.add('soko-axis-hl'); });
+    pre.querySelectorAll('.soko-rowhead[data-row="' + y + '"]')
+      .forEach(function(e) { e.classList.add('soko-axis-hl'); });
+  }
+  sokobanRoot.addEventListener('mouseover', function(e) {
+    var cell = e.target.closest('.soko-cell');
+    if (cell) {
+      clearHighlights();
+      lightSquare(cell.closest('pre'), cell.dataset.x, cell.dataset.y);
+      return;
+    }
+    var coord = e.target.closest('.soko-coord');
+    if (coord) {
+      clearHighlights();
+      coord.classList.add('soko-coord-active');
+      lightSquare(nearestMap(coord), coord.dataset.x, coord.dataset.y);
+    }
+  });
+  sokobanRoot.addEventListener('mouseout', function(e) {
+    if (e.target.closest('.soko-cell') || e.target.closest('.soko-coord')) {
+      clearHighlights();
+    }
+  });
+
+  applyState(); // initial decoration (no flip active)
 })();
 </script>
 </body>

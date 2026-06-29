@@ -127,8 +127,7 @@ nutrition, and dining</li>
 many uses</li>
 <li><a href="#the-scroll-rack">The Scroll Rack</a> — Scrolls, their
 effects, and confused reading</li>
-<li><a href="#wands-and-staves">Wands and Staves</a> — Magical
-implements</li>
+<li><a href="#wands">Wands</a> — Magical implements</li>
 <li><a href="#rings-and-amulets">Rings and Amulets</a> — Jewelry, for
 better or worse</li>
 <li><a href="#tools-of-the-trade">Tools of the Trade</a> — From pickaxes
@@ -240,14 +239,14 @@ different starting equipment, different intrinsic abilities gained at
 various experience levels, and a different quest to complete in the
 mid-game.</p>
 <p><strong>Archeologist.</strong> You start with a bullwhip, a pickaxe,
-a tinning kit, and a touchstone. The pickaxe is the kit’s workhorse: it
-lets you dig through walls and create your own escape routes from the
-very first level. The tinning kit lets you preserve corpses for later,
-and the touchstone is your gem-identification edge: rub a gem on it and
-the stone shows whether it’s the real thing or worthless glass. Useful
-for lucky unicorn gifts and shop pricing. Archeologists are capable and
-flexible, though a bit fragile in early combat. <em>Alignment: Lawful or
-Neutral.</em></p>
+a tinning kit, a touchstone, and a fedora. Indiana Jones, basically. The
+pickaxe is your workhorse: it lets you dig through walls and create your
+own escape routes from the very first level. The tinning kit lets you
+preserve corpses for later, and the touchstone is your
+gem-identification edge: rub a gem on it and the stone shows whether
+it’s the real thing or worthless glass. Useful for lucky unicorn gifts
+and shop pricing. Archeologists are capable and flexible, though a bit
+fragile in early combat. <em>Alignment: Lawful or Neutral.</em></p>
 <p><strong>Barbarian.</strong> You start strong. Literally. A two-handed
 sword and good starting strength mean you can hack through early
 monsters with ease. The downside is that two-handed weapons prevent you
@@ -282,11 +281,11 @@ pet until it grows up. As a Lawful character with a starting long sword,
 you also have the best odds in the game at <strong><a
 href="#excalibur-artifact">Excalibur</a></strong>. Dip your long sword
 in a fountain (<code>#dip</code>) at experience level 5+ and Knights get
-a 1-in-6 chance per dip, far better than the 1-in-30 every other Lawful
-role faces. Knights follow a code of conduct that imposes alignment
-penalties for attacking fleeing or helpless monsters, so pick your
-fights carefully. Knights also have intrinsic jumping, which lets you
-reposition without spending an attack. <em>Alignment: Lawful.</em></p>
+a 1-in-6 chance per dip for their sword to be transformed. Knights
+follow a code of conduct that imposes alignment penalties for attacking
+fleeing or helpless monsters, so pick your fights carefully. Knights can
+also <code>#jump</code>, which lets you reposition without spending an
+attack. <em>Alignment: Lawful.</em></p>
 <p><strong>Monk.</strong> You fight best with bare hands and start with
 no weapon at all. Monks gain martial arts abilities as they level,
 eventually becoming formidable unarmed combatants. You start with sleep
@@ -322,15 +321,15 @@ Chaotic.</em></p>
 assassinations. You start with a short sword, six daggers for throwing,
 leather armor, a lock pick, a sack, and a potion of sickness (toss it at
 an enemy, or save it to coat any darts, shuriken, or arrows you find.
-Only missiles can be poisoned.) Your lock pick makes every locked door,
-chest, and box openable from turn one. You get stealth from the
-beginning, which lets you walk up to sleeping enemies without waking
-them, and your backstab ability deals extra damage (+1 to +your level)
-when you hit a monster that’s fleeing or helpless. Throw daggers rather
-than stab with them: Rogues get a multishot bonus on thrown daggers
-(several leave your hand in a single turn), and the backstab modifier
-applies to throws against fleeing targets too. Stealth and range are the
-role. <em>Alignment: Chaotic.</em></p>
+Such missiles can be poisoned by <code>#dip</code>ping.) Your lock pick
+makes every locked door, chest, and box openable from turn one. You get
+stealth from the beginning, which lets you walk up to sleeping enemies
+without waking them, and your backstab ability deals extra damage (+1 to
++your level) when you hit a monster that’s fleeing or helpless. Throw
+daggers rather than stab with them: Rogues get a multishot bonus on
+thrown daggers (several leave your hand in a single turn), and the
+backstab modifier applies to throws against fleeing targets too. Stealth
+and range are the role. <em>Alignment: Chaotic.</em></p>
 <p><strong>Samurai.</strong> You start with a katana, which is one of
 the better one-handed weapons in the game, plus a wakizashi backup and a
 yumi bow with arrows. Samurai get speed early and have a strong martial
@@ -807,8 +806,8 @@ goodwill.</p>
 - Mausoleum places one waiting M/V/L/Z monster or one @ corpse (themerms.lua:419-443)
 -->
 <p>The Mazes are procedurally generated. No two visits are quite the
-same. But the dungeon follows patterns, and understanding those patterns
-is the first step toward navigating them effectively.</p>
+same. And yet the dungeon follows patterns. Understanding those patterns
+is the first step towards navigating them effectively.</p>
 <section id="the-big-picture" class="level4">
 <h4>The Big Picture</h4>
 <p>When the dungeon was first mapped, every level looked the same:
@@ -834,15 +833,18 @@ href="#the-gnomish-mines">Gnomish Mines</a></strong> (where you can find
 a <em><a href="#luck-and-fortune">luckstone</a></em> and <em><a
 href="#shopping-and-shopkeeper-pricing">shops</a></em>), <strong><a
 href="#sokoban">Sokoban</a></strong> (a <em><a
-href="#sokoban">puzzle</a></em> with a prize at the top), your <a
-href="#the-quest">Quest dungeon</a>, and sometimes <strong>Fort
-Ludios</strong> (a vault full of gold). The trunk ends at <strong>The
-Castle</strong>, the gateway to <a href="#gehennom">Gehennom</a>.</p>
-<p><strong>Gehennom</strong> is the lower half: maze levels and demon
-lords, with the <strong>Amulet of Yendor</strong> at the bottom in <a
-href="#molochs-sanctum">Moloch’s Sanctum</a>. Once you have it, you
-climb back up through the <strong>Elemental Planes</strong> to the
-<strong>Astral Plane</strong>, where your god awaits your offering.</p>
+href="#sokoban">puzzle</a></em> with a prize at the top), your
+<strong><a href="#the-quest">Quest</a></strong> dungeon (in which your
+role’s leader sends you on a mission to retrieve a precious artifact),
+and sometimes <strong>Fort Ludios</strong> (a vault full of gold). The
+trunk ends at <strong>The Castle</strong>, the gateway to <a
+href="#gehennom">Gehennom</a>.</p>
+<p><strong>Gehennom</strong> is the lower half: lava-filled maze levels
+and demon lords, with the <strong>Amulet of Yendor</strong> at the
+bottom in <a href="#molochs-sanctum">Moloch’s Sanctum</a>. Once you have
+it, you climb back up through the <strong>Elemental Planes</strong> to
+the <strong>Astral Plane</strong>, where your god awaits your
+offering.</p>
 <!-- DMAP-BEGIN -->
 <div>
 <figure style="margin: 1.5em 0; text-align: center;">
@@ -946,7 +948,7 @@ Learning to read these symbols quickly is important:</p>
 </tr>
 <tr>
 <td><code>#</code></td>
-<td>Corridor</td>
+<td>Corridor or fog</td>
 </tr>
 <tr>
 <td><code>-</code> <code>│</code></td>
@@ -1537,8 +1539,8 @@ will rot.</td>
 </tbody>
 </table>
 </section>
-<section id="things-you-dont-want-to-meet" class="level4">
-<h4>Things You Don’t Want to Meet</h4>
+<section id="very-dangerous-monsters" class="level4">
+<h4>Very Dangerous Monsters</h4>
 <table>
 <colgroup>
 <col style="width: 4%" />
@@ -1659,7 +1661,7 @@ ordinary item ever displays as <code>]</code> (compare <code>[</code>,
 armor, and <code>]</code> is its mirror).</td>
 </tr>
 <tr>
-<td><code>⎕</code> <br>(space)</td>
+<td><code>⎕</code><br>(space)</td>
 <td>Ghost</td>
 <td>Ghosts left from bones files. The glyph is a literal space, which
 paints over the floor underneath: in a room, a ghost shows as a
@@ -2964,8 +2966,7 @@ it’s worn</li>
 artifact with the searching aura), wielded, adds its enchantment to your
 search bonus (a freshly-dipped +0 Excalibur adds nothing)</li>
 <li><strong>Lenses</strong> worn (and you not blind) add +2 to the
-search bonus, but the total bonus from Excalibur + lenses caps at +5, so
-lenses only help if Excalibur’s enchantment is below +3</li>
+search bonus</li>
 <li><strong>Wand of secret door detection</strong> instantly reveals
 nearby secrets in a radius</li>
 <li><strong>Blessed scroll of magic mapping</strong> shows every secret
@@ -4509,10 +4510,10 @@ fatal.</p>
 -->
 <p><strong>Yellow lights</strong> (<code>y</code>, level 3) and
 <strong>black lights</strong> (<code>y</code>, level 5) attack by
-exploding the moment you’re adjacent. Yellow lights blind you for
-<strong>10d20 turns</strong> (a <em>blessed</em> potion of healing or
+exploding the moment you’re adjacent. Yellow lights <strong>blind
+you</strong> for 10d20 turns (a <em>blessed</em> potion of healing or
 any extra/full healing cures, or a unicorn horn); black lights
-hallucinate you for <strong>10d12 turns</strong> (unicorn horn cures, or
+<strong>hallucinate you</strong> for 10d12 turns (unicorn horn cures, or
 wait). Both lights die in the explosion, so the after-effect is the real
 threat. <strong>Defenses:</strong> kill them at range — wands, thrown
 daggers, breath weapons. <em>Warning</em> detects them through their
@@ -4634,8 +4635,8 @@ defined an instadeath as “a single move death which does not involve the
 player’s hit points dropping to zero,” and that taxonomy has been the
 standard reference ever since.</em></p>
 </blockquote>
-<section id="attack-wands-and-the-warning-shot" class="level4">
-<h4>Attack Wands and the Warning Shot</h4>
+<section id="attack-wands" class="level4">
+<h4>Attack Wands</h4>
 <!-- audit
 2026-05-18:
 - mwandexp gates the first-zap warning miss (muse.c:1830-1860)
@@ -4648,11 +4649,12 @@ standard reference ever since.</em></p>
 <p>Being hit by a powerful wand can mean instant death. A wand of death
 or finger of death kills an unprotected character outright, and ray
 wands of cold, fire, lightning, or magic missile can roll lethal damage
-too. But the first time any given monster zaps a beam wand (death,
-sleep, fire, cold, lightning, magic missile) at you, the shot misses. If
-you can see the monster, the wand identifies itself in the same moment,
-so now you know what was just aimed at you and you have a turn to do
-something about it before the next zap connects.</p>
+too.</p>
+<p><strong>Defense:</strong> The first time any given monster zaps a
+beam wand (death, sleep, fire, cold, lightning, magic missile) at you,
+the shot misses. If you can see the monster, the wand identifies itself
+in the same moment, so now you know what was just aimed at you and you
+have a turn to do something about it before the next zap connects.</p>
 </section>
 <section id="choking" class="level4">
 <h4>Choking</h4>
@@ -6598,7 +6600,7 @@ always “crystal helmet”; dunce cap and cornuthaum both look like
 <li>4 magical <strong>cloaks</strong> share 4 appearances: tattered cape
 / opera cloak / ornamental cope / piece of cloth → one of cloak of
 protection, invisibility, <a href="#damage-resistances">magic
-resistance</a>, or displacement.</li>
+resistance</a>, or displacement. All excellent.</li>
 <li>4 <strong>gloves</strong> share 4 appearances: old / padded / riding
 / fencing gloves → leather gloves or one of the three gauntlet types
 (fumbling, power, dexterity).</li>
@@ -6752,12 +6754,13 @@ including 5.0.</p>
 stone is a luckstone. A $45 gray stone is a touchstone. A $1 gray stone
 is flint or a loadstone.</p>
 <p><strong>The rub test.</strong> Apply (<code>a</code>) a gray stone to
-a gem in your pack. A touchstone produces a colored-streak message. If
-the touchstone is <strong>blessed</strong> (or you’re an Archeologist or
-Gnome holding an uncursed one), the streak also identifies the gem.
-Other gray stones produce similar streak messages, so a streak alone
-doesn’t prove touchstone; an <em>identification</em> result does. A
-cursed touchstone can shatter the gem.</p>
+a gem in your pack (or <code>#rub</code> it against one). A touchstone
+produces a colored-streak message. If the touchstone is
+<strong>blessed</strong> (or you’re an Archeologist or Gnome holding an
+uncursed one), the streak also identifies the gem. Other gray stones
+produce similar streak messages, so a streak alone doesn’t prove
+touchstone; an <em>identification</em> result does. A cursed touchstone
+can shatter the gem.</p>
 <p><strong>Location clue.</strong> The luckstone at the bottom of <a
 href="#the-gnomish-mines">the Gnomish Mines</a> is guaranteed. If you
 find a gray stone at Mine’s End, it’s almost certainly the luckstone.
@@ -7395,12 +7398,12 @@ between moving at normal speed and fast speed is the difference between
 trading blows and hitting twice before they swing once. The wand of
 speed monster does not grant permanent speed when self-zapped, only a
 temporary burst of 50–74 turns. The potion is the real prize.</p>
-<p><span id="potion-holy-water"></span> <strong>Holy water.</strong> Not
-a potion you find: a potion you <em>make</em>. Drop uncursed water on a
-co-aligned altar, pray, and the gods bless it for you (pile every water
-you own on the same square and a single prayer blesses the whole stack).
-Holy water then blesses any item you dip into it. A holy water can even
-bless <em>more water</em> by dipping into it. Keep one to make more.</p>
+<p><span id="potion-holy-water"></span> <strong>Holy water.</strong> A
+potion you can <em>make</em>. Drop uncursed water on a co-aligned altar,
+pray, and the gods bless it for you (pile every water you own on the
+same square and a single prayer blesses the whole stack). Holy water
+then blesses any item you dip into it. A holy water can even bless
+<em>more water</em> by dipping into it. Keep one to make more.</p>
 <p>Short on water? Make your own. Any potion but acid reduces toward
 plain water each time it gets wet, so two dips finish the job: the first
 dilutes it, the second waters it down. The place to do this is a
@@ -7408,7 +7411,9 @@ fountain, where you stand safely on the tile to dip. Unwanted potions
 become holy-water feedstock instead of clutter.</p>
 <p><span id="potion-gain-level"></span> <strong>Gain level.</strong>
 Raises your experience level by 1. Useful for reaching quest eligibility
-quickly, or converting into something better through alchemy.</p>
+quickly, or converting into something better through alchemy. When
+cursed, you rise through the ceiling as it physically raises your
+level.</p>
 <p><span id="potion-polymorph"></span> <strong>Identifying a polymorph
 potion.</strong> A clean test: dip a single arrow or dart into an
 unknown potion. If the arrow turns into a different item, the potion was
@@ -7740,8 +7745,8 @@ non-blessed <strong>potion of booze</strong> (Samurai:
 <hr />
 </section>
 </section>
-<section id="wands-and-staves" class="level3">
-<h3>Wands and Staves</h3>
+<section id="wands" class="level3">
+<h3>Wands</h3>
 <!-- audit
 2026-05-18:
 - wand of stasis: NODIR, $150, prob 45 — makes the level no-teleport for 10-30 turns; does NOT freeze monsters (objects.h:1460, zap.c:2559-2568; effect gated by stasis_until in teleport.c:43 noteleport_level, teleport.c:2269 u_teleport_mon, apply.c:530 magic whistle, do.c:2262 revive rloc)
@@ -8696,11 +8701,12 @@ loot. Credit cards are unlock-only.</p>
 <h4>Light Sources</h4>
 <p><strong>Oil lamps</strong> and <strong>candles</strong> light dark
 corridors, which is pleasant but not essential. The real prize is the
-<strong>magic lamp</strong>: rub it and there’s a 1-in-3 chance the
-djinni emerges, then a chance it grants you a wish (80% if the lamp is
-blessed, so ~27% wish per rub overall), less if it isn’t. Try again on
-the same lamp until the djinni shows. Never, ever use a magic lamp for
-light. That’s like using a winning lottery ticket as a bookmark.</p>
+<strong>magic lamp</strong>: rub it (<code>#rub</code>) and there’s a
+1-in-3 chance the djinni emerges, then a chance it grants you a wish
+(80% if the lamp is blessed, so ~27% wish per rub overall), less if it
+isn’t. Try again on the same lamp until the djinni shows. Never, ever
+use a magic lamp for light. That’s like using a winning lottery ticket
+as a bookmark.</p>
 <p>The <strong>Candelabrum of Invocation</strong> is a unique candelabra
 found in <a href="#vlads-tower">Vlad’s Tower</a>. It’s one of three
 items needed for the invocation ritual to enter <a
@@ -16830,7 +16836,7 @@ applies (smaller than plate but not zero).</td>
 <td>—</td>
 <td>40</td>
 <td>1200</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Magic resistance. Endgame body-armor goal.</td>
 </tr>
 <tr>
@@ -16839,7 +16845,7 @@ applies (smaller than plate but not zero).</td>
 <td>—</td>
 <td>40</td>
 <td>1200</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Reflection.</td>
 </tr>
 <tr>
@@ -16848,7 +16854,7 @@ applies (smaller than plate but not zero).</td>
 <td>—</td>
 <td>40</td>
 <td>1200</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Disintegration resistance + drain resistance.</td>
 </tr>
 <tr>
@@ -16857,7 +16863,7 @@ applies (smaller than plate but not zero).</td>
 <td>—</td>
 <td>40</td>
 <td>900</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Acid resistance + stoning resistance. Rare.</td>
 </tr>
 <tr>
@@ -16866,7 +16872,7 @@ applies (smaller than plate but not zero).</td>
 <td>—</td>
 <td>40</td>
 <td>900</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Sleep resistance + free action.</td>
 </tr>
 <tr>
@@ -16875,7 +16881,7 @@ applies (smaller than plate but not zero).</td>
 <td>—</td>
 <td>40</td>
 <td>900</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Cold resistance + slow digestion.</td>
 </tr>
 <tr>
@@ -16884,7 +16890,7 @@ applies (smaller than plate but not zero).</td>
 <td>—</td>
 <td>40</td>
 <td>900</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Fire resistance + infravision.</td>
 </tr>
 <tr>
@@ -16893,7 +16899,7 @@ applies (smaller than plate but not zero).</td>
 <td>—</td>
 <td>40</td>
 <td>900</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Poison resistance + sickness resistance.</td>
 </tr>
 <tr>
@@ -16902,7 +16908,7 @@ applies (smaller than plate but not zero).</td>
 <td>—</td>
 <td>40</td>
 <td>900</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Shock resistance + speed, same tier as speed boots.</td>
 </tr>
 <tr>
@@ -16911,7 +16917,7 @@ applies (smaller than plate but not zero).</td>
 <td>—</td>
 <td>40</td>
 <td>900</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Hallucination resistance + permanent light (only body-slot light
 source).</td>
 </tr>
@@ -16950,7 +16956,7 @@ source).</td>
 <td>—</td>
 <td>40</td>
 <td>700</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Magic resistance. Make-into upgrade to scale mail.</td>
 </tr>
 <tr>
@@ -16959,7 +16965,7 @@ source).</td>
 <td>—</td>
 <td>40</td>
 <td>700</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Reflection.</td>
 </tr>
 <tr>
@@ -16968,7 +16974,7 @@ source).</td>
 <td>—</td>
 <td>40</td>
 <td>700</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Disintegration resistance + drain resistance.</td>
 </tr>
 <tr>
@@ -16977,7 +16983,7 @@ source).</td>
 <td>—</td>
 <td>40</td>
 <td>500</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Acid resistance + stoning resistance.</td>
 </tr>
 <tr>
@@ -16986,7 +16992,7 @@ source).</td>
 <td>—</td>
 <td>40</td>
 <td>500</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Sleep resistance + free action.</td>
 </tr>
 <tr>
@@ -16995,7 +17001,7 @@ source).</td>
 <td>—</td>
 <td>40</td>
 <td>500</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Cold resistance + slow digestion.</td>
 </tr>
 <tr>
@@ -17004,7 +17010,7 @@ source).</td>
 <td>—</td>
 <td>40</td>
 <td>500</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Fire resistance + infravision.</td>
 </tr>
 <tr>
@@ -17013,7 +17019,7 @@ source).</td>
 <td>—</td>
 <td>40</td>
 <td>500</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Poison resistance + sickness resistance.</td>
 </tr>
 <tr>
@@ -17022,7 +17028,7 @@ source).</td>
 <td>—</td>
 <td>40</td>
 <td>500</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Shock resistance + speed, same tier as speed boots.</td>
 </tr>
 <tr>
@@ -17031,7 +17037,7 @@ source).</td>
 <td>—</td>
 <td>40</td>
 <td>500</td>
-<td>dragonhide</td>
+<td>hide</td>
 <td>Hallucination resistance + permanent light.</td>
 </tr>
 </tbody>
@@ -18082,7 +18088,7 @@ with rank.</p>
 to the right page mid-game. <strong>Lvl</strong> is the base monster
 level. <strong>Spd</strong> is movement rate (12 is normal player
 speed). <strong>AC</strong> is armor class (lower is better).
-<strong>MR%</strong> is the percentage chance the monster resists your
+<strong>MR</strong> is the percentage chance the monster resists your
 spells and magic attacks. <strong>Attacks</strong> lists each attack’s
 mode, damage dice, and side effect; multiple attacks separated by
 <code>·</code> are made per turn. <strong>Notes</strong> folds in the
@@ -18125,7 +18131,7 @@ bees swarm; the queen bee in a beehive room is tough on her own.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -18229,7 +18235,7 @@ Gelatinous cubes paralyse on touch.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -18304,7 +18310,7 @@ href="#petrification-stoning">Petrification</a>.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -18375,7 +18381,7 @@ werewolves can give lycanthropy.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -18570,7 +18576,7 @@ mindless.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -18667,7 +18673,7 @@ by default.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -18788,7 +18794,7 @@ Kill them on dry land, ideally during daylight.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -18865,7 +18871,7 @@ armor, pick-axes) and can wreck low-level heroes with that loot.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -18985,7 +18991,7 @@ dangerous. Without sleep resistance, fight at range.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -19086,7 +19092,7 @@ spotted jelly’s passive acid bite even when you hit them.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -19160,7 +19166,7 @@ unless you have poison resistance.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -19239,7 +19245,7 @@ them, or to kill from range. The corpse drops the gold back.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -19291,7 +19297,7 @@ The giveaway is the wrong object on the wrong square.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -19368,7 +19374,7 @@ stole.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -19444,7 +19450,7 @@ to <a href="#the-gnomish-mines">the Mines</a>.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -19568,7 +19574,7 @@ ceiling.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -19640,7 +19646,7 @@ Mumakil are slow but hit for 4d12 and shrug off blows.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -19749,7 +19755,7 @@ their corpses are safe food. Don’t eat wererats.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -19852,7 +19858,7 @@ poisoning.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -19944,7 +19950,7 @@ one starts a swallow attack you can’t easily escape. Identify with
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -20017,7 +20023,7 @@ and Fortune</a>). A killed unicorn drops its horn.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -20122,7 +20128,7 @@ you.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -20222,7 +20228,7 @@ swallow you whole and digest. Don’t get cornered.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -20302,7 +20308,7 @@ and cut your carrying capacity.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -20365,7 +20371,7 @@ href="#light-bursts">Light Bursts</a>.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -20424,7 +20430,7 @@ flurry.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -20479,7 +20485,7 @@ invisible.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -20571,7 +20577,7 @@ poisoned bite (poison resistance blocks it).</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -20651,7 +20657,7 @@ range.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -20726,7 +20732,7 @@ See <a href="#armor-tables">Dragon Scale Mail</a>.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -20997,7 +21003,7 @@ you’re adjacent in water, earth is slow but tough.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -21092,7 +21098,7 @@ violet fungus has an active touch attack with sticking.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -21203,7 +21209,7 @@ dangerous.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -21287,7 +21293,7 @@ purpose.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -21441,7 +21447,7 @@ beheading it.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -21495,7 +21501,7 @@ stable solution. Get away or genocide them instead.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -21582,7 +21588,7 @@ cold-resistant, sleep-resistant, and poison-resistant.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -21662,7 +21668,7 @@ mandatory.</td>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -21784,7 +21790,7 @@ stoning resistance. That’s easily the best of the four eats.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -21903,7 +21909,7 @@ armor.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -21989,7 +21995,7 @@ except <em>gray ooze</em> also are shock-resistant.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -22074,7 +22080,7 @@ poisonous corpses.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -22136,7 +22142,7 @@ non-iron weapons against the rust monster.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -22200,7 +22206,7 @@ garter snakes are fodder.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -22306,7 +22312,7 @@ when you come back.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -22399,7 +22405,7 @@ garbles the spell.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -22453,7 +22459,7 @@ stairs, and shapeshift.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -22525,7 +22531,7 @@ the game. Always eat a wraith corpse if you can.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -22599,7 +22605,7 @@ level. The corpse grants temporary stoning resistance.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -22648,7 +22654,7 @@ are safe food.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -22753,7 +22759,7 @@ randomly: it only appears from a skeleton trap or a fixed placement
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -22900,7 +22906,7 @@ peaceful; the ones that don’t are very dangerous.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -23688,7 +23694,7 @@ damage. Demon lords can be bribed with gold to leave.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -24041,7 +24047,7 @@ walking treasure pile.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -24193,7 +24199,7 @@ square unless you have it.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -24296,7 +24302,7 @@ cockatrices and Medusa.</p>
 <th>Lvl</th>
 <th>Spd</th>
 <th>AC</th>
-<th>MR%</th>
+<th>MR</th>
 <th>Attacks</th>
 <th>Notes</th>
 </tr>
@@ -26025,6 +26031,61 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
     return parsed.header.concat(rows).join('\n');
   }
 
+  // --- Hover decoration -------------------------------------------------
+  // Rebuild each rendered map as a grid of per-character spans so a square
+  // and its row/column numbers can light up together. Coordinates are read
+  // straight from the displayed glyphs: a content character at string index
+  // idx is grid column idx - 2, the i-th body row is grid row i + 1, and the
+  // number gutters stay fixed while a flip mirrors only the content — so the
+  // mapping is identical whether or not a flip is active.
+  function escapeHtml(c) {
+    return c === '&' ? '&amp;' : c === '<' ? '&lt;' : c === '>' ? '&gt;' : c;
+  }
+
+  function buildPreHtml(rendered, headerCount) {
+    var lines = rendered.split('\n');
+    var out = [];
+    for (var i = 0; i < lines.length; i++) {
+      var line = lines[i], s = '', idx, ch;
+      if (i < headerCount) {
+        // Column-number gutter: tag each digit with its column.
+        for (idx = 0; idx < line.length; idx++) {
+          ch = line.charAt(idx);
+          if (idx >= LABEL_END && ch >= '0' && ch <= '9') {
+            s += '<span class="soko-colhead" data-col="' + (idx - 2) + '">'
+               + ch + '</span>';
+          } else {
+            s += escapeHtml(ch);
+          }
+        }
+      } else {
+        var y = i - headerCount + 1;
+        // Row-label gutter (first LABEL_END characters).
+        for (idx = 0; idx < LABEL_END && idx < line.length; idx++) {
+          ch = line.charAt(idx);
+          s += (ch >= '0' && ch <= '9')
+            ? '<span class="soko-rowhead" data-row="' + y + '">' + ch + '</span>'
+            : escapeHtml(ch);
+        }
+        // Playable squares.
+        for (idx = LABEL_END; idx < line.length; idx++) {
+          s += '<span class="soko-cell" data-x="' + (idx - 2) + '" data-y="'
+             + y + '">' + escapeHtml(line.charAt(idx)) + '</span>';
+        }
+      }
+      out.push(s);
+    }
+    return out.join('\n');
+  }
+
+  // Wrap coordinate tuples in solution prose so they cross-highlight the map.
+  function wrapCoords(html) {
+    return html.replace(/\((\d+),\s*(\d+)\)/g, function(m, xs, ys) {
+      return '<span class="soko-coord" data-x="' + xs + '" data-y="' + ys
+        + '">' + m + '</span>';
+    });
+  }
+
   function transformProse(html, width, height) {
     if (state.h) {
       html = html.replace(/\b(left|right)\b/g, function(w) {
@@ -26082,11 +26143,11 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
       if (!w || !h) return;
       level.querySelectorAll('pre').forEach(function(pre) {
         var parsed = parsePre(pre.dataset.origText);
-        pre.textContent = renderPre(parsed, w);
+        pre.innerHTML = buildPreHtml(renderPre(parsed, w), parsed.header.length);
       });
       level.querySelectorAll('li, p').forEach(function(el) {
         if (el.dataset.origHtml === undefined) return;
-        el.innerHTML = transformProse(el.dataset.origHtml, w, h);
+        el.innerHTML = wrapCoords(transformProse(el.dataset.origHtml, w, h));
       });
     });
     document.querySelectorAll('.sokoban-flipbar button').forEach(function(btn) {
@@ -26101,6 +26162,61 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
     state[dir] = !state[dir];
     applyState();
   });
+
+  // Cross-highlighting: hovering a square lights its row/column numbers, and
+  // hovering a coordinate in the prose lights the matching square. Delegated
+  // from the root so it survives the innerHTML rebuilds that flipping does.
+  function clearHighlights() {
+    sokobanRoot.querySelectorAll('.soko-hl, .soko-axis-hl, .soko-coord-active')
+      .forEach(function(el) {
+        el.classList.remove('soko-hl', 'soko-axis-hl', 'soko-coord-active');
+      });
+  }
+  // A level can show several map states; a prose coordinate refers to the
+  // map it follows in the text. Fall back to the section's first map.
+  function nearestMap(coord) {
+    var section = coord.closest('.sokoban-level');
+    if (!section) return null;
+    var pres = section.querySelectorAll('pre'), best = pres[0] || null;
+    for (var i = 0; i < pres.length; i++) {
+      if (pres[i].compareDocumentPosition(coord)
+          & Node.DOCUMENT_POSITION_FOLLOWING) {
+        best = pres[i];
+      }
+    }
+    return best;
+  }
+  function lightSquare(pre, x, y) {
+    if (!pre) return;
+    var cell = pre.querySelector(
+      '.soko-cell[data-x="' + x + '"][data-y="' + y + '"]');
+    if (cell) cell.classList.add('soko-hl');
+    pre.querySelectorAll('.soko-colhead[data-col="' + x + '"]')
+      .forEach(function(e) { e.classList.add('soko-axis-hl'); });
+    pre.querySelectorAll('.soko-rowhead[data-row="' + y + '"]')
+      .forEach(function(e) { e.classList.add('soko-axis-hl'); });
+  }
+  sokobanRoot.addEventListener('mouseover', function(e) {
+    var cell = e.target.closest('.soko-cell');
+    if (cell) {
+      clearHighlights();
+      lightSquare(cell.closest('pre'), cell.dataset.x, cell.dataset.y);
+      return;
+    }
+    var coord = e.target.closest('.soko-coord');
+    if (coord) {
+      clearHighlights();
+      coord.classList.add('soko-coord-active');
+      lightSquare(nearestMap(coord), coord.dataset.x, coord.dataset.y);
+    }
+  });
+  sokobanRoot.addEventListener('mouseout', function(e) {
+    if (e.target.closest('.soko-cell') || e.target.closest('.soko-coord')) {
+      clearHighlights();
+    }
+  });
+
+  applyState(); // initial decoration (no flip active)
 })();
 </script>
 </body>
