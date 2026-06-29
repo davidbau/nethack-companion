@@ -49,7 +49,11 @@ and called themselves the DevTeam. They are still at it. \textbf{Version
 5.0 was released in May 2026.} Over forty years, the DevTeam has
 grown NetHack into the most unforgivingly intricate and emblematic
 roguelike, with a thriving culture of fun and community beyond the
-game itself.
+game itself. Much of that culture took shape on the
+rec.games.roguelike.nethack newsgroup in the 1990s and thrives
+today at the NetHack Wiki, the r/nethack forum, the game's Discord
+and IRC channels, and public servers like nethack.alt.org and
+hardfought.org. This guide stands on their work.
 
 One of the wonderful things about NetHack is that it is so rich, so
 intricate, that the game is not spoiled by spoilers. The more you
