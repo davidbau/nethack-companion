@@ -241,14 +241,15 @@ various experience levels, and a different quest to complete in the
 mid-game.
 
 **Archeologist.** You start with a bullwhip, a pickaxe, a tinning
-kit, and a touchstone. The pickaxe is the kit's workhorse: it
-lets you dig through walls and create your own escape routes from
-the very first level. The tinning kit lets you preserve corpses
-for later, and the touchstone is your gem-identification edge:
-rub a gem on it and the stone shows whether it's the real
-thing or worthless glass. Useful for lucky unicorn gifts and shop
-pricing. Archeologists are capable and flexible, though a bit
-fragile in early combat. *Alignment: Lawful or Neutral.*
+kit, a touchstone, and a fedora. Indiana Jones, basically. The
+pickaxe is your workhorse: it lets you dig through walls and
+create your own escape routes from the very first level. The
+tinning kit lets you preserve corpses for later, and the
+touchstone is your gem-identification edge: rub a gem on it and
+the stone shows whether it's the real thing or worthless glass.
+Useful for lucky unicorn gifts and shop pricing. Archeologists
+are capable and flexible, though a bit fragile in early combat.
+*Alignment: Lawful or Neutral.*
 
 **Barbarian.** You start strong. Literally. A two-handed sword and
 good starting strength mean you can hack through early monsters with
@@ -289,8 +290,8 @@ in a fountain (`#dip`) at experience level 5+ and Knights get a
 Lawful role faces.
 Knights follow a code of conduct that imposes alignment penalties
 for attacking fleeing or helpless monsters, so pick your fights
-carefully. Knights also have intrinsic jumping, which lets you
-reposition without spending an attack. *Alignment: Lawful.*
+carefully. Knights can also `#jump`, which lets you reposition
+without spending an attack. *Alignment: Lawful.*
 
 **Monk.** You fight best with bare hands and start with no weapon
 at all. Monks gain martial arts abilities as they level, eventually
@@ -328,7 +329,8 @@ stack on the level-1 newts. *Alignment: Neutral or Chaotic.*
 assassinations. You start with a short sword, six daggers for
 throwing, leather armor, a lock pick, a sack, and a potion of
 sickness (toss it at an enemy, or save it to coat any darts,
-shuriken, or arrows you find. Only missiles can be poisoned.)
+shuriken, or arrows you find. Such missiles can be poisoned by
+`#dip`ping.)
 Your lock pick makes every locked door, chest, and box openable from
 turn one. You get stealth from the beginning, which lets you walk up
 to sleeping enemies without waking them, and your backstab ability
