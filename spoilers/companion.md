@@ -13,12 +13,13 @@ NetHack is among the oldest computer games still actively
 maintained, its code in continuous development for more than four
 decades. Its roots trace back to Rogue, a 1980 computer game by
 Michael Toy and Glenn Wichman that was inspired by Dungeons and
-Dragons. In Rogue, the dungeon is drawn in ordinary text characters,
-your hero is an \texttt{@}, the monsters are letters, and death is
-permanent. Built on Ken Arnold's curses library and carried across
-the world inside Berkeley's BSD Unix, Rogue became the most popular
-game on the college campuses of its day, inspiring a whole genre of
-similar games called ``roguelikes.''
+Dragons. In Rogue, the dungeon is randomly generated and drawn
+with ordinary text characters. Your hero is an \texttt{@}, the
+monsters are letters, and death is permanent. Built on Ken Arnold's
+curses library and carried across the world inside Berkeley's BSD
+Unix, Rogue became the most popular game on the college campuses of
+its day, inspiring a whole genre of similar games called
+``roguelikes.''
 
 NetHack got its start when Jay Fenlason, a high school junior at
 Lincoln-Sudbury Regional High School in Massachusetts, wanted his
@@ -44,8 +45,8 @@ In 1987, Mike Stephenson gathered those scattered versions back
 together, and with Izchak Miller, Janet Walz, and a widening circle
 of volunteers, merged them into a single game. They named it
 NetHack, after the network that had made the collaboration possible,
-and called themselves the DevTeam. They are still at it. Version
-5.0 was just released in 2026. Over forty years, the DevTeam has
+and called themselves the DevTeam. They are still at it. \textbf{Version
+5.0 was released in May 2026.} Over forty years, the DevTeam has
 grown NetHack into the most unforgivingly intricate and emblematic
 roguelike, with a thriving culture of fun and community beyond the
 game itself.
@@ -53,10 +54,10 @@ game itself.
 One of the wonderful things about NetHack is that it is so rich, so
 intricate, that the game is not spoiled by spoilers. The more you
 know its secrets, the more interesting the game becomes. And so in
-that spirit, we hope this collection of spoilers helps bring the joy
-of NetHack to a new generation of players.
+that spirit, we hope this new collection of 5.0 spoilers helps bring
+the joy of NetHack to a new generation of players.
 
-Welcome to NetHack.
+Welcome to NetHack!
 ```
 
 ---
