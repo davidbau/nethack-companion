@@ -68,25 +68,6 @@ Welcome to NetHack!
 
 ## Before You Read Further
 
-The dungeon is an ancient temptation: old, but very much alive.
-No one remembers the sudburian warriors who created it, only
-that its entrance has stood open for more than forty years to
-anyone bold enough to descend.
-Brave souls come from every land, drawn by tales of an artifact
-hidden in its depths: Knights, Wizards, Valkyries, Samurai,
-Archeologists with their picks, even Tourists with their
-cameras. No two find the same mazes. Rooms shift between visits,
-stairwells move. The one
-constant is that the dungeon is trying to kill you.
-
-Most adventurers who go down there never come back. The ones
-who do have taken time to prepare: they have read the myths,
-learned the lore, and listened to the warnings of those who
-have gone before. The following pages gather the wisdom of
-generations of adventurers, and now seers have updated the
-canon with the latest intrigues of the dungeon. Every word
-has been paid for by the lives of those who did not return
-and by the painstaking observations of those who did.
 
 **A word of caution.** This guide will change how you experience
 the Mazes. Once you know that a floating eye can paralyze you
