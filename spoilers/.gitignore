@@ -11,7 +11,3 @@ companion.aux
 companion.log
 companion.toc
 companion.out
-
-# Build byproducts
-.companion-print.md.bak
-book.txt
