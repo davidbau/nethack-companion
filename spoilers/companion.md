@@ -3139,6 +3139,135 @@ boulders you summoned on your own head.
 
 The median death is a preventable swarm of jackals on Dlvl 3.
 
+#### A note on nymphs
+
+The `n` class (wood, water, mountain) doesn't want to kill you.
+She wants your inventory. In the early game a nymph is the surest
+way to lose the fine AC you've worked to assemble: she pulls worn
+armor right off your body and teleports away with it. Each
+successful claw hit also lifts a random item from your pack, and
+the nymph then **teleports away** to a random spot on the same
+level. Your bag of holding, your amulet
+of reflection, a freshly-wished cloak of magic resistance: gone,
+across the map, often into a room you haven't explored. Few
+monsters set an early character back this hard, and it takes only
+one hit.
+
+**Only theft.** Both of a nymph's claws steal rather than wound:
+one lifts an item from your pack, the other peels a worn ring,
+amulet, or piece of armor off your body. She costs you gear,
+never hit points.
+
+**Defenses.** The rule is never to let a nymph reach melee range.
+Kill at range (darts, force bolt, a wand of
+anything). [Engrave **Elbereth**](#elbereth): nymphs respect it.
+Or drop your most irreplaceable items on the floor before
+approaching. Whatever's not in your pack can't be stolen. Since
+she does no HP damage, a character stripped to nothing, no worn
+gear, empty pack, can even fight a nymph bare-handed in perfect
+safety. It won't stop her blinking away between hits, but she has
+nothing to take and no way to hurt you.
+
+**Already robbed?** She keeps what she took until she dies, so
+you have to hunt her down and kill her: the loot drops from her
+corpse. A robbed nymph stays on the same level unless she later
+falls through a trapdoor or wanders onto a staircase, which
+carries your item off with her.
+
+**Never engage a nymph while carrying the Amulet of Yendor**
+during the Ascension Run. If she steals it, you abandon your
+climb to sweep the current level for her corpse, and the
+mysterious force does not pause while you search.
+
+#### A note on mimics
+
+Mimics are an early-game over-leveled threat: their claws hit hard
+enough to kill a low-level character outright, and small mimics
+rank in the top ten causes of death. The reprieve is that **all
+mimics are slow** (speed 3, less than half your base speed). If
+you uncloak one and don't like the matchup, walk away and come
+back stronger; it isn't going anywhere.
+
+You meet them mostly in **shops**: an average shop has one or two
+in the aisles masquerading as merchandise, with more as you
+descend.
+
+**The visual tell.** A mimic appearing as a generic "strange
+object" renders on the map as `]`, a mirror of `[`, the armor
+class. No real item ever displays as `]`. A `]` on a shop floor
+or anywhere else is always a mimic.
+
+**How to uncover one safely.** Search the adjacent square (`s`)
+reveals concealed mimics like it reveals traps. Throw a cheap item
+at the suspected square; the mimic uncloaks and the item lands
+harmlessly. A stethoscope applied to the square also uncloaks.
+Telepathy, ESP, astral vision, and a wand of secret door detection
+see through the disguise and show the mimic as `m`. Your pet won't
+step onto a mimic.
+
+**Recognizing a large mimic before it grabs you.** Once an `m` is
+uncloaked you see its color: small mimics are brown, large mimics
+red, giant mimics magenta. Depth also helps: large and giant mimics
+don't generally appear until mid-dungeon, so almost every mimic in
+the upper levels is a (still very dangerous) small one.
+
+**Sticking.** A **small mimic hits hard but never holds you** (you
+can always step away). A **large or giant mimic glues you in
+place** on a successful claw hit: you can't move, take stairs, or
+drop through a hole. And once stuck you have only about a
+**1-in-13 chance each turn** to pull free while it's awake, so
+don't count on wriggling loose. Kill it (it's slow), teleport out,
+or put it to sleep first. The easy, universal protection is to
+avoid the hold in the first place: since it only lands from melee,
+**searching (`s`) as you move through a shop** reveals a large or
+giant mimic before you step next to it, and one you've spotted can
+never grab you.
+
+**Eating the corpse** turns you into a pile of gold (or, while
+hallucinating, an orange) for 20 / 40 / 50 turns depending on
+size. Anything that tries to pick "you" up snaps the spell.
+
+#### A note on puddings
+
+Puddings are the dungeon's signature self-multiplying monsters,
+and their leftover globs are also among the best food you can
+find. The class lives in the mid-dungeon and Gehennom.
+**Brown and black puddings split when you hit them with an iron
+or metal weapon**: one becomes two, two becomes four, and your
+long-sword grinding session turns into a swarm. **Black pudding
+additionally corrodes your wielded weapon** on its passive
+return-hit, so each round of splitting is also a step toward
+your blade rusting away. Most beginners
+discover puddings the same way: by feeding them
+their best weapon and watching the population graph go up.
+
+**Defenses.** Melee with a **silver or wooden weapon** (silver
+dagger, elven dagger, athame, club, quarterstaff). These don't
+trigger the split. Mithril also bypasses the check. Wands of
+cold and fire kill puddings outright with no split, and most
+spells work too.
+
+**Gray ooze** doesn't split, but it rusts armor on a hit; don't
+engage in your starting iron suit if you can avoid it.
+
+**Eat the globs.** A pudding leaves a **glob** rather than a
+corpse, and the globs are some of the best food in the game. One
+difference between a glob and a corpse is that you cannot
+sacrifice globs at an altar, so puddings can't be farmed for
+offerings. The globs are slow to spoil (about 500 turns of
+edibility, twice a normal corpse) and packed with resistances. A
+brown-pudding glob grants **cold, shock, and poison resistance**
+over repeated eats; a gray-ooze glob grants
+**fire, cold, and poison resistance**; a black-pudding glob also
+grants **cold, shock, and poison resistance**. Brown pudding and
+gray ooze are *vegetarian*-safe; black pudding is not. Globs of
+the same color stack, and each bite is an independent roll for
+the resistance. A pile of brown-pudding globs is multiple
+chances at the one you don't yet have. If you can kill one pudding cleanly, the splitting
+becomes a *feature*: very divided pudding is another glob to
+eat. The full intrinsic table is in
+[Useful Corpse Effects](#useful-corpse-effects).
+
 #### A note on dragons
 
 Dragons deserve a full briefing. Each color has its own breath
@@ -3195,125 +3324,6 @@ can reach safely; about one in three adult-dragon kills drops a
 set of scales, which you can wear directly or convert to scale
 mail by reading a non-cursed scroll of enchant armor while
 wearing them.
-
-#### A note on mimics
-
-Mimics are an early-game over-leveled threat: their claws hit hard
-enough to kill a low-level character outright, and small mimics
-rank in the top ten causes of death. The reprieve is that **all
-mimics are slow** (speed 3, less than half your base speed). If
-you uncloak one and don't like the matchup, walk away, heal up,
-gain a few levels, and come back. The mimic isn't going anywhere.
-
-You meet them mostly in **shops**: an average shop has one or two
-in the aisles masquerading as merchandise, with more as you
-descend.
-
-**The visual tell.** A mimic appearing as a generic "strange
-object" renders on the map as `]`, a mirror of `[`, the armor
-class. No real item ever displays as `]`. A `]` on a shop floor
-or anywhere else is always a mimic.
-
-**How to uncover one safely.** Search the adjacent square (`s`)
-reveals concealed mimics like it reveals traps. Throw a cheap item
-at the suspected square; the mimic uncloaks and the item lands
-harmlessly. A stethoscope applied to the square also uncloaks.
-Telepathy, ESP, astral vision, and a wand of secret door detection
-see through the disguise and show the mimic as `m`. Your pet won't
-step onto a mimic.
-
-**Recognizing a large mimic before it grabs you.** Once an `m` is
-uncloaked you see its color: small mimics are brown, large mimics
-red, giant mimics magenta. That gives you a free look before
-committing to melee. Depth also helps: large and giant mimics
-don't generally appear until mid-dungeon, so almost every mimic in
-the upper levels is a (still very dangerous) small one. If your
-throw uncovers a red or magenta `m`, do not step into sticking
-range without a plan.
-
-**Sticking.** Large and giant mimics glue you in place on a
-successful claw hit: you can't move, you can't go down stairs, you
-can't escape down a hole. Magic cancellation (cloak of protection,
-amulet of guarding, etc.) reduces the sticking chance, one more
-reason to secure MC before browsing mid-game shops.
-
-**Eating the corpse** turns you into a pile of gold (or, while
-hallucinating, an orange) for 20 / 40 / 50 turns depending on
-size. Anything that tries to pick "you" up snaps the spell.
-
-#### A note on nymphs
-
-The `n` class (wood, water, mountain) doesn't want to kill you.
-She wants your inventory. Each successful claw hit lifts a random
-item from your pack, and the nymph then **teleports away** to a
-random spot on the same level. Your bag of holding, your amulet
-of reflection, a freshly-wished cloak of magic resistance: gone,
-across the map, often into a room you haven't explored. No
-dungeon horror story is more universal than "a nymph walked off
-with my bag of holding."
-
-**The second claw is seduction.** Nymphs get two attacks per
-turn, and the seduction half drains experience levels if the
-nymph is the opposite gender of your character. A successful
-seduction can also strip a ring or amulet you're wearing. A
-single bump can rob you, drop your XL, and snatch the cloak off
-your shoulders, all in one round.
-
-**Defenses.** Kill at range (darts, force bolt, a wand of
-anything). [Engrave **Elbereth**](#elbereth): nymphs respect it.
-Or drop your most irreplaceable items on the floor before
-approaching. Whatever's not in your pack can't be stolen.
-
-**Already robbed?** A satiated nymph stays on the same level
-unless she later falls through a trapdoor or wanders onto a
-staircase. Her corpse drops what she stole, so it's often worth
-sweeping the level you were on before moving on.
-
-**Never engage a nymph while carrying the Amulet of Yendor**
-during the Ascension Run. If she steals it, you abandon your
-climb to sweep the current level for her corpse, and the
-mysterious force does not pause while you search.
-
-#### A note on puddings
-
-Puddings are the dungeon's signature self-multiplying monsters,
-and their leftover globs are also among the best food you can
-find. The class lives in the mid-dungeon and Gehennom.
-**Brown and black puddings split when you hit them with an iron
-or metal weapon**: one becomes two, two becomes four, and your
-long-sword grinding session turns into a swarm. **Black pudding
-additionally corrodes your wielded weapon** on its passive
-return-hit, so each round of splitting is also a step toward
-your blade rusting away. Most beginners
-discover puddings the same way: by feeding them
-their best weapon and watching the population graph go up.
-
-**Defenses.** Melee with a **silver or wooden weapon** (silver
-dagger, elven dagger, athame, club, quarterstaff). These don't
-trigger the split. Mithril also bypasses the check. Wands of
-cold and fire kill puddings outright with no split, and most
-spells work too.
-
-**Gray ooze** doesn't split, but it rusts armor on a hit; don't
-engage in your starting iron suit if you can avoid it.
-
-**Eat the globs.** A pudding leaves a **glob** rather than a
-corpse, and the globs are some of the best food in the game. One
-difference between a glob and a corpse is that you cannot
-sacrifice globs at an altar, so puddings can't be farmed for
-offerings. The globs are slow to spoil (about 500 turns of
-edibility, twice a normal corpse) and packed with resistances. A
-brown-pudding glob grants **cold, shock, and poison resistance**
-over repeated eats; a gray-ooze glob grants
-**fire, cold, and poison resistance**; a black-pudding glob also
-grants **cold, shock, and poison resistance**. Brown pudding and
-gray ooze are *vegetarian*-safe; black pudding is not. Globs of
-the same color stack, and each bite is an independent roll for
-the resistance. A pile of brown-pudding globs is multiple
-chances at the one you don't yet have. If you can kill one pudding cleanly, the splitting
-becomes a *feature*: very divided pudding is another glob to
-eat. The full intrinsic table is in
-[Useful Corpse Effects](#useful-corpse-effects).
 
 #### A note on trolls
 
