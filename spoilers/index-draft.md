@@ -673,8 +673,8 @@ Not alphabetized; that's a final-pass concern.
 - "Alchemy smock, blast chance ~1 in 30" → #alchemy
 - "Cursed potion dip, guaranteed explosion" → #alchemy
 - "Levitation + Enlightenment dip = Gain level" → #alchemy
-- "Unicorn horn, dip table" → #unicorn-horn-interactions
-- "Unicorn horn, no longer a cure-all" → #unicorn-horn-interactions
+- "Unicorn horn, dip table" → #neutralizing-ailments
+- "Unicorn horn, no longer a cure-all" → #neutralizing-ailments
 
 ### Scrolls
 
