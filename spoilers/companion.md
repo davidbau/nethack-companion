@@ -2730,7 +2730,7 @@ hand jams the whole arrangement.
 Hitting at distance is the dungeon's most underrated advantage.
 Every turn a monster spends closing the gap is a turn you spend
 whittling its HP from a safer square. Rangers and Samurai live
-by their bows; any role can set a quiver and reach for `f`. The toolkit:
+by their bows, but any role can set a quiver and reach for `f`. The toolkit:
 
 **Fire, throw, and swap commands.**
 
