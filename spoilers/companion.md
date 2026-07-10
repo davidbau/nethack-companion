@@ -963,13 +963,13 @@ AC / attack details on every monster, see the
 
 | Sym    | Class                  | Notes                                                                      |
 | ------ | ---------------------- | -------------------------------------------------------------------------- |
-| [`a`](#ants-and-insects-a)    | [Ants](#ants-and-insects-a)      | Soldier ants are a frequent early-game killer: speed 18, two attacks per turn (bite + strength-draining sting), and they travel in packs. A wandering soldier-ant group on Dlvl 4 can end a careless run. Killer bees, giant ants, fire ants are all the same shape of problem. |
+| [`a`](#ants-and-insects-a)    | [Ants](#ants-and-insects-a)      | Soldier ants are a frequent early-game killer: speed 18, two attacks per turn (bite + strength-draining sting), and they travel in packs. Killer bees, giant ants, fire ants are all the same shape of problem. |
 | [`b`](#blobs-b)    | [Blobs](#blobs-b)     | Acidic or gelatinous. Acid blobs have no active attack. They only splash 1d8 acid back when *you* hit *them*, and the splash can corrode your weapon. Kill at range. Eat for [resistances](#useful-corpse-effects). |
 | [`B`](#bats-and-birds-b)    | [Bats](#bats-and-birds-b)      | The `B` class is **deceptively dangerous because of speed**. Bats and giant bats clock in at speed 22, nearly twice the player's base 12, so they get roughly two bites per one of your swings. Giant bats bite for 1d6 each; the math catches up fast. Vampire bats are still in the bat class but their second bite drains Strength (not levels). |
 | [`d`](#dogs-and-canines-d)    | [Dogs and other canines](#dogs-and-canines-d) | The `d` class covers your starting pet (little dog, kitten via cat-class) and the most numerous early-game predators. **Jackals** only bite for 1d2, but they spawn in packs and there are a *lot* of them on the upper levels — the single most common cause of death on the public server. Foxes bite for 1d3 and are faster (speed 15) but spawn alone. Coyotes, dingos, wolves get progressively worse. Tame `d` (your pet, larger dogs you've fed up) help fight everything else. |
 | [`e`](#eyes-and-spheres-e)    | [Eyes](#eyes-and-spheres-e)      | **Floating eyes paralyze on melee hit.** Never hit an `e` in melee. Use ranged attacks. (And eat them for telepathy.) Spheres (flaming/freezing/shocking) explode in a 3×3 area; also kill them at range. |
 | [`f`](#felines-f)    | [Cats](#felines-f)      | Like dogs, often starting pets. Felines can be tamed with tripe.                        |
-| [`G`](#gnomes-g)    | [Gnomes](#gnomes-g)    | The standard inhabitants of the Gnomish Mines. Individually weak, but the Mines have a lot of them, and mid-game players who treat the Mines as a milk run walk into a four-on-one with full-strength enemies. If you're a gnome yourself, most of them are peaceful. |
+| [`G`](#gnomes-g)    | [Gnomes](#gnomes-g)    | The standard inhabitants of the Gnomish Mines. Individually weak, but the Mines have a lot of them. If you're a gnome yourself, most of them are peaceful. |
 | [`h`](#humanoids-h)    | [Humanoids](#humanoids-h) | Dwarves, bugbears, mind flayers. Wide range of difficulty. Dwarves in particular are dangerously underrated: they hit harder than they look, and they're armored. Don't trade blows with one in melee until your AC is solid. |
 | [`i`](#imps-and-minor-demons-i)    | [Imps](#imps-and-minor-demons-i)      | Mostly minor pests, but a homunculus's bite can put you to sleep. Without sleep resistance, fight at range. |
 | [`j`](#jellies-j)    | [Jellies](#jellies-j)   | Spotted and ochre jellies. Passive acid damage on melee.                                |
@@ -1438,8 +1438,7 @@ burn longer than tallow but either works, and mixing types is fine.
 One in seven times, however, Minetown generates as **Orcish Town**:
 an overrun settlement with no shops, no priest, and iron bars blocking
 the entrances. There's still an unaligned altar, but you won't get
-any shopping done. If you were counting on Minetown for early commerce,
-this is a rude surprise.
+any shopping done.
 
 Watch out for the Minetown watch. The guards are
 peaceful unless you steal from a shop or attack a peaceful creature.
@@ -3011,8 +3010,7 @@ later on.
 
 **Ants and other pack travelers** (`a`). Soldier ants are
 speed 18 with two attacks (bite plus a Strength-draining
-sting) and travel in groups. A wandering soldier-ant pack
-on Dlvl 4 can end a careless run. Killer bees, giant ants,
+sting) and travel in groups. Killer bees, giant ants,
 and fire ants are the same shape of problem. Treat any
 chittering or buzzing on an unexplored level as a reason
 to back up and find a chokepoint before the pack closes.
@@ -3056,7 +3054,6 @@ reach you.
 
 **Major demons gate in more major demons.** Every melee hit from
 a major demon has roughly a 1-in-13 chance of summoning another.
-A single bad fight in Gehennom can cascade into an arena.
 
 #### Deadly Mistakes
 
@@ -3247,9 +3244,7 @@ or metal weapon**: one becomes two, two becomes four, and your
 long-sword grinding session turns into a swarm. **Black pudding
 additionally corrodes your wielded weapon** on its passive
 return-hit, so each round of splitting is also a step toward
-your blade rusting away. Most beginners
-discover puddings the same way: by feeding them
-their best weapon and watching the population graph go up.
+your blade rusting away.
 
 **Defenses.** Melee with a **silver or wooden weapon** (silver
 dagger, elven dagger, athame, club, quarterstaff). These don't
@@ -3340,10 +3335,7 @@ The `T` class doesn't stay dead. After you kill a troll, its
 corpse sits on the floor for a few hidden turns and then stands
 back up at full HP, fresh and angry. A pile of corpses after a
 five-troll fight is a timer, not a kill count. Walk away for
-twenty turns and the same five trolls are coming back. The
-veteran's lament *"I beat the trolls, I got cocky, the trolls
-beat me"* is one of the most repeated stories on the public
-boards.
+twenty turns and the same five trolls are coming back.
 
 **Stopping the revival.** The simplest cure is to eat the corpse,
 since trolls are safe to eat for everyone but vegetarians. You
@@ -5392,10 +5384,7 @@ identify are the precious last resort.
 - sprig of wolfsbane cures lycanthropy on eat via you_unwere (eat.c:2513-2516)
 -->
 
-Of all the things that kill adventurers in the Mazes of Menace (the
-dragons, the liches, the cockatrices, the inexplicable decision to
-kick a sink), none is quite as embarrassing as starving to death
-while carrying forty thousand gold pieces. Hunger is the dungeon's
+Hunger is the dungeon's
 most persistent clock: every turn you spend costs nutrition, and
 when the tank hits empty, you start fainting. Keep fainting without
 eating and you eventually starve, or get killed by whatever was in
@@ -6329,9 +6318,7 @@ catastrophic if you forget you're wearing it. But for a
 chaotic player who needs high-difficulty sacrifice fodder for the next
 artifact gift, deliberately wearing the ring to force harder spawns
 (then removing it) is a calculated risk with an actual payoff. The key
-word is "deliberately." The ring is auto-cursed 90% of the time. If it
-goes on and won't come off, the fact that you're now generating liches
-on dungeon level 8 is no longer a feature.
+word is "deliberately." The ring is auto-cursed 90% of the time.
 
 **The rings that matter most:** Free action is one of the
 best rings in the game: paralysis is death in the late game, and
@@ -6941,8 +6928,7 @@ can do:
 The **trap boots** generate cursed 9 times in 10:
 
 - **Levitation boots** float you constantly and refuse to come
-  off if cursed. A cursed pair worn over a moat is a classic
-  Yet Another Stupid Death.
+  off if cursed.
 - **Fumble boots** make you fumble every other turn, which in
   melee means dropping your weapon mid-swing.
 
@@ -7426,8 +7412,7 @@ of the dungeon's quieter ways to kill you.
   (rings of teleportation, rings of polymorph, amulets of
   strangulation; anything the dungeon thinks is funny)
 - **Bones inheritance.** Items on a bones level have an 80% chance
-  of being cursed. That tempting armor on the dead adventurer's
-  corpse? Probably trapped
+  of being cursed.
 - **Monster interference.** Certain monsters can curse items in
   your inventory
 - **Confused remove curse.** Reading it confused has a chance of
@@ -7487,8 +7472,7 @@ though it would normally refuse to come off. From there, dip in
 holy water and re-wear. See [Polymorph as a Tool](#polymorph-as-a-tool).
 
 Most veterans carry holy water and a scroll of remove curse at all
-times. The first time you find yourself stuck in cursed levitation
-boots over a moat is the moment you'll see why.
+times.
 
 ---
 
@@ -9556,8 +9540,7 @@ becomes a bones level), and a wish for an Amulet of Yendor
 silently substitutes a fake too. If you didn't pick yours up off
 the High Priest, you don't have the real one.
 
-The Ascension Run is the victory lap that keeps killing even the
-strongest adventurers. You have the most powerful artifact in the
+You have the most powerful artifact in the
 dungeon in your pack, every covetous monster in the Mazes knows
 it, and the dungeon itself is fighting to keep you from leaving.
 
@@ -12331,15 +12314,15 @@ Every monster you might meet. Grouped by ASCII symbol so you can flip to the rig
 - Killer bee is G_LGROUP; others are smaller groups.
 -->
 
-Insects, often in groups. The soldier ant is the early game's infamous killer: its poison sting can two-shot a low-level hero. Killer bees swarm; the queen bee in a beehive room is tough on her own.
+Insects, often in groups. The soldier ant's poison sting drains Strength; killer bees swarm; the queen bee in a beehive room is tough on her own.
 
 ::: dense-table
 
 | Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |
 |----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|
 | giant ant | brown | 2 | 18 | 3 | 0 | bite 1d4 |  |
-| killer bee | yellow | 1 | 18 | -1 | 0 | sting 1d3 poison | flies, poisonous-corpse, pois-res. Stings carry poison; a pack can wipe out an unprepared early hero. |
-| soldier ant | blue | 3 | 18 | 3 | 0 | bite 2d4 · sting 3d4 poison | poisonous-corpse, pois-res. Poison sting. The most lethal `a` you'll meet in the early dungeon. |
+| killer bee | yellow | 1 | 18 | -1 | 0 | sting 1d3 poison | flies, poisonous-corpse, pois-res. Stings carry poison. |
+| soldier ant | blue | 3 | 18 | 3 | 0 | bite 2d4 · sting 3d4 poison | poisonous-corpse, pois-res. Poison sting. |
 | fire ant | red | 3 | 18 | 3 | 10 | bite 2d4 · bite 2d4 fire | fire-res. |
 | giant beetle | black | 5 | 6 | 4 | 0 | bite 3d6 | poisonous-corpse, pois-res. |
 | queen bee | magenta | 9 | 24 | -4 | 0 | sting 1d8 poison | flies, poisonous-corpse, pois-res. |
@@ -12519,7 +12502,7 @@ At night, their touch strips a random intrinsic (fire resistance, telepathy, etc
 - Dwarf race peacefulness for Dwarf PCs via race_peaceful() at makemon.c:2283.
 -->
 
-Dwarves and similar. Dwarves carry better-than-average loot (weapons, armor, pick-axes) and can wreck low-level heroes.
+Dwarves and similar. Dwarves carry better-than-average loot (weapons, armor, pick-axes).
 
 ::: dense-table
 
@@ -12531,7 +12514,7 @@ Dwarves and similar. Dwarves carry better-than-average loot (weapons, armor, pic
 | dwarf lord | blue | 4 | 6 | 10 | 10 | weapon 2d4 · weapon 2d4 | tunnels. |
 | dwarf king | magenta | 6 | 6 | 10 | 20 | weapon 2d6 · weapon 2d6 | tunnels. |
 | mind flayer | bright-magenta | 9 | 12 | 5 | 90 | weapon 1d4 · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int | flies, sees-invis. Tentacle attacks drain Int; if Int hits 3 you die. Wear any helmet (blocks 7/8 of tentacles) or kill from range. |
-| master mind flayer | bright-magenta | 13 | 12 | 0 | 90 | weapon 1d8 · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int | flies, sees-invis. Five tentacles per turn. Catastrophic adjacent without a helmet. Any helmet blocks 7/8 of tentacles. |
+| master mind flayer | bright-magenta | 13 | 12 | 0 | 90 | weapon 1d8 · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int · tentacle 2d1 drain-Int | flies, sees-invis. Five tentacles per turn. Any helmet blocks 7/8 of tentacles. |
 
 :::
 
@@ -13212,7 +13195,7 @@ Boulder throwers. Storm / fire / frost giants match the dragon elements; titans 
 - Deferred "vorpal jabberwock" at monsters.h:1816-1824 is wrapped in `#if 0` and correctly excluded.
 -->
 
-The monster from Lewis Carroll's *Jabberwocky* ("O frabjous day! Callooh! Callay!"). Tough, hits hard, and moves at player baseline speed: you can't simply walk away. Free XP if you're set up for the fight; lethal if you walk into one early. Vorpal Blade was made for beheading it.
+The monster from Lewis Carroll's *Jabberwocky* ("O frabjous day! Callooh! Callay!"). Tough, hits hard, and moves at player baseline speed: you can't simply walk away. Free XP if you're set up for the fight. Vorpal Blade was made for beheading it.
 
 ::: dense-table
 
@@ -13385,8 +13368,7 @@ All puddings and oozes are amorphous, mindless, cold-resistant, poison-resistant
 
 The `Q` class is two creatures, both with random claw effects. The
 **quantum mechanic** teleports you on a hit: the annoyance is the
-lost position more than the damage, but in dangerous neighbourhoods
-a random teleport CAN kill. The **genetic engineer** polymorphs
+lost position more than the damage. The **genetic engineer** polymorphs
 you: unless you have *Unchanging* or magic resistance, one claw
 and you become something else.
 
@@ -13549,7 +13531,7 @@ All wraiths are undead and follow you up and down stairs.
 - Xorn corpse grants temporary stone resistance.
 -->
 
-D&D's three-armed, three-eyed creatures from the Elemental Plane of Earth. They **phase through walls** (no rubble, no dig) and eat metal items off the floor, including the orcish dagger you were about to pick up. Their claws and bite are physical only, so worn armor and wielded weapons aren't directly at risk, but they hit hard for their level. The corpse grants temporary stoning resistance.
+D&D's three-armed, three-eyed creatures from the Elemental Plane of Earth. They **phase through walls** (no rubble, no dig) and eat metal items off the floor. Their claws and bite are physical only, so worn armor and wielded weapons aren't directly at risk, but they hit hard for their level. The corpse grants temporary stoning resistance.
 
 ::: dense-table
 
