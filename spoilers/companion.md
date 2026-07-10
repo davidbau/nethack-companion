@@ -2549,7 +2549,7 @@ blades for kobolds, two-handers for ogres. Added to base:
 
 This narrows the gap between two-handed builds and dual-wielding
 considerably. A Barbarian with a two-handed sword and respectable
-Strength isn't just giving up a shield: they're dealing measurably more damage per swing than a
+Strength deals measurably more damage per swing than a
 comparable one-handed build. If you've been avoiding
 two-handed weapons because the math didn't add up, run those numbers
 again.
@@ -2593,9 +2593,8 @@ for the full procedure.
 
 **Changing armor takes turns and layers in order.** You wear
 armor with `W` and take it off with `T`. Shirt goes
-on first, body suit second, cloak last. To put on a shirt, you
-must first remove your cloak and body suit; to put on a body
-suit, you must first remove your cloak. A metal body suit takes
+on first, body suit second, cloak last, so reaching an inner
+piece means shedding what's over it. A metal body suit takes
 **5 turns** to don or remove; leather 3, mithril 1; cloaks,
 helmets, gloves, boots, and shields take 1 turn each; the shirt
 is instant. A full Hawaiian-shirt-to-cloak swap can mean six
@@ -2615,11 +2614,10 @@ at speed 36, the ratio is 3.0 unboosted and 1.8 even with boots,
 still hopeless on foot. Ranged or skip. A ratio above 1.0 is a
 fight you lose to attrition unless you can drop the monster in
 your opening burst; a ratio below 1.0 is kiteable, so back into
-a corridor and strike between its steps. When the ratio is above 1.0
-and you cannot land that opening burst, do not just turn and run in the
-open, because a faster monster catches up and keeps hitting. Reduce how
-many can reach you instead: fall back to a doorway or corridor, close a
-door on the pack, or take the stairs.
+a corridor and strike between its steps. If you can't drop a
+faster monster, don't run in the open, since it only catches up
+and keeps hitting. Reduce how many can reach you instead: a
+doorway, a closed door, or the stairs.
 
 **Under the hood.** Your base speed is **12**, and so is the
 cost of any action. Each creature builds up a private counter;
@@ -2886,21 +2884,18 @@ hypocrite"). Elbereth is a rest stop, not a firing position.
 
 ##### Edge cases worth knowing
 
-**Ranged attackers retreat.** Monsters with ranged attacks
-(archers, spellcasters, anything that can hurt you from a
-distance) now back away when you close to melee
-range. Walking toward a centaur archer to neutralize its bow
+**Ranged attackers retreat.** Monsters with ranged attacks (archers, spellcasters) now back
+away when you close to melee range. Walking toward a centaur archer to neutralize its bow
 no longer works; it will back up and keep shooting.
 Cut off their retreat with corners and narrow passages, bring
 ranged options of your own, or use a wand of teleportation to skip
 past the dance. This
-change also means monster spellcasters are more dangerous
-than they used to be: they will maintain the range they need
-to cast while you struggle to close.
+change also makes monster spellcasters more dangerous: they
+maintain the range they need to cast while you struggle to close.
 
-**Cornered scared monsters fight.** Elbereth still works, and
-the engrave-and-regenerate tactic still works, but only when
-the monster has somewhere to go. A frightened monster that has
+**Cornered scared monsters fight.** Elbereth and the
+engrave-and-regenerate tactic still work, but only when the
+monster has somewhere to go. A frightened monster that has
 nowhere to flee will now turn and fight rather than stand
 helplessly while you recover. If you have carved
 [Elbereth](#elbereth) in a corridor and then backed a monster
@@ -2965,16 +2960,15 @@ before pushing deeper.
 
 **On pacing.** A rough rule of thumb: your experience level should
 be near the dungeon level you're standing on.
-Going down stairs at experience level 4 onto Dungeon level 12 is
-how you meet things you can't outrun and can't outfight. The
-dungeon doesn't wait. Every step deeper raises the monster
-difficulty roll, and a fragile character with 30 HP isn't going
-to soak even a single bad encounter. There's no prize for getting
-to [Sokoban](#sokoban) quickly. Clear, identify, level up, then descend.
-Take the stairs at high HP and with a way out already in your pack, such
-as a scroll or wand of teleportation, not the moment the level is clear.
-Most stair deaths are heroes who dropped onto a fresh level already hurt,
-with no escape ready.
+Descending at experience level 4 onto Dungeon level 12 drops you
+among things you can't outrun or outfight. Every step deeper
+raises the monster difficulty roll, and a fragile character with
+30 HP won't soak even one bad encounter. There's no prize for
+reaching [Sokoban](#sokoban) quickly: clear, identify, level up,
+then descend, at high HP and with a way out already in your pack
+(a scroll or wand of teleportation), not the moment the level is
+clear. Most stair deaths are heroes who dropped onto a fresh level
+already hurt, with no escape ready.
 
 #### Common Combat Deaths
 
@@ -2990,10 +2984,9 @@ ranged attacks, or look for natural pinch points where the cave
 walls narrow. Dwarves hit harder than gnomes, and gnomish
 wizards (the first spellcasting enemy you meet) can sleep you,
 confuse you, and worse. Lords and kings appear deeper, with
-differently colored `G` and `h` glyphs. Take a look at the first
-Mines level, but it is usually wise to come back later after you
-are at XL 5 or better, have [sleep resistance](#damage-resistances), and have AC at zero
-or below.
+differently colored `G` and `h` glyphs. Scout the first Mines
+level, but come back later once you are at XL 5 or better, have
+[sleep resistance](#damage-resistances), and have AC at zero or below.
 
 **Sleep without resistance is a near-instadeath.** A homunculus
 (`i`) bite, a gnomish wizard's sleep spell, or later an orange dragon
@@ -3137,11 +3130,9 @@ The median death is a preventable swarm of jackals on Dlvl 3.
 
 The `n` class (wood, water, mountain) doesn't want to kill you.
 She wants your inventory. In the early game a nymph pulls worn
-armor right off your body and teleports away with it, undoing the
-AC you've assembled. Each
-successful claw hit also lifts a random item from your pack, and
-the nymph then **teleports away** to a random spot on the same
-level. Your bag of holding, your amulet
+armor right off your body, undoing the AC you've assembled, and
+each successful claw hit also lifts a random item from your pack.
+Then she **teleports away** to a random spot on the same level. Your bag of holding, your amulet
 of reflection, a freshly-wished cloak of magic resistance: gone,
 across the map, often into a room you haven't explored. Few
 monsters set an early character back this hard, and it takes only
@@ -3160,7 +3151,7 @@ approaching. Whatever's not in your pack can't be stolen. Since
 she does no HP damage, a character stripped to nothing, no worn
 gear, empty pack, can even fight a nymph bare-handed in perfect
 safety. It won't stop her blinking away between hits, but she has
-nothing to take and no way to hurt you.
+nothing left to take.
 
 **Already robbed?** She keeps what she took until she dies, so
 you have to hunt her down and kill her: the loot drops from her
@@ -3188,8 +3179,8 @@ descend.
 
 **The visual tell.** A mimic appearing as a generic "strange
 object" renders on the map as `]`, a mirror of `[`, the armor
-class. No real item ever displays as `]`. A `]` on a shop floor
-or anywhere else is always a mimic.
+class. No real item ever displays as `]`, so a `]` anywhere is
+always a mimic.
 
 **How to uncover one safely.** Search the adjacent square (`s`)
 reveals concealed mimics like it reveals traps. Throw a cheap item
@@ -3209,10 +3200,9 @@ the upper levels is a (still very dangerous) small one.
 can always step away). A **large or giant mimic glues you in
 place** on a successful claw hit: you can't move, take stairs, or
 drop through a hole. And once stuck you have only about a
-**1-in-13 chance each turn** to pull free while it's awake, so
-don't count on wriggling loose. Kill it (it's slow), teleport out,
-or put it to sleep first. The easy, universal protection is to
-avoid the hold in the first place: since it only lands from melee,
+**1-in-13 chance each turn** to pull free while it's awake. Kill
+it (it's slow), teleport out, or put it to sleep first. The best
+protection is to avoid the hold: since it only lands from melee,
 **searching (`s`) as you move through a shop** reveals a large or
 giant mimic before you step next to it, and one you've spotted can
 never grab you.
@@ -3229,14 +3219,14 @@ danger. You then transform into the beast at random, roughly every
 60 to 80 turns and more often at night. Each shift forces you out
 of your armor, a werewolf destroys your body armor, cloak, and
 shirt, and drops you into a weak beast body. You revert on your
-own, but a transform in the middle of a fight leaves you stripped
-of armor at the worst possible moment.
+own, but a mid-fight transform leaves you stripped at the worst
+possible moment.
 
 **Curing it.** Quaff **holy water**, `#pray`, or eat a **sprig of
 wolfsbane**. Summon a pet army first, though: a few turns in beast
 form spent on `#monster` call up wolves (or rats or jackals) that
-**stay tame after you cure**, a free pet pack a polymorph trap can
-later grow into something fierce.
+**stay tame after you cure**, a free pack you can later grow into
+something fiercer at a polymorph trap.
 
 A potion of polymorph or a polytrap, while you're infected, turns
 you into your *were-form* rather than a random monster, and
@@ -3264,10 +3254,9 @@ spells work too.
 engage in your starting iron suit if you can avoid it.
 
 **Eat the globs.** A pudding leaves a **glob** rather than a
-corpse, and the globs are some of the best food in the game. One
-difference between a glob and a corpse is that you cannot
-sacrifice globs at an altar, so puddings can't be farmed for
-offerings. The globs are slow to spoil (about 500 turns of
+corpse, and the globs are some of the best food in the game. Unlike
+corpses, globs can't be sacrificed at an altar, so puddings can't
+be farmed for offerings. The globs are slow to spoil (about 500 turns of
 edibility, twice a normal corpse) and packed with resistances. A
 brown-pudding glob grants **cold, shock, and poison resistance**
 over repeated eats; a gray-ooze glob grants
@@ -3410,8 +3399,8 @@ HP, and extra max Pw.
 **Mechanics.** The demon must be adjacent and not on cooldown. It
 strips off your worn armor one piece at a time (cloak, suit,
 boots, gloves, shield, helm, shirt). The items are unequipped to
-your inventory, not taken or dropped on the floor; the only thing
-the strip costs you is the slot for the rest of the encounter.
+your inventory, not taken or dropped on the floor; the strip only
+costs you the slot for the rest of the encounter.
 You get a yes/no prompt before each piece comes off with
 probability Cha/20 (so Cha 18 prompts about 9 times in 10; Cha 10
 about half the time). **If you're still wearing a body armor or
@@ -3540,9 +3529,9 @@ but the subtler danger is that bones-level *monsters* can be far
 above the level's normal difficulty. The previous adventurer may
 have died with a master mind flayer adjacent, or a summoned demon
 nearby, or in monster form. Those creatures stick around. Treat
-any above-depth monster on a bones level as evidence to retreat,
-not to engage. If your character isn't ready for the monster,
-leave the level and come back when you are.
+any above-depth monster on a bones level as a reason to retreat,
+not engage: if you aren't ready for it, leave and come back when
+you are.
 
 **Opting out.** Set `OPTIONS=bones=false` in your rcfile if you
 want a bones-free run. This blocks both *creating* bones (your
@@ -3585,9 +3574,8 @@ lethal damage too.
 **Defense:** The first time any given monster zaps a beam wand
 (death, sleep, fire, cold, lightning, magic missile) at you, the
 shot misses. If you can see the monster, the wand
-identifies itself in the same moment, so now you know what was
-just aimed at you and you have a turn to do something about it
-before the next zap connects.
+identifies itself in the same moment, so you know what was aimed
+at you and have a turn to react before the next zap connects.
 
 #### Choking
 <!-- audit
@@ -3627,15 +3615,13 @@ supply, starvation is a real threat.
 
 **Defenses:** Eat corpses promptly. Pray when your god is willing
 and you are Weak or Fainting (prayer cures hunger). Carry food
-rations, tripe rations, or lembas wafers. Don't let nutrition
-management slide.
+rations, tripe rations, or lembas wafers.
 
 **Famine**, one of the three Riders in the endgame, will kill you
-quickly through starvation by draining 40–80 nutrition per
-hit, without any extrinsic that blocks it. At the end of the
-game, be sure to enter the Astral Plane Satiated and carry a
-stack of food rations through the fight, or you will be Faint
-soon after Famine hits.
+quickly through starvation by draining 40–80 nutrition per hit,
+with no extrinsic to block it. Enter the Astral Plane Satiated and
+carry a stack of food rations through the fight, or you will be
+Faint soon after Famine hits.
 
 #### Deadly Poison
 <!-- audit
@@ -4147,10 +4133,9 @@ be true:
   conduct with your god, desecrating altars).
 - The **prayer timeout** must have expired. After a successful
   prayer, you must wait before praying again. The timeout averages
-  around 450 turns but can range from under 200 to over 700 due to
-  the random formula used. In a genuine emergency (HP critical,
-  starving), there is some forgiveness if your timeout is close to
-  expiring.
+  around 450 turns but ranges from under 200 to over 700. In a
+  genuine emergency (HP critical, starving), there is some
+  forgiveness if your timeout is close to expiring.
 - You must not be **polymorphed** into a demon or undead while
   worshipping a non-chaotic god.
 - You must not be in **[Gehennom](#gehennom)** (unless you worship Moloch, which
@@ -4166,9 +4151,9 @@ transgressions can trigger lightning or disintegration, both fatal.
 
 **Practical guidance.** Pray only when you're about to die and have
 no other option: starvation, stoning, illness, critically low HP.
-Don't waste prayers on minor inconveniences, and first run the
-checklist above (alignment non-negative, timeout expired, no
-cross-aligned altar). If any answer is no, find another way.
+First run the checklist above (alignment non-negative, timeout
+expired, no cross-aligned altar). If any answer is no, find another
+way.
 
 **Prayer timeout tracking.** The game doesn't show your timeout,
 but you can estimate it: count roughly 500 turns from your last
@@ -4242,9 +4227,7 @@ lock in that bias before the random pool dilutes it.
 
 Worthiness floor: the gods filter the artifact pool by the
 sacrifice's value, so a kobold corpse can roll for a gift but
-nothing interesting will come of it. Fresh corpses of
-appropriately challenging monsters are what advances your
-standing.
+nothing interesting will come of it.
 
 #### Donating to Priests
 
@@ -4276,8 +4259,7 @@ If you walk in carrying far more gold than the baseline, the
 priest scales the ask up to match, roughly a third of your purse
 for clairvoyance, two-thirds for protection. A rich hero who hands
 over only the baseline amount will be politely thanked but not
-blessed. The prompt always tells you the exact figure, so trust
-it over any rule of thumb.
+blessed.
 
 **The cheapskate penalty.** If you offer noticeably less than
 what's expected while clearly able to afford more, the priest
@@ -4480,9 +4462,8 @@ A well-fed pet earns its keep in several ways:
 **Training apport (fetching).** Hand-feeding your pet builds a
 score called apport. A pet with high apport will pick up nearby
 items and bring them to you. This is what makes pet-shoplifting
-practical: once your pet returns dropped items reliably, you can
-drop something at the shop counter, walk out, and trust the pet
-to follow with the goods. Pair it with a magic whistle (below) to
+practical: drop something at the shop counter, walk out, and trust
+the pet to follow with the goods. Pair it with a magic whistle (below) to
 yank a loaded pet to your side from anywhere on the level.
 
 **Upgrading your pet.** Three moves matter most.
