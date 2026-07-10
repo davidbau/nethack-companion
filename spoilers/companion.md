@@ -2615,7 +2615,11 @@ at speed 36, the ratio is 3.0 unboosted and 1.8 even with boots,
 still hopeless on foot. Ranged or skip. A ratio above 1.0 is a
 fight you lose to attrition unless you can drop the monster in
 your opening burst; a ratio below 1.0 is kiteable, so back into
-a corridor and strike between its steps.
+a corridor and strike between its steps. When the ratio is above 1.0
+and you cannot land that opening burst, do not just turn and run in the
+open, because a faster monster catches up and keeps hitting. Reduce how
+many can reach you instead: fall back to a doorway or corridor, close a
+door on the pack, or take the stairs.
 
 **Under the hood.** Your base speed is **12**, and so is the
 cost of any action. Each creature builds up a private counter;
@@ -2967,6 +2971,10 @@ dungeon doesn't wait. Every step deeper raises the monster
 difficulty roll, and a fragile character with 30 HP isn't going
 to soak even a single bad encounter. There's no prize for getting
 to [Sokoban](#sokoban) quickly. Clear, identify, level up, then descend.
+Take the stairs at high HP and with a way out already in your pack, such
+as a scroll or wand of teleportation, not the moment the level is clear.
+Most stair deaths are heroes who dropped onto a fresh level already hurt,
+with no escape ready.
 
 #### Common Combat Deaths
 
@@ -7519,6 +7527,13 @@ kits, skill caps, intrinsic ladders, and restrictions add up to
 thirteen distinct games inside the same dungeon. The sections
 that follow give role-specific advice for each.
 
+One rule cuts across the fragile roles (Wizard, Priest, Healer,
+Tourist, Archeologist): treat your class tool as your primary weapon
+from the start. Your to-hit and damage cannot win a melee trade at
+depth, so open a fight with force bolt, a sleep wand, the camera, holy
+water, or the pick-axe, and save your blade for what is already nearly
+dead.
+
 #### Archeologist
 
 Indiana Jones, basically. You start with a bullwhip, a pickaxe, a
@@ -8356,6 +8371,13 @@ press `#enhance` and realize the broadsword they've been swinging
 for several levels is finally ready to graduate from Basic to
 Skilled. Weapons, fighting styles, and spell schools each track
 their own proficiency, and you train them one slot at a time.
+
+The practical consequence is to pick one weapon class early and stay
+with it. Skill compounds only if you stop switching, and a weapon you
+are Skilled with (which adds 2 to your to-hit) out-fights a higher-base
+one you are Unskilled with (which subtracts 4), so a shinier sword you
+have no training in is usually a downgrade. Chasing every better weapon
+you find leaves you Unskilled in all of them.
 
 #### The Skill Ladder
 
