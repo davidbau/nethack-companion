@@ -5731,8 +5731,10 @@ for a single consumed bottle, so one holy water seeds many more.
 
 Short on water? Make your own. Any potion but acid reduces toward
 plain water each time it gets wet, so two dips finish the job: the
-first dilutes it, the second waters it down. Do this at a fountain, where you stand safely on the tile to dip. Unwanted
-potions become holy-water feedstock instead of clutter.
+first dilutes it, the second waters it down. A dip treats a whole
+*stack* at once, so a pile of unwanted potions waters down together.
+Do this at a fountain, where you stand safely on the tile to dip.
+Unwanted potions become holy-water feedstock instead of clutter.
 
 []{#potion-gain-level}
 **Gain level.** Raises your experience level by 1. Useful for
@@ -5776,13 +5778,16 @@ that feeds the main healing chain. If you find a stack of each, this
 is a way to manufacture gain-level potions rather than wait for the
 dungeon to drop them.
 
-**Bulk dilution no longer works.** The old alchemy
-trick (dilute a large stack of potions by dipping them in water, then
-convert the whole diluted stack at once) no longer works. Current
-editions cap diluted dips at two potions per operation. The chain from
-healing up to gain ability is still there; you just do it in small batches
-with undiluted inputs. Think of it as artisanal alchemy rather than
-industrial production.
+**Chained alchemy climbs two at a time.** Alchemy upgrades a stack
+of potions into a better one, and the healing chain
+(healing → extra healing → full healing) is the classic run. A dip
+transmutes a good batch of *fresh* potions at once, up to seven or
+eight, but everything alchemy produces comes out *diluted*, and a
+diluted stack converts only two per dip. So the first step of a chain
+can be a big batch, while every step after works on the diluted output
+of the last and moves just two potions at a time. Diluted potions
+work fine (a home-brewed full healing heals exactly like a found
+one); the dilution only limits chained alchemy.
 
 Alchemy carries an explosion risk: roughly 10% on any non-water
 combination. An alchemy smock (if you find one) reduces this to
