@@ -220,156 +220,210 @@ like a recommendation for a first expedition, read on.
 
 #### The Roles
 
-There are thirteen roles available to adventurers. Each comes with
-different starting equipment, different intrinsic abilities gained at
-various experience levels, and a different quest to complete in the
-mid-game.
+There are thirteen roles, each with its own starting kit, intrinsic
+ladder, skill caps, and mid-game quest, which add up to thirteen
+distinct games inside the same dungeon. What a Knight does in full
+armor on horseback a Monk cannot do at all.
 
-**Archeologist.** You start with a bullwhip, a pickaxe, a tinning
-kit, a touchstone, and a fedora. Indiana Jones, basically. The
-pickaxe is your workhorse: it lets you dig through walls and
-create your own escape routes from the very first level. The
-tinning kit lets you preserve corpses for later, and the
-touchstone is your gem-identification edge: rub a gem on it and
-the stone shows whether it's the real thing or worthless glass.
-Useful for lucky unicorn gifts and shop pricing. Archeologists
-are capable and flexible, though a bit fragile in early combat.
-*Alignment: Lawful or Neutral.*
+One rule cuts across the **fragile roles** (Wizard, Priest, Healer,
+Tourist, Archeologist): treat your class tool as your primary weapon
+from the start. Your to-hit and damage can't win a melee trade at
+depth, so open a fight with force bolt, a sleep wand, the camera,
+holy water, or the pick-axe, and save your blade for what's already
+nearly dead.
 
-**Barbarian.** You start strong. Literally. A two-handed sword and
-good starting strength mean you can hack through early monsters with
-ease. The downside is that two-handed weapons prevent you from using a
-shield, and Barbarians are not known for their finesse. You do get
-[poison resistance](#damage-resistances) from the start, which saves you from several common
-early deaths. A straightforward role for players who like straightforward
-solutions. *Alignment: Neutral or Chaotic.*
+**Archeologist** *(Lawful or Neutral).* Indiana Jones: a bullwhip, a
+**pickaxe**, a tinning kit, a **touchstone**, and a fedora, a kit for
+exploration over combat, with modest Str and HP that make the first
+ten levels a **stealth** game (Searching from XL 1, Stealth XL 5,
+speed XL 10). The pickaxe is mobility no other role has: it skips
+locked doors, chips a diagonal exit from a surrounded room, escapes
+upward when cornered, and digs the straight downward shaft that ends
+most ascension runs. Your uncursed **touchstone** works as if
+blessed, so rub any gem to tell real from glass, and **scrolls
+auto-identify when you pick them up** (except blank paper). Pick-axe
+and saber cap Expert, and **Divination hits Expert** with magic
+mapping as your special spell. *Pivot:* by mid-game your Wisdom and
+Intelligence reach Wizard-tier casting, and you become a caster who
+happens to swing a saber. *Avoid* breaking historic statues (−1
+alignment each; you alone recognize them) and getting Burdened.
 
-**Cave Dweller.** You start primitive but tough, with a club, a
-sling, and a pile of flint stones for it. You gain speed by
-mid-game and your hit dice are generous. The Cave Dweller's
-simplicity is a virtue: fewer tools, fewer things to manage.
-*Alignment: Lawful or Neutral.*
+**Barbarian** *(Neutral or Chaotic).* Hit the thing in front of you.
+You start with **[poison resistance](#damage-resistances)**, good
+Strength, a two-handed sword or battle-axe, and an off-hand short
+sword; the early dungeon is easy when you can carve through it without
+thinking. Intrinsic speed comes at XL 7, Stealth at XL 15. The twin
+starting weapons set up a **two-weapon** transition: find a long
+sword, drop the short sword for it, and dual-wield for mauling damage.
+Two-handed sword (or Axe), Short Sword, and Hammer cap Expert, and
+**bare-handed combat reaches Master**, so a disarming trap doesn't
+leave you helpless. *Pivot:* around XL 12–15 you'll want **magic
+resistance** and, lacking spell skill, have only armor and artifact
+routes, so aim for gray dragon scale mail or crown for Stormbringer if
+Chaotic. *Avoid* fights you can't escape (no escape spells, no
+intrinsic teleport, so it's fight-your-way-out or pray); don't skip
+quaff-tests, since poison resistance from turn 1 makes blind quaffs
+unusually safe.
 
-**Healer.** You begin with a stethoscope, four potions of healing
-and four of extra healing, a **wand of sleep**, three **blessed
-spellbooks** (healing, extra healing, stone-to-flesh, all
-guaranteed to read), and poison resistance. The stethoscope lets
-you check a monster's hit points and your own internal state; the
-wand of sleep makes Healers a stronger early-game combatant than
-the medical kit suggests. You're also **immune to sickness**, so
-unknown potions of sickness become a free quaff-test (dip a
-unicorn horn into them to convert to fruit juice).
-*Alignment: Neutral.*
+**Cave Dweller** *(Lawful or Neutral).* Primitive but tough: a club, a
+sling, a pile of flint stones, and generous HP growth, the simplest
+role in the game, with no spellbooks or language quirks. It gets **no
+early resistances at all** (speed XL 7, Warning XL 15), so you earn
+every resistance one corpse at a time, eating fire ants, killer bees,
+giants, and the right molds; an amulet of life saving matters more
+here than for any other role. Club, mace, quarterstaff, spear, and
+sling all cap Expert, and like the Barbarian your **bare-handed combat
+reaches Master**. *Avoid* leaning on Intelligence: the lowest Int cap
+and weakest spell access in the game mean you read scrolls rather than
+cast, so pick dwarf or human for the heaviest melee.
 
-**Knight.** You start with a saddled pony pet, a +1 long sword,
-and a +1 lance among your gear. The pony is a decent combatant
-early on and the basis of your unique trick: jousting from
-horseback with the lance is devastating when it connects, though
-the lance is largely useless on foot. Don't be in a hurry to
-mount, though: the starting pony has only about 7 HP, a failed
-mount attempt costs *you* 10 to 14 HP, and most Knights keep the
-pony as a fighting pet until it grows up. As a Lawful character
-with a starting long sword, you also have the best odds in the game
-at **[Excalibur](#excalibur-artifact)**. Dip your long sword in a
-fountain (`#dip`) at experience level 5+ and Knights get a 1-in-6
-chance per dip for their sword to be transformed.
-Knights follow a code of conduct that imposes alignment penalties
-for attacking fleeing or helpless monsters, so pick your fights
-carefully. Knights can also `#jump`, which lets you reposition
-without spending an attack. *Alignment: Lawful.*
+**Healer** *(Neutral).* The dungeon's doctor: a stethoscope, four
+potions of healing and four of extra healing, a **wand of sleep**,
+three pre-blessed spellbooks (healing, extra healing, stone-to-flesh,
+guaranteed to read), **poison resistance**, and **immunity to
+sickness**. The wand of sleep is your survival, a handful of charges
+that drop even serious monsters when most of the early dungeon has no
+sleep resistance, so spend one per dangerous encounter, never on an
+easy kill, and recharge it later. Sickness immunity makes unknown
+clear potions a **free quaff-test** (dip a unicorn horn into the
+leftover sickness for fruit juice). Knife, Quarterstaff, Dart, Unicorn
+Horn, and Healing all cap Expert. *Pivot:* around XL 10 you move from
+potions-and-sleep to casting extra healing as a Pw battery; at
+Skilled, your heals behave like blessed potions. *Avoid* spending
+sleep charges on small monsters, and never sell the stethoscope.
 
-**Monk.** You fight best with bare hands and start with no weapon
-at all. Monks gain martial arts abilities as they level, eventually
-becoming formidable unarmed combatants. You start with sleep
-resistance and [see invisible](#senses-and-perception), and you should avoid eating meat if
-you want to maintain your spiritual discipline. **Mind what you
-wear:** body armor costs −20 to-hit, a shield disables your
-martial-arts hit bonus, and metallic helmets, gloves, or boots
-each add a casting penalty. The starting robe is a cloak (not
-body armor) and adds a 20-point spellcasting bonus, larger than
-the Wizard's own. Keep wearing it. One of the more unusual roles,
-rewarding for experienced players. *Alignment: Any.*
+**Knight** *(Lawful).* Chivalry on horseback: a saddled **pony**, a +1
+long sword, and a +1 **lance**. The pony is a credible early ally and
+the basis of your unique attack, a jousting blow from horseback
+(Knights alone have Lance at Expert), though the lance is useless on
+foot. Speed at XL 7 is the whole intrinsic ladder. **Mount
+strategically:** the starting pony has ~7 HP, a failed mount costs
+*you* 10–14 HP, and the failure rate is ~45% at XL 1, so two unlucky
+tries kill a starting Knight; stay on foot until the pony grows into a
+warhorse. **[Excalibur](#excalibur-artifact) is almost guaranteed:**
+dip a long sword in a fountain at XL 5+ for a **1-in-6** chance per
+dip, five times better than other Lawful roles. You can also `#jump`
+to reposition without spending an attack. *Pivot:* with Excalibur and
+a warhorse, mounted long-sword-plus-jousting is one of the strongest
+melee builds. *Avoid* jousting fleeing, sleeping, or paralyzed
+monsters (a chivalry alignment hit) and retrying a failed mount at low
+HP.
 
-**Priest.** You start with a mace, four potions of holy water, and
-the ability to intuitively sense whether items are blessed, cursed,
-or uncursed, so you know on sight whether that cloak you just found
-is safe to wear. Competent fighters with access to clerical spells.
-Your first sacrifice gift is guaranteed: Demonbane (now a silver
-mace), which aligns with your weapon skill, so sacrifice early and
-often. Refill the holy water stash by dropping water potions on a
-co-aligned altar and praying: the entire stack blesses at once, so
-the supply is effectively unlimited. *Alignment: Any (matches your god).*
+**Monk** *(Any alignment).* Bare hands are the identity: no starting weapon, and
+Martial Arts caps at **Grand Master** (+7 to-hit, +9 damage unarmed),
+the only role that reaches it. The **intrinsic ladder is the broadest
+in the game**: [see invisible](#senses-and-perception), sleep
+resistance, and speed at XL 1, then poison 3, stealth 5, warning 7,
+searching 9, fire 11, cold 13, shock 15, teleport control 17. The
+trade-off is armor: a body suit costs −20 to-hit, a shield kills your
+martial-arts bonus, and metallic helms, gloves, and boots each
+penalize casting, so the default Monk fights in a **robe** (+20
+spellcasting, larger than the Wizard's own) with no body armor. Guard
+the robe from polymorph traps from D7 on. *Pivot:* the Eyes of the
+Overworld quest artifact grants magic resistance and astral vision,
+freeing your cloak slot for the robe. *Avoid* eating meat (−1
+alignment; vegetarian is essentially free), anything metallic, and
+picking up a shield for the AC.
 
-**Ranger.** You start with a bow, a generous supply of arrows, a
-dagger, and a **+2 cloak of displacement** (foes swing at a
-phantom image a step away from the real you), one of the strongest
-defensive starts in the game. You're unmatched as an early-game
-ranged threat. Rangers gain Searching at experience level 1 (XL 1
-for short), Stealth at XL 7, and See Invisible at XL 15. Your elven racial option grants sleep
-resistance at XL 4. Hoard the +2 stack of arrows; they break at
-roughly 25% per hit while +0s break around 67%. Mulch the cheap
-stack on the level-1 newts. *Alignment: Neutral or Chaotic.*
+**Priest** *(Any alignment, matching your god).* Sacrifice-gift specialist. You
+sense the **blessed/cursed/uncursed status of every item on sight**,
+so you always know what's safe to wear, and you start with a mace and
+four **holy waters**. Your first sacrifice gift is guaranteed:
+**Demonbane** (a silver mace in 5.0), which matches your blunt-weapon
+skill, so sacrifice early and often. Refill holy water by stacking
+water potions on a co-aligned altar and praying, the whole stack
+blessing at once. Almost nothing innate (Warning XL 15, Fire
+resistance XL 20); Priests trade intrinsics for divine favor, and six
+blunt weapons plus Healing, Divination, and Cleric all cap Expert.
+*Pivot:* around XL 14 you shift from Demonbane-bops-things to a
+clerical-spell cycle, and high Wisdom means high prayer success.
+*Avoid* abusing Luck (breaking mirrors, angering shopkeepers) before
+you've sacrificed, and don't sell holy water, it's worth far more in
+your pack.
 
-**Rogue.** The dungeon's thief: lockpicking and stealthy
-assassinations. You start with a short sword, six daggers for
-throwing, leather armor, a lock pick, a sack, and a potion of
-sickness (toss it at an enemy, or save it to coat any darts,
-shuriken, or arrows you find. Such missiles can be poisoned by
-`#dip`ping.)
-Your lock pick makes every locked door, chest, and box openable from
-turn one. You get stealth from the beginning, which lets you walk up
-to sleeping enemies without waking them, and your backstab ability
-deals extra damage (+1 to +your level) when you hit a monster that's
-fleeing or helpless. Throw daggers rather than stab with them:
-Rogues get a multishot bonus on thrown daggers (several leave
-your hand in a single turn), and the backstab modifier applies to
-throws against fleeing targets too. Stealth
-and range are the role. *Alignment: Chaotic.*
+**Ranger** *(Neutral or Chaotic).* The ranged role: a bow, a generous
+arrow supply, a dagger, and a **+2 cloak of displacement** (foes swing
+at a phantom a step away), one of the strongest defensive starts in
+the game. **Multishot is your engine:** at Expert bow and high Str you
+fire two or three arrows a turn. Searching from XL 1 reveals hidden
+corridors and traps every step (Stealth XL 7, See invisible XL 15; the
+elven option adds sleep resistance at XL 4), and almost every ranged
+weapon caps Expert. Hoard the **+2 arrow stack** (they break ~25% per
+hit versus ~67% for +0s) and mulch the cheap stack on level-1 newts.
+*Pivot:* mid-game Rangers wish for or polypile silver arrows to
+enchant, among the highest damage-per-turn in the game at Expert bow.
+*Avoid* mulching the +2s and fighting on the front line, your role is
+ranged.
 
-**Samurai.** You start with a katana, which is one of the better
-one-handed weapons in the game, plus a wakizashi backup and a yumi
-bow with arrows. Samurai get speed early and have a strong martial
-kit overall. The katana's damage output carries you through the
-early game with ease. The wakizashi is the wrong off-hand: it's a
-short sword, while your katana is a long sword, so the two don't
-share skill. Drop it for any long sword (the Mines usually provides
-one) and fight two-weapon (a blade in each hand) for the
-matched-skill bonus.
-*Alignment: Lawful.*
+**Rogue** *(Chaotic).* The dungeon's thief: a short sword, six
+**daggers**, leather armor, a **lock pick**, a sack, and a potion of
+sickness. The lock pick opens every door, chest, and box from turn 1
+(with a +25 to +30 bonus plain keys don't get), Stealth from XL 1 lets
+you pass sleeping monsters, and **backstab** adds +1 to +XL damage
+against fleeing or helpless targets. **Throw daggers, don't stab:**
+Rogues get a multishot bonus on thrown daggers, and backstab applies
+to throws too. *Pivot:* around XL 8 you can **poison your daggers and
+darts** with the starting sickness or any poison potion, doubling or
+tripling damage against non-resistant foes. *Avoid* noisy actions that
+waste stealth (kicking, attacking crowds) and selling the lock pick.
 
-**Tourist.** You start with a Hawaiian shirt, a credit card, an
-expensive camera, a truly absurd number of +2 darts, two potions
-of extra healing, and four scrolls of magic mapping. Tourists
-have weak combat and a fragile early game (this is the hardest of
-the standard roles), but the mapping scrolls take the edge off
-exploration and the darts train ranged skills fast. Most runs
-lean on a **camera-flash blinding** of whatever's closest,
-follow-up darts from range, and the pet to finish. A good role
-for players who have ascended before and want a real challenge.
-*Alignment: Neutral.*
+**Samurai** *(Lawful).* The disciplined warrior: a **katana** (one of
+the best one-handed weapons, a long sword underneath), an off-hand
+**wakizashi**, and a yumi bow with arrows, plus intrinsic **speed from
+XL 1**. The katana carries the early game, but the wakizashi is the
+wrong off-hand, a short sword that doesn't share the katana's
+long-sword skill: drop it for any long sword (the Mines usually
+provides one) and **two-weapon** for the matched-skill bonus. Long
+Sword, Two-Handed Sword, Short Sword, Bow, Shuriken, and Two-Weapon
+all cap Expert, with Martial Arts at Master. *Pivot:* a Samurai who
+invested in the **yumi** can pivot to a multishot ranged build, two or
+three arrows a turn on a role already strong in melee. *Avoid* keeping
+the wakizashi for sentiment and forgetting the yumi.
 
-**Valkyrie.** The standard recommendation for a first serious
-attempt. You start with a spear, a small shield, and cold
-resistance; strong combat stats and good starting equipment do
-the rest. **[Mjollnir](#mjollnir)** (+d5/+d24 war hammer that returns when
-thrown at Strength 25) drops as your sacrifice gift regardless
-of alignment, and is what you'll wield by the late game.
-*Alignment: Lawful or Neutral. Female only.*
+**Tourist** *(Neutral).* The hardest role: low HP, no melee weapon,
+and a Hawaiian shirt with zero base AC. You start with an **expensive
+camera**, a truly absurd number of +2 **darts**, four scrolls of magic
+mapping, two potions of extra healing, a credit card, and food. The
+camera is your early-game survival tool: **flash it to blind**
+whatever's closest, dart from range, let the pet finish, repeat, and
+save the mapping scrolls for nasty levels. Both intrinsics come late
+(Searching XL 10, Poison resistance XL 20), and only Dart, Dagger, and
+Short Sword cap Expert. Beware the **Tourist tax:** shopkeepers charge
+you +33% and pay 1/3 below XL 15, so shop after the Quest. *Pivot:*
+the Platinum Yendorian Express Card quest artifact is one of the best
+in the game (magic resistance, telepathy, half spell damage), turning
+Tourists caster-heavy. *Avoid* shopping below XL 15 and wearing the
+Hawaiian shirt before you can protect it.
 
-**Wizard.** You start with a quarterstaff, a **cloak of magic
-resistance** (an endgame-quality item from turn one), a wand, two
-rings, three potions, three scrolls, the force-bolt spell plus a
-random spellbook, and a high-enchantment magic marker. Physical
-combat is a weak point; magic is the Wizard's calling:
-fragile early, overwhelming late. Advancing a spell-school skill
-also identifies spellbooks of that school by appearance, so you
-get free book-ID just by casting (see
-[Spellcasting](#spellcasting)). Two warnings: Wizards start with
-*zero* food rations and a kitten that won't share lunch, and force
-bolt shatters potions on the ground and breaks any mirror a nymph
-is carrying. Keep the quarterstaff wielded while you cast: any
-quarterstaff lowers spell-failure rate, a small free bonus on top
-of the cloak. *Alignment: Neutral or Chaotic.*
+**Valkyrie** *(Lawful or Neutral; female only).* The standard
+recommendation for a first serious attempt: a long sword (or spear), a
+**small shield**, intrinsic **cold resistance**, and strong combat
+stats do the rest. **[Mjollnir](#mjollnir)** (a +d5/+d24 war hammer
+that returns when thrown at Str 25) drops as your guaranteed sacrifice
+gift regardless of alignment, so the late-game weapon question is
+solved early. Cold resistance from XL 1, Stealth XL 3, speed XL 7, and
+the widest practical weapon-skill range in the game (six weapons at
+Expert). A Lawful Valkyrie can also fountain-dip for **Excalibur** at
+the standard 1-in-30. *Pivot:* you already have the combat you need,
+so mid-game shifts to **magic resistance and reflection** (gray dragon
+scale mail, a shield or amulet of reflection); the Castle wish usually
+settles magic resistance. *Avoid* coasting through the early game
+unprepared for Gehennom, where magic attacks bypass HP and AC.
+
+**Wizard** *(Neutral or Chaotic).* The undisputed caster: a
+quarterstaff, a **+2 cloak of magic resistance** (endgame-quality from
+turn one), a wand, two rings, three potions, three scrolls, **force
+bolt** plus a random spellbook, and a high-enchantment magic marker.
+Physical combat is weak; magic is the calling, fragile early and
+overwhelming late. **Advancing a spell school auto-identifies that
+school's spellbooks by appearance,** so you get free book-ID just by
+casting (see [Spellcasting](#spellcasting)), and four schools cap
+Expert. Keep the quarterstaff wielded, since any quarterstaff lowers
+spell-failure. Two warnings: you start with **zero food rations** and
+a kitten that won't share, and force bolt shatters potions on the
+ground and breaks a mirror a nymph is carrying. *Pivot:* by XL 10 the
+mid-game is simply "get every spellbook." *Avoid* meleeing at depth
+(open with force bolt or a wand) and running out of Pw with no backup.
 
 #### The Races
 
@@ -1255,10 +1309,11 @@ demon* posing as "the dish washer" (the same incubus/succubus as
 non-stub outcome fires at most once per sink. Worth a try early on
 only if you can handle whatever climbs out.
 
-**Dropping a ring down a sink** produces a message unique to the ring
-type, naming it outright. The catch is that the ring is gone nineteen
-times out of twenty; only searching and slow digestion survive the
-drop, identifying themselves for free. It's most useful when you have a duplicate ring to spare, or
+**Dropping a ring down a sink** produces a message distinctive to
+the ring's type, one for each of the twenty-eight rings, decoded in
+the table below. The catch is that the ring is gone nineteen times
+out of twenty; only searching and slow digestion survive the drop,
+identifying themselves for free. It's most useful when you have a duplicate ring to spare, or
 when you're starving and gambling that an unknown ring is slow
 digestion. For anything else, price-ID, an altar, or a scroll of
 identify tells you as much and keeps the ring.
@@ -1280,6 +1335,19 @@ identify tells you as much and keeps the ring.
 | *"Suddenly, [items] vanish from the sink!"*<br>any other items on the sink square vanish too | hunger                | no |
 | *"The sink momentarily vanishes."*<br>sink moves to a new spot         | teleportation         | no |
 | *"The sink transforms into a fountain/throne/altar/grave!"*<br>(or rarely *"The sink vanishes."* if grave generation fails) | polymorph             | no |
+| *"The faucets flash brightly for a moment."*         | adornment             | no |
+| *"The sink looks as good as new."*                   | regeneration          | no |
+| *"The sink glows silver (or black) for a moment."*   | protection            | no |
+| *"The sink glows white for a moment."*               | warning               | no |
+| *"The sink seems to blend into the floor for a moment."* | stealth           | no |
+| *"You don't see anything happen to the sink."*       | invisibility          | no |
+| *"You see some air in the sink."*                    | see invisible         | no |
+| *"You see the ring slide right down the drain!"*     | free action           | no |
+| *"The hot water faucet flashes brightly for a moment."* | fire resistance    | no |
+| *"The cold water faucet flashes brightly for a moment."* | cold resistance   | no |
+| *"The sink looks like it is being beamed aboard somewhere."* | teleport control | no |
+| *"The sink momentarily looks like a regularly erupting geyser."* | polymorph control | no |
+| *"The sink looks nothing like a fountain."*          | protection from shape changers | no |
 
 **Quaffing from a sink** rolls one of twenty random effects, most of
 them nothing. The good ones are thin: about a 1-in-20 chance a ring
@@ -4791,7 +4859,9 @@ unidentified item you bring in. *S^TP^* stacks both.
 The $100 group is crowded, which makes scroll price-ID less precise
 than other categories. If a
 scroll is in the $20 group, it's identify. Period. That's one of the
-most useful scrolls in the game and you just found it for free.
+most useful scrolls in the game and you just found it for free. The
+$60 and $80 groups are pure upside too: enchant weapon at $60,
+enchant armor and remove curse at $80.
 
 ```{=latex}
 \needspace{6\baselineskip}
@@ -5040,17 +5110,17 @@ reward in one step.
 
 <!-- audit
 2026-05-18:
-- dosinkring at do.c:498-650 — 28 ring types each give a distinctive message
+- dosinkring at do.c:498-650 — all 28 ring types give a sink message, BUT 13 only when sighted (second switch do.c:592+ gated on !Blind); 15 work even blind (first switch). Message is a hint via trycall, NOT makeknown/formal ID. Overlaps: protection & warning both "sink glows", teleportation & polymorph can both "sink vanishes", aggravate monster & meat ring near-identical fly message
 - searching and slow digestion goto giveback, dropped back on the floor identified (do.c:507-516)
 - other rings usually consumed: 1/20 backup chance, 1/5 buried chance (do.c:649-660)
 -->
 #### The Sink Test (Rings)
 
-If you find a sink, you can drop a ring down it. Each ring type
-produces a characteristic message, identifying the ring. But only
-searching and [slow digestion](#special-and-utility) come back to you;
-every other ring is destroyed in the process, so this is a spare-ring
-or last-resort trick, not a routine one. See [Sinks](#sinks) under
+If you find a sink, you can drop a ring down it. Every ring type
+produces its own message, identifying it. Only searching and
+[slow digestion](#special-and-utility) come back to you; every
+other ring is destroyed in the process, so this is a spare-ring or
+last-resort trick, not a routine one. See [Sinks](#sinks) under
 Points of Interest for the full message-to-ring table.
 
 #### Use-Testing (The Careful Way)
@@ -5582,29 +5652,42 @@ potion" that healed you last time might polymorph you this time.
 
 #### The Potion Table
 
-As with all randomized items, price is your best friend. A shop
-visit narrows a mysterious bottle from "could be anything" to a
-short list of candidates:
+What each potion does, and the uses that aren't obvious from the
+label. Prices for narrowing an unidentified bottle are in
+[Potion Prices](#potion-prices); the standouts get fuller treatment
+in [Key Potions](#key-potions) below.
 
-| Price | Potions                                                                     |
-| ----- | --------------------------------------------------------------------------- |
-|    20 | [healing](#potion-healing)                                                                     |
-|    50 | booze, fruit juice, see invisible, sickness                                 |
-|   100 | confusion, [extra healing](#potion-healing), hallucination, restore ability, sleeping, [water](#potion-holy-water)   |
-|   150 | blindness, gain energy, invisibility, monster detection, object detection   |
-|   200 | enlightenment, [full healing](#potion-healing), levitation, [polymorph](#potion-polymorph), [speed](#potion-speed)                   |
-|   250 | acid, oil                                                                   |
-|   300 | [gain ability](#potion-gain-ability), [gain level](#potion-gain-level), paralysis                                         |
+| Potion | Effect and notable use |
+| ------ | ---------------------- |
+| **[healing](#potion-healing)** | Restores HP; cures blindness when blessed. |
+| **[extra healing](#potion-healing)** | More HP, always cures blindness and (non-cursed) sickness; can raise max HP. |
+| **[full healing](#potion-healing)** | Full HP, cures nearly everything, raises max HP. |
+| **[gain ability](#potion-gain-ability)** | Blessed raises *all* stats by 1, uncursed a random one. Save and bless. |
+| **gain energy** | Raises maximum Pw. |
+| **[gain level](#potion-gain-level)** | +1 experience level; *cursed* lifts you a dungeon level through the ceiling. |
+| **[speed](#potion-speed)** | One non-cursed quaff makes you permanently Fast, the real source of that intrinsic. |
+| **restore ability** | Restores drained stats. Keep one against attribute drain. |
+| **see invisible** | See invisible for a while, permanent when blessed. Shares $50 with sickness. |
+| **invisibility** | Turns you invisible. |
+| **levitation** | Float over hazards; *cursed* strands you off the floor until it ends. |
+| **monster detection** | Reveals every monster on the level. |
+| **object detection** | Reveals every object on the level. |
+| **enlightenment** | Reports your own stats and intrinsics; blessed tells more. |
+| **[polymorph](#potion-polymorph)** | Polymorphs you, or dip an item to change and ID it. |
+| **[water](#potion-holy-water)** | The "clear potion." Bless it on an altar into holy water; the feedstock for it. |
+| **fruit juice** | Harmless food, and what sickness or a unicorn-horn dip turns into. |
+| **booze** | Small nutrition; usually leaves you confused. |
+| **confusion** | Confuses you, the setup for the [confused-scroll](#confused-reading) tricks. |
+| **hallucination** | Harmless but disorienting; everything shows as nonsense. |
+| **sleeping** | Puts you to sleep (dangerous to quaff blind); better thrown at enemies. |
+| **blindness** | Blinds you, but activates telepathy for the duration if you have ESP. |
+| **sickness** | HP loss and illness (Healers immune); dip missiles into it to poison them. |
+| **paralysis** | Freezes you helpless, a lethal blind quaff; throw it at enemies instead. |
+| **acid** | Damages you; throw for acid damage, and the base of alchemy. |
+| **oil** | The only potion you can `a`pply (it lights): a safe ID test, lamp fuel, throwable fire. |
 
 <div class="price-id-toolbar"></div>
 
-Water is an oddity in the $100 group: it always appears as "clear
-potion," identifiable on sight. Don't underestimate it; water is
-the raw material for holy water, which blesses any item you dip
-in it. Oil is another special one, identifiable because it's
-the only potion you can `a`pply: doing so lights it as a flame, a
-safe ID test that also leaves you a brief light source or throwable
-fire.
 <!-- oil verification: POT_OIL is the only applyable potion
 (apply.c:1503 lists it among light sources you can apply). It does
 NOT grease or rustproof items (no POT_OIL link to greased / erode /
@@ -5642,8 +5725,7 @@ temporary burst of 50–74 turns. The potion is the real prize.
 uncursed water on a co-aligned altar, pray, and the gods bless it
 for you (pile every water you own on the same square and a single
 prayer blesses the whole stack). Holy water then blesses any item
-you dip into it. A holy water can even bless *more water* by
-dipping into it. Keep one to make more.
+you dip into it.
 
 Short on water? Make your own. Any potion but acid reduces toward
 plain water each time it gets wet, so two dips finish the job: the
@@ -5792,28 +5874,37 @@ but mean nothing until you identify them.
 
 #### The Scroll Table
 
-Price-identification is especially powerful for scrolls, because the
-cheapest scroll (base 20) is always identify, the one you need most:
+What each scroll does, and the uses worth knowing. Prices for
+narrowing an unidentified scroll are in [Scroll Prices](#scroll-prices);
+the standouts get fuller treatment in [Key Scrolls](#key-scrolls)
+below.
 
-| Price | Scrolls                                                                                                           |
-| ----- | ----------------------------------------------------------------------------------------------------------------- |
-|    20 | [identify](#scroll-identify)                                                                                                          |
-|    50 | light                                                                                                             |
-|    60 | blank paper, [enchant weapon](#scroll-enchant)                                                                                       |
-|    80 | [enchant armor](#scroll-enchant), [remove curse](#scroll-remove-curse)                                                                                       |
-|   100 | confuse monster, destroy armor, fire, food detection, gold detection, [magic mapping](#scroll-magic-mapping), [scare monster](#scroll-scare-monster), [teleportation](#scroll-teleportation) |
-|   200 | amnesia, create monster, earth, taming                                                                            |
-|   300 | [charging](#scroll-charging), [genocide](#scroll-genocide), punishment, stinking cloud                                                                    |
+| Scroll | Effect and notable use |
+| ------ | ---------------------- |
+| **[identify](#scroll-identify)** | Names an item, but only in your main pack, so consolidate first. Blessed can name several. |
+| **[enchant weapon](#scroll-enchant)** | +1 (blessed up to +3); safe to +5, risks destroying the weapon above +6. |
+| **[enchant armor](#scroll-enchant)** | Enchants worn armor; risks destroying it above +3 (+5 for elven or the Cornuthaum). |
+| **[remove curse](#scroll-remove-curse)** | Frees cursed gear; blessed clears your whole inventory. |
+| **[magic mapping](#scroll-magic-mapping)** | Maps the level instantly. One of the best scrolls in the game. |
+| **[teleportation](#scroll-teleportation)** | Teleports you, aimed with teleport control. Often the lone scroll in a closet. |
+| **[scare monster](#scroll-scare-monster)** | Drops a fear spot stronger than [Elbereth](#elbereth). |
+| **[charging](#scroll-charging)** | Recharges a wand or tool; save it for your wand of wishing (once only). |
+| **[genocide](#scroll-genocide)** | Removes a species; blessed a whole class. Never target your own race or role. |
+| **light** | Lights the room, revealing dark corners and blinding light-sensitive foes. |
+| **blank paper** | Nothing written; write your own scroll on it with a magic marker. |
+| **confuse monster** | Charges your hands so your next few melee hits confuse the target. |
+| **destroy armor** | Destroys a worn piece; the confused and cursed reads behave differently. |
+| **fire** | Bursts into flame around you, burning scrolls and potions and melting ice. |
+| **food detection** | Reveals food on the level. |
+| **gold detection** | Reveals gold; read confused, it reveals traps instead. |
+| **amnesia** | You forget spells, discoveries, and part of the map. Bad to read. |
+| **create monster** | Spawns monsters, usually hostile; confused or cursed makes several. |
+| **earth** | Drops boulders around you, to trap monsters or wall yourself in. |
+| **taming** | Tames adjacent monsters; read confused, the area widens to 11×11. |
+| **punishment** | Chains a heavy iron ball to you. The reason not to read $300 scrolls blind. |
+| **stinking cloud** | Places a lingering poison-gas cloud at a range you choose. |
 
 <div class="price-id-toolbar"></div>
-
-The $60 group is treasure (enchant weapon lurks there alongside
-innocent blank paper). The $80 group is equally good: enchant armor
-and remove curse, two scrolls you'll always want more of. The $100
-group is the danger zone, a grab-bag mixing magic mapping and
-teleportation with destroy armor. At $300, you'll find both
-genocide (the nuclear option) and punishment (a ball and chain
-attached to your ankle).
 
 #### Key Scrolls
 
@@ -7466,490 +7557,6 @@ times.
 ---
 
 ## Part Five: Mastery and Endgame
-
-### Playing Each Role
-<!-- audit
-2026-06-06:
-- Archeologist intrinsics: Searching XL 1, Stealth XL 5, Fast XL 10 (attrib.c:27-30 arc_abil)
-- Barbarian intrinsics: Poison res XL 1, Fast XL 7, Stealth XL 15 (attrib.c:32-35 bar_abil)
-- Cave Dweller intrinsics: Fast XL 7, Warning XL 15 (attrib.c:37-39 cav_abil); no early resistances
-- Healer intrinsics: Poison res XL 1, Warning XL 15 (attrib.c:41-43 hea_abil)
-- Knight intrinsics: Fast XL 7 only (attrib.c:45 kni_abil)
-- Monk intrinsics: see invisible/sleep res/Fast XL 1, poison XL 3, stealth XL 5, warning XL 7, searching XL 9, fire XL 11, cold XL 13, shock XL 15, teleport control XL 17 (attrib.c:47-58 mon_abil)
-- Priest intrinsics: Warning XL 15, Fire resistance XL 20 (attrib.c:60-62 pri_abil)
-- Ranger intrinsics: Searching XL 1, Stealth XL 7, See invisible XL 15 (attrib.c:64-67 ran_abil)
-- Rogue intrinsics: Stealth XL 1, Searching XL 10 (attrib.c:69-71 rog_abil)
-- Samurai intrinsics: Fast XL 1, Stealth XL 15 (attrib.c:73-75 sam_abil)
-- Tourist intrinsics: Searching XL 10, Poison resistance XL 20 (attrib.c:77-79 tou_abil)
-- Valkyrie intrinsics: Cold res XL 1, Stealth XL 3, Fast XL 7 (attrib.c:81-84 val_abil)
-- Wizard intrinsics: Warning XL 15, Teleport control XL 17 (attrib.c:86-88 wiz_abil)
-- Skill tables verified in u_init.c:257-572 (Skill_A through Skill_W); Archeologist pick-axe/saber/boomerang/whip Expert, Divination Expert; Barbarian two-handed sword/axe/short sword/hammer Expert, Bare-handed Combat MASTER; Cave Dweller club/mace/quarterstaff/spear Expert, Sling Expert, Bare-handed Combat MASTER; Healer knife/quarterstaff/dart/unicorn horn/healing Expert; Knight long sword/lance/riding Expert; Monk martial arts GRAND MASTER, healing Expert; Priest 6 blunt weapons all Expert (club/mace/morning star/flail/hammer/quarterstaff), healing/divination/cleric Expert; Ranger 6 ranged weapons Expert (bow/sling/crossbow/dart/spear/dagger+boomerang); Rogue dagger/knife/short sword/two-weapon/bare-handed Expert; Samurai long sword/two-handed sword/short sword/bow/shuriken/two-weapon Expert, Martial Arts Master; Tourist dagger/short sword/dart Expert only; Valkyrie dagger/axe/long sword/two-handed sword/hammer/spear Expert; Wizard four spell schools Expert + dagger/quarterstaff/dart Expert
-- body armor -20 to-hit Monk penalty (uhitm.c:397-401)
-- Monk bare-handed bonus = (XL/3)+2 with no weapon and no shield (uhitm.c:400)
-- shopkeeper Tourist surcharge: visible touristy shirt OR Tourist below MAXULEV/2 (=15) (shk.c:2949-2951)
-- Excalibur fountain dip: Knight 1-in-6, other Lawful 1-in-30 (artifact.c)
-- Mjollnir is Valkyrie's guaranteed first sacrifice gift regardless of alignment per role.c artifact assignment
-- Demonbane is Priest's guaranteed first sacrifice gift (artifact.c gift table)
-- Eyes of the Overworld is Monk quest artifact (role.c:257 ART_EYES_OF_THE_OVERWORLD); grants MR + astral vision when worn
-- Cave Dweller skill table: P_BARE_HANDED_COMBAT P_MASTER (u_init.c:324); confirmed Cave Dweller reaches BHC Master (alongside Barbarian)
-- Samurai martial arts caps at Master (u_init.c:487), not Grand Master; Monk is the only Grand Master
-- Healer wand of sleep: starting wand has 1d4+4 charges per u_init.c:81-90 starting kit
-- Priest sacrifice gift: Demonbane is silver mace in 5.0 (book confirms at line 266-267)
-- Wizard quarterstaff gives spell failure rate bonus (book confirms at line 333-334); Wizard Pw regen factor 3 vs 4 for others (spell.c via book audit at 6743)
-- Tourist Quest artifact: Platinum Yendorian Express Card, grants MR + telepathy + half spell damage (artilist.h)
-- Holy water mechanic: praying on a co-aligned altar with potions of water blesses them all; dipping plain water into holy water blesses one plain potion but consumes one holy water (1:1 exchange, not multiplication, per potion.c:2460-2466 and H2Opotion_dip)
-- Wikipedia/NetHackWiki strategy text consulted for roles (Monk, Archeologist, Tourist); checked claims against source
--->
-
-The Mazes treat different roles differently. The Knight's
-full-armor mounted combat would not work for a Monk, whose
-weaponless martial arts need a robe and no body armor. Starting
-kits, skill caps, intrinsic ladders, and restrictions add up to
-thirteen distinct games inside the same dungeon. The sections
-that follow give role-specific advice for each.
-
-One rule cuts across the fragile roles (Wizard, Priest, Healer,
-Tourist, Archeologist): treat your class tool as your primary weapon
-from the start. Your to-hit and damage cannot win a melee trade at
-depth, so open a fight with force bolt, a sleep wand, the camera, holy
-water, or the pick-axe, and save your blade for what is already nearly
-dead.
-
-#### Archeologist
-
-Indiana Jones, basically. You start with a bullwhip, a pickaxe, a
-tinning kit, a touchstone, and a sack: a kit built for exploration
-rather than combat. Your starting Strength and HP are modest, so
-your first ten levels lean on stealth and footwork rather than
-firepower. Survive that stretch and you become one of the better
-mid-game spellcasters.
-
-**Intrinsics:** Searching at XL 1, Stealth at XL 5, intrinsic speed at
-XL 10.
-
-**Skill caps:** Pick-axe and saber both reach Expert, which makes a
-silver saber your endgame weapon and the pickaxe your mid-game one.
-Divination Spell hits Expert too, and your special spell is magic
-mapping, one of the most valuable spells in the game.
-
-**Your pickaxe gives you mobility no other role has.** It skips
-locked doors, chips a diagonal exit from a surrounded room, escapes
-upward when you're cornered, and digs the straight downward shaft
-that finishes most ascension runs in a handful of turns. Train
-Pick-axe to Skilled early by chopping at zombies and ogres; the
-slot cost pays back many times over by the Castle.
-
-**Your touchstone identifies gems.** An Archeologist applies an
-uncursed touchstone as if it were blessed, so any gem you find
-can be tested for whether it's real or worthless glass. Rub gems
-before you offer them to a unicorn, before you sell, and on a
-co-aligned altar for full ID.
-
-**Scrolls auto-identify when you pick them up** (except blank
-paper, and assuming you can see).
-
-**Pivot:** by mid-game your Wisdom and Intelligence are within reach
-of Wizard-tier casting. Once you've read magic missile, identify, and
-cone of cold, you are a caster who happens to swing a saber, not a
-fighter who happens to read books.
-
-**Avoid:** breaking historic statues (a −1 alignment hit per
-offense, and the Archeologist is the only role that automatically
-recognizes which statues are historic). Getting Burdened collecting
-too many items; the role has a mediocre Str cap.
-
-#### Barbarian
-
-A Barbarian's plan is mostly: hit the thing in front of you. You
-start with poison resistance, good Strength, a two-handed sword or
-battle-axe, and an off-hand short sword. Your skill list reads like
-a weapon shop's inventory; the early dungeon is much easier when
-you can carve a path through it without thinking too hard.
-
-**Intrinsics:** Poison resistance at XL 1, intrinsic speed at XL 7,
-Stealth at XL 15.
-
-**Skill caps:** Two-handed sword Expert (or Axe Expert if you took
-the axe start), Short Sword Expert, Hammer Expert. Bare-handed
-combat reaches Master, so if you ever lose your weapon to a
-polymorph trap or a wand of disarming you remain a real melee
-threat with your fists.
-
-**Twoweapon early.** The starting twin pair (two-handed sword plus
-short sword, or battle-axe plus short sword) is positioned for a
-two-weapon transition. Once you find a long sword, drop the short
-sword for it and twoweapon for mauling damage.
-
-**Pivot:** around XL 12 to 15 most Barbarians want magic resistance
-and discover that without spell skill they have only artifact and
-armor options. Aim for gray dragon scale mail in the Castle, or
-crown for Stormbringer if you are Chaotic; the Magicbane option is
-gated behind a sacrifice gift that may not roll.
-
-**Avoid:** picking fights you cannot escape. Barbarians have no
-escape spells and no intrinsic teleport, so once surrounded you
-fight your way out or pray. Skipping early quaff-tests; with poison
-resistance handed to you from turn 1, blind quaffs are unusually
-safe.
-
-#### Cave Dweller
-
-Primitive but tough. You start with a club, a sling, a pile of flint
-stones, and good HP growth. Cave Dwellers are the other role (with
-Barbarian) that pushes bare-handed combat to Master, so even
-unarmed you do real damage. The simplest role in the game: few
-tools, no starting spellbooks, no language quirks.
-
-**Intrinsics:** Speed at XL 7, Warning at XL 15. No early
-resistances at all; this is the role that earns those resistances
-one corpse at a time.
-
-**Skill caps:** Club, mace, quarterstaff, and spear all Expert, plus
-the sling Expert (Cave Dwellers train sling as easily as anyone).
-Bare-handed combat reaches Master.
-
-**Pivot:** the Cave Dweller's mid-game is built from the corpses
-they eat. Without role-granted resistances, you climb the resistance
-ladder by eating fire ants, killer bees, giants, and the right
-molds. Plan to eat every safe intrinsic-granting corpse you can; an
-amulet of life saving is more valuable here than for almost any
-other role.
-
-**Avoid:** putting too much weight on Intelligence. Cave Dwellers
-have the lowest Int cap of any role and the weakest spell access;
-aside from identify or detect-X scrolls you will mostly be reading
-rather than casting. The gnome racial option leans toward casting,
-so pick dwarf or human if you want the heaviest melee.
-
-#### Healer
-
-The dungeon's doctor. You start with a stethoscope, four potions
-of healing, four of extra healing, a wand of sleep, three
-pre-blessed spellbooks
-(healing, extra healing, stone-to-flesh), poison resistance, and
-immunity to sickness. The stethoscope shows monster HP and your own
-internal state; the wand of sleep makes early combat much easier
-than the medical kit suggests.
-
-**Intrinsics:** Poison resistance at XL 1, Warning at XL 15.
-
-**Skill caps:** Knife Expert, Quarterstaff Expert, Dart Expert,
-Unicorn Horn Expert (a permanent dividend on every horn you find),
-Healing Spell Expert. Healing pre-blessed books guarantee successful
-reads from turn 1.
-
-**The wand of sleep is your survival.** A handful of charges that
-put even serious monsters down for several turns, and most of the
-early dungeon has no sleep resistance. Spend one charge per
-dangerous encounter, never on an easy kill, and you'll bridge to XL
-6 before running out. Recharge it later with scrolls of charging or
-a magic marker.
-
-**Sickness immunity is a free quaff-test.** Healers cannot be made
-ill by potions of sickness, so unknown clear-colored potions can be
-tested safely. Dip a unicorn horn into the leftover sickness potion
-to convert it to fruit juice.
-
-**Pivot:** around XL 10, Healers move from "survive on potions and
-sleep" to casting extra healing as a Pw battery. At Skilled in
-the healing school, your healing casts behave like blessed potions.
-
-**Avoid:** spending sleep charges on small monsters. Selling the
-stethoscope.
-
-#### Knight
-
-Chivalry on horseback. You start with a saddled pony, a +1 long
-sword, and a +1 lance. The pony is a credible early-game ally, and
-the basis of your unique attack: a jousting blow from horseback
-does heavy damage, and Knights are the only role with Lance at
-Expert. Two catches: chivalry imposes alignment penalties for
-attacking helpless or fleeing monsters, so pick your fights; and
-the lance is useless on foot.
-
-**Intrinsics:** Speed at XL 7. That is the entire ladder.
-
-**Skill caps:** Long Sword Expert (set up for Excalibur), Lance
-Expert, Riding Expert, Bare-handed Combat Expert. Several blunt
-and edged weapons reach Skilled for fallback options.
-
-**Mount strategically.** You can `#ride` from turn 1, but a failed
-mount costs 10 to 14 HP ("slipped while mounting a saddled pony" is
-a noted scoreboard death), and at XL 1 the failure rate is around
-45%. Two unlucky tries kill a starting Knight. Most Knights stay
-on foot until the pony grows up into a horse and then a warhorse:
-by then you have intrinsic speed, more XL behind the mount roll,
-and a steed worth riding.
-
-**Excalibur is almost guaranteed.** A Lawful Knight dipping a long
-sword into a fountain at XL 5 or higher has a 1-in-6 chance per dip,
-five times better than other Lawful roles. Most runs find Excalibur
-before the Mines luckstone.
-
-**Pivot:** with Excalibur and a warhorse, mounted fighting pays
-off: long-sword swings with the Riding bonus plus jousting against
-fleeing targets you can position. A late-game Knight on a
-polymorphed dragon mount is one of the strongest melee builds.
-
-**Avoid:** jousting a fleeing, sleeping, or paralyzed monster (a
-chivalry alignment hit and an alignment record you cannot recover
-quickly). Retrying a failed mount when you're already low on HP.
-
-#### Monk
-
-Bare-handed combat is the Monk's identity. The intrinsic ladder is
-the broadest in the game and your Martial Arts caps at Grand Master,
-hitting +7
-to-hit and +9 damage with no weapon. The trade-off is a steep set
-of armor restrictions: a body suit costs −20 to-hit, a shield kills
-your martial-arts bonus, and metallic helms, gloves, and boots all
-add a casting penalty. The default Monk fights through the dungeon
-in a robe with no body armor.
-
-**Intrinsics:** see invisible, sleep resistance, and intrinsic
-speed all at XL 1; poison at 3; stealth at 5; warning at 7;
-searching at 9; fire 11; cold 13; shock 15; teleport control 17.
-Eating the matching corpses just accelerates a schedule you'd
-mostly reach anyway.
-
-**Skill caps:** Martial Arts Grand Master, Healing Spell Expert,
-Cleric and Escape Spells Skilled. The four allowed weapon skills
-(quarterstaff, spear, crossbow, shuriken) cap at Basic, so weapon
-training is for the Staff of Aesculapius or the silver spear
-endgame and not much else.
-
-**Gear by slot:** starting robe (+20 spellcasting), elven leather
-helm, gauntlets of dexterity, speed boots, no shield, no body
-armor. The robe is irreplaceable; protect it from polymorph traps
-from D7 onward with a ring of polymorph control or an amulet of
-unchanging.
-
-**Pivot:** the Eyes of the Overworld quest artifact grants magic
-resistance and astral vision, which frees your cloak slot for the
-robe instead of cloak of magic resistance. Most clean Monk runs
-postpone the Quest until after the Castle, then complete it
-for the Eyes.
-
-**Avoid:** eating meat (−1 alignment per offense; vegetarian is
-essentially free for Monks). Wearing iron skull cap, iron shoes, or
-gauntlets of power (all metallic, all penalize casting). Picking up
-a shield for the AC.
-
-#### Priest
-
-Sacrifice-gift specialists. Priests sense the blessed, cursed, and
-uncursed status of every item on sight, so you walk through the
-dungeon knowing which gear is safe to wear. Your first sacrifice
-gift is guaranteed to be Demonbane (in 5.0, a silver mace), and
-your stack of four holy waters lets you re-bless gear at will.
-
-**Intrinsics:** Warning at XL 15, Fire resistance at XL 20. Almost
-nothing innately. Priests trade intrinsics for divine favor.
-
-**Skill caps:** six blunt weapons all reach Expert (club, mace,
-morning star, flail, hammer, quarterstaff), which means
-whatever blunt weapon drops first becomes your trainable kit.
-Healing, Divination, and Cleric Spells all Expert.
-
-**You can refill holy water at will.** Stack potions of water on a
-co-aligned altar and pray; the entire stack becomes holy water
-(each dip elsewhere consumes one holy water but blesses one plain
-water, a 1:1 exchange not a multiplier). The supply scales with
-how much water you find. Save at least one for the trail.
-
-**Pivot:** around XL 14 Priests transition from "Demonbane bops
-things" to a clerical-spell cycle: protection prayer, healing,
-remove curse, and the heavy clerical attack spells. High Wis means
-high prayer success, so #pray during low-HP fights against tough
-foes.
-
-**Avoid:** abusing your luck (breaking mirrors, angering
-shopkeepers, eating your own race) before sacrificing on a
-co-aligned altar; your god may visit with a wand of death. Selling
-holy water for shop credit; it's worth far more in your pack than
-as gold.
-
-#### Ranger
-
-The ranged role. You start with a bow, a generous supply of arrows,
-a dagger, a +2 cloak of displacement, and Searching from XL 1.
-Multishot is your engine: a Ranger at Expert bow fires two or three
-arrows per turn at high Str, and your elven racial option also
-gains sleep resistance at XL 4.
-
-**Intrinsics:** Searching at XL 1, Stealth at XL 7, See invisible at
-XL 15. Searching is automatic every step you take, so hidden
-corridors and traps reveal themselves without pressing `s`.
-
-**Skill caps:** Bow, Sling, Crossbow, Dart, Spear, Dagger, and
-Boomerang all Expert. Almost every ranged weapon in the game is at
-your top tier, plus Divination Spell Expert for utility casting.
-
-**Guard your cloak of displacement.** +2 enchanted from turn 1 is
-an endgame-quality defensive item. If you find a cloak of magic
-resistance, carry both and swap based on threat (magic resistance
-for monster spells, displacement for melee crowds).
-
-**Pivot:** mid-game Rangers wish for or polypile a stack of silver
-arrows to enchant. Highly enchanted silver arrows on a Ranger at
-Expert bow are one of the highest damage-per-turn options in the
-game.
-
-**Avoid:** mulching your +2 arrow stack. Keep the cheaper found
-arrows as your training stack and reserve the +2s for hard fights.
-Engaging in melee on the front line; your role is ranged.
-
-#### Rogue
-
-The dungeon's thief: daggers, stealth, and backstab. You start with a
-short sword, six daggers, leather armor, a lock pick, a sack, and a
-potion of sickness. The lock pick opens every locked door, chest,
-and box from turn 1. Stealth at XL 1 lets you walk past sleeping
-monsters, and backstab adds +1 to +XL bonus damage against fleeing
-or helpless targets.
-
-**Intrinsics:** Stealth at XL 1, Searching at XL 10.
-
-**Skill caps:** Dagger Expert, Knife Expert, Short Sword Expert,
-Two-Weapon Combat Expert, Bare-handed Combat Expert. The two-weapon
-synergy with daggers is unique to the role.
-
-**Throw daggers; do not stab.** Rogues get a multishot bonus on
-thrown daggers, and the backstab modifier applies to throws against
-fleeing targets too. A high-enchantment dagger stack carries you
-through Gehennom.
-
-**Pivot:** around XL 8 you can poison your darts and daggers with
-the starting sickness potion or any poison potion you find. Coated
-daggers double or triple damage against non-poison-resistant targets.
-
-**Avoid:** noisy actions that waste your stealth advantage
-(kicking, casting some spells, attacking unsleeping crowds).
-Selling the lock pick: Rogues get a +25 to +30 bonus on
-lock-picking that doesn't apply to regular keys.
-
-#### Samurai
-
-The disciplined warrior. Katana, off-hand wakizashi, yumi bow
-with arrows. Samurai start with intrinsic speed and a strong
-opening melee kit. The katana is
-a long sword underneath, so it shares long sword skill: with Long
-Sword and Two-Handed Sword both at Expert, Two-Weapon Combat at
-Expert, and a guaranteed katana start, the role is set up for a
-katana plus long sword two-weapon combination.
-
-**Intrinsics:** Speed at XL 1, Stealth at XL 15.
-
-**Skill caps:** Long Sword, Two-Handed Sword, Short Sword, Bow,
-Shuriken, and Two-Weapon Combat all Expert; Martial Arts Master
-(the only role besides Monk with Martial Arts at all).
-
-**The wakizashi is the wrong off-hand.** It's a short sword, while
-your katana is a long sword, so the two don't share skill. Drop it
-for any long sword (the Mines usually provides one) and twoweapon
-for the matched-skill bonus.
-
-**Pivot:** mid-game Samurai who invested in bow can pivot to a
-multishot ranged build. Yumi at Expert with high Str gives 2 or 3
-arrows per turn, comparable to a Ranger build on a role that
-already starts strong in melee.
-
-**Avoid:** keeping the wakizashi for sentimental reasons.
-Forgetting the yumi: Bow at Expert plus speed puts two or three
-arrows on a target per turn.
-
-#### Tourist
-
-The hardest role. Low HP, no melee weapon, a Hawaiian shirt with
-zero base AC. You start with four scrolls of magic mapping, an
-expensive camera, 21 to 40 +2 darts, a credit card, two potions of
-extra healing, ten random food items, and a 1-in-5 chance of a
-magic marker. Most Tourists die in the first thousand turns; those
-that survive become disproportionately powerful in the late game.
-
-**Intrinsics:** Searching at XL 10, Poison resistance at XL 20.
-Both late.
-
-**Skill caps:** Dart Expert, Dagger Expert, Short Sword Expert.
-Knife, saber, unicorn horn, and Escape spells reach Skilled;
-everything else caps at Basic.
-
-**Your camera is the early-game survival tool.** Apply it at any
-monster to blind it (and often to scare it). Camera-flash, dart
-from range, let the pet finish, and repeat. Save scrolls of magic
-mapping for levels that look genuinely nasty.
-
-**The Tourist tax.** Shopkeepers charge Tourists below XL 15 a +33%
-markup and offer 1/3 base on sales. Below XL 15 you are priced
-as a sucker. Most ascending Tourists do their shopping after
-Quest completion.
-
-**Pivot:** the Tourist quest artifact, the Platinum Yendorian
-Express Card, is one of the best in the game: magic resistance,
-telepathy, and half spell damage all while carried, plus charge
-items by invocation. Tourists who reach the Quest become caster-
-heavy mid-game on a role nobody expects to cast.
-
-**Avoid:** rushing to Minetown without an upgrade weapon. Shopping
-below XL 15. Wearing the Hawaiian shirt if you plan to enchant it
-up; before you protect it with magic resistance it's likely to be
-destroyed (a polymorph trap or the destroy-armor monster spell).
-
-#### Valkyrie
-
-Recommended for first serious attempt. You start with a long sword
-(or spear), a small shield, intrinsic cold resistance, and good
-combat stats. Mjollnir, a +d5/+d24 war hammer that returns when
-thrown at Strength 25, drops as your guaranteed sacrifice gift
-regardless of alignment, so the late-game weapon question is solved
-early.
-
-**Intrinsics:** Cold resistance at XL 1, Stealth at XL 3, intrinsic
-speed at XL 7.
-
-**Skill caps:** Long Sword Expert, Two-Handed Sword Expert, Axe
-Expert, Hammer Expert (Mjollnir's skill), Spear Expert, Dagger
-Expert. The widest practical weapon-skill range in the game.
-
-**Excalibur is also possible.** Lawful Valkyries dipping a long
-sword into a fountain at XL 5+ get the standard 1-in-30 per dip.
-Fountain-dip until it appears, then transition to Mjollnir at the
-altar.
-
-**Pivot:** Valkyries already have most of the combat they need;
-mid-game focus shifts to magic resistance (gray dragon scale mail)
-and reflection (shield of reflection or amulet of reflection from
-Sokoban). The Castle wand of wishing usually settles the magic
-resistance question with one wish.
-
-**Avoid:** coasting through the early game without preparing for
-Gehennom. Magic attacks bypass your HP and AC, so line up magic
-resistance and reflection before things get hard.
-
-#### Wizard
-
-The undisputed caster. You start with a quarterstaff, a +2 cloak of
-magic resistance, a wand, two rings, three potions, three scrolls,
-force bolt plus a random spellbook, and a magic marker.
-
-**Intrinsics:** Warning at XL 15, Teleport control at XL 17.
-
-**Skill caps:** Four spell schools at Expert (Attack, Divination,
-Escape, Matter); Healing, Enchantment, Cleric Skilled. Quarterstaff
-and Dagger Expert. Wielding a quarterstaff lowers spell-failure.
-
-**Spell-school advancement IDs spellbooks.** Training a
-spell school auto-reveals book appearances at higher levels.
-Wizards start knowing every level-1 plus level-3 attack and
-enchantment.
-
-**Pivot:** by XL 10 the Wizard mid-game is "get every spellbook."
-
-**Avoid:** force-bolting glass: a nymph's mirror is −2 Luck and
-shattered potions are wasted. Going hungry: you start with no food
-and casting drains nutrition fast.
-
----
 
 ### Spellcasting
 <!-- audit
