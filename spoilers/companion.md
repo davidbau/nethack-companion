@@ -5725,7 +5725,9 @@ temporary burst of 50–74 turns. The potion is the real prize.
 uncursed water on a co-aligned altar, pray, and the gods bless it
 for you (pile every water you own on the same square and a single
 prayer blesses the whole stack). Holy water then blesses any item
-you dip into it.
+you dip into it. And because a dip blesses the whole stack at once,
+dipping a *stack* of plain water into holy water turns it all holy
+for a single consumed bottle, so one holy water seeds many more.
 
 Short on water? Make your own. Any potion but acid reduces toward
 plain water each time it gets wet, so two dips finish the job: the
