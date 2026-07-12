@@ -3565,9 +3565,6 @@ enter **explore mode**. Death turns optional (a fatal blow asks
 reload them, and the `#terrain` command reveals the whole level's
 map. Explore mode disables scoring and tags your end-of-game
 record as a "discover game" so it doesn't compete with real runs.
-It does *not* unlock the wizard-mode toolkit, though: wishing,
-creating monsters, and free identify all belong to debug mode
-(`-D`).
 
 **Bones levels.** When a hero dies on certain levels — most
 ordinary Dungeons-of-Doom levels at Dlvl 4 or deeper, plus
