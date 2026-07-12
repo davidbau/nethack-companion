@@ -1590,6 +1590,13 @@ though: it clears the moment you legitimately finish the level
 above it, and the prize is still available regardless of
 infractions. One desperate boulder-smash won't ruin the run.
 
+**Monsters behind boulders.** A monster trapped behind a boulder
+can't get to you, but you can still get to it: **thrown daggers or
+darts fly straight over a boulder**, and most attack spells (magic
+missile, cone of cold) pass over too. Don't clear the way with
+**force bolt or a wand of striking**, though; those shatter the
+boulder, which costs you Luck and a piece you need for the puzzle.
+
 **Strength training side effect.** Every legitimate boulder-push
 exercises Strength. Sokoban is the safest place to grind Str up
 since the puzzles require dozens of pushes without putting you in
@@ -6732,15 +6739,15 @@ The marker also feeds the **wraith feast**: a cursed scroll of
 genocide on a non-graveyard level summons four to six wraiths at
 your feet (see [Farming wraiths](#a-note-on-wraiths)).
 
-The **tinning kit** turns a fresh corpse (`a`pply, then select the
+The **tinning kit** turns a corpse (`a`pply, then select the
 corpse) into a tin: 450 nutrition of preserved food that keeps
-indefinitely. Tin-eating skips the raw-corpse poison and acid
-damage checks, so a tinned killer bee or acid blob is safe to eat
-with no resistance, and the intrinsic-grant still applies. The kit
-doubles as a way to grind poison or
+indefinitely. Tinning eliminates raw-corpse poison and acid damage
+as well as neutralizing spoilage, so a tinned killer bee or acid
+blob is safe to eat with no resistance, and the intrinsic grant
+still applies. The kit doubles as a way to grind poison or
 [acid resistance](#damage-resistances) without taking the
-per-corpse hits. Don't tin a cockatrice without gloves; you
-petrify on the spot.
+per-corpse hits. Don't tin a cockatrice, and don't eat a cockatrice
+tin; you petrify on the spot.
 
 The **pickaxe** and the heavier **dwarvish mattock** dig through
 most walls and floors. Apply (`a`) and pick a direction for a
@@ -10230,11 +10237,11 @@ a 1 in 4 chance of being a bag of holding instead.
 17      └──┴──┘     └─────┘
 ```
 
-1. Push M right three squares, then up four squares.
+1. Push M right three squares, then up four squares to (11, 11).
 2. Push T up one square.
 3. Push S up two squares.
 4. Push Q up one square.
-5. Push P left three squares.
+5. Push P left three squares to (8, 8).
 6. Push G left two squares.
 7. Push D up two squares, then left one square.
 8. Finish A.
