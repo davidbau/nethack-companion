@@ -3533,7 +3533,7 @@ breath weapons. *Warning* detects them through their invisibility;
 <!-- audit
 2026-06-02:
 - save deletes file on load: anti-scum design (restore.c, save.c)
-- explore mode preserves save: -X command-line flag, "discover game" tag
+- explore mode (-X or #exploremode): death optional ("Die?" prompt, end.c:1104-1115 gated on wizard||discover), save persists, "discover game" tag, all objects revealed at end. Only extra command is #terrain full-map reveal (doterrain cmd.c:1136, reveal_terrain is display-only/no game time). Does NOT unlock WIZMODECMD commands (wish/genesis/identify/map/levelport) — those need wizard (-D)
 - Friday-13th sampled at session start: allmain.c:64-66 flags.friday13 = friday_13th(); insight.c:672-680 comments confirm it persists across the session even if real clock changes
 - moonphase sampled at session start: allmain.c sets flags.moonphase; insight.c:653-659 explicit comment that the value is at start of session, not real-time
 - bones generation chance = floor(depth/4) / (floor(depth/4) + 1); never above DL 4 (wiki/Bones)
@@ -3559,11 +3559,15 @@ files outside the game to retry a death is what the community
 calls **save scumming** and is considered cheating.
 
 NetHack does offer an honest opt-out for learning: launch with
-the `-X` command-line flag to enter **explore mode**, which keeps
-the save file after loading and unlocks `#wizard`-lite
-debugging commands. Explore mode disables scoring and tags your
-end-of-game record as a "discover game" so it doesn't compete
-with real runs.
+the `-X` command-line flag (or type `#exploremode` mid-game) to
+enter **explore mode**. Death turns optional (a fatal blow asks
+"Die?", and you may decline), your save files persist so you can
+reload them, and the `#terrain` command reveals the whole level's
+map. Explore mode disables scoring and tags your end-of-game
+record as a "discover game" so it doesn't compete with real runs.
+It does *not* unlock the wizard-mode toolkit, though: wishing,
+creating monsters, and free identify all belong to debug mode
+(`-D`).
 
 **Bones levels.** When a hero dies on certain levels — most
 ordinary Dungeons-of-Doom levels at Dlvl 4 or deeper, plus
