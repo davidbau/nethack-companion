@@ -220,203 +220,244 @@ like a recommendation for a first expedition, read on.
 
 #### The Roles
 
-There are thirteen roles, each with its own starting kit, intrinsic
-ladder, skill caps, and mid-game quest, which add up to thirteen
-distinct games inside the same dungeon. What a Knight does in full
-armor on horseback a Monk cannot do at all.
+There are thirteen roles to choose from, and each is a different way
+to live inside the same dungeon. A Valkyrie meets monsters head-on
+with sword and shield, a Wizard keeps her distance and unravels them
+with spells, and an Archeologist tunnels through the walls with a
+pickaxe, reading the dungeon like a dig. Your role decides what you
+carry on the very first turn, the powers you grow into as you gain
+experience, the weapons and spells you can eventually master, and the
+quest your people send you on in the mid-game. There is no wrong
+choice for a first descent, so pick the one whose story calls to you.
 
-**Archeologist** *(Lawful or Neutral).* Indiana Jones: a bullwhip, a
-**pickaxe**, a tinning kit, a **touchstone**, and a fedora, a kit for
-exploration over combat, with modest Str and HP that make the first
-ten levels a **stealth** game (Searching from XL 1, Stealth XL 5,
-speed XL 10). The pickaxe is mobility no other role has: it skips
-locked doors, chips a diagonal exit from a surrounded room, escapes
-upward when cornered, and digs the straight downward shaft that ends
-most ascension runs. Your uncursed **touchstone** works as if
-blessed, so rub any gem to tell real from glass, and **scrolls
-auto-identify when you pick them up** (except blank paper). Pick-axe
-and saber cap Expert, and **Divination hits Expert** with magic
-mapping as your special spell. *Pivot:* by mid-game your Wisdom and
-Intelligence reach Wizard-tier casting, and you become a caster who
-happens to swing a saber. *Avoid* breaking historic statues (−1
-alignment each; you alone recognize them) and getting Burdened.
+**Archeologist** *(Lawful or Neutral).* The Indiana Jones of the
+Mazes. You set out with a pickaxe, a bullwhip, a tinning kit to
+preserve food, a touchstone for identifying gems, and your lucky
+fedora: the pack of an explorer not a warrior. The pickaxe is
+special, part weapon and part tool. Swing it in a fight, but also use
+it to dig your own way through the world: cut a new hallway, break
+into a sealed vault to reach the gold inside, dig straight down to the
+level below, or crack open a statue for whatever it holds. Your
+touchstone tells a true gem from cut glass with a single rub, and your
+training lets you read a scroll's label the moment you pick it up, so
+scrolls identify themselves as you find them. You are thin-skinned at
+first, so the early levels reward patience and stealth over trading
+blows. But you are sharp, born with the Intelligence and Wisdom of a
+natural spellcaster. You do not begin with any magic, but you grow
+into it as spellbooks find their way to you. In time you can become an
+expert at combat with the pickaxe and saber, and in the spells of
+Divination. These include magic mapping, a spell that reveals a whole
+level's map in an instant. One rule every Archeologist learns: never
+smash a historic statue. You alone can tell which statues are
+historic, and destroying a piece of the past offends your god and
+costs you alignment.
 
-**Barbarian** *(Neutral or Chaotic).* Hit the thing in front of you.
-You start with **[poison resistance](#damage-resistances)**, good
-Strength, a two-handed sword or battle-axe, and an off-hand short
-sword; the early dungeon is easy when you can carve through it without
-thinking. Intrinsic speed comes at XL 7, Stealth at XL 15. The twin
-starting weapons set up a **two-weapon** transition: find a long
-sword, drop the short sword for it, and dual-wield for mauling damage.
-Two-handed sword (or Axe), Short Sword, and Hammer cap Expert, and
-**bare-handed combat reaches Master**, so a disarming trap doesn't
-leave you helpless. *Pivot:* around XL 12–15 you'll want **magic
-resistance** and, lacking spell skill, have only armor and artifact
-routes, so aim for gray dragon scale mail or crown for Stormbringer if
-Chaotic. *Avoid* fights you can't escape (no escape spells, no
-intrinsic teleport, so it's fight-your-way-out or pray); don't skip
-quaff-tests, since poison resistance from turn 1 makes blind quaffs
-unusually safe.
+**Barbarian** *(Neutral or Chaotic).* Raw muscle, and the most hit
+points of any role. Your game is to hit hard and outlast whatever hits
+back; you can dispatch most problems in the early Mazes with a few
+strikes of your heavy weapon.
+You begin already **[immune to poison](#damage-resistances)**, which
+quietly spares you from a whole category of early deaths, and you
+carry a great two-handed weapon (a two-handed sword or a battle-axe),
+a one-handed backup, a suit of ring mail, and food. For the first
+stretch of the game you can simply wade in and swing. The wisdom to
+carry with you is about limits: a Barbarian has no spells to escape
+with and no way to teleport out of trouble, so once a fight turns bad
+it is win it or pray. The real danger comes later, once you have
+coasted comfortably to the middle of the game and meet monsters whose
+magic ignores muscle entirely. Start hunting magic resistance early,
+most reliably a suit of gray dragon scale mail, and your strong early
+game becomes a strong whole game. One quiet perk: because poison
+cannot touch you, you can taste-test unknown potions that would lay a
+weaker adventurer low.
 
-**Cave Dweller** *(Lawful or Neutral).* Primitive but tough: a club, a
-sling, a pile of flint stones, and generous HP growth, the simplest
-role in the game, with no spellbooks or language quirks. It gets **no
-early resistances at all** (speed XL 7, Warning XL 15), so you earn
-every resistance one corpse at a time, eating fire ants, killer bees,
-giants, and the right molds; an amulet of life saving matters more
-here than for any other role. Club, mace, quarterstaff, spear, and
-sling all cap Expert, and like the Barbarian your **bare-handed combat
-reaches Master**. *Avoid* leaning on Intelligence: the lowest Int cap
-and weakest spell access in the game mean you read scrolls rather than
-cast, so pick dwarf or human for the heaviest melee.
+**Cave Dweller** *(Lawful or Neutral).* The simplest role in the game,
+and a fine place to learn the dungeon without a lot of moving parts.
+You are primitive but sturdy: a club, a sling with a pile of flint
+stones to fling, leather armor, and hit points that climb generously
+as you grow. There are no spellbooks to study and no starting spells.
+What makes the Cave Dweller distinctive is what you lack: no
+resistances at all to begin with. Where other roles are handed
+protection from fire or cold or poison, you earn each one the hard
+way, by eating the right corpse. A fire ant grants fire resistance, a
+killer bee grants poison resistance, and so on up the ladder, one
+careful meal at a time, which makes an amulet of life saving more
+precious to you than to almost anyone. In a fight you can grow expert
+with the club, mace, quarterstaff, spear, and sling, and like the
+Barbarian a master of bare-handed combat, so even weaponless you hit
+hard. The one thing to accept early is that book-learning is not your
+path: the Cave Dweller has the weakest spell access in the game and
+very little Intelligence to start, so you read the occasional useful
+scroll rather than casting. Choose the dwarf or human background for
+the heaviest melee.
 
-**Healer** *(Neutral).* The dungeon's doctor: a stethoscope, four
-potions of healing and four of extra healing, a **wand of sleep**,
-three pre-blessed spellbooks (healing, extra healing, stone-to-flesh,
-guaranteed to read), **poison resistance**, and **immunity to
-sickness**. The wand of sleep is your survival, a handful of charges
-that drop even serious monsters when most of the early dungeon has no
-sleep resistance, so spend one per dangerous encounter, never on an
-easy kill, and recharge it later. Sickness immunity makes unknown
-clear potions a **free quaff-test** (dip a unicorn horn into the
-leftover sickness for fruit juice). Knife, Quarterstaff, Dart, Unicorn
-Horn, and Healing all cap Expert. *Pivot:* around XL 10 you move from
-potions-and-sleep to casting extra healing as a Pw battery; at
-Skilled, your heals behave like blessed potions. *Avoid* spending
-sleep charges on small monsters, and never sell the stethoscope.
+**Healer** *(Neutral).* The dungeon's doctor, a role that keeps you
+alive by keeping you well. You arrive equipped for medicine rather
+than war: a stethoscope, a small surgeon's scalpel, healing potions by
+the handful, three spellbooks of healing magic already blessed so they
+will not blow up when you read them, and a **wand of sleep**. That
+wand is your early lifeline. Most monsters in the first levels have no
+defense against sleep, and a single charge drops even a dangerous one
+where it stands, so save them for real threats and never waste one on
+an easy kill. The stethoscope is quietly wonderful too: press it to a
+monster to hear exactly how much fight it has left, or to yourself to
+learn your own hidden condition. Two gifts come built in. You are
+immune to poison, and you cannot be made sick, so a mystery potion can
+never poison or sicken you, though paralysis or sleep still can. You
+are no brawler, so lean on the wand and, later, on your spells. In
+time you grow expert with the knife, quarterstaff, dart, and unicorn
+horn, and in the healing arts, and around the middle of the game you
+shift from drinking healing to casting it.
 
-**Knight** *(Lawful).* Chivalry on horseback: a saddled **pony**, a +1
-long sword, and a +1 **lance**. The pony is a credible early ally and
-the basis of your unique attack, a jousting blow from horseback
-(Knights alone have Lance at Expert), though the lance is useless on
-foot. Speed at XL 7 is the whole intrinsic ladder. **Mount
-strategically:** the starting pony has ~7 HP, a failed mount costs
-*you* 10–14 HP, and the failure rate is ~45% at XL 1, so two unlucky
-tries kill a starting Knight; stay on foot until the pony grows into a
-warhorse. **[Excalibur](#excalibur-artifact) is almost guaranteed:**
-dip a long sword in a fountain at XL 5+ for a **1-in-6** chance per
-dip, five times better than other Lawful roles. You can also `#jump`
-to reposition without spending an attack. *Pivot:* with Excalibur and
-a warhorse, mounted long-sword-plus-jousting is one of the strongest
-melee builds. *Avoid* jousting fleeing, sleeping, or paralyzed
-monsters (a chivalry alignment hit) and retrying a failed mount at low
-HP.
+**Knight** *(Lawful).* Chivalry, on horseback. You ride to war with a
+code of honor and a companion at your side: a **saddled pony** trots
+with you from the first turn, alongside a long sword, a **lance**, and
+a full suit of armor, helmet, shield, and gloves. The pony is both a
+friend and the key to your signature move. Charge from horseback with
+the lance, a joust, and you land crushing damage no one else can
+match, for no other role wields a lance so well. On foot, though, the
+lance is dead weight, and climbing into the saddle is riskier than it
+looks: a failed mount throws you for real damage, and early on you
+fail nearly half the time, so do not rush to ride. Let the pony grow
+up first, into a horse and then a warhorse, and mount when the odds
+favor you. Two marks of the order: as a Lawful knight holding a long
+sword, you have the best chance in the game of drawing
+**[Excalibur](#excalibur-artifact)** from a fountain, and your code
+forbids striking a fleeing, sleeping, or helpless foe, which costs you
+standing if you do. Feed the pony apples, keep the carrots to cure
+blindness, and pick your fights like a gentleman.
 
-**Monk** *(Any alignment).* Bare hands are the identity: no starting weapon, and
-Martial Arts caps at **Grand Master** (+7 to-hit, +9 damage unarmed),
-the only role that reaches it. The **intrinsic ladder is the broadest
-in the game**: [see invisible](#senses-and-perception), sleep
-resistance, and speed at XL 1, then poison 3, stealth 5, warning 7,
-searching 9, fire 11, cold 13, shock 15, teleport control 17. The
-trade-off is armor: a body suit costs −20 to-hit, a shield kills your
-martial-arts bonus, and metallic helms, gloves, and boots each
-penalize casting, so the default Monk fights in a **robe** (+20
-spellcasting, larger than the Wizard's own) with no body armor. Guard
-the robe from polymorph traps from D7 on. *Pivot:* the Eyes of the
-Overworld quest artifact grants magic resistance and astral vision,
-freeing your cloak slot for the robe. *Avoid* eating meat (−1
-alignment; vegetarian is essentially free), anything metallic, and
-picking up a shield for the AC.
+**Monk** *(Any alignment).* You fight with empty hands and a
+disciplined mind, and do it better than anyone alive. You carry no
+weapon, because you are the weapon: you can train your
+martial arts to a level of mastery no other role can reach, until
+your bare fists strike harder than most swords. From the very start you can
+[see the invisible](#senses-and-perception), shrug off sleep, and move
+with unusual speed, and you gain new inner powers faster than any
+other role as you advance, resistances and senses unfolding one after
+another. The catch is that all of it depends on staying light and
+unburdened. Heavy body armor wrecks your aim, a shield cancels your
+martial bonus, and metal on your head, hands, or feet clouds your
+magic, so you fight best in little more than the **robe** you begin
+in, which sharpens your spellcasting rather than dulling it. Guard
+that robe, keep to a vegetarian diet to honor your discipline, and
+trust your hands. It is an unusual path, and a graceful one in
+practiced hands.
 
-**Priest** *(Any alignment, matching your god).* Sacrifice-gift specialist. You
-sense the **blessed/cursed/uncursed status of every item on sight**,
-so you always know what's safe to wear, and you start with a mace and
-four **holy waters**. Your first sacrifice gift is guaranteed:
-**Demonbane** (a silver mace in 5.0), which matches your blunt-weapon
-skill, so sacrifice early and often. Refill holy water by stacking
-water potions on a co-aligned altar and praying, the whole stack
-blessing at once. Almost nothing innate (Warning XL 15, Fire
-resistance XL 20); Priests trade intrinsics for divine favor, and six
-blunt weapons plus Healing, Divination, and Cleric all cap Expert.
-*Pivot:* around XL 14 you shift from Demonbane-bops-things to a
-clerical-spell cycle, and high Wisdom means high prayer success.
-*Avoid* abusing Luck (breaking mirrors, angering shopkeepers) before
-you've sacrificed, and don't sell holy water, it's worth far more in
-your pack.
+**Priest** *(Any alignment, matching your god).* A servant of a god,
+and it shows in what you can see. From the first moment you sense
+whether any item is blessed, cursed, or merely uncursed just by
+looking at it, so you never have to wonder whether the cloak on the
+floor is safe to wear, a knowledge other adventurers would trade a
+great deal for. You set out with a mace, a robe and shield, and four
+flasks of **holy water**, and you can always make more: set potions of
+water on an altar of your faith and pray, and the whole pile turns
+holy at once. Your god favors you at the altar in another way, too.
+Your first worthy sacrifice is guaranteed to return **Demonbane**, a
+blessed silver mace made to smite demons, so make offerings early and
+often. You are a capable fighter who grows into a formidable caster of
+clerical magic, expert with a whole rack of blunt weapons and in the
+healing, divination, and cleric schools, and your high Wisdom makes
+your prayers land when you need them most. One caution: guard your
+Luck. Do not anger shopkeepers or break mirrors before you have
+sacrificed your way into your god's good graces, or the answer to a
+desperate prayer may not be the one you hoped for.
 
-**Ranger** *(Neutral or Chaotic).* The ranged role: a bow, a generous
-arrow supply, a dagger, and a **+2 cloak of displacement** (foes swing
-at a phantom a step away), one of the strongest defensive starts in
-the game. **Multishot is your engine:** at Expert bow and high Str you
-fire two or three arrows a turn. Searching from XL 1 reveals hidden
-corridors and traps every step (Stealth XL 7, See invisible XL 15; the
-elven option adds sleep resistance at XL 4), and almost every ranged
-weapon caps Expert. Hoard the **+2 arrow stack** (they break ~25% per
-hit versus ~67% for +0s) and mulch the cheap stack on level-1 newts.
-*Pivot:* mid-game Rangers wish for or polypile silver arrows to
-enchant, among the highest damage-per-turn in the game at Expert bow.
-*Avoid* mulching the +2s and fighting on the front line, your role is
-ranged.
+**Ranger** *(Neutral or Chaotic).* The hunter, most at home striking
+from a distance. You begin with a bow and a deep quiver of arrows, and
+a **+2 cloak of displacement** that makes attackers swing at an image
+of you a step from where you truly stand, one of the safest opening
+hands in the game. Your gift is volume: with a bow trained high, a
+single turn can loose two or three arrows at once, and few things
+survive that for long. You notice everything as well, spotting hidden
+passages and traps as you walk without stopping to search. Two pieces
+of woodcraft to carry with you. Your finest arrows, the enchanted
+**+2** stack, break far less often than ordinary ones, so save them
+for real fights and spend the cheap arrows on the harmless newts of
+the first level. And your place is at range: step back, keep a wall at
+your shoulder, and let the arrows do the work rather than trading
+blows on the front line.
 
-**Rogue** *(Chaotic).* The dungeon's thief: a short sword, six
-**daggers**, leather armor, a **lock pick**, a sack, and a potion of
-sickness. The lock pick opens every door, chest, and box from turn 1
-(with a +25 to +30 bonus plain keys don't get), Stealth from XL 1 lets
-you pass sleeping monsters, and **backstab** adds +1 to +XL damage
-against fleeing or helpless targets. **Throw daggers, don't stab:**
-Rogues get a multishot bonus on thrown daggers, and backstab applies
-to throws too. *Pivot:* around XL 8 you can **poison your daggers and
-darts** with the starting sickness or any poison potion, doubling or
-tripling damage against non-resistant foes. *Avoid* noisy actions that
-waste stealth (kicking, attacking crowds) and selling the lock pick.
+**Rogue** *(Chaotic).* A thief in the dark, quick with a blade and
+quieter on your feet. You travel light: a short sword, a fistful of
+throwing daggers, leather armor, a **lock pick** that opens any door,
+chest, or box from the very first turn, and a sack to carry your
+finds. You move in near-silence, slipping past sleeping monsters
+without waking them, and when you strike an enemy that is fleeing or
+caught off guard, your **backstab** drives the blow home for far more
+damage than the same strike would deal head-on. Your daggers are made
+to be thrown, not thrust: you hurl several in a single turn, and a
+backstab counts even at range. Later you can coat your blades and
+darts with the poison you start carrying, so a thrown dagger leaves
+venom in whatever it strikes. Stay in the shadows, and avoid the loud,
+clumsy actions, like kicking at doors or wading into a crowd, that give
+your position away.
 
-**Samurai** *(Lawful).* The disciplined warrior: a **katana** (one of
-the best one-handed weapons, a long sword underneath), an off-hand
-**wakizashi**, and a yumi bow with arrows, plus intrinsic **speed from
-XL 1**. The katana carries the early game, but the wakizashi is the
-wrong off-hand, a short sword that doesn't share the katana's
-long-sword skill: drop it for any long sword (the Mines usually
-provides one) and **two-weapon** for the matched-skill bonus. Long
-Sword, Two-Handed Sword, Short Sword, Bow, Shuriken, and Two-Weapon
-all cap Expert, with Martial Arts at Master. *Pivot:* a Samurai who
-invested in the **yumi** can pivot to a multishot ranged build, two or
-three arrows a turn on a role already strong in melee. *Avoid* keeping
-the wakizashi for sentiment and forgetting the yumi.
+**Samurai** *(Lawful).* A disciplined warrior of the old school, fast
+and deadly with a blade. You carry a **katana**, one of the finest
+single-handed swords in the dungeon, a shorter companion sword called
+a **wakizashi**, a **yumi** longbow with a quiver of arrows, and a
+suit of splint mail, and you move with a quickness other warriors have
+to earn. The katana carries you cleanly through the early game. Its
+companion, though, is the wrong partner for two-blade fighting: the
+little wakizashi doesn't share the katana's swordsmanship, so when you
+find an ordinary long sword, take that up instead and fight with a
+blade in each hand, both swinging with your full skill. Don't forget
+the bow at your back, either. Trained up, the yumi makes you a ranged
+threat to rival a Ranger, two or three arrows a turn from a warrior
+already fearsome up close.
 
-**Tourist** *(Neutral).* The hardest role: low HP, no melee weapon,
-and a Hawaiian shirt with zero base AC. You start with an **expensive
-camera**, a truly absurd number of +2 **darts**, four scrolls of magic
-mapping, two potions of extra healing, a credit card, and food. The
-camera is your early-game survival tool: **flash it to blind**
-whatever's closest, dart from range, let the pet finish, repeat, and
-save the mapping scrolls for nasty levels. Both intrinsics come late
-(Searching XL 10, Poison resistance XL 20), and only Dart, Dagger, and
-Short Sword cap Expert. Beware the **Tourist tax:** shopkeepers charge
-you +33% and pay 1/3 below XL 15, so shop after the Quest. *Pivot:*
-the Platinum Yendorian Express Card quest artifact is one of the best
-in the game (magic resistance, telepathy, half spell damage), turning
-Tourists caster-heavy. *Avoid* shopping below XL 15 and wearing the
-Hawaiian shirt before you can protect it.
+**Tourist** *(Neutral).* You arrive as if on holiday: a loud
+Hawaiian shirt, a credit card, an **expensive camera**, a small
+mountain of **+2 darts**, a couple of healing potions, and four
+scrolls of magic mapping. You have almost no armor, few hit points,
+and no real weapon, so early on nearly anything can kill you. Your
+survival hangs on cleverness rather than muscle. The camera is the
+trick: a flash of its bulb blinds whatever is bearing down on you, and
+a blinded monster is one you can pepper with darts from a safe
+distance while your pet closes in to finish it. Save the mapping
+scrolls for the levels that look most dangerous. One indignity to plan
+around: shopkeepers can smell a tourist, and until you are seasoned
+they overcharge you and lowball what they buy, so leave your serious
+shopping for later in the run. Survive that brutal opening and the
+Tourist blossoms: your quest reward, the Platinum Yendorian Express
+Card, is one of the finest treasures in the dungeon, and a role nobody
+expects to cast turns quietly formidable. The hardest role in the
+game, and a badge of honor for anyone who ascends one.
 
-**Valkyrie** *(Lawful or Neutral; female only).* The standard
-recommendation for a first serious attempt: a long sword (or spear), a
-**small shield**, intrinsic **cold resistance**, and strong combat
-stats do the rest. **[Mjollnir](#mjollnir)** (a +d5/+d24 war hammer
-that returns when thrown at Str 25) drops as your guaranteed sacrifice
-gift regardless of alignment, so the late-game weapon question is
-solved early. Cold resistance from XL 1, Stealth XL 3, speed XL 7, and
-the widest practical weapon-skill range in the game (six weapons at
-Expert). A Lawful Valkyrie can also fountain-dip for **Excalibur** at
-the standard 1-in-30. *Pivot:* you already have the combat you need,
-so mid-game shifts to **magic resistance and reflection** (gray dragon
-scale mail, a shield or amulet of reflection); the Castle wish usually
-settles magic resistance. *Avoid* coasting through the early game
-unprepared for Gehennom, where magic attacks bypass HP and AC.
+**Valkyrie** *(Lawful or Neutral; female only).* The classic
+recommendation for anyone chasing a first ascension, and for good
+reason: strong from the start, hard to kill, and simple to play. A
+warrior-maiden of the North, you begin with a spear, a dagger, and a
+sturdy **+3 small shield**, already **resistant to cold**, with combat
+stats that let you meet the early dungeon head-on. The gods have set
+your late game aside for you, too. Your first guaranteed sacrifice
+gift, whatever your alignment, is **[Mjollnir](#mjollnir)**, a
+thunderous war hammer that flies back to your hand when you hurl it,
+so the question of an endgame weapon is answered almost before you ask
+it. You can grow skilled with a wider range of weapons than nearly
+anyone. The one thing not to do is coast. Your muscles carry you a
+long way, but the demons of Gehennom hurl magic that ignores armor and
+hit points alike, so line up magic resistance and reflection before
+the dungeon turns cruel.
 
-**Wizard** *(Neutral or Chaotic).* The undisputed caster: a
-quarterstaff, a **+2 cloak of magic resistance** (endgame-quality from
-turn one), a wand, two rings, three potions, three scrolls, **force
-bolt** plus a random spellbook, and a high-enchantment magic marker.
-Physical combat is weak; magic is the calling, fragile early and
-overwhelming late. **Advancing a spell school auto-identifies that
-school's spellbooks by appearance,** so you get free book-ID just by
-casting (see [Spellcasting](#spellcasting)), and four schools cap
-Expert. Keep the quarterstaff wielded, since any quarterstaff lowers
-spell-failure. Two warnings: you start with **zero food rations** and
-a kitten that won't share, and force bolt shatters potions on the
-ground and breaks a mirror a nymph is carrying. *Pivot:* by XL 10 the
-mid-game is simply "get every spellbook." *Avoid* meleeing at depth
-(open with force bolt or a wand) and running out of Pw with no backup.
+**Wizard** *(Neutral or Chaotic).* Magic is your birthright, and by
+the end of a run there is little in the dungeon you cannot unmake with
+a spell. You set out already holding a treasure most adventurers spend
+the whole game hoping to find: a **cloak of magic resistance**, which
+turns aside a whole category of deadly magic from the very first turn.
+Around it you carry a quarterstaff, a wand, a pair of rings, a handful
+of potions and scrolls, a magic marker, and the **force bolt** spell
+to fling at anything that comes close. The early game is the fragile
+part. Your body is weak and your spell energy is thin, so fight
+carefully and lean on your wand and force bolt rather than your fists.
+But magic compounds. As you study each school of spellcasting you
+begin to recognize its spellbooks on sight, so learning begets more
+learning, and a Wizard who reaches the mid-game with a full library is
+close to unstoppable. Keep the quarterstaff in hand as you cast, since
+it steadies your spells, and mind two quirks: you start with no food
+and a kitten who will not share, and your own force bolt will shatter
+potions lying on the ground (see [Spellcasting](#spellcasting)).
 
 #### The Races
 
@@ -806,20 +847,6 @@ same. And yet the dungeon follows patterns. Understanding those
 patterns is the first step toward navigating them.
 
 #### The Big Picture
-
-When the dungeon was first mapped, every level looked the same:
-rooms, corridors, a staircase down to more of the same. After
-decades of exploration and discovery, the Dungeons of Doom are
-now known to be just the first neighborhood of a much larger
-world. If you survive long enough, your adventure will lead you
-through towns, towers, and castles; swamps and islands and
-fortresses; an underworld of molten halls and four elemental
-planes that climb back to a temple where angels and demons do
-battle around the altars to the gods. Each landmark has its own
-architecture, its own inhabitants, and its own rewards. Every
-game is different, but the dungeon has a story to tell: an arc
-through a familiar cast of landmarks, each tougher and stranger
-than the last.
 
 The dungeon is a branching tree with a main trunk that descends
 through three main phases. Off the trunk are several optional side
