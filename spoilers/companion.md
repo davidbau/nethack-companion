@@ -243,12 +243,14 @@ training lets you read a scroll's label the moment you pick it up, so
 scrolls identify themselves as you find them. You are thin-skinned at
 first, so the early levels reward patience and stealth over trading
 blows. But you are sharp, born with the Intelligence and Wisdom of a
-natural spellcaster. You do not begin with any magic, but you grow
+natural spellcaster. Although you do not begin with any magic, you grow
 into it as spellbooks find their way to you. In time you can become an
 expert at combat with the pickaxe and saber, and in the spells of
 Divination. These include magic mapping, a spell that reveals a whole
-level's map in an instant. One rule every Archeologist learns: never
-smash a historic statue. You alone can tell which statues are
+level's map in an instant. (As you gain experience you also come into knacks: automatic
+searching from the start, stealth at experience level 5, and lasting
+speed at 10.) One rule
+every Archeologist learns: never smash a historic statue. You alone can tell which statues are
 historic, and destroying a piece of the past offends your god and
 costs you alignment.
 
@@ -260,16 +262,14 @@ You begin already **[immune to poison](#damage-resistances)**, which
 quietly spares you from a whole category of early deaths, and you
 carry a great two-handed weapon (a two-handed sword or a battle-axe),
 a one-handed backup, a suit of ring mail, and food. For the first
-stretch of the game you can simply wade in and swing. The wisdom to
-carry with you is about limits: a Barbarian has no spells to escape
-with and no way to teleport out of trouble, so once a fight turns bad
-it is win it or pray. The real danger comes later, once you have
+stretch of the game you can simply wade in and swing. (You also
+gain speed at experience level 7 and turn stealthy at 15.) The real danger comes later, once you have
 coasted comfortably to the middle of the game and meet monsters whose
 magic ignores muscle entirely. Start hunting magic resistance early,
 most reliably a suit of gray dragon scale mail, and your strong early
 game becomes a strong whole game. One quiet perk: because poison
-cannot touch you, you can taste-test unknown potions that would lay a
-weaker adventurer low.
+cannot touch you, you can taste-test risky potions and
+foods that would lay a weaker adventurer low.
 
 **Cave Dweller** *(Lawful or Neutral).* The simplest role in the game,
 and a fine place to learn the dungeon without a lot of moving parts.
@@ -282,7 +282,9 @@ protection from fire or cold or poison, you earn each one the hard
 way, by eating the right corpse. A fire ant grants fire resistance, a
 killer bee grants poison resistance, and so on up the ladder, one
 careful meal at a time, which makes an amulet of life saving more
-precious to you than to almost anyone. In a fight you can grow expert
+precious to you than to almost anyone. (What you gain on your own is
+modest: speed at experience level 7 and warning, a sense of nearby
+danger, at 15.) In a fight you can grow expert
 with the club, mace, quarterstaff, spear, and sling, and like the
 Barbarian a master of bare-handed combat, so even weaponless you hit
 hard. The one thing to accept early is that book-learning is not your
@@ -303,8 +305,9 @@ an easy kill. The stethoscope is quietly wonderful too: press it to a
 monster to hear exactly how much fight it has left, or to yourself to
 learn your own hidden condition. Two gifts come built in. You are
 immune to poison, and you cannot be made sick, so a mystery potion can
-never poison or sicken you, though paralysis or sleep still can. You
-are no brawler, so lean on the wand and, later, on your spells. In
+never poison or sicken you, though paralysis or sleep still can. (By
+experience level 15 you also gain warning, a sixth sense for nearby
+monsters.) You are no brawler, so lean on the wand and, later, on your spells. In
 time you grow expert with the knife, quarterstaff, dart, and unicorn
 horn, and in the healing arts, and around the middle of the game you
 shift from drinking healing to casting it.
@@ -320,7 +323,8 @@ lance is dead weight, and climbing into the saddle is riskier than it
 looks: a failed mount throws you for real damage, and early on you
 fail nearly half the time, so do not rush to ride. Let the pony grow
 up first, into a horse and then a warhorse, and mount when the odds
-favor you. Two marks of the order: as a Lawful knight holding a long
+favor you. (You also turn permanently fast at experience level 7.) Two
+marks of the order: as a Lawful knight holding a long
 sword, you have the best chance in the game of drawing
 **[Excalibur](#excalibur-artifact)** from a fountain, and your code
 forbids striking a fleeing, sleeping, or helpless foe, which costs you
@@ -335,7 +339,10 @@ your bare fists strike harder than most swords. From the very start you can
 [see the invisible](#senses-and-perception), shrug off sleep, and move
 with unusual speed, and you gain new inner powers faster than any
 other role as you advance, resistances and senses unfolding one after
-another. The catch is that all of it depends on staying light and
+another. (The ladder runs poison resistance at experience level 3,
+stealth at 5, warning at 7, searching at 9, then resistance to fire at
+11, cold at 13, shock at 15, and teleport control at 17.) The catch is
+that all of it depends on staying light and
 unburdened. Heavy body armor wrecks your aim, a shield cancels your
 martial bonus, and metal on your head, hands, or feet clouds your
 magic, so you fight best in little more than the **robe** you begin
@@ -358,7 +365,8 @@ blessed silver mace made to smite demons, so make offerings early and
 often. You are a capable fighter who grows into a formidable caster of
 clerical magic, expert with a whole rack of blunt weapons and in the
 healing, divination, and cleric schools, and your high Wisdom makes
-your prayers land when you need them most. One caution: guard your
+your prayers land when you need them most. (You also gain warning at
+experience level 15 and fire resistance at 20.) One caution: guard your
 Luck. Do not anger shopkeepers or break mirrors before you have
 sacrificed your way into your god's good graces, or the answer to a
 desperate prayer may not be the one you hoped for.
@@ -370,7 +378,9 @@ of you a step from where you truly stand, one of the safest opening
 hands in the game. Your gift is volume: with a bow trained high, a
 single turn can loose two or three arrows at once, and few things
 survive that for long. You notice everything as well, spotting hidden
-passages and traps as you walk without stopping to search. Two pieces
+passages and traps as you walk without stopping to search. (You turn
+stealthy at experience level 7 and gain see-invisible at 15.) Two
+pieces
 of woodcraft to carry with you. Your finest arrows, the enchanted
 **+2** stack, break far less often than ordinary ones, so save them
 for real fights and spend the cheap arrows on the harmless newts of
@@ -389,7 +399,9 @@ damage than the same strike would deal head-on. Your daggers are made
 to be thrown, not thrust: you hurl several in a single turn, and a
 backstab counts even at range. Later you can coat your blades and
 darts with the poison you start carrying, so a thrown dagger leaves
-venom in whatever it strikes. Stay in the shadows, and avoid the loud,
+venom in whatever it strikes. (The stealth is yours from the start; a
+knack for spotting hidden passages joins it at experience level 10.)
+Stay in the shadows, and avoid the loud,
 clumsy actions, like kicking at doors or wading into a crowd, that give
 your position away.
 
@@ -398,7 +410,8 @@ and deadly with a blade. You carry a **katana**, one of the finest
 single-handed swords in the dungeon, a shorter companion sword called
 a **wakizashi**, a **yumi** longbow with a quiver of arrows, and a
 suit of splint mail, and you move with a quickness other warriors have
-to earn. The katana carries you cleanly through the early game. Its
+to earn. (That quickness is yours from the start; stealth joins it at
+experience level 15.) The katana carries you cleanly through the early game. Its
 companion, though, is the wrong partner for two-blade fighting: the
 little wakizashi doesn't share the katana's swordsmanship, so when you
 find an ordinary long sword, take that up instead and fight with a
@@ -422,7 +435,9 @@ they overcharge you and lowball what they buy, so leave your serious
 shopping for later in the run. Survive that brutal opening and the
 Tourist blossoms: your quest reward, the Platinum Yendorian Express
 Card, is one of the finest treasures in the dungeon, and a role nobody
-expects to cast turns quietly formidable. The hardest role in the
+expects to cast turns quietly formidable. (You toughen with
+experience, too: a knack for hidden passages at experience level 10
+and poison resistance at 20.) The hardest role in the
 game, and a badge of honor for anyone who ascends one.
 
 **Valkyrie** *(Lawful or Neutral; female only).* The classic
@@ -430,7 +445,9 @@ recommendation for anyone chasing a first ascension, and for good
 reason: strong from the start, hard to kill, and simple to play. A
 warrior-maiden of the North, you begin with a spear, a dagger, and a
 sturdy **+3 small shield**, already **resistant to cold**, with combat
-stats that let you meet the early dungeon head-on. The gods have set
+stats that let you meet the early dungeon head-on. (Beyond the cold
+you start with, you turn stealthy at experience level 3 and fast at 7.)
+The gods have set
 your late game aside for you, too. Your first guaranteed sacrifice
 gift, whatever your alignment, is **[Mjollnir](#mjollnir)**, a
 thunderous war hammer that flies back to your hand when you hurl it,
@@ -454,7 +471,8 @@ carefully and lean on your wand and force bolt rather than your fists.
 But magic compounds. As you study each school of spellcasting you
 begin to recognize its spellbooks on sight, so learning begets more
 learning, and a Wizard who reaches the mid-game with a full library is
-close to unstoppable. Keep the quarterstaff in hand as you cast, since
+close to unstoppable. (You also gain warning at experience level 15
+and teleport control at 17.) Keep the quarterstaff in hand as you cast, since
 it steadies your spells, and mind two quirks: you start with no food
 and a kitten who will not share, and your own force bolt will shatter
 potions lying on the ground (see [Spellcasting](#spellcasting)).
@@ -701,8 +719,7 @@ first sustainable mana source a spellcaster will see.
 than it appears. It will fight alongside you, pick up items (which
 tells you they're not cursed, since pets avoid cursed items on the ground),
 and can even be trained to steal from shops. Keep it fed by dropping
-tripe rations or corpses near it. A healthy, well-fed pet is one of
-your best early assets.
+tripe rations or corpses near it.
 
 **Rule 4: Learn to pray.** If you are about to die (hit points
 critically low, starving, turning to stone) you
@@ -1246,7 +1263,7 @@ An altar is a consecrated stone shrine, marked `_` on the map and
 aligned to one of the three gods. It is also the single most useful
 piece of furniture in the dungeon: drop your gear on it to learn at a
 glance what is blessed or cursed, and sacrifice fresh corpses on it to
-earn your god's favor. Treat every altar like the treasure it is.
+earn your god's favor.
 
 **Dropping items on an altar** (`d` for one, `D` to drop several
 at once) reveals their BUC status instantly. **Amber flash** →
@@ -1601,7 +1618,7 @@ of reflection**, both extremely valuable; the
 per-variant 75/25 weighting. A cursed scroll of scare monster is
 placed under the prize as bait. A bag of holding lets you carry far
 more inventory at reduced weight. An amulet of reflection bounces
-ray attacks back at their casters. Either one is worth the detour.
+ray attacks back at their casters.
 
 The Sokoban levels penalize "cheating": breaking or polymorphing
 boulders, reading scrolls of earth, or squeezing past boulders
@@ -1719,7 +1736,7 @@ Takauji over the [Tsurugi of Muramasa](#tsurugi-of-muramasa). The Wizard descend
 the Dark One's stronghold for the [Eye of the Aethiopica](#eye-of-the-aethiopica). The
 [Artifacts](#artifacts) chapter has the full per-role list.
 
-And what a prize it is. Your quest artifact is your role's signature
+Your quest artifact is your role's signature
 relic, attuned to you as no other item in the game can be, and it
 tends to anchor your kit for the rest of the run. Each carries a blend
 of powers suited to its owner: protection, luck, telepathy, warning,
@@ -4592,8 +4609,7 @@ yank a loaded pet to your side from anywhere on the level.
 Pets die from the same things you do: traps, poison, powerful
 monsters, drowning in water. Keep an eye on your companion's
 health (`;` to farlook) and don't lead it into fights it can't
-win. A dead pet is not just a loss of utility; it's a cold feeling
-in the pit of your stomach.
+win.
 
 If you change levels and your pet isn't adjacent, it won't follow.
 Its loyalty ticks down while it waits, so go back for it before it
@@ -5797,7 +5813,7 @@ worth memorizing:
 The chain from healing → extra healing → full healing → gain ability
 via gain energy or gain level is the core alchemy sequence. A handful of common healing potions and a
 gain energy or two can be transmuted into the rarest potions in the
-game. Treat every gain energy potion like the catalyst it is.
+game.
 
 A side-loop worth knowing: **Levitation + Enlightenment → Gain level
 (2/3 chance, or nothing 1/3)**. Both inputs are reasonably common
@@ -5819,8 +5835,7 @@ one); the dilution only limits chained alchemy.
 
 Alchemy carries an explosion risk: roughly 10% on any non-water
 combination. An alchemy smock (if you find one) reduces this to
-about 1 in 30, which is the difference between "risky hobby" and
-"acceptable profession." Do your chemistry in an isolated room,
+about 1 in 30. Do your chemistry in an isolated room,
 away from your stash, and never dip a cursed potion into
 another. The dipping potion (not the one it goes into) is the
 one that breaks, and a cursed dip detonates every time.
@@ -5968,8 +5983,7 @@ each further enchant attempt can destroy the armor; the scroll
 []{#scroll-remove-curse}
 **Remove curse.** Frees you from cursed equipment. Uncursed version
 works on worn and wielded items only; blessed version uncurses your
-entire inventory. Every adventurer has a "put on a cursed ring"
-story. This scroll is the happy ending.
+entire inventory.
 
 []{#scroll-charging} **Charging.** Recharges wands and
 rechargeable tools. Save these for your wand of wishing: one
@@ -6055,7 +6069,7 @@ these alternate effects are *better* than the normal ones:
 **Confused enchant armor / enchant weapon**, *if uncursed or
 blessed*, erodeproofs the item instead of enchanting. This is the
 usual way to rustproof your gear, useful when you need protection
-from rust more than another +1. One of the best tricks in the game.
+from rust more than another +1.
 
 **Confused destroy armor** reaches the same result by the opposite
 BUC: *if cursed*, it doesn't destroy anything, it erodeproofs a
@@ -6640,8 +6654,7 @@ on a partially-cleared level while you scouted ahead, stop. The Castle
 chest in particular (containing the wand of wishing) can be emptied
 by the level's residents if you leave them time and opportunity. Clear
 levels before abandoning valuables, and **keep your most important
-containers locked**. The dungeon has gotten better at wanting what
-you have.
+containers locked**.
 
 #### Unlocking Tools
 
@@ -7799,8 +7812,7 @@ over time; the Mazes don't give anything for free.
 
 **Luck timeout.** Every 600 turns, your luck moves one point toward
 0. If you have +5 luck, it will drop to +4 after 600 turns, then
-+3 after 1200, eventually reaching 0. Your good deeds are forgotten.
-Your sins, alas, are also forgiven.
++3 after 1200, eventually reaching 0.
 
 **Luckstone.** Carrying a luckstone in your open inventory
 (not inside a container) freezes the timer. Your luck stays wherever
@@ -7858,9 +7870,6 @@ penalty, though most players just embrace the theme.)
 | Cannibalism                                         | −2 to −5    |
 | Breaking a mirror                                   | −2          |
 
-The Mazes have a moral compass, and it's embedded in the
-math.
-
 **Unicorn gem-throwing is the strongest active Luck source in the
 game.** Throw a properly-identified real gem (not glass) at a unicorn
 whose alignment matches yours and you gain +5 Luck immediately. The
@@ -7910,10 +7919,6 @@ from the path"* sermon, a black glow that curses your gear, or in
 the worst case bolts of damage. You'll miss attacks you should
 have hit. Scrolls will backfire.
 
-Treat the universe
-well and it will return the favor, in the form of slightly better
-random numbers, which in the Mazes is the closest thing to love.
-
 ---
 
 ### Exercising Your Stats
@@ -7959,7 +7964,7 @@ capacity, Dex for hit chance, Con for HP per level, Wis for prayer
 success and Pw regeneration. Drifting one of them up over the
 course of a run is a small but real upgrade. Drifting one down
 because you've spent five hundred turns Satiated and Fumbling is a
-small but real loss. Your habits matter more than single actions.
+small but real loss.
 
 ---
 
@@ -8260,8 +8265,6 @@ There is a moment in every successful game where you're asked,
 Don't panic. Don't mistype. And for the love of all that is holy,
 don't wish for a +3 blessed cockatrice. (Actually, that *would*
 be something. But no.)
-
-Wishes are rare and powerful.
 
 #### Sources of Wishes
 
@@ -8913,7 +8916,7 @@ Fighting Juiblex is viable late game (a wand of death works on
 all four), but he engulfs in melee, so keep your distance. None of their corpses is
 useful for sacrifice the way a fresh weak monster's would be.
 A *refused* bribe converts the prince to permanent hostility,
-and he will not offer terms again. Bribe or fight. Don't dither.
+and he will not offer terms again. Bribe or fight.
 
 **Wielding [Excalibur](#excalibur-artifact) or Demonbane closes off bribery entirely.**
 Those artifacts refuse to talk and attack on sight, so a Lawful
@@ -9163,8 +9166,7 @@ awaits. Easy, right?
 
 **A free wish on pickup.** The moment you pick up the Amulet of
 Yendor, your god grants you a single wish on the next turn. It
-fires automatically; you do not need to invoke it. This is one
-of the most generous moments in the game. Have your wish list
+fires automatically; you do not need to invoke it. Have your wish list
 ready *before* you reach the Sanctum: gauntlets of power, a +5
 weapon of your choice, a blessed cloak of [magic resistance](#damage-resistances), or
 whatever you are missing for the climb. You only get this wish
@@ -9184,10 +9186,6 @@ a dead adventurer's real Amulet to a fake when their corpse
 becomes a bones level), and a wish for an Amulet of Yendor
 silently substitutes a fake too. If you didn't pick yours up off
 the High Priest, you don't have the real one.
-
-You have the most powerful artifact in the
-dungeon in your pack, every covetous monster in the Mazes knows
-it, and the dungeon itself is fighting to keep you from leaving.
 
 ##### The Gauntlet
 
