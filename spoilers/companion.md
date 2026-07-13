@@ -225,13 +225,6 @@ ladder, skill caps, and mid-game quest, which add up to thirteen
 distinct games inside the same dungeon. What a Knight does in full
 armor on horseback a Monk cannot do at all.
 
-One rule cuts across the **fragile roles** (Wizard, Priest, Healer,
-Tourist, Archeologist): treat your class tool as your primary weapon
-from the start. Your to-hit and damage can't win a melee trade at
-depth, so open a fight with force bolt, a sleep wand, the camera,
-holy water, or the pick-axe, and save your blade for what's already
-nearly dead.
-
 **Archeologist** *(Lawful or Neutral).* Indiana Jones: a bullwhip, a
 **pickaxe**, a tinning kit, a **touchstone**, and a fedora, a kit for
 exploration over combat, with modest Str and HP that make the first
