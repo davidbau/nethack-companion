@@ -2651,6 +2651,15 @@ messages still come through.)
 ## Part Three: Survival
 
 ### The Art of Combat
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Armor donning: helmets/gloves 1 turn, boots 2, cloaks/shields 0 (per-item delay, objects.h BOOTS/SHIELD/CLOAK macros). Was "1 each".
+- Speed table: gnome/kobold/dwarf are 6 (not 12); fire ant 18 (not 12); molds 0 and other fungi 1 (not 6); humans/elves are the 12 tier (monsters.h; NORMAL_SPEED=12, permonst.h:80).
+- Encumbrance is applied AFTER the Fast/Very-Fast bonus, cutting the boosted total (allmain.c:121-149). Was "before".
+- Samurai multishot bonus is ya+yumi (bow) only, not shuriken (dothrow.c:73-75).
+- Nagas have no M1_REGEN; removed from the "regenerate every turn" list (monsters.h).
+-->
 <!-- audit
 2026-05-20:
 - waking a sleeping monster via attack invokes wakeup() (uhitm.c:250, 305, 1403, 1926, 5213, 5590, 5694, 5764, 5774); if the struck monster was sleeping AND not MS_SILENT AND not helpless, growl() fires (mon.c:4353-4356 wakeup)
@@ -2667,7 +2676,7 @@ messages still come through.)
 - conflict requires mutual sight and a Cha-vs-Lvl resist roll: resist_chance = min(19, Cha - m_lev + XL) (mondata.c:1607-1612)
 - two-weapon and shield are mutually exclusive
 - Expert two-weapon: Rogue and Samurai only (u_init.c skill tables)
-- Rangers cannot two-weapon at all (no P_TWO_WEAPON_COMBAT entry) (u_init.c:440-466 Skill_Ran table)
+- Rangers CAN two-weapon but only unskilled (-9 to-hit, weapon.c:1587); can_twoweapon has no role gate (wield.c:766). Skill_Ran lacks the entry so it's untrainable, not forbidden.
 - two-weapon penalty is a flat table: -9/-7/-5/-3 to-hit, -3/-1/0/+1 damage
 - Luck to-hit contribution is sgn(Luck)·((|Luck|+2)/3), capping at ±5 (uhitm.c:377); Luck itself ranges ±10, ±13 with luckstone
 - monsters use m_move (phase 3) then mattacku/castmu (phase 4) on the same turn (monmove.c:911, 943-944, 971)
@@ -2756,9 +2765,9 @@ for the full procedure.
 armor with `W` and take it off with `T`. Shirt goes
 on first, body suit second, cloak last, so reaching an inner
 piece means shedding what's over it. A metal body suit takes
-**5 turns** to don or remove; leather 3, mithril 1; cloaks,
-helmets, gloves, boots, and shields take 1 turn each; the shirt
-is instant. A full Hawaiian-shirt-to-cloak swap can mean six
+**5 turns** to don or remove; leather 3, mithril 1; helmets
+and gloves take 1 turn each, boots 2; cloaks, shields, and the
+shirt are instant. A full Hawaiian-shirt-to-cloak swap can mean six
 exposed turns, and you take all incoming attacks during them, so
 save armor changes for a clear room or a corridor at your back.
 
@@ -2786,7 +2795,7 @@ when nobody can afford to move, every counter advances by that
 creature's **speed**, and that repeats until someone can act. A
 faster creature's counter simply fills more often, which is why
 the ratio above holds. Monster speeds come from the bestiary:
-zombies at 6, gnomes at 12, centaurs at 18, vampire bats at 20,
+zombies at 6, humans at 12, centaurs at 18, vampire bats at 20,
 air elementals at 36.
 
 **Intrinsic speed comes in two probabilistic tiers.** **Fast**
@@ -2801,7 +2810,7 @@ wins. Speed boots are the cleanest source: a worn passive that
 costs no inventory slot and no spell-pool drain.
 
 **Encumbrance shaves the allocation directly.** It reduces the
-points your allocation gives you, before the intrinsic bonus is
+points your allocation gives you, after the intrinsic bonus is
 applied:
 
 | Status        | Base points | Effective speed |
@@ -2825,9 +2834,10 @@ bag of holding.
 
 | Speed | Tier                 | Examples                                          |
 | ----- | -------------------- | ------------------------------------------------- |
-| 6     | slow                 | zombies, fungi, brown molds                       |
-| 12    | normal (your base)   | gnomes, kobolds, foocubi, fire ants               |
-| 18    | fast                 | centaurs, ki-rin, soldier ants                    |
+| 0–1   | crawling             | molds, most fungi                                 |
+| 6     | slow                 | zombies, gnomes, kobolds, dwarves                 |
+| 12    | normal (your base)   | humans, elves, foocubi                            |
+| 18    | fast                 | centaurs, ki-rin, soldier ants, fire ants         |
 | 20    | very fast            | ravens, vampire bats                              |
 | 22    | very fast            | bats, giant bats, steam and fire vortices         |
 | 24    | extreme              | queen bees                                        |
@@ -2844,7 +2854,7 @@ difference between losing a chase and winning a duel.
 - Rogue and Samurai are the only roles reaching Expert in P_TWO_WEAPON_COMBAT (u_init.c skill tables).
 - Valkyrie and Knight cap at Skilled (u_init.c skill tables).
 - Barbarian caps at Basic (u_init.c skill tables).
-- Ranger has NO P_TWO_WEAPON_COMBAT entry: cannot two-weapon at all (u_init.c:440-466 Skill_Ran table).
+- Ranger has no P_TWO_WEAPON_COMBAT entry, so two-weapon is untrainable (unskilled, -9 to-hit), NOT forbidden — can_twoweapon has no role check (wield.c:766).
 - Penalty structure is a flat negative replacement per skill tier: to-hit -9/-7/-5/-3, damage -3/-1/0/+1.
 - Penalties are not a "split" between the two weapons. (weapon.c:1576-1600 hit-bonus and 1676-1695 dam-bonus apply the same flat penalty per-strike — no halving)
 -->
@@ -2856,7 +2866,7 @@ strike takes a flat to-hit and damage penalty by skill rank
 Expert), and the loadout must be melee on both sides. No
 shield, no launcher, no thrown projectiles. Only **Rogue** and
 **Samurai** reach Expert; Valkyrie and Knight cap at Skilled;
-Barbarian at Basic; Rangers can't two-weapon at all.
+Barbarian at Basic; Rangers stay unskilled (a −9 to-hit penalty, so rarely worth it).
 
 **When the second swing pays off.** The extra hit is worth its
 to-hit penalty only when your hit chance is already high and
@@ -2918,7 +2928,7 @@ the pet. The same rules apply to wand zaps and spell rays.
 **Multishot.** With the right skill and role, a single `f`
 launches multiple projectiles per turn. Rangers get +1 on any
 non-dagger ranged weapon; Rogues get +1 on thrown daggers;
-Samurai get +1 on shuriken and bow; Expert bow adds another +1;
+Samurai get +1 on the bow; Expert bow adds another +1;
 the Longbow of Diana adds +1 while wielded. At Expert with a
 matching role, two to four projectiles fly per keystroke. A
 Ranger spamming `f` at a closing centaur does the damage of
@@ -3021,7 +3031,7 @@ only for survival. Retreat heals you, too: a level-1 hero
 out-heals a normal monster (~1 HP per 9 turns vs 1 per 20), and
 by mid-game you regenerate 5× faster than them, so backing off a
 slow non-regenerating threat (mimic, ogre, leocrotta) is
-essentially free HP. The exceptions are trolls, vampires, naga,
+essentially free HP. The exceptions are trolls, vampires,
 and the Wizard of Yendor: they regenerate every turn, sometimes
 faster than you. Don't try to outwait those. If the fight is
 past saving, use a scroll of teleportation, a wand of
@@ -3075,6 +3085,13 @@ Knight or Samurai out of [the Quest](#the-quest) for the rest of the run.
 ---
 
 ### Things That Will Kill You
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Sleep resistance is from elf corpses only; elven mummy leaves no corpse (G_NOCORPSE), giants convey Str/elemental res (monsters.h; eat.c:908).
+- Floating-eye paralysis is d(3,70) ≈ 3-210, avg ~106 (uhitm.c:5887, 6042); "70" was the die size.
+- Dragon breath vs items: yellow=acid, blue=lightning (monsters.h); shock destroys rings/wands, fire+cold destroy potions (zap.c). Rewrote to fire/frost.
+-->
 <!-- audit
 2026-05-20:
 - mines residents are class G (gnomes, S_GNOME) and h (humanoids incl. dwarves, S_HUMANOID); g is gremlins/gargoyles (defsym.h:295, 301, 303, 333)
@@ -3155,7 +3172,7 @@ or Nazgul breath puts you to sleep for several turns. If you
 are alone in a corridor it costs you a couple of rounds. If
 you are surrounded by anything else, the surrounding monsters
 hit you freely while you cannot move. Sleep resistance
-comes from any elf, elven mummy, or giant corpse, and from
+comes from any elf corpse, and from
 several roles' starting kits (Wizard's cloak of MR, Ranger's
 elven cloak). Eat for it before descending into [the Mines](#the-gnomish-mines) or
 the lower Quest.
@@ -3203,7 +3220,7 @@ Don't quaff from fountains until you have [magic resistance](#damage-resistances
 reflection, or a clear path of retreat.
 
 **Floating eyes** (`e`). Hit one in melee and you're paralyzed for
-~70 turns; whatever passes by during the nap kills you. Kill at
+3 to 210 turns, about 100 on average; whatever passes by during the nap kills you. Kill at
 range, then eat the corpse for [telepathy](#senses-and-perception).
 
 **Minotaurs** (`H`, in [the Castle](#the-castle) and maze levels of [Gehennom](#gehennom)).
@@ -3252,9 +3269,9 @@ Remove the ring before walking back to your pet.
 shatters any potion you drop on the floor, and the shrapnel
 is deadly. Keep potions in a bag once you descend below the
 Castle. Bagging your potion and scroll stash earlier is also
-wise: a yellow dragon's lightning bolt shatters every loose
-potion in your pack, and a fire trap incinerates loose
-scrolls.
+wise: a fire trap or a red dragon's flames incinerate loose
+scrolls and potions, and a white dragon's frost shatters loose
+potions.
 
 **Killed by your own wand.** Self-zapped attack wands, rays
 ricocheting off a wall in a narrow corridor and back into
@@ -3616,6 +3633,12 @@ breath weapons. *Warning* detects them through their invisibility;
 ---
 
 ### Saving and Bones
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Bones LOADING is a flat 1/3 (bones.c:646), not depth-scaled; the depth-scaling (up to ~4/5) governs bones CREATION (bones.c:377). Corrected the conflation.
+- Verified correct: 80% bones-item curse rate (rn2(5), bones.c:290).
+-->
 <!-- audit
 2026-06-02:
 - save deletes file on load: anti-scum design (restore.c, save.c)
@@ -3657,9 +3680,10 @@ ordinary Dungeons-of-Doom levels at Dlvl 4 or deeper, plus
 Minetown and similar special levels (but *not* Sokoban, the
 Quest, Mines' End, the Castle, Vlad's outer floors, or the
 planes) — the game saves the level as a **bones file**. A future
-game has roughly a 1-in-3 chance of loading that bones file in
-place of generating that level from scratch, scaling up to 4/5 by
-Dlvl 16. The dungeon overview tags a loaded bones level
+game has a flat 1-in-3 chance of loading that bones file in
+place of generating that level from scratch (the odds don't climb
+with depth; it's leaving bones behind that grows likelier deeper
+down). The dungeon overview tags a loaded bones level
 (*"This place looks familiar..."* on entry) and a grave marker
 appears in the level overview.
 
@@ -3703,6 +3727,12 @@ never inherit a level). The **Bonesless** conduct requires it.
 ---
 
 ### Ways to Die Instantly
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Food poisoning is from eating old/rotten corpses; giant ants are AD_PHYS only (monsters.h). Disease attacks (AD_DISE) belong to Juiblex/Demogorgon/Scorpius. Removed the giant-ant example.
+- Verified correct: poison 6+d(4,6) extra HP & fatal-at-30, Famine drain rn1(40,40), touch_of_death 8d6+50, stoning/slime timers, disintegration armor order, reverse-genocide 4-6.
+-->
 
 Some things in the Mazes kill you outright. Not by whittling down
 your hit points, not by wearing you down over time, but by ending
@@ -4195,8 +4225,8 @@ infections but does nothing to a timer already running. Prayer
 would cure it, but green slime lives in Gehennom where prayer
 fails, so don't plan on it. Fire is the most reliable cure.
 
-**Illness (food poisoning).** Eating a rotten corpse or certain
-attacks (giant ant, etc.) gives you food poisoning, which kills in
+**Illness (food poisoning).** Eating a rotten or badly aged corpse
+gives you food poisoning, which kills in
 10–19 turns ("You feel deathly sick."). **Cures:** a unicorn horn
 (apply it), pray, eat a eucalyptus leaf, or vomit (by being
 satiated and eating more). Vomiting from other causes also cures
@@ -4230,6 +4260,14 @@ or prayer), then remove it.
 ---
 
 ### Divine Relations
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Same-race sacrifice is a REWARD for a chaotic hero on a chaotic altar (+2 luck, peaceful demon, +5 align; pray.c:1741-1773); punishment only when u.ualign.type != A_CHAOTIC. Fixed both the trouble list and the "never sacrifice" list.
+- Crowning comes only from prayer (gcrownu sole call pray.c:1343), never sacrifice; removed "the next sacrifice could crown you".
+- Crowning grants no universal "role's special spell"; only Wizard (finger of death) / Monk (restore ability) get a dropped blessed spellbook (pray.c:816-830). Removed the universal claim.
+- Verified correct: prayer trouble priority & HP thresholds, timeout rnz(350), turn-undead thresholds, sacrifice value rules, priest donation tiers, pet loyalty/taming/chat/revival.
+-->
 <!-- audit
 2026-05-18:
 - TROUBLE_PUNISHED = -1 is a MINOR trouble, not major (pray.c:91)
@@ -4362,10 +4400,10 @@ The rules:
   fell short of what your god was hoping for this time.
 - The altar must match your alignment, or you're praying to
   someone else's god (which has its own consequences).
-- Same-race sacrifice is forbidden and severely punished. On a
-  lawful or neutral altar it turns the altar chaotic, which is
-  no use unless you are chaotic yourself; on a chaotic altar
-  it summons a demon.
+- Same-race sacrifice punishes a lawful or neutral hero (and
+  turns a co-aligned altar chaotic). For a **chaotic** hero on a
+  chaotic altar, though, it is a reward: a peaceful demon appears
+  and your Luck and alignment both rise.
 - Two requirements before any gift can fire: you must be
   experience level **3 or higher**, and your Luck must not be
   negative.
@@ -4470,8 +4508,9 @@ arriving just as you exhale, so have an exit plan in case the
 Two things to **never** sacrifice on any altar:
 
 - **A corpse of your own race** (human, elf, gnome, dwarf, or orc,
-  whichever you are). Punished on every altar; on a Chaotic one it
-  summons a demon.
+  whichever you are). Punished on every altar — *unless* you are
+  chaotic and the altar is chaotic, where it instead rewards you
+  with a peaceful demon and a Luck and alignment boost.
 - **A unicorn whose alignment matches the altar.** Counts as an
   insult to that god.
 
@@ -4488,21 +4527,23 @@ your god may crown you on a successful prayer. Crowning grants:
   you a +7 Excalibur.
 - Intrinsic [fire resistance](#damage-resistances), [cold resistance](#damage-resistances), [shock resistance](#damage-resistances),
   [sleep resistance](#damage-resistances), [poison resistance](#damage-resistances), and see invisible.
-- Permanent skill-unrestriction on your alignment's sword slot, and
-  permanent knowledge of your role's special spell.
+- Permanent skill-unrestriction on your alignment's sword slot.
 - A class-specific bonus: Wizards get the *finger of death* spell;
   Monks get *restore ability*.
 
 Crowning **adds ~1000 turns of prayer timeout** on top of the
 usual post-prayer wait, making prayer unreliable in emergencies. If you're sacrificing to fish for an
-artifact gift, watch your piousness so you don't trigger a crowning
-by accident. A stethoscope applied to yourself reports it in
-words; *piously* is the top band, where the next sacrifice could
-crown you.
+artifact gift, mind your piousness, since a prayer made at high standing can
+crown you. A stethoscope applied to yourself reports it in
+words; *piously* is the top band, where a prayer could crown you.
 
 ---
 
 ### Making Friends
+
+<!-- audit
+2026-07-30: audited with Divine Relations vs NetHack-5.0 source; pet loyalty/taming/chat-sound/magic-whistle/corpse-intrinsics/altar-revival verified (dog.c, dogmove.c, apply.c, mon.c, pray.c). No corrections.
+-->
 <!-- audit
 2026-05-21:
 - Titan stats: LVL(16, 18, -3, 70, 9); attacks AT_WEAP 2d8 + AT_MAGC AD_SPEL; M1_FLY, M2_ROCKTHROW, M2_MAGIC; difficulty 20 (monsters.h:1777-1785)
@@ -4691,6 +4732,10 @@ and luck all factor in.
 ## Part Four: Gear and Provisions
 
 ### A Practical Identification Strategy
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source: no corrections. Verified every price-group membership (scrolls/potions/rings/wands/spellbooks/armor/gems, objects.h), Charisma buy/sell multipliers & surcharges (shk.c), cursed gain-level rise, shopkeeper buyoff.
+-->
 
 Here is the central puzzle of the Mazes: you will find dozens of
 items, and you won't know what most of them are.
@@ -5511,6 +5556,12 @@ identify are the precious last resort.
 ---
 
 ### Provisions and Dining
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Only yellow mold is poisonous to eat (M1_POIS); brown/red convey poison resistance but aren't poisonous, green is acidic (monsters.h). Was "most are poisonous".
+- Verified correct: ration/lembas nutrition & weight, hunger thresholds, tin-open times, cannibalism -2..-5 + aggravate, corpse-intrinsic mappings.
+-->
 <!-- audit
 2026-05-21:
 - vegan classes: S_BLOB, S_JELLY, S_FUNGUS, S_VORTEX, S_LIGHT, S_ELEMENTAL (except stalker), S_GOLEM (except flesh/leather), and noncorporeal (S_GHOST) (mondata.h:232-238)
@@ -5655,7 +5706,7 @@ are vegetarian only):
 |----|-------|----------------|
 | `b` | Blobs | Acid blob acidic → acid/stone res\*. Quivering blob → poison res. Gelatinous cube → fire/cold/sleep/shock res. |
 | `j` | Jellies | Mostly acidic → acid/stone res\*. Blue jelly → cold/poison res. |
-| `F` | Fungi & molds | Molds by color → resistances (yellow→poison, brown→cold+poison, red→fire+poison); most are poisonous, so poison res is the usual payoff. Green mold acidic → acid/stone res\*. **Lichen: safe, never rots — carry one.** Violet fungus → hallucination. |
+| `F` | Fungi & molds | Molds by color → resistances (yellow→poison, brown→cold+poison, red→fire+poison); only yellow mold is poisonous to eat, but each conveys its resistance, so poison res is a common payoff. Green mold acidic → acid/stone res\*. **Lichen: safe, never rots — carry one.** Violet fungus → hallucination. |
 | `P` | Puddings & oozes | Edible **globs** (vegetarian, not vegan): gray ooze → fire/cold/poison res; brown pudding → cold/shock/poison res (acidic). Black pudding isn't vegetarian. **Green slime → never eat, turns you to slime (death).** |
 
 :::
@@ -5726,6 +5777,12 @@ so a pile of brown-pudding globs is a re-rollable chance at
 ---
 
 ### The Apothecary
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Potion of healing cures blindness unless CURSED (cureblind = !cursed, potion.c peffect_healing); table row said "when blessed".
+- Verified correct: speed intrinsic, holy-water dip whole stacks, alchemy recipes & explosion odds, unicorn-horn cures, enchant caps, genocide/charging/remove-curse mechanics.
+-->
 <!-- audit
 2026-05-19:
 - dip_potion_explosion tests the DIPPING potion's BUC, not the receiver (potion.c:2279, 2541)
@@ -5753,7 +5810,7 @@ share of the random potions you find, unchanged by depth.
 
 | Potion | Chance | Effect and notable use |
 | ------ | -----: | ---------------------- |
-| **[healing](#potion-healing)** | 11.5% | Restores HP; cures blindness when blessed. |
+| **[healing](#potion-healing)** | 11.5% | Restores HP; cures blindness unless cursed. |
 | **[water](#potion-holy-water)** | 8% | The "clear potion." Bless it on an altar into holy water; the feedstock for it. |
 | **[extra healing](#potion-healing)** | 4.5% | More HP, always cures blindness and (non-cursed) sickness; can raise max HP. |
 | **[gain ability](#potion-gain-ability)** | 4% | Blessed raises *all* stats by 1, uncursed a random one. Save and bless. |
@@ -5931,6 +5988,12 @@ alchemized into see invisible, so nothing is wasted.
 ---
 
 ### The Scroll Rack
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Potion of confusion lasts rn1(7,16-8*bcsign) = 16-22 uncursed (8-30 across BUC), not "25-80" (potion.c:1024).
+- Verified correct (Scroll table/Key Scrolls): identify main-pack-only, enchant caps & destruction, remove-curse scope, genocide letters, confused-charging, magic-mapping, stinking-cloud, fire.
+-->
 <!-- audit
 2026-05-21:
 - blessed class genocide kills the player on the spot if any of the genocided species i matches gu.urole.mnum OR gu.urace.mnum: u.uhp = -1, done(GENOCIDED) (read.c:2769-2780)
@@ -6147,13 +6210,20 @@ permanent buff if you can spare the scroll. Cursed reading zeroes
 your Pw instead.
 
 The cleanest way to confuse yourself on purpose is a **potion of
-confusion**: drink one and the timer runs about 25–80 turns. A
+confusion**: drink one and the timer runs about 16–22 turns. A
 non-blessed **potion of booze** (Samurai: **sake**) will also
 confuse you for a few turns.
 
 ---
 
 ### Wands
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Wand of Nothing is IMMEDIATE (directional), so its charge cap is 8, not 15 (read.c:739-741; mkobj.c:1123). Table said 15.
+- No "cursed wand of digging zaps downward" mechanic; zap direction is BUC-independent (dig.c, zap.c). Removed.
+- Recharge explosion table was off-by-one: first recharge is safe (0%), 100% is the eighth (n = previous recharges, read.c:752-768).
+-->
 <!-- audit
 2026-05-18:
 - wand of stasis: NODIR, $150, prob 45 — makes the level no-teleport for 10-30 turns; does NOT freeze monsters (objects.h:1460, zap.c:2559-2568; effect gated by stasis_until in teleport.c:43 noteleport_level, teleport.c:2269 u_teleport_mon, apply.c:530 magic whistle, do.c:2262 revive rloc)
@@ -6208,7 +6278,7 @@ the few shared results.
 | Price | Wand | Type | Max Charges | Engrave-test result |
 | --- | --- | --- | --- | --- |
 |   100 | Light                                       | NODIR | 15 | room lights up         |
-|   100 | Nothing                                     | BEAM  | 15 | no message             |
+|   100 | Nothing                                     | BEAM  | 8  | no message             |
 |   150 | [Digging](#wand-digging)                    | RAY   | 8  | gravel flies up        |
 |   150 | Enlightenment                               | NODIR | 15 | you feel enlightened   |
 |   150 | Magic missile                               | RAY   | 8  | bullet holes           |
@@ -6262,9 +6332,7 @@ of the best offensive tools in the late game.
 shortcuts, dig down to escape dangerous situations, dig through
 rock to reach vaults and hidden areas. It also doubles as the universal "I'm
 leaving" button: a downward zap drops you straight onto the next
-floor, the same direction you wanted to go anyway. One quirk: a
-*cursed* wand of digging zaps downward no matter which direction
-you point it.
+floor, the same direction you wanted to go anyway.
 
 []{#wand-teleportation}
 **Teleportation.** Zap monsters to send them somewhere else on the
@@ -6356,10 +6424,11 @@ use is on a wand of wishing, where one recharge safely turns a
 single wish into two. Each successive recharge raises the risk of
 the wand exploding. The formula is (recharges cubed) / 343, so:
 
-- First recharge: 0.3% explosion chance.
-- Second: 2.3%.
-- Third: 7.9%.
-- Seventh: 100%.
+- First recharge: safe, no chance of exploding.
+- Second: 0.3%.
+- Third: 2.3%.
+- Fourth: 7.9%.
+- Eighth: 100%.
 
 Use blessed charging for the best results, except on a wand of
 wishing, which follows its own rules. A fresh wand of wishing is
@@ -6429,6 +6498,13 @@ chance of that going wrong.
 ---
 
 ### Rings and Amulets
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Amulet of life saving revives to min(maxHP, 50+10*(Con/2)), not full HP (end.c:710,719).
+- Amulet of strangulation is 90% cursed at generation (rn2(10)), not "always" (mkobj.c:1063).
+- Verified correct: ray range, make-invisible/stasis durations, backfire 1/100, ring prices, MC/guarding rules, auto-curse 90%, ring-hunger ticks.
+-->
 <!-- audit
 2026-05-18:
 - ring prices match objects.h:741-827
@@ -6542,11 +6618,11 @@ your life" to "slowly strangles you to death":
 | Versus poison          | Poison resistance                           |
 | Flying                 | Grants flight (new in 5.0)     |
 | Guarding               | +2 AC and +2 MC (new in 5.0)   |
-| Strangulation          | Slowly kills you (always cursed)            |
+| Strangulation          | Slowly kills you (usually cursed)           |
 | Restful sleep          | Puts you to sleep randomly (usually cursed); grants +1 HP/turn regen while asleep |
 
 **Life saving** is the crown jewel. When you die (any kind of
-death) it triggers, revives you at full HP, and crumbles to dust.
+death) it triggers, revives you (to 50 HP plus a Constitution bonus, capped at your maximum), and crumbles to dust.
 Wear it whenever you're going somewhere dangerous. Take it off when
 you're safe. You only get the one miracle.
 
@@ -6582,6 +6658,13 @@ field hospital.
 ---
 
 ### Tools of the Trade
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Tinning a corpse yields a homemade tin of 50 nutrition (capped at the corpse's own value), not 450 (eat.c:144, 1620-1626; apply.c:2235).
+- Crystal-ball explosion only on an UNBLESSED non-artifact ball (rnd(...4:5), detect.c:1221); blessed uses rnd(4).
+- Verified correct: unicorn-horn cures, magic-marker charges & write costs, magic lamp djinni/wish odds, BoH weight, container weights, skeleton-key rates, bag-of-tricks.
+-->
 <!-- audit
 2026-05-21:
 - weight_cap = 25 * (Str + Con) + 50, capped at MAX_CARR_CAP = 1000 (hack.c:4295-4312, weight.h:12-25)
@@ -6825,7 +6908,7 @@ genocide on a non-graveyard level summons four to six wraiths at
 your feet (see [Farming wraiths](#a-note-on-wraiths)).
 
 The **tinning kit** turns a corpse (`a`pply, then select the
-corpse) into a tin: 450 nutrition of preserved food that keeps
+corpse) into a tin: up to 50 nutrition of preserved food that keeps
 indefinitely. Tinning eliminates raw-corpse poison and acid damage
 as well as neutralizing spoilage, so a tinned killer bee or acid
 blob is safe to eat with no resistance, and the intrinsic grant
@@ -6855,7 +6938,7 @@ The Int check is rolled against an "oops" threshold of 8 for a
 quest artifact, 16 for a blessed ball, or 20 for uncursed; rolling
 over the threshold triggers a misfire. Misfires range from
 harmless ("too much to comprehend") through confusion, blindness,
-and hallucination to (one outcome in five on a non-artifact ball)
+and hallucination to (one outcome in five on an unblessed non-artifact ball)
 an explosion that hits you for about 1d30. A cursed ball misfires
 every time while charged. Drop a fresh ball on an altar to bless
 it before first use, then aim it at the most baffling level
@@ -6871,6 +6954,15 @@ coat wears off after a few hits, so it's per-fight protection.
 ---
 
 ### The Armory
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Shield spell penalty is weight-gated (weight > small-shield's 30, spell.c:2269); the 30-weight drain- and shock-resistance shields also avoid it, so the small shield isn't the "only" one.
+- Crysknife reverts to a worm tooth EVERY time unless erodeproofed (then ~10%); the book had it inverted (do.c:911).
+- Monk martial-arts -20 to-hit applies to ANY body armor including dragon scale mail (uhitm.c:397, "if (uarm)"); DSM is not exempt.
+- Rangers CAN two-weapon (unskilled, -9), not "cannot at all" (can_twoweapon has no role gate, wield.c:766).
+- Verified correct: AC/MC values, DSM +3 vs mail +9 & merge rules, enchant destruction thresholds, robe halving metal-suit penalty, gauntlets of power Str 25, Excalibur odds, lance joust.
+-->
 <!-- audit
 2026-05-18:
 - shield of drain resistance is a second non-artifact source (objects.h:656-658)
@@ -6881,7 +6973,7 @@ coat wears off after a few hits, so it's per-fight protection.
 - DSM dual-property pattern: armor + per-color intrinsic (do_wear.c:806-883)
 - gray and silver DSM grant no extra intrinsic
 - DSM scroll-of-enchant transformation requires spe ≥ 0 (read.c:1225)
-- small shield is the only shield with no spellcast penalty (spell.c:2269)
+- shield spellcast penalty is weight-gated (weight > small-shield's 30, spell.c:2269); small shield AND the 30-weight drain/shock-resistance shields all avoid it
 - strategy aligned with NetHackWiki Dragon scale mail, Cloak of protection, Magic cancellation, Speed boots: GDSM as the popular MR wish, MC3 from cloak of protection, speed boots make turns more numerous (https://nethackwiki.com/wiki/Dragon_scale_mail, https://nethackwiki.com/wiki/Cloak_of_protection, https://nethackwiki.com/wiki/Magic_cancellation, https://nethackwiki.com/wiki/Speed_boots)
 -->
 
@@ -6909,9 +7001,10 @@ that a plain cloak doesn't. See
 ##### Body suits
 
 Body armor is the heaviest slot you wear and the biggest single
-source of AC. Monks should keep this slot empty until they find
-dragon scale mail; any other body suit costs them −20 to-hit on
-Martial Arts.
+source of AC. Monks fight best with this slot empty: **any** body suit, dragon
+scale mail included, costs them −20 to-hit on Martial Arts. Late
+game some wear dragon scale mail anyway, for the AC and intrinsic,
+not because it dodges the penalty.
 
 The lowest rung of body armor is mostly leather. The **leather
 jacket** (1 AC, 30 zm) is the half-suit version, light enough to
@@ -7128,9 +7221,10 @@ zeros Martial Arts.
 The plain shields (**small shield**, **elven shield**,
 **orcish shield**, **Uruk-hai shield**, **dwarvish roundshield**)
 range from 1 to 2 AC with no special properties. The
-**small shield** at 1 AC is the spellcaster's only shield
-option, the only shield in the game with no spell failure
-penalty.
+**small shield** at 1 AC is the spellcaster's usual pick: at 30
+weight it carries no spell failure penalty, where heavier shields
+do. (The rare drain- and shock-resistance shields weigh the same
+and qualify too.)
 
 **Large shield** and **dwarvish roundshield** are 2 AC but
 heavy (100 zm), and the large shield's two-handed restriction
@@ -7413,8 +7507,8 @@ starter, a tiny surgical blade.
 **Crysknife** is the Fremen blade from Frank Herbert's *Dune*: a
 20-centimeter blade carved from a sandworm's tooth. d10/d10, +3
 to-hit, but it has a quirk: dropping one on the floor reverts it
-to a worm tooth about nine times out of ten unless you've
-erodeproofed it first.
+to a worm tooth every time unless you've erodeproofed it first,
+which drops the chance to about one in ten.
 
 Daggers and knives benefit hugely from the `w` + secondary + `x`
 rotation pattern. A Rogue typically wields a short sword and
@@ -7497,7 +7591,8 @@ in the Combat chapter; the standard off-hand pairings:
   you're already at high enchantment.
 - **Barbarian:** caps at Basic; the to-hit penalty swallows the
   benefit, so a single good weapon is the better call.
-- **Rangers cannot two-weapon at all.**
+- **Rangers can two-weapon, but never train it past unskilled**
+  (a −9 to-hit penalty), so a single good weapon usually wins.
 
 <!-- audit
 2026-05-19:
@@ -7564,6 +7659,10 @@ scroll just gives the usual bad enchant effect; no merge.
 ---
 
 ### Curses and How to Break Them
+
+<!-- audit
+2026-07-30: audited with The Armory vs NetHack-5.0 source; remove-curse scope (uncursed=worn, blessed=all; read.c:1524), confused-cursing, prayer uncurse, autocurse-9/10 items verified. No corrections.
+-->
 <!-- audit
 2026-05-18:
 - bones items are 80% cursed at pickup (bones.c:290)
