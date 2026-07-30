@@ -180,6 +180,13 @@ you alive.
 -->
 
 ### Choosing Your Expedition
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Rogue backstab is melee-only; removed "counts even at range" (uhitm.c:960 gates on hmd->hand_to_hand: "multi-shot throwing is too powerful here").
+- Healer has no Sick_resistance (hea_abil = poison-res@1, warning@15; attrib.c:41-43); tainted food still sickens (eat.c:1904,1939). Narrowed "cannot be made sick" to the potion of sickness, which is Healer-cased (potion.c:969,977).
+- Verified correct: all 13 roles' intrinsic-gain XLs (attrib.c:26-89), alignment/race availability (role.c), race stat caps (role.c:597-678), starting kits (u_init.c:42-178), Archeologist scroll-decipher on pickup (invent.c:1036), Barbarian HP-advance 10 (role.c:102), Excalibur gates (fountain.c:404-410).
+-->
 <!-- audit
 2026-05-21:
 - Archeologist starts with touchstone (u_init.c:50) and knows_object(TOUCHSTONE) so the tool itself is identified (u_init.c:660-662); does NOT have knows_class(GEM_CLASS) — gems are NOT pre-identified; touchstone identifies gems by rubbing per apply.c:2678-2707 (Ken Arnold)
@@ -304,8 +311,8 @@ where it stands, so save them for real threats and never waste one on
 an easy kill. The stethoscope is quietly wonderful too: press it to a
 monster to hear exactly how much fight it has left, or to yourself to
 learn your own hidden condition. Two gifts come built in. You are
-immune to poison, and you cannot be made sick, so a mystery potion can
-never poison or sicken you, though paralysis or sleep still can. (By
+immune to poison, and the potion of sickness can't touch you, so a
+mystery potion can never poison or sicken you, though paralysis or sleep still can. (By
 experience level 15 you also gain warning, a sixth sense for nearby
 monsters.) You are no brawler, so lean on the wand and, later, on your spells. In
 time you grow expert with the knife, quarterstaff, dart, and unicorn
@@ -396,8 +403,7 @@ finds. You move in near-silence, slipping past sleeping monsters
 without waking them, and when you strike an enemy that is fleeing or
 caught off guard, your **backstab** drives the blow home for far more
 damage than the same strike would deal head-on. Your daggers are made
-to be thrown, not thrust: you hurl several in a single turn, and a
-backstab counts even at range. Later you can coat your blades and
+to be thrown, not thrust: you hurl several in a single turn. Later you can coat your blades and
 darts with the poison you start carrying, so a thrown dagger leaves
 venom in whatever it strikes. (The stealth is yours from the start; a
 knack for spotting hidden passages joins it at experience level 10.)
@@ -653,6 +659,13 @@ another shuffle. This won't decide your run, since your later decisions weigh fa
 ---
 
 ### Your First Descent
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Jackal packs are 2-4, not "four to seven" (G_SGROUP -> m_initgrp n=3; makemon.c:29,105; monsters.h:199).
+- Foxes (G_GENO|1) and dwarves (G_GENO|3) are solitary; removed from the group-spawn list. Killer bees (LGROUP), soldier ants & gnomes (SGROUP) do swarm.
+- Verified correct: stair-fall rnd(3) HP (do.c:1797), corpse-rot thresholds (eat.c:1887-1939), supply-chest details (mklev.c:1026-1127), cheapest-price scroll/potion (objects.h).
+-->
 <!-- audit
 2026-05-21:
 - poison-resistance corpse list for Rule 6, all with MR_POISON in both mresists and mconveys: killer bee (monsters.h:100), cave spider (monsters.h:944), yellow mold (monsters.h:1636); black pudding glob also conveys MR_POISON via mconveys (monsters.h:2118)
@@ -790,9 +803,8 @@ rather than dangerous, unless you're carrying a cockatrice corpse:
 the tumble counts as touching it, and you turn to stone on the spot.
 
 **Caught in the open by a pack.** Jackals bite for only 1d2 each,
-but packs of four to seven spawn on the upper levels and surround
-you in open rooms. Killer bees, foxes, soldier ants, dwarves, and
-gnomes all kill in this same shape. Retreat to a doorway or
+but small packs of two to four spawn on the upper levels and surround
+you in open rooms. Killer bees, soldier ants, and gnomes all kill in this same shape. Retreat to a doorway or
 corridor at the first sign of more than two attackers; they can
 only approach single-file there.
 
@@ -831,6 +843,10 @@ it with a weapon you don't mind breaking.
 ```
 
 ### The Lay of the Land
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source: no corrections. Verified DoD depths, all branch placements, Gehennom & Elemental Planes ordering (dungeon.lua), Sokoban/Orcus prizes, Big Room 40%, map symbols.
+-->
 <!-- audit
 2026-05-21:
 - branch staircases render with the S_brupstair / S_brdnstair symbols in CLR_YELLOW (defsym.h:124-125)
@@ -1024,6 +1040,12 @@ more item discovery, and the occasional educational ambush.
 ---
 
 ### Field Guide to Dungeon Fauna
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Displacer beast has no melee place-swap; removed the fabricated "50% chance to swap places." M3_DISPLACES only barges past other monsters when moving (mm_displacement, mon.c, monster-vs-monster). Corpse still grants temporary Displacement (eat.c:1265-1268).
+- Verified correct: soldier ant/bat/centaur/jabberwock/mumak/xorn/gargoyle/naga stats, mind-flayer helmet block 7/8 (uhitm.c:3235), gremlin night-only intrinsic strip (uhitm.c:3040) & water split (mon.c:987).
+-->
 <!-- audit
 2026-05-18:
 - xan: AT_STNG AD_LEGS (sting cripples legs); xan is class `x`, not the engulfer `t` (S_TRAPPER) (monsters.h:1157-1159)
@@ -1078,7 +1100,7 @@ AC / attack details on every monster, see the
 | [`A`](#angelic-beings-a)    | [Angels](#angelic-beings-a)            | Powerful, usually aligned. Don't fight your own.                                                     |
 | [`C`](#centaurs-c)    | [Centaurs](#centaurs-c)          | Fast (speed 18-20). Half spawn with a bow or crossbow, but they'll still close into melee for weapon and kick attacks. Mountain centaurs hit hardest: 1d10 weapon plus *two* 1d6 kicks per turn. |
 | [`E`](#elementals-e)    | [Elementals](#elementals-e)        | Hard to kill. Air elementals [engulf](#engulfment); earth elementals phase through walls. |
-| [`f`](#felines-f)    | [Displacer beast](#felines-f)   | Cat-class, but vicious: AC −10, three-attack melee, and a 50% chance on each player melee to swap places with you instead. Eat the corpse for temporary intrinsic Displacement. |
+| [`f`](#felines-f)    | [Displacer beast](#felines-f)   | Cat-class, but vicious: AC −10 and a hard three-attack melee. Eat the corpse for temporary intrinsic Displacement. |
 | [`F`](#fungi-and-molds-f)    | [Fungi](#fungi-and-molds-f)             | Yellow mold, green mold, shriekers. Shriekers summon other monsters.                                 |
 | [`g`](#gremlins-g)    | [Gremlins / gargoyles](#gremlins-g)   | Heavy claws plus a special trick. Gremlins **strip a random intrinsic on hit at night** and **multiply when wet** (don't kick one into a fountain). Gargoyles are slow but armored (AC −4) with three-attack salvos; winged gargoyles fly. |
 | [`G`](#gnomes-g)    | [Gnome lords/kings](#gnomes-g) | Tougher gnomes. Still fairly manageable.                                                             |
@@ -1139,6 +1161,12 @@ A few map glyphs aren't monsters in the conventional sense, but you'll see them 
 ---
 
 ### Points of Interest
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Throne positive-Luck kick gives 300-500 gold, not 201-500: rn1(201,300)=rn2(201)+300 (dokick.c:1036; rn1 macro hack.h:1543).
+- Verified correct: magic fountain 1/7 restore-all+1, water demon 1/30 & wish-gate, Excalibur dip, altar BUC flashes, all throne effects, the full 28-ring sink table & 19/20 loss, sink kick/quaff/dip tables, vault-guard timer.
+-->
 <!-- audit
 2026-05-22 fountains fact-check:
 - magic-fountain placement: mklev.c:2297 mkfountain() rolls !rn2(7) — 1/7 of *randomly placed* fountains; predefined fountains via lua des.feature("fountain",x,y) call lspo_feature (sp_lev.c:4904) which sets FOUNTAIN typ + looted/warned only, never blessedftn — so Minetown, Mine's End, Oracle, Big Room (bigrm-4), Castle, Juiblex's swamp are never magic
@@ -1321,7 +1349,7 @@ before you sit if a wish is what you're after. Even when nothing happens, the th
 may vanish in a puff of logic, so you might get several tries or
 none at all. (Vlad's throne in the Tower is special: it never
 vanishes without granting a wish first.) Kicking a throne is a
-different gamble: at positive Luck it dislodges 201–500 gold and
+different gamble: at positive Luck it dislodges 300–500 gold and
 Luck+1 gems (max 6), which doubles as a free Luck-meter if you've
 lost track.
 <!-- Throne mechanics: src/sit.c throne_sit_effect(), rnd(6)>4 for 1/3
@@ -1458,6 +1486,12 @@ hit for breaking them.
 
 ### Branches and Landmarks
 
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Mine's End luckstone-decoy variant (minend-1.lua) has FOUR mimics (appear_as luckstone/loadstone/flint/touchstone, lines 59-71) plus one real cursed loadstone (74) near the real luckstone (77); corrected "a mimic".
+- Verified correct: Mines/Oracle/Sokoban/Quest depths, Fort Ludios contents & treasury, Castle wand-of-wishing chest, Medusa loot & layouts, Sokoban 75/25 prize weighting.
+-->
+
 The main trunk of the dungeon goes straight down, but most of
 the rewards wait off to the side, in branches and at named
 landmarks roughly in the order that follows.
@@ -1560,11 +1594,11 @@ The catch is finding it. In most layouts the luckstone hides in a
 secret room, so if a maze dead-ends with no treasure in sight,
 search the walls (`s`, `10s`) for hidden doors rather than digging,
 which these levels resist. There may be several such rooms, so don't
-stop at the first. (One variant salts the stones with two
-look-alikes: a **cursed loadstone** that looks just like a luckstone
-and welds to your pack, and a [**mimic**](#a-note-on-mimics). A pet
-spots both, so walk it over a suspect stone first, or kick it: a
-luckstone skids away, a loadstone won't.)
+stop at the first. (One variant hides the luckstone among fakes: four
+[**mimics**](#a-note-on-mimics) disguised as gray stones, plus a real
+**cursed loadstone** that looks just like it and welds to your pack. A
+pet spots the mimics, so walk it over a suspect stone first, or kick
+it: a real luckstone skids away, a loadstone won't.)
 
 #### Sokoban
 
@@ -1978,6 +2012,14 @@ inside, see [The Castle](#the-castle) in Part Five.
 ---
 
 ### Traps and Hazards
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source (domagictrap trap.c:4319-4453):
+- Rewrote the magic-trap effects paragraph. It is fate=rnd(20): <10 blind+summon 1d4; 10 nothing; 11 toggle invis; 12 fire; 13-18 flavor; 19 tame+CHA+1; 20 UNCURSE inventory. Old text's "curse an item" was backwards; sleep/stun/vomiting/earthquake/HP/mana/mapping/lighting don't exist; CHA is +1 on ~1/20 (~+0.05/zap), not +1.4.
+- Confused gold detection reveals ALL traps (trap_detect, read.c:2042), not just magical.
+- "A rumbling stop abruptly" is a boulder hitting a teleport trap only (trap.c:3477); pits route through flooreffects.
+- Verified correct: pit/spiked-pit damage, trapdoor cascade, bear-trap diagonal escape, anti-magic/cancellation blasts, iron-footwear protections.
+-->
 <!-- audit
 2026-05-31:
 - mktrap() places traps in rooms only (somexyspace(croom)) on standard dungeon levels; the MAZEFLAG path that allows corridor traps is set on maze levels (Gehennom mazes, etc.). Standard corridors do not generate traps (mklev.c:2032-2099, somexyspace usage at line 2093).
@@ -2119,15 +2161,15 @@ can't run, you can't even wake up on purpose. Monsters line up
 to hit you like it's a buffet. [Sleep resistance](#damage-resistances) (elven blood, the
 right ring) sidesteps it.
 
-Magic traps roll one of about a dozen random effects. The
-bad outcomes are summoning hostile monsters, cursing one of
-your items, aggravating monsters, blindness, sleep, stun,
-vomiting, and an earthquake that pops pits open in the
-surrounding squares. The good outcomes are an HP restore, a
-mana refill, a Charisma boost, a magic-mapping flash, and a
-room-lighting flash. Patient players sometimes camp a known
-magic trap until their Charisma climbs (about +1.4 average per
-zap), shop prices and all.
+Magic traps fire one of twenty random effects. A bit under half the
+time you get the dangerous one: a flash of light briefly blinds you
+and summons a few hostile monsters. One roll engulfs you in fire. The
+rest are harmless or even helpful: several are pure flavor, one toggles
+your invisibility, one uncurses your whole inventory, and one tames the
+nearby monsters and raises your Charisma by a point. That last is why
+some players camp a known magic trap for the Charisma and cheaper shop
+prices, but it comes up only about one roll in twenty, and the fire and
+monster summons make the wait risky.
 
 Bear traps clamp on for several turns. Try to step *diagonally*
 off the square; the diagonal escape is about five times faster
@@ -2189,7 +2231,7 @@ The best defense against traps is finding them before they find you:
 - **Flying and levitation** make you immune to most floor traps
   (you'll still trigger magic, teleport, and anti-magic traps)
 - **A scroll of gold detection read while confused** turns the
-  gold-reveal into a *trap* reveal: every magical trap on the
+  gold-reveal into a *trap* reveal: every trap on the
   level lights up at once. Confused gold detection is the cheapest
   pre-Gehennom trap survey.
 
@@ -2519,6 +2561,13 @@ What's usually behind: a scroll of teleportation.
 ---
 
 ### Feelings and Sounds
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- "monsters are aware of your presence" comes only from a monster casting MCAST_AGGRAVATION -> aggravate() (mcastu.c:826-828); removed the "cursed ring of aggravate monster" cause (worn rings give no message, do_wear.c:1266).
+- "presence of evil" is only the fountain water demon while blind (fountain.c:74); removed "or other major demon".
+- Verified correct: hypocrite/Elbereth alignment hit, stealth messages, pet-kill thunder -15, curse-items cast, summoning messages, resistance-absorb messages.
+-->
 <!-- audit
 2026-05-18:
 - vault sounds: "counting gold" means vault with gold; "searching" means empty vault (sounds.c:253-262)
@@ -2551,7 +2600,7 @@ messages still come through.)
 | *"You hear someone counting gold coins."*<br>*"You hear the footsteps of a guard on patrol."*<br>*"You hear someone searching."* | Vault on this level. The "counting" message means there's still gold inside; "searching" means the vault is already empty. |
 | *"You hear a wolf howling at the moon."* (or jackal) | A werecreature is somewhere on this level.                               |
 | *"You hear crashing rock."*            | A tunneler (dwarf, gnome miner, rock mole, umber hulk) just dug through stone.         |
-| *"You hear rumbling nearby."* (or *in the distance*) | A rolling boulder trap just fired offscreen. *"A rumbling stop abruptly"* means the boulder fell into a pit or teleport trap. |
+| *"You hear rumbling nearby."* (or *in the distance*) | A rolling boulder trap just fired offscreen. *"A rumbling stop abruptly"* means a rolling boulder hit a teleport trap. |
 | *"You hear a chugging sound."*         | A monster just drank a potion (usually healing themselves).                            |
 | *"You hear a nearby zap."*             | A monster just zapped a wand at something offscreen.                                   |
 | *"You hear a strange wind."*           | Oracle on this level.                                                                  |
@@ -2579,11 +2628,11 @@ messages still come through.)
 | *"It tasted bad."*                     | Cursed potion of gain level read on a level you can't rise off (already at the top, no Amulet, or against the ceiling). Cursed, but otherwise harmless. |
 | *"You have an uneasy feeling…"*        | Cursed potion of enlightenment, or cursed potion of gain level in a no-rise spot. Identifies the potion; no other effect (a Wisdom exercise penalty for enlightenment). |
 | *"You feel like a hypocrite."*         | You just attacked a monster while standing on Elbereth. The engraving is gone, and your alignment took a hit (flat −5 if your record is comfortably positive, otherwise −1 to −5). |
-| *"You feel that monsters are aware of your presence."* | Aggravate-monster effect just turned on (cursed ring of aggravate monster, a cast from a foe, etc.). Until removed, monsters home in on you from further away. |
+| *"You feel that monsters are aware of your presence."* | A monster just cast aggravate-monster, waking the level's monsters and sending them after you. |
 | *"You feel that monsters have difficulty pinpointing your location."* | Stealth just turned on (you wore a ring of stealth, elven cloak, or other stealth source). *"…no longer have difficulty…"* means it just turned off. |
 | *"You hear the rumble of distant thunder…"* | You just killed your own pet (or tame creature). **−15 alignment and your god is now angry**. Expect prayer to backfire for a long time. |
 | *"You feel as if you need some help."* | A nearby monster just cast curse-items on you: something in your inventory was randomly cursed. BUC-test gear before relying on it. |
-| *"You feel the presence of evil."* | A hostile water demon (or other major demon) was just summoned from a fountain but isn't visible to you yet. It's coming. |
+| *"You feel the presence of evil."* | A hostile water demon was just summoned from a fountain but isn't visible to you yet. It's coming. |
 | *"You hear someone summoning something, and…"* (and *"…summoning <something>"*) | An offscreen spellcaster (wizard, demon, lich) just summoned a monster. Expect company on the next level transition or as it walks in. |
 | *"You feel mildly hot."* / *"You feel mildly chilly."* | A fire (or cold) attack hit you and your intrinsic resistance absorbed it. Useful confirmation that you actually have the resistance you think you do. |
 | *"You feel rather itchy under your mummy wrapping."* | You just read a scroll, zapped a wand, or cast a spell of invisibility, but the mummy-wrapping cloak blocked it. You're not invisible — and you've just confirmed the scroll/wand is invisibility. |
