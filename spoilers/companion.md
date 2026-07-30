@@ -2575,7 +2575,7 @@ messages still come through.)
 | *"You feel like someone is helping you."* | Scroll of remove curse; worn/wielded cursed items uncursed.                         |
 | *"Your hands begin to glow red."*      | Scroll or spell of confuse monster. Your next melee strike will confuse the target. (Purple if you read it while already confused.) |
 | *"You feel guilty."*                   | Blessed or confused scroll of punishment. The ball and chain don't attach, but the scroll is now identified. |
-| *"Who was that Maud person anyway?"*<br>*"As your mind turns inward…"* | Scroll of amnesia. Some of your memorized spells (all if cursed) are now gone. |
+| *"Who was that Maud person anyway?"*<br>*"As your mind turns inward…"* | Scroll of amnesia. Some of your memorized spells are gone; a blessed scroll spares them. |
 | *"It tasted bad."*                     | Cursed potion of gain level read on a level you can't rise off (already at the top, no Amulet, or against the ceiling). Cursed, but otherwise harmless. |
 | *"You have an uneasy feeling…"*        | Cursed potion of enlightenment, or cursed potion of gain level in a no-rise spot. Identifies the potion; no other effect (a Wisdom exercise penalty for enlightenment). |
 | *"You feel like a hypocrite."*         | You just attacked a monster while standing on Elbereth. The engraving is gone, and your alignment took a hit (flat −5 if your record is comfortably positive, otherwise −1 to −5). |
@@ -5699,36 +5699,37 @@ potion" that healed you last time might polymorph you this time.
 What each potion does, and the uses that aren't obvious from the
 label. Prices for narrowing an unidentified bottle are in
 [Potion Prices](#potion-prices); the standouts get fuller treatment
-in [Key Potions](#key-potions) below.
+in [Key Potions](#key-potions) below. The chance is that potion's
+share of the random potions you find, unchanged by depth.
 
-| Potion | Effect and notable use |
-| ------ | ---------------------- |
-| **[healing](#potion-healing)** | Restores HP; cures blindness when blessed. |
-| **[extra healing](#potion-healing)** | More HP, always cures blindness and (non-cursed) sickness; can raise max HP. |
-| **[full healing](#potion-healing)** | Full HP, cures nearly everything, raises max HP. |
-| **[gain ability](#potion-gain-ability)** | Blessed raises *all* stats by 1, uncursed a random one. Save and bless. |
-| **gain energy** | Raises maximum Pw. |
-| **[gain level](#potion-gain-level)** | +1 experience level; *cursed* lifts you a dungeon level through the ceiling. |
-| **[speed](#potion-speed)** | One non-cursed quaff makes you permanently Fast, the real source of that intrinsic. |
-| **restore ability** | Restores drained stats. Keep one against attribute drain. |
-| **see invisible** | See invisible for a while, permanent when blessed. Shares $50 with sickness. |
-| **invisibility** | Turns you invisible. |
-| **levitation** | Float over hazards; *cursed* strands you off the floor until it ends. |
-| **monster detection** | Reveals every monster on the level. |
-| **object detection** | Reveals every object on the level. |
-| **enlightenment** | Reports your own stats and intrinsics; blessed tells more. |
-| **[polymorph](#potion-polymorph)** | Polymorphs you, or dip an item to change and ID it. |
-| **[water](#potion-holy-water)** | The "clear potion." Bless it on an altar into holy water; the feedstock for it. |
-| **fruit juice** | Harmless food, and what sickness or a unicorn-horn dip turns into. |
-| **booze** | Small nutrition; usually leaves you confused. |
-| **confusion** | Confuses you, the setup for the [confused-scroll](#confused-reading) tricks. |
-| **hallucination** | Harmless but disorienting; everything shows as nonsense. |
-| **sleeping** | Puts you to sleep (dangerous to quaff blind); better thrown at enemies. |
-| **blindness** | Blinds you, but activates telepathy for the duration if you have ESP. |
-| **sickness** | HP loss and illness (Healers immune); dip missiles into it to poison them. |
-| **paralysis** | Freezes you helpless, a lethal blind quaff; throw it at enemies instead. |
-| **acid** | Damages you; throw for acid damage, and the base of alchemy. |
-| **oil** | The only potion you can `a`pply (it lights): a safe ID test, lamp fuel, throwable fire. |
+| Potion | Chance | Effect and notable use |
+| ------ | -----: | ---------------------- |
+| **[healing](#potion-healing)** | 11.5% | Restores HP; cures blindness when blessed. |
+| **[water](#potion-holy-water)** | 8% | The "clear potion." Bless it on an altar into holy water; the feedstock for it. |
+| **[extra healing](#potion-healing)** | 4.5% | More HP, always cures blindness and (non-cursed) sickness; can raise max HP. |
+| **[gain ability](#potion-gain-ability)** | 4% | Blessed raises *all* stats by 1, uncursed a random one. Save and bless. |
+| **gain energy** | 4% | Raises maximum Pw. |
+| **[speed](#potion-speed)** | 4% | One non-cursed quaff makes you permanently Fast, the real source of that intrinsic. |
+| **restore ability** | 4% | Restores drained stats. Keep one against attribute drain. |
+| **see invisible** | 4% | See invisible for a while, permanent when blessed. Shares $50 with sickness. |
+| **invisibility** | 4% | Turns you invisible. |
+| **levitation** | 4% | Float over hazards; *blessed* lets you descend at will, otherwise you float until it times out. |
+| **monster detection** | 4% | Reveals every monster on the level. |
+| **object detection** | 4% | Reveals every object on the level. |
+| **fruit juice** | 4% | Harmless food, and what sickness or a unicorn-horn dip turns into. |
+| **booze** | 4% | Small nutrition; usually leaves you confused. |
+| **confusion** | 4% | Confuses you, the setup for the [confused-scroll](#confused-reading) tricks. |
+| **sleeping** | 4% | Puts you to sleep (dangerous to quaff blind); better thrown at enemies. |
+| **sickness** | 4% | HP loss and illness (Healers immune); dip missiles into it to poison them. |
+| **paralysis** | 4% | Freezes you helpless, a lethal blind quaff; throw it at enemies instead. |
+| **hallucination** | 3% | Harmless but disorienting; everything shows as nonsense. |
+| **blindness** | 3% | Blinds you, but activates telepathy for the duration if you have ESP. |
+| **oil** | 3% | The only potion you can `a`pply (it lights): a safe ID test, lamp fuel, throwable fire. |
+| **[gain level](#potion-gain-level)** | 2% | +1 experience level; *cursed* lifts you a dungeon level through the ceiling. |
+| **enlightenment** | 2% | Reports your own stats and intrinsics; blessed tells more. |
+| **[full healing](#potion-healing)** | 1% | Full HP, cures nearly everything, raises max HP. |
+| **[polymorph](#potion-polymorph)** | 1% | Polymorphs you, or dip an item to change and ID it. |
+| **acid** | 1% | Damages you if you quaff it; throw it for acid damage. |
 
 <div class="price-id-toolbar"></div>
 
@@ -5927,32 +5928,33 @@ but mean nothing until you identify them.
 What each scroll does, and the uses worth knowing. Prices for
 narrowing an unidentified scroll are in [Scroll Prices](#scroll-prices);
 the standouts get fuller treatment in [Key Scrolls](#key-scrolls)
-below.
+below. The chance is that scroll's share of the random scrolls you
+find, unchanged by depth.
 
-| Scroll | Effect and notable use |
-| ------ | ---------------------- |
-| **[identify](#scroll-identify)** | Names an item, but only in your main pack, so consolidate first. Blessed can name several. |
-| **[enchant weapon](#scroll-enchant)** | +1 (blessed up to +3); safe to +5, risks destroying the weapon above +6. |
-| **[enchant armor](#scroll-enchant)** | Enchants worn armor; risks destroying it above +3 (+5 for elven or the Cornuthaum). |
-| **[remove curse](#scroll-remove-curse)** | Frees cursed gear; blessed clears your whole inventory. |
-| **[magic mapping](#scroll-magic-mapping)** | Maps the level instantly. One of the best scrolls in the game. |
-| **[teleportation](#scroll-teleportation)** | Teleports you, aimed with teleport control. Often the lone scroll in a closet. |
-| **[scare monster](#scroll-scare-monster)** | Drops a fear spot stronger than [Elbereth](#elbereth). |
-| **[charging](#scroll-charging)** | Recharges a wand or tool; save it for your wand of wishing (once only). |
-| **[genocide](#scroll-genocide)** | Removes a species; blessed a whole class. Never target your own race or role. |
-| **light** | Lights the room, revealing dark corners and blinding light-sensitive foes. |
-| **blank paper** | Nothing written; write your own scroll on it with a magic marker. |
-| **confuse monster** | Charges your hands so your next few melee hits confuse the target. |
-| **destroy armor** | Destroys a worn piece; the confused and cursed reads behave differently. |
-| **fire** | Bursts into flame around you, burning scrolls and potions and melting ice. |
-| **food detection** | Reveals food on the level. |
-| **gold detection** | Reveals gold; read confused, it reveals traps instead. |
-| **amnesia** | You forget spells, discoveries, and part of the map. Bad to read. |
-| **create monster** | Spawns monsters, usually hostile; confused or cursed makes several. |
-| **earth** | Drops boulders around you, to trap monsters or wall yourself in. |
-| **taming** | Tames adjacent monsters; read confused, the area widens to 11×11. |
-| **punishment** | Chains a heavy iron ball to you. The reason not to read $300 scrolls blind. |
-| **stinking cloud** | Places a lingering poison-gas cloud at a range you choose. |
+| Scroll | Chance | Effect and notable use |
+| ------ | -----: | ---------------------- |
+| **[identify](#scroll-identify)** | 18% | Names an item, but only in your main pack, so consolidate first. Blessed can name several. |
+| **light** | 9% | Lights the room, revealing dark corners; blessed lights a wider area. |
+| **[enchant weapon](#scroll-enchant)** | 8% | +1 (blessed up to +3); safe to +5, risks destroying the weapon above +6. |
+| **[remove curse](#scroll-remove-curse)** | 6.5% | Frees cursed gear; blessed clears your whole inventory. |
+| **[enchant armor](#scroll-enchant)** | 6.3% | Enchants worn armor; risks destroying it above +3 (+5 for elven or the Cornuthaum). |
+| **[teleportation](#scroll-teleportation)** | 5.5% | Teleports you, aimed with teleport control. Often the lone scroll in a closet. |
+| **confuse monster** | 5.3% | Charges your hands so your next few melee hits confuse the target. |
+| **[magic mapping](#scroll-magic-mapping)** | 4.5% | Maps the level instantly. Very nice for maze levels. |
+| **destroy armor** | 4.5% | Destroys a worn piece; the confused and cursed reads behave differently. |
+| **create monster** | 4.5% | Spawns monsters, usually hostile; confused or cursed makes several. |
+| **[scare monster](#scroll-scare-monster)** | 3.5% | Drops a fear spot stronger than [Elbereth](#elbereth). |
+| **amnesia** | 3.5% | You forget your spells and some weapon skill; blessed spares the spells. Bad to read. |
+| **gold detection** | 3.3% | Reveals gold; read confused, it reveals traps instead. |
+| **fire** | 3% | Bursts into flame around you, burning scrolls and potions and melting ice. |
+| **blank paper** | 2.8% | Nothing written; write your own scroll on it with a magic marker. |
+| **food detection** | 2.5% | Reveals food on the level. |
+| **earth** | 1.8% | Drops boulders around you, to trap monsters or wall yourself in. |
+| **[charging](#scroll-charging)** | 1.5% | Recharges a wand or tool, even a wand of wishing (once only). |
+| **[genocide](#scroll-genocide)** | 1.5% | Removes a species; blessed a whole class. Never target your own race or role. |
+| **taming** | 1.5% | Tames adjacent monsters; read confused, the area widens to 11×11. |
+| **punishment** | 1.5% | Chains a heavy iron ball to you. The reason not to read $300 scrolls blind. |
+| **stinking cloud** | 1.5% | Places a lingering poison-gas cloud at a range you choose. |
 
 <div class="price-id-toolbar"></div>
 

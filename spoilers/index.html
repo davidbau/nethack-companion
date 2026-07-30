@@ -3568,8 +3568,8 @@ attach, but the scroll is now identified.</td>
 <tr>
 <td><em>“Who was that Maud person anyway?”</em><br><em>“As your mind
 turns inward…”</em></td>
-<td>Scroll of amnesia. Some of your memorized spells (all if cursed) are
-now gone.</td>
+<td>Scroll of amnesia. Some of your memorized spells are gone; a blessed
+scroll spares them.</td>
 </tr>
 <tr>
 <td><em>“It tasted bad.”</em></td>
@@ -7463,137 +7463,167 @@ that healed you last time might polymorph you this time.</p>
 <p>What each potion does, and the uses that aren’t obvious from the
 label. Prices for narrowing an unidentified bottle are in <a
 href="#potion-prices">Potion Prices</a>; the standouts get fuller
-treatment in <a href="#key-potions">Key Potions</a> below.</p>
+treatment in <a href="#key-potions">Key Potions</a> below. The chance is
+that potion’s share of the random potions you find, unchanged by
+depth.</p>
 <table>
 <colgroup>
-<col style="width: 21%" />
-<col style="width: 78%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 64%" />
 </colgroup>
 <thead>
 <tr>
 <th>Potion</th>
+<th style="text-align: right;">Chance</th>
 <th>Effect and notable use</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong><a href="#potion-healing">healing</a></strong></td>
+<td style="text-align: right;">11.5%</td>
 <td>Restores HP; cures blindness when blessed.</td>
 </tr>
 <tr>
+<td><strong><a href="#potion-holy-water">water</a></strong></td>
+<td style="text-align: right;">8%</td>
+<td>The “clear potion.” Bless it on an altar into holy water; the
+feedstock for it.</td>
+</tr>
+<tr>
 <td><strong><a href="#potion-healing">extra healing</a></strong></td>
+<td style="text-align: right;">4.5%</td>
 <td>More HP, always cures blindness and (non-cursed) sickness; can raise
 max HP.</td>
 </tr>
 <tr>
-<td><strong><a href="#potion-healing">full healing</a></strong></td>
-<td>Full HP, cures nearly everything, raises max HP.</td>
-</tr>
-<tr>
 <td><strong><a href="#potion-gain-ability">gain
 ability</a></strong></td>
+<td style="text-align: right;">4%</td>
 <td>Blessed raises <em>all</em> stats by 1, uncursed a random one. Save
 and bless.</td>
 </tr>
 <tr>
 <td><strong>gain energy</strong></td>
+<td style="text-align: right;">4%</td>
 <td>Raises maximum Pw.</td>
 </tr>
 <tr>
-<td><strong><a href="#potion-gain-level">gain level</a></strong></td>
-<td>+1 experience level; <em>cursed</em> lifts you a dungeon level
-through the ceiling.</td>
-</tr>
-<tr>
 <td><strong><a href="#potion-speed">speed</a></strong></td>
+<td style="text-align: right;">4%</td>
 <td>One non-cursed quaff makes you permanently Fast, the real source of
 that intrinsic.</td>
 </tr>
 <tr>
 <td><strong>restore ability</strong></td>
+<td style="text-align: right;">4%</td>
 <td>Restores drained stats. Keep one against attribute drain.</td>
 </tr>
 <tr>
 <td><strong>see invisible</strong></td>
+<td style="text-align: right;">4%</td>
 <td>See invisible for a while, permanent when blessed. Shares $50 with
 sickness.</td>
 </tr>
 <tr>
 <td><strong>invisibility</strong></td>
+<td style="text-align: right;">4%</td>
 <td>Turns you invisible.</td>
 </tr>
 <tr>
 <td><strong>levitation</strong></td>
-<td>Float over hazards; <em>cursed</em> strands you off the floor until
-it ends.</td>
+<td style="text-align: right;">4%</td>
+<td>Float over hazards; <em>blessed</em> lets you descend at will,
+otherwise you float until it times out.</td>
 </tr>
 <tr>
 <td><strong>monster detection</strong></td>
+<td style="text-align: right;">4%</td>
 <td>Reveals every monster on the level.</td>
 </tr>
 <tr>
 <td><strong>object detection</strong></td>
+<td style="text-align: right;">4%</td>
 <td>Reveals every object on the level.</td>
 </tr>
 <tr>
-<td><strong>enlightenment</strong></td>
-<td>Reports your own stats and intrinsics; blessed tells more.</td>
-</tr>
-<tr>
-<td><strong><a href="#potion-polymorph">polymorph</a></strong></td>
-<td>Polymorphs you, or dip an item to change and ID it.</td>
-</tr>
-<tr>
-<td><strong><a href="#potion-holy-water">water</a></strong></td>
-<td>The “clear potion.” Bless it on an altar into holy water; the
-feedstock for it.</td>
-</tr>
-<tr>
 <td><strong>fruit juice</strong></td>
+<td style="text-align: right;">4%</td>
 <td>Harmless food, and what sickness or a unicorn-horn dip turns
 into.</td>
 </tr>
 <tr>
 <td><strong>booze</strong></td>
+<td style="text-align: right;">4%</td>
 <td>Small nutrition; usually leaves you confused.</td>
 </tr>
 <tr>
 <td><strong>confusion</strong></td>
+<td style="text-align: right;">4%</td>
 <td>Confuses you, the setup for the <a
 href="#confused-reading">confused-scroll</a> tricks.</td>
 </tr>
 <tr>
-<td><strong>hallucination</strong></td>
-<td>Harmless but disorienting; everything shows as nonsense.</td>
-</tr>
-<tr>
 <td><strong>sleeping</strong></td>
+<td style="text-align: right;">4%</td>
 <td>Puts you to sleep (dangerous to quaff blind); better thrown at
 enemies.</td>
 </tr>
 <tr>
-<td><strong>blindness</strong></td>
-<td>Blinds you, but activates telepathy for the duration if you have
-ESP.</td>
-</tr>
-<tr>
 <td><strong>sickness</strong></td>
+<td style="text-align: right;">4%</td>
 <td>HP loss and illness (Healers immune); dip missiles into it to poison
 them.</td>
 </tr>
 <tr>
 <td><strong>paralysis</strong></td>
+<td style="text-align: right;">4%</td>
 <td>Freezes you helpless, a lethal blind quaff; throw it at enemies
 instead.</td>
 </tr>
 <tr>
-<td><strong>acid</strong></td>
-<td>Damages you; throw for acid damage, and the base of alchemy.</td>
+<td><strong>hallucination</strong></td>
+<td style="text-align: right;">3%</td>
+<td>Harmless but disorienting; everything shows as nonsense.</td>
+</tr>
+<tr>
+<td><strong>blindness</strong></td>
+<td style="text-align: right;">3%</td>
+<td>Blinds you, but activates telepathy for the duration if you have
+ESP.</td>
 </tr>
 <tr>
 <td><strong>oil</strong></td>
+<td style="text-align: right;">3%</td>
 <td>The only potion you can <code>a</code>pply (it lights): a safe ID
 test, lamp fuel, throwable fire.</td>
+</tr>
+<tr>
+<td><strong><a href="#potion-gain-level">gain level</a></strong></td>
+<td style="text-align: right;">2%</td>
+<td>+1 experience level; <em>cursed</em> lifts you a dungeon level
+through the ceiling.</td>
+</tr>
+<tr>
+<td><strong>enlightenment</strong></td>
+<td style="text-align: right;">2%</td>
+<td>Reports your own stats and intrinsics; blessed tells more.</td>
+</tr>
+<tr>
+<td><strong><a href="#potion-healing">full healing</a></strong></td>
+<td style="text-align: right;">1%</td>
+<td>Full HP, cures nearly everything, raises max HP.</td>
+</tr>
+<tr>
+<td><strong><a href="#potion-polymorph">polymorph</a></strong></td>
+<td style="text-align: right;">1%</td>
+<td>Polymorphs you, or dip an item to change and ID it.</td>
+</tr>
+<tr>
+<td><strong>acid</strong></td>
+<td style="text-align: right;">1%</td>
+<td>Damages you if you quaff it; throw it for acid damage.</td>
 </tr>
 </tbody>
 </table>
@@ -7820,126 +7850,150 @@ consistent within a game but mean nothing until you identify them.</p>
 <p>What each scroll does, and the uses worth knowing. Prices for
 narrowing an unidentified scroll are in <a href="#scroll-prices">Scroll
 Prices</a>; the standouts get fuller treatment in <a
-href="#key-scrolls">Key Scrolls</a> below.</p>
+href="#key-scrolls">Key Scrolls</a> below. The chance is that scroll’s
+share of the random scrolls you find, unchanged by depth.</p>
 <table>
 <colgroup>
-<col style="width: 21%" />
-<col style="width: 78%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 64%" />
 </colgroup>
 <thead>
 <tr>
 <th>Scroll</th>
+<th style="text-align: right;">Chance</th>
 <th>Effect and notable use</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong><a href="#scroll-identify">identify</a></strong></td>
+<td style="text-align: right;">18%</td>
 <td>Names an item, but only in your main pack, so consolidate first.
 Blessed can name several.</td>
 </tr>
 <tr>
+<td><strong>light</strong></td>
+<td style="text-align: right;">9%</td>
+<td>Lights the room, revealing dark corners; blessed lights a wider
+area.</td>
+</tr>
+<tr>
 <td><strong><a href="#scroll-enchant">enchant weapon</a></strong></td>
+<td style="text-align: right;">8%</td>
 <td>+1 (blessed up to +3); safe to +5, risks destroying the weapon above
 +6.</td>
 </tr>
 <tr>
+<td><strong><a href="#scroll-remove-curse">remove
+curse</a></strong></td>
+<td style="text-align: right;">6.5%</td>
+<td>Frees cursed gear; blessed clears your whole inventory.</td>
+</tr>
+<tr>
 <td><strong><a href="#scroll-enchant">enchant armor</a></strong></td>
+<td style="text-align: right;">6.3%</td>
 <td>Enchants worn armor; risks destroying it above +3 (+5 for elven or
 the Cornuthaum).</td>
 </tr>
 <tr>
-<td><strong><a href="#scroll-remove-curse">remove
-curse</a></strong></td>
-<td>Frees cursed gear; blessed clears your whole inventory.</td>
-</tr>
-<tr>
-<td><strong><a href="#scroll-magic-mapping">magic
-mapping</a></strong></td>
-<td>Maps the level instantly. One of the best scrolls in the game.</td>
-</tr>
-<tr>
 <td><strong><a
 href="#scroll-teleportation">teleportation</a></strong></td>
+<td style="text-align: right;">5.5%</td>
 <td>Teleports you, aimed with teleport control. Often the lone scroll in
 a closet.</td>
 </tr>
 <tr>
-<td><strong><a href="#scroll-scare-monster">scare
-monster</a></strong></td>
-<td>Drops a fear spot stronger than <a
-href="#elbereth">Elbereth</a>.</td>
-</tr>
-<tr>
-<td><strong><a href="#scroll-charging">charging</a></strong></td>
-<td>Recharges a wand or tool; save it for your wand of wishing (once
-only).</td>
-</tr>
-<tr>
-<td><strong><a href="#scroll-genocide">genocide</a></strong></td>
-<td>Removes a species; blessed a whole class. Never target your own race
-or role.</td>
-</tr>
-<tr>
-<td><strong>light</strong></td>
-<td>Lights the room, revealing dark corners and blinding light-sensitive
-foes.</td>
-</tr>
-<tr>
-<td><strong>blank paper</strong></td>
-<td>Nothing written; write your own scroll on it with a magic
-marker.</td>
-</tr>
-<tr>
 <td><strong>confuse monster</strong></td>
+<td style="text-align: right;">5.3%</td>
 <td>Charges your hands so your next few melee hits confuse the
 target.</td>
 </tr>
 <tr>
+<td><strong><a href="#scroll-magic-mapping">magic
+mapping</a></strong></td>
+<td style="text-align: right;">4.5%</td>
+<td>Maps the level instantly. Very nice for maze levels.</td>
+</tr>
+<tr>
 <td><strong>destroy armor</strong></td>
+<td style="text-align: right;">4.5%</td>
 <td>Destroys a worn piece; the confused and cursed reads behave
 differently.</td>
 </tr>
 <tr>
-<td><strong>fire</strong></td>
-<td>Bursts into flame around you, burning scrolls and potions and
-melting ice.</td>
-</tr>
-<tr>
-<td><strong>food detection</strong></td>
-<td>Reveals food on the level.</td>
-</tr>
-<tr>
-<td><strong>gold detection</strong></td>
-<td>Reveals gold; read confused, it reveals traps instead.</td>
-</tr>
-<tr>
-<td><strong>amnesia</strong></td>
-<td>You forget spells, discoveries, and part of the map. Bad to
-read.</td>
-</tr>
-<tr>
 <td><strong>create monster</strong></td>
+<td style="text-align: right;">4.5%</td>
 <td>Spawns monsters, usually hostile; confused or cursed makes
 several.</td>
 </tr>
 <tr>
+<td><strong><a href="#scroll-scare-monster">scare
+monster</a></strong></td>
+<td style="text-align: right;">3.5%</td>
+<td>Drops a fear spot stronger than <a
+href="#elbereth">Elbereth</a>.</td>
+</tr>
+<tr>
+<td><strong>amnesia</strong></td>
+<td style="text-align: right;">3.5%</td>
+<td>You forget your spells and some weapon skill; blessed spares the
+spells. Bad to read.</td>
+</tr>
+<tr>
+<td><strong>gold detection</strong></td>
+<td style="text-align: right;">3.3%</td>
+<td>Reveals gold; read confused, it reveals traps instead.</td>
+</tr>
+<tr>
+<td><strong>fire</strong></td>
+<td style="text-align: right;">3%</td>
+<td>Bursts into flame around you, burning scrolls and potions and
+melting ice.</td>
+</tr>
+<tr>
+<td><strong>blank paper</strong></td>
+<td style="text-align: right;">2.8%</td>
+<td>Nothing written; write your own scroll on it with a magic
+marker.</td>
+</tr>
+<tr>
+<td><strong>food detection</strong></td>
+<td style="text-align: right;">2.5%</td>
+<td>Reveals food on the level.</td>
+</tr>
+<tr>
 <td><strong>earth</strong></td>
+<td style="text-align: right;">1.8%</td>
 <td>Drops boulders around you, to trap monsters or wall yourself
 in.</td>
 </tr>
 <tr>
+<td><strong><a href="#scroll-charging">charging</a></strong></td>
+<td style="text-align: right;">1.5%</td>
+<td>Recharges a wand or tool, even a wand of wishing (once only).</td>
+</tr>
+<tr>
+<td><strong><a href="#scroll-genocide">genocide</a></strong></td>
+<td style="text-align: right;">1.5%</td>
+<td>Removes a species; blessed a whole class. Never target your own race
+or role.</td>
+</tr>
+<tr>
 <td><strong>taming</strong></td>
+<td style="text-align: right;">1.5%</td>
 <td>Tames adjacent monsters; read confused, the area widens to
 11×11.</td>
 </tr>
 <tr>
 <td><strong>punishment</strong></td>
+<td style="text-align: right;">1.5%</td>
 <td>Chains a heavy iron ball to you. The reason not to read $300 scrolls
 blind.</td>
 </tr>
 <tr>
 <td><strong>stinking cloud</strong></td>
+<td style="text-align: right;">1.5%</td>
 <td>Places a lingering poison-gas cloud at a range you choose.</td>
 </tr>
 </tbody>
