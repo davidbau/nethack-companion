@@ -7225,7 +7225,7 @@ range from 1 to 2 AC with no special properties. The
 consider: a heavier shield quarters your spell success, while the
 small shield (and the two 30-weight resistance shields) escape
 that. Any shield still adds a small flat casting penalty, though,
-so the purest casters carry none.
+so for the best spell success, wear none at all.
 
 **Large shield** and **dwarvish roundshield** are 2 AC but
 heavy (100 zm), and the large shield's two-handed restriction
