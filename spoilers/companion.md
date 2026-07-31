@@ -7757,6 +7757,12 @@ times.
 ## Part Five: Mastery and Endgame
 
 ### Spellcasting
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Cursed-spellbook contact poison is 3-6 Str + 1d10 HP by default; 1-2 Str + 1d6 HP only with poison res (spell.c:164, poison_strdmg). Was "1-2 Str + 1d10 HP".
+- Verified correct: read-success formula & lenses bonus, blessed/cursed auto results, exploding-rune 2d10+5, Pw cost 5*level, failed-cast half-Pw, Pw-regen ticks, chain lightning 2d6.
+-->
 <!-- audit
 2026-05-21:
 - spellbook of type SPE_NOVEL appears as "paperback" until read (objects.h:1433-1436)
@@ -7803,8 +7809,8 @@ level-3 book and it can blind you for 250 to 350 turns. A level-4
 book can take all your gold, and level 5 can leave you confused
 for 16 to 22 turns. Misread a level-6 book and you may be
 contact-poisoned: gloves take corrosion damage, bare hands take
-1 or 2 points of Strength plus 1d10 HP (1d6 with poison
-resistance). And a level-7 book can have an exploding rune. Magic
+3 to 6 points of Strength plus 1d10 HP (just 1 to 2 Strength and
+1d6 HP with poison resistance). And a level-7 book can have an exploding rune. Magic
 resistance blocks the explosion; without it, you take 2d10+5
 damage. Practical rule: don't read books you can't afford to fail.
 
@@ -7929,6 +7935,12 @@ bathrobe holding a stick.
 ---
 
 ### Luck and Fortune
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Removed three "Luck +5 benefits" that use plain rn2 (no Luck term): enchant-scroll success (read.c:1180, wield.c:1004), wand wresting (rn2(121), hack.h:1419), fountain wishes (fountain.c:78). Kept to-hit and prayer (which Luck does affect).
+- Verified correct (also covers Exercising Your Stats): effective Luck range & timeout, luckstone freeze/±3, luck artifacts, the whole gain/lose-Luck table, sacrifice ceiling, prayer-fails-on-negative-Luck, all stat exercise/abuse actions.
+-->
 <!-- audit
 2026-05-19:
 - cursed luckstone holds NEGATIVE Luck in place, but positive Luck still decays toward baseline (timeout.c:616-619)
@@ -8057,10 +8069,8 @@ better:
   connect instead.
 - Your prayers are more likely to be answered. Your god likes
   lucky people. (Gods are fickle that way.)
-- Scrolls of enchant weapon/armor succeed more often at high
-  enchantment levels.
-- Wands of wishing are more likely to work perfectly on wresting.
-- Fountain wishes become slightly more likely.
+- Countless smaller rolls quietly tip your way. Luck feeds the
+  game's luck-adjusted die, nudging many hidden checks.
 
 At negative luck, all of these go wrong. Even one point of negative
 Luck causes prayer to backfire. Instead of helping, your god
@@ -8119,6 +8129,12 @@ small but real loss.
 ---
 
 ### Enhancing Skills
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Valkyrie two-weapon caps at Skilled, not Expert (Skill_V, u_init.c:544); the example's slot count corrected to eleven.
+- Verified correct: practice thresholds level^2*20, slot costs, all to-hit/damage bonus tables, start-2/+1-per-level/+1-crowning, all 494 role skill-cap cells, training gates.
+-->
 <!-- audit
 2026-05-18:
 - skill ranks P_UNSKILLED through P_GRAND_MASTER; practice formula level²×20 (skills.h:92-106)
@@ -8367,8 +8383,8 @@ escape) and are restricted from the other five.
 
 Thirty slots sounds like plenty until you start counting. Expert
 in a single weapon costs **6 slots** (1+2+3) by itself. A
-Valkyrie aiming for Expert long sword, Expert two-weapon, and
-Skilled riding is fourteen slots deep before any spell school.
+Valkyrie aiming for Expert long sword, Skilled two-weapon, and
+Skilled riding is eleven slots deep before any spell school.
 
 A few principles:
 
@@ -8409,6 +8425,10 @@ others gain the blessed-scroll effect.
 ---
 
 ### Wishes and Wishing
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source: no corrections. Verified Vlad throne 4/13, Amulet-pickup wish, magic-lamp/smoky-potion/fountain odds, enchant-collapse & negative-Luck rules, artifact-wish denial, silent substitutes, Castle/Orcus guarantees.
+-->
 
 There is a moment in every successful game where you're asked,
 "For what do you wish?" It's the best question in all of gaming.
@@ -8542,6 +8562,14 @@ Here is what each word buys you:
 ---
 
 ### Artifacts
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source (artilist.h, artifact.c):
+- Vorpal Blade is Neutral (A_NEUTRAL|SPFX_RESTR), not "any" (artilist.h:191).
+- Grayswandir: SPFX_HALRES (hallucination res) + double physical damage dealt; NOT "half physical damage received" (artilist.h:170).
+- Intelligent-artifact evade/unwieldable needs badclass AND badalign (artifact.c:963); alignment-only mismatch blasts but can still be wielded.
+- Carry vs wield: defn/spfx effects apply only when wp_mask != W_ART (artifact.c:731). Fixed table columns: Sceptre MR, Tsurugi +1 prot (wield); Staff drain-res+regen (wield); Eye MR (worn). MR-by-carry is correct for Orb of Detection / Magic Mirror / PYEC. Fixed the general carry-bonuses list too.
+-->
 <!-- audit
 2026-05-19:
 - Magicbane effects (stun, magic resistance) require wielding, NOT just carrying (artilist.h:145-147, NO_CARY).
@@ -8582,9 +8610,10 @@ hands:
 Each artifact has an alignment. If you try to handle an artifact
 that doesn't match your alignment:
 
-- **Intelligent artifacts** (most quest artifacts and certain
-  alignment-restricted artifacts): 4d10 damage (or 2d10 with magic
-  resistance) and the item evades your grasp. You cannot wield these.
+- **Intelligent artifacts** held by someone of both the wrong
+  class *and* the wrong alignment: 4d10 damage (or 2d10 with magic
+  resistance), and the item evades your grasp — you cannot wield it.
+  A wrong alignment alone still blasts you, but you can wield it.
 - **Other misaligned artifacts**: 4d4 damage on first touch (2d4 with
   magic resistance), 1/4 chance of being blasted on each subsequent
   touch.
@@ -8601,11 +8630,11 @@ of that monster class.
 | Artifact               | Align    | Weapon            | Hit    | Extra damage           | Notable                                                |
 |------------------------|----------|-------------------|--------|------------------------|--------------------------------------------------------|
 | Excalibur         | Lawful   | long sword        | +d5    | +d10 physical               | drain resistance, automatic searching                  |
-| Grayswandir       | Lawful   | silver saber      | +d5    | (base only)                 | half physical damage received, hallucination res.      |
+| Grayswandir       | Lawful   | silver saber      | +d5    | ×2 physical                 | hallucination resistance                               |
 | Mjollnir          | Neutral  | war hammer        | +d5    | +d24 shock                  | returns when thrown if STR 25                          |
 | Magicbane         | Neutral  | athame            | +d3    | +d4 magic (stun)            | magic resistance and curse protection while *wielded*  |
 | Stormbringer      | Chaotic  | runesword         | +d5    | +d2 drain life              | drains a level (you gain it); attacks peacefuls        |
-| Vorpal Blade      | any      | long sword        | +d5    | +d1 physical                | chance to behead on hit                                |
+| Vorpal Blade      | Neutral  | long sword        | +d5    | +d1 physical                | chance to behead on hit                                |
 | Frost Brand       | any      | long sword        | +d5    | (base only) cold            | cold resistance while wielded                          |
 | Fire Brand        | any      | long sword        | +d5    | (base only) fire            | fire resistance while wielded                          |
 | Sunsword          | Lawful   | long sword        | +d5    | (base only); ×2 vs undead   | wielded light; `#invoke` fires a blinding ray any direction (camera-style; works on any monster) |
@@ -8729,12 +8758,14 @@ it doesn't block *other roles'* quest artifacts. A neutral
 character can wish for any neutral quest artifact, a lawful one for
 any lawful quest artifact, and so on. The alignment-blast rule
 still applies if you actually wield or wear a misaligned one, but
-carry bonuses (MR, drain resistance, regeneration, half spell
-damage, energy regeneration, etc.) work for anyone. A neutral Monk
-can wish for the Healer's *Staff of Aesculapius* for the
-drain-life-on-hit and drain-resistance carry bonus, or the Wizard's
-*Eye of the Aethiopica* for MR + half-spell-damage + energy regen,
-even though those quests are closed to the Monk.
+carry bonuses — the ones you get just from having the artifact in
+your pack, such as luck, ESP, half spell damage, and energy
+regeneration — work for anyone. (Magic resistance, protection,
+regeneration, and drain resistance are *not* carry bonuses; they
+need the item wielded or worn, which re-triggers the alignment
+blast.) A neutral Monk can wish for the Wizard's *Eye of the
+Aethiopica* for its half-spell-damage and energy-regen carry
+bonuses, even though that quest is closed to the Monk.
 
 `#invoke` (default `^A`) activates each artifact's special power
 for an energy cost, and the power has a cooldown before you can
@@ -8746,17 +8777,17 @@ use it again.
 |------|------------------------------------------|----------------|-----------------------------------|--------------------------|---------------------|
 | Arc  | The Orb of Detection                    | crystal ball | —                                     | MR, ESP, ½ spell dmg     | invisibility        |
 | Bar  | The Heart of Ahriman                    | luckstone    | ×2 dmg as a projectile                | stealth, +luck           | levitation          |
-| Cav  | The Sceptre of Might                    | mace         | +d5 hit; ×2 vs non-lawful             | magic resistance         | conflict            |
-| Hea  | The Staff of Aesculapius                | quarterstaff | drain-life on hit                     | drain res., regen        | full heal + cure    |
+| Cav  | The Sceptre of Might                    | mace         | +d5 hit; ×2 vs non-lawful; MR          | —                        | conflict            |
+| Hea  | The Staff of Aesculapius                | quarterstaff | drain-life on hit; drain res.; regen  | —                        | full heal + cure    |
 | Kni  | The Magic Mirror of Merlin              | mirror       | (speaks to you)                       | MR, ESP                  | —                   |
 | Mon  | The Eyes of the Overworld               | lenses       | astral vision, magic res. (when worn) | —                        | enlightenment       |
 | Pri  | The Mitre of Holiness                   | helm         | +1 prot. (brilliance base)            | fire res.                | energy boost        |
 | Ran  | The Longbow of Diana                    | bow          | +d5 hit; reflection                   | ESP                      | conjure arrows      |
 | Rog  | The Master Key of Thievery              | skeleton key | —                                     | warn, t-ctrl, ½ phys     | guaranteed untrap   |
-| Sam  | The Tsurugi of Muramasa                 | tsurugi      | +d8 phys; chance to behead            | +luck, +1 prot.          | —                   |
+| Sam  | The Tsurugi of Muramasa                 | tsurugi      | +d8 phys; chance to behead; +1 prot.  | +luck                    | —                   |
 | Tou  | Platinum Yendorian Express Card         | credit card  | —                                     | MR, ESP, ½ spell dmg     | charge an item      |
 | Val  | The Orb of Fate                         | crystal ball | —                                     | +luck, warn, ½ all dmg   | levitate / teleport |
-| Wiz  | The Eye of the Aethiopica               | amulet       | —                                     | MR, ½ spell, +energy     | create portal       |
+| Wiz  | The Eye of the Aethiopica               | amulet       | MR (worn)                             | ½ spell, +energy         | create portal       |
 
 :::
 
@@ -8847,6 +8878,13 @@ spell-caster this is irreplaceable.
 ---
 
 ### Into Gehennom
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Only Asmodeus/Baalzebub/Juiblex/Orcus have dedicated levels (dungeon.lua Gehennom list); Yeenoghu & Demogorgon are G_NOGEN (summon-only). Removed them from the throne-level list.
+- Orcus is speed 9 (LVL(66,9,...)), a slow flier, not "fast".
+- Verified correct: Valley roster, demon-lord attacks/resistances, bribe list & rules, Vlad throne, teleport-blocked-while-demon-lord-lives, Orcus loot.
+-->
 
 #### The Castle
 <!-- audit
@@ -9024,8 +9062,7 @@ may have a special fate reserved for members of those classes.
   across. Step into unfrozen lava without protection and you sink
   and burn within a few turns.
 - **Demon lords on specific levels.** Asmodeus, Baalzebub,
-  Juiblex, Orcus, Yeenoghu, and, very rarely, Demogorgon hold
-  court on private throne levels. Each fight is a major battle,
+  Juiblex, and Orcus hold court on private throne levels. Each fight is a major battle,
   several can summon reinforcements, and all of them are angry
   you are here. Their lairs and the bribery rules get their own
   section below.
@@ -9114,8 +9151,8 @@ put unless something destroys it.
 
 **Orcus** is a god of the underworld in Roman mythology, a
 chthonic figure who punishes broken oaths and devours the dead.
-In the Mazes he is a unique demon prince (`&`, level 66, fast
-flier), the **Prince of Undead**, who casts spells, swings a
+In the Mazes he is a unique demon prince (`&`, level 66, a slow
+flier at speed 9), the **Prince of Undead**, who casts spells, swings a
 weapon, claws twice, and stings for strength drain. His
 signature artifact is the **Wand of Orcus**, a wand of death by
 another name. His fingertip cantrip is also a death ray, so wear
@@ -9229,6 +9266,10 @@ whole kit ready before you begin. The steps:
 ---
 
 ### The Ascension
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source: no corrections. Verified Riders (lvl 30, 8d8, Death instakill 3/20), Famine/Pestilence downgrades, Rider-corpse fatal, wand-of-death-heals-Death, wrong-altar done(ESCAPED), Mysterious Force gating, plane order & altars.
+-->
 
 #### The Ascension Kit
 <!-- audit
@@ -9586,6 +9627,12 @@ book closes here. Congratulations.
 ## Appendices
 
 ### Advanced Controls
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- runmode sets display refresh rate during a run (teleport/run/walk/crawl = no-redraw / every-7 / every-step / step+delay, flag.h:547-551), not stopping behavior. Reworded.
+- Verified correct: all command bindings (F/G/g/m/_/@/^A/^P/^R/^O/v), count cap 32767, paranoid_confirmation values, pickup_burden default, autopickup_exception, statushilites, pickup_types etc.
+-->
 <!-- audit
 2026-05-19:
 - F/G/g/m/O/v/_/;//, Ctrl+A/P/R/O, #overview, #chronicle, #annotate, #conduct all verified (cmd.c:1662-2065)
@@ -9704,6 +9751,10 @@ end-of-run storytelling; for current conduct state use
 
 ### Customization {#options-worth-knowing-about}
 
+<!-- audit
+2026-07-30: audited with Advanced Controls vs NetHack-5.0 source (options.c); option names/effects/defaults verified. No corrections here.
+-->
+
 NetHack's defaults are sensible, but a handful of options
 dramatically improve quality of life. Flip them in-session with
 `O` (capital O), or persist them in your rcfile: `~/.nethackrc` on
@@ -9784,9 +9835,10 @@ Burdened first; setting `U` keeps you nimble.
 for directions). Off by default; enabling it changes digit-prefix
 behavior so you press `n` first to enter a count.
 
-**`runmode:walk`** slows the travel command down enough that you
-stop on interesting messages (default `run` blasts through
-everything until you hit something).
+**`runmode`** sets how often the screen redraws during a run or
+travel: `walk` redraws every step (so you can watch), `run` (the
+default) every few steps, and `teleport` jumps straight to where
+you stop. It changes what you *see* mid-run, not what halts you.
 
 #### Verbosity
 
@@ -9824,6 +9876,10 @@ NetHack pins the message line at row 0 no matter what you set.
 ---
 
 ### Sokoban Solutions
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 dat/soko*.lua: no corrections. Verified prize odds (75/25), prize-chamber coords, variant->file mapping (spoiler L_N = soko(5-N)), pit-vs-hole per level, boulder tallies, scroll-of-earth positions, luck penalty, air-current mechanic.
+-->
 <!-- audit
 2026-06-02:
 - sokoban_guilt() fires −1 Luck per infraction (trap.c:7039-7054)
@@ -10521,6 +10577,10 @@ to the treasure zoo.
 
 ### Voluntary Challenges
 
+<!-- audit
+2026-07-30: audited with Shopping vs NetHack-5.0 source; conduct definitions/tracking, vegetarian/vegan monster classes (mondata.h:232), Pauper signature items, foodless-wall-chew conduct verified. No corrections.
+-->
+
 The game tracks a set of optional self-imposed restrictions called
 **conducts**. You can check which ones you've maintained at any time
 with `#conduct`. When you die or ascend, the end-of-game summary
@@ -10945,6 +11005,12 @@ happens to find no bones doesn't count.
 ---
 
 ### Shopping and Shopkeeper Pricing
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Orcus Town shopkeepers are removed at level generation (ghost-town hack, shknam.c:794 mongone), not "killed by an aura". Reworded.
+- Verified correct: full gem price/color/Mohs table, unid gem sell 3-8, unicorn Luck rules, glass-never-changes-Luck, hard-gem throw survival, shopkeeper skeleton-key drop, credit message, genocide/wish thrones.
+-->
 <!-- audit
 2026-05-19:
 - 22 gem prices, Mohs hardness, hard-gem threshold >=8 verified (objects.h, shk.c)
@@ -11095,9 +11161,8 @@ Beyond the rules, a few tactical habits pay off:
   angry shopkeeper (the broken door is on your bill), but
   picking the lock with a skeleton key, credit card, lock pick,
   or wand of opening unlocks it cleanly with no damage and no
-  anger. (In Orcus Town the shopkeepers are usually dead by the
-  time you arrive, killed by Orcus's ambient aura, so the items
-  there often *are* ownerless.)
+  anger. (Orcus Town is generated as a ghost town with no
+  shopkeepers at all, so its shop items really are ownerless.)
 
 Many players play fair: sell what you don't need,
 buy what you do, and use the pricing system to identify as much as
@@ -11207,6 +11272,10 @@ A few rules of thumb:
 ---
 
 ### Weapons Tables
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 objects.h + weapon.c: no corrections. Every weapon row (base/bonus dice, weight, cost, to-hit, material, two-handed/launcher/skill notes) verified, including composite-damage entries vs dmgval().
+-->
 
 Damage is shown as **vs small / vs large**, the dice rolled before enchantment and excluding silver/material bonuses. **Wt** is unit weight; **Cost** is the unenchanted shop base price in zorkmids. **Hit** is the to-hit bonus baked into the weapon itself (most are 0). Two-handed weapons that prevent shield use and two-weapon combat are flagged in the notes. Weapons are grouped by their skill class so you can see your options within each skill tree at a glance. Samurai-language names for a handful of weapons are shown in parentheses (a Samurai sees them on screen by those names; same underlying item).
 
@@ -11801,6 +11870,10 @@ stays clear; catching the return needs a Dex check.
 ---
 
 ### Armor Tables
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 objects.h: no corrections. Every armor row (AC=10-macro-arg, MC, weight, material, slot) verified across ARMOR/HELM/CLOAK/SHIELD/GLOVES/BOOTS macros.
+-->
 <!-- audit
 2026-05-19:
 - body armor: AC/Wt/Cost via ARMOR() macros (objects.h:556-600); plate mail AC+7 wt450 cost600 (line 556-558).
@@ -11995,6 +12068,10 @@ until identified: *combat boots*, *jungle boots*, *hiking boots*,
 ---
 
 ### Spell Tables
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 objects.h: no corrections. All 41 spell rows' level/school/type verified (incl. chain lightning lvl 2). Spell damage figures live in spell.c/zap.c, outside this table's source.
+-->
 <!-- audit
 2026-05-19:
 - 41 spells, sourced from objects.h SPELL() macros (P_ATTACK..P_MATTER); SPELL macro signature at objects.h:1277-1281, oc_level=oc_oc2.
@@ -12090,6 +12167,10 @@ scales with rank.
 ---
 
 ### Bestiary Tables
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 monsters.h: no corrections. ~100% of the numeric columns (Lvl/Spd/AC/MR), color, and full attack lists verified across all ~55 tables, including the tricky cases (floating eye 0d70, black dragon disint, AD_DRST-as-poison stings, deferred/#if0 monsters correctly excluded).
+-->
 
 Every monster you might meet. Grouped by ASCII symbol so you can flip to the right page mid-game. **Lvl** is the base monster level. **Spd** is movement rate (12 is normal player speed). **AC** is armor class (lower is better). **MR** is the percentage chance the monster resists your spells and magic attacks. **Attacks** lists each attack's mode, damage dice, and side effect; multiple attacks separated by `·` are made per turn. **Notes** folds in the most tactically-relevant trait flags (flies, sees-invis, regenerates, poisonous-corpse, etc.) alongside specific heads-ups for monsters that deserve one.
 
@@ -13633,6 +13714,14 @@ Mostly harmless. **Lizard corpses cure petrification and never rot.** Carry one 
 ---
 
 ### Intrinsic and Extrinsic Tables
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- Sleep res: dropped "dark one" (G_NOCORPSE). Shock res: dropped "shocking sphere" (G_NOCORPSE). Teleport: dropped "homunculus" (no M1_TPORT). All leave no corpse / don't convey.
+- Magic resistance: no role grants it intrinsically; removed "Wizard XL 17" (that's teleport control, attrib.c:86-88).
+- Teleport control: carrying the Amulet of Yendor BLOCKS controlled teleport (teleport.c:1185), it doesn't grant it.
+- Verified correct: all other role/race intrinsic gain levels, ring/amulet/dragon-scale grants.
+-->
 <!-- audit
 2026-06-01:
 - property list from include/prop.h:14-93 (68 enum entries; we cover the player-attainable subset and skip trouble states and INVULNERABLE)
@@ -13735,15 +13824,15 @@ sources.
 |---|---|---|---|
 | **Fire resistance** | Halves fire damage; blocks fire-trap injury, fire-breath weapons, and lava burns (you still drown in lava). | Monk XL 11; Priest XL 20; red dragon, fire ant, fire giant, hell hound, salamander, or red mold corpses; prayer rescue from lava. | Ring of fire resistance; red dragon scales / scale mail. |
 | **Cold resistance** | Halves cold damage; blocks cold breath, cold blasts; lets you eat cold-resistant corpses safely. | Valkyrie XL 1; Monk XL 13; white dragon, frost giant, winter wolf, brown mold, or blue jelly corpses. | Ring of cold resistance; white dragon scales / scale mail. |
-| **Sleep resistance** | Immune to sleep gas, sleep rays, monster sleep attacks. | Monk XL 1; Elf XL 4; any elf, homunculus, or dark one corpse; prayer-rescue. | Orange dragon scales / scale mail. |
+| **Sleep resistance** | Immune to sleep gas, sleep rays, monster sleep attacks. | Monk XL 1; Elf XL 4; any elf or homunculus corpse; prayer-rescue. | Orange dragon scales / scale mail. |
 | **Disintegration resistance** | Black dragon breath stops disintegrating you (still does ordinary damage). | Black dragon corpse. | Black dragon scales / scale mail. |
-| **Shock resistance** | Halves electrical damage; blocks lightning breath. | Monk XL 15; blue dragon, electric eel, or shocking sphere corpses. | Ring of shock resistance; blue dragon scales / scale mail; shield of shock resistance (new in 5.0). |
+| **Shock resistance** | Halves electrical damage; blocks lightning breath. | Monk XL 15; blue dragon or electric eel corpses. | Ring of shock resistance; blue dragon scales / scale mail; shield of shock resistance (new in 5.0). |
 | **Poison resistance** | Survive poison stings, poisonous corpses, poison breath. | Barbarian XL 1, Healer XL 1, Orc XL 1, Tourist XL 20, Monk XL 3; killer bee (4×), scorpion (4×), green dragon, naga, quasit, and other poisonous corpses. | Ring of poison resistance; amulet versus poison; alchemy smock (cloak); green dragon scales / scale mail. |
 | **Acid resistance** | Survive acid damage. From corpses it's *timed* and resets on level change; from yellow dragon scales it's permanent for as long as they're worn. | Acid blob, brown pudding, yellow dragon corpses (½×, timed). | Yellow dragon scales / scale mail (permanent while worn). |
 | **Stoning resistance** | Immunity to petrification (cockatrice touch, eating cockatrice/Medusa corpses). Timed from corpses; permanent from yellow dragon scales. | Acid blob, lizard corpses (¼×, timed). | Yellow dragon scales / scale mail (yes, both effects — and permanent while worn). |
 | **Drain resistance** | Blocks level drain from wraiths, vampires, and drain-life weapons ([Stormbringer](#stormbringer), Vorpal Blade). | None from corpses; vampire / lich polyform confers it. | Black dragon scales / scale mail; shield of drain resistance (new in 5.0); wielding [Excalibur](#excalibur-artifact), Stormbringer, or [Staff of Aesculapius](#staff-of-aesculapius). |
 | **Sickness resistance** | Blocks deadly disease, food poisoning. | None from corpses. | Green dragon scales / scale mail. |
-| **Magic resistance** | Blocks death rays, magic missile, polymorph beams, the touch-of-death spell, and magic-trap effects at 100%. *Not* the same as [MC](#magic-cancellation). | Wizard XL 17 (called Antimagic); magic-trap polymorph from a magic trap can confer it randomly. | Cloak of magic resistance; gray dragon scales / scale mail; wielding [Magicbane](#magicbane). |
+| **Magic resistance** | Blocks death rays, magic missile, polymorph beams, the touch-of-death spell, and magic-trap effects at 100%. *Not* the same as [MC](#magic-cancellation). | No role grants it intrinsically; a magic trap's polymorph can confer it randomly. | Cloak of magic resistance; gray dragon scales / scale mail; wielding [Magicbane](#magicbane). |
 | **Hallucination resistance** | Blocks hallucination from violet fungus, hallucinogenic potions, and gold dragon scale mail's emission. | Polyform-only (forms whose attacks cause hallucination, like the violet fungus). | Wielding [Grayswandir](#grayswandir). |
 | **Blindness resistance** | Blocks light-flash blindness from yellow / black light bursts. | Polyform-only (forms whose attacks blind, like yellow light). | Wielding [Sunsword](#sunsword). |
 
@@ -13778,8 +13867,8 @@ The speed system, the air-walking gear, and the niche-access tools.
 |---|---|---|---|
 | **Fast** (intrinsic speed) | Each movement allocation has a ~1/3 chance of a +12 bonus. Raises effective speed from 12 to about 16. | Monk XL 1; Samurai XL 1; Valkyrie XL 7; Archeologist XL 10; Barbarian XL 7; Caveperson XL 7; Knight XL 7. Prayer rescue. | Speed boots (grant **Very Fast**, ~2/3 chance, effective ~20); blue dragon scales / scale mail (Very Fast). |
 | **Jumping** | The `#jump` extended command — short controlled hop. | Knight XL 1. | Jumping boots; spell of jumping. |
-| **Teleport** (uncontrolled) | Random teleport every few hundred turns. Useful when paired with control. | Tengu, homunculus corpses (1.5×). | Ring of teleportation. |
-| **Teleport control** | Lets you choose your destination when you teleport. | Monk XL 17; Wizard XL 17; tengu corpse. | Ring of teleport control; carrying [Master Key of Thievery](#master-key-of-thievery); carrying the Amulet of Yendor (yes, the win condition grants TC). |
+| **Teleport** (uncontrolled) | Random teleport every few hundred turns. Useful when paired with control. | Tengu corpse. | Ring of teleportation. |
+| **Teleport control** | Lets you choose your destination when you teleport. | Monk XL 17; Wizard XL 17; tengu corpse. | Ring of teleport control; carrying [Master Key of Thievery](#master-key-of-thievery). (Carrying the Amulet of Yendor *blocks* controlled teleport.) |
 | **Levitation** | Constantly floating. Crosses water, lava, ice; can't descend stairs; can't pick up items. | None. | Ring of levitation; levitation boots (cursed = stuck on); carrying the [Heart of Ahriman](#heart-of-ahriman). |
 | **Flying** | Like levitation but you can descend, pick up, and land voluntarily. | Polyform into a flying monster. | Amulet of flying. |
 | **Water walking** | Cross water and ice as if it were floor. Plain water-walking boots are leather and burn off in lava, but fireproofed boots cross lava too (and unharmed if you also resist fire). | Polyform into the right form (some undead). | Water-walking boots. |
@@ -13835,6 +13924,16 @@ strategy-shaping outside polymorph play.
 ---
 
 ### What Changed Since Last Time
+
+<!-- audit
+2026-07-30 accuracy pass vs NetHack-5.0 source:
+- No "minimum sacrifice value" gate; value only caps artifact quality (pray.c:1784, artifact.c:195). Reworded.
+- Sunsword #invoke costs 25 Pw (SPELL_LEV_PW(5)), not 5 (artifact.c:2095).
+- "DSM gives two resistances" overstates: only black/green/yellow give two resistances; others give one + a perk (do_wear.c:806-883). Reworded.
+- Crystal ball is a TOOL (objects.h:938); is_crackable needs ARMOR_CLASS (objclass.h:201), so it still shatters. Only crystal plate mail cracks.
+- Gold DSM light radius is 3 (uncursed), not 2 (light.c:899-907).
+- Verified correct: spell-level changes, touch-of-death rework, HP-regen formula, two-handed 3/2, Excalibur 1/30-vs-1/6, priest-donation randomization, unicorn-horn no-restore, BoH scatter, candle sqrt light, new monsters/conducts/shop mechanics.
+-->
 <!-- audit
 2026-05-19:
 - chain lightning is level 2 NODIR (objects.h:1409-1411 SPELL("chain lightning",..., P_ATTACK_SPELL, prob 25, delay 4, level 2, mgc 1, NODIR))
@@ -13875,15 +13974,18 @@ before this one. The most significant:
   spells and weapon-skill experience.
 - **Unicorn horns** no longer restore lost attributes. In previous editions, the unicorn horn was a
   cure-all; now you'll need other solutions.
-- **Dragon scale mail** now provides two extrinsic resistances
-  instead of one.
+- **Dragon scale mail** secondary effects were broadened: most
+  colors now add a second benefit on top of the primary one — some
+  a second resistance (black, green, yellow), others a perk like
+  speed, free action, or slow digestion.
 - **Bags of holding** no longer destroy their contents on explosion.
   Items are scattered on the floor instead, which is bad but not
   catastrophic.
 - **Loadstones** now resist knockback from combat attacks (the new
   knockback mechanic). A niche use if you can keep one uncursed.
-- **Sacrifice** for artifact generation now requires a minimum
-  sacrifice value.
+- **Sacrifice** value now caps the *quality* of artifact you can
+  be gifted (higher-value monsters unlock better ones), and gifts
+  are somewhat easier to earn than before.
 - **Priest donations** are now randomized. The old fixed
   `400 × XL` formula is gone. The priest rolls a baseline between
   150 and 250 (×XL), and offering the worst-case ceiling of
@@ -13895,7 +13997,7 @@ before this one. The most significant:
   notable: **Snickersnee** now grants one free polearm-style reach
   attack per turn ("Shkinng!") on top of normal melee. **Sunsword**
   gains a `#invoke` blinding ray that works on any monster, not just
-  undead, a 5-Pw on-demand Camera flash. **Trollsbane** regenerates
+  undead, a 25-Pw on-demand Camera flash. **Trollsbane** regenerates
   while wielded, a real lifeline for an early character. **Amulet of
   flying** confers flight on your steed as well as you, turning
   warhorses into water-crossing cavalry.
@@ -13956,9 +14058,9 @@ before this one. The most significant:
 - **Alchemy** is nerfed: diluted potion stacks only alchemize 2
   potions instead of the whole stack. Wearing an alchemy smock
   reduces the random blast chance to 1/30.
-- **Glass items** (crystal ball, crystal plate mail) now crack in
-  stages instead of instantly shattering, and can be made
-  crackproof.
+- **Crystal plate mail** now cracks in stages instead of instantly
+  shattering, and can be made crackproof. (The crystal ball is a
+  tool, not armor, so it still shatters outright.)
 - **Candle light radius** now uses a square root formula: more
   candles in a stack give more light than before.
 - **The Castle** no longer generates master liches or arch-liches
@@ -13993,8 +14095,9 @@ drop. Carry, don't stash.
 
 A few 5.0 changes have tactical implications worth pulling out:
 
-**Gold dragon scale mail is a light source.** Its innate 2-square
-radius lets you skip the lamp and free that inventory slot.
+**Gold dragon scale mail is a light source.** Its innate light
+(radius 3, the same as a lamp) lets you skip the lamp and free that
+inventory slot.
 
 **A blessed potion of polymorph is now a self-contained controlled
 polymorph.** No ring of polymorph control required: blessing the
