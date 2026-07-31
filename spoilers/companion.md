@@ -6973,7 +6973,7 @@ coat wears off after a few hits, so it's per-fight protection.
 - DSM dual-property pattern: armor + per-color intrinsic (do_wear.c:806-883)
 - gray and silver DSM grant no extra intrinsic
 - DSM scroll-of-enchant transformation requires spe ≥ 0 (read.c:1225)
-- shield spellcast penalty is weight-gated (weight > small-shield's 30, spell.c:2269); small shield AND the 30-weight drain/shock-resistance shields all avoid it
+- shield casting penalty has two parts: ANY shield adds flat spelshld to splcaster (spell.c:2197; Wiz 3, Pri 2), and a shield heavier than small-shield (>30 weight) quarters the final chance (spell.c:2269). Small shield + the 30-weight drain/shock-resistance shields dodge only the /4; the flat penalty still applies to any shield.
 - strategy aligned with NetHackWiki Dragon scale mail, Cloak of protection, Magic cancellation, Speed boots: GDSM as the popular MR wish, MC3 from cloak of protection, speed boots make turns more numerous (https://nethackwiki.com/wiki/Dragon_scale_mail, https://nethackwiki.com/wiki/Cloak_of_protection, https://nethackwiki.com/wiki/Magic_cancellation, https://nethackwiki.com/wiki/Speed_boots)
 -->
 
@@ -7221,10 +7221,11 @@ zeros Martial Arts.
 The plain shields (**small shield**, **elven shield**,
 **orcish shield**, **Uruk-hai shield**, **dwarvish roundshield**)
 range from 1 to 2 AC with no special properties. The
-**small shield** at 1 AC is the spellcaster's usual pick: at 30
-weight it carries no spell failure penalty, where heavier shields
-do. (The rare drain- and shock-resistance shields weigh the same
-and qualify too.)
+**small shield** at 1 AC is the only shield a spellcaster should
+consider: a heavier shield quarters your spell success, while the
+small shield (and the two 30-weight resistance shields) escape
+that. Any shield still adds a small flat casting penalty, though,
+so the purest casters carry none.
 
 **Large shield** and **dwarvish roundshield** are 2 AC but
 heavy (100 zm), and the large shield's two-handed restriction
