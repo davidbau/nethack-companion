@@ -25594,7 +25594,7 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
   var searchData = [];
   var contentSections = document.querySelectorAll('main section[id]');
   contentSections.forEach(function(section) {
-    var heading = section.querySelector('h1, h2, h3, h4');
+    var heading = section.querySelector('h1, h2, h3, h4, h5, h6');
     if (!heading) return;
     var level = parseInt(heading.tagName.substring(1), 10);
     var segments = [{ kind: 'heading', level: level,
