@@ -311,25 +311,33 @@ lean on the wand and, later, on your spells. In time you grow expert
 with the knife, quarterstaff, dart, and unicorn horn, and in the healing
 arts, and around the middle of the game you shift from drinking healing
 to casting it.</p>
+<!-- audit
+2026-08-01: lance-on-foot corrected. is_pole() includes P_LANCE (obj.h:228),
+so a wielded lance reaches distance 2 via #apply like any polearm (apply.c
+use_pole gates on is_pole(uwep)). Only the joust is mounted-only (joust()
+needs a steed, uhitm.c). Prior "dead weight on foot" was wrong; it keeps reach.
+Riding a strong steed (pony/horse/warhorse all M2_STRONG, monsters.h) forces
+carrcap=MAX_CARR_CAP (hack.c weight_cap), so riding raises carrying capacity.
+-->
 <p><strong>Knight</strong> <em>(Lawful).</em> Chivalry, on horseback.
 You ride to war with a code of honor and a companion at your side: a
 <strong>saddled pony</strong> trots with you from the first turn,
 alongside a long sword, a <strong>lance</strong>, and a full suit of
 armor, helmet, shield, and gloves. The pony is both a friend and the key
-to your signature move. Charge from horseback with the lance, a joust,
-and you land crushing damage no one else can match, for no other role
-wields a lance so well. On foot, though, the lance is dead weight, and
-climbing into the saddle is riskier than it looks: a failed mount throws
-you for real damage, and early on you fail nearly half the time, so do
-not rush to ride. Let the pony grow up first, into a horse and then a
-warhorse, and mount when the odds favor you. (You also turn permanently
-fast at experience level 7.) Two marks of the order: as a Lawful knight
-holding a long sword, you have the best chance in the game of drawing
-<strong><a href="#excalibur-artifact">Excalibur</a></strong> from a
-fountain, and your code forbids striking a fleeing, sleeping, or
-helpless foe, which costs you standing if you do. Feed the pony apples,
-keep the carrots to cure blindness, and pick your fights like a
-gentleman.</p>
+to your signature move. On foot, the lance can be used as a reach
+weapon, but charge from horseback with the lance, a joust, and you land
+crushing damage no one else can match, for no other role wields a lance
+so well. Riding your steed you can carry more, but climbing into the
+saddle is riskier than it looks: a failed mount throws you for real
+damage, and early on you fail nearly half the time, so do not rush to
+ride. Let the pony grow up first, into a horse and then a warhorse, and
+mount when the odds favor you. (You also turn permanently fast at
+experience level 7.) Two marks of the order: as a Lawful knight holding
+a long sword, you have the best chance in the game of drawing <strong><a
+href="#excalibur-artifact">Excalibur</a></strong> from a fountain, and
+your code forbids striking a fleeing, sleeping, or helpless foe, which
+costs you standing if you do. Feed the pony apples, keep the carrots to
+cure blindness, and pick your fights like a gentleman.</p>
 <p><strong>Monk</strong> <em>(Any alignment).</em> You fight with empty
 hands and a disciplined mind, and do it better than anyone alive. You
 carry no weapon, because you are the weapon: you can train your martial
@@ -1275,7 +1283,7 @@ href="#useful-corpse-effects">resistances</a>.</td>
 <tr>
 <td><a href="#bats-and-birds-b"><code>B</code></a></td>
 <td><a href="#bats-and-birds-b">Bats</a></td>
-<td>The <code>B</code> class is <strong>deceptively dangerous because of
+<td>The <code>B</code> class is <strong>dangerous because of
 speed</strong>. Bats and giant bats clock in at speed 22, nearly twice
 the player’s base 12, so they get roughly two bites per one of your
 swings. Giant bats bite for 1d6 each; the math catches up fast. Vampire
@@ -1319,9 +1327,9 @@ them are peaceful.</td>
 <td><a href="#humanoids-h"><code>h</code></a></td>
 <td><a href="#humanoids-h">Humanoids</a></td>
 <td>Dwarves, bugbears, mind flayers. Wide range of difficulty. Dwarves
-in particular are dangerously underrated: they hit harder than they
-look, and they’re armored. Don’t trade blows with one in melee until
-your AC is solid.</td>
+in particular are dangerous for their depth: they hit hard and come
+armored. Don’t trade blows with one in melee until your AC is
+solid.</td>
 </tr>
 <tr>
 <td><a href="#imps-and-minor-demons-i"><code>i</code></a></td>
@@ -2973,14 +2981,14 @@ your square is in its path</td>
 </tr>
 </tbody>
 </table>
-<p>Fire traps are easy to underestimate. The fire itself hurts, but the
-real catastrophe is your inventory: scrolls burn, potions shatter, and
-that stack of twenty scrolls of identify you’ve been hoarding is
-suddenly ash. <a href="#damage-resistances">Fire resistance</a> saves
-your skin but <em>not</em> your belongings. Items inside a <em>sack</em>
-or <em>oilskin sack</em> survive the trap; the sack itself absorbs the
-burn. <a href="#gehennom">Gehennom</a> is fire-trap country, so keep
-your consumables bagged.</p>
+<p>Fire traps threaten your pack, not just your health. The fire itself
+hurts, but the real catastrophe is your inventory: scrolls burn, potions
+shatter, and that stack of twenty scrolls of identify you’ve been
+hoarding is suddenly ash. <a href="#damage-resistances">Fire
+resistance</a> saves your skin but <em>not</em> your belongings. Items
+inside a <em>sack</em> or <em>oilskin sack</em> survive the trap; the
+sack itself absorbs the burn. <a href="#gehennom">Gehennom</a> is
+fire-trap country, so keep your consumables bagged.</p>
 <p>Polymorph traps are a double-edged sword. With <a
 href="#special-and-utility">polymorph control</a>, they’re a free
 polymorphing booth. Without it, you become something random, possibly a
@@ -3018,11 +3026,10 @@ teleport trap (for vault access, say), MR blocks the trip, unless you
 press <code>Ctrl+T</code> first, which forces a voluntary trap-use that
 bypasses the resistance.</p>
 <p><strong>Anti-magic fields hit harder if you’re
-magic-resistant.</strong> Counterintuitive enough to mislead returning
-players. The trap drains spell energy, and having <em>magic
-resistance</em> also triggers an “anti-magic implosion” that costs you
-HP. The damage is d4 base, plus another d4 if you have half-physical or
-half-spell damage, plus d4 for wielding <a
+magic-resistant.</strong> The trap drains spell energy, and having
+<em>magic resistance</em> also triggers an “anti-magic implosion” that
+costs you HP. The damage is d4 base, plus another d4 if you have
+half-physical or half-spell damage, plus d4 for wielding <a
 href="#magicbane">Magicbane</a>, plus d4 for carrying any one
 magic-resistance artifact (only one counts; the check breaks on first
 match). At worst that’s 4d4 damage, quartered (rounded up) if you can
@@ -4058,7 +4065,7 @@ and a cursed weapon in either hand jams the whole arrangement.</p>
 </section>
 <section id="ranged-combat" class="level4">
 <h4>Ranged Combat</h4>
-<p>Hitting at distance is the dungeon’s most underrated advantage. Every
+<p>Hitting at distance is one of the dungeon’s great advantages. Every
 turn a monster spends closing the gap is a turn you spend whittling its
 HP from a safer square. Rangers and Samurai live by their bows, but any
 role can set a quiver and reach for <code>f</code>. The toolkit:</p>
@@ -4299,14 +4306,14 @@ their depth or appearance would suggest. The shape of the threat is
 usually pack tactics, surprising speed, or one catastrophic special
 attack.</p>
 <p><strong>The <a href="#the-gnomish-mines">Gnomish Mines</a> are a top
-killer.</strong> This side branch is harder than it looks: Mines rooms
-are large open caves where four or five armed opponents have plenty of
-room to swarm around you. Use ranged attacks, or look for natural pinch
-points where the cave walls narrow. Dwarves hit harder than gnomes, and
-gnomish wizards (the first spellcasting enemy you meet) can sleep you,
-confuse you, and worse. Lords and kings appear deeper, with differently
-colored <code>G</code> and <code>h</code> glyphs. Scout the first Mines
-level, but come back later once you are at XL 5 or better, have <a
+killer.</strong> The danger is the layout: Mines rooms are large open
+caves where four or five armed opponents have plenty of room to swarm
+around you. Use ranged attacks, or look for natural pinch points where
+the cave walls narrow. Dwarves hit harder than gnomes, and gnomish
+wizards (the first spellcasting enemy you meet) can sleep you, confuse
+you, and worse. Lords and kings appear deeper, with differently colored
+<code>G</code> and <code>h</code> glyphs. Scout the first Mines level,
+but come back later once you are at XL 5 or better, have <a
 href="#damage-resistances">sleep resistance</a>, and have AC at zero or
 below.</p>
 <p><strong>Sleep without resistance is a near-instadeath.</strong> A
@@ -4568,7 +4575,7 @@ href="#damage-resistances">disintegration resistance</a> before going
 where they live. Their scale mail grants disintegration resistance plus
 <a href="#damage-resistances">drain resistance</a>, a rare extrinsic
 source of the latter.</p>
-<p><strong>Yellow</strong> dragon scale mail is an underrated pick.
+<p><strong>Yellow</strong> dragon scale mail gives more than its label.
 Listed power is acid resistance, but it also grants <strong>stoning
 resistance</strong>, the same outright immunity acid blob corpses give.
 If you find a yellow dragon and don’t already have stone-res, killing it
@@ -4963,8 +4970,8 @@ drawn-out mind flayer fight carefully.</p>
 plain orcish helm blocks seven of every eight tentacle drains. Greasing
 the helmet stacks an additional slip-off roll on top, so a greased
 helmet is the gold standard. Better yet, kill them at range (wands,
-spells) so the question doesn’t arise. One counterintuitive detail: a
-mind flayer’s <em>mind blast</em> only fires if you have <a
+spells) so the question doesn’t arise. One useful detail: a mind
+flayer’s <em>mind blast</em> only fires if you have <a
 href="#senses-and-perception">telepathy</a>. If you’re wearing an amulet
 of ESP and you can spare the turn, take it off before the fight. To
 recover drained Intelligence you need a <em>potion of restore
@@ -6002,16 +6009,13 @@ pushes buy up (×2 at Cha ≤ 5); high Charisma pulls it down (×½ at Cha ≥
 price. The rest of this guide refers to that sucker condition
 collectively as <em>Tourist</em>.</p>
 <p>Two further wrinkles affect unidentified items. About a quarter of
-unID’d items carry an extra ×4/3 buy surcharge, rolled independently for
-each item when it’s created. Two stacks of the same scroll in one shop
-can have different prices, but each stack’s surcharge follows it for
-life: once you’ve paid the surcharged price on a particular scroll, the
-next shop you take it to charges the same. And about a quarter of
+unID’d items carry an extra ×4/3 buy surcharge, rolled per item at
+creation, so two stacks of the same scroll can be priced differently.
+Each stack’s surcharge then follows it for life. And about a quarter of
 shopkeepers are “unfamiliar” with unID’d merchandise and offer only 3/4
-of normal on sell, fixed per shopkeeper, so once you’ve tested one unID
-item you know the rule for all unID sales at that shop. Either wrinkle
-can shift a quoted price into an adjacent tier, so when in doubt check
-the surrounding tiers too.</p>
+of normal on sell, fixed per shopkeeper, so one test reveals the rule
+for that shop. Either wrinkle can shift a quoted price into an adjacent
+tier, so when in doubt check the surrounding tiers too.</p>
 <p><strong>Angry.</strong> A shopkeeper you’ve previously angered (fired
 a wand from a doorway, attacked them, picked up an unpaid item while
 broke) and then made amends (paid the bill, fled and let them calm down)
@@ -6032,6 +6036,24 @@ invisible, wear a mummy wrapping as your cloak: it blocks the
 invisibility, so you appear visible again and the shopkeeper deals with
 you normally. Take it off on your way out if you want to vanish once
 more.</p>
+<!-- audit
+2026-08-01: shop stock is theme-restricted (shknam.c shtypes[]).
+- lighting store lists only specific light items, no generic class slot:
+  wax/tallow candle, oil lamp, brass lantern, magic lamp, POT_OIL,
+  WAN_LIGHT, SCR_LIGHT, SPE_LIGHT (shknam.c:333-346) -> every wand=light,
+  potion=oil, scroll=light, spellbook=light.
+- delicatessen potions limited to POT_FRUIT_JUICE/POT_BOOZE/POT_WATER;
+  rest random FOOD_CLASS + ICE_BOX (shknam.c:269-274).
+- restriction applies to generated stock; resold dropped items are not.
+-->
+<p><strong>The specialty is a clue too.</strong> A shop that deals in
+one kind of goods stocks only items that fit its theme, so
+<em>where</em> you find something can name it outright. Everything on a
+lighting shop’s shelves is light-related: every wand there is a wand of
+light, every potion is oil, every scroll a scroll of light, every
+spellbook a spellbook of light. A food shop’s only potions are fruit
+juice, booze, and water. This is the shop’s own stock talking. An item
+you or a monster dropped on the floor could be anything.</p>
 <p>The price tables for each item class follow.</p>
 <div class="print-only">
 <section id="quoted-price-conversion" class="level5">
@@ -7725,9 +7747,6 @@ through the ceiling.</td>
 </tr>
 </tbody>
 </table>
-<div class="price-id-toolbar">
-
-</div>
 <!-- oil verification: POT_OIL is the only applyable potion
 (apply.c:1503 lists it among light sources you can apply). It does
 NOT grease or rustproof items (no POT_OIL link to greased / erode /
@@ -8101,9 +8120,6 @@ blind.</td>
 </tr>
 </tbody>
 </table>
-<div class="price-id-toolbar">
-
-</div>
 </section>
 <section id="key-scrolls" class="level4">
 <h4>Key Scrolls</h4>
@@ -8968,11 +8984,11 @@ niche until you reach Medusa’s level (surrounded by water) or the Plane
 of Water (entirely underwater). Then it’s existential.</p>
 <p><strong>Flying</strong> is the late-addition cousin of levitation:
 you stay in the air the same way, but you can still pick things up and
-choose to drop down on your turn. The under-appreciated bonus is that
-<strong>your steed flies with you</strong>. A flying warhorse skips over
-moats, pools, and <a href="#the-castle">the Castle</a>’s drawbridge, and
-crosses Medusa’s island edge to edge. Stack with speed boots on the
-mount for a terrifying cavalry unit.</p>
+choose to drop down on your turn. The bonus is that <strong>your steed
+flies with you</strong>. A flying warhorse skips over moats, pools, and
+<a href="#the-castle">the Castle</a>’s drawbridge, and crosses Medusa’s
+island edge to edge. Stack with speed boots on the mount for a
+terrifying cavalry unit.</p>
 <p><strong>Restful sleep</strong> puts you to sleep randomly and is
 usually cursed, which should tell you everything you need to know about
 putting it on unexamined. Wearing it while asleep grants +1 HP per turn
@@ -9501,7 +9517,7 @@ AC, MC2, and most importantly it cancels most of the metal-armor
 spellcasting penalty. A Wizard in chain mail and robe casts almost as
 well as in just leather. Monks start with a +1 robe and should keep it.
 <strong>Alchemy smock</strong> is the chemist’s apron: 1 AC, MC1, plus
-poison resistance, an underrated early-game lifeline.</p>
+poison resistance, an early-game lifeline.</p>
 <p><strong>Mummy wrapping</strong> is what it sounds like, with one
 important quirk: it blocks invisibility while worn. Most heroes who pick
 one up should drop it; 0 AC and MC1 from any other cloak come without
@@ -14253,14 +14269,14 @@ this means living on permissible corpses and globs. Lichens, jellies,
 fungi and molds, and gray ooze or brown pudding globs are all safe.
 Fortune cookies, lembas wafers, and whatever vegetable food you find on
 the ground also work. Green slime is technically vegan, but eating its
-glob slimes you. The vegetarian monster list is broader than you might
-expect: all <code>b</code> (blobs), all <code>j</code> (jellies), all
-<code>F</code> (fungi and molds), all <code>v</code> (vortices), all
-<code>y</code> (lights), all <code>E</code> (elementals) except
-stalkers, and all <code>'</code> (golems) except flesh and leather
-golems. Many <a href="#vegetarian-safe-corpses">vegetarian corpses grant
-useful intrinsics</a>. Vegetarian-safe is not the same as safe. Yellow
-mold corpses poison, violet fungus paralyzes, and acid blobs sting going
+glob slimes you. The vegetarian monster list is broad: all
+<code>b</code> (blobs), all <code>j</code> (jellies), all <code>F</code>
+(fungi and molds), all <code>v</code> (vortices), all <code>y</code>
+(lights), all <code>E</code> (elementals) except stalkers, and all
+<code>'</code> (golems) except flesh and leather golems. Many <a
+href="#vegetarian-safe-corpses">vegetarian corpses grant useful
+intrinsics</a>. Vegetarian-safe is not the same as safe. Yellow mold
+corpses poison, violet fungus paralyzes, and acid blobs sting going
 down. Monks are a good role to play vegetarian; they already pay an
 alignment penalty for meat.</p>
 <p><strong>Vegan.</strong> Follow all vegetarian restrictions, plus
@@ -16309,7 +16325,7 @@ unremarkable.</p>
 <td>iron</td>
 <td>One-handed, P_LANCE skill. Mounted only: chance to joust for +2d10
 primary (+2d2 off-hand) extra damage; a critical can shatter the lance.
-No bonus on foot.</td>
+On foot it keeps polearm reach but gets no joust bonus.</td>
 </tr>
 </tbody>
 </table>
@@ -25683,6 +25699,19 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
     return i - start;
   }
 
+  // Per-occurrence weight of a heading match, by heading level. Higher
+  // headings weigh a touch more (they head broader sections), but the
+  // falloff is deliberately shallow: a hit in a deep, specifically-named
+  // subsection (an h4 like "The Wand Table") is essentially as strong a
+  // signal as one in a shallow structural heading ("Table of Contents",
+  // an h2), and must not be dwarfed by it. Ratio 1.1x per level anchored
+  // at h2 = 90 — nearly flat, vs the old 2x-per-level halving that made
+  // an h4 a quarter the weight of an h2 and let generic top-level
+  // headings outrank the section a query actually names.
+  function headingWeight(level) {
+    return 90 / Math.pow(1.1, level - 2);
+  }
+
   // Score consecutive-bigram bonus for a multi-word query.
   // For every adjacent pair of query words, find occurrences of the
   // pair as a contiguous substring in any segment (treating runs of
@@ -25700,10 +25729,7 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
       for (var s = 0; s < item.segments.length; s++) {
         var seg = item.segments[s];
         var normalized = seg.text.toLowerCase().replace(/\s+/g, ' ');
-        var weight;
-        if (seg.kind === 'heading') weight = 160 / Math.pow(2, seg.level - 1);
-        else if (seg.kind === 'cell') weight = 3;
-        else weight = 2;
+        var weight = seg.kind === 'heading' ? headingWeight(seg.level) : 2;
         var i = 0;
         while ((i = normalized.indexOf(bigram, i)) !== -1) {
           total += weight;
@@ -25732,8 +25758,7 @@ href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA
       while ((i = lt.indexOf(word, i)) !== -1) {
         var weight;
         if (seg.kind === 'heading') {
-          // h2=80, h3=40, h4=20, h5=10 — higher in the hierarchy weighs more.
-          weight = 160 / Math.pow(2, seg.level - 1);
+          weight = headingWeight(seg.level);
         } else if (seg.kind === 'table') {
           weight = 4;
         } else {

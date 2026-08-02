@@ -255,6 +255,19 @@ $body$
     return i - start;
   }
 
+  // Per-occurrence weight of a heading match, by heading level. Higher
+  // headings weigh a touch more (they head broader sections), but the
+  // falloff is deliberately shallow: a hit in a deep, specifically-named
+  // subsection (an h4 like "The Wand Table") is essentially as strong a
+  // signal as one in a shallow structural heading ("Table of Contents",
+  // an h2), and must not be dwarfed by it. Ratio 1.1x per level anchored
+  // at h2 = 90 — nearly flat, vs the old 2x-per-level halving that made
+  // an h4 a quarter the weight of an h2 and let generic top-level
+  // headings outrank the section a query actually names.
+  function headingWeight(level) {
+    return 90 / Math.pow(1.1, level - 2);
+  }
+
   // Score consecutive-bigram bonus for a multi-word query.
   // For every adjacent pair of query words, find occurrences of the
   // pair as a contiguous substring in any segment (treating runs of
@@ -272,10 +285,7 @@ $body$
       for (var s = 0; s < item.segments.length; s++) {
         var seg = item.segments[s];
         var normalized = seg.text.toLowerCase().replace(/\s+/g, ' ');
-        var weight;
-        if (seg.kind === 'heading') weight = 160 / Math.pow(2, seg.level - 1);
-        else if (seg.kind === 'cell') weight = 3;
-        else weight = 2;
+        var weight = seg.kind === 'heading' ? headingWeight(seg.level) : 2;
         var i = 0;
         while ((i = normalized.indexOf(bigram, i)) !== -1) {
           total += weight;
@@ -304,8 +314,7 @@ $body$
       while ((i = lt.indexOf(word, i)) !== -1) {
         var weight;
         if (seg.kind === 'heading') {
-          // h2=80, h3=40, h4=20, h5=10 — higher in the hierarchy weighs more.
-          weight = 160 / Math.pow(2, seg.level - 1);
+          weight = headingWeight(seg.level);
         } else if (seg.kind === 'table') {
           weight = 4;
         } else {

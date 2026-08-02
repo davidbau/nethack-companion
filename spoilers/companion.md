@@ -319,15 +319,23 @@ time you grow expert with the knife, quarterstaff, dart, and unicorn
 horn, and in the healing arts, and around the middle of the game you
 shift from drinking healing to casting it.
 
+<!-- audit
+2026-08-01: lance-on-foot corrected. is_pole() includes P_LANCE (obj.h:228),
+so a wielded lance reaches distance 2 via #apply like any polearm (apply.c
+use_pole gates on is_pole(uwep)). Only the joust is mounted-only (joust()
+needs a steed, uhitm.c). Prior "dead weight on foot" was wrong; it keeps reach.
+Riding a strong steed (pony/horse/warhorse all M2_STRONG, monsters.h) forces
+carrcap=MAX_CARR_CAP (hack.c weight_cap), so riding raises carrying capacity.
+-->
 **Knight** *(Lawful).* Chivalry, on horseback. You ride to war with a
 code of honor and a companion at your side: a **saddled pony** trots
 with you from the first turn, alongside a long sword, a **lance**, and
 a full suit of armor, helmet, shield, and gloves. The pony is both a
-friend and the key to your signature move. Charge from horseback with
-the lance, a joust, and you land crushing damage no one else can
-match, for no other role wields a lance so well. On foot, though, the
-lance is dead weight, and climbing into the saddle is riskier than it
-looks: a failed mount throws you for real damage, and early on you
+friend and the key to your signature move. On foot, the lance can be
+used as a reach weapon, but charge from horseback with the lance, a
+joust, and you land crushing damage no one else can match, for no
+other role wields a lance so well. Riding your steed you can carry
+more, but climbing into the saddle is riskier than it looks: a failed mount throws you for real damage, and early on you
 fail nearly half the time, so do not rush to ride. Let the pony grow
 up first, into a horse and then a warhorse, and mount when the odds
 favor you. (You also turn permanently fast at experience level 7.) Two
@@ -1078,12 +1086,12 @@ AC / attack details on every monster, see the
 | ------ | ---------------------- | -------------------------------------------------------------------------- |
 | [`a`](#ants-and-insects-a)    | [Ants](#ants-and-insects-a)      | Soldier ants are a frequent early-game killer: speed 18, two attacks per turn (bite + strength-draining sting), and they travel in packs. Killer bees, giant ants, fire ants are all the same shape of problem. |
 | [`b`](#blobs-b)    | [Blobs](#blobs-b)     | Acidic or gelatinous. Acid blobs have no active attack. They only splash 1d8 acid back when *you* hit *them*, and the splash can corrode your weapon. Kill at range. Eat for [resistances](#useful-corpse-effects). |
-| [`B`](#bats-and-birds-b)    | [Bats](#bats-and-birds-b)      | The `B` class is **deceptively dangerous because of speed**. Bats and giant bats clock in at speed 22, nearly twice the player's base 12, so they get roughly two bites per one of your swings. Giant bats bite for 1d6 each; the math catches up fast. Vampire bats are still in the bat class but their second bite drains Strength (not levels). |
+| [`B`](#bats-and-birds-b)    | [Bats](#bats-and-birds-b)      | The `B` class is **dangerous because of speed**. Bats and giant bats clock in at speed 22, nearly twice the player's base 12, so they get roughly two bites per one of your swings. Giant bats bite for 1d6 each; the math catches up fast. Vampire bats are still in the bat class but their second bite drains Strength (not levels). |
 | [`d`](#dogs-and-canines-d)    | [Dogs and other canines](#dogs-and-canines-d) | The `d` class covers your starting pet (little dog, kitten via cat-class) and the most numerous early-game predators. **Jackals** only bite for 1d2, but they spawn in packs and there are a *lot* of them on the upper levels — the single most common cause of death on the public server. Foxes bite for 1d3 and are faster (speed 15) but spawn alone. Coyotes, dingos, wolves get progressively worse. Tame `d` (your pet, larger dogs you've fed up) help fight everything else. |
 | [`e`](#eyes-and-spheres-e)    | [Eyes](#eyes-and-spheres-e)      | **Floating eyes paralyze on melee hit.** Never hit an `e` in melee. Use ranged attacks. (And eat them for telepathy.) Spheres (flaming/freezing/shocking) explode in a 3×3 area; also kill them at range. |
 | [`f`](#felines-f)    | [Cats](#felines-f)      | Like dogs, often starting pets. Felines can be tamed with tripe.                        |
 | [`G`](#gnomes-g)    | [Gnomes](#gnomes-g)    | The standard inhabitants of the Gnomish Mines. Individually weak, but the Mines have a lot of them. If you're a gnome yourself, most of them are peaceful. |
-| [`h`](#humanoids-h)    | [Humanoids](#humanoids-h) | Dwarves, bugbears, mind flayers. Wide range of difficulty. Dwarves in particular are dangerously underrated: they hit harder than they look, and they're armored. Don't trade blows with one in melee until your AC is solid. |
+| [`h`](#humanoids-h)    | [Humanoids](#humanoids-h) | Dwarves, bugbears, mind flayers. Wide range of difficulty. Dwarves in particular are dangerous for their depth: they hit hard and come armored. Don't trade blows with one in melee until your AC is solid. |
 | [`i`](#imps-and-minor-demons-i)    | [Imps](#imps-and-minor-demons-i)      | Mostly minor pests, but a homunculus's bite can put you to sleep. Without sleep resistance, fight at range. |
 | [`j`](#jellies-j)    | [Jellies](#jellies-j)   | Spotted and ochre jellies. Passive acid damage on melee.                                |
 | [`k`](#kobolds-k)    | [Kobolds](#kobolds-k)   | Weak individually but sometimes carry poisoned weapons.                                 |
@@ -2132,9 +2140,9 @@ skip and you fall in regardless.
 | Polymorph trap    | Polymorphs you into a random creature                |
 | Rolling boulder   | Triggers a boulder rolling along a fixed track; takes you out if your square is in its path |
 
-Fire traps are easy to underestimate. The fire itself hurts, but
-the real catastrophe is your inventory: scrolls burn, potions
-shatter, and that stack of twenty scrolls of identify you've been
+Fire traps threaten your pack, not just your health. The fire
+itself hurts, but the real catastrophe is your inventory: scrolls
+burn, potions shatter, and that stack of twenty scrolls of identify you've been
 hoarding is suddenly ash. [Fire resistance](#damage-resistances) saves your skin but
 *not* your belongings. Items inside a *sack* or *oilskin sack*
 survive the trap; the sack itself absorbs the burn. [Gehennom](#gehennom) is
@@ -2181,8 +2189,7 @@ trap (for vault access, say), MR blocks the trip, unless you
 press `Ctrl+T` first, which forces a voluntary trap-use that
 bypasses the resistance.
 
-**Anti-magic fields hit harder if you're magic-resistant.**
-Counterintuitive enough to mislead returning players. The trap
+**Anti-magic fields hit harder if you're magic-resistant.** The trap
 drains spell energy, and having *magic resistance* also triggers
 an "anti-magic implosion" that costs you HP. The damage is
 d4 base, plus another d4 if you have half-physical or
@@ -2890,7 +2897,7 @@ hand jams the whole arrangement.
 
 #### Ranged Combat
 
-Hitting at distance is the dungeon's most underrated advantage.
+Hitting at distance is one of the dungeon's great advantages.
 Every turn a monster spends closing the gap is a turn you spend
 whittling its HP from a safer square. Rangers and Samurai live
 by their bows, but any role can set a quiver and reach for `f`. The toolkit:
@@ -3155,8 +3162,8 @@ beginners than their depth or appearance would suggest.
 The shape of the threat is usually pack tactics, surprising
 speed, or one catastrophic special attack.
 
-**The [Gnomish Mines](#the-gnomish-mines) are a top killer.** This side branch is harder
-than it looks: Mines rooms are large open caves where four or five
+**The [Gnomish Mines](#the-gnomish-mines) are a top killer.** The danger is the
+layout: Mines rooms are large open caves where four or five
 armed opponents have plenty of room to swarm around you. Use
 ranged attacks, or look for natural pinch points where the cave
 walls narrow. Dwarves hit harder than gnomes, and gnomish
@@ -3467,7 +3474,7 @@ black dragons to grow [disintegration resistance](#damage-resistances) before go
 they live. Their scale mail grants disintegration resistance plus
 [drain resistance](#damage-resistances), a rare extrinsic source of the latter.
 
-**Yellow** dragon scale mail is an underrated pick. Listed power is
+**Yellow** dragon scale mail gives more than its label. Listed power is
 acid resistance, but it also grants **stoning resistance**, the
 same outright immunity acid blob corpses give. If you find a yellow
 dragon and don't already have stone-res, killing it is worth the
@@ -3873,7 +3880,7 @@ posts, so plan any drawn-out mind flayer fight carefully.
 seven of every eight tentacle drains. Greasing the helmet stacks an
 additional slip-off roll on top, so a greased helmet is the gold
 standard. Better yet, kill them at range (wands, spells) so the
-question doesn't arise. One counterintuitive detail: a mind
+question doesn't arise. One useful detail: a mind
 flayer's *mind blast* only fires if you have [telepathy](#senses-and-perception). If you're
 wearing an amulet of ESP and you can spare the turn, take it off
 before the fight. To recover drained Intelligence you need a
@@ -4885,17 +4892,14 @@ worse sell price. The rest of this guide refers to that sucker
 condition collectively as *Tourist*.
 
 Two further wrinkles affect unidentified items. About a quarter of
-unID'd items carry an extra ×4/3 buy surcharge, rolled independently
-for each item when it's created. Two stacks of the same scroll in
-one shop can have different prices, but each stack's surcharge
-follows it for life: once you've paid the surcharged price on a
-particular scroll, the next shop you take it to charges the same. And
+unID'd items carry an extra ×4/3 buy surcharge, rolled per item at
+creation, so two stacks of the same scroll can be priced
+differently. Each stack's surcharge then follows it for life. And
 about a quarter of shopkeepers are "unfamiliar" with unID'd
 merchandise and offer only 3/4 of normal on sell, fixed per
-shopkeeper, so once you've tested one unID item you know the rule
-for all unID sales at that shop. Either wrinkle can shift a quoted
-price into an adjacent tier, so when in doubt check the surrounding
-tiers too.
+shopkeeper, so one test reveals the rule for that shop. Either
+wrinkle can shift a quoted price into an adjacent tier, so when in
+doubt check the surrounding tiers too.
 
 **Angry.** A shopkeeper you've previously angered (fired a wand
 from a doorway, attacked them, picked up an unpaid item while
@@ -4920,6 +4924,26 @@ stuck invisible, wear a mummy wrapping as your cloak: it blocks
 the invisibility, so you appear visible again and the shopkeeper
 deals with you normally. Take it off on your way out if you want
 to vanish once more.
+
+<!-- audit
+2026-08-01: shop stock is theme-restricted (shknam.c shtypes[]).
+- lighting store lists only specific light items, no generic class slot:
+  wax/tallow candle, oil lamp, brass lantern, magic lamp, POT_OIL,
+  WAN_LIGHT, SCR_LIGHT, SPE_LIGHT (shknam.c:333-346) -> every wand=light,
+  potion=oil, scroll=light, spellbook=light.
+- delicatessen potions limited to POT_FRUIT_JUICE/POT_BOOZE/POT_WATER;
+  rest random FOOD_CLASS + ICE_BOX (shknam.c:269-274).
+- restriction applies to generated stock; resold dropped items are not.
+-->
+
+**The specialty is a clue too.** A shop that deals in one kind of
+goods stocks only items that fit its theme, so *where* you find
+something can name it outright. Everything on a lighting shop's
+shelves is light-related: every wand there is a wand of light, every
+potion is oil, every scroll a scroll of light, every spellbook a
+spellbook of light. A food shop's only potions are fruit juice, booze,
+and water. This is the shop's own stock talking. An item you or a
+monster dropped on the floor could be anything.
 
 The price tables for each item class follow.
 
@@ -5837,8 +5861,6 @@ share of the random potions you find, unchanged by depth.
 | **[polymorph](#potion-polymorph)** | 1% | Polymorphs you, or dip an item to change and ID it. |
 | **acid** | 1% | Damages you if you quaff it; throw it for acid damage. |
 
-<div class="price-id-toolbar"></div>
-
 <!-- oil verification: POT_OIL is the only applyable potion
 (apply.c:1503 lists it among light sources you can apply). It does
 NOT grease or rustproof items (no POT_OIL link to greased / erode /
@@ -6067,8 +6089,6 @@ find, unchanged by depth.
 | **taming** | 1.5% | Tames adjacent monsters; read confused, the area widens to 11×11. |
 | **punishment** | 1.5% | Chains a heavy iron ball to you. The reason not to read $300 scrolls blind. |
 | **stinking cloud** | 1.5% | Places a lingering poison-gas cloud at a range you choose. |
-
-<div class="price-id-toolbar"></div>
 
 #### Key Scrolls
 
@@ -6642,7 +6662,7 @@ Water (entirely underwater). Then it's existential.
 
 **Flying** is the late-addition cousin of levitation: you stay in
 the air the same way, but you can still pick things up and choose
-to drop down on your turn. The under-appreciated bonus is that
+to drop down on your turn. The bonus is that
 **your steed flies with you**. A flying warhorse skips over moats,
 pools, and [the Castle](#the-castle)'s drawbridge, and crosses
 Medusa's island edge to edge. Stack with speed boots on the mount
@@ -7088,7 +7108,7 @@ spellcasting penalty. A Wizard in chain mail and robe casts
 almost as well as in just leather. Monks start with a +1 robe and
 should keep it. **Alchemy smock** is the
 chemist's apron: 1 AC, MC1, plus poison resistance, an
-underrated early-game lifeline.
+early-game lifeline.
 
 **Mummy wrapping** is what it sounds like, with one important
 quirk: it blocks invisibility while worn. Most heroes who pick
@@ -10627,7 +10647,7 @@ Lichens, jellies, fungi and molds, and gray ooze or brown pudding
 globs are all safe. Fortune cookies, lembas wafers, and whatever
 vegetable food you find on the ground also work. Green slime is
 technically vegan, but eating its glob slimes you. The vegetarian
-monster list is broader than you might expect: all `b` (blobs),
+monster list is broad: all `b` (blobs),
 all `j` (jellies), all `F` (fungi and molds), all `v` (vortices),
 all `y` (lights), all `E` (elementals) except stalkers, and all
 `'` (golems) except flesh and leather golems. Many [vegetarian
@@ -11712,7 +11732,7 @@ lance is unremarkable.
 
 | Weapon | Damage (S/L) | Wt | Cost | Hit | Material | Notes |
 |--------------------|--------------|----|------|-----|--------------|----------------------------------------------------------------|
-| lance | 1d6 / 1d8 | 180 | 10 | — | iron | One-handed, P_LANCE skill. Mounted only: chance to joust for +2d10 primary (+2d2 off-hand) extra damage; a critical can shatter the lance. No bonus on foot. |
+| lance | 1d6 / 1d8 | 180 | 10 | — | iron | One-handed, P_LANCE skill. Mounted only: chance to joust for +2d10 primary (+2d2 off-hand) extra damage; a critical can shatter the lance. On foot it keeps polearm reach but gets no joust bonus. |
 
 :::
 
@@ -14241,7 +14261,7 @@ Charging: \hyperref[scroll-charging]{explosion chance (n³/7³), a wand of wishi
 \hyperref[donating-to-priests]{Clairvoyance, lower-tier priest gift, p.~\pageref*{donating-to-priests}}\par
 \hyperref[golems]{Clay golem, dissolves to cancellation, p.~\pageref*{golems}}\par
 \hyperref[wishable-random-artifacts]{Cleaver (Barbarian), three-monster swing, p.~\pageref*{wishable-random-artifacts}}\par
-\hyperref[armor-and-ac]{Cloak of displacement, the underrated layer, p.~\pageref*{armor-and-ac}}\par
+\hyperref[armor-and-ac]{Cloak of displacement, attackers swing at a phantom, p.~\pageref*{armor-and-ac}}\par
 Cloak of magic resistance: \hyperref[armor-and-ac]{MC1 in 5.0, p.~\pageref*{armor-and-ac}}; \hyperref[cloaks]{MC1, p.~\pageref*{cloaks}}\par
 Cloak of protection: \hyperref[armor-and-ac]{MC3 the only single source, p.~\pageref*{armor-and-ac}}; \hyperref[cloaks]{MC3, p.~\pageref*{cloaks}}\par
 \hyperref[shopkeeper-behavior]{Closed for inventory, locked shop door, p.~\pageref*{shopkeeper-behavior}}\par
@@ -14306,7 +14326,7 @@ Doors: \hyperref[fighting-smart]{no diagonal entry, close for breathing room, p.
 \hyperref[helmets]{Dunce cap, Int/Wis → 6, auto-curse, p.~\pageref*{helmets}}\par
 \hyperref[the-big-picture]{Dungeon layout, the branching tree, p.~\pageref*{the-big-picture}}\par
 \hyperref[the-big-picture]{Dungeons of Doom, upper trunk, p.~\pageref*{the-big-picture}}\par
-Dwarf: \hyperref[the-races]{Str and Con caps, p.~\pageref*{the-races}}; \hyperref[humanoids-h]{dangerously underrated, p.~\pageref*{humanoids-h}}\par
+Dwarf: \hyperref[the-races]{Str and Con caps, p.~\pageref*{the-races}}; \hyperref[humanoids-h]{hit hard and armored, p.~\pageref*{humanoids-h}}\par
 
 \par\smallskip{\normalsize\bfseries E}\par\smallskip
 
@@ -14340,7 +14360,7 @@ Famine: \hyperref[starvation]{the second Rider, p.~\pageref*{starvation}}; \hype
 Feel: \hyperref[feelings-and-sounds]{feverish, lycanthropy infection, deathly sick, Pestilence or rot, p.~\pageref*{feelings-and-sounds}}\par
 \hyperref[fighting-style-caps]{Fighting style caps (bare hands, two-weapon, riding, martial arts), p.~\pageref*{fighting-style-caps}}\par
 Finger: \hyperref[engravings]{in dust, fragile but instant, p.~\pageref*{engravings}}; \hyperref[key-spells]{of death, the argument-ender, p.~\pageref*{key-spells}}\par
-Fire: \hyperref[dangerous-traps]{trap, easy to underestimate, burns inventory, p.~\pageref*{dangerous-traps}}; \hyperref[useful-corpse-effects]{ant corpse, fire resistance, giant corpse, fire + Strength, p.~\pageref*{useful-corpse-effects}}; \hyperref[wishable-random-artifacts]{Brand, fire + firestorm invoke, p.~\pageref*{wishable-random-artifacts}}\par
+Fire: \hyperref[dangerous-traps]{trap, burns inventory, p.~\pageref*{dangerous-traps}}; \hyperref[useful-corpse-effects]{ant corpse, fire resistance, giant corpse, fire + Strength, p.~\pageref*{useful-corpse-effects}}; \hyperref[wishable-random-artifacts]{Brand, fire + firestorm invoke, p.~\pageref*{wishable-random-artifacts}}\par
 First: \hyperref[your-first-descent]{descent, welcome to the dungeon, p.~\pageref*{your-first-descent}}; \hyperref[fighting-smart]{swing wakes the room, p.~\pageref*{fighting-smart}}\par
 \hyperref[alignment]{First-game recommendation, p.~\pageref*{alignment}}\par
 \hyperref[gray-stones-four-stones-one-lucky]{Flint, useless ammunition, p.~\pageref*{gray-stones-four-stones-one-lucky}}\par
