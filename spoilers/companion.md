@@ -1520,7 +1520,7 @@ holding) materially helps [the Mines](#the-gnomish-mines) run afterward. Slashin
 - Orcish Town scatters 7+ candles since Izchak's shop is absent (minetn-1.lua:98-105)
 - candle shop present in minetn-2..7 (Izchak); absent only in minetn-1 (minetn-{2..7}.lua)
 - all 3 Mine's End layouts place a not-cursed luckstone (minend-1.lua:77, minend-2.lua:116, minend-3.lua:67)
-- minend-1 also places a mimic appear_as="obj:luckstone" — BUC-test before grabbing (minend-1.lua:59)
+- minend-1 hides the luckstone among FOUR mimics (appear_as luckstone/loadstone/flint/touchstone, lines 59-71) plus a real cursed loadstone (74); search (`s`) exposes the mimics, price-ID sorts the two real stones — full mechanics in the Gray Stones section audit
 - Minetown watchmen are peaceful=1 in non-orcish variants (minetn-2.lua:149)
 - strategy aligned with NetHackWiki Gnomish Mines, Minetown, Mines' End, Standard strategy: Minetown described as the prime price-ID/BUC-test/priest-donation stop; guaranteed luckstone at Mine's End is canonical; Standard strategy recommends Sokoban-before-Mines as the default branch ordering for the reflection/BoH prize before tackling the Mines pack fights (https://nethackwiki.com/wiki/Gnomish_Mines, https://nethackwiki.com/wiki/Minetown, https://nethackwiki.com/wiki/Mines%27_End, https://nethackwiki.com/wiki/Standard_strategy)
 -->
@@ -1604,9 +1604,12 @@ search the walls (`s`, `10s`) for hidden doors rather than digging,
 which these levels resist. There may be several such rooms, so don't
 stop at the first. (One variant hides the luckstone among fakes: four
 [**mimics**](#a-note-on-mimics) disguised as gray stones, plus a real
-**cursed loadstone** that looks just like it and welds to your pack. A
-pet spots the mimics, so walk it over a suspect stone first, or kick
-it: a real luckstone skids away, a loadstone won't.)
+**cursed loadstone** that looks just like it and welds to your pack.
+Searching (`s`) beside a suspect stone exposes any mimic on the spot; a
+real stone just sits there. That leaves the luckstone and the loadstone,
+which a shop tells apart by price ($60 versus $1). Don't lean on the kick
+test here — wedged in its niche, even a real luckstone can thump like a
+loadstone.)
 
 #### Sokoban
 
@@ -1738,7 +1741,11 @@ give nothing.
 - return portal lives on Is_qstart (first quest level) only (quest.c:97, 191-204)
 - "nemesis carries an amulet of life saving" is wiki-belief, not source-guaranteed; M2_COLLECT means they may pick one up (https://nethackwiki.com/wiki/Nemesis)
 - strategy aligned with NetHackWiki Quest, Bell of Opening, Quest artifact: XL 14 + 20 alignment record gate, nemesis guards both artifact and Bell, return-portal only on the first quest level (https://nethackwiki.com/wiki/Quest, https://nethackwiki.com/wiki/Bell_of_Opening, https://nethackwiki.com/wiki/Quest_artifact)
+2026-08-13:
+- wraith corpse on graveyard levels: NOT "never" — LEVEL_SPECIFIC_NOCORPSE (mon.c:44-47) suppresses an undead's corpse only when (graveyard && is_undead && rn2(3)), i.e. 2/3 of the time, so ~1/3 still drop. off a graveyard a wraith always corpses (PM_WRAITH is in the unconditional-corpse case, mon.c:835). softened prose from "don't drop on graveyard levels" to "only about a third as often." lead-the-wraith-out advice still good (1/3 -> guaranteed).
+- verified: MIN_QUEST_LEVEL 14 (quest.h:45); eating a wraith corpse => pluslvl(FALSE) guaranteed level gain (eat.c:1141).
 -->
+
 
 Sooner or later, your own people call. The Quest is a branch of the
 dungeon shaped for your role alone: a nemesis has seized your role's
@@ -1767,9 +1774,9 @@ a quest nemesis.
 Mid-game XP is slow to earn, so the path to XL 14 usually
 includes eating a few [wraith corpses](#a-note-on-wraiths) (one
 experience level each), or a blessed potion of gain level.
-(Wraith corpses don't drop on graveyard levels, though! A good
-strategy is to lead a wraith out of the Valley of the Dead before
-killing it.)
+(On graveyard levels like the Valley of the Dead, an undead
+leaves a corpse only about a third as often, so lead a wraith out
+before killing it if you want the level-up.)
 
 Each role has a unique Quest with unique maps, a unique nemesis,
 and a unique artifact reward. The Valkyrie hunts Lord Surtur for
@@ -3022,8 +3029,8 @@ its approach.
 **The first swing wakes the room.** Sleeping monsters stay
 asleep while you walk past them, but a hit on one wakes
 everything around it: the struck monster growls, and the growl
-wakes any other sleeping monster within roughly seven squares
-for a level-3 gnome, more for larger creatures. A packed room
+wakes any other sleeping monster within roughly four squares
+for a gnome, farther for larger creatures. A packed room
 becomes a simultaneous brawl on swing two. Pull the pack one
 at a time by *backing away* into a corridor first (so they
 wake strung out in a line), or write [Elbereth](#elbereth) so
@@ -3094,6 +3101,8 @@ Knight or Samurai out of [the Quest](#the-quest) for the rest of the run.
 ### Things That Will Kill You
 
 <!-- audit
+2026-08-13:
+- growl wake radius: growl() calls wake_nearto(x,y, mtmp->data->mlevel * 18) (sounds.c:421), and wake_nearto uses dist2 < distance (mon.c:4388), so mlevel*18 is a SQUARED radius. base gnome is m_lev 1 (monsters.h:1682) => sqrt(18) ≈ 4 squares, NOT 7. "seven squares for a level-3 gnome" was wrong (a gnome is level 1; a gnome LORD is level 3). fixed prose to "about four squares for a gnome, farther for larger creatures" (dwarf m_lev 2 => ~6, gnome lord m_lev 3 => ~7).
 2026-07-30 accuracy pass vs NetHack-5.0 source:
 - Sleep resistance is from elf corpses only; elven mummy leaves no corpse (G_NOCORPSE), giants convey Str/elemental res (monsters.h; eat.c:908).
 - Floating-eye paralysis is d(3,70) ≈ 3-210, avg ~106 (uhitm.c:5887, 6042); "70" was the die size.
@@ -3102,7 +3111,7 @@ Knight or Samurai out of [the Quest](#the-quest) for the rest of the run.
 <!-- audit
 2026-05-20:
 - mines residents are class G (gnomes, S_GNOME) and h (humanoids incl. dwarves, S_HUMANOID); g is gremlins/gargoyles (defsym.h:295, 301, 303, 333)
-- gnomish wizard has AT_MAGC AD_SPEL — random spellcaster, can cast sleep (monsters.h:1695-1701)
+- gnomish wizard has AT_MAGC AD_SPEL (monsters.h:1695-1698); its ONLY attack is spellcasting. CORRECTION (2026-08-13): the earlier "can cast sleep" was wrong. it casts from mon_wizard_spells (mcastu.c:32-36) which contains NO sleep spell, and at m_lev 3 spellval=rn2(3)∈{0,1,2} (mcastu.c:111) can only reach PSI_BOLT(0)/CURE_SELF(1)/HASTE_SELF(2). so it psi-bolts you (damage) and self-buffs; it CANNOT sleep, stun, or confuse you. STUN_YOU is level 3 (unreachable at rn2(3)). fixed the prose in Common Combat Deaths (2 spots) and the sleep-source list (replaced "gnomish wizard's sleep spell" with sleeping-gas trap).
 - homunculus AT_BITE AD_SLEE 1d3 (monsters.h:551-558)
 - soldier ant speed 18, AT_BITE 2d4 + AT_STNG AD_DRST 3d4 (monsters.h:103-110)
 - water demon: S_DEMON class &, level 8, NOCORPSE NOGEN (monsters.h:2911-2919)
@@ -3167,14 +3176,14 @@ layout: Mines rooms are large open caves where four or five
 armed opponents have plenty of room to swarm around you. Use
 ranged attacks, or look for natural pinch points where the cave
 walls narrow. Dwarves hit harder than gnomes, and gnomish
-wizards (the first spellcasting enemy you meet) can sleep you,
-confuse you, and worse. Lords and kings appear deeper, with
+wizards (the first spellcasting enemy you meet) blast you with
+psychic bolts and can heal and hasten themselves. Lords and kings appear deeper, with
 differently colored `G` and `h` glyphs. Scout the first Mines
 level, but come back later once you are at XL 5 or better, have
 [sleep resistance](#damage-resistances), and have AC at zero or below.
 
 **Sleep without resistance is a near-instadeath.** A homunculus
-(`i`) bite, a gnomish wizard's sleep spell, or later an orange dragon
+(`i`) bite, a sleeping-gas trap, or later an orange dragon
 or Nazgul breath puts you to sleep for several turns. If you
 are alone in a corridor it costs you a couple of rounds. If
 you are surrounded by anything else, the surrounding monsters
@@ -3367,8 +3376,8 @@ object" renders on the map as `]`, a mirror of `[`, the armor
 class. No real item ever displays as `]`, so a `]` anywhere is
 always a mimic.
 
-**How to uncover one safely.** Search the adjacent square (`s`)
-reveals concealed mimics like it reveals traps. Throw a cheap item
+**How to uncover one safely.** Searching an adjacent square (`s`)
+reveals a concealed mimic. Throw a cheap item
 at the suspected square; the mimic uncloaks and the item lands
 harmlessly. A stethoscope applied to the square also uncloaks.
 Telepathy, ESP, astral vision, and a wand of secret door detection
@@ -5438,6 +5447,20 @@ alone. Try them on (BUC-checked) and watch for the messages.
 - weights: loadstone 500, others 10 (objects.h:1598-1605)
 - blessed touchstone (or Archeologist/Gnome holding uncursed) IDs gems on rub (apply.c rub_on_stone)
 - Mine's End luckstone is guaranteed not-cursed (minend-1.lua:77, minend-2.lua:116, minend-3.lua:67)
+2026-08-12:
+- removed the "#tip escape" tip: it was wrong. in_container() refuses a cursed loadstone into any container, carried or floor ("The stone won't leave your person.", pickup.c:2584), so you can never stow one to tip it out. loadstones found in the dungeon are cursed at creation (mkobj.c:978), so this is the normal case.
+- mechanic detail: the curse is applied by freeinv_core (invent.c:1386), i.e. when the stone LEAVES inventory, not on pickup/addinv. #tip's dropy() would bypass canletgo's cursed-drop check (do.c:685), but that never matters since the stone can't get into the container. only real cure: uncurse (holy water / remove curse / prayer), then drop.
+- removed the "weight-menu test": no NetHack 5.0 pickup menu displays weight. no showweight option exists and pickup.c never puts owt into a menu line; items list as "a - a gray stone". the real weight tell (500 vs 10) shows only as encumbrance when you pick it up, which the pick-up test already covers.
+- softened the "Location clue": "almost certainly the luckstone" overstated it. the Mimic of the Mines variant (minend-1.lua) puts a gray-stone appearance in six niches — the real not-cursed luckstone (place[5], line 77), a REAL cursed loadstone (place[4], line 74), and four mimics disguised as luckstone/loadstone/flint/touchstone (lines 59/63/67/71). so a gray stone at Mine's End is not reliably the luckstone.
+- shuffled slots: the loadstone (and every stone) is in a SHUFFLED slot — shuffle(place) at line 36 randomizes all 7 niche coords before objects are assigned, so any object can be at any niche each game.
+- kick test in this variant, corrected (earlier same-day note overstated it as "can't work"): the niches are NOT strict 1-tile dead ends. each stone sits beside a (usually secret/locked) door, and in 5 of 7 niches there is one open floor cell on the far side from the door. so kicking orthogonally from the doorway nudges a weight-10 stone 1 square (no Thump) while a weight-500 loadstone gives "Thump!" and stays (dokick.c range = STR/2 - owt/40, and the space check at 599-602 / Thump at 686). the kick test therefore still works in most niches, BUT: a Thump is ambiguous because the 2 boxed niches ((13,7),(66,1)) wedge even a light stone with no open cell, so it Thumps too. a skid is definitive (not a loadstone); a Thump is not proof of loadstone. no diagonal trick: kicks travel straight, and every niche's diagonal-beyond square is wall, so a "diagonal kick to bounce it into the hallway" is fake. keep pet + price-ID as the clean methods.
+- best mimic test here is SEARCH, not the pet: an explicit `s` adjacent to an object-mimic reveals it unconditionally — mfind0 (detect.c:1965) calls seemimic() for any M_AP_TYPE monster with NO rng roll (unlike SDOOR rnl(7-fund) / traps rnl(8)). the minend-1 mimics are appear_as="obj:..." => M_AP_OBJECT, so one search beside a suspect stone exposes it every time; a real stone stays a stone. reworked the prose to lead with search (consistent with the existing "A note on mimics" section, which already says search reveals mimics) instead of the fiddly pet-in-a-niche. search only flags mimics, so price-ID still separates the real luckstone from the cursed loadstone.
+- "name it The Heart of Ahriman -> hand slips = it's the luckstone" is FAKE. restrict_name (artifact.c:575) builds sametype[] from shared description / shuffle-range; all four gray stones share descr "gray" and the o_ranges band (objects.h:1594-1604), so for ANY unidentified gray stone sametype includes luckstone -> naming it the Heart (SPFX_RESTR) trips the restriction -> "While engraving, your %s slips." (do_name.c:330-351) identically for luckstone/loadstone/touchstone/flint. the slip only confirms "unidentified gray stone," which you already know; it cannot single out the luckstone.
+- other two layouts: minend-2 ("Gnome King's Wine Cellar") luckstone is at fixed (70,5) in a walled gem-pile vault, NO stone decoys. minend-3 ("Catacombs") luckstone (place[2]) + flint decoy (place[1]) are shuffled among 3 spots, and there is a level-teleport trap under BOTH (lines 89-90, "one-time annoyance") — stepping onto the prize can fling you off-level.
+- BUC/pet-test note: the minend-1 decoy loadstone IS cursed on the floor (mksobj curses all loadstones, mkobj.c:978; des.object with no buc => curse_state 0 => no override in sp_lev.c:2234). so a pet registers it as cursed and won't step on it (cursed_object_at dogmove.c:145, "avoid cursed items unless starving" dogmove.c:535). the pet thus avoids all 4 mimics AND the loadstone; the one gray-stone square it will walk onto is the uncursed luckstone. "loadstone isn't cursed until picked up" is false for floor loadstones — that idea is really the freeinv re-curse (invent.c:1386), which only bites an uncursed (wished) loadstone on REMOVAL. caveat: luring a pet into a 1-tile dead-end niche is fiddly, so price-ID stays the clean fallback.
+- luckstone default BUC: a luckstone is uncursed by default — GEM_CLASS in mksobj_init (mkobj.c:976-986) never calls blessorcurse for it, and mksobj zeroes the obj (mkobj.c:1185). so the Mine's End buc="not-cursed" (=> uncurse(), a no-op) yields an UNCURSED (not blessed) luckstone. "always uncursed" in the prose is accurate.
+2026-08-13:
+- fixed a loadstone claim in the 5.0-changes section (was "resist knockback ... a niche use if you can keep one uncursed"): m_is_steadfast (uhitm.c:5216) grants knockback immunity for carrying ANY loadstone via m_carrying(mtmp, LOADSTONE) with NO BUC check (line 5235) — cursed works too, including the welded one. only gate is being grounded (not Flying/Levitation, not air/cloud/bubble level, lines 5224-5228). corrected the "if you can keep one uncursed" qualifier.
 -->
 
 Gray stones look identical but have wildly different value. There are four types:
@@ -5458,12 +5481,6 @@ abnormally heavy and resists being kicked. Take off gauntlets of
 power and kicking boots first, or you may overpower a real
 loadstone and fool yourself.
 
-**The weight-menu test.** Drop any junk item onto the gray stone
-to force a pickup menu the next time you walk over it. The menu
-shows weight; a loadstone is 500, everything else is 10. The
-menu test gives a clean read without committing to picking the
-stone up.
-
 **The pick-up test.** Loadstones are cursed when they generate,
 and a cursed loadstone refuses to be dropped at all. The game
 prints "For some reason, you cannot drop the stone!" and the
@@ -5471,14 +5488,6 @@ stone stays in your pack. If you pick up a gray stone and it
 weighs you down suspiciously, try to drop it. If you can't, you
 are stuck with a cursed loadstone until you uncurse it (holy
 water, scroll of remove curse, prayer). Then you can drop it.
-
-**The `#tip` escape.** Or, more elegantly: stow the cursed
-loadstone in any container you carry (a 2z sack is enough), then
-apply `#tip` to the container. The contents spill onto your
-square, loadstone included, because `#tip` extracts items
-directly and bypasses the cursed-drop check. Step off and walk
-away. The trick has worked through every edition of the dungeon,
-including 5.0.
 
 **The price test.** If you can reach a shop: a $60 gray stone is a
 luckstone. A $45 gray stone is a touchstone. A $1 gray stone is
@@ -5494,10 +5503,13 @@ alone doesn't prove touchstone; an *identification* result does.
 A cursed touchstone can shatter the gem.
 
 **Location clue.** The luckstone at the bottom of [the Gnomish
-Mines](#the-gnomish-mines) is guaranteed. If you find a gray
-stone at Mine's End, it's almost certainly the luckstone.
-Bless-test it at an altar to confirm (the guaranteed one is
-always uncursed).
+Mines](#the-gnomish-mines) is guaranteed and always uncursed, so
+a gray stone at Mine's End is usually it. One layout salts the
+level with decoys, though — four [mimics](#a-note-on-mimics)
+disguised as gray stones and a real cursed loadstone. Search
+(`s`) beside a suspect stone to expose any mimic, then price-ID
+the two real stones ($60 versus $1) instead of grabbing one
+blindly; the kick test is unreliable in these cramped niches.
 
 The rule of thumb: if you find a gray stone, don't pick it up
 until you've tested it. Kick it first. Check BUC second. Then pick it up.
@@ -14002,8 +14014,10 @@ before this one. The most significant:
 - **Bags of holding** no longer destroy their contents on explosion.
   Items are scattered on the floor instead, which is bad but not
   catastrophic.
-- **Loadstones** now resist knockback from combat attacks (the new
-  knockback mechanic). A niche use if you can keep one uncursed.
+- **Loadstones** make their carrier steadfast against the new
+  knockback mechanic — cursed or not, as long as you aren't
+  levitating or flying. Even the cursed one welded to your pack keeps
+  you from being shoved around.
 - **Sacrifice** value now caps the *quality* of artifact you can
   be gifted (higher-value monsters unlock better ones), and gifts
   are somewhat easier to earn than before.
@@ -14500,7 +14514,7 @@ Levitation: \hyperref[drowning]{doesn't help vs eels, p.~\pageref*{drowning}}; \
 Lichen corpse, never rots, pp.~\hyperref[the-golden-rules-of-early-survival]{\pageref*{the-golden-rules-of-early-survival}}, \hyperref[fungi-and-molds-f]{\pageref*{fungi-and-molds-f}}\par
 Light: \hyperref[room-types]{source room, free lit lamp, p.~\pageref*{room-types}}; \hyperref[light-sources]{sources, candles and oil lamps, p.~\pageref*{light-sources}}\par
 Lizard: \hyperref[the-golden-rules-of-early-survival]{corpse, carry one, p.~\pageref*{the-golden-rules-of-early-survival}}; \hyperref[lizards]{corpse, cures stoning, p.~\pageref*{lizards}}\par
-Loadstone: \hyperref[gray-stones-four-stones-one-lucky]{cursed and refuses to drop, the kick test, the \#tip escape, p.~\pageref*{gray-stones-four-stones-one-lucky}}\par
+Loadstone: \hyperref[gray-stones-four-stones-one-lucky]{cursed and refuses to drop, the kick test, p.~\pageref*{gray-stones-four-stones-one-lucky}}\par
 \hyperref[credit-and-debt]{Loan, lent gold from shopkeeper, p.~\pageref*{credit-and-debt}}\par
 \hyperref[unlocking-tools]{Lock pick, respectable, p.~\pageref*{unlocking-tools}}\par
 \hyperref[worms-w]{Long worm, tail segments, p.~\pageref*{worms-w}}\par
