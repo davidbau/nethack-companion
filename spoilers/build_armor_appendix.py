@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Parse objects.h and emit the Armor Appendix markdown."""
+"""Parse objects.h and emit raw Armor Appendix markdown.
+
+The appendix in companion.md includes hand-reviewed tactical prose.  Use this
+extractor to verify source-derived rows, not as a drop-in replacement.
+"""
 import re
 from pathlib import Path
 
@@ -29,7 +33,7 @@ POWER_NAMES = {
     'FUMBLING': 'Causes frequent fumbling.',
     'FAST': '+1 speed.',
     'WWALKING': 'Water walking.',
-    'JUMPING': '`#apply` to leap.',
+    'JUMPING': 'Use `#jump` to leap to a chosen nearby square.',
     'LEVITATION': 'Levitation (cannot be removed while in the air).',
     'FIRE_RES': 'Fire resistance.',
     'COLD_RES': 'Cold resistance.',
@@ -147,36 +151,35 @@ for n, d, f in all_armor:
 NOTES = {
     'plate mail': "Spellcasting penalty.",
     'crystal plate mail': "Never rusts. Spellcasting penalty.",
-    'dwarvish mithril-coat': "Light enough for spellcasting. Wizard mid-game goal.",
-    'elven mithril-coat': "Light, expensive, no casting penalty.",
+    'dwarvish mithril-coat': "Strong, light armor; the metal suit still penalizes spellcasting.",
+    'elven mithril-coat': "Strong, light armor; the metal suit still penalizes spellcasting.",
     'chain mail': "Dwarves drop these.",
     'studded leather armor': "No spellcasting penalty.",
     'gray dragon scale mail': "Endgame body-armor goal.",
     'silver dragon scale mail': "",
     'gold dragon scale mail': "Emits light.",
-    'yellow dragon scale mail': "Rare.",
     'gray dragon scales': "Make-into upgrade to scale mail.",
     'Hawaiian shirt': "Tourist starter. Worn under body armor.",
     'T-shirt': "Worn under body armor.",
     'mummy wrapping': "Blocks invisibility while worn.",
     'oilskin cloak': "Resists grab attacks.",
     'robe': "+1 spellcasting effectiveness.",
-    'alchemy smock': "Fantastic early-game safety.",
+    'alchemy smock': "",
     'cloak of protection': "Best non-magical defensive cloak.",
     'cloak of magic resistance': "Lightest source of magic resistance.",
     'cornuthaum': "Wizards only; blocks other clairvoyance for non-Wizards.",
     'dunce cap': "Int/Wis → 6. Always cursed on generation.",
-    'fedora': "Tourist starter; Eye of the Aethiopica base.",
-    'helm of brilliance': "+d4 Int/Wis when blessed and enchanted.",
-    'helm of opposite alignment': "Flips alignment. Catastrophic if cursed.",
-    'helm of telepathy': "Telepathy while blind.",
+    'fedora': "Archeologist starter; gives an Archeologist +1 Luck while worn.",
+    'helm of brilliance': "Adds its enchantment to Int and Wis.",
+    'helm of opposite alignment': "Autocurses when worn and flips alignment.",
+    'helm of telepathy': "Telepathy within eight squares while sighted; all monsters while blind.",
     'gauntlets of fumbling': "Avoid.",
     'gauntlets of power': "Sets Strength to 25.",
-    'gauntlets of dexterity': "+d3 Dex per enchantment.",
-    'water walking boots': "Critical for the Castle drawbridge.",
-    'jumping boots': "`#apply` to leap.",
+    'gauntlets of dexterity': "Adds its enchantment to Dex.",
+    'water walking boots': "Walk over water while worn.",
+    'jumping boots': "",
     'fumble boots': "Avoid.",
-    'levitation boots': "Can't remove while levitating. Trap item.",
+    'levitation boots': "Generated cursed nine times in ten; cursed boots cannot be removed.",
     'large shield': "Blocks two-handed weapons.",
     'shield of reflection': "Saves the body-armor slot.",
 }

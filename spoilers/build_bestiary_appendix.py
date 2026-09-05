@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Parse monsters.h and emit the Bestiary Appendix markdown."""
+"""Parse monsters.h and emit raw Bestiary Appendix markdown.
+
+The appendix in companion.md has hand-reviewed tactical prose and notes.  This
+extractor is useful for checking its source-derived rows, but its output is not
+a drop-in replacement for the curated appendix.
+"""
 import re
 from pathlib import Path
 
@@ -11,6 +16,7 @@ if not (UPSTREAM / 'include' / 'monsters.h').exists():
 TEXT = (UPSTREAM / 'include' / 'monsters.h').read_text()
 # Strip preprocessor noise
 TEXT = re.sub(r'#if 0[\s\S]*?#endif', '', TEXT)
+TEXT = re.sub(r'#ifdef CHARON[\s\S]*?#endif', '', TEXT)
 
 # --- Glyph + symbol mapping ----------------------------------------
 SYM_TO_CHAR = {
@@ -98,12 +104,12 @@ AT_NAMES = {
     'AT_STNG': 'sting', 'AT_HUGS': 'hug', 'AT_SPIT': 'spit',
     'AT_ENGL': 'engulf', 'AT_BREA': 'breath', 'AT_EXPL': 'explode',
     'AT_BOOM': 'death-burst', 'AT_GAZE': 'gaze', 'AT_TENT': 'tentacle',
-    'AT_WEAP': 'weapon', 'AT_MAGC': 'spell',
+    'AT_WEAP': 'weapon', 'AT_MAGC': 'cast',
 }
 AD_NAMES = {
     'AD_PHYS': '', 'AD_MAGM': 'magic', 'AD_FIRE': 'fire',
     'AD_COLD': 'cold', 'AD_SLEE': 'sleep', 'AD_DISN': 'disint',
-    'AD_ELEC': 'shock', 'AD_DRST': 'poison', 'AD_ACID': 'acid',
+    'AD_ELEC': 'shock', 'AD_DRST': 'drain-Str', 'AD_ACID': 'acid',
     'AD_BLND': 'blind', 'AD_STUN': 'stun', 'AD_SLOW': 'slow',
     'AD_PLYS': 'paralyse', 'AD_DRLI': 'drain-XL', 'AD_DREN': 'drain-Pw',
     'AD_LEGS': 'leg-wound', 'AD_STON': 'petrify',
@@ -257,14 +263,15 @@ def parse_mon(body):
         'diff': diff, 'color': color,
     }
 
-def fmt_attack(at, ad, n, d):
+def fmt_attack(at, ad, n, d, lvl):
     at_name = AT_NAMES.get(at, at)
     ad_name = AD_NAMES.get(ad, ad)
     n = int(n); d = int(d)
     if n == 0 and d == 0:
         dmg = ''
     elif n == 0:
-        dmg = f'0d{d}'
+        # Passive 0dN attacks use (monster level + 1)dN in combat.
+        dmg = f'{lvl + 1}d{d}' if at == 'AT_NONE' else f'0d{d}'
     else:
         dmg = f'{n}d{d}'
     parts = [at_name]
@@ -274,19 +281,36 @@ def fmt_attack(at, ad, n, d):
         parts.append(ad_name)
     return ' '.join(parts)
 
-def fmt_attacks(atks):
+def fmt_attacks(atks, lvl):
     seen = []
     for at, ad, n, d in atks:
         if at == 'NO_ATTK':
             continue
-        s = fmt_attack(at, ad, n, d)
+        s = fmt_attack(at, ad, n, d, lvl)
         if s:
             seen.append(s)
-    return ' · '.join(seen) if seen else '—'
+    if not seen:
+        return '—'
+    # A monster definition can repeat the same attack several times.
+    # Preserve that information without making the reader parse five
+    # identical phrases in a row.
+    collapsed = []
+    for attack in seen:
+        if collapsed and collapsed[-1][0] == attack:
+            collapsed[-1][1] += 1
+        else:
+            collapsed.append([attack, 1])
+    return ' · '.join(
+        f'{attack} ×{count}' if count > 1 else attack
+        for attack, count in collapsed
+    )
 
 def fmt_flags(mon):
     out = []
     for f, label in KEY_FLAGS.items():
+        if f == 'M1_POIS' and (
+                'G_NOCORPSE' in mon['gen'] or 'M2_WERE' in mon['m2']):
+            continue
         if f in mon['m1'] or f in mon['m2'] or f in mon['m3']:
             out.append(label)
     # Resistances (mr1)
@@ -308,10 +332,10 @@ NOTES = {
     'acid blob': "Passive acid damage — punching one corrodes your gloves.",
     'cockatrice': "Touch petrifies. Always carry a lizard corpse.",
     'chickatrice': "A small cockatrice. Same petrify rules apply.",
-    'floating eye': "Passive gaze paralyses if you melee in daylight. Use ranged or close eyes first.",
+    'floating eye': "Passive gaze paralyses on melee if you and the eye can see each other. Use ranged, or wear a blindfold or towel.",
     'medusa': "Gaze petrifies. Use a mirror; she petrifies herself on her own reflection.",
-    'mind flayer': "Tentacle attacks drain Int; if Int hits 3 you die. Wear an alignment-matching helmet or kill from range.",
-    'master mind flayer': "Five tentacles per turn. Catastrophic without telepathy + free action.",
+    'mind flayer': "Tentacles drain Int; once it reaches 3, the next tentacle that lands kills. Any helmet blocks 7/8 of tentacles.",
+    'master mind flayer': "Five tentacles per turn. Any helmet blocks 7/8 of them.",
     'leprechaun': "Steals gold and teleports away. Carry no gold near them.",
     'nymph': "Steals an item and teleports. Block her path or kill from range.",
     'shopkeeper': "Don't anger one. They're stronger than they look and have eternal grudges.",
@@ -319,9 +343,8 @@ NOTES = {
     'high priest': "Endgame altar guardian. Don't fight one head-on.",
     'Cerberus': "Three-headed hellhound. Reflection + fire resistance only.",
     'orc-captain': "Hits hard. Drops decent loot.",
-    'master lich': "Casts double-trouble. Disperse or kill from afar.",
+    'master lich': "Casts wizard spells. Kill from afar.",
     'arch-lich': "End-game tier. Casts death rays. Magic resistance mandatory.",
-    'mummy lord': "Curses your equipment on touch. Bring uncursing on hand.",
     'red dragon': "Cone of fire. Get fire resistance before you meet one.",
     'blue dragon': "Cone of lightning. Shock resistance.",
     'gray dragon': "Anti-magic breath. Magic resistance helps; reflection doesn't.",
@@ -329,13 +352,13 @@ NOTES = {
     'silver dragon': "Cold breath plus reflection scales — your reflection target.",
     'green dragon': "Poison breath; poison resistance is enough.",
     'white dragon': "Cone of cold. Cold resistance.",
-    'yellow dragon': "Acid breath; rare.",
+    'yellow dragon': "Acid breath.",
     'orange dragon': "Sleep ray. Sleep resistance trivialises.",
     'gold dragon': "Fire breath. Drops gold-colored scales (light source).",
     'baby red dragon': "Same breath type as the adult; less HP. Still bad without fire res.",
     'baby blue dragon': "Lightning breath, ditto.",
     'storm giant': "Throws boulders for big damage. Carries shock attacks.",
-    'fire giant': "Throws boulders. Surprisingly poor offensively if you have fire res.",
+    'fire giant': "Throws boulders.",
     'frost giant': "Throws boulders. Has cold attacks.",
     'titan': "Tough humanoid with magic missiles. Casts spells.",
     'rust monster': "Touch rusts iron. Strip armor before engaging or use silver.",
@@ -344,34 +367,40 @@ NOTES = {
     'minotaur': "Two claws plus a butt. Heavy hitter; usually guards a vault.",
     'foocubus': "Succubus/Incubus. Steals XP and items if you accept advances.",
     'invisible stalker': "Permanent invisibility + see-invis. Plays mind games.",
-    'jabberwock': "Powerful but slow. Free XP if you're set up.",
+    'jabberwock': "Four 2d10 attacks; baseline speed, so retreat early if you cannot take the exchange.",
     'Death': "Rider of the Apocalypse. Vanquish three to ascend.",
     'Pestilence': "Rider; spreads disease.",
     'Famine': "Rider; drains nutrition to starvation.",
     'Wizard of Yendor': "Rodney himself. The final test before the Plane of Earth.",
     'Vlad the Impaler': "Vampire boss in Vlad's Tower. Has the Candelabrum.",
     'High Priest': "Each major temple has one. Tougher than priests.",
-    'Croesus': "Vault guardian on Fort Ludios. Drops a wand of wishing wish-share.",
-    'mail daemon': "Delivers in-game mail. Don't attack one — they don't fight back.",
+    'Croesus': "Vault guardian in Fort Ludios. Hoards gold, gems, and magic items.",
+    'mail daemon': "Appears only to deliver in-game mail, then leaves.",
     'pony': "Knight's starting steed.",
-    'kitten': "Common Valkyrie/Wizard/Tourist starting pet.",
-    'little dog': "Common Archeologist/Caveman/Samurai starting pet.",
+    'kitten': "Common starting pet; guaranteed for Wizards.",
+    'little dog': "Guaranteed Cave Dweller, Ranger, and Samurai starting pet.",
     'pony': "Knight's starting steed.",
-    'guardian naga': "Friendly to the Healer. Hostile otherwise.",
-    'Master of Thieves': "Rogue quest nemesis.",
-    'Cyclops': "Caveman quest nemesis. Throws boulders.",
-    'Lord Surtur': "Valkyrie quest nemesis. Has Mjollnir if you don't.",
+    'guardian naga': "Lawful characters may find one peaceful.",
+    'Master of Thieves': "Rogue quest leader; also Tourist quest nemesis.",
+    'Cyclops': "Healer quest nemesis. Throws boulders.",
+    'Lord Surtur': "Valkyrie quest nemesis.",
     'Lord Carnarvon': "Archeologist quest leader.",
+    'Pelias': "Barbarian quest leader.",
+    'Shaman Karnov': "Cave Dweller quest leader.",
     'Hippocrates': "Healer quest leader.",
     'Ashikaga Takauji': "Samurai quest nemesis.",
     'King Arthur': "Knight quest leader. Holds Excalibur if you didn't get it.",
     'Grand Master': "Monk quest leader.",
     'Arch Priest': "Priest quest leader.",
     'Orion': "Ranger quest leader. Bow user.",
-    'Master Assassin': "Rogue quest nemesis backup.",
+    'Master Assassin': "Rogue quest nemesis.",
+    'Lord Sato': "Samurai quest leader.",
     'Twoflower': "Tourist quest leader.",
     'Norn': "Valkyrie quest leader.",
     'Neferet the Green': "Wizard quest leader.",
+    'Thoth Amon': "Barbarian quest nemesis.",
+    'Master Kaen': "Monk quest nemesis.",
+    'Dark One': "Wizard quest nemesis.",
 }
 
 # Build groups
@@ -391,15 +420,15 @@ for m in MON_RE.finditer(TEXT):
 out = []
 out.append('### Bestiary Tables')
 out.append('')
-out.append("Every monster you might meet. Grouped by ASCII symbol so you can flip "
-           "to the right page mid-game. **Lvl** is the base monster level. **Spd** "
+out.append("Every monster you might meet, grouped by map symbol. **Lvl** is the "
+           "base monster level. **Spd** "
            "is movement rate (12 is normal player speed). **AC** is armor class "
-           "(lower is better). **MR%** is the percentage chance the monster resists "
+           "(lower is better). **MR** is the percentage chance the monster resists "
            "your spells and magic attacks. **Attacks** lists each attack's mode, "
-           "damage dice, and side effect; multiple attacks separated by `·` are "
-           "made per turn. **Notes** folds in the most tactically-relevant trait "
-           "flags (flies, sees-invis, regenerates, poisonous-corpse, etc.) "
-           "alongside specific heads-ups for monsters that deserve one.")
+           "dice, and side effect; for a status attack, the dice can measure duration "
+           "rather than HP damage. Attacks separated by `·` can all occur in "
+           "one turn. **Notes** lists traits that change the fight, such as flight, "
+           "seeing invisible, regeneration, or a poisonous corpse.")
 out.append('')
 
 def mon_labels(mon):
@@ -407,6 +436,11 @@ def mon_labels(mon):
     apply to this monster."""
     labels = set()
     for flag, label in KEY_FLAGS.items():
+        # Human-form werecreatures change form instead of leaving the
+        # poisonous corpse suggested by their M1 flags.
+        if flag == 'M1_POIS' and (
+                'G_NOCORPSE' in mon['gen'] or 'M2_WERE' in mon['m2']):
+            continue
         if flag in mon['m1'] or flag in mon['m2'] or flag in mon['m3']:
             labels.add(label)
     for token, label in MR_FLAGS.items():
@@ -505,9 +539,9 @@ def fmt_flags_excluding(mon, exclude_labels):
 CLASS_PROSE = {
     'S_ANT': (
         "Insects, often in groups. The soldier ant is the early game's "
-        "infamous killer: its poison sting can two-shot a low-level "
-        "hero. Killer bees swarm; the queen bee in a beehive room is "
-        "tough on her own."
+        "infamous killer: its bite and poisoned sting can drop a "
+        "low-level hero in two rounds. Killer bees swarm; the queen "
+        "bee in a beehive room is tough on her own."
     ),
     'S_BLOB': (
         "Slow, mindless, immune to a lot. Don't melee an acid blob "
@@ -517,8 +551,7 @@ CLASS_PROSE = {
     'S_COCKATRICE': (
         "Medieval bestiary creature: a chicken with a serpent's tail "
         "whose touch turns flesh to stone. Carry a lizard corpse, "
-        "fight gloved, and never wield a cockatrice corpse as a "
-        "weapon unless your role explicitly resists stoning. See "
+        "fight gloved, and never wield a cockatrice corpse bare-handed. See "
         "[Petrification](#petrification-stoning)."
     ),
     'S_DOG': (
@@ -532,28 +565,29 @@ CLASS_PROSE = {
         "free action, blindness, or a ranged attack."
     ),
     'S_FELINE': (
-        "Cats. Several are starting pets. Tigers are durable melee "
-        "and good early companions if tamed."
+        "Wild felines are fast and hostile; a tiger or displacer "
+        "beast can turn an ordinary corridor into a bad fight. "
+        "Several smaller cats can be starting pets."
     ),
     'S_GREMLIN': (
         "Touch in water (or just at night) can steal an intrinsic. Kill "
         "them on dry land, ideally during daylight."
     ),
     'S_HUMANOID': (
-        "Dwarves and similar. Dwarves carry better-than-average loot "
-        "(weapons, armor, pick-axes) and can wreck low-level heroes "
-        "with that loot."
+        "Dwarves carry better-than-average loot (weapons, armor, and "
+        "pick-axes), but that same equipment makes them dangerous to "
+        "an unarmored explorer."
     ),
     'S_IMP': (
-        "Annoying minor demons. Imps steal items and teleport away; "
-        "quasits drain Dexterity. None individually scary."
+        "Annoying minor demons. Imps insult you; quasits drain "
+        "Dexterity; homunculi can put you to sleep."
     ),
     'S_JELLY': (
         "Stationary or near-stationary. The blue jelly's passive cold "
         "and the spotted jelly's passive acid bite even when you hit them."
     ),
     'S_KOBOLD': (
-        "Weak early-game fodder. Most are poisonous to eat — leave the "
+        "Weak early-game fodder. All are poisonous to eat — leave the "
         "corpses unless you have poison resistance."
     ),
     'S_LEPRECHAUN': (
@@ -575,8 +609,7 @@ CLASS_PROSE = {
     ),
     'S_PIERCER': (
         "Clings to the ceiling and drops on you when you walk under. "
-        "Hits hard for its level; you can't avoid the drop without "
-        "flying or a clear ceiling."
+        "A hard helmet blocks the 4d6 blow; good AC can dodge it."
     ),
     'S_QUADRUPED': (
         "Mixed bag. Rothes are early-game wreckers (three attacks per "
@@ -587,25 +620,25 @@ CLASS_PROSE = {
         "dungeon; their corpses are safe food."
     ),
     'S_SPIDER': (
-        "Includes scorpions and centipedes. Many have poison stings. "
-        "Spider-class monsters are common as the source of poisonous-"
-        "corpse food poisoning."
+        "Includes scorpions and centipedes. Giant spider and scorpion "
+        "corpses are poisonous; cave spider and centipede corpses are safe."
     ),
     'S_TRAPPER': (
         "Stationary engulfers that look like a piece of dungeon. "
         "Stepping into one starts a swallow attack you can't easily "
-        "escape. Identify with `;` (farlook) before walking into "
-        "obvious-trap squares."
+        "escape. Search next to a suspicious square; farlook cannot "
+        "display a hidden lurker."
     ),
     'S_UNICORN': (
-        "White, gray, and black — Lawful, Neutral, Chaotic. Killing "
-        "a cross-aligned one with a thrown unicorn horn or melee gives "
-        "Luck. Killing a co-aligned one is a major Luck penalty."
+        "White, gray, and black correspond to Lawful, Neutral, and "
+        "Chaotic. Killing a co-aligned unicorn costs 5 Luck; killing a "
+        "cross-aligned one does not change Luck. Any thrown gem pacifies "
+        "a hostile unicorn, while real gems can also change Luck."
     ),
     'S_VORTEX': (
-        "Stationary elemental clouds. They wait for you to step in. "
-        "Different colors deal different damage types (fire / cold / "
-        "lightning / poison). Energy vortex drains Pw."
+        "Engulfing elemental clouds. Only the fog cloud is slow; the "
+        "others move at speed 20–22. Their attacks blind, freeze, shock, "
+        "or burn, and the energy vortex also drains Pw."
     ),
     'S_WORM': (
         "Long worms become a maze of tail segments as they grow. "
@@ -616,14 +649,15 @@ CLASS_PROSE = {
         "legs and slow you down."
     ),
     'S_LIGHT': (
-        "Yellow light bursts on death and blinds you (10d20 damage if "
-        "unresistant). Black light hallucinates. See "
+        "Yellow light explodes when it attacks, causing 10d20 turns of "
+        "blindness unless you resist blindness. Black light causes "
+        "10d12 turns of hallucination. See "
         "[Light Bursts](#light-bursts)."
     ),
     'S_ZRUTY': (
-        "Slavic folklore — a hairy wild man of the woods. One species, "
-        "one role here: a nasty mid-game brute. Good XP if you can "
-        "handle the three-attack flurry."
+        "A zruty is a nasty mid-game brute with two claws and a heavy "
+        "bite, but worth good experience if you can take the flurry. "
+        "The name comes from the hairy wild man of Slavic folklore."
     ),
     'S_ANGEL': (
         "Powerful late-game spellcasters with weapons. Astral-Plane "
@@ -631,8 +665,8 @@ CLASS_PROSE = {
         "[The Ascension Run](#the-ascension-run)."
     ),
     'S_BAT': (
-        "Erratic flyers, mostly nuisance. Vampire bats can give "
-        "lycanthropy."
+        "Erratic flyers, mostly nuisance. A vampire bat's poisoned "
+        "bite drains Strength; poison resistance blocks it."
     ),
     'S_CENTAUR': (
         "Mounted archers with strong physical attacks. They wield "
@@ -641,12 +675,12 @@ CLASS_PROSE = {
     'S_DRAGON': (
         "Each color breathes its element type. Reflection bounces the "
         "ranged breath back. Adults are sources of dragon scale mail; "
-        "babies are weaker but breathe the same. See "
+        "babies bite but do not breathe. See "
         "[Dragon Scale Mail](#armor-tables)."
     ),
     'S_ELEMENTAL': (
-        "Air engulfs and suffocates, fire deals fire damage, water "
-        "drowns if you're adjacent in water, earth is slow but tough."
+        "Air elementals engulf and batter you; fire elementals burn; "
+        "water elementals make one heavy physical attack; earth is slow but tough."
     ),
     'S_FUNGUS': (
         "Stationary. Lichen corpses never rot — keep one in your "
@@ -654,13 +688,14 @@ CLASS_PROSE = {
         "melee with elemental passive damage."
     ),
     'S_GNOME': (
-        "Mines residents. Gnomish PCs find most of them peaceful. The "
-        "gnome lord and gnomish wizard are real threats; the gnome king "
-        "is rare but dangerous."
+        "Gnomish PCs find most Mines residents peaceful. A gnome lord "
+        "hits harder than its ordinary kin, and a gnomish wizard attacks "
+        "only with spells."
     ),
     'S_GIANT': (
-        "Boulder throwers. Storm / fire / frost giants match the "
-        "dragon elements; titans cast spells. Eating a giant's corpse "
+        "Boulder throwers. Fire, frost, and storm giants deal their "
+        "named element and their corpses can grant the matching "
+        "resistance; titans cast spells. A true giant corpse also "
         "raises Strength."
     ),
     'S_invisible': (
@@ -669,31 +704,32 @@ CLASS_PROSE = {
     ),
     'S_JABBERWOCK': (
         "The monster from Lewis Carroll's *Jabberwocky* (\"O frabjous "
-        "day! Callooh! Callay!\"). Slow, tough, hits hard. Free XP if "
-        "you're set up for the fight; lethal if you walk into one "
-        "early. Vorpal Blade was made for beheading it."
+        "day! Callooh! Callay!\"). It moves at player baseline speed and "
+        "makes four 2d10 attacks, so decide early whether you can stand "
+        "and trade blows. Vorpal Blade beheads it automatically."
     ),
     'S_KOP': (
         "Police force triggered by stealing from shops or hurting "
-        "shopkeepers. Mostly weak individually but they swarm."
+        "shopkeepers. Paying what you owe dismisses every Kop; otherwise "
+        "escape rather than grinding through a force that can respawn."
     ),
     'S_LICH': (
-        "Skeletal spellcasters. Higher tiers cast double-trouble and "
-        "Death; master and arch-liches require magic resistance to "
-        "survive their spell barrages."
+        "Skeletal spellcasters. Higher tiers cast wizard spells; master "
+        "and arch-liches demand magic resistance, and an arch-lich can "
+        "cast touch of death."
     ),
     'S_MUMMY': (
-        "Touch curses your worn items. Bring uncursing on hand "
-        "(holy water, remove curse)."
+        "Mindless undead with physical claw attacks. A wand or spell "
+        "of undead turning deals 1d8 and makes them flee. On death, a "
+        "mummy leaves the already-old corpse of its base race."
     ),
     'S_NAGA': (
-        "Long serpentine bodies, varied breath weapons (acid / fire / "
-        "poison). Healers find the guardian naga peaceful; everyone "
-        "else does not."
+        "Long serpentine bodies with ranged attacks. Black naga corpses "
+        "can grant poison resistance; their acid and stoning resistance is temporary."
     ),
     'S_OGRE': (
-        "Big melee brutes. Ogre kings throw boulders. Drop decent "
-        "weapons and armor."
+        "Big melee brutes. They carry a club and sometimes a battle-axe, "
+        "but no armor."
     ),
     'S_PUDDING': (
         "Splits when you hit them. Brown puddings corrode armor on "
@@ -702,8 +738,8 @@ CLASS_PROSE = {
     ),
     'S_QUANTMECH': (
         "Touch teleports you randomly. The annoyance is the lost "
-        "position more than the damage — but in dangerous neighbourhoods "
-        "a random teleport CAN kill."
+        "position more than the damage, but a random teleport into a "
+        "dangerous room can still kill you."
     ),
     'S_RUSTMONST': (
         "Rust monsters rust iron equipment on touch; disenchanters "
@@ -711,57 +747,56 @@ CLASS_PROSE = {
         "armor / switch to silver or non-iron weapons before engaging."
     ),
     'S_SNAKE': (
-        "Mostly poisonous. The pit viper and pit fiend are the "
+        "Mostly poisonous. The pit viper and cobra are the "
         "dangerous ones; garter snakes are fodder."
     ),
     'S_TROLL': (
-        "Regenerates from corpses. Eat the corpse, burn it with fire, "
-        "or zap it with magic to keep it dead. A troll left behind on "
-        "an old level will be alive when you come back."
+        "Regenerates from corpses. Eat the corpse, kill it with "
+        "Trollsbane, or stone it so no corpse remains."
     ),
     'S_UMBER': (
-        "Confusion gaze. Don't melee without blindness or free action; "
-        "the confusion stacks and makes spellcasting impossible."
+        "Confusion gaze. Blindness defeats it; free action does not. "
+        "The confusion stacks and wrecks navigation."
     ),
     'S_VAMPIRE': (
         "Drains XL on bite. Shapeshifts to bat or cloud. Vlad the "
-        "Impaler is the vampire boss in his Tower."
+        "Impaler is the vampire boss in his Tower. Ordinary vampires "
+        "and vampire lords leave an old human corpse; Vlad leaves none."
     ),
     'S_WRAITH': (
-        "Drains XL on touch. The wraith corpse, however, **gives** a "
-        "level when eaten: one of the best food items in the game. "
-        "Always eat a wraith corpse if you can."
+        "Drains XL on touch. A fresh plain wraith corpse grants an "
+        "experience level when eaten; barrow wights and Nazgul leave "
+        "no corpse."
     ),
     'S_XORN': (
         "D&D's three-armed, three-eyed creatures from the Elemental "
-        "Plane of Earth. In the dungeon they tunnel through rock and "
-        "eat metal: your weapons and armor are at risk on touch. "
-        "Hits hard for its level; magic resistance helps."
+        "Plane of Earth. They phase through walls and eat metal objects "
+        "from the floor; their attacks are purely physical."
     ),
     'S_YETI': (
         "Apes and great apes mostly; sasquatches are fast. Carnivore "
         "corpses are safe food."
     ),
     'S_ZOMBIE': (
-        "Slow undead. Easy to kite. Corpses are usually unsafe to eat. "
-        "Big zombie populations live in morgues."
+        "Slow undead, easy to kite. A wand or spell of undead turning "
+        "deals 1d8 and makes them flee. Race-based zombies leave an "
+        "already-old corpse of that race; ghouls and skeletons leave none."
     ),
     'S_HUMAN': (
-        "The catch-all `@` class: shopkeepers, priests, watchmen, "
-        "Kops, role nemeses, quest leaders, valkyries, ninja, and "
-        "the player. Most start peaceful; the ones that don't are "
-        "very dangerous."
+        "Never make assumptions from an `@` alone. It can be a peaceful "
+        "shopkeeper, priest, watchman, or quest leader; or Medusa, a role "
+        "nemesis, Croesus, or the Wizard of Yendor. Check the name first."
     ),
     'S_DEMON': (
         "Major demons. Most can gate in reinforcements (a single "
         "barbed devil in your face can become five). Silver weapons "
-        "and Demonbane do extra damage. Demon lords can be bribed "
-        "with gold to leave."
+        "and Demonbane do extra damage. Geryon, Dispater, Baalzebub, "
+        "and Asmodeus may accept a bribe."
     ),
     'S_GOLEM': (
-        "Mindless constructs. Wood and leather golems are early-game "
-        "fodder; iron, stone, and clay golems are dangerous. The "
-        "rare gold golem is a walking treasure pile."
+        "Iron, stone, and clay golems are dangerous; wood and leather "
+        "golems are early-game fodder. A rare gold golem is a walking "
+        "treasure pile."
     ),
     'S_EEL': (
         "Lives in water. Wraps around you and drags you under to "
@@ -770,8 +805,8 @@ CLASS_PROSE = {
     ),
     'S_LIZARD': (
         "Mostly harmless. **Lizard corpses cure petrification and "
-        "never rot.** Carry one at all times — this is the standard "
-        "answer to cockatrices and Medusa."
+        "never rot.** Carry one for cockatrices. Medusa's gaze kills "
+        "immediately, so a lizard cannot save you from it."
     ),
 }
 
@@ -802,23 +837,17 @@ for sym in SYM_ORDER:
     hoisted = universal | {label for label, _ in almost}
     out.append('::: dense-table')
     out.append('')
-    out.append('| Name | Color | Lvl | Spd | AC | MR% | Attacks | Notes |')
+    out.append('| Name | Color | Lvl | Spd | AC | MR | Attacks | Notes |')
     out.append('|----------------|-------|-----|-----|----|-----|--------------------------------------------|--------------------------------------------------------|')
     for name, mon in items:
         clr = color_str(mon['color'])
-        atks = fmt_attacks(mon['atks'])
-        # If this monster is an exception to an almost-universal trait,
-        # call that out explicitly in its note.
-        exception_notes = [f'no {label}'
-                           for label, exc in almost if exc == name]
+        atks = fmt_attacks(mon['atks'], mon['lvl'])
         flag_excl = hoisted
         flags = fmt_flags_excluding(mon, flag_excl)
         extra = NOTES.get(name, '')
         parts = []
         if flags:
             parts.append(flags + '.')
-        if exception_notes:
-            parts.append('(' + '; '.join(exception_notes) + ')')
         if extra:
             parts.append(extra)
         note = ' '.join(parts)

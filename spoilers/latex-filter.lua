@@ -274,9 +274,9 @@ local always_pageref = {
 -- reference like "(p. 63)" after the link, using LaTeX's
 -- \pageref*. Triggered when the immediately preceding word is
 -- "see" / "See" (or ends with that, to catch "(see"), or when the
--- target is one of the always-pageref section anchors above. Other
--- internal links pass through unchanged so the book doesn't get
--- littered with page numbers everywhere. The "see" path is also
+-- target is one of the always-pageref section anchors above. The
+-- document pass later adds references to links that cross chapter
+-- boundaries; ordinary links within a chapter stay uncluttered. The "see" path is also
 -- suppressed when the author has already said ", below" or
 -- "above" — the reader has been told where to look without needing
 -- a page number.
@@ -318,6 +318,60 @@ function Inlines(inlines)
     end
   end
   return out
+end
+
+-- Return the identifier when a heading starts a print chapter. Part
+-- headings only divide the book; the next level-three heading starts
+-- the chapter itself. The two level-two chapters outside parts are
+-- handled here as well.
+local function chapter_id_for_header(block)
+  if block.tag ~= "Header" then return nil end
+  local text = pandoc.utils.stringify(block)
+  if block.level == 3 then
+    return block.identifier
+  end
+  if block.level == 2
+      and text ~= "Table of Contents"
+      and text ~= "Appendices"
+      and not text:match("^Part %w+: ") then
+    return block.identifier
+  end
+  return nil
+end
+
+-- Add a page number to internal links that leave the current chapter.
+-- Inlines() above has already handled deliberately worded "see" links;
+-- detect its RawInline before adding anything so those references do
+-- not appear twice.
+local function add_cross_chapter_pagerefs(block, current_chapter,
+                                           anchor_chapter)
+  return block:walk({
+    Inlines = function(inlines)
+      local out = pandoc.List({})
+      for i, x in ipairs(inlines) do
+        out:insert(x)
+        if x.tag == "Link"
+            and x.target
+            and x.target:sub(1, 1) == "#" then
+          local label = x.target:sub(2)
+          local target_chapter = anchor_chapter[label]
+          local following = inlines[i + 1]
+          local already_added = following
+            and following.tag == "RawInline"
+            and following.format == "latex"
+            and following.text:find(
+              "\\pageref*{" .. label .. "}", 1, true)
+          if target_chapter
+              and target_chapter ~= current_chapter
+              and not already_added then
+            out:insert(pandoc.RawInline("latex",
+              "~(p.~\\pageref*{" .. label .. "})"))
+          end
+        end
+      end
+      return out
+    end
+  })
 end
 
 function Div(div)
@@ -522,8 +576,50 @@ function Pandoc(doc)
   local skip_epigraph = false
   local i = 1
 
+  -- First pass: assign every heading and inline anchor to its chapter.
+  -- Pandoc supplies automatic heading identifiers before this filter
+  -- runs, so explicit and generated anchors use the same lookup.
+  local anchor_chapter = {}
+  local mapping_chapter = "frontmatter"
+  for _, mapping_block in ipairs(blocks) do
+    local new_chapter = chapter_id_for_header(mapping_block)
+    if new_chapter and new_chapter ~= "" then
+      mapping_chapter = new_chapter
+    end
+    -- Element:walk visits descendants, not the root element itself.
+    if mapping_block.identifier and mapping_block.identifier ~= "" then
+      anchor_chapter[mapping_block.identifier] = mapping_chapter
+    end
+    mapping_block:walk({
+      Header = function(header)
+        if header.identifier and header.identifier ~= "" then
+          anchor_chapter[header.identifier] = mapping_chapter
+        end
+      end,
+      Span = function(span)
+        if span.identifier and span.identifier ~= "" then
+          anchor_chapter[span.identifier] = mapping_chapter
+        end
+      end,
+      Div = function(div)
+        if div.identifier and div.identifier ~= "" then
+          anchor_chapter[div.identifier] = mapping_chapter
+        end
+      end,
+    })
+  end
+
+  local current_chapter = "frontmatter"
+
   while i <= #blocks do
     local block = blocks[i]
+
+    local new_chapter = chapter_id_for_header(block)
+    if new_chapter and new_chapter ~= "" then
+      current_chapter = new_chapter
+    end
+    block = add_cross_chapter_pagerefs(
+      block, current_chapter, anchor_chapter)
 
     -- Check if we should stop skipping (hit next h2+ after TOC)
     if skip_until_next_h2 and block.tag == "Header" and block.level <= 2 then

@@ -12,7 +12,7 @@ to a long-form HTML page and a print-ready PDF. The cover under
 (eventually) be printed and bound as a book.
 
 This is a **commemorative edition**, prepared for the launch of
-NetHack 5.0 (released in 2025 after the longest stretch of active
+NetHack 5.0 (released in 2026 after the longest stretch of active
 development since 3.4.3). Our goal is to make sure that every
 claim, every number, and every piece of advice has been audited
 against the new 5.0 code. The audit log lives in
@@ -80,7 +80,10 @@ NetHack 5.0 C source in `nethack-c/upstream/`. That directory is
 a git submodule pinned to the `NetHack-5.0.0_Released` tag;
 `./setup.sh` initializes it. The plain HTML and LaTeX pipelines do
 not require the submodule — they only need Pandoc (and xelatex
-for the LaTeX path).
+for the LaTeX path). The appendix builders are a source-checking aid,
+not a drop-in replacement: the appendices in `companion.md` contain
+hand-reviewed tactical prose and notes that the extractors do not
+recreate.
 
 ## Layout
 
@@ -135,10 +138,10 @@ Build scripts are dual-licensed CC BY-SA 4.0 or MIT at your option.
 NetHack itself is the work of the **NetHack DevTeam** since 1987,
 founded by Mike Stephenson, Izchak Miller, and Janet Walz. The
 current team — Michael Allison, Ken Arromdee, David Cohrs, Jessie
-Collet, Pasi Kallinen, Ken Lorber, Dean Luick, Patric Mueller, Pat
-Rankin, Derek S. Ray, Alex Smith, Mike Stephenson, Janet Walz,
-Paul Winner, Bart House, and Warwick Allison — released 5.0 in
-2025. Everything in this book is downstream of their work.
+Collet, Kevin Hugo, Pasi Kallinen, Ken Lorber, Dean Luick, Patric
+Mueller, Pat Rankin, Derek S. Ray, Alex Smith, Mike Stephenson,
+Janet Walz, Paul Winner, Bart House, and Warwick Allison — released
+5.0 in 2026. Everything in this book is downstream of their work.
 
 The game descends from Jay Fenlason's *Hack* (1982), itself
 directly inspired by Toy and Wichman's *Rogue* (1980). The dungeon is

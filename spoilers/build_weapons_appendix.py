@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Parse objects.h + weapon.c and emit the Weapons Appendix markdown."""
+"""Parse objects.h + weapon.c and emit raw Weapons Appendix markdown.
+
+The appendix in companion.md includes hand-reviewed tactical prose.  Use this
+extractor to verify source-derived rows, not as a drop-in replacement.
+"""
 import re
 from pathlib import Path
 
@@ -155,37 +159,37 @@ SKILL_ORDER = [
 NOTES = {
     'long sword': "Dip at experience level 5+ in a fountain for a 1-in-30 chance at Excalibur (1-in-6 for Knights).",
     'two-handed sword': "Two-handed (no shield). Vorpal Blade is the artifact form.",
-    'mace': "The Priest's first sacrifice gift, Demonbane, is a +d4/+0 silver mace.",
-    'silver mace': "Bonus damage to demons, undead, and shape-changers.",
+    'mace': "The Priest's first sacrifice gift, Demonbane, is a silver mace with +d5 to-hit and double damage against demons.",
+    'silver mace': "Silver damage to demons, vampires, lycanthropes, shades, and imps.",
     'silver dagger': "Silver damage to demons. Common Rogue/Ranger off-hand.",
     'silver saber': "Werebane is the artifact form — silver damage to weres and demons.",
     'silver arrow': "Silver damage to demons and weres.",
     'silver spear': "Silver damage to demons and weres.",
     'long sword': "Dip in a fountain at XL5+ for Excalibur (1-in-30; 1-in-6 for Lawful Knights).",
-    'dagger': "Stackable; Rogues multishot up to three in a single throw.",
+    'dagger': "Stackable; Expert Rogues multishot up to four in a single throw.",
     'battle-axe': "Two-handed; +1d4 small, +2d4 large.",
     'elven dagger': "Stackable. Sting is the artifact form.",
     'orcish dagger': "Stackable.",
     'short sword': "The Rogue's starter.",
     'katana': "+1 to-hit baked in. Snickersnee is the artifact form.",
-    'lance': "Devastating from horseback (jousting bonus); useless on foot.",
+    'lance': "Mounted hits can joust; on foot it retains two-square reach.",
     'tsurugi': "Two-handed. The Tsurugi of Muramasa is the artifact form.",
-    'club': "What a Caveman starts with — basic but free of curses early.",
+    'club': "The Cave Dweller's basic starting weapon.",
     'quarterstaff': "Two-handed but light; the Wizard's starting weapon.",
-    'aklys': "Returns when thrown if Strength is high enough.",
-    'boomerang': "Returns when thrown. Always.",
+    'aklys': "Returns when thrown while wielded as the primary weapon; occasional misfire.",
+    'boomerang': "Follows a curved flight path and can return if the path stays clear.",
     'bullwhip': "Archeologist's starter. Apply to disarm an adjacent monster, or to yank yourself out of a pit (anchors on a nearby boulder, furniture, or big monster).",
-    'crysknife': "Polymorphs back to a worm tooth when dropped; keep it equipped or buried.",
-    'athame': "Used for engraving wards — Elbereth on the floor lasts longer engraved with an athame.",
-    'sling': "Trains sling skill from any rock you pick up.",
-    'crossbow': "Bolts pierce — and crossbows fire one shot per turn at most.",
+    'crysknife': "Reverts to a worm tooth when dropped or thrown; erodeproofing usually prevents it.",
+    'athame': "Engraves without dulling the blade.",
+    'sling': "Launches rocks, flint stones, and gems.",
+    'crossbow': "Bolts pierce; low Strength penalizes volley size but does not cap it at one.",
     'yumi': "The Samurai's bow.",
-    'unicorn horn': "Doubles as a cure-everything tool when applied (unicorn horn use, not weapon).",
-    'pick-axe': "Doubles as a digging tool; an Archeologist's quiet superpower.",
+    'unicorn horn': "Applied as a tool, cures several status ailments but not drained attributes.",
+    'pick-axe': "Doubles as a digging tool.",
     'dwarvish mattock': "Two-handed. Digs through walls; cannot two-weapon.",
-    'morning star': "+1d4 small, +1 large — punches above its weight for a one-hander.",
+    'morning star': "+1d4 small, +1 large; solid damage for a one-handed weapon.",
     'trident': "+1 small, +2d4 large — the giant-killer; one-handed.",
-    'war hammer': "Mjollnir is the artifact form (Neutral Valkyrie sacrifice gift).",
+    'war hammer': "Mjollnir is the Valkyrie sacrifice gift; its alignment changes to match the Valkyrie's.",
     'broadsword': "+d4 small, +1 large. Stormbringer is the chaotic-aligned artifact form.",
     'partisan': "Polearm; reach (attacks 2 squares away).",
     'halberd': "Polearm; +1d6 large.",
@@ -200,7 +204,7 @@ NOTES = {
     'lucern hammer': "Polearm; +1d4 small.",
     'bec de corbin': "Polearm; reach.",
     'flail': "+1d4 large; one-handed.",
-    'rubber hose': "Joke weapon (1d4 / 1d3). Damages even Shades, who are immune to most.",
+    'rubber hose': "Joke weapon; never generates randomly.",
 }
 
 # Pre-clean for lookup (lowercase name → note)
@@ -216,8 +220,8 @@ out.append("Damage is shown as **vs small / vs large**, the dice rolled before "
            "**Cost** is the unenchanted shop base price in zorkmids. **Hit** is the "
            "to-hit bonus baked into the weapon itself (most are 0). Two-handed "
            "weapons that prevent shield use and two-weapon combat are flagged in "
-           "the notes. Weapons are grouped by their skill class so you can see your "
-           "options within each skill tree at a glance.")
+           "the notes. Weapons are grouped by skill; consult the per-role skill-caps "
+           "table before investing slots.")
 out.append('')
 
 # Section-level prose (printed BEFORE the table) for groups where the
@@ -225,14 +229,12 @@ out.append('')
 # carrying the same "polearm; reach" boilerplate on every row.
 SECTION_PROSE = {
     'Polearms': (
-        "All polearms are two-handed and have a reach of two squares "
-        "(`#apply` the weapon to strike a target one tile away from "
-        "you, with one empty intervening square). They can't be used "
-        "in melee against an adjacent monster — the haft gets in the "
-        "way — which means you switch weapons or use the polearm's "
-        "reach attack, not both. Notes below describe each entry's "
-        "extra damage; the reach mechanic is identical across the "
-        "class."
+        "All polearms are two-handed. To strike at range, `#apply` the "
+        "weapon: Basic skill reaches distance 2 orthogonally, and "
+        "Skilled opens more target positions. An ordinary attack on an "
+        "adjacent monster still works, but counts as bashing: base "
+        "damage is capped at 1d2 and the weapon-skill bonus is lost. "
+        "Notes below describe each entry's extra damage."
     ),
 }
 
