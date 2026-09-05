@@ -253,16 +253,12 @@ When a turn has gone bad, stop typing and read the messages again.
 - strategy aligned with NetHackWiki Valkyrie, Excalibur: Valkyrie is widely cited as the easiest beginner role; Knight 1-in-6 Excalibur dip at XL 5+ confirmed (https://nethackwiki.com/wiki/Valkyrie, https://nethackwiki.com/wiki/Excalibur)
 -->
 
-The first decision you'll make, before you even set foot on the
-stairs, is who you are. In the Mazes, this means three things: your
-**role**, your **race**, and your **alignment**. Together, these
-determine your starting equipment, your natural abilities, which gods
-hear your prayers, and which artifacts you can safely handle.
-
-For a first expedition, choose a **Lawful human or dwarf Valkyrie**.
-She starts strong, already resists cold, and has a clear route to a
-good weapon. If another role sounds more fun, take it. The first few
-deaths teach more than the character menu does.
+Choose a **role**, **race**, and **alignment** before you enter the
+Mazes; together they determine your equipment, abilities, gods, and
+safe artifacts. For a first expedition, choose a **Lawful human or
+dwarf Valkyrie**: she starts strong, resists cold, and has a clear
+route to a good weapon. If another role sounds more fun, take it—the
+first few deaths teach more than the character menu does.
 
 #### The Roles
 
