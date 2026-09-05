@@ -296,6 +296,14 @@ local function link_has_pageref(link, label)
   return false
 end
 
+-- Symbol columns in the fauna tables link the one-character glyph as well
+-- as the class name. The class link carries the useful destination page;
+-- putting a page reference on the glyph too produces cramped output such as
+-- "c (p. 243) Cockatrices (p. 243)".
+local function is_symbol_link(link)
+  return pandoc.utils.stringify(link.content):match("^.$") ~= nil
+end
+
 function Inlines(inlines)
   local out = pandoc.List({})
   for i, x in ipairs(inlines) do
@@ -305,7 +313,8 @@ function Inlines(inlines)
         and x.target:sub(1, 1) == "#" then
       local label = x.target:sub(2)
       local appended = false
-      if i >= 3
+      local symbol = is_symbol_link(x)
+      if not symbol and i >= 3
           and inlines[i - 1].tag == "Space"
           and inlines[i - 2].tag == "Str"
           and inlines[i - 2].text:match("[Ss]ee$") then
@@ -326,7 +335,7 @@ function Inlines(inlines)
           appended = true
         end
       end
-      if not appended and always_pageref[label] then
+      if not symbol and not appended and always_pageref[label] then
         append_pageref_to_link(x, label)
       end
     end
@@ -372,6 +381,7 @@ local function add_cross_chapter_pagerefs(block, current_chapter,
           local already_added = link_has_pageref(x, label)
           if target_chapter
               and target_chapter ~= current_chapter
+              and not is_symbol_link(x)
               and not already_added then
             append_pageref_to_link(x, label)
           end

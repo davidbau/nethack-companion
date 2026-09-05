@@ -868,6 +868,12 @@ not enough.
 \vspace*{0.6in}
 ```
 
+```{=latex}
+% The map follows immediately after this opening page. Lower the
+% chapter opener so TeX has less room to stretch the short paragraphs.
+\vspace*{0.4in}
+```
+
 ### The Lay of the Land
 
 <!-- audit
