@@ -280,6 +280,22 @@ local always_pageref = {
 -- suppressed when the author has already said ", below" or
 -- "above" — the reader has been told where to look without needing
 -- a page number.
+local function append_pageref_to_link(link, label)
+  link.content:insert(pandoc.RawInline("latex",
+    "~(p.~\\pageref*{" .. label .. "})"))
+end
+
+local function link_has_pageref(link, label)
+  for _, item in ipairs(link.content) do
+    if item.tag == "RawInline"
+        and item.format == "latex"
+        and item.text:find("\\pageref*{" .. label .. "}", 1, true) then
+      return true
+    end
+  end
+  return false
+end
+
 function Inlines(inlines)
   local out = pandoc.List({})
   for i, x in ipairs(inlines) do
@@ -306,14 +322,12 @@ function Inlines(inlines)
           end
         end
         if not skip then
-          out:insert(pandoc.RawInline("latex",
-            "~(p.~\\pageref*{" .. label .. "})"))
+          append_pageref_to_link(x, label)
           appended = true
         end
       end
       if not appended and always_pageref[label] then
-        out:insert(pandoc.RawInline("latex",
-          "~(p.~\\pageref*{" .. label .. "})"))
+        append_pageref_to_link(x, label)
       end
     end
   end
@@ -355,17 +369,11 @@ local function add_cross_chapter_pagerefs(block, current_chapter,
             and x.target:sub(1, 1) == "#" then
           local label = x.target:sub(2)
           local target_chapter = anchor_chapter[label]
-          local following = inlines[i + 1]
-          local already_added = following
-            and following.tag == "RawInline"
-            and following.format == "latex"
-            and following.text:find(
-              "\\pageref*{" .. label .. "}", 1, true)
+          local already_added = link_has_pageref(x, label)
           if target_chapter
               and target_chapter ~= current_chapter
               and not already_added then
-            out:insert(pandoc.RawInline("latex",
-              "~(p.~\\pageref*{" .. label .. "})"))
+            append_pageref_to_link(x, label)
           end
         end
       end
