@@ -717,9 +717,9 @@ corridor. If there is no way out, engrave `Elbereth` in the dust with
 
   ┌─────·──────┐                  ┌─────·──────┐
   │·o··Z·······│                  │·o···Z······│
-  │··k·@·G·Z···│                  │··k··G·······│
+  │··k·@·G·Z···│                  │··k··G······│
   │····o·······│                  │·o··········+##@
-  │··G·········│                  │··G··········│
+  │··G·········│                  │··G·········│
   └────────────┘                  └────────────┘
 
   You're surrounded.              They come to you one at a time.

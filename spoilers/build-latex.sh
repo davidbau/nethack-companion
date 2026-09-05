@@ -14,6 +14,9 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
 
+echo "=== Checking ASCII maps ==="
+python3 check_ascii_maps.py companion.md
+
 BW=0
 if [ "${1:-}" = "--bw" ]; then
   BW=1

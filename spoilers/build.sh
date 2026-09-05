@@ -6,6 +6,9 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
 
+echo "=== Checking ASCII maps ==="
+python3 check_ascii_maps.py companion.md
+
 VENV_DIR="$SCRIPT_DIR/.venv"
 WEASYPRINT="$VENV_DIR/bin/weasyprint"
 
