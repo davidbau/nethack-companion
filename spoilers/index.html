@@ -2474,10 +2474,9 @@ steal, attack a peaceful creature, break a door, or dig in town. Anger
 one and the whole watch turns on you.</p>
 <p><strong>Mine’s End</strong> is the bottom of the Mines. All three
 Mine’s End variants contain a guaranteed (not-cursed) luckstone, so
-you’ll get one wherever you arrive. A luckstone in your open inventory
-prevents your luck from timing out toward zero. Luck feeds your to-hit
-rolls, your prayers, and every wish. Grab it and carry it for the rest
-of the game.</p>
+you’ll get one wherever you arrive. It adds 3 to your Luck and stops
+good Luck from wearing off; bless it and carry it for the rest of the
+game (see <a href="#how-luck-works">How Luck Works</a>).</p>
 <p>Finding it takes care. In most layouts the luckstone hides in a
 secret room, so if a maze dead-ends with no treasure in sight, search
 the walls (<code>s</code>, <code>10s</code>) for hidden doors rather
@@ -2548,7 +2547,7 @@ inventory at reduced weight. An amulet of reflection bounces ray attacks
 back at their casters.</p>
 <p>The prize remains available after an infraction. The lost Luck does
 not clear when you finish a level; it drifts one point toward zero every
-600 turns unless a luckstone freezes it there.</p>
+600 turns, unless an unblessed luckstone holds it there.</p>
 <p><strong>Monsters behind boulders.</strong> A monster trapped behind a
 boulder can’t get to you, but you can still get to it: <strong>thrown
 daggers or darts fly straight over a boulder</strong>, and most attack
@@ -6117,9 +6116,9 @@ level” in the most literal architectural sense: you rocket through the
 ceiling to the floor above, instead of gaining an experience level.</li>
 </ul>
 <p>BUC status changes each object in its own way. A blessed luckstone
-holds positive Luck; a cursed one holds negative Luck. A cursed or
-confused scroll of teleportation sends you to a random <em>level</em>
-instead of teleporting within the current one.</p>
+keeps good Luck and lets bad Luck wear off; a cursed one does the
+reverse. A cursed or confused scroll of teleportation sends you to a
+random <em>level</em> instead of teleporting within the current one.</p>
 <p>You don’t see BUC status by default. Priests are the exception: they
 sense it as soon as they handle an object. Everyone else must test.</p>
 <p><strong>Altar testing.</strong> Drop an item on an altar:</p>
@@ -10718,6 +10717,14 @@ in a bathrobe holding a stick.</p>
 <section id="luck-and-fortune" class="level3">
 <h3>Luck and Fortune</h3>
 <!-- audit
+2026-09-27 luckstone rewrite vs NetHack-5.0 source:
+- timeout.c:600-616 (nh_timeout): time_luck = stone_luck(FALSE) = sgn(blessed - cursed luck items); good Luck decays only if no stone or time_luck < 0; bad Luck recovers only if no stone or time_luck > 0. So BLESSED keeps good Luck but lets bad Luck recover; UNCURSED freezes both; CURSED freezes bad and lets good decay. The earlier "any non-cursed luckstone freezes drift" was wrong for blessed.
+- the +-3 is u.moreluck (attrib.c set_moreluck, LUCKADD you.h:465), added to every Luck check via Luck = u.uluck + u.moreluck (you.h:464); it is not a cap. u.uluck clamps at +-10 (change_luck, attrib.c:411), so total Luck spans +-13.
+- several luck items: stone_luck nets cursed against non-cursed (moreluck) and cursed against blessed (timeout); never more than +-3.
+- drift every 300 turns with the Amulet or an angry god (timeout.c:604).
+- luck items: any LUCKSTONE (incl. the Heart of Ahriman) or SPFX_LUCK artifacts, the Tsurugi of Muramasa and the Orb of Fate (artifact.c:526 confers_luck, artilist.h).
+-->
+<!-- audit
 2026-07-30 accuracy pass vs NetHack-5.0 source:
 - Removed three "Luck +5 benefits" that use plain rn2 (no Luck term): enchant-scroll success (read.c:1180, wield.c:1004), wand wresting (rn2(121), hack.h:1419), fountain wishes (fountain.c:78). Kept to-hit and prayer (which Luck does affect).
 - Verified correct (also covers Exercising Your Stats): effective Luck range & timeout, luckstone freeze/±3, luck artifacts, the whole gain/lose-Luck table, sacrifice ceiling, prayer-fails-on-negative-Luck, all stat exercise/abuse actions.
@@ -10742,8 +10749,7 @@ in a bathrobe holding a stick.</p>
 <p>Luck is hidden, but four rules handle most of it:</p>
 <ol type="1">
 <li>Keep Luck at 0 or above so prayer remains safe.</li>
-<li>Carry a non-cursed luckstone in open inventory once you find
-one.</li>
+<li>Carry a blessed luckstone in open inventory once you find one.</li>
 <li>Give identified gems to a unicorn of your alignment.</li>
 <li>Do not kill peaceful creatures or break mirrors without a
 reason.</li>
@@ -10752,32 +10758,50 @@ reason.</li>
 <h4>How Luck Works</h4>
 <p>Luck ranges from −13 to +13 and normally starts at 0. Left alone, it
 drifts back toward its calendar baseline.</p>
-<p><strong>Luck timeout.</strong> Every 600 turns, your luck moves one
-point toward 0. If you have +5 luck, it will drop to +4 after 600 turns,
-then +3 after 1200, eventually reaching 0.</p>
-<p><strong>Luckstone.</strong> Carrying a luckstone in your open
-inventory (not inside a container) freezes the timer. Your luck stays
-wherever it is until something changes it. For that reason, grab the
-Mine’s End luckstone early. It’s a small gray stone.</p>
-<p><strong>Bless state matters.</strong> Any <strong>non-cursed</strong>
-luckstone (blessed <em>or</em> uncursed) freezes drift toward your
-baseline and adds <strong>+3 to your effective Luck on most
-rolls</strong>. A <strong>cursed</strong> luckstone is dangerous: it
-subtracts 3 from your effective Luck and holds <em>negative</em> Luck in
-place (preventing the usual drift back toward zero from below). Always
-BUC-check a luckstone before carrying it, and use holy water to bless it
-if you can. An altar only reveals BUC. The curse doesn’t speed positive
-Luck’s decay, but it locks bad Luck in.</p>
-<p><strong>The <a href="#heart-of-ahriman">Heart of Ahriman</a>, <a
-href="#tsurugi-of-muramasa">Tsurugi of Muramasa</a>, and <a
-href="#orb-of-fate">Orb of Fate</a> all count as luckstones.</strong>
-Barbarian, Samurai, and Valkyrie quest artifacts confer the same
-drift-freeze and bless-state bonus, so those three roles get a “free
-luckstone” from their quest reward. Carrying both a blessed luckstone
-<em>and</em> one of these artifacts does not stack the +3 bonus. If one
-Luck item is cursed and another is non-cursed, their BUC contributions
-sum to zero and you still receive the non-cursed item’s full +3 cap
-increase.</p>
+<p><strong>Luck timeout.</strong> Every 600 turns, Luck moves one point
+toward its baseline, normally 0. While you carry the Amulet or your god
+is angry, it moves every 300 turns.</p>
+<p><strong>Luckstones.</strong> A luckstone in open inventory (not in a
+bag) adds 3 to your Luck, or subtracts 3 if cursed, and changes the
+timeout:</p>
+<table>
+<thead>
+<tr>
+<th>Luckstone</th>
+<th>Luck</th>
+<th>Good Luck</th>
+<th>Bad Luck</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blessed</td>
+<td>+3</td>
+<td>kept</td>
+<td>wears off</td>
+</tr>
+<tr>
+<td>Uncursed</td>
+<td>+3</td>
+<td>kept</td>
+<td>kept</td>
+</tr>
+<tr>
+<td>Cursed</td>
+<td>−3</td>
+<td>wears off</td>
+<td>kept</td>
+</tr>
+</tbody>
+</table>
+<p>Bless it. A blessed luckstone keeps the Luck you earn and lets
+mistakes wear off. The Mine’s End stone is uncursed, so dip it in holy
+water. Never carry a cursed one.</p>
+<p>The <a href="#heart-of-ahriman">Heart of Ahriman</a> (itself a
+luckstone), the <a href="#tsurugi-of-muramasa">Tsurugi of Muramasa</a>,
+and the <a href="#orb-of-fate">Orb of Fate</a> count as luckstones.
+Carrying several never adds more than 3, and a cursed one weakens the
+rest.</p>
 <p><strong>Calendar Luck.</strong> The drift target isn’t always 0:</p>
 <ul>
 <li>On a <strong>full moon</strong> night, baseline Luck is +1: Luck
