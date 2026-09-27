@@ -124,7 +124,7 @@ Correctness:
 - L1097 kobolds "sometimes carry poisoned weapons": darts poisoned 1 in 100 (mkobj.c:887); real fact is kobold corpses are poisonous (monsters.h:624-639). Propose: "Weak individually, but don't eat them: kobold corpses are poisonous."
 - L1133 horses "mostly peaceful in the wild": alignment 0; hostile to lawfuls and chaotics, ~half peaceful to neutrals (makemon.c:2290-2307). Propose: "Wild horses are hostile unless you're neutral, and even then only about half are peaceful. Tame one with food and you can ride it."
 - L1004-1006 zoo "wake not when you enter, but from the noise of fighting": sleeping monster in LOS within 10 squares wakes 1/7 per turn unless Stealth (monmove.c:327-357). Propose: "They're asleep when you arrive, but each one has a chance to wake every turn you're in view (Stealth keeps them under). Fight from the doorway."
-- L929 "# Corridor or fog": # is corridor, tree, or cloud (defsym.h:111,116,149); fog clouds are v. 
+- L929 "# Corridor or fog": # is corridor, tree, or cloud (defsym.h:111,116,149); fog clouds are v.
 - Minor: L1150 all vampires fly; L1152 xorns through walls only, not floors; L1165 worm tail hit 20% (50% blade) cuts and piece usually becomes second worm (worm.c:388-425).
 Checked clean: sphere explosions, buried treasure, trap rooms, leprechaun gold, newt mana, naga speeds, mind-flayer helmet, Orcus Town, jackal top NAO killer.
 
@@ -374,7 +374,7 @@ Correctness:
 - L6338 Wishing Max Charges "3": generated with 1 (mkobj.c:1116-1117); recharge adds 1. Propose "1".
 - L6325 Stasis "15": fresh 3-6 (mkobj.c:1118-1121); 15 is recharge cap.
 - L6400-6401 make invisible "31-45 turns": self only (zap.c:2836); monsters permanently (zap.c:357).
-- L6509-6511 polymorph "HP scales with the ratio, 50/100 -> 200/400": new form rolls d(level,8) full (polyself.c:866-872); own HP returns after. 
+- L6509-6511 polymorph "HP scales with the ratio, 50/100 -> 200/400": new form rolls d(level,8) full (polyself.c:866-872); own HP returns after.
 - L6518 "cursed polymorph items strip control": no such check (zap.c:2804-2808, potion.c:1689-1692); real caveat: without control a failed Con roll costs up to 30 HP (polyself.c:488-493).
 - L6471 wresting "a few tries": 1 in 121 per zap (hack.h:1411).
 - L6481-6483 ring charging "+0 or +1 virtually free, cap around +5": explode when spe > rn2(7) (read.c:807): +1 1/7, +3 43%, +7 always.
@@ -402,7 +402,6 @@ Craft: What to Wish For (L8519-8524) items 1 and 2 both body armor; add "gray if
 Top 3: fix wand location + wish budget; fix "greased" here and L6983; gray-or-silver rule ahead of wish list.
 
 ---
-
 ## Chunk 14: Rings and Amulets + Tools of the Trade (L6534-6989)
 Verdict: tables scannable; tools chapter has the book's best in-world voice ("Boxes and chests are furniture, not luggage"). Tools half carries many decision-changing slips. Weakest: L6981-6986 grease, wrong on all three examples.
 Correctness:
@@ -894,4 +893,3 @@ What failed: pre-emptive retreat to corridor chokepoint (save 3/lose 4, LESSONS:
 6. Ten changes: (1) Armory L7028-7030: at AC 6 or worse with no altar/pet, wear found body armor, helms, shields, cloaks now; test only boots and gloves. (2) Werecreatures L3408: Elbereth at "summons help"; human-form @ walks through it; silver isn't found at that depth. (3) Rule 1 + "Caught in the open" (L710-712, 813-817): order escapes stairs > closable door > corridor; stop and let the pack arrive rather than stepping toward it. (4) What to Pack L646: promote a throwing stack to a golden rule; name never-adjacent monsters (floating eye, rothe, homunculus, soldier ants). (5) Mines readiness L3181-3183: reachable bar (AC ~5, XL5, full HP, throwing stack, escape item); waiting has a cost. (6) Provisions L5654-5656 + Rule 5: when Hungry with no food, take the stairs down; prayer resets hunger once. (7) Searching L2276-2298: if a down stair is known, take it. (8) "Trade hits"/"Know when to run" (L3013-3017, 3043-3053): decide after the first exchange. (9) Elbereth practical use (L2498-2503, 3063-3068): write before contact; below half HP with a multi-attacker adjacent, stairs beat a dust write. (10) Pacing L3155-3165: rest to full after every fight; don't take stairs below ~90%; expect the pack at the stair on return.
 
 ---
-
