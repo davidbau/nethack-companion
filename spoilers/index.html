@@ -3520,6 +3520,15 @@ charged (only wands, rings, and certain tools take charges). The scroll
 is wasted.</td>
 </tr>
 <tr>
+<td><em>“You have a strange feeling for a moment, then it
+passes.”</em></td>
+<td>A scroll or potion had nothing to act on and is used up
+unidentified: enchant armor or destroy armor (no armor worn), enchant
+weapon (nothing wielded), gold or food detection (none on the level), or
+potion of monster or object detection (nothing to find). Beginners
+always see this line; later each item has its own message.</td>
+</tr>
+<tr>
 <td><em>“You sense a lack of food nearby.”</em></td>
 <td>Scroll of food detection, no food on level.</td>
 </tr>
@@ -7266,110 +7275,6 @@ propagated a known property (BUC, enchantment, erosion) to the
 previously unknown side. Two same-appearance items that <em>don’t</em>
 merge are a different potion, a different BUC, or one side has been
 diluted or eroded.</p>
-</section>
-<section id="you-have-a-strange-feeling-for-a-moment-then-it-passes"
-class="level4">
-<h4>“You Have a Strange Feeling for a Moment, Then It Passes”</h4>
-<!-- audit
-2026-11-26:
-- strange_feeling() at potion.c:1461-1476: prints the generic "You have a strange feeling for a moment, then it passes." ("normal" when hallucinating) when flags.beginner or when the caller gives no text; otherwise the caller's text. Then trycall() (do.c:395) if the item was seen (dknown), then useup()
-- flags.beginner set at u_init.c:950, cleared at exper.c:201-202 when u.urexp >= 2000 (1000 for a Wizard)
-- enchant armor, no armor worn: read.c:1128-1132 "Your skin glows then fades." / blind "Your skin feels warm for a moment."
-- destroy armor, no armor: confused read.c:1333-1336 "Your bones itch."; otherwise read.c:1388-1390 "Your skin itches."
-- enchant weapon, no wielded weapon or weapon-tool: chwepon wield.c:930-948 "Your hands twitch." (cursed: "itch"); a wielded cursed tin opener glows amber and is uncursed instead
-- gold detection, no gold found: detect.c:384-404 "You feel materially poor."; carrying gold "You feel worried about your future financial situation."; a steed with gold "You feel interested in <steed>'s financial situation."; as a gold golem "You feel like a million zorkmids!"
-- gold detection confused or cursed -> trap_detect (read.c:2042): no traps detect.c:1078-1082 "Your toes stop itching."
-- food detection, no food on the level or in the pack and none remembered: detect.c:522-537 "Your nose twitches." / blessed "... then starts to tingle", shown even to a beginner (flags.beginner cleared around the call)
-- object detection, nothing anywhere including the pack: detect.c:686-690 "You feel a lack of something."; objects only in the pack give "You sense objects nearby." instead
-- monster detection, uncursed or cursed (or blessed while swallowed or underwater), no monsters: detect.c:816-820 "You feel threatened." / hallucinating "You get the heebie jeebies."; blessed otherwise says "You feel lonely." (potion.c:941-944)
-- crystal ball (detect.c:1345-1352) and the detection spells use the same routines with no object or a pseudo-object of quantity 20, so nothing is used up
-- generic-only, not identification: potion.c:288, 314 (temporary blindness set or cleared while eyeless or permanently blind), potion.c:401 (temporary hallucination cleared while eyeless)
--->
-<p>This message (<em>“You have a normal feeling…”</em> while
-hallucinating) means a scroll or potion worked, but found nothing to
-work on. It is used up, it is <strong>not</strong> identified, and if
-you saw it the game asks what you want to <strong>call</strong> it. Name
-it right away: the message has narrowed it to a short list.</p>
-<p><strong>Early in the game you get only the generic line.</strong>
-Until the game stops treating you as a beginner (a hidden experience
-score of 2,000, or 1,000 for a Wizard), every case below prints <em>“You
-have a strange feeling for a moment, then it passes.”</em> After that,
-each item prints its own message instead, which identifies it
-outright:</p>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr>
-<th>Item</th>
-<th>When nothing happens</th>
-<th>Message once you are not a beginner</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Scroll of enchant armor</td>
-<td>You wear no armor</td>
-<td><em>“Your skin glows then fades.”</em> (blind: <em>“Your skin feels
-warm for a moment.”</em>)</td>
-</tr>
-<tr>
-<td>Scroll of destroy armor</td>
-<td>You wear no armor</td>
-<td><em>“Your skin itches.”</em> (confused: <em>“Your bones
-itch.”</em>)</td>
-</tr>
-<tr>
-<td>Scroll of enchant weapon</td>
-<td>You wield no weapon (or a non-weapon)</td>
-<td><em>“Your hands twitch.”</em> (cursed: <em>“Your hands
-itch.”</em>)</td>
-</tr>
-<tr>
-<td>Scroll of gold detection</td>
-<td>No gold on the level outside your pack</td>
-<td><em>“You feel materially poor.”</em> (carrying gold: <em>“You feel
-worried about your future financial situation.”</em>)</td>
-</tr>
-<tr>
-<td>Scroll of gold detection, confused or cursed</td>
-<td>No traps on the level</td>
-<td><em>“Your toes stop itching.”</em></td>
-</tr>
-<tr>
-<td>Scroll of food detection</td>
-<td>No food on the level or in your pack</td>
-<td><em>“Your nose twitches.”</em> (blessed: <em>“…then starts to
-tingle,”</em> shown even to beginners)</td>
-</tr>
-<tr>
-<td>Potion of monster detection, not blessed</td>
-<td>No other monsters on the level</td>
-<td><em>“You feel threatened.”</em> (hallucinating: <em>“You get the
-heebie jeebies.”</em>)</td>
-</tr>
-<tr>
-<td>Potion of object detection</td>
-<td>No objects anywhere, not even in your pack</td>
-<td><em>“You feel a lack of something.”</em></td>
-</tr>
-</tbody>
-</table>
-<p>So a beginner who reads an unknown scroll with no armor on, no weapon
-in hand, and no gold or food on the level has narrowed it to five
-scrolls. A potion that gives the strange feeling is monster detection or
-object detection, and in practice almost always monster detection, since
-object detection also counts what you carry. A blessed potion of monster
-detection with no monsters around says <em>“You feel lonely”</em>
-instead.</p>
-<p>Two smaller notes. A crystal ball and the detection spells print the
-same messages but use nothing up. And the generic line can also appear
-with no item involved, when a cure clears a temporary blindness or
-hallucination while you are permanently blind or have no eyes; that one
-tells you nothing about the item.</p>
 </section>
 <section id="a-practical-strategy" class="level4">
 <h4>A Practical Strategy</h4>
