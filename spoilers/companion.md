@@ -5518,6 +5518,60 @@ previously unknown side. Two same-appearance items that *don't*
 merge are a different potion, a different BUC, or one side has
 been diluted or eroded.
 
+#### "You Have a Strange Feeling for a Moment, Then It Passes"
+<!-- audit
+2026-11-26:
+- strange_feeling() at potion.c:1461-1476: prints the generic "You have a strange feeling for a moment, then it passes." ("normal" when hallucinating) when flags.beginner or when the caller gives no text; otherwise the caller's text. Then trycall() (do.c:395) if the item was seen (dknown), then useup()
+- flags.beginner set at u_init.c:950, cleared at exper.c:201-202 when u.urexp >= 2000 (1000 for a Wizard)
+- enchant armor, no armor worn: read.c:1128-1132 "Your skin glows then fades." / blind "Your skin feels warm for a moment."
+- destroy armor, no armor: confused read.c:1333-1336 "Your bones itch."; otherwise read.c:1388-1390 "Your skin itches."
+- enchant weapon, no wielded weapon or weapon-tool: chwepon wield.c:930-948 "Your hands twitch." (cursed: "itch"); a wielded cursed tin opener glows amber and is uncursed instead
+- gold detection, no gold found: detect.c:384-404 "You feel materially poor."; carrying gold "You feel worried about your future financial situation."; a steed with gold "You feel interested in <steed>'s financial situation."; as a gold golem "You feel like a million zorkmids!"
+- gold detection confused or cursed -> trap_detect (read.c:2042): no traps detect.c:1078-1082 "Your toes stop itching."
+- food detection, no food on the level or in the pack and none remembered: detect.c:522-537 "Your nose twitches." / blessed "... then starts to tingle", shown even to a beginner (flags.beginner cleared around the call)
+- object detection, nothing anywhere including the pack: detect.c:686-690 "You feel a lack of something."; objects only in the pack give "You sense objects nearby." instead
+- monster detection, uncursed or cursed (or blessed while swallowed or underwater), no monsters: detect.c:816-820 "You feel threatened." / hallucinating "You get the heebie jeebies."; blessed otherwise says "You feel lonely." (potion.c:941-944)
+- crystal ball (detect.c:1345-1352) and the detection spells use the same routines with no object or a pseudo-object of quantity 20, so nothing is used up
+- generic-only, not identification: potion.c:288, 314 (temporary blindness set or cleared while eyeless or permanently blind), potion.c:401 (temporary hallucination cleared while eyeless)
+-->
+
+This message (*"You have a normal feeling..."* while hallucinating)
+means a scroll or potion worked, but found nothing to work on. It
+is used up, it is **not** identified, and if you saw it the game
+asks what you want to **call** it. Name it right away: the
+message has narrowed it to a short list.
+
+**Early in the game you get only the generic line.** Until the game
+stops treating you as a beginner (a hidden experience score of 2,000,
+or 1,000 for a Wizard), every case below prints *"You have a strange
+feeling for a moment, then it passes."* After that, each item prints
+its own message instead, which identifies it outright:
+
+| Item | When nothing happens | Message once you are not a beginner |
+|---|---|---|
+| Scroll of enchant armor | You wear no armor | *"Your skin glows then fades."* (blind: *"Your skin feels warm for a moment."*) |
+| Scroll of destroy armor | You wear no armor | *"Your skin itches."* (confused: *"Your bones itch."*) |
+| Scroll of enchant weapon | You wield no weapon (or a non-weapon) | *"Your hands twitch."* (cursed: *"Your hands itch."*) |
+| Scroll of gold detection | No gold on the level outside your pack | *"You feel materially poor."* (carrying gold: *"You feel worried about your future financial situation."*) |
+| Scroll of gold detection, confused or cursed | No traps on the level | *"Your toes stop itching."* |
+| Scroll of food detection | No food on the level or in your pack | *"Your nose twitches."* (blessed: *"...then starts to tingle,"* shown even to beginners) |
+| Potion of monster detection, not blessed | No other monsters on the level | *"You feel threatened."* (hallucinating: *"You get the heebie jeebies."*) |
+| Potion of object detection | No objects anywhere, not even in your pack | *"You feel a lack of something."* |
+
+So a beginner who reads an unknown scroll with no armor on, no weapon
+in hand, and no gold or food on the level has narrowed it to five
+scrolls. A potion that gives the strange feeling is monster detection
+or object detection, and in practice almost always monster detection,
+since object detection also counts what you carry. A blessed potion of
+monster detection with no monsters around says *"You feel lonely"*
+instead.
+
+Two smaller notes. A crystal ball and the detection spells print the
+same messages but use nothing up. And the generic line can also appear
+with no item involved, when a cure clears a temporary blindness or
+hallucination while you are permanently blind or have no eyes; that
+one tells you nothing about the item.
+
 #### A Practical Strategy
 <!-- audit
 2026-05-18:
